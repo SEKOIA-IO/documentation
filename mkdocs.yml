@@ -1,0 +1,70 @@
+site_name: SEKOIA.IO Documentation
+site_url: https://docs.sekoia.io
+
+nav:
+  - Getting Started:
+      - First steps: getting_started/first_steps.md
+      - 2-Factors Authentication: getting_started/2fa.md
+      - Search:
+          - Dork Language: searching/dork.md
+          - Querying Operation Center Events: searching/search_events.md
+  - Integrations:
+      - Overview: integrations/index.md
+      - Cloud and SaaS:
+          - Microsoft Azure:
+              - Azure Active Directory: integrations/azure_ad.md
+              - Azure Mysql: integrations/azure_mysql.md
+              - Azure Linux machines: integrations/azure_linux.md
+              - Azure Windows machines: integrations/azure_windows.md
+          - Microsoft Office 365: integrations/o365.md
+          - Cisco Umbrella:
+              - Proxy Logs: integrations/umbrella_proxy.md
+              - Ip Logs: integrations/umbrella_ip.md
+              - Dns Logs: integrations/umbrella_dns.md
+      - OS:
+          - Linux: integrations/linux.md
+          - Windows: integrations/windows.md
+          - Log Insight Windows: integrations/log_insight_windows.md
+      - Application:
+          - Alsid: integrations/alsid.md
+          - Apache: integrations/apache.md
+          - Checkpoint: integrations/checkpoint.md
+          - Cisco: integrations/cisco_asa.md
+          - F5 BigIP: integrations/f5-big-ip.md
+          - Fortigate: integrations/fortigate.md
+          - HAProxy: integrations/haproxy.md
+          - ISC DHCP: integrations/dhcpd.md
+          - NetFilter: integrations/netfilter.md
+          - Nginx: integrations/nginx.md
+          - OpenSSH: integrations/openssh.md
+          - PaloAlto: integrations/paloalto.md
+          - Postfix: integrations/postfix.md
+          - Sophos: integrations/sophos.md
+          - SpamAssassin: integrations/spamassassin.md
+          - Squid: integrations/squid.md
+          - Suricata: integrations/suricata.md
+          - Unbound: integrations/unbound.md
+          - Zeek: integrations/zeek.md
+      - Generic:
+          - Common Event Format: integrations/cef.md
+  - Intelligence Center:
+      - Overview: intelligence_center/index.md
+      - API: intelligence_center/api.md
+  - API Documentation: /apis
+  - What’s New?: releases.md
+  - Support: https://support.sekoia.io
+
+theme:
+  custom_dir: theme
+  name: material
+  logo: assets/sekoiaio.svg
+  favicon: assets/favicon.ico
+  include_search_page: true
+  search_index_only: false
+extra_css:
+  - stylesheets/sekoiaio.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - codehilite:
+      linenums: true
