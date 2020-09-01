@@ -275,6 +275,19 @@ a.current {
     }
 }
 
+body {
+    main .md-main__inner .md-content {
+        .md-content__inner {
+            .md-content__icon {
+                border-radius: 50%;
+                padding: 0.2em;
+                background-color: #3371e3;
+                color: white;
+            }
+        }
+    }
+}
+
 body.page-homepage {
 
     .md-sidebar {

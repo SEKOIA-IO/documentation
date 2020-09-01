@@ -1,5 +1,6 @@
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
+repo_url: https://github.com/SEKOIA-IO/documentation
 
 nav:
   - Getting Started:
