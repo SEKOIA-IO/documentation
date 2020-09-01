@@ -23,7 +23,7 @@ kind: homepage
 
 <ul>
 <li><a href="/getting_started/">Get Started</a></li>
-<li><a href="/integrations/">Integrations</a></li>
+<li><a href="/operation_center">Operation Center</a></li>
 <li><a href="/intelligence_center">Intelligence Center</a></li>
 <li><a href="/apis">APIs Documentation</a></li>
 <li><a href="/releases/">What's New?</a></li>

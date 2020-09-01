@@ -41,6 +41,7 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 
 ### Cloud and SaaS
 
+- [AWS CloudTrail](aws_cloudtrail.md)
 - [Microsoft Azure Active Directory](azure_ad.md)
 - [Microsoft Azure MySQL](azure_mysql.md)
 - [Microsoft Azure Linux machines](azure_linux.md)
