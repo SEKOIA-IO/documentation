@@ -1,6 +1,6 @@
 # Intelligence Center API
 
-The API is reachable at `https://api.sekoia.io/api`. All Intelligence Center endpoints start with `https://api.sekoia.io/api/v2/inthreat/`.
+The API is reachable at `https://api.sekoia.io`. All Intelligence Center endpoints start with `https://api.sekoia.io/v2/inthreat/`.
 
 ## Authentication
 
@@ -90,7 +90,7 @@ from posixpath import join as urljoin
 APIKEY = "APIKEY"
 
 DEFAULT_FEED = "d6092c37-d8d7-45c3-8aff-c4dc26030608"
-BASE_URL = "https://api.sekoia.io/api/v2/inthreat/"
+BASE_URL = "https://api.sekoia.io/v2/inthreat/"
 CURSOR_FILE = "cursor.db"
 
 
@@ -152,7 +152,7 @@ import requests
 from posixpath import join as urljoin
 
 APIKEY = "APIKEY"
-BASE_URL = "https://api.sekoia.io/api/v2/inthreat/"
+BASE_URL = "https://api.sekoia.io/v2/inthreat/"
 
 HEADERS = {
     "Authorization": f"Bearer {APIKEY}"
@@ -163,7 +163,7 @@ def get_indicator_context(observable_type, observable_value):
     response = requests.get(
         urljoin(BASE_URL, "indicators/context"),
         params={"type": observable_type, "value": observable_value},
-        headers={"Authorization": f"Bearer {APIKEY}"})
+        headers=HEADERS)
     response.raise_for_status()
 
     return response.json()

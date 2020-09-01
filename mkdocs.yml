@@ -49,6 +49,7 @@ nav:
           - Common Event Format: integrations/cef.md
   - Intelligence Center:
       - Overview: intelligence_center/index.md
+      - Data Model: intelligence_center/data_model.md
       - API: intelligence_center/api.md
   - API Documentation: /apis
   - What’s New?: releases.md
