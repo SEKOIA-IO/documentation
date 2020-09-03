@@ -7,7 +7,7 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 
 ## Setup
 
-We expect logs formated in priority as CEF, and encapsulated in a syslog message including your intake key, to be sent on `intake.sekoia.io:10514` using the following certificate: https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem. The other reporting format (key/value pairs) is also supported, but the required configuration will note be detailed in the following example.
+We expect logs formated in priority as CEF, and encapsulated in a syslog message including your intake key, to be sent on `intake.sekoia.io:10514` using the following certificate: [`SEKOIA-IO-intake.pem`](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem). The other reporting format (key/value pairs) is also supported, but the required configuration will note be detailed in the following example.
 
 In this setup guide you will set up an rsyslog server to add your intake key and forward securely your BIG-IP logs to our servers. We first explain how to configure your rsyslog server, then we show how to configure a *Log Publisher* to format your logs as CEF and send them to your rsyslog server.
 
