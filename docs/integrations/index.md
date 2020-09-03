@@ -10,7 +10,6 @@ SEKOIA.IO is able to collect logs through various mechanisms, configuration on y
 
 ![SEKOIA.IO Operation Center integration overview](/assets/sekoiaio_oc_integration.png){: style="max-width:800px"}
 
-
 SEKOIA.IO supports the following log collectors:
 
 - Syslog over TLS (`intake.sekoia.io:10515`): you can forward your events by using the Syslog protocol specified in RFC 5424.
@@ -21,10 +20,7 @@ If these solutions do not meet your needs, we can also configure a dedicated sec
 
 ## Syslog integration
 
-We are providing documentation and example configurations on how to configure your log system for a few log aggregators such as Rsyslog, Syslog-NG or Fluentd.
-
-
-[Rsyslog](rsyslog), [Syslog-ng](syslog-ng), [NXlog](nxlog), [Fluentd](fluentd), [Logstash](logstash)
+We are providing documentation and example configurations on how to configure your log system for Rsyslog, but it should be easy to configure other log collectors to forward their events to SEKOIA.IO.
 
 ## HTTPS integration
 
