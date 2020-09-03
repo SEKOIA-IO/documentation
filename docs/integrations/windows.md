@@ -69,7 +69,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
   AllowUntrusted  FALSE
 
   Exec to_syslog_ietf();
-  Exec $raw_event = replace($raw_event, '[NXLOG@', '[SEKOIA@53288 intake_key="${YOUR_INTAKE_KEY}"][NXLOG@', 1);
+  Exec $raw_event = replace($raw_event, '[NXLOG@', '[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"][NXLOG@', 1);
   OutputType Syslog_TLS
 </Output>
 
@@ -78,7 +78,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 </Route>
 ```
 
-In the above `replace` function, make sure that `YOUR_INTAKE_KEY` variable was replaced by your intake key. Otherwise, please replace `YOUR_INTAKE_KEY` variable with your intake key. Also make sure that the copy/paste of the above configuation is correct, with no missing character of additional breaking line.
+In the above template instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
 Restart the NXLog service through the Services tool.
 
@@ -218,17 +218,8 @@ In order to monitor the common ones (Application, System, Security) and Sysmon, 
   </Input>
 </Input>
 ...
-<Route eventlog1_to_rsyslog>
-  Path eventlog1 => rsyslog
-</Route>
-<Route eventlog2_to_rsyslog>
-  Path eventlog2 => rsyslog
-</Route>
-<Route eventlog3_to_rsyslog>
-  Path eventlog3 => rsyslog
-</Route>
-<Route eventlog4_to_rsyslog>
-  Path eventlog4 => rsyslog
+<Route eventlog_to_rsyslog>
+  Path eventlog1, eventlog2, eventlog3, eventlog4 => rsyslog
 </Route>
 ...
 ```
