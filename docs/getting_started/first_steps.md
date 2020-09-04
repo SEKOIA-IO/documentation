@@ -1,6 +1,6 @@
 ## Getting started
 
-In order to access the SEKOIA.IO platform, you need to setup an account using your e-mail address and a unique password. You can create this account in less than five minutes. Here is how: 
+In order to access the SEKOIA.IO platform, you need to setup an account using your e-mail address and a unique password. Here is how you can create this account in less than five minutes:
 
 - Go to [SEKOIA.IO](http://app.sekoia.io) and click on “Sign up” button in the top right corner. 
 - Enter your e-mail address and check your inbox for a confirmation link. 
@@ -36,7 +36,7 @@ All of these preferences are available through the contextual menu by clicking o
 
 When you first create an account, your personal community is created along with it and you can manage it as you please. 
 
-A “Community” allows you to share events, alerts, rules and information with some people. You can manage each members rights. You can have access to more than one community and depending on the permissions you are granted, you can have different roles in each of them. 
+A “Community” allows you to share events, alerts, rules and information with some people. You can manage the rights of each member. You can have access to more than one community and depending on the permissions you are granted, you can have different roles in each of them. 
 
 When it comes to a community you manage, you can:
 
