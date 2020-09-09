@@ -11,6 +11,7 @@ nav:
           - Dork Language: searching/dork.md
           - Querying Operation Center Events: searching/search_events.md
   - Operation Center:
+      - Overview: operation_center/index.md
       - Integrations:
           - Overview: integrations/index.md
           - Cloud and SaaS:
