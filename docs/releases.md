@@ -4,16 +4,16 @@ kind: release
 
 ### Case Management: New case tracking system
 
-The Operation Center now has a new feature called « Case Management », allowing information relating to security records to be shared. A « case » consists of a title, description, severity, and may be associated with alerts from the Operation Center.
+The Operation Center now has a new feature called “Case Management”, allowing information relating to security records to be shared. A “case” consists of a title, description, severity, and may be associated with alerts from the Operation Center.
 
-A « case » has a lifecycle (currently, open or closed) and can be assigned to one or more people.
+A “case” has a lifecycle (currently, open or closed) and can be assigned to one or more people.
 This feature allows, for example, a security supervision team to escalate alerts to another team for clarification or to group alerts that seem related to facilitate analysis.
 
 ![New case creation form](assets/release-20200910/oc_case_mgmt_edit.png)
 
-« Case Management » replaces the old « incident » management mechanism. Among the many changes, we can mention the possibility of defining tags, assigning a case to one or more members of its community, adding comments or even associating alerts with a « case ». Finally, the syntax of the description of a « case » has been changed to use the Markdown language (with a graphical editor in the Operation Center).
+“Case Management” replaces the old “incident” management mechanism. Among the many changes, we can mention the possibility of defining tags, assigning a case to one or more members of its community, adding comments or even associating alerts with a “case”. Finally, the syntax of the description of a “case” has been changed to use the Markdown language (with a graphical editor in the Operation Center).
 
-Old « incidents » have been converted to « cases ». The switch to the use of « cases » is completely transparent, access to old « incidents» is automatically redirected to the new implementation.
+Old “incidents” have been converted to “cases”. The switch to the use of “cases” is completely transparent, access to old “incidents” is automatically redirected to the new implementation.
 
 ![Navigation in a Case](assets/release-20200910/oc_case_mgmt_nav.gif)
 
@@ -34,7 +34,7 @@ The table displaying the list of events now provides the following possibilities
 
 #### Search in events
 
-Search fields in events now follow the "ECS" standard (Elastic Common Schema). Thus, to search for events with source IP address 127.0.0.1, enter source.ip: "127.0.0.1" (and no longer source: "127.0.0.1"). This change provides access to more fields of events stored in Elasticsearch.
+Search fields in events now follow the "ECS" standard (Elastic Common Schema). Thus, to search for events with source IP address `127.0.0.1`, enter `source.ip: "127.0.0.1"` (and no longer `source: "127.0.0.1"`). This change provides access to more fields of events stored in Elasticsearch.
 
 So to perform a search (admittedly useless) for DNS type events that requested the IPv6 address associated with `google.com`, we can use the following Dork query:
 
@@ -64,10 +64,9 @@ You can of course always send us your comments and expectations with regard to t
 
 ![SEKOIA.IO documentation](assets/release-20200910/docs_create_pr.gif)
 
-
 ## 22/07/2020
 
-### Improved display of « Observed Data » on alert page
+### Improved display of “Observed Data” on alert page
 Work on the detail page of an alert continued, always with the aim of facilitating the analysis of an alert and minimizing the presence of « noise » on the page.
 
 #### Differentiated display according to the types of SCO (STIX Cyber-observable Objects)
