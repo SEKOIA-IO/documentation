@@ -15,7 +15,7 @@ This feature allows, for example, a security supervision team to escalate alerts
 
 Old « incidents » have been converted to « cases ». The switch to the use of « cases » is completely transparent, access to old « incidents» is automatically redirected to the new implementation.
 
-![Navigation in a Case](assets/release-20200910/oc_case_mgmt_nag.gif)
+![Navigation in a Case](assets/release-20200910/oc_case_mgmt_nav.gif)
 
 ### Consultation of events: redesign of the page
 
