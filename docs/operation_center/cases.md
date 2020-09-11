@@ -1,4 +1,4 @@
-# Cases management
+# Cases Management
 
 Cases allow information relating to security records to be shared whith members of your community. A case consists of a title, a description, a severity, and may be associated with alerts from the Operation Center.
 
