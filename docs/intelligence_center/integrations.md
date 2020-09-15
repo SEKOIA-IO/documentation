@@ -1,6 +1,6 @@
 # Intelligence Center external integrations
 
-The intelligence center data can be consummed using several third party integrations.
+Intelligence Center data can be consumed using several third party integrations.
 
 ## MISP Feed
 
@@ -21,9 +21,9 @@ You then need to make sure you have a scheduled task in place to regularly fetch
 ## OpenCTI connector
 
 An [OpenCTI](https://www.opencti.io) connector is available to consumme a feed.
-All the instruction to run it are available at the connector github repository: https://github.com/SEKOIA-IO/opencti-connector.
+All the instruction to run it are available at the connector GitHub repository: https://github.com/SEKOIA-IO/opencti-connector.
 
 ## Cortex Analyser
 
-SEKOIA is also providing a [cortex analyzer](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter) to enrich data in [THEHIVE](https://thehive-project.org/) ecosystem.
-To setup the analyzer please follow the following guide: https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md.
+SEKOIA is also providing a [Cortex analyzer](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter) to enrich data in [TheHive](https://thehive-project.org/) ecosystem.
+To setup the analyzer please [follow the following guide](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md).
