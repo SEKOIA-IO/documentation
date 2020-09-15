@@ -26,4 +26,4 @@ All the instruction to run it are available at the connector GitHub repository: 
 ## Cortex Analyser
 
 SEKOIA is also providing a [Cortex analyzer](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter) to enrich data in [TheHive](https://thehive-project.org/) ecosystem.
-To setup the analyzer please [follow the following guide](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md).
+To setup the analyzer please [follow this guide](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md).
