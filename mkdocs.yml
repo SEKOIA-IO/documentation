@@ -17,6 +17,7 @@ nav:
           - Cloud and SaaS:
               - AWS:
                   - CloudTrail: integrations/aws_cloudtrail.md
+                  - Flow Logs: integrations/aws_flow_logs.md
               - Microsoft Azure:
                   - Azure Active Directory: integrations/azure_ad.md
                   - Azure Mysql: integrations/azure_mysql.md
