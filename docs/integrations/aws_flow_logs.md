@@ -15,7 +15,7 @@ Please [contact us](mailto:support@sekoia.io) to discuss about the AWS services 
 
 As a prerequisite you need an existing VPC, subnet or network interface (Elastic Load Balancing, Amazon RDS, Amazon ElastiCache, Amazon Redshift, Amazon WorkSpaces, NAT gateways, Transit gateways) to create a flow log. If you create a flow log for a subnet or VPC, each network interface in that subnet or VPC is monitored.
 
-In the AWS console, navigate to: `Services > VPC`. From there, select the resource for which you want to capture information. The flow logs are available on the following resources: VPC, subnet, or network interfaces .
+In the AWS console, navigate to: `Services > VPC`. From there, select the resource for which you want to capture information. The flow logs are available on the following resources: VPC, subnet, or network interfaces.
 
 For VPC and subnet:
 
@@ -26,7 +26,7 @@ For VPC and subnet:
 
 ### 2. Log forwarding configuration
 
-This part should be discuss with SEKOIA people to find an appropriate solution to forward Flow logs to SEKOIA.IO.
+This part should be discussed with SEKOIA people to find an appropriate solution to forward Flow logs to SEKOIA.IO.
 
 The following default record format is integrated to the Operation Center:
 
