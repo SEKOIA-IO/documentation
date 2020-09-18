@@ -69,7 +69,7 @@ $ActionSendStreamDriverAuthMode x509/name # server is authenticated
 template(name="SEKOIAIOCiscoAsaTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
 # Send your Cisco ASA events to SEKOIA.IO intake servers under SEKOIAIOCiscoAsaTemplate template
-if $hostname == \"YOUR_CISCO_ASA_HOSTNAME\" then @@(o)intake.sekoia.io:10514;SEKOIAIOCiscoAsaTemplate
+if $hostname == "YOUR_CISCO_ASA_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKOIAIOCiscoAsaTemplate
 ```
 
 In the above `template` instruction, change `YOUR_CISCO_ASA_HOSTNAME` and `YOUR_INTAKE_KEY` with the correct values.
