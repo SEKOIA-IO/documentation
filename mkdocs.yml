@@ -71,6 +71,7 @@ nav:
       - Overview: intelligence_center/index.md
       - Data Model: intelligence_center/data_model.md
       - API: intelligence_center/api.md
+      - External Integrations: intelligence_center/integrations.md
   - API Documentation: /apis
   - What’s New?: releases.md
   - Support: https://support.sekoia.io

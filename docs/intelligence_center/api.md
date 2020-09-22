@@ -168,19 +168,3 @@ def get_indicator_context(observable_type, observable_value):
 
     return response.json()
 ```
-
-## MISP Feed
-
-The default feed is available as a MISP feed.
-
-It can be added to an existing MISP instance by following [MISP's documentation](https://www.circl.lu/doc/misp/managing-feeds/).
-
-The following field values are required for the feed to work properly:
-
--   Input Source: Network
--   URL: `https://api.sekoia.io/api/v2/inthreat/misp`
--   Source Format: MISP Feed
--   Headers: `Authorization: Bearer <APIKEY>`
--   Enabled: `True`
-
-You then need to make sure you have a scheduled task in place to regularly fetch the feed's content.
