@@ -35,6 +35,7 @@ nav:
           - Application:
               - Alsid: integrations/alsid.md
               - Apache: integrations/apache.md
+              - BIND: integrations/bind.md
               - Checkpoint: integrations/checkpoint.md
               - Cisco: integrations/cisco_asa.md
               - F5 BigIP: integrations/f5-big-ip.md
