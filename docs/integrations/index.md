@@ -58,6 +58,7 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 
 - [Alsid](alsid.md)
 - [Apache](apache.md)
+- [BIND](bind.md)
 - [Checkpoint](checkpoint.md)
 - [Cisco](cisco_asa.md)
 - [F5 BigIP](f5-big-ip.md)
