@@ -33,7 +33,7 @@ $ActionSendStreamDriverAuthMode x509/name # server is authenticated
 
 # Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)
 # IMPORTANT: don't forget to set your intake key in the template
-template(name="SEKOIAIOPaloAltoTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"$YOUR_INTAKE_KEY\"] %msg%\n")
+template(name="SEKOIAIOPaloAltoTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
 # Send your events to SEKOIA.IO intake servers under SEKOIAIOPaloAltoTemplate template
 if $hostname == "YOUR_PALOALTO_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKOIAIOPaloAltoTemplate
