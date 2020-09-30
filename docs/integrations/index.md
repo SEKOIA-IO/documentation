@@ -12,7 +12,7 @@ SEKOIA.IO is able to collect logs through various mechanisms, configuration on y
 
 SEKOIA.IO supports the following log collectors:
 
-- Syslog over TLS (`intake.sekoia.io:10515`): you can forward your events by using the Syslog protocol specified in RFC 5424.
+- Syslog over TLS (`intake.sekoia.io:10514`): you can forward your events by using the Syslog protocol specified in RFC 5424.
 - HTTPS (`https://intake.sekoia.io`): you can `POST` your JSON events.
 - Cloud hosting polling: you can configure SEKOIA.IO to regularly retrieve your logs.
 
