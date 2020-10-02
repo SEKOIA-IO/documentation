@@ -193,29 +193,25 @@ In order to monitor the common ones (Application, System, Security) and Sysmon, 
 
 ```
 ...
-<Input eventlog>
-  # Use 'im_mseventlog' for Windows XP, 2000 and 2003
-  Module im_msvistalog
-  <Input eventlog1>
+<Input eventlog1>
   Module im_msvistalog
   Query <QueryList><Query Id="0"><Select Path="Application">*</Select></Query></QueryList>
   Exec $Message = to_json();
-  </Input>
-  <Input eventlog2>
+</Input>
+<Input eventlog2>
   Module im_msvistalog
   Query <QueryList><Query Id="0"><Select Path="System">*</Select></Query></QueryList>
   Exec $Message = to_json();
-  </Input>
-  <Input eventlog3>
+</Input>
+<Input eventlog3>
   Module im_msvistalog
   Query <QueryList><Query Id="0"><Select Path="Security">*</Select></Query></QueryList>
   Exec $Message = to_json();
-  </Input>
-  <Input eventlog4>
+</Input>
+<Input eventlog4>
   Module im_msvistalog
   Query <QueryList><Query Id="0"><Select Path="Microsoft-Windows-Sysmon/Operational">*</Select></Query></QueryList>
   Exec $Message = to_json();
-  </Input>
 </Input>
 ...
 <Route eventlog_to_rsyslog>
