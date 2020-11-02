@@ -1,26 +1,33 @@
 ## Getting started
 
-In order to access the SEKOIA.IO platform, you need to setup an account using your e-mail address and a unique password. Here is how you can create this account in less than five minutes:
+If you received an invitation to join a community and you does not already have an account on SEKOIA.IO, you will have to create one.
 
-- Go to [SEKOIA.IO](http://app.sekoia.io) and click on “Sign up” button in the top right corner. 
-- Enter your e-mail address and check your inbox for a confirmation link. 
-- Click on the confirmation button in the verification e-mail to finalize your registration. 
-- Fill-out the form while keeping in mind that you won’t be able to change your username afterwards. 
-- Check “I agree with the terms of service” and create your account. 
+When opening the invitation by clicking on 'OPEN INVITATION' button, you will arrive on the account creation page.
 
-When you are done with the sign up process, you will have access to our platform for free for 7 days. The trial period lasts 7 days and you will have to upgrade your account if you want to keep using the application. You can find more information on our website [about the pricing model](https://www.sekoia.io/pricing).
+![Account Creation Page](/assets/getting_started/account_creation.png)
 
-You can access the platform from any browser and on any device.   
+Fill-out the form while keeping in mind that **you won’t be able to change your username afterwards**. 
+
+Check “I agree with the terms of service” and create your account. 
+
+You will then have to accept the invitation to join the community.
+
+![Accept Invitation](/assets/getting_started/join_community.png)
 
 !!! note
-    If you have been invited to a community by a collaborator, you will have to create an account to fully access his/her community’s alerts/events. Your access will also depend on the permissions you are granted in the community.
+    Your access will depend on the permissions you are granted in the community you joined.
+
+You can access the platform from any browser and on any device.
 
 ## How to navigate the platform
 
-Once you are logged in into SEKOIA.IO, you can navigate through the platform using two sidebars: 
+Once you are logged in into SEKOIA.IO, you can navigate through the platform using two menus: 
 
-- A collapsed navigation sidebar on the left that gives you access to all the work areas available on the platform. These areas are divided into subcategories: analyze, detect, investigate, remediate and configure. 
+- A collapsed navigation sidebar on the left that gives you access to all the work areas available on the platform. These areas are divided into subcategories: analyze, detect, investigate, remediate and configure for Operation Center, Collection for Intelligence Center.
 - A contextual menu accessible through your profile picture in the top right that gives you access to your Settings and Communities. 
+
+!!! note
+    Depending on the permissions granted to you, navigation between the Intelligence Center and the Operation Center is done by clicking on the name at the top of the sidebar.
 
 ## Set up your account 
 
@@ -45,4 +52,3 @@ When it comes to a community you manage, you can:
 - Determine which permissions you want to give them.
 - Manage your API keys and configure delegations.
 
-In addition to your personal community, you can create as many communities as you'd like and invite collaborators to join you directly via e-mail.
