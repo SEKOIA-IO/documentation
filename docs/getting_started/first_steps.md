@@ -1,6 +1,6 @@
 ## Getting started
 
-If you received an invitation to join a community and you does not already have an account on SEKOIA.IO, you will have to create one.
+If you received an invitation to join a community and you do not already have an account on SEKOIA.IO, you will have to create one.
 
 When opening the invitation by clicking on 'OPEN INVITATION' button, you will arrive on the account creation page.
 
