@@ -12,6 +12,7 @@ nav:
           - Querying Operation Center Events: searching/search_events.md
   - Operation Center:
       - Overview: operation_center/index.md
+      - Dashboards: operation_center/threat_exposition.md
       - Integrations:
           - Overview: integrations/index.md
           - Cloud and SaaS:
@@ -59,8 +60,6 @@ nav:
           - Entities: operation_center/entities.md
           - Intakes: operation_center/intakes.md
           - Assets: operation_center/assets.md
-      - Analyze:
-          - Threat Exposition: operation_center/threat_exposition.md
       - Detect:
           - Rules: operation_center/rules.md
           - Templates: operation_center/templates.md
@@ -70,6 +69,7 @@ nav:
           - Cases: operation_center/cases.md
   - Intelligence Center:
       - Overview: intelligence_center/index.md
+      - Dashboards: intelligence_center/dashboard.md
       - Data Model: intelligence_center/data_model.md
       - API: intelligence_center/api.md
       - External Integrations: intelligence_center/integrations.md
