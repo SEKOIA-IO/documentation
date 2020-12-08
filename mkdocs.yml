@@ -6,6 +6,7 @@ nav:
   - Getting Started:
       - Overview: getting_started/index.md
       - First steps: getting_started/first_steps.md
+      - Inviting users to join your community: getting_started/inviting_users_to_join_your_community.md
       - 2-Factors Authentication: getting_started/2fa.md
       - Search:
           - Dork Language: searching/dork.md
