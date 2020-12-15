@@ -75,7 +75,7 @@ nav:
       - API: intelligence_center/api.md
       - External Integrations: intelligence_center/integrations.md
   - API Documentation: /apis
-  - What’s New?: releases.md
+  - What’s New?: releases
   - Support: https://support.sekoia.io
 
 theme:
