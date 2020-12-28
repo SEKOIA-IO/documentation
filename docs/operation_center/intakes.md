@@ -8,7 +8,7 @@ To add a new intake, you will have to enter a name for it, choose the entity to 
 
 ![Intakes Management](/assets/operation_center/intakes.gif)
 
-All the documentation for integration of your data sources is also available in the [integrations](/integrations/index.md) page.
+All the documentation for integration of your data sources is also available in the [integrations](/integrations/) page.
 
 Do not hesitate to contact us at <support@sekoia.io> if the settings recommendations provided are not sufficient or not applicable to your system. We can then see with you how to transfer your events in the best conditions.
 
