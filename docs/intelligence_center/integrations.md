@@ -27,3 +27,11 @@ All the instruction to run it are available at the connector GitHub repository: 
 
 SEKOIA is also providing a [Cortex analyzer](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter) to enrich data in [TheHive](https://thehive-project.org/) ecosystem.
 To setup the analyzer please [follow this guide](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md).
+
+## SEKOIA.IO App for Splunk
+
+An App for Splunk is available to detect threats in your logs based on our feed.
+
+You can find the download links and additional information on the dedicated [GitHub repository](https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk).
+
+![SEKOIA.IO App for Splunk](/assets/intelligence_center/splunk.png){: style="width: 100%; max-width: 100%"}
