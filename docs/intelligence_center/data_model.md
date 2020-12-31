@@ -52,9 +52,28 @@ As an exemple, here are parts of the `Spearphishing Link` object presented in th
 
 STIX 2.1 adds an optional `confidence` field for an object creator to express how confident (s)he is about the information.
 
+![SEKOIA.IO Intelligence Center Confidence](/assets/intelligence_center/confidence.png)
+
 The Intelligence Center uses the `confidence` field in two ways:
 
 -   On objects, the `confidence` score may be specified to express a specific confidence level on an object. When specified, this confidence level should be read with the [Admiralty Credibility](https://docs.google.com/document/d/1Cqi89CU6FwEdLjGFqMnxpl3T4iSWE_gbImBq2WXEXYk/edit#heading=h.1v6elyto0uqg) scale.
+
+|Score       |Label                     |Explanation                                                                                                |
+|:----------:|:-------------------------|:----------------------------------------------------------------------------------------------------------|
+|1           |Confirmed by other sources|Confirmed by other independent sources; logical in itself; Consistent with other information on the subject|
+|2           |Probably True             |Not confirmed; logical in itself; consistent with other information on the subject                         |
+|3           |Possibly True             |Not confirmed; reasonably logical in itself; agrees with some other information on the subject             |
+|4           |Doubtful                  |Not confirmed; possible but not logical; no other information on the subject                               |
+|5           |Improbable                |Not confirmed; not logical in itself; contradicted by other information on the subject                     |
+|6           |Truth cannot be judged    |No basis exists for evaluating the validity of the information                                             |
+
 -   On source objects (of type `Identity`), the `confidence` score may be specified to express the source's reliability. When specified, this confidence level should be read with the [Admiralty Reliability](https://docs.google.com/document/d/1Cqi89CU6FwEdLjGFqMnxpl3T4iSWE_gbImBq2WXEXYk/edit#heading=h.1v6elyto0uqg) scale.
 
-![SEKOIA.IO Intelligence Center Confidence](/assets/intelligence_center/confidence.png)
+|Score       |Label                       |Explanation                                                                                                         |
+|:----------:|:---------------------------|:-------------------------------------------------------------------------------------------------------------------|
+|A           |Completely reliable         |No doubt of authenticity, trustworthiness, or competency; has a history of complete reliability                     |
+|B           |Usually reliable            |Minor doubt about authenticity, trustworthiness, or competency; has a history of valid information most of the time |
+|C           |Fairly reliable             |Doubt of authenticity, trustworthiness, or competency but has provided valid information in the past                |
+|D           |Not usually reliable        |Significant doubt about authenticity, trustworthiness, or competency but has provided valid information in the past |
+|E           |Unreliable                  |Lacking in authenticity, trustworthiness, and competency; history of invalid information                            |
+|F           |Reliability cannot be judged|No basis exists for evaluating the reliability of the source                                                        |

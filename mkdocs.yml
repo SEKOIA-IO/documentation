@@ -70,10 +70,13 @@ nav:
           - Cases: operation_center/cases.md
   - Intelligence Center:
       - Overview: intelligence_center/index.md
-      - Dashboards: intelligence_center/dashboard.md
       - Data Model: intelligence_center/data_model.md
       - API: intelligence_center/api.md
       - External Integrations: intelligence_center/integrations.md
+      - Web Application:
+          - Dashboards: intelligence_center/dashboard.md
+          - Graph Explorations: intelligence_center/graph_explorations.md
+          - Data Export: intelligence_center/data_export.md
   - API Documentation: /apis
   - What’s New?: releases
   - Support: https://support.sekoia.io
