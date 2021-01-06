@@ -1,6 +1,8 @@
 # SEKOIA.IO Release Notes
 
+## Latest Notes
 
+- [2021-01-06: Operation Center’s Configurable Dashboard System](/releases/2021-01-06)
 
 ## Previous Release Notes
 
