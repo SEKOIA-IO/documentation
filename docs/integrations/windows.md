@@ -121,9 +121,10 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 </Input>
 
 <Output rsyslog>
-  Module om_udp
+  Module om_tcp
   Host RSYSLOG_HOST
   Port 514
+  OutputType Syslog_TLS
 
   Exec to_syslog_ietf();
 </Output>
