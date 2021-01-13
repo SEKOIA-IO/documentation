@@ -68,6 +68,7 @@ nav:
           - Alerts: operation_center/alerts.md
           - Events: operation_center/events.md
           - Cases: operation_center/cases.md
+      - FAQ: operation_center/faq.md
   - Intelligence Center:
       - Overview: intelligence_center/index.md
       - Data Model: intelligence_center/data_model.md
