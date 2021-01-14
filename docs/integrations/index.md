@@ -42,6 +42,7 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 - [Microsoft Azure Active Directory](azure_ad.md)
 - [Microsoft Azure MySQL](azure_mysql.md)
 - [Microsoft Azure Linux machines](azure_linux.md)
+- [Microsoft Azure Network Watcher](azure_network_watcher.md)
 - [Microsoft Azure Windows machines](azure_windows.md)
 - [Microsoft Office 365](o365.md)
 - [CISCO Umbrella Dns Logs](umbrella_dns.md)
