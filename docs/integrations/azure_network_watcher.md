@@ -7,7 +7,7 @@ Azure Network Watcher provides tools to monitor, diagnose, view metrics, and ena
 ## Setup
 Please [contact us](mailto:support@sekoia.io) to discuss about the network security group to monitor in your Azure infrastructure in order to find the appropriate solution to forward your logs to SEKOIA.IO.
 
-This setup guide will show you a method to enable and give us acces to NSG flow logs produced by Azure Network Watcher service to SEKOIA.IO.
+This setup guide will show you a method to enable and give us access to NSG flow logs produced by Azure Network Watcher service to SEKOIA.IO.
 
 ### 1. Enable NSG flow logs 
 
