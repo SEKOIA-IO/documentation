@@ -24,7 +24,7 @@ The first step is to configure Cisco ASA to log the awaited traffic.
 To enable logging, enter the following commands:
 
 ```bash
-hostname(config) # logging enable
+hostname(config)# logging enable
 ```
 
 You then have to configure an output destination for logs. Here, we choose to send syslog messages to an external syslog server.
