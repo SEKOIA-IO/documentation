@@ -106,11 +106,11 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
  SpoolDir %ROOT%\data
  LogFile %ROOT%\data\nxlog.log
 
-<Extension_syslog>
+<Extension _syslog>
   Module xm_syslog
 </Extension>
 
-<Extension_json>
+<Extension _json>
   Module xm_json
 </Extension>
 
