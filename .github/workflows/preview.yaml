@@ -46,4 +46,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
           body: |
-            Newest code from ${{ github.actor}} has been published to [preview environment](https://sekoia-io.github.io/documentation/${{ github.event.number }})
+            Newest code from ${{ github.actor}} has been published to [preview environment](https://sekoia-io.github.io/documentation/${{ github.event.number }}/)
