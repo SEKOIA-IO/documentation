@@ -1,0 +1,49 @@
+name: Preview docs.sekoia.io
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Preview docs.sekoia.io
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout main
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Make destination directory for compiled CSS
+        run: mkdir -vp docs/stylesheets/
+
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@v0.3.7
+        with:
+          source: src/sekoiaio.scss
+          destination: docs/stylesheets/sekoiaio.css
+
+      - name: Install Docs-Mkdocs
+        run: pip install -r requirements.txt
+
+      - name: Build site
+        run: mkdocs build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.0-1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_dir: ./${{ github.event.number }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          keep_files: true
+
+      - name: Add comment to PR
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          body: |
+            Newest code from ${{ github.actor}} has been published to [preview environment](https://sekoia-io.github.io/documentation/${{ github.event.number }})
