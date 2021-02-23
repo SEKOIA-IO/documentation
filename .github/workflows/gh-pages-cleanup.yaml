@@ -34,4 +34,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
           body: |
-            Removed preview code for ${{ github.event.number }
+            Removed preview code for ${{ github.event.number }}
