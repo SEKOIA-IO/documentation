@@ -116,27 +116,27 @@ a.current {
         }
 
         &[data-title="getting started"]::before {
-            content: url("/assets/started.svg");
+            content: url("../assets/started.svg");
         }
 
         &[data-title="operation center"]::before {
-            content: url("/assets/integrations.svg");
+            content: url("../assets/integrations.svg");
         }
 
         &[data-title="intelligence center"]::before {
-            content: url("/assets/insights.svg");
+            content: url("../assets/insights.svg");
         }
 
         &[title="API Documentation"]::before {
-            content: url("/assets/API.svg");
+            content: url("../assets/API.svg");
         }
 
         &[title="What’s New?"]::before {
-            content: url("/assets/mdi_whatshot.svg");
+            content: url("../assets/mdi_whatshot.svg");
         }
 
         &[title="Support"]::before {
-            content: url("/assets/help.svg");
+            content: url("../assets/help.svg");
         }
     }
 
