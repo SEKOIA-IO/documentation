@@ -65,6 +65,62 @@ Observation Expressions are contained in square brackets [ ... ] and may consist
 
 For more information about STIX and STIX Patterning, please refers to the [OASIS STIX Patterning specification](http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).
 
+### How to Validate STIX Patterning Rule’s Syntax
+
+SEKOIA.IO checks the syntax of submitted rules and reports errors to the “rules” interface.
+
+In order to validate your rule’s syntax, you can also use an open source tool called [`stix2-patterns`][stix2-pattern-github]. This tool is part of the official tools developed by the OASIS Technical Committee.
+
+Here’s an example on how to use that tool. These commands should be executed in a shell.
+
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install stix2-patterns
+$ validate-patterns
+Enter a pattern to validate: [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
+
+PASS: [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
+```
+
+In this example, we are trying to validate a STIX Patterning rule that contains a regular expression (`MATCHES`). This rule is considered valid and can be submitted to SEKOIA.IO.
+
+[stix2-pattern-github]: https://github.com/oasis-open/cti-pattern-validator
+
+### How to Tests STIX Patterning Rules?
+
+When one creates a rule in SEKOIA.IO, this one is automatically validated and applied to incoming traffic.
+
+In order to test your STIX Patterning rules, you can use an open source tool, called [`stix2-matcher`][stix2-matcher-github]. This tool is part of the official tools developed by the OASIS Technical Committee.
+
+First, you need to retrieve a STIX “bundle” from SEKOIA.IO. To do so, go to the “events” page, find the event you want to work on, and export the STIX representation of that event:
+
+![Export STIX Representation of an Event from SEKOIA.IO](../assets/operation_center/event_list_export_stix.png)
+
+Export that STIX “bundle” in a file, called, for example, `event.json`.
+
+Here’s an example on how to use that tool. These commands should be executed in a shell. We are also using [`jq`][jq] a tool that helps to manipulate JSON files.
+
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install stix2-matcher
+$ cat event.json | jq '.objects[] | select( .type | contains("observed-data") )' > observed-data.json
+$ cat << EOF >| patterns
+[ipv4-addr:value = '246.127.189.32']
+[x-dns-traffic:extensions.'x-log'.hostname = 'hostname']
+EOF
+$ stix2-matcher -f observed-data.json -p patterns
+
+MATCH:  [ipv4-addr:value = '246.127.189.32']
+
+MATCH:  [x-dns-traffic:extensions.'x-log'.hostname = 'hostname']
+
+```
+
+[stix2-matcher-github]: https://github.com/oasis-open/cti-pattern-matcher
+[jq]: https://stedolan.github.io/jq/
+
 ## Observed Data
 
 In order to trigger alerts, rule patterns must match with Observed Data. An "Observed Data" is the internal representation of any collected event in SEKOIA.IO. All events are normalized into a JSON object compliant with the STIX Observed Data specification. Detection rules are applied on events in STIX Observed Data format.
