@@ -38,7 +38,7 @@
     
     
       
-        <title>Pulse - SEKOIA.IO Documentation</title>
+        <title>Pulse Connect Secure</title>
       
     
     
@@ -916,11 +916,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Pulse
+        Pulse Connect Secure
       </label>
     
-    <a href="./" title="Pulse" class="md-nav__link md-nav__link--active">
-      Pulse
+    <a href="./" title="Pulse Connect Secure" class="md-nav__link md-nav__link--active">
+      Pulse Connect Secure
     </a>
     
       
@@ -1560,7 +1560,7 @@
                   <a href="https://github.com/SEKOIA-IO/documentation/edit/master/docs/integrations/pulse.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Pulse</h1>
+                  <h1>Pulse Connect Secure</h1>
                 
                 <h2 id="overview">Overview</h2>
 <p>Pulse Connect Secure is SSL VPN solution for remote and mobile users.</p>
@@ -1606,11 +1606,11 @@
 template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOPulseTemplate&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span> <span class="nv">string</span><span class="o">=</span><span class="s2">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;</span><span class="o">)</span>
 
 <span class="c1"># Send your events to SEKOIA.IO intake servers under SEKOIAIOPulseTemplate template</span>
-<span class="k">if</span> <span class="nv">$programname</span> startswith <span class="s1">&#39;named&#39;</span> <span class="k">then</span> @@<span class="o">(</span>o<span class="o">)</span>intake.sekoia.io:10514<span class="p">;</span>SEKOIAIOPulseTemplate
+<span class="k">if</span> <span class="nv">$hostname</span> <span class="o">==</span> <span class="s2">&quot;YOUR_PULSE_HOSTNAME&quot;</span> <span class="k">then</span> @@<span class="o">(</span>o<span class="o">)</span>intake.sekoia.io:10514<span class="p">;</span>SEKOIAIOPulseTemplate
 </pre></div>
 </td></tr></table>
 
-<p>In the above <code>template</code> instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key.</p>
+<p>In the above template instruction, change the <code>YOUR_PULSE_HOSTNAME</code> variable with the correct value, and please replace <code>YOUR_INTAKE_KEY variable</code> with your intake key.</p>
 <h3 id="4-restart-rsyslog">4. Restart Rsyslog</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo service rsyslog restart
 </pre></div>
