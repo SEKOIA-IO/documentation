@@ -87,7 +87,7 @@ In this example, we are trying to validate a STIX Patterning rule that contains 
 
 [stix2-pattern-github]: https://github.com/oasis-open/cti-pattern-validator
 
-### How to Tests STIX Patterning Rules?
+### How to Test STIX Patterning Rules?
 
 When one creates a rule in SEKOIA.IO, this one is automatically validated and applied to incoming traffic.
 
