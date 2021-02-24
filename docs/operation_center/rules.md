@@ -52,16 +52,18 @@ Observation Expressions are contained in square brackets [ ... ] and may consist
 ![STIX Patterning](/assets/operation_center/stix_patterning.png)
 
 !!! note
-    When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression MUST start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the <object-type>:<property_name> MUST start from the same SCO.  Different SCO's may ultimately be used in matching, but they MUST be referenced from the same, single SCO.
-An Observation Expression MAY contain Comparison Expressions with Object Paths that start with different object types, but such Comparison Expressions MUST be joined by OR. **The Comparison Expressions of an Observation Expression that use AND MUST use the same base Object Path**.
-	
-!!! note
-    Regarding the use of regular expressions in STIX Patterning rules, it is necessary to escape the "\". Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:
-```
-[ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
-```
+    When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression _MUST_ start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the `<object-type>:<property_name>` _MUST_ start from the same SCO. Different SCOs may ultimately be used in matching, but they MUST be referenced from the same, single SCO.
 
-For more information about STIX and STIX Patterning, please refers to the OASIS STIX specification [here](http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).
+    An Observation Expression _MAY_ contain Comparison Expressions with Object Paths that start with different object types, but such Comparison Expressions _MUST_ be joined by `OR`. **The Comparison Expressions of an Observation Expression that use `AND` MUST use the same base Object Path**.
+
+!!! note
+    Regarding the use of regular expressions (`MATCHES` keyword) in STIX Patterning rules, it is necessary to escape the “`\`”. Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:
+
+    ```
+    [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
+    ```
+
+For more information about STIX and STIX Patterning, please refers to the [OASIS STIX Patterning specification](http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).
 
 ## Observed Data
 
@@ -70,71 +72,70 @@ In order to trigger alerts, rule patterns must match with Observed Data. An "Obs
 Here is an example of an Observed Data that could be obtained from a squid event:
 
 ```json
-{  
-    "x_sic_entity_by_ref": "identity--d6358bb4-d9bb-47aa-b074-c6d1aeb673e2",  
-    "created": "2019-09-20T16:17:42.971Z",  
-    "objects": {    
-        "0": {      
-            "value": "127.0.0.1",      
-            "type": "ipv4-addr"    
-        },    
-        "1": {      
-            "value": "216.58.215.48",      
-            "type": "ipv4-addr"    
-        },    
-        "2": {      
-            "start": "2019-09-20T16:17:40.935Z",      
-            "type": "network-traffic",      
-            "end": "2019-09-20T16:17:40.935Z",      
-            "extensions": {        
-                "http-request-ext": {          
-                    "request_header": {            
-                        "Content-Type": "application/xml"          
+{
+    "x_sic_entity_by_ref": "identity--d6358bb4-d9bb-47aa-b074-c6d1aeb673e2",
+    "created": "2019-09-20T16:17:42.971Z",
+    "objects": {
+        "0": {
+            "value": "127.0.0.1",
+            "type": "ipv4-addr"
+        },
+        "1": {
+            "value": "216.58.215.48",
+            "type": "ipv4-addr"
+        },
+        "2": {
+            "start": "2019-09-20T16:17:40.935Z",
+            "type": "network-traffic",
+            "end": "2019-09-20T16:17:40.935Z",
+            "extensions": {
+                "http-request-ext": {
+                    "request_header": {
+                        "Content-Type": "application/xml"
                     },
-                    "request_method": "HEAD",          
-                    "request_value": "http://216.58.215.48/"        
-                }      
-            },      
-            "src_ref": "0",      
-            "dst_ref": "1",      
-            "protocols": [ "ipv4" ]    
-        }, 
-        "3": {      
-            "type": "user-account",      
-            "extensions": {        
-                "x-log": {          
-                    "hostname": "DESKTOP-UPU7IFP"        
-                }      
-            }      
-        }  
-    },  
-    "type": "observed-data",  
+                    "request_method": "HEAD",
+                    "request_value": "http://216.58.215.48/"
+                }
+            },
+            "src_ref": "0",
+            "dst_ref": "1",
+            "protocols": [ "ipv4" ]
+        },
+        "3": {
+            "type": "user-account",
+            "extensions": {
+                "x-log": {
+                    "hostname": "DESKTOP-UPU7IFP"
+                }
+            }
+        }
+    },
+    "type": "observed-data",
     ...
-	"x_event_type": "http" 
+	"x_event_type": "http"
 }
 ```
 
 The JSON object has a type of **observed-data** and is composed by smaller objects following another STIX specification: **Cyber Observables**.
 
-The main observable is the third one, with a type of network-traffic. It has references to indicate the source of the packet (src_ref - 127.0.0.1) and its destination (dst_ref - 216.58.215.48).
+The main observable is the third one, with a type of network-traffic. It has references to indicate the source of the packet (`src_ref` - `127.0.0.1`) and its destination (`dst_ref` - `216.58.215.48`).
 
 These information can be used to construct correlation rules. Below, a non-exhaustive list of information which can be used in your rules:
 
-- ipv4-addr:value
-- ipv6-addr:value
-- domain-name:value
-- url:value
-- network-traffic:dst_port
-- network-traffic:src_port
-- network-traffic:dst_packets
-- network-traffic:src_packets
-- network-traffic:dst_ref.value (corresponding to IP value, in the above example, network-traffic:dst_ref refers to object 0, which has a value of '127.0.0.1')
-- network-traffic:src_ref.value
-- network-traffic:extensions.'http-request-ext'.request_value
-- network-traffic:protocols[*]
-- process:pid
-- process:name
-- process:command_line
-- file:hashes.md5
-- user-account:account_login
-
+- `ipv4-addr:value`
+- `ipv6-addr:value`
+- `domain-name:value`
+- `url:value`
+- `network-traffic:dst_port`
+- `network-traffic:src_port`
+- `network-traffic:dst_packets`
+- `network-traffic:src_packets`
+- `network-traffic:dst_ref.value` (corresponding to IP value, in the above example, network-traffic:dst_ref refers to object 0, which has a value of '127.0.0.1')
+- `network-traffic:src_ref.value`
+- `network-traffic:extensions.'http-request-ext'.request_value`
+- `network-traffic:protocols[*]`
+- `process:pid`
+- `process:name`
+- `process:command_line`
+- `file:hashes.md5`
+- `user-account:account_login`
