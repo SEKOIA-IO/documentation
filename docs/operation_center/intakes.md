@@ -6,7 +6,7 @@ On the intake list, the number of events sent to SEKOIA.IO for the past 7 days a
 
 To add a new intake, you will have to enter a name for it, choose the entity to which you want to associate the corresponding data and to choose the format of the events.
 
-![Intakes Management](/assets/operation_center/intakes.gif)
+![Intakes Management](../assets/operation_center/intakes.gif)
 
 All the documentation for integration of your data sources is also available in the [integrations](/integrations/) page.
 

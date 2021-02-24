@@ -13,4 +13,4 @@ Assets participate to the security workflow of the community, when an incoming e
 
 Assets also permit the selective application of detection rules: rules can be applied to one, several or all entities, and to one, several or all assets.
 
-![Assets Management](/assets/operation_center/assets.gif)
+![Assets Management](../assets/operation_center/assets.gif)

@@ -11,7 +11,7 @@ On the alerts list, you can see in one look the following information.
 
 A toggle button allows a quick enablement/disablement of rules.
 
-![Rules List](/assets/operation_center/rule_list.gif)
+![Rules List](../assets/operation_center/rule_list.gif)
 
 ## Rule details
 
@@ -30,7 +30,7 @@ In the Alert properties part, you must indicate the category and type of the ale
 
 The alert generation mode affects the alert processing workflow. There are two generation modes: 'Automatic', for which the alerts passed to the status 'Ongoing' immediately after their creation, and 'Manual', for which the alerts remain in the 'Pending' status until a manual action. When selecting 'Inherit from entity', then the generation mode defined for each entity is used. When selecting a generation mode for an alert, it will override the entity's default value.
 
-![Rules Details](/assets/operation_center/rule_details.gif)
+![Rules Details](../assets/operation_center/rule_details.gif)
 
 !!! note
     Modification of rules parameters will be applied for new alerts, raised after the compilation of the rule.
@@ -49,7 +49,7 @@ STIX Patterns are composed of multiple building blocks, ranging from simple key-
 
 Observation Expressions are contained in square brackets [ ... ] and may consist of one or more Comparison Expressions joined by Boolean Operators. Observation Expressions may be followed by one or more Qualifiers, which allow for the expression of further restrictions on the set of data matching the pattern. The final, highest level building block of STIX Patterning combines two or more Object Expressions via Observation Operators, yielding a STIX Pattern capable of matching across multiple STIX Observed Data SDOs.
 
-![STIX Patterning](/assets/operation_center/stix_patterning.png)
+![STIX Patterning](../assets/operation_center/stix_patterning.png)
 
 !!! note
     When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression _MUST_ start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the `<object-type>:<property_name>` _MUST_ start from the same SCO. Different SCOs may ultimately be used in matching, but they MUST be referenced from the same, single SCO.

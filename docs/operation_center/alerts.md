@@ -6,10 +6,10 @@ When you first connect to SEKOIA.IO, alerts list is filtered and will diplay 'Ne
 
 On this screen, you can view the following information:
 
-- Alert Id, begin with AL followed by 10 alphanumeric characters. On the top right of the ID box, there may be an yellow round with a number, it's the similarity counter. 
+- Alert Id, begin with AL followed by 10 alphanumeric characters. On the top right of the ID box, there may be an yellow round with a number, it's the similarity counter.
 - Alert creation date
 - Alert status. When hovering over the icon, a frame indicates the status modification date and who modified it.
-- The entity to which the alert corresponds 
+- The entity to which the alert corresponds
 - Urgency of the alert, between 0 and 100, 100 being the highest.
 - The category and sub-category of alerts
 - The name of the rule which triggered the alert
@@ -17,7 +17,7 @@ On this screen, you can view the following information:
 
 Alerts can be filtered by two ways: a rapid filter on the top left of the list and a list of cumulative filtering criteria on the top right of the screen.
 
-![Alert List](/assets/operation_center/alert_list.gif)
+![Alert List](../assets/operation_center/alert_list.gif)
 
 ## Alert Details
 
@@ -30,7 +30,7 @@ Tab with a sticking plaster icon will display proposed countermeasures linked to
 By confirming a countermeasures, you indicate to the platform that you have undertaken the corresponding action on your system. The urgency of the alert will thereby decrease, as well as the risk indicator.
 Countermeasures are in OpenC2 format, which you can visualize by clicking on the '<>' icon.
 
-![Alert Details](/assets/operation_center/alert_detail.gif)
+![Alert Details](../assets/operation_center/alert_detail.gif)
 
 ### Alert statuses and lifecycle
 
@@ -42,13 +42,13 @@ There is five possible statuses for an alert:
 - **Closed**: Every necessary actions have been applied for the alert. This status is a final status, no action accepted.
 - **Rejected**: The alert was a false positive. This status is a final status, no action accepted.
 
-![Alert Workflow](/assets/operation_center/alert_workflow.png)
+![Alert Workflow](../assets/operation_center/alert_workflow.png)
 
 ### Alert Urgency
 
 The Urgency is a number used to give a score to the risk associated with a specific alert. It is calculated from the severity of a rule and the criticality of assets related to the alert.
 This gives a value between 1 (very low risk) and 100 (very high risk).
-The urgency is provided under two different representations on alert detail: a numerical and a textual representation. 
+The urgency is provided under two different representations on alert detail: a numerical and a textual representation.
 
 |Display     |Value       |
 |:----------:|:----------:|
@@ -131,5 +131,3 @@ The Alert Type is defined according to a custom set of values derived from theRe
 	- other
 - test
 	- test
-
-

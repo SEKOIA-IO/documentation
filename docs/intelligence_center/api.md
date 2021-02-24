@@ -34,7 +34,7 @@ The special feed ID to use is `d6092c37-d8d7-45c3-8aff-c4dc26030608`.
 
 The easiest way to create feed configurations is to use the Intelligence Center interface, by clicking on `Feeds` in the left menu. The dropdown next to the feed's name will allow you to copy the ID or the consumption URLs of the feed.
 
-![SEKOIA.IO Intelligence Center Feeds](/assets/intelligence_center/feeds.png){: style="width: 100%; max-width: 100%"}
+![SEKOIA.IO Intelligence Center Feeds](../assets/intelligence_center/feeds.png){: style="width: 100%; max-width: 100%"}
 
 If you would prefer creating the feed with the API, you can use the [feeds](https://docs.sekoia.io/api/threat%20intelligence%20database#operation/post_feeds_resource) endpoint.
 

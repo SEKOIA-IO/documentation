@@ -9,5 +9,4 @@ Information that will be copied in a new rule are:
 - Type of the alert that will be triggered by the corresponding rules
 - Severity of the rule
 
-![Rule Templates](/assets/operation_center/rule_templates.gif)
-
+![Rule Templates](../assets/operation_center/rule_templates.gif)
