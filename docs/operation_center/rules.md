@@ -51,6 +51,16 @@ Observation Expressions are contained in square brackets [ ... ] and may consist
 
 ![STIX Patterning](/assets/operation_center/stix_patterning.png)
 
+!!! note
+    When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression MUST start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the <object-type>:<property_name> MUST start from the same SCO.  Different SCO's may ultimately be used in matching, but they MUST be referenced from the same, single SCO.
+An Observation Expression MAY contain Comparison Expressions with Object Paths that start with different object types, but such Comparison Expressions MUST be joined by OR. **The Comparison Expressions of an Observation Expression that use AND MUST use the same base Object Path**.
+	
+!!! note
+    Regarding the use of regular expressions in STIX Patterning rules, it is necessary to escape the "\". Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:
+```
+[ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
+```
+
 For more information about STIX and STIX Patterning, please refers to the OASIS STIX specification [here](http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).
 
 ## Observed Data
