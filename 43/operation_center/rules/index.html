@@ -1557,7 +1557,7 @@
 <p>Regarding the use of regular expressions (<code>MATCHES</code> keyword) in STIX Patterning rules, it is necessary to escape the “<code>\</code>”. Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:</p>
 <p><code>[ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']</code></p>
 </div>
-<p>For more information about STIX and STIX Patterning, please refers to the [OASIS STIX Patterning specification(http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).</p>
+<p>For more information about STIX and STIX Patterning, please refers to the <a href="http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html">OASIS STIX Patterning specification</a>.</p>
 <h2 id="observed-data">Observed Data</h2>
 <p>In order to trigger alerts, rule patterns must match with Observed Data. An "Observed Data" is the internal representation of any collected event in SEKOIA.IO. All events are normalized into a JSON object compliant with the STIX Observed Data specification. Detection rules are applied on events in STIX Observed Data format.</p>
 <p>Here is an example of an Observed Data that could be obtained from a squid event:</p>
