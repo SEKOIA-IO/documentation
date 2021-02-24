@@ -1549,18 +1549,15 @@
 <p><img alt="STIX Patterning" src="/assets/operation_center/stix_patterning.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression MUST start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the <object-type>:<property_name> MUST start from the same SCO.  Different SCO's may ultimately be used in matching, but they MUST be referenced from the same, single SCO.</p>
+<p>When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression <em>MUST</em> start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the <code>&lt;object-type&gt;:&lt;property_name&gt;</code> <em>MUST</em> start from the same SCO. Different SCOs may ultimately be used in matching, but they MUST be referenced from the same, single SCO.</p>
+<p>An Observation Expression <em>MAY</em> contain Comparison Expressions with Object Paths that start with different object types, but such Comparison Expressions <em>MUST</em> be joined by <code>OR</code>. <strong>The Comparison Expressions of an Observation Expression that use <code>AND</code> MUST use the same base Object Path</strong>.</p>
 </div>
-<p>An Observation Expression MAY contain Comparison Expressions with Object Paths that start with different object types, but such Comparison Expressions MUST be joined by OR. <strong>The Comparison Expressions of an Observation Expression that use AND MUST use the same base Object Path</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Regarding the use of regular expressions in STIX Patterning rules, it is necessary to escape the "\". Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:</p>
+<p>Regarding the use of regular expressions (<code>MATCHES</code> keyword) in STIX Patterning rules, it is necessary to escape the “<code>\</code>”. Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:</p>
+<p><code>[ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']</code></p>
 </div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">[ipv4-addr:x_tags[*].name MATCHES &#39;^country:(?!FR)\\w+&#39;]</span>
-</pre></div>
-</td></tr></table>
-
-<p>For more information about STIX and STIX Patterning, please refers to the OASIS STIX specification <a href="http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html">here</a>.</p>
+<p>For more information about STIX and STIX Patterning, please refers to the [OASIS STIX Patterning specification(http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).</p>
 <h2 id="observed-data">Observed Data</h2>
 <p>In order to trigger alerts, rule patterns must match with Observed Data. An "Observed Data" is the internal representation of any collected event in SEKOIA.IO. All events are normalized into a JSON object compliant with the STIX Observed Data specification. Detection rules are applied on events in STIX Observed Data format.</p>
 <p>Here is an example of an Observed Data that could be obtained from a squid event:</p>
@@ -1605,72 +1602,72 @@
 39
 40
 41
-42</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>  
-    <span class="nt">&quot;x_sic_entity_by_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;identity--d6358bb4-d9bb-47aa-b074-c6d1aeb673e2&quot;</span><span class="p">,</span>  
-    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:42.971Z&quot;</span><span class="p">,</span>  
-    <span class="nt">&quot;objects&quot;</span><span class="p">:</span> <span class="p">{</span>    
-        <span class="nt">&quot;0&quot;</span><span class="p">:</span> <span class="p">{</span>      
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>    
-        <span class="p">},</span>    
-        <span class="nt">&quot;1&quot;</span><span class="p">:</span> <span class="p">{</span>      
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;216.58.215.48&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>    
-        <span class="p">},</span>    
-        <span class="nt">&quot;2&quot;</span><span class="p">:</span> <span class="p">{</span>      
-            <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;network-traffic&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>        
-                <span class="nt">&quot;http-request-ext&quot;</span><span class="p">:</span> <span class="p">{</span>          
-                    <span class="nt">&quot;request_header&quot;</span><span class="p">:</span> <span class="p">{</span>            
-                        <span class="nt">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/xml&quot;</span>          
+42</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;x_sic_entity_by_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;identity--d6358bb4-d9bb-47aa-b074-c6d1aeb673e2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:42.971Z&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;objects&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;0&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;1&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;216.58.215.48&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;2&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;network-traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;http-request-ext&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;request_header&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/xml&quot;</span>
                     <span class="p">},</span>
-                    <span class="nt">&quot;request_method&quot;</span><span class="p">:</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">,</span>          
-                    <span class="nt">&quot;request_value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://216.58.215.48/&quot;</span>        
-                <span class="p">}</span>      
-            <span class="p">},</span>      
-            <span class="nt">&quot;src_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;dst_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;protocols&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;ipv4&quot;</span> <span class="p">]</span>    
-        <span class="p">},</span> 
-        <span class="nt">&quot;3&quot;</span><span class="p">:</span> <span class="p">{</span>      
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;user-account&quot;</span><span class="p">,</span>      
-            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>        
-                <span class="nt">&quot;x-log&quot;</span><span class="p">:</span> <span class="p">{</span>          
-                    <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;DESKTOP-UPU7IFP&quot;</span>        
-                <span class="p">}</span>      
-            <span class="p">}</span>      
-        <span class="p">}</span>  
-    <span class="p">},</span>  
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;observed-data&quot;</span><span class="p">,</span>  
+                    <span class="nt">&quot;request_method&quot;</span><span class="p">:</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;request_value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://216.58.215.48/&quot;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;src_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dst_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;protocols&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;ipv4&quot;</span> <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;3&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;user-account&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;x-log&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;DESKTOP-UPU7IFP&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;observed-data&quot;</span><span class="p">,</span>
     <span class="err">...</span>
-    <span class="nt">&quot;x_event_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span> 
+    <span class="nt">&quot;x_event_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
 <p>The JSON object has a type of <strong>observed-data</strong> and is composed by smaller objects following another STIX specification: <strong>Cyber Observables</strong>.</p>
-<p>The main observable is the third one, with a type of network-traffic. It has references to indicate the source of the packet (src_ref - 127.0.0.1) and its destination (dst_ref - 216.58.215.48).</p>
+<p>The main observable is the third one, with a type of network-traffic. It has references to indicate the source of the packet (<code>src_ref</code> - <code>127.0.0.1</code>) and its destination (<code>dst_ref</code> - <code>216.58.215.48</code>).</p>
 <p>These information can be used to construct correlation rules. Below, a non-exhaustive list of information which can be used in your rules:</p>
 <ul>
-<li>ipv4-addr:value</li>
-<li>ipv6-addr:value</li>
-<li>domain-name:value</li>
-<li>url:value</li>
-<li>network-traffic:dst_port</li>
-<li>network-traffic:src_port</li>
-<li>network-traffic:dst_packets</li>
-<li>network-traffic:src_packets</li>
-<li>network-traffic:dst_ref.value (corresponding to IP value, in the above example, network-traffic:dst_ref refers to object 0, which has a value of '127.0.0.1')</li>
-<li>network-traffic:src_ref.value</li>
-<li>network-traffic:extensions.'http-request-ext'.request_value</li>
-<li>network-traffic:protocols[*]</li>
-<li>process:pid</li>
-<li>process:name</li>
-<li>process:command_line</li>
-<li>file:hashes.md5</li>
-<li>user-account:account_login</li>
+<li><code>ipv4-addr:value</code></li>
+<li><code>ipv6-addr:value</code></li>
+<li><code>domain-name:value</code></li>
+<li><code>url:value</code></li>
+<li><code>network-traffic:dst_port</code></li>
+<li><code>network-traffic:src_port</code></li>
+<li><code>network-traffic:dst_packets</code></li>
+<li><code>network-traffic:src_packets</code></li>
+<li><code>network-traffic:dst_ref.value</code> (corresponding to IP value, in the above example, network-traffic:dst_ref refers to object 0, which has a value of '127.0.0.1')</li>
+<li><code>network-traffic:src_ref.value</code></li>
+<li><code>network-traffic:extensions.'http-request-ext'.request_value</code></li>
+<li><code>network-traffic:protocols[*]</code></li>
+<li><code>process:pid</code></li>
+<li><code>process:name</code></li>
+<li><code>process:command_line</code></li>
+<li><code>file:hashes.md5</code></li>
+<li><code>user-account:account_login</code></li>
 </ul>
                 
                   
