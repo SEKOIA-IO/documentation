@@ -1560,7 +1560,7 @@
 <li>The total numbers of alerts raised and rejected during the past 7 days for each rule.</li>
 </ul>
 <p>A toggle button allows a quick enablement/disablement of rules.</p>
-<p><img alt="Rules List" src="/assets/operation_center/rule_list.gif" /></p>
+<p><img alt="Rules List" src="../../assets/operation_center/rule_list.gif" /></p>
 <h2 id="rule-details">Rule details</h2>
 <p>On top of the details of a rule, you can see when it was last updated and by who. The name of the rule will be used to name the corresponding raised alerts by default.</p>
 <p>Detection rules can be applied to all events, whatever the entity to which they are attached or the assets to which they can be linked, or applied only to some of them. If 'Using all entities' and 'Using all assets' are selected, rules will apply to all events even if new entites or new assets were added since last rule modification. For rules for which some entities or some assets were selected, if new entities or new assets are created, detection will not occur on corresponding events whithout rule modification.</p>
@@ -1572,7 +1572,7 @@
 <p>Alert filters are used to avoid triggering alerts even if the events match the rule. Events that match the signature rule AND the alert filter criteria won't lead to the raising of an alert. Exclusion patterns are written in STIX patterning, like rules.</p>
 <p>In the Alert properties part, you must indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.</p>
 <p>The alert generation mode affects the alert processing workflow. There are two generation modes: 'Automatic', for which the alerts passed to the status 'Ongoing' immediately after their creation, and 'Manual', for which the alerts remain in the 'Pending' status until a manual action. When selecting 'Inherit from entity', then the generation mode defined for each entity is used. When selecting a generation mode for an alert, it will override the entity's default value.</p>
-<p><img alt="Rules Details" src="/assets/operation_center/rule_details.gif" /></p>
+<p><img alt="Rules Details" src="../../assets/operation_center/rule_details.gif" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Modification of rules parameters will be applied for new alerts, raised after the compilation of the rule.</p>
@@ -1586,7 +1586,7 @@
 </td></tr></table>
 
 <p>Observation Expressions are contained in square brackets [ ... ] and may consist of one or more Comparison Expressions joined by Boolean Operators. Observation Expressions may be followed by one or more Qualifiers, which allow for the expression of further restrictions on the set of data matching the pattern. The final, highest level building block of STIX Patterning combines two or more Object Expressions via Observation Operators, yielding a STIX Pattern capable of matching across multiple STIX Observed Data SDOs.</p>
-<p><img alt="STIX Patterning" src="/assets/operation_center/stix_patterning.png" /></p>
+<p><img alt="STIX Patterning" src="../../assets/operation_center/stix_patterning.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression <em>MUST</em> start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the <code>&lt;object-type&gt;:&lt;property_name&gt;</code> <em>MUST</em> start from the same SCO. Different SCOs may ultimately be used in matching, but they MUST be referenced from the same, single SCO.</p>
