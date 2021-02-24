@@ -50,6 +50,7 @@ nav:
               - OpenSSH: integrations/openssh.md
               - PaloAlto: integrations/paloalto.md
               - Postfix: integrations/postfix.md
+              - Pulse Connect Secure: integrations/pulse.md
               - Sophos: integrations/sophos.md
               - SpamAssassin: integrations/spamassassin.md
               - Squid: integrations/squid.md
