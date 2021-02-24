@@ -1466,10 +1466,10 @@
 <p>The Operation Center now has a new feature called “Case Management”, allowing information relating to security records to be shared. A “case” consists of a title, description, severity, and may be associated with alerts from the Operation Center.</p>
 <p>A “case” has a lifecycle (currently, open or closed) and can be assigned to one or more people.
 This feature allows, for example, a security supervision team to escalate alerts to another team for clarification or to group alerts that seem related to facilitate analysis.</p>
-<p><img alt="New case creation form" src="/assets/release-20200910/oc_case_mgmt_edit.png" /></p>
+<p><img alt="New case creation form" src="../../assets/release-20200910/oc_case_mgmt_edit.png" /></p>
 <p>“Case Management” replaces the old “incident” management mechanism. Among the many changes, we can mention the possibility of defining tags, assigning a case to one or more members of its community, adding comments or even associating alerts with a “case”. Finally, the syntax of the description of a “case” has been changed to use the Markdown language (with a graphical editor in the Operation Center).</p>
 <p>Old “incidents” have been converted to “cases”. The switch to the use of “cases” is completely transparent, access to old “incidents” is automatically redirected to the new implementation.</p>
-<p><img alt="Navigation in a Case" src="/assets/release-20200910/oc_case_mgmt_nav.gif" /></p>
+<p><img alt="Navigation in a Case" src="../../assets/release-20200910/oc_case_mgmt_nav.gif" /></p>
 <h2 id="consultation-of-events-redesign-of-the-page">Consultation of events: redesign of the page</h2>
 <p>The page for viewing community events sent to SEKOIA.IO has been completely redesigned. It becomes more adaptable and more functional. This is the first work here, other improvements to this page will come later (search in longer periods, complex searches, etc.).</p>
 <h2 id="events-table">Events table</h2>
@@ -1480,7 +1480,7 @@ This feature allows, for example, a security supervision team to escalate alerts
 <li>Extension of an event and thus display it in ECS, STIX or raw format;</li>
 <li>Adding a filter on events from a table cell.</li>
 </ul>
-<p><img alt="Events page navigation" src="/assets/release-20200910/oc_events_nav.gif" /></p>
+<p><img alt="Events page navigation" src="../../assets/release-20200910/oc_events_nav.gif" /></p>
 <h2 id="search-in-events">Search in events</h2>
 <p>Search fields in events now follow the "ECS" standard (Elastic Common Schema). Thus, to search for events with source IP address <code>127.0.0.1</code>, enter <code>source.ip: "127.0.0.1"</code> (and no longer <code>source: "127.0.0.1"</code>). This change provides access to more fields of events stored in Elasticsearch.</p>
 <p>So to perform a search (admittedly useless) for DNS type events that requested the IPv6 address associated with <code>google.com</code>, we can use the following Dork query:</p>
@@ -1489,16 +1489,16 @@ This feature allows, for example, a security supervision team to escalate alerts
 </td></tr></table>
 
 <p>A simple search creation wizard has also been added. It allows you to create rules even without knowing the Dork syntax, used on SEKOIA.IO.</p>
-<p><img alt="Events search filter" src="/assets/release-20200910/oc_events_add_filter.gif" /></p>
+<p><img alt="Events search filter" src="../../assets/release-20200910/oc_events_add_filter.gif" /></p>
 <h2 id="saving-searches">Saving searches</h2>
 <p>The new form now offers the possibility of saving searches and finding them easily.</p>
 <p>The backup is currently performed within the web browser, so it will not be possible to access the saved searches from another machine.</p>
-<p><img alt="Saved searches" src="/assets/release-20200910/oc_events_saved_search.gif" /></p>
+<p><img alt="Saved searches" src="../../assets/release-20200910/oc_events_saved_search.gif" /></p>
 <h2 id="sekoiaio-documentation">SEKOIA.IO documentation</h2>
 <p>The code from the <a href="https://docs.sekoia.io/">SEKOIA.IO documentation</a> has been moved to a public space hosted on GitHub. Now it is possible for anyone to suggest changes to the documentation very easily, by clicking on the pen icon.</p>
 <p>Many help topics for using SEKOIA.IO have also been added to the documentation.</p>
 <p>You can of course always send us your comments and expectations with regard to this documentation, by emailing <a href="mailto:support@sekoia.io">support</a>.</p>
-<p><img alt="SEKOIA.IO documentation" src="/assets/release-20200910/docs_create_pr.gif" /></p>
+<p><img alt="SEKOIA.IO documentation" src="../../assets/release-20200910/docs_create_pr.gif" /></p>
                 
                   
                 
