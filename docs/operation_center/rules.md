@@ -11,7 +11,7 @@ On the alerts list, you can see in one look the following information.
 
 A toggle button allows a quick enablement/disablement of rules.
 
-![Rules List](/assets/operation_center/rule_list.gif)
+![Rules List](../assets/operation_center/rule_list.gif)
 
 ## Rule details
 
@@ -30,7 +30,7 @@ In the Alert properties part, you must indicate the category and type of the ale
 
 The alert generation mode affects the alert processing workflow. There are two generation modes: 'Automatic', for which the alerts passed to the status 'Ongoing' immediately after their creation, and 'Manual', for which the alerts remain in the 'Pending' status until a manual action. When selecting 'Inherit from entity', then the generation mode defined for each entity is used. When selecting a generation mode for an alert, it will override the entity's default value.
 
-![Rules Details](/assets/operation_center/rule_details.gif)
+![Rules Details](../assets/operation_center/rule_details.gif)
 
 !!! note
     Modification of rules parameters will be applied for new alerts, raised after the compilation of the rule.
@@ -49,7 +49,7 @@ STIX Patterns are composed of multiple building blocks, ranging from simple key-
 
 Observation Expressions are contained in square brackets [ ... ] and may consist of one or more Comparison Expressions joined by Boolean Operators. Observation Expressions may be followed by one or more Qualifiers, which allow for the expression of further restrictions on the set of data matching the pattern. The final, highest level building block of STIX Patterning combines two or more Object Expressions via Observation Operators, yielding a STIX Pattern capable of matching across multiple STIX Observed Data SDOs.
 
-![STIX Patterning](/assets/operation_center/stix_patterning.png)
+![STIX Patterning](../assets/operation_center/stix_patterning.png)
 
 !!! note
     When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression _MUST_ start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the `<object-type>:<property_name>` _MUST_ start from the same SCO. Different SCOs may ultimately be used in matching, but they MUST be referenced from the same, single SCO.
@@ -64,6 +64,62 @@ Observation Expressions are contained in square brackets [ ... ] and may consist
     ```
 
 For more information about STIX and STIX Patterning, please refers to the [OASIS STIX Patterning specification](http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).
+
+### How to Validate STIX Patterning Rule’s Syntax
+
+SEKOIA.IO checks the syntax of submitted rules and reports errors to the “rules” interface.
+
+In order to validate your rule’s syntax, you can also use an open source tool called [`stix2-patterns`][stix2-pattern-github]. This tool is part of the official tools developed by the OASIS Technical Committee.
+
+Here’s an example on how to use that tool. These commands should be executed in a shell.
+
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install stix2-patterns
+$ validate-patterns
+Enter a pattern to validate: [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
+
+PASS: [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
+```
+
+In this example, we are trying to validate a STIX Patterning rule that contains a regular expression (`MATCHES`). This rule is considered valid and can be submitted to SEKOIA.IO.
+
+[stix2-pattern-github]: https://github.com/oasis-open/cti-pattern-validator
+
+### How to Test STIX Patterning Rules?
+
+When one creates a rule in SEKOIA.IO, this one is automatically validated and applied to incoming traffic.
+
+In order to test your STIX Patterning rules, you can use an open source tool, called [`stix2-matcher`][stix2-matcher-github]. This tool is part of the official tools developed by the OASIS Technical Committee.
+
+First, you need to retrieve a STIX “bundle” from SEKOIA.IO. To do so, go to the “events” page, find the event you want to work on, and export the STIX representation of that event:
+
+![Export STIX Representation of an Event from SEKOIA.IO](../assets/operation_center/event_list_export_stix.png)
+
+Export that STIX “bundle” in a file, called, for example, `event.json`.
+
+Here’s an example on how to use that tool. These commands should be executed in a shell. We are also using [`jq`][jq] a tool that helps to manipulate JSON files.
+
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install stix2-matcher
+$ cat event.json | jq '.objects[] | select( .type | contains("observed-data") )' > observed-data.json
+$ cat << EOF >| patterns
+[ipv4-addr:value = '246.127.189.32']
+[x-dns-traffic:extensions.'x-log'.hostname = 'hostname']
+EOF
+$ stix2-matcher -f observed-data.json -p patterns
+
+MATCH:  [ipv4-addr:value = '246.127.189.32']
+
+MATCH:  [x-dns-traffic:extensions.'x-log'.hostname = 'hostname']
+
+```
+
+[stix2-matcher-github]: https://github.com/oasis-open/cti-pattern-matcher
+[jq]: https://stedolan.github.io/jq/
 
 ## Observed Data
 

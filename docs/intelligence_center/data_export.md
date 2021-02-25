@@ -9,4 +9,4 @@ The export modal lets you to select:
 
 The CSV format will convert some values (such as the TLP, sources and kill chain phases) to a human-readable format instead of IDs.
 
-![Data Export](/assets/intelligence_center/data_export.gif){: style="width: 100%; max-width: 100%"}
+![Data Export](../assets/intelligence_center/data_export.gif){: style="width: 100%; max-width: 100%"}

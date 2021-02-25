@@ -6,5 +6,4 @@ A case has a lifecycle (currently, open or closed) and can be assigned to one or
 
 This feature allows, for example, a security supervision team to escalate alerts to another team for clarification or to group alerts that seem related to facilitate analysis.
 
-![Cases management](/assets/operation_center/cases.gif)
-
+![Cases management](../assets/operation_center/cases.gif)

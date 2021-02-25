@@ -23,7 +23,7 @@ The Intelligence Center supports the following STIX Domain Objects:
 
 One of the founding principle of the Intelligence Center is the consolidation of information coming from several sources.
 
-![SEKOIA.IO Intelligence Center External Sources](/assets/intelligence_center/sources.png){: style="width: 100%; max-width: 100%"}
+![SEKOIA.IO Intelligence Center External Sources](../assets/intelligence_center/sources.png){: style="width: 100%; max-width: 100%"}
 
 Sources are represented in STIX by `Identity` objects.
 
@@ -52,7 +52,7 @@ As an exemple, here are parts of the `Spearphishing Link` object presented in th
 
 STIX 2.1 adds an optional `confidence` field for an object creator to express how confident (s)he is about the information.
 
-![SEKOIA.IO Intelligence Center Confidence](/assets/intelligence_center/confidence.png)
+![SEKOIA.IO Intelligence Center Confidence](../assets/intelligence_center/confidence.png)
 
 The Intelligence Center uses the `confidence` field in two ways:
 

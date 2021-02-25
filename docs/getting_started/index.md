@@ -5,7 +5,7 @@
 SEKOIA.IO architecture couples the generation and operation of Threat Intelligence dynamic databases to a set of functions for analysis, guidance and treatment.
 This technology brings together automation, sharing of indicators and implementation of playbooks to treat, on a large scale and in real time, the flows exchanged and data from other tools already deployed on the networks (internal security logs).
 
-![SEKOIA.IO General Scheme](/assets/operation_center/general_scheme.png){: style="width: 50%; max-width: 50%"}
+![SEKOIA.IO General Scheme](../assets/operation_center/general_scheme.png){: style="width: 50%; max-width: 50%"}
 
 There are two main parts in SEKOIA.IO:
 

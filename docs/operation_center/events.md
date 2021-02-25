@@ -4,5 +4,4 @@ The events page diplays a list of latest events received by SEKOIA.IO. You can s
 
 On the event page, you can access the raw format of your events, as received by SEKOIA.IO and the STIX format in which it is transformed.
 
-![Event Page](/assets/operation_center/events.gif)
-
+![Event Page](../assets/operation_center/events.gif)
