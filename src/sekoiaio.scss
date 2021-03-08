@@ -69,6 +69,10 @@ a.current {
         margin-left: auto;
         margin-right: auto;
         padding: 0;
+        
+        .md-flex__cell {
+            vertical-align: middle;
+        }
     }
 
     .md-logo {
