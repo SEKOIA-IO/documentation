@@ -6,7 +6,7 @@ We recommand to centralise them on a dedicated server: the Rsyslog.
 
 ## Prerequisite
 The following prerequisite are needed in order to setup efficient rsyslog:
-- Have administrator writes of the Debian server: root.
+- Have administrator privileges of the Debian server: `root`.
 - Inbound traffic from the equipments to the Rsyslog must be open on `TCP 514`
 - Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for intake.sekoia.io is 145.239.192.38)
 
