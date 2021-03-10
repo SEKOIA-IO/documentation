@@ -24,7 +24,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 In order to help users setting up this concentrator we suggest the following bash script working for Ubuntu or Debian server.
 
 It will automatically configure you Rsyslog server to collect and forward Windows Event logs.
-`Sudo` must be installed and set-up for the current user.
+`sudo` must be installed and set-up for the current user.
 
 > Before, connect to SEKOIA.IO Operation Center, add a Windows Intake to the relevant Entity, and note the Intake Key
 
