@@ -33,7 +33,7 @@ It will automatically configure you Rsyslog server to collect and forward Window
 ##### This file is used to automate the Rsyslog setup
 
 # Install service and dependances
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 sudo apt install rsyslog rsyslog-gnutls wget -f -y
 
 ### Create a dedicated Rsyslog configuration file
