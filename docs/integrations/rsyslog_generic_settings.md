@@ -144,7 +144,7 @@ input(type="imudp" port="514")
 ```
 
 ### Local messages
-Ensure the logs are received on the Rsyslog, meaning:
+Ensure the logs are received on the Rsyslog server, meaning:
 - Configurations are correctly undertaken on the remote equipements
 - Internal network flows are open on `TCP 514`
 
