@@ -1,7 +1,7 @@
 # Rsyslog set-up and troubleshoot
 
 ## Overview
-Many technologies or agents allows the forwarding of their logs with syslog protocol.
+Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
 We recommand to centralise them on a dedicated server: the Rsyslog.
 
 ## Prerequisite
