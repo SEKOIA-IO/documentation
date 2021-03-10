@@ -1408,8 +1408,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisite" class="md-nav__link">
-    Prerequisite
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
@@ -1485,8 +1485,8 @@
 <h2 id="overview">Overview</h2>
 <p>Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
 We recommand to centralise them on a dedicated server: the Rsyslog.</p>
-<h2 id="prerequisite">Prerequisite</h2>
-<p>The following prerequisite are needed in order to setup efficient rsyslog:
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The following prerequisites are needed in order to setup efficient Rsyslog:
 - Have administrator privileges of the Debian server: <code>root</code>.
 - Inbound traffic from the equipments to the Rsyslog must be open on <code>TCP 514</code>
 - Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on <code>TCP 10514</code> (IP for <code>intake.sekoia.io</code> is <code>145.239.192.38</code>)</p>
@@ -1504,7 +1504,7 @@ We recommand to centralise them on a dedicated server: the Rsyslog.</p>
 <p>It will automatically configure you Rsyslog server to collect and forward Windows Event logs.
 <code>Sudo</code> must be installed and set-up for the current user.</p>
 <blockquote>
-<p>Before, connecte to SEKOIA.IO Operation Center, add a Windows Intake to the relevant Entity, and note the Intake Key</p>
+<p>Before, connect to SEKOIA.IO Operation Center, add a Windows Intake to the relevant Entity, and note the Intake Key</p>
 </blockquote>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1579,17 +1579,17 @@ We recommand to centralise them on a dedicated server: the Rsyslog.</p>
 71
 72
 73</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">##### This file is used to automate the rsyslog setup</span>
+<span class="c1">##### This file is used to automate the Rsyslog setup</span>
 
 <span class="c1"># Install service and dependances</span>
 sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y
 sudo apt install rsyslog rsyslog-gnutls wget -f -y
 
-<span class="c1">### Create a deidcated Rsyslog configuration file</span>
+<span class="c1">### Create a dedicated Rsyslog configuration file</span>
 <span class="nv">RsyslogConfFile</span><span class="o">=</span><span class="s2">&quot;/etc/rsyslog.conf&quot;</span>
 
 sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$RsyslogConfFile</span>
-<span class="s"># /etc/rsyslog.conf configuration file for rsyslog</span>
+<span class="s"># /etc/rsyslog.conf configuration file for Rsyslog</span>
 <span class="s">module(load=&quot;imuxsock&quot;) # provides support for local system logging</span>
 <span class="s">module(load=&quot;imklog&quot;)   # provides kernel logging support</span>
 
@@ -1625,7 +1625,7 @@ sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$RsyslogConfFile</span>
 <span class="s">*.*;auth,authpriv.none          -/var/log/syslog</span>
 <span class="s">EOM</span>
 
-<span class="c1">### Create a deidcated Windows configuration file</span>
+<span class="c1">### Create a dedicated Windows configuration file</span>
 <span class="nv">WindowsFile</span><span class="o">=</span><span class="s2">&quot;/etc/rsyslog.d/15-windows.conf&quot;</span>
 
 sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$WindowsFile</span>
@@ -1649,7 +1649,7 @@ sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$WindowsFile</span>
 <span class="s">}</span>
 <span class="s">EOM</span>
 
-<span class="c1"># Collect the Sekoia Key for encruption between Rsyslog and Sekoia.io</span>
+<span class="c1"># Collect the Sekoia Key for encryption between Rsyslog and Sekoia.io</span>
 sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
 </td></tr></table>
@@ -1672,9 +1672,9 @@ sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/fi
 </td></tr></table>
 
 <h2 id="troubleshoot">Troubleshoot</h2>
-<p>After setting up your rsyslog, you may face issues due to contextyal environment or error during copy pasting.</p>
+<p>After setting up your Rsyslog, you may face issues due to contextual environment or error during copy pasting.</p>
 <h3 id="rsyslog-daemon">Rsyslog daemon</h3>
-<p>Ensure the rsyslog service is currrently running on the server</p>
+<p>Ensure the Rsyslog service is currrently running on the server</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ps -A <span class="p">|</span> grep rsyslog 
 </pre></div>
 </td></tr></table>
@@ -1711,12 +1711,12 @@ input<span class="o">(</span><span class="nv">type</span><span class="o">=</span
 </td></tr></table>
 
 <h3 id="forwarded-messages-to-sekoiaio">Forwarded messages to SEKOIA.IO</h3>
-<p>Ensure the connexion is <code>ESTABLISHED</code> between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:</p>
+<p>Ensure the connection is <code>ESTABLISHED</code> between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo ss -ltp <span class="p">|</span> grep syslog 
 </pre></div>
 </td></tr></table>
 
-<p>If the connexion is not established, and the previous status are operational, it is possible that a file <code>xx-&lt;technology&gt;.conf</code> has a typography.
+<p>If the connection is not established, and the previous statuses are operational, it is possible that a file <code>xx-&lt;technology&gt;.conf</code> has a mistyping.
 By experience, most of the time there is a misconfiguration in the <code>IF</code> condition.</p>
 <p>For example, if you receive the Fortigate logs in <code>/var/log/syslog</code> but not in SEKOIA.IO, you can follow those steps:
 - First try to log the raw events to a local file, by appending the following line in the configuration file:</p>
