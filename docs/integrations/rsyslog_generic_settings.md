@@ -168,7 +168,7 @@ For example, if you receive the Fortigate logs in `/var/log/syslog` but not in S
 *.* then /tmp/fortigate.log;SEKOIAIOFortigateTemplate
 ```
 
-- Restart the rsyslog service
+- Restart the Rsyslog service
 ```bash
 sudo systemctl restart rsyslog.service
 ```
