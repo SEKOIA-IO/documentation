@@ -916,7 +916,7 @@
         
           <li class="md-nav__item">
   <a href="#restart-rsyslog" class="md-nav__link">
-    Restart rsyslog
+    Restart Rsyslog
   </a>
   
 </li>
@@ -1633,7 +1633,7 @@
         
           <li class="md-nav__item">
   <a href="#restart-rsyslog" class="md-nav__link">
-    Restart rsyslog
+    Restart Rsyslog
   </a>
   
 </li>
@@ -1705,7 +1705,7 @@
 - Url-Filtering</p>
 <h2 id="ii-transport-to-the-concentrator">II] Transport to the concentrator</h2>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>The following prerequisite are needed in order to setup efficient log concentration:
+<p>The following prerequisites are needed in order to setup efficient log concentration:
 - Have administrator writes on the Fortigate
 - Traffic towards the Rsyslog must be open on <code>UDP 514</code></p>
 <h3 id="configure-fortigate">Configure Fortigate</h3>
@@ -1739,7 +1739,7 @@ end
 </pre></div>
 </td></tr></table>
 
-<p>With some Fortigate appliance it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the <code>Log Settings</code> menu. From there you can choose every logging options within <code>Event Logging</code> and <code>Local Traffic Log</code> except for the <code>Denied</code> options.</p>
+<p>With some Fortigate appliance, it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the <code>Log Settings</code> menu. From there you can choose every logging options within <code>Event Logging</code> and <code>Local Traffic Log</code> except for the <code>Denied</code> options.</p>
 <p>Then in order to use CEF format, use the following commands :</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1771,18 +1771,18 @@ input<span class="o">(</span><span class="nv">type</span><span class="o">=</span
 </td></tr></table>
 
 <h4 id="download-the-certificate">Download the certificate</h4>
-<p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
+<p>In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
 </td></tr></table>
 
 <h5 id="configure-the-rsyslog-server">Configure the Rsyslog server</h5>
-<p>Open or create a new fortigate configuration file for rsyslog:</p>
+<p>Open or create a new Fortigate configuration file for Rsyslog:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/rsyslog.d/12-fortigate.conf
 </pre></div>
 </td></tr></table>
 
-<p>Paste the following rsyslog configuration to trigger the emission of fortigate logs by your rsyslog server to SEKOIA.IO:</p>
+<p>Paste the following Rsyslog configuration to trigger the emission of Fortigate logs by your Rsyslog server to SEKOIA.IO:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1835,7 +1835,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 <p>In the above <code>template</code> instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key you can find in the Operation Center &gt; Configure &gt; Intakes
 And change the <code>YOUR_FORTIGATE_HOSTNAME</code> variable with the correct value.</p>
 </blockquote>
-<h5 id="restart-rsyslog">Restart rsyslog</h5>
+<h5 id="restart-rsyslog">Restart Rsyslog</h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl restart rsyslog.service
 </pre></div>
 </td></tr></table>
