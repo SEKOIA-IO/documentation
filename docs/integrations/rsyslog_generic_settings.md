@@ -159,7 +159,7 @@ Ensure the connexion is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO. 
 sudo ss -ltp | grep syslog 
 ```
 
-If the connexion is not establish, and the previous status are operational, it is possible that a file `xx-<technology>.conf` has a typography.
+If the connexion is not established, and the previous status are operational, it is possible that a file `xx-<technology>.conf` has a typography.
 By experience, most of the time there is a misconfiguration in the `IF` condition.
 
 For example, if you receive the fortigate logs in `/var/log/syslog` but not in the plateforme, you can follow those steps:
