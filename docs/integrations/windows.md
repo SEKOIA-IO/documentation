@@ -4,7 +4,7 @@ name: Windows
 ## Overview
 Microsoft Windows is a popular operating system developed by Microsoft since 1985.
 
-In this documenaton we will explain 2 ways to collect and send Windows logs to SEKOIA.IO.
+In this documenation we will explain 2 ways to collect and send Windows logs to SEKOIA.IO.
 - From the Windows machine directly to SEKOIA.IO using the NXLog agent 
 - From the Windows machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
@@ -14,7 +14,7 @@ In addition, this documentation will explain how to collect and send Windows log
 ## I] Windows Event logs
 
 On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
-- Application: for windows components such as drivers and built-in interface elements
+- Application: for Windows components such as drivers and built-in interface elements
 - System: records the events related to programs installed on a system
 - Security: records the events related to security, such as logon attempts and ressource access 
 
@@ -84,9 +84,9 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 </Route>
 ```
 
-> In the above configuration make sure to replace `RSYSLOG_HOST` variable by your rsyslog server IP.
+> In the above configuration make sure to replace `RSYSLOG_HOST` variable by your Rsyslog server IP.
 
-Restart the NXLog service through the Services tool as Administrator or use powershell command line: `Restart-Service nxlog`
+Restart the NXLog service through the Services tool as Administrator or use Powershell command line: `Restart-Service nxlog`
 
 ### 2. Windows Event Forwarder to Windows Event Collector to Rsyslog
 Most of the following commands are to be run as Administrator in a Powershell interpretor.
@@ -168,14 +168,14 @@ As Administrator, enter the following command:
 wecutil qc /q 
 ```
 
-##### Activate the subsciption to a zone
+##### Activate the subscription to a zone
 As Administrator, enter the following command:
 > Warning: please change the character `FILE_PATH`
 ```powershell
 wecutil cs "<FILE_PATH>\DC_SUBSCRIPTION.xml"
 ```
 
-##### Display the state of the subsciption to this zone
+##### Display the state of the subscription to this zone
 As Administrator, enter the following command:
 ```powershell
 wecutil gr DC_SUBSCRIPTION  
@@ -284,31 +284,31 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 </Route>
 ```
 
-Restart the NXLog service through the Services tool as Administrator or use powershell command line: `Restart-Service nxlog`
+Restart the NXLog service through the Services tool as Administrator or use PowerShell command line: `Restart-Service nxlog`
 
 ### 2. Configure the Rsyslog to forward to SEKOIA.IO
 
 #### Rsyslog prerequisites
-In order to allow the rsyslog to work properly, please ensure the following packages are installed:
+In order to allow the Rsyslog to work properly, please ensure the following packages are installed:
 
 ```bash
 sudo apt install rsyslog rsyslog-gnutls wget
 ```
 
 #### Download the certificate
-In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
+In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 ##### Configure the Rsyslog server
-Open or create a new windows configuration file for rsyslog:
+Open or create a new configuration file for Rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/15-windows.conf
 ```
 
-Paste the following rsyslog configuration to trigger the emission of windows logs by your rsyslog server to SEKOIA.IO:
+Paste the following Rsyslog configuration to trigger the emission of Windows logs by your Rsyslog server to SEKOIA.IO:
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
@@ -336,7 +336,7 @@ if ($syslogtag contains 'Microsoft-Windows') then {
 
 > In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
 
-##### Restart rsyslog
+##### Restart Rsyslog
 
 ```bash
 $ sudo systemctl restart rsyslog.service
