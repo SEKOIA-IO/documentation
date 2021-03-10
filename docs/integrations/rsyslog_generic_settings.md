@@ -127,7 +127,7 @@ Ensure the Rsyslog service is currrently running on the server
 ```bash
 ps -A | grep rsyslog 
 ```
-You should see a line with rsyslogd daemon. If not, try to restart the service:
+You should see a line with `rsyslogd` daemon. If not, try to restart the service:
 ```bash
 sudo systemctl restart rsyslog.service
 ```
