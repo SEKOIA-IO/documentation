@@ -4,8 +4,8 @@
 Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
 We recommand to centralise them on a dedicated server: the Rsyslog.
 
-## Prerequisite
-The following prerequisite are needed in order to setup efficient rsyslog:
+## Prerequisites
+The following prerequisites are needed in order to setup efficient Rsyslog:
 - Have administrator privileges of the Debian server: `root`.
 - Inbound traffic from the equipments to the Rsyslog must be open on `TCP 514`
 - Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`)
@@ -26,21 +26,21 @@ In order to help users setting up this concentrator we suggest the following bas
 It will automatically configure you Rsyslog server to collect and forward Windows Event logs.
 `Sudo` must be installed and set-up for the current user.
 
-> Before, connecte to SEKOIA.IO Operation Center, add a Windows Intake to the relevant Entity, and note the Intake Key
+> Before, connect to SEKOIA.IO Operation Center, add a Windows Intake to the relevant Entity, and note the Intake Key
 
 ```bash
 #!/bin/bash
-##### This file is used to automate the rsyslog setup
+##### This file is used to automate the Rsyslog setup
 
 # Install service and dependances
 sudo apt update && sudo apt upgrade -y
 sudo apt install rsyslog rsyslog-gnutls wget -f -y
 
-### Create a deidcated Rsyslog configuration file
+### Create a dedicated Rsyslog configuration file
 RsyslogConfFile="/etc/rsyslog.conf"
 
 sudo /bin/cat <<\EOM >$RsyslogConfFile
-# /etc/rsyslog.conf configuration file for rsyslog
+# /etc/rsyslog.conf configuration file for Rsyslog
 module(load="imuxsock") # provides support for local system logging
 module(load="imklog")   # provides kernel logging support
 
@@ -76,7 +76,7 @@ $IncludeConfig /etc/rsyslog.d/*.conf
 *.*;auth,authpriv.none          -/var/log/syslog
 EOM
 
-### Create a deidcated Windows configuration file
+### Create a dedicated Windows configuration file
 WindowsFile="/etc/rsyslog.d/15-windows.conf"
 
 sudo /bin/cat <<\EOM >$WindowsFile
@@ -100,7 +100,7 @@ if ($syslogtag contains 'Microsoft-Windows') then {
 }
 EOM
 
-# Collect the Sekoia Key for encruption between Rsyslog and Sekoia.io
+# Collect the Sekoia Key for encryption between Rsyslog and Sekoia.io
 sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
@@ -120,10 +120,10 @@ sudo systemctl restart rsyslog.service
 ```
 
 ## Troubleshoot
-After setting up your rsyslog, you may face issues due to contextyal environment or error during copy pasting.
+After setting up your Rsyslog, you may face issues due to contextual environment or error during copy pasting.
 
 ### Rsyslog daemon
-Ensure the rsyslog service is currrently running on the server
+Ensure the Rsyslog service is currrently running on the server
 ```bash
 ps -A | grep rsyslog 
 ```
@@ -154,12 +154,12 @@ tail -n 15 /var/log/syslog
 ``` 
 
 ### Forwarded messages to SEKOIA.IO
-Ensure the connexion is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:
+Ensure the connection is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:
 ```bash
 sudo ss -ltp | grep syslog 
 ```
 
-If the connexion is not established, and the previous status are operational, it is possible that a file `xx-<technology>.conf` has a typography.
+If the connection is not established, and the previous statuses are operational, it is possible that a file `xx-<technology>.conf` has a mistyping.
 By experience, most of the time there is a misconfiguration in the `IF` condition.
 
 For example, if you receive the Fortigate logs in `/var/log/syslog` but not in SEKOIA.IO, you can follow those steps:
