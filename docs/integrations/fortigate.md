@@ -5,7 +5,7 @@ name: fortigate
 
 The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. The firewalls run on the FortiOS operating system.
 
-In this documenaton we will explain one way to collect and send Fortigate logs to SEKOIA.IO.
+In this documentation we will explain one way to collect and send Fortigate logs to SEKOIA.IO.
 - From the Fortigate machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
 ## I] Fortigate logs
