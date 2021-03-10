@@ -162,7 +162,7 @@ sudo ss -ltp | grep syslog
 If the connexion is not established, and the previous status are operational, it is possible that a file `xx-<technology>.conf` has a typography.
 By experience, most of the time there is a misconfiguration in the `IF` condition.
 
-For example, if you receive the fortigate logs in `/var/log/syslog` but not in the plateforme, you can follow those steps:
+For example, if you receive the Fortigate logs in `/var/log/syslog` but not in SEKOIA.IO, you can follow those steps:
 - First try to log the raw events to a local file, by appending the following line in the configuration file:
 ```bash
 *.* then /tmp/fortigate.log;SEKOIAIOFortigateTemplate
