@@ -156,7 +156,7 @@ tail -n 15 /var/log/syslog
 ### Forwarded messages to SEKOIA.IO
 Ensure the connexion is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:
 ```bash
-sudo apt install net-tools -f -y && sudo netstat -taupn | grep syslog 
+sudo ss -ltp | grep syslog 
 ```
 
 If the connexion is not establish, and the previous status are operational, it is possible that a file `xx-<technology>.conf` has a typography.
