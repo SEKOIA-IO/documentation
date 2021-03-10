@@ -1582,8 +1582,8 @@ We recommand to centralise them on a dedicated server: the Rsyslog.</p>
 <span class="c1">##### This file is used to automate the Rsyslog setup</span>
 
 <span class="c1"># Install service and dependances</span>
-sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y
-sudo apt install rsyslog rsyslog-gnutls wget -f -y
+sudo apt update
+sudo apt install -y rsyslog rsyslog-gnutls wget
 
 <span class="c1">### Create a dedicated Rsyslog configuration file</span>
 <span class="nv">RsyslogConfFile</span><span class="o">=</span><span class="s2">&quot;/etc/rsyslog.conf&quot;</span>
