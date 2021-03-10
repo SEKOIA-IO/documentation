@@ -89,6 +89,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 Restart the NXLog service through the Services tool as Administrator or use powershell command line: `Restart-Service nxlog`
 
 ### 2. Windows Event Forwarder to Windows Event Collector to Rsyslog
+Most of the following commands are to be run as Administrator in a Powershell interpretor.
 
 #### Windows Event Collector (WEC) setup
 The Windows Event Collector, also known as WEC is a Microsoft service that can be activate and configured to aggregate logs from the Windows Event Forwarders (WEF).
