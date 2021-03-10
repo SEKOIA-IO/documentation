@@ -154,7 +154,7 @@ tail -n 15 /var/log/syslog
 ``` 
 
 ### Forwarded messages to SEKOIA.IO
-Ensure the connexion is `ESTABLISHED` between the rsyslog server and SEKOIA.IO. To do so, please run the following command:
+Ensure the connexion is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:
 ```bash
 sudo apt install net-tools -f -y && sudo netstat -taupn | grep syslog 
 ```
