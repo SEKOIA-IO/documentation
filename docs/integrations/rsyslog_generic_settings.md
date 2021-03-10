@@ -34,7 +34,7 @@ It will automatically configure you Rsyslog server to collect and forward Window
 
 # Install service and dependances
 sudo apt update
-sudo apt install rsyslog rsyslog-gnutls wget -f -y
+sudo apt install -y rsyslog rsyslog-gnutls wget
 
 ### Create a dedicated Rsyslog configuration file
 RsyslogConfFile="/etc/rsyslog.conf"
