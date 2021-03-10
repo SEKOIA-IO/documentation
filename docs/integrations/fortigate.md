@@ -18,7 +18,7 @@ On Fortigate appliances, most of the important hardward and software activities 
 ## II] Transport to the concentrator
 
 ### Prerequisites
-The following prerequisite are needed in order to setup efficient log concentration:
+The following prerequisites are needed in order to setup efficient log concentration:
 - Have administrator writes on the Fortigate
 - Traffic towards the Rsyslog must be open on `UDP 514`
 
@@ -46,7 +46,7 @@ set url-filter enable
 end
 ```
 
-With some Fortigate appliance it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the `Log Settings` menu. From there you can choose every logging options within `Event Logging` and `Local Traffic Log` except for the `Denied` options.
+With some Fortigate appliance, it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the `Log Settings` menu. From there you can choose every logging options within `Event Logging` and `Local Traffic Log` except for the `Denied` options.
 
 Then in order to use CEF format, use the following commands :
 
@@ -77,19 +77,19 @@ input(type="imudp" port="514")
 ```
 
 #### Download the certificate
-In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
+In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 ##### Configure the Rsyslog server
-Open or create a new fortigate configuration file for rsyslog:
+Open or create a new Fortigate configuration file for Rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/12-fortigate.conf
 ```
 
-Paste the following rsyslog configuration to trigger the emission of fortigate logs by your rsyslog server to SEKOIA.IO:
+Paste the following Rsyslog configuration to trigger the emission of Fortigate logs by your Rsyslog server to SEKOIA.IO:
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
@@ -119,7 +119,7 @@ if ($hostname == "YOUR_FORTIGATE_HOSTNAME") then {
 > In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
 > And change the `YOUR_FORTIGATE_HOSTNAME` variable with the correct value.
 
-##### Restart rsyslog
+##### Restart Rsyslog
 
 ```bash
 $ sudo systemctl restart rsyslog.service
