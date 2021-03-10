@@ -3,22 +3,26 @@ name: fortigate
 
 ## Overview
 
-The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. FortiGate next-generation firewalls provide high performance, multilayered security and deep visibility for end-to-end protection across the enterprise network. Security services from FortiGuard Labs provide threat intelligence updates and automated mitigation. The firewalls run on the FortiOS operating system.
+The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. The firewalls run on the FortiOS operating system.
 
-## Setup
+In this documentation we will explain one way to collect and send Fortigate logs to SEKOIA.IO.
+- From the Fortigate machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
-This setup guide will show you how to forward your Fortigate firewall logs
-to SEKOIA.IO by means of an Rsyslog transport channel.
-On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
+## I] Fortigate logs
 
-### 1. Download the certificate
-In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
+On Fortigate appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
+- Traffic: Local out traffic / Denied traffic / Allowed traffic
+- Web
+- Url-Filtering
 
-```bash
-$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
-```
+## II] Transport to the concentrator
 
-### 2. Configure Fortigate
+### Prerequisites
+The following prerequisites are needed in order to setup efficient log concentration:
+- Have administrator writes on the Fortigate
+- Traffic towards the Rsyslog must be open on `UDP 514`
+
+### Configure Fortigate
 The first step is to configure Fortigate to log the awaited traffic.
 You can configure FortiOS to send log messages to remote syslog servers in standard, CSV or CEF (Common Event Format) format. These three formats are accepted by the SEKOIA.IO intake.
 To enable syslog, log into the CLI and enter the following commands:
@@ -42,7 +46,7 @@ set url-filter enable
 end
 ```
 
-With some Fortigate appliance it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the `Log Settings` menu. From there you can choose every logging options within `Event Logging` and `Local Traffic Log` except for the `Denied` options.
+With some Fortigate appliance, it may not be possible to do the above configuration through the command line. An alternative method is to use the graphical interface and go to the `Log Settings` menu. From there you can choose every logging options within `Event Logging` and `Local Traffic Log` except for the `Denied` options.
 
 Then in order to use CEF format, use the following commands :
 
@@ -52,42 +56,77 @@ set format cef
 end
 ```
 
-### 3. Configure the Rsyslog server
-You can configure your Rsyslog server to forward your fortigate logs to SEKOIA.IO.
+## III] Transport to SEKOIA.IO
 
-Open or create a new Fortigate configuration file for rsyslog:
+### Configure the Rsyslog to forward to SEKOIA.IO
+
+#### Rsyslog prerequisites
+In order to allow the rsyslog to work properly, please ensure the following packages are installed:
+
+```bash
+sudo apt install rsyslog rsyslog-gnutls wget
+```
+
+Please ensure the UDP incoming events are allows in the /etc/rsyslog.conf
+```bash
+....
+# provides UDP syslog reception
+module(load="imudp")
+input(type="imudp" port="514")
+....
+```
+
+#### Download the certificate
+In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
+
+```bash
+$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+```
+
+##### Configure the Rsyslog server
+Open or create a new Fortigate configuration file for Rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/12-fortigate.conf
 ```
 
-Then paste the following configuration:
+Paste the following Rsyslog configuration to trigger the emission of Fortigate logs by your Rsyslog server to SEKOIA.IO:
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
-
-# Configure up the network ssl connection
-$ActionSendStreamDriver gtls # use gtls netstream driver
-$ActionSendStreamDriverMode 1 # require TLS for the connection
-$ActionSendStreamDriverAuthMode x509/name # server is authenticated
 
 # Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)
 # IMPORTANT: don't forget to set your intake key in the template
 template(name="SEKOIAIOFortigateTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] CEF:%msg%\n")
 
-# Send your Fortigate events to SEKOIA.IO intake servers under SEKOIAIOFortigateTemplate template
-if $hostname == "YOUR_FORTIGATE_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKOIAIOFortigateTemplate
+
+# Send your events to SEKOIA.IO intake servers under SEKOIAIOFortigateTemplate template
+if ($hostname == "YOUR_FORTIGATE_HOSTNAME") then {
+    action(
+        type="omfwd"
+        protocol="tcp"
+        target="intake.sekoia.io"
+        port="10514"
+        TCP_Framing="octet-counted"
+        StreamDriver="gtls"
+        StreamDriverMode="1"
+        StreamDriverAuthMode="x509/name"
+        StreamDriverPermittedPeers="intake.sekoia.io"
+        Template="SEKOIAIOFortigateTemplate"
+    )
+}
 ```
 
-In the above `template` instruction, change the `YOUR_FORTIGATE_HOSTNAME` variable with the correct value, and please replace `YOUR_INTAKE_KEY` variable with your intake key.
+> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
+> And change the `YOUR_FORTIGATE_HOSTNAME` variable with the correct value.
 
-### 4. Restart rsyslog
+##### Restart Rsyslog
 
 ```bash
-$ sudo service rsyslog restart
+$ sudo systemctl restart rsyslog.service
 ```
 
 ## Related files
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
-### 5. Enjoy your events
+### IV] Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
