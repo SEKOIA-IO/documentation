@@ -113,7 +113,7 @@ Then run it:
 ./<filename.sh>
 ```
 
-- Change the Intake Key value in the "/etc/rsyslog.d/15-windows.conf" file
+- Change the intake key value in the `/etc/rsyslog.d/15-windows.conf` file
 - Restart the rsyslog service: 
 ```bash
 sudo systemctl restart rsyslog.service
