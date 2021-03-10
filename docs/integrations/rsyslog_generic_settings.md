@@ -14,7 +14,7 @@ The following prerequisite are needed in order to setup efficient rsyslog:
 After receiving the IDs to connect to the Linux server, the main activities are to be followed.
 - Connect to the Rsyslog node using SSH
 - Install the relevant packages
-- Modify the /etc/rsyslog.conf main configuration file
+- Modify the `/etc/rsyslog.conf` main configuration file
 - Create configuration files for each technology you want to forward to SEKOIA.IO
 - Edit these files with the related Intake Keys
 - Download the SEKOIA certificate
