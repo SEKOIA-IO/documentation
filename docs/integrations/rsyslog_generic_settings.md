@@ -104,7 +104,7 @@ EOM
 sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-It is possible to copy-past this configuration locally then upload it with SCP command, or simple copy-past it from the web to your remote server.
+It is possible to copy-paste this configuration locally then upload it with SCP command, or simple copy-paste it from the web to your remote server.
 
 > Once the file created on the Rsyslog, dont forget to make it executable with the command `chmod +x <filename.sh>`
 
