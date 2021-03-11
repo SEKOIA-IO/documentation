@@ -4,13 +4,13 @@
 Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
 We recommand to centralise them on a dedicated server: the Rsyslog.
 
-## Prerequisites
+## I. Prerequisites
 The following prerequisites are needed in order to setup efficient Rsyslog:
 - Have administrator privileges of the Debian server: `root`.
 - Inbound traffic from the equipments to the Rsyslog must be open on `TCP 514`
 - Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`)
 
-## General procedure
+## II. General procedure
 After receiving the IDs to connect to the Linux server, the main activities are to be followed.
 - Connect to the Rsyslog node using SSH
 - Install the relevant packages
@@ -20,7 +20,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 - Download the SEKOIA.IO certificate
 - Start the Rsyslog service and ensure it is correclty set-up 
 
-## Example of auto-setup configuration
+## III. Example of auto-setup configuration
 In order to help users setting up this concentrator we suggest the following bash script working for Ubuntu or Debian server.
 
 It will automatically configure you Rsyslog server to collect and forward Windows Event logs.
@@ -119,7 +119,7 @@ Then run it:
 sudo systemctl restart rsyslog.service
 ```
 
-## Troubleshoot
+## IV. Troubleshoot
 After setting up your Rsyslog, you may face issues due to contextual environment or error during copy pasting.
 
 ### Rsyslog daemon
@@ -146,7 +146,7 @@ input(type="imudp" port="514")
 ### Local messages
 Ensure the logs are received on the Rsyslog server, meaning:
 - Configurations are correctly undertaken on the remote equipements
-- Internal network flows are open on `TCP 514`
+- Internal network flows are open on `TCP or UDP 514`
 
 To check it, run the following command:
 ```bash
