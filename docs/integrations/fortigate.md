@@ -36,11 +36,17 @@ set facility user
 end
 ```
 
-Most FortiGate features are enabled for logging by default, but you can make sure the Traffic, Web and URL Filtering features are enabled for logging with the following commands:
-
+Most FortiGate features are enabled for logging by default. Ensure they are enabled by executing the following command:
+```bash
+show full-configuration
+```
+Make sure the Traffic, Web and URL Filtering features are enabled for logging with the following commands:
 ```bash
 config log syslogd filter
-set traffic enable
+set forward-traffic enable
+set local-traffic enable
+set multicast-traffic enable
+....
 set web enable
 set url-filter enable
 end
