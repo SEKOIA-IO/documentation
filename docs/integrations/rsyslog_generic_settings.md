@@ -7,8 +7,8 @@ We recommand to centralise them on a dedicated server: the Rsyslog.
 ## Prerequisites
 The following prerequisites are needed in order to setup efficient Rsyslog:
 - Have administrator privileges of the Debian server: `root`.
-- Inbound traffic from the equipments to the Rsyslog must be open on `TCP 514`
-- Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`)
+- Inbound traffic from the equipments to the Rsyslog must be open on `TCP 514`.
+- Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`).
 
 ## General procedure
 After receiving the IDs to connect to the Linux server, the main activities are to be followed.
@@ -163,6 +163,7 @@ If the connection is not established, and the previous statuses are operational,
 By experience, most of the time there is a misconfiguration in the `IF` condition.
 
 For example, if you receive the Fortigate logs in `/var/log/syslog` but not in SEKOIA.IO, you can follow those steps:
+
 - First try to log the raw events to a local file, by appending the following line in the configuration file:
 ```bash
 *.* then /tmp/fortigate.log;SEKOIAIOFortigateTemplate
@@ -173,7 +174,7 @@ For example, if you receive the Fortigate logs in `/var/log/syslog` but not in S
 sudo systemctl restart rsyslog.service
 ```
 
--Check if the fortigate.log file is created and populated
+- Check if the `fortigate.log` file is created and populated
 ```bash
 sudo tail /tmp/fortigate.log
 ```
