@@ -8,14 +8,14 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 In this documentation we will explain one way to collect and send Fortigate logs to SEKOIA.IO.
 - From the Fortigate machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
-## I] Fortigate logs
+## I. Fortigate logs
 
 On Fortigate appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
-- Traffic: Local out traffic / Denied traffic / Allowed traffic
+- Traffic: Local out traffic, Denied traffic, Allowed traffic
 - Web
 - Url-Filtering
 
-## II] Transport to the concentrator
+## II. Transport to the concentrator
 
 ### Prerequisites
 The following prerequisites are needed in order to setup efficient log concentration:
@@ -56,7 +56,7 @@ set format cef
 end
 ```
 
-## III] Transport to SEKOIA.IO
+## III. Transport to SEKOIA.IO
 
 ### Configure the Rsyslog to forward to SEKOIA.IO
 
@@ -128,5 +128,5 @@ $ sudo systemctl restart rsyslog.service
 ## Related files
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
-### IV] Enjoy your events
+### IV. Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
