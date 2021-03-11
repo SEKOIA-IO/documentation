@@ -11,7 +11,7 @@ In this documenation we will explain 2 ways to collect and send Windows logs to 
 In addition, this documentation will explain how to collect and send Windows logs from sensitive assets such as Domain Controllers, if you don't want to install a third party agent.
 
 
-## I] Windows Event logs
+## I. Windows Event logs
 
 On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
 - Application: for Windows components such as drivers and built-in interface elements
@@ -31,7 +31,7 @@ This setup guide will show you how to forward events produced by a Windows syste
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
 
-## II] Transport to the concentrator
+## II. Transport to the concentrator
 
 ### 1. NXLog agent to the Rsyslog
 
@@ -219,7 +219,7 @@ Ensure the logs are correctly reveived on the WEC server, using the Windows Even
 > Use the information in the section `II] 1. NXLog agent to the Rsyslog` to forward all the logs to the Rsyslog.
 
 
-## III] Transport to SEKOIA.IO
+## III. Transport to SEKOIA.IO
 
 ### 1. Configure the forwarder the direct way
 
@@ -343,7 +343,7 @@ $ sudo systemctl restart rsyslog.service
 ```
 
 
-## IV] Sysmon usage
+## IV. Sysmon usage
 
 #### NXLog setup with Sysmon
 
@@ -380,7 +380,7 @@ In order to monitor the common ones (Application, System, Security) and Sysmon, 
 ```
 
 
-## V] Enjoy your events
+## V. Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 ## Related files
