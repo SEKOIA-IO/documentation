@@ -8,6 +8,7 @@ The default columns:
 - Timestamp: Event date
 - Event.dialect: Type of intake that sent the event.
 - Description: Smart description with clickable links formatted by SEKOIA.IO to show the most important elements and make them easily accessible such as (IP Address, Type, Name)
+
 It is possible to add or remove other columns using the "Show fields" tab by:
 - Selecting the desired field in the "Available field" section using the "+" button.
 - Selecting the field to remove in "Selected fields" section using the "-" button.
