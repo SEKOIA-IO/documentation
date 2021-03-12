@@ -1,32 +1,34 @@
 # Events Page
 
-The events page diplays a list of latest events received by SEKOIA.IO. You can search among them by using Dork query langage, for which you can find more information [here](../searching/dork.md).
-
-On the event page, you can access the raw format of your events, as received by SEKOIA.IO and the STIX format in which it is transformed.
-
-![Event Page](../assets/operation_center/events.gif)
+The events page enables investigation in the latest events recieved by SEKOIA.IO using the log list, search bar and filters.
 
 ## Log list:
-The scrolling list displays all the logs you have sent us.
+The event page displays a list of latest events received by SEKOIA.IO.
 The default columns:
 - Timestamp: Event date
 - Event.dialect: Type of intake that sent the event.
 - Description: Smart description with clickable links formatted by SEKOIA.IO to show the most important elements and make them easily accessible such as (IP Address, Type, Name)
-
+It is possible to add or remove other columns using the "Show fields" tab by:
+- Selecting the desired field in the "Available field" section using the "+" button.
+- Selecting the field to remove in "Selected fields" section using the "-" button.
+- Typing the desired field name in search bar at the top of "Selected fields".
 
 ## Log lines:
 Each line of log can be unrolled to show:
 - Details: Detailed information retrieved from the log about all events once they are parsed and elements related to the intake and community, using the event page searchable format.
 - STIX: Event as a STIX bundle that will be used by detection engines.
-- Raw event: Event as received.
+- Raw event: Event as received by SEKOIA.IO.
 
 ## Search bar:
+
+You can search among the list of events by using Dork query langage, for which you can find more information [here](../searching/dork.md).
 
 ### Filters:
 It is possible to use and combine filters in the search bar by using:
 - Smart description: By clicking on the "+" button.
 - Details: The query is made on the existing fields in the "details" section by clicking on the "+" button for one of the items.
-To go back to the list of logs, you need to clear filters and select "Current events"
+
+To go back to the list of logs shown, you need to clear filters and select "Current events"
 
 ### Save filters:
 It is possible to save a query by clicking on the star icon. 
