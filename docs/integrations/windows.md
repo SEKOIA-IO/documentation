@@ -14,6 +14,7 @@ In addition, this documentation will explain how to collect and send Windows log
 ## I. Windows Event logs
 
 On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
+
 - Application: for Windows components such as drivers and built-in interface elements
 - System: records the events related to programs installed on a system
 - Security: records the events related to security, such as logon attempts and ressource access 
