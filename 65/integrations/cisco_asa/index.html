@@ -903,7 +903,7 @@
         
           <li class="md-nav__item">
   <a href="#restart-rsyslog" class="md-nav__link">
-    Restart rsyslog
+    Restart Rsyslog
   </a>
   
 </li>
@@ -1625,7 +1625,7 @@
         
           <li class="md-nav__item">
   <a href="#restart-rsyslog" class="md-nav__link">
-    Restart rsyslog
+    Restart Rsyslog
   </a>
   
 </li>
@@ -1687,9 +1687,11 @@ hostname<span class="o">(</span>config<span class="o">)</span><span class="c1">#
 
 <h2 id="ii-transport-to-the-concentrator">II. Transport to the concentrator</h2>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>The following prerequisite are needed in order to setup efficient log concentration:
-- Have administrator priviledges on the Fortigate
-- Traffic towards the Rsyslog must be open on <code>UDP 514</code></p>
+<p>The following prerequisites are needed in order to setup efficient log concentration:</p>
+<ul>
+<li>Have administrator privileges on the Fortigate</li>
+<li>Traffic towards the Rsyslog must be open on <code>UDP 514</code></li>
+</ul>
 <h3 id="configure-the-cisco-asa">Configure the CISCO ASA</h3>
 <p>In ordre to forward the logs to a Rsyslog, please follow those commands:</p>
 <blockquote>
@@ -1724,8 +1726,8 @@ hostname<span class="o">(</span>config<span class="o">)</span><span class="c1">#
 <li>You can configure the ASA to send data to a syslog server using either UDP or TCP, but not both. The default protocol is UDP if you do not specify a protocol.</li>
 </ul>
 <blockquote>
-<p>If you specify TCP, the ASA discover when the syslog server fails and as a security protection, new connections through the ASA are blocked. 
-If you specify UDP, the ASA continue to allow new connections whether or not the syslog server is operational. Valid port values for either protocol are 1025 through 65535. The default UDP port is 514. The default TCP port is 1470.
+<p>If you specify TCP, the ASA discovers when the syslog server fails and as a security protection, new connections through the ASA are blocked. 
+If you specify UDP, the ASA continues to allow new connections whether or not the syslog server is operational. Valid port values for either protocol are 1025 through 65535. The default UDP port is 514. The default TCP port is 1470.
 For more information about Cisco ASA logging, please refer to your <a href="https://www.cisco.com/c/en/us/td/docs/security/asa/asa-cli-reference/S/asa-command-ref-S.html">Cisco documentation</a>.</p>
 </blockquote>
 <h2 id="iii-transport-to-sekoiaio">III. Transport to SEKOIA.IO</h2>
@@ -1736,7 +1738,7 @@ For more information about Cisco ASA logging, please refer to your <a href="http
 </pre></div>
 </td></tr></table>
 
-<p>Please ensure the UDP incoming events are allows in the /etc/rsyslog.conf</p>
+<p>Please ensure the UDP incoming events are allowed in the /etc/rsyslog.conf</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1750,18 +1752,18 @@ input<span class="o">(</span><span class="nv">type</span><span class="o">=</span
 </td></tr></table>
 
 <h4 id="download-the-certificate">Download the certificate</h4>
-<p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
+<p>In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
 </td></tr></table>
 
 <h4 id="configure-the-rsyslog-server">Configure the Rsyslog server</h4>
-<p>Open or create a new fortigate configuration file for rsyslog:</p>
+<p>Open or create a new cisco-asa configuration file for Rsyslog:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/rsyslog.d/11-cisco-asa.conf
 </pre></div>
 </td></tr></table>
 
-<p>Paste the following rsyslog configuration to trigger the emission of fortigate logs by your rsyslog server to SEKOIA.IO:</p>
+<p>Paste the following Rsyslog configuration to trigger the emission of fortigate logs by your Rsyslog server to SEKOIA.IO:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1814,7 +1816,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 <p>In the above <code>template</code> instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key you can find in the Operation Center &gt; Configure &gt; Intakes
 And change the <code>YOUR_CISCO_ASA_HOSTNAME</code> variable with the correct value.</p>
 </blockquote>
-<h4 id="restart-rsyslog">Restart rsyslog</h4>
+<h4 id="restart-rsyslog">Restart Rsyslog</h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo systemctl restart rsyslog.service
 </pre></div>
 </td></tr></table>
