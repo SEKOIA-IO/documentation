@@ -2053,10 +2053,12 @@
 - From the Windows machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO</p>
 <p>In addition, this documentation will explain how to collect and send Windows logs from sensitive assets such as Domain Controllers, if you don't want to install a third party agent.</p>
 <h2 id="i-windows-event-logs">I. Windows Event logs</h2>
-<p>On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
-- Application: for Windows components such as drivers and built-in interface elements
-- System: records the events related to programs installed on a system
-- Security: records the events related to security, such as logon attempts and ressource access </p>
+<p>On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.</p>
+<ul>
+<li>Application: for Windows components such as drivers and built-in interface elements</li>
+<li>System: records the events related to programs installed on a system</li>
+<li>Security: records the events related to security, such as logon attempts and ressource access </li>
+</ul>
 <p>Those logs a readable locally in the Windows Event Viewer, in the section Windows Logs.</p>
 <p>If you want to improve detection and analysis, you may want to enable Sysmon.</p>
 <blockquote>

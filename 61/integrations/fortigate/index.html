@@ -1711,10 +1711,13 @@
 <p>In this documentation we will explain one way to collect and send Fortigate logs to SEKOIA.IO.
 - From the Fortigate machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO</p>
 <h2 id="i-fortigate-logs">I. Fortigate logs</h2>
-<p>On Fortigate appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
-- Traffic: Local out traffic, Denied traffic, Allowed traffic
-- Web
-- Url-Filtering</p>
+<p>On Fortigate appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.</p>
+<ul>
+<li>Traffic: Local out traffic, Denied traffic, Allowed traffic</li>
+<li>Web</li>
+<li>Url-Filtering</li>
+<li>VPN</li>
+</ul>
 <h2 id="ii-transport-to-the-concentrator">II. Transport to the concentrator</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>The following prerequisites are needed in order to setup efficient log concentration:
@@ -1751,11 +1754,13 @@ end
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>config log syslogd filter
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>config log syslogd filter
 <span class="nb">set</span> forward-traffic <span class="nb">enable</span>
 <span class="nb">set</span> local-traffic <span class="nb">enable</span>
 <span class="nb">set</span> multicast-traffic <span class="nb">enable</span>
 ....
+<span class="nb">set</span> vpn <span class="nb">enable</span>
 <span class="nb">set</span> web <span class="nb">enable</span>
 <span class="nb">set</span> url-filter <span class="nb">enable</span>
 end
