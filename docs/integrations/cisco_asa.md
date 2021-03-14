@@ -3,83 +3,134 @@ name: cisco-asa
 
 ## Overview
 
-The Cisco ASA 5500 series is Cisco's follow up of the Cisco PIX 500 series firewall.  However, the ASA is not just a pure hardware firewall. The Cisco ASA is a security device that combines firewall, antivirus, intrusion prevention, and virtual private network (VPN) capabilities. It provides proactive threat defense that stops attacks before they spread through the network. Therefore, the Cisco ASA firewall is the whole package, so to speak.
+The Cisco ASA is a security device that combines firewall, antivirus, intrusion prevention, and virtual private network (VPN) capabilities. It provides proactive threat defense that stops attacks before they spread through the network. Therefore, the Cisco ASA firewall is the whole package, so to speak.
 
-## Setup
+In this documentation we will explain one way to collect and send CISCO ASA logs to SEKOIA.IO.
 
-This setup guide will show you how to forward your Cisco ASA logs to SEKOIA.IO by means of an Rsyslog transport channel.
+- From the CISCO ASA machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
-### 1. Download the certificate
+## I. CISCO ASA logs
 
-In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
+On CISCO appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are enable by one simple command.
+To enable logging, enter the following commands:
+
+```bash
+hostname(config)# logging enable
+hostname(config)# logging timestamp
+hostname(config)# logging trap informational
+```
+
+## II. Transport to the concentrator
+
+### Prerequisites
+The following prerequisites are needed in order to setup efficient log concentration:
+
+- Have administrator privileges on the Fortigate
+- Traffic towards the Rsyslog must be open on `UDP 514`
+
+### Configure the CISCO ASA
+In ordre to forward the logs to a Rsyslog, please follow those commands:
+
+> Note the interface name
+```bash
+hostname(config)# show interface
+```
+
+> Note the host name
+```bash
+hostname(config)# show hostname
+```
+
+You then have to configure an output destination for logs. Here, we choose to send syslog messages to an external syslog server.
+```bash
+hostname(config)# logging host interface_name syslog_ip [ tcp[/ port ] udp [/ port ]
+```
+
+Example:
+```bash
+hostname(config)# logging host interface_1 127.0.0.1 udp
+```
+
+Explanations:
+
+- The `interface_name` argument specifies the interface through which you access the syslog server.
+- The `syslog_ip` argument specifies the IP address of the syslog server.
+- The tcp[/ port ] or udp[/ port ] keyword and argument pair specify that the ASA and ASASM should use TCP or UDP to send syslog messages to the syslog server.
+- You can configure the ASA to send data to a syslog server using either UDP or TCP, but not both. The default protocol is UDP if you do not specify a protocol.
+
+> If you specify TCP, the ASA discovers when the syslog server fails and as a security protection, new connections through the ASA are blocked. 
+> If you specify UDP, the ASA continues to allow new connections whether or not the syslog server is operational. Valid port values for either protocol are 1025 through 65535. The default UDP port is 514. The default TCP port is 1470.
+> For more information about Cisco ASA logging, please refer to your [Cisco documentation](https://www.cisco.com/c/en/us/td/docs/security/asa/asa-cli-reference/S/asa-command-ref-S.html).
+
+## III. Transport to SEKOIA.IO
+
+### Configure the Rsyslog to forward to SEKOIA.IO
+
+#### Rsyslog prerequisites
+In order to allow the Rsyslog to work properly, please ensure the following packages are installed:
+
+```bash
+sudo apt install rsyslog rsyslog-gnutls wget
+```
+
+Please ensure the UDP incoming events are allowed in the /etc/rsyslog.conf
+```bash
+....
+# provides UDP syslog reception
+module(load="imudp")
+input(type="imudp" port="514")
+....
+```
+
+#### Download the certificate
+In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure Cisco ASA
-
-The first step is to configure Cisco ASA to log the awaited traffic. 
-
-To enable logging, enter the following commands:
-
-```bash
-hostname(config)# logging enable
-```
-
-You then have to configure an output destination for logs. Here, we choose to send syslog messages to an external syslog server.
-
-```bash
-hostname(config)# logging host interface_name syslog_ip [ tcp [/ port ] | udp [/ port ] [ format emblem ]]
-```
-
-Explanations:
-
-- The `format emblem` keyword enables EMBLEM format logging for the syslog server with UDP only.
-- The `interface_name` argument specifies the interface through which you access the syslog server.
-- The `syslog_ip` argument specifies the IP address of the syslog server.
-- The `tcp[/ port ]` or `udp[/ port ]` keyword and argument pair specify that the ASA and ASASM should use TCP or UDP to send syslog messages to the syslog server.
-- You can configure the ASA to send data to a syslog server using either UDP or TCP, but not both. The default protocol is UDP if you do not specify a protocol.
-If you specify TCP, the ASA discover when the syslog server fails and as a security protection, new connections through the ASA are blocked. If you specify UDP, the ASA continue to allow new connections whether or not the syslog server is operational. Valid port values for either protocol are 1025 through 65535. The default UDP port is 514. The default TCP port is 1470.
-- For more information about Cisco ASA logging, please refer to your Cisco documentation.
-
-### 3. Configure the Rsyslog server
-
-You can configure your Rsyslog server to forward your Cisco ASA logs to SEKOIA.IO.
-
-Open or create a new Cisco ASA configuration file for Rsyslog:
-
+#### Configure the Rsyslog server
+Open or create a new cisco-asa configuration file for Rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/11-cisco-asa.conf
 ```
 
-Then paste the following configuration:
-
+Paste the following Rsyslog configuration to trigger the emission of fortigate logs by your Rsyslog server to SEKOIA.IO:
 ```bash
-# Define the SEKIOA-IO intake certificate 
+# Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
-
-# Configure up the network ssl connection
-$ActionSendStreamDriver gtls # use gtls netstream driver
-$ActionSendStreamDriverMode 1 # require TLS for the connection
-$ActionSendStreamDriverAuthMode x509/name # server is authenticated
 
 # Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)
 # IMPORTANT: don't forget to set your intake key in the template
 template(name="SEKOIAIOCiscoAsaTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-# Send your Cisco ASA events to SEKOIA.IO intake servers under SEKOIAIOCiscoAsaTemplate template
-if $hostname == "YOUR_CISCO_ASA_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKOIAIOCiscoAsaTemplate
+
+# Send your events to SEKOIA.IO intake servers under SEKOIAIOCiscoAsaTemplate template
+if ($hostname == "YOUR_CISCO_ASA_HOSTNAME") then {
+    action(
+        type="omfwd"
+        protocol="tcp"
+        target="intake.sekoia.io"
+        port="10514"
+        TCP_Framing="octet-counted"
+        StreamDriver="gtls"
+        StreamDriverMode="1"
+        StreamDriverAuthMode="x509/name"
+        StreamDriverPermittedPeers="intake.sekoia.io"
+        Template="SEKOIAIOCiscoAsaTemplate"
+    )
+}
 ```
 
-In the above `template` instruction, change `YOUR_CISCO_ASA_HOSTNAME` and `YOUR_INTAKE_KEY` with the correct values.
+> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
+> And change the `YOUR_CISCO_ASA_HOSTNAME` variable with the correct value.
 
-### 4. Restart Rsyslog
+#### Restart Rsyslog
 
 ```bash
-$ sudo service rsyslog restart
+sudo systemctl restart rsyslog.service
 ```
 
-### 5. Enjoy your events
+## IV. Enjoy your events
 
 Go to the [events page](/sic/events) to watch your incoming events.
