@@ -1637,8 +1637,8 @@
                 
                 <h1 id="actions">Actions</h1>
 <h2 id="types-of-actions">Types of Actions</h2>
-<p>Once the user have selected and configured a <code>Trigger</code>, most of the time an <code>Operator</code> will follow, then it is time to insert a first <code>Action</code>.</p>
-<p><img alt="SEKOIA.IO Operation Center Filter on Actions" src="/assets/filter_actions.png" style="max-width:600px" /></p>
+<p>Once the user has selected and configured a <code>Trigger</code>, most of the time an <code>Operator</code> will follow, then it is time to insert a first <code>Action</code>.</p>
+<p><img alt="SEKOIA.IO Operation Center Filter on Actions" src="../assets/filter_actions.png" style="max-width:600px" /></p>
 <p>The <code>Actions</code> execute specific activities depending on the needs. You will find hereafter the main <code>Actions</code> that a user will be able to use.</p>
 <h3 id="sekoia-suggestions">Sekoia suggestions</h3>
 <h4 id="getters">Getters</h4>
@@ -1658,16 +1658,16 @@
 <h5 id="get-the-list-of-comments-of-a-case-or-the-comment-of-a-case">Get the list of comments of a case or the comment of a case</h5>
 <p>In order to exploit the comment posted on a case, it is first needed to collect all the meta information of the needed comment(s):
 The only mandatory information needed is the <code>case_uuid</code> that you can collect by using the <code>Get a Case</code> module.</p>
-<p>Then the user cas exploit: the number of comments, uuid, created_at, created_by, created_by_type, content of the comment.</p>
+<p>Then the user can exploit: the number of comments, uuid, created_at, created_by, created_by_type, content of the comment.</p>
 <h5 id="read-json-file">Read JSON File</h5>
 <p>With this module, a user can collect the output of the <code>Action &gt; Get an alert</code> when the <code>parameter STIX</code> is activated. Here is an example of use:</p>
-<p><img alt="SEKOIA.IO Operation Center Trigger JSON File" src="/assets/json_file.png" style="max-width:600px" /></p>
+<p><img alt="SEKOIA.IO Operation Center Trigger JSON File" src="../../assets/json_file.png" style="max-width:600px" /></p>
 <h4 id="setters">Setters</h4>
 <p>On the playbook GUI, it is possible to set actionables such as Create, Update, Patch, Add, Post, Delete activities.</p>
 <h5 id="create-module">Create module</h5>
 <p>With the Create module a user will be able to <code>Create</code>:</p>
 <ul>
-<li>A new incident</li>
+<li>A new case</li>
 <li>An alert</li>
 <li>A new asset</li>
 </ul>
@@ -1703,8 +1703,8 @@ The only mandatory information needed is the <code>case_uuid</code> that you can
 </ul>
 <h5 id="trigger-an-action-on-the-event-workflow">Trigger an action on the event workflow</h5>
 <p>Is is possible to trigger an action on an alert as explained in the webhook section. For instance the following image shows how to properly close an alert afer analysing it.</p>
-<p><img alt="SEKOIA.IO Operation Center Trigger an alert on worksflow" src="/assets/trigger_an_action_on_the_alert_workflow.png" style="max-width:600px" /></p>
-<p>As of today, the available actions_uuid are the following :</p>
+<p><img alt="SEKOIA.IO Operation Center Trigger an alert on worksflow" src="../../assets/trigger_an_action_on_the_alert_workflow.png" style="max-width:600px" /></p>
+<p>As of today, the available action_uuid are the following :</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1724,7 +1724,7 @@ The only mandatory information needed is the <code>case_uuid</code> that you can
 <h3 id="external-data-enrichers">External Data Enrichers</h3>
 <p>Most of the time an analyst uses external tools in order to better understand the severity of the alert.</p>
 <blockquote>
-<p>If you have subscribed to one or more of the following online tools, you should be able to get an API key, an simply use it on your playbooks.</p>
+<p>If you have subscribed to one or more of the following online tools, you should be able to get an API key, and simply use it on your playbooks.</p>
 </blockquote>
 <h5 id="iknowwhatyoudownload">IKnowWhatYouDownload</h5>
 <p>The module allows to request information such as: </p>
@@ -1762,15 +1762,15 @@ The only mandatory information needed is the <code>case_uuid</code> that you can
 </ul>
 <h3 id="notifications">Notifications</h3>
 <h5 id="pagerduty">PagerDuty</h5>
-<p>This module allow the analysts to receive notification in PagerDuty when a new alert is raised.</p>
+<p>This module allows the analysts to receive notification in PagerDuty when a new alert is raised.</p>
 <h5 id="mattermost">MatterMost</h5>
 <ul>
-<li>Sekoia alert: this module allow the analysts to receive notification in MatterMost when a new alert is raised.</li>
+<li>Sekoia alert: this module allows the analysts to receive notification in MatterMost when a new alert is raised.</li>
 <li>Post a message: additional information can be rooted on a specific channel with detailed context</li>
 </ul>
 <h5 id="mandrill">Mandrill</h5>
 <p>Email notification is available, the following example shows an automatic email sent when a new alert is raised.</p>
-<p><img alt="SEKOIA.IO Operation Center Filter on Actions" src="/assets/mandril.png" style="max-width:600px" /></p>
+<p><img alt="SEKOIA.IO Operation Center Filter on Actions" src="../../assets/mandril.png" style="max-width:600px" /></p>
 <p>The mandatory fields are:</p>
 <ul>
 <li>The recipient email address, name</li>
