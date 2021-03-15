@@ -18,6 +18,8 @@ It is possible to add or remove other columns using the "Show fields" tab by:
 - Selecting the field to remove in "Selected fields" section using the "-" button.
 - Typing the desired field name in search bar at the top of "Selected fields".
 
+![SEKOIA.IO Event_page_Log_list](../assets/operation_center/LOG LIST.gif){: style="max-width:600px"}
+
 ## Log lines:
 
 Each line of log can be unrolled to show:
@@ -25,6 +27,9 @@ Each line of log can be unrolled to show:
 - Details: Detailed information retrieved from the log about event once parsed and elements related to the intake and community. These information can be used in the search bar.
 - STIX: Event as a STIX bundle that will be used by detection engines.
 - Raw event: Event as received by SEKOIA.IO.
+
+![SEKOIA.IO Event_page_Log_lines](../assets/operation_center/LOG LINES.gif){: style="max-width:600px"}
+
 
 ## Search bar:
 
@@ -39,10 +44,14 @@ It is possible to use and combine filters in the search bar by using:
 
 To go back to the list of logs shown, you need to clear filters and select "Current events"
 
+![SEKOIA.IO Event_page_Filters](../assets/operation_center/Filters.gif){: style="max-width:600px"}
+
 ### Save filters:
 
-It is possible to save a query by clicking on the star icon. 
+It is possible to save a query by clicking on the star icon. The period of time is not conserved with it. 
 To check it out, you can click on "Saved queries" then select the wanted period of time and press enter to see the events found.
+
+![SEKOIA.IO Event_page_Save_Filters](../assets/operation_center/SAVE FILTERS.gif){: style="max-width:600px"}
 
 ### Date:
 
@@ -54,4 +63,6 @@ It is possible to select the period of time to be taken in consideration for the
 
 ### Search history:
 
-Each search has a duration in which the results will be saved in the relative date but when it is expired, you still have the possibility of replaying it using the saved relative date.
+Each search result lasts 10 min by default and it is possible to configure the retention to reach 1 day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
+
+![SEKOIA.IO Event_page_Search_History](../assets/operation_center/SEARCH HISTORY.gif){: style="max-width:600px"}
