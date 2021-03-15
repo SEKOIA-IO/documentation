@@ -2,9 +2,9 @@
 
 ## Types of Actions
 
-Once the user have selected and configured a `Trigger`, most of the time an `Operator` will follow, then it is time to insert a first `Action`.
+Once the user has selected and configured a `Trigger`, most of the time an `Operator` will follow, then it is time to insert a first `Action`.
 
-![SEKOIA.IO Operation Center Filter on Actions](/assets/filter_actions.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Filter on Actions](../assets/filter_actions.png){: style="max-width:600px"}
 
 The `Actions` execute specific activities depending on the needs. You will find hereafter the main `Actions` that a user will be able to use.
 
@@ -13,6 +13,7 @@ The `Actions` execute specific activities depending on the needs. You will find 
 #### Getters
 
 ##### Get an Alert or Get a Case
+
 Allows a user to collect information on an Alert or a Case (incident) such as, but not limited to, the:
 
 - Created (at, by) and update (at, by)
@@ -29,12 +30,12 @@ Allows a user to collect information on an Alert or a Case (incident) such as, b
 In order to exploit the comment posted on a case, it is first needed to collect all the meta information of the needed comment(s):
 The only mandatory information needed is the `case_uuid` that you can collect by using the `Get a Case` module.
 
-Then the user cas exploit: the number of comments, uuid, created_at, created_by, created_by_type, content of the comment.
+Then the user can exploit: the number of comments, uuid, created_at, created_by, created_by_type, content of the comment.
 
 ##### Read JSON File
 With this module, a user can collect the output of the `Action > Get an alert` when the `parameter STIX` is activated. Here is an example of use:
 
-![SEKOIA.IO Operation Center Trigger JSON File](/assets/json_file.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Trigger JSON File](../assets/json_file.png){: style="max-width:600px"}
 
 #### Setters 
 On the playbook GUI, it is possible to set actionables such as Create, Update, Patch, Add, Post, Delete activities.
@@ -42,7 +43,7 @@ On the playbook GUI, it is possible to set actionables such as Create, Update, P
 ##### Create module 
 With the Create module a user will be able to `Create`:
 
-- A new incident
+- A new case
 - An alert
 - A new asset
 
@@ -79,9 +80,9 @@ With the Delete module a user will be able to `Delete`:
 ##### Trigger an action on the event workflow
 Is is possible to trigger an action on an alert as explained in the webhook section. For instance the following image shows how to properly close an alert afer analysing it.
 
-![SEKOIA.IO Operation Center Trigger an alert on worksflow](/assets/trigger_an_action_on_the_alert_workflow.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Trigger an alert on worksflow](../assets/trigger_an_action_on_the_alert_workflow.png){: style="max-width:600px"}
 
-As of today, the available actions_uuid are the following :
+As of today, the available action_uuid are the following :
 ```r
 Action:"Acknowledge", 	Description: "Acknowledge the alert", 	action_uuid:"937bdabf-6a08-434b-b6d3-d7447e4e452a"
 Action:"Validate", 		Description: "Validate the alert", 		action_uuid:"c39a0a95-aa2c-4d0d-8d2e-d3decf426eea"
@@ -98,7 +99,7 @@ Other Sekoia modules are available, such as:
 ### External Data Enrichers
 
 Most of the time an analyst uses external tools in order to better understand the severity of the alert.
-> If you have subscribed to one or more of the following online tools, you should be able to get an API key, an simply use it on your playbooks.
+> If you have subscribed to one or more of the following online tools, you should be able to get an API key, and simply use it on your playbooks.
 
 ##### IKnowWhatYouDownload
 The module allows to request information such as: 
@@ -137,17 +138,17 @@ The module allows to request information such as:
 ### Notifications
 
 ##### PagerDuty
-This module allow the analysts to receive notification in PagerDuty when a new alert is raised.
+This module allows the analysts to receive notification in PagerDuty when a new alert is raised.
 
 ##### MatterMost
 
-- Sekoia alert: this module allow the analysts to receive notification in MatterMost when a new alert is raised.
+- Sekoia alert: this module allows the analysts to receive notification in MatterMost when a new alert is raised.
 - Post a message: additional information can be rooted on a specific channel with detailed context
 
 ##### Mandrill
 Email notification is available, the following example shows an automatic email sent when a new alert is raised.
 
-![SEKOIA.IO Operation Center Filter on Actions](/assets/mandril.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Filter on Actions](../assets/mandril.png){: style="max-width:600px"}
 
 The mandatory fields are:
 
