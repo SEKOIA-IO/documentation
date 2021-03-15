@@ -1494,10 +1494,10 @@
 <p>SEKOIA.IO comes with an in house GUI for creating automated investigation and orchestration actions: the playbooks.</p>
 <p>The playbooks are capable of automatically analysing and investigating all alerts coming from your SIEM. They also allow a quick and fully automated sorting after the analysis of multiple factors.</p>
 <p>Create your own playbooks to build your processes. Use the SEKOIA.IO interface to interconnect your tools and implement your scenarios. Configure the execution of your playbooks by triggering them manually on the alert/case page or automatically based on multiple factors.</p>
-<p><img alt="SEKOIA.IO Operation Center playbook overview" src="../assets/overview_playbook.png" style="max-width:600px" /></p>
+<p><img alt="SEKOIA.IO Operation Center playbook overview" src="../../assets/operation_center/playbooks/overview_playbook.png" style="max-width:600px" /></p>
 <h2 id="getting-started-with-a-playbook">Getting started with a playbook</h2>
 <p>A simple way to create your playbook: you only need to name it and add a description before validating it.</p>
-<p><img alt="SEKOIA.IO Operation Center playbook creation gif" src="../assets/create_a_playbook.gif" style="max-width:600px" /></p>
+<p><img alt="SEKOIA.IO Operation Center playbook creation gif" src="../../assets/operation_center/playbooks/create_a_playbook.gif" style="max-width:600px" /></p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>First of all, create two roles in <code>Settings &gt; Communities &gt; Your community &gt; Roles &gt; + ROLE</code>:
 - <code>SIC Operator</code> by selecting the 36 roles that starts with SIC
@@ -1506,7 +1506,7 @@
 To do it, go to <code>Settings &gt; Communities &gt; Your community &gt; API Keys &gt; + API Key</code>
 - Name and describe your API Key
 - Select the right roles for your key in order to be efficient</p>
-<p><img alt="SEKOIA.IO User Center API Key creation" src="../assets/create_an_api_key.png" style="max-width:600px" /></p>
+<p><img alt="SEKOIA.IO User Center API Key creation" src="../../assets/operation_center/playbooks/create_an_api_key.png" style="max-width:600px" /></p>
 <blockquote>
 <p>Note: Save your new API Key in a vault. It will no longer be accessible! </p>
 </blockquote>
@@ -1531,9 +1531,9 @@ Back in the Operation Center, section Playbooks: </p>
 <h3 id="run-feature">RUN feature</h3>
 <p>If for some reason, a playbook is not working properly, it is possible to display its execution workflow on the section <code>Playbook &gt; &lt;PlaybookName&gt; Click on RUN</code></p>
 <p>In the following animation, you will see an issue on the <code>IF Condition</code> where the Green overlay ceased and the output of the if un Yellow.</p>
-<p><img alt="SEKOIA.IO Operation Center RUN Feature" src="../assets/playbook_in_error.gif" style="max-width:600px" /></p>
+<p><img alt="SEKOIA.IO Operation Center RUN Feature" src="../../assets/operation_center/playbooks/playbook_in_error.gif" style="max-width:600px" /></p>
 <p>An example of correct playbook workflow should be in green from the begining to the end, as followed:</p>
-<p><img alt="SEKOIA.IO Operation Center RUN Feature 2" src="../assets/troubleshooting_running.png" style="max-width:600px" /></p>
+<p><img alt="SEKOIA.IO Operation Center RUN Feature 2" src="../../assets/operation_center/playbooks/troubleshooting_running.png" style="max-width:600px" /></p>
 <h3 id="code-feature">CODE feature</h3>
 <p>In addition of the RUN feature, the values of the playbook execution can be displayed in section, juste <code>next to the RUN button</code>.</p>
 <p>In order to set information parameters to an actionable, the Copy-Past feature create small sections of content written in JINJA.</p>
