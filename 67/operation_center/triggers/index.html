@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.sekoia.io/operation_center/playbook_overview/">
+        <link rel="canonical" href="https://docs.sekoia.io/operation_center/triggers/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Automation - SEKOIA.IO Documentation</title>
+        <title>Triggers - SEKOIA.IO Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#automation" tabindex="1" class="md-skip">
+      <a href="#triggers" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1413,51 +1413,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#playbooks" class="md-nav__link">
-    Playbooks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started-with-a-playbook" class="md-nav__link">
-    Getting started with a playbook
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-types-of-actionables" class="md-nav__link">
-    3 types of actionables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
+  <a href="#types-of-triggers" class="md-nav__link">
+    Types of Triggers
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#run-feature" class="md-nav__link">
-    RUN feature
+  <a href="#alerts" class="md-nav__link">
+    Alerts
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-feature" class="md-nav__link">
-    CODE feature
+  <a href="#webhook" class="md-nav__link">
+    Webhook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron" class="md-nav__link">
+    Cron
   </a>
   
 </li>
@@ -1483,91 +1462,23 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/SEKOIA-IO/documentation/edit/master/docs/operation_center/playbook_overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/SEKOIA-IO/documentation/edit/master/docs/operation_center/triggers.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="automation">Automation</h1>
-<p>Automating your security improves your cyber security operations by consolidating the use of your technologies, processes and policies.</p>
-<p>Automation combines security tools, processes and people, and speeds up the execution of your security responses while ensuring their repeatability and verifiability.</p>
-<p>Thus, SEKOIA.IO supervises and executes response actions to be in line with your business and operational objectives.</p>
-<h2 id="playbooks">Playbooks</h2>
-<p>SEKOIA.IO comes with an in house GUI for creating automated investigation and orchestration actions: the playbooks.</p>
-<p>The playbooks are capable of automatically analysing and investigating all alerts coming from your SIEM. They also allow a quick and fully automated sorting after the analysis of multiple factors.</p>
-<p>Create your own playbooks to build your processes. Use the SEKOIA.IO interface to interconnect your tools and implement your scenarios. Configure the execution of your playbooks by triggering them manually on the alert/case page or automatically based on multiple factors.</p>
-<p><img alt="SEKOIA.IO Operation Center playbook overview" src="../../assets/overview_playbook.png" style="max-width:600px" /></p>
-<h2 id="getting-started-with-a-playbook">Getting started with a playbook</h2>
-<p>A simple way to create your playbook: you only need to name it and add a description before validating it.</p>
-<p><img alt="SEKOIA.IO Operation Center playbook creation gif" src="../../assets/create_a_playbook.gif" style="max-width:600px" /></p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>First of all, create two roles in <code>Settings &gt; Communities &gt; Your community &gt; Roles &gt; + ROLE</code>:
-- <code>SIC Operator</code> by selecting the 36 roles that starts with SIC
-- <code>Symphony Operator</code> by selecting the 7 roles that starts with SYMPHONY</p>
-<p>Then, to be able to use a an actionable such as a Sekoia trigger, you should create an API key with the right level of accreditations: SIC Operation and Symphony Operator.
-To do it, go to <code>Settings &gt; Communities &gt; Your community &gt; API Keys &gt; + API Key</code>
-- Name and describe your API Key
-- Select the right roles for your key in order to be efficient</p>
-<p><img alt="SEKOIA.IO User Center API Key creation" src="../../assets/create_an_api_key.png" style="max-width:600px" /></p>
-<blockquote>
-<p>Note: Save your new API Key in a vault. It will no longer be accessible! </p>
-</blockquote>
-<p>Now you will be able to setup a configuration for the Sekoia actionables, built for you.
-Back in the Operation Center, section Playbooks: </p>
-<ul>
-<li>Select the trigger of your choice, for instance <code>Security alerts</code></li>
-<li>Drag and drop it into the center of your screen</li>
-<li>On the right side, <code>Create new configuration</code></li>
-<li>Paste your API key</li>
-<li>Fulfill the <code>base_url</code> field with <code>https://api.sekoia.io</code></li>
-<li>Click <code>SAVE</code> button</li>
-</ul>
-<h2 id="3-types-of-actionables">3 types of actionables</h2>
-<p>To create a playbook, you will basically need to use the following actionables. More information by following these links:</p>
-<ul>
-<li><a href="../triggers/">Triggers</a></li>
-<li><a href="../operators/">Operators</a></li>
-<li><a href="../actions/">Actions</a></li>
-</ul>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="run-feature">RUN feature</h3>
-<p>If for some reason, a playbook is not working properly, it is possible to display its execution workflow on the section <code>Playbook &gt; &lt;PlaybookName&gt; Click on RUN</code></p>
-<p>In the following animation, you will see an issue on the <code>IF Condition</code> where the Green overlay ceased and the output of the if un Yellow.</p>
-<p><img alt="SEKOIA.IO Operation Center RUN Feature" src="../../assets/playbook_in_error.gif" style="max-width:600px" /></p>
-<p>An example of correct playbook workflow should be in green from the begining to the end, as followed:</p>
-<p><img alt="SEKOIA.IO Operation Center RUN Feature 2" src="../../assets/troubleshooting_running.png" style="max-width:600px" /></p>
-<h3 id="code-feature">CODE feature</h3>
-<p>In addition of the RUN feature, the values of the playbook execution can be displayed in section, juste <code>next to the RUN button</code>.</p>
-<p>In order to set information parameters to an actionable, the Copy-Past feature create small sections of content written in JINJA.</p>
-<blockquote>
-<p>For more information on this language, please follow this <a href="https://jinja.palletsprojects.com/en/2.10.x/templates/">documentation</a>.</p>
-</blockquote>
-<p>It is possible to test your JINJA code on a JSON file (Copy-Past the CODE of your playbook AND remove the nodes) with this small python script:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Template</span> 
-
-<span class="n">file_json</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> 
-<span class="n">loading</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_json</span><span class="p">)</span>
-
-<span class="c1"># The JINJA partern to be tested</span>
-<span class="n">jinja_patern</span> <span class="o">=</span> <span class="s2">&quot;{{urgency.value}}&quot;</span>
-
-<span class="n">tm</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="n">jinja_patern</span><span class="p">)</span>
-
-<span class="n">msg</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">urgency</span><span class="o">=</span><span class="n">loading</span><span class="p">[</span><span class="s2">&quot;urgency&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+                <h1 id="triggers">Triggers</h1>
+<p>To start creating a playbook, a <code>Trigger</code> is needed in order to launch the start of the playbook execution.</p>
+<h2 id="types-of-triggers">Types of Triggers</h2>
+<p>In the Operation Center, section Playbooks, once you have selected a created playbook, you will be able to filter the actionables into one of the three categories: <code>Triggers, Operators and Actions</code>. Here we want to filter on <code>Triggers</code> only.</p>
+<p><img alt="SEKOIA.IO Operation Center Filter on Triggers" src="../../assets/filter_triggers.png" style="max-width:600px" /></p>
+<p>The <code>Triggers</code> collects data that will be used by the Operators and Actions to answer a specific need.</p>
+<h3 id="alerts">Alerts</h3>
+<p>The <code>Security alerts</code> trigger allows a user to collect every information of an alert. Such as the <code>alert_uuid</code>, its date of creation (<code>created_at</code>), its category (<code>alert_type</code>), its <code>urgency</code> or the action that triggered THIS alert notification (<code>event_type</code>) for example "alert-created", "alert-status-changed", etc.</p>
+<h3 id="webhook">Webhook</h3>
+<p>The <code>Alert webhook</code> trigger allows a user to automatically trigger actions once a human has raised and removed a doubt on an alert.
+This is an actionable button, such as the one you will find hereunder, for the example of adding an standardised commentary on the alert commentary section. </p>
+<p><img alt="SEKOIA.IO Operation Center Webhook Trigger" src="../../assets/web_hook.gif" style="max-width:600px" /></p>
+<h3 id="cron">Cron</h3>
+<p>The <code>Cron</code> trigger allows a user to periodically launch an automatic action, that should be defined and created by a user.</p>
                 
                   
                 
