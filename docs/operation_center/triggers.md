@@ -2,11 +2,11 @@
 
 To start creating a playbook, a `Trigger` is needed in order to launch the start of the playbook execution.
 
-## Types of Tiggers
+## Types of Triggers
 
 In the Operation Center, section Playbooks, once you have selected a created playbook, you will be able to filter the actionables into one of the three categories: `Triggers, Operators and Actions`. Here we want to filter on `Triggers` only.
 
-![SEKOIA.IO Operation Center Filter on Triggers](/assets/filter_triggers.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Filter on Triggers](../assets/filter_triggers.png){: style="max-width:600px"}
 
 The `Triggers` collects data that will be used by the Operators and Actions to answer a specific need.
 
@@ -19,7 +19,7 @@ The `Security alerts` trigger allows a user to collect every information of an a
 The `Alert webhook` trigger allows a user to automatically trigger actions once a human has raised and removed a doubt on an alert.
 This is an actionable button, such as the one you will find hereunder, for the example of adding an standardised commentary on the alert commentary section. 
 
-![SEKOIA.IO Operation Center Webhook Trigger](/assets/web_hook.gif){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Webhook Trigger](../assets/web_hook.gif){: style="max-width:600px"}
 
 ### Cron
 
