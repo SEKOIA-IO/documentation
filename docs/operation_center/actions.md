@@ -4,7 +4,7 @@
 
 Once the user has selected and configured a `Trigger`, most of the time an `Operator` will follow, then it is time to insert a first `Action`.
 
-![SEKOIA.IO Operation Center Filter on Actions](../assets/filter_actions.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/filter_actions.png){: style="max-width:600px"}
 
 The `Actions` execute specific activities depending on the needs. You will find hereafter the main `Actions` that a user will be able to use.
 
@@ -35,7 +35,7 @@ Then the user can exploit: the number of comments, uuid, created_at, created_by,
 ##### Read JSON File
 With this module, a user can collect the output of the `Action > Get an alert` when the `parameter STIX` is activated. Here is an example of use:
 
-![SEKOIA.IO Operation Center Trigger JSON File](../assets/json_file.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Trigger JSON File](../assets/operation_center/playbooks/json_file.png){: style="max-width:600px"}
 
 #### Setters 
 On the playbook GUI, it is possible to set actionables such as Create, Update, Patch, Add, Post, Delete activities.
@@ -80,7 +80,7 @@ With the Delete module a user will be able to `Delete`:
 ##### Trigger an action on the event workflow
 Is is possible to trigger an action on an alert as explained in the webhook section. For instance the following image shows how to properly close an alert afer analysing it.
 
-![SEKOIA.IO Operation Center Trigger an alert on worksflow](../assets/trigger_an_action_on_the_alert_workflow.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Trigger an alert on worksflow](../assets/operation_center/playbooks/trigger_an_action_on_the_alert_workflow.png){: style="max-width:600px"}
 
 As of today, the available action_uuid are the following :
 ```r
@@ -148,7 +148,7 @@ This module allows the analysts to receive notification in PagerDuty when a new 
 ##### Mandrill
 Email notification is available, the following example shows an automatic email sent when a new alert is raised.
 
-![SEKOIA.IO Operation Center Filter on Actions](../assets/mandril.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/mandril.png){: style="max-width:600px"}
 
 The mandatory fields are:
 
