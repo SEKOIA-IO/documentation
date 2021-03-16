@@ -1196,9 +1196,86 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Events
+      </label>
+    
     <a href="./" title="Events" class="md-nav__link md-nav__link--active">
       Events
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#log-list" class="md-nav__link">
+    Log list:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-lines" class="md-nav__link">
+    Log lines:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-bar" class="md-nav__link">
+    Search bar:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    Filters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-filters" class="md-nav__link">
+    Save filters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    Date:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-history" class="md-nav__link">
+    Search history:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1422,6 +1499,70 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#log-list" class="md-nav__link">
+    Log list:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-lines" class="md-nav__link">
+    Log lines:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-bar" class="md-nav__link">
+    Search bar:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    Filters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-filters" class="md-nav__link">
+    Save filters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    Date:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-history" class="md-nav__link">
+    Search history:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1436,9 +1577,55 @@
                 
                 
                 <h1 id="events-page">Events Page</h1>
-<p>The events page diplays a list of latest events received by SEKOIA.IO. You can search among them by using Dork query langage, for which you can find more information <a href="../../searching/dork/">here</a>.</p>
-<p>On the event page, you can access the raw format of your events, as received by SEKOIA.IO and the STIX format in which it is transformed.</p>
-<p><img alt="Event Page" src="../../assets/operation_center/events.gif" /></p>
+<p>The events page enables investigation in the latest events received by SEKOIA.IO using the log list, search bar and filters.</p>
+<h2 id="log-list">Log list:</h2>
+<p>The events page displays a list of latest events received by SEKOIA.IO.</p>
+<p>The default columns are:</p>
+<ul>
+<li>Timestamp: Event date</li>
+<li>Event.dialect: Type of intake that sent the event.</li>
+<li>Description: Smart description with clickable links formatted by SEKOIA.IO to show the most important elements and make them easily accessible, such as IP Address, Type or Name.</li>
+</ul>
+<p>It is possible to add or remove other columns using the "Show fields" tab by:</p>
+<ul>
+<li>Selecting the desired field in the "Available field" section using the "+" button.</li>
+<li>Selecting the field to remove in "Selected fields" section using the "-" button.</li>
+<li>Typing the desired field name in search bar at the top of "Selected fields".</li>
+</ul>
+<p><img alt="SEKOIA.IO Event_page_Log_list" src="../../assets/operation_center/ev_log_list.gif" style="max-width:600px" /></p>
+<h2 id="log-lines">Log lines:</h2>
+<p>Each line of log can be unrolled to show:</p>
+<ul>
+<li>Details: Detailed information retrieved from the log about event once parsed and elements related to the intake and community. These information can be used in the search bar.</li>
+<li>STIX: Event as a STIX bundle that will be used by detection engines.</li>
+<li>Raw event: Event as received by SEKOIA.IO.</li>
+</ul>
+<p><img alt="SEKOIA.IO Event_page_Log_lines" src="../../assets/operation_center/ev_log_lines.gif" style="max-width:600px" /></p>
+<h2 id="search-bar">Search bar:</h2>
+<p>You can search among the list of events by using Dork query langage, for which you can find more information <a href="../../searching/dork/">here</a>.</p>
+<h3 id="filters">Filters:</h3>
+<p>It is possible to use and combine filters in the search bar by using:</p>
+<ul>
+<li>Smart description: By clicking on the "+" button.</li>
+<li>Details: The query is made on the existing fields in the "details" section by clicking on the "+" button for one of the items.</li>
+</ul>
+<p>To go back to the list of logs shown, you need to clear filters and select "Current events"</p>
+<p><img alt="SEKOIA.IO Event_page_Filters" src="../../assets/operation_center/ev_filters.gif" style="max-width:600px" /></p>
+<h3 id="save-filters">Save filters:</h3>
+<p>It is possible to save a query by clicking on the star icon. The period of time is not conserved with it. 
+To check it out, you can click on "Saved queries" then select the wanted period of time and press enter to see the events found.</p>
+<p><img alt="SEKOIA.IO Event_page_Save_Filters" src="../../assets/operation_center/ev_save_filters.gif" style="max-width:600px" /></p>
+<h3 id="date">Date:</h3>
+<p>It is possible to select the period of time to be taken in consideration while using a filter:</p>
+<ul>
+<li>Presets: Recommended predefined dates.</li>
+<li>Dates relatives: Earliest and latest moments to select.</li>
+<li>Date ranges: Gap between 2 dates.</li>
+</ul>
+<p>Click on the blue lense to start a full search job.</p>
+<h3 id="search-history">Search history:</h3>
+<p>Each search result lasts 10 min by default and it is possible to configure the retention to reach 1 day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.</p>
+<p><img alt="SEKOIA.IO Event_page_Search_History" src="../../assets/operation_center/ev_search_history.gif" style="max-width:600px" /></p>
                 
                   
                 
