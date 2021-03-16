@@ -43,14 +43,14 @@ On the playbook GUI, it is possible to set actionables such as Create, Update, P
 ##### Create module 
 With the Create module a user will be able to `Create`:
 
-- A new case
+- A case
 - An alert
-- A new asset
+- An asset
 
 ##### Update module 
 With the Update module a user will be able to `Update`:
 
-- An incident
+- A case
 
 ##### Patch module 
 With the Patch module a user will be able to `Patch`:
