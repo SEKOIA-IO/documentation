@@ -12,7 +12,7 @@ The `Triggers` collects data that will be used by the Operators and Actions to a
 
 ### Alerts
 
-The `Security alerts` trigger allows a user to collect every information of an alert. Such as the `alert_uuid`, its date of creation (`created_at`), its category (`alert_type`), its `urgency` or the action that triggered THIS alert notification (`event_type`) for example "alert-created", "alert-status-changed", etc.
+The `Security alerts` trigger allows a user to collect information of an alert, such as the `alert_uuid`, its date of creation (`created_at`), its category (`alert_type`), its `urgency` or the action that triggered THIS alert notification (`event_type`) for example "alert-created", "alert-status-changed", "alert-comment-created" etc.
 
 ### Webhook
 
