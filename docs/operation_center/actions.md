@@ -124,7 +124,7 @@ The module allows to request information such as:
 - Passive DNS (Name, IP, Hex)
 - SSL host, certificate (SHA-1, Serial Number) / DNS
 
-##### Showdan
+##### Shodan
 The module allows to request information such as: 
 
 - Search for Host information
