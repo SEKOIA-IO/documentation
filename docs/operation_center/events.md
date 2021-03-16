@@ -55,11 +55,14 @@ To check it out, you can click on "Saved queries" then select the wanted period 
 
 ### Date:
 
-It is possible to select the period of time to be taken in consideration for the search by using:
+It is possible to select the period of time to be taken in consideration while using a filter:
 
 - Presets: Recommended predefined dates.
 - Dates relatives: Earliest and latest moments to select.
 - Date ranges: Gap between 2 dates.
+
+Click on the blue lense to start a full search job.
+
 
 ### Search history:
 
