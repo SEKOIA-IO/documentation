@@ -28,7 +28,7 @@ First of all, create two roles in `Settings > Communities > Your community > Rol
 - `SIC Operator` by selecting the 36 roles that starts with SIC
 - `Symphony Operator` by selecting the 7 roles that starts with SYMPHONY
 
-Then, to be able to use a an actionable such as a Sekoia trigger, you should create an API key with the right level of accreditations: SIC Operation and Symphony Operator.
+Then, to be able to use a `Block` such as a Sekoia trigger, you should create an API key with the right level of accreditations: SIC Operation and Symphony Operator.
 To do it, go to `Settings > Communities > Your community > API Keys > + API Key`
 - Name and describe your API Key
 - Select the right roles for your key in order to be efficient
@@ -37,7 +37,7 @@ To do it, go to `Settings > Communities > Your community > API Keys > + API Key`
 
 > Note: Save your new API Key in a vault. It will no longer be accessible! 
 
-Now you will be able to setup a configuration for the Sekoia actionables, built for you.
+Now you will be able to setup a configuration for the Sekoia `Blocks`, built for you.
 Back in the Operation Center, section Playbooks: 
 
 - Select the trigger of your choice, for instance `Security alerts`
@@ -47,9 +47,9 @@ Back in the Operation Center, section Playbooks:
 - Fulfill the `base_url` field with `https://api.sekoia.io`
 - Click `SAVE` button
 
-## 3 types of actionables
+## Build your playbooks with Blocks filtered into 3 types
 
-To create a playbook, you will basically need to use the following actionables. More information by following these links:
+To create a playbook, you will basically need to use the following filters. More information by following these links:
 
 - [Triggers](triggers.md)
 - [Operators](operators.md)
@@ -71,7 +71,7 @@ An example of correct playbook workflow should be in green from the begining to 
 ### CODE feature
 In addition of the RUN feature, the values of the playbook execution can be displayed in section, juste `next to the RUN button`.
 
-In order to set information parameters to an actionable, the Copy-Past feature create small sections of content written in JINJA.
+In order to set information parameters to a `Block`, the Copy-Past feature create small sections of content written in JINJA.
 > For more information on this language, please follow this [documentation](https://jinja.palletsprojects.com/en/2.10.x/templates/).
 
 It is possible to test your JINJA code on a JSON file (Copy-Past the CODE of your playbook AND remove the nodes) with this small python script:
