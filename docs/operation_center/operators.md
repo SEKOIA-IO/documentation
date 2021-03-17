@@ -19,7 +19,7 @@ To edit a condition, it is needed to add a case, by clicking on the "+". For ins
 ### Foreach
 
 The `Operator` "Foreach" is specialised in the browsing of a list of data, such as a JSON or STIX output.
-It can be followed by multiple actionables such as `Action` or `Operator`, even a "Foreach" loop.
+It can be followed by multiple `Blocks` such as the `Action` ones or the `Operator` ones, even a "Foreach" loop.
 
 ### Store
 
