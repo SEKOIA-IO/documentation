@@ -63,6 +63,7 @@ It is possible to select the period of time to be taken in consideration while u
 
 Click on the blue lense to start a full search job.
 
+![SEKOIA.IO Event_page_Date](../assets/operation_center/ev_date.gif){: style="max-width:600px"}
 
 ### Search history:
 
