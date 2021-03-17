@@ -38,7 +38,7 @@ With this module, a user can collect the output of the `Action > Get an alert` w
 ![SEKOIA.IO Operation Center Trigger JSON File](../assets/operation_center/playbooks/json_file.png){: style="max-width:600px"}
 
 #### Setters 
-On the playbook GUI, it is possible to set actionables such as Create, Update, Patch, Add, Post, Delete activities.
+On the playbook GUI, it is possible to set `Blocks` operations such as Create, Update, Patch, Add, Post, Delete activities.
 
 ##### Create module 
 With the Create module a user will be able to `Create`:
