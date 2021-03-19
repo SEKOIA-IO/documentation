@@ -14,6 +14,7 @@ The `Actions` execute specific activities depending on the needs. You will find 
 
 ##### Get an Alert or Get a Case
 
+> Note: Copy-past in the research section: `get_an_alert` and `get_a_case` to retreive the related `Blocks`.
 Allows a user to collect information on an Alert or a Case (incident) such as, but not limited to, the:
 
 - Created (at, by) and update (at, by)
@@ -27,55 +28,47 @@ Allows a user to collect information on an Alert or a Case (incident) such as, b
 - Is_incident status
 
 ##### Get the list of comments of a case or the comment of a case
+
+> Note: Copy-past in the research section: `get_the_list_of_comments_of_a_case` and `get_the_comment_of_a_case` to retreive the related `Blocks`.
 In order to exploit the comment posted on a case, it is first needed to collect all the meta information of the needed comment(s):
 The only mandatory information needed is the `case_uuid` that you can collect by using the `Get a Case` module.
 
 Then the user can exploit: the number of comments, uuid, created_at, created_by, created_by_type, content of the comment.
 
 ##### Read JSON File
+
+> Note: Copy-past in the research section: `Read JSON File` to retreive the related `Block`.
 With this module, a user can collect the output of the `Action > Get an alert` when the `parameter STIX` is activated. Here is an example of use:
 
 ![SEKOIA.IO Operation Center Trigger JSON File](../assets/operation_center/playbooks/json_file.png){: style="max-width:600px"}
 
 #### Setters 
-On the playbook GUI, it is possible to set actionables such as Create, Update, Patch, Add, Post, Delete activities.
+On the playbook GUI, it is possible to set `Blocks` such as Create, Update, Patch, Add, Post, Delete activities.
 
-##### Create module 
-With the Create module a user will be able to `Create`:
+##### Create Blocks 
+With the Create `Blocks` a user will be able to:
 
-- A case
-- An alert
-- An asset
+- Create a case: `creates_a_new_case`
+- Create an alert: `create_an_alert`
+- Create asset: `creates_a_new_asset`
+- Add owners to an asset: `adds_owners_to_an_asset`
+- Add key to the asset: `adds_an_key_to_the_asset`
+- Add attribute to the asset: : `adds_an_attribute_to_the_asset`
 
-##### Update module 
-With the Update module a user will be able to `Update`:
+##### Update Blocks
+With the Update `Blocks` a user will be able to:
 
-- A case
+- Update a case: `updates_an_case`
+- Patch an alert: `patch_an_alert`
 
-##### Patch module 
-With the Patch module a user will be able to `Patch`:
+##### Delete Blocks 
+With the Delete `Blocks` a user will be able to:
 
-- An alert
-
-##### Add module 
-With the Add module a user will be able to `Add`:
-
-- Owners to an asset
-- Key to the asset
-- Attribute to the asset
-
-##### Post module 
-With the Post module a user will be able to `Post`:
-
-- An asset
-- An owner from an asset
-- A key form an asset
-- Attribute to the asset
-
-##### Delete module 
-With the Delete module a user will be able to `Delete`:
-
-- A comment on an alert
+- Delete a comment on an alert: `delete_a_comment_from_an_alert`
+- Delete an asset: `deletes_an_asset`
+- Delete an owner from an asset: `deletes_an_owner_from_an_asset`
+- Delete a key from an asset: `deletes_an_key_from_an_asset`
+- Delete an attribute form an asset: `deletes_an_attribute_from_an_asset`
 
 ##### Trigger an action on the event workflow
 Is is possible to trigger an action on an alert as explained in the webhook section. For instance the following image shows how to properly close an alert afer analysing it.
@@ -90,7 +83,7 @@ Action:"Reject", 		Description: "Reject the alert", 		action_uuid:"ade85d7b-7507
 Action:"Close", 		Description: "Close the alert", 		action_uuid:"1390be4e-ced8-4dd6-9bed-573471b235ab"
 ```
 
-Other Sekoia modules are available, such as:
+Other Sekoia `Blocks` are available, such as:
 
 - Associate new rule on a case
 - Associate new alert on a case
