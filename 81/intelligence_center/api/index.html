@@ -1871,7 +1871,8 @@ and then only fetch additional context when an indicator matched.</p>
 
 <h2 id="taxii">TAXII</h2>
 <p>The Intelligence Center also exposes a TAXII 2.1 server that conforms to <a href="https://docs.oasis-open.org/cti/taxii/v2.1/csprd03/taxii-v2.1-csprd03.html">the specification</a>.</p>
-<p>The discovery endpoint of the TAXII server is located at <code>https://app.sekoia.io/api/v2/inthreat/taxii-server</code>.
+<p>The discovery endpoint of the TAXII server is located at <code>https://app.sekoia.io/api/v2/inthreat/taxii-server/taxii2</code>.
+The API root of the TAXII server is located at <code>https://app.sekoia.io/api/v2/inthreat/taxii-server</code>.
 TAXII relies on HTTP Basic Authentication. To authenticate to the TAXII server, you should use your Intelligence Center API key as the Basic Authentication password (you can use any username).</p>
 <p>Here is an example of a script using the TAXII endpoints to iterate over objects:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
