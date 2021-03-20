@@ -173,7 +173,8 @@ def get_indicator_context(observable_type, observable_value):
 
 The Intelligence Center also exposes a TAXII 2.1 server that conforms to [the specification](https://docs.oasis-open.org/cti/taxii/v2.1/csprd03/taxii-v2.1-csprd03.html).
 
-The discovery endpoint of the TAXII server is located at `https://app.sekoia.io/api/v2/inthreat/taxii-server/taxii`.
+The discovery endpoint of the TAXII server is located at `https://app.sekoia.io/api/v2/inthreat/taxii-server/taxii2`.
+The API root of the TAXII server is located at `https://app.sekoia.io/api/v2/inthreat/taxii-server`.
 TAXII relies on HTTP Basic Authentication. To authenticate to the TAXII server, you should use your Intelligence Center API key as the Basic Authentication password (you can use any username).
 
 Here is an example of a script using the TAXII endpoints to iterate over objects:
