@@ -70,3 +70,22 @@ Click on the blue lense to start a full search job.
 Each search result lasts 10 min by default and it is possible to configure the retention to reach 1 day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
 
 ![SEKOIA.IO Event_page_Search_History](../assets/operation_center/ev_search_history.gif){: style="max-width:600px"}
+
+### Sharing a search
+
+Search job have IDs that are available in the browser address bar. 
+
+```
+https://app.sekoia.io/sic/events?jobId=2b5ce17f-517e-4dd3-8253-1495a6ba538b
+```
+
+You can share your researches with colleagues by sending them these jobIds, which are accessible within your community.
+
+## Export the results of a search
+
+You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export. The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the uuid of the job search.
+
+![SEKOIA.IO Search result export](../assets/operation_center/ev_export_results.gif){: style="max-width:600px"}
+
+> Note!!!
+> The 'description' field will not be exported.
