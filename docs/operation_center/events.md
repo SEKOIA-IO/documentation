@@ -83,7 +83,7 @@ You can share your researches with colleagues by sending them these jobIds, whic
 
 ## Export the results of a search
 
-You can easily export the results of a search in csv or json format and choose the fields you want to export. The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the uuid of the job search.
+You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export. The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the uuid of the job search.
 
 ![SEKOIA.IO Search result export](../assets/operation_center/ev_export_results.gif){: style="max-width:600px"}
 
