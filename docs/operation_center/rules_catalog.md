@@ -15,12 +15,17 @@ The color changes depending on the number of rules activated in one cell. The bl
 ### Rules attributes
 
 **Typology:**
+
 Two types of rules are displayed on the Rules Catalog.
+
 *Available rules*: All custom rules created by you in addition to the available rules in the Rules Catalog.
+
 *Verified rules*: Rules created by SEKOIA.IO’s analysts, related to the CTI and available in the Rules Catalog.
 
 **Effort level:**
+
 The effort level is increasing from Elementary to Master according to two criteria:
+
 - Effort needed to enable a rule.
 - Risk of false positives.
 
@@ -28,6 +33,7 @@ Master rules are generic and raise a lot of alerts, which need to be contextuali
 The blue square represents a clickable counter of activated rules, it is therefore possible to use the filters related to the effort level by clicking on one or more of them.
 
 **Capabilities:**
+
 The rules are related to different elements according to offensive and defensive capabilities. They can be related to threats, attacks and data sources.
 Each element is associated to a filter that can be used to display the rules related to the selected element.
 
@@ -37,12 +43,14 @@ Each element is associated to a filter that can be used to display the rules rel
 ### Manage existing rules
 
 **Filters:**
+
 There are different filters linked to all rules attributes above. They can be used either separately or in addition to other filters and allow you to Enable or Disable all rules displayed simultaneously.
 
 **Rules details:**
+
 On top of the details of a rule, you can see the name, when it was released and last updated.
 There are information about the effort level attributed to the rule, the severity, tags that ease search, related threats.
-It also explains the followed strategy and gives information about false positives, STIIX patterning and data sources.
+It also explains the followed strategy and gives information about false positives, STIX patterning and data sources.
 To edit an existing rule, click on the gear icon to select entities and assets, or to add a filter alert. 
 
 ![SEKOIA.IO Rules_Catalog_Existing](../assets/operation_center/rules_catalog_manage.gif){: style="max-width:600px"}
