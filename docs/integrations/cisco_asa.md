@@ -95,8 +95,7 @@ Open or create a new cisco-asa configuration file for Rsyslog:
 sudo vim /etc/rsyslog.d/11-cisco-asa.conf
 ```
 
-Paste the following Rsyslog configuration to trigger the em
-ission of CISCO logs by your Rsyslog server to SEKOIA.IO:
+Paste the following Rsyslog configuration to trigger the emission of CISCO logs by your Rsyslog server to SEKOIA.IO:
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
