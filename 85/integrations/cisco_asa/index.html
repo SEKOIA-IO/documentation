@@ -1701,7 +1701,7 @@ hostname<span class="o">(</span>config<span class="o">)</span><span class="c1">#
 <h3 id="prerequisites">Prerequisites</h3>
 <p>The following prerequisites are needed in order to setup efficient log concentration:</p>
 <ul>
-<li>Have administrator privileges on the Fortigate</li>
+<li>Have administrator privileges on the CISCO ASA</li>
 <li>Traffic towards the Rsyslog must be open on <code>UDP 514</code></li>
 </ul>
 <h3 id="configure-the-cisco-asa">Configure the CISCO ASA</h3>
@@ -1775,7 +1775,7 @@ input<span class="o">(</span><span class="nv">type</span><span class="o">=</span
 </pre></div>
 </td></tr></table>
 
-<p>Paste the following Rsyslog configuration to trigger the emission of fortigate logs by your Rsyslog server to SEKOIA.IO:</p>
+<p>Paste the following Rsyslog configuration to trigger the emission of CISCO logs by your Rsyslog server to SEKOIA.IO:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
