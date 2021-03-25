@@ -25,7 +25,7 @@ hostname(config)# logging trap informational
 ### Prerequisites
 The following prerequisites are needed in order to setup efficient log concentration:
 
-- Have administrator privileges on the Fortigate
+- Have administrator privileges on the CISCO ASA
 - Traffic towards the Rsyslog must be open on `UDP 514`
 
 ### Configure the CISCO ASA
@@ -95,7 +95,7 @@ Open or create a new cisco-asa configuration file for Rsyslog:
 sudo vim /etc/rsyslog.d/11-cisco-asa.conf
 ```
 
-Paste the following Rsyslog configuration to trigger the emission of fortigate logs by your Rsyslog server to SEKOIA.IO:
+Paste the following Rsyslog configuration to trigger the emission of CISCO logs by your Rsyslog server to SEKOIA.IO:
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
