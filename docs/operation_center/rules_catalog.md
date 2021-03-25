@@ -10,48 +10,39 @@ Each cell represents an attack technique. The cells are clickable and enable you
 You can see how many rules are enabled in a cell by hovering over it.
 The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
 
-### Search bar
+### Rules attributes
 
-The search bar is used to find filters about a threat (as an intrusion set, a malware, a tool or a vulnerability), an attack pattern or a data source.
-You can search using the title of an element or a key word, it will display the rules related to the filter.
-
-### Filters list
-
-The list bellow displays 3 filter categories: Threats, Attacks and Data Sources known by SEKOIA.IO.
-When you select an element related to a category, it will act as a filter and display the rules related to it.
-
-### Rules typology
-
+**Typology:**
 Two types of rules are displayed on the Rules Catalog.
-Available rules: All custom rules created by you in addition to the available rules in the Rules Catalog.
-Verified rules: Rules created by SEKOIA.IO’s analysts, related to the CTI and available in the Rules Catalog.
+*Available rules*: All custom rules created by you in addition to the available rules in the Rules Catalog.
+*Verified rules*: Rules created by SEKOIA.IO’s analysts, related to the CTI and available in the Rules Catalog.
 
-You can enable/disable all rules simultaneously, you can filter with Verified Rules or Effort level and click on Enable all rules or Disable all rules on the right.
-
-The blue square represents a clickable counter of activated rules, it is therefore possible to use the filters related to the effort level by clicking on one or more of them.
-
-### Effort level
-
+**Effort level:**
 The effort level is increasing from Elementary to Master according to two criteria:
 - Effort needed to enable a rule.
 - Risk of false positives.
+
 Master rules are generic and raise a lot of alerts, which need to be contextualized in a more refined way. Whereas elementary rules require less effort and raise relatively fewer alerts.
+The blue square represents a clickable counter of activated rules, it is therefore possible to use the filters related to the effort level by clicking on one or more of them.
 
-### Rules list
+**Capabilities:**
+The rules are related to different elements according to offensive and defensive capabilities. They can be related to threats, attacks and data sources.
+Each element is associated to a filter that can be used to display the rules related to the selected element.
 
-The list displays all rules that are available on the Rules Catalog.
-The overview of each rule shows the title, effort level, tags and strategy. It also shows the status of the rule and allows you to enable/disable the rule by clicking on the toggle button on the right side.
+### Manage existing rules
 
-### Rules details
+**Filters:**
+There are different filters linked to all rules attributes above. They can be used either separately or in addition to other filters and allow you to Enable or Disable all rules displayed simultaneously.
 
+**Rules details:**
 On top of the details of a rule, you can see the name, when it was released and last updated.
 There are information about the effort level attributed to the rule, the severity, tags that ease search, related threats.
 It also explains the followed strategy and gives information about false positives, STIIX patterning and data sources.
 To edit an existing rule, click on the gear icon to select entities and assets, or to add a filter alert. 
 
-### Add a rule
+### Add a custom rule
 
-To add rule, you can use the + button and fill in the required and optional fields.
+In addition to the rules available in the catalog provided by SEKOIA.IO, you can add your own rules.
 
 - **General definition of the rule:**
 The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description bellow.
