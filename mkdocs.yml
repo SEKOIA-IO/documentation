@@ -68,6 +68,7 @@ nav:
       - Detect:
           - Rules: operation_center/rules.md
           - Templates: operation_center/templates.md
+          - Rules Catalog: operation_center/rules_catalog.md
       - Investigate:
           - Alerts: operation_center/alerts.md
           - Events: operation_center/events.md
