@@ -4,7 +4,7 @@
 
 ### Security profile MITRE ATT&CK
 
-The MITRE ATT&CK framework is a comprehensive matrix of tactics and techniques used by threat actors and defenders to better classify attacks and assess an organization's risk.
+The MITRE ATT&CK framework is a comprehensive matrix of tactics and techniques used by threat hunters and defenders to better classify attacks and assess an organization's risk.
 Every time you enable a rule, it appears on the Framework in blue in one or many cells.
 Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
 You can see how many rules are enabled in a cell by hovering over it.
