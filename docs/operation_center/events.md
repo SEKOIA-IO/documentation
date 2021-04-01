@@ -87,5 +87,5 @@ You can easily export the results of a search in `CSV` or `JSON` format and choo
 
 ![SEKOIA.IO Search result export](../assets/operation_center/ev_export_results.gif){: style="max-width:600px"}
 
-> Note!!!
-> The 'description' field will not be exported.
+> !!! Note
+>     The 'description' field will not be exported.
