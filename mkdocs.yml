@@ -66,8 +66,7 @@ nav:
           - Intakes: operation_center/intakes.md
           - Assets: operation_center/assets.md
       - Detect:
-          - Rules: operation_center/rules.md
-          - Templates: operation_center/templates.md
+          - Rules Catalog: operation_center/rules_catalog.md
       - Investigate:
           - Alerts: operation_center/alerts.md
           - Events: operation_center/events.md
