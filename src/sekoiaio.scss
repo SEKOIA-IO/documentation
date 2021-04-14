@@ -278,6 +278,10 @@ a.current {
 
       box-shadow: inherit;
       border: 1px solid #e7f3fd;
+
+      .md-typeset details {
+          box-shadow: inherit;
+      }
     }
   }
 }
