@@ -126,7 +126,39 @@ Then run it:
 sudo systemctl restart rsyslog.service
 ```
 
-## Troubleshoot
+## Forward Logs Using RELP Protocol
+
+Rsyslog is able to push logs via a reliable protocol, called RELP. By using this prococol, SEKOIA.IO’s collection point will acknowledge logs when receiving it. This will let the client Rsyslog be able to resend events if an error occured.
+
+SEKOIA.IO’s RELP endpoint is available at `relp.intake.sekoia.io` (`145.239.192.124`) on port `11514`.
+
+The most noticeable change using RELP in Rsyslog, is the output module used (`omrelp`). The first step is to install `rsyslog-relp` and `rsyslog-openssl` packages to be able to push logs. Most distributions are providing these packages natively.
+
+Then, you have to edit your main Rsyslog configuration to load the `omrelp` module:
+
+```
+module(load="omrelp" tls.tlslib="openssl")
+```
+
+Finally, you have to configure the output action to push your events to SEKOIA.IO via the RELP protocol. In this example, we are pushing Unbound events.
+
+```
+template(name="SEKOIAIOUnboundTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+
+if ($programname startswith 'unbound') then {
+  action(
+        type="omrelp"
+        target="relp.intake.sekoia.io"
+        port="11514"
+        tls="on"
+        template="SEKOIAIOUnboundTemplate"
+        tls.authmode="name"
+        tls.permittedPeer=["relp.intake.sekoia.io"]
+    )
+}
+```
+
+## Troubleshooting
 
 After setting up your Rsyslog, you may face issues due to contextual environment or error during copy pasting.
 
@@ -153,6 +185,7 @@ input(type="imudp" port="514")
 ```
 
 ### Local messages
+
 Ensure the logs are received on the Rsyslog server, meaning:
 - Configurations are correctly undertaken on the remote equipements
 - Internal network flows are open on `TCP or UDP 514`
@@ -163,6 +196,7 @@ tail -n 15 /var/log/syslog
 ```
 
 ### Forwarded messages to SEKOIA.IO
+
 Ensure the connection is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:
 ```bash
 sudo ss -ltp | grep syslog
