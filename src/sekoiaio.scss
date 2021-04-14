@@ -199,6 +199,24 @@ a.current {
     font-size: 14px;
     line-height: 24px;
   }
+
+  label.md-nav__link,
+  a.md-nav__link {
+      &[data-md-state="blur"] {
+          color: black;
+      }
+  }
+
+  .md-nav--secondary > .md-nav__list {
+      counter-reset: side-bar-counter;
+      & > li {
+          counter-increment: side-bar-counter;
+          & > a::before {
+              content: counter(side-bar-counter) ".";
+              font-weight: bold;
+          }
+      }
+  }
 }
 
 // Main content
@@ -232,6 +250,7 @@ a.current {
   main .md-main__inner {
     max-width: 100%;
     padding-top: 0;
+    counter-reset: h2-counter;
 
     & > div {
       padding-top: 2em;
@@ -249,6 +268,19 @@ a.current {
       line-height: 21px;
       font-weight: 600;
       color: black;
+      counter-increment: h2-counter;
+
+      & > span::before {
+        content: counter(h2-counter) ". ";
+      }
+
+      &::after {
+        content: " ";
+        width: 33%;
+        border-bottom: 1px solid grey;
+        padding-top: 0.3em;
+        display: inherit;
+      }
     }
 
     h3 {

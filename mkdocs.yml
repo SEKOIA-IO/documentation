@@ -97,6 +97,8 @@ theme:
   search_index_only: false
 extra_css:
   - stylesheets/sekoiaio.css
+extra_javascript:
+  - javascript/sekoiaio.js
 markdown_extensions:
   - admonition
   - attr_list
