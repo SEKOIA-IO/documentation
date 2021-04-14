@@ -38,7 +38,7 @@
     
     
       
-        <title>Rsyslog set-up and troubleshoot - SEKOIA.IO Documentation</title>
+        <title>Forward Logs to SEKOIA.IO Using Rsyslog - SEKOIA.IO Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#rsyslog-set-up-and-troubleshoot" tabindex="1" class="md-skip">
+      <a href="#forward-logs-to-sekoiaio-using-rsyslog" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1468,29 +1468,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-prerequisites" class="md-nav__link">
-    I. Prerequisites
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-general-procedure" class="md-nav__link">
-    II. General procedure
+  <a href="#general-procedure" class="md-nav__link">
+    General procedure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-example-of-auto-setup-configuration" class="md-nav__link">
-    III. Example of auto-setup configuration
+  <a href="#example-of-auto-setup-configuration" class="md-nav__link">
+    Example of auto-setup configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-troubleshoot" class="md-nav__link">
-    IV. Troubleshoot
+  <a href="#forward-logs-using-relp-protocol" class="md-nav__link">
+    Forward Logs Using RELP Protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
   </a>
   
     <nav class="md-nav">
@@ -1541,25 +1548,29 @@
                   <a href="https://github.com/SEKOIA-IO/documentation/edit/master/docs/integrations/transport/rsyslog.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="rsyslog-set-up-and-troubleshoot">Rsyslog set-up and troubleshoot</h1>
+                <h1 id="forward-logs-to-sekoiaio-using-rsyslog">Forward Logs to SEKOIA.IO Using Rsyslog</h1>
 <h2 id="overview">Overview</h2>
-<p>Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
-We recommand to centralise them on a dedicated server: the Rsyslog.</p>
-<h2 id="i-prerequisites">I. Prerequisites</h2>
-<p>The following prerequisites are needed in order to setup efficient Rsyslog:
-- Have administrator privileges of the Debian server: <code>root</code>.
-- Inbound traffic from the equipments to the Rsyslog must be open on <code>TCP 514</code>.
-- Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on <code>TCP 10514</code> (IP for <code>intake.sekoia.io</code> is <code>145.239.192.38</code>).</p>
-<h2 id="ii-general-procedure">II. General procedure</h2>
-<p>After receiving the IDs to connect to the Linux server, the main activities are to be followed.
-- Connect to the Rsyslog node using SSH
-- Install the relevant packages
-- Modify the <code>/etc/rsyslog.conf</code> main configuration file
-- Create configuration files for each technology you want to forward to SEKOIA.IO
-- Edit these files with the related Intake Keys
-- Download the SEKOIA.IO certificate
-- Start the Rsyslog service and ensure it is correclty set-up </p>
-<h2 id="iii-example-of-auto-setup-configuration">III. Example of auto-setup configuration</h2>
+<p>Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).</p>
+<p>We recommand to centralise them on a dedicated server: Rsyslog.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The following prerequisites are needed in order to setup efficient Rsyslog:</p>
+<ul>
+<li>Have administrator privileges of the Debian server: <code>root</code>.</li>
+<li>Inbound traffic from the equipments to the Rsyslog must be open on <code>TCP 514</code>.</li>
+<li>Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on <code>TCP 10514</code> (IP for <code>intake.sekoia.io</code> is <code>145.239.192.38</code>).</li>
+</ul>
+<h2 id="general-procedure">General procedure</h2>
+<p>After receiving the IDs to connect to the Linux server, the main activities are to be followed.</p>
+<ul>
+<li>Connect to the Rsyslog node using SSH</li>
+<li>Install the relevant packages</li>
+<li>Modify the <code>/etc/rsyslog.conf</code> main configuration file</li>
+<li>Create configuration files for each technology you want to forward to SEKOIA.IO</li>
+<li>Edit these files with the related Intake Keys</li>
+<li>Download the SEKOIA.IO certificate</li>
+<li>Start the Rsyslog service and ensure it is correclty set-up</li>
+</ul>
+<h2 id="example-of-auto-setup-configuration">Example of auto-setup configuration</h2>
 <p>In order to help users setting up this concentrator we suggest the following bash script working for Ubuntu or Debian server.</p>
 <p>It will automatically configure you Rsyslog server to collect and forward Windows Event logs.
 <code>sudo</code> must be installed and set-up for the current user.</p>
@@ -1718,24 +1729,62 @@ sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/fi
 <blockquote>
 <p>Once the file created on the Rsyslog, dont forget to make it executable with the command <code>chmod +x &lt;filename.sh&gt;</code></p>
 </blockquote>
-<p>Then run it: </p>
+<p>Then run it:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>./&lt;filename.sh&gt;
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Change the intake key value in the <code>/etc/rsyslog.d/15-windows.conf</code> file</li>
-<li>Restart the Rsyslog service: </li>
+<li>Restart the Rsyslog service:</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo systemctl restart rsyslog.service
 </pre></div>
 </td></tr></table>
 
-<h2 id="iv-troubleshoot">IV. Troubleshoot</h2>
+<h2 id="forward-logs-using-relp-protocol">Forward Logs Using RELP Protocol</h2>
+<p>Rsyslog is able to push logs via a reliable protocol, called RELP. By using this prococol, SEKOIA.IO’s collection point will acknowledge logs when receiving it. This will let the client Rsyslog be able to resend events if an error occured.</p>
+<p>SEKOIA.IO’s RELP endpoint is available at <code>relp.intake.sekoia.io</code> (<code>145.239.192.124</code>) on port <code>11514</code>.</p>
+<p>The most noticeable change using RELP in Rsyslog, is the output module used (<code>omrelp</code>). The first step is to install <code>rsyslog-relp</code> and <code>rsyslog-openssl</code> packages to be able to push logs. Most distributions are providing these packages natively.</p>
+<p>Then, you have to edit your main Rsyslog configuration to load the <code>omrelp</code> module:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">module(load=&quot;omrelp&quot; tls.tlslib=&quot;openssl&quot;)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Finally, you have to configure the output action to push your events to SEKOIA.IO via the RELP protocol. In this example, we are pushing Unbound events.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">template</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;SEKOIAIOUnboundTemplate&quot;</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;string&quot;</span> <span class="n">string</span><span class="o">=</span><span class="s">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=</span><span class="se">\&quot;</span><span class="s">YOUR_INTAKE_KEY</span><span class="se">\&quot;</span><span class="s">] %msg%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">programname</span> <span class="n">startswith</span> <span class="err">&#39;</span><span class="n">unbound</span><span class="err">&#39;</span><span class="p">)</span> <span class="n">then</span> <span class="p">{</span>
+  <span class="n">action</span><span class="p">(</span>
+        <span class="n">type</span><span class="o">=</span><span class="s">&quot;omrelp&quot;</span>
+        <span class="n">target</span><span class="o">=</span><span class="s">&quot;relp.intake.sekoia.io&quot;</span>
+        <span class="n">port</span><span class="o">=</span><span class="s">&quot;11514&quot;</span>
+        <span class="n">tls</span><span class="o">=</span><span class="s">&quot;on&quot;</span>
+        <span class="n">template</span><span class="o">=</span><span class="s">&quot;SEKOIAIOUnboundTemplate&quot;</span>
+        <span class="n">tls</span><span class="p">.</span><span class="n">authmode</span><span class="o">=</span><span class="s">&quot;name&quot;</span>
+        <span class="n">tls</span><span class="p">.</span><span class="n">permittedPeer</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;relp.intake.sekoia.io&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
 <p>After setting up your Rsyslog, you may face issues due to contextual environment or error during copy pasting.</p>
 <h3 id="rsyslog-daemon">Rsyslog daemon</h3>
 <p>Ensure the Rsyslog service is currrently running on the server</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ps -A <span class="p">|</span> grep rsyslog 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ps -A <span class="p">|</span> grep rsyslog
 </pre></div>
 </td></tr></table>
 
@@ -1772,7 +1821,7 @@ input<span class="o">(</span><span class="nv">type</span><span class="o">=</span
 
 <h3 id="forwarded-messages-to-sekoiaio">Forwarded messages to SEKOIA.IO</h3>
 <p>Ensure the connection is <code>ESTABLISHED</code> between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo ss -ltp <span class="p">|</span> grep syslog 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo ss -ltp <span class="p">|</span> grep syslog
 </pre></div>
 </td></tr></table>
 
