@@ -1450,6 +1450,8 @@
 <p>To push logs, you have to configure some filters and rewrite rules in syslog-ng that will add the proper “intake key” considering your logs.</p>
 <h2 id="destination-configuration">Destination Configuration</h2>
 <p>The first thing to do is to add certification authority (CA) files in the <code>/etc/syslog-ng/ca.d</code> directory. To proceed, you can execute the following commands in your favorite shell:</p>
+<details><summary>Click here to display commands</summary>
+
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1555,6 +1557,8 @@ KOqkqm57TH2H3eDJAkSnh6/DNFu0Qg<span class="o">==</span>
 EOF
 </pre></div>
 </td></tr></table>
+
+</details>
 
 <p>Then, you have to define syslog-ng’s destination module to push Syslog events to SEKOIA.IO in <code>/etc/syslog-ng/syslog-ng.conf</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
