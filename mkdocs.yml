@@ -19,6 +19,7 @@ nav:
           - Overview: integrations/index.md
           - Transports:
               - Rsyslog: integrations/transport/rsyslog.md
+              - Logstash: integrations/transport/rsyslog.md
           - Cloud and SaaS:
               - AWS:
                   - CloudTrail: integrations/aws_cloudtrail.md
