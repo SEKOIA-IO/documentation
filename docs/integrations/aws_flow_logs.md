@@ -1,5 +1,5 @@
 uuid: 07c0cac8-f68f-11ea-adc1-0242ac120002
-name: Amazon VPC Flow Logs 
+name: Amazon VPC Flow Logs
 
 ## Overview
 Amazon VPC Flow Logs is a feature that provides the ability to capture information about IP network traffic as it enters or exits from network interface in your Amazon VPC (Amazon Virtual Private Cloud). VPC Flow Logs can help you with a number of tasks, such as:
@@ -11,7 +11,7 @@ Amazon VPC Flow Logs is a feature that provides the ability to capture informati
 ## Setup
 Please [contact us](mailto:support@sekoia.io) to discuss about the AWS services in your organization in order to find the appropriate solution to forward VPC Flow Logs to SEKOIA.IO.
 
-### 1. VPC Flow Logs 
+### VPC Flow Logs
 
 As a prerequisite you need an existing VPC, subnet or network interface (Elastic Load Balancing, Amazon RDS, Amazon ElastiCache, Amazon Redshift, Amazon WorkSpaces, NAT gateways, Transit gateways) to create a flow log. If you create a flow log for a subnet or VPC, each network interface in that subnet or VPC is monitored.
 
@@ -24,7 +24,7 @@ For VPC and subnet:
 - Click on *Create flow log*
 - Set up the flow log: we recommend to capture all traffic (accepted and rejected).
 
-### 2. Log forwarding configuration
+### Log forwarding configuration
 
 This part should be discussed with SEKOIA.IO people to find an appropriate solution to forward your flow logs to SEKOIA.IO.
 

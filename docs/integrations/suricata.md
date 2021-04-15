@@ -8,14 +8,14 @@ Suricata is a free and open source, mature, fast and robust network threat detec
 Suricata leverages its EVE output module to report alerts, metadata, file info and protocol records in JSON. As described in the official documentation, this module can report its findings through the syslog facility.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure Suricata to forward events to rsyslog
+### Configure Suricata to forward events to rsyslog
 Open the Suricata configuration file (please note that the path to the configuration file may change depending on the OS and your configuration):
 ```bash
 sudo vim /etc/suricata/suricata.yaml
@@ -37,7 +37,7 @@ outputs:
         - tls
 ```
 
-### 3. Configure the Rsyslog server
+### Configure the Rsyslog server
 Given this Suricata configuration, your local rsyslog server will handle produced records. To report these to SEKOIA.IO, open or create a new suricata configuration file for rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/11-suricata.conf
@@ -63,13 +63,13 @@ if $app-name == 'suricata' then @@(o)intake.sekoia.io:10514;SEKOIAIOSuricataTemp
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 4. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 5. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 

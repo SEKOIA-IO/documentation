@@ -8,7 +8,7 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 In this documentation we will explain one way to collect and send Fortigate logs to SEKOIA.IO.
 - From the Fortigate machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
-## I. Fortigate logs
+## Fortigate logs
 
 On Fortigate appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
 
@@ -17,14 +17,16 @@ On Fortigate appliances, most of the important hardward and software activities 
 - Url-Filtering
 - VPN
 
-## II. Transport to the concentrator
+## Transport to the concentrator
 
 ### Prerequisites
+
 The following prerequisites are needed in order to setup efficient log concentration:
 - Have administrator writes on the Fortigate
 - Traffic towards the Rsyslog must be open on `UDP 514`
 
 ### Configure Fortigate
+
 The first step is to configure Fortigate to log the awaited traffic.
 You can configure FortiOS to send log messages to remote syslog servers in standard, CSV or CEF (Common Event Format) format. These three formats are accepted by the SEKOIA.IO intake.
 To enable syslog, log into the CLI and enter the following commands:
@@ -65,7 +67,7 @@ set format cef
 end
 ```
 
-## III. Transport to SEKOIA.IO
+## Transport to SEKOIA.IO
 
 ### Configure the Rsyslog to forward to SEKOIA.IO
 

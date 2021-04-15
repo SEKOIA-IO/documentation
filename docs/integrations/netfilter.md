@@ -26,14 +26,14 @@ This setup guide will show you how to forward your Linux firewall logs
 to SEKOIA.IO by means of an Rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure Netfilter
+### Configure Netfilter
 The first step is to configure Netfilter to log the awaited
 trafic. For example, if you want to only allow HTTP and HTTPS trafic
 and log everything else, you could use the following `iptables`
@@ -55,7 +55,7 @@ $ iptables -A INPUT -p tcp --dport 80,443 -m conntrack --ctstate NEW,ESTABLISHED
 $ iptables -A INPUT -j DROP_LOGGING
 ```
 
-### 3. Configure the Rsyslog server
+### Configure the Rsyslog server
 You can configure your Rsyslog server to forward your `iptables` logs to SEKOIA.IO.
 
 Open or create a new Netfilter configuration file for rsyslog:
@@ -83,13 +83,13 @@ if $programname == "kernel" and  $msg contains "IPTables/"  then @@(o)intake.sek
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 4. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 5. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 

@@ -1,5 +1,5 @@
-uuid: 325369ba-8515-45b4-b750-5db882ea1266 
-name: sophos 
+uuid: 325369ba-8515-45b4-b750-5db882ea1266
+name: sophos
 
 ## Overview
 Sophos firewalls offer an integrated software solution that provides superior performance in an all-in-one firewall. Its hardened operating system, stateful packet inspection, content filtering (virus & surf protection), application proxies and IPsec based VPN provides powerful solutions to today's security issues. It is designed to maximise networks security without compromising its performance enabling telecommuters, branch offices, customers and suppliers to safely share critical business information.
@@ -9,14 +9,14 @@ Sophos firewalls offer an integrated software solution that provides superior pe
 This setup guide will show you how to forward your Sophos logs
 to SEKOIA.IO by means of an Rsyslog transport channel.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure Sophos Firewall
+### Configure Sophos Firewall
 You can configure a syslog server in Sophos Firewall by following the instructions below (Which is appropriate for an XG Firewall, please refer to your documentation in other cases).
 
 - Go to System Services > Log Settings and click Add to configure a syslog server.
@@ -27,7 +27,7 @@ You can configure a syslog server in Sophos Firewall by following the instructio
 - Select the Severity Level from the available options.
 - Click Save to save the configuration.
 
-### 3. Configure the Rsyslog server
+### Configure the Rsyslog server
 You can configure your Rsyslog server to forward your Sophos logs to SEKOIA.IO.
 
 Open or create a new Sophos configuration file for rsyslog:
@@ -37,7 +37,7 @@ sudo vim /etc/rsyslog.d/23-sophos.conf
 
 Then paste the following configuration:
 ```bash
-# Define the SEKIOA-IO intake certificate 
+# Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
 # Configure up the network ssl connection
@@ -55,12 +55,11 @@ if $hostname == \"YOUR_SOPHOS_HOSTNAME\" then @@(o)intake.sekoia.io:10514;SEKOIA
 
 In the above `template` instruction, change `YOUR_SOPHOS_HOSTNAME` and `YOUR_INTAKE_KEY` with the correct values.
 
-### 4. Restart rsyslog
+### Restart Rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 5. Enjoy your events
+### Enjoy your events
 Go to the [events page](/sic/events) to watch your incoming events.
-

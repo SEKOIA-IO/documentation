@@ -9,7 +9,7 @@ This setup guide will show you how to forward events produced by Azure Active Di
 
 Theses changes have to be made from the Azure web portal (https://portal.azure.com).
 
-### 1. Event hubs
+### Event hubs
 As a prerequisite you need an `Event Hubs` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
 You also need your `Subscription ID` if you don't have a default one.
 
@@ -29,7 +29,7 @@ Navigate to: `Home > Event Hubs > company-eventhub > active-directory-event - Sh
 
 Navigate to: `Home > Event Hubs > company-eventhub > active-directory-event - Consumer groups`. From there, you can create a consumer group (e.g. sekoiaio-nifi).
 
-### 2. Azure Active Directory
+### Azure Active Directory
 You need to activate and configure the Azure Active Directory diagnostic settings (e.g. company-ad).
 
 Navigate to: `Home > Azure Active Directory (e.g. company-ad) > Monitoring > Diagnostic settings`:
@@ -39,7 +39,7 @@ Navigate to: `Home > Azure Active Directory (e.g. company-ad) > Monitoring > Dia
 - In the log section, select `AuditLogs` and `SignInLogs`.
 - Choose a name for this configuration and click on `Save`.
 
-### 3. Enjoy your events
+### Enjoy your events
 You can send to Sekoia the `Connection string-primary key` previously mentioned.
 
 Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.

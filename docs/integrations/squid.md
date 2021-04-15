@@ -9,14 +9,14 @@ Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It r
 This setup guide will show you how to forward logs produced by your SQUID servers to SEKOIA.IO by means of an rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure Squid
+### Configure Squid
 We can configure SQUID to report access logs to your syslog server.
 
 Open the squid configuration file (please note that the path to the configuration file may change depending on the OS and your configuration):
@@ -28,7 +28,7 @@ Then update the `access_log` directive like the following line:
 access_log syslog:local5.info squid
 ```
 
-### 3. Configure the Rsyslog server
+### Configure the Rsyslog server
 Open or create a new Squid configuration file for rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/17-squid.conf
@@ -53,13 +53,13 @@ if $programname contains 'squid' then @@(o)intake.sekoia.io:10514;SEKOIAIOSquidT
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 4. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 5. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 

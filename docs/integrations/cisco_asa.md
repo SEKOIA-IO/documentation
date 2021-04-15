@@ -1,4 +1,4 @@
-uuid: 466aeca2-e112-4ccc-a109-c6d85b91bbcf 
+uuid: 466aeca2-e112-4ccc-a109-c6d85b91bbcf
 name: cisco-asa
 
 ## Overview
@@ -9,7 +9,7 @@ In this documentation we will explain one way to collect and send CISCO ASA logs
 
 - From the CISCO ASA machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
-## I. CISCO ASA logs
+## CISCO ASA logs
 
 On CISCO appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are enable by one simple command.
 To enable logging, enter the following commands:
@@ -20,7 +20,7 @@ hostname(config)# logging timestamp
 hostname(config)# logging trap informational
 ```
 
-## II. Transport to the concentrator
+## Transport to the concentrator
 
 ### Prerequisites
 The following prerequisites are needed in order to setup efficient log concentration:
@@ -58,11 +58,11 @@ Explanations:
 - The tcp[/ port ] or udp[/ port ] keyword and argument pair specify that the ASA and ASASM should use TCP or UDP to send syslog messages to the syslog server.
 - You can configure the ASA to send data to a syslog server using either UDP or TCP, but not both. The default protocol is UDP if you do not specify a protocol.
 
-> If you specify TCP, the ASA discovers when the syslog server fails and as a security protection, new connections through the ASA are blocked. 
+> If you specify TCP, the ASA discovers when the syslog server fails and as a security protection, new connections through the ASA are blocked.
 > If you specify UDP, the ASA continues to allow new connections whether or not the syslog server is operational. Valid port values for either protocol are 1025 through 65535. The default UDP port is 514. The default TCP port is 1470.
 > For more information about Cisco ASA logging, please refer to your [Cisco documentation](https://www.cisco.com/c/en/us/td/docs/security/asa/asa-cli-reference/S/asa-command-ref-S.html).
 
-## III. Transport to SEKOIA.IO
+## Transport to SEKOIA.IO
 
 ### Configure the Rsyslog to forward to SEKOIA.IO
 
@@ -131,6 +131,6 @@ if ($hostname == "YOUR_CISCO_ASA_HOSTNAME") then {
 sudo systemctl restart rsyslog.service
 ```
 
-## IV. Enjoy your events
+## Enjoy your events
 
 Go to the [events page](/sic/events) to watch your incoming events.

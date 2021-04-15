@@ -11,7 +11,7 @@ This setup guide will show you how to forward logs produced by your BIND server 
 
 On most GNU/Linux servers, two packages need to be installed: `rsyslog` and `rsyslog-gnutls`.
 
-### 1. Download the certificate
+### Download the certificate
 
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
@@ -19,7 +19,7 @@ In order to allow the connection of your rsyslog server to the SEKOIA.IO intake,
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure BIND to log queries
+### Configure BIND to log queries
 
 First, you need to configure your BIND daemon to log queries and forward them to your rsyslog instance. If rsyslog and BIND are installed on the same box, you can simply add the following statement in your BIND’s main configuration file:
 
@@ -38,7 +38,7 @@ logging {
 
 You can find more informations on [how to configure your BIND instance on its official website](https://kb.isc.org/docs/aa-01526).
 
-### 3. Configure the rsyslog server
+### Configure the rsyslog server
 
 Open or create a new BIND configuration file for rsyslog:
 
@@ -67,13 +67,13 @@ if $programname startswith 'named' then @@(o)intake.sekoia.io:10514;SEKOIAIOBIND
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 4. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 5. Enjoy your events
+### Enjoy your events
 
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 

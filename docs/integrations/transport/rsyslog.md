@@ -1,26 +1,33 @@
-# Rsyslog set-up and troubleshoot
+# Forward Logs to SEKOIA.IO Using Rsyslog
 
 ## Overview
-Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
-We recommand to centralise them on a dedicated server: the Rsyslog.
 
-## I. Prerequisites
+Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
+
+We recommand to centralise them on a dedicated server: Rsyslog.
+
+## Prerequisites
+
 The following prerequisites are needed in order to setup efficient Rsyslog:
+
 - Have administrator privileges of the Debian server: `root`.
 - Inbound traffic from the equipments to the Rsyslog must be open on `TCP 514`.
 - Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`).
 
-## II. General procedure
+## General procedure
+
 After receiving the IDs to connect to the Linux server, the main activities are to be followed.
+
 - Connect to the Rsyslog node using SSH
 - Install the relevant packages
 - Modify the `/etc/rsyslog.conf` main configuration file
 - Create configuration files for each technology you want to forward to SEKOIA.IO
 - Edit these files with the related Intake Keys
 - Download the SEKOIA.IO certificate
-- Start the Rsyslog service and ensure it is correclty set-up 
+- Start the Rsyslog service and ensure it is correclty set-up
 
-## III. Example of auto-setup configuration
+## Example of auto-setup configuration
+
 In order to help users setting up this concentrator we suggest the following bash script working for Ubuntu or Debian server.
 
 It will automatically configure you Rsyslog server to collect and forward Windows Event logs.
@@ -108,24 +115,58 @@ It is possible to copy-paste this configuration locally then upload it with SCP 
 
 > Once the file created on the Rsyslog, dont forget to make it executable with the command `chmod +x <filename.sh>`
 
-Then run it: 
+Then run it:
 ```bash
 ./<filename.sh>
 ```
 
 - Change the intake key value in the `/etc/rsyslog.d/15-windows.conf` file
-- Restart the Rsyslog service: 
+- Restart the Rsyslog service:
 ```bash
 sudo systemctl restart rsyslog.service
 ```
 
-## IV. Troubleshoot
+## Forward Logs Using RELP Protocol
+
+Rsyslog is able to push logs via a reliable protocol, called RELP. By using this prococol, SEKOIA.IO’s collection point will acknowledge logs when receiving it. This will let the client Rsyslog be able to resend events if an error occured.
+
+SEKOIA.IO’s RELP endpoint is available at `relp.intake.sekoia.io` (`145.239.192.124`) on port `11514`.
+
+The most noticeable change using RELP in Rsyslog, is the output module used (`omrelp`). The first step is to install `rsyslog-relp` and `rsyslog-openssl` packages to be able to push logs. Most distributions are providing these packages natively.
+
+Then, you have to edit your main Rsyslog configuration to load the `omrelp` module:
+
+```
+module(load="omrelp" tls.tlslib="openssl")
+```
+
+Finally, you have to configure the output action to push your events to SEKOIA.IO via the RELP protocol. In this example, we are pushing Unbound events.
+
+```
+template(name="SEKOIAIOUnboundTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+
+if ($programname startswith 'unbound') then {
+  action(
+        type="omrelp"
+        target="relp.intake.sekoia.io"
+        port="11514"
+        tls="on"
+        template="SEKOIAIOUnboundTemplate"
+        tls.authmode="name"
+        tls.permittedPeer=["relp.intake.sekoia.io"]
+    )
+}
+```
+
+## Troubleshooting
+
 After setting up your Rsyslog, you may face issues due to contextual environment or error during copy pasting.
 
 ### Rsyslog daemon
+
 Ensure the Rsyslog service is currrently running on the server
 ```bash
-ps -A | grep rsyslog 
+ps -A | grep rsyslog
 ```
 You should see a line with `rsyslogd` daemon. If not, try to restart the service:
 ```bash
@@ -144,6 +185,7 @@ input(type="imudp" port="514")
 ```
 
 ### Local messages
+
 Ensure the logs are received on the Rsyslog server, meaning:
 - Configurations are correctly undertaken on the remote equipements
 - Internal network flows are open on `TCP or UDP 514`
@@ -151,12 +193,13 @@ Ensure the logs are received on the Rsyslog server, meaning:
 To check it, run the following command:
 ```bash
 tail -n 15 /var/log/syslog
-``` 
+```
 
 ### Forwarded messages to SEKOIA.IO
+
 Ensure the connection is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:
 ```bash
-sudo ss -ltp | grep syslog 
+sudo ss -ltp | grep syslog
 ```
 
 If the connection is not established, and the previous statuses are operational, it is possible that a file `xx-<technology>.conf` has a mistyping.

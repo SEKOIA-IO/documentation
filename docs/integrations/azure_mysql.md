@@ -9,7 +9,7 @@ This setup guide will show you how to forward events produced by Azure MySQL ser
 
 Theses changes have to be made from the Azure web portal (https://portal.azure.com).
 
-### 1. Event hubs
+### Event Hubs
 As a prerequisite you need an `Event Hubs` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
 You also need your `Subscription ID` if you don't have a default one.
 
@@ -29,7 +29,7 @@ Navigate to: `Home > Event Hubs > company-eventhub > mysql-event - Shared access
 
 Navigate to: `Home > Event Hubs > company-eventhub > mysql-event - Consumer groups`. From there, you can create a consumer group (e.g. sekoiaio-nifi).
 
-### 2. Azure MySQL
+### Azure MySQL
 You need to activate and configure the Azure MySQL diagnostic settings (e.g. company-mysql).
 
 Navigate to: `Home > SQL databases (e.g. company-mysql) > Monitoring > Diagnostic settings`:
@@ -39,7 +39,7 @@ Navigate to: `Home > SQL databases (e.g. company-mysql) > Monitoring > Diagnosti
 - In the log section, select `MySqlAuditLogs` and `MySqlSlowLogs`.
 - Choose a name for this configuration and click on `Save`.
 
-### 3. Enjoy your events
+### Enjoy your events
 You can send to Sekoia the `Connection string-primary key` previously mentioned.
 
 Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.

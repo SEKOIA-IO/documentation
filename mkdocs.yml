@@ -17,7 +17,10 @@ nav:
       - Dashboards: operation_center/threat_exposition.md
       - Integrations:
           - Overview: integrations/index.md
-          - Rsyslog settings: integrations/rsyslog_generic_settings.md
+          - Transports:
+              - Rsyslog: integrations/transport/rsyslog.md
+              - Logstash: integrations/transport/rsyslog.md
+              - syslog-ng: integrations/transport/syslog-ng.md
           - Cloud and SaaS:
               - AWS:
                   - CloudTrail: integrations/aws_cloudtrail.md
@@ -94,6 +97,8 @@ theme:
   search_index_only: false
 extra_css:
   - stylesheets/sekoiaio.css
+extra_javascript:
+  - javascript/sekoiaio.js
 markdown_extensions:
   - admonition
   - attr_list
