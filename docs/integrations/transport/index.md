@@ -20,6 +20,6 @@ To push your events through our HTTP log collector, you have to `POST` your logs
 
 ## Log Aggregator Configuration
 
-- [Rsyslog][rsyslog.md]
-- [Logstash][logstash.md]
-- [syslog-ng][syslog-ng.md]
+- [Rsyslog](rsyslog.md)
+- [Logstash](logstash.md)
+- [syslog-ng](syslog-ng.md)

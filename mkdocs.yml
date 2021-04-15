@@ -18,6 +18,7 @@ nav:
       - Integrations:
           - Overview: integrations/index.md
           - Transports:
+              - Overview: integrations/transport/index.md
               - Rsyslog: integrations/transport/rsyslog.md
               - Logstash: integrations/transport/rsyslog.md
               - syslog-ng: integrations/transport/syslog-ng.md
