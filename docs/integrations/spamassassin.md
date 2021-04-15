@@ -8,14 +8,14 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
 This setup guide will show you how to forward logs produced by your SpamAssassin servers to SEKOIA.IO by means of an rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure the Rsyslog server
+### Configure the Rsyslog server
 Open or create a new SpamAssassin configuration file for rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/34-spamassassin.conf
@@ -41,7 +41,7 @@ if $programname startswith 'spamd' then @@(o)intake.sekoia.io:10514;SEKOIAIOSpam
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 3. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart

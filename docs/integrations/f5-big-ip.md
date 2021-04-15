@@ -15,7 +15,7 @@ Most BIG-IP modules can use Log Publishers, some can directly log messages as CE
 
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Configure the Rsyslog server
+### Configure the Rsyslog server
 
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
@@ -55,7 +55,7 @@ Restart rsyslog:
 $ sudo service rsyslog restart
 ```
 
-### 2. Configure a Log Publisher
+### Configure a Log Publisher
 
 Before creating a log publisher, you first need a *management port* log destination:
 ```
@@ -86,7 +86,7 @@ Security -> Event Logs -> Logging Profiles -> Create... -> Publisher
 ```
 
 
-### 3. Direct Configuration
+### Direct Configuration
 
 Some modules allow direct configuration to the rsyslog server. As an example:
 ```
@@ -104,5 +104,5 @@ Then choose a virtual server, go to the `Security -> Policies` tab and apply the
 ## Related files
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
-### 4. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.

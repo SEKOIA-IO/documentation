@@ -8,14 +8,15 @@ Linux is a family of free and open-source software operating systems built aroun
 This setup guide will show you how to forward logs produced by your Linux servers to SEKOIA.IO by means of an rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure the Rsyslog server
+
+### Configure the Rsyslog server
 By default, a Linux server logs common daemons activities, the above configuration forwards everything. Depending of the linux distribution and installed software, more configuration tuning could be required.
 
 Open or create a new Linux configuration file for rsyslog:
@@ -43,13 +44,13 @@ if $hostname == "YOUR_LINUX_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKOIAIOL
 
 In the above `template` instruction, change the `YOUR_LINUX_HOSTNAME` variable with the correct value, and please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 3. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 4. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 ## Related files

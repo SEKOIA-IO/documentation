@@ -8,14 +8,14 @@ OpenSSH is the premier connectivity tool for remote login with the SSH protocol.
 This setup guide will show you how to forward logs produced by your OpenSSH servers to SEKOIA.IO by means of an rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure the Rsyslog server
+### Configure the Rsyslog server
 By default, the OpenSSH server (*sshd*) leverages the log level *INFO* and the system log facility *AUTH*.
 
 Open or create a new OpenSSH configuration file for rsyslog:
@@ -43,13 +43,13 @@ if $programname startswith 'sshd' then @@(o)intake.sekoia.io:10514;SEKOIAIOOpenS
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 3. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 4. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 

@@ -8,14 +8,14 @@ Unbound is a validating, recursive, and caching DNS resolver product from NLnet 
 This setup guide will show you how to forward logs produced by your Unbound server to SEKOIA.IO by means of an rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure the Rsyslog server
+### Configure the Rsyslog server
 Open or create a new Unbound configuration file for rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/46-unbound.conf
@@ -41,13 +41,13 @@ if $programname startswith 'unbound' then @@(o)intake.sekoia.io:10514;SEKOIAIOUn
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 3. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 4. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 

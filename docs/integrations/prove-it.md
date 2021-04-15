@@ -10,7 +10,7 @@ This setup guide will show you how to forward logs produced by PROVE IT to SEKOI
 
 On most GNU/Linux servers, two packages need to be installed: `rsyslog` and `rsyslog-gnutls`.
 
-### 1. Download the certificate
+### Download the certificate
 
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
@@ -18,7 +18,7 @@ In order to allow the connection of your rsyslog server to the SEKOIA.IO intake,
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure the rsyslog server
+### Configure the rsyslog server
 
 Open or create a new PROVE IT configuration file for rsyslog:
 
@@ -47,13 +47,13 @@ if $hostname == "YOUR_PROVEIT_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKOIAI
 
 In the above template instruction, change the `YOUR_PROVEIT_HOSTNAME` variable with the correct value, and please replace `YOUR_INTAKE_KEY variable` with your intake key.
 
-### 4. Restart Rsyslog
+### Restart Rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 5. Enjoy your events
+### Enjoy your events
 
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 

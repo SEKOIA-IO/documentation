@@ -9,7 +9,7 @@ This setup guide will show you how to forward events produced by a Windows Virtu
 
 Theses changes have to be made from the Azure web portal (https://portal.azure.com).
 
-### 1. Event hubs
+### Event hubs
 As a prerequisite you need an `Event Hubs` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
 You also need your `Subscription ID` if you don't have a default one.
 
@@ -29,7 +29,7 @@ Navigate to: `Home > Event Hubs > company-eventhub > windows-event - Shared acce
 
 Navigate to: `Home > Event Hubs > company-eventhub > windows-event - Consumer groups`. From there, you can create a consumer group (e.g. sekoiaio-nifi).
 
-### 2. Windows Virtual Machine
+### Windows Virtual Machine
 You need to activate and configure the diagnostic extension `Microsoft.Insights.VMDiagnosticsSettings`.
 Navigate to: `Home > Virtual machines > virtual machine name (e.g. company-windows) > Settings > Extensions`. Install it and note the new `StorageAccount` name created (e.g. company-storage-account).
 
@@ -133,13 +133,13 @@ Finally you could push the change of the diagnostic extension configuration (ada
 PS Azure:\> az vm extension set --publisher Microsoft.Azure.Diagnostics --name IaaSDiagnostics --version 1.5 --resource-group company-resource-group --vm-name company-windows --protected-settings protected_settings.json --settings public_settings.json --subscription uuid
 ```
 
-### 3. Sysmon
+### Sysmon
 
 Sysmon tool from Microsoft could improve the detection on Windows computers.
 You could download the tool on [Microsoft website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
 If you do not know how to use and configure it, please check [SwiftOnSecurity github](https://github.com/SwiftOnSecurity/sysmon-config).
 
-### 4. Enjoy your events
+### Enjoy your events
 You can send to Sekoia the `Connection string-primary key` previously mentioned.
 
 Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.

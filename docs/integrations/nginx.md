@@ -7,7 +7,7 @@ Nginx is an HTTP and reverse proxy server, a mail proxy server, and a generic TC
 ## Setup
 This setup guide will show you how to forward both your NGINX access and error logs to SEKOIA.IO by means of an rsyslog transport channel.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
@@ -15,7 +15,7 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure the Rsyslog server
+### Configure the Rsyslog server
 We can configure rsyslog to parse the `access_log` and `error_log` and report its entries to SEKOIA.IO.
 
 Open or create a new Nginx configuration file for rsyslog:
@@ -66,13 +66,13 @@ if $programname startswith 'nginx' then @@(o)intake.sekoia.io:10514;SEKOIAIONgin
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 3. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 4. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 

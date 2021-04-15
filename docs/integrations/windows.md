@@ -5,19 +5,19 @@ name: Windows
 Microsoft Windows is a popular operating system developed by Microsoft since 1985.
 
 In this documenation we will explain 2 ways to collect and send Windows logs to SEKOIA.IO.
-- From the Windows machine directly to SEKOIA.IO using the NXLog agent 
+- From the Windows machine directly to SEKOIA.IO using the NXLog agent
 - From the Windows machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
 In addition, this documentation will explain how to collect and send Windows logs from sensitive assets such as Domain Controllers, if you don't want to install a third party agent.
 
 
-## I. Windows Event logs
+## Windows Event logs
 
 On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
 
 - Application: for Windows components such as drivers and built-in interface elements
 - System: records the events related to programs installed on a system
-- Security: records the events related to security, such as logon attempts and ressource access 
+- Security: records the events related to security, such as logon attempts and ressource access
 
 Those logs a readable locally in the Windows Event Viewer, in the section Windows Logs.
 
@@ -32,9 +32,9 @@ This setup guide will show you how to forward events produced by a Windows syste
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
 
-## II. Transport to the concentrator
+## Transport to the concentrator
 
-### 1. NXLog agent to the Rsyslog
+### NXLog agent to the Rsyslog
 
 #### NXLog setup on Windows
 This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events by means of a syslog transport channel.
@@ -89,7 +89,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 
 Restart the NXLog service through the Services tool as Administrator or use Powershell command line: `Restart-Service nxlog`
 
-### 2. Windows Event Forwarder to Windows Event Collector to Rsyslog
+### Windows Event Forwarder to Windows Event Collector to Rsyslog
 Most of the following commands are to be run as Administrator in a Powershell interpretor.
 
 #### Windows Event Collector (WEC) setup
@@ -160,13 +160,13 @@ Ensure the file is correctly saved, then close it.
 ##### Configure the Windows Remote Management
 On the WEC server, open a command interpretor as Administrator, and run the following command:
 ```powershell
-winrm qc -q 
+winrm qc -q
 ```
 
 ##### Activate the "Event Collector" service
 As Administrator, enter the following command:
 ```powershell
-wecutil qc /q 
+wecutil qc /q
 ```
 
 ##### Activate the subscription to a zone
@@ -179,12 +179,12 @@ wecutil cs "<FILE_PATH>\DC_SUBSCRIPTION.xml"
 ##### Display the state of the subscription to this zone
 As Administrator, enter the following command:
 ```powershell
-wecutil gr DC_SUBSCRIPTION  
+wecutil gr DC_SUBSCRIPTION
 ```
 
 
 #### Windows Event Forwarder (WEF) setup
-The Windows Event Forwarder, also known as WEF is a Microsoft service that can be activated for log forwarding towards a Windows Event Collector (WEC). 
+The Windows Event Forwarder, also known as WEF is a Microsoft service that can be activated for log forwarding towards a Windows Event Collector (WEC).
 
 ##### Configure the Event Log Reader
 - Configure the collector URI(s).
@@ -196,7 +196,7 @@ The Windows Event Forwarder, also known as WEF is a Microsoft service that can b
 ##### Configure the Windows Remote Management
 On the AD admin console, open a command interpretor as Administrator, and run the following command:
 ```powershell
-winrm qc -q 
+winrm qc -q
 ```
 
 ##### Deploying the GPO
@@ -220,9 +220,9 @@ Ensure the logs are correctly reveived on the WEC server, using the Windows Even
 > Use the information in the section `II] 1. NXLog agent to the Rsyslog` to forward all the logs to the Rsyslog.
 
 
-## III. Transport to SEKOIA.IO
+## Transport to SEKOIA.IO
 
-### 1. Configure the forwarder the direct way
+### Configure the forwarder the direct way
 
 #### Download the certificate
 In order to allow the connection of your events forwarder to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate.
@@ -287,7 +287,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 
 Restart the NXLog service through the Services tool as Administrator or use PowerShell command line: `Restart-Service nxlog`
 
-### 2. Configure the Rsyslog to forward to SEKOIA.IO
+### Configure the Rsyslog to forward to SEKOIA.IO
 
 #### Rsyslog prerequisites
 In order to allow the Rsyslog to work properly, please ensure the following packages are installed:
@@ -344,7 +344,7 @@ $ sudo systemctl restart rsyslog.service
 ```
 
 
-## IV. Sysmon usage
+## Sysmon usage
 
 #### NXLog setup with Sysmon
 
@@ -381,7 +381,7 @@ In order to monitor the common ones (Application, System, Security) and Sysmon, 
 ```
 
 
-## V. Enjoy your events
+## Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 ## Related files

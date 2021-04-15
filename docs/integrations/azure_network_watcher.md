@@ -1,5 +1,5 @@
 uuid: 340e3bc7-2b76-48e4-9833-e971451b2979
-name: Azure Network Watcher (NSG flow logs) 
+name: Azure Network Watcher (NSG flow logs)
 
 ## Overview
 Azure Network Watcher provides tools to monitor, diagnose, view metrics, and enable or disable logs for resources in an Azure virtual network. It also allows to log information about IP traffic flowing through a network security group: NSG flow logs.
@@ -9,7 +9,7 @@ Please [contact us](mailto:support@sekoia.io) to discuss about the network secur
 
 This setup guide will show you a method to enable and give us access to NSG flow logs produced by Azure Network Watcher service to SEKOIA.IO.
 
-### 1. Enable NSG flow logs 
+### Enable NSG flow logs
 
 The following instructions are provided for the Azure web portal (https://portal.azure.com).
 
@@ -19,7 +19,7 @@ Navigate to the Network Watcher service, and select `NSG flow logs` under `LOGS`
 
 These instructions are illustrated and more detailled [here](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal).
 
-### 2. Share access to logs
+### Share access to logs
 
 This part should be discussed with SEKOIA.IO people to find an appropriate solution to forward your flow logs to SEKOIA.IO.
 
@@ -28,7 +28,7 @@ A possible solution consists to share us:
 - A storage token associated with the resources to share
 - The name of the container where the NSG flow logs are stored
 
-From this information, we will be able to retrieve each _PT1h.json_ blob which contains the flow logs. 
+From this information, we will be able to retrieve each _PT1h.json_ blob which contains the flow logs.
 
 ## Further Readings
 - [Azure Network Watcher overview](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview)

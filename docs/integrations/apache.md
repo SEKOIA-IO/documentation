@@ -8,14 +8,14 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 This setup guide will show you how to forward both your access and error logs to SEKOIA.IO by means of an rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure the Rsyslog server
+### Configure the Rsyslog server
 We can configure rsyslog to parse the `access_log` and `error_log` and report its entries to SEKOIA.IO.
 
 Open or create a new Apache configuration file for rsyslog:
@@ -66,13 +66,13 @@ if $programname startswith 'apache' then @@(o)intake.sekoia.io:10514;SEKOIAIOApa
 
 In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 3. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
 ```
 
-### 4. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
 
 ## Related files

@@ -13,18 +13,18 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 
 We are currently supporting the following firewall versions: R77.30, R80.10, R80.20, R80.30.
 
-### 1. Download the certificate
+### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
-### 2. Configure Checkpoint
+### Configure Checkpoint
 The first step is to configure Checkpoint to log the awaited traffic.
 This could be done differently depending on your current setup, one solution is to export logs with the [Log Exporter](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323).
 
-### 3. Configure the Rsyslog server
+### Configure the Rsyslog server
 You can configure your Rsyslog server to forward your checkpoint logs to SEKOIA.IO.
 
 Open or create a new Checkpoint configuration file for rsyslog:
@@ -52,7 +52,7 @@ if $hostname == "YOUR_CHECKPOINT_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKO
 
 In the above `template` instruction, change the `YOUR_CHECKPOINT_HOSTNAME` variable with the correct value, and please replace `YOUR_INTAKE_KEY` variable with your intake key.
 
-### 4. Restart rsyslog
+### Restart rsyslog
 
 ```bash
 $ sudo service rsyslog restart
@@ -61,5 +61,5 @@ $ sudo service rsyslog restart
 ## Related files
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
-### 5. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.

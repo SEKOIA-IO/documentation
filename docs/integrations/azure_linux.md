@@ -7,7 +7,7 @@ Azure Virtual Machines service is developed and managed by Microsoft Corp.
 ## Setup
 This setup guide will show you how to forward events produced by a Linux Virtual Machine hosted on Azure platform to SEKOIA.IO.
 
-### 1. Event hubs
+### Event hubs
 These explanations are made from the Azure web portal (https://portal.azure.com).
 
 As a prerequisite you need an `Event Hubs` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
@@ -29,7 +29,7 @@ Navigate to: `Home > Event Hubs > company-eventhub > linux-event - Shared access
 
 Navigate to: `Home > Event Hubs > company-eventhub > linux-event - Consumer groups`. From there, you can create a consumer group (e.g. sekoiaio-nifi).
 
-### 2. Linux Virtual Machine
+### Linux Virtual Machine
 You need to activate and configure the diagnostic extension `LinuxDiagnostic`.
 Navigate to: `Home > Virtual machines > virtual machine name (e.g. company-linux) > Settings > Extensions`. Install it and note the new `StorageAccount` name created (e.g. company-storage-account).
 
@@ -182,7 +182,7 @@ Finally you could push the change of the diagnostic extension configuration (ada
 PS Azure:\> az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group company-resource-group --vm-name company-linux --protected-settings protected_settings.json --settings public_settings.json --subscription uuid
 ```
 
-### 3. Enjoy your events
+### Enjoy your events
 You can send to Sekoia the `Connection string-primary key` previously mentioned.
 
 Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
