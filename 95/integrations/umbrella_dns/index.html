@@ -752,36 +752,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-collect-proxylogs-files-and-send-them-to-rsyslog" class="md-nav__link">
-    2. Collect proxylogs files and send them to rsyslog
+  <a href="#collect-proxylogs-files-and-send-them-to-rsyslog" class="md-nav__link">
+    Collect proxylogs files and send them to rsyslog
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-configure-the-rsyslog-server" class="md-nav__link">
-    3. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-restart-rsyslog" class="md-nav__link">
-    4. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-enjoy-your-events" class="md-nav__link">
-    5. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1571,36 +1571,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-collect-proxylogs-files-and-send-them-to-rsyslog" class="md-nav__link">
-    2. Collect proxylogs files and send them to rsyslog
+  <a href="#collect-proxylogs-files-and-send-them-to-rsyslog" class="md-nav__link">
+    Collect proxylogs files and send them to rsyslog
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-configure-the-rsyslog-server" class="md-nav__link">
-    3. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-restart-rsyslog" class="md-nav__link">
-    4. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-enjoy-your-events" class="md-nav__link">
-    5. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1643,13 +1643,13 @@
 <h2 id="setup">Setup</h2>
 <p>This setup guide will show you how to forward logs produced by CISCO Umbrella service to SEKOIA.IO by means of an Rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.</p>
-<h3 id="1-download-the-certificate">1. Download the certificate</h3>
+<h3 id="download-the-certificate">Download the certificate</h3>
 <p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
 </td></tr></table>
 
-<h3 id="2-collect-proxylogs-files-and-send-them-to-rsyslog">2. Collect proxylogs files and send them to rsyslog</h3>
+<h3 id="collect-proxylogs-files-and-send-them-to-rsyslog">Collect proxylogs files and send them to rsyslog</h3>
 <p>After configuring Umbrella Log Management with AWS S3, the logs you download will be gzipped CSVs in appropriate subfolder with the following naming format:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dnslogs/&lt;year&gt;-&lt;month&gt;-&lt;day&gt;/&lt;year&gt;-&lt;month&gt;-&lt;day&gt;-&lt;hour&gt;-&lt;minute&gt;.csv.gz
 </pre></div>
@@ -1660,7 +1660,7 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 </pre></div>
 </td></tr></table>
 
-<h3 id="3-configure-the-rsyslog-server">3. Configure the Rsyslog server</h3>
+<h3 id="configure-the-rsyslog-server">Configure the Rsyslog server</h3>
 <p>You can configure your Rsyslog server to forward your fortigate logs to SEKOIA.IO.</p>
 <p>Open or create a new Umbrella configuration file for rsyslog:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/rsyslog.d/6-umbrella.conf
@@ -1691,7 +1691,7 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 
 <span class="c1"># Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)</span>
 <span class="c1"># IMPORTANT: don&#39;t forget to set your intake key in the template</span>
-template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOUmbrellaDnslogsTemplate&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span> <span class="nv">string</span><span class="o">=</span><span class="s2">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;</span><span class="o">)</span> 
+template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOUmbrellaDnslogsTemplate&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span> <span class="nv">string</span><span class="o">=</span><span class="s2">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;</span><span class="o">)</span>
 
 <span class="c1"># Send your Umbrella events to SEKOIA.IO intake servers under SEKOIAIOUmbrellaDnslogsTemplate template</span>
 <span class="k">if</span> <span class="nv">$syslogtag</span> contains <span class="s2">&quot;dnslogs&quot;</span> <span class="k">then</span> @@<span class="o">(</span>o<span class="o">)</span>intake.sekoia.io:10514<span class="p">;</span>SEKOIAIOUmbrellaDnslogsTemplate
@@ -1699,12 +1699,12 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 </td></tr></table>
 
 <p>In the above <code>template</code> instruction, replace <code>YOUR_INTAKE_KEY</code> variable with the intake key available in the <code>Intakes</code> menu of SEKOIA.IO.</p>
-<h3 id="4-restart-rsyslog">4. Restart rsyslog</h3>
+<h3 id="restart-rsyslog">Restart rsyslog</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo service rsyslog restart
 </pre></div>
 </td></tr></table>
 
-<h3 id="5-enjoy-your-events">5. Enjoy your events</h3>
+<h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>Once the configuration has been done on Sekoia side, you can go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
 <h2 id="further-readings">Further Readings</h2>
 <ul>

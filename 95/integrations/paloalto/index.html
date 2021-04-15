@@ -995,22 +995,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-the-rsyslog-server" class="md-nav__link">
-    2. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-restart-rsyslog" class="md-nav__link">
-    3. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
@@ -1029,8 +1029,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#4-enjoy-your-events" class="md-nav__link">
-    4. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1568,22 +1568,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-the-rsyslog-server" class="md-nav__link">
-    2. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-restart-rsyslog" class="md-nav__link">
-    3. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
@@ -1602,8 +1602,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#4-enjoy-your-events" class="md-nav__link">
-    4. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1638,14 +1638,14 @@
 <p>Palo Alto Networks offers an enterprise cybersecurity platform which provides network security, cloud security, endpoint protection, and various cloud-delivered security services.</p>
 <h2 id="setup">Setup</h2>
 <p>This setup guide will show you how to forward logs produced by your Palo Alto firewalls to SEKOIA.IO by means of an rsyslog transport channel.</p>
-<h3 id="1-download-the-certificate">1. Download the certificate</h3>
+<h3 id="download-the-certificate">Download the certificate</h3>
 <p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
 </td></tr></table>
 
-<h3 id="2-configure-the-rsyslog-server">2. Configure the Rsyslog server</h3>
+<h3 id="configure-the-rsyslog-server">Configure the Rsyslog server</h3>
 <p>Open or create a new Palo Alto configuration file for rsyslog:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/rsyslog.d/38-paloalto.conf
 </pre></div>
@@ -1683,7 +1683,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 </td></tr></table>
 
 <p>In the above <code>template</code> instruction, change the <code>YOUR_PALOALTO_HOSTNAME</code> variable with the correct value, and please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key.</p>
-<h3 id="3-restart-rsyslog">3. Restart rsyslog</h3>
+<h3 id="restart-rsyslog">Restart rsyslog</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo service rsyslog restart
 </pre></div>
 </td></tr></table>
@@ -1692,7 +1692,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 <ul>
 <li><a href="https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem">SEKOIA-IO-intake.pem</a>: SEKOIA.IO TLS Server Certificate (1674b)</li>
 </ul>
-<h3 id="4-enjoy-your-events">4. Enjoy your events</h3>
+<h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>Go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
                 
                   

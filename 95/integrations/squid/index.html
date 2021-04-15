@@ -1055,36 +1055,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-squid" class="md-nav__link">
-    2. Configure Squid
+  <a href="#configure-squid" class="md-nav__link">
+    Configure Squid
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-configure-the-rsyslog-server" class="md-nav__link">
-    3. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-restart-rsyslog" class="md-nav__link">
-    4. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-enjoy-your-events" class="md-nav__link">
-    5. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1576,36 +1576,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-squid" class="md-nav__link">
-    2. Configure Squid
+  <a href="#configure-squid" class="md-nav__link">
+    Configure Squid
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-configure-the-rsyslog-server" class="md-nav__link">
-    3. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-restart-rsyslog" class="md-nav__link">
-    4. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-enjoy-your-events" class="md-nav__link">
-    5. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1655,13 +1655,13 @@
 <h2 id="setup">Setup</h2>
 <p>This setup guide will show you how to forward logs produced by your SQUID servers to SEKOIA.IO by means of an rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.</p>
-<h3 id="1-download-the-certificate">1. Download the certificate</h3>
+<h3 id="download-the-certificate">Download the certificate</h3>
 <p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
 </td></tr></table>
 
-<h3 id="2-configure-squid">2. Configure Squid</h3>
+<h3 id="configure-squid">Configure Squid</h3>
 <p>We can configure SQUID to report access logs to your syslog server.</p>
 <p>Open the squid configuration file (please note that the path to the configuration file may change depending on the OS and your configuration):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/squid/squid.conf
@@ -1673,7 +1673,7 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 </pre></div>
 </td></tr></table>
 
-<h3 id="3-configure-the-rsyslog-server">3. Configure the Rsyslog server</h3>
+<h3 id="configure-the-rsyslog-server">Configure the Rsyslog server</h3>
 <p>Open or create a new Squid configuration file for rsyslog:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/rsyslog.d/17-squid.conf
 </pre></div>
@@ -1711,12 +1711,12 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 </td></tr></table>
 
 <p>In the above <code>template</code> instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key.</p>
-<h3 id="4-restart-rsyslog">4. Restart rsyslog</h3>
+<h3 id="restart-rsyslog">Restart rsyslog</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo service rsyslog restart
 </pre></div>
 </td></tr></table>
 
-<h3 id="5-enjoy-your-events">5. Enjoy your events</h3>
+<h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>Go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
 <h2 id="related-files">Related files</h2>
 <ul>

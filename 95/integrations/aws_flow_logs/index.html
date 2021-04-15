@@ -596,15 +596,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-vpc-flow-logs" class="md-nav__link">
-    1. VPC Flow Logs
+  <a href="#vpc-flow-logs" class="md-nav__link">
+    VPC Flow Logs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-log-forwarding-configuration" class="md-nav__link">
-    2. Log forwarding configuration
+  <a href="#log-forwarding-configuration" class="md-nav__link">
+    Log forwarding configuration
   </a>
   
 </li>
@@ -1550,15 +1550,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-vpc-flow-logs" class="md-nav__link">
-    1. VPC Flow Logs
+  <a href="#vpc-flow-logs" class="md-nav__link">
+    VPC Flow Logs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-log-forwarding-configuration" class="md-nav__link">
-    2. Log forwarding configuration
+  <a href="#log-forwarding-configuration" class="md-nav__link">
+    Log forwarding configuration
   </a>
   
 </li>
@@ -1605,7 +1605,7 @@
 </ul>
 <h2 id="setup">Setup</h2>
 <p>Please <a href="mailto:support@sekoia.io">contact us</a> to discuss about the AWS services in your organization in order to find the appropriate solution to forward VPC Flow Logs to SEKOIA.IO.</p>
-<h3 id="1-vpc-flow-logs">1. VPC Flow Logs</h3>
+<h3 id="vpc-flow-logs">VPC Flow Logs</h3>
 <p>As a prerequisite you need an existing VPC, subnet or network interface (Elastic Load Balancing, Amazon RDS, Amazon ElastiCache, Amazon Redshift, Amazon WorkSpaces, NAT gateways, Transit gateways) to create a flow log. If you create a flow log for a subnet or VPC, each network interface in that subnet or VPC is monitored.</p>
 <p>In the AWS console, navigate to: <code>Services &gt; VPC</code>. From there, select the resource for which you want to capture information. The flow logs are available on the following resources: VPC, subnet, or network interfaces.</p>
 <p>For VPC and subnet:</p>
@@ -1615,7 +1615,7 @@
 <li>Click on <em>Create flow log</em></li>
 <li>Set up the flow log: we recommend to capture all traffic (accepted and rejected).</li>
 </ul>
-<h3 id="2-log-forwarding-configuration">2. Log forwarding configuration</h3>
+<h3 id="log-forwarding-configuration">Log forwarding configuration</h3>
 <p>This part should be discussed with SEKOIA.IO people to find an appropriate solution to forward your flow logs to SEKOIA.IO.</p>
 <p>The following default record format is integrated to the Operation Center:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">&lt;version&gt; &lt;account-id&gt; &lt;interface-id&gt; &lt;srcaddr&gt; &lt;dstaddr&gt; &lt;srcport&gt; &lt;dstport&gt; &lt;protocol&gt; &lt;packets&gt; &lt;bytes&gt; &lt;start&gt; &lt;end&gt; &lt;action&gt; &lt;log-status&gt;</span>

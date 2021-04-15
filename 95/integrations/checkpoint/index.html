@@ -887,29 +887,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-checkpoint" class="md-nav__link">
-    2. Configure Checkpoint
+  <a href="#configure-checkpoint" class="md-nav__link">
+    Configure Checkpoint
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-configure-the-rsyslog-server" class="md-nav__link">
-    3. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-restart-rsyslog" class="md-nav__link">
-    4. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
@@ -928,8 +928,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#5-enjoy-your-events" class="md-nav__link">
-    5. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1575,29 +1575,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-download-the-certificate" class="md-nav__link">
-    1. Download the certificate
+  <a href="#download-the-certificate" class="md-nav__link">
+    Download the certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-checkpoint" class="md-nav__link">
-    2. Configure Checkpoint
+  <a href="#configure-checkpoint" class="md-nav__link">
+    Configure Checkpoint
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-configure-the-rsyslog-server" class="md-nav__link">
-    3. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-restart-rsyslog" class="md-nav__link">
-    4. Restart rsyslog
+  <a href="#restart-rsyslog" class="md-nav__link">
+    Restart rsyslog
   </a>
   
 </li>
@@ -1616,8 +1616,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#5-enjoy-your-events" class="md-nav__link">
-    5. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1655,16 +1655,16 @@
 to SEKOIA.IO by means of an Rsyslog transport channel.
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.</p>
 <p>We are currently supporting the following firewall versions: R77.30, R80.10, R80.20, R80.30.</p>
-<h3 id="1-download-the-certificate">1. Download the certificate</h3>
+<h3 id="download-the-certificate">Download the certificate</h3>
 <p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
 </td></tr></table>
 
-<h3 id="2-configure-checkpoint">2. Configure Checkpoint</h3>
+<h3 id="configure-checkpoint">Configure Checkpoint</h3>
 <p>The first step is to configure Checkpoint to log the awaited traffic.
 This could be done differently depending on your current setup, one solution is to export logs with the <a href="https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&amp;solutionid=sk122323">Log Exporter</a>.</p>
-<h3 id="3-configure-the-rsyslog-server">3. Configure the Rsyslog server</h3>
+<h3 id="configure-the-rsyslog-server">Configure the Rsyslog server</h3>
 <p>You can configure your Rsyslog server to forward your checkpoint logs to SEKOIA.IO.</p>
 <p>Open or create a new Checkpoint configuration file for rsyslog:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/rsyslog.d/52-checkpoint.conf
@@ -1703,7 +1703,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 </td></tr></table>
 
 <p>In the above <code>template</code> instruction, change the <code>YOUR_CHECKPOINT_HOSTNAME</code> variable with the correct value, and please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key.</p>
-<h3 id="4-restart-rsyslog">4. Restart rsyslog</h3>
+<h3 id="restart-rsyslog">Restart rsyslog</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo service rsyslog restart
 </pre></div>
 </td></tr></table>
@@ -1712,7 +1712,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 <ul>
 <li><a href="https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem">SEKOIA-IO-intake.pem</a>: SEKOIA.IO TLS Server Certificate (1674b)</li>
 </ul>
-<h3 id="5-enjoy-your-events">5. Enjoy your events</h3>
+<h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>Go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
                 
                   

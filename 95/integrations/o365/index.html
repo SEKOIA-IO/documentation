@@ -687,15 +687,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-office365-logs" class="md-nav__link">
-    I. Office365 logs
+  <a href="#office365-logs" class="md-nav__link">
+    Office365 logs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-transport-to-sekoiaio-via-api" class="md-nav__link">
-    II. Transport to SEKOIA.IO via API
+  <a href="#transport-to-sekoiaio-via-api" class="md-nav__link">
+    Transport to SEKOIA.IO via API
   </a>
   
     <nav class="md-nav">
@@ -721,8 +721,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-optionnal-mode" class="md-nav__link">
-    III. Optionnal mode
+  <a href="#optionnal-mode" class="md-nav__link">
+    Optionnal mode
   </a>
   
     <nav class="md-nav">
@@ -768,8 +768,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-enjoy-your-events" class="md-nav__link">
-    IV. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1601,15 +1601,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-office365-logs" class="md-nav__link">
-    I. Office365 logs
+  <a href="#office365-logs" class="md-nav__link">
+    Office365 logs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-transport-to-sekoiaio-via-api" class="md-nav__link">
-    II. Transport to SEKOIA.IO via API
+  <a href="#transport-to-sekoiaio-via-api" class="md-nav__link">
+    Transport to SEKOIA.IO via API
   </a>
   
     <nav class="md-nav">
@@ -1635,8 +1635,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-optionnal-mode" class="md-nav__link">
-    III. Optionnal mode
+  <a href="#optionnal-mode" class="md-nav__link">
+    Optionnal mode
   </a>
   
     <nav class="md-nav">
@@ -1682,8 +1682,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-enjoy-your-events" class="md-nav__link">
-    IV. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1718,7 +1718,7 @@
                 
                 <h2 id="overview">Overview</h2>
 <p>Office 365 is a line of subscription services offered by Microsoft as part of the Microsoft Office product line.</p>
-<h2 id="i-office365-logs">I. Office365 logs</h2>
+<h2 id="office365-logs">Office365 logs</h2>
 <p>Microsoft Office 365 API logs four categories of logs:</p>
 <ul>
 <li>Audit.AzureActiveDirectory</li>
@@ -1726,7 +1726,7 @@
 <li>Audit.SharePoint</li>
 <li>Audit.General</li>
 </ul>
-<h2 id="ii-transport-to-sekoiaio-via-api">II. Transport to SEKOIA.IO via API</h2>
+<h2 id="transport-to-sekoiaio-via-api">Transport to SEKOIA.IO via API</h2>
 <p>Sekoia has developed an automatical setup for collecting Microsoft Office 365 logs from its dedicated API.</p>
 <h3 id="prerequisite">Prerequisite</h3>
 <ul>
@@ -1736,16 +1736,18 @@
 <img alt="SEKOIA.IO Operation Center O365 intake" src="/assets/tenant_o365.png" style="max-width:600px" /></li>
 </ul>
 <h3 id="interconnexion-set-up">Interconnexion set-up</h3>
-<p>In order to exploit the automatic interconnection method, please follow these steps:
-- Log to the Operation Center
-- Go to Configure &gt; Intakes, and click on <code>+ INTAKE</code>
-- Choose Office 365 intake by clicking on <code>CREATE</code>
-- Enter the Intake name and the related Enity, then click on <code>Automatically</code>
-<img alt="SEKOIA.IO Operation Center O365 intake" src="/assets/intake_creation_o365.png" style="max-width:600px" />
-- Click on <code>LOG IN TO OFFICE 365</code>, then <code>ADD PERMISSION INTO OFFICE 365</code>
-<img alt="SEKOIA.IO Operation Center O365 intake" src="/assets/intake_creation_o365_access.png" style="max-width:600px" />
-- Choose your Office account</p>
-<h2 id="iii-optionnal-mode">III. Optionnal mode</h2>
+<p>In order to exploit the automatic interconnection method, please follow these steps:</p>
+<ul>
+<li>Log to the Operation Center</li>
+<li>Go to Configure &gt; Intakes, and click on <code>+ INTAKE</code></li>
+<li>Choose Office 365 intake by clicking on <code>CREATE</code></li>
+<li>Enter the Intake name and the related Enity, then click on <code>Automatically</code>
+<img alt="SEKOIA.IO Operation Center O365 intake" src="/assets/intake_creation_o365.png" style="max-width:600px" /></li>
+<li>Click on <code>LOG IN TO OFFICE 365</code>, then <code>ADD PERMISSION INTO OFFICE 365</code>
+<img alt="SEKOIA.IO Operation Center O365 intake" src="/assets/intake_creation_o365_access.png" style="max-width:600px" /></li>
+<li>Choose your Office account</li>
+</ul>
+<h2 id="optionnal-mode">Optionnal mode</h2>
 <h3 id="manual-mode">Manual mode</h3>
 <h4 id="prerequisites">Prerequisites</h4>
 <p>This setup guide will show you how to generate, store and forward events produced by Office 365 service to SEKOIA.IO.
@@ -1764,7 +1766,7 @@ Then you use Azure PowerShell (within Cloud Shell interface for example): you wi
 </td></tr></table>
 
 <p>Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub - Shared access policies</code>. From there, you can create a policy (e.g. RootManageSharedAccessKey) with the claims <code>Manage</code>, <code>Send</code> and <code>Listen</code>, and note the <code>Primary Key</code> that will be used as the <code>SharedAccessKey</code>.
-Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub &gt; o365-event - Shared access policies</code>. From there, you can create a policy (e.g. sekoiaio-nifi) with the claims <code>Listen</code>. </p>
+Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub &gt; o365-event - Shared access policies</code>. From there, you can create a policy (e.g. sekoiaio-nifi) with the claims <code>Listen</code>.</p>
 <blockquote>
 <p>Once created, click on the policy and save the <code>Connection string-primary key</code>, to be sent to SEKOIA.IO.
 Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub &gt; o365-event - Consumer groups</code>. From there, you can create a consumer group (e.g. sekoiaio-nifi).</p>
@@ -1776,7 +1778,7 @@ Navigate to: <code>Home &gt; Office 365 &gt; Monitoring &gt; Diagnostic settings
 - Add a new diagnostic setting, and select <code>Stream to an event hub</code>and click on configure.
 - Select the previously created <code>Event hubs</code>, <code>Event Hub</code> and <code>SharedAccessKey</code>.
 - Choose a name for this configuration and click on <code>Save</code>.</p>
-<h2 id="iv-enjoy-your-events">IV. Enjoy your events</h2>
+<h2 id="enjoy-your-events">Enjoy your events</h2>
 <p>You can send to Sekoia the <code>Connection string-primary key</code> previously mentioned.
 Once the configuration has been done on Sekoia side, you can go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
 <h2 id="further-readings">Further Readings</h2>

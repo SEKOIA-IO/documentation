@@ -891,15 +891,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-cisco-asa-logs" class="md-nav__link">
-    I. CISCO ASA logs
+  <a href="#cisco-asa-logs" class="md-nav__link">
+    CISCO ASA logs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-transport-to-the-concentrator" class="md-nav__link">
-    II. Transport to the concentrator
+  <a href="#transport-to-the-concentrator" class="md-nav__link">
+    Transport to the concentrator
   </a>
   
     <nav class="md-nav">
@@ -925,8 +925,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-transport-to-sekoiaio" class="md-nav__link">
-    III. Transport to SEKOIA.IO
+  <a href="#transport-to-sekoiaio" class="md-nav__link">
+    Transport to SEKOIA.IO
   </a>
   
     <nav class="md-nav">
@@ -979,8 +979,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-enjoy-your-events" class="md-nav__link">
-    IV. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1601,15 +1601,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-cisco-asa-logs" class="md-nav__link">
-    I. CISCO ASA logs
+  <a href="#cisco-asa-logs" class="md-nav__link">
+    CISCO ASA logs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-transport-to-the-concentrator" class="md-nav__link">
-    II. Transport to the concentrator
+  <a href="#transport-to-the-concentrator" class="md-nav__link">
+    Transport to the concentrator
   </a>
   
     <nav class="md-nav">
@@ -1635,8 +1635,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-transport-to-sekoiaio" class="md-nav__link">
-    III. Transport to SEKOIA.IO
+  <a href="#transport-to-sekoiaio" class="md-nav__link">
+    Transport to SEKOIA.IO
   </a>
   
     <nav class="md-nav">
@@ -1689,8 +1689,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-enjoy-your-events" class="md-nav__link">
-    IV. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1722,7 +1722,7 @@
 <ul>
 <li>From the CISCO ASA machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO</li>
 </ul>
-<h2 id="i-cisco-asa-logs">I. CISCO ASA logs</h2>
+<h2 id="cisco-asa-logs">CISCO ASA logs</h2>
 <p>On CISCO appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are enable by one simple command.
 To enable logging, enter the following commands:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -1733,7 +1733,7 @@ hostname<span class="o">(</span>config<span class="o">)</span><span class="c1">#
 </pre></div>
 </td></tr></table>
 
-<h2 id="ii-transport-to-the-concentrator">II. Transport to the concentrator</h2>
+<h2 id="transport-to-the-concentrator">Transport to the concentrator</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>The following prerequisites are needed in order to setup efficient log concentration:</p>
 <ul>
@@ -1774,11 +1774,11 @@ hostname<span class="o">(</span>config<span class="o">)</span><span class="c1">#
 <li>You can configure the ASA to send data to a syslog server using either UDP or TCP, but not both. The default protocol is UDP if you do not specify a protocol.</li>
 </ul>
 <blockquote>
-<p>If you specify TCP, the ASA discovers when the syslog server fails and as a security protection, new connections through the ASA are blocked. 
+<p>If you specify TCP, the ASA discovers when the syslog server fails and as a security protection, new connections through the ASA are blocked.
 If you specify UDP, the ASA continues to allow new connections whether or not the syslog server is operational. Valid port values for either protocol are 1025 through 65535. The default UDP port is 514. The default TCP port is 1470.
 For more information about Cisco ASA logging, please refer to your <a href="https://www.cisco.com/c/en/us/td/docs/security/asa/asa-cli-reference/S/asa-command-ref-S.html">Cisco documentation</a>.</p>
 </blockquote>
-<h2 id="iii-transport-to-sekoiaio">III. Transport to SEKOIA.IO</h2>
+<h2 id="transport-to-sekoiaio">Transport to SEKOIA.IO</h2>
 <h3 id="configure-the-rsyslog-to-forward-to-sekoiaio">Configure the Rsyslog to forward to SEKOIA.IO</h3>
 <h4 id="rsyslog-prerequisites">Rsyslog prerequisites</h4>
 <p>In order to allow the Rsyslog to work properly, please ensure the following packages are installed:</p>
@@ -1869,7 +1869,7 @@ And change the <code>YOUR_CISCO_ASA_HOSTNAME</code> variable with the correct va
 </pre></div>
 </td></tr></table>
 
-<h2 id="iv-enjoy-your-events">IV. Enjoy your events</h2>
+<h2 id="enjoy-your-events">Enjoy your events</h2>
 <p>Go to the <a href="/sic/events">events page</a> to watch your incoming events.</p>
                 
                   

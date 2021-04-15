@@ -656,22 +656,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-event-hubs" class="md-nav__link">
-    1. Event hubs
+  <a href="#event-hubs" class="md-nav__link">
+    Event hubs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-linux-virtual-machine" class="md-nav__link">
-    2. Linux Virtual Machine
+  <a href="#linux-virtual-machine" class="md-nav__link">
+    Linux Virtual Machine
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enjoy-your-events" class="md-nav__link">
-    3. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1557,22 +1557,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-event-hubs" class="md-nav__link">
-    1. Event hubs
+  <a href="#event-hubs" class="md-nav__link">
+    Event hubs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-linux-virtual-machine" class="md-nav__link">
-    2. Linux Virtual Machine
+  <a href="#linux-virtual-machine" class="md-nav__link">
+    Linux Virtual Machine
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enjoy-your-events" class="md-nav__link">
-    3. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1614,7 +1614,7 @@
 <p>Azure Virtual Machines service is developed and managed by Microsoft Corp.</p>
 <h2 id="setup">Setup</h2>
 <p>This setup guide will show you how to forward events produced by a Linux Virtual Machine hosted on Azure platform to SEKOIA.IO.</p>
-<h3 id="1-event-hubs">1. Event hubs</h3>
+<h3 id="event-hubs">Event hubs</h3>
 <p>These explanations are made from the Azure web portal (https://portal.azure.com).</p>
 <p>As a prerequisite you need an <code>Event Hubs</code> (e.g. company-eventhub) and to choose an existing <code>resourceGroup</code> or create a new one (e.g. company-resource-group).
 You also need your <code>Subscription ID</code> if you don't have a default one.</p>
@@ -1631,7 +1631,7 @@ You also need your <code>Subscription ID</code> if you don't have a default one.
 <p>Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub - Shared access policies</code>. From there, you can create a policy (e.g. RootManageSharedAccessKey) with the claims <code>Manage</code>, <code>Send</code> and <code>Listen</code>, and note the <code>Primary Key</code> that will be used as the <code>SharedAccessKey</code>.</p>
 <p>Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub &gt; linux-event - Shared access policies</code>. From there, you can create a policy (e.g. sekoiaio-nifi) with the claims <code>Listen</code>. Once created, click on the policy and save the <code>Connection string-primary key</code>, to be sent to SEKOIA.IO.</p>
 <p>Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub &gt; linux-event - Consumer groups</code>. From there, you can create a consumer group (e.g. sekoiaio-nifi).</p>
-<h3 id="2-linux-virtual-machine">2. Linux Virtual Machine</h3>
+<h3 id="linux-virtual-machine">Linux Virtual Machine</h3>
 <p>You need to activate and configure the diagnostic extension <code>LinuxDiagnostic</code>.
 Navigate to: <code>Home &gt; Virtual machines &gt; virtual machine name (e.g. company-linux) &gt; Settings &gt; Extensions</code>. Install it and note the new <code>StorageAccount</code> name created (e.g. company-storage-account).</p>
 <p>Navigate to: <code>Home &gt; Storage accounts &gt; company-storage-account - Access keys</code>. From there you can note the key value later used as the <code>storageAccountKey</code>.</p>
@@ -1858,7 +1858,7 @@ First we'll convert the expiration date we set before into a unix timestamp. Ext
 </pre></div>
 </td></tr></table>
 
-<h3 id="3-enjoy-your-events">3. Enjoy your events</h3>
+<h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>You can send to Sekoia the <code>Connection string-primary key</code> previously mentioned.</p>
 <p>Once the configuration has been done on Sekoia side, you can go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
 <h2 id="further-readings">Further Readings</h2>

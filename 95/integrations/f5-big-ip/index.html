@@ -911,22 +911,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-configure-the-rsyslog-server" class="md-nav__link">
-    1. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-a-log-publisher" class="md-nav__link">
-    2. Configure a Log Publisher
+  <a href="#configure-a-log-publisher" class="md-nav__link">
+    Configure a Log Publisher
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-direct-configuration" class="md-nav__link">
-    3. Direct Configuration
+  <a href="#direct-configuration" class="md-nav__link">
+    Direct Configuration
   </a>
   
 </li>
@@ -945,8 +945,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#4-enjoy-your-events" class="md-nav__link">
-    4. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1568,22 +1568,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-configure-the-rsyslog-server" class="md-nav__link">
-    1. Configure the Rsyslog server
+  <a href="#configure-the-rsyslog-server" class="md-nav__link">
+    Configure the Rsyslog server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-a-log-publisher" class="md-nav__link">
-    2. Configure a Log Publisher
+  <a href="#configure-a-log-publisher" class="md-nav__link">
+    Configure a Log Publisher
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-direct-configuration" class="md-nav__link">
-    3. Direct Configuration
+  <a href="#direct-configuration" class="md-nav__link">
+    Direct Configuration
   </a>
   
 </li>
@@ -1602,8 +1602,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#4-enjoy-your-events" class="md-nav__link">
-    4. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1641,7 +1641,7 @@
 <p>In this setup guide you will set up an rsyslog server to add your intake key and forward securely your BIG-IP logs to our servers. We first explain how to configure your rsyslog server, then we show how to configure a <em>Log Publisher</em> to format your logs as CEF and send them to your rsyslog server.</p>
 <p>Most BIG-IP modules can use Log Publishers, some can directly log messages as CEF to an rsyslog server.</p>
 <p>On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.</p>
-<h3 id="1-configure-the-rsyslog-server">1. Configure the Rsyslog server</h3>
+<h3 id="configure-the-rsyslog-server">Configure the Rsyslog server</h3>
 <p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </pre></div>
@@ -1690,7 +1690,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 </pre></div>
 </td></tr></table>
 
-<h3 id="2-configure-a-log-publisher">2. Configure a Log Publisher</h3>
+<h3 id="configure-a-log-publisher">Configure a Log Publisher</h3>
 <p>Before creating a log publisher, you first need a <em>management port</em> log destination:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">System -&gt; Logs -&gt; Configuration -&gt; Log Destinations -&gt; Create...</span>
 </pre></div>
@@ -1720,7 +1720,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 </pre></div>
 </td></tr></table>
 
-<h3 id="3-direct-configuration">3. Direct Configuration</h3>
+<h3 id="direct-configuration">Direct Configuration</h3>
 <p>Some modules allow direct configuration to the rsyslog server. As an example:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Security -&gt; Event Logs -&gt; Logging Profiles -&gt; Create...</span>
 </pre></div>
@@ -1737,7 +1737,7 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 <ul>
 <li><a href="https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem">SEKOIA-IO-intake.pem</a>: SEKOIA.IO TLS Server Certificate (1674b)</li>
 </ul>
-<h3 id="4-enjoy-your-events">4. Enjoy your events</h3>
+<h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>Go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
                 
                   

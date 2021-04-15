@@ -644,22 +644,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-event-hubs" class="md-nav__link">
-    1. Event hubs
+  <a href="#event-hubs" class="md-nav__link">
+    Event Hubs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-azure-mysql" class="md-nav__link">
-    2. Azure MySQL
+  <a href="#azure-mysql" class="md-nav__link">
+    Azure MySQL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enjoy-your-events" class="md-nav__link">
-    3. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1550,22 +1550,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-event-hubs" class="md-nav__link">
-    1. Event hubs
+  <a href="#event-hubs" class="md-nav__link">
+    Event Hubs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-azure-mysql" class="md-nav__link">
-    2. Azure MySQL
+  <a href="#azure-mysql" class="md-nav__link">
+    Azure MySQL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enjoy-your-events" class="md-nav__link">
-    3. Enjoy your events
+  <a href="#enjoy-your-events" class="md-nav__link">
+    Enjoy your events
   </a>
   
 </li>
@@ -1601,7 +1601,7 @@
 <h2 id="setup">Setup</h2>
 <p>This setup guide will show you how to forward events produced by Azure MySQL service to SEKOIA.IO.</p>
 <p>Theses changes have to be made from the Azure web portal (https://portal.azure.com).</p>
-<h3 id="1-event-hubs">1. Event hubs</h3>
+<h3 id="event-hubs">Event Hubs</h3>
 <p>As a prerequisite you need an <code>Event Hubs</code> (e.g. company-eventhub) and to choose an existing <code>resourceGroup</code> or create a new one (e.g. company-resource-group).
 You also need your <code>Subscription ID</code> if you don't have a default one.</p>
 <p>Navigate to: <code>Home &gt; Cost Management + Billing &gt; Subscriptions</code>. From there, copy the relevant <code>Subscription ID</code> that will be used in the command line (e.g. uuid)</p>
@@ -1617,7 +1617,7 @@ You also need your <code>Subscription ID</code> if you don't have a default one.
 <p>Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub - Shared access policies</code>. From there, you can create a policy (e.g. RootManageSharedAccessKey) with the claims <code>Manage</code>, <code>Send</code> and <code>Listen</code>, and note the <code>Primary Key</code> that will be used as the <code>SharedAccessKey</code>.</p>
 <p>Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub &gt; mysql-event - Shared access policies</code>. From there, you can create a policy (e.g. sekoiaio-nifi) with the claims <code>Listen</code>. Once created, click on the policy and save the <code>Connection string-primary key</code>, to be sent to SEKOIA.IO.</p>
 <p>Navigate to: <code>Home &gt; Event Hubs &gt; company-eventhub &gt; mysql-event - Consumer groups</code>. From there, you can create a consumer group (e.g. sekoiaio-nifi).</p>
-<h3 id="2-azure-mysql">2. Azure MySQL</h3>
+<h3 id="azure-mysql">Azure MySQL</h3>
 <p>You need to activate and configure the Azure MySQL diagnostic settings (e.g. company-mysql).</p>
 <p>Navigate to: <code>Home &gt; SQL databases (e.g. company-mysql) &gt; Monitoring &gt; Diagnostic settings</code>:</p>
 <ul>
@@ -1626,7 +1626,7 @@ You also need your <code>Subscription ID</code> if you don't have a default one.
 <li>In the log section, select <code>MySqlAuditLogs</code> and <code>MySqlSlowLogs</code>.</li>
 <li>Choose a name for this configuration and click on <code>Save</code>.</li>
 </ul>
-<h3 id="3-enjoy-your-events">3. Enjoy your events</h3>
+<h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>You can send to Sekoia the <code>Connection string-primary key</code> previously mentioned.</p>
 <p>Once the configuration has been done on Sekoia side, you can go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
                 

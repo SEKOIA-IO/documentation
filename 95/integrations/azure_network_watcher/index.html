@@ -668,15 +668,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-enable-nsg-flow-logs" class="md-nav__link">
-    1. Enable NSG flow logs
+  <a href="#enable-nsg-flow-logs" class="md-nav__link">
+    Enable NSG flow logs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-share-access-to-logs" class="md-nav__link">
-    2. Share access to logs
+  <a href="#share-access-to-logs" class="md-nav__link">
+    Share access to logs
   </a>
   
 </li>
@@ -1550,15 +1550,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-enable-nsg-flow-logs" class="md-nav__link">
-    1. Enable NSG flow logs
+  <a href="#enable-nsg-flow-logs" class="md-nav__link">
+    Enable NSG flow logs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-share-access-to-logs" class="md-nav__link">
-    2. Share access to logs
+  <a href="#share-access-to-logs" class="md-nav__link">
+    Share access to logs
   </a>
   
 </li>
@@ -1601,18 +1601,18 @@
 <h2 id="setup">Setup</h2>
 <p>Please <a href="mailto:support@sekoia.io">contact us</a> to discuss about the network security group to monitor in your Azure infrastructure in order to find the appropriate solution to forward your logs to SEKOIA.IO.</p>
 <p>This setup guide will show you a method to enable and give us access to NSG flow logs produced by Azure Network Watcher service to SEKOIA.IO.</p>
-<h3 id="1-enable-nsg-flow-logs">1. Enable NSG flow logs</h3>
+<h3 id="enable-nsg-flow-logs">Enable NSG flow logs</h3>
 <p>The following instructions are provided for the Azure web portal (https://portal.azure.com).</p>
 <p>As a prerequisite you need at least one virtual machine with a network security group, to enable Network Watcher and to register the Microsoft.Insights provider.</p>
 <p>Navigate to the Network Watcher service, and select <code>NSG flow logs</code> under <code>LOGS</code>. From the list of NSGs, select your VM(s), and under <code>Flow logs settings</code>, select <code>On</code> to enable the NSG flow logs. Please, select the Version 2 NSG flow log format sample which is integrated to the Operation Center.</p>
 <p>These instructions are illustrated and more detailled <a href="https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal">here</a>.</p>
-<h3 id="2-share-access-to-logs">2. Share access to logs</h3>
+<h3 id="share-access-to-logs">Share access to logs</h3>
 <p>This part should be discussed with SEKOIA.IO people to find an appropriate solution to forward your flow logs to SEKOIA.IO.</p>
 <p>A possible solution consists to share us:
 - An access key for the Azure Blob Storage
 - A storage token associated with the resources to share
 - The name of the container where the NSG flow logs are stored</p>
-<p>From this information, we will be able to retrieve each <em>PT1h.json</em> blob which contains the flow logs. </p>
+<p>From this information, we will be able to retrieve each <em>PT1h.json</em> blob which contains the flow logs.</p>
 <h2 id="further-readings">Further Readings</h2>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview">Azure Network Watcher overview</a></li>
