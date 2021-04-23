@@ -20,7 +20,7 @@ nav:
           - Transports:
               - Overview: integrations/transport/index.md
               - Rsyslog: integrations/transport/rsyslog.md
-              - Logstash: integrations/transport/rsyslog.md
+              - Logstash: integrations/transport/logstash.md
               - syslog-ng: integrations/transport/syslog-ng.md
           - Cloud and SaaS:
               - AWS:
