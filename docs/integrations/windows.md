@@ -217,7 +217,7 @@ gpupdate /force
 #### Windows Event Collector to Rsyslog
 
 - Ensure the logs are correctly reveived on the WEC server, using the Windows Event Viewer and selecting Windows Logs > Forwarded Events
-- Settup the Nxlog agent to forward the logs to the RSYSLOG by using this configuration :
+- Setup the Nxlog agent to forward the logs to the RSYSLOG by using this configuration :
 
 ```
 define ROOT C:\Program Files (x86)\nxlog
