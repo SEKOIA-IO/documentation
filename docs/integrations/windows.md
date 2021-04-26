@@ -5,6 +5,7 @@ name: Windows
 Microsoft Windows is a popular operating system developed by Microsoft since 1985.
 
 In this documenation we will explain 2 ways to collect and send Windows logs to SEKOIA.IO.
+
 - From the Windows machine directly to SEKOIA.IO using the NXLog agent
 - From the Windows machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
@@ -133,7 +134,6 @@ On the WEC server, create an XML file, named `DC_SUBSCRIPTION.xml` with the foll
                     <Select Path="Application">*</Select>
                     <Select Path="Security">*</Select>
                     <Select Path="System">*</Select>
-                    <Select Path="AD FS/Admin">*</Select>
                 </Query>
             </QueryList>
         ]]>
@@ -215,10 +215,65 @@ gpupdate /force
 - More documentation available here on [Microsoft documentation](https://docs.microsoft.com/fr-fr/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection)
 
 #### Windows Event Collector to Rsyslog
-Ensure the logs are correctly reveived on the WEC server, using the Windows Event Viewer and selecting Windows Logs > Forwarded Events
 
-> Use the information in the section `II] 1. NXLog agent to the Rsyslog` to forward all the logs to the Rsyslog.
+- Ensure the logs are correctly reveived on the WEC server, using the Windows Event Viewer and selecting Windows Logs > Forwarded Events
+- Setup the Nxlog agent to forward the logs to the RSYSLOG by using this configuration :
 
+```
+define ROOT C:\Program Files (x86)\nxlog
+
+Moduledir %ROOT%\modules
+CacheDir %ROOT%\data
+Pidfile %ROOT%\data\nxlog.pid
+SpoolDir %ROOT%\data
+LogFile %ROOT%\data\nxlog.log
+
+<Extension _syslog>
+  Module xm_syslog
+</Extension>
+
+<Extension _json>
+  Module xm_json
+</Extension>
+
+<Input eventlog1>
+  Module im_msvistalog
+  Query <QueryList><Query Id="0"><Select Path="Application">*</Select></Query></QueryList>
+  Exec $Message = to_json();
+</Input>
+<Input eventlog2>
+  Module im_msvistalog
+  Query <QueryList><Query Id="0"><Select Path="System">*</Select></Query></QueryList>
+  Exec $Message = to_json();
+</Input>
+<Input eventlog3>
+  Module im_msvistalog
+  Query <QueryList><Query Id="0"><Select Path="Security">*</Select></Query></QueryList>
+  Exec $Message = to_json();
+</Input>
+<Input eventlog4>
+  Module im_msvistalog
+  Query <QueryList><Query Id="0"><Select Path="ForwardedEvents">*</Select></Query></QueryList>
+  Exec $Message = to_json();
+</Input>
+
+<Output rsyslog>
+  Module om_tcp
+  Host RSYSLOG_HOST
+  Port 514
+  OutputType Syslog_TLS
+
+  Exec to_syslog_ietf();
+</Output>
+
+<Route eventlog_to_rsyslog>
+  Path eventlog1, eventlog2, eventlog3, eventlog4 => rsyslog
+</Route>
+```
+
+> In the above configuration make sure to replace `RSYSLOG_HOST` variable by your Rsyslog server IP.
+
+Restart the NXLog service through the Services tool as Administrator or use Powershell command line: `Restart-Service nxlog`
 
 ## Transport to SEKOIA.IO
 
