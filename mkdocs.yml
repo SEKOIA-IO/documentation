@@ -75,6 +75,11 @@ nav:
           - Alerts: operation_center/alerts.md
           - Events: operation_center/events.md
           - Cases: operation_center/cases.md
+      - Automate:
+          - Overview: operation_center/playbook_overview.md
+          - Triggers: operation_center/triggers.md
+          - Operators: operation_center/operators.md          
+          - Actions: operation_center/actions.md           
       - FAQ: operation_center/faq.md
   - Intelligence Center:
       - Overview: intelligence_center/index.md
