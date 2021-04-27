@@ -101,6 +101,9 @@ Observation Expressions are contained in square brackets [ ... ] and may consist
 
 ![STIX Patterning](../assets/operation_center/stix_patterning.png)
 
+!!! warning
+    Currently, we set a limitation and only rules matching with single Observed Data, and so using only one Observation Expression contained in square brackets, are available for our customers.
+
 !!! note
     When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression _MUST_ start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the `<object-type>:<property_name>` _MUST_ start from the same SCO. Different SCOs may ultimately be used in matching, but they MUST be referenced from the same, single SCO.
 
