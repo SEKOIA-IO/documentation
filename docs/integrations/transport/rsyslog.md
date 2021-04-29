@@ -151,9 +151,10 @@ if ($programname startswith 'unbound') then {
         target="relp.intake.sekoia.io"
         port="11514"
         tls="on"
-        template="SEKOIAIOUnboundTemplate"
+        tls.caCert="/etc/rsyslog.d/SEKOIA-IO-intake.pem"
         tls.authmode="name"
         tls.permittedPeer=["relp.intake.sekoia.io"]
+        template="SEKOIAIOUnboundTemplate"        
     )
 }
 ```
