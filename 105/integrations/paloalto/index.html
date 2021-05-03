@@ -1908,30 +1908,38 @@
 - Traffic towards the Rsyslog must be open on <code>UDP 514</code></p>
 <h3 id="configure-palo-alto">Configure Palo Alto</h3>
 <h4 id="configure-a-syslog-server-profile">Configure a Syslog server profile</h4>
-<p>1) In the GUI, go to <code>Device &gt; Serve Profiles &gt; Syslog</code>.
-2) Click <code>Add</code> and enter a name for the profile such as <code>Syslog server</code>.
-3) If the firewall has more than one virtual system (vsys), select the <code>Location</code> (vsys or <code>Shared</code>) where this profile is available.
-4) Click <code>Add</code> and enter the information that the firewall requires to connect to it:</p>
-<ul>
-<li>Name — Unique name for the server profile.</li>
+<ol>
+<li>In the GUI, go to <code>Device &gt; Serve Profiles &gt; Syslog</code>.</li>
+<li>Click <code>Add</code> and enter a name for the profile such as <code>Syslog server</code>.</li>
+<li>If the firewall has more than one virtual system (vsys), select the <code>Location</code> (vsys or <code>Shared</code>) where this profile is available.</li>
+<li>
+<p>Click <code>Add</code> and enter the information that the firewall requires to connect to it:</p>
+</li>
+<li>
+<p>Name — Unique name for the server profile.</p>
+</li>
 <li>Syslog Server — IP address or fully qualified domain name (FQDN) of the syslog server.</li>
 <li>Transport — Select UDP.</li>
 <li>Port — Select the default is UDP on port 514.</li>
 <li>Format — Select the syslog message format to use: BSD (the default).</li>
 <li>Facility — Select a syslog standard value (default is LOG_USER) to calculate the priority (PRI) field.</li>
-</ul>
+</ol>
 <p>5) Click <code>OK</code> to save the server profile.</p>
 <h4 id="configure-syslog-forwarding-for-traffic-logs">Configure syslog forwarding for Traffic logs</h4>
-<p>1) Select <code>Objects &gt; Log Forwarding</code>, click <code>Add</code>, and enter a <code>Name</code> to identify the profile.
-2) For each log type (here Traffic, Threat and WileFire Malicious) and each severity level, select the <code>Syslog server</code> profile and click <code>OK</code>.
-3) Select <code>Policies &gt; Security</code> and select a policy rule.
-4) Select the <code>Actions</code> tab and select the <code>Log Forwarding</code> profile you created.
-5) In the <code>Profile Type</code> drop-down, select <code>Profiles</code> or <code>Groups</code>, and then select the security profiles or <code>Group Profiles</code> required to trigger log generation and forwarding.
-6) Select both of the <code>Log at Session Start</code> and <code>Log At Session End</code> check boxes, and click <code>OK</code>.</p>
+<ol>
+<li>Select <code>Objects &gt; Log Forwarding</code>, click <code>Add</code>, and enter a <code>Name</code> to identify the profile.</li>
+<li>For each log type (here Traffic, Threat and WileFire Malicious) and each severity level, select the <code>Syslog server</code> profile and click <code>OK</code>.</li>
+<li>Select <code>Policies &gt; Security</code> and select a policy rule.</li>
+<li>Select the <code>Actions</code> tab and select the <code>Log Forwarding</code> profile you created.</li>
+<li>In the <code>Profile Type</code> drop-down, select <code>Profiles</code> or <code>Groups</code>, and then select the security profiles or <code>Group Profiles</code> required to trigger log generation and forwarding.</li>
+<li>Select both of the <code>Log at Session Start</code> and <code>Log At Session End</code> check boxes, and click <code>OK</code>.</li>
+</ol>
 <p>For detailed information about configuring a log forwarding profile and assigning the profile to a policy rule, see <a href="https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding.html#id1443a62b-8a0b-41db-a08d-5df934bf0ffc">Configure Log Forwarding</a></p>
 <h4 id="configure-syslog-forwarding-for-system-and-user-id-logs">Configure syslog forwarding for System and User-ID logs</h4>
-<p>1) In the GUI, go to <code>Device &gt; Log Settings</code>.
-2) Click each Severity level (High and Critical if also fine), select the <code>Syslog server</code> profile, and click <code>OK</code>.</p>
+<ol>
+<li>In the GUI, go to <code>Device &gt; Log Settings</code>.</li>
+<li>Click each Severity level (High and Critical if also fine), select the <code>Syslog server</code> profile, and click <code>OK</code>.</li>
+</ol>
 <h2 id="iii-transport-to-sekoiaio">III. Transport to SEKOIA.IO</h2>
 <h3 id="configure-the-rsyslog-to-forward-to-sekoiaio">Configure the Rsyslog to forward to SEKOIA.IO</h3>
 <h4 id="rsyslog-prerequisites">Rsyslog prerequisites</h4>
