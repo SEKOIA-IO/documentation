@@ -5,7 +5,7 @@ name: Palo Alto
 
 Palo Alto Networks offers an enterprise cybersecurity platform which provides network security, cloud security, endpoint protection, and various cloud-delivered security services.
 
-## I. Palo Alto logs
+## Palo Alto logs
 
 On Palo Alto appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
 
@@ -14,7 +14,7 @@ On Palo Alto appliances, most of the important hardward and software activities 
 - Security
 
 
-## II. Transport to the collector
+## Transport to the collector
 
 ### Prerequisites
 The following prerequisites are needed in order to setup efficient log concentration:
@@ -55,7 +55,7 @@ For detailed information about configuring a log forwarding profile and assignin
 1. In the GUI, go to `Device > Log Settings`.
 2. Click each Severity level (High and Critical if also fine), select the `Syslog server` profile, and click `OK`.
 
-## III. Transport to SEKOIA.IO
+## Transport to SEKOIA.IO
 
 ### Configure the Rsyslog to forward to SEKOIA.IO
 
@@ -127,5 +127,5 @@ $ sudo systemctl restart rsyslog.service
 ## Related files
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
-### IV. Enjoy your events
+### Enjoy your events
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
