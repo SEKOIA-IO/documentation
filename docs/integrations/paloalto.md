@@ -14,7 +14,7 @@ On Palo Alto appliances, most of the important hardward and software activities 
 - Security
 
 
-## II. Transport to the concentrator
+## II. Transport to the collector
 
 ### Prerequisites
 The following prerequisites are needed in order to setup efficient log concentration:
