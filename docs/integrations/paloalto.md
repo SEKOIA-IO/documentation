@@ -25,10 +25,10 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 #### Configure a Syslog server profile
 
-1) In the GUI, go to `Device > Serve Profiles > Syslog`.
-2) Click `Add` and enter a name for the profile such as `Syslog server`.
-3) If the firewall has more than one virtual system (vsys), select the `Location` (vsys or `Shared`) where this profile is available.
-4) Click `Add` and enter the information that the firewall requires to connect to it:
+1. In the GUI, go to `Device > Serve Profiles > Syslog`.
+2. Click `Add` and enter a name for the profile such as `Syslog server`.
+3. If the firewall has more than one virtual system (vsys), select the `Location` (vsys or `Shared`) where this profile is available.
+4. Click `Add` and enter the information that the firewall requires to connect to it:
 
 - Name — Unique name for the server profile.
 - Syslog Server — IP address or fully qualified domain name (FQDN) of the syslog server.
