@@ -52,8 +52,8 @@ For detailed information about configuring a log forwarding profile and assignin
 
 #### Configure syslog forwarding for System and User-ID logs
 
-1) In the GUI, go to `Device > Log Settings`.
-2) Click each Severity level (High and Critical if also fine), select the `Syslog server` profile, and click `OK`.
+1. In the GUI, go to `Device > Log Settings`.
+2. Click each Severity level (High and Critical if also fine), select the `Syslog server` profile, and click `OK`.
 
 ## III. Transport to SEKOIA.IO
 
