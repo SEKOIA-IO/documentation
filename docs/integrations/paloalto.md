@@ -37,7 +37,7 @@ The following prerequisites are needed in order to setup efficient log concentra
 - Format — Select the syslog message format to use: BSD (the default).
 - Facility — Select a syslog standard value (default is LOG_USER) to calculate the priority (PRI) field.
 
-5) Click `OK` to save the server profile.
+5. Click `OK` to save the server profile.
 
 #### Configure syslog forwarding for Traffic logs
 
