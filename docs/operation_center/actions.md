@@ -89,6 +89,12 @@ Other Sekoia `Blocks` are available, such as:
 - Associate new alert on a case
 - Activate or deny a countermeasure
 
+##### Fortigate Blocks 
+With the Fortigate `Blocks` a user will be able to:
+- Add an IP in the Address list of a Fortigate FW:`Post Fortigate IP Address`
+- Add a FQDN in the Address list of a Fortigate FW:`Post Fortigate FQDN Address`
+- Create a Group with an Address member: `Post Fortigate Address Group`
+
 ### External Data Enrichers
 
 Most of the time an analyst uses external tools in order to better understand the severity of the alert.
