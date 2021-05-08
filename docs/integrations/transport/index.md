@@ -23,3 +23,4 @@ To push your events through our HTTP log collector, you have to `POST` your logs
 - [Rsyslog](rsyslog.md)
 - [Logstash](logstash.md)
 - [syslog-ng](syslog-ng.md)
+- [Graylog](graylog.md)
