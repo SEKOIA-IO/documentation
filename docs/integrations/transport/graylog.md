@@ -40,4 +40,4 @@ end
 
 Declare the output mode associated to the SEKOIA.IO stream with the type `com.plugin.HttpOutput` with the unique parameter `https://intake.sekoia.io`
 
-![image](https://user-images.githubusercontent.com/77982369/117657056-6b1b5c80-b199-11eb-9bdd-2233f9487ea9.png)
+![image](/assets/graylog_output_declaration.png)
