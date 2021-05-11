@@ -10,7 +10,7 @@ Prerequisites:
 
 ## Installation procedure
 
-1. Downloard the plugin
+1. Download the plugin
 2. Clone this repository
 3. Run `mvn package` to build a JAR file.
 4. Copy generated JAR file in target directory to your Graylog plugin directory.
