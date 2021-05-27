@@ -78,8 +78,8 @@ nav:
       - Automate:
           - Overview: operation_center/playbook_overview.md
           - Triggers: operation_center/triggers.md
-          - Operators: operation_center/operators.md          
-          - Actions: operation_center/actions.md           
+          - Operators: operation_center/operators.md
+          - Actions: operation_center/actions.md
       - FAQ: operation_center/faq.md
   - Intelligence Center:
       - Overview: intelligence_center/index.md
@@ -101,6 +101,22 @@ theme:
   favicon: assets/favicon.ico
   include_search_page: true
   search_index_only: false
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+  palette:
+    primary: indigo
+  font:
+    text: Raleway
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/sekoia_fr
+
+copyright: Copyright 2021 SEKOIA. All rights reserved.
+
 extra_css:
   - stylesheets/sekoiaio.css
 extra_javascript:
@@ -108,5 +124,10 @@ extra_javascript:
 markdown_extensions:
   - admonition
   - attr_list
-  - codehilite:
+  - codehilite
+  - pymdownx.details
+  - pymdownx.highlight:
       linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.superfences
+  - pymdownx.tabbed
