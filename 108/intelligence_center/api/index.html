@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
@@ -32,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Raleway";--md-code-font-family:""}</style>
       
     
     
@@ -52,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -1941,9 +1945,8 @@
 <p>The API is reachable at <code>https://api.sekoia.io</code>. All Intelligence Center endpoints start with <code>https://api.sekoia.io/v2/inthreat/</code>.</p>
 <h2 id="authentication">Authentication</h2>
 <p>Authentication is required for all API endpoints. Authentication is done with the <code>Authorization</code> header:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Authorization</span><span class="o">:</span> <span class="n">Bearer</span> <span class="o">&lt;</span><span class="n">APIKEY</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Authorization: Bearer &lt;APIKEY&gt;
 </code></pre></div>
-</td></tr></table>
 <h2 id="feeds">Feeds</h2>
 <p>A feed allows filtering the CTI Objects based on some filters.</p>
 <p>The available filters are:</p>
@@ -1986,85 +1989,46 @@ Its value should be a comma-separated list of types.</p>
 <p>Note that if the type is not available in the feed it will not be returned even if specified in the query.</p>
 <h4 id="example-script">Example Script</h4>
 <p>Here is a sample Python script to fetch STIX objects from the Intelligence Center:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">dbm</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">posixpath</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">urljoin</span>
-
-<span class="n">APIKEY</span> <span class="o">=</span> <span class="s2">&quot;APIKEY&quot;</span>
-
-<span class="n">DEFAULT_FEED</span> <span class="o">=</span> <span class="s2">&quot;d6092c37-d8d7-45c3-8aff-c4dc26030608&quot;</span>
-<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://api.sekoia.io/v2/inthreat/&quot;</span>
-<span class="n">CURSOR_FILE</span> <span class="o">=</span> <span class="s2">&quot;cursor.db&quot;</span>
-
-
-<span class="k">def</span> <span class="nf">get_new_objects</span><span class="p">(</span><span class="n">feed_id</span><span class="o">=</span><span class="n">DEFAULT_FEED</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2000</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">,</span> <span class="s2">&quot;collections&quot;</span><span class="p">,</span> <span class="n">feed_id</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;objects?limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">paginated_url</span> <span class="o">=</span> <span class="n">url</span>
-
-    <span class="c1"># Use the builtin dbm module to save the cursors to disk</span>
-    <span class="k">with</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">CURSOR_FILE</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cursors</span><span class="p">:</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="c1"># If a cursor exists for this feed, add it to the URL</span>
-            <span class="k">if</span> <span class="n">feed_id</span> <span class="ow">in</span> <span class="n">cursors</span><span class="p">:</span>
-                <span class="n">paginated_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&amp;cursor=</span><span class="si">{</span><span class="n">cursors</span><span class="p">[</span><span class="n">feed_id</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-
-            <span class="c1"># Request the next batch of objects from the API, authenticate with the APIKEY</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-                <span class="n">paginated_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">APIKEY</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
-            <span class="p">)</span>
-            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-            <span class="c1"># Yield individual STIX Objects (SDO &amp; SRO)</span>
-            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]:</span>
-                <span class="k">yield</span> <span class="n">item</span>
-
-            <span class="c1"># Update cursor to have incremental updates</span>
-            <span class="n">cursors</span><span class="p">[</span><span class="n">feed_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;next_cursor&quot;</span><span class="p">]</span>
-
-            <span class="c1"># Stop current iteration if we reached the last updated object</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
-                <span class="k">break</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span> <span class="nn">dbm</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kn">from</span> <span class="nn">posixpath</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">urljoin</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">APIKEY</span> <span class="o">=</span> <span class="s2">&quot;APIKEY&quot;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">DEFAULT_FEED</span> <span class="o">=</span> <span class="s2">&quot;d6092c37-d8d7-45c3-8aff-c4dc26030608&quot;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://api.sekoia.io/v2/inthreat/&quot;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="n">CURSOR_FILE</span> <span class="o">=</span> <span class="s2">&quot;cursor.db&quot;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="k">def</span> <span class="nf">get_new_objects</span><span class="p">(</span><span class="n">feed_id</span><span class="o">=</span><span class="n">DEFAULT_FEED</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2000</span><span class="p">):</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">url</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">,</span> <span class="s2">&quot;collections&quot;</span><span class="p">,</span> <span class="n">feed_id</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;objects?limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">paginated_url</span> <span class="o">=</span> <span class="n">url</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span>    <span class="c1"># Use the builtin dbm module to save the cursors to disk</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="k">with</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">CURSOR_FILE</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cursors</span><span class="p">:</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos" data-linenos="19 "></span>            <span class="c1"># If a cursor exists for this feed, add it to the URL</span>
+<span class="linenos" data-linenos="20 "></span>            <span class="k">if</span> <span class="n">feed_id</span> <span class="ow">in</span> <span class="n">cursors</span><span class="p">:</span>
+<span class="linenos" data-linenos="21 "></span>                <span class="n">paginated_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&amp;cursor=</span><span class="si">{</span><span class="n">cursors</span><span class="p">[</span><span class="n">feed_id</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span>            <span class="c1"># Request the next batch of objects from the API, authenticate with the APIKEY</span>
+<span class="linenos" data-linenos="24 "></span>            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+<span class="linenos" data-linenos="25 "></span>                <span class="n">paginated_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">APIKEY</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="linenos" data-linenos="26 "></span>            <span class="p">)</span>
+<span class="linenos" data-linenos="27 "></span>            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="linenos" data-linenos="28 "></span>            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="linenos" data-linenos="29 "></span>
+<span class="linenos" data-linenos="30 "></span>            <span class="c1"># Yield individual STIX Objects (SDO &amp; SRO)</span>
+<span class="linenos" data-linenos="31 "></span>            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]:</span>
+<span class="linenos" data-linenos="32 "></span>                <span class="k">yield</span> <span class="n">item</span>
+<span class="linenos" data-linenos="33 "></span>
+<span class="linenos" data-linenos="34 "></span>            <span class="c1"># Update cursor to have incremental updates</span>
+<span class="linenos" data-linenos="35 "></span>            <span class="n">cursors</span><span class="p">[</span><span class="n">feed_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;next_cursor&quot;</span><span class="p">]</span>
+<span class="linenos" data-linenos="36 "></span>
+<span class="linenos" data-linenos="37 "></span>            <span class="c1"># Stop current iteration if we reached the last updated object</span>
+<span class="linenos" data-linenos="38 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
+<span class="linenos" data-linenos="39 "></span>                <span class="k">break</span>
 </code></pre></div>
-</td></tr></table>
 <h2 id="getting-an-indicators-context">Getting an indicator's context</h2>
 <p>When using indicators for detection, you might want to fetch all indicators by using a filter on the indicator type
 and then only fetch additional context when an indicator matched.</p>
@@ -2080,128 +2044,71 @@ and then only fetch additional context when an indicator matched.</p>
 <p>For relationships, use the <code>GET v2/inthreat/relationships/{relationship_id}</code> endpoint instead.</p>
 <h2 id="looking-for-an-ioc">Looking for an IOC</h2>
 <p>It is possible to look for a specific indicator of compromise in the Intelligence Center and get its context with the <code>GET v2/inthreat/indicators/context</code> endpoint (see <a href="https://docs.sekoia.io/api/threat%20intelligence%20database#operation/get_indicator_context_resource">documentation</a>).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">posixpath</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">urljoin</span>
-
-<span class="n">APIKEY</span> <span class="o">=</span> <span class="s2">&quot;APIKEY&quot;</span>
-<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://api.sekoia.io/v2/inthreat/&quot;</span>
-
-<span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">APIKEY</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="p">}</span>
-
-
-<span class="k">def</span> <span class="nf">get_indicator_context</span><span class="p">(</span><span class="n">observable_type</span><span class="p">,</span> <span class="n">observable_value</span><span class="p">):</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">urljoin</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">,</span> <span class="s2">&quot;indicators/context&quot;</span><span class="p">),</span>
-        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">observable_type</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">observable_value</span><span class="p">},</span>
-        <span class="n">headers</span><span class="o">=</span><span class="n">HEADERS</span><span class="p">)</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kn">from</span> <span class="nn">posixpath</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">urljoin</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">APIKEY</span> <span class="o">=</span> <span class="s2">&quot;APIKEY&quot;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://api.sekoia.io/v2/inthreat/&quot;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">APIKEY</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="k">def</span> <span class="nf">get_indicator_context</span><span class="p">(</span><span class="n">observable_type</span><span class="p">,</span> <span class="n">observable_value</span><span class="p">):</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="n">urljoin</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">,</span> <span class="s2">&quot;indicators/context&quot;</span><span class="p">),</span>
+<span class="linenos" data-linenos="16 "></span>        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">observable_type</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">observable_value</span><span class="p">},</span>
+<span class="linenos" data-linenos="17 "></span>        <span class="n">headers</span><span class="o">=</span><span class="n">HEADERS</span><span class="p">)</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div>
-</td></tr></table>
 <h2 id="taxii">TAXII</h2>
 <p>The Intelligence Center also exposes a TAXII 2.1 server that conforms to <a href="https://docs.oasis-open.org/cti/taxii/v2.1/csprd03/taxii-v2.1-csprd03.html">the specification</a>.</p>
 <p>The discovery endpoint of the TAXII server is located at <code>https://app.sekoia.io/api/v2/inthreat/taxii-server/taxii2</code>.
 The API root of the TAXII server is located at <code>https://app.sekoia.io/api/v2/inthreat/taxii-server</code>.
 TAXII relies on HTTP Basic Authentication. To authenticate to the TAXII server, you should use your Intelligence Center API key as the Basic Authentication password (you can use any username).</p>
 <p>Here is an example of a script using the TAXII endpoints to iterate over objects:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">dbm</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">basicauth</span> <span class="kn">import</span> <span class="n">encode</span> <span class="k">as</span> <span class="n">basicauth_encode</span>
-
-<span class="c1"># Replace with Intelligence Center API Key</span>
-<span class="n">APIKEY</span> <span class="o">=</span> <span class="s2">&quot;APIKEY&quot;</span>
-
-<span class="c1"># Replace with the TAXII URL copied from the &quot;feeds&quot; page</span>
-<span class="n">FEED_URL</span> <span class="o">=</span> <span class="s2">&quot;https://app.sekoia.io/api/v2/inthreat/taxii-server/collections/d6092c37-d8d7-45c3-8aff-c4dc26030608/objects&quot;</span>
-
-<span class="n">CURSOR_FILE</span> <span class="o">=</span> <span class="s2">&quot;cursor.db&quot;</span>
-
-
-<span class="k">def</span> <span class="nf">get_new_objects</span><span class="p">(</span><span class="n">feed_url</span><span class="o">=</span><span class="n">FEED_URL</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;2.1&quot;</span><span class="p">):</span>
-    <span class="n">has_more</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/taxii+json&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="n">basicauth_encode</span><span class="p">(</span><span class="s2">&quot;api&quot;</span><span class="p">,</span> <span class="n">APIKEY</span><span class="p">),</span>
-    <span class="p">}</span>
-    <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;match[spec_version]&quot;</span><span class="p">:</span> <span class="n">version</span><span class="p">,</span> <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="n">limit</span><span class="p">}</span>
-
-    <span class="c1"># Use the builtin dbm module to save the cursors to disk</span>
-    <span class="k">with</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">CURSOR_FILE</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cursors</span><span class="p">:</span>
-        <span class="k">while</span> <span class="n">has_more</span><span class="p">:</span>
-            <span class="c1"># If a cursor exists for this feed, add it to the parameters</span>
-            <span class="k">if</span> <span class="n">feed_url</span> <span class="ow">in</span> <span class="n">cursors</span><span class="p">:</span>
-                <span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;next&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cursors</span><span class="p">[</span><span class="n">feed_url</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-
-            <span class="c1"># Request the next batch of objects from the API, authenticate with the APIKEY</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">feed_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
-            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-            <span class="n">has_more</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;more&quot;</span><span class="p">]</span>
-            <span class="n">cursors</span><span class="p">[</span><span class="n">feed_url</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;next&quot;</span><span class="p">]</span>
-
-            <span class="k">yield from</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;objects&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span> <span class="nn">dbm</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kn">from</span> <span class="nn">basicauth</span> <span class="kn">import</span> <span class="n">encode</span> <span class="k">as</span> <span class="n">basicauth_encode</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1"># Replace with Intelligence Center API Key</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="n">APIKEY</span> <span class="o">=</span> <span class="s2">&quot;APIKEY&quot;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1"># Replace with the TAXII URL copied from the &quot;feeds&quot; page</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="n">FEED_URL</span> <span class="o">=</span> <span class="s2">&quot;https://app.sekoia.io/api/v2/inthreat/taxii-server/collections/d6092c37-d8d7-45c3-8aff-c4dc26030608/objects&quot;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="n">CURSOR_FILE</span> <span class="o">=</span> <span class="s2">&quot;cursor.db&quot;</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="k">def</span> <span class="nf">get_new_objects</span><span class="p">(</span><span class="n">feed_url</span><span class="o">=</span><span class="n">FEED_URL</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;2.1&quot;</span><span class="p">):</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="n">has_more</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span>        <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/taxii+json&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="n">basicauth_encode</span><span class="p">(</span><span class="s2">&quot;api&quot;</span><span class="p">,</span> <span class="n">APIKEY</span><span class="p">),</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;match[spec_version]&quot;</span><span class="p">:</span> <span class="n">version</span><span class="p">,</span> <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="n">limit</span><span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span>    <span class="c1"># Use the builtin dbm module to save the cursors to disk</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="k">with</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">CURSOR_FILE</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cursors</span><span class="p">:</span>
+<span class="linenos" data-linenos="24 "></span>        <span class="k">while</span> <span class="n">has_more</span><span class="p">:</span>
+<span class="linenos" data-linenos="25 "></span>            <span class="c1"># If a cursor exists for this feed, add it to the parameters</span>
+<span class="linenos" data-linenos="26 "></span>            <span class="k">if</span> <span class="n">feed_url</span> <span class="ow">in</span> <span class="n">cursors</span><span class="p">:</span>
+<span class="linenos" data-linenos="27 "></span>                <span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;next&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cursors</span><span class="p">[</span><span class="n">feed_url</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span>            <span class="c1"># Request the next batch of objects from the API, authenticate with the APIKEY</span>
+<span class="linenos" data-linenos="30 "></span>            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">feed_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
+<span class="linenos" data-linenos="31 "></span>            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="linenos" data-linenos="32 "></span>            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="linenos" data-linenos="33 "></span>
+<span class="linenos" data-linenos="34 "></span>            <span class="n">has_more</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;more&quot;</span><span class="p">]</span>
+<span class="linenos" data-linenos="35 "></span>            <span class="n">cursors</span><span class="p">[</span><span class="n">feed_url</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;next&quot;</span><span class="p">]</span>
+<span class="linenos" data-linenos="36 "></span>
+<span class="linenos" data-linenos="37 "></span>            <span class="k">yield from</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;objects&quot;</span><span class="p">]</span>
 </code></pre></div>
-</td></tr></table>
                 
               
               
@@ -2259,6 +2166,10 @@ TAXII relies on HTTP Basic Authentication. To authenticate to the TAXII server, 
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright 2021 SEKOIA. All rights reserved.
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -2266,6 +2177,19 @@ TAXII relies on HTTP Basic Authentication. To authenticate to the TAXII server, 
         
       </div>
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/sekoia_fr" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

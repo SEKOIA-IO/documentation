@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
@@ -32,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Raleway";--md-code-font-family:""}</style>
       
     
     
@@ -52,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -1902,269 +1906,167 @@
 <blockquote>
 <p>Before, connect to SEKOIA.IO Operation Center, add a Windows Intake to the relevant Entity, and note the Intake Key</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">##### This file is used to automate the Rsyslog setup</span>
-
-<span class="c1"># Install service and dependances</span>
-sudo apt update
-sudo apt install -y rsyslog rsyslog-gnutls wget
-
-<span class="c1">### Create a dedicated Rsyslog configuration file</span>
-<span class="nv">RsyslogConfFile</span><span class="o">=</span><span class="s2">&quot;/etc/rsyslog.conf&quot;</span>
-
-sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$RsyslogConfFile</span>
-<span class="s"># /etc/rsyslog.conf configuration file for Rsyslog</span>
-<span class="s">module(load=&quot;imuxsock&quot;) # provides support for local system logging</span>
-<span class="s">module(load=&quot;imklog&quot;)   # provides kernel logging support</span>
-
-<span class="s"># provides UDP syslog reception</span>
-<span class="s">module(load=&quot;imudp&quot;)</span>
-<span class="s">input(type=&quot;imudp&quot; port=&quot;514&quot;)</span>
-
-<span class="s"># provides TCP syslog reception</span>
-<span class="s">module(load=&quot;imtcp&quot;)</span>
-<span class="s">input(type=&quot;imtcp&quot; port=&quot;514&quot;)</span>
-
-<span class="s"># Use traditional timestamp format.</span>
-<span class="s">$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat</span>
-
-<span class="s"># Set the default permissions for all log files.</span>
-<span class="s">$FileOwner root</span>
-<span class="s">$FileGroup adm</span>
-<span class="s">$FileCreateMode 0640</span>
-<span class="s">$DirCreateMode 0755</span>
-<span class="s">$Umask 0022</span>
-
-<span class="s">$ActionQueueType LinkedList     # create a queue stored in the RAM</span>
-<span class="s">$ActionQueueFileName sek_fwd    # set up the prefix for writting</span>
-<span class="s">$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer</span>
-<span class="s">$ActionQueueSaveOnShutdown on   # write on disk is the rsyslog is whut down</span>
-<span class="s">$ActionResumeRetryCount -1      # prevent the rsyslog from droping the logs if the connexion is interrupted</span>
-
-<span class="s"># Where to place spool and state files</span>
-<span class="s">$WorkDirectory /var/spool/rsyslog</span>
-<span class="s">$IncludeConfig /etc/rsyslog.d/*.conf</span>
-
-<span class="s"># Rules</span>
-<span class="s">*.*;auth,authpriv.none          -/var/log/syslog</span>
-<span class="s">EOM</span>
-
-<span class="c1">### Create a dedicated Windows configuration file</span>
-<span class="nv">WindowsFile</span><span class="o">=</span><span class="s2">&quot;/etc/rsyslog.d/15-windows.conf&quot;</span>
-
-sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$WindowsFile</span>
-<span class="s">$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem</span>
-
-<span class="s">template(name=&quot;SEKOIAIOWindowsTemplate&quot; type=&quot;string&quot; string=&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;)</span>
-
-<span class="s">if ($syslogtag contains &#39;Microsoft-Windows&#39;) then {</span>
-<span class="s">    action(</span>
-<span class="s">        type=&quot;omfwd&quot;</span>
-<span class="s">        protocol=&quot;tcp&quot;</span>
-<span class="s">        target=&quot;intake.sekoia.io&quot;</span>
-<span class="s">        port=&quot;10514&quot;</span>
-<span class="s">        TCP_Framing=&quot;octet-counted&quot;</span>
-<span class="s">        StreamDriver=&quot;gtls&quot;</span>
-<span class="s">        StreamDriverMode=&quot;1&quot;</span>
-<span class="s">        StreamDriverAuthMode=&quot;x509/name&quot;</span>
-<span class="s">        StreamDriverPermittedPeers=&quot;intake.sekoia.io&quot;</span>
-<span class="s">        Template=&quot;SEKOIAIOWindowsTemplate&quot;</span>
-<span class="s">    )</span>
-<span class="s">}</span>
-<span class="s">EOM</span>
-
-<span class="c1"># Collect the Sekoia Key for encryption between Rsyslog and Sekoia.io</span>
-sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="ch">#!/bin/bash</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">##### This file is used to automate the Rsyslog setup</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1"># Install service and dependances</span>
+<span class="linenos" data-linenos=" 5 "></span>sudo apt update
+<span class="linenos" data-linenos=" 6 "></span>sudo apt install -y rsyslog rsyslog-gnutls wget
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1">### Create a dedicated Rsyslog configuration file</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nv">RsyslogConfFile</span><span class="o">=</span><span class="s2">&quot;/etc/rsyslog.conf&quot;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$RsyslogConfFile</span>
+<span class="linenos" data-linenos="12 "></span><span class="s"># /etc/rsyslog.conf configuration file for Rsyslog</span>
+<span class="linenos" data-linenos="13 "></span><span class="s">module(load=&quot;imuxsock&quot;) # provides support for local system logging</span>
+<span class="linenos" data-linenos="14 "></span><span class="s">module(load=&quot;imklog&quot;)   # provides kernel logging support</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="s"># provides UDP syslog reception</span>
+<span class="linenos" data-linenos="17 "></span><span class="s">module(load=&quot;imudp&quot;)</span>
+<span class="linenos" data-linenos="18 "></span><span class="s">input(type=&quot;imudp&quot; port=&quot;514&quot;)</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="s"># provides TCP syslog reception</span>
+<span class="linenos" data-linenos="21 "></span><span class="s">module(load=&quot;imtcp&quot;)</span>
+<span class="linenos" data-linenos="22 "></span><span class="s">input(type=&quot;imtcp&quot; port=&quot;514&quot;)</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="s"># Use traditional timestamp format.</span>
+<span class="linenos" data-linenos="25 "></span><span class="s">$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat</span>
+<span class="linenos" data-linenos="26 "></span>
+<span class="linenos" data-linenos="27 "></span><span class="s"># Set the default permissions for all log files.</span>
+<span class="linenos" data-linenos="28 "></span><span class="s">$FileOwner root</span>
+<span class="linenos" data-linenos="29 "></span><span class="s">$FileGroup adm</span>
+<span class="linenos" data-linenos="30 "></span><span class="s">$FileCreateMode 0640</span>
+<span class="linenos" data-linenos="31 "></span><span class="s">$DirCreateMode 0755</span>
+<span class="linenos" data-linenos="32 "></span><span class="s">$Umask 0022</span>
+<span class="linenos" data-linenos="33 "></span>
+<span class="linenos" data-linenos="34 "></span><span class="s">$ActionQueueType LinkedList     # create a queue stored in the RAM</span>
+<span class="linenos" data-linenos="35 "></span><span class="s">$ActionQueueFileName sek_fwd    # set up the prefix for writting</span>
+<span class="linenos" data-linenos="36 "></span><span class="s">$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer</span>
+<span class="linenos" data-linenos="37 "></span><span class="s">$ActionQueueSaveOnShutdown on   # write on disk is the rsyslog is whut down</span>
+<span class="linenos" data-linenos="38 "></span><span class="s">$ActionResumeRetryCount -1      # prevent the rsyslog from droping the logs if the connexion is interrupted</span>
+<span class="linenos" data-linenos="39 "></span>
+<span class="linenos" data-linenos="40 "></span><span class="s"># Where to place spool and state files</span>
+<span class="linenos" data-linenos="41 "></span><span class="s">$WorkDirectory /var/spool/rsyslog</span>
+<span class="linenos" data-linenos="42 "></span><span class="s">$IncludeConfig /etc/rsyslog.d/*.conf</span>
+<span class="linenos" data-linenos="43 "></span>
+<span class="linenos" data-linenos="44 "></span><span class="s"># Rules</span>
+<span class="linenos" data-linenos="45 "></span><span class="s">*.*;auth,authpriv.none          -/var/log/syslog</span>
+<span class="linenos" data-linenos="46 "></span><span class="s">EOM</span>
+<span class="linenos" data-linenos="47 "></span>
+<span class="linenos" data-linenos="48 "></span><span class="c1">### Create a dedicated Windows configuration file</span>
+<span class="linenos" data-linenos="49 "></span><span class="nv">WindowsFile</span><span class="o">=</span><span class="s2">&quot;/etc/rsyslog.d/15-windows.conf&quot;</span>
+<span class="linenos" data-linenos="50 "></span>
+<span class="linenos" data-linenos="51 "></span>sudo /bin/cat <span class="s">&lt;&lt;\EOM &gt;$WindowsFile</span>
+<span class="linenos" data-linenos="52 "></span><span class="s">$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem</span>
+<span class="linenos" data-linenos="53 "></span>
+<span class="linenos" data-linenos="54 "></span><span class="s">template(name=&quot;SEKOIAIOWindowsTemplate&quot; type=&quot;string&quot; string=&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;)</span>
+<span class="linenos" data-linenos="55 "></span>
+<span class="linenos" data-linenos="56 "></span><span class="s">if ($syslogtag contains &#39;Microsoft-Windows&#39;) then {</span>
+<span class="linenos" data-linenos="57 "></span><span class="s">    action(</span>
+<span class="linenos" data-linenos="58 "></span><span class="s">        type=&quot;omfwd&quot;</span>
+<span class="linenos" data-linenos="59 "></span><span class="s">        protocol=&quot;tcp&quot;</span>
+<span class="linenos" data-linenos="60 "></span><span class="s">        target=&quot;intake.sekoia.io&quot;</span>
+<span class="linenos" data-linenos="61 "></span><span class="s">        port=&quot;10514&quot;</span>
+<span class="linenos" data-linenos="62 "></span><span class="s">        TCP_Framing=&quot;octet-counted&quot;</span>
+<span class="linenos" data-linenos="63 "></span><span class="s">        StreamDriver=&quot;gtls&quot;</span>
+<span class="linenos" data-linenos="64 "></span><span class="s">        StreamDriverMode=&quot;1&quot;</span>
+<span class="linenos" data-linenos="65 "></span><span class="s">        StreamDriverAuthMode=&quot;x509/name&quot;</span>
+<span class="linenos" data-linenos="66 "></span><span class="s">        StreamDriverPermittedPeers=&quot;intake.sekoia.io&quot;</span>
+<span class="linenos" data-linenos="67 "></span><span class="s">        Template=&quot;SEKOIAIOWindowsTemplate&quot;</span>
+<span class="linenos" data-linenos="68 "></span><span class="s">    )</span>
+<span class="linenos" data-linenos="69 "></span><span class="s">}</span>
+<span class="linenos" data-linenos="70 "></span><span class="s">EOM</span>
+<span class="linenos" data-linenos="71 "></span>
+<span class="linenos" data-linenos="72 "></span><span class="c1"># Collect the Sekoia Key for encryption between Rsyslog and Sekoia.io</span>
+<span class="linenos" data-linenos="73 "></span>sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </code></pre></div>
-</td></tr></table>
 <p>It is possible to copy-paste this configuration locally then upload it with SCP command, or simple copy-paste it from the web to your remote server.</p>
 <blockquote>
 <p>Once the file created on the Rsyslog, dont forget to make it executable with the command <code>chmod +x &lt;filename.sh&gt;</code></p>
 </blockquote>
-<p>Then run it:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>./&lt;filename.sh&gt;
-</code></pre></div>
-</td></tr></table>
+<p>Then run it:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./&lt;filename.sh&gt;
+</code></pre></div></p>
 <ul>
 <li>Change the intake key value in the <code>/etc/rsyslog.d/15-windows.conf</code> file</li>
-<li>Restart the Rsyslog service:</li>
+<li>Restart the Rsyslog service:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo systemctl restart rsyslog.service
+</code></pre></div></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo systemctl restart rsyslog.service
-</code></pre></div>
-</td></tr></table>
 <h2 id="forward-logs-using-relp-protocol">Forward Logs Using RELP Protocol</h2>
 <p>Rsyslog is able to push logs via a reliable protocol, called RELP. By using this prococol, SEKOIA.IO’s collection point will acknowledge logs when receiving it. This will let the client Rsyslog be able to resend events if an error occured.</p>
 <p>SEKOIA.IO’s RELP endpoint is available at <code>relp.intake.sekoia.io</code> (<code>145.239.192.124</code>) on port <code>11514</code>.</p>
 <p>The most noticeable change using RELP in Rsyslog, is the output module used (<code>omrelp</code>). The first step is to install <code>rsyslog-relp</code> and <code>rsyslog-openssl</code> packages to be able to push logs. Most distributions are providing these packages natively.</p>
 <p>Then, you have to edit your main Rsyslog configuration to load the <code>omrelp</code> module:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">module</span><span class="p">(</span><span class="nb">load</span><span class="o">=</span><span class="s2">&quot;omrelp&quot;</span> <span class="n">tls</span><span class="o">.</span><span class="n">tlslib</span><span class="o">=</span><span class="s2">&quot;openssl&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>module(load=&quot;omrelp&quot; tls.tlslib=&quot;openssl&quot;)
 </code></pre></div>
-</td></tr></table>
 <p>Finally, you have to configure the output action to push your events to SEKOIA.IO via the RELP protocol. In this example, we are pushing Unbound events.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">template</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;SEKOIAIOUnboundTemplate&quot;</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;string&quot;</span> <span class="n">string</span><span class="o">=</span><span class="s">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=</span><span class="se">\&quot;</span><span class="s">YOUR_INTAKE_KEY</span><span class="se">\&quot;</span><span class="s">] %msg%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">$programname</span> <span class="n">startswith</span> <span class="err">&#39;</span><span class="n">unbound</span><span class="err">&#39;</span><span class="p">)</span> <span class="n">then</span> <span class="p">{</span>
-  <span class="n">action</span><span class="p">(</span>
-        <span class="n">type</span><span class="o">=</span><span class="s">&quot;omrelp&quot;</span>
-        <span class="n">target</span><span class="o">=</span><span class="s">&quot;relp.intake.sekoia.io&quot;</span>
-        <span class="n">port</span><span class="o">=</span><span class="s">&quot;11514&quot;</span>
-        <span class="n">tls</span><span class="o">=</span><span class="s">&quot;on&quot;</span>
-        <span class="n">tls</span><span class="p">.</span><span class="n">caCert</span><span class="o">=</span><span class="s">&quot;/etc/rsyslog.d/SEKOIA-IO-intake.pem&quot;</span>
-        <span class="n">tls</span><span class="p">.</span><span class="n">authmode</span><span class="o">=</span><span class="s">&quot;name&quot;</span>
-        <span class="n">tls</span><span class="p">.</span><span class="n">permittedPeer</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;relp.intake.sekoia.io&quot;</span><span class="p">]</span>
-        <span class="n">template</span><span class="o">=</span><span class="s">&quot;SEKOIAIOUnboundTemplate&quot;</span>        
-    <span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>template(name=&quot;SEKOIAIOUnboundTemplate&quot; type=&quot;string&quot; string=&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;)
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>if ($programname startswith &#39;unbound&#39;) then {
+<span class="linenos" data-linenos=" 4 "></span>  action(
+<span class="linenos" data-linenos=" 5 "></span>        type=&quot;omrelp&quot;
+<span class="linenos" data-linenos=" 6 "></span>        target=&quot;relp.intake.sekoia.io&quot;
+<span class="linenos" data-linenos=" 7 "></span>        port=&quot;11514&quot;
+<span class="linenos" data-linenos=" 8 "></span>        tls=&quot;on&quot;
+<span class="linenos" data-linenos=" 9 "></span>        tls.caCert=&quot;/etc/rsyslog.d/SEKOIA-IO-intake.pem&quot;
+<span class="linenos" data-linenos="10 "></span>        tls.authmode=&quot;name&quot;
+<span class="linenos" data-linenos="11 "></span>        tls.permittedPeer=[&quot;relp.intake.sekoia.io&quot;]
+<span class="linenos" data-linenos="12 "></span>        template=&quot;SEKOIAIOUnboundTemplate&quot;        
+<span class="linenos" data-linenos="13 "></span>    )
+<span class="linenos" data-linenos="14 "></span>}
 </code></pre></div>
-</td></tr></table>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>After setting up your Rsyslog, you may face issues due to contextual environment or error during copy pasting.</p>
 <h3 id="rsyslog-daemon">Rsyslog daemon</h3>
-<p>Ensure the Rsyslog service is currrently running on the server</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>ps -A <span class="p">|</span> grep rsyslog
+<p>Ensure the Rsyslog service is currrently running on the server
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ps -A <span class="p">|</span> grep rsyslog
 </code></pre></div>
-</td></tr></table>
-<p>You should see a line with <code>rsyslogd</code> daemon. If not, try to restart the service:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo systemctl restart rsyslog.service
-</code></pre></div>
-</td></tr></table>
-<p>Also insure the following lines are not commented in the configuration file <code>/etc/rsyslog.conf</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1"># provide TCP syslog reception</span>
-module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span><span class="o">)</span>
-input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span> <span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
-
-<span class="c1"># provides UDP syslog reception</span>
-module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span><span class="o">)</span>
-input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span> <span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
-</code></pre></div>
-</td></tr></table>
+You should see a line with <code>rsyslogd</code> daemon. If not, try to restart the service:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo systemctl restart rsyslog.service
+</code></pre></div></p>
+<p>Also insure the following lines are not commented in the configuration file <code>/etc/rsyslog.conf</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1"># provide TCP syslog reception</span>
+<span class="linenos" data-linenos="2 "></span>module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span><span class="o">)</span>
+<span class="linenos" data-linenos="3 "></span>input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span> <span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="c1"># provides UDP syslog reception</span>
+<span class="linenos" data-linenos="6 "></span>module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span><span class="o">)</span>
+<span class="linenos" data-linenos="7 "></span>input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span> <span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
+</code></pre></div></p>
 <h3 id="local-messages">Local messages</h3>
 <p>Ensure the logs are received on the Rsyslog server, meaning:
 - Configurations are correctly undertaken on the remote equipements
 - Internal network flows are open on <code>TCP or UDP 514</code></p>
-<p>To check it, run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>tail -n <span class="m">15</span> /var/log/syslog
-</code></pre></div>
-</td></tr></table>
+<p>To check it, run the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tail -n <span class="m">15</span> /var/log/syslog
+</code></pre></div></p>
 <h3 id="forwarded-messages-to-sekoiaio">Forwarded messages to SEKOIA.IO</h3>
-<p>Ensure the connection is <code>ESTABLISHED</code> between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo ss -ltp <span class="p">|</span> grep syslog
-</code></pre></div>
-</td></tr></table>
+<p>Ensure the connection is <code>ESTABLISHED</code> between the Rsyslog server and SEKOIA.IO. To do so, please run the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo ss -ltp <span class="p">|</span> grep syslog
+</code></pre></div></p>
 <p>If the connection is not established, and the previous statuses are operational, it is possible that a file <code>xx-&lt;technology&gt;.conf</code> has a mistyping.
 By experience, most of the time there is a misconfiguration in the <code>IF</code> condition.</p>
 <p>For example, if you receive the Fortigate logs in <code>/var/log/syslog</code> but not in SEKOIA.IO, you can follow those steps:</p>
 <ul>
-<li>First try to log the raw events to a local file, by appending the following line in the configuration file:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>*.* <span class="k">then</span> /tmp/fortigate.log<span class="p">;</span>SEKOIAIOFortigateTemplate
-</code></pre></div>
-</td></tr></table>
-<ul>
-<li>Restart the Rsyslog service</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo systemctl restart rsyslog.service
-</code></pre></div>
-</td></tr></table>
-<ul>
-<li>Check if the <code>fortigate.log</code> file is created and populated</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo tail /tmp/fortigate.log
-</code></pre></div>
-</td></tr></table>
-<ul>
-<li>Then edit your configuration file by adding the <code>if condition</code> step by step</li>
+<li>
+<p>First try to log the raw events to a local file, by appending the following line in the configuration file:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>*.* <span class="k">then</span> /tmp/fortigate.log<span class="p">;</span>SEKOIAIOFortigateTemplate
+</code></pre></div></p>
+</li>
+<li>
+<p>Restart the Rsyslog service
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo systemctl restart rsyslog.service
+</code></pre></div></p>
+</li>
+<li>
+<p>Check if the <code>fortigate.log</code> file is created and populated
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo tail /tmp/fortigate.log
+</code></pre></div></p>
+</li>
+<li>
+<p>Then edit your configuration file by adding the <code>if condition</code> step by step</p>
+</li>
 </ul>
                 
               
@@ -2223,6 +2125,10 @@ By experience, most of the time there is a misconfiguration in the <code>IF</cod
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright 2021 SEKOIA. All rights reserved.
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -2230,6 +2136,19 @@ By experience, most of the time there is a misconfiguration in the <code>IF</cod
         
       </div>
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/sekoia_fr" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

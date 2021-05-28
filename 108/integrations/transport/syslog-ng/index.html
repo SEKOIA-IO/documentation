@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
@@ -32,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Raleway";--md-code-font-family:""}</style>
       
     
     
@@ -52,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -1770,197 +1774,105 @@
 <p>The first thing to do is to add certification authority (CA) files in the <code>/etc/syslog-ng/ca.d</code> directory. To proceed, you can execute the following commands in your favorite shell:</p>
 <details><summary>Click here to display commands</summary>
 
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1"># cat &gt; /etc/syslog-ng/ca.d/2e5ac55d.0 &lt;&lt; EOF</span>
------BEGIN CERTIFICATE-----
-MIIDSjCCAjKgAwIBAgIQRK+wgNajJ7qJMDmGLvhAazANBgkqhkiG9w0BAQUFADA/
-MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
-DkRTVCBSb290IENBIFgzMB4XDTAwMDkzMDIxMTIxOVoXDTIxMDkzMDE0MDExNVow
-PzEkMCIGA1UEChMbRGlnaXRhbCBTaWduYXR1cmUgVHJ1c3QgQ28uMRcwFQYDVQQD
-Ew5EU1QgUm9vdCBDQSBYMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
-AN+v6ZdQCINXtMxiZfaQguzH0yxrMMpb7NnDfcdAwRgUi+DoM3ZJKuM/IUmTrE4O
-rz5Iy2Xu/NMhD2XSKtkyj4zl93ewEnu1lcCJo6m67XMuegwGMoOifooUMM0RoOEq
-OLl5CjH9UL2AZd+3UWODyOKIYepLYYHsUmu5ouJLGiifSKOeDNoJjj4XLh7dIN9b
-xiqKqy69cK3FCxolkHRyxXtqqzTWMIn/5WgTe1QLyNau7Fqckh49ZLOMxt+/yUFw
-7BZy1SbsOFU5Q9D8/RhcQPGX69Wam40dutolucbY38EVAjqr2m7xPi71XAicPNaD
-aeQQmxkqtilX4+U9m5/wAl0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNV
-HQ8BAf8EBAMCAQYwHQYDVR0OBBYEFMSnsaR7LHH62+FLkHX/xBVghYkQMA0GCSqG
-SIb3DQEBBQUAA4IBAQCjGiybFwBcqR7uKGY3Or+Dxz9LwwmglSBd49lZRNI+DT69
-ikugdB/OEIKcdBodfpga3csTS7MgROSR6cz8faXbauX+5v3gTt23ADq1cEmv8uXr
-AvHRAosZy5Q6XkjEGB5YGV8eAlrwDPGxrancWYaLbumR9YbK+rlmM6pZW87ipxZz
-R8srzJmwN0jP41ZL9c8PDHIyh8bwRLtTcm1D9SZImlJnt1ir/md2cXjbDaJWFBM5
-JDGFoqgCWjBH4d1QB7wCCZAA62RjYJsWvIjJEubSfZGL+T0yjWW06XyxV3bqxbYo
-Ob8VZRzI9neWagqNdwvYkQsEjgfbKbYK7p2CNTUQ
------END CERTIFICATE-----
-EOF
-
-<span class="c1"># cat &gt; /etc/syslog-ng/ca.d/4f06f81d.0 &lt;&lt; EOF</span>
------BEGIN CERTIFICATE-----
-MIIEkjCCA3qgAwIBAgIQCgFBQgAAAVOFc2oLheynCDANBgkqhkiG9w0BAQsFADA/
-MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
-DkRTVCBSb290IENBIFgzMB4XDTE2MDMxNzE2NDA0NloXDTIxMDMxNzE2NDA0Nlow
-SjELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUxldCdzIEVuY3J5cHQxIzAhBgNVBAMT
-GkxldCdzIEVuY3J5cHQgQXV0aG9yaXR5IFgzMIIBIjANBgkqhkiG9w0BAQEFAAOC
-AQ8AMIIBCgKCAQEAnNMM8FrlLke3cl03g7NoYzDq1zUmGSXhvb418XCSL7e4S0EF
-q6meNQhY7LEqxGiHC6PjdeTm86dicbp5gWAf15Gan/PQeGdxyGkOlZHP/uaZ6WA8
-SMx+yk13EiSdRxta67nsHjcAHJyse6cF6s5K671B5TaYucv9bTyWaN8jKkKQDIZ0
-Z8h/pZq4UmEUEz9l6YKHy9v6Dlb2honzhT+Xhq+w3Brvaw2VFn3EK6BlspkENnWA
-a6xK8xuQSXgvopZPKiAlKQTGdMDQMc2PMTiVFrqoM7hD8bEfwzB/onkxEz0tNvjj
-/PIzark5McWvxI0NHWQWM6r6hCm21AvA2H3DkwIDAQABo4IBfTCCAXkwEgYDVR0T
-AQH/BAgwBgEB/wIBADAOBgNVHQ8BAf8EBAMCAYYwfwYIKwYBBQUHAQEEczBxMDIG
-CCsGAQUFBzABhiZodHRwOi8vaXNyZy50cnVzdGlkLm9jc3AuaWRlbnRydXN0LmNv
-bTA7BggrBgEFBQcwAoYvaHR0cDovL2FwcHMuaWRlbnRydXN0LmNvbS9yb290cy9k
-c3Ryb290Y2F4My5wN2MwHwYDVR0jBBgwFoAUxKexpHsscfrb4UuQdf/EFWCFiRAw
-VAYDVR0gBE0wSzAIBgZngQwBAgEwPwYLKwYBBAGC3xMBAQEwMDAuBggrBgEFBQcC
-ARYiaHR0cDovL2Nwcy5yb290LXgxLmxldHNlbmNyeXB0Lm9yZzA8BgNVHR8ENTAz
-MDGgL6AthitodHRwOi8vY3JsLmlkZW50cnVzdC5jb20vRFNUUk9PVENBWDNDUkwu
-Y3JsMB0GA1UdDgQWBBSoSmpjBH3duubRObemRWXv86jsoTANBgkqhkiG9w0BAQsF
-AAOCAQEA3TPXEfNjWDjdGBX7CVW+dla5cEilaUcne8IkCJLxWh9KEik3JHRRHGJo
-uM2VcGfl96S8TihRzZvoroed6ti6WqEBmtzw3Wodatg+VyOeph4EYpr/1wXKtx8/
-wApIvJSwtmVi4MFU5aMqrSDE6ea73Mj2tcMyo5jMd6jmeWUHK8so/joWUoHOUgwu
-X4Po1QYz+3dszkDqMp4fklxBwXRsW10KXzPMTZ+sOPAveyxindmjkW8lGy+QsRlG
-PfZ+G6Z6h7mjem0Y+iWlkYcV4PIWL1iwBi8saCbGS5jN2p8M+X+Q7UNKEkROb3N6
-KOqkqm57TH2H3eDJAkSnh6/DNFu0Qg<span class="o">==</span>
------END CERTIFICATE-----
-EOF
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1"># cat &gt; /etc/syslog-ng/ca.d/2e5ac55d.0 &lt;&lt; EOF</span>
+<span class="linenos" data-linenos=" 2 "></span>-----BEGIN CERTIFICATE-----
+<span class="linenos" data-linenos=" 3 "></span>MIIDSjCCAjKgAwIBAgIQRK+wgNajJ7qJMDmGLvhAazANBgkqhkiG9w0BAQUFADA/
+<span class="linenos" data-linenos=" 4 "></span>MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+<span class="linenos" data-linenos=" 5 "></span>DkRTVCBSb290IENBIFgzMB4XDTAwMDkzMDIxMTIxOVoXDTIxMDkzMDE0MDExNVow
+<span class="linenos" data-linenos=" 6 "></span>PzEkMCIGA1UEChMbRGlnaXRhbCBTaWduYXR1cmUgVHJ1c3QgQ28uMRcwFQYDVQQD
+<span class="linenos" data-linenos=" 7 "></span>Ew5EU1QgUm9vdCBDQSBYMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+<span class="linenos" data-linenos=" 8 "></span>AN+v6ZdQCINXtMxiZfaQguzH0yxrMMpb7NnDfcdAwRgUi+DoM3ZJKuM/IUmTrE4O
+<span class="linenos" data-linenos=" 9 "></span>rz5Iy2Xu/NMhD2XSKtkyj4zl93ewEnu1lcCJo6m67XMuegwGMoOifooUMM0RoOEq
+<span class="linenos" data-linenos="10 "></span>OLl5CjH9UL2AZd+3UWODyOKIYepLYYHsUmu5ouJLGiifSKOeDNoJjj4XLh7dIN9b
+<span class="linenos" data-linenos="11 "></span>xiqKqy69cK3FCxolkHRyxXtqqzTWMIn/5WgTe1QLyNau7Fqckh49ZLOMxt+/yUFw
+<span class="linenos" data-linenos="12 "></span>7BZy1SbsOFU5Q9D8/RhcQPGX69Wam40dutolucbY38EVAjqr2m7xPi71XAicPNaD
+<span class="linenos" data-linenos="13 "></span>aeQQmxkqtilX4+U9m5/wAl0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNV
+<span class="linenos" data-linenos="14 "></span>HQ8BAf8EBAMCAQYwHQYDVR0OBBYEFMSnsaR7LHH62+FLkHX/xBVghYkQMA0GCSqG
+<span class="linenos" data-linenos="15 "></span>SIb3DQEBBQUAA4IBAQCjGiybFwBcqR7uKGY3Or+Dxz9LwwmglSBd49lZRNI+DT69
+<span class="linenos" data-linenos="16 "></span>ikugdB/OEIKcdBodfpga3csTS7MgROSR6cz8faXbauX+5v3gTt23ADq1cEmv8uXr
+<span class="linenos" data-linenos="17 "></span>AvHRAosZy5Q6XkjEGB5YGV8eAlrwDPGxrancWYaLbumR9YbK+rlmM6pZW87ipxZz
+<span class="linenos" data-linenos="18 "></span>R8srzJmwN0jP41ZL9c8PDHIyh8bwRLtTcm1D9SZImlJnt1ir/md2cXjbDaJWFBM5
+<span class="linenos" data-linenos="19 "></span>JDGFoqgCWjBH4d1QB7wCCZAA62RjYJsWvIjJEubSfZGL+T0yjWW06XyxV3bqxbYo
+<span class="linenos" data-linenos="20 "></span>Ob8VZRzI9neWagqNdwvYkQsEjgfbKbYK7p2CNTUQ
+<span class="linenos" data-linenos="21 "></span>-----END CERTIFICATE-----
+<span class="linenos" data-linenos="22 "></span>EOF
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="c1"># cat &gt; /etc/syslog-ng/ca.d/4f06f81d.0 &lt;&lt; EOF</span>
+<span class="linenos" data-linenos="25 "></span>-----BEGIN CERTIFICATE-----
+<span class="linenos" data-linenos="26 "></span>MIIEkjCCA3qgAwIBAgIQCgFBQgAAAVOFc2oLheynCDANBgkqhkiG9w0BAQsFADA/
+<span class="linenos" data-linenos="27 "></span>MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+<span class="linenos" data-linenos="28 "></span>DkRTVCBSb290IENBIFgzMB4XDTE2MDMxNzE2NDA0NloXDTIxMDMxNzE2NDA0Nlow
+<span class="linenos" data-linenos="29 "></span>SjELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUxldCdzIEVuY3J5cHQxIzAhBgNVBAMT
+<span class="linenos" data-linenos="30 "></span>GkxldCdzIEVuY3J5cHQgQXV0aG9yaXR5IFgzMIIBIjANBgkqhkiG9w0BAQEFAAOC
+<span class="linenos" data-linenos="31 "></span>AQ8AMIIBCgKCAQEAnNMM8FrlLke3cl03g7NoYzDq1zUmGSXhvb418XCSL7e4S0EF
+<span class="linenos" data-linenos="32 "></span>q6meNQhY7LEqxGiHC6PjdeTm86dicbp5gWAf15Gan/PQeGdxyGkOlZHP/uaZ6WA8
+<span class="linenos" data-linenos="33 "></span>SMx+yk13EiSdRxta67nsHjcAHJyse6cF6s5K671B5TaYucv9bTyWaN8jKkKQDIZ0
+<span class="linenos" data-linenos="34 "></span>Z8h/pZq4UmEUEz9l6YKHy9v6Dlb2honzhT+Xhq+w3Brvaw2VFn3EK6BlspkENnWA
+<span class="linenos" data-linenos="35 "></span>a6xK8xuQSXgvopZPKiAlKQTGdMDQMc2PMTiVFrqoM7hD8bEfwzB/onkxEz0tNvjj
+<span class="linenos" data-linenos="36 "></span>/PIzark5McWvxI0NHWQWM6r6hCm21AvA2H3DkwIDAQABo4IBfTCCAXkwEgYDVR0T
+<span class="linenos" data-linenos="37 "></span>AQH/BAgwBgEB/wIBADAOBgNVHQ8BAf8EBAMCAYYwfwYIKwYBBQUHAQEEczBxMDIG
+<span class="linenos" data-linenos="38 "></span>CCsGAQUFBzABhiZodHRwOi8vaXNyZy50cnVzdGlkLm9jc3AuaWRlbnRydXN0LmNv
+<span class="linenos" data-linenos="39 "></span>bTA7BggrBgEFBQcwAoYvaHR0cDovL2FwcHMuaWRlbnRydXN0LmNvbS9yb290cy9k
+<span class="linenos" data-linenos="40 "></span>c3Ryb290Y2F4My5wN2MwHwYDVR0jBBgwFoAUxKexpHsscfrb4UuQdf/EFWCFiRAw
+<span class="linenos" data-linenos="41 "></span>VAYDVR0gBE0wSzAIBgZngQwBAgEwPwYLKwYBBAGC3xMBAQEwMDAuBggrBgEFBQcC
+<span class="linenos" data-linenos="42 "></span>ARYiaHR0cDovL2Nwcy5yb290LXgxLmxldHNlbmNyeXB0Lm9yZzA8BgNVHR8ENTAz
+<span class="linenos" data-linenos="43 "></span>MDGgL6AthitodHRwOi8vY3JsLmlkZW50cnVzdC5jb20vRFNUUk9PVENBWDNDUkwu
+<span class="linenos" data-linenos="44 "></span>Y3JsMB0GA1UdDgQWBBSoSmpjBH3duubRObemRWXv86jsoTANBgkqhkiG9w0BAQsF
+<span class="linenos" data-linenos="45 "></span>AAOCAQEA3TPXEfNjWDjdGBX7CVW+dla5cEilaUcne8IkCJLxWh9KEik3JHRRHGJo
+<span class="linenos" data-linenos="46 "></span>uM2VcGfl96S8TihRzZvoroed6ti6WqEBmtzw3Wodatg+VyOeph4EYpr/1wXKtx8/
+<span class="linenos" data-linenos="47 "></span>wApIvJSwtmVi4MFU5aMqrSDE6ea73Mj2tcMyo5jMd6jmeWUHK8so/joWUoHOUgwu
+<span class="linenos" data-linenos="48 "></span>X4Po1QYz+3dszkDqMp4fklxBwXRsW10KXzPMTZ+sOPAveyxindmjkW8lGy+QsRlG
+<span class="linenos" data-linenos="49 "></span>PfZ+G6Z6h7mjem0Y+iWlkYcV4PIWL1iwBi8saCbGS5jN2p8M+X+Q7UNKEkROb3N6
+<span class="linenos" data-linenos="50 "></span>KOqkqm57TH2H3eDJAkSnh6/DNFu0Qg<span class="o">==</span>
+<span class="linenos" data-linenos="51 "></span>-----END CERTIFICATE-----
+<span class="linenos" data-linenos="52 "></span>EOF
 </code></pre></div>
-</td></tr></table>
-
 </details>
 
 <p>Then, you have to define syslog-ng’s destination module to push Syslog events to SEKOIA.IO in <code>/etc/syslog-ng/syslog-ng.conf</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>destination d_sekoia_io {
-    syslog(&quot;intake.sekoia.io&quot;
-            port(10514)
-            transport(&quot;tls&quot;)
-            frac_digits(6)
-            ts_format(iso)
-            tls(peer-verify(required-trusted) ca-dir(&quot;/etc/syslog-ng/ca.d&quot;))
-    );
-};
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>destination d_sekoia_io {
+<span class="linenos" data-linenos="2 "></span>    syslog(&quot;intake.sekoia.io&quot;
+<span class="linenos" data-linenos="3 "></span>            port(10514)
+<span class="linenos" data-linenos="4 "></span>            transport(&quot;tls&quot;)
+<span class="linenos" data-linenos="5 "></span>            frac_digits(6)
+<span class="linenos" data-linenos="6 "></span>            ts_format(iso)
+<span class="linenos" data-linenos="7 "></span>            tls(peer-verify(required-trusted) ca-dir(&quot;/etc/syslog-ng/ca.d&quot;))
+<span class="linenos" data-linenos="8 "></span>    );
+<span class="linenos" data-linenos="9 "></span>};
 </code></pre></div>
-</td></tr></table>
 <h2 id="dispatching-events">Dispatching Events</h2>
 <p>In the following example, we are pushing Apache HTTP Server and NGINX logs to SEKOIA.IO. To filter in events, we are relying on process names. Make sure you update your intake key value by changing <code>CHANGE_ME_INTAKE_KEY</code> below.</p>
 <p>You have to add the following configuration snippet in your main syslog-ng configuration file, <code>/etc/syslog-ng/syslog-ng.conf</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">filter</span> <span class="n">f_apache2</span> <span class="p">{</span>
-    <span class="n">program</span><span class="p">(</span><span class="n">apache2</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="n">rewrite</span> <span class="n">r_apache2</span> <span class="p">{</span>
-    <span class="n">set</span><span class="p">(</span><span class="s">&quot;CHANGE_ME_INTAKE_KEY&quot;</span> <span class="n">value</span><span class="p">(</span><span class="s">&quot;.SDATA.SEKOIA@53288.intake_key&quot;</span><span class="p">));</span>
-<span class="p">};</span>
-
-<span class="n">log</span> <span class="p">{</span>
-    <span class="n">source</span><span class="p">(</span><span class="n">s_network</span><span class="p">);</span>
-    <span class="n">filter</span><span class="p">(</span><span class="n">f_apache2</span><span class="p">);</span>
-    <span class="n">rewrite</span><span class="p">(</span><span class="n">r_apache2</span><span class="p">);</span>
-    <span class="n">destination</span><span class="p">(</span><span class="n">d_sekoia_io</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="n">filter</span> <span class="n">f_nginx</span> <span class="p">{</span>
-    <span class="n">program</span><span class="p">(</span><span class="n">nginx</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="n">rewrite</span> <span class="n">r_nginx</span> <span class="p">{</span>
-    <span class="n">set</span><span class="p">(</span><span class="s">&quot;CHANGE_ME_INTAKE_KEY&quot;</span> <span class="n">value</span><span class="p">(</span><span class="s">&quot;.SDATA.SEKOIA@53288.intake_key&quot;</span><span class="p">));</span>
-<span class="p">};</span>
-
-<span class="n">log</span> <span class="p">{</span>
-    <span class="n">source</span><span class="p">(</span><span class="n">s_network</span><span class="p">);</span>
-    <span class="n">filter</span><span class="p">(</span><span class="n">f_nginx</span><span class="p">);</span>
-    <span class="n">rewrite</span><span class="p">(</span><span class="n">r_nginx</span><span class="p">);</span>
-    <span class="n">destination</span><span class="p">(</span><span class="n">d_sekoia_io</span><span class="p">);</span>
-<span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>filter f_apache2 {
+<span class="linenos" data-linenos=" 2 "></span>    program(apache2);
+<span class="linenos" data-linenos=" 3 "></span>};
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>rewrite r_apache2 {
+<span class="linenos" data-linenos=" 6 "></span>    set(&quot;CHANGE_ME_INTAKE_KEY&quot; value(&quot;.SDATA.SEKOIA@53288.intake_key&quot;));
+<span class="linenos" data-linenos=" 7 "></span>};
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>log {
+<span class="linenos" data-linenos="10 "></span>    source(s_network);
+<span class="linenos" data-linenos="11 "></span>    filter(f_apache2);
+<span class="linenos" data-linenos="12 "></span>    rewrite(r_apache2);
+<span class="linenos" data-linenos="13 "></span>    destination(d_sekoia_io);
+<span class="linenos" data-linenos="14 "></span>};
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span>filter f_nginx {
+<span class="linenos" data-linenos="17 "></span>    program(nginx);
+<span class="linenos" data-linenos="18 "></span>};
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>rewrite r_nginx {
+<span class="linenos" data-linenos="21 "></span>    set(&quot;CHANGE_ME_INTAKE_KEY&quot; value(&quot;.SDATA.SEKOIA@53288.intake_key&quot;));
+<span class="linenos" data-linenos="22 "></span>};
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span>log {
+<span class="linenos" data-linenos="25 "></span>    source(s_network);
+<span class="linenos" data-linenos="26 "></span>    filter(f_nginx);
+<span class="linenos" data-linenos="27 "></span>    rewrite(r_nginx);
+<span class="linenos" data-linenos="28 "></span>    destination(d_sekoia_io);
+<span class="linenos" data-linenos="29 "></span>};
 </code></pre></div>
-</td></tr></table>
                 
               
               
@@ -2018,6 +1930,10 @@ EOF
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright 2021 SEKOIA. All rights reserved.
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -2025,6 +1941,19 @@ EOF
         
       </div>
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/sekoia_fr" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

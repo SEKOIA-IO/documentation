@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
@@ -32,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Raleway";--md-code-font-family:""}</style>
       
     
     
@@ -52,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -1862,55 +1866,35 @@
 On most linux servers, two packages need to be installed: rsyslog and rsyslog-gnutls.</p>
 <h3 id="download-the-certificate">Download the certificate</h3>
 <p>In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </code></pre></div>
-</td></tr></table>
 <h3 id="configure-the-rsyslog-server">Configure the Rsyslog server</h3>
-<p>Open or create a new Haproxy configuration file for rsyslog:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo vim /etc/rsyslog.d/49-haproxy.conf
-</code></pre></div>
-</td></tr></table>
+<p>Open or create a new Haproxy configuration file for rsyslog:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo vim /etc/rsyslog.d/49-haproxy.conf
+</code></pre></div></p>
 <p>Paste the following rsyslog configuration to trigger the emission of haproxy logs by your rsyslog server to SEKOIA.IO.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1"># Define the SEKIOA-IO intake certificate</span>
-<span class="nv">$DefaultNetstreamDriverCAFile</span> /etc/rsyslog.d/SEKOIA-IO-intake.pem
-
-<span class="c1"># Configure up the network ssl connection</span>
-<span class="nv">$ActionSendStreamDriver</span> gtls <span class="c1"># use gtls netstream driver</span>
-<span class="nv">$ActionSendStreamDriverMode</span> <span class="m">1</span> <span class="c1"># require TLS for the connection</span>
-<span class="nv">$ActionSendStreamDriverAuthMode</span> x509/name <span class="c1"># server is authenticated</span>
-
-<span class="c1"># Collects haproxy logs out of the dedicated HAProxy socket</span>
-<span class="nv">$AddUnixListenSocket</span> /var/lib/haproxy/dev/log
-
-<span class="c1"># Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)</span>
-<span class="c1"># IMPORTANT: don&#39;t forget to set your intake key in the template</span>
-template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOHaproxyTemplate&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span> <span class="nv">string</span><span class="o">=</span><span class="s2">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;</span><span class="o">)</span>
-
-<span class="c1"># Send your HAProxy events to SEKOIA.IO intake servers under SEKOIAIOHaproxyTemplate template</span>
-<span class="k">if</span> <span class="nv">$programname</span> startswith <span class="s1">&#39;haproxy&#39;</span> <span class="k">then</span> @@<span class="o">(</span>o<span class="o">)</span>intake.sekoia.io:10514<span class="p">;</span>SEKOIAIOHaproxyTemplate
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1"># Define the SEKIOA-IO intake certificate</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nv">$DefaultNetstreamDriverCAFile</span> /etc/rsyslog.d/SEKOIA-IO-intake.pem
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1"># Configure up the network ssl connection</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="nv">$ActionSendStreamDriver</span> gtls <span class="c1"># use gtls netstream driver</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nv">$ActionSendStreamDriverMode</span> <span class="m">1</span> <span class="c1"># require TLS for the connection</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nv">$ActionSendStreamDriverAuthMode</span> x509/name <span class="c1"># server is authenticated</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1"># Collects haproxy logs out of the dedicated HAProxy socket</span>
+<span class="linenos" data-linenos="10 "></span><span class="nv">$AddUnixListenSocket</span> /var/lib/haproxy/dev/log
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="c1"># Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)</span>
+<span class="linenos" data-linenos="13 "></span><span class="c1"># IMPORTANT: don&#39;t forget to set your intake key in the template</span>
+<span class="linenos" data-linenos="14 "></span>template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOHaproxyTemplate&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span> <span class="nv">string</span><span class="o">=</span><span class="s2">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;</span><span class="o">)</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="c1"># Send your HAProxy events to SEKOIA.IO intake servers under SEKOIAIOHaproxyTemplate template</span>
+<span class="linenos" data-linenos="17 "></span><span class="k">if</span> <span class="nv">$programname</span> startswith <span class="s1">&#39;haproxy&#39;</span> <span class="k">then</span> @@<span class="o">(</span>o<span class="o">)</span>intake.sekoia.io:10514<span class="p">;</span>SEKOIAIOHaproxyTemplate
 </code></pre></div>
-</td></tr></table>
 <p>In the above <code>template</code> instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key.</p>
 <h3 id="restart-rsyslog">Restart rsyslog</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ sudo service rsyslog restart
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo service rsyslog restart
 </code></pre></div>
-</td></tr></table>
 <h3 id="enjoy-your-events">Enjoy your events</h3>
 <p>Go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
 <h2 id="related-files">Related files</h2>
@@ -1980,6 +1964,10 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright 2021 SEKOIA. All rights reserved.
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -1987,6 +1975,19 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
         
       </div>
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/sekoia_fr" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

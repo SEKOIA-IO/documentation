@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
@@ -32,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Raleway";--md-code-font-family:""}</style>
       
     
     
@@ -52,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -1953,10 +1957,9 @@ In the Alert properties part, you should indicate the category and type of the a
 <p>Correlation rules are written using STIX Patterning.</p>
 <p>In order to enhance detection of possibly malicious activity on networks and endpoints, a standard language is needed to describe what to look for in a cyber environment. STIX, abbreviation for Structured Threat Information eXpression, is a standardized language developed by MITRE and OASIS Cyber Threat Intelligence (CTI) Technical Committee to describe information about cyber-threats. It has been adopted as an international standard by various communities and organizations sharing information.</p>
 <p>STIX Patterns are composed of multiple building blocks, ranging from simple key-value comparisons to more complex, context-sensitive expressions. The most fundamental building block is the Comparison Expression, which is a comparison between a single property of a Cyber Observable Object and a given constant using a Comparison Operator. As a simple example, one might use the following Comparison Expression (contained within an Observation Expression) to match against an IPv4 address:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>[ipv4-addr:value = &#39;127.0.0.1&#39;]
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>[ipv4-addr:value = &#39;127.0.0.1&#39;]
 </code></pre></div>
-</td></tr></table>
-<p>Observation Expressions are contained in square brackets [ ... ] and may consist of one or more Comparison Expressions joined by Boolean Operators. Observation Expressions may be followed by one or more Qualifiers, which allow for the expression of further restrictions on the set of data matching the pattern. The final, highest level building block of STIX Patterning combines two or more Object Expressions via Observation Operators, yielding a STIX Pattern capable of matching across multiple STIX Observed Data SDOs.</p>
+Observation Expressions are contained in square brackets [ ... ] and may consist of one or more Comparison Expressions joined by Boolean Operators. Observation Expressions may be followed by one or more Qualifiers, which allow for the expression of further restrictions on the set of data matching the pattern. The final, highest level building block of STIX Patterning combines two or more Object Expressions via Observation Operators, yielding a STIX Pattern capable of matching across multiple STIX Observed Data SDOs.</p>
 <p><img alt="STIX Patterning" src="../../assets/operation_center/stix_patterning.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1970,28 +1973,22 @@ In the Alert properties part, you should indicate the category and type of the a
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Regarding the use of regular expressions (<code>MATCHES</code> keyword) in STIX Patterning rules, it is necessary to escape the “<code>\</code>”. Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:</p>
-<p><code>[ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>[ipv4-addr:x_tags[*].name MATCHES &#39;^country:(?!FR)\\w+&#39;]
+</code></pre></div>
 </div>
 <p>For more information about STIX and STIX Patterning, please refers to the <a href="http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html">OASIS STIX Patterning specification</a>.</p>
 <h3 id="how-to-validate-stix-patterning-rules-syntax">How to Validate STIX Patterning Rule’s Syntax</h3>
 <p>SEKOIA.IO checks the syntax of submitted rules and reports errors to the “rules” interface.</p>
 <p>In order to validate your rule’s syntax, you can also use an open source tool called <a href="https://github.com/oasis-open/cti-pattern-validator"><code>stix2-patterns</code></a>. This tool is part of the official tools developed by the OASIS Technical Committee.</p>
 <p>Here’s an example on how to use that tool. These commands should be executed in a shell.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ python3 -m venv venv
-$ <span class="nb">source</span> venv/bin/activate
-$ pip install stix2-patterns
-$ validate-patterns
-Enter a pattern to validate: <span class="o">[</span>ipv4-addr:x_tags<span class="o">[</span>*<span class="o">]</span>.name MATCHES <span class="s1">&#39;^country:(?!FR)\\w+&#39;</span><span class="o">]</span>
-
-PASS: <span class="o">[</span>ipv4-addr:x_tags<span class="o">[</span>*<span class="o">]</span>.name MATCHES <span class="s1">&#39;^country:(?!FR)\\w+&#39;</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ python3 -m venv venv
+<span class="linenos" data-linenos="2 "></span>$ source venv/bin/activate
+<span class="linenos" data-linenos="3 "></span>$ pip install stix2-patterns
+<span class="linenos" data-linenos="4 "></span>$ validate-patterns
+<span class="linenos" data-linenos="5 "></span>Enter a pattern to validate: [ipv4-addr:x_tags[*].name MATCHES &#39;^country:(?!FR)\\w+&#39;]
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span>PASS: [ipv4-addr:x_tags[*].name MATCHES &#39;^country:(?!FR)\\w+&#39;]
 </code></pre></div>
-</td></tr></table>
 <p>In this example, we are trying to validate a STIX Patterning rule that contains a regular expression (<code>MATCHES</code>). This rule is considered valid and can be submitted to SEKOIA.IO.</p>
 <h3 id="how-to-test-stix-patterning-rules">How to Test STIX Patterning Rules?</h3>
 <p>When one creates a rule in SEKOIA.IO, this one is automatically validated and applied to incoming traffic.</p>
@@ -2000,122 +1997,67 @@ PASS: <span class="o">[</span>ipv4-addr:x_tags<span class="o">[</span>*<span cla
 <p><img alt="Export STIX Representation of an Event from SEKOIA.IO" src="../../assets/operation_center/event_list_export_stix.png" /></p>
 <p>Export that STIX “bundle” in a file, called, for example, <code>event.json</code>.
 Here’s an example on how to use that tool. These commands should be executed in a shell. We are also using <a href="https://stedolan.github.io/jq/"><code>jq</code></a> a tool that helps to manipulate JSON files.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ python3 -m venv venv
-$ <span class="nb">source</span> venv/bin/activate
-$ pip install stix2-matcher
-$ cat event.json <span class="p">|</span> jq <span class="s1">&#39;.objects[] | select( .type | contains(&quot;observed-data&quot;) )&#39;</span> &gt; observed-data.json
-$ cat <span class="s">&lt;&lt; EOF &gt;| patterns</span>
-<span class="s">[ipv4-addr:value = &#39;246.127.189.32&#39;]</span>
-<span class="s">[x-dns-traffic:extensions.&#39;x-log&#39;.hostname = &#39;hostname&#39;]</span>
-<span class="s">EOF</span>
-$ stix2-matcher -f observed-data.json -p patterns
-
-MATCH:  <span class="o">[</span>ipv4-addr:value <span class="o">=</span> <span class="s1">&#39;246.127.189.32&#39;</span><span class="o">]</span>
-
-MATCH:  <span class="o">[</span>x-dns-traffic:extensions.<span class="s1">&#39;x-log&#39;</span>.hostname <span class="o">=</span> <span class="s1">&#39;hostname&#39;</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>$ python3 -m venv venv
+<span class="linenos" data-linenos=" 2 "></span>$ source venv/bin/activate
+<span class="linenos" data-linenos=" 3 "></span>$ pip install stix2-matcher
+<span class="linenos" data-linenos=" 4 "></span>$ cat event.json | jq &#39;.objects[] | select( .type | contains(&quot;observed-data&quot;) )&#39; &gt; observed-data.json
+<span class="linenos" data-linenos=" 5 "></span>$ cat &lt;&lt; EOF &gt;| patterns
+<span class="linenos" data-linenos=" 6 "></span>[ipv4-addr:value = &#39;246.127.189.32&#39;]
+<span class="linenos" data-linenos=" 7 "></span>[x-dns-traffic:extensions.&#39;x-log&#39;.hostname = &#39;hostname&#39;]
+<span class="linenos" data-linenos=" 8 "></span>EOF
+<span class="linenos" data-linenos=" 9 "></span>$ stix2-matcher -f observed-data.json -p patterns
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>MATCH:  [ipv4-addr:value = &#39;246.127.189.32&#39;]
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>MATCH:  [x-dns-traffic:extensions.&#39;x-log&#39;.hostname = &#39;hostname&#39;]
 </code></pre></div>
-</td></tr></table>
 <h2 id="observed-data">Observed Data</h2>
 <p>In order to trigger alerts, rule patterns must match with Observed Data. An "Observed Data" is the internal representation of any collected event in SEKOIA.IO. All events are normalized into a JSON object compliant with the STIX Observed Data specification. Detection rules are applied on events in STIX Observed Data format.</p>
 <p>Here is an example of an Observed Data that could be obtained from a squid event:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;x_sic_entity_by_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;identity--d6358bb4-d9bb-47aa-b074-c6d1aeb673e2&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:42.971Z&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;objects&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;0&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;1&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;216.58.215.48&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;2&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;network-traffic&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;http-request-ext&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;request_header&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="nt">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/xml&quot;</span>
-                    <span class="p">},</span>
-                    <span class="nt">&quot;request_method&quot;</span><span class="p">:</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;request_value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://216.58.215.48/&quot;</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;src_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;dst_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;protocols&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;ipv4&quot;</span> <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;3&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;user-account&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;x-log&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;DESKTOP-UPU7IFP&quot;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;observed-data&quot;</span><span class="p">,</span>
-    <span class="err">...</span>
-    <span class="nt">&quot;x_event_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span>
-<span class="p">}</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&quot;x_sic_entity_by_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;identity--d6358bb4-d9bb-47aa-b074-c6d1aeb673e2&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:42.971Z&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&quot;objects&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="nt">&quot;0&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span>            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="p">},</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="nt">&quot;1&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;216.58.215.48&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4-addr&quot;</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="p">},</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="nt">&quot;2&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span>            <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="15 "></span>            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;network-traffic&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="16 "></span>            <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-20T16:17:40.935Z&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span>                <span class="nt">&quot;http-request-ext&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>                    <span class="nt">&quot;request_header&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span>                        <span class="nt">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/xml&quot;</span>
+<span class="linenos" data-linenos="21 "></span>                    <span class="p">},</span>
+<span class="linenos" data-linenos="22 "></span>                    <span class="nt">&quot;request_method&quot;</span><span class="p">:</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="23 "></span>                    <span class="nt">&quot;request_value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://216.58.215.48/&quot;</span>
+<span class="linenos" data-linenos="24 "></span>                <span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span>            <span class="p">},</span>
+<span class="linenos" data-linenos="26 "></span>            <span class="nt">&quot;src_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="27 "></span>            <span class="nt">&quot;dst_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="28 "></span>            <span class="nt">&quot;protocols&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;ipv4&quot;</span> <span class="p">]</span>
+<span class="linenos" data-linenos="29 "></span>        <span class="p">},</span>
+<span class="linenos" data-linenos="30 "></span>        <span class="nt">&quot;3&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="31 "></span>            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;user-account&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="32 "></span>            <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="33 "></span>                <span class="nt">&quot;x-log&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="34 "></span>                    <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;DESKTOP-UPU7IFP&quot;</span>
+<span class="linenos" data-linenos="35 "></span>                <span class="p">}</span>
+<span class="linenos" data-linenos="36 "></span>            <span class="p">}</span>
+<span class="linenos" data-linenos="37 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="38 "></span>    <span class="p">},</span>
+<span class="linenos" data-linenos="39 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;observed-data&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="40 "></span>    <span class="err">...</span>
+<span class="linenos" data-linenos="41 "></span>    <span class="nt">&quot;x_event_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span>
+<span class="linenos" data-linenos="42 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
-<p>The JSON object has a type of <strong>observed-data</strong> and is composed by smaller objects following another STIX specification: <strong>Cyber Observables</strong>.</p>
+The JSON object has a type of <strong>observed-data</strong> and is composed by smaller objects following another STIX specification: <strong>Cyber Observables</strong>.</p>
 <p>The main observable is the third one, with a type of network-traffic. It has references to indicate the source of the packet (<code>src_ref</code> - <code>127.0.0.1</code>) and its destination (<code>dst_ref</code> - <code>216.58.215.48</code>).</p>
 <p>These information can be used to construct correlation rules. Below, a non-exhaustive list of information which can be used in your rules:</p>
 <ul>
@@ -2194,6 +2136,10 @@ MATCH:  <span class="o">[</span>x-dns-traffic:extensions.<span class="s1">&#39;x
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright 2021 SEKOIA. All rights reserved.
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -2201,6 +2147,19 @@ MATCH:  <span class="o">[</span>x-dns-traffic:extensions.<span class="s1">&#39;x
         
       </div>
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/sekoia_fr" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

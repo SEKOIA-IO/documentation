@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
@@ -32,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Raleway";--md-code-font-family:""}</style>
       
     
     
@@ -52,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -1765,21 +1769,16 @@
 <p><code>intake.sekoia.io</code> is the domain name used to send your logs to SEKOIA.IO, either via Syslog or HTTP protocols. The IP address behind that service is static and stable. You can use that IP to configure your firewalls to allow connections from your forwarding systems to SEKOIA.IO.</p>
 <h2 id="how-to-debug-rsyslogs-forward-configuration-to-sekoiaio">How to debug Rsyslog’s forward configuration to SEKOIA.IO?</h2>
 <p>If you use Rsyslog to forward your logs to SEKOIA.IO, you will probably have a section like this in your configuration files:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">template</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;SEKOIAIOUnboundTemplate&quot;</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;string&quot;</span> <span class="n">string</span><span class="o">=</span><span class="s">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=</span><span class="se">\&quot;</span><span class="s">jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5</span><span class="se">\&quot;</span><span class="s">] %msg%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">$programname</span> <span class="n">startswith</span> <span class="err">&#39;</span><span class="n">unbound</span><span class="err">&#39;</span> <span class="n">then</span> <span class="p">@</span><span class="l">@(</span><span class="n">o</span><span class="l">)</span><span class="n">intake</span><span class="p">.</span><span class="n">sekoia</span><span class="p">.</span><span class="nl">io</span><span class="p">:</span><span class="mi">10514</span><span class="p">;</span><span class="n">SEKOIAIOUnboundTemplate</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>template(name=&quot;SEKOIAIOUnboundTemplate&quot; type=&quot;string&quot; string=&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5\&quot;] %msg%\n&quot;)
+<span class="linenos" data-linenos="2 "></span>if $programname startswith &#39;unbound&#39; then @@(o)intake.sekoia.io:10514;SEKOIAIOUnboundTemplate
 </code></pre></div>
-</td></tr></table>
 <p>If you want to retrieve the raw data that is forwarded to SEKOIA.IO, you can duplicate the last line and make Rsyslog dump logs to a local file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">if</span> $<span class="nv">programname</span> <span class="nv">startswith</span> <span class="s1">&#39;</span><span class="s">unbound</span><span class="s1">&#39;</span> <span class="k">then</span> <span class="o">/</span><span class="nv">tmp</span><span class="o">/</span><span class="nv">nginx</span><span class="o">-</span><span class="nv">output</span>.<span class="nv">log</span><span class="c1">;SEKOIAIOUnboundTemplate</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>if $programname startswith &#39;unbound&#39; then /tmp/nginx-output.log;SEKOIAIOUnboundTemplate
 </code></pre></div>
-</td></tr></table>
 <p>This way, you will be able to exactly identify what data is sent to SEKOIA.IO.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp"># tail -n 1 /tmp/nginx-output.log</span>
-<span class="o">&lt;</span><span class="mi">30</span><span class="o">&gt;</span><span class="mi">1</span> <span class="mi">2021</span><span class="mo">-01</span><span class="mi">-13</span><span class="nl">T14</span><span class="p">:</span><span class="mi">52</span><span class="o">:</span><span class="mf">06.934860</span><span class="o">+</span><span class="mo">01</span><span class="o">:</span><span class="mo">00</span> <span class="n">ote</span> <span class="n">unbound</span> <span class="o">-</span> <span class="n">LOG</span> <span class="p">[</span><span class="n">SEKOIA</span><span class="mi">@53288</span> <span class="n">intake_key</span><span class="o">=</span><span class="s">&quot;jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5&quot;</span><span class="p">]</span>  <span class="p">[</span><span class="mi">596451</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span> <span class="nl">info</span><span class="p">:</span> <span class="mf">127.0.0.1</span> <span class="n">intake</span><span class="p">.</span><span class="n">sekoia</span><span class="p">.</span><span class="n">io</span><span class="p">.</span> <span class="n">A</span> <span class="n">IN</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span># tail -n 1 /tmp/nginx-output.log
+<span class="linenos" data-linenos="2 "></span>&lt;30&gt;1 2021-01-13T14:52:06.934860+01:00 ote unbound - LOG [SEKOIA@53288 intake_key=&quot;jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5&quot;]  [596451:0] info: 127.0.0.1 intake.sekoia.io. A IN
 </code></pre></div>
-</td></tr></table>
                 
               
               
@@ -1837,6 +1836,10 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright 2021 SEKOIA. All rights reserved.
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -1844,6 +1847,19 @@
         
       </div>
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/sekoia_fr" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

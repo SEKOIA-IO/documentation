@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
@@ -32,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Raleway";--md-code-font-family:""}</style>
       
     
     
@@ -52,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -2344,92 +2348,50 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 <h3 id="nxlog-agent-to-the-rsyslog">NXLog agent to the Rsyslog</h3>
 <h4 id="nxlog-setup-on-windows">NXLog setup on Windows</h4>
 <p>This section describes how to configure <a href="https://nxlog.co/">NXLog</a> to forward your Windows events by means of a syslog transport channel.</p>
-<p>First of all, download NXLog at the following link : https://nxlog.co/products/all/download. Then, open the NXLog configuration file at <code>C:\Program Files (x86)\nxlog\conf\nxlog.conf</code> and update it with the following instructions:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code> <span class="p">##</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">sample</span> <span class="n">configuration</span> <span class="n">file</span><span class="p">.</span> <span class="n">See</span> <span class="n">the</span> <span class="n">nxlog</span> <span class="n">reference</span> <span class="n">manual</span> <span class="n">about</span> <span class="n">the</span>
- <span class="p">##</span> <span class="n">configuration</span> <span class="n">options</span><span class="p">.</span> <span class="n">It</span> <span class="n">should</span> <span class="n">be</span> <span class="n">installed</span> <span class="n">locally</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">available</span>
- <span class="p">##</span> <span class="n">online</span> <span class="n">at</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">nxlog</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">nxlog</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">nxlog</span><span class="o">-</span><span class="n">reference</span><span class="o">-</span><span class="n">manual</span><span class="p">.</span><span class="n">html</span>
-
- <span class="p">##</span> <span class="n">Please</span> <span class="k">set</span> <span class="n">the</span> <span class="n">ROOT</span> <span class="k">to</span> <span class="n">the</span> <span class="n">folder</span> <span class="n">your</span> <span class="n">nxlog</span> <span class="n">was</span> <span class="n">installed</span> <span class="n">into</span><span class="p">,</span>
- <span class="p">##</span> <span class="n">otherwise</span> <span class="n">it</span> <span class="n">will</span> <span class="k">not</span> <span class="n">start</span><span class="p">.</span>
-
- <span class="p">#</span><span class="n">define</span> <span class="n">ROOT</span> <span class="n">C</span><span class="p">:</span><span class="o">\</span><span class="n">Program</span> <span class="n">Files</span><span class="o">\</span><span class="n">nxlog</span>
- <span class="n">define</span> <span class="n">ROOT</span> <span class="n">C</span><span class="p">:</span><span class="o">\</span><span class="n">Program</span> <span class="n">Files</span> <span class="p">(</span><span class="n">x86</span><span class="p">)</span><span class="o">\</span><span class="n">nxlog</span>
- <span class="n">define</span> <span class="n">CERTDIR</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">cert</span>
-
- <span class="n">Moduledir</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">modules</span>
- <span class="n">CacheDir</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span>
- <span class="n">Pidfile</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span><span class="o">\</span><span class="n">nxlog</span><span class="p">.</span><span class="n">pid</span>
- <span class="n">SpoolDir</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span>
- <span class="n">LogFile</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span><span class="o">\</span><span class="n">nxlog</span><span class="p">.</span><span class="n">log</span>
-
-<span class="na">&lt;Extension _syslog&gt;</span>
-  <span class="k">Module</span> <span class="nn">xm_syslog</span>
-<span class="na">&lt;/Extension&gt;</span>
-
-<span class="na">&lt;Extension _json&gt;</span>
-  <span class="k">Module</span> <span class="nn">xm_json</span>
-<span class="na">&lt;/Extension&gt;</span>
-
-<span class="na">&lt;Input eventlog&gt;</span>
-  <span class="p">#</span> <span class="n">Use</span> <span class="c">&#39;im_mseventlog&#39; for Windows XP, 2000 and 2003</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-
-<span class="na">&lt;Output rsyslog&gt;</span>
-  <span class="k">Module</span> <span class="nn">om_tcp</span>
-  <span class="n">Host</span> <span class="n">RSYSLOG_HOST</span>
-  <span class="n">Port</span> <span class="mi">514</span>
-  <span class="n">OutputType</span> <span class="n">Syslog_TLS</span>
-
-  <span class="n">Exec</span> <span class="n">to_syslog_ietf</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Output&gt;</span>
-<span class="na">&lt;Route eventlog_to_rsyslog&gt;</span>
-  <span class="n">Path</span> <span class="n">eventlog</span> <span class="o">=&gt;</span> <span class="n">rsyslog</span>
-<span class="na">&lt;/Route&gt;</span>
-</code></pre></div>
-</td></tr></table>
+<p>First of all, download NXLog at the following link : https://nxlog.co/products/all/download. Then, open the NXLog configuration file at <code>C:\Program Files (x86)\nxlog\conf\nxlog.conf</code> and update it with the following instructions:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span> ## This is a sample configuration file. See the nxlog reference manual about the
+<span class="linenos" data-linenos=" 2 "></span> ## configuration options. It should be installed locally and is also available
+<span class="linenos" data-linenos=" 3 "></span> ## online at http://nxlog.org/nxlog-docs/en/nxlog-reference-manual.html
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span> ## Please set the ROOT to the folder your nxlog was installed into,
+<span class="linenos" data-linenos=" 6 "></span> ## otherwise it will not start.
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span> #define ROOT C:\Program Files\nxlog
+<span class="linenos" data-linenos=" 9 "></span> define ROOT C:\Program Files (x86)\nxlog
+<span class="linenos" data-linenos="10 "></span> define CERTDIR %ROOT%\cert
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span> Moduledir %ROOT%\modules
+<span class="linenos" data-linenos="13 "></span> CacheDir %ROOT%\data
+<span class="linenos" data-linenos="14 "></span> Pidfile %ROOT%\data\nxlog.pid
+<span class="linenos" data-linenos="15 "></span> SpoolDir %ROOT%\data
+<span class="linenos" data-linenos="16 "></span> LogFile %ROOT%\data\nxlog.log
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>&lt;Extension _syslog&gt;
+<span class="linenos" data-linenos="19 "></span>  Module xm_syslog
+<span class="linenos" data-linenos="20 "></span>&lt;/Extension&gt;
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span>&lt;Extension _json&gt;
+<span class="linenos" data-linenos="23 "></span>  Module xm_json
+<span class="linenos" data-linenos="24 "></span>&lt;/Extension&gt;
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span>&lt;Input eventlog&gt;
+<span class="linenos" data-linenos="27 "></span>  # Use &#39;im_mseventlog&#39; for Windows XP, 2000 and 2003
+<span class="linenos" data-linenos="28 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="29 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="30 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span>&lt;Output rsyslog&gt;
+<span class="linenos" data-linenos="33 "></span>  Module om_tcp
+<span class="linenos" data-linenos="34 "></span>  Host RSYSLOG_HOST
+<span class="linenos" data-linenos="35 "></span>  Port 514
+<span class="linenos" data-linenos="36 "></span>  OutputType Syslog_TLS
+<span class="linenos" data-linenos="37 "></span>
+<span class="linenos" data-linenos="38 "></span>  Exec to_syslog_ietf();
+<span class="linenos" data-linenos="39 "></span>&lt;/Output&gt;
+<span class="linenos" data-linenos="40 "></span>&lt;Route eventlog_to_rsyslog&gt;
+<span class="linenos" data-linenos="41 "></span>  Path eventlog =&gt; rsyslog
+<span class="linenos" data-linenos="42 "></span>&lt;/Route&gt;
+</code></pre></div></p>
 <blockquote>
 <p>In the above configuration make sure to replace <code>RSYSLOG_HOST</code> variable by your Rsyslog server IP.</p>
 </blockquote>
@@ -2439,129 +2401,84 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 <h4 id="windows-event-collector-wec-setup">Windows Event Collector (WEC) setup</h4>
 <p>The Windows Event Collector, also known as WEC is a Microsoft service that can be activate and configured to aggregate logs from the Windows Event Forwarders (WEF).</p>
 <h5 id="get-the-wec-fqdn">Get the WEC FQDN</h5>
-<p>Log in the Windows Event Collector, and execute the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="no">[System.Net.Dns]</span><span class="p">::</span><span class="n">GetHostByName</span><span class="p">((</span><span class="nv">$env:computerName</span><span class="p">))).</span><span class="n">Hostname</span>
-</code></pre></div>
-</td></tr></table>
+<p>Log in the Windows Event Collector, and execute the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">(</span><span class="no">[System.Net.Dns]</span><span class="p">::</span><span class="n">GetHostByName</span><span class="p">((</span><span class="nv">$env:computerName</span><span class="p">))).</span><span class="n">Hostname</span>
+</code></pre></div></p>
 <blockquote>
 <p>Note it, you will need it on the section WEF: "Deploying the GPO" for <code>FQDN_WEC_SERVER</code> field to replace</p>
 </blockquote>
 <h5 id="configure-the-subscription-file">Configure the subscription file</h5>
-<p>Get the SDDL information by executing the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>wevtutil gl security
-</code></pre></div>
-</td></tr></table>
+<p>Get the SDDL information by executing the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>wevtutil gl security
+</code></pre></div></p>
 <blockquote>
 <p>Note the <code>channelAccess</code> information.</p>
 </blockquote>
-<p>On the WEC server, create an XML file, named <code>DC_SUBSCRIPTION.xml</code> with the following information:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;Subscription</span> <span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/2006/03/windows/events/subscription&quot;</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!-- Name of subscription --&gt;</span>
-    <span class="nt">&lt;SubscriptionId&gt;</span>DC_SUBSCRIPTION<span class="nt">&lt;/SubscriptionId&gt;</span>
-    <span class="c">&lt;!-- Push mode (DC to WEC) --&gt;</span>
-    <span class="nt">&lt;SubscriptionType&gt;</span>SourceInitiated<span class="nt">&lt;/SubscriptionType&gt;</span>
-    <span class="nt">&lt;Description&gt;</span>Source Initiated Subscription from DC_SUBSCRIPTION<span class="nt">&lt;/Description&gt;</span>
-    <span class="c">&lt;!-- Subscription is active --&gt;</span>
-    <span class="nt">&lt;Enabled&gt;</span>true<span class="nt">&lt;/Enabled&gt;</span>
-    <span class="nt">&lt;Uri&gt;</span>http://schemas.microsoft.com/wbem/wsman/1/windows/EventLog<span class="nt">&lt;/Uri&gt;</span>
-    <span class="c">&lt;!-- This mode ensures that events are delivered with minimal delay --&gt;</span>
-    <span class="c">&lt;!-- It is an appropriate choice if you are collecting alerts or critical events --&gt;</span>
-    <span class="c">&lt;!-- It uses push delivery mode and sets a batch timeout of 30 seconds --&gt;</span>
-    <span class="nt">&lt;ConfigurationMode&gt;</span>MinLatency<span class="nt">&lt;/ConfigurationMode&gt;</span>
-    <span class="c">&lt;!-- Event log to retrieved --&gt;</span>
-    <span class="nt">&lt;Query&gt;</span>
-        <span class="cp">&lt;![CDATA[</span>
-<span class="cp">            &lt;QueryList&gt;</span>
-<span class="cp">                &lt;Query Id=&quot;0&quot;&gt;</span>
-<span class="cp">                    &lt;Select Path=&quot;Application&quot;&gt;*&lt;/Select&gt;</span>
-<span class="cp">                    &lt;Select Path=&quot;Security&quot;&gt;*&lt;/Select&gt;</span>
-<span class="cp">                    &lt;Select Path=&quot;System&quot;&gt;*&lt;/Select&gt;</span>
-<span class="cp">                &lt;/Query&gt;</span>
-<span class="cp">            &lt;/QueryList&gt;</span>
-<span class="cp">        ]]&gt;</span>
-    <span class="nt">&lt;/Query&gt;</span>
-    <span class="c">&lt;!-- Collect events generated since the subscription (not oldest) --&gt;</span>
-    <span class="nt">&lt;ReadExistingEvents&gt;</span>false<span class="nt">&lt;/ReadExistingEvents&gt;</span>
-    <span class="c">&lt;!-- Protocol and port used (DC to WEC) --&gt;</span>
-    <span class="nt">&lt;TransportName&gt;</span>http<span class="nt">&lt;/TransportName&gt;</span>
-    <span class="c">&lt;!-- Mandatory value (https://www-01.ibm.com/support/docview.wss?crawler=1&amp;uid=swg1IV71375) --&gt;</span>
-    <span class="nt">&lt;ContentFormat&gt;</span>RenderedText<span class="nt">&lt;/ContentFormat&gt;</span>
-    <span class="nt">&lt;Locale</span> <span class="na">Language=</span><span class="s">&quot;en-US&quot;</span><span class="nt">/&gt;</span>
-    <span class="c">&lt;!-- Target Event log on WEC --&gt;</span>
-    <span class="nt">&lt;LogFile&gt;</span>ForwardedEvents<span class="nt">&lt;/LogFile&gt;</span>
-    <span class="c">&lt;!-- Define which domain computers are allowed or not to initiate subscriptions --&gt;</span>
-    <span class="c">&lt;!-- This exemple grants members of the Domain Computers domain group, as well as the local Network Service group (for local forwarder) --&gt;</span>
-    <span class="nt">&lt;AllowedSourceDomainComputers&gt;</span>O:NSG:NSD:(A;;GA;;;DC)(A;;GA;;;NS)<span class="nt">&lt;/AllowedSourceDomainComputers&gt;</span>
-<span class="nt">&lt;/Subscription&gt;</span>
-</code></pre></div>
-</td></tr></table>
+<p>On the WEC server, create an XML file, named <code>DC_SUBSCRIPTION.xml</code> with the following information:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;Subscription</span> <span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/2006/03/windows/events/subscription&quot;</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="c">&lt;!-- Name of subscription --&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&lt;SubscriptionId&gt;</span>DC_SUBSCRIPTION<span class="nt">&lt;/SubscriptionId&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="c">&lt;!-- Push mode (DC to WEC) --&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;SubscriptionType&gt;</span>SourceInitiated<span class="nt">&lt;/SubscriptionType&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nt">&lt;Description&gt;</span>Source Initiated Subscription from DC_SUBSCRIPTION<span class="nt">&lt;/Description&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c">&lt;!-- Subscription is active --&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&lt;Enabled&gt;</span>true<span class="nt">&lt;/Enabled&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;Uri&gt;</span>http://schemas.microsoft.com/wbem/wsman/1/windows/EventLog<span class="nt">&lt;/Uri&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="c">&lt;!-- This mode ensures that events are delivered with minimal delay --&gt;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="c">&lt;!-- It is an appropriate choice if you are collecting alerts or critical events --&gt;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="c">&lt;!-- It uses push delivery mode and sets a batch timeout of 30 seconds --&gt;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;ConfigurationMode&gt;</span>MinLatency<span class="nt">&lt;/ConfigurationMode&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="c">&lt;!-- Event log to retrieved --&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&lt;Query&gt;</span>
+<span class="linenos" data-linenos="17 "></span>        <span class="cp">&lt;![CDATA[</span>
+<span class="linenos" data-linenos="18 "></span><span class="cp">            &lt;QueryList&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="cp">                &lt;Query Id=&quot;0&quot;&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="cp">                    &lt;Select Path=&quot;Application&quot;&gt;*&lt;/Select&gt;</span>
+<span class="linenos" data-linenos="21 "></span><span class="cp">                    &lt;Select Path=&quot;Security&quot;&gt;*&lt;/Select&gt;</span>
+<span class="linenos" data-linenos="22 "></span><span class="cp">                    &lt;Select Path=&quot;System&quot;&gt;*&lt;/Select&gt;</span>
+<span class="linenos" data-linenos="23 "></span><span class="cp">                &lt;/Query&gt;</span>
+<span class="linenos" data-linenos="24 "></span><span class="cp">            &lt;/QueryList&gt;</span>
+<span class="linenos" data-linenos="25 "></span><span class="cp">        ]]&gt;</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="nt">&lt;/Query&gt;</span>
+<span class="linenos" data-linenos="27 "></span>    <span class="c">&lt;!-- Collect events generated since the subscription (not oldest) --&gt;</span>
+<span class="linenos" data-linenos="28 "></span>    <span class="nt">&lt;ReadExistingEvents&gt;</span>false<span class="nt">&lt;/ReadExistingEvents&gt;</span>
+<span class="linenos" data-linenos="29 "></span>    <span class="c">&lt;!-- Protocol and port used (DC to WEC) --&gt;</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="nt">&lt;TransportName&gt;</span>http<span class="nt">&lt;/TransportName&gt;</span>
+<span class="linenos" data-linenos="31 "></span>    <span class="c">&lt;!-- Mandatory value (https://www-01.ibm.com/support/docview.wss?crawler=1&amp;uid=swg1IV71375) --&gt;</span>
+<span class="linenos" data-linenos="32 "></span>    <span class="nt">&lt;ContentFormat&gt;</span>RenderedText<span class="nt">&lt;/ContentFormat&gt;</span>
+<span class="linenos" data-linenos="33 "></span>    <span class="nt">&lt;Locale</span> <span class="na">Language=</span><span class="s">&quot;en-US&quot;</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="34 "></span>    <span class="c">&lt;!-- Target Event log on WEC --&gt;</span>
+<span class="linenos" data-linenos="35 "></span>    <span class="nt">&lt;LogFile&gt;</span>ForwardedEvents<span class="nt">&lt;/LogFile&gt;</span>
+<span class="linenos" data-linenos="36 "></span>    <span class="c">&lt;!-- Define which domain computers are allowed or not to initiate subscriptions --&gt;</span>
+<span class="linenos" data-linenos="37 "></span>    <span class="c">&lt;!-- This exemple grants members of the Domain Computers domain group, as well as the local Network Service group (for local forwarder) --&gt;</span>
+<span class="linenos" data-linenos="38 "></span>    <span class="nt">&lt;AllowedSourceDomainComputers&gt;</span>O:NSG:NSD:(A;;GA;;;DC)(A;;GA;;;NS)<span class="nt">&lt;/AllowedSourceDomainComputers&gt;</span>
+<span class="linenos" data-linenos="39 "></span><span class="nt">&lt;/Subscription&gt;</span>
+</code></pre></div></p>
 <blockquote>
 <p>Warning: replace Domain Computers domain group "(A;;GA;;;DC)" by "(A;;GA;;;S-1-5-....)" previously collected in the <code>channelAccess</code>
 More information of the SDDL format (https://msdn.microsoft.com/en-us/library/windows/desktop/aa379567(v=vs.85).aspx)</p>
 </blockquote>
 <p>Ensure the file is correctly saved, then close it.</p>
 <h5 id="configure-the-windows-remote-management">Configure the Windows Remote Management</h5>
-<p>On the WEC server, open a command interpretor as Administrator, and run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">winrm</span> <span class="n">qc</span> <span class="n">-q</span>
-</code></pre></div>
-</td></tr></table>
+<p>On the WEC server, open a command interpretor as Administrator, and run the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">winrm</span> <span class="n">qc</span> <span class="n">-q</span>
+</code></pre></div></p>
 <h5 id="activate-the-event-collector-service">Activate the "Event Collector" service</h5>
-<p>As Administrator, enter the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">wecutil</span> <span class="n">qc</span> <span class="p">/</span><span class="n">q</span>
-</code></pre></div>
-</td></tr></table>
+<p>As Administrator, enter the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">wecutil</span> <span class="n">qc</span> <span class="p">/</span><span class="n">q</span>
+</code></pre></div></p>
 <h5 id="activate-the-subscription-to-a-zone">Activate the subscription to a zone</h5>
 <p>As Administrator, enter the following command:</p>
 <blockquote>
-<p>Warning: please change the character <code>FILE_PATH</code></p>
+<p>Warning: please change the character <code>FILE_PATH</code>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">wecutil</span> <span class="n">cs</span> <span class="s2">&quot;&lt;FILE_PATH&gt;\DC_SUBSCRIPTION.xml&quot;</span>
+</code></pre></div></p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">wecutil</span> <span class="n">cs</span> <span class="s2">&quot;&lt;FILE_PATH&gt;\DC_SUBSCRIPTION.xml&quot;</span>
-</code></pre></div>
-</td></tr></table>
 <h5 id="display-the-state-of-the-subscription-to-this-zone">Display the state of the subscription to this zone</h5>
-<p>As Administrator, enter the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">wecutil</span> <span class="n">gr</span> <span class="n">DC_SUBSCRIPTION</span>
-</code></pre></div>
-</td></tr></table>
+<p>As Administrator, enter the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">wecutil</span> <span class="n">gr</span> <span class="n">DC_SUBSCRIPTION</span>
+</code></pre></div></p>
 <h4 id="windows-event-forwarder-wef-setup">Windows Event Forwarder (WEF) setup</h4>
 <p>The Windows Event Forwarder, also known as WEF is a Microsoft service that can be activated for log forwarding towards a Windows Event Collector (WEC).</p>
 <h5 id="configure-the-event-log-reader">Configure the Event Log Reader</h5>
@@ -2572,23 +2489,20 @@ More information of the SDDL format (https://msdn.microsoft.com/en-us/library/wi
 </ul>
 <p><img alt="SEKOIA.IO Operation Center Windows WEF" src="/assets/wef_client_config.png" style="max-width:600px" /></p>
 <h5 id="configure-the-windows-remote-management_1">Configure the Windows Remote Management</h5>
-<p>On the AD admin console, open a command interpretor as Administrator, and run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">winrm</span> <span class="n">qc</span> <span class="n">-q</span>
-</code></pre></div>
-</td></tr></table>
+<p>On the AD admin console, open a command interpretor as Administrator, and run the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">winrm</span> <span class="n">qc</span> <span class="n">-q</span>
+</code></pre></div></p>
 <h5 id="deploying-the-gpo">Deploying the GPO</h5>
 <p>In Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Event Forwarding -&gt; Configure target Subscription Manager, execute the following command:</p>
 <blockquote>
-<p>Warning: Please replace the <code>FQDN_WEC_SERVER</code> by the previously collected information</p>
+<p>Warning: Please replace the <code>FQDN_WEC_SERVER</code> by the previously collected information
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Server=http://FQDN_WEC_SERVER:5985/wsman/SubscriptionManager/WEC,Refresh=60
+</code></pre></div></p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>Server=http://FQDN_WEC_SERVER:5985/wsman/SubscriptionManager/WEC,Refresh=60
-</code></pre></div>
-</td></tr></table>
 <h5 id="apply-the-gpo">Apply the GPO</h5>
-<p>On the AD admin console, open a command interpretor as Administrator, and run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">gpupdate</span> <span class="p">/</span><span class="n">force</span>
-</code></pre></div>
-</td></tr></table>
+<p>On the AD admin console, open a command interpretor as Administrator, and run the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">gpupdate</span> <span class="p">/</span><span class="n">force</span>
+</code></pre></div></p>
 <ul>
 <li>More documentation available here on <a href="https://docs.microsoft.com/fr-fr/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection">Microsoft documentation</a></li>
 </ul>
@@ -2597,105 +2511,56 @@ More information of the SDDL format (https://msdn.microsoft.com/en-us/library/wi
 <li>Ensure the logs are correctly reveived on the WEC server, using the Windows Event Viewer and selecting Windows Logs &gt; Forwarded Events</li>
 <li>Setup the Nxlog agent to forward the logs to the RSYSLOG by using this configuration :</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">define</span> <span class="n">ROOT</span> <span class="n">C</span><span class="p">:</span><span class="o">\</span><span class="n">Program</span> <span class="n">Files</span> <span class="p">(</span><span class="n">x86</span><span class="p">)</span><span class="o">\</span><span class="n">nxlog</span>
-
-<span class="n">Moduledir</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">modules</span>
-<span class="n">CacheDir</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span>
-<span class="n">Pidfile</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span><span class="o">\</span><span class="n">nxlog</span><span class="p">.</span><span class="n">pid</span>
-<span class="n">SpoolDir</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span>
-<span class="n">LogFile</span> <span class="err">%</span><span class="n">ROOT%</span><span class="o">\</span><span class="n">data</span><span class="o">\</span><span class="n">nxlog</span><span class="p">.</span><span class="n">log</span>
-
-<span class="na">&lt;Extension _syslog&gt;</span>
-  <span class="k">Module</span> <span class="nn">xm_syslog</span>
-<span class="na">&lt;/Extension&gt;</span>
-
-<span class="na">&lt;Extension _json&gt;</span>
-  <span class="k">Module</span> <span class="nn">xm_json</span>
-<span class="na">&lt;/Extension&gt;</span>
-
-<span class="na">&lt;Input eventlog1&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;Application&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-<span class="na">&lt;Input eventlog2&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;System&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-<span class="na">&lt;Input eventlog3&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;Security&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-<span class="na">&lt;Input eventlog4&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;ForwardedEvents&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-
-<span class="na">&lt;Output rsyslog&gt;</span>
-  <span class="k">Module</span> <span class="nn">om_tcp</span>
-  <span class="n">Host</span> <span class="n">RSYSLOG_HOST</span>
-  <span class="n">Port</span> <span class="mi">514</span>
-  <span class="n">OutputType</span> <span class="n">Syslog_TLS</span>
-
-  <span class="n">Exec</span> <span class="n">to_syslog_ietf</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Output&gt;</span>
-
-<span class="na">&lt;Route eventlog_to_rsyslog&gt;</span>
-  <span class="n">Path</span> <span class="n">eventlog1</span><span class="p">,</span> <span class="n">eventlog2</span><span class="p">,</span> <span class="n">eventlog3</span><span class="p">,</span> <span class="n">eventlog4</span> <span class="o">=&gt;</span> <span class="n">rsyslog</span>
-<span class="na">&lt;/Route&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>define ROOT C:\Program Files (x86)\nxlog
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>Moduledir %ROOT%\modules
+<span class="linenos" data-linenos=" 4 "></span>CacheDir %ROOT%\data
+<span class="linenos" data-linenos=" 5 "></span>Pidfile %ROOT%\data\nxlog.pid
+<span class="linenos" data-linenos=" 6 "></span>SpoolDir %ROOT%\data
+<span class="linenos" data-linenos=" 7 "></span>LogFile %ROOT%\data\nxlog.log
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>&lt;Extension _syslog&gt;
+<span class="linenos" data-linenos="10 "></span>  Module xm_syslog
+<span class="linenos" data-linenos="11 "></span>&lt;/Extension&gt;
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>&lt;Extension _json&gt;
+<span class="linenos" data-linenos="14 "></span>  Module xm_json
+<span class="linenos" data-linenos="15 "></span>&lt;/Extension&gt;
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span>&lt;Input eventlog1&gt;
+<span class="linenos" data-linenos="18 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="19 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;Application&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos="20 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="21 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="22 "></span>&lt;Input eventlog2&gt;
+<span class="linenos" data-linenos="23 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="24 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;System&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos="25 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="26 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="27 "></span>&lt;Input eventlog3&gt;
+<span class="linenos" data-linenos="28 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="29 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;Security&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos="30 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="31 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="32 "></span>&lt;Input eventlog4&gt;
+<span class="linenos" data-linenos="33 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="34 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;ForwardedEvents&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos="35 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="36 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="37 "></span>
+<span class="linenos" data-linenos="38 "></span>&lt;Output rsyslog&gt;
+<span class="linenos" data-linenos="39 "></span>  Module om_tcp
+<span class="linenos" data-linenos="40 "></span>  Host RSYSLOG_HOST
+<span class="linenos" data-linenos="41 "></span>  Port 514
+<span class="linenos" data-linenos="42 "></span>  OutputType Syslog_TLS
+<span class="linenos" data-linenos="43 "></span>
+<span class="linenos" data-linenos="44 "></span>  Exec to_syslog_ietf();
+<span class="linenos" data-linenos="45 "></span>&lt;/Output&gt;
+<span class="linenos" data-linenos="46 "></span>
+<span class="linenos" data-linenos="47 "></span>&lt;Route eventlog_to_rsyslog&gt;
+<span class="linenos" data-linenos="48 "></span>  Path eventlog1, eventlog2, eventlog3, eventlog4 =&gt; rsyslog
+<span class="linenos" data-linenos="49 "></span>&lt;/Route&gt;
 </code></pre></div>
-</td></tr></table>
 <blockquote>
 <p>In the above configuration make sure to replace <code>RSYSLOG_HOST</code> variable by your Rsyslog server IP.</p>
 </blockquote>
@@ -2704,236 +2569,137 @@ More information of the SDDL format (https://msdn.microsoft.com/en-us/library/wi
 <h3 id="configure-the-forwarder-the-direct-way">Configure the forwarder the direct way</h3>
 <h4 id="download-the-certificate">Download the certificate</h4>
 <p>In order to allow the connection of your events forwarder to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate.</p>
-<p>In a PowerShell console run as administrator, retrieve the certificate with the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="n">https</span><span class="p">://</span><span class="n">app</span><span class="p">.</span><span class="n">sekoia</span><span class="p">.</span><span class="n">io</span><span class="p">/</span><span class="n">assets</span><span class="p">/</span><span class="n">files</span><span class="p">/</span><span class="n">SEKOIA-IO-intake</span><span class="p">.</span><span class="n">pem</span> <span class="n">-OutFile</span> <span class="s1">&#39;C:\Program Files (x86)\nxlog\cert\SEKOIA-IO-intake.pem&#39;</span>
-</code></pre></div>
-</td></tr></table>
+<p>In a PowerShell console run as administrator, retrieve the certificate with the following command:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="n">https</span><span class="p">://</span><span class="n">app</span><span class="p">.</span><span class="n">sekoia</span><span class="p">.</span><span class="n">io</span><span class="p">/</span><span class="n">assets</span><span class="p">/</span><span class="n">files</span><span class="p">/</span><span class="n">SEKOIA-IO-intake</span><span class="p">.</span><span class="n">pem</span> <span class="n">-OutFile</span> <span class="s1">&#39;C:\Program Files (x86)\nxlog\cert\SEKOIA-IO-intake.pem&#39;</span>
+</code></pre></div></p>
 <h4 id="nxlog-setup-on-windows_1">NXLog setup on Windows</h4>
 <p>This section describes how to configure <a href="https://nxlog.co/">NXLog</a> to forward your Windows events by means of a syslog transport channel.</p>
 <p>First of all, download NXLog at the following link : https://nxlog.co/products/all/download. Then, open the NXLog configuration file at <code>C:\Program Files (x86)\nxlog\conf\nxlog.conf</code> and update it with the following instructions:</p>
 <blockquote>
-<p>In the this template instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key.</p>
+<p>In the this template instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span> ## This is a sample configuration file. See the nxlog reference manual about the
+<span class="linenos" data-linenos=" 2 "></span> ## configuration options. It should be installed locally and is also available
+<span class="linenos" data-linenos=" 3 "></span> ## online at http://nxlog.org/nxlog-docs/en/nxlog-reference-manual.html
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span> ## Please set the ROOT to the folder your nxlog was installed into,
+<span class="linenos" data-linenos=" 6 "></span> ## otherwise it will not start.
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span> #define ROOT C:\Program Files\nxlog
+<span class="linenos" data-linenos=" 9 "></span> define ROOT C:\Program Files (x86)\nxlog
+<span class="linenos" data-linenos="10 "></span> define CERTDIR %ROOT%\cert
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span> Moduledir %ROOT%\modules
+<span class="linenos" data-linenos="13 "></span> CacheDir %ROOT%\data
+<span class="linenos" data-linenos="14 "></span> Pidfile %ROOT%\data\nxlog.pid
+<span class="linenos" data-linenos="15 "></span> SpoolDir %ROOT%\data
+<span class="linenos" data-linenos="16 "></span> LogFile %ROOT%\data\nxlog.log
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>&lt;Extension _syslog&gt;
+<span class="linenos" data-linenos="19 "></span>  Module xm_syslog
+<span class="linenos" data-linenos="20 "></span>&lt;/Extension&gt;
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span>&lt;Extension _json&gt;
+<span class="linenos" data-linenos="23 "></span>  Module xm_json
+<span class="linenos" data-linenos="24 "></span>&lt;/Extension&gt;
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span>&lt;Input eventlog&gt;
+<span class="linenos" data-linenos="27 "></span>  # Use &#39;im_mseventlog&#39; for Windows XP, 2000 and 2003
+<span class="linenos" data-linenos="28 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="29 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="30 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span>&lt;Output sekoia_intake&gt;
+<span class="linenos" data-linenos="33 "></span>  Module om_ssl
+<span class="linenos" data-linenos="34 "></span>  Host intake.sekoia.io
+<span class="linenos" data-linenos="35 "></span>  Port 10514
+<span class="linenos" data-linenos="36 "></span>  CAFile %CERTDIR%\SEKOIA-IO-intake.pem
+<span class="linenos" data-linenos="37 "></span>  AllowUntrusted  FALSE
+<span class="linenos" data-linenos="38 "></span>
+<span class="linenos" data-linenos="39 "></span>  Exec to_syslog_ietf();
+<span class="linenos" data-linenos="40 "></span>  Exec $raw_event = replace($raw_event, &#39;[NXLOG@&#39;, &#39;[SEKOIA@53288 intake_key=&quot;YOUR_INTAKE_KEY&quot;][NXLOG@&#39;, 1);
+<span class="linenos" data-linenos="41 "></span>  OutputType Syslog_TLS
+<span class="linenos" data-linenos="42 "></span>&lt;/Output&gt;
+<span class="linenos" data-linenos="43 "></span>
+<span class="linenos" data-linenos="44 "></span>&lt;Route eventlog_to_sekoia_intake&gt;
+<span class="linenos" data-linenos="45 "></span>  Path eventlog =&gt; sekoia_intake
+<span class="linenos" data-linenos="46 "></span>&lt;/Route&gt;
+</code></pre></div></p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code> <span class="cp">## This is a sample configuration file. See the nxlog reference manual about the</span>
- <span class="cp">## configuration options. It should be installed locally and is also available</span>
- <span class="cp">## online at http:</span><span class="c1">//nxlog.org/nxlog-docs/en/nxlog-reference-manual.html</span>
-
- <span class="cp">## Please set the ROOT to the folder your nxlog was installed into,</span>
- <span class="cp">## otherwise it will not start.</span>
-
- <span class="cp">#define ROOT C:\Program Files\nxlog</span>
- <span class="n">define</span> <span class="n">ROOT</span> <span class="nl">C</span><span class="p">:</span><span class="err">\</span><span class="n">Program</span> <span class="n">Files</span> <span class="p">(</span><span class="n">x86</span><span class="p">)</span><span class="err">\</span><span class="n">nxlog</span>
- <span class="n">define</span> <span class="n">CERTDIR</span> <span class="o">%</span><span class="n">ROOT</span><span class="o">%</span><span class="err">\</span><span class="n">cert</span>
-
- <span class="n">Moduledir</span> <span class="o">%</span><span class="n">ROOT</span><span class="o">%</span><span class="err">\</span><span class="n">modules</span>
- <span class="n">CacheDir</span> <span class="o">%</span><span class="n">ROOT</span><span class="o">%</span><span class="err">\</span><span class="n">data</span>
- <span class="n">Pidfile</span> <span class="o">%</span><span class="n">ROOT</span><span class="o">%</span><span class="err">\</span><span class="n">data</span><span class="err">\</span><span class="n">nxlog</span><span class="p">.</span><span class="n">pid</span>
- <span class="n">SpoolDir</span> <span class="o">%</span><span class="n">ROOT</span><span class="o">%</span><span class="err">\</span><span class="n">data</span>
- <span class="n">LogFile</span> <span class="o">%</span><span class="n">ROOT</span><span class="o">%</span><span class="err">\</span><span class="n">data</span><span class="err">\</span><span class="n">nxlog</span><span class="p">.</span><span class="n">log</span>
-
-<span class="o">&lt;</span><span class="n">Extension</span> <span class="n">_syslog</span><span class="o">&gt;</span>
-  <span class="n">Module</span> <span class="n">xm_syslog</span>
-<span class="o">&lt;/</span><span class="n">Extension</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="n">Extension</span> <span class="n">_json</span><span class="o">&gt;</span>
-  <span class="n">Module</span> <span class="n">xm_json</span>
-<span class="o">&lt;/</span><span class="n">Extension</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="n">Input</span> <span class="n">eventlog</span><span class="o">&gt;</span>
-  <span class="cp"># Use &#39;im_mseventlog&#39; for Windows XP, 2000 and 2003</span>
-  <span class="n">Module</span> <span class="n">im_msvistalog</span>
-  <span class="n">Exec</span> <span class="n">$Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">();</span>
-<span class="o">&lt;/</span><span class="n">Input</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="n">Output</span> <span class="n">sekoia_intake</span><span class="o">&gt;</span>
-  <span class="n">Module</span> <span class="n">om_ssl</span>
-  <span class="n">Host</span> <span class="n">intake</span><span class="p">.</span><span class="n">sekoia</span><span class="p">.</span><span class="n">io</span>
-  <span class="n">Port</span> <span class="mi">10514</span>
-  <span class="n">CAFile</span> <span class="o">%</span><span class="n">CERTDIR</span><span class="o">%</span><span class="err">\</span><span class="n">SEKOIA</span><span class="o">-</span><span class="n">IO</span><span class="o">-</span><span class="n">intake</span><span class="p">.</span><span class="n">pem</span>
-  <span class="n">AllowUntrusted</span>  <span class="nb">FALSE</span>
-
-  <span class="n">Exec</span> <span class="n">to_syslog_ietf</span><span class="p">();</span>
-  <span class="n">Exec</span> <span class="n">$raw_event</span> <span class="o">=</span> <span class="n">replace</span><span class="p">(</span><span class="n">$raw_event</span><span class="p">,</span> <span class="err">&#39;</span><span class="p">[</span><span class="n">NXLOG</span><span class="p">@</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="p">[</span><span class="n">SEKOIA</span><span class="mi">@53288</span> <span class="n">intake_key</span><span class="o">=</span><span class="s">&quot;YOUR_INTAKE_KEY&quot;</span><span class="p">][</span><span class="n">NXLOG</span><span class="p">@</span><span class="err">&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="n">OutputType</span> <span class="n">Syslog_TLS</span>
-<span class="o">&lt;/</span><span class="n">Output</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="n">Route</span> <span class="n">eventlog_to_sekoia_intake</span><span class="o">&gt;</span>
-  <span class="n">Path</span> <span class="n">eventlog</span> <span class="o">=&gt;</span> <span class="n">sekoia_intake</span>
-<span class="o">&lt;/</span><span class="n">Route</span><span class="o">&gt;</span>
-</code></pre></div>
-</td></tr></table>
 <p>Restart the NXLog service through the Services tool as Administrator or use PowerShell command line: <code>Restart-Service nxlog</code></p>
 <h3 id="configure-the-rsyslog-to-forward-to-sekoiaio">Configure the Rsyslog to forward to SEKOIA.IO</h3>
 <h4 id="rsyslog-prerequisites">Rsyslog prerequisites</h4>
 <p>In order to allow the Rsyslog to work properly, please ensure the following packages are installed:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo apt install rsyslog rsyslog-gnutls wget
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo apt install rsyslog rsyslog-gnutls wget
 </code></pre></div>
-</td></tr></table>
 <h4 id="download-the-certificate_1">Download the certificate</h4>
 <p>In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 </code></pre></div>
-</td></tr></table>
 <h5 id="configure-the-rsyslog-server">Configure the Rsyslog server</h5>
-<p>Open or create a new configuration file for Rsyslog:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo vim /etc/rsyslog.d/15-windows.conf
-</code></pre></div>
-</td></tr></table>
-<p>Paste the following Rsyslog configuration to trigger the emission of Windows logs by your Rsyslog server to SEKOIA.IO:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1"># Define the SEKIOA-IO intake certificate</span>
-<span class="nv">$DefaultNetstreamDriverCAFile</span> /etc/rsyslog.d/SEKOIA-IO-intake.pem
-
-<span class="c1"># Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)</span>
-<span class="c1"># IMPORTANT: don&#39;t forget to set your intake key in the template</span>
-template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOWindowsTemplate&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span> <span class="nv">string</span><span class="o">=</span><span class="s2">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;</span><span class="o">)</span>
-
-<span class="c1"># Send your events to SEKOIA.IO intake servers under SEKOIAIOWindowsTemplate template</span>
-<span class="k">if</span> <span class="o">(</span><span class="nv">$syslogtag</span> contains <span class="s1">&#39;Microsoft-Windows&#39;</span><span class="o">)</span> <span class="k">then</span> <span class="o">{</span>
-    action<span class="o">(</span>
-        <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;omfwd&quot;</span>
-        <span class="nv">protocol</span><span class="o">=</span><span class="s2">&quot;tcp&quot;</span>
-        <span class="nv">target</span><span class="o">=</span><span class="s2">&quot;intake.sekoia.io&quot;</span>
-        <span class="nv">port</span><span class="o">=</span><span class="s2">&quot;10514&quot;</span>
-        <span class="nv">TCP_Framing</span><span class="o">=</span><span class="s2">&quot;octet-counted&quot;</span>
-        <span class="nv">StreamDriver</span><span class="o">=</span><span class="s2">&quot;gtls&quot;</span>
-        <span class="nv">StreamDriverMode</span><span class="o">=</span><span class="s2">&quot;1&quot;</span>
-        <span class="nv">StreamDriverAuthMode</span><span class="o">=</span><span class="s2">&quot;x509/name&quot;</span>
-        <span class="nv">StreamDriverPermittedPeers</span><span class="o">=</span><span class="s2">&quot;intake.sekoia.io&quot;</span>
-        <span class="nv">Template</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOWindowsTemplate&quot;</span>
-    <span class="o">)</span>
-<span class="o">}</span>
-</code></pre></div>
-</td></tr></table>
+<p>Open or create a new configuration file for Rsyslog:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo vim /etc/rsyslog.d/15-windows.conf
+</code></pre></div></p>
+<p>Paste the following Rsyslog configuration to trigger the emission of Windows logs by your Rsyslog server to SEKOIA.IO:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1"># Define the SEKIOA-IO intake certificate</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nv">$DefaultNetstreamDriverCAFile</span> /etc/rsyslog.d/SEKOIA-IO-intake.pem
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1"># Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1"># IMPORTANT: don&#39;t forget to set your intake key in the template</span>
+<span class="linenos" data-linenos=" 6 "></span>template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOWindowsTemplate&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span> <span class="nv">string</span><span class="o">=</span><span class="s2">&quot;&lt;%pri%&gt;1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\&quot;YOUR_INTAKE_KEY\&quot;] %msg%\n&quot;</span><span class="o">)</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1"># Send your events to SEKOIA.IO intake servers under SEKOIAIOWindowsTemplate template</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">if</span> <span class="o">(</span><span class="nv">$syslogtag</span> contains <span class="s1">&#39;Microsoft-Windows&#39;</span><span class="o">)</span> <span class="k">then</span> <span class="o">{</span>
+<span class="linenos" data-linenos="10 "></span>    action<span class="o">(</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;omfwd&quot;</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="nv">protocol</span><span class="o">=</span><span class="s2">&quot;tcp&quot;</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="nv">target</span><span class="o">=</span><span class="s2">&quot;intake.sekoia.io&quot;</span>
+<span class="linenos" data-linenos="14 "></span>        <span class="nv">port</span><span class="o">=</span><span class="s2">&quot;10514&quot;</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="nv">TCP_Framing</span><span class="o">=</span><span class="s2">&quot;octet-counted&quot;</span>
+<span class="linenos" data-linenos="16 "></span>        <span class="nv">StreamDriver</span><span class="o">=</span><span class="s2">&quot;gtls&quot;</span>
+<span class="linenos" data-linenos="17 "></span>        <span class="nv">StreamDriverMode</span><span class="o">=</span><span class="s2">&quot;1&quot;</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="nv">StreamDriverAuthMode</span><span class="o">=</span><span class="s2">&quot;x509/name&quot;</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="nv">StreamDriverPermittedPeers</span><span class="o">=</span><span class="s2">&quot;intake.sekoia.io&quot;</span>
+<span class="linenos" data-linenos="20 "></span>        <span class="nv">Template</span><span class="o">=</span><span class="s2">&quot;SEKOIAIOWindowsTemplate&quot;</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="o">)</span>
+<span class="linenos" data-linenos="22 "></span><span class="o">}</span>
+</code></pre></div></p>
 <blockquote>
 <p>In the above <code>template</code> instruction, please replace <code>YOUR_INTAKE_KEY</code> variable with your intake key you can find in the Operation Center &gt; Configure &gt; Intakes</p>
 </blockquote>
 <h5 id="restart-rsyslog">Restart Rsyslog</h5>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ sudo systemctl restart rsyslog.service
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo systemctl restart rsyslog.service
 </code></pre></div>
-</td></tr></table>
 <h2 id="sysmon-usage">Sysmon usage</h2>
 <h4 id="nxlog-setup-with-sysmon">NXLog setup with Sysmon</h4>
 <p>If your are using the NXLog community edition, there's a limitation in terms of number of different eventlog entries that could be processed.
 In order to monitor the common ones (Application, System, Security) and Sysmon, you could make the following changes:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">...</span>
-<span class="na">&lt;Input eventlog1&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;Application&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-<span class="na">&lt;Input eventlog2&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;System&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-<span class="na">&lt;Input eventlog3&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;Security&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-<span class="na">&lt;Input eventlog4&gt;</span>
-  <span class="k">Module</span> <span class="nn">im_msvistalog</span>
-  <span class="n">Query</span> <span class="o">&lt;</span><span class="n">QueryList</span><span class="o">&gt;&lt;</span><span class="n">Query</span> <span class="n">Id</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="o">&gt;&lt;</span><span class="k">Select</span> <span class="n">Path</span><span class="o">=</span><span class="s">&quot;Microsoft-Windows-Sysmon/Operational&quot;</span><span class="o">&gt;*&lt;/</span><span class="k">Select</span><span class="o">&gt;&lt;/</span><span class="n">Query</span><span class="o">&gt;&lt;/</span><span class="n">QueryList</span><span class="o">&gt;</span>
-  <span class="n">Exec</span> <span class="err">$</span><span class="n">Message</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">()</span><span class="err">;</span>
-<span class="na">&lt;/Input&gt;</span>
-<span class="p">...</span>
-<span class="na">&lt;Route eventlog_to_rsyslog&gt;</span>
-  <span class="n">Path</span> <span class="n">eventlog1</span><span class="p">,</span> <span class="n">eventlog2</span><span class="p">,</span> <span class="n">eventlog3</span><span class="p">,</span> <span class="n">eventlog4</span> <span class="o">=&gt;</span> <span class="n">rsyslog</span>
-<span class="na">&lt;/Route&gt;</span>
-<span class="p">...</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>...
+<span class="linenos" data-linenos=" 2 "></span>&lt;Input eventlog1&gt;
+<span class="linenos" data-linenos=" 3 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos=" 4 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;Application&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos=" 5 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos=" 6 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos=" 7 "></span>&lt;Input eventlog2&gt;
+<span class="linenos" data-linenos=" 8 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos=" 9 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;System&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos="10 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="11 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="12 "></span>&lt;Input eventlog3&gt;
+<span class="linenos" data-linenos="13 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="14 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;Security&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos="15 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="16 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="17 "></span>&lt;Input eventlog4&gt;
+<span class="linenos" data-linenos="18 "></span>  Module im_msvistalog
+<span class="linenos" data-linenos="19 "></span>  Query &lt;QueryList&gt;&lt;Query Id=&quot;0&quot;&gt;&lt;Select Path=&quot;Microsoft-Windows-Sysmon/Operational&quot;&gt;*&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;
+<span class="linenos" data-linenos="20 "></span>  Exec $Message = to_json();
+<span class="linenos" data-linenos="21 "></span>&lt;/Input&gt;
+<span class="linenos" data-linenos="22 "></span>...
+<span class="linenos" data-linenos="23 "></span>&lt;Route eventlog_to_rsyslog&gt;
+<span class="linenos" data-linenos="24 "></span>  Path eventlog1, eventlog2, eventlog3, eventlog4 =&gt; rsyslog
+<span class="linenos" data-linenos="25 "></span>&lt;/Route&gt;
+<span class="linenos" data-linenos="26 "></span>...
 </code></pre></div>
-</td></tr></table>
 <h2 id="enjoy-your-events">Enjoy your events</h2>
 <p>Go to the <a href="https://app.sekoia.io/sic/events">events page</a> to watch your incoming events.</p>
 <h2 id="related-files">Related files</h2>
@@ -3003,6 +2769,10 @@ In order to monitor the common ones (Application, System, Security) and Sysmon, 
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright 2021 SEKOIA. All rights reserved.
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -3010,6 +2780,19 @@ In order to monitor the common ones (Application, System, Security) and Sysmon, 
         
       </div>
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/sekoia_fr" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>
