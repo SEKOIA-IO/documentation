@@ -12,11 +12,13 @@ Even if Rsyslog is the most supported solution to push your logs to SEKOIA.IO, y
 
 ## Syslog integration
 
-We are providing documentation and example configurations on how to configure your log system for Rsyslog, but it should be easy to configure other log collectors to forward their events to SEKOIA.IO.
+We are providing documentation and example configurations on how to configure your log system for [Rsyslog](rsyslog.md) and [syslog-ng](syslog-ng.md), but it should be easy to configure other log collectors to forward their events to SEKOIA.IO.
 
 ## HTTPS integration
 
-To push your events through our HTTP log collector, you have to `POST` your logs in the JSON format. To send us events, you should set `Content-Type` HTTP header to `application/javascript`.
+To push your events through our HTTPS log collector, you have to `POST` your logs in the JSON format.
+
+More information and code example are [available on this page](https.md).
 
 ## Log Aggregator Configuration
 
