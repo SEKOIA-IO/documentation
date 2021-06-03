@@ -64,7 +64,7 @@ In order to allow the rsyslog to work properly, please ensure the following pack
 sudo apt install rsyslog rsyslog-gnutls wget
 ```
 
-Please ensure the UDP incoming events are allows in the /etc/rsyslog.conf
+Please ensure the UDP incoming events are allowed in the /etc/rsyslog.conf
 ```bash
 ....
 # provides UDP syslog reception
