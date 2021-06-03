@@ -50,7 +50,9 @@ nav:
               - Checkpoint: integrations/checkpoint.md
               - Cisco: integrations/cisco_asa.md
               - F5 BigIP: integrations/f5-big-ip.md
-              - Fortigate: integrations/fortigate.md
+              - FortiGate: integrations/fortigate.md
+              - FortiMail: integrations/fortimail.md
+              - FortiWeb: integrations/fortiweb.md
               - HAProxy: integrations/haproxy.md
               - ISC DHCP: integrations/dhcpd.md
               - NetFilter: integrations/netfilter.md
