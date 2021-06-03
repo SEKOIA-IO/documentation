@@ -63,6 +63,7 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 - [F5 BigIP](f5-big-ip.md)
 - [FortiGate](fortigate.md)
 - [FortiMail](fortimail.md)
+- [FortiWeb](fortiweb.md)
 - [HAProxy](haproxy.md)
 - [ISC DHCP](dhcpd.md)
 - [NetFilter](netfilter.md)
