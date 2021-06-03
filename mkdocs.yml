@@ -22,6 +22,8 @@ nav:
               - Rsyslog: integrations/transport/rsyslog.md
               - Logstash: integrations/transport/logstash.md
               - syslog-ng: integrations/transport/syslog-ng.md
+              - Graylog: integrations/transport/graylog.md
+              - HTTPS: integrations/transport/https.md
           - Cloud and SaaS:
               - AWS:
                   - CloudTrail: integrations/aws_cloudtrail.md
