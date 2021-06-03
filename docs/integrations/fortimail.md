@@ -16,7 +16,6 @@ On FortiMail appliances, most of the important hardware and software activities 
 - Antivirus (virus): Records virus intrusion events.
 - Encryption (encrypt): Records detection of IBE-related events.
 
-
 ## Transport to the collector
 
 ### Prerequisites
