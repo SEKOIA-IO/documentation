@@ -165,6 +165,12 @@ logging.files:
 #migration.6_to_7.enabled: false
 ```
 
+In order to make it easier, you can download the auditbeat configuration file:
+
+```bash
+$ wget -O /etc/auditbeat/auditbeat.yml https://docs.sekoia.io/integrations/configurations/auditbeat.yml
+```
+
 > Don't forget to set the right level of permission of the new `auditbeat.yml` if you edited a new one.
 > `sudo chmod 0600 auditbeat.yml`
 > Plus in this case ensure the owner of the file is root: `sudo chown root:root auditbeat.yml`
