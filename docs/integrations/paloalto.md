@@ -13,13 +13,14 @@ On Palo Alto appliances, most of the important hardward and software activities 
 - System
 - Security
 
-
 ## Transport to the collector
 
 ### Prerequisites
+
 The following prerequisites are needed in order to setup efficient log concentration:
+
 - Have administrator priviledge on the Palo Alto
-- Traffic towards the Rsyslog must be open on `UDP 514`
+- Traffic towards the Rsyslog must be open on `TCP/514`
 
 ### Configure Palo Alto
 
@@ -32,9 +33,9 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 - Name — Unique name for the server profile.
 - Syslog Server — IP address or fully qualified domain name (FQDN) of the syslog server.
-- Transport — Select UDP.
-- Port — Select the default is UDP on port 514.
-- Format — Select the syslog message format to use: BSD (the default).
+- Transport — Select TCP.
+- Port — Select the default is TCP on port 514.
+- Format — Select the syslog message format to use: IETF
 - Facility — Select a syslog standard value (default is LOG_USER) to calculate the priority (PRI) field.
 
 5. Click `OK` to save the server profile.
@@ -60,18 +61,19 @@ For detailed information about configuring a log forwarding profile and assignin
 ### Configure the Rsyslog to forward to SEKOIA.IO
 
 #### Rsyslog prerequisites
+
 In order to allow the rsyslog to work properly, please ensure the following packages are installed:
 
 ```bash
 sudo apt install rsyslog rsyslog-gnutls wget
 ```
 
-Please ensure the UDP incoming events are allows in the /etc/rsyslog.conf
+Please ensure the TCP incoming events are allows in the /etc/rsyslog.conf
 ```bash
 ....
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
+# provides TCP syslog reception
+module(load="imtcp")
+input(type="imtcp" port="514")
 ....
 ```
 
@@ -83,12 +85,15 @@ $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files
 ```
 
 ##### Configure the Rsyslog server
+
 Open or create a new Palo Alto configuration file for Rsyslog:
+
 ```bash
 sudo vim /etc/rsyslog.d/38-paloalto.conf
 ```
 
 Paste the following Rsyslog configuration to trigger the emission of Palo Alto logs by your Rsyslog server to SEKOIA.IO:
+
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
@@ -125,7 +130,9 @@ $ sudo systemctl restart rsyslog.service
 ```
 
 ## Related files
+
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
 ### Enjoy your events
+
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
