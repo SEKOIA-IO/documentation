@@ -6,6 +6,7 @@ name: fortigate
 The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. The firewalls run on the FortiOS operating system.
 
 In this documentation we will explain one way to collect and send Fortigate logs to SEKOIA.IO.
+
 - From the Fortigate machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
 ## Fortigate logs
@@ -22,6 +23,7 @@ On Fortigate appliances, most of the important hardward and software activities 
 ### Prerequisites
 
 The following prerequisites are needed in order to setup efficient log concentration:
+
 - Have administrator writes on the Fortigate
 - Traffic towards the Rsyslog must be open on `UDP 514`
 
@@ -41,10 +43,13 @@ end
 ```
 
 Most FortiGate features are enabled for logging by default. Ensure they are enabled by executing the following command:
+
 ```bash
 show full-configuration
 ```
+
 Make sure the Traffic, Web and URL Filtering features are enabled for logging with the following commands:
+
 ```bash
 config log syslogd filter
 set forward-traffic enable
@@ -96,11 +101,13 @@ $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files
 
 ##### Configure the Rsyslog server
 Open or create a new Fortigate configuration file for Rsyslog:
+
 ```bash
 sudo vim /etc/rsyslog.d/12-fortigate.conf
 ```
 
 Paste the following Rsyslog configuration to trigger the emission of Fortigate logs by your Rsyslog server to SEKOIA.IO:
+
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
@@ -137,7 +144,9 @@ $ sudo systemctl restart rsyslog.service
 ```
 
 ## Related files
+
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
-### IV. Enjoy your events
+## Enjoy your events
+
 Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
