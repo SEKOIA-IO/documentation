@@ -109,10 +109,8 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.top
-  palette:
-    primary: indigo
   font:
-    text: Raleway
+    text: Open Sans
 
 extra:
   social:

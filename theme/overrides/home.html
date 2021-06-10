@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block site_nav %}
+{% endblock %}
+
+{% block tabs %}
+
+<section class="mdx-container">
+
+  <div class="maindescription">
+    <div class="maindescription__inner">
+      <h1>SEKOIA.IO Documentations</h1>
+
+      <p>
+        Get familiar with SEKOIA.IO and explore products features
+      </p>
+    </div>
+  </div>
+
+  <div class="search">
+
+    <div class="search__inner">
+      <h2>What are you curious about?</h2>
+      <form action="/search.html">
+        <div class="input">
+          <img src="assets/search-icon.svg" class="preffix" alt="search icon">
+          <input placeholder="Search topics, APIs, modules..." name="q">
+        </div>
+      </form>
+    </div>
+
+    <img src="assets/search-doc.png" alt="search icon" class="search-image">
+  </div>
+
+  <div class="categories">
+    <h2>Explore by Category</h2>
+
+    <div class="category">
+      <a href="/getting_started/">Get Started</a>
+      <a href="/operation_center">Operation Center</a>
+      <a href="/intelligence_center">Intelligence Center</a>
+      <a href="/apis">APIs Documentation</a>
+      <a href="/release/1.6.15">What's New?</a>
+    </div>
+  </div>
+
+  <div class="support">
+    <h2>Can’t find what you’re looking for?</h2>
+
+    <p><a href="https://support.sekoia.io/" target="_blank">Support is here!</a><p>
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block content %}{% endblock %}
