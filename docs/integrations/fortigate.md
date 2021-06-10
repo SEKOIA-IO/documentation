@@ -25,7 +25,7 @@ On Fortigate appliances, most of the important hardward and software activities 
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator writes on the Fortigate
-- Traffic towards the Rsyslog must be open on `UDP 514`
+- Traffic towards the Rsyslog must be open on `TCP/514`
 
 ### Configure Fortigate
 
@@ -37,6 +37,7 @@ To enable syslog, log into the CLI and enter the following commands:
 config log syslogd setting
 set status enable
 set port 514
+set mode reliable
 set server [IP address of syslog server]
 set facility user
 end
@@ -83,12 +84,13 @@ In order to allow the rsyslog to work properly, please ensure the following pack
 sudo apt install rsyslog rsyslog-gnutls wget
 ```
 
-Please ensure the UDP incoming events are allows in the /etc/rsyslog.conf
+Please ensure the TCP incoming events are allows in the /etc/rsyslog.conf
+
 ```bash
 ....
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
+# provides TCP syslog reception
+module(load="imtcp")
+input(type="imtcp" port="514")
 ....
 ```
 
