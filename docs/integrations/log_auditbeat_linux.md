@@ -164,10 +164,6 @@ logging.files:
   keepfiles: 7
   permissions: 0600
 
-# ================================= Migration ==================================
-
-# This allows to enable 6.7 migration aliases
-#migration.6_to_7.enabled: false
 ```
 
 In order to make it easier, you can download the auditbeat configuration file:
