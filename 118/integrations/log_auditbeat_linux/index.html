@@ -2104,15 +2104,23 @@
                   <h1>AuditBeat Linux</h1>
                 
                 <h2 id="overview">Overview</h2>
-<p>Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd then the data can be stored locally on a JSON format before beeing sent to a log concentrator.</p>
+<p>Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd then the data can be stored in JSON inside a log file before being sent to a log concentrator.</p>
 <h2 id="auditbeat-logs">AuditBeat logs</h2>
 <p>With AuditBeat it is possible to collect various activities such as:</p>
 <ul>
-<li>Authentication: From system module, login dataset retreive User logins, logouts, and system boots</li>
-<li>File monitoring: From audit module, the file metricset sends events when a file is changed (created, updated, or deleted) on disk. The events contain file metadata and hashes</li>
+<li>
+<p>Authentication: From system module, login dataset retrieve User logins, logouts, and system boots</p>
+</li>
+<li>
+<p>File monitoring: From audit module, the file metricset sends events when a file is changed (created, updated, or deleted) on disk. The events contain file metadata and hashes</p>
+</li>
 <li>Process command-line parameters: command-lines and arguments are extracted from Linux logs</li>
-<li>Process monitoring: From system module, process dataset retreive Started and stopped processes</li>
-<li>Process use of network: From system module, socket dataset retreive Opened and Closed sockets</li>
+<li>
+<p>Process monitoring: From system module, process dataset retrieve Started and stopped processes</p>
+</li>
+<li>
+<p>Process use of network: From system module, socket dataset retrieve Opened and Closed sockets</p>
+</li>
 </ul>
 <h2 id="transport-to-the-collector">Transport to the collector</h2>
 <h3 id="prerequisites">Prerequisites</h3>
