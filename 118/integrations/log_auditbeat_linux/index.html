@@ -2131,9 +2131,13 @@
 </ul>
 <h3 id="configure-the-client">Configure the Client</h3>
 <h4 id="install-and-configure-auditbeat">Install and configure AuditBeat</h4>
-<p>To download and install Auditbeat, use the commands that work with your system:</p>
+<p>To download and install Auditbeat on Debian, Ubuntu, Linux Mint... Use the commands that work with your system:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.13.1-amd64.deb
 <span class="linenos" data-linenos="2 "></span>sudo dpkg -i auditbeat-7.13.1-amd64.deb
+</code></pre></div>
+<p>To download and install Auditbeat on Fedory, CentOS, RHEL... Use the commands that work with your system:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.13.1-x86_64.rpm
+<span class="linenos" data-linenos="2 "></span>sudo rpm -vi auditbeat-7.13.1-x86_64.rpm
 </code></pre></div>
 <blockquote>
 <p>Modify the version number with the newest one.</p>
