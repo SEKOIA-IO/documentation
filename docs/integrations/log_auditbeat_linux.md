@@ -7,7 +7,8 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 
 ## AuditBeat logs
 
-With AuditBeat it is possible to collect various activities such as the following:
+With AuditBeat it is possible to collect various activities such as:
+
 
 - Authentication: From system module, login dataset retreive User logins, logouts, and system boots
 - File monitoring: From audit module, the file metricset sends events when a file is changed (created, updated, or deleted) on disk. The events contain file metadata and hashes
