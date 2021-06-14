@@ -3,7 +3,8 @@ name: Linux AuditBeat
 
 ## Overview
 
-Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd then the data can be stored locally on a JSON format before beeing sent to a log concentrator.
+Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd then the data can be stored in JSON inside a log file before being sent to a log concentrator.
+
 
 ## AuditBeat logs
 
@@ -14,8 +15,10 @@ With AuditBeat it is possible to collect various activities such as:
 
 - File monitoring: From audit module, the file metricset sends events when a file is changed (created, updated, or deleted) on disk. The events contain file metadata and hashes
 - Process command-line parameters: command-lines and arguments are extracted from Linux logs
-- Process monitoring: From system module, process dataset retreive Started and stopped processes
-- Process use of network: From system module, socket dataset retreive Opened and Closed sockets
+- Process monitoring: From system module, process dataset retrieve Started and stopped processes
+
+- Process use of network: From system module, socket dataset retrieve Opened and Closed sockets
+
 
 ## Transport to the collector
 
