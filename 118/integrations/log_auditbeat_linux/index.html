@@ -2257,11 +2257,6 @@ By default, Auditbeat uses a configuration that’s tailored to the operating sy
 <span class="linenos" data-linenos="114 "></span>  rotateeverybytes: <span class="m">10485760</span> <span class="c1"># = 10MB</span>
 <span class="linenos" data-linenos="115 "></span>  keepfiles: <span class="m">7</span>
 <span class="linenos" data-linenos="116 "></span>  permissions: <span class="m">0600</span>
-<span class="linenos" data-linenos="117 "></span>
-<span class="linenos" data-linenos="118 "></span><span class="c1"># ================================= Migration ==================================</span>
-<span class="linenos" data-linenos="119 "></span>
-<span class="linenos" data-linenos="120 "></span><span class="c1"># This allows to enable 6.7 migration aliases</span>
-<span class="linenos" data-linenos="121 "></span><span class="c1">#migration.6_to_7.enabled: false</span>
 </code></pre></div>
 <p>In order to make it easier, you can download the auditbeat configuration file:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ wget -O /etc/auditbeat/auditbeat.yml https://docs.sekoia.io/integrations/configurations/auditbeat.yml
