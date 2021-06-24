@@ -230,6 +230,7 @@ $ActionResumeRetryCount -1      # prevent the rsyslog from droping the logs if t
 
 # Where to place spool and state files
 $WorkDirectory /var/spool/rsyslog
+$IncludeConfig /etc/rsyslog.d/*.conf
 
 # Rules
 *.*          -/var/log/syslog
