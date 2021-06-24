@@ -12,7 +12,7 @@ On most linux servers, two packages need to be installed: rsyslog and rsyslog-gn
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
-$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 
@@ -47,7 +47,7 @@ In the above `template` instruction, change the `YOUR_LINUX_HOSTNAME` variable w
 ### Restart rsyslog
 
 ```bash
-$ sudo service rsyslog restart
+sudo service rsyslog restart
 ```
 
 ### Enjoy your events

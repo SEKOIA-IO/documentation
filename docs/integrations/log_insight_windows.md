@@ -22,7 +22,7 @@ This setup guide will show you how to forward events produced by a Windows syste
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
-$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 ##### Configure the Rsyslog server
@@ -54,7 +54,7 @@ In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable w
 ##### Restart rsyslog
 
 ```bash
-$ sudo service rsyslog restart
+sudo service rsyslog restart
 ```
 
 ### 3. Enjoy your events
