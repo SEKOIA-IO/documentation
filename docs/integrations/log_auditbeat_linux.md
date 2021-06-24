@@ -212,13 +212,6 @@ Settup a light client rsyslog by editing the `/etc/rsyslog.conf` file.
 module(load="imuxsock")                                 # provides support for local system logging
 module(load="imklog" permitnonkernelfacility="on")      # provides kernel logging support
 
-module(load="imfile" PollingInterval="10")              #needs to be done just once
-input(type="imfile"
-      File="/tmp/auditbeat/auditbeat"
-      Tag="linux_auditbeat"
-      Severity="info"
-      Facility="local7")
-
 # Use traditional timestamp format.
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 
@@ -238,6 +231,20 @@ $ActionResumeRetryCount -1      # prevent the rsyslog from droping the logs if t
 # Where to place spool and state files
 $WorkDirectory /var/spool/rsyslog
 
+# Rules
+*.*          -/var/log/syslog
+```
+
+And add a dedicated configuration file for the Auditbeat logs in `/etc/rsyslog.d/8-linux_auditbeat.conf` to be sent to a log concentrator.
+
+```bash
+module(load="imfile" PollingInterval="10")              #needs to be done just once
+input(type="imfile"
+      File="/tmp/auditbeat/auditbeat"
+      Tag="linux_auditbeat"
+      Severity="info"
+      Facility="local7")
+
 if ($syslogtag contains 'linux_auditbeat') then {
      action(
          type="omfwd"
@@ -247,10 +254,8 @@ if ($syslogtag contains 'linux_auditbeat') then {
          TCP_Framing="octet-counted"
      )
 }
-
-# Rules
-*.*          -/var/log/syslog
 ```
+
 > Don't forget to change the value of `YOUR_RSYSLOG_DESTINATION_SERVER` in the bottom of the `rsyslog.conf` file
 
 ##### Restart Rsyslog
