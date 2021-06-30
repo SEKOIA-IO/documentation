@@ -28,7 +28,7 @@ The following prerequisites are needed in order to setup efficient log concentra
 - Have administrator privileges on the server
 - Traffic towards the log collector sever which is using Rsyslog must be open on port `TCP/514`
 
-### Configure the Client
+### Configure the client
 
 #### Install and configure AuditBeat
 
