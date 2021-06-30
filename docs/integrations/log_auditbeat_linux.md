@@ -6,7 +6,7 @@ name: Linux AuditBeat
 Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd then the data can be stored in JSON inside a log file before being sent to a log concentrator.
 
 
-## AuditBeat logs
+## Auditbeat logs
 
 With AuditBeat it is possible to collect various activities such as:
 
