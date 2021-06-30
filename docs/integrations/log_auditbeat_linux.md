@@ -181,7 +181,7 @@ $ wget -O /etc/auditbeat/auditbeat.yml https://docs.sekoia.io/integrations/confi
 
 > Don't forget to set the right level of permission of the new `auditbeat.yml` if you edited a new one.
 > `sudo chmod 0600 auditbeat.yml`
-> Plus in this case ensure the owner of the file is root: `sudo chown root:root auditbeat.yml`
+> Plus in this case ensure the owner of the file is `root`: `sudo chown root:root auditbeat.yml`
 
 Auditbeat comes with predefined assets for parsing, indexing, and visualizing your data. To load these assets:
 ```bash
