@@ -26,7 +26,7 @@ With AuditBeat it is possible to collect various activities such as:
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator privileges on the server
-- Traffic towards the Rsyslog must be open on `TCP 514`
+- Traffic towards the log collector sever which is using Rsyslog must be open on port `TCP/514`
 
 ### Configure the Client
 
