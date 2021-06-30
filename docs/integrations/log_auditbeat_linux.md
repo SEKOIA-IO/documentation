@@ -197,7 +197,7 @@ sudo systemctl restart auditbeat.service
 
 > Check your logs in `/tmp/auditbeat/auditbeat` in JSON format.
 
-#### Configure the client Rsyslog
+#### Configure local Rsyslog service
 
 In order to allow the rsyslog to work properly, please ensure the following packages are installed:
 
