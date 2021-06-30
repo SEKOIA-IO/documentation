@@ -190,7 +190,7 @@ sudo auditbeat -e
 
 > If no error occurs, use `Ctrl + C` to stop running it in the terminal.
 
-Start AuditBeat with the folling command:
+Start Auditbeat with the following command:
 ```bash
 sudo systemctl restart auditbeat.service
 ```
