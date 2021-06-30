@@ -1,6 +1,6 @@
 # Forward Logs to SEKOIA.IO via HTTPS
 
-To push your events through our HTTPS log collector, you have to `POST` your logs in the JSON format. To send us events, you should set `Content-Type` HTTP header to `application/javascript`.
+To push your events through our HTTPS log collector, you have to `POST` your logs in the JSON format. To send us events, you should set `Content-Type` HTTP header to `application/json`.
 
 The following fields are currently handled by SEKOIA.IO’S HTTPS log collector:
 

@@ -25,7 +25,7 @@ We are providing documentation and example configurations on how to configure yo
 
 ## HTTPS integration
 
-To push your events through our HTTP log collector, you have to `POST` your logs in the JSON format. To send us events, you should set `Content-Type` HTTP header to `application/javascript`.
+To push your events through our HTTP log collector, you have to `POST` your logs in the JSON format. To send us events, you should set `Content-Type` HTTP header to `application/json`.
 
 ## Cloud & SaaS integration
 
