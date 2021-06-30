@@ -30,7 +30,7 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 ### Configure the client
 
-#### Install and configure AuditBeat
+#### Install and configure Auditbeat
 
 To download and install Auditbeat on Debian, Ubuntu, Linux Mint... Use the commands that work with your system:
 
