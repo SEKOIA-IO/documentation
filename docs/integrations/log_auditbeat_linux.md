@@ -39,7 +39,7 @@ curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.13
 sudo dpkg -i auditbeat-7.13.1-amd64.deb
 ```
 
-To download and install Auditbeat on Fedory, CentOS, RHEL... Use the commands that work with your system:
+To download and install Auditbeat on Fedory, CentOS or Red Hat Enterprise Linux, use the commands that work with your system:
 
 ```bash
 curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.13.1-x86_64.rpm
