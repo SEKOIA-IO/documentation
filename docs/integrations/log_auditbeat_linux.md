@@ -8,7 +8,7 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 
 ## Auditbeat logs
 
-With AuditBeat it is possible to collect various activities such as:
+With Auditbeat it is possible to collect various activities such as:
 
 
 - Authentication: From system module, login dataset retrieve User logins, logouts, and system boots
