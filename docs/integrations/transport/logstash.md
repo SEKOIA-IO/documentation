@@ -32,7 +32,6 @@ output {
                 "json" => "%{message}"
                 "intake_key" => "%{[@metadata][intake_key]}"
             }
-            http_compression => true
         }
     }
 }
