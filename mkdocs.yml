@@ -94,7 +94,19 @@ nav:
           - Dashboards: intelligence_center/dashboard.md
           - Graph Explorations: intelligence_center/graph_explorations.md
           - Data Export: intelligence_center/data_export.md
-  - API Documentation: /apis
+  - API Documentation:
+      - Overview: api/index.md
+      - Identity & authentication: api/identity & authentication.md
+      - Profile & permissions: api/profile & permissions.md
+      - Dashboards: api/dashboards.md
+      - Notifications: api/notifications.md
+      - "Operation Center: Rules, Entities, Intakes, Events": "api/operation center: rules, entities, intakes, events.md"
+      - "Operation Center: Alerts & Case Management": "api/operation center: alerts & case management.md"
+      - "Operation Center: Asset Management": "api/operation center: asset management.md"
+      - "Intelligence Center: Cyber Threat Intelligence Database": "api/intelligence center: cyber threat intelligence database.md"
+      - "Intelligence Center: Enrichment": "api/intelligence center: enrichment.md"
+      - "Automation: Symphony Orchestrator": "api/automation: symphony orchestrator.md"
+      - Partners: api/partners.md
   - What’s New?: releases
   - Support: https://support.sekoia.io
 
@@ -111,6 +123,9 @@ theme:
     - navigation.top
   font:
     text: Open Sans
+
+plugins:
+  - render_swagger
 
 extra:
   social:

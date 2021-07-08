@@ -123,6 +123,14 @@
                 box-shadow: inherit;
             }
         }
+
+        .swagger-ui {
+            .information-container {
+                h2, .description {
+                    display: none;
+                }
+            }
+        }
     }
 
     footer {

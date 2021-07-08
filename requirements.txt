@@ -27,10 +27,13 @@ mkdocs-material==7.1.5
     # via
     #   -r requirements.in
     #   mkdocs-material-extensions
+mkdocs-render-swagger-plugin==0.0.3
+    # via -r requirements.in
 mkdocs==1.2.1
     # via
     #   -r requirements.in
     #   mkdocs-material
+    #   mkdocs-render-swagger-plugin
 packaging==20.9
     # via mkdocs
 pygments==2.9.0
