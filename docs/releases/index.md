@@ -1,13 +1,14 @@
 # SEKOIA.IO Release Notes
 
 ## Latest Notes
+- [2021-07-05: New visual identity](/releases/2021-07-05)
 
-- [2021-06-01: Graph Explorations and New Rules](/releases/2021-06-01)
 
 ## Previous Release Notes
 
 ### 2021
 
+- [2021-06-01: Graph Explorations and New Rules](/releases/2021-06-01)
 - [2021-04-01: Rules catalog, events search optimization and Cobalt Strike Blogpost](/releases/2021-04-01)
 - [2021-01-06: Operation Center’s Configurable Dashboard System](/releases/2021-01-06)
 
