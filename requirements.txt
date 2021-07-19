@@ -21,16 +21,16 @@ markupsafe==2.0.1
     # via jinja2
 mergedeep==1.3.4
     # via mkdocs
-mkdocs-material-extensions==1.0.1
-    # via mkdocs-material
+mkdocs==1.2.2
+    # via
+    #   -r requirements.in
+    #   mkdocs-material
 mkdocs-material==7.1.5
     # via
     #   -r requirements.in
     #   mkdocs-material-extensions
-mkdocs==1.2.1
-    # via
-    #   -r requirements.in
-    #   mkdocs-material
+mkdocs-material-extensions==1.0.1
+    # via mkdocs-material
 packaging==20.9
     # via mkdocs
 pygments==2.9.0
@@ -41,12 +41,12 @@ pyparsing==2.4.7
     # via packaging
 python-dateutil==2.8.1
     # via ghp-import
-pyyaml-env-tag==0.1
-    # via mkdocs
 pyyaml==5.4.1
     # via
     #   mkdocs
     #   pyyaml-env-tag
+pyyaml-env-tag==0.1
+    # via mkdocs
 six==1.16.0
     # via python-dateutil
 watchdog==2.1.2
