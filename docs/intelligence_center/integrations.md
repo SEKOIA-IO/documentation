@@ -21,7 +21,7 @@ You then need to make sure you have a scheduled task in place to regularly fetch
 ## OpenCTI connector
 
 An [OpenCTI](https://www.opencti.io) connector is available to consumme a feed.
-All the instruction to run it are available at the connector GitHub repository: https:/github.com/OpenCTI-Platform/connectors/tree/master/sekoia.
+All the instruction to run it are available at the connector GitHub repository: https://github.com/OpenCTI-Platform/connectors/tree/master/sekoia.
 
 ## Cortex Analyser
 
