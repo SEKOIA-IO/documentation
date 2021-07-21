@@ -191,7 +191,7 @@ The Windows Event Forwarder, also known as WEF is a Microsoft service that can b
 - Start the WinRM service (run as Administrator)
 - Add the Network Service account to the built-in Event Log Readers security group. As show hereafter:
 
-![SEKOIA.IO Operation Center Windows WEF](/assets/wef_client_config.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Windows WEF](/assets/wef_client_config.png){: style="max-width:60%"}
 
 ##### Configure the Windows Remote Management
 On the AD admin console, open a command interpretor as Administrator, and run the following command:
