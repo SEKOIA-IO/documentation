@@ -18,7 +18,7 @@ It is possible to add or remove other columns using the "Show fields" tab by:
 - Selecting the field to remove in "Selected fields" section using the "-" button.
 - Typing the desired field name in search bar at the top of "Selected fields".
 
-![SEKOIA.IO Event_page_Log_list](../assets/operation_center/ev_log_list.gif){: style="max-width:600px"}
+![SEKOIA.IO Event_page_Log_list](../assets/operation_center/ev_log_list.gif){: style="max-width:60%"}
 
 ## Log lines:
 
@@ -28,7 +28,7 @@ Each line of log can be unrolled to show:
 - STIX: Event as a STIX bundle that will be used by detection engines.
 - Raw event: Event as received by SEKOIA.IO.
 
-![SEKOIA.IO Event_page_Log_lines](../assets/operation_center/ev_log_lines.gif){: style="max-width:600px"}
+![SEKOIA.IO Event_page_Log_lines](../assets/operation_center/ev_log_lines.gif){: style="max-width:60%"}
 
 
 ## Search bar:
@@ -44,14 +44,14 @@ It is possible to use and combine filters in the search bar by using:
 
 To go back to the list of logs shown, you need to clear filters and select "Current events"
 
-![SEKOIA.IO Event_page_Filters](../assets/operation_center/ev_filters.gif){: style="max-width:600px"}
+![SEKOIA.IO Event_page_Filters](../assets/operation_center/ev_filters.gif){: style="max-width:60%"}
 
 ### Save filters:
 
 It is possible to save a query by clicking on the star icon. The period of time is not conserved with it. 
 To check it out, you can click on "Saved queries" then select the wanted period of time and press enter to see the events found.
 
-![SEKOIA.IO Event_page_Save_Filters](../assets/operation_center/ev_save_filters.gif){: style="max-width:600px"}
+![SEKOIA.IO Event_page_Save_Filters](../assets/operation_center/ev_save_filters.gif){: style="max-width:60%"}
 
 ### Date:
 
@@ -63,13 +63,13 @@ It is possible to select the period of time to be taken in consideration while u
 
 Click on the blue lense to start a full search job.
 
-![SEKOIA.IO Event_page_Date](../assets/operation_center/ev_date.gif){: style="max-width:600px"}
+![SEKOIA.IO Event_page_Date](../assets/operation_center/ev_date.gif){: style="max-width:60%"}
 
 ### Search history:
 
 Each search result lasts 10 min by default and it is possible to configure the retention to reach 1 day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
 
-![SEKOIA.IO Event_page_Search_History](../assets/operation_center/ev_search_history.gif){: style="max-width:600px"}
+![SEKOIA.IO Event_page_Search_History](../assets/operation_center/ev_search_history.gif){: style="max-width:60%"}
 
 ### Sharing a search
 
@@ -85,7 +85,7 @@ You can share your researches with colleagues by sending them these jobIds, whic
 
 You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export. The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the uuid of the job search.
 
-![SEKOIA.IO Search result export](../assets/operation_center/ev_export_results.gif){: style="max-width:600px"}
+![SEKOIA.IO Search result export](../assets/operation_center/ev_export_results.gif){: style="max-width:60%"}
 
 > !!! Note
 >     The 'description' field will not be exported.

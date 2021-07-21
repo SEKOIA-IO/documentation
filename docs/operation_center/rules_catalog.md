@@ -10,7 +10,7 @@ Each cell represents an attack technique. The cells are clickable and enable you
 You can see how many rules are enabled in a cell by hovering over it.
 The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
 
-![SEKOIA.IO Rules_Catalog_MITRE](../assets/operation_center/rules_catalog_mitre.gif){: style="max-width:600px"}
+![SEKOIA.IO Rules_Catalog_MITRE](../assets/operation_center/rules_catalog_mitre.gif){: style="max-width:60%"}
 
 ### Rules attributes
 
@@ -37,7 +37,7 @@ The blue square represents a clickable counter of activated rules, it is therefo
 The rules are related to different elements according to offensive and defensive capabilities. They can be related to threats, attacks and data sources.
 Each element is associated to a filter that can be used to display the rules related to the selected element.
 
-![SEKOIA.IO Rules_Catalog_Attributes](../assets/operation_center/rules_catalog_attributes.gif){: style="max-width:600px"}
+![SEKOIA.IO Rules_Catalog_Attributes](../assets/operation_center/rules_catalog_attributes.gif){: style="max-width:60%"}
 
 
 ### Manage existing rules
@@ -53,7 +53,7 @@ There are information about the effort level attributed to the rule, the severit
 It also explains the followed strategy and gives information about false positives, STIX patterning and data sources.
 To edit an existing rule, click on the gear icon to select entities and assets, or to add a filter alert. 
 
-![SEKOIA.IO Rules_Catalog_Existing](../assets/operation_center/rules_catalog_manage.gif){: style="max-width:600px"}
+![SEKOIA.IO Rules_Catalog_Existing](../assets/operation_center/rules_catalog_manage.gif){: style="max-width:60%"}
 
 
 ### Add a custom rule
@@ -80,7 +80,7 @@ The signature part corresponds to the rule itself, the detection pattern applied
 - **Security alerts:**
 In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
 
-![SEKOIA.IO Rules_Catalog_Custom](../assets/operation_center/rules_catalog_add.gif){: style="max-width:600px"}
+![SEKOIA.IO Rules_Catalog_Custom](../assets/operation_center/rules_catalog_add.gif){: style="max-width:60%"}
 
 
 !!! note

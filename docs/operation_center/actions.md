@@ -4,7 +4,7 @@
 
 Once the user has selected and configured a `Trigger`, most of the time an `Operator` will follow, then it is time to insert a first `Action`.
 
-![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/filter_actions.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/filter_actions.png){: style="max-width:60%"}
 
 The `Actions` execute specific activities depending on the needs. You will find hereafter the main `Actions` that a user will be able to use.
 
@@ -40,12 +40,12 @@ Then the user can exploit: the number of comments, uuid, created_at, created_by,
 > Note: Copy-past in the research section: `Read JSON File` to retreive the related `Block`.
 With this module, a user can collect the output of the `Action > Get an alert` when the `parameter STIX` is activated. Here is an example of use:
 
-![SEKOIA.IO Operation Center Trigger JSON File](../assets/operation_center/playbooks/json_file.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Trigger JSON File](../assets/operation_center/playbooks/json_file.png){: style="max-width:60%"}
 
-#### Setters 
+#### Setters
 On the playbook GUI, it is possible to set `Blocks` such as Create, Update, Patch, Add, Post, Delete activities.
 
-##### Create Blocks 
+##### Create Blocks
 With the Create `Blocks` a user will be able to:
 
 - Create a case: `creates_a_new_case`
@@ -61,7 +61,7 @@ With the Update `Blocks` a user will be able to:
 - Update a case: `updates_an_case`
 - Patch an alert: `patch_an_alert`
 
-##### Delete Blocks 
+##### Delete Blocks
 With the Delete `Blocks` a user will be able to:
 
 - Delete a comment on an alert: `delete_a_comment_from_an_alert`
@@ -73,7 +73,7 @@ With the Delete `Blocks` a user will be able to:
 ##### Trigger an action on the event workflow
 Is is possible to trigger an action on an alert as explained in the webhook section. For instance the following image shows how to properly close an alert afer analysing it.
 
-![SEKOIA.IO Operation Center Trigger an alert on worksflow](../assets/operation_center/playbooks/trigger_an_action_on_the_alert_workflow.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Trigger an alert on worksflow](../assets/operation_center/playbooks/trigger_an_action_on_the_alert_workflow.png){: style="max-width:60%"}
 
 As of today, the available action_uuid are the following :
 ```r
@@ -89,7 +89,7 @@ Other Sekoia `Blocks` are available, such as:
 - Associate new alert on a case
 - Activate or deny a countermeasure
 
-##### Fortigate Blocks 
+##### Fortigate Blocks
 With the Fortigate `Blocks` a user will be able to:
 - Add an IP in the Address list of a Fortigate FW:`Post Fortigate IP Address`
 - Add a FQDN in the Address list of a Fortigate FW:`Post Fortigate FQDN Address`
@@ -101,14 +101,14 @@ Most of the time an analyst uses external tools in order to better understand th
 > If you have subscribed to one or more of the following online tools, you should be able to get an API key, and simply use it on your playbooks.
 
 ##### IKnowWhatYouDownload
-The module allows to request information such as: 
+The module allows to request information such as:
 
 - IP history
 - IP Check
 - IP List
 
 ##### Onyphe
-The module allows to request information such as: 
+The module allows to request information such as:
 
 - Scan (SYN, Onion...)
 - Lookups (Md5, reverse DNS)
@@ -116,21 +116,21 @@ The module allows to request information such as:
 - Scan Domain Name CTLs
 
 ##### RiskIQ
-The module allows to request information such as: 
- 
+The module allows to request information such as:
+
 - Whois
 - Reverse Whois (organisation, nameserver, name, email, address)
 - Passive DNS (Name, IP, Hex)
 - SSL host, certificate (SHA-1, Serial Number) / DNS
 
 ##### Shodan
-The module allows to request information such as: 
+The module allows to request information such as:
 
 - Search for Host information
 - Get DNS reverse, resolve, domain
 
 ##### Virustotal
-The module allows to request information such as: 
+The module allows to request information such as:
 
 - Scan (URL, IP, Hash, File, Domain)
 
@@ -147,7 +147,7 @@ This module allows the analysts to receive notification in PagerDuty when a new 
 ##### Mandrill
 Email notification is available, the following example shows an automatic email sent when a new alert is raised.
 
-![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/mandril.png){: style="max-width:600px"}
+![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/mandril.png){: style="max-width:60%"}
 
 The mandatory fields are:
 
@@ -156,9 +156,9 @@ The mandatory fields are:
 - The subject
 - The HTML mail content, here is a simple example:
 ```HTML
-<h1>A new alert is declared: {{ node.2.rule.name }}.</h1> 
+<h1>A new alert is declared: {{ node.2.rule.name }}.</h1>
 <h2>Description: {{ node.2.rule.description }}.</h2>
-<p>More details:</p> 
+<p>More details:</p>
 	<ul><li>Urgency: {{ node.2.urgency.value }}</li>
 		<li>Entity: {{ node.2.entity.name }}</li>
 	 	<li>Kill chain: {{ node.2.kill_chain_short_id }}</li>
