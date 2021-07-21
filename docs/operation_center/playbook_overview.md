@@ -35,10 +35,10 @@ To do it, go to `Settings > Communities > Your community > API Keys > + API Key`
 
 ![SEKOIA.IO User Center API Key creation](../assets/operation_center/playbooks/create_an_api_key.png){: style="max-width:60%"}
 
-> Note: Save your new API Key in a vault. It will no longer be accessible! 
+> Note: Save your new API Key in a vault. It will no longer be accessible!
 
 Now you will be able to setup a configuration for the Sekoia `Blocks`, built for you.
-Back in the Operation Center, section Playbooks: 
+Back in the Operation Center, section Playbooks:
 
 - Select the trigger of your choice, for instance `Security alerts`
 - Drag and drop it into the center of your screen
@@ -78,9 +78,9 @@ It is possible to test your JINJA code on a JSON file (Copy-Past the CODE of you
 
 ```python
 import json
-from jinja2 import Template 
+from jinja2 import Template
 
-file_json = open("file.json", "r") 
+file_json = open("file.json", "r")
 loading = json.load(file_json)
 
 # The JINJA partern to be tested

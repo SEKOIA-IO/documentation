@@ -17,7 +17,7 @@ The `Security alerts` trigger allows a user to collect information of an alert, 
 ### Webhook
 
 The `Alert webhook` trigger allows a user to automatically trigger actions once a human has raised and removed a doubt on an alert.
-This is a `Block` button, such as the one you will find hereunder, for the example of adding an standardised commentary on the alert commentary section. 
+This is a `Block` button, such as the one you will find hereunder, for the example of adding an standardised commentary on the alert commentary section.
 
 ![SEKOIA.IO Operation Center Webhook Trigger](../assets/operation_center/playbooks/web_hook.gif){: style="max-width:60%"}
 
