@@ -40,6 +40,6 @@ end
 
 Declare the output mode associated to the SEKOIA.IO stream with the type `com.plugin.HttpOutput` with the unique parameter `https://intake.sekoia.io`
 
-![image](/assets/graylog_output_declaration.png)
+![image](../../assets/graylog_output_declaration.png)
 
 [graylog-http-plugin]: https://github.com/SekoiaLab/graylog-http-plugin

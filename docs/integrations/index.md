@@ -8,7 +8,7 @@ In this chapter, you will learn how to configure your log system to make it forw
 
 SEKOIA.IO is able to collect logs through various mechanisms, configuration on your side should be easy! Here is an overview on how integration could be done with SEKOIA.IO.
 
-![SEKOIA.IO Operation Center integration overview](/assets/sekoiaio_oc_integration.png){: style="max-width:100%"}
+![SEKOIA.IO Operation Center integration overview](../assets/sekoiaio_oc_integration.png){: style="max-width:100%"}
 
 SEKOIA.IO supports the following log collectors:
 
