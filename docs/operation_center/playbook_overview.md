@@ -55,6 +55,19 @@ To create a playbook, you will basically need to use the following filters. More
 - [Operators](operators.md)
 - [Actions](actions.md)
 
+## Playbook templates
+
+In order to ease the deployment of playbooks, we regularly produce Playbook templates that are ready to use for anyone with an API key.
+
+To use one:
+- Click on `+ NEW PLAYBOOK`
+- Select `Use a template`
+- Filter on your needs `alert`, `notification`, `webhook` or use the `Search bar`
+- Select the template you are interested in
+- Click on `CREATE`
+
+A brand new playbook will be created. Then you just have to adjust the `Module Configuration` section of each block with your API key and URL. You can either create a new configuration or use an existing one that will appear on the list menu.
+
 ## Troubleshooting
 
 ### RUN feature
