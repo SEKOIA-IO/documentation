@@ -144,7 +144,7 @@ For relationships, use the `GET v2/inthreat/relationships/{relationship_id}` end
 
 ## Looking for an IOC
 
-It is possible to look for a specific indicator of compromise in the Intelligence Center and get its context with the `GET v2/inthreat/indicators/context` endpoint (see [documentation](https://docs.sekoia.io/api/threat%20intelligence%20database#operation/get_indicator_context_resource)).
+It is possible to look for a specific indicator of compromise in the Intelligence Center and get its context with the `GET v2/inthreat/indicators/context` endpoint (see [documentation](https://docs.sekoia.io/api/intelligence%20center:%20cyber%20threat%20intelligence%20database#operation/get_indicator_context_resource)).
 
 ```python
 import json
