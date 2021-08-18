@@ -50,7 +50,7 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 ### Operating Systems
 
 - [Linux](linux.md)
-- [Linux / AuditBeat](log_auditbeat_linux.md)
+- [Linux / AuditBeat](auditbeat_linux.md)
 - [Windows / NXLog](windows.md)
 - [Windows / Log Insight](log_insight_windows.md)
 

@@ -196,6 +196,7 @@ sudo systemctl restart auditbeat.service
 ```
 
 > Check your logs in `/tmp/auditbeat/auditbeat` in JSON format.
+> It may be recommended to set up logrotate for the Auditbeat logs generated in `/tmp/auditbeat`.
 
 #### Configure local Rsyslog service
 
