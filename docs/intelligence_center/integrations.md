@@ -28,6 +28,12 @@ All the instruction to run it are available at the connector GitHub repository: 
 SEKOIA is also providing a [Cortex analyzer](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter) to enrich data in [TheHive](https://thehive-project.org/) ecosystem.
 To setup the analyzer please [follow this guide](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md).
 
+In a nutshell:
+- Get the SEKOIA.IO API Key and deploy it into Cortex GUI
+- Download the Cortex Analyzer from github [here](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter)
+- Make sure the python requirements are installed
+- Use the python script `sekoia_intelligence_center_analyzer.py` (no modification of the URL is required)
+
 ## SEKOIA.IO App for Splunk
 
 An App for Splunk is available to detect threats in your logs based on our feed.
