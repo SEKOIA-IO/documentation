@@ -41,6 +41,7 @@ nav:
                   - Dns Logs: integrations/umbrella_dns.md
           - OS:
               - Linux: integrations/linux.md
+              - Auditbeat Linux: integrations/auditbeat_linux.md
               - Windows: integrations/windows.md
               - Log Insight Windows: integrations/log_insight_windows.md
           - Application:
