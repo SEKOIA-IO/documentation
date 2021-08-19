@@ -45,7 +45,7 @@ In a nutshell:
 - Enable the Analyzer you would like to use, by clicking on the right side 
 ![Cortex Analyser Enable Page](../assets/intelligence_center/analyzer_activation.png){: style="width: 100%; max-width: 100%"}
 - If wanted, tailor made your Analyzer with additional details
-![Cortex Analyser Enable Context Page](../assets/intelligence_center/enable_config_context.png){: style="width: 100%; max-width: 100%"}
+![Cortex Analyser Enable Context Page](../assets/intelligence_center/enable_context.png){: style="width: 100%; max-width: 100%"}
 
 
 ## SEKOIA.IO App for Splunk
