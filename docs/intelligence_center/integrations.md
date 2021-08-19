@@ -31,8 +31,6 @@ To setup the analyzer please [follow this guide](https://github.com/TheHive-Proj
 In a nutshell:
 
 - Get the SEKOIA.IO API Key
-- Download the Cortex Analyzer from github [here](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter)
-- Make sure the python requirements are installed
 - Install the Analyzer refering to this section of the [TheHive](https://github.com/TheHive-Project/CortexDocs/blob/master/installation/install-guide.md#installation) documentation
 - Connect into Cortex with `orgadmin` role
 - Select your organization on the top right corner 
