@@ -29,6 +29,7 @@ SEKOIA is also providing a [Cortex analyzer](https://github.com/TheHive-Project/
 To setup the analyzer please [follow this guide](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md).
 
 In a nutshell:
+
 - Get the SEKOIA.IO API Key
 - Download the Cortex Analyzer from github [here](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter)
 - Make sure the python requirements are installed
