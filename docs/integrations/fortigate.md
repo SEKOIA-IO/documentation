@@ -40,6 +40,7 @@ set port 514
 set mode reliable
 set server [IP address of syslog server]
 set facility user
+set format rfc5424
 end
 ```
 
