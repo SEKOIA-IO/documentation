@@ -108,6 +108,7 @@ Here is an example of this page populated with various alerts:
 On this screen, you can observe the following information:
 
 From the left to the right, 7 features are availables on the top screen:
+
 - `Refresh` the page, with new alerts generated (a figure will increment on the button)
 - Select `All` existing alerts to be listed
 - Select only the `Today`'s alerts
@@ -116,7 +117,7 @@ From the left to the right, 7 features are availables on the top screen:
 - Display the alerts by `Status`
 - Use `Advanced filter` capacities, as shown in the picture bellow:
 
-![Alert Advanced Filters](../assets/operation_center/alert_advanced_filter.PNG){: style="width: 100%; max-width: 100%"}
+![Alert Advanced Filters](../assets/operation_center/alert_advanced_filter.PNG){: style="width: 70%; max-width: 70%"}
 
 On the main alert listing, it is also possible to:
 - `Select multiple alerts` in the same time, then choose and apply a massive change of status
