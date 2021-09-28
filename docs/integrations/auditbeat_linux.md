@@ -332,7 +332,7 @@ if ($syslogtag contains 'linux_auditbeat') then {
 ##### Restart Rsyslog
 
 ```bash
-$ sudo systemctl restart rsyslog.service
+sudo systemctl restart rsyslog.service
 ```
 
 ## Related files
