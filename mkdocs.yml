@@ -54,6 +54,7 @@ nav:
               - FortiGate: integrations/fortigate.md
               - FortiMail: integrations/fortimail.md
               - FortiWeb: integrations/fortiweb.md
+              - FortiProxy: integrations/fortiproxy.md
               - HAProxy: integrations/haproxy.md
               - ISC DHCP: integrations/dhcpd.md
               - NetFilter: integrations/netfilter.md
