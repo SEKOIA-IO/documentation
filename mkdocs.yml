@@ -94,6 +94,7 @@ nav:
       - Web Application:
           - Dashboards: intelligence_center/dashboard.md
           - Graph Explorations: intelligence_center/graph_explorations.md
+          - Observables: intelligence_center/observables.md
           - Data Export: intelligence_center/data_export.md
   - API Documentation: /apis
   - What’s New?: releases
