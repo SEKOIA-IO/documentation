@@ -66,6 +66,7 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 - [FortiMail](fortimail.md)
 - [FortiWeb](fortiweb.md)
 - [HAProxy](haproxy.md)
+- [HarfangLab](harfanglab.md)
 - [ISC DHCP](dhcpd.md)
 - [NetFilter](netfilter.md)
 - [Nginx](nginx.md)
