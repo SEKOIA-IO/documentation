@@ -55,6 +55,7 @@ nav:
               - FortiMail: integrations/fortimail.md
               - FortiWeb: integrations/fortiweb.md
               - HAProxy: integrations/haproxy.md
+              - HarfangLab: integrations/harfanglab.md
               - ISC DHCP: integrations/dhcpd.md
               - NetFilter: integrations/netfilter.md
               - Nginx: integrations/nginx.md
