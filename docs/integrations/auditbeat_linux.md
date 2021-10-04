@@ -237,6 +237,8 @@ $IncludeConfig /etc/rsyslog.d/*.conf
 *.*          -/var/log/syslog
 ```
 
+Please ensure, options `$PrivDropToUser syslog` and `$PrivDropToGroup syslog` are removed, otherwise rsyslog process could not read auditbeat output.
+
 And add a dedicated configuration file for the Auditbeat logs in `/etc/rsyslog.d/8-linux_auditbeat.conf` to be sent to a log concentrator.
 
 ```bash
@@ -280,7 +282,7 @@ sudo apt install rsyslog rsyslog-gnutls wget
 Please ensure the UDP incoming events are allows in the /etc/rsyslog.conf
 ```bash
 ....
-# provides UDP syslog reception
+# provides TCP syslog reception
 module(load="imtcp")
 input(type="imtcp" port="514")
 ....
