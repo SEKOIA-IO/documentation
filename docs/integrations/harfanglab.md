@@ -7,11 +7,13 @@ HarfangLab is an Endpoint detection and response (EDR) solution certified by ANS
 
 This setup guide will show you how to forward events produced by HarfangLab EDR to SEKOIA.IO.
 
-Theses changes have to be made from your HarfangLab instance web portal.
+Theses changes have to be made from your HarfangLab instance web portal (provided by HarfangLab).
 
 ## HarfangLab EDR logs
 
-You first need to navigate to `Administration > Configuration`, then switch to the `Connectors` tab.
+Firstable your need to navigate to `Personal Settings`,  and in the `Api token` get your token or generate a new one.
+
+Then you need to navigate to `Administration > Configuration`, and switch to the `Connectors` tab.
 
 In the `Syslog connector` panel, select the logs you want to export:
 
@@ -22,7 +24,7 @@ In the `Syslog connector` panel, select the logs you want to export:
 * InjectedThread
 * Security Event
 
-Then configure the syslog information with the following information:
+Configure the syslog information with the following details:
 
 * Host: `intake.sekoia.io`
 * Port: `10514`
@@ -31,7 +33,7 @@ Then configure the syslog information with the following information:
 * Structured data: `[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"]`
 * Protocol: `TCP/SSL`
 
-In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable with your intake key.
+In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable with your intake key generated in SEKOIA.IO.
 
 Finaly select the `Protocol` option: `TCP/SSL`, leave the other options to default.
 
