@@ -97,7 +97,6 @@ The Alert Type is defined according to a custom set of values derived from theRe
 	- other
 - test
 	- test
-  - test
 
 ## Alert List
 
