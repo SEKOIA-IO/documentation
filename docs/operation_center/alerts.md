@@ -37,65 +37,66 @@ The Alert Type is associated with the rule, but can be changed with the value as
 The Alert Type is defined according to a custom set of values derived from theReference Incident Classification Taxonomy of ENISA:
 
 - abusive-usage
-  - bandwidth-download
-  - bandwidth-upload
-  - p2p
-  - high-drop
+	- bandwidth-download
+	- bandwidth-upload
+	- p2p
+	- high-drop
 - abusive-content
-  - spam
-  - harmfull-speech
-  - violence
+	- spam
+	- harmfull-speech
+	- violence
 - malicious-code
-  - virus
-  - worm
-  - trojan
-  - spyware
-  - dialer
-  - rootkit
-  - malware
-  - botnet-drone
-  - ransomware
-  - malware-configuration
-  - c&c
+	- virus
+	- worm
+	- trojan
+	- spyware
+	- dialer
+	- rootkit
+	- malware
+	- botnet-drone
+	- ransomware
+	- malware-configuration
+	- c&c
 - information-gathering
-  - scanner
-  - sniffing
-  - social-engineering
-  - portscan
-  - sweepscan
-  - appscan
+	- scanner
+	- sniffing
+	- social-engineering
+	- portscan
+	- sweepscan
+	- appscan
 - intrusion-attempts
-  - ids-alert
-  - brute-force
-  - exploit
+	- ids-alert
+	- brute-force
+	- exploit
 - intrusions
-  - privileged-account-compromise
-  - unprivileged-account-compromise
-  - application-compromise
-  - bot
-  - defacement
-  - compromised
-  - backdoor
+	- privileged-account-compromise
+	- unprivileged-account-compromise
+	- application-compromise
+	- bot
+	- defacement
+	- compromised
+	- backdoor
 - availability
-  - dos
-  - ddos
-  - sabotage
-  - outage
+	- dos
+	- ddos
+	- sabotage
+	- outage
 - information-content-security
-  - Unauthorised-information-access
-  - Unauthorised-information-modification
+	- Unauthorised-information-access
+	- Unauthorised-information-modification
 - fraud
-  - unauthorized-use-of-resources
-  - copyright
-  - masquerade
-  - phishing
+	- unauthorized-use-of-resources
+	- copyright
+	- masquerade
+	- phishing
 - vulnerable
-  - vulnerable-service
+	- vulnerable-service
 - other
-  - blacklist
-  - unknown
-  - other
+	- blacklist
+	- unknown
+	- other
 - test
+	- test
   - test
 
 ## Alert List
