@@ -66,23 +66,23 @@ $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files
 ```
 
 ##### Configure the Rsyslog server
-Open or create a new FortiWeb configuration file for Rsyslog:
+Open or create a new FortiProxy configuration file for Rsyslog:
 ```bash
 sudo vim /etc/rsyslog.d/15-fortiproxy.conf
 ```
 
-Paste the following Rsyslog configuration to trigger the emission of FortiWeb logs by your Rsyslog server to SEKOIA.IO:
+Paste the following Rsyslog configuration to trigger the emission of FortiProxy logs by your Rsyslog server to SEKOIA.IO:
 ```bash
 # Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
 # Template definition [RFC5424](https://tools.ietf.org/html/rfc5424#section-7.2.2)
 # IMPORTANT: don't forget to set your intake key in the template
-template(name="SEKOIAIOFortiwebTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+template(name="SEKOIAIOFortiproxyTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
 
-# Send your events to SEKOIA.IO intake servers under SEKOIAIOFortiwebTemplate template
-if ($hostname == "YOUR_FORTIWEB_HOSTNAME") then {
+# Send your events to SEKOIA.IO intake servers under SEKOIAIOFortiproxyTemplate template
+if ($hostname == "YOUR_FORTIPROXY_HOSTNAME") then {
     action(
         type="omfwd"
         protocol="tcp"
@@ -99,7 +99,7 @@ if ($hostname == "YOUR_FORTIWEB_HOSTNAME") then {
 ```
 
 > In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
-> And change the `YOUR_FORTIWEB_HOSTNAME` variable with the correct value.
+> And change the `YOUR_FORTIPROXY_HOSTNAME` variable with the correct value.
 
 ##### Restart Rsyslog
 
