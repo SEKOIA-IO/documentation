@@ -213,6 +213,9 @@ Settup a light client rsyslog by editing the `/etc/rsyslog.conf` file.
 module(load="imuxsock")                                 # provides support for local system logging
 module(load="imklog" permitnonkernelfacility="on")      # provides kernel logging support
 
+# Set the maximum supported message size
+$MaxMessageSize 20k
+
 # Use traditional timestamp format.
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 
