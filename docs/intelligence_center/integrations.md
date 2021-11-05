@@ -18,6 +18,8 @@ The following field values are required for the feed to work properly:
 
 You then need to make sure you have a scheduled task in place to regularly fetch the feed's content.
 
+> **Warning**: MISP adds automatically the suffix `/manifest.json` to the feed URL. If you want to try the connection to the feed outside MISP or make a custom script, you need to use the following URL: `https://api.sekoia.io/api/v2/inthreat/misp/manifest.json`
+
 ## OpenCTI connector
 
 An [OpenCTI](https://www.opencti.io) connector is available to consumme a feed.
