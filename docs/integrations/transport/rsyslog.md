@@ -51,6 +51,9 @@ sudo /bin/cat <<\EOM >$RsyslogConfFile
 module(load="imuxsock") # provides support for local system logging
 module(load="imklog")   # provides kernel logging support
 
+# Set the maximum supported message size
+$MaxMessageSize 20k
+
 # provides UDP syslog reception
 module(load="imudp")
 input(type="imudp" port="514")
