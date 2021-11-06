@@ -345,3 +345,38 @@ a {
         display: none;
     }
 }
+
+// css related to the apis page
+.sek-cards {
+    grid-template-columns: repeat(auto-fill,minmax(400px,400px));
+    display: grid;
+    margin: 4em auto;
+    justify-content: space-between;
+    grid-gap: 30px;
+    max-width: 1260px;
+}
+
+.sek-card {
+    padding: 2em 3em;
+    border: 1px solid #2d2e83;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.sek-card a {
+    border: 1px solid #2d2e83;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #2d2e83;
+}
+.sek-card a:hover {
+    background: #2d2e83;
+    color: white;
+}

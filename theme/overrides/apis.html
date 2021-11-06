@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block tabs %}
+<nav class="md-tabs" aria-label="{{ lang.t('tabs.title') }}" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+        <ul class="md-tabs__list">
+            {% for nav_item in nav %}
+            {% include "partials/tabs-item.html" %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+<section class="mdx-container">
+
+    <div class="maindescription">
+        <div class="maindescription__inner">
+            <h1>SEKOIA.IO Documentations</h1>
+
+            <p>
+                Get familiar with SEKOIA.IO and explore products features
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="sek-cards">
+    {% for item in config.api %}
+    <div class="sek-card">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        <a href="/apis/{{item.url}}">More</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
