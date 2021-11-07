@@ -380,3 +380,12 @@ a {
     background: #2d2e83;
     color: white;
 }
+
+.api {
+    padding: 0;
+    margin: 0;
+
+    &:before {
+        height: 0;
+    }
+}

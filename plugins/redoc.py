@@ -20,7 +20,10 @@ TEMPLATE = string.Template("""
 <div>
 <redoc spec-url='$path' nativeScrollbars></redoc>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js" native-scrollbars disable-search> </script>
+</script>
+<script>
+    document.getElementsByTagName('article')[0].classList.add('api')
 </script>
 """)
 

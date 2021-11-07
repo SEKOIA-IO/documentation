@@ -113,43 +113,32 @@ nav:
 api:
   - name: Identity & authentication
     description: 'Manage authentication: password change, manage multi factor authentication and APIKeys.'
-    url: identity_&_authentication
   - name: Profile & permissions
     description: Manage rights within a community (members, roles, permissions, etc.).
     url: profile_&_permissions
   - name: Dashboards
     description: 'Allows user to define and manage their dashboards (Operation Center & Intelligence Center)'
-    url: dashboard
   - name: Notifications
     description: Manage notification rules and in-app notifications
-    url: notifications
   - name: 'Operation Center: Rules, Entities, Intakes, Events'
     description: Configure the detection and remediation service offered by SEKOIA Operation Center.
-    url: 'operation_center:_rules,_entities,_intakes,_events'
   - name: 'Operation Center: Alerts & Case Management'
     description: 'Manage alerts raised by SEKOIA.IO Operation Center.'
-    url: 'operation_center:_alerts_&_case_management'
   - name: 'Operation Center: Asset Management'
     description: 'Manage your sensitive assets'
-    url: 'operation_center_asset_management'
-  - name: 'Intelligence Center: Cyber Threat Intelligence Database'
-    description: 'Manage your collections of Threat Intelligence materials.'
-    url: 'intelligence_center:_cyber_threat_intelligence_database'
-  - name: 'Intelligence Center: Enrichment'
-    description: 'API to manage enrichments'
-    url: 'intelligence_center:_enrichment'
-  - name: 'Automation: Symphony Orchestrator'
-    description: 'Manage your orchestration Playbooks.'
-    url: 'automation:_symphony_orchestrator'
-  - name: 'Partners'
-    description: 'Allows partner to push their configurations'
-    url: 'partners'
-  - name: 'Ingest: Manage and test event parsers'
-    description: 'API manage parsers'
-    url: 'ingest:_manage_and_test_event_parsers'
   - name: 'Operations Center: Events API'
     description: 'Operations Center: Events API'
     url: 'operations_center:_events_api'
+  - name: 'Intelligence Center: Cyber Threat Intelligence Database'
+    description: 'Manage your collections of Threat Intelligence materials.'
+  - name: 'Intelligence Center: Enrichment'
+    description: 'API to manage enrichments'
+  - name: 'Automation: Symphony Orchestrator'
+    description: 'Manage your orchestration Playbooks.'
+  - name: 'Partners'
+    description: 'Allows partner to push their configurations'
+  - name: 'Ingest: Manage and test event parsers'
+    description: 'API manage parsers'
 
 theme:
   custom_dir: theme
