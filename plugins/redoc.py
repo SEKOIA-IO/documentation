@@ -5,12 +5,21 @@ import re
 TEMPLATE = string.Template("""
 <style>
     .md-typeset h1,
-    .md-content__button {
+    .md-content__button,
+    .md-footer {
         display: none;
     }
     .md-main__inner {
         max-width: 100%;
         margin: 0;
+    }
+
+    .api-content {
+        height: calc(100vh - 5.6rem) !important;
+        overflow: auto;
+    }
+    .menu-content {
+        height: calc(100vh - 5.6rem) !important;
     }
 
     redoc {
