@@ -1,11 +1,10 @@
 import setuptools
 
-
 setuptools.setup(
     name='redoc',
     version='0.0.1',
     description='Plugin for adding redoc in Mkdocs.',
-    long_description='redoc plugin on mkdocs',  # noqa: E501
+    long_description='redoc plugin on mkdocs',
     keywords='redoc',
     url='',
     author='Mickael Découflet',

@@ -126,8 +126,6 @@ api:
     description: 'Manage alerts raised by SEKOIA.IO Operation Center.'
   - name: 'Operation Center: Asset Management'
     description: 'Manage your sensitive assets'
-  - name: 'Operations Center: Events API'
-    description: 'Operations Center: Events API'
     url: 'operations_center:_events_api'
   - name: 'Intelligence Center: Cyber Threat Intelligence Database'
     description: 'Manage your collections of Threat Intelligence materials.'
