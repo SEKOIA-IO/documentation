@@ -23,11 +23,11 @@ You can access the platform from any browser and on any device.
 
 Once you are logged in into SEKOIA.IO, you can navigate through the platform using two menus:
 
-- A collapsed navigation sidebar on the left that gives you access to all the work areas available on the platform. These areas are divided into subcategories: analyze, detect, investigate, remediate and configure for Operation Center, Collection for Intelligence Center.
+- A collapsed navigation sidebar on the left that gives you access to all the work areas available on the platform. These areas are divided into subcategories: analyze, detect, investigate, remediate and configure for Operations Center, Collection for Intelligence Center.
 - A contextual menu accessible through your profile picture in the top right that gives you access to your Settings and Communities.
 
 !!! note
-    Depending on the permissions granted to you, navigation between the Intelligence Center and the Operation Center is done by clicking on the name at the top of the sidebar.
+    Depending on the permissions granted to you, navigation between the Intelligence Center and the Operations Center is done by clicking on the name at the top of the sidebar.
 
 ## Set up your account
 

@@ -113,7 +113,7 @@ if ($hostname == "YOUR_FORTIWEB_HOSTNAME") then {
 }
 ```
 
-> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
+> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operations Center > Configure > Intakes
 > And change the `YOUR_FORTIWEB_HOSTNAME` variable with the correct value.
 
 ##### Restart Rsyslog

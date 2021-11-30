@@ -1,4 +1,4 @@
-# Operation Center: Frequently Asked Questions
+# Operations Center: Frequently Asked Questions
 
 ## Is the IP behind `intake.sekoia.io` static?
 

@@ -1,6 +1,6 @@
 # Dashboards
 
-**SEKOIA.IO’s Operation Center brings a dashboard mechanism, that is fully configurable and adaptable to all needs.**
+**SEKOIA.IO’s Operations Center brings a dashboard mechanism, that is fully configurable and adaptable to all needs.**
 
 Dashboards are composed of modular widgets that can be placed where you want. Widgets can be configured to specify the date range, applied filters, display, etc.
 
@@ -8,9 +8,9 @@ Dashboards are composed of modular widgets that can be placed where you want. Wi
 
 SEKOIA.IO comes with a pre-configured dashboard that gives a synthetic view of the current community activity, either from an operational security perspective (risk level, number of alerts, etc.) or from an activity perspective (list of last posted comments, last created alerts, etc.).
 
-![Default Dashboard of SEKOIA.IO’s Operation Center](../assets/operation_center/oc-dashboard-overview.png)
+![Default Dashboard of SEKOIA.IO’s Operations Center](../assets/operation_center/oc-dashboard-overview.png)
 
-Several of these widgets allow quick access to the relevant elements in the Operation Center.
+Several of these widgets allow quick access to the relevant elements in the Operations Center.
 
 You can manage easily the time range you want to display and the refresh period of your dashboard in the top right of the screen.
 
@@ -33,7 +33,7 @@ You also have the possibility of creating a new dashboard by copying an existing
 
 ## Provided Widgets
 
-SEKOIA.IO’s Operation Center provides several widgets:
+SEKOIA.IO’s Operations Center provides several widgets:
 
 | Widget Name                         | Description                                                                                                            | Screenshot                                                                 |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|

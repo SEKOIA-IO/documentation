@@ -33,7 +33,7 @@ In order to help users setting up this concentrator we suggest the following bas
 It will automatically configure you Rsyslog server to collect and forward Windows Event logs.
 `sudo` must be installed and set-up for the current user.
 
-> Before, connect to SEKOIA.IO Operation Center, add a Windows Intake to the relevant Entity, and note the Intake Key
+> Before, connect to SEKOIA.IO Operations Center, add a Windows Intake to the relevant Entity, and note the Intake Key
 
 ```bash
 #!/bin/bash
@@ -157,7 +157,7 @@ if ($programname startswith 'unbound') then {
         tls.caCert="/etc/rsyslog.d/SEKOIA-IO-intake.pem"
         tls.authmode="name"
         tls.permittedPeer=["relp.intake.sekoia.io"]
-        template="SEKOIAIOUnboundTemplate"        
+        template="SEKOIAIOUnboundTemplate"
     )
 }
 ```
