@@ -115,7 +115,7 @@ detection:
   keywords:
     - DangerousThreat.exe
     - powershell.exe maliciousfile.ps1
-condition: keywords
+  condition: keywords
 ```
 
 ### Maps
