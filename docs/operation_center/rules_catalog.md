@@ -75,7 +75,7 @@ The signature part corresponds to the rule itself, the detection pattern applied
   
   For CTI rules, you just have to select the source of the indicators: SEKOIA Intelligence Feed is an IOCs feed managed by SEKOIA's Purple Team (indicators present in the SEKOIA.IO Intelligence Center).
   
-  For correlation rules, SEKOIA.IO supports two languages : SIGMA and STIX Patterning. More details about this langage are given [below](rules_catalog.md#sigma).
+  For correlation rules, SEKOIA.IO supports two languages : [SIGMA](rules_catalog.md#sigma) and [STIX Patterning](rules_catalog.md#stix-patterning). More details about these languages are given below.```
 
 - **Security alerts:**
 In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
