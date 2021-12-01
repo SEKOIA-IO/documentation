@@ -96,7 +96,7 @@ detection:
   <Search-Idenfier>
     <string-list>
     <field:value>
-  <Condition>
+  condition: <Condition>
 ``` 
 
 `<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Idenfier>` can contain two different structures, lists and maps.
