@@ -86,8 +86,8 @@ In the Alert properties part, you should indicate the category and type of the a
 !!! note
     Modification of rules parameters will be applied for new alerts, raised after the compilation of the rule.
 
-## Sigma Format
-Sigma is a generic and open format available to write correlation rules. 
+## SIGMA Format
+SIGMA is a generic and open format available to write correlation rules. 
 The rule format is easy to write and applicable to any field available in ECS in the platform. The langage used is YAML.
 
 The structure is the following :
@@ -134,7 +134,7 @@ detection:
 ```
 
 ### Value Modifiers
-The values contained in Sigma rules can be modified with modifiers. Value modifiers are appended after the field name with a pipe character `|` and can be chained.
+The values contained in SIGMA rules can be modified with modifiers. Value modifiers are appended after the field name with a pipe character `|` and can be chained.
 Here is some common modifiers :
 
 * `startswith`: the value is expected at the beginning of the field's content. (replaces e.g. 'adm*')
