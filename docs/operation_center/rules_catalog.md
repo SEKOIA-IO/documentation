@@ -126,11 +126,11 @@ Multiple key/value within the same map are linked with a logical `OR` while two 
 ```
 detection:
   selection:
-    - event.type: allowed
-      destination.ip:
-      - 1.2.3.4
-      - 4.3.2.1
-condition: selection
+    event.type: allowed
+    destination.ip:
+    - 1.2.3.4
+    - 4.3.2.1
+  condition: selection
 ```
 
 ### Value Modifiers
