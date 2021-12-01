@@ -75,7 +75,7 @@ The signature part corresponds to the rule itself, the detection pattern applied
   
   For CTI rules, you just have to select the source of the indicators: SEKOIA Intelligence Feed is an IOCs feed managed by SEKOIA's Purple Team (indicators present in the SEKOIA.IO Intelligence Center).
   
-  For correlation rules, the language used is STIX Patterning. More details about this langage are given [below](rules.md#stix-patterning).
+  For correlation rules, SEKOIA.IO supports two languages : SIGMA and STIX Patterning. More details about this langage are given [below](rules_catalog.md#sigma).
 
 - **Security alerts:**
 In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
@@ -85,6 +85,98 @@ In the Alert properties part, you should indicate the category and type of the a
 
 !!! note
     Modification of rules parameters will be applied for new alerts, raised after the compilation of the rule.
+
+## Sigma Format
+Sigma is a generic and open format available to write correlation rules. 
+The rule format is easy to write and applicable to any field available in ECS in the platform. The langage used is YAML.
+
+The structure is the following :
+```
+detection:
+  <Search-Idenfier>
+    <string-list>
+    <field:value>
+  <Condition>
+``` 
+
+`<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Idenfier>` can contain two different structures, lists and maps.
+
+!!! Note
+    Currently, we set a limitation and rules can be written for only one event. Aggregation expressions are not supported yet.
+    
+For the full specification of SIGMA, please refers to the [SIGMA Github](https://github.com/SigmaHQ/sigma/wiki/Specification)
+
+### Lists
+A list contains one or more strings that will match the full event log. Multiple strings will be linked with a logicial `OR`.
+
+**Example** : Raise an alert when an event contains "DangerousThreat.exe" or "powershell.exe malicousfile.ps1"
+```
+detection:
+  keywords:
+    - DangerousThreat.exe
+    - powershell.exe maliciousfile.ps1
+condition: keywords
+```
+
+### Maps
+Maps consists of key/value pairs, in which the key is a field in ECS (Elastic Common Format). ECS is the format you can see in the `Details` tab in the `Events` page.
+Multiple key/value within the same map are linked with a logical `OR` while two different maps are linked with a logiciel `AND`.
+
+**Example** : Raise an alert when an event contains `event.type: allowed` and the destination IP is either `destination.ip: 1.2.3.4` or `destination.ip: 4.3.2.1`
+```
+detection:
+  selection:
+    - event.type: allowed
+      destination.ip:
+      - 1.2.3.4
+      - 4.3.2.1
+condition: selection
+```
+
+### Value Modifiers
+The values contained in Sigma rules can be modified with modifiers. Value modifiers are appended after the field name with a pipe character `|` and can be chained.
+Here is some common modifiers :
+
+* `startswith`: the value is expected at the beginning of the field's content. (replaces e.g. 'adm*')
+* `endswith`: the value is expected at the end of the field's content (replaces e.g. '*\cmd.exe')
+* `re`: value is handled as a regular expression.
+    
+    **Example**: To write a regular expression for the field `host.domain`, we can write `host.domain|re: <Regular_expression>`
+
+
+### Conditions
+The condition will define how the rule will be processed and the link between the different `<Search-Identifier>`.
+We can write the condition using the following expressions :
+
+- Logical AND/OR.
+
+    **Example**: `selection1 or (selection2 and selection3)`
+
+- `1/all of them`
+
+    `1 of them` will link all the `<Search-Identifier>` with a logicial OR.
+
+    `all of them` will link all the `<Search-Identifier>` with a logical AND.
+
+- `1/all of <Search-Identifier>`
+
+    `1 of <Search-Identifier>` will link all the alternatives within the `<Search-Identifier>` with a logical OR. 
+
+    `all of <Search-Identifier>` will link all the alternatives within the `<Search-Identifier>` with a logical AND.
+
+- `1/all of <Search-Identifier-Pattern>`
+
+    It is the same as `1/all of them` but restricted to the Pattern defined. The pattern is written with wildcards `*` which means any number of characters.
+
+    **Example** : Let's suppose we have 4 `<Search-Identifier>`, `selection1`, `selection2`, `selection3` and `pattern`. The condition can be `1 of selection* and pattern`.
+
+- Negation with `not`
+
+    **Example**: `selection1 and not selection2`
+
+!!! Note
+    Pipe in conditions are not supported since it is deprecated by the format.
+
 
 ## STIX Patterning
 
