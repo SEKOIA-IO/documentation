@@ -14,13 +14,13 @@ The playbooks are capable of automatically analysing and investigating all alert
 
 Create your own playbooks to build your processes. Use the SEKOIA.IO interface to interconnect your tools and implement your scenarios. Configure the execution of your playbooks by triggering them manually on the alert/case page or automatically based on multiple factors.
 
-![SEKOIA.IO Operation Center playbook overview](../assets/operation_center/playbooks/overview_playbook.png){: style="max-width:60%"}
+![SEKOIA.IO Operations Center playbook overview](../assets/operation_center/playbooks/overview_playbook.png){: style="max-width:60%"}
 
 ## Getting started with a playbook
 
 A simple way to create your playbook: you only need to name it and add a description before validating it.
 
-![SEKOIA.IO Operation Center playbook creation gif](../assets/operation_center/playbooks/create_a_playbook.gif){: style="max-width:60%"}
+![SEKOIA.IO Operations Center playbook creation gif](../assets/operation_center/playbooks/create_a_playbook.gif){: style="max-width:60%"}
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ To do it, go to `Settings > Communities > Your community > API Keys > + API Key`
 > Note: Save your new API Key in a vault. It will no longer be accessible!
 
 Now you will be able to setup a configuration for the Sekoia `Blocks`, built for you.
-Back in the Operation Center, section Playbooks:
+Back in the Operations Center, section Playbooks:
 
 - Select the trigger of your choice, for instance `Security alerts`
 - Drag and drop it into the center of your screen
@@ -75,11 +75,11 @@ If for some reason, a playbook is not working properly, it is possible to displa
 
 In the following animation, you will see an issue on the `IF Condition` where the Green overlay ceased and the output of the if un Yellow.
 
-![SEKOIA.IO Operation Center RUN Feature](../assets/operation_center/playbooks/playbook_in_error.gif){: style="max-width:60%"}
+![SEKOIA.IO Operations Center RUN Feature](../assets/operation_center/playbooks/playbook_in_error.gif){: style="max-width:60%"}
 
 An example of correct playbook workflow should be in green from the begining to the end, as followed:
 
-![SEKOIA.IO Operation Center RUN Feature 2](../assets/operation_center/playbooks/troubleshooting_running.png){: style="max-width:60%"}
+![SEKOIA.IO Operations Center RUN Feature 2](../assets/operation_center/playbooks/troubleshooting_running.png){: style="max-width:60%"}
 
 ### CODE feature
 In addition of the RUN feature, the values of the playbook execution can be displayed in section, juste `next to the RUN button`.

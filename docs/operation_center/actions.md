@@ -4,7 +4,7 @@
 
 Once the user has selected and configured a `Trigger`, most of the time an `Operator` will follow, then it is time to insert a first `Action`.
 
-![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/filter_actions.png){: style="max-width:60%"}
+![SEKOIA.IO Operations Center Filter on Actions](../assets/operation_center/playbooks/filter_actions.png){: style="max-width:60%"}
 
 The `Actions` execute specific activities depending on the needs. You will find hereafter the main `Actions` that a user will be able to use.
 
@@ -40,7 +40,7 @@ Then the user can exploit: the number of comments, uuid, created_at, created_by,
 > Note: Copy-past in the research section: `Read JSON File` to retreive the related `Block`.
 With this module, a user can collect the output of the `Action > Get an alert` when the `parameter STIX` is activated. Here is an example of use:
 
-![SEKOIA.IO Operation Center Trigger JSON File](../assets/operation_center/playbooks/json_file.png){: style="max-width:60%"}
+![SEKOIA.IO Operations Center Trigger JSON File](../assets/operation_center/playbooks/json_file.png){: style="max-width:60%"}
 
 #### Setters
 On the playbook GUI, it is possible to set `Blocks` such as Create, Update, Patch, Add, Post, Delete activities.
@@ -73,7 +73,7 @@ With the Delete `Blocks` a user will be able to:
 ##### Trigger an action on the event workflow
 Is is possible to trigger an action on an alert as explained in the webhook section. For instance the following image shows how to properly close an alert afer analysing it.
 
-![SEKOIA.IO Operation Center Trigger an alert on worksflow](../assets/operation_center/playbooks/trigger_an_action_on_the_alert_workflow.png){: style="max-width:60%"}
+![SEKOIA.IO Operations Center Trigger an alert on worksflow](../assets/operation_center/playbooks/trigger_an_action_on_the_alert_workflow.png){: style="max-width:60%"}
 
 As of today, the available action_uuid are the following :
 ```r
@@ -147,7 +147,7 @@ This module allows the analysts to receive notification in PagerDuty when a new 
 ##### Mandrill
 Email notification is available, the following example shows an automatic email sent when a new alert is raised.
 
-![SEKOIA.IO Operation Center Filter on Actions](../assets/operation_center/playbooks/mandril.png){: style="max-width:60%"}
+![SEKOIA.IO Operations Center Filter on Actions](../assets/operation_center/playbooks/mandril.png){: style="max-width:60%"}
 
 The mandatory fields are:
 

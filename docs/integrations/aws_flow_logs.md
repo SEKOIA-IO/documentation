@@ -28,7 +28,7 @@ For VPC and subnet:
 
 This part should be discussed with SEKOIA.IO people to find an appropriate solution to forward your flow logs to SEKOIA.IO.
 
-The following default record format is integrated to the Operation Center:
+The following default record format is integrated to the Operations Center:
 
 ```
 <version> <account-id> <interface-id> <srcaddr> <dstaddr> <srcport> <dstport> <protocol> <packets> <bytes> <start> <end> <action> <log-status>

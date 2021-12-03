@@ -1,6 +1,6 @@
 # Alerts Management
 
-Alerts are created by the Operation Center when any threat is detected (when an event matches a rule).
+Alerts are created by the Operations Center when any threat is detected (when an event matches a rule).
 
 ## Concepts
 
@@ -126,7 +126,7 @@ On the main alert listing, it is also possible to:
 
 By default, the alert listing displays the following information (**more information on the meaning of these fields is provided after the Alert Details section**):
 - A `Selector` so you can perform an action on multiple alerts on the same time
-- A `Similarity` counter, showing the alert was raised multiple time for the same reason, rather than simply adding a new line on the alert feed  
+- A `Similarity` counter, showing the alert was raised multiple time for the same reason, rather than simply adding a new line on the alert feed
 - Alert creation `Date`
 - Alert `Status`. When hovering over the icon, a frame indicates the status modification date and who modified it
 - The `Entity` to which the alert corresponds
@@ -138,7 +138,7 @@ By default, the alert listing displays the following information (**more informa
 > Your custom configuration will be saved in order to allow you to keep your customer filters when you will come back to this page.
 
 > For Partners, an additional filter is available in order to display all or a subset of alerts related to its managed communities.
-> The alert listing also displays the Communities related to the alerts. 
+> The alert listing also displays the Communities related to the alerts.
 
 ## Alert Details
 
@@ -192,7 +192,7 @@ It is possible to filter the timeline to display only items of a certain type.
 
 ![Alert Details Tasks](../assets/operation_center/alert_details/tasks.png){: style="width: 100%; max-width: 100%"}
 
-The Tasks tabs lists tasks and subtasks that are associated with the alert. Buttons are available to complete or reject tasks. When completing a task, you are informing the Operation Center that you have undertaken the corresponding action on your perimeter. The urgency of the alert will thereby decrease, as well as the risk indicator.
+The Tasks tabs lists tasks and subtasks that are associated with the alert. Buttons are available to complete or reject tasks. When completing a task, you are informing the Operations Center that you have undertaken the corresponding action on your perimeter. The urgency of the alert will thereby decrease, as well as the risk indicator.
 
 Subtasks can have an OpenC2 specification which can be displayed by clicking on the automation icon.
 

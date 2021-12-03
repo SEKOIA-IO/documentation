@@ -11,8 +11,8 @@ nav:
       - 2-Factors Authentication: getting_started/2fa.md
       - Search:
           - Dork Language: searching/dork.md
-          - Querying Operation Center Events: searching/search_events.md
-  - Operation Center:
+          - Querying Operations Center Events: searching/search_events.md
+  - Operations Center:
       - Overview: operation_center/index.md
       - Dashboards: operation_center/threat_exposition.md
       - Integrations:
