@@ -222,7 +222,8 @@ template(name="SEKOIAIOTroubleshoot" type="string" string="<%pri%>1 %timestamp::
 *.* /var/log/troubleshoot.log;SEKOIAIOTroubleshoot
 ```
 
-- Restart the Rsyslog service and check it's status
+- Restart the Rsyslog service and check its status
+
 ```bash
 sudo systemctl restart rsyslog.service
 sudo systemctl status rsyslog.service
