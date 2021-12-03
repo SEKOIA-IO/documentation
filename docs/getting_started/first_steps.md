@@ -1,18 +1,14 @@
 ## Getting started
 
-If you received an invitation to join a community and you do not already have an account on SEKOIA.IO, you will have to create one.
+The first time you will be added to community on SEKOIA.IO, you’ll receive an e-mail inviting you to create an account on SEKOIA.IO.
 
-When opening the invitation by clicking on 'OPEN INVITATION' button, you will arrive on the account creation page.
+After clicking on the “Join your new community” of the e-mail, the following form will be displayed:
 
 ![Account Creation Page](../assets/getting_started/account_creation.png)
 
-Fill-out the form while keeping in mind that **you won’t be able to change your username afterwards**.
+Fill-out the form with your first name, last name, a robust password and approve the terms of service by checking “I agree with the terms of service”.
 
-Check “I agree with the terms of service” and create your account.
-
-You will then have to accept the invitation to join the community.
-
-![Accept Invitation](../assets/getting_started/join_community.png)
+After clicking on “Create your account” button, you will be redirected to SEKOIA.IO.
 
 !!! note
     Your access will depend on the permissions you are granted in the community you joined.
