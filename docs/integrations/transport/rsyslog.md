@@ -206,24 +206,50 @@ Ensure the connection is `ESTABLISHED` between the Rsyslog server and SEKOIA.IO.
 sudo ss -ltp | grep syslog
 ```
 
+- Check that traffic is incoming from your log source
+```bash
+sudo tcpdump -i <change_with_interface_name> -c10 -nn src 1.1.1.1 -vv
+```
+
 If the connection is not established, and the previous statuses are operational, it is possible that a file `xx-<technology>.conf` has a mistyping.
 By experience, most of the time there is a misconfiguration in the `IF` condition.
 
 For example, if you receive the Fortigate logs in `/var/log/syslog` but not in SEKOIA.IO, you can follow those steps:
 
-- First try to log the raw events to a local file, by appending the following line in the configuration file:
+- First try to log the raw events **with the syslog header** to a local file, by appending the following line in the configuration file (/etc/rsyslog.conf or /etc/rsyslog.d/xx-<technology>.conf):
 ```bash
-*.* then /tmp/fortigate.log;SEKOIAIOFortigateTemplate
+template(name="SEKOIAIOTroubleshoot" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+*.* /var/log/troubleshoot.log;SEKOIAIOTroubleshoot
 ```
 
-- Restart the Rsyslog service
+- Restart the Rsyslog service and check its status
+
 ```bash
 sudo systemctl restart rsyslog.service
+sudo systemctl status rsyslog.service
 ```
 
-- Check if the `fortigate.log` file is created and populated
+- Check if the `troubleshoot.log` file is created and populated
 ```bash
-sudo tail /tmp/fortigate.log
+sudo tail /var/log/troubleshoot.log
 ```
+- Comment the two lines prviously added, starting with `template` et `*.*`
+    
+- Restart the Rsyslog service after 1 to 5 minutes since the `troubleshoot.log` file is begining to be populated depending on the verbosity of the asset you would like to collect. And check for its status
+```bash
+sudo systemctl restart rsyslog.service
+sudo systemctl status rsyslog.service
+```
+    
+- Search for a specific value that is only present on this technology (a field name, the name of the device...)
+```bash
+sudo cat /var/log/troubleshoot.log | grep "The_specifique_value_you_are_looking_for"
+```
+    
+- Identify the information you were looking for in the `if condition` of your `/etc/rsyslog.d/xx-<technology>.conf`
 
-- Then edit your configuration file by adding the `if condition` step by step
+You should see log lines starting with the syslog header like `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]` followed by the message itself.
+
+The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or withou NAT) or the real Hostname of the source machine. 
+    
+- Then edit your configuration file by adding the `if condition` step by step, and verify you apply the right template with your Intake Key
