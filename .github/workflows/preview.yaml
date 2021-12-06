@@ -25,11 +25,11 @@ jobs:
           source: src/sekoiaio.scss
           destination: docs/stylesheets/sekoiaio.css
 
-      - name: Install Docs-Mkdocs
-        run: pip install -r requirements.txt
-
       - name: Build site
-        run: mkdocs build
+        run: |
+          pip install poetry
+          poetry install
+          poetry run mkdocs build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.0-1
