@@ -7,12 +7,13 @@ jobs:
     name: Preview docs.sekoia.io
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout main
+
+      - name: Checkout main
         uses: actions/checkout@v2
 
       - name: Setup Python
         uses: actions/setup-python@v2
+        id: setup-python
         with:
           python-version: '3.8'
 
@@ -25,11 +26,27 @@ jobs:
           source: src/sekoiaio.scss
           destination: docs/stylesheets/sekoiaio.css
 
-      - name: Install Docs-Mkdocs
-        run: pip install -r requirements.txt
+      - name: Install Poetry
+        run: |
+          pip install poetry
+          poetry config virtualenvs.in-project true
+
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: poetry-${{ runner.os }}-python${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('poetry.lock') }}
+          restore-keys: |
+            poetry-${{ runner.os }}-python${{ steps.setup-python.outputs.python-version }}
+
+      - name: Install dependencies
+        run: |
+          poetry install
 
       - name: Build site
-        run: mkdocs build
+        run: |
+          poetry run python -m mkdocs build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.0-1
