@@ -9,7 +9,7 @@ Prerequisites:
 - Priviledge account on the Graylog server
 
 ## Installation procedure
-1. Download the JAR file [here][https://github.com/SekoiaLab/graylog-http-plugin/releases/download/].
+1. Download the JAR file [here](https://github.com/SekoiaLab/graylog-http-plugin/releases/).
 2. Copy the JAR file in your Graylog plugin directory.
 3. Restart `graylog-server` and you are done.
 
