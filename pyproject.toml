@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "sekoiaio-documentation"
+description = "An MkDocs server for SEKOIA.IO public Markdown documentation"
+version = "1.0"
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mkdocs = "^1.0.0"
+mkdocs-material = "^7.0.0"
+mkdocs-redirects = "^1.0.3"
+
+[build-system]
+requires = [ "poetry-core>=1.0.0",]
+build-backend = "poetry.core.masonry.api"

@@ -7,11 +7,15 @@ nav:
       - Overview: getting_started/index.md
       - First steps: getting_started/first_steps.md
       - Inviting users to join your community: getting_started/inviting_users_to_join_your_community.md
-      - API Key creation: getting_started/apikey_creation.md
-      - 2-Factors Authentication: getting_started/2fa.md
       - Search:
           - Dork Language: searching/dork.md
           - Querying Operations Center Events: searching/search_events.md
+  - User Center:
+      - Overview: user_center/index.md
+      - Account Settings: user_center/account_settings.md
+      - Multi-factor authentication: user_center/multi_factor_authentication.md
+      - Notifications: user_center/notifications.md
+      - API Key creation: user_center/apikeys.md
   - Operations Center:
       - Overview: operation_center/index.md
       - Dashboards: operation_center/threat_exposition.md
@@ -99,7 +103,6 @@ nav:
           - Observables: intelligence_center/observables.md
           - Data Export: intelligence_center/data_export.md
   - API Documentation: /apis
-  - What’s New?: releases
   - Support: https://support.sekoia.io
 
 theme:
@@ -137,3 +140,9 @@ markdown_extensions:
       linenums_style: pymdownx-inline
   - pymdownx.superfences
   - pymdownx.tabbed
+
+plugins:
+  - redirects:
+      redirect_maps:
+        'getting_started/apikey_creation.md': 'user_center/apikeys.md'
+        'getting_started/2fa.md': 'user_center/multi_factor_authentication.md'

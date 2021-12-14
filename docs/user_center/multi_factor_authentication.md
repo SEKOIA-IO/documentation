@@ -1,4 +1,4 @@
-#Securing your SEKOIA account with two-factor authentication
+# Securing your SEKOIA.IO account with two-factor authentication
 
 **Two-factor authentication** adds additional security to your SEKOIA account by requiring a second step to sign in. It requires you to give a 6-digit verification code generated from your phone in addition to your username and password login.
 

@@ -29,9 +29,9 @@ Once you are logged in into SEKOIA.IO, you can navigate through the platform usi
 
 ### User preferences
 
-In the “settings” page, accessible by clicking on your avatar picture, you can edit your profile information like your name, company’s name and avatar. You can define your picture profile by either uploading a PNG file, asks to use your Gravatar or use your initials for your profile picture.
+In the “settings” page, accessible by clicking on your user picture, you can edit your profile information like your first name, last name and company name. You can define your picture profile by uploading a PNG file.
 
-You can also enable [2-Factor Authentication](2fa.md) for your account or control your privacy by activating or deactivating an opt-out cookie.
+You can also enable [2-Factor Authentication](../user_center/multi_factor_authentication.md) for your account or control your privacy by activating or deactivating an opt-out cookie.
 
 All of these preferences are available through the contextual menu by clicking on “Settings”.
 
