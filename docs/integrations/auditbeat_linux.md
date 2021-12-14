@@ -96,6 +96,13 @@ auditbeat.modules:
   - /sbin
   - /usr/sbin
   - /etc
+  - /var/spool/cron/crontabs
+  - /etc/cron.d
+  - /etc/cron.daily
+  - /etc/cron.hourly
+  - /etc/cron.monthly
+  - /etc/cron.weekly
+
 
   scan_at_start: true
   scan_rate_per_sec: 50 MiB
