@@ -62,6 +62,8 @@ nav:
               - PaloAlto: integrations/paloalto.md
               - Postfix: integrations/postfix.md
               - Pulse Connect Secure: integrations/pulse.md
+              - SentinelOne: integrations/sentinelone.md
+              - SentinelOne Deep Visibility: integrations/sentinelone_deepvisibility.md
               - Sophos: integrations/sophos.md
               - SpamAssassin: integrations/spamassassin.md
               - Squid: integrations/squid.md
