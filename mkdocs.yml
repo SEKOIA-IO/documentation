@@ -142,6 +142,7 @@ markdown_extensions:
   - pymdownx.tabbed
 
 plugins:
+  - search:
   - redirects:
       redirect_maps:
         'getting_started/apikey_creation.md': 'user_center/apikeys.md'
