@@ -4,9 +4,9 @@ SEKOIA.IO’s User Center let you configure “Notification Rules” so you can 
 
 Notifications Rules will let you:
 
-- Focus on specific SEKOIA.IO events (Operations Center alerts and Intelligence Center reports)
-- Add precise conditions
-- Configure actions to be triggered (send an e-mail, display a notification in SEKOIA.IO...)
+- Focus on specific SEKOIA.IO events (Operations Center alerts and Intelligence Center reports).
+- Add precise conditions.
+- Configure actions to be triggered (send an e-mail, display a notification in SEKOIA.IO, …).
 
 ![Create a New Notification Rule](../assets/user_center/notification_rules.png)
 
