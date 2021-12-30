@@ -1,10 +1,22 @@
 # User Center: Notification Rules
 
-SEKOIA.IO’s User Center let you configure “Notification Rules” so you can be kept informed of new activities that happens on SEKOIA.IO. Notifications Rules will let you focus on specific SEKOIA.IO events (Operations Center alerts and Intelligence Center reports), add precise conditions and configure actions to be triggered (send an e-mail, display a notification in SEKOIA.IO, etc.).
+SEKOIA.IO’s User Center let you configure “Notification Rules” so you can be kept informed of new activities that happens on SEKOIA.IO. 
+
+Notifications Rules will let you:
+
+- Focus on specific SEKOIA.IO events (Operations Center alerts and Intelligence Center reports).
+- Add precise conditions.
+- Configure actions to be triggered (send an e-mail, display a notification in SEKOIA.IO, …).
 
 ![Create a New Notification Rule](../assets/user_center/notification_rules.png)
 
 This documentation will let you go deeper into SEKOIA.IO’s notification mechanism.
+
+Each notification mechanism, once created, can be modified, duplicated, deleted and (de)activated from the main Notification page of the User Center.
+
+A search bar and filters are available on this same page.
+
+![List Notification Rules](../assets/user_center/notification_list.png)
 
 ## Available Conditions
 
@@ -44,7 +56,12 @@ The “Notification” action allows you to send an “in-app” notification th
 
 ### E-Mail Notification
 
-The “E-mail notification” will let you send an e-mail to an arbitrary address with the notification content and a link to SEKOIA.IO. You can also configure your rule to add more contextual information related to your alert (send information about the rule that raised an alert, impacted asset, etc.).
+The “E-mail notification” will let you send an e-mail to an arbitrary address with the two differents options:
+
+- By default, simple notification content will be sent with a link to SEKOIA.IO page corresponding of the Condition(s) set-up.
+- If you toggle the ”Enrich email with contextual infos” button, more contextual information related to your alert will be communicated, such as displayed hereafter.
+
+![Enriched email notification example](../assets/user_center/enriched_email_notification_example.png)
 
 ### Mattermost Notification
 
