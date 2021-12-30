@@ -58,8 +58,8 @@ The “Notification” action allows you to send an “in-app” notification th
 
 The “E-mail notification” will let you send an e-mail to an arbitrary address with the two differents options:
 
-- By default: Simple notification content will be sent with a link to SEKOIA.IO page corresponding of the Condition(s) set-up.
-- If you toggle the `Enrich email with contextual infos` button: More contextual information related to your alert will be communicated, such as displayed hereafter:
+- By default, simple notification content will be sent with a link to SEKOIA.IO page corresponding of the Condition(s) set-up.
+- If you toggle the ”Enrich email with contextual infos” button, more contextual information related to your alert will be communicated, such as displayed hereafter.
 
 ![Enriched email notification example](../assets/user_center/enriched_email_notification_example.png)
 
