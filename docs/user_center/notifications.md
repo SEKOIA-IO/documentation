@@ -1,6 +1,7 @@
 # User Center: Notification Rules
 
 SEKOIA.IO’s User Center let you configure “Notification Rules” so you can be kept informed of new activities that happens on SEKOIA.IO. 
+
 Notifications Rules will let you:
 
 - Focus on specific SEKOIA.IO events (Operations Center alerts and Intelligence Center reports)
