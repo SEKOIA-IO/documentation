@@ -10,12 +10,6 @@ nav:
       - Search:
           - Dork Language: searching/dork.md
           - Querying Operations Center Events: searching/search_events.md
-  - User Center:
-      - Overview: user_center/index.md
-      - Account Settings: user_center/account_settings.md
-      - Multi-factor authentication: user_center/multi_factor_authentication.md
-      - Notifications: user_center/notifications.md
-      - API Key creation: user_center/apikeys.md
   - Operations Center:
       - Overview: operation_center/index.md
       - Dashboards: operation_center/threat_exposition.md
@@ -102,6 +96,12 @@ nav:
           - Graph Explorations: intelligence_center/graph_explorations.md
           - Observables: intelligence_center/observables.md
           - Data Export: intelligence_center/data_export.md
+  - User Center:
+      - Overview: user_center/index.md
+      - Account Settings: user_center/account_settings.md
+      - Multi-factor authentication: user_center/multi_factor_authentication.md
+      - Notifications: user_center/notifications.md
+      - API Key creation: user_center/apikeys.md
   - API Documentation: /apis
   - Support: https://support.sekoia.io
 
