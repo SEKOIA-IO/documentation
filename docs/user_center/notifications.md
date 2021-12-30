@@ -12,7 +12,8 @@ Notifications Rules will let you:
 
 This documentation will let you go deeper into SEKOIA.IO’s notification mechanism.
 
-Each notification mechanism once created, can be modified, duplicated, deleted and (de)activated from the main Notification page of the User Center.
+Each notification mechanism, once created, can be modified, duplicated, deleted and (de)activated from the main Notification page of the User Center.
+
 A search bar and filters are available on this same page.
 
 ![List Notification Rules](../assets/user_center/notification_list.png)
