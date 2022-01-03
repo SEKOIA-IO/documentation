@@ -75,6 +75,8 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 - [PaloAlto](paloalto.md)
 - [Postfix](postfix.md)
 - [Pulse Connect Secure](pulse.md)
+- [SentinelOne](sentinelone.md)
+- [SentinelOne Deep Visibility](sentinelone_deepvisibility.md)
 - [Sophos](sophos.md)
 - [SpamAssassin](spamassassin.md)
 - [Squid](squid.md)
