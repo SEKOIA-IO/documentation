@@ -2,7 +2,7 @@
 
 ## Search
 
-The [Events page](https://app.sekoia.io/sic/events) exposes a search capability to investigate and hunt on your events. The search queries must follow the [dork language](dork.md). Type your search query in the box above the list of events to find expected events.
+The [Events page](https://app.sekoia.io/operations/events) exposes a search capability to investigate and hunt on your events. The search queries must follow the [dork language](dork.md). Type your search query in the box above the list of events to find expected events.
 
 
 ### Fields

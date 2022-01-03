@@ -28,7 +28,7 @@ nav:
                   - Flow Logs: integrations/aws_flow_logs.md
               - Microsoft Azure:
                   - Azure Active Directory: integrations/azure_ad.md
-                  - Azure Mysql: integrations/azure_mysql.md
+                  - Azure MySQL: integrations/azure_mysql.md
                   - Azure Linux machines: integrations/azure_linux.md
                   - Azure Network Watcher: integrations/azure_network_watcher.md
                   - Azure Windows machines: integrations/azure_windows.md
