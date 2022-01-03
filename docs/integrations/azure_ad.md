@@ -42,7 +42,7 @@ Navigate to: `Home > Azure Active Directory (e.g. company-ad) > Monitoring > Dia
 ### Enjoy your events
 You can send to Sekoia the `Connection string-primary key` previously mentioned.
 
-Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
 
 ## Further Readings
 - [Microsoft Github diagnostic Active Directory documentation](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)

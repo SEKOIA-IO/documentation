@@ -16,7 +16,7 @@ This setup guide will show you how to forward events produced by a Windows syste
 
 ### Configure the forwarder through rsyslog
 
-#### Rsyslog setup on Linux Server 
+#### Rsyslog setup on Linux Server
 
 ##### Download the certificate
 In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
@@ -33,7 +33,7 @@ sudo vim /etc/rsyslog.d/15-windows.conf
 
 Paste the following rsyslog configuration to trigger the emission of windows logs by your rsyslog server to SEKOIA.IO:
 ```bash
-# Define the SEKIOA-IO intake certificate 
+# Define the SEKIOA-IO intake certificate
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
 # Configure up the network ssl connection
@@ -58,5 +58,4 @@ sudo service rsyslog restart
 ```
 
 ### 3. Enjoy your events
-Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
-
+Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

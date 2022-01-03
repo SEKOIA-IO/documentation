@@ -55,7 +55,7 @@ $ sudo service rsyslog restart
 ```
 
 ### Enjoy your events
-Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
 
 
 ## Related files

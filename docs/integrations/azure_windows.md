@@ -142,7 +142,7 @@ If you do not know how to use and configure it, please check [SwiftOnSecurity gi
 ### Enjoy your events
 You can send to Sekoia the `Connection string-primary key` previously mentioned.
 
-Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
 
 ## Further Readings
 

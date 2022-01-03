@@ -133,4 +133,4 @@ sudo systemctl restart rsyslog.service
 
 ## Enjoy your events
 
-Go to the [events page](/sic/events) to watch your incoming events.
+Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

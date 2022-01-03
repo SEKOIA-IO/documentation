@@ -3,7 +3,7 @@ name: harfanglab
 
 ## Overview
 
-HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020. 
+HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020.
 
 This setup guide will show you how to forward events produced by HarfangLab EDR to SEKOIA.IO.
 
@@ -42,4 +42,4 @@ Finaly select the `Protocol` option: `TCP/SSL`, leave the other options to defau
 
 ## Enjoy your events
 
-Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

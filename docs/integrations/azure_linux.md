@@ -185,7 +185,7 @@ PS Azure:\> az vm extension set --publisher Microsoft.Azure.Diagnostics --name L
 ### Enjoy your events
 You can send to Sekoia the `Connection string-primary key` previously mentioned.
 
-Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
 
 ## Further Readings
 - [Microsoft Github linux diagnostic extension documentation](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/extensions/diagnostics-linux.md)
