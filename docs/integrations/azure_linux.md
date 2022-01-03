@@ -2,45 +2,79 @@ uuid: 162064f0-c594-455e-ac24-2d7129137688
 name: Azure Linux
 
 ## Overview
+
 Azure Virtual Machines service is developed and managed by Microsoft Corp.
 
 ## Setup
+
 This setup guide will show you how to forward events produced by a Linux Virtual Machine hosted on Azure platform to SEKOIA.IO.
 
-### Event hubs
-These explanations are made from the Azure web portal (https://portal.azure.com).
+Theses changes have to be made from the [Azure Web Portal](https://portal.azure.com).
 
-As a prerequisite you need an `Event Hubs` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
-You also need your `Subscription ID` if you don't have a default one.
+### Azure Event Hubs
 
-Navigate to: `Home > Cost Management + Billing > Subscriptions`. From there, copy the relevant `Subscription ID` that will be used in the command line (e.g. uuid)
+As a prerequisite, you need to choose an existing “resource group”, or create a new one (e.g. `company-resource-group`).
 
-Then you use Azure powershell (within Cloud Shell interface for example): you will a create a global `Event Hubs`, then specific `Event Hub` (e.g. linux-event).
+#### Retrieve your Subscription ID
+
+You also need your “Subscription ID” if you don't have a default one. In Azure Web Portal, navigate to: “Home”, “Cost Management + Billing”, ”Subscriptions”. From there, copy the relevant “Subscription ID” that will be used in the command line (e.g. `uuid`)
+
+#### Create the Event Hubs
+
+Use Azure PowerShell (within Cloud Shell interface for example) to create a namespace (e.g. `company-eventhub`) and a specific `Event Hub` (e.g. `linux-event`) within your “resource group” (e.g. `company-resource-group`)
 
 ```powershell
 PS Azure:\> az eventhubs namespace create --name company-eventhub --resource-group company-resource-group --enable-kafka true --subscription uuid
+```
 
+```powershell
 PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group --namespace-name company-eventhub --name linux-event --message-retention 3 --partition-count 4 --subscription uuid
 ```
 
-Navigate to: `Home > Event Hubs > company-eventhub - Shared access policies`. From there, you can create a policy (e.g. RootManageSharedAccessKey) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
+!!! info
+    Please replace :
+    - `company-resource-group` with the name of your “resource group”.
+    - `uuid` with your subscription ID retrieved previously (see below).
 
-Navigate to: `Home > Event Hubs > company-eventhub > linux-event - Shared access policies`. From there, you can create a policy (e.g. sekoiaio-nifi) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
+#### Create “Shared Access Policies”
 
-Navigate to: `Home > Event Hubs > company-eventhub > linux-event - Consumer groups`. From there, you can create a consumer group (e.g. sekoiaio-nifi).
+1. Navigate to “Home”, “Event Hubs”, “company-eventhub - Shared access policies”. From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
+2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “linux-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
+3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”linux-event - Consumer groups”. From there, you can create a consumer group (e.g. `sekoiaio`).
+
+#### Create a Blob Storage for Checkpointing
+
+In order to allow SEKOIA.IO keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
+
+To proceed, you can use Azure PowerShell:
+
+```powershell
+PS Azure:\> az storage account create --name "company-sekoiaiocheckpoint" --resource-group "company-resource-group"
+```
+
+```powershell
+PS Azure:\> az storage container create --name "linux-event" --account-name "company-sekoiaiocheckpoint"
+```
+
+!!! info
+    The container name, here `linux-event` should be the same as the Event Hub’s one.
+    You also need to replace `company-resource-group` with the name of your “resource group”.
+
+Finally, you have to retrieve the connection string from Azure Web Portal by going in “Storage Accounts”, then in the created storage (`sekoiaiocheckpoint`) and finally in the “Access Keys” section. After clicking on “Show keys”, you can copy the first of the two connection strings.
 
 ### Linux Virtual Machine
+
 You need to activate and configure the diagnostic extension `LinuxDiagnostic`.
-Navigate to: `Home > Virtual machines > virtual machine name (e.g. company-linux) > Settings > Extensions`. Install it and note the new `StorageAccount` name created (e.g. company-storage-account).
 
-Navigate to: `Home > Storage accounts > company-storage-account - Access keys`. From there you can note the key value later used as the `storageAccountKey`.
+1. Navigate to “Home”, “Virtual machines”, “virtual machine name (e.g. company-linux)”, “Settings” and “Extensions”. Install it and note the new `StorageAccount` name created (e.g. `company-storage-account`).
+2. Navigate to “Home”, “Storage accounts”, “company-storage-account”, “Access keys”. From there you can note the key value later used as the `storageAccountKey`.
+3. Navigate to “Home”, “Storage accounts”, “company-storage-account”, “Shared access signature”. From there set the expiration date with caution, then click on “Generate SAS and connection string”. You should note the `SAS token` value later used (starting with `sv?=`).
 
-Navigate to: `Home > Storage accounts > company-storage-account - Shared access signature`. From there set the expiration date with caution, then click on `Generate SAS and connection string`. You should note the `SAS token` value later used (starting with sv?=).
-
-Navigate to: `Home > All resources`. From there you can note the `resourceId` associated to your linux virtual machine.
+Navigate to “Home”, “All resources”. From there you can note the `resourceId` associated to your linux virtual machine.
 
 You need to create two configuration files `public_settings.json` and `protected_settings.json`.
-Once again you need Azure powershell to do it using your favorite text editor:
+
+Once again you need Azure PowerShell to do it using your favorite text editor:
 
 ```powershell
 PS Azure:\> vim public_settings.json
@@ -182,11 +216,19 @@ Finally you could push the change of the diagnostic extension configuration (ada
 PS Azure:\> az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group company-resource-group --vm-name company-linux --protected-settings protected_settings.json --settings public_settings.json --subscription uuid
 ```
 
-### Enjoy your events
-You can send to Sekoia the `Connection string-primary key` previously mentioned.
+### Forward the Connection Keys to SEKOIA.IO
 
-Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
+Finally, please send to SEKOIA.IO the following information:
+
+- Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=linux-event"`).
+- Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
+- Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=company-sekoiaiocheckpoint;AccountKey=XXXXX"`).
+
+### Enjoy your events
+
+Once the configuration has been done on SEKOIA.IO side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
 
 ## Further Readings
+
 - [Microsoft Github linux diagnostic extension documentation](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/extensions/diagnostics-linux.md)
 - [Linkedin post](https://www.linkedin.com/pulse/how-send-syslog-messages-from-azure-linux-vms-eventhub-adrian-corona/)
