@@ -24,15 +24,21 @@ TEMPLATE = string.Template("""
 
     redoc {
         display: block;
+        isolation: isolate;
     }
+
 </style>
 <div>
-<redoc spec-url='$path' nativeScrollbars></redoc>
+<div class="self-contained-css">
+<redoc spec-url='$path' expand-responses="200" hide-hostname></redoc>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js" native-scrollbars disable-search> </script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"> </script>
 </script>
 <script>
     document.getElementsByTagName('article')[0].classList.add('api')
+    document.getElementsByTagName('article')[0].classList.remove('md-typeset')
+    document.querySelector('.api h1').remove()
 </script>
 """)
 

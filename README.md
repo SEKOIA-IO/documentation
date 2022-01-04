@@ -16,5 +16,7 @@ The service relies on the [MkDocs](https://www.mkdocs.org/) Python framework hel
 $ mkdir -p docs/stylesheets/ && sassc src/sekoiaio.scss docs/stylesheets/sekoiaio.css
 $ pip install poetry
 $ poetry install
+$ python setup.py build
+$ python setup.py install
 $ poetry run mkdocs serve
 ```
