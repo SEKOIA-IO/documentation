@@ -48,19 +48,12 @@ jobs:
         run: |
           poetry run python -m mkdocs build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.7.0-1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          destination_dir: ./${{ github.event.number }}
-          publish_dir: ./site
-          publish_branch: gh-pages
-          keep_files: true
+      - name: Save PR number
+        run: |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./site/NR
 
-      - name: Add comment to PR
-        uses: peter-evans/create-or-update-comment@v1
+      - uses: actions/upload-artifact@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.number }}
-          body: |
-            Newest code from ${{ github.actor}} has been published to [preview environment](https://sekoia-io.github.io/documentation/${{ github.event.number }}/)
+          name: site
+          path: site/
