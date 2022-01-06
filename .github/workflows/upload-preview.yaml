@@ -39,9 +39,10 @@ jobs:
         id: pr_number
         run: echo "::set-output name=pr_number::$(cat site/.pr_number)"
 
-      - run: |
-          sudo apt install -y python3-swiftclient
-          swift upload sekoiaio-documentation-previews site --object-name ${{ steps.pr_number.outputs.pr_number }}
+      - name: OVH Object Storage
+        uses: StephaneBour/actions-ovh-storage@1.0
+        with:
+          args: upload sekoiaio-documentation-previews site --object-name ${{ steps.pr_number.outputs.pr_number }}
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
