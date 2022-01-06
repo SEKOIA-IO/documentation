@@ -32,7 +32,7 @@ jobs:
             });
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/site.zip', Buffer.from(download.data));
-      - run: unzip pr.zip
+      - run: unzip site.zip
 
       - name: Get PR number
         id: pr_number
