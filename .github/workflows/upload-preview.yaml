@@ -35,7 +35,7 @@ jobs:
       - run: |
           mkdir site
           cd site
-          unzip site.zip
+          unzip ../site.zip
 
       - name: Get PR number
         id: pr_number
