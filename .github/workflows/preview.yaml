@@ -56,3 +56,57 @@ jobs:
         with:
           name: site
           path: site/
+
+  upload:
+    name: UPLOAD
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: site
+
+      - run: |
+          unzip -d site site.zip
+
+      - name: Get PR number
+        id: pr_number
+        run: echo "::set-output name=pr_number::$(cat site/.pr_number)"
+
+      - name: OVH Object Storage
+        uses: StephaneBour/actions-ovh-storage@1.0
+        with:
+          args: upload sekoiaio-documentation-previews site --object-name ${{ steps.pr_number.pr_number }}
+        env:
+          OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
+          OS_IDENTITY_API_VERSION: 3
+          OS_TENANT_ID: ${{ secrets.PR_OS_TENANT_ID }}
+          OS_TENANT_NAME: ${{ secrets.PR_OS_TENANT_NAME }}
+          OS_USERNAME: ${{ secrets.PR_OS_USERNAME }}
+          OS_PASSWORD: ${{ secrets.PR_OS_PASSWORD }}
+          OS_REGION_NAME: "GRA"
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ steps.pr_number.pr_number }}
+          comment-author: github-actions[bot]
+          body-includes: Newest code from ${{ github.actor}} has been published to
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%F %H:%M:%S')"
+
+      - name: Add comment to PR
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ steps.pr_number.pr_number }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            Newest code from ${{ github.actor}} has been published to [preview environment](https://storage.gra.cloud.ovh.net/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews/${{ steps.pr_number.pr_number }}/)
+
+            :rocket: Latest deployment was built on ${{ steps.date.outputs.date }} ([${{ github.sha }}](https://github.com/SEKOIA-IO/documentation/commit/${{ github.sha }}).
