@@ -22,7 +22,7 @@ jobs:
                run_id: ${{github.event.workflow_run.id }},
             });
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "pr"
+              return artifact.name == "site"
             })[0];
             var download = await github.actions.downloadArtifact({
                owner: context.repo.owner,
