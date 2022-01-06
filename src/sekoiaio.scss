@@ -52,9 +52,16 @@
         counter-reset: side-bar-counter;
         & > li {
             counter-increment: side-bar-counter;
-            & > a::before {
-                content: counter(side-bar-counter) ".";
-                font-weight: bold;
+            padding-left: 0.2rem;
+
+            & > a {
+                justify-content: inherit;
+
+                &::before {
+                    content: counter(side-bar-counter) ".";
+                    font-weight: bold;
+                    margin-right: 0.3em;
+                }
             }
         }
     }
