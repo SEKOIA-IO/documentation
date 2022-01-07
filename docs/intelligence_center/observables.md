@@ -1,6 +1,10 @@
 # Observables
 ## What is interesting about the Observables page?
-This page provides a quick and efficient search engine for technical information available within the Intelligence Center.
+An observable is a technical information that can detect a potential threat.
+They are derived from all data contained in the Intelligence Center but are not always contextualized.
+If an observable cleary represents a malicious activity, then it is considered as an IoC.
+
+This page provides a quick and efficient search engine for all the technical information available within the Intelligence Center, observables and IoC.
 
 ## Use Case
 A classic use case is when you are looking for any information regarding an IP address, domain name, url or file hash. It will give you an answer with the potential related threat or/and associated tag. 
@@ -12,7 +16,7 @@ Tag information has a time validity and provides some technical enrichment depen
 Technical information is automatically extracted from various sources: public, subscriptions, partners, SEKOIA internal analysis.
 Depending of the source, a tag name could be associated with a `valid_from` and `valid_until` timestamp, providing an up-to-date technical information directly integrated to the Intelligence Center database: an IP address could be enriched with the tag `scanner` once, then have the tag expired if that IP address scanning activity is no longer observed.
 
-An observable also have relationships with other observables: an IP address could `belongs-to` an subnet object, and have a url `hosted-on`. It could become an indicator of compromise with its associated threat (e.g. malware, campaign).
+An observable also has relationships with other observables: an IP address could `belongs-to` an subnet object, and have a url `hosted-on`. It could become an indicator of compromise with its associated threat (e.g. malware, campaign).
 
 ## The main features of the observables page
 ### Type (examples)
@@ -82,6 +86,3 @@ When clicking on an Observable, a dedicated page will display information, raw o
 You found some domain names during an investigation and you want to know if those observables are known in the Intelligence Center and if there is more context to it.
 Simply paste the domain names into the search fields and hit enter.
 In the `Known` tab you will find observables known in the Intelligence Center and some context over it if there is some. The `Unknown` tab will contain the observables never seen in the Intelligence Center.
-
-## Observable vs IoC (Indicator of Compromise)
-Observable are derived from all data contained in the Intelligence Center, they are not always contextualized. On the other hand, IoCs represent malicious activity link to a Campaign, an Intrusion Set, a Malware, a Tool, a TTP or an infrastructure of attack.
