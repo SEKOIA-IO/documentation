@@ -191,7 +191,7 @@ The Windows Event Forwarder, also known as WEF is a Microsoft service that can b
 - Start the WinRM service (run as Administrator)
 - Add the Network Service account to the built-in Event Log Readers security group. As show hereafter:
 
-![SEKOIA.IO Operation Center Windows WEF](../assets/wef_client_config.png){: style="max-width:60%"}
+![SEKOIA.IO Operations Center Windows WEF](../assets/wef_client_config.png){: style="max-width:60%"}
 
 ##### Configure the Windows Remote Management
 On the AD admin console, open a command interpretor as Administrator, and run the following command:
@@ -323,7 +323,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
   Exec $Message = to_json();
 </Input>
 
-<Output sekoia_intake>
+<Output rsyslog>
   Module om_ssl
   Host intake.sekoia.io
   Port 10514
@@ -336,7 +336,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 </Output>
 
 <Route eventlog_to_sekoia_intake>
-  Path eventlog => sekoia_intake
+  Path eventlog => rsyslog
 </Route>
 ```
 
@@ -390,7 +390,7 @@ if ($syslogtag contains 'Microsoft-Windows') then {
 }
 ```
 
-> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
+> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operations Center > Configure > Intakes
 
 ##### Restart Rsyslog
 
@@ -437,7 +437,7 @@ In order to monitor the common ones (Application, System, Security) and Sysmon, 
 
 
 ## Enjoy your events
-Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
 
 ## Related files
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)

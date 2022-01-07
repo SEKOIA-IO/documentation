@@ -64,7 +64,7 @@ $ sudo service rsyslog restart
 
 ### Enjoy your events
 
-Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
 
 ## Further Readings
 - [CISCO Umbrella User Guide - Logs Management](https://docs.umbrella.com/deployment-umbrella/docs/log-management)

@@ -1,6 +1,6 @@
 # Alerts Management
 
-Alerts are created by the Operation Center when any threat is detected (when an event matches a rule).
+Alerts are created by the Operations Center when any threat is detected (when an event matches a rule).
 
 ## Concepts
 
@@ -37,66 +37,66 @@ The Alert Type is associated with the rule, but can be changed with the value as
 The Alert Type is defined according to a custom set of values derived from theReference Incident Classification Taxonomy of ENISA:
 
 - abusive-usage
-  - bandwidth-download
-  - bandwidth-upload
-  - p2p
-  - high-drop
+	- bandwidth-download
+	- bandwidth-upload
+	- p2p
+	- high-drop
 - abusive-content
-  - spam
-  - harmfull-speech
-  - violence
+	- spam
+	- harmfull-speech
+	- violence
 - malicious-code
-  - virus
-  - worm
-  - trojan
-  - spyware
-  - dialer
-  - rootkit
-  - malware
-  - botnet-drone
-  - ransomware
-  - malware-configuration
-  - c&c
+	- virus
+	- worm
+	- trojan
+	- spyware
+	- dialer
+	- rootkit
+	- malware
+	- botnet-drone
+	- ransomware
+	- malware-configuration
+	- c&c
 - information-gathering
-  - scanner
-  - sniffing
-  - social-engineering
-  - portscan
-  - sweepscan
-  - appscan
+	- scanner
+	- sniffing
+	- social-engineering
+	- portscan
+	- sweepscan
+	- appscan
 - intrusion-attempts
-  - ids-alert
-  - brute-force
-  - exploit
+	- ids-alert
+	- brute-force
+	- exploit
 - intrusions
-  - privileged-account-compromise
-  - unprivileged-account-compromise
-  - application-compromise
-  - bot
-  - defacement
-  - compromised
-  - backdoor
+	- privileged-account-compromise
+	- unprivileged-account-compromise
+	- application-compromise
+	- bot
+	- defacement
+	- compromised
+	- backdoor
 - availability
-  - dos
-  - ddos
-  - sabotage
-  - outage
+	- dos
+	- ddos
+	- sabotage
+	- outage
 - information-content-security
-  - Unauthorised-information-access
-  - Unauthorised-information-modification
+	- Unauthorised-information-access
+	- Unauthorised-information-modification
 - fraud
-  - unauthorized-use-of-resources
-  - copyright
-  - masquerade
-  - phishing
+	- unauthorized-use-of-resources
+	- copyright
+	- masquerade
+	- phishing
 - vulnerable
-  - vulnerable-service
+	- vulnerable-service
 - other
-  - blacklist
-  - unknown
-  - other
+	- blacklist
+	- unknown
+	- other
 - test
-  - test
+	- test
 
 ## Alert List
 
@@ -126,7 +126,7 @@ On the main alert listing, it is also possible to:
 
 By default, the alert listing displays the following information (**more information on the meaning of these fields is provided after the Alert Details section**):
 - A `Selector` so you can perform an action on multiple alerts on the same time
-- A `Similarity` counter, showing the alert was raised multiple time for the same reason, rather than simply adding a new line on the alert feed  
+- A `Similarity` counter, showing the alert was raised multiple time for the same reason, rather than simply adding a new line on the alert feed
 - Alert creation `Date`
 - Alert `Status`. When hovering over the icon, a frame indicates the status modification date and who modified it
 - The `Entity` to which the alert corresponds
@@ -138,7 +138,7 @@ By default, the alert listing displays the following information (**more informa
 > Your custom configuration will be saved in order to allow you to keep your customer filters when you will come back to this page.
 
 > For Partners, an additional filter is available in order to display all or a subset of alerts related to its managed communities.
-> The alert listing also displays the Communities related to the alerts. 
+> The alert listing also displays the Communities related to the alerts.
 
 ## Alert Details
 
@@ -192,7 +192,7 @@ It is possible to filter the timeline to display only items of a certain type.
 
 ![Alert Details Tasks](../assets/operation_center/alert_details/tasks.png){: style="width: 100%; max-width: 100%"}
 
-The Tasks tabs lists tasks and subtasks that are associated with the alert. Buttons are available to complete or reject tasks. When completing a task, you are informing the Operation Center that you have undertaken the corresponding action on your perimeter. The urgency of the alert will thereby decrease, as well as the risk indicator.
+The Tasks tabs lists tasks and subtasks that are associated with the alert. Buttons are available to complete or reject tasks. When completing a task, you are informing the Operations Center that you have undertaken the corresponding action on your perimeter. The urgency of the alert will thereby decrease, as well as the risk indicator.
 
 Subtasks can have an OpenC2 specification which can be displayed by clicking on the automation icon.
 

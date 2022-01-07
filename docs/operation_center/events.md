@@ -48,7 +48,7 @@ To go back to the list of logs shown, you need to clear filters and select "Curr
 
 ### Save filters:
 
-It is possible to save a query by clicking on the star icon. The period of time is not conserved with it. 
+It is possible to save a query by clicking on the star icon. The period of time is not conserved with it.
 To check it out, you can click on "Saved queries" then select the wanted period of time and press enter to see the events found.
 
 ![SEKOIA.IO Event_page_Save_Filters](../assets/operation_center/ev_save_filters.gif){: style="max-width:60%"}
@@ -73,10 +73,10 @@ Each search result lasts 10 min by default and it is possible to configure the r
 
 ### Sharing a search
 
-Search job have IDs that are available in the browser address bar. 
+Search job have IDs that are available in the browser address bar.
 
 ```
-https://app.sekoia.io/sic/events?jobId=2b5ce17f-517e-4dd3-8253-1495a6ba538b
+https://app.sekoia.io/operations/events?jobId=2b5ce17f-517e-4dd3-8253-1495a6ba538b
 ```
 
 You can share your researches with colleagues by sending them these jobIds, which are accessible within your community.

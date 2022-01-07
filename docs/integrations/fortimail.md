@@ -105,7 +105,7 @@ if ($hostname == "YOUR_FORTIMAIL_HOSTNAME") then {
 }
 ```
 
-> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
+> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operations Center > Configure > Intakes
 > And change the `YOUR_FORTIMAIL_HOSTNAME` variable with the correct value.
 
 ##### Restart Rsyslog
@@ -118,4 +118,4 @@ $ sudo systemctl restart rsyslog.service
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
 ### Enjoy your events
-Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

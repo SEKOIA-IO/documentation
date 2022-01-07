@@ -96,6 +96,13 @@ auditbeat.modules:
   - /sbin
   - /usr/sbin
   - /etc
+  - /var/spool/cron/crontabs
+  - /etc/cron.d
+  - /etc/cron.daily
+  - /etc/cron.hourly
+  - /etc/cron.monthly
+  - /etc/cron.weekly
+
 
   scan_at_start: true
   scan_rate_per_sec: 50 MiB
@@ -213,6 +220,9 @@ Settup a light client rsyslog by editing the `/etc/rsyslog.conf` file.
 module(load="imuxsock")                                 # provides support for local system logging
 module(load="imklog" permitnonkernelfacility="on")      # provides kernel logging support
 
+# Set the maximum supported message size
+$MaxMessageSize 20k
+
 # Use traditional timestamp format.
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 
@@ -236,6 +246,8 @@ $IncludeConfig /etc/rsyslog.d/*.conf
 # Rules
 *.*          -/var/log/syslog
 ```
+
+Please ensure, options `$PrivDropToUser syslog` and `$PrivDropToGroup syslog` are removed, otherwise rsyslog process could not read auditbeat output.
 
 And add a dedicated configuration file for the Auditbeat logs in `/etc/rsyslog.d/8-linux_auditbeat.conf` to be sent to a log concentrator.
 
@@ -280,7 +292,7 @@ sudo apt install rsyslog rsyslog-gnutls wget
 Please ensure the UDP incoming events are allows in the /etc/rsyslog.conf
 ```bash
 ....
-# provides UDP syslog reception
+# provides TCP syslog reception
 module(load="imtcp")
 input(type="imtcp" port="514")
 ....
@@ -326,7 +338,7 @@ if ($syslogtag contains 'linux_auditbeat') then {
 }
 ```
 
-> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operation Center > Configure > Intakes
+> In the above `template` instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key you can find in the Operations Center > Configure > Intakes
 > And change the `YOUR_LINUX_HOSTNAME` variable with the correct value.
 
 ##### Restart Rsyslog
@@ -339,4 +351,4 @@ $ sudo systemctl restart rsyslog.service
 - [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
 
 ### Enjoy your events
-Go to the [events page](https://app.sekoia.io/sic/events) to watch your incoming events.
+Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

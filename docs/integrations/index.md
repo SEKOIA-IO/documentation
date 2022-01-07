@@ -8,7 +8,7 @@ In this chapter, you will learn how to configure your log system to make it forw
 
 SEKOIA.IO is able to collect logs through various mechanisms, configuration on your side should be easy! Here is an overview on how integration could be done with SEKOIA.IO.
 
-![SEKOIA.IO Operation Center integration overview](../assets/sekoiaio_oc_integration.png){: style="max-width:100%"}
+![SEKOIA.IO Operations Center integration overview](../assets/sekoiaio_oc_integration.png){: style="max-width:100%"}
 
 SEKOIA.IO supports the following log collectors:
 
@@ -65,7 +65,9 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 - [FortiGate](fortigate.md)
 - [FortiMail](fortimail.md)
 - [FortiWeb](fortiweb.md)
+- [FortiProxy](fortiproxy.md)
 - [HAProxy](haproxy.md)
+- [HarfangLab](harfanglab.md)
 - [ISC DHCP](dhcpd.md)
 - [NetFilter](netfilter.md)
 - [Nginx](nginx.md)
@@ -73,6 +75,8 @@ SEKOIA.IO is also able to retrieve logs and data from cloud platforms, such as M
 - [PaloAlto](paloalto.md)
 - [Postfix](postfix.md)
 - [Pulse Connect Secure](pulse.md)
+- [SentinelOne](sentinelone.md)
+- [SentinelOne Deep Visibility](sentinelone_deepvisibility.md)
 - [Sophos](sophos.md)
 - [SpamAssassin](spamassassin.md)
 - [Squid](squid.md)

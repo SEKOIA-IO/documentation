@@ -5,7 +5,7 @@ This language offers to exceed filters available on APIs.
 
 ## Example
 
-On the Operation Center, on the events page, the following query will match
+On the Operations Center, on the events page, the following query will match
 all not failed events received from the start of January 1st, 2020 to the end of January 2nd, 2020:
 
 `NOT(error_code:"Failed") AND timestamp:>=2020-01-01T00:00:00Z AND timestamp:<2020-01-03T00:00:00Z`
