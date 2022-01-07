@@ -1,0 +1,19 @@
+name: Ask preview removal for a given PR
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Save PR number
+        run: |
+          mkdir PR
+          echo ${{ github.event.number }} > ./PR/PR_NUMBER
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: PR
+          path: PR/
