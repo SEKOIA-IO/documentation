@@ -183,7 +183,7 @@ logging.files:
 In order to make it easier, you can download the auditbeat configuration file:
 
 ```bash
-$ wget -O /etc/auditbeat/auditbeat.yml https://docs.sekoia.io/integrations/configurations/auditbeat.yml
+wget -O /etc/auditbeat/auditbeat.yml https://docs.sekoia.io/integrations/configurations/auditbeat.yml
 ```
 
 > Don't forget to set the right level of permission of the new `auditbeat.yml` if you edited a new one.
@@ -275,7 +275,7 @@ if ($syslogtag contains 'linux_auditbeat') then {
 ##### Restart Rsyslog
 
 ```bash
-$ sudo systemctl restart rsyslog.service
+sudo systemctl restart rsyslog.service
 ```
 
 ## Transport to SEKOIA.IO
@@ -302,7 +302,7 @@ input(type="imtcp" port="514")
 In order to allow the connection of your Rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
 
 ```bash
-$ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 ##### Configure the Rsyslog Server
@@ -344,7 +344,7 @@ if ($syslogtag contains 'linux_auditbeat') then {
 ##### Restart Rsyslog
 
 ```bash
-$ sudo systemctl restart rsyslog.service
+sudo systemctl restart rsyslog.service
 ```
 
 ## Related files
