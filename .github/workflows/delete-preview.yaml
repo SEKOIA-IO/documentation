@@ -1,8 +1,8 @@
-name: Upload preview to OVH Object Storage
+name: Delete preview from OVH Object Storage
 
 on:
   workflow_run:
-    workflows: ["Preview docs.sekoia.io"]
+    workflows: ["Ask preview removal for a given PR"]
     types:
       - completed
 
@@ -22,7 +22,7 @@ jobs:
                run_id: ${{github.event.workflow_run.id }},
             });
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "site"
+              return artifact.name == "PR"
             })[0];
             var download = await github.actions.downloadArtifact({
                owner: context.repo.owner,
@@ -31,18 +31,18 @@ jobs:
                archive_format: 'zip',
             });
             var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/site.zip', Buffer.from(download.data));
+            fs.writeFileSync('${{github.workspace}}/PR.zip', Buffer.from(download.data));
 
-      - run: unzip -d site site.zip
+      - run: unzip PR.zip
 
       - name: Get PR number
         id: pr_number
-        run: echo "::set-output name=pr_number::$(cat site/.pr_number)"
+        run: echo "::set-output name=pr_number::$(cat PR_NUMBER)"
 
       - name: OVH Object Storage
         uses: StephaneBour/actions-ovh-storage@1.0
         with:
-          args: upload sekoiaio-documentation-previews site --object-name ${{ steps.pr_number.outputs.pr_number }}
+          args: delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }}
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
@@ -60,10 +60,6 @@ jobs:
           comment-author: github-actions[bot]
           body-includes: Newest code from ${{ github.actor}} has been published to
 
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%F %H:%M:%S')"
-
       - name: Add comment to PR
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -72,6 +68,4 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
           body: |
-            Newest code from ${{ github.actor}} has been published to [preview environment](https://storage.gra.cloud.ovh.net/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews/${{ steps.pr_number.outputs.pr_number }}/)
-
-            :rocket: Latest deployment was built on ${{ steps.date.outputs.date }} ([${{ github.sha }}](https://github.com/SEKOIA-IO/documentation/commit/${{ github.sha }})).
+            _Pull request was merged, preview was removed._
