@@ -14,10 +14,10 @@
 
 ### 2020
 
-- [2020-09-10](/releases/2020-09-10): Case management, new events page & SEKOIA.IO Documentation.
-- [2020-07-22](/releases/2020-07-22): Improved display of alerts’s observed data, two-factor authentication.
-- [2020-07-07](/releases/2020-07-07): Improved display of alerts’s observed data.
-- [2020-02-14](/releases/2020-02-14): Detection rules statistics, improved events page
+- [2020-09-10: Case management, new events page & SEKOIA.IO Documentation](/releases/2020-09-10)
+- [2020-07-22: Improved display of alerts’s observed data, two-factor authentication](/releases/2020-07-22)
+- [2020-07-07: Improved display of alerts’s observed data](/releases/2020-07-07)
+- [2020-02-14: Detection rules statistics, improved events page](/releases/2020-02-14)
 
 ### 2019
 
