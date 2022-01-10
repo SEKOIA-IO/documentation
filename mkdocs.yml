@@ -124,9 +124,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/sekoia_fr
+      link: https://twitter.com/sekoia_io
 
-copyright: Copyright 2021 SEKOIA. All rights reserved.
+copyright: Copyright 2022 SEKOIA. All rights reserved.
 
 extra_css:
   - stylesheets/sekoiaio.css
