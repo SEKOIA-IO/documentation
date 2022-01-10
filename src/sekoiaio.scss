@@ -161,6 +161,19 @@
     }
 }
 
+.mdx-sek-home {
+    min-height: calc(100vh - 6.4rem);
+    display: flex;
+    flex-direction: column;
+
+    .categories {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 .mdx-container {
     text-align: center;
     font-size: initial;
@@ -251,6 +264,11 @@
         padding-bottom: 3em;
         background-color: white;
 
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
         h2 {
             color: #12005e;
             font-size: 24px;
@@ -273,12 +291,15 @@
 
         .category {
             font-weight: 600;
-            display: flex;
+            display: grid;
+            column-gap: 24px;
+            row-gap: 24px;
+            grid-template-columns: repeat(auto-fit, 230px);
 
             flex-direction: row;
             justify-content: center;
             align-items: flex-start;
-            padding: 40px 148px;
+            padding: 40px 0;
 
             a {
                 font-size: 16px;
@@ -290,8 +311,6 @@
                 width: 230px;
                 display: block;
                 padding: 17px 0;
-                margin-top: 32px;
-                margin-right: 20px;
             }
         }
     }
