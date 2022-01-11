@@ -1,0 +1,65 @@
+name: Upload public website to OVH
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build_and_upload_website:
+    name: Build and upload public version of the website
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        id: setup-python
+        with:
+          python-version: '3.8'
+
+      - name: Make destination directory for compiled CSS
+        run: mkdir -vp docs/stylesheets/
+
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@v0.3.7
+        with:
+          source: src/sekoiaio.scss
+          destination: docs/stylesheets/sekoiaio.css
+
+      - name: Install Poetry
+        run: |
+          pip install poetry
+          poetry config virtualenvs.in-project true
+
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: poetry-${{ runner.os }}-python${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('poetry.lock') }}
+          restore-keys: |
+            poetry-${{ runner.os }}-python${{ steps.setup-python.outputs.python-version }}
+
+      - name: Install dependencies
+        run: |
+          poetry install
+
+      - name: Build site
+        run: |
+          poetry run python -m mkdocs build
+
+      - name: OVH Object Storage
+        uses: StephaneBour/actions-ovh-storage@1.0
+        with:
+          args: upload sekoiaio-documentation-previews build --object-name /
+        env:
+          OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
+          OS_IDENTITY_API_VERSION: 3
+          OS_TENANT_ID: ${{ secrets.SITE_OS_TENANT_ID }}
+          OS_TENANT_NAME: ${{ secrets.SITE_OS_TENANT_NAME }}
+          OS_USERNAME: ${{ secrets.SITE_OS_USERNAME }}
+          OS_PASSWORD: ${{ secrets.SITE_OS_PASSWORD }}
+          OS_REGION_NAME: "GRA"
