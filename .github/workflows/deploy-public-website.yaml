@@ -54,7 +54,7 @@ jobs:
       - name: OVH Object Storage
         uses: StephaneBour/actions-ovh-storage@1.0
         with:
-          args: upload sekoiaio-documentation-previews build --object-name /
+          args: upload sekoiaio-documentation-previews site --object-name /
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
