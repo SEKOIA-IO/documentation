@@ -31,6 +31,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 !!! info
     Please replace :
+    
     - `company-resource-group` with the name of your “resource group”.
     - `uuid` with your subscription ID retrieved previously (see below).
 
@@ -47,11 +48,11 @@ In order to allow SEKOIA.IO keep track of the consumed events, the next step con
 To proceed, you can use Azure PowerShell:
 
 ```powershell
-PS Azure:\> az storage account create --name "company-sekoiaiocheckpoint" --resource-group "company-resource-group"
+PS Azure:\> az storage account create --name "sekoiaiocheckpoint" --resource-group "company-resource-group"
 ```
 
 ```powershell
-PS Azure:\> az storage container create --name "windows-event" --account-name "company-sekoiaiocheckpoint"
+PS Azure:\> az storage container create --name "windows-event" --account-name "sekoiaiocheckpoint"
 ```
 
 !!! info
@@ -179,7 +180,7 @@ Finally, please send to SEKOIA.IO the following information:
 
 - Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=windows-event"`).
 - Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
-- Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=company-sekoiaiocheckpoint;AccountKey=XXXXX"`).
+- Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
 
 ### Enjoy your events
 
