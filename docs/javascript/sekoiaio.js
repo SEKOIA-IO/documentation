@@ -6,7 +6,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         div.prepend(p);
     });
 
-
     var uls = document.getElementsByClassName("md-tabs__list");
     if (uls.length != 0) {
 	uls[0].insertAdjacentHTML("beforeend", "<li class='md-tabs__item'><a data-sleek data-badge-changelog class='md-tabs__link' href='#'>Changelog</a></li>");
