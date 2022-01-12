@@ -95,6 +95,7 @@ nav:
       - External Integrations: intelligence_center/integrations.md
       - Web Application:
           - Dashboards: intelligence_center/dashboard.md
+          - Intelligence: intelligence_center/intelligence.md
           - Graph Explorations: intelligence_center/graph_explorations.md
           - Observables: intelligence_center/observables.md
           - Data Export: intelligence_center/data_export.md
