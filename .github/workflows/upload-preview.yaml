@@ -39,6 +39,19 @@ jobs:
         id: pr_number
         run: echo "::set-output name=pr_number::$(cat site/.pr_number)"
 
+      - name: Delete any previous preview
+        uses: StephaneBour/actions-ovh-storage@1.0
+        with:
+          args: delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }}
+        env:
+          OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
+          OS_IDENTITY_API_VERSION: 3
+          OS_TENANT_ID: ${{ secrets.PR_OS_TENANT_ID }}
+          OS_TENANT_NAME: ${{ secrets.PR_OS_TENANT_NAME }}
+          OS_USERNAME: ${{ secrets.PR_OS_USERNAME }}
+          OS_PASSWORD: ${{ secrets.PR_OS_PASSWORD }}
+          OS_REGION_NAME: "GRA"
+
       - name: OVH Object Storage
         uses: StephaneBour/actions-ovh-storage@1.0
         with:
