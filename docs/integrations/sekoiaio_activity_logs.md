@@ -2,7 +2,18 @@ uuid: 41e3ca4e-a714-41aa-ad69-684a0b3835fc
 name: SEKOIA.IO activity logs
 
 ## Overview
-SEKOIAIO.IO activity logs collect all operations done, on SEKOIA.IO, by the members of the community. It helps to monitor activities and detect malicious behavior.
+SEKOIA.IO activity logs collect operations done, on SEKOIA.IO, by the members of the community. It helps to monitor activities and detect malicious behavior.
+
+## SEKIOIA.IO activity logs
+
+The activity logs collect various operations. Here a non-exhaustive list of operations:
+
+- listing observables
+- creating a new rule
+- updating the status of an alert
+- inviting a new member in the community
+- ...
+
 
 ## Setup
 
