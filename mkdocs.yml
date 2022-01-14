@@ -62,7 +62,6 @@ nav:
               - PaloAlto: integrations/paloalto.md
               - Postfix: integrations/postfix.md
               - Pulse Connect Secure: integrations/pulse.md
-              - SEKOIA.IO activity logs: integrations/sekoiaio_activity_logs.md
               - SentinelOne: integrations/sentinelone.md
               - SentinelOne Deep Visibility: integrations/sentinelone_deepvisibility.md
               - Sophos: integrations/sophos.md
@@ -73,6 +72,8 @@ nav:
               - Zeek: integrations/zeek.md
           - Generic:
               - Common Event Format: integrations/cef.md
+          - SEKOIA.IO:
+              - Activity logs: integrations/sekoiaio_activity_logs.md
       - Configure:
           - Entities: operation_center/entities.md
           - Intakes: operation_center/intakes.md
