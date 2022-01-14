@@ -73,7 +73,7 @@ nav:
           - Generic:
               - Common Event Format: integrations/cef.md
           - SEKOIA.IO:
-              - activity logs: integrations/sekoiaio_activity_logs.md
+              - Activity logs: integrations/sekoiaio_activity_logs.md
       - Configure:
           - Entities: operation_center/entities.md
           - Intakes: operation_center/intakes.md
