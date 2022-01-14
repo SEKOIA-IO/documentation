@@ -121,6 +121,7 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.top
+    - content.code.annotate
   font:
     text: Open Sans
 
@@ -145,6 +146,9 @@ markdown_extensions:
       linenums_style: pymdownx-inline
   - pymdownx.superfences
   - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
   - search:
