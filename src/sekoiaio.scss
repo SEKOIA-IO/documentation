@@ -99,9 +99,13 @@
             }
         }
 
-        a, a:hover {
-            color: #5351eb;
-        }
+a {
+    color: #12005e;
+
+    &:hover {
+	color: #5351eb;
+    }
+}
 
 
         pre {
