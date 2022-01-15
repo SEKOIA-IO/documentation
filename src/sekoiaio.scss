@@ -2,10 +2,14 @@
     --md-default-fg-color: #7172a3;
 }
 
+.md-search__form {
+    background-color: #992a85;
+}
 
 .md-header {
     background-color: #ffffff;
     box-shadow: inherit;
+    color: #7172a3;
 
     &[data-md-state='shadow'] {
         box-shadow: inherit;
@@ -347,6 +351,15 @@ a {
 }
 
 // css related to the apis page
+.sek-row {
+    display: flex;
+}
+
+.sek-two-columns {
+  flex: 50%;
+}
+
+
 .sek-cards {
     grid-template-columns: repeat(auto-fill,minmax(400px,400px));
     display: grid;
@@ -387,5 +400,31 @@ a {
 
     &:before {
         height: 0;
+    }
+}
+
+
+.sek-submenu-api {
+    background-color: #992a85;
+    margin: 0;
+    max-width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;    
+
+    ul {
+	margin: 0px;
+	padding: 0px;
+
+	li {
+	    list-style-type: none;
+	    display: inline;	    
+	}
+
+	li:not(:first-child):before {
+	    content: " | ";
+	}
+	
     }
 }

@@ -107,36 +107,27 @@ nav:
       - Multi-factor authentication: user_center/multi_factor_authentication.md
       - Notifications: user_center/notifications.md
       - API Key creation: user_center/apikeys.md
-  - API Documentation: /apis/index.md
-  - Support: https://support.sekoia.io
+  - REST API:
+      - Overview: rest_api/index.md
+      - Guides:
+          - Get Started: rest_api/guides/get_started.md
+          - Authentication Overview: rest_api/guides/authentication_overview.md
+      - Reference:
+          - Authentication: rest_api/reference/identity_and_authentication.md
+          - Community: rest_api/reference/community.md
+          - Dashboard: rest_api/reference/dashboard.md
+          - Notification: rest_api/reference/notification.md
+          - Operation Center:
+              - Configuration: rest_api/reference/operation_center/configuration.md
+              - Parser: rest_api/reference/operation_center/parser.md
+              - Alert: rest_api/reference/operation_center/alert.md
+              - Assets: rest_api/reference/operation_center/assets.md
+          - Intelligence Center:
+              - Intelligence: rest_api/reference/intelligence_center/intelligence.md
+              - Enrichments: rest_api/reference/intelligence_center/enrichments.md
+          - Playbooks: rest_api/reference/playbooks.md
 
-api:
-  - name: Identity & authentication
-    description: 'Manage authentication: password change, manage multi factor authentication and APIKeys.'
-  - name: Profile & permissions
-    description: Manage rights within a community (members, roles, permissions, etc.).
-    url: profile_&_permissions
-  - name: Dashboards
-    description: 'Allows user to define and manage their dashboards (Operation Center & Intelligence Center)'
-  - name: Notifications
-    description: Manage notification rules and in-app notifications
-  - name: 'Operation Center: Rules, Entities, Intakes, Events'
-    description: Configure the detection and remediation service offered by SEKOIA Operation Center.
-  - name: 'Operation Center: Alerts & Case Management'
-    description: 'Manage alerts raised by SEKOIA.IO Operation Center.'
-  - name: 'Operation Center: Asset Management'
-    description: 'Manage your sensitive assets'
-    url: 'operations_center:_events_api'
-  - name: 'Intelligence Center: Cyber Threat Intelligence Database'
-    description: 'Manage your collections of Threat Intelligence materials.'
-  - name: 'Intelligence Center: Enrichment'
-    description: 'API to manage enrichments'
-  - name: 'Automation: Symphony Orchestrator'
-    description: 'Manage your orchestration Playbooks.'
-  - name: 'Partners'
-    description: 'Allows partner to push their configurations'
-  - name: 'Ingest: Manage and test event parsers'
-    description: 'API manage parsers'
+  - Support: https://support.sekoia.io
 
 theme:
   custom_dir: theme

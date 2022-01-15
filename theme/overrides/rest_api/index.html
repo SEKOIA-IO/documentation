@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 id="rest_api">REST API</h1>
+
+<p>To develop, integrate and automate your workflows, build with the SEKOIA.IO REST API.</p>
+
+<a href="#" class="md-button">Quickstart</a>
+
+<div class="md-container" style="margin-top:50px">
+  <div class="sek-row">
+    <div class="sek-two-columns">
+      <p>
+	<strong>
+	  <span class="twemoji">
+	    {% include ".icons/fontawesome/solid/book.svg" %}
+	  </span>&nbsp; Popular Guides</strong></p>
+
+      <div>
+	<p>
+	  <strong>
+	    <a href="guides/get_started/">Get started</a>
+	  </strong><br />
+	  Learn the foundations of SEKOIA.IO REST API and start with few quickwins
+	</p>
+      </div>
+
+      <div>
+	<p>
+	  <strong>
+	    <a href="guides/authentication_overview/">Authentication overview</a>
+	  </strong><br />
+	  Discover the authentication process of the REST API.
+	</p>
+      </div>
+
+    </div>
+      <div class="sek-two-columns">
+	<p><strong>
+	    <span class="twemoji">
+	    {% include ".icons/fontawesome/solid/dna.svg" %}
+	    </span>&nbsp;
+	    Popular Reference</strong></p>
+	<ul>
+	  <li><a href="reference/intelligence_center/intelligence">Intelligence</a></li>
+	  <li><a href="reference/operation_center/alert">Alert</a></li>
+	  <li><a href="reference/operation_center/assets">Assets</a></li>
+	  <li><a href="reference/intelligence_center/enrichments">Enrichments</a></li>
+	  <li><a href="reference/notification">Notification</a></li>
+	  <li><a href="reference/community">Community</a></li>	  
+	</ul>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

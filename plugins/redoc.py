@@ -1,8 +1,10 @@
-import mkdocs
-import string
 import re
+import string
 
-TEMPLATE = string.Template("""
+import mkdocs
+
+TEMPLATE = string.Template(
+    """
 <style>
     .md-typeset h1,
     .md-content__button,
@@ -29,18 +31,30 @@ TEMPLATE = string.Template("""
 
 </style>
 <div>
-<div class="self-contained-css">
-<redoc spec-url='$path' expand-responses="200" hide-hostname></redoc>
-</div>
+    <div class="self-contained-css" id="redoc-container">
+
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"> </script>
-</script>
+
 <script>
-    document.getElementsByTagName('article')[0].classList.add('api')
-    document.getElementsByTagName('article')[0].classList.remove('md-typeset')
-    document.querySelector('.api h1').remove()
+Redoc.init('$path', {
+    hideLoading: true,
+    theme: {
+        rightPanel: {
+            backgroundColor: "#992a85"
+        }
+    }
+    }, document.getElementById('redoc-container'))
+
+
+document.getElementsByTagName('article')[0].classList.add('api')
+document.getElementsByTagName('article')[0].classList.remove('md-typeset')
+document.querySelector('.api h1').remove()
 </script>
-""")
+
+"""
+)
 
 TOKEN = re.compile(r"!!redoc(?: (?P<path>https?://[^\s]+))?!!")
 
@@ -53,10 +67,10 @@ class RedocPlugin(mkdocs.plugins.BasePlugin):
             return markdown
 
         path = match.group("path")
-        
-        pre_token = markdown[:match.start()]
 
-        post_token = markdown[match.end():]
+        pre_token = markdown[: match.start()]
+
+        post_token = markdown[match.end() :]
 
         markdown = pre_token + TEMPLATE.substitute(path=path) + post_token
 
