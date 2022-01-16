@@ -1,4 +1,4 @@
-# Symphony
+# Playbooks
 
 Automating your security improves your cyber security operations by consolidating the use of your technologies, processes and policies.
 
@@ -6,7 +6,7 @@ Automation combines security tools, processes and people, and speeds up the exec
 
 Thus, SEKOIA.IO supervises and executes response actions to be in line with your business and operational objectives.
 
-## Playbooks
+## Introduction
 
 SEKOIA.IO comes with an in house GUI for creating automated investigation and orchestration actions: the playbooks.
 

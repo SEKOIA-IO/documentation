@@ -1,191 +1,211 @@
-site_name: SEKOIA.IO Documentation
-site_url: https://docs.sekoia.io
-repo_url: https://github.com/SEKOIA-IO/documentation
-
-nav:
-  - Getting Started:
-      - Overview: getting_started/index.md
-      - First steps: getting_started/first_steps.md
-      - Inviting users to join your community: getting_started/inviting_users_to_join_your_community.md
-      - Search:
-          - Dork Language: searching/dork.md
-          - Querying Operations Center Events: searching/search_events.md
-  - Operations Center:
-      - Overview: operation_center/index.md
-      - Dashboards: operation_center/threat_exposition.md
-      - Integrations:
-          - Overview: integrations/index.md
-          - Transports:
-              - Overview: integrations/transport/index.md
-              - Rsyslog: integrations/transport/rsyslog.md
-              - Logstash: integrations/transport/logstash.md
-              - syslog-ng: integrations/transport/syslog-ng.md
-              - Graylog: integrations/transport/graylog.md
-              - HTTPS: integrations/transport/https.md
-          - Cloud and SaaS:
-              - AWS:
-                  - CloudTrail: integrations/aws_cloudtrail.md
-                  - Flow Logs: integrations/aws_flow_logs.md
-              - Microsoft Azure:
-                  - Azure Active Directory: integrations/azure_ad.md
-                  - Azure MySQL: integrations/azure_mysql.md
-                  - Azure Linux machines: integrations/azure_linux.md
-                  - Azure Network Watcher: integrations/azure_network_watcher.md
-                  - Azure Windows machines: integrations/azure_windows.md
-              - Microsoft Office 365: integrations/o365.md
-              - Cisco Umbrella:
-                  - Proxy Logs: integrations/umbrella_proxy.md
-                  - Ip Logs: integrations/umbrella_ip.md
-                  - Dns Logs: integrations/umbrella_dns.md
-          - OS:
-              - Linux: integrations/linux.md
-              - Auditbeat Linux: integrations/auditbeat_linux.md
-              - Windows: integrations/windows.md
-              - Log Insight Windows: integrations/log_insight_windows.md
-          - Application:
-              - Alsid: integrations/alsid.md
-              - Apache: integrations/apache.md
-              - BIND: integrations/bind.md
-              - Checkpoint: integrations/checkpoint.md
-              - Cisco: integrations/cisco_asa.md
-              - F5 BigIP: integrations/f5-big-ip.md
-              - FortiGate: integrations/fortigate.md
-              - FortiMail: integrations/fortimail.md
-              - FortiWeb: integrations/fortiweb.md
-              - FortiProxy: integrations/fortiproxy.md
-              - HAProxy: integrations/haproxy.md
-              - HarfangLab: integrations/harfanglab.md
-              - ISC DHCP: integrations/dhcpd.md
-              - NetFilter: integrations/netfilter.md
-              - Nginx: integrations/nginx.md
-              - OpenSSH: integrations/openssh.md
-              - PaloAlto: integrations/paloalto.md
-              - Postfix: integrations/postfix.md
-              - Pulse Connect Secure: integrations/pulse.md
-              - SentinelOne: integrations/sentinelone.md
-              - SentinelOne Deep Visibility: integrations/sentinelone_deepvisibility.md
-              - Sophos: integrations/sophos.md
-              - SpamAssassin: integrations/spamassassin.md
-              - Squid: integrations/squid.md
-              - Suricata: integrations/suricata.md
-              - Unbound: integrations/unbound.md
-              - Zeek: integrations/zeek.md
-          - Generic:
-              - Common Event Format: integrations/cef.md
-          - SEKOIA.IO:
-              - Activity logs: integrations/sekoiaio_activity_logs.md
-      - Configure:
-          - Entities: operation_center/entities.md
-          - Intakes: operation_center/intakes.md
-          - Assets: operation_center/assets.md
-      - Detect:
-          - Rules Catalog: operation_center/rules_catalog.md
-      - Investigate:
-          - Alerts: operation_center/alerts.md
-          - Events: operation_center/events.md
-          - Cases: operation_center/cases.md
-      - FAQ: operation_center/faq.md
-  - Intelligence Center:
-      - Overview: intelligence_center/index.md
-      - Data Model: intelligence_center/data_model.md
-      - API: intelligence_center/api.md
-      - External Integrations: intelligence_center/integrations.md
-      - Web Application:
-          - Dashboards: intelligence_center/dashboard.md
-          - Intelligence: intelligence_center/intelligence.md
-          - Graph Explorations: intelligence_center/graph_explorations.md
-          - Observables: intelligence_center/observables.md
-          - Data Export: intelligence_center/data_export.md
-  - User Center:
-      - Overview: user_center/index.md
-      - Account Settings: user_center/account_settings.md
-      - Multi-factor authentication: user_center/multi_factor_authentication.md
-      - Notifications: user_center/notifications.md
-      - API Key creation: user_center/apikeys.md
-  - Symphony:
-      - Overview: symphony/overview.md
-      - Triggers: symphony/triggers.md
-      - Operators: symphony/operators.md
-      - Actions: symphony/actions.md      
-  - Develop:
-      - Overview: develop/index.md
-      - Guides:
-          - Get Started: develop/guides/get_started.md
-          - Authentication Overview: develop/guides/authentication_overview.md
-      - REST API:
-          - Authentication: develop/rest_api/identity_and_authentication.md
-          - Community: develop/rest_api/community.md
-          - Dashboard: develop/rest_api/dashboard.md
-          - Notification: develop/rest_api/notification.md
-          - Operation Center:
-              - Configuration: develop/rest_api/operation_center/configuration.md
-              - Parser: develop/rest_api/operation_center/parser.md
-              - Alert: develop/rest_api/operation_center/alert.md
-              - Assets: develop/rest_api/operation_center/assets.md
-          - Intelligence Center:
-              - Intelligence: develop/rest_api/intelligence_center/intelligence.md
-              - Enrichments: develop/rest_api/intelligence_center/enrichments.md
-          - Playbooks: develop/rest_api/playbooks.md
-
-  - Support: https://support.sekoia.io
-
-theme:
-  custom_dir: theme
-  name: material
-  logo: assets/sekoiaio.svg
-  favicon: assets/favicon.ico
-  include_search_page: true
-  search_index_only: false
-  features:
-#    - navigation.instant # Disable to avoid an issue with sleekplan changelog injection
-    - navigation.tabs
-    - navigation.top
-    - content.code.annotate
-  font:
-    text: Open Sans
-
+copyright: Copyright 2022 SEKOIA. All rights reserved.
 extra:
   social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/sekoia_io
-
-copyright: Copyright 2022 SEKOIA. All rights reserved.
-
+  - icon: fontawesome/brands/twitter
+    link: https://twitter.com/sekoia_io
 extra_css:
-  - stylesheets/sekoiaio.css
+- stylesheets/sekoiaio.css
 extra_javascript:
-  - javascript/sekoiaio.js
+- javascript/sekoiaio.js
 markdown_extensions:
-  - admonition
-  - attr_list
-  - codehilite
-  - pymdownx.details
-  - pymdownx.highlight:
-      linenums: true
-      linenums_style: pymdownx-inline
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-
+- admonition
+- attr_list
+- codehilite
+- pymdownx.details
+- pymdownx.highlight:
+    linenums: true
+    linenums_style: pymdownx-inline
+- pymdownx.superfences
+- pymdownx.tabbed
+nav:
+- Getting Started:
+  - Overview: getting_started/index.md
+  - First steps: getting_started/first_steps.md
+  - Inviting users to join your community: getting_started/inviting_users_to_join_your_community.md
+  - Search:
+    - Dork Language: searching/dork.md
+    - Querying Operations Center Events: searching/search_events.md
+- Operations Center:
+  - Overview: operation_center/index.md
+  - Dashboards: operation_center/threat_exposition.md
+  - Integrations:
+    - Overview: integrations/index.md
+    - Transports:
+      - Overview: integrations/transport/index.md
+      - Rsyslog: integrations/transport/rsyslog.md
+      - Logstash: integrations/transport/logstash.md
+      - syslog-ng: integrations/transport/syslog-ng.md
+      - Graylog: integrations/transport/graylog.md
+      - HTTPS: integrations/transport/https.md
+    - Cloud and SaaS:
+      - AWS:
+        - CloudTrail: integrations/aws_cloudtrail.md
+        - Flow Logs: integrations/aws_flow_logs.md
+      - Microsoft Azure:
+        - Azure Active Directory: integrations/azure_ad.md
+        - Azure MySQL: integrations/azure_mysql.md
+        - Azure Linux machines: integrations/azure_linux.md
+        - Azure Network Watcher: integrations/azure_network_watcher.md
+        - Azure Windows machines: integrations/azure_windows.md
+      - Microsoft Office 365: integrations/o365.md
+      - Cisco Umbrella:
+        - Proxy Logs: integrations/umbrella_proxy.md
+        - Ip Logs: integrations/umbrella_ip.md
+        - Dns Logs: integrations/umbrella_dns.md
+    - OS:
+      - Linux: integrations/linux.md
+      - Auditbeat Linux: integrations/auditbeat_linux.md
+      - Windows: integrations/windows.md
+      - Log Insight Windows: integrations/log_insight_windows.md
+    - Application:
+      - Alsid: integrations/alsid.md
+      - Apache: integrations/apache.md
+      - BIND: integrations/bind.md
+      - Checkpoint: integrations/checkpoint.md
+      - Cisco: integrations/cisco_asa.md
+      - F5 BigIP: integrations/f5-big-ip.md
+      - FortiGate: integrations/fortigate.md
+      - FortiMail: integrations/fortimail.md
+      - FortiWeb: integrations/fortiweb.md
+      - FortiProxy: integrations/fortiproxy.md
+      - HAProxy: integrations/haproxy.md
+      - HarfangLab: integrations/harfanglab.md
+      - ISC DHCP: integrations/dhcpd.md
+      - NetFilter: integrations/netfilter.md
+      - Nginx: integrations/nginx.md
+      - OpenSSH: integrations/openssh.md
+      - PaloAlto: integrations/paloalto.md
+      - Postfix: integrations/postfix.md
+      - Pulse Connect Secure: integrations/pulse.md
+      - SentinelOne: integrations/sentinelone.md
+      - SentinelOne Deep Visibility: integrations/sentinelone_deepvisibility.md
+      - Sophos: integrations/sophos.md
+      - SpamAssassin: integrations/spamassassin.md
+      - Squid: integrations/squid.md
+      - Suricata: integrations/suricata.md
+      - Unbound: integrations/unbound.md
+      - Zeek: integrations/zeek.md
+    - Generic:
+      - Common Event Format: integrations/cef.md
+    - SEKOIA.IO:
+      - Activity logs: integrations/sekoiaio_activity_logs.md
+  - Configure:
+    - Entities: operation_center/entities.md
+    - Intakes: operation_center/intakes.md
+    - Assets: operation_center/assets.md
+  - Detect:
+    - Rules Catalog: operation_center/rules_catalog.md
+  - Investigate:
+    - Alerts: operation_center/alerts.md
+    - Events: operation_center/events.md
+    - Cases: operation_center/cases.md
+  - FAQ: operation_center/faq.md
+- Intelligence Center:
+  - Overview: intelligence_center/index.md
+  - Data Model: intelligence_center/data_model.md
+  - API: intelligence_center/api.md
+  - External Integrations: intelligence_center/integrations.md
+  - Web Application:
+    - Dashboards: intelligence_center/dashboard.md
+    - Intelligence: intelligence_center/intelligence.md
+    - Graph Explorations: intelligence_center/graph_explorations.md
+    - Observables: intelligence_center/observables.md
+    - Data Export: intelligence_center/data_export.md
+- User Center:
+  - Overview: user_center/index.md
+  - Account Settings: user_center/account_settings.md
+  - Multi-factor authentication: user_center/multi_factor_authentication.md
+  - Notifications: user_center/notifications.md
+  - API Key creation: user_center/apikeys.md
+- Playbooks:
+  - Overview: playbooks/overview.md
+  - Triggers: playbooks/triggers.md
+  - Operators: playbooks/operators.md
+  - Actions: playbooks/actions.md
+  - Library:
+    - Binaryedge's api: playbooks/library/binaryedge-s-api.md
+    - Censys: playbooks/library/censys.md
+    - Certificate_transparency: playbooks/library/certificate-transparency.md
+    - Detection-rules: playbooks/library/detection-rules.md
+    - Fileutils: playbooks/library/fileutils.md
+    - Fortigate_fw: playbooks/library/fortigate-fw.md
+    - Git: playbooks/library/git.md
+    - Http: playbooks/library/http.md
+    - Harfanglab: playbooks/library/harfanglab.md
+    - Iknowwhatyoudownload: playbooks/library/iknowwhatyoudownload.md
+    - Iptoasn: playbooks/library/iptoasn.md
+    - Misp: playbooks/library/misp.md
+    - Mwdb: playbooks/library/mwdb.md
+    - Mandrill: playbooks/library/mandrill.md
+    - Mattermost: playbooks/library/mattermost.md
+    - Osint: playbooks/library/osint.md
+    - Onyphe: playbooks/library/onyphe.md
+    - Pagerduty: playbooks/library/pagerduty.md
+    - Public_suffix: playbooks/library/public-suffix.md
+    - Rss: playbooks/library/rss.md
+    - Riskiq: playbooks/library/riskiq.md
+    - Sekoia.io: playbooks/library/sekoia-io.md
+    - Stix: playbooks/library/stix.md
+    - Servicenow: playbooks/library/servicenow.md
+    - Shodan: playbooks/library/shodan.md
+    - Tranco: playbooks/library/tranco.md
+    - Triage: playbooks/library/triage.md
+    - Vade secure: playbooks/library/vade-secure.md
+    - Virustotal: playbooks/library/virustotal.md
+    - Whois: playbooks/library/whois.md
+- Develop:
+  - Overview: develop/index.md
+  - Guides:
+    - Get Started: develop/guides/get_started.md
+    - Authentication Overview: develop/guides/authentication_overview.md
+  - REST API:
+    - Authentication: develop/rest_api/identity_and_authentication.md
+    - Community: develop/rest_api/community.md
+    - Dashboard: develop/rest_api/dashboard.md
+    - Notification: develop/rest_api/notification.md
+    - Operation Center:
+      - Configuration: develop/rest_api/operation_center/configuration.md
+      - Parser: develop/rest_api/operation_center/parser.md
+      - Alert: develop/rest_api/operation_center/alert.md
+      - Assets: develop/rest_api/operation_center/assets.md
+    - Intelligence Center:
+      - Intelligence: develop/rest_api/intelligence_center/intelligence.md
+      - Enrichments: develop/rest_api/intelligence_center/enrichments.md
+    - Playbooks: develop/rest_api/playbooks.md
+- Support: https://support.sekoia.io
 plugins:
-  - search:
-  - redirects:
-      redirect_maps:
-        'getting_started/apikey_creation.md': 'user_center/apikeys.md'
-        'getting_started/2fa.md': 'user_center/multi_factor_authentication.md'
-        'integrations/auditbeat.md': 'integrations/auditbeat_linux.md'
-        'integrations/aws-cloudtrail.md': 'integrations/aws_cloudtrail.md'
-        'integrations/aws-flow-logs.md': 'integrations/aws_flow_logs.md'
-        'integrations/azure-ad.md': 'integrations/azure_ad.md'
-        'integrations/azure-linux.md': 'integrations/azure_linux.md'
-        'integrations/azure-mysql.md': 'integrations/azure_mysql.md'
-        'integrations/azure-network-watcher.md': 'integrations/azure_network_watcher.md'
-        'integrations/azure-windows.md': 'integrations/azure_windows.md'
-        'integrations/cisco-asa.md': 'integrations/cisco_asa.md'
-        'integrations/log-insight-windows.md': 'integrations/log_insight_windows.md'
-        'integrations/pulse-connect-secure.md': 'integrations/pulse.md'
-        'integrations/sentinelone-deepvisibility.md': 'integrations/sentinelone_deepvisibility.md'
-        'integrations/umbrella-dns.md': 'integrations/umbrella_dns.md'
-  - redoc
+- search: null
+- redirects:
+    redirect_maps:
+      getting_started/2fa.md: user_center/multi_factor_authentication.md
+      getting_started/apikey_creation.md: user_center/apikeys.md
+      integrations/auditbeat.md: integrations/auditbeat_linux.md
+      integrations/aws-cloudtrail.md: integrations/aws_cloudtrail.md
+      integrations/aws-flow-logs.md: integrations/aws_flow_logs.md
+      integrations/azure-ad.md: integrations/azure_ad.md
+      integrations/azure-linux.md: integrations/azure_linux.md
+      integrations/azure-mysql.md: integrations/azure_mysql.md
+      integrations/azure-network-watcher.md: integrations/azure_network_watcher.md
+      integrations/azure-windows.md: integrations/azure_windows.md
+      integrations/cisco-asa.md: integrations/cisco_asa.md
+      integrations/log-insight-windows.md: integrations/log_insight_windows.md
+      integrations/pulse-connect-secure.md: integrations/pulse.md
+      integrations/sentinelone-deepvisibility.md: integrations/sentinelone_deepvisibility.md
+      integrations/umbrella-dns.md: integrations/umbrella_dns.md
+- redoc
+repo_url: https://github.com/SEKOIA-IO/documentation
+site_name: SEKOIA.IO Documentation
+site_url: https://docs.sekoia.io
+theme:
+  custom_dir: theme
+  favicon: assets/favicon.ico
+  features:
+  - navigation.tabs
+  - navigation.top
+  - content.code.annotate
+  font:
+    text: Open Sans
+  include_search_page: true
+  logo: assets/sekoiaio.svg
+  name: material
+  search_index_only: false

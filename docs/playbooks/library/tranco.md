@@ -1,0 +1,58 @@
+# tranco
+
+
+
+Tranco Module
+
+## Configuration
+
+
+
+This module accepts no configuration.
+
+
+
+
+## Triggers
+
+### Fetch List
+
+Fetches Tranco list
+
+
+
+#### Arguments
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| chunk_size | integer | Number of items to include in each chunk. Defaults to 10 000. |
+| interval | integer | Interval in hours to wait between each trigger call. Defaults to 24. |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| file_path | string | Tranco list file path |
+| chunk_offset | integer | Offset of the chunk in the full list |
+| chunk_size | integer | Size of the chunk |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Extra
+
+Module **tranco v.1.13**
