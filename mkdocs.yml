@@ -107,25 +107,25 @@ nav:
       - Multi-factor authentication: user_center/multi_factor_authentication.md
       - Notifications: user_center/notifications.md
       - API Key creation: user_center/apikeys.md
-  - REST API:
-      - Overview: rest_api/index.md
+  - Develop:
+      - Overview: develop/index.md
       - Guides:
-          - Get Started: rest_api/guides/get_started.md
-          - Authentication Overview: rest_api/guides/authentication_overview.md
-      - Reference:
-          - Authentication: rest_api/reference/identity_and_authentication.md
-          - Community: rest_api/reference/community.md
-          - Dashboard: rest_api/reference/dashboard.md
-          - Notification: rest_api/reference/notification.md
+          - Get Started: develop/guides/get_started.md
+          - Authentication Overview: develop/guides/authentication_overview.md
+      - REST API:
+          - Authentication: develop/rest_api/identity_and_authentication.md
+          - Community: develop/rest_api/community.md
+          - Dashboard: develop/rest_api/dashboard.md
+          - Notification: develop/rest_api/notification.md
           - Operation Center:
-              - Configuration: rest_api/reference/operation_center/configuration.md
-              - Parser: rest_api/reference/operation_center/parser.md
-              - Alert: rest_api/reference/operation_center/alert.md
-              - Assets: rest_api/reference/operation_center/assets.md
+              - Configuration: develop/rest_api/operation_center/configuration.md
+              - Parser: develop/rest_api/operation_center/parser.md
+              - Alert: develop/rest_api/operation_center/alert.md
+              - Assets: develop/rest_api/operation_center/assets.md
           - Intelligence Center:
-              - Intelligence: rest_api/reference/intelligence_center/intelligence.md
-              - Enrichments: rest_api/reference/intelligence_center/enrichments.md
-          - Playbooks: rest_api/reference/playbooks.md
+              - Intelligence: develop/rest_api/intelligence_center/intelligence.md
+              - Enrichments: develop/rest_api/intelligence_center/enrichments.md
+          - Playbooks: develop/rest_api/playbooks.md
 
   - Support: https://support.sekoia.io
 
