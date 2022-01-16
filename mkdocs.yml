@@ -84,11 +84,6 @@ nav:
           - Alerts: operation_center/alerts.md
           - Events: operation_center/events.md
           - Cases: operation_center/cases.md
-      - Automate:
-          - Overview: operation_center/playbook_overview.md
-          - Triggers: operation_center/triggers.md
-          - Operators: operation_center/operators.md
-          - Actions: operation_center/actions.md
       - FAQ: operation_center/faq.md
   - Intelligence Center:
       - Overview: intelligence_center/index.md
@@ -107,6 +102,11 @@ nav:
       - Multi-factor authentication: user_center/multi_factor_authentication.md
       - Notifications: user_center/notifications.md
       - API Key creation: user_center/apikeys.md
+  - Symphony:
+      - Overview: symphony/overview.md
+      - Triggers: symphony/triggers.md
+      - Operators: symphony/operators.md
+      - Actions: symphony/actions.md      
   - Develop:
       - Overview: develop/index.md
       - Guides:

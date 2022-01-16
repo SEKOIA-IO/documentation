@@ -1,4 +1,4 @@
-# Automation
+# Symphony
 
 Automating your security improves your cyber security operations by consolidating the use of your technologies, processes and policies.
 
