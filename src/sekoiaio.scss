@@ -21,7 +21,7 @@
     }
 
     .md-logo {
-        img {
+        img[alt=logo] {
             height: 2rem;
             width: inherit;
         }
