@@ -2,8 +2,11 @@
     --md-default-fg-color: #7172a3;
 }
 
-.md-search__form {
-    background-color: #7172a3;
+.md-search__inner  {
+
+    .md-search__form {
+        background-color: var(--md-default-fg-color);
+    }
 
 }
 
