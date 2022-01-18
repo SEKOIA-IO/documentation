@@ -2,3 +2,6 @@ site
 docs/stylesheets/sekoiaio.css
 venv
 *~
+redoc.egg-info
+build
+dist
