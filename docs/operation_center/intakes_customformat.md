@@ -4,7 +4,7 @@ SEKOIA.IO provides a list of intakes that allows you to integrate events from di
 
 It is sometimes possible that the events you want to put into the platform are not supported by any intake.
 
-The fonctionnality Custom format allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format so that they are well integrated in the plateform and they can be used to raise alerts.
+The fonctionnality Custom format allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format so that they are well integrated in the plateform and can be used to raise alerts.
 
 ## Create an empty Custom format
 
