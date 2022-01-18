@@ -3,6 +3,12 @@ name = "sekoiaio-documentation"
 description = "An MkDocs server for SEKOIA.IO public Markdown documentation"
 version = "1.0"
 authors = []
+packages = [
+    { include = "plugins" }
+]
+
+[tool.poetry.plugins."mkdocs.plugins"]
+redoc = "plugins.redoc:RedocPlugin"
 
 [tool.poetry.dependencies]
 python = "^3.8"
