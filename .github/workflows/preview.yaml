@@ -44,9 +44,6 @@ jobs:
         run: |
           poetry install
 
-      - name: install custom plugin
-        run: python setup.py install
-
       - name: Build site
         run: |
           poetry run python -m mkdocs build
