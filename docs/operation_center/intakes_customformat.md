@@ -9,14 +9,14 @@ The fonctionnality Custom format allows you to easily develop your own Intake. I
 ## Create an empty Custom format
 
 The creation of an empty Custom format is the first step to develop your own Intake.
-After that, you will be able to create an Intake and start to send your logs. No event will be parsed but you will be able to check the evolution of your parser while you are developping it.
+After that, you will be able to create an Intake and start to send your logs. No event will be parsed but you will see the evolution of your parser while you are developping it.
 
 First of all, go to `Intakes`, `+ INTAKE` and select `Custom format` : 
 
 1. Write the name of your Intake
 2. Give a description of your Intake
-3. Select a module. A module is a taxonomy in relation with your format which will help you to develop your parser. For instance, if you develop a custom format for a product of Fortinet, you will take the Fortinet module. If your module does not exist, just write the name of your module (name of the application or compagny if they have different products) and click on `Create`
-4. Select the data sources associated to your events. You can have severals ones. It will be use when you want to deploy rules since they are linked to data sources.
+3. Select a module. A module is a taxonomy in relation with your format which will help you to develop your parser. For instance, if you develop a custom format for a Fortinet product, you will choose the Fortinet module. If your module does not exist, just write the name of your module (name of the application or compagny if they have different products) and click on `Create`
+4. Select the data sources associated to your events. You can have severals ones. Data sources can be use when you want to deploy rules.
 5. Click on `Save`
 
 ![SEKOIA.IO Custom format creation](../assets/operation_center/custom_format/create_custom_format.png){: style="max-width:100%"}
@@ -28,7 +28,7 @@ A stage is a parsing step that will have a specefic behaviour on the event.
 The goal is to define a sequence of stages that will parse your events in the ECS format. 
 
 ### Common stages
-Common stages are provided by SEKOIA.IO to help you parse your events. They are currently 5 differents common stages, each having its specifities :
+Common stages are provided by SEKOIA.IO to help you parse your events. There are currently 5 different common stages, each having its specifities :
 
 - Json
 - Date
@@ -64,7 +64,7 @@ In the following event, a JSON is present in the `message` field. The JSON stage
 ```
 To get the reference of the source IP in another stage, we will use the reference `{{stage1.message.traffic.source}}`
 
-- `stage1` is the name of JSON stage
+- `stage1` is the name of the JSON stage
 - `message` is the name of the `Output_field`
 - `traffic.source` is the field we want in the JSON
 
@@ -230,11 +230,13 @@ While your custom stage is empty, you only need to provide a `Name` for the stag
 #### Set
 ![SEKOIA.IO Set action](../assets/operation_center/custom_format/set_action.png){: style="max-width:100%"}
 
-This action is used to Set the value of one field in the ECS format in the final version of the event.
+This action is used to set the value of one field in the ECS format in the final version of the event.
 The field in the final version of the event can be specified with a dooted path (i.e. `field1`, `field1.sub-field2`, ...)
 
-The value can either be a constant (for instance `my-constant`, `10` ...) or a reference to the value of another field in the stage (for instance `{{stage1.message.myfield.subfield}}).
-If the value cannot be computed or is empty, the field is not modified.
+The value can either be a constant (for instance `my-constant`, `10` ...) or a reference to a field from a stage (for instance `{{stage1.message.myfield.subfield}}`).
+
+!!! note
+    If the value cannot be computed or is empty, the field is not modified.
 
 **Example**
 
@@ -244,7 +246,7 @@ The JSON stage (`Name: parsed_json`, `Output_field: message`) was previously use
   "message": "{'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}"
 }
 ```
-We now want to put the `source` and the `target` in the final version of the parsed event.
+We now want to put the `source` and the `target` IP in the final version of the parsed event.
 The `Set` action can be used :
 
 ![SEKOIA.IO Set example](../assets/operation_center/custom_format/set_example.png){: style="max-width:100%"}
