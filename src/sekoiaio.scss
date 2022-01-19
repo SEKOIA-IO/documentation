@@ -117,8 +117,12 @@ a {
 
 
         pre {
-            background: #2d2e83;
+            background: #f5f8fc;
             border-radius: 3px;
+
+            code {
+                color: #000;
+            }
         }
 
         #content_search {
