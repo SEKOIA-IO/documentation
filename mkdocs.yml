@@ -158,6 +158,7 @@ nav:
   - Guides:
     - Get Started: develop/guides/get_started.md
     - Authentication Overview: develop/guides/authentication_overview.md
+    - Filtering: develop/guides/filtering.md
   - REST API:
     - Authentication: develop/rest_api/identity_and_authentication.md
     - Community: develop/rest_api/community.md
