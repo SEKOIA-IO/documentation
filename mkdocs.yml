@@ -194,7 +194,7 @@ plugins:
       integrations/umbrella-dns.md: integrations/umbrella_dns.md
 
       # REST API Documentation
-      apis.md: develop.md
+      apis.md: develop/index.md
       "api/operation center: rules, entities, intakes, events.md": develop/rest_api/operation_center/configuration.md
       "api/operation center: alerts & case management": develop/rest_api/operation_center/alert.md
       "api/operation center: asset management": develop/rest_api/operation_center/assets.md
