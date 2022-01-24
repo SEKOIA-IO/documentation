@@ -16,7 +16,8 @@ markdown_extensions:
     linenums: true
     linenums_style: pymdownx-inline
 - pymdownx.superfences
-- pymdownx.tabbed
+- pymdownx.tabbed:
+    alternate_style: true 
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
