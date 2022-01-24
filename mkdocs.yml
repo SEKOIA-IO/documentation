@@ -192,6 +192,21 @@ plugins:
       integrations/pulse-connect-secure.md: integrations/pulse.md
       integrations/sentinelone-deepvisibility.md: integrations/sentinelone_deepvisibility.md
       integrations/umbrella-dns.md: integrations/umbrella_dns.md
+
+      # REST API Documentation
+      apis.md: develop.md
+      "api/operation center: rules, entities, intakes, events.md": develop/rest_api/operation_center/configuration.md
+      "api/operation center: alerts & case management": develop/rest_api/operation_center/alert.md
+      "api/operation center: asset management": develop/rest_api/operation_center/assets.md
+      "api/ingest: manage and test event parsers": develop/rest_api/operation_center/parser.md
+      "api/intelligence center: cyber threat intelligence database": develop/rest_api/intelligence_center/intelligence.md
+      "api/intelligence center: enrichment": develop/rest_api/intelligence_center/enrichments.md
+      "api/profile & permissions": develop/rest_api/community.md
+      "api/dashboards": develop/rest_api/dashboard.md
+      "api/identity & authentication": develop/rest_api/identity_and_authentication.md
+      "api/notifications": develop/rest_api/notification.md
+      "api/automation: symphony orchestrator": develop/rest_api/playbooks.md
+
 - redoc
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
