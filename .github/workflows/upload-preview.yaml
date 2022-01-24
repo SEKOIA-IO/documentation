@@ -31,7 +31,7 @@ jobs:
                archive_format: 'zip',
             });
             var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/site.zip', Buffer.from(download.data));
+            fs.writeFileSync('${{github.workspace}}/site.tar.gz.zip', Buffer.from(download.data));
 
       - run: |
           unzip -d site site.tar.gz.zip
