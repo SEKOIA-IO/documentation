@@ -21,6 +21,7 @@ The available filters are:
 -   Targeted sectors of activity
 -   Targeted locations
 -   Sources
+-   Observable types
 
 A feed can be consumed by all the users belonging to the community that created it.
 
@@ -39,6 +40,20 @@ The easiest way to create feed configurations is to use the Intelligence Center 
 If you would prefer creating the feed with the API, you can use the [feeds](https://docs.sekoia.io/api/threat%20intelligence%20database#operation/post_feeds_resource) endpoint.
 
 The result should contain the feed `id` that may be used to consume the feed.
+
+#### Feed format
+
+When creating a feed it is possible to choose its format.
+
+The available formats are:
+
+- JSON (the default)
+- CSV: It is possible to choose which attributes we want to see in the feed
+- Text: The content for this format will be a raw text with, on each line, either the name of the object or the observable from the pattern.
+- Custom: A template string is needed to specify the way the data must be formatted.
+    - The template variables must follow the format: `$name` where `name` is the name of the attribute
+    - Example: `ID: $id, name: $name, Observables: $observables`
+
 
 ### Feed Consumption
 
@@ -59,6 +74,8 @@ The response contains the STIX Objects in `items` and a pagination cursor in `ne
 You can pass this cursor using the cursor parameter to get the next page of content.
 
 i.e. `GET v2/inthreat/collections/{feed_id}/objects?limit=2000&cursor={next_cursor}`
+
+For feed using a format that is not JSON (the default), the cursor is located in the `Cursor` HTTP header.
 
 You can safely stop iterating when `items` is empty or less than the requested `limit`.
 
