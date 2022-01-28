@@ -5,4 +5,4 @@ hide:
   - footer
 ---
 
-!!redoc https://api.sekoia.io/v2/inthreat/swagger.json!!
+!!redoc https://api.sekoia.io/v2/inthreat/swagger.json?context=public!!
