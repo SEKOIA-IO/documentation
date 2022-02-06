@@ -191,19 +191,6 @@ plugins:
     redirect_maps:
       getting_started/2fa.md: user_center/multi_factor_authentication.md
       getting_started/apikey_creation.md: user_center/apikeys.md
-      integrations/auditbeat.md: integrations/auditbeat_linux.md
-      integrations/aws-cloudtrail.md: integrations/aws_cloudtrail.md
-      integrations/aws-flow-logs.md: integrations/aws_flow_logs.md
-      integrations/azure-ad.md: integrations/azure_ad.md
-      integrations/azure-linux.md: integrations/azure_linux.md
-      integrations/azure-mysql.md: integrations/azure_mysql.md
-      integrations/azure-network-watcher.md: integrations/azure_network_watcher.md
-      integrations/azure-windows.md: integrations/azure_windows.md
-      integrations/cisco-asa.md: integrations/cisco_asa.md
-      integrations/log-insight-windows.md: integrations/log_insight_windows.md
-      integrations/pulse-connect-secure.md: integrations/pulse.md
-      integrations/sentinelone-deepvisibility.md: integrations/sentinelone_deepvisibility.md
-      integrations/umbrella-dns.md: integrations/umbrella_dns.md
 
       # REST API Documentation
       apis.md: develop/index.md
@@ -219,6 +206,74 @@ plugins:
       "api/notifications": develop/rest_api/notification.md
       "api/automation: symphony orchestrator": develop/rest_api/playbooks.md
 
+      integrations/alsid.md: operation_center/integration_catalog/application/alsid.md
+      integrations/apache.md: operation_center/integration_catalog/application/apache.md
+      integrations/auditbeat.md: operation_center/integration_catalog/endpoint/auditbeat_linux.md
+      integrations/auditbeat_linux.md: operation_center/integration_catalog/endpoint/auditbeat_linux.md
+      integrations/aws-cloudtrail.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
+      integrations/aws_cloudtrail.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
+      integrations/aws-flow-logs.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
+      integrations/aws_flow_logs.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
+      integrations/azure-ad.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
+      integrations/azure_ad.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
+      integrations/azure-linux.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
+      integrations/azure_linux.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
+      integrations/azure-mysql.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
+      integrations/azure_mysql.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
+      integrations/azure-network-watcher.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
+      integrations/azure_network_watcher.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
+      integrations/azure-windows.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
+      integrations/azure_windows.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
+      integrations/bind.md: operation_center/integration_catalog/application/bind.md
+      integrations/cef.md: operation_center/integration_catalog/generic/cef.md
+      integrations/checkpoint.md: operation_center/integration_catalog/network/checkpoint.md
+      integrations/cisco-asa.md: operation_center/integration_catalog/network/cisco_asa.md
+      integrations/cisco_asa.md: operation_center/integration_catalog/network/cisco_asa.md
+      integrations/f5-big-ip.md: operation_center/integration_catalog/network/f5-big-ip.md
+      integrations/fortigate.md: operation_center/integration_catalog/network/fortigate.md
+      integrations/fortimail.md: operation_center/integration_catalog/email/fortimail.md
+      integrations/fortiproxy.md: operation_center/integration_catalog/network/fortiproxy.md
+      integrations/fortiweb.md: operation_center/integration_catalog/network/fortiweb.md
+      integrations/freeradius.md: operation_center/index.md
+      integrations/fsecure.md: operation_center/index.md
+      integrations/haproxy.md: operation_center/integration_catalog/application/haproxy.md
+      integrations/harfanglab.md: operation_center/integration_catalog/endpoint/harfanglab.md
+      integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
+      integrations/linux.md: operation_center/integration_catalog/endpoint/linux.md
+      integrations/log-insight-windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
+      integrations/log_insight_windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
+      integrations/netfilter.md: operation_center/integration_catalog/network/netfilter.md
+      integrations/nginx.md: operation_center/integration_catalog/application/nginx.md
+      integrations/o365.md: operation_center/integration_catalog/cloud_and_saas/o365.md
+      integrations/openssh.md:  operation_center/integration_catalog/application/openssh.md
+      integrations/paloalto.md: operation_center/integration_catalog/network/paloalto.md
+      integrations/postfix.md: operation_center/integration_catalog/email/postfix.md
+      integrations/prove-it.md: operation_center/index.md
+      integrations/pulse-connect-secure.md: operation_center/integration_catalog/network/pulse.md
+      integrations/pulse.md: operation_center/integration_catalog/network/pulse.md
+      integrations/raw.md: operation_center/index.md
+      integrations/retarus-email-security.md: operation_center/integration_catalog/email/retarus_email_security.md
+      integrations/sekoiaio-activity-logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
+      integrations/sentinelone.md: operation_center/integration_catalog/endpoint/sentinelone.md
+      integrations/sentinelone-deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
+      integrations/sentinelone_deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
+      integrations/sophos.md: operation_center/integration_catalog/network/sophos.md
+      integrations/spamassassin.md: operation_center/integration_catalog/email/spamassassin.md
+      integrations/squid.md: operation_center/integration_catalog/network/squid.md
+      integrations/suricata.md: operation_center/integration_catalog/network/suricata.md
+      integrations/tanium.md:  operation_center/integration_catalog/endpoint/tanium.md
+      integrations/umbrella_dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      integrations/umbrella-dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      integrations/umbrella_ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+      integrations/umbrella-ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+      integrations/umbrella_proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+      integrations/umbrella-proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+      integrations/unbound.md: operation_center/integration_catalog/application/unbound.md
+      integrations/vectra-cognito-detect.md: operation_center/integration_catalog/network/vectra.md
+      integrations/wallix-bastion.md: operation_center/integration_catalog/network/wallix.md
+      integrations/wazuh.md: operation_center/index.md
+      integrations/windows.md: operation_center/integration_catalog/endpoint/windows.md
+      integrations/zeek.md: operation_center/integration_catalog/network/zeek.md
 - redoc
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
