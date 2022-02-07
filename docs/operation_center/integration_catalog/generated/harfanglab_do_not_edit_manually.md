@@ -30,9 +30,9 @@ In details, the following Table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event`, `alert` |
-| Category | `process`, `network` |
-| Type | `info`, `start`, `connection` |
+| Kind | `alert`, `event` |
+| Category | `network`, `process` |
+| Type | `info`, `connection`, `start` |
 
 
 
@@ -46,7 +46,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "destination": {
             "address": "192.168.120.41",
             "ip": "192.168.120.41",
@@ -104,7 +104,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "code": "53504",
             "kind": "event",
@@ -131,7 +131,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "category": "process",
             "kind": "event",

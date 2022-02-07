@@ -10,7 +10,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.7.1.240"
         },
@@ -145,7 +145,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -273,7 +273,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "sekoiaio": {
             "intake": {
                 "dialect": "deep-visibility",
@@ -396,7 +396,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -570,7 +570,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -702,7 +702,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -848,7 +848,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -1036,7 +1036,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -1181,7 +1181,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -1401,7 +1401,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "start": "2206-11-13T06:23:32.121+00:00",
             "action": "fileCreation"
@@ -1528,7 +1528,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.7.1.240"
         },
@@ -1673,7 +1673,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.7.1.240"
         },
@@ -1858,7 +1858,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -1976,7 +1976,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -2121,7 +2121,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -2250,7 +2250,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "version": "S1-WIN/21.7.1.240"
         },
@@ -2456,7 +2456,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "start": "2206-11-13T06:23:32.121+00:00",
             "action": "fileCreation"
@@ -2581,7 +2581,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "start": "2021-08-09T13:33:30.404+00:00",
             "action": "dns"

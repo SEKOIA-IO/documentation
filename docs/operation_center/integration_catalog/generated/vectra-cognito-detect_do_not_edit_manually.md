@@ -24,7 +24,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "destination": {
             "address": "mirror.centos.org",
             "bytes": 8269214038,
@@ -81,7 +81,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "destination": {
             "address": "198.51.100.38",
             "ip": "198.51.100.38",
@@ -131,7 +131,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "outcome": "success",
             "type": "HOST SCORING",
@@ -189,7 +189,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "source": {
             "ip": "255.255.255.1"
         },
@@ -232,7 +232,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "type": "INFO",
             "url": "https://255.255.255.1/detections/9999?detail_id=11111"
@@ -271,7 +271,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "outcome": "success",
             "type": "ACCOUNT SCORING",
@@ -419,7 +419,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "type": "RECONNAISSANCE",
             "url": "https://255.255.255.1/detections/1900?detail_id=66777"

@@ -27,7 +27,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -116,7 +116,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
             "hostname": "fame",
@@ -224,7 +224,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "category": [
                 "file"
@@ -362,7 +362,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -449,7 +449,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -536,7 +536,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "ecs": {
             "version": "1.10.0"
         },
@@ -662,7 +662,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "dialect_uuid": "423c9f61-0282-464d-a2f3-f2d745b59a3b",
             "id": "c7679ece-e22f-4144-a7f5-619034aa036d",
@@ -786,7 +786,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
             "hostname": "fame",
@@ -866,7 +866,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "user": {
             "filesystem": {
                 "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
@@ -1074,7 +1074,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "@timestamp": "2021-11-09T16:19:27.788Z",
         "process": {
             "pid": 12416,
@@ -1202,7 +1202,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -1282,7 +1282,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -1359,7 +1359,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "event": {
             "module": "system",
             "dataset": "process",
