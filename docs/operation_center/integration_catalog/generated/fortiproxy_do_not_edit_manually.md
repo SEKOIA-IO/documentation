@@ -24,7 +24,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "log-only",
             "type": "dlp"
@@ -139,7 +139,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "accept",
             "type": "allow"
@@ -234,7 +234,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "pass",
             "type": "app-ctrl-all"
@@ -342,7 +342,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "destination": {
             "address": "example.com",
             "domain": "example.com",
@@ -424,7 +424,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "passthrough",
             "type": "ftgd_allow"
@@ -524,7 +524,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "transfer"
         },

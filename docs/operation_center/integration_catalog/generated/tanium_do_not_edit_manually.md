@@ -32,7 +32,7 @@ In details, the following Table denotes the type of events produced by this inte
 | ---- | ------ |
 | Kind | `event` |
 | Category | `file` |
-| Type | `info`, `creation` |
+| Type | `creation`, `info` |
 
 
 

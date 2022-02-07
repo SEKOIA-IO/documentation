@@ -16,7 +16,7 @@ In details, the following Table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event`, `alert` |
+| Kind | `alert`, `event` |
 | Category | `malware`, `web` |
 | Type | `info` |
 
@@ -32,7 +32,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "THREAT",
             "outcome": "failure"
@@ -102,7 +102,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "THREAT",
             "outcome": "failure"
@@ -180,7 +180,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "THREAT",
             "outcome": "failure"
@@ -259,7 +259,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "EVENT",
             "outcome": "success",
@@ -328,7 +328,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "THREAT",
             "outcome": "failure"
@@ -399,7 +399,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "EVENT",
             "outcome": "success",
@@ -468,7 +468,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "action": {
             "name": "EVENT",
             "outcome": "success",
@@ -537,7 +537,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "destination": {
             "address": "recipientdomain.fr",
             "domain": "recipientdomain.fr",

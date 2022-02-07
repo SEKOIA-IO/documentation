@@ -25,7 +25,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "message": {
             "timestamp": "2021-11-01T12:16:21.815546",
             "observer": {
@@ -96,7 +96,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    	{
+    {
         "message": {
             "timestamp": "2021-10-29T11:34:23Z",
             "observer": {
