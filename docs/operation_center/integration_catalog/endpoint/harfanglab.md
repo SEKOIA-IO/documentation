@@ -36,4 +36,4 @@ In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable 
 
 Finaly select the `Protocol` option: `TCP/SSL`, leave the other options to default.
 
-![HarfangLab EDR](../assets/harfanglab_edr.png){: style="max-width:60%"}
+![HarfangLab EDR](../../../assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab_edr.png){: style="max-width:60%"}

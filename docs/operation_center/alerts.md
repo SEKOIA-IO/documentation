@@ -200,7 +200,7 @@ Subtasks can have an OpenC2 specification which can be displayed by clicking on 
 
 ![Alert Details Tasks](../assets/operation_center/alert_details/events.png){: style="width: 100%; max-width: 100%"}
 
-The Events tab lists the events that raised the alert in a display similar to the [Events page](../events.md).
+The Events tab lists the events that raised the alert in a display similar to the [Events page](events.md).
 
 When interracting with individual values, it is possible to:
 

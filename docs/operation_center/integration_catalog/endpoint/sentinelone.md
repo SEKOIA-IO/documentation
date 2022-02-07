@@ -47,8 +47,8 @@ In the [SEKOIA.IO Operation Center](https://app.sekoia.io/operations/intakes):
 3. Click `Create` on the relevant object.
 4. Fulfil the `Name` of your intake that will be displayed, the related `Entity` and select `Automatically`:
 
-![SentinelOne EDR Intake creation](../../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_edr_auto.png){: style="max-width:60%"}
+![SentinelOne EDR Intake creation](../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_edr_auto.png){: style="max-width:60%"}
 
 5. Fulfil the SentinelOne `API token` previously downloaded and the related `URL Domain`:
 
-![SentinelOne EDR secret](../../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_edr_api.png){: style="max-width:60%"}
+![SentinelOne EDR secret](../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_edr_api.png){: style="max-width:60%"}

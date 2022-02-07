@@ -56,8 +56,8 @@ In the [SEKOIA.IO Operation Center](https://app.sekoia.io/operations/intakes):
 3. Click `Create` on the relevant object.
 4. Fulfil the `Name` of your intake that will be displayed, the related `Entity` and select `Automatically`:
 
-![SentinelOne Deep Visibility Intake creation](../../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_dv_edr_auto.png){: style="max-width:60%"}
+![SentinelOne Deep Visibility Intake creation](../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_dv_edr_auto.png){: style="max-width:60%"}
 
 5. Fulfil the SentinelOne information that you collected with your SentinelOne Point of Contact:
 
-![SentinelOne Deep Visibility secret](../../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_dv_edr_kafka.png){: style="max-width:60%"}
+![SentinelOne Deep Visibility secret](../../../assets/operation_center/integration_catalog/endpoint/sentinelone/sentinelone_dv_edr_kafka.png){: style="max-width:60%"}
