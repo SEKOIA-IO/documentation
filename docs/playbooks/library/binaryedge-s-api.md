@@ -26,7 +26,7 @@
 
 ## Actions
 
-### get_query_domains_search
+### Search domains
 
 List of Domains/DNS data based on a Query. Can be used with specific parameters and/or full-text search. Possible types of records currently available:
 
@@ -61,7 +61,7 @@ List of Domains/DNS data based on a Query. Can be used with specific parameters 
 
 
 
-### get_query_sensors_tag__tag_
+### List IPs from tag
 
 Get a list of IPs that have been associated with a specific TAG.
 
@@ -82,7 +82,7 @@ Get a list of IPs that have been associated with a specific TAG.
 
 
 
-### get_query_search_stats
+### Get statistics
 
 Statistics of recent events for the given query. Can be used with specific parameters and/or full-text search.
 
@@ -104,7 +104,7 @@ Statistics of recent events for the given query. Can be used with specific param
 
 
 
-### get_query_domains_ip__target_
+### List domains by IP
 
 Return records that have the specified IP address in their A or AAAA records.
 
@@ -139,7 +139,7 @@ Return records that have the specified IP address in their A or AAAA records.
 
 
 
-### get_query_image_tags
+### List tags for screenshots
 
 Get the list of possible tags for the images.
 
@@ -150,7 +150,7 @@ Get the list of possible tags for the images.
 
 
 
-### get_query_domains_subdomain__target_
+### List subdomains
 
 Return list of subdomains known from the target domains.
 
@@ -183,7 +183,7 @@ Return list of subdomains known from the target domains.
 
 
 
-### get_query_sensors_search
+### Search sensors
 
 Events based on a Query. List of recent events for the given query, including details of scanned ports, payloads and tags. Can be used with specific parameters and/or full-text search.
 
@@ -218,7 +218,7 @@ Events based on a Query. List of recent events for the given query, including de
 
 
 
-### get_query_ip_historical__target_
+### Get History
 
 Details about an Host, with data up to 6 months.
 
@@ -253,7 +253,7 @@ Details about an Host, with data up to 6 months.
 
 
 
-### get_query_sensors_ip__target_
+### Get sensors
 
 Details about an Scanner. List of recent events form the specified host, including details of scanned ports, payloads and tags.
 
@@ -286,7 +286,7 @@ Details about an Scanner. List of recent events form the specified host, includi
 
 
 
-### get_query_torrent_search
+### Search torrent activities
 
 Events based on a Query. List of recent events for the given query, including details of the peer and torrent. Can be used with specific parameters and/or full-text search.
 
@@ -319,7 +319,7 @@ Events based on a Query. List of recent events for the given query, including de
 
 
 
-### get_query_score_ip__target_
+### Get Score
 
 IP Risk Score. Scoring is based on all information found on our databases regarding an IP and refers to the level of exposure of a target, i.e, the higher the score, the greater the risk of exposure.
 
@@ -355,7 +355,7 @@ IP Risk Score. Scoring is based on all information found on our databases regard
 
 
 
-### get_query_domains_dns__target_
+### List DNS targets by domain
 
 Return list of known DNS results for the target domain. Possible types of records currently available:
 
@@ -390,7 +390,7 @@ Return list of known DNS results for the target domain. Possible types of record
 
 
 
-### get_query_dataleaks_info
+### Get dataleaks trackers
 
 Get all available information about the dataleaks our platform keeps track.
 
@@ -411,7 +411,7 @@ Get all available information about the dataleaks our platform keeps track.
 
 
 
-### get_user_subscription
+### Get user subscription
 
 Return details about your current subscription package.
 
@@ -433,7 +433,7 @@ Return details about your current subscription package.
 
 
 
-### get_query_torrent_historical__target_
+### Get torrent history
 
 Details about torrents transferred by an Host, with data up to 6 months.
 
@@ -467,7 +467,7 @@ Details about torrents transferred by an Host, with data up to 6 months.
 
 
 
-### get_query_dataleaks_email__email_
+### Search dataleaks by email
 
 Allows you to search across multiple data breaches to see if any of your email addresses has been compromised. If you are affected, we recommend you change your password on the respective services.
 
@@ -501,7 +501,7 @@ Allows you to search across multiple data breaches to see if any of your email a
 
 
 
-### get_query_torrent_search_stats
+### Get torrent statistics
 
 Statistics of events for the given query. Can be used with specific parameters and/or full-text search.
 
@@ -524,7 +524,7 @@ Statistics of events for the given query. Can be used with specific parameters a
 
 
 
-### get_query_cve_ip__target_
+### List CVEs
 
 Get list of CVEs that migh affect a specific IP.
 
@@ -555,7 +555,7 @@ Get list of CVEs that migh affect a specific IP.
 
 
 
-### get_query_dataleaks_organization__domain_
+### Search dataleaks by organization
 
 Verify how many emails are affected by dataleaks for a specific domain. We don't provide the list of affected emails.
 
@@ -587,7 +587,7 @@ Verify how many emails are affected by dataleaks for a specific domain. We don't
 
 
 
-### get_query_image_ip__target_
+### List screenshots
 
 Details about Remote Desktops found on an Host. List of screenshots and details extracted from them for the specified host, including OCR and whether faces were found or not, with data up to 2 months.
 
@@ -620,7 +620,7 @@ Details about Remote Desktops found on an Host. List of screenshots and details 
 
 
 
-### get_query_search
+### Search events
 
 Events based on a Query. List of recent events for the given query, including details of exposed ports and services. Can be used with [specific parameters](https://docs.binaryedge.io/image-search/) and/or full-text search.
 
@@ -654,7 +654,7 @@ Events based on a Query. List of recent events for the given query, including de
 
 
 
-### get_query_torrent_ip__target_
+### Get torrent activity
 
 Details about torrents transferred by an Host. List of recent torrent events for the specified host, including details of the peer and torrent. See [Torrent Data](https://docs.binaryedge.io/torrent/) for more details.
 
@@ -684,7 +684,7 @@ Details about torrents transferred by an Host. List of recent torrent events for
 
 
 
-### get_query_sensors_search_stats
+### Get sensors statistics
 
 Statistics of recent events for the given query. Can be used with specific parameters and/or full-text search.
 
@@ -707,7 +707,7 @@ Statistics of recent events for the given query. Can be used with specific param
 
 
 
-### get_query_image_search
+### Search screenshots
 
 Remote Desktops based on a Query. List of screenshots and details extracted from them for the given query, including OCR and whether faces were found or not. Can be used with specific parameters and/or full-text search.
 
@@ -740,7 +740,7 @@ Remote Desktops based on a Query. List of screenshots and details extracted from
 
 
 
-### get_query_ip__target_
+### Get details
 
 Details about an Host. List of recent events for the specified host, including details of exposed ports and services.
 
@@ -779,4 +779,4 @@ Details about an Host. List of recent events for the specified host, including d
 
 ## Extra
 
-Module **BinaryEdge's API v.1.9**
+Module **BinaryEdge's API v.1.10**

@@ -1,8 +1,8 @@
-# public_suffix
+# Public Suffix
 
 
 
-Public Suffix module
+The [Public Suffix List](https://publicsuffix.org/) is an initiative of [Mozilla](https://www.mozilla.org/) to list of all known public suffixes
 
 ## Configuration
 
@@ -44,4 +44,4 @@ Get the list of private domains
 
 ## Extra
 
-Module **public_suffix v.1.10**
+Module **Public Suffix v.1.11**

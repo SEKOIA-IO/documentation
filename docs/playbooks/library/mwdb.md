@@ -2,7 +2,7 @@
 
 
 
-MWDB Module
+[MWDB](https://mwdb.cert.pl/) is a malware repository for automated malware collection and analysis systems hosted by CERT.pl
 
 ## Configuration
 
@@ -18,9 +18,9 @@ MWDB Module
 
 ## Triggers
 
-### New Config
+### Get new configs
 
-Get MWDB configs
+Get Malware configs from MWDB
 
 
 
@@ -91,4 +91,4 @@ Convert a MWDB config to a bundle of observables
 
 ## Extra
 
-Module **mwdb v.1.25**
+Module **mwdb v.1.26**

@@ -4,7 +4,7 @@
 ![harfanglab](../../assets/playbooks/library/harfanglab.png)
 
 
-HarfangLab module
+HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020
 
 ## Configuration
 
@@ -24,7 +24,7 @@ HarfangLab module
 
 ## Actions
 
-### Get Pipe List
+### List named pipes
 
 Get the list of named pipe on the systems
 
@@ -56,9 +56,9 @@ Get the list of named pipe on the systems
 
 
 
-### Get Process List
+### List processes
 
-Get Process List
+Get the list of processes on the systems
 
 
 
@@ -98,4 +98,4 @@ Get Process List
 
 ## Extra
 
-Module **harfanglab v.1.8**
+Module **harfanglab v.1.9**

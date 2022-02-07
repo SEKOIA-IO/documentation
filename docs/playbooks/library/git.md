@@ -2,7 +2,7 @@
 
 
 
-Git Module
+[Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle projects with speed and efficiency.
 
 ## Configuration
 
@@ -90,4 +90,4 @@ Trigger playbook run on every Git commit
 
 ## Extra
 
-Module **git v.1.17**
+Module **git v.1.18**

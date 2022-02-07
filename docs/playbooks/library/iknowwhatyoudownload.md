@@ -1,10 +1,10 @@
-# iknowwhatyoudownload
+# IKnowWhatYouDownload
 
 
-![iknowwhatyoudownload](../../assets/playbooks/library/iknowwhatyoudownload.png)
+![IKnowWhatYouDownload](../../assets/playbooks/library/iknowwhatyoudownload.png)
 
 
-Torrent downloads and distributions tracker
+[iknowwhatyoudownload](https://iknowwhatyoudownload.com) collects torrent files and peers from torrent sites and DHT network. It allows associating IP addresses to downloaded and shared data
 
 ## Configuration
 
@@ -24,7 +24,7 @@ Torrent downloads and distributions tracker
 
 ## Actions
 
-### IP History
+### Get IP History
 
 Fetches the historical data of downloaded and shared content using the BitTorrent protocol of an IP
 
@@ -57,7 +57,7 @@ Fetches the historical data of downloaded and shared content using the BitTorren
 
 
 
-### IP Check
+### Check IP existence
 
 Fast check if IP exists or not in the IKnowWhatYouDownload database
 
@@ -87,7 +87,7 @@ Fast check if IP exists or not in the IKnowWhatYouDownload database
 
 
 
-### IP List
+### List IPs from CIDR
 
 Fetch the list IP that can be found in a CIDR notation
 
@@ -123,4 +123,4 @@ Fetch the list IP that can be found in a CIDR notation
 
 ## Extra
 
-Module **iknowwhatyoudownload v.1.12**
+Module **IKnowWhatYouDownload v.1.13**

@@ -2,7 +2,7 @@
 
 
 
-Tranco Module
+[Tranco](https://tranco-list.eu/) is an top sites ranking list hardened against manipulation.
 
 ## Configuration
 
@@ -55,4 +55,4 @@ Fetches Tranco list
 
 ## Extra
 
-Module **tranco v.1.13**
+Module **tranco v.1.14**

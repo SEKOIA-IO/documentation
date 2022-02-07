@@ -4,7 +4,7 @@
 ![onyphe](../../assets/playbooks/library/onyphe.png)
 
 
-Onyphe
+[Onyphe](https://www.onyphe.io/) is a Cyber Defense Search Engine for open-source and cyber threat intelligence data collected by crawling various sources available on the Internet or by listening to Internet background noise
 
 ## Configuration
 
@@ -23,7 +23,7 @@ Onyphe
 
 ## Actions
 
-### IP Threat List
+### Get IP Threat List
 
 Get threatlist information on IP with Onyphe
 
@@ -62,7 +62,7 @@ Get threatlist information on IP with Onyphe
 
 
 
-### IP Datascan
+### Get IP Datascan
 
 Get datascan information on IP with Onyphe: "Application responses to [Onyphe's] application requests"
 
@@ -102,7 +102,7 @@ Get datascan information on IP with Onyphe: "Application responses to [Onyphe's]
 
 
 
-### IP Geolocalization
+### Geolocalize IP
 
 Geo-localize ip with Onyphe
 
@@ -137,7 +137,7 @@ Geo-localize ip with Onyphe
 
 
 
-### MD5 Lookup
+### Lookup MD5
 
 Get Onyphe datascans with the given md5 in the datamd5 field
 
@@ -176,7 +176,7 @@ Get Onyphe datascans with the given md5 in the datamd5 field
 
 
 
-### Sniffer
+### Get IP Sniffer
 
 Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed honeypots on the Internet. [They] are listening to Internet background noise and performing passive operating system identification"
 
@@ -215,7 +215,7 @@ Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed
 
 
 
-### IP Lookup
+### Lookup IP
 
 Get information on IP with Onyphe
 
@@ -254,7 +254,7 @@ Get information on IP with Onyphe
 
 
 
-### Pastries
+### Get Pastries
 
 Get pastries information collected by Onyphe on pastebin.com
 
@@ -293,7 +293,7 @@ Get pastries information collected by Onyphe on pastebin.com
 
 
 
-### Onion Scan
+### Get Onion Scan
 
 Get information on the given onion domain with Onyphe
 
@@ -332,7 +332,7 @@ Get information on the given onion domain with Onyphe
 
 
 
-### Domain Name CTLs
+### Get Domain Name CTLs
 
 Get domain name X509 certificate information from Certificate Transparency Logs (CTLs) with Onyphe
 
@@ -371,7 +371,7 @@ Get domain name X509 certificate information from Certificate Transparency Logs 
 
 
 
-### IP Reverse DNS
+### Lookup Reverse DNS
 
 Get reverse DNS lookup information on IP with Onyphe
 
@@ -410,7 +410,7 @@ Get reverse DNS lookup information on IP with Onyphe
 
 
 
-### Syn Scan
+### Get IP Syn Scan
 
 Get synscan information on IP with Onyphe: "Open TCP ports found on the Internet. Each open port is also enriched with detected operating system"
 
@@ -449,7 +449,7 @@ Get synscan information on IP with Onyphe: "Open TCP ports found on the Internet
 
 
 
-### IP Forward DNS
+### Lookup Forward DNS
 
 Get forward DNS lookup information on IP with Onyphe
 
@@ -488,7 +488,7 @@ Get forward DNS lookup information on IP with Onyphe
 
 
 
-### IP Inetnum
+### Get IP Inetnum
 
 Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description as given by RIRs (Regional Internet Registries), except for the United States which does not disclose that information publicly."
 
@@ -534,4 +534,4 @@ Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description 
 
 ## Extra
 
-Module **onyphe v.1.11**
+Module **onyphe v.1.12**

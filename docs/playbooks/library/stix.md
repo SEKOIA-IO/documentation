@@ -4,7 +4,7 @@
 ![stix](../../assets/playbooks/library/stix.png)
 
 
-STIX / TAXII manipulation
+[STIX](https://oasis-open.github.io/cti-documentation/) is a cybersecurity serialization format used to represent cyber threat intelligence, directed by the [OASIS Cyber Threat Intelligence Technical Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti). It peered with TAXII, a protocol used to exchange cyber threat intelligence (CTI) over HTTPS
 
 ## Configuration
 
@@ -211,6 +211,40 @@ Remove objects without any relationship from a STIX bundle.
 
 
 
+### Json objects to Observables
+
+Convert a list of json objects into a list of observables
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| items | array | Items to convert to observables |
+| items_path | string | Path of the file holding the list of items to convert |
+| type | string | type of observables |
+| value_path | string | Name or JSON path of the attribute holding the value |
+| tags | array | List of tags to add to the observables |
+| source | object | STIX Identity Source |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| observables | object | Bundle with the list of observables |
+| observables_path | string | Path of the file holding the bundle with the observables |
+
+
+
+
+
+
+
 ### Cryptolaemus To STIX
 
 Parse Cryptolaemus content
@@ -256,6 +290,7 @@ Convert a list of strings into a list of observables
 | items_path | string | Path of the file holding the list of items to convert |
 | type | string | type of observables |
 | tags | array | List of tags to add to the observables |
+| source | object | STIX Identity Source |
 
 
 
@@ -481,4 +516,4 @@ Generate Contextualized Indicators from Observables
 
 ## Extra
 
-Module **stix v.1.56**
+Module **stix v.1.61**

@@ -4,7 +4,7 @@
 ![RiskIQ](../../assets/playbooks/library/riskiq.png)
 
 
-RiskIQ module
+[RiskIQ](https://www.riskiq.com/) is a cyber security company providing software as a service to detect phishing, fraud, malware, and other online security threats.
 
 ## Configuration
 
@@ -529,4 +529,4 @@ Get WHOIS records associated with a phone number
 
 ## Extra
 
-Module **RiskIQ v.1.13**
+Module **RiskIQ v.1.14**

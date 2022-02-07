@@ -2,7 +2,7 @@
 
 
 
-Triage Module
+[Triage](https://tria.ge/) is a malware analysis sandbox as a service, brought by [Hatching](https://hatching.io/)
 
 ## Configuration
 
@@ -92,4 +92,4 @@ Triage raw results to observables
 
 ## Extra
 
-Module **triage v.1.17**
+Module **triage v.1.18**

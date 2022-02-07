@@ -2,7 +2,7 @@
 
 
 
-Utilities for HTTP requests.
+This module exposes actions to request HTTP resources
 
 ## Configuration
 
@@ -10,7 +10,7 @@ Utilities for HTTP requests.
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| headers | string | Headers to use when sending the requests |
+| headers | object | Headers to use when sending the requests. |
 
 
 
@@ -50,7 +50,7 @@ Donwload the given file and save it
 
 
 
-### Request
+### Request URL
 
 Requests a resource at a specified URL and returns the response as Raw or JSON
 
@@ -97,4 +97,4 @@ Requests a resource at a specified URL and returns the response as Raw or JSON
 
 ## Extra
 
-Module **http v.1.97**
+Module **http v.1.99**
