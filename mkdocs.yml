@@ -20,7 +20,6 @@ markdown_extensions:
     alternate_style: true
 - markdown_include.include:
     base_path: docs
-
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
@@ -33,74 +32,72 @@ nav:
   - Overview: operation_center/index.md
   - Dashboards: operation_center/threat_exposition.md
   - Integration Catalog:
-      - Application:
-          - Alsid: operation_center/integration_catalog/application/alsid.md
-          - Apache: operation_center/integration_catalog/application/apache.md
-          - BIND: operation_center/integration_catalog/application/bind.md
-          - ISC DHCP: operation_center/integration_catalog/application/dhcpd.md
-          - HAProxy: operation_center/integration_catalog/application/haproxy.md
-          - Nginx: operation_center/integration_catalog/application/nginx.md
-          - OpenSSH: operation_center/integration_catalog/application/openssh.md
-          - SEKOIA.IO: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
-          - Unbound: operation_center/integration_catalog/application/unbound.md
-      - Cloud and SaaS:
-          - AWS:
-              - CloudTrail: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
-              - VPC Flow Logs: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
-          - Microsoft Azure:
-              - Azure Active Directory: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
-              - Azure MySQL: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
-              - Azure Linux machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
-              - Azure Network Watcher: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
-              - Azure Windows machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
-          - Microsoft Office 365: operation_center/integration_catalog/cloud_and_saas/o365.md
-          - Cisco Umbrella:
-              - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
-              - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
-              - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
-
-      - Email:
-          - FortiMail: operation_center/integration_catalog/email/fortimail.md
-          - Postfix: operation_center/integration_catalog/email/postfix.md
-          - Retarus Email Security: operation_center/integration_catalog/email/retarus_email_security.md
-          - SpamAssassin: operation_center/integration_catalog/email/spamassassin.md
-      - Endpoint:
-          - Auditbeat Linux: operation_center/integration_catalog/endpoint/auditbeat_linux.md
-          - HarfangLab: operation_center/integration_catalog/endpoint/harfanglab.md
-          - Linux: operation_center/integration_catalog/endpoint/linux.md
-          - SentinelOne: operation_center/integration_catalog/endpoint/sentinelone.md
-          - SentinelOne Deep Visibility: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
-          - Tanium: operation_center/integration_catalog/endpoint/tanium.md
-          - Windows: operation_center/integration_catalog/endpoint/windows.md
-          - Windows (Log Insight): operation_center/integration_catalog/endpoint/log_insight_windows.md
-
-      - Network:
-          - Checkpoint: operation_center/integration_catalog/network/checkpoint.md
-          - Cisco: operation_center/integration_catalog/network/cisco_asa.md
-          - F5 BigIP: operation_center/integration_catalog/network/f5-big-ip.md
-          - FortiGate: operation_center/integration_catalog/network/fortigate.md
-          - FortiProxy: operation_center/integration_catalog/network/fortiproxy.md
-          - FortiWeb: operation_center/integration_catalog/network/fortiweb.md
-          - NetFilter: operation_center/integration_catalog/network/netfilter.md
-          - PaloAlto: operation_center/integration_catalog/network/paloalto.md
-          - Pulse Connect Secure: operation_center/integration_catalog/network/pulse.md
-          - Sophos Firewall: operation_center/integration_catalog/network/sophos.md
-          - Squid: operation_center/integration_catalog/network/squid.md
-          - Suricata: operation_center/integration_catalog/network/suricata.md
-          - Vectra:  operation_center/integration_catalog/network/vectra.md
-          - Wallix:  operation_center/integration_catalog/network/wallix.md
-          - Zeek:  operation_center/integration_catalog/network/zeek.md
-      - Generic:
-          - Common Event Format: operation_center/integration_catalog/generic/cef.md
+    - Application:
+      - Alsid: operation_center/integration_catalog/application/alsid.md
+      - Apache: operation_center/integration_catalog/application/apache.md
+      - BIND: operation_center/integration_catalog/application/bind.md
+      - ISC DHCP: operation_center/integration_catalog/application/dhcpd.md
+      - HAProxy: operation_center/integration_catalog/application/haproxy.md
+      - Nginx: operation_center/integration_catalog/application/nginx.md
+      - OpenSSH: operation_center/integration_catalog/application/openssh.md
+      - SEKOIA.IO: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
+      - Unbound: operation_center/integration_catalog/application/unbound.md
+    - Cloud and SaaS:
+      - AWS:
+        - CloudTrail: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
+        - VPC Flow Logs: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
+      - Microsoft Azure:
+        - Azure Active Directory: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
+        - Azure MySQL: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
+        - Azure Linux machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
+        - Azure Network Watcher: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
+        - Azure Windows machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
+      - Microsoft Office 365: operation_center/integration_catalog/cloud_and_saas/o365.md
+      - Cisco Umbrella:
+        - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+        - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+        - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+    - Email:
+      - FortiMail: operation_center/integration_catalog/email/fortimail.md
+      - Postfix: operation_center/integration_catalog/email/postfix.md
+      - Retarus Email Security: operation_center/integration_catalog/email/retarus_email_security.md
+      - SpamAssassin: operation_center/integration_catalog/email/spamassassin.md
+    - Endpoint:
+      - Auditbeat Linux: operation_center/integration_catalog/endpoint/auditbeat_linux.md
+      - HarfangLab: operation_center/integration_catalog/endpoint/harfanglab.md
+      - Linux: operation_center/integration_catalog/endpoint/linux.md
+      - SentinelOne: operation_center/integration_catalog/endpoint/sentinelone.md
+      - SentinelOne Deep Visibility: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
+      - Tanium: operation_center/integration_catalog/endpoint/tanium.md
+      - Windows: operation_center/integration_catalog/endpoint/windows.md
+      - Windows (Log Insight): operation_center/integration_catalog/endpoint/log_insight_windows.md
+    - Network:
+      - Checkpoint: operation_center/integration_catalog/network/checkpoint.md
+      - Cisco: operation_center/integration_catalog/network/cisco_asa.md
+      - F5 BigIP: operation_center/integration_catalog/network/f5-big-ip.md
+      - FortiGate: operation_center/integration_catalog/network/fortigate.md
+      - FortiProxy: operation_center/integration_catalog/network/fortiproxy.md
+      - FortiWeb: operation_center/integration_catalog/network/fortiweb.md
+      - NetFilter: operation_center/integration_catalog/network/netfilter.md
+      - PaloAlto: operation_center/integration_catalog/network/paloalto.md
+      - Pulse Connect Secure: operation_center/integration_catalog/network/pulse.md
+      - Sophos Firewall: operation_center/integration_catalog/network/sophos.md
+      - Squid: operation_center/integration_catalog/network/squid.md
+      - Suricata: operation_center/integration_catalog/network/suricata.md
+      - Vectra: operation_center/integration_catalog/network/vectra.md
+      - Wallix: operation_center/integration_catalog/network/wallix.md
+      - Zeek: operation_center/integration_catalog/network/zeek.md
+    - Generic:
+      - Common Event Format: operation_center/integration_catalog/generic/cef.md
   - Data Collection:
-      - Overview: operation_center/data_collection/index.md
-      - Ingestion methods:
-          - Overview: operation_center/data_collection/ingestion_methods/index.md
-          - Rsyslog: operation_center/data_collection/ingestion_methods/rsyslog.md
-          - Logstash: operation_center/data_collection/ingestion_methods/logstash.md
-          - syslog-ng: operation_center/data_collection/ingestion_methods/syslog-ng.md
-          - Graylog: operation_center/data_collection/ingestion_methods/graylog.md
-          - HTTPS: operation_center/data_collection/ingestion_methods/https.md
+    - Overview: operation_center/data_collection/index.md
+    - Ingestion methods:
+      - Overview: operation_center/data_collection/ingestion_methods/index.md
+      - Rsyslog: operation_center/data_collection/ingestion_methods/rsyslog.md
+      - Logstash: operation_center/data_collection/ingestion_methods/logstash.md
+      - syslog-ng: operation_center/data_collection/ingestion_methods/syslog-ng.md
+      - Graylog: operation_center/data_collection/ingestion_methods/graylog.md
+      - HTTPS: operation_center/data_collection/ingestion_methods/https.md
   - Configure:
     - Entities: operation_center/entities.md
     - Intakes: operation_center/intakes.md
@@ -141,6 +138,7 @@ nav:
     - Detection-rules: playbooks/library/detection-rules.md
     - Fileutils: playbooks/library/fileutils.md
     - Fortigate_fw: playbooks/library/fortigate-fw.md
+    - Google: playbooks/library/google.md
     - Git: playbooks/library/git.md
     - Http: playbooks/library/http.md
     - Harfanglab: playbooks/library/harfanglab.md
@@ -156,8 +154,8 @@ nav:
     - Public_suffix: playbooks/library/public-suffix.md
     - Rss: playbooks/library/rss.md
     - Riskiq: playbooks/library/riskiq.md
-    - Sekoia.io: playbooks/library/sekoia-io.md
-    - Stix: playbooks/library/stix.md
+    - SEKOIA.IO: playbooks/library/sekoia-io.md
+    - STIX: playbooks/library/stix.md
     - Servicenow: playbooks/library/servicenow.md
     - Shodan: playbooks/library/shodan.md
     - Tranco: playbooks/library/tranco.md
@@ -189,46 +187,44 @@ plugins:
 - search: null
 - redirects:
     redirect_maps:
+      'api/automation: symphony orchestrator': develop/rest_api/playbooks.md
+      api/dashboards: develop/rest_api/dashboard.md
+      api/identity & authentication: develop/rest_api/identity_and_authentication.md
+      'api/ingest: manage and test event parsers': develop/rest_api/operation_center/parser.md
+      'api/intelligence center: cyber threat intelligence database': develop/rest_api/intelligence_center/intelligence.md
+      'api/intelligence center: enrichment': develop/rest_api/intelligence_center/enrichments.md
+      api/notifications: develop/rest_api/notification.md
+      'api/operation center: alerts & case management': develop/rest_api/operation_center/alert.md
+      'api/operation center: asset management': develop/rest_api/operation_center/assets.md
+      'api/operation center: rules, entities, intakes, events.md': develop/rest_api/operation_center/configuration.md
+      api/profile & permissions: develop/rest_api/community.md
+      apis.md: develop/index.md
       getting_started/2fa.md: user_center/multi_factor_authentication.md
       getting_started/apikey_creation.md: user_center/apikeys.md
-
-      # REST API Documentation
-      apis.md: develop/index.md
-      "api/operation center: rules, entities, intakes, events.md": develop/rest_api/operation_center/configuration.md
-      "api/operation center: alerts & case management": develop/rest_api/operation_center/alert.md
-      "api/operation center: asset management": develop/rest_api/operation_center/assets.md
-      "api/ingest: manage and test event parsers": develop/rest_api/operation_center/parser.md
-      "api/intelligence center: cyber threat intelligence database": develop/rest_api/intelligence_center/intelligence.md
-      "api/intelligence center: enrichment": develop/rest_api/intelligence_center/enrichments.md
-      "api/profile & permissions": develop/rest_api/community.md
-      "api/dashboards": develop/rest_api/dashboard.md
-      "api/identity & authentication": develop/rest_api/identity_and_authentication.md
-      "api/notifications": develop/rest_api/notification.md
-      "api/automation: symphony orchestrator": develop/rest_api/playbooks.md
-
       integrations/alsid.md: operation_center/integration_catalog/application/alsid.md
       integrations/apache.md: operation_center/integration_catalog/application/apache.md
       integrations/auditbeat.md: operation_center/integration_catalog/endpoint/auditbeat_linux.md
       integrations/auditbeat_linux.md: operation_center/integration_catalog/endpoint/auditbeat_linux.md
       integrations/aws-cloudtrail.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
-      integrations/aws_cloudtrail.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
       integrations/aws-flow-logs.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
+      integrations/aws_cloudtrail.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
       integrations/aws_flow_logs.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
       integrations/azure-ad.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
-      integrations/azure_ad.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
       integrations/azure-linux.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
-      integrations/azure_linux.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
       integrations/azure-mysql.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
-      integrations/azure_mysql.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
       integrations/azure-network-watcher.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
-      integrations/azure_network_watcher.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
       integrations/azure-windows.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
+      integrations/azure_ad.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
+      integrations/azure_linux.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
+      integrations/azure_mysql.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
+      integrations/azure_network_watcher.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
       integrations/azure_windows.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
       integrations/bind.md: operation_center/integration_catalog/application/bind.md
       integrations/cef.md: operation_center/integration_catalog/generic/cef.md
       integrations/checkpoint.md: operation_center/integration_catalog/network/checkpoint.md
       integrations/cisco-asa.md: operation_center/integration_catalog/network/cisco_asa.md
       integrations/cisco_asa.md: operation_center/integration_catalog/network/cisco_asa.md
+      integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
       integrations/f5-big-ip.md: operation_center/integration_catalog/network/f5-big-ip.md
       integrations/fortigate.md: operation_center/integration_catalog/network/fortigate.md
       integrations/fortimail.md: operation_center/integration_catalog/email/fortimail.md
@@ -238,14 +234,13 @@ plugins:
       integrations/fsecure.md: operation_center/index.md
       integrations/haproxy.md: operation_center/integration_catalog/application/haproxy.md
       integrations/harfanglab.md: operation_center/integration_catalog/endpoint/harfanglab.md
-      integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
       integrations/linux.md: operation_center/integration_catalog/endpoint/linux.md
       integrations/log-insight-windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
       integrations/log_insight_windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
       integrations/netfilter.md: operation_center/integration_catalog/network/netfilter.md
       integrations/nginx.md: operation_center/integration_catalog/application/nginx.md
       integrations/o365.md: operation_center/integration_catalog/cloud_and_saas/o365.md
-      integrations/openssh.md:  operation_center/integration_catalog/application/openssh.md
+      integrations/openssh.md: operation_center/integration_catalog/application/openssh.md
       integrations/paloalto.md: operation_center/integration_catalog/network/paloalto.md
       integrations/postfix.md: operation_center/integration_catalog/email/postfix.md
       integrations/prove-it.md: operation_center/index.md
@@ -254,20 +249,20 @@ plugins:
       integrations/raw.md: operation_center/index.md
       integrations/retarus-email-security.md: operation_center/integration_catalog/email/retarus_email_security.md
       integrations/sekoiaio-activity-logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
-      integrations/sentinelone.md: operation_center/integration_catalog/endpoint/sentinelone.md
       integrations/sentinelone-deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
+      integrations/sentinelone.md: operation_center/integration_catalog/endpoint/sentinelone.md
       integrations/sentinelone_deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
       integrations/sophos.md: operation_center/integration_catalog/network/sophos.md
       integrations/spamassassin.md: operation_center/integration_catalog/email/spamassassin.md
       integrations/squid.md: operation_center/integration_catalog/network/squid.md
       integrations/suricata.md: operation_center/integration_catalog/network/suricata.md
-      integrations/tanium.md:  operation_center/integration_catalog/endpoint/tanium.md
-      integrations/umbrella_dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      integrations/tanium.md: operation_center/integration_catalog/endpoint/tanium.md
       integrations/umbrella-dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
-      integrations/umbrella_ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
       integrations/umbrella-ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
-      integrations/umbrella_proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
       integrations/umbrella-proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+      integrations/umbrella_dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      integrations/umbrella_ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+      integrations/umbrella_proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
       integrations/unbound.md: operation_center/integration_catalog/application/unbound.md
       integrations/vectra-cognito-detect.md: operation_center/integration_catalog/network/vectra.md
       integrations/wallix-bastion.md: operation_center/integration_catalog/network/wallix.md

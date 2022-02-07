@@ -1,8 +1,8 @@
-# detection-rules
+# Detection Rules
 
 
 
-Detection rules module
+This module exposes a trigger to detect new snort rules on a repository
 
 ## Configuration
 
@@ -17,7 +17,7 @@ This module accepts no configuration.
 
 ### New Snort Rules
 
-Trigger playbook run on new snort rules
+Trigger playbooks when new snort rules are detected of a repository
 
 
 
@@ -52,4 +52,4 @@ Trigger playbook run on new snort rules
 
 ## Extra
 
-Module **detection-rules v.1.12**
+Module **Detection Rules v.1.13**

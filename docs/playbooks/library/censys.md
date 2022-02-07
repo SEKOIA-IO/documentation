@@ -4,7 +4,7 @@
 ![censys](../../assets/playbooks/library/censys.png)
 
 
-Censys integration module
+[Censys](https://censys.io/) is Cybersecurity company discovering and inventoring assets exposed on Internet. The Censys API provides programmatic access to the same data accessible through the web interface
 
 ## Configuration
 
@@ -26,7 +26,7 @@ Censys integration module
 
 ### Search
 
-Search Censys API
+Search items from Censys API
 
 
 
@@ -58,7 +58,7 @@ Search Censys API
 
 ### Get Report
 
-Get Censys report
+Generate a Censys report from results
 
 
 
@@ -89,7 +89,7 @@ Get Censys report
 
 ### View Item
 
-View Censys item
+Return the item as a structured data
 
 
 
@@ -123,4 +123,4 @@ View Censys item
 
 ## Extra
 
-Module **censys v.1.12**
+Module **censys v.1.13**

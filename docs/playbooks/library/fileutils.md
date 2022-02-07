@@ -2,7 +2,7 @@
 
 
 
-Utilities for file manipulation.
+This module exposes action to manipulate files. It extracts data from XML or JSON files.
 
 ## Configuration
 
@@ -92,4 +92,4 @@ Read the XML file and return its content evaluated against specified xpath
 
 ## Extra
 
-Module **fileutils v.1.17**
+Module **fileutils v.1.18**

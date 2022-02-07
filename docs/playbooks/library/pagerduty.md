@@ -2,7 +2,7 @@
 
 
 
-Trigger alert and incident creation in PagerDuty
+[PagerDuty](https://www.pagerduty.com/) is an incident response platform for IT departments it allows triggering alerts and managing incidents.
 
 ## Configuration
 
@@ -51,4 +51,4 @@ Trigger alert to PagerDuty
 
 ## Extra
 
-Module **pagerduty v.1.10**
+Module **pagerduty v.1.11**
