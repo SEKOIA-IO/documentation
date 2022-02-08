@@ -1,8 +1,9 @@
+{#- mode: jinja -#}
 {% if manifest.get('data_sources') or parser['kind'] or parser['category'] or parser['type'] %}
 ## Event Categories
 
 {% if manifest.get('data_sources') %}
-The following Table lists the data source offered by this integration.
+The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
@@ -42,7 +43,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 {% if parser['fields'] %}
 ## Extracted Fields
 
-The following Table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
