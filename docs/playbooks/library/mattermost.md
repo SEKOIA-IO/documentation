@@ -2,7 +2,7 @@
 
 
 
-Mattermost module
+[Mattermost](https://mattermost.com/) is a secure, open and flexible collaboration platform
 
 ## Configuration
 
@@ -74,4 +74,4 @@ Post alert to Mattermost
 
 ## Extra
 
-Module **mattermost v.1.10**
+Module **mattermost v.1.11**

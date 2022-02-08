@@ -2,7 +2,7 @@
 
 
 
-OSINT Collector manipulation
+This module exposes actions to process OSINT data
 
 ## Configuration
 
@@ -52,4 +52,4 @@ Fetch objects from a osint collection source
 
 ## Extra
 
-Module **osint v.1.32**
+Module **osint v.1.33**

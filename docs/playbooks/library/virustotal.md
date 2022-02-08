@@ -2,7 +2,7 @@
 
 
 
-virustotal module
+[VirusTotal](https://www.virustotal.com) is a cybersecurity company specialized in malware analysis.
 
 ## Configuration
 
@@ -260,4 +260,4 @@ Scan ip with Virus Total
 
 ## Extra
 
-Module **virustotal v.1.15**
+Module **virustotal v.1.16**

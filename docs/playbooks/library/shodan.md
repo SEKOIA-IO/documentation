@@ -4,7 +4,7 @@
 ![shodan](../../assets/playbooks/library/shodan.png)
 
 
-Shodan module
+[Shodan](https://www.shodan.io/) is a Cybersecurity company keeping track of devices exposed to the Internet. It collect information on devices, running software and related CVEs.
 
 ## Configuration
 
@@ -24,7 +24,7 @@ Shodan module
 
 ## Actions
 
-### get_dns_reverse
+### Lookup DNS
 
 Look up the hostnames that have been defined for the given list of IP addresses.
 
@@ -52,7 +52,7 @@ Look up the hostnames that have been defined for the given list of IP addresses.
 
 
 
-### get_dns_domain
+### Get DNS domain
 
 Get all the subdomains and other DNS entries for the given domain. Uses 1 query credit per lookup.
 
@@ -82,7 +82,7 @@ Get all the subdomains and other DNS entries for the given domain. Uses 1 query 
 
 
 
-### get_shodan_host_count
+### Count Hosts
 
 This method behaves identical to "/shodan/host/search" with the only difference that this method does not return any host results, it only returns the total number of results that matched the query and any facet information that was requested. As a result this method does not consume query credits.
 
@@ -113,7 +113,7 @@ This method behaves identical to "/shodan/host/search" with the only difference 
 
 
 
-### get_shodan_host
+### Get Host
 
 Returns all services that have been found on the given host IP.
 
@@ -157,7 +157,7 @@ Returns all services that have been found on the given host IP.
 
 
 
-### get_shodan_host_search
+### Search Host
 
 Search Shodan using the same query syntax as the website and use facets to get summary information for different properties.
 
@@ -190,7 +190,7 @@ Search Shodan using the same query syntax as the website and use facets to get s
 
 
 
-### get_dns_resolve
+### Lookup IPs
 
 Look up the IP address for the provided list of hostnames.
 
@@ -225,4 +225,4 @@ Look up the IP address for the provided list of hostnames.
 
 ## Extra
 
-Module **shodan v.1.11**
+Module **shodan v.1.12**

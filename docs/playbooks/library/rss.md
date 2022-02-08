@@ -1,8 +1,10 @@
-# rss
+# RSS
 
 
 
-RSS Feed Reader
+RSS is a internet standard for web syndication. It usually used by websites to publish frequently updated information.
+
+This module exposes triggers to subscribe to RSS feeds.
 
 ## Configuration
 
@@ -17,7 +19,7 @@ This module accepts no configuration.
 
 ### New Post
 
-Trigger playbook run on rss feed
+Trigger playbook when new posts are published
 
 
 
@@ -54,4 +56,4 @@ Trigger playbook run on rss feed
 
 ## Extra
 
-Module **rss v.1.15**
+Module **RSS v.1.16**

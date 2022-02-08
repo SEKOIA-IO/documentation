@@ -1,10 +1,10 @@
-# certificate_transparency
+# Certificate Transparency
 
 
-![certificate_transparency](../../assets/playbooks/library/certificate-transparency.png)
+![Certificate Transparency](../../assets/playbooks/library/certificate-transparency.png)
 
 
-Certificate transparency module, using certstream (https://certstream.calidog.io/).
+[Certificate transparency](https://certificate.transparency.dev/) is a security standard to monitor and audit certificates. This module rely on [certstream](https://certstream.calidog.io/) to get updates from the Certificate Transparency Log network.
 
 ## Configuration
 
@@ -58,4 +58,4 @@ Trigger playbook run on certificate of interest update
 
 ## Extra
 
-Module **certificate_transparency v.1.13**
+Module **Certificate Transparency v.1.14**

@@ -2,7 +2,7 @@
 
 
 
-IPtoASN Module
+[IPtoASN](https://iptoasn.com/) is a free, downloadable and frequently updated ASN database. It allow associating IP addresses to ASN
 
 ## Configuration
 
@@ -17,7 +17,7 @@ This module accepts no configuration.
 
 ### Fetch Database
 
-Fetches IPtoASN database
+Download the IPtoASN database recurrently
 
 
 
@@ -55,4 +55,4 @@ Fetches IPtoASN database
 
 ## Extra
 
-Module **iptoasn v.1.14**
+Module **iptoasn v.1.15**

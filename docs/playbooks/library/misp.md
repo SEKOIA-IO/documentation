@@ -4,7 +4,7 @@
 ![misp](../../assets/playbooks/library/misp.png)
 
 
-MISP Module
+[MISP](https://www.misp-project.org/) is a opensource platform to gather, store, share and correlate threat intelligence like cyber security indicators
 
 ## Configuration
 
@@ -23,7 +23,7 @@ MISP Module
 
 ### New Event
 
-Trigger playbook run on MISP event
+Trigger a playbook on a new MISP event
 
 
 
@@ -87,7 +87,7 @@ Convert MISP event to STIX 2
 
 ### Publish Event
 
-Publish MISP event
+Publish an event on a MISP server
 
 
 
@@ -122,4 +122,4 @@ Publish MISP event
 
 ## Extra
 
-Module **misp v.1.27**
+Module **misp v.1.28**

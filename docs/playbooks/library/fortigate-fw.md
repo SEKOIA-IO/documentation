@@ -2,7 +2,7 @@
 
 
 
-Fortigate FW module
+Fortigate is a firewall appliance from [Fortinet](http://www.fortinet.com/) with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere
 
 ## Configuration
 
@@ -23,7 +23,7 @@ Fortigate FW module
 
 ### Post Fortigate Address Group
 
-Add a Fortigate Address Group
+Add a new Address Group to a Fortigate Firewall
 
 
 
@@ -44,7 +44,7 @@ Add a Fortigate Address Group
 
 ### Post Fortigate IP Address
 
-Add a Fortigate IP Address object
+Add a new IP Address object to a Fortigate Firewall
 
 
 
@@ -67,7 +67,7 @@ Add a Fortigate IP Address object
 
 ### Post Fortigate FQDN Address
 
-Add a Fortigate FQDN object
+Add a new FQDN object to a Fortigate Firewall
 
 
 
@@ -76,7 +76,7 @@ Add a Fortigate FQDN object
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | name | string | The name of the Address. |
-| fqdn | string | The FQDN to be blocked (for ex: 'example.domaine.com'). |
+| fqdn | string | The FQDN to be blocked (for ex: 'example.domain.com'). |
 | associated-interface | string | The associated interface of the firewall leave blank for 'Any' (default: Any). |
 | comment | string | A commentary to be displayed in the Fortigate GUI (default none). |
 
@@ -95,4 +95,4 @@ Add a Fortigate FQDN object
 
 ## Extra
 
-Module **fortigate_fw v.1.14**
+Module **fortigate_fw v.1.15**

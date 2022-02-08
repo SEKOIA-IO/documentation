@@ -4,7 +4,7 @@
 ![ServiceNow](../../assets/playbooks/library/servicenow.png)
 
 
-ServiceNow module
+[ServiceNow](https://www.servicenow.com/) is an IT company allowing creating workflow to empower employees productivity and to improve customers experience
 
 ## Configuration
 
@@ -60,4 +60,4 @@ Retrieve Service Now table
 
 ## Extra
 
-Module **ServiceNow v.1.11**
+Module **ServiceNow v.1.12**
