@@ -1,0 +1,51 @@
+{% if manifest.get('data_sources') or parser['kind'] or parser['category'] or parser['type'] %}
+## Event Categories
+
+{% if manifest.get('data_sources') %}
+The following Table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+{% for data_source in manifest.get('data_sources', {}).keys() %}| `{{data_source}}` | {{manifest['data_sources'][data_source]}} |
+{% endfor %}
+
+{% endif %}
+
+{% if parser['kind'] or parser['category'] or parser['type'] %}
+In details, the following Table denotes the type of events produced by this integration.
+
+| Name | Values |
+| ---- | ------ |
+| Kind | `{{ parser['kind']|join('`, `') }}` |
+| Category | `{{ parser['category']|join('`, `') }}` |
+| Type | `{{ parser['type']|join('`, `') }}` |
+{% endif %}
+{% endif %}
+
+{% if tests %}
+## Event Samples
+
+Find below few samples of events and how they are normalized by SEKOIA.IO.
+
+{% for test in tests %}
+=== "{{test['name']}}"
+
+    ```json
+	{% filter indent(width=4) %}
+{{test['content']}}
+	{% endfilter %}
+	```
+
+{% endfor %}
+{% endif %}
+
+{% if parser['fields'] %}
+## Extracted Fields
+
+The following Table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+
+| Name | Type | Description                |
+| ---- | ---- | ---------------------------|
+{% for field in parser['fields'] %}|`{{field['name']}}` | `{{field['type']}}` | {{field['short']}} |
+{% endfor %}
+{% endif %}
