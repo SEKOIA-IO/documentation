@@ -141,7 +141,7 @@ def generate_intake_doc(intake: Dict) -> str:
     file_loader = FileSystemLoader("templates")
     env = Environment(loader=file_loader)
 
-    template = env.get_template("intake.md")
+    template = env.get_template("intake.md.jinja")
     return template.render(
         manifest=intake["manifest"],
         fields=intake["fields"],

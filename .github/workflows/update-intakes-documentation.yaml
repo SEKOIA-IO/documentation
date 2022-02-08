@@ -1,0 +1,51 @@
+name: Update intakes documentation
+on:
+  repository_dispatch:
+    types: [rebuild-intake-documentation]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout `documentation` repository under `main/`
+      uses: actions/checkout@v2
+      with:
+        path: main
+
+    - name: Checkout `intake-formats` repository under `intakes/`
+      uses: actions/checkout@v2
+      with:
+        repository: SEKOIA-IO/intake-formats
+        path: intakes
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      id: setup-python
+      with:
+        python-version: '3.9'
+
+    - name: Install Poetry
+      run: |
+        pip install poetry
+        poetry config virtualenvs.in-project true
+
+    - name: Install dependencies
+      run: |
+        poetry install
+      working-directory: ./main/scripts/update_mkdocs
+
+    - name: Refresh intakes documentation
+      run: |
+        poetry run python update_mkdocs.py $GITHUB_WORKSPACE/intakes $GITHUB_WORKSPACE/main
+      working-directory: ./main/scripts/update_mkdocs
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: Refresh intakes documentation
+        delete-branch: true
+        title: Refresh intakes documentation
+        base: master
+        path: ./main
+        body: |
+          Refresh intakes documentation
