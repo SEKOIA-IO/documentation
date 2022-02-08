@@ -122,11 +122,16 @@ def get_new_objects(feed_id=DEFAULT_FEED, limit=2000):
             if feed_id in cursors:
                 paginated_url = f"{url}&cursor={cursors[feed_id].decode('ascii')}"
 
-            # Request the next batch of objects from the API, authenticate with the APIKEY
-            response = requests.get(
-                paginated_url, headers={"Authorization": f"Bearer {APIKEY}"}
-            )
-            response.raise_for_status()
+            # Retry on error
+            request_successful = False
+            while not request_successful:
+                # Request the next batch of objects from the API, authenticate with the APIKEY
+                response = requests.get(
+                    paginated_url, headers={"Authorization": f"Bearer {APIKEY}"}
+                )
+                print(f"{paginated_url} returned {response.status_code}")
+                request_successful = response.ok
+
             data = response.json()
 
             # Yield individual STIX Objects (SDO & SRO)
