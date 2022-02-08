@@ -144,6 +144,10 @@ def get_new_objects(feed_id=DEFAULT_FEED, limit=2000):
             # Stop current iteration if we reached the last updated object
             if not data["items"] or len(data["items"]) < limit:
                 break
+
+# Example usage of the iterator that retrieves new objects from the feed
+for obj in get_new_objects():
+    print(obj)
 ```
 
 ## Getting an indicator's context
