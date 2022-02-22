@@ -13,6 +13,7 @@ In another case, the Warning Rules are based on the observables and the enrichme
 ## Create a new Warning Rule
 
 The "Add warning rule" button allows you to create new rules and offers you to define several elements that configure its triggering:
+
 * Write the explicit warning message that will inform the analyst of the context around this observable
 * Define which type of observable can trigger this Warning Rule
 * Define which type of relation can trigger this Warning Rule
