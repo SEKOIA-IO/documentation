@@ -14,7 +14,7 @@ The Expiration Rules have been designed to define default validity periods for t
 
 <img width="1425" alt="image" src="https://user-images.githubusercontent.com/17184467/155111993-587bda36-277e-4c36-b584-77d95c53815c.png">
 
-For example, when importing an IP address into a Content Proposal and creating a new Indicator object, if the analyst does not modify the fields corresponding to the validity date, it will automatically be set to 1 month during validation in the CTI base.
+For example, when importing an IP address into a Content Proposal and creating a new Indicator object, if the analyst does not modify the fields corresponding to the validity date, it will automatically be set to 1 month once merged in the CTI base.
 
 Each default rule can be modified to adapt the validity dates to your needs.
 
