@@ -5,6 +5,7 @@ In SEKOIA.IO each indicator object must have a start and a validity end date.
 When producing new intelligence in Content Proposals or via a playbook, analysts can manually define these validity periods on a case-by-case basis. 
 
 The Expiration Rules have been designed to define default validity periods for the Indicators objects according to the type of observable. By default 6 rules exist in SEKOIA.IO:
+
 * File (hash): 12 months
 * URL: 6 months
 * IPv4: 1 month
