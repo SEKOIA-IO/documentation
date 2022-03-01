@@ -10,7 +10,7 @@ Once your pull request is created, a SEKOIA.IO reviewer will take responsibility
 
 ## Test locally
 
-The service relies on the [MkDocs](https://www.mkdocs.org/) Python framework helped by a customized [Material theme](https://squidfunk.github.io/mkdocs-material/). To serve the documentation on the port `8000` of your computer, you should create a Python virtual environment, install the few requirements detailed in `requirements.txt` and trigger the execution of the MkDocs server:
+The service relies on the [MkDocs](https://www.mkdocs.org/) Python framework helped by a customized [Material theme](https://squidfunk.github.io/mkdocs-material/). To serve the documentation on the port `8000` of your computer, you should create a Python virtual environment, install the few requirements (detailed in `pyproject.toml`) and trigger the execution of the MkDocs server:
 
 ```shell
 $ mkdir -p docs/stylesheets/ && sassc src/sekoiaio.scss docs/stylesheets/sekoiaio.css
