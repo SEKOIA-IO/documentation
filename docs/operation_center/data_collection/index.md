@@ -19,7 +19,7 @@ If these solutions do not meet your needs, contact our support.
 
 ## Syslog integration
 
-We are provide documentation and example configurations on how to configure your log system for Rsyslog, but it should be easy to configure other log collectors to forward their events to SEKOIA.IO.
+We provide documentation and example configurations on how to configure your log system for Rsyslog, but it should be easy to configure other log collectors to forward their events to SEKOIA.IO.
 
 ## HTTPS integration
 
