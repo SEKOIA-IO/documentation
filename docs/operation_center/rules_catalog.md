@@ -1,4 +1,4 @@
-# Detection Rules Management - Coming soon
+# Detection Rules Management
 
 ## Rules Catalog:
 
