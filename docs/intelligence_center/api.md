@@ -122,11 +122,16 @@ def get_new_objects(feed_id=DEFAULT_FEED, limit=2000):
             if feed_id in cursors:
                 paginated_url = f"{url}&cursor={cursors[feed_id].decode('ascii')}"
 
-            # Request the next batch of objects from the API, authenticate with the APIKEY
-            response = requests.get(
-                paginated_url, headers={"Authorization": f"Bearer {APIKEY}"}
-            )
-            response.raise_for_status()
+            # Retry on error
+            request_successful = False
+            while not request_successful:
+                # Request the next batch of objects from the API, authenticate with the APIKEY
+                response = requests.get(
+                    paginated_url, headers={"Authorization": f"Bearer {APIKEY}"}
+                )
+                print(f"{paginated_url} returned {response.status_code}")
+                request_successful = response.ok
+
             data = response.json()
 
             # Yield individual STIX Objects (SDO & SRO)
@@ -139,6 +144,10 @@ def get_new_objects(feed_id=DEFAULT_FEED, limit=2000):
             # Stop current iteration if we reached the last updated object
             if not data["items"] or len(data["items"]) < limit:
                 break
+
+# Example usage of the iterator that retrieves new objects from the feed
+for obj in get_new_objects():
+    print(obj)
 ```
 
 ## Getting an indicator's context
@@ -199,7 +208,6 @@ Here is an example of a script using the TAXII endpoints to iterate over objects
 ```python
 import dbm
 import requests
-from basicauth import encode as basicauth_encode
 
 # Replace with Intelligence Center API Key
 APIKEY = "APIKEY"
@@ -214,7 +222,7 @@ def get_new_objects(feed_url=FEED_URL, limit=2000, version="2.1"):
     has_more = True
     headers = {
         "Accept": "application/taxii+json",
-        "Authorization": basicauth_encode("api", APIKEY),
+        "Authorization": f"Bearer {APIKEY}",
     }
     parameters = {"match[spec_version]": version, "limit": limit}
 
@@ -225,13 +233,22 @@ def get_new_objects(feed_url=FEED_URL, limit=2000, version="2.1"):
             if feed_url in cursors:
                 parameters["next"] = cursors[feed_url].decode("ascii")
 
-            # Request the next batch of objects from the API, authenticate with the APIKEY
-            response = requests.get(feed_url, headers=headers, params=parameters)
-            response.raise_for_status()
+            # Retry on error
+            request_successful = False
+            while not request_successful:
+                # Request the next batch of objects from the API, authenticate with the APIKEY
+                response = requests.get(feed_url, headers=headers, params=parameters)
+                print(f"{feed_url} returned {response.status_code}")
+                request_successful = response.ok
+
             data = response.json()
 
             has_more = data["more"]
             cursors[feed_url] = data["next"]
 
             yield from data["objects"]
+
+# Example usage of the iterator that retrieves new objects from the TAXII feed
+for obj in get_new_objects():
+    print(obj)
 ```
