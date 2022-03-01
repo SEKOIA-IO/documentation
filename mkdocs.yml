@@ -183,6 +183,15 @@ nav:
       - Intelligence: develop/rest_api/intelligence_center/intelligence.md
       - Enrichments: develop/rest_api/intelligence_center/enrichments.md
     - Playbooks: develop/rest_api/playbooks.md
+  - REST API for SEKOIA.IO TIP:
+    - Authentication: develop/tip_rest_api/identity_and_authentication.md
+    - Community: develop/tip_rest_api/community.md
+    - Dashboard: develop/tip_rest_api/dashboard.md
+    - Notification: develop/tip_rest_api/notification.md
+    - Intelligence Center:
+      - Intelligence: develop/tip_rest_api/intelligence_center/intelligence.md
+      - Enrichments: develop/tip_rest_api/intelligence_center/enrichments.md
+    - Playbooks: develop/tip_rest_api/playbooks.md
 plugins:
 - search: null
 - redirects:
