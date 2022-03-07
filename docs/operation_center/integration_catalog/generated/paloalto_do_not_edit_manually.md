@@ -2,7 +2,7 @@
 ## Event Categories
 
 
-The following Table lists the data source offered by this integration.
+The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
@@ -70,34 +70,31 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "User_id_1.json"
+=== "globalprotect.json"
 
     ```json
 	
     {
         "action": {
-            "type": "login"
-        },
-        "destination": {
-            "port": 0
+            "outcome": "success",
+            "type": "0"
         },
         "ecs": {
             "version": "1.10.0"
         },
         "event": {
-            "category": "userid"
+            "category": "globalprotect"
         },
-        "log": {
-            "hostname": "hostexample",
-            "logger": "srv1.example.local"
+        "geo": {
+            "country_iso_code": "FR"
         },
-        "message": "1,2020/12/04 16:00:02,016401002222,USERID,login,2305,2020/12/04 16:00:02,vsys,1.2.3.4,user1,srv1.example.local,0,1,12000,0,0,active-directory,,968683723,0x8000000000000000,12,0,0,0,,hostexample,1,,2020/12/04 16:00:02,1,0x80,user1",
+        "message": "1,2020/12/08 14:30:55,011111114444,GLOBALPROTECT,0,2305,2020/12/08 13:30:55,vsys1,gw-auth,login,Other,,user,FR,AAAABBBBB,1.2.3.4,0.0.0.0,0.0.0.0,0.0.0.0,aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee,ABCDEFG,5.1.4,Windows,\"Microsoft Windows 10 Pro , 64-bit\",1,,,\"\",success,,0,user-logon,0,gw1,1234567,0x8000000000000000",
         "related": {
             "ip": [
                 "1.2.3.4"
             ],
             "user": [
-                "user1"
+                "user"
             ]
         },
         "sekoiaio": {
@@ -108,11 +105,110 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "source": {
             "address": "1.2.3.4",
-            "ip": "1.2.3.4",
-            "port": 0
+            "ip": "1.2.3.4"
         },
         "user": {
-            "name": "user1"
+            "name": "user"
+        },
+        "user_agent": {
+            "os": {
+                "name": "Windows",
+                "version": "Microsoft Windows 10 Pro , 64-bit"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "icmp_allow.json"
+
+    ```json
+	
+    {
+        "action": {
+            "name": "allow",
+            "outcome": "success",
+            "type": "start"
+        },
+        "destination": {
+            "address": "4.3.2.1",
+            "bytes": 0,
+            "ip": "4.3.2.1",
+            "nat": {
+                "ip": "10.0.1.2",
+                "port": 0
+            },
+            "packets": 0,
+            "port": 0
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "traffic",
+            "duration": 0
+        },
+        "message": "<14>Sep 16 10:00:02 PP 1,9/16/19 10:00,1801017000,TRAFFIC,start,2049,9/16/19 10:00,1.2.3.4,4.3.2.1,1.2.3.4,10.0.1.2,PING,,,ping,vsys,AAAAA,Zone1,ethernet1/1,ae2.11,Secure,9/16/19 10:00,24100,3,0,0,0,0,0x500000,icmp,allow,222,222,0,3,9/16/19 10:00,0,any,0,50660388939,0x0,Spain,France,0,3,0,n/a,0,0,0,0,,PA,from-policy,,,0,,0,,N/A,0,0,0,0",
+        "network": {
+            "bytes": 222,
+            "packets": 3,
+            "transport": "icmp"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "10.0.1.2",
+                "4.3.2.1"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "Palo Alto",
+                "dialect_uuid": "903ec1b8-f206-4ba5-8563-db21da09cafd"
+            }
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "bytes": 222,
+            "ip": "1.2.3.4",
+            "nat": {
+                "ip": "1.2.3.4",
+                "port": 0
+            },
+            "packets": 3,
+            "port": 0
+        }
+    }
+    	
+	```
+
+
+=== "system.json"
+
+    ```json
+	
+    {
+        "action": {
+            "outcome_reason": "authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.",
+            "type": "auth"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "system"
+        },
+        "log": {
+            "hostname": "fw1",
+            "level": "informational"
+        },
+        "message": "1,2020/12/08 13:44:55,11111114444,SYSTEM,auth,0,2020/12/08 13:44:55,,auth-success,GP,0,0,general,informational,\"authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.\",5211100,0x8000000000000000,0,0,0,0,,fw1",
+        "sekoiaio": {
+            "intake": {
+                "dialect": "Palo Alto",
+                "dialect_uuid": "903ec1b8-f206-4ba5-8563-db21da09cafd"
+            }
         }
     }
     	
@@ -183,76 +279,34 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "system.json"
+=== "User_id_1.json"
 
     ```json
 	
     {
         "action": {
-            "outcome_reason": "authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.",
-            "type": "auth"
+            "type": "login"
+        },
+        "destination": {
+            "port": 0
         },
         "ecs": {
             "version": "1.10.0"
         },
         "event": {
-            "category": "system"
+            "category": "userid"
         },
         "log": {
-            "hostname": "fw1",
-            "level": "informational"
+            "hostname": "hostexample",
+            "logger": "srv1.example.local"
         },
-        "message": "1,2020/12/08 13:44:55,11111114444,SYSTEM,auth,0,2020/12/08 13:44:55,,auth-success,GP,0,0,general,informational,\"authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.\",5211100,0x8000000000000000,0,0,0,0,,fw1",
-        "sekoiaio": {
-            "intake": {
-                "dialect": "Palo Alto",
-                "dialect_uuid": "903ec1b8-f206-4ba5-8563-db21da09cafd"
-            }
-        }
-    }
-    	
-	```
-
-
-=== "tcp_allow.json"
-
-    ```json
-	
-    {
-        "action": {
-            "name": "allow",
-            "outcome": "success",
-            "type": "start"
-        },
-        "destination": {
-            "address": "4.3.2.1",
-            "bytes": 70,
-            "ip": "4.3.2.1",
-            "nat": {
-                "ip": "0.0.0.0",
-                "port": 0
-            },
-            "packets": 1,
-            "port": 80
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "traffic",
-            "duration": 0
-        },
-        "message": "<14>Sep 16 10:00:02 PA-1 1,9/16/19 10:00,1801016000,TRAFFIC,start,2049,9/16/19 10:00,1.2.3.4,4.3.2.1,0.0.0.0,0.0.0.0,proxy1,,,web-browsing,vsys1234,v10213,zone1,a.1,b.2,Secure,9/16/19 10:00,60000,1,61000,80,0,0,0x0,tcp,allow,800,700,70,2,9/16/19 10:00,0,any,0,50660381839,0x0,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,0,2,1,n/a,0,0,0,0,,PP,from-policy,,,0,,0,,N/A,0,0,0,0",
-        "network": {
-            "bytes": 800,
-            "packets": 2,
-            "transport": "tcp"
-        },
+        "message": "1,2020/12/04 16:00:02,016401002222,USERID,login,2305,2020/12/04 16:00:02,vsys,1.2.3.4,user1,srv1.example.local,0,1,12000,0,0,active-directory,,968683723,0x8000000000000000,12,0,0,0,,hostexample,1,,2020/12/04 16:00:02,1,0x80,user1",
         "related": {
             "ip": [
-                "1.2.3.4",
-                "4.3.2.1",
-                "0.0.0.0"
+                "1.2.3.4"
+            ],
+            "user": [
+                "user1"
             ]
         },
         "sekoiaio": {
@@ -263,77 +317,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "source": {
             "address": "1.2.3.4",
-            "bytes": 700,
             "ip": "1.2.3.4",
-            "nat": {
-                "ip": "0.0.0.0",
-                "port": 0
-            },
-            "packets": 2,
-            "port": 61000
-        }
-    }
-    	
-	```
-
-
-=== "icmp_allow.json"
-
-    ```json
-	
-    {
-        "action": {
-            "name": "allow",
-            "outcome": "success",
-            "type": "start"
-        },
-        "destination": {
-            "address": "4.3.2.1",
-            "bytes": 0,
-            "ip": "4.3.2.1",
-            "nat": {
-                "ip": "10.0.1.2",
-                "port": 0
-            },
-            "packets": 0,
             "port": 0
         },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "traffic",
-            "duration": 0
-        },
-        "message": "<14>Sep 16 10:00:02 PP 1,9/16/19 10:00,1801017000,TRAFFIC,start,2049,9/16/19 10:00,1.2.3.4,4.3.2.1,1.2.3.4,10.0.1.2,PING,,,ping,vsys,AAAAA,Zone1,ethernet1/1,ae2.11,Secure,9/16/19 10:00,24100,3,0,0,0,0,0x500000,icmp,allow,222,222,0,3,9/16/19 10:00,0,any,0,50660388939,0x0,Spain,France,0,3,0,n/a,0,0,0,0,,PA,from-policy,,,0,,0,,N/A,0,0,0,0",
-        "network": {
-            "bytes": 222,
-            "packets": 3,
-            "transport": "icmp"
-        },
-        "related": {
-            "ip": [
-                "1.2.3.4",
-                "10.0.1.2",
-                "4.3.2.1"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "Palo Alto",
-                "dialect_uuid": "903ec1b8-f206-4ba5-8563-db21da09cafd"
-            }
-        },
-        "source": {
-            "address": "1.2.3.4",
-            "bytes": 222,
-            "ip": "1.2.3.4",
-            "nat": {
-                "ip": "1.2.3.4",
-                "port": 0
-            },
-            "packets": 3,
-            "port": 0
+        "user": {
+            "name": "user1"
         }
     }
     	
@@ -405,31 +393,45 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "globalprotect.json"
+=== "tcp_allow.json"
 
     ```json
 	
     {
         "action": {
+            "name": "allow",
             "outcome": "success",
-            "type": "0"
+            "type": "start"
+        },
+        "destination": {
+            "address": "4.3.2.1",
+            "bytes": 70,
+            "ip": "4.3.2.1",
+            "nat": {
+                "ip": "0.0.0.0",
+                "port": 0
+            },
+            "packets": 1,
+            "port": 80
         },
         "ecs": {
             "version": "1.10.0"
         },
         "event": {
-            "category": "globalprotect"
+            "category": "traffic",
+            "duration": 0
         },
-        "geo": {
-            "country_iso_code": "FR"
+        "message": "<14>Sep 16 10:00:02 PA-1 1,9/16/19 10:00,1801016000,TRAFFIC,start,2049,9/16/19 10:00,1.2.3.4,4.3.2.1,0.0.0.0,0.0.0.0,proxy1,,,web-browsing,vsys1234,v10213,zone1,a.1,b.2,Secure,9/16/19 10:00,60000,1,61000,80,0,0,0x0,tcp,allow,800,700,70,2,9/16/19 10:00,0,any,0,50660381839,0x0,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,0,2,1,n/a,0,0,0,0,,PP,from-policy,,,0,,0,,N/A,0,0,0,0",
+        "network": {
+            "bytes": 800,
+            "packets": 2,
+            "transport": "tcp"
         },
-        "message": "1,2020/12/08 14:30:55,011111114444,GLOBALPROTECT,0,2305,2020/12/08 13:30:55,vsys1,gw-auth,login,Other,,user,FR,AAAABBBBB,1.2.3.4,0.0.0.0,0.0.0.0,0.0.0.0,aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee,ABCDEFG,5.1.4,Windows,\"Microsoft Windows 10 Pro , 64-bit\",1,,,\"\",success,,0,user-logon,0,gw1,1234567,0x8000000000000000",
         "related": {
             "ip": [
-                "1.2.3.4"
-            ],
-            "user": [
-                "user"
+                "1.2.3.4",
+                "4.3.2.1",
+                "0.0.0.0"
             ]
         },
         "sekoiaio": {
@@ -440,16 +442,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "source": {
             "address": "1.2.3.4",
-            "ip": "1.2.3.4"
-        },
-        "user": {
-            "name": "user"
-        },
-        "user_agent": {
-            "os": {
-                "name": "Windows",
-                "version": "Microsoft Windows 10 Pro , 64-bit"
-            }
+            "bytes": 700,
+            "ip": "1.2.3.4",
+            "nat": {
+                "ip": "0.0.0.0",
+                "port": 0
+            },
+            "packets": 2,
+            "port": 61000
         }
     }
     	
@@ -461,7 +461,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 ## Extracted Fields
 
-The following Table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|

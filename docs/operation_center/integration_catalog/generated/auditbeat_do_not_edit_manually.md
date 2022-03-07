@@ -2,7 +2,7 @@
 ## Event Categories
 
 
-The following Table lists the data source offered by this integration.
+The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
@@ -21,95 +21,6 @@ The following Table lists the data source offered by this integration.
 ## Event Samples
 
 Find below few samples of events and how they are normalized by SEKOIA.IO.
-
-
-=== "example3.json"
-
-    ```json
-	
-    {
-        "agent": {
-            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "hostname": "fame",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "name": "fame",
-            "type": "auditbeat",
-            "version": "7.13.0"
-        },
-        "auditbeat": {
-            "message": "Process unattended-upgr (PID: 1195) by user root is RUNNING"
-        },
-        "auditd": {
-            "user": {
-                "saved": {
-                    "group": {
-                        "id": "0"
-                    },
-                    "id": "0"
-                }
-            }
-        },
-        "event": {
-            "action": "existing_process",
-            "category": [
-                "process"
-            ],
-            "dataset": "process",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "kind": "state",
-            "module": "system",
-            "type": [
-                "info"
-            ]
-        },
-        "host": {
-            "name": "fame"
-        },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process unattended-upgr (PID: 1195) by user root is RUNNING\",\"user\":{\"name\":\"root\",\"id\":\"0\",\"group\":{\"id\":\"0\",\"name\":\"root\"},\"effective\":{\"group\":{\"id\":\"0\"},\"id\":\"0\"},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}}},\"service\":{\"type\":\"system\"},\"event\":{\"type\":[\"info\"],\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"]},\"process\":{\"args\":[\"/usr/bin/python3\",\"/usr/share/unattended-upgrades/unattended-upgrade-shutdown\",\"--wait-for-signal\"],\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"},\"name\":\"unattended-upgr\",\"entity_id\":\"rvSkGilnHCy6yuIZ\",\"pid\":1195,\"ppid\":1,\"executable\":\"/usr/bin/python3.8\",\"working_directory\":\"/\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"version\":\"7.13.0\",\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\"}}",
-        "process": {
-            "args": [
-                "/usr/bin/python3",
-                "/usr/share/unattended-upgrades/unattended-upgrade-shutdown",
-                "--wait-for-signal"
-            ],
-            "entity_id": "rvSkGilnHCy6yuIZ",
-            "executable": "/usr/bin/python3.8",
-            "hash": {
-                "sha1": "azertyuiop1234567890"
-            },
-            "name": "unattended-upgr",
-            "pid": 1195,
-            "ppid": 1,
-            "start": "2021-01-01T00:01:01.000Z",
-            "working_directory": "/",
-            "command_line": "/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "auditbeat",
-                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
-            }
-        },
-        "service": {
-            "type": "system"
-        },
-        "user": {
-            "effective": {
-                "group": {
-                    "id": "0"
-                },
-                "id": "0"
-            },
-            "group": {
-                "id": "0",
-                "name": "root"
-            },
-            "id": "0",
-            "name": "root"
-        }
-    }
-    	
-	```
 
 
 === "example8.json"
@@ -214,6 +125,854 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "id": "0",
             "name": "root"
+        }
+    }
+    	
+	```
+
+
+=== "example12.json"
+
+    ```json
+	
+    {
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "user": {
+            "audit": {
+                "id": "0",
+                "name": "root"
+            },
+            "effective": {
+                "id": "0",
+                "name": "root"
+            }
+        },
+        "host": {
+            "mac": [
+                "5e:55:38:73:40:a4"
+            ],
+            "id": "7dd912136af040e4a6ea4f683010b824",
+            "name": "web-65",
+            "containerized": false,
+            "hostname": "web-65",
+            "os": {
+                "type": "linux",
+                "platform": "ubuntu",
+                "name": "Ubuntu",
+                "kernel": "4.15.0-161-generic",
+                "family": "debian",
+                "version": "18.04.6 LTS (Bionic Beaver)",
+                "codename": "bionic"
+            },
+            "ip": [
+                "66.253.230.251"
+            ],
+            "architecture": "x86_64"
+        },
+        "agent": {
+            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
+            "type": "auditbeat",
+            "name": "web-65",
+            "hostname": "web-65",
+            "version": "7.15.1",
+            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a"
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
+                "parsing_status": "success",
+                "dialect": "auditbeat"
+            },
+            "customer": {
+                "id": "986e50d4-5db1-4dfd-a079-ca8f462647e1",
+                "community_uuid": "437c6901-db28-473e-b2bc-0c79c57585c8",
+                "community_name": "8qVekia1L80BrZOJ"
+            },
+            "entity": {
+                "uuid": "0d4efad3-ac86-48d3-b2ac-5591d6ad2a09",
+                "id": "d6DQmV77mYqMlxTh",
+                "name": "nr1AfxwR5deBbmEO"
+            }
+        },
+        "service": {
+            "type": "auditd"
+        },
+        "@timestamp": "2021-11-09T18:35:02.761Z",
+        "message": "{\"@timestamp\":\"2021-11-09T18:35:01.754Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"related\":{\"user\":[\"root\"]},\"service\":{\"type\":\"auditd\"},\"event\":{\"module\":\"auditd\",\"category\":[\"authentication\"],\"action\":\"changed-login-id-to\",\"outcome\":\"success\",\"kind\":\"event\",\"type\":[\"start\"]},\"user\":{\"audit\":{\"id\":\"0\",\"name\":\"root\"},\"effective\":{\"id\":\"0\",\"name\":\"root\"}},\"ecs\":{\"version\":\"1.11.0\"},\"host\":{\"containerized\":false,\"ip\":[\"66.253.230.251\"],\"mac\":[\"5e:55:38:73:40:a4\"],\"hostname\":\"web-65\",\"architecture\":\"x86_64\",\"os\":{\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\"},\"name\":\"web-65\",\"id\":\"7dd912136af040e4a6ea4f683010b824\"},\"agent\":{\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"web-65\",\"type\":\"auditbeat\",\"version\":\"7.15.1\",\"hostname\":\"web-65\"},\"process\":{\"pid\":20899},\"auditd\":{\"data\":{\"tty\":\"(none)\",\"old-ses\":\"4294967295\"},\"session\":\"436\",\"summary\":{\"actor\":{\"primary\":\"unset\",\"secondary\":\"root\"},\"object\":{\"primary\":\"0\",\"type\":\"user-session\"}},\"message_type\":\"login\",\"sequence\":11578,\"result\":\"success\"}}",
+        "event": {
+            "dialect_uuid": "4922a107-c91d-46e8-ab0b-d21236d92b90",
+            "id": "8a23c8c9-59c5-4226-9507-5432f1a33898",
+            "type": [
+                "start"
+            ],
+            "category": [
+                "authentication"
+            ],
+            "hash": "260c64ee23e7fed757cd65e01aebc80dc9333089",
+            "kind": "event",
+            "created": "2021-05-26",
+            "module": "auditd",
+            "dialect": "auditbeat",
+            "outcome": "success",
+            "action": "changed-login-id-to"
+        },
+        "related": {
+            "hash": [
+                "260c64ee23e7fed757cd65e01aebc80dc9333089"
+            ],
+            "ip": [
+                "66.253.230.251"
+            ],
+            "hosts": [
+                "web-65"
+            ]
+        },
+        "process": {
+            "pid": 20899
+        },
+        "auditd": {
+            "data": {
+                "tty": "(none)",
+                "old-ses": "4294967295"
+            },
+            "session": "436",
+            "summary": {
+                "actor": {
+                    "primary": "unset",
+                    "secondary": "root"
+                },
+                "object": {
+                    "primary": "0",
+                    "type": "user-session"
+                }
+            },
+            "message_type": "login",
+            "sequence": 11578,
+            "result": "success"
+        }
+    }
+    	
+	```
+
+
+=== "example3.json"
+
+    ```json
+	
+    {
+        "agent": {
+            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "hostname": "fame",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "name": "fame",
+            "type": "auditbeat",
+            "version": "7.13.0"
+        },
+        "auditbeat": {
+            "message": "Process unattended-upgr (PID: 1195) by user root is RUNNING"
+        },
+        "auditd": {
+            "user": {
+                "saved": {
+                    "group": {
+                        "id": "0"
+                    },
+                    "id": "0"
+                }
+            }
+        },
+        "event": {
+            "action": "existing_process",
+            "category": [
+                "process"
+            ],
+            "dataset": "process",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "kind": "state",
+            "module": "system",
+            "type": [
+                "info"
+            ]
+        },
+        "host": {
+            "name": "fame"
+        },
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process unattended-upgr (PID: 1195) by user root is RUNNING\",\"user\":{\"name\":\"root\",\"id\":\"0\",\"group\":{\"id\":\"0\",\"name\":\"root\"},\"effective\":{\"group\":{\"id\":\"0\"},\"id\":\"0\"},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}}},\"service\":{\"type\":\"system\"},\"event\":{\"type\":[\"info\"],\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"]},\"process\":{\"args\":[\"/usr/bin/python3\",\"/usr/share/unattended-upgrades/unattended-upgrade-shutdown\",\"--wait-for-signal\"],\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"},\"name\":\"unattended-upgr\",\"entity_id\":\"rvSkGilnHCy6yuIZ\",\"pid\":1195,\"ppid\":1,\"executable\":\"/usr/bin/python3.8\",\"working_directory\":\"/\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"version\":\"7.13.0\",\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\"}}",
+        "process": {
+            "args": [
+                "/usr/bin/python3",
+                "/usr/share/unattended-upgrades/unattended-upgrade-shutdown",
+                "--wait-for-signal"
+            ],
+            "entity_id": "rvSkGilnHCy6yuIZ",
+            "executable": "/usr/bin/python3.8",
+            "hash": {
+                "sha1": "azertyuiop1234567890"
+            },
+            "name": "unattended-upgr",
+            "pid": 1195,
+            "ppid": 1,
+            "start": "2021-01-01T00:01:01.000Z",
+            "working_directory": "/",
+            "command_line": "/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal"
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "auditbeat",
+                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
+            }
+        },
+        "service": {
+            "type": "system"
+        },
+        "user": {
+            "effective": {
+                "group": {
+                    "id": "0"
+                },
+                "id": "0"
+            },
+            "group": {
+                "id": "0",
+                "name": "root"
+            },
+            "id": "0",
+            "name": "root"
+        }
+    }
+    	
+	```
+
+
+=== "example10.json"
+
+    ```json
+	
+    {
+        "user": {
+            "filesystem": {
+                "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
+                "group": {
+                    "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
+                    "name": "housetodd"
+                },
+                "name": "housetodd"
+            },
+            "name": "housetodd",
+            "audit": {
+                "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
+                "name": "housetodd"
+            },
+            "group": {
+                "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
+                "name": "housetodd"
+            },
+            "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430"
+        },
+        "auditbeat": {
+            "tags": [
+                "access"
+            ]
+        },
+        "@timestamp": "2021-11-09T17:39:27.218Z",
+        "event": {
+            "category": [
+                "file"
+            ],
+            "id": "3a4fc4b3-f7b8-4b41-b696-bf7d452a0bec",
+            "dialect_uuid": "18f1e8ee-7e55-484d-b210-a7ebeeb62924",
+            "kind": "event",
+            "created": "2021-06-10",
+            "hash": "89e3ad1078a4ee2210d04736528e10476dda685d",
+            "module": "auditd",
+            "type": [
+                "creation"
+            ],
+            "outcome": "failure",
+            "action": "opened-file",
+            "dialect": "auditbeat"
+        },
+        "message": "{\"@timestamp\":\"2021-11-09T17:39:26.389Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"process\":{\"ppid\":18470,\"title\":\"/opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=18479 --enable-crash-reporter=, --change-stack-\",\"name\":\"chrome\",\"executable\":\"/opt/google/chrome/chrome\",\"working_directory\":\"/home/housetodd\",\"pid\":18488},\"auditd\":{\"session\":\"3\",\"summary\":{\"actor\":{\"primary\":\"housetodd\",\"secondary\":\"housetodd\"},\"object\":{\"primary\":\"/proc/1/oom_score_adj\",\"type\":\"file\"},\"how\":\"/opt/google/chrome/chrome\"},\"paths\":[{\"cap_fe\":\"0\",\"cap_fver\":\"0\",\"inode\":\"16064\",\"name\":\"/proc/1/\",\"ogid\":\"0\",\"ouid\":\"0\",\"rdev\":\"00:00\",\"cap_fi\":\"0000000000000000\",\"cap_fp\":\"0000000000000000\",\"dev\":\"00:04\",\"item\":\"0\",\"mode\":\"040555\",\"nametype\":\"PARENT\"},{\"nametype\":\"NORMAL\",\"ogid\":\"0\",\"ouid\":\"0\",\"cap_fe\":\"0\",\"dev\":\"00:04\",\"item\":\"1\",\"mode\":\"0100644\",\"name\":\"/proc/1/oom_score_adj\",\"rdev\":\"00:00\",\"cap_fi\":\"0000000000000000\",\"cap_fp\":\"0000000000000000\",\"cap_fver\":\"0\",\"inode\":\"25973\"}],\"message_type\":\"syscall\",\"sequence\":9052,\"result\":\"fail\",\"data\":{\"tty\":\"(none)\",\"exit\":\"EACCES\",\"a0\":\"7ffc1bfcdfa0\",\"a3\":\"7ffc1bfcde00\",\"a2\":\"55881de610b8\",\"a1\":\"1b6\",\"arch\":\"x86_64\",\"syscall\":\"creat\"}},\"event\":{\"module\":\"auditd\",\"category\":[\"file\"],\"action\":\"opened-file\",\"outcome\":\"failure\",\"kind\":\"event\",\"type\":[\"creation\"]},\"user\":{\"filesystem\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"group\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"name\":\"housetodd\"},\"name\":\"housetodd\",\"audit\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"saved\":{\"group\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"group\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\"},\"host\":{\"name\":\"xps-housetodd\",\"ip\":[\"144.1.237.149\"],\"mac\":[\"22:69:ae:27:fe:66\"],\"hostname\":\"xps-housetodd\",\"architecture\":\"x86_64\",\"os\":{\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\"},\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false},\"file\":{\"gid\":\"0\",\"owner\":\"housetodd\",\"group\":\"housetodd\",\"path\":\"/proc/1/oom_score_adj\",\"device\":\"00:00\",\"inode\":\"25973\",\"mode\":\"0644\",\"uid\":\"0\"},\"tags\":[\"access\"],\"service\":{\"type\":\"auditd\"},\"ecs\":{\"version\":\"1.11.0\"},\"agent\":{\"version\":\"7.15.1\",\"hostname\":\"xps-housetodd\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"xps-housetodd\",\"type\":\"auditbeat\"}}",
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "process": {
+            "pid": 18488,
+            "name": "chrome",
+            "working_directory": "/home/housetodd",
+            "ppid": 18470,
+            "title": "/opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=18479 --enable-crash-reporter=, --change-stack-",
+            "executable": "/opt/google/chrome/chrome"
+        },
+        "host": {
+            "id": "7dd912136af040e4a6ea4f683010b824",
+            "os": {
+                "type": "linux",
+                "kernel": "4.15.0-161-generic",
+                "codename": "bionic",
+                "name": "Ubuntu",
+                "family": "debian",
+                "platform": "ubuntu",
+                "version": "18.04.6 LTS (Bionic Beaver)"
+            },
+            "mac": [
+                "22:69:ae:27:fe:66"
+            ],
+            "name": "xps-housetodd",
+            "ip": [
+                "144.1.237.149"
+            ],
+            "hostname": "xps-housetodd",
+            "architecture": "x86_64",
+            "containerized": false
+        },
+        "sekoiaio": {
+            "entity": {
+                "id": "jw2ASKHGnsWFqGDQ",
+                "uuid": "322dcda2-5cd1-438d-a49e-d76ef40d2fed",
+                "name": "I8WiW2OHB9jqnxZW"
+            },
+            "intake": {
+                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
+                "dialect": "auditbeat",
+                "parsing_status": "success"
+            },
+            "customer": {
+                "id": "fe4f8db6-3ec4-4111-b5e9-0802cfed3d62",
+                "community_uuid": "0da1e49f-203a-4585-973a-fbb54331bccb",
+                "community_name": "jP0oXIBnhYiuJ0lI"
+            }
+        },
+        "auditd": {
+            "session": "3",
+            "summary": {
+                "actor": {
+                    "primary": "housetodd",
+                    "secondary": "housetodd"
+                },
+                "object": {
+                    "primary": "/proc/1/oom_score_adj",
+                    "type": "file"
+                },
+                "how": "/opt/google/chrome/chrome"
+            },
+            "paths": [
+                {
+                    "cap_fe": "0",
+                    "cap_fver": "0",
+                    "inode": "16064",
+                    "name": "/proc/1/",
+                    "ogid": "0",
+                    "ouid": "0",
+                    "rdev": "00:00",
+                    "cap_fi": "0000000000000000",
+                    "cap_fp": "0000000000000000",
+                    "dev": "00:04",
+                    "item": "0",
+                    "mode": "040555",
+                    "nametype": "PARENT"
+                },
+                {
+                    "nametype": "NORMAL",
+                    "ogid": "0",
+                    "ouid": "0",
+                    "cap_fe": "0",
+                    "dev": "00:04",
+                    "item": "1",
+                    "mode": "0100644",
+                    "name": "/proc/1/oom_score_adj",
+                    "rdev": "00:00",
+                    "cap_fi": "0000000000000000",
+                    "cap_fp": "0000000000000000",
+                    "cap_fver": "0",
+                    "inode": "25973"
+                }
+            ],
+            "message_type": "syscall",
+            "sequence": 9052,
+            "result": "fail",
+            "data": {
+                "tty": "(none)",
+                "exit": "EACCES",
+                "a0": "7ffc1bfcdfa0",
+                "a3": "7ffc1bfcde00",
+                "a2": "55881de610b8",
+                "a1": "1b6",
+                "arch": "x86_64",
+                "syscall": "creat"
+            },
+            "user": {
+                "saved": {
+                    "group": {
+                        "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
+                        "name": "housetodd"
+                    },
+                    "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
+                    "name": "housetodd"
+                }
+            }
+        },
+        "agent": {
+            "type": "auditbeat",
+            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
+            "name": "xps-housetodd",
+            "version": "7.15.1",
+            "hostname": "xps-housetodd",
+            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a"
+        },
+        "file": {
+            "inode": "25973",
+            "path": "/proc/1/oom_score_adj",
+            "gid": "0",
+            "uid": "0",
+            "group": "housetodd",
+            "device": "00:00",
+            "owner": "housetodd",
+            "mode": "0644"
+        },
+        "service": {
+            "type": "auditd"
+        },
+        "related": {
+            "hash": [
+                "89e3ad1078a4ee2210d04736528e10476dda685d"
+            ],
+            "user": [
+                "housetodd"
+            ],
+            "ip": [
+                "144.1.237.149"
+            ],
+            "hosts": [
+                "xps-housetodd"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "example13.json"
+
+    ```json
+	
+    {
+        "event": {
+            "dialect_uuid": "423c9f61-0282-464d-a2f3-f2d745b59a3b",
+            "id": "c7679ece-e22f-4144-a7f5-619034aa036d",
+            "category": [
+                "process"
+            ],
+            "hash": "249e78b65ea6378a41037766bd8b1f01abd1a371",
+            "outcome": "success",
+            "module": "auditd",
+            "type": [
+                "start"
+            ],
+            "dialect": "auditbeat",
+            "created": "2021-03-12",
+            "kind": "event",
+            "action": "started-service"
+        },
+        "host": {
+            "id": "7dd912136af040e4a6ea4f683010b824",
+            "name": "LCPmbaxBgGyJj8VH",
+            "mac": [
+                "09:d0:5f:99:43:f6"
+            ],
+            "os": {
+                "family": "debian",
+                "name": "Ubuntu",
+                "codename": "bionic",
+                "type": "linux",
+                "version": "18.04.6 LTS (Bionic Beaver)",
+                "kernel": "4.15.0-161-generic",
+                "platform": "ubuntu"
+            },
+            "architecture": "x86_64",
+            "ip": [
+                "87.138.107.154"
+            ],
+            "containerized": false,
+            "hostname": "LCPmbaxBgGyJj8VH"
+        },
+        "user": {
+            "id": "16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e",
+            "name": "X9PzJKityWAFaA5i"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "message": "{\"@timestamp\":\"2021-11-09T19:02:33.866Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"kind\":\"event\",\"type\":[\"start\"],\"module\":\"auditd\",\"category\":[\"process\"],\"action\":\"started-service\",\"outcome\":\"success\"},\"user\":{\"id\":\"16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\",\"name\":\"X9PzJKityWAFaA5i\"},\"process\":{\"pid\":1,\"name\":\"systemd\",\"executable\":\"/lib/systemd/systemd\"},\"auditd\":{\"result\":\"success\",\"data\":{\"unit\":\"anacron\"},\"summary\":{\"how\":\"/lib/systemd/systemd\",\"actor\":{\"primary\":\"unset\",\"secondary\":\"X9PzJKityWAFaA5i\"},\"object\":{\"primary\":\"anacron\",\"type\":\"service\"}},\"message_type\":\"service_start\",\"sequence\":12295},\"service\":{\"type\":\"auditd\"},\"ecs\":{\"version\":\"1.11.16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\"},\"host\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"architecture\":\"x86_64\",\"os\":{\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\"},\"name\":\"LCPmbaxBgGyJj8VH\",\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"87.138.107.154\"],\"mac\":[\"09:d0:5f:99:43:f6\"]},\"agent\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"LCPmbaxBgGyJj8VH\",\"type\":\"auditbeat\",\"version\":\"7.15.1\"}}",
+        "sekoiaio": {
+            "customer": {
+                "id": "c4f66c2f-d5b8-422b-99bb-58861ecf29b2",
+                "community_name": "nPBqXTDSBeAay0G4",
+                "community_uuid": "9074f2a1-49f9-4b01-9fc7-6c826a330a5a"
+            },
+            "entity": {
+                "id": "6jg8OBtPENQkrAFy",
+                "uuid": "3fca9011-7dd8-4a75-a311-9cee8a9daf8a",
+                "name": "pW9vnD1tYtahvz1u"
+            },
+            "intake": {
+                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
+                "parsing_status": "success",
+                "dialect": "auditbeat"
+            }
+        },
+        "agent": {
+            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
+            "name": "LCPmbaxBgGyJj8VH",
+            "type": "auditbeat",
+            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
+            "version": "7.15.1",
+            "hostname": "LCPmbaxBgGyJj8VH"
+        },
+        "service": {
+            "type": "auditd"
+        },
+        "@timestamp": "2021-11-09T19:02:33.866Z",
+        "related": {
+            "user": [
+                "X9PzJKityWAFaA5i"
+            ],
+            "hash": [
+                "249e78b65ea6378a41037766bd8b1f01abd1a371"
+            ],
+            "hosts": [
+                "LCPmbaxBgGyJj8VH"
+            ],
+            "ip": [
+                "87.138.107.154"
+            ]
+        },
+        "auditd": {
+            "result": "success",
+            "data": {
+                "unit": "anacron"
+            },
+            "summary": {
+                "how": "/lib/systemd/systemd",
+                "actor": {
+                    "primary": "unset",
+                    "secondary": "X9PzJKityWAFaA5i"
+                },
+                "object": {
+                    "primary": "anacron",
+                    "type": "service"
+                }
+            },
+            "message_type": "service_start",
+            "sequence": 12295
+        },
+        "process": {
+            "pid": 1,
+            "name": "systemd",
+            "executable": "/lib/systemd/systemd"
+        }
+    }
+    	
+	```
+
+
+=== "example9.json"
+
+    ```json
+	
+    {
+        "@timestamp": "2021-11-09T16:19:27.788Z",
+        "process": {
+            "pid": 12416,
+            "working_directory": "/home/NElD74Hc4MX8PjLF/Documents/Projets/Qh1HoDnBg4mYfHhi"
+        },
+        "event": {
+            "category": [
+                "process"
+            ],
+            "id": "5a4533a0-1493-4c8c-a77c-c11bcb6dad7c",
+            "dialect_uuid": "1b730d40-efc3-4d5d-b2e1-88bec50279b4",
+            "kind": "event",
+            "module": "auditd",
+            "action": "ran-command",
+            "type": [
+                "start"
+            ],
+            "outcome": "success",
+            "hash": "d0bbb264b6b96f6d62736c1af94d8b83b3b6ad3f",
+            "created": "2021-08-20",
+            "dialect": "auditbeat"
+        },
+        "sekoiaio": {
+            "intake": {
+                "parsing_status": "success",
+                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
+                "dialect": "auditbeat"
+            },
+            "entity": {
+                "id": "Qh1HoDnBg4mYfHhi",
+                "uuid": "0b326c92-cdae-4149-818d-7d2e24864eff",
+                "name": "3utjzQNc3uN2iAL7"
+            },
+            "customer": {
+                "id": "d5afec27-90be-43b0-8b6a-902b1ae1ee42",
+                "community_name": "kBugMo5Or8YMCmmi",
+                "community_uuid": "de723233-a1db-4c72-a0a8-3a14df6e9154"
+            }
+        },
+        "message": "{\"@timestamp\":\"2021-11-09T16:17:55.149Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"kind\":\"event\",\"type\":[\"start\"],\"module\":\"auditd\",\"category\":[\"process\"],\"action\":\"ran-command\",\"outcome\":\"success\"},\"user\":{\"id\":\"4e8ff660-f139-4248-8b64-ad29495fca9e\",\"name\":\"NElD74Hc4MX8PjLF\",\"audit\":{\"id\":\"4e8ff660-f139-4248-8b64-ad29495fca9e\",\"name\":\"NElD74Hc4MX8PjLF\"}},\"host\":{\"hostname\":\"web-66\",\"architecture\":\"x86_64\",\"os\":{\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\"},\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\"],\"name\":\"web-66\",\"mac\":[\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\"]},\"agent\":{\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"web-66\",\"type\":\"auditbeat\",\"version\":\"7.15.1\",\"hostname\":\"web-66\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\"},\"ecs\":{\"version\":\"1.11.0\"},\"process\":{\"pid\":12416,\"working_directory\":\"/home/NElD74Hc4MX8PjLF/Documents/Projets/Qh1HoDnBg4mYfHhi\"},\"auditd\":{\"data\":{\"terminal\":\"pts/3\",\"cmd\":\"systemctl status auditbeat\"},\"session\":\"2\",\"summary\":{\"actor\":{\"primary\":\"NElD74Hc4MX8PjLF\",\"secondary\":\"NElD74Hc4MX8PjLF\"},\"object\":{\"primary\":\"systemctl status auditbeat\",\"type\":\"process\"}},\"message_type\":\"user_cmd\",\"sequence\":465,\"result\":\"success\"},\"service\":{\"type\":\"auditd\"}}",
+        "related": {
+            "ip": [
+                "173.8.126.146"
+            ],
+            "hash": [
+                "d0bbb264b6b96f6d62736c1af94d8b83b3b6ad3f"
+            ],
+            "user": [
+                "NElD74Hc4MX8PjLF"
+            ],
+            "hosts": [
+                "web-66"
+            ]
+        },
+        "agent": {
+            "type": "auditbeat",
+            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
+            "name": "web-66",
+            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
+            "version": "7.15.1",
+            "hostname": "web-66"
+        },
+        "user": {
+            "id": "4e8ff660-f139-4248-8b64-ad29495fca9e",
+            "name": "NElD74Hc4MX8PjLF",
+            "audit": {
+                "id": "4e8ff660-f139-4248-8b64-ad29495fca9e",
+                "name": "NElD74Hc4MX8PjLF"
+            }
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "service": {
+            "type": "auditd"
+        },
+        "host": {
+            "hostname": "web-66",
+            "id": "7dd912136af040e4a6ea4f683010b824",
+            "mac": [
+                "57:4c:ff:5d:1e:41"
+            ],
+            "name": "web-66",
+            "containerized": false,
+            "architecture": "x86_64",
+            "ip": [
+                "173.8.126.146"
+            ],
+            "os": {
+                "type": "linux",
+                "name": "Ubuntu",
+                "family": "debian",
+                "version": "18.04.6 LTS (Bionic Beaver)",
+                "kernel": "4.15.0-161-generic",
+                "platform": "ubuntu",
+                "codename": "bionic"
+            }
+        },
+        "auditd": {
+            "data": {
+                "terminal": "pts/3",
+                "cmd": "systemctl status auditbeat"
+            },
+            "session": "2",
+            "summary": {
+                "actor": {
+                    "primary": "NElD74Hc4MX8PjLF",
+                    "secondary": "NElD74Hc4MX8PjLF"
+                },
+                "object": {
+                    "primary": "systemctl status auditbeat",
+                    "type": "process"
+                }
+            },
+            "message_type": "user_cmd",
+            "sequence": 465,
+            "result": "success"
+        }
+    }
+    	
+	```
+
+
+=== "example2.json"
+
+    ```json
+	
+    {
+        "agent": {
+            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "hostname": "fame",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "name": "fame",
+            "type": "auditbeat",
+            "version": "7.13.0"
+        },
+        "auditbeat": {
+            "message": "Process containerd (PID: 1197) by user root is RUNNING"
+        },
+        "auditd": {
+            "user": {
+                "saved": {
+                    "group": {
+                        "id": "0"
+                    },
+                    "id": "0"
+                }
+            }
+        },
+        "event": {
+            "action": "existing_process",
+            "category": [
+                "process"
+            ],
+            "dataset": "process",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "kind": "state",
+            "module": "system",
+            "type": [
+                "info"
+            ]
+        },
+        "host": {
+            "name": "fame"
+        },
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process containerd (PID: 1197) by user root is RUNNING\",\"user\":{\"group\":{\"name\":\"root\",\"id\":\"0\"},\"effective\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"name\":\"root\",\"id\":\"0\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"args\":[\"containerd\"],\"pid\":1197,\"ppid\":1,\"working_directory\":\"/\",\"entity_id\":\"AZERTYqsdfghjklm\",\"name\":\"containerd\",\"executable\":\"/usr/bin/containerd\",\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"}, \"command_line\": \"/usr/bin/containerd\"}}",
+        "process": {
+            "args": [
+                "containerd"
+            ],
+            "entity_id": "AZERTYqsdfghjklm",
+            "executable": "/usr/bin/containerd",
+            "hash": {
+                "sha1": "azertyuiop1234567890"
+            },
+            "name": "containerd",
+            "pid": 1197,
+            "ppid": 1,
+            "start": "2021-01-01T00:01:01.000Z",
+            "working_directory": "/",
+            "command_line": "/usr/bin/containerd"
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "auditbeat",
+                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
+            }
+        },
+        "service": {
+            "type": "system"
+        },
+        "user": {
+            "effective": {
+                "group": {
+                    "id": "0"
+                },
+                "id": "0"
+            },
+            "group": {
+                "id": "0",
+                "name": "root"
+            },
+            "id": "0",
+            "name": "root"
+        }
+    }
+    	
+	```
+
+
+=== "example1.json"
+
+    ```json
+	
+    {
+        "event": {
+            "module": "system",
+            "dataset": "process",
+            "kind": "event",
+            "category": [
+                "process"
+            ],
+            "type": [
+                "end"
+            ],
+            "action": "process_stopped"
+        },
+        "process": {
+            "working_directory": "/my/directory",
+            "start": "2021-01-01T00:01:01.000Z",
+            "name": "smtp",
+            "entity_id": "AZERTY123456789",
+            "ppid": 1457,
+            "executable": "/usr/lib/postfix/sbin/smtp",
+            "pid": 123123,
+            "args": [
+                "smtp",
+                "-t",
+                "unix",
+                "-u",
+                "-c"
+            ],
+            "command_line": "smtp -t unix -u -c",
+            "hash": {
+                "sha1": "53fe0c00019fb177e43c7ac214f466f01158384e"
+            }
+        },
+        "auditbeat": {
+            "message": "Process smtp (PID: 123123) by user postfix STOPPED"
+        },
+        "auditd": {
+            "user": {
+                "saved": {
+                    "id": "999",
+                    "group": {
+                        "id": "222"
+                    }
+                }
+            }
+        },
+        "user": {
+            "effective": {
+                "id": "999",
+                "group": {
+                    "id": "222"
+                }
+            },
+            "name": "postfix",
+            "id": "999",
+            "group": {
+                "id": "222",
+                "name": "postfix"
+            }
+        },
+        "service": {
+            "type": "system"
+        },
+        "ecs": {
+            "version": "1.9.0"
+        },
+        "host": {
+            "name": "fame"
+        },
+        "agent": {
+            "hostname": "fame",
+            "ephemeral_id": "qsdfghjklm-1111-2222-3333-azertyuiop",
+            "id": "wxcvbn-010101-121212-4444-azertyuiop",
+            "name": "fame",
+            "type": "auditbeat",
+            "version": "7.13.0"
         }
     }
     	
@@ -445,759 +1204,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "example2.json"
-
-    ```json
-	
-    {
-        "agent": {
-            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "hostname": "fame",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "name": "fame",
-            "type": "auditbeat",
-            "version": "7.13.0"
-        },
-        "auditbeat": {
-            "message": "Process containerd (PID: 1197) by user root is RUNNING"
-        },
-        "auditd": {
-            "user": {
-                "saved": {
-                    "group": {
-                        "id": "0"
-                    },
-                    "id": "0"
-                }
-            }
-        },
-        "event": {
-            "action": "existing_process",
-            "category": [
-                "process"
-            ],
-            "dataset": "process",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "kind": "state",
-            "module": "system",
-            "type": [
-                "info"
-            ]
-        },
-        "host": {
-            "name": "fame"
-        },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process containerd (PID: 1197) by user root is RUNNING\",\"user\":{\"group\":{\"name\":\"root\",\"id\":\"0\"},\"effective\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"name\":\"root\",\"id\":\"0\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"args\":[\"containerd\"],\"pid\":1197,\"ppid\":1,\"working_directory\":\"/\",\"entity_id\":\"AZERTYqsdfghjklm\",\"name\":\"containerd\",\"executable\":\"/usr/bin/containerd\",\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"}, \"command_line\": \"/usr/bin/containerd\"}}",
-        "process": {
-            "args": [
-                "containerd"
-            ],
-            "entity_id": "AZERTYqsdfghjklm",
-            "executable": "/usr/bin/containerd",
-            "hash": {
-                "sha1": "azertyuiop1234567890"
-            },
-            "name": "containerd",
-            "pid": 1197,
-            "ppid": 1,
-            "start": "2021-01-01T00:01:01.000Z",
-            "working_directory": "/",
-            "command_line": "/usr/bin/containerd"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "auditbeat",
-                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
-            }
-        },
-        "service": {
-            "type": "system"
-        },
-        "user": {
-            "effective": {
-                "group": {
-                    "id": "0"
-                },
-                "id": "0"
-            },
-            "group": {
-                "id": "0",
-                "name": "root"
-            },
-            "id": "0",
-            "name": "root"
-        }
-    }
-    	
-	```
-
-
-=== "example12.json"
-
-    ```json
-	
-    {
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "user": {
-            "audit": {
-                "id": "0",
-                "name": "root"
-            },
-            "effective": {
-                "id": "0",
-                "name": "root"
-            }
-        },
-        "host": {
-            "mac": [
-                "5e:55:38:73:40:a4"
-            ],
-            "id": "7dd912136af040e4a6ea4f683010b824",
-            "name": "web-65",
-            "containerized": false,
-            "hostname": "web-65",
-            "os": {
-                "type": "linux",
-                "platform": "ubuntu",
-                "name": "Ubuntu",
-                "kernel": "4.15.0-161-generic",
-                "family": "debian",
-                "version": "18.04.6 LTS (Bionic Beaver)",
-                "codename": "bionic"
-            },
-            "ip": [
-                "66.253.230.251"
-            ],
-            "architecture": "x86_64"
-        },
-        "agent": {
-            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
-            "type": "auditbeat",
-            "name": "web-65",
-            "hostname": "web-65",
-            "version": "7.15.1",
-            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
-                "parsing_status": "success",
-                "dialect": "auditbeat"
-            },
-            "customer": {
-                "id": "986e50d4-5db1-4dfd-a079-ca8f462647e1",
-                "community_uuid": "437c6901-db28-473e-b2bc-0c79c57585c8",
-                "community_name": "8qVekia1L80BrZOJ"
-            },
-            "entity": {
-                "uuid": "0d4efad3-ac86-48d3-b2ac-5591d6ad2a09",
-                "id": "d6DQmV77mYqMlxTh",
-                "name": "nr1AfxwR5deBbmEO"
-            }
-        },
-        "service": {
-            "type": "auditd"
-        },
-        "@timestamp": "2021-11-09T18:35:02.761Z",
-        "message": "{\"@timestamp\":\"2021-11-09T18:35:01.754Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"related\":{\"user\":[\"root\"]},\"service\":{\"type\":\"auditd\"},\"event\":{\"module\":\"auditd\",\"category\":[\"authentication\"],\"action\":\"changed-login-id-to\",\"outcome\":\"success\",\"kind\":\"event\",\"type\":[\"start\"]},\"user\":{\"audit\":{\"id\":\"0\",\"name\":\"root\"},\"effective\":{\"id\":\"0\",\"name\":\"root\"}},\"ecs\":{\"version\":\"1.11.0\"},\"host\":{\"containerized\":false,\"ip\":[\"66.253.230.251\"],\"mac\":[\"5e:55:38:73:40:a4\"],\"hostname\":\"web-65\",\"architecture\":\"x86_64\",\"os\":{\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\"},\"name\":\"web-65\",\"id\":\"7dd912136af040e4a6ea4f683010b824\"},\"agent\":{\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"web-65\",\"type\":\"auditbeat\",\"version\":\"7.15.1\",\"hostname\":\"web-65\"},\"process\":{\"pid\":20899},\"auditd\":{\"data\":{\"tty\":\"(none)\",\"old-ses\":\"4294967295\"},\"session\":\"436\",\"summary\":{\"actor\":{\"primary\":\"unset\",\"secondary\":\"root\"},\"object\":{\"primary\":\"0\",\"type\":\"user-session\"}},\"message_type\":\"login\",\"sequence\":11578,\"result\":\"success\"}}",
-        "event": {
-            "dialect_uuid": "4922a107-c91d-46e8-ab0b-d21236d92b90",
-            "id": "8a23c8c9-59c5-4226-9507-5432f1a33898",
-            "type": [
-                "start"
-            ],
-            "category": [
-                "authentication"
-            ],
-            "hash": "260c64ee23e7fed757cd65e01aebc80dc9333089",
-            "kind": "event",
-            "created": "2021-05-26",
-            "module": "auditd",
-            "dialect": "auditbeat",
-            "outcome": "success",
-            "action": "changed-login-id-to"
-        },
-        "related": {
-            "hash": [
-                "260c64ee23e7fed757cd65e01aebc80dc9333089"
-            ],
-            "ip": [
-                "66.253.230.251"
-            ],
-            "hosts": [
-                "web-65"
-            ]
-        },
-        "process": {
-            "pid": 20899
-        },
-        "auditd": {
-            "data": {
-                "tty": "(none)",
-                "old-ses": "4294967295"
-            },
-            "session": "436",
-            "summary": {
-                "actor": {
-                    "primary": "unset",
-                    "secondary": "root"
-                },
-                "object": {
-                    "primary": "0",
-                    "type": "user-session"
-                }
-            },
-            "message_type": "login",
-            "sequence": 11578,
-            "result": "success"
-        }
-    }
-    	
-	```
-
-
-=== "example13.json"
-
-    ```json
-	
-    {
-        "event": {
-            "dialect_uuid": "423c9f61-0282-464d-a2f3-f2d745b59a3b",
-            "id": "c7679ece-e22f-4144-a7f5-619034aa036d",
-            "category": [
-                "process"
-            ],
-            "hash": "249e78b65ea6378a41037766bd8b1f01abd1a371",
-            "outcome": "success",
-            "module": "auditd",
-            "type": [
-                "start"
-            ],
-            "dialect": "auditbeat",
-            "created": "2021-03-12",
-            "kind": "event",
-            "action": "started-service"
-        },
-        "host": {
-            "id": "7dd912136af040e4a6ea4f683010b824",
-            "name": "LCPmbaxBgGyJj8VH",
-            "mac": [
-                "09:d0:5f:99:43:f6"
-            ],
-            "os": {
-                "family": "debian",
-                "name": "Ubuntu",
-                "codename": "bionic",
-                "type": "linux",
-                "version": "18.04.6 LTS (Bionic Beaver)",
-                "kernel": "4.15.0-161-generic",
-                "platform": "ubuntu"
-            },
-            "architecture": "x86_64",
-            "ip": [
-                "87.138.107.154"
-            ],
-            "containerized": false,
-            "hostname": "LCPmbaxBgGyJj8VH"
-        },
-        "user": {
-            "id": "16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e",
-            "name": "X9PzJKityWAFaA5i"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "message": "{\"@timestamp\":\"2021-11-09T19:02:33.866Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"kind\":\"event\",\"type\":[\"start\"],\"module\":\"auditd\",\"category\":[\"process\"],\"action\":\"started-service\",\"outcome\":\"success\"},\"user\":{\"id\":\"16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\",\"name\":\"X9PzJKityWAFaA5i\"},\"process\":{\"pid\":1,\"name\":\"systemd\",\"executable\":\"/lib/systemd/systemd\"},\"auditd\":{\"result\":\"success\",\"data\":{\"unit\":\"anacron\"},\"summary\":{\"how\":\"/lib/systemd/systemd\",\"actor\":{\"primary\":\"unset\",\"secondary\":\"X9PzJKityWAFaA5i\"},\"object\":{\"primary\":\"anacron\",\"type\":\"service\"}},\"message_type\":\"service_start\",\"sequence\":12295},\"service\":{\"type\":\"auditd\"},\"ecs\":{\"version\":\"1.11.16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\"},\"host\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"architecture\":\"x86_64\",\"os\":{\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\"},\"name\":\"LCPmbaxBgGyJj8VH\",\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"87.138.107.154\"],\"mac\":[\"09:d0:5f:99:43:f6\"]},\"agent\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"LCPmbaxBgGyJj8VH\",\"type\":\"auditbeat\",\"version\":\"7.15.1\"}}",
-        "sekoiaio": {
-            "customer": {
-                "id": "c4f66c2f-d5b8-422b-99bb-58861ecf29b2",
-                "community_name": "nPBqXTDSBeAay0G4",
-                "community_uuid": "9074f2a1-49f9-4b01-9fc7-6c826a330a5a"
-            },
-            "entity": {
-                "id": "6jg8OBtPENQkrAFy",
-                "uuid": "3fca9011-7dd8-4a75-a311-9cee8a9daf8a",
-                "name": "pW9vnD1tYtahvz1u"
-            },
-            "intake": {
-                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
-                "parsing_status": "success",
-                "dialect": "auditbeat"
-            }
-        },
-        "agent": {
-            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
-            "name": "LCPmbaxBgGyJj8VH",
-            "type": "auditbeat",
-            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
-            "version": "7.15.1",
-            "hostname": "LCPmbaxBgGyJj8VH"
-        },
-        "service": {
-            "type": "auditd"
-        },
-        "@timestamp": "2021-11-09T19:02:33.866Z",
-        "related": {
-            "user": [
-                "X9PzJKityWAFaA5i"
-            ],
-            "hash": [
-                "249e78b65ea6378a41037766bd8b1f01abd1a371"
-            ],
-            "hosts": [
-                "LCPmbaxBgGyJj8VH"
-            ],
-            "ip": [
-                "87.138.107.154"
-            ]
-        },
-        "auditd": {
-            "result": "success",
-            "data": {
-                "unit": "anacron"
-            },
-            "summary": {
-                "how": "/lib/systemd/systemd",
-                "actor": {
-                    "primary": "unset",
-                    "secondary": "X9PzJKityWAFaA5i"
-                },
-                "object": {
-                    "primary": "anacron",
-                    "type": "service"
-                }
-            },
-            "message_type": "service_start",
-            "sequence": 12295
-        },
-        "process": {
-            "pid": 1,
-            "name": "systemd",
-            "executable": "/lib/systemd/systemd"
-        }
-    }
-    	
-	```
-
-
-=== "example7.json"
-
-    ```json
-	
-    {
-        "agent": {
-            "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
-            "hostname": "fame",
-            "id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
-            "name": "fame",
-            "type": "auditbeat",
-            "version": "7.13.0"
-        },
-        "auditbeat": {
-            "message": "Process postgres (PID: 1234) by user postgres is RUNNING"
-        },
-        "auditd": {
-            "user": {
-                "saved": {
-                    "group": {
-                        "id": "121"
-                    },
-                    "id": "114"
-                }
-            }
-        },
-        "event": {
-            "action": "existing_process",
-            "category": [
-                "process"
-            ],
-            "dataset": "process",
-            "id": "e9c16612-2053-4bc6-86aa-7e04c6114ecc",
-            "kind": "state",
-            "module": "system",
-            "type": [
-                "info"
-            ]
-        },
-        "host": {
-            "name": "fame"
-        },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"e9c16612-2053-4bc6-86aa-7e04c6114ecc\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"executable\":\"/usr/lib/postgresql/9.5/bin/postgres\",\"entity_id\":\"1234zertyui\",\"ppid\":1231,\"start\":\"2021-01-01T00:01:01.000Z\",\"name\":\"postgres\",\"pid\":1234,\"working_directory\":\"/var/lib/postgresql/9.5/main\",\"hash\":{\"sha1\":\"12345678901234567891234567890\"},\"args\":[\"postgres: wal writer process   \"]},\"host\":{\"name\":\"fame\"},\"agent\":{\"ephemeral_id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\",\"hostname\":\"fame\"},\"ecs\":{\"version\":\"1.9.0\"},\"message\":\"Process postgres (PID: 1234) by user postgres is RUNNING\",\"user\":{\"effective\":{\"group\":{\"id\":\"121\"},\"id\":\"114\"},\"saved\":{\"id\":\"114\",\"group\":{\"id\":\"121\"}},\"name\":\"postgres\",\"id\":\"114\",\"group\":{\"id\":\"121\",\"name\":\"postgres\"}}}",
-        "process": {
-            "args": [
-                "postgres: wal writer process   "
-            ],
-            "entity_id": "1234zertyui",
-            "executable": "/usr/lib/postgresql/9.5/bin/postgres",
-            "hash": {
-                "sha1": "12345678901234567891234567890"
-            },
-            "name": "postgres",
-            "pid": 1234,
-            "ppid": 1231,
-            "start": "2021-01-01T00:01:01.000Z",
-            "working_directory": "/var/lib/postgresql/9.5/main"
-        },
-        "service": {
-            "type": "system"
-        },
-        "user": {
-            "effective": {
-                "group": {
-                    "id": "121"
-                },
-                "id": "114"
-            },
-            "group": {
-                "id": "121",
-                "name": "postgres"
-            },
-            "id": "114",
-            "name": "postgres"
-        }
-    }
-    	
-	```
-
-
-=== "example10.json"
-
-    ```json
-	
-    {
-        "user": {
-            "filesystem": {
-                "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
-                "group": {
-                    "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
-                    "name": "housetodd"
-                },
-                "name": "housetodd"
-            },
-            "name": "housetodd",
-            "audit": {
-                "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
-                "name": "housetodd"
-            },
-            "group": {
-                "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
-                "name": "housetodd"
-            },
-            "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430"
-        },
-        "auditbeat": {
-            "tags": [
-                "access"
-            ]
-        },
-        "@timestamp": "2021-11-09T17:39:27.218Z",
-        "event": {
-            "category": [
-                "file"
-            ],
-            "id": "3a4fc4b3-f7b8-4b41-b696-bf7d452a0bec",
-            "dialect_uuid": "18f1e8ee-7e55-484d-b210-a7ebeeb62924",
-            "kind": "event",
-            "created": "2021-06-10",
-            "hash": "89e3ad1078a4ee2210d04736528e10476dda685d",
-            "module": "auditd",
-            "type": [
-                "creation"
-            ],
-            "outcome": "failure",
-            "action": "opened-file",
-            "dialect": "auditbeat"
-        },
-        "message": "{\"@timestamp\":\"2021-11-09T17:39:26.389Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"process\":{\"ppid\":18470,\"title\":\"/opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=18479 --enable-crash-reporter=, --change-stack-\",\"name\":\"chrome\",\"executable\":\"/opt/google/chrome/chrome\",\"working_directory\":\"/home/housetodd\",\"pid\":18488},\"auditd\":{\"session\":\"3\",\"summary\":{\"actor\":{\"primary\":\"housetodd\",\"secondary\":\"housetodd\"},\"object\":{\"primary\":\"/proc/1/oom_score_adj\",\"type\":\"file\"},\"how\":\"/opt/google/chrome/chrome\"},\"paths\":[{\"cap_fe\":\"0\",\"cap_fver\":\"0\",\"inode\":\"16064\",\"name\":\"/proc/1/\",\"ogid\":\"0\",\"ouid\":\"0\",\"rdev\":\"00:00\",\"cap_fi\":\"0000000000000000\",\"cap_fp\":\"0000000000000000\",\"dev\":\"00:04\",\"item\":\"0\",\"mode\":\"040555\",\"nametype\":\"PARENT\"},{\"nametype\":\"NORMAL\",\"ogid\":\"0\",\"ouid\":\"0\",\"cap_fe\":\"0\",\"dev\":\"00:04\",\"item\":\"1\",\"mode\":\"0100644\",\"name\":\"/proc/1/oom_score_adj\",\"rdev\":\"00:00\",\"cap_fi\":\"0000000000000000\",\"cap_fp\":\"0000000000000000\",\"cap_fver\":\"0\",\"inode\":\"25973\"}],\"message_type\":\"syscall\",\"sequence\":9052,\"result\":\"fail\",\"data\":{\"tty\":\"(none)\",\"exit\":\"EACCES\",\"a0\":\"7ffc1bfcdfa0\",\"a3\":\"7ffc1bfcde00\",\"a2\":\"55881de610b8\",\"a1\":\"1b6\",\"arch\":\"x86_64\",\"syscall\":\"creat\"}},\"event\":{\"module\":\"auditd\",\"category\":[\"file\"],\"action\":\"opened-file\",\"outcome\":\"failure\",\"kind\":\"event\",\"type\":[\"creation\"]},\"user\":{\"filesystem\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"group\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"name\":\"housetodd\"},\"name\":\"housetodd\",\"audit\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"saved\":{\"group\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"group\":{\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\",\"name\":\"housetodd\"},\"id\":\"5511617b-5ca7-4dd5-bb80-d8590dff4430\"},\"host\":{\"name\":\"xps-housetodd\",\"ip\":[\"144.1.237.149\"],\"mac\":[\"22:69:ae:27:fe:66\"],\"hostname\":\"xps-housetodd\",\"architecture\":\"x86_64\",\"os\":{\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\"},\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false},\"file\":{\"gid\":\"0\",\"owner\":\"housetodd\",\"group\":\"housetodd\",\"path\":\"/proc/1/oom_score_adj\",\"device\":\"00:00\",\"inode\":\"25973\",\"mode\":\"0644\",\"uid\":\"0\"},\"tags\":[\"access\"],\"service\":{\"type\":\"auditd\"},\"ecs\":{\"version\":\"1.11.0\"},\"agent\":{\"version\":\"7.15.1\",\"hostname\":\"xps-housetodd\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"xps-housetodd\",\"type\":\"auditbeat\"}}",
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "process": {
-            "pid": 18488,
-            "name": "chrome",
-            "working_directory": "/home/housetodd",
-            "ppid": 18470,
-            "title": "/opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=18479 --enable-crash-reporter=, --change-stack-",
-            "executable": "/opt/google/chrome/chrome"
-        },
-        "host": {
-            "id": "7dd912136af040e4a6ea4f683010b824",
-            "os": {
-                "type": "linux",
-                "kernel": "4.15.0-161-generic",
-                "codename": "bionic",
-                "name": "Ubuntu",
-                "family": "debian",
-                "platform": "ubuntu",
-                "version": "18.04.6 LTS (Bionic Beaver)"
-            },
-            "mac": [
-                "22:69:ae:27:fe:66"
-            ],
-            "name": "xps-housetodd",
-            "ip": [
-                "144.1.237.149"
-            ],
-            "hostname": "xps-housetodd",
-            "architecture": "x86_64",
-            "containerized": false
-        },
-        "sekoiaio": {
-            "entity": {
-                "id": "jw2ASKHGnsWFqGDQ",
-                "uuid": "322dcda2-5cd1-438d-a49e-d76ef40d2fed",
-                "name": "I8WiW2OHB9jqnxZW"
-            },
-            "intake": {
-                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
-                "dialect": "auditbeat",
-                "parsing_status": "success"
-            },
-            "customer": {
-                "id": "fe4f8db6-3ec4-4111-b5e9-0802cfed3d62",
-                "community_uuid": "0da1e49f-203a-4585-973a-fbb54331bccb",
-                "community_name": "jP0oXIBnhYiuJ0lI"
-            }
-        },
-        "auditd": {
-            "session": "3",
-            "summary": {
-                "actor": {
-                    "primary": "housetodd",
-                    "secondary": "housetodd"
-                },
-                "object": {
-                    "primary": "/proc/1/oom_score_adj",
-                    "type": "file"
-                },
-                "how": "/opt/google/chrome/chrome"
-            },
-            "paths": [
-                {
-                    "cap_fe": "0",
-                    "cap_fver": "0",
-                    "inode": "16064",
-                    "name": "/proc/1/",
-                    "ogid": "0",
-                    "ouid": "0",
-                    "rdev": "00:00",
-                    "cap_fi": "0000000000000000",
-                    "cap_fp": "0000000000000000",
-                    "dev": "00:04",
-                    "item": "0",
-                    "mode": "040555",
-                    "nametype": "PARENT"
-                },
-                {
-                    "nametype": "NORMAL",
-                    "ogid": "0",
-                    "ouid": "0",
-                    "cap_fe": "0",
-                    "dev": "00:04",
-                    "item": "1",
-                    "mode": "0100644",
-                    "name": "/proc/1/oom_score_adj",
-                    "rdev": "00:00",
-                    "cap_fi": "0000000000000000",
-                    "cap_fp": "0000000000000000",
-                    "cap_fver": "0",
-                    "inode": "25973"
-                }
-            ],
-            "message_type": "syscall",
-            "sequence": 9052,
-            "result": "fail",
-            "data": {
-                "tty": "(none)",
-                "exit": "EACCES",
-                "a0": "7ffc1bfcdfa0",
-                "a3": "7ffc1bfcde00",
-                "a2": "55881de610b8",
-                "a1": "1b6",
-                "arch": "x86_64",
-                "syscall": "creat"
-            },
-            "user": {
-                "saved": {
-                    "group": {
-                        "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
-                        "name": "housetodd"
-                    },
-                    "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
-                    "name": "housetodd"
-                }
-            }
-        },
-        "agent": {
-            "type": "auditbeat",
-            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
-            "name": "xps-housetodd",
-            "version": "7.15.1",
-            "hostname": "xps-housetodd",
-            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a"
-        },
-        "file": {
-            "inode": "25973",
-            "path": "/proc/1/oom_score_adj",
-            "gid": "0",
-            "uid": "0",
-            "group": "housetodd",
-            "device": "00:00",
-            "owner": "housetodd",
-            "mode": "0644"
-        },
-        "service": {
-            "type": "auditd"
-        },
-        "related": {
-            "hash": [
-                "89e3ad1078a4ee2210d04736528e10476dda685d"
-            ],
-            "user": [
-                "housetodd"
-            ],
-            "ip": [
-                "144.1.237.149"
-            ],
-            "hosts": [
-                "xps-housetodd"
-            ]
-        }
-    }
-    	
-	```
-
-
-=== "example9.json"
-
-    ```json
-	
-    {
-        "@timestamp": "2021-11-09T16:19:27.788Z",
-        "process": {
-            "pid": 12416,
-            "working_directory": "/home/NElD74Hc4MX8PjLF/Documents/Projets/Qh1HoDnBg4mYfHhi"
-        },
-        "event": {
-            "category": [
-                "process"
-            ],
-            "id": "5a4533a0-1493-4c8c-a77c-c11bcb6dad7c",
-            "dialect_uuid": "1b730d40-efc3-4d5d-b2e1-88bec50279b4",
-            "kind": "event",
-            "module": "auditd",
-            "action": "ran-command",
-            "type": [
-                "start"
-            ],
-            "outcome": "success",
-            "hash": "d0bbb264b6b96f6d62736c1af94d8b83b3b6ad3f",
-            "created": "2021-08-20",
-            "dialect": "auditbeat"
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success",
-                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
-                "dialect": "auditbeat"
-            },
-            "entity": {
-                "id": "Qh1HoDnBg4mYfHhi",
-                "uuid": "0b326c92-cdae-4149-818d-7d2e24864eff",
-                "name": "3utjzQNc3uN2iAL7"
-            },
-            "customer": {
-                "id": "d5afec27-90be-43b0-8b6a-902b1ae1ee42",
-                "community_name": "kBugMo5Or8YMCmmi",
-                "community_uuid": "de723233-a1db-4c72-a0a8-3a14df6e9154"
-            }
-        },
-        "message": "{\"@timestamp\":\"2021-11-09T16:17:55.149Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"kind\":\"event\",\"type\":[\"start\"],\"module\":\"auditd\",\"category\":[\"process\"],\"action\":\"ran-command\",\"outcome\":\"success\"},\"user\":{\"id\":\"4e8ff660-f139-4248-8b64-ad29495fca9e\",\"name\":\"NElD74Hc4MX8PjLF\",\"audit\":{\"id\":\"4e8ff660-f139-4248-8b64-ad29495fca9e\",\"name\":\"NElD74Hc4MX8PjLF\"}},\"host\":{\"hostname\":\"web-66\",\"architecture\":\"x86_64\",\"os\":{\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\"},\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\",\"173.8.126.146\"],\"name\":\"web-66\",\"mac\":[\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\",\"57:4c:ff:5d:1e:41\"]},\"agent\":{\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"web-66\",\"type\":\"auditbeat\",\"version\":\"7.15.1\",\"hostname\":\"web-66\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\"},\"ecs\":{\"version\":\"1.11.0\"},\"process\":{\"pid\":12416,\"working_directory\":\"/home/NElD74Hc4MX8PjLF/Documents/Projets/Qh1HoDnBg4mYfHhi\"},\"auditd\":{\"data\":{\"terminal\":\"pts/3\",\"cmd\":\"systemctl status auditbeat\"},\"session\":\"2\",\"summary\":{\"actor\":{\"primary\":\"NElD74Hc4MX8PjLF\",\"secondary\":\"NElD74Hc4MX8PjLF\"},\"object\":{\"primary\":\"systemctl status auditbeat\",\"type\":\"process\"}},\"message_type\":\"user_cmd\",\"sequence\":465,\"result\":\"success\"},\"service\":{\"type\":\"auditd\"}}",
-        "related": {
-            "ip": [
-                "173.8.126.146"
-            ],
-            "hash": [
-                "d0bbb264b6b96f6d62736c1af94d8b83b3b6ad3f"
-            ],
-            "user": [
-                "NElD74Hc4MX8PjLF"
-            ],
-            "hosts": [
-                "web-66"
-            ]
-        },
-        "agent": {
-            "type": "auditbeat",
-            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
-            "name": "web-66",
-            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
-            "version": "7.15.1",
-            "hostname": "web-66"
-        },
-        "user": {
-            "id": "4e8ff660-f139-4248-8b64-ad29495fca9e",
-            "name": "NElD74Hc4MX8PjLF",
-            "audit": {
-                "id": "4e8ff660-f139-4248-8b64-ad29495fca9e",
-                "name": "NElD74Hc4MX8PjLF"
-            }
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "service": {
-            "type": "auditd"
-        },
-        "host": {
-            "hostname": "web-66",
-            "id": "7dd912136af040e4a6ea4f683010b824",
-            "mac": [
-                "57:4c:ff:5d:1e:41"
-            ],
-            "name": "web-66",
-            "containerized": false,
-            "architecture": "x86_64",
-            "ip": [
-                "173.8.126.146"
-            ],
-            "os": {
-                "type": "linux",
-                "name": "Ubuntu",
-                "family": "debian",
-                "version": "18.04.6 LTS (Bionic Beaver)",
-                "kernel": "4.15.0-161-generic",
-                "platform": "ubuntu",
-                "codename": "bionic"
-            }
-        },
-        "auditd": {
-            "data": {
-                "terminal": "pts/3",
-                "cmd": "systemctl status auditbeat"
-            },
-            "session": "2",
-            "summary": {
-                "actor": {
-                    "primary": "NElD74Hc4MX8PjLF",
-                    "secondary": "NElD74Hc4MX8PjLF"
-                },
-                "object": {
-                    "primary": "systemctl status auditbeat",
-                    "type": "process"
-                }
-            },
-            "message_type": "user_cmd",
-            "sequence": 465,
-            "result": "success"
-        }
-    }
-    	
-	```
-
-
 === "example4.json"
 
     ```json
@@ -1355,86 +1361,80 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "example1.json"
+=== "example7.json"
 
     ```json
 	
     {
-        "event": {
-            "module": "system",
-            "dataset": "process",
-            "kind": "event",
-            "category": [
-                "process"
-            ],
-            "type": [
-                "end"
-            ],
-            "action": "process_stopped"
-        },
-        "process": {
-            "working_directory": "/my/directory",
-            "start": "2021-01-01T00:01:01.000Z",
-            "name": "smtp",
-            "entity_id": "AZERTY123456789",
-            "ppid": 1457,
-            "executable": "/usr/lib/postfix/sbin/smtp",
-            "pid": 123123,
-            "args": [
-                "smtp",
-                "-t",
-                "unix",
-                "-u",
-                "-c"
-            ],
-            "command_line": "smtp -t unix -u -c",
-            "hash": {
-                "sha1": "53fe0c00019fb177e43c7ac214f466f01158384e"
-            }
+        "agent": {
+            "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
+            "hostname": "fame",
+            "id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
+            "name": "fame",
+            "type": "auditbeat",
+            "version": "7.13.0"
         },
         "auditbeat": {
-            "message": "Process smtp (PID: 123123) by user postfix STOPPED"
+            "message": "Process postgres (PID: 1234) by user postgres is RUNNING"
         },
         "auditd": {
             "user": {
                 "saved": {
-                    "id": "999",
                     "group": {
-                        "id": "222"
-                    }
+                        "id": "121"
+                    },
+                    "id": "114"
                 }
             }
         },
-        "user": {
-            "effective": {
-                "id": "999",
-                "group": {
-                    "id": "222"
-                }
-            },
-            "name": "postfix",
-            "id": "999",
-            "group": {
-                "id": "222",
-                "name": "postfix"
-            }
-        },
-        "service": {
-            "type": "system"
-        },
-        "ecs": {
-            "version": "1.9.0"
+        "event": {
+            "action": "existing_process",
+            "category": [
+                "process"
+            ],
+            "dataset": "process",
+            "id": "e9c16612-2053-4bc6-86aa-7e04c6114ecc",
+            "kind": "state",
+            "module": "system",
+            "type": [
+                "info"
+            ]
         },
         "host": {
             "name": "fame"
         },
-        "agent": {
-            "hostname": "fame",
-            "ephemeral_id": "qsdfghjklm-1111-2222-3333-azertyuiop",
-            "id": "wxcvbn-010101-121212-4444-azertyuiop",
-            "name": "fame",
-            "type": "auditbeat",
-            "version": "7.13.0"
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"e9c16612-2053-4bc6-86aa-7e04c6114ecc\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"executable\":\"/usr/lib/postgresql/9.5/bin/postgres\",\"entity_id\":\"1234zertyui\",\"ppid\":1231,\"start\":\"2021-01-01T00:01:01.000Z\",\"name\":\"postgres\",\"pid\":1234,\"working_directory\":\"/var/lib/postgresql/9.5/main\",\"hash\":{\"sha1\":\"12345678901234567891234567890\"},\"args\":[\"postgres: wal writer process   \"]},\"host\":{\"name\":\"fame\"},\"agent\":{\"ephemeral_id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\",\"hostname\":\"fame\"},\"ecs\":{\"version\":\"1.9.0\"},\"message\":\"Process postgres (PID: 1234) by user postgres is RUNNING\",\"user\":{\"effective\":{\"group\":{\"id\":\"121\"},\"id\":\"114\"},\"saved\":{\"id\":\"114\",\"group\":{\"id\":\"121\"}},\"name\":\"postgres\",\"id\":\"114\",\"group\":{\"id\":\"121\",\"name\":\"postgres\"}}}",
+        "process": {
+            "args": [
+                "postgres: wal writer process   "
+            ],
+            "entity_id": "1234zertyui",
+            "executable": "/usr/lib/postgresql/9.5/bin/postgres",
+            "hash": {
+                "sha1": "12345678901234567891234567890"
+            },
+            "name": "postgres",
+            "pid": 1234,
+            "ppid": 1231,
+            "start": "2021-01-01T00:01:01.000Z",
+            "working_directory": "/var/lib/postgresql/9.5/main"
+        },
+        "service": {
+            "type": "system"
+        },
+        "user": {
+            "effective": {
+                "group": {
+                    "id": "121"
+                },
+                "id": "114"
+            },
+            "group": {
+                "id": "121",
+                "name": "postgres"
+            },
+            "id": "114",
+            "name": "postgres"
         }
     }
     	
@@ -1446,7 +1446,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 ## Extracted Fields
 
-The following Table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|

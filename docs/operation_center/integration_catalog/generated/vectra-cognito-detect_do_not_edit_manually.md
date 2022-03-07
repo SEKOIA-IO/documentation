@@ -2,7 +2,7 @@
 ## Event Categories
 
 
-The following Table lists the data source offered by this integration.
+The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
@@ -18,171 +18,6 @@ The following Table lists the data source offered by this integration.
 ## Event Samples
 
 Find below few samples of events and how they are normalized by SEKOIA.IO.
-
-
-=== "vectra_command_control.json"
-
-    ```json
-	
-    {
-        "destination": {
-            "address": "mirror.centos.org",
-            "bytes": 8269214038,
-            "domain": "mirror.centos.org",
-            "ip": "198.51.100.1",
-            "port": 8002,
-            "registered_domain": "centos.org",
-            "subdomain": "mirror",
-            "top_level_domain": "org"
-        },
-        "event": {
-            "outcome": "success",
-            "type": "COMMAND & CONTROL",
-            "url": "https://198.51.100.94/detections/13281?detail_id=94738",
-            "ip": [
-                "198.51.100.94",
-                "198.51.100.1",
-                "198.51.100.14"
-            ]
-        },
-        "host": {
-            "ip": "198.51.100.14",
-            "name": "IP-198.51.100.14"
-        },
-        "network": {
-            "protocol": "tcp"
-        },
-        "observer": {
-            "ip": "198.51.100.94",
-            "name": "198.51.100.94",
-            "version": "6.12"
-        },
-        "source": {
-            "bytes": 1476677
-        },
-        "vectra": {
-            "certainty": 72,
-            "detection": {
-                "id": 13281,
-                "name": "Hidden HTTP Tunnel",
-                "type": "hidden_http_tunnel_cnc"
-            },
-            "risk_score_norm": 60,
-            "severity": 6,
-            "timestamp": 1633516306,
-            "triaged": false
-        }
-    }
-    	
-	```
-
-
-=== "vectra_lateral_movement.json"
-
-    ```json
-	
-    {
-        "destination": {
-            "address": "198.51.100.38",
-            "ip": "198.51.100.38",
-            "port": 445
-        },
-        "host": {
-            "ip": "198.51.100.155",
-            "name": "hostname"
-        },
-        "event": {
-            "outcome": "success",
-            "type": "LATERAL MOVEMENT",
-            "url": "https://198.51.100.94/detections/13295?detail_id=94908"
-        },
-        "observer": {
-            "ip": "198.51.100.94",
-            "name": "198.51.100.94",
-            "version": "6.12"
-        },
-        "related": {
-            "ip": [
-                "198.51.100.155",
-                "198.51.100.38",
-                "198.51.100.94"
-            ]
-        },
-        "vectra": {
-            "certainty": 74,
-            "detection": {
-                "accounts": "user@company.net",
-                "id": 13295,
-                "name": "SMB Brute-Force",
-                "reason": "MORE_PROCESSING_REQUIRED",
-                "type": "smb_brute_force"
-            },
-            "risk_score_norm": 20,
-            "severity": 2.0,
-            "timestamp": 1633681756,
-            "triaged": false
-        }
-    }
-    	
-	```
-
-
-=== "vectra_host_scoring.json"
-
-    ```json
-	
-    {
-        "event": {
-            "outcome": "success",
-            "type": "HOST SCORING",
-            "url": "https://198.51.100.94/hosts/27617"
-        },
-        "observer": {
-            "ip": "198.51.100.94",
-            "name": "198.51.100.94",
-            "product": "E123456789123456",
-            "version": "6.12"
-        },
-        "host": {
-            "ip": "198.51.100.14",
-            "name": "IP-198.51.100.14"
-        },
-        "related": {
-            "ip": [
-                "198.51.100.94",
-                "198.51.100.14"
-            ]
-        },
-        "vectra": {
-            "certainty": 31,
-            "detection": {
-                "last_type": "Hidden HTTP Tunnel",
-                "profile": {
-                    "name": "saas",
-                    "scoringDetections": [
-                        "Hidden HTTP Tunnel (C&C)"
-                    ],
-                    "vname": "Cloud Services"
-                },
-                "score_decreases": false,
-                "tags": []
-            },
-            "history": {
-                "account_access": [],
-                "service_access": []
-            },
-            "risk_score_norm": 22,
-            "source": {
-                "key_asset": false
-            },
-            "timestamp": 1633690973,
-            "user": {
-                "privilege": 0
-            }
-        }
-    }
-    	
-	```
 
 
 === "vectra_campaign.json"
@@ -228,39 +63,39 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "vectra_info.json"
+=== "vectra_threat1.json"
 
     ```json
 	
     {
         "event": {
-            "type": "INFO",
-            "url": "https://255.255.255.1/detections/9999?detail_id=11111"
+            "type": "RECONNAISSANCE",
+            "url": "https://255.255.255.1/detections/1900?detail_id=66777"
         },
         "observer": {
-            "version": "6.7",
+            "version": "6.8",
             "name": "255.255.255.1",
             "ip": "255.255.255.1"
         },
         "vectra": {
-            "certainty": 0,
-            "detection": {
-                "type": "si_new_host",
-                "name": "New Host",
-                "id": 9999
-            },
-            "timestamp": 1099999999,
+            "severity": 7.0,
+            "risk_score_norm": 70,
+            "certainty": 86,
             "triaged": false,
-            "risk_score_norm": 0,
-            "severity": 0
+            "detection": {
+                "id": 1900,
+                "type": "rpc_recon_1to1",
+                "name": "RPC Targeted Recon"
+            },
+            "timestamp": 1623742534
         },
         "destination": {
-            "ip": "0.0.0.0",
-            "port": 80
+            "ip": "10.43.0.81",
+            "port": 49668
         },
         "host": {
-            "ip": "10.0.0.1",
-            "name": "plop-99"
+            "ip": "192.168.71.1",
+            "name": "IP-192.168.71.1"
         }
     }
     	
@@ -415,39 +250,204 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "vectra_threat1.json"
+=== "vectra_lateral_movement.json"
+
+    ```json
+	
+    {
+        "destination": {
+            "address": "198.51.100.38",
+            "ip": "198.51.100.38",
+            "port": 445
+        },
+        "host": {
+            "ip": "198.51.100.155",
+            "name": "hostname"
+        },
+        "event": {
+            "outcome": "success",
+            "type": "LATERAL MOVEMENT",
+            "url": "https://198.51.100.94/detections/13295?detail_id=94908"
+        },
+        "observer": {
+            "ip": "198.51.100.94",
+            "name": "198.51.100.94",
+            "version": "6.12"
+        },
+        "related": {
+            "ip": [
+                "198.51.100.155",
+                "198.51.100.38",
+                "198.51.100.94"
+            ]
+        },
+        "vectra": {
+            "certainty": 74,
+            "detection": {
+                "accounts": "user@company.net",
+                "id": 13295,
+                "name": "SMB Brute-Force",
+                "reason": "MORE_PROCESSING_REQUIRED",
+                "type": "smb_brute_force"
+            },
+            "risk_score_norm": 20,
+            "severity": 2.0,
+            "timestamp": 1633681756,
+            "triaged": false
+        }
+    }
+    	
+	```
+
+
+=== "vectra_command_control.json"
+
+    ```json
+	
+    {
+        "destination": {
+            "address": "mirror.centos.org",
+            "bytes": 8269214038,
+            "domain": "mirror.centos.org",
+            "ip": "198.51.100.1",
+            "port": 8002,
+            "registered_domain": "centos.org",
+            "subdomain": "mirror",
+            "top_level_domain": "org"
+        },
+        "event": {
+            "outcome": "success",
+            "type": "COMMAND & CONTROL",
+            "url": "https://198.51.100.94/detections/13281?detail_id=94738",
+            "ip": [
+                "198.51.100.94",
+                "198.51.100.1",
+                "198.51.100.14"
+            ]
+        },
+        "host": {
+            "ip": "198.51.100.14",
+            "name": "IP-198.51.100.14"
+        },
+        "network": {
+            "protocol": "tcp"
+        },
+        "observer": {
+            "ip": "198.51.100.94",
+            "name": "198.51.100.94",
+            "version": "6.12"
+        },
+        "source": {
+            "bytes": 1476677
+        },
+        "vectra": {
+            "certainty": 72,
+            "detection": {
+                "id": 13281,
+                "name": "Hidden HTTP Tunnel",
+                "type": "hidden_http_tunnel_cnc"
+            },
+            "risk_score_norm": 60,
+            "severity": 6,
+            "timestamp": 1633516306,
+            "triaged": false
+        }
+    }
+    	
+	```
+
+
+=== "vectra_info.json"
 
     ```json
 	
     {
         "event": {
-            "type": "RECONNAISSANCE",
-            "url": "https://255.255.255.1/detections/1900?detail_id=66777"
+            "type": "INFO",
+            "url": "https://255.255.255.1/detections/9999?detail_id=11111"
         },
         "observer": {
-            "version": "6.8",
+            "version": "6.7",
             "name": "255.255.255.1",
             "ip": "255.255.255.1"
         },
         "vectra": {
-            "severity": 7.0,
-            "risk_score_norm": 70,
-            "certainty": 86,
-            "triaged": false,
+            "certainty": 0,
             "detection": {
-                "id": 1900,
-                "type": "rpc_recon_1to1",
-                "name": "RPC Targeted Recon"
+                "type": "si_new_host",
+                "name": "New Host",
+                "id": 9999
             },
-            "timestamp": 1623742534
+            "timestamp": 1099999999,
+            "triaged": false,
+            "risk_score_norm": 0,
+            "severity": 0
         },
         "destination": {
-            "ip": "10.43.0.81",
-            "port": 49668
+            "ip": "0.0.0.0",
+            "port": 80
         },
         "host": {
-            "ip": "192.168.71.1",
-            "name": "IP-192.168.71.1"
+            "ip": "10.0.0.1",
+            "name": "plop-99"
+        }
+    }
+    	
+	```
+
+
+=== "vectra_host_scoring.json"
+
+    ```json
+	
+    {
+        "event": {
+            "outcome": "success",
+            "type": "HOST SCORING",
+            "url": "https://198.51.100.94/hosts/27617"
+        },
+        "observer": {
+            "ip": "198.51.100.94",
+            "name": "198.51.100.94",
+            "product": "E123456789123456",
+            "version": "6.12"
+        },
+        "host": {
+            "ip": "198.51.100.14",
+            "name": "IP-198.51.100.14"
+        },
+        "related": {
+            "ip": [
+                "198.51.100.94",
+                "198.51.100.14"
+            ]
+        },
+        "vectra": {
+            "certainty": 31,
+            "detection": {
+                "last_type": "Hidden HTTP Tunnel",
+                "profile": {
+                    "name": "saas",
+                    "scoringDetections": [
+                        "Hidden HTTP Tunnel (C&C)"
+                    ],
+                    "vname": "Cloud Services"
+                },
+                "score_decreases": false,
+                "tags": []
+            },
+            "history": {
+                "account_access": [],
+                "service_access": []
+            },
+            "risk_score_norm": 22,
+            "source": {
+                "key_asset": false
+            },
+            "timestamp": 1633690973,
+            "user": {
+                "privilege": 0
+            }
         }
     }
     	
@@ -459,7 +459,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 ## Extracted Fields
 
-The following Table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
