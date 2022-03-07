@@ -2,7 +2,7 @@
 ## Event Categories
 
 
-The following Table lists the data source offered by this integration.
+The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
@@ -17,7 +17,7 @@ In details, the following Table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `network`, `web` |
+| Category | `web`, `network` |
 | Type | `connection`, `error`, `denied` |
 
 
@@ -92,40 +92,33 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "content_type.json"
+=== "get_tcp_hit.json"
 
     ```json
 	
     {
-        "message": "1565598801.353     24 10.16.12.86 TCP_MISS/200 394 GET http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c - HIER_DIRECT/dt.adsafeprotected.com image/gif",
+        "message": "1628150510.448    549 192.168.0.1 TCP_HIT/206 2055995 GET http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3 - HIER_NONE/- application/octet-stream",
         "event": {
             "category": [
                 "web",
                 "network"
             ],
             "kind": "event",
-            "start": "2019-08-12T08:33:21.353000+00:00",
-            "duration": 24
+            "duration": 549,
+            "start": "2021-08-05T08:01:50.448000+00:00"
         },
         "source": {
-            "address": "10.16.12.86",
-            "ip": "10.16.12.86"
-        },
-        "destination": {
-            "address": "dt.adsafeprotected.com",
-            "domain": "dt.adsafeprotected.com",
-            "registered_domain": "adsafeprotected.com",
-            "top_level_domain": "com",
-            "subdomain": "dt"
+            "address": "192.168.0.1",
+            "ip": "192.168.0.1"
         },
         "http": {
             "request": {
                 "method": "GET"
             },
             "response": {
-                "bytes": 394,
-                "mime_type": "image/gif",
-                "status_code": 200
+                "bytes": 2055995,
+                "status_code": 206,
+                "mime_type": "application/octet-stream"
             }
         },
         "network": {
@@ -133,144 +126,25 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "direction": "egress"
         },
         "url": {
-            "domain": "dt.adsafeprotected.com",
-            "original": "http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
-            "full": "http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
-            "path": "/dt",
-            "query": "anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
+            "domain": "edgedl.me.gvt1.com",
+            "full": "http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
+            "original": "http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
+            "path": "/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
             "scheme": "http"
         },
         "squid": {
-            "cache_status": "miss",
-            "hierarchy_code": "HIER_DIRECT"
+            "cache_status": "hit",
+            "hierarchy_code": "HIER_NONE"
         },
         "observer": {
             "product": "Squid",
             "type": "proxy",
             "vendor": "Squid"
-        },
-        "related": {
-            "ip": [
-                "10.16.12.86"
-            ]
-        }
-    }
-    	
-	```
-
-
-=== "connect2.json"
-
-    ```json
-	
-    {
-        "message": "1564576741.982   5756 192.168.0.1 TCP_TUNNEL/200 6295 CONNECT api42-api.example.com:443 - HIER_DIRECT/api42-api.example.com -",
-        "event": {
-            "category": [
-                "web",
-                "network"
-            ],
-            "kind": "event",
-            "duration": 5756,
-            "start": "2019-07-31T12:39:01.982000+00:00"
-        },
-        "source": {
-            "address": "192.168.0.1",
-            "ip": "192.168.0.1"
-        },
-        "destination": {
-            "address": "api42-api.example.com",
-            "domain": "api42-api.example.com",
-            "port": 443,
-            "registered_domain": "example.com",
-            "top_level_domain": "com",
-            "subdomain": "api42-api"
-        },
-        "http": {
-            "request": {
-                "method": "CONNECT"
-            },
-            "response": {
-                "bytes": 6295,
-                "status_code": 200
-            }
-        },
-        "network": {
-            "transport": "tcp",
-            "direction": "egress"
-        },
-        "related": {
-            "hosts": [
-                "api42-api.example.com"
-            ],
-            "ip": [
-                "192.168.0.1"
-            ]
-        },
-        "squid": {
-            "hierarchy_code": "HIER_DIRECT"
-        },
-        "observer": {
-            "product": "Squid",
-            "type": "proxy",
-            "vendor": "Squid"
-        }
-    }
-    	
-	```
-
-
-=== "connect.json"
-
-    ```json
-	
-    {
-        "message": "1564655684.277   3387 192.168.0.1 TCP_TUNNEL/200 19131 CONNECT example.org:443 - HIER_DIRECT/example.org -",
-        "event": {
-            "category": [
-                "web",
-                "network"
-            ],
-            "kind": "event",
-            "duration": 3387,
-            "start": "2019-08-01T10:34:44.277000+00:00"
-        },
-        "source": {
-            "address": "192.168.0.1",
-            "ip": "192.168.0.1"
-        },
-        "destination": {
-            "address": "example.org",
-            "domain": "example.org",
-            "port": 443,
-            "registered_domain": "example.org",
-            "top_level_domain": "org"
-        },
-        "http": {
-            "request": {
-                "method": "CONNECT"
-            },
-            "response": {
-                "bytes": 19131,
-                "status_code": 200
-            }
-        },
-        "network": {
-            "transport": "tcp",
-            "direction": "egress"
         },
         "related": {
             "ip": [
                 "192.168.0.1"
             ]
-        },
-        "squid": {
-            "hierarchy_code": "HIER_DIRECT"
-        },
-        "observer": {
-            "product": "Squid",
-            "type": "proxy",
-            "vendor": "Squid"
         }
     }
     	
@@ -334,6 +208,75 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "13.107.4.50",
                 "192.168.2.2"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "get.json"
+
+    ```json
+	
+    {
+        "message": "1564670112.892   5007 192.168.95.17 TCP_HIT_ABORTED/000 0 GET http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA== - HIER_DIRECT/smex10-2-en.url.trendmicro.com -",
+        "event": {
+            "category": [
+                "web",
+                "network"
+            ],
+            "kind": "event",
+            "duration": 5007,
+            "start": "2019-08-01T14:35:12.892000+00:00",
+            "type": [
+                "connection",
+                "error"
+            ]
+        },
+        "source": {
+            "address": "192.168.95.17",
+            "ip": "192.168.95.17"
+        },
+        "destination": {
+            "address": "smex10-2-en.url.trendmicro.com",
+            "domain": "smex10-2-en.url.trendmicro.com",
+            "registered_domain": "trendmicro.com",
+            "top_level_domain": "com",
+            "subdomain": "smex10-2-en.url"
+        },
+        "http": {
+            "request": {
+                "method": "GET"
+            },
+            "response": {
+                "bytes": 0,
+                "status_code": 0
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "direction": "egress"
+        },
+        "url": {
+            "domain": "smex10-2-en.url.trendmicro.com",
+            "full": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "original": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "path": "/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "scheme": "http"
+        },
+        "squid": {
+            "cache_status": "hit",
+            "hierarchy_code": "HIER_DIRECT"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        },
+        "related": {
+            "ip": [
+                "192.168.95.17"
             ]
         }
     }
@@ -480,134 +423,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "get_tcp_hit.json"
-
-    ```json
-	
-    {
-        "message": "1628150510.448    549 192.168.0.1 TCP_HIT/206 2055995 GET http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3 - HIER_NONE/- application/octet-stream",
-        "event": {
-            "category": [
-                "web",
-                "network"
-            ],
-            "kind": "event",
-            "duration": 549,
-            "start": "2021-08-05T08:01:50.448000+00:00"
-        },
-        "source": {
-            "address": "192.168.0.1",
-            "ip": "192.168.0.1"
-        },
-        "http": {
-            "request": {
-                "method": "GET"
-            },
-            "response": {
-                "bytes": 2055995,
-                "status_code": 206,
-                "mime_type": "application/octet-stream"
-            }
-        },
-        "network": {
-            "transport": "tcp",
-            "direction": "egress"
-        },
-        "url": {
-            "domain": "edgedl.me.gvt1.com",
-            "full": "http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
-            "original": "http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
-            "path": "/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
-            "scheme": "http"
-        },
-        "squid": {
-            "cache_status": "hit",
-            "hierarchy_code": "HIER_NONE"
-        },
-        "observer": {
-            "product": "Squid",
-            "type": "proxy",
-            "vendor": "Squid"
-        },
-        "related": {
-            "ip": [
-                "192.168.0.1"
-            ]
-        }
-    }
-    	
-	```
-
-
-=== "get.json"
-
-    ```json
-	
-    {
-        "message": "1564670112.892   5007 192.168.95.17 TCP_HIT_ABORTED/000 0 GET http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA== - HIER_DIRECT/smex10-2-en.url.trendmicro.com -",
-        "event": {
-            "category": [
-                "web",
-                "network"
-            ],
-            "kind": "event",
-            "duration": 5007,
-            "start": "2019-08-01T14:35:12.892000+00:00",
-            "type": [
-                "connection",
-                "error"
-            ]
-        },
-        "source": {
-            "address": "192.168.95.17",
-            "ip": "192.168.95.17"
-        },
-        "destination": {
-            "address": "smex10-2-en.url.trendmicro.com",
-            "domain": "smex10-2-en.url.trendmicro.com",
-            "registered_domain": "trendmicro.com",
-            "top_level_domain": "com",
-            "subdomain": "smex10-2-en.url"
-        },
-        "http": {
-            "request": {
-                "method": "GET"
-            },
-            "response": {
-                "bytes": 0,
-                "status_code": 0
-            }
-        },
-        "network": {
-            "transport": "tcp",
-            "direction": "egress"
-        },
-        "url": {
-            "domain": "smex10-2-en.url.trendmicro.com",
-            "full": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
-            "original": "http://smex10-2-en.url.trendmicro.com/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
-            "path": "/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
-            "scheme": "http"
-        },
-        "squid": {
-            "cache_status": "hit",
-            "hierarchy_code": "HIER_DIRECT"
-        },
-        "observer": {
-            "product": "Squid",
-            "type": "proxy",
-            "vendor": "Squid"
-        },
-        "related": {
-            "ip": [
-                "192.168.95.17"
-            ]
-        }
-    }
-    	
-	```
-
-
 === "connect3.json"
 
     ```json
@@ -666,12 +481,197 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "connect.json"
+
+    ```json
+	
+    {
+        "message": "1564655684.277   3387 192.168.0.1 TCP_TUNNEL/200 19131 CONNECT example.org:443 - HIER_DIRECT/example.org -",
+        "event": {
+            "category": [
+                "web",
+                "network"
+            ],
+            "kind": "event",
+            "duration": 3387,
+            "start": "2019-08-01T10:34:44.277000+00:00"
+        },
+        "source": {
+            "address": "192.168.0.1",
+            "ip": "192.168.0.1"
+        },
+        "destination": {
+            "address": "example.org",
+            "domain": "example.org",
+            "port": 443,
+            "registered_domain": "example.org",
+            "top_level_domain": "org"
+        },
+        "http": {
+            "request": {
+                "method": "CONNECT"
+            },
+            "response": {
+                "bytes": 19131,
+                "status_code": 200
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "direction": "egress"
+        },
+        "related": {
+            "ip": [
+                "192.168.0.1"
+            ]
+        },
+        "squid": {
+            "hierarchy_code": "HIER_DIRECT"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        }
+    }
+    	
+	```
+
+
+=== "connect2.json"
+
+    ```json
+	
+    {
+        "message": "1564576741.982   5756 192.168.0.1 TCP_TUNNEL/200 6295 CONNECT api42-api.example.com:443 - HIER_DIRECT/api42-api.example.com -",
+        "event": {
+            "category": [
+                "web",
+                "network"
+            ],
+            "kind": "event",
+            "duration": 5756,
+            "start": "2019-07-31T12:39:01.982000+00:00"
+        },
+        "source": {
+            "address": "192.168.0.1",
+            "ip": "192.168.0.1"
+        },
+        "destination": {
+            "address": "api42-api.example.com",
+            "domain": "api42-api.example.com",
+            "port": 443,
+            "registered_domain": "example.com",
+            "top_level_domain": "com",
+            "subdomain": "api42-api"
+        },
+        "http": {
+            "request": {
+                "method": "CONNECT"
+            },
+            "response": {
+                "bytes": 6295,
+                "status_code": 200
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "direction": "egress"
+        },
+        "related": {
+            "hosts": [
+                "api42-api.example.com"
+            ],
+            "ip": [
+                "192.168.0.1"
+            ]
+        },
+        "squid": {
+            "hierarchy_code": "HIER_DIRECT"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        }
+    }
+    	
+	```
+
+
+=== "content_type.json"
+
+    ```json
+	
+    {
+        "message": "1565598801.353     24 10.16.12.86 TCP_MISS/200 394 GET http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c - HIER_DIRECT/dt.adsafeprotected.com image/gif",
+        "event": {
+            "category": [
+                "web",
+                "network"
+            ],
+            "kind": "event",
+            "start": "2019-08-12T08:33:21.353000+00:00",
+            "duration": 24
+        },
+        "source": {
+            "address": "10.16.12.86",
+            "ip": "10.16.12.86"
+        },
+        "destination": {
+            "address": "dt.adsafeprotected.com",
+            "domain": "dt.adsafeprotected.com",
+            "registered_domain": "adsafeprotected.com",
+            "top_level_domain": "com",
+            "subdomain": "dt"
+        },
+        "http": {
+            "request": {
+                "method": "GET"
+            },
+            "response": {
+                "bytes": 394,
+                "mime_type": "image/gif",
+                "status_code": 200
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "direction": "egress"
+        },
+        "url": {
+            "domain": "dt.adsafeprotected.com",
+            "original": "http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
+            "full": "http://dt.adsafeprotected.com/dt?anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
+            "path": "/dt",
+            "query": "anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
+            "scheme": "http"
+        },
+        "squid": {
+            "cache_status": "miss",
+            "hierarchy_code": "HIER_DIRECT"
+        },
+        "observer": {
+            "product": "Squid",
+            "type": "proxy",
+            "vendor": "Squid"
+        },
+        "related": {
+            "ip": [
+                "10.16.12.86"
+            ]
+        }
+    }
+    	
+	```
+
+
 
 
 
 ## Extracted Fields
 
-The following Table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|

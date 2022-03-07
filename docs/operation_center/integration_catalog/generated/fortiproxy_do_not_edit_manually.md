@@ -2,7 +2,7 @@
 ## Event Categories
 
 
-The following Table lists the data source offered by this integration.
+The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
@@ -18,324 +18,6 @@ The following Table lists the data source offered by this integration.
 ## Event Samples
 
 Find below few samples of events and how they are normalized by SEKOIA.IO.
-
-
-=== "dlp.json"
-
-    ```json
-	
-    {
-        "action": {
-            "name": "log-only",
-            "type": "dlp"
-        },
-        "destination": {
-            "address": "example.fr",
-            "domain": "example.fr",
-            "ip": "2.2.2.2",
-            "port": 443,
-            "registered_domain": "example.fr",
-            "top_level_domain": "fr"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "dlp",
-            "kind": "utm",
-            "start": "2021-09-09T12:29:04Z"
-        },
-        "file": {
-            "name": "picture.png",
-            "size": 100,
-            "type": "png"
-        },
-        "fortinet": {
-            "devid": "OIDL03VZRZEDKKD",
-            "direction": "incoming",
-            "dstintfrole": "undefined",
-            "eventid": "0",
-            "filtercat": "none",
-            "filteridx": "0",
-            "filtertype": "none",
-            "group": "GROUPNAME",
-            "level": "notice",
-            "logid": "1000234512",
-            "policyid": "6",
-            "profile": "profile_name",
-            "proto": "6",
-            "sessionid": "000000001",
-            "severity": "medium",
-            "srcintfrole": "undefined",
-            "vd": "root"
-        },
-        "message": "time=14:29:04 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"dlp\" eventtype=\"dlp\" level=\"notice\" vd=\"root\" eventtime=1631190544 filteridx=0 filtertype=\"none\" filtercat=\"none\" severity=\"medium\" policyid=6 sessionid=000000001 epoch=402874927 eventid=0 user=\"USERNAME\" group=\"GROUPNAME\" srcip=192.168.1.2 srcport=12345 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=2.2.2.2 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" filetype=\"png\" direction=\"incoming\" action=\"log-only\" hostname=\"example.fr\" url=\"/rmn.png?foo=bar\" agent=\"Custom Useragent\" filename=\"picture.png\" filesize=100 profile=\"profile_name\"",
-        "network": {
-            "direction": "inbound",
-            "protocol": "tcp"
-        },
-        "observer": {
-            "egress": {
-                "interface": {
-                    "name": "eth"
-                }
-            },
-            "hostname": "fortiproxyunit",
-            "ingress": {
-                "interface": {
-                    "name": "eth"
-                }
-            },
-            "product": "FortiProxy",
-            "type": "proxy",
-            "vendor": "Fortinet"
-        },
-        "related": {
-            "hosts": [
-                "example.fr",
-                "fortiproxyunit"
-            ],
-            "ip": [
-                "192.168.1.2",
-                "2.2.2.2"
-            ],
-            "user": [
-                "USERNAME"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
-            }
-        },
-        "service": {
-            "name": "https"
-        },
-        "source": {
-            "address": "192.168.1.2",
-            "ip": "192.168.1.2",
-            "port": 12345
-        },
-        "url": {
-            "domain": "example.fr",
-            "full": "example.fr/rmn.png?foo=bar",
-            "original": "/rmn.png?foo=bar",
-            "path": "/rmn.png",
-            "query": "foo=bar"
-        },
-        "user": {
-            "name": "USERNAME"
-        },
-        "user_agent": {
-            "original": "Custom Useragent"
-        }
-    }
-    	
-	```
-
-
-=== "forward.json"
-
-    ```json
-	
-    {
-        "action": {
-            "name": "accept",
-            "type": "allow"
-        },
-        "destination": {
-            "address": "1.2.3.4",
-            "bytes": 1000,
-            "geo": {
-                "country_name": "France"
-            },
-            "ip": "1.2.3.4",
-            "port": 443
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "forward",
-            "duration": 100,
-            "kind": "traffic",
-            "start": "2021-09-08T07:40:24Z"
-        },
-        "fortinet": {
-            "appcat": "appcat1",
-            "devid": "OIDL03VZRZEDKKD",
-            "dstintfrole": "undefined",
-            "lanout": "5000",
-            "level": "notice",
-            "logid": "1000234512",
-            "policyid": "1",
-            "policytype": "policy",
-            "proto": "6",
-            "sessionid": "000000001",
-            "srcintfrole": "undefined",
-            "vd": "root",
-            "wanin": "01",
-            "wanout": "2000"
-        },
-        "message": "time=09:40:24 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"root\" eventtime=1631086824 srcip=192.168.1.2 srcport=11111 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=1.2.3.4 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" sessionid=000000001 dstcountry=\"France\" srccountry=\"Reserved\" service=\"HTTPS\" wanoptapptype=\"web\" proto=6 action=\"accept\" duration=100 policyid=1 policytype=\"policy\" wanin=01 rcvdbyte=1000 wanout=2000 lanin=3000 sentbyte=4000 lanout=5000 appcat=\"appcat1\" utmaction=\"allow\" countweb=4",
-        "network": {
-            "protocol": "tcp"
-        },
-        "observer": {
-            "egress": {
-                "interface": {
-                    "name": "eth"
-                }
-            },
-            "hostname": "fortiproxyunit",
-            "ingress": {
-                "interface": {
-                    "name": "eth"
-                }
-            },
-            "product": "FortiProxy",
-            "type": "proxy",
-            "vendor": "Fortinet"
-        },
-        "related": {
-            "hosts": [
-                "fortiproxyunit"
-            ],
-            "ip": [
-                "1.2.3.4",
-                "192.168.1.2"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
-            }
-        },
-        "service": {
-            "name": "https"
-        },
-        "source": {
-            "address": "192.168.1.2",
-            "bytes": 4000,
-            "geo": {
-                "country_name": "Reserved"
-            },
-            "ip": "192.168.1.2",
-            "port": 11111
-        }
-    }
-    	
-	```
-
-
-=== "app-ctrl.json"
-
-    ```json
-	
-    {
-        "action": {
-            "name": "pass",
-            "type": "app-ctrl-all"
-        },
-        "destination": {
-            "address": "example.com",
-            "domain": "example.com",
-            "ip": "1.2.3.4",
-            "port": 443,
-            "registered_domain": "example.com",
-            "top_level_domain": "com"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "app-ctrl",
-            "kind": "utm",
-            "start": "2021-09-09T13:01:22Z"
-        },
-        "network": {
-            "direction": "inbound",
-            "protocol": "tcp"
-        },
-        "fortinet": {
-            "app": "HTTPS.BROWSER",
-            "applist": "standard",
-            "apprisk": "medium",
-            "appcat": "Web.Client",
-            "devid": "OIDL03VZRZEDKKD",
-            "dstintfrole": "undefined",
-            "group": "ADM",
-            "level": "information",
-            "logid": "1000234512",
-            "policyid": "01",
-            "sessionid": "000000001",
-            "direction": "incoming",
-            "srcintfrole": "undefined",
-            "vd": "root",
-            "incidentserialno": "123456789",
-            "proto": "6"
-        },
-        "message": "time=15:01:22 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"app-ctrl\" eventtype=\"app-ctrl-all\" level=\"information\" vd=\"root\" eventtime=1631192482 appid=65432 user=\"jean@SEKOIANETWORK.EXAMPLE.FR\" group=\"ADM\" srcip=192.168.1.2 dstip=1.2.3.4 srcport=43564 dstport=443 srcintf=\"port01\" srcintfrole=\"undefined\" dstintf=\"port01\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" direction=\"incoming\" policyid=01 sessionid=000000001 applist=\"standard\" appcat=\"Web.Client\" app=\"HTTPS.BROWSER\" action=\"pass\" hostname=\"example.com\" incidentserialno=123456789 url=\"/\" msg=\"Web.Client: HTTPS.BROWSER,\" apprisk=\"medium\"",
-        "observer": {
-            "egress": {
-                "interface": {
-                    "name": "port01"
-                }
-            },
-            "hostname": "fortiproxyunit",
-            "ingress": {
-                "interface": {
-                    "name": "port01"
-                }
-            },
-            "product": "FortiProxy",
-            "type": "proxy",
-            "vendor": "Fortinet"
-        },
-        "process": {
-            "pid": 65432
-        },
-        "related": {
-            "hosts": [
-                "fortiproxyunit",
-                "example.com"
-            ],
-            "ip": [
-                "192.168.1.2",
-                "1.2.3.4"
-            ],
-            "user": [
-                "jean@SEKOIANETWORK.EXAMPLE.FR"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
-            }
-        },
-        "service": {
-            "name": "https"
-        },
-        "source": {
-            "address": "192.168.1.2",
-            "ip": "192.168.1.2",
-            "port": 43564
-        },
-        "url": {
-            "domain": "example.com",
-            "full": "example.com/",
-            "original": "/",
-            "path": "/"
-        },
-        "user": {
-            "name": "jean@SEKOIANETWORK.EXAMPLE.FR"
-        }
-    }
-    	
-	```
 
 
 === "traffic-http-transaction.json"
@@ -520,6 +202,121 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "dlp.json"
+
+    ```json
+	
+    {
+        "action": {
+            "name": "log-only",
+            "type": "dlp"
+        },
+        "destination": {
+            "address": "example.fr",
+            "domain": "example.fr",
+            "ip": "2.2.2.2",
+            "port": 443,
+            "registered_domain": "example.fr",
+            "top_level_domain": "fr"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "dlp",
+            "kind": "utm",
+            "start": "2021-09-09T12:29:04Z"
+        },
+        "file": {
+            "name": "picture.png",
+            "size": 100,
+            "type": "png"
+        },
+        "fortinet": {
+            "devid": "OIDL03VZRZEDKKD",
+            "direction": "incoming",
+            "dstintfrole": "undefined",
+            "eventid": "0",
+            "filtercat": "none",
+            "filteridx": "0",
+            "filtertype": "none",
+            "group": "GROUPNAME",
+            "level": "notice",
+            "logid": "1000234512",
+            "policyid": "6",
+            "profile": "profile_name",
+            "proto": "6",
+            "sessionid": "000000001",
+            "severity": "medium",
+            "srcintfrole": "undefined",
+            "vd": "root"
+        },
+        "message": "time=14:29:04 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"dlp\" eventtype=\"dlp\" level=\"notice\" vd=\"root\" eventtime=1631190544 filteridx=0 filtertype=\"none\" filtercat=\"none\" severity=\"medium\" policyid=6 sessionid=000000001 epoch=402874927 eventid=0 user=\"USERNAME\" group=\"GROUPNAME\" srcip=192.168.1.2 srcport=12345 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=2.2.2.2 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" filetype=\"png\" direction=\"incoming\" action=\"log-only\" hostname=\"example.fr\" url=\"/rmn.png?foo=bar\" agent=\"Custom Useragent\" filename=\"picture.png\" filesize=100 profile=\"profile_name\"",
+        "network": {
+            "direction": "inbound",
+            "protocol": "tcp"
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "name": "eth"
+                }
+            },
+            "hostname": "fortiproxyunit",
+            "ingress": {
+                "interface": {
+                    "name": "eth"
+                }
+            },
+            "product": "FortiProxy",
+            "type": "proxy",
+            "vendor": "Fortinet"
+        },
+        "related": {
+            "hosts": [
+                "example.fr",
+                "fortiproxyunit"
+            ],
+            "ip": [
+                "192.168.1.2",
+                "2.2.2.2"
+            ],
+            "user": [
+                "USERNAME"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "fortiproxy",
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+            }
+        },
+        "service": {
+            "name": "https"
+        },
+        "source": {
+            "address": "192.168.1.2",
+            "ip": "192.168.1.2",
+            "port": 12345
+        },
+        "url": {
+            "domain": "example.fr",
+            "full": "example.fr/rmn.png?foo=bar",
+            "original": "/rmn.png?foo=bar",
+            "path": "/rmn.png",
+            "query": "foo=bar"
+        },
+        "user": {
+            "name": "USERNAME"
+        },
+        "user_agent": {
+            "original": "Custom Useragent"
+        }
+    }
+    	
+	```
+
+
 === "event-system.json"
 
     ```json
@@ -569,12 +366,215 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "app-ctrl.json"
+
+    ```json
+	
+    {
+        "action": {
+            "name": "pass",
+            "type": "app-ctrl-all"
+        },
+        "destination": {
+            "address": "example.com",
+            "domain": "example.com",
+            "ip": "1.2.3.4",
+            "port": 443,
+            "registered_domain": "example.com",
+            "top_level_domain": "com"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "app-ctrl",
+            "kind": "utm",
+            "start": "2021-09-09T13:01:22Z"
+        },
+        "network": {
+            "direction": "inbound",
+            "protocol": "tcp"
+        },
+        "fortinet": {
+            "app": "HTTPS.BROWSER",
+            "applist": "standard",
+            "apprisk": "medium",
+            "appcat": "Web.Client",
+            "devid": "OIDL03VZRZEDKKD",
+            "dstintfrole": "undefined",
+            "group": "ADM",
+            "level": "information",
+            "logid": "1000234512",
+            "policyid": "01",
+            "sessionid": "000000001",
+            "direction": "incoming",
+            "srcintfrole": "undefined",
+            "vd": "root",
+            "incidentserialno": "123456789",
+            "proto": "6"
+        },
+        "message": "time=15:01:22 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"app-ctrl\" eventtype=\"app-ctrl-all\" level=\"information\" vd=\"root\" eventtime=1631192482 appid=65432 user=\"jean@SEKOIANETWORK.EXAMPLE.FR\" group=\"ADM\" srcip=192.168.1.2 dstip=1.2.3.4 srcport=43564 dstport=443 srcintf=\"port01\" srcintfrole=\"undefined\" dstintf=\"port01\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" direction=\"incoming\" policyid=01 sessionid=000000001 applist=\"standard\" appcat=\"Web.Client\" app=\"HTTPS.BROWSER\" action=\"pass\" hostname=\"example.com\" incidentserialno=123456789 url=\"/\" msg=\"Web.Client: HTTPS.BROWSER,\" apprisk=\"medium\"",
+        "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port01"
+                }
+            },
+            "hostname": "fortiproxyunit",
+            "ingress": {
+                "interface": {
+                    "name": "port01"
+                }
+            },
+            "product": "FortiProxy",
+            "type": "proxy",
+            "vendor": "Fortinet"
+        },
+        "process": {
+            "pid": 65432
+        },
+        "related": {
+            "hosts": [
+                "fortiproxyunit",
+                "example.com"
+            ],
+            "ip": [
+                "192.168.1.2",
+                "1.2.3.4"
+            ],
+            "user": [
+                "jean@SEKOIANETWORK.EXAMPLE.FR"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "fortiproxy",
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+            }
+        },
+        "service": {
+            "name": "https"
+        },
+        "source": {
+            "address": "192.168.1.2",
+            "ip": "192.168.1.2",
+            "port": 43564
+        },
+        "url": {
+            "domain": "example.com",
+            "full": "example.com/",
+            "original": "/",
+            "path": "/"
+        },
+        "user": {
+            "name": "jean@SEKOIANETWORK.EXAMPLE.FR"
+        }
+    }
+    	
+	```
+
+
+=== "forward.json"
+
+    ```json
+	
+    {
+        "action": {
+            "name": "accept",
+            "type": "allow"
+        },
+        "destination": {
+            "address": "1.2.3.4",
+            "bytes": 1000,
+            "geo": {
+                "country_name": "France"
+            },
+            "ip": "1.2.3.4",
+            "port": 443
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "forward",
+            "duration": 100,
+            "kind": "traffic",
+            "start": "2021-09-08T07:40:24Z"
+        },
+        "fortinet": {
+            "appcat": "appcat1",
+            "devid": "OIDL03VZRZEDKKD",
+            "dstintfrole": "undefined",
+            "lanout": "5000",
+            "level": "notice",
+            "logid": "1000234512",
+            "policyid": "1",
+            "policytype": "policy",
+            "proto": "6",
+            "sessionid": "000000001",
+            "srcintfrole": "undefined",
+            "vd": "root",
+            "wanin": "01",
+            "wanout": "2000"
+        },
+        "message": "time=09:40:24 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"root\" eventtime=1631086824 srcip=192.168.1.2 srcport=11111 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=1.2.3.4 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" sessionid=000000001 dstcountry=\"France\" srccountry=\"Reserved\" service=\"HTTPS\" wanoptapptype=\"web\" proto=6 action=\"accept\" duration=100 policyid=1 policytype=\"policy\" wanin=01 rcvdbyte=1000 wanout=2000 lanin=3000 sentbyte=4000 lanout=5000 appcat=\"appcat1\" utmaction=\"allow\" countweb=4",
+        "network": {
+            "protocol": "tcp"
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "name": "eth"
+                }
+            },
+            "hostname": "fortiproxyunit",
+            "ingress": {
+                "interface": {
+                    "name": "eth"
+                }
+            },
+            "product": "FortiProxy",
+            "type": "proxy",
+            "vendor": "Fortinet"
+        },
+        "related": {
+            "hosts": [
+                "fortiproxyunit"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "192.168.1.2"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "fortiproxy",
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+            }
+        },
+        "service": {
+            "name": "https"
+        },
+        "source": {
+            "address": "192.168.1.2",
+            "bytes": 4000,
+            "geo": {
+                "country_name": "Reserved"
+            },
+            "ip": "192.168.1.2",
+            "port": 11111
+        }
+    }
+    	
+	```
+
+
 
 
 
 ## Extracted Fields
 
-The following Table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
