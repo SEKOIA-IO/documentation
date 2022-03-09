@@ -20,6 +20,7 @@ This documentation will allow you to get the following information: your `client
 Then you just have to configure the trigger itself by filling its `name`, by setting its `frequency` in seconds and by adding your 365 tenant identifier (`tenant_id`)  
 
 Lastly, you must add the Sekoia's action `Push Events to intake` to the graph and configure it using :
+
 - the `api_key` generated within the user center
 - the `base_url`
 - the `events` to push on Intake (your logs) 
