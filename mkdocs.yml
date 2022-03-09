@@ -62,6 +62,7 @@ nav:
       - Postfix: operation_center/integration_catalog/email/postfix.md
       - Retarus Email Security: operation_center/integration_catalog/email/retarus_email_security.md
       - SpamAssassin: operation_center/integration_catalog/email/spamassassin.md
+      - Vade for M365: operation_center/integration_catalog/email/vade.md
     - Endpoint:
       - Auditbeat Linux: operation_center/integration_catalog/endpoint/auditbeat_linux.md
       - HarfangLab: operation_center/integration_catalog/endpoint/harfanglab.md
