@@ -17,8 +17,8 @@ In details, the following Table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `web`, `network` |
-| Type | `connection`, `error`, `denied` |
+| Category | `network`, `web` |
+| Type | `error`, `denied`, `connection` |
 
 
 
