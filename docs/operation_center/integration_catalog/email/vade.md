@@ -5,6 +5,8 @@ It improves user experience and catches 10x more advanced threats than Microsoft
 
 In this documenation we will explain how to collect and send Vade for M365 logs to SEKOIA.IO.
 
+{!operation_center/integration_catalog/generated/vade-m365_do_not_edit_manually.md!}
+
 ## Configure
 
 First you need to reach the `Playbooks` page in order to initiate your playbook using the dedicated button.  
