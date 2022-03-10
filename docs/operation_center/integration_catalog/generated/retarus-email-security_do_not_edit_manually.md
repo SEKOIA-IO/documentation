@@ -16,8 +16,8 @@ In details, the following Table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `alert`, `event` |
-| Category | `malware`, `web` |
+| Kind | `event`, `alert` |
+| Category | `web`, `malware` |
 | Type | `info` |
 
 
