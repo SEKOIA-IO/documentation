@@ -2,10 +2,10 @@ uuid: 40bac399-2d8e-40e3-af3b-f73a622c9687
 name: McAfee Web Gateway
 
 ## Overview
-McAfee Web Gateway (MWG) is a high-performance web gateway offering Malware detection, threat prevention and reputation filtering.
+McAfee Web Gateway (MWG) is a web gateway offering malware detection, threat prevention and reputation filtering.
 This product is supported by McAfee Corp.
 
-{!operation_center/integration_catalog/generated/mcafee_web_gateway_do_not_edit_manually.md!}
+{!operation_center/integration_catalog/generated/mcafee-web-gateway_do_not_edit_manually.md!}
 
 ## Configure
 
@@ -13,7 +13,7 @@ In this guide, you will configure a rule set to forward events to syslog and add
 
 ### Configure a Rule Set
 
-Prior the configuration, download the `Rule Set` configuration [SEKOIAIO_mwg.xml](../../../assets/operation_center/integration_catalog/network/mcafee_web_gateway/SEKOIAIO_mwg.xml).
+Prior the configuration, download the “Rule Set” configuration [`SEKOIAIO_mwg.xml`](../../../assets/operation_center/integration_catalog/network/mcafee_web_gateway/SEKOIAIO_mwg.xml).
 
 
 In your MWG console:
