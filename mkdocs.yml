@@ -79,6 +79,7 @@ nav:
       - FortiGate: operation_center/integration_catalog/network/fortigate.md
       - FortiProxy: operation_center/integration_catalog/network/fortiproxy.md
       - FortiWeb: operation_center/integration_catalog/network/fortiweb.md
+      - McAfee Web Gateway: operation_center/integration_catalog/network/mcafee_web_gateway.md
       - NetFilter: operation_center/integration_catalog/network/netfilter.md
       - PaloAlto: operation_center/integration_catalog/network/paloalto.md
       - Pulse Connect Secure: operation_center/integration_catalog/network/pulse.md
