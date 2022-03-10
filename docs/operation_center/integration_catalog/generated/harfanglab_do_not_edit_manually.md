@@ -30,8 +30,8 @@ In details, the following Table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event`, `alert` |
-| Category | `network`, `process` |
+| Kind | `alert`, `event` |
+| Category | `process`, `network` |
 | Type | `start`, `info`, `connection` |
 
 
