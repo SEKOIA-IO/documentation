@@ -10,7 +10,7 @@ In details, the following Table denotes the type of events produced by this inte
 | ---- | ------ |
 | Kind | `event` |
 | Category | `email` |
-| Type | `change`, `denied`, `deletion`, `info` |
+| Type | `deletion`, `info`, `change`, `denied` |
 
 
 
