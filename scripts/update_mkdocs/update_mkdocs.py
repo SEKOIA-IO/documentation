@@ -61,9 +61,9 @@ def analyze_parser(parser, custom_fields) -> Dict:
             for field in sorted(fields.keys())
             if field in taxonomy
         ],
-        "category": category_values,
-        "type": type_values,
-        "kind": kind_values,
+        "category": sorted(category_values),
+        "type": sorted(type_values),
+        "kind": sorted(kind_values),
     }
 
 
@@ -110,7 +110,7 @@ def load_intakes(intake_repository: str) -> List[Dict]:
             intake_tests = intake_path / "tests"
             intake["tests"] = []
             if intake_tests.exists():
-                for intake_test in intake_tests.iterdir():
+                for intake_test in sorted(intake_tests.iterdir()):
 
                     if not intake_test.name.endswith(".json"):
                         continue
