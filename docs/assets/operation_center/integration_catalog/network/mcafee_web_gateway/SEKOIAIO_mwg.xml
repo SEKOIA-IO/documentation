@@ -5,7 +5,7 @@
     <description>forward access log to SEKOIA.IO</description>
   </libraryObject>
   <configurations>
-    <configuration version="1.16.0" mwg-version="11.1.0-39720" id="com.scur.engine.filesystemlogging.269" defaultRights="2" templateId="com.scur.template.engine.filesystemlogging" name="SEKOIAIO.log" targetId="com.scur.engine.filesystemlogging">
+    <configuration version="1.16.0" mwg-version="11.1.0-39720" id="com.scur.engine.filesystemlogging.259" defaultRights="2" templateId="com.scur.template.engine.filesystemlogging" name="SEKOIAIO.log" targetId="com.scur.engine.filesystemlogging">
       <acElements/>
       <configurationProperties>
         <configurationProperty key="LogName" type="com.scur.type.string" encrypted="false" value="sekoiaio_access.log"/>
@@ -47,23 +47,30 @@
     </configuration>
   </configurations>
   <userDefinedPropertys>
-    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.sekoiaioLogLine" id="371" scope="0" description="" defaultRights="2">
+    <userDefinedProperty parentId="81" typeId="com.scur.type.string" name="User-Defined.sekoiaioLogLine" id="260" scope="0" description="" defaultRights="2">
       <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
     </userDefinedProperty>
   </userDefinedPropertys>
-  <ruleGroup id="372" defaultRights="2" name="SEKOIA.IO" enabled="true" cycleRequest="true" cycleResponse="true" cycleEmbeddedObject="true" cloudSynced="false">
+  <ruleGroup id="263" defaultRights="2" name="SEKOIA.IO" enabled="true" cycleRequest="true" cycleResponse="true" cycleEmbeddedObject="true" cloudSynced="false">
     <acElements/>
     <condition always="true">
       <expressions/>
     </condition>
     <description>forward access log to SEKOIA.IO</description>
     <rules>
-      <rule id="374" enabled="true" name="prepare log">
+      <rule id="265" enabled="true" name="prepare log">
         <description></description>
         <immediateActionContainers>
-          <setActionContainer propertyId="371">
+          <setActionContainer propertyId="260">
             <expressions>
               <setExpression openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="date=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
                     <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.datetimefilter.datetime.toxsdstring"/>
@@ -73,36 +80,48 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value="&quot; hostname=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.hostname"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; username=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.auth.username"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; source_ip=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.ip.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.ip.tostring.ip</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.hostname"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.client.ip"/>
                             </value>
                           </parameter>
                         </entry>
@@ -114,36 +133,20 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="&quot; &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" destination_ip=" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.ip.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.ip.tostring.ip</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.auth.username"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.destination.ip"/>
                             </value>
                           </parameter>
                         </entry>
@@ -155,47 +158,34 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="&quot; " stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" destination_host=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.url.host"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; http_status_code=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.ip.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.ip.tostring.ip</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.client.ip"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.response.statuscode"/>
                             </value>
                           </parameter>
                         </entry>
@@ -207,47 +197,20 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value=" " stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" media_type=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.mediatype.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.mediatype.tostring.mediatype</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.ip.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.ip.tostring.ip</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.destination.ip"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.mtfilter.property.bodyheaders"/>
                             </value>
                           </parameter>
                         </entry>
@@ -259,36 +222,20 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value="&quot; source_bytes=" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.url.host"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.bytesrecvfromclient"/>
                             </value>
                           </parameter>
                         </entry>
@@ -300,47 +247,20 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="&quot; " stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" destination_bytes=" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.number.tostring.number</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.response.statuscode"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.bytesrecvfromserver"/>
                             </value>
                           </parameter>
                         </entry>
@@ -352,47 +272,34 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" http_request_first_line=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.request.headers.firstline"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; url_categories=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trustedsource.categorylist.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.trustedsource.categorylist.tostring.categorylist</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.mediatype.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.mediatype.tostring.mediatype</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.mtfilter.property.headers"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.categories"/>
                             </value>
                           </parameter>
                         </entry>
@@ -404,47 +311,34 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="&quot; " stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value="&quot; url_reputation_string=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.reputationstring"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; url_reputation_code=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.number.tostring.number</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.bytesrecvfromclient"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.reputation"/>
                             </value>
                           </parameter>
                         </entry>
@@ -456,47 +350,48 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value=" " stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" ruleset_name=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.rules.currentrulesetname"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; rule_name=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.rules.currentrulename"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; block_id=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.number.tostring.number</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.number.tostring.number</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.bytesrecvfromserver"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.blockreasonid"/>
                             </value>
                           </parameter>
                         </entry>
@@ -508,36 +403,34 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" block_reason=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.blockreason"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; body_infected=" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.boolean.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.boolean.tostring.boolean</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.request.headers.firstline"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.antivirus.av.infected"/>
                             </value>
                           </parameter>
                         </entry>
@@ -549,47 +442,28 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="&quot; &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" virus_names=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.stringlist.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.stringlist.tostring.stringlist</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.trustedsource.categorylist.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.trustedsource.categorylist.tostring.categorylist</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.categories"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
+                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.antivirus.av.virusnames"/>
                             </value>
                           </parameter>
                         </entry>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
+                          <string>com.scur.engine.stringfilter.stringlist.tostring.delimiter</string>
                           <parameter valueTyp="3">
                             <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <stringValue value=", " stringModifier="true" typeId="com.scur.type.string"/>
                             </value>
                           </parameter>
                         </entry>
@@ -601,36 +475,20 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="&quot; &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value="&quot; body_modified=" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.boolean.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.stringfilter.boolean.tostring.boolean</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.reputationstring"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.body.modified"/>
                             </value>
                           </parameter>
                         </entry>
@@ -642,47 +500,34 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="&quot; " stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value=" application_reputation=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.reputation"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="3">
+                  <value>
+                    <stringValue value="&quot; application_name=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                  </value>
+                </parameter>
+              </setExpression>
+              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
+                <parameter valueTyp="2">
+                  <value>
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.tostring">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
+                          <string>com.scur.engine.applcontrol.tostring.applcontrol</string>
                           <parameter valueTyp="2">
                             <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.number.tostring.number</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.trustedsource.url.reputation"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.name"/>
                             </value>
                           </parameter>
                         </entry>
@@ -694,36 +539,20 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value="&quot; http_referer=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.headerfilter.request.headers.getheader">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.rules.currentrulesetname"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
+                          <string>com.scur.engine.headerfilter.request.headers.getheader.headername</string>
                           <parameter valueTyp="3">
                             <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <stringValue value="Referer" stringModifier="true" typeId="com.scur.type.string"/>
                             </value>
                           </parameter>
                         </entry>
@@ -735,490 +564,20 @@
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="3">
                   <value>
-                    <stringValue value="/" stringModifier="true" typeId="com.scur.type.string"/>
+                    <stringValue value="&quot; user_agent=&quot;" stringModifier="true" typeId="com.scur.type.string"/>
                   </value>
                 </parameter>
               </setExpression>
               <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
                 <parameter valueTyp="2">
                   <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
+                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.headerfilter.request.headers.getheader">
                       <parameters>
                         <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.rules.currentrulename"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
+                          <string>com.scur.engine.headerfilter.request.headers.getheader.headername</string>
                           <parameter valueTyp="3">
                             <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value="&quot; " stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.number.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.number.tostring.number</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.blockreasonid"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.blockreason"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value="&quot; " stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.boolean.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.boolean.tostring.boolean</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.antivirus.av.infected"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.stringlist.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.stringlist.tostring.stringlist</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="true" propertyId="com.scur.engine.antivirus.av.virusnames"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.stringlist.tostring.delimiter</string>
-                                    <parameter valueTyp="3">
-                                      <value>
-                                        <stringValue value=", " stringModifier="true" typeId="com.scur.type.string"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value="&quot; " stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.boolean.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.stringfilter.boolean.tostring.boolean</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.system.body.modified"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value=" &quot;" stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.reputation"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value="&quot; &quot;" stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.tostring">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.applcontrol.tostring.applcontrol</string>
-                                    <parameter valueTyp="2">
-                                      <value>
-                                        <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.applcontrol.name"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value="&quot; &quot;" stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.headerfilter.request.headers.getheader">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.headerfilter.request.headers.getheader.headername</string>
-                                    <parameter valueTyp="3">
-                                      <value>
-                                        <stringValue value="Referer" stringModifier="true" typeId="com.scur.type.string"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                      </parameters>
-                    </propertyInstance>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="3">
-                  <value>
-                    <stringValue value="&quot; &quot;" stringModifier="true" typeId="com.scur.type.string"/>
-                  </value>
-                </parameter>
-              </setExpression>
-              <setExpression operator="+" openingBracketCount="0" closingBracketCount="0">
-                <parameter valueTyp="2">
-                  <value>
-                    <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.stringfilter.string.replaceifequals">
-                      <parameters>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.source</string>
-                          <parameter valueTyp="2">
-                            <value>
-                              <propertyInstance useMostRecentConfiguration="false" propertyId="com.scur.engine.headerfilter.request.headers.getheader">
-                                <parameters>
-                                  <entry>
-                                    <string>com.scur.engine.headerfilter.request.headers.getheader.headername</string>
-                                    <parameter valueTyp="3">
-                                      <value>
-                                        <stringValue value="User-Agent" stringModifier="true" typeId="com.scur.type.string"/>
-                                      </value>
-                                    </parameter>
-                                  </entry>
-                                </parameters>
-                              </propertyInstance>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.substring</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="" stringModifier="true" typeId="com.scur.type.string"/>
-                            </value>
-                          </parameter>
-                        </entry>
-                        <entry>
-                          <string>com.scur.engine.stringfilter.string.replaceifequals.replace</string>
-                          <parameter valueTyp="3">
-                            <value>
-                              <stringValue value="-" stringModifier="true" typeId="com.scur.type.string"/>
+                              <stringValue value="User-Agent" stringModifier="true" typeId="com.scur.type.string"/>
                             </value>
                           </parameter>
                         </entry>
@@ -1242,7 +601,7 @@
           <expressions/>
         </condition>
       </rule>
-      <rule id="3051" enabled="true" name="Forward logs to SEKOIA.IO">
+      <rule id="269" enabled="true" name="Forward logs to SEKOIA.IO">
         <description></description>
         <immediateActionContainers>
           <executeActionContainer>
@@ -1260,7 +619,7 @@
                   <string>com.scur.engine.syslog.message</string>
                   <parameter valueTyp="2">
                     <value>
-                      <propertyInstance useMostRecentConfiguration="false" propertyId="371"/>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="260"/>
                     </value>
                   </parameter>
                 </entry>
@@ -1273,17 +632,17 @@
           <expressions/>
         </condition>
       </rule>
-      <rule id="3091" enabled="true" name="Write to SEKOIAIO_access.log">
+      <rule id="273" enabled="true" name="Write to SEKOIAIO_access.log">
         <description></description>
         <immediateActionContainers>
-          <executeActionContainer configurationId="com.scur.engine.filesystemlogging.269">
+          <executeActionContainer configurationId="com.scur.engine.filesystemlogging.259">
             <procedureValue procedureId="com.scur.engine.filesystemlogging.writelogentry">
               <parameters>
                 <entry>
                   <string>com.scur.engine.filesystemlogging.writelogentry.logstring</string>
                   <parameter valueTyp="2">
                     <value>
-                      <propertyInstance useMostRecentConfiguration="false" propertyId="371"/>
+                      <propertyInstance useMostRecentConfiguration="false" propertyId="260"/>
                     </value>
                   </parameter>
                 </entry>
