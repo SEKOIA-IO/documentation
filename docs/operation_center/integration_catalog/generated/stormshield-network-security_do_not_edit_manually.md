@@ -2,6 +2,17 @@
 ## Event Categories
 
 
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `Network device logs` | Stormshield Network Security can record traffic events flowing through their firewall. |
+| `Network protocol analysis` | Stormshield Network Security firewall does traffic analysis at physical/data/transport layers. |
+| `SSL/TLS inspection` | Stormshield Network Security firewall can perform SSL/TLS inspection to protect company network. |
+| `Anti-virus` | Stormshield firewall can be configured to perfom malware analysis. |
+
+
+
 
 
 In details, the following Table denotes the type of events produced by this integration.

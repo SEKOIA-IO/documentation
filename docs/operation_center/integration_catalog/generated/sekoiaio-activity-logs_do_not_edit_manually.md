@@ -21,81 +21,6 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
-=== "activity_log_get_me_extended.json"
-
-    ```json
-	
-    {
-        "message": {
-            "timestamp": "2021-10-29T11:34:23Z",
-            "observer": {
-                "name": "sekoia.webapi",
-                "version": null
-            },
-            "visit": {
-                "id": null,
-                "ip": "141.229.130.228",
-                "user_agent": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8",
-                "referrer": "https://api.sekoia.io/v1/user/profile/settings"
-            },
-            "action": {
-                "name": null,
-                "path": "/v1/me",
-                "url": "http://api.sekoia.io/v1/me?extended=true",
-                "method": "GET"
-            },
-            "identity": {
-                "user_uuid": "5beacab7-4fc9-4c07-8ec0-e6ad73ed77fe",
-                "community_uuid": "22806a91-459c-40b1-98db-5af6ccf291fd",
-                "profile_type": "avatar",
-                "profile_identity": "95267578-e797-4263-90c3-09fb230536e2"
-            }
-        },
-        "@timestamp": "2021-10-29T11:34:23Z",
-        "agent": {
-            "name": "sekoia.webapi"
-        },
-        "client": {
-            "user": {
-                "id": "5beacab7-4fc9-4c07-8ec0-e6ad73ed77fe"
-            },
-            "ip": "141.229.130.228"
-        },
-        "user_agent": {
-            "original": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8"
-        },
-        "http": {
-            "request": {
-                "method": "GET",
-                "referrer": "https://api.sekoia.io/v1/user/profile/settings"
-            }
-        },
-        "url": {
-            "original": "http://api.sekoia.io/v1/me?extended=true",
-            "path": "/v1/me"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "sekoiaio-activity-logs",
-                "dialect_uuid": "41e3ca4e-a714-41aa-ad69-684a0b3835fc"
-            },
-            "activity": {
-                "client": {
-                    "id": "95267578-e797-4263-90c3-09fb230536e2",
-                    "type": "avatar"
-                }
-            }
-        },
-        "event": {
-            "id": "0088f426-d1b7-462b-ad8a-99aca6301432",
-            "created": "2021-10-29T11:37:11Z",
-            "outcome": "failure"
-        }
-    }
-    	
-	```
-
-
 === "activity_log_get_intake_format_picture.json"
 
     ```json
@@ -243,6 +168,81 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "type": "apikey"
                 }
             }
+        }
+    }
+    	
+	```
+
+
+=== "activity_log_get_me_extended.json"
+
+    ```json
+	
+    {
+        "message": {
+            "timestamp": "2021-10-29T11:34:23Z",
+            "observer": {
+                "name": "sekoia.webapi",
+                "version": null
+            },
+            "visit": {
+                "id": null,
+                "ip": "141.229.130.228",
+                "user_agent": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8",
+                "referrer": "https://api.sekoia.io/v1/user/profile/settings"
+            },
+            "action": {
+                "name": null,
+                "path": "/v1/me",
+                "url": "http://api.sekoia.io/v1/me?extended=true",
+                "method": "GET"
+            },
+            "identity": {
+                "user_uuid": "5beacab7-4fc9-4c07-8ec0-e6ad73ed77fe",
+                "community_uuid": "22806a91-459c-40b1-98db-5af6ccf291fd",
+                "profile_type": "avatar",
+                "profile_identity": "95267578-e797-4263-90c3-09fb230536e2"
+            }
+        },
+        "@timestamp": "2021-10-29T11:34:23Z",
+        "agent": {
+            "name": "sekoia.webapi"
+        },
+        "client": {
+            "user": {
+                "id": "5beacab7-4fc9-4c07-8ec0-e6ad73ed77fe"
+            },
+            "ip": "141.229.130.228"
+        },
+        "user_agent": {
+            "original": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8"
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "referrer": "https://api.sekoia.io/v1/user/profile/settings"
+            }
+        },
+        "url": {
+            "original": "http://api.sekoia.io/v1/me?extended=true",
+            "path": "/v1/me"
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "sekoiaio-activity-logs",
+                "dialect_uuid": "41e3ca4e-a714-41aa-ad69-684a0b3835fc"
+            },
+            "activity": {
+                "client": {
+                    "id": "95267578-e797-4263-90c3-09fb230536e2",
+                    "type": "avatar"
+                }
+            }
+        },
+        "event": {
+            "id": "0088f426-d1b7-462b-ad8a-99aca6301432",
+            "created": "2021-10-29T11:37:11Z",
+            "outcome": "failure"
         }
     }
     	
