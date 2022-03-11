@@ -22,7 +22,7 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
-=== "unauthenticated_request.json"
+=== "host_checker_policy_success.json"
 
     ```json
 	
@@ -35,21 +35,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "vpn"
         },
         "user": {
-            "name": "System"
+            "name": "alice",
+            "domain": "SEKOIA_User",
+            "roles": [
+                "SEKOIA_User_Role"
+            ]
         },
         "source": {
-            "ip": "93.19.66.118",
-            "address": "93.19.66.118"
-        },
-        "url": {
-            "path": "/dana/js?prot=1&svc=4"
+            "ip": "19.160.74.9",
+            "address": "19.160.74.9"
         },
         "action": {
-            "name": "AUT31556"
+            "name": "AUT24803"
         },
         "event": {
             "provider": "auth",
-            "code": "AUT31556"
+            "code": "AUT24803"
         }
     }
     	
@@ -123,7 +124,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "host_checker_policy_success.json"
+=== "unauthenticated_request.json"
 
     ```json
 	
@@ -136,22 +137,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "vpn"
         },
         "user": {
-            "name": "alice",
-            "domain": "SEKOIA_User",
-            "roles": [
-                "SEKOIA_User_Role"
-            ]
+            "name": "System"
         },
         "source": {
-            "ip": "19.160.74.9",
-            "address": "19.160.74.9"
+            "ip": "93.19.66.118",
+            "address": "93.19.66.118"
+        },
+        "url": {
+            "path": "/dana/js?prot=1&svc=4"
         },
         "action": {
-            "name": "AUT24803"
+            "name": "AUT31556"
         },
         "event": {
             "provider": "auth",
-            "code": "AUT24803"
+            "code": "AUT31556"
         }
     }
     	

@@ -30,9 +30,9 @@ In details, the following Table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `alert`, `event` |
+| Kind | `event`, `alert` |
 | Category | `process`, `network` |
-| Type | `start`, `info`, `connection` |
+| Type | `info`, `connection`, `start` |
 
 
 
@@ -63,6 +63,64 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "full": "Windows 10 Pro",
                 "version": "10.0.19041"
             }
+        }
+    }
+    	
+	```
+
+
+=== "network.json"
+
+    ```json
+	
+    {
+        "destination": {
+            "address": "192.168.120.41",
+            "ip": "192.168.120.41",
+            "port": 2525
+        },
+        "agent": {
+            "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
+        },
+        "event": {
+            "category": "network",
+            "kind": "event",
+            "outcome": "success",
+            "event": {
+                "outcome": "success"
+            },
+            "type": "connection"
+        },
+        "host": {
+            "domain": "EXAMPLE",
+            "hostname": "EXCHANGE",
+            "os": {
+                "full": "Windows Server 2019 Standard",
+                "version": "10.0.17763"
+            }
+        },
+        "process": {
+            "executable": "E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Bin\\MSExchangeHMWorker.exe",
+            "pid": 14228
+        },
+        "related": {
+            "hosts": [
+                "EXCHANGE"
+            ],
+            "ip": [
+                "192.168.120.41"
+            ],
+            "user": [
+                "NT AUTHORITY\\SYSTEM"
+            ]
+        },
+        "source": {
+            "address": "192.168.120.41",
+            "ip": "192.168.120.41",
+            "port": 21955
+        },
+        "user": {
+            "name": "NT AUTHORITY\\SYSTEM"
         }
     }
     	
@@ -124,64 +182,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "NT AUTHORITY\\SYSTEM"
             ]
-        },
-        "user": {
-            "name": "NT AUTHORITY\\SYSTEM"
-        }
-    }
-    	
-	```
-
-
-=== "network.json"
-
-    ```json
-	
-    {
-        "destination": {
-            "address": "192.168.120.41",
-            "ip": "192.168.120.41",
-            "port": 2525
-        },
-        "agent": {
-            "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
-        },
-        "event": {
-            "category": "network",
-            "kind": "event",
-            "outcome": "success",
-            "event": {
-                "outcome": "success"
-            },
-            "type": "connection"
-        },
-        "host": {
-            "domain": "EXAMPLE",
-            "hostname": "EXCHANGE",
-            "os": {
-                "full": "Windows Server 2019 Standard",
-                "version": "10.0.17763"
-            }
-        },
-        "process": {
-            "executable": "E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Bin\\MSExchangeHMWorker.exe",
-            "pid": 14228
-        },
-        "related": {
-            "hosts": [
-                "EXCHANGE"
-            ],
-            "ip": [
-                "192.168.120.41"
-            ],
-            "user": [
-                "NT AUTHORITY\\SYSTEM"
-            ]
-        },
-        "source": {
-            "address": "192.168.120.41",
-            "ip": "192.168.120.41",
-            "port": 21955
         },
         "user": {
             "name": "NT AUTHORITY\\SYSTEM"

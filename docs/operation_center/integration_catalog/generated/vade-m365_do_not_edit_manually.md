@@ -10,7 +10,7 @@ In details, the following Table denotes the type of events produced by this inte
 | ---- | ------ |
 | Kind | `event` |
 | Category | `email` |
-| Type | `deletion`, `info`, `change`, `denied` |
+| Type | `info`, `deletion`, `denied`, `change` |
 
 
 
@@ -44,38 +44,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "nb_messages_remediated": 1,
                 "nb_messages_remediated_read": 0,
                 "nb_messages_remediated_unread": 1
-            }
-        }
-    }
-    	
-	```
-
-
-=== "remediation_manual.json"
-
-    ```json
-	
-    {
-        "event": {
-            "outcome": "success",
-            "category": "email",
-            "kind": "event",
-            "type": "info"
-        },
-        "vadesecure": {
-            "campaign": {
-                "actions": [
-                    {
-                        "action": "DELETE"
-                    },
-                    {
-                        "action": "FAILED"
-                    }
-                ],
-                "id": "zekfnzejnf576rge8768",
-                "nb_messages_remediated": 76,
-                "nb_messages_remediated_read": 0,
-                "nb_messages_remediated_unread": 76
             }
         }
     }
@@ -119,6 +87,38 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "from_header": "<test@sekoia.io>",
             "status": "LEGIT",
             "to_header": "\"test@vadesecure.com\" <test@vadesecure.com>"
+        }
+    }
+    	
+	```
+
+
+=== "remediation_manual.json"
+
+    ```json
+	
+    {
+        "event": {
+            "outcome": "success",
+            "category": "email",
+            "kind": "event",
+            "type": "info"
+        },
+        "vadesecure": {
+            "campaign": {
+                "actions": [
+                    {
+                        "action": "DELETE"
+                    },
+                    {
+                        "action": "FAILED"
+                    }
+                ],
+                "id": "zekfnzejnf576rge8768",
+                "nb_messages_remediated": 76,
+                "nb_messages_remediated_read": 0,
+                "nb_messages_remediated_unread": 76
+            }
         }
     }
     	

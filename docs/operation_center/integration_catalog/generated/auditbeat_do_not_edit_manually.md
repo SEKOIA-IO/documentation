@@ -23,108 +23,436 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
-=== "example8.json"
+=== "example11.json"
+
+    ```json
+	
+    {
+        "event": {
+            "category": [
+                "file"
+            ],
+            "id": "52b3da13-728a-4c7f-8857-ab01774ad49b",
+            "outcome": "success",
+            "module": "auditd",
+            "type": [
+                "info"
+            ],
+            "dialect": "auditbeat",
+            "action": "violated-seccomp-policy",
+            "hash": "2ca4c1dee00078e88b47ffdc1a0584a43e0fbbb1",
+            "kind": "event",
+            "created": "2021-04-06",
+            "dialect_uuid": "138080ec-6961-43fd-97c2-99ef95a9a1ed"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "host": {
+            "mac": [
+                "0c:5d:c0:dc:1f:3f"
+            ],
+            "id": "7dd912136af040e4a6ea4f683010b824",
+            "name": "xps-UWWL21LVdEVmqrbT",
+            "architecture": "x86_64",
+            "containerized": false,
+            "os": {
+                "type": "linux",
+                "family": "debian",
+                "name": "Ubuntu",
+                "version": "18.04.6 LTS (Bionic Beaver)",
+                "kernel": "4.15.0-161-generic",
+                "codename": "bionic",
+                "platform": "ubuntu"
+            },
+            "ip": [
+                "43.161.42.208"
+            ],
+            "hostname": "xps-UWWL21LVdEVmqrbT"
+        },
+        "message": "{\"@timestamp\":\"2021-11-09T19:07:37.325Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"outcome\":\"unknown\",\"kind\":\"event\",\"type\":[\"info\"],\"module\":\"auditd\",\"category\":[\"file\"],\"action\":\"violated-seccomp-policy\"},\"user\":{\"id\":\"56d2c11c-9371-4617-bac3-2c18e86042c6\",\"audit\":{\"id\":\"56d2c11c-9371-4617-bac3-2c18e86042c6\",\"name\":\"UWWL21LVdEVmqrbT\"},\"group\":{\"id\":\"56d2c11c-9371-4617-bac3-2c18e86042c6\",\"name\":\"UWWL21LVdEVmqrbT\"},\"name\":\"UWWL21LVdEVmqrbT\"},\"process\":{\"name\":\"ThreadPoolSingl\",\"executable\":\"/opt/google/chrome/chrome\",\"pid\":2720},\"host\":{\"mac\":[\"0c:5d:c0:dc:1f:3f\"],\"hostname\":\"xps-UWWL21LVdEVmqrbT\",\"architecture\":\"x86_64\",\"os\":{\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\"},\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"43.161.42.208\"],\"name\":\"xps-UWWL21LVdEVmqrbT\"},\"agent\":{\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"xps-UWWL21LVdEVmqrbT\",\"type\":\"auditbeat\",\"version\":\"7.15.1\",\"hostname\":\"xps-UWWL21LVdEVmqrbT\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\"},\"ecs\":{\"version\":\"1.11.0\"},\"auditd\":{\"session\":\"2\",\"summary\":{\"how\":\"/opt/google/chrome/chrome\",\"actor\":{\"primary\":\"UWWL21LVdEVmqrbT\",\"secondary\":\"UWWL21LVdEVmqrbT\"},\"object\":{\"primary\":\"stat\",\"type\":\"process\"}},\"message_type\":\"seccomp\",\"sequence\":12522,\"result\":\"unknown\",\"data\":{\"code\":\"0x50000\",\"syscall\":\"stat\",\"compat\":\"0\",\"ip\":\"0x7fe0a0df1845\",\"arch\":\"x86_64\",\"sig\":\"0\"}},\"service\":{\"type\":\"auditd\"}}",
+        "sekoiaio": {
+            "entity": {
+                "id": "XvCY1OAD5kpZ4aMT",
+                "name": "ijcI4rUMLB7FQJUl",
+                "uuid": "bee1bd11-f55d-4d9c-a6b2-cd083ef6eb30"
+            },
+            "customer": {
+                "community_name": "IaK78sRooYQr06mu",
+                "id": "e8cf9595-d9fd-49d6-814d-a36976e997a9",
+                "community_uuid": "4d2ae6d8-87a6-41a9-a9cf-6f6cdb667edc"
+            },
+            "intake": {
+                "dialect": "auditbeat",
+                "parsing_status": "success",
+                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1"
+            }
+        },
+        "agent": {
+            "type": "auditbeat",
+            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
+            "name": "xps-UWWL21LVdEVmqrbT",
+            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
+            "version": "7.15.1",
+            "hostname": "xps-UWWL21LVdEVmqrbT"
+        },
+        "related": {
+            "hosts": [
+                "xps-UWWL21LVdEVmqrbT"
+            ],
+            "ip": [
+                "43.161.42.208"
+            ],
+            "user": [
+                "UWWL21LVdEVmqrbT"
+            ],
+            "hash": [
+                "2ca4c1dee00078e88b47ffdc1a0584a43e0fbbb1"
+            ]
+        },
+        "user": {
+            "id": "56d2c11c-9371-4617-bac3-2c18e86042c6",
+            "name": "UWWL21LVdEVmqrbT",
+            "audit": {
+                "id": "56d2c11c-9371-4617-bac3-2c18e86042c6",
+                "name": "UWWL21LVdEVmqrbT"
+            },
+            "group": {
+                "id": "56d2c11c-9371-4617-bac3-2c18e86042c6",
+                "name": "UWWL21LVdEVmqrbT"
+            }
+        },
+        "process": {
+            "pid": 2720,
+            "executable": "/opt/google/chrome/chrome",
+            "name": "ThreadPoolSingl"
+        },
+        "@timestamp": "2021-11-09T19:07:40.601Z",
+        "auditd": {
+            "session": "2",
+            "summary": {
+                "how": "/opt/google/chrome/chrome",
+                "actor": {
+                    "primary": "UWWL21LVdEVmqrbT",
+                    "secondary": "UWWL21LVdEVmqrbT"
+                },
+                "object": {
+                    "primary": "stat",
+                    "type": "process"
+                }
+            },
+            "message_type": "seccomp",
+            "sequence": 12522,
+            "result": "unknown",
+            "data": {
+                "code": "0x50000",
+                "syscall": "stat",
+                "compat": "0",
+                "ip": "0x7fe0a0df1845",
+                "arch": "x86_64",
+                "sig": "0"
+            }
+        },
+        "service": {
+            "type": "auditd"
+        }
+    }
+    	
+	```
+
+
+=== "example13.json"
+
+    ```json
+	
+    {
+        "event": {
+            "dialect_uuid": "423c9f61-0282-464d-a2f3-f2d745b59a3b",
+            "id": "c7679ece-e22f-4144-a7f5-619034aa036d",
+            "category": [
+                "process"
+            ],
+            "hash": "249e78b65ea6378a41037766bd8b1f01abd1a371",
+            "outcome": "success",
+            "module": "auditd",
+            "type": [
+                "start"
+            ],
+            "dialect": "auditbeat",
+            "created": "2021-03-12",
+            "kind": "event",
+            "action": "started-service"
+        },
+        "host": {
+            "id": "7dd912136af040e4a6ea4f683010b824",
+            "name": "LCPmbaxBgGyJj8VH",
+            "mac": [
+                "09:d0:5f:99:43:f6"
+            ],
+            "os": {
+                "family": "debian",
+                "name": "Ubuntu",
+                "codename": "bionic",
+                "type": "linux",
+                "version": "18.04.6 LTS (Bionic Beaver)",
+                "kernel": "4.15.0-161-generic",
+                "platform": "ubuntu"
+            },
+            "architecture": "x86_64",
+            "ip": [
+                "87.138.107.154"
+            ],
+            "containerized": false,
+            "hostname": "LCPmbaxBgGyJj8VH"
+        },
+        "user": {
+            "id": "16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e",
+            "name": "X9PzJKityWAFaA5i"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "message": "{\"@timestamp\":\"2021-11-09T19:02:33.866Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"kind\":\"event\",\"type\":[\"start\"],\"module\":\"auditd\",\"category\":[\"process\"],\"action\":\"started-service\",\"outcome\":\"success\"},\"user\":{\"id\":\"16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\",\"name\":\"X9PzJKityWAFaA5i\"},\"process\":{\"pid\":1,\"name\":\"systemd\",\"executable\":\"/lib/systemd/systemd\"},\"auditd\":{\"result\":\"success\",\"data\":{\"unit\":\"anacron\"},\"summary\":{\"how\":\"/lib/systemd/systemd\",\"actor\":{\"primary\":\"unset\",\"secondary\":\"X9PzJKityWAFaA5i\"},\"object\":{\"primary\":\"anacron\",\"type\":\"service\"}},\"message_type\":\"service_start\",\"sequence\":12295},\"service\":{\"type\":\"auditd\"},\"ecs\":{\"version\":\"1.11.16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\"},\"host\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"architecture\":\"x86_64\",\"os\":{\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\"},\"name\":\"LCPmbaxBgGyJj8VH\",\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"87.138.107.154\"],\"mac\":[\"09:d0:5f:99:43:f6\"]},\"agent\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"LCPmbaxBgGyJj8VH\",\"type\":\"auditbeat\",\"version\":\"7.15.1\"}}",
+        "sekoiaio": {
+            "customer": {
+                "id": "c4f66c2f-d5b8-422b-99bb-58861ecf29b2",
+                "community_name": "nPBqXTDSBeAay0G4",
+                "community_uuid": "9074f2a1-49f9-4b01-9fc7-6c826a330a5a"
+            },
+            "entity": {
+                "id": "6jg8OBtPENQkrAFy",
+                "uuid": "3fca9011-7dd8-4a75-a311-9cee8a9daf8a",
+                "name": "pW9vnD1tYtahvz1u"
+            },
+            "intake": {
+                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
+                "parsing_status": "success",
+                "dialect": "auditbeat"
+            }
+        },
+        "agent": {
+            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
+            "name": "LCPmbaxBgGyJj8VH",
+            "type": "auditbeat",
+            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
+            "version": "7.15.1",
+            "hostname": "LCPmbaxBgGyJj8VH"
+        },
+        "service": {
+            "type": "auditd"
+        },
+        "@timestamp": "2021-11-09T19:02:33.866Z",
+        "related": {
+            "user": [
+                "X9PzJKityWAFaA5i"
+            ],
+            "hash": [
+                "249e78b65ea6378a41037766bd8b1f01abd1a371"
+            ],
+            "hosts": [
+                "LCPmbaxBgGyJj8VH"
+            ],
+            "ip": [
+                "87.138.107.154"
+            ]
+        },
+        "auditd": {
+            "result": "success",
+            "data": {
+                "unit": "anacron"
+            },
+            "summary": {
+                "how": "/lib/systemd/systemd",
+                "actor": {
+                    "primary": "unset",
+                    "secondary": "X9PzJKityWAFaA5i"
+                },
+                "object": {
+                    "primary": "anacron",
+                    "type": "service"
+                }
+            },
+            "message_type": "service_start",
+            "sequence": 12295
+        },
+        "process": {
+            "pid": 1,
+            "name": "systemd",
+            "executable": "/lib/systemd/systemd"
+        }
+    }
+    	
+	```
+
+
+=== "example2.json"
 
     ```json
 	
     {
         "agent": {
-            "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
+            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
-            "id": "123poi-99zz-4qzds099-qsd-azerty",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "name": "fame",
             "type": "auditbeat",
             "version": "7.13.0"
         },
-        "client": {
-            "bytes": 70,
-            "domain": "malware1.viralstudio.org",
-            "ip": "255.255.255.1",
-            "packets": 1,
-            "port": 58855
+        "auditbeat": {
+            "message": "Process containerd (PID: 1197) by user root is RUNNING"
         },
-        "destination": {
-            "bytes": 123,
-            "ip": "8.8.8.8",
-            "packets": 1,
-            "port": 53
-        },
-        "ecs": {
-            "version": "1.9.0"
+        "auditd": {
+            "user": {
+                "saved": {
+                    "group": {
+                        "id": "0"
+                    },
+                    "id": "0"
+                }
+            }
         },
         "event": {
-            "action": "network_flow",
+            "action": "existing_process",
             "category": [
-                "network",
-                "network_traffic"
+                "process"
             ],
-            "dataset": "socket",
-            "duration": 12345,
-            "end": "2021-01-01T00:01:01.000Z",
-            "kind": "event",
+            "dataset": "process",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "kind": "state",
             "module": "system",
-            "start": "2021-01-01T00:01:01.000Z",
             "type": [
-                "info",
-                "connection"
+                "info"
             ]
-        },
-        "group": {
-            "id": "0",
-            "name": "root"
         },
         "host": {
             "name": "fame"
         },
-        "network": {
-            "bytes": 210,
-            "community_id": "azertyuiopsdfghjklm",
-            "direction": "egress",
-            "packets": 2,
-            "transport": "udp",
-            "type": "ipv4"
-        },
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process containerd (PID: 1197) by user root is RUNNING\",\"user\":{\"group\":{\"name\":\"root\",\"id\":\"0\"},\"effective\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"name\":\"root\",\"id\":\"0\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"args\":[\"containerd\"],\"pid\":1197,\"ppid\":1,\"working_directory\":\"/\",\"entity_id\":\"AZERTYqsdfghjklm\",\"name\":\"containerd\",\"executable\":\"/usr/bin/containerd\",\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"}, \"command_line\": \"/usr/bin/containerd\"}}",
         "process": {
             "args": [
-                "smtp",
-                "-t",
-                "unix",
-                "-u",
-                "-c"
+                "containerd"
             ],
-            "executable": "/usr/lib/postfix/sbin/smtp",
-            "name": "smtp",
-            "pid": 9876543,
-            "command_line": "smtp -t unix -u -c"
+            "entity_id": "AZERTYqsdfghjklm",
+            "executable": "/usr/bin/containerd",
+            "hash": {
+                "sha1": "azertyuiop1234567890"
+            },
+            "name": "containerd",
+            "pid": 1197,
+            "ppid": 1,
+            "start": "2021-01-01T00:01:01.000Z",
+            "working_directory": "/",
+            "command_line": "/usr/bin/containerd"
         },
-        "related": {
-            "ip": [
-                "255.255.255.1",
-                "8.8.8.8"
-            ],
-            "user": [
-                "root"
-            ]
-        },
-        "server": {
-            "bytes": 123,
-            "ip": "8.8.8.8",
-            "packets": 1,
-            "port": 53
+        "sekoiaio": {
+            "intake": {
+                "dialect": "auditbeat",
+                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
+            }
         },
         "service": {
             "type": "system"
         },
-        "source": {
-            "bytes": 70,
-            "domain": "malware1.viralstudio.org",
-            "ip": "255.255.255.1",
-            "packets": 1,
-            "port": 58855
-        },
         "user": {
+            "effective": {
+                "group": {
+                    "id": "0"
+                },
+                "id": "0"
+            },
+            "group": {
+                "id": "0",
+                "name": "root"
+            },
             "id": "0",
             "name": "root"
+        }
+    }
+    	
+	```
+
+
+=== "example6.json"
+
+    ```json
+	
+    {
+        "agent": {
+            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "hostname": "fame",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "name": "fame",
+            "type": "auditbeat",
+            "version": "7.13.0"
+        },
+        "auditbeat": {
+            "message": "Process dbus-daemon (PID: 645) by user messagebus is RUNNING"
+        },
+        "auditd": {
+            "user": {
+                "saved": {
+                    "group": {
+                        "id": "110"
+                    },
+                    "id": "106"
+                }
+            }
+        },
+        "event": {
+            "action": "existing_process",
+            "category": [
+                "process"
+            ],
+            "dataset": "process",
+            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
+            "kind": "state",
+            "module": "system",
+            "type": [
+                "info"
+            ]
+        },
+        "host": {
+            "name": "fame"
+        },
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"user\":{\"group\":{\"name\":\"messagebus\",\"id\":\"110\"},\"effective\":{\"id\":\"106\",\"group\":{\"id\":\"110\"}},\"saved\":{\"group\":{\"id\":\"110\"},\"id\":\"106\"},\"name\":\"messagebus\",\"id\":\"106\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"category\":[\"process\"],\"type\":[\"info\"],\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\"},\"process\":{\"args\":[\"/usr/bin/dbus-daemon\",\"--system\",\"--address=systemd:\",\"--nofork\",\"--nopidfile\",\"--systemd-activation\",\"--syslog-only\"],\"hash\":{\"sha1\":\"azertyuiop1234567890\"},\"entity_id\":\"azertyuiop\",\"working_directory\":\"/\",\"ppid\":1,\"pid\":645,\"start\":\"2021-01-01T00:01:01.000Z\",\"executable\":\"/usr/bin/dbus-daemon\",\"name\":\"dbus-daemon\"},\"message\":\"Process dbus-daemon (PID: 645) by user messagebus is RUNNING\"}",
+        "process": {
+            "args": [
+                "/usr/bin/dbus-daemon",
+                "--system",
+                "--address=systemd:",
+                "--nofork",
+                "--nopidfile",
+                "--systemd-activation",
+                "--syslog-only"
+            ],
+            "entity_id": "azertyuiop",
+            "executable": "/usr/bin/dbus-daemon",
+            "hash": {
+                "sha1": "azertyuiop1234567890"
+            },
+            "name": "dbus-daemon",
+            "pid": 645,
+            "ppid": 1,
+            "start": "2021-01-01T00:01:01.000Z",
+            "working_directory": "/",
+            "command_line": "/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only"
+        },
+        "service": {
+            "type": "system"
+        },
+        "user": {
+            "effective": {
+                "group": {
+                    "id": "110"
+                },
+                "id": "106"
+            },
+            "group": {
+                "id": "110",
+                "name": "messagebus"
+            },
+            "id": "106",
+            "name": "messagebus"
         }
     }
     	
@@ -251,95 +579,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "message_type": "login",
             "sequence": 11578,
             "result": "success"
-        }
-    }
-    	
-	```
-
-
-=== "example3.json"
-
-    ```json
-	
-    {
-        "agent": {
-            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "hostname": "fame",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "name": "fame",
-            "type": "auditbeat",
-            "version": "7.13.0"
-        },
-        "auditbeat": {
-            "message": "Process unattended-upgr (PID: 1195) by user root is RUNNING"
-        },
-        "auditd": {
-            "user": {
-                "saved": {
-                    "group": {
-                        "id": "0"
-                    },
-                    "id": "0"
-                }
-            }
-        },
-        "event": {
-            "action": "existing_process",
-            "category": [
-                "process"
-            ],
-            "dataset": "process",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "kind": "state",
-            "module": "system",
-            "type": [
-                "info"
-            ]
-        },
-        "host": {
-            "name": "fame"
-        },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process unattended-upgr (PID: 1195) by user root is RUNNING\",\"user\":{\"name\":\"root\",\"id\":\"0\",\"group\":{\"id\":\"0\",\"name\":\"root\"},\"effective\":{\"group\":{\"id\":\"0\"},\"id\":\"0\"},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}}},\"service\":{\"type\":\"system\"},\"event\":{\"type\":[\"info\"],\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"]},\"process\":{\"args\":[\"/usr/bin/python3\",\"/usr/share/unattended-upgrades/unattended-upgrade-shutdown\",\"--wait-for-signal\"],\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"},\"name\":\"unattended-upgr\",\"entity_id\":\"rvSkGilnHCy6yuIZ\",\"pid\":1195,\"ppid\":1,\"executable\":\"/usr/bin/python3.8\",\"working_directory\":\"/\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"version\":\"7.13.0\",\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\"}}",
-        "process": {
-            "args": [
-                "/usr/bin/python3",
-                "/usr/share/unattended-upgrades/unattended-upgrade-shutdown",
-                "--wait-for-signal"
-            ],
-            "entity_id": "rvSkGilnHCy6yuIZ",
-            "executable": "/usr/bin/python3.8",
-            "hash": {
-                "sha1": "azertyuiop1234567890"
-            },
-            "name": "unattended-upgr",
-            "pid": 1195,
-            "ppid": 1,
-            "start": "2021-01-01T00:01:01.000Z",
-            "working_directory": "/",
-            "command_line": "/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "auditbeat",
-                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
-            }
-        },
-        "service": {
-            "type": "system"
-        },
-        "user": {
-            "effective": {
-                "group": {
-                    "id": "0"
-                },
-                "id": "0"
-            },
-            "group": {
-                "id": "0",
-                "name": "root"
-            },
-            "id": "0",
-            "name": "root"
         }
     }
     	
@@ -554,130 +793,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "example13.json"
-
-    ```json
-	
-    {
-        "event": {
-            "dialect_uuid": "423c9f61-0282-464d-a2f3-f2d745b59a3b",
-            "id": "c7679ece-e22f-4144-a7f5-619034aa036d",
-            "category": [
-                "process"
-            ],
-            "hash": "249e78b65ea6378a41037766bd8b1f01abd1a371",
-            "outcome": "success",
-            "module": "auditd",
-            "type": [
-                "start"
-            ],
-            "dialect": "auditbeat",
-            "created": "2021-03-12",
-            "kind": "event",
-            "action": "started-service"
-        },
-        "host": {
-            "id": "7dd912136af040e4a6ea4f683010b824",
-            "name": "LCPmbaxBgGyJj8VH",
-            "mac": [
-                "09:d0:5f:99:43:f6"
-            ],
-            "os": {
-                "family": "debian",
-                "name": "Ubuntu",
-                "codename": "bionic",
-                "type": "linux",
-                "version": "18.04.6 LTS (Bionic Beaver)",
-                "kernel": "4.15.0-161-generic",
-                "platform": "ubuntu"
-            },
-            "architecture": "x86_64",
-            "ip": [
-                "87.138.107.154"
-            ],
-            "containerized": false,
-            "hostname": "LCPmbaxBgGyJj8VH"
-        },
-        "user": {
-            "id": "16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e",
-            "name": "X9PzJKityWAFaA5i"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "message": "{\"@timestamp\":\"2021-11-09T19:02:33.866Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"kind\":\"event\",\"type\":[\"start\"],\"module\":\"auditd\",\"category\":[\"process\"],\"action\":\"started-service\",\"outcome\":\"success\"},\"user\":{\"id\":\"16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\",\"name\":\"X9PzJKityWAFaA5i\"},\"process\":{\"pid\":1,\"name\":\"systemd\",\"executable\":\"/lib/systemd/systemd\"},\"auditd\":{\"result\":\"success\",\"data\":{\"unit\":\"anacron\"},\"summary\":{\"how\":\"/lib/systemd/systemd\",\"actor\":{\"primary\":\"unset\",\"secondary\":\"X9PzJKityWAFaA5i\"},\"object\":{\"primary\":\"anacron\",\"type\":\"service\"}},\"message_type\":\"service_start\",\"sequence\":12295},\"service\":{\"type\":\"auditd\"},\"ecs\":{\"version\":\"1.11.16bb03ba-2e90-4c98-a5c8-c3d8b8b52c1e\"},\"host\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"architecture\":\"x86_64\",\"os\":{\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\"},\"name\":\"LCPmbaxBgGyJj8VH\",\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"87.138.107.154\"],\"mac\":[\"09:d0:5f:99:43:f6\"]},\"agent\":{\"hostname\":\"LCPmbaxBgGyJj8VH\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"LCPmbaxBgGyJj8VH\",\"type\":\"auditbeat\",\"version\":\"7.15.1\"}}",
-        "sekoiaio": {
-            "customer": {
-                "id": "c4f66c2f-d5b8-422b-99bb-58861ecf29b2",
-                "community_name": "nPBqXTDSBeAay0G4",
-                "community_uuid": "9074f2a1-49f9-4b01-9fc7-6c826a330a5a"
-            },
-            "entity": {
-                "id": "6jg8OBtPENQkrAFy",
-                "uuid": "3fca9011-7dd8-4a75-a311-9cee8a9daf8a",
-                "name": "pW9vnD1tYtahvz1u"
-            },
-            "intake": {
-                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1",
-                "parsing_status": "success",
-                "dialect": "auditbeat"
-            }
-        },
-        "agent": {
-            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
-            "name": "LCPmbaxBgGyJj8VH",
-            "type": "auditbeat",
-            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
-            "version": "7.15.1",
-            "hostname": "LCPmbaxBgGyJj8VH"
-        },
-        "service": {
-            "type": "auditd"
-        },
-        "@timestamp": "2021-11-09T19:02:33.866Z",
-        "related": {
-            "user": [
-                "X9PzJKityWAFaA5i"
-            ],
-            "hash": [
-                "249e78b65ea6378a41037766bd8b1f01abd1a371"
-            ],
-            "hosts": [
-                "LCPmbaxBgGyJj8VH"
-            ],
-            "ip": [
-                "87.138.107.154"
-            ]
-        },
-        "auditd": {
-            "result": "success",
-            "data": {
-                "unit": "anacron"
-            },
-            "summary": {
-                "how": "/lib/systemd/systemd",
-                "actor": {
-                    "primary": "unset",
-                    "secondary": "X9PzJKityWAFaA5i"
-                },
-                "object": {
-                    "primary": "anacron",
-                    "type": "service"
-                }
-            },
-            "message_type": "service_start",
-            "sequence": 12295
-        },
-        "process": {
-            "pid": 1,
-            "name": "systemd",
-            "executable": "/lib/systemd/systemd"
-        }
-    }
-    	
-	```
-
-
 === "example9.json"
 
     ```json
@@ -806,7 +921,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "example2.json"
+=== "example5.json"
 
     ```json
 	
@@ -819,74 +934,64 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "auditbeat",
             "version": "7.13.0"
         },
-        "auditbeat": {
-            "message": "Process containerd (PID: 1197) by user root is RUNNING"
+        "client": {
+            "address": "127.0.0.1",
+            "bytes": 52,
+            "ip": "127.0.0.1",
+            "packets": 1,
+            "port": 88888
         },
-        "auditd": {
-            "user": {
-                "saved": {
-                    "group": {
-                        "id": "0"
-                    },
-                    "id": "0"
-                }
-            }
+        "destination": {
+            "address": "127.0.0.1",
+            "bytes": 32,
+            "ip": "127.0.0.1",
+            "packets": 1,
+            "port": 11111
         },
         "event": {
-            "action": "existing_process",
+            "action": "network_flow",
             "category": [
-                "process"
+                "network",
+                "network_traffic"
             ],
-            "dataset": "process",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "kind": "state",
+            "dataset": "socket",
+            "duration": 116168,
+            "end": "2021-01-01T00:01:01.000Z",
+            "kind": "event",
             "module": "system",
+            "start": "2021-01-01T00:01:01.000Z",
             "type": [
-                "info"
+                "info",
+                "connection"
             ]
         },
         "host": {
             "name": "fame"
         },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process containerd (PID: 1197) by user root is RUNNING\",\"user\":{\"group\":{\"name\":\"root\",\"id\":\"0\"},\"effective\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}},\"name\":\"root\",\"id\":\"0\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"args\":[\"containerd\"],\"pid\":1197,\"ppid\":1,\"working_directory\":\"/\",\"entity_id\":\"AZERTYqsdfghjklm\",\"name\":\"containerd\",\"executable\":\"/usr/bin/containerd\",\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"}, \"command_line\": \"/usr/bin/containerd\"}}",
-        "process": {
-            "args": [
-                "containerd"
-            ],
-            "entity_id": "AZERTYqsdfghjklm",
-            "executable": "/usr/bin/containerd",
-            "hash": {
-                "sha1": "azertyuiop1234567890"
-            },
-            "name": "containerd",
-            "pid": 1197,
-            "ppid": 1,
-            "start": "2021-01-01T00:01:01.000Z",
-            "working_directory": "/",
-            "command_line": "/usr/bin/containerd"
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"related\":{\"ip\":[\"127.0.0.1\",\"127.0.0.1\"]},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"client\":{\"port\":88888,\"packets\":1,\"bytes\":52,\"ip\":\"127.0.0.1\"},\"system\":{\"audit\":{\"socket\":{\"kernel_sock_address\":\"0xffff8e9955b02300\"}}},\"network\":{\"direction\":\"unknown\",\"type\":\"ipv4\",\"transport\":\"tcp\",\"packets\":2,\"bytes\":84,\"community_id\":\"12345678901234567891234567890\"},\"event\":{\"duration\":116168,\"module\":\"system\",\"kind\":\"event\",\"action\":\"network_flow\",\"type\":[\"info\",\"connection\"],\"dataset\":\"socket\",\"end\":\"2021-01-01T00:01:01.000Z\",\"category\":[\"network\",\"network_traffic\"],\"start\":\"2021-01-01T00:01:01.000Z\"},\"flow\":{\"complete\":false,\"final\":true},\"agent\":{\"version\":\"7.13.0\",\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\"},\"source\":{\"packets\":1,\"bytes\":52,\"ip\":\"127.0.0.1\",\"port\":88888},\"destination\":{\"port\":11111,\"packets\":1,\"bytes\":32,\"ip\":\"127.0.0.1\"},\"server\":{\"ip\":\"127.0.0.1\",\"port\":11111,\"packets\":1,\"bytes\":32}}",
+        "network": {
+            "bytes": 84,
+            "community_id": "12345678901234567891234567890",
+            "direction": "unknown",
+            "packets": 2,
+            "transport": "tcp",
+            "type": "ipv4"
         },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "auditbeat",
-                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
-            }
+        "server": {
+            "bytes": 32,
+            "ip": "127.0.0.1",
+            "packets": 1,
+            "port": 11111
         },
         "service": {
             "type": "system"
         },
-        "user": {
-            "effective": {
-                "group": {
-                    "id": "0"
-                },
-                "id": "0"
-            },
-            "group": {
-                "id": "0",
-                "name": "root"
-            },
-            "id": "0",
-            "name": "root"
+        "source": {
+            "address": "127.0.0.1",
+            "bytes": 52,
+            "ip": "127.0.0.1",
+            "packets": 1,
+            "port": 88888
         }
     }
     	
@@ -979,145 +1084,195 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "example11.json"
+=== "example7.json"
 
     ```json
 	
     {
+        "agent": {
+            "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
+            "hostname": "fame",
+            "id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
+            "name": "fame",
+            "type": "auditbeat",
+            "version": "7.13.0"
+        },
+        "auditbeat": {
+            "message": "Process postgres (PID: 1234) by user postgres is RUNNING"
+        },
+        "auditd": {
+            "user": {
+                "saved": {
+                    "group": {
+                        "id": "121"
+                    },
+                    "id": "114"
+                }
+            }
+        },
         "event": {
+            "action": "existing_process",
             "category": [
-                "file"
+                "process"
             ],
-            "id": "52b3da13-728a-4c7f-8857-ab01774ad49b",
-            "outcome": "success",
-            "module": "auditd",
+            "dataset": "process",
+            "id": "e9c16612-2053-4bc6-86aa-7e04c6114ecc",
+            "kind": "state",
+            "module": "system",
             "type": [
                 "info"
-            ],
-            "dialect": "auditbeat",
-            "action": "violated-seccomp-policy",
-            "hash": "2ca4c1dee00078e88b47ffdc1a0584a43e0fbbb1",
-            "kind": "event",
-            "created": "2021-04-06",
-            "dialect_uuid": "138080ec-6961-43fd-97c2-99ef95a9a1ed"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "host": {
-            "mac": [
-                "0c:5d:c0:dc:1f:3f"
-            ],
-            "id": "7dd912136af040e4a6ea4f683010b824",
-            "name": "xps-UWWL21LVdEVmqrbT",
-            "architecture": "x86_64",
-            "containerized": false,
-            "os": {
-                "type": "linux",
-                "family": "debian",
-                "name": "Ubuntu",
-                "version": "18.04.6 LTS (Bionic Beaver)",
-                "kernel": "4.15.0-161-generic",
-                "codename": "bionic",
-                "platform": "ubuntu"
-            },
-            "ip": [
-                "43.161.42.208"
-            ],
-            "hostname": "xps-UWWL21LVdEVmqrbT"
-        },
-        "message": "{\"@timestamp\":\"2021-11-09T19:07:37.325Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"event\":{\"outcome\":\"unknown\",\"kind\":\"event\",\"type\":[\"info\"],\"module\":\"auditd\",\"category\":[\"file\"],\"action\":\"violated-seccomp-policy\"},\"user\":{\"id\":\"56d2c11c-9371-4617-bac3-2c18e86042c6\",\"audit\":{\"id\":\"56d2c11c-9371-4617-bac3-2c18e86042c6\",\"name\":\"UWWL21LVdEVmqrbT\"},\"group\":{\"id\":\"56d2c11c-9371-4617-bac3-2c18e86042c6\",\"name\":\"UWWL21LVdEVmqrbT\"},\"name\":\"UWWL21LVdEVmqrbT\"},\"process\":{\"name\":\"ThreadPoolSingl\",\"executable\":\"/opt/google/chrome/chrome\",\"pid\":2720},\"host\":{\"mac\":[\"0c:5d:c0:dc:1f:3f\"],\"hostname\":\"xps-UWWL21LVdEVmqrbT\",\"architecture\":\"x86_64\",\"os\":{\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\",\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\"},\"id\":\"7dd912136af040e4a6ea4f683010b824\",\"containerized\":false,\"ip\":[\"43.161.42.208\"],\"name\":\"xps-UWWL21LVdEVmqrbT\"},\"agent\":{\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"xps-UWWL21LVdEVmqrbT\",\"type\":\"auditbeat\",\"version\":\"7.15.1\",\"hostname\":\"xps-UWWL21LVdEVmqrbT\",\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\"},\"ecs\":{\"version\":\"1.11.0\"},\"auditd\":{\"session\":\"2\",\"summary\":{\"how\":\"/opt/google/chrome/chrome\",\"actor\":{\"primary\":\"UWWL21LVdEVmqrbT\",\"secondary\":\"UWWL21LVdEVmqrbT\"},\"object\":{\"primary\":\"stat\",\"type\":\"process\"}},\"message_type\":\"seccomp\",\"sequence\":12522,\"result\":\"unknown\",\"data\":{\"code\":\"0x50000\",\"syscall\":\"stat\",\"compat\":\"0\",\"ip\":\"0x7fe0a0df1845\",\"arch\":\"x86_64\",\"sig\":\"0\"}},\"service\":{\"type\":\"auditd\"}}",
-        "sekoiaio": {
-            "entity": {
-                "id": "XvCY1OAD5kpZ4aMT",
-                "name": "ijcI4rUMLB7FQJUl",
-                "uuid": "bee1bd11-f55d-4d9c-a6b2-cd083ef6eb30"
-            },
-            "customer": {
-                "community_name": "IaK78sRooYQr06mu",
-                "id": "e8cf9595-d9fd-49d6-814d-a36976e997a9",
-                "community_uuid": "4d2ae6d8-87a6-41a9-a9cf-6f6cdb667edc"
-            },
-            "intake": {
-                "dialect": "auditbeat",
-                "parsing_status": "success",
-                "dialect_uuid": "021e9def-5a55-4369-941e-af269b45bef1"
-            }
-        },
-        "agent": {
-            "type": "auditbeat",
-            "id": "e9872892-b999-4ad5-83da-d6ec9dbc1f81",
-            "name": "xps-UWWL21LVdEVmqrbT",
-            "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a",
-            "version": "7.15.1",
-            "hostname": "xps-UWWL21LVdEVmqrbT"
-        },
-        "related": {
-            "hosts": [
-                "xps-UWWL21LVdEVmqrbT"
-            ],
-            "ip": [
-                "43.161.42.208"
-            ],
-            "user": [
-                "UWWL21LVdEVmqrbT"
-            ],
-            "hash": [
-                "2ca4c1dee00078e88b47ffdc1a0584a43e0fbbb1"
             ]
         },
-        "user": {
-            "id": "56d2c11c-9371-4617-bac3-2c18e86042c6",
-            "name": "UWWL21LVdEVmqrbT",
-            "audit": {
-                "id": "56d2c11c-9371-4617-bac3-2c18e86042c6",
-                "name": "UWWL21LVdEVmqrbT"
-            },
-            "group": {
-                "id": "56d2c11c-9371-4617-bac3-2c18e86042c6",
-                "name": "UWWL21LVdEVmqrbT"
-            }
+        "host": {
+            "name": "fame"
         },
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"e9c16612-2053-4bc6-86aa-7e04c6114ecc\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"executable\":\"/usr/lib/postgresql/9.5/bin/postgres\",\"entity_id\":\"1234zertyui\",\"ppid\":1231,\"start\":\"2021-01-01T00:01:01.000Z\",\"name\":\"postgres\",\"pid\":1234,\"working_directory\":\"/var/lib/postgresql/9.5/main\",\"hash\":{\"sha1\":\"12345678901234567891234567890\"},\"args\":[\"postgres: wal writer process   \"]},\"host\":{\"name\":\"fame\"},\"agent\":{\"ephemeral_id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\",\"hostname\":\"fame\"},\"ecs\":{\"version\":\"1.9.0\"},\"message\":\"Process postgres (PID: 1234) by user postgres is RUNNING\",\"user\":{\"effective\":{\"group\":{\"id\":\"121\"},\"id\":\"114\"},\"saved\":{\"id\":\"114\",\"group\":{\"id\":\"121\"}},\"name\":\"postgres\",\"id\":\"114\",\"group\":{\"id\":\"121\",\"name\":\"postgres\"}}}",
         "process": {
-            "pid": 2720,
-            "executable": "/opt/google/chrome/chrome",
-            "name": "ThreadPoolSingl"
-        },
-        "@timestamp": "2021-11-09T19:07:40.601Z",
-        "auditd": {
-            "session": "2",
-            "summary": {
-                "how": "/opt/google/chrome/chrome",
-                "actor": {
-                    "primary": "UWWL21LVdEVmqrbT",
-                    "secondary": "UWWL21LVdEVmqrbT"
-                },
-                "object": {
-                    "primary": "stat",
-                    "type": "process"
-                }
+            "args": [
+                "postgres: wal writer process   "
+            ],
+            "entity_id": "1234zertyui",
+            "executable": "/usr/lib/postgresql/9.5/bin/postgres",
+            "hash": {
+                "sha1": "12345678901234567891234567890"
             },
-            "message_type": "seccomp",
-            "sequence": 12522,
-            "result": "unknown",
-            "data": {
-                "code": "0x50000",
-                "syscall": "stat",
-                "compat": "0",
-                "ip": "0x7fe0a0df1845",
-                "arch": "x86_64",
-                "sig": "0"
-            }
+            "name": "postgres",
+            "pid": 1234,
+            "ppid": 1231,
+            "start": "2021-01-01T00:01:01.000Z",
+            "working_directory": "/var/lib/postgresql/9.5/main"
         },
         "service": {
-            "type": "auditd"
+            "type": "system"
+        },
+        "user": {
+            "effective": {
+                "group": {
+                    "id": "121"
+                },
+                "id": "114"
+            },
+            "group": {
+                "id": "121",
+                "name": "postgres"
+            },
+            "id": "114",
+            "name": "postgres"
         }
     }
     	
 	```
 
 
-=== "example6.json"
+=== "example8.json"
+
+    ```json
+	
+    {
+        "agent": {
+            "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
+            "hostname": "fame",
+            "id": "123poi-99zz-4qzds099-qsd-azerty",
+            "name": "fame",
+            "type": "auditbeat",
+            "version": "7.13.0"
+        },
+        "client": {
+            "bytes": 70,
+            "domain": "malware1.viralstudio.org",
+            "ip": "255.255.255.1",
+            "packets": 1,
+            "port": 58855
+        },
+        "destination": {
+            "bytes": 123,
+            "ip": "8.8.8.8",
+            "packets": 1,
+            "port": 53
+        },
+        "ecs": {
+            "version": "1.9.0"
+        },
+        "event": {
+            "action": "network_flow",
+            "category": [
+                "network",
+                "network_traffic"
+            ],
+            "dataset": "socket",
+            "duration": 12345,
+            "end": "2021-01-01T00:01:01.000Z",
+            "kind": "event",
+            "module": "system",
+            "start": "2021-01-01T00:01:01.000Z",
+            "type": [
+                "info",
+                "connection"
+            ]
+        },
+        "group": {
+            "id": "0",
+            "name": "root"
+        },
+        "host": {
+            "name": "fame"
+        },
+        "network": {
+            "bytes": 210,
+            "community_id": "azertyuiopsdfghjklm",
+            "direction": "egress",
+            "packets": 2,
+            "transport": "udp",
+            "type": "ipv4"
+        },
+        "process": {
+            "args": [
+                "smtp",
+                "-t",
+                "unix",
+                "-u",
+                "-c"
+            ],
+            "executable": "/usr/lib/postfix/sbin/smtp",
+            "name": "smtp",
+            "pid": 9876543,
+            "command_line": "smtp -t unix -u -c"
+        },
+        "related": {
+            "ip": [
+                "255.255.255.1",
+                "8.8.8.8"
+            ],
+            "user": [
+                "root"
+            ]
+        },
+        "server": {
+            "bytes": 123,
+            "ip": "8.8.8.8",
+            "packets": 1,
+            "port": 53
+        },
+        "service": {
+            "type": "system"
+        },
+        "source": {
+            "bytes": 70,
+            "domain": "malware1.viralstudio.org",
+            "ip": "255.255.255.1",
+            "packets": 1,
+            "port": 58855
+        },
+        "user": {
+            "id": "0",
+            "name": "root"
+        }
+    }
+    	
+	```
+
+
+=== "example3.json"
 
     ```json
 	
@@ -1131,15 +1286,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "7.13.0"
         },
         "auditbeat": {
-            "message": "Process dbus-daemon (PID: 645) by user messagebus is RUNNING"
+            "message": "Process unattended-upgr (PID: 1195) by user root is RUNNING"
         },
         "auditd": {
             "user": {
                 "saved": {
                     "group": {
-                        "id": "110"
+                        "id": "0"
                     },
-                    "id": "106"
+                    "id": "0"
                 }
             }
         },
@@ -1159,28 +1314,30 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "name": "fame"
         },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"user\":{\"group\":{\"name\":\"messagebus\",\"id\":\"110\"},\"effective\":{\"id\":\"106\",\"group\":{\"id\":\"110\"}},\"saved\":{\"group\":{\"id\":\"110\"},\"id\":\"106\"},\"name\":\"messagebus\",\"id\":\"106\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"category\":[\"process\"],\"type\":[\"info\"],\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\"},\"process\":{\"args\":[\"/usr/bin/dbus-daemon\",\"--system\",\"--address=systemd:\",\"--nofork\",\"--nopidfile\",\"--systemd-activation\",\"--syslog-only\"],\"hash\":{\"sha1\":\"azertyuiop1234567890\"},\"entity_id\":\"azertyuiop\",\"working_directory\":\"/\",\"ppid\":1,\"pid\":645,\"start\":\"2021-01-01T00:01:01.000Z\",\"executable\":\"/usr/bin/dbus-daemon\",\"name\":\"dbus-daemon\"},\"message\":\"Process dbus-daemon (PID: 645) by user messagebus is RUNNING\"}",
+        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"message\":\"Process unattended-upgr (PID: 1195) by user root is RUNNING\",\"user\":{\"name\":\"root\",\"id\":\"0\",\"group\":{\"id\":\"0\",\"name\":\"root\"},\"effective\":{\"group\":{\"id\":\"0\"},\"id\":\"0\"},\"saved\":{\"id\":\"0\",\"group\":{\"id\":\"0\"}}},\"service\":{\"type\":\"system\"},\"event\":{\"type\":[\"info\"],\"action\":\"existing_process\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"]},\"process\":{\"args\":[\"/usr/bin/python3\",\"/usr/share/unattended-upgrades/unattended-upgrade-shutdown\",\"--wait-for-signal\"],\"start\":\"2021-01-01T00:01:01.000Z\",\"hash\":{\"sha1\":\"azertyuiop1234567890\"},\"name\":\"unattended-upgr\",\"entity_id\":\"rvSkGilnHCy6yuIZ\",\"pid\":1195,\"ppid\":1,\"executable\":\"/usr/bin/python3.8\",\"working_directory\":\"/\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"agent\":{\"version\":\"7.13.0\",\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\"}}",
         "process": {
             "args": [
-                "/usr/bin/dbus-daemon",
-                "--system",
-                "--address=systemd:",
-                "--nofork",
-                "--nopidfile",
-                "--systemd-activation",
-                "--syslog-only"
+                "/usr/bin/python3",
+                "/usr/share/unattended-upgrades/unattended-upgrade-shutdown",
+                "--wait-for-signal"
             ],
-            "entity_id": "azertyuiop",
-            "executable": "/usr/bin/dbus-daemon",
+            "entity_id": "rvSkGilnHCy6yuIZ",
+            "executable": "/usr/bin/python3.8",
             "hash": {
                 "sha1": "azertyuiop1234567890"
             },
-            "name": "dbus-daemon",
-            "pid": 645,
+            "name": "unattended-upgr",
+            "pid": 1195,
             "ppid": 1,
             "start": "2021-01-01T00:01:01.000Z",
             "working_directory": "/",
-            "command_line": "/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only"
+            "command_line": "/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal"
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "auditbeat",
+                "dialect_uuid": "12345678-azer-1234-a1z2-12qsdfghjklm"
+            }
         },
         "service": {
             "type": "system"
@@ -1188,16 +1345,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "effective": {
                 "group": {
-                    "id": "110"
+                    "id": "0"
                 },
-                "id": "106"
+                "id": "0"
             },
             "group": {
-                "id": "110",
-                "name": "messagebus"
+                "id": "0",
+                "name": "root"
             },
-            "id": "106",
-            "name": "messagebus"
+            "id": "0",
+            "name": "root"
         }
     }
     	
@@ -1258,163 +1415,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "postgres",
             "pid": 207706,
-            "ppid": 1231,
-            "start": "2021-01-01T00:01:01.000Z",
-            "working_directory": "/var/lib/postgresql/9.5/main"
-        },
-        "service": {
-            "type": "system"
-        },
-        "user": {
-            "effective": {
-                "group": {
-                    "id": "121"
-                },
-                "id": "114"
-            },
-            "group": {
-                "id": "121",
-                "name": "postgres"
-            },
-            "id": "114",
-            "name": "postgres"
-        }
-    }
-    	
-	```
-
-
-=== "example5.json"
-
-    ```json
-	
-    {
-        "agent": {
-            "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "hostname": "fame",
-            "id": "12345678-azer-1234-a1z2-12qsdfghjklm",
-            "name": "fame",
-            "type": "auditbeat",
-            "version": "7.13.0"
-        },
-        "client": {
-            "address": "127.0.0.1",
-            "bytes": 52,
-            "ip": "127.0.0.1",
-            "packets": 1,
-            "port": 88888
-        },
-        "destination": {
-            "address": "127.0.0.1",
-            "bytes": 32,
-            "ip": "127.0.0.1",
-            "packets": 1,
-            "port": 11111
-        },
-        "event": {
-            "action": "network_flow",
-            "category": [
-                "network",
-                "network_traffic"
-            ],
-            "dataset": "socket",
-            "duration": 116168,
-            "end": "2021-01-01T00:01:01.000Z",
-            "kind": "event",
-            "module": "system",
-            "start": "2021-01-01T00:01:01.000Z",
-            "type": [
-                "info",
-                "connection"
-            ]
-        },
-        "host": {
-            "name": "fame"
-        },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"related\":{\"ip\":[\"127.0.0.1\",\"127.0.0.1\"]},\"service\":{\"type\":\"system\"},\"ecs\":{\"version\":\"1.9.0\"},\"host\":{\"name\":\"fame\"},\"client\":{\"port\":88888,\"packets\":1,\"bytes\":52,\"ip\":\"127.0.0.1\"},\"system\":{\"audit\":{\"socket\":{\"kernel_sock_address\":\"0xffff8e9955b02300\"}}},\"network\":{\"direction\":\"unknown\",\"type\":\"ipv4\",\"transport\":\"tcp\",\"packets\":2,\"bytes\":84,\"community_id\":\"12345678901234567891234567890\"},\"event\":{\"duration\":116168,\"module\":\"system\",\"kind\":\"event\",\"action\":\"network_flow\",\"type\":[\"info\",\"connection\"],\"dataset\":\"socket\",\"end\":\"2021-01-01T00:01:01.000Z\",\"category\":[\"network\",\"network_traffic\"],\"start\":\"2021-01-01T00:01:01.000Z\"},\"flow\":{\"complete\":false,\"final\":true},\"agent\":{\"version\":\"7.13.0\",\"hostname\":\"fame\",\"ephemeral_id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"id\":\"12345678-azer-1234-a1z2-12qsdfghjklm\",\"name\":\"fame\",\"type\":\"auditbeat\"},\"source\":{\"packets\":1,\"bytes\":52,\"ip\":\"127.0.0.1\",\"port\":88888},\"destination\":{\"port\":11111,\"packets\":1,\"bytes\":32,\"ip\":\"127.0.0.1\"},\"server\":{\"ip\":\"127.0.0.1\",\"port\":11111,\"packets\":1,\"bytes\":32}}",
-        "network": {
-            "bytes": 84,
-            "community_id": "12345678901234567891234567890",
-            "direction": "unknown",
-            "packets": 2,
-            "transport": "tcp",
-            "type": "ipv4"
-        },
-        "server": {
-            "bytes": 32,
-            "ip": "127.0.0.1",
-            "packets": 1,
-            "port": 11111
-        },
-        "service": {
-            "type": "system"
-        },
-        "source": {
-            "address": "127.0.0.1",
-            "bytes": 52,
-            "ip": "127.0.0.1",
-            "packets": 1,
-            "port": 88888
-        }
-    }
-    	
-	```
-
-
-=== "example7.json"
-
-    ```json
-	
-    {
-        "agent": {
-            "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
-            "hostname": "fame",
-            "id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
-            "name": "fame",
-            "type": "auditbeat",
-            "version": "7.13.0"
-        },
-        "auditbeat": {
-            "message": "Process postgres (PID: 1234) by user postgres is RUNNING"
-        },
-        "auditd": {
-            "user": {
-                "saved": {
-                    "group": {
-                        "id": "121"
-                    },
-                    "id": "114"
-                }
-            }
-        },
-        "event": {
-            "action": "existing_process",
-            "category": [
-                "process"
-            ],
-            "dataset": "process",
-            "id": "e9c16612-2053-4bc6-86aa-7e04c6114ecc",
-            "kind": "state",
-            "module": "system",
-            "type": [
-                "info"
-            ]
-        },
-        "host": {
-            "name": "fame"
-        },
-        "message": "{\"@timestamp\":\"2021-01-01T00:01:01.000Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.13.0\"},\"service\":{\"type\":\"system\"},\"event\":{\"action\":\"existing_process\",\"id\":\"e9c16612-2053-4bc6-86aa-7e04c6114ecc\",\"module\":\"system\",\"dataset\":\"process\",\"kind\":\"state\",\"category\":[\"process\"],\"type\":[\"info\"]},\"process\":{\"executable\":\"/usr/lib/postgresql/9.5/bin/postgres\",\"entity_id\":\"1234zertyui\",\"ppid\":1231,\"start\":\"2021-01-01T00:01:01.000Z\",\"name\":\"postgres\",\"pid\":1234,\"working_directory\":\"/var/lib/postgresql/9.5/main\",\"hash\":{\"sha1\":\"12345678901234567891234567890\"},\"args\":[\"postgres: wal writer process   \"]},\"host\":{\"name\":\"fame\"},\"agent\":{\"ephemeral_id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"id\":\"0101010-abcd-1234-a1b2c3d4e5f6g7h8\",\"name\":\"fame\",\"type\":\"auditbeat\",\"version\":\"7.13.0\",\"hostname\":\"fame\"},\"ecs\":{\"version\":\"1.9.0\"},\"message\":\"Process postgres (PID: 1234) by user postgres is RUNNING\",\"user\":{\"effective\":{\"group\":{\"id\":\"121\"},\"id\":\"114\"},\"saved\":{\"id\":\"114\",\"group\":{\"id\":\"121\"}},\"name\":\"postgres\",\"id\":\"114\",\"group\":{\"id\":\"121\",\"name\":\"postgres\"}}}",
-        "process": {
-            "args": [
-                "postgres: wal writer process   "
-            ],
-            "entity_id": "1234zertyui",
-            "executable": "/usr/lib/postgresql/9.5/bin/postgres",
-            "hash": {
-                "sha1": "12345678901234567891234567890"
-            },
-            "name": "postgres",
-            "pid": 1234,
             "ppid": 1231,
             "start": "2021-01-01T00:01:01.000Z",
             "working_directory": "/var/lib/postgresql/9.5/main"
