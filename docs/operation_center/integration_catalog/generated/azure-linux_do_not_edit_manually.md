@@ -22,6 +22,42 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "auth_conversation_failed.json"
+
+    ```json
+	
+    {
+        "@timestamp": "2019-07-02T13:45:50.0000000Z",
+        "event": {
+            "outcome": "success"
+        },
+        "azure_linux": {
+            "message": "pam_unix(sudo:auth): conversation failed"
+        },
+        "log": {
+            "hostname": "LinuxRedhatDesktop",
+            "level": "error"
+        },
+        "message": "{ \"time\" : \"2019-07-02T13:45:50.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"err\",\"EventTime\" : \"2019-07-02T13:45:50+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:auth): conversation failed\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:45:50Z\"},\"category\" : \"authpriv\",\"level\" : \"err\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "os": {
+            "family": "linux",
+            "platform": "linux"
+        },
+        "action": {
+            "name": "sudo:auth",
+            "type": "open",
+            "outcome": "failure"
+        },
+        "sekoiaio": {
+            "intake": {
+                "parsing_status": "success"
+            }
+        }
+    }
+    	
+	```
+
+
 === "auth_no_identity.json"
 
     ```json
@@ -54,94 +90,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "user": [
                 "omsagent"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        }
-    }
-    	
-	```
-
-
-=== "disconnected.json"
-
-    ```json
-	
-    {
-        "@timestamp": "2019-06-27T14:50:51.0000000Z",
-        "event": {
-            "outcome": "success"
-        },
-        "azure_linux": {
-            "message": "Received disconnect from 185.122.161.248 port 39070:11: disconnected by user"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:50:51.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sshd\",\"pid\" : \"14020\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:50:51+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"Received disconnect from 185.122.161.248 port 39070:11: disconnected by user\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:50:51Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "source": {
-            "ip": "185.122.161.248",
-            "address": "185.122.161.248",
-            "port": 39070
-        },
-        "process": {
-            "pid": 14020
-        },
-        "os": {
-            "family": "linux",
-            "platform": "linux"
-        },
-        "related": {
-            "ip": [
-                "185.122.161.248"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        }
-    }
-    	
-	```
-
-
-=== "session_opened.json"
-
-    ```json
-	
-    {
-        "@timestamp": "2019-06-27T14:48:28.0000000Z",
-        "event": {
-            "outcome": "success"
-        },
-        "azure_linux": {
-            "message": "pam_unix(sudo:session): session opened for user root by (uid=0)"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session opened for user root by (uid=0)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "root"
-        },
-        "os": {
-            "family": "linux",
-            "platform": "linux"
-        },
-        "action": {
-            "name": "sudo:session",
-            "type": "open",
-            "outcome": "success"
-        },
-        "related": {
-            "user": [
-                "root"
             ]
         },
         "sekoiaio": {
@@ -245,34 +193,81 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "session_closed.json"
+=== "disconnected.json"
 
     ```json
 	
     {
-        "@timestamp": "2019-06-27T14:48:28.0000000Z",
+        "@timestamp": "2019-06-27T14:50:51.0000000Z",
         "event": {
             "outcome": "success"
         },
         "azure_linux": {
-            "message": "pam_unix(sudo:session): session closed for user root"
+            "message": "Received disconnect from 185.122.161.248 port 39070:11: disconnected by user"
         },
         "log": {
             "hostname": "LinuxRedhatDesktop",
             "level": "info"
         },
-        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session closed for user root\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "root"
+        "message": "{ \"time\" : \"2019-06-27T14:50:51.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sshd\",\"pid\" : \"14020\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:50:51+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"Received disconnect from 185.122.161.248 port 39070:11: disconnected by user\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:50:51Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "source": {
+            "ip": "185.122.161.248",
+            "address": "185.122.161.248",
+            "port": 39070
+        },
+        "process": {
+            "pid": 14020
         },
         "os": {
             "family": "linux",
             "platform": "linux"
         },
+        "related": {
+            "ip": [
+                "185.122.161.248"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "parsing_status": "success"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "omsagent_command.json"
+
+    ```json
+	
+    {
+        "@timestamp": "2019-06-27T14:48:18.0000000Z",
         "action": {
-            "name": "sudo:session",
-            "type": "close",
             "outcome": "success"
+        },
+        "event": {
+            "outcome": "success"
+        },
+        "azure_linux": {
+            "message": "omsagent : TTY=unknown ; PWD=/opt/microsoft/omsconfig/Scripts/2.6x-2.7x ; USER=root ; COMMAND=/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh"
+        },
+        "log": {
+            "hostname": "LinuxRedhatDesktop",
+            "level": "info"
+        },
+        "message": "{ \"time\" : \"2019-06-27T14:48:18.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"notice\",\"EventTime\" : \"2019-06-27T14:48:18+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"omsagent : TTY=unknown ; PWD=/opt/microsoft/omsconfig/Scripts/2.6x-2.7x ; USER=root ; COMMAND=/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:18Z\"},\"category\" : \"authpriv\",\"level\" : \"notice\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "user": {
+            "name": "root"
+        },
+        "process": {
+            "executable": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh",
+            "working_directory": "/opt/microsoft/omsconfig/Scripts/2.6x-2.7x",
+            "command_line": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh"
+        },
+        "os": {
+            "family": "linux",
+            "platform": "linux"
         },
         "related": {
             "user": [
@@ -336,6 +331,94 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "session_closed.json"
+
+    ```json
+	
+    {
+        "@timestamp": "2019-06-27T14:48:28.0000000Z",
+        "event": {
+            "outcome": "success"
+        },
+        "azure_linux": {
+            "message": "pam_unix(sudo:session): session closed for user root"
+        },
+        "log": {
+            "hostname": "LinuxRedhatDesktop",
+            "level": "info"
+        },
+        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session closed for user root\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "user": {
+            "name": "root"
+        },
+        "os": {
+            "family": "linux",
+            "platform": "linux"
+        },
+        "action": {
+            "name": "sudo:session",
+            "type": "close",
+            "outcome": "success"
+        },
+        "related": {
+            "user": [
+                "root"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "parsing_status": "success"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "session_opened.json"
+
+    ```json
+	
+    {
+        "@timestamp": "2019-06-27T14:48:28.0000000Z",
+        "event": {
+            "outcome": "success"
+        },
+        "azure_linux": {
+            "message": "pam_unix(sudo:session): session opened for user root by (uid=0)"
+        },
+        "log": {
+            "hostname": "LinuxRedhatDesktop",
+            "level": "info"
+        },
+        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session opened for user root by (uid=0)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "user": {
+            "name": "root"
+        },
+        "os": {
+            "family": "linux",
+            "platform": "linux"
+        },
+        "action": {
+            "name": "sudo:session",
+            "type": "open",
+            "outcome": "success"
+        },
+        "related": {
+            "user": [
+                "root"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "parsing_status": "success"
+            }
+        }
+    }
+    	
+	```
+
+
 === "systemd_session.json"
 
     ```json
@@ -368,89 +451,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "user": [
                 "omsagent"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        }
-    }
-    	
-	```
-
-
-=== "auth_conversation_failed.json"
-
-    ```json
-	
-    {
-        "@timestamp": "2019-07-02T13:45:50.0000000Z",
-        "event": {
-            "outcome": "success"
-        },
-        "azure_linux": {
-            "message": "pam_unix(sudo:auth): conversation failed"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "error"
-        },
-        "message": "{ \"time\" : \"2019-07-02T13:45:50.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"err\",\"EventTime\" : \"2019-07-02T13:45:50+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:auth): conversation failed\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:45:50Z\"},\"category\" : \"authpriv\",\"level\" : \"err\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "os": {
-            "family": "linux",
-            "platform": "linux"
-        },
-        "action": {
-            "name": "sudo:auth",
-            "type": "open",
-            "outcome": "failure"
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        }
-    }
-    	
-	```
-
-
-=== "omsagent_command.json"
-
-    ```json
-	
-    {
-        "@timestamp": "2019-06-27T14:48:18.0000000Z",
-        "action": {
-            "outcome": "success"
-        },
-        "event": {
-            "outcome": "success"
-        },
-        "azure_linux": {
-            "message": "omsagent : TTY=unknown ; PWD=/opt/microsoft/omsconfig/Scripts/2.6x-2.7x ; USER=root ; COMMAND=/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:48:18.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"notice\",\"EventTime\" : \"2019-06-27T14:48:18+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"omsagent : TTY=unknown ; PWD=/opt/microsoft/omsconfig/Scripts/2.6x-2.7x ; USER=root ; COMMAND=/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:18Z\"},\"category\" : \"authpriv\",\"level\" : \"notice\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "root"
-        },
-        "process": {
-            "executable": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh",
-            "working_directory": "/opt/microsoft/omsconfig/Scripts/2.6x-2.7x",
-            "command_line": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh"
-        },
-        "os": {
-            "family": "linux",
-            "platform": "linux"
-        },
-        "related": {
-            "user": [
-                "root"
             ]
         },
         "sekoiaio": {

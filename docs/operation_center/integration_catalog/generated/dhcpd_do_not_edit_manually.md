@@ -28,30 +28,6 @@ In details, the following Table denotes the type of events produced by this inte
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
-=== "release.json"
-
-    ```json
-	
-    {
-        "event": {
-            "outcome": "success",
-            "category": "network",
-            "kind": "event",
-            "type": "connection"
-        },
-        "dhcpd": {
-            "query": "release"
-        },
-        "source": {
-            "ip": "10.17.81.182",
-            "mac": "00:08:5d:71:92:15",
-            "domain": "6867i00085D719105"
-        }
-    }
-    	
-	```
-
-
 === "ack.json"
 
     ```json
@@ -80,6 +56,55 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "discover.json"
+
+    ```json
+	
+    {
+        "event": {
+            "outcome": "success",
+            "category": "network",
+            "kind": "event",
+            "type": "connection"
+        },
+        "dhcpd": {
+            "query": "discover"
+        },
+        "destination": {
+            "ip": "192.168.102.7"
+        },
+        "source": {
+            "mac": "ac:cc:8e:b0:2b:8c"
+        }
+    }
+    	
+	```
+
+
+=== "release.json"
+
+    ```json
+	
+    {
+        "event": {
+            "outcome": "success",
+            "category": "network",
+            "kind": "event",
+            "type": "connection"
+        },
+        "dhcpd": {
+            "query": "release"
+        },
+        "source": {
+            "ip": "10.17.81.182",
+            "mac": "00:08:5d:71:92:15",
+            "domain": "6867i00085D719105"
+        }
+    }
+    	
+	```
+
+
 === "request.json"
 
     ```json
@@ -101,31 +126,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "destination": {
             "ip": "10.100.100.4"
-        }
-    }
-    	
-	```
-
-
-=== "discover.json"
-
-    ```json
-	
-    {
-        "event": {
-            "outcome": "success",
-            "category": "network",
-            "kind": "event",
-            "type": "connection"
-        },
-        "dhcpd": {
-            "query": "discover"
-        },
-        "destination": {
-            "ip": "192.168.102.7"
-        },
-        "source": {
-            "mac": "ac:cc:8e:b0:2b:8c"
         }
     }
     	
