@@ -30,6 +30,81 @@ In details, the following Table denotes the type of events produced by this inte
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "mcafee_access_log_blocked.json"
+
+    ```json
+	
+    {
+        "sekoiaio": {
+            "intake": {
+                "dialect": "mcafee-web-gateway",
+                "dialect_uuid": "40bac399-2d8e-40e3-af3b-f73a622c9687",
+                "parsing_status": "success"
+            }
+        },
+        "message": "date=\"2022-03-11T10:39:16.390Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.41 destination_host=\"www.forbiddensite.com\" http_status_code=403 media_type=\"\" source_bytes=131 destination_bytes=0 http_request_first_line=\"GET http://www.forbiddensite.com/ HTTP/1.1\" url_categories=\"Pornography\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-28 ruleset_name=\"Default\" rule_name=\"Block URLs Whose Category Is in Category Blocklist for Default Groups\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"forbiddenapp\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
+        "source": {
+            "ip": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "2.2.2.41"
+        },
+        "event": {
+            "action": "denied",
+            "start": "2022-03-11T10:39:16.390Z",
+            "code": "10",
+            "reason": "Blocked by URL filtering",
+            "category": "network"
+        },
+        "url": {
+            "original": "http://www.forbiddensite.com/"
+        },
+        "user_agent": {
+            "original": "curl/7.77.0"
+        },
+        "observer": {
+            "hostname": "mwgproxy"
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "bytes": 131
+            },
+            "response": {
+                "bytes": 0,
+                "status_code": 403
+            }
+        },
+        "rule": {
+            "ruleset": "Default",
+            "name": "Block URLs Whose Category Is in Category Blocklist for Default Groups"
+        },
+        "mcafee": {
+            "webgateway": {
+                "url": {
+                    "reputation": "Minimal Risk",
+                    "reputation_code": -28,
+                    "categories": [
+                        "Pornography"
+                    ]
+                },
+                "application": {
+                    "reputation": "Unverified",
+                    "name": "forbiddenapp"
+                },
+                "http": {
+                    "body": {
+                        "infected": "false",
+                        "modified": "false"
+                    }
+                }
+            }
+        }
+    }
+    	
+	```
+
+
 === "mcafee_access_log_success.json"
 
     ```json
@@ -92,81 +167,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 },
                 "application": {
                     "reputation": "Unverified"
-                },
-                "http": {
-                    "body": {
-                        "infected": "false",
-                        "modified": "false"
-                    }
-                }
-            }
-        }
-    }
-    	
-	```
-
-
-=== "mcafee_access_log_blocked.json"
-
-    ```json
-	
-    {
-        "sekoiaio": {
-            "intake": {
-                "dialect": "mcafee-web-gateway",
-                "dialect_uuid": "40bac399-2d8e-40e3-af3b-f73a622c9687",
-                "parsing_status": "success"
-            }
-        },
-        "message": "date=\"2022-03-11T10:39:16.390Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.41 destination_host=\"www.forbiddensite.com\" http_status_code=403 media_type=\"\" source_bytes=131 destination_bytes=0 http_request_first_line=\"GET http://www.forbiddensite.com/ HTTP/1.1\" url_categories=\"Pornography\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-28 ruleset_name=\"Default\" rule_name=\"Block URLs Whose Category Is in Category Blocklist for Default Groups\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"forbiddenapp\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
-        "source": {
-            "ip": "1.2.3.4"
-        },
-        "destination": {
-            "ip": "2.2.2.41"
-        },
-        "event": {
-            "action": "denied",
-            "start": "2022-03-11T10:39:16.390Z",
-            "code": "10",
-            "reason": "Blocked by URL filtering",
-            "category": "network"
-        },
-        "url": {
-            "original": "http://www.forbiddensite.com/"
-        },
-        "user_agent": {
-            "original": "curl/7.77.0"
-        },
-        "observer": {
-            "hostname": "mwgproxy"
-        },
-        "http": {
-            "request": {
-                "method": "GET",
-                "bytes": 131
-            },
-            "response": {
-                "bytes": 0,
-                "status_code": 403
-            }
-        },
-        "rule": {
-            "ruleset": "Default",
-            "name": "Block URLs Whose Category Is in Category Blocklist for Default Groups"
-        },
-        "mcafee": {
-            "webgateway": {
-                "url": {
-                    "reputation": "Minimal Risk",
-                    "reputation_code": -28,
-                    "categories": [
-                        "Pornography"
-                    ]
-                },
-                "application": {
-                    "reputation": "Unverified",
-                    "name": "forbiddenapp"
                 },
                 "http": {
                     "body": {

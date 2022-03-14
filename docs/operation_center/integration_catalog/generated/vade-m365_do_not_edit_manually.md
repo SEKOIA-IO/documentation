@@ -10,7 +10,7 @@ In details, the following Table denotes the type of events produced by this inte
 | ---- | ------ |
 | Kind | `event` |
 | Category | `email` |
-| Type | `info`, `deletion`, `denied`, `change` |
+| Type | `change`, `deletion`, `denied`, `info` |
 
 
 
@@ -18,37 +18,6 @@ In details, the following Table denotes the type of events produced by this inte
 ## Event Samples
 
 Find below few samples of events and how they are normalized by SEKOIA.IO.
-
-
-=== "remediation_auto.json"
-
-    ```json
-	
-    {
-        "event": {
-            "outcome": "success",
-            "category": "email",
-            "kind": "event",
-            "type": "info",
-            "reason": "The email contains a URL that is flagged as Phishing by Vade Secure Global Threat Intelligence"
-        },
-        "vadesecure": {
-            "status": "PHISHING",
-            "campaign": {
-                "actions": [
-                    {
-                        "action": "MOVE"
-                    }
-                ],
-                "id": "zekfnzejnf576rge8768",
-                "nb_messages_remediated": 1,
-                "nb_messages_remediated_read": 0,
-                "nb_messages_remediated_unread": 1
-            }
-        }
-    }
-    	
-	```
 
 
 === "email.json"
@@ -87,6 +56,37 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "from_header": "<test@sekoia.io>",
             "status": "LEGIT",
             "to_header": "\"test@vadesecure.com\" <test@vadesecure.com>"
+        }
+    }
+    	
+	```
+
+
+=== "remediation_auto.json"
+
+    ```json
+	
+    {
+        "event": {
+            "outcome": "success",
+            "category": "email",
+            "kind": "event",
+            "type": "info",
+            "reason": "The email contains a URL that is flagged as Phishing by Vade Secure Global Threat Intelligence"
+        },
+        "vadesecure": {
+            "status": "PHISHING",
+            "campaign": {
+                "actions": [
+                    {
+                        "action": "MOVE"
+                    }
+                ],
+                "id": "zekfnzejnf576rge8768",
+                "nb_messages_remediated": 1,
+                "nb_messages_remediated_read": 0,
+                "nb_messages_remediated_unread": 1
+            }
         }
     }
     	

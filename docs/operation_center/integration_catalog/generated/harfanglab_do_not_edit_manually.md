@@ -30,9 +30,9 @@ In details, the following Table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event`, `alert` |
-| Category | `process`, `network` |
-| Type | `info`, `connection`, `start` |
+| Kind | `alert`, `event` |
+| Category | `network`, `process` |
+| Type | `connection`, `info`, `start` |
 
 
 
@@ -40,33 +40,6 @@ In details, the following Table denotes the type of events produced by this inte
 ## Event Samples
 
 Find below few samples of events and how they are normalized by SEKOIA.IO.
-
-
-=== "wineventlog.json"
-
-    ```json
-	
-    {
-        "event": {
-            "code": "53504",
-            "kind": "event",
-            "provider": "Microsoft-Windows-PowerShell",
-            "type": "info"
-        },
-        "agent": {
-            "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
-        },
-        "host": {
-            "domain": "WORKGROUP",
-            "hostname": "DESKTOP-9U3171J",
-            "os": {
-                "full": "Windows 10 Pro",
-                "version": "10.0.19041"
-            }
-        }
-    }
-    	
-	```
 
 
 === "network.json"
@@ -185,6 +158,33 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "NT AUTHORITY\\SYSTEM"
+        }
+    }
+    	
+	```
+
+
+=== "wineventlog.json"
+
+    ```json
+	
+    {
+        "event": {
+            "code": "53504",
+            "kind": "event",
+            "provider": "Microsoft-Windows-PowerShell",
+            "type": "info"
+        },
+        "agent": {
+            "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
+        },
+        "host": {
+            "domain": "WORKGROUP",
+            "hostname": "DESKTOP-9U3171J",
+            "os": {
+                "full": "Windows 10 Pro",
+                "version": "10.0.19041"
+            }
         }
     }
     	

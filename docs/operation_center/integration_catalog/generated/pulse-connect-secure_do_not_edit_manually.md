@@ -22,41 +22,6 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
-=== "host_checker_policy_success.json"
-
-    ```json
-	
-    {
-        "network": {
-            "forwarded_ip": "172.16.128.22"
-        },
-        "service": {
-            "name": "CB2XXPCS02",
-            "type": "vpn"
-        },
-        "user": {
-            "name": "alice",
-            "domain": "SEKOIA_User",
-            "roles": [
-                "SEKOIA_User_Role"
-            ]
-        },
-        "source": {
-            "ip": "19.160.74.9",
-            "address": "19.160.74.9"
-        },
-        "action": {
-            "name": "AUT24803"
-        },
-        "event": {
-            "provider": "auth",
-            "code": "AUT24803"
-        }
-    }
-    	
-	```
-
-
 === "host_checker_policy_failed.json"
 
     ```json
@@ -86,6 +51,41 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "provider": "auth",
             "code": "AUT24804"
+        }
+    }
+    	
+	```
+
+
+=== "host_checker_policy_success.json"
+
+    ```json
+	
+    {
+        "network": {
+            "forwarded_ip": "172.16.128.22"
+        },
+        "service": {
+            "name": "CB2XXPCS02",
+            "type": "vpn"
+        },
+        "user": {
+            "name": "alice",
+            "domain": "SEKOIA_User",
+            "roles": [
+                "SEKOIA_User_Role"
+            ]
+        },
+        "source": {
+            "ip": "19.160.74.9",
+            "address": "19.160.74.9"
+        },
+        "action": {
+            "name": "AUT24803"
+        },
+        "event": {
+            "provider": "auth",
+            "code": "AUT24803"
         }
     }
     	

@@ -103,77 +103,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "activity_log_post_bundle.json"
-
-    ```json
-	
-    {
-        "message": {
-            "timestamp": "2021-11-01T12:16:21.815546",
-            "observer": {
-                "name": "sekoia.webapi",
-                "version": null
-            },
-            "visit": {
-                "id": null,
-                "ip": "51.255.128.104",
-                "user_agent": "python-requests/2.26.0",
-                "referrer": "None"
-            },
-            "action": {
-                "name": null,
-                "path": "/v2/inthreat/bundles",
-                "url": "http://api.sekoia.io/v2/inthreat/bundles?auto_merge=1",
-                "method": "POST"
-            },
-            "identity": {
-                "user_uuid": null,
-                "community_uuid": "02ff3284-506e-49d6-a9f5-99dbb2ea69ed",
-                "profile_type": "apikey",
-                "profile_identity": "9cd287a4-4a61-4bf1-998a-74087098adf4"
-            }
-        },
-        "@timestamp": "2021-11-01T12:16:21.815546",
-        "agent": {
-            "name": "sekoia.webapi"
-        },
-        "client": {
-            "ip": "51.255.128.104"
-        },
-        "user_agent": {
-            "original": "python-requests/2.26.0"
-        },
-        "http": {
-            "request": {
-                "method": "POST"
-            }
-        },
-        "url": {
-            "original": "http://api.sekoia.io/v2/inthreat/bundles?auto_merge=1",
-            "path": "/v2/inthreat/bundles"
-        },
-        "event": {
-            "id": "624a4f6a-73f4-41a8-b202-01e9ba5712be",
-            "created": "2021-11-01T12:19:11Z",
-            "outcome": "failure"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "sekoiaio-activity-logs",
-                "dialect_uuid": "41e3ca4e-a714-41aa-ad69-684a0b3835fc"
-            },
-            "activity": {
-                "client": {
-                    "id": "9cd287a4-4a61-4bf1-998a-74087098adf4",
-                    "type": "apikey"
-                }
-            }
-        }
-    }
-    	
-	```
-
-
 === "activity_log_get_me_extended.json"
 
     ```json
@@ -243,6 +172,77 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "0088f426-d1b7-462b-ad8a-99aca6301432",
             "created": "2021-10-29T11:37:11Z",
             "outcome": "failure"
+        }
+    }
+    	
+	```
+
+
+=== "activity_log_post_bundle.json"
+
+    ```json
+	
+    {
+        "message": {
+            "timestamp": "2021-11-01T12:16:21.815546",
+            "observer": {
+                "name": "sekoia.webapi",
+                "version": null
+            },
+            "visit": {
+                "id": null,
+                "ip": "51.255.128.104",
+                "user_agent": "python-requests/2.26.0",
+                "referrer": "None"
+            },
+            "action": {
+                "name": null,
+                "path": "/v2/inthreat/bundles",
+                "url": "http://api.sekoia.io/v2/inthreat/bundles?auto_merge=1",
+                "method": "POST"
+            },
+            "identity": {
+                "user_uuid": null,
+                "community_uuid": "02ff3284-506e-49d6-a9f5-99dbb2ea69ed",
+                "profile_type": "apikey",
+                "profile_identity": "9cd287a4-4a61-4bf1-998a-74087098adf4"
+            }
+        },
+        "@timestamp": "2021-11-01T12:16:21.815546",
+        "agent": {
+            "name": "sekoia.webapi"
+        },
+        "client": {
+            "ip": "51.255.128.104"
+        },
+        "user_agent": {
+            "original": "python-requests/2.26.0"
+        },
+        "http": {
+            "request": {
+                "method": "POST"
+            }
+        },
+        "url": {
+            "original": "http://api.sekoia.io/v2/inthreat/bundles?auto_merge=1",
+            "path": "/v2/inthreat/bundles"
+        },
+        "event": {
+            "id": "624a4f6a-73f4-41a8-b202-01e9ba5712be",
+            "created": "2021-11-01T12:19:11Z",
+            "outcome": "failure"
+        },
+        "sekoiaio": {
+            "intake": {
+                "dialect": "sekoiaio-activity-logs",
+                "dialect_uuid": "41e3ca4e-a714-41aa-ad69-684a0b3835fc"
+            },
+            "activity": {
+                "client": {
+                    "id": "9cd287a4-4a61-4bf1-998a-74087098adf4",
+                    "type": "apikey"
+                }
+            }
         }
     }
     	
