@@ -42,6 +42,7 @@ nav:
       - OpenSSH: operation_center/integration_catalog/application/openssh.md
       - SEKOIA.IO: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
       - Unbound: operation_center/integration_catalog/application/unbound.md
+      - The Hive: integrations/thehive.md
     - Cloud and SaaS:
       - AWS:
         - CloudTrail: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
