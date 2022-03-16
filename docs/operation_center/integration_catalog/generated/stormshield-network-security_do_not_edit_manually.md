@@ -92,7 +92,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "slotlevel": 2,
             "srcportname": "ad2009-dyn_tcp"
         },
-        "@timestamp": "2022-03-03 14:21:10",
+        "@timestamp": "2022-03-03T13:21:10+00:00",
         "event": {
             "type": "connection",
             "kind": "event",
@@ -100,7 +100,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success",
             "duration": 2000000000.0,
             "timezone": "+0100",
-            "start": "2022-03-03 14:21:10",
+            "start": "2022-03-03T13:21:10+00:00",
             "risk_score": 5
         },
         "rule": {
