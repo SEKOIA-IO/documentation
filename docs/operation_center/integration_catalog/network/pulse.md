@@ -2,13 +2,13 @@ title: Pulse Connect Secure
 
 ## Overview
 
-Pulse Connect Secure is SSL VPN solution for remote and mobile users.
+Pulse Connect Secure is an SSL VPN solution for remote and mobile users. 
 
 {!operation_center/integration_catalog/generated/pulse-connect-secure_do_not_edit_manually.md!}
 
 ## Configure
 
-As of now, the main solution to collect Pulse Secure Connect logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
+As of now, the main solution to collect Pulse Secure Connect logs leverages the Rsyslog recipe along with the WELF log format offered by Pulse Secure. Please share your experiences with other recipes by editing this documentation.
 
 ### Rsyslog
 
