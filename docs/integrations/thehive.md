@@ -12,7 +12,7 @@ Next, you will need a [user apikey](https://docs.thehive-project.org/thehive/use
 
 You now have all informations to configure The Hive module and its `Create Alert` action in SEKOIA.IO.
 
-To start your playbook with an example template, go to : `Create a new playbook` > `Use a template` > Search for TheHive.
+To start your playbook with an example template, go to : "Create a new playbook" > "Use a template" > Search for TheHive.
 
 You can also create your own on the same basis. A typical playbook to send alerts to a TheHive instance will use this kind of chain :
 - a trigger based on alerts (for example `Alert Webhook` one or `Alert Created`) ;
