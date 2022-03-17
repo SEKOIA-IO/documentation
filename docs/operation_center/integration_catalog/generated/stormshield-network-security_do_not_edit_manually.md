@@ -31,6 +31,123 @@ In details, the following Table denotes the type of events produced by this inte
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "empty_action.json"
+
+    ```json
+	
+    {
+        "@timestamp": "2022-03-17T13:49:51+00:00",
+        "destination": {
+            "address": "20.42.73.29",
+            "geo": {
+                "continent_name": "na",
+                "country_iso_code": "us"
+            },
+            "ip": "20.42.73.29",
+            "port": 443
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "network",
+            "duration": 0.0,
+            "kind": "event",
+            "outcome": "success",
+            "risk_score": 5,
+            "start": "2022-03-17T13:49:51+00:00",
+            "timezone": "+0100",
+            "type": "connection"
+        },
+        "host": {
+            "network": {
+                "egress": {
+                    "bytes": 0
+                },
+                "ingress": {
+                    "bytes": 0
+                }
+            }
+        },
+        "message": "time=\"2022-03-17 14:49:51\" fw=\"SN2KXA14K0150A7\" tz=+0100 startime=\"2022-03-17 14:49:51\" pri=5 confid=01 slotlevel=5 ruleid=48 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=192.168.170.52 srcport=39618 srcportname=ephemeral_fw_tcp srcname=MGDFS-Proxy-02 srcmac=00:1c:7f:8c:45:04 dst=20.42.73.29 dstport=443 dstportname=https dstcontinent=\"na\" dstcountry=\"us\" ipv=4 sent=0 rcvd=0 duration=0.00 logtype=\"filter\"",
+        "network": {
+            "bytes": 0,
+            "protocol": "https",
+            "transport": "tcp",
+            "type": "4"
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "alias": "out",
+                    "name": "Ethernet2"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "alias": "in",
+                    "name": "Ethernet3"
+                }
+            },
+            "serial_number": "SN2KXA14K0150A7"
+        },
+        "related": {
+            "ip": [
+                "20.42.73.29",
+                "192.168.170.52"
+            ]
+        },
+        "rule": {
+            "category": "5",
+            "id": "48"
+        },
+        "sekoiaio": {
+            "entity": {
+                "id": "jNZ0wDmv",
+                "name": "w5gjMeE2rgO7n0CI",
+                "uuid": "9a42db14-0072-4c5a-bd51-92f4cd060d96"
+            },
+            "intake": {
+                "created": "2021-04-23T20:02:05.017771Z",
+                "dialect": "sns",
+                "dialect_uuid": "79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4",
+                "id": "10f0afe9-98a1-4226-a6bd-8f70d461d430",
+                "parsing_status": "success"
+            },
+            "log": {
+                "syslog": {
+                    "facility": {
+                        "code": "21",
+                        "name": "local5"
+                    },
+                    "priority": "3",
+                    "severity": {
+                        "code": "3",
+                        "name": "err"
+                    }
+                }
+            }
+        },
+        "source": {
+            "address": "192.168.170.52",
+            "ip": "192.168.170.52",
+            "mac": "00:1c:7f:8c:45:04",
+            "port": 39618
+        },
+        "stormshield": {
+            "confid": 1,
+            "dstportname": "https",
+            "filter": {
+                "action": "log"
+            },
+            "slotlevel": 5,
+            "srcportname": "ephemeral_fw_tcp"
+        }
+    }
+    	
+	```
+
+
 === "filter.json"
 
     ```json
@@ -43,8 +160,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 60355
         },
         "destination": {
-            "address": "424.321.123.42",
-            "ip": "424.321.123.42",
+            "address": "24.32.123.42",
+            "ip": "24.32.123.42",
             "port": 443,
             "geo": {
                 "continent_name": "na",
@@ -106,6 +223,127 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "rule": {
             "category": "2",
             "id": "100"
+        }
+    }
+    	
+	```
+
+
+=== "filter2.json"
+
+    ```json
+	
+    {
+        "@timestamp": "2022-03-16T18:36:03+00:00",
+        "destination": {
+            "address": "22",
+            "geo": {
+                "continent_name": "eu",
+                "country_iso_code": "be"
+            },
+            "ip": "22",
+            "port": 443
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "network",
+            "duration": 107331180000000.0,
+            "kind": "event",
+            "outcome": "success",
+            "risk_score": 5,
+            "start": "2022-03-03T13:21:10+00:00",
+            "timezone": "+0100",
+            "type": "connection"
+        },
+        "host": {
+            "network": {
+                "egress": {
+                    "bytes": 2827291
+                },
+                "ingress": {
+                    "bytes": 2728401
+                }
+            }
+        },
+        "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=Passerelle_SITA srcmac=00:1c:7f:8c:45:04 srccontinent=\"na\" srccountry=\"us\" dst=22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=92.175.10.97 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
+        "network": {
+            "bytes": 5555692.0,
+            "protocol": "https",
+            "transport": "tcp",
+            "type": "4"
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "alias": "out",
+                    "name": "Ethernet2"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "alias": "in",
+                    "name": "Ethernet3"
+                }
+            },
+            "serial_number": "SN12345678912345"
+        },
+        "related": {
+            "ip": [
+                "11.11.11.11",
+                "22"
+            ]
+        },
+        "rule": {
+            "category": "2",
+            "id": "103"
+        },
+        "sekoiaio": {
+            "entity": {
+                "id": "jNZ0wDmv",
+                "name": "w5gjMeE2rgO7n0CI",
+                "uuid": "9a42db14-0072-4c5a-bd51-92f4cd060d96"
+            },
+            "intake": {
+                "created": "2021-04-23T20:02:05.017771Z",
+                "dialect": "sns",
+                "dialect_uuid": "79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4",
+                "id": "10f0afe9-98a1-4226-a6bd-8f70d461d430",
+                "parsing_status": "success"
+            },
+            "log": {
+                "syslog": {
+                    "facility": {
+                        "code": "21",
+                        "name": "local5"
+                    },
+                    "priority": "3",
+                    "severity": {
+                        "code": "3",
+                        "name": "err"
+                    }
+                }
+            }
+        },
+        "source": {
+            "address": "11.11.11.11",
+            "geo": {
+                "continent_name": "na",
+                "country_iso_code": "us"
+            },
+            "ip": "11.11.11.11",
+            "mac": "00:1c:7f:8c:45:04",
+            "port": 49586
+        },
+        "stormshield": {
+            "confid": 1,
+            "dstportname": "https",
+            "filter": {
+                "action": "pass"
+            },
+            "slotlevel": 2,
+            "srcportname": "ephemeral_fw_tcp"
         }
     }
     	
