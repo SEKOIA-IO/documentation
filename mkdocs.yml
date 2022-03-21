@@ -135,10 +135,12 @@ nav:
   - Operators: playbooks/operators.md
   - Actions: playbooks/actions.md
   - Library:
+    - AWS: playbooks/library/aws.md
     - Binaryedge's api: playbooks/library/binaryedge-s-api.md
     - Censys: playbooks/library/censys.md
     - Certificate_transparency: playbooks/library/certificate-transparency.md
     - Detection-rules: playbooks/library/detection-rules.md
+    - Digital Shadows: playbooks/library/digital-shadows.md
     - Fileutils: playbooks/library/fileutils.md
     - Fortigate_fw: playbooks/library/fortigate-fw.md
     - Google: playbooks/library/google.md
@@ -161,6 +163,7 @@ nav:
     - STIX: playbooks/library/stix.md
     - Servicenow: playbooks/library/servicenow.md
     - Shodan: playbooks/library/shodan.md
+    - TheHive: playbooks/library/the-hive.md
     - Tranco: playbooks/library/tranco.md
     - Triage: playbooks/library/triage.md
     - Vade secure: playbooks/library/vade-secure.md
