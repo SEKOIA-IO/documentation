@@ -11,7 +11,6 @@ Amazon VPC Flow Logs is a feature that provides the ability to capture informati
 {!operation_center/integration_catalog/generated/aws-flow-logs_do_not_edit_manually.md!}
 
 ## Configure
-Please [contact us](mailto:support@sekoia.io) to discuss about the AWS services in your organization in order to find the appropriate solution to forward VPC Flow Logs to SEKOIA.IO.
 
 ### VPC Flow Logs
 
@@ -25,6 +24,21 @@ For VPC and subnet:
 - Go to the tab *Flow logs*
 - Click on *Create flow log*
 - Set up the flow log: we recommend to capture all traffic (accepted and rejected).
+
+### Create the intake
+
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `AWS Flowlogs`.
+
+### Pull events
+
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Flowlogs trigger](https://docs.sekoia.io/playbooks/library/aws/#fetch-flowlog-records). You can use the existing template to fasten and ease the creation of your playbook.
+
+Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the S3 Bucket, hosting the Flowlogs records, and a prefix to select the objects (optional, e.g `WSLogs/313000002243/vpcflowlogs/`).
+
+At the end of the playbook, set up the action `Push events to intake` with a SEKOIA.IO API key and the intake key, from the intake previously created.
+
+Start the playbook and enjoy your events.
+
 
 ## Further Readings
 - [AWS VPC Overview](https://aws.amazon.com/vpc/)
