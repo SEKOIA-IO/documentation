@@ -21,9 +21,9 @@ Fortigate is a firewall appliance from [Fortinet](http://www.fortinet.com/) with
 
 ## Actions
 
-### Post Fortigate Address Group
+### Post Fortigate FQDN Address
 
-Add a new Address Group to a Fortigate Firewall
+Add a new FQDN object to a Fortigate Firewall
 
 
 
@@ -31,8 +31,10 @@ Add a new Address Group to a Fortigate Firewall
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| name | string | The name of the Address Group. |
-| member | array | The Object LIST to be added in the Address Group (can be an IP address, a FQDN or event a Group), for example Address1 |
+| name | string | The name of the Address. |
+| fqdn | string | The FQDN to be blocked (for ex: 'example.domain.com'). |
+| associated-interface | string | The associated interface of the firewall leave blank for 'Any' (default: Any). |
+| comment | string | A commentary to be displayed in the Fortigate GUI (default none). |
 
 
 
@@ -65,9 +67,9 @@ Add a new IP Address object to a Fortigate Firewall
 
 
 
-### Post Fortigate FQDN Address
+### Post Fortigate Address Group
 
-Add a new FQDN object to a Fortigate Firewall
+Add a new Address Group to a Fortigate Firewall
 
 
 
@@ -75,10 +77,8 @@ Add a new FQDN object to a Fortigate Firewall
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| name | string | The name of the Address. |
-| fqdn | string | The FQDN to be blocked (for ex: 'example.domain.com'). |
-| associated-interface | string | The associated interface of the firewall leave blank for 'Any' (default: Any). |
-| comment | string | A commentary to be displayed in the Fortigate GUI (default none). |
+| name | string | The name of the Address Group. |
+| member | array | The Object LIST to be added in the Address Group (can be an IP address, a FQDN or event a Group), for example Address1 |
 
 
 

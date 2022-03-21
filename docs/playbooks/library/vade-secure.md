@@ -61,4 +61,4 @@ Get last M365 Email Events
 
 ## Extra
 
-Module **Vade Secure v.1.27**
+Module **Vade Secure v.1.29**

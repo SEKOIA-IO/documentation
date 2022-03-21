@@ -18,6 +18,34 @@
 
 ## Triggers
 
+### New Commit
+
+Trigger playbook run on every Git commit
+
+
+
+#### Arguments
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| sleep_time | integer | Time in seconds the trigger sleeps between the checks of new commits |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| commit | object | Git Commit |
+| repository_path | string | path of the repository directory |
+
+
+
+
+
+
+
 ### File Changes
 
 Trigger playbook run on file changes inside Git Repository
@@ -44,34 +72,6 @@ Trigger playbook run on file changes inside Git Repository
 | changes | array | File Changes |
 | old_commit | string | hexsha of the previous commit |
 | new_commit | string | hexsha of the last commit |
-| repository_path | string | path of the repository directory |
-
-
-
-
-
-
-
-### New Commit
-
-Trigger playbook run on every Git commit
-
-
-
-#### Arguments
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| sleep_time | integer | Time in seconds the trigger sleeps between the checks of new commits |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| commit | object | Git Commit |
 | repository_path | string | path of the repository directory |
 
 

@@ -24,9 +24,9 @@
 
 ## Actions
 
-### Lookup DNS
+### Count Hosts
 
-Look up the hostnames that have been defined for the given list of IP addresses.
+This method behaves identical to "/shodan/host/search" with the only difference that this method does not return any host results, it only returns the total number of results that matched the query and any facet information that was requested. As a result this method does not consume query credits.
 
 
 
@@ -34,7 +34,38 @@ Look up the hostnames that have been defined for the given list of IP addresses.
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| ips | array | List of IP addresses; example "74.125.227.230" |
+| query | string | Shodan search query. The provided string is used to search the database of banners in Shodan, with the additional option to provide filters inside the search query using a "filter:value" format. For example, the following search query would find Apache webservers located in Germany: "apache country:DE". |
+| facets | string | A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. "country:100" to get the top 100 countries for a search query). |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| matches | array |  |
+| facets | object |  |
+| total | integer |  |
+
+
+
+
+
+
+
+### Lookup IPs
+
+Look up the IP address for the provided list of hostnames.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| hostnames | array | List of hostnames; example "google.com". |
 
 
 
@@ -45,6 +76,39 @@ Look up the hostnames that have been defined for the given list of IP addresses.
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | type |  |  |
+
+
+
+
+
+
+
+### Search Host
+
+Search Shodan using the same query syntax as the website and use facets to get summary information for different properties.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string | Shodan search query. The provided string is used to search the database of banners in Shodan, with the additional option to provide filters inside the search query using a "filter:value" format. For example, the following search query would find Apache webservers located in Germany: "apache country:DE".  |
+| facets | string | A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. "country:100" to get the top 100 countries for a search query). |
+| max_pages | integer | Set the maximum number of pages retrieved. |
+| minify | boolean | True or False; whether or not to truncate some of the larger fields (default: True)  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| matches | array |  |
+| facets | object |  |
+| total | integer |  |
 
 
 
@@ -82,9 +146,9 @@ Get all the subdomains and other DNS entries for the given domain. Uses 1 query 
 
 
 
-### Count Hosts
+### Lookup DNS
 
-This method behaves identical to "/shodan/host/search" with the only difference that this method does not return any host results, it only returns the total number of results that matched the query and any facet information that was requested. As a result this method does not consume query credits.
+Look up the hostnames that have been defined for the given list of IP addresses.
 
 
 
@@ -92,8 +156,7 @@ This method behaves identical to "/shodan/host/search" with the only difference 
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| query | string | Shodan search query. The provided string is used to search the database of banners in Shodan, with the additional option to provide filters inside the search query using a "filter:value" format. For example, the following search query would find Apache webservers located in Germany: "apache country:DE". |
-| facets | string | A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. "country:100" to get the top 100 countries for a search query). |
+| ips | array | List of IP addresses; example "74.125.227.230" |
 
 
 
@@ -103,9 +166,7 @@ This method behaves identical to "/shodan/host/search" with the only difference 
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| matches | array |  |
-| facets | object |  |
-| total | integer |  |
+| type |  |  |
 
 
 
@@ -150,67 +211,6 @@ Returns all services that have been found on the given host IP.
 | latitude | float |  |
 | os | string |  |
 | ports | array |  |
-
-
-
-
-
-
-
-### Search Host
-
-Search Shodan using the same query syntax as the website and use facets to get summary information for different properties.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string | Shodan search query. The provided string is used to search the database of banners in Shodan, with the additional option to provide filters inside the search query using a "filter:value" format. For example, the following search query would find Apache webservers located in Germany: "apache country:DE".  |
-| facets | string | A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. "country:100" to get the top 100 countries for a search query). |
-| max_pages | integer | Set the maximum number of pages retrieved. |
-| minify | boolean | True or False; whether or not to truncate some of the larger fields (default: True)  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| matches | array |  |
-| facets | object |  |
-| total | integer |  |
-
-
-
-
-
-
-
-### Lookup IPs
-
-Look up the IP address for the provided list of hostnames.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| hostnames | array | List of hostnames; example "google.com". |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| type |  |  |
 
 
 
