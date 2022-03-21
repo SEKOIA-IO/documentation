@@ -25,54 +25,9 @@
 
 ## Actions
 
-### SSL Certificats by SHA-1
+### SSL Certificates by Name
 
-Get SSL certificate by SHA1 hash
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| sha1 | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| count | integer |  |
-| firstSeen | string |  |
-| id | string |  |
-| issuer | array |  |
-| issuerAlternativeNames | array |  |
-| issuerID | string |  |
-| lastSeen | string |  |
-| notAfter | string |  |
-| notBefore | string |  |
-| publicKeyAlgorithm | string |  |
-| serialNumber | string |  |
-| sha1 | string |  |
-| signatureAlgorithm | string |  |
-| signatureAlgorithmOid | string |  |
-| subject | array |  |
-| subjectAlternativeNames | array |  |
-| subjectID | string |  |
-| version | integer |  |
-
-
-
-
-
-
-
-### Reverse Whois (organization)
-
-Get WHOIS records associated with an organization
+Get SSL certificates by name
 
 
 
@@ -80,38 +35,7 @@ Get WHOIS records associated with an organization
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| org | string |  |
-| exact | string |  |
-| maxResults | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| results | integer |  |
-| domains | array |  |
-
-
-
-
-
-
-
-### SSL Certificates by Host
-
-Get SSL certificates by host name
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| host | string |  |
+| name | string |  |
 
 
 
@@ -122,6 +46,14 @@ Get SSL certificates by host name
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | content | array |  |
+| first | boolean |  |
+| last | boolean |  |
+| number | integer |  |
+| numberOfElements | integer |  |
+| size | integer |  |
+| sort | string |  |
+| totalElements | integer |  |
+| totalPages | integer |  |
 
 
 
@@ -129,40 +61,9 @@ Get SSL certificates by host name
 
 
 
-### Reverse Whois (nameserver)
+### Whois
 
-Get WHOIS records associated with a name server
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| nameserver | string |  |
-| exact | string |  |
-| maxResults | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| results | integer |  |
-| domains | array |  |
-
-
-
-
-
-
-
-### Reverse Whois (name)
-
-Get WHOIS records associated with a name
+Get the current WHOIS for a domain
 
 
 
@@ -170,9 +71,10 @@ Get WHOIS records associated with a name
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| name | string |  |
+| domain | string |  |
 | exact | string |  |
 | maxResults | string |  |
+| Authorization | string |  |
 
 
 
@@ -256,9 +158,9 @@ Retrieve results by searching for specified hexadecimal bytes within PDNS record
 
 
 
-### SSL Certificates by Serial Number
+### SSL Certificates by Host
 
-None
+Get SSL certificates by host name
 
 
 
@@ -266,7 +168,7 @@ None
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| serial | string |  |
+| host | string |  |
 
 
 
@@ -277,14 +179,113 @@ None
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | content | array |  |
-| first | boolean |  |
-| last | boolean |  |
-| number | integer |  |
-| numberOfElements | integer |  |
-| size | integer |  |
-| sort | string |  |
-| totalElements | integer |  |
-| totalPages | integer |  |
+
+
+
+
+
+
+
+### Reverse Whois (phone)
+
+Get WHOIS records associated with a phone number
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| phone | string |  |
+| exact | string |  |
+| maxResults | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| results | integer |  |
+| domains | array |  |
+
+
+
+
+
+
+
+### Reverse Whois (address)
+
+Get WHOIS records associated with an address
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| address | string |  |
+| exact | string |  |
+| maxResults | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| results | integer |  |
+| domains | array |  |
+
+
+
+
+
+
+
+### SSL Certificats by SHA-1
+
+Get SSL certificate by SHA1 hash
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| sha1 | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| count | integer |  |
+| firstSeen | string |  |
+| id | string |  |
+| issuer | array |  |
+| issuerAlternativeNames | array |  |
+| issuerID | string |  |
+| lastSeen | string |  |
+| notAfter | string |  |
+| notBefore | string |  |
+| publicKeyAlgorithm | string |  |
+| serialNumber | string |  |
+| sha1 | string |  |
+| signatureAlgorithm | string |  |
+| signatureAlgorithmOid | string |  |
+| subject | array |  |
+| subjectAlternativeNames | array |  |
+| subjectID | string |  |
+| version | integer |  |
 
 
 
@@ -328,6 +329,37 @@ Get hosts by certificate
 
 
 
+### Reverse Whois (organization)
+
+Get WHOIS records associated with an organization
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| org | string |  |
+| exact | string |  |
+| maxResults | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| results | integer |  |
+| domains | array |  |
+
+
+
+
+
+
+
 ### Reverse Whois (email)
 
 Get WHOIS records associated with an email address
@@ -359,9 +391,40 @@ Get WHOIS records associated with an email address
 
 
 
-### SSL Certificates by Name
+### Reverse Whois (nameserver)
 
-Get SSL certificates by name
+Get WHOIS records associated with a name server
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| nameserver | string |  |
+| exact | string |  |
+| maxResults | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| results | integer |  |
+| domains | array |  |
+
+
+
+
+
+
+
+### Reverse Whois (name)
+
+Get WHOIS records associated with a name
 
 
 
@@ -370,6 +433,37 @@ Get SSL certificates by name
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | name | string |  |
+| exact | string |  |
+| maxResults | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| results | integer |  |
+| domains | array |  |
+
+
+
+
+
+
+
+### SSL Certificates by Serial Number
+
+None
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| serial | string |  |
 
 
 
@@ -388,38 +482,6 @@ Get SSL certificates by name
 | sort | string |  |
 | totalElements | integer |  |
 | totalPages | integer |  |
-
-
-
-
-
-
-
-### Whois
-
-Get the current WHOIS for a domain
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| domain | string |  |
-| exact | string |  |
-| maxResults | string |  |
-| Authorization | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| results | integer |  |
-| domains | array |  |
 
 
 
@@ -453,68 +515,6 @@ Retrieve results by searching for specified resource name within PDNS record dat
 | --------- | ------- | --------------------------- |
 | recordCount | integer |  |
 | records | array |  |
-
-
-
-
-
-
-
-### Reverse Whois (address)
-
-Get WHOIS records associated with an address
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| address | string |  |
-| exact | string |  |
-| maxResults | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| results | integer |  |
-| domains | array |  |
-
-
-
-
-
-
-
-### Reverse Whois (phone)
-
-Get WHOIS records associated with a phone number
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| phone | string |  |
-| exact | string |  |
-| maxResults | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| results | integer |  |
-| domains | array |  |
 
 
 

@@ -53,103 +53,6 @@ Fetch objects from a TAXII 2 Server
 
 ## Actions
 
-### STIX to MISP
-
-Convert STIX bundle to MISP event
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| organization | object |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| event | object | Resulting MISP event |
-| event_path | string | Resulting MISP event (to file) |
-
-
-
-
-
-
-
-### Observables to Indicators
-
-Generate Indicators from Observables
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| indicator_types | array | STIX Indicator Types |
-| exclude | array | Fields to exclude from pattern |
-| kill_chain_phases | array | Indicator Kill Chain Phases |
-| tlp | string | TLP to use for indicators (as english or STIX ID) |
-| valid_for | integer | Period of validity for created indicator (in days) |
-| confidence | integer | Admiralty Credibility score for created indicator (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
-| port_path | string | JSON Path to extract the port in the observable. |
-| network_traffic_direction | string | Direction of the network traffic. Either 'src' or 'dst' |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Resulting STIX Bundle |
-| bundle_path | string | Resulting STIX Bundle (in a file) |
-
-
-
-
-
-
-
-### MISP to STIX
-
-Convert MISP event to STIX 2.1
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| event | object | MISP event to convert to STIX |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Converted STIX Bundle |
-
-
-
-
-
-
-
 ### VirusTotal LiveHunt to Observables
 
 Convert a livehunt notification into a list of observables
@@ -174,6 +77,41 @@ Convert a livehunt notification into a list of observables
 | --------- | ------- | --------------------------- |
 | observables | object | Bundle with the list of observables |
 | observables_path | string | Path of the file holding the bundle with the observables |
+
+
+
+
+
+
+
+### Create Relationships
+
+Create STIX Relationships
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| relationship_type | string | STIX Relationship Type |
+| source | string | STIX ID or JSON Path expression for the relationships' sources |
+| target | string | STIX ID or JSON Path expression for the relationships' targets |
+| tlp | string | TLP to use for relationships (as english or STIX ID) |
+| description | string | Description of generated STIX relationships |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Resulting STIX Bundle |
+| bundle_path | string | Resulting STIX Bundle (in a file) |
 
 
 
@@ -245,6 +183,237 @@ Convert a list of json objects into a list of observables
 
 
 
+### Add Source
+
+Add a Source to a STIX Bundle
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| source | object | STIX Identity Source |
+| source_path | string | STIX Identity Source (from file) |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Resulting STIX Bundle |
+| bundle_path | string | Resulting STIX Bundle (in a file) |
+
+
+
+
+
+
+
+### Observables to Indicators
+
+Generate Indicators from Observables
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| indicator_types | array | STIX Indicator Types |
+| exclude | array | Fields to exclude from pattern |
+| kill_chain_phases | array | Indicator Kill Chain Phases |
+| tlp | string | TLP to use for indicators (as english or STIX ID) |
+| valid_for | integer | Period of validity for created indicator (in days) |
+| confidence | integer | Admiralty Credibility score for created indicator (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
+| port_path | string | JSON Path to extract the port in the observable. |
+| network_traffic_direction | string | Direction of the network traffic. Either 'src' or 'dst' |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Resulting STIX Bundle |
+| bundle_path | string | Resulting STIX Bundle (in a file) |
+
+
+
+
+
+
+
+### Observables to Contextualized Indicators
+
+Generate Contextualized Indicators from Observables
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| rules | array | Rules to use on observables to contextualize data |
+| indicator_types | array | STIX Indicator Types |
+| exclude | array | Fields to exclude from pattern |
+| kill_chain_phases | array | Indicator Kill Chain Phases |
+| tlp | string | TLP to use for indicators (as english or STIX ID) |
+| valid_for | integer | Period of validity for created indicator (in days) |
+| confidence | integer | Admiralty Credibility score for created indicator (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
+| port_path | string | JSON Path to extract the port in the observable. |
+| network_traffic_direction | string | Direction of the network traffic. Either 'src' or 'dst' |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Resulting STIX Bundle |
+| bundle_path | string | Resulting STIX Bundle (in a file) |
+
+
+
+
+
+
+
+### CVE to STIX
+
+Convert CVE JSON to STIX 2.1
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| cve_list | array | CVE Objects to convert to STIX |
+| cve_list_paths | array | CVE Objects to convert to STIX, from file paths |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle_path | object | Path of converted STIX Bundle |
+
+
+
+
+
+
+
+### MISP to STIX
+
+Convert MISP event to STIX 2.1
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| event | object | MISP event to convert to STIX |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Converted STIX Bundle |
+
+
+
+
+
+
+
+### Add Tags
+
+Add Tags to Observables
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| tags | array | Tags to add to all observables |
+| valid_for | integer | Period of validity for created tags (in days) |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Resulting STIX Bundle |
+| bundle_path | string | Resulting STIX Bundle (in a file) |
+
+
+
+
+
+
+
+### Filter bundle
+
+Filter objects inside a bundle
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| condition | object | Condition to match |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Bundle with matching objects |
+| bundle_path | string | Bundle with matching objects (in a file) |
+| excluded_bundle | object | Bundle with excluded objects |
+| excluded_bundle_path | string | Bundle with excluded objects (in a file) |
+
+
+
+
+
+
+
 ### Cryptolaemus To STIX
 
 Parse Cryptolaemus content
@@ -309,71 +478,9 @@ Convert a list of strings into a list of observables
 
 
 
-### Filter bundle
+### STIX to MISP
 
-Filter objects inside a bundle
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| condition | object | Condition to match |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Bundle with matching objects |
-| bundle_path | string | Bundle with matching objects (in a file) |
-| excluded_bundle | object | Bundle with excluded objects |
-| excluded_bundle_path | string | Bundle with excluded objects (in a file) |
-
-
-
-
-
-
-
-### CVE to STIX
-
-Convert CVE JSON to STIX 2.1
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| cve_list | array | CVE Objects to convert to STIX |
-| cve_list_paths | array | CVE Objects to convert to STIX, from file paths |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle_path | object | Path of converted STIX Bundle |
-
-
-
-
-
-
-
-### Add Source
-
-Add a Source to a STIX Bundle
+Convert STIX bundle to MISP event
 
 
 
@@ -383,8 +490,7 @@ Add a Source to a STIX Bundle
 | --------- | ------- | --------------------------- |
 | bundle | object | STIX Bundle |
 | bundle_path | string | STIX Bundle (from file) |
-| source | object | STIX Identity Source |
-| source_path | string | STIX Identity Source (from file) |
+| organization | object |  |
 
 
 
@@ -394,114 +500,8 @@ Add a Source to a STIX Bundle
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| bundle | object | Resulting STIX Bundle |
-| bundle_path | string | Resulting STIX Bundle (in a file) |
-
-
-
-
-
-
-
-### Add Tags
-
-Add Tags to Observables
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| tags | array | Tags to add to all observables |
-| valid_for | integer | Period of validity for created tags (in days) |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Resulting STIX Bundle |
-| bundle_path | string | Resulting STIX Bundle (in a file) |
-
-
-
-
-
-
-
-### Create Relationships
-
-Create STIX Relationships
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| relationship_type | string | STIX Relationship Type |
-| source | string | STIX ID or JSON Path expression for the relationships' sources |
-| target | string | STIX ID or JSON Path expression for the relationships' targets |
-| tlp | string | TLP to use for relationships (as english or STIX ID) |
-| description | string | Description of generated STIX relationships |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Resulting STIX Bundle |
-| bundle_path | string | Resulting STIX Bundle (in a file) |
-
-
-
-
-
-
-
-### Observables to Contextualized Indicators
-
-Generate Contextualized Indicators from Observables
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| rules | array | Rules to use on observables to contextualize data |
-| indicator_types | array | STIX Indicator Types |
-| exclude | array | Fields to exclude from pattern |
-| kill_chain_phases | array | Indicator Kill Chain Phases |
-| tlp | string | TLP to use for indicators (as english or STIX ID) |
-| valid_for | integer | Period of validity for created indicator (in days) |
-| confidence | integer | Admiralty Credibility score for created indicator (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
-| port_path | string | JSON Path to extract the port in the observable. |
-| network_traffic_direction | string | Direction of the network traffic. Either 'src' or 'dst' |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Resulting STIX Bundle |
-| bundle_path | string | Resulting STIX Bundle (in a file) |
+| event | object | Resulting MISP event |
+| event_path | string | Resulting MISP event (to file) |
 
 
 
