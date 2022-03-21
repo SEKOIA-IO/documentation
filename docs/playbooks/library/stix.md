@@ -53,9 +53,9 @@ Fetch objects from a TAXII 2 Server
 
 ## Actions
 
-### VirusTotal LiveHunt to Observables
+### Add Source
 
-Convert a livehunt notification into a list of observables
+Add a Source to a STIX Bundle
 
 
 
@@ -63,9 +63,10 @@ Convert a livehunt notification into a list of observables
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| notification | object | LiveHunt notification to convert to observables |
-| notification_path | string | Path of the file holding the LiveHunt notification to convert |
-| notification_to_history | boolean | Whether or not the notification should be added to the observable's history. Default to false |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| source | object | STIX Identity Source |
+| source_path | string | STIX Identity Source (from file) |
 
 
 
@@ -75,8 +76,40 @@ Convert a livehunt notification into a list of observables
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| observables | object | Bundle with the list of observables |
-| observables_path | string | Path of the file holding the bundle with the observables |
+| bundle | object | Resulting STIX Bundle |
+| bundle_path | string | Resulting STIX Bundle (in a file) |
+
+
+
+
+
+
+
+### Add Tags
+
+Add Tags to Observables
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| tags | array | Tags to add to all observables |
+| valid_for | integer | Period of validity for created tags (in days) |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Resulting STIX Bundle |
+| bundle_path | string | Resulting STIX Bundle (in a file) |
 
 
 
@@ -119,9 +152,9 @@ Create STIX Relationships
 
 
 
-### Remove Orphan Objects
+### Cryptolaemus To STIX
 
-Remove objects without any relationship from a STIX bundle.
+Parse Cryptolaemus content
 
 
 
@@ -129,8 +162,10 @@ Remove objects without any relationship from a STIX bundle.
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
+| content | string | Content to parse |
+| content_path | string | Path to the content file |
+| malware_id | string | Id of the Emotet Malware |
+| campaign_ids | object | Ids of the campaigns. The key must be the campaign name and the value its id. |
 
 
 
@@ -140,8 +175,69 @@ Remove objects without any relationship from a STIX bundle.
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| bundle | object | Resulting STIX Bundle |
-| bundle_path | string | Resulting STIX Bundle (in a file) |
+| bundle_path | string | Path of the bundle file containing the parsed content. |
+
+
+
+
+
+
+
+### CVE to STIX
+
+Convert CVE JSON to STIX 2.1
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| cve_list | array | CVE Objects to convert to STIX |
+| cve_list_paths | array | CVE Objects to convert to STIX, from file paths |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle_path | object | Path of converted STIX Bundle |
+
+
+
+
+
+
+
+### Filter bundle
+
+Filter objects inside a bundle
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | STIX Bundle |
+| bundle_path | string | STIX Bundle (from file) |
+| condition | object | Condition to match |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Bundle with matching objects |
+| bundle_path | string | Bundle with matching objects (in a file) |
+| excluded_bundle | object | Bundle with excluded objects |
+| excluded_bundle_path | string | Bundle with excluded objects (in a file) |
 
 
 
@@ -183,9 +279,68 @@ Convert a list of json objects into a list of observables
 
 
 
-### Add Source
+### VirusTotal LiveHunt to Observables
 
-Add a Source to a STIX Bundle
+Convert a livehunt notification into a list of observables
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| notification | object | LiveHunt notification to convert to observables |
+| notification_path | string | Path of the file holding the LiveHunt notification to convert |
+| notification_to_history | boolean | Whether or not the notification should be added to the observable's history. Default to false |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| observables | object | Bundle with the list of observables |
+| observables_path | string | Path of the file holding the bundle with the observables |
+
+
+
+
+
+
+
+### MISP to STIX
+
+Convert MISP event to STIX 2.1
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| event | object | MISP event to convert to STIX |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Converted STIX Bundle |
+
+
+
+
+
+
+
+### Observables to Contextualized Indicators
+
+Generate Contextualized Indicators from Observables
 
 
 
@@ -195,8 +350,15 @@ Add a Source to a STIX Bundle
 | --------- | ------- | --------------------------- |
 | bundle | object | STIX Bundle |
 | bundle_path | string | STIX Bundle (from file) |
-| source | object | STIX Identity Source |
-| source_path | string | STIX Identity Source (from file) |
+| rules | array | Rules to use on observables to contextualize data |
+| indicator_types | array | STIX Indicator Types |
+| exclude | array | Fields to exclude from pattern |
+| kill_chain_phases | array | Indicator Kill Chain Phases |
+| tlp | string | TLP to use for indicators (as english or STIX ID) |
+| valid_for | integer | Period of validity for created indicator (in days) |
+| confidence | integer | Admiralty Credibility score for created indicator (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
+| port_path | string | JSON Path to extract the port in the observable. |
+| network_traffic_direction | string | Direction of the network traffic. Either 'src' or 'dst' |
 
 
 
@@ -253,9 +415,9 @@ Generate Indicators from Observables
 
 
 
-### Observables to Contextualized Indicators
+### Remove Orphan Objects
 
-Generate Contextualized Indicators from Observables
+Remove objects without any relationship from a STIX bundle.
 
 
 
@@ -265,15 +427,6 @@ Generate Contextualized Indicators from Observables
 | --------- | ------- | --------------------------- |
 | bundle | object | STIX Bundle |
 | bundle_path | string | STIX Bundle (from file) |
-| rules | array | Rules to use on observables to contextualize data |
-| indicator_types | array | STIX Indicator Types |
-| exclude | array | Fields to exclude from pattern |
-| kill_chain_phases | array | Indicator Kill Chain Phases |
-| tlp | string | TLP to use for indicators (as english or STIX ID) |
-| valid_for | integer | Period of validity for created indicator (in days) |
-| confidence | integer | Admiralty Credibility score for created indicator (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
-| port_path | string | JSON Path to extract the port in the observable. |
-| network_traffic_direction | string | Direction of the network traffic. Either 'src' or 'dst' |
 
 
 
@@ -292,66 +445,9 @@ Generate Contextualized Indicators from Observables
 
 
 
-### CVE to STIX
+### STIX to MISP
 
-Convert CVE JSON to STIX 2.1
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| cve_list | array | CVE Objects to convert to STIX |
-| cve_list_paths | array | CVE Objects to convert to STIX, from file paths |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle_path | object | Path of converted STIX Bundle |
-
-
-
-
-
-
-
-### MISP to STIX
-
-Convert MISP event to STIX 2.1
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| event | object | MISP event to convert to STIX |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Converted STIX Bundle |
-
-
-
-
-
-
-
-### Add Tags
-
-Add Tags to Observables
+Convert STIX bundle to MISP event
 
 
 
@@ -361,8 +457,7 @@ Add Tags to Observables
 | --------- | ------- | --------------------------- |
 | bundle | object | STIX Bundle |
 | bundle_path | string | STIX Bundle (from file) |
-| tags | array | Tags to add to all observables |
-| valid_for | integer | Period of validity for created tags (in days) |
+| organization | object |  |
 
 
 
@@ -372,72 +467,8 @@ Add Tags to Observables
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| bundle | object | Resulting STIX Bundle |
-| bundle_path | string | Resulting STIX Bundle (in a file) |
-
-
-
-
-
-
-
-### Filter bundle
-
-Filter objects inside a bundle
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| condition | object | Condition to match |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Bundle with matching objects |
-| bundle_path | string | Bundle with matching objects (in a file) |
-| excluded_bundle | object | Bundle with excluded objects |
-| excluded_bundle_path | string | Bundle with excluded objects (in a file) |
-
-
-
-
-
-
-
-### Cryptolaemus To STIX
-
-Parse Cryptolaemus content
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| content | string | Content to parse |
-| content_path | string | Path to the content file |
-| malware_id | string | Id of the Emotet Malware |
-| campaign_ids | object | Ids of the campaigns. The key must be the campaign name and the value its id. |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle_path | string | Path of the bundle file containing the parsed content. |
+| event | object | Resulting MISP event |
+| event_path | string | Resulting MISP event (to file) |
 
 
 
@@ -471,37 +502,6 @@ Convert a list of strings into a list of observables
 | --------- | ------- | --------------------------- |
 | observables | object | Bundle with the list of observables |
 | observables_path | string | Path of the file holding the bundle with the observables |
-
-
-
-
-
-
-
-### STIX to MISP
-
-Convert STIX bundle to MISP event
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle |
-| bundle_path | string | STIX Bundle (from file) |
-| organization | object |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| event | object | Resulting MISP event |
-| event_path | string | Resulting MISP event (to file) |
 
 
 

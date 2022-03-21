@@ -20,6 +20,60 @@ SEKOIA.IO
 
 ## Triggers
 
+### Alert Comment Created
+
+A comment was added to an existing Alert
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| file_path | string | File path to the alert on disk. |
+| event_type | string | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| alert_uuid | string | Unique identifier of the Alert (UUID string). |
+| short_id | string | Unique short identifier of the Alert. |
+| status | object | Status of the Alert (object containing status description and name). |
+| created_at | integer | Creation date of the Alert (timestamp). |
+| urgency | integer | Current urgency of the Alert. |
+| entity | object | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| alert_type | object | Category of the Alert |
+
+
+
+
+
+
+
+### Alert Created
+
+A new Alert was created in the Operation Center
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| file_path | string | File path to the alert on disk. |
+| event_type | string | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| alert_uuid | string | Unique identifier of the Alert (UUID string). |
+| short_id | string | Unique short identifier of the Alert. |
+| status | object | Status of the Alert (object containing status description and name). |
+| created_at | integer | Creation date of the Alert (timestamp). |
+| urgency | integer | Current urgency of the Alert. |
+| entity | object | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| alert_type | object | Category of the Alert |
+
+
+
+
+
+
+
 ### Alert Status Changed
 
 The status of an existing alert was changed
@@ -74,33 +128,6 @@ An existing alert was updated
 
 
 
-### Alert Created
-
-A new Alert was created in the Operation Center
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| file_path | string | File path to the alert on disk. |
-| event_type | string | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
-| alert_uuid | string | Unique identifier of the Alert (UUID string). |
-| short_id | string | Unique short identifier of the Alert. |
-| status | object | Status of the Alert (object containing status description and name). |
-| created_at | integer | Creation date of the Alert (timestamp). |
-| urgency | integer | Current urgency of the Alert. |
-| entity | object | Description of the entity involved with this Alert (object containing entity UUID and name). |
-| alert_type | object | Category of the Alert |
-
-
-
-
-
-
-
 ### alert_webhook
 
 Webhook Trigger to receive specific SEKOIA.IO Alerts
@@ -113,33 +140,6 @@ Webhook Trigger to receive specific SEKOIA.IO Alerts
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | alert_uuid | string | Unique identifier of the Alert (UUID string). |
-
-
-
-
-
-
-
-### Alert Comment Created
-
-A comment was added to an existing Alert
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| file_path | string | File path to the alert on disk. |
-| event_type | string | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
-| alert_uuid | string | Unique identifier of the Alert (UUID string). |
-| short_id | string | Unique short identifier of the Alert. |
-| status | object | Status of the Alert (object containing status description and name). |
-| created_at | integer | Creation date of the Alert (timestamp). |
-| urgency | integer | Current urgency of the Alert. |
-| entity | object | Description of the entity involved with this Alert (object containing entity UUID and name). |
-| alert_type | object | Category of the Alert |
 
 
 
@@ -182,9 +182,9 @@ Create an event for each alert creation or modification
 
 ## Actions
 
-### Create Content Proposal
+### Activate Countermeasure
 
-Create Content Proposal
+Mark as active a countermeasure
 
 
 
@@ -192,12 +192,8 @@ Create Content Proposal
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| bundle | object | STIX Bundle to upload |
-| bundle_path | string | Path of the STIX Bundle to upload |
-| auto_merge | boolean | Whether or not the uploaded bundle can automatically be merged to the consolidated database |
-| enrich | boolean | Whether or not the uploaded bundle should be enriched |
-| name | string | Name to use for the new content proposal |
-| assigned_to | string | Avatar assigned to the content proposal |
+| cm_uuid | string |  |
+| comment | object |  |
 
 
 
@@ -207,8 +203,28 @@ Create Content Proposal
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| file_name | string |  |
-| content_proposal_id | string |  |
+| action_steps | array |  |
+| activated_by_type | string | Type of the profile that activated the countermeasure |
+| comments | array |  |
+| activated_at | string | Date the countermeasure was activated |
+| relevance | integer | Relevance of the countermeasure |
+| denied_by_type | string | Type of the profile that denied the countermeasure |
+| status | string | (deprecated) Status of the countermeasure |
+| created_by | string | UUID of profile that created the countermeasure |
+| model_uuid | string | UUID of the model from which this countermeasure has been created |
+| activated_by | string | UUID of profile that activated the countermeasure |
+| description | string | Description of the countermeasure |
+| name | string | Name of the countermeasure |
+| uuid | string | UUID of the countermeasure |
+| duration | string | Estimated duration to apply the countermeasures |
+| alert_uuid | string | UUID of the alert related to the countermeasure |
+| denied_at | string | Date the countermeasure was denied |
+| created_by_type | string | Type of the profile that created the countermeasure |
+| course_of_action | object | (deprecated) STIX2 object course of action |
+| dynamic_relevance | integer | Dynamic relevance of the countermeasure |
+| denied_by | string | UUID of profile that denied the countermeasure |
+| assignee | string | UUID of the profile assigned to the progress of the countermeasure |
+| created_at | string | Date the countermeasure was created |
 
 
 
@@ -216,9 +232,9 @@ Create Content Proposal
 
 
 
-### Upload Observables
+### Add attribute to Asset
 
-Upload observables to inthreat
+Add an attribute to an asset
 
 
 
@@ -226,10 +242,156 @@ Upload observables to inthreat
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| observables | array | List of observables or bundle to upload to inThreat |
-| observables_path | string | Path of the observables file to upload inThreat |
+| uuid | string |  |
+| name | string |  |
+| value | string |  |
 
 
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| value | string |  |
+| uuid | string |  |
+| name | string |  |
+
+
+
+
+
+
+
+### Add key to Asset
+
+Adds a key to an asset
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| uuid | string |  |
+| name | string |  |
+| value | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| value | string |  |
+| uuid | string |  |
+| name | string |  |
+
+
+
+
+
+
+
+### Attach Alerts to Case
+
+Attach one or more alerts to a specific case
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| case_uuid | string |  |
+| alerts | array | The list of identifiers of alerts to add |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| status | string |  |
+
+
+
+
+
+
+
+### Create Tracker Notification
+
+Create a notification for a specific tracker
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| data | object |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| data | object |  |
+
+
+
+
+
+
+
+### Create Asset
+
+Create a new asset
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| asset_type | object |  |
+| name | string |  |
+| criticity | integer |  |
+| description | string |  |
+| attributes | array |  |
+| keys | array |  |
+| owners | array |  |
+| community_uuid | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| keys | array |  |
+| attributes | array |  |
+| uuid | string |  |
+| name | string |  |
+| created_at | string |  |
+| criticity | object |  |
+| asset_type | object |  |
+| updated_at | string |  |
+| description | string |  |
+| owners | array |  |
+| community_uuid | string |  |
+| category | object |  |
 
 
 
@@ -280,135 +442,6 @@ Mark as denied a countermeasure
 | denied_by | string | UUID of profile that denied the countermeasure |
 | assignee | string | UUID of the profile assigned to the progress of the countermeasure |
 | created_at | string | Date the countermeasure was created |
-
-
-
-
-
-
-
-### Comment Alert
-
-Attach a new comment on an Alert
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| uuid | string |  |
-| content | string | Content of the comment |
-| author | string | Author of the comment |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| created_by | string | The identifier of the creator of the comment |
-| content | string | Content of the comment |
-| author | string | Author of the comment |
-| unseen | boolean |  |
-| date | integer |  |
-| created_by_type | string | The type of the creator of the comment |
-| uuid | string | Identifier of the comment |
-
-
-
-
-
-
-
-### Get Event Field Common Values
-
-Get the most common values of fields observed under a specific query
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string | Event search query |
-| earliest_time | string | The earliest time of the time range of the search |
-| latest_time | string | The latest time of the time range of the search |
-| fields | string | Fields to compute the most common values (use a coma between fields) |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| fields | array |  |
-
-
-
-
-
-
-
-### Add attribute to Asset
-
-Add an attribute to an asset
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| uuid | string |  |
-| name | string |  |
-| value | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| value | string |  |
-| uuid | string |  |
-| name | string |  |
-
-
-
-
-
-
-
-### Get Events
-
-Query events
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string | Event search query |
-| earliest_time | string | The earliest time of the time range of the search |
-| latest_time | string | The latest time of the time range of the search |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| events | array |  |
 
 
 
@@ -477,9 +510,9 @@ Retrieve the definition of an alert
 
 
 
-### Activate Countermeasure
+### Get Event Field Common Values
 
-Mark as active a countermeasure
+Get the most common values of fields observed under a specific query
 
 
 
@@ -487,8 +520,10 @@ Mark as active a countermeasure
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| cm_uuid | string |  |
-| comment | object |  |
+| query | string | Event search query |
+| earliest_time | string | The earliest time of the time range of the search |
+| latest_time | string | The latest time of the time range of the search |
+| fields | string | Fields to compute the most common values (use a coma between fields) |
 
 
 
@@ -498,28 +533,7 @@ Mark as active a countermeasure
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| action_steps | array |  |
-| activated_by_type | string | Type of the profile that activated the countermeasure |
-| comments | array |  |
-| activated_at | string | Date the countermeasure was activated |
-| relevance | integer | Relevance of the countermeasure |
-| denied_by_type | string | Type of the profile that denied the countermeasure |
-| status | string | (deprecated) Status of the countermeasure |
-| created_by | string | UUID of profile that created the countermeasure |
-| model_uuid | string | UUID of the model from which this countermeasure has been created |
-| activated_by | string | UUID of profile that activated the countermeasure |
-| description | string | Description of the countermeasure |
-| name | string | Name of the countermeasure |
-| uuid | string | UUID of the countermeasure |
-| duration | string | Estimated duration to apply the countermeasures |
-| alert_uuid | string | UUID of the alert related to the countermeasure |
-| denied_at | string | Date the countermeasure was denied |
-| created_by_type | string | Type of the profile that created the countermeasure |
-| course_of_action | object | (deprecated) STIX2 object course of action |
-| dynamic_relevance | integer | Dynamic relevance of the countermeasure |
-| denied_by | string | UUID of profile that denied the countermeasure |
-| assignee | string | UUID of the profile assigned to the progress of the countermeasure |
-| created_at | string | Date the countermeasure was created |
+| fields | array |  |
 
 
 
@@ -527,9 +541,9 @@ Mark as active a countermeasure
 
 
 
-### Create Content Proposal from PDF
+### Get Events
 
-Creates a content proposal with the content extracted from the specified PDF
+Query events
 
 
 
@@ -537,9 +551,9 @@ Creates a content proposal with the content extracted from the specified PDF
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| name | string |  |
-| file | string |  |
-| source_ref | string |  |
+| query | string | Event search query |
+| earliest_time | string | The earliest time of the time range of the search |
+| latest_time | string | The latest time of the time range of the search |
 
 
 
@@ -549,7 +563,7 @@ Creates a content proposal with the content extracted from the specified PDF
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| data | object |  |
+| events | array |  |
 
 
 
@@ -557,9 +571,9 @@ Creates a content proposal with the content extracted from the specified PDF
 
 
 
-### Predict Alert State
+### Create Content Proposal
 
-Predict the state of an alert
+Create Content Proposal
 
 
 
@@ -567,7 +581,12 @@ Predict the state of an alert
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| alert | object |  |
+| bundle | object | STIX Bundle to upload |
+| bundle_path | string | Path of the STIX Bundle to upload |
+| auto_merge | boolean | Whether or not the uploaded bundle can automatically be merged to the consolidated database |
+| enrich | boolean | Whether or not the uploaded bundle should be enriched |
+| name | string | Name to use for the new content proposal |
+| assigned_to | string | Avatar assigned to the content proposal |
 
 
 
@@ -577,7 +596,8 @@ Predict the state of an alert
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| worth_human_attention | boolean |  |
+| file_name | string |  |
+| content_proposal_id | string |  |
 
 
 
@@ -585,9 +605,9 @@ Predict the state of an alert
 
 
 
-### Create Content Proposal from URL
+### Upload Observables
 
-Creates a content proposal with the content extracted from the specified URL
+Upload observables to inthreat
 
 
 
@@ -595,8 +615,54 @@ Creates a content proposal with the content extracted from the specified URL
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| url | string |  |
-| source_ref | string |  |
+| observables | array | List of observables or bundle to upload to inThreat |
+| observables_path | string | Path of the observables file to upload inThreat |
+
+
+
+
+
+
+
+
+
+### Search Alerts
+
+find alerts that match your filters
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| match[community_uuid] | string |  |
+| match[entity_name] | string |  |
+| match[entity_uuid] | string |  |
+| match[status_uuid] | string |  |
+| match[status_name] | string |  |
+| match[type_category] | string |  |
+| match[type_value] | string |  |
+| match[source] | string |  |
+| match[target] | string |  |
+| match[node] | string |  |
+| match[stix_object] | string |  |
+| match[rule_uuid] | string |  |
+| match[rule_name] | string |  |
+| match[short_id] | string |  |
+| match[uuid] | string |  |
+| match[title] | string |  |
+| date[created_at] | string |  |
+| date[updated_at] | string |  |
+| range[urgency] | string |  |
+| range[similar] | string |  |
+| visible | boolean |  |
+| limit | integer |  |
+| offset | integer |  |
+| stix | boolean |  |
+| sort | string |  |
+| direction | string |  |
+| with_count | boolean |  |
 
 
 
@@ -606,37 +672,9 @@ Creates a content proposal with the content extracted from the specified URL
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| data | object |  |
-
-
-
-
-
-
-
-### Update Alert Status
-
-Triggers an action on an alert to update its status
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| uuid | string |  |
-| action_uuid | string | UUID of the action to trigger |
-| comment | string | a comment to describe why the alert status has changed |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| actions | array |  |
+| total | integer |  |
+| has_more | boolean |  |
+| items | array |  |
 
 
 
@@ -707,9 +745,9 @@ Edit the details of an alert
 
 
 
-### Get CTI Report
+### Comment Alert
 
-Retrieve the details of a report
+Attach a new comment on an Alert
 
 
 
@@ -718,6 +756,8 @@ Retrieve the details of a report
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | uuid | string |  |
+| content | string | Content of the comment |
+| author | string | Author of the comment |
 
 
 
@@ -727,7 +767,13 @@ Retrieve the details of a report
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| data | string |  |
+| created_by | string | The identifier of the creator of the comment |
+| content | string | Content of the comment |
+| author | string | Author of the comment |
+| unseen | boolean |  |
+| date | integer |  |
+| created_by_type | string | The type of the creator of the comment |
+| uuid | string | Identifier of the comment |
 
 
 
@@ -735,38 +781,9 @@ Retrieve the details of a report
 
 
 
-### Attach Alerts to Case
+### Create Content Proposal from PDF
 
-Attach one or more alerts to a specific case
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| case_uuid | string |  |
-| alerts | array | The list of identifiers of alerts to add |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| status | string |  |
-
-
-
-
-
-
-
-### Create Tracker Notification
-
-Create a notification for a specific tracker
+Creates a content proposal with the content extracted from the specified PDF
 
 
 
@@ -774,7 +791,9 @@ Create a notification for a specific tracker
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| data | object |  |
+| name | string |  |
+| file | string |  |
+| source_ref | string |  |
 
 
 
@@ -792,9 +811,9 @@ Create a notification for a specific tracker
 
 
 
-### Search Alerts
+### Create Content Proposal from URL
 
-find alerts that match your filters
+Creates a content proposal with the content extracted from the specified URL
 
 
 
@@ -802,33 +821,8 @@ find alerts that match your filters
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| match[community_uuid] | string |  |
-| match[entity_name] | string |  |
-| match[entity_uuid] | string |  |
-| match[status_uuid] | string |  |
-| match[status_name] | string |  |
-| match[type_category] | string |  |
-| match[type_value] | string |  |
-| match[source] | string |  |
-| match[target] | string |  |
-| match[node] | string |  |
-| match[stix_object] | string |  |
-| match[rule_uuid] | string |  |
-| match[rule_name] | string |  |
-| match[short_id] | string |  |
-| match[uuid] | string |  |
-| match[title] | string |  |
-| date[created_at] | string |  |
-| date[updated_at] | string |  |
-| range[urgency] | string |  |
-| range[similar] | string |  |
-| visible | boolean |  |
-| limit | integer |  |
-| offset | integer |  |
-| stix | boolean |  |
-| sort | string |  |
-| direction | string |  |
-| with_count | boolean |  |
+| url | string |  |
+| source_ref | string |  |
 
 
 
@@ -838,9 +832,7 @@ find alerts that match your filters
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| total | integer |  |
-| has_more | boolean |  |
-| items | array |  |
+| data | object |  |
 
 
 
@@ -848,9 +840,9 @@ find alerts that match your filters
 
 
 
-### Add key to Asset
+### Predict Alert State
 
-Adds a key to an asset
+Predict the state of an alert
 
 
 
@@ -858,9 +850,7 @@ Adds a key to an asset
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| uuid | string |  |
-| name | string |  |
-| value | string |  |
+| alert | object |  |
 
 
 
@@ -870,55 +860,7 @@ Adds a key to an asset
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| value | string |  |
-| uuid | string |  |
-| name | string |  |
-
-
-
-
-
-
-
-### Create Asset
-
-Create a new asset
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| asset_type | object |  |
-| name | string |  |
-| criticity | integer |  |
-| description | string |  |
-| attributes | array |  |
-| keys | array |  |
-| owners | array |  |
-| community_uuid | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| keys | array |  |
-| attributes | array |  |
-| uuid | string |  |
-| name | string |  |
-| created_at | string |  |
-| criticity | object |  |
-| asset_type | object |  |
-| updated_at | string |  |
-| description | string |  |
-| owners | array |  |
-| community_uuid | string |  |
-| category | object |  |
+| worth_human_attention | boolean |  |
 
 
 
@@ -950,6 +892,64 @@ Create a new asset
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | event_ids | array |  |
+
+
+
+
+
+
+
+### Get CTI Report
+
+Retrieve the details of a report
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| uuid | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| data | string |  |
+
+
+
+
+
+
+
+### Update Alert Status
+
+Triggers an action on an alert to update its status
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| uuid | string |  |
+| action_uuid | string | UUID of the action to trigger |
+| comment | string | a comment to describe why the alert status has changed |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| actions | array |  |
 
 
 
