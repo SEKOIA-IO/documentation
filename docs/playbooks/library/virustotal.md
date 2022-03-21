@@ -62,6 +62,83 @@ Get LiveHunt notifications from the files endpoint
 
 ## Actions
 
+### Get Comments
+
+Get comments from Virus Total
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| resource | string | The hash or url to get comments from |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| report | object | VirusTotal report |
+
+
+
+
+
+
+
+### Post Comment
+
+Post comment to Virus Total
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| comment | string | The comment to post |
+| resource | string | The hash or url to comment |
+
+
+
+
+
+
+
+
+
+### Scan Domain
+
+Scan domain with Virus Total
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| domain | string | The domain to scan |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| report | object | VirusTotal report |
+
+
+
+
+
+
+
 ### Scan File
 
 Scan file with Virus Total
@@ -119,37 +196,9 @@ Scan hash with Virus Total
 
 
 
-### Scan Domain
+### Scan IP
 
-Scan domain with Virus Total
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| domain | string | The domain to scan |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| report | object | VirusTotal report |
-
-
-
-
-
-
-
-### Post Comment
-
-Post comment to Virus Total
+Scan ip with Virus Total
 
 
 
@@ -157,28 +206,7 @@ Post comment to Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| comment | string | The comment to post |
-| resource | string | The hash or url to comment |
-
-
-
-
-
-
-
-
-
-### Get Comments
-
-Get comments from Virus Total
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| resource | string | The hash or url to get comments from |
+| ip | string | The ip to scan |
 
 
 
@@ -208,34 +236,6 @@ Scan url with Virus Total
 | --------- | ------- | --------------------------- |
 | url | string | The url to scan |
 | detect_treshold | integer | The number of positives from VirusTotal that will be used as a treshold of detection |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| report | object | VirusTotal report |
-
-
-
-
-
-
-
-### Scan IP
-
-Scan ip with Virus Total
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| ip | string | The ip to scan |
 
 
 

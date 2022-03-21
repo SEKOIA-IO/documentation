@@ -42,29 +42,6 @@ Add a new Address Group to a Fortigate Firewall
 
 
 
-### Post Fortigate IP Address
-
-Add a new IP Address object to a Fortigate Firewall
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| name | string | The name of the Address. |
-| ip | string | The IPv4 linked with the Address to be blocked, (for ex: '1.1.1.1'). |
-| associated-interface | string | The associated interface of the firewall leave blank for 'Any' (default: Any). |
-| comment | string | A commentary to be displayed in the Fortigate GUI (default none). |
-
-
-
-
-
-
-
-
-
 ### Post Fortigate FQDN Address
 
 Add a new FQDN object to a Fortigate Firewall
@@ -77,6 +54,29 @@ Add a new FQDN object to a Fortigate Firewall
 | --------- | ------- | --------------------------- |
 | name | string | The name of the Address. |
 | fqdn | string | The FQDN to be blocked (for ex: 'example.domain.com'). |
+| associated-interface | string | The associated interface of the firewall leave blank for 'Any' (default: Any). |
+| comment | string | A commentary to be displayed in the Fortigate GUI (default none). |
+
+
+
+
+
+
+
+
+
+### Post Fortigate IP Address
+
+Add a new IP Address object to a Fortigate Firewall
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| name | string | The name of the Address. |
+| ip | string | The IPv4 linked with the Address to be blocked, (for ex: '1.1.1.1'). |
 | associated-interface | string | The associated interface of the firewall leave blank for 'Any' (default: Any). |
 | comment | string | A commentary to be displayed in the Fortigate GUI (default none). |
 

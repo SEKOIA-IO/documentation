@@ -25,6 +25,240 @@
 
 ## Actions
 
+### SSL Hosts
+
+Get hosts by certificate
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| certSha1 | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| content | array |  |
+| first | boolean |  |
+| last | boolean |  |
+| number | integer |  |
+| numberOfElements | integer |  |
+| size | integer |  |
+| sort | string |  |
+| totalElements | integer |  |
+| totalPages | integer |  |
+
+
+
+
+
+
+
+### Hex Passive DNS
+
+Retrieve results by searching for specified hexadecimal bytes within PDNS record data field.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| type | string |  |
+| max | string |  |
+| lastSeenAfter | string |  |
+| firstSeenBefore | string |  |
+| hex | string | Hexadecimal encoding of data field bytes |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| recordCount | integer |  |
+| records | array |  |
+
+
+
+
+
+
+
+### IP Passive DNS
+
+Retrieve results by searching for specified IP address within PDNS record data field
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| ip | string |  |
+| max | string |  |
+| lastSeenAfter | string |  |
+| firstSeenBefore | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| recordCount | integer |  |
+| records | array |  |
+
+
+
+
+
+
+
+### Name Passive DNS
+
+Retrieve results by searching for specified resource name within PDNS record data field.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| name | string |  |
+| type | string | DNS resource record type |
+| max | string |  |
+| lastSeenAfter | string |  |
+| firstSeenBefore | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| recordCount | integer |  |
+| records | array |  |
+
+
+
+
+
+
+
+### SSL Certificates by Host
+
+Get SSL certificates by host name
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| host | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| content | array |  |
+
+
+
+
+
+
+
+### SSL Certificates by Name
+
+Get SSL certificates by name
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| name | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| content | array |  |
+| first | boolean |  |
+| last | boolean |  |
+| number | integer |  |
+| numberOfElements | integer |  |
+| size | integer |  |
+| sort | string |  |
+| totalElements | integer |  |
+| totalPages | integer |  |
+
+
+
+
+
+
+
+### SSL Certificates by Serial Number
+
+None
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| serial | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| content | array |  |
+| first | boolean |  |
+| last | boolean |  |
+| number | integer |  |
+| numberOfElements | integer |  |
+| size | integer |  |
+| sort | string |  |
+| totalElements | integer |  |
+| totalPages | integer |  |
+
+
+
+
+
+
+
 ### SSL Certificats by SHA-1
 
 Get SSL certificate by SHA1 hash
@@ -70,9 +304,9 @@ Get SSL certificate by SHA1 hash
 
 
 
-### Reverse Whois (organization)
+### Reverse Whois (address)
 
-Get WHOIS records associated with an organization
+Get WHOIS records associated with an address
 
 
 
@@ -80,7 +314,7 @@ Get WHOIS records associated with an organization
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| org | string |  |
+| address | string |  |
 | exact | string |  |
 | maxResults | string |  |
 
@@ -101,9 +335,9 @@ Get WHOIS records associated with an organization
 
 
 
-### SSL Certificates by Host
+### Whois
 
-Get SSL certificates by host name
+Get the current WHOIS for a domain
 
 
 
@@ -111,7 +345,10 @@ Get SSL certificates by host name
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| host | string |  |
+| domain | string |  |
+| exact | string |  |
+| maxResults | string |  |
+| Authorization | string |  |
 
 
 
@@ -121,7 +358,8 @@ Get SSL certificates by host name
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| content | array |  |
+| results | integer |  |
+| domains | array |  |
 
 
 
@@ -129,9 +367,9 @@ Get SSL certificates by host name
 
 
 
-### Reverse Whois (nameserver)
+### Reverse Whois (email)
 
-Get WHOIS records associated with a name server
+Get WHOIS records associated with an email address
 
 
 
@@ -139,7 +377,7 @@ Get WHOIS records associated with a name server
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| nameserver | string |  |
+| email | string |  |
 | exact | string |  |
 | maxResults | string |  |
 
@@ -191,41 +429,9 @@ Get WHOIS records associated with a name
 
 
 
-### IP Passive DNS
+### Reverse Whois (nameserver)
 
-Retrieve results by searching for specified IP address within PDNS record data field
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| ip | string |  |
-| max | string |  |
-| lastSeenAfter | string |  |
-| firstSeenBefore | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| recordCount | integer |  |
-| records | array |  |
-
-
-
-
-
-
-
-### Hex Passive DNS
-
-Retrieve results by searching for specified hexadecimal bytes within PDNS record data field.
+Get WHOIS records associated with a name server
 
 
 
@@ -233,112 +439,7 @@ Retrieve results by searching for specified hexadecimal bytes within PDNS record
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| type | string |  |
-| max | string |  |
-| lastSeenAfter | string |  |
-| firstSeenBefore | string |  |
-| hex | string | Hexadecimal encoding of data field bytes |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| recordCount | integer |  |
-| records | array |  |
-
-
-
-
-
-
-
-### SSL Certificates by Serial Number
-
-None
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| serial | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| content | array |  |
-| first | boolean |  |
-| last | boolean |  |
-| number | integer |  |
-| numberOfElements | integer |  |
-| size | integer |  |
-| sort | string |  |
-| totalElements | integer |  |
-| totalPages | integer |  |
-
-
-
-
-
-
-
-### SSL Hosts
-
-Get hosts by certificate
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| certSha1 | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| content | array |  |
-| first | boolean |  |
-| last | boolean |  |
-| number | integer |  |
-| numberOfElements | integer |  |
-| size | integer |  |
-| sort | string |  |
-| totalElements | integer |  |
-| totalPages | integer |  |
-
-
-
-
-
-
-
-### Reverse Whois (email)
-
-Get WHOIS records associated with an email address
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| email | string |  |
+| nameserver | string |  |
 | exact | string |  |
 | maxResults | string |  |
 
@@ -359,45 +460,9 @@ Get WHOIS records associated with an email address
 
 
 
-### SSL Certificates by Name
+### Reverse Whois (organization)
 
-Get SSL certificates by name
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| name | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| content | array |  |
-| first | boolean |  |
-| last | boolean |  |
-| number | integer |  |
-| numberOfElements | integer |  |
-| size | integer |  |
-| sort | string |  |
-| totalElements | integer |  |
-| totalPages | integer |  |
-
-
-
-
-
-
-
-### Whois
-
-Get the current WHOIS for a domain
+Get WHOIS records associated with an organization
 
 
 
@@ -405,72 +470,7 @@ Get the current WHOIS for a domain
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| domain | string |  |
-| exact | string |  |
-| maxResults | string |  |
-| Authorization | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| results | integer |  |
-| domains | array |  |
-
-
-
-
-
-
-
-### Name Passive DNS
-
-Retrieve results by searching for specified resource name within PDNS record data field.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| name | string |  |
-| type | string | DNS resource record type |
-| max | string |  |
-| lastSeenAfter | string |  |
-| firstSeenBefore | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| recordCount | integer |  |
-| records | array |  |
-
-
-
-
-
-
-
-### Reverse Whois (address)
-
-Get WHOIS records associated with an address
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| address | string |  |
+| org | string |  |
 | exact | string |  |
 | maxResults | string |  |
 

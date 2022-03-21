@@ -23,9 +23,9 @@
 
 ## Actions
 
-### Get IP Threat List
+### Get Domain Name CTLs
 
-Get threatlist information on IP with Onyphe
+Get domain name X509 certificate information from Certificate Transparency Logs (CTLs) with Onyphe
 
 
 
@@ -33,7 +33,7 @@ Get threatlist information on IP with Onyphe
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| ip | string | The ip to scan |
+| domain | string | The domain to scan |
 | budget | integer | Maximum number of pages to retrieve |
 | first_page | integer | Start retrieving data from this page |
 
@@ -102,6 +102,45 @@ Get datascan information on IP with Onyphe: "Application responses to [Onyphe's]
 
 
 
+### Lookup Forward DNS
+
+Get forward DNS lookup information on IP with Onyphe
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| ip | string | The ip to scan |
+| budget | integer | Maximum number of pages to retrieve |
+| first_page | integer | Start retrieving data from this page |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| count | integer | Number of elements in results |
+| error | integer | Error code, 0 for no error |
+| message | string | Error message, only if error is not 0 |
+| myip | string | IP from which the request is made |
+| results | array | array of data |
+| status | string | Status of the request: ok/nok |
+| took | string | Time to serve the request |
+| total | integer | Total number of pieces of information, only up to 10000 are returned in results |
+| max_page | integer | Maximal number of pages |
+| page | integer | Last page requested |
+
+
+
+
+
+
+
 ### Geolocalize IP
 
 Geo-localize ip with Onyphe
@@ -137,48 +176,9 @@ Geo-localize ip with Onyphe
 
 
 
-### Lookup MD5
+### Get IP Inetnum
 
-Get Onyphe datascans with the given md5 in the datamd5 field
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| md5 | string | The md5 to scan |
-| budget | integer | Maximum number of pages to retrieve |
-| first_page | integer | Start retrieving data from this page |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| count | integer | Number of elements in results |
-| error | integer | Error code, 0 for no error |
-| message | string | Error message, only if error is not 0 |
-| myip | string | IP from which the request is made |
-| results | array | array of data |
-| status | string | Status of the request: ok/nok |
-| took | string | Time to serve the request |
-| total | integer | Total number of pieces of information, only up to 10000 are returned in results |
-| max_page | integer | Maximal number of pages |
-| page | integer | Last page requested |
-
-
-
-
-
-
-
-### Get IP Sniffer
-
-Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed honeypots on the Internet. [They] are listening to Internet background noise and performing passive operating system identification"
+Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description as given by RIRs (Regional Internet Registries), except for the United States which does not disclose that information publicly."
 
 
 
@@ -254,9 +254,9 @@ Get information on IP with Onyphe
 
 
 
-### Get Pastries
+### Lookup MD5
 
-Get pastries information collected by Onyphe on pastebin.com
+Get Onyphe datascans with the given md5 in the datamd5 field
 
 
 
@@ -264,7 +264,7 @@ Get pastries information collected by Onyphe on pastebin.com
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| ip | string | The ip to scan |
+| md5 | string | The md5 to scan |
 | budget | integer | Maximum number of pages to retrieve |
 | first_page | integer | Start retrieving data from this page |
 
@@ -332,9 +332,9 @@ Get information on the given onion domain with Onyphe
 
 
 
-### Get Domain Name CTLs
+### Get Pastries
 
-Get domain name X509 certificate information from Certificate Transparency Logs (CTLs) with Onyphe
+Get pastries information collected by Onyphe on pastebin.com
 
 
 
@@ -342,7 +342,7 @@ Get domain name X509 certificate information from Certificate Transparency Logs 
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| domain | string | The domain to scan |
+| ip | string | The ip to scan |
 | budget | integer | Maximum number of pages to retrieve |
 | first_page | integer | Start retrieving data from this page |
 
@@ -374,6 +374,45 @@ Get domain name X509 certificate information from Certificate Transparency Logs 
 ### Lookup Reverse DNS
 
 Get reverse DNS lookup information on IP with Onyphe
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| ip | string | The ip to scan |
+| budget | integer | Maximum number of pages to retrieve |
+| first_page | integer | Start retrieving data from this page |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| count | integer | Number of elements in results |
+| error | integer | Error code, 0 for no error |
+| message | string | Error message, only if error is not 0 |
+| myip | string | IP from which the request is made |
+| results | array | array of data |
+| status | string | Status of the request: ok/nok |
+| took | string | Time to serve the request |
+| total | integer | Total number of pieces of information, only up to 10000 are returned in results |
+| max_page | integer | Maximal number of pages |
+| page | integer | Last page requested |
+
+
+
+
+
+
+
+### Get IP Sniffer
+
+Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed honeypots on the Internet. [They] are listening to Internet background noise and performing passive operating system identification"
 
 
 
@@ -449,48 +488,9 @@ Get synscan information on IP with Onyphe: "Open TCP ports found on the Internet
 
 
 
-### Lookup Forward DNS
+### Get IP Threat List
 
-Get forward DNS lookup information on IP with Onyphe
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| ip | string | The ip to scan |
-| budget | integer | Maximum number of pages to retrieve |
-| first_page | integer | Start retrieving data from this page |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| count | integer | Number of elements in results |
-| error | integer | Error code, 0 for no error |
-| message | string | Error message, only if error is not 0 |
-| myip | string | IP from which the request is made |
-| results | array | array of data |
-| status | string | Status of the request: ok/nok |
-| took | string | Time to serve the request |
-| total | integer | Total number of pieces of information, only up to 10000 are returned in results |
-| max_page | integer | Maximal number of pages |
-| page | integer | Last page requested |
-
-
-
-
-
-
-
-### Get IP Inetnum
-
-Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description as given by RIRs (Regional Internet Registries), except for the United States which does not disclose that information publicly."
+Get threatlist information on IP with Onyphe
 
 
 

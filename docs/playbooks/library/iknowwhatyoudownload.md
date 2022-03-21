@@ -24,6 +24,36 @@
 
 ## Actions
 
+### Check IP existence
+
+Fast check if IP exists or not in the IKnowWhatYouDownload database
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| ip | string | The IP address to query |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| ip | string | ip address |
+| exists | boolean | does IKnowWhatYouDownload have history for this ip or not |
+| date | string | last seen date in UTC, optional |
+
+
+
+
+
+
+
 ### Get IP History
 
 Fetches the historical data of downloaded and shared content using the BitTorrent protocol of an IP
@@ -50,36 +80,6 @@ Fetches the historical data of downloaded and shared content using the BitTorren
 | hasChildPorno | boolean | if any content has category 'ChildPorno' |
 | geoData | object | geo data for ip if known |
 | contents | array | list of found contents |
-
-
-
-
-
-
-
-### Check IP existence
-
-Fast check if IP exists or not in the IKnowWhatYouDownload database
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| ip | string | The IP address to query |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| ip | string | ip address |
-| exists | boolean | does IKnowWhatYouDownload have history for this ip or not |
-| date | string | last seen date in UTC, optional |
 
 
 
