@@ -15,6 +15,7 @@ You now have all informations to configure The Hive module and its `Create Alert
 To start your playbook with an example template, go to : "Create a new playbook" > "Use a template" > Search for TheHive.
 
 You can also create your own on the same basis. A typical playbook to send alerts to a TheHive instance will use this kind of chain :
+
 - a trigger based on alerts (for example `Alert Webhook` one or `Alert Created`) ;
 - a first action `Get Alert` to query the alert details ;
 - a second action `Get events` to query the alert events, the query is `alert_short_ids:"{{ the alert short id variable }}"`, from `-1d` to `now` ;
