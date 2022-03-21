@@ -24,6 +24,37 @@
 
 ## Actions
 
+### Get Report
+
+Generate a Censys report from results
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string | Query to execute |
+| index | string | Name of the index to use |
+| field | string | The field you are running a breakdown on in dot notation, e.g. location.country_code. |
+| buckets | integer | The maximum number of values to be returned in the report. Maximum: 500. Default: 50 |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| result_path | string | Path of result file |
+
+
+
+
+
+
+
 ### Search
 
 Search items from Censys API
@@ -49,37 +80,6 @@ Search items from Censys API
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | result_path | string | Path of results file |
-
-
-
-
-
-
-
-### Get Report
-
-Generate a Censys report from results
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string | Query to execute |
-| index | string | Name of the index to use |
-| field | string | The field you are running a breakdown on in dot notation, e.g. location.country_code. |
-| buckets | integer | The maximum number of values to be returned in the report. Maximum: 500. Default: 50 |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| result_path | string | Path of result file |
 
 
 

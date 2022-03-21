@@ -57,6 +57,34 @@ Trigger a playbook on a new MISP event
 
 ## Actions
 
+### MISP to STIX
+
+Convert MISP event to STIX 2
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| event | object | MISP event to convert to STIX |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| bundle | object | Converted STIX Bundle |
+
+
+
+
+
+
+
 ### Publish Event
 
 Publish an event on a MISP server
@@ -80,34 +108,6 @@ Publish an event on a MISP server
 | --------- | ------- | --------------------------- |
 | event | object | Published MISP event |
 | event_path | string | Published MISP event (to file) |
-
-
-
-
-
-
-
-### MISP to STIX
-
-Convert MISP event to STIX 2
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| event | object | MISP event to convert to STIX |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| bundle | object | Converted STIX Bundle |
 
 
 

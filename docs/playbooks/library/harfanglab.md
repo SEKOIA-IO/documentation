@@ -24,9 +24,9 @@ HarfangLab is an Endpoint detection and response (EDR) solution certified by ANS
 
 ## Actions
 
-### List processes
+### List named pipes
 
-Get the list of processes on the systems
+Get the list of named pipe on the systems
 
 
 
@@ -36,9 +36,6 @@ Get the list of processes on the systems
 | --------- | ------- | --------------------------- |
 | target_agents | string | Targeted agents identifier |
 | target_groups | string | Targeted groups identifier |
-| get_connections_list | boolean | Get list of connections (listening and connected sockets) |
-| get_handles_list | boolean | Get list of open handles |
-| get_signatures_list | boolean | Get signature info of processes and DLLs |
 
 
 
@@ -59,9 +56,9 @@ Get the list of processes on the systems
 
 
 
-### List named pipes
+### List processes
 
-Get the list of named pipe on the systems
+Get the list of processes on the systems
 
 
 
@@ -71,6 +68,9 @@ Get the list of named pipe on the systems
 | --------- | ------- | --------------------------- |
 | target_agents | string | Targeted agents identifier |
 | target_groups | string | Targeted groups identifier |
+| get_connections_list | boolean | Get list of connections (listening and connected sockets) |
+| get_handles_list | boolean | Get list of open handles |
+| get_signatures_list | boolean | Get signature info of processes and DLLs |
 
 
 

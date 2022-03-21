@@ -62,9 +62,9 @@ Get LiveHunt notifications from the files endpoint
 
 ## Actions
 
-### Scan Hash
+### Get Comments
 
-Scan hash with Virus Total
+Get comments from Virus Total
 
 
 
@@ -72,7 +72,7 @@ Scan hash with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| hash | string | The hash to check |
+| resource | string | The hash or url to get comments from |
 
 
 
@@ -90,9 +90,9 @@ Scan hash with Virus Total
 
 
 
-### Scan URL
+### Post Comment
 
-Scan url with Virus Total
+Post comment to Virus Total
 
 
 
@@ -100,8 +100,28 @@ Scan url with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| url | string | The url to scan |
-| detect_treshold | integer | The number of positives from VirusTotal that will be used as a treshold of detection |
+| comment | string | The comment to post |
+| resource | string | The hash or url to comment |
+
+
+
+
+
+
+
+
+
+### Scan Domain
+
+Scan domain with Virus Total
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| domain | string | The domain to scan |
 
 
 
@@ -148,9 +168,9 @@ Scan file with Virus Total
 
 
 
-### Get Comments
+### Scan Hash
 
-Get comments from Virus Total
+Scan hash with Virus Total
 
 
 
@@ -158,7 +178,7 @@ Get comments from Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| resource | string | The hash or url to get comments from |
+| hash | string | The hash to check |
 
 
 
@@ -204,9 +224,9 @@ Scan ip with Virus Total
 
 
 
-### Scan Domain
+### Scan URL
 
-Scan domain with Virus Total
+Scan url with Virus Total
 
 
 
@@ -214,7 +234,8 @@ Scan domain with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| domain | string | The domain to scan |
+| url | string | The url to scan |
+| detect_treshold | integer | The number of positives from VirusTotal that will be used as a treshold of detection |
 
 
 
@@ -225,27 +246,6 @@ Scan domain with Virus Total
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | report | object | VirusTotal report |
-
-
-
-
-
-
-
-### Post Comment
-
-Post comment to Virus Total
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| comment | string | The comment to post |
-| resource | string | The hash or url to comment |
-
-
 
 
 

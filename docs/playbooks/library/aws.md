@@ -21,36 +21,6 @@ This module provides triggers to collect events from AWS
 
 ## Triggers
 
-### Fetch Flowlog records
-
-Get the last records from FlowLog
-
-
-
-#### Arguments
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| frequency | integer | Batch frequency in seconds |
-| bucket_name | string | The bucket that contains Flowlog records |
-| prefix | string | Limits the response to keys that begin with the specified prefix |
-| chunk_size | integer | The size of chunks for the batch processing |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| records | array | A list of Flowlog records |
-
-
-
-
-
-
-
 ### Fetch CloudTrail logs
 
 Get the last records from CloudTrail
@@ -74,6 +44,36 @@ Get the last records from CloudTrail
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | records | array | A list of CloudTrail log records |
+
+
+
+
+
+
+
+### Fetch Flowlog records
+
+Get the last records from FlowLog
+
+
+
+#### Arguments
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| frequency | integer | Batch frequency in seconds |
+| bucket_name | string | The bucket that contains Flowlog records |
+| prefix | string | Limits the response to keys that begin with the specified prefix |
+| chunk_size | integer | The size of chunks for the batch processing |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| records | array | A list of Flowlog records |
 
 
 

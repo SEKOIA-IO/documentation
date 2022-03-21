@@ -26,30 +26,11 @@
 
 ## Actions
 
-### Get dataleaks trackers
+### List CVEs
 
-Get all available information about the dataleaks our platform keeps track.
+Get list of CVEs that migh affect a specific IP.
 
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| sktorrent | object |  |
-| samsclub | object |  |
-| yandex | object |  |
-
-
-
-
-
-
-
-### Search screenshots
-
-Remote Desktops based on a Query. List of screenshots and details extracted from them for the given query, including OCR and whether faces were found or not. Can be used with specific parameters and/or full-text search.
+ **Note**: Available for paid subscriptions only.
 
 
 
@@ -57,41 +38,7 @@ Remote Desktops based on a Query. List of screenshots and details extracted from
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| query | string |  |
-| page | integer |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| pagesize | integer |  |
-| query | string |  |
-| total | integer |  |
-| page | integer |  |
-| events | array |  |
-
-
-
-
-
-
-
-### Search torrent activities
-
-Events based on a Query. List of recent events for the given query, including details of the peer and torrent. Can be used with specific parameters and/or full-text search.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string |  |
-| page | integer |  |
+| target | string |  |
 
 
 
@@ -102,10 +49,7 @@ Events based on a Query. List of recent events for the given query, including de
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | query | string |  |
-| page | integer |  |
-| pagesize | integer |  |
-| total | integer |  |
-| events | array |  |
+| events | object |  |
 
 
 
@@ -147,19 +91,9 @@ Allows you to search across multiple data breaches to see if any of your email a
 
 
 
-### List subdomains
+### Get dataleaks trackers
 
-Return list of subdomains known from the target domains.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| target | string |  |
-| page | integer |  |
-
+Get all available information about the dataleaks our platform keeps track.
 
 
 
@@ -168,80 +102,9 @@ Return list of subdomains known from the target domains.
 #### Outputs
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| query | string |  |
-| page | integer |  |
-| pagesize | integer |  |
-| total | integer |  |
-| events | array |  |
-
-
-
-
-
-
-
-### Get History
-
-Details about an Host, with data up to 6 months.
-
- List of events for the specified host, with events for each time that:
- - A port was detected open
- - A service was found running
- - Other modules were successfully executed
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| target | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| total | integer |  |
-| query | string |  |
-| events | array |  |
-
-
-
-
-
-
-
-### Search events
-
-Events based on a Query. List of recent events for the given query, including details of exposed ports and services. Can be used with [specific parameters](https://docs.binaryedge.io/image-search/) and/or full-text search.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string |  |
-| page | integer |  |
-| only_ips | integer |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string |  |
-| total | integer |  |
-| page | integer |  |
-| pagesize | integer |  |
-| events | array |  |
+| sktorrent | object |  |
+| samsclub | object |  |
+| yandex | object |  |
 
 
 
@@ -274,71 +137,6 @@ Verify how many emails are affected by dataleaks for a specific domain. We don't
 | total | integer |  |
 | groups | array |  |
 | query | string |  |
-
-
-
-
-
-
-
-### List tags for screenshots
-
-Get the list of possible tags for the images.
-
-
-
-
-
-
-
-
-### Get torrent statistics
-
-Statistics of events for the given query. Can be used with specific parameters and/or full-text search.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string |  |
-| type | string |  |
-| days | integer |  |
-| order | string |  |
-
-
-
-
-
-
-
-
-
-### List CVEs
-
-Get list of CVEs that migh affect a specific IP.
-
- **Note**: Available for paid subscriptions only.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| target | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string |  |
-| events | object |  |
 
 
 
@@ -381,34 +179,11 @@ Return list of known DNS results for the target domain. Possible types of record
 
 
 
-### Get sensors statistics
+### List domains by IP
 
-Statistics of recent events for the given query. Can be used with specific parameters and/or full-text search.
+Return records that have the specified IP address in their A or AAAA records.
 
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string |  |
-| type | string |  |
-| days | integer |  |
-| order | string |  |
-
-
-
-
-
-
-
-
-
-### Get sensors
-
-Details about an Scanner. List of recent events form the specified host, including details of scanned ports, payloads and tags.
-
- **Note**: Querying CIDRs is available for paid subscriptions only. When using CIDR, the number of credits that will be spent correspond to the number of targets that returned results. Example: a request for a /24 (256 targets) in which only 200 targets have results, will decrement 200 credits.
+ **Nota**: Available for paid subscriptions only.
 
 
 
@@ -417,6 +192,7 @@ Details about an Scanner. List of recent events form the specified host, includi
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | target | string |  |
+| page | integer |  |
 
 
 
@@ -427,40 +203,9 @@ Details about an Scanner. List of recent events form the specified host, includi
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | query | string |  |
+| page | integer |  |
+| pagesize | integer |  |
 | total | integer |  |
-| targets_found | integer |  |
-| events | array |  |
-
-
-
-
-
-
-
-### Get details
-
-Details about an Host. List of recent events for the specified host, including details of exposed ports and services.
-
- **Note**: Querying CIDRs is available for paid subscriptions only. When using CIDR, the number of credits that will be spent correspond to the number of targets that returned results. Example: a request for a /24 (256 targets) in which only 200 targets have results, will decrement 200 credits.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| target | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| total | integer |  |
-| query | string |  |
 | events | array |  |
 
 
@@ -504,6 +249,253 @@ List of Domains/DNS data based on a Query. Can be used with specific parameters 
 
 
 
+### List subdomains
+
+Return list of subdomains known from the target domains.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| target | string |  |
+| page | integer |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| page | integer |  |
+| pagesize | integer |  |
+| total | integer |  |
+| events | array |  |
+
+
+
+
+
+
+
+### List screenshots
+
+Details about Remote Desktops found on an Host. List of screenshots and details extracted from them for the specified host, including OCR and whether faces were found or not, with data up to 2 months.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| target | string |  |
+| page | integer |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| pagesize | integer |  |
+| query | string |  |
+| total | integer |  |
+| page | integer |  |
+| events | array |  |
+
+
+
+
+
+
+
+### Search screenshots
+
+Remote Desktops based on a Query. List of screenshots and details extracted from them for the given query, including OCR and whether faces were found or not. Can be used with specific parameters and/or full-text search.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| page | integer |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| pagesize | integer |  |
+| query | string |  |
+| total | integer |  |
+| page | integer |  |
+| events | array |  |
+
+
+
+
+
+
+
+### List tags for screenshots
+
+Get the list of possible tags for the images.
+
+
+
+
+
+
+
+
+### Get details
+
+Details about an Host. List of recent events for the specified host, including details of exposed ports and services.
+
+ **Note**: Querying CIDRs is available for paid subscriptions only. When using CIDR, the number of credits that will be spent correspond to the number of targets that returned results. Example: a request for a /24 (256 targets) in which only 200 targets have results, will decrement 200 credits.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| target | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| total | integer |  |
+| query | string |  |
+| events | array |  |
+
+
+
+
+
+
+
+### Get History
+
+Details about an Host, with data up to 6 months.
+
+ List of events for the specified host, with events for each time that:
+ - A port was detected open
+ - A service was found running
+ - Other modules were successfully executed
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| target | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| total | integer |  |
+| query | string |  |
+| events | array |  |
+
+
+
+
+
+
+
+### Get Score
+
+IP Risk Score. Scoring is based on all information found on our databases regarding an IP and refers to the level of exposure of a target, i.e, the higher the score, the greater the risk of exposure.
+
+ More details about scoring can be found on [here](https://github.com/binaryedge/ratemyip-openframework/blob/master/ip-score.md).
+
+ **Note**: Available for paid subscriptions only.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| target | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| normalized_ip_score | float |  |
+| normalized_ip_score_detailed | object |  |
+| ip_score_detailed | object |  |
+| results_detailed | object |  |
+| ip_address | string |  |
+
+
+
+
+
+
+
+### Search events
+
+Events based on a Query. List of recent events for the given query, including details of exposed ports and services. Can be used with [specific parameters](https://docs.binaryedge.io/image-search/) and/or full-text search.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| page | integer |  |
+| only_ips | integer |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| total | integer |  |
+| page | integer |  |
+| pagesize | integer |  |
+| events | array |  |
+
+
+
+
+
+
+
 ### Get statistics
 
 Statistics of recent events for the given query. Can be used with specific parameters and/or full-text search.
@@ -516,6 +508,97 @@ Statistics of recent events for the given query. Can be used with specific param
 | --------- | ------- | --------------------------- |
 | query | string |  |
 | type | string |  |
+| order | string |  |
+
+
+
+
+
+
+
+
+
+### Get sensors
+
+Details about an Scanner. List of recent events form the specified host, including details of scanned ports, payloads and tags.
+
+ **Note**: Querying CIDRs is available for paid subscriptions only. When using CIDR, the number of credits that will be spent correspond to the number of targets that returned results. Example: a request for a /24 (256 targets) in which only 200 targets have results, will decrement 200 credits.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| target | string |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| total | integer |  |
+| targets_found | integer |  |
+| events | array |  |
+
+
+
+
+
+
+
+### Search sensors
+
+Events based on a Query. List of recent events for the given query, including details of scanned ports, payloads and tags. Can be used with specific parameters and/or full-text search.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| days | integer |  |
+| page | integer |  |
+| only_ips | integer |  |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| page | integer |  |
+| pagesize | integer |  |
+| total | integer |  |
+| events | array |  |
+
+
+
+
+
+
+
+### Get sensors statistics
+
+Statistics of recent events for the given query. Can be used with specific parameters and/or full-text search.
+
+
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| query | string |  |
+| type | string |  |
+| days | integer |  |
 | order | string |  |
 
 
@@ -611,11 +694,9 @@ Details about torrents transferred by an Host. List of recent torrent events for
 
 
 
-### List domains by IP
+### Search torrent activities
 
-Return records that have the specified IP address in their A or AAAA records.
-
- **Nota**: Available for paid subscriptions only.
+Events based on a Query. List of recent events for the given query, including details of the peer and torrent. Can be used with specific parameters and/or full-text search.
 
 
 
@@ -623,7 +704,7 @@ Return records that have the specified IP address in their A or AAAA records.
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| target | string |  |
+| query | string |  |
 | page | integer |  |
 
 
@@ -646,42 +727,9 @@ Return records that have the specified IP address in their A or AAAA records.
 
 
 
-### List screenshots
+### Get torrent statistics
 
-Details about Remote Desktops found on an Host. List of screenshots and details extracted from them for the specified host, including OCR and whether faces were found or not, with data up to 2 months.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| target | string |  |
-| page | integer |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| pagesize | integer |  |
-| query | string |  |
-| total | integer |  |
-| page | integer |  |
-| events | array |  |
-
-
-
-
-
-
-
-### Search sensors
-
-Events based on a Query. List of recent events for the given query, including details of scanned ports, payloads and tags. Can be used with specific parameters and/or full-text search.
+Statistics of events for the given query. Can be used with specific parameters and/or full-text search.
 
 
 
@@ -690,59 +738,11 @@ Events based on a Query. List of recent events for the given query, including de
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | query | string |  |
+| type | string |  |
 | days | integer |  |
-| page | integer |  |
-| only_ips | integer |  |
+| order | string |  |
 
 
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| query | string |  |
-| page | integer |  |
-| pagesize | integer |  |
-| total | integer |  |
-| events | array |  |
-
-
-
-
-
-
-
-### Get Score
-
-IP Risk Score. Scoring is based on all information found on our databases regarding an IP and refers to the level of exposure of a target, i.e, the higher the score, the greater the risk of exposure.
-
- More details about scoring can be found on [here](https://github.com/binaryedge/ratemyip-openframework/blob/master/ip-score.md).
-
- **Note**: Available for paid subscriptions only.
-
-
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| target | string |  |
-
-
-
-
-
-
-#### Outputs
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| normalized_ip_score | float |  |
-| normalized_ip_score_detailed | object |  |
-| ip_score_detailed | object |  |
-| results_detailed | object |  |
-| ip_address | string |  |
 
 
 
