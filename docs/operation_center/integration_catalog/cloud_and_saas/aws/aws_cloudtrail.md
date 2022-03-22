@@ -32,7 +32,7 @@ Set up the module configuration with the [AWS Access Key](https://docs.aws.amazo
 
 At the end of the playbook, set up the action `Push events to intake` with a SEKOIA.IO API key and the intake key, from the intake previously created.
 
-Start the paaybook and enjoy your events.
+Start the playbook and enjoy your events.
 
 ## Further Readings
 
