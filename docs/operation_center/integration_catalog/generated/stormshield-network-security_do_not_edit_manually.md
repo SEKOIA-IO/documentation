@@ -38,12 +38,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "@timestamp": "2022-03-17T13:49:51+00:00",
         "destination": {
-            "address": "20.42.73.29",
+            "address": "11.22.33.44",
             "geo": {
                 "continent_name": "na",
                 "country_iso_code": "us"
             },
-            "ip": "20.42.73.29",
+            "ip": "11.22.33.44",
             "port": 443
         },
         "ecs": {
@@ -69,7 +69,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "message": "time=\"2022-03-17 14:49:51\" fw=\"SN2KXA14K0150A7\" tz=+0100 startime=\"2022-03-17 14:49:51\" pri=5 confid=01 slotlevel=5 ruleid=48 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=192.168.170.52 srcport=39618 srcportname=ephemeral_fw_tcp srcname=MGDFS-Proxy-02 srcmac=00:1c:7f:8c:45:04 dst=20.42.73.29 dstport=443 dstportname=https dstcontinent=\"na\" dstcountry=\"us\" ipv=4 sent=0 rcvd=0 duration=0.00 logtype=\"filter\"",
+        "message": "time=\"2022-03-17 14:49:51\" fw=\"SN12345678912345\" tz=+0100 startime=\"2022-03-17 14:49:51\" pri=5 confid=01 slotlevel=5 ruleid=48 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=55.66.77.88 srcport=39618 srcportname=ephemeral_fw_tcp srcname=MGDFS-Proxy-02 srcmac=00:00:00:00:00:00 dst=11.22.33.44 dstport=443 dstportname=https dstcontinent=\"na\" dstcountry=\"us\" ipv=4 sent=0 rcvd=0 duration=0.00 logtype=\"filter\"",
         "network": {
             "bytes": 0,
             "protocol": "https",
@@ -89,12 +89,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "Ethernet3"
                 }
             },
-            "serial_number": "SN2KXA14K0150A7"
+            "serial_number": "SN12345678912345"
         },
         "related": {
             "ip": [
-                "20.42.73.29",
-                "192.168.170.52"
+                "11.22.33.44",
+                "55.66.77.88"
             ]
         },
         "rule": {
@@ -129,9 +129,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
-            "address": "192.168.170.52",
-            "ip": "192.168.170.52",
-            "mac": "00:1c:7f:8c:45:04",
+            "address": "55.66.77.88",
+            "ip": "55.66.77.88",
+            "mac": "00:00:00:00:00:00",
             "port": 39618
         },
         "stormshield": {
@@ -156,12 +156,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "address": "42.123.123.123",
             "ip": "42.123.123.123",
-            "mac": "00:5e:6f:3q:78:30",
+            "mac": "00:00:00:00:00:00",
             "port": 60355
         },
         "destination": {
-            "address": "24.32.123.42",
-            "ip": "24.32.123.42",
+            "address": "11.11.11.11",
+            "ip": "11.11.11.11",
             "port": 443,
             "geo": {
                 "continent_name": "na",
@@ -267,7 +267,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=Passerelle_SITA srcmac=00:1c:7f:8c:45:04 srccontinent=\"na\" srccountry=\"us\" dst=22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=92.175.10.97 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
+        "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=foo_bar srcmac=00:00:00:00:00:00 srccontinent=\"na\" srccountry=\"us\" dst=22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=11.11.11.11 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
         "network": {
             "bytes": 5555692.0,
             "protocol": "https",
@@ -333,7 +333,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "country_iso_code": "us"
             },
             "ip": "11.11.11.11",
-            "mac": "00:1c:7f:8c:45:04",
+            "mac": "00:00:00:00:00:00",
             "port": 49586
         },
         "stormshield": {
