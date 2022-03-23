@@ -47,6 +47,11 @@ nav:
       - AWS:
         - CloudTrail: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
         - VPC Flow Logs: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
+      - Cisco Umbrella:
+        - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+        - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+        - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      - Digital Shadows: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
       - Microsoft Azure:
         - Azure Active Directory: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
         - Azure MySQL: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
@@ -54,10 +59,6 @@ nav:
         - Azure Network Watcher: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
         - Azure Windows machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
       - Microsoft Office 365: operation_center/integration_catalog/cloud_and_saas/o365.md
-      - Cisco Umbrella:
-        - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
-        - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
-        - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
     - Email:
       - FortiMail: operation_center/integration_catalog/email/fortimail.md
       - Postfix: operation_center/integration_catalog/email/postfix.md
