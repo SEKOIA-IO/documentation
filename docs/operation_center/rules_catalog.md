@@ -8,9 +8,9 @@ All rules are applied to your event stream in real-time, so that you can detect 
 
 SEKOIA.IO supports the following rule types:
 
-- Sigma: signature rules using the [Sigma detection language](#sigma-rules)
-- CTI: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule is already built-in to detect malicious activity based on a list of indicators from SEKOIA.IO's own Intelligence feed, continuously updated by our Threat & Detection Research team
-- STIX (deprecated): signature rules using the STIX Patterning language
+- **Sigma**: signature rules using the [Sigma detection language](#sigma-rules)
+- **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from SEKOIA.IO's own Intelligence feed, continuously updated by our Threat & Detection Research team
+- **STIX** (deprecated): signature rules using the STIX Patterning language
 
 ## Rules Catalog
 
@@ -26,8 +26,8 @@ You can enable or disable rules one by one are all at once according to current 
 
 The Rules Catalog lists all detection rules available to your organization:
 
-- Verified Rules: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
-- Custom Rules: rules created by your team that are specific to your organization.
+- **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
+- **Custom Rules**: rules created by your team that are specific to your organization.
 
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the Verified counter to list only Verified rules. You can then click on the Verified filter if you would rather see only Custom rules.
 
@@ -40,7 +40,10 @@ All rules have an associated effort level. The effort level is increasing from E
 - Effort needed to enable a rule.
 - Risk of false positives.
 
-Master rules are generic and raise a lot of alerts that will require qualification, but they can detect weaker signals. Elementary rules require almost no effort and raise fewer alerts.
+For example: 
+
+- **Elementary** rules require almost no effort and raise fewer alerts.
+- **Master** rules are generic and raise a lot of alerts that will require qualification, but they can detect weaker signals. Those rules require an additional customisation effort, which has to be adapted to the customer context.
 
 You can click on each counter associated with an effort level to see only the rules for this level.
 
@@ -50,8 +53,8 @@ You can click on each counter associated with an effort level to see only the ru
 
 The rules are also associated with different capabilities:
 
-- Offensive Capabilities: threats or attack patterns that they can detect
-- Defensive Capabilities: data sources on which they operate
+- Offensive Capabilities: **threats** or **attack patterns** that they can detect
+- Defensive Capabilities: **data sources** on which they operate
 
 Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
 
@@ -59,7 +62,7 @@ Capabilities that have associated rules inside the catalog are listed on the lef
 
 ### Security Profile (MITRE ATT&CK)
 
-The MITRE ATT&CK framework is a comprehensive matrix of tactics and techniques used by threat hunters and defenders to better classify attacks and assess an organization's risk.
+The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
 Every time you enable a rule, it appears on the matrix in blue in one or many cells.
 Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
 You can see how many rules are enabled in a cell by hovering over it.
@@ -69,10 +72,10 @@ The color changes depending on the number of rules activated in one cell. The bl
 
 ### Rule Details
 
-You can click on the name of a rule to display additional details:
+You can click on the name of a rule to display additional details, such as, but not limited to:
 
-- The severity which should be used to later determine the Alert's urgency
-- The category of created alerts
+- The Severity which should be used to later determine the Alert's Urgency
+- The Category of created alerts
 - Associated Threats
 - Associated Data Sources
 - Known False Positives
@@ -82,11 +85,11 @@ You can click on the name of a rule to display additional details:
 
 ### Limiting the scope of a rule
 
-When the Rule Details panel is open, you can click on the Configure icon at the top right to edit the rule's configuration. If the rule is custom, you will be able to edit every aspect of it. Otherwise, you will only be able to limit its applicable scope with the following filters:
+When the Rule Details panel is open, you can click on the Configure icon at the top right to edit the rule's configuration. If the rule is Custom, you will be able to edit every aspect of it. Otherwise, you will only be able to limit its applicable scope with the following filters:
 
-- Alert Filters are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../alerts/#create-an-alert-filter).
-- Entities: select the entities this rule should apply to. By default, rules apply to all entities.
-- Assets: select the assets this rule should apply to. By default, rules apply to all assets.
+- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../alerts/#create-an-alert-filter).
+- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
+- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets.
 
 When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
 
@@ -131,7 +134,7 @@ Sigma is a generic and open format you can use to write signatures that will be 
 
 Each rule should contain a `detection` object using a set of `Search-Identifier`s to define a matching `condition`:
 
-```
+```yaml
 detection:
   <Search-Idenfier>
     <string-list>
@@ -139,7 +142,7 @@ detection:
   condition: <Condition>
 ```
 
-`<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Idenfier>` can contain two different structures: lists and maps.
+`<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Idenfier>` can contain two different structures: **Maps** and **Lists**.
 
 #### Maps
 
@@ -199,7 +202,7 @@ Some things to know about values used in Sigma rules:
 
 #### Value Modifiers
 
-The values contained in SIGMA rules can be modified with modifiers. Value modifiers are appended after the field name with a pipe character `|` and can be chained.
+The values contained in Sigma rules can be modified with modifiers. Value modifiers are appended after the field name with a pipe character `|` and can be chained.
 
 Here is the list of supported modifiers:
 
