@@ -186,7 +186,7 @@ You can also use lists of maps to combine several maps with a logical `OR`.
 detection:
   selection:
     - source.ip: 6.6.6.6
-    - detection.ip: 6.6.6.6
+    - destination.ip: 6.6.6.6
   condition: selection
 ```
 
@@ -418,7 +418,7 @@ detection:
   selection:
     event.category: network
     event.type: connection
-    event.ouctome: success
+    event.outcome: success
   condition: selection
 ---
 action: correlation
