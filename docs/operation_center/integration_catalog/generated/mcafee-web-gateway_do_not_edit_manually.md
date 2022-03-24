@@ -35,19 +35,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "sekoiaio": {
-            "intake": {
-                "dialect": "mcafee-web-gateway",
-                "dialect_uuid": "40bac399-2d8e-40e3-af3b-f73a622c9687",
-                "parsing_status": "success"
-            }
-        },
         "message": "date=\"2022-03-11T10:39:16.390Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.41 destination_host=\"www.forbiddensite.com\" http_status_code=403 media_type=\"\" source_bytes=131 destination_bytes=0 http_request_first_line=\"GET http://www.forbiddensite.com/ HTTP/1.1\" url_categories=\"Pornography\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-28 ruleset_name=\"Default\" rule_name=\"Block URLs Whose Category Is in Category Blocklist for Default Groups\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"forbiddenapp\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
         "source": {
             "ip": "1.2.3.4"
         },
         "destination": {
-            "ip": "2.2.2.41"
+            "ip": "2.2.2.41",
+            "domain": "www.forbiddensite.com"
         },
         "event": {
             "action": "denied",
@@ -105,18 +99,144 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "mcafee_access_log_blocked2.json"
+
+    ```json
+	
+    {
+        "message": "date=\"2022-03-17T13:14:39.134Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=52.242.101.226 destination_host=\"slscr.update.microsoft.com\" http_status_code=407 media_type=\"\" source_bytes=173 destination_bytes=0 http_request_first_line=\"CONNECT slscr.update.microsoft.com:443 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-42 ruleset_name=\"Authentication: Direct Proxy\" rule_name=\"Authenticate: Active Directory\" block_id=81 block_reason=\"Authentication Required\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
+        "source": {
+            "ip": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "52.242.101.226",
+            "domain": "slscr.update.microsoft.com",
+            "port": 443
+        },
+        "event": {
+            "action": "denied",
+            "start": "2022-03-17T13:14:39.134Z",
+            "code": "81",
+            "reason": "Authentication Required",
+            "category": "network"
+        },
+        "url": {
+            "domain": "slscr.update.microsoft.com",
+            "port": 443
+        },
+        "observer": {
+            "hostname": "mwgproxy"
+        },
+        "http": {
+            "request": {
+                "method": "CONNECT",
+                "bytes": 173
+            },
+            "response": {
+                "bytes": 0,
+                "status_code": 407
+            }
+        },
+        "rule": {
+            "ruleset": "Authentication: Direct Proxy",
+            "name": "Authenticate: Active Directory"
+        },
+        "mcafee": {
+            "webgateway": {
+                "url": {
+                    "reputation": "Minimal Risk",
+                    "reputation_code": -42,
+                    "categories": [
+                        "Business",
+                        "Software/Hardware"
+                    ]
+                },
+                "application": {
+                    "reputation": "Unverified"
+                },
+                "http": {
+                    "body": {
+                        "infected": "false",
+                        "modified": "false"
+                    }
+                }
+            }
+        }
+    }
+    	
+	```
+
+
+=== "mcafee_access_log_empty_destination_host.json"
+
+    ```json
+	
+    {
+        "message": "date=\"2022-03-24T13:54:02.740Z\" hostname=\"mwgproxy\" username=\"myusername\" source_ip=1.2.3.4 destination_ip=255.255.255.255 destination_host=\"\" http_status_code=400 media_type=\"\" source_bytes=316 destination_bytes=0 http_request_first_line=\"CONNECT :80 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-3 ruleset_name=\"Exception DFS\" rule_name=\"Forbidden Access\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
+        "source": {
+            "ip": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "255.255.255.255"
+        },
+        "event": {
+            "action": "denied",
+            "start": "2022-03-24T13:54:02.740Z",
+            "code": "10",
+            "reason": "Blocked by URL filtering",
+            "category": "network"
+        },
+        "user": {
+            "name": "myusername"
+        },
+        "observer": {
+            "hostname": "mwgproxy"
+        },
+        "http": {
+            "request": {
+                "method": "CONNECT",
+                "bytes": 316
+            },
+            "response": {
+                "bytes": 0,
+                "status_code": 400
+            }
+        },
+        "rule": {
+            "ruleset": "Exception DFS",
+            "name": "Forbidden Access"
+        },
+        "mcafee": {
+            "webgateway": {
+                "url": {
+                    "reputation": "Minimal Risk",
+                    "reputation_code": -3,
+                    "categories": [
+                        "Business",
+                        "Software/Hardware"
+                    ]
+                },
+                "application": {
+                    "reputation": "Unverified"
+                },
+                "http": {
+                    "body": {
+                        "infected": "false",
+                        "modified": "false"
+                    }
+                }
+            }
+        }
+    }
+    	
+	```
+
+
 === "mcafee_access_log_success.json"
 
     ```json
 	
     {
-        "sekoiaio": {
-            "intake": {
-                "dialect": "mcafee-web-gateway",
-                "dialect_uuid": "40bac399-2d8e-40e3-af3b-f73a622c9687",
-                "parsing_status": "success"
-            }
-        },
         "message": "date=\"2022-03-11T09:50:47.399Z\" hostname=\"mwgproxy\" username=\"myusername\" source_ip=1.2.3.4 destination_ip=142.250.178.131 destination_host=\"www.google.fr\" http_status_code=200 media_type=\"\" source_bytes=127 destination_bytes=14678 http_request_first_line=\"GET http://www.google.fr/ HTTP/1.1\" url_categories=\"Search Engines\" url_reputation_string=\"Minimal Risk\" url_reputation_code=0 ruleset_name=\"Dynamic Content Classification\" rule_name=\"Block URLs Whose Category Is in Category Blocklist\" block_id=0 block_reason=\"\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
         "user": {
             "name": "myusername"
@@ -125,7 +245,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.2.3.4"
         },
         "destination": {
-            "ip": "142.250.178.131"
+            "ip": "142.250.178.131",
+            "domain": "www.google.fr"
         },
         "event": {
             "action": "allowed",
@@ -190,7 +311,9 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
+|`destination.port` | `long` | Port of the destination. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
@@ -213,7 +336,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`rule.name` | `keyword` | Rule name |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`source.ip` | `ip` | IP address of the source. |
+|`url.domain` | `keyword` | Domain of the url. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
+|`url.port` | `long` | Port of the request, such as 443. |
 |`user.name` | `keyword` | Short name or login of the user. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 
