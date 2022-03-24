@@ -1,116 +1,176 @@
 # Detection Rules Management
 
-## Rules Catalog:
+Once your event logs are collected and normalized by SEKOIA.IO, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
 
-### Security profile MITRE ATT&CK
+All rules are applied to your event stream in real-time, so that you can detect - and respond to - threats as fast as possible.
 
-The MITRE ATT&CK framework is a comprehensive matrix of tactics and techniques used by threat hunters and defenders to better classify attacks and assess an organization's risk.
-Every time you enable a rule, it appears on the Framework in blue in one or many cells.
-Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
-You can see how many rules are enabled in a cell by hovering over it.
-The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
+## Rule Types
 
-![SEKOIA.IO Rules_Catalog_MITRE](../assets/operation_center/rules_catalog_mitre.gif){: style="max-width:60%"}
+SEKOIA.IO supports the following rule types:
 
-### Rules attributes
+- **Sigma**: signature rules using the [Sigma detection language](#sigma-rules)
+- **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from SEKOIA.IO's own Intelligence feed, continuously updated by our Threat & Detection Research team
+- **STIX** (deprecated): signature rules using the STIX Patterning language
 
-**Typology:**
+## Rules Catalog
 
-Two types of rules are displayed on the Rules Catalog.
+The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
 
-*Available rules*: All custom rules created by you in addition to the available rules in the Rules Catalog.
+You can enable or disable rules one by one are all at once according to current filters.
 
-*Verified rules*: Rules created by SEKOIA.IO’s analysts, related to the CTI and available in the Rules Catalog.
+![SEKOIA.IO Rules Catalog](../assets/operation_center/rules_catalog/rules_catalog.png){: style="max-width:100%"}
 
-**Effort level:**
+### Rules Attributes
 
-The effort level is increasing from Elementary to Master according to two criteria:
+#### Available / Verified Rules
+
+The Rules Catalog lists all detection rules available to your organization:
+
+- **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
+- **Custom Rules**: rules created by your team that are specific to your organization.
+
+The Available Rules counter displays the total number of rules (verified + custom). You can click on the Verified counter to list only Verified rules. You can then click on the Verified filter if you would rather see only Custom rules.
+
+![Available and Verified Rules](../assets/operation_center/rules_catalog/available_verified.png){: style="max-width:100%"}
+
+#### Effort Level
+
+All rules have an associated effort level. The effort level is increasing from Elementary to Master according to two criteria:
 
 - Effort needed to enable a rule.
 - Risk of false positives.
 
-Master rules are generic and raise a lot of alerts, which need to be contextualized in a more refined way. Whereas elementary rules require less effort and raise relatively fewer alerts.
-The blue square represents a clickable counter of activated rules, it is therefore possible to use the filters related to the effort level by clicking on one or more of them.
+For example: 
 
-**Capabilities:**
+- **Elementary** rules require almost no effort and raise fewer alerts.
+- **Master** rules are generic and raise a lot of alerts that will require qualification, but they can detect weaker signals. Those rules require an additional customisation effort, which has to be adapted to the customer context.
 
-The rules are related to different elements according to offensive and defensive capabilities. They can be related to threats, attacks and data sources.
-Each element is associated to a filter that can be used to display the rules related to the selected element.
+You can click on each counter associated with an effort level to see only the rules for this level.
 
-![SEKOIA.IO Rules_Catalog_Attributes](../assets/operation_center/rules_catalog_attributes.gif){: style="max-width:60%"}
+![Effort Level](../assets/operation_center/rules_catalog/effort_level.png){: style="max-width:100%"}
 
+#### Capabilities
 
-### Manage existing rules
+The rules are also associated with different capabilities:
 
-**Filters:**
+- Offensive Capabilities: **threats** or **attack patterns** that they can detect
+- Defensive Capabilities: **data sources** on which they operate
 
-There are different filters linked to all rules attributes above. They can be used either separately or in addition to other filters and allow you to Enable or Disable all rules displayed simultaneously.
+Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
 
-**Rules details:**
+![Capabilities](../assets/operation_center/rules_catalog/capabilities.png){: style="max-width:100%"}
 
-On top of the details of a rule, you can see the name, when it was released and last updated.
-There are information about the effort level attributed to the rule, the severity, tags that ease search, related threats.
-It also explains the followed strategy and gives information about false positives, STIX patterning and data sources.
-To edit an existing rule, click on the gear icon to select entities and assets, or to add a filter alert. 
+### Security Profile (MITRE ATT&CK)
 
-![SEKOIA.IO Rules_Catalog_Existing](../assets/operation_center/rules_catalog_manage.gif){: style="max-width:60%"}
+The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
+Every time you enable a rule, it appears on the matrix in blue in one or many cells.
+Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
+You can see how many rules are enabled in a cell by hovering over it.
+The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
 
+![Security Profile](../assets/operation_center/rules_catalog/security_profile.png){: style="max-width:100%"}
 
-### Add a custom rule
+### Rule Details
 
-In addition to the rules available in the catalog provided by SEKOIA.IO, you can add your own rules.
+You can click on the name of a rule to display additional details, such as, but not limited to:
+
+- The Severity which should be used to later determine the Alert's Urgency
+- The Category of created alerts
+- Associated Threats
+- Associated Data Sources
+- Known False Positives
+- The actual detection logic (the pattern)
+
+![Rule Details](../assets/operation_center/rules_catalog/rule_details.png){: style="max-width:100%"}
+
+### Limiting the scope of a rule
+
+When the Rule Details panel is open, you can click on the Configure icon at the top right to edit the rule's configuration. If the rule is Custom, you will be able to edit every aspect of it. Otherwise, you will only be able to limit its applicable scope with the following filters:
+
+- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../alerts/#create-an-alert-filter).
+- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
+- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets.
+
+When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
+
+![Limit Scope](../assets/operation_center/rules_catalog/limit_scope.png){: style="max-width:100%"}
+
+### Create custom rules
+
+In addition to the verified rules that are already built-in, you can create your own rules to support other detection use cases. To create a rule, click on the + Rules button at the top right of the page and fill out the form.
+
+The Rule creation form has the following sections:
 
 - **General definition of the rule:**
-The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description bellow.
-Select the effort level required and the threats detected with this rule if any, by selecting it on from the MITRE ATT&CK or by using the search bar through key words or drop-down list.
+  The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
+  Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
 
-- **Entities & Assets:**
-You can select entities and assets manually or use all of them as a basis to filter the analyzed events.
-Detection rules can be applied to all events, whatever the entity to which they are attached or the assets to which they can be linked, or applied only to some of them. 
-If you choose 'Using all entities' and 'Using all assets', rules will be applied to all events even if new entites or new assets were added since last rule modification. 
-For rules for which some entities or some assets were selected, if new entities or new assets are created, detection will not occur on corresponding events without rule modification.
-
-- **Detection patterns:**
-The signature part corresponds to the rule itself, the detection pattern applied to events. There are two type of rules: CTI or correlation.
-  
-  For CTI rules, you just have to select the source of the indicators: SEKOIA Intelligence Feed is an IOCs feed managed by SEKOIA's Purple Team (indicators present in the SEKOIA.IO Intelligence Center).
-  
-  For correlation rules, SEKOIA.IO supports two languages : [SIGMA](rules_catalog.md#sigma) and [STIX Patterning](rules_catalog.md#stix-patterning). More details about these languages are given below.```
+- **Detection Pattern:**
+  This is the detection logic itself. It varies according to the selected rule type.
 
 - **Security alerts:**
-In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
+  In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
 
-![SEKOIA.IO Rules_Catalog_Custom](../assets/operation_center/rules_catalog_add.gif){: style="max-width:60%"}
+  You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
 
+- **Entities & Assets:**
+  As discussed in the [limiting the scope](#limiting-the-scope-of-a-rule) section, you can select specific entities or assets this rule should apply to.
 
-!!! note
-    Modification of rules parameters will be applied for new alerts, raised after the compilation of the rule.
+![Custom Rule creation](../assets/operation_center/rules_catalog/custom_rule.png){: style="max-width:100%"}
 
-## SIGMA Format
-SIGMA is a generic and open format available to write correlation rules. 
-The rule format is easy to write and applicable to any field available in ECS in the platform. The langage used is YAML.
+### Automatically enable new rules
 
-The structure is the following :
-```
+New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the configure icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
+
+Rules are automatically enabled based on the configured effort level, or you can decide to never automatically enable rules.
+
+![Configure automatic enable](../assets/operation_center/rules_catalog/auto_enable.png){: style="max-width:100%"}
+
+## Sigma Rules
+
+Sigma is a generic and open format you can use to write signatures that will be applied to your event stream in real-time. This format makes it easy to write rules applicable to any field available in normalized events. Rules are documents using the YAML format.
+
+### Detection Object
+
+Each rule should contain a `detection` object using a set of `Search-Identifier`s to define a matching `condition`:
+
+```yaml
 detection:
   <Search-Idenfier>
     <string-list>
     <field:value>
   condition: <Condition>
-``` 
-
-`<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Idenfier>` can contain two different structures, lists and maps.
-
-!!! Note
-    Currently, we set a limitation and rules can be written for only one event. Aggregation expressions are not supported yet.
-    
-For the full specification of SIGMA, please refers to the [SIGMA Github](https://github.com/SigmaHQ/sigma/wiki/Specification)
-
-### Lists
-A list contains one or more strings that will match the full event log. Multiple strings will be linked with a logicial `OR`.
-
-**Example** : Raise an alert when an event contains "DangerousThreat.exe" or "powershell.exe malicousfile.ps1"
 ```
+
+`<Search-Identifier>` is a unique identifier that will be used in `<Condition>`. A `<Search-Idenfier>` can contain two different structures: **Maps** and **Lists**.
+
+#### Maps
+
+Maps consist of key/value pairs in which the key is the name of a field in your normalized event. The value is the value that should be present in this field for the `Search-Identifier` to match. Several values can be specified at once, in which case they are joined together with a logical `OR`.
+
+The keys of a map are joined together with a logical `AND`.
+
+**Example** : Raise an alert when an event contains `event.type: allowed` and the `destination.ip` is either `1.2.3.4` or `4.3.2.1`
+
+```yaml
+detection:
+  selection:
+    event.type: allowed
+    destination.ip:
+      - 1.2.3.4
+      - 4.3.2.1
+  condition: selection
+```
+
+#### Lists
+
+A list contains one or more items that are joined together with a logical `OR`.
+
+Lists of strings can be used to define any string that should be present in the whole event `message`:
+
+**Example**: Raise an alert when an event contains `DangerousThreat.exe` or `powershell.exe maliciousfile.ps1`
+
+```yaml
 detection:
   keywords:
     - DangerousThreat.exe
@@ -118,219 +178,264 @@ detection:
   condition: keywords
 ```
 
-### Maps
-Maps consists of key/value pairs, in which the key is a field in ECS (Elastic Common Format). ECS is the format you can see in the `Details` tab in the `Events` page.
-Multiple key/value within the same map are linked with a logical `OR` while two different maps are linked with a logiciel `AND`.
+You can also use lists of maps to combine several maps with a logical `OR`.
 
-**Example** : Raise an alert when an event contains `event.type: allowed` and the destination IP is either `destination.ip: 1.2.3.4` or `destination.ip: 4.3.2.1`
-```
+**Example**: Raise an alert when a specific IP address is seen as a source or a destination:
+
+```yaml
 detection:
   selection:
-    event.type: allowed
-    destination.ip:
-    - 1.2.3.4
-    - 4.3.2.1
+    - source.ip: 6.6.6.6
+    - destination.ip: 6.6.6.6
   condition: selection
 ```
 
-### Value Modifiers
-The values contained in SIGMA rules can be modified with modifiers. Value modifiers are appended after the field name with a pipe character `|` and can be chained.
-Here is some common modifiers :
+#### Values
 
-* `startswith`: the value is expected at the beginning of the field's content. (replaces e.g. 'adm*')
-* `endswith`: the value is expected at the end of the field's content (replaces e.g. '*\cmd.exe')
-* `re`: value is handled as a regular expression.
-    
-    **Example**: To write a regular expression for the field `host.domain`, we can write `host.domain|re: <Regular_expression>`
+Some things to know about values used in Sigma rules:
 
+- All values are treated as case-insensitive strings
+- You can use wildcard characters (`*` means any number of characters, `?` means any one character)
+- You don't have to escape characters, except `'`, `*` and `?`. A single backslash `\` does not need to be escaped, but can be (`\` is the same as `\\`)
+- You can use `''` to define an empty value
+- You can use `null` to define a null value
 
-### Conditions
-The condition will define how the rule will be processed and the link between the different `<Search-Identifier>`.
-We can write the condition using the following expressions :
+#### Value Modifiers
 
-- Logical AND/OR.
+The values contained in Sigma rules can be modified with modifiers. Value modifiers are appended after the field name with a pipe character `|` and can be chained.
 
-    **Example**: `selection1 or (selection2 and selection3)`
+Here is the list of supported modifiers:
+
+- `contains`: puts \* wildcards around the values, such that the value is matched anywhere in the field
+- `all`: link values of a list with a logical `AND`
+- `base64`: match the value encoded with Base64
+- `endswith`: the value is expected at the end of the field's content (replaces e.g. `*\cmd.exe`)
+- `startswith`: the value is expected at the beginning of the field's content. (replaces e.g. `adm*`)
+- `re`: the value is a regular expression. Regular expressions are case sensitive by default
+
+**Example**: Raise an alert when the URL matches specified regex and the command line contains all specified values
+
+```yaml
+detection:
+  selection:
+    url.original|re: ".*(php|aspx)$"
+    process.command_line|contains|all:
+      - evil_arg1
+      - evil_arg2
+      - evil_arg3
+  condition: selection
+```
+
+#### Condition
+
+The `condition` defines how `Search-Identifier`s should be combined to determine if the rule matched.
+
+It supports the following expressions:
+
+- Logical `AND`/`OR`
+
+  **Example**: `selection1 or (selection2 and selection3)`
 
 - `1/all of them`
 
-    `1 of them` will link all the `<Search-Identifier>` with a logicial OR.
+  `1 of them` will link all the `Search-Identifier`s with a logical OR.
 
-    `all of them` will link all the `<Search-Identifier>` with a logical AND.
-
-- `1/all of <Search-Identifier>`
-
-    `1 of <Search-Identifier>` will link all the alternatives within the `<Search-Identifier>` with a logical OR. 
-
-    `all of <Search-Identifier>` will link all the alternatives within the `<Search-Identifier>` with a logical AND.
+  `all of them` will link all the `Search-Identifier`s with a logical AND.
 
 - `1/all of <Search-Identifier-Pattern>`
 
-    It is the same as `1/all of them` but restricted to the Pattern defined. The pattern is written with wildcards `*` which means any number of characters.
+  It is the same as `1/all of them` but restricted to the Pattern defined. The pattern is written with wildcards `*` which means any number of characters.
 
-    **Example** : Let's suppose we have 4 `<Search-Identifier>`, `selection1`, `selection2`, `selection3` and `pattern`. The condition can be `1 of selection* and pattern`.
+  **Example** : Let's suppose we have 4 `Search-Identifier`s: `selection1`, `selection2`, `selection3` and `pattern`. The condition can be `1 of selection* and pattern`.
 
 - Negation with `not`
 
-    **Example**: `selection1 and not selection2`
+  **Example**: `selection1 and not selection2`
 
-!!! Note
-    Pipe in conditions are not supported since it is deprecated by the format.
+### Correlation
 
+Detection objects apply a signature to a single event to determine if there is a match. What if you want to create more complex signatures that would require several events to match? You can do this with Sigma Correlation rules.
 
-## STIX Patterning
+Sigma Correlation rules are also Yaml documents that allow the expression of aggregations and relationships between `detection` objects.
 
-In order to enhance detection of possibly malicious activity on networks and endpoints, a standard language is needed to describe what to look for in a cyber environment. STIX, abbreviation for Structured Threat Information eXpression, is a standardized language developed by MITRE and OASIS Cyber Threat Intelligence (CTI) Technical Committee to describe information about cyber-threats. It has been adopted as an international standard by various communities and organizations sharing information.
+A correlation document has the following attributes:
 
-STIX Patterns are composed of multiple building blocks, ranging from simple key-value comparisons to more complex, context-sensitive expressions. The most fundamental building block is the Comparison Expression, which is a comparison between a single property of a Cyber Observable Object and a given constant using a Comparison Operator. As a simple example, one might use the following Comparison Expression (contained within an Observation Expression) to match against an IPv4 address:
+- `action` set to `correlation`
+- `type` is the [correlation type](#correlation-types)
+- `rule` refers to one or multiple Sigma rules or correlations (allowing definition of chains of correlations) defining events to be correlated
+- `group-by` optionally defines one or multiple fields which should be treated as separate event occurrence scope (example: count events by user)
+- `timespan` defines a time period in which the correlation should be applied (such as `5m` or `1h`)
 
-```
-[ipv4-addr:value = '127.0.0.1']
-```
-Observation Expressions are contained in square brackets [ ... ] and may consist of one or more Comparison Expressions joined by Boolean Operators. Observation Expressions may be followed by one or more Qualifiers, which allow for the expression of further restrictions on the set of data matching the pattern. The final, highest level building block of STIX Patterning combines two or more Object Expressions via Observation Operators, yielding a STIX Pattern capable of matching across multiple STIX Observed Data SDOs.
+Further fields might be required depending on the correlation type.
 
-![STIX Patterning](../assets/operation_center/stix_patterning.png)
+#### Correlation Types
 
-!!! warning
-    Currently, we set a limitation and only rules matching with single Observed Data, and so using only one Observation Expression contained in square brackets, are available for our customers.
+##### Event Count (`event_count`)
 
-!!! note
-    When matching an Observation against an Observation Expression, all Comparison Expressions contained within the Observation Expression _MUST_ start matching against the same SCO in the Observation. That is, when resolving object paths of each Comparison Expression, the `<object-type>:<property_name>` _MUST_ start from the same SCO. Different SCOs may ultimately be used in matching, but they MUST be referenced from the same, single SCO.
+Counts events matching a given detection `rule` during the specified `timespan`, grouping events by the optional `group-by` fields. An alert is created when the count matches the specified `condition`.
 
-    An Observation Expression _MAY_ contain Comparison Expressions with Object Paths that start with different object types, but such Comparison Expressions _MUST_ be joined by `OR`. **The Comparison Expressions of an Observation Expression that use `AND` MUST use the same base Object Path**.
+**Example**: Raise an alert when a `user.name` fails to log in more than 5 times in the space of 5 minutes.
 
-!!! note
-    Regarding the use of regular expressions (`MATCHES` keyword) in STIX Patterning rules, it is necessary to escape the “`\`”. Thus, the STIX Patterning rule to identify countries other than France, you will need to use the following rule:
-
-    ```
-    [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
-    ```
-
-For more information about STIX and STIX Patterning, please refers to the [OASIS STIX Patterning specification](http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part5-stix-patterning.html).
-### How to Validate STIX Patterning Rule’s Syntax
-
-SEKOIA.IO checks the syntax of submitted rules and reports errors to the “rules” interface.
-
-In order to validate your rule’s syntax, you can also use an open source tool called [`stix2-patterns`][stix2-pattern-github]. This tool is part of the official tools developed by the OASIS Technical Committee.
-
-Here’s an example on how to use that tool. These commands should be executed in a shell.
-
-```
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install stix2-patterns
-$ validate-patterns
-Enter a pattern to validate: [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
-
-PASS: [ipv4-addr:x_tags[*].name MATCHES '^country:(?!FR)\\w+']
+```yaml
+name: login_failed
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: failure
+  condition: selection
+---
+action: correlation
+type: event_count
+rule: login_failed
+group-by: user.name
+timespan: 5m
+condition:
+  gte: 5
 ```
 
-In this example, we are trying to validate a STIX Patterning rule that contains a regular expression (`MATCHES`). This rule is considered valid and can be submitted to SEKOIA.IO.
+##### Value Count (`value_count`)
 
-[stix2-pattern-github]: https://github.com/oasis-open/cti-pattern-validator
-### How to Test STIX Patterning Rules?
+Counts the number of unique values in a field defined by `field`. Only events matching a given `rule` during the specified `timespan` are considered. Events are grouped by the optional `group-by` fields. An alert is created when the count matches the specified `condition`.
 
-When one creates a rule in SEKOIA.IO, this one is automatically validated and applied to incoming traffic.
+**Example**: Raise an alert when a `user.name` fails to log in to more than 5 different `log.hostname` in the space of 5 minutes.
 
-In order to test your STIX Patterning rules, you can use an open source tool, called [`stix2-matcher`][stix2-matcher-github]. This tool is part of the official tools developed by the OASIS Technical Committee.
-
-First, you need to retrieve a STIX “bundle” from SEKOIA.IO. To do so, go to the “events” page, find the event you want to work on, and export the STIX representation of that event:
-
-![Export STIX Representation of an Event from SEKOIA.IO](../assets/operation_center/event_list_export_stix.png)
-
-Export that STIX “bundle” in a file, called, for example, `event.json`.
-Here’s an example on how to use that tool. These commands should be executed in a shell. We are also using [`jq`][jq] a tool that helps to manipulate JSON files.
-
-```
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install stix2-matcher
-$ cat event.json | jq '.objects[] | select( .type | contains("observed-data") )' > observed-data.json
-$ cat << EOF >| patterns
-[ipv4-addr:value = '246.127.189.32']
-[x-dns-traffic:extensions.'x-log'.hostname = 'hostname']
-EOF
-$ stix2-matcher -f observed-data.json -p patterns
-
-MATCH:  [ipv4-addr:value = '246.127.189.32']
-
-MATCH:  [x-dns-traffic:extensions.'x-log'.hostname = 'hostname']
-
+```yaml
+name: login_failed
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: failure
+  condition: selection
+---
+action: correlation
+type: value_count
+rule: login_failed
+group-by: user.name
+timespan: 5m
+field: log.hostname
+condition:
+  gte: 5
 ```
 
-[stix2-matcher-github]: https://github.com/oasis-open/cti-pattern-matcher
-[jq]: https://stedolan.github.io/jq/
+##### Temporal Proximity (`temporal`)
 
-## Observed Data
+All events defined by the rules referred to by the `rule` field must occur in the time frame defined by `timespan`. The values of fields defined in `group-by` must all have the same value. If the bool value `ordered` is set to `true`, events should also occur in the correct order.
 
-In order to trigger alerts, rule patterns must match with Observed Data. An "Observed Data" is the internal representation of any collected event in SEKOIA.IO. All events are normalized into a JSON object compliant with the STIX Observed Data specification. Detection rules are applied on events in STIX Observed Data format.
+**Example**: Raise an alert when a `user.name` uses two common reconnaissance commands in quick succession on the same host.
 
-Here is an example of an Observed Data that could be obtained from a squid event:
-
-```json
-{
-    "x_sic_entity_by_ref": "identity--d6358bb4-d9bb-47aa-b074-c6d1aeb673e2",
-    "created": "2019-09-20T16:17:42.971Z",
-    "objects": {
-        "0": {
-            "value": "127.0.0.1",
-            "type": "ipv4-addr"
-        },
-        "1": {
-            "value": "216.58.215.48",
-            "type": "ipv4-addr"
-        },
-        "2": {
-            "start": "2019-09-20T16:17:40.935Z",
-            "type": "network-traffic",
-            "end": "2019-09-20T16:17:40.935Z",
-            "extensions": {
-                "http-request-ext": {
-                    "request_header": {
-                        "Content-Type": "application/xml"
-                    },
-                    "request_method": "HEAD",
-                    "request_value": "http://216.58.215.48/"
-                }
-            },
-            "src_ref": "0",
-            "dst_ref": "1",
-            "protocols": [ "ipv4" ]
-        },
-        "3": {
-            "type": "user-account",
-            "extensions": {
-                "x-log": {
-                    "hostname": "DESKTOP-UPU7IFP"
-                }
-            }
-        }
-    },
-    "type": "observed-data",
-    ...
-	"x_event_type": "http"
-}
+```yaml
+name: quser
+detection:
+  selection:
+    process.command_line|startswith: quser
+  condition: selection
+---
+name: dir
+detection:
+  selection:
+    process.command_line|startswith: dir
+  condition: selection
+---
+action: correlation
+type: temporal
+rule:
+  - quser
+  - dir
+group-by:
+  - user.name
+  - log.hostname
+timespan: 1m
+ordered: false
 ```
-The JSON object has a type of **observed-data** and is composed by smaller objects following another STIX specification: **Cyber Observables**.
 
-The main observable is the third one, with a type of network-traffic. It has references to indicate the source of the packet (`src_ref` - `127.0.0.1`) and its destination (`dst_ref` - `216.58.215.48`).
+#### Conditions
 
-These information can be used to construct correlation rules. Below, a non-exhaustive list of information which can be used in your rules:
+The field `condition` defined the condition that must be met to raise an alert. It operates on the count resulting from and `event_count` or `value_count` correlation. It is a map of exactly one condition criteria:
 
-- `ipv4-addr:value`
-- `ipv6-addr:value`
-- `domain-name:value`
-- `url:value`
-- `network-traffic:dst_port`
-- `network-traffic:src_port`
-- `network-traffic:dst_packets`
-- `network-traffic:src_packets`
-- `network-traffic:dst_ref.value` (corresponding to IP value, in the above example, network-traffic:dst_ref refers to object 0, which has a value of '127.0.0.1')
-- `network-traffic:src_ref.value`
-- `network-traffic:extensions.'http-request-ext'.request_value`
-- `network-traffic:protocols[*]`
-- `process:pid`
-- `process:name`
-- `process:command_line`
-- `file:hashes.md5`
-- `user-account:account_login`
+- `gt`: the count must be greater than the given value
+- `gte`: the count must be greater than or equal to the given value
+
+#### Chaining
+
+Correlation rules can be chained together to create even more complex detection logic. This means the `rule` attribute of a correlation document can refer to another correlation rule.
+
+**Example**: Raise an alert when a `user.name` fails to log in more than 5 times on the same host and then succeeds, within 10 minutes.
+
+```yaml
+name: login_failed
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: failure
+  condition: selection
+---
+name: login_success
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: success
+  condition: selection
+---
+name: many_failed_logins
+action: correlation
+type: event_count
+rule: login_failed
+group-by:
+  - user.name
+  - log.hostname
+timespan: 10m
+condition:
+  gte: 5
+---
+action: correlation
+type: temporal
+rule:
+  - many_failed_logins
+  - login_success
+group-by:
+  - user.name
+  - log.hostname
+timespan: 10m
+ordered: true
+```
+
+#### Grouping events from different fields
+
+In some cases, you may want to correlate events from different sources of information that have the `group-by` value in different fields. In that case, you can use the `aliases` document to specify which fields should be considered for each `rule`.
+
+**Example**: Raise an alert when a successful login is followed by a new network connection with the same couple `source.ip`, `destination.ip`.
+
+```yaml
+name: login_success
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: success
+  condition: selection
+---
+name: new_network_connection
+detection:
+  selection:
+    event.category: network
+    event.type: connection
+    event.outcome: success
+  condition: selection
+---
+action: correlation
+type: temporal
+rule:
+  - login_success
+  - new_network_connection
+group-by:
+  - internal_ip
+  - remote_ip
+timespan: 5m
+ordered: true
+aliases:
+  internal_ip:
+    login_success: destination.ip
+    new_network_connection: source.ip
+  remote_ip:
+    login_success: source.ip
+    new_network_connection: destination.ip
+```
