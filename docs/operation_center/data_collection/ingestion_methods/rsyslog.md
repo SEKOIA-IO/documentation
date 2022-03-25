@@ -93,7 +93,8 @@ sudo systemctl status rsyslog.service
 ### Check that traffic is incoming from your log source
 
 ```bash
-sudo tcpdump -i <change_with_interface_name> -c10 -nn src 1.1.1.1 -vv
+sudo tcpdump -i <change_with_interface_name> -c10 -nn src <IP_OF_THE_SOURCE> -vv
+
 ```
 
 > Use `ip addr` command to find the relevant information to relace `<change_with_interface_name>`
