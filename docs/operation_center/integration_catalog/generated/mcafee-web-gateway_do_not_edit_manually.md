@@ -18,9 +18,9 @@ In details, the following Table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `` |
+| Kind | `event` |
 | Category | `network` |
-| Type | `` |
+| Type | `access`, `allowed`, `connection`, `denied` |
 
 
 
@@ -43,12 +43,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "2.2.2.41",
             "domain": "www.forbiddensite.com"
         },
+        "network": {
+            "direction": "egress"
+        },
         "event": {
             "action": "denied",
             "start": "2022-03-11T10:39:16.390Z",
             "code": "10",
             "reason": "Blocked by URL filtering",
-            "category": "network"
+            "category": "network",
+            "kind": "event",
+            "type": [
+                "connection",
+                "access",
+                "denied"
+            ]
         },
         "url": {
             "original": "http://www.forbiddensite.com/"
@@ -57,7 +66,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "curl/7.77.0"
         },
         "observer": {
-            "hostname": "mwgproxy"
+            "hostname": "mwgproxy",
+            "vendor": "McAfee Corp.",
+            "product": "McAfee Web Gateway",
+            "type": "proxy"
         },
         "http": {
             "request": {
@@ -113,19 +125,31 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "slscr.update.microsoft.com",
             "port": 443
         },
+        "network": {
+            "direction": "egress"
+        },
         "event": {
             "action": "denied",
             "start": "2022-03-17T13:14:39.134Z",
             "code": "81",
             "reason": "Authentication Required",
-            "category": "network"
+            "category": "network",
+            "kind": "event",
+            "type": [
+                "connection",
+                "access",
+                "denied"
+            ]
         },
         "url": {
             "domain": "slscr.update.microsoft.com",
             "port": 443
         },
         "observer": {
-            "hostname": "mwgproxy"
+            "hostname": "mwgproxy",
+            "vendor": "McAfee Corp.",
+            "product": "McAfee Web Gateway",
+            "type": "proxy"
         },
         "http": {
             "request": {
@@ -179,18 +203,30 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "ip": "255.255.255.255"
         },
+        "network": {
+            "direction": "egress"
+        },
         "event": {
             "action": "denied",
             "start": "2022-03-24T13:54:02.740Z",
             "code": "10",
             "reason": "Blocked by URL filtering",
-            "category": "network"
+            "category": "network",
+            "kind": "event",
+            "type": [
+                "connection",
+                "access",
+                "denied"
+            ]
         },
         "user": {
             "name": "myusername"
         },
         "observer": {
-            "hostname": "mwgproxy"
+            "hostname": "mwgproxy",
+            "vendor": "McAfee Corp.",
+            "product": "McAfee Web Gateway",
+            "type": "proxy"
         },
         "http": {
             "request": {
@@ -252,7 +288,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "allowed",
             "start": "2022-03-11T09:50:47.399Z",
             "code": "0",
-            "category": "network"
+            "category": "network",
+            "kind": "event",
+            "type": [
+                "connection",
+                "access",
+                "allowed"
+            ]
         },
         "url": {
             "original": "http://www.google.fr/"
@@ -261,7 +303,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "curl/7.77.0"
         },
         "observer": {
-            "hostname": "mwgproxy"
+            "hostname": "mwgproxy",
+            "vendor": "McAfee Corp.",
+            "product": "McAfee Web Gateway",
+            "type": "proxy"
+        },
+        "network": {
+            "direction": "egress"
         },
         "http": {
             "request": {
@@ -316,8 +364,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.port` | `long` | Port of the destination. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
@@ -332,7 +382,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`mcafee.webgateway.url.reputation` | `keyword` | None |
 |`mcafee.webgateway.url.reputation_code` | `number` | None |
 |`mcafee.webgateway.viruses` | `text` | None |
+|`network.direction` | `keyword` | Direction of the network traffic. |
 |`observer.hostname` | `keyword` | Hostname of the observer. |
+|`observer.product` | `keyword` | The product name of the observer. |
+|`observer.type` | `keyword` | The type of the observer the data is coming from. |
+|`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`rule.name` | `keyword` | Rule name |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`source.ip` | `ip` | IP address of the source. |
