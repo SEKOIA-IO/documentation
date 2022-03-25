@@ -301,7 +301,8 @@ You should see a line with `rsyslogd` daemon. If not, try to restart the service
 sudo systemctl restart rsyslog.service
 ```
 
-### Local messages not seen on the Rsyslog serveur
+### Local messages not seen on the Rsyslog server
+
 
 Ensure the logs are received on the Rsyslog server, meaning:
 - Configurations are correctly undertaken on the remote equipment
