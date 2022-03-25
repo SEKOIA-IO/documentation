@@ -31,6 +31,6 @@ You can find more information using [this documentation](https://stormshield.pl/
 ### Generate the intake_key
 
 You have to go on your SEKOIA.IO instance to generate an "intake key".
-Everything you need to know about this generation can be found [here](https://docs.sekoia.io/operation_center/intakes/).
+Everything you need to do for this part of the configuration is described [here](https://docs.sekoia.io/operation_center/intakes/).
 
 Finally, to push logs, you have to [configure](https://docs.sekoia.io/operation_center/data_collection/ingestion_methods/syslog-ng/) some filters and rewrite rules in Syslog that will add the proper “intake key” considering your logs.
