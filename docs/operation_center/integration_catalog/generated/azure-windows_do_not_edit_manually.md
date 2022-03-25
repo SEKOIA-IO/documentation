@@ -66,6 +66,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "WinAzureTest"
         },
+        "log": {
+            "hostname": "WinAzureTest"
+        },
         "azure_windows": {
             "provider_guid": "54849625-5478-4994-A5BA-3E3B0328C30D",
             "provider_name": "Microsoft-Windows-Security-Auditing",
@@ -97,6 +100,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "invalid_message.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2022-03-25T09:08:59.2405321Z\",\"resourceId\":\"/subscriptions/6c5a0310-d590-4fb4-945a-bca5dc5e1417/resourceGroups/MyGroup/providers/Microsoft.Storage/storageAccounts/MyStorageAccount/blobServices/default\",\"category\":\"StorageRead\",\"operationName\":\"GetBlob\",\"schemaVersion\":\"1.0\",\"statusCode\":404,\"statusText\":\"BlobNotFound\",\"durationMs\":1,\"callerIpAddress\":\"1.2.3.4\",\"correlationId\":\"165e8a9d-e08f-43ca-b71b-c2738d24eb66\",\"identity\":{\"type\":\"SAS\",\"tokenHash\":\"system-1(D0B3B275891800D74D0362E6A5CEAEEDD93A110636EFF4CC84CFD05396904C1C),SasSignature(B35B17A0B56ABEDF5D04E11B2AE08EBEC2DEC076742040412D3C034880A3D745)\"},\"location\":\"MyLocation\",\"properties\":{\"accountName\":\"MyStorageAccount\",\"userAgentHeader\":\"AzSerialConsoleSvcPF\",\"serviceType\":\"blob\",\"objectKey\":\"/MyStorageAccount/bootdiagnostics-xxxxxx-84a8d62f-e62c-4001-9ce2-e6a3e25f4f88/XXXXXX.84a8d62f-e62c-4001-9ce2-e6a3e25f4f88.serialconsole-connectionmetadata\",\"lastModifiedTime\":\"1601/01/01 00:00:00.0000000\",\"metricResponseType\":\"ClientOtherError\",\"serverLatencyMs\":1,\"requestHeaderSize\":411,\"responseHeaderSize\":172,\"tlsVersion\":\"TLS 1.2\"},\"uri\":\"https://axenspiproddiag.blob.core.windows.net/bootdiagnostics-azntpi84a8d62f-e62c-4001-9ce2-e6a3e25f4f88/AZNTPI-04.84a8d62f-e62c-4001-9ce2-e6a3e25f4f88.serialconsole-connectionmetadata?sv=2018-03-28&sr=c&sk=system-1&sig=XXXXX&se=9999-01-01T00%3A00%3A00Z&sp=rwd\",\"protocol\":\"HTTPS\",\"resourceType\":\"Microsoft.Storage/storageAccounts/blobServices\"}",
+        "os": {
+            "family": "windows",
+            "platform": "windows"
+        }
+    }
+    	
+	```
+
+
 === "kerberos.json"
 
     ```json
@@ -114,6 +132,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 55731
         },
         "host": {
+            "hostname": "AZNTPI-01.acme.local"
+        },
+        "log": {
             "hostname": "AZNTPI-01.acme.local"
         },
         "process": {
@@ -223,6 +244,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "WindowsDesktop"
         },
+        "log": {
+            "hostname": "WindowsDesktop"
+        },
         "action": {
             "id": 5058,
             "name": "Key file operation",
@@ -316,6 +340,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "AZNTPI-01.acme.local"
         },
+        "log": {
+            "hostname": "AZNTPI-01.acme.local"
+        },
         "azure_windows": {
             "provider_guid": "54849625-5478-4994-A5BA-3E3B0328C30D",
             "provider_name": "Microsoft-Windows-Security-Auditing",
@@ -394,6 +421,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "AZNTPI-02.acme.local"
         },
+        "log": {
+            "hostname": "AZNTPI-02.acme.local"
+        },
         "azure_windows": {
             "provider_guid": "54849625-5478-4994-A5BA-3E3B0328C30D",
             "provider_name": "Microsoft-Windows-Security-Auditing",
@@ -452,6 +482,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "host": {
+            "hostname": "AZSQL-02.acme.local"
+        },
+        "log": {
             "hostname": "AZSQL-02.acme.local"
         },
         "os": {
@@ -518,6 +551,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "message": "{\"category\":\"WindowsEventLogsTable\",\"level\":\"Informational\",\"properties\":{\"Channel\":\"Microsoft-Windows-Sysmon/Operational\",\"DeploymentId\":\"86d017b9-31b7-47d4-98e0-667a2ac68873\",\"Description\":\"Process Create:\\r\\nRuleName: \\r\\nUtcTime: 2019-08-30 14:53:03.012\\r\\nProcessGuid: {f67648d5-384f-5d69-0000-00101bd8b501}\\r\\nProcessId: 6272\\r\\nImage: C:\\\\Windows\\\\System32\\\\cscript.exe\\r\\nFileVersion: 5.812.10240.16384\\r\\nDescription: Microsoft \\u00ae Console Based Script Host\\r\\nProduct: Microsoft \\u00ae Windows Script Host\\r\\nCompany: Microsoft Corporation\\r\\nOriginalFileName: cscript.exe\\r\\nCommandLine: \\\"C:\\\\windows\\\\system32\\\\cscript.exe\\\" /nologo \\\"MonitorKnowledgeDiscovery.vbs\\\"\\r\\nCurrentDirectory: C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\Agent\\\\Health Service State\\\\Monitoring Host Temporary Files 3\\\\507\\\\\\r\\nUser: NT AUTHORITY\\\\SYSTEM\\r\\nLogonGuid: {f67648d5-e752-5d68-0000-0020e7030000}\\r\\nLogonId: 0x3E7\\r\\nTerminalSessionId: 0\\r\\nIntegrityLevel: System\\r\\nHashes: MD5=A45586B3A5A291516CD10EF4FD3EE768,SHA256=59D3CDC7D51FA34C6B27B8B04EA17992955466EB25022B7BD64880AB35DF0BBC\\r\\nParentProcessGuid: {f67648d5-e7c8-5d68-0000-00109ed81e00}\\r\\nParentProcessId: 10068\\r\\nParentImage: C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\Agent\\\\MonitoringHost.exe\\r\\nParentCommandLine: \\\"C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\Agent\\\\MonitoringHost.exe\\\" -Embedding\",\"EventId\":1,\"Level\":4,\"Opcode\":0,\"Pid\":3272,\"ProviderGuid\":\"{5770385f-c22a-43e0-bf4c-06f5698ffbd9}\",\"ProviderName\":\"Microsoft-Windows-Sysmon\",\"RawXml\":\"<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385f-c22a-43e0-bf4c-06f5698ffbd9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2019-08-30T14:53:03.064863900Z'/><EventRecordID>120166</EventRecordID><Correlation/><Execution ProcessID='3272' ThreadID='5036'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>WindowsDesktop</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'></Data><Data Name='UtcTime'>2019-08-30 14:53:03.012</Data><Data Name='ProcessGuid'>{f67648d5-384f-5d69-0000-00101bd8b501}</Data><Data Name='ProcessId'>6272</Data><Data Name='Image'>C:\\\\Windows\\\\System32\\\\cscript.exe</Data><Data Name='FileVersion'>5.812.10240.16384</Data><Data Name='Description'>Microsoft \\u00ae Console Based Script Host</Data><Data Name='Product'>Microsoft \\u00ae Windows Script Host</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>cscript.exe</Data><Data Name='CommandLine'>\\\"C:\\\\windows\\\\system32\\\\cscript.exe\\\" /nologo \\\"MonitorKnowledgeDiscovery.vbs\\\"</Data><Data Name='CurrentDirectory'>C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\Agent\\\\Health Service State\\\\Monitoring Host Temporary Files 3\\\\507\\\\</Data><Data Name='User'>NT AUTHORITY\\\\SYSTEM</Data><Data Name='LogonGuid'>{f67648d5-e752-5d68-0000-0020e7030000}</Data><Data Name='LogonId'>0x3e7</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>System</Data><Data Name='Hashes'>MD5=A45586B3A5A291516CD10EF4FD3EE768,SHA256=59D3CDC7D51FA34C6B27B8B04EA17992955466EB25022B7BD64880AB35DF0BBC</Data><Data Name='ParentProcessGuid'>{f67648d5-e7c8-5d68-0000-00109ed81e00}</Data><Data Name='ParentProcessId'>10068</Data><Data Name='ParentImage'>C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\Agent\\\\MonitoringHost.exe</Data><Data Name='ParentCommandLine'>\\\"C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\Agent\\\\MonitoringHost.exe\\\" -Embedding</Data></EventData></Event>\",\"Role\":\"IaaS\",\"RoleInstance\":\"_WindowsDesktop\",\"Task\":1,\"Tid\":5036},\"time\":\"2019-08-30T14:53:03.0648639Z\"}",
         "host": {
+            "hostname": "WindowsDesktop"
+        },
+        "log": {
             "hostname": "WindowsDesktop"
         },
         "process": {
@@ -649,6 +685,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "AZNTPI-01.acme.local"
         },
+        "log": {
+            "hostname": "AZNTPI-01.acme.local"
+        },
         "azure_windows": {
             "provider_guid": "5770385F-C22A-43E0-BF4C-06F5698FFBD9",
             "provider_name": "Microsoft-Windows-Sysmon",
@@ -692,6 +731,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "host": {
+            "hostname": "AZNTPI-01.acme.local"
+        },
+        "log": {
             "hostname": "AZNTPI-01.acme.local"
         },
         "registry": {
@@ -807,6 +849,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "WinAzureTest"
         },
+        "log": {
+            "hostname": "WinAzureTest"
+        },
         "azure_windows": {
             "provider_guid": "5770385f-c22a-43e0-bf4c-06f5698ffbd9",
             "provider_name": "Microsoft-Windows-Sysmon",
@@ -892,6 +937,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "AZNTPI-01.acme.local"
         },
+        "log": {
+            "hostname": "AZNTPI-01.acme.local"
+        },
         "azure_windows": {
             "provider_guid": "5770385F-C22A-43E0-BF4C-06F5698FFBD9",
             "provider_name": "Microsoft-Windows-Sysmon",
@@ -942,6 +990,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "AXENS"
         },
         "host": {
+            "hostname": "AZSQL-02.axens.local"
+        },
+        "log": {
             "hostname": "AZSQL-02.axens.local"
         },
         "azure_windows": {
