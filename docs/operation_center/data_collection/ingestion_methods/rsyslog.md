@@ -9,7 +9,8 @@ We recommend to centralise them on a dedicated server: Rsyslog.
 Before processing, we suggest to:
 
 - Connect to SEKOIA.IO Operations Center
-- Add a Windows Intake to the relevant Entity
+- Add an Intake to the relevant Entity
+
 - Keep trace of the automatically generated **Intake Key**.
 
 ## Rsyslog installation prerequisites
