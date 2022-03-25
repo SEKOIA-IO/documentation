@@ -305,6 +305,7 @@ sudo systemctl restart rsyslog.service
 
 
 Ensure the logs are received on the Rsyslog server, meaning:
+
 - Configurations are correctly undertaken on the remote equipment
 - Internal network flows are open on `TCP or UDP 514`
 
