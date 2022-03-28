@@ -2,6 +2,15 @@
 ## Event Categories
 
 
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `Anti-virus` | Vade performs behavioral-Based Anti-Malware |
+| `Email gateway` | Vade for M365 blocks attacks from the first email thanks to machine learning models that perform real-time behavioral analysis of the entire email, including any URLs and attachments. |
+
+
+
 
 
 In details, the following Table denotes the type of events produced by this integration.
