@@ -87,6 +87,7 @@ nav:
       - Pulse Connect Secure: operation_center/integration_catalog/network/pulse.md
       - Sophos Firewall: operation_center/integration_catalog/network/sophos.md
       - Squid: operation_center/integration_catalog/network/squid.md
+      - Stormshield: operation_center/integration_catalog/network/stormshield_network_security.md
       - Suricata: operation_center/integration_catalog/network/suricata.md
       - Vectra: operation_center/integration_catalog/network/vectra.md
       - Wallix: operation_center/integration_catalog/network/wallix.md
