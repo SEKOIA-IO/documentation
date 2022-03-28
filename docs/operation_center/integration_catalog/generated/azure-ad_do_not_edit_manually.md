@@ -19,7 +19,7 @@ In details, the following Table denotes the type of events produced by this inte
 | ---- | ------ |
 | Kind | `` |
 | Category | `authentication` |
-| Type | `start` |
+| Type | `connection`, `start` |
 
 
 
@@ -325,7 +325,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "host": {
-            "hostname": "azureactivedirectory"
+            "hostname": "azureactivedirectory",
+            "os": {
+                "name": "Windows 10"
+            }
         },
         "log": {
             "hostname": "azureactivedirectory"
@@ -520,6 +523,71 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "user_risk_detection.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"3/24/2022 2:42:35 PM\",\"resourceId\":\"/tenants/2d0c1986-ef7b-4bbf-8428-3c837471e7ad/providers/microsoft.aadiam\",\"operationName\":\"User Risk Detection\",\"operationVersion\":\"1.0\",\"category\":\"UserRiskEvents\",\"tenantId\":\"2d0c1986-ef7b-4bbf-8428-3c837471e7ad\",\"resultSignature\":\"None\",\"durationMs\":0,\"callerIpAddress\":\"11.22.33.44\",\"correlationId\":\"ef7868bd7e94b06ecd6cc965fc826c85d367bb5b9b083da9a26686786a791080\",\"identity\":\"bar foo\",\"Level\":4,\"location\":\"fr\",\"properties\":{\"id\":\"ef7868bd7e94b06ecd6cc965fc826c85d367bb5b9b083da9a26686786a791080\",\"requestId\":\"d38b6ab7-65b0-419c-b83a-a5787d6fa100\",\"correlationId\":\"325294e4-4026-4cc7-889d-b4be570b3254\",\"riskType\":\"unfamiliarFeatures\",\"riskEventType\":\"unfamiliarFeatures\",\"riskState\":\"dismissed\",\"riskLevel\":\"low\",\"riskDetail\":\"aiConfirmedSigninSafe\",\"source\":\"IdentityProtection\",\"detectionTimingType\":\"realtime\",\"activity\":\"signin\",\"ipAddress\":\"11.22.33.44\",\"location\":{\"city\":\"La Guaiserie\",\"state\":\"Loir-Et-Cher\",\"countryOrRegion\":\"FR\",\"geoCoordinates\":{\"altitude\":0.0,\"latitude\":47.45919,\"longitude\":2.21955}},\"activityDateTime\":\"2022-03-24T14:40:04.234Z\",\"detectedDateTime\":\"2022-03-24T14:40:04.234Z\",\"lastUpdatedDateTime\":\"2022-03-24T14:42:35.066Z\",\"userId\":\"4c64c30a-7a60-4211-bef1-5e4279854e85\",\"userDisplayName\":\"bar foo\",\"userPrincipalName\":\"foo.bar@corp.eu\",\"additionalInfo\":\"[{\\\"Key\\\":\\\"userAgent\\\",\\\"Value\\\":\\\"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148\\\"}]\",\"tokenIssuerType\":\"AzureAD\",\"resourceTenantId\":null,\"homeTenantId\":\"2d0c1986-ef7b-4bbf-8428-3c837471e7ad\",\"userType\":\"member\",\"crossTenantAccessType\":\"none\"}}",
+        "event": {
+            "category": "authentication",
+            "dialect": "azure active directory",
+            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4",
+            "reason": "unfamiliarFeatures",
+            "type": [
+                "connection"
+            ]
+        },
+        "host": {
+            "hostname": "azureactivedirectory"
+        },
+        "log": {
+            "hostname": "azureactivedirectory"
+        },
+        "service": {
+            "type": "ldap",
+            "name": "active directory"
+        },
+        "action": {
+            "name": "User Risk Detection"
+        },
+        "client": {
+            "geo": {
+                "city_name": "La Guaiserie",
+                "country_iso_code": "fr",
+                "location": {
+                    "lat": "47.45919",
+                    "lon": "2.21955"
+                },
+                "region_name": "Loir-Et-Cher"
+            },
+            "user": {
+                "email": "foo.bar@corp.eu",
+                "full_name": "bar foo"
+            }
+        },
+        "source": {
+            "address": "11.22.33.44",
+            "ip": "11.22.33.44"
+        },
+        "related": {
+            "hosts": [
+                "azureactivedirectory"
+            ],
+            "ip": [
+                "11.22.33.44"
+            ]
+        },
+        "sekoiaio": {
+            "intake": {
+                "parsing_status": "success"
+            }
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -531,10 +599,17 @@ The following table lists the fields that are extracted, normalized under the EC
 | ---- | ---- | ---------------------------|
 |`action.properties` | `array` | action.properties |
 |`action.target` | `keyword` | action.target |
+|`client.geo.city_name` | `keyword` | City name. |
+|`client.geo.country_iso_code` | `keyword` | Country ISO code. |
+|`client.geo.location` | `geo_point` | Longitude and latitude. |
+|`client.geo.region_name` | `keyword` | Region name. |
+|`client.user.email` | `keyword` | User email address. |
+|`client.user.full_name` | `keyword` | User's full name, if available. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`host.hostname` | `keyword` | Hostname of the host. |
+|`host.os.name` | `keyword` | Operating system name, without the version. |
 |`service.name` | `keyword` | Name of the service. |
 |`service.type` | `keyword` | The type of the service. |
 |`source.ip` | `ip` | IP address of the source. |
