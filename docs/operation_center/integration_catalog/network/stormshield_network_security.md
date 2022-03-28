@@ -2,7 +2,7 @@
 
 Stormshield Network Security firewalls provides comprehensive security and high performance network protection. In addition, they offer a high degree of scalability to support the evolution of IT and OT networks
 
-In this documenation we will explain how to collect and send Stormshield Network Security logs to SEKOIA.IO.
+In this documentation we will explain how to collect and send Stormshield Network Security logs to SEKOIA.IO.
 
 {!operation_center/integration_catalog/generated/stormshield-network-security_do_not_edit_manually.md!}
 
