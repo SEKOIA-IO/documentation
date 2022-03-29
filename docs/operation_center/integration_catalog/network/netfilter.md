@@ -13,7 +13,7 @@ configuration tools such as firewalld, UFW or ferm. The framework also
 provides several ways to log events (`LOG`, `NFLOG`, `ULOG`, etc.).
 
 The only requirement from SEKOIA.IO’s perspective is that your
-logs uses the following prefix: `IPTABLES: XXX: ` (`XXX` is user
+logs uses the following prefix: `IPTABLES: XXX ` (`XXX` is user
 configurable and represents the action, could be `dropped` or `accept` for
 example).
 
