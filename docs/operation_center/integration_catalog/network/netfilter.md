@@ -21,7 +21,7 @@ example).
 
 ## Configure
 
-As of now, the main solution to send Netfilter events to SEKOIA.IO is to use a Rsyslog concentrator.
+As of now, the main solution to send Netfilter events to SEKOIA.IO is to use a Rsyslog concentrator. Please share your experiences with other recipes by editing this documentation.
 
 ### Rsyslog
 
