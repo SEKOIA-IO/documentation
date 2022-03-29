@@ -76,7 +76,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         }
                     },
                     "size_bytes": "2465624",
-                    "start": "2021-09-02T08:59:58.477+00:00"
+                    "start": "2021-09-02T08:59:58.477000Z"
                 },
                 "family": "SYS_WIN32",
                 "integrity_level": "LOW",
@@ -152,7 +152,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "behavioralIndicators"
+            "action": "behavioralIndicators",
+            "start": "2021-09-16T13:02:27.671000Z"
         },
         "host": {
             "name": "LAPTOP-TECH20",
@@ -184,7 +185,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "working_directory": "Local"
             },
             "pid": 19720,
-            "start": "2021-09-16T13:02:27.668+00:00",
+            "start": "2021-09-16T13:02:27.668000Z",
             "working_directory": "Local"
         },
         "related": {
@@ -218,7 +219,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "event": {
-            "start": "2021-08-09T13:33:30.404+00:00",
+            "start": "2021-08-09T13:33:30.404000Z",
             "action": "dns"
         },
         "deepvisibility": {
@@ -251,7 +252,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "node": {
                         "key": "C8E88AA83F5B15B6"
                     },
-                    "start": "2021-08-05T07:45:42.879+00:00",
+                    "start": "2021-08-05T07:45:42.879000Z",
                     "is_dir": "E_FALSE",
                     "size_bytes": "2442584",
                     "signature": {
@@ -307,7 +308,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "working_directory": "Local",
             "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=1692,16822032697640791725,9639588106693567222,131072 --lang=fr --service-sandbox-type=none --mojo-platform-channel-handle=2056 /prefetch:8",
             "pid": 13796,
-            "start": "2021-08-09T13:28:54.223+00:00",
+            "start": "2021-08-09T13:28:54.223000Z",
             "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
         },
         "dns": {
@@ -338,7 +339,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "event": {
-            "start": "2206-11-13T06:23:32.121+00:00",
+            "start": "2206-11-13T06:23:32.121000Z",
             "action": "fileCreation"
         },
         "deepvisibility": {
@@ -377,7 +378,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "node": {
                         "key": "C8E88AA83F5B15B6"
                     },
-                    "start": "2021-08-05T07:45:42.456+00:00",
+                    "start": "2021-08-05T07:45:42.456000Z",
                     "is_dir": "E_FALSE",
                     "size_bytes": "2442584",
                     "signature": {
@@ -432,7 +433,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "working_directory": "Local",
             "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"",
             "pid": 14896,
-            "start": "2021-08-09T13:28:53.321+00:00",
+            "start": "2021-08-09T13:28:53.321000Z",
             "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
         },
         "user": {
@@ -440,7 +441,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "S-1-5-21-6562365326-8585787878-2021012021-6543"
         },
         "file": {
-            "created": "2021-08-09T13:28:53.666+00:00",
+            "created": "2021-08-09T13:28:53.666000Z",
             "path": "C:\\Users\\a.hifumii\\AppData\\Local\\Google\\Chrome\\User Data",
             "type": "dir"
         },
@@ -463,7 +464,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "event": {
-            "start": "2206-11-13T06:23:32.121+00:00",
+            "start": "2206-11-13T06:23:32.121000Z",
             "action": "fileCreation"
         },
         "deepvisibility": {
@@ -486,7 +487,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "node": {
                         "key": "C8E88AA83F5B15B6"
                     },
-                    "start": "2021-08-05T07:45:42.654+00:00",
+                    "start": "2021-08-05T07:45:42.654000Z",
                     "is_dir": "E_FALSE",
                     "size_bytes": "2442584",
                     "signature": {
@@ -549,11 +550,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "working_directory": "Local",
             "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"",
             "pid": 14896,
-            "start": "2021-08-09T13:28:53.932+00:00",
+            "start": "2021-08-09T13:28:53.932000Z",
             "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
         },
         "file": {
-            "created": "2206-11-13T06:23:32.121+00:00",
+            "created": "2206-11-13T06:23:32.121000Z",
             "path": "C:\\Users\\a.hifumii\\AppData\\Local\\Google\\Chrome\\User Data\\98798798-bbb2-9898-aaaa-1212121212f.tmp",
             "type": "file",
             "extension": "tmp",
@@ -597,7 +598,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "message": "{\"timestamp\":{\"millisecondsSinceEpoch\":\"1629899209700\"},\"fileCreation\":{\"trueContext\":{\"key\":{\"value\":\"0506A768B8828E35\"}},\"source\":{\"node\":{\"key\":{\"value\":\"2FFCA561EE506063\"}},\"executable\":{\"node\":{\"key\":{\"value\":\"E4CD922E494CA3C5\"}},\"creationTime\":{},\"path\":\"C:\\\\Program Files\\\\Fortinet\\\\FortiClient\\\\FortiESNAC.exe\",\"owner\":{},\"isDir\":\"E_FALSE\",\"sizeBytes\":\"4253328\",\"hashes\":{},\"fileLocation\":\"Local\"},\"commandLine\":\"FortiESNAC.exe -s FC_{73EFB30F-1CAD-4a7a-AE2E-150282B6CE25}_000018\",\"fullPid\":{\"pid\":6104,\"startTime\":{\"millisecondsSinceEpoch\":\"1629878298032\"}},\"user\":{\"name\":\"AUTORITE NT\\\\Syst\u00e8me\",\"sid\":\"S-1-5-18\"},\"interactive\":\"E_FALSE\",\"parent\":{\"node\":{\"key\":{\"value\":\"D3250A9CB211CC1E\"}},\"fullPid\":{\"startTime\":{}}},\"excluded\":\"E_FALSE\",\"name\":\"FortiClient Network Access Control\",\"root\":\"E_FALSE\",\"subsystem\":\"SYS_WIN32\",\"integrityLevel\":\"SYSTEM\",\"isWow64\":\"E_FALSE\",\"isRedirectedCommandProcessor\":\"E_FALSE\",\"trueContext\":{\"key\":{\"value\":\"0506A768B8828E35\"}},\"counters\":{\"moduleLoad\":1948,\"fileCreation\":647,\"fileDeletion\":647,\"fileModification\":2141,\"exeModification\":40,\"netConnOut\":203,\"registryModification\":654,\"dnsLookups\":30}},\"targetFile\":{\"node\":{\"key\":{\"value\":\"4685AD1C6BC7D31D\"}},\"creationTime\":{},\"path\":\"C:\\\\Program Files\\\\Fortinet\\\\FortiClient\\\\large_data_upload\\\\0.bin\",\"owner\":{},\"isDir\":\"E_FALSE\",\"hashes\":{},\"fileLocation\":\"Local\"}},\"meta\":{\"seqId\":45,\"uuid\":\"6ce43ff9d060310b37fb4eba7ad3c1f0f2d9a5ab\",\"traceId\":\"E1A04C7727EB41E5A3D0FF068D4BE544\",\"agentVersion\":\"S1-WIN/4.4.3.149\",\"osFamily\":\"windows\",\"osName\":\"Windows 10 Pro\",\"osRevision\":\"19043\",\"computerName\":\"LAPTOP-COM4\",\"machineType\":\"laptop\",\"mgmtUrl\":\"https://euce1-110-nfr.sentinelone.net\"}}",
         "event": {
-            "start": "2021-08-25T13:46:49.700+00:00",
+            "start": "2021-08-25T13:46:49.700000Z",
             "action": "fileCreation"
         },
         "deepvisibility": {
@@ -680,7 +681,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "working_directory": "Local",
             "command_line": "FortiESNAC.exe -s FC_{73EFB30F-1CAD-4a7a-AE2E-150282B6CE25}_000018",
             "pid": 6104,
-            "start": "2021-08-25T07:58:18.032+00:00",
+            "start": "2021-08-25T07:58:18.032000Z",
             "name": "FortiClient Network Access Control",
             "executable": "C:\\Program Files\\Fortinet\\FortiClient\\FortiESNAC.exe"
         },
@@ -763,7 +764,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         }
                     },
                     "size_bytes": "2465624",
-                    "start": "2021-09-02T08:59:58.477+00:00"
+                    "start": "2021-09-02T08:59:58.477000Z"
                 },
                 "family": "SYS_WIN32",
                 "integrity_level": "MEDIUM",
@@ -796,10 +797,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "event": {
             "action": "fileDeletion",
-            "start": "2021-09-14T15:51:46.079+00:00"
+            "start": "2021-09-14T15:51:46.079000Z"
         },
         "file": {
-            "created": "2021-09-14T15:51:45.524+00:00",
+            "created": "2021-09-14T15:51:45.524000Z",
             "extension": "exe",
             "name": "todelete_429a860c9774094b_0_1.exe",
             "path": "C:\\Users\\d.semren.SNS\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Service Worker\\CacheStorage\\1ab01c3b969bd7dcc799e2be1a4ce60699f20543\\650d1e12-cd20-438f-8c15-b58c713de9c7\\todelete_429a860c9774094b_0_1.exe",
@@ -823,7 +824,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "Google Chrome",
             "pid": 26188,
-            "start": "2021-09-13T07:07:56.708+00:00",
+            "start": "2021-09-13T07:07:56.708000Z",
             "working_directory": "Local",
             "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
         },
@@ -900,7 +901,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         }
                     },
                     "size_bytes": "2465624",
-                    "start": "2021-09-02T08:59:58.477+00:00"
+                    "start": "2021-09-02T08:59:58.477000Z"
                 },
                 "family": "SYS_WIN32",
                 "integrity_level": "MEDIUM",
@@ -932,11 +933,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "start": "2021-09-14T14:41:46.789+00:00",
+            "start": "2021-09-14T14:41:46.789000Z",
             "action": "fileModification"
         },
         "file": {
-            "created": "2021-09-14T14:41:46.782+00:00",
+            "created": "2021-09-14T14:41:46.782000Z",
             "path": "C:\\Users\\d.semren.SNS\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\TransportSecurity",
             "name": "TransportSecurity"
         },
@@ -958,7 +959,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "Google Chrome",
             "pid": 17924,
-            "start": "2021-09-13T07:07:57.934+00:00",
+            "start": "2021-09-13T07:07:57.934000Z",
             "working_directory": "Local",
             "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
         },
@@ -1067,7 +1068,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "http"
+            "action": "http",
+            "start": "2021-09-16T09:35:29.904000Z"
         },
         "host": {
             "name": "LAPTOP-TECH10",
@@ -1093,7 +1095,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "Microsoft Outlook",
             "pid": 14144,
-            "start": "2021-09-16T07:02:10.819+00:00",
+            "start": "2021-09-16T07:02:10.819000Z",
             "working_directory": "Local"
         },
         "related": {
@@ -1268,7 +1270,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "pid": 15728,
                     "root": "E_TRUE",
                     "session_id": 7,
-                    "start": "2021-09-14T15:51:51.621+00:00",
+                    "start": "2021-09-14T15:51:51.621000Z",
                     "true_context": {
                         "key": "AB55C980E679578F"
                     },
@@ -1289,7 +1291,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "start": "2021-09-14T15:51:52.102+00:00",
+            "start": "2021-09-14T15:51:52.102000Z",
             "action": "openProcess"
         },
         "host": {
@@ -1321,7 +1323,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "working_directory": "Local"
             },
             "pid": 992,
-            "start": "2021-09-06T09:11:02.523+00:00",
+            "start": "2021-09-06T09:11:02.523000Z",
             "working_directory": "Local",
             "executable": "C:\\WINDOWS\\system32\\lsass.exe"
         },
@@ -1463,7 +1465,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "start": "2021-09-14T14:41:47.153+00:00",
+            "start": "2021-09-14T14:41:47.153000Z",
             "action": "processCreation"
         },
         "host": {
@@ -1499,11 +1501,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Host Process for Windows Services",
                 "pid": 1900,
                 "working_directory": "Local",
-                "start": "2021-09-05T15:56:08.855+00:00"
+                "start": "2021-09-05T15:56:08.855000Z"
             },
             "pid": 15104,
             "working_directory": "Local",
-            "start": "2021-09-14T14:41:46.706+00:00",
+            "start": "2021-09-14T14:41:46.706000Z",
             "executable": "C:\\Windows\\System32\\taskhostw.exe"
         },
         "related": {
@@ -1650,7 +1652,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "start": "2021-09-14T15:51:44.684+00:00",
+            "start": "2021-09-14T15:51:44.684000Z",
             "action": "processExit"
         },
         "host": {
@@ -1679,11 +1681,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 },
                 "name": "Host Process for Windows Services",
                 "pid": 1744,
-                "start": "2021-09-07T13:40:21.170+00:00",
+                "start": "2021-09-07T13:40:21.170000Z",
                 "working_directory": "Local"
             },
             "pid": 9876,
-            "start": "2021-09-14T15:51:43.718+00:00",
+            "start": "2021-09-14T15:51:43.718000Z",
             "working_directory": "Local",
             "executable": "C:\\WINDOWS\\System32\\wermgr.exe"
         },
@@ -1791,7 +1793,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "event": {
             "action": "regKeySecurityChanged",
-            "start": "2021-09-16T09:38:28.303+00:00"
+            "start": "2021-09-16T09:38:28.303000Z"
         },
         "host": {
             "name": "LAPTOP-TECH19",
@@ -1812,7 +1814,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "Host Process for Windows Tasks",
             "pid": 25104,
-            "start": "2021-09-16T06:58:44.677+00:00",
+            "start": "2021-09-16T06:58:44.677000Z",
             "working_directory": "Local"
         },
         "registry": {
@@ -1920,7 +1922,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "event": {
             "action": "regValueCreate",
-            "start": "2021-09-16T09:38:28.304+00:00"
+            "start": "2021-09-16T09:38:28.304000Z"
         },
         "host": {
             "name": "LAPTOP-TECH19",
@@ -1941,7 +1943,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "Host Process for Windows Tasks",
             "pid": 25104,
-            "start": "2021-09-16T06:58:44.677+00:00",
+            "start": "2021-09-16T06:58:44.677000Z",
             "working_directory": "Local"
         },
         "registry": {
@@ -2048,7 +2050,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "event": {
             "action": "regValueDelete",
-            "start": "2021-09-16T09:38:25.794+00:00"
+            "start": "2021-09-16T09:38:25.794000Z"
         },
         "host": {
             "name": "LAPTOP-COM11",
@@ -2066,7 +2068,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "NT Kernel & System",
             "pid": 4,
-            "start": "2021-09-16T08:31:07.519+00:00"
+            "start": "2021-09-16T08:31:07.519000Z"
         },
         "registry": {
             "path": "MACHINE\\SYSTEM\\ControlSet001\\Services\\SentinelDeviceControl\\Enum\\53",
@@ -2182,7 +2184,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "event": {
             "action": "regValueModified",
-            "start": "2021-09-16T09:39:16.204+00:00"
+            "start": "2021-09-16T09:39:16.204000Z"
         },
         "host": {
             "name": "LAPTOP-COM13",
@@ -2203,7 +2205,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "Host Process for Windows Services",
             "pid": 3504,
-            "start": "2021-09-14T13:24:10.355+00:00",
+            "start": "2021-09-14T13:24:10.355000Z",
             "working_directory": "Local"
         },
         "registry": {
@@ -2318,7 +2320,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "event": {
             "action": "schedTaskUpdate",
-            "start": "2021-09-14T15:51:48.620+00:00"
+            "start": "2021-09-14T15:51:48.620000Z"
         },
         "host": {
             "name": "LAPTOP-TECH15",
@@ -2338,7 +2340,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "MoUSO Core Worker Process",
             "pid": 8588,
-            "start": "2021-09-10T16:02:48.083+00:00",
+            "start": "2021-09-10T16:02:48.083000Z",
             "working_directory": "Local",
             "executable": "C:\\WINDOWS\\system32\\MoUsoCoreWorker.exe"
         },
@@ -2489,7 +2491,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "scripts"
+            "action": "scripts",
+            "start": "2021-09-16T14:22:42.798000Z"
         },
         "file": {
             "size": 612864
@@ -2524,7 +2527,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "working_directory": "Local"
             },
             "pid": 14832,
-            "start": "2021-09-16T14:22:42.671+00:00",
+            "start": "2021-09-16T14:22:42.671000Z",
             "working_directory": "Local"
         },
         "related": {
@@ -2635,7 +2638,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "start": "2021-09-14T14:41:58.385+00:00",
+            "start": "2021-09-14T14:41:58.385000Z",
             "action": "tcpv4"
         },
         "host": {
@@ -2659,7 +2662,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "Microsoft Excel",
             "pid": 19376,
-            "start": "2021-09-14T07:13:48.039+00:00",
+            "start": "2021-09-14T07:13:48.039000Z",
             "working_directory": "Local",
             "executable": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
         },
