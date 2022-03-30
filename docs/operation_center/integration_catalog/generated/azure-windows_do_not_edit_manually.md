@@ -539,6 +539,50 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "restart_manager.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2022-01-12T10:33:34.9717584Z\",\"category\":\"WindowsEventLogsTable\",\"level\":\"Informational\",\"properties\":{\"DeploymentId\":\"f329f776-83f1-4c79-95e5-6ad3f77f11e5\",\"Role\":\"IaaS\",\"RoleInstance\":\"_lab-vm\",\"ProviderGuid\":\"{0888e5ef-9b98-4695-979d-e92ce4247224}\",\"ProviderName\":\"Microsoft-Windows-RestartManager\",\"EventId\":10001,\"Level\":4,\"Pid\":3732,\"Tid\":2144,\"Opcode\":0,\"Task\":0,\"Channel\":\"Application\",\"Description\":\"Ending session 0 started \u200e2022\u200e-\u200e01\u200e-\u200e12T10:33:34.805069900Z.\",\"RawXml\":\"<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-RestartManager' Guid='{0888e5ef-9b98-4695-979d-e92ce4247224}'/><EventID>10001</EventID><Version>0</Version><Level>4</Level><Task>0</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-01-12T10:33:34.9717584Z'/><EventRecordID>9379</EventRecordID><Correlation/><Execution ProcessID='3732' ThreadID='2144'/><Channel>Application</Channel><Computer>lab-vm</Computer><Security UserID='S-1-5-18'/></System><UserData><RmSessionEvent xmlns='http://www.microsoft.com/2005/08/Windows/Reliability/RestartManager/'><RmSessionId>0</RmSessionId><UTCStartTime>2022-01-12T10:33:34.8050699Z</UTCStartTime></RmSessionEvent></UserData></Event>\"}}",
+        "action": {
+            "id": 10001,
+            "name": "no match",
+            "outcome": "success",
+            "record_id": 9379,
+            "type": "Application"
+        },
+        "azure_windows": {
+            "opcode": "0",
+            "task": "0",
+            "provider_guid": "0888e5ef-9b98-4695-979d-e92ce4247224",
+            "provider_name": "Microsoft-Windows-RestartManager"
+        },
+        "os": {
+            "family": "windows",
+            "platform": "windows"
+        },
+        "process": {
+            "pid": 3732,
+            "thread": {
+                "id": 2144
+            }
+        },
+        "host": {
+            "hostname": "lab-vm"
+        },
+        "log": {
+            "hostname": "lab-vm"
+        },
+        "event": {
+            "code": "10001",
+            "provider": "Microsoft-Windows-RestartManager"
+        }
+    }
+    	
+	```
+
+
 === "sysmon.json"
 
     ```json
