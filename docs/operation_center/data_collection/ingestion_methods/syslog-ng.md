@@ -6,9 +6,21 @@ To push logs, you have to configure some filters and rewrite rules in syslog-ng 
 
 ## Destination Configuration
 
-The first thing to do is to add the SEKOIA.IO certification authority (CA) file in the `/etc/syslog-ng/ca.d` directory. To proceed, you can execute the following commands in your favorite shell:
+The first thing to do is to add the SEKOIA.IO certification authority (CA) file in the `/etc/syslog-ng/ca.d` directory. Certificates should be in names by their hash values (that can be done via the `openssl rehash` command).
+
+To proceed, you can execute the following commands in your favorite shell:
+
 ```
-sudo mkdir -p /etc/syslog-ng/ca.d && sudo wget -O /etc/syslog-ng/ca.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+sudo mkdir -p /etc/syslog-ng/ca.d
+
+# Retrieve SEKOIA.IO’s Certificate Authority (Let’s Encrypt)
+sudo wget -O /etc/syslog-ng/ca.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+
+# Split PEM file into multiples PEM files (one for each certificate containes in `SEKOIA-IO-intake.pem`).
+sudo awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "cert." c ".pem"}' < SEKOIA-IO-intake.pem
+
+# Ask OpenSSL to create a hash for each PEM file.
+sudo openssl rehash /etc/syslog-ng/ca.d
 ```
 
 Then, you have to define syslog-ng’s destination module to push Syslog events to SEKOIA.IO in `/etc/syslog-ng/syslog-ng.conf`:
@@ -61,4 +73,23 @@ log {
     rewrite(r_nginx);
     destination(d_sekoia_io);
 };
+```
+
+## How to Debug syslog-ng?
+
+To check if syslog-ng is forwarding events to SEKOIA.IO, you can start it with the `-d` (to enable debug mode) and `-e` (to ensure that all logs are displayed to the standard output) flags:
+
+```
+/usr/sbin/syslog-ng -F --no-caps -d -e
+```
+
+The following output should be displayed:
+
+```
+[2022-03-31T11:46:55.939706] Syslog connection established; fd='12', server='AF_INET(145.239.192.38:10514)', local='AF_INET(0.0.0.0:0)'
+…
+[2022-03-31T11:46:59.319748] Certificate validation progress; subject='CN=ISRG Root X1, O=Internet Security Research Group, C=US', issuer='CN=ISRG Root X1, O=Internet Security Research Group, C=US'
+[2022-03-31T11:46:59.319967] Certificate validation progress; subject='CN=R3, O=Let\'s Encrypt, C=US', issuer='CN=ISRG Root X1, O=Internet Security Research Group, C=US'
+[2022-03-31T11:46:59.320050] Certificate validation progress; subject='CN=intake.sekoia.io', issuer='CN=R3, O=Let\'s Encrypt, C=US'
+[2022-03-31T11:46:59.341597] Outgoing message; message='<13>1 2022-03-31T11:46:55.924744+00:00 942b0f2f58fb - 1049 - [SEKOIA@53288 intake_key="XXXX"][meta sequenceId="1"] XXXXX'
 ```
