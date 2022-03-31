@@ -212,6 +212,11 @@ Here is the list of supported modifiers:
 - `endswith`: the value is expected at the end of the field's content (replaces e.g. `*\cmd.exe`)
 - `startswith`: the value is expected at the beginning of the field's content. (replaces e.g. `adm*`)
 - `re`: the value is a regular expression. Regular expressions are case sensitive by default
+- `cidr`: the value is a subnet in CIDR notation (e.g. `192.168.1.0/24`) the IP address should belong to
+- `lt`: less than this value
+- `lte`: less than or equal to this value
+- `gt`: greater than this value
+- `gte`: greater or equal to this value 
 
 **Example**: Raise an alert when the URL matches specified regex and the command line contains all specified values
 
