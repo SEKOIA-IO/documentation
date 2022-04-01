@@ -43,7 +43,7 @@ $ iptables -A DROP_LOGGING -j DROP
 $ iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # Allow HTTP communications.
-$ iptables -A INPUT -p tcp --dport 80,443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+$ iptables -A INPUT -p tcp -m multiport --dports 80,443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 
 # Log and drop everything else.
 $ iptables -A INPUT -j DROP_LOGGING
