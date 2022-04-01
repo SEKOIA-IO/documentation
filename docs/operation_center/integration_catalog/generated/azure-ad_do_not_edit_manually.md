@@ -18,7 +18,7 @@ In details, the following Table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `` |
-| Category | `authentication` |
+| Category | `authentication`, `change`, `iam` |
 | Type | `connection`, `start` |
 
 
@@ -37,7 +37,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"time\": \"2019-06-24T09:21:27.3694184Z\",\"resourceId\": \"/tenants/f6b9ca1d-c995-41bd-ac32-5fba5580215d/providers/Microsoft.aadiam\",\"operationName\": \"Add unverified domain\",\"operationVersion\": \"1.0\",\"category\": \"AuditLogs\",\"tenantId\": \"f6b9ca1d-c995-41bd-ac32-5fba5580215d\",\"resultSignature\": \"None\",\"durationMs\": 0,\"callerIpAddress\": \"<null>\",\"correlationId\": \"2f006047-a6d9-4fca-847a-fffdb209fa4d\",\"level\": \"Informational\",\"properties\": {\"id\": \"Directory_5P1YA_52883815\",\"category\": \"DirectoryManagement\",\"correlationId\": \"2f006047-a6d9-4fca-847a-fffdb209fa4d\",\"result\": \"success\",\"resultReason\": \"\",\"activityDisplayName\": \"Add unverified domain\",\"activityDateTime\": \"2019-06-24T09:21:27.3694184+00:00\",\"loggedByService\": \"Core Directory\",\"operationType\": \"Add\",\"initiatedBy\": {\"user\": {\"id\": \"158c144c-4c1d-4eb4-be08-f2732c8338fd\",\"displayName\": null,\"userPrincipalName\": \"exampleuser_gmail.com#EXT#@exampleuser.onmicrosoft.com\",\"ipAddress\": \"<null>\"}},\"targetResources\": [{\"id\": null,\"displayName\": \"examplecorp.onmicrosoft.com\",\"modifiedProperties\": [{\"displayName\": \"Name\",\"oldValue\": \"[\\\"\\\"]\",\"newValue\": \"[\\\"examplecorp.onmicrosoft.com\\\"]\"},{\"displayName\": \"LiveType\",\"oldValue\": \"[\\\"None\\\"]\",\"newValue\": \"[\\\"Managed\\\"]\"},{\"displayName\": \"Included Updated Properties\",\"oldValue\": null,\"newValue\": \"\\\"Name,LiveType\\\"\"}]}],\"additionalDetails\": []}}",
         "event": {
             "created": "2019-06-24T09:21:27.3694184Z",
-            "dialect": "azure active directory"
+            "dialect": "azure active directory",
+            "category": [
+                "iam",
+                "change"
+            ]
         },
         "log": {
             "hostname": "azureactivedirectory"
@@ -51,7 +55,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "Add unverified domain",
@@ -108,7 +112,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "Add member to group",
@@ -169,8 +173,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "azureactivedirectory"
         },
         "service": {
-            "name": "active directory",
-            "type": "ldap"
+            "type": "ldap",
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "Add service principal",
@@ -257,7 +261,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "Add user",
@@ -315,7 +319,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\"id\":\"39e3a81e-99b9-4a30-8000-f38a970e5100\",\"createdDateTime\":\"2020-09-28T10:12:41.4104242Z\",\"userDisplayName\":\"Jane Doe\",\"userPrincipalName\":\"jane.doe@sekoiacorp.onmicrosoft.com\",\"userId\":\"913f4b76-e10f-4f1c-aaf1-09356389319b\",\"appId\":\"4345a7b9-9a63-4910-a426-35363201d503\",\"appDisplayName\":\"O365 Suite UX\",\"ipAddress\":\"15.188.193.77\",\"clientAppUsed\":\"Browser\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0\",\"correlationId\":\"26e7584c-876b-425f-9119-49b411e21365\",\"conditionalAccessStatus\":\"notApplied\",\"originalRequestId\":\"39e3a81e-99b9-4a30-8000-f38a970e5100\",\"isInteractive\":false,\"tokenIssuerName\":\"\",\"tokenIssuerType\":\"AzureAD\",\"processingTimeInMilliseconds\":101,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Windows Azure Active Directory\",\"resourceId\":\"00000002-0000-0000-c000-000000000000\",\"resourceTenantId\":\"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\",\"authenticationMethodsUsed\":[],\"authenticationRequirement\":\"multiFactorAuthentication\",\"alternateSignInName\":null,\"servicePrincipalName\":null,\"signInEventTypes\":[],\"servicePrincipalId\":\"\",\"status\":{\"errorCode\":0,\"failureReason\":\"Other.\",\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"deviceDetail\":{\"deviceId\":\"\",\"displayName\":null,\"operatingSystem\":\"Windows 10\",\"browser\":\"Firefox 81.0\",\"isCompliant\":null,\"isManaged\":null,\"trustType\":null},\"location\":{\"city\":\"Paris\",\"state\":\"Paris\",\"countryOrRegion\":\"FR\",\"geoCoordinates\":{\"altitude\":null,\"latitude\":48.861000061035156,\"longitude\":2.3380000591278076}},\"mfaDetail\":{\"authMethod\":null,\"authDetail\":null},\"appliedConditionalAccessPolicies\":[],\"authenticationProcessingDetails\":[{\"key\":\"Login Hint Present\",\"value\":\"True\"},{\"key\":\"IsCAEToken\",\"value\":\"False\"}],\"networkLocationDetails\":[],\"authenticationDetails\":[{\"authenticationStepDateTime\":\"2020-09-28T10:12:41.4104242Z\",\"authenticationMethod\":null,\"authenticationMethodDetail\":null,\"succeeded\":true,\"authenticationStepResultDetail\":\"MFA requirement satisfied by claim in the token\",\"authenticationStepRequirement\":\"User\"}],\"authenticationRequirementPolicies\":[]}",
+        "message": "{\"id\":\"39e3a81e-99b9-4a30-8000-f38a970e5100\",\"createdDateTime\":\"2020-09-28T10:12:41.4104242Z\",\"userDisplayName\":\"Jane Doe\",\"userPrincipalName\":\"jane.doe@sekoiacorp.onmicrosoft.com\",\"userId\":\"913f4b76-e10f-4f1c-aaf1-09356389319b\",\"appId\":\"4345a7b9-9a63-4910-a426-35363201d503\",\"appDisplayName\":\"O365 Suite UX\",\"ipAddress\":\"11.11.11.11\",\"clientAppUsed\":\"Browser\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0\",\"correlationId\":\"26e7584c-876b-425f-9119-49b411e21365\",\"conditionalAccessStatus\":\"notApplied\",\"originalRequestId\":\"39e3a81e-99b9-4a30-8000-f38a970e5100\",\"isInteractive\":false,\"tokenIssuerName\":\"\",\"tokenIssuerType\":\"AzureAD\",\"processingTimeInMilliseconds\":101,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Windows Azure Active Directory\",\"resourceId\":\"00000002-0000-0000-c000-000000000000\",\"resourceTenantId\":\"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\",\"authenticationMethodsUsed\":[],\"authenticationRequirement\":\"multiFactorAuthentication\",\"alternateSignInName\":null,\"servicePrincipalName\":null,\"signInEventTypes\":[],\"servicePrincipalId\":\"\",\"status\":{\"errorCode\":0,\"failureReason\":\"Other.\",\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"deviceDetail\":{\"deviceId\":\"\",\"displayName\":null,\"operatingSystem\":\"Windows 10\",\"browser\":\"Firefox 81.0\",\"isCompliant\":null,\"isManaged\":null,\"trustType\":null},\"location\":{\"city\":\"Paris\",\"state\":\"Paris\",\"countryOrRegion\":\"FR\",\"geoCoordinates\":{\"altitude\":null,\"latitude\":48.861000061035156,\"longitude\":2.3380000591278076}},\"mfaDetail\":{\"authMethod\":null,\"authDetail\":null},\"appliedConditionalAccessPolicies\":[],\"authenticationProcessingDetails\":[{\"key\":\"Login Hint Present\",\"value\":\"True\"},{\"key\":\"IsCAEToken\",\"value\":\"False\"}],\"networkLocationDetails\":[],\"authenticationDetails\":[{\"authenticationStepDateTime\":\"2020-09-28T10:12:41.4104242Z\",\"authenticationMethod\":null,\"authenticationMethodDetail\":null,\"succeeded\":true,\"authenticationStepResultDetail\":\"MFA requirement satisfied by claim in the token\",\"authenticationStepRequirement\":\"User\"}],\"authenticationRequirementPolicies\":[]}",
         "event": {
             "category": "authentication",
             "dialect": "azure active directory",
@@ -339,25 +343,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Windows Azure Active Directory"
         },
         "action": {
             "name": "authentication",
             "target": "user"
         },
-        "source": {
-            "address": "15.188.193.77",
-            "ip": "15.188.193.77"
+        "client": {
+            "address": "11.11.11.11",
+            "ip": "11.11.11.11"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0",
+            "name": "Firefox 81.0"
         },
         "related": {
             "user": [
                 "jane.doe@sekoiacorp.onmicrosoft.com"
             ],
             "ip": [
-                "15.188.193.77"
+                "11.11.11.11"
             ]
         },
         "sekoiaio": {
@@ -393,7 +398,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "Change user password",
@@ -432,7 +437,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "created": "2019-06-24T09:21:50.0418907Z",
             "dialect": "azure active directory",
-            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4"
+            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4",
+            "category": [
+                "iam",
+                "change"
+            ]
         },
         "host": {
             "hostname": "azureactivedirectory"
@@ -446,7 +455,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "Remove unverified domain",
@@ -464,6 +473,64 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        }
+    }
+    	
+	```
+
+
+=== "sign-in_activity.json"
+
+    ```json
+	
+    {
+        "event": {
+            "category": "authentication",
+            "outcome": "success",
+            "reason": "External security challenge was not satisfied."
+        },
+        "action": {
+            "name": "Sign-in activity"
+        },
+        "host": {
+            "hostname": "azureactivedirectory"
+        },
+        "client": {
+            "geo": {
+                "city_name": "Bordeaux",
+                "country_iso_code": "FR",
+                "location": {
+                    "lat": "44.84040069580078",
+                    "lon": "-0.5805000066757202"
+                },
+                "region_name": "Gironde"
+            },
+            "user": {
+                "email": "User.Name@corp.name",
+                "full_name": "User Name"
+            }
+        },
+        "log": {
+            "hostname": "azureactivedirectory"
+        },
+        "related": {
+            "hosts": [
+                "azureactivedirectory"
+            ],
+            "ip": [
+                "11.11.11.11"
+            ]
+        },
+        "service": {
+            "name": "Office365 Shell WCSS-Server",
+            "type": "ldap"
+        },
+        "source": {
+            "address": "11.11.11.11",
+            "ip": "11.11.11.11"
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
         }
     }
     	
@@ -493,7 +560,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "Update StsRefreshTokenValidFrom Timestamp",
@@ -546,7 +613,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "service": {
             "type": "ldap",
-            "name": "active directory"
+            "name": "Azure Active Directory"
         },
         "action": {
             "name": "User Risk Detection"
@@ -603,6 +670,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`client.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`client.geo.location` | `geo_point` | Longitude and latitude. |
 |`client.geo.region_name` | `keyword` | Region name. |
+|`client.ip` | `ip` | IP address of the client. |
 |`client.user.email` | `keyword` | User email address. |
 |`client.user.full_name` | `keyword` | User's full name, if available. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
@@ -615,5 +683,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`user.id` | `keyword` | Unique identifier of the user. |
 |`user.name` | `keyword` | Short name or login of the user. |
+|`user_agent.name` | `keyword` | Name of the user agent. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 

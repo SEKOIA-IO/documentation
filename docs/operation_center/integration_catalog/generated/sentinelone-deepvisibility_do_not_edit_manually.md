@@ -1,4 +1,18 @@
 
+## Event Categories
+
+
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `Network intrusion detection system` | SentinelOne Deep Visibility uses kernel based network monitoring to identify threats. |
+
+
+
+
+
+
 
 
 ## Event Samples
