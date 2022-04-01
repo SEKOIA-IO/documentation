@@ -65,6 +65,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "1109290742018175361"
         },
         "sentinelone": {
+            "eventid": 1109290868249950294,
             "data": {
                 "fullScopeDetails": "Group Default Group in Site Sekoia.io of Account CORP",
                 "accountName": "CORP",
@@ -120,6 +121,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "CORP123"
         },
         "sentinelone": {
+            "eventid": 1387019684138751044,
             "data": {
                 "accountName": "CORP",
                 "deviceClass": "E0h",
@@ -215,6 +217,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "1259119070812474070"
         },
         "sentinelone": {
+            "eventid": 1290568704943967230,
             "data": {
                 "accountName": "CORP",
                 "alertId": 1290568698312097725,
@@ -330,6 +333,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Webex.Meetings.Atucfobj.dll Monitoring"
         },
         "sentinelone": {
+            "eventid": 1387492693815190915,
             "data": {
                 "accountName": "CORP",
                 "detectedat": 1648630801340,
@@ -410,6 +414,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "sentinelone": {
+            "eventid": 1112953674841025235,
             "agentDetectionInfo": {
                 "agentLastLoggedInUserName": "User",
                 "mitigationStatus": "User"
@@ -491,8 +496,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "WORKGROUP",
             "ip": [
                 "10.0.1.4",
+                "1.1.1.1",
                 "fe80::9ddd:fd78:1f21:f709",
-                "40.69.64.97"
+                "fe80::9ddd:fd78:1f21:f708",
+                "fe80::9ddd:fd78:1f21:f707",
+                "55.55.55.55"
             ],
             "os": {
                 "family": "windows",
@@ -504,6 +512,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "CORP"
         },
         "sentinelone": {
+            "eventid": 1113032189486913422,
             "agentDetectionInfo": {
                 "agentLastLoggedInUserName": "tdr",
                 "mitigationStatus": "tdr"
@@ -569,6 +578,105 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "threat3.json"
+
+    ```json
+	
+    {
+        "event": {
+            "category": "malware",
+            "id": "1290568704943967230",
+            "kind": "alert",
+            "outcome": "success",
+            "type": [
+                "info"
+            ]
+        },
+        "file": {
+            "extension": "exe",
+            "path": "\\Device\\HarddiskVolume3\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe",
+            "size": 65517824
+        },
+        "organization": {
+            "id": "111111111111111111",
+            "name": "REDACTED"
+        },
+        "host": {
+            "domain": "DOMAIN",
+            "ip": [
+                "192.168.56.1",
+                "10.4.4.69",
+                "fe80::e4a1:7fce:33f3:d50e",
+                "fe80::605f:b34f:31ac:498",
+                "66.66.66.66"
+            ],
+            "os": {
+                "family": "windows",
+                "version": "Windows 10 Pro"
+            }
+        },
+        "sentinelone": {
+            "agentDetectionInfo": {
+                "agentLastLoggedInUserName": "USERNAME",
+                "mitigationStatus": "USERNAME"
+            },
+            "eventid": 1373834705420286869,
+            "groupname": "Default Group",
+            "sitename": "REDACTED-Users",
+            "threatInfo": {
+                "analystVerdict": "undefined",
+                "analystVerdictDescription": "Undefined",
+                "automaticallyResolved": false,
+                "classificationSource": "Static",
+                "detectionType": "dynamic",
+                "failedActions": false,
+                "fileVerificationType": "SignedVerified",
+                "incidentStatus": "unresolved",
+                "incidentStatusDescription": "Unresolved",
+                "initiatedBy": "agent_policy",
+                "initiatedByDescription": "Agent Policy",
+                "isFileless": false,
+                "isValidCertificate": true,
+                "maliciousProcessArguments": "\"C:\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe\"",
+                "mitigationStatusDescription": "Mitigated",
+                "originatorProcess": "chrome.exe",
+                "pendingActions": false,
+                "processUser": "DOMAIN\\USERNAME",
+                "rebootRequired": false,
+                "threatId": "1373834705420286869",
+                "updatedAt": "2022-03-11T12:44:33.501615Z"
+            }
+        },
+        "threat": {
+            "enrichments": {
+                "indicator": {
+                    "file": {
+                        "name": "OfficeTimeline.exe"
+                    }
+                },
+                "matched": {
+                    "occurred": "2022-03-11T12:44:16.158000Z"
+                }
+            },
+            "indicator": {
+                "confidence": "suspicious",
+                "file": {
+                    "code_signature": {
+                        "signing_id": "OFFICE TIMELINE, LLC"
+                    },
+                    "created": "2022-03-11T12:44:19.192413Z",
+                    "size": 65517824
+                }
+            },
+            "software": {
+                "type": "Malware"
+            }
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -586,7 +694,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`container.labels` | `object` | Image labels. |
 |`container.name` | `keyword` | Container name. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
-|`event.id` | `keyword` | Unique ID to describe the event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
@@ -712,6 +819,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.vendorId` | `long` | None |
 |`sentinelone.data.version` | `keyword` | None |
 |`sentinelone.description` | `keyword` | None |
+|`sentinelone.eventid` | `long` | None |
 |`sentinelone.groupname` | `keyword` | None |
 |`sentinelone.hash` | `keyword` | None |
 |`sentinelone.secondaryDescription` | `keyword` | None |
