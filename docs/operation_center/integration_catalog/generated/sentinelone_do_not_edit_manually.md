@@ -45,7 +45,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "1sjze813YtXlmgHp3a1jU4rOAwYpBKMFaWtYCeTQ0QhEtg36Z68bcNi4ahZ2G7Fz",
             "outcome": "success",
             "reason": "Agent debian-SentinelOne started full disk scan at Thu, 11 Mar 2021, 12:42:56 UTC.",
-            "type": "info"
+            "type": [
+                "info"
+            ]
         },
         "group": {
             "id": "1107851598374945694",
@@ -100,7 +102,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "outcome": "success",
             "reason": "USB device  was connected on CORP123.",
-            "type": "allowed"
+            "type": [
+                "allowed"
+            ]
         },
         "group": {
             "id": "1083054176758610128"
@@ -126,6 +130,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "accountName": "CORP",
                 "deviceClass": "E0h",
                 "fullScopeDetails": "Group Default Group in Site CORP-Users of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-Users / Default Group",
                 "groupName": "Default Group",
                 "interface": "USB",
                 "lmpVersion": "N/A",
@@ -151,7 +156,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\"accountId\": \"901144152444038278\", \"activityType\": 3608, \"agentId\": \"1183145065000215213\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2021-11-16T15:29:38.431997Z\", \"data\": {\"accountName\": \"CORP\", \"alertId\": 1290568698312097725, \"alertid\": 1290568698312097725, \"detectedat\": 1637076565467, \"dveventid\": \"\", \"dveventtype\": \"BEHAVIORALINDICATORS\", \"fullScopeDetails\": \"Group LAPTOP in Site DEFAULT of Account CORP\", \"groupName\": \"LAPTOP\", \"k8sclustername\": \"\", \"k8scontainerid\": \"\", \"k8scontainerimage\": \"\", \"k8scontainerlabels\": \"\", \"k8scontainername\": \"\", \"k8scontrollerkind\": \"\", \"k8scontrollerlabels\": \"\", \"k8scontrollername\": \"\", \"k8snamespace\": \"\", \"k8snamespacelabels\": \"\", \"k8snode\": \"\", \"k8spod\": \"\", \"k8spodlabels\": \"\", \"origagentmachinetype\": \"laptop\", \"origagentname\": \"CORP-LAP-4075\", \"origagentosfamily\": \"windows\", \"origagentosname\": \"Windows 10 Pro\", \"origagentosrevision\": \"19042\", \"origagentsiteid\": \"901144152460815495\", \"origagentuuid\": \"058fd4868adb4b87be24a4c5e9f89220\", \"origagentversion\": \"4.6.14.304\", \"ruleId\": 1259119070812474070, \"ruledescription\": \"Rule migrated from Watchlist\", \"ruleid\": 1259119070812474070, \"rulename\": \"PowershellExecutionPolicyChanged Indicator Monito\", \"rulescopeid\": 901144152460815495, \"rulescopelevel\": \"E_SITE\", \"scopeId\": 901144152460815495, \"scopeLevel\": \"Group\", \"scopeName\": \"LAPTOP\", \"severity\": \"E_MEDIUM\", \"siteName\": \"DEFAULT\", \"sourcename\": \"STAR\", \"sourceparentprocesscommandline\": \"C:\\\\WINDOWS\\\\Explorer.EXE\", \"sourceparentprocessintegritylevel\": \"medium\", \"sourceparentprocesskey\": \"811577BA383803B5\", \"sourceparentprocessmd5\": \"681a21a3b848ed960073475cd77634ce\", \"sourceparentprocessname\": \"explorer.exe\", \"sourceparentprocesspath\": \"C:\\\\WINDOWS\\\\explorer.exe\", \"sourceparentprocesspid\": 11196, \"sourceparentprocesssha1\": \"3d930943fbea03c9330c4947e5749ed9ceed528a\", \"sourceparentprocesssha256\": \"08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089\", \"sourceparentprocesssigneridentity\": \"MICROSOFT WINDOWS\", \"sourceparentprocessstarttime\": 1636964894046, \"sourceparentprocessstoryline\": \"E1798FE5683F14CF\", \"sourceparentprocesssubsystem\": \"win32\", \"sourceparentprocessusername\": \"CORP\\\\user\", \"sourceprocesscommandline\": \"\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\" \\\"-Command\\\" \\\"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\\\Users\\\\user\\\\Documents\\\\git\\\\DSP2\\\\API HUB\\\\Documentation\\\\Generate.ps1'\\\"\", \"sourceprocessfilepath\": \"C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\", \"sourceprocessfilesingeridentity\": \"MICROSOFT WINDOWS\", \"sourceprocessintegritylevel\": \"medium\", \"sourceprocesskey\": \"8C3CD6D2478943E5\", \"sourceprocessmd5\": \"04029e121a0cfa5991749937dd22a1d9\", \"sourceprocessname\": \"powershell.exe\", \"sourceprocesspid\": 6676, \"sourceprocesssha1\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"sourceprocesssha256\": \"9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f\", \"sourceprocessstarttime\": 1637076505627, \"sourceprocessstoryline\": \"5D1F81C984CFD44D\", \"sourceprocesssubsystem\": \"win32\", \"sourceprocessusername\": \"CORP\\\\user\", \"systemUser\": 0, \"userId\": 824463119127413794, \"userName\": \"sentinelone\"}, \"description\": null, \"groupId\": \"924347507640996620\", \"hash\": null, \"id\": \"1290568704943967230\", \"osFamily\": null, \"primaryDescription\": \"Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.\", \"secondaryDescription\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"siteId\": \"901144152460815495\", \"threatId\": null, \"updatedAt\": \"2021-11-16T15:29:38.429056Z\", \"userId\": \"824463119127413794\"}",
+        "message": "{\"accountId\": \"901144152444038278\", \"activityType\": 3608, \"agentId\": \"1183145065000215213\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2021-11-16T15:29:38.431997Z\", \"data\": {\"accountName\": \"CORP\", \"alertId\": 1290568698312097725, \"alertid\": 1290568698312097725, \"detectedat\": 1637076565467, \"dveventid\": \"\", \"dveventtype\": \"BEHAVIORALINDICATORS\", \"fullScopeDetails\": \"Group LAPTOP in Site DEFAULT of Account CORP\", \"groupName\": \"LAPTOP\", \"k8sclustername\": \"\", \"k8scontainerid\": \"\", \"k8scontainerimage\": \"\", \"k8scontainerlabels\": \"\", \"k8scontainername\": \"\", \"k8scontrollerkind\": \"\", \"k8scontrollerlabels\": \"\", \"k8scontrollername\": \"\", \"k8snamespace\": \"\", \"k8snamespacelabels\": \"\", \"k8snode\": \"\", \"k8spod\": \"\", \"k8spodlabels\": \"\", \"origagentmachinetype\": \"laptop\", \"origagentname\": \"CORP-LAP-4075\", \"origagentosfamily\": \"windows\", \"origagentosname\": \"Windows 10 Pro\", \"origagentosrevision\": \"19042\", \"origagentsiteid\": \"901144152460815495\", \"origagentuuid\": \"058fd4868adb4b87be24a4c5e9f89220\", \"origagentversion\": \"4.6.14.304\", \"ruleId\": 1259119070812474070, \"ruledescription\": \"Rule migrated from Watchlist\", \"ruleid\": 1259119070812474070, \"rulename\": \"PowershellExecutionPolicyChanged Indicator Monito\", \"rulescopeid\": 901144152460815495, \"rulescopelevel\": \"E_SITE\", \"scopeId\": 901144152460815495, \"scopeLevel\": \"Group\", \"scopeName\": \"LAPTOP\", \"severity\": \"E_MEDIUM\", \"siteName\": \"DEFAULT\", \"sourcename\": \"STAR\", \"sourceparentprocesscommandline\": \"C:\\\\WINDOWS\\\\Explorer.EXE\", \"sourceparentprocessintegritylevel\": \"medium\", \"sourceparentprocesskey\": \"811577BA383803B5\", \"sourceparentprocessmd5\": \"681a21a3b848ed960073475cd77634ce\", \"sourceparentprocessname\": \"explorer.exe\", \"sourceparentprocesspath\": \"C:\\\\WINDOWS\\\\explorer.exe\", \"sourceparentprocesspid\": 11196, \"sourceparentprocesssha1\": \"3d930943fbea03c9330c4947e5749ed9ceed528a\", \"sourceparentprocesssha256\": \"08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089\", \"sourceparentprocesssigneridentity\": \"MICROSOFT WINDOWS\", \"sourceparentprocessstarttime\": 1636964894046, \"sourceparentprocessstoryline\": \"E1798FE5683F14CF\", \"sourceparentprocesssubsystem\": \"win32\", \"sourceparentprocessusername\": \"CORP\\\\user\", \"sourceprocesscommandline\": \"\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\" \\\"-Command\\\" \\\"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\\\Users\\\\user\\\\Documents\\\\git\\\\DSP2\\\\API HUB\\\\Documentation\\\\Generate.ps1'\\\"\", \"sourceprocessfilepath\": \"C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\", \"sourceprocessfilesingeridentity\": \"MICROSOFT WINDOWS\", \"sourceprocessintegritylevel\": \"medium\", \"sourceprocesskey\": \"8C3CD6D2478943E5\", \"sourceprocessmd5\": \"04029e121a0cfa5991749937dd22a1d9\", \"sourceprocessname\": \"powershell.exe\", \"sourceprocesspid\": 6676, \"sourceprocesssha1\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"sourceprocesssha256\": \"9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f\", \"sourceprocessstarttime\": 1637076505627, \"sourceprocessstoryline\": \"5D1F81C984CFD44D\", \"sourceprocesssubsystem\": \"win32\", \"sourceprocessusername\": \"CORP\\\\user\", \"systemUser\": 0, \"userId\": 111111111111111111, \"userName\": \"sentinelone\"}, \"description\": null, \"groupId\": \"924347507640996620\", \"hash\": null, \"id\": \"1290568704943967230\", \"osFamily\": null, \"primaryDescription\": \"Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.\", \"secondaryDescription\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"siteId\": \"901144152460815495\", \"threatId\": null, \"updatedAt\": \"2021-11-16T15:29:38.429056Z\", \"userId\": \"111111111111111111\"}",
         "sekoiaio": {
             "intake": {
                 "parsing_status": "success"
@@ -163,7 +168,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "outcome": "success",
             "reason": "Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.",
-            "type": "info"
+            "type": [
+                "info"
+            ]
         },
         "group": {
             "id": "924347507640996620"
@@ -252,8 +259,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sourceprocesssubsystem": "win32",
                 "sourceprocessusername": "CORP\\user",
                 "sourceprocessintegritylevel": "medium",
-                "systemUser": 0,
-                "userName": "sentinelone"
+                "systemUser": 0
             },
             "secondaryDescription": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
             "siteId": "901144152460815495",
@@ -263,7 +269,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "901144152444038278"
         },
         "user": {
-            "id": 824463119127413794
+            "full_name": "sentinelone",
+            "id": 111111111111111111
         }
     }
     	
@@ -339,6 +346,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "detectedat": 1648630801340,
                 "dveventtype": "FILEMODIFICATION",
                 "fullScopeDetails": "Group LAPTOP in Site DEFAULT of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / DEFAULT / LAPTOP",
                 "groupName": "LAPTOP",
                 "origagentmachinetype": "laptop",
                 "origagentname": "USR-LAP-4141",
@@ -366,14 +374,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sourceprocessstoryline": "114D19D4F405D782",
                 "sourceprocesssubsystem": "win32",
                 "sourceprocessusername": "CORP\\user",
-                "systemUser": 0,
-                "userName": "User NAME"
+                "systemUser": 0
             },
             "secondaryDescription": "84580370c58b1b0c9e4138257018fd98efdf28ba",
             "siteId": "901144152460815495",
             "updatedAt": "2022-03-30T09:00:18.282935Z"
         },
         "user": {
+            "full_name": "User NAME",
             "id": 901170701818003423
         }
     }
@@ -389,7 +397,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "malware",
             "kind": "alert",
-            "type": "info",
+            "type": [
+                "info"
+            ],
             "id": "1112953674841025235"
         },
         "organization": {
@@ -403,17 +413,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "host": {
             "domain": "WORKGROUP",
-            "ip": [
-                "1.1.1.1",
-                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
-                "2.2.2.2"
-            ],
             "os": {
                 "family": "windows",
                 "version": "Windows 10 Pro"
             }
         },
         "sentinelone": {
+            "host": {
+                "ip": [
+                    "1.1.1.1",
+                    "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                    "2.2.2.2"
+                ]
+            },
             "eventid": 1112953674841025235,
             "agentDetectionInfo": {
                 "agentLastLoggedInUserName": "User",
@@ -482,7 +494,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "malware",
             "kind": "alert",
             "id": "1113032189486913422",
-            "type": "info",
+            "type": [
+                "info"
+            ],
             "outcome": "success",
             "action": "Agent started full disk scan",
             "created": "2021-04-23T20:02:05.017771Z"
@@ -494,14 +508,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "host": {
             "domain": "WORKGROUP",
-            "ip": [
-                "10.0.1.4",
-                "1.1.1.1",
-                "fe80::9ddd:fd78:1f21:f709",
-                "fe80::9ddd:fd78:1f21:f708",
-                "fe80::9ddd:fd78:1f21:f707",
-                "55.55.55.55"
-            ],
             "os": {
                 "family": "windows",
                 "version": "Windows 10 Pro"
@@ -512,6 +518,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "CORP"
         },
         "sentinelone": {
+            "host": {
+                "ip": [
+                    "10.0.1.4",
+                    "1.1.1.1",
+                    "fe80::9ddd:fd78:1f21:f709",
+                    "fe80::9ddd:fd78:1f21:f708",
+                    "fe80::9ddd:fd78:1f21:f707",
+                    "55.55.55.55"
+                ]
+            },
             "eventid": 1113032189486913422,
             "agentDetectionInfo": {
                 "agentLastLoggedInUserName": "tdr",
@@ -603,19 +619,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "host": {
             "domain": "DOMAIN",
-            "ip": [
-                "192.168.56.1",
-                "10.4.4.69",
-                "fe80::e4a1:7fce:33f3:d50e",
-                "fe80::605f:b34f:31ac:498",
-                "66.66.66.66"
-            ],
             "os": {
                 "family": "windows",
                 "version": "Windows 10 Pro"
             }
         },
         "sentinelone": {
+            "host": {
+                "ip": [
+                    "192.168.56.1",
+                    "10.4.4.69",
+                    "fe80::e4a1:7fce:33f3:d50e",
+                    "fe80::605f:b34f:31ac:498",
+                    "66.66.66.66"
+                ]
+            },
             "agentDetectionInfo": {
                 "agentLastLoggedInUserName": "USERNAME",
                 "mitigationStatus": "USERNAME"
@@ -677,6 +695,58 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "user_logged_in.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 27
+        },
+        "source": {
+            "address": "11.22.33.44",
+            "ip": "11.22.33.44"
+        },
+        "user": {
+            "id": 111111111111111111
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "2222222222222222222",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "The management user Jean DUPONT logged in to the management console with IP Address 11.22.33.44.",
+            "type": [
+                "info"
+            ]
+        },
+        "organization": {
+            "id": "111111111111111111"
+        },
+        "sentinelone": {
+            "data": {
+                "accountName": "CORP",
+                "fullScopeDetails": "Account CORP",
+                "fullScopeDetailsPath": "Global / CORP",
+                "role": "Admin",
+                "scopeLevel": "Account",
+                "scopeName": "CORP",
+                "source": "mgmt"
+            },
+            "eventid": 1388919233083515416,
+            "updatedAt": "2022-04-01T08:14:35.013748Z"
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -704,7 +774,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`group.id` | `keyword` | Unique identifier for the group on the system/platform. |
 |`group.name` | `keyword` | Name of the group. |
 |`host.domain` | `keyword` | Name of the directory the group is a member of. |
-|`host.ip` | `ip` | Host ip addresses. |
 |`host.name` | `keyword` | Name of the host. |
 |`host.os.family` | `keyword` | OS family (such as redhat, debian, freebsd, windows). |
 |`host.os.version` | `keyword` | Operating system version as a raw string. |
@@ -753,8 +822,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.enabledReason` | `keyword` | None |
 |`sentinelone.data.exclusionType` | `keyword` | None |
 |`sentinelone.data.expiration` | `keyword` | None |
+|`sentinelone.data.externalIp` | `keyword` | None |
 |`sentinelone.data.fileContentHash` | `keyword` | None |
 |`sentinelone.data.fullScopeDetails` | `keyword` | None |
+|`sentinelone.data.fullScopeDetailsPath` | `keyword` | None |
 |`sentinelone.data.gattService` | `keyword` | None |
 |`sentinelone.data.groupName` | `keyword` | None |
 |`sentinelone.data.interface` | `keyword` | None |
@@ -813,7 +884,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.systemUser` | `long` | None |
 |`sentinelone.data.uid` | `keyword` | None |
 |`sentinelone.data.uploadedFilename` | `keyword` | None |
-|`sentinelone.data.userName` | `keyword` | None |
 |`sentinelone.data.userscope` | `keyword` | None |
 |`sentinelone.data.uuid` | `keyword` | None |
 |`sentinelone.data.vendorId` | `long` | None |
@@ -822,6 +892,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.eventid` | `long` | None |
 |`sentinelone.groupname` | `keyword` | None |
 |`sentinelone.hash` | `keyword` | None |
+|`sentinelone.host.ip` | `array` | None |
 |`sentinelone.secondaryDescription` | `keyword` | None |
 |`sentinelone.siteId` | `keyword` | None |
 |`sentinelone.sitename` | `keyword` | None |
@@ -854,6 +925,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.threatInfo.threatId` | `keyword` | None |
 |`sentinelone.threatInfo.updatedAt` | `keyword` | None |
 |`sentinelone.updatedAt` | `keyword` | None |
+|`source.ip` | `ip` | IP address of the source. |
 |`threat.enrichments.indicator.file.hash.md5` | `keyword` | MD5 hash. |
 |`threat.enrichments.indicator.file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`threat.enrichments.matched.occurred` | `date` | Date of match |
@@ -863,6 +935,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`threat.indicator.file.size` | `long` | File size in bytes. |
 |`threat.software.type` | `keyword` | Software type. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
+|`user.full_name` | `keyword` | User's full name, if available. |
 |`user.id` | `long` | None |
-|`user.name` | `keyword` | Short name or login of the user. |
 
