@@ -277,6 +277,17 @@ plugins:
       integrations/wazuh.md: operation_center/index.md
       integrations/windows.md: operation_center/integration_catalog/endpoint/windows.md
       integrations/zeek.md: operation_center/integration_catalog/network/zeek.md
+      integrations/transport/graylog.md: operation_center/data_collection/ingestion_methods/graylog.md
+      integrations/transport/https.md: operation_center/data_collection/ingestion_methods/https.md
+      integrations/transport.md: operation_center/data_collection/ingestion_methods/index.md
+      integrations/transport/logstash.md: operation_center/data_collection/ingestion_methods/logstash.md
+      integrations/transport/rsyslog.md: operation_center/data_collection/ingestion_methods/rsyslog.md
+      integrations/transport/syslog-ng.md: operation_center/data_collection/ingestion_methods/syslog-ng.md
+      integrations/sekoiaio_activity_logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
+      operation_center/operators.md: playbooks/operators.md
+      operation_center/playbook_overview.md: playbooks/overview.md
+      operation_center/actions.md: playbooks/actions.md
+      operation_center/triggers.md: playbooks/triggers.md
 - redoc
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
