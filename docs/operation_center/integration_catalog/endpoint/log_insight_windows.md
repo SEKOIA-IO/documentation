@@ -1,5 +1,6 @@
 uuid: ee54dd8e-4bd4-4fe8-9d9d-1a018cd8c4bb
 name: Log Insight Windows
+type: intake
 
 ## Overview
 Microsoft Windows is a popular operating system developed by Microsoft since 1985.

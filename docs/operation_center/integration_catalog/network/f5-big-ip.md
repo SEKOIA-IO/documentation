@@ -1,5 +1,6 @@
 uuid: a14b1141-2d61-414b-bf79-da99b487b1af
 name: F5 BIG-IP
+type: intake
 
 ## Overview
 
@@ -9,7 +10,7 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 
 ## Configure
 
-We expect logs formated in priority as CEF or under the reporting format (key/value pairs). 
+We expect logs formated in priority as CEF or under the reporting format (key/value pairs).
 
 In this setup guide you will set up an rsyslog server to add your intake key and forward securely your BIG-IP logs to our servers. We first explain how to configure your rsyslog server, then we show how to configure a *Log Publisher* to format your logs as CEF and send them to your rsyslog server.
 

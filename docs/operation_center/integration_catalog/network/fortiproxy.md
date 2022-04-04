@@ -1,5 +1,6 @@
 uuid: d971c8c7-b7d0-4de1-9b5c-b58235c1d7e4
 name: fortiproxy
+type: intake
 
 ## Overview
 

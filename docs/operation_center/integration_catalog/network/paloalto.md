@@ -1,5 +1,6 @@
 uuid: 903ec1b8-f206-4ba5-8563-db21da09cafd
 name: Palo Alto
+type: intake
 
 ## Overview
 

@@ -1,5 +1,6 @@
 uuid: d3a813ac-f9b5-451c-a602-a5994544d9ed
 name: AWS CloudTrail
+type: intake
 
 ## Overview
 AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure. CloudTrail provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services ([source: AWS CloudTrail Overview](https://aws.amazon.com/cloudtrail/)).

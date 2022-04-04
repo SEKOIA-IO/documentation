@@ -1,5 +1,6 @@
 uuid: f0a10c21-37d1-419f-8671-77903dc8de69
 name: checkpoint
+type: intake
 
 ## Overview
 

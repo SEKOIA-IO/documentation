@@ -1,5 +1,6 @@
 uuid: 2d3e4475-93d1-4ba1-8dc5-c32c190536d2
 name: SentinelOne Deep Visibility
+type: intake
 
 ## Overview
 
@@ -9,27 +10,27 @@ SentinelOne Deep Visibility logs provides in-depth logs that are useful for dete
 
 **Important**: Please contact your point of contact at SentinelOne in order to subscribe to this option and collect the required technical information to retrieve those logs via a SentinelOne Kafka.
 
-> No additional installation or configuration on the agents is needed. 
+> No additional installation or configuration on the agents is needed.
 
-Please find bellow a short list of activities that are available for security supervision thanks to SentinelOne Deep Visibility logs: 
+Please find bellow a short list of activities that are available for security supervision thanks to SentinelOne Deep Visibility logs:
 
-- File Modification 
-- File Creation 
-- File Deletion 
-- Process Creation 
-- Process Exit 
-- Process Termination 
+- File Modification
+- File Creation
+- File Deletion
+- Process Creation
+- Process Exit
+- Process Termination
 - Command line arguments
-- DNS Query 
+- DNS Query
 - TCPv4 Connection
-- TCPv4 Listen 
-- HTTP Request 
-- Registry Key Security Changed 
-- Registry Value Modified 
-- Registry Value Delete 
-- Scheduled Task Update 
-- Scheduled Task Start 
-- Scheduled Task Trigger 
+- TCPv4 Listen
+- HTTP Request
+- Registry Key Security Changed
+- Registry Value Modified
+- Registry Value Delete
+- Scheduled Task Update
+- Scheduled Task Start
+- Scheduled Task Trigger
 
 {!operation_center/integration_catalog/generated/sentinelone_do_not_edit_manually.md!}
 
@@ -40,7 +41,7 @@ This setup guide will show you how to pull events produced by SentinelOne Deep V
 ### Setup a SentinelOne Kafka server
 
 
-To collect the SentinelOne Deep Visibility logs, the API format is not appropriate due to the Sentinel rate limits and high amount of logs to be pulled from SentinelOne instance. 
+To collect the SentinelOne Deep Visibility logs, the API format is not appropriate due to the Sentinel rate limits and high amount of logs to be pulled from SentinelOne instance.
 Thus SentinelOne have a solution using Kafka technology which can be delivered after a subscription with SentinelOne.
 
 **Important**: If you have multiple SentinelOne Management Consoles, you must subscribe to a Kafka topic for each one.

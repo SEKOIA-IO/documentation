@@ -1,5 +1,6 @@
 uuid: 07c0cac8-f68f-11ea-adc1-0242ac120002
 name: Amazon VPC Flow Logs
+type: intake
 
 ## Overview
 Amazon VPC Flow Logs is a feature that provides the ability to capture information about IP network traffic as it enters or exits from network interface in your Amazon VPC (Amazon Virtual Private Cloud). VPC Flow Logs can help you with a number of tasks, such as:
