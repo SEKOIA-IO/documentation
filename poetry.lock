@@ -151,7 +151,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "mkdocs-redirects"
-version = "1.0.3"
+version = "1.0.4"
 description = "A MkDocs plugin for dynamic page redirects to prevent broken links."
 category = "main"
 optional = false
@@ -159,12 +159,11 @@ python-versions = ">=2.7"
 
 [package.dependencies]
 mkdocs = ">=1.0.4,<2"
-six = ">=1.15.0,<2"
 
 [package.extras]
-dev = ["pytest (<5)", "twine (>=1.13.0,<2)"]
-release = ["twine (>=1.13.0,<2)"]
-test = ["pytest (<5)"]
+dev = ["pytest", "twine (>=1.13.0)", "pytest (<5)", "twine (>=1.13.0,<2)"]
+release = ["twine (>=1.13.0)", "twine (>=1.13.0,<2)"]
+test = ["pytest", "pytest (<5)"]
 
 [[package]]
 name = "packaging"
@@ -271,7 +270,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "1df69ce7330164f34e16409af31151cc626144263fcb719be6c607a548ae4764"
+content-hash = "406f7afe56e452bf9d308f904e7ddd672357ab450cc07d7dff73c01a873628e7"
 
 [metadata.files]
 click = [
@@ -389,7 +388,7 @@ mkdocs-material-extensions = [
     {file = "mkdocs_material_extensions-1.0.3-py3-none-any.whl", hash = "sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44"},
 ]
 mkdocs-redirects = [
-    {file = "mkdocs-redirects-1.0.3.tar.gz", hash = "sha256:db413e1d1ef5e88d8427c0a259d72ae85e74a2b51f6cd7605c2a8db358fe340f"},
+    {file = "mkdocs-redirects-1.0.4.tar.gz", hash = "sha256:27aae239feab63ba3198af95b3614275c0699707009e81bbe452f6c6cf34f5d9"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},

@@ -14,7 +14,7 @@ redoc = "plugins.redoc:RedocPlugin"
 python = "^3.8"
 mkdocs = "^1.0.0"
 mkdocs-material = "^8.0.0"
-mkdocs-redirects = "^1.0.3"
+mkdocs-redirects = "^1.0.4"
 markdown-include = "^0.6.0"
 
 [build-system]
