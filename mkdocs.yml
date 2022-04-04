@@ -289,6 +289,7 @@ plugins:
       operation_center/actions.md: playbooks/actions.md
       operation_center/triggers.md: playbooks/triggers.md
 - redoc
+- intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
