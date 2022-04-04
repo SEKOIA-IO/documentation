@@ -42,10 +42,13 @@ jobs:
         id: pr_number
         run: echo "::set-output name=pr_number::$(cat site/.pr_number)"
 
+      - name: Install Swift
+        run: |
+          pip install python-swiftclient==3.10.1 python-keystoneclient==4.1.1
+
       - name: Delete any previous preview
-        uses: StephaneBour/actions-ovh-storage@1.0
-        with:
-          args: delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }}
+        run: |
+          swift delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }}
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
@@ -56,9 +59,8 @@ jobs:
           OS_REGION_NAME: "GRA"
 
       - name: OVH Object Storage
-        uses: StephaneBour/actions-ovh-storage@1.0
-        with:
-          args: upload sekoiaio-documentation-previews site --object-name ${{ steps.pr_number.outputs.pr_number }}
+        run: |
+          swift upload sekoiaio-documentation-previews site --object-name ${{ steps.pr_number.outputs.pr_number }}
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
