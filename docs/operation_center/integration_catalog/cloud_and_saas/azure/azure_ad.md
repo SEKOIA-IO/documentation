@@ -1,5 +1,6 @@
 uuid: 19cd2ed6-f90c-47f7-a46b-974354a107bb
 name: Azure Active Directory
+type: intake
 
 ## Overview
 
@@ -35,7 +36,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 !!! info
     Please replace :
-    
+
     - `company-resource-group` with the name of your “resource group”.
     - `uuid` with your subscription ID retrieved previously (see below).
 

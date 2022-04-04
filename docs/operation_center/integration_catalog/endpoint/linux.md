@@ -1,5 +1,6 @@
 uuid: aca13e14-5f7a-4587-bd04-ce0a739f65bd
 name: Linux
+type: intake
 
 ## Overview
 Linux is a family of free and open-source software operating systems built around the Linux kernel.

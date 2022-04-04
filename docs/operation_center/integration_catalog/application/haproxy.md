@@ -1,5 +1,6 @@
 uuid: ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9
 name: HAProxy
+type: intake
 
 ## Overview
 HAProxy is a free, open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers. HAProxy has a lot of features and because it is located between your infrastructure and your clients, it can give you a lot of information about either of them.

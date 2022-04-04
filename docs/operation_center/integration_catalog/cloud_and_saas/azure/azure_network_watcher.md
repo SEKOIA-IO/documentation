@@ -1,5 +1,6 @@
 uuid: 340e3bc7-2b76-48e4-9833-e971451b2979
 name: Azure Network Watcher (NSG flow logs)
+type: intake
 
 ## Overview
 Azure Network Watcher provides tools to monitor, diagnose, view metrics, and enable or disable logs for resources in an Azure virtual network. It also allows to log information about IP traffic flowing through a network security group: NSG flow logs.

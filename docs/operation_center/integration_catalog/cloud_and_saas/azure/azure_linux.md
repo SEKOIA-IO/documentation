@@ -1,5 +1,6 @@
 uuid: 162064f0-c594-455e-ac24-2d7129137688
 name: Azure Linux
+type: intake
 
 ## Overview
 
@@ -35,7 +36,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 !!! info
     Please replace :
-    
+
     - `company-resource-group` with the name of your “resource group”.
     - `uuid` with your subscription ID retrieved previously (see below).
 

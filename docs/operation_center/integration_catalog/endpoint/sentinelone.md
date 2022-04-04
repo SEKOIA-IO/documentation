@@ -1,11 +1,12 @@
 uuid: d8f6faa5-eb3d-4621-87f6-6903d4f80b3b
 name: SentinelOne
+type: intake
 
 ## Overview
 
 SentinelOne is an Endpoint Detection and Response (EDR) solution. By using the standard SentinelOne EDR logs collection by API, you will be provided with high level information on detection and investigation of your EDR.
 
-Please find bellow a limited list of field types that are available with SentinelOne default EDR logs: 
+Please find bellow a limited list of field types that are available with SentinelOne default EDR logs:
 
 - Information about the Endpoint
 - Information about the SentinelOne agent installed

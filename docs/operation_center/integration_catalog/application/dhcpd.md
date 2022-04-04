@@ -1,5 +1,6 @@
 uuid: 9044ba46-2b5d-4ebd-878a-51d62e84c8df
 name: ISC DHCP
+type: intake
 
 ## Overview
 ISC DHCP offers a complete open source solution for implementing DHCP servers.

@@ -1,5 +1,6 @@
 uuid: a199fbde-508e-4cb9-ae37-842703494be0
 name: BIND
+type: intake
 
 ## Overview
 
@@ -31,4 +32,3 @@ logging {
 ```
 
 You can find more informations on [how to configure your BIND instance on its official website](https://kb.isc.org/docs/aa-01526).
-

@@ -1,3 +1,7 @@
+uuid: 79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4
+name: Stormshield Network Security
+type: intake
+
 ## Overview
 
 Stormshield Network Security firewalls provides comprehensive security and high performance network protection. In addition, they offer a high degree of scalability to support the evolution of IT and OT networks
@@ -11,7 +15,7 @@ In this documentation we will explain how to collect and send Stormshield Networ
 ### Sending logs to syslog server
 
 You need to set some parameters to send your logs via Syslog.
-It is necessary to create a profile using the specific tab named "Syslog" within your Stormshield interface. 
+It is necessary to create a profile using the specific tab named "Syslog" within your Stormshield interface.
 
 _Note that you can configure up to 4 different profiles._
 
