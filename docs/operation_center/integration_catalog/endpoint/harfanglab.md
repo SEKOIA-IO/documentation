@@ -1,5 +1,5 @@
 uuid: 3c7057d3-4689-4fae-8033-6f1f887a70f2
-name: harfanglab
+name: Harfanglab
 type: intake
 
 ## Overview
