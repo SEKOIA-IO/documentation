@@ -285,6 +285,7 @@ plugins:
       integrations/transport/rsyslog.md: operation_center/data_collection/ingestion_methods/rsyslog.md
       integrations/transport/syslog-ng.md: operation_center/data_collection/ingestion_methods/syslog-ng.md
       integrations/sekoiaio_activity_logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
+      integrations/thehive.md: operation_center/integration_catalog/application/thehive.md
       operation_center/operators.md: playbooks/operators.md
       operation_center/playbook_overview.md: playbooks/overview.md
       operation_center/actions.md: playbooks/actions.md
