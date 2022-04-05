@@ -32,6 +32,7 @@ Redirecting...
 </html>"""
 
     _redirection_table: dict[str, str] = {}
+    _integrations: list[dict[str, str]] = []
 
     def on_files(self, files: Files, config: Config):
         new_files = []
@@ -50,6 +51,13 @@ Redirecting...
                 dialect_uuid = metadata["uuid"]
 
                 self._redirection_table[dialect_uuid] = source_file.url
+                self._integrations.append(
+                    {
+                        "uuid": dialect_uuid,
+                        "name": metadata.get("name"),
+                        "destination": source_file.url,
+                    }
+                )
 
                 newfile = File(
                     path=f"operation_center/integration_catalog/uuid/{dialect_uuid}.md",
@@ -59,6 +67,12 @@ Redirecting...
                 )
                 new_files.append(newfile)
 
+        new_files.append(File(
+            path=f"operation_center/integration_catalog/index.md",
+            src_dir="operation_center/integration_catalog/",
+            dest_dir=config["site_dir"],
+            use_directory_urls=True,
+        ))
         files._files += new_files
 
     def on_page_read_source(self, page, config):
@@ -67,3 +81,12 @@ Redirecting...
                 return self.template.format(
                     destination=self._redirection_table[page.file.name]
                 )
+
+        if page.file.src_path == f"operation_center/integration_catalog/index.md":
+            filename = Path(config["docs_dir"]) / Path(page.file.src_path)
+            content = filename.open().read()
+
+            for page in self._integrations:
+                content += f"- [{page['name']}](/{page['destination']})\n"
+
+            return content
