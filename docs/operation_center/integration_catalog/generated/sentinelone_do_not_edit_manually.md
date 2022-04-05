@@ -483,7 +483,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "\\Device\\HarddiskVolume2\\Users\\User\\AppData\\Local\\Temp\\nsr1C3F.tmp\\nsh29ED.tmp",
             "size": 2976256
         },
+        "related": {
+            "ip": [
+                "1.1.1.1",
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2.2.2.2"
+            ]
+        },
         "host": {
+            "ip": [
+                "1.1.1.1",
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2.2.2.2"
+            ],
+            "name": "VM-SentinelOne",
             "domain": "WORKGROUP",
             "os": {
                 "family": "windows",
@@ -541,13 +554,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "siteId": 1107851598358168475,
                 "siteName": "Sekoia.io",
                 "userActionsNeeded": []
-            },
-            "host": {
-                "ip": [
-                    "1.1.1.1",
-                    "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
-                    "2.2.2.2"
-                ]
             },
             "eventid": 1112953674841025235,
             "indicators": [
@@ -673,7 +679,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "family": "windows",
                 "version": "Windows 10 Pro"
-            }
+            },
+            "ip": [
+                "10.0.1.4",
+                "1.1.1.1",
+                "fe80::9ddd:fd78:1f21:f709",
+                "fe80::9ddd:fd78:1f21:f708",
+                "fe80::9ddd:fd78:1f21:f707",
+                "55.55.55.55"
+            ],
+            "name": "tdr-vm-template"
         },
         "organization": {
             "id": "617755838952421242",
@@ -732,16 +747,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "userActionsNeeded": []
             },
             "eventid": 1113032189486913422,
-            "host": {
-                "ip": [
-                    "10.0.1.4",
-                    "1.1.1.1",
-                    "fe80::9ddd:fd78:1f21:f709",
-                    "fe80::9ddd:fd78:1f21:f708",
-                    "fe80::9ddd:fd78:1f21:f707",
-                    "55.55.55.55"
-                ]
-            },
             "indicators": [
                 {
                     "category": "InfoStealer",
@@ -870,7 +875,24 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "family": "windows",
                 "version": "Windows 10 Pro"
-            }
+            },
+            "ip": [
+                "192.168.56.1",
+                "10.4.4.69",
+                "fe80::e4a1:7fce:33f3:d50e",
+                "fe80::605f:b34f:31ac:498",
+                "66.66.66.66"
+            ],
+            "name": "LSYN98873"
+        },
+        "related": {
+            "ip": [
+                "10.4.4.69",
+                "fe80::e4a1:7fce:33f3:d50e",
+                "192.168.56.1",
+                "fe80::605f:b34f:31ac:498",
+                "66.66.66.66"
+            ]
         },
         "organization": {
             "id": "111111111111111111",
@@ -942,15 +964,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "userActionsNeeded": []
             },
             "eventid": 1373834705420286869,
-            "host": {
-                "ip": [
-                    "192.168.56.1",
-                    "10.4.4.69",
-                    "fe80::e4a1:7fce:33f3:d50e",
-                    "fe80::605f:b34f:31ac:498",
-                    "66.66.66.66"
-                ]
-            },
             "indicators": [
                 {
                     "category": "Exploitation",
@@ -1277,6 +1290,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`group.id` | `keyword` | Unique identifier for the group on the system/platform. |
 |`group.name` | `keyword` | Name of the group. |
 |`host.domain` | `keyword` | Name of the directory the group is a member of. |
+|`host.ip` | `ip` | Host ip addresses. |
 |`host.name` | `keyword` | Name of the host. |
 |`host.os.family` | `keyword` | OS family (such as redhat, debian, freebsd, windows). |
 |`host.os.version` | `keyword` | Operating system version as a raw string. |
@@ -1511,7 +1525,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.description` | `keyword` | None |
 |`sentinelone.eventid` | `long` | None |
 |`sentinelone.hash` | `keyword` | None |
-|`sentinelone.host.ip` | `array` | None |
 |`sentinelone.indicators` | `keyword` | None |
 |`sentinelone.kubernetesInfo.controllerKind` | `keyword` | None |
 |`sentinelone.kubernetesInfo.controllerLabels` | `keyword` | None |
