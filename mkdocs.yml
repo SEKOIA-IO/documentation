@@ -32,6 +32,7 @@ nav:
   - Overview: operation_center/index.md
   - Dashboards: operation_center/threat_exposition.md
   - Integration Catalog:
+    - Overview: operation_center/integration_catalog/index.md
     - Application:
       - Alsid: operation_center/integration_catalog/application/alsid.md
       - Apache: operation_center/integration_catalog/application/apache.md
@@ -288,6 +289,7 @@ plugins:
       operation_center/playbook_overview.md: playbooks/overview.md
       operation_center/actions.md: playbooks/actions.md
       operation_center/triggers.md: playbooks/triggers.md
+      integrations/index.md: operation_center/integration_catalog/index.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
