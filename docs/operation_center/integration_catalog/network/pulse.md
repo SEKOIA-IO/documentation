@@ -1,4 +1,4 @@
-title: Pulse Connect Secure
+name: Pulse Connect Secure
 uuid: 7a12aa3b-ec73-4ebb-8fb3-f7c543fd84a5
 type: intake
 

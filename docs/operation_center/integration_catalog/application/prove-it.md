@@ -1,4 +1,4 @@
-title: PROVE IT
+name: PROVE IT
 type: intake
 
 ## Overview
