@@ -43,7 +43,7 @@ nav:
       - OpenSSH: operation_center/integration_catalog/application/openssh.md
       - SEKOIA.IO: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
       - Unbound: operation_center/integration_catalog/application/unbound.md
-      - The Hive: integrations/thehive.md
+      - The Hive: operation_center/integration_catalog/application/thehive.md
     - Cloud and SaaS:
       - AWS:
         - CloudTrail: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
@@ -285,6 +285,7 @@ plugins:
       integrations/transport/rsyslog.md: operation_center/data_collection/ingestion_methods/rsyslog.md
       integrations/transport/syslog-ng.md: operation_center/data_collection/ingestion_methods/syslog-ng.md
       integrations/sekoiaio_activity_logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
+      integrations/thehive.md: operation_center/integration_catalog/application/thehive.md
       operation_center/operators.md: playbooks/operators.md
       operation_center/playbook_overview.md: playbooks/overview.md
       operation_center/actions.md: playbooks/actions.md
