@@ -1,5 +1,6 @@
 uuid: 35e8dd8e-cd22-4eff-9829-ea835f6a4568
 name: FortiMail
+type: intake
 
 ## Overview
 

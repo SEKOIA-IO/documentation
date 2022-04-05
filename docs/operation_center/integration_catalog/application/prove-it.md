@@ -1,4 +1,5 @@
 title: PROVE IT
+type: intake
 
 ## Overview
 

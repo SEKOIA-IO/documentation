@@ -1,5 +1,6 @@
 uuid: 466aeca2-e112-4ccc-a109-c6d85b91bbcf
 name: cisco-asa
+type: intake
 
 ## Overview
 

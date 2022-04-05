@@ -1,5 +1,6 @@
 uuid: c3888137-b34e-4526-ab61-836b2d45a742
 name: Netfilter
+type: intake
 
 ## Overview
 
@@ -86,7 +87,7 @@ table inet filter {
                 ct state new udp dport 0-65535 log prefix "IPTABLES: ACCEPT " level info accept;
         }
 }
-``` 
+```
 
 Finally, ensure that `Nftables` is running and the service is enabled :
 ```bash
@@ -94,6 +95,6 @@ sudo systemctl start nftables && sudo systemctl enable nftables
 ```
 
 
-             
+
 ## Further Reading
 - [netfilter/iptables project homepage](https://www.netfilter.org/)

@@ -1,5 +1,6 @@
 uuid: 2815eaab-2425-4eff-8038-3f7d5a3b8b11
 name: Azure Windows
+type: intake
 
 ## Overview
 Azure Virtual Machines service is developed and managed by Microsoft Corp.
@@ -33,7 +34,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 !!! info
     Please replace :
-    
+
     - `company-resource-group` with the name of your “resource group”.
     - `uuid` with your subscription ID retrieved previously (see below).
 

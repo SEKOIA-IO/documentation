@@ -1,5 +1,6 @@
 uuid: 3f99cdd8-aeca-4860-a846-6f2a794583e1
 name: Azure MySQL
+type: intake
 
 ## Overview
 
@@ -35,7 +36,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 !!! info
     Please replace :
-    
+
     - `company-resource-group` with the name of your “resource group”.
     - `uuid` with your subscription ID retrieved previously (see below).
 
@@ -83,4 +84,3 @@ Finally, please send to SEKOIA.IO the following information:
 - Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=mysql-event"`).
 - Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
 - Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
-

@@ -1,5 +1,6 @@
 uuid: 1d172ee6-cdc0-4713-9cfd-43f7d9595777
 name: CEF
+type: intake
 
 ## Overview
 ArcSight's Common Event Format (CEF) is an open log management standard.

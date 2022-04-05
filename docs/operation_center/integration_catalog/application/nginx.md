@@ -2,7 +2,7 @@ uuid: ab25af2e-4916-40ba-955c-34d2301c1f51
 name: Nginx
 
 ## Overview
-Nginx is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server. It has a lot of features and because it is located between your application and your clients, it can give you a lot of information about either of them.
+NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server. It has a lot of features and because it is located between your application and your clients, it can give you a lot of information about either of them.
 
 {!operation_center/integration_catalog/generated/nginx_do_not_edit_manually.md!}
 
