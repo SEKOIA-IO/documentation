@@ -2,7 +2,7 @@
 
 ## Overview
 
-Many technologies or agents allows the forwarding of their logs using the syslog protocol (RFC 5426).
+Many technologies or agents allow the forwarding of their logs using the syslog protocol (RFC 5426).
 
 We recommend to centralise them on a dedicated server: Rsyslog.
 
@@ -47,39 +47,64 @@ sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/fi
 module(load="imuxsock") # provides support for local system logging
 module(load="imklog")   # provides kernel logging support
 
+### GLOBAL DIRECTIVES ###
 # Set the maximum supported message size
-$MaxMessageSize 20k
+# Specify where to place spool and state files
+# Set rsyslogd process' umask
+# Set default CA certificate for TLS syslog
+global(
+    maxMessageSize="20k"
+    workDirectory="/var/spool/rsyslog"
+    umask="0022"
+    defaultNetstreamDriverCAFile="/etc/rsyslog.d/SEKOIA-IO-intake.pem"
+)
 
-# provides UDP syslog reception
+# Provides UDP syslog reception
 module(load="imudp")
-input(type="imudp" port="514")
+input(
+    type="imudp"
+    port="514"
+)
 
-# provides TCP syslog reception
+# Provides TCP syslog reception
 module(load="imtcp")
-input(type="imtcp" port="514")
+input(
+    type="imtcp"
+    port="514"
+)
 
-# Use traditional timestamp format.
-$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+### FILE OUTPUT MODULE DEFAULT PARAMETERS ###
+# Use traditional timestamp format
+# Set the default permissions for all log files
+module(
+    load="builtin:omfile"
+    Template="RSYSLOG_TraditionalFileFormat"
+    fileOwner="root"
+    fileGroup="adm"
+    FileCreateMode="0640"
+    DirCreateMode="0755"
+)
 
-# Set the default permissions for all log files.
-$FileOwner root
-$FileGroup adm
-$FileCreateMode 0640
-$DirCreateMode 0755
-$Umask 0022
+include(file="/etc/rsyslog.d/*.conf")
 
-$ActionQueueType LinkedList     # create a queue stored in the RAM
-$ActionQueueFileName sek_fwd    # set up the prefix for writting
-$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
-$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
-$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
-
-# Where to place spool and state files
-$WorkDirectory /var/spool/rsyslog
-$IncludeConfig /etc/rsyslog.d/*.conf
-
-# Rules
-*.*;auth,authpriv.none          -/var/log/syslog
+### DEFAULT LOGGING ACTION PARAMETERS ###
+# Create a queue stored in the RAM
+# Set up the prefix for writing
+# Allow 5 gigabytes of storage for the buffer
+# Write on disk if the rsyslog daemon is shut down
+# Prevent the rsyslog daemon from dropping the logs if the connexion is interrupted
+if prifilt("*.*;auth,authpriv.none") then {
+    action(
+        type="omfile"
+        queue.type="LinkedList"
+        queue.filename="sek_fwd"
+        queue.maxDiskSpace="5g"
+        queue.saveOnShutdown="on"
+        action.resumeRetryCount="-1"
+        sync="off"
+        File="/var/log/syslog"
+    )
+}
 ```
 
 ### Ensure Rsyslog service is running
@@ -209,13 +234,14 @@ sudo vim /etc/rsyslog.d/15-windows.conf
 Following the same example for Windows log collection:
 
 ```bash
-# Refer to the location of the certificate
-$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+# Customize the syslog header with an Intake Key to be collected on SEKOIA.IO while adding a new intake from the catalogue
+template(
+    name="SEKOIAIOWindowsTemplate"
+    type="string"
+    string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n"
+)
 
-# Customize the syslog header the an Intake Key to be collected on SEKOIA.IO while adding a new intake from the catalogue
-template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
-
-# Use a condition that identifies specifically Windows logs that send them to SEKOIA.IO
+# Use a condition that identifies specifically Windows logs and that sends them to SEKOIA.IO
 if ($syslogtag contains 'Microsoft-Windows') then {
     action(
         type="omfwd"
@@ -395,48 +421,75 @@ sudo /bin/cat <<\EOM >$RsyslogConfFile
 module(load="imuxsock") # provides support for local system logging
 module(load="imklog")   # provides kernel logging support
 
+### GLOBAL DIRECTIVES ###
 # Set the maximum supported message size
-$MaxMessageSize 20k
+# Specify where to place spool and state files
+# Set rsyslogd process' umask
+# Set default CA certificate for TLS syslog
+global(
+    maxMessageSize="20k"
+    workDirectory="/var/spool/rsyslog"
+    umask="0022"
+    defaultNetstreamDriverCAFile="/etc/rsyslog.d/SEKOIA-IO-intake.pem"
+)
 
-# provides UDP syslog reception
+# Provides UDP syslog reception
 module(load="imudp")
-input(type="imudp" port="514")
+input(
+    type="imudp"
+    port="514"
+)
 
-# provides TCP syslog reception
+# Provides TCP syslog reception
 module(load="imtcp")
-input(type="imtcp" port="514")
+input(
+    type="imtcp"
+    port="514"
+)
 
-# Use traditional timestamp format.
-$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+### FILE OUTPUT MODULE DEFAULT PARAMETERS ###
+# Use traditional timestamp format
+# Set the default permissions for all log files
+module(
+    load="builtin:omfile"
+    Template="RSYSLOG_TraditionalFileFormat"
+    fileOwner="root"
+    fileGroup="adm"
+    FileCreateMode="0640"
+    DirCreateMode="0755"
+)
 
-# Set the default permissions for all log files.
-$FileOwner root
-$FileGroup adm
-$FileCreateMode 0640
-$DirCreateMode 0755
-$Umask 0022
+include(file="/etc/rsyslog.d/*.conf")
 
-$ActionQueueType LinkedList     # create a queue stored in the RAM
-$ActionQueueFileName sek_fwd    # set up the prefix for writting
-$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
-$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
-$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
-
-# Where to place spool and state files
-$WorkDirectory /var/spool/rsyslog
-$IncludeConfig /etc/rsyslog.d/*.conf
-
-# Rules
-*.*;auth,authpriv.none          -/var/log/syslog
+### DEFAULT LOGGING ACTION PARAMETERS ###
+# Create a queue stored in the RAM
+# Set up the prefix for writing
+# Allow 5 gigabytes of storage for the buffer
+# Write on disk if the rsyslog daemon is shut down
+# Prevent the rsyslog daemon from dropping the logs if the connexion is interrupted
+if prifilt("*.*;auth,authpriv.none") then {
+    action(
+        type="omfile"
+        queue.type="LinkedList"
+        queue.filename="sek_fwd"
+        queue.maxDiskSpace="5g"
+        queue.saveOnShutdown="on"
+        action.resumeRetryCount="-1"
+        sync="off"
+        File="/var/log/syslog"
+    )
+}
 EOM
 
 ### Create a dedicated Windows configuration file
 WindowsFile="/etc/rsyslog.d/15-windows.conf"
 
 sudo /bin/cat <<\EOM >$WindowsFile
-$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
-
-template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+template(
+    name="SEKOIAIOWindowsTemplate"
+    type="string"
+    string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n"
+)
 
 if ($syslogtag contains 'Microsoft-Windows') then {
     action(
