@@ -86,7 +86,7 @@ Redirecting...
             filename = Path(config["docs_dir"]) / Path(page.file.src_path)
             content = filename.open().read()
 
-            for page in self._integrations:
+            for page in sorted(self._integrations, key=lambda x: x["name"]):
                 content += f"- [{page['name']}](/{page['destination']})\n"
 
             return content
