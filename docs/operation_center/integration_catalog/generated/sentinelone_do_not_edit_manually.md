@@ -165,6 +165,388 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "activity-type-128.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 128
+        },
+        "agent": {
+            "id": "859960378210728293"
+        },
+        "event": {
+            "category": "intrusion_detection",
+            "id": "1112953674841025235",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Functionality of the SentinelOne Agent on a01pwrbi005 is limited, due to a database corruption. Contact Support.",
+            "type": [
+                "info"
+            ]
+        },
+        "group": {
+            "id": "834457314771868699"
+        },
+        "host": {
+            "ip": [
+                "62.122.8.8"
+            ],
+            "name": "a01pwrbi005"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "related": {
+            "ip": [
+                "62.122.8.8"
+            ]
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-05T09:06:38.941691Z",
+            "data": {
+                "accountName": "corp",
+                "computerName": "a01pwrbi005",
+                "disabledLevel": "db corruption",
+                "externalIp": "62.122.8.8",
+                "fullScopeDetails": "Group Env. 01 - Prod in Site corp-servers-windows of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-servers-windows / Env. 01 - Prod",
+                "groupName": "Env. 01 - Prod",
+                "scopeLevel": "Group",
+                "scopeName": "Env. 01 - Prod",
+                "siteName": "corp-servers-windows"
+            },
+            "eventid": 1391844541367588156,
+            "siteId": 795516416264105067,
+            "updatedAt": "2022-04-05T09:06:38.937917Z"
+        }
+    }
+    	
+	```
+
+
+=== "activity-type-2001.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 2001
+        },
+        "agent": {
+            "id": "997510333395640565"
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "1113032189486913422",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "The agent CL001234 successfully killed the threat: Run SwitchThemeColor.ps1.lnk.",
+            "type": [
+                "info"
+            ]
+        },
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
+        },
+        "group": {
+            "id": "797501649544140679"
+        },
+        "host": {
+            "name": "CL001234"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-05T09:10:15.006573Z",
+            "data": {
+                "accountName": "corp",
+                "computerName": "CL001234",
+                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "globalStatus": "success",
+                "groupName": "DSI",
+                "scopeLevel": "Group",
+                "scopeName": "DSI",
+                "siteName": "corp-workstations",
+                "threatClassification": "PUA",
+                "threatClassificationSource": "Engine"
+            },
+            "eventid": 1391846353852639605,
+            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:15.001215Z"
+        }
+    }
+    	
+	```
+
+
+=== "activity-type-2004.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 2004
+        },
+        "agent": {
+            "id": "997510333395640565"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "1113032189486913422",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "The agent CL001234 successfully quarantined the threat: Run SwitchThemeColor.ps1.lnk.",
+            "type": [
+                "info"
+            ]
+        },
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
+        },
+        "group": {
+            "id": "797501649544140679"
+        },
+        "host": {
+            "name": "CL001234"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-05T09:10:15.137471Z",
+            "data": {
+                "accountName": "corp",
+                "computerName": "CL001234",
+                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "groupName": "DSI",
+                "scopeLevel": "Group",
+                "scopeName": "DSI",
+                "siteName": "corp-workstations",
+                "threatClassification": "PUA",
+                "threatClassificationSource": "Engine"
+            },
+            "eventid": 1391846354951547317,
+            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:15.132383Z"
+        },
+        "url": {
+            "original": "/threats/mitigation-report/1391846354842495401",
+            "path": "/threats/mitigation-report/1391846354842495401"
+        }
+    }
+    	
+	```
+
+
+=== "activity-type-4003.json"
+
+    ```json
+	
+    {
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 4003
+        },
+        "agent": {
+            "id": "997510333395640565"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "intrusion_detection",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Threat with confidence level suspicious detected: Run SwitchThemeColor.ps1.lnk."
+        },
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
+        },
+        "group": {
+            "id": "797501649544140679"
+        },
+        "host": {
+            "name": "CL001234"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-05T09:10:14.913348Z",
+            "data": {
+                "accountName": "corp",
+                "computerName": "CL001234",
+                "confidenceLevel": "suspicious",
+                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "groupName": "DSI",
+                "siteName": "corp-workstations"
+            },
+            "eventid": 1391846353072498959,
+            "secondaryDescription": "08731ccac0d404da077e7029062f73ca3d8faf61",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:14.903935Z"
+        }
+    }
+    	
+	```
+
+
+=== "activity-type-4008.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 4008
+        },
+        "agent": {
+            "id": "997510333395640565"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "1113032189486913422",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Status of threat Run SwitchThemeColor.ps1.lnk on agent CL001234 changed from Not mitigated to Mitigated.",
+            "type": [
+                "info"
+            ]
+        },
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
+        },
+        "group": {
+            "id": "797501649544140679"
+        },
+        "host": {
+            "name": "CL001234"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-05T09:10:15.125572Z",
+            "data": {
+                "accountName": "corp",
+                "computerName": "CL001234",
+                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "groupName": "DSI",
+                "newStatus": "Mitigated",
+                "originalStatus": "Not mitigated",
+                "siteName": "corp-workstations",
+                "threatClassification": "PUA",
+                "threatClassificationSource": "Engine"
+            },
+            "eventid": 1391846354850884010,
+            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:15.119559Z"
+        }
+    }
+    	
+	```
+
+
+=== "activity-type-5009.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 5009
+        },
+        "agent": {
+            "id": "841026328128144438"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "2222222222222222222",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "The Agent CL001234 moved dynamically from Group DSI to Group Default Group",
+            "type": [
+                "info"
+            ]
+        },
+        "group": {
+            "id": "551799242261539645"
+        },
+        "host": {
+            "name": "CL001234"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-05T09:12:46.391928Z",
+            "data": {
+                "accountName": "corp",
+                "computerName": "CL001234",
+                "fullScopeDetails": "Group Default Group in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / Default Group",
+                "groupName": "Default Group",
+                "newGroupId": "551799242261539645",
+                "newGroupName": "Default Group",
+                "oldGroupId": "797501649544140679",
+                "oldGroupName": "DSI",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "siteName": "corp-workstations"
+            },
+            "eventid": 1391847623762392173,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-05T09:12:45.472693Z"
+        }
+    }
+    	
+	```
+
+
 === "custom_rule.json"
 
     ```json
@@ -373,7 +755,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "rule": {
             "description": "Ecriture d'une dll webex \"atucfobj.dll\" inconnu du syst\u00e8me sur le parc.",
-            "name": "Webex.Meetings.Atucfobj.dll Monitoring"
+            "name": "Webex.Meetings.Atucfobj.dll Monitoring",
+            "id": "1360739572188076805"
         },
         "sentinelone": {
             "createdAt": "2022-03-30T09:00:18.286500Z",
@@ -601,6 +984,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "On-Write DFI - Suspicious"
                 ],
                 "failedActions": false,
+                "fileExtension": "TMP",
                 "fileExtensionType": "Misc",
                 "fileVerificationType": "NotSigned",
                 "incidentStatus": "unresolved",
@@ -800,6 +1184,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "On-Write DFI - Suspicious"
                 ],
                 "failedActions": false,
+                "fileExtension": "EXE",
                 "fileExtensionType": "Executable",
                 "fileVerificationType": "SignedVerified",
                 "incidentStatus": "resolved",
@@ -1150,6 +1535,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "DBT - Executables"
                 ],
                 "failedActions": false,
+                "fileExtension": "EXE",
                 "fileExtensionType": "Executable",
                 "fileVerificationType": "SignedVerified",
                 "incidentStatus": "unresolved",
@@ -1372,8 +1758,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.accountName` | `keyword` | None |
 |`sentinelone.data.agentipv4` | `keyword` | None |
 |`sentinelone.data.alertId` | `long` | None |
+|`sentinelone.data.alertid` | `keyword` | None |
 |`sentinelone.data.bluetoothAddress` | `keyword` | None |
 |`sentinelone.data.computerName` | `keyword` | None |
+|`sentinelone.data.confidenceLevel` | `keyword` | None |
 |`sentinelone.data.createdAt` | `keyword` | None |
 |`sentinelone.data.creator` | `keyword` | None |
 |`sentinelone.data.detectedat` | `long` | None |
@@ -1381,19 +1769,25 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.deviceInformationServiceInfoKey` | `keyword` | None |
 |`sentinelone.data.deviceInformationServiceInfoValue` | `keyword` | None |
 |`sentinelone.data.deviceName` | `keyword` | None |
+|`sentinelone.data.disabledLevel` | `keyword` | None |
 |`sentinelone.data.dnsrequest` | `keyword` | None |
 |`sentinelone.data.dnsresponse` | `keyword` | None |
 |`sentinelone.data.dstip` | `keyword` | None |
 |`sentinelone.data.dstport` | `long` | None |
 |`sentinelone.data.dveventid` | `keyword` | None |
 |`sentinelone.data.dveventtype` | `keyword` | None |
+|`sentinelone.data.escapedMaliciousProcessArguments` | `keyword` | None |
 |`sentinelone.data.eventId` | `keyword` | None |
 |`sentinelone.data.eventTime` | `keyword` | None |
 |`sentinelone.data.eventType` | `keyword` | None |
+|`sentinelone.data.externalIp` | `keyword` | None |
 |`sentinelone.data.externalip` | `keyword` | None |
+|`sentinelone.data.fileContentHash` | `keyword` | None |
+|`sentinelone.data.fileDisplayName` | `keyword` | None |
 |`sentinelone.data.fullScopeDetails` | `keyword` | None |
 |`sentinelone.data.fullScopeDetailsPath` | `keyword` | None |
 |`sentinelone.data.gattService` | `keyword` | None |
+|`sentinelone.data.globalStatus` | `keyword` | None |
 |`sentinelone.data.groupId` | `long` | None |
 |`sentinelone.data.groupName` | `keyword` | None |
 |`sentinelone.data.indicatorcategory` | `keyword` | None |
@@ -1427,6 +1821,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.modulepath` | `keyword` | None |
 |`sentinelone.data.modulesha1` | `keyword` | None |
 |`sentinelone.data.neteventdirection` | `keyword` | None |
+|`sentinelone.data.newGroupId` | `keyword` | None |
+|`sentinelone.data.newGroupName` | `keyword` | None |
+|`sentinelone.data.newStatus` | `keyword` | None |
+|`sentinelone.data.oldGroupId` | `keyword` | None |
+|`sentinelone.data.oldGroupName` | `keyword` | None |
 |`sentinelone.data.origagentmachinetype` | `keyword` | None |
 |`sentinelone.data.origagentname` | `keyword` | None |
 |`sentinelone.data.origagentosfamily` | `keyword` | None |
@@ -1435,6 +1834,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.origagentsiteid` | `long` | None |
 |`sentinelone.data.origagentuuid` | `keyword` | None |
 |`sentinelone.data.origagentversion` | `keyword` | None |
+|`sentinelone.data.originalStatus` | `keyword` | None |
 |`sentinelone.data.osType` | `keyword` | None |
 |`sentinelone.data.physical` | `keyword` | None |
 |`sentinelone.data.productId` | `keyword` | None |
@@ -1450,6 +1850,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.ruleName` | `keyword` | None |
 |`sentinelone.data.ruleScopeName` | `keyword` | None |
 |`sentinelone.data.ruleType` | `keyword` | None |
+|`sentinelone.data.ruleid` | `keyword` | None |
 |`sentinelone.data.rulename` | `keyword` | None |
 |`sentinelone.data.rulescopeid` | `long` | None |
 |`sentinelone.data.rulescopelevel` | `keyword` | None |
@@ -1511,6 +1912,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.tgtprocsignedstatus` | `keyword` | None |
 |`sentinelone.data.tgtprocstorylineid` | `keyword` | None |
 |`sentinelone.data.tgtprocuid` | `keyword` | None |
+|`sentinelone.data.threatClassification` | `keyword` | None |
+|`sentinelone.data.threatClassificationSource` | `keyword` | None |
 |`sentinelone.data.tiindicatorcomparisonmethod` | `keyword` | None |
 |`sentinelone.data.tiindicatorsource` | `keyword` | None |
 |`sentinelone.data.tiindicatortype` | `keyword` | None |
@@ -1553,6 +1956,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.threatInfo.externalTicketExists` | `keyword` | None |
 |`sentinelone.threatInfo.externalTicketId` | `keyword` | None |
 |`sentinelone.threatInfo.failedActions` | `bool` | None |
+|`sentinelone.threatInfo.fileExtension` | `keyword` | None |
 |`sentinelone.threatInfo.fileExtensionType` | `keyword` | None |
 |`sentinelone.threatInfo.fileVerificationType` | `keyword` | None |
 |`sentinelone.threatInfo.incidentStatus` | `keyword` | None |
@@ -1579,7 +1983,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.threatInfo.threatId` | `keyword` | None |
 |`sentinelone.threatInfo.updatedAt` | `keyword` | None |
 |`sentinelone.updatedAt` | `keyword` | None |
-|`sentinelone.userId` | `keyword` | None |
 |`sentinelone.whiteningOptions` | `keyword` | None |
 |`source.ip` | `ip` | IP address of the source. |
 |`threat.enrichments.indicator.file.hash.md5` | `keyword` | MD5 hash. |
