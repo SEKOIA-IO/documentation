@@ -36,7 +36,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-03-17T13:49:51+00:00",
+        "@timestamp": "2022-03-17T13:49:51.000000Z",
         "destination": {
             "address": "11.22.33.44",
             "geo": {
@@ -55,7 +55,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "outcome": "success",
             "risk_score": 5,
-            "start": "2022-03-17T13:49:51+00:00",
+            "start": "2022-03-17T13:49:51.000000Z",
             "timezone": "+0100",
             "type": "connection"
         },
@@ -209,7 +209,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "slotlevel": 2,
             "srcportname": "ad2009-dyn_tcp"
         },
-        "@timestamp": "2022-03-03T13:21:10+00:00",
+        "@timestamp": "2022-03-03T13:21:10.000000Z",
         "event": {
             "type": "connection",
             "kind": "event",
@@ -217,7 +217,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success",
             "duration": 2000000000.0,
             "timezone": "+0100",
-            "start": "2022-03-03T13:21:10+00:00",
+            "start": "2022-03-03T13:21:10.000000Z",
             "risk_score": 5
         },
         "rule": {
@@ -234,7 +234,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-03-16T18:36:03+00:00",
+        "@timestamp": "2022-03-16T18:36:03.000000Z",
         "destination": {
             "address": "22",
             "geo": {
@@ -267,9 +267,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=foo_bar srcmac=00:00:00:00:00:00 srccontinent=\"na\" srccountry=\"us\" dst=22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=11.11.11.11 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
+        "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=foo_bar srcmac=00:00:00:00:00:00 srccontinent=\"na\" srccountry=\"us\" dst=22.22.22.22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=11.11.11.11 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
         "network": {
-            "bytes": 5555692.0,
+            "bytes": 5555692,
             "protocol": "https",
             "transport": "tcp",
             "type": "4"
@@ -390,10 +390,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.mac` | `keyword` | MAC address of the source. |
 |`source.port` | `long` | Port of the source. |
 |`stormshield.confid` | `float` | None |
-|`stormshield.dstname` | `text` | None |
-|`stormshield.dstportname` | `text` | None |
+|`stormshield.dstname` | `keyword` | None |
+|`stormshield.dstportname` | `keyword` | None |
 |`stormshield.filter.action` | `keyword` | None |
-|`stormshield.logtype` | `text` | None |
+|`stormshield.logtype` | `keyword` | None |
 |`stormshield.slotlevel` | `float` | None |
-|`stormshield.srcportname` | `text` | None |
+|`stormshield.srcportname` | `keyword` | None |
 
