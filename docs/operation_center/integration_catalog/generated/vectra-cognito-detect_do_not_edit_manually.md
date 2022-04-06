@@ -285,6 +285,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "6.12"
         },
         "host": {
+            "id": "27617",
             "ip": "198.51.100.14",
             "name": "IP-198.51.100.14"
         },
@@ -296,6 +297,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "vectra": {
             "certainty": 31,
+            "destination": {
+                "key_asset": false
+            },
             "detection": {
                 "last_type": "Hidden HTTP Tunnel",
                 "profile": {
@@ -311,6 +315,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "history": {
                 "account_access": [],
                 "service_access": []
+            },
+            "host": {
+                "group": []
             },
             "risk_score_norm": 22,
             "source": {
@@ -491,7 +498,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`vectra.campaign.name` | `keyword` | None |
 |`vectra.certainty` | `long` | None |
 |`vectra.destination.id` | `keyword` | None |
-|`vectra.destination.key_asset` | `keyword` | None |
+|`vectra.destination.key_asset` | `bool` | None |
 |`vectra.destination.name` | `keyword` | None |
 |`vectra.detection.account` | `keyword` | None |
 |`vectra.detection.accounts` | `keyword` | None |
@@ -503,7 +510,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`vectra.detection.cookie` | `keyword` | None |
 |`vectra.detection.count` | `keyword` | None |
 |`vectra.detection.dos_type` | `keyword` | None |
-|`vectra.detection.dst_ips` | `text` | None |
+|`vectra.detection.dst_ips` | `keyword` | None |
 |`vectra.detection.extensions` | `keyword` | None |
 |`vectra.detection.function` | `keyword` | None |
 |`vectra.detection.host` | `keyword` | None |
@@ -514,9 +521,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`vectra.detection.keyboard_id` | `keyword` | None |
 |`vectra.detection.keyboard_name` | `keyword` | None |
 |`vectra.detection.last_type` | `keyword` | None |
-|`vectra.detection.matched_domain` | `text` | None |
-|`vectra.detection.matched_ip` | `text` | None |
-|`vectra.detection.matched_user_agent` | `text` | None |
+|`vectra.detection.matched_domain` | `keyword` | None |
+|`vectra.detection.matched_ip` | `keyword` | None |
+|`vectra.detection.matched_user_agent` | `keyword` | None |
 |`vectra.detection.name` | `keyword` | None |
 |`vectra.detection.namedpipe` | `keyword` | None |
 |`vectra.detection.networks` | `keyword` | None |
@@ -524,9 +531,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`vectra.detection.normal_servers` | `keyword` | None |
 |`vectra.detection.num_attempts` | `keyword` | None |
 |`vectra.detection.port` | `keyword` | None |
-|`vectra.detection.ports` | `text` | None |
+|`vectra.detection.ports` | `long` | None |
 |`vectra.detection.product_id` | `keyword` | None |
-|`vectra.detection.profile` | `text` | None |
+|`vectra.detection.profile` | `array` | None |
 |`vectra.detection.protocol` | `keyword` | None |
 |`vectra.detection.ransom_notes` | `keyword` | None |
 |`vectra.detection.reason` | `keyword` | None |
@@ -543,17 +550,17 @@ The following table lists the fields that are extracted, normalized under the EC
 |`vectra.detection.shares` | `keyword` | None |
 |`vectra.detection.sql_fragment` | `keyword` | None |
 |`vectra.detection.successes` | `keyword` | None |
-|`vectra.detection.tags` | `text` | None |
+|`vectra.detection.tags` | `array` | None |
 |`vectra.detection.threat_feeds` | `keyword` | None |
 |`vectra.detection.tunnel_type` | `keyword` | None |
 |`vectra.detection.type` | `keyword` | None |
 |`vectra.detection.url` | `keyword` | None |
 |`vectra.detection.uuid` | `keyword` | None |
 |`vectra.health.message` | `text` | None |
-|`vectra.history.account_access` | `text` | None |
+|`vectra.history.account_access` | `array` | None |
 |`vectra.history.host_access` | `object` | None |
 |`vectra.history.host_access_hostname` | `keyword` | None |
-|`vectra.history.service_access` | `text` | None |
+|`vectra.history.service_access` | `array` | None |
 |`vectra.history.service_access_uid.host` | `keyword` | None |
 |`vectra.history.service_access_uid.proto_host` | `keyword` | None |
 |`vectra.host.group` | `keyword` | None |
