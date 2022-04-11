@@ -165,6 +165,73 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "activity-type-120.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 120
+        },
+        "agent": {
+            "id": "977351746870921161"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "1113032189486913422",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "The CL002793 Agent is enabled due to time expiration.",
+            "type": [
+                "info"
+            ]
+        },
+        "group": {
+            "id": "797501649544140679"
+        },
+        "host": {
+            "ip": [
+                "88.127.242.225"
+            ],
+            "name": "CL002793"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "related": {
+            "ip": [
+                "88.127.242.225"
+            ]
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-11T06:49:21.769668Z",
+            "data": {
+                "accountName": "CORP",
+                "computerName": "CL002793",
+                "enabledReason": "expired",
+                "externalIp": "88.127.242.225",
+                "fullScopeDetails": "Group DSI in Site CORP-workstations of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-workstations / DSI",
+                "groupName": "DSI",
+                "scopeLevel": "Group",
+                "scopeName": "DSI",
+                "siteName": "CORP-workstations"
+            },
+            "eventid": 1396124097359316984,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-11T06:49:21.765992Z"
+        }
+    }
+    	
+	```
+
+
 === "activity-type-128.json"
 
     ```json
@@ -362,6 +429,64 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "activity-type-3016.json"
+
+    ```json
+	
+    {
+        "file": {
+            "path": "C:\\Windows\\system32\\diskshadow.exe"
+        },
+        "action": {
+            "type": 3016
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "1113032189486913422",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "The Management user Jean DUPONT deleted the Path Exclusion C:\\Windows\\system32\\diskshadow.exe for Windows from the Group Env. 99 - Admin",
+            "type": [
+                "info"
+            ]
+        },
+        "group": {
+            "id": "860506107823075486"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "os": {
+            "family": "windows"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-11T07:18:34.090547Z",
+            "data": {
+                "accountName": "CORP",
+                "exclusionType": "path",
+                "fullScopeDetails": "Group Env. 99 - Admin in Site CORP-servers-windows of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-servers-windows / Env. 99 - Admin",
+                "groupName": "Env. 99 - Admin",
+                "scopeLevel": "Group",
+                "scopeName": "Env. 99 - Admin",
+                "siteName": "CORP-servers-windows"
+            },
+            "eventid": 1396138796888471533,
+            "siteId": 795516416264105067,
+            "updatedAt": "2022-04-11T07:18:34.089273Z"
+        },
+        "user": {
+            "id": 827950513703271774,
+            "full_name": "Jean DUPONT"
+        }
+    }
+    	
+	```
+
+
 === "activity-type-4003.json"
 
     ```json
@@ -547,16 +672,81 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "activity-type-71.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 71
+        },
+        "agent": {
+            "id": "1396250507390940172"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "action": "Agent started full disk scan",
+            "category": "intrusion_detection",
+            "created": "2021-04-23T20:02:05.017771Z",
+            "dialect": "sentinelone",
+            "id": "1113032189486913422",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "System initiated a full disk scan to the agent: CORP-12347 (11.22.33.44).",
+            "type": [
+                "info"
+            ]
+        },
+        "group": {
+            "id": "901144152477592712"
+        },
+        "host": {
+            "ip": [
+                "11.22.33.44"
+            ],
+            "name": "CORP-12347"
+        },
+        "organization": {
+            "id": "901144152444038278"
+        },
+        "related": {
+            "ip": [
+                "11.22.33.44"
+            ]
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-11T11:00:31.291987Z",
+            "data": {
+                "accountName": "CORP",
+                "computerName": "CORP-12347",
+                "externalIp": "11.22.33.44",
+                "fullScopeDetails": "Group Default Group in Site DEFAULT of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / DEFAULT / Default Group",
+                "groupName": "Default Group",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "siteName": "DEFAULT",
+                "uuid": "1e74916f8ac14a1b8d9b575ef7e91448",
+                "system": true
+            },
+            "eventid": 1396250509672642912,
+            "siteId": 901144152460815495,
+            "updatedAt": "2022-04-11T11:00:31.291994Z"
+        }
+    }
+    	
+	```
+
+
 === "custom_rule.json"
 
     ```json
 	
     {
-        "message": "{\"accountId\": \"901144152444038278\", \"activityType\": 3608, \"agentId\": \"1183145065000215213\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2021-11-16T15:29:38.431997Z\", \"data\": {\"accountName\": \"CORP\", \"alertId\": 1290568698312097725, \"alertid\": 1290568698312097725, \"detectedat\": 1637076565467, \"dveventid\": \"\", \"dveventtype\": \"BEHAVIORALINDICATORS\", \"fullScopeDetails\": \"Group LAPTOP in Site DEFAULT of Account CORP\", \"groupName\": \"LAPTOP\", \"k8sclustername\": \"\", \"k8scontainerid\": \"\", \"k8scontainerimage\": \"\", \"k8scontainerlabels\": \"\", \"k8scontainername\": \"\", \"k8scontrollerkind\": \"\", \"k8scontrollerlabels\": \"\", \"k8scontrollername\": \"\", \"k8snamespace\": \"\", \"k8snamespacelabels\": \"\", \"k8snode\": \"\", \"k8spod\": \"\", \"k8spodlabels\": \"\", \"origagentmachinetype\": \"laptop\", \"origagentname\": \"CORP-LAP-4075\", \"origagentosfamily\": \"windows\", \"origagentosname\": \"Windows 10 Pro\", \"origagentosrevision\": \"19042\", \"origagentsiteid\": \"901144152460815495\", \"origagentuuid\": \"058fd4868adb4b87be24a4c5e9f89220\", \"origagentversion\": \"4.6.14.304\", \"ruleId\": 1259119070812474070, \"ruledescription\": \"Rule migrated from Watchlist\", \"ruleid\": 1259119070812474070, \"rulename\": \"PowershellExecutionPolicyChanged Indicator Monito\", \"rulescopeid\": 901144152460815495, \"rulescopelevel\": \"E_SITE\", \"scopeId\": 901144152460815495, \"scopeLevel\": \"Group\", \"scopeName\": \"LAPTOP\", \"severity\": \"E_MEDIUM\", \"siteName\": \"DEFAULT\", \"sourcename\": \"STAR\", \"sourceparentprocesscommandline\": \"C:\\\\WINDOWS\\\\Explorer.EXE\", \"sourceparentprocessintegritylevel\": \"medium\", \"sourceparentprocesskey\": \"811577BA383803B5\", \"sourceparentprocessmd5\": \"681a21a3b848ed960073475cd77634ce\", \"sourceparentprocessname\": \"explorer.exe\", \"sourceparentprocesspath\": \"C:\\\\WINDOWS\\\\explorer.exe\", \"sourceparentprocesspid\": 11196, \"sourceparentprocesssha1\": \"3d930943fbea03c9330c4947e5749ed9ceed528a\", \"sourceparentprocesssha256\": \"08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089\", \"sourceparentprocesssigneridentity\": \"MICROSOFT WINDOWS\", \"sourceparentprocessstarttime\": 1636964894046, \"sourceparentprocessstoryline\": \"E1798FE5683F14CF\", \"sourceparentprocesssubsystem\": \"win32\", \"sourceparentprocessusername\": \"CORP\\\\user\", \"sourceprocesscommandline\": \"\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\" \\\"-Command\\\" \\\"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\\\Users\\\\user\\\\Documents\\\\git\\\\DSP2\\\\API HUB\\\\Documentation\\\\Generate.ps1'\\\"\", \"sourceprocessfilepath\": \"C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\", \"sourceprocessfilesingeridentity\": \"MICROSOFT WINDOWS\", \"sourceprocessintegritylevel\": \"medium\", \"sourceprocesskey\": \"8C3CD6D2478943E5\", \"sourceprocessmd5\": \"04029e121a0cfa5991749937dd22a1d9\", \"sourceprocessname\": \"powershell.exe\", \"sourceprocesspid\": 6676, \"sourceprocesssha1\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"sourceprocesssha256\": \"9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f\", \"sourceprocessstarttime\": 1637076505627, \"sourceprocessstoryline\": \"5D1F81C984CFD44D\", \"sourceprocesssubsystem\": \"win32\", \"sourceprocessusername\": \"CORP\\\\user\", \"systemUser\": 0, \"userId\": 111111111111111111, \"userName\": \"sentinelone\"}, \"description\": null, \"groupId\": \"924347507640996620\", \"hash\": null, \"id\": \"1290568704943967230\", \"osFamily\": null, \"primaryDescription\": \"Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.\", \"secondaryDescription\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"siteId\": \"901144152460815495\", \"threatId\": null, \"updatedAt\": \"2021-11-16T15:29:38.429056Z\", \"userId\": \"111111111111111111\"}",
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "file": {
+            "name": "powershell.exe"
         },
         "organization": {
             "id": "901144152444038278"
@@ -588,7 +778,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sha1": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
                 "sha256": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f"
             },
-            "name": "powershell.exe",
             "parent": {
                 "code_signature": {
                     "subject_name": "MICROSOFT WINDOWS"
@@ -627,6 +816,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "data": {
                 "accountName": "CORP",
                 "alertId": 1290568698312097725,
+                "alertid": 1290568698312097725,
                 "detectedat": 1637076565467,
                 "dveventtype": "BEHAVIORALINDICATORS",
                 "fullScopeDetails": "Group LAPTOP in Site DEFAULT of Account CORP",
@@ -640,6 +830,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "origagentuuid": "058fd4868adb4b87be24a4c5e9f89220",
                 "origagentversion": "4.6.14.304",
                 "ruleId": 1259119070812474070,
+                "ruleid": 1259119070812474070,
                 "rulename": "PowershellExecutionPolicyChanged Indicator Monito",
                 "rulescopeid": 901144152460815495,
                 "rulescopelevel": "E_SITE",
@@ -678,8 +869,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sourceprocesssubsystem": "win32",
                 "sourceprocessusername": "CORP\\user",
                 "systemUser": 0,
-                "userId": 111111111111111111,
-                "userName": "sentinelone"
+                "userId": 111111111111111111
             },
             "eventid": 1290568704943967230,
             "secondaryDescription": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
@@ -727,7 +917,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
                 "sha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23"
             },
-            "name": "WebexHost_old.exe",
             "parent": {
                 "code_signature": {
                     "subject_name": "CISCO WEBEX LLC"
@@ -761,6 +950,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sentinelone": {
             "createdAt": "2022-03-30T09:00:18.286500Z",
             "data": {
+                "ruleid": 1360739572188076805,
+                "alertid": 1387492689895241884,
                 "accountName": "CORP",
                 "agentipv4": "192.168.102.46",
                 "detectedat": 1648630801340,
@@ -827,13 +1018,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "tgtfilepath": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebEx64\\Meetings\\atucfobj.dll",
                 "tgtprocintegritylevel": "unknown",
                 "tgtprocpid": 0,
-                "userId": 901170701818003423,
-                "userName": "User NAME"
+                "userId": 901170701818003423
             },
             "eventid": 1387492693815190915,
             "secondaryDescription": "84580370c58b1b0c9e4138257018fd98efdf28ba",
             "siteId": 901144152460815495,
             "updatedAt": "2022-03-30T09:00:18.282935Z"
+        },
+        "file": {
+            "name": "WebexHost_old.exe"
         },
         "user": {
             "full_name": "User NAME",
@@ -861,7 +1054,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "617755838952421242",
             "name": "EXAMPLE CORP"
         },
+        "process": {
+            "parent": {
+                "name": "FileZilla_3.53.0_win64_sponsored-setup.exe"
+            }
+        },
         "file": {
+            "name": "nsh29ED.tmp",
             "extension": "tmp",
             "path": "\\Device\\HarddiskVolume2\\Users\\User\\AppData\\Local\\Temp\\nsr1C3F.tmp\\nsh29ED.tmp",
             "size": 2976256
@@ -907,9 +1106,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "siteName": "Sekoia.io"
             },
             "agentRealtimeInfo": {
+                "activeThreats": 0,
                 "agentComputerName": "VM-SentinelOne",
                 "agentDomain": "WORKGROUP",
                 "agentId": "1109245354690326957",
+                "agentInfected": false,
+                "agentIsActive": true,
+                "agentIsDecommissioned": false,
                 "agentMachineType": "desktop",
                 "agentMitigationMode": "detect",
                 "agentNetworkStatus": "connected",
@@ -932,6 +1135,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     }
                 ],
                 "operationalState": "na",
+                "rebootRequired": false,
                 "scanStartedAt": "2021-03-11T11:12:43.266673Z",
                 "scanStatus": "started",
                 "siteId": 1107851598358168475,
@@ -967,6 +1171,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "mitigationStatus": [],
             "threatInfo": {
+                "externalTicketExists": false,
+                "mitigatedPreemptively": false,
+                "reachedEventsLimit": false,
                 "analystVerdict": "undefined",
                 "analystVerdictDescription": "Undefined",
                 "automaticallyResolved": false,
@@ -995,9 +1202,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "isValidCertificate": false,
                 "mitigationStatus": "not_mitigated",
                 "mitigationStatusDescription": "Not mitigated",
-                "originatorProcess": "FileZilla_3.53.0_win64_sponsored-setup.exe",
                 "pendingActions": false,
-                "processUser": "VM-SENTINELONE\\User",
                 "rebootRequired": false,
                 "sha1": "4ffe673e3696a4287ab4a9c816d611a5fff56858",
                 "storyline": "37077C139C322609",
@@ -1011,11 +1216,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "threat": {
             "enrichments": {
-                "indicator": {
-                    "file": {
-                        "name": "nsh29ED.tmp"
-                    }
-                },
                 "matched": {
                     "occurred": "2021-03-16T14:00:14.188000Z"
                 }
@@ -1030,6 +1230,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "software": {
                 "type": "Malware"
             }
+        },
+        "user": {
+            "name": "VM-SENTINELONE\\User"
         }
     }
     	
@@ -1041,6 +1244,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "user": {
+            "name": "tdr-vm-template\\tdr"
+        },
+        "process": {
+            "parent": {
+                "name": "explorer.exe"
+            }
+        },
         "event": {
             "action": "Agent started full disk scan",
             "category": "malware",
@@ -1054,6 +1265,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "name": "mimikatz.exe",
             "extension": "exe",
             "path": "\\Device\\HarddiskVolume2\\Users\\tdr\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe",
             "size": 1309448
@@ -1099,6 +1311,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "siteName": "Sekoia.io"
             },
             "agentRealtimeInfo": {
+                "activeThreats": 9,
+                "agentInfected": true,
+                "agentIsActive": false,
+                "agentIsDecommissioned": false,
+                "rebootRequired": false,
                 "agentComputerName": "tdr-vm-template",
                 "agentDomain": "WORKGROUP",
                 "agentId": "1113026246149650919",
@@ -1167,6 +1384,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "mitigationStatus": [],
             "threatInfo": {
+                "externalTicketExists": false,
+                "mitigatedPreemptively": false,
+                "reachedEventsLimit": false,
                 "analystVerdict": "true_positive",
                 "analystVerdictDescription": "True positive",
                 "automaticallyResolved": false,
@@ -1195,9 +1415,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "isValidCertificate": true,
                 "mitigationStatus": "not_mitigated",
                 "mitigationStatusDescription": "Not mitigated",
-                "originatorProcess": "explorer.exe",
                 "pendingActions": false,
-                "processUser": "tdr-vm-template\\tdr",
                 "publisherName": "OPEN SOURCE DEVELOPER, BENJAMIN DELPY",
                 "rebootRequired": false,
                 "sha1": "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4",
@@ -1208,11 +1426,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "threat": {
             "enrichments": {
-                "indicator": {
-                    "file": {
-                        "name": "mimikatz.exe"
-                    }
-                },
                 "matched": {
                     "occurred": "2021-03-16T16:36:16.157000Z"
                 }
@@ -1251,6 +1464,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "name": "OfficeTimeline.exe",
             "extension": "exe",
             "path": "\\Device\\HarddiskVolume3\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe",
             "size": 65517824
@@ -1283,6 +1497,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "111111111111111111",
             "name": "REDACTED"
         },
+        "process": {
+            "parent": {
+                "name": "chrome.exe"
+            }
+        },
         "sentinelone": {
             "EventTime": "2022-03-11 14:14:54",
             "agentDetectionInfo": {
@@ -1305,7 +1524,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "siteName": "REDACTED-Users"
             },
             "agentRealtimeInfo": {
+                "activeThreats": 0,
                 "agentComputerName": "LSYN98873",
+                "agentInfected": false,
+                "agentIsActive": true,
+                "agentIsDecommissioned": false,
+                "rebootRequired": false,
                 "agentDomain": "DOMAIN",
                 "agentId": "1088377752722254024",
                 "agentMachineType": "laptop",
@@ -1519,6 +1743,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             ],
             "threatInfo": {
+                "externalTicketExists": false,
+                "mitigatedPreemptively": false,
+                "reachedEventsLimit": false,
                 "analystVerdict": "undefined",
                 "analystVerdictDescription": "Undefined",
                 "automaticallyResolved": false,
@@ -1547,9 +1774,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "maliciousProcessArguments": "\"C:\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe\"",
                 "mitigationStatus": "mitigated",
                 "mitigationStatusDescription": "Mitigated",
-                "originatorProcess": "chrome.exe",
                 "pendingActions": false,
-                "processUser": "DOMAIN\\USERNAME",
                 "publisherName": "OFFICE TIMELINE, LLC",
                 "rebootRequired": false,
                 "sha1": "25e43630e04e0858418f0b1a3843ddfd626c1fba",
@@ -1565,11 +1790,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "threat": {
             "enrichments": {
-                "indicator": {
-                    "file": {
-                        "name": "OfficeTimeline.exe"
-                    }
-                },
                 "matched": {
                     "occurred": "2022-03-11T12:44:16.158000Z"
                 }
@@ -1587,6 +1807,373 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "software": {
                 "type": "Malware"
             }
+        },
+        "user": {
+            "name": "DOMAIN\\USERNAME"
+        }
+    }
+    	
+	```
+
+
+=== "threat3_empty_ipv6.json"
+
+    ```json
+	
+    {
+        "event": {
+            "category": "malware",
+            "id": "1290568704943967230",
+            "kind": "alert",
+            "outcome": "success",
+            "type": [
+                "info"
+            ]
+        },
+        "file": {
+            "name": "OfficeTimeline.exe",
+            "extension": "exe",
+            "path": "\\Device\\HarddiskVolume3\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe",
+            "size": 65517824
+        },
+        "host": {
+            "domain": "DOMAIN",
+            "os": {
+                "family": "windows",
+                "version": "Windows 10 Pro"
+            },
+            "ip": [
+                "192.168.56.1",
+                "10.4.4.69",
+                "66.66.66.66"
+            ],
+            "name": "LSYN98873"
+        },
+        "related": {
+            "ip": [
+                "10.4.4.69",
+                "fe80::e4a1:7fce:33f3:d50e",
+                "192.168.56.1",
+                "fe80::605f:b34f:31ac:498",
+                "66.66.66.66"
+            ]
+        },
+        "organization": {
+            "id": "111111111111111111",
+            "name": "REDACTED"
+        },
+        "process": {
+            "parent": {
+                "name": "chrome.exe"
+            }
+        },
+        "sentinelone": {
+            "EventTime": "2022-03-11 14:14:54",
+            "agentDetectionInfo": {
+                "accountId": "111111111111111111",
+                "accountName": "REDACTED",
+                "agentDomain": "DOMAIN",
+                "agentIpV4": "192.168.56.1,10.4.4.69",
+                "agentLastLoggedInUserName": "USERNAME",
+                "agentMitigationMode": "protect",
+                "agentOsName": "Windows 10 Pro",
+                "agentOsRevision": "19044",
+                "agentRegisteredAt": "2021-02-10T16:12:18.659760Z",
+                "agentUuid": "5e4482b45d134ae8bf4901cb52b65e88",
+                "agentVersion": "21.7.5.1080",
+                "externalIp": "66.66.66.66",
+                "groupId": 1083054176758610128,
+                "groupName": "Default Group",
+                "siteId": 1083054176741832911,
+                "siteName": "REDACTED-Users"
+            },
+            "agentRealtimeInfo": {
+                "activeThreats": 0,
+                "agentComputerName": "LSYN98873",
+                "agentInfected": false,
+                "agentIsActive": true,
+                "agentIsDecommissioned": false,
+                "rebootRequired": false,
+                "agentDomain": "DOMAIN",
+                "agentId": "1088377752722254024",
+                "agentMachineType": "laptop",
+                "agentMitigationMode": "protect",
+                "agentNetworkStatus": "connected",
+                "agentOsRevision": "19044",
+                "agentUuid": "5e4482b45d134ae8bf4901cb52b65e88",
+                "agentVersion": "21.7.5.1080",
+                "groupId": 1083054176758610128,
+                "groupName": "Default Group",
+                "networkInterfaces": [
+                    {
+                        "id": "1373748335430042703",
+                        "inet": [
+                            "10.4.4.69"
+                        ],
+                        "inet6": [
+                            "fe80::605f:b34f:31ac:498"
+                        ],
+                        "name": "Ethernet",
+                        "physical": "98:fa:9b:5f:f2:bd"
+                    },
+                    {
+                        "id": "1362550279953160460",
+                        "inet": [
+                            "192.168.56.1"
+                        ],
+                        "inet6": [
+                            "fe80::e4a1:7fce:33f3:d50e"
+                        ],
+                        "name": "Ethernet 2",
+                        "physical": "0a:00:27:00:00:0b"
+                    }
+                ],
+                "operationalState": "na",
+                "scanFinishedAt": "2022-01-31T13:56:31.482859Z",
+                "scanStartedAt": "2022-01-28T15:25:03.885250Z",
+                "scanStatus": "finished",
+                "siteId": 1083054176741832911,
+                "siteName": "REDACTED-Users",
+                "userActionsNeeded": []
+            },
+            "eventid": 1373834705420286869,
+            "indicators": [
+                {
+                    "category": "Exploitation",
+                    "description": "Document behaves abnormally",
+                    "ids": [
+                        62
+                    ],
+                    "tactics": [
+                        {
+                            "name": "Execution",
+                            "source": "MITRE",
+                            "techniques": [
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1059/",
+                                    "name": "T1059"
+                                },
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1203/",
+                                    "name": "T1203"
+                                },
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1204/002",
+                                    "name": "T1204.002"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Initial Access",
+                            "source": "MITRE",
+                            "techniques": [
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1566/001/",
+                                    "name": "T1566.001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "category": "Persistence",
+                    "description": "Application registered itself to become persistent via scheduled task",
+                    "ids": [
+                        197
+                    ],
+                    "tactics": [
+                        {
+                            "name": "Persistence",
+                            "source": "MITRE",
+                            "techniques": [
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1053/005/",
+                                    "name": "T1053.005"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "category": "Evasion",
+                    "description": "Suspicious registry key was created",
+                    "ids": [
+                        171
+                    ],
+                    "tactics": [
+                        {
+                            "name": "Defense Evasion",
+                            "source": "MITRE",
+                            "techniques": [
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1112/",
+                                    "name": "T1112"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "category": "Injection",
+                    "description": "Suspicious library loaded into the process memory",
+                    "ids": [
+                        126
+                    ],
+                    "tactics": []
+                },
+                {
+                    "category": "General",
+                    "description": "User logged on",
+                    "ids": [
+                        266
+                    ],
+                    "tactics": [
+                        {
+                            "name": "Persistence",
+                            "source": "MITRE",
+                            "techniques": [
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1078/",
+                                    "name": "T1078"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "category": "Persistence",
+                    "description": "Application registered itself to become persistent via an autorun",
+                    "ids": [
+                        199
+                    ],
+                    "tactics": [
+                        {
+                            "name": "Persistence",
+                            "source": "MITRE",
+                            "techniques": [
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1547/001/",
+                                    "name": "T1547.001"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Privilege Escalation",
+                            "source": "MITRE",
+                            "techniques": [
+                                {
+                                    "link": "https://attack.mitre.org/techniques/T1547/001/",
+                                    "name": "T1547.001"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "mitigationStatus": [
+                {
+                    "action": "quarantine",
+                    "actionsCounters": {
+                        "failed": 0,
+                        "notFound": 0,
+                        "pendingReboot": 0,
+                        "success": 172,
+                        "total": 172
+                    },
+                    "agentSupportsReport": true,
+                    "groupNotFound": false,
+                    "lastUpdate": "2022-03-11T12:44:33.508808Z",
+                    "latestReport": "/threats/mitigation-report/1373834825528452160",
+                    "mitigationEndedAt": "2022-03-11T12:44:32.875000Z",
+                    "mitigationStartedAt": "2022-03-11T12:44:18.331000Z",
+                    "status": "success"
+                },
+                {
+                    "action": "kill",
+                    "actionsCounters": {
+                        "failed": 0,
+                        "notFound": 0,
+                        "pendingReboot": 0,
+                        "success": 15,
+                        "total": 15
+                    },
+                    "agentSupportsReport": true,
+                    "groupNotFound": false,
+                    "lastUpdate": "2022-03-11T12:44:19.294889Z",
+                    "latestReport": "/threats/mitigation-report/1373834706275925531",
+                    "mitigationEndedAt": "2022-03-11T12:44:17.112000Z",
+                    "mitigationStartedAt": "2022-03-11T12:44:17.111000Z",
+                    "status": "success"
+                }
+            ],
+            "threatInfo": {
+                "externalTicketExists": false,
+                "mitigatedPreemptively": false,
+                "reachedEventsLimit": false,
+                "analystVerdict": "undefined",
+                "analystVerdictDescription": "Undefined",
+                "automaticallyResolved": false,
+                "classificationSource": "Static",
+                "collectionId": "1370955486150335176",
+                "detectionEngines": [
+                    {
+                        "key": "executables",
+                        "title": "Behavioral AI"
+                    }
+                ],
+                "detectionType": "dynamic",
+                "engines": [
+                    "DBT - Executables"
+                ],
+                "failedActions": false,
+                "fileExtension": "EXE",
+                "fileExtensionType": "Executable",
+                "fileVerificationType": "SignedVerified",
+                "incidentStatus": "unresolved",
+                "incidentStatusDescription": "Unresolved",
+                "initiatedBy": "agent_policy",
+                "initiatedByDescription": "Agent Policy",
+                "isFileless": false,
+                "isValidCertificate": true,
+                "maliciousProcessArguments": "\"C:\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe\"",
+                "mitigationStatus": "mitigated",
+                "mitigationStatusDescription": "Mitigated",
+                "pendingActions": false,
+                "publisherName": "OFFICE TIMELINE, LLC",
+                "rebootRequired": false,
+                "sha1": "25e43630e04e0858418f0b1a3843ddfd626c1fba",
+                "storyline": "BB74E569F93D579E",
+                "threatId": "1373834705420286869",
+                "updatedAt": "2022-03-11T12:44:33.501615Z"
+            },
+            "whiteningOptions": [
+                "certificate",
+                "path",
+                "hash"
+            ]
+        },
+        "threat": {
+            "enrichments": {
+                "matched": {
+                    "occurred": "2022-03-11T12:44:16.158000Z"
+                }
+            },
+            "indicator": {
+                "confidence": "suspicious",
+                "file": {
+                    "code_signature": {
+                        "signing_id": "OFFICE TIMELINE, LLC"
+                    },
+                    "created": "2022-03-11T12:44:19.192413Z",
+                    "size": 65517824
+                }
+            },
+            "software": {
+                "type": "Malware"
+            }
+        },
+        "user": {
+            "name": "DOMAIN\\USERNAME"
         }
     }
     	
@@ -1606,7 +2193,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "11.22.33.44"
         },
         "user": {
-            "id": 111111111111111111
+            "id": 111111111111111111,
+            "full_name": "Jean DUPONT"
         },
         "ecs": {
             "version": "1.10.0"
@@ -1638,7 +2226,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "scopeLevel": "Account",
                 "scopeName": "CORP",
                 "userScope": "account",
-                "username": "Jean DUPONT",
                 "source": "mgmt"
             },
             "eventid": 1388919233083515416,
@@ -1690,7 +2277,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.hash.md5` | `keyword` | MD5 hash. |
 |`process.hash.sha1` | `keyword` | SHA1 hash. |
 |`process.hash.sha256` | `keyword` | SHA256 hash. |
-|`process.name` | `keyword` | Process name. |
 |`process.parent.code_signature.subject_name` | `keyword` | Subject name of the code signer |
 |`process.parent.command_line` | `wildcard` | Full command line that started the process. |
 |`process.parent.executable` | `keyword` | Absolute path to the process executable. |
@@ -1724,14 +2310,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.agentDetectionInfo.groupName` | `keyword` | None |
 |`sentinelone.agentDetectionInfo.siteId` | `long` | None |
 |`sentinelone.agentDetectionInfo.siteName` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.activeThreats` | `keyword` | None |
+|`sentinelone.agentRealtimeInfo.activeThreats` | `long` | None |
 |`sentinelone.agentRealtimeInfo.agentComputerName` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.agentDecommissionedAt` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.agentDomain` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.agentId` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentInfected` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentIsActive` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentIsDecommissioned` | `keyword` | None |
+|`sentinelone.agentRealtimeInfo.agentInfected` | `bool` | None |
+|`sentinelone.agentRealtimeInfo.agentIsActive` | `bool` | None |
+|`sentinelone.agentRealtimeInfo.agentIsDecommissioned` | `bool` | None |
 |`sentinelone.agentRealtimeInfo.agentMachineType` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.agentMitigationMode` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.agentNetworkStatus` | `keyword` | None |
@@ -1742,7 +2328,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.agentRealtimeInfo.groupName` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.networkInterfaces` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.operationalState` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.rebootRequired` | `keyword` | None |
+|`sentinelone.agentRealtimeInfo.rebootRequired` | `bool` | None |
 |`sentinelone.agentRealtimeInfo.scanAbortedAt` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.scanFinishedAt` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.scanStartedAt` | `keyword` | None |
@@ -1758,7 +2344,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.accountName` | `keyword` | None |
 |`sentinelone.data.agentipv4` | `keyword` | None |
 |`sentinelone.data.alertId` | `long` | None |
-|`sentinelone.data.alertid` | `keyword` | None |
+|`sentinelone.data.alertid` | `long` | None |
 |`sentinelone.data.bluetoothAddress` | `keyword` | None |
 |`sentinelone.data.computerName` | `keyword` | None |
 |`sentinelone.data.confidenceLevel` | `keyword` | None |
@@ -1776,10 +2362,12 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.dstport` | `long` | None |
 |`sentinelone.data.dveventid` | `keyword` | None |
 |`sentinelone.data.dveventtype` | `keyword` | None |
+|`sentinelone.data.enabledReason` | `keyword` | None |
 |`sentinelone.data.escapedMaliciousProcessArguments` | `keyword` | None |
 |`sentinelone.data.eventId` | `keyword` | None |
 |`sentinelone.data.eventTime` | `keyword` | None |
 |`sentinelone.data.eventType` | `keyword` | None |
+|`sentinelone.data.exclusionType` | `keyword` | None |
 |`sentinelone.data.externalIp` | `keyword` | None |
 |`sentinelone.data.externalip` | `keyword` | None |
 |`sentinelone.data.fileContentHash` | `keyword` | None |
@@ -1850,7 +2438,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.ruleName` | `keyword` | None |
 |`sentinelone.data.ruleScopeName` | `keyword` | None |
 |`sentinelone.data.ruleType` | `keyword` | None |
-|`sentinelone.data.ruleid` | `keyword` | None |
+|`sentinelone.data.ruleid` | `long` | None |
 |`sentinelone.data.rulename` | `keyword` | None |
 |`sentinelone.data.rulescopeid` | `long` | None |
 |`sentinelone.data.rulescopelevel` | `keyword` | None |
@@ -1894,6 +2482,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.srcmachineip` | `keyword` | None |
 |`sentinelone.data.srcport` | `long` | None |
 |`sentinelone.data.status` | `keyword` | None |
+|`sentinelone.data.system` | `bool` | None |
 |`sentinelone.data.systemUser` | `long` | None |
 |`sentinelone.data.tgtfilecreatedat` | `long` | None |
 |`sentinelone.data.tgtfilehashsha1` | `keyword` | None |
@@ -1920,9 +2509,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.tiindicatorvalue` | `keyword` | None |
 |`sentinelone.data.uid` | `keyword` | None |
 |`sentinelone.data.userId` | `long` | None |
-|`sentinelone.data.userName` | `keyword` | None |
 |`sentinelone.data.userScope` | `keyword` | None |
-|`sentinelone.data.username` | `keyword` | None |
+|`sentinelone.data.uuid` | `keyword` | None |
 |`sentinelone.data.vendorId` | `long` | None |
 |`sentinelone.data.version` | `keyword` | None |
 |`sentinelone.description` | `keyword` | None |
@@ -1953,7 +2541,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.threatInfo.detectionEngines` | `keyword` | None |
 |`sentinelone.threatInfo.detectionType` | `keyword` | None |
 |`sentinelone.threatInfo.engines` | `keyword` | None |
-|`sentinelone.threatInfo.externalTicketExists` | `keyword` | None |
+|`sentinelone.threatInfo.externalTicketExists` | `bool` | None |
 |`sentinelone.threatInfo.externalTicketId` | `keyword` | None |
 |`sentinelone.threatInfo.failedActions` | `bool` | None |
 |`sentinelone.threatInfo.fileExtension` | `keyword` | None |
@@ -1968,14 +2556,12 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.threatInfo.isFileless` | `bool` | None |
 |`sentinelone.threatInfo.isValidCertificate` | `bool` | None |
 |`sentinelone.threatInfo.maliciousProcessArguments` | `keyword` | None |
-|`sentinelone.threatInfo.mitigatedPreemptively` | `keyword` | None |
+|`sentinelone.threatInfo.mitigatedPreemptively` | `bool` | None |
 |`sentinelone.threatInfo.mitigationStatus` | `keyword` | None |
 |`sentinelone.threatInfo.mitigationStatusDescription` | `keyword` | None |
-|`sentinelone.threatInfo.originatorProcess` | `keyword` | None |
 |`sentinelone.threatInfo.pendingActions` | `bool` | None |
-|`sentinelone.threatInfo.processUser` | `keyword` | None |
 |`sentinelone.threatInfo.publisherName` | `keyword` | None |
-|`sentinelone.threatInfo.reachedEventsLimit` | `keyword` | None |
+|`sentinelone.threatInfo.reachedEventsLimit` | `bool` | None |
 |`sentinelone.threatInfo.rebootRequired` | `bool` | None |
 |`sentinelone.threatInfo.sha1` | `keyword` | None |
 |`sentinelone.threatInfo.sha256` | `keyword` | None |
@@ -1986,7 +2572,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.whiteningOptions` | `keyword` | None |
 |`source.ip` | `ip` | IP address of the source. |
 |`threat.enrichments.indicator.file.hash.md5` | `keyword` | MD5 hash. |
-|`threat.enrichments.indicator.file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`threat.enrichments.matched.occurred` | `date` | Date of match |
 |`threat.indicator.confidence` | `keyword` | Indicator confidence rating |
 |`threat.indicator.file.code_signature.signing_id` | `keyword` | The identifier used to sign the process. |
@@ -1996,4 +2581,5 @@ The following table lists the fields that are extracted, normalized under the EC
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user.full_name` | `keyword` | User's full name, if available. |
 |`user.id` | `long` | None |
+|`user.name` | `keyword` | Short name or login of the user. |
 
