@@ -151,6 +151,7 @@ nav:
     - Http: playbooks/library/http.md
     - Harfanglab: playbooks/library/harfanglab.md
     - Iknowwhatyoudownload: playbooks/library/iknowwhatyoudownload.md
+    - Imperva: playbooks/library/imperva.md
     - Iptoasn: playbooks/library/iptoasn.md
     - Misp: playbooks/library/misp.md
     - Mwdb: playbooks/library/mwdb.md
