@@ -160,6 +160,7 @@ nav:
     - Osint: playbooks/library/osint.md
     - Onyphe: playbooks/library/onyphe.md
     - Pagerduty: playbooks/library/pagerduty.md
+    - Panda Security: playbooks/library/panda-security.md
     - Public_suffix: playbooks/library/public-suffix.md
     - Rss: playbooks/library/rss.md
     - Riskiq: playbooks/library/riskiq.md
