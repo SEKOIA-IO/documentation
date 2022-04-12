@@ -76,8 +76,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cipher": "ECDHE-RSA-AES128-GCM-SHA256"
         },
         "event": {
-            "start": "1973-11-29T21:33:09.000000Z",
-            "end": "1977-01-30T07:19:49.000000Z",
+            "start": "1970-01-02T10:17:36.789000Z",
+            "end": "1970-01-03T14:04:16.789000Z",
             "duration": 100000000.0
         }
     }
@@ -182,8 +182,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "event": {
             "action": "REQ_CHALLENGE_CAPTCHA",
-            "start": "1973-11-29T21:33:09.000000Z",
-            "end": "1977-01-30T07:19:49.000000Z",
+            "start": "1970-01-02T10:17:36.789000Z",
+            "end": "1970-01-03T14:04:16.789000Z",
             "duration": 100000000.0
         },
         "rule": {

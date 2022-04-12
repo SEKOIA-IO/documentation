@@ -236,6 +236,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Blocked"
         },
         "aether": {
+            "security_event_type": 13,
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
                 {
@@ -264,6 +265,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "site_name": "CORP"
         },
         "event": {
+            "reason": "Malware URLs detected",
             "category": [
                 "host"
             ],
@@ -283,6 +285,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "event": {
+            "outcome": "success",
+            "reason": "Intrusion Attempts detected"
+        },
         "host": {
             "name": "PC123",
             "type": "Laptop"
@@ -292,6 +298,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "11.22.33.44"
         },
         "aether": {
+            "security_event_type": 15,
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
                 {
@@ -340,6 +347,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "Workstation"
         },
         "aether": {
+            "security_event_type": 1,
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
                 {
@@ -368,6 +376,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "site_name": "GROUPE CORP"
         },
         "event": {
+            "reason": "Malware detected",
             "category": [
                 "host"
             ],
@@ -413,6 +422,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Username"
         },
         "aether": {
+            "security_event_type": 18,
             "rule_risk": -54492359.89028178,
             "event_type": -86726288.19318274,
             "accessed_data": true,
@@ -469,6 +479,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "was_run": true
         },
         "event": {
+            "reason": "Indicators of Attack",
             "category": [
                 "host"
             ],
@@ -496,6 +507,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "PC123"
         },
         "aether": {
+            "security_event_type": 4,
             "date": "2022-04-07T11:02:36.06",
             "event_id": 1796693,
             "event_type": 1,
@@ -506,6 +518,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "protection_mode": 0,
             "protection_mode_translated": "Undefined",
             "risk": false
+        },
+        "event": {
+            "category": [
+                "host"
+            ],
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Exploits",
+            "type": [
+                "info"
+            ]
         }
     }
     	
@@ -584,6 +607,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`aether.rule_obsolete` | `bool` | None |
 |`aether.rule_risk` | `long` | None |
 |`aether.security_event_date` | `keyword` | None |
+|`aether.security_event_type` | `long` | None |
 |`aether.since_until_filed` | `keyword` | None |
 |`aether.site_id` | `keyword` | None |
 |`aether.site_name` | `keyword` | None |
