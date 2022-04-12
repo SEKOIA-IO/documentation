@@ -124,6 +124,7 @@ nav:
     - Overview: intelligence_center/integrations/index.md
     - Cortex Analyzer: intelligence_center/integrations/thehive.md
     - MISP Feed: intelligence_center/integrations/misp.md
+    - Microsoft Sentinel: intelligence_center/integrations/microsoft-sentinel.md
     - OpenCTI: intelligence_center/integrations/opencti.md
     - Splunk: intelligence_center/integrations/splunk.md
   - Web Application:
