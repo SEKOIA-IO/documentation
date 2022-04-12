@@ -70,7 +70,7 @@ nav:
       - Auditbeat Linux: operation_center/integration_catalog/endpoint/auditbeat_linux.md
       - HarfangLab: operation_center/integration_catalog/endpoint/harfanglab.md
       - Linux: operation_center/integration_catalog/endpoint/linux.md
-      - Panda Security: operation_center/integration_catalog/endpoint/panda_security.md
+      - Panda Security Aether: operation_center/integration_catalog/endpoint/panda_security_aether.md
       - SentinelOne: operation_center/integration_catalog/endpoint/sentinelone.md
       - SentinelOne Deep Visibility: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
       - Tanium: operation_center/integration_catalog/endpoint/tanium.md
@@ -254,7 +254,7 @@ plugins:
       integrations/o365.md: operation_center/integration_catalog/cloud_and_saas/o365.md
       integrations/openssh.md: operation_center/integration_catalog/application/openssh.md
       integrations/paloalto.md: operation_center/integration_catalog/network/paloalto.md
-      integrations/pandasecurity.md: operation_center/integration_catalog/endpoint/panda_security.md
+      integrations/panda-security-aether.md: operation_center/integration_catalog/endpoint/panda_security_aether.md
       integrations/postfix.md: operation_center/integration_catalog/email/postfix.md
       integrations/prove-it.md: operation_center/index.md
       integrations/pulse-connect-secure.md: operation_center/integration_catalog/network/pulse.md
