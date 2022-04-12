@@ -151,6 +151,7 @@ nav:
     - Http: playbooks/library/http.md
     - Harfanglab: playbooks/library/harfanglab.md
     - Iknowwhatyoudownload: playbooks/library/iknowwhatyoudownload.md
+    - Imperva: playbooks/library/imperva.md
     - Iptoasn: playbooks/library/iptoasn.md
     - Misp: playbooks/library/misp.md
     - Mwdb: playbooks/library/mwdb.md
@@ -159,6 +160,7 @@ nav:
     - Osint: playbooks/library/osint.md
     - Onyphe: playbooks/library/onyphe.md
     - Pagerduty: playbooks/library/pagerduty.md
+    - Panda Security: playbooks/library/panda-security.md
     - Public_suffix: playbooks/library/public-suffix.md
     - Rss: playbooks/library/rss.md
     - Riskiq: playbooks/library/riskiq.md
