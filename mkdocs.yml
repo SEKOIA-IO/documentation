@@ -120,7 +120,13 @@ nav:
   - Overview: intelligence_center/index.md
   - Data Model: intelligence_center/data_model.md
   - API: intelligence_center/api.md
-  - External Integrations: intelligence_center/integrations.md
+  - External Integrations:
+    - Overview: intelligence_center/integrations/index.md
+    - Cortex Analyzer: intelligence_center/integrations/thehive.md
+    - MISP Feed: intelligence_center/integrations/misp.md
+    - Microsoft Sentinel: intelligence_center/integrations/microsoft-sentinel.md
+    - OpenCTI: intelligence_center/integrations/opencti.md
+    - Splunk: intelligence_center/integrations/splunk.md
   - Web Application:
     - Dashboards: intelligence_center/dashboard.md
     - Intelligence: intelligence_center/intelligence.md
