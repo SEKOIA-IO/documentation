@@ -26,7 +26,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Imperva WAF logs trigger](https://docs.sekoia.io/playbooks/library/imperva//#imperva-waf-logs). You can use the existing template to fasten and ease the creation of your playbook.
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Imperva WAF logs trigger](https://docs.sekoia.io/playbooks/library/imperva/#imperva-waf-logs). You can use the existing template to fasten and ease the creation of your playbook.
 Set up a new module configuration with the information you copied previously.
 Set up the trigger configuration with the frequency of the pull.
 
