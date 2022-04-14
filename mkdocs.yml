@@ -60,6 +60,7 @@ nav:
         - Azure Network Watcher: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
         - Azure Windows machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
       - Microsoft Office 365: operation_center/integration_catalog/cloud_and_saas/o365.md
+      - Imperva Web Application Firewall: operation_center/integration_catalog/cloud_and_saas/imperva_waf.md
     - Email:
       - FortiMail: operation_center/integration_catalog/email/fortimail.md
       - Postfix: operation_center/integration_catalog/email/postfix.md
@@ -296,6 +297,7 @@ plugins:
       integrations/transport/syslog-ng.md: operation_center/data_collection/ingestion_methods/syslog-ng.md
       integrations/sekoiaio_activity_logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
       integrations/thehive.md: operation_center/integration_catalog/application/thehive.md
+      integrations/imperva_waf.md: operation_center/integration_catalog/cloud_and_saas/imperva_waf.md
       operation_center/operators.md: playbooks/operators.md
       operation_center/playbook_overview.md: playbooks/overview.md
       operation_center/actions.md: playbooks/actions.md
