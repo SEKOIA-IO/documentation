@@ -6,7 +6,7 @@ type: intake
 
 Imperva Web Application Firewall helps you to protect your web applications and your APIs.
 
-This setup guide shows how to forward security events collected on the Imperva WAF platform to SEKOIA.IO.
+This setup guide describes how to forward security events collected on the Imperva WAF platform to SEKOIA.IO.
 
 {!operation_center/integration_catalog/generated/imperva-waf_do_not_edit_manually.md!}
 
