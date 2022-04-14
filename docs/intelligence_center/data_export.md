@@ -11,4 +11,7 @@ The CSV format will convert some values (such as the TLP, sources and kill chain
 
 The MITRE ATT&CK format can be used in the MITRE ATT&CK® Navigator (https://mitre-attack.github.io/attack-navigator/) to generate a more visual ATT&CK matrix.
 
-![Data Export](../assets/intelligence_center/data_export.gif)
+![Data Export](../assets/intelligence_center/modal_data_export.png)
+
+
+
