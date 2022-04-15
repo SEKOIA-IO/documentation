@@ -94,77 +94,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "activities2.json"
-
-    ```json
-	
-    {
-        "event": {
-            "category": "host",
-            "id": "1387019684138751044",
-            "kind": "event",
-            "outcome": "success",
-            "reason": "USB device  was connected on CORP123.",
-            "type": [
-                "allowed"
-            ]
-        },
-        "group": {
-            "id": "1083054176758610128"
-        },
-        "organization": {
-            "id": "123456789831564686"
-        },
-        "rule": {
-            "id": "-1"
-        },
-        "action": {
-            "type": 5126
-        },
-        "agent": {
-            "id": "1098352279374896038"
-        },
-        "host": {
-            "name": "CORP123"
-        },
-        "sentinelone": {
-            "createdAt": "2022-03-29T17:20:31.139698Z",
-            "data": {
-                "accountName": "CORP",
-                "computerName": "CORP123",
-                "creator": "N/A",
-                "deviceClass": "E0h",
-                "eventId": "{1988659d-af84-11ec-914c-806e6f6e6963}",
-                "eventTime": "2022-03-29T17:17:40.622+00:00",
-                "eventType": "connected",
-                "fullScopeDetails": "Group Default Group in Site CORP-Users of Account CORP",
-                "fullScopeDetailsPath": "Global / CORP / CORP-Users / Default Group",
-                "groupId": 1083054176758610128,
-                "groupName": "Default Group",
-                "interface": "USB",
-                "lastLoggedInUserName": "user.name",
-                "lmpVersion": "N/A",
-                "minorClass": "N/A",
-                "osType": "windows",
-                "productId": "AAA",
-                "profileUuids": "N/A",
-                "ruleId": -1,
-                "ruleType": "productId",
-                "scopeLevel": "Group",
-                "scopeName": "Default Group",
-                "siteName": "CORP-Users",
-                "vendorId": 8087,
-                "version": "N/A"
-            },
-            "eventid": 1387019684138751044,
-            "siteId": 1083054176741832911,
-            "updatedAt": "2022-03-29T17:20:30.998054Z"
-        }
-    }
-    	
-	```
-
-
 === "activity-type-120.json"
 
     ```json
@@ -429,6 +358,51 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "activity-type-25.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 25
+        },
+        "event": {
+            "category": "intrusion_detection",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "The management user Jean Dupont deleted the user Foo User."
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-14T06:19:49.402205Z",
+            "data": {
+                "accountName": "CORP",
+                "deactivationPeriodInDays": "90",
+                "byUser": "Jean Dupont",
+                "fullScopeDetails": "Site CORP-servers-windows of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-servers-windows",
+                "role": "Contr\u00f4le Interne",
+                "scopeLevel": "Site",
+                "scopeName": "CORP-servers-windows",
+                "siteName": "CORP-servers-windows",
+                "userScope": "site"
+            },
+            "description": "Jean Dupont",
+            "eventid": 1398283556850059260,
+            "siteId": 795516416264105067,
+            "updatedAt": "2022-04-14T06:19:49.402210Z"
+        },
+        "user": {
+            "full_name": "Foo User",
+            "id": 1157751223520522706
+        }
+    }
+    	
+	```
+
+
 === "activity-type-3016.json"
 
     ```json
@@ -611,6 +585,58 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "activity-type-47.json"
+
+    ```json
+	
+    {
+        "action": {
+            "type": 47
+        },
+        "agent": {
+            "id": "1351979140358907826"
+        },
+        "ecs": {
+            "version": "1.10.0"
+        },
+        "event": {
+            "category": "intrusion_detection",
+            "id": "1387492693815190915",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Agent CL-ABCEDFG automatically decommissioned."
+        },
+        "group": {
+            "id": "551799242261539645"
+        },
+        "host": {
+            "name": "CL-ABCEDFG"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-10T22:10:31.034788Z",
+            "data": {
+                "accountName": "CORP",
+                "computerName": "CL-ABCEDFG",
+                "fullScopeDetails": "Group Default Group in Site CORP-workstations of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-workstations / Default Group",
+                "groupName": "Default Group",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "siteName": "CORP-workstations",
+                "uuid": "961376bbd9694a2ba2e1bb77ba027e38"
+            },
+            "eventid": 1395862953807825318,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-10T22:10:31.034790Z"
+        }
+    }
+    	
+	```
+
+
 === "activity-type-5009.json"
 
     ```json
@@ -666,6 +692,157 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "eventid": 1391847623762392173,
             "siteId": 551799242253151036,
             "updatedAt": "2022-04-05T09:12:45.472693Z"
+        }
+    }
+    	
+	```
+
+
+=== "activity-type-5126.json"
+
+    ```json
+	
+    {
+        "event": {
+            "category": "host",
+            "id": "1387019684138751044",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "USB device  was connected on CORP123.",
+            "type": [
+                "allowed"
+            ]
+        },
+        "group": {
+            "id": "1083054176758610128"
+        },
+        "organization": {
+            "id": "123456789831564686"
+        },
+        "rule": {
+            "id": "-1"
+        },
+        "action": {
+            "type": 5126
+        },
+        "agent": {
+            "id": "1098352279374896038"
+        },
+        "host": {
+            "name": "CORP123"
+        },
+        "sentinelone": {
+            "createdAt": "2022-03-29T17:20:31.139698Z",
+            "data": {
+                "accountName": "CORP",
+                "computerName": "CORP123",
+                "creator": "N/A",
+                "deviceClass": "E0h",
+                "eventId": "{1988659d-af84-11ec-914c-806e6f6e6963}",
+                "eventTime": "2022-03-29T17:17:40.622+00:00",
+                "eventType": "connected",
+                "fullScopeDetails": "Group Default Group in Site CORP-Users of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-Users / Default Group",
+                "groupId": 1083054176758610128,
+                "groupName": "Default Group",
+                "interface": "USB",
+                "lastLoggedInUserName": "user.name",
+                "lmpVersion": "N/A",
+                "minorClass": "N/A",
+                "osType": "windows",
+                "productId": "AAA",
+                "profileUuids": "N/A",
+                "ruleType": "productId",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "siteName": "CORP-Users",
+                "vendorId": 8087,
+                "version": "N/A"
+            },
+            "eventid": 1387019684138751044,
+            "siteId": 1083054176741832911,
+            "updatedAt": "2022-03-29T17:20:30.998054Z"
+        }
+    }
+    	
+	```
+
+
+=== "activity-type-5232.json"
+
+    ```json
+	
+    {
+        "destination": {
+            "address": "1.1.1.1",
+            "ip": "1.1.1.1"
+        },
+        "action": {
+            "type": 5232
+        },
+        "agent": {
+            "id": "840949586976454071"
+        },
+        "event": {
+            "category": "intrusion_detection",
+            "id": "1290568704943967230",
+            "kind": "event",
+            "outcome": "success",
+            "reason": "Firewall Control blocked traffic on the Endpoint CORP1234 because of rule Block all in site CORP-workstations (CORP).",
+            "type": [
+                "info"
+            ]
+        },
+        "group": {
+            "id": "551799242261539645"
+        },
+        "host": {
+            "name": "CORP1234"
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "rule": {
+            "description": "Flux",
+            "id": "556166862007673241",
+            "name": "Block all"
+        },
+        "network": {
+            "direction": "inbound"
+        },
+        "sentinelone": {
+            "createdAt": "2022-04-14T11:30:19.543892Z",
+            "data": {
+                "accountName": "CORP",
+                "action": "Block",
+                "applicationType": "any",
+                "computerName": "CORP1234",
+                "createdByUsername": "CUS_TER_211022_09_10_03_c4b7bce44eaf5d749e0399dd34f70ab83e3a1fd7",
+                "durationOfMeasurement": 60,
+                "fullScopeDetails": "Group Default Group in Site CORP-workstations of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-workstations / Default Group",
+                "groupName": "Default Group",
+                "localHostType": "any",
+                "localPortType": "any",
+                "locationNames": [],
+                "numberOfEvents": 3,
+                "order": 32,
+                "osTypes": [
+                    "windows"
+                ],
+                "processId": 4,
+                "remoteHostType": "any",
+                "remotePortType": "any",
+                "reportedDirection": "inbound",
+                "ruleScopeLevel": "site",
+                "ruleScopeName": "CORP-workstations (CORP)",
+                "siteName": "CORP-workstations",
+                "status": "Enabled",
+                "tagNames": []
+            },
+            "eventid": 1398439837979472030,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-14T11:30:19.543894Z"
         }
     }
     	
@@ -829,9 +1006,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "origagentsiteid": 901144152460815495,
                 "origagentuuid": "058fd4868adb4b87be24a4c5e9f89220",
                 "origagentversion": "4.6.14.304",
-                "ruleId": 1259119070812474070,
-                "ruleid": 1259119070812474070,
-                "rulename": "PowershellExecutionPolicyChanged Indicator Monito",
                 "rulescopeid": 901144152460815495,
                 "rulescopelevel": "E_SITE",
                 "scopeId": 901144152460815495,
@@ -950,7 +1124,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sentinelone": {
             "createdAt": "2022-03-30T09:00:18.286500Z",
             "data": {
-                "ruleid": 1360739572188076805,
                 "alertid": 1387492689895241884,
                 "accountName": "CORP",
                 "agentipv4": "192.168.102.46",
@@ -970,7 +1143,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "origagentuuid": "53a4af77e0e2465abaa97d16e88a6355",
                 "origagentversion": "21.7.5.1080",
                 "physical": "70:b5:e8:92:72:0a",
-                "rulename": "Webex.Meetings.Atucfobj.dll Monitoring",
                 "rulescopeid": 901144152444038278,
                 "rulescopelevel": "E_ACCOUNT",
                 "scopeId": 901144152444038278,
@@ -2252,6 +2424,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`container.image.name` | `keyword` | Name of the image the container was built on. |
 |`container.labels` | `object` | Image labels. |
 |`container.name` | `keyword` | Container name. |
+|`destination.ip` | `ip` | IP address of the destination. |
+|`destination.port` | `long` | Port of the destination. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
@@ -2267,6 +2441,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`host.name` | `keyword` | Name of the host. |
 |`host.os.family` | `keyword` | OS family (such as redhat, debian, freebsd, windows). |
 |`host.os.version` | `keyword` | Operating system version as a raw string. |
+|`network.direction` | `keyword` | Direction of the network traffic. |
+|`network.protocol` | `keyword` | Application protocol name. |
 |`orchestrator.cluster.name` | `keyword` | Name of the cluster. |
 |`orchestrator.namespace` | `keyword` | Namespace in which the action is taking place. |
 |`orchestrator.type` | `keyword` | Orchestrator cluster type (e.g. kubernetes, nomad or cloudfoundry). |
@@ -2342,24 +2518,32 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.comments` | `keyword` | None |
 |`sentinelone.createdAt` | `keyword` | None |
 |`sentinelone.data.accountName` | `keyword` | None |
+|`sentinelone.data.action` | `keyword` | None |
 |`sentinelone.data.agentipv4` | `keyword` | None |
 |`sentinelone.data.alertId` | `long` | None |
 |`sentinelone.data.alertid` | `long` | None |
+|`sentinelone.data.application` | `keyword` | None |
+|`sentinelone.data.applicationType` | `keyword` | None |
 |`sentinelone.data.bluetoothAddress` | `keyword` | None |
+|`sentinelone.data.byUser` | `keyword` | None |
 |`sentinelone.data.computerName` | `keyword` | None |
 |`sentinelone.data.confidenceLevel` | `keyword` | None |
 |`sentinelone.data.createdAt` | `keyword` | None |
+|`sentinelone.data.createdByUsername` | `keyword` | None |
 |`sentinelone.data.creator` | `keyword` | None |
+|`sentinelone.data.deactivationPeriodInDays` | `keyword` | None |
 |`sentinelone.data.detectedat` | `long` | None |
 |`sentinelone.data.deviceClass` | `keyword` | None |
 |`sentinelone.data.deviceInformationServiceInfoKey` | `keyword` | None |
 |`sentinelone.data.deviceInformationServiceInfoValue` | `keyword` | None |
 |`sentinelone.data.deviceName` | `keyword` | None |
+|`sentinelone.data.direction` | `keyword` | None |
 |`sentinelone.data.disabledLevel` | `keyword` | None |
 |`sentinelone.data.dnsrequest` | `keyword` | None |
 |`sentinelone.data.dnsresponse` | `keyword` | None |
 |`sentinelone.data.dstip` | `keyword` | None |
 |`sentinelone.data.dstport` | `long` | None |
+|`sentinelone.data.durationOfMeasurement` | `int` | None |
 |`sentinelone.data.dveventid` | `keyword` | None |
 |`sentinelone.data.dveventtype` | `keyword` | None |
 |`sentinelone.data.enabledReason` | `keyword` | None |
@@ -2398,6 +2582,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.k8spodlabels` | `keyword` | None |
 |`sentinelone.data.lastLoggedInUserName` | `keyword` | None |
 |`sentinelone.data.lmpVersion` | `keyword` | None |
+|`sentinelone.data.localHost` | `keyword` | None |
+|`sentinelone.data.localHostType` | `keyword` | None |
+|`sentinelone.data.localPortType` | `keyword` | None |
+|`sentinelone.data.localPorts` | `keyword` | None |
+|`sentinelone.data.locationNames` | `array` | None |
 |`sentinelone.data.loginaccountdomain` | `keyword` | None |
 |`sentinelone.data.loginaccountsid` | `keyword` | None |
 |`sentinelone.data.loginisadministratorequivalent` | `keyword` | None |
@@ -2412,8 +2601,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.newGroupId` | `keyword` | None |
 |`sentinelone.data.newGroupName` | `keyword` | None |
 |`sentinelone.data.newStatus` | `keyword` | None |
+|`sentinelone.data.numberOfEvents` | `int` | None |
 |`sentinelone.data.oldGroupId` | `keyword` | None |
 |`sentinelone.data.oldGroupName` | `keyword` | None |
+|`sentinelone.data.order` | `long` | None |
 |`sentinelone.data.origagentmachinetype` | `keyword` | None |
 |`sentinelone.data.origagentname` | `keyword` | None |
 |`sentinelone.data.origagentosfamily` | `keyword` | None |
@@ -2424,22 +2615,27 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.origagentversion` | `keyword` | None |
 |`sentinelone.data.originalStatus` | `keyword` | None |
 |`sentinelone.data.osType` | `keyword` | None |
+|`sentinelone.data.osTypes` | `keyword` | None |
 |`sentinelone.data.physical` | `keyword` | None |
+|`sentinelone.data.processId` | `int` | None |
+|`sentinelone.data.processName` | `keyword` | None |
 |`sentinelone.data.productId` | `keyword` | None |
 |`sentinelone.data.profileUuids` | `keyword` | None |
+|`sentinelone.data.protocol` | `keyword` | None |
 |`sentinelone.data.reason` | `keyword` | None |
 |`sentinelone.data.registrykeypath` | `keyword` | None |
 |`sentinelone.data.registryoldvalue` | `keyword` | None |
 |`sentinelone.data.registryoldvaluetype` | `keyword` | None |
 |`sentinelone.data.registrypath` | `keyword` | None |
 |`sentinelone.data.registryvalue` | `keyword` | None |
+|`sentinelone.data.remoteHost` | `keyword` | None |
+|`sentinelone.data.remoteHostType` | `keyword` | None |
+|`sentinelone.data.remotePortType` | `keyword` | None |
+|`sentinelone.data.remotePorts` | `keyword` | None |
 |`sentinelone.data.role` | `keyword` | None |
-|`sentinelone.data.ruleId` | `long` | None |
-|`sentinelone.data.ruleName` | `keyword` | None |
+|`sentinelone.data.ruleScopeLevel` | `keyword` | None |
 |`sentinelone.data.ruleScopeName` | `keyword` | None |
 |`sentinelone.data.ruleType` | `keyword` | None |
-|`sentinelone.data.ruleid` | `long` | None |
-|`sentinelone.data.rulename` | `keyword` | None |
 |`sentinelone.data.rulescopeid` | `long` | None |
 |`sentinelone.data.rulescopelevel` | `keyword` | None |
 |`sentinelone.data.scopeId` | `long` | None |
@@ -2484,6 +2680,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.status` | `keyword` | None |
 |`sentinelone.data.system` | `bool` | None |
 |`sentinelone.data.systemUser` | `long` | None |
+|`sentinelone.data.tagNames` | `keyword` | None |
 |`sentinelone.data.tgtfilecreatedat` | `long` | None |
 |`sentinelone.data.tgtfilehashsha1` | `keyword` | None |
 |`sentinelone.data.tgtfilehashsha256` | `keyword` | None |
@@ -2571,6 +2768,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.updatedAt` | `keyword` | None |
 |`sentinelone.whiteningOptions` | `keyword` | None |
 |`source.ip` | `ip` | IP address of the source. |
+|`source.port` | `long` | Port of the source. |
 |`threat.enrichments.indicator.file.hash.md5` | `keyword` | MD5 hash. |
 |`threat.enrichments.matched.occurred` | `date` | Date of match |
 |`threat.indicator.confidence` | `keyword` | Indicator confidence rating |
