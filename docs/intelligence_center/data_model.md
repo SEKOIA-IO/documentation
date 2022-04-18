@@ -52,7 +52,7 @@ As an exemple, here are parts of the `Spearphishing Link` object presented in th
 
 STIX 2.1 adds an optional `confidence` field for an object creator to express how confident (s)he is about the information.
 
-![SEKOIA.IO Intelligence Center Confidence](../assets/intelligence_center/confidence.png)
+![SEKOIA.IO Intelligence Center Confidence](../assets/intelligence_center/confidence_source.png)
 
 The Intelligence Center uses the `confidence` field in two ways:
 
