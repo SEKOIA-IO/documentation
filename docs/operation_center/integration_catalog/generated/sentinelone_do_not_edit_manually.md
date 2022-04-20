@@ -34,7 +34,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Agent Started Full Disk Scan",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -109,7 +109,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Agent Enabled",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -180,7 +180,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "Functionality of the SentinelOne Agent on a01pwrbi005 is limited, due to a database corruption. Contact Support.",
             "type": [
                 "info"
-            ]
+            ],
+            "action": "Agent Disabled Because of Database Corruption"
         },
         "group": {
             "id": "834457314771868699"
@@ -234,7 +235,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "997510333395640565"
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Threat Mitigation Report Kill Success",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -302,7 +303,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Threat Mitigation Report Quarantine Success",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -370,7 +371,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "intrusion_detection",
             "kind": "event",
             "outcome": "success",
-            "reason": "The management user Jean Dupont deleted the user Foo User."
+            "reason": "The management user Jean Dupont deleted the user Foo User.",
+            "action": "User Deleted"
         },
         "organization": {
             "id": "551799238352448315"
@@ -415,7 +417,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": 3016
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Path Exclusion Deleted",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -482,7 +484,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "intrusion_detection",
             "kind": "event",
             "outcome": "success",
-            "reason": "Threat with confidence level suspicious detected: Run SwitchThemeColor.ps1.lnk."
+            "reason": "Threat with confidence level suspicious detected: Run SwitchThemeColor.ps1.lnk.",
+            "action": "New Suspicious Threat Not Mitigated"
         },
         "file": {
             "name": "Run SwitchThemeColor.ps1.lnk",
@@ -533,7 +536,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Threat Mitigation Status Changed",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -604,7 +607,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "1387492693815190915",
             "kind": "event",
             "outcome": "success",
-            "reason": "Agent CL-ABCEDFG automatically decommissioned."
+            "reason": "Agent CL-ABCEDFG automatically decommissioned.",
+            "action": "Agent Decommissioned"
         },
         "group": {
             "id": "551799242261539645"
@@ -655,7 +659,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Agent Moved To A Different Group",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -711,7 +715,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "USB device  was connected on CORP123.",
             "type": [
                 "allowed"
-            ]
+            ],
+            "action": "Device Control Approved Event"
         },
         "group": {
             "id": "1083054176758610128"
@@ -791,7 +796,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "Firewall Control blocked traffic on the Endpoint CORP1234 because of rule Block all in site CORP-workstations (CORP).",
             "type": [
                 "info"
-            ]
+            ],
+            "action": "Firewall Control Blocked Event"
         },
         "group": {
             "id": "551799242261539645"
@@ -833,7 +839,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "processId": 4,
                 "remoteHostType": "any",
                 "remotePortType": "any",
-                "reportedDirection": "inbound",
+                "direction": "inbound",
                 "ruleScopeLevel": "site",
                 "ruleScopeName": "CORP-workstations (CORP)",
                 "siteName": "CORP-workstations",
@@ -864,7 +870,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "Scan Initiated",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -936,7 +942,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.",
             "type": [
                 "info"
-            ]
+            ],
+            "action": "Custom Rules - New Alert"
         },
         "group": {
             "id": "924347507640996620"
@@ -1069,7 +1076,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "1387492693815190915",
             "kind": "event",
             "outcome": "success",
-            "reason": "Alert created for WebexHost_old.exe from Custom Rule: Webex.Meetings.Atucfobj.dll Monitoring in Group LAPTOP in Site DEFAULT of Account CORP, detected on USR-LAP-4141."
+            "reason": "Alert created for WebexHost_old.exe from Custom Rule: Webex.Meetings.Atucfobj.dll Monitoring in Group LAPTOP in Site DEFAULT of Account CORP, detected on USR-LAP-4141.",
+            "action": "Custom Rules - New Alert"
         },
         "group": {
             "id": "924347507640996620"
@@ -1425,7 +1433,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "event": {
-            "action": "Agent started full disk scan",
             "category": "malware",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
@@ -2372,7 +2379,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "1.10.0"
         },
         "event": {
-            "action": "Agent started full disk scan",
+            "action": "User Logged In",
             "category": "intrusion_detection",
             "created": "2021-04-23T20:02:05.017771Z",
             "dialect": "sentinelone",
