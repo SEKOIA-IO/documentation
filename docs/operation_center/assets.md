@@ -57,7 +57,7 @@ To create an asset from our UI, you have to:
 |  | Product | cpe-item, cpe-unknown |
 |  | Custom | zone_name |
 
-<aside>
-💡 To edit an asset, you have to click on an asset in the list, change what needs to be changed and click on Save.
+!!! note 
+    💡 To edit an asset, you have to click on an asset in the list, change what needs to be changed and click on Save.
 
 </aside>
