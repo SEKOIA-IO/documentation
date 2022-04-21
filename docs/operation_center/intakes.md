@@ -28,7 +28,7 @@ On this page, you can find:
 
 To configure a new source of events in your community, you can rely on our list of continuously growing integrations that are constantly developed and enhanced by SEKOIA.IO’s team. 
 
-![SEKOIA.IO’s various sources of events](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/407423ea-ee03-4f9c-bce0-2fd7cb4e4f7d/intakes-types.png)
+![SEKOIA.IO’s various sources of events](../../assets/operation_center/intakes-types.png)
 
 SEKOIA.IO’s various sources of events
 
