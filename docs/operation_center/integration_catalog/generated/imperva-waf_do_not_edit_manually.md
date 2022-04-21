@@ -1,4 +1,18 @@
 
+## Event Categories
+
+
+
+
+In details, the following Table denotes the type of events produced by this integration.
+
+| Name | Values |
+| ---- | ------ |
+| Kind | `event` |
+| Category | `network` |
+| Type | `["connection", "access"]`, `["connection", "allowed"]`, `["connection", "denied"]`, `["connection", "error"]` |
+
+
 
 
 ## Event Samples
@@ -78,14 +92,309 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "start": "1970-01-02T10:17:36.789000Z",
             "end": "1970-01-03T14:04:16.789000Z",
-            "duration": 100000000.0
-        }
+            "duration": 100000000.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "access"
+            ]
+        },
+        "@timestamp": "1970-01-02T10:17:36.789000Z"
     }
     	
 	```
 
 
-=== "access_security.json"
+=== "access_security_bad.json"
+
+    ```json
+	
+    {
+        "imperva": {
+            "pop": "cdg",
+            "session": {
+                "id": 393000630126853202
+            },
+            "client": {
+                "js_support": true,
+                "cookie_support": true,
+                "captcha_support": "NA"
+            },
+            "visitor": {
+                "id": "a99e6166-5092-4cce-8fb6-afae61ef7493"
+            },
+            "user_agent": {
+                "type": "Browser"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
+            "name": "Webkit Browser"
+        },
+        "client": {
+            "geo": {
+                "country_iso_code": "FR",
+                "city_name": "Strasbourg",
+                "location": {
+                    "lat": 48.34,
+                    "lon": 7.4508
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "id": "195557299895996363"
+            }
+        },
+        "url": {
+            "full": "www.test.com/",
+            "original": "www.test.com/"
+        },
+        "network": {
+            "protocol": "http"
+        },
+        "source": {
+            "port": 45208,
+            "ip": "1.2.3.4"
+        },
+        "event": {
+            "action": "REQ_BAD_PARSE_ERROR",
+            "start": "2022-04-12T14:09:58.763000Z",
+            "end": "2022-04-12T14:09:58.765000Z",
+            "duration": 2.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "error"
+            ],
+            "reason": "The HTTP request was malformated"
+        },
+        "@timestamp": "2022-04-12T14:09:58.763000Z"
+    }
+    	
+	```
+
+
+=== "access_security_blacklisted.json"
+
+    ```json
+	
+    {
+        "imperva": {
+            "pop": "cdg",
+            "session": {
+                "id": 393000630126853202
+            },
+            "client": {
+                "js_support": true,
+                "cookie_support": true,
+                "captcha_support": "NA"
+            },
+            "visitor": {
+                "id": "a99e6166-5092-4cce-8fb6-afae61ef7493"
+            },
+            "user_agent": {
+                "type": "Browser"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
+            "name": "Webkit Browser"
+        },
+        "client": {
+            "geo": {
+                "country_iso_code": "FR",
+                "city_name": "Strasbourg",
+                "location": {
+                    "lat": 48.34,
+                    "lon": 7.4508
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "id": "195557299895996363"
+            }
+        },
+        "url": {
+            "full": "www.test.com/",
+            "original": "www.test.com/"
+        },
+        "network": {
+            "protocol": "http"
+        },
+        "source": {
+            "port": 45208,
+            "ip": "1.2.3.4"
+        },
+        "event": {
+            "action": "REQ_DOMAIN_BLACKLISTED",
+            "start": "2022-04-12T14:09:58.763000Z",
+            "end": "2022-04-12T14:09:58.765000Z",
+            "duration": 2.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "denied"
+            ],
+            "reason": "The destination was blacklisted"
+        },
+        "@timestamp": "2022-04-12T14:09:58.763000Z"
+    }
+    	
+	```
+
+
+=== "access_security_blocked.json"
+
+    ```json
+	
+    {
+        "imperva": {
+            "pop": "cdg",
+            "session": {
+                "id": 393000630126853202
+            },
+            "client": {
+                "js_support": true,
+                "cookie_support": true,
+                "captcha_support": "NA"
+            },
+            "visitor": {
+                "id": "a99e6166-5092-4cce-8fb6-afae61ef7493"
+            },
+            "user_agent": {
+                "type": "Browser"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
+            "name": "Webkit Browser"
+        },
+        "client": {
+            "geo": {
+                "country_iso_code": "FR",
+                "city_name": "Strasbourg",
+                "location": {
+                    "lat": 48.34,
+                    "lon": 7.4508
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "id": "195557299895996363"
+            }
+        },
+        "url": {
+            "full": "www.test.com/",
+            "original": "www.test.com/"
+        },
+        "network": {
+            "protocol": "http"
+        },
+        "source": {
+            "port": 45208,
+            "ip": "1.2.3.4"
+        },
+        "event": {
+            "action": "REQ_BLOCKED_VISITOR",
+            "start": "2022-04-12T14:09:58.763000Z",
+            "end": "2022-04-12T14:09:58.765000Z",
+            "duration": 2.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "denied"
+            ],
+            "reason": "The request was blocked based on WAF settings"
+        },
+        "@timestamp": "2022-04-12T14:09:58.763000Z"
+    }
+    	
+	```
+
+
+=== "access_security_cached.json"
+
+    ```json
+	
+    {
+        "imperva": {
+            "pop": "cdg",
+            "session": {
+                "id": 393000630126853202
+            },
+            "client": {
+                "js_support": true,
+                "cookie_support": true,
+                "captcha_support": "NA"
+            },
+            "visitor": {
+                "id": "a99e6166-5092-4cce-8fb6-afae61ef7493"
+            },
+            "user_agent": {
+                "type": "Browser"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
+            "name": "Webkit Browser"
+        },
+        "client": {
+            "geo": {
+                "country_iso_code": "FR",
+                "city_name": "Strasbourg",
+                "location": {
+                    "lat": 48.34,
+                    "lon": 7.4508
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "id": "195557299895996363"
+            }
+        },
+        "url": {
+            "full": "www.test.com/",
+            "original": "www.test.com/"
+        },
+        "network": {
+            "protocol": "http"
+        },
+        "source": {
+            "port": 45208,
+            "ip": "1.2.3.4"
+        },
+        "event": {
+            "action": "REQ_CACHED_WEBSITE",
+            "start": "2022-04-12T14:09:58.763000Z",
+            "end": "2022-04-12T14:09:58.765000Z",
+            "duration": 2.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "allowed"
+            ],
+            "reason": ""
+        },
+        "@timestamp": "2022-04-12T14:09:58.763000Z"
+    }
+    	
+	```
+
+
+=== "access_security_challenged.json"
 
     ```json
 	
@@ -181,14 +490,237 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cipher": "ECDHE-RSA-AES128-GCM-SHA256"
         },
         "event": {
-            "action": "REQ_CHALLENGE_CAPTCHA",
+            "action": "REQ_CHALLENGED_CAPTCHA",
             "start": "1970-01-02T10:17:36.789000Z",
             "end": "1970-01-03T14:04:16.789000Z",
-            "duration": 100000000.0
+            "duration": 100000000.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "denied"
+            ],
+            "reason": "A challenge was submitted to the client"
         },
         "rule": {
             "name": "Block Malicious User,High Risk Resources,"
-        }
+        },
+        "@timestamp": "1970-01-02T10:17:36.789000Z"
+    }
+    	
+	```
+
+
+=== "access_security_ipv6_not_supported.json"
+
+    ```json
+	
+    {
+        "imperva": {
+            "pop": "cdg",
+            "session": {
+                "id": 393000630126853202
+            },
+            "client": {
+                "js_support": true,
+                "cookie_support": true,
+                "captcha_support": "NA"
+            },
+            "visitor": {
+                "id": "a99e6166-5092-4cce-8fb6-afae61ef7493"
+            },
+            "user_agent": {
+                "type": "Browser"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
+            "name": "Webkit Browser"
+        },
+        "client": {
+            "geo": {
+                "country_iso_code": "FR",
+                "city_name": "Strasbourg",
+                "location": {
+                    "lat": 48.34,
+                    "lon": 7.4508
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "id": "195557299895996363"
+            }
+        },
+        "url": {
+            "full": "www.test.com/",
+            "original": "www.test.com/"
+        },
+        "network": {
+            "protocol": "http"
+        },
+        "source": {
+            "port": 45208,
+            "ip": "1.2.3.4"
+        },
+        "event": {
+            "action": "REQ_IPV6_NOT_SUPPORTED",
+            "start": "2022-04-12T14:09:58.763000Z",
+            "end": "2022-04-12T14:09:58.765000Z",
+            "duration": 2.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "error"
+            ],
+            "reason": "The destination doesn't support IPv6 addresses"
+        },
+        "@timestamp": "2022-04-12T14:09:58.763000Z"
+    }
+    	
+	```
+
+
+=== "access_security_passed.json"
+
+    ```json
+	
+    {
+        "imperva": {
+            "pop": "cdg",
+            "session": {
+                "id": 393000630126853202
+            },
+            "client": {
+                "js_support": true,
+                "cookie_support": true,
+                "captcha_support": "NA"
+            },
+            "visitor": {
+                "id": "a99e6166-5092-4cce-8fb6-afae61ef7493"
+            },
+            "user_agent": {
+                "type": "Browser"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
+            "name": "Webkit Browser"
+        },
+        "client": {
+            "geo": {
+                "country_iso_code": "FR",
+                "city_name": "Strasbourg",
+                "location": {
+                    "lat": 48.34,
+                    "lon": 7.4508
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "id": "195557299895996363"
+            }
+        },
+        "url": {
+            "full": "www.test.com/",
+            "original": "www.test.com/"
+        },
+        "network": {
+            "protocol": "http"
+        },
+        "source": {
+            "port": 45208,
+            "ip": "1.2.3.4"
+        },
+        "event": {
+            "action": "REQ_PASSED",
+            "start": "2022-04-12T14:09:58.763000Z",
+            "end": "2022-04-12T14:09:58.765000Z",
+            "duration": 2.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "allowed"
+            ]
+        },
+        "@timestamp": "2022-04-12T14:09:58.763000Z"
+    }
+    	
+	```
+
+
+=== "access_security_unresolved.json"
+
+    ```json
+	
+    {
+        "imperva": {
+            "pop": "cdg",
+            "session": {
+                "id": 393000630126853202
+            },
+            "client": {
+                "js_support": true,
+                "cookie_support": true,
+                "captcha_support": "NA"
+            },
+            "visitor": {
+                "id": "a99e6166-5092-4cce-8fb6-afae61ef7493"
+            },
+            "user_agent": {
+                "type": "Browser"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
+            "name": "Webkit Browser"
+        },
+        "client": {
+            "geo": {
+                "country_iso_code": "FR",
+                "city_name": "Strasbourg",
+                "location": {
+                    "lat": 48.34,
+                    "lon": 7.4508
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "method": "GET",
+                "id": "195557299895996363"
+            }
+        },
+        "url": {
+            "full": "www.test.com/",
+            "original": "www.test.com/"
+        },
+        "network": {
+            "protocol": "http"
+        },
+        "source": {
+            "port": 45208,
+            "ip": "1.2.3.4"
+        },
+        "event": {
+            "action": "REQ_UNRESOLVED_SITE_INVALID_CNAME",
+            "start": "2022-04-12T14:09:58.763000Z",
+            "end": "2022-04-12T14:09:58.765000Z",
+            "duration": 2.0,
+            "kind": "event",
+            "category": "network",
+            "type": [
+                "connection",
+                "error"
+            ],
+            "reason": "The proxy failed to resolve the destination"
+        },
+        "@timestamp": "2022-04-12T14:09:58.763000Z"
     }
     	
 	```
@@ -203,13 +735,18 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
 |`client.geo.city_name` | `keyword` | City name. |
 |`client.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`client.geo.location` | `geo_point` | Longitude and latitude. |
 |`event.action` | `keyword` | The action captured by the event. |
+|`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.id` | `keyword` | HTTP request ID. |
 |`http.request.method` | `keyword` | HTTP request method. |
