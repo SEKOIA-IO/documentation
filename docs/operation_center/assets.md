@@ -28,7 +28,7 @@ The **numbers of events and alerts** shown in the table are calculated for the *
 
 **Criticality** of assets ranges from 0 to 100, 100 being the most critical.
 
-![assets-listing.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/059124bd-d038-4242-b93c-bc8098f530ed/assets-listing.png)
+![assets-listing.png](../../assets/operation_center/assets-listing.png)
 
 ## 📐 Create an asset
 
