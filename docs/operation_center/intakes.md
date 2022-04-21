@@ -22,7 +22,7 @@ On this page, you can find:
 - The creator as well as the creation date
 - A delete button that implies the events produced by the intake will no longer be analyzed.
 
-![intakes-listing.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5a6e84e2-ac81-4d82-b505-0043c13954f3/intakes-listing.png)
+![intakes-listing.png](../../assets/operation_center/intakes-listing.png)
 
 # 📐 Create an intake using the integrations catalog
 
