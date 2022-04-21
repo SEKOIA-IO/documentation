@@ -34,7 +34,7 @@ SEKOIA.IO’s various sources of events
 
 To create an intake, you have to: 
 
-1. Click on the“+ Intake” from the Intakes homepage
+1. Click on the “+ Intake” from the Intakes homepage
 2. Choose the source of events that suits your needs (you can filter these sources by clicking on the categories’ tags
 3. Click on the “Create” button in the source card 
 4. Provide an intelligible name
