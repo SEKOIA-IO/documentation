@@ -1,4 +1,4 @@
-## 🤔 What is an asset?
+## What is an asset?
 
 In SEKOIA.IO, assets participate to the security workflow of your community. When an incoming event matches with a defined asset, the event is enriched with assets information. Their criticality will be taken into account when calculating the urgency of an alert, together with the severity of the rule that triggered the alert. 
 
@@ -6,7 +6,7 @@ When more than one asset match with an event, the highest criticality is used fo
 
 Assets also permit the selective application of detection rules: rules can be applied to one, several or all entities, and to one, several or all assets.
 
-## ⚡️ Types of assets
+## Types of assets
 
 Assets in SEKOIA.IO can be of different types. There are three main categories: 
 
@@ -20,7 +20,7 @@ The most commonly used by our users are:
 - **Networks**: identified by CIDR
 - **Users**: identified by an email address
 
-## 📄  Assets’ homepage
+## Assets’ homepage
 
 The assets homepage lists all of your community’s assets, their type, creation date, events and alerts associated and the criticality score. 
 
@@ -30,7 +30,7 @@ The **numbers of events and alerts** shown in the table are calculated for the *
 
 ![assets-listing.png](../../assets/operation_center/assets-listing.png)
 
-## 📐 Create an asset
+## Create an asset
 
 To create an asset from our UI, you have to: 
 
