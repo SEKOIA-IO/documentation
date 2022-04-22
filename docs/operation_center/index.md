@@ -7,7 +7,7 @@ It allows you to easily integrate and analyze the events produced by your system
 ## 🔑 Key Features
 
 - A **dashboard** with a wide range of **widgets** to provide you with an overall view of your systems’ health
-- A **Rules’ Catalog** full of detection rules (588 to this day) and updated on a regular basis by our incredible analysts.
+- A **Rules’ Catalog** full of detection rules (588 to this day) and updated on a regular basis by SEKOIA.IO analysts.
 - **Events,** **Alerts** and **Cases**, three pages that let you investigate any potential threat to your infrastructure
 - **Entities, Intakes** and **Assets**, each of them allow you to add, edit and configure the data sources you want to monitor.
 
