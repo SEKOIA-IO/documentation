@@ -38,10 +38,9 @@ To create an intake, you have to:
 4. Provide an intelligible name
 5. Select the entity to which you want to associate the corresponding data
 6. Click on Create 
+7. Find your newly created source of events as well as the intake key in the Intakes homepage
 
 ![modal-intake-creation.png](../../assets/operation_center/modal-intake-creation.png)
-
-7. Find your newly created source of events as well as the intake key in the Intakes homepage
 
 !!! note
   
