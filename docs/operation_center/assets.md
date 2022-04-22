@@ -28,7 +28,7 @@ The **numbers of events and alerts** shown in the table are calculated for the *
 
 **Criticality** of assets ranges from 0 to 100, 100 being the most critical.
 
-![assets-listing.png](../../assets/operation_center/assets-listing.png)
+![assets-listing.png](/../assets/operation_center/assets-listing.png)
 
 ## Create an asset
 
@@ -57,7 +57,5 @@ To create an asset from our UI, you have to:
 |  | Product | cpe-item, cpe-unknown |
 |  | Custom | zone_name |
 
-!!! note 
-    💡 To edit an asset, you have to click on an asset in the list, change what needs to be changed and click on Save.
-
-</aside>
+!!! tip
+To edit an asset, you have to click on an asset in the list, change what needs to be changed and click on Save.
