@@ -1,6 +1,6 @@
 # Intakes - Data Sources Management
 
-# 🤔 What is an intake?
+## What is an intake?
 
 Intakes correspond to data sources sent to SEKOIA.IO. They are identified by a name, a log format, an entity and an intake key.
 
@@ -8,7 +8,7 @@ You can configure as much intakes as you need in order to increase SEKOIA.IO kno
 
 All features related to intakes are visible through the “Intakes” menu on the Operations Center.
 
-# 📄 Intakes Homepage
+## Intakes Homepage
 
 The intakes homepage allows you to view the list of intakes already created within the community but also to create new intakes.
 
@@ -24,13 +24,11 @@ On this page, you can find:
 
 ![intakes-listing.png](../../assets/operation_center/intakes-listing.png)
 
-# 📐 Create an intake using the integrations catalog
+## Create an intake using the integrations catalog
 
 To configure a new source of events in your community, you can rely on our list of continuously growing integrations that are constantly developed and enhanced by SEKOIA.IO’s team. 
 
 ![SEKOIA.IO’s various sources of events](../../assets/operation_center/intakes-types.png)
-
-SEKOIA.IO’s various sources of events
 
 To create an intake, you have to: 
 
@@ -47,9 +45,8 @@ To create an intake, you have to:
 
 !!! note
   
-     💡 The intake key able allows you to set up different elements such as Symphony modules.
+     💡 The intake key enables you to search for events produced by a given system and to set up some Symphony modules. 
 
-</aside>
 
 ➡️ The documentation about the integration of your data sources is also available in the [integrations](https://docs.sekoia.io/integrations/) page.
 
