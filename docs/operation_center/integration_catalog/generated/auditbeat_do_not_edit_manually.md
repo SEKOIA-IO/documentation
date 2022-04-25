@@ -28,6 +28,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "event": {
             "module": "system",
             "dataset": "process",
@@ -45,9 +46,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "start": "2021-01-01T00:01:01.000Z",
             "name": "smtp",
             "entity_id": "AZERTY123456789",
-            "ppid": 1457,
-            "executable": "/usr/lib/postfix/sbin/smtp",
             "pid": 123123,
+            "executable": "/usr/lib/postfix/sbin/smtp",
             "args": [
                 "smtp",
                 "-t",
@@ -58,6 +58,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "command_line": "smtp -t unix -u -c",
             "hash": {
                 "sha1": "53fe0c00019fb177e43c7ac214f466f01158384e"
+            },
+            "parent": {
+                "pid": 1457
             }
         },
         "auditbeat": {
@@ -139,7 +142,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "access"
             ]
         },
-        "@timestamp": "2021-11-09T17:39:27.218Z",
+        "@timestamp": "2021-11-09T17:39:26.389Z",
         "event": {
             "category": [
                 "file"
@@ -165,9 +168,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "pid": 18488,
             "name": "chrome",
             "working_directory": "/home/housetodd",
-            "ppid": 18470,
             "title": "/opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=18479 --enable-crash-reporter=, --change-stack-",
-            "executable": "/opt/google/chrome/chrome"
+            "executable": "/opt/google/chrome/chrome",
+            "parent": {
+                "pid": 18470
+            }
         },
         "host": {
             "id": "7dd912136af040e4a6ea4f683010b824",
@@ -421,7 +426,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "executable": "/opt/google/chrome/chrome",
             "name": "ThreadPoolSingl"
         },
-        "@timestamp": "2021-11-09T19:07:40.601Z",
+        "@timestamp": "2021-11-09T19:07:37.325Z",
         "auditd": {
             "session": "2",
             "summary": {
@@ -523,7 +528,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "service": {
             "type": "auditd"
         },
-        "@timestamp": "2021-11-09T18:35:02.761Z",
+        "@timestamp": "2021-11-09T18:35:01.754Z",
         "message": "{\"@timestamp\":\"2021-11-09T18:35:01.754Z\",\"@metadata\":{\"beat\":\"auditbeat\",\"type\":\"_doc\",\"version\":\"7.15.1\"},\"related\":{\"user\":[\"root\"]},\"service\":{\"type\":\"auditd\"},\"event\":{\"module\":\"auditd\",\"category\":[\"authentication\"],\"action\":\"changed-login-id-to\",\"outcome\":\"success\",\"kind\":\"event\",\"type\":[\"start\"]},\"user\":{\"audit\":{\"id\":\"0\",\"name\":\"root\"},\"effective\":{\"id\":\"0\",\"name\":\"root\"}},\"ecs\":{\"version\":\"1.11.0\"},\"host\":{\"containerized\":false,\"ip\":[\"66.253.230.251\"],\"mac\":[\"5e:55:38:73:40:a4\"],\"hostname\":\"web-65\",\"architecture\":\"x86_64\",\"os\":{\"codename\":\"bionic\",\"type\":\"linux\",\"platform\":\"ubuntu\",\"version\":\"18.04.6 LTS (Bionic Beaver)\",\"family\":\"debian\",\"name\":\"Ubuntu\",\"kernel\":\"4.15.0-161-generic\"},\"name\":\"web-65\",\"id\":\"7dd912136af040e4a6ea4f683010b824\"},\"agent\":{\"ephemeral_id\":\"f1ac5b09-4f0c-42cf-b9f7-f854eeae073a\",\"id\":\"e9872892-b999-4ad5-83da-d6ec9dbc1f81\",\"name\":\"web-65\",\"type\":\"auditbeat\",\"version\":\"7.15.1\",\"hostname\":\"web-65\"},\"process\":{\"pid\":20899},\"auditd\":{\"data\":{\"tty\":\"(none)\",\"old-ses\":\"4294967295\"},\"session\":\"436\",\"summary\":{\"actor\":{\"primary\":\"unset\",\"secondary\":\"root\"},\"object\":{\"primary\":\"0\",\"type\":\"user-session\"}},\"message_type\":\"login\",\"sequence\":11578,\"result\":\"success\"}}",
         "event": {
             "dialect_uuid": "4922a107-c91d-46e8-ab0b-d21236d92b90",
@@ -710,6 +715,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -759,10 +765,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "containerd",
             "pid": 1197,
-            "ppid": 1,
             "start": "2021-01-01T00:01:01.000Z",
             "working_directory": "/",
-            "command_line": "/usr/bin/containerd"
+            "command_line": "/usr/bin/containerd",
+            "parent": {
+                "pid": 1
+            }
         },
         "sekoiaio": {
             "intake": {
@@ -797,6 +805,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -848,10 +857,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "unattended-upgr",
             "pid": 1195,
-            "ppid": 1,
             "start": "2021-01-01T00:01:01.000Z",
             "working_directory": "/",
-            "command_line": "/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal"
+            "command_line": "/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal",
+            "parent": {
+                "pid": 1
+            }
         },
         "sekoiaio": {
             "intake": {
@@ -886,6 +897,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -935,9 +947,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "postgres",
             "pid": 207706,
-            "ppid": 1231,
             "start": "2021-01-01T00:01:01.000Z",
-            "working_directory": "/var/lib/postgresql/9.5/main"
+            "working_directory": "/var/lib/postgresql/9.5/main",
+            "parent": {
+                "pid": 1231
+            }
         },
         "service": {
             "type": "system"
@@ -966,6 +980,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -1043,6 +1058,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "agent": {
             "ephemeral_id": "12345678-azer-1234-a1z2-12qsdfghjklm",
             "hostname": "fame",
@@ -1098,10 +1114,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "dbus-daemon",
             "pid": 645,
-            "ppid": 1,
             "start": "2021-01-01T00:01:01.000Z",
             "working_directory": "/",
-            "command_line": "/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only"
+            "command_line": "/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only",
+            "parent": {
+                "pid": 1
+            }
         },
         "service": {
             "type": "system"
@@ -1130,6 +1148,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "agent": {
             "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
             "hostname": "fame",
@@ -1179,7 +1198,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "postgres",
             "pid": 1234,
-            "ppid": 1231,
+            "parent": {
+                "pid": 1231
+            },
             "start": "2021-01-01T00:01:01.000Z",
             "working_directory": "/var/lib/postgresql/9.5/main"
         },
@@ -1210,6 +1231,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-01-01T00:01:01.000Z",
         "agent": {
             "ephemeral_id": "0101010-abcd-1234-a1b2c3d4e5f6g7h8",
             "hostname": "fame",
@@ -1318,7 +1340,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2021-11-09T16:19:27.788Z",
+        "@timestamp": "2021-11-09T16:17:55.149Z",
         "process": {
             "pid": 12416,
             "working_directory": "/home/NElD74Hc4MX8PjLF/Documents/Projets/Qh1HoDnBg4mYfHhi"
@@ -1450,6 +1472,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
 |`agent.build.original` | `keyword` | Extended build information for the agent. |
 |`agent.ephemeral_id` | `keyword` | Ephemeral identifier of this agent. |
 |`agent.hostname` | `keyword` | None |
