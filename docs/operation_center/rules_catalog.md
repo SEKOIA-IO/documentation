@@ -269,7 +269,7 @@ A correlation document has the following attributes:
 - `type` is the [correlation type](#correlation-types)
 - `rule` refers to one or multiple Sigma rules or correlations (allowing definition of chains of correlations) defining events to be correlated
 - `group-by` optionally defines one or multiple fields which should be treated as separate event occurrence scope (example: count events by user)
-- `timespan` defines a time period in which the correlation should be applied (such as `5m` or `1h`)
+- `timespan` defines a time period in which the correlation should be applied (such as `5m` or `1h`). This value can currently be set up to a maximum of `24h`.
 
 Further fields might be required depending on the correlation type.
 
