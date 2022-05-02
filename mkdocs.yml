@@ -33,6 +33,7 @@ nav:
   - Dashboards: operation_center/threat_exposition.md
   - Integration Catalog:
     - Overview: operation_center/integration_catalog/index.md
+    - Custom Format: operation_center/intakes_customformat.md 
     - Application:
       - Alsid: operation_center/integration_catalog/application/alsid.md
       - Apache: operation_center/integration_catalog/application/apache.md
