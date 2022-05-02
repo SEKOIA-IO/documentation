@@ -154,6 +154,7 @@ nav:
     - Digital Shadows: playbooks/library/digital-shadows.md
     - Fileutils: playbooks/library/fileutils.md
     - Fortigate_fw: playbooks/library/fortigate-fw.md
+    - Glimps: playbooks/library/glimps.md
     - Google: playbooks/library/google.md
     - Git: playbooks/library/git.md
     - Http: playbooks/library/http.md
