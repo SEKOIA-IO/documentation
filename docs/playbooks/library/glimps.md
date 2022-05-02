@@ -120,7 +120,7 @@
 
 
 
-### Analyse a file
+### Analyze a file
 
 
 
