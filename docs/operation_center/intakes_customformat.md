@@ -1,10 +1,10 @@
 # Custom format
 
-SEKOIA.IO provides a list of intakes that allows you to integrate events from different applications and security appliances.
+SEKOIA.IO provides a list of intakes that allows you to integrate events from different sources such as systems, applications and security appliances.
 
-Some technologies may not have an associated Intake and therefore cannot be parsed in SEKOIA.IO
+Some technologies may not have an associated Intake in the official SEKOIA.IO catalog and therefore cannot be parsed in SEKOIA.IO.
 
-The Custom format feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the event page.
+The "Custom format" feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the Events page.
 
 !!!note
     In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your SEKOIA.IO account. This is also this permission that allows you to create an existing Intake. 
@@ -15,23 +15,23 @@ The Custom format feature allows you to easily develop your own Intake. It gives
 The creation of an empty Custom format is the first step to develop your own Intake.
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
 
-First of all, go to `Intakes`, `+ INTAKE` and select `Custom format` : 
+First of all, go to `Intakes`, `+ INTAKE` and select `Custom format`: 
 
 1. Write the name of your Intake
 2. Give a description for your Intake
-3. Select a module. A module is linked to a taxonomy in relation with your format which will help you to develop your parser. For instance, if you develop a custom format for a Fortinet product, you will choose the Fortinet module. If your module does not exist, just write the name of your module (name of the application or compagny if they have different products) and click on `Create`
-4. Select the data sources associated to your events. You can have severals ones. Data sources can be use when you want to deploy rules.
+3. Select a module. A module is linked to a taxonomy in relation with your format which will help you to develop your parser. For instance, if you develop a Custom format for a Fortinet product, you will choose the Fortinet module. If your module does not exist, just write the name of your module (name of the application or compagny if they have different products) and click on `Create`
+4. Select the data sources associated to your events. You can have multiple ones. Data sources can be use when you want to deploy rules.
 5. Click on `Save`
 
 ![SEKOIA.IO Custom format creation](../assets/operation_center/custom_format/create_custom_format.png){: style="max-width:150%}
 
 
 ### Panel overview
-The custom format panel is structured like this :
+The custom format panel is structured like this:
 
 1. Metadata information about your Intake
-2. The area where you can build your Intake with `Stages`
-3. A button to switch in `Expert mode` (yaml visualization of your Intake)
+2. An area where you can build your Intake with `Stages`
+3. A button to switch in `Expert mode` (YAML visualization of your Intake)
 4. A button to display the `Taxonomy manager`
 5. An area to test your Intake with an event sample.
 
@@ -39,11 +39,11 @@ The custom format panel is structured like this :
 
 ## Stages
 A Custom format consists in a sequence of stages organized under a pipeline that modifies the event on the fly.
-A stage is a parsing step that will have a specefic behaviour on the event.
+A stage is a parsing step that will have a specific behaviour on the event.
 The goal is to define a sequence of stages that will parse your events in the ECS format. 
 
 ### Common stages
-Common stages are provided by SEKOIA.IO to help you parse your events. There are currently 5 different common stages, each having its specifities :
+Common stages are provided by SEKOIA.IO to help you parse your events. There are currently 5 different common stages, each having its specifities:
 
 - [Json](#json-stage)
 - [Date](#date)
@@ -56,12 +56,12 @@ Common stages are provided by SEKOIA.IO to help you parse your events. There are
 ![SEKOIA.IO Json stage](../assets/operation_center/custom_format/json_stage.png){: style="max-width:100%"}
 
 The JSON stage can be used to deserialize a JSON from a string.
-You will need the provide :
+You will need to provide the stage with:
 
-- `Name`
-- `Description` (optional)
-- `Input_field` - It corresponds to the entry of the stage. It corresponds to the field you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
-- `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a JSON field.
+- A `Name`
+- A `Description` (optional)
+- An `Input_field` - As its name suggests it is the entry of the stage, it corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your logs will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+- An `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a JSON field.
 
 **Example**
 
@@ -69,9 +69,10 @@ In the following event, a JSON is present in the `message` field. The JSON stage
 
 ```json
 {
-  "message": "{'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}"
+  "protocol":"tcp","traffic":{"source":"127.0.0.1","target":"8.8.8.8"}
 }
 ```
+
 To get the reference of the source IP in another stage, we will use the reference `{{stage1.message.traffic.source}}`
 
 - `stage1` is the name of the JSON stage
@@ -81,27 +82,25 @@ To get the reference of the source IP in another stage, we will use the referenc
 #### Key Value
 ![SEKOIA.IO Key Value stage](../assets/operation_center/custom_format/kv_stage.png){: style="max-width:100%"}
 
-The Key-Value stage can be used to deserialize a key-value string.
-You will need to provide :
+The Key-Value stage can be used to deserialize a Key-Value string.
+You will need to provide the stage with:
 
- - `Name`
- - `Description` (optional)
- - `Input_field` - It corresponds to the entry of the stage. It corresponds to the field you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
- - `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a value corresponding to a key.
- - `Value Separator` - It is the separator that differentiates the key from the value. It it set to `=` by default. 
- - `Item Separator` - It is the separator that differentiates two different key-value. The default separator is `\s` which means a whitespace character.
+ - A `Name`
+ - A `Description` (optional)
+ - An `Input_field` -  As its name suggests it is the entry of the stage, it corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+ - An `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a value corresponding to a key.
+ - A `Value Separator` - It is the separator that differentiates the key from the value. It it set to `=` by default. 
+ - An `Item Separator` - It is the separator that differentiates two different key-value. The default separator is `\s` which means a whitespace character.
 
 **Example**
 
 In the following event, a key-value string is present in the `message` field. The Key-Value Stage can be used to get all information we need.
 
-```json
-{
-  "message": "to=john.doe@example.com, relay=mail.isp.com, delay=xxx, delays=xxx, dsn=2.0.0, status=sent (250 2.0.0 OK)"
-}
+```
+to=john.doe@example.com, relay=mail.isp.com, delay=xxx, delays=xxx, dsn=2.0.0, status=sent (250 2.0.0 OK)
 ```
 
-With `Value Separator: "="` and `Item Separator: ",\s"`, the log can be parsed. To get for example the relay, we will use the reference `{{stage1.message.relay}}`
+With `Value Separator: "="` and `Item Separator: ",\s"`, the log can be parsed. To get for example the relay value, we will use the reference `{{stage1.message.relay}}`
 
 - `stage1` is the name of the Key-Value stage
 - `message` is the name of the `Output_field`
@@ -114,13 +113,13 @@ The Grok stage can be used to match a field against a Grok pattern. Grok is a to
 You can find more information about Grok in the [official documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html).
 The list of all the Grok patterns that can be used can be found [here](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns)
 
-For this stage, you will need to provide :
+You will need to provide the stage with:
 
-- `Input_field` - It corresponds to the entry of the stage. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
-- `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a value corresponding to a key.
-- `Pattern` - It is the Grok pattern you want to apply.
-- `Custom Patterns` - If no Grok pattern satisfies you in this [list](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns), you can create your own custom patterns.
-On the left column, write the name of your pattern. On the right column, write the regex corresponding to that pattern.  
+- An `Input_field` -  As its name suggests it is the entry of the stage, it corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+- An `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a value corresponding to a key.
+- A `Pattern` - It is the Grok pattern you want to apply.
+- A `Custom Patterns` - If no Grok pattern satisfies you in this [list](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns), you can create your own custom patterns with the `+` button on the right of the line. Then, on the left column, write the name of your pattern. On the right column, write the regex corresponding to that pattern.  
+
 **Example** : 
 ![Grok custom pattern](../assets/operation_center/custom_format/grok_custom_pattern.png)  
 In this example, the pattern `SSHD_MESSAGE_ILLEGAL_USER` will match the strings `Illegal user` or `illegal user`.  
@@ -130,10 +129,8 @@ In this example, the pattern `SSHD_MESSAGE_ILLEGAL_USER` will match the strings 
 
 In the following event, a Grok Stage can be used to parse the event.
 
-```json
-{
-  "message": "64.3.89.2 took 300 ms"
-}
+```
+64.3.89.2 took 300 ms
 ```
 
 If we want to parse the IP and the time in milliseconds, the following Pattern can be used :
@@ -142,40 +139,43 @@ If we want to parse the IP and the time in milliseconds, the following Pattern c
 To get the IP in a next stage, we will then use the reference `{{stage1.message.client}}`.  
 To get the duration, we will use `{{stage1.message.duration}}`.
 
+!!! note
+    The pattern should take into account every singe character of your event. From the first one to the last. 
+
 #### Date
 ![SEKOIA.IO Date stage](../assets/operation_center/custom_format/date_stage.png){: style="max-width:100%"}
 
 
 The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601 which is the format used by SEKOIA.IO. This stage accepts, as optional properties, the format to parse the date (by default, the stage try to autodetect the format) and the IANA timezone of the parsed date (by default, "UTC").
 
-You will need to provide :
+You will need to provide the stage with:
 
- - `Name`
- - `Description` (optional)
- - `Input_field` - It corresponds to the is the entry of the stage. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
+ - A `Name`
+ - A `Description` (optional)
+ - An `Input_field` - As its name suggests it is the entry of the stage, it corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
 `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
- - `Output_field` - is the output of the stage. It will be used in next stages to get the output value.
- - `Format` (optional) - You can specify the format of the date. By default, the stage try to autodetect the format.
- - `Timezone` (optional) - You can specify the timezone of the date. It is set to `UTC` by default.
+ - An `Output_field` - is the output of the stage. It will be used in next stages to get the output value.
+ - A `Format` (optional) - You can specify the format of the date. By default, the stage try to autodetect the format.
+ - A `Timezone` (optional) - You can specify the timezone of the date. It is set to `UTC` by default.
 
 **Exemple**
 
 In the following event, a Date stage can be used to parse the field.
 
-```json
+```
 {
-  "date": "May 21, 2021 at 11:04:35"
+May 21, 2021 at 11:04:35
 }
 ```
 
-One can configure the stage as follow :
+One can configure the stage as follow:
 
-- `Input_field: {{original.date}}`
-- `output_field: date`
-- `format: %MMM %dd, %yyyy at %hh:%mm:%ss`
-- `timezone: UTC`
+- Input_field: `{{original.date}}`
+- Output_field: `date`
+- Format: `%MMM %dd, %yyyy at %hh:%mm:%ss`
+- Timezone: `UTC`
 
-To get the date parsed in a next stage, we will then use the reference `{{stage1.date}}`. The output will be `2021-05-21T11:04:35Z` (ISO 8601).
+To get the date parsed in a next stage, you will then use the reference `{{stage1.date}}`. The output will be `2021-05-21T11:04:35Z` (ISO 8601).
 
 
 #### Delimiter Separated Values
@@ -183,11 +183,11 @@ To get the date parsed in a next stage, we will then use the reference `{{stage1
 
 The Delimiter Separated Values stage can be used to extract values from a delimiter-separated values string. This stage needs the list of columns and, as optional, the delimiter (by default, the delimiter is the comma ',').
 
-You will need to provide :
+You will need to provide the stage with:
 
- - `Name`
- - `Description` (optional)
- - `Input_field` - It corresponds to the is the entry of the stage. It corresponds to the field you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
+ - A `Name`
+ - A `Description` (optional)
+ - `Input_field` - As its name suggests it is the entry of the stage, it corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
 `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
  - `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a value corresponding to a key.
  - `Column Names` - You need to list the column names used to retrieve information. The format has to be the following : `<column_A>,<column_B>,<column_C>...`
@@ -197,17 +197,15 @@ You will need to provide :
 
 In the following event, a DSV stage can be used to parse the `message` field.
 
-```json
-{
-  "message": "2020/12/04 16:47:48;LOGIN;jenkins;2305"
-}
+```
+2020/12/04 16:47:48;LOGIN;jenkins;2305
 ```
 
-We can configure the stage as follow : 
-- `Input_field: {{original.message}}`
-- `Output_field: message`
-- `Column Names: date,action,username,user_id`
-- `Delimiter: ;`
+One can configure the stage as follow: 
+- Input_field: `{{original.message}}`
+- Output_field: `message`
+- Column Names: `date;action;username;user_id`
+- Delimiter: `;`
 
 To get for instance the `user_id` in a next stage, we will use `{{stage1.message.user_id}}`
 
