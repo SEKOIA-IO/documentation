@@ -56,6 +56,7 @@ Common stages are provided by SEKOIA.IO to help you parse your events. There are
 ![SEKOIA.IO Json stage](../assets/operation_center/custom_format/json_stage.png){: style="max-width:100%"}
 
 The JSON stage can be used to deserialize a JSON from a string.
+
 You will need to provide the stage with:
 
 - A `Name`
@@ -120,7 +121,8 @@ You will need to provide the stage with:
 - A `Pattern` - It is the Grok pattern you want to apply.
 - A `Custom Patterns` - If no Grok pattern satisfies you in this [list](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns), you can create your own custom patterns with the `+` button on the right of the line. Then, on the left column, write the name of your pattern. On the right column, write the regex corresponding to that pattern.  
 
-**Example** : 
+**Example**
+
 ![Grok custom pattern](../assets/operation_center/custom_format/grok_custom_pattern.png)  
 In this example, the pattern `SSHD_MESSAGE_ILLEGAL_USER` will match the strings `Illegal user` or `illegal user`.  
 
@@ -163,9 +165,7 @@ You will need to provide the stage with:
 In the following event, a Date stage can be used to parse the field.
 
 ```
-{
 May 21, 2021 at 11:04:35
-}
 ```
 
 One can configure the stage as follow:
@@ -187,11 +187,11 @@ You will need to provide the stage with:
 
  - A `Name`
  - A `Description` (optional)
- - `Input_field` - As its name suggests it is the entry of the stage, it corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
+ - An `Input_field` - As its name suggests it is the entry of the stage, it corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
 `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
- - `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a value corresponding to a key.
- - `Column Names` - You need to list the column names used to retrieve information. The format has to be the following : `<column_A>,<column_B>,<column_C>...`
- - `Delimiter` - The delimiter used to differenciate two columns (By default `,`).
+ - An `Output_field` - It corresponds to the output of the stage. It will be used in next stages to get a value corresponding to a key.
+ - A `Column Names` - You need to list the column names used to retrieve information. The format has to be the following : `<column_A>,<column_B>,<column_C>...`
+ - A `Delimiter` - The delimiter used to differenciate two columns (By default `,`).
 
 **Example**
 
@@ -202,6 +202,7 @@ In the following event, a DSV stage can be used to parse the `message` field.
 ```
 
 One can configure the stage as follow: 
+
 - Input_field: `{{original.message}}`
 - Output_field: `message`
 - Column Names: `date;action;username;user_id`
@@ -358,27 +359,32 @@ To identify the type, we can use a `Grok` stage :
 
 This pattern will extract :
 
-- The type in the field `{{parse_type.message.type}}`
-- The JSON in the field `{{parse_type.message.jsondata}}` 
+- The "type" in the field `{{parse_type.message.type}}`
+- The "JSON" in the field `{{parse_type.message.jsondata}}` 
 
 
 #### Parse the JSON
+
 To parse the JSON, we will use a `JSON` stage:
 ![SEKOIA.IO Solution JSON stage](../assets/operation_center/custom_format/exercice_json_stage.png){: style="max-width:100%"}
 
 #### Parse the date of the event
+
 To parse the date of the event, we will use a `Date` stage:
 ![SEKOIA.IO Solution Date stage](../assets/operation_center/custom_format/exercice_date_stage.png){: style="max-width:100%"}
 
 #### Set the fields in ECS for traffic logs
-Now that everything is parsed, we can use a custom stage to set the values in ECS for traffic logs :
+
+Now that everything is parsed, we can use a "Custom stage" to set the values in ECS for traffic logs:
 ![SEKOIA.IO Solution set traffic stage](../assets/operation_center/custom_format/exercice_set_traffic.png){: style="max-width:100%"}
 
 #### Set the fields in ECS for audit logs
-We can use a custom stage to set the values in ECS for audit logs :
+
+We can use a custom stage to set the values in ECS for audit logs:
 ![SEKOIA.IO Solution set audit stage](../assets/operation_center/custom_format/exercice_set_audit.png){: style="max-width:100%"}
 
 #### Results
+
 With the `Test your parser` feature, you can see the results.  
 
 **Traffic event**:
