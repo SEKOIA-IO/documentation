@@ -276,7 +276,7 @@ The following action will delete the fields `source.ip` and `destination.ip` fro
 
 Reference to a field can be extended with filters.
 Filters are separated from the field path by a pipe symbol (|).
-Multiple filters can be chained. The output of a filter is applied to the next.
+Multiple filters can be chained.
 
 **Example**
 
@@ -297,6 +297,17 @@ The following built-in filters are available:
 |`min`| returns the smallest item from the variable
 |`strip`| returns the variable removed from heading and leading whitespaces
 |`upper`| returns the value all uppercase
+
+## Conditions
+The structure of events often varies depending on certain conditions such as the type of data (network, audit, security...) and it can be interesting to set up stages that only run when certain conditions are met.  
+This feature is called `Filter` too but applies to a block. It should not be confused with [filters](#filters) that apply to a field.
+
+**Example**
+
+You want to run the stage `set_stage` when the value of the `type` field is equal to `network`
+You can then use this filter :
+![SEKOIA.IO Condition example](../assets/operation_center/custom_format/conditions_example.png)
+
 
 ## Taxonomy manager
 A taxonomy is a hierarchical schema used to normalize events. The taxonomy used by SEKOIA.IO is the ECS standard (Elastic Common Schema).
@@ -322,7 +333,7 @@ Let's suppose you want to develop a custom format for a firewall solution. This 
 
 Traffic events are structed like this :
 ```bash
-traffic logs: {"date": "1651507525", "status": "accept" ,"traffic": {"sourceip": "1.1.1.1", "destinationip": "2.2.2.2", "srcport": 50436, "dstport": 443}}
+traffic logs: {"date": "1651507525", "traffic": {"sourceip": "1.1.1.1", "destinationip": "2.2.2.2", "srcport": 50436, "dstport": 443}}
 ```
 
 Audit events are structured like this :
@@ -362,10 +373,18 @@ To parse the date of the event, we will use a `Date` stage:
 ![SEKOIA.IO Solution Date stage](../assets/operation_center/custom_format/exercice_date_stage.png){: style="max-width:100%"}
 
 #### Set the fields in ECS for traffic logs
-Now that everything is parsed, we can use a custom stage to set the values in ECS :
+Now that everything is parsed, we can use a custom stage to set the values in ECS for traffic logs :
 ![SEKOIA.IO Solution set traffic stage](../assets/operation_center/custom_format/exercice_set_traffic.png){: style="max-width:100%"}
 
+#### Set the fields in ECS for audit logs
+We can use a custom stage to set the values in ECS for audit logs :
+![SEKOIA.IO Solution set audit stage](../assets/operation_center/custom_format/exercice_set_audit.png){: style="max-width:100%"}
+
 #### Results
-With the `Test your parser` feature, you can see the result.  
-**Traffic events** :
+With the `Test your parser` feature, you can see the results.  
+**Traffic event**:
+
 ![SEKOIA.IO Solution result traffic](../assets/operation_center/custom_format/exercice_result_traffic.png){: style="max-width:60%"}
+
+**Audit event**:
+![SEKOIA.IO Solution result audit](../assets/operation_center/custom_format/exercice_result_audit.png){: style="max-width:60%"}
