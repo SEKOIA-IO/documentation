@@ -228,18 +228,18 @@ The value corresponding to the field you want to set can either be a constant (f
 
 **Example**
 
-The JSON stage :
+The JSON stage:
 
-- `Name: parsed_json`
-- `Output_field: message` 
+- Name: `parsed_json`
+- Output_field: `message` 
 
-was previously used to parse the following event : 
-```json
-{
-  "message": "{'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}"
-}
+was previously used to parse the following event: 
 ```
+{'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}
+```
+
 We now want to put the `source` and the `target` IP in the final version of the parsed event.
+
 The `Set` action can be used :
 
 ![SEKOIA.IO Set example](../assets/operation_center/custom_format/set_example.png){: style="max-width:100%"}
@@ -250,14 +250,14 @@ The `Set` action can be used :
 ![SEKOIA.IO Set action](../assets/operation_center/custom_format/translate_action.png){: style="max-width:100%"}
 
 The `Translate` action sets value of one or more fields according to the value of a source field and a dictionary that connect values.
-An optional `fallback` value can be defined. If the value of the source field doesn't match any entry of the mapping dictionary, the fallback value will be used to set the target field. If no fallback value is defined and the value of the source field doesn't match any entries, the target field will not be created in the final event.
+An optional "fallback" value can be defined. If the value of the source field doesn't match any entry of the mapping dictionary, the fallback value will be used to set the target field. If no fallback value is defined and the value of the source field doesn't match any entries, the target field will not be created in the final event.
 
 **Example**
 
 We want to set the value of `http.response.status_message` according to the value `http.response.status_code` and a dictionary.
 `http.response.status_code` contains only status codes values.
 
-We can define a `Translate` action with the following parameters :
+We can define a `Translate` action with the following parameters:
 ![SEKOIA.IO Set action](../assets/operation_center/custom_format/translate_example.png){: style="max-width:100%"}
 
 #### Delete
@@ -314,27 +314,27 @@ If a field in an event is custom to the technology and cannot be placed in any f
 !!! note
     By convention, the name of the field must start with the name of your intake followed by the field name.
 
-**Example** :
+**Example**
 
 The product `technoexample` has a field called `environment` which is custom to this technology and does not exist in ECS. With the taxonomy manager, you can create a custom field
 `technoexample.environment`. This field will then be available in the [Custom Stage](#custom-stage)
 ![SEKOIA.IO Taxonomy custom field](../assets/operation_center/custom_format/taxonomy_custom_field.png)
 
-## Example
-You now have all the knowledge to start developping your custom Intake ! You can follow this example that uses different notions explained before.
+## Practical example
+You now have all the knowledge to start developping your custom Intake! You can follow this example that uses different notions explained before.
 
 ### Context
-Let's suppose you want to develop a custom format for a firewall solution. This firewall creates two types of events :
+Let's suppose you want to develop a Custom format for a firewall solution. This firewall creates two types of events:
 
 - Traffic events
 - Audit events (When a user logs in to the device)
 
-Traffic events are structed like this :
+Traffic events are structed like this:
 ```bash
 traffic logs: {"date": "1651507525", "traffic": {"sourceip": "1.1.1.1", "destinationip": "2.2.2.2", "srcport": 50436, "dstport": 443}}
 ```
 
-Audit events are structured like this :
+Audit events are structured like this:
 ```bash
 audit logs: {"date": "1651507525", "username": "john", "role": "administrator", "status": "connect"}
 ```
@@ -350,7 +350,7 @@ For our Intake, we will need :
 - a `Grok` stage to parse the start of each event and identify the type (Audit or Traffic)
 - At least one `Date` stage to parse to `date` field in epoch format and converts it in ISO 8601
 
-Let's get into it !
+Let's get into it!
 
 #### Identify the type of event
 To identify the type, we can use a `Grok` stage :
@@ -380,8 +380,8 @@ We can use a custom stage to set the values in ECS for audit logs :
 
 #### Results
 With the `Test your parser` feature, you can see the results.  
-**Traffic event**:
 
+**Traffic event**:
 ![SEKOIA.IO Solution result traffic](../assets/operation_center/custom_format/exercice_result_traffic.png){: style="max-width:60%"}
 
 **Audit event**:
