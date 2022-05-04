@@ -15,7 +15,8 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 The creation of an empty Custom format is the first step to develop your own Intake.
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
 
-To create an empty custom format: 
+To create an empty custom format:
+
 1. Go to `Intakes`, `+ INTAKE` and select `Custom format`
 2. Write the name of your Intake
 3. Give a description for your Intake
@@ -23,7 +24,7 @@ To create an empty custom format:
 5. Select the data sources associated to your events. You can have multiple ones. Data sources can be use when you want to deploy rules.
 6. Click on `Save`
 
-![SEKOIA.IO Custom format creation](../assets/operation_center/custom_format/create_custom_format.png){: style="max-width:150%}
+![SEKOIA.IO Custom format creation](../assets/operation_center/custom_format/create_custom_format.png){: style="max-width:100%}
 
 
 ### Panel overview
@@ -35,12 +36,72 @@ The custom format panel is structured like this:
 4. A button to display the `Taxonomy manager`
 5. An area to test your Intake with an event sample.
 
-![SEKOIA.IO Custom format Panel Overview](../assets/operation_center/custom_format/panel_overview.png){: style="max-width:150%}
+![SEKOIA.IO Custom format Panel Overview](../assets/operation_center/custom_format/panel_overview.png){: style="max-width:100%}
 
 ## Stages
 A Custom format consists of a sequence of stages organized under a pipeline that modifies the event on the fly.
 A stage is a parsing step that will have a specific behaviour on the event.
 The goal is to define a sequence of stages that will parse your events in the ECS format. 
+
+### Custom stage
+
+The custom stage is used to create actions. An action is an elementary operation that can `set`, `translate` or `delete` a field.
+!!! Important
+    While the [Common stages](#common-stages) are used to extract fields from your logs, this stage must be present in every intake to set the extracted fields in the ECS format expected by SEKOIA.IO.
+
+#### Set
+![SEKOIA.IO Set action](../assets/operation_center/custom_format/set_action.png){: style="max-width:100%"}
+
+This action is used to set the value of one field in the ECS format in the final version of the event.
+
+The value corresponding to the field you want to set can either be a constant (for instance `my-constant`, `10` ...) or a reference to a field from a stage (for instance `{{stage1.message.myfield.subfield}}`).
+
+!!! note
+    If the value cannot be computed or is empty, the field is not modified.
+
+**Example**
+
+The JSON stage:
+
+- Name: `parsed_json`
+- Output_field: `message` 
+
+was previously used to parse the following event: 
+```
+{'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}
+```
+
+To put the `source` and the `target` IP in the final version of the parsed event, the `Set` action can be used:
+
+![SEKOIA.IO Set example](../assets/operation_center/custom_format/set_example.png){: style="max-width:100%"}
+
+`source.ip` and `destination.ip` are the fields used in Elastic Common Format taxonomy.
+
+#### Translate
+![SEKOIA.IO Set action](../assets/operation_center/custom_format/translate_action.png){: style="max-width:100%"}
+
+The `Translate` action sets value of one or more fields according to the value of a source field and a dictionary that connects values.
+An optional "fallback" value can be defined. 
+If the value of the source field does not match any entry of the mapping dictionary, the fallback value will be used to set the target field. 
+If no fallback value is defined and the value of the source field does not match any entries, the target field will not be created in the final event.
+
+**Example**
+
+You want to set the value of `http.response.status_message` according to the value `http.response.status_code` and a dictionary.
+`http.response.status_code` contains only status codes values.
+
+You can define a `Translate` action with the following parameters:
+![SEKOIA.IO Set action](../assets/operation_center/custom_format/translate_example.png){: style="max-width:100%"}
+
+#### Delete
+![SEKOIA.IO Delete action](../assets/operation_center/custom_format/delete_action.png){: style="max-width:100%"}
+
+The `Delete` action allows you to delete fields in the final version of the event.
+
+**Example**
+
+The following action will delete the fields `source.ip` and `destination.ip` from the final event.
+![SEKOIA.IO Delete action](../assets/operation_center/custom_format/delete_example.png){: style="max-width:100%"}
 
 ### Common stages
 Common stages are provided by SEKOIA.IO to help you parse your events. There are currently 5 different common stages, each having its specifities:
@@ -205,75 +266,12 @@ You can configure the stage as follow:
 
 - Input_field: `{{original.message}}`
 - Output_field: `message`
-- Column Names: `date;action;username;user_id`
+- Column Names: `date,action,username,user_id`
 - Delimiter: `;`
 
 To get for instance the `user_id` in a next stage, you can use `{{stage1.message.user_id}}`
 
-
-### Custom stage
-
-The custom stage is used to create actions. An action is an elementary operation that can `set`, `translate` or `delete` a field.
-!!! Important
-    While the "Common stages" are used to extract fields from your logs, this stage must be present in every intake to set the extracted fields in the ECS format expected by SEKOIA.IO.
-
-#### Set
-![SEKOIA.IO Set action](../assets/operation_center/custom_format/set_action.png){: style="max-width:100%"}
-
-This action is used to set the value of one field in the ECS format in the final version of the event.
-
-The value corresponding to the field you want to set can either be a constant (for instance `my-constant`, `10` ...) or a reference to a field from a stage (for instance `{{stage1.message.myfield.subfield}}`).
-
-!!! note
-    If the value cannot be computed or is empty, the field is not modified.
-
-**Example**
-
-The JSON stage:
-
-- Name: `parsed_json`
-- Output_field: `message` 
-
-was previously used to parse the following event: 
-```
-{'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}
-```
-
-You will want to put the `source` and the `target` IP in the final version of the parsed event.
-
-The `Set` action can be used:
-
-![SEKOIA.IO Set example](../assets/operation_center/custom_format/set_example.png){: style="max-width:100%"}
-
-`source.ip` and `destination.ip` are the fields used in Elastic Common Format taxonomy.
-
-#### Translate
-![SEKOIA.IO Set action](../assets/operation_center/custom_format/translate_action.png){: style="max-width:100%"}
-
-The `Translate` action sets value of one or more fields according to the value of a source field and a dictionary that connects values.
-An optional "fallback" value can be defined. 
-If the value of the source field does not match any entry of the mapping dictionary, the fallback value will be used to set the target field. 
-If no fallback value is defined and the value of the source field does not match any entries, the target field will not be created in the final event.
-
-**Example**
-
-You want to set the value of `http.response.status_message` according to the value `http.response.status_code` and a dictionary.
-`http.response.status_code` contains only status codes values.
-
-You can define a `Translate` action with the following parameters:
-![SEKOIA.IO Set action](../assets/operation_center/custom_format/translate_example.png){: style="max-width:100%"}
-
-#### Delete
-![SEKOIA.IO Delete action](../assets/operation_center/custom_format/delete_action.png){: style="max-width:100%"}
-
-The `Delete` action allows you to delete fields in the final version of the event.
-
-**Example**
-
-The following action will delete the fields `source.ip` and `destination.ip` from the final event.
-![SEKOIA.IO Delete action](../assets/operation_center/custom_format/delete_example.png){: style="max-width:100%"}
-
-### Filters
+## Filters
 
 Reference to a field can be extended with filters.
 Filters are separated from the field path by a pipe symbol (|).
@@ -355,8 +353,9 @@ For our Intake, we will need :
 Let's get into it!
 
 #### Identify the type of event
-To identify the type, we can use a `Grok` stage :
-![SEKOIA.IO Solution Grok stage](../assets/operation_center/custom_format/exercice_grok_stage.png)
+To identify the type, we can use a `Grok` stage with the following pattern:  
+`^%{WORD:type} logs: %{DATA:jsondata}$`
+![SEKOIA.IO Solution Grok stage](../assets/operation_center/custom_format/exercice_grok_stage.png){: style="max-width:100%"}
 
 This pattern will extract :
 
