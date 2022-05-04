@@ -266,7 +266,7 @@ You can configure the stage as follow:
 
 - Input_field: `{{original.message}}`
 - Output_field: `message`
-- Column Names: `date,action,username,user_id`
+- Column Names: `date;action;username;user_id`
 - Delimiter: `;`
 
 To get for instance the `user_id` in a next stage, you can use `{{stage1.message.user_id}}`
