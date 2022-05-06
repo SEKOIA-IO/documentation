@@ -31,3 +31,13 @@ structured_log = {"key": "value"}
 content = {"intake_key": "YOUR_INTAKE_KEY", "json": json.dumps(structured_log)}
 requests.post("https://intake.sekoia.io", json=content)
 ```
+
+For numerous events, you can use the alternative endpoint `/batch`. This endpoint accepts a set of events:
+
+```python
+import requests
+
+content = {"intake_key": "YOUR_INTAKE_KEY", "jsons": ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]}
+requests.post("https://intake.sekoia.io/batch", json=content)
+```
+
