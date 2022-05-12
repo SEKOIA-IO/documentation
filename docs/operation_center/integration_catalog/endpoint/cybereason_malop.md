@@ -4,9 +4,9 @@ type: intake
 
 ## Overview
 
-CybeReason offer a set of Endpoint Detection and Response (EDR) solutions. Through the CybeReason platform, all suspicious operations will be gather in MalOps, multi-stage visualizations of devices activities.
+CybeReason offers a set of Endpoint Detection and Response (EDR) solutions. Through the CybeReason platform, all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
 
-Please find bellow information available in MalOp activities:
+Please find below information available in MalOp activities:
 
 - the list of affected machines
 - the list of affected users
@@ -21,12 +21,12 @@ This setup guide shows how to forward all MalOp activities to SEKOIA.IO.
 
 ### Create your intake
 
-On SEKOIA.IO, go on the intake page and generate a new intake with the `CybeReason MalOp` format.
+On SEKOIA.IO, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `CybeReason MalOp` format.
 Keep aside the intake key.
 
 ### Setup the Syslog collector
 
-Please, consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to install and to set up the syslog collector.
+Check the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to install and set up the syslog collector.
 
 ### Setup the CybeReason CEF Forwarder
 
