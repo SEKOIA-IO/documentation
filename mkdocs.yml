@@ -70,6 +70,7 @@ nav:
       - Vade for M365: operation_center/integration_catalog/email/vade.md
     - Endpoint:
       - Auditbeat Linux: operation_center/integration_catalog/endpoint/auditbeat_linux.md
+      - CybeReason MalOp: operation_center/integration_catalog/endpoint/cybereason_malop.md
       - HarfangLab: operation_center/integration_catalog/endpoint/harfanglab.md
       - Linux: operation_center/integration_catalog/endpoint/linux.md
       - Panda Security Aether: operation_center/integration_catalog/endpoint/panda_security_aether.md
