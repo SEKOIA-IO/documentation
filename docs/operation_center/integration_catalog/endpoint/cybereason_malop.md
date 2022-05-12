@@ -46,4 +46,4 @@ $ cybereason-forwarders/scripts/run_forwarder.sh config/<my new configuration>.j
 
 ### Enjoy your events
 
-Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
+Go to the [Events page](https://app.sekoia.io/operations/events) and wait for your incoming events! 
