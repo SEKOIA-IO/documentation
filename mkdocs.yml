@@ -126,6 +126,11 @@ nav:
     - Graph Explorations: intelligence_center/graph_explorations.md
     - Observables: intelligence_center/observables.md
     - Data Export: intelligence_center/data_export.md
+- SEKOIA.IO TIP:
+  - Overview: TIP/index.md
+  - Content Proposals: TIP/content_proposals.md
+  - Warning Rules: TIP/warning_rules.md
+  - Expiration Rules: TIP/expiration_rules.md
 - User Center:
   - Overview: user_center/index.md
   - Account Settings: user_center/account_settings.md
