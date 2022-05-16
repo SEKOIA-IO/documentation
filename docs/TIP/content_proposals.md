@@ -8,24 +8,24 @@ The Content Proposals homepage lists all the contributions and suggestions made 
 
 There are two types of content proposals: 
 
-- CPs that are manually made by analysts
-- CPs that are automatically pushed by playbooks
+- CPs that are **manually** made by analysts
+- CPs that are **automatically** pushed by playbooks
 
 ### Content Proposals statuses
 
 A Content Proposal has three possible statuses. You can filter your CPs by status by clicking on one of the tabs. 
 
-- Pending: the CPs are still being updated and have not been merged yet
-- Merged: the CPs have been approved and their content is now part of the CTI database
-- Rejected: the CPs have been rejected and their content has not been deployed in the database
+- **Pending**: the CPs are still being updated and have not been merged yet
+- **Merged**: the CPs have been approved and their content is now part of the CTI database
+- **Rejected**: the CPs have been rejected and their content has not been deployed in the database
 
 ### Available filters on Content Proposals
 
 You can also filter your content proposals based on different filters: 
 
-- The source of the CP
-- The assigned analyst in charge of the CP
-- The reviewed assigned to the CP
+- The **source** of the CP
+- The **assigned analyst** in charge of the CP
+- The **reviewed assigned** to the CP
 
 Each Content Proposal can be assigned to a member of your team and a reviewer. 
 
