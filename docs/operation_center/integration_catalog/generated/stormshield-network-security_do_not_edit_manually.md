@@ -394,6 +394,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`stormshield.dstportname` | `keyword` | None |
 |`stormshield.filter.action` | `keyword` | None |
 |`stormshield.logtype` | `keyword` | None |
+|`stormshield.scirep` | `keyword` |  |
 |`stormshield.slotlevel` | `float` | None |
 |`stormshield.srcportname` | `keyword` | None |
 

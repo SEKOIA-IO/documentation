@@ -1142,7 +1142,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.hash.md5` | `keyword` | MD5 hash. |
 |`process.hash.sha1` | `keyword` | SHA1 hash. |
 |`process.hash.sha256` | `keyword` | SHA256 hash. |
-|`process.hash.sha384` | `keyword` | SHA384 hash. |
+|`process.hash.sha384` | `keyword` |  |
 |`process.hash.sha512` | `keyword` | SHA512 hash. |
 |`process.name` | `keyword` | Process name. |
 |`process.parent.command_line` | `wildcard` | Full command line that started the process. |
