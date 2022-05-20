@@ -1,3 +1,5 @@
+Bonjour tout le monde.
+
 # SEKOIA.IO Documentation
 
 The documentation service exposes both the user and the developper documentation to the public. The content is managed by SEKOIA.IO teams but the community is invited to participate in its improvements.
