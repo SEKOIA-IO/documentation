@@ -1592,7 +1592,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`auditd.data.new-range` | `keyword` | None |
 |`auditd.data.new-rng` | `keyword` | None |
 |`auditd.data.new-role` | `keyword` | None |
-|`auditd.data.new-seuser` | `keyword` | None |
 |`auditd.data.new-vcpu` | `keyword` | None |
 |`auditd.data.new_gid` | `keyword` | None |
 |`auditd.data.new_lock` | `keyword` | None |
@@ -1700,6 +1699,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`auditd.summary.object.primary` | `keyword` | None |
 |`auditd.summary.object.secondary` | `keyword` | None |
 |`auditd.summary.object.type` | `keyword` | None |
+|`auditd.user.group.id` | `keyword` |  |
 |`auditd.user.saved.group.id` | `keyword` | None |
 |`auditd.user.saved.group.name` | `keyword` | None |
 |`auditd.user.saved.id` | `keyword` | None |
@@ -2032,8 +2032,18 @@ The following table lists the fields that are extracted, normalized under the EC
 |`host.os.version` | `keyword` | Operating system version as a raw string. |
 |`host.type` | `keyword` | Type of host. |
 |`host.uptime` | `long` | Seconds the host has been up. |
+|`host.user.domain` | `keyword` |  |
+|`host.user.email` | `keyword` |  |
+|`host.user.full_name` | `keyword` |  |
 |`host.user.full_name.text` | `text` | None |
+|`host.user.group.domain` | `keyword` |  |
+|`host.user.group.id` | `keyword` |  |
+|`host.user.group.name` | `keyword` |  |
+|`host.user.hash` | `keyword` |  |
+|`host.user.id` | `keyword` |  |
+|`host.user.name` | `keyword` |  |
 |`host.user.name.text` | `text` | None |
+|`host.user.roles` | `keyword` |  |
 |`http.request.body.bytes` | `long` | Size in bytes of the request body. |
 |`http.request.body.content` | `wildcard` | The full HTTP request body. |
 |`http.request.body.content.text` | `text` | None |
@@ -2565,6 +2575,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`user.name` | `keyword` | Short name or login of the user. |
 |`user.name.text` | `text` | None |
 |`user.roles` | `keyword` | Array of user roles at the time of the event. |
+|`user.saved.group.id` | `keyword` |  |
 |`user.selinux.category` | `keyword` | None |
 |`user.selinux.domain` | `keyword` | None |
 |`user.selinux.level` | `keyword` | None |

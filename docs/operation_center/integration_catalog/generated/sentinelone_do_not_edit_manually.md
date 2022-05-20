@@ -2526,6 +2526,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.createdAt` | `keyword` | None |
 |`sentinelone.data.accountName` | `keyword` | None |
 |`sentinelone.data.action` | `keyword` | None |
+|`sentinelone.data.activatedEngines` | `keyword` |  |
 |`sentinelone.data.agentipv4` | `keyword` | None |
 |`sentinelone.data.alertId` | `long` | None |
 |`sentinelone.data.alertid` | `long` | None |
@@ -2538,6 +2539,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.createdAt` | `keyword` | None |
 |`sentinelone.data.createdByUsername` | `keyword` | None |
 |`sentinelone.data.creator` | `keyword` | None |
+|`sentinelone.data.current` | `keyword` |  |
+|`sentinelone.data.deactivatedEngines` | `keyword` |  |
 |`sentinelone.data.deactivationPeriodInDays` | `keyword` | None |
 |`sentinelone.data.detectedat` | `long` | None |
 |`sentinelone.data.deviceClass` | `keyword` | None |
@@ -2559,6 +2562,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.eventTime` | `keyword` | None |
 |`sentinelone.data.eventType` | `keyword` | None |
 |`sentinelone.data.exclusionType` | `keyword` | None |
+|`sentinelone.data.expiration` | `keyword` |  |
 |`sentinelone.data.externalIp` | `keyword` | None |
 |`sentinelone.data.externalip` | `keyword` | None |
 |`sentinelone.data.fileContentHash` | `keyword` | None |
@@ -2602,6 +2606,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.logintype` | `keyword` | None |
 |`sentinelone.data.manufacturerName` | `keyword` | None |
 |`sentinelone.data.minorClass` | `keyword` | None |
+|`sentinelone.data.minorClasses` | `keyword` |  |
 |`sentinelone.data.modulepath` | `keyword` | None |
 |`sentinelone.data.modulesha1` | `keyword` | None |
 |`sentinelone.data.neteventdirection` | `keyword` | None |
@@ -2624,6 +2629,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.osType` | `keyword` | None |
 |`sentinelone.data.osTypes` | `keyword` | None |
 |`sentinelone.data.physical` | `keyword` | None |
+|`sentinelone.data.policy` | `keyword` |  |
+|`sentinelone.data.policyName` | `keyword` |  |
+|`sentinelone.data.previous` | `keyword` |  |
 |`sentinelone.data.processId` | `int` | None |
 |`sentinelone.data.processName` | `keyword` | None |
 |`sentinelone.data.productId` | `keyword` | None |
@@ -2648,7 +2656,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.scopeId` | `long` | None |
 |`sentinelone.data.scopeLevel` | `keyword` | None |
 |`sentinelone.data.scopeName` | `keyword` | None |
+|`sentinelone.data.setting` | `keyword` |  |
 |`sentinelone.data.severity` | `keyword` | None |
+|`sentinelone.data.shouldReboot` | `keyword` |  |
 |`sentinelone.data.siteName` | `keyword` | None |
 |`sentinelone.data.source` | `keyword` | None |
 |`sentinelone.data.sourcename` | `keyword` | None |
@@ -2712,8 +2722,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.tiindicatortype` | `keyword` | None |
 |`sentinelone.data.tiindicatorvalue` | `keyword` | None |
 |`sentinelone.data.uid` | `keyword` | None |
+|`sentinelone.data.uploadedFilename` | `keyword` |  |
 |`sentinelone.data.userId` | `long` | None |
 |`sentinelone.data.userScope` | `keyword` | None |
+|`sentinelone.data.userscope` | `keyword` |  |
 |`sentinelone.data.uuid` | `keyword` | None |
 |`sentinelone.data.vendorId` | `long` | None |
 |`sentinelone.data.version` | `keyword` | None |
