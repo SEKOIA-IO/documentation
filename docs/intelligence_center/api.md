@@ -95,6 +95,14 @@ i.e. `GET v2/inthreat/collections/{feed_id}/objects?match[type]=indicator`
 
 Note that if the type is not available in the feed it will not be returned even if specified in the query.
 
+#### Filtering on Last Modification Date
+
+The feed entries are sorted by date from the oldest to the youngest. Since SEKOIA.IO started its default feed in 2019, 
+the consumer must download a massive amount of data before getting recent intelligence.
+We introduced the `modified_after` parameter to help our users consume our feed when they are only interested in recent intelligence. When set, the `modified_after` filters intelligence entries that were created or modified after the specified value. 
+
+For example, with `modified_after="2016-04-14T13:07:49.812"` only intelligence created or modified after `2016-04-14T13:07:49.812` is returned.
+
 #### Example Script
 
 Here is a sample Python script to fetch STIX objects from the Intelligence Center:
