@@ -101,7 +101,7 @@ The feed entries are sorted by date from the oldest to the youngest. Since SEKOI
 the consumer must download a massive amount of data before getting recent intelligence.
 We introduced the `modified_after` parameter to help our users consume our feed when they are only interested in recent intelligence. When set, the `modified_after` filters intelligence entries that were created or modified after the specified value. 
 
-For example, with `modified_after="2016-04-14T13:07:49.812"` only intelligence created or modified after `2016-04-14T13:07:49.812` is returned.
+For example, with `modified_after="2016-04-14T13:07:49.812Z"` only intelligence created or modified after `2016-04-14T13:07:49.812` is returned.
 
 #### Example Script
 
