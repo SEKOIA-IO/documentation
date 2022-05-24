@@ -90,7 +90,7 @@ nav:
       - NetFilter: operation_center/integration_catalog/network/netfilter.md
       - PaloAlto: operation_center/integration_catalog/network/paloalto.md
       - Pulse Connect Secure: operation_center/integration_catalog/network/pulse.md
-      - Sophos Firewall: operation_center/integration_catalog/network/sophos.md
+      - Sophos Firewall: operation_center/integration_catalog/network/sophos_fw.md
       - Squid: operation_center/integration_catalog/network/squid.md
       - Stormshield: operation_center/integration_catalog/network/stormshield_network_security.md
       - Suricata: operation_center/integration_catalog/network/suricata.md
@@ -275,7 +275,7 @@ plugins:
       integrations/sentinelone-deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
       integrations/sentinelone.md: operation_center/integration_catalog/endpoint/sentinelone.md
       integrations/sentinelone_deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
-      integrations/sophos.md: operation_center/integration_catalog/network/sophos.md
+      integrations/sophos.md: operation_center/integration_catalog/network/sophos_fw.md
       integrations/spamassassin.md: operation_center/integration_catalog/email/spamassassin.md
       integrations/squid.md: operation_center/integration_catalog/network/squid.md
       integrations/suricata.md: operation_center/integration_catalog/network/suricata.md

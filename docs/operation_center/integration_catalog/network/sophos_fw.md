@@ -1,5 +1,5 @@
 uuid: 325369ba-8515-45b4-b750-5db882ea1266
-name: Sophos
+name: Sophos Firewall
 type: intake
 
 ## Overview
