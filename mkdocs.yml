@@ -76,6 +76,7 @@ nav:
       - Panda Security Aether: operation_center/integration_catalog/endpoint/panda_security_aether.md
       - SentinelOne: operation_center/integration_catalog/endpoint/sentinelone.md
       - SentinelOne Deep Visibility: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
+      - Sophos EDR: operation_center/integration_catalog/endpoint/sophos_edr.md
       - Tanium: operation_center/integration_catalog/endpoint/tanium.md
       - Windows: operation_center/integration_catalog/endpoint/windows.md
       - Windows (Log Insight): operation_center/integration_catalog/endpoint/log_insight_windows.md
@@ -276,6 +277,7 @@ plugins:
       integrations/sentinelone.md: operation_center/integration_catalog/endpoint/sentinelone.md
       integrations/sentinelone_deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
       integrations/sophos.md: operation_center/integration_catalog/network/sophos_fw.md
+      integrations/sophos_edr.md: operation_center/integration_catalog/endpoint/sophos_edr.md
       integrations/spamassassin.md: operation_center/integration_catalog/email/spamassassin.md
       integrations/squid.md: operation_center/integration_catalog/network/squid.md
       integrations/suricata.md: operation_center/integration_catalog/network/suricata.md
