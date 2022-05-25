@@ -43,7 +43,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "app-ctrl",
             "kind": "utm",
-            "start": "2021-09-09T13:01:22Z"
+            "start": "2021-09-09T13:01:22.0Z"
         },
         "network": {
             "direction": "inbound",
@@ -103,7 +103,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sekoiaio": {
             "intake": {
                 "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
             }
         },
         "service": {
@@ -151,7 +151,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "dlp",
             "kind": "utm",
-            "start": "2021-09-09T12:29:04Z"
+            "start": "2021-09-09T12:29:04.0Z"
         },
         "file": {
             "name": "picture.png",
@@ -214,7 +214,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sekoiaio": {
             "intake": {
                 "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
             }
         },
         "service": {
@@ -257,7 +257,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "system",
             "kind": "event",
-            "start": "2021-09-16T07:44:52Z"
+            "start": "2021-09-16T07:44:52.0Z"
         },
         "fortinet": {
             "devid": "OIDL03VZRZEDKKD",
@@ -284,7 +284,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sekoiaio": {
             "intake": {
                 "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
             }
         }
     }
@@ -317,7 +317,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "forward",
             "duration": 100,
             "kind": "traffic",
-            "start": "2021-09-08T07:40:24Z"
+            "start": "2021-09-08T07:40:24.0Z"
         },
         "fortinet": {
             "appcat": "appcat1",
@@ -367,7 +367,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sekoiaio": {
             "intake": {
                 "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
             }
         },
         "service": {
@@ -407,16 +407,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "http-transaction",
             "duration": 100,
             "kind": "traffic",
-            "start": "2021-09-09T13:01:23Z"
+            "start": "2021-09-09T13:01:23.0Z"
         },
         "fortinet": {
             "devid": "OIDL03VZRZEDKKD",
             "level": "notice",
             "logid": "1000234512",
             "policyid": "1",
-            "reqtime": "2021-09-09T10:14:43Z",
-            "respfinishtime": "2021-09-09T10:14:43Z",
-            "resptime": "2021-09-09T10:14:43Z",
+            "reqtime": "2021-09-09T10:14:43.0Z",
+            "respfinishtime": "2021-09-09T10:14:43.0Z",
+            "resptime": "2021-09-09T10:14:43.0Z",
             "vd": "root"
         },
         "http": {
@@ -448,7 +448,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sekoiaio": {
             "intake": {
                 "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
             }
         },
         "source": {
@@ -492,7 +492,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "webfilter",
             "kind": "utm",
-            "start": "2021-09-09T09:32:39Z"
+            "start": "2021-09-09T09:32:39.0Z"
         },
         "fortinet": {
             "devid": "OIDL03VZRZEDKKD",
@@ -543,7 +543,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "sekoiaio": {
             "intake": {
                 "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb00000"
+                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
             }
         },
         "service": {
