@@ -1,7 +1,0 @@
-# Operations Center
-
-The **Operations Center** allows you to integrate and analyze in real time the events produced by your systems.
-
-The detection strategy is based on the enhancement of SEKOIA's threat intelligence knowledge base, as well as on the modeling of specific threat scenarios.
-
-![SEKOIA.IO Operations Center Screenshot](../assets/operation_center/OC_dashboard.png){: style="width: 100%; max-width: 100%"}

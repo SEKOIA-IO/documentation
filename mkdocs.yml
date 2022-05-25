@@ -27,307 +27,412 @@ markdown_extensions:
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
-  - First steps: getting_started/first_steps.md
-  - Inviting users to join your community: getting_started/inviting_users_to_join_your_community.md
-  - Search:
-    - Dork Language: searching/dork.md
-    - Querying Operations Center Events: searching/search_events.md
-- Operations Center:
-  - Overview: operation_center/index.md
-  - Dashboards: operation_center/threat_exposition.md
-  - Integration Catalog:
-    - Overview: operation_center/integration_catalog/index.md
-    - Custom Format: operation_center/intakes_customformat.md
-    - Application:
-      - Alsid: operation_center/integration_catalog/application/alsid.md
-      - Apache: operation_center/integration_catalog/application/apache.md
-      - BIND: operation_center/integration_catalog/application/bind.md
-      - ISC DHCP: operation_center/integration_catalog/application/dhcpd.md
-      - HAProxy: operation_center/integration_catalog/application/haproxy.md
-      - Nginx: operation_center/integration_catalog/application/nginx.md
-      - OpenSSH: operation_center/integration_catalog/application/openssh.md
-      - SEKOIA.IO: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
-      - Unbound: operation_center/integration_catalog/application/unbound.md
-      - The Hive: operation_center/integration_catalog/application/thehive.md
-    - Cloud and SaaS:
-      - AWS:
-        - CloudTrail: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
-        - VPC Flow Logs: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
-      - Google Cloud:
-        - Google Cloud Audit: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
-        - Google Kubernetes Engine: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
-        - Google VPC Flow Logs: operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md
-      - Cisco Umbrella:
-        - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
-        - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
-        - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
-      - Cloudflare:
-          - Cloudflare: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md
-      - Digital Shadows: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
-      - Microsoft Azure:
-        - Azure Active Directory: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
-        - Azure MySQL: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
-        - Azure Linux machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
-        - Azure Network Watcher: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
-        - Azure Windows machines: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
-      - Microsoft Office 365: operation_center/integration_catalog/cloud_and_saas/o365.md
-      - Imperva Web Application Firewall: operation_center/integration_catalog/cloud_and_saas/imperva_waf.md
-    - Email:
-      - FortiMail: operation_center/integration_catalog/email/fortimail.md
-      - Postfix: operation_center/integration_catalog/email/postfix.md
-      - Retarus Email Security: operation_center/integration_catalog/email/retarus_email_security.md
-      - SpamAssassin: operation_center/integration_catalog/email/spamassassin.md
-      - Vade for M365: operation_center/integration_catalog/email/vade.md
-    - Endpoint:
-      - Auditbeat Linux: operation_center/integration_catalog/endpoint/auditbeat_linux.md
-      - Cybereason MalOp: operation_center/integration_catalog/endpoint/cybereason_malop.md
-      - HarfangLab: operation_center/integration_catalog/endpoint/harfanglab.md
-      - Linux: operation_center/integration_catalog/endpoint/linux.md
-      - Panda Security Aether: operation_center/integration_catalog/endpoint/panda_security_aether.md
-      - SentinelOne: operation_center/integration_catalog/endpoint/sentinelone.md
-      - SentinelOne Deep Visibility: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
-      - Tanium: operation_center/integration_catalog/endpoint/tanium.md
-      - Windows: operation_center/integration_catalog/endpoint/windows.md
-      - Windows (Log Insight): operation_center/integration_catalog/endpoint/log_insight_windows.md
-    - Network:
-      - Checkpoint: operation_center/integration_catalog/network/checkpoint.md
-      - Cisco: operation_center/integration_catalog/network/cisco_asa.md
-      - F5 BigIP: operation_center/integration_catalog/network/f5-big-ip.md
-      - Forcepoint Secure Web Gateway: operation_center/integration_catalog/network/forcepoint_web_gateway.md
-      - FortiGate: operation_center/integration_catalog/network/fortigate.md
-      - FortiProxy: operation_center/integration_catalog/network/fortiproxy.md
-      - FortiWeb: operation_center/integration_catalog/network/fortiweb.md
-      - McAfee Web Gateway: operation_center/integration_catalog/network/mcafee_web_gateway.md
-      - NetFilter: operation_center/integration_catalog/network/netfilter.md
-      - PaloAlto: operation_center/integration_catalog/network/paloalto.md
-      - Pulse Connect Secure: operation_center/integration_catalog/network/pulse.md
-      - Sophos Firewall: operation_center/integration_catalog/network/sophos.md
-      - Squid: operation_center/integration_catalog/network/squid.md
-      - Stormshield: operation_center/integration_catalog/network/stormshield_network_security.md
-      - Suricata: operation_center/integration_catalog/network/suricata.md
-      - Vectra: operation_center/integration_catalog/network/vectra.md
-      - Wallix: operation_center/integration_catalog/network/wallix.md
-      - Zeek: operation_center/integration_catalog/network/zeek.md
-    - Generic:
-      - Common Event Format: operation_center/integration_catalog/generic/cef.md
-  - Data Collection:
-    - Overview: operation_center/data_collection/index.md
-    - Ingestion methods:
-      - Overview: operation_center/data_collection/ingestion_methods/index.md
-      - SEKOIA.IO Agent: operation_center/data_collection/ingestion_methods/sekoiaio.md
-      - Rsyslog: operation_center/data_collection/ingestion_methods/rsyslog.md
-      - Logstash: operation_center/data_collection/ingestion_methods/logstash.md
-      - syslog-ng: operation_center/data_collection/ingestion_methods/syslog-ng.md
-      - Graylog: operation_center/data_collection/ingestion_methods/graylog.md
-      - HTTPS: operation_center/data_collection/ingestion_methods/https.md
-  - Configure:
-    - Entities: operation_center/entities.md
-    - Intakes: operation_center/intakes.md
-    - Assets: operation_center/assets.md
-  - Detect:
-    - Rules Catalog: operation_center/rules_catalog.md
-  - Investigate:
-    - Alerts: operation_center/alerts.md
-    - Events: operation_center/events.md
-    - Cases: operation_center/cases.md
-  - FAQ: operation_center/faq.md
-- Intelligence Center:
-  - Overview: intelligence_center/index.md
-  - Data Model: intelligence_center/data_model.md
-  - API: intelligence_center/api.md
-  - External Integrations:
-    - Overview: intelligence_center/integrations/index.md
-    - Cortex Analyzer: intelligence_center/integrations/thehive.md
-    - MISP Feed: intelligence_center/integrations/misp.md
-    - Microsoft Sentinel: intelligence_center/integrations/microsoft-sentinel.md
-    - OpenCTI: intelligence_center/integrations/opencti.md
-    - Splunk: intelligence_center/integrations/splunk.md
-  - Web Application:
-    - Dashboards: intelligence_center/dashboard.md
-    - Intelligence: intelligence_center/intelligence.md
-    - Graph Explorations: intelligence_center/graph_explorations.md
-    - Observables: intelligence_center/observables.md
-    - Data Export: intelligence_center/data_export.md
-- User Center:
-  - Overview: user_center/index.md
-  - Account Settings: user_center/account_settings.md
-  - Multi-factor authentication: user_center/multi_factor_authentication.md
-  - Notifications: user_center/notifications.md
-  - API Key creation: user_center/apikeys.md
-- Playbooks:
-  - Overview: playbooks/overview.md
-  - Triggers: playbooks/triggers.md
-  - Operators: playbooks/operators.md
-  - Actions: playbooks/actions.md
-  - Library:
-    - AWS: playbooks/library/aws.md
-    - Binaryedge's api: playbooks/library/binaryedge-s-api.md
-    - Censys: playbooks/library/censys.md
-    - Certificate_transparency: playbooks/library/certificate-transparency.md
-    - Detection-rules: playbooks/library/detection-rules.md
-    - Digital Shadows: playbooks/library/digital-shadows.md
-    - Fileutils: playbooks/library/fileutils.md
-    - Fortigate_fw: playbooks/library/fortigate-fw.md
-    - Glimps: playbooks/library/glimps.md
-    - Google: playbooks/library/google.md
-    - Git: playbooks/library/git.md
-    - Http: playbooks/library/http.md
-    - Harfanglab: playbooks/library/harfanglab.md
-    - Iknowwhatyoudownload: playbooks/library/iknowwhatyoudownload.md
-    - Imperva: playbooks/library/imperva.md
-    - Iptoasn: playbooks/library/iptoasn.md
-    - Misp: playbooks/library/misp.md
-    - Mwdb: playbooks/library/mwdb.md
-    - Mandrill: playbooks/library/mandrill.md
-    - Mattermost: playbooks/library/mattermost.md
-    - Osint: playbooks/library/osint.md
-    - Onyphe: playbooks/library/onyphe.md
-    - Pagerduty: playbooks/library/pagerduty.md
-    - Panda Security: playbooks/library/panda-security.md
-    - Public_suffix: playbooks/library/public-suffix.md
-    - Rss: playbooks/library/rss.md
-    - Riskiq: playbooks/library/riskiq.md
-    - SEKOIA.IO: playbooks/library/sekoia-io.md
-    - STIX: playbooks/library/stix.md
-    - Servicenow: playbooks/library/servicenow.md
-    - Shodan: playbooks/library/shodan.md
-    - TheHive: playbooks/library/the-hive.md
-    - Tranco: playbooks/library/tranco.md
-    - Triage: playbooks/library/triage.md
-    - Vade secure: playbooks/library/vade-secure.md
-    - Virustotal: playbooks/library/virustotal.md
-    - Whois: playbooks/library/whois.md
-- Develop:
-  - Overview: develop/index.md
-  - Guides:
-    - Get Started: develop/guides/get_started.md
-    - Authentication Overview: develop/guides/authentication_overview.md
-    - Filtering: develop/guides/filtering.md
-  - REST API:
-    - Authentication: develop/rest_api/identity_and_authentication.md
-    - Community: develop/rest_api/community.md
-    - Dashboard: develop/rest_api/dashboard.md
-    - Notification: develop/rest_api/notification.md
-    - Operation Center:
-      - Configuration: develop/rest_api/operation_center/configuration.md
-      - Parser: develop/rest_api/operation_center/parser.md
-      - Alert: develop/rest_api/operation_center/alert.md
-      - Assets: develop/rest_api/operation_center/assets.md
-    - Intelligence Center:
-      - Intelligence: develop/rest_api/intelligence_center/intelligence.md
-      - Enrichments: develop/rest_api/intelligence_center/enrichments.md
-    - Playbooks: develop/rest_api/playbooks.md
+  - Join a community: getting_started/join_community.md
+  - Create your account: getting_started/create_account.md
+  - Set up account security: getting_started/account_security.md
+  - Invite users to join: getting_started/invite_users.md
+  - Navigation on the platform: getting_started/navigation.md
+  - Turn on notifications: getting_started/notifications.md
+  - Generate API Keys: getting_started/generate_api_keys.md
+- SEKOIA.IO XDR:
+  - Introduction: xdr/index.md
+  - Features:
+    - Collect:
+      - Overview: xdr/features/collect/ingestion_methods/index.md
+      - Ingestion methods:
+        - SEKOIA.IO Agent: xdr/features/collect/ingestion_methods/sekoiaio.md
+        - Rsyslog: xdr/features/collect/ingestion_methods/rsyslog.md
+        - Logstash: xdr/features/collect/ingestion_methods/logstash.md
+        - syslog-ng: xdr/features/collect/ingestion_methods/syslog-ng.md
+        - Graylog: xdr/features/collect/ingestion_methods/graylog.md
+        - HTTPS: xdr/features/collect/ingestion_methods/https.md
+      - Integrations:
+        - Overview: xdr/features/collect/integrations/index.md
+        - Custom Format: xdr/features/collect/integrations/custom_format.md
+        - Application:
+          - Alsid: xdr/features/collect/integrations/application/alsid.md
+          - Apache: xdr/features/collect/integrations/application/apache.md
+          - BIND: xdr/features/collect/integrations/application/bind.md
+          - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
+          - HAProxy: xdr/features/collect/integrations/application/haproxy.md
+          - Nginx: xdr/features/collect/integrations/application/nginx.md
+          - OpenSSH: xdr/features/collect/integrations/application/openssh.md
+          - SEKOIA.IO: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
+          - Unbound: xdr/features/collect/integrations/application/unbound.md
+          - The Hive: xdr/features/collect/integrations/application/thehive.md
+        - Cloud and SaaS:
+          - AWS:
+            - CloudTrail: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
+            - VPC Flow Logs: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
+          - Google Cloud:
+            - Google Cloud Audit: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
+            - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
+            - Google VPC Flow Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
+          - Cisco Umbrella:
+            - Proxy: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+            - IP: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+            - DNS: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+          - Cloudflare: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare.md
+          - Digital Shadows: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
+          - Microsoft Azure:
+            - Azure Active Directory: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+            - Azure MySQL: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
+            - Azure Linux machines: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
+            - Azure Network Watcher: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
+            - Azure Windows machines: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
+          - Microsoft Office 365: xdr/features/collect/integrations/cloud_and_saas/o365.md
+          - Imperva Web Application Firewall: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
+        - Email:
+          - FortiMail: xdr/features/collect/integrations/email/fortimail.md
+          - Postfix: xdr/features/collect/integrations/email/postfix.md
+          - Retarus Email Security: xdr/features/collect/integrations/email/retarus_email_security.md
+          - SpamAssassin: xdr/features/collect/integrations/email/spamassassin.md
+          - Vade for M365: xdr/features/collect/integrations/email/vade.md
+        - Endpoint:
+          - Auditbeat Linux: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
+          - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
+          - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
+          - Linux: xdr/features/collect/integrations/endpoint/linux.md
+          - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
+          - SentinelOne: xdr/features/collect/integrations/endpoint/sentinelone.md
+          - SentinelOne Deep Visibility: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
+          - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
+          - Windows: xdr/features/collect/integrations/endpoint/windows.md
+          - Windows (Log Insight): xdr/features/collect/integrations/endpoint/log_insight_windows.md
+        - Network:
+          - Checkpoint: xdr/features/collect/integrations/network/checkpoint.md
+          - Cisco: xdr/features/collect/integrations/network/cisco_asa.md
+          - F5 BigIP: xdr/features/collect/integrations/network/f5-big-ip.md
+          - Forcepoint Secure Web Gateway: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
+          - FortiGate: xdr/features/collect/integrations/network/fortigate.md
+          - FortiProxy: xdr/features/collect/integrations/network/fortiproxy.md
+          - FortiWeb: xdr/features/collect/integrations/network/fortiweb.md
+          - McAfee Web Gateway: xdr/features/collect/integrations/network/mcafee_web_gateway.md
+          - NetFilter: xdr/features/collect/integrations/network/netfilter.md
+          - PaloAlto: xdr/features/collect/integrations/network/paloalto.md
+          - Pulse Connect Secure: xdr/features/collect/integrations/network/pulse.md
+          - Sophos Firewall: xdr/features/collect/integrations/network/sophos.md
+          - Squid: xdr/features/collect/integrations/network/squid.md
+          - Stormshield: xdr/features/collect/integrations/network/stormshield_network_security.md
+          - Suricata: xdr/features/collect/integrations/network/suricata.md
+          - Vectra: xdr/features/collect/integrations/network/vectra.md
+          - Wallix: xdr/features/collect/integrations/network/wallix.md
+          - Zeek: xdr/features/collect/integrations/network/zeek.md
+        - Generic:
+          - Common Event Format: xdr/features/collect/integrations/generic/cef.md
+      - Intakes: xdr/features/collect/intakes.md
+      - Entities: xdr/features/collect/entities.md
+      - Assets: xdr/features/collect/assets.md
+    - Detect:
+      - Rules Catalog: xdr/features/detect/rules_catalog.md
+      - Sigma: xdr/features/detect/sigma.md
+    - Investigate:
+      - Alerts: xdr/features/investigate/alerts.md
+      - Events: xdr/features/investigate/events.md
+      - Cases: xdr/features/investigate/cases.md
+      - Dork Language: xdr/features/investigate/dork_language.md
+      - Querying Events: xdr/features/investigate/querying_events.md
+    - Report:
+      - Dashboards: xdr/features/report/dashboards.md
+    - Automate:
+      - Overview: xdr/features/automate/index.md
+      - Triggers: xdr/features/automate/triggers.md
+      - Operators: xdr/features/automate/operators.md
+      - Actions: xdr/features/automate/actions.md
+      - Library:
+        - AWS: xdr/features/automate/library/aws.md
+        - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
+        - Censys: xdr/features/automate/library/censys.md
+        - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
+        - Cloudflare Logpull: xdr/features/automate/library/cloudflare-logpull.md
+        - Detection Rules: xdr/features/automate/library/detection-rules.md
+        - Digital Shadows: xdr/features/automate/library/digital-shadows.md
+        - fileutils: xdr/features/automate/library/fileutils.md
+        - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
+        - Git: xdr/features/automate/library/git.md
+        - GLIMPS: xdr/features/automate/library/glimps.md
+        - Google: xdr/features/automate/library/google.md
+        - HTTP: xdr/features/automate/library/http.md
+        - HarfangLab: xdr/features/automate/library/harfanglab.md
+        - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
+        - IPtoASN: xdr/features/automate/library/iptoasn.md
+        - Imperva: xdr/features/automate/library/imperva.md
+        - MISP: xdr/features/automate/library/misp.md
+        - MWDB: xdr/features/automate/library/mwdb.md
+        - Mandrill: xdr/features/automate/library/mandrill.md
+        - Mattermost: xdr/features/automate/library/mattermost.md
+        - OSINT: xdr/features/automate/library/osint.md
+        - Onyphe: xdr/features/automate/library/onyphe.md
+        - PagerDuty: xdr/features/automate/library/pagerduty.md
+        - Panda Security: xdr/features/automate/library/panda-security.md
+        - Public Suffix: xdr/features/automate/library/public-suffix.md
+        - RSS: xdr/features/automate/library/rss.md
+        - RiskIQ: xdr/features/automate/library/riskiq.md
+        - SEKOIA.IO: xdr/features/automate/library/sekoia-io.md
+        - STIX: xdr/features/automate/library/stix.md
+        - ServiceNow: xdr/features/automate/library/servicenow.md
+        - Shodan: xdr/features/automate/library/shodan.md
+        - The Hive: xdr/features/automate/library/the-hive.md
+        - Tranco: xdr/features/automate/library/tranco.md
+        - Triage: xdr/features/automate/library/triage.md
+        - Vade Secure: xdr/features/automate/library/vade-secure.md
+        - VirusTotal: xdr/features/automate/library/virustotal.md
+        - Whois: xdr/features/automate/library/whois.md
+  - Usecases:
+    - Synchronise Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
+  - FAQ: xdr/FAQ.md
+  - Develop:
+    - Overview: xdr/develop/index.md
+    - Guides:
+      # - Get Started: xdr/develop/guides/get_started.md
+      # - Authentication Overview: xdr/develop/guides/authentication_overview.md
+      - Filtering: xdr/develop/guides/filtering.md
+    - REST API:
+      - Authentication: xdr/develop/rest_api/identity_and_authentication.md
+      - Community: xdr/develop/rest_api/community.md
+      - Dashboard: xdr/develop/rest_api/dashboard.md
+      - Notification: xdr/develop/rest_api/notification.md
+      - Configuration: xdr/develop/rest_api/configuration.md
+      - Parser: xdr/develop/rest_api/parser.md
+      - Alert: xdr/develop/rest_api/alert.md
+      - Assets: xdr/develop/rest_api/assets.md
+      - Playbooks: xdr/develop/rest_api/playbooks.md
+      - Telemetry: xdr/develop/rest_api/telemetry.md
+
+- SEKOIA.IO CTI:
+  - Introduction: cti/index.md
+  - Features:
+    - Data Models: cti/features/data_model.md
+    - Consume:
+      - Intelligence: cti/features/consume/intelligence.md
+      - Obervables: cti/features/consume/observables.md
+      - Feeds: cti/features/consume/feeds.md
+      - Graph Explorations: cti/features/consume/graph_explorations.md
+      - Enrichers: cti/features/consume/enrichers.md
+      - Export: cti/features/consume/export.md
+    - Monitor:
+      - Dashboards: cti/features/monitor/dashboard.md
+    - External Integrations:
+      - Overview: cti/features/integrations/index.md
+      - API: cti/features/integrations/api.md
+      - TAXII: cti/features/integrations/taxii.md
+      - Cortex Analyzer: cti/features/integrations/thehive.md
+      - MISP Feed: cti/features/integrations/misp.md
+      - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
+      - OpenCTI: cti/features/integrations/opencti.md
+      - Splunk: cti/features/integrations/splunk.md
+  - Develop:
+    - Overview: cti/develop/index.md
+    - Guides:
+      # - Get Started: cti/develop/guides/get_started.md
+      # - Authentication Overview: cti/develop/guides/authentication_overview.md
+      - Filtering: cti/develop/guides/filtering.md
+    - REST API:
+      - Authentication: cti/develop/rest_api/identity_and_authentication.md
+      - Community: cti/develop/rest_api/community.md
+      - Intelligence: cti/develop/rest_api/intelligence.md
+      - Enrichment: cti/develop/rest_api/enrichments.md
+      - Telemetry: cti/develop/rest_api/telemetry.md
+      - Dashboard: cti/develop/rest_api/dashboard.md
+      - Notification: cti/develop/rest_api/notification.md
+      - Playbooks: cti/develop/rest_api/playbooks.md
+
+- SEKOIA.IO TIP:
+  - Introduction: tip/index.md
+  - Features:
+    - Data Models: tip/features/data_model.md
+    - Consume:
+      - Intelligence: tip/features/consume/intelligence.md
+      - Obervables: tip/features/consume/observables.md
+      - Feeds: tip/features/consume/feeds.md
+      - Graph Explorations: tip/features/consume/graph_explorations.md
+      - Enrichers: tip/features/consume/enrichers.md
+      - Export: tip/features/consume/export.md
+    - Produce and investigate:
+      - Content Proposals: tip/features/produce/content_proposals.md
+      - Warning Rules: tip/features/produce/warning_rules.md
+      - Expiration Rules: tip/features/produce/expiration_rules.md
+    - Monitor:
+      - Dashboards: tip/features/monitor/dashboard.md
+    - External Integrations:
+      - Overview: tip/features/integrations/index.md
+      - API: tip/features/integrations/api.md
+      - TAXII: tip/features/integrations/taxii.md
+      - Cortex Analyzer: tip/features/integrations/thehive.md
+      - MISP Feed: tip/features/integrations/misp.md
+      - Microsoft Sentinel: tip/features/integrations/microsoft-sentinel.md
+      - OpenCTI: tip/features/integrations/opencti.md
+      - Splunk: tip/features/integrations/splunk.md
+    - Automate:
+      - Overview: tip/features/automate/index.md
+      - Triggers: tip/features/automate/triggers.md
+      - Operators: tip/features/automate/operators.md
+      - Actions: tip/features/automate/actions.md
+      - Library:
+        - AWS: tip/features/automate/library/aws.md
+        - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
+        - Censys: tip/features/automate/library/censys.md
+        - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
+        - Cloudflare Logpull: xdr/features/automate/library/cloudflare-logpull.md
+        - Detection Rules: tip/features/automate/library/detection-rules.md
+        - Digital Shadows: tip/features/automate/library/digital-shadows.md
+        - fileutils: tip/features/automate/library/fileutils.md
+        - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
+        - Git: tip/features/automate/library/git.md
+        - GLIMPS: tip/features/automate/library/glimps.md
+        - Google: tip/features/automate/library/google.md
+        - HTTP: tip/features/automate/library/http.md
+        - HarfangLab: tip/features/automate/library/harfanglab.md
+        - IKnowWhatYouDownload: tip/features/automate/library/iknowwhatyoudownload.md
+        - IPtoASN: tip/features/automate/library/iptoasn.md
+        - Imperva: tip/features/automate/library/imperva.md
+        - MISP: tip/features/automate/library/misp.md
+        - MWDB: tip/features/automate/library/mwdb.md
+        - Mandrill: tip/features/automate/library/mandrill.md
+        - Mattermost: tip/features/automate/library/mattermost.md
+        - OSINT: tip/features/automate/library/osint.md
+        - Onyphe: tip/features/automate/library/onyphe.md
+        - PagerDuty: tip/features/automate/library/pagerduty.md
+        - Panda Security: tip/features/automate/library/panda-security.md
+        - Public Suffix: tip/features/automate/library/public-suffix.md
+        - RSS: tip/features/automate/library/rss.md
+        - RiskIQ: tip/features/automate/library/riskiq.md
+        - SEKOIA.IO: tip/features/automate/library/sekoia-io.md
+        - STIX: tip/features/automate/library/stix.md
+        - ServiceNow: tip/features/automate/library/servicenow.md
+        - Shodan: tip/features/automate/library/shodan.md
+        - The Hive: tip/features/automate/library/the-hive.md
+        - Tranco: tip/features/automate/library/tranco.md
+        - Triage: tip/features/automate/library/triage.md
+        - Vade Secure: tip/features/automate/library/vade-secure.md
+        - VirusTotal: tip/features/automate/library/virustotal.md
+        - Whois: tip/features/automate/library/whois.md
+  - Develop:
+    - Overview: tip/develop/index.md
+    - Guides:
+      # - Get Started: tip/develop/guides/get_started.md
+      # - Authentication Overview: tip/develop/guides/authentication_overview.md
+      - Filtering: tip/develop/guides/filtering.md
+    - REST API:
+      - Authentication: tip/develop/rest_api/identity_and_authentication.md
+      - Community: tip/develop/rest_api/community.md
+      - Intelligence: tip/develop/rest_api/intelligence.md
+      - Enrichment: tip/develop/rest_api/enrichments.md
+      - Dashboard: tip/develop/rest_api/dashboard.md
+      - Notification: tip/develop/rest_api/notification.md
+      - Playbooks: tip/develop/rest_api/playbooks.md
+
 plugins:
 - search: null
 - redirects:
     redirect_maps:
-      'api/automation: symphony orchestrator': develop/rest_api/playbooks.md
-      api/dashboards: develop/rest_api/dashboard.md
-      api/identity & authentication: develop/rest_api/identity_and_authentication.md
-      'api/ingest: manage and test event parsers': develop/rest_api/operation_center/parser.md
-      'api/intelligence center: cyber threat intelligence database': develop/rest_api/intelligence_center/intelligence.md
-      'api/intelligence center: enrichment': develop/rest_api/intelligence_center/enrichments.md
-      api/notifications: develop/rest_api/notification.md
-      'api/operation center: alerts & case management': develop/rest_api/operation_center/alert.md
-      'api/operation center: asset management': develop/rest_api/operation_center/assets.md
-      'api/operation center: rules, entities, intakes, events.md': develop/rest_api/operation_center/configuration.md
-      api/profile & permissions: develop/rest_api/community.md
-      apis.md: develop/index.md
-      getting_started/2fa.md: user_center/multi_factor_authentication.md
-      getting_started/apikey_creation.md: user_center/apikeys.md
-      integrations/alsid.md: operation_center/integration_catalog/application/alsid.md
-      integrations/apache.md: operation_center/integration_catalog/application/apache.md
-      integrations/auditbeat.md: operation_center/integration_catalog/endpoint/auditbeat_linux.md
-      integrations/auditbeat_linux.md: operation_center/integration_catalog/endpoint/auditbeat_linux.md
-      integrations/aws-cloudtrail.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
-      integrations/aws-flow-logs.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
-      integrations/aws_cloudtrail.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
-      integrations/aws_flow_logs.md: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
-      integrations/azure-ad.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
-      integrations/azure-linux.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
-      integrations/azure-mysql.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
-      integrations/azure-network-watcher.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
-      integrations/azure-windows.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
-      integrations/azure_ad.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
-      integrations/azure_linux.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md
-      integrations/azure_mysql.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md
-      integrations/azure_network_watcher.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md
-      integrations/azure_windows.md: operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md
-      integrations/bind.md: operation_center/integration_catalog/application/bind.md
-      integrations/cef.md: operation_center/integration_catalog/generic/cef.md
-      integrations/checkpoint.md: operation_center/integration_catalog/network/checkpoint.md
-      integrations/cisco-asa.md: operation_center/integration_catalog/network/cisco_asa.md
-      integrations/cisco_asa.md: operation_center/integration_catalog/network/cisco_asa.md
-      integrations/cloudflare.md: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md
-      integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
-      integrations/digital_shadows.md: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
-      integrations/f5-big-ip.md: operation_center/integration_catalog/network/f5-big-ip.md
-      integrations/fortigate.md: operation_center/integration_catalog/network/fortigate.md
-      integrations/fortimail.md: operation_center/integration_catalog/email/fortimail.md
-      integrations/fortiproxy.md: operation_center/integration_catalog/network/fortiproxy.md
-      integrations/fortiweb.md: operation_center/integration_catalog/network/fortiweb.md
-      integrations/freeradius.md: operation_center/index.md
-      integrations/fsecure.md: operation_center/index.md
-      integrations/google_kubernetes_engine.md: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
-      integrations/google_vpc_flow_logs.md: operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md
-      integrations/google_workspace.md: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
-      integrations/forcepoint-swg.md: operation_center/integration_catalog/network/forcepoint_web_gateway.md
-      integrations/haproxy.md: operation_center/integration_catalog/application/haproxy.md
-      integrations/harfanglab.md: operation_center/integration_catalog/endpoint/harfanglab.md
-      integrations/linux.md: operation_center/integration_catalog/endpoint/linux.md
-      integrations/log-insight-windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
-      integrations/log_insight_windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
-      integrations/netfilter.md: operation_center/integration_catalog/network/netfilter.md
-      integrations/nginx.md: operation_center/integration_catalog/application/nginx.md
-      integrations/o365.md: operation_center/integration_catalog/cloud_and_saas/o365.md
-      integrations/openssh.md: operation_center/integration_catalog/application/openssh.md
-      integrations/paloalto.md: operation_center/integration_catalog/network/paloalto.md
-      integrations/panda-security-aether.md: operation_center/integration_catalog/endpoint/panda_security_aether.md
-      integrations/postfix.md: operation_center/integration_catalog/email/postfix.md
-      integrations/prove-it.md: operation_center/index.md
-      integrations/pulse-connect-secure.md: operation_center/integration_catalog/network/pulse.md
-      integrations/pulse.md: operation_center/integration_catalog/network/pulse.md
-      integrations/raw.md: operation_center/index.md
-      integrations/retarus-email-security.md: operation_center/integration_catalog/email/retarus_email_security.md
-      integrations/sekoiaio-activity-logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
-      integrations/sentinelone-deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
-      integrations/sentinelone.md: operation_center/integration_catalog/endpoint/sentinelone.md
-      integrations/sentinelone_deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
-      integrations/sophos.md: operation_center/integration_catalog/network/sophos.md
-      integrations/spamassassin.md: operation_center/integration_catalog/email/spamassassin.md
-      integrations/squid.md: operation_center/integration_catalog/network/squid.md
-      integrations/suricata.md: operation_center/integration_catalog/network/suricata.md
-      integrations/stormshield_network_security.md: operation_center/integration_catalog/network/stormshield_network_security.md
-      integrations/tanium.md: operation_center/integration_catalog/endpoint/tanium.md
-      integrations/umbrella-dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
-      integrations/umbrella-ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
-      integrations/umbrella-proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
-      integrations/umbrella_dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
-      integrations/umbrella_ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
-      integrations/umbrella_proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
-      integrations/unbound.md: operation_center/integration_catalog/application/unbound.md
-      integrations/vectra-cognito-detect.md: operation_center/integration_catalog/network/vectra.md
-      integrations/vade.md: operation_center/integration_catalog/email/vade.md
-      integrations/wallix-bastion.md: operation_center/integration_catalog/network/wallix.md
-      integrations/wazuh.md: operation_center/index.md
-      integrations/windows.md: operation_center/integration_catalog/endpoint/windows.md
-      integrations/zeek.md: operation_center/integration_catalog/network/zeek.md
-      integrations/transport/graylog.md: operation_center/data_collection/ingestion_methods/graylog.md
-      integrations/transport/https.md: operation_center/data_collection/ingestion_methods/https.md
-      integrations/transport.md: operation_center/data_collection/ingestion_methods/index.md
-      integrations/transport/logstash.md: operation_center/data_collection/ingestion_methods/logstash.md
-      integrations/transport/rsyslog.md: operation_center/data_collection/ingestion_methods/rsyslog.md
-      integrations/transport/syslog-ng.md: operation_center/data_collection/ingestion_methods/syslog-ng.md
-      integrations/sekoiaio_activity_logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
-      integrations/thehive.md: operation_center/integration_catalog/application/thehive.md
-      integrations/imperva_waf.md: operation_center/integration_catalog/cloud_and_saas/imperva_waf.md
-      operation_center/operators.md: playbooks/operators.md
-      operation_center/playbook_overview.md: playbooks/overview.md
-      operation_center/actions.md: playbooks/actions.md
-      operation_center/triggers.md: playbooks/triggers.md
-      integrations/index.md: operation_center/integration_catalog/index.md
+      'api/automation: symphony orchestrator': xdr/develop/rest_api/playbooks.md
+      api/dashboards: xdr/develop/rest_api/dashboard.md
+      api/identity & authentication: xdr/develop/rest_api/identity_and_authentication.md
+      'api/ingest: manage and test event parsers': xdr/develop/rest_api/parser.md
+      'api/intelligence center: cyber threat intelligence database': cti/develop/rest_api/intelligence.md
+      'api/intelligence center: enrichment': cti/develop/rest_api/enrichments.md
+      api/notifications: xdr/develop/rest_api/notification.md
+      'api/operation center: alerts & case management': xdr/develop/rest_api/alert.md
+      'api/operation center: asset management': xdr/develop/rest_api/assets.md
+      'api/operation center: rules, entities, intakes, events.md': xdr/develop/rest_api/configuration.md
+      api/profile & permissions: xdr/develop/rest_api/community.md
+      apis.md: xdr/develop/index.md
+      getting_started/2fa.md: getting_started/account_security.md
+      getting_started/apikey_creation.md: getting_started/generate_api_keys.md
+      integrations/alsid.md: xdr/features/collect/integrations/application/alsid.md
+      integrations/apache.md: xdr/features/collect/integrations/application/apache.md
+      integrations/auditbeat.md: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
+      integrations/auditbeat_linux.md: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
+      integrations/aws-cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
+      integrations/aws-flow-logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
+      integrations/aws_cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
+      integrations/aws_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
+      integrations/azure-ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+      integrations/azure-linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
+      integrations/azure-mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
+      integrations/azure-network-watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
+      integrations/azure-windows.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
+      integrations/azure_ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+      integrations/azure_linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
+      integrations/azure_mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
+      integrations/azure_network_watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
+      integrations/azure_windows.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
+      integrations/bind.md: xdr/features/collect/integrations/application/bind.md
+      integrations/cef.md: xdr/features/collect/integrations/generic/cef.md
+      integrations/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
+      integrations/cisco-asa.md: xdr/features/collect/integrations/network/cisco_asa.md
+      integrations/cisco_asa.md: xdr/features/collect/integrations/network/cisco_asa.md
+      integrations/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
+      integrations/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
+      integrations/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
+      integrations/forcepoint-swg.md: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
+      integrations/fortigate.md: xdr/features/collect/integrations/network/fortigate.md
+      integrations/fortimail.md: xdr/features/collect/integrations/email/fortimail.md
+      integrations/fortiproxy.md: xdr/features/collect/integrations/network/fortiproxy.md
+      integrations/fortiweb.md: xdr/features/collect/integrations/network/fortiweb.md
+      integrations/freeradius.md: xdr/index.md
+      integrations/fsecure.md: xdr/index.md
+      integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
+      integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
+      integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
+      integrations/haproxy.md: xdr/features/collect/integrations/application/haproxy.md
+      integrations/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
+      integrations/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
+      integrations/index.md: xdr/features/collect/integrations/index.md
+      integrations/linux.md: xdr/features/collect/integrations/endpoint/linux.md
+      integrations/log-insight-windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
+      integrations/log_insight_windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
+      integrations/netfilter.md: xdr/features/collect/integrations/network/netfilter.md
+      integrations/nginx.md: xdr/features/collect/integrations/application/nginx.md
+      integrations/o365.md: xdr/features/collect/integrations/cloud_and_saas/o365.md
+      integrations/openssh.md: xdr/features/collect/integrations/application/openssh.md
+      integrations/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
+      integrations/panda-security-aether.md: xdr/features/collect/integrations/endpoint/panda_security_aether.md
+      integrations/postfix.md: xdr/features/collect/integrations/email/postfix.md
+      integrations/prove-it.md: xdr/index.md
+      integrations/pulse-connect-secure.md: xdr/features/collect/integrations/network/pulse.md
+      integrations/pulse.md: xdr/features/collect/integrations/network/pulse.md
+      integrations/raw.md: xdr/index.md
+      integrations/retarus-email-security.md: xdr/features/collect/integrations/email/retarus_email_security.md
+      integrations/sekoiaio-activity-logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
+      integrations/sekoiaio_activity_logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
+      integrations/sentinelone-deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
+      integrations/sentinelone.md: xdr/features/collect/integrations/endpoint/sentinelone.md
+      integrations/sentinelone_deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
+      integrations/sophos.md: xdr/features/collect/integrations/network/sophos.md
+      integrations/spamassassin.md: xdr/features/collect/integrations/email/spamassassin.md
+      integrations/squid.md: xdr/features/collect/integrations/network/squid.md
+      integrations/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
+      integrations/suricata.md: xdr/features/collect/integrations/network/suricata.md
+      integrations/tanium.md: xdr/features/collect/integrations/endpoint/tanium.md
+      integrations/thehive.md: xdr/features/collect/integrations/application/thehive.md
+      integrations/transport.md: xdr/features/collect/ingestion_methods/index.md
+      integrations/transport/graylog.md: xdr/features/collect/ingestion_methods/graylog.md
+      integrations/transport/https.md: xdr/features/collect/ingestion_methods/https.md
+      integrations/transport/logstash.md: xdr/features/collect/ingestion_methods/logstash.md
+      integrations/transport/rsyslog.md: xdr/features/collect/ingestion_methods/rsyslog.md
+      integrations/transport/syslog-ng.md: xdr/features/collect/ingestion_methods/syslog-ng.md
+      integrations/umbrella-dns.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      integrations/umbrella-ip.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+      integrations/umbrella-proxy.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+      integrations/umbrella_dns.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      integrations/umbrella_ip.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_ip.md
+      integrations/umbrella_proxy.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
+      integrations/unbound.md: xdr/features/collect/integrations/application/unbound.md
+      integrations/vade.md: xdr/features/collect/integrations/email/vade.md
+      integrations/vectra-cognito-detect.md: xdr/features/collect/integrations/network/vectra.md
+      integrations/wallix-bastion.md: xdr/features/collect/integrations/network/wallix.md
+      integrations/wazuh.md: xdr/index.md
+      integrations/windows.md: xdr/features/collect/integrations/endpoint/windows.md
+      integrations/zeek.md: xdr/features/collect/integrations/network/zeek.md
+      operation_center/actions.md: xdr/features/automate/actions.md
+      operation_center/operators.md: xdr/features/automate/operators.md
+      operation_center/playbook_overview.md: xdr/features/automate/index.md
+      operation_center/triggers.md: xdr/features/automate/triggers.md
 - redoc
 - intakes_by_uuid
+
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
