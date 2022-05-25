@@ -15,6 +15,7 @@ In this documentation we will explain how to collect and send Cloudflare HTTP lo
 
 First, you will have to retrieve configuration information.
 To do so, connect to [Cloudflare Console](https://dash.cloudflare.com/) to collect:
+
 - `Cloudflare authentication key`
 - `Cloudflare Zone ID`
 - `Cloudflare account email`

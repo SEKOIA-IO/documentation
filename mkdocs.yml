@@ -53,6 +53,8 @@ nav:
         - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
         - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
         - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      - Cloudflare:
+          - Cloudflare: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare_logpull.md
       - Digital Shadows: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
       - Microsoft Azure:
         - Azure Active Directory: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
