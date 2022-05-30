@@ -103,6 +103,7 @@ nav:
     - Overview: operation_center/data_collection/index.md
     - Ingestion methods:
       - Overview: operation_center/data_collection/ingestion_methods/index.md
+      - SEKOIA.IO Agent: operation_center/data_collection/ingestion_methods/sekoiaio.md
       - Rsyslog: operation_center/data_collection/ingestion_methods/rsyslog.md
       - Logstash: operation_center/data_collection/ingestion_methods/logstash.md
       - syslog-ng: operation_center/data_collection/ingestion_methods/syslog-ng.md
