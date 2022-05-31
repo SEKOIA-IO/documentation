@@ -40,7 +40,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": "info"
         },
-        "message": " {\"id\": \"zekfnzejnf576rge8768\", \"date\": \"2022-02-10T13:00:05.454Z\", \"sender_ip\": \"192.168.1.1\", \"from\": \"test@sekoia.io\", \"from_header\": \"<test@sekoia.io>\", \"to\": \"test@vadesecure.com\", \"to_header\": \"\\\"test@vadesecure.com\\\" <test@vadesecure.com>\", \"subject\": \"Lorem ipsum dolor\", \"message_id\": \"<01de2305-f75b-49db-8c61-f661bd498e63.protection.outlook.com>\", \"urls\": [{\"url\": \"https://sekoia.io\"}], \"attachments\": [], \"status\": \"LEGIT\", \"substatus\": \"\", \"remediation_type\": \"none\", \"remediation_ids\": [], \"action\": \"NOTHING\", \"folder\": \"\", \"size\": 113475, \"current_events\": [], \"whitelisted\": false} ",
+        "message": " {\"id\": \"zekfnzejnf576rge8768\", \"date\": \"2022-02-10T13:00:05.454Z\", \"sender_ip\": \"192.168.1.1\", \"from\": \"test@sekoia.io\", \"from_header\": \"<test@sekoia.io>\", \"to\": \"test@vadesecure.com\", \"to_header\": \"\\\"test@vadesecure.com\\\" <test@vadesecure.com>\", \"subject\": \"Lorem ipsum dolor\", \"message_id\": \"<01de2305-f75b-49db-8c61-f661bd498e63.protection.outlook.com>\", \"urls\": [{\"url\": \"https://sekoia.io\"}], \"attachments\": [{\"id\": \"ca9ph2ostndl7735uht0\", \"filename\": \"image001.png\", \"extension\": \"png\", \"size\": 12894},{\"id\": \"ca9okt0kn1e8usdf633g\", \"filename\": \"archive.zip\", \"extension\": \"zip\", \"size\": 10558}], \"status\": \"LEGIT\", \"substatus\": \"\", \"remediation_type\": \"none\", \"remediation_ids\": [], \"action\": \"NOTHING\", \"folder\": \"\", \"size\": 113475, \"current_events\": [], \"whitelisted\": false} ",
         "sekoiaio": {
             "intake": {
                 "parsing_status": "success"
@@ -55,7 +55,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "subject": "Lorem ipsum dolor",
             "to": {
                 "address": "test@vadesecure.com"
-            }
+            },
+            "attachments": [
+                {
+                    "file": {
+                        "extension": "png",
+                        "name": "image001.png",
+                        "size": 12894
+                    }
+                },
+                {
+                    "file": {
+                        "extension": "zip",
+                        "name": "archive.zip",
+                        "size": 10558
+                    }
+                }
+            ]
         },
         "source": {
             "address": "192.168.1.1",
@@ -64,7 +80,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "vadesecure": {
             "from_header": "<test@sekoia.io>",
             "status": "LEGIT",
-            "to_header": "\"test@vadesecure.com\" <test@vadesecure.com>"
+            "to_header": "\"test@vadesecure.com\" <test@vadesecure.com>",
+            "attachments": [
+                {
+                    "filename": "image001.png",
+                    "id": "ca9ph2ostndl7735uht0"
+                },
+                {
+                    "filename": "archive.zip",
+                    "id": "ca9okt0kn1e8usdf633g"
+                }
+            ]
         }
     }
     	
@@ -143,6 +169,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`email.attachments` | `keyword` | email.attachments |
 |`email.from.address` | `keyword` | email.from.address |
 |`email.local_id` | `keyword` | email.local_id |
 |`email.message_id` | `keyword` | email.message_id |
@@ -154,6 +181,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`source.ip` | `ip` | IP address of the source. |
+|`vadesecure.attachments` | `array` | vadesecure.to_header |
 |`vadesecure.campaign.actions` | `keyword` | None |
 |`vadesecure.campaign.id` | `keyword` | None |
 |`vadesecure.campaign.nb_messages_remediated` | `long` | None |
