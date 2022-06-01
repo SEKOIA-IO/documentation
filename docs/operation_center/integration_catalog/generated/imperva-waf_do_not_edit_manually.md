@@ -4,7 +4,7 @@
 
 
 
-In details, the following Table denotes the type of events produced by this integration.
+In details, the following table denotes the type of events produced by this integration.
 
 | Name | Values |
 | ---- | ------ |
