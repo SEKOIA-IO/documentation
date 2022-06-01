@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-Sophos EDR, monitor, detects and mitigates threats on endpoints.
+Sophos EDR monitors, detects and mitigates threats on endpoints.
 This EDR reduces the attack surface and prevent attacks from running with an anti-exploit, an anti-ransomware and advanced control technology.
 
 This setup guide shows how to forward events produced by Sophos EDR to SEKOIA.IO.
@@ -29,7 +29,7 @@ Get the [Sophos Central SIEM integration script](https://github.com/sophos/Sopho
 
 ### Forward events
 
-Consult our [Ingestion methods page](https://docs.sekoia.io/operation_center/data_collection/ingestion_methods/) to select the appropriate methods to forward your events to sekoia.io according your needs.
+See our [Ingestion methods page](https://docs.sekoia.io/operation_center/data_collection/ingestion_methods/) to select the appropriate methods to forward your events to sekoia.io according to your needs.
 
 
 ## Further Readings
