@@ -86,6 +86,7 @@ nav:
       - Checkpoint: operation_center/integration_catalog/network/checkpoint.md
       - Cisco: operation_center/integration_catalog/network/cisco_asa.md
       - F5 BigIP: operation_center/integration_catalog/network/f5-big-ip.md
+      - Forcepoint Secure Web Gateway: operation_center/integration_catalog/network/forcepoint_web_gateway.md
       - FortiGate: operation_center/integration_catalog/network/fortigate.md
       - FortiProxy: operation_center/integration_catalog/network/fortiproxy.md
       - FortiWeb: operation_center/integration_catalog/network/fortiweb.md
@@ -259,6 +260,7 @@ plugins:
       integrations/fsecure.md: operation_center/index.md
       integrations/google_kubernetes_engine.md: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_workspace.md: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
+      integrations/forcepoint-swg.md: operation_center/integration_catalog/network/forcepoint_web_gateway.md
       integrations/haproxy.md: operation_center/integration_catalog/application/haproxy.md
       integrations/harfanglab.md: operation_center/integration_catalog/endpoint/harfanglab.md
       integrations/linux.md: operation_center/integration_catalog/endpoint/linux.md
