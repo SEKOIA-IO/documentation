@@ -9,8 +9,6 @@ type: intake
 
 ## Google Kubernetes Engine (GKE) configuration
 
-To start working with GKE, please create a [Logs Router Sinks](https://cloud.google.com/logging/docs/export/configure_export_v2?hl=en#creating_sink) according to your needs.
-
 There's multiple kind of logs produced by GKE:
 
 **Auditd logs**: Most import logs from a security point of view. We recommend that you use [Auditbeat](../../../endpoint/auditbeat_linux/) to collect Auditd logs.
@@ -18,6 +16,7 @@ There's multiple kind of logs produced by GKE:
 **Flow Logs**: From [Google VPC FLow Logs documentation](https://cloud.google.com/vpc/docs/using-flow-logs):
 > VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as GKE nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
 
+Please read the [dedicated documentation](https://docs.sekoia.io/integrations/integrations/google_vpc_flow_logs.md).
 (*Intake type: Google VPC Flow Logs*)
 
 **Activity logs** (*Intake type: Google Cloud Audit log*):

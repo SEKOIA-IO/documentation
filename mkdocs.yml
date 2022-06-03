@@ -52,6 +52,7 @@ nav:
       - Google Cloud:
         - Google Cloud Audit: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
         - Google Kubernetes Engine: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
+        - Google VPC Flow Logs: operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md
       - Cisco Umbrella:
         - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
         - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
@@ -259,6 +260,7 @@ plugins:
       integrations/freeradius.md: operation_center/index.md
       integrations/fsecure.md: operation_center/index.md
       integrations/google_kubernetes_engine.md: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
+      integrations/google_vpc_flow_logs.md: operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
       integrations/forcepoint-swg.md: operation_center/integration_catalog/network/forcepoint_web_gateway.md
       integrations/haproxy.md: operation_center/integration_catalog/application/haproxy.md
