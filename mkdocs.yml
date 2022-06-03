@@ -248,6 +248,7 @@ plugins:
       integrations/checkpoint.md: operation_center/integration_catalog/network/checkpoint.md
       integrations/cisco-asa.md: operation_center/integration_catalog/network/cisco_asa.md
       integrations/cisco_asa.md: operation_center/integration_catalog/network/cisco_asa.md
+      integrations/cloudflare.md: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare_logpull.md
       integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
       integrations/f5-big-ip.md: operation_center/integration_catalog/network/f5-big-ip.md
       integrations/fortigate.md: operation_center/integration_catalog/network/fortigate.md
