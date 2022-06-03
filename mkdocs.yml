@@ -49,6 +49,9 @@ nav:
       - AWS:
         - CloudTrail: operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md
         - VPC Flow Logs: operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md
+      - Google Cloud:
+        - Google Cloud Audit: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
+        - Google Kubernetes Engine: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
       - Cisco Umbrella:
         - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
         - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
@@ -254,6 +257,8 @@ plugins:
       integrations/fortiweb.md: operation_center/integration_catalog/network/fortiweb.md
       integrations/freeradius.md: operation_center/index.md
       integrations/fsecure.md: operation_center/index.md
+      integrations/google_kubernetes_engine.md: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
+      integrations/google_workspace.md: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
       integrations/haproxy.md: operation_center/integration_catalog/application/haproxy.md
       integrations/harfanglab.md: operation_center/integration_catalog/endpoint/harfanglab.md
       integrations/linux.md: operation_center/integration_catalog/endpoint/linux.md

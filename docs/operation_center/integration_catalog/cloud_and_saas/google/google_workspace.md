@@ -4,6 +4,8 @@ type: intake
 
 {!operation_center/integration_catalog/cloud_and_saas/google/google_cloud.md!}
 
+{!operation_center/integration_catalog/generated/google-cloud-audit_do_not_edit_manually.md!}
+
 ## Google Workspace configuration
 
 To begin, follow the official documentation to [share audit logs with Google Cloud](https://cloud.google.com/logging/docs/audit/configure-gsuite-audit-logs). 
@@ -12,4 +14,3 @@ Once log sharing activated, you should be able to see Google Workspace events in
 
 To forward these events to SEKOIA.IO, go to `Logs Router > Create Sink` and enter the information related to your PubSub topic ([Google Cloud related documentation](https://cloud.google.com/logging/docs/audit/configure-gsuite-audit-logs)).
 
-{!operation_center/integration_catalog/generated/google-cloud-audit_do_not_edit_manually.md!}
