@@ -248,6 +248,7 @@ plugins:
       integrations/cisco-asa.md: operation_center/integration_catalog/network/cisco_asa.md
       integrations/cisco_asa.md: operation_center/integration_catalog/network/cisco_asa.md
       integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
+      integrations/digital_shadows.md: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: operation_center/integration_catalog/network/f5-big-ip.md
       integrations/fortigate.md: operation_center/integration_catalog/network/fortigate.md
       integrations/fortimail.md: operation_center/integration_catalog/email/fortimail.md
@@ -281,6 +282,7 @@ plugins:
       integrations/spamassassin.md: operation_center/integration_catalog/email/spamassassin.md
       integrations/squid.md: operation_center/integration_catalog/network/squid.md
       integrations/suricata.md: operation_center/integration_catalog/network/suricata.md
+      integrations/stormshield_network_security.md: operation_center/integration_catalog/network/stormshield_network_security.md
       integrations/tanium.md: operation_center/integration_catalog/endpoint/tanium.md
       integrations/umbrella-dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
       integrations/umbrella-ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
@@ -290,6 +292,7 @@ plugins:
       integrations/umbrella_proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
       integrations/unbound.md: operation_center/integration_catalog/application/unbound.md
       integrations/vectra-cognito-detect.md: operation_center/integration_catalog/network/vectra.md
+      integrations/vade.md: operation_center/integration_catalog/email/vade.md
       integrations/wallix-bastion.md: operation_center/integration_catalog/network/wallix.md
       integrations/wazuh.md: operation_center/index.md
       integrations/windows.md: operation_center/integration_catalog/endpoint/windows.md
