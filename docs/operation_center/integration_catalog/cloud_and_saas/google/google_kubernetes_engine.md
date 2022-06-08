@@ -9,9 +9,9 @@ type: intake
 
 ## Google Kubernetes Engine (GKE) configuration
 
-There's multiple kind of logs produced by GKE:
+There are different types of logs produced by GKE:
 
-**Auditd logs**: Most import logs from a security point of view. We recommend that you use [Auditbeat](../../../endpoint/auditbeat_linux/) to collect Auditd logs.
+**Auditd logs**: Most important logs from a security point of view. We recommend that you use [Auditbeat](../../../endpoint/auditbeat_linux/) to collect Auditd logs.
 
 **Flow Logs**: From [Google VPC FLow Logs documentation](https://cloud.google.com/vpc/docs/using-flow-logs):
 > VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as GKE nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
@@ -24,7 +24,7 @@ Please read the [dedicated documentation](https://docs.sekoia.io/integrations/in
   - operations done on GCP cluster resources (create a cluster, etc.) `resource.type: gke_cluster`
   - operations done on Kubernetes objects “inside” clusters (Kubernetes Audit Policy) `resource.type: k8s_cluster`
 
-**Event logs**: Kubernetes events are objects that provide insight into what is happening inside a cluster, such as what decisions were made by scheduler or why some pods were evicted from the node `log_id("events")` (*Intake type: Google Cloud Audit log*)
+**Event logs**: Kubernetes events are objects that provide insight into what is happening inside a cluster, such as what decisions were made by the scheduler or why some pods were evicted from the node `log_id("events")` (*Intake type: Google Cloud Audit log*)
 
 **Node logs**: Services running on GKE nodes (kubelet, node problem detector, container runtime, etc.) emit their own logs `resource.type: k8s_node`
 
@@ -32,7 +32,7 @@ Please read the [dedicated documentation](https://docs.sekoia.io/integrations/in
 
 **Instance logs**: Serial console output `log_id("serialconsole.googleapis.com/serial_port_1_output")`
 
-To go further, consult the following resources:
+To learn more, consult the following resources:
 
 - [Youtube video - Cloud Forensics 101 (Cloud Next '18)](https://youtu.be/OkjTqlETgMA)
 - [Blog post - A quick GKE logs primer](https://medium.com/google-cloud/a-quick-gke-logs-primer-a978f60daa7)

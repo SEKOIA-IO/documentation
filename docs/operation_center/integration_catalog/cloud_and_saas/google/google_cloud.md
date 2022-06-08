@@ -1,8 +1,8 @@
 ## Overview
 
-Google Cloud Logging centralize logs from Google Cloud products.
+Google Cloud Logging centralizes logs from Google Cloud products.
 
-In this documentation we will explain how to collect and send Google Cloud logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send Google Cloud logs to SEKOIA.IO.
 
 ## Configure
 
@@ -33,4 +33,4 @@ You can also create your own on the same basis. A typical playbook to retrieve a
 - A "Google Pub/Sub" trigger
 - An action that sends events to SEKOIA.IO
 
-To start sending Logs to SEKOIA.IO, please create a [Logs Router Sinks](https://cloud.google.com/logging/docs/export/configure_export_v2?hl=en#creating_sink) with an [Inclusion Filter](https://cloud.google.com/logging/docs/view/logging-query-language) that fit your needs (Please read the documentation dedicated to the product you want to monitor).
+To start sending Logs to SEKOIA.IO, please create a [Logs Router Sinks](https://cloud.google.com/logging/docs/export/configure_export_v2?hl=en#creating_sink) with an [Inclusion Filter](https://cloud.google.com/logging/docs/view/logging-query-language) that fits your needs (Read the documentation dedicated to the product you want to monitor).
