@@ -43,6 +43,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success"
         },
         "@timestamp": "2022-06-01T13:50:44.190941Z",
+        "orchestrator": {
+            "type": "kubernetes",
+            "cluster": {
+                "name": "cluster-1"
+            },
+            "resource": {
+                "type": "k8s_node"
+            }
+        },
         "google_kubernetes_engine": {
             "insertId": "rxi2u29itqwvaa18",
             "logName": "projects/hazel-aria-348413/logs/container-runtime",
@@ -53,6 +62,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "_BOOT_ID": "e61a95dc40fd44f6ba5c6bfcb18b46a2",
                 "_CAP_EFFECTIVE": "1ffffffffff",
                 "_COMM": "containerd",
+                "_GID": 0,
                 "_STREAM_ID": "949cd6779ed34897a1b74883881ddfe8",
                 "_SYSTEMD_CGROUP": "/system.slice/containerd.service",
                 "_SYSTEMD_INVOCATION_ID": "ebd8a874b9bf4797a358a0403ec7e1e7",
@@ -75,20 +85,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "executable": "/usr/bin/containerd",
             "pid": 1478
         },
-        "file": {
-            "gid": "0"
-        },
         "host": {
             "name": "gke-cluster-1-default-pool-476246ab-wnl7",
             "id": "3fa273bf9f602a2286f55eac7ffa6d36"
-        },
-        "orchestrator": {
-            "cluster": {
-                "name": "cluster-1"
-            },
-            "resource": {
-                "type": "k8s_node"
-            }
         },
         "server": {
             "geo": {
@@ -120,6 +119,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success"
         },
         "@timestamp": "2022-06-01T14:01:35.371492Z",
+        "orchestrator": {
+            "type": "kubernetes",
+            "cluster": {
+                "name": "cluster-1"
+            },
+            "resource": {
+                "type": "k8s_node"
+            }
+        },
         "google_kubernetes_engine": {
             "insertId": "mf28fmdkt05bbyjk",
             "logName": "projects/hazel-aria-348413/logs/container-runtime",
@@ -130,6 +138,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "_BOOT_ID": "e61a95dc40fd44f6ba5c6bfcb18b46a2",
                 "_CAP_EFFECTIVE": "1ffffffffff",
                 "_COMM": "containerd",
+                "_GID": 0,
                 "_STREAM_ID": "949cd6779ed34897a1b74883881ddfe8",
                 "_SYSTEMD_CGROUP": "/system.slice/containerd.service",
                 "_SYSTEMD_INVOCATION_ID": "ebd8a874b9bf4797a358a0403ec7e1e7",
@@ -152,20 +161,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "executable": "/usr/bin/containerd",
             "pid": 1478
         },
-        "file": {
-            "gid": "0"
-        },
         "host": {
             "name": "gke-cluster-1-default-pool-476246ab-wnl7",
             "id": "3fa273bf9f602a2286f55eac7ffa6d36"
-        },
-        "orchestrator": {
-            "cluster": {
-                "name": "cluster-1"
-            },
-            "resource": {
-                "type": "k8s_node"
-            }
         },
         "server": {
             "geo": {
@@ -197,6 +195,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success"
         },
         "@timestamp": "2022-06-01T14:05:30Z",
+        "orchestrator": {
+            "type": "kubernetes",
+            "api_version": "v1",
+            "namespace": "kube-system",
+            "cluster": {
+                "name": "cluster-1"
+            },
+            "resource": {
+                "name": "kube-dns-56494768b7-544n6",
+                "type": "k8s_pod"
+            }
+        },
         "google_kubernetes_engine": {
             "insertId": "17ahw8eg29q74y6",
             "logName": "projects/hazel-aria-348413/logs/events",
@@ -247,17 +257,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "orchestrator": {
-            "api_version": "v1",
-            "namespace": "kube-system",
-            "cluster": {
-                "name": "cluster-1"
-            },
-            "resource": {
-                "name": "kube-dns-56494768b7-544n6",
-                "type": "k8s_pod"
-            }
-        },
         "host": {
             "name": "kube-dns-56494768b7-544n6.16f48435f72a4bd9"
         },
@@ -291,6 +290,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success"
         },
         "@timestamp": "2022-06-01T14:05:33Z",
+        "orchestrator": {
+            "type": "kubernetes",
+            "api_version": "v1",
+            "namespace": "kube-system",
+            "cluster": {
+                "name": "cluster-1"
+            },
+            "resource": {
+                "type": "k8s_cluster"
+            }
+        },
         "google_kubernetes_engine": {
             "insertId": "17ahw8eg29q74yc",
             "logName": "projects/hazel-aria-348413/logs/events",
@@ -338,16 +348,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "orchestrator": {
-            "api_version": "v1",
-            "namespace": "kube-system",
-            "cluster": {
-                "name": "cluster-1"
-            },
-            "resource": {
-                "type": "k8s_cluster"
-            }
-        },
         "host": {
             "name": "kube-dns.16f484369d214dae"
         },
@@ -381,6 +381,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success"
         },
         "@timestamp": "2022-06-01T14:05:32Z",
+        "orchestrator": {
+            "type": "kubernetes",
+            "api_version": "v1",
+            "namespace": "kube-system",
+            "cluster": {
+                "name": "cluster-1"
+            },
+            "resource": {
+                "name": "kube-dns-56494768b7-544n6",
+                "type": "k8s_pod"
+            }
+        },
         "google_kubernetes_engine": {
             "insertId": "17ahw8eg29q74yb",
             "logName": "projects/hazel-aria-348413/logs/events",
@@ -431,17 +443,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "orchestrator": {
-            "api_version": "v1",
-            "namespace": "kube-system",
-            "cluster": {
-                "name": "cluster-1"
-            },
-            "resource": {
-                "name": "kube-dns-56494768b7-544n6",
-                "type": "k8s_pod"
-            }
-        },
         "host": {
             "name": "kube-dns-56494768b7-544n6.16f48436899e3f4a"
         },
@@ -481,6 +482,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`google_kubernetes_engine.jsonPayload._BOOT_ID` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload._CAP_EFFECTIVE` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload._COMM` | `keyword` | None |
+|`google_kubernetes_engine.jsonPayload._GID` | `number` | None |
 |`google_kubernetes_engine.jsonPayload._STREAM_ID` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload._SYSTEMD_CGROUP` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload._SYSTEMD_INVOCATION_ID` | `keyword` | None |
