@@ -304,7 +304,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.action` | `keyword` | The action captured by the event. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.method` | `keyword` | HTTP request method. |
-|`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
 |`http.response.bytes` | `long` | Total size in bytes of the response (body and headers). |
 |`http.response.status_code` | `long` | HTTP response status code. |
 |`network.protocol` | `keyword` | Application protocol name. |
