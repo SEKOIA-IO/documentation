@@ -6,7 +6,7 @@ type: intake
 
 Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable.
 
-In this documentation we will explain how to collect and send Cloudflare HTTP logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send Cloudflare HTTP logs to SEKOIA.IO.
 
 {!operation_center/integration_catalog/generated/cloudflare_do_not_edit_manually.md!}
 
