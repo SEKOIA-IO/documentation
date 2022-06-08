@@ -11,6 +11,7 @@ SEKOIA.IO supports the following rule types:
 - **Sigma**: signature rules using the [Sigma detection language](#sigma-rules)
 - **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from SEKOIA.IO's own Intelligence feed, continuously updated by our Threat & Detection Research team
 - **STIX** (deprecated): signature rules using the STIX Patterning language
+- **Anomaly**: univariate anomaly detection rules 
 
 ## Rules Catalog
 
@@ -444,3 +445,57 @@ aliases:
     login_success: source.ip
     new_network_connection: destination.ip
 ```
+
+## Anomaly Detection Rules 
+
+You can use Sekoia.io Anomaly Detection Rules to analyse time series data, identify anomalous patterns and raise alerts. 
+
+Anomaly detection rules are based on machine learning anomaly detection features automating the analysis of univariate time series data by creating accurate baselines of normal behavior in your data. These baselines are used to identify anomalous patterns in your time series data and raise alerts with different level of criticality. 
+
+This module provide 1-Dimensional time series chart illustrating historical and current data values, forecasting for a specified date range, upper and lower bounds for the expected values, and the anomalies that occur outside these bounds with criticality score.
+
+### Plan your anomaly detection analysis 
+
+The machine learning features enable you to seek anomalies in your time series data combining temporal deviations in values, count of frequencies and statistical rarity. 
+
+For now, these features only tackle univariate anomaly detection. If you are uncertain how to use anomaly detection rules and whether it is relevant, you have to answer the following questions: 
+- Am I interested in monitoring deviation of a specific metric compared to its historical data ? 
+- Does my time series have some periodic seasonalities (daily seasonality/weekly seasonlaity) ?
+
+If yes, you can create an anomaly detection rule. An additional tool for specifying if time series data is a good candidate is set to ensure relevancy.
+
+### Create anomaly detection rule 
+
+Anomaly detection rules contain the configuration information necessary to perform the machine learning analysis. They can run for a specific time period or continuously against incoming data.
+
+For configuration you need to set :
+- a filter query (to aggregate events from a specific area)
+
+![image](https://user-images.githubusercontent.com/77491073/172566414-fbb7ecc9-78ea-474d-b1db-f8248fb927c7.png)
+- aggregation method (`Avergae`, `Cardinality`,`Count`, `Max`, `Min`, `Sum`)
+
+![image](https://user-images.githubusercontent.com/77491073/172566563-23702360-16d2-4eed-8bc9-ce2b58dfcc9a.png)
+- field to aggregate if aggregation method is not `Count` (ex: source.ip, destination.bytes ...) 
+
+![image](https://user-images.githubusercontent.com/77491073/172567053-4941b348-9097-4a67-82c1-68075c0c196d.png)
+- bucket time interval (`10 min`, `30min`, `1 hour`, `6 hours`, `12 hours` or `1 day`)
+
+![image](https://user-images.githubusercontent.com/77491073/172567318-cb8d9304-b86b-4b2e-ab21-8e43b177324b.png)
+- type of anomalies you want to detect (high, low or both)
+
+![image](https://user-images.githubusercontent.com/77491073/172567367-0aa07dab-e203-441a-8484-2defb9b6189a.png)
+- minimum anomaly score raising alerts (`Low`, `Medium` or `High`)
+- severity of the rule 
+
+#### Aggregation methods
+- Count : count events per bucket (for a specific filter or field set to a value)
+- Cardinality (only for string data): count cardinality of values per bucket 
+- Sum (only for numerical data): aggregate sum of field values per bucket 
+- Min (only for numerical data): aggregate min of field values per bucket 
+- Max (only for numerical data): aggregate max of field values per bucket 
+- Average (only for numerical data): aggregate average of field values per bucket 
+ 
+
+
+
+
