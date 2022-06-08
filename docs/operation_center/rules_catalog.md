@@ -496,6 +496,15 @@ For configuration you need to set :
 - Average (only for numerical data): aggregate average of field values per bucket 
  
 
+### Visualization
+As a result, for a rule that aims to monitor the volume of services installed on systems (query filter: `event.dialect:windows AND action.id:4697`, with a `Count` aggregation method and a `10 min` time interval), we obtain:
+
+![image](https://user-images.githubusercontent.com/77491073/172630813-fc957ee3-0b28-45d1-ace7-696a7208213e.png)
+
+Then anomaly identified raise an alert that you can visualize as follows. 
+
+![image](https://user-images.githubusercontent.com/77491073/172631385-a6054d11-3b42-45ff-b4ca-7f98b3a1ec9e.png)
+
 
 
 
