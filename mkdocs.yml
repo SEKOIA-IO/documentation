@@ -53,6 +53,8 @@ nav:
         - Proxy: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
         - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
         - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
+      - Cloudflare:
+          - Cloudflare: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare_logpull.md
       - Digital Shadows: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
       - Microsoft Azure:
         - Azure Active Directory: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
@@ -247,6 +249,7 @@ plugins:
       integrations/checkpoint.md: operation_center/integration_catalog/network/checkpoint.md
       integrations/cisco-asa.md: operation_center/integration_catalog/network/cisco_asa.md
       integrations/cisco_asa.md: operation_center/integration_catalog/network/cisco_asa.md
+      integrations/cloudflare.md: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare_logpull.md
       integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
       integrations/digital_shadows.md: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: operation_center/integration_catalog/network/f5-big-ip.md
