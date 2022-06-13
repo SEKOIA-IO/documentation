@@ -21,86 +21,6 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
-=== "activity_log_get_alert.json"
-
-    ```json
-	
-    {
-        "sekoiaio": {
-            "entity": {
-                "id": "AOkLfQ4FaBb5OBfw",
-                "uuid": "4609e901-13a7-4efa-8ef8-d0b765023db4",
-                "name": "r0Gbu7Dxtntmccvh"
-            },
-            "intake": {
-                "dialect": "sekoia.io activity logs",
-                "parsing_status": "success",
-                "dialect_uuid": "41e3ca4e-a714-41aa-ad69-684a0b3835fc"
-            },
-            "activity": {
-                "client": {
-                    "type": "avatar",
-                    "id": "16f6e9d6-b397-4265-8ff5-0ebffbd39e6a"
-                }
-            },
-            "customer": {
-                "community_name": "mQXlZ0Ob2VjxzQak",
-                "id": "56f794cd-f3fd-499f-b382-ff87598cfd48",
-                "community_uuid": "15797a90-1173-4df0-b283-e1fc0324d15d"
-            }
-        },
-        "event": {
-            "dialect_uuid": "bc044da0-2d8b-4874-948f-ed83d22a1453",
-            "id": "efc37ede-33d7-4b51-a234-2bb33fb9f542",
-            "outcome": "success",
-            "dialect": "sekoia.io activity logs",
-            "created": "2021-08-12"
-        },
-        "url": {
-            "registered_domain": "sekoia.io",
-            "original": "http://api.sekoia.io/v1/sic/conf/events/search/jobs/62552d4a-ab69-49d5-881d-249f5bc561d9/events?limit=50",
-            "subdomain": "api",
-            "query": "limit=50",
-            "domain": "api.sekoia.io",
-            "top_level_domain": "io",
-            "scheme": "http",
-            "port": 80,
-            "path": "/v1/sic/conf/events/search/jobs/62552d4a-ab69-49d5-881d-249f5bc561d9/events"
-        },
-        "message": "{\"timestamp\": \"2021-11-29T19:02:42.735615\", \"observer\": {\"name\": \"TrMEIdRe1B8hUt4M\", \"version\": null}, \"visit\": {\"id\": null, \"ip\": \"157.232.208.7\", \"user_agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36\", \"referrer\": \"https://app.test.sekoia.io/operations/alerts/AL9v91TNyWcM\"}, \"action\": {\"name\": null, \"path\": \"/v1/sic/conf/events/search/jobs/62552d4a-ab69-49d5-881d-249f5bc561d9/events\", \"url\": \"http://api.sekoia.io/v1/sic/conf/events/search/jobs/62552d4a-ab69-49d5-881d-249f5bc561d9/events?limit=50\", \"method\": \"GET\"}, \"identity\": {\"user_uuid\": \"b57d2513-7037-4fe3-b1f7-9126e52dcc32\", \"community_uuid\": \"15797a90-1173-4df0-b283-e1fc0324d15d\", \"profile_type\": \"avatar\", \"profile_identity\": \"16f6e9d6-b397-4265-8ff5-0ebffbd39e6a\"}}",
-        "@timestamp": "2021-11-29T19:02:42.735Z",
-        "http": {
-            "request": {
-                "referrer": "https://app.test.sekoia.io/operations/alerts/AL9v91TNyWcM",
-                "method": "GET"
-            }
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "agent": {
-            "name": "TrMEIdRe1B8hUt4M"
-        },
-        "related": {
-            "ip": [
-                "157.232.208.7"
-            ]
-        },
-        "client": {
-            "ip": "157.232.208.7",
-            "user": {
-                "id": "b57d2513-7037-4fe3-b1f7-9126e52dcc32"
-            },
-            "address": "157.232.208.7"
-        },
-        "user_agent": {
-            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36"
-        }
-    }
-    	
-	```
-
-
 === "activity_log_get_intake_format_picture.json"
 
     ```json
@@ -170,7 +90,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "agent": {
             "name": "sekoia.webapi"
         },
-        "@timestamp": "2021-11-29T19:00:46.553Z",
+        "@timestamp": "2022-02-22T16:31:58.286485Z",
         "event": {
             "id": "25e373f2-83d1-490e-ae7e-133231e0253a",
             "dialect": "sekoia.io activity logs",
@@ -213,7 +133,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "profile_identity": "95267578-e797-4263-90c3-09fb230536e2"
             }
         },
-        "@timestamp": "2021-10-29T11:34:23Z",
+        "@timestamp": "2021-10-29T11:34:23.000000Z",
         "agent": {
             "name": "sekoia.webapi"
         },
@@ -288,7 +208,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "profile_identity": "9cd287a4-4a61-4bf1-998a-74087098adf4"
             }
         },
-        "@timestamp": "2021-11-01T12:16:21.815546",
+        "@timestamp": "2021-11-01T12:16:21.815546Z",
         "agent": {
             "name": "sekoia.webapi"
         },
@@ -338,6 +258,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
 |`agent.name` | `keyword` | Custom name of the agent. |
 |`agent.version` | `keyword` | Version of the agent. |
 |`client.ip` | `ip` | IP address of the client. |

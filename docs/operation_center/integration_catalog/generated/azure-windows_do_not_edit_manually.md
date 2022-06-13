@@ -550,7 +550,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "no match",
             "outcome": "success",
             "record_id": 9379,
-            "type": "Application"
+            "type": "Application",
+            "properties": [
+                {
+                    "opcode": 0
+                }
+            ]
         },
         "azure_windows": {
             "opcode": "0",
@@ -1031,13 +1036,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "id": "S-1-5-18",
             "name": "AZSQL-02$",
-            "domain": "AXENS"
+            "domain": "ACME"
         },
         "host": {
-            "hostname": "AZSQL-02.axens.local"
+            "hostname": "AZSQL-02.acme.local"
         },
         "log": {
-            "hostname": "AZSQL-02.axens.local"
+            "hostname": "AZSQL-02.acme.local"
         },
         "azure_windows": {
             "provider_guid": "54849625-5478-4994-A5BA-3E3B0328C30D",
@@ -1049,7 +1054,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "NewProcessId": "0x12f0",
                 "NewProcessName": "C:\\Windows\\System32\\svchost.exe",
                 "ProcessId": "0x25c",
-                "SubjectDomainName": "AXENS",
+                "SubjectDomainName": "ACME",
                 "SubjectLogonId": "0x3e7",
                 "SubjectUserName": "AZSQL-02$",
                 "SubjectUserSid": "S-1-5-18",
@@ -1073,7 +1078,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "pid": 604
             }
         },
-        "message": "{\"time\":\"2020-10-22T11:31:18.8344123Z\",\"category\":\"WindowsEventLogsTable\",\"level\":\"Informational\",\"properties\":{\"DeploymentId\":\"46c98274-e8d7-4247-a358-11a02975100a\",\"Role\":\"IaaS\",\"RoleInstance\":\"_AZSQL-02\",\"ProviderGuid\":\"{54849625-5478-4994-A5BA-3E3B0328C30D}\",\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"EventId\":4688,\"Level\":0,\"Pid\":4,\"Tid\":8568,\"Opcode\":0,\"Task\":13312,\"Channel\":\"Security\",\"Description\":\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tAZSQL-02$\\r\\n\\tAccount Domain:\\t\\tAXENS\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x12f0\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tCreator Process ID:\\t0x25c\\r\\n\\tProcess Command Line:\\tC:\\\\Windows\\\\system32\\\\svchost.exe -k wsappx\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\",\"RawXml\":\"<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Security-Auditing' Guid='{54849625-5478-4994-A5BA-3E3B0328C30D}'/><EventID>4688</EventID><Version>2</Version><Level>0</Level><Task>13312</Task><Opcode>0</Opcode><Keywords>0x8020000000000000</Keywords><TimeCreated SystemTime='2020-10-22T11:31:18.834412300Z'/><EventRecordID>13259890</EventRecordID><Correlation/><Execution ProcessID='4' ThreadID='8568'/><Channel>Security</Channel><Computer>AZSQL-02.axens.local</Computer><Security/></System><EventData><Data Name='SubjectUserSid'>S-1-5-18</Data><Data Name='SubjectUserName'>AZSQL-02$</Data><Data Name='SubjectDomainName'>AXENS</Data><Data Name='SubjectLogonId'>0x3e7</Data><Data Name='NewProcessId'>0x12f0</Data><Data Name='NewProcessName'>C:\\\\Windows\\\\System32\\\\svchost.exe</Data><Data Name='TokenElevationType'>%%1936</Data><Data Name='ProcessId'>0x25c</Data><Data Name='CommandLine'>C:\\\\Windows\\\\system32\\\\svchost.exe -k wsappx</Data><Data Name='TargetUserSid'>S-1-0-0</Data><Data Name='TargetUserName'>-</Data><Data Name='TargetDomainName'>-</Data><Data Name='TargetLogonId'>0x0</Data></EventData></Event>\"}}",
+        "message": "{\"time\":\"2020-10-22T11:31:18.8344123Z\",\"category\":\"WindowsEventLogsTable\",\"level\":\"Informational\",\"properties\":{\"DeploymentId\":\"46c98274-e8d7-4247-a358-11a02975100a\",\"Role\":\"IaaS\",\"RoleInstance\":\"_AZSQL-02\",\"ProviderGuid\":\"{54849625-5478-4994-A5BA-3E3B0328C30D}\",\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"EventId\":4688,\"Level\":0,\"Pid\":4,\"Tid\":8568,\"Opcode\":0,\"Task\":13312,\"Channel\":\"Security\",\"Description\":\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tAZSQL-02$\\r\\n\\tAccount Domain:\\t\\tACME\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x12f0\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tCreator Process ID:\\t0x25c\\r\\n\\tProcess Command Line:\\tC:\\\\Windows\\\\system32\\\\svchost.exe -k wsappx\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\",\"RawXml\":\"<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Security-Auditing' Guid='{54849625-5478-4994-A5BA-3E3B0328C30D}'/><EventID>4688</EventID><Version>2</Version><Level>0</Level><Task>13312</Task><Opcode>0</Opcode><Keywords>0x8020000000000000</Keywords><TimeCreated SystemTime='2020-10-22T11:31:18.834412300Z'/><EventRecordID>13259890</EventRecordID><Correlation/><Execution ProcessID='4' ThreadID='8568'/><Channel>Security</Channel><Computer>AZSQL-02.acme.local</Computer><Security/></System><EventData><Data Name='SubjectUserSid'>S-1-5-18</Data><Data Name='SubjectUserName'>AZSQL-02$</Data><Data Name='SubjectDomainName'>ACME</Data><Data Name='SubjectLogonId'>0x3e7</Data><Data Name='NewProcessId'>0x12f0</Data><Data Name='NewProcessName'>C:\\\\Windows\\\\System32\\\\svchost.exe</Data><Data Name='TokenElevationType'>%%1936</Data><Data Name='ProcessId'>0x25c</Data><Data Name='CommandLine'>C:\\\\Windows\\\\system32\\\\svchost.exe -k wsappx</Data><Data Name='TargetUserSid'>S-1-0-0</Data><Data Name='TargetUserName'>-</Data><Data Name='TargetDomainName'>-</Data><Data Name='TargetLogonId'>0x0</Data></EventData></Event>\"}}",
         "os": {
             "family": "windows",
             "platform": "windows"
@@ -1094,6 +1099,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "AZSQL-02$"
             ]
+        },
+        "event": {
+            "code": "4688",
+            "provider": "Microsoft-Windows-Security-Auditing"
         }
     }
     	

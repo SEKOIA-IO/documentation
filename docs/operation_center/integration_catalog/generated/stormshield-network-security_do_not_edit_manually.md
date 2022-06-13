@@ -236,12 +236,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "@timestamp": "2022-03-16T18:36:03.000000Z",
         "destination": {
-            "address": "22",
+            "address": "22.22.22.22",
             "geo": {
                 "continent_name": "eu",
                 "country_iso_code": "be"
             },
-            "ip": "22",
+            "ip": "22.22.22.22",
             "port": 443
         },
         "ecs": {
@@ -292,7 +292,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "11.11.11.11",
-                "22"
+                "22.22.22.22"
             ]
         },
         "rule": {
