@@ -116,9 +116,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "outcome": "success"
         },
-        "action": {
-            "name": "allow"
-        },
         "sophos": {
             "action": "DNS request",
             "sub": "packetfilter"
@@ -178,7 +175,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "bytes": 0,
             "ip": "195.35.245.30",
             "nat": {
-                "ip": "",
                 "port": 0
             },
             "packets": 0,

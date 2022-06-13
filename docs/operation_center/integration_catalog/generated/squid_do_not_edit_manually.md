@@ -41,7 +41,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "duration": 3387,
-            "start": "2019-08-01T10:34:44.277000+00:00"
+            "start": "2019-08-01T10:34:44.277000Z"
         },
         "source": {
             "address": "192.168.0.1",
@@ -98,7 +98,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "duration": 5756,
-            "start": "2019-07-31T12:39:01.982000+00:00"
+            "start": "2019-07-31T12:39:01.982000Z"
         },
         "source": {
             "address": "192.168.0.1",
@@ -159,7 +159,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "duration": 1717,
-            "start": "2020-04-16T13:09:56.494000+00:00"
+            "start": "2020-04-16T13:09:56.494000Z"
         },
         "source": {
             "address": "192.168.224.39",
@@ -217,7 +217,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "duration": 0,
-            "start": "2022-01-20T08:23:57.129000+00:00",
+            "start": "2022-01-20T08:23:57.129000Z",
             "type": [
                 "connection",
                 "denied",
@@ -278,7 +278,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "network"
             ],
             "kind": "event",
-            "start": "2019-08-12T08:33:21.353000+00:00",
+            "start": "2019-08-12T08:33:21.353000Z",
             "duration": 24
         },
         "source": {
@@ -346,7 +346,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "duration": 5007,
-            "start": "2019-08-01T14:35:12.892000+00:00",
+            "start": "2019-08-01T14:35:12.892000Z",
             "type": [
                 "connection",
                 "error"
@@ -420,7 +420,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "error"
             ],
             "duration": 0,
-            "start": "2019-08-12T08:55:28.411000+00:00"
+            "start": "2019-08-12T08:55:28.411000Z"
         },
         "source": {
             "address": "192.168.0.1",
@@ -479,7 +479,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "duration": 82,
-            "start": "2021-08-04T13:36:43.491000+00:00"
+            "start": "2021-08-04T13:36:43.491000Z"
         },
         "destination": {
             "address": "13.107.4.50",
@@ -543,7 +543,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "duration": 549,
-            "start": "2021-08-05T08:01:50.448000+00:00"
+            "start": "2021-08-05T08:01:50.448000Z"
         },
         "source": {
             "address": "192.168.0.1",
@@ -642,7 +642,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "duration": 5007,
             "kind": "event",
             "outcome": "success",
-            "start": "2019-08-01T14:35:12.892000+00:00",
+            "start": "2019-08-01T14:35:12.892000Z",
             "type": [
                 "connection",
                 "error"
