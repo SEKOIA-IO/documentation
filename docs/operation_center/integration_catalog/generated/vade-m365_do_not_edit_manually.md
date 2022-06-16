@@ -169,7 +169,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
-|`email.attachments` | `keyword` | email.attachments |
+|`email.attachments` | `array` | email.attachments |
 |`email.from.address` | `keyword` | email.from.address |
 |`email.local_id` | `keyword` | email.local_id |
 |`email.message_id` | `keyword` | email.message_id |
@@ -182,7 +182,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`source.ip` | `ip` | IP address of the source. |
 |`vadesecure.attachments` | `array` | vadesecure.to_header |
-|`vadesecure.campaign.actions` | `keyword` | None |
+|`vadesecure.campaign.actions` | `array` | None |
 |`vadesecure.campaign.id` | `keyword` | None |
 |`vadesecure.campaign.nb_messages_remediated` | `long` | None |
 |`vadesecure.campaign.nb_messages_remediated_read` | `long` | None |

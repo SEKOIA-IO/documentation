@@ -1118,7 +1118,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
-|`action.properties` | `text` | None |
+|`action.properties` | `object` | None |
 |`action.target` | `keyword` | None |
 |`azure_windows.event_data` | `object` | None |
 |`azure_windows.opcode` | `keyword` | None |
