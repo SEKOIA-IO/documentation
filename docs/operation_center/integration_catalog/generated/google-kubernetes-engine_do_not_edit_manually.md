@@ -499,7 +499,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`google_kubernetes_engine.jsonPayload.involvedObject.uid` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload.kind` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload.metadata.creationTimestamp` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.metadata.managedFields` | `keyword` | None |
+|`google_kubernetes_engine.jsonPayload.metadata.managedFields` | `object` | None |
 |`google_kubernetes_engine.jsonPayload.metadata.resourceVersion` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload.metadata.uid` | `keyword` | None |
 |`google_kubernetes_engine.jsonPayload.reason` | `keyword` | None |

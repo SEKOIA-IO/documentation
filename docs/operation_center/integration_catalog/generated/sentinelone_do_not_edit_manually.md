@@ -2509,7 +2509,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.agentRealtimeInfo.agentVersion` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.groupId` | `long` | None |
 |`sentinelone.agentRealtimeInfo.groupName` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.networkInterfaces` | `keyword` | None |
+|`sentinelone.agentRealtimeInfo.networkInterfaces` | `object` | None |
 |`sentinelone.agentRealtimeInfo.operationalState` | `keyword` | None |
 |`sentinelone.agentRealtimeInfo.rebootRequired` | `bool` | None |
 |`sentinelone.agentRealtimeInfo.scanAbortedAt` | `keyword` | None |
@@ -2732,7 +2732,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.description` | `keyword` | None |
 |`sentinelone.eventid` | `long` | None |
 |`sentinelone.hash` | `keyword` | None |
-|`sentinelone.indicators` | `keyword` | None |
+|`sentinelone.indicators` | `object` | None |
 |`sentinelone.kubernetesInfo.controllerKind` | `keyword` | None |
 |`sentinelone.kubernetesInfo.controllerLabels` | `keyword` | None |
 |`sentinelone.kubernetesInfo.controllerName` | `keyword` | None |
@@ -2740,7 +2740,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.kubernetesInfo.node` | `keyword` | None |
 |`sentinelone.kubernetesInfo.pod` | `keyword` | None |
 |`sentinelone.kubernetesInfo.podLabels` | `keyword` | None |
-|`sentinelone.mitigationStatus` | `keyword` | None |
+|`sentinelone.mitigationStatus` | `object` | None |
 |`sentinelone.secondaryDescription` | `keyword` | None |
 |`sentinelone.siteId` | `long` | None |
 |`sentinelone.sitename` | `keyword` | None |
@@ -2754,7 +2754,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.threatInfo.classificationSource` | `keyword` | None |
 |`sentinelone.threatInfo.cloudFilesHashVerdict` | `keyword` | None |
 |`sentinelone.threatInfo.collectionId` | `keyword` | None |
-|`sentinelone.threatInfo.detectionEngines` | `keyword` | None |
+|`sentinelone.threatInfo.detectionEngines` | `object` | None |
 |`sentinelone.threatInfo.detectionType` | `keyword` | None |
 |`sentinelone.threatInfo.engines` | `keyword` | None |
 |`sentinelone.threatInfo.externalTicketExists` | `bool` | None |

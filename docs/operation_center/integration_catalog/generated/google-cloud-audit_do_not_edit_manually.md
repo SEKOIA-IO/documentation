@@ -1738,7 +1738,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`google_cloud_audit.protoPayload.authorizationInfo` | `keyword` | None |
 |`google_cloud_audit.protoPayload.metadata.activityId.timeUsec` | `keyword` | None |
 |`google_cloud_audit.protoPayload.metadata.activityId.uniqQualifier` | `keyword` | None |
-|`google_cloud_audit.protoPayload.metadata.event` | `keyword` | None |
+|`google_cloud_audit.protoPayload.metadata.event` | `object` | None |
 |`google_cloud_audit.protoPayload.metadata.type` | `keyword` | None |
 |`google_cloud_audit.protoPayload.methodName` | `keyword` | None |
 |`google_cloud_audit.protoPayload.request.policy.bindings` | `keyword` | None |

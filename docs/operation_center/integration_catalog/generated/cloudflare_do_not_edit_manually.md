@@ -296,7 +296,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`cloudflare.clientASNDescription` | `keyword` | None |
 |`cloudflare.clientRequestQuery` | `keyword` | None |
 |`cloudflare.matchIndex` | `numer` | None |
-|`cloudflare.metadata` | `keyword` | None |
+|`cloudflare.metadata` | `object` | None |
 |`cloudflare.rayName` | `keyword` | None |
 |`cloudflare.sampleInterval` | `number` | None |
 |`cloudflare.source` | `keyword` | None |

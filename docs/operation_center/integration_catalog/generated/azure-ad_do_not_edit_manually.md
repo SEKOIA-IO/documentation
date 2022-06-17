@@ -627,8 +627,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "city_name": "Bordeaux",
                 "country_iso_code": "FR",
                 "location": {
-                    "lat": "44.84040069580078",
-                    "lon": "-0.5805000066757202"
+                    "lat": 44.84040069580078,
+                    "lon": -0.5805000066757202
                 },
                 "region_name": "Gironde"
             }
@@ -692,8 +692,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "city_name": "Bordeaux",
                 "country_iso_code": "FR",
                 "location": {
-                    "lat": "44.84040069580078",
-                    "lon": "-0.5805000066757202"
+                    "lat": 44.84040069580078,
+                    "lon": -0.5805000066757202
                 },
                 "region_name": "Gironde"
             },
@@ -819,8 +819,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "city_name": "La Guaiserie",
                 "country_iso_code": "fr",
                 "location": {
-                    "lat": "47.45919",
-                    "lon": "2.21955"
+                    "lat": 47.45919,
+                    "lon": 2.21955
                 },
                 "region_name": "Loir-Et-Cher"
             },

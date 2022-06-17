@@ -237,7 +237,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "host": {
-            "ip": "198.51.100.14",
+            "ip": [
+                "198.51.100.14"
+            ],
             "name": "IP-198.51.100.14"
         },
         "network": {
@@ -286,7 +288,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "host": {
             "id": "27617",
-            "ip": "198.51.100.14",
+            "ip": [
+                "198.51.100.14"
+            ],
             "name": "IP-198.51.100.14"
         },
         "related": {
@@ -364,7 +368,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80
         },
         "host": {
-            "ip": "10.0.0.1",
+            "ip": [
+                "10.0.0.1"
+            ],
             "name": "plop-99"
         }
     }
@@ -383,7 +389,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 445
         },
         "host": {
-            "ip": "198.51.100.155",
+            "ip": [
+                "198.51.100.155"
+            ],
             "name": "hostname"
         },
         "event": {
@@ -410,7 +418,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "id": 13295,
                 "name": "SMB Brute-Force",
                 "reason": "MORE_PROCESSING_REQUIRED",
-                "type": "smb_brute_force"
+                "type": "smb_brute_force",
+                "count": "295"
             },
             "risk_score_norm": 20,
             "severity": 2.0,
@@ -453,7 +462,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 49668
         },
         "host": {
-            "ip": "192.168.71.1",
+            "ip": [
+                "192.168.71.1"
+            ],
             "name": "IP-192.168.71.1"
         }
     }
@@ -533,7 +544,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`vectra.detection.port` | `keyword` | None |
 |`vectra.detection.ports` | `long` | None |
 |`vectra.detection.product_id` | `keyword` | None |
-|`vectra.detection.profile` | `array` | None |
+|`vectra.detection.profile` | `object` | None |
 |`vectra.detection.protocol` | `keyword` | None |
 |`vectra.detection.ransom_notes` | `keyword` | None |
 |`vectra.detection.reason` | `keyword` | None |

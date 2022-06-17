@@ -110,21 +110,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "aether": {
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
-                {
-                    "is_translatable": true,
-                    "name": "Root",
-                    "type": 1
-                },
-                {
-                    "is_translatable": null,
-                    "name": "PC",
-                    "type": 2
-                },
-                {
-                    "is_translatable": null,
-                    "name": "Lorem Ipsum Foo Bar",
-                    "type": 2
-                }
+                "{\"is_translatable\": true, \"name\": \"Root\", \"type\": 1}",
+                "{\"is_translatable\": null, \"name\": \"PC\", \"type\": 2}",
+                "{\"is_translatable\": null, \"name\": \"Lorem Ipsum Foo Bar\", \"type\": 2}"
             ],
             "device_type": 1,
             "id": "ae485846-fb1b-561b-98da-a8426caf65fa",
@@ -175,21 +163,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "aether": {
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
-                {
-                    "is_translatable": true,
-                    "name": "Root",
-                    "type": 1
-                },
-                {
-                    "is_translatable": null,
-                    "name": "PC",
-                    "type": 2
-                },
-                {
-                    "is_translatable": null,
-                    "name": "Lorem Ipsum Foo Bar",
-                    "type": 2
-                }
+                "{\"is_translatable\": true, \"name\": \"Root\", \"type\": 1}",
+                "{\"is_translatable\": null, \"name\": \"PC\", \"type\": 2}",
+                "{\"is_translatable\": null, \"name\": \"Lorem Ipsum Foo Bar\", \"type\": 2}"
             ],
             "device_type": 1,
             "id": "d8309d70-489d-5c62-97e3-2994e9dd8f17",
@@ -239,21 +215,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "security_event_type": 13,
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
-                {
-                    "is_translatable": true,
-                    "name": "Root",
-                    "type": 1
-                },
-                {
-                    "is_translatable": null,
-                    "name": "PC",
-                    "type": 2
-                },
-                {
-                    "is_translatable": null,
-                    "name": "PC - Lock + Update + Patching (lundi au dimanche)  + Fw",
-                    "type": 2
-                }
+                "{\"is_translatable\": true, \"name\": \"Root\", \"type\": 1}",
+                "{\"is_translatable\": null, \"name\": \"PC\", \"type\": 2}",
+                "{\"is_translatable\": null, \"name\": \"PC - Lock + Update + Patching (lundi au dimanche)  + Fw\", \"type\": 2}"
             ],
             "device_type": 2,
             "id": "6527fc9f-90ba-54b6-9116-b032ade14c05",
@@ -301,21 +265,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "security_event_type": 15,
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
-                {
-                    "is_translatable": true,
-                    "name": "Root",
-                    "type": 1
-                },
-                {
-                    "is_translatable": null,
-                    "name": "PC",
-                    "type": 2
-                },
-                {
-                    "is_translatable": null,
-                    "name": "PC - Lock + Update + Patching (lundi au dimanche)  + Fw",
-                    "type": 2
-                }
+                "{\"is_translatable\": true, \"name\": \"Root\", \"type\": 1}",
+                "{\"is_translatable\": null, \"name\": \"PC\", \"type\": 2}",
+                "{\"is_translatable\": null, \"name\": \"PC - Lock + Update + Patching (lundi au dimanche)  + Fw\", \"type\": 2}"
             ],
             "device_type": 2,
             "id": "aebfd1b7-a6ec-5a18-8c55-7be2b4c8562e",
@@ -350,21 +302,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "security_event_type": 1,
             "custom_group_folder_id": "c0594d69-c988-4b59-a43f-c6a9ba130483",
             "custom_group_folder_info": [
-                {
-                    "is_translatable": true,
-                    "name": "Root",
-                    "type": 1
-                },
-                {
-                    "is_translatable": null,
-                    "name": "PC",
-                    "type": 2
-                },
-                {
-                    "is_translatable": null,
-                    "name": "Lorem Ipsum Foo Bar",
-                    "type": 2
-                }
+                "{\"is_translatable\": true, \"name\": \"Root\", \"type\": 1}",
+                "{\"is_translatable\": null, \"name\": \"PC\", \"type\": 2}",
+                "{\"is_translatable\": null, \"name\": \"Lorem Ipsum Foo Bar\", \"type\": 2}"
             ],
             "device_type": 1,
             "id": "b597cc26-eb5d-5fc4-be0d-b86c08d2d91d",
