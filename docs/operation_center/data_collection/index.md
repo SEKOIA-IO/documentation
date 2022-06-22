@@ -10,6 +10,7 @@ SEKOIA.IO is able to collect logs through various mechanisms, configuration on y
 
 SEKOIA.IO supports the following log collectors:
 
+- SEKOIA.IO Endpoint Agent: collect your Windows events using SEKOIA's own agent (currently in beta).
 - Syslog over TLS (`intake.sekoia.io:10514`): forward your events with the Syslog protocol specified in RFC 5424.
 - RELP over TLS (`intake.sekoia.io:11514`): forward your events with Rsyslog’s reliable protocol called RELP.
 - HTTPS (`https://intake.sekoia.io`): `POST` your JSON events to SEKOIA.IO.
