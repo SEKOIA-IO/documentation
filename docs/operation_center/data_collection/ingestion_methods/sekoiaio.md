@@ -19,7 +19,7 @@ A link to download the latest version of the agent is available in the descripti
 The Endpoint Detection Agent is a Windows binary which you can easily install on Windows systems, after having created a dedicated intake on SEKOIA.IO XDR. The following command must be executed **as an administrator**:
 
 ```shell
-agent.exe -install -instake_key <INTAKE_KEY>
+agent.exe -install -intake-key <INTAKE_KEY>
 ```
 
 To make sure the agent is successfully installed as a service you can run the following command:
@@ -33,7 +33,7 @@ Once installed, the agent collects Windows event logs from ETW (Event Tracing fo
 ### Proxy Support
 
 If needed, the SEKOIA.IO agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
-the configuration file at `C:\Program Files\EndpointAgent\config.yaml` and add the following line:
+the configuration file at `C:\ProgramData\EndpointAgent\config.yaml` and add the following line:
 
 ```
 HTTPProxyURL: "<PROXY_URL>"
