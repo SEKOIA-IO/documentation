@@ -12,7 +12,7 @@ SEKOIA.IO provides its own agent allowing to collect interresting events with a 
 The first step to use the agent is to create a new intake associated to the SEKOIA.IO Agent.
 A link to download the latest version of the agent is available in the description of the intake.
 
-![SEKOIA.IO for Endpoints intake](../../assets/operation_center/data_collection/ingestion_methods/agent/sekoiaio_for_endpoints.png){: style="max-width:100%"}
+![SEKOIA.IO for Endpoints intake](../../../assets/operation_center/data_collection/ingestion_methods/agent/sekoiaio_for_endpoints.png){: style="max-width:100%"}
 
 ### Installation
 
