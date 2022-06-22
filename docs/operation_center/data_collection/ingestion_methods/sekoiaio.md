@@ -33,11 +33,13 @@ Once installed, the agent collects Windows event logs from ETW (Event Tracing fo
 ### Proxy Support
 
 If needed, the SEKOIA.IO agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
-the configuration file at `C:\ProgramData\EndpointAgent\config.yaml` and add the following line:
+the configuration file at `C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\config.yaml` and add the following line:
 
 ```
 HTTPProxyURL: "<PROXY_URL>"
 ```
+
+If you want to automate the installation of the agent with this configuration option, make sure a `config.yaml` file with this line is present in the working directory when launching the install command.
 
 ### Recommended: Install Sysmon
 
