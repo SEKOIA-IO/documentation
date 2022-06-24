@@ -156,9 +156,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "related": {
-            "hosts": [
-                "azureactivedirectory"
-            ],
             "user": [
                 "Microsoft Teams Services"
             ]
@@ -486,7 +483,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "correlationId": "7ee10819-f631-4ab1-8edb-4efb7286baba",
                 "id": "b2fdcc8f-954d-4d88-a035-58daefab4f00",
                 "riskDetail": "none",
-                "riskState": "none"
+                "riskState": "none",
+                "status": {
+                    "errorCode": "0"
+                }
             },
             "resourceId": "/tenants/e6eb2b5c-ad71-4c33-9856-1ed49b85bfe2/providers/Microsoft.aadiam",
             "tenantId": "e6eb2b5c-ad71-4c33-9856-1ed49b85bfe2"
@@ -505,9 +505,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success"
         },
         "related": {
-            "hosts": [
-                "azureactivedirectory"
-            ],
             "ip": [
                 "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
             ]
@@ -617,7 +614,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "correlationId": "e68960e2-8996-448c-ba7a-e54eeb8ff2ed",
                 "id": "22253f56-6fc4-45f2-b148-d7fe15504900",
                 "riskDetail": "none",
-                "riskState": "none"
+                "riskState": "none",
+                "status": {
+                    "errorCode": "50158",
+                    "failureReason": "External security challenge was not satisfied."
+                }
             }
         },
         "source": {
@@ -638,9 +639,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full_name": "User Name"
         },
         "related": {
-            "hosts": [
-                "azureactivedirectory"
-            ],
             "ip": [
                 "11.11.11.11"
             ]
@@ -677,7 +675,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "correlationId": "467c1340-0762-40d2-b6fb-339235633ebb",
                 "id": "8795994f-0bb8-46d7-8797-8c9c385d5900",
                 "riskDetail": "none",
-                "riskState": "none"
+                "riskState": "none",
+                "status": {
+                    "errorCode": "0"
+                }
             }
         },
         "action": {
@@ -710,9 +711,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "related": {
-            "hosts": [
-                "azureactivedirectory"
-            ],
             "ip": [
                 "11.11.11.11"
             ]
@@ -828,9 +826,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "11.22.33.44"
         },
         "related": {
-            "hosts": [
-                "azureactivedirectory"
-            ],
             "ip": [
                 "11.22.33.44"
             ]
@@ -913,6 +908,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`azuread.properties.riskLevel` | `keyword` | None |
 |`azuread.properties.riskState` | `keyword` | None |
 |`azuread.properties.source` | `keyword` | None |
+|`azuread.properties.status.errorCode` | `keyword` | None |
+|`azuread.properties.status.failureReason` | `keyword` | None |
 |`azuread.resourceId` | `keyword` | None |
 |`azuread.resourceTenantId` | `keyword` | None |
 |`azuread.resultSignature` | `keyword` | None |
