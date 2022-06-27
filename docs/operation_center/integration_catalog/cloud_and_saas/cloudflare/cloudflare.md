@@ -55,7 +55,7 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
 
 #### with logpull
 
-You can now enable Cloudflare log retention (see [associated documentation](https://developers.cloudflare.com/logs/logpull/enabling-log-retention/)). 
+ To start using Logpull, start by enabling [Cloudflare log retention](https://developers.cloudflare.com/logs/logpull/enabling-log-retention/). 
 
 To pull events, go to [the playbook page](https://app.sekoia.io/operations/playbooks) and create your playbook with a template: "Create a new playbook" > "Use a template" > Search for Cloudflare.
 Fill the module configuration with the information got from our Cloudflare Console.
