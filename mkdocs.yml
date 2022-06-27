@@ -23,7 +23,6 @@ markdown_extensions:
 - markdown_include.include:
     base_path: docs
 - lightgallery
-
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
@@ -62,7 +61,7 @@ nav:
         - IP: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
         - DNS: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
       - Cloudflare:
-          - Cloudflare: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md
+        - Cloudflare: operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md
       - Digital Shadows: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
       - Microsoft Azure:
         - Azure Active Directory: operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md
@@ -262,6 +261,7 @@ plugins:
       integrations/dhcpd.md: operation_center/integration_catalog/application/dhcpd.md
       integrations/digital_shadows.md: operation_center/integration_catalog/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: operation_center/integration_catalog/network/f5-big-ip.md
+      integrations/forcepoint-swg.md: operation_center/integration_catalog/network/forcepoint_web_gateway.md
       integrations/fortigate.md: operation_center/integration_catalog/network/fortigate.md
       integrations/fortimail.md: operation_center/integration_catalog/email/fortimail.md
       integrations/fortiproxy.md: operation_center/integration_catalog/network/fortiproxy.md
@@ -271,9 +271,10 @@ plugins:
       integrations/google_kubernetes_engine.md: operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md
-      integrations/forcepoint-swg.md: operation_center/integration_catalog/network/forcepoint_web_gateway.md
       integrations/haproxy.md: operation_center/integration_catalog/application/haproxy.md
       integrations/harfanglab.md: operation_center/integration_catalog/endpoint/harfanglab.md
+      integrations/imperva_waf.md: operation_center/integration_catalog/cloud_and_saas/imperva_waf.md
+      integrations/index.md: operation_center/integration_catalog/index.md
       integrations/linux.md: operation_center/integration_catalog/endpoint/linux.md
       integrations/log-insight-windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
       integrations/log_insight_windows.md: operation_center/integration_catalog/endpoint/log_insight_windows.md
@@ -290,15 +291,23 @@ plugins:
       integrations/raw.md: operation_center/index.md
       integrations/retarus-email-security.md: operation_center/integration_catalog/email/retarus_email_security.md
       integrations/sekoiaio-activity-logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
+      integrations/sekoiaio_activity_logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
       integrations/sentinelone-deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
       integrations/sentinelone.md: operation_center/integration_catalog/endpoint/sentinelone.md
       integrations/sentinelone_deepvisibility.md: operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md
       integrations/sophos.md: operation_center/integration_catalog/network/sophos.md
       integrations/spamassassin.md: operation_center/integration_catalog/email/spamassassin.md
       integrations/squid.md: operation_center/integration_catalog/network/squid.md
-      integrations/suricata.md: operation_center/integration_catalog/network/suricata.md
       integrations/stormshield_network_security.md: operation_center/integration_catalog/network/stormshield_network_security.md
+      integrations/suricata.md: operation_center/integration_catalog/network/suricata.md
       integrations/tanium.md: operation_center/integration_catalog/endpoint/tanium.md
+      integrations/thehive.md: operation_center/integration_catalog/application/thehive.md
+      integrations/transport.md: operation_center/data_collection/ingestion_methods/index.md
+      integrations/transport/graylog.md: operation_center/data_collection/ingestion_methods/graylog.md
+      integrations/transport/https.md: operation_center/data_collection/ingestion_methods/https.md
+      integrations/transport/logstash.md: operation_center/data_collection/ingestion_methods/logstash.md
+      integrations/transport/rsyslog.md: operation_center/data_collection/ingestion_methods/rsyslog.md
+      integrations/transport/syslog-ng.md: operation_center/data_collection/ingestion_methods/syslog-ng.md
       integrations/umbrella-dns.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md
       integrations/umbrella-ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
       integrations/umbrella-proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
@@ -306,26 +315,16 @@ plugins:
       integrations/umbrella_ip.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md
       integrations/umbrella_proxy.md: operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
       integrations/unbound.md: operation_center/integration_catalog/application/unbound.md
-      integrations/vectra-cognito-detect.md: operation_center/integration_catalog/network/vectra.md
       integrations/vade.md: operation_center/integration_catalog/email/vade.md
+      integrations/vectra-cognito-detect.md: operation_center/integration_catalog/network/vectra.md
       integrations/wallix-bastion.md: operation_center/integration_catalog/network/wallix.md
       integrations/wazuh.md: operation_center/index.md
       integrations/windows.md: operation_center/integration_catalog/endpoint/windows.md
       integrations/zeek.md: operation_center/integration_catalog/network/zeek.md
-      integrations/transport/graylog.md: operation_center/data_collection/ingestion_methods/graylog.md
-      integrations/transport/https.md: operation_center/data_collection/ingestion_methods/https.md
-      integrations/transport.md: operation_center/data_collection/ingestion_methods/index.md
-      integrations/transport/logstash.md: operation_center/data_collection/ingestion_methods/logstash.md
-      integrations/transport/rsyslog.md: operation_center/data_collection/ingestion_methods/rsyslog.md
-      integrations/transport/syslog-ng.md: operation_center/data_collection/ingestion_methods/syslog-ng.md
-      integrations/sekoiaio_activity_logs.md: operation_center/integration_catalog/application/sekoiaio_activity_logs.md
-      integrations/thehive.md: operation_center/integration_catalog/application/thehive.md
-      integrations/imperva_waf.md: operation_center/integration_catalog/cloud_and_saas/imperva_waf.md
+      operation_center/actions.md: playbooks/actions.md
       operation_center/operators.md: playbooks/operators.md
       operation_center/playbook_overview.md: playbooks/overview.md
-      operation_center/actions.md: playbooks/actions.md
       operation_center/triggers.md: playbooks/triggers.md
-      integrations/index.md: operation_center/integration_catalog/index.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
