@@ -38,6 +38,11 @@ jobs:
           mkdir site
           tar zxvf site.tar.gz -C ./site
 
+      - name: Fix URLs and relative links
+        run: |
+          shopt -s globstar
+          sed -i 's,src="/assets/,src="/v1/AUTH_741841e1c7da4c50a76152cbc2609bd1/sekoiaio-documentation-previews/${{ steps.pr_number.outputs.pr_number }}/assets/,' site/**/*.html
+
       - name: Get PR number
         id: pr_number
         run: echo "::set-output name=pr_number::$(cat site/.pr_number)"
