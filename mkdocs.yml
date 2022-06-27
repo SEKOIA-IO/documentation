@@ -5,8 +5,10 @@ extra:
     link: https://twitter.com/sekoia_io
 extra_css:
 - stylesheets/sekoiaio.css
+- stylesheets/lightgallery.min.css
 extra_javascript:
 - javascript/sekoiaio.js
+- javascript/lightgallery.min.js
 markdown_extensions:
 - admonition
 - attr_list
@@ -20,6 +22,8 @@ markdown_extensions:
     alternate_style: true
 - markdown_include.include:
     base_path: docs
+- lightgallery
+
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
@@ -33,7 +37,7 @@ nav:
   - Dashboards: operation_center/threat_exposition.md
   - Integration Catalog:
     - Overview: operation_center/integration_catalog/index.md
-    - Custom Format: operation_center/intakes_customformat.md 
+    - Custom Format: operation_center/intakes_customformat.md
     - Application:
       - Alsid: operation_center/integration_catalog/application/alsid.md
       - Apache: operation_center/integration_catalog/application/apache.md
