@@ -31,7 +31,7 @@ To do so, connect to [Cloudflare Console](https://dash.cloudflare.com/) to colle
 
     It's the recommended way to get your events from Cloudflare.
 
-Configure a [logpull job](https://developers.cloudflare.com/logs/reference/logpush-api-configuration/) with the following destination:
+Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpush-api-configuration/) with the following destination:
 
 `https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<your intake key>`
 
