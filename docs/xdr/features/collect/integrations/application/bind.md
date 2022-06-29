@@ -14,7 +14,7 @@ As of now, the main solution to collect BIND logs leverages the Rsyslog recipe. 
 
 ### Rsyslog
 
-This Section shows how to configure BIND to forward its events to your rsyslog server. The reader is also invited to consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+This Section shows how to configure BIND to forward its events to your rsyslog server. The reader is also invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
 
 First, you need to configure your BIND daemon to log queries and forward them to your rsyslog instance. If rsyslog and BIND are installed on the same box, you can simply add the following statement in your BIND’s main configuration file:
 

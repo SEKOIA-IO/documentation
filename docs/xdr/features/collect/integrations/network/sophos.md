@@ -25,4 +25,4 @@ You can configure a syslog server in Sophos Firewall by following the instructio
 - Click Save to save the configuration.
 
 ### Configure the Rsyslog server
-You can configure your Rsyslog server to forward your Sophos logs to SEKOIA.IO. Please consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+You can configure your Rsyslog server to forward your Sophos logs to SEKOIA.IO. Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.

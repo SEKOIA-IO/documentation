@@ -8,4 +8,4 @@ SpamAssassin is a computer program used for e-mail spam filtering. SpamAssassin 
 {!xdr/features/collect/integrations/generated/spamassassin_do_not_edit_manually.md!}
 
 ## Configure
-This setup guide will show you how to forward logs produced by your SpamAssassin servers to SEKOIA.IO by means of an rsyslog transport channel. Please consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+This setup guide will show you how to forward logs produced by your SpamAssassin servers to SEKOIA.IO by means of an rsyslog transport channel. Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.

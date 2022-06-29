@@ -12,7 +12,7 @@ As of now, the main solution to collect HAProxy logs leverages the Rsyslog recip
 
 ### Rsyslog
 
-The reader is invited to consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
 
 ## Further Reading
 - [HAProxy Official Documentation](http://www.haproxy.org/#docs)

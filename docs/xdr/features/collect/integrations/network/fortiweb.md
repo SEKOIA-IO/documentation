@@ -57,4 +57,4 @@ For more information please refer to the official documentation of [FortiWeb](ht
 
 #### Rsyslog
 
-The reader is invited to consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.

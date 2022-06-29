@@ -264,7 +264,7 @@ sudo systemctl restart rsyslog.service
 
 ### Transport to SEKOIA.IO
 
-The reader is invited to consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to transport logs to SEKOIA.IO.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to transport logs to SEKOIA.IO.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

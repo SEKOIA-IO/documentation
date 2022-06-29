@@ -63,4 +63,4 @@ Then choose a virtual server, go to the `Security -> Policies` tab and apply the
 
 ### Rsyslog
 
-Please consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.

@@ -26,7 +26,7 @@ As of now, the main solution to send Netfilter events to SEKOIA.IO is to use a R
 
 ### Rsyslog
 
-Please consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO
+Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO
 
 ### Configure Netfilter using Iptables
 The first step is to configure Netfilter to log the awaited

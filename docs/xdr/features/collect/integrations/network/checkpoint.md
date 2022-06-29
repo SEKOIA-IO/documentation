@@ -16,4 +16,4 @@ We are currently supporting the following firewall versions: R77.30, R80.10, R80
 
 ### Rsyslog
 
-Please refer to the documentation of the [Log Exporter](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323) of checkpoint to forward events to your rsyslog server. The reader is also invited to consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please refer to the documentation of the [Log Exporter](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323) of checkpoint to forward events to your rsyslog server. The reader is also invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.

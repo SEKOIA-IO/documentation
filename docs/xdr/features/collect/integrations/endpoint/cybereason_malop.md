@@ -26,7 +26,7 @@ Keep aside the intake key.
 
 ### Setup the Syslog collector
 
-Check the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to install and set up the syslog collector.
+Check the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to install and set up the syslog collector.
 
 ### Setup the CybeReason CEF Forwarder
 

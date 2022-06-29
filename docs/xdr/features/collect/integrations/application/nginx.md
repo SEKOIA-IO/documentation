@@ -34,7 +34,7 @@ $InputFilePollInterval 1
 $InputRunFileMonitor
 ```
 
-The reader can consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+The reader can consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
 
 
 ## Further Reading

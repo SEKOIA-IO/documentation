@@ -13,4 +13,4 @@ As of now, the main solution to collect ISC DHCP logs leverages the Rsyslog reci
 
 ### Rsyslog
 
-Please refer to the documentation of ISC DHPD to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](../../../data_collection/ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please refer to the documentation of ISC DHPD to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
