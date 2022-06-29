@@ -1,5 +1,5 @@
 :root {
-    --md-default-fg-color: #7172a3;
+    --md-default-fg-color: #111233;
 }
 
 .md-search__inner  {
@@ -13,7 +13,7 @@
 .md-header {
     background-color: #ffffff;
     box-shadow: inherit;
-    color: #7172a3;
+    color: #111233;
 
     &[data-md-state='shadow'] {
         box-shadow: inherit;
@@ -108,7 +108,7 @@
         }
 
 a {
-    color: #12005e;
+    color: #1B18CD;
 
     &:hover {
 	color: #5351eb;

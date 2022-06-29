@@ -1,0 +1,1 @@
+../../_shared/intelligence_center/data_model.md
