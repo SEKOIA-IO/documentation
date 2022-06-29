@@ -62,16 +62,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "sekoiaio": {
-            "customer": {
-                "community_uuid": "79997bd0-dd71-4e25-a70d-a94fa475cd2b",
-                "id": "6ed853ab-5011-4b62-971e-645a8ab828f0",
-                "community_name": "Vu9rTssDG17JH97f"
-            },
-            "entity": {
-                "id": "e3BqW6V7bwoWwLFR",
-                "uuid": "cb9b58d8-2d8a-4424-82dd-aa5e8b8759c4",
-                "name": "0rDL19YCmG79O0Fx"
-            },
             "intake": {
                 "dialect": "sekoia.io activity logs",
                 "parsing_status": "success",
@@ -141,6 +131,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": {
                 "id": "5beacab7-4fc9-4c07-8ec0-e6ad73ed77fe"
             },
+            "address": "141.229.130.228",
             "ip": "141.229.130.228"
         },
         "user_agent": {
@@ -154,7 +145,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "http://api.sekoia.io/v1/me?extended=true",
-            "path": "/v1/me"
+            "path": "/v1/me",
+            "domain": "api.sekoia.io",
+            "port": 80,
+            "query": "extended=true",
+            "registered_domain": "sekoia.io",
+            "scheme": "http",
+            "subdomain": "api",
+            "top_level_domain": "io"
         },
         "sekoiaio": {
             "intake": {
@@ -172,6 +170,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "0088f426-d1b7-462b-ad8a-99aca6301432",
             "created": "2021-10-29T11:37:11Z",
             "outcome": "failure"
+        },
+        "related": {
+            "ip": [
+                "141.229.130.228"
+            ]
         }
     }
     	
@@ -213,6 +216,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "sekoia.webapi"
         },
         "client": {
+            "address": "51.255.128.104",
             "ip": "51.255.128.104"
         },
         "user_agent": {
@@ -225,7 +229,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "http://api.sekoia.io/v2/inthreat/bundles?auto_merge=1",
-            "path": "/v2/inthreat/bundles"
+            "path": "/v2/inthreat/bundles",
+            "domain": "api.sekoia.io",
+            "registered_domain": "sekoia.io",
+            "subdomain": "api",
+            "top_level_domain": "io",
+            "scheme": "http",
+            "port": 80,
+            "query": "auto_merge=1"
         },
         "event": {
             "id": "624a4f6a-73f4-41a8-b202-01e9ba5712be",
@@ -243,6 +254,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "type": "apikey"
                 }
             }
+        },
+        "related": {
+            "ip": [
+                "51.255.128.104"
+            ]
         }
     }
     	

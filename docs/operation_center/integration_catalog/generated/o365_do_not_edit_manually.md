@@ -84,6 +84,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "source": {
+            "address": "1.2.3.4",
             "ip": "1.2.3.4"
         },
         "office365": {
@@ -98,6 +99,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "user@company.onmicrosoft.com"
+            ]
         }
     }
     	
@@ -129,6 +138,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
+            "address": "d498:796:298e:be16:1b11:29eb:9996:8a36",
             "ip": "d498:796:298e:be16:1b11:29eb:9996:8a36"
         },
         "event": {
@@ -153,6 +163,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "email": "email@example.org",
             "name": "email@example.org"
+        },
+        "related": {
+            "ip": [
+                "d498:796:298e:be16:1b11:29eb:9996:8a36"
+            ],
+            "user": [
+                "email@example.org"
+            ]
         }
     }
     	
@@ -200,6 +218,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "source": {
+            "address": "1.2.3.4",
             "ip": "1.2.3.4"
         },
         "file": {
@@ -207,8 +226,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "MyDocument.docx"
         },
         "url": {
+            "domain": "company-my.sharepoint.com",
             "full": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
-            "original": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx"
+            "original": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
+            "path": "/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
+            "port": 443,
+            "registered_domain": "sharepoint.com",
+            "scheme": "https",
+            "subdomain": "company-my",
+            "top_level_domain": "com"
         },
         "user_agent": {
             "original": "OneDriveMpc-Transform_Thumbnail/1.0"
@@ -224,6 +250,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "jane.doe@company.onmicrosoft.com"
+            ]
         }
     }
     	
@@ -277,6 +311,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
+            "address": "1.2.3.4",
             "ip": "1.2.3.4"
         },
         "file": {
@@ -284,8 +319,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "logo.png"
         },
         "url": {
+            "domain": "company.sharepoint.com",
             "full": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png",
-            "original": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png"
+            "original": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png",
+            "path": "/sites/shared/public/assets/website/logo.png",
+            "port": 443,
+            "registered_domain": "sharepoint.com",
+            "scheme": "https",
+            "subdomain": "company",
+            "top_level_domain": "com"
         },
         "user_agent": {
             "original": "Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)"
@@ -301,6 +343,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "marketing@company.com"
+            ]
         }
     }
     	
@@ -313,6 +363,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "source": {
+            "address": "1.2.3.4",
             "ip": "1.2.3.4"
         },
         "organization": {
@@ -350,7 +401,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "url": {
-            "original": "https://www.amazon.fr/s?i=merchant-items&amp;me=A1TLEYKQIC7812&amp;marketplaceID=A13V1IB3VIYZZH&amp;qid=1649187214&amp;ref=sr_pg_1"
+            "domain": "www.amazon.fr",
+            "original": "https://www.amazon.fr/s?i=merchant-items&amp;me=A1TLEYKQIC7812&amp;marketplaceID=A13V1IB3VIYZZH&amp;qid=1649187214&amp;ref=sr_pg_1",
+            "path": "/s",
+            "port": 443,
+            "query": "i=merchant-items&amp;me=A1TLEYKQIC7812&amp;marketplaceID=A13V1IB3VIYZZH&amp;qid=1649187214&amp;ref=sr_pg_1",
+            "registered_domain": "amazon.fr",
+            "scheme": "https",
+            "subdomain": "www",
+            "top_level_domain": "fr"
         },
         "user": {
             "email": "email@example.org",
@@ -380,6 +439,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": 25,
             "outcome": "success",
             "name": "MessageCreatedHasLink"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "email@example.org"
+            ]
         }
     }
     	
@@ -430,6 +497,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        },
+        "related": {
+            "user": [
+                "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com"
+            ]
         }
     }
     	
@@ -481,6 +553,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        },
+        "related": {
+            "user": [
+                "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com"
+            ]
         }
     }
     	
@@ -545,6 +622,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        },
+        "related": {
+            "user": [
+                "user@domain.onmicrosoft.com"
+            ]
         }
     }
     	
@@ -614,6 +696,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "source": {
+            "address": "1.2.3.4",
             "ip": "1.2.3.4",
             "port": 8085
         },
@@ -621,6 +704,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "intake": {
                 "parsing_status": "success"
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "REDACTED@company.onmicrosoft.com"
+            ]
         }
     }
     	
@@ -637,7 +728,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`action.properties` | `text` | None |
+|`action.properties` | `object` | None |
 |`action.target` | `keyword` | None |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
@@ -665,7 +756,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`office365.teams.message.urls` | `keyword` | None |
 |`office365.teams.message.version` | `keyword` | None |
 |`office365.teams.team.id` | `keyword` | None |
-|`office365.teams.team.members` | `keyword` | None |
+|`office365.teams.team.members` | `object` | None |
 |`office365.teams.team.name` | `keyword` | None |
 |`office365.user_type.code` | `long` | None |
 |`organization.id` | `keyword` | Unique identifier for the organization. |

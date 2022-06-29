@@ -2420,7 +2420,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`system.audit.package.version` | `keyword` | None |
 |`system.audit.user.dir` | `keyword` | None |
 |`system.audit.user.gid` | `keyword` | None |
-|`system.audit.user.group` | `keyword` | None |
+|`system.audit.user.group` | `object` | None |
 |`system.audit.user.name` | `keyword` | None |
 |`system.audit.user.shell` | `keyword` | None |
 |`system.audit.user.user_information` | `keyword` | None |
