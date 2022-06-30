@@ -266,7 +266,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "tenantId": "f6b9ca1d-c995-41bd-ac32-5fba5580215d",
             "properties": {
                 "correlationId": "d40fb664-9901-4cfa-bd3b-afeff8d6b0de",
-                "id": "Directory_HR9C4_45223131"
+                "id": "Directory_HR9C4_45223131",
+                "targetUserPrincipalName": "jean.dupont@usergmail.onmicrosoft.com"
             }
         },
         "event": {
@@ -418,7 +419,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "tenantId": "f6b9ca1d-c995-41bd-ac32-5fba5580215d",
             "properties": {
                 "correlationId": "fd39aead-f711-4c4f-b6a9-ced2c67f3fca",
-                "id": "Directory_1PF86_84995790"
+                "id": "Directory_1PF86_84995790",
+                "targetUserPrincipalName": "jean.dupont@usergmail.onmicrosoft.com"
             }
         },
         "event": {
@@ -742,7 +744,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "tenantId": "f6b9ca1d-c995-41bd-ac32-5fba5580215d",
             "properties": {
                 "correlationId": "fd39aead-f711-4c4f-b6a9-ced2c67f3fca",
-                "id": "Directory_1PF86_84995795"
+                "id": "Directory_1PF86_84995795",
+                "targetUserPrincipalName": "jean.dupont@usergmail.onmicrosoft.com"
             }
         },
         "event": {
@@ -910,6 +913,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`azuread.properties.source` | `keyword` | None |
 |`azuread.properties.status.errorCode` | `keyword` | None |
 |`azuread.properties.status.failureReason` | `keyword` | None |
+|`azuread.properties.targetDevicePrincipalName` | `keyword` | None |
+|`azuread.properties.targetUserPrincipalName` | `keyword` | None |
 |`azuread.resourceId` | `keyword` | None |
 |`azuread.resourceTenantId` | `keyword` | None |
 |`azuread.resultSignature` | `keyword` | None |
