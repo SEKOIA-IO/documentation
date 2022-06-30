@@ -100,3 +100,10 @@ The Rule creation form has the following sections:
 New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the `configure` icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
 
 Rules are automatically enabled based on the configured effort level, or you can decide to never automatically enable rules.
+
+### Notify on new rules
+
+We continuously update the rules catalog with new rules. To keep posted, we introduced a dedicated trigger in the Notification Center.
+This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
+
+This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.
