@@ -248,6 +248,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            },
             "name": "Run SwitchThemeColor.ps1.lnk",
             "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
         },
@@ -260,12 +263,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "551799238352448315"
         },
+        "related": {
+            "hash": [
+                "08731ccac0d404da077e7029062f73ca3d8faf61"
+            ]
+        },
         "sentinelone": {
             "createdAt": "2022-04-05T09:10:15.006573Z",
             "data": {
                 "accountName": "corp",
                 "computerName": "CL001234",
-                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
                 "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
                 "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
                 "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
@@ -316,6 +323,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            },
             "name": "Run SwitchThemeColor.ps1.lnk",
             "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
         },
@@ -328,12 +338,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "551799238352448315"
         },
+        "related": {
+            "hash": [
+                "08731ccac0d404da077e7029062f73ca3d8faf61"
+            ]
+        },
         "sentinelone": {
             "createdAt": "2022-04-05T09:10:15.137471Z",
             "data": {
                 "accountName": "corp",
                 "computerName": "CL001234",
-                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
                 "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
                 "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
                 "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
@@ -377,6 +391,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "551799238352448315"
         },
+        "related": {
+            "user": [
+                "Foo User"
+            ]
+        },
         "sentinelone": {
             "createdAt": "2022-04-14T06:19:49.402205Z",
             "data": {
@@ -397,7 +416,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "updatedAt": "2022-04-14T06:19:49.402210Z"
         },
         "user": {
-            "full_name": "Foo User",
+            "name": "Foo User",
             "id": 1157751223520522706
         }
     }
@@ -438,6 +457,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "os": {
             "family": "windows"
         },
+        "related": {
+            "user": [
+                "Jean DUPONT"
+            ]
+        },
         "sentinelone": {
             "createdAt": "2022-04-11T07:18:34.090547Z",
             "data": {
@@ -456,7 +480,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "id": 827950513703271774,
-            "full_name": "Jean DUPONT"
+            "name": "Jean DUPONT"
         }
     }
     	
@@ -488,6 +512,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "New Suspicious Threat Not Mitigated"
         },
         "file": {
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            },
             "name": "Run SwitchThemeColor.ps1.lnk",
             "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
         },
@@ -497,13 +524,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "name": "CL001234"
         },
+        "related": {
+            "hash": [
+                "08731ccac0d404da077e7029062f73ca3d8faf61"
+            ]
+        },
         "sentinelone": {
             "createdAt": "2022-04-05T09:10:14.913348Z",
             "data": {
                 "accountName": "corp",
                 "computerName": "CL001234",
                 "confidenceLevel": "suspicious",
-                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
                 "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
                 "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
                 "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
@@ -549,6 +580,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            },
             "name": "Run SwitchThemeColor.ps1.lnk",
             "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
         },
@@ -561,12 +595,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "551799238352448315"
         },
+        "related": {
+            "hash": [
+                "08731ccac0d404da077e7029062f73ca3d8faf61"
+            ]
+        },
         "sentinelone": {
             "createdAt": "2022-04-05T09:10:15.125572Z",
             "data": {
                 "accountName": "corp",
                 "computerName": "CL001234",
-                "fileContentHash": "08731ccac0d404da077e7029062f73ca3d8faf61",
                 "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
                 "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
                 "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
@@ -808,6 +846,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "551799238352448315"
         },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ]
+        },
         "rule": {
             "description": "Flux",
             "id": "556166862007673241",
@@ -982,12 +1025,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "hash": [
-                "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
-                "681a21a3b848ed960073475cd77634ce",
-                "3d930943fbea03c9330c4947e5749ed9ceed528a",
-                "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f",
                 "04029e121a0cfa5991749937dd22a1d9",
-                "08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089"
+                "08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089",
+                "3d930943fbea03c9330c4947e5749ed9ceed528a",
+                "681a21a3b848ed960073475cd77634ce",
+                "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f",
+                "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054"
+            ],
+            "user": [
+                "sentinelone"
             ]
         },
         "rule": {
@@ -1058,7 +1104,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "updatedAt": "2021-11-16T15:29:38.429056Z"
         },
         "user": {
-            "full_name": "sentinelone",
+            "name": "sentinelone",
             "id": 111111111111111111
         }
     }
@@ -1122,6 +1168,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "66883dc802f65605077b0b05b1bc901b",
                 "84580370c58b1b0c9e4138257018fd98efdf28ba",
                 "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23"
+            ],
+            "user": [
+                "User NAME"
             ]
         },
         "rule": {
@@ -1209,7 +1258,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "WebexHost_old.exe"
         },
         "user": {
-            "full_name": "User NAME",
+            "name": "User NAME",
             "id": 901170701818003423
         }
     }
@@ -1240,16 +1289,25 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "file": {
+            "hash": {
+                "sha1": "4ffe673e3696a4287ab4a9c816d611a5fff56858"
+            },
             "name": "nsh29ED.tmp",
             "extension": "tmp",
             "path": "\\Device\\HarddiskVolume2\\Users\\User\\AppData\\Local\\Temp\\nsr1C3F.tmp\\nsh29ED.tmp",
             "size": 2976256
         },
         "related": {
+            "hash": [
+                "4ffe673e3696a4287ab4a9c816d611a5fff56858"
+            ],
             "ip": [
                 "1.1.1.1",
-                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
-                "2.2.2.2"
+                "2.2.2.2",
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+            ],
+            "user": [
+                "VM-SENTINELONE\\User"
             ]
         },
         "host": {
@@ -1384,7 +1442,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "mitigationStatusDescription": "Not mitigated",
                 "pendingActions": false,
                 "rebootRequired": false,
-                "sha1": "4ffe673e3696a4287ab4a9c816d611a5fff56858",
                 "storyline": "37077C139C322609",
                 "threatId": "1112953674841025235",
                 "updatedAt": "2021-03-16T14:00:16.874050Z"
@@ -1444,6 +1501,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "hash": {
+                "sha1": "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4"
+            },
             "name": "mimikatz.exe",
             "extension": "exe",
             "path": "\\Device\\HarddiskVolume2\\Users\\tdr\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe",
@@ -1468,6 +1528,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "617755838952421242",
             "name": "CORP"
+        },
+        "related": {
+            "hash": [
+                "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4"
+            ],
+            "ip": [
+                "1.1.1.1",
+                "10.0.1.4",
+                "55.55.55.55",
+                "fe80::9ddd:fd78:1f21:f707",
+                "fe80::9ddd:fd78:1f21:f708",
+                "fe80::9ddd:fd78:1f21:f709"
+            ],
+            "user": [
+                "tdr-vm-template\\tdr"
+            ]
         },
         "sentinelone": {
             "agentDetectionInfo": {
@@ -1597,7 +1673,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "pendingActions": false,
                 "publisherName": "OPEN SOURCE DEVELOPER, BENJAMIN DELPY",
                 "rebootRequired": false,
-                "sha1": "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4",
                 "storyline": "D8F484ABE8543750",
                 "threatId": "1113032189486913422",
                 "updatedAt": "2021-03-16T17:33:41.910607Z"
@@ -1643,6 +1718,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "hash": {
+                "sha1": "25e43630e04e0858418f0b1a3843ddfd626c1fba"
+            },
             "name": "OfficeTimeline.exe",
             "extension": "exe",
             "path": "\\Device\\HarddiskVolume3\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe",
@@ -1664,12 +1742,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "LSYN98873"
         },
         "related": {
+            "hash": [
+                "25e43630e04e0858418f0b1a3843ddfd626c1fba"
+            ],
             "ip": [
                 "10.4.4.69",
-                "fe80::e4a1:7fce:33f3:d50e",
                 "192.168.56.1",
+                "66.66.66.66",
                 "fe80::605f:b34f:31ac:498",
-                "66.66.66.66"
+                "fe80::e4a1:7fce:33f3:d50e"
+            ],
+            "user": [
+                "DOMAIN\\USERNAME"
             ]
         },
         "organization": {
@@ -1956,7 +2040,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "pendingActions": false,
                 "publisherName": "OFFICE TIMELINE, LLC",
                 "rebootRequired": false,
-                "sha1": "25e43630e04e0858418f0b1a3843ddfd626c1fba",
                 "storyline": "BB74E569F93D579E",
                 "threatId": "1373834705420286869",
                 "updatedAt": "2022-03-11T12:44:33.501615Z"
@@ -2010,6 +2093,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "file": {
+            "hash": {
+                "sha1": "25e43630e04e0858418f0b1a3843ddfd626c1fba"
+            },
             "name": "OfficeTimeline.exe",
             "extension": "exe",
             "path": "\\Device\\HarddiskVolume3\\Users\\USERNAME\\Downloads\\OfficeTimeline.exe",
@@ -2029,12 +2115,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "LSYN98873"
         },
         "related": {
+            "hash": [
+                "25e43630e04e0858418f0b1a3843ddfd626c1fba"
+            ],
             "ip": [
                 "10.4.4.69",
-                "fe80::e4a1:7fce:33f3:d50e",
                 "192.168.56.1",
-                "fe80::605f:b34f:31ac:498",
                 "66.66.66.66"
+            ],
+            "user": [
+                "DOMAIN\\USERNAME"
             ]
         },
         "organization": {
@@ -2320,7 +2410,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "pendingActions": false,
                 "publisherName": "OFFICE TIMELINE, LLC",
                 "rebootRequired": false,
-                "sha1": "25e43630e04e0858418f0b1a3843ddfd626c1fba",
                 "storyline": "BB74E569F93D579E",
                 "threatId": "1373834705420286869",
                 "updatedAt": "2022-03-11T12:44:33.501615Z"
@@ -2373,7 +2462,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "id": 111111111111111111,
-            "full_name": "Jean DUPONT"
+            "name": "Jean DUPONT"
         },
         "ecs": {
             "version": "1.10.0"
@@ -2393,6 +2482,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "organization": {
             "id": "111111111111111111"
+        },
+        "related": {
+            "ip": [
+                "11.22.33.44"
+            ],
+            "user": [
+                "Jean DUPONT"
+            ]
         },
         "sentinelone": {
             "createdAt": "2022-04-01T08:14:35.018328Z",
@@ -2438,6 +2535,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.extension` | `keyword` | File extension, excluding the leading dot. |
+|`file.hash.md5` | `keyword` | MD5 hash. |
+|`file.hash.sha1` | `keyword` | SHA1 hash. |
+|`file.hash.sha256` | `keyword` | SHA256 hash. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
 |`file.size` | `long` | File size in bytes. |
@@ -2565,7 +2665,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.data.expiration` | `keyword` |  |
 |`sentinelone.data.externalIp` | `keyword` | None |
 |`sentinelone.data.externalip` | `keyword` | None |
-|`sentinelone.data.fileContentHash` | `keyword` | None |
 |`sentinelone.data.fileDisplayName` | `keyword` | None |
 |`sentinelone.data.fullScopeDetails` | `keyword` | None |
 |`sentinelone.data.fullScopeDetailsPath` | `keyword` | None |
@@ -2779,8 +2878,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.threatInfo.publisherName` | `keyword` | None |
 |`sentinelone.threatInfo.reachedEventsLimit` | `bool` | None |
 |`sentinelone.threatInfo.rebootRequired` | `bool` | None |
-|`sentinelone.threatInfo.sha1` | `keyword` | None |
-|`sentinelone.threatInfo.sha256` | `keyword` | None |
 |`sentinelone.threatInfo.storyline` | `keyword` | None |
 |`sentinelone.threatInfo.threatId` | `keyword` | None |
 |`sentinelone.threatInfo.updatedAt` | `keyword` | None |
@@ -2788,7 +2885,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sentinelone.whiteningOptions` | `keyword` | None |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
-|`threat.enrichments.indicator.file.hash.md5` | `keyword` | MD5 hash. |
 |`threat.enrichments.matched.occurred` | `date` | Date of match |
 |`threat.indicator.confidence` | `keyword` | Indicator confidence rating |
 |`threat.indicator.file.code_signature.signing_id` | `keyword` | The identifier used to sign the process. |
@@ -2796,7 +2892,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`threat.indicator.file.size` | `long` | File size in bytes. |
 |`threat.software.type` | `keyword` | Software type. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
-|`user.full_name` | `keyword` | User's full name, if available. |
 |`user.id` | `long` | None |
 |`user.name` | `keyword` | Short name or login of the user. |
 
