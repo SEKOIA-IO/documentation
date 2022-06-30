@@ -1,5 +1,6 @@
 name: Update intakes documentation
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [rebuild-intake-documentation]
 
