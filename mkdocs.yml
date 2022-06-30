@@ -126,6 +126,7 @@ nav:
     - Detect:
       - Rules Catalog: xdr/features/detect/rules_catalog.md
       - Sigma: xdr/features/detect/sigma.md
+      - Anomaly Detection: xdr/features/detect/anomaly.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events: xdr/features/investigate/events.md
