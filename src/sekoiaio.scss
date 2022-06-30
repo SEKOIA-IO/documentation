@@ -57,19 +57,11 @@
     }
 
     .md-nav--secondary > .md-nav__list {
-        counter-reset: side-bar-counter;
         & > li {
-            counter-increment: side-bar-counter;
             padding-left: 0.2rem;
 
             & > a {
                 justify-content: inherit;
-
-                &::before {
-                    content: counter(side-bar-counter) ".";
-                    font-weight: bold;
-                    margin-right: 0.3em;
-                }
             }
         }
     }
@@ -83,8 +75,6 @@
     }
 
     main .md-main__inner {
-        counter-reset: h2-counter;
-
         --md-default-fg-color--light: #12005e;
 
         h1 {
@@ -92,12 +82,6 @@
         }
 
         h2 {
-            counter-increment: h2-counter;
-
-            & > span::before {
-                content: counter(h2-counter) ". ";
-            }
-
             &::after {
                 content: " ";
                 width: 33%;
