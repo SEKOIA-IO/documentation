@@ -77,6 +77,10 @@
     main .md-main__inner {
         --md-default-fg-color--light: #12005e;
 
+        .md-typeset {
+            font-size: 0.7rem;
+        }
+
         h1 {
             font-weight: bold;
         }
