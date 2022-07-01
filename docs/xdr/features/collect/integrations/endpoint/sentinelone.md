@@ -18,7 +18,7 @@ And depending on the context of the log, additional content could be available, 
 - Network information
 - File information
 
-> For advanced log collection, we suggest you to use SentinelOne Deep Visibility kafka option, as described offered by the [SentinelOne DeepVisibility intergration](sentinelone_deepvisibility.md).
+> For advanced log collection, we suggest you to use SentinelOne Deep Visibility kafka option, as described offered by the [SentinelOne DeepVisibility integration](sentinelone_deepvisibility.md).
 
 {!xdr/features/collect/integrations/generated/sentinelone_do_not_edit_manually.md!}
 
