@@ -9,7 +9,7 @@ SEKOIA.IO activity logs collect operations done, on SEKOIA.IO, by the members of
 - updating the status of an alert
 - inviting a new member in the community
 
-{!xdr/features/collect/integrations/generated/sekoiaio-activity-logs_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/sekoiaio-activity-logs_do_not_edit_manually.md!}
 
 ## Configure
 

@@ -5,7 +5,7 @@ type: intake
 ## Overview
 Alsid is an automated security solution that monitors the components of Active Directory infrastructures by detecting attacks in real time, identifying existing weaknesses and vulnerabilities.
 
-{!xdr/features/collect/integrations/generated/alsid_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/alsid_do_not_edit_manually.md!}
 
 ## Configure
 

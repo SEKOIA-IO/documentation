@@ -7,7 +7,7 @@ type: intake
 HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020.
 This setup guide shows how to forward events produced by HarfangLab EDR to SEKOIA.IO.
 
-{!xdr/features/collect/integrations/generated/harfanglab_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/harfanglab_do_not_edit_manually.md!}
 
 ## Configure
 

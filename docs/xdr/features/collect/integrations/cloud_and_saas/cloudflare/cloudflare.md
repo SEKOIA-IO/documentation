@@ -8,7 +8,7 @@ Cloudflare is a global network designed to make everything you connect to the In
 
 In this documentation, you will learn how to collect and send Cloudflare HTTP logs to SEKOIA.IO.
 
-{!xdr/features/collect/integrations/generated/cloudflare_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/cloudflare_do_not_edit_manually.md!}
 
 ## Configure
 

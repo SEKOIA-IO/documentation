@@ -2,9 +2,9 @@ uuid: 515ed00f-bf70-4fce-96cc-0ca31abd5d24
 name: Google VPC Flow Logs
 type: intake
 
-{!xdr/features/collect/integrations/cloud_and_saas/google/google_cloud.md!}
+{!_shared_content/operations_center/integrations/google_cloud.md!}
 
-{!xdr/features/collect/integrations/generated/google-vpc-flow-logs_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/google-vpc-flow-logs_do_not_edit_manually.md!}
 
 
 ## Google VPC Flow Logs configuration

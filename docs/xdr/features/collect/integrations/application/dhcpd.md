@@ -5,7 +5,7 @@ type: intake
 ## Overview
 ISC DHCP offers a complete open source solution for implementing DHCP servers.
 
-{!xdr/features/collect/integrations/generated/dhcpd_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/dhcpd_do_not_edit_manually.md!}
 
 ## Configure
 

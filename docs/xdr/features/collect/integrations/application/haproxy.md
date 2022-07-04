@@ -5,7 +5,7 @@ type: intake
 ## Overview
 HAProxy is a free, open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers. HAProxy has a lot of features and because it is located between your infrastructure and your clients, it can give you a lot of information about either of them.
 
-{!xdr/features/collect/integrations/generated/haproxy_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/haproxy_do_not_edit_manually.md!}
 
 ## Configure
 As of now, the main solution to collect HAProxy logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.

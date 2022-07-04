@@ -20,7 +20,7 @@ And depending on the context of the log, additional content could be available, 
 
 > For advanced log collection, we suggest you to use SentinelOne Deep Visibility kafka option, as described offered by the [SentinelOne DeepVisibility integration](sentinelone_deepvisibility.md).
 
-{!xdr/features/collect/integrations/generated/sentinelone_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/sentinelone_do_not_edit_manually.md!}
 
 ## Configure
 

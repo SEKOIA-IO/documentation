@@ -6,7 +6,7 @@ type: intake
 
 Azure Virtual Machines service is developed and managed by Microsoft Corp.
 
-{!xdr/features/collect/integrations/generated/azure-linux_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/azure-linux_do_not_edit_manually.md!}
 
 ## Configure
 

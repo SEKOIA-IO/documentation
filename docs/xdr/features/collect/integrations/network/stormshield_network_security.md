@@ -8,7 +8,7 @@ Stormshield Network Security firewalls provides comprehensive security and high 
 
 In this documentation we will explain how to collect and send Stormshield Network Security logs to SEKOIA.IO.
 
-{!xdr/features/collect/integrations/generated/stormshield-network-security_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/stormshield-network-security_do_not_edit_manually.md!}
 
 ## Configure
 

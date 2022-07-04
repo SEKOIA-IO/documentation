@@ -6,7 +6,7 @@ type: intake
 
 F5's BIG-IP is a family of products covering software and hardware designed around application availability, access control, and security solutions.
 
-{!xdr/features/collect/integrations/generated/f5-big-ip_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/f5-big-ip_do_not_edit_manually.md!}
 
 ## Configure
 

@@ -6,7 +6,7 @@ type: intake
 
 Check Point’s Next Generation Firewalls (NGFW’s) are trusted by customers for their highest security effectiveness and their ability to keep organizations protected from sophisticated fifth generation cyber-attacks. Check Point’s NGFW includes 23 Firewall models optimized for running all threat prevention technologies simultaneously, including full SSL traffic inspection, without compromising on security or performance.
 
-{!xdr/features/collect/integrations/generated/checkpoint_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/checkpoint_do_not_edit_manually.md!}
 
 ## Configure
 

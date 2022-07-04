@@ -5,7 +5,7 @@ type: intake
 ## Overview
 Postfix is a free and open-source mail transfer agent that routes and delivers electronic mail.
 
-{!xdr/features/collect/integrations/generated/paloalto_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/paloalto_do_not_edit_manually.md!}
 
 ## Configure
 

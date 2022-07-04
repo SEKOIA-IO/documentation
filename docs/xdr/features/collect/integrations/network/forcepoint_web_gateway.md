@@ -6,7 +6,7 @@ type: intake
 Forcepoint Secure Web Gateway (SWG) is a proxy, installed on the endpoint, applying routing policies and analyzing the traffic against threats.
 This product is supported by Forcepoint LLC.
 
-{!xdr/features/collect/integrations/generated/forcepoint-swg_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/forcepoint-swg_do_not_edit_manually.md!}
 
 ## Configure
 

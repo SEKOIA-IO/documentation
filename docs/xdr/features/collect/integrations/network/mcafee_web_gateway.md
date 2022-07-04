@@ -6,7 +6,7 @@ type: intake
 McAfee Web Gateway (MWG) is a web gateway offering malware detection, threat prevention and reputation filtering.
 This product is supported by McAfee Corp.
 
-{!xdr/features/collect/integrations/generated/mcafee-web-gateway_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/mcafee-web-gateway_do_not_edit_manually.md!}
 
 ## Configure
 

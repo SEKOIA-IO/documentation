@@ -5,7 +5,7 @@ type: intake
 ## Overview
 WALLIX Bastion is a “Privileged Access Management” solution.
 
-{!xdr/features/collect/integrations/generated/wallix-bastion_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/wallix-bastion_do_not_edit_manually.md!}
 
 ## Configure
 This setup guide will show you how to forward logs produced by your Wallix bastion to SEKOIA.IO by means of an rsyslog transport channel.

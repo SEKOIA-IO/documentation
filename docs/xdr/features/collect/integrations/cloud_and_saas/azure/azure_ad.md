@@ -6,7 +6,7 @@ type: intake
 
 Azure Active Directory is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 
-{!xdr/features/collect/integrations/generated/azure-ad_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/azure-ad_do_not_edit_manually.md!}
 
 ## Configure
 

@@ -32,7 +32,7 @@ Please find bellow a short list of activities that are available for security su
 - Scheduled Task Start
 - Scheduled Task Trigger
 
-{!xdr/features/collect/integrations/generated/sentinelone_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/sentinelone_do_not_edit_manually.md!}
 
 ## Configure
 

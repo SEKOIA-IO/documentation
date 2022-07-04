@@ -12,7 +12,7 @@ It's available in three variants:
 - Windows PE as a lightweight version.
 
 
-{!xdr/features/collect/integrations/generated/log-insight-windows_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/log-insight-windows_do_not_edit_manually.md!}
 
 ## Configure
 
