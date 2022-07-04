@@ -18,7 +18,7 @@ logs uses the following prefix: `IPTABLES: XXX ` (`XXX` is user
 configurable and represents the action, could be `dropped` or `accept` for
 example).
 
-{!xdr/features/collect/integrations/generated/netfilter_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/netfilter_do_not_edit_manually.md!}
 
 ## Configure
 

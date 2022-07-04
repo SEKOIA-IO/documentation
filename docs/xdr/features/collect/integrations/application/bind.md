@@ -6,7 +6,7 @@ type: intake
 
 BIND is an implementation of the Domain Name System (DNS) of the Internet. It performs both of the main DNS server roles, acting as an authoritative name server for domains, and acting as a recursive resolver in the network.
 
-{!xdr/features/collect/integrations/generated/bind_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/bind_do_not_edit_manually.md!}
 
 ## Configure
 

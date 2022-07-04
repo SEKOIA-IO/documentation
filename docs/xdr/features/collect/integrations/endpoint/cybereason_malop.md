@@ -13,7 +13,7 @@ Please find below information available in MalOp activities:
 - all suspicious network connections
 - all suspicious executions
 
-{!xdr/features/collect/integrations/generated/cybereason-malop_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/cybereason-malop_do_not_edit_manually.md!}
 
 ## Configure
 

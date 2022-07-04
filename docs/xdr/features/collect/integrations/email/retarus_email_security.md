@@ -6,4 +6,4 @@ type: intake
 
 Protection solution for user and technical messaging.
 
-{!xdr/features/collect/integrations/generated/retarus-email-security_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/retarus-email-security_do_not_edit_manually.md!}

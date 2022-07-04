@@ -2,9 +2,9 @@ uuid: 00bbde4f-cb17-4c3f-9f5e-a585fc7c8fc0
 name: Google Kubernetes Engine (GKE)
 type: intake
 
-{!xdr/features/collect/integrations/cloud_and_saas/google/google_cloud.md!}
+{!_shared_content/operations_center/integrations/google_cloud.md!}
 
-{!xdr/features/collect/integrations/generated/google-kubernetes-engine_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/google-kubernetes-engine_do_not_edit_manually.md!}
 
 
 ## Google Kubernetes Engine (GKE) configuration

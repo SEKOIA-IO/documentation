@@ -6,7 +6,7 @@ type: intake
 
 Pulse Connect Secure is an SSL VPN solution for remote and mobile users.
 
-{!xdr/features/collect/integrations/generated/pulse-connect-secure_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/pulse-connect-secure_do_not_edit_manually.md!}
 
 ## Configure
 

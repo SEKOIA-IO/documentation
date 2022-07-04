@@ -6,7 +6,7 @@ type: intake
 
 The range of Fortigate firewalls is a complete appliance solution whose security functions are highly developed. The firewalls run on the FortiOS operating system.
 
-{!xdr/features/collect/integrations/generated/fortigate_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/fortigate_do_not_edit_manually.md!}
 
 
 ## Configure

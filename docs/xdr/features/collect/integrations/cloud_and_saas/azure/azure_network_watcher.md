@@ -5,7 +5,7 @@ type: intake
 ## Overview
 Azure Network Watcher provides tools to monitor, diagnose, view metrics, and enable or disable logs for resources in an Azure virtual network. It also allows to log information about IP traffic flowing through a network security group: NSG flow logs.
 
-{!xdr/features/collect/integrations/generated/azure-network-watcher_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/azure-network-watcher_do_not_edit_manually.md!}
 
 ## Configure
 Please [contact us](mailto:support@sekoia.io) to discuss about the network security group to monitor in your Azure infrastructure in order to find the appropriate solution to forward your logs to SEKOIA.IO.

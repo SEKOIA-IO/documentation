@@ -8,7 +8,7 @@ Digital Shadows SearchLight continuously searches and identifies any unwanted ex
 
 In this documenation we will explain how to collect and send SearchLight logs to SEKOIA.IO.
 
-{!xdr/features/collect/integrations/generated/digital-shadows-searchlight_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/digital-shadows-searchlight_do_not_edit_manually.md!}
 
 ## Configure
 

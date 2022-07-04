@@ -6,7 +6,7 @@ type: intake
 
 Auditbeat communicates directly with the Linux audit framework, collects the same data as auditd then the data can be stored in JSON inside a log file before being sent to a log concentrator.
 
-{!xdr/features/collect/integrations/generated/auditbeat_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/auditbeat_do_not_edit_manually.md!}
 
 ## Configure
 

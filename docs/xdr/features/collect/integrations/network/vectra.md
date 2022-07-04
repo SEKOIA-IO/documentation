@@ -5,7 +5,7 @@ type: intake
 ## Overview
 Vectra provides AI-powered incident detection and resolution support for native and hybrid clouds.
 
-{!xdr/features/collect/integrations/generated/vectra-cognito-detect_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/vectra-cognito-detect_do_not_edit_manually.md!}
 
 ## Configure
 This setup guide will show you how to forward logs produced by your Vectra Appliance server to SEKOIA.IO by means of an rsyslog transport channel.
