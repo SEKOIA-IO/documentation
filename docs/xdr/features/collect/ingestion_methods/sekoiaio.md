@@ -1,6 +1,6 @@
 # SEKOIA.IO Endpoint Agent
 
-SEKOIA.IO provides its own agent allowing to collect interresting events with a minimal configuration overhead.
+SEKOIA.IO provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to SEKOIA.IO.
 
 !!! note
     The SEKOIA.IO agent is currently in beta and for Windows only.
@@ -28,7 +28,7 @@ To make sure the agent is successfully installed as a service you can run the fo
  Get-Service SEKOIAEndpointAgent
 ```
 
-Once installed, the agent collects Windows event logs from ETW (Event Tracing for Windows), normalizes them and sends them to SEKOIA.IO.
+Once installed, the agent collects Windows event logs from ETW (Event Tracing for Windows), normalizes them and sends them to SEKOIA.IO. The protocol used to send events is HTTPS (443).
 
 ### Proxy Support
 
