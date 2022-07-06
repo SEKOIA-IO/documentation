@@ -400,17 +400,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "url": {
-            "domain": "www.amazon.fr",
-            "original": "https://www.amazon.fr/s?i=merchant-items&amp;me=A1TLEYKQIC7812&amp;marketplaceID=A13V1IB3VIYZZH&amp;qid=1649187214&amp;ref=sr_pg_1",
-            "path": "/s",
-            "port": 443,
-            "query": "i=merchant-items&amp;me=A1TLEYKQIC7812&amp;marketplaceID=A13V1IB3VIYZZH&amp;qid=1649187214&amp;ref=sr_pg_1",
-            "registered_domain": "amazon.fr",
-            "scheme": "https",
-            "subdomain": "www",
-            "top_level_domain": "fr"
-        },
         "user": {
             "email": "email@example.org",
             "name": "email@example.org"
