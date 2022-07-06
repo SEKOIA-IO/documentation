@@ -1,4 +1,20 @@
 
+## Event Categories
+
+
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `Network device logs` | Pradeo watch network traffic |
+| `Process monitoring` | Pradeo analyze running processes |
+| `Process use of network` | Pradeo watch network traffic |
+
+
+
+
+
+
 
 
 ## Event Samples

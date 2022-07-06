@@ -2,6 +2,15 @@
 ## Event Categories
 
 
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `Web proxy` | Imperva WAF logs provide information about the connected client and the requested resource |
+| `Web logs` | Imperva WAF logs provide information about the connected client and the requested resource |
+
+
+
 
 
 In details, the following table denotes the type of events produced by this integration.
