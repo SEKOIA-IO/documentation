@@ -83,6 +83,41 @@ Get the last records from FlowLog
 
 
 
+### Fetch new logs on S3
+
+Get line-oriented records from new S3 objects based on notifications
+
+
+
+#### Arguments
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| frequency | integer | Batch frequency in seconds |
+| queue_name | string | The name of the SQS queue that received the notifications of the creation of S3 objects |
+| chunk_size | integer | The size of chunks for the batch processing |
+| separator | string | The separator used between each records (default: the linefeed character '\n') |
+| skip_first | integer | The number of records to skip at the begining of each S3 object (default: 0) |
+| ignore_comments | boolean | Flag to ignore commented lines (starting with the character `#`; default: false) |
+| intake_server | string | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| intake_key | string | Intake key to use when sending events |
+
+
+
+
+
+
+#### Outputs
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| records | array | A list of log records |
+| records_path | string | The filename containing the records |
+
+
+
+
+
+
+
 
 
 
@@ -93,4 +128,4 @@ Get the last records from FlowLog
 
 ## Extra
 
-Module **AWS v.1.8.1**
+Module **AWS v.1.9.2**
