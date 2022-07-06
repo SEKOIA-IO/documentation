@@ -68,7 +68,7 @@ You can click on the name of a rule to display additional details, such as, but 
 
 When the Rule Details panel is open, you can click on the Configure icon at the top right to edit the rule's configuration. If the rule is Custom, you will be able to edit every aspect of it. Otherwise, you will only be able to limit its applicable scope with the following filters:
 
-- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../alerts/#create-an-alert-filter).
+- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../../investigate/alerts/#create-an-alert-filter).
 - **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
 - **Assets**: select the assets this rule should apply to. By default, rules apply to all assets.
 
