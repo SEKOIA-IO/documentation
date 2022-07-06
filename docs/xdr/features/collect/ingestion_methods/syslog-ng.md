@@ -14,7 +14,7 @@ To proceed, you can execute the following commands in your favorite shell:
 sudo mkdir -p /etc/syslog-ng/ca.d
 
 # Retrieve SEKOIA.IO’s Certificate Authority (Let’s Encrypt)
-sudo wget -O /etc/syslog-ng/ca.d/SEKOIA-IO-intake.pem https://app.sekoia/assets/files/SEKOIA-IO-intake.pem
+sudo wget -O /etc/syslog-ng/ca.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 
 # Split PEM file into multiples PEM files (one for each certificate containes in `SEKOIA-IO-intake.pem`).
 sudo awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "cert." c ".pem"}' < SEKOIA-IO-intake.pem

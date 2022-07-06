@@ -37,7 +37,7 @@ sudo apt install -y rsyslog rsyslog-gnutls wget
 ### Download the SEKOIA.IO certificate
 
 ```bash
-sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia/assets/files/SEKOIA-IO-intake.pem
+sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 ### Modify the `/etc/rsyslog.conf` main configuration file. This is an example of standard configuration file, to adapt if needed:
@@ -164,7 +164,7 @@ In this example, "DESKTOP-XXXXXXX" or "Microsoft-Windows" information is preciou
 
 > The comparison operators such as `contains`, `isequal` or `startswith` are most of the time used to link a syslog property to a value in the event log, in the `if` confition that will be used in the next paragraph.
 
-> The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine. 
+> The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
 
 - Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
 
@@ -187,7 +187,7 @@ sudo rm /var/log/testing.log
 
 ## Forward logs to SEKOIA.IO
 
-### Create configuration files for each technology you want to forward to SEKOIA.IO. 
+### Create configuration files for each technology you want to forward to SEKOIA.IO.
 
 We recommend to create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
 Example for the Windows log collection:
@@ -338,7 +338,7 @@ If the Rsyslog service is failing to start, a mistyping can have been introduced
 
 If the Rsyslog service starts, the logs are correctly received and the `/etc/rsyslog.conf` file is correctly configured but still no logs are received.
 Then it is highly possible that the `if` condition is not correct.
-In this case: 
+In this case:
 
 - Ensure the relevant `Intake Key` is provided in the template: [SEKOIA@53288 intake_key=\"**YOUR_INTAKE_KEY**\"]
 - Uncomment the lines in the "/etc/rsyslog.d/00-testing.conf"
@@ -455,7 +455,7 @@ if ($syslogtag contains 'Microsoft-Windows') then {
 EOM
 
 # Collect the Sekoia Key for encryption between Rsyslog and Sekoia.io
-sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia/assets/files/SEKOIA-IO-intake.pem
+sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 > Once the file created on the Rsyslog, don't forget to make it executable with the command `chmod +x <filename.sh>`

@@ -283,7 +283,7 @@ In order to allow the connection of your events forwarder to the SEKOIA.IO intak
 
 In a PowerShell console run as administrator, retrieve the certificate with the following command:
 ```powershell
-Invoke-WebRequest -Uri https://app.sekoia/assets/files/SEKOIA-IO-intake.pem -OutFile 'C:\Program Files (x86)\nxlog\cert\SEKOIA-IO-intake.pem'
+Invoke-WebRequest -Uri https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem -OutFile 'C:\Program Files (x86)\nxlog\cert\SEKOIA-IO-intake.pem'
 ```
 #### NXLog setup on Windows
 This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events by means of a syslog transport channel.
