@@ -12,6 +12,25 @@ A classic use case is when you are looking for any information regarding an IP a
 ## Tag
 Tag information has a time validity and provides some technical enrichment depending of the type of the observable: geolocation, internet provider, reputation (e.g. scanner)
 
+## Telemetry
+The telemetry of an observable shows the number of sightings of the observable on the perimeters that are monitored by SEKOIA.IO. The number of sightings is shown for each day over the last year. Each day is denoted by a small squared box colored proportionally to the number of sightings. These statistics are very useful:
+
+- to check the anteriority of an observable before using it as an IoC and 
+- to gain more context on an observable that participates in an alert.
+
+The user can filter the telemetry of an observable depending on its profile and permissions. We built the telemetry feature with MSSP in mind. The telemetry of an observable can be filtered to show the value for
+
+- all SEKOIA.IO communities,
+- the user community and all its sub communities (useful for MSSPs),
+- the user community (for end clients).
+
+It must be noted that we voluntary limited the telemetry feature to the following observable types:
+
+- publicly addressable ipv4 addresses
+- publicly addressable ipv6 addresses
+- domain-names with public TLD (.fr, .com, .gov.uk, …)
+- file hashes
+
 ## How are the observables produced?
 Technical information is automatically extracted from various sources: public, subscriptions, partners, SEKOIA internal analysis.
 Depending of the source, a tag name could be associated with a `valid_from` and `valid_until` timestamp, providing an up-to-date technical information directly integrated to the Intelligence Center database: an IP address could be enriched with the tag `scanner` once, then have the tag expired if that IP address scanning activity is no longer observed.
