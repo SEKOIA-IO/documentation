@@ -28,8 +28,6 @@ It must be noted that we voluntary limited the telemetry feature to the followin
 - domain-names with public TLD (.fr, .com, .gov.uk, …)
 - file hashes
 
-
-
 ## How are the observables produced?
 Technical information is automatically extracted from various sources: public, subscriptions, partners, SEKOIA internal analysis.
 Depending of the source, a tag name could be associated with a `valid_from` and `valid_until` timestamp, providing an up-to-date technical information directly integrated to the Intelligence Center database: an IP address could be enriched with the tag `scanner` once, then have the tag expired if that IP address scanning activity is no longer observed.
