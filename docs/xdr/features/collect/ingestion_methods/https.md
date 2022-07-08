@@ -1,11 +1,11 @@
 # Forward Logs to SEKOIA.IO via HTTPS
 
-To push your events to SEKOIA.IO, you can use our HTTPS log collector. It's the simpler way to send use your logs, especially for non-syslog system.
+To push your events to SEKOIA.IO, you can use our HTTPS log collector. It's the simpler way to send us your logs, especially for non-syslog system.
 
 For the forwarding, two options are available:
 
-- The safer one is to send our events as a structured json payload. By using json, you ensure to avoid serialization issues.
-- The alternative one is to send our events as line-oriented records.
+- The safer one is to send your events as a structured json payload. By using json, you ensure to avoid serialization issues.
+- The alternative is to send your events as line-oriented records.
 
 ## Push our events to SEKOIA.IO as json payload
 
