@@ -357,6 +357,248 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "microsoft_defender_threatintelligence_atp.json"
+
+    ```json
+	
+    {
+        "message": "{\"CreationTime\":\"2022-07-07T22:38:49\",\"Id\":\"266f5962-ffad-4fce-a101-3197581af3d4\",\"Operation\":\"AtpDetection\",\"OrganizationId\":\"7f7e5b97-b780-473c-9c76-9182a9d7f2b4\",\"RecordType\":47,\"UserKey\":\"ThreatIntel\",\"UserType\":4,\"Version\":1,\"Workload\":\"ThreatIntelligence\",\"UserId\":\"people@example.org\",\"DetectionDate\":\"2022-07-07T22:38:11\",\"DetectionMethod\":\"AntiMalware\",\"EventDeepLink\":\"https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=MalwareContent&query-Id=2ab4791e-fdd4-42f9-ad3c-c54ef7a4d548\",\"FileData\":{\"DocumentId\":\"03254108-f682-417d-f3e6-08da605bf091\",\"FileName\":\"malware\",\"FilePath\":\"https://example.sharepoint.com/personal/people_example_org/Documents/malware\",\"FileSize\":\"12345\",\"FileVerdict\":1,\"MalwareFamily\":\"iPhoneOS/Vortex.C\",\"SHA256\":\"SnltYq0lbVwFlAIf+lQugPXaMcDNV9t9pN/Zkhx7hQ8=\"},\"LastModifiedBy\":\"people@example.org\",\"LastModifiedDate\":\"2022-01-01T13:00:53\",\"SourceWorkload\":1}\n",
+        "action": {
+            "id": 47,
+            "name": "AtpDetection",
+            "outcome": "success",
+            "target": "user"
+        },
+        "event": {
+            "action": "AtpDetection",
+            "code": "47",
+            "kind": "event",
+            "outcome": "success",
+            "id": "00000000-0000-0000-0000-000000000000'",
+            "url": "https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=MalwareContent&query-Id=2ab4791e-fdd4-42f9-ad3c-c54ef7a4d548"
+        },
+        "office365": {
+            "defender": {
+                "detection": {
+                    "method": "AntiMalware"
+                }
+            },
+            "record_type": 47,
+            "user_type": {
+                "code": 4,
+                "name": "System"
+            }
+        },
+        "organization": {
+            "id": "7f7e5b97-b780-473c-9c76-9182a9d7f2b4"
+        },
+        "related": {
+            "user": [
+                "people@example.org"
+            ]
+        },
+        "service": {
+            "name": "ThreatIntelligence"
+        },
+        "user": {
+            "email": "people@example.org",
+            "name": "people@example.org"
+        }
+    }
+    	
+	```
+
+
+=== "microsoft_defender_threatintelligence_mail.json"
+
+    ```json
+	
+    {
+        "message": "{\"CreationTime\":\"2022-07-08T09:10:19\",\"Id\":\"50906475-74dd-4447-ae4d-595d225d0055\",\"Operation\":\"TIMailData\",\"OrganizationId\":\"8a457951-a594-4607-a5dc-dfc72338eb13\",\"RecordType\":28,\"UserKey\":\"ThreatIntel\",\"UserType\":4,\"Version\":1,\"Workload\":\"ThreatIntelligence\",\"ObjectId\":\"4ca2df96-4488-4f3b-a265-b4edaa3c4d8f\",\"UserId\":\"ThreatIntel\",\"AdditionalActionsAndResults\":[\"OriginalDelivery: [N/A]\"],\"AttachmentData\":[{\"FileName\":\"malicious.pdf.exe\",\"FileType\":\"exe;zip\",\"FileVerdict\":1,\"MalwareFamily\":\"Trojan_Gen_FileWithSpoofedExtension_A\",\"SHA256\":\"E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855\"}],\"AuthDetails\":[{\"Name\":\"SPF\",\"Value\":\"Pass\"},{\"Name\":\"DKIM\",\"Value\":\"Fail\"},{\"Name\":\"DMARC\",\"Value\":\"Best guess pass\"},{\"Name\":\"Comp Auth\",\"Value\":\"pass\"}],\"DeliveryAction\":\"Blocked\",\"DetectionMethod\":\"File detonation\",\"DetectionType\":\"Inline\",\"Directionality\":\"Inbound\",\"EventDeepLink\":\"https://protection.office.com/?hash=/threatexplorer?messageParams=a4dbf74a-89e0-40de-b14d-df573f48aa45,a4dbf74a-89e0-40de-b14d-df573f48aa45-0000000000000000000-1,2022-07-08T00:00:00,2022-07-08T23:59:59&view=Malware\",\"InternetMessageId\":\"<4cc4a74e-a195-4222-abd7-a8adf2cd347d@sender.com>\",\"LatestDeliveryLocation\":\"Quarantine\",\"MessageTime\":\"2022-07-08T09:07:47\",\"NetworkMessageId\":\"7250ff78-fd13-45a2-bb5d-23a5d59c2699\",\"OriginalDeliveryLocation\":\"Quarantine\",\"P1Sender\":\"prvs=0000000000=human@sender.com\",\"P2Sender\":\"human@sender.com\",\"Policy\":\"SafeAttachements\",\"PolicyAction\":\"Quarantine\",\"Recipients\":[\"human@example.com\"],\"SenderIp\":\"1.2.3.4\",\"Subject\":\"Refund to you\",\"SystemOverrides\":[{\"Details\":\"Antimalware policy block by file type\",\"FinalOverride\":\"No\",\"Result\":\"Block\",\"Source\":\"Tenant\"}],\"ThreatsAndDetectionTech\":[\"Malware: [File detonation]\",\"Spam: [General filter]\"],\"Verdict\":\"Malware\"}\n",
+        "action": {
+            "id": 28,
+            "name": "Blocked",
+            "outcome": "success",
+            "target": "user"
+        },
+        "event": {
+            "action": "Blocked",
+            "code": "28",
+            "kind": "event",
+            "outcome": "success",
+            "id": "00000000-0000-0000-0000-000000000000'",
+            "url": "https://protection.office.com/?hash=/threatexplorer?messageParams=a4dbf74a-89e0-40de-b14d-df573f48aa45,a4dbf74a-89e0-40de-b14d-df573f48aa45-0000000000000000000-1,2022-07-08T00:00:00,2022-07-08T23:59:59&view=Malware"
+        },
+        "email": {
+            "attachments": [
+                {
+                    "file": {
+                        "hash": {
+                            "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                        },
+                        "mime_type": "exe;zip",
+                        "name": "malicious.pdf.exe"
+                    }
+                }
+            ],
+            "delivery_timestamp": "2022-07-08T09:07:47",
+            "from": {
+                "address": [
+                    "human@sender.com"
+                ]
+            },
+            "local_id": "7250ff78-fd13-45a2-bb5d-23a5d59c2699",
+            "message_id": "4cc4a74e-a195-4222-abd7-a8adf2cd347d@sender.com",
+            "reply_to": {
+                "address": [
+                    "prvs=0000000000=human@sender.com"
+                ]
+            },
+            "subject": "Refund to you",
+            "to": {
+                "address": [
+                    "human@example.com"
+                ]
+            }
+        },
+        "office365": {
+            "defender": {
+                "additional_actions": [
+                    "OriginalDelivery: [N/A]"
+                ],
+                "auth_details": [
+                    {
+                        "Name": "SPF",
+                        "Value": "Pass"
+                    },
+                    {
+                        "Name": "DKIM",
+                        "Value": "Fail"
+                    },
+                    {
+                        "Name": "DMARC",
+                        "Value": "Best guess pass"
+                    },
+                    {
+                        "Name": "Comp Auth",
+                        "Value": "pass"
+                    }
+                ],
+                "detection": {
+                    "method": "File detonation",
+                    "technology": [
+                        "Malware: [File detonation]",
+                        "Spam: [General filter]"
+                    ],
+                    "type": "Inline"
+                },
+                "email": {
+                    "attachments": [
+                        {
+                            "name": "Trojan_Gen_FileWithSpoofedExtension_A",
+                            "verdict": {
+                                "code": "1",
+                                "name": "bad"
+                            }
+                        }
+                    ],
+                    "delivery": {
+                        "action": "Blocked",
+                        "latest_location": "Quarantine",
+                        "original_location": "Quarantine"
+                    },
+                    "verdict": {
+                        "reason": "Malware"
+                    }
+                },
+                "system_overrides": [
+                    {
+                        "Details": "Antimalware policy block by file type",
+                        "FinalOverride": "No",
+                        "Result": "Block",
+                        "Source": "Tenant"
+                    }
+                ]
+            },
+            "record_type": 28,
+            "user_type": {
+                "code": 4,
+                "name": "System"
+            }
+        },
+        "organization": {
+            "id": "8a457951-a594-4607-a5dc-dfc72338eb13"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "ThreatIntel"
+            ]
+        },
+        "service": {
+            "name": "ThreatIntelligence"
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "user": {
+            "name": "ThreatIntel"
+        }
+    }
+    	
+	```
+
+
+=== "microsoft_defender_threatintelligence_url_click.json"
+
+    ```json
+	
+    {
+        "message": "{\"CreationTime\":\"2022-07-07T10:10:52\",\"Id\":\"47bf7844-15bf-4cf2-91a3-15b32ceb89b5\",\"Operation\":\"TIUrlClickData\",\"OrganizationId\":\"0eaa2260-b241-410b-bcae-e38c8b68787f\",\"RecordType\":41,\"UserKey\":\"ThreatIntel\",\"UserType\":4,\"Version\":1,\"Workload\":\"ThreatIntelligence\",\"UserId\":\"human@example.org\",\"AppName\":\"Mail\",\"AppVersion\":\"0.0.0000\",\"EventDeepLink\":\"https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=Phish&query-Recipients=people@xample.org&query-NetworkMessageId=53b5da37-1893-4e78-a89f-a4d26b53184c\",\"SourceId\":\"8a8634d0-d803-4bc9-b221-2863bff6a001\",\"TimeOfClick\":\"2022-07-07T09:33:33\",\"Url\":\"https://malicious.domain.com\",\"UserIp\":\"1.2.3.4\"}\n",
+        "action": {
+            "id": 41,
+            "name": "TIUrlClickData",
+            "outcome": "success",
+            "target": "user"
+        },
+        "event": {
+            "action": "TIUrlClickData",
+            "code": "41",
+            "kind": "event",
+            "outcome": "success",
+            "id": "00000000-0000-0000-0000-000000000000'",
+            "url": "https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=Phish&query-Recipients=people@xample.org&query-NetworkMessageId=53b5da37-1893-4e78-a89f-a4d26b53184c"
+        },
+        "office365": {
+            "record_type": 41,
+            "user_type": {
+                "code": 4,
+                "name": "System"
+            }
+        },
+        "organization": {
+            "id": "0eaa2260-b241-410b-bcae-e38c8b68787f"
+        },
+        "related": {
+            "user": [
+                "human@example.org"
+            ]
+        },
+        "service": {
+            "name": "ThreatIntelligence"
+        },
+        "user": {
+            "email": "human@example.org",
+            "name": "human@example.org"
+        }
+    }
+    	
+	```
+
+
 === "teams_message_has_link.json"
 
     ```json
@@ -719,11 +961,20 @@ The following table lists the fields that are extracted, normalized under the EC
 |`@timestamp` | `date` | Date/time when the event originated. |
 |`action.properties` | `object` | None |
 |`action.target` | `keyword` | None |
+|`email.attachments` | `array` | None |
+|`email.delivery_timestamp` | `date` | None |
+|`email.from.address` | `keyword` | None |
+|`email.local_id` | `keyword` | None |
+|`email.message_id` | `keyword` | None |
+|`email.reply_to.address` | `keyword` | None |
+|`email.subject` | `keyword` | None |
+|`email.to.address` | `keyword` | None |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`event.url` | `keyword` | Event investigation URL |
 |`file.directory` | `keyword` | Directory where the file is located. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`office365.context.aad_session_id` | `keyword` | None |
@@ -731,6 +982,19 @@ The following table lists the fields that are extracted, normalized under the EC
 |`office365.context.client.id` | `keyword` | None |
 |`office365.context.client.name` | `keyword` | None |
 |`office365.context.correlation.id` | `keyword` | None |
+|`office365.defender.additional_actions` | `array` | None |
+|`office365.defender.auth_details` | `array` | None |
+|`office365.defender.connectors` | `keyword` | None |
+|`office365.defender.detection.method` | `keyword` | None |
+|`office365.defender.detection.technology` | `keyword` | None |
+|`office365.defender.detection.type` | `keyword` | None |
+|`office365.defender.email.attachments` | `array` | None |
+|`office365.defender.email.delivery.action` | `keyword` | None |
+|`office365.defender.email.delivery.latest_location` | `keyword` | None |
+|`office365.defender.email.delivery.original_location` | `keyword` | None |
+|`office365.defender.email.verdict.confidence` | `keyword` | None |
+|`office365.defender.email.verdict.reason` | `keyword` | None |
+|`office365.defender.system_overrides` | `array` | None |
 |`office365.record_type` | `long` | None |
 |`office365.result_status` | `keyword` | None |
 |`office365.scope.code` | `long` | None |
@@ -749,6 +1013,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`office365.teams.team.name` | `keyword` | None |
 |`office365.user_type.code` | `long` | None |
 |`organization.id` | `keyword` | Unique identifier for the organization. |
+|`rule.category` | `keyword` | Rule category |
 |`service.name` | `keyword` | Name of the service. |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
