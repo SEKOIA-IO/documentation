@@ -16,7 +16,7 @@ The following fields are currently handled by SEKOIA.IO’S HTTPS log collector:
 | Field         | Mandatory? | Type     | Description                                                                                            |
 |---------------|------------|----------|--------------------------------------------------------------------------------------------------------|
 | `intakey_key` | Yes        | String   | Intake to which you would like to push events to                                                       |
-| `JSON`        | Yes        | String   | The actual log payload. If you want to push structured JSON logs, please send them as quoted JSON here |
+| `json`        | Yes        | String   | The actual log payload. If you want to push structured JSON logs, please send them as quoted JSON here |
 | `@timestamp`  | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date)                 |
 
 
@@ -29,8 +29,10 @@ import requests
 
 content = {"intake_key": "YOUR_INTAKE_KEY", "JSON": "[764008:0] info: 198.51.100.10 example.org. A IN"}
 response = requests.post("https://intake.sekoia.io", JSON=content)
-print(response.text) // (1)
+print(response.text) # (1)
 ```
+
+1. Will print  `{"event_id": "uuid"}`
 
 To push structured data to SEKOIA.IO, you can push your payload as quoted JSON in the `POST`ed payload:
 
@@ -41,8 +43,10 @@ import JSON
 structured_log = {"key": "value"}
 content = {"intake_key": "YOUR_INTAKE_KEY", "JSON": JSON.dumps(structured_log)}
 response = requests.post("https://intake.sekoia.io", JSON=content)
-print(response.text) // (1)
+print(response.text) # (1)
 ```
+
+1. Will print  `{"event_id": "uuid"}`
 
 For numerous events, you can use the alternative endpoint `/batch`. This endpoint accepts a set of events:
 
@@ -51,9 +55,10 @@ import requests
 
 content = {"intake_key": "YOUR_INTAKE_KEY", "JSONs": ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]}
 response = requests.post("https://intake.sekoia.io/batch", JSON=content)
-print(response.text) // (2)
+print(response.text) # (1)
 ```
 
+1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
 ## Push our events to SEKOIA.IO as line-oriented records
 
@@ -75,8 +80,10 @@ import requests
 headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
 content = "[764008:0] info: 198.51.100.10 example.org. A IN"
 response = requests.post("https://intake.sekoia.io/plain", data=content, headers=headers)
-print(response.text) // (1)
+print(response.text) # (1)
 ```
+
+1. Will print  `{"event_id": "uuid"}`
 
 For numerous events, you can use the alternative endpoint `/batch`. The events should be separated by the line feed character (`U+000A` or `\n`):
 
@@ -87,8 +94,7 @@ headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
 events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
 content = "\n".join(events)
 response = requests.post("https://intake.sekoia.io/plain/batch", data=content, headers=headers)
-print(response.text) // (2)
+print(response.text) # (1)
 ```
 
-1. Will print  `{"event_id": "uuid"}`
-2. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
