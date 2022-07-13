@@ -22,7 +22,6 @@ markdown_extensions:
     alternate_style: true
 - markdown_include.include
 - lightgallery
-
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
@@ -141,10 +140,12 @@ nav:
       - Actions: xdr/features/automate/actions.md
       - Library:
         - AWS: xdr/features/automate/library/aws.md
+        - Azure Active Directory: xdr/features/automate/library/azure-active-directory.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
         - Cloudflare Logpull: xdr/features/automate/library/cloudflare-logpull.md
+        - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
         - Digital Shadows: xdr/features/automate/library/digital-shadows.md
         - fileutils: xdr/features/automate/library/fileutils.md
@@ -165,6 +166,7 @@ nav:
         - Onyphe: xdr/features/automate/library/onyphe.md
         - PagerDuty: xdr/features/automate/library/pagerduty.md
         - Panda Security: xdr/features/automate/library/panda-security.md
+        - Proofpoint: xdr/features/automate/library/proofpoint.md
         - Public Suffix: xdr/features/automate/library/public-suffix.md
         - RSS: xdr/features/automate/library/rss.md
         - RiskIQ: xdr/features/automate/library/riskiq.md
@@ -184,8 +186,6 @@ nav:
   - Develop:
     - Overview: xdr/develop/index.md
     - Guides:
-      # - Get Started: xdr/develop/guides/get_started.md
-      # - Authentication Overview: xdr/develop/guides/authentication_overview.md
       - Filtering: xdr/develop/guides/filtering.md
     - REST API:
       - Authentication: xdr/develop/rest_api/identity_and_authentication.md
@@ -198,7 +198,6 @@ nav:
       - Assets: xdr/develop/rest_api/assets.md
       - Playbooks: xdr/develop/rest_api/playbooks.md
       - Telemetry: xdr/develop/rest_api/telemetry.md
-
 - SEKOIA.IO CTI:
   - Introduction: cti/index.md
   - Features:
@@ -224,8 +223,6 @@ nav:
   - Develop:
     - Overview: cti/develop/index.md
     - Guides:
-      # - Get Started: cti/develop/guides/get_started.md
-      # - Authentication Overview: cti/develop/guides/authentication_overview.md
       - Filtering: cti/develop/guides/filtering.md
     - REST API:
       - Authentication: cti/develop/rest_api/identity_and_authentication.md
@@ -236,7 +233,6 @@ nav:
       - Dashboard: cti/develop/rest_api/dashboard.md
       - Notification: cti/develop/rest_api/notification.md
       - Playbooks: cti/develop/rest_api/playbooks.md
-
 - SEKOIA.IO TIP:
   - Introduction: tip/index.md
   - Features:
@@ -310,8 +306,6 @@ nav:
   - Develop:
     - Overview: tip/develop/index.md
     - Guides:
-      # - Get Started: tip/develop/guides/get_started.md
-      # - Authentication Overview: tip/develop/guides/authentication_overview.md
       - Filtering: tip/develop/guides/filtering.md
     - REST API:
       - Authentication: tip/develop/rest_api/identity_and_authentication.md
@@ -321,7 +315,6 @@ nav:
       - Dashboard: tip/develop/rest_api/dashboard.md
       - Notification: tip/develop/rest_api/notification.md
       - Playbooks: tip/develop/rest_api/playbooks.md
-
 plugins:
 - search: null
 - redirects:
@@ -338,17 +331,33 @@ plugins:
       'api/operation center: rules, entities, intakes, events.md': xdr/develop/rest_api/configuration.md
       api/profile & permissions: xdr/develop/rest_api/community.md
       apis.md: xdr/develop/index.md
+      develop.md: xdr/develop/index.md
+      develop/guides/filtering.md: xdr/develop/guides/filtering.md
+      develop/guides/get_started.md: xdr/develop/guides/get_started.md
+      develop/rest_api/community.md: xdr/develop/rest_api/community.md
+      develop/rest_api/dashboard.md: xdr/develop/rest_api/community.md
+      develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/identity_and_authentication.md
+      develop/rest_api/intelligence_center/enrichments.md: cti/develop/rest_api/enrichments.md
+      develop/rest_api/intelligence_center/intelligence.md: cti/develop/rest_api/intelligence.md
+      develop/rest_api/notification.md: xdr/develop/rest_api/notification.md
+      develop/rest_api/operation_center/alert.md: xdr/develop/rest_api/alert.md
+      develop/rest_api/operation_center/assets.md: xdr/develop/rest_api/assets.md
+      develop/rest_api/operation_center/configuration.md: xdr/develop/rest_api/configuration.md
+      develop/rest_api/operation_center/parser.md: xdr/develop/rest_api/parser.md
+      develop/rest_api/playbooks.md: xdr/develop/rest_api/playbooks.md
       getting_started/2fa.md: getting_started/account_security.md
       getting_started/apikey_creation.md: getting_started/generate_api_keys.md
+      getting_started/first_steps.md: getting_started/index.md
+      getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
       integrations/alsid.md: xdr/features/collect/integrations/application/alsid.md
       integrations/apache.md: xdr/features/collect/integrations/application/apache.md
       integrations/auditbeat.md: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
       integrations/auditbeat_linux.md: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
       integrations/aws-cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
       integrations/aws-flow-logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
+      integrations/aws-s3-logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_s3_logs.md
       integrations/aws_cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
       integrations/aws_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
-      integrations/aws-s3-logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_s3_logs.md
       integrations/aws_s3_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_s3_logs.md
       integrations/azure-ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
       integrations/azure-linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
@@ -428,18 +437,13 @@ plugins:
       integrations/wazuh.md: xdr/index.md
       integrations/windows.md: xdr/features/collect/integrations/endpoint/windows.md
       integrations/zeek.md: xdr/features/collect/integrations/network/zeek.md
-      operation_center/actions.md: xdr/features/automate/actions.md
-      operation_center/operators.md: xdr/features/automate/operators.md
-      operation_center/playbook_overview.md: xdr/features/automate/index.md
-      operation_center/triggers.md: xdr/features/automate/triggers.md
-
+      intelligence_center.md: cti/index.md
       intelligence_center/api.md: cti/develop/index.md
       intelligence_center/dashboard.md: cti/features/monitor/dashboard.md
       intelligence_center/data_export.md: cti/features/consume/export.md
       intelligence_center/data_model.md: cti/features/data_model.md
       intelligence_center/enricher.md: cti/features/consume/enrichers.md
       intelligence_center/graph_explorations.md: cti/features/consume/graph_explorations.md
-      intelligence_center.md: cti/index.md
       intelligence_center/integrations.md: cti/features/integrations/index.md
       intelligence_center/integrations/microsoft-sentinel.md: cti/features/integrations/microsoft-sentinel.md
       intelligence_center/integrations/misp.md: cti/features/integrations/misp.md
@@ -448,12 +452,14 @@ plugins:
       intelligence_center/integrations/thehive.md: cti/features/integrations/thehive.md
       intelligence_center/intelligence.md: cti/features/consume/index.md
       intelligence_center/observables.md: cti/features/consume/observables.md
+      operation_center.md: xdr/index.md
+      operation_center/actions.md: xdr/features/automate/actions.md
       operation_center/alerts.md: xdr/features/investigate/alerts.md
       operation_center/assets.md: xdr/features/collect/assets.md
       operation_center/cases.md: xdr/features/investigate/cases.md
+      operation_center/data_collection/ingestion_methods.md: xdr/features/collect/ingestion_methods/index.md
       operation_center/data_collection/ingestion_methods/graylog.md: xdr/features/collect/ingestion_methods/graylog.md
       operation_center/data_collection/ingestion_methods/https.md: xdr/features/collect/ingestion_methods/https.md
-      operation_center/data_collection/ingestion_methods.md: xdr/features/collect/ingestion_methods/index.md
       operation_center/data_collection/ingestion_methods/logstash.md: xdr/features/collect/ingestion_methods/logstash.md
       operation_center/data_collection/ingestion_methods/rsyslog.md: xdr/features/collect/ingestion_methods/rsyslog.md
       operation_center/data_collection/ingestion_methods/sekoiaio.md: xdr/features/collect/ingestion_methods/sekoiaio.md
@@ -461,37 +467,8 @@ plugins:
       operation_center/entities.md: xdr/features/collect/entities.md
       operation_center/events.md: xdr/features/investigate/events.md
       operation_center/faq.md: xdr/FAQ.md
-      operation_center.md: xdr/index.md
       operation_center/intakes.md: xdr/features/collect/intakes.md
       operation_center/intakes_customformat.md: xdr/features/collect/integrations/custom_format.md
-      operation_center/rules.md: xdr/features/detect/rules_catalog.md
-      operation_center/rules_catalog.md: xdr/features/detect/rules_catalog.md
-      operation_center/templates.md: xdr/features/detect/rules_catalog.md
-      operation_center/threat_exposition.md: xdr/features/report/dashboards.md
-      develop/guides/filtering.md: xdr/develop/guides/filtering.md
-      develop/guides/get_started.md: xdr/develop/guides/get_started.md
-      develop.md: xdr/develop/index.md
-      develop/rest_api/community.md: xdr/develop/rest_api/community.md
-      develop/rest_api/dashboard.md: xdr/develop/rest_api/community.md
-      develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/identity_and_authentication.md
-      develop/rest_api/intelligence_center/enrichments.md: cti/develop/rest_api/enrichments.md
-      develop/rest_api/intelligence_center/intelligence.md: cti/develop/rest_api/intelligence.md
-      develop/rest_api/notification.md: xdr/develop/rest_api/notification.md
-      develop/rest_api/operation_center/alert.md: xdr/develop/rest_api/alert.md
-      develop/rest_api/operation_center/assets.md: xdr/develop/rest_api/assets.md
-      develop/rest_api/operation_center/configuration.md: xdr/develop/rest_api/configuration.md
-      develop/rest_api/operation_center/parser.md: xdr/develop/rest_api/parser.md
-      develop/rest_api/playbooks.md: xdr/develop/rest_api/playbooks.md
-      getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
-      getting_started/first_steps.md: getting_started/index.md
-      user_center/apikeys.md: getting_started/generate_api_keys.md
-      user_center.md: getting_started/index.md
-      user_center/multi_factor_authentication.md: getting_started/account_security.md
-      user_center/notifications.md: getting_started/notifications.md
-      playbooks/actions.md: xdr/features/automate/actions.md
-      playbooks/operators.md: xdr/features/automate/operators.md
-      playbooks/overview.md: xdr/features/automate/index.md
-      playbooks/triggers.md: xdr/features/automate/triggers.md
       operation_center/integration_catalog/application/alsid.md: xdr/features/collect/integrations/application/alsid.md
       operation_center/integration_catalog/application/apache.md: xdr/features/collect/integrations/application/apache.md
       operation_center/integration_catalog/application/bind.md: xdr/features/collect/integrations/application/bind.md
@@ -555,6 +532,14 @@ plugins:
       operation_center/integration_catalog/network/vectra.md: xdr/features/collect/integrations/network/vectra.md
       operation_center/integration_catalog/network/wallix.md: xdr/features/collect/integrations/network/wallix.md
       operation_center/integration_catalog/network/zeek.md: xdr/features/collect/integrations/network/zeek.md
+      operation_center/operators.md: xdr/features/automate/operators.md
+      operation_center/playbook_overview.md: xdr/features/automate/index.md
+      operation_center/rules.md: xdr/features/detect/rules_catalog.md
+      operation_center/rules_catalog.md: xdr/features/detect/rules_catalog.md
+      operation_center/templates.md: xdr/features/detect/rules_catalog.md
+      operation_center/threat_exposition.md: xdr/features/report/dashboards.md
+      operation_center/triggers.md: xdr/features/automate/triggers.md
+      playbooks/actions.md: xdr/features/automate/actions.md
       playbooks/library/aws.md: xdr/features/automate/library/aws.md
       playbooks/library/binaryedge-s-api.md: xdr/features/automate/library/binaryedge-s-api.md
       playbooks/library/censys.md: xdr/features/automate/library/censys.md
@@ -592,10 +577,15 @@ plugins:
       playbooks/library/vade-secure.md: xdr/features/automate/library/vade-secure.md
       playbooks/library/virustotal.md: xdr/features/automate/library/virustotal.md
       playbooks/library/whois.md: xdr/features/automate/library/whois.md
-
+      playbooks/operators.md: xdr/features/automate/operators.md
+      playbooks/overview.md: xdr/features/automate/index.md
+      playbooks/triggers.md: xdr/features/automate/triggers.md
+      user_center.md: getting_started/index.md
+      user_center/apikeys.md: getting_started/generate_api_keys.md
+      user_center/multi_factor_authentication.md: getting_started/account_security.md
+      user_center/notifications.md: getting_started/notifications.md
 - redoc
 - intakes_by_uuid
-
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
