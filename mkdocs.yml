@@ -84,6 +84,7 @@ nav:
         - Email:
           - FortiMail: xdr/features/collect/integrations/email/fortimail.md
           - Postfix: xdr/features/collect/integrations/email/postfix.md
+          - Proofpoint TAP: xdr/features/collect/integrations/email/proofpoint_tap.md
           - Retarus Email Security: xdr/features/collect/integrations/email/retarus_email_security.md
           - SpamAssassin: xdr/features/collect/integrations/email/spamassassin.md
           - Vade for M365: xdr/features/collect/integrations/email/vade.md
@@ -401,6 +402,8 @@ plugins:
       integrations/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
       integrations/panda-security-aether.md: xdr/features/collect/integrations/endpoint/panda_security_aether.md
       integrations/postfix.md: xdr/features/collect/integrations/email/postfix.md
+      integrations/proofpoint-tap.md: xdr/features/collect/integrations/email/proofpoint_tap.md
+      integrations/proofpoint_tap.md: xdr/features/collect/integrations/email/proofpoint_tap.md
       integrations/prove-it.md: xdr/index.md
       integrations/pulse-connect-secure.md: xdr/features/collect/integrations/network/pulse.md
       integrations/pulse.md: xdr/features/collect/integrations/network/pulse.md
@@ -562,6 +565,7 @@ plugins:
       playbooks/library/mwdb.md: xdr/features/automate/library/mwdb.md
       playbooks/library/onyphe.md: xdr/features/automate/library/onyphe.md
       playbooks/library/osint.md: xdr/features/automate/library/osint.md
+      playbooks/library/proofpoint.md: xdr/features/automate/library/proofpooint.md
       playbooks/library/pagerduty.md: xdr/features/automate/library/pagerduty.md
       playbooks/library/panda-security.md: xdr/features/automate/library/panda-security.md
       playbooks/library/public-suffix.md: xdr/features/automate/library/public-suffix.md
