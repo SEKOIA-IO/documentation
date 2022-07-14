@@ -4,7 +4,7 @@
 ![CrowdStrike Falcon](/assets/playbooks/library/crowdstrike-falcon.png)
 
 
-
+Integrates with CrowdStrike Falcon EDR
 
 ## Configuration
 
@@ -51,4 +51,4 @@ Get latest events from CrowdStrike Falcon
 
 ## Extra
 
-Module **CrowdStrike Falcon v.0.4**
+Module **CrowdStrike Falcon v.0.6**

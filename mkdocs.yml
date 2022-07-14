@@ -565,9 +565,9 @@ plugins:
       playbooks/library/mwdb.md: xdr/features/automate/library/mwdb.md
       playbooks/library/onyphe.md: xdr/features/automate/library/onyphe.md
       playbooks/library/osint.md: xdr/features/automate/library/osint.md
-      playbooks/library/proofpoint.md: xdr/features/automate/library/proofpooint.md
       playbooks/library/pagerduty.md: xdr/features/automate/library/pagerduty.md
       playbooks/library/panda-security.md: xdr/features/automate/library/panda-security.md
+      playbooks/library/proofpoint.md: xdr/features/automate/library/proofpooint.md
       playbooks/library/public-suffix.md: xdr/features/automate/library/public-suffix.md
       playbooks/library/riskiq.md: xdr/features/automate/library/riskiq.md
       playbooks/library/rss.md: xdr/features/automate/library/rss.md
