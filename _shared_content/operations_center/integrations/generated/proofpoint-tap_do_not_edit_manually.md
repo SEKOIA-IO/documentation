@@ -46,6 +46,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "permitted",
             "dataset": "click"
         },
+        "observer": {
+            "vendor": "ProofPoint",
+            "product": "Targeted Attack Protection"
+        },
         "email": {
             "to": {
                 "address": [
@@ -115,7 +119,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "@timestamp": "2016-06-24T21:18:38.000Z",
-        "message": "{\"GUID\":\"c26dbea0-80d5-463b-b93c-4e8b708219ce\",\"status\":\"delivered\",\"type\":\"message\",\"QID\":\"r2FNwRHF004109\",\"ccAddresses\":[\"bruce.wayne@university-of-education.zz\"],\"clusterId\":\"pharmtech_hosted\",\"completelyRewritten\":\"true\",\"fromAddress\":[\"badguy@evil.zz\"],\"headerCC\":\"\\\"Bruce Wayne\\\" <bruce.wayne@university-of-education.zz>\",\"headerFrom\":\"\\\"A. Badguy\\\" <badguy@evil.zz>\",\"headerReplyTo\":null,\"headerTo\":\"\\\"Clark Kent\\\" <clark.kent@pharmtech.zz>; \\\"Diana Prince\\\" <diana.prince@pharmtech.zz>\",\"impostorScore\":0,\"malwareScore\":100,\"messageID\":\"20160624211145.62086.mail@evil.zz\",\"messageParts\":[{\"contentType\":\"text/plain\",\"disposition\":\"inline\",\"filename\":\"text.txt\",\"md5\":\"008c5926ca861023c1d2a36653fd88e2\",\"oContentType\":\"text/plain\",\"sandboxStatus\":\"unsupported\",\"sha256\":\"85738f8f9a7f1b04b5329c590ebcb9e425925c6d0984089c43a022de4f19c281\"},{\"contentType\":\"application/pdf\",\"disposition\":\"attached\",\"filename\":\"Invoice for Pharmtech.pdf\",\"md5\":\"5873c7d37608e0d49bcaa6f32b6c731f\",\"oContentType\":\"application/pdf\",\"sandboxStatus\":\"threat\",\"sha256\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\"}],\"messageTime\":\"2016-06-24T21:18:38.000Z\",\"modulesRun\":[\"pdr\",\"sandbox\",\"spam\",\"urldefense\"],\"phishScore\":46,\"policyRoutes\":[\"default_inbound\",\"executives\"],\"quarantineFolder\":\"Attachment Defense\",\"quarantineRule\":\"module.sandbox.threat\",\"recipient\":[\"clark.kent@pharmtech.zz\",\"diana.prince@pharmtech.zz\"],\"replyToAddress\":null,\"sender\":\"e99d7ed5580193f36a51f597bc2c0210@evil.zz\",\"senderIP\":\"192.0.2.255\",\"spamScore\":4,\"subject\":\"Please find a totally safe invoice attached.\",\"threatsInfoMap\":[{\"campaignId\":\"46e01b8a-c899-404d-bcd9-189bb393d1a7\",\"classification\":\"MALWARE\",\"threat\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\",\"threatId\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\",\"threatStatus\":\"active\",\"threatTime\":\"2016-06-24T21:18:38.000Z\",\"threatType\":\"ATTACHMENT\",\"threatUrl\":\"https://threatinsight.proofpoint.com/#/73aa0499-dfc8-75eb-1de8-a471b24a2e75/threat/u/2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\"},{\"campaignId\":\"46e01b8a-c899-404d-bcd9-189bb393d1a7\",\"classification\":\"MALWARE\",\"threat\":\"badsite.zz\",\"threatId\":\"3ba97fc852c66a7ba761450edfdfb9f4ffab74715b591294f78b5e37a76481aa\",\"threatTime\":\"2016-06-24T21:18:07.000Z\",\"threatType\":\"URL\",\"threatUrl\":\"https://threatinsight.proofpoint.com/#/73aa0499-dfc8-75eb-1de8-a471b24a2e75/threat/u/3ba97fc852c66a7ba761450edfdfb9f4ffab74715b591294f78b5e37a76481aa\"}],\"toAddresses\":[\"clark.kent@pharmtech.zz\",\"diana.prince@pharmtech.zz\"],\"xmailer\":\"Spambot v2.5\"}",
+        "message": "{\"GUID\":\"c26dbea0-80d5-463b-b93c-4e8b708219ce\",\"status\":\"delivered\",\"type\":\"message\",\"QID\":\"r2FNwRHF004109\",\"ccAddresses\":[\"bruce.wayne@university-of-education.zz\"],\"clusterId\":\"pharmtech_hosted\",\"completelyRewritten\":\"true\",\"fromAddress\":[\"badguy@evil.zz\"],\"headerCC\":\"\\\"Bruce Wayne\\\" <bruce.wayne@university-of-education.zz>\",\"headerFrom\":\"\\\"A. Badguy\\\" <badguy@evil.zz>\",\"headerReplyTo\":null,\"headerTo\":\"\\\"Clark Kent\\\" <clark.kent@pharmtech.zz>; \\\"Diana Prince\\\" <diana.prince@pharmtech.zz>\",\"impostorScore\":0,\"malwareScore\":100,\"messageID\":\"20160624211145.62086.mail@evil.zz\",\"messageParts\":[{\"contentType\":\"text/plain\",\"disposition\":\"inline\",\"filename\":\"text.txt\",\"md5\":\"008c5926ca861023c1d2a36653fd88e2\",\"oContentType\":\"text/plain\",\"sandboxStatus\":\"unsupported\",\"sha256\":\"85738f8f9a7f1b04b5329c590ebcb9e425925c6d0984089c43a022de4f19c281\"},{\"contentType\":\"application/pdf\",\"disposition\":\"attached\",\"filename\":\"Invoice for Pharmtech.pdf\",\"md5\":\"5873c7d37608e0d49bcaa6f32b6c731f\",\"oContentType\":\"application/pdf\",\"sandboxStatus\":\"threat\",\"sha256\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\"}],\"messageTime\":\"2016-06-24T21:18:38.000Z\",\"modulesRun\":[\"pdr\",\"sandbox\",\"spam\",\"urldefense\"],\"phishScore\":46,\"policyRoutes\":[\"default_inbound\",\"executives\"],\"quarantineFolder\":\"Attachment Defense\",\"quarantineRule\":\"module.sandbox.threat\",\"recipient\":[\"clark.kent@pharmtech.zz\",\"diana.prince@pharmtech.zz\"],\"replyToAddress\":null,\"sender\":\"e99d7ed5580193f36a51f597bc2c0210@evil.zz\",\"senderIP\":\"192.0.2.255\",\"spamScore\":4,\"subject\":\"Please find a totally safe invoice attached.\",\"threatsInfoMap\":[{\"campaignId\":\"46e01b8a-c899-404d-bcd9-189bb393d1a7\",\"classification\":\"MALWARE\",\"threat\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\",\"threatId\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\",\"threatStatus\":\"active\",\"threatTime\":\"2016-06-24T21:18:38.000Z\",\"threatType\":\"ATTACHMENT\",\"threatUrl\":\"https://threatinsight.proofpoint.com/#/73aa0499-dfc8-75eb-1de8-a471b24a2e75/threat/u/2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\"},{\"campaignId\":\"46e01b8a-c899-404d-bcd9-189bb393d1a7\",\"classification\":\"MALWARE\",\"threat\":\"badsite.zz\",\"threatId\":\"3ba97fc852c66a7ba761450edfdfb9f4ffab74715b591294f78b5e37a76481aa\",\"threatTime\":\"2016-06-24T21:18:07.000Z\",\"threatType\":\"url\",\"threatUrl\":\"https://threatinsight.proofpoint.com/#/73aa0499-dfc8-75eb-1de8-a471b24a2e75/threat/u/3ba97fc852c66a7ba761450edfdfb9f4ffab74715b591294f78b5e37a76481aa\"}],\"toAddresses\":[\"clark.kent@pharmtech.zz\",\"diana.prince@pharmtech.zz\"],\"xmailer\":\"Spambot v2.5\"}",
         "event": {
             "kind": "event",
             "action": "delivered",
@@ -131,6 +135,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "192.0.2.255"
             ]
+        },
+        "observer": {
+            "vendor": "ProofPoint",
+            "product": "Targeted Attack Protection"
         },
         "email": {
             "cc": {
@@ -227,6 +235,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "cluster": {
                     "id": "pharmtech_hosted"
                 },
+                "email": {
+                    "to": {
+                        "address": [
+                            "clark.kent@pharmtech.zz",
+                            "diana.prince@pharmtech.zz"
+                        ]
+                    }
+                },
                 "threat": {
                     "scores": {
                         "spam": 4,
@@ -270,7 +286,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`observer.product` | `keyword` | The product name of the observer. |
+|`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`proofpoint.tap.cluster.id` | `keyword` | None |
+|`proofpoint.tap.email.to.address` | `array` | None |
 |`proofpoint.tap.modules` | `array` | None |
 |`proofpoint.tap.threat.classifications` | `array` | None |
 |`proofpoint.tap.threat.scores.impostor` | `number` | None |
