@@ -597,7 +597,7 @@ site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
 theme:
   custom_dir: theme
-  favicon: assets/favicon.ico
+  favicon: assets/favicon.png
   features:
   - navigation.tabs
   - navigation.top
