@@ -1,4 +1,4 @@
-uuid: 2d3e4475-93d1-4ba1-8dc5-c32c190536d2
+uuid: 8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d
 name: SentinelOne Deep Visibility
 type: intake
 
