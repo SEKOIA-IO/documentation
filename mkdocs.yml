@@ -461,6 +461,7 @@ plugins:
       operation_center/alerts.md: xdr/features/investigate/alerts.md
       operation_center/assets.md: xdr/features/collect/assets.md
       operation_center/cases.md: xdr/features/investigate/cases.md
+      operation_center/data_collection/index.md: xdr/features/collect/ingestion_methods/index.md
       operation_center/data_collection/ingestion_methods.md: xdr/features/collect/ingestion_methods/index.md
       operation_center/data_collection/ingestion_methods/graylog.md: xdr/features/collect/ingestion_methods/graylog.md
       operation_center/data_collection/ingestion_methods/https.md: xdr/features/collect/ingestion_methods/https.md
