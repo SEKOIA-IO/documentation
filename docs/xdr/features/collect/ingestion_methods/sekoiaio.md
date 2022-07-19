@@ -1,3 +1,7 @@
+uuid: 250e4095-fa08-4101-bb02-e72f870fcbd1
+name: SEKOIA.IO Endpoint Agent
+type: intake
+
 # SEKOIA.IO Endpoint Agent
 
 SEKOIA.IO provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to SEKOIA.IO.
