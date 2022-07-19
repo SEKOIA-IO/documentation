@@ -6,8 +6,8 @@ The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
-| `Web proxy` | Forcepoint Secure Web Gateway logs provide information about the connected client and the requested resource |
-| `Web logs` | Forcepoint Secure Web Gateway logs provide information about the connected client and the requested resource |
+| `Web proxy` | Forcepoint Secure Web Gateway logs provide information about the connected client and the requested resource. |
+| `Web logs` | Forcepoint Secure Web Gateway logs provide information about the connected client and the requested resource. |
 
 
 
@@ -37,12 +37,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-05-26T09:26:53.000000Z",
         "message": "0|Forcepoint|Security|8.5.4|9|Transaction blocked|7| act=blocked app=http dvc=9.8.7.6 dst=5.6.7.8 dhost=ctldl.windowsupdate.com dpt=80 src=1.2.3.4 spt=62062 suser=- loginID=- destinationTranslatedPort=0 rt=1653557213000 in=0 out=0 requestMethod=GET requestClientApplication=Microsoft-CryptoAPI/10.0 reason=- cs1Label=Policy cs1=SupAd**_O365_ cs2Label=DynCat cs2=0 cs3Label=ContentType cs3=- cn1Label=DispositionCode cn1=1025 cn2Label=ScanDuration cn2=5 request=http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab logRecordSource=OnPrem",
         "source": {
+            "address": "1.2.3.4",
             "ip": "1.2.3.4",
             "port": 62062
         },
         "destination": {
             "ip": "5.6.7.8",
+            "address": "ctldl.windowsupdate.com",
             "domain": "ctldl.windowsupdate.com",
+            "registered_domain": "windowsupdate.com",
+            "subdomain": "ctldl",
+            "top_level_domain": "com",
             "port": 80
         },
         "event": {
@@ -66,10 +71,29 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "vendor": "Forcepoint"
         },
         "host": {
-            "ip": "9.8.7.6"
+            "ip": [
+                "9.8.7.6"
+            ]
+        },
+        "related": {
+            "hosts": [
+                "ctldl.windowsupdate.com"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8",
+                "9.8.7.6"
+            ]
         },
         "url": {
-            "original": "http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab"
+            "original": "http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab",
+            "domain": "ctldl.windowsupdate.com",
+            "path": "/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab",
+            "port": 80,
+            "registered_domain": "windowsupdate.com",
+            "subdomain": "ctldl",
+            "top_level_domain": "com",
+            "scheme": "http"
         },
         "user_agent": {
             "original": "Microsoft-CryptoAPI/10.0"
@@ -113,12 +137,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-05-26T08:58:41.000000Z",
         "message": "0|Forcepoint|Security|8.5.4|222|Transaction permitted|1| act=permitted app=https dvc=9.8.7.6 dst=5.6.7.8 dhost=outlook.office365.com dpt=443 src=1.2.3.4 spt=50345 suser=LDAP://4.3.2.1 OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL/User 1 loginID=n_nini destinationTranslatedPort=47486 rt=1653555521000 in=1038458 out=3967 requestMethod=POST requestClientApplication=Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.10386; Pro) reason=- cs1Label=Policy cs1=SupAd**1,SupAd**2 cs2Label=DynCat cs2=0 cs3Label=ContentType cs3=application/mapi-http cn1Label=DispositionCode cn1=1026 cn2Label=ScanDuration cn2=31 request=https://outlook.office365.com/ logRecordSource=OnPrem",
         "source": {
+            "address": "1.2.3.4",
             "ip": "1.2.3.4",
             "port": 50345
         },
         "destination": {
+            "address": "outlook.office365.com",
             "ip": "5.6.7.8",
             "domain": "outlook.office365.com",
+            "registered_domain": "office365.com",
+            "subdomain": "outlook",
+            "top_level_domain": "com",
             "port": 443,
             "nat": {
                 "port": 47486
@@ -145,11 +174,32 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "vendor": "Forcepoint"
         },
         "host": {
-            "ip": "9.8.7.6"
+            "ip": [
+                "9.8.7.6"
+            ]
+        },
+        "related": {
+            "hosts": [
+                "outlook.office365.com"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8",
+                "9.8.7.6"
+            ],
+            "user": [
+                "LDAP://4.3.2.1 OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL/User 1"
+            ]
         },
         "url": {
             "original": "https://outlook.office365.com/",
-            "path": "/"
+            "path": "/",
+            "domain": "outlook.office365.com",
+            "port": 443,
+            "registered_domain": "office365.com",
+            "subdomain": "outlook",
+            "top_level_domain": "com",
+            "scheme": "https"
         },
         "user_agent": {
             "original": "Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.10386; Pro)"
