@@ -142,6 +142,7 @@ nav:
       - Actions: xdr/features/automate/actions.md
       - Library:
         - AWS: xdr/features/automate/library/aws.md
+        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Azure Active Directory: xdr/features/automate/library/azure-active-directory.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
