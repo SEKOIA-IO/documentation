@@ -38,7 +38,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success",
             "category": "email",
             "kind": "event",
-            "type": "info"
+            "type": "info",
+            "action": "nothing"
         },
         "message": " {\"id\": \"zekfnzejnf576rge8768\", \"date\": \"2022-02-10T13:00:05.454Z\", \"sender_ip\": \"192.168.1.1\", \"from\": \"test@sekoia.io\", \"from_header\": \"<test@sekoia.io>\", \"to\": \"test@vadesecure.com\", \"to_header\": \"\\\"test@vadesecure.com\\\" <test@vadesecure.com>\", \"subject\": \"Lorem ipsum dolor\", \"message_id\": \"<01de2305-f75b-49db-8c61-f661bd498e63.protection.outlook.com>\", \"urls\": [{\"url\": \"https://sekoia.io\"}], \"attachments\": [{\"id\": \"ca9ph2ostndl7735uht0\", \"filename\": \"image001.png\", \"extension\": \"png\", \"size\": 12894},{\"id\": \"ca9okt0kn1e8usdf633g\", \"filename\": \"archive.zip\", \"extension\": \"zip\", \"size\": 10558}], \"status\": \"LEGIT\", \"substatus\": \"\", \"remediation_type\": \"none\", \"remediation_ids\": [], \"action\": \"NOTHING\", \"folder\": \"\", \"size\": 113475, \"current_events\": [], \"whitelisted\": false} ",
         "sekoiaio": {
@@ -76,6 +77,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "address": "192.168.1.1",
             "ip": "192.168.1.1"
+        },
+        "related": {
+            "ip": [
+                "192.168.1.1"
+            ]
         },
         "vadesecure": {
             "from_header": "<test@sekoia.io>",

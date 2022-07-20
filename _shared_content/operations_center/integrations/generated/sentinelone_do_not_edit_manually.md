@@ -1018,10 +1018,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 },
                 "name": "explorer.exe",
                 "pid": 11196,
-                "start": 1636964894046
+                "start": "2021-11-15T08:28:14.046000Z"
             },
             "pid": 6676,
-            "start": 1637076505627
+            "start": "2021-11-16T15:28:25.627000Z"
         },
         "related": {
             "hash": [
@@ -1158,10 +1158,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 },
                 "name": "WebexHost_old.exe",
                 "pid": 10996,
-                "start": 1648628294256
+                "start": "2022-03-30T08:18:14.256000Z"
             },
             "pid": 7788,
-            "start": 1648630694853
+            "start": "2022-03-30T08:58:14.853000Z"
         },
         "related": {
             "hash": [
