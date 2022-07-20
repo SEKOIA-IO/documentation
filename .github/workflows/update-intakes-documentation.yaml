@@ -48,5 +48,6 @@ jobs:
         title: Refresh intakes documentation
         base: master
         path: ./main
+        branch: update-intake-documentation
         body: |
           Refresh intakes documentation
