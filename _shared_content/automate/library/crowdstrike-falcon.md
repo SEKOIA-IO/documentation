@@ -51,4 +51,4 @@ Get latest events from CrowdStrike Falcon
 
 ## Extra
 
-Module **CrowdStrike Falcon v.0.6**
+Module **CrowdStrike Falcon v.0.7**
