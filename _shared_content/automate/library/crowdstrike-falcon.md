@@ -22,7 +22,7 @@ Integrates with CrowdStrike Falcon EDR
 
 ## Triggers
 
-### Trigger on Falcon Events
+### Fetch CrowdStrike Falcon Events
 
 Get latest events from CrowdStrike Falcon
 
@@ -51,4 +51,4 @@ Get latest events from CrowdStrike Falcon
 
 ## Extra
 
-Module **CrowdStrike Falcon v.0.7**
+Module **CrowdStrike Falcon v.0.8**
