@@ -27,5 +27,5 @@ Lastly, you must add the Sekoia's action `Push Events to intake` to the graph an
 
 - the `api_key` generated within the user center
 - the `base_url`
-- the `events` to push on Intake (your logs)
+- the `events_path` to push on Intake (your logs, you will probably fill it with `{{ node.0['emails_path'] }}`)
 - the `intake_key` of the intake you have previously created (documentation can be found [here](https://docs.sekoia.io/operation_center/intakes/))
