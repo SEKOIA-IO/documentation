@@ -53,4 +53,4 @@ Consume messages from Microsoft Azure Eventhub
 
 ## Extra
 
-Module **Microsoft Azure v.1.0.0**
+Module **Microsoft Azure v.1.0.1**
