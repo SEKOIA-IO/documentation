@@ -50,6 +50,7 @@ The Endpoint Detection Agent is a binary which you can easily install on Windows
     Now that `auditd` is disabled we can install the agent:
 
     ```shell
+    chmod +x ./agent
     sudo ./agent -install -instake_key <INTAKE_KEY>
     ```
 
