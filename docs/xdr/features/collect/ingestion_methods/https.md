@@ -86,17 +86,43 @@ For numerous events, you can use the alternative endpoint `/batch`. The events s
 
 To send us events as JSON array, you should set `Content-Type` HTTP header to `application/JSON`.
 
+The following headers are handled by SEKOIA.IO’S HTTPS log collector:
+
+| Header                       | Mandatory? | Type     | Description                                                                            |
+|------------------------------|------------|----------|----------------------------------------------------------------------------------------|
+| `X-SEKOIAIO-INTAKE-KEY`      | No         | String   | Intake to which you would like to push events to                                       |
+| `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
+
+
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY` or as password in the HTTP Basic authentication mechanism.
+
 Use the endpoint `/jsons`. This endpoint accepts a set of events:
 
-```python
-import requests
+=== "With the intake key as header"
 
-events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
-response = requests.post("https://intake.sekoia.io/jsons", json=events)
-print(response.text) # (1)
-```
+    ```python
+    import requests
 
-1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+    headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    response = requests.post("https://intake.sekoia.io/jsons", json=events, headers=headers)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+=== "With the intake key through the HTTP Basic Auth"
+
+    ```python
+    import requests
+
+    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    response = requests.post("https://intake.sekoia.io/jsons", json=events, auth=auth)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
 ## Push our events to SEKOIA.IO as structured content
 
