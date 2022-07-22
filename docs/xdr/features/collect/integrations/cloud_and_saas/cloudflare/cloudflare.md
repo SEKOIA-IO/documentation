@@ -25,18 +25,18 @@ To do so, connect to [Cloudflare Console](https://dash.cloudflare.com/) to colle
 - `Cloudflare Zone ID`
 - `Cloudflare account email`
 
-#### with logpush
+#### with Logpush
 
 !!! note
 
-    It's the recommended way to get your events from Cloudflare.
+    Logpush is the only recommended way to fetch your events from Cloudflare.
 
 Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpush-api-configuration/) with the following destination:
 
 `https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<your intake key>`
 
 
-##### Manage logpush with cURL
+##### Manage Logpush with cURL
 
 ```bash
 $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/logpush/jobs \
@@ -52,15 +52,3 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
 }'
 ```
 
-
-#### with logpull
-
- To start using Logpull, start by enabling [Cloudflare log retention](https://developers.cloudflare.com/logs/logpull/enabling-log-retention/).
-
-To pull events, go to [the playbook page](https://app.sekoia.io/operations/playbooks) and create your playbook with a template: "Create a new playbook" > "Use a template" > Search for Cloudflare.
-Fill the module configuration with the information got from our Cloudflare Console.
-
-You can also create your own on the same basis. A typical playbook to retrieve and send Cloudflare logs to SEKOIA.IO will use this kind of chain:
-
-- A "Cloudflare Logpull" trigger
-- An action that sends events to SEKOIA.IO
