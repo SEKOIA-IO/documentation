@@ -68,33 +68,66 @@ The following headers are handled by SEKOIA.IO’S HTTPS log collector:
 
 | Header                       | Mandatory? | Type     | Description                                                                            |
 |------------------------------|------------|----------|----------------------------------------------------------------------------------------|
-| `X-SEKOIAIO-INTAKE-KEY`      | Yes        | String   | Intake to which you would like to push events to                                       |
+| `X-SEKOIAIO-INTAKE-KEY`      | No         | String   | Intake to which you would like to push events to                                       |
 | `X-SEKOIAIO-EVENT-TIMESTAMP` | No         | Datetime | Event date if you want to push your own date (fallback is to use the reception’s date) |
 
 
+Supply the intake key as the header `X-SEKOIAIO-INTAKE-KEY` or as password in the HTTP Basic authentication mechanism.
+
 To push one event, just POST content to `https://intake.sekoia.io/plain`
 
-```python
-import requests
+=== "With the intake key as header"
 
-headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
-content = "[764008:0] info: 198.51.100.10 example.org. A IN"
-response = requests.post("https://intake.sekoia.io/plain", data=content, headers=headers)
-print(response.text) # (1)
-```
+    ```python
+    import requests
 
-1. Will print  `{"event_id": "uuid"}`
+    headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
+    content = "[764008:0] info: 198.51.100.10 example.org. A IN"
+    response = requests.post("https://intake.sekoia.io/plain", data=content, headers=headers)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_id": "uuid"}`
+
+=== "With the intake key through the HTTP Basic Auth"
+
+    ```python
+    import requests
+
+    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    content = "[764008:0] info: 198.51.100.10 example.org. A IN"
+    response = requests.post("https://intake.sekoia.io/plain", data=content, auth=auth)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_id": "uuid"}`
 
 For numerous events, you can use the alternative endpoint `/batch`. The events should be separated by the line feed character (`U+000A` or `\n`):
 
-```python
-import requests
+=== "With the intake key as header"
 
-headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
-events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
-content = "\n".join(events)
-response = requests.post("https://intake.sekoia.io/plain/batch", data=content, headers=headers)
-print(response.text) # (1)
-```
+    ```python
+    import requests
 
-1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+    headers = {"X-SEKOIAIO-INTAKE-KEY": "YOUR_INTAKE_KEY"}
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    content = "\n".join(events)
+    response = requests.post("https://intake.sekoia.io/plain/batch", data=content, headers=headers)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+=== "With the intake key through the HTTP Basic Auth"
+
+    ```python
+    import requests
+
+    auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    content = "\n".join(events)
+    response = requests.post("https://intake.sekoia.io/plain/batch", data=content, auth=auth)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
