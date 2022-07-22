@@ -72,7 +72,8 @@ nav:
             - Proxy: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
             - IP: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_ip.md
             - DNS: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_dns.md
-          - Cloudflare: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare.md
+          - Cloudflare:
+            - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Digital Shadows: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Microsoft Azure:
             - Azure Active Directory: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
@@ -497,7 +498,8 @@ plugins:
       operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_dns.md
       operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_ip.md
       operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
-      operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare.md
+      operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
+      operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare-http-requests.md: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
       operation_center/integration_catalog/cloud_and_saas/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
       operation_center/integration_catalog/cloud_and_saas/google/google_cloud.md: xdr/features/collect/integrations/cloud_and_saas/google/google_cloud.md
       operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
