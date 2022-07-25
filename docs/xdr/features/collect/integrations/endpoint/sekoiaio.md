@@ -9,6 +9,8 @@ SEKOIA.IO provides its own agent allowing to collect interresting events with a 
 !!! note
     The SEKOIA.IO agent is currently in beta and for Windows only.
 
+{!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
+
 ## Installation
 
 ### Intake creation and download of the executable

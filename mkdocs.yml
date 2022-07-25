@@ -39,7 +39,6 @@ nav:
     - Collect:
       - Overview: xdr/features/collect/ingestion_methods/index.md
       - Ingestion methods:
-        - SEKOIA.IO Agent: xdr/features/collect/ingestion_methods/sekoiaio.md
         - Rsyslog: xdr/features/collect/ingestion_methods/rsyslog.md
         - Logstash: xdr/features/collect/ingestion_methods/logstash.md
         - syslog-ng: xdr/features/collect/ingestion_methods/syslog-ng.md
@@ -96,6 +95,7 @@ nav:
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
           - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
+          - SEKOIA.IO Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
           - SentinelOne: xdr/features/collect/integrations/endpoint/sentinelone.md
           - SentinelOne Deep Visibility: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
@@ -591,6 +591,7 @@ plugins:
       user_center/apikeys.md: getting_started/generate_api_keys.md
       user_center/multi_factor_authentication.md: getting_started/account_security.md
       user_center/notifications.md: getting_started/notifications.md
+      xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
