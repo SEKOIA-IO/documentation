@@ -2,7 +2,10 @@
 
 This module exposes action to manipulate files. It extracts data from XML or JSON files.
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Actions
 
 ### Read JSON File

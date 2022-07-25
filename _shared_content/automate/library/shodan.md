@@ -1,6 +1,6 @@
 # Shodan
 
-![Shodan](/assets/playbooks/library/shodan.png){ align=right }
+![Shodan](/assets/playbooks/library/shodan.png){ align=right width=150 }
 
 [Shodan](https://www.shodan.io/) is a Cybersecurity company keeping track of devices exposed to the Internet. It collect information on devices, running software and related CVEs.
 

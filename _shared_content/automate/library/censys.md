@@ -1,6 +1,6 @@
 # Censys
 
-![Censys](/assets/playbooks/library/censys.png){ align=right }
+![Censys](/assets/playbooks/library/censys.png){ align=right width=150 }
 
 [Censys](https://censys.io/) is Cybersecurity company discovering and inventoring assets exposed on Internet. The Censys API provides programmatic access to the same data accessible through the web interface
 

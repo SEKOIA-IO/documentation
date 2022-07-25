@@ -1,6 +1,6 @@
 # IKnowWhatYouDownload
 
-![IKnowWhatYouDownload](/assets/playbooks/library/iknowwhatyoudownload.png){ align=right }
+![IKnowWhatYouDownload](/assets/playbooks/library/iknowwhatyoudownload.png){ align=right width=150 }
 
 [iknowwhatyoudownload](https://iknowwhatyoudownload.com) collects torrent files and peers from torrent sites and DHT network. It allows associating IP addresses to downloaded and shared data
 

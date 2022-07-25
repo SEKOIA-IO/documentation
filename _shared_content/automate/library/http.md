@@ -2,7 +2,10 @@
 
 This module exposes actions to request HTTP resources
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Actions
 
 ### Download File

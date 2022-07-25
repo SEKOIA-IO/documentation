@@ -2,11 +2,12 @@
 
 RSS is a internet standard for web syndication. It usually used by websites to publish frequently updated information.
 
-
-
 This module exposes triggers to subscribe to RSS feeds.
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Triggers
 
 ### New Post

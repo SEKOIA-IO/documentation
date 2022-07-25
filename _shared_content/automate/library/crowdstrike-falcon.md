@@ -1,6 +1,6 @@
 # CrowdStrike Falcon
 
-![CrowdStrike Falcon](/assets/playbooks/library/crowdstrike-falcon.png){ align=right }
+![CrowdStrike Falcon](/assets/playbooks/library/crowdstrike-falcon.png){ align=right width=150 }
 
 Integrates with CrowdStrike Falcon EDR
 

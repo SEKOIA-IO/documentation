@@ -1,6 +1,6 @@
 # Digital Shadows
 
-![Digital Shadows](/assets/playbooks/library/digital-shadows.png){ align=right }
+![Digital Shadows](/assets/playbooks/library/digital-shadows.png){ align=right width=150 }
 
 Digital Shadows Module
 

@@ -1,6 +1,6 @@
 # ServiceNow
 
-![ServiceNow](/assets/playbooks/library/servicenow.png){ align=right }
+![ServiceNow](/assets/playbooks/library/servicenow.png){ align=right width=150 }
 
 [ServiceNow](https://www.servicenow.com/) is an IT company allowing creating workflow to empower employees productivity and to improve customers experience
 

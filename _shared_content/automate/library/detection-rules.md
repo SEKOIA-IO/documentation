@@ -2,7 +2,10 @@
 
 This module exposes a trigger to detect new snort rules on a repository
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Triggers
 
 ### New Snort Rules

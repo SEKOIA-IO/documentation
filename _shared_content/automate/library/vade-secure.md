@@ -1,6 +1,6 @@
 # Vade Secure
 
-![Vade Secure](/assets/playbooks/library/vade-secure.png){ align=right }
+![Vade Secure](/assets/playbooks/library/vade-secure.png){ align=right width=150 }
 
 Vade Secure Module
 

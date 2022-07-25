@@ -1,7 +1,6 @@
 # AWS
 
 [AWS](https://aws.amazon.com/) is a one of the main cloud provider, supported by Amazon. It offers services for storage (S3, Glacier, EBS, ...), for networking (Snowball, CloudFront, ...), for computing (EC2, ECS, EKS, ...) and others.
-
 This module provides triggers to collect events from AWS
 
 ## Configuration

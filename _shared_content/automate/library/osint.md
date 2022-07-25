@@ -2,7 +2,10 @@
 
 This module exposes actions to process OSINT data
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Triggers
 
 ### Fetch OSINT

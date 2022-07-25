@@ -1,6 +1,6 @@
 # Imperva
 
-![Imperva](/assets/playbooks/library/imperva.png){ align=right }
+![Imperva](/assets/playbooks/library/imperva.png){ align=right width=150 }
 
 Imperva Module
 

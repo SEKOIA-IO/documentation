@@ -2,7 +2,10 @@
 
 The [Public Suffix List](https://publicsuffix.org/) is an initiative of [Mozilla](https://www.mozilla.org/) to list of all known public suffixes
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Actions
 
 ### Get Private Domains

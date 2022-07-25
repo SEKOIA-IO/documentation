@@ -1,6 +1,6 @@
 # RiskIQ
 
-![RiskIQ](/assets/playbooks/library/riskiq.png){ align=right }
+![RiskIQ](/assets/playbooks/library/riskiq.png){ align=right width=150 }
 
 [RiskIQ](https://www.riskiq.com/) is a cyber security company providing software as a service to detect phishing, fraud, malware, and other online security threats.
 

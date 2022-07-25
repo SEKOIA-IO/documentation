@@ -1,6 +1,6 @@
 # Onyphe
 
-![Onyphe](/assets/playbooks/library/onyphe.png){ align=right }
+![Onyphe](/assets/playbooks/library/onyphe.png){ align=right width=150 }
 
 [Onyphe](https://www.onyphe.io/) is a Cyber Defense Search Engine for open-source and cyber threat intelligence data collected by crawling various sources available on the Internet or by listening to Internet background noise
 

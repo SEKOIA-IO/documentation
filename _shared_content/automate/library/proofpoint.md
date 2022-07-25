@@ -1,10 +1,13 @@
 # Proofpoint
 
-![Proofpoint](/assets/playbooks/library/proofpoint.png){ align=right }
+![Proofpoint](/assets/playbooks/library/proofpoint.png){ align=right width=150 }
 
 Proofpoint Module
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Triggers
 
 ### Get Proofpoint PoD events

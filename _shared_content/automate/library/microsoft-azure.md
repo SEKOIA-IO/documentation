@@ -1,10 +1,13 @@
 # Microsoft Azure
 
-![Microsoft Azure](/assets/playbooks/library/microsoft-azure.png){ align=right }
+![Microsoft Azure](/assets/playbooks/library/microsoft-azure.png){ align=right width=150 }
 
 Microsoft Azure is a cloud computing service operated by Microsoft
 
-## ConfigurationThis module accepts no configuration.
+## Configuration
+
+This module accepts no configuration.
+
 ## Triggers
 
 ### Consume Eventhub messages

@@ -1,6 +1,6 @@
 # The Hive
 
-![The Hive](/assets/playbooks/library/the-hive.png){ align=right }
+![The Hive](/assets/playbooks/library/the-hive.png){ align=right width=150 }
 
 [TheHive](https://thehive-project.org/) is a scalable, open source and free Security Incident Response Platform
 
