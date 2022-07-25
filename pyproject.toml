@@ -16,7 +16,7 @@ python = "^3.8"
 mkdocs = "^1.0.0"
 mkdocs-material = "^8.0.0"
 mkdocs-redirects = "^1.0.3"
-markdown-include = "^0.6.0"
+markdown-include = "^0.7.0"
 lightgallery = "^0.5"
 
 [build-system]
