@@ -148,7 +148,6 @@ nav:
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
-        - Cloudflare Logpull: xdr/features/automate/library/cloudflare-logpull.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
         - Digital Shadows: xdr/features/automate/library/digital-shadows.md
