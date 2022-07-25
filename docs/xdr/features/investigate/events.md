@@ -6,6 +6,8 @@ The events page enables investigation in the latest events received by SEKOIA.IO
 
 The events page displays a list of the latest events received by [SEKOIA.IO](http://sekoia.io/).
 
+A search is able to retrieve a maximum of 100 000 events, if this number is reached the search has to be narrowed.
+
 The default columns are:
 
 - `Timestamp`: Event date
