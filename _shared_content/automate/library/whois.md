@@ -1,23 +1,12 @@
 # Whois
 
-
-
 Provides data enrichment for domains and IP addresses.
 
 ## Configuration
 
-
-
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| proxy | boolean | Use system proxy settings |
-
-
-
-
-
-
-
+| `proxy` | `boolean` | Use system proxy settings |
 
 ## Actions
 
@@ -25,36 +14,21 @@ Provides data enrichment for domains and IP addresses.
 
 Provides data enrichment for Domains, URLs, and IP addresses.
 
-
-
 #### Arguments
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| query | string | URL, IP, or domain to be enriched |
-
-
-
-
+| `query` | `string` | URL, IP, or domain to be enriched |
 
 
 #### Outputs
+
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| DNS | object |  |
-| Whois | object |  |
-
-
-
-
-
-
-
-
-
-
+| `DNS` | `object` |  |
+| `Whois` | `object` |  |
 
 
 ## Extra
 
-Module **Whois v.1.13**
+Module **`Whois` v1.13**
