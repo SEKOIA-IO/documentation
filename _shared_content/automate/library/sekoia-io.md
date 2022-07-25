@@ -128,7 +128,7 @@ An existing alert was updated
 
 
 
-### alert_webhook
+### Manual Trigger
 
 Webhook Trigger to receive specific SEKOIA.IO Alerts
 
@@ -1067,4 +1067,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **SEKOIA.IO v.2.14**
+Module **SEKOIA.IO v.2.15**
