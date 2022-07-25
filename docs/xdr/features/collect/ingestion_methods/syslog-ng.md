@@ -75,6 +75,19 @@ log {
 };
 ```
 
+## syslog-ng and Red Hat Enterprise Linux
+
+If you can’t see your events on SEKOIA.IO, you might encounter an issue with your syslog-ng and its capability dropping feature. This problem was faced by some of our customers with Red Hat Enterprise Linux for example.
+
+As explained in syslog-ng’s article “[Working around Linux capabilities problems for syslog-ng](https://www.syslog-ng.com/community/b/blog/posts/working-around-linux-capabilities-problems-for-syslog-ng)”, you can execute the following commands to solve this issue:
+
+```
+# cat >> /etc/sysconfig/syslog-ng << EOF
+SYSLOGNG_OPTS="--caps cap_sys_admin,cap_chown,cap_dac_override,cap_net_bind_service,cap_fowner=eip"
+EOF
+# systemctl restart syslog-ng
+```
+
 ## How to Debug syslog-ng?
 
 To check if syslog-ng is forwarding events to SEKOIA.IO, you can start it with the `-d` (to enable debug mode) and `-e` (to ensure that all logs are displayed to the standard output) flags:
