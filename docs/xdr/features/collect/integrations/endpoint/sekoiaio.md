@@ -9,7 +9,29 @@ SEKOIA.IO provides its own agent allowing to collect interresting events with a 
 !!! note
     The SEKOIA.IO agent is currently in beta for Windows and Linux only.
 
-{!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
+## Supported OS versions
+
+The Endpoint Detection Agent supports the following operating systems:
+
+=== "Windows"
+
+    * Windows 8
+    * Windows 10
+    * Windows 11
+    * Windows server 2016
+    * Windows server 2019
+    * Windows server 2022
+
+=== "Linux"
+
+    Linux distributions based on a kernel version of **3.10** or newer should be supported by the agent.
+
+    Here's an incomplete list of supported distributions:
+
+    * Ubuntu 14.04 and newer
+    * Debian 8 and newer
+    * CentOS 7 and newer
+
 
 ## Installation
 
@@ -61,6 +83,9 @@ The Endpoint Detection Agent is a binary which you can easily install on Windows
     ```
 
  Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The protocol used to send events is HTTPS (443).
+
+
+{!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
 
 ### Proxy Support
 
