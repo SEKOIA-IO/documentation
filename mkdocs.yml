@@ -598,6 +598,8 @@ plugins:
       user_center/multi_factor_authentication.md: getting_started/account_security.md
       user_center/notifications.md: getting_started/notifications.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
+      searching/dork.md: xdr/features/investigate/dork_language.md
+      searching/search_events.md: xdr/features/investigate/events.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
