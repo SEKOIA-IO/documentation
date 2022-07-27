@@ -28,7 +28,7 @@ Each line of log can be unrolled to show:
 
 ## Search bar
 
-You can search among the list of events by using the `Dork Query Langage`. A complete documentation on how to use this langage is available [here](https://docs.sekoia.io/searching/dork/).  At most 100k events can be returned by a search, if this number is reached the search has to be narrowed.
+You can search among the list of events by using the `Dork Query Langage`. A complete documentation on how to use this langage is available [here]( dork_language.md).  At most 100k events can be returned by a search, if this number is reached the search has to be narrowed.
 
 ### Filters
 
