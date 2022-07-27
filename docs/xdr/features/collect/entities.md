@@ -18,14 +18,17 @@ The **Alert generation mode** affects the alert processing workflow. There are t
 - `manual`: for which the alerts remain in the status `Pending` until a manual action.
 
 ## Entities listing
+
 On the listing page of entities, you can find:
 
 - Name of all your entities
 - A description for each entity
 - The number of intakes linked to each entity
+
 Under the entity details, you will find the associated data sources.
+
 !!! Note
-    To activate a new intake for your entity, please refer to the [intakes](https://docs.sekoia.io/operation_center/intakes/) documentation.
+    To activate a new intake for your entity, please refer to the [intakes](intakes.md) documentation.
 
 ## Create an entity
 To create a new entity:
@@ -44,7 +47,7 @@ On the details view of an entity, you can find:
 - A table that lists all intakes related to this entity
 
 This detailed view allows you to edit the entity or delete it if needed.
-You can also add [intakes](https://docs.sekoia.io/operation_center/intakes/) to it by clicking on the `+ Add Intake` button on the upper right side of the table.
+You can also add [intakes](intakes.md) to it by clicking on the `+ Add Intake` button on the upper right side of the table.
 
 !!! Note
     One entity can have as many intakes in different formats as it requires.

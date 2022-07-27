@@ -2,6 +2,7 @@
 A feed allows you to filter CTI objects from your database.
 
 ## Feeds listing
+
 The feeds’ page is accessible in the main menu. The page lists all feeds that are available to your community and the table has columns based on our available filters.
 
 The available filters are:
@@ -16,7 +17,9 @@ The available filters are:
 A feed can be consumed by all users belonging to the community that creates it.
 
 ## Consume a feed
+
 To consume a feed, you have to click on the dropdown icon next to the name of the feed in the first column of the table.
+
 You can then:
 
 - Copy the feed ID
@@ -35,14 +38,16 @@ The available formats are:
 - **Custom**: A template string is needed to specify the way the data must be formatted.
     - The template variables must follow the format: `$name` where `name` is the name of the attribute
     - Example: `ID: $id, name: $name, Observables: $observables`
+
 ### Default Feed
 
 A default feed with no filters is available in all communities without having to create it.
 
 The special feed ID to use is `d6092c37-d8d7-45c3-8aff-c4dc26030608`.
+
 ### Create new feed
 
-There are two ways to create a feed: either from the TIP interface or by using the API and the [feeds](https://docs.sekoia.io/api/threat%20intelligence%20database#operation/post_feeds_resource) endpoint.
+There are two ways to create a feed: either from the TIP interface or by using the API and the [feeds](../../develop/rest_api/intelligence/#operation/post_feeds_resource) endpoint.
 
 To create a new feed:
 

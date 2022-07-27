@@ -29,7 +29,7 @@ To create an intake, you have to:
 7. Find your newly created source of events as well as the intake key in the Intakes homepage
 
 !!! Note
-    The documentation about the integration of your data sources is also available in the [integrations](https://docs.sekoia.io/integrations/) page.
+    The documentation about the integration of your data sources is also available in the [integrations](integrations/index.md) page.
 
 ## Custom intakes
 SEKOIA.IO provides a list of intakes that allows you to integrate events from different sources such as systems, applications and security appliances.

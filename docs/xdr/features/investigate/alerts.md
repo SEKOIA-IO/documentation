@@ -118,18 +118,18 @@ Subtasks can have an OpenC2 specification which can be displayed by clicking on 
 
 ### Events
 
-The Events tab lists the events that raised the alert in a display similar to the [Events page](https://docs.sekoia.io/operation_center/events/).
+The Events tab lists the events that raised the alert in a display similar to the [Events page](events.md).
 
 When interacting with individual values, it is possible to:
 
 - Filter for: only applies to the events that raised the alert
 - Filter out: only applies to the events that raised the alert
-- [Search events with this value](https://docs.sekoia.io/operation_center/alerts/#search-events-with-this-value)
+- [Search events with this value](#search-events-with-this-value)
 
 The `Value Selection` mode can be toggled with the button at the top right of the event list in order to select multiple values in displayed events. The selected values can then be used to:
 
-- [Create an Alert Filter](https://docs.sekoia.io/operation_center/alerts/#create-an-alert-filter)
-- [Search events with these values](https://docs.sekoia.io/operation_center/alerts/#search-events-with-this-value)
+- [Create an Alert Filter](#create-an-alert-filter)
+- [Search events with these values](#search-events-with-this-value)
 
 ### Create an Alert Filter
 
@@ -158,4 +158,4 @@ You can access Threat Intelligence by clicking on any CTI object on the graph. T
 
 **Observables**
 
-You can access Observable Details by clicking on any Observable on the graph. The left panel will display all events inside the alert related to this observable, with their [Smart Description](https://github.com/SEKOIA-IO/Community/tree/main/events). Full Events can be accessed into the right side panel by clicking on "Full Events". It is also possible to [Search events with this value](https://docs.sekoia.io/operation_center/alerts/#search-events-with-this-value) by clicking on the button next to the name of the observable.
+You can access Observable Details by clicking on any Observable on the graph. The left panel will display all events inside the alert related to this observable, with their “Smart Description”. Full Events can be accessed into the right side panel by clicking on "Full Events". It is also possible to [Search events with this value](#search-events-with-this-value) by clicking on the button next to the name of the observable.
