@@ -6,7 +6,7 @@ You can configure as much intakes as you need in order to increase SEKOIA.IO kno
 All features related to intakes are visible through the “Intakes” menu on the Operations Center.
 ## Intakes listing
 The intakes homepage allows you to view the list of intakes already created within the community but also to create new intakes.
-On this page, you can find: 
+On this page, you can find:
 
 - The created intakes in your community
 - The entity associated with the intake
@@ -18,11 +18,11 @@ On this page, you can find:
 
 ## Create an intake from our integrations catalog
 To configure a new source of events in your community, you can rely on our list of continuously growing integrations that are constantly developed and enhanced by SEKOIA.IO’s team.
-To create an intake, you have to: 
+To create an intake, you have to:
 
 1. Click on the `+ Intake` from the Intakes homepage
 2. Choose the source of events that suits your needs (you can filter these sources by clicking on the categories’ tags)
-3. Click on the `Create` button in the source card 
+3. Click on the `Create` button in the source card
 4. Provide an intelligible name
 5. Select the entity to which you want to associate the corresponding data
 6. Click on `Create`
@@ -37,7 +37,7 @@ Some technologies may not have an associated Intake in the official SEKOIA.IO ca
 The "Custom format" feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the Events page.
 
 !!!note
-    In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your SEKOIA.IO account. This permission also allows you to create an existing Intake. 
+    In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your SEKOIA.IO account. This permission also allows you to create an existing Intake.
 
 ### Create an empty Custom format
 The creation of an empty Custom format is the first step to develop your own Intake.
@@ -66,7 +66,7 @@ The custom format panel is structured like this:
 ## Stages
 A Custom format consists of a sequence of stages organized under a pipeline that modifies the event on the fly.
 A stage is a parsing step that will have a specific behaviour on the event.
-The goal is to define a sequence of stages that will parse your events in the ECS format. 
+The goal is to define a sequence of stages that will parse your events in the ECS format.
 
 ### Custom stage
 The custom stage is used to create actions. An action is an elementary operation that can `set`, `translate` or `delete` a field.
@@ -86,9 +86,9 @@ The value corresponding to the field you want to set can either be a constant (f
 The JSON stage:
 
 - Name: `parsed_json`
-- Output_field: `message` 
+- Output_field: `message`
 
-was previously used to parse the following event: 
+was previously used to parse the following event:
 ```
 {'protocol':'tcp','traffic':{'source':'127.0.0.1','target':'8.8.8.8'}}
 ```
@@ -101,8 +101,8 @@ To put the `source` and the `target` IP in the final version of the parsed event
 ![SEKOIA.IO Set action](/assets/operation_center/custom_format/translate_action.png){: style="max-width:100%"}
 
 The `Translate` action sets value of one or more fields according to the value of a source field and a dictionary that connects values.
-An optional "fallback" value can be defined. 
-If the value of the source field does not match any entry of the mapping dictionary, the fallback value will be used to set the target field. 
+An optional "fallback" value can be defined.
+If the value of the source field does not match any entry of the mapping dictionary, the fallback value will be used to set the target field.
 If no fallback value is defined and the value of the source field does not match any entries, the target field will not be created in the final event.
 
 **Example**
@@ -159,7 +159,7 @@ You will need to provide the stage with:
  - A `Description` (optional)
  - An `Input_field` -  As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
  - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a value corresponding to a key.
- - A `Value Separator` - It is the separator that differentiates the key from the value. It it set to `=` by default. 
+ - A `Value Separator` - It is the separator that differentiates the key from the value. It it set to `=` by default.
  - An `Item Separator` - It is the separator that differentiates two different key-value. The default separator is `\s` which means a whitespace character.
 
 **Example**
@@ -184,11 +184,11 @@ You will need to provide the stage with:
 - An `Input_field` -  As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
 - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a value corresponding to a key.
 - A `Pattern` - It is the Grok pattern you want to apply.
-- A `Custom Patterns` - If no Grok pattern satisfies you in this [list](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns), you can create your own custom patterns with the `+` button on the right of the line. Then, on the left column, write the name of your pattern. On the right column, write the regex corresponding to that pattern.  
+- A `Custom Patterns` - If no Grok pattern satisfies you in this [list](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns), you can create your own custom patterns with the `+` button on the right of the line. Then, on the left column, write the name of your pattern. On the right column, write the regex corresponding to that pattern.
 
 **Example 1**
-![Grok custom pattern](/assets/operation_center/custom_format/grok_custom_pattern.png)  
-In this example, the pattern `SSHD_MESSAGE_ILLEGAL_USER` will match the strings `Illegal user` or `illegal user`.  
+![Grok custom pattern](/assets/operation_center/custom_format/grok_custom_pattern.png)
+In this example, the pattern `SSHD_MESSAGE_ILLEGAL_USER` will match the strings `Illegal user` or `illegal user`.
 **Example 2**
 In the following event, a Grok Stage can be used to parse the event.
 
@@ -199,11 +199,11 @@ In the following event, a Grok Stage can be used to parse the event.
 If you want to parse the IP and the time in milliseconds, the following Pattern can be used:
 `%{IP:client} took %{NUMBER:duration} ms`
 
-To get the IP in a next stage, you can use the reference `{{stage1.message.client}}`.  
+To get the IP in a next stage, you can use the reference `{{stage1.message.client}}`.
 To get the duration, you can use `{{stage1.message.duration}}`.
 
 !!! note
-    The pattern should take into account every singe character of your event, from the first one to the last one. 
+    The pattern should take into account every singe character of your event, from the first one to the last one.
 
 #### Date
 ![SEKOIA.IO Date stage](/assets/operation_center/custom_format/date_stage.png){: style="max-width:100%"}
@@ -252,7 +252,7 @@ In the following event, a DSV stage can be used to parse the `message` field.
 ```
 2020/12/04 16:47:48;LOGIN;jenkins;2305
 ```
-You can configure the stage as follow: 
+You can configure the stage as follow:
 - Input_field: `{{original.message}}`
 - Output_field: `message`
 - Column Names: `date;action;username;user_id`
@@ -285,7 +285,7 @@ The following built-in filters are available:
 |`upper`| returns the value all uppercase
 
 ## Conditions
-The structure of events often varies depending on certain conditions such as the type of data (network, audit, security...) and it can be interesting to set up stages that only run when certain conditions are met.  
+The structure of events often varies depending on certain conditions such as the type of data (network, audit, security...) and it can be interesting to set up stages that only run when certain conditions are met.
 This feature is called `Filter` too but applies to a block. It should not be confused with [filters](#filters) that apply to a specific field.
 
 **Example**
@@ -294,18 +294,18 @@ To run the stage `set_stage` when the value of the `type` field is equal to `net
 
 ## Fields manager
 A taxonomy is a hierarchical schema used to normalize events. The taxonomy used by SEKOIA.IO is the ECS standard (Elastic Common Schema).
-The fields manager (previously called taxonomy manager) allows you to view all the ECS fields available with their description.  
+The fields manager (previously called taxonomy manager) allows you to view all the ECS fields available with their description.
 If a field in an event is custom to the technology and cannot be placed in any field of the ECS standard, you can create your own field.
 
 !!! note
     By convention, the name of the field must start with the name of your intake followed by the field name.
 
-Once the field manager panel is open, you will find two sections: 
+Once the field manager panel is open, you will find two sections:
 - `My custom fields`: This section is dedicated to the fields you’ve created
 - `Existing fields`: This sections gather the fields already proposed by SEKOIA.IO
 
 ### Create and set a custom field
-To create a custom field, you have to: 
+To create a custom field, you have to:
 1. Click on the dedicated button `+ Custom field`
 2. Fill in the following fields:
 - `Field name`: It is the name to refer to your custom field
@@ -314,15 +314,15 @@ To create a custom field, you have to:
 
 ### Set an observable type for graph investigation
 If you want the field you are building to be displayed in graph investigation, you should activate the dedicated checkbox.
-When checked, another part of the form appears to set this optional feature. 
+When checked, another part of the form appears to set this optional feature.
 
-To display your custom field in the graph investigation, you first need to: 
+To display your custom field in the graph investigation, you first need to:
 
 1. Select the observable type your field refers to
-2. Depending on the type of observable selected, you might need to select: 
+2. Depending on the type of observable selected, you might need to select:
 - The observable property associated with your custom field
 - The observable name that you want to associate your custom field with
-3. Once saved, your new custom field will be displayed in the “Your custom field” section. You will be able to : 
+3. Once saved, your new custom field will be displayed in the “Your custom field” section. You will be able to :
 - Edit it
 - Delete it
 - Manage custom fields

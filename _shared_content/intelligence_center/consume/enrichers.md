@@ -1,7 +1,7 @@
 # Enrichers
-An Enricher is a module that allows you to enrich Observables via external services. 
+An Enricher is a module that allows you to enrich Observables via external services.
 
-In SEKOIA.IO, you have access to either free or paid services to perform enrichment tasks. 
+In SEKOIA.IO, you have access to either free or paid services to perform enrichment tasks.
 
 | Name | Type |
 | --- | --- |
@@ -17,7 +17,7 @@ In SEKOIA.IO, you have access to either free or paid services to perform enrichm
 
 The Enrichers home page lists the status and results of observable enrichment tasks performed from the Observables page or from a Content Proposal. Filters allow you to sort by observable type, enricher or task status.
 
-An enrichment task can be: 
+An enrichment task can be:
 
 - pending
 - in progress

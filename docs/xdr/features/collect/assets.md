@@ -2,15 +2,15 @@
 
 ## What is an asset?
 
-In SEKOIA.IO, assets participate to the security workflow of your community. When an incoming event matches with a defined asset, the event is enriched with assets information. Their criticality will be taken into account when calculating the urgency of an alert, together with the severity of the rule that triggered the alert. 
+In SEKOIA.IO, assets participate to the security workflow of your community. When an incoming event matches with a defined asset, the event is enriched with assets information. Their criticality will be taken into account when calculating the urgency of an alert, together with the severity of the rule that triggered the alert.
 
-When more than one asset match with an event, the highest criticality is used for urgency calculation. 
+When more than one asset match with an event, the highest criticality is used for urgency calculation.
 
 Assets also permit the selective application of detection rules: rules can be applied to one, several or all entities, and to one, several or all assets.
 
 ## Types of assets
 
-Assets in SEKOIA.IO can be of different types. There are three main categories: 
+Assets in SEKOIA.IO can be of different types. There are three main categories:
 
 - **Branding** (banking, brand, project, social network)
 - **People** (a person)
@@ -24,7 +24,7 @@ The most commonly used by our users are:
 
 ## Assets’ homepage
 
-The assets homepage lists all of your community’s assets, their type, creation date, events and alerts associated and the criticality score. 
+The assets homepage lists all of your community’s assets, their type, creation date, events and alerts associated and the criticality score.
 
 The **numbers of events and alerts** shown in the table are calculated for the **past 7 days.**
 
@@ -32,15 +32,15 @@ The **numbers of events and alerts** shown in the table are calculated for the *
 
 ## Create an asset
 
-To create an asset from our UI, you have to: 
+To create an asset from our UI, you have to:
 
 1. Click on `Asset` in the assets’ homepage
-2. Select a category (`branding`, `people` or `technical`) 
-3. Give it a name and a description 
-4. Determine its `criticality` 
+2. Select a category (`branding`, `people` or `technical`)
+3. Give it a name and a description
+4. Determine its `criticality`
 5. Choose your type of asset from the list
 6. Add `key characteristics` depending on your asset’s type (see the list below)
-7. Add `attributes` with values 
+7. Add `attributes` with values
 8. Save your settings
 
 | Category | Type of asset | Key characteristics |

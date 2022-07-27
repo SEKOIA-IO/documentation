@@ -3,7 +3,7 @@ Alerts are created by the Operations Center when an event matches a rule and a t
 ## Concepts
 ### Alert Status and lifecycle
 
-An alert can have five possible statuses: 
+An alert can have five possible statuses:
 
 | Status | Description | Possible actions to do |
 | --- | --- | --- |
@@ -14,7 +14,7 @@ An alert can have five possible statuses:
 | **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
 
 ### Alert Urgency
-The Urgency is a number used to give a score to the risk associated with a specific alert. 
+The Urgency is a number used to give a score to the risk associated with a specific alert.
 It is calculated from the severity of a rule and the criticality of assets related to the alert.
 This gives a value between 1 (very low risk) and 100 (very high risk).
 
@@ -36,7 +36,7 @@ The Alert type is associated with the rule that triggered it but can be changed 
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
 
 ## Alerts listing
-When you first connect to [SEKOIA.IO](http://app.sekoia.io/), the alerts list will display the last 10 alerts raised on your community ordered by Date. 
+When you first connect to [SEKOIA.IO](http://app.sekoia.io/), the alerts list will display the last 10 alerts raised on your community ordered by Date.
 From the left to the right, 7 features are available on the top screen:
 
 - A `refresh` button to show the newly generated alerts
@@ -68,9 +68,9 @@ By default, the alert listing displays the following information (more informati
 - The `source` and `target`of the alert
 
 > Your custom configuration will be saved in order to allow you to keep your selected filters when you come back to this page.
-> 
+>
 > For Partners, an additional filter is available in order to display all or a subset of alerts related to its managed communities.
-> 
+>
 > The alert listing also displays the Communities related to the alerts.
 
 ## Alert details

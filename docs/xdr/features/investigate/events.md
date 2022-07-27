@@ -46,7 +46,7 @@ To check it out, you can click on "Saved queries" then select the wanted period 
 
 ### Date
 
-It is possible to select the period of time to be taken into consideration when using a filter. You can use: 
+It is possible to select the period of time to be taken into consideration when using a filter. You can use:
 
 - `Presets`: Recommended predefined dates
 - `Date relatives`: Select earliest and latest moments
@@ -70,9 +70,9 @@ You can share your researches with colleagues by sending them these job IDs, whi
 
 ## Export the results of a search
 
-You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export. 
-To do so, click on the button `download`on the upper right of the logs' table. 
-You can either export all the fiels or export only selected fields. 
+You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export.
+To do so, click on the button `download`on the upper right of the logs' table.
+You can either export all the fiels or export only selected fields.
 The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the UUID of the job search.
 
 !!! note

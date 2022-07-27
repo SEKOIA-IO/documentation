@@ -1,6 +1,6 @@
 ## Overview
 
-To stay informed about the latest activities on your community, you can set up notifications and get alerts each time a new alert pops up or a new report is online. 
+To stay informed about the latest activities on your community, you can set up notifications and get alerts each time a new alert pops up or a new report is online.
 
 Notifications Rules, accessible through the User Center or the contextual menu, will let you:
 
@@ -12,21 +12,21 @@ This documentation will let you go deeper into [SEKOIA.IO](http://sekoia.io/)’
 
 ## Notifications listing
 
-When there are no notifications set up in your community, the listing page will be blank. A `+ new notification` button is highlighted as you can start creating your notification from there. 
+When there are no notifications set up in your community, the listing page will be blank. A `+ new notification` button is highlighted as you can start creating your notification from there.
 
 Once you have some notifications created, each notification can be modified, duplicated, deleted and (de)activated from the main Notification page in the User Center.
 
-You can also search and filter your notifications from this page. 
+You can also search and filter your notifications from this page.
 
-You can filter by type of trigger or type of actions. 
+You can filter by type of trigger or type of actions.
 
 ## Create a new notification
 
-Notifications only apply to the community and the application you are in. 
+Notifications only apply to the community and the application you are in.
 
 ### Operations Center Notifications
 
-To write a new notification rule in the Operations Center, you first have to: 
+To write a new notification rule in the Operations Center, you first have to:
 
 1. Select an `event` and `conditions` that will trigger your notification rule. You can configure your notification rule to be triggered on `alerts` (that can be either new or already existing)
 2. Choose one or multiple `conditions` amongst multiple options (alert status, its urgency, asset concerned by the alert, etc.)
@@ -38,16 +38,16 @@ For example, you can decide to trigger a notification when the following criteri
 - Involved asset is `My Critical Asset`
 3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
 4. Give your notification a `name`
-5. Save your changes 
+5. Save your changes
 
 ### Intelligence Center Notifications
 
-You can configure your notification rule to be triggered when a new `report` is merged in SEKOIA.IO’s Intelligence Center. 
+You can configure your notification rule to be triggered when a new `report` is merged in SEKOIA.IO’s Intelligence Center.
 
-To do so, you have to: 
+To do so, you have to:
 
 1. Select an `event` and `conditions` that will trigger your notification rule. You can configure your notification rule to be triggered on `reports being added`
-2. Choose one or multiple `conditions` amongst multiple options (name, description, refers to, sector, country, TLP, FLINT, confidence level…) 
+2. Choose one or multiple `conditions` amongst multiple options (name, description, refers to, sector, country, TLP, FLINT, confidence level…)
 
 For example, you can decide to trigger a notification when the following criteria are met:
 
@@ -55,7 +55,7 @@ For example, you can decide to trigger a notification when the following criteri
 - It concerns the country `France`
 3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
 4. Give your notification a `name`
-5. Save your changes 
+5. Save your changes
 
 ## Triggered Actions
 
@@ -127,7 +127,7 @@ Here's the description of the payload fields description:
 
 
 Now, let’s say that you want to post a notification to your internal Microsoft Teams messaging system when a new alert is raised. To do so, you have to:
-- Configure a small HTTP server that will receive the payload 
+- Configure a small HTTP server that will receive the payload
 - It will then talk to SEKOIA.IO’s Alert API to retrieve more information about the alert itself (its title, its urgency, etc.)
 - The final message is computed and pushed to Microsoft Teams via their incoming WebHook system
 

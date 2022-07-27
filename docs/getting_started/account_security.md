@@ -1,5 +1,5 @@
 # Set up account security
-## Two-factor authentication 
+## Two-factor authentication
 
 **Two-factor authentication** adds additional security to your SEKOIA.IO account by requiring a second step to sign in. It requires you to give a 6-digit verification code generated from your phone in addition to your username and password login.
 
@@ -7,7 +7,7 @@ When two-factor authentication is enabled, you will need your `password` and a `
 
 ### How do I enable two-factor authentication?
 
-To enable two-factor authentication, follow these instructions: 
+To enable two-factor authentication, follow these instructions:
 
 1. Log in to SEKOIA.IO platform
 2. Click on your profile picture and select `settings` to access the User center
@@ -60,24 +60,24 @@ To disable two-factor authentication on your SEKOIA account:
 4. Enter your actual password and select `disable`
 
 ## Security tokens
-In SEKOIA.IO, we support Web Authentication and we value high security standards. That’s why our users can use multiple tools to sign in on the platform in the fastest and most secure way possible. 
+In SEKOIA.IO, we support Web Authentication and we value high security standards. That’s why our users can use multiple tools to sign in on the platform in the fastest and most secure way possible.
 
-Depending on your web browser, you’ll be able to use security tokens to connect to the platform. These tokens can be `physical` (a USB security key) or `embedded` in your machine (fingerprint authentication).  
+Depending on your web browser, you’ll be able to use security tokens to connect to the platform. These tokens can be `physical` (a USB security key) or `embedded` in your machine (fingerprint authentication).
 
-A security token can be used as your second factor of authentication instead of a verification code. 
+A security token can be used as your second factor of authentication instead of a verification code.
 
 ### Add a security token
 
-To add a security token and enhance the overall security of your account, follow these instructions: 
+To add a security token and enhance the overall security of your account, follow these instructions:
 
 1. Go to the User Center > Account settings
 2. In the Security section, click on `Add`
-3. Enter your actual password 
+3. Enter your actual password
 4. Follow instructions in your browser to enroll your security token
 5. Save your settings
 
 !!! note
-    Please note that Mozilla Firefox does not support fingerprint authentication. 
+    Please note that Mozilla Firefox does not support fingerprint authentication.
 
 ### Remove a security token
 

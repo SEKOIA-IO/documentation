@@ -15,7 +15,7 @@ Tag information has a time validity and provides some technical enrichment depen
 ## Telemetry
 The telemetry of an observable shows the number of sightings of the observable on the perimeters that are monitored by SEKOIA.IO. The number of sightings is shown for each day over the last year. Each day is denoted by a small squared box colored proportionally to the number of sightings. These statistics are very useful:
 
-- to check the anteriority of an observable before using it as an IoC and 
+- to check the anteriority of an observable before using it as an IoC and
 - to gain more context on an observable that participates in an alert.
 
 The user can filter the telemetry of an observable depending on its profile and permissions. We built the telemetry feature with MSSP in mind. The telemetry of an observable can be filtered to show the value for

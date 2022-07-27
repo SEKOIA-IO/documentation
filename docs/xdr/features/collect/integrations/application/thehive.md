@@ -8,7 +8,7 @@
 
 First of all, you will have to retrieve your organisation name from your The Hive instance or create an organisation (see [The Hive documentation](https://docs.thehive-project.org/thehive/user-guides/quick-start/#create-an-organisation) to learn how to create an organisation).
 
-Next, you will need a [user apikey](https://docs.thehive-project.org/thehive/user-guides/organisation-managers/users-management/) in this organisation with `manageAlert` permission (for example with the `analyst` profile [profile](https://docs.thehive-project.org/thehive/user-guides/administrators/profiles/). 
+Next, you will need a [user apikey](https://docs.thehive-project.org/thehive/user-guides/organisation-managers/users-management/) in this organisation with `manageAlert` permission (for example with the `analyst` profile [profile](https://docs.thehive-project.org/thehive/user-guides/administrators/profiles/).
 
 You now have all informations to configure The Hive module and its `Create Alert` action in SEKOIA.IO.
 
