@@ -33,7 +33,7 @@ All rules have an associated effort level. The effort level is increasing from E
 - Effort needed to enable a rule.
 - Risk of false positives.
 
-For example: 
+For example:
 
 - `Elementary` rules require almost no effort and raise fewer alerts
 - `Master` rules are generic and raise a lot of alerts that will require qualification, but they can detect weaker signals. Those rules require an additional customisation effort, which has to be adapted to the customer context

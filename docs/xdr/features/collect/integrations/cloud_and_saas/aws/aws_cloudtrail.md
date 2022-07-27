@@ -27,7 +27,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Cloudtrail trigger](https://docs.sekoia.io/playbooks/library/aws/#fetch-cloudtrail-logs). You can use the existing template to fasten and ease the creation of your playbook.
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Cloudtrail trigger](../../../../automate/library/aws.md#fetch-cloudtrail-logs). You can use the existing template to fasten and ease the creation of your playbook.
 
 Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the S3 Bucket, hosting the CloudTrail logs, and a prefix to the CloudTrail objects (e.g `AWSLogs/313400002243/CloudTrail/`).
 

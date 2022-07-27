@@ -10,7 +10,7 @@ This use case describes how to automatically push new Alerts in an external secu
 - An API Key with a Role that contains at least the following permission:
 	* SIC_READ_ALERTS
 
-> To create your API Key, follow this [documentation](https://docs.sekoia.io/user_center/apikeys/).
+> To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
 
 ## Playbook creation
 
@@ -77,7 +77,7 @@ Your playbook should look like the following:
 
 ## Bonus
 
-To highlight this specific example, we tested to send a message with alert metadata to a simple [Custom format Intake](https://docs.sekoia.io/operation_center/intakes_customformat/) of SEKOIA.IO made for this occasion on a personal Community.
+To highlight this specific example, we tested to send a message with alert metadata to a simple [Custom format Intake](../../features/collect/integrations/custom_format.md) of SEKOIA.IO made for this occasion on a personal Community.
 With the same playbook logic, we only changed the `Request URL` block configuration parameters as following:
 * **JSON**:
 ```json
@@ -88,7 +88,7 @@ With the same playbook logic, we only changed the `Request URL` block configurat
 * **URL**: `https://intake.sekoia.io`
 
 !!! info
-	Those configuration parameters were filled-in by following this [documentation](https://docs.sekoia.io/playbooks/library/http/#request-url).
+	Those configuration parameters were filled-in by following this [documentation](../../features/automate/library/http.md#request-url).
 
 The result is an event received on SEKOIA.IO in a dedicated Intake, with the content of the POST request that was mapped in the relevant ECS fields (thanks to the Custom Format) mandatory to display a SMART Description.
 

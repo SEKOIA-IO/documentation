@@ -4,7 +4,7 @@
 
 API keys are an important part of the platform. They let our users automate actions and provide technical access without going through the UI.
 
-An API key is not only a unique identifier and a secret token for authentication, but it can also work as a mean to give an access that is more specific to the identity that is associated with it. 
+An API key is not only a unique identifier and a secret token for authentication, but it can also work as a mean to give an access that is more specific to the identity that is associated with it.
 
 Some bricks within the app also require the creation of an API key such as our CTI interconnection with third-party tools and playbooks.
 
@@ -42,9 +42,9 @@ To create a new API key, you’ll have to:
 
 ## Revoke an API Key
 
-Revoking an API key make it useless. It’s rather easy to do but keep in mind that it’s an action that cannot be reversed. 
+Revoking an API key make it useless. It’s rather easy to do but keep in mind that it’s an action that cannot be reversed.
 
-To revoke an API key, you’ll have to: 
+To revoke an API key, you’ll have to:
 
 - Access the `Managed communities` page
 - On the API key tab, click on the `Edit` button

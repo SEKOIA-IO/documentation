@@ -1,14 +1,14 @@
 # Expiration Rules
 
-Indicators don’t stay valid forever. For most of them, they have a defined validity period. 
+Indicators don’t stay valid forever. For most of them, they have a defined validity period.
 
 When creating/adding an Indicator to a Content Proposal, analysts have to provide a `valid_from` (required) and `valid_until` (optional) date which is the time from which this Indicator is considered a valid indicator of the behaviors it is related to or represents.
 
-This is when Expiration Rules come to play. They have been designed to set default validity periods for Indicators depending on the type of observable they related to. 
+This is when Expiration Rules come to play. They have been designed to set default validity periods for Indicators depending on the type of observable they related to.
 
 ### Default Expiration Rules
 
-By default, these validity periods are: 
+By default, these validity periods are:
 
 | Observable type | Time to live |
 | --- | --- |

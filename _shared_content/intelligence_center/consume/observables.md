@@ -1,5 +1,7 @@
 # Observables
+
 ## What is interesting about the Observables page?
+
 An observable is a technical information that can detect a potential threat.
 They are derived from all data contained in the Intelligence Center but are not always contextualized.
 If an observable cleary represents a malicious activity, then it is considered as an IoC.
@@ -7,15 +9,18 @@ If an observable cleary represents a malicious activity, then it is considered a
 This page provides a quick and efficient search engine for all the technical information available within the Intelligence Center, observables and IoC.
 
 ## Use Case
+
 A classic use case is when you are looking for any information regarding an IP address, domain name, url or file hash. It will give you an answer with the potential related threat or/and associated tag.
 
 ## Tag
+
 Tag information has a time validity and provides some technical enrichment depending of the type of the observable: geolocation, internet provider, reputation (e.g. scanner)
 
 ## Telemetry
+
 The telemetry of an observable shows the number of sightings of the observable on the perimeters that are monitored by SEKOIA.IO. The number of sightings is shown for each day over the last year. Each day is denoted by a small squared box colored proportionally to the number of sightings. These statistics are very useful:
 
-- to check the anteriority of an observable before using it as an IoC and 
+- to check the anteriority of an observable before using it as an IoC and
 - to gain more context on an observable that participates in an alert.
 
 The user can filter the telemetry of an observable depending on its profile and permissions. We built the telemetry feature with MSSP in mind. The telemetry of an observable can be filtered to show the value for
@@ -32,13 +37,17 @@ It must be noted that we voluntary limited the telemetry feature to the followin
 - file hashes
 
 ## How are the observables produced?
+
 Technical information is automatically extracted from various sources: public, subscriptions, partners, SEKOIA internal analysis.
+
 Depending of the source, a tag name could be associated with a `valid_from` and `valid_until` timestamp, providing an up-to-date technical information directly integrated to the Intelligence Center database: an IP address could be enriched with the tag `scanner` once, then have the tag expired if that IP address scanning activity is no longer observed.
 
 An observable also has relationships with other observables: an IP address could `belongs-to` an subnet object, and have a url `hosted-on`. It could become an indicator of compromise with its associated threat (e.g. malware, campaign).
 
 ## The main features of the observables page
+
 ### Type (examples)
+
 * Autonomous system
 * x509 Certificate
 * Directory
@@ -56,6 +65,7 @@ An observable also has relationships with other observables: an IP address could
 * Windows registry key
 
 ### Source (examples)
+
 * SEKOIA
 * SEKOIA C2 Tracker
 * SEKOIA Malware Watcher
@@ -65,6 +75,7 @@ An observable also has relationships with other observables: an IP address could
 * MalwareBazaar
 
 ### Tag (examples)
+
 * amazon_aws (Amazon AWS IP Ranges)
 * cloudflare (Cloudflare IPv4)
 * country:*	(Country)
@@ -93,6 +104,7 @@ An observable also has relationships with other observables: an IP address could
 * url_shortener (URL Shorteners)
 
 ### Searches
+
 You could proceed with bulk research, one observable on each line.
 ![!Intelligence Center Observable research](/assets/intelligence_center/observables_search.png){: style="width: 100%; max-width: 100%"}
 
@@ -102,6 +114,9 @@ When clicking on an Observable, a dedicated page will display information, raw o
 ![!Intelligence Center Observable result](/assets/intelligence_center/observables_results_relationships.png){: style="width: 100%; max-width: 100%"}
 
 ## Example Use Case
+
 You found some domain names during an investigation and you want to know if those observables are known in the Intelligence Center and if there is more context to it.
+
 Simply paste the domain names into the search fields and hit enter.
+
 In the `Known` tab you will find observables known in the Intelligence Center and some context over it if there is some. The `Unknown` tab will contain the observables never seen in the Intelligence Center.

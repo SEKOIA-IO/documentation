@@ -13,7 +13,6 @@ Two filters are available directly on the main page at the top right of the scre
 * Types: Many types may be chosen from the dropdown list
 * Sources: An autocomplete allows us to select the source we want the objects from
 
-
 ![!SEKOIA.IO Intelligence Center Filter Types](/assets/intelligence_center/intelligence_filter_types.png){: style="width: 100%; max-width: 100%"}
 
 Along with the main filters, a sidebar offers even more filtering capabilities.
@@ -43,7 +42,6 @@ The term that has been entered will be looked at in many objects fields:
 The search term can be mixed with filters to restrict even more the objects displayed
 
 ![!SEKOIA.IO Intelligence Center Search](/assets/intelligence_center/intelligence_search_fuzzy.png){: style="width: 100%; max-width: 100%"}
-
 
 By default, the search results are sorted by relevance, but it is possible to display them sorted by their modification date.
 

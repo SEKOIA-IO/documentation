@@ -6,11 +6,11 @@ In a Content Proposal, SEKOIA.IO’s default Warning Rules let you know if an In
 
 ## Create a warning rule
 
-You can create Warning Rules via the Warning Rules’ listing page. 
+You can create Warning Rules via the Warning Rules’ listing page.
 
-The `Add warning rule` button allows you to create new rules and define several elements to configure its triggering. 
+The `Add warning rule` button allows you to create new rules and define several elements to configure its triggering.
 
-To create a Warning Rule, you’ll have to: 
+To create a Warning Rule, you’ll have to:
 
 - Write the explicit warning message that will inform the analyst of the context around the observable
 - Define what type of Observable can trigger this Warning Rule

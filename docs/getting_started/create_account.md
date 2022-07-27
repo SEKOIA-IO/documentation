@@ -1,6 +1,6 @@
 # Create your account
 
-To create your new account, you will have to click on the link in the invitation email and you'll be redirected to the account creation form. 
+To create your new account, you will have to click on the link in the invitation email and you'll be redirected to the account creation form.
 
 From there, you'll have to:
 

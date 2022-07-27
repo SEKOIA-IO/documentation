@@ -16,7 +16,7 @@ There are different types of logs produced by GKE:
 **Flow Logs**: From [Google VPC FLow Logs documentation](https://cloud.google.com/vpc/docs/using-flow-logs):
 > VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as GKE nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
 
-Please read the [dedicated documentation](https://docs.sekoia.io/integrations/integrations/google_vpc_flow_logs.md).
+Please read the [dedicated documentation](google_vpc_flow_logs.md).
 (*Intake type: Google VPC Flow Logs*)
 
 **Activity logs** (*Intake type: Google Cloud Audit log*):

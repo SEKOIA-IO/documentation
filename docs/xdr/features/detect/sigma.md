@@ -77,7 +77,7 @@ Here is the list of supported modifiers:
 - `lt`: less than this value
 - `lte`: less than or equal to this value
 - `gt`: greater than this value
-- `gte`: greater or equal to this value 
+- `gte`: greater or equal to this value
 
 **Example**: Raise an alert when the URL matches specified regex and the command line contains all specified values
 
