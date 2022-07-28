@@ -47,6 +47,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-04-30T13:21:20.704Z",
         "agent": {
             "id": "8cb8fb07-ecb4-4537-8a44-451ef855a874",
             "name": "harfanglab"
@@ -140,6 +141,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "low",
             "status": "false_positive"
         },
+        "@timestamp": "2022-03-15T07:26:01.276Z",
         "agent": {
             "name": "harfanglab",
             "id": "00000000-0000-0000-0000-000000000000"
@@ -266,6 +268,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "192.168.120.41",
             "port": 2525
         },
+        "@timestamp": "2021-11-21T19:38:36.820Z",
         "agent": {
             "name": "harfanglab",
             "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
@@ -323,6 +326,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-05-01T09:55:30.372Z",
         "agent": {
             "id": "d4e3bf36-929d-4ddf-8526-492e89955808",
             "name": "harfanglab"
@@ -380,6 +384,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": "start"
         },
+        "@timestamp": "2021-11-21T20:03:08.226Z",
         "agent": {
             "name": "harfanglab",
             "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
@@ -435,6 +440,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "{\n  \"@version\": \"1\",\n  \"agent\": {\n    \"agentid\": \"00000000-0000-0000-0000-000000000000\",\n    \"distroid\": null,\n    \"domainname\": \"domain123\",\n    \"ostype\": \"windows\",\n    \"hostname\": \"pc123\",\n    \"osversion\": \"10.0.19041\",\n    \"osproducttype\": \"Windows 10 Pro\",\n    \"domain\": null,\n    \"version\": \"2.12.6\"\n  },\n  \"type\": \"rtlogs\",\n  \"alert_subtype\": \"process\",\n  \"log_type\": \"alert\",\n  \"detection_origin\": \"agent\",\n  \"tenant\": \"\",\n  \"alert_time\": \"2022-03-15T07:26:01.276+00:00\",\n  \"alert_type\": \"sigma\",\n  \"status\": \"false_positive\",\n  \"rule_id\": \"00000000-0000-0000-0000-000000000000\",\n  \"@event_create_date\": \"2022-03-15T07:26:01.276Z\",\n  \"alert_unique_id\": \"00000000-0000-0000-0000-000000000000\",\n  \"level\": \"low\",\n  \"aggregation_key\": \"123456\",\n  \"@timestamp\": \"2022-03-15T07:26:01.311Z\",\n  \"tags\": [\n    \"attack.discovery\",\n    \"attack.t1057\",\n    \"attack.s0057\"\n  ],\n  \"process\": {\n    \"detection_timestamp\": \"2022/03/15 07:24:54.438105\",\n    \"process_unique_id\": \"00000000-0000-0000-0000-000000000000\",\n    \"parent_integrity_level\": \"Medium\",\n    \"log_platform_flag\": 0,\n    \"fake_parent_image\": null,\n    \"pid\": 11320,\n    \"image_name\": \"C:\\\\Windows\\\\SysWOW64\\\\tasklist.exe\",\n    \"username\": \"XXX\\\\XXX\",\n    \"logonid\": 151210562,\n    \"signature_info\": {\n      \"signed_authenticode\": false,\n      \"signed_catalog\": true,\n      \"root_info\": {\n        \"thumbprint\": \"3b1efd3a66ea28b16697394703a72ca340a05bd5\",\n        \"display_name\": \"Microsoft Root Certificate Authority 2010\",\n        \"serial_number\": \"28cc3a25bfba44ac449a9b586b4339aa\",\n        \"issuer_name\": \"Microsoft Root Certificate Authority 2010\"\n      },\n      \"signer_info\": {\n        \"thumbprint\": \"f7c2f2c96a328c13cda8cdb57b715bdea2cbd1d9\",\n        \"display_name\": \"Microsoft Windows\",\n        \"serial_number\": \"33000002ec6579ad1e670890130000000002ec\",\n        \"issuer_name\": \"Microsoft Windows Production PCA 2011\"\n      }\n    },\n    \"current_directory\": \"C:\\\\Program Files (x86)\\\\EPOS\\\\EPOS Connect\",\n    \"error_msg\": \"\",\n    \"status_msg\": \"sigma match detected this process but not configured to block it\",\n    \"ppid\": 17808,\n    \"fake_parent_commandline\": null,\n    \"commandline\": \"tasklist\",\n    \"signed\": true,\n    \"grandparent_integrity_level\": \"Medium\",\n    \"log_type\": \"process\",\n    \"pe_imphash\": \"19BBD9C4E73C288A3645E163F4B82682\",\n    \"create_time\": \"2022-03-15T07:24:54.260Z\",\n    \"status\": 0,\n    \"parent_image\": \"C:\\\\Windows\\\\SysWOW64\\\\cmd.exe\",\n    \"integrity_level\": \"Medium\",\n    \"usersid\": \"S-1-5-21-299502267-725345543-82448378-2366\",\n    \"pe_info\": {\n      \"product_version\": \"10.0.19041.1\",\n      \"legal_copyright\": \"\u00a9 Microsoft Corporation. All rights reserved.\",\n      \"original_filename\": \"tasklist.exe\",\n      \"company_name\": \"Microsoft Corporation\",\n      \"file_description\": \"Lists the current running tasks\",\n      \"file_version\": \"10.0.19041.1 (WinBuild.160101.0800)\",\n      \"internal_name\": \"tasklist.exe\",\n      \"product_name\": \"Microsoft\u00ae Windows\u00ae Operating System\"\n    },\n    \"session\": 3,\n    \"pe_timestamp\": \"1994-09-11T16:43:21.000Z\",\n    \"parent_unique_id\": \"2332edf8-70c0-43c2-4590-00f912ab3d18\",\n    \"process_name\": \"tasklist.exe\",\n    \"grandparent_commandline\": \"C:\\\\Program Files (x86)\\\\EPOS\\\\EPOS Connect\\\\EPOSConnect.exe 1\",\n    \"pe_timestamp_int\": 779301801,\n    \"grandparent_image\": \"C:\\\\Program Files (x86)\\\\EPOS\\\\EPOS Connect\\\\EPOSConnect.exe\",\n    \"parent_commandline\": \"C:\\\\WINDOWS\\\\system32\\\\cmd.exe /d /s /c tasklist\",\n    \"fake_parent_unique_id\": null,\n    \"size\": 79360,\n    \"fake_ppid\": null,\n    \"hashes\": {\n      \"sha1\": \"7f50d8c3cf3ec79122a876e969bdb65d939becd0\",\n      \"sha256\": \"76eac7b5f53e0d58a98d5a6ddf9c97e19d1462ef65c0035d7798f89988b15ab4\",\n      \"md5\": \"0a4448b31ce7f83cb7691a2657f330f1\"\n    }\n  },\n  \"execution\": 0,\n  \"rule_name\": \"Discovery: Process list\",\n  \"maturity\": \"stable\",\n  \"msg\": \"Detects the execution of tasklist.exe, a tool used to gather detailed information about a computer's active processes.\"\n}\n",
+        "@timestamp": "2022-03-15T07:26:01.276Z",
         "agent": {
             "name": "harfanglab",
             "id": "00000000-0000-0000-0000-000000000000"
@@ -513,6 +519,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "@timestamp": "2021-05-02T19:52:24.083Z",
         "agent": {
             "id": "d4e3bf36-929d-4ddf-8526-492e89955808",
             "name": "harfanglab"
@@ -583,6 +590,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "provider": "Microsoft-Windows-PowerShell",
             "type": "info"
         },
+        "@timestamp": "2021-11-21T13:11:49.837Z",
         "agent": {
             "name": "harfanglab",
             "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
@@ -688,6 +696,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "dialect": "harfanglab",
             "provider": "Microsoft-Windows-Windows Defender"
         },
+        "@timestamp": "2022-01-03T05:44:57.331Z",
         "agent": {
             "id": "06d70013-58c7-46e3-9231-452a383af90b",
             "name": "harfanglab"
@@ -756,6 +765,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
 |`action.properties` | `object` | None |
 |`agent.id` | `keyword` | Unique identifier of this agent. |
 |`agent.name` | `keyword` | Custom name of the agent. |
