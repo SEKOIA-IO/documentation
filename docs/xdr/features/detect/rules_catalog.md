@@ -8,8 +8,9 @@ All rules are applied to your event stream in real-time, so that you can detect 
 
 SEKOIA.IO supports the following rule types:
 
-- **Sigma**: signature rules using the [Sigma detection language](#sigma-rules)
+- **Sigma**: signature rules using the [Sigma detection language](sigma.md)
 - **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from SEKOIA.IO's own Intelligence feed, continuously updated by our Threat & Detection Research team
+- **Anomaly**: [univariate anomaly detection rules](anomaly.md).
 - **STIX** (deprecated): signature rules using the STIX Patterning language
 
 ## Rules Catalog
