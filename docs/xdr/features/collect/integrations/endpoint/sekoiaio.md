@@ -26,7 +26,7 @@ The Endpoint Detection Agent supports the following operating systems:
 
     Linux distributions based on a kernel version of **3.10** or newer should be supported by the agent.
 
-    Here's an incomplete list of supported distributions:
+    Here's a non-exhaustive list of supported distributions:
 
     * Ubuntu 14.04 and newer
     * Debian 8 and newer
@@ -44,11 +44,11 @@ A link to download the latest version of the agent is available in the descripti
 
 ### Installation
 
-The Endpoint Detection Agent is a binary which you can easily install on Windows or Linux systems, after having created a dedicated intake on SEKOIA.IO XDR.
+The Endpoint Detection Agent is easy to install on Windows or Linux systems once you created a dedicated intake key on SEKOIA.IO XDR.
 
 === "Windows"
 
-    The following command must be executed **as an administrator**:
+    The following commands must be executed **as an administrator**:
 
     ```shell
     agent.exe -install -instake_key <INTAKE_KEY>
@@ -62,7 +62,7 @@ The Endpoint Detection Agent is a binary which you can easily install on Windows
 
 === "Linux"
 
-    If `auditd` is running on the machine we must disable it before installing the linux agent:
+    If `auditd` is running on the machine you must disable it before installing the linux agent:
 
     ```shell
     sudo systemctl stop auditd
@@ -109,7 +109,7 @@ and add the following line:
 HTTPProxyURL: "<PROXY_URL>"
 ```
 
-If you want to automate the installation of the agent with this configuration option, make sure a `config.yaml` file with this line is present in the working directory when launching the install command.
+If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
 ### Optional steps
 
@@ -119,7 +119,7 @@ If you want to automate the installation of the agent with this configuration op
 
     If you want to improve detection and investigation capabilities, you may want to enable Sysmon. When installed, the SEKOIA.IO Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
 
-    > Warning: The installation of this tool will generate more logs, so it will consume more CPU ressources. Install it on equipements that are correctly dimensioned, or try it on low risk assets at first.
+    > Warning: The installation of this tool will generate more logs which will consume more CPU resources. Install it on equipment that are correctly dimensioned, or try it on low risk assets at first.
 
-    Sysmon is a Microsoft tool you can download on their [website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
-    A common installation instruction and configuration file is available on [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
+    Sysmon is a Microsoft tool downloadable from [microsoft.com](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
+    A common installation instruction and configuration file is available at [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
