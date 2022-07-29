@@ -69,7 +69,7 @@ The Endpoint Detection Agent is a binary which you can easily install on Windows
     sudo systemctl disable auditd
     ```
 
-    Now that `auditd` is disabled we can install the agent:
+    Now that `auditd` is disabled you can install the agent:
 
     ```shell
     chmod +x ./agent
