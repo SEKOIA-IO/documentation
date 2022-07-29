@@ -82,7 +82,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     sudo systemctl status SEKOIAEndpointAgent.service
     ```
 
- Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The protocol used to send events is HTTPS (443).
+ Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `145.239.192.38`. The protocol used to send events is HTTPS (443).
 
 
 {!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
