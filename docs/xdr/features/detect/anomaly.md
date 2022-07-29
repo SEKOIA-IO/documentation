@@ -1,10 +1,10 @@
 # Anomaly Detection Rules
 
-You can use SEKOIA.IO Anomaly Detection Rules to analyse time series data, identify anomalous patterns and raise alerts.
+You can use SEKOIA.IO Anomaly Detection Rules to analyze time series data, identify anomalous patterns and raise alerts.
 
-Anomaly detection rules are based on machine learning anomaly detection features automating the analysis of univariate time series data by creating accurate baselines of normal behavior in your data. These baselines are used to identify anomalous patterns in your time series data and raise alerts with different level of criticality.
+Anomaly detection rules are based on machine learning anomaly detection features automating the analysis of univariate time series data by creating accurate baselines of normal behavior in your data. These baselines are used to identify anomalous patterns in your time series data and raise alerts with different levels of criticality.
 
-This module provide 1-Dimensional time series chart illustrating historical and current data values, forecasting for a specified date range, upper and lower bounds for the expected values, and the anomalies that occur outside these bounds with criticality score.
+This module provides 1-Dimensional time series chart illustrating historical and current data values, forecasting for a specified date range, upper and lower bounds for the expected values, and the anomalies that occur outside these bounds with criticality score.
 
 ### Plan your anomaly detection analysis
 
@@ -20,7 +20,7 @@ If yes, you can create an anomaly detection rule. An additional tool for specify
 
 Anomaly detection rules contain the configuration information necessary to perform the machine learning analysis. They can run for a specific time period or continuously against incoming data.
 
-For configuration you need to set :
+For a complete configuration, you need to set:
 - a filter query (to aggregate events from a specific area)
 
 ![](/assets/xdr/rules/anomaly/172566414-fbb7ecc9-78ea-474d-b1db-f8248fb927c7.png)
@@ -40,7 +40,7 @@ For configuration you need to set :
 - severity of the rule
 
 #### Aggregation methods
-- Count : count events per bucket (for a specific filter or field set to a value)
+- Count: count events per bucket (for a specific filter or field set to a value)
 - Cardinality (only for string data): count cardinality of values per bucket
 - Sum (only for numerical data): aggregate sum of field values per bucket
 - Min (only for numerical data): aggregate min of field values per bucket
@@ -53,6 +53,6 @@ As a result, for a rule that aims to monitor the volume of services installed on
 
 ![!](/assets/xdr/rules/anomaly/172630813-fc957ee3-0b28-45d1-ace7-696a7208213e.png){: style="max-width:100%"}
 
-Then anomaly identified raise an alert that you can visualize as follows.
+The anomaly identified raises an alert that you can visualize as follows.
 
 ![!](/assets/xdr/rules/anomaly/172631385-a6054d11-3b42-45ff-b4ca-7f98b3a1ec9e.png){: style="max-width:100%"}
