@@ -8,15 +8,21 @@ Microsoft 365 Message trace follows email messages as they travel through your E
 
 {!_shared_content/operations_center/integrations/generated/o365-message-trace_do_not_edit_manually.md!}
 
+## Prerequisite
+
+In SEKOIA.IO XDR, [create a new intake key](xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
+
+In Microsoft Azure, create a service account with the `Reports reader` rights and a strong password (for more information: [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
+
 ## Configure
 
-First, create a Microsoft service account with the `Reports reader` rights and a strong password.
-
-Once the account created, you can validate user's rights:
+Once a dedicated service account as been created, you can validate user's rights by running the following command:
 
 ```commandline
-curl -sS  --user USERNAME:PASSWORD 'https://reports.office365.com/ecp/reportingwebservice/reporting.svc/MessageTrace?$format=json'
+curl --user USERNAME:PASSWORD 'https://reports.office365.com/ecp/reportingwebservice/reporting.svc/MessageTrace?$format=json'
 ```
+
+This command will contact Microsoft Reporting Web Service API with the provided credentials. 
 
 The response should look like this one (you can use `| jq` to format the response):
 ```json
@@ -49,4 +55,11 @@ The response should look like this one (you can use `| jq` to format the respons
 }
 ```
 
-You can now create enable the trigger "Create a new playbook" > "Create a playbook from scratch" and add the "Message Trace" trigger.
+You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Message Trace" trigger.
+
+Create a trigger configuration and input the following information:
+- account_name
+- account_password
+- intake_key
+
+Save your configuration and start the trigger.
