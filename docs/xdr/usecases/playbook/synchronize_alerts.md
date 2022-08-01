@@ -60,7 +60,7 @@ First create a new playbook by following those steps:
 
 Your playbook should look like the following:
 
-[Playbook Use Case](/assets/operation_center/playbooks/playbook_usecase_request_url.PNG)
+![Playbook Use Case](/assets/operation_center/playbooks/playbook_usecase_request_url.PNG)
 
 ## Your Playbook is ready
 
@@ -73,7 +73,7 @@ Your playbook should look like the following:
 - **Confirm** the displayed `Status` is `Succeeded`
 - If you click on a run form the history, you will be redirected to the Graph page. Then you will be able to see the results of each block by clicking on it, as of the following picture:
 
-[Playbook History](/assets/operation_center/playbooks/playbook_history.PNG)
+![Playbook History](/assets/operation_center/playbooks/playbook_history.PNG)
 
 ## Bonus
 
@@ -92,4 +92,4 @@ With the same playbook logic, we only changed the `Request URL` block configurat
 
 The result is an event received on SEKOIA.IO in a dedicated Intake, with the content of the POST request that was mapped in the relevant ECS fields (thanks to the Custom Format) mandatory to display a SMART Description.
 
-[Display the Request](/assets/operation_center/playbooks/request_display.PNG)
+![Display the Request](/assets/operation_center/playbooks/request_display.PNG)
