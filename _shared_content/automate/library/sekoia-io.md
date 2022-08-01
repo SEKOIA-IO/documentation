@@ -738,4 +738,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.15**
+Module **`SEKOIA.IO` v2.16**

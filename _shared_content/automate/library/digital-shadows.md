@@ -35,4 +35,4 @@ Get last created SearchLight alerts and incidents
 
 ## Extra
 
-Module **`Digital Shadows` v1.6**
+Module **`Digital Shadows` v1.7**

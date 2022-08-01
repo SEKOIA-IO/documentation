@@ -75,14 +75,21 @@ Get line-oriented records from new S3 objects based on notifications
 | `intake_key` | `string` | Intake key to use when sending events |
 
 
-#### Outputs
+### Fetch new CloudTrail records on S3
+
+Get Cloudtrail records from new S3 objects based on notifications
+
+#### Arguments
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `records` | `array` | A list of log records |
-| `records_path` | `string` | The filename containing the records |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `queue_name` | `string` | The name of the SQS queue that received the notifications of the creation of S3 objects |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
 
 
 ## Extra
 
-Module **`AWS` v1.9.2**
+Module **`AWS` v1.11.2**
