@@ -28,4 +28,4 @@ Fetch objects from a osint collection source
 
 ## Extra
 
-Module **`OSINT` v1.33**
+Module **`OSINT` v1.35**

@@ -31,4 +31,4 @@ Download the IPtoASN database recurrently
 
 ## Extra
 
-Module **`IPtoASN` v1.17**
+Module **`IPtoASN` v1.20**
