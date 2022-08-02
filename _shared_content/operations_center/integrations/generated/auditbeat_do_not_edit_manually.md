@@ -2083,6 +2083,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`kubernetes.selectors` | `text` | None |
 |`kubernetes.statefulset.name` | `keyword` | None |
 |`log.file.path` | `keyword` | Full path to the log file this event came from. |
+|`log.hostname` | `keyword` | None |
 |`log.level` | `keyword` | Log level of the log event. |
 |`log.logger` | `keyword` | Name of the logger. |
 |`log.origin.file.line` | `long` | The line number of the file which originated the log event. |
