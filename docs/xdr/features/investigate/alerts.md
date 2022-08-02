@@ -116,6 +116,63 @@ The Tasks tabs lists tasks and subtasks that are associated with the alert. Butt
 
 Subtasks can have an OpenC2 specification which can be displayed by clicking on the automation icon.
 
+
+### **Similar alerts**
+
+#### **Context**
+
+As an operator, I need as much information as possible to determine what to do with a new alert. Is it the first time I’m facing this situation? Has it already occured ? If yes, how is it different this time ? Do I need to refine the configuration of my custom rules to make it more accurate ?
+
+With the similar alerts tab, SEKOIA.IO has that information in store and is able to display it to the operator in a comprehensive and useful way.
+
+#### **Where to find it**
+
+To find similar alerts linked to a specific alert, you will need to access the detail page dedicated to this alert. The similar alerts tab will be automatically loaded next to the Details, Tasks and Events tabs.
+
+
+#### **How it works**
+
+The similar alert tab displays:
+
+- How many times SEKOIA.IO previously detected a similar alert
+- The list of these previous similar alerts
+- A recommendation regarding the status of the alert based on the previous operator decision
+
+You can choose the columns to display on the similar alerts table to help you determine how similar the alerts are. You can select among 15 columns to show including:
+
+- The date
+- The entity
+- The type of alert
+- The source
+- The target
+- The number of comments
+- etc…
+
+You can click on the alerts to see the full details of a similar alert or open several of them in new tabs to compare them more easily.
+
+#### **Added value**
+
+In short, context is key to making the right decision when facing an alert. The similar alerts tab actively participates in this point by listing previous similar alerts. Even further, this tab actively helps the operator in its decisions by suggesting what to do based on previous alerts.
+
+#### **Interface**
+
+The similar alerts tab is divided in two parts
+
+
+#### **The suggestion message**
+
+In a callout, you’ll find a text that reminds you of the status of the majority of previous similar alerts. This message suggests you change the alert status based on the previous alerts. You can also find an action button to apply the status on your alert (except for Closed alerts).
+
+
+#### **The similar alerts table**
+
+The similar alerts table gathers all the alerts that previously occurred. The columns of this table can be customized to help you investigate the similarities between alerts.
+
+
+#### **“No similar alerts found”**
+
+Please note that if SEKOIA.IO doesn’t find previous similar alerts, a message will be displayed to notify you.
+
 ### Events
 
 The Events tab lists the events that raised the alert in a display similar to the [Events page](events.md).
