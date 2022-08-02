@@ -120,13 +120,12 @@ Subtasks can have an OpenC2 specification which can be displayed by clicking on 
 
 Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, SEKOIA.IO has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions. 
 
-To find similar alerts linked to a specific alert, you will need to access the detail page dedicated to this alert. The similar alerts tab will be automatically loaded next to the Details, Tasks, Graph Investigation and Events tabs.
+To find similar alerts linked to a specific alert, you will need to access the detail page dedicated to this alert. The similar alerts tab will be automatically loaded next to the [Details](#details), [Tasks](#tasks), [Graph Investigation](#graph-investigation) and [Events](#events) tabs.
 
 To help you compare between alerts, you can choose which columns you want to display in the table by clicking on the icon in the upper right of the table. 
 
-You can click on the alerts to see the full details of a similar alert or open several of them in new tabs to compare them more easily.
-
-#### Interface
+!!! tip
+    You can click on the alerts to see the full details of a similar alert or open several of them in new tabs to compare them more easily.
 
 The similar alerts tab is divided into two parts: 
 
