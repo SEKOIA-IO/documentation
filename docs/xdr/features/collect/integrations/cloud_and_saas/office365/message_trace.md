@@ -10,6 +10,12 @@ Microsoft 365 Message trace follows email messages as they travel through your E
 
 ## Prerequisite
 
+According to [docs.microsoft.com](https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/message-trace-scc?view=o365-worldwide), Message Trace is available to the following plans :
+
+- Exchange Online Protection
+- Microsoft Defender for Office 365 plan 1 and plan 2
+- Microsoft 365 Defender
+
 In SEKOIA.IO XDR, [create a new intake key](xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
 
 In Microsoft Azure, create a service account with the `Reports reader` rights and a strong password (for more information: [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
