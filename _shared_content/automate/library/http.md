@@ -58,4 +58,4 @@ Requests a resource at a specified URL and returns the response as Raw or JSON
 
 ## Extra
 
-Module **`HTTP` v1.101**
+Module **`HTTP` v1.101.1**
