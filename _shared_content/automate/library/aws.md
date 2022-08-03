@@ -71,6 +71,7 @@ Get line-oriented records from new S3 objects based on notifications
 | `separator` | `string` | The separator used between each records (default: the linefeed character '\n') |
 | `skip_first` | `integer` | The number of records to skip at the begining of each S3 object (default: 0) |
 | `ignore_comments` | `boolean` | Flag to ignore commented lines (starting with the character `#`; default: false) |
+| `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: false) |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
 
@@ -85,6 +86,7 @@ Get Cloudtrail records from new S3 objects based on notifications
 | --------- | ------- | --------------------------- |
 | `frequency` | `integer` | Batch frequency in seconds |
 | `queue_name` | `string` | The name of the SQS queue that received the notifications of the creation of S3 objects |
+| `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: false) |
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
@@ -92,4 +94,4 @@ Get Cloudtrail records from new S3 objects based on notifications
 
 ## Extra
 
-Module **`AWS` v1.11.2**
+Module **`AWS` v1.11.3**
