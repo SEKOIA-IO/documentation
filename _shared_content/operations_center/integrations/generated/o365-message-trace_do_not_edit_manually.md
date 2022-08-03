@@ -39,7 +39,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "email": {
-            "delivery_timestamp": "2022-07-25T12:28:17.628000Z",
+            "delivery_timestamp": "2022-07-25T12:26:13.240000Z",
             "message_id": "<3a273efc-cd65-4335-96ec-5f6934f0fb10@az.uksouth.production.microsoft.com>",
             "from": {
                 "address": "azure-noreply@microsoft.com"
