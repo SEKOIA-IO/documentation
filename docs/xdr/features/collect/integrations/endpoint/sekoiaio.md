@@ -51,7 +51,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     The following commands must be executed **as an administrator**:
 
     ```shell
-    agent.exe -install -instake_key <INTAKE_KEY>
+    agent.exe -install -intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent has been successfully installed as a service you can run the following command:
@@ -73,7 +73,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
     ```shell
     chmod +x ./agent
-    sudo ./agent -install -instake_key <INTAKE_KEY>
+    sudo ./agent -install -intake_key <INTAKE_KEY>
     ```
 
     To make sure the agent has been successfully installed as a service you can run the following command:
