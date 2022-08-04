@@ -32,4 +32,4 @@ Trigger playbook when new posts are published
 
 ## Extra
 
-Module **`RSS` v1.17**
+Module **`RSS` v1.18**
