@@ -94,4 +94,4 @@ Get Cloudtrail records from new S3 objects based on notifications
 
 ## Extra
 
-Module **`AWS` v1.11.3**
+Module **`AWS` v1.11.4**

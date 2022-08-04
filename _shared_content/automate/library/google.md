@@ -23,7 +23,7 @@ Connect to the Google Cloud Pub/Sub topic and return events
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `project_id` | `string` | Project ID |
 | `subject_id` | `string` | Subscription ID |
-| `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `chunk_size` | `integer` | The size of chunks for the batch processing (max is 1000) |
 
 
 #### Outputs
@@ -55,4 +55,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google` v1.4.6**
+Module **`Google` v1.5.2**

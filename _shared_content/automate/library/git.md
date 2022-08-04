@@ -56,4 +56,4 @@ Trigger playbook run on every Git commit
 
 ## Extra
 
-Module **`Git` v1.18**
+Module **`Git` v1.19**
