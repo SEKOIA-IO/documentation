@@ -281,7 +281,6 @@ nav:
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
-        - Cloudflare Logpull: xdr/features/automate/library/cloudflare-logpull.md
         - Detection Rules: tip/features/automate/library/detection-rules.md
         - Digital Shadows: tip/features/automate/library/digital-shadows.md
         - fileutils: tip/features/automate/library/fileutils.md
