@@ -34,6 +34,27 @@ Connect the endpoint back to the network
 | --------- | ------- | --------------------------- |
 | `affected` | `integer` | The number of deisolated endpoints |
 
+### Get malwares from threat
+
+Fetch the malwares associated to a threat
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `threat_id` | `string` | The identifier of threat |
+| `timeout` | `integer` | The maximum time, in seconds, the malwares should be retrieved (default: 300s) |
+| `filters` | `object` | Filters to select the agents from which the malware will be transferred |
+
+
+#### Outputs
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status` | `string` | The status of the run |
+| `status_reason` | `string` | The reason of the status |
+| `files` | `object` | The list of retrieved files |
+
 ### Isolate an endpoint
 
 Disconnect the endpoint from the network
@@ -106,4 +127,4 @@ Execute a remote script and get the results
 
 ## Extra
 
-Module **`Sentinel One` v1.1.2**
+Module **`Sentinel One` v1.2.3**
