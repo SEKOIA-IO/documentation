@@ -48,7 +48,7 @@ You can click on each counter associated with an effort level to see only the ru
 
 #### Capabilities
 The rules are also associated with different capabilities:
-![capabilities](/assets/operation_center/rules_catalog/capabilities.png){ align=right }
+![capabilities](/assets/operation_center/rules_catalog/capabilities.png)
 
 
 - Offensive Capabilities: `threats` or `attack patterns` that they can detect
@@ -107,8 +107,9 @@ The Rule creation form has the following sections:
 
 - **Security alerts:**
   In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
-  ![custom_rule](/assets/operation_center/rules_catalog/custom_rule.png)
 
+![custom_rule](/assets/operation_center/rules_catalog/custom_rule.png)
+  
 !!! note 
     You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
 
@@ -125,8 +126,9 @@ Rules are automatically enabled based on the configured effort level, or you can
 
 ### Notify on new rules
 
-We continuously update the rules catalog with new rules. To keep posted, we introduced a dedicated trigger in the Notification Center.
-![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png){ align=right }
+We continuously update the rules catalog with new rules. ![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png){ align=right }
+
+To keep posted, we introduced a dedicated trigger in the Notification Center.
 This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
 
 This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.
