@@ -232,6 +232,7 @@ nav:
       - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
       - OpenCTI: cti/features/integrations/opencti.md
       - Splunk: cti/features/integrations/splunk.md
+      - Anomali ThreatStream: cti/features/integrations/anomali.md
   - Develop:
     - Overview: cti/develop/index.md
     - Guides:
@@ -465,6 +466,7 @@ plugins:
       intelligence_center/integrations/misp.md: cti/features/integrations/misp.md
       intelligence_center/integrations/opencti.md: cti/features/integrations/opencti.md
       intelligence_center/integrations/splunk.md: cti/features/integrations/splunk.md
+      intelligence_center/integrations/anomali.md: cti/features/integrations/anomali.md
       intelligence_center/integrations/thehive.md: cti/features/integrations/thehive.md
       intelligence_center/intelligence.md: cti/features/consume/index.md
       intelligence_center/observables.md: cti/features/consume/observables.md
