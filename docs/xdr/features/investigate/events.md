@@ -100,3 +100,44 @@ You can toggle values in your logs by clicking on the button `Toggle value selec
 Go through your events and select values of interest. All similar values will be selected and highlighted in the events list. 
 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.io/xdr/features/detect/sigma/) with a pattern based on selected values.
+
+## Aggregation
+
+Aggregation is a new (beta) feature on SEKOIA.IO! 
+
+By using line charts, you can now visualize change in your logs over a continuous range. Visualizing change with a line chart allows the overall trend to be displayed at once, and multiple trends to be compared simultaneously. This new view on the events page can be useful to visualize events during a hunting phase or incident response. 
+
+The aggregation-based hunting feature is often the first step in the journey path taken by the user to [create an anomaly detection rule.](https://docs.sekoia.io/xdr/features/detect/anomaly/) 
+
+Users can now compute aggregations on the results of any search query in the events list. The aggregated values will be displayed over time, depending on the date range chosen. 
+
+To compute aggregations on a list of events, you’ll have to: 
+
+1. Search in your log list by following this [documentation](https://docs.sekoia.io/xdr/features/investigate/events/) 
+2. Open the new tab `Aggregation (Beta)` that is accessible on the upper left of the page 
+3. Select an aggregation method from the list
+4. Select an aggregation field if needed 
+5. Click on the `Search` button on the upper right of the page 
+
+### Aggregation methods
+
+- `Average` (only for numerical data): aggregate average of field values per bucket
+- `Cardinality` (only for string data): count cardinality of values per bucket
+- `Count`: count events per bucket (for a specific filter or field set to a value)
+- `Min` (only for numerical data): aggregate min of field values per bucket
+- `Max` (only for numerical data): aggregate max of field values per bucket
+- `Sum` (only for numerical data): aggregate sum of field values per bucket
+
+### Aggregation graph
+
+Depending on which methods and fields have been selected, a line graph is presented with the event values on the y-axis and the date as defined by the date range on the x-axis. 
+
+For each aggregate the chart displays the first value, last value, minimum, and maximum sorted by timestamp and connects them by one line per variable.
+
+You can hover on the line graph to see the actual value of each point as well as the exact date of the point.
+
+### Create Anomaly Detection rule from the aggregation view
+
+You can create anomaly detection rules directly from this view. 
+
+If you select `count` as aggregation method, a `Create new ruleù button shows up next to the fields and the Rule Creation panel opens up with detection patterns automatically set to Anomaly, and with your events’ query and the chosen aggregation method.
