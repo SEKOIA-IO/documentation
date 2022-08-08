@@ -173,7 +173,7 @@ Alert Filters can be used to prevent known false positives from raising the same
 
 You can create an Alert Filter for the Rule that triggered the alert easily by selecting multiple values and clicking on the Alert Filter button. The filter's pattern is automatically created from selected values.
 
-By default, "Reject the Alert" is selected to automatically reject the alert after creating the Alert Filter.
+By default, `Reject the Alert` is selected to automatically reject the alert after creating the Alert Filter.
 
 ### Search Events with this value
 
