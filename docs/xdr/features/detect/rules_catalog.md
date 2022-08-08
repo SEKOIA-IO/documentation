@@ -16,7 +16,7 @@ SEKOIA.IO supports the following rule types:
 ## Rules Catalog
 The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
 
-![rules_catalog](/assets/operation_center/rules_catalog/rules_catalog.png)
+![rules_catalog](/assets/operation_center/rules_catalog/rules_catalog.png){: style="max-width:100%"}
 
 You can enable or disable rules one by one or all at once according to current filters. 
 
@@ -28,7 +28,7 @@ The Rules Catalog lists all detection rules available to your organization:
 - **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
 - **Custom Rules**: rules created by your team that are specific to your organization.
 
-![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png)
+![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ align=right }
 
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the Verified counter to list only Verified rules. You can then click on the Verified filter if you would rather see only Custom rules.
 
@@ -39,7 +39,7 @@ All rules have an associated effort level. The effort level is increasing from E
 - Effort needed to enable a rule.
 - Risk of false positives.
 
-![effort_level](/assets/operation_center/rules_catalog/effort_level.png)
+![effort_level](/assets/operation_center/rules_catalog/effort_level.png){ align=right }
 
 For example:
 
@@ -53,7 +53,7 @@ The rules are also associated with different capabilities:
 - Offensive Capabilities: `threats` or `attack patterns` that they can detect
 - Defensive Capabilities: `data sources` on which they operate
 
-![capabilities](/assets/operation_center/rules_catalog/capabilities.png)
+![capabilities](/assets/operation_center/rules_catalog/capabilities.png){ align=right }
 
 Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
 
@@ -97,8 +97,6 @@ When rules have limited scope with selected entities or assets, these rules will
 
 In addition to the verified rules that are already built-in, you can create your own rules to support other detection use cases. To create a rule, click on the `+ Rules` button at the top right of the page and fill out the form.
 
-![custom_rule](/assets/operation_center/rules_catalog/custom_rule.png){ align=right }
-
 The Rule creation form has the following sections:
 
 - **General definition of the rule:**
@@ -110,7 +108,9 @@ The Rule creation form has the following sections:
 
 - **Security alerts:**
   In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
-
+  ![custom_rule](/assets/operation_center/rules_catalog/custom_rule.png)
+  
+!!! note 
   You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
 
 - **Entities & Assets:**
@@ -129,6 +129,6 @@ Rules are automatically enabled based on the configured effort level, or you can
 We continuously update the rules catalog with new rules. To keep posted, we introduced a dedicated trigger in the Notification Center.
 This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
 
-![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png)
+![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png){ align=right }
 
 This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.
