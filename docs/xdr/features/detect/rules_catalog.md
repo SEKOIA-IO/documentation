@@ -18,28 +18,29 @@ The Rules Catalog page can be used to list and manage all detection rules. Many 
 
 ![rules_catalog](/assets/operation_center/rules_catalog/rules_catalog.png){: style="max-width:100%"}
 
-You can enable or disable rules one by one or all at once according to current filters. 
+!!! tip
+    You can enable or disable rules one by one or all at once according to current filters. 
 
 ### Rules Attributes
 
 #### Available / Verified Rules
-The Rules Catalog lists all detection rules available to your organization:
+The Rules Catalog lists all detection rules available to your organization: 
+![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ align=right }
 
 - **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
 - **Custom Rules**: rules created by your team that are specific to your organization.
 
-![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ align=right }
+
 
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the Verified counter to list only Verified rules. You can then click on the Verified filter if you would rather see only Custom rules.
 
 #### Effort Level
 
 All rules have an associated effort level. The effort level is increasing from Elementary to Master according to two criteria:
+![effort_level](/assets/operation_center/rules_catalog/effort_level.png){ align=right }
 
 - Effort needed to enable a rule.
 - Risk of false positives.
-
-![effort_level](/assets/operation_center/rules_catalog/effort_level.png){ align=right }
 
 For example:
 
@@ -49,11 +50,11 @@ You can click on each counter associated with an effort level to see only the ru
 
 #### Capabilities
 The rules are also associated with different capabilities:
+![capabilities](/assets/operation_center/rules_catalog/capabilities.png){ align=right }
+
 
 - Offensive Capabilities: `threats` or `attack patterns` that they can detect
 - Defensive Capabilities: `data sources` on which they operate
-
-![capabilities](/assets/operation_center/rules_catalog/capabilities.png){ align=right }
 
 Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
 
@@ -109,9 +110,9 @@ The Rule creation form has the following sections:
 - **Security alerts:**
   In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
   ![custom_rule](/assets/operation_center/rules_catalog/custom_rule.png)
-  
+
 !!! note 
-  You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
+    You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
 
 - **Entities & Assets:**
   As discussed in the [limiting the scope](#limiting-the-scope-of-a-rule) section, you can select specific entities or assets this rule should apply to.
