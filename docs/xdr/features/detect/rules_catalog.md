@@ -30,8 +30,6 @@ The Rules Catalog lists all detection rules available to your organization:
 - **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
 - **Custom Rules**: rules created by your team that are specific to your organization.
 
-
-
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the Verified counter to list only Verified rules. You can then click on the Verified filter if you would rather see only Custom rules.
 
 #### Effort Level
@@ -128,8 +126,7 @@ Rules are automatically enabled based on the configured effort level, or you can
 ### Notify on new rules
 
 We continuously update the rules catalog with new rules. To keep posted, we introduced a dedicated trigger in the Notification Center.
-This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
-
 ![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png){ align=right }
+This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
 
 This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.
