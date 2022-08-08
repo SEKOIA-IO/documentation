@@ -1,4 +1,4 @@
-# Intelligence Center External Integrations: Microsoft Sentinel
+# External Integrations: Microsoft Sentinel
 
 Microsoft Sentinel is a cloud-native, security information and event management (SIEM) and security orchestration, automation, and response (SOAR) solution.
 

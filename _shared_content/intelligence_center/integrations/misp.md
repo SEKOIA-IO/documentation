@@ -1,4 +1,4 @@
-# Intelligence Center External Integrations: MISP Feed
+# External Integrations: MISP Feed
 
 The default feed is available as a MISP feed.
 

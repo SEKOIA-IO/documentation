@@ -1,4 +1,4 @@
-# Intelligence Center External Integrations: OpenCTI
+# External Integrations: OpenCTI
 
 An [OpenCTI](https://www.opencti.io) connector is available to consumme a feed.
 

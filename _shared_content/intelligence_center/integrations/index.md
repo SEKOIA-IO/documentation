@@ -1,4 +1,4 @@
-# Intelligence Center External Integrations
+# External Integrations
 
 Intelligence Center data can be consumed using several third party integrations.
 
@@ -7,5 +7,6 @@ Intelligence Center data can be consumed using several third party integrations.
 - [Microsoft Sentinel](./microsoft-sentinel.md)
 - [OpenCTI](./opencti.md)
 - [Splunk](./splunk.md)
+- [Anomali ThreatStream](./anomali.md)
 
 You can also directly [use the API](api.md) to retrieve data and feeds from SEKOIA.IO CTI.
