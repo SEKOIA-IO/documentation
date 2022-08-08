@@ -48,11 +48,11 @@ You can click on each counter associated with an effort level to see only the ru
 
 #### Capabilities
 The rules are also associated with different capabilities:
-![capabilities](/assets/operation_center/rules_catalog/capabilities.png)
-
 
 - Offensive Capabilities: `threats` or `attack patterns` that they can detect
 - Defensive Capabilities: `data sources` on which they operate
+
+![capabilities](/assets/operation_center/rules_catalog/capabilities.png)
 
 Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
 
@@ -62,7 +62,9 @@ The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techni
 
 Every time you enable a rule, it appears on the matrix in blue in one or many cells. Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
 
-You can see how many rules are enabled in a cell by hovering over it. ![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png)
+![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png)
+
+You can see how many rules are enabled in a cell by hovering over it. 
 
 The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
 
@@ -126,7 +128,9 @@ Rules are automatically enabled based on the configured effort level, or you can
 
 ### Notify on new rules
 
-We continuously update the rules catalog with new rules. ![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png){ align=right }
+![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png){ align=right }
+
+We continuously update the rules catalog with new rules. 
 
 To keep posted, we introduced a dedicated trigger in the Notification Center.
 This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
