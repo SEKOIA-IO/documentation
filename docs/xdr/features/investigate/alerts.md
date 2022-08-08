@@ -116,6 +116,26 @@ The Tasks tabs lists tasks and subtasks that are associated with the alert. Butt
 
 Subtasks can have an OpenC2 specification which can be displayed by clicking on the automation icon.
 
+### Similar alerts
+
+Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, SEKOIA.IO has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions. 
+
+To find similar alerts linked to a specific alert, you will need to access the detail page dedicated to this alert. The similar alerts tab will be automatically loaded next to the [Details](#details), [Tasks](#tasks), [Graph Investigation](#graph-investigation) and [Events](#events) tabs.
+
+To help you compare between alerts, you can choose which columns you want to display in the table by clicking on the icon in the upper right of the table. 
+
+!!! tip
+    You can click on the alerts to see the full details of a similar alert or open several of them in new tabs to compare them more easily.
+
+The similar alerts tab is divided into two parts: 
+
+- **The suggestion message:** In a callout, you’ll find a text that reminds you of the status of the majority of previous similar alerts. This message suggests you change the alert status based on the previous alerts. You can also find an action button to apply the status on your alert (except for Closed alerts).
+- **The similar alerts table:** It gathers all the similar alerts that previously occurred. The columns of this table can be customized to help you investigate the similarities between alerts.
+
+
+!!! note
+    Please note that if SEKOIA.IO doesn’t find previous similar alerts, a message will be displayed to notify you.
+
 ### Events
 
 The Events tab lists the events that raised the alert in a display similar to the [Events page](events.md).
