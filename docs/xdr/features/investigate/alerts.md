@@ -14,7 +14,7 @@ An alert can have five possible statuses:
 | **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
 
 ### Alerts workflow
-![alert_workflow](assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
+![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
 
 ### Alert Urgency
 The Urgency is a number used to give a score to the risk associated with a specific alert.
@@ -37,11 +37,11 @@ The urgency can have two different representations on the interface: a numerical
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
-![alert_categories](assets/operation_center/alerts/alert_categories.png){: style="max-width:100%"}
+![alert_categories](/assets/operation_center/alerts/alert_categories.png){: style="max-width:100%"}
 
 ## Alerts listing
 When you first connect to [SEKOIA.IO](http://app.sekoia.io/), the alerts list will display the last 10 alerts raised on your community ordered by Date.
-![alert_listing](assets/operation_center/alerts/alert_listing.png){: style="max-width:100%"}
+![alert_listing](/assets/operation_center/alerts/alert_listing.png){: style="max-width:100%"}
 
 From the left to the right, 7 features are available on the top screen:
 
@@ -83,7 +83,7 @@ By default, the alert listing displays the following information (more informati
 
 The Alert Details page can be reached by clicking on any alert in the Alert Listing. This will provide you with a new view for quick and deep investigations.
 
-![alert_details](assets/operation_center/alerts/alert-detail-layout.png){: style="max-width:100%"}
+![alert_details](/assets/operation_center/alerts/alert-detail-layout.png){: style="max-width:100%"}
 
 
 The Alert Details header contains the `urgency`, the `name` and the `short ID` of the alert, as well as the following actions:
@@ -121,8 +121,8 @@ It is possible to filter the timeline to display only items of a certain type.
 
 ### Tasks
 
-The Tasks tabs lists tasks and subtasks that are associated with the alert. 
-![tasks](assets/operation_center/alerts/alert-tasks.png){: style="max-width:100%"}
+The Tasks tabs lists tasks and subtasks that are associated with the alert.
+![tasks](/assets/operation_center/alerts/alert-tasks.png){: style="max-width:100%"}
 
 Buttons are available to complete or reject tasks. When completing a task, you are informing the Operations Center that you have undertaken the corresponding action on your perimeter. The urgency of the alert will thereby decrease, as well as the risk indicator.
 
@@ -130,18 +130,18 @@ Subtasks can have an OpenC2 specification which can be displayed by clicking on 
 
 ### Similar alerts
 
-Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, SEKOIA.IO has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions. 
+Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, SEKOIA.IO has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions.
 
 To find similar alerts linked to a specific alert, you will need to access the detail page dedicated to this alert. The similar alerts tab will be automatically loaded next to the [Details](#details), [Tasks](#tasks), [Graph Investigation](#graph-investigation) and [Events](#events) tabs.
 
-![similar_alerts](assets/operation_center/alerts/similar_alerts.png){: style="max-width:100%"}
+![similar_alerts](/assets/operation_center/alerts/similar_alerts.png){: style="max-width:100%"}
 
-To help you compare between alerts, you can choose which columns you want to display in the table by clicking on the icon in the upper right of the table. 
+To help you compare between alerts, you can choose which columns you want to display in the table by clicking on the icon in the upper right of the table.
 
 !!! tip
     You can click on the alerts to see the full details of a similar alert or open several of them in new tabs to compare them more easily.
 
-The similar alerts tab is divided into two parts: 
+The similar alerts tab is divided into two parts:
 
 - **The suggestion message:** In a callout, you’ll find a text that reminds you of the status of the majority of previous similar alerts. This message suggests you change the alert status based on the previous alerts. You can also find an action button to apply the status on your alert (except for Closed alerts).
 - **The similar alerts table:** It gathers all the similar alerts that previously occurred. The columns of this table can be customized to help you investigate the similarities between alerts.
@@ -154,7 +154,7 @@ The similar alerts tab is divided into two parts:
 
 The Events tab lists the events that raised the alert in a display similar to the [Events page](events.md).
 
-![events](assets/operation_center/alerts/alert-events.png){: style="max-width:100%"}
+![events](/assets/operation_center/alerts/alert-events.png){: style="max-width:100%"}
 
 When interacting with individual values, it is possible to:
 
@@ -181,9 +181,9 @@ The "Search Events with this value" feature can be used to perform a search into
 
 ### Graph Investigation
 
-The Graph Tab is presenting the analyst with a graphical visualization of the Alert. 
+The Graph Tab is presenting the analyst with a graphical visualization of the Alert.
 
-![graph](assets/operation_center/alerts/alert-graph.png){: style="max-width:100%"}
+![graph](/assets/operation_center/alerts/alert-graph.png){: style="max-width:100%"}
 
 The following items appear on the graph:
 
