@@ -1,4 +1,4 @@
-# Intelligence Center External Integrations: Cortex Analyzer
+# External Integrations: Cortex Analyzer
 
 SEKOIA is also providing a [Cortex analyzer](https://github.com/TheHive-Project/Cortex-Analyzers/tree/master/analyzers/SEKOIAIntelligenceCenter) to enrich data in [TheHive](https://thehive-project.org/) ecosystem.
 

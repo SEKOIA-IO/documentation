@@ -1,4 +1,4 @@
-# Intelligence Center External Integrations: Splunk
+# External Integrations: Splunk
 
 An App for Splunk is available to detect threats in your logs based on our feed.
 
