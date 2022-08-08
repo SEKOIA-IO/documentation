@@ -15,7 +15,10 @@ SEKOIA.IO supports the following rule types:
 
 ## Rules Catalog
 The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
-You can enable or disable rules one by one are all at once according to current filters.
+
+![rules_catalog](/assets/operation_center/rules_catalog/rules_catalog.png)
+
+You can enable or disable rules one by one or all at once according to current filters. 
 
 ### Rules Attributes
 
@@ -25,6 +28,8 @@ The Rules Catalog lists all detection rules available to your organization:
 - **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
 - **Custom Rules**: rules created by your team that are specific to your organization.
 
+![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png)
+
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the Verified counter to list only Verified rules. You can then click on the Verified filter if you would rather see only Custom rules.
 
 #### Effort Level
@@ -33,6 +38,8 @@ All rules have an associated effort level. The effort level is increasing from E
 
 - Effort needed to enable a rule.
 - Risk of false positives.
+
+![effort_level](/assets/operation_center/rules_catalog/effort_level.png)
 
 For example:
 
@@ -46,13 +53,18 @@ The rules are also associated with different capabilities:
 - Offensive Capabilities: `threats` or `attack patterns` that they can detect
 - Defensive Capabilities: `data sources` on which they operate
 
+![capabilities](/assets/operation_center/rules_catalog/capabilities.png)
+
 Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
 
 ### Security Profile (MITRE ATT&CK)
+
 The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
-Every time you enable a rule, it appears on the matrix in blue in one or many cells.
-Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
-You can see how many rules are enabled in a cell by hovering over it.
+
+Every time you enable a rule, it appears on the matrix in blue in one or many cells. Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
+
+You can see how many rules are enabled in a cell by hovering over it. ![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png)
+
 The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
 
 ### Rule Details
@@ -65,19 +77,27 @@ You can click on the name of a rule to display additional details, such as, but 
 - Known False Positives
 - The actual detection logic (the pattern)
 
+![rule details](/assets/operation_center/rules_catalog/rule_details.png)
+
 ### Limiting the scope of a rule
 
-When the Rule Details panel is open, you can click on the Configure icon at the top right to edit the rule's configuration. If the rule is Custom, you will be able to edit every aspect of it. Otherwise, you will only be able to limit its applicable scope with the following filters:
+When the Rule Details panel is open, you can click on the `Configure` icon at the top right to edit the rule's configuration. 
+
+If the rule is Custom, you will be able to edit every aspect of it. Otherwise, you will only be able to limit its applicable scope with the following filters:
 
 - **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../../investigate/alerts/#create-an-alert-filter).
 - **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
-- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets.
+- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets
+
+![limit-scope](/assets/operation_center/rules_catalog/limit_scope.png)
 
 When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
 
 ### Create custom rules
 
 In addition to the verified rules that are already built-in, you can create your own rules to support other detection use cases. To create a rule, click on the `+ Rules` button at the top right of the page and fill out the form.
+
+![custom_rule](/assets/operation_center/rules_catalog/custom_rule.png){ align=right }
 
 The Rule creation form has the following sections:
 
@@ -100,11 +120,15 @@ The Rule creation form has the following sections:
 
 New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the `configure` icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
 
+![auto-enable](/assets/operation_center/rules_catalog/auto_enable.png)
+
 Rules are automatically enabled based on the configured effort level, or you can decide to never automatically enable rules.
 
 ### Notify on new rules
 
 We continuously update the rules catalog with new rules. To keep posted, we introduced a dedicated trigger in the Notification Center.
 This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
+
+![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png)
 
 This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.
