@@ -7,4 +7,4 @@ The PDF's of our reports can be downloaded in the attachment tab.
 
 All our indicators are created as observables in the platform, and the sources are positionned as tags along with the kill chain phases.
 
-![Anomali's feed](/assets/intelligence_center/anomali_feed.png){: style="width: 100%; max-width: 100%"}
+![!Anomali's feed](/assets/intelligence_center/anomali_feed.png){: style="width: 100%; max-width: 100%"}
