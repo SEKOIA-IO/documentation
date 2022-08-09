@@ -6,6 +6,9 @@ You can configure as much intakes as you need in order to increase SEKOIA.IO kno
 All features related to intakes are visible through the “Intakes” menu on the Operations Center.
 ## Intakes listing
 The intakes homepage allows you to view the list of intakes already created within the community but also to create new intakes.
+
+![intakes_listing](/assets/operation_center/intakes/intakes-listing.png){: style="max-width:100%"}
+
 On this page, you can find:
 
 - The created intakes in your community
@@ -18,6 +21,8 @@ On this page, you can find:
 
 ## Create an intake from our integrations catalog
 To configure a new source of events in your community, you can rely on our list of continuously growing integrations that are constantly developed and enhanced by SEKOIA.IO’s team.
+![intakes_types](/assets/operation_center/intakes/intakes-types.png){: style="max-width:100%"}
+
 To create an intake, you have to:
 
 1. Click on the `+ Intake` from the Intakes homepage
@@ -28,12 +33,17 @@ To create an intake, you have to:
 6. Click on `Create`
 7. Find your newly created source of events as well as the intake key in the Intakes homepage
 
+![intakes_creation](/assets/operation_center/intakes/modal-intake-creation.png){: style="max-width:100%"}
+
 !!! Note
     The documentation about the integration of your data sources is also available in the [integrations](integrations/index.md) page.
 
 ## Custom intakes
+
 SEKOIA.IO provides a list of intakes that allows you to integrate events from different sources such as systems, applications and security appliances.
-Some technologies may not have an associated Intake in the official SEKOIA.IO catalog and therefore cannot be parsed in SEKOIA.IO.
+
+Some technologies may not have an associated Intake in the official SEKOIA.IO catalog and therefore cannot be parsed in SEKOIA.IO. ![intakes_creation](/assets/operation_center/intakes/custom_intake_header.png){ align=right }
+
 The "Custom format" feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the Events page.
 
 !!!note
@@ -41,6 +51,7 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 
 ### Create an empty Custom format
 The creation of an empty Custom format is the first step to develop your own Intake.
+
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
 
 To create an empty custom format:
@@ -61,7 +72,7 @@ The custom format panel is structured like this:
 4. A button to display the `Fields manager`
 5. An area to test your Intake with an event sample.
 
-![SEKOIA.IO Custom format Panel Overview](/assets/operation_center/custom_format/panel_overview.png){: style="max-width:100%}
+![SEKOIA.IO Custom format Panel Overview](/assets/operation_center/intakes/custom_intake_header-1.png){: style="max-width:100%}
 
 ## Stages
 A Custom format consists of a sequence of stages organized under a pipeline that modifies the event on the fly.
@@ -74,7 +85,8 @@ The custom stage is used to create actions. An action is an elementary operation
     While the [Common stages](#common-stages) are used to extract fields from your logs, this stage must be present in every intake to set the extracted fields in the ECS format expected by SEKOIA.IO.
 
 #### Set
-![SEKOIA.IO Set action](/assets/operation_center/custom_format/set_action.png){: style="max-width:100%"}
+![custom_set_stage](/assets/operation_center/intakes/custom_stage_set.png){: style="max-width:100%}
+
 This action is used to set the value of one field in the ECS format in the final version of the event.
 
 The value corresponding to the field you want to set can either be a constant (for instance `my-constant`, `10` ...) or a reference to a field from a stage (for instance `{{stage1.message.myfield.subfield}}`).
@@ -94,15 +106,18 @@ was previously used to parse the following event:
 ```
 
 To put the `source` and the `target` IP in the final version of the parsed event, the `Set` action can be used:
-![SEKOIA.IO Set example](/assets/operation_center/custom_format/set_example.png){: style="max-width:100%"}
+![custom_set_stage](/assets/operation_center/intakes/custom_stage__set_example.png){: style="max-width:100%}
+
 `source.ip` and `destination.ip` are the fields used in Elastic Common Format taxonomy.
 
 #### Translate
-![SEKOIA.IO Set action](/assets/operation_center/custom_format/translate_action.png){: style="max-width:100%"}
+![SEKOIA.IO Set action](/assets/operation_center/intakes/custom_translate.png){: style="max-width:100%"}
 
 The `Translate` action sets value of one or more fields according to the value of a source field and a dictionary that connects values.
 An optional "fallback" value can be defined.
+
 If the value of the source field does not match any entry of the mapping dictionary, the fallback value will be used to set the target field.
+
 If no fallback value is defined and the value of the source field does not match any entries, the target field will not be created in the final event.
 
 **Example**
@@ -110,35 +125,51 @@ You want to set the value of `http.response.status_message` according to the val
 `http.response.status_code` contains only status codes values.
 
 You can define a `Translate` action with the following parameters:
-![SEKOIA.IO Set action](/assets/operation_center/custom_format/translate_example.png){: style="max-width:100%"}
+![SEKOIA.IO Set action](/assets/operation_center/intakes/example_translate.png){: style="max-width:100%"}
 
 #### Delete
-![SEKOIA.IO Delete action](/assets/operation_center/custom_format/delete_action.png){: style="max-width:100%"}
 
 The `Delete` action allows you to delete fields in the final version of the event.
 
+![SEKOIA.IO Delete action](/assets/operation_center/intakes/custom_delete.png){: style="max-width:100%"}
+
 **Example**
 The following action will delete the fields `source.ip` and `destination.ip` from the final event.
-![SEKOIA.IO Delete action](/assets/operation_center/custom_format/delete_example.png){: style="max-width:100%"}
+
+![SEKOIA.IO Delete action](/assets/operation_center/intakes/example_delete.png){: style="max-width:100%"}
 
 ### Common stages
-Common stages are provided by SEKOIA.IO to help you parse your events. There are currently 5 different common stages, each having its specifities:
+Common stages are provided by SEKOIA.IO to help you parse your events. 
+
+There are currently 5 different common stages, each having its specifities:
+
 - [Json](#json-stage)
+
 - [Date](#date)
+
 - [Delimiter Separeted Value](#delimiter-separated-values)
+
 - [Grok](#grok)
+
 - [Key-Value](#key-value)
 
 #### JSON Stage
-![SEKOIA.IO Json stage](/assets/operation_center/custom_format/json_stage.png){: style="max-width:100%"}
+
+![SEKOIA.IO Json stage](/assets/operation_center/intakes/json_stage.png){: style="max-width:100%"}
 The JSON stage can be used to deserialize a JSON from a string.
+
 You will need to provide the stage with:
+
 - A `Name`
+
 - A `Description` (optional)
+
 - An `Input_field` - As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your logs will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+
 - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a JSON field.
 
 **Example**
+
 In the following event, a JSON is present in the `message` field. The JSON stage can be used to get all the information you need.
 
 ```json
@@ -147,22 +178,34 @@ In the following event, a JSON is present in the `message` field. The JSON stage
 }
 ```
 To get the reference of the source IP in another stage, we will use the reference `{{stage1.message.traffic.source}}`
+
 - `stage1` is the name of the JSON stage
+
 - `message` is the name of the `Output_field`
+
 - `traffic.source` is the field we want in the JSON
 
 #### Key Value
-![SEKOIA.IO Key Value stage](/assets/operation_center/custom_format/kv_stage.png){: style="max-width:100%"}
+
 The Key-Value stage can be used to deserialize a Key-Value string.
+
+![SEKOIA.IO Key Value stage](/assets/operation_center/intakes/key_value_stage.png){: style="max-width:100%"}
 You will need to provide the stage with:
+
  - A `Name`
+ 
  - A `Description` (optional)
+ 
  - An `Input_field` -  As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+ 
  - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a value corresponding to a key.
+ 
  - A `Value Separator` - It is the separator that differentiates the key from the value. It it set to `=` by default.
+ 
  - An `Item Separator` - It is the separator that differentiates two different key-value. The default separator is `\s` which means a whitespace character.
 
 **Example**
+
 In the following event, a key-value string is present in the `message` field. The Key-Value Stage can be used to get all information we need.
 
 ```
@@ -174,22 +217,34 @@ With `Value Separator: "="` and `Item Separator: ",\s"`, the log can be parsed. 
 - `stage1` is the name of the Key-Value stage
 - `message` is the name of the `Output_field`
 - `relay` if the key corresponding to the value we want
+
 #### Grok
-![SEKOIA.IO Grok stage](/assets/operation_center/custom_format/grok_stage.png){: style="max-width:100%"}
+
 The Grok stage can be used to match a field against a Grok pattern. Grok is a tool provided by Elasticsearch that gives you the ability to parse an arbitrary string and structure it.
-You can find more information about Grok in the [official documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html).
+![SEKOIA.IO Grok stage](/assets/operation_center/intakes/grok_stage.png){: style="max-width:100%"}
+!!! tip
+    You can find more information about Grok in the [official documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html).
+
 The list of all the Grok patterns that can be used can be found [here](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns).
 
 You will need to provide the stage with:
+
 - An `Input_field` -  As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+
 - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a value corresponding to a key.
+
 - A `Pattern` - It is the Grok pattern you want to apply.
+
 - A `Custom Patterns` - If no Grok pattern satisfies you in this [list](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns), you can create your own custom patterns with the `+` button on the right of the line. Then, on the left column, write the name of your pattern. On the right column, write the regex corresponding to that pattern.
 
 **Example 1**
-![Grok custom pattern](/assets/operation_center/custom_format/grok_custom_pattern.png)
+
+![Grok custom pattern](/assets/operation_center/intakes/grok_stage_example.png)
+
 In this example, the pattern `SSHD_MESSAGE_ILLEGAL_USER` will match the strings `Illegal user` or `illegal user`.
+
 **Example 2**
+
 In the following event, a Grok Stage can be used to parse the event.
 
 ```
@@ -200,25 +255,35 @@ If you want to parse the IP and the time in milliseconds, the following Pattern 
 `%{IP:client} took %{NUMBER:duration} ms`
 
 To get the IP in a next stage, you can use the reference `{{stage1.message.client}}`.
+
 To get the duration, you can use `{{stage1.message.duration}}`.
 
 !!! note
     The pattern should take into account every singe character of your event, from the first one to the last one.
 
 #### Date
-![SEKOIA.IO Date stage](/assets/operation_center/custom_format/date_stage.png){: style="max-width:100%"}
+
 The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601, which is the format used by SEKOIA.IO. This stage accepts, as optional properties, the format to parse the date and the IANA timezone of the parsed date.
 
+![SEKOIA.IO Date stage](/assets/operation_center/intakes/date_stage.png){: style="max-width:100%"}
+
 You will need to provide the stage with:
+
  - A `Name`
+ 
  - A `Description` (optional)
+ 
  - An `Input_field` - As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
 `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+
  - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get the output value.
+ 
  - A `Format` (optional) - You can specify the format of the date. By default, the stage tries to autodetect the format.
+ 
  - A `Timezone` (optional) - You can specify the timezone of the date. It is set to `UTC` by default.
 
 **Example**
+
 In the following event, a Date stage can be used to parse the field.
 
 ```
@@ -226,46 +291,67 @@ May 21, 2021 at 11:04:35
 ```
 
 You can configure the stage as follow:
+
 - Input_field: `{{original.date}}`
+
 - Output_field: `date`
+
 - Format: `%MMM %dd, %yyyy at %hh:%mm:%ss`
+
 - Timezone: `UTC`
 
 To get the date parsed in a next stage, you will then use the reference `{{stage1.date}}`. The output will be `2021-05-21T11:04:35Z` (ISO 8601).
 
 #### Delimiter Separated Values
-![SEKOIA.IO DSV stage](/assets/operation_center/custom_format/dsv_stage.png){: style="max-width:100%"}
+
 The Delimiter Separated Values stage can be used to extract values from a delimiter-separated values string. This stage needs the list of columns and, as optional, the delimiter (by default, the delimiter is the comma ',').
 
+![SEKOIA.IO DSV stage](/assets/operation_center/intakes/delimiter_sep_val.png){: style="max-width:100%"}
+
 You will need to provide the stage with:
+
  - A `Name`
+ 
  - A `Description` (optional)
+ 
  - An `Input_field` - As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
 `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
+
  - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a value corresponding to a key.
+ 
  - A `Column Names` - You need to list the column names used to retrieve information. The format has to be the following : `<column_A>,<column_B>,<column_C>...`
+ 
  - A `Delimiter` - The delimiter used to differenciate two columns (By default `,`).
 
 **Example**
+
 In the following event, a DSV stage can be used to parse the `message` field.
 
 ```
 2020/12/04 16:47:48;LOGIN;jenkins;2305
 ```
 You can configure the stage as follow:
+
 - Input_field: `{{original.message}}`
+
 - Output_field: `message`
+
 - Column Names: `date;action;username;user_id`
+
 - Delimiter: `;`
 
 To get for instance the `user_id` in a next stage, you can use `{{stage1.message.user_id}}`
 
 ## Filters
+
 Reference to a field can be extended with filters.
+
 Filters are separated from the field path by a pipe symbol (|).
+
 Multiple filters can be chained.
 
 **Example**
+
 `{{stage1.message.type | strip | upper}}` removes the whitespace and returns the uppercase value of the field `type` computed in `stage1`.
 
 The following built-in filters are available:
@@ -285,55 +371,81 @@ The following built-in filters are available:
 |`upper`| returns the value all uppercase
 
 ## Conditions
+
 The structure of events often varies depending on certain conditions such as the type of data (network, audit, security...) and it can be interesting to set up stages that only run when certain conditions are met.
+
 This feature is called `Filter` too but applies to a block. It should not be confused with [filters](#filters) that apply to a specific field.
 
 **Example**
+
 To run the stage `set_stage` when the value of the `type` field is equal to `network`, you can use this filter:
 ![SEKOIA.IO Condition example](/assets/operation_center/custom_format/conditions_example.png)
 
 ## Fields manager
+
 A taxonomy is a hierarchical schema used to normalize events. The taxonomy used by SEKOIA.IO is the ECS standard (Elastic Common Schema).
+
 The fields manager (previously called taxonomy manager) allows you to view all the ECS fields available with their description.
+
+![fields manager](/assets/operation_center/intakes/field_manager.png){: style="max-width:100%"}
+
 If a field in an event is custom to the technology and cannot be placed in any field of the ECS standard, you can create your own field.
 
 !!! note
     By convention, the name of the field must start with the name of your intake followed by the field name.
 
 Once the field manager panel is open, you will find two sections:
+
 - `My custom fields`: This section is dedicated to the fields you’ve created
+
 - `Existing fields`: This sections gather the fields already proposed by SEKOIA.IO
 
 ### Create and set a custom field
+
 To create a custom field, you have to:
+
 1. Click on the dedicated button `+ Custom field`
+
 2. Fill in the following fields:
+
 - `Field name`: It is the name to refer to your custom field
+
 - `Field type`: You need to choose between Keyword, Long, Date, Geo point...
+
 - `Description`: This description will help you remember what this field is used for
 
+![create a custom field](/assets/operation_center/intakes/custom_fields.png){: style="max-width:100%"}
+
+
 ### Set an observable type for graph investigation
+
 If you want the field you are building to be displayed in graph investigation, you should activate the dedicated checkbox.
+
 When checked, another part of the form appears to set this optional feature.
+
+![set observables](/assets/operation_center/intakes/set_observables.png)
 
 To display your custom field in the graph investigation, you first need to:
 
 1. Select the observable type your field refers to
 2. Depending on the type of observable selected, you might need to select:
-- The observable property associated with your custom field
-- The observable name that you want to associate your custom field with
+    - The observable property associated with your custom field
+    - The observable name that you want to associate your custom field with
 3. Once saved, your new custom field will be displayed in the “Your custom field” section. You will be able to :
-- Edit it
-- Delete it
-- Manage custom fields
+    - Edit it
+    - Delete it
+    - Manage custom fields
 
 After this last step, your custom field is ready to be used in your parser. The events parsed will be then able to display a Smart Description and this field will appear in the graph investigations
 
 #### **Example**
 
-The product `technoexample` has a field called `environment` which is custom to this technology and does not exist in ECS. With the taxonomy manager, you can create a custom field `technoexample.environment`. This field will then be available in the [Custom Stage](#custom-stage).
+The product `technoexample` has a field called `environment` which is custom to this technology and does not exist in ECS. With the taxonomy manager, you can create a custom field `technoexample.environment`. 
+
+This field will then be available in the [Custom Stage](#custom-stage).
 
 ## Smart descriptions
+
 The work of analysts can easily become difficult to deal with when there are a lot of events and different types of parsers and logs. Smart descriptions are a way to ease the analysis of events by adding a comprehensive and clear description generated from the event fields.
 
 Users can define their own smart descriptions for their custom parser.
