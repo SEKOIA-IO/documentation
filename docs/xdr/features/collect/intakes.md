@@ -51,7 +51,6 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 
 ### Create an empty Custom format
 The creation of an empty Custom format is the first step to develop your own Intake.
-![intakes_creation](/assets/operation_center/intakes/custom_intake_header.png){ align=right }
 
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
 
@@ -108,7 +107,7 @@ was previously used to parse the following event:
 ```
 
 To put the `source` and the `target` IP in the final version of the parsed event, the `Set` action can be used:
-![custom_set_stage](/assets/operation_center/intakes/custom_stage__set_example.png){: style="max-width:100%}
+![custom_set_stage](/assets/operation_center/intakes/custom_stage__set_example.png){: style="max-width:100%"}
 
 `source.ip` and `destination.ip` are the fields used in Elastic Common Format taxonomy.
 
@@ -265,7 +264,9 @@ To get the duration, you can use `{{stage1.message.duration}}`.
 
 #### Date
 
-The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601, which is the format used by SEKOIA.IO. This stage accepts, as optional properties, the format to parse the date and the IANA timezone of the parsed date.
+The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601, which is the format used by SEKOIA.IO. 
+
+This stage accepts, as optional properties, the format to parse the date and the IANA timezone of the parsed date.
 
 ![SEKOIA.IO Date stage](/assets/operation_center/intakes/date_stage.png){: style="max-width:100%"}
 
@@ -306,7 +307,9 @@ To get the date parsed in a next stage, you will then use the reference `{{stage
 
 #### Delimiter Separated Values
 
-The Delimiter Separated Values stage can be used to extract values from a delimiter-separated values string. This stage needs the list of columns and, as optional, the delimiter (by default, the delimiter is the comma ',').
+The Delimiter Separated Values stage can be used to extract values from a delimiter-separated values string. 
+
+This stage needs the list of columns and, as optional, the delimiter (by default, the delimiter is the comma ',').
 
 ![SEKOIA.IO DSV stage](/assets/operation_center/intakes/delimiter_sep_val.png){: style="max-width:100%"}
 
@@ -409,11 +412,11 @@ To create a custom field, you have to:
 
 2. Fill in the following fields:
 
-- `Field name`: It is the name to refer to your custom field
+    - `Field name`: It is the name to refer to your custom field
 
-- `Field type`: You need to choose between Keyword, Long, Date, Geo point...
+    - `Field type`: You need to choose between Keyword, Long, Date, Geo point...
 
-- `Description`: This description will help you remember what this field is used for
+    - `Description`: This description will help you remember what this field is used for
 
 ![create a custom field](/assets/operation_center/intakes/custom_fields.png){: style="max-width:100%"}
 
@@ -432,7 +435,7 @@ To display your custom field in the graph investigation, you first need to:
 2. Depending on the type of observable selected, you might need to select:
     - The observable property associated with your custom field
     - The observable name that you want to associate your custom field with
-3. Once saved, your new custom field will be displayed in the “Your custom field” section. You will be able to :
+3. Once saved, your new custom field will be displayed in the `Your custom field` section. You will be able to :
     - Edit it
     - Delete it
     - Manage custom fields
