@@ -23,19 +23,19 @@ Anomaly detection rules contain the configuration information necessary to perfo
 For a complete configuration, you need to set:
 - a filter query (to aggregate events from a specific area)
 
-![filterquery](/assets/xdr/rules/anomaly/172566414-fbb7ecc9-78ea-474d-b1db-f8248fb927c7.png)
+![!](/assets/xdr/rules/anomaly/172566414-fbb7ecc9-78ea-474d-b1db-f8248fb927c7.png)
 - aggregation method (`Average`, `Cardinality`,`Count`, `Max`, `Min`, `Sum`)
 
-![aggregation_method](/assets/xdr/rules/anomaly/77491073/172566563-23702360-16d2-4eed-8bc9-ce2b58dfcc9a.png)
+![!](/assets/xdr/rules/anomaly/77491073/172566563-23702360-16d2-4eed-8bc9-ce2b58dfcc9a.png)
 - field to aggregate if aggregation method is not `Count` (ex: source.ip, destination.bytes ...)
 
-![fields](/assets/xdr/rules/anomaly/77491073/172567053-4941b348-9097-4a67-82c1-68075c0c196d.png)
+![!](/assets/xdr/rules/anomaly/77491073/172567053-4941b348-9097-4a67-82c1-68075c0c196d.png)
 - bucket time interval (`10 min`, `30min`, `1 hour`, `6 hours`, `12 hours` or `1 day`)
 
-![bucket_time_interval](/assets/xdr/rules/anomaly/77491073/172567318-cb8d9304-b86b-4b2e-ab21-8e43b177324b.png)
+![!](/assets/xdr/rules/anomaly/77491073/172567318-cb8d9304-b86b-4b2e-ab21-8e43b177324b.png)
 - type of anomalies you want to detect (high, low or both)
 
-![anomaly_type](/assets/xdr/rules/anomaly/77491073/172567367-0aa07dab-e203-441a-8484-2defb9b6189a.png)
+![!](/assets/xdr/rules/anomaly/77491073/172567367-0aa07dab-e203-441a-8484-2defb9b6189a.png)
 - minimum anomaly score raising alerts (`Low`, `Medium` or `High`)
 - severity of the rule
 
