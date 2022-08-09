@@ -16,7 +16,7 @@ SEKOIA.IO supports the following rule types:
 ## Rules Catalog
 The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
 
-![rules_catalog](/assets/operation_center/rules_catalog/rules_catalog.png){: style="max-width:100%"}
+![rules_catalog](/assets/operation_center/rules_catalog/rules-catalog-layout.png){: style="max-width:100%"}
 
 !!! tip
     You can enable or disable rules one by one or all at once according to current filters. 
@@ -30,7 +30,9 @@ The Rules Catalog lists all detection rules available to your organization:
 - **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
 - **Custom Rules**: rules created by your team that are specific to your organization.
 
-The Available Rules counter displays the total number of rules (verified + custom). You can click on the Verified counter to list only Verified rules. You can then click on the Verified filter if you would rather see only Custom rules.
+The Available Rules counter displays the total number of rules (verified + custom). You can click on the `Verified counter` to list only Verified rules.
+
+You can then click on the `Verified filter` if you would rather see only Custom rules.
 
 #### Effort Level
 
@@ -52,7 +54,7 @@ The rules are also associated with different capabilities:
 - Offensive Capabilities: `threats` or `attack patterns` that they can detect
 - Defensive Capabilities: `data sources` on which they operate
 
-![capabilities](/assets/operation_center/rules_catalog/capabilities.png)
+![capabilities](/assets/operation_center/rules_catalog/rules_capabilities.png)
 
 Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
 
@@ -62,7 +64,7 @@ The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techni
 
 Every time you enable a rule, it appears on the matrix in blue in one or many cells. Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
 
-![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png)
+![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png){: style="max-width:100%"}
 
 You can see how many rules are enabled in a cell by hovering over it. 
 
@@ -78,7 +80,7 @@ You can click on the name of a rule to display additional details, such as, but 
 - Known False Positives
 - The actual detection logic (the pattern)
 
-![rule details](/assets/operation_center/rules_catalog/rule_details.png)
+![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
 
 ### Limiting the scope of a rule
 
@@ -90,7 +92,7 @@ If the rule is Custom, you will be able to edit every aspect of it. Otherwise, y
 - **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
 - **Assets**: select the assets this rule should apply to. By default, rules apply to all assets
 
-![limit-scope](/assets/operation_center/rules_catalog/limit_scope.png)
+![limit-scope](/assets/operation_center/rules_catalog/rules_catalog_filters.png)
 
 When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
 
@@ -110,25 +112,25 @@ The Rule creation form has the following sections:
 - **Security alerts:**
   In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
 
-![custom_rule](/assets/operation_center/rules_catalog/custom_rule.png)
+- **Entities & Assets:**
+  As discussed in the [limiting the scope](#limiting-the-scope-of-a-rule) section, you can select specific entities or assets this rule should apply to.
+
+![custom_rule](/assets/operation_center/rules_catalog/create_new_rule.png)
   
 !!! note 
     You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
-
-- **Entities & Assets:**
-  As discussed in the [limiting the scope](#limiting-the-scope-of-a-rule) section, you can select specific entities or assets this rule should apply to.
 
 ### Automatically enable new rules
 
 New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the `configure` icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
 
-![auto-enable](/assets/operation_center/rules_catalog/auto_enable.png)
+![auto-enable](/assets/operation_center/rules_catalog/enable_rules.png){: style="max-width:100%"}
 
 Rules are automatically enabled based on the configured effort level, or you can decide to never automatically enable rules.
 
 ### Notify on new rules
 
-![notif_rules](/assets/operation_center/rules_catalog/notif_rules.png){ align=right }
+![notif_rules](/assets/operation_center/rules_catalog/notification_rules.png){ align=right }
 
 We continuously update the rules catalog with new rules. 
 
