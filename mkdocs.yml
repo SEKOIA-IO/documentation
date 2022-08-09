@@ -462,11 +462,11 @@ plugins:
       intelligence_center/enricher.md: cti/features/consume/enrichers.md
       intelligence_center/graph_explorations.md: cti/features/consume/graph_explorations.md
       intelligence_center/integrations.md: cti/features/integrations/index.md
+      intelligence_center/integrations/anomali.md: cti/features/integrations/anomali.md
       intelligence_center/integrations/microsoft-sentinel.md: cti/features/integrations/microsoft-sentinel.md
       intelligence_center/integrations/misp.md: cti/features/integrations/misp.md
       intelligence_center/integrations/opencti.md: cti/features/integrations/opencti.md
       intelligence_center/integrations/splunk.md: cti/features/integrations/splunk.md
-      intelligence_center/integrations/anomali.md: cti/features/integrations/anomali.md
       intelligence_center/integrations/thehive.md: cti/features/integrations/thehive.md
       intelligence_center/intelligence.md: cti/features/consume/index.md
       intelligence_center/observables.md: cti/features/consume/observables.md
