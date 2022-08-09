@@ -73,7 +73,7 @@ The custom format panel is structured like this:
 4. A button to display the `Fields manager`
 5. An area to test your Intake with an event sample.
 
-![SEKOIA.IO Custom format Panel Overview](/assets/operation_center/intakes/custom_intake_header-1.png){: style="max-width:100%}
+![SEKOIA.IO Custom format Panel Overview](/assets/operation_center/intakes/custom_intake_header-1.png){: style="max-width:100%"}
 
 ## Stages
 A Custom format consists of a sequence of stages organized under a pipeline that modifies the event on the fly.
@@ -86,9 +86,10 @@ The custom stage is used to create actions. An action is an elementary operation
     While the [Common stages](#common-stages) are used to extract fields from your logs, this stage must be present in every intake to set the extracted fields in the ECS format expected by SEKOIA.IO.
 
 #### Set
-![custom_set_stage](/assets/operation_center/intakes/custom_stage_set.png){: style="max-width:100%}
 
 This action is used to set the value of one field in the ECS format in the final version of the event.
+
+![custom_set_stage](/assets/operation_center/intakes/custom_stage_set.png){:style="max-width:100%"}
 
 The value corresponding to the field you want to set can either be a constant (for instance `my-constant`, `10` ...) or a reference to a field from a stage (for instance `{{stage1.message.myfield.subfield}}`).
 
