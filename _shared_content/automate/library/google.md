@@ -55,4 +55,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google` v1.5.2**
+Module **`Google` v1.5.3**
