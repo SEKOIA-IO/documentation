@@ -42,7 +42,7 @@ To create an intake, you have to:
 
 SEKOIA.IO provides a list of intakes that allows you to integrate events from different sources such as systems, applications and security appliances.
 
-Some technologies may not have an associated Intake in the official SEKOIA.IO catalog and therefore cannot be parsed in SEKOIA.IO. ![intakes_creation](/assets/operation_center/intakes/custom_intake_header.png){ align=right }
+Some technologies may not have an associated Intake in the official SEKOIA.IO catalog and therefore cannot be parsed in SEKOIA.IO. 
 
 The "Custom format" feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the Events page.
 
@@ -51,6 +51,7 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 
 ### Create an empty Custom format
 The creation of an empty Custom format is the first step to develop your own Intake.
+![intakes_creation](/assets/operation_center/intakes/custom_intake_header.png){ align=right }
 
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
 
@@ -121,6 +122,7 @@ If the value of the source field does not match any entry of the mapping diction
 If no fallback value is defined and the value of the source field does not match any entries, the target field will not be created in the final event.
 
 **Example**
+
 You want to set the value of `http.response.status_message` according to the value `http.response.status_code` and a dictionary.
 `http.response.status_code` contains only status codes values.
 
@@ -134,6 +136,7 @@ The `Delete` action allows you to delete fields in the final version of the even
 ![SEKOIA.IO Delete action](/assets/operation_center/intakes/custom_delete.png){: style="max-width:100%"}
 
 **Example**
+
 The following action will delete the fields `source.ip` and `destination.ip` from the final event.
 
 ![SEKOIA.IO Delete action](/assets/operation_center/intakes/example_delete.png){: style="max-width:100%"}
@@ -223,9 +226,7 @@ With `Value Separator: "="` and `Item Separator: ",\s"`, the log can be parsed. 
 The Grok stage can be used to match a field against a Grok pattern. Grok is a tool provided by Elasticsearch that gives you the ability to parse an arbitrary string and structure it.
 ![SEKOIA.IO Grok stage](/assets/operation_center/intakes/grok_stage.png){: style="max-width:100%"}
 !!! tip
-    You can find more information about Grok in the [official documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html).
-
-The list of all the Grok patterns that can be used can be found [here](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns).
+    You can find more information about Grok in the [official documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html). The list of all the Grok patterns that can be used can be found [here](https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns).
 
 You will need to provide the stage with:
 
@@ -344,9 +345,7 @@ To get for instance the `user_id` in a next stage, you can use `{{stage1.message
 
 ## Filters
 
-Reference to a field can be extended with filters.
-
-Filters are separated from the field path by a pipe symbol (|).
+Reference to a field can be extended with filters. Filters are separated from the field path by a pipe symbol (|).
 
 Multiple filters can be chained.
 
@@ -379,6 +378,7 @@ This feature is called `Filter` too but applies to a block. It should not be con
 **Example**
 
 To run the stage `set_stage` when the value of the `type` field is equal to `network`, you can use this filter:
+
 ![SEKOIA.IO Condition example](/assets/operation_center/custom_format/conditions_example.png)
 
 ## Fields manager
