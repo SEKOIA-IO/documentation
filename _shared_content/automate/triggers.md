@@ -38,6 +38,7 @@ Click on this node and go to the tab “Errors” or “Logs” to see all messa
 ### Levels and retention
 
 There are five possible types of log messages :
+
 * `Debug` : used to find the reason in case your program is not working as expected or an exception has occurred
 * `Info` : used to log the information your program is working as expected
 * `Warning` : will not stop anything, but is there to tell you that something happened that is not expected (or there may be a potential issue) and it's not critical enough to terminate or stop the app/process
