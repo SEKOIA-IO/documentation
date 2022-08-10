@@ -4,9 +4,9 @@
 ## Prerequisite
 
 On SEKOIA.IO XDR, create an API KEY with the following permission:
-- **INTHREAT_READ_OBJECTS** (`8d9901dc-0508-4472-b3c1-5ad5efc96032`): Read objects from InThreat
+- `INTHREAT_READ_OBJECTS` (`8d9901dc-0508-4472-b3c1-5ad5efc96032`): Read objects from InThreat
 
-[More information on API KEY creation](./docs/getting_started/generate_api_keys.md)
+[More information on API KEY creation](../../../getting_started/generate_api_keys.md)
 
 ## Install
 
@@ -42,4 +42,4 @@ You can now use the integration by typing for example `!GetObservable value="eic
 
 ![!Example of usage](paloalto_xsoar_images/usage.png)
 
-To learn how to use the integration, please read the [following documentation](https://xsoar.pan.dev/docs/reference/integrations/sekoia-intelligence-center#commands) which describe every command input and output. 
+To learn how to use the integration, please read the [following documentation](https://xsoar.pan.dev/docs/reference/integrations/sekoia-intelligence-center#commands) which describe every command input and output.
