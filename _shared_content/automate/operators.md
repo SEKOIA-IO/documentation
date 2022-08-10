@@ -56,7 +56,12 @@ This Operator has two output branches:
 * One called `loop` which will be executed for every item in the list.
 * One that will be executed after the loop on the different items is finished.
 
-To get the value of the current item in the loop, you need to call the reference `default.value`.
+The `Foreach` module has 3 outputs:
+
+- `node.X.default.value` - The reference of the current item in the loop
+- `node.X.default.index` - The number of iterations performed (starts at 0)
+- `node.X.default.total` - The total number of items
+
 For instance, if the `Foreach` is the node `3` and we want to get the reference of the current item in the loop, we will use `{{node.3.default.value}}`
 
 ### Store
