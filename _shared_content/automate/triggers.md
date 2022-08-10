@@ -48,6 +48,7 @@ There are five possible types of log messages :
 Each error message has details that you can display by clicking on the log line.
 
 The logs of a trigger have a retention period that depends on the severity of the log. The following retention periods are currently applied:
+
 | Severity | Retention period |
 | --- | --- |
 | Debug | 1 hour |
