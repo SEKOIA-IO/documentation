@@ -55,7 +55,6 @@ The logs of a trigger have a retention period that depends on the severity of th
 | Warning | 7 days |
 | Error | 7 days |
 | Critical | 1 month |
-* Debug: 1 hour
 * Info: 1 day
 * Warning: 7 days
 * Error: 7 days
