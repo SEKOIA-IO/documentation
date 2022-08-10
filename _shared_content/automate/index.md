@@ -104,3 +104,9 @@ tm = Template(jinja_patern)
 msg = tm.render(urgency=loading["urgency"])
 print(msg)
 ```
+
+## Rate limiting
+
+If too many actions are pushed it may block running playbooks. In order to address those issues, playbooks have a rate limiting the action runs.
+
+Every time an action from a playbook must run, we check how many actions this playbook has already started during the last minute. If the threshold is reached then the action is marked in error with a message explaining it has been rate limited.
