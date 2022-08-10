@@ -442,7 +442,7 @@ To display your custom field in the graph investigation, you first need to:
 
 After this last step, your custom field is ready to be used in your parser. The events parsed will be then able to display a Smart Description and this field will appear in the graph investigations
 
-#### **Example**
+**Example**
 
 The product `technoexample` has a field called `environment` which is custom to this technology and does not exist in ECS. With the taxonomy manager, you can create a custom field `technoexample.environment`. 
 
