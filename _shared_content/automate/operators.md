@@ -34,7 +34,7 @@ In this exemple, a condition is created to check if the rule name that triggered
 This array shows the different types of comparison available with examples:
 
 |Comparison|Meaning|Exemple left|Exemple right|Additional information|
-|:---------|:-----:|:----------:|:-----------:|:--------------------:|
+|----------|-------|------------|-------------|----------------------|
 |==|Equal to|{{ node.1['rule']['name'] }}|SEKOIA Intelligence Feed||
 |!=|Not equal to|{{ node.1['rule']['name'] }}|SEKOIA Intelligence Feed||
 |<|Less than|{{ node.1['urgency']['current_value'] }}|{{ 80 }}|For number comparison, it is needed to transform the value as an "Integer" because it is interpreted as a String by default. For that the value is surrounded by curly brackets.|
