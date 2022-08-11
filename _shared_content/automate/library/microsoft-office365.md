@@ -27,4 +27,4 @@ Fetch events for MessageTrace API
 
 ## Extra
 
-Module **`Microsoft Office365` v1.0.1**
+Module **`Microsoft Office365` v1.0.2**
