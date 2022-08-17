@@ -104,3 +104,21 @@ tm = Template(jinja_patern)
 msg = tm.render(urgency=loading["urgency"])
 print(msg)
 ```
+
+## Rate limiting
+
+If too many actions are pushed it may block running playbooks. In order to address those issues, playbooks have a rate limiting the action runs.
+
+Every time an action from a playbook must run, we check how many actions this playbook has already started during the last minute. If the threshold is reached then the action is marked in error with a message explaining it has been rate limited.
+
+## Rerun
+
+The user can rerun any run from a playbook. It can help understand issues like stuck playbooks.
+
+From a list of runs, you can see a “Rerun” action button.
+
+- For a successful run, you can rerun all the playbooks.
+- For a failed run, you can rerun all the actions in the playbook or only failed and pending actions.
+
+The re-runed run will appear as a new run in the run list.
+
