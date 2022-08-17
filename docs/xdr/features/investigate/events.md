@@ -73,11 +73,11 @@ You can share your researches with colleagues by sending them these job IDs, whi
 ### Events enrichment
 Event enrichment consists of adding contextualisation data to the standardized event. The objective is to increase the reliability of detection and qualification.
 
-Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and the CMDB.
+Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [assets](https://docs.sekoia.io/xdr/features/collect/assets/).
 
 The first source gathers all the technical artefacts, also called observables, collected by SEKOIA.IO analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
 
-The second source of enrichment relies on a configuration management database (i.e. a CMDB) to provide organization-specific context. The user is invited to consolidate a list of key resources such as brands, users, applications, or hardware present in the organisation. The CMDB is used continuously to contextualise events with information from the associated resources. This contextualisation greatly increases the effectiveness of qualification. 
+The second source of enrichment relies on a configuration management database (i.e. assets) to provide organization-specific context. The user is invited to consolidate a list of key resources such as brands, users, applications, or hardware present in the organisation. These assets are used continuously to contextualise events with information from the associated resources. This contextualisation greatly increases the effectiveness of qualification. 
 
 For example, this enrichment allows you to identify the nature of the legitimate actions expected on an office workstation associated with a specific team in your community. 
 
