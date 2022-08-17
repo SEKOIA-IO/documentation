@@ -18,7 +18,7 @@ According to [docs.microsoft.com](https://docs.microsoft.com/en-us/microsoft-365
 
 In SEKOIA.IO XDR, [create a new intake key](xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
 
-In Microsoft Azure, create a service account with the `Reports reader` rights and a strong password (for more information: [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
+In Microsoft Azure, create a service account with the `Reports reader` and `Exchange Administrator` rights and a strong password (for more information: [MessageTrace report required permissions](https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#permissions) and [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
 
 ## Configure
 
@@ -69,3 +69,7 @@ Create a trigger configuration and input the following information:
 - intake_key
 
 Save your configuration and start the trigger.
+
+## Debug
+
+If your user cannot access the MessageTrace API, please visit the [Azure Sign-in Logs dashboard](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) and use the `Add filters` button to filter on the username. You can then clic on an authentication event to learn about the issue and use the `Launch the Sign-in Diagnostic.` button to go further. 
