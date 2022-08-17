@@ -113,7 +113,7 @@ Every time an action from a playbook must run, we check how many actions this pl
 
 ## Rerun
 
-The user can rerun any run from a playbook. It can helps understand issues like stuck playbooks.
+The user can rerun any run from a playbook. It can help understand issues like stuck playbooks.
 
 From a list of runs, you can see a “Rerun” action button.
 
