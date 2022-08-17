@@ -6,7 +6,7 @@ This chapter details the ingestion methods to integrate SEKOIA.IO into your ecos
 
 SEKOIA.IO is able to collect logs through various mechanisms, configuration on your side should be easy! Here is an overview on how integration could be done with SEKOIA.IO.
 
-![ingestion_methods](/assets/operation_center/data_collection/ingestion_methods/ingestion_methods.png){: style="max-width:100%"}
+![ingestion_methods](/assets/operation_center/data_collection/ingestion_methods/ingestion_methods2.png){: style="max-width:100%"}
 
 SEKOIA.IO supports the following log collectors:
 
