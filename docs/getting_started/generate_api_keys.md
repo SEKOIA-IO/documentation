@@ -33,8 +33,8 @@ The table that lists API keys has various columns where you can find the followi
 To create a new API key, you’ll have to:
 
 1. Click on the `+ API key` button
-2. Give a name and a description to your key
-3. Select one or more roles associated to your key. For instance, if you want to use your key to retrieve information from the Intelligence Center, you can use the role `ic_viewer - Intelligence Center Read-Only`
+2. Give a name and a description to your key (description should be more than 10 characters and less than 100 characters)
+3. Select one or more roles to associate with your key. For instance, if you want to use your key to retrieve information from the Intelligence Center, you can use the role `ic_viewer - Intelligence Center Read-Only`
 4. Click on `Save`
 
 !!! note
