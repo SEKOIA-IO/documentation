@@ -185,8 +185,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDeviceHost": "src_host_list-0",
             "PanOSSourceDeviceVendor": "src_vendor_list-1",
             "PanOSSourceDeviceModel": "src_model_list-1",
-            "PanOSSourceDeviceProfile": "src_profile_list-1",
-            "PanOSVirtualSystemName": ""
+            "PanOSSourceDeviceProfile": "src_profile_list-1"
         },
         "related": {
             "hosts": [
@@ -280,27 +279,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "name": "paloaltonetwork\\\\\\\\xxxxx"
         },
-        "paloalto": {
-            "PanOSDestinationDeviceMac": "",
-            "PanOSDestinationDeviceHost": "",
-            "PanOSDestinationDeviceOSVersion": "",
-            "PanOSDestinationDeviceOSFamily": "",
-            "PanOSDestinationDeviceVendor": "",
-            "PanOSDestinationDeviceModel": "",
-            "PanOSDestinationDeviceProfile": "",
-            "PanOSDestinationDeviceCategory": "",
-            "PanOSSourceDeviceHost": "",
-            "PanOSSourceDeviceVendor": "",
-            "PanOSSourceDeviceModel": "",
-            "PanOSSourceDeviceProfile": "",
-            "PanOSSourceDynamicAddressGroup": "",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
-            "PanOSContainerName": "",
-            "PanOSContainerNameSpace": "",
-            "PanOSDestinationUUID": "",
-            "PanOSSourceUUID": ""
-        },
+        "paloalto": {},
         "related": {
             "user": [
                 "paloaltonetwork\\\\\\\\xxxxx"
@@ -392,28 +371,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 37404
         },
         "paloalto": {
-            "PanOSSourceDynamicAddressGroup": "",
             "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
-            "PanOSContainerName": "",
-            "PanOSContainerNameSpace": "",
-            "PanOSDestinationDeviceMac": "",
-            "PanOSDestinationDeviceHost": "",
-            "PanOSDestinationDeviceOSVersion": "",
-            "PanOSDestinationDeviceOSFamily": "",
-            "PanOSDestinationDeviceVendor": "",
-            "PanOSDestinationDeviceModel": "",
-            "PanOSDestinationDeviceProfile": "",
-            "PanOSDestinationDeviceCategory": "",
-            "PanOSSourceDeviceHost": "",
-            "PanOSSourceDeviceVendor": "",
-            "PanOSSourceDeviceModel": "",
-            "PanOSSourceDeviceProfile": "",
-            "PanOSX-Forwarded-ForIP": "",
-            "PanOSDestinationUUID": "",
-            "PanOSSourceUUID": "",
-            "PanOSVirtualSystemName": "",
             "PanOSSourceLocation": "1.1.1.1-1.1.1.1",
             "URLCategory": "any"
         },
@@ -478,7 +436,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "xxxxx\\\\\\\\xxxxx"
         },
         "paloalto": {
-            "PanOSVirtualSystemName": "",
             "PanOSQuarantineReason": "Malicious Traffic"
         },
         "related": {
@@ -604,12 +561,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "xxxxx xxxxx"
         },
         "paloalto": {
-            "PanOSSourceDeviceHost": "",
-            "PanOSSourceDeviceVendor": "",
-            "PanOSSourceDeviceModel": "",
-            "PanOSSourceDeviceProfile": "",
-            "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx",
-            "PanOSVirtualSystemName": ""
+            "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx"
         },
         "related": {
             "hosts": [
@@ -741,9 +693,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.1.1.1",
             "ip": "1.1.1.1"
         },
-        "paloalto": {
-            "PanOSVirtualSystemName": ""
-        },
+        "paloalto": {},
         "related": {
             "hosts": [
                 "PA-VM"
@@ -834,20 +784,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "xxxxx"
         },
         "paloalto": {
-            "PanOSSourceDynamicAddressGroup": "",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
-            "PanOSContainerName": "",
-            "PanOSContainerNameSpace": "",
-            "PanOSVirtualSystemName": "",
-            "PanOSSourceUUID": "",
-            "PanOSSourceLocation": "US",
-            "PanOSSourceDeviceVendor": "",
-            "PanOSSourceDeviceModel": "",
-            "PanOSDestinationUUID": "",
-            "PanOSDestinationDeviceVendor": "",
-            "PanOSDestinationDeviceModel": "",
-            "PanOSDestinationDeviceMac": ""
+            "PanOSSourceLocation": "US"
         },
         "related": {
             "hosts": [
@@ -1065,10 +1002,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "xxxxx"
         },
         "paloalto": {
-            "PanOSSourceDynamicAddressGroup": "",
             "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
             "PanOSContainerNameSpace": "pns_default",
             "PanOSDestinationDeviceMac": "620797415366",
             "PanOSDestinationDeviceHost": "pan-622",
@@ -1082,11 +1016,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDeviceVendor": "Lenovo",
             "PanOSSourceDeviceModel": "Note 4G",
             "PanOSSourceDeviceProfile": "x-profile",
-            "PanOSX-Forwarded-ForIP": "",
-            "PanOSDestinationUUID": "",
-            "PanOSSourceUUID": "",
-            "PanOSVirtualSystemName": "",
-            "PanOSSourceLocation": "LY"
+            "PanOSThreatCategory": "unknown",
+            "PanOSSourceLocation": "LY",
+            "PanOSThreatID": "27379(27379)"
         },
         "related": {
             "hosts": [
@@ -1265,35 +1197,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 52066
         },
         "paloalto": {
-            "PanOSHASessionOwner": "",
-            "PanOSSourceDynamicAddressGroup": "",
-            "PanOSEndpointSerialNumber": "",
-            "PanOSGPHostID": "",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
-            "PanOSContainerName": "",
-            "PanOSContainerNameSpace": "",
-            "PanOSDestinationDeviceMac": "",
-            "PanOSDestinationDeviceHost": "",
-            "PanOSDestinationDeviceOSVersion": "",
-            "PanOSDestinationDeviceOSFamily": "",
-            "PanOSDestinationDeviceVendor": "",
-            "PanOSDestinationDeviceModel": "",
-            "PanOSDestinationDeviceProfile": "",
-            "PanOSDestinationDeviceCategory": "",
-            "PanOSSourceDeviceHost": "",
-            "PanOSSourceDeviceVendor": "",
-            "PanOSSourceDeviceModel": "",
-            "PanOSSourceDeviceProfile": "",
-            "PanOSX-Forwarded-ForIP": "",
-            "PanOSSDWANSite": "",
-            "PanOSSDWANClusterType": "",
-            "PanOSSDWANDeviceType": "",
-            "PanOSSDWANCluster": "",
-            "PanOSSDWANPolicyName": "",
-            "PanOSDestinationUUID": "",
-            "PanOSSourceUUID": "",
-            "PanOSVirtualSystemName": "",
             "PanOSSourceLocation": "10.0.0.0-10.255.255.255",
             "PanOSSessionStartTime": "Jul 31 2022 12:43:06",
             "URLCategory": "computer-and-internet-info"
@@ -1406,35 +1309,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "user.name@corp.com"
         },
         "paloalto": {
-            "PanOSHASessionOwner": "",
-            "PanOSSourceDynamicAddressGroup": "",
-            "PanOSEndpointSerialNumber": "",
-            "PanOSGPHostID": "",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
-            "PanOSContainerName": "",
-            "PanOSContainerNameSpace": "",
-            "PanOSDestinationDeviceMac": "",
-            "PanOSDestinationDeviceHost": "",
-            "PanOSDestinationDeviceOSVersion": "",
-            "PanOSDestinationDeviceOSFamily": "",
-            "PanOSDestinationDeviceVendor": "",
-            "PanOSDestinationDeviceModel": "",
-            "PanOSDestinationDeviceProfile": "",
-            "PanOSDestinationDeviceCategory": "",
-            "PanOSSourceDeviceHost": "",
-            "PanOSSourceDeviceVendor": "",
-            "PanOSSourceDeviceModel": "",
-            "PanOSSourceDeviceProfile": "",
-            "PanOSX-Forwarded-ForIP": "",
-            "PanOSSDWANSite": "",
-            "PanOSSDWANClusterType": "",
-            "PanOSSDWANDeviceType": "",
-            "PanOSSDWANCluster": "",
-            "PanOSSDWANPolicyName": "",
-            "PanOSDestinationUUID": "",
-            "PanOSSourceUUID": "",
-            "PanOSVirtualSystemName": "",
             "PanOSSourceLocation": "10.0.0.0-10.255.255.255",
             "PanOSSessionStartTime": "Aug 02 2022 06:41:44",
             "URLCategory": "low-risk"
@@ -1562,8 +1436,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDynamicAddressGroup": " aqua_dag",
             "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx",
             "PanOSGPHostID": "xxxxxxxxxxxxxx",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
             "PanOSContainerName": "pan-dp-77754f4",
             "PanOSContainerNameSpace": "pns_default",
             "PanOSDestinationDeviceMac": "530589561221",
@@ -1579,14 +1451,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDeviceModel": "Nexus",
             "PanOSSourceDeviceProfile": "n-profile",
             "PanOSX-Forwarded-ForIP": "1.1.1.1",
-            "PanOSSDWANSite": "",
-            "PanOSSDWANClusterType": "",
-            "PanOSSDWANDeviceType": "",
-            "PanOSSDWANCluster": "",
-            "PanOSSDWANPolicyName": "",
-            "PanOSDestinationUUID": "",
-            "PanOSSourceUUID": "",
-            "PanOSVirtualSystemName": "",
             "PanOSSourceLocation": "east-coast",
             "PanOSSessionStartTime": "Feb 27 2021 20:15:48",
             "URLCategory": "custom-category"
@@ -1778,8 +1642,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "paloalto": {
             "PanOSSourceDynamicAddressGroup": " blue_dag",
             "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx",
-            "PanOSDestinationEDL": "",
-            "PanOSSourceEDL": "",
             "PanOSContainerName": "pan-dp-77754f4",
             "PanOSContainerNameSpace": "pns_default",
             "PanOSDestinationDeviceMac": "150083646537",
@@ -1794,10 +1656,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDeviceVendor": "Lenovo",
             "PanOSSourceDeviceModel": "Note 4G",
             "PanOSSourceDeviceProfile": "l-profile",
-            "PanOSX-Forwarded-ForIP": "",
-            "PanOSDestinationUUID": "",
-            "PanOSSourceUUID": "",
-            "PanOSVirtualSystemName": "",
             "PanOSSourceLocation": "west-coast",
             "URLCategory": "sports"
         },
@@ -1865,9 +1723,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.1.1.1",
             "port": 21015
         },
-        "paloalto": {
-            "PanOSVirtualSystemName": ""
-        },
+        "paloalto": {},
         "related": {
             "hosts": [
                 "PA-5220"
