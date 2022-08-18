@@ -36,112 +36,79 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=\"2022-03-17 14:49:51\" fw=\"SN12345678912345\" tz=+0100 startime=\"2022-03-17 14:49:51\" pri=5 confid=01 slotlevel=5 ruleid=48 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=55.66.77.88 srcport=39618 srcportname=ephemeral_fw_tcp srcname=MGDFS-Proxy-02 srcmac=00:00:00:00:00:00 dst=11.22.33.44 dstport=443 dstportname=https dstcontinent=\"na\" dstcountry=\"us\" ipv=4 sent=0 rcvd=0 duration=0.00 logtype=\"filter\"",
+        "event": {
+            "start": "2022-03-17T13:49:51.000000Z",
+            "kind": "event",
+            "category": "network",
+            "type": "connection",
+            "timezone": "+0100",
+            "risk_score": 5,
+            "duration": 0.0
+        },
+        "stormshield": {
+            "logtype": "filter",
+            "dstportname": "https",
+            "srcportname": "ephemeral_fw_tcp",
+            "slotlevel": 5,
+            "confid": 1
+        },
         "@timestamp": "2022-03-17T13:49:51.000000Z",
+        "observer": {
+            "serial_number": "SN12345678912345",
+            "ingress": {
+                "interface": {
+                    "name": "Ethernet3",
+                    "alias": "in"
+                }
+            },
+            "egress": {
+                "interface": {
+                    "name": "Ethernet2",
+                    "alias": "out"
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "bytes": 0,
+            "protocol": "https",
+            "type": "4"
+        },
+        "source": {
+            "ip": "55.66.77.88",
+            "port": 39618,
+            "mac": "00:00:00:00:00:00",
+            "address": "55.66.77.88"
+        },
         "destination": {
-            "address": "11.22.33.44",
+            "ip": "11.22.33.44",
+            "port": 443,
             "geo": {
                 "continent_name": "na",
                 "country_iso_code": "us"
             },
-            "ip": "11.22.33.44",
-            "port": 443
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "network",
-            "duration": 0.0,
-            "kind": "event",
-            "outcome": "success",
-            "risk_score": 5,
-            "start": "2022-03-17T13:49:51.000000Z",
-            "timezone": "+0100",
-            "type": "connection"
+            "address": "11.22.33.44"
         },
         "host": {
             "network": {
-                "egress": {
+                "ingress": {
                     "bytes": 0
                 },
-                "ingress": {
+                "egress": {
                     "bytes": 0
                 }
             }
         },
-        "message": "time=\"2022-03-17 14:49:51\" fw=\"SN12345678912345\" tz=+0100 startime=\"2022-03-17 14:49:51\" pri=5 confid=01 slotlevel=5 ruleid=48 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=55.66.77.88 srcport=39618 srcportname=ephemeral_fw_tcp srcname=MGDFS-Proxy-02 srcmac=00:00:00:00:00:00 dst=11.22.33.44 dstport=443 dstportname=https dstcontinent=\"na\" dstcountry=\"us\" ipv=4 sent=0 rcvd=0 duration=0.00 logtype=\"filter\"",
-        "network": {
-            "bytes": 0,
-            "protocol": "https",
-            "transport": "tcp",
-            "type": "4"
-        },
-        "observer": {
-            "egress": {
-                "interface": {
-                    "alias": "out",
-                    "name": "Ethernet2"
-                }
-            },
-            "ingress": {
-                "interface": {
-                    "alias": "in",
-                    "name": "Ethernet3"
-                }
-            },
-            "serial_number": "SN12345678912345"
+        "rule": {
+            "id": "48",
+            "category": "5"
         },
         "related": {
             "ip": [
                 "11.22.33.44",
                 "55.66.77.88"
             ]
-        },
-        "rule": {
-            "category": "5",
-            "id": "48"
-        },
-        "sekoiaio": {
-            "entity": {
-                "id": "jNZ0wDmv",
-                "name": "w5gjMeE2rgO7n0CI",
-                "uuid": "9a42db14-0072-4c5a-bd51-92f4cd060d96"
-            },
-            "intake": {
-                "created": "2021-04-23T20:02:05.017771Z",
-                "dialect": "sns",
-                "dialect_uuid": "79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4",
-                "id": "10f0afe9-98a1-4226-a6bd-8f70d461d430",
-                "parsing_status": "success"
-            },
-            "log": {
-                "syslog": {
-                    "facility": {
-                        "code": "21",
-                        "name": "local5"
-                    },
-                    "priority": "3",
-                    "severity": {
-                        "code": "3",
-                        "name": "err"
-                    }
-                }
-            }
-        },
-        "source": {
-            "address": "55.66.77.88",
-            "ip": "55.66.77.88",
-            "mac": "00:00:00:00:00:00",
-            "port": 39618
-        },
-        "stormshield": {
-            "confid": 1,
-            "dstportname": "https",
-            "filter": {
-                "action": "log"
-            },
-            "slotlevel": 5,
-            "srcportname": "ephemeral_fw_tcp"
         }
     }
     	
@@ -153,76 +120,83 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=\"2022-03-03 14:21:10\" fw=\"SN12345678912345\" tz=+0100 startime=\"2022-03-03 14:21:10\" pri=5 confid=01 slotlevel=2 ruleid=100 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=42.123.123.123 srcport=60355 srcportname=ad2009-dyn_tcp srcname=DLEM-AMPD02 srcmac=00:00:00:00:00:00 dst=11.11.11.11 dstport=443 dstportname=https dstname=example_dest dstcontinent=\"na\" dstcountry=\"us\" ipv=4 sent=0 rcvd=0 duration=2.00 action=pass logtype=\"filter\"",
+        "event": {
+            "start": "2022-03-03T13:21:10.000000Z",
+            "kind": "event",
+            "category": "network",
+            "type": "connection",
+            "timezone": "+0100",
+            "risk_score": 5,
+            "duration": 2000000000.0
+        },
+        "stormshield": {
+            "logtype": "filter",
+            "dstname": "example_dest",
+            "dstportname": "https",
+            "srcportname": "ad2009-dyn_tcp",
+            "slotlevel": 2,
+            "confid": 1,
+            "filter": {
+                "action": "pass"
+            }
+        },
+        "@timestamp": "2022-03-03T13:21:10.000000Z",
+        "observer": {
+            "serial_number": "SN12345678912345",
+            "ingress": {
+                "interface": {
+                    "name": "Ethernet3",
+                    "alias": "in"
+                }
+            },
+            "egress": {
+                "interface": {
+                    "name": "Ethernet2",
+                    "alias": "out"
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "bytes": 0,
+            "protocol": "https",
+            "type": "4"
+        },
         "source": {
-            "address": "42.123.123.123",
             "ip": "42.123.123.123",
+            "port": 60355,
             "mac": "00:00:00:00:00:00",
-            "port": 60355
+            "address": "42.123.123.123"
         },
         "destination": {
-            "address": "11.11.11.11",
             "ip": "11.11.11.11",
             "port": 443,
             "geo": {
                 "continent_name": "na",
                 "country_iso_code": "us"
-            }
+            },
+            "address": "11.11.11.11"
         },
         "host": {
             "network": {
-                "egress": {
+                "ingress": {
                     "bytes": 0
                 },
-                "ingress": {
+                "egress": {
                     "bytes": 0
                 }
             }
         },
-        "network": {
-            "bytes": 0,
-            "protocol": "https",
-            "transport": "tcp",
-            "type": "4"
-        },
-        "observer": {
-            "egress": {
-                "interface": {
-                    "alias": "out",
-                    "name": "Ethernet2"
-                }
-            },
-            "ingress": {
-                "interface": {
-                    "alias": "in",
-                    "name": "Ethernet3"
-                }
-            },
-            "serial_number": "SN12345678912345"
-        },
-        "stormshield": {
-            "confid": 1,
-            "dstname": "example_dest",
-            "dstportname": "https",
-            "filter": {
-                "action": "pass"
-            },
-            "slotlevel": 2,
-            "srcportname": "ad2009-dyn_tcp"
-        },
-        "@timestamp": "2022-03-03T13:21:10.000000Z",
-        "event": {
-            "type": "connection",
-            "kind": "event",
-            "category": "network",
-            "outcome": "success",
-            "duration": 2000000000.0,
-            "timezone": "+0100",
-            "start": "2022-03-03T13:21:10.000000Z",
-            "risk_score": 5
-        },
         "rule": {
-            "category": "2",
-            "id": "100"
+            "id": "100",
+            "category": "2"
+        },
+        "related": {
+            "ip": [
+                "11.11.11.11",
+                "42.123.123.123"
+            ]
         }
     }
     	
@@ -234,116 +208,86 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=foo_bar srcmac=00:00:00:00:00:00 srccontinent=\"na\" srccountry=\"us\" dst=22.22.22.22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=11.11.11.11 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
+        "event": {
+            "kind": "event",
+            "category": "network",
+            "type": "connection",
+            "timezone": "+0100",
+            "risk_score": 5,
+            "duration": 107331180000000.0,
+            "start": "2022-03-03T13:21:10+00:00"
+        },
+        "stormshield": {
+            "logtype": "connection",
+            "dstportname": "https",
+            "srcportname": "ephemeral_fw_tcp",
+            "slotlevel": 2,
+            "confid": 1,
+            "filter": {
+                "action": "pass"
+            }
+        },
         "@timestamp": "2022-03-16T18:36:03.000000Z",
+        "observer": {
+            "serial_number": "SN12345678912345",
+            "ingress": {
+                "interface": {
+                    "name": "Ethernet3",
+                    "alias": "in"
+                }
+            },
+            "egress": {
+                "interface": {
+                    "name": "Ethernet2",
+                    "alias": "out"
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "bytes": 5555692,
+            "protocol": "https",
+            "type": "4"
+        },
+        "source": {
+            "ip": "11.11.11.11",
+            "port": 49586,
+            "mac": "00:00:00:00:00:00",
+            "geo": {
+                "continent_name": "na",
+                "country_iso_code": "us"
+            },
+            "address": "11.11.11.11"
+        },
         "destination": {
-            "address": "22.22.22.22",
+            "ip": "22.22.22.22",
+            "port": 443,
             "geo": {
                 "continent_name": "eu",
                 "country_iso_code": "be"
             },
-            "ip": "22.22.22.22",
-            "port": 443
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "network",
-            "duration": 107331180000000.0,
-            "kind": "event",
-            "outcome": "success",
-            "risk_score": 5,
-            "start": "2022-03-03T13:21:10+00:00",
-            "timezone": "+0100",
-            "type": "connection"
+            "address": "22.22.22.22"
         },
         "host": {
             "network": {
-                "egress": {
-                    "bytes": 2827291
-                },
                 "ingress": {
                     "bytes": 2728401
+                },
+                "egress": {
+                    "bytes": 2827291
                 }
             }
         },
-        "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=foo_bar srcmac=00:00:00:00:00:00 srccontinent=\"na\" srccountry=\"us\" dst=22.22.22.22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=11.11.11.11 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
-        "network": {
-            "bytes": 5555692,
-            "protocol": "https",
-            "transport": "tcp",
-            "type": "4"
-        },
-        "observer": {
-            "egress": {
-                "interface": {
-                    "alias": "out",
-                    "name": "Ethernet2"
-                }
-            },
-            "ingress": {
-                "interface": {
-                    "alias": "in",
-                    "name": "Ethernet3"
-                }
-            },
-            "serial_number": "SN12345678912345"
+        "rule": {
+            "id": "103",
+            "category": "2"
         },
         "related": {
             "ip": [
                 "11.11.11.11",
                 "22.22.22.22"
             ]
-        },
-        "rule": {
-            "category": "2",
-            "id": "103"
-        },
-        "sekoiaio": {
-            "entity": {
-                "id": "jNZ0wDmv",
-                "name": "w5gjMeE2rgO7n0CI",
-                "uuid": "9a42db14-0072-4c5a-bd51-92f4cd060d96"
-            },
-            "intake": {
-                "created": "2021-04-23T20:02:05.017771Z",
-                "dialect": "sns",
-                "dialect_uuid": "79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4",
-                "id": "10f0afe9-98a1-4226-a6bd-8f70d461d430",
-                "parsing_status": "success"
-            },
-            "log": {
-                "syslog": {
-                    "facility": {
-                        "code": "21",
-                        "name": "local5"
-                    },
-                    "priority": "3",
-                    "severity": {
-                        "code": "3",
-                        "name": "err"
-                    }
-                }
-            }
-        },
-        "source": {
-            "address": "11.11.11.11",
-            "geo": {
-                "continent_name": "na",
-                "country_iso_code": "us"
-            },
-            "ip": "11.11.11.11",
-            "mac": "00:00:00:00:00:00",
-            "port": 49586
-        },
-        "stormshield": {
-            "confid": 1,
-            "dstportname": "https",
-            "filter": {
-                "action": "pass"
-            },
-            "slotlevel": 2,
-            "srcportname": "ephemeral_fw_tcp"
         }
     }
     	
@@ -389,12 +333,5 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`source.mac` | `keyword` | MAC address of the source. |
 |`source.port` | `long` | Port of the source. |
-|`stormshield.confid` | `float` | None |
-|`stormshield.dstname` | `keyword` | None |
-|`stormshield.dstportname` | `keyword` | None |
 |`stormshield.filter.action` | `keyword` | None |
-|`stormshield.logtype` | `keyword` | None |
-|`stormshield.scirep` | `keyword` |  |
-|`stormshield.slotlevel` | `float` | None |
-|`stormshield.srcportname` | `keyword` | None |
 

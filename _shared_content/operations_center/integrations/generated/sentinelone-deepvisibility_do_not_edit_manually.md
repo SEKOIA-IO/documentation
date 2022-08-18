@@ -1324,10 +1324,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "automation",
             "registered_domain": "alticap.com",
-            "path": "/media/images/1548943185788.jpg",
+            "fragment": "frag",
             "query": "foo=bar",
             "scheme": "https",
-            "fragment": "frag",
+            "path": "/media/images/1548943185788.jpg",
             "port": 443
         },
         "related": {
