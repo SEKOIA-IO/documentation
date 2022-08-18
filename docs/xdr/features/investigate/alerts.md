@@ -53,7 +53,9 @@ There are three possibilities to define the similarity strategy to use. By order
 
 #### Similarity by rule
 
-Rules written by SEKOIA.IO define similarity in the `rule pattern`. The similarity strategy is extracted directly from the rule. This setting is not shown on the interface and users cannot change it by themselves. 
+Rules written by SEKOIA.IO and available in the Rules Catalog may define specific similarity strategies.
+
+Similarity strategies by rule are not shown and cannot be edited on the interface. The API may be used to access this parameter.
 
 **Example from a detection rule’s pattern**
 
