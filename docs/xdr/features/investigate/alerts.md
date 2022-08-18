@@ -68,7 +68,7 @@ similarity_strategy:
 
 #### Similarity by intake
 
-Depending on the intake used to collect logs, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly. 
+Depending on the events that triggered an alert, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly.
 
 To sum up, similarity can be adjusted depending on a file hash, a DNS, or the intake itself.
 
