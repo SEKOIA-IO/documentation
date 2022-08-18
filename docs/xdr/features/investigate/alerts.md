@@ -45,7 +45,7 @@ If an alert has 24 occurrences, it means that it contains 24 events that were cl
 
 ### Similarity strategies
 Alerts are considered similar if a list of fields defined by the similarity strategy have the same values for all events. Some fields may also be grouped together to specify that their values may be swapped.
-There are three main strategies to define similarity of events. By order:  
+There are three possibilities to define the similarity strategy to use. By order:  
 
 1. [Similarity is forced by the rule](#similarity-by-rule)
 2. [Similarity is forced by event](#similarity-by-event)
