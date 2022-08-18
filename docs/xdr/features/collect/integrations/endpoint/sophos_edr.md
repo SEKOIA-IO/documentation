@@ -21,7 +21,7 @@ On the `API credential Summary`, copy the `Client ID` and the `Client Secret`.
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `AWS CloudTrail`.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Sophos EDR`.
 
 ### Pull events
 
