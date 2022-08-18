@@ -69,17 +69,17 @@ Depending on the intake used to collect logs, SEKOIA.IO applies a similarity log
 
 To sum up, similarity can be adjusted depending on a file hash, a DNS, or the intake itself.
 
-| Conditions | Strategy |
+| Conditions | Similarity Strategy |
 | --- | --- |
-| {"dns.question.name": "*"} | ["sekoiaio.entity.uuid", ["source.ip", "destination.ip"], "dns.question.name"] |
-| {"event.dialect": "windows", "user.name": "*"} | ["sekoiaio.entity.uuid", "user.name", "user.id"] |
-| {"event.dialect": "azure windows", "process.name": "*"} | ["sekoiaio.entity.uuid", "process.name", "process.command_line"] |
-| {"event.dialect": "azure active directory", "user.name": "", "action.name": ""} | ["sekoiaio.entity.uuid", "user.name", "user.id", "action.name", "action.type", "action.outcome"] |
-| {"event.dialect": "azure active directory", "action.name": "*"} | ["sekoiaio.entity.uuid", "action.name", "action.type", "action.outcome"] |
-| {"event.dialect": "postfix"} | ["sekoiaio.entity.uuid", "email.from"] |
-| {"sekoiaio.matches.paths": "file.hash.sha256"} | ["sekoiaio.entity.uuid", "file.hash.sha256"] |
-| {"sekoiaio.matches.paths": "file.hash.sha1"} | ["sekoiaio.entity.uuid", "file.hash.sha1"] |
-| {"sekoiaio.matches.paths": "file.hash.md5"} | ["sekoiaio.entity.uuid", "file.hash.md5"] |
+| If `dns.question.name` exists | ["sekoiaio.entity.uuid", ["source.ip", "destination.ip"], "dns.question.name"] |
+| If `event.dialect` is Azure Windows and `user.name` exists | ["sekoiaio.entity.uuid", "user.name", "user.id"] |
+| If `event.dialect` is Azure Windows and `process.name` exists | ["sekoiaio.entity.uuid", "process.name", "process.command_line"] |
+| If `event.dialect` is Azure Active Directory and `user.name` exists and `action.name` exists  | ["sekoiaio.entity.uuid", "user.name", "user.id", "action.name", "action.type", "action.outcome"] |
+| If `event.dialect` is Azure Active Directory and `action.name` exists | ["sekoiaio.entity.uuid", "action.name", "action.type", "action.outcome"] |
+| If `event.dialect` is postfix | ["sekoiaio.entity.uuid", "email.from"] |
+| If `sekoiaio.matches.paths` is file.hash.sha256 | ["sekoiaio.entity.uuid", "file.hash.sha256"] |
+| If `sekoiaio.matches.paths`is file.hash.sha1 | ["sekoiaio.entity.uuid", "file.hash.sha1"] |
+| If `sekoiaio.matches.paths`is file.hash.md5 | ["sekoiaio.entity.uuid", "file.hash.md5"] |
 
 !!!note
     In case similarity linked to your intake does not answer your needs, feel free to contact us at support@sekoia.io.
@@ -92,6 +92,9 @@ Source.ip and destination.ip can be used interchangeably.
 
 !!!note 
     When there is no data due to parsing issues, we don’t show alert similarity except when there is a NULL propriety in source.ip or destination.ip. When the source.ip and the destination.ip are empty, we might use the value NULL as a similarity basis.
+    
+#### Similarity and alert status
+Similarity can only exist within the context of pending, acknowledged and ongoing alerts. If alerts are closed or rejected but still have similar events that can be added to them, a new alert is raised. 
 
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
