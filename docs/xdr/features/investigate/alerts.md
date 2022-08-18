@@ -34,6 +34,65 @@ The urgency can have two different representations on the interface: a numerical
 | Major | [60-80[ |
 | Urgent | [80-100] |
 
+### Alert Similarity (Occurence) 
+Alert similarity is the process by which we collect similar events in the same alert. 
+The information is available in the Alerts table → Column `Occurrence`. 
+
+!!! note
+    Alert similarity has nothing to do with similar alerts. Check this [section](#similar-alerts) to learn more about similar alerts.
+
+**Example**
+If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert. 
+
+There are three main strategies to define similarity of events. By order:  
+
+1. [Similarity is forced by the rule](#similarity-by-rule)
+2. [Similarity is forced by intake](#similarity-by-intake)
+3. [Similarity by default](#default-similarity)
+
+#### Similarity by rule
+
+Rules written by SEKOIA.IO define similarity in the `rule pattern`. The similarity strategy is extracted directly from the rule. This setting is not shown on the interface and users cannot change it by themselves. 
+
+**Example from a detection rule’s pattern**
+
+```json
+similarity_strategy:
+  - sekoiaio.entity.uuid
+  - file.name
+  - user.name
+```
+
+#### Similarity by intake
+
+Depending on the intake used to collect logs, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly. 
+
+To sum up, similarity can be adjusted depending on a file hash, a DNS, or the intake itself.
+
+| Conditions | Strategy |
+| --- | --- |
+| {"dns.question.name": "*"} | ["sekoiaio.entity.uuid", ["source.ip", "destination.ip"], "dns.question.name"] |
+| {"event.dialect": "windows", "user.name": "*"} | ["sekoiaio.entity.uuid", "user.name", "user.id"] |
+| {"event.dialect": "azure windows", "process.name": "*"} | ["sekoiaio.entity.uuid", "process.name", "process.command_line"] |
+| {"event.dialect": "azure active directory", "user.name": "", "action.name": ""} | ["sekoiaio.entity.uuid", "user.name", "user.id", "action.name", "action.type", "action.outcome"] |
+| {"event.dialect": "azure active directory", "action.name": "*"} | ["sekoiaio.entity.uuid", "action.name", "action.type", "action.outcome"] |
+| {"event.dialect": "postfix"} | ["sekoiaio.entity.uuid", "email.from"] |
+| {"sekoiaio.matches.paths": "file.hash.sha256"} | ["sekoiaio.entity.uuid", "file.hash.sha256"] |
+| {"sekoiaio.matches.paths": "file.hash.sha1"} | ["sekoiaio.entity.uuid", "file.hash.sha1"] |
+| {"sekoiaio.matches.paths": "file.hash.md5"} | ["sekoiaio.entity.uuid", "file.hash.md5"] |
+
+!!!note
+    In case similarity linked to your intake does not answer your needs, feel free to contact us at support@sekoia.io.
+
+#### Default similarity
+
+If there is no similarity in the rule and in the intake, you can rely on SEKOIA.IO default similarity formula: same entity, same source.ip and destination.ip. 
+
+Source.ip and destination.ip can be used interchangeably. 
+
+!!!note 
+    When there is no data due to parsing issues, we don’t show alert similarity except when there is a NULL propriety in source.ip or destination.ip. When the source.ip and the destination.ip are empty, we might use the value NULL as a similarity basis.
+
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
