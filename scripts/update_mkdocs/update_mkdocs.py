@@ -165,9 +165,9 @@ def update_doc(intake_repository: str, documentation_repository: str):
 
         generated_file_path = (
             doc_path
-            / "docs"
-            / "operation_center"
-            / "integration_catalog"
+            / "_shared_content"
+            / "operations_center"
+            / "integrations"
             / "generated"
             / f"{intake['manifest']['slug']}_do_not_edit_manually.md"
         )

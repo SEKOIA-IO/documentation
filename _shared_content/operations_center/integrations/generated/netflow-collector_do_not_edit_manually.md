@@ -1,0 +1,182 @@
+
+## Event Categories
+
+
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `Network device logs` | NetFlow aggregates traffic packets into flow. |
+| `Network protocol analysis` | NetFlow analyze traffic at physical/data/transport layers |
+
+
+
+
+
+
+
+
+## Event Samples
+
+Find below few samples of events and how they are normalized by SEKOIA.IO.
+
+
+=== "ipfix.json"
+
+    ```json
+	
+    {
+        "message": "{\"flowStartSysUpTime\":61588,\"destinationIPv4Address\":\"5.6.7.8\",\"flowEndSysUpTime\":62004,\"protocolIdentifier\":6,\"tcpControlBits\":27,\"ipVersion\":4,\"egressInterface\":0,\"sourceTransportPort\":443,\"octetDeltaCount\":6561,\"ingressInterface\":0,\"packetDeltaCount\":12,\"ipClassOfService\":0,\"sourceIPv4Address\":\"1.2.3.4\",\"destinationTransportPort\":37500}",
+        "event": {
+            "duration": 416000000
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "port": 443
+        },
+        "destination": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "port": 37500
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "network": {
+            "type": "ipv4",
+            "transport": "tcp",
+            "iana_number": "6",
+            "bytes": 6561,
+            "packets": 12
+        },
+        "netflow": {
+            "tcp": {
+                "flags": 27
+            }
+        }
+    }
+    	
+	```
+
+
+=== "netflow_v5.json"
+
+    ```json
+	
+    {
+        "message": "{\"IPV4_SRC_ADDR\":\"1.2.3.4\",\"IPV4_DST_ADDR\":\"5.6.7.8\",\"NEXT_HOP\":0,\"INPUT\":0,\"OUTPUT\":0,\"IN_PACKETS\":17,\"IN_OCTETS\":1732,\"FIRST_SWITCHED\":1096510,\"LAST_SWITCHED\":1096623,\"SRC_PORT\":54840,\"DST_PORT\":443,\"TCP_FLAGS\":27,\"PROTO\":6,\"TOS\":0,\"SRC_AS\":0,\"DST_AS\":0,\"SRC_MASK\":0,\"DST_MASK\":0}",
+        "event": {
+            "duration": 113000000
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "port": 54840
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "destination": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "port": 443
+        },
+        "network": {
+            "transport": "tcp",
+            "type": "ipv4",
+            "iana_number": "6",
+            "bytes": 1732,
+            "packets": 17
+        },
+        "netflow": {
+            "tcp": {
+                "flags": 27
+            }
+        }
+    }
+    	
+	```
+
+
+=== "netflow_v9.json"
+
+    ```json
+	
+    {
+        "message": "{\"IPV4_SRC_ADDR\":\"1.2.3.4\",\"IPV4_DST_ADDR\":\"5.6.7.8\",\"FIRST_SWITCHED\":662235,\"LAST_SWITCHED\":662335,\"IN_BYTES\":76,\"IN_PKTS\":1,\"INPUT_SNMP\":0,\"OUTPUT_SNMP\":0,\"L4_SRC_PORT\":38005,\"L4_DST_PORT\":123,\"PROTOCOL\":17,\"TCP_FLAGS\":0,\"IP_PROTOCOL_VERSION\":4,\"SRC_TOS\":0}",
+        "event": {
+            "duration": 100000000
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4",
+            "port": 38005
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "destination": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "port": 123
+        },
+        "network": {
+            "transport": "udp",
+            "type": "ipv4",
+            "iana_number": "17",
+            "bytes": 76,
+            "packets": 1
+        }
+    }
+    	
+	```
+
+
+
+
+
+## Extracted Fields
+
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+
+| Name | Type | Description                |
+| ---- | ---- | ---------------------------|
+|`destination.as.number` | `long` | Unique number allocated to the autonomous system. |
+|`destination.ip` | `ip` | IP address of the destination. |
+|`destination.mac` | `keyword` | MAC address of the destination. |
+|`destination.port` | `long` | Port of the destination. |
+|`event.duration` | `long` | Duration of the event in nanoseconds. |
+|`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
+|`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
+|`http.request.method` | `keyword` | HTTP request method. |
+|`http.response.mime_type` | `keyword` | Mime type of the body of the response. |
+|`http.response.status_code` | `long` | HTTP response status code. |
+|`http.version` | `keyword` | HTTP version. |
+|`netflow.bgp.next_hop` | `keyword` | None |
+|`netflow.next_hop` | `keyword` | None |
+|`netflow.tcp.flags` | `number` | None |
+|`network.application` | `keyword` | Application level protocol name. |
+|`network.bytes` | `long` | Total bytes transferred in both directions. |
+|`network.iana_number` | `keyword` | IANA Protocol Number. |
+|`network.packets` | `long` | Total packets transferred in both directions. |
+|`observer.egress.interface.id` | `keyword` | Interface ID |
+|`observer.ingress.interface.id` | `keyword` | Interface ID |
+|`observer.ingress.interface.name` | `keyword` | Interface name |
+|`source.as.number` | `long` | Unique number allocated to the autonomous system. |
+|`source.ip` | `ip` | IP address of the source. |
+|`source.mac` | `keyword` | MAC address of the source. |
+|`source.port` | `long` | Port of the source. |
+|`url.domain` | `keyword` | Domain of the url. |
+|`url.path` | `wildcard` | Path of the request, such as "/search". |
+|`user_agent.original` | `keyword` | Unparsed user_agent string. |
+
