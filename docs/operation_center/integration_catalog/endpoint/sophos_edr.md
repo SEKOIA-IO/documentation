@@ -15,8 +15,8 @@ This setup guide shows how to forward events produced by Sophos EDR to SEKOIA.IO
 
 ### Credentials
 
-In the Sophos Central Admin, go to `Global Settings > API Credentials Management`.
-Create a new token with `Add Credential`. Type a Credential name, select the appropriate role and add a description.
+In the Sophos Central Admin console, go to `Global Settings > API Credentials Management`.
+Create a new token with `Add Credential`. Complete the name, appropriate role and description.
 On the `API credential Summary`, copy the `Client ID` and the `Client Secret`.
 
 ### Create the intake
@@ -25,11 +25,11 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Get the [Sophos Central SIEM integration script](https://github.com/sophos/Sophos-Central-SIEM-Integration). Configure it according [this guide](https://support.sophos.com/support/s/article/KB-000036372?language=en_US)
+Get the [Sophos Central SIEM integration script](https://github.com/sophos/Sophos-Central-SIEM-Integration) and configure it by following [this Sophos guide](https://support.sophos.com/support/s/article/KB-000036372?language=en_US).
 
 ### Forward events
 
-See our [Ingestion methods page](https://docs.sekoia.io/operation_center/data_collection/ingestion_methods/) to select the appropriate methods to forward your events to sekoia.io according to your needs.
+See the [Ingestion methods page](https://docs.sekoia.io/operation_center/data_collection/ingestion_methods/) to select the appropriate method to forward your events to SEKOIA.IO according to your needs.
 
 
 ## Further Readings
