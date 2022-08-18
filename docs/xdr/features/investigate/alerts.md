@@ -74,25 +74,26 @@ To sum up, similarity can be adjusted depending on a file hash, a DNS, or the in
 
 | Conditions | Similarity Strategy |
 | --- | --- |
-| If `dns.question.name` exists | ["sekoiaio.entity.uuid", ["source.ip", "destination.ip"], "dns.question.name"] |
-| If `event.dialect` is Azure Windows and `user.name` exists | ["sekoiaio.entity.uuid", "user.name", "user.id"] |
-| If `event.dialect` is Azure Windows and `process.name` exists | ["sekoiaio.entity.uuid", "process.name", "process.command_line"] |
-| If `event.dialect` is Azure Active Directory and `user.name` exists and `action.name` exists  | ["sekoiaio.entity.uuid", "user.name", "user.id", "action.name", "action.type", "action.outcome"] |
-| If `event.dialect` is Azure Active Directory and `action.name` exists | ["sekoiaio.entity.uuid", "action.name", "action.type", "action.outcome"] |
-| If `event.dialect` is postfix | ["sekoiaio.entity.uuid", "email.from.address"] |
-| If `file.hash.sha256`matches the rule | ["sekoiaio.entity.uuid", "file.hash.sha256"] |
-| If `file.hash.sha1` matches the rule | ["sekoiaio.entity.uuid", "file.hash.sha1"] |
-| If `file.hash.md5`matches the rule | ["sekoiaio.entity.uuid", "file.hash.md5"] |
+| If `dns.question.name` exists | [`sekoiaio.entity.uuid`, [`source.ip`, `destination.ip`], `dns.question.name`] |
+| If `event.dialect` is Azure Windows and `user.name` exists | [`sekoiaio.entity.uuid`, `user.name`, `user.id`] |
+| If `event.dialect` is Azure Windows and `process.name` exists | [`sekoiaio.entity.uuid`, `process.name`, `process.command_line`] |
+| If `event.dialect` is Azure Active Directory and `user.name` exists and `action.name` exists  | [`sekoiaio.entity.uuid`, `user.name`, `user.id`, `action.name`, `action.type`, `action.outcome`] |
+| If `event.dialect` is Azure Active Directory and `action.name` exists | [`sekoiaio.entity.uuid`, `action.name`, `action.type`, `action.outcome`] |
+| If `event.dialect` is postfix | [`sekoiaio.entity.uuid`, `email.from.address`] |
+| If `file.hash.sha256`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.sha256`] |
+| If `file.hash.sha1` matches the rule | [`sekoiaio.entity.uuid`, `file.hash.sha1`] |
+| If `file.hash.md5`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.md5`] |
 
 !!!note
     In case similarity forced by your intake does not answer your needs, feel free to contact us at support@sekoia.io.
 
 #### Default similarity
 
-If there is no similarity in the rule and in the intake, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+If there is no similarity forced by the rule or by the intake, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+
 `source.ip` and `destination.ip` can be used interchangeably. 
 
-!!!note 
+!!! important 
     When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
     
 #### Similarity and alert status
