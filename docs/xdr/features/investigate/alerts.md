@@ -48,7 +48,7 @@ If an alert has 24 occurrences, it means that it contains 24 events that were cl
 There are three main strategies to define similarity of events. By order:  
 
 1. [Similarity is forced by the rule](#similarity-by-rule)
-2. [Similarity is forced by intake](#similarity-by-intake)
+2. [Similarity is forced by event](#similarity-by-event)
 3. [Similarity by default](#default-similarity)
 
 #### Similarity by rule
