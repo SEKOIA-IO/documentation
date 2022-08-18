@@ -57,14 +57,6 @@ Rules written by SEKOIA.IO and available in the Rules Catalog may define specifi
 
 Similarity strategies by rule are not shown and cannot be edited on the interface. The API may be used to access this parameter.
 
-**Example from a detection rule’s pattern**
-
-```json
-similarity_strategy:
-  - sekoiaio.entity.uuid
-  - file.name
-  - user.name
-```
 
 #### Similarity by intake
 
