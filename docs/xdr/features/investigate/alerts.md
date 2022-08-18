@@ -85,7 +85,7 @@ If the event matches one of the conditions listed below, the associated similari
 | If `file.hash.md5`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.md5`] |
 
 !!!note
-    In case similarity forced by your intake does not answer your needs, feel free to contact us at support@sekoia.io.
+    In case similarity forced by your events does not answer your needs, feel free to contact us at support@sekoia.io.
 
 #### Default similarity
 
