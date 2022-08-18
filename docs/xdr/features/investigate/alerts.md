@@ -13,7 +13,7 @@ An alert can have five possible statuses:
 | **Closed** | All necessary actions have been applied to the alert. This status is a final status. | No action accepted |
 | **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
 
-### Alerts workflow
+### Alerts Workflow
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
 
 ### Alert Urgency
@@ -34,15 +34,18 @@ The urgency can have two different representations on the interface: a numerical
 | Major | [60-80[ |
 | Urgent | [80-100] |
 
-### Alert Similarity (Occurence) 
-Alert similarity is the process by which we collect similar events in the same alert. 
+### Alert Similarity 
+Alert similarity (Occurence) is the process by which we collect similar events in the same alert. 
 The information is available in the Alerts table → Column `Occurrence`. 
 
 !!! note
     Alert similarity has nothing to do with similar alerts. Check this [section](#similar-alerts) to learn more about similar alerts.
 
 **Example**
+
 If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert. 
+
+### Similarity strategies
 
 There are three main strategies to define similarity of events. By order:  
 
@@ -76,25 +79,24 @@ To sum up, similarity can be adjusted depending on a file hash, a DNS, or the in
 | If `event.dialect` is Azure Windows and `process.name` exists | ["sekoiaio.entity.uuid", "process.name", "process.command_line"] |
 | If `event.dialect` is Azure Active Directory and `user.name` exists and `action.name` exists  | ["sekoiaio.entity.uuid", "user.name", "user.id", "action.name", "action.type", "action.outcome"] |
 | If `event.dialect` is Azure Active Directory and `action.name` exists | ["sekoiaio.entity.uuid", "action.name", "action.type", "action.outcome"] |
-| If `event.dialect` is postfix | ["sekoiaio.entity.uuid", "email.from"] |
-| If `sekoiaio.matches.paths` is file.hash.sha256 | ["sekoiaio.entity.uuid", "file.hash.sha256"] |
-| If `sekoiaio.matches.paths`is file.hash.sha1 | ["sekoiaio.entity.uuid", "file.hash.sha1"] |
-| If `sekoiaio.matches.paths`is file.hash.md5 | ["sekoiaio.entity.uuid", "file.hash.md5"] |
+| If `event.dialect` is postfix | ["sekoiaio.entity.uuid", "email.from.address"] |
+| If `file.hash.sha256`matches the rule | ["sekoiaio.entity.uuid", "file.hash.sha256"] |
+| If `file.hash.sha1` matches the rule | ["sekoiaio.entity.uuid", "file.hash.sha1"] |
+| If `file.hash.md5`matches the rule | ["sekoiaio.entity.uuid", "file.hash.md5"] |
 
 !!!note
-    In case similarity linked to your intake does not answer your needs, feel free to contact us at support@sekoia.io.
+    In case similarity forced by your intake does not answer your needs, feel free to contact us at support@sekoia.io.
 
 #### Default similarity
 
-If there is no similarity in the rule and in the intake, you can rely on SEKOIA.IO default similarity formula: same entity, same source.ip and destination.ip. 
-
-Source.ip and destination.ip can be used interchangeably. 
+If there is no similarity in the rule and in the intake, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+`source.ip` and `destination.ip` can be used interchangeably. 
 
 !!!note 
-    When there is no data due to parsing issues, we don’t show alert similarity except when there is a NULL propriety in source.ip or destination.ip. When the source.ip and the destination.ip are empty, we might use the value NULL as a similarity basis.
+    When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
     
 #### Similarity and alert status
-Similarity can only exist within the context of pending, acknowledged and ongoing alerts. If alerts are closed or rejected but still have similar events that can be added to them, a new alert is raised. 
+Similarity can only exist within the context of **Pending**, **Acknowledged** and **Ongoing** alerts. If alerts are **Closed** or **Rejected** but still have similar events that can be added to them, a new alert is raised. 
 
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
