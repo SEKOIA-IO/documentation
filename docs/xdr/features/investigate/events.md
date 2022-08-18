@@ -1,48 +1,31 @@
 # Events
 
-The events page enables investigation in the latest events received by SEKOIA.IO using a log list, a search bar and multiple filters.
-
-## Log listing
-
-The events page displays a list of the latest events received by [SEKOIA.IO](http://sekoia.io/).
-
-The default columns are:
-
-- `Timestamp`: Event date
-- `Event.dialect`: Type of intake that sent the event
-- `Description`: Smart description with clickable links formatted by [SEKOIA.IO](http://sekoia.io/) to show the most important elements and make them easily accessible, such as IP Address, Type or Name
-
-It is possible to add or remove other columns using the  `Show fields`  tab by:
-
-- Selecting the desired field in the `Available field` section using the "+" button
-- Selecting the field to remove in `Selected fields` section using the "-" button
-- Typing the desired field name in the `search bar` at the top of `Selected fields`
-
-### Log lines
-
-Each line of log can be unrolled to show:
-
-- `Details`: Detailed information retrieved from the log about the event once parsed and elements related to the intake and community. These information can be used in the search bar
-- `STIX`: Event as a STIX bundle that will be used by detection engines
-- `Raw event`: Event as received by [SEKOIA.IO](http://sekoia.io/)
+The events page enables in depth investigation in your latest logs sent to SEKOIA.IO. With its complex searchbar, the possibility to easily add and remove filters, and  now its powerful aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
 
 ## Search bar
 
-You can search among the list of events by using the `Dork Query Langage`. A complete documentation on how to use this langage is available [here]( dork_language.md).  At most 100k events can be returned by a search, if this number is reached the search has to be narrowed.
+You can search among the list of events by using the `Dork Query Langage`. A complete documentation on how to use this langage is available [here]( dork_language.md).  
+
+At most 100k events can be returned by a search, if this number is reached the search has to be narrowed.
 
 ### Filters
 
-It is possible to use and combine filters in the search bar. You can do so by:
+It is possible to use and combine filters in the search bar. You can do so in various ways:
 
-- Adding `Smart description`:  click on the "+" button
-- Adding `Details`: The query is made on the existing fields in the "details" section by clicking on the "+" button for one of the items
+- Add `Smart description` by hovering over a value and clicking on the `Filter for value` button 
+- Add `Details`: The query is made on the existing fields in the "details" section by clicking on the "+" button for one of the items
 
 To go back to the list of logs shown, you need to clear filters and select "Current events"
 
 ### Save filters
 
-It is possible to save a query by clicking on the star icon next to the search bar. The period of time is not saved with it.
-To check it out, you can click on "Saved queries" then select the wanted period of time and press enter to see the events found.
+It is possible to save a query by clicking the Star icon in the search bar. The selected period of time is not saved with it.
+
+To access your saved queries:
+
+1. Click on `Saved queries`(the star button in the top right of the page) 
+2. Select a period of time 
+3. Click on `Search` to see your saved query events
 
 ### Date
 
@@ -68,12 +51,53 @@ Search job have IDs that are available in the browser address bar.
 
 You can share your researches with colleagues by sending them these job IDs, which are accessible within your community.
 
+## Log listing
+
+The columns by default are:
+
+- `Timestamp`: Event date
+- `Event.dialect`: Type of intake that sent the event
+- `Description`: Smart description with clickable links formatted by SEKOIA.IO to show the most important elements and make them easily accessible, such as IP address, type or entity
+
+### Show and hide columns
+
+It's possible to show or hide columns in your events table by clicking on the `Show fields` button. 
+
+Once open, you can add fields that are listed under `available fields` by simply clicking on the "+" button next to them. This will automatically add the column to your table. 
+
+If you need to remove a column, there are two ways to do so: 
+- Hover on the column and a "-" will appear. Click on it and the column will be hidden 
+- Click on `Show fields` and hover your mouse on the `Selected fields` that you want to hide. Click the "-" that appears and they'll be hidden 
+
+You can always find these fields in the `Available fields` section.
+
+!!! tip 
+    You can also change the order of your columns by dragging them using the icon next to the column's name. 
+
+### Log lines
+
+Each line of log can be unrolled to show:
+
+- `STIX`: Event as a STIX bundle that will be used by detection engines
+- `Raw event`: Event as received by SEKOIA.IO
+- `Detail`: Detailed information retrieved from the log after parsing with elements from the event related to the intake and the community. 
+
+This table explains the main actions that can be done for each of these fields: 
+
+| Action | Description |
+| --- | --- |
+| Filter for value | Adds field in the query |
+| Filter out value | Removes field in the query |
+| Toggle column in table | Adds field as a column in the table  |
+| Search events with this value | Opens right panel to search field in all events |
+| Copy | Copy value of the field |
+
 ## Log table
     
 ### Events enrichment
 Event enrichment consists of adding contextualisation data to the standardized event. The objective is to increase the reliability of detection and qualification.
 
-Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [assets](https://docs.sekoia.io/xdr/features/collect/assets/).
+Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
 
 The first source gathers all the technical artefacts, also called observables, collected by SEKOIA.IO analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
 
@@ -81,13 +105,16 @@ The second source of enrichment relies on a configuration management database (i
 
 For example, this enrichment allows you to identify the nature of the legitimate actions expected on an office workstation associated with a specific team in your community. 
 
-You can enable or disable enrichment in logs by clicking on the `enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
+You can enable or disable enrichment in logs by clicking on the enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
 
 ### Export the results of a search
 
 You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export.
-To do so, click on the button `download`on the upper right of the logs' table.
-You can either export all the fiels or export only selected fields.
+To do so: 
+1. Click on the button `Export events` on the upper right of the logs' table
+2. Either export all fields or only a selection of fields
+
+When you export all fields, even the fields that don't have a value will be exported in a table. 
 The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the UUID of the job search.
 
 !!! note
@@ -97,7 +124,7 @@ The export will be made to the default folder defined for downloads. Name of the
 
 You can toggle values in your logs by clicking on the button `Toggle value selection` in the upper right side of the logs table. 
 
-Go through your events and select values of interest. All similar values will be selected and highlighted in the events list. 
+Go through your events and click on values of interest. All similar values will be selected and highlighted in the events list. 
 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.io/xdr/features/detect/sigma/) with a pattern based on selected values.
 
