@@ -38,8 +38,6 @@ The urgency can have two different representations on the interface: a numerical
 Alert similarity (Occurence) is the process by which we collect similar events in the same alert. 
 The information is available in the Alerts table → Column `Occurrence`. 
 
-!!! note
-    Alert similarity has nothing to do with similar alerts. Check this [section](#similar-alerts) to learn more about similar alerts.
 
 **Example**
 
