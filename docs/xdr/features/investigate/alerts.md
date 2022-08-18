@@ -97,8 +97,9 @@ If there is no similarity forced by the rule or by the event, you can rely on SE
     When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
     
 #### Similarity and alert status
-Similarity can only exist within the context of **Pending**, **Acknowledged** and **Ongoing** alerts. If alerts are **Closed** or **Rejected** but still have similar events that can be added to them, a new alert is raised. 
+As long as there is an existing similar alert with status **Pending**, **Acknowledged** or **Ongoing**, new matches are added to the alert as occurrences.
 
+If only **Closed** or **Rejected** alerts are similar, a new alert is created. **Closed** and **Rejected** similar alerts are listed inside the [Similar Alerts](#similar-alerts) tab.
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
