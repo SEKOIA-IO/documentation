@@ -70,7 +70,7 @@ similarity_strategy:
 
 Depending on the events that triggered an alert, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly.
 
-To sum up, similarity can be adjusted depending on a file hash, a DNS, or the intake itself.
+If the event matches one of the conditions listed below, the associated similarity strategy is used.
 
 | Conditions | Similarity Strategy |
 | --- | --- |
