@@ -89,7 +89,7 @@ If the event matches one of the conditions listed below, the associated similari
 
 #### Default similarity
 
-If there is no similarity forced by the rule or by the intake, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+If there is no similarity forced by the rule or by the event, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
 
 `source.ip` and `destination.ip` can be used interchangeably. 
 
