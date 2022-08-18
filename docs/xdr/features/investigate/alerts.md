@@ -58,7 +58,7 @@ Rules written by SEKOIA.IO and available in the Rules Catalog may define specifi
 Similarity strategies by rule are not shown and cannot be edited on the interface. The API may be used to access this parameter.
 
 
-#### Similarity by intake
+#### Similarity by event
 
 Depending on the events that triggered an alert, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly.
 
