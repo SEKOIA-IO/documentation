@@ -13,7 +13,7 @@ An alert can have five possible statuses:
 | **Closed** | All necessary actions have been applied to the alert. This status is a final status. | No action accepted |
 | **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
 
-### Alerts workflow
+### Alerts Workflow
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
 
 ### Alert Urgency
@@ -34,6 +34,64 @@ The urgency can have two different representations on the interface: a numerical
 | Major | [60-80[ |
 | Urgent | [80-100] |
 
+### Alert Similarity 
+Alert similarity (Occurence) is the process by which we collect similar events in the same alert. 
+The information is available in the Alerts table → Column `Occurrence`. 
+
+
+**Example**
+
+If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert. 
+
+### Similarity strategies
+Alerts are considered similar if a list of fields defined by the similarity strategy have the same values for all events. Some fields may also be grouped together to specify that their values may be swapped.
+There are three possibilities to define the similarity strategy to use. By order:  
+
+1. [Similarity is forced by the rule](#similarity-by-rule)
+2. [Similarity is forced by event](#similarity-by-event)
+3. [Similarity by default](#default-similarity)
+
+#### Similarity by rule
+
+Rules written by SEKOIA.IO and available in the Rules Catalog may define specific similarity strategies.
+
+Similarity strategies by rule are not shown and cannot be edited on the interface. The API may be used to access this parameter.
+
+
+#### Similarity by event
+
+Depending on the events that triggered an alert, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly.
+
+If the event matches one of the conditions listed below, the associated similarity strategy is used.
+
+| Conditions | Similarity Strategy |
+| --- | --- |
+| If `dns.question.name` exists | [`sekoiaio.entity.uuid`, [`source.ip`, `destination.ip`], `dns.question.name`] |
+| If `event.dialect` is Azure Windows and `user.name` exists | [`sekoiaio.entity.uuid`, `user.name`, `user.id`] |
+| If `event.dialect` is Azure Windows and `process.name` exists | [`sekoiaio.entity.uuid`, `process.name`, `process.command_line`] |
+| If `event.dialect` is Azure Active Directory and `user.name` exists and `action.name` exists  | [`sekoiaio.entity.uuid`, `user.name`, `user.id`, `action.name`, `action.type`, `action.outcome`] |
+| If `event.dialect` is Azure Active Directory and `action.name` exists | [`sekoiaio.entity.uuid`, `action.name`, `action.type`, `action.outcome`] |
+| If `event.dialect` is postfix | [`sekoiaio.entity.uuid`, `email.from.address`] |
+| If `file.hash.sha256`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.sha256`] |
+| If `file.hash.sha1` matches the rule | [`sekoiaio.entity.uuid`, `file.hash.sha1`] |
+| If `file.hash.md5`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.md5`] |
+
+!!!note
+    In case similarity forced by your events does not answer your needs, feel free to contact us at support@sekoia.io.
+
+#### Default similarity
+
+If there is no similarity forced by the rule or by the event, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+
+`source.ip` and `destination.ip` can be used interchangeably. 
+
+!!! important 
+    When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
+    
+#### Similarity and alert status
+As long as there is an existing similar alert with status **Pending**, **Acknowledged** or **Ongoing**, new matches are added to the alert as occurrences.
+
+If only **Closed** or **Rejected** alerts are similar, a new alert is created. **Closed** and **Rejected** similar alerts are listed inside the [Similar Alerts](#similar-alerts) tab.
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
