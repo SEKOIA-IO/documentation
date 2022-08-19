@@ -1,12 +1,25 @@
 # Events
 
-The events page enables in depth investigation in your latest logs sent to SEKOIA.IO. With its complex searchbar, the possibility to easily add and remove filters, and  now its powerful aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
+The events page provides a centralized view of your events and enables in depth investigation in the latest logs sent to SEKOIA.IO.
+With its complex searchbar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
+
+In this documentation, you will learn more about the different parts that constitute the Events page: 
+- The [Search bar](#search-bar) and its filtering and sharing options
+- The [list of events](#log-listing) and the detailed view of your parsed events 
+- The mechanism behind [events enrichment](#events-enrichment) or how events are contextualized in SEKOIA.IO 
+- The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](Create-Anomaly-Detection-rule-from-the-aggregation-view) from your query
+
+!!! note
+    To send your logs to SEKOIA.IO, please refer to this [section](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/).
 
 ## Search bar
 
-You can search among the list of events by using the `Dork Query Langage`. A complete documentation on how to use this langage is available [here]( dork_language.md).  
+You can search among the list of events by using the `Dork Query Language`. A complete documentation on how to use this language is available [here]( dork_language.md).  
 
-At most 100k events can be returned by a search, if this number is reached the search has to be narrowed.
+Fields you can use to narrow your events search are listed [here](https://docs.sekoia.io/xdr/features/investigate/querying_events/). 
+
+!!! note
+    At most 100k events can be returned by a search. If this number is reached, the search has to be narrowed.
 
 ### Filters
 
