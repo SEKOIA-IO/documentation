@@ -149,7 +149,7 @@ When you export all fields, even the fields that don't have a value will be expo
 The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the UUID of the job search.
 
 !!! note
-    The `description field will not be exported.
+    The `description` field will not be exported.
     
 ### Toggle value selection
 
