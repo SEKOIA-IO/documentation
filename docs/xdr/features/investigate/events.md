@@ -144,17 +144,24 @@ Go through your events and click on values of interest. All similar values will 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.io/xdr/features/detect/sigma/) with a pattern based on selected values.
     
 ## Events enrichment
-Event enrichment consists of adding contextualisation data to the standardized event. The objective is to increase the reliability of detection and qualification.
+
+Event enrichment consists of adding contextualization data to the standardized event. The objective is to increase the reliability of detection and qualification.
 
 Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
 
 The first source gathers all the technical artefacts, also called observables, collected by SEKOIA.IO analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
 
-The second source of enrichment relies on a configuration management database (i.e. assets) to provide organization-specific context. The user is invited to consolidate a list of key resources such as brands, users, applications, or hardware present in the organisation. These assets are used continuously to contextualise events with information from the associated resources. This contextualisation greatly increases the effectiveness of qualification. 
+The second source of enrichment relies on a configuration management database (i.e. assets) to provide organization-specific context. The user is invited to consolidate a list of key resources such as brands, users, applications, or hardware present in the organisation. These assets are used continuously to contextualize events with information from the associated resources. This contextualization greatly increases the effectiveness of qualification. 
 
 For example, this enrichment allows you to identify the nature of the legitimate actions expected on an office workstation associated with a specific team in your community. 
 
-You can enable or disable enrichment in logs by clicking on the `enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
+You can enable or disable enrichment in logs by clicking on the `enable/disable enrichment` in the upper right of the logs table. 
+Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
+
+To see the value of enriched values, click on the enriched field and you'll be provided with additional context. 
+
+!!! note 
+    If the value exists in the Intelligence Center, tags associated with the value in question will be added as additional context. 
 
 
 ## Aggregation
