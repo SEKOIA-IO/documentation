@@ -95,6 +95,7 @@ Last step to integrate your log into SEKOIA.IO, please follow the steps below:
  - storage_container_name = value of EntityPath
 
 **Format example**
+
 - Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=active-directory-event"`).
 - Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
 - Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
