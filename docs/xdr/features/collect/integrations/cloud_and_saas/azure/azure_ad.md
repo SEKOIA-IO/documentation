@@ -107,7 +107,7 @@ Go to events page and search events in last 5 minutes by Azure AD intake key    
 - Please check the configuration and fill the fields with the right information
 
 - It is possible to investigate on the tab Run and see the response by clicking on the module
-<img width="938" alt="image" src="https://user-images.githubusercontent.com/101662967/185441434-64aacf81-a754-421a-ac87-ff9c06a3f40f.png">
+<img width="100%" alt="image" src="https://user-images.githubusercontent.com/101662967/185441434-64aacf81-a754-421a-ac87-ff9c06a3f40f.png">
 
 
 ### Forward the Connection Keys to SEKOIA.IO
