@@ -322,7 +322,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
   Exec $Message = to_json();
 </Input>
 
-<Output rsyslog>
+<Output sekoia_output>
   Module om_ssl
   Host intake.sekoia.io
   Port 10514
@@ -335,7 +335,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 </Output>
 
 <Route eventlog_to_sekoia_intake>
-  Path eventlog => rsyslog
+  Path eventlog => sekoia_output
 </Route>
 ```
 
