@@ -19,6 +19,8 @@ You can search among the list of events by using the `Dork Query Language`. A co
 
 Fields you can use to narrow your events search are listed [here](https://docs.sekoia.io/xdr/features/investigate/querying_events/). 
 
+![search-bar-events](/assets/operation_center/events/events-search.png){: style="max-width:100%"}
+
 !!! note
     At most 100K events can be returned by a search. If this number is reached, the search has to be narrowed.
 
@@ -34,6 +36,8 @@ To go back to the list of logs shown, you need to clear filters and select `Curr
 ### Save search query
 
 It is possible to save a query by clicking the `Star icon` in the search bar. The selected period of time is not saved with it.
+
+![save_query](/assets/operation_center/events/event-save-query.png){ align=right }
 
 To access your saved queries:
 
@@ -52,6 +56,7 @@ It is possible to select the period of time to be taken into consideration when 
 Click on the `Apply` button to start your search based on these filters.
 
 ### Search history
+![search-history](/assets/operation_center/events/search-history.png){ align=right }
 
 Each search result lasts 10 min by default and it’s possible to configure the retention to reach one day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
 
@@ -67,6 +72,8 @@ You can share your events' page with other users by sending them these job IDs, 
 
 ### Histogram 
 
+![histogram](/assets/operation_center/events/event-histogram.png){ align=right }
+
 Events histogram appears under the search bar when a query has been made and matches events in the list. 
 
 It gives a consolidated view of all matching events in a specific  period of time and it highlights the number of events as well as events that are present in alerts.
@@ -79,6 +86,8 @@ These are the main actions that can be done on the histogram:
 
 ## Log listing
 
+![log-listing](/assets/operation_center/events/log-listing.png){: style="max-width:100%"}
+
 The columns by default are:
 
 - `Timestamp`: Event date
@@ -88,6 +97,8 @@ The columns by default are:
 ### Show and hide columns
 
 It's possible to show or hide columns in your events table by clicking on the `Show fields` button. 
+
+![show-hide-column](/assets/operation_center/events/show-hide-columns.png){: style="max-width:100%"}
 
 Once open, you can add fields that are listed under `available fields` by simply clicking on the "+" button next to them. This will automatically add the column to your table. 
 
@@ -106,6 +117,9 @@ You can always find these fields in the `Available fields` section.
 
 Each line of log can be unrolled to show:
 
+![line-details](/assets/operation_center/events/log-details.png){ align=right }
+
+
 - `STIX`: Event as a STIX bundle that will be used by detection engines
 - `Raw event`: Event as received by SEKOIA.IO
 - `Detail`: Detailed information retrieved from the log after parsing with elements from the event related to the intake and the community. 
@@ -123,6 +137,8 @@ This table explains the main actions that can be done for each of these fields:
 ### Export the results of a search
 
 You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export.
+![export-logs](/assets/operation_center/events/export-logs.png){ align=right }
+
 To do so: 
 
 1. Click on the button `Export events` on the upper right of the logs' table
@@ -133,15 +149,18 @@ When you export all fields, even the fields that don't have a value will be expo
 The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the UUID of the job search.
 
 !!! note
-    The 'description' field will not be exported.
+    The `description field will not be exported.
     
 ### Toggle value selection
+
 
 You can toggle values in your logs by clicking on the button `Toggle value selection` in the upper right side of the logs table. 
 
 Go through your events and click on values of interest. All similar values will be selected and highlighted in the events list. 
 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.io/xdr/features/detect/sigma/) with a pattern based on selected values.
+
+![toggle-value-selection](/assets/operation_center/events/export-logs.png){: style="max-width:100%"}
     
 ## Events enrichment
 
@@ -195,11 +214,15 @@ To compute aggregations on a list of events, you’ll have to:
 
 Depending on which methods and fields have been selected, a line graph is presented with the event values on the y-axis and the date as defined by the date range on the x-axis. 
 
+![aggregation-graph](/assets/operation_center/events/aggregation-graph.png){: style="max-width:100%"}
+
 For each aggregate the chart displays the first value, last value, minimum, and maximum sorted by timestamp and connects them by one line per variable.
 
 You can hover on the line graph to see the actual value of each point as well as the exact date of the point.
 
 ### Create Anomaly Detection rule from the aggregation view
+
+![create-rule](/assets/operation_center/events/create-rule.png){ align=right }
 
 You can create anomaly detection rules directly from this view. 
 
