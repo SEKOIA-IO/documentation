@@ -15,7 +15,7 @@ It is possible to use and combine filters in the search bar. You can do so in va
 - Add `Smart description` by hovering over a value and clicking on the `Filter for value` button 
 - Add `Details`: The query is made on the existing fields in the "details" section by clicking on the "+" button for one of the items
 
-To go back to the list of logs shown, you need to clear filters and select "Current events"
+To go back to the list of logs shown, you need to clear filters and select `Current events`.
 
 ### Save filters
 
@@ -49,7 +49,7 @@ Search job have IDs that are available in the browser address bar.
 <https://app.sekoia.io/operations/events?jobId=2b5ce17f-517e-4dd3-8253-1495a6ba538b>
 ```
 
-You can share your researches with colleagues by sending them these job IDs, which are accessible within your community.
+You can share your events' page with other users by sending them these job IDs, which are accessible for all users within your community.
 
 ## Log listing
 
@@ -66,7 +66,9 @@ It's possible to show or hide columns in your events table by clicking on the `S
 Once open, you can add fields that are listed under `available fields` by simply clicking on the "+" button next to them. This will automatically add the column to your table. 
 
 If you need to remove a column, there are two ways to do so: 
+
 - Hover on the column and a "-" will appear. Click on it and the column will be hidden 
+
 - Click on `Show fields` and hover your mouse on the `Selected fields` that you want to hide. Click the "-" that appears and they'll be hidden 
 
 You can always find these fields in the `Available fields` section.
@@ -92,29 +94,16 @@ This table explains the main actions that can be done for each of these fields:
 | Search events with this value | Opens right panel to search field in all events |
 | Copy | Copy value of the field |
 
-## Log table
-    
-### Events enrichment
-Event enrichment consists of adding contextualisation data to the standardized event. The objective is to increase the reliability of detection and qualification.
-
-Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
-
-The first source gathers all the technical artefacts, also called observables, collected by SEKOIA.IO analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
-
-The second source of enrichment relies on a configuration management database (i.e. assets) to provide organization-specific context. The user is invited to consolidate a list of key resources such as brands, users, applications, or hardware present in the organisation. These assets are used continuously to contextualise events with information from the associated resources. This contextualisation greatly increases the effectiveness of qualification. 
-
-For example, this enrichment allows you to identify the nature of the legitimate actions expected on an office workstation associated with a specific team in your community. 
-
-You can enable or disable enrichment in logs by clicking on the enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
-
 ### Export the results of a search
 
 You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export.
 To do so: 
+
 1. Click on the button `Export events` on the upper right of the logs' table
 2. Either export all fields or only a selection of fields
 
 When you export all fields, even the fields that don't have a value will be exported in a table. 
+
 The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the UUID of the job search.
 
 !!! note
@@ -127,6 +116,20 @@ You can toggle values in your logs by clicking on the button `Toggle value selec
 Go through your events and click on values of interest. All similar values will be selected and highlighted in the events list. 
 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.io/xdr/features/detect/sigma/) with a pattern based on selected values.
+    
+## Events enrichment
+Event enrichment consists of adding contextualisation data to the standardized event. The objective is to increase the reliability of detection and qualification.
+
+Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
+
+The first source gathers all the technical artefacts, also called observables, collected by SEKOIA.IO analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
+
+The second source of enrichment relies on a configuration management database (i.e. assets) to provide organization-specific context. The user is invited to consolidate a list of key resources such as brands, users, applications, or hardware present in the organisation. These assets are used continuously to contextualise events with information from the associated resources. This contextualisation greatly increases the effectiveness of qualification. 
+
+For example, this enrichment allows you to identify the nature of the legitimate actions expected on an office workstation associated with a specific team in your community. 
+
+You can enable or disable enrichment in logs by clicking on the enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
+
 
 ## Aggregation
 
