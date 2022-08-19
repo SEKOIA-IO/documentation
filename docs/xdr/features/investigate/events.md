@@ -1,7 +1,7 @@
 # Events
 
 The events page provides a centralized view of your events and enables in depth investigation in the latest logs sent to SEKOIA.IO.
-With its query-based searchbar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
+With its query-based search bar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
 
 In this documentation, we will dive into the different parts that constitute the Events page: 
 
@@ -72,9 +72,9 @@ You can share your events' page with other users by sending them these job IDs, 
 
 ### Histogram 
 
-![histogram](/assets/operation_center/events/event-histogram.png){ align=right }
-
 Events histogram appears under the search bar when a query has been made and matches events in the list. 
+
+![histogram](/assets/operation_center/events/event-histogram.png){ align=right }
 
 It gives a consolidated view of all matching events in a specific  period of time and it highlights the number of events as well as events that are present in alerts.
 
@@ -226,3 +226,5 @@ You can hover on the line graph to see the actual value of each point as well as
 You can create anomaly detection rules directly from this view. 
 
 If you select `count` as aggregation method, a `Create new rule` button shows up next to the fields and the Rule Creation panel opens up with detection patterns automatically set to Anomaly, and with your events’ query and the chosen aggregation method.
+
+Learn more about Anomaly Detection rules in [this section](https://docs.sekoia.io/xdr/features/detect/anomaly/). 
