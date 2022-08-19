@@ -3,9 +3,11 @@
 Dork is a domain-specific language used to generate search queries that integrate advanced search operators.
 This language offers to exceed filters available on APIs.
 
+Please refer to [Elastic Common Schema (ECS) Reference](https://www.elastic.co/guide/en/ecs/master/index.html) if you need to look up a field available in SEKOIA.IO. 
+
 ## Example
 
-In the Operations Center, on the Events page, the following query will match all events that have not failed and were received from the start of January 1st, 2020 to the end of January 2nd, 2020:
+On the Events page, the following query will match all events that have not failed and were received from the start of January 1st, 2020 to the end of January 2nd, 2020:
 
 `NOT(error_code:"Failed") AND timestamp:>=2020-01-01T00:00:00Z AND timestamp:<2020-01-03T00:00:00Z`
 
