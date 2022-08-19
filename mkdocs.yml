@@ -429,8 +429,8 @@ plugins:
       integrations/sentinelone-deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
       integrations/sentinelone.md: xdr/features/collect/integrations/endpoint/sentinelone.md
       integrations/sentinelone_deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
-      integrations/sophos_fw.md: xdr/features/collect/integrations/network/sophos_fw.md
       integrations/sophos_edr.md: xdr/features/collect/integrations/endpoint/sophos_edr.md
+      integrations/sophos_fw.md: xdr/features/collect/integrations/network/sophos_fw.md
       integrations/spamassassin.md: xdr/features/collect/integrations/email/spamassassin.md
       integrations/squid.md: xdr/features/collect/integrations/network/squid.md
       integrations/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
@@ -535,6 +535,7 @@ plugins:
       operation_center/integration_catalog/endpoint/panda_security_aether.md: xdr/features/collect/integrations/endpoint/panda_security_aether.md
       operation_center/integration_catalog/endpoint/sentinelone.md: xdr/features/collect/integrations/endpoint/sentinelone.md
       operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
+      operation_center/integration_catalog/endpoint/sophos_edr.md: xdr/features/collect/integrations/endpoint/sophos_edr.md
       operation_center/integration_catalog/endpoint/tanium.md: xdr/features/collect/integrations/endpoint/tanium.md
       operation_center/integration_catalog/endpoint/windows.md: xdr/features/collect/integrations/endpoint/windows.md
       operation_center/integration_catalog/generic/cef.md: xdr/features/collect/integrations/generic/cef.md
@@ -550,7 +551,6 @@ plugins:
       operation_center/integration_catalog/network/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
       operation_center/integration_catalog/network/pulse.md: xdr/features/collect/integrations/network/pulse.md
       operation_center/integration_catalog/network/sophos_fw.md: xdr/features/collect/integrations/network/sophos_fw.md
-      operation_center/integration_catalog/endpoint/sophos_edr.md: xdr/features/collect/integrations/endpoint/sophos_edr.md
       operation_center/integration_catalog/network/squid.md: xdr/features/collect/integrations/network/squid.md
       operation_center/integration_catalog/network/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
       operation_center/integration_catalog/network/suricata.md: xdr/features/collect/integrations/network/suricata.md
