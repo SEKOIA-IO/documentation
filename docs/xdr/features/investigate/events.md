@@ -153,14 +153,13 @@ The export will be made to the default folder defined for downloads. Name of the
     
 ### Toggle value selection
 
-
 You can toggle values in your logs by clicking on the button `Toggle value selection` in the upper right side of the logs table. 
 
 Go through your events and click on values of interest. All similar values will be selected and highlighted in the events list. 
 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.io/xdr/features/detect/sigma/) with a pattern based on selected values.
 
-![toggle-value-selection](/assets/operation_center/events/export-logs.png){: style="max-width:100%"}
+![toggle-value-selection](/assets/operation_center/events/toggle-value.png){: style="max-width:100%"}
     
 ## Events enrichment
 
