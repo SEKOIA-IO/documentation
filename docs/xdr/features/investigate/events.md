@@ -65,6 +65,18 @@ Search job have IDs that are available in the browser address bar.
 
 You can share your events' page with other users by sending them these job IDs, which are accessible for all users within your community.
 
+### Histogram 
+
+Events histogram appears under the search bar when a query has been made and matches events in the list. 
+
+It gives a consolidated view of all matching events in a specific  period of time and it highlights the number of events as well as events that are present in alerts.
+
+These are the main actions that can be done on the histogram:  
+
+- Manually select a date range by clicking on the histogram and dragging the cursor over events you're interesting in. This will automatically filter your events list based on your selection
+- Reset date range by clicking on the `resert range` button
+ 
+
 ## Log listing
 
 The columns by default are:
