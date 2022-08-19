@@ -3024,7 +3024,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.code_signature.exists` | `boolean` | Boolean to capture if a signature is present. |
 |`process.code_signature.subject_name` | `keyword` | Subject name of the code signer |
 |`process.code_signature.valid` | `boolean` | Boolean to capture if the digital signature is verified against the binary content. |
-|`process.command_line` | `wildcard` | Full command line that started the process. |
+|`process.command_line` | `keyword` | None |
 |`process.executable` | `keyword` | Absolute path to the process executable. |
 |`process.exit_code` | `long` | The exit code of the process. |
 |`process.hash.md5` | `keyword` | MD5 hash. |
