@@ -74,7 +74,7 @@ It gives a consolidated view of all matching events in a specific  period of tim
 These are the main actions that can be done on the histogram:  
 
 - Manually select a date range by clicking on the histogram and dragging the cursor over events you're interesting in. This will automatically filter your events list based on your selection
-- Reset date range by clicking on the `resert range` button
+- Reset date range by clicking on the `reset range` button
  
 
 ## Log listing
