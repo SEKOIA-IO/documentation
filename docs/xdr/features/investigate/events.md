@@ -128,7 +128,7 @@ The second source of enrichment relies on a configuration management database (i
 
 For example, this enrichment allows you to identify the nature of the legitimate actions expected on an office workstation associated with a specific team in your community. 
 
-You can enable or disable enrichment in logs by clicking on the enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
+You can enable or disable enrichment in logs by clicking on the `enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
 
 
 ## Aggregation
