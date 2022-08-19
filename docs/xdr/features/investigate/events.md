@@ -33,7 +33,7 @@ To go back to the list of logs shown, you need to clear filters and select `Curr
 
 ### Save search query
 
-It is possible to save a query by clicking the `Star icon in the search bar. The selected period of time is not saved with it.
+It is possible to save a query by clicking the `Star icon` in the search bar. The selected period of time is not saved with it.
 
 To access your saved queries:
 
