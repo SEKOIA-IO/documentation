@@ -84,7 +84,8 @@ Last step to integrate your log into SEKOIA.IO, please follow the steps below:
 1. Create a playbook with Trigger module **Consume Eventhub messages** in Microsoft Azure technology
 2. Setup Module configuration (= default)
 
-3) Setup Trigger configuration
+3. Setup Trigger configuration
+
  - hub_connection_string = Connection string–primary key finishing by `Entitypath =`
  - hub_consumer_group = `sekoiaio`
  - hub_name = value of EntityPath
