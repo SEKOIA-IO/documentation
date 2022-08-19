@@ -1,7 +1,7 @@
 # Events
 
 The events page provides a centralized view of your events and enables in depth investigation in the latest logs sent to SEKOIA.IO.
-With its complex searchbar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
+With its query-based searchbar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
 
 In this documentation, we will dive into the different parts that constitute the Events page: 
 
