@@ -97,7 +97,7 @@ Last step to integrate your log into SEKOIA.IO, please follow the steps below:
 - Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
 - Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
 
-<img width="932" alt="image" src="https://user-images.githubusercontent.com/101662967/185440012-876508a5-bdf6-4ad5-a212-6f4f7bc0564e.png">
+<img width="100%" alt="image" src="https://user-images.githubusercontent.com/101662967/185440012-876508a5-bdf6-4ad5-a212-6f4f7bc0564e.png">
 
 ### Troubleshoot
 
