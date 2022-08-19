@@ -20,7 +20,7 @@ You can search among the list of events by using the `Dork Query Language`. A co
 Fields you can use to narrow your events search are listed [here](https://docs.sekoia.io/xdr/features/investigate/querying_events/). 
 
 !!! note
-    At most 100k events can be returned by a search. If this number is reached, the search has to be narrowed.
+    At most 100K events can be returned by a search. If this number is reached, the search has to be narrowed.
 
 ### Filters
 
