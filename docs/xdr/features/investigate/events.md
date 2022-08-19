@@ -31,9 +31,9 @@ It is possible to use and combine filters in the search bar. You can do so in va
 
 To go back to the list of logs shown, you need to clear filters and select `Current events`.
 
-### Save filters
+### Save search query
 
-It is possible to save a query by clicking the Star icon in the search bar. The selected period of time is not saved with it.
+It is possible to save a query by clicking the `Star icon in the search bar. The selected period of time is not saved with it.
 
 To access your saved queries:
 
