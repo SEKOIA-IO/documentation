@@ -25,94 +25,71 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=15:01:22 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"app-ctrl\" eventtype=\"app-ctrl-all\" level=\"information\" vd=\"root\" eventtime=1631192482 appid=65432 user=\"jean@SEKOIANETWORK.EXAMPLE.FR\" group=\"ADM\" srcip=192.168.1.2 dstip=1.2.3.4 srcport=43564 dstport=443 srcintf=\"port01\" srcintfrole=\"undefined\" dstintf=\"port01\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" direction=\"incoming\" policyid=01 sessionid=000000001 applist=\"standard\" appcat=\"Web.Client\" app=\"HTTPS.BROWSER\" action=\"pass\" hostname=\"example.com\" incidentserialno=123456789 url=\"/\" msg=\"Web.Client: HTTPS.BROWSER,\" apprisk=\"medium\"",
+        "event": {
+            "start": "2021-09-09T13:01:22.0Z",
+            "kind": "utm",
+            "category": "app-ctrl"
+        },
         "action": {
             "name": "pass",
             "type": "app-ctrl-all"
         },
-        "destination": {
-            "address": "example.com",
-            "domain": "example.com",
-            "ip": "1.2.3.4",
-            "port": 443,
-            "registered_domain": "example.com",
-            "top_level_domain": "com"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "app-ctrl",
-            "kind": "utm",
-            "start": "2021-09-09T13:01:22.0Z"
-        },
-        "network": {
-            "direction": "inbound",
-            "protocol": "tcp"
-        },
         "fortinet": {
+            "vd": "root",
+            "devid": "OIDL03VZRZEDKKD",
+            "logid": "1000234512",
+            "sessionid": "000000001",
+            "srcintfrole": "undefined",
+            "dstintfrole": "undefined",
+            "policyid": "01",
+            "level": "information",
+            "proto": "6",
+            "appcat": "Web.Client",
             "app": "HTTPS.BROWSER",
             "applist": "standard",
             "apprisk": "medium",
-            "appcat": "Web.Client",
-            "devid": "OIDL03VZRZEDKKD",
-            "dstintfrole": "undefined",
             "group": "ADM",
-            "level": "information",
-            "logid": "1000234512",
-            "policyid": "01",
-            "sessionid": "000000001",
-            "direction": "incoming",
-            "srcintfrole": "undefined",
-            "vd": "root",
             "incidentserialno": "123456789",
-            "proto": "6"
+            "direction": "incoming"
         },
-        "message": "time=15:01:22 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"app-ctrl\" eventtype=\"app-ctrl-all\" level=\"information\" vd=\"root\" eventtime=1631192482 appid=65432 user=\"jean@SEKOIANETWORK.EXAMPLE.FR\" group=\"ADM\" srcip=192.168.1.2 dstip=1.2.3.4 srcport=43564 dstport=443 srcintf=\"port01\" srcintfrole=\"undefined\" dstintf=\"port01\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" direction=\"incoming\" policyid=01 sessionid=000000001 applist=\"standard\" appcat=\"Web.Client\" app=\"HTTPS.BROWSER\" action=\"pass\" hostname=\"example.com\" incidentserialno=123456789 url=\"/\" msg=\"Web.Client: HTTPS.BROWSER,\" apprisk=\"medium\"",
+        "source": {
+            "ip": "192.168.1.2",
+            "port": 43564,
+            "address": "192.168.1.2"
+        },
         "observer": {
-            "egress": {
-                "interface": {
-                    "name": "port01"
-                }
-            },
-            "hostname": "fortiproxyunit",
             "ingress": {
                 "interface": {
                     "name": "port01"
                 }
             },
-            "product": "FortiProxy",
+            "egress": {
+                "interface": {
+                    "name": "port01"
+                }
+            },
             "type": "proxy",
-            "vendor": "Fortinet"
+            "vendor": "Fortinet",
+            "product": "FortiProxy",
+            "hostname": "fortiproxyunit"
         },
-        "process": {
-            "pid": 65432
-        },
-        "related": {
-            "hosts": [
-                "fortiproxyunit",
-                "example.com"
-            ],
-            "ip": [
-                "192.168.1.2",
-                "1.2.3.4"
-            ],
-            "user": [
-                "jean@SEKOIANETWORK.EXAMPLE.FR"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
-            }
+        "destination": {
+            "ip": "1.2.3.4",
+            "port": 443,
+            "domain": "example.com",
+            "address": "example.com",
+            "top_level_domain": "com",
+            "registered_domain": "example.com"
         },
         "service": {
             "name": "https"
         },
-        "source": {
-            "address": "192.168.1.2",
-            "ip": "192.168.1.2",
-            "port": 43564
+        "process": {
+            "pid": 65432
+        },
+        "user": {
+            "name": "jean@SEKOIANETWORK.EXAMPLE.FR"
         },
         "url": {
             "domain": "example.com",
@@ -120,8 +97,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "/",
             "path": "/"
         },
-        "user": {
-            "name": "jean@SEKOIANETWORK.EXAMPLE.FR"
+        "network": {
+            "protocol": "tcp",
+            "direction": "inbound"
+        },
+        "related": {
+            "hosts": [
+                "example.com",
+                "fortiproxyunit"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "192.168.1.2"
+            ],
+            "user": [
+                "jean@SEKOIANETWORK.EXAMPLE.FR"
+            ]
         }
     }
     	
@@ -392,32 +383,52 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "destination": {
-            "address": "example.com",
-            "domain": "example.com",
-            "ip": "1.1.1.1",
-            "port": 443,
-            "registered_domain": "example.com",
-            "top_level_domain": "com"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
+        "message": "time=15:01:23 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"traffic\" subtype=\"http-transaction\" level=\"notice\" vd=\"root\" eventtime=1631192483 srcip=192.168.1.2 dstip=1.1.1.1 scheme=\"https\" srcport=123456 dstport=443 hostname=\"example.com\" url=\"https://example.com/foo.html?id=123\" policyid=1 reqlength=100 resplength=200 resptype=\"normal\" statuscode=200 reqtime=1631182483 resptime=1631182483 respfinishtime=1631182483 duration=100",
         "event": {
-            "category": "http-transaction",
-            "duration": 100,
+            "start": "2021-09-09T13:01:23.0Z",
             "kind": "traffic",
-            "start": "2021-09-09T13:01:23.0Z"
+            "category": "http-transaction",
+            "duration": 100
         },
         "fortinet": {
+            "vd": "root",
             "devid": "OIDL03VZRZEDKKD",
-            "level": "notice",
             "logid": "1000234512",
             "policyid": "1",
+            "level": "notice",
             "reqtime": "2021-09-09T10:14:43.0Z",
-            "respfinishtime": "2021-09-09T10:14:43.0Z",
             "resptime": "2021-09-09T10:14:43.0Z",
-            "vd": "root"
+            "respfinishtime": "2021-09-09T10:14:43.0Z"
+        },
+        "source": {
+            "ip": "192.168.1.2",
+            "port": 123456,
+            "address": "192.168.1.2"
+        },
+        "destination": {
+            "ip": "1.1.1.1",
+            "port": 443,
+            "domain": "example.com",
+            "address": "example.com",
+            "top_level_domain": "com",
+            "registered_domain": "example.com"
+        },
+        "observer": {
+            "type": "proxy",
+            "vendor": "Fortinet",
+            "product": "FortiProxy",
+            "hostname": "fortiproxyunit"
+        },
+        "url": {
+            "domain": "example.com",
+            "full": "https://example.com/foo.html?id=123",
+            "original": "https://example.com/foo.html?id=123",
+            "top_level_domain": "com",
+            "registered_domain": "example.com",
+            "query": "id=123",
+            "scheme": "https",
+            "path": "/foo.html",
+            "port": 443
         },
         "http": {
             "request": {
@@ -428,41 +439,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "status_code": 200
             }
         },
-        "message": "time=15:01:23 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"traffic\" subtype=\"http-transaction\" level=\"notice\" vd=\"root\" eventtime=1631192483 srcip=192.168.1.2 dstip=1.1.1.1 scheme=\"https\" srcport=123456 dstport=443 hostname=\"example.com\" url=\"https://example.com/foo.html?id=123\" policyid=1 reqlength=100 resplength=200 resptype=\"normal\" statuscode=200 reqtime=1631182483 resptime=1631182483 respfinishtime=1631182483 duration=100",
-        "observer": {
-            "hostname": "fortiproxyunit",
-            "product": "FortiProxy",
-            "type": "proxy",
-            "vendor": "Fortinet"
-        },
         "related": {
             "hosts": [
-                "fortiproxyunit",
-                "example.com"
+                "example.com",
+                "fortiproxyunit"
             ],
             "ip": [
                 "1.1.1.1",
                 "192.168.1.2"
             ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
-            }
-        },
-        "source": {
-            "address": "192.168.1.2",
-            "ip": "192.168.1.2",
-            "port": 123456
-        },
-        "url": {
-            "domain": "example.com",
-            "full": "https://example.com/foo.html?id=123",
-            "original": "https://example.com/foo.html?id=123",
-            "path": "/foo.html",
-            "query": "id=123",
-            "scheme": "https"
         }
     }
     	

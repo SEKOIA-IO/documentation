@@ -33,15 +33,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"insertId\": \"1sxgleif1dyxla\",\n  \"jsonPayload\": {\n    \"dest_gke_details\": {\n      \"cluster\": {\n        \"cluster_location\": \"europe-central2-a\",\n        \"cluster_name\": \"cluster-3\"\n      }\n    },\n    \"src_location\": {\n      \"continent\": \"Europe\",\n      \"country\": \"pol\",\n      \"asn\": 15169\n    },\n    \"dest_vpc\": {\n      \"vpc_name\": \"foo\",\n      \"project_id\": \"hazel-aria-348413\",\n      \"subnetwork_name\": \"foo\"\n    },\n    \"start_time\": \"2022-06-03T12:09:42.501046130Z\",\n    \"end_time\": \"2022-06-03T12:09:42.768509812Z\",\n    \"bytes_sent\": \"1872\",\n    \"reporter\": \"DEST\",\n    \"connection\": {\n      \"src_ip\": \"34.118.64.229\",\n      \"dest_port\": 45950,\n      \"dest_ip\": \"10.0.0.4\",\n      \"src_port\": 443,\n      \"protocol\": 6\n    },\n    \"dest_instance\": {\n      \"region\": \"europe-central2\",\n      \"zone\": \"europe-central2-a\",\n      \"vm_name\": \"gke-cluster-3-default-pool-4e355575-tdhx\",\n      \"project_id\": \"hazel-aria-348413\"\n    },\n    \"packets_sent\": \"16\"\n  },\n  \"resource\": {\n    \"type\": \"gce_subnetwork\",\n    \"labels\": {\n      \"subnetwork_id\": \"7449846049104218257\",\n      \"subnetwork_name\": \"foo\",\n      \"project_id\": \"hazel-aria-348413\",\n      \"location\": \"europe-central2-a\"\n    }\n  },\n  \"timestamp\": \"2022-06-03T12:09:43.654174991Z\",\n  \"logName\": \"projects/hazel-aria-348413/logs/compute.googleapis.com%2Fvpc_flows\",\n  \"receiveTimestamp\": \"2022-06-03T12:09:43.654174991Z\"\n}",
         "event": {
+            "end": "2022-06-03T12:09:42.768509812Z",
             "start": "2022-06-03T12:09:42.501046130Z",
             "kind": "event",
             "category": "network",
             "type": [
                 "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
+            ]
         },
         "network": {
             "bytes": 1872,
@@ -116,8 +116,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "ip": [
-                "34.118.64.229",
-                "10.0.0.4"
+                "10.0.0.4",
+                "34.118.64.229"
             ]
         }
     }
@@ -130,15 +130,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"insertId\": \"17aa0kaf4hig5c\",\n  \"jsonPayload\": {\n    \"end_time\": \"2022-06-03T12:09:44.424429165Z\",\n    \"packets_sent\": \"32\",\n    \"src_location\": {\n      \"asn\": 15169,\n      \"country\": \"pol\",\n      \"continent\": \"Europe\"\n    },\n    \"start_time\": \"2022-06-03T12:09:44.421947861Z\",\n    \"dest_vpc\": {\n      \"subnetwork_name\": \"foo\",\n      \"vpc_name\": \"foo\",\n      \"project_id\": \"hazel-aria-348413\"\n    },\n    \"bytes_sent\": \"33792\",\n    \"reporter\": \"DEST\",\n    \"dest_instance\": {\n      \"region\": \"europe-central2\",\n      \"project_id\": \"hazel-aria-348413\",\n      \"vm_name\": \"gke-cluster-3-default-pool-4e355575-k1w8\",\n      \"zone\": \"europe-central2-a\"\n    },\n    \"dest_gke_details\": {\n      \"cluster\": {\n        \"cluster_location\": \"europe-central2-a\",\n        \"cluster_name\": \"cluster-3\"\n      }\n    },\n    \"connection\": {\n      \"protocol\": 6,\n      \"dest_ip\": \"10.0.0.3\",\n      \"src_ip\": \"34.118.64.229\",\n      \"src_port\": 443,\n      \"dest_port\": 41834\n    }\n  },\n  \"resource\": {\n    \"type\": \"gce_subnetwork\",\n    \"labels\": {\n      \"project_id\": \"hazel-aria-348413\",\n      \"subnetwork_name\": \"foo\",\n      \"subnetwork_id\": \"7449846049104218257\",\n      \"location\": \"europe-central2-a\"\n    }\n  },\n  \"timestamp\": \"2022-06-03T12:09:52.418604934Z\",\n  \"logName\": \"projects/hazel-aria-348413/logs/compute.googleapis.com%2Fvpc_flows\",\n  \"receiveTimestamp\": \"2022-06-03T12:09:52.418604934Z\"\n}",
         "event": {
+            "end": "2022-06-03T12:09:44.424429165Z",
             "start": "2022-06-03T12:09:44.421947861Z",
             "kind": "event",
             "category": "network",
             "type": [
                 "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:44.424429165Z"
+            ]
         },
         "network": {
             "bytes": 33792,
@@ -213,8 +213,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "ip": [
-                "34.118.64.229",
-                "10.0.0.3"
+                "10.0.0.3",
+                "34.118.64.229"
             ]
         }
     }
