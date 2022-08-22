@@ -25,8 +25,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "- :{\"version\":\"6.12\",\"account_id\":123456,\"headend_addr\":\"198.51.100.94\",\"account_uid\":\"admin-prtg@company.local\",\"threat\":0,\"certainty\":0,\"score_decreases\":true,\"privilege\":4,\"href\":\"https:/198.51.100.94/accounts/522\",\"category\":\"ACCOUNT SCORING\",\"tags\":[],\"host_access_history\":[{\"id\":22235,\"name\":\"HOSTNAME.COMPANY.LOCAL\",\"privilege\":null,\"privilegeCategory\":null,\"lastSeen\":\"2021-09-30T08:06:46+00:00\"}],\"service_access_history\":[{\"id\":1470943,\"uid\":\"cifs/serssq01.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T08:06:46+00:00\"},{\"id\":5,\"uid\":\"krbtgt/company.local.company@company\",\"privilege\":null,\"privilegeCategory\":null,\"lastSeen\":\"2021-09-30T08:04:19+00:00\"},{\"id\":2614295,\"uid\":\"rpcss/host109.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T08:04:19+00:00\"},{\"id\":2614304,\"uid\":\"rpcss/host2db01.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T08:04:04+00:00\"},{\"id\":2614297,\"uid\":\"rpcss/host110.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:57:44+00:00\"},{\"id\":990,\"uid\":\"rpcss/srv-appli02.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:54:04+00:00\"},{\"id\":2614303,\"uid\":\"rpcss/host201.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:37:28+00:00\"},{\"id\":4214403,\"uid\":\"http/alm.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:21:04+00:00\"},{\"id\":4186134,\"uid\":\"http/host109.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:20:50+00:00\"},{\"id\":3693289,\"uid\":\"http/host110.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:20:38+00:00\"}],\"last_detection_type\":\"Privilege Anomaly: Unusual Service - Insider\",\"vectra_timestamp\":\"1633338457\"}",
         "event": {
-            "outcome": "success",
             "type": "ACCOUNT SCORING",
             "url": "https:/198.51.100.94/accounts/522"
         },
@@ -35,29 +35,29 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "198.51.100.94"
         },
         "vectra": {
+            "timestamp": 1633338457,
             "account": {
                 "id": 123456,
                 "uid": "admin-prtg@company.local"
             },
             "certainty": 0,
-            "detection": {
-                "last_type": "Privilege Anomaly: Unusual Service - Insider",
-                "score_decreases": true,
-                "tags": []
-            },
-            "risk_score_norm": 0,
-            "timestamp": 1633338457,
             "user": {
                 "privilege": 4
             },
+            "detection": {
+                "score_decreases": true,
+                "tags": [],
+                "last_type": "Privilege Anomaly: Unusual Service - Insider"
+            },
+            "risk_score_norm": 0,
             "history": {
                 "host_access": [
                     {
                         "id": 22235,
-                        "lastSeen": "2021-09-30T08:06:46+00:00",
                         "name": "HOSTNAME.COMPANY.LOCAL",
                         "privilege": null,
-                        "privilegeCategory": null
+                        "privilegeCategory": null,
+                        "lastSeen": "2021-09-30T08:06:46+00:00"
                     }
                 ],
                 "host_access_hostname": [
@@ -66,73 +66,73 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "service_access": [
                     {
                         "id": 1470943,
-                        "lastSeen": "2021-09-30T08:06:46+00:00",
+                        "uid": "cifs/serssq01.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "cifs/serssq01.company.local@company.local"
+                        "lastSeen": "2021-09-30T08:06:46+00:00"
                     },
                     {
                         "id": 5,
-                        "lastSeen": "2021-09-30T08:04:19+00:00",
+                        "uid": "krbtgt/company.local.company@company",
                         "privilege": null,
                         "privilegeCategory": null,
-                        "uid": "krbtgt/company.local.company@company"
+                        "lastSeen": "2021-09-30T08:04:19+00:00"
                     },
                     {
                         "id": 2614295,
-                        "lastSeen": "2021-09-30T08:04:19+00:00",
+                        "uid": "rpcss/host109.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "rpcss/host109.company.local@company.local"
+                        "lastSeen": "2021-09-30T08:04:19+00:00"
                     },
                     {
                         "id": 2614304,
-                        "lastSeen": "2021-09-30T08:04:04+00:00",
+                        "uid": "rpcss/host2db01.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "rpcss/host2db01.company.local@company.local"
+                        "lastSeen": "2021-09-30T08:04:04+00:00"
                     },
                     {
                         "id": 2614297,
-                        "lastSeen": "2021-09-30T07:57:44+00:00",
+                        "uid": "rpcss/host110.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "rpcss/host110.company.local@company.local"
+                        "lastSeen": "2021-09-30T07:57:44+00:00"
                     },
                     {
                         "id": 990,
-                        "lastSeen": "2021-09-30T07:54:04+00:00",
+                        "uid": "rpcss/srv-appli02.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "rpcss/srv-appli02.company.local@company.local"
+                        "lastSeen": "2021-09-30T07:54:04+00:00"
                     },
                     {
                         "id": 2614303,
-                        "lastSeen": "2021-09-30T07:37:28+00:00",
+                        "uid": "rpcss/host201.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "rpcss/host201.company.local@company.local"
+                        "lastSeen": "2021-09-30T07:37:28+00:00"
                     },
                     {
                         "id": 4214403,
-                        "lastSeen": "2021-09-30T07:21:04+00:00",
+                        "uid": "http/alm.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "http/alm.company.local@company.local"
+                        "lastSeen": "2021-09-30T07:21:04+00:00"
                     },
                     {
                         "id": 4186134,
-                        "lastSeen": "2021-09-30T07:20:50+00:00",
+                        "uid": "http/host109.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "http/host109.company.local@company.local"
+                        "lastSeen": "2021-09-30T07:20:50+00:00"
                     },
                     {
                         "id": 3693289,
-                        "lastSeen": "2021-09-30T07:20:38+00:00",
+                        "uid": "http/host110.company.local@company.local",
                         "privilege": 4,
                         "privilegeCategory": "Medium",
-                        "uid": "http/host110.company.local@company.local"
+                        "lastSeen": "2021-09-30T07:20:38+00:00"
                     }
                 ],
                 "service_access_uid": {
@@ -162,6 +162,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     ]
                 }
             }
+        },
+        "related": {
+            "ip": [
+                "198.51.100.94"
+            ]
         }
     }
     	
@@ -173,38 +178,48 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "source": {
-            "ip": "255.255.255.1"
-        },
-        "destination": {
-            "ip": "255.255.255.2"
+        "message": "-: {\"src_name\": \"IP-255.255.255.1\", \"src_ip\": \"255.255.255.1\", \"src_hid\": 11111, \"dest_name\": \"push.services.mozilla.com\", \"dest_ip\": \"255.255.255.2\", \"dest_id\": \"external\", \"timestamp\": 1111111222.0, \"campaign_name\": \"push.services.mozilla.com-13\", \"campaign_id\": 222, \"campaign_link\": \"https://255.255.255.3/campaigns/222\", \"action\": \"ADD\", \"reason\": \"Connection\", \"version\": \"6.8\", \"headend_addr\": \"255.255.255.3\", \"dvchost\": \"255.255.255.3\", \"vectra_timestamp\": \"1111111111\"}",
+        "observer": {
+            "version": "6.8",
+            "name": "255.255.255.3",
+            "ip": "255.255.255.3"
         },
         "vectra": {
-            "source": {
-                "name": "IP-255.255.255.1",
-                "hid": 11111
-            },
-            "destination": {
-                "name": "push.services.mozilla.com",
-                "id": "external"
-            },
             "timestamp": 1111111111,
             "campaign": {
-                "name": "push.services.mozilla.com-13",
                 "id": 222,
-                "link": "https://255.255.255.3/campaigns/222"
+                "link": "https://255.255.255.3/campaigns/222",
+                "name": "push.services.mozilla.com-13"
+            },
+            "destination": {
+                "id": "external",
+                "name": "push.services.mozilla.com"
             },
             "detection": {
                 "reason": "Connection"
+            },
+            "source": {
+                "hid": 11111,
+                "name": "IP-255.255.255.1"
             }
         },
         "action": {
             "name": "ADD"
         },
-        "observer": {
-            "version": "6.8",
-            "name": "255.255.255.3",
-            "ip": "255.255.255.3"
+        "destination": {
+            "ip": "255.255.255.2",
+            "address": "255.255.255.2"
+        },
+        "source": {
+            "ip": "255.255.255.1",
+            "address": "255.255.255.1"
+        },
+        "related": {
+            "ip": [
+                "255.255.255.1",
+                "255.255.255.2",
+                "255.255.255.3"
+            ]
         }
     }
     	
@@ -216,18 +231,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "destination": {
-            "address": "mirror.centos.org",
-            "bytes": 8269214038,
-            "domain": "mirror.centos.org",
-            "ip": "198.51.100.1",
-            "port": 8002,
-            "registered_domain": "centos.org",
-            "subdomain": "mirror",
-            "top_level_domain": "org"
-        },
+        "message": "-: {\"version\": \"6.12\", \"detection_id\": 13281, \"category\": \"COMMAND & CONTROL\", \"severity\": 6.0, \"threat\": 60, \"certainty\": 72, \"d_type\": \"hidden_http_tunnel_cnc\", \"d_type_vname\": \"Hidden HTTP Tunnel\", \"triaged\": false, \"headend_addr\": \"198.51.100.94\", \"dvchost\": \"198.51.100.94\", \"href\": \"https://198.51.100.94/detections/13281?detail_id=94738\", \"dd_dst_ip\": \"198.51.100.1\", \"dd_dst_port\": 8002, \"dd_dst_dns\": \"mirror.centos.org\", \"dd_bytes_sent\": 1476677, \"dd_bytes_rcvd\": 8269214038, \"host_name\": \"IP-198.51.100.14\", \"host_ip\": \"198.51.100.14\", \"dd_proto\": \"tcp\", \"vectra_timestamp\": \"1633516306\"}",
         "event": {
-            "outcome": "success",
             "type": "COMMAND & CONTROL",
             "url": "https://198.51.100.94/detections/13281?detail_id=94738",
             "ip": [
@@ -236,34 +241,54 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "198.51.100.14"
             ]
         },
+        "observer": {
+            "version": "6.12",
+            "name": "198.51.100.94",
+            "ip": "198.51.100.94"
+        },
+        "vectra": {
+            "timestamp": 1633516306,
+            "certainty": 72,
+            "detection": {
+                "type": "hidden_http_tunnel_cnc",
+                "name": "Hidden HTTP Tunnel",
+                "id": 13281
+            },
+            "severity": 6.0,
+            "risk_score_norm": 60,
+            "triaged": false
+        },
+        "source": {
+            "bytes": 1476677
+        },
+        "destination": {
+            "bytes": 8269214038,
+            "domain": "mirror.centos.org",
+            "ip": "198.51.100.1",
+            "port": 8002,
+            "address": "mirror.centos.org",
+            "top_level_domain": "org",
+            "subdomain": "mirror",
+            "registered_domain": "centos.org"
+        },
+        "network": {
+            "protocol": "tcp"
+        },
         "host": {
             "ip": [
                 "198.51.100.14"
             ],
             "name": "IP-198.51.100.14"
         },
-        "network": {
-            "protocol": "tcp"
-        },
-        "observer": {
-            "ip": "198.51.100.94",
-            "name": "198.51.100.94",
-            "version": "6.12"
-        },
-        "source": {
-            "bytes": 1476677
-        },
-        "vectra": {
-            "certainty": 72,
-            "detection": {
-                "id": 13281,
-                "name": "Hidden HTTP Tunnel",
-                "type": "hidden_http_tunnel_cnc"
-            },
-            "risk_score_norm": 60,
-            "severity": 6,
-            "timestamp": 1633516306,
-            "triaged": false
+        "related": {
+            "ip": [
+                "198.51.100.1",
+                "198.51.100.14",
+                "198.51.100.94"
+            ],
+            "hosts": [
+                "mirror.centos.org"
+            ]
         }
     }
     	
@@ -275,16 +300,49 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "-: {\"version\": \"6.12\", \"host_id\": 27617, \"headend_addr\": \"198.51.100.94\", \"host_name\": \"IP-198.51.100.14\", \"dvchost\": \"198.51.100.94\", \"host_ip\": \"198.51.100.14\", \"threat\": 22, \"certainty\": 31, \"privilege\": 0, \"score_decreases\": false, \"href\": \"https://198.51.100.94/hosts/27617\", \"host_roles\": \"\", \"src_key_asset\": false, \"dst_key_asset\": false, \"category\": \"HOST SCORING\", \"sensor\": \"E123456789123456\", \"detection_profile\": {\"name\": \"saas\", \"vname\": \"Cloud Services\", \"scoringDetections\": [\"Hidden HTTP Tunnel (C&C)\"]}, \"host_groups\": [], \"tags\": [], \"account_access_history\": [], \"service_access_history\": [], \"mac_address\": null, \"mac_vendor\": null, \"last_detection_type\": \"Hidden HTTP Tunnel\", \"vectra_timestamp\": \"1633690973\"}",
         "event": {
-            "outcome": "success",
             "type": "HOST SCORING",
             "url": "https://198.51.100.94/hosts/27617"
         },
         "observer": {
-            "ip": "198.51.100.94",
+            "version": "6.12",
             "name": "198.51.100.94",
-            "product": "E123456789123456",
-            "version": "6.12"
+            "ip": "198.51.100.94",
+            "product": "E123456789123456"
+        },
+        "vectra": {
+            "timestamp": 1633690973,
+            "history": {
+                "account_access": [],
+                "service_access": []
+            },
+            "destination": {
+                "key_asset": false
+            },
+            "user": {
+                "privilege": 0
+            },
+            "detection": {
+                "profile": {
+                    "name": "saas",
+                    "vname": "Cloud Services",
+                    "scoringDetections": [
+                        "Hidden HTTP Tunnel (C&C)"
+                    ]
+                },
+                "score_decreases": false,
+                "tags": [],
+                "last_type": "Hidden HTTP Tunnel"
+            },
+            "certainty": 31,
+            "source": {
+                "key_asset": false
+            },
+            "risk_score_norm": 22,
+            "host": {
+                "group": []
+            }
         },
         "host": {
             "id": "27617",
@@ -295,42 +353,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "ip": [
-                "198.51.100.94",
-                "198.51.100.14"
+                "198.51.100.14",
+                "198.51.100.94"
             ]
-        },
-        "vectra": {
-            "certainty": 31,
-            "destination": {
-                "key_asset": false
-            },
-            "detection": {
-                "last_type": "Hidden HTTP Tunnel",
-                "profile": {
-                    "name": "saas",
-                    "scoringDetections": [
-                        "Hidden HTTP Tunnel (C&C)"
-                    ],
-                    "vname": "Cloud Services"
-                },
-                "score_decreases": false,
-                "tags": []
-            },
-            "history": {
-                "account_access": [],
-                "service_access": []
-            },
-            "host": {
-                "group": []
-            },
-            "risk_score_norm": 22,
-            "source": {
-                "key_asset": false
-            },
-            "timestamp": 1633690973,
-            "user": {
-                "privilege": 0
-            }
         }
     }
     	
@@ -342,6 +367,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "-: {\"category\": \"INFO\", \"certainty\": 0, \"d_type\": \"si_new_host\", \"d_type_vname\": \"New Host\", \"dd_bytes_rcvd\": null, \"dd_bytes_sent\": null, \"dd_dst_dns\": \"\", \"dd_dst_ip\": \"0.0.0.0\", \"dd_dst_port\": 80, \"dd_proto\": \"\", \"detection_id\": 9999, \"dvchost\": \"255.255.255.1\", \"headend_addr\": \"255.255.255.1\", \"host_ip\": \"10.0.0.1\", \"host_name\": \"plop-99\", \"href\": \"https://255.255.255.1/detections/9999?detail_id=11111\", \"severity\": 0, \"threat\": 0, \"triaged\": false, \"vectra_timestamp\": \"1099999999\", \"version\": \"6.7\"}",
         "event": {
             "type": "INFO",
             "url": "https://255.255.255.1/detections/9999?detail_id=11111"
@@ -352,26 +378,34 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "255.255.255.1"
         },
         "vectra": {
+            "timestamp": 1099999999,
             "certainty": 0,
             "detection": {
                 "type": "si_new_host",
                 "name": "New Host",
                 "id": 9999
             },
-            "timestamp": 1099999999,
-            "triaged": false,
+            "severity": 0,
             "risk_score_norm": 0,
-            "severity": 0
+            "triaged": false
         },
         "destination": {
             "ip": "0.0.0.0",
-            "port": 80
+            "port": 80,
+            "address": "0.0.0.0"
         },
         "host": {
             "ip": [
                 "10.0.0.1"
             ],
             "name": "plop-99"
+        },
+        "related": {
+            "ip": [
+                "0.0.0.0",
+                "10.0.0.1",
+                "255.255.255.1"
+            ]
         }
     }
     	
@@ -436,6 +470,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "-: {\"version\": \"6.8\", \"detection_id\": 1900, \"category\": \"RECONNAISSANCE\", \"severity\": 7.0, \"threat\": 70, \"certainty\": 86, \"d_type\": \"rpc_recon_1to1\", \"d_type_vname\": \"RPC Targeted Recon\", \"triaged\": false, \"headend_addr\": \"255.255.255.1\", \"dvchost\": \"255.255.255.1\", \"href\": \"https://255.255.255.1/detections/1900?detail_id=66777\", \"dd_dst_ip\": \"10.43.0.81\", \"dd_dst_port\": 49668, \"dd_dst_dns\": \"\", \"dd_bytes_sent\": null, \"dd_bytes_rcvd\": null, \"host_name\": \"IP-192.168.71.1\", \"host_ip\": \"192.168.71.1\", \"dd_proto\": \"\", \"vectra_timestamp\": \"1623742534\"}",
         "event": {
             "type": "RECONNAISSANCE",
             "url": "https://255.255.255.1/detections/1900?detail_id=66777"
@@ -446,26 +481,34 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "255.255.255.1"
         },
         "vectra": {
+            "timestamp": 1623742534,
+            "certainty": 86,
+            "detection": {
+                "type": "rpc_recon_1to1",
+                "name": "RPC Targeted Recon",
+                "id": 1900
+            },
             "severity": 7.0,
             "risk_score_norm": 70,
-            "certainty": 86,
-            "triaged": false,
-            "detection": {
-                "id": 1900,
-                "type": "rpc_recon_1to1",
-                "name": "RPC Targeted Recon"
-            },
-            "timestamp": 1623742534
+            "triaged": false
         },
         "destination": {
             "ip": "10.43.0.81",
-            "port": 49668
+            "port": 49668,
+            "address": "10.43.0.81"
         },
         "host": {
             "ip": [
                 "192.168.71.1"
             ],
             "name": "IP-192.168.71.1"
+        },
+        "related": {
+            "ip": [
+                "10.43.0.81",
+                "192.168.71.1",
+                "255.255.255.1"
+            ]
         }
     }
     	

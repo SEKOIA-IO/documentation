@@ -27,6 +27,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "id=firewall time=\"2021-01-28 13:46:08\" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Root user=bob realm=\"SEKOIA_User\" roles=\"VDI-Pulse_User_Role\" proto=auth src=176.134.164.62 dst= dstname= type=vpn op= arg=\"\" result= sent= rcvd= agent=\"\" duration= msg=\"AUT24804: Host Checker policy 'Sekoia_Host Checker' failed on host '176.134.164.62' address '00-d8-61-35-80-81' for user 'bob' reason 'Rule-Antivirus_Check:Le logiciel antivirus indiqu\u00e9 dans les exigences de s\u00e9curit\u00e9 n'est pas install\u00e9.'.\"",
+        "event": {
+            "code": "AUT24804",
+            "provider": "auth"
+        },
+        "action": {
+            "name": "AUT24804"
+        },
         "network": {
             "forwarded_ip": "172.16.128.22"
         },
@@ -45,12 +53,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "176.134.164.62",
             "address": "176.134.164.62"
         },
-        "action": {
-            "name": "AUT24804"
-        },
-        "event": {
-            "provider": "auth",
-            "code": "AUT24804"
+        "related": {
+            "ip": [
+                "176.134.164.62"
+            ],
+            "user": [
+                "bob"
+            ]
         }
     }
     	
@@ -62,6 +71,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "id=firewall time=\"2021-01-28 13:46:05\" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Root user=alice realm=\"SEKOIA_User\" roles=\"SEKOIA_User_Role\" proto=auth src=19.160.74.9 dst= dstname= type=vpn op= arg=\"\" result= sent= rcvd= agent=\"\" duration= msg=\"AUT24803: Host Checker policy 'Sekoia_Host Checker' passed on host '19.160.74.9' address '60-f2-62-ea-2d-a1' for user 'alice'.\"",
+        "event": {
+            "code": "AUT24803",
+            "provider": "auth"
+        },
+        "action": {
+            "name": "AUT24803"
+        },
         "network": {
             "forwarded_ip": "172.16.128.22"
         },
@@ -80,12 +97,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "19.160.74.9",
             "address": "19.160.74.9"
         },
-        "action": {
-            "name": "AUT24803"
-        },
-        "event": {
-            "provider": "auth",
-            "code": "AUT24803"
+        "related": {
+            "ip": [
+                "19.160.74.9"
+            ],
+            "user": [
+                "alice"
+            ]
         }
     }
     	
@@ -97,6 +115,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "id=firewall time=\"2021-01-28 14:14:04\" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Default Network user=bob realm=\"SEKOIA_User\" roles=\"\" proto=auth src=176.168.192.159 dst= dstname= type=vpn op= arg=\"\" result= sent= rcvd= agent=\"\" duration= msg=\"AUT23457: Login failed using auth server RSA (ACE Server).  Reason: Failed\"",
+        "event": {
+            "code": "AUT23457",
+            "provider": "auth"
+        },
+        "action": {
+            "name": "AUT23457"
+        },
         "network": {
             "forwarded_ip": "172.16.128.22"
         },
@@ -112,12 +138,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "176.168.192.159",
             "address": "176.168.192.159"
         },
-        "action": {
-            "name": "AUT23457"
-        },
-        "event": {
-            "provider": "auth",
-            "code": "AUT23457"
+        "related": {
+            "ip": [
+                "176.168.192.159"
+            ],
+            "user": [
+                "bob"
+            ]
         }
     }
     	
@@ -129,6 +156,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "id=firewall time=\"2021-03-04 17:05:15\" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Default Network user=System realm=\"\" roles=\"\" proto= src=93.19.66.118 dst= dstname= type=vpn op= arg=\"\" result= sent= rcvd= agent=\"\" duration= msg=\"AUT31556: Unauthenticated request url /dana/js?prot=1&svc=4 came from IP 93.19.66.118.\"",
+        "event": {
+            "code": "AUT31556",
+            "provider": "auth"
+        },
+        "action": {
+            "name": "AUT31556"
+        },
         "network": {
             "forwarded_ip": "172.16.128.22"
         },
@@ -146,12 +181,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "url": {
             "path": "/dana/js?prot=1&svc=4"
         },
-        "action": {
-            "name": "AUT31556"
-        },
-        "event": {
-            "provider": "auth",
-            "code": "AUT31556"
+        "related": {
+            "ip": [
+                "93.19.66.118"
+            ],
+            "user": [
+                "System"
+            ]
         }
     }
     	
