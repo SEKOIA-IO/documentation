@@ -70,6 +70,34 @@ You can see how many rules are enabled in a cell by hovering over it.
 
 The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
 
+---
+### Filtering rules by tag
+
+To make your search easier and faster, you can filter the rules by a set of categories.
+
+#### Filter the rules by categories
+
+- Click the selector to open the category listing
+- Find the desired categories and select them
+The selected tags are now added under the search bar.
+
+#### Deselect categories
+
+- Click the close button’s tag to deselect a category quickly. 
+- Or you can re-open the tag’s selector and then, deselect categories.
+
+#### Deselect all tags
+
+Click the **clear all** button to deselect all tags.
+
+#### Filter from rule’s tags
+
+- Find a rule with a tag
+- Click the rule’s tag
+the tag is now added under the search bar.
+
+----
+
 ### Rule Details
 You can click on the name of a rule to display additional details, such as, but not limited to:
 
