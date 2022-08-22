@@ -1,4 +1,4 @@
-# Events
+# Querying events
 
 ## Search
 
