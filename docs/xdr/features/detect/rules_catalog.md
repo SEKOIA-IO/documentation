@@ -81,6 +81,8 @@ To make your search easier and faster, you can filter the rules by a set of cate
 - Find the desired categories and select them
 The selected tags are now added under the search bar.
 
+![tag_selector](/assets/operation_center/rules_catalog/tag_selector.png)
+
 #### Deselect categories
 
 - Click the close button’s tag to deselect a category quickly. 
