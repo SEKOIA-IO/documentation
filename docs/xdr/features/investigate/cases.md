@@ -44,14 +44,15 @@ You also have two tabs:
 
 ### Details tab
 
-    - Authors, the community and the dates of creation and edition of the case
-    - A description of the case that uses Markdown to enable you to format your text
-    - A timeline
-    - A comment button to publish comments that will show on the timeline section
+- Authors, the community and the dates of creation and edition of the case
+- A description of the case that uses Markdown to enable you to format your text
+- A timeline
+- A comment button to publish comments that will show on the timeline section
+
 ### Alerts tab
 
-    - A table that lists all alerts associated to the case
-    - A button to add alerts to the case
+- A table that lists all alerts associated to the case
+- A button to add alerts to the case
    
 ## Add alerts to case
 To add alerts to case, you can either:
