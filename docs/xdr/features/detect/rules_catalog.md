@@ -63,9 +63,10 @@ Capabilities that have associated rules inside the catalog are listed on the lef
 
 To have a filtered view of your rules, you can rely on filters cited before ([Available/Verified](available-and-verified-rules), [Effort level](#effort-level), [Capabilities](#capabilities)) but also on tags associated with rules. 
 
-These tags are defined by SEKOIA.IO analysts to help make searching for a rule easier and provide categories such as `AWS`, `CVE`, `O360` and `phishing`.
+These tags are defined by SEKOIA.IO analysts to help make searching for a rule easier and provide categories such as `AWS`, `CVE`, `O365` and `phishing`.
 
 To filter rules using tags, there are two ways:
+
 - Select a tag under a rule and it will filter all rules to show only those with the same tag
 - Use the select `Filter by tag` next to the search bar and choose a category from the list
 
