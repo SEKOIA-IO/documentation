@@ -70,9 +70,10 @@ To filter rules using tags, there are two ways:
 - Select a tag under a rule and it will filter all rules to show only those with the same tag
 - Use the select `Filter by tag` next to the search bar and choose a category from the list
 
-To remove filters, simply click on `Clear all filters` next to the tags' list or deselect one tag at a time by clicking on the close icon in the tag. 
+![tag_selector](/assets/operation_center/rules_catalog/tag_selector.png){: style="max-width:100%"}
 
-![tag_selector](/assets/operation_center/rules_catalog/tag_selector.png)
+!!! tip
+    To remove filters, simply click on `Clear all filters` next to the tags' list or deselect one tag at a time by clicking on the close icon in the tag. 
 
 ----
 
