@@ -145,11 +145,12 @@ nav:
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
     - Automate:
-      - Overview: xdr/features/automate/index.md
+      - Playbooks: xdr/features/automate/index.md
+      - Navigate playbooks: xdr/features/automate/navigate-playbooks.md
       - Triggers: xdr/features/automate/triggers.md
       - Operators: xdr/features/automate/operators.md
       - Actions: xdr/features/automate/actions.md
-      - Library:
+      - Actions Library:
         - AWS: xdr/features/automate/library/aws.md
         - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Azure Active Directory: xdr/features/automate/library/azure-active-directory.md
@@ -193,6 +194,7 @@ nav:
         - Vade Secure: xdr/features/automate/library/vade-secure.md
         - VirusTotal: xdr/features/automate/library/virustotal.md
         - Whois: xdr/features/automate/library/whois.md
+      - Debug a playbook: xdr/features/automate/debug-playbook.md
   - Usecases:
     - Synchronise Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
   - FAQ: xdr/FAQ.md
