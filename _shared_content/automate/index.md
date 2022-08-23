@@ -25,9 +25,9 @@ In this documentation, you will learn how to:
 To have access to playbooks, you will need to have the role `Symphony Operator`. 
 
 Here is the list of permissions that constitutes this role: 
-
-| SYMPHONY_READ_MODULES | List and get Symphony Modules |
+| Permission name | Description |
 | --- | --- |
+| SYMPHONY_READ_MODULES | List and get Symphony Modules |
 | SYMPHONY_READ_PLAYBOOKS | List and get Symphony Playbooks |
 | SYMPHONY_READ_PLAYBOOK_RUNS | List and get Symphony Playbook Runs |
 | SYMPHONY_READ_PLAYBOOK_RUNS_STATS | List and get statistics about Symphony Playbook Runs |
@@ -35,9 +35,10 @@ Here is the list of permissions that constitutes this role:
 | SYMPHONY_WRITE_PLAYBOOKS | Write Symphony Playbooks |
 | SYMPHONY_WRITE_PLAYBOOK_RUNS | Modify Symphony Playbook Runs |
 
-If you need to attribute this role to someone, go to Your Account settings > Managed Communities > The person in question > `+ Role` > Select `Symphony Operator`. 
+If you need to attribute this role to someone, go to Your Account settings > Managed Communities > The user in question > `+ Role` > Select `Symphony Operator`. 
 
-However, depending on which app you’ll be creating playbooks for, you might need to have additional permissions linked to each app (Intelligence Center or Operations Center). 
+!!! note 
+    Depending on which app you’ll be creating playbooks for, you might need to have additional permissions linked to each app (Intelligence Center or Operations Center). 
 
 **Example:** 
 
@@ -66,7 +67,7 @@ Check out this section to learn more about how to configure your actions using t
 
 ### Playbooks listing
 
-In the playbooks homepage, all playbooks are listed by order of last edited. From this view, you can: 
+In the playbooks homepage, all playbooks are listed by order of **last edited**. From this view, you can: 
 
 - Create a new playbook
 - Search for available playbooks
@@ -82,16 +83,35 @@ In this panel, you can:
 
 - Enable or disable the playbook
 - Edit playbook
-- See how many runs have been going as well as their status (in progress, succeeded, error)
+- See how many runs have been going as well as their status (`in progress`, `succeede`d, `error`)
 - Quickly access last performed runs and filter them by status
 
-## Playbook details
+### Playbook details
 
-## Templates
+#### Graphical view
 
-Creating a playbook from scratch can be discouraging. That’s why we provide our users with a way to quickly generate a playbook: templates. These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. 
+#### Playbook code
+
+#### Playbook details 
+
+#### Playbook runs
+
+
+## Create and edit a playbook
+
+A playbook starts with a trigger, can include conditions and consists of a succession of actions. 
+
+There are two ways to create a playbook: 
+- Use a template 
+- Build a playbook from scratch
+
+### Templates
+
+Creating a playbook from scratch can be discouraging. That’s why we provide our users with a way to quickly generate a playbook: **templates**. These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. 
 
 The Playbooks Catalog is being updated frequently by our analysts, but here’s a list of the main ones. All playbook templates are available on the public repo in [Github.](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) 
+
+#### Operations Center templates
 
 | Category | Name | Description |
 | --- | --- | --- |
@@ -116,32 +136,24 @@ The Playbooks Catalog is being updated frequently by our analysts, but here’s 
 | Events | Forward Vade M365 email Events to SEKOIA.IO | This playbook collect logs from 'Vade for M365' then push them to SEKOIA.IO |
 | Events, Google | Forward Google Pubsub records to SEKOIA.IO | This playbook consumes records from Google Pubsub and push them to SEKOIA.IO |
 
+#### Intelligence Center templates
+
 | Category | Name | Description |
 | --- | --- | --- |
 | Observables, Shodan | Shodan Search to observables | Get IP addresses from a Shodan search and add it to Observables database with a tag |
 | Observables, Fetch OSINT | Generic Fetch OSINT to observables | Retrieve observables from an OSINT to add it to observable database with a tag (eg: https://github.com/MISP/misp-warninglists/tree/main/lists) |
 | Observables, Tranco, TIP  | Tranco top domains to observables | Automatically import Tranco's top 1 000 000 domain names to observable database |
 
-## Build your playbooks with Blocks filtered into 3 types
+## Build your playbooks from scratch
 
-To create a playbook, you will basically need to use the following filters. More information by following these links:
+To create a playbook from scratch, you will need to create an empty playbook, go to the graphical view and start adding and configuring the following bricks in this specific order:
 
-- [Triggers](triggers.md)
-- [Operators](operators.md)
-- [Actions](actions.md)
-
-## Playbook templates
-
-In order to ease the deployment of playbooks, we regularly produce Playbook templates that are ready to use for anyone with an API key.
-
-To use one:
-- Click on `+ NEW PLAYBOOK`
-- Select `Use a template`
-- Filter on your needs `alert`, `notification`, `webhook` or use the `Search bar`
-- Select the template you are interested in
-- Click on `CREATE`
-
-A brand new playbook will be created. Then you just have to adjust the `Module Configuration` section of each block with your API key and URL. You can either create a new configuration or use an existing one that will appear on the list menu.
+- Step 1: [Triggers](/triggers.md) (can be Alerts, Webhook or Cron)
+    - **Alerts** allow users to collect information from an alert such as the `alert_uuid`, its date of creation (`created_at`), its category (`alert_type`), its `urgency` or the action that triggered THIS alert notification (`event_type`) for example `alert-created`, `alert-status-changed`, `alert-comment-created` etc.
+    - **Cron** allows users to periodically launch an automatic action that should be defined and created by a user.
+    - **Webhooks** allows an external service to start a particular action through a single HTTP request.
+- Step 2: [Operators](operators.md) (can be Condition, Foreach, Store)
+- Step 3: [Actions](actions.md) (Getters, Setters, External Data Enrichers, Notifications)
 
 ## Troubleshooting
 
