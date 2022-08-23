@@ -23,7 +23,7 @@ The Rules Catalog page can be used to list and manage all detection rules. Many 
 
 ### Rules Attributes
 
-#### Available / Verified Rules
+#### Available and verified rules
 The Rules Catalog lists all detection rules available to your organization: 
 ![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ align=right }
 
@@ -34,7 +34,7 @@ The Available Rules counter displays the total number of rules (verified + custo
 
 You can then click on the `Verified filter` if you would rather see only Custom rules.
 
-#### Effort Level
+#### Effort level
 
 All rules have an associated effort level. The effort level is increasing from Elementary to Master according to two criteria:
 ![effort_level](/assets/operation_center/rules_catalog/effort_level.png){ align=right }
@@ -49,6 +49,7 @@ For example:
 You can click on each counter associated with an effort level to see only the rules for this level
 
 #### Capabilities
+
 The rules are also associated with different capabilities:
 
 - Offensive Capabilities: `threats` or `attack patterns` that they can detect
@@ -57,6 +58,22 @@ The rules are also associated with different capabilities:
 ![capabilities](/assets/operation_center/rules_catalog/rules_capabilities.png)
 
 Capabilities that have associated rules inside the catalog are listed on the left of the page. You can click on any Threat, Attack Pattern, or Datasource to list only rules that are associated with it.
+
+#### Tags
+
+To have a filtered view of your rules, you can rely on filters cited before ([Available/Verified](available-and-verified-rules), [Effort level](#effort-level), [Capabilities](#capabilities)) but also on tags associated with rules. 
+
+These tags are defined by SEKOIA.IO analysts to help make searching for a rule easier and provide categories such as `AWS`, `CVE`, `O360` and `phishing`.
+
+To filter rules using tags, there are two ways:
+- Select a tag under a rule and it will filter all rules to show only those with the same tag
+- Use the select `Filter by tag` next to the search bar and choose a category from the list
+
+To remove filters, simply click on `Clear all filters` next to the tags' list or deselect one tag at a time by clicking on the close icon in the tag. 
+
+![tag_selector](/assets/operation_center/rules_catalog/tag_selector.png)
+
+----
 
 ### Security Profile (MITRE ATT&CK)
 
@@ -71,34 +88,6 @@ You can see how many rules are enabled in a cell by hovering over it.
 The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
 
 ---
-### Filtering rules by tag
-
-To make your search easier and faster, you can filter the rules by a set of categories.
-
-#### Filter the rules by categories
-
-- Click the selector to open the category listing
-- Find the desired categories and select them
-The selected tags are now added under the search bar.
-
-![tag_selector](/assets/operation_center/rules_catalog/tag_selector.png)
-
-#### Deselect categories
-
-- Click the close button’s tag to deselect a category quickly. 
-- Or you can re-open the tag’s selector and then, deselect categories.
-
-#### Deselect all tags
-
-Click the **clear all** button to deselect all tags.
-
-#### Filter from rule’s tags
-
-- Find a rule with a tag
-- Click the rule’s tag
-the tag is now added under the search bar.
-
-----
 
 ### Rule Details
 You can click on the name of a rule to display additional details, such as, but not limited to:
@@ -125,6 +114,8 @@ If the rule is Custom, you will be able to edit every aspect of it. Otherwise, y
 ![limit-scope](/assets/operation_center/rules_catalog/rules_catalog_filters.png)
 
 When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
+
+----
 
 ### Create custom rules
 
