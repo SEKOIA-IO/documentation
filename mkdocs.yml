@@ -547,7 +547,7 @@ plugins:
       operation_center/integration_catalog/network/fortiproxy.md: xdr/features/collect/integrations/network/fortiproxy.md
       operation_center/integration_catalog/network/fortiweb.md: xdr/features/collect/integrations/network/fortiweb.md
       operation_center/integration_catalog/network/skyhigh_secure_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
-            operation_center/integration_catalog/network/mcafee_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
+      operation_center/integration_catalog/network/mcafee_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
       operation_center/integration_catalog/network/netfilter.md: xdr/features/collect/integrations/network/netfilter.md
       operation_center/integration_catalog/network/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
       operation_center/integration_catalog/network/pulse.md: xdr/features/collect/integrations/network/pulse.md

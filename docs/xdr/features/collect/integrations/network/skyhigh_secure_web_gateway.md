@@ -7,7 +7,7 @@ type: intake
 Skyhigh Secure Web Gateway (SWG) (previously McAfee Web Gateway (MWG)) is a web gateway offering malware detection, threat prevention and reputation filtering.
 This product is supported by Skyhigh Security.
 
-{!_shared_content/operations_center/integrations/generated/skyhigh-secure-web-gateway_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/mcafee-web-gateway_do_not_edit_manually.md!}
 
 ## Configure
 
@@ -15,7 +15,7 @@ In this guide, you will configure a rule set to forward events to syslog and add
 
 ### Configure a Rule Set
 
-Prior to the configuration, download the “Rule Set” configuration [`SEKOIAIO_mwg.xml`](/assets/operation_center/integration_catalog/network/skyhigh_secure_web_gateway/SEKOIAIO_SKYHIGH_swg.xml).
+Prior to the configuration, download the “Rule Set” configuration [`SEKOIAIO_SKYHIGH_swg.xml`](/assets/operation_center/integration_catalog/network/skyhigh_secure_web_gateway/SEKOIAIO_SKYHIGH_swg.xml).
 
 
 In your SWG console:
