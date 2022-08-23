@@ -1,10 +1,8 @@
 # Playbooks
 
-A playbook is a list of required steps and actions needed to successfully respond to any incident or threat.
-
 Playbooks provide a **step-by-step approach** to **orchestration**, helping security teams establish standardized **incident response processes** and ensuring the steps are followed in **compliance** with regulatory frameworks.
 
-In SEKOIA.IO, playbooks play a huge role in automating repetitive tasks to relieve analysts’ daily work, enriching alerts by soliciting external sources, and interconnecting with external systems like ticketing tools for example.
+In SEKOIA.IO, playbooks play a huge role in automating repetitive tasks to relieve analysts’ daily work, enriching alerts by soliciting external sources, fetching indicators from outside and interconnecting with external systems like ticketing tools for example.
 
 Because they are highly configurable, SEKOIA.IO’s playbooks supervise and execute response actions to be in line with your business and operational objectives.
 
@@ -38,12 +36,14 @@ Here is the list of permissions that constitutes this role:
 
 If you need to attribute this role to someone, go to Your Account settings > Managed Communities > The user in question > `+ Role` > Select `Symphony Operator`. 
 
+To learn more about how to attribute roles within your community, please refer to this [section.](https://docs.sekoia.io/getting_started/invite_users/)) 
+
 !!! note 
     Depending on which app you’ll be creating playbooks for, you might need to have additional permissions linked to each app (Intelligence Center or Operations Center). 
 
 **Example:** 
 
-To create playbooks for your TIP, you will need to have the following roles and permissions in addition to Symphony Operator:
+To create playbooks for your XDR, you will need to have the role `OC_viewer` or `OC_admin` in addition to `Symphony Operator`.
 
 ### Generate API Key
 
@@ -60,9 +60,7 @@ To generate this API Key:
 !!! note
     Beware, the generated API Key will no longer be accessible after you’ve closed the modal.
 
-Check out this section to learn more about how to configure your actions using this API Key.
-
-> add an example of module configuration <
+To learn more about how to generate and revoke API keys, please refer to this [section.](https://docs.sekoia.io/getting_started/generate_api_keys/) 
 
 ## Navigate playbooks' interface
 
@@ -96,7 +94,6 @@ In this panel, you can:
 #### Playbook details 
 
 #### Playbook runs
-
 
 ## Create and edit a playbook
 
@@ -152,12 +149,11 @@ The Playbook Templates' Catalog is being updated frequently by our analysts and 
 
 To create a playbook from scratch, you will need to create an empty playbook, go to the graphical view and start adding and configuring the following bricks in this specific order:
 
-- Step 1: [Triggers](triggers.md) (can be Alerts, Webhook or Cron)
-    - **Alerts** allow users to collect information from an alert such as the `alert_uuid`, its date of creation (`created_at`), its category (`alert_type`), its `urgency` or the action that triggered THIS alert notification (`event_type`) for example `alert-created`, `alert-status-changed`, `alert-comment-created` etc.
-    - **Cron** allows users to periodically launch an automatic action that should be defined and created by a user.
-    - **Webhooks** allows an external service to start a particular action through a single HTTP request.
-- Step 2: [Operators](operators.md) (can be Condition, Foreach, Store)
-- Step 3: [Actions](actions.md) (Getters, Setters, External Data Enrichers, Notifications)
+- [Triggers](triggers.md): Alerts related triggers, manual triggers or Cron
+- [Operators](operators.md): Condition, Foreach, Store
+- [Actions](actions.md): Getters, Setters, External Data Enrichers, Notifications
+
+Please refer to the documentation for each of these types to learn how to use them efficiently. 
 
 ## Troubleshooting
 
