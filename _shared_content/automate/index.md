@@ -25,6 +25,7 @@ In this documentation, you will learn how to:
 To have access to playbooks, you will need to have the role `Symphony Operator`. 
 
 Here is the list of permissions that constitutes this role: 
+
 | Permission name | Description |
 | --- | --- |
 | SYMPHONY_READ_MODULES | List and get Symphony Modules |
@@ -102,14 +103,17 @@ In this panel, you can:
 A playbook starts with a trigger, can include conditions and consists of a succession of actions. 
 
 There are two ways to create a playbook: 
+
 - Use a template 
 - Build a playbook from scratch
 
 ### Templates
 
-Creating a playbook from scratch can be discouraging. That’s why we provide our users with a way to quickly generate a playbook: **templates**. These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. 
+Creating a playbook from scratch can be discouraging. That’s why we provide our users with a way to quickly generate a playbook: **templates**. 
 
-The Playbooks Catalog is being updated frequently by our analysts, but here’s a list of the main ones. All playbook templates are available on the public repo in [Github.](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) 
+These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. 
+
+The Playbook Templates' Catalog is being updated frequently by our analysts and here’s a list of the main ones. All playbook templates are available in the public repo on [Github](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and our users are encouraged to add new templates to the repo.
 
 #### Operations Center templates
 
@@ -148,7 +152,7 @@ The Playbooks Catalog is being updated frequently by our analysts, but here’s 
 
 To create a playbook from scratch, you will need to create an empty playbook, go to the graphical view and start adding and configuring the following bricks in this specific order:
 
-- Step 1: [Triggers](/triggers.md) (can be Alerts, Webhook or Cron)
+- Step 1: [Triggers](triggers.md) (can be Alerts, Webhook or Cron)
     - **Alerts** allow users to collect information from an alert such as the `alert_uuid`, its date of creation (`created_at`), its category (`alert_type`), its `urgency` or the action that triggered THIS alert notification (`event_type`) for example `alert-created`, `alert-status-changed`, `alert-comment-created` etc.
     - **Cron** allows users to periodically launch an automatic action that should be defined and created by a user.
     - **Webhooks** allows an external service to start a particular action through a single HTTP request.
