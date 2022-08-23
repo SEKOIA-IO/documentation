@@ -77,6 +77,42 @@ Navigate to “Home”, “Azure Active Directory” (e.g. `company-ad`), “Mon
 - In the log section, select “AuditLogs” and “SignInLogs”.
 - Choose a name for this configuration and click on “Save”.
 
+### Connection Keys to SEKOIA.IO via Playbook
+
+Last step to integrate your log into SEKOIA.IO, please follow the steps below:
+
+1. Create a playbook with Trigger module **Consume Eventhub messages** in Microsoft Azure technology
+2. Setup Module configuration (= default)
+
+3. Setup Trigger configuration
+
+ - hub_connection_string = Connection string–primary key finishing by `Entitypath =`
+ - hub_consumer_group = `sekoiaio`
+ - hub_name = value of EntityPath
+ - intake_key = Microsoft Azure Intake key that can be found on intake page
+ - intake_server = `https://intake.sekoia.io`
+ - storage_connection_string = Storage Connection string
+ - storage_container_name = value of EntityPath
+
+**Format example**
+
+- Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=active-directory-event"`).
+- Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
+- Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
+
+<img width="100%" alt="image" src="https://user-images.githubusercontent.com/101662967/185440012-876508a5-bdf6-4ad5-a212-6f4f7bc0564e.png">
+
+### Troubleshoot
+
+Go to events page and search events in last 5 minutes by Azure AD intake key    `customer.intake_key:"<Your_AzureAD_Intake_Key>"`
+
+**No events**
+- Please check the configuration and fill the fields with the right information
+
+- It is possible to investigate on the tab Run and see the response by clicking on the module
+<img width="100%" alt="image" src="https://user-images.githubusercontent.com/101662967/185441434-64aacf81-a754-421a-ac87-ff9c06a3f40f.png">
+
+
 ### Forward the Connection Keys to SEKOIA.IO
 
 Finally, please send to SEKOIA.IO the following information:
