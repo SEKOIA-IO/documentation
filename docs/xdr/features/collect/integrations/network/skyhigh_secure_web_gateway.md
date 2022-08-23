@@ -1,10 +1,11 @@
 uuid: 40bac399-2d8e-40e3-af3b-f73a622c9687
-name: McAfee Web Gateway
+name: McAfee Web Gateway / Skyhigh Secure Web Gateway
 type: intake
 
 ## Overview
-McAfee Web Gateway (MWG) is a web gateway offering malware detection, threat prevention and reputation filtering.
-This product is supported by McAfee Corp.
+
+Skyhigh Secure Web Gateway (SWG) (previously McAfee Web Gateway (MWG)) is a web gateway offering malware detection, threat prevention and reputation filtering.
+This product is supported by Skyhigh Security.
 
 {!_shared_content/operations_center/integrations/generated/mcafee-web-gateway_do_not_edit_manually.md!}
 
@@ -14,10 +15,10 @@ In this guide, you will configure a rule set to forward events to syslog and add
 
 ### Configure a Rule Set
 
-Prior the configuration, download the “Rule Set” configuration [`SEKOIAIO_mwg.xml`](/assets/operation_center/integration_catalog/network/mcafee_web_gateway/SEKOIAIO_mwg.xml).
+Prior to the configuration, download the “Rule Set” configuration [`SEKOIAIO_SKYHIGH_swg.xml`](/assets/operation_center/integration_catalog/network/skyhigh_secure_web_gateway/SEKOIAIO_SKYHIGH_swg.xml).
 
 
-In your MWG console:
+In your SWG console:
 
 - Select `Policy` section then the `Rule sets` tab. From the menu, select `Log Handler`.
 - Right-click on the `Default` Log Handler in the tree then select `Add > Rule Set from Library...`.

@@ -115,7 +115,7 @@ nav:
           - FortiProxy: xdr/features/collect/integrations/network/fortiproxy.md
           - FortiWeb: xdr/features/collect/integrations/network/fortiweb.md
           - Infoblox DDI: xdr/features/collect/integrations/network/infoblox_ddi.md
-          - McAfee Web Gateway: xdr/features/collect/integrations/network/mcafee_web_gateway.md
+          - McAfee Web Gateway / Skyhigh Secure Web Gateway: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
           - NetFilter: xdr/features/collect/integrations/network/netfilter.md
           - PaloAlto: xdr/features/collect/integrations/network/paloalto.md
           - Pulse Connect Secure: xdr/features/collect/integrations/network/pulse.md
@@ -546,7 +546,8 @@ plugins:
       operation_center/integration_catalog/network/fortigate.md: xdr/features/collect/integrations/network/fortigate.md
       operation_center/integration_catalog/network/fortiproxy.md: xdr/features/collect/integrations/network/fortiproxy.md
       operation_center/integration_catalog/network/fortiweb.md: xdr/features/collect/integrations/network/fortiweb.md
-      operation_center/integration_catalog/network/mcafee_web_gateway.md: xdr/features/collect/integrations/network/mcafee_web_gateway.md
+      operation_center/integration_catalog/network/skyhigh_secure_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
+      operation_center/integration_catalog/network/mcafee_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
       operation_center/integration_catalog/network/netfilter.md: xdr/features/collect/integrations/network/netfilter.md
       operation_center/integration_catalog/network/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
       operation_center/integration_catalog/network/pulse.md: xdr/features/collect/integrations/network/pulse.md
