@@ -1,51 +1,126 @@
 # Playbooks
 
-Automating your security improves your cyber security operations by consolidating the use of your technologies, processes and policies.
+A playbook is a list of required steps and actions needed to successfully respond to any incident or threat.
 
-Automation combines security tools, processes and people, and speeds up the execution of your security responses while ensuring their repeatability and verifiability.
+Playbooks provide a **step-by-step approach** to **orchestration**, helping security teams establish standardized **incident response processes** and ensuring the steps are followed in **compliance** with regulatory frameworks.
 
-Thus, SEKOIA.IO supervises and executes response actions to be in line with your business and operational objectives.
+In SEKOIA.IO, playbooks play a huge role in automating repetitive tasks to relieve analysts’ daily work, enriching alerts by soliciting external sources, and interconnecting with external systems like ticketing tools for example.
 
-## Introduction
+Because they are highly configurable, SEKOIA.IO’s playbooks supervise and execute response actions to be in line with your business and operational objectives.
 
-SEKOIA.IO comes with an in house GUI for creating automated investigation and orchestration actions: the playbooks.
+---
 
-The playbooks are capable of automatically analysing and investigating all alerts coming from your SIEM. They also allow a quick and fully automated sorting after the analysis of multiple factors.
+In this documentation, you will learn how to: 
 
-Create your own playbooks to build your processes. Use the SEKOIA.IO interface to interconnect your tools and implement your scenarios. Configure the execution of your playbooks by triggering them manually on the alert/case page or automatically based on multiple factors.
+- Configure your profile to be able to efficiently use playbooks
+- Set up your playbooks using templates
+- Create a playbook from scratch
+- Learn more about the different types of triggers, operators and actions
+- Troubleshoot with code section and playbook runs
 
-![!SEKOIA.IO Operations Center playbook overview](/assets/operation_center/playbooks/overview_playbook.png){: style="max-width:100%"}
+## Prerequisites 
 
-## Getting started with a playbook
+### Necessary roles
 
-A simple way to create your playbook: you only need to name it and add a description before validating it.
+To have access to playbooks, you will need to have the role `Symphony Operator`. 
 
-![!SEKOIA.IO Operations Center playbook creation gif](/assets/operation_center/playbooks/create_a_playbook.gif){: style="max-width:100%"}
+Here is the list of permissions that constitutes this role: 
 
-## Prerequisites
+| SYMPHONY_READ_MODULES | List and get Symphony Modules |
+| --- | --- |
+| SYMPHONY_READ_PLAYBOOKS | List and get Symphony Playbooks |
+| SYMPHONY_READ_PLAYBOOK_RUNS | List and get Symphony Playbook Runs |
+| SYMPHONY_READ_PLAYBOOK_RUNS_STATS | List and get statistics about Symphony Playbook Runs |
+| SYMPHONY_WRITE_MODULES | Modify Symphony Modules |
+| SYMPHONY_WRITE_PLAYBOOKS | Write Symphony Playbooks |
+| SYMPHONY_WRITE_PLAYBOOK_RUNS | Modify Symphony Playbook Runs |
 
-First of all, create two roles in `Settings > Communities > Your community > Roles > + ROLE`:
-- `SIC Operator` by selecting the 36 roles that starts with SIC
-- `Symphony Operator` by selecting the 7 roles that starts with SYMPHONY
+If you need to attribute this role to someone, go to Your Account settings > Managed Communities > The person in question > `+ Role` > Select `Symphony Operator`. 
 
-Then, to be able to use a `Block` such as a Sekoia trigger, you should create an API key with the right level of accreditations: SIC Operation and Symphony Operator.
-To do it, go to `Settings > Communities > Your community > API Keys > + API Key`
-- Name and describe your API Key
-- Select the right roles for your key in order to be efficient
+However, depending on which app you’ll be creating playbooks for, you might need to have additional permissions linked to each app (Intelligence Center or Operations Center). 
 
-![!SEKOIA.IO User Center API Key creation](/assets/operation_center/playbooks/create_an_api_key.png){: style="max-width:100%"}
+**Example:** 
 
-> Note: Save your new API Key in a vault. It will no longer be accessible!
+To create playbooks for your TIP, you will need to have the following roles and permissions in addition to Symphony Operator:
 
-Now you will be able to setup a configuration for the Sekoia `Blocks`, built for you.
-Back in the Operations Center, section Playbooks:
+### Generate API Key
 
-- Select the trigger of your choice, for instance `Security alerts`
-- Drag and drop it into the center of your screen
-- On the right side, `Create new configuration`
-- Paste your API key
-- Fulfill the `base_url` field with `https://api.sekoia.io`
-- Click `SAVE` button
+To be able to use playbooks, an API Key with the right settings is needed for the module configuration to work. 
+
+To generate this API Key: 
+
+1. Go to Account Settings > Managed Communities > API Keys > `+ API Key` 
+2. Provide a name and a description (both are mandatory)
+3. Select necessary roles for your API Key (Symphony Operator + (?) 
+4. Save and copy the value of the API Key in your volt (or any safe place)
+5. Paste your API Key in the Module Configuration of your playbook actions
+
+!!! note
+    Beware, the generated API Key will no longer be accessible after you’ve closed the modal.
+
+Check out this section to learn more about how to configure your actions using this API Key.
+
+> add an example of module configuration <
+
+## Navigate playbooks' interface
+
+### Playbooks listing
+
+In the playbooks homepage, all playbooks are listed by order of last edited. From this view, you can: 
+
+- Create a new playbook
+- Search for available playbooks
+- Filter available playbooks by status (enabled/disabled)
+- Enable and disable playbooks directly from the listing using the toggle button
+- Access playbook runs
+
+### Details panel
+
+When clicking on a playbook card, a details panel appears on the right. 
+
+In this panel, you can: 
+
+- Enable or disable the playbook
+- Edit playbook
+- See how many runs have been going as well as their status (in progress, succeeded, error)
+- Quickly access last performed runs and filter them by status
+
+## Playbook details
+
+## Templates
+
+Creating a playbook from scratch can be discouraging. That’s why we provide our users with a way to quickly generate a playbook: templates. These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. 
+
+The Playbooks Catalog is being updated frequently by our analysts, but here’s a list of the main ones. All playbook templates are available on the public repo in [Github.](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) 
+
+| Category | Name | Description |
+| --- | --- | --- |
+| Alerts, Notifications, Webhook | Mail Webhook notification on alert | Send an email about an alert when receiving a webhook event |
+| Alerts, Notifications, Webhook | Mattermost notification on alert | Notify by mattermost when new alerts are created |
+| Alerts, Webhook | Qualify Internet Scan webhook | Qualify an Internet scan alert on webhook |
+| Alerts | Playbook adware | Automatic validation of alerts with predefined adware domains |
+| Alerts | Alert urgency to 0 when rejected | Put the urgency of an alert to 0 when it is rejected |
+| Alerts, Enrichment | Enrich alerts with VirusTotal | Enrich alerts with VirusTotal informations |
+| Alert, cron | Reject old alerts (1 year) | Reject old alerts not updated for 1 year. |
+| Alert, Webhook, enrichment | Enrich with IKnowWhatYouDownload | Enrich with IKnowWhatYouDownload to check if the IP is known from this service, directly from SEKOIA.IO. |
+| Alerts, TheHive | Automatically create an alert on TheHive | Automatically create an alert on TheHive when a new alert is raised in SEKOIA.IO. |
+| Alerts, TheHive | Manually create an Alert on TheHive | Create an alert on TheHive via the alert page. |
+| Alerts, Notifications | Slack notification on alert | Notify by Slack when new alerts are created. If the target is defined, it is used in the notification, otherwise the hostnames from events are used. |
+| Alerts, Enrichment | Enrich alerts with AbuseIPDB | Enrich with AbuseIPDB to check if the IP is known from this service, directly from SEKOIA.IO. |
+| Alerts, Enrichment | Alerts Enrichment Shodan Playbook | Enrich with Shodan to check if the IP is known from this service, directly from SEKOIA.IO. |
+| Alerts, OSINT | Fetch alerts from Digital Shadows SearchLight | Synchronise alerts from Digital Shadows SearchLight to SEKOIA.IO events |
+| AWS, Events | Forward AWS CloudTrail records to SEKOIA.IO | This playbook pulls records from AWS CloudTrail then push the fetched records to SEKOIA.IO |
+| AWS, Events | Forward AWS Flow Logs records to SEKOIA.IO | This playbook pulls records from AWS Flow Logs then push the fetched records to SEKOIA.IO |
+| Events | Forward Panda Security Events to SEKOIA.IO | This playbook pulls security events from the Panda Security Aether platform then push them to SEKOIA.IO |
+| Events | Imperva WAF fetch logs | Fetch events from Imperva Web Application Firewall and forward them to SEKOIA.IO intake |
+| Events | Forward Vade M365 email Events to SEKOIA.IO | This playbook collect logs from 'Vade for M365' then push them to SEKOIA.IO |
+| Events, Google | Forward Google Pubsub records to SEKOIA.IO | This playbook consumes records from Google Pubsub and push them to SEKOIA.IO |
+
+| Category | Name | Description |
+| --- | --- | --- |
+| Observables, Shodan | Shodan Search to observables | Get IP addresses from a Shodan search and add it to Observables database with a tag |
+| Observables, Fetch OSINT | Generic Fetch OSINT to observables | Retrieve observables from an OSINT to add it to observable database with a tag (eg: https://github.com/MISP/misp-warninglists/tree/main/lists) |
+| Observables, Tranco, TIP  | Tranco top domains to observables | Automatically import Tranco's top 1 000 000 domain names to observable database |
 
 ## Build your playbooks with Blocks filtered into 3 types
 
