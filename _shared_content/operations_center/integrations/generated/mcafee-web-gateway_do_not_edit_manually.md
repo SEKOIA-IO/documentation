@@ -6,9 +6,9 @@ The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
-| `Anti-virus` | McAfee Web Gateway analyze the content of requests and reponses to prevent malware infection |
-| `Web proxy` | McAfee Web Gateway logs provide information about the connected client and the requested resource |
-| `Web logs` | McAfee Web Gateway logs provide information about the connected client and the requested resource |
+| `Anti-virus` | McAfee Web Gateway / Skyhigh Secure Web Gateway analyze the content of requests and responses to prevent malware infection |
+| `Web proxy` | McAfee Web Gateway / Skyhigh Secure Web Gateway logs provide information about the connected client and the requested resource |
+| `Web logs` | McAfee Web Gateway / Skyhigh Secure Web Gateway logs provide information about the connected client and the requested resource |
 
 
 
@@ -93,28 +93,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "www",
             "registered_domain": "forbiddensite.com",
-            "path": "/",
             "scheme": "http",
+            "path": "/",
             "port": 80
         },
-        "mcafee": {
-            "webgateway": {
-                "application": {
-                    "reputation": "Unverified",
-                    "name": "forbiddenapp"
-                },
-                "url": {
-                    "reputation": "Minimal Risk",
-                    "reputation_code": -28,
-                    "categories": [
-                        "Pornography"
-                    ]
-                },
-                "http": {
-                    "body": {
-                        "infected": "false",
-                        "modified": "false"
-                    }
+        "skyhighsecurity": {
+            "application": {
+                "reputation": "Unverified",
+                "name": "forbiddenapp"
+            },
+            "url": {
+                "reputation": "Minimal Risk",
+                "reputation_code": -28,
+                "categories": [
+                    "Pornography"
+                ]
+            },
+            "http": {
+                "body": {
+                    "infected": "false",
+                    "modified": "false"
                 }
             }
         },
@@ -138,7 +136,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "date=\"2022-03-17T13:14:39.134Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=52.242.101.226 destination_host=\"slscr.update.microsoft.com\" http_status_code=407 media_type=\"\" source_bytes=173 destination_bytes=0 http_request_first_line=\"CONNECT slscr.update.microsoft.com:443 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-42 ruleset_name=\"Authentication: Direct Proxy\" rule_name=\"Authenticate: Active Directory\" block_id=81 block_reason=\"Authentication Required\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
+        "message": "date=\"2022-03-17T13:14:39.134Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.2 destination_host=\"slscr.update.microsoft.com\" http_status_code=407 media_type=\"\" source_bytes=173 destination_bytes=0 http_request_first_line=\"CONNECT slscr.update.microsoft.com:443 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-42 ruleset_name=\"Authentication: Direct Proxy\" rule_name=\"Authenticate: Active Directory\" block_id=81 block_reason=\"Authentication Required\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
         "event": {
             "category": "network",
             "code": "81",
@@ -157,7 +155,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "destination": {
-            "ip": "52.242.101.226",
+            "ip": "2.2.2.2",
             "domain": "slscr.update.microsoft.com",
             "port": 443,
             "address": "slscr.update.microsoft.com",
@@ -195,24 +193,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "subdomain": "slscr.update",
             "registered_domain": "microsoft.com"
         },
-        "mcafee": {
-            "webgateway": {
-                "application": {
-                    "reputation": "Unverified"
-                },
-                "url": {
-                    "reputation": "Minimal Risk",
-                    "reputation_code": -42,
-                    "categories": [
-                        "Business",
-                        "Software/Hardware"
-                    ]
-                },
-                "http": {
-                    "body": {
-                        "infected": "false",
-                        "modified": "false"
-                    }
+        "skyhighsecurity": {
+            "application": {
+                "reputation": "Unverified"
+            },
+            "url": {
+                "reputation": "Minimal Risk",
+                "reputation_code": -42,
+                "categories": [
+                    "Business",
+                    "Software/Hardware"
+                ]
+            },
+            "http": {
+                "body": {
+                    "infected": "false",
+                    "modified": "false"
                 }
             }
         },
@@ -223,7 +219,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "ip": [
                 "1.2.3.4",
-                "52.242.101.226"
+                "2.2.2.2"
             ]
         }
     }
@@ -284,24 +280,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "name": "myusername"
         },
-        "mcafee": {
-            "webgateway": {
-                "application": {
-                    "reputation": "Unverified"
-                },
-                "url": {
-                    "reputation": "Minimal Risk",
-                    "reputation_code": -3,
-                    "categories": [
-                        "Business",
-                        "Software/Hardware"
-                    ]
-                },
-                "http": {
-                    "body": {
-                        "infected": "false",
-                        "modified": "false"
-                    }
+        "skyhighsecurity": {
+            "application": {
+                "reputation": "Unverified"
+            },
+            "url": {
+                "reputation": "Minimal Risk",
+                "reputation_code": -3,
+                "categories": [
+                    "Business",
+                    "Software/Hardware"
+                ]
+            },
+            "http": {
+                "body": {
+                    "infected": "false",
+                    "modified": "false"
                 }
             }
         },
@@ -384,30 +378,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "fr",
             "subdomain": "www",
             "registered_domain": "google.fr",
-            "path": "/",
             "scheme": "http",
+            "path": "/",
             "port": 80
         },
         "user": {
             "name": "myusername"
         },
-        "mcafee": {
-            "webgateway": {
-                "application": {
-                    "reputation": "Unverified"
-                },
-                "url": {
-                    "reputation": "Minimal Risk",
-                    "reputation_code": 0,
-                    "categories": [
-                        "Search Engines"
-                    ]
-                },
-                "http": {
-                    "body": {
-                        "infected": "false",
-                        "modified": "false"
-                    }
+        "skyhighsecurity": {
+            "application": {
+                "reputation": "Unverified"
+            },
+            "url": {
+                "reputation": "Minimal Risk",
+                "reputation_code": 0,
+                "categories": [
+                    "Search Engines"
+                ]
+            },
+            "http": {
+                "body": {
+                    "infected": "false",
+                    "modified": "false"
                 }
             }
         },
@@ -453,14 +445,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.response.bytes` | `long` | Total size in bytes of the response (body and headers). |
 |`http.response.mime_type` | `keyword` | Mime type of the body of the response. |
 |`http.response.status_code` | `long` | HTTP response status code. |
-|`mcafee.webgateway.application.name` | `keyword` | None |
-|`mcafee.webgateway.application.reputation` | `keyword` | None |
-|`mcafee.webgateway.http.body.infected` | `keyword` | None |
-|`mcafee.webgateway.http.body.modified` | `keyword` | None |
-|`mcafee.webgateway.url.categories` | `text` | None |
-|`mcafee.webgateway.url.reputation` | `keyword` | None |
-|`mcafee.webgateway.url.reputation_code` | `number` | None |
-|`mcafee.webgateway.viruses` | `text` | None |
 |`network.direction` | `keyword` | Direction of the network traffic. |
 |`observer.hostname` | `keyword` | Hostname of the observer. |
 |`observer.product` | `keyword` | The product name of the observer. |
@@ -468,6 +452,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`rule.name` | `keyword` | Rule name |
 |`rule.ruleset` | `keyword` | Rule ruleset |
+|`skyhighsecurity.application.name` | `keyword` | None |
+|`skyhighsecurity.application.reputation` | `keyword` | None |
+|`skyhighsecurity.http.body.infected` | `keyword` | None |
+|`skyhighsecurity.http.body.modified` | `keyword` | None |
+|`skyhighsecurity.url.categories` | `text` | None |
+|`skyhighsecurity.url.reputation` | `keyword` | None |
+|`skyhighsecurity.url.reputation_code` | `number` | None |
+|`skyhighsecurity.viruses` | `text` | None |
 |`source.ip` | `ip` | IP address of the source. |
 |`url.domain` | `keyword` | Domain of the url. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
