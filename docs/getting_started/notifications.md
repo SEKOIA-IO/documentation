@@ -22,7 +22,7 @@ You can filter by type of trigger or type of actions.
 
 ## Create a new notification
 
-Notifications only apply to the community and the application you are in.
+Notifications only apply to the community and the application you are in. Once configured, these notifications will only be visible to the user who created them.
 
 ### Operations Center Notifications
 
