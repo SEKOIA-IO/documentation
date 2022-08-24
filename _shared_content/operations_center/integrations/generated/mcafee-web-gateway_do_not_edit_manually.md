@@ -49,10 +49,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "start": "2022-03-11T10:39:16.390Z"
         },
-        "source": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
         "destination": {
             "ip": "2.2.2.41",
             "domain": "www.forbiddensite.com",
@@ -83,6 +79,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "direction": "egress"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "user_agent": {
             "original": "curl/7.77.0"
@@ -150,10 +150,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "start": "2022-03-17T13:14:39.134Z"
         },
-        "source": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
         "destination": {
             "ip": "2.2.2.2",
             "domain": "slscr.update.microsoft.com",
@@ -185,6 +181,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "direction": "egress"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "url": {
             "domain": "slscr.update.microsoft.com",
@@ -246,10 +246,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "start": "2022-03-24T13:54:02.740Z"
         },
-        "source": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
         "destination": {
             "ip": "255.255.255.255",
             "address": "255.255.255.255"
@@ -276,6 +272,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "direction": "egress"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "user": {
             "name": "myusername"
@@ -334,10 +334,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "start": "2022-03-11T09:50:47.399Z"
         },
-        "source": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
         "destination": {
             "ip": "142.250.178.131",
             "domain": "www.google.fr",
@@ -368,6 +364,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "direction": "egress"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "user_agent": {
             "original": "curl/7.77.0"
@@ -421,6 +421,187 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "skyhigh_swg.json"
+
+    ```json
+	
+    {
+        "message": "user_id=-1 username=foo source_ip=37.171.139.5 http_action=CERTVERIFY server_to_client_bytes=0 client_to_server_bytes=0 requested_host=ping-edge.smartscreen.microsoft.com requested_path=/ result=OBSERVED virus= request_timestamp_epoch=1661260270 request_timestamp=2022-08-23 13:11:10 uri_scheme=https category=Business, Software/Hardware media_type=application/x-empty application_type= reputation=Minimal Risk last_rule=Allow http_status_code=200 client_ip=10.0.2.15 location= block_reason= user_agent_product=Other user_agent_version= user_agent_comment= process_name=msedge.exe destination_ip=20.108.130.238 destination_port=443 pop_country_code=FR referer= ssl_scanned=t av_scanned_up=t av_scanned_down=f rbi=f dlp=f client_system_name=desktop-rles2a6 filename= pop_egress_ip=161.69.108.44 pop_ingress_ip=10.42.47.222 proxy_port=8080",
+        "event": {
+            "category": "network",
+            "kind": "event",
+            "action": "denied",
+            "type": [
+                "connection",
+                "access",
+                "denied"
+            ]
+        },
+        "@timestamp": "2022-08-23T13:11:10.000000Z",
+        "source": {
+            "nat": {
+                "ip": "37.171.139.5"
+            },
+            "ip": "10.0.2.15",
+            "bytes": 0,
+            "address": "10.0.2.15"
+        },
+        "destination": {
+            "ip": "20.108.130.238",
+            "domain": "ping-edge.smartscreen.microsoft.com",
+            "bytes": 0,
+            "port": 443,
+            "address": "ping-edge.smartscreen.microsoft.com",
+            "top_level_domain": "com",
+            "subdomain": "ping-edge.smartscreen",
+            "registered_domain": "microsoft.com"
+        },
+        "http": {
+            "response": {
+                "status_code": 200,
+                "mime_type": "application/x-empty"
+            },
+            "request": {
+                "mime_type": "application/x-empty"
+            }
+        },
+        "url": {
+            "scheme": "https",
+            "path": "/"
+        },
+        "host": {
+            "name": "desktop-rles2a6"
+        },
+        "process": {
+            "name": "msedge.exe"
+        },
+        "observer": {
+            "type": "proxy",
+            "vendor": "McAfee Corp.",
+            "product": "McAfee Web Gateway"
+        },
+        "rule": {
+            "name": "Allow",
+            "category": "Business, Software/Hardware"
+        },
+        "network": {
+            "direction": "egress"
+        },
+        "user": {
+            "name": "foo"
+        },
+        "skyhighsecurity": {
+            "dlp": "f",
+            "rbi": "f",
+            "av_scanned_down": "f",
+            "reputation": "Minimal Risk"
+        },
+        "related": {
+            "hosts": [
+                "ping-edge.smartscreen.microsoft.com"
+            ],
+            "ip": [
+                "10.0.2.15",
+                "20.108.130.238",
+                "37.171.139.5"
+            ],
+            "user": [
+                "foo"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "skyhigh_swg_block.json"
+
+    ```json
+	
+    {
+        "message": "id=-1 username=autorite nt\\\\service r\u00c9seau source_ip=1.1.1.1 http_action=GET server_to_client_bytes=3160 client_to_server_bytes=1137 requested_host=ctldl.windowsupdate.com requested_path=/msdownload/update/v3/static/trustedr/en/pinrulesstl.cab result=DENIED virus= request_timestamp_epoch=1661266553 request_timestamp=2022-08-23 14:55:53 uri_scheme=http category=Software/Hardware media_type= application_type= reputation=Minimal Risk last_rule=Block if MCP Authentication Failed http_status_code=403 client_ip=1.1.1.1 location= block_reason=Authentication Required user_agent_product=Other user_agent_version= user_agent_comment= process_name=svchost.exe destination_ip=1.1.1.1 destination_port=80 pop_country_code=fr referer= ssl_scanned=f av_scanned_up=f av_scanned_down=f rbi=f dlp=f client_system_name= filename=pinrulesstl.cab pop_egress_ip=1.1.1.1pop_ingress_ip=1.1.1.1 proxy_port=80",
+        "event": {
+            "category": "network",
+            "kind": "event",
+            "action": "denied",
+            "reason": "Authentication Required",
+            "type": [
+                "connection",
+                "access",
+                "denied"
+            ]
+        },
+        "@timestamp": "2022-08-23T14:55:53.000000Z",
+        "source": {
+            "nat": {
+                "ip": "1.1.1.1"
+            },
+            "ip": "1.1.1.1",
+            "bytes": 1137,
+            "address": "1.1.1.1"
+        },
+        "destination": {
+            "ip": "1.1.1.1",
+            "domain": "ctldl.windowsupdate.com",
+            "bytes": 3160,
+            "port": 80,
+            "address": "ctldl.windowsupdate.com",
+            "top_level_domain": "com",
+            "subdomain": "ctldl",
+            "registered_domain": "windowsupdate.com"
+        },
+        "http": {
+            "response": {
+                "status_code": 403
+            }
+        },
+        "url": {
+            "scheme": "http",
+            "path": "/msdownload/update/v3/static/trustedr/en/pinrulesstl.cab"
+        },
+        "process": {
+            "name": "svchost.exe"
+        },
+        "observer": {
+            "type": "proxy",
+            "vendor": "McAfee Corp.",
+            "product": "McAfee Web Gateway"
+        },
+        "file": {
+            "name": "pinrulesstl.cab"
+        },
+        "rule": {
+            "name": "Block if MCP Authentication Failed",
+            "category": "Software/Hardware"
+        },
+        "network": {
+            "direction": "egress"
+        },
+        "user": {
+            "name": "autorite nt\\\\service r\u00c9seau"
+        },
+        "skyhighsecurity": {
+            "dlp": "f",
+            "rbi": "f",
+            "av_scanned_down": "f",
+            "reputation": "Minimal Risk"
+        },
+        "related": {
+            "hosts": [
+                "ctldl.windowsupdate.com"
+            ],
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "autorite nt\\\\service r\u00c9seau"
+            ]
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -430,17 +611,23 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
+|`destination.bytes` | `long` | Bytes sent from the destination to the source. |
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.port` | `long` | Port of the destination. |
+|`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`file.name` | `keyword` | Name of the file including the extension, without the directory. |
+|`host.name` | `keyword` | Name of the host. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.method` | `keyword` | HTTP request method. |
+|`http.request.mime_type` | `keyword` | Mime type of the body of the request. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
 |`http.response.bytes` | `long` | Total size in bytes of the response (body and headers). |
 |`http.response.mime_type` | `keyword` | Mime type of the body of the response. |
@@ -450,6 +637,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
+|`process.name` | `keyword` | Process name. |
+|`rule.category` | `keyword` | Rule category |
 |`rule.name` | `keyword` | Rule name |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`skyhighsecurity.application.name` | `keyword` | None |
@@ -460,10 +649,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`skyhighsecurity.url.reputation` | `keyword` | None |
 |`skyhighsecurity.url.reputation_code` | `number` | None |
 |`skyhighsecurity.viruses` | `text` | None |
+|`source.bytes` | `long` | Bytes sent from the source to the destination. |
 |`source.ip` | `ip` | IP address of the source. |
+|`source.nat.ip` | `ip` | Source NAT ip |
 |`url.domain` | `keyword` | Domain of the url. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
+|`url.path` | `wildcard` | Path of the request, such as "/search". |
 |`url.port` | `long` | Port of the request, such as 443. |
+|`url.scheme` | `keyword` | Scheme of the url. |
 |`user.name` | `keyword` | Short name or login of the user. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 
