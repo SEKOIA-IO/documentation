@@ -17,7 +17,7 @@ From this page, you can:
 ### Details panel
 
 When clicking on a playbook from the list, a side panel appears with the main details about the playbook.
-![details-panel](/assets/operation_center/playbooks/details-panel.png){align=right} {: style="max-width:50%"}
+![details-panel](/assets/operation_center/playbooks/details-panel.png){align=right, style="max-width:50%"}
 
 In this panel, you can: 
 
