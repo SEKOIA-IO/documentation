@@ -1,6 +1,6 @@
 # Navigate playbooks' interface
 
-### Playbooks listing
+## Playbooks listing
 
 In the playbooks’ homepage are listed all playbooks created within your community. All playbooks are listed by order of last edited and there are multiple filters made available to navigate this page with ease. 
 
@@ -30,15 +30,15 @@ In this panel, you can:
 
 ----
 
-### Playbook details
+## Playbook details
 
-#### Graphical view
+### Graphical view
 
-#### Playbook code
+### Playbook code
 
-#### Playbook details 
+### Playbook details 
 
 ---
 
-### Playbook runs
+## Playbook runs
 
