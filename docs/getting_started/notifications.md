@@ -22,7 +22,7 @@ You can filter by type of trigger or type of actions.
 
 ## Create a new notification
 
-Notifications only apply to the community and the application you are in.
+Notifications only apply to the community and the application you are in. Once configured, these notifications will only be visible to the user who created them.
 
 ### Operations Center Notifications
 
@@ -127,6 +127,7 @@ Here's the description of the payload fields description:
 
 
 Now, let’s say that you want to post a notification to your internal Microsoft Teams messaging system when a new alert is raised. To do so, you have to:
+
 - Configure a small HTTP server that will receive the payload
 - It will then talk to SEKOIA.IO’s Alert API to retrieve more information about the alert itself (its title, its urgency, etc.)
 - The final message is computed and pushed to Microsoft Teams via their incoming WebHook system
