@@ -18,7 +18,7 @@ According to [docs.microsoft.com](https://docs.microsoft.com/en-us/microsoft-365
 
 In SEKOIA.IO XDR, [create a new intake key](xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
 
-In Microsoft Azure, create a service account with the `Reports reader` and `Exchange Administrator` rights and a strong password (for more information: [MessageTrace report required permissions](https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#permissions) and [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
+In Microsoft Azure, create a service account with the `Reports reader` and `Security reader` rights and a strong password (for more information: [MessageTrace report required permissions](https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#permissions) and [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
 
 ## Configure
 
@@ -64,6 +64,7 @@ The response should look like this one (you can use `| jq` to format the respons
 You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Message Trace" trigger.
 
 Create a trigger configuration and input the following information:
+
 - account_name
 - account_password
 - intake_key
