@@ -187,6 +187,8 @@ nav:
         - Sentinel One: xdr/features/automate/library/sentinel-one.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
+        - Skyhigh Security Secure Web Gateway (SWG): xdr/features/automate/library/skyhigh-security-secure-web-gateway-swg.md
+        - Sophos: xdr/features/automate/library/sophos.md
         - The Hive: xdr/features/automate/library/the-hive.md
         - Tranco: xdr/features/automate/library/tranco.md
         - Triage: xdr/features/automate/library/triage.md
@@ -546,11 +548,11 @@ plugins:
       operation_center/integration_catalog/network/fortigate.md: xdr/features/collect/integrations/network/fortigate.md
       operation_center/integration_catalog/network/fortiproxy.md: xdr/features/collect/integrations/network/fortiproxy.md
       operation_center/integration_catalog/network/fortiweb.md: xdr/features/collect/integrations/network/fortiweb.md
-      operation_center/integration_catalog/network/skyhigh_secure_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
       operation_center/integration_catalog/network/mcafee_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
       operation_center/integration_catalog/network/netfilter.md: xdr/features/collect/integrations/network/netfilter.md
       operation_center/integration_catalog/network/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
       operation_center/integration_catalog/network/pulse.md: xdr/features/collect/integrations/network/pulse.md
+      operation_center/integration_catalog/network/skyhigh_secure_web_gateway.md: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
       operation_center/integration_catalog/network/sophos_fw.md: xdr/features/collect/integrations/network/sophos_fw.md
       operation_center/integration_catalog/network/squid.md: xdr/features/collect/integrations/network/squid.md
       operation_center/integration_catalog/network/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
