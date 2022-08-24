@@ -2,7 +2,11 @@
 
 ### Playbooks listing
 
-In the playbooks homepage, all playbooks are listed by order of **last edited**. From this view, you can: 
+In the playbooks’ homepage are listed all playbooks created within your community. All playbooks are listed by order of last edited and there are multiple filters made available to users. 
+
+![playbooks-listing](/assets/operation_center/playbooks/playbook-listing.png){: style="max-width:100%"}
+
+From this page, you can: 
 
 - Create a new playbook
 - Search for available playbooks
@@ -12,14 +16,18 @@ In the playbooks homepage, all playbooks are listed by order of **last edited**.
 
 ### Details panel
 
-When clicking on a playbook card, a details panel appears on the right. 
+When clicking on a playbook from the list, a side panel appears with the main details about the playbook.
+![details-panel](/assets/operation_center/playbooks/details-panel.png){align=right} 
+
 
 In this panel, you can: 
 
-- Enable or disable the playbook
-- Edit playbook
-- See how many runs have been going as well as their status (`in progress`, `succeede`d, `error`)
+- Enable or disable the playbook with the toggle at the top
+- Edit playbook using the `edit` button
+- Access the `description` of the playbook
+- See how many runs have been going as well as their status (`in progress`, `succeeded`, `error`)
 - Quickly access last performed runs and filter them by status
+- Restart runs
 
 ### Playbook details
 
