@@ -115,9 +115,9 @@ From the left to the right, 7 features are available on the top screen:
 - Direct links to the [Intelligence Center](https://docs.sekoia.io/cti/) by clicking on the listed `related threats`
 
 !!! tip
-    If you want to list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name. It will automatically add the rule as a filter.  
+    To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.  
 
-#### Bulk actions
+### Bulk actions
 
 On the main alert listing, it is possible to treat alerts faster. With the bulk actions, users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context. 
 
