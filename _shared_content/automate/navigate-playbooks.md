@@ -38,5 +38,7 @@ In this panel, you can:
 
 #### Playbook details 
 
-#### Playbook runs
+---
+
+### Playbook runs
 
