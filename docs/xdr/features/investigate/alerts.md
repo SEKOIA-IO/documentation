@@ -130,7 +130,7 @@ To change statuses in bulk, you have to:
 - Choose the action you want to apply to all these alerts 
 - Click on `Apply`
 
-A modal with the total number of alerts that can be edited is shown. Some alerts will not be included if their status cannot be changed to the status chosen by the user. 
+A modal with the total number of alerts that can be edited is shown. Some alerts will not be included if their status cannot be changed to the status chosen by the user. Learn more about alert status change in the [Alerts workflow](#alerts-workflow) section. 
 
 - Leave a comment explaining your decision and save your changes. 
 
