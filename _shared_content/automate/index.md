@@ -49,18 +49,18 @@ To create playbooks for your XDR, you will need to have the role `OC_viewer` or 
 
 ### Generate API Key
 
-To be able to use playbooks, an API Key with the right settings is needed for the module configuration to work. 
+To be able to use playbooks, an API Key with the right settings is needed for the Module Configuration to work. 
 
 To generate this API Key: 
 
 1. Go to Account Settings > Managed Communities > API Keys > `+ API Key` 
 2. Provide a name and a description (both are mandatory)
-3. Select necessary roles for your API Key (Symphony Operator + (?) 
+3. Select necessary roles for your API Key (Symphony Operator + necessary roles depending on which app you're using) 
 4. Save and copy the value of the API Key in your volt (or any safe place)
 5. Paste your API Key in the Module Configuration of your playbook actions
 
 !!! note
-    Beware, the generated API Key will no longer be accessible after you’ve closed the modal.
+    Beware, the generated API Key will no longer be accessible after you’ve closed the modal. 
 
 To learn more about how to generate and revoke API keys, please refer to this [section.](https://docs.sekoia.io/getting_started/generate_api_keys/) 
 
