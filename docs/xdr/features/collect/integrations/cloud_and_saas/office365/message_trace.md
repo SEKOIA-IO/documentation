@@ -73,4 +73,4 @@ Save your configuration and start the trigger.
 
 ## Debug
 
-If your user cannot access the MessageTrace API, please visit the [Azure Sign-in Logs dashboard](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) and use the `Add filters` button to filter on the username. You can then click on an authentication event to learn about the issue and use the `Launch the Sign-in Diagnostic.` button to go further. 
+If your user cannot access the MessageTrace API, please visit the [Azure Sign-in Logs dashboard](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) and use the `Add filters` button to filter on the username. You can then choose an authentication event to learn about the issue and use the `Launch the Sign-in Diagnostic.` button to go further. 
