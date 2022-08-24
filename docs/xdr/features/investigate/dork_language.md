@@ -3,19 +3,21 @@
 Dork is a domain-specific language used to generate search queries that integrate advanced search operators.
 This language offers to exceed filters available on APIs.
 
+Please refer to [Elastic Common Schema (ECS) Reference](https://www.elastic.co/guide/en/ecs/master/index.html) if you need to look up a field available in SEKOIA.IO. 
+
 ## Example
 
-On the Operations Center, on the events page, the following query will match all not failed events received from the start of January 1st, 2020 to the end of January 2nd, 2020:
+On the Events page, the following query will match all events that have not failed and were received from the start of January 1st, 2020 to the end of January 2nd, 2020:
 
 `NOT(error_code:"Failed") AND timestamp:>=2020-01-01T00:00:00Z AND timestamp:<2020-01-03T00:00:00Z`
 
 ## Syntax
 
-A dork query contains one or more terms. Each terms hold a field, an operator and a literal.
+A dork query can contain one or more terms. Each term holds a field, an operator and a literal.
 
 e.g: `id:"ALWyJiGeJSiw"`
 
-These terms can be combined though the use of logical operators.
+These terms can be combined with the use of logical operators.
 
 ## Literals
 
@@ -73,7 +75,7 @@ If the field represents a list:
 | Operator | Description | Example |
 |----------|-------------|---------|
 | AND | Match if both terms are verified | `timestamp:>2020-01-01T00:00:00Z AND type:$"ware"` |
-| OR | Match if any terms are verified | `timestamp:>2020-01-01T00:00:00Z OR type:^"mal"` |
+| OR | Match if one of the terms is verified | `timestamp:>2020-01-01T00:00:00Z OR type:^"mal"` |
 | NOT | Inverse the result of the term | `NOT type:^"mal"` |
 
 ### Grouping operators
