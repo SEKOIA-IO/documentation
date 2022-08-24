@@ -225,17 +225,43 @@ The `Value Selection` mode can be toggled with the button at the top right of th
 - [Create an Alert Filter](#create-an-alert-filter)
 - [Search events with these values](#search-events-with-this-value)
 
-### Create an Alert Filter
+#### Create an Alert Filter
 
 Alert Filters can be used to prevent known false positives from raising the same alert in the future.
 
-You can create an Alert Filter for the Rule that triggered the alert easily by selecting multiple values and clicking on the Alert Filter button. The filter's pattern is automatically created from selected values.
+![alert-filter](/assets/operation_center/alerts/alert-filter.png){align=right}
 
-By default, `Reject the Alert` is selected to automatically reject the alert after creating the Alert Filter.
+You can create an Alert Filter for the rule that triggered the alert by following these steps: 
 
-### Search Events with this value
+- On the `alert`page, go to `events` tab 
+- Click on `Toggle value selection` button in the upper right of the logs list
+- Select `values` you want to filter by clicking on them in the logs list
+- Click on the button `Create an Alert filter` as shown in the screenshot
+- As the modal appears, fill in the `name` of the alert filter (mandatory)
+- Provide a `description` (optional)
+- The filter's pattern is automatically created from selected values.
+- Click on `Add` to add this alert filter to the rule that triggered this alert
 
-The "Search Events with this value" feature can be used to perform a search into all events that occurred during the alert's timeframe (+- 1 hour). The search query is automatically created from selected values. A side panel opens with the search results, allowing to investigate an alert without leaving its page.
+!!!note 
+    By default, `Reject the Alert` is selected by default to automatically reject the alert after creating the Alert Filter.
+
+
+#### Search Events with this value
+
+The "Search Events with this value" feature can be used to perform a search into all events that occurred during the alert's timeframe (+- 1 hour).
+
+![search-events](/assets/operation_center/alerts/search-events.png){align=right}
+
+The search query is automatically created from selected values. 
+
+To search events with a value: 
+
+- On the `alert`page, go to `events` tab 
+- Click on `Toggle value selection` button in the upper right of the logs list
+- Select `values` you want to search for by clicking on them in the logs list
+- Click on the button `Perform a search` as shown in the screenshot
+
+A side panel opens with the search results, allowing you to investigate an alert without leaving the page.
 
 ### Graph Investigation
 
