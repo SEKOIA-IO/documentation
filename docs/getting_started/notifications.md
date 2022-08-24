@@ -127,6 +127,7 @@ Here's the description of the payload fields description:
 
 
 Now, let’s say that you want to post a notification to your internal Microsoft Teams messaging system when a new alert is raised. To do so, you have to:
+
 - Configure a small HTTP server that will receive the payload
 - It will then talk to SEKOIA.IO’s Alert API to retrieve more information about the alert itself (its title, its urgency, etc.)
 - The final message is computed and pushed to Microsoft Teams via their incoming WebHook system
