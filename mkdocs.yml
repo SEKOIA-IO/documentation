@@ -147,6 +147,7 @@ nav:
     - Automate:
       - Playbooks: xdr/features/automate/index.md
       - Navigate playbooks: xdr/features/automate/navigate-playbooks.md
+      - Build playbooks: xdr/features/automate/build-playbooks.md
       - Triggers: xdr/features/automate/triggers.md
       - Operators: xdr/features/automate/operators.md
       - Actions: xdr/features/automate/actions.md
@@ -194,7 +195,7 @@ nav:
         - Vade Secure: xdr/features/automate/library/vade-secure.md
         - VirusTotal: xdr/features/automate/library/virustotal.md
         - Whois: xdr/features/automate/library/whois.md
-      - Debug a playbook: xdr/features/automate/debug-playbook.md
+      - Debug playbooks: xdr/features/automate/debug-playbook.md
   - Usecases:
     - Synchronise Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
   - FAQ: xdr/FAQ.md
