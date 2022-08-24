@@ -1,4 +1,4 @@
-# Debug a playbook 
+# Debug playbooks
 
 ### RUN feature
 
