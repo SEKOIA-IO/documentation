@@ -2,7 +2,7 @@
 
 ### Playbooks listing
 
-In the playbooks’ homepage are listed all playbooks created within your community. All playbooks are listed by order of last edited and there are multiple filters made available to users. 
+In the playbooks’ homepage are listed all playbooks created within your community. All playbooks are listed by order of last edited and there are multiple filters made available to navigate this page with ease. 
 
 ![playbooks-listing](/assets/operation_center/playbooks/playbook-listing.png){: style="max-width:100%"}
 
@@ -17,8 +17,7 @@ From this page, you can:
 ### Details panel
 
 When clicking on a playbook from the list, a side panel appears with the main details about the playbook.
-![details-panel](/assets/operation_center/playbooks/details-panel.png){align=right} 
-
+![details-panel](/assets/operation_center/playbooks/details-panel.png){align=right} {: style="max-width:50%"}
 
 In this panel, you can: 
 
@@ -29,6 +28,8 @@ In this panel, you can:
 - Quickly access last performed runs and filter them by status
 - Restart runs
 
+----
+
 ### Playbook details
 
 #### Graphical view
@@ -38,6 +39,8 @@ In this panel, you can:
 #### Playbook details 
 
 #### Playbook runs
+
+----
 
 ## Create and edit a playbook
 
@@ -88,6 +91,8 @@ The Playbook Templates' Catalog is being updated frequently by our analysts and 
 | Observables, Shodan | Shodan Search to observables | Get IP addresses from a Shodan search and add it to Observables database with a tag |
 | Observables, Fetch OSINT | Generic Fetch OSINT to observables | Retrieve observables from an OSINT to add it to observable database with a tag (eg: https://github.com/MISP/misp-warninglists/tree/main/lists) |
 | Observables, Tranco, TIP  | Tranco top domains to observables | Automatically import Tranco's top 1 000 000 domain names to observable database |
+
+---
 
 ## Build your playbooks from scratch
 
