@@ -121,7 +121,7 @@ It supports the following expressions:
   selection1:
     process.parent.name: '*'
   ```
-  Otherwise the rule will also work if the field `process.parent.name` does not exist. Sometimes it is not an issue, however it can be in case of high false positives without that field for instance.
+  Otherwise the rule will also raise an alert if the field `process.parent.name` does not exist. Sometimes it is not an issue, however it can be in case of high false positives without that field for instance.
 
 ## Correlation
 Detection objects apply a signature to a single event to determine if there is a match. What if you want to create more complex signatures that would require several events to match? You can do this with Sigma Correlation rules.
