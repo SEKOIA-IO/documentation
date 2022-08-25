@@ -21,22 +21,33 @@ In the AWS console, navigate to: `Services > CloudTrail > Trails`. From there, e
 
 Activate the logging on the trail through the switch button (On/Off) located on the top right hand corner of the trail page.
 
+### Create a SQS queue
+
+This integration relies on S3 Event Notifications to discover new S3 objects.
+
+To be enable to set the S3 Event Notification, create a queue  in the SQS service according [this guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-create-queue.html).
+Please, keep in mind, to create the SQS queue in the same region as the S3 bucket you want to watch.
+
+### Create a S3 Event Notification
+
+Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification.
+Select the notification for object create in the Event type section. As the destination, choose the SQS service and select the queue you create in the previous section.
+
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `AWS CloudTrail`.
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Cloudtrail trigger](../../../../automate/library/aws.md#fetch-cloudtrail-logs). You can use the existing template to fasten and ease the creation of your playbook.
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new CloudTrail records on S3 connector](../../../../automate/library/aws.md#fetch-new-cloudtrail-records-on-s3).
 
-Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the S3 Bucket, hosting the CloudTrail logs, and a prefix to the CloudTrail objects (e.g `AWSLogs/313400002243/CloudTrail/`).
-
-At the end of the playbook, set up the action `Push events to intake` with a SEKOIA.IO API key and the intake key, from the intake previously created.
+Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.
 
 Start the playbook and enjoy your events.
 
 ## Further Readings
 
-
 - [AWS CloudTrail Overview](https://aws.amazon.com/cloudtrail/)
 - [AWS CloudTrail Documentation](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
+- [AWS S3 Overview](https://aws.amazon.com/s3/)
+- [AWS S3 Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
