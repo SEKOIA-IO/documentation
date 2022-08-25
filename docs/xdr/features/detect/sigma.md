@@ -116,8 +116,7 @@ It supports the following expressions:
   
   **Example**: `selection1 and not selection2`
   
-  Now if in that example selection2 is simply `process.parent.name: 'test'`.
-  **Note that you might need to put in selection1 an "exists" value for the field you are excluding**:
+  Now if in that example selection2 is simply `process.parent.name: 'test'` for instance, **Note that you might need to put in selection1 an "exists" value for the field you are excluding**:
   ```
   selection1:
     process.parent.name: '*'
