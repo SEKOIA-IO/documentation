@@ -25,11 +25,9 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Get the [Sophos Central SIEM integration script](https://github.com/sophos/Sophos-Central-SIEM-Integration) and configure it by following [this Sophos guide](https://support.sophos.com/support/s/article/KB-000036372?language=en_US).
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Sophos EDR connector](../../../../automate/library/sophos.md).
 
-### Forward events
-
-See the [Ingestion methods page](https://docs.sekoia.io/operation_center/data_collection/ingestion_methods/) to select the appropriate method to forward your events to SEKOIA.IO according to your needs.
+Set up the connector configuration with the `Client ID`, the `Client Secret` and the intake key
 
 
 ## Further Readings
