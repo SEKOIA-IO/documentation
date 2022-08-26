@@ -455,7 +455,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "executable": "C:\\Windows\\System32\\relog.exe",
             "parent": {
                 "executable": "E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Bin\\Microsoft.Exchange.Diagnostics.Service.exe",
-                "command_line": "E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Bin\\Microsoft.Exchange.Diagnostics.Service.exe"
+                "command_line": "E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Bin\\Microsoft.Exchange.Diagnostics.Service.exe",
+                "name": "Microsoft.Exchange.Diagnostics.Service.exe"
             },
             "working_directory": "C:\\Windows\\system32"
         },
@@ -624,7 +625,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "executable": "C:\\Windows\\System32\\wbem\\WmiPrvSE.exe",
             "parent": {
                 "executable": "C:\\Windows\\System32\\svchost.exe",
-                "command_line": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p"
+                "command_line": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p",
+                "name": "svchost.exe"
             },
             "working_directory": "C:\\Windows\\system32"
         },
@@ -895,6 +897,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.name` | `keyword` | Process name. |
 |`process.parent.command_line` | `wildcard` | Full command line that started the process. |
 |`process.parent.executable` | `keyword` | Absolute path to the process executable. |
+|`process.parent.name` | `keyword` | Process name. |
 |`process.pe.company` | `keyword` | Internal company name of the file, provided at compile-time. |
 |`process.pe.description` | `keyword` | Internal description of the file, provided at compile-time. |
 |`process.pe.file_version` | `keyword` | Process name. |
