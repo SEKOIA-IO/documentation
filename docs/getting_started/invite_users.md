@@ -31,3 +31,24 @@ To create custom roles for your guests, you’ll have to:
 
 ### Permissions
 Permissions can be different depending on your job position at your company. In this section, you’ll have a look at all our permissions depending on which product you are subscribed to. There are three main categories to all of these permissions: `Admin`, `Manage` or `View`.
+
+## User Management
+
+### Adding User
+An admin or a user with the permission to manage user will be able to add new users.
+
+A user added in the parent community will be access all children community with the role selected.
+
+A user can be added to several children communities with the role defined by the admin.
+Therefore, the user will only have access to the children communities where it is registered.
+
+Here are the following steps to add the user for the last case:
+1- Select the children community on the right panel
+2- Add user to this children community
+
+<img width="1183" alt="image" src="https://user-images.githubusercontent.com/101662967/186946163-21ec9da8-3598-4fd7-83fe-0b1bd137ce45.png">
+
+### Managing users roles
+On the user tab, an admin is able to add new role or delete it from the community
+<img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
+
