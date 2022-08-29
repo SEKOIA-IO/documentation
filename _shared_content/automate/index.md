@@ -12,7 +12,7 @@ Because they are highly configurable, SEKOIA.IO’s playbooks supervise and exec
 
 In this documentation, you will learn how to: 
 
-- Configure your profile to be able to efficiently use playbooks
+- Configure your profile to efficiently use playbooks
 - Set up your playbooks using templates
 - Create a playbook from scratch
 - Learn more about the different types of triggers, operators and actions
@@ -38,7 +38,7 @@ Here is the list of permissions that constitutes this role:
 
 If you need to attribute this role to someone, go to Your Account settings > Managed Communities > The user in question > `+ Role` > Select `Symphony Operator`. 
 
-To learn more about how to attribute roles within your community, please refer to this [section.](https://docs.sekoia.io/getting_started/invite_users/)) 
+To learn more about how to attribute roles within your community, please refer to this [section.](https://docs.sekoia.io/getting_started/invite_users/)
 
 !!! note 
     Depending on which app you’ll be creating playbooks for, you might need to have additional permissions linked to each app (Intelligence Center or Operations Center). 
