@@ -33,7 +33,7 @@ Each Content Proposal can be assigned to a member of your team and a reviewer.
 
 ## Create an empty Content Proposal
 
-In the listing page, the Create button allows you to create a new empty Content Proposal.
+In the listing page, the `Create butto`n allows you to create a new empty Content Proposal.
 
 In the left panel of the layout, you have access to different tabs:
 
@@ -41,13 +41,17 @@ In the left panel of the layout, you have access to different tabs:
 
 The Objects tab allows you to:
 
-- Add existing objects from the CTI database to your CP
+- Add existing objects from the CTI database to your Content Proposal
 - Create new objects
-- Create relationships (one by one or chain)
+- Create relationships (one by one or in chain)
 
 In this tab, you can display all the objects present in the Content Proposals and filter them by type, review status or whether or not objects have an associated warning.
 
-A button also allows multiple selection to perform different “bulk” actions such as adding existing relationships, creating new relationships or deleting objects.
+A button also allows multiple selection to perform different `bulk` actions such as: 
+
+- Adding existing relationships
+- Creating new relationships
+- Deleting objects
 
 ### The Observables tab
 
@@ -64,7 +68,7 @@ A button also allows multiple selection to perform different “bulk” actions 
 
 The Relationships tab gives you the possibility to create relationships between two objects of the CTI database.
 
-This phase of creating Objects and Relations can also be done directly in the Graph view.
+This phase of creating Objects and Relations can also be done directly from the Graph view.
 
 ## Import content to create a Content Proposal
 
@@ -76,26 +80,30 @@ There are three possible options to import content:
 - From a free text
 - From a URL
 
-The imported content will be parsed in order to recognize as many Observables as possible (IP, domain names, file hash, e-mail address, URL, etc.) as well as objects already known to the CTI database (malware, intrusion set, attack pattern ATT&CK, location, etc.).
+The imported content will be parsed in order to recognize as many [Observables](https://docs.sekoia.io/tip/features/consume/observables/) as possible (IP, domain names, file hash, e-mail address, URL, etc.) as well as objects already known to the CTI database (malware, intrusion set, attack pattern ATT&CK, location, etc.).
 
 ## Comments on CP
-To be able to improve the review of a content proposal and allow interactions between the assignee and the reviewer, a comment feature has been recently implemented inside the content proposal page.
+
+To improve the review of a content proposal and allow interactions between the assignee and the reviewer, a comment feature has been recently implemented inside the Content Proposal page.
 
 ### Post a comment
-To be able to comment or to see comments on a content proposal, you'll have to:
+To be able to comment or to see comments on a Content Proposal: 
+
 1. Go to a Content Proposal
-2. In the Content Proposal's header, a button `Comments` shows next to the graph icon and the `reject` and `merge` buttons
+2. In the Content Proposal's header, a button `Comments` shows next to the graph icon and the `Reject` and `Merge` buttons
 3. Write down your comment and press `Enter` or click on `Comment`
 
 ### Edit a comment
-To edit a comment, you'll have to:
+To edit a comment posted on a Content Proposal: 
+
 1. Click on the comment panel
 2. Hover over the comment you wrote that you want to edit
 3. Click on the `Edit` icon
 4. Edit your comment and `Enter` or click on `Comment`
 
 ### Delete a comment
-To delete a comment, you'll have to:
+To delete a comment left on a Content Proposal: 
+
 1. Click on the comment panel
 2. Hover over the comment you wrote that you want to delete
 3. Click on the `Delete` icon
@@ -106,11 +114,12 @@ To delete a comment, you'll have to:
 
 ## Request for Intelligence
 
-In order to enable end users to make direct requests to our analysts to create an intelligence report or take a specific action, we added a new functionality “RFI” - short for Request For Intelligence - that we integrated into the Intelligence Center.
+In order to enable end users to make direct requests to our analysts to create an intelligence report or take a specific action, we added a new functionality “RFI” - short for **Request For Intelligence** - that we integrated into the Intelligence Center.
 
 ### Create an RFI
+
 In the Content Proposals listing page, there is a button on the top right of the page called “Request for Intelligence”.
-After clicking on that button, you will have to fill out a form with the following information:
+To create an RFI, click on that button and fill out the form with the following information:
 
 - Type of request: could be a situational awareness report, a request for investigation, a threat assesment or a request for action
 - Assignee: who's in charge of making the Content Proposal
@@ -125,4 +134,4 @@ Once you’ve created the request, a new content proposal will be automatically 
 You can filter the RFI Content Proposals using the checkbox: “Show only RFI”.
 
 !!! note
-    This feature is available to the TIP users that have the `INTHREAT_WRITE_REQUEST_FOR_INTELLIGENCE` permission. This permission will be delivered to all the SEKOIA.IO TIPs.
+    This feature is available to the TIP users that have the `INTHREAT_WRITE_REQUEST_FOR_INTELLIGENCE` permission. This permission will be delivered to all SEKOIA.IO TIPs. 
