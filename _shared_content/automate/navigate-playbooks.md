@@ -2,7 +2,7 @@
 
 ## Playbooks listing
 
-In the playbooks’ homepage are listed all playbooks created within your community. All playbooks are listed by order of last edited and there are multiple filters made available to navigate this page with ease. 
+In the playbooks’ homepage are listed all playbooks created within your community. These playbooks are listed by order of **last edited** and there are multiple filters made available to navigate this page with ease. 
 
 ![playbooks-listing](/assets/operation_center/playbooks/playbook-listing.png){: style="max-width:100%"}
 
@@ -32,7 +32,99 @@ In this panel, you can:
 
 ## Playbook details
 
+To access the detailed view of a playbook, you have to open the side panel that details the playbook in the listing page then click on the “Edit” button in the upper right side of the panel. 
+
 ### Graphical view
+
+The graphical view is composed of three main sections: 
+
+#### Actions library
+
+Accessible in a side panel that appears by clicking on the “+” on the left of the screen, this library provides you with a set of triggers, actions and conditions to help automate your workflow. 
+
+These actions are regrouped in apps and services that are interconnected with SEKOIA.IO. 
+
+To find actions in the listing, you can either: 
+
+- Use the search bar inside the panel
+- Use filters to list only Actions or Triggers
+
+To add these actions to your graph, click on the dots next to the action name and drag it to the graph area. Dropping actions into this area will form a **block**. 
+
+Configuration for each of these blocks is detailed in the [Library section](https://docs.sekoia.io/xdr/features/automate/library/aws/) of this documentation. 
+
+#### Graph area
+
+This is where you can add and connect your blocks to form a playbook.
+
+| Actions | Description |
+| --- | --- |
+| Zoom in/out | Either using the mouse or the action buttons |
+| Fit Diagram | Lets you see all your blocks |
+| Undo | Undo last action |
+| Redo | Redo action |
+
+Playbook blocks are visually composed of: 
+
+- The logo of the app/service
+- The name of the action
+- The type of block (Action, Operator, Trigger)
+- The status of the block (Valid, In error)
+- Connectors
+
+!!! note
+  If blocks in the playbook have missing configuration, an alert stating the number of errors will show in the left of the graph area. 
+
+#### Configuration panel
+
+When clicking on a block in the graph area, the configuration panel opens on the right of the screen. 
+
+Depending on the type of blocks, the content of the configuration panel changes. 
+
+##### Triggers
+
+| Section | Content |
+| --- | --- |
+| Build | Lists the Module Configuration and the Trigger Configuration as well as Variables and their values |
+| Logs | Lists all logs to help understand errors. Details of the error can be accessed by clicking on a log.  |
+
+##### Operator
+
+**Condition**
+
+| Section | Content |
+| --- | --- |
+| Name | The name of your operator that can be edited  |
+| Cases  | List of comparisons to be made (Either with a variable or by adding a form) |
+
+**Foreach**
+
+| Section | Content |
+| --- | --- |
+| Name | The name of your operator that can be edited  |
+| Items | List of data that should be browsed  |
+| Variables | Lists all variables related to the action. Contains name and description of the variable as well as a copy button to easily copy the value of the variable.  |
+
+**Store**
+
+| Section | Content |
+| --- | --- |
+| Name | The name of your operator that can be edited  |
+| Modifications | List of modifications to make. To add a modification, hover over the title and click on one of the buttons that appear (”Use variable, “add one entry to array”) |
+| Use a variable | Field where you can paste the value of a variable |
+| Add form | A form with 3 main items to fill: key, type and value (more details here) |
+
+##### Action
+
+| Section | Content |
+| --- | --- |
+| Name | The name of your action that can be edited  |
+| Module Configuration | Lists existing configuration that may apply to your action. If no configuration is available, you can create a new one by clicking on “Create new configuration” OR edit an existing one.  |
+| Configuration | Varies depending on the selected action. Contains a search bar as well as all configuration steps. The height of fields in this section can be extended by dragging the mouse on the lower right of the field.  |
+| Variables | Lists all variables related to the action. Contains name and description of the variable as well as a copy button to easily copy the value of the variable.  |
+
+!!! note
+  You can manually resize the configuration panel by clicking on the left edge of the panel and dragging the mouse left or right; the width of the panel will change accordingly. Once your panel is set at a preferable width, let go of the mouse. The chosen size will be remembered for the next configurations.
 
 ### Playbook code
 
