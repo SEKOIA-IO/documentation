@@ -1,4 +1,5 @@
 # Invite users to join your community
+
 To invite users to your community, you’ll have to send them invitations through the User Center.
 
 If your guest already has an account on SEKOIA.IO, they will automatically be added to your community.
@@ -6,6 +7,7 @@ If your guest already has an account on SEKOIA.IO, they will automatically be ad
 If your guest does not have an account on SEKOIA.IO, they will receive an activation email to [create an account](create_account.md).
 
 ## Send invitations
+
 To invite new members to your community, follow these steps:
 
 1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
@@ -15,7 +17,9 @@ To invite new members to your community, follow these steps:
 5. Once you’re done, press `Validate` and wait for your guest to accept your invitation
 
 ## Create custom roles
+
 As an admin of your community, you can control what kind of actions your guests are allowed to do. Our roles’ system is based on permissions already defined by us and we keep them up to date following our latest features.
+
 For example, some users in your community will only be able to view data but cannot interact with it. Others can change the status of an alert, write a content proposal or simply duplicate a dashboard, without being able to access other parts of the app.
 
 To create custom roles for your guests, you’ll have to:
@@ -34,21 +38,26 @@ Permissions can be different depending on your job position at your company. In 
 
 ## User Management
 
-### Adding User
-An admin or a user with the permission to manage user will be able to add new users.
+### Adding Users
 
-A user added in the parent community will be access all children community with the role selected.
+An admin or a user with the permission to manage users will be able to add new users to communities.
 
-A user can be added to several children communities with the role defined by the admin.
-Therefore, the user will only have access to the children communities where it is registered.
+Users added in a parent community will access all children communities with the role selected.
 
-Here are the following steps to add the user for the last case:
+Users can be added to several children communities with a role defined by the admin.
+
+In this case, users will only have access to the children communities where they are registered.
+
+Here are the following steps to add a user in a children community:
+
 1- Select the children community on the right panel
-2- Add user to this children community
+2- Add users to this children community
 
 <img width="1183" alt="image" src="https://user-images.githubusercontent.com/101662967/186946163-21ec9da8-3598-4fd7-83fe-0b1bd137ce45.png">
 
 ### Managing users roles
-On the user tab, an admin is able to add new role or delete it from the community
+
+On the `Users` tab, an admin is able to add new role or delete it from the community. 
+
 <img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
 
