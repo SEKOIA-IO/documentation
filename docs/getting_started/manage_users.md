@@ -1,5 +1,7 @@
 # Manage users
 
+## Needed role and permissions
+
 To manage users in a community, you need to have the role `manage_member`. This role contains the following permissions: 
 
 | Permission | Description |
@@ -8,7 +10,7 @@ To manage users in a community, you need to have the role `manage_member`. This 
 | COMMUNITY_LIST_MEMBER | Lists all members in a community |
 | COMMUNITY_REMOVE_MEMBER | Removes members from a community |
 
-in the page `Managed communities` that’s accessible by clicking on your avatar in the upper right of the screen. 
+## Detailed page of a user
 
 To access the detailed page of a user:
 
@@ -24,7 +26,6 @@ From this page, you can:
 - Delete user from the community
 
 <img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
-
 
 ## Create custom roles
 
@@ -43,6 +44,6 @@ To create custom roles for your guests, you’ll have to:
 !!! note
     You can edit or delete roles by clicking on the icons on the right side of the table that lists all the roles.
 
-### Add permissions
+## Add permissions
 
 Permissions can be different depending on your job position at your company. In this section, you’ll have a look at all our permissions depending on which product you are subscribed to. There are three main categories to all of these permissions: `Admin`, `Manage` or `View`.
