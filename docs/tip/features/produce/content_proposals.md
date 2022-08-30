@@ -33,7 +33,7 @@ Each Content Proposal can be assigned to a member of your team and a reviewer.
 
 ## Create an empty Content Proposal
 
-In the listing page, the `Create butto`n allows you to create a new empty Content Proposal.
+In the listing page, the `Create button allows you to create a new empty Content Proposal.
 
 In the left panel of the layout, you have access to different tabs:
 
