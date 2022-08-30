@@ -686,101 +686,95 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "sekoiaio": {
-            "intake": {
-                "dialect": "deep-visibility",
-                "dialect_uuid": "8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d"
-            }
-        },
-        "message": "{\"timestamp\":{\"millisecondsSinceEpoch\":\"1629899209700\"},\"fileCreation\":{\"trueContext\":{\"key\":{\"value\":\"0506A768B8828E35\"}},\"source\":{\"node\":{\"key\":{\"value\":\"2FFCA561EE506063\"}},\"executable\":{\"node\":{\"key\":{\"value\":\"E4CD922E494CA3C5\"}},\"creationTime\":{},\"path\":\"C:\\\\Program Files\\\\Fortinet\\\\FortiClient\\\\FortiESNAC.exe\",\"owner\":{},\"isDir\":\"E_FALSE\",\"sizeBytes\":\"4253328\",\"hashes\":{},\"fileLocation\":\"Local\"},\"commandLine\":\"FortiESNAC.exe -s FC_{73EFB30F-1CAD-4a7a-AE2E-150282B6CE25}_000018\",\"fullPid\":{\"pid\":6104,\"startTime\":{\"millisecondsSinceEpoch\":\"1629878298032\"}},\"user\":{\"name\":\"AUTORITE NT\\\\Syst\u00e8me\",\"sid\":\"S-1-5-18\"},\"interactive\":\"E_FALSE\",\"parent\":{\"node\":{\"key\":{\"value\":\"D3250A9CB211CC1E\"}},\"fullPid\":{\"startTime\":{}}},\"excluded\":\"E_FALSE\",\"name\":\"FortiClient Network Access Control\",\"root\":\"E_FALSE\",\"subsystem\":\"SYS_WIN32\",\"integrityLevel\":\"SYSTEM\",\"isWow64\":\"E_FALSE\",\"isRedirectedCommandProcessor\":\"E_FALSE\",\"trueContext\":{\"key\":{\"value\":\"0506A768B8828E35\"}},\"counters\":{\"moduleLoad\":1948,\"fileCreation\":647,\"fileDeletion\":647,\"fileModification\":2141,\"exeModification\":40,\"netConnOut\":203,\"registryModification\":654,\"dnsLookups\":30}},\"targetFile\":{\"node\":{\"key\":{\"value\":\"4685AD1C6BC7D31D\"}},\"creationTime\":{},\"path\":\"C:\\\\Program Files\\\\Fortinet\\\\FortiClient\\\\large_data_upload\\\\0.bin\",\"owner\":{},\"isDir\":\"E_FALSE\",\"hashes\":{},\"fileLocation\":\"Local\"}},\"meta\":{\"seqId\":45,\"uuid\":\"6ce43ff9d060310b37fb4eba7ad3c1f0f2d9a5ab\",\"traceId\":\"E1A04C7727EB41E5A3D0FF068D4BE544\",\"agentVersion\":\"S1-WIN/4.4.3.149\",\"osFamily\":\"windows\",\"osName\":\"Windows 10 Pro\",\"osRevision\":\"19043\",\"computerName\":\"LAPTOP-COM4\",\"machineType\":\"laptop\",\"mgmtUrl\":\"https://euce1-110-nfr.sentinelone.net\"}}",
+        "message": "{\"timestamp\": {\"millisecondsSinceEpoch\": \"1629899209700\"}, \"meta\": {\"seqId\": 45, \"uuid\": \"6ce43ff9d060310b37fb4eba7ad3c1f0f2d9a5ab\", \"traceId\": \"E1A04C7727EB41E5A3D0FF068D4BE544\", \"agentVersion\": \"S1-WIN/4.4.3.149\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"19043\", \"computerName\": \"LAPTOP-COM4\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"trueContext\": {\"key\": {\"value\": \"0506A768B8828E35\"}}, \"source\": {\"node\": {\"key\": {\"value\": \"2FFCA561EE506063\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"E4CD922E494CA3C5\"}}, \"creationTime\": {}, \"path\": \"C:\\\\Program Files\\\\Fortinet\\\\FortiClient\\\\FortiESNAC.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"4253328\", \"hashes\": {}, \"fileLocation\": \"Local\"}, \"commandLine\": \"FortiESNAC.exe -s FC_{73EFB30F-1CAD-4a7a-AE2E-150282B6CE25}_000018\", \"fullPid\": {\"pid\": 6104, \"startTime\": {\"millisecondsSinceEpoch\": \"1629878298032\"}}, \"user\": {\"name\": \"AUTORITE NT\\\\Syst\\u00e8me\", \"sid\": \"S-1-5-18\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"D3250A9CB211CC1E\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"FortiClient Network Access Control\", \"root\": \"E_FALSE\", \"subsystem\": \"SYS_WIN32\", \"integrityLevel\": \"SYSTEM\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"0506A768B8828E35\"}}, \"counters\": {\"moduleLoad\": 1948, \"fileCreation\": 647, \"fileDeletion\": 647, \"fileModification\": 2141, \"exeModification\": 40, \"netConnOut\": 203, \"registryModification\": 654, \"dnsLookups\": 30}}, \"targetFile\": {\"node\": {\"key\": {\"value\": \"4685AD1C6BC7D31D\"}}, \"creationTime\": {}, \"path\": \"C:\\\\Program Files\\\\Fortinet\\\\FortiClient\\\\large_data_upload\\\\0.bin\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"hashes\": {}, \"fileLocation\": \"Local\"}, \"event_type\": \"fileCreation\"}",
         "event": {
-            "start": "2021-08-25T13:46:49.700000Z",
-            "action": "fileCreation"
+            "action": "fileCreation",
+            "start": "2021-08-25T13:46:49.700000Z"
+        },
+        "agent": {
+            "version": "S1-WIN/4.4.3.149"
         },
         "deepvisibility": {
-            "true_context": {
-                "key": "0506A768B8828E35"
+            "agent": {
+                "managment_url": "https://euce1-110-nfr.sentinelone.net",
+                "seq_id": 45,
+                "trace_id": "E1A04C7727EB41E5A3D0FF068D4BE544",
+                "uuid": "6ce43ff9d060310b37fb4eba7ad3c1f0f2d9a5ab"
             },
             "event": {
                 "type": "fileCreation"
-            },
-            "agent": {
-                "seq_id": 45,
-                "uuid": "6ce43ff9d060310b37fb4eba7ad3c1f0f2d9a5ab",
-                "trace_id": "E1A04C7727EB41E5A3D0FF068D4BE544",
-                "managment_url": "https://euce1-110-nfr.sentinelone.net"
             },
             "host": {
                 "os": {
                     "revision": "19043"
                 }
             },
+            "true_context": {
+                "key": "0506A768B8828E35"
+            },
             "process": {
-                "node": {
-                    "key": "2FFCA561EE506063"
+                "counters": {
+                    "dns_lookups": 30,
+                    "file_creation": 647,
+                    "file_deletion": 647,
+                    "file_modification": 2141,
+                    "module_load": 1948,
+                    "net_conn_out": 203,
+                    "registry_modification": 654
                 },
+                "excluded": "E_FALSE",
                 "executable": {
+                    "is_dir": "E_FALSE",
+                    "name": "C:\\Program Files\\Fortinet\\FortiClient\\FortiESNAC.exe",
                     "node": {
                         "key": "E4CD922E494CA3C5"
                     },
-                    "name": "C:\\Program Files\\Fortinet\\FortiClient\\FortiESNAC.exe",
-                    "is_dir": "E_FALSE",
                     "size_bytes": "4253328"
                 },
-                "user": {
-                    "sid": "S-1-5-18"
-                },
+                "family": "SYS_WIN32",
+                "integrity_level": "SYSTEM",
                 "interactive": "E_FALSE",
+                "is_redirected_command_processor": "E_FALSE",
+                "is_wow64": "E_FALSE",
+                "node": {
+                    "key": "2FFCA561EE506063"
+                },
                 "parent": {
                     "node": {
                         "key": "D3250A9CB211CC1E"
                     }
                 },
-                "excluded": "E_FALSE",
                 "root": "E_FALSE",
-                "family": "SYS_WIN32",
-                "integrity_level": "SYSTEM",
-                "is_wow64": "E_FALSE",
-                "is_redirected_command_processor": "E_FALSE",
                 "true_context": {
                     "key": "0506A768B8828E35"
                 },
-                "counters": {
-                    "module_load": 1948,
-                    "file_creation": 647,
-                    "file_deletion": 647,
-                    "file_modification": 2141,
-                    "registry_modification": 654,
-                    "dns_lookups": 30,
-                    "net_conn_out": 203
+                "user": {
+                    "sid": "S-1-5-18"
                 }
             },
             "file": {
+                "location": "Local",
                 "node": {
                     "key": "4685AD1C6BC7D31D"
-                },
-                "location": "Local"
+                }
             }
         },
-        "agent": {
-            "version": "S1-WIN/4.4.3.149"
-        },
         "host": {
+            "name": "LAPTOP-COM4",
             "os": {
                 "family": "windows",
                 "name": "Windows 10 Pro"
             },
-            "name": "LAPTOP-COM4",
             "type": "laptop"
         },
         "process": {
-            "working_directory": "C:\\Program Files\\Fortinet\\FortiClient",
             "command_line": "FortiESNAC.exe -s FC_{73EFB30F-1CAD-4a7a-AE2E-150282B6CE25}_000018",
-            "pid": 6104,
-            "start": "2021-08-25T07:58:18.032000Z",
             "title": "FortiClient Network Access Control",
-            "name": "fortiesnac.exe",
-            "executable": "C:\\Program Files\\Fortinet\\FortiClient\\FortiESNAC.exe"
+            "executable": "C:\\Program Files\\Fortinet\\FortiClient\\FortiESNAC.exe",
+            "pid": 6104,
+            "working_directory": "C:\\Program Files\\Fortinet\\FortiClient",
+            "start": "2021-08-25T07:58:18.032000Z",
+            "name": "FortiESNAC.exe"
         },
         "user": {
             "name": "AUTORITE NT\\Syst\u00e8me",
@@ -789,11 +783,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "path": "C:\\Program Files\\Fortinet\\FortiClient\\large_data_upload\\0.bin",
             "type": "file",
-            "extension": "bin",
-            "name": "0.bin"
-        },
-        "ecs": {
-            "version": "1.10.0"
+            "name": "0.bin",
+            "extension": "bin"
         },
         "related": {
             "user": [
@@ -935,6 +926,223 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "user": [
                 "CORP\\user.name"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "file_deletion_linux.json"
+
+    ```json
+	
+    {
+        "message": "{\"meta\":{\"uuid\":\"185f2b1e-bdca-c6e2-91b0-520df717d799\",\"traceId\":\"01GBM84F2S5AZQSP200MBDS22Q\",\"agentVersion\":\"S1-LIN/22.2.2.2\",\"osFamily\":\"linux\",\"osName\":\"Linux\",\"osRevision\":\"Amazon 2 4.14.246-187.474.amzn2.x86_64\",\"computerName\":\"ip-1-1-1-1.eu-west-1.compute.internal\",\"machineType\":\"server\",\"mgmtUrl\":\"https://euce1-103.sentinelone.net\"},\"timestamp\":{\"millisecondsSinceEpoch\":\"1661758224333\"},\"event_type\":\"fileModification\",\"trueContext\":{\"key\":{\"value\":\"0f4c8c9c-7440-2977-64af-11505a86f00d\"}},\"source\":{\"node\":{\"key\":{\"value\":\"0f4ca868-3233-c901-c895-a9716d0c7a59\"}},\"executable\":{\"node\":{\"key\":{\"value\":\"0f4ca59e-5ecc-2161-c4e7-97ac79e4c629\"}},\"creationTime\":{\"millisecondsSinceEpoch\":\"1630345715000\"},\"path\":\"/var/lib/docker/overlay2/1e79e7ff2771c052345d2be00b589f2178e121fe1dc09610224a939e50329bc4/merged/usr/local/bin/node\",\"pUnix\":\"0\",\"owner\":{},\"sizeBytes\":\"48935408\",\"signature\":{\"unsigned\":{}},\"isKernelModule\":\"E_FALSE\",\"hashes\":{\"sha1\":\"837e6fbd33802ec0d56ac1bb3754af0046c9a220\"},\"fileLocation\":\"Local\"},\"commandLine\":\" node /usr/local/bin/npm install\",\"fullPid\":{\"pid\":12322,\"startTime\":{\"millisecondsSinceEpoch\":\"1661758222250\"}},\"user\":{\"name\":\"root\",\"sid\":\"3397\"},\"interactive\":\"E_FALSE\",\"parent\":{\"node\":{\"key\":{\"value\":\"0f4ca51a-f789-1621-a626-2b1b1c4a93f0\"}},\"fullPid\":{\"startTime\":{}}},\"excluded\":\"E_FALSE\",\"name\":\"node\",\"root\":\"E_FALSE\",\"isWow64\":\"E_FALSE\",\"isRedirectedCommandProcessor\":\"E_FALSE\",\"trueContext\":{\"key\":{\"value\":\"0f4c8c9c-7440-2977-64af-11505a86f00d\"}},\"counters\":{\"fileCreation\":537,\"fileDeletion\":272,\"fileModification\":545,\"netConnOut\":10}},\"file\":{\"node\":{\"key\":{\"value\":\"0f4d14d9-ce0f-85db-b8b9-0b942faf064b\"}},\"creationTime\":{\"millisecondsSinceEpoch\":\"1661758119966\"},\"path\":\"/var/lib/docker/overlay2/1e79e7ff2771c052345d2be00b589f2178e121fe1dc09610224a939e50329bc4/merged/root/.npm/_cacache/index-v5/3c/ec/2c605585502b25aa623d9f0b23d9c5fdc4cd06218943b79686e4c58f953f\",\"pUnix\":\"0\",\"owner\":{},\"sizeBytes\":\"1347\",\"signature\":{\"unsigned\":{}},\"isKernelModule\":\"E_FALSE\",\"hashes\":{},\"fileLocation\":\"Local\"},\"sizeBytes\":\"1347\",\"isKernelModule\":\"E_FALSE\",\"hashes\":{},\"oldHashes\":{\"sha1\":\"da39a3ee5e6b4b0d3255bfef95601890afd80709\"}}\n\n",
+        "event": {
+            "action": "fileModification",
+            "start": "2022-08-29T07:30:24.333000Z"
+        },
+        "agent": {
+            "version": "S1-LIN/22.2.2.2"
+        },
+        "deepvisibility": {
+            "agent": {
+                "managment_url": "https://euce1-103.sentinelone.net",
+                "trace_id": "01GBM84F2S5AZQSP200MBDS22Q",
+                "uuid": "185f2b1e-bdca-c6e2-91b0-520df717d799"
+            },
+            "event": {
+                "type": "fileModification"
+            },
+            "host": {
+                "os": {
+                    "revision": "Amazon 2 4.14.246-187.474.amzn2.x86_64"
+                }
+            },
+            "true_context": {
+                "key": "0f4c8c9c-7440-2977-64af-11505a86f00d"
+            },
+            "process": {
+                "counters": {
+                    "file_creation": 537,
+                    "file_deletion": 272,
+                    "file_modification": 545,
+                    "net_conn_out": 10
+                },
+                "excluded": "E_FALSE",
+                "executable": {
+                    "name": "/var/lib/docker/overlay2/1e79e7ff2771c052345d2be00b589f2178e121fe1dc09610224a939e50329bc4/merged/usr/local/bin/node",
+                    "node": {
+                        "key": "0f4ca59e-5ecc-2161-c4e7-97ac79e4c629"
+                    },
+                    "size_bytes": "48935408",
+                    "start": "2021-08-30T17:48:35.000000Z"
+                },
+                "interactive": "E_FALSE",
+                "is_redirected_command_processor": "E_FALSE",
+                "is_wow64": "E_FALSE",
+                "node": {
+                    "key": "0f4ca868-3233-c901-c895-a9716d0c7a59"
+                },
+                "parent": {
+                    "node": {
+                        "key": "0f4ca51a-f789-1621-a626-2b1b1c4a93f0"
+                    }
+                },
+                "root": "E_FALSE",
+                "true_context": {
+                    "key": "0f4c8c9c-7440-2977-64af-11505a86f00d"
+                },
+                "user": {
+                    "sid": "3397"
+                }
+            },
+            "file": {
+                "location": "Local",
+                "is_kernel_module": false
+            }
+        },
+        "host": {
+            "name": "ip-1-1-1-1.eu-west-1.compute.internal",
+            "os": {
+                "family": "linux",
+                "name": "Linux"
+            },
+            "type": "server"
+        },
+        "process": {
+            "command_line": " node /usr/local/bin/npm install",
+            "title": "node",
+            "executable": "/var/lib/docker/overlay2/1e79e7ff2771c052345d2be00b589f2178e121fe1dc09610224a939e50329bc4/merged/usr/local/bin/node",
+            "pid": 12322,
+            "hash": {
+                "sha1": "837e6fbd33802ec0d56ac1bb3754af0046c9a220"
+            },
+            "start": "2022-08-29T07:30:22.250000Z",
+            "name": "node"
+        },
+        "user": {
+            "name": "root",
+            "id": "3397"
+        },
+        "file": {
+            "path": "/var/lib/docker/overlay2/1e79e7ff2771c052345d2be00b589f2178e121fe1dc09610224a939e50329bc4/merged/root/.npm/_cacache/index-v5/3c/ec/2c605585502b25aa623d9f0b23d9c5fdc4cd06218943b79686e4c58f953f",
+            "size": 1347,
+            "type": "dir",
+            "created": "2022-08-29T07:28:39.966000Z"
+        },
+        "related": {
+            "hash": [
+                "837e6fbd33802ec0d56ac1bb3754af0046c9a220"
+            ],
+            "user": [
+                "root"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "file_deletion_osx.json"
+
+    ```json
+	
+    {
+        "message": "{\"meta\":{\"uuid\":\"81A8A777-22BD-5CF8-9BF1-FD05875D9CD5\",\"traceId\":\"D9E5C5D4-33D7-43E1-AF54-4C70A938643D_1\",\"agentVersion\":\"S1-MAC/22.2.3.6268\",\"osFamily\":\"osx\",\"osName\":\"OS X\",\"osRevision\":\"12.5.1 (21G83)\",\"computerName\":\"MAC12345678\",\"machineType\":\"laptop\",\"mgmtUrl\":\"https://euce1-103.sentinelone.net\"},\"timestamp\":{\"millisecondsSinceEpoch\":\"1661503902148\"},\"event_type\":\"fileDeletion\",\"trueContext\":{\"key\":{\"value\":\"DD4C9404-F0D8-4676-84A6-5AAE17DE60ED\"}},\"source\":{\"node\":{\"key\":{\"value\":\"27902FA0-0C08-475E-81CA-26A092441368\"}},\"executable\":{\"node\":{\"key\":{\"value\":\"1BF67724-45F1-4B37-AE75-33B8E8CB8717\"}},\"creationTime\":{\"millisecondsSinceEpoch\":\"1658821170000\"},\"path\":\"/Users/user.name/Library/Developer/Xcode/DerivedData/Styleguide-dpqerxvcypfzedayjbwgkzsoptsu/SourcePackages/artifacts/djij_build_tools_ios/SwiftLintBinary.artifactbundle/swiftlint-0.48.0-macos/bin/swiftlint\",\"pUnix\":\"493\",\"owner\":{\"name\":\"user.name\"},\"sizeBytes\":\"61090952\",\"signature\":{\"unsigned\":{}},\"isKernelModule\":\"E_FALSE\",\"hashes\":{\"sha1\":\"88bd62f8a3ee159d4f4611b324073d1e56ef76de\",\"sha256\":\"03298adf7dae5700891033ddeabecea7f5850fedefadfa9fa6ba389a38ba354f\",\"md5\":\"7180a848026de2bef01fb7383bd03ba0\"},\"fileLocation\":\"Local\"},\"commandLine\":\"/Users/user.name/Library/Developer/Xcode/DerivedData/Styleguide-dpqerxvcypfzedayjbwgkzsoptsu/SourcePackages/artifacts/djij_build_tools_ios/SwiftLintBinary.artifactbundle/swiftlint-0.48.0-macos/bin/swiftlint lint --in-process-sourcekit --config /Users/user.name/Library/Developer/Xcode/DerivedData/Styleguide-dpqerxvcypfzedayjbwgkzsoptsu/SourcePackages/plugins/Styleguide.output/Styleguide/SwiftLintPlugin/swiftlint.yml /Users/user.name/Documents/Development/djij/djij_design_system_ios/Styleguide\",\"fullPid\":{\"pid\":6933,\"startTime\":{\"millisecondsSinceEpoch\":\"1661503902034\"}},\"user\":{\"name\":\"user.name\"},\"interactive\":\"E_FALSE\",\"parent\":{\"node\":{\"key\":{\"value\":\"79B3CD05-F827-45CB-A898-B647D8409A3D\"}},\"fullPid\":{\"startTime\":{}}},\"excluded\":\"E_FALSE\",\"name\":\"swiftlint\",\"root\":\"E_FALSE\",\"isWow64\":\"E_FALSE\",\"isRedirectedCommandProcessor\":\"E_FALSE\",\"trueContext\":{\"key\":{\"value\":\"DD4C9404-F0D8-4676-84A6-5AAE17DE60ED\"}}},\"targetFile\":{\"node\":{\"key\":{\"value\":\"024A7D89-2663-48AF-9DF4-C95494454E37\"}},\"creationTime\":{\"millisecondsSinceEpoch\":\"1661503902152\"},\"path\":\"/private/var/folders/0p/64nt8k313tl8klsphkkcmcjm2rrkq9/T/TemporaryItems/NSIRD_swiftlint_sBHQwy/ff558ca8ac21977f6850e3a3a719ed4f.plist\",\"owner\":{},\"isKernelModule\":\"E_FALSE\",\"hashes\":{}}}\n\n",
+        "event": {
+            "action": "fileDeletion",
+            "start": "2022-08-26T08:51:42.148000Z"
+        },
+        "agent": {
+            "version": "S1-MAC/22.2.3.6268"
+        },
+        "deepvisibility": {
+            "agent": {
+                "managment_url": "https://euce1-103.sentinelone.net",
+                "trace_id": "D9E5C5D4-33D7-43E1-AF54-4C70A938643D_1",
+                "uuid": "81A8A777-22BD-5CF8-9BF1-FD05875D9CD5"
+            },
+            "event": {
+                "type": "fileDeletion"
+            },
+            "host": {
+                "os": {
+                    "revision": "12.5.1 (21G83)"
+                }
+            },
+            "true_context": {
+                "key": "DD4C9404-F0D8-4676-84A6-5AAE17DE60ED"
+            },
+            "process": {
+                "excluded": "E_FALSE",
+                "executable": {
+                    "name": "/Users/user.name/Library/Developer/Xcode/DerivedData/Styleguide-dpqerxvcypfzedayjbwgkzsoptsu/SourcePackages/artifacts/djij_build_tools_ios/SwiftLintBinary.artifactbundle/swiftlint-0.48.0-macos/bin/swiftlint",
+                    "node": {
+                        "key": "1BF67724-45F1-4B37-AE75-33B8E8CB8717"
+                    },
+                    "size_bytes": "61090952",
+                    "start": "2022-07-26T07:39:30.000000Z"
+                },
+                "interactive": "E_FALSE",
+                "is_redirected_command_processor": "E_FALSE",
+                "is_wow64": "E_FALSE",
+                "node": {
+                    "key": "27902FA0-0C08-475E-81CA-26A092441368"
+                },
+                "parent": {
+                    "node": {
+                        "key": "79B3CD05-F827-45CB-A898-B647D8409A3D"
+                    }
+                },
+                "root": "E_FALSE",
+                "true_context": {
+                    "key": "DD4C9404-F0D8-4676-84A6-5AAE17DE60ED"
+                }
+            },
+            "file": {
+                "node": {
+                    "key": "024A7D89-2663-48AF-9DF4-C95494454E37"
+                }
+            }
+        },
+        "host": {
+            "name": "MAC12345678",
+            "os": {
+                "family": "osx",
+                "name": "OS X"
+            },
+            "type": "laptop"
+        },
+        "process": {
+            "command_line": "/Users/user.name/Library/Developer/Xcode/DerivedData/Styleguide-dpqerxvcypfzedayjbwgkzsoptsu/SourcePackages/artifacts/djij_build_tools_ios/SwiftLintBinary.artifactbundle/swiftlint-0.48.0-macos/bin/swiftlint lint --in-process-sourcekit --config /Users/user.name/Library/Developer/Xcode/DerivedData/Styleguide-dpqerxvcypfzedayjbwgkzsoptsu/SourcePackages/plugins/Styleguide.output/Styleguide/SwiftLintPlugin/swiftlint.yml /Users/user.name/Documents/Development/djij/djij_design_system_ios/Styleguide",
+            "title": "swiftlint",
+            "executable": "/Users/user.name/Library/Developer/Xcode/DerivedData/Styleguide-dpqerxvcypfzedayjbwgkzsoptsu/SourcePackages/artifacts/djij_build_tools_ios/SwiftLintBinary.artifactbundle/swiftlint-0.48.0-macos/bin/swiftlint",
+            "pid": 6933,
+            "hash": {
+                "md5": "7180a848026de2bef01fb7383bd03ba0",
+                "sha1": "88bd62f8a3ee159d4f4611b324073d1e56ef76de",
+                "sha256": "03298adf7dae5700891033ddeabecea7f5850fedefadfa9fa6ba389a38ba354f"
+            },
+            "start": "2022-08-26T08:51:42.034000Z",
+            "name": "swiftlint"
+        },
+        "user": {
+            "name": "user.name"
+        },
+        "file": {
+            "path": "/private/var/folders/0p/64nt8k313tl8klsphkkcmcjm2rrkq9/T/TemporaryItems/NSIRD_swiftlint_sBHQwy/ff558ca8ac21977f6850e3a3a719ed4f.plist",
+            "created": "2022-08-26T08:51:42.152000Z"
+        },
+        "related": {
+            "hash": [
+                "03298adf7dae5700891033ddeabecea7f5850fedefadfa9fa6ba389a38ba354f",
+                "7180a848026de2bef01fb7383bd03ba0",
+                "88bd62f8a3ee159d4f4611b324073d1e56ef76de"
+            ],
+            "user": [
+                "user.name"
             ]
         }
     }
@@ -1307,7 +1515,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sha256": "97564d2938bebaaf1741fe5f675366cf1d8d3b6328fe38a5cf8e7133fe533ed1"
             },
             "start": "2021-09-16T07:02:10.819000Z",
-            "name": "outlook.exe"
+            "name": "OUTLOOK.EXE"
         },
         "user": {
             "name": "CORP\\m.benyounes",
@@ -1324,10 +1532,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "automation",
             "registered_domain": "alticap.com",
+            "path": "/media/images/1548943185788.jpg",
+            "scheme": "https",
             "fragment": "frag",
             "query": "foo=bar",
-            "scheme": "https",
-            "path": "/media/images/1548943185788.jpg",
             "port": 443
         },
         "related": {
@@ -2517,7 +2725,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sha256": "a250e2af9b662d6a81552178ac7514e81032c5a4b7031666f8e777f597ea5a9d"
             },
             "start": "2021-09-10T16:02:48.083000Z",
-            "name": "mousocoreworker.exe"
+            "name": "MoUsoCoreWorker.exe"
         },
         "user": {
             "name": "AUTORITE NT\\Syst\u00e8me",
@@ -2680,7 +2888,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sha256": "e5626a87403b5efbc0c1873059eeacd9ead8b046dcc7da32fbb4e87e9a5e8dfa"
             },
             "start": "2021-09-16T14:22:42.671000Z",
-            "name": "csaw_child.exe",
+            "name": "CSAW_Child.exe",
             "parent": {
                 "command_line": "\"C:\\Users\\user.name.CORP\\AppData\\Roaming\\PCDr\\Update\\Binaries\\CSAW.exe\" /NA /noui",
                 "pid": 1780,
@@ -2814,7 +3022,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sha256": "02cbdab1431442fbaa216a9361d3127c1de5a247db279aba9a4df421b973bdf4"
             },
             "start": "2021-09-14T07:13:48.039000Z",
-            "name": "excel.exe"
+            "name": "EXCEL.EXE"
         },
         "user": {
             "name": "CORP\\l.maoui",
