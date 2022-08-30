@@ -118,7 +118,7 @@ In order to enable end users to make direct requests to our analysts to create a
 
 ### Create an RFI
 
-In the Content Proposals listing page, there is a button on the top right of the page called “Request for Intelligence”.
+In the Content Proposals listing page, there is a button on the top right of the page called `Request for Intelligence.
 To create an RFI, click on that button and fill out the form with the following information:
 
 - Type of request: could be a situational awareness report, a request for investigation, a threat assesment or a request for action
@@ -131,7 +131,7 @@ To create an RFI, click on that button and fill out the form with the following 
 Once you’ve created the request, a new content proposal will be automatically created.
 
 ### Filter on RFI
-You can filter the RFI Content Proposals using the checkbox: “Show only RFI”.
+You can filter the RFI Content Proposals using the checkbox: `Show only RFI`.
 
 !!! note
     This feature is available to the TIP users that have the `INTHREAT_WRITE_REQUEST_FOR_INTELLIGENCE` permission. This permission will be delivered to all SEKOIA.IO TIPs. 
