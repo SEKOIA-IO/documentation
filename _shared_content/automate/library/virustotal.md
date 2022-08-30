@@ -53,7 +53,10 @@ Get comments from Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `report` | `object` | VirusTotal report |
+| `response_code` | `integer` | Response Code |
+| `verbose_msg` | `string` | Textual description of the response code |
+| `resource` | `string` | Resource Identifier |
+| `comments` | `array` | List of comments |
 
 ### Post Comment
 
@@ -65,6 +68,14 @@ Post comment to Virus Total
 | --------- | ------- | --------------------------- |
 | `comment` | `string` | The comment to post |
 | `resource` | `string` | The hash or url to comment |
+
+
+#### Outputs
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `response_code` | `integer` | Response Code |
+| `verbose_msg` | `string` | Textual description of the response code |
 
 ### Scan Domain
 
@@ -81,7 +92,18 @@ Scan domain with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `report` | `object` | VirusTotal report |
+| `response_code` | `integer` | Response Code |
+| `verbose_msg` | `string` | Textual description of the response code |
+| `undetected_referrer_samples` | `array` | List of undetected samples referring to this domain |
+| `undetected_downloaded_samples` | `array` | List of undetected samples downloaded from this domain |
+| `undetected_urls` | `array` | List of undetected URLs on this domain |
+| `detected_referrer_samples` | `array` | List of detected samples referring to this domain |
+| `detected_downloaded_samples` | `array` | List of detected samples downloaded from this domain |
+| `detected_urls` | `array` | List of detected URLs on this domain |
+| `resolutions` | `array` | List of IP addresses this domain resolved to |
+| `subdomains` | `array` | List of subdomains |
+| `domain_siblings` | `array` | List of domain siblings |
+| `categories` | `array` | List of categories |
 
 ### Scan File
 
@@ -99,7 +121,18 @@ Scan file with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `report` | `object` | VirusTotal report |
+| `response_code` | `integer` | Response Code |
+| `verbose_msg` | `string` | Textual description of the response code |
+| `resource` | `string` | Resource Identifier |
+| `scan_id` | `string` | Scan Identifier |
+| `scan_date` | `string` | Date of last scan |
+| `md5` | `string` | MD5 hash of the sample |
+| `sha1` | `string` | SHA-1 hash of the sample |
+| `sha256` | `string` | SHA-256 hash of the sample |
+| `permalink` | `string` | Permalink to the scan report |
+| `positives` | `integer` | Number of antivirus detecting this sample as malicious |
+| `total` | `integer` | Number of antivirus that scanned the sample |
+| `scans` | `object` | Scan results (one scan result per key) |
 
 ### Scan Hash
 
@@ -116,7 +149,18 @@ Scan hash with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `report` | `object` | VirusTotal report |
+| `response_code` | `integer` | Response Code |
+| `verbose_msg` | `string` | Textual description of the response code |
+| `resource` | `string` | Resource Identifier |
+| `scan_id` | `string` | Scan Identifier |
+| `scan_date` | `string` | Date of last scan |
+| `md5` | `string` | MD5 hash of the sample |
+| `sha1` | `string` | SHA-1 hash of the sample |
+| `sha256` | `string` | SHA-256 hash of the sample |
+| `permalink` | `string` | Permalink to the scan report |
+| `positives` | `integer` | Number of antivirus detecting this sample as malicious |
+| `total` | `integer` | Number of antivirus that scanned the sample |
+| `scans` | `object` | Scan results (one scan result per key) |
 
 ### Scan IP
 
@@ -133,7 +177,15 @@ Scan ip with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `report` | `object` | VirusTotal report |
+| `response_code` | `integer` | Response Code |
+| `verbose_msg` | `string` | Textual description of the response code |
+| `country` | `string` | Country hosting this IP address |
+| `asn` | `string` | Autonomous System number hosting this IP address |
+| `undetected_downloaded_samples` | `array` | List of undetected samples downloaded from this IP address |
+| `undetected_urls` | `array` | List of undetected URLs on this IP address |
+| `detected_downloaded_samples` | `array` | List of detected samples downloaded from this IP address |
+| `detected_urls` | `array` | List of detected URLs on this IP address |
+| `resolutions` | `array` | List of domain names that resolved to this IP address |
 
 ### Scan URL
 
@@ -151,9 +203,17 @@ Scan url with Virus Total
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `report` | `object` | VirusTotal report |
+| `response_code` | `integer` | Response Code |
+| `verbose_msg` | `string` | Textual description of the response code |
+| `scan_id` | `string` | Scan Identifier |
+| `scan_date` | `string` | Date of last scan |
+| `url` | `string` | Scanned URL |
+| `permalink` | `string` | Permalink to the scan report |
+| `positives` | `integer` | Number of antivirus detecting this sample as malicious |
+| `total` | `integer` | Number of antivirus that scanned the sample |
+| `scans` | `object` | Scan results (one scan result per key) |
 
 
 ## Extra
 
-Module **`VirusTotal` v1.16**
+Module **`VirusTotal` v1.17**

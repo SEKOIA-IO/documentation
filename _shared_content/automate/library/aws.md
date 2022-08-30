@@ -13,9 +13,9 @@ This module provides triggers to collect events from AWS
 
 ## Triggers
 
-### Fetch CloudTrail logs
+### Fetch CloudTrail logs (deprecated)
 
-Get the last records from CloudTrail
+Get the last records from CloudTrail (deprecated in flavor of Fetch new CloudTrail records on S3)
 
 #### Arguments
 
@@ -35,9 +35,9 @@ Get the last records from CloudTrail
 | `records_path` | `string` | The filename containing the records |
 
 
-### Fetch Flowlog records
+### Fetch Flowlog records (deprecated)
 
-Get the last records from FlowLog
+Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
 #### Arguments
 
@@ -94,4 +94,4 @@ Get Cloudtrail records from new S3 objects based on notifications
 
 ## Extra
 
-Module **`AWS` v1.11.5**
+Module **`AWS` v1.12**
