@@ -45,9 +45,9 @@ To add users to the main MSSP community:
 
 The invited user will have access to the main MSSP community as well as all other managed communities inside of it. 
 
-### In some of the MSSP’s managed communities*
+### In some of the MSSP’s managed communities
 
-If you want the invited user to access only some managed communities within the MSSP community, you can invite them to only some specific communities. 
+If you need the invited user to access only some managed communities within the MSSP community, invite them to only some specific communities. 
 
 To add users to some managed communities within a main MSSP community: 
 
