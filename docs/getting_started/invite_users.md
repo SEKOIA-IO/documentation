@@ -58,5 +58,3 @@ To add users to some managed communities within a main MSSP community:
 5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
 
 The invited user will only have access to the selected MSSP managed communities, but not the main MSSP community.
-
-<img width="1183" alt="image" src="https://user-images.githubusercontent.com/101662967/186946163-21ec9da8-3598-4fd7-83fe-0b1bd137ce45.png">
