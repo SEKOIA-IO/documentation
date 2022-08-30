@@ -1,9 +1,19 @@
 # Manage users
 
-To manage users in a community, you need to have the role `manage_member`. 
-It all happens in the page `Managed communities` that’s accessible by clicking on your avatar in the upper right of the screen. 
+To manage users in a community, you need to have the role `manage_member`. This role contains the following permissions: 
 
-To access the detailed page of each user, click on the name of the user in the users’ listing. 
+| Permission | Description |
+| --- | --- |
+| COMMUNITY_ADD_MEMBER | Adds new members to the community |
+| COMMUNITY_LIST_MEMBER | Lists all members in a community |
+| COMMUNITY_REMOVE_MEMBER | Removes members from a community |
+
+in the page `Managed communities` that’s accessible by clicking on your avatar in the upper right of the screen. 
+
+To access the detailed page of a user:
+
+1. Go to the page `Managed communities` that’s accessible by clicking on your avatar in the upper right of the screen 
+2. In the tab `Users`, click on the name of a user
 
 From this page, you can: 
 
