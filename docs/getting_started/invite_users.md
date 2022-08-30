@@ -8,6 +8,16 @@ If your guest does not have an account on SEKOIA.IO, they will receive an activa
 
 ## Send invitations
 
+You can invite new users to join a community if you have the role `manage_member`. 
+
+This role contains the following permissions: 
+
+| Permission | Description |
+| --- | --- |
+| COMMUNITY_ADD_MEMBER | Adds new members to the community |
+| COMMUNITY_LIST_MEMBER | Lists all members in a community |
+| COMMUNITY_REMOVE_MEMBER | Removes members from a community |
+
 To invite new members to your community, follow these steps:
 
 1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
