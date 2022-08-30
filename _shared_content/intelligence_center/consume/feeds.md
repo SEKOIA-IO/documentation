@@ -1,4 +1,4 @@
-# Feeds
+# Outgoing Feeds
 A feed allows you to filter CTI objects from your database.
 
 ## Feeds listing
@@ -47,7 +47,7 @@ The special feed ID to use is `d6092c37-d8d7-45c3-8aff-c4dc26030608`.
 
 ### Create new feed
 
-There are two ways to create a feed: either from the TIP interface or by using the API and the [feeds](../../develop/rest_api/intelligence/#operation/post_feeds_resource) endpoint.
+There are two ways to create a feed: either from the TIP interface or by using the API and the [feeds](../../../develop/rest_api/intelligence/#tag/Outgoing-Feeds/operation/post_feeds_resource) endpoint.
 
 To create a new feed:
 
