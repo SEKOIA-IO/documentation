@@ -8,16 +8,16 @@ In this documentation, you will learn how to add users in these communities.
 
 ---
 
-# Types of communities
+## Types of communities
 
 In SEKOIA.IO, there are two types of communities available to our clients: 
 
 - One managed community with multiple entities: for clients with internal SOC/CERT teams
 - An MSSP community with multiple managed communities: for MSSP partners with SOC/CERT activities
 
-# Add new users
+## Add new users
 
-## In a managed community
+### In a managed community
 
 To invite new users to a managed community:
 
@@ -27,13 +27,13 @@ To invite new users to a managed community:
 4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
 5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
 
-## In an MSSP community
+### In an MSSP community
 
 An MSSP community is one main community with multiple managed communities inside of it. The admin of an MSSP community can access all of the managed communities.
 
 You can either invite users to join the main MSSP community or invite them to one or more managed communities inside the MSSP community. 
 
-### In the main MSSP community
+#### In the main MSSP community
 
 To add users to the main MSSP community: 
 
@@ -45,7 +45,7 @@ To add users to the main MSSP community:
 
 The invited user will have access to the main MSSP community as well as all other managed communities inside of it. 
 
-### In some of the MSSP’s managed communities
+#### In some of the MSSP’s managed communities
 
 If you need the invited user to access only some managed communities within the MSSP community, invite them to only some specific communities. 
 
