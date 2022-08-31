@@ -8,14 +8,7 @@ In this documentation, you will learn how to add users in these communities.
 
 ---
 
-## Types of communities
-
-In SEKOIA.IO, there are two types of communities available to our clients: 
-
-- One managed community with multiple entities: for clients with internal SOC/CERT teams
-- An MSSP community with multiple managed communities: for MSSP partners with SOC/CERT activities
-
-## Add new users
+## Add new users to a community
 
 ### In a managed community
 
