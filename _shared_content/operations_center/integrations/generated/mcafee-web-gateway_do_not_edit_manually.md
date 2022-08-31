@@ -37,17 +37,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "date=\"2022-03-11T10:39:16.390Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.41 destination_host=\"www.forbiddensite.com\" http_status_code=403 media_type=\"\" source_bytes=131 destination_bytes=0 http_request_first_line=\"GET http://www.forbiddensite.com/ HTTP/1.1\" url_categories=\"Pornography\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-28 ruleset_name=\"Default\" rule_name=\"Block URLs Whose Category Is in Category Blocklist for Default Groups\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"forbiddenapp\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
         "event": {
+            "start": "2022-03-11T10:39:16.390000Z",
             "category": "network",
             "code": "10",
             "kind": "event",
-            "reason": "Blocked by URL filtering",
-            "action": "denied",
-            "type": [
-                "connection",
-                "access",
-                "denied"
-            ],
-            "start": "2022-03-11T10:39:16.390Z"
+            "reason": "Blocked by URL filtering"
         },
         "destination": {
             "ip": "2.2.2.41",
@@ -93,8 +87,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "www",
             "registered_domain": "forbiddensite.com",
-            "scheme": "http",
             "path": "/",
+            "scheme": "http",
             "port": 80
         },
         "skyhighsecurity": {
@@ -138,17 +132,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "date=\"2022-03-17T13:14:39.134Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.2 destination_host=\"slscr.update.microsoft.com\" http_status_code=407 media_type=\"\" source_bytes=173 destination_bytes=0 http_request_first_line=\"CONNECT slscr.update.microsoft.com:443 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-42 ruleset_name=\"Authentication: Direct Proxy\" rule_name=\"Authenticate: Active Directory\" block_id=81 block_reason=\"Authentication Required\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
         "event": {
+            "start": "2022-03-17T13:14:39.134000Z",
             "category": "network",
             "code": "81",
             "kind": "event",
-            "reason": "Authentication Required",
-            "action": "denied",
-            "type": [
-                "connection",
-                "access",
-                "denied"
-            ],
-            "start": "2022-03-17T13:14:39.134Z"
+            "reason": "Authentication Required"
         },
         "destination": {
             "ip": "2.2.2.2",
@@ -234,17 +222,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "date=\"2022-03-24T13:54:02.740Z\" hostname=\"mwgproxy\" username=\"myusername\" source_ip=1.2.3.4 destination_ip=255.255.255.255 destination_host=\"\" http_status_code=400 media_type=\"\" source_bytes=316 destination_bytes=0 http_request_first_line=\"CONNECT :80 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-3 ruleset_name=\"Exception DFS\" rule_name=\"Forbidden Access\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
         "event": {
+            "start": "2022-03-24T13:54:02.740000Z",
             "category": "network",
             "code": "10",
             "kind": "event",
-            "reason": "Blocked by URL filtering",
-            "action": "denied",
-            "type": [
-                "connection",
-                "access",
-                "denied"
-            ],
-            "start": "2022-03-24T13:54:02.740Z"
+            "reason": "Blocked by URL filtering"
         },
         "destination": {
             "ip": "255.255.255.255",
@@ -323,16 +305,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "date=\"2022-03-11T09:50:47.399Z\" hostname=\"mwgproxy\" username=\"myusername\" source_ip=1.2.3.4 destination_ip=142.250.178.131 destination_host=\"www.google.fr\" http_status_code=200 media_type=\"\" source_bytes=127 destination_bytes=14678 http_request_first_line=\"GET http://www.google.fr/ HTTP/1.1\" url_categories=\"Search Engines\" url_reputation_string=\"Minimal Risk\" url_reputation_code=0 ruleset_name=\"Dynamic Content Classification\" rule_name=\"Block URLs Whose Category Is in Category Blocklist\" block_id=0 block_reason=\"\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
         "event": {
+            "start": "2022-03-11T09:50:47.399000Z",
             "category": "network",
             "code": "0",
             "kind": "event",
-            "action": "allowed",
             "type": [
                 "connection",
                 "access",
                 "allowed"
-            ],
-            "start": "2022-03-11T09:50:47.399Z"
+            ]
         },
         "destination": {
             "ip": "142.250.178.131",
@@ -378,8 +359,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "fr",
             "subdomain": "www",
             "registered_domain": "google.fr",
-            "scheme": "http",
             "path": "/",
+            "scheme": "http",
             "port": 80
         },
         "user": {
@@ -430,20 +411,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "network",
             "kind": "event",
-            "action": "denied",
+            "action": "OBSERVED",
             "type": [
                 "connection",
                 "access",
-                "denied"
+                "allowed"
             ]
         },
         "@timestamp": "2022-08-23T13:11:10.000000Z",
         "source": {
+            "bytes": 0,
             "nat": {
                 "ip": "37.171.139.5"
             },
             "ip": "10.0.2.15",
-            "bytes": 0,
             "address": "10.0.2.15"
         },
         "destination": {
@@ -523,7 +504,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "network",
             "kind": "event",
-            "action": "denied",
+            "action": "DENIED",
             "reason": "Authentication Required",
             "type": [
                 "connection",
@@ -533,11 +514,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2022-08-23T14:55:53.000000Z",
         "source": {
+            "bytes": 1137,
             "nat": {
                 "ip": "1.1.1.1"
             },
             "ip": "1.1.1.1",
-            "bytes": 1137,
             "address": "1.1.1.1"
         },
         "destination": {
