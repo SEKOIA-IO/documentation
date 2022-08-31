@@ -220,7 +220,7 @@ nav:
     - Consume:
       - Intelligence: cti/features/consume/intelligence.md
       - Obervables: cti/features/consume/observables.md
-      - Feeds: cti/features/consume/feeds.md
+      - Outgoing Feeds: cti/features/consume/feeds.md
       - Graph Explorations: cti/features/consume/graph_explorations.md
       - Enrichers: cti/features/consume/enrichers.md
       - Export: cti/features/consume/export.md
@@ -256,12 +256,13 @@ nav:
     - Consume:
       - Intelligence: tip/features/consume/intelligence.md
       - Obervables: tip/features/consume/observables.md
-      - Feeds: tip/features/consume/feeds.md
+      - Outgoing Feeds: tip/features/consume/feeds.md
       - Graph Explorations: tip/features/consume/graph_explorations.md
       - Enrichers: tip/features/consume/enrichers.md
       - Export: tip/features/consume/export.md
     - Produce and investigate:
       - Content Proposals: tip/features/produce/content_proposals.md
+      - Incoming Feeds: tip/features/produce/incoming_feeds.md
       - Warning Rules: tip/features/produce/warning_rules.md
       - Expiration Rules: tip/features/produce/expiration_rules.md
     - Monitor:
