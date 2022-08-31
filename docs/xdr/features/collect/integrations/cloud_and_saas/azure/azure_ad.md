@@ -112,15 +112,6 @@ Go to events page and search events in last 5 minutes by Azure AD intake key    
 - It is possible to investigate on the tab Run and see the response by clicking on the module
 <img width="100%" alt="image" src="https://user-images.githubusercontent.com/101662967/185441434-64aacf81-a754-421a-ac87-ff9c06a3f40f.png">
 
-
-### Forward the Connection Keys to SEKOIA.IO
-
-Finally, please send to SEKOIA.IO the following information:
-
-- Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=active-directory-event"`).
-- Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
-- Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
-
 ## Further Readings
 
 - [Microsoft Github diagnostic Active Directory documentation](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)
