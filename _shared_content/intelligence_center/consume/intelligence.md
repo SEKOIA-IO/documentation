@@ -38,6 +38,7 @@ The term that has been entered will be looked at in many objects fields:
 * The description
 * The aliases
 * The external references
+* The location's country code if the search term contains 2 characters
 
 The search term can be mixed with filters to restrict even more the objects displayed
 
