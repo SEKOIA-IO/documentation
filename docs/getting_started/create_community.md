@@ -9,7 +9,7 @@ In SEKOIA.IO, there are two types of communities available to our clients:
 
 ## Create a new community
 
-For the managed community with multiple entities, our support team will handle the creation of the community and assist you to add the necessary [entities](/entities.md). 
+For the managed community with multiple entities, our support team will handle the creation of the community and assist you to add the necessary [entities](https://docs.sekoia.io/xdr/features/collect/entities/). 
 
 However, for the MSSP community, the support team can create the main MSSP community and users with the right permissions can add multiple communities from the user interface. 
 
@@ -37,7 +37,7 @@ Your managed community is now recognizable. You can also hover over the image to
 
 ## Edit a community
 
-To edit a community's name and description, you need to have the [right permissions](/getting_started/manage_users/#needed-role-and-permissions). 
+To edit a community's name and description, you need to have the [right permissions](https://docs.sekoia.io/getting_started/roles_permissions). 
 
 1. Go to the managed community’s main page 
 2. Click on the `Edit` button next to the community’s name 
