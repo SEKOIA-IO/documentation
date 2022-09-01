@@ -16,7 +16,7 @@ In this documentation, you will learn how to:
 - Set up your playbooks using templates
 - Create a playbook from scratch
 - Learn more about the different types of triggers, operators and actions
-- Troubleshoot with code section and playbook runs
+- Troubleshoot with playbook runs
 
 ## Prerequisites 
 
