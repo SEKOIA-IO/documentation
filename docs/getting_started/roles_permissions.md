@@ -26,8 +26,8 @@ Need to access the [alerts](https://docs.sekoia.io/xdr/features/investigate/aler
 | SIC_WRITE_GENERATION_MODES | Create or edit alert generation mode |
 | SIC_READ_GENERATION_MODES | Get generation modes |
 
-!!!tip
- SIC is the term used internally for the Operations Center. 
+!!!note
+  SIC is the term used internally for the Operations Center. 
 
 
 #### Assets
@@ -64,8 +64,8 @@ Need to access the [Cases](https://docs.sekoia.io/xdr/features/investigate/cases
 | SIC_READ_INCIDENTS | Get incidents |
 | SIC_WRITE_INCIDENTS | Edit incidents |
 
-!!!tip
- Incident is the term used internally for Cases.
+!!!note
+  Incident is the term used internally for Cases.
 
 
 #### Countermeasures
@@ -133,8 +133,8 @@ Need to access the Intelligence Center ? Here are all the permissions linked to 
 | INTHREAT_READ_OBJECTS | Read objects from InThreat |
 | READ_TELEMETRY | Read the telemetry measures |
 
-!!!tip
-   InThreat is the term used internally for the Intelligence Center 
+!!!note
+  InThreat is the term used internally for the Intelligence Center 
 
 
 ## Common
@@ -152,8 +152,8 @@ Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Searc
 | SYMPHONY_WRITE_PLAYBOOKS | Write Symphony Playbooks |
 | SYMPHONY_READ_PLAYBOOKS | List and get Symphony Playbooks |
 
-!!!tip
-   Symphony is the name used for Playbooks. 
+!!!note
+  Symphony is the name used for Playbooks. 
 
 
 ### Dashboards
@@ -167,7 +167,7 @@ Need to access dashboards? Search `dashboard` and you’ll get all the permissio
 
 ### Manage communities
 
-Need to manage your communities? Search `community and you’ll get all the permissions linked to this section. 
+Need to manage your communities? Search `community` and you’ll get all the permissions linked to this section. 
 
 | Name | Description |
 | --- | --- |
