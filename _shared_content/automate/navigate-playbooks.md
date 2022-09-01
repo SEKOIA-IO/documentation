@@ -124,13 +124,51 @@ Depending on the type of blocks, the content of the configuration panel changes.
 | Configuration | Varies depending on the selected action. Contains a search bar as well as all configuration steps. The height of fields in this section can be extended by dragging the mouse on the lower right of the field  |
 | Variables | Lists all variables related to the action. Contains name and description of the variable as well as a copy button to easily copy the value of the variable  |
 
-!!! note
-  You can manually resize the configuration panel by clicking on the left edge of the panel and dragging the mouse left or right; the width of the panel will change accordingly. Once your panel is set at a preferable width, let go of the mouse. The chosen size will be remembered for the next configurations.
+!!!note
+  You can manually resize the configuration panel by clicking on the left edge of the panel and dragging the mouse left or right; the width of the panel  will change accordingly. Once your panel is set at a preferable width, let go of the mouse. The chosen size will be remembered for the next configurations.
 
 ### Playbook code
 
+The code section is a page where you can write and edit your playbooks using a code editor. Playbooks in [SEKOIA.IO](http://SEKOIA.IO) are written using the language [JINJA 3.](https://jinja.palletsprojects.com/en/3.0.x/templates/) 
+
+It is possible to test your JINJA code on a JSON file:
+
+- Copy/paste the CODE of your playbook
+- Remove the nodes with this Python script:
+
+```
+import json
+from jinja2 import Template
+
+file_json = open("file.json", "r")
+loading = json.load(file_json)
+
+# The JINJA partern to be tested
+jinja_patern = "{{urgency.value}}"
+
+tm = Template(jinja_patern)
+
+msg = tm.render(urgency=loading["urgency"])
+print(msg)
+
+```
+
 ### Playbook details 
 
+The tab `Details` lists all information related to the playbook. 
+
+- The community where the playbook was created
+- The user who created the playbook
+- The user who last updated the playbook
+- Date of creation
+- Date of last update
+- Name of the last user who activated the playbook
+- Date of the last activation of the playbook
+- Description of the playbook
+
+!!!tip
+  You can edit the name and the description of the playbook by clicking on the `Edit` button next to the activation toggle.
+  
 ---
 
 ## Playbook runs
