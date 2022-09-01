@@ -30,6 +30,63 @@ In details, the following table denotes the type of events produced by this inte
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "event_application_blocked.json"
+
+    ```json
+	
+    {
+        "message": "{\"severity\":\"low\",\"type\":\"Event::Endpoint::Application::Blocked\",\"endpoint_type\":\"computer\",\"endpoint_id\":\"5da7691b-cc01-4330-bb8b-358362c3a5f1\",\"source_info\":{\"ip\":\"1.2.3.4\"},\"customer_id\":\"36d5cd97-169e-490b-a2c4-bcd9d5d2a54b\",\"name\":\"Controlled application blocked: Google Software Reporter Tool (Security tool)\",\"id\":\"bc60c18b-dc21-43a3-bfd5-f28963f288e2\",\"group\":\"APPLICATION_CONTROL\",\"datastream\":\"event\",\"end\":\"2022-04-25T03:15:31.760Z\",\"suser\":\"n/a\",\"rt\":\"2022-04-25T03:15:31.777Z\",\"dhost\":\"DOMAIN-1234\"}",
+        "event": {
+            "end": "2022-04-25T03:15:31.760Z",
+            "kind": "event",
+            "reason": "Controlled application blocked: Google Software Reporter Tool (Security tool)",
+            "code": "Event::Endpoint::Application::Blocked",
+            "category": [
+                "denied"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2022-04-25T03:15:31.777000Z",
+        "host": {
+            "hostname": "DOMAIN-1234",
+            "name": "DOMAIN-1234"
+        },
+        "observer": {
+            "ip": "1.2.3.4"
+        },
+        "log": {
+            "level": "low"
+        },
+        "process": {
+            "title": "Google Software Reporter Tool (Security tool)"
+        },
+        "sophos": {
+            "endpoint": {
+                "type": "computer",
+                "id": "5da7691b-cc01-4330-bb8b-358362c3a5f1"
+            },
+            "customer": {
+                "id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b"
+            },
+            "event": {
+                "group": "APPLICATION_CONTROL"
+            }
+        },
+        "related": {
+            "hosts": [
+                "DOMAIN-1234"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "event_disk_non_encrypted.json"
 
     ```json
@@ -55,7 +112,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Elon Musk"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -91,6 +149,136 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "event_dlp_allowed.json"
+
+    ```json
+	
+    {
+        "message": "{\"severity\":\"low\",\"type\":\"Event::Endpoint::DataLossPreventionAutomaticallyAllowed\",\"endpoint_type\":\"computer\",\"endpoint_id\":\"5da7691b-cc01-4330-bb8b-358362c3a5f1\",\"source_info\":{\"ip\":\"1.2.3.4\"},\"customer_id\":\"36d5cd97-169e-490b-a2c4-bcd9d5d2a54b\",\"name\":\"An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\\\Users\\\\XXXXXXXX\\\\Downloads\\\\YYYYYYYYYYYYYYYYY.mp4\",\"id\":\"bc60c18b-dc21-43a3-bfd5-f28963f288e2\",\"group\":\"DATA_LOSS_PREVENTION\",\"datastream\":\"event\",\"end\":\"2022-04-25T03:15:31.760Z\",\"suser\":\"n/a\",\"rt\":\"2022-04-25T03:15:31.777Z\",\"dhost\":\"DOMAIN-1234\"}",
+        "event": {
+            "end": "2022-04-25T03:15:31.760Z",
+            "kind": "event",
+            "reason": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4",
+            "code": "Event::Endpoint::DataLossPreventionAutomaticallyAllowed",
+            "category": [
+                "allowed"
+            ],
+            "type": [
+                "info"
+            ],
+            "action": "allow file transfer"
+        },
+        "@timestamp": "2022-04-25T03:15:31.777000Z",
+        "host": {
+            "hostname": "DOMAIN-1234",
+            "name": "DOMAIN-1234"
+        },
+        "observer": {
+            "ip": "1.2.3.4"
+        },
+        "log": {
+            "level": "low"
+        },
+        "file": {
+            "path": "C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4",
+            "size": 559316722
+        },
+        "rule": {
+            "name": "Multimedia file"
+        },
+        "sophos": {
+            "endpoint": {
+                "type": "computer",
+                "id": "5da7691b-cc01-4330-bb8b-358362c3a5f1"
+            },
+            "customer": {
+                "id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b"
+            },
+            "event": {
+                "group": "DATA_LOSS_PREVENTION"
+            }
+        },
+        "related": {
+            "hosts": [
+                "DOMAIN-1234"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "event_dlp_allowed_remote_storage.json"
+
+    ```json
+	
+    {
+        "message": "{\"severity\":\"low\",\"type\":\"Event::Endpoint::DataLossPreventionAutomaticallyAllowed\",\"endpoint_type\":\"computer\",\"endpoint_id\":\"5da7691b-cc01-4330-bb8b-358362c3a5f1\",\"source_info\":{\"ip\":\"1.2.3.4\"},\"customer_id\":\"36d5cd97-169e-490b-a2c4-bcd9d5d2a54b\",\"name\":\"An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\\\Users\\\\XXXXXXXX\\\\Downloads\\\\YYYYYYYYYYYYYYYYY.mp4  Destination path: D:\\\\XXXXXXXXXXXXXXX\\\\Documents\\\\Videos\\\\YYYYY.mp4  Destination type: Removable storage\",\"id\":\"bc60c18b-dc21-43a3-bfd5-f28963f288e2\",\"group\":\"DATA_LOSS_PREVENTION\",\"datastream\":\"event\",\"end\":\"2022-04-25T03:15:31.760Z\",\"suser\":\"n/a\",\"rt\":\"2022-04-25T03:15:31.777Z\",\"dhost\":\"DOMAIN-1234\"}",
+        "event": {
+            "end": "2022-04-25T03:15:31.760Z",
+            "kind": "event",
+            "reason": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4  Destination path: D:\\XXXXXXXXXXXXXXX\\Documents\\Videos\\YYYYY.mp4  Destination type: Removable storage",
+            "code": "Event::Endpoint::DataLossPreventionAutomaticallyAllowed",
+            "category": [
+                "allowed"
+            ],
+            "type": [
+                "info"
+            ],
+            "action": "allow file transfer"
+        },
+        "@timestamp": "2022-04-25T03:15:31.777000Z",
+        "host": {
+            "hostname": "DOMAIN-1234",
+            "name": "DOMAIN-1234"
+        },
+        "observer": {
+            "ip": "1.2.3.4"
+        },
+        "log": {
+            "level": "low"
+        },
+        "file": {
+            "path": "C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4",
+            "size": 559316722
+        },
+        "rule": {
+            "name": "Multimedia file"
+        },
+        "sophos": {
+            "endpoint": {
+                "type": "computer",
+                "id": "5da7691b-cc01-4330-bb8b-358362c3a5f1"
+            },
+            "customer": {
+                "id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b"
+            },
+            "event": {
+                "group": "DATA_LOSS_PREVENTION"
+            },
+            "destination": {
+                "type": "Removable storage",
+                "file": {
+                    "path": "D:\\XXXXXXXXXXXXXXX\\Documents\\Videos\\YYYYY.mp4"
+                }
+            }
+        },
+        "related": {
+            "hosts": [
+                "DOMAIN-1234"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "event_encryption_information.json"
 
     ```json
@@ -117,7 +305,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "TESLA"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -179,7 +368,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "TESLA"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -215,6 +405,63 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "event_exploit_prevention.json"
+
+    ```json
+	
+    {
+        "message": "{\"severity\":\"low\",\"type\":\"Event::Endpoint::HmpaExploitPrevented\",\"endpoint_type\":\"computer\",\"endpoint_id\":\"5da7691b-cc01-4330-bb8b-358362c3a5f1\",\"source_info\":{\"ip\":\"1.2.3.4\"},\"customer_id\":\"36d5cd97-169e-490b-a2c4-bcd9d5d2a54b\",\"name\":\"'CodeCave' exploit prevented in Essential Objects Worker Process\",\"id\":\"bc60c18b-dc21-43a3-bfd5-f28963f288e2\",\"group\":\"RUNTIME_DETECTIONS\",\"datastream\":\"event\",\"end\":\"2022-04-25T03:15:31.760Z\",\"suser\":\"n/a\",\"rt\":\"2022-04-25T03:15:31.777Z\",\"dhost\":\"DOMAIN-1234\"}",
+        "event": {
+            "end": "2022-04-25T03:15:31.760Z",
+            "kind": "event",
+            "reason": "'CodeCave' exploit prevented in Essential Objects Worker Process",
+            "code": "Event::Endpoint::HmpaExploitPrevented",
+            "category": [
+                "denied"
+            ],
+            "type": [
+                "file"
+            ]
+        },
+        "@timestamp": "2022-04-25T03:15:31.777000Z",
+        "host": {
+            "hostname": "DOMAIN-1234",
+            "name": "DOMAIN-1234"
+        },
+        "observer": {
+            "ip": "1.2.3.4"
+        },
+        "log": {
+            "level": "low"
+        },
+        "sophos": {
+            "endpoint": {
+                "type": "computer",
+                "id": "5da7691b-cc01-4330-bb8b-358362c3a5f1"
+            },
+            "customer": {
+                "id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b"
+            },
+            "event": {
+                "group": "RUNTIME_DETECTIONS"
+            },
+            "threat": {
+                "name": "CodeCave"
+            }
+        },
+        "related": {
+            "hosts": [
+                "DOMAIN-1234"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "event_key_received.json"
 
     ```json
@@ -240,7 +487,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "admin tech"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -301,7 +549,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "admin tech"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -337,6 +586,67 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "event_pua_detected.json"
+
+    ```json
+	
+    {
+        "message": "{\"severity\":\"low\",\"type\":\"Event::Endpoint::CorePuaDetection\",\"endpoint_type\":\"computer\",\"endpoint_id\":\"5da7691b-cc01-4330-bb8b-358362c3a5f1\",\"source_info\":{\"ip\":\"1.2.3.4\"},\"customer_id\":\"36d5cd97-169e-490b-a2c4-bcd9d5d2a54b\",\"name\":\"PUA detected: 'Rule Generic PUA' at 'C:\\\\Users\\\\XXXXXXXXXX\\\\AppData\\\\Local\\\\Microsoft\\\\SquirrelTemp\\\\tempc'\",\"id\":\"bc60c18b-dc21-43a3-bfd5-f28963f288e2\",\"group\":\"PUA\",\"datastream\":\"event\",\"end\":\"2022-04-25T03:15:31.760Z\",\"suser\":\"n/a\",\"rt\":\"2022-04-25T03:15:31.777Z\",\"dhost\":\"DOMAIN-1234\"}",
+        "event": {
+            "end": "2022-04-25T03:15:31.760Z",
+            "kind": "event",
+            "reason": "PUA detected: 'Rule Generic PUA' at 'C:\\Users\\XXXXXXXXXX\\AppData\\Local\\Microsoft\\SquirrelTemp\\tempc'",
+            "code": "Event::Endpoint::CorePuaDetection",
+            "category": [
+                "info"
+            ],
+            "type": [
+                "info"
+            ],
+            "action": "detected"
+        },
+        "@timestamp": "2022-04-25T03:15:31.777000Z",
+        "host": {
+            "hostname": "DOMAIN-1234",
+            "name": "DOMAIN-1234"
+        },
+        "observer": {
+            "ip": "1.2.3.4"
+        },
+        "log": {
+            "level": "low"
+        },
+        "file": {
+            "path": "C:\\Users\\XXXXXXXXXX\\AppData\\Local\\Microsoft\\SquirrelTemp\\tempc"
+        },
+        "rule": {
+            "name": "Rule Generic PUA"
+        },
+        "sophos": {
+            "endpoint": {
+                "type": "computer",
+                "id": "5da7691b-cc01-4330-bb8b-358362c3a5f1"
+            },
+            "customer": {
+                "id": "36d5cd97-169e-490b-a2c4-bcd9d5d2a54b"
+            },
+            "event": {
+                "group": "PUA"
+            }
+        },
+        "related": {
+            "hosts": [
+                "DOMAIN-1234"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "event_registered.json"
 
     ```json
@@ -361,7 +671,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "admin tech"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -422,7 +733,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Elon Musk"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -479,7 +791,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2022-04-25T07:41:03.118000Z",
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -533,7 +846,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2022-04-25T03:15:31.777000Z",
         "host": {
-            "hostname": "DOMAIN-1234"
+            "hostname": "DOMAIN-1234",
+            "name": "DOMAIN-1234"
         },
         "observer": {
             "ip": "1.2.3.4"
@@ -587,7 +901,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2022-04-25T04:57:09.900000Z",
         "host": {
-            "hostname": "ACLOUD-2K22"
+            "hostname": "ACLOUD-2K22",
+            "name": "ACLOUD-2K22"
         },
         "observer": {
             "ip": "4.5.6.7"
@@ -645,7 +960,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "TESLA"
         },
         "host": {
-            "hostname": "DESKTOP-1234"
+            "hostname": "DESKTOP-1234",
+            "name": "DESKTOP-1234"
         },
         "observer": {
             "ip": "1.3.3.7"
@@ -705,7 +1021,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Elon Musk"
         },
         "host": {
-            "hostname": "TESLA-SUPPORT"
+            "hostname": "TESLA-SUPPORT",
+            "name": "TESLA-SUPPORT"
         },
         "observer": {
             "ip": "1.3.3.7"
@@ -758,20 +1075,28 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
+|`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`file.path` | `keyword` | Full path to the file, including the file name. |
+|`file.size` | `long` | File size in bytes. |
 |`host.hostname` | `keyword` | Hostname of the host. |
+|`host.name` | `keyword` | Name of the host. |
 |`log.level` | `keyword` | Log level of the log event. |
 |`observer.ip` | `ip` | IP addresses of the observer. |
+|`process.title` | `keyword` | Process title. |
 |`rule.name` | `keyword` | Rule name |
 |`sophos.customer.id` | `keyword` | None |
+|`sophos.destination.file.path` | `keyword` | None |
+|`sophos.destination.type` | `keyword` | None |
 |`sophos.endpoint.id` | `keyword` | None |
 |`sophos.endpoint.type` | `keyword` | None |
 |`sophos.event.group` | `keyword` | None |
+|`sophos.threat.name` | `keyword` | None |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.id` | `keyword` | Unique identifier of the user. |
