@@ -12,7 +12,7 @@ If the threshold is reached, the action is marked in error with a text explainin
 
 Users can restart any run from a playbook. Doing so can help understand issues like stuck playbooks.
 
-From a list of runs, you can see a “Rerun” action button with a refresh icon. This button applies to: 
+From a list of runs, you can see a `Rerun` action button with a refresh icon. This button applies to: 
 
 - Successful runs: it restarts all actions in the playbook. 
 - Failed runs: it either restarts all the actions in the playbook or only failed and pending actions.
