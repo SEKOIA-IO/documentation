@@ -30,4 +30,4 @@ Fetch events from Skyhigh Security Secure Web Gateway (SWG) API
 
 ## Extra
 
-Module **`Skyhigh Security Secure Web Gateway (SWG)` v1.0.3**
+Module **`Skyhigh Security Secure Web Gateway (SWG)` v1.0.6**
