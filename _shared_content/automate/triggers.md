@@ -14,7 +14,7 @@ The `Triggers` collects data that will be used by the Operators and Actions to a
 
 ### Alerts
 
-The `Security alerts` triggers are made by SEKOIA.IO and allow users to collect information about alerts. To find them in the listing, filter by Triggers and click on SEKOIA.IO. 
+The `Security alerts` triggers are made by SEKOIA.IO and allow users to collect information about alerts. To find them in the listing, filter by `Triggers` and click on SEKOIA.IO. 
 
 There you can find the following triggers: 
 
@@ -33,8 +33,8 @@ By using these triggers, you can get:
 - Its `urgency` 
 - The action that triggered the alert notification (`event_type`) 
 
-!!!note
-  This trigger is only applicable in the Operations Center.
+!!! note
+    This trigger is only applicable in the Operations Center.
 
 
 ### Manual trigger (webhook) 
