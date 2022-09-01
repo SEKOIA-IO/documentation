@@ -37,7 +37,8 @@ To create a new API key, you’ll have to:
 3. Select one or more roles to associate with your key. For instance, if you want to use your key to retrieve information from the Intelligence Center, please select the role `ic_viewer - Intelligence Center Read-Only`
 4. Click on `Save`
 
-!!! note
+:pencil2: **note**
+
     The key will only be displayed once. We recommend you to save it into a vault.
 
 ## Revoke an API Key
@@ -47,5 +48,7 @@ Revoking an API key will make it unusable. It’s rather easy to do but keep in 
 To revoke an API key, please proceed with the following steps:
 
 1- Go to `Managed communities` page by clicking on your avatar in the upper right of the screen
+
 2- On the API key tab, click on the `Edit` button
+
 3- Then revoke the API key by clicking on the red button `Revoke`
