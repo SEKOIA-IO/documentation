@@ -235,6 +235,7 @@ nav:
       - OpenCTI: cti/features/integrations/opencti.md
       - Splunk: cti/features/integrations/splunk.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
+      - PaloAlto Cortex XSOAR: cti/features/integrations/palolto_xsoar.md
   - Develop:
     - Overview: cti/develop/index.md
     - Guides:
@@ -470,6 +471,7 @@ plugins:
       intelligence_center/integrations/opencti.md: cti/features/integrations/opencti.md
       intelligence_center/integrations/splunk.md: cti/features/integrations/splunk.md
       intelligence_center/integrations/thehive.md: cti/features/integrations/thehive.md
+      intelligence_center/integrations/paloalto_xsoar.md: cti/features/integrations/paloalto_xsoar.md
       intelligence_center/intelligence.md: cti/features/consume/intelligence.md
       intelligence_center/observables.md: cti/features/consume/observables.md
       operation_center.md: xdr/index.md
