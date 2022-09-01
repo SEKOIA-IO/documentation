@@ -37,8 +37,7 @@ To create a new API key, you’ll have to:
 3. Select one or more roles to associate with your key. For instance, if you want to use your key to retrieve information from the Intelligence Center, please select the role `ic_viewer - Intelligence Center Read-Only`
 4. Click on `Save`
 
-:pencil2: **note**
-
+!!! note
     The key will only be displayed once. We recommend you to save it into a vault.
 
 ## Revoke an API Key
