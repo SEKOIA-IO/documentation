@@ -3,6 +3,7 @@
 Content is on its way. 
 
 ## Permissions
+
 In SEKOIA.IO, permissions do not necessarily have common names across the platform. 
 
 Use the search bar on top of the permissions list to filter permissions depending on the needed service.
@@ -24,7 +25,7 @@ Need to access the [alerts](https://docs.sekoia.io/xdr/features/investigate/aler
 | SIC_READ_GENERATION_MODES | Get generation modes |
 
 !!! note
-    SIC is the term used internally for the Operations Center. 
+    SIC is the term we use internally for the Operations Center. 
 
 
 #### Assets
@@ -62,7 +63,7 @@ Need to access the [Cases](https://docs.sekoia.io/xdr/features/investigate/cases
 | SIC_WRITE_INCIDENTS | Edit incidents |
 
 !!! note
-   Incident is the term used internally for Cases.
+    Incident is the term we use internally for Cases.
 
 
 #### Countermeasures
@@ -131,7 +132,7 @@ Need to access the Intelligence Center ? Here are all the permissions linked to 
 | READ_TELEMETRY | Read the telemetry measures |
 
 !!! note
-    InThreat is the term used internally for the Intelligence Center 
+    InThreat is the term we use internally for the Intelligence Center 
 
 
 ## Common
@@ -150,7 +151,7 @@ Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Searc
 | SYMPHONY_READ_PLAYBOOKS | List and get Symphony Playbooks |
 
 !!! note
-    Symphony is the name used for Playbooks. 
+    Symphony is the name we use internally for Playbooks. 
 
 
 ### Dashboards
