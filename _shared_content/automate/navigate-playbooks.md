@@ -73,8 +73,17 @@ Playbook blocks are visually composed of:
 | Undo | Undo last action |
 | Redo | Redo action |
 
-!!! note
+!!!note
   If blocks in the playbook have missing configuration, an alert stating the number of errors will show in the left of the graph area. 
+  
+The playbook run view adds color to the playbook blocks and nodes to highlight the status of the run. 
+
+| Color | Meaning |
+| --- | --- |
+| Green | Playbook run went successfully |
+| Orange | Playbook run left from this node |
+| Red | Run ended in error |
+
 
 #### Configuration panel
 
@@ -166,7 +175,7 @@ The tab `Details` lists all information related to the playbook.
 - Date of the last activation of the playbook
 - Description of the playbook
 
-!!!tip
+!!! tip
   You can edit the name and the description of the playbook by clicking on the `Edit` button next to the activation toggle.
   
 ---
