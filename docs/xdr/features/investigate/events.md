@@ -60,6 +60,12 @@ Click on the `Apply` button to start your search based on these filters.
 
 Each search result lasts 10 min by default and it’s possible to configure the retention to reach one day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
 
+It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
+<!-- image à changer -->
+<img width="58" alt="image" src="https://user-images.githubusercontent.com/101662967/187888092-84499da5-6fea-46e3-b21c-e6e859aed8e5.png">
+
+
+
 ### Sharing a search
 
 Search job have IDs that are available in the browser address bar.
