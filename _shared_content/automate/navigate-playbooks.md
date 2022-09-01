@@ -51,8 +51,8 @@ To find actions in the listing, you can either:
 
 To add these actions to your graph, click on the dots next to the action name and drag it to the graph area. Dropping actions into this area will form a **block**. 
 
-!!!note 
-  Configuration for each of these blocks is detailed in the [Library section](https://docs.sekoia.io/xdr/features/automate/library/aws/) of this documentation. 
+!!! note 
+    Configuration for each of these blocks is detailed in the [Library section](https://docs.sekoia.io/xdr/features/automate/library/aws/) of this documentation. 
 
 #### Graph area
 
