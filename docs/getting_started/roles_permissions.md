@@ -8,12 +8,6 @@
 In SEKOIA.IO, permissions do not necessarily have common names across the platform. 
 
 Use the search bar on top of the permissions list to filter permissions depending on the needed service.
-
-!!! tip 
- **SIC** is the term used internally for the Operations Center. 
-  **InThreat** is the term used internally for the Intelligence Center 
-  **Symphony** is the name used for Playbooks. 
-  **Incident** is the term used internally for Cases.
   
 
 ### Operations Center
@@ -31,6 +25,10 @@ Need to access the [alerts](https://docs.sekoia.io/xdr/features/investigate/aler
 | SIC_READ_ALERT_STATS | Get statistics about SIC alerts |
 | SIC_WRITE_GENERATION_MODES | Create or edit alert generation mode |
 | SIC_READ_GENERATION_MODES | Get generation modes |
+
+!!!tip
+ SIC is the term used internally for the Operations Center. 
+
 
 #### Assets
 
@@ -65,6 +63,10 @@ Need to access the [Cases](https://docs.sekoia.io/xdr/features/investigate/cases
 | --- | --- |
 | SIC_READ_INCIDENTS | Get incidents |
 | SIC_WRITE_INCIDENTS | Edit incidents |
+
+!!!tip
+ Incident is the term used internally for Cases.
+
 
 #### Countermeasures
 
@@ -131,6 +133,10 @@ Need to access the Intelligence Center ? Here are all the permissions linked to 
 | INTHREAT_READ_OBJECTS | Read objects from InThreat |
 | READ_TELEMETRY | Read the telemetry measures |
 
+!!!tip
+   InThreat is the term used internally for the Intelligence Center 
+
+
 ## Common
 
 ### Playbooks
@@ -145,6 +151,10 @@ Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Searc
 | SYMPHONY_READ_PLAYBOOK_RUNS | List and get Symphony Playbook Runs |
 | SYMPHONY_WRITE_PLAYBOOKS | Write Symphony Playbooks |
 | SYMPHONY_READ_PLAYBOOKS | List and get Symphony Playbooks |
+
+!!!tip
+   Symphony is the name used for Playbooks. 
+
 
 ### Dashboards
 
