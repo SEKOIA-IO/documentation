@@ -309,6 +309,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "network",
             "code": "0",
             "kind": "event",
+            "action": "allowed",
             "type": [
                 "connection",
                 "access",
@@ -411,7 +412,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "network",
             "kind": "event",
-            "action": "OBSERVED",
+            "action": "allowed",
             "type": [
                 "connection",
                 "access",
@@ -504,7 +505,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "network",
             "kind": "event",
-            "action": "DENIED",
+            "action": "denied",
             "reason": "Authentication Required",
             "type": [
                 "connection",
