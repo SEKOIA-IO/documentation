@@ -9,11 +9,12 @@ In SEKOIA.IO, permissions do not necessarily have common names across the platfo
 
 Use the search bar on top of the permissions list to filter permissions depending on the needed service.
 
-!!! tip
-  **SIC** is the term used internally for the Operations Center. 
+!!! tip 
+ **SIC** is the term used internally for the Operations Center. 
   **InThreat** is the term used internally for the Intelligence Center 
   **Symphony** is the name used for Playbooks. 
   **Incident** is the term used internally for Cases.
+  
 
 ### Operations Center
 
