@@ -172,7 +172,7 @@ The tab `Details` lists all information related to the playbook.
 ---
 
 ## Playbook runs
-The tab “Playbook runs” lists all runs that happened in the **last week**.
+The tab `Playbook runs` lists all runs that happened in the **last week**.
 
 The header points at the total number of playbook runs in the last week, the ones in progress, have succeeded and have failed. 
 
@@ -186,7 +186,7 @@ Under these stats lays a table with the following information:
 
 To access the details of a run, just click on the run and you’ll be redirected to the graph view with the status of each block. 
 
-From the graph view, click on the block of interest and the panel “Run results” will show. 
+From the graph view, click on the block of interest and the panel `Run results` will show. 
 
 ### Run results
 
