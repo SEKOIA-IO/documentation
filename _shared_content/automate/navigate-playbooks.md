@@ -73,8 +73,8 @@ Playbook blocks are visually composed of:
 | Undo | Undo last action |
 | Redo | Redo action |
 
-!!!note
-  If blocks in the playbook have missing configuration, an alert stating the number of errors will show in the left of the graph area. 
+!!! note 
+    If blocks in the playbook have missing configuration, an alert stating the number of errors will show in the left of the graph area.   
   
 The playbook run view adds color to the playbook blocks and nodes to highlight the status of the run. 
 
@@ -133,9 +133,10 @@ Depending on the type of blocks, the content of the configuration panel changes.
 | Configuration | Varies depending on the selected action. Contains a search bar as well as all configuration steps. The height of fields in this section can be extended by dragging the mouse on the lower right of the field  |
 | Variables | Lists all variables related to the action. Contains name and description of the variable as well as a copy button to easily copy the value of the variable  |
 
-!!!note
-  You can manually resize the configuration panel by clicking on the left edge of the panel and dragging the mouse left or right; the width of the panel  will change accordingly. Once your panel is set at a preferable width, let go of the mouse. The chosen size will be remembered for the next configurations.
+!!! note 
+    You can manually resize the configuration panel by clicking on the left edge of the panel and dragging the mouse left or right; the width of the panel  will change accordingly. Once your panel is set at a preferable width, let go of the mouse. The chosen size will be remembered for the next configurations.
 
+  
 ### Playbook code
 
 The code section is a page where you can write and edit your playbooks using a code editor. Playbooks in [SEKOIA.IO](http://SEKOIA.IO) are written using the language [JINJA 3.](https://jinja.palletsprojects.com/en/3.0.x/templates/) 
@@ -176,7 +177,7 @@ The tab `Details` lists all information related to the playbook.
 - Description of the playbook
 
 !!! tip
-  You can edit the name and the description of the playbook by clicking on the `Edit` button next to the activation toggle.
+    You can edit the name and the description of the playbook by clicking on the `Edit` button next to the activation toggle.
   
 ---
 
