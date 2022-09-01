@@ -172,4 +172,33 @@ The tab `Details` lists all information related to the playbook.
 ---
 
 ## Playbook runs
+The tab “Playbook runs” lists all runs that happened in the **last week**.
 
+The header points at the total number of playbook runs in the last week, the ones in progress, have succeeded and have failed. 
+
+Under these stats lays a table with the following information:
+
+- The event (the run)
+- When it started
+- Its status
+- The duration of the run
+- A RErun button to restart the run
+
+To access the details of a run, just click on the run and you’ll be redirected to the graph view with the status of each block. 
+
+From the graph view, click on the block of interest and the panel “Run results” will show. 
+
+### Run results
+
+Run results are accessible either from the tab `Runs` in the playbook or in the panel that details a [playbook's details](#details-panel). 
+
+This panel contains the following information:
+
+- The status of the run
+- Its timeline (when it started, how long the run lasted, when it ended)
+- Arguments
+- Results (logs and errors)
+
+To switch to the block’s settings, click on the `edit` button on the top right of the panel. 
+
+To switch back to run results, click on the button `Switch to run results` button.
