@@ -1,10 +1,10 @@
-# Roles
+## Roles
 
-## Default roles
+### Default roles
 
-## Examples of roles
+### Examples of roles
 
-# Permissions
+## Permissions
 In SEKOIA.IO, permissions do not necessarily have common names across the platform. 
 
 Use the search bar on top of the permissions list to filter permissions depending on the needed service.
@@ -15,11 +15,11 @@ Use the search bar on top of the permissions list to filter permissions dependin
   **Symphony** is the name used for Playbooks. 
   **Incident** is the term used internally for Cases.
 
-## Operations Center
+### Operations Center
 
-### Alerts
+#### Alerts
 
-Need to access the [alerts](/alerts.md) page? Search `alert` and you’ll get all the permissions linked to this page. 
+Need to access the [alerts](https://docs.sekoia.io/xdr/features/investigate/alerts/) page? Search `alert` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
@@ -31,9 +31,9 @@ Need to access the [alerts](/alerts.md) page? Search `alert` and you’ll get al
 | SIC_WRITE_GENERATION_MODES | Create or edit alert generation mode |
 | SIC_READ_GENERATION_MODES | Get generation modes |
 
-### Assets
+#### Assets
 
-Need to access the [Assets](/assets.md) page? Search `Assets` and you’ll get all the permissions linked to this page. 
+Need to access the [Assets](https://docs.sekoia.io/xdr/features/collect/assets/) page? Search `Assets` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
@@ -56,16 +56,16 @@ Need to access the [Assets](/assets.md) page? Search `Assets` and you’ll get a
 | ASSETMANAGEMENT_VIEW_ASSET_TYPE | Allow to list types of assets |
 | ASSETMANAGEMENT_VIEW_ASSET_CATEGORY | Allow to list categories of assets |
 
-### Cases
+#### Cases
 
-Need to access the [Cases](/cases.md) page? Search `incident` and you’ll get all the permissions linked to this page. 
+Need to access the [Cases](https://docs.sekoia.io/xdr/features/investigate/cases/) page? Search `incident` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
 | SIC_READ_INCIDENTS | Get incidents |
 | SIC_WRITE_INCIDENTS | Edit incidents |
 
-### Countermeasures
+#### Countermeasures
 
 Need to access the Countermeasures page? Search `countermeasure` and you’ll get all the permissions linked to this page. 
 
@@ -75,9 +75,9 @@ Need to access the Countermeasures page? Search `countermeasure` and you’ll ge
 | SIC_DELETE_COUNTERMEASURES | Delete a set of countermeasures |
 | SIC_WRITE_COUNTERMEASURES | Create or edit a set of countermeasures |
 
-### Entities
+#### Entities
 
-Need to access the [Entities](/entities.md) page? Search `entity` and you’ll get all the permissions linked to this page. 
+Need to access the [Entities](https://docs.sekoia.io/xdr/features/collect/entities/) page? Search `entity` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
@@ -85,9 +85,9 @@ Need to access the [Entities](/entities.md) page? Search `entity` and you’ll g
 | SIC_READ_ENTITIES | Get information about entities |
 | SIC_WRITE_ENTITIES | Create or edit entities |
 
-### Events
+#### Events
 
-Need to access the [events](/events.md) page? Search `events` and you’ll get all the permissions linked to this page. 
+Need to access the [events](https://docs.sekoia.io/xdr/features/investigate/events/) page? Search `events` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
@@ -95,18 +95,18 @@ Need to access the [events](/events.md) page? Search `events` and you’ll get a
 | EVENTS_READ_DATASETS | Read anomaly dataset |
 | SIC_READ_EVENT_STATS | Get statistics about SIC events |
 
-### Intakes
+#### Intakes
 
-Need to access the [intakes](/intakes.md) page and create or edit some intakes? Search `intake` and you’ll get all the permissions linked to this page. 
+Need to access the [intakes](https://docs.sekoia.io/xdr/features/collect/intakes/) page and create or edit some intakes? Search `intake` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
 | SIC_READ_INTAKES | Get information about a set of intakes |
 | SIC_WRITE_INTAKES | Create or edit intakes |
 
-### Rules
+#### Rules
 
-Need to set up a role for the [Rules Catalog](/rules_catalog.md)? Search `rule` and you’ll get all the permissions linked to this page. 
+Need to set up a role for the [Rules Catalog](https://docs.sekoia.io/xdr/features/detect/rules_catalog/)? Search `rule` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
@@ -116,7 +116,7 @@ Need to set up a role for the [Rules Catalog](/rules_catalog.md)? Search `rule` 
 | SIC_READ_RULES | Get information related to rules |
 | SIC_WRITE_RULES | Create or edit detection rules |
 
-## Intelligence Center
+### Intelligence Center
 
 Need to access the Intelligence Center ? Here are all the permissions linked to the product.
 
@@ -130,11 +130,11 @@ Need to access the Intelligence Center ? Here are all the permissions linked to 
 | INTHREAT_READ_OBJECTS | Read objects from InThreat |
 | READ_TELEMETRY | Read the telemetry measures |
 
-# Common
+## Common
 
-## Playbooks
+### Playbooks
 
-Need to access [playbooks](/playbooks.md)? Search `symphony` and you’ll get all the permissions linked to this page. 
+Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Search `symphony` and you’ll get all the permissions linked to this page. 
 
 | Name | Description |
 | --- | --- |
@@ -145,7 +145,7 @@ Need to access [playbooks](/playbooks.md)? Search `symphony` and you’ll get al
 | SYMPHONY_WRITE_PLAYBOOKS | Write Symphony Playbooks |
 | SYMPHONY_READ_PLAYBOOKS | List and get Symphony Playbooks |
 
-## Dashboards
+### Dashboards
 
 Need to access dashboards? Search `dashboard` and you’ll get all the permissions linked to this page. 
 
@@ -154,7 +154,7 @@ Need to access dashboards? Search `dashboard` and you’ll get all the permissio
 | DASHBOARD_WRITE_DASHBOARDS | Write dashboards |
 | DASHBOARD_READ_DASHBOARDS | Read dashboards |
 
-## Manage communities
+### Manage communities
 
 Need to manage your communities? Search `community and you’ll get all the permissions linked to this section. 
 
