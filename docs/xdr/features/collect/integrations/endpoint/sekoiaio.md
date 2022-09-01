@@ -123,3 +123,26 @@ If you want to automate the installation of the agent with this configuration op
 
     Sysmon is a Microsoft tool downloadable from [microsoft.com](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
     A common installation instruction and configuration file is available at [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
+
+
+### Uninstall
+
+To uninstall the agent follow the instructions specific to your OS.
+
+=== "Windows"
+
+    The following commands must be executed **as an administrator**:
+
+    ```shell
+    $ProgramFiles\EndpointAgent\agent.exe -service uninstall
+    ```
+
+    Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
+
+=== "Linux"
+
+    The following commands must be executed:
+
+    ```shell
+    sudo /opt/endpoint-agent -service uninstall
+    ```
