@@ -33,6 +33,9 @@ By using these triggers, you can get:
 - Its `urgency` 
 - The action that triggered the alert notification (`event_type`) 
 
+!!!note
+  This trigger is only applicable in the Operations Center.
+
 
 ### Manual trigger (webhook) 
 
