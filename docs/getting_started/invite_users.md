@@ -1,8 +1,8 @@
 # Invite users to join your community
 
-To invite users to your community, you need to send them invitations through the User Center. You can invite as many users as needed if you have the role `manage_member`. 
+To invite users to your community, you need to send them invitations through the User Center. You can invite as many users as needed if you have [the role](/manage_users/#needed-role-and-permissions) `manage_member`. 
 
-However, depending on the type of community you are in, the invitation process can differ. 
+However, depending on the [type of community](/getting_started/create_community.md) you are in, the invitation process can differ. 
 
 In this documentation, you will learn how to add users in these communities.
 
