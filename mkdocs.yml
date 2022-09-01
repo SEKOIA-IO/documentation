@@ -235,6 +235,7 @@ nav:
       - OpenCTI: cti/features/integrations/opencti.md
       - Splunk: cti/features/integrations/splunk.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
+      - PaloAlto Cortex XSOAR: cti/features/integrations/palolto_xsoar.md
   - Develop:
     - Overview: cti/develop/index.md
     - Guides:
@@ -274,6 +275,7 @@ nav:
       - Microsoft Sentinel: tip/features/integrations/microsoft-sentinel.md
       - OpenCTI: tip/features/integrations/opencti.md
       - Splunk: tip/features/integrations/splunk.md
+      - PaloAlto Cortex XSOAR: tip/features/integrations/palolto_xsoar.md
     - Automate:
       - Overview: tip/features/automate/index.md
       - Triggers: tip/features/automate/triggers.md
