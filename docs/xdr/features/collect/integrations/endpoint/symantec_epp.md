@@ -18,7 +18,7 @@ An internal log concentrator (Rsyslog) is required to collect and forward events
 
 ### Enable Syslog forwarding
 
-Log on the console of our management server and follow [this guide](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/Monitoring-Reporting-and-Enforcing-Compliance/viewing-logs-v7522439-d37e464/exporting-data-to-a-syslog-server-v8442743-d15e1107.html) to enable logs forwarding and provide the ip, the transport protocol (recommending `TCP`) and the listening port (`514`) of the concentrator.
+Log on the console of our management server and follow [this guide](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/Monitoring-Reporting-and-Enforcing-Compliance/viewing-logs-v7522439-d37e464/exporting-data-to-a-syslog-server-v8442743-d15e1107.html) to enable logs forwarding and provide the IP, the transport protocol (we are recommending `TCP`) and the listening port (`514`) of the concentrator.
 
 ## Create the intake
 
