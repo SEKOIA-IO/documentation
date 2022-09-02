@@ -106,6 +106,7 @@ nav:
           - SEKOIA.IO Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
           - SentinelOne: xdr/features/collect/integrations/endpoint/sentinelone.md
           - SentinelOne Deep Visibility: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
+          - Symantec Endpoint Protection: xdr/features/collect/integrations/endpoint/symantec_epp.md
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows (Log Insight): xdr/features/collect/integrations/endpoint/log_insight_windows.md
@@ -437,6 +438,8 @@ plugins:
       integrations/sentinelone_deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
       integrations/sophos_edr.md: xdr/features/collect/integrations/endpoint/sophos_edr.md
       integrations/sophos_fw.md: xdr/features/collect/integrations/network/sophos_fw.md
+      integrations/symantec-endpoint-protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
+      integrations/symantec_endpoint_protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
       integrations/spamassassin.md: xdr/features/collect/integrations/email/spamassassin.md
       integrations/squid.md: xdr/features/collect/integrations/network/squid.md
       integrations/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
