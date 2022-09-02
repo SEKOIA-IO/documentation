@@ -28,6 +28,54 @@ In details, the following table denotes the type of events produced by this inte
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "cron.json"
+
+    ```json
+	
+    {
+        "message": "pam_unix(cron:session): session closed for user root",
+        "event": {
+            "kind": "event",
+            "provider": "cron"
+        },
+        "wallix": {}
+    }
+    	
+	```
+
+
+=== "pam_unix.json"
+
+    ```json
+	
+    {
+        "message": "pam_unix(sudo:session): session closed for user wabuser",
+        "event": {
+            "kind": "event",
+            "provider": "sudo"
+        },
+        "wallix": {}
+    }
+    	
+	```
+
+
+=== "rexec.json"
+
+    ```json
+	
+    {
+        "message": "rexec line 15: Deprecated option UsePrivilegeSeparation",
+        "event": {
+            "kind": "event",
+            "provider": "sshd"
+        },
+        "wallix": {}
+    }
+    	
+	```
+
+
 === "sshprox.json"
 
     ```json
@@ -36,7 +84,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "[sshproxy] psid=\"161607370130601\" type=\"INCOMING_CONNECTION\" src_ip=\"10.17.86.250\" src_port=\"53344\"",
         "event": {
             "action": "INCOMING_CONNECTION",
-            "kind": "event"
+            "kind": "event",
+            "provider": "sshproxy"
         },
         "wallix": {
             "type": "INCOMING_CONNECTION"
@@ -102,6 +151,79 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "sshsession.json"
+
+    ```json
+	
+    {
+        "message": "[SSH Session] session_id=\"182f9642c81320eb0050568e16d9\" client_ip=\"1.1.1.1\" target_ip=\"1.1.1.1\" user=\"username123@corp.net\" device=\"1.1.1.1\" service=\"SSH\" account=\"username123\" type=\"SESSION_DISCONNECTION\" duration=\"0:59:57\"",
+        "event": {
+            "action": "SESSION_DISCONNECTION",
+            "kind": "event",
+            "provider": "SSH Session"
+        },
+        "wallix": {
+            "type": "SESSION_DISCONNECTION"
+        },
+        "user": {
+            "name": "username123@corp.net"
+        },
+        "service": {
+            "name": "SSH"
+        },
+        "source": {
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "host": {
+            "ip": [
+                "1.1.1.1"
+            ]
+        },
+        "destination": {
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "username123@corp.net"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "sudo.json"
+
+    ```json
+	
+    {
+        "message": "root : TTY=unknown ; PWD=/root ; USER=wabuser ; COMMAND=/opt/wab/bin/WABCleanApprovals close",
+        "event": {
+            "kind": "event",
+            "provider": "sudo"
+        },
+        "wallix": {},
+        "user": {
+            "name": "wabuser ;"
+        },
+        "process": {
+            "command_line": "/opt/wab/bin/WABCleanApprovals close"
+        },
+        "related": {
+            "user": [
+                "wabuser ;"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "wabaudit_action_add_type_ConnectionPolicy.json"
 
     ```json
@@ -114,7 +236,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_CONNECTION_POLICY_SSH_AGENT_FORWARDING",
@@ -153,7 +276,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "local1/None",
@@ -192,7 +316,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_PASSWORD_CHANGE_POLICY",
@@ -231,7 +356,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_DOMAIN_SIMPLE",
@@ -270,7 +396,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<QA_DOMAIN_1, OU=Group> in user_group_154954913825 GROUP",
@@ -309,7 +436,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_DOMAIN_1",
@@ -348,7 +476,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "local",
@@ -387,7 +516,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "notification_154955208543",
@@ -426,7 +556,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<2030-01-01 to 2099-12-31 , 00:00:00 to 23:59:00, 127>",
@@ -465,7 +596,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_PROFILE_IP_FORBIDDEN",
@@ -504,7 +636,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<kill, Kill.+Softly, SSH_SHELL_SESSION> in GROUP QA_USER_GROUP_UNIX_KILL",
@@ -543,7 +676,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_DEVICE_SSH_SHELL_SESSION:SSH",
@@ -582,7 +716,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_DEVICE_GROUP_UNIX",
@@ -621,7 +756,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "timeframe_154954856399",
@@ -660,7 +796,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_USER_IP_FORBIDDEN",
@@ -699,7 +836,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_USER_AUTH_KERBEROS",
@@ -738,7 +876,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_USER_GROUP_UNIX",
@@ -777,7 +916,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "X509 Parameters",
@@ -815,7 +955,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "account_with_approval@QA_DOMAIN_SIMPLE",
@@ -853,7 +994,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "access"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "168c1c48f141e911005056b60af6",
@@ -892,7 +1034,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "apikey_154954880399",
@@ -931,7 +1074,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_APP_DUMMY",
@@ -970,7 +1114,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "account@local@QA_DEVICE_DUMMY_WIN:RDP[<C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe>:<C:\\>]",
@@ -1009,7 +1154,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<Approval(uid=\\'168c849f0378d7f4005056b69255\\', status=3, begin=2019-02-07 15:08:00, end=2019-02-07 15:18:00, quorum=1)>\\n",
@@ -1048,7 +1194,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_USER_GROUP_UNIX:QA_DEVICE_GROUP_UNIX",
@@ -1087,7 +1234,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_CHECKOUT_POLICY_LOCK",
@@ -1126,7 +1274,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "cluster_154954837225",
@@ -1165,7 +1314,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_DEVICE_SSH_SHELL_SESSION",
@@ -1202,7 +1352,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Backup/Restore",
             "reason": "Backup ['wab-6.0-cspn_2019-02-04_16-59-11.wbk' saved]",
             "kind": "event",
-            "category": " database"
+            "category": "database",
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "Backup/Restore",
@@ -1239,7 +1390,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "connection_policy_154954884812",
@@ -1277,7 +1429,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<CredChgInfo(uid=\\'168c849848928a52005056b69255\\')>\\n",
@@ -1315,7 +1468,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "password_change_policy_name_154954918141",
@@ -1353,7 +1507,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "global_domain_154954904181",
@@ -1391,7 +1546,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<QA_DOMAIN_1, OU=Group> in user_group_154954913825 GROUP",
@@ -1429,7 +1585,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "domain_154955334782",
@@ -1467,7 +1624,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "local1",
@@ -1505,7 +1663,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "notification_154955204621",
@@ -1543,7 +1702,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<2010-01-01 to 2020-01-01 , 09:30:00 to 18:30:00, 124>",
@@ -1581,7 +1741,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "profile_154954924847",
@@ -1619,7 +1780,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "device_154954928856:ssh",
@@ -1657,7 +1819,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "target_group_154954938767",
@@ -1695,7 +1858,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "timeframe_154954953374",
@@ -1733,7 +1897,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "UNKNOWN_USER",
@@ -1771,7 +1936,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "auth_LDAP_154955198487",
@@ -1809,7 +1975,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "user_group_154954962345",
@@ -1848,7 +2015,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "X509 Parameters",
@@ -1885,7 +2053,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "account_154954844398@local1@application_154954844399",
@@ -1923,7 +2092,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "apikey_154954882800",
@@ -1961,7 +2131,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "application_154954836612",
@@ -1999,7 +2170,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "account_154954841440@local1@device_154954841439:rdp[<None>:<C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe>]",
@@ -2037,7 +2209,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<Approval(uid=\\'168c849f0378d7f4005056b69255\\', status=4, begin=2019-02-07 15:08:00, end=2019-02-07 15:18:00, quorum=1)>\\n",
@@ -2075,7 +2248,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "user_group_154954865272:target_group_154954865373",
@@ -2113,7 +2287,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "checkout_policy_154954874456",
@@ -2151,7 +2326,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "deletion"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "cluster_154954875802",
@@ -2190,7 +2366,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "creation"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "QA_DEVICE_SSH_SHELL_SESSION",
@@ -2227,7 +2404,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Backup/Restore",
             "reason": "Backup ['wab-6.0-cspn_2019-02-04_16-59-11.wbk' downloaded]",
             "kind": "event",
-            "category": " database"
+            "category": "database",
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "Backup/Restore",
@@ -2265,7 +2443,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "SSH",
@@ -2303,7 +2482,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "local1/None",
@@ -2341,7 +2521,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "password_change_policy_name_154954918865",
@@ -2380,7 +2561,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "global_domain_154954904486",
@@ -2419,7 +2601,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "domain_154955334798",
@@ -2458,7 +2641,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "local1",
@@ -2497,7 +2681,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "notification_154955216694",
@@ -2535,7 +2720,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "profile_154954927022",
@@ -2574,7 +2760,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "default",
@@ -2613,7 +2800,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "Recording Options",
@@ -2650,7 +2838,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "device_154954931097:ssh",
@@ -2689,7 +2878,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "target_group_154954945465",
@@ -2727,7 +2917,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "timeframe_154954954305",
@@ -2766,7 +2957,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "user_154954924239",
@@ -2805,7 +2997,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "auth_LDAP_154955202505",
@@ -2844,7 +3037,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "user_group_154954965326",
@@ -2883,7 +3077,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "X509 Parameters",
@@ -2920,7 +3115,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "account_154954837938@local1@application_154954837837",
@@ -2958,7 +3154,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "application_154954842057",
@@ -2997,7 +3194,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "<Approval(uid=\\'168c849fa6a347bd005056b69255\\', status=1, begin=2019-02-07 15:08:00, end=2019-02-07 15:18:00, quorum=1)>\\n",
@@ -3035,7 +3233,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "user_group_154954869778:target_group_154954869779",
@@ -3073,7 +3272,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "checkout_policy_154954875282",
@@ -3111,7 +3311,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "cluster_154954878267",
@@ -3149,7 +3350,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "change"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "device_154954892089",
@@ -3187,7 +3389,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "access"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "object": "168c1c48f141e911005056b60af6",
@@ -3225,7 +3428,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": [
                 "access"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "Approval",
@@ -3264,7 +3468,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "authentication",
             "type": [
                 "access"
-            ]
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "sessionlog",
@@ -3300,7 +3505,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Backup/Restore",
             "reason": "Backup ['wab-6.0-cspn_2019-02-04_16-59-11.wbk' restored]",
             "kind": "event",
-            "category": " database"
+            "category": "database",
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "Backup/Restore",
@@ -3339,7 +3545,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "category": "authentication"
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "Approvals",
@@ -3447,7 +3653,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "\"Closed sessions, Sessionlogs newly terminated\"\n",
             "kind": "event",
             "category": "authentication",
-            "type": "end"
+            "type": [
+                "end"
+            ],
+            "provider": "wabengine"
         },
         "wallix": {
             "type": "sessionlog",
@@ -3522,9 +3731,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.ip` | `ip` | IP address of the destination. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.provider` | `keyword` | Source of the event. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`host.ip` | `ip` | Host ip addresses. |
+|`process.command_line` | `wildcard` | Full command line that started the process. |
 |`service.name` | `keyword` | Name of the service. |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
