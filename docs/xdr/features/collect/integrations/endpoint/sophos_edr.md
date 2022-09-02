@@ -25,7 +25,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Sophos EDR connector](../../../../automate/library/sophos.md).
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Sophos EDR connector](../../../automate/library/sophos.md).
 
 Set up the connector configuration with the `Client ID`, the `Client Secret` and the intake key
 
