@@ -570,8 +570,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.packets` | `long` | Packets sent from the destination to the source. |
 |`destination.port` | `long` | Port of the destination. |
-|`email.from` | `keyword` | None |
-|`email.to` | `keyword` | None |
+|`email.from` | `keyword` | Email address source from the Email Headers (IMAP/POP3/SMTP) |
+|`email.to` | `keyword` | Email address destination from the Email Headers (IMAP/POP3/SMTP) |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
@@ -579,88 +579,88 @@ The following table lists the fields that are extracted, normalized under the EC
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`file.size` | `long` | File size in bytes. |
 |`file.type` | `keyword` | File type (file, dir, or symlink). |
-|`fortinet.app` | `keyword` | None |
-|`fortinet.appcat` | `keyword` | None |
-|`fortinet.applist` | `keyword` | None |
-|`fortinet.apprisk` | `keyword` | None |
-|`fortinet.authproto` | `keyword` | None |
-|`fortinet.collectedemail` | `keyword` | None |
-|`fortinet.comment` | `keyword` | None |
-|`fortinet.countapp` | `keyword` | None |
-|`fortinet.devcategory` | `keyword` | None |
-|`fortinet.devid` | `keyword` | None |
-|`fortinet.direction` | `keyword` | None |
+|`fortinet.app` | `keyword` | Name of the application |
+|`fortinet.appcat` | `keyword` | Category of the app |
+|`fortinet.applist` | `keyword` | Name of the app category |
+|`fortinet.apprisk` | `keyword` | Risk level of the application |
+|`fortinet.authproto` | `keyword` | Auth protocol |
+|`fortinet.collectedemail` | `keyword` | collectedemail |
+|`fortinet.comment` | `keyword` | comment |
+|`fortinet.countapp` | `keyword` | Number of App Ctrl logs associated with the session. |
+|`fortinet.devcategory` | `keyword` | devcategory |
+|`fortinet.devid` | `keyword` | Serial number of the device for the traffics origin |
+|`fortinet.direction` | `keyword` | Direction of packets |
 |`fortinet.dlpextra` | `keyword` | keyword |
-|`fortinet.docsource` | `keyword` | None |
-|`fortinet.dstcollectedemail` | `keyword` | None |
-|`fortinet.dstdevcategory` | `keyword` | None |
-|`fortinet.dstdevtype` | `keyword` | None |
-|`fortinet.dstintfrole` | `keyword` | None |
-|`fortinet.dstosname` | `keyword` | None |
-|`fortinet.dstosversion` | `keyword` | None |
-|`fortinet.dstserver` | `keyword` | None |
-|`fortinet.dstssid` | `keyword` | None |
-|`fortinet.dstunauthuser` | `keyword` | None |
-|`fortinet.dstuuid` | `keyword` | None |
-|`fortinet.eventid` | `keyword` | None |
-|`fortinet.fctuid` | `keyword` | None |
-|`fortinet.filtercat` | `keyword` | None |
-|`fortinet.filteridx` | `keyword` | None |
-|`fortinet.filtername` | `keyword` | None |
-|`fortinet.filtertype` | `keyword` | None |
-|`fortinet.forwardedfor` | `keyword` | None |
-|`fortinet.group` | `keyword` | None |
-|`fortinet.incidentserialno` | `keyword` | None |
-|`fortinet.lanin` | `keyword` | None |
-|`fortinet.lanout` | `keyword` | None |
-|`fortinet.level` | `keyword` | None |
-|`fortinet.logdesc` | `keyword` | None |
-|`fortinet.logid` | `keyword` | None |
-|`fortinet.masterdstmac` | `keyword` | None |
-|`fortinet.mastersrcmac` | `keyword` | None |
-|`fortinet.msg` | `keyword` | None |
-|`fortinet.osversion` | `keyword` | None |
-|`fortinet.policyid` | `keyword` | None |
-|`fortinet.policymode` | `keyword` | None |
-|`fortinet.policytype` | `keyword` | None |
-|`fortinet.poluuid` | `keyword` | None |
-|`fortinet.profile` | `keyword` | None |
-|`fortinet.proto` | `keyword` | None |
-|`fortinet.reason` | `keyword` | None |
-|`fortinet.recipient` | `keyword` | None |
-|`fortinet.reqtime` | `keyword` | None |
-|`fortinet.reqtype` | `keyword` | None |
-|`fortinet.respfinishtime` | `keyword` | None |
-|`fortinet.resptime` | `keyword` | None |
-|`fortinet.resptype` | `keyword` | None |
-|`fortinet.sender` | `keyword` | None |
-|`fortinet.sessionid` | `keyword` | None |
-|`fortinet.severity` | `keyword` | None |
-|`fortinet.shaperdroprcvdbyte` | `keyword` | None |
-|`fortinet.shaperdropsentbyte` | `keyword` | None |
-|`fortinet.shaperperipdropbyte` | `keyword` | None |
-|`fortinet.shaperperipname` | `keyword` | None |
-|`fortinet.shaperrcvdname` | `keyword` | None |
-|`fortinet.shapersentname` | `keyword` | None |
-|`fortinet.srcintfrole` | `keyword` | None |
-|`fortinet.srcserver` | `keyword` | None |
-|`fortinet.srcssid` | `keyword` | None |
-|`fortinet.srcuuid` | `keyword` | None |
-|`fortinet.status` | `keyword` | None |
-|`fortinet.subject` | `keyword` | None |
-|`fortinet.trandisp` | `keyword` | None |
-|`fortinet.tranip` | `keyword` | None |
-|`fortinet.trueclntip` | `keyword` | None |
-|`fortinet.unauthuser` | `keyword` | None |
-|`fortinet.unauthusersource` | `keyword` | None |
-|`fortinet.utmref` | `keyword` | None |
-|`fortinet.vd` | `keyword` | None |
-|`fortinet.vpn` | `keyword` | None |
-|`fortinet.vpntype` | `keyword` | None |
-|`fortinet.vrf` | `keyword` | None |
-|`fortinet.vwpvlanid` | `keyword` | None |
-|`fortinet.wanin` | `keyword` | None |
-|`fortinet.wanout` | `keyword` | None |
+|`fortinet.docsource` | `keyword` | DLP fingerprint document source |
+|`fortinet.dstcollectedemail` | `keyword` | dstcollectedemail |
+|`fortinet.dstdevcategory` | `keyword` | Destination dev category |
+|`fortinet.dstdevtype` | `keyword` | Destination dev type |
+|`fortinet.dstintfrole` | `keyword` | Name of the destination interface |
+|`fortinet.dstosname` | `keyword` | Destination OS name |
+|`fortinet.dstosversion` | `keyword` | Destination OS version |
+|`fortinet.dstserver` | `keyword` | Destination server |
+|`fortinet.dstssid` | `keyword` | Destination SSID |
+|`fortinet.dstunauthuser` | `keyword` | dstunauthuser |
+|`fortinet.dstuuid` | `keyword` | Destination UUID |
+|`fortinet.eventid` | `keyword` | The serial number of the dlparchive file in the same epoch |
+|`fortinet.fctuid` | `keyword` | fct uid |
+|`fortinet.filtercat` | `keyword` | DLP filter category |
+|`fortinet.filteridx` | `keyword` | DLP filter ID |
+|`fortinet.filtername` | `keyword` | DLP rule name |
+|`fortinet.filtertype` | `keyword` | DLP filter type |
+|`fortinet.forwardedfor` | `keyword` | forwardedfor |
+|`fortinet.group` | `keyword` | User Group Name |
+|`fortinet.incidentserialno` | `keyword` | Incident serial number |
+|`fortinet.lanin` | `keyword` | LAN incoming traffic in bytes |
+|`fortinet.lanout` | `keyword` | LAN outgoing traffic in bytes |
+|`fortinet.level` | `keyword` | Security level rating |
+|`fortinet.logdesc` | `keyword` | fortinet.logdesc |
+|`fortinet.logid` | `keyword` | Log ID |
+|`fortinet.masterdstmac` | `keyword` | Master destination MAC |
+|`fortinet.mastersrcmac` | `keyword` | The master MAC address for a host that has multiple network interfaces |
+|`fortinet.msg` | `keyword` | msg |
+|`fortinet.osversion` | `keyword` | OS version |
+|`fortinet.policyid` | `keyword` | Name of the firewall policy governing the traffic which caused the log message |
+|`fortinet.policymode` | `keyword` | Firewall policy mode |
+|`fortinet.policytype` | `keyword` | Firewall policy type |
+|`fortinet.poluuid` | `keyword` | UUID for the firewall policy |
+|`fortinet.profile` | `keyword` | DLP profile name |
+|`fortinet.proto` | `keyword` | Integer of protocol used by web traffic |
+|`fortinet.reason` | `keyword` | Reason msg |
+|`fortinet.recipient` | `keyword` | Email addresses from the SMTP envelope |
+|`fortinet.reqtime` | `keyword` | Request time |
+|`fortinet.reqtype` | `keyword` | Request type |
+|`fortinet.respfinishtime` | `keyword` | Response finish time |
+|`fortinet.resptime` | `keyword` | Response time |
+|`fortinet.resptype` | `keyword` | Request type |
+|`fortinet.sender` | `keyword` | Email addresses from the SMTP envelope |
+|`fortinet.sessionid` | `keyword` | ID for the session |
+|`fortinet.severity` | `keyword` | Severity level of a DLP rule |
+|`fortinet.shaperdroprcvdbyte` | `keyword` | shaperdroprcvdbyte |
+|`fortinet.shaperdropsentbyte` | `keyword` | shaperdropsentbyte |
+|`fortinet.shaperperipdropbyte` | `keyword` | shaperperipdropbyte |
+|`fortinet.shaperperipname` | `keyword` | shaperperipname |
+|`fortinet.shaperrcvdname` | `keyword` | shaperrcvdname |
+|`fortinet.shapersentname` | `keyword` | shapersentname |
+|`fortinet.srcintfrole` | `keyword` | Name of the source interface |
+|`fortinet.srcserver` | `keyword` | Server of the source |
+|`fortinet.srcssid` | `keyword` | srcssid |
+|`fortinet.srcuuid` | `keyword` | srcuuid |
+|`fortinet.status` | `keyword` | status message |
+|`fortinet.subject` | `keyword` | The subject title of the email message |
+|`fortinet.trandisp` | `keyword` | NAT translation type |
+|`fortinet.tranip` | `keyword` | tranip |
+|`fortinet.trueclntip` | `keyword` | Trueclntip |
+|`fortinet.unauthuser` | `keyword` | unauthuser |
+|`fortinet.unauthusersource` | `keyword` | unauthusersource |
+|`fortinet.utmref` | `keyword` | UTM reference number |
+|`fortinet.vd` | `keyword` | Name of the virtual domain in which the log message was recorded |
+|`fortinet.vpn` | `keyword` | vpn |
+|`fortinet.vpntype` | `keyword` | vpntype |
+|`fortinet.vrf` | `keyword` | VRF |
+|`fortinet.vwpvlanid` | `keyword` | vwpvlanid |
+|`fortinet.wanin` | `keyword` | WAN incoming traffic in bytes |
+|`fortinet.wanout` | `keyword` | WAN outgoing traffic in bytes |
 |`host.name` | `keyword` | Name of the host. |
 |`host.os.platform` | `keyword` | Operating system platform (such centos, ubuntu, windows). |
 |`host.type` | `keyword` | Type of host. |

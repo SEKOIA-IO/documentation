@@ -101,13 +101,13 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
-|`digital_shadows_searchlight.description` | `text` | None |
-|`digital_shadows_searchlight.event.id` | `keyword` | None |
-|`digital_shadows_searchlight.impact_description` | `keyword` | None |
-|`digital_shadows_searchlight.mitigation` | `keyword` | None |
-|`digital_shadows_searchlight.portal_id` | `keyword` | None |
-|`digital_shadows_searchlight.risk_factors` | `text` | None |
-|`digital_shadows_searchlight.risk_level` | `keyword` | None |
+|`digital_shadows_searchlight.description` | `text` |  |
+|`digital_shadows_searchlight.event.id` | `keyword` | Event ID associated with the alert in Digital Shadows SearchLight |
+|`digital_shadows_searchlight.impact_description` | `keyword` |  |
+|`digital_shadows_searchlight.mitigation` | `keyword` |  |
+|`digital_shadows_searchlight.portal_id` | `keyword` |  |
+|`digital_shadows_searchlight.risk_factors` | `text` | Risks associated with the alert in Digital Shadows SearchLight |
+|`digital_shadows_searchlight.risk_level` | `keyword` | Risks level associated with the alert in Digital Shadows SearchLight |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |

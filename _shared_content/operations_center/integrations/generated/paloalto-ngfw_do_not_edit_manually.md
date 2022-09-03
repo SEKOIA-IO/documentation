@@ -1759,9 +1759,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.packets` | `long` | Packets sent from the destination to the source. |
 |`destination.port` | `long` | Port of the destination. |
 |`destination.user.name` | `keyword` | Short name or login of the user. |
-|`email.from.address` | `keyword` | None |
-|`email.subject` | `keyword` | None |
-|`email.to.address` | `keyword` | None |
+|`email.from.address` | `keyword` | Email address from |
+|`email.subject` | `keyword` | Subject |
+|`email.to.address` | `keyword` | Email address to |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.dataset` | `keyword` | Name of the dataset. |

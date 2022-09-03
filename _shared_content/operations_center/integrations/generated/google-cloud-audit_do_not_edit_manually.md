@@ -2127,40 +2127,40 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`google_cloud_audit.insertId` | `keyword` | None |
-|`google_cloud_audit.logName` | `keyword` | None |
-|`google_cloud_audit.operation.first` | `bool` | None |
-|`google_cloud_audit.operation.id` | `keyword` | None |
-|`google_cloud_audit.operation.last` | `bool` | None |
-|`google_cloud_audit.operation.producer` | `keyword` | None |
-|`google_cloud_audit.protoPayload.authorizationInfo` | `object` | None |
-|`google_cloud_audit.protoPayload.metadata.activityId.timeUsec` | `keyword` | None |
-|`google_cloud_audit.protoPayload.metadata.activityId.uniqQualifier` | `keyword` | None |
-|`google_cloud_audit.protoPayload.metadata.event` | `object` | None |
-|`google_cloud_audit.protoPayload.metadata.operationType` | `keyword` | None |
-|`google_cloud_audit.protoPayload.metadata.type` | `keyword` | None |
-|`google_cloud_audit.protoPayload.methodName` | `keyword` | None |
-|`google_cloud_audit.protoPayload.request.policy.bindings` | `keyword` | None |
-|`google_cloud_audit.protoPayload.request.policy.etag` | `keyword` | None |
-|`google_cloud_audit.protoPayload.request.resource` | `keyword` | None |
-|`google_cloud_audit.protoPayload.request.type` | `keyword` | None |
-|`google_cloud_audit.protoPayload.requestMetadata.requestAttributes.time` | `keyword` | None |
-|`google_cloud_audit.protoPayload.resourceLocation.currentLocations` | `keyword` | None |
-|`google_cloud_audit.protoPayload.resourceName` | `keyword` | None |
-|`google_cloud_audit.protoPayload.response.bindings` | `keyword` | None |
-|`google_cloud_audit.protoPayload.response.etag` | `keyword` | None |
-|`google_cloud_audit.protoPayload.response.type` | `keyword` | None |
-|`google_cloud_audit.protoPayload.type` | `keyword` | None |
-|`google_cloud_audit.receiveTimestamp` | `keyword` | None |
-|`google_cloud_audit.resource.labels.cluster_name` | `keyword` | None |
-|`google_cloud_audit.resource.labels.location` | `keyword` | None |
-|`google_cloud_audit.resource.labels.method` | `keyword` | None |
-|`google_cloud_audit.resource.labels.node_name` | `keyword` | None |
-|`google_cloud_audit.resource.labels.project_id` | `keyword` | None |
-|`google_cloud_audit.resource.labels.service` | `keyword` | None |
-|`google_cloud_audit.resource.labels.topic_id` | `keyword` | None |
-|`google_cloud_audit.resource.type` | `keyword` | None |
-|`google_cloud_audit.severity` | `keyword` | None |
+|`google_cloud_audit.insertId` | `keyword` | A unique identifier for the log entry. |
+|`google_cloud_audit.logName` | `keyword` | The resource name of the log to which this log entry belongs to. |
+|`google_cloud_audit.operation.first` | `bool` |  |
+|`google_cloud_audit.operation.id` | `keyword` |  |
+|`google_cloud_audit.operation.last` | `bool` |  |
+|`google_cloud_audit.operation.producer` | `keyword` |  |
+|`google_cloud_audit.protoPayload.authorizationInfo` | `object` | Authorization information. If there are multiple resources or permissions involved, then there is one AuthorizationInfo element for each {resource, permission} tuple. |
+|`google_cloud_audit.protoPayload.metadata.activityId.timeUsec` | `keyword` |  |
+|`google_cloud_audit.protoPayload.metadata.activityId.uniqQualifier` | `keyword` |  |
+|`google_cloud_audit.protoPayload.metadata.event` | `object` |  |
+|`google_cloud_audit.protoPayload.metadata.operationType` | `keyword` |  |
+|`google_cloud_audit.protoPayload.metadata.type` | `keyword` | Other service-specific data about the request, response, and other information associated with the current audited event. |
+|`google_cloud_audit.protoPayload.methodName` | `keyword` | The name of the service method or operation. For API calls, this should be the name of the API method. |
+|`google_cloud_audit.protoPayload.request.policy.bindings` | `keyword` |  |
+|`google_cloud_audit.protoPayload.request.policy.etag` | `keyword` |  |
+|`google_cloud_audit.protoPayload.request.resource` | `keyword` |  |
+|`google_cloud_audit.protoPayload.request.type` | `keyword` |  |
+|`google_cloud_audit.protoPayload.requestMetadata.requestAttributes.time` | `keyword` | Request attributes used in IAM condition evaluation. This field contains request attributes like request time and access levels associated with the request. |
+|`google_cloud_audit.protoPayload.resourceLocation.currentLocations` | `keyword` |  |
+|`google_cloud_audit.protoPayload.resourceName` | `keyword` | The resource or collection that is the target of the operation. The name is a scheme-less URI, not including the API service name. |
+|`google_cloud_audit.protoPayload.response.bindings` | `keyword` |  |
+|`google_cloud_audit.protoPayload.response.etag` | `keyword` |  |
+|`google_cloud_audit.protoPayload.response.type` | `keyword` |  |
+|`google_cloud_audit.protoPayload.type` | `keyword` | protoPayload is an object containing fields of an arbitrary type. An additional field '@type' contains a URI identifying the type. Example: { 'id': 1234, '@type': 'types.example.com/standard/id' }. |
+|`google_cloud_audit.receiveTimestamp` | `keyword` | The time the log entry was received by Logging. |
+|`google_cloud_audit.resource.labels.cluster_name` | `keyword` |  |
+|`google_cloud_audit.resource.labels.location` | `keyword` |  |
+|`google_cloud_audit.resource.labels.method` | `keyword` | The labels associated with the peer. |
+|`google_cloud_audit.resource.labels.node_name` | `keyword` |  |
+|`google_cloud_audit.resource.labels.project_id` | `keyword` | The labels associated with the peer. |
+|`google_cloud_audit.resource.labels.service` | `keyword` | The labels associated with the peer. |
+|`google_cloud_audit.resource.labels.topic_id` | `keyword` | The labels associated with the peer. |
+|`google_cloud_audit.resource.type` | `keyword` |  |
+|`google_cloud_audit.severity` | `keyword` | The severity of the log entry. |
 |`orchestrator.type` | `keyword` | Orchestrator cluster type (e.g. kubernetes, nomad or cloudfoundry). |
 |`service.name` | `keyword` | Name of the service. |
 |`source.ip` | `ip` | IP address of the source. |

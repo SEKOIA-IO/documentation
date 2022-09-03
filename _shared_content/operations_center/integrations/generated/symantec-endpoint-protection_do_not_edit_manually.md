@@ -246,26 +246,26 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
-|`broadcom.endpoint_protection.action.main` | `keyword` | None |
-|`broadcom.endpoint_protection.action.secondary` | `keyword` | None |
-|`broadcom.endpoint_protection.application.code_signature.certificate.serial_number` | `keyword` | None |
-|`broadcom.endpoint_protection.application.code_signature.certificate.thumbprint` | `keyword` | None |
-|`broadcom.endpoint_protection.application.code_signature.digest_algorithm` | `keyword` | None |
-|`broadcom.endpoint_protection.application.code_signature.signer` | `keyword` | None |
-|`broadcom.endpoint_protection.application.code_signature.subject_name` | `keyword` | None |
-|`broadcom.endpoint_protection.application.code_signature.timestamp` | `keyword` | None |
-|`broadcom.endpoint_protection.application.hash.sha2` | `keyword` | None |
-|`broadcom.endpoint_protection.application.name` | `keyword` | None |
-|`broadcom.endpoint_protection.application.version` | `keyword` | None |
-|`broadcom.endpoint_protection.confidence` | `keyword` | None |
-|`broadcom.endpoint_protection.downloaded_by.file.path` | `keyword` | None |
-|`broadcom.endpoint_protection.prevalence` | `keyword` | None |
-|`broadcom.endpoint_protection.server.domain` | `keyword` | None |
-|`broadcom.endpoint_protection.server.group` | `keyword` | None |
-|`broadcom.endpoint_protection.server.name` | `keyword` | None |
-|`broadcom.endpoint_protection.source` | `keyword` | None |
-|`broadcom.endpoint_protection.threat.category` | `keyword` | None |
-|`broadcom.endpoint_protection.threat.type` | `keyword` | None |
+|`broadcom.endpoint_protection.action.main` | `keyword` |  |
+|`broadcom.endpoint_protection.action.secondary` | `keyword` |  |
+|`broadcom.endpoint_protection.application.code_signature.certificate.serial_number` | `keyword` |  |
+|`broadcom.endpoint_protection.application.code_signature.certificate.thumbprint` | `keyword` |  |
+|`broadcom.endpoint_protection.application.code_signature.digest_algorithm` | `keyword` |  |
+|`broadcom.endpoint_protection.application.code_signature.signer` | `keyword` |  |
+|`broadcom.endpoint_protection.application.code_signature.subject_name` | `keyword` |  |
+|`broadcom.endpoint_protection.application.code_signature.timestamp` | `keyword` |  |
+|`broadcom.endpoint_protection.application.hash.sha2` | `keyword` |  |
+|`broadcom.endpoint_protection.application.name` | `keyword` |  |
+|`broadcom.endpoint_protection.application.version` | `keyword` |  |
+|`broadcom.endpoint_protection.confidence` | `keyword` |  |
+|`broadcom.endpoint_protection.downloaded_by.file.path` | `keyword` |  |
+|`broadcom.endpoint_protection.prevalence` | `keyword` |  |
+|`broadcom.endpoint_protection.server.domain` | `keyword` |  |
+|`broadcom.endpoint_protection.server.group` | `keyword` |  |
+|`broadcom.endpoint_protection.server.name` | `keyword` |  |
+|`broadcom.endpoint_protection.source` | `keyword` |  |
+|`broadcom.endpoint_protection.threat.category` | `keyword` |  |
+|`broadcom.endpoint_protection.threat.type` | `keyword` |  |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
@@ -278,6 +278,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`host.name` | `keyword` | Name of the host. |
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
-|`threat.enrichments` | `array` | None |
+|`threat.enrichments` | `array` |  |
 |`user.name` | `keyword` | Short name or login of the user. |
 

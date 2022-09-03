@@ -2521,7 +2521,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
-|`action.type` | `long` | None |
+|`action.type` | `long` |  |
 |`agent.id` | `keyword` | Unique identifier of this agent. |
 |`agent.version` | `keyword` | Version of the agent. |
 |`container.id` | `keyword` | Unique container id. |
@@ -2553,8 +2553,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`orchestrator.cluster.name` | `keyword` | Name of the cluster. |
 |`orchestrator.namespace` | `keyword` | Namespace in which the action is taking place. |
 |`orchestrator.type` | `keyword` | Orchestrator cluster type (e.g. kubernetes, nomad or cloudfoundry). |
-|`organization.id` | `keyword` | None |
-|`organization.name` | `keyword` | None |
+|`organization.id` | `keyword` |  |
+|`organization.name` | `keyword` |  |
 |`process.command_line` | `wildcard` | Full command line that started the process. |
 |`process.executable` | `keyword` | Absolute path to the process executable. |
 |`process.hash.md5` | `keyword` | MD5 hash. |
@@ -2574,315 +2574,315 @@ The following table lists the fields that are extracted, normalized under the EC
 |`rule.description` | `keyword` | Rule description |
 |`rule.id` | `keyword` | Rule ID |
 |`rule.name` | `keyword` | Rule name |
-|`sentinelone.EventTime` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.accountId` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.accountName` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentDetectionState` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentDomain` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentIpV4` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentIpV6` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentLastLoggedInUserName` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentMitigationMode` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentOsName` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentOsRevision` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentRegisteredAt` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentUuid` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.agentVersion` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.externalIp` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.groupId` | `long` | None |
-|`sentinelone.agentDetectionInfo.groupName` | `keyword` | None |
-|`sentinelone.agentDetectionInfo.siteId` | `long` | None |
-|`sentinelone.agentDetectionInfo.siteName` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.activeThreats` | `long` | None |
-|`sentinelone.agentRealtimeInfo.agentComputerName` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentDecommissionedAt` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentDomain` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentId` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentInfected` | `bool` | None |
-|`sentinelone.agentRealtimeInfo.agentIsActive` | `bool` | None |
-|`sentinelone.agentRealtimeInfo.agentIsDecommissioned` | `bool` | None |
-|`sentinelone.agentRealtimeInfo.agentMachineType` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentMitigationMode` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentNetworkStatus` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentOsRevision` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentUuid` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.agentVersion` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.groupId` | `long` | None |
-|`sentinelone.agentRealtimeInfo.groupName` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.networkInterfaces` | `object` | None |
-|`sentinelone.agentRealtimeInfo.operationalState` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.rebootRequired` | `bool` | None |
-|`sentinelone.agentRealtimeInfo.scanAbortedAt` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.scanFinishedAt` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.scanStartedAt` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.scanStatus` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.siteId` | `long` | None |
-|`sentinelone.agentRealtimeInfo.siteName` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.storageName` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.storageType` | `keyword` | None |
-|`sentinelone.agentRealtimeInfo.userActionsNeeded` | `keyword` | None |
-|`sentinelone.applications` | `keyword` | None |
-|`sentinelone.comments` | `keyword` | None |
-|`sentinelone.createdAt` | `keyword` | None |
-|`sentinelone.data.accountName` | `keyword` | None |
-|`sentinelone.data.action` | `keyword` | None |
+|`sentinelone.EventTime` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.accountId` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.accountName` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentDetectionState` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentDomain` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentIpV4` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentIpV6` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentLastLoggedInUserName` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentMitigationMode` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentOsName` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentOsRevision` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentRegisteredAt` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentUuid` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.agentVersion` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.externalIp` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.groupId` | `long` |  |
+|`sentinelone.agentDetectionInfo.groupName` | `keyword` |  |
+|`sentinelone.agentDetectionInfo.siteId` | `long` |  |
+|`sentinelone.agentDetectionInfo.siteName` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.activeThreats` | `long` |  |
+|`sentinelone.agentRealtimeInfo.agentComputerName` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentDecommissionedAt` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentDomain` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentId` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentInfected` | `bool` |  |
+|`sentinelone.agentRealtimeInfo.agentIsActive` | `bool` |  |
+|`sentinelone.agentRealtimeInfo.agentIsDecommissioned` | `bool` |  |
+|`sentinelone.agentRealtimeInfo.agentMachineType` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentMitigationMode` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentNetworkStatus` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentOsRevision` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentUuid` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.agentVersion` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.groupId` | `long` |  |
+|`sentinelone.agentRealtimeInfo.groupName` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.networkInterfaces` | `object` |  |
+|`sentinelone.agentRealtimeInfo.operationalState` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.rebootRequired` | `bool` |  |
+|`sentinelone.agentRealtimeInfo.scanAbortedAt` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.scanFinishedAt` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.scanStartedAt` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.scanStatus` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.siteId` | `long` |  |
+|`sentinelone.agentRealtimeInfo.siteName` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.storageName` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.storageType` | `keyword` |  |
+|`sentinelone.agentRealtimeInfo.userActionsNeeded` | `keyword` |  |
+|`sentinelone.applications` | `keyword` |  |
+|`sentinelone.comments` | `keyword` |  |
+|`sentinelone.createdAt` | `keyword` |  |
+|`sentinelone.data.accountName` | `keyword` |  |
+|`sentinelone.data.action` | `keyword` |  |
 |`sentinelone.data.activatedEngines` | `keyword` |  |
-|`sentinelone.data.agentipv4` | `keyword` | None |
-|`sentinelone.data.alertId` | `long` | None |
-|`sentinelone.data.alertid` | `long` | None |
-|`sentinelone.data.application` | `keyword` | None |
-|`sentinelone.data.applicationType` | `keyword` | None |
-|`sentinelone.data.bluetoothAddress` | `keyword` | None |
-|`sentinelone.data.byUser` | `keyword` | None |
-|`sentinelone.data.computerName` | `keyword` | None |
-|`sentinelone.data.confidenceLevel` | `keyword` | None |
-|`sentinelone.data.createdAt` | `keyword` | None |
-|`sentinelone.data.createdByUsername` | `keyword` | None |
-|`sentinelone.data.creator` | `keyword` | None |
+|`sentinelone.data.agentipv4` | `keyword` |  |
+|`sentinelone.data.alertId` | `long` |  |
+|`sentinelone.data.alertid` | `long` |  |
+|`sentinelone.data.application` | `keyword` |  |
+|`sentinelone.data.applicationType` | `keyword` |  |
+|`sentinelone.data.bluetoothAddress` | `keyword` |  |
+|`sentinelone.data.byUser` | `keyword` |  |
+|`sentinelone.data.computerName` | `keyword` |  |
+|`sentinelone.data.confidenceLevel` | `keyword` |  |
+|`sentinelone.data.createdAt` | `keyword` |  |
+|`sentinelone.data.createdByUsername` | `keyword` |  |
+|`sentinelone.data.creator` | `keyword` |  |
 |`sentinelone.data.current` | `keyword` |  |
 |`sentinelone.data.deactivatedEngines` | `keyword` |  |
-|`sentinelone.data.deactivationPeriodInDays` | `keyword` | None |
-|`sentinelone.data.detectedat` | `long` | None |
-|`sentinelone.data.deviceClass` | `keyword` | None |
-|`sentinelone.data.deviceInformationServiceInfoKey` | `keyword` | None |
-|`sentinelone.data.deviceInformationServiceInfoValue` | `keyword` | None |
-|`sentinelone.data.deviceName` | `keyword` | None |
-|`sentinelone.data.direction` | `keyword` | None |
-|`sentinelone.data.disabledLevel` | `keyword` | None |
-|`sentinelone.data.dnsrequest` | `keyword` | None |
-|`sentinelone.data.dnsresponse` | `keyword` | None |
-|`sentinelone.data.dstip` | `keyword` | None |
-|`sentinelone.data.dstport` | `long` | None |
-|`sentinelone.data.durationOfMeasurement` | `int` | None |
-|`sentinelone.data.dveventid` | `keyword` | None |
-|`sentinelone.data.dveventtype` | `keyword` | None |
-|`sentinelone.data.enabledReason` | `keyword` | None |
-|`sentinelone.data.escapedMaliciousProcessArguments` | `keyword` | None |
-|`sentinelone.data.eventId` | `keyword` | None |
-|`sentinelone.data.eventTime` | `keyword` | None |
-|`sentinelone.data.eventType` | `keyword` | None |
-|`sentinelone.data.exclusionType` | `keyword` | None |
+|`sentinelone.data.deactivationPeriodInDays` | `keyword` |  |
+|`sentinelone.data.detectedat` | `long` |  |
+|`sentinelone.data.deviceClass` | `keyword` |  |
+|`sentinelone.data.deviceInformationServiceInfoKey` | `keyword` |  |
+|`sentinelone.data.deviceInformationServiceInfoValue` | `keyword` |  |
+|`sentinelone.data.deviceName` | `keyword` |  |
+|`sentinelone.data.direction` | `keyword` |  |
+|`sentinelone.data.disabledLevel` | `keyword` |  |
+|`sentinelone.data.dnsrequest` | `keyword` |  |
+|`sentinelone.data.dnsresponse` | `keyword` |  |
+|`sentinelone.data.dstip` | `keyword` |  |
+|`sentinelone.data.dstport` | `long` |  |
+|`sentinelone.data.durationOfMeasurement` | `int` |  |
+|`sentinelone.data.dveventid` | `keyword` |  |
+|`sentinelone.data.dveventtype` | `keyword` |  |
+|`sentinelone.data.enabledReason` | `keyword` |  |
+|`sentinelone.data.escapedMaliciousProcessArguments` | `keyword` |  |
+|`sentinelone.data.eventId` | `keyword` |  |
+|`sentinelone.data.eventTime` | `keyword` |  |
+|`sentinelone.data.eventType` | `keyword` |  |
+|`sentinelone.data.exclusionType` | `keyword` |  |
 |`sentinelone.data.expiration` | `keyword` |  |
-|`sentinelone.data.externalIp` | `keyword` | None |
-|`sentinelone.data.externalip` | `keyword` | None |
-|`sentinelone.data.fileDisplayName` | `keyword` | None |
-|`sentinelone.data.fullScopeDetails` | `keyword` | None |
-|`sentinelone.data.fullScopeDetailsPath` | `keyword` | None |
-|`sentinelone.data.gattService` | `keyword` | None |
-|`sentinelone.data.globalStatus` | `keyword` | None |
-|`sentinelone.data.groupId` | `long` | None |
-|`sentinelone.data.groupName` | `keyword` | None |
-|`sentinelone.data.indicatorcategory` | `keyword` | None |
-|`sentinelone.data.indicatordescription` | `keyword` | None |
-|`sentinelone.data.indicatorname` | `keyword` | None |
-|`sentinelone.data.interface` | `keyword` | None |
-|`sentinelone.data.ipAddress` | `keyword` | None |
-|`sentinelone.data.k8sclustername` | `keyword` | None |
-|`sentinelone.data.k8scontainerid` | `keyword` | None |
-|`sentinelone.data.k8scontainerimage` | `keyword` | None |
-|`sentinelone.data.k8scontainerlabels` | `keyword` | None |
-|`sentinelone.data.k8scontainername` | `keyword` | None |
-|`sentinelone.data.k8scontrollerkind` | `keyword` | None |
-|`sentinelone.data.k8scontrollerlabels` | `keyword` | None |
-|`sentinelone.data.k8scontrollername` | `keyword` | None |
-|`sentinelone.data.k8snamespace` | `keyword` | None |
-|`sentinelone.data.k8snamespacelabels` | `keyword` | None |
-|`sentinelone.data.k8snode` | `keyword` | None |
-|`sentinelone.data.k8spod` | `keyword` | None |
-|`sentinelone.data.k8spodlabels` | `keyword` | None |
-|`sentinelone.data.lastLoggedInUserName` | `keyword` | None |
-|`sentinelone.data.lmpVersion` | `keyword` | None |
-|`sentinelone.data.localHost` | `keyword` | None |
-|`sentinelone.data.localHostType` | `keyword` | None |
-|`sentinelone.data.localPortType` | `keyword` | None |
-|`sentinelone.data.localPorts` | `keyword` | None |
-|`sentinelone.data.locationNames` | `array` | None |
-|`sentinelone.data.loginaccountdomain` | `keyword` | None |
-|`sentinelone.data.loginaccountsid` | `keyword` | None |
-|`sentinelone.data.loginisadministratorequivalent` | `keyword` | None |
-|`sentinelone.data.loginissuccessful` | `keyword` | None |
-|`sentinelone.data.loginsusername` | `keyword` | None |
-|`sentinelone.data.logintype` | `keyword` | None |
-|`sentinelone.data.manufacturerName` | `keyword` | None |
-|`sentinelone.data.minorClass` | `keyword` | None |
+|`sentinelone.data.externalIp` | `keyword` |  |
+|`sentinelone.data.externalip` | `keyword` |  |
+|`sentinelone.data.fileDisplayName` | `keyword` |  |
+|`sentinelone.data.fullScopeDetails` | `keyword` |  |
+|`sentinelone.data.fullScopeDetailsPath` | `keyword` |  |
+|`sentinelone.data.gattService` | `keyword` |  |
+|`sentinelone.data.globalStatus` | `keyword` |  |
+|`sentinelone.data.groupId` | `long` |  |
+|`sentinelone.data.groupName` | `keyword` |  |
+|`sentinelone.data.indicatorcategory` | `keyword` |  |
+|`sentinelone.data.indicatordescription` | `keyword` |  |
+|`sentinelone.data.indicatorname` | `keyword` |  |
+|`sentinelone.data.interface` | `keyword` |  |
+|`sentinelone.data.ipAddress` | `keyword` |  |
+|`sentinelone.data.k8sclustername` | `keyword` |  |
+|`sentinelone.data.k8scontainerid` | `keyword` |  |
+|`sentinelone.data.k8scontainerimage` | `keyword` |  |
+|`sentinelone.data.k8scontainerlabels` | `keyword` |  |
+|`sentinelone.data.k8scontainername` | `keyword` |  |
+|`sentinelone.data.k8scontrollerkind` | `keyword` |  |
+|`sentinelone.data.k8scontrollerlabels` | `keyword` |  |
+|`sentinelone.data.k8scontrollername` | `keyword` |  |
+|`sentinelone.data.k8snamespace` | `keyword` |  |
+|`sentinelone.data.k8snamespacelabels` | `keyword` |  |
+|`sentinelone.data.k8snode` | `keyword` |  |
+|`sentinelone.data.k8spod` | `keyword` |  |
+|`sentinelone.data.k8spodlabels` | `keyword` |  |
+|`sentinelone.data.lastLoggedInUserName` | `keyword` |  |
+|`sentinelone.data.lmpVersion` | `keyword` |  |
+|`sentinelone.data.localHost` | `keyword` |  |
+|`sentinelone.data.localHostType` | `keyword` |  |
+|`sentinelone.data.localPortType` | `keyword` |  |
+|`sentinelone.data.localPorts` | `keyword` |  |
+|`sentinelone.data.locationNames` | `array` |  |
+|`sentinelone.data.loginaccountdomain` | `keyword` |  |
+|`sentinelone.data.loginaccountsid` | `keyword` |  |
+|`sentinelone.data.loginisadministratorequivalent` | `keyword` |  |
+|`sentinelone.data.loginissuccessful` | `keyword` |  |
+|`sentinelone.data.loginsusername` | `keyword` |  |
+|`sentinelone.data.logintype` | `keyword` |  |
+|`sentinelone.data.manufacturerName` | `keyword` |  |
+|`sentinelone.data.minorClass` | `keyword` |  |
 |`sentinelone.data.minorClasses` | `keyword` |  |
-|`sentinelone.data.modulepath` | `keyword` | None |
-|`sentinelone.data.modulesha1` | `keyword` | None |
-|`sentinelone.data.neteventdirection` | `keyword` | None |
-|`sentinelone.data.newGroupId` | `keyword` | None |
-|`sentinelone.data.newGroupName` | `keyword` | None |
-|`sentinelone.data.newStatus` | `keyword` | None |
-|`sentinelone.data.numberOfEvents` | `int` | None |
-|`sentinelone.data.oldGroupId` | `keyword` | None |
-|`sentinelone.data.oldGroupName` | `keyword` | None |
-|`sentinelone.data.order` | `long` | None |
-|`sentinelone.data.origagentmachinetype` | `keyword` | None |
-|`sentinelone.data.origagentname` | `keyword` | None |
-|`sentinelone.data.origagentosfamily` | `keyword` | None |
-|`sentinelone.data.origagentosname` | `keyword` | None |
-|`sentinelone.data.origagentosrevision` | `keyword` | None |
-|`sentinelone.data.origagentsiteid` | `long` | None |
-|`sentinelone.data.origagentuuid` | `keyword` | None |
-|`sentinelone.data.origagentversion` | `keyword` | None |
-|`sentinelone.data.originalStatus` | `keyword` | None |
-|`sentinelone.data.osType` | `keyword` | None |
-|`sentinelone.data.osTypes` | `keyword` | None |
-|`sentinelone.data.physical` | `keyword` | None |
+|`sentinelone.data.modulepath` | `keyword` |  |
+|`sentinelone.data.modulesha1` | `keyword` |  |
+|`sentinelone.data.neteventdirection` | `keyword` |  |
+|`sentinelone.data.newGroupId` | `keyword` |  |
+|`sentinelone.data.newGroupName` | `keyword` |  |
+|`sentinelone.data.newStatus` | `keyword` |  |
+|`sentinelone.data.numberOfEvents` | `int` |  |
+|`sentinelone.data.oldGroupId` | `keyword` |  |
+|`sentinelone.data.oldGroupName` | `keyword` |  |
+|`sentinelone.data.order` | `long` |  |
+|`sentinelone.data.origagentmachinetype` | `keyword` |  |
+|`sentinelone.data.origagentname` | `keyword` |  |
+|`sentinelone.data.origagentosfamily` | `keyword` |  |
+|`sentinelone.data.origagentosname` | `keyword` |  |
+|`sentinelone.data.origagentosrevision` | `keyword` |  |
+|`sentinelone.data.origagentsiteid` | `long` |  |
+|`sentinelone.data.origagentuuid` | `keyword` |  |
+|`sentinelone.data.origagentversion` | `keyword` |  |
+|`sentinelone.data.originalStatus` | `keyword` |  |
+|`sentinelone.data.osType` | `keyword` |  |
+|`sentinelone.data.osTypes` | `keyword` |  |
+|`sentinelone.data.physical` | `keyword` |  |
 |`sentinelone.data.policy` | `keyword` |  |
 |`sentinelone.data.policyName` | `keyword` |  |
 |`sentinelone.data.previous` | `keyword` |  |
-|`sentinelone.data.processId` | `int` | None |
-|`sentinelone.data.processName` | `keyword` | None |
-|`sentinelone.data.productId` | `keyword` | None |
-|`sentinelone.data.profileUuids` | `keyword` | None |
-|`sentinelone.data.protocol` | `keyword` | None |
-|`sentinelone.data.reason` | `keyword` | None |
-|`sentinelone.data.registrykeypath` | `keyword` | None |
-|`sentinelone.data.registryoldvalue` | `keyword` | None |
-|`sentinelone.data.registryoldvaluetype` | `keyword` | None |
-|`sentinelone.data.registrypath` | `keyword` | None |
-|`sentinelone.data.registryvalue` | `keyword` | None |
-|`sentinelone.data.remoteHost` | `keyword` | None |
-|`sentinelone.data.remoteHostType` | `keyword` | None |
-|`sentinelone.data.remotePortType` | `keyword` | None |
-|`sentinelone.data.remotePorts` | `keyword` | None |
-|`sentinelone.data.role` | `keyword` | None |
-|`sentinelone.data.ruleScopeLevel` | `keyword` | None |
-|`sentinelone.data.ruleScopeName` | `keyword` | None |
-|`sentinelone.data.ruleType` | `keyword` | None |
-|`sentinelone.data.rulescopeid` | `long` | None |
-|`sentinelone.data.rulescopelevel` | `keyword` | None |
-|`sentinelone.data.scopeId` | `long` | None |
-|`sentinelone.data.scopeLevel` | `keyword` | None |
-|`sentinelone.data.scopeName` | `keyword` | None |
+|`sentinelone.data.processId` | `int` |  |
+|`sentinelone.data.processName` | `keyword` |  |
+|`sentinelone.data.productId` | `keyword` |  |
+|`sentinelone.data.profileUuids` | `keyword` |  |
+|`sentinelone.data.protocol` | `keyword` |  |
+|`sentinelone.data.reason` | `keyword` |  |
+|`sentinelone.data.registrykeypath` | `keyword` |  |
+|`sentinelone.data.registryoldvalue` | `keyword` |  |
+|`sentinelone.data.registryoldvaluetype` | `keyword` |  |
+|`sentinelone.data.registrypath` | `keyword` |  |
+|`sentinelone.data.registryvalue` | `keyword` |  |
+|`sentinelone.data.remoteHost` | `keyword` |  |
+|`sentinelone.data.remoteHostType` | `keyword` |  |
+|`sentinelone.data.remotePortType` | `keyword` |  |
+|`sentinelone.data.remotePorts` | `keyword` |  |
+|`sentinelone.data.role` | `keyword` |  |
+|`sentinelone.data.ruleScopeLevel` | `keyword` |  |
+|`sentinelone.data.ruleScopeName` | `keyword` |  |
+|`sentinelone.data.ruleType` | `keyword` |  |
+|`sentinelone.data.rulescopeid` | `long` |  |
+|`sentinelone.data.rulescopelevel` | `keyword` |  |
+|`sentinelone.data.scopeId` | `long` |  |
+|`sentinelone.data.scopeLevel` | `keyword` |  |
+|`sentinelone.data.scopeName` | `keyword` |  |
 |`sentinelone.data.setting` | `keyword` |  |
-|`sentinelone.data.severity` | `keyword` | None |
+|`sentinelone.data.severity` | `keyword` |  |
 |`sentinelone.data.shouldReboot` | `keyword` |  |
-|`sentinelone.data.siteName` | `keyword` | None |
-|`sentinelone.data.source` | `keyword` | None |
-|`sentinelone.data.sourcename` | `keyword` | None |
-|`sentinelone.data.sourceparentprocesscommandline` | `keyword` | None |
-|`sentinelone.data.sourceparentprocessintegritylevel` | `keyword` | None |
-|`sentinelone.data.sourceparentprocesskey` | `keyword` | None |
-|`sentinelone.data.sourceparentprocessmd5` | `keyword` | None |
-|`sentinelone.data.sourceparentprocessname` | `keyword` | None |
-|`sentinelone.data.sourceparentprocesspath` | `keyword` | None |
-|`sentinelone.data.sourceparentprocesspid` | `long` | None |
-|`sentinelone.data.sourceparentprocesssha1` | `keyword` | None |
-|`sentinelone.data.sourceparentprocesssha256` | `keyword` | None |
-|`sentinelone.data.sourceparentprocesssigneridentity` | `keyword` | None |
-|`sentinelone.data.sourceparentprocessstarttime` | `long` | None |
-|`sentinelone.data.sourceparentprocessstoryline` | `keyword` | None |
-|`sentinelone.data.sourceparentprocesssubsystem` | `keyword` | None |
-|`sentinelone.data.sourceparentprocessusername` | `keyword` | None |
-|`sentinelone.data.sourceprocesscommandline` | `keyword` | None |
-|`sentinelone.data.sourceprocessfilepath` | `keyword` | None |
-|`sentinelone.data.sourceprocessfilesigneridentity` | `keyword` | None |
-|`sentinelone.data.sourceprocessfilesingeridentity` | `keyword` | None |
-|`sentinelone.data.sourceprocessintegritylevel` | `keyword` | None |
-|`sentinelone.data.sourceprocesskey` | `keyword` | None |
-|`sentinelone.data.sourceprocessmd5` | `keyword` | None |
-|`sentinelone.data.sourceprocessname` | `keyword` | None |
-|`sentinelone.data.sourceprocesspid` | `long` | None |
-|`sentinelone.data.sourceprocesssha1` | `keyword` | None |
-|`sentinelone.data.sourceprocesssha256` | `keyword` | None |
-|`sentinelone.data.sourceprocessstarttime` | `long` | None |
-|`sentinelone.data.sourceprocessstoryline` | `keyword` | None |
-|`sentinelone.data.sourceprocesssubsystem` | `keyword` | None |
-|`sentinelone.data.sourceprocessusername` | `keyword` | None |
-|`sentinelone.data.srcip` | `keyword` | None |
-|`sentinelone.data.srcmachineip` | `keyword` | None |
-|`sentinelone.data.srcport` | `long` | None |
-|`sentinelone.data.status` | `keyword` | None |
-|`sentinelone.data.system` | `bool` | None |
-|`sentinelone.data.systemUser` | `long` | None |
-|`sentinelone.data.tagNames` | `keyword` | None |
-|`sentinelone.data.tgtfilecreatedat` | `long` | None |
-|`sentinelone.data.tgtfilehashsha1` | `keyword` | None |
-|`sentinelone.data.tgtfilehashsha256` | `keyword` | None |
-|`sentinelone.data.tgtfileid` | `keyword` | None |
-|`sentinelone.data.tgtfileissigned` | `keyword` | None |
-|`sentinelone.data.tgtfilemodifiedat` | `long` | None |
-|`sentinelone.data.tgtfileoldpath` | `keyword` | None |
-|`sentinelone.data.tgtfilepath` | `keyword` | None |
-|`sentinelone.data.tgtproccmdline` | `keyword` | None |
-|`sentinelone.data.tgtprocessstarttime` | `keyword` | None |
-|`sentinelone.data.tgtprocimagepath` | `keyword` | None |
-|`sentinelone.data.tgtprocintegritylevel` | `keyword` | None |
-|`sentinelone.data.tgtprocname` | `keyword` | None |
-|`sentinelone.data.tgtprocpid` | `long` | None |
-|`sentinelone.data.tgtprocsignedstatus` | `keyword` | None |
-|`sentinelone.data.tgtprocstorylineid` | `keyword` | None |
-|`sentinelone.data.tgtprocuid` | `keyword` | None |
-|`sentinelone.data.threatClassification` | `keyword` | None |
-|`sentinelone.data.threatClassificationSource` | `keyword` | None |
-|`sentinelone.data.tiindicatorcomparisonmethod` | `keyword` | None |
-|`sentinelone.data.tiindicatorsource` | `keyword` | None |
-|`sentinelone.data.tiindicatortype` | `keyword` | None |
-|`sentinelone.data.tiindicatorvalue` | `keyword` | None |
-|`sentinelone.data.uid` | `keyword` | None |
+|`sentinelone.data.siteName` | `keyword` |  |
+|`sentinelone.data.source` | `keyword` |  |
+|`sentinelone.data.sourcename` | `keyword` |  |
+|`sentinelone.data.sourceparentprocesscommandline` | `keyword` |  |
+|`sentinelone.data.sourceparentprocessintegritylevel` | `keyword` |  |
+|`sentinelone.data.sourceparentprocesskey` | `keyword` |  |
+|`sentinelone.data.sourceparentprocessmd5` | `keyword` |  |
+|`sentinelone.data.sourceparentprocessname` | `keyword` |  |
+|`sentinelone.data.sourceparentprocesspath` | `keyword` |  |
+|`sentinelone.data.sourceparentprocesspid` | `long` |  |
+|`sentinelone.data.sourceparentprocesssha1` | `keyword` |  |
+|`sentinelone.data.sourceparentprocesssha256` | `keyword` |  |
+|`sentinelone.data.sourceparentprocesssigneridentity` | `keyword` |  |
+|`sentinelone.data.sourceparentprocessstarttime` | `long` |  |
+|`sentinelone.data.sourceparentprocessstoryline` | `keyword` |  |
+|`sentinelone.data.sourceparentprocesssubsystem` | `keyword` |  |
+|`sentinelone.data.sourceparentprocessusername` | `keyword` |  |
+|`sentinelone.data.sourceprocesscommandline` | `keyword` |  |
+|`sentinelone.data.sourceprocessfilepath` | `keyword` |  |
+|`sentinelone.data.sourceprocessfilesigneridentity` | `keyword` |  |
+|`sentinelone.data.sourceprocessfilesingeridentity` | `keyword` |  |
+|`sentinelone.data.sourceprocessintegritylevel` | `keyword` |  |
+|`sentinelone.data.sourceprocesskey` | `keyword` |  |
+|`sentinelone.data.sourceprocessmd5` | `keyword` |  |
+|`sentinelone.data.sourceprocessname` | `keyword` |  |
+|`sentinelone.data.sourceprocesspid` | `long` |  |
+|`sentinelone.data.sourceprocesssha1` | `keyword` |  |
+|`sentinelone.data.sourceprocesssha256` | `keyword` |  |
+|`sentinelone.data.sourceprocessstarttime` | `long` |  |
+|`sentinelone.data.sourceprocessstoryline` | `keyword` |  |
+|`sentinelone.data.sourceprocesssubsystem` | `keyword` |  |
+|`sentinelone.data.sourceprocessusername` | `keyword` |  |
+|`sentinelone.data.srcip` | `keyword` |  |
+|`sentinelone.data.srcmachineip` | `keyword` |  |
+|`sentinelone.data.srcport` | `long` |  |
+|`sentinelone.data.status` | `keyword` |  |
+|`sentinelone.data.system` | `bool` |  |
+|`sentinelone.data.systemUser` | `long` |  |
+|`sentinelone.data.tagNames` | `keyword` |  |
+|`sentinelone.data.tgtfilecreatedat` | `long` |  |
+|`sentinelone.data.tgtfilehashsha1` | `keyword` |  |
+|`sentinelone.data.tgtfilehashsha256` | `keyword` |  |
+|`sentinelone.data.tgtfileid` | `keyword` |  |
+|`sentinelone.data.tgtfileissigned` | `keyword` |  |
+|`sentinelone.data.tgtfilemodifiedat` | `long` |  |
+|`sentinelone.data.tgtfileoldpath` | `keyword` |  |
+|`sentinelone.data.tgtfilepath` | `keyword` |  |
+|`sentinelone.data.tgtproccmdline` | `keyword` |  |
+|`sentinelone.data.tgtprocessstarttime` | `keyword` |  |
+|`sentinelone.data.tgtprocimagepath` | `keyword` |  |
+|`sentinelone.data.tgtprocintegritylevel` | `keyword` |  |
+|`sentinelone.data.tgtprocname` | `keyword` |  |
+|`sentinelone.data.tgtprocpid` | `long` |  |
+|`sentinelone.data.tgtprocsignedstatus` | `keyword` |  |
+|`sentinelone.data.tgtprocstorylineid` | `keyword` |  |
+|`sentinelone.data.tgtprocuid` | `keyword` |  |
+|`sentinelone.data.threatClassification` | `keyword` |  |
+|`sentinelone.data.threatClassificationSource` | `keyword` |  |
+|`sentinelone.data.tiindicatorcomparisonmethod` | `keyword` |  |
+|`sentinelone.data.tiindicatorsource` | `keyword` |  |
+|`sentinelone.data.tiindicatortype` | `keyword` |  |
+|`sentinelone.data.tiindicatorvalue` | `keyword` |  |
+|`sentinelone.data.uid` | `keyword` |  |
 |`sentinelone.data.uploadedFilename` | `keyword` |  |
-|`sentinelone.data.userId` | `long` | None |
-|`sentinelone.data.userScope` | `keyword` | None |
+|`sentinelone.data.userId` | `long` |  |
+|`sentinelone.data.userScope` | `keyword` |  |
 |`sentinelone.data.userscope` | `keyword` |  |
-|`sentinelone.data.uuid` | `keyword` | None |
-|`sentinelone.data.vendorId` | `long` | None |
-|`sentinelone.data.version` | `keyword` | None |
-|`sentinelone.description` | `keyword` | None |
-|`sentinelone.eventid` | `long` | None |
-|`sentinelone.hash` | `keyword` | None |
-|`sentinelone.indicators` | `object` | None |
-|`sentinelone.kubernetesInfo.controllerKind` | `keyword` | None |
-|`sentinelone.kubernetesInfo.controllerLabels` | `keyword` | None |
-|`sentinelone.kubernetesInfo.controllerName` | `keyword` | None |
-|`sentinelone.kubernetesInfo.namespaceLabels` | `keyword` | None |
-|`sentinelone.kubernetesInfo.node` | `keyword` | None |
-|`sentinelone.kubernetesInfo.pod` | `keyword` | None |
-|`sentinelone.kubernetesInfo.podLabels` | `keyword` | None |
-|`sentinelone.mitigationStatus` | `object` | None |
-|`sentinelone.secondaryDescription` | `keyword` | None |
-|`sentinelone.siteId` | `long` | None |
-|`sentinelone.sitename` | `keyword` | None |
-|`sentinelone.threatId` | `keyword` | None |
-|`sentinelone.threatInfo.AuthenticationPackageName` | `keyword` | None |
-|`sentinelone.threatInfo.NewTargetUserName` | `keyword` | None |
-|`sentinelone.threatInfo.analystVerdict` | `keyword` | None |
-|`sentinelone.threatInfo.analystVerdictDescription` | `keyword` | None |
-|`sentinelone.threatInfo.automaticallyResolved` | `bool` | None |
-|`sentinelone.threatInfo.browserType` | `keyword` | None |
-|`sentinelone.threatInfo.classificationSource` | `keyword` | None |
-|`sentinelone.threatInfo.cloudFilesHashVerdict` | `keyword` | None |
-|`sentinelone.threatInfo.collectionId` | `keyword` | None |
-|`sentinelone.threatInfo.detectionEngines` | `object` | None |
-|`sentinelone.threatInfo.detectionType` | `keyword` | None |
-|`sentinelone.threatInfo.engines` | `keyword` | None |
-|`sentinelone.threatInfo.externalTicketExists` | `bool` | None |
-|`sentinelone.threatInfo.externalTicketId` | `keyword` | None |
-|`sentinelone.threatInfo.failedActions` | `bool` | None |
-|`sentinelone.threatInfo.fileExtension` | `keyword` | None |
-|`sentinelone.threatInfo.fileExtensionType` | `keyword` | None |
-|`sentinelone.threatInfo.fileVerificationType` | `keyword` | None |
-|`sentinelone.threatInfo.incidentStatus` | `keyword` | None |
-|`sentinelone.threatInfo.incidentStatusDescription` | `keyword` | None |
-|`sentinelone.threatInfo.initiatedBy` | `keyword` | None |
-|`sentinelone.threatInfo.initiatedByDescription` | `keyword` | None |
-|`sentinelone.threatInfo.initiatingUserId` | `keyword` | None |
-|`sentinelone.threatInfo.initiatingUsername` | `keyword` | None |
-|`sentinelone.threatInfo.isFileless` | `bool` | None |
-|`sentinelone.threatInfo.isValidCertificate` | `bool` | None |
-|`sentinelone.threatInfo.maliciousProcessArguments` | `keyword` | None |
-|`sentinelone.threatInfo.mitigatedPreemptively` | `bool` | None |
-|`sentinelone.threatInfo.mitigationStatus` | `keyword` | None |
-|`sentinelone.threatInfo.mitigationStatusDescription` | `keyword` | None |
-|`sentinelone.threatInfo.pendingActions` | `bool` | None |
-|`sentinelone.threatInfo.publisherName` | `keyword` | None |
-|`sentinelone.threatInfo.reachedEventsLimit` | `bool` | None |
-|`sentinelone.threatInfo.rebootRequired` | `bool` | None |
-|`sentinelone.threatInfo.storyline` | `keyword` | None |
-|`sentinelone.threatInfo.threatId` | `keyword` | None |
-|`sentinelone.threatInfo.updatedAt` | `keyword` | None |
-|`sentinelone.updatedAt` | `keyword` | None |
-|`sentinelone.whiteningOptions` | `keyword` | None |
+|`sentinelone.data.uuid` | `keyword` |  |
+|`sentinelone.data.vendorId` | `long` |  |
+|`sentinelone.data.version` | `keyword` |  |
+|`sentinelone.description` | `keyword` |  |
+|`sentinelone.eventid` | `long` |  |
+|`sentinelone.hash` | `keyword` |  |
+|`sentinelone.indicators` | `object` |  |
+|`sentinelone.kubernetesInfo.controllerKind` | `keyword` |  |
+|`sentinelone.kubernetesInfo.controllerLabels` | `keyword` |  |
+|`sentinelone.kubernetesInfo.controllerName` | `keyword` |  |
+|`sentinelone.kubernetesInfo.namespaceLabels` | `keyword` |  |
+|`sentinelone.kubernetesInfo.node` | `keyword` |  |
+|`sentinelone.kubernetesInfo.pod` | `keyword` |  |
+|`sentinelone.kubernetesInfo.podLabels` | `keyword` |  |
+|`sentinelone.mitigationStatus` | `object` |  |
+|`sentinelone.secondaryDescription` | `keyword` |  |
+|`sentinelone.siteId` | `long` |  |
+|`sentinelone.sitename` | `keyword` |  |
+|`sentinelone.threatId` | `keyword` |  |
+|`sentinelone.threatInfo.AuthenticationPackageName` | `keyword` |  |
+|`sentinelone.threatInfo.NewTargetUserName` | `keyword` |  |
+|`sentinelone.threatInfo.analystVerdict` | `keyword` |  |
+|`sentinelone.threatInfo.analystVerdictDescription` | `keyword` |  |
+|`sentinelone.threatInfo.automaticallyResolved` | `bool` |  |
+|`sentinelone.threatInfo.browserType` | `keyword` |  |
+|`sentinelone.threatInfo.classificationSource` | `keyword` |  |
+|`sentinelone.threatInfo.cloudFilesHashVerdict` | `keyword` |  |
+|`sentinelone.threatInfo.collectionId` | `keyword` |  |
+|`sentinelone.threatInfo.detectionEngines` | `object` |  |
+|`sentinelone.threatInfo.detectionType` | `keyword` |  |
+|`sentinelone.threatInfo.engines` | `keyword` |  |
+|`sentinelone.threatInfo.externalTicketExists` | `bool` |  |
+|`sentinelone.threatInfo.externalTicketId` | `keyword` |  |
+|`sentinelone.threatInfo.failedActions` | `bool` |  |
+|`sentinelone.threatInfo.fileExtension` | `keyword` |  |
+|`sentinelone.threatInfo.fileExtensionType` | `keyword` |  |
+|`sentinelone.threatInfo.fileVerificationType` | `keyword` |  |
+|`sentinelone.threatInfo.incidentStatus` | `keyword` |  |
+|`sentinelone.threatInfo.incidentStatusDescription` | `keyword` |  |
+|`sentinelone.threatInfo.initiatedBy` | `keyword` |  |
+|`sentinelone.threatInfo.initiatedByDescription` | `keyword` |  |
+|`sentinelone.threatInfo.initiatingUserId` | `keyword` |  |
+|`sentinelone.threatInfo.initiatingUsername` | `keyword` |  |
+|`sentinelone.threatInfo.isFileless` | `bool` |  |
+|`sentinelone.threatInfo.isValidCertificate` | `bool` |  |
+|`sentinelone.threatInfo.maliciousProcessArguments` | `keyword` |  |
+|`sentinelone.threatInfo.mitigatedPreemptively` | `bool` |  |
+|`sentinelone.threatInfo.mitigationStatus` | `keyword` |  |
+|`sentinelone.threatInfo.mitigationStatusDescription` | `keyword` |  |
+|`sentinelone.threatInfo.pendingActions` | `bool` |  |
+|`sentinelone.threatInfo.publisherName` | `keyword` |  |
+|`sentinelone.threatInfo.reachedEventsLimit` | `bool` |  |
+|`sentinelone.threatInfo.rebootRequired` | `bool` |  |
+|`sentinelone.threatInfo.storyline` | `keyword` |  |
+|`sentinelone.threatInfo.threatId` | `keyword` |  |
+|`sentinelone.threatInfo.updatedAt` | `keyword` |  |
+|`sentinelone.updatedAt` | `keyword` |  |
+|`sentinelone.whiteningOptions` | `keyword` |  |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
 |`threat.enrichments.matched.occurred` | `date` | Date of match |
@@ -2892,6 +2892,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`threat.indicator.file.size` | `long` | File size in bytes. |
 |`threat.software.type` | `keyword` | Software type. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
-|`user.id` | `long` | None |
+|`user.id` | `long` |  |
 |`user.name` | `keyword` | Short name or login of the user. |
 

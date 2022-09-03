@@ -96,21 +96,21 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`cloudflare.ClientIPClass` | `string` | None |
-|`cloudflare.ClientRefererHost` | `string` | None |
-|`cloudflare.ClientRefererPath` | `string` | None |
-|`cloudflare.ClientRefererQuery` | `string` | None |
-|`cloudflare.ClientRefererScheme` | `string` | None |
-|`cloudflare.EdgeColoCode` | `string` | None |
-|`cloudflare.EdgeResponseStatus` | `number` | None |
-|`cloudflare.Kind` | `string` | None |
-|`cloudflare.OriginResponseStatus` | `number` | None |
-|`cloudflare.OriginatorRayID` | `string` | None |
-|`cloudflare.RayID` | `string` | None |
-|`cloudflare.clientASNDescription` | `keyword` | None |
-|`cloudflare.matchIndex` | `number` | None |
-|`cloudflare.metadata` | `object` | None |
-|`cloudflare.source` | `keyword` | None |
+|`cloudflare.ClientIPClass` | `string` | The classification of the visitor’s IP address, possible values are: unknown | badHost | searchEngine | allowlist | monitoringService | noRecord | scan | tor |
+|`cloudflare.ClientRefererHost` | `string` | The referer host |
+|`cloudflare.ClientRefererPath` | `string` | The referer path requested by visitor |
+|`cloudflare.ClientRefererQuery` | `string` | The referer query-string was requested by the visitor |
+|`cloudflare.ClientRefererScheme` | `string` | The referer URL scheme requested by the visitor |
+|`cloudflare.EdgeColoCode` | `string` | IATA airport code of data center that received the request |
+|`cloudflare.EdgeResponseStatus` | `number` | HTTP status code returned by Cloudflare to the client |
+|`cloudflare.Kind` | `string` | The dataset of the event |
+|`cloudflare.OriginResponseStatus` | `number` | status returned by the origin server |
+|`cloudflare.OriginatorRayID` | `string` | The RayID of the request that issued the challenge/jschallenge |
+|`cloudflare.RayID` | `string` | ID of the request |
+|`cloudflare.clientASNDescription` | `keyword` | The ASN of the visitor as string |
+|`cloudflare.matchIndex` | `number` | Rules match index in the chain |
+|`cloudflare.metadata` | `object` | Additional product-specific information. Metadata is organized in key:value pairs. Key and Value formats can vary by Cloudflare security product and can change over time |
+|`cloudflare.source` | `keyword` | The Cloudflare security product triggered by this request |
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |

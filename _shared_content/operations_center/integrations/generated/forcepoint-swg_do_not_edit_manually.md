@@ -265,10 +265,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.severity` | `long` | Numeric severity of the event. |
-|`forcepoint.cef.version` | `keyword` | None |
-|`forcepoint.webgateway.category` | `keyword` | None |
-|`forcepoint.webgateway.log.source` | `keyword` | None |
-|`forcepoint.webgateway.policies` | `keyword` | None |
+|`forcepoint.cef.version` | `keyword` | The version of the CEF message |
+|`forcepoint.webgateway.category` | `keyword` | The category determined by real-time content analysis |
+|`forcepoint.webgateway.log.source` | `keyword` | The origin of the log |
+|`forcepoint.webgateway.policies` | `keyword` | The policies applied to the request |
 |`host.ip` | `ip` | Host ip addresses. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.method` | `keyword` | HTTP request method. |

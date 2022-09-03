@@ -365,10 +365,10 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
-|`action.name` | `keyword` | None |
-|`action.outcome` | `keyword` | None |
-|`action.target` | `keyword` | None |
-|`action.type` | `keyword` | None |
+|`action.name` | `keyword` | The name of the action |
+|`action.outcome` | `keyword` | The outcome of the action |
+|`action.target` | `keyword` | The target of the action |
+|`action.type` | `keyword` | The type of the action |
 |`cloud.account.id` | `keyword` | The cloud account or organization id. |
 |`cloud.provider` | `keyword` | Name of the cloud provider. |
 |`cloud.service.name` | `keyword` | The cloud service name. |

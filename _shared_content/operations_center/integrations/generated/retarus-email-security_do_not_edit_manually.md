@@ -558,21 +558,21 @@ The following table lists the fields that are extracted, normalized under the EC
 |`file.hash.sha256` | `keyword` | SHA256 hash. |
 |`file.hash.sha512` | `keyword` | SHA512 hash. |
 |`file.hash.ssdeep` | `keyword` | SSDEEP hash. |
-|`file.mimeType` | `keyword` | None |
+|`file.mimeType` | `keyword` | MIME type of the detected file (only included if threat type is VIRUS) |
 |`observer.hostname` | `keyword` | Hostname of the observer. |
 |`observer.version` | `keyword` | Observer version. |
 |`organization.id` | `keyword` | Unique identifier for the organization. |
-|`retarus.class` | `keyword` | None |
-|`retarus.email_direction` | `keyword` | None |
-|`retarus.message_id` | `keyword` | None |
-|`retarus.mime_message_id` | `keyword` | None |
-|`retarus.phishing_identifier` | `long` | None |
-|`retarus.recipient` | `keyword` | None |
-|`retarus.sender` | `keyword` | None |
-|`retarus.status` | `keyword` | None |
-|`retarus.timestamp` | `keyword` | None |
-|`retarus.type` | `keyword` | None |
-|`retarus.virus_name` | `keyword` | None |
+|`retarus.class` | `keyword` | Classification of the event |
+|`retarus.email_direction` | `keyword` | Possible values are: INBOUND | OUTBOUND |
+|`retarus.message_id` | `keyword` | Retarus unique message ID |
+|`retarus.mime_message_id` | `keyword` | Mime message ID |
+|`retarus.phishing_identifier` | `long` | Phishing identifier (if threat type is “URL”) |
+|`retarus.recipient` | `keyword` | Recipient of the message (envTo) |
+|`retarus.sender` | `keyword` | Sender of the message (envFrom) |
+|`retarus.status` | `keyword` | Possible values are: - for threat events: INFECTED | DETECTED | SUSPICIOUS, - for MTA events: ACCEPTED |
+|`retarus.timestamp` | `keyword` | Timestamp of the message in YYYY-MM-DD hh:mm:ss +hhmm |
+|`retarus.type` | `keyword` | Feature which the event is for possible values are: MultiScan, CxO, Sandboxing, PZD, MTA |
+|`retarus.virus_name` | `keyword` | Virus name(s) found |
 |`source.domain` | `keyword` | The domain name of the source. |
 |`source.ip` | `ip` | IP address of the source. |
 |`url.full` | `wildcard` | Full unparsed URL. |

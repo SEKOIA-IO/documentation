@@ -331,17 +331,17 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`cisco_wsa.cache_status` | `keyword` | None |
-|`cisco_wsa.hierarchy_code` | `keyword` | None |
-|`cisco_wsa.rule.policy.data_security` | `keyword` | None |
-|`cisco_wsa.rule.policy.external_dlp` | `keyword` | None |
-|`cisco_wsa.rule.policy.name` | `keyword` | None |
-|`cisco_wsa.rule.policy.outbound_malware_scanning` | `keyword` | None |
-|`cisco_wsa.rule.policy.routing` | `keyword` | None |
-|`cisco_wsa.threat.category_code` | `number` | None |
-|`cisco_wsa.threat.name` | `keyword` | None |
-|`cisco_wsa.threat.reputation_score` | `number` | None |
-|`cisco_wsa.url.category_code` | `keyword` | None |
+|`cisco_wsa.cache_status` | `keyword` | The Cache status for the given request (can be 'hit', 'miss' or 'denied') |
+|`cisco_wsa.hierarchy_code` | `keyword` | The hierarchy used by Cisco Web Security Appliance for this connection. It indicates how the next-hop cache was selected |
+|`cisco_wsa.rule.policy.data_security` | `keyword` | The name of the data security policy applied to the request |
+|`cisco_wsa.rule.policy.external_dlp` | `keyword` | The name of the external dlp policy applied to the request |
+|`cisco_wsa.rule.policy.name` | `keyword` | The name of the policy applied to the request |
+|`cisco_wsa.rule.policy.outbound_malware_scanning` | `keyword` | The name of the outbound malware scanning policy applied to the request |
+|`cisco_wsa.rule.policy.routing` | `keyword` | The name of the routing policy applied to the request |
+|`cisco_wsa.threat.category_code` | `number` | The code of the category of the detected threat |
+|`cisco_wsa.threat.name` | `keyword` | The name of the detected threat |
+|`cisco_wsa.threat.reputation_score` | `number` | The reputation score from Advanced Malware Protection file scanning |
+|`cisco_wsa.url.category_code` | `keyword` | The code of the category of the requested url |
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |

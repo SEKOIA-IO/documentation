@@ -335,20 +335,20 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`cybereason.cef.version` | `keyword` | None |
-|`cybereason.event.id` | `keyword` | None |
-|`cybereason.malop.activity.type` | `keyword` | None |
-|`cybereason.malop.counters.affected_machines` | `float` | None |
-|`cybereason.malop.counters.affected_users` | `float` | None |
-|`cybereason.malop.decision` | `text` | None |
-|`cybereason.malop.detection.type` | `keyword` | None |
-|`cybereason.malop.file.is_signed` | `boolean` | None |
-|`cybereason.malop.host.is_malicious` | `boolean` | None |
-|`cybereason.malop.host.is_online` | `boolean` | None |
-|`cybereason.malop.host.is_original_machine` | `boolean` | None |
-|`cybereason.malop.id` | `keyword` | None |
-|`cybereason.malop.modified_at` | `text` | None |
-|`cybereason.malop.status` | `keyword` | None |
+|`cybereason.cef.version` | `keyword` | The version of the CEF message |
+|`cybereason.event.id` | `keyword` | The identifier of the cybereason event |
+|`cybereason.malop.activity.type` | `keyword` | The phase in the attack lifecycle assigned to the MalOp |
+|`cybereason.malop.counters.affected_machines` | `float` | The number of affected machines |
+|`cybereason.malop.counters.affected_users` | `float` | The number of affected machines |
+|`cybereason.malop.decision` | `text` | The decision feature used to generate the MalOp |
+|`cybereason.malop.detection.type` | `keyword` | The type of the detection used for the MalOp |
+|`cybereason.malop.file.is_signed` | `boolean` | Indicates whether the file is signed |
+|`cybereason.malop.host.is_malicious` | `boolean` | Indicates whether the host is involved in malicious activities |
+|`cybereason.malop.host.is_online` | `boolean` | Indicates whether the host is connected to the Cybereason platform |
+|`cybereason.malop.host.is_original_machine` | `boolean` | Indicates whether the host was detected recently |
+|`cybereason.malop.id` | `keyword` | The identifier of the MalOp |
+|`cybereason.malop.modified_at` | `text` | The modification date of the MalOp |
+|`cybereason.malop.status` | `keyword` | The status of the MalOp |
 |`destination.geo.country_name` | `keyword` | Country name. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.nat.ip` | `ip` | Destination NAT ip |

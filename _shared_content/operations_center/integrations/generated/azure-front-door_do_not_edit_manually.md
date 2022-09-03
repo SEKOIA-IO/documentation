@@ -170,12 +170,12 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`azure_front_door.cache_status` | `keyword` | None |
-|`azure_front_door.category` | `keyword` | None |
-|`azure_front_door.health_probe_id` | `keyword` | None |
-|`azure_front_door.resource_id` | `keyword` | None |
-|`azure_front_door.route_name` | `keyword` | None |
-|`azure_front_door.rule.names` | `keyword` | None |
+|`azure_front_door.cache_status` | `keyword` | The status code of the cache of the CDN |
+|`azure_front_door.category` | `keyword` | The category of the event |
+|`azure_front_door.health_probe_id` | `keyword` | The identifier of the health probe |
+|`azure_front_door.resource_id` | `keyword` | The identifier of the Microsoft Azure resource |
+|`azure_front_door.route_name` | `keyword` | The name of the route that the request matched |
+|`azure_front_door.rule.names` | `keyword` | The names of rules that handled the request |
 |`error.code` | `keyword` | Error code describing the error. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |

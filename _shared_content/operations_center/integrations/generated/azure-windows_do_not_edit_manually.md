@@ -1170,25 +1170,25 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
-|`action.properties` | `object` | None |
-|`action.target` | `keyword` | None |
-|`azure_windows.event_data` | `object` | None |
-|`azure_windows.opcode` | `keyword` | None |
-|`azure_windows.provider_guid` | `keyword` | None |
-|`azure_windows.provider_name` | `keyword` | None |
-|`azure_windows.task` | `keyword` | None |
-|`azure_windows.user.domain.name` | `keyword` | None |
-|`azure_windows.user.identifier` | `keyword` | None |
-|`azure_windows.user.name` | `keyword` | None |
-|`azure_windows.user.type` | `keyword` | None |
+|`action.properties` | `object` | A list of objects |
+|`action.target` | `keyword` | The target of the action |
+|`azure_windows.event_data` | `object` | The event-specific data |
+|`azure_windows.opcode` | `keyword` | The opcode defined in the event. Task and opcode are typically used to identify the location in the application from where the event was logged. |
+|`azure_windows.provider_guid` | `keyword` | A globally unique identifier that identifies the provider that logged the event |
+|`azure_windows.provider_name` | `keyword` | The source of the event log record (the application or service that logged the record). |
+|`azure_windows.task` | `keyword` | The task defined in the event. Task and opcode are typically used to identify the location in the application from where the event was logged |
+|`azure_windows.user.domain.name` | `keyword` | The domain that the account associated with this event is a member of |
+|`azure_windows.user.identifier` | `keyword` | The Windows security identifier (SID) of the account associated with this event |
+|`azure_windows.user.name` | `keyword` | Name of the user associated with this event |
+|`azure_windows.user.type` | `keyword` | The type of account associated with this event |
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.port` | `long` | Port of the destination. |
-|`destination.size_in_char` | `number` | None |
+|`destination.size_in_char` | `number` | The length of the destination domain |
 |`dns.answers` | `object` | Array of DNS answers. |
 |`dns.question.name` | `keyword` | The name being queried. |
 |`dns.response_code` | `keyword` | The DNS response code. |
-|`dns.size_in_char` | `number` | None |
+|`dns.size_in_char` | `number` | The length of the requested domain in the dns query |
 |`dns.type` | `keyword` | The type of DNS event captured, query or answer. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.provider` | `keyword` | Source of the event. |
@@ -1223,7 +1223,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.domain` | `keyword` | The domain name of the source. |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
-|`source.size_in_char` | `number` | None |
+|`source.size_in_char` | `number` | The length of the source domain |
 |`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.id` | `keyword` | Unique identifier of the user. |
 |`user.name` | `keyword` | Short name or login of the user. |

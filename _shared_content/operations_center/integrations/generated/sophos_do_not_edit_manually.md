@@ -297,10 +297,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`log.level` | `keyword` | Log level of the log event. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`observer.name` | `keyword` | Custom name of the observer. |
-|`sophos.action` | `keyword` | None |
-|`sophos.log_subtype` | `keyword` | None |
-|`sophos.status` | `keyword` | None |
-|`sophos.sub` | `keyword` | None |
+|`sophos.action` | `keyword` | event related action |
+|`sophos.log_subtype` | `keyword` | event sub type |
+|`sophos.status` | `keyword` | event status |
+|`sophos.sub` | `keyword` | event category |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.mac` | `keyword` | MAC address of the source. |

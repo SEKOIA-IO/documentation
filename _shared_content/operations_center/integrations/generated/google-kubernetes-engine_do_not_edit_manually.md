@@ -533,40 +533,40 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
-|`google_kubernetes_engine.insertId` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.MESSAGE` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.SYSLOG_IDENTIFIER` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._BOOT_ID` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._CAP_EFFECTIVE` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._COMM` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._GID` | `number` | None |
-|`google_kubernetes_engine.jsonPayload._STREAM_ID` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._SYSTEMD_CGROUP` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._SYSTEMD_INVOCATION_ID` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._SYSTEMD_SLICE` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._SYSTEMD_UNIT` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._TRANSPORT` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload._UID` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.apiVersion` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.eventTime` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.involvedObject.fieldPath` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.involvedObject.kind` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.involvedObject.name` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.involvedObject.resourceVersion` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.involvedObject.uid` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.kind` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.metadata.creationTimestamp` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.metadata.managedFields` | `array` | None |
-|`google_kubernetes_engine.jsonPayload.metadata.resourceVersion` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.metadata.uid` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.reportingComponent` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.reportingInstance` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.source.component` | `keyword` | None |
-|`google_kubernetes_engine.jsonPayload.type` | `keyword` | None |
-|`google_kubernetes_engine.labels.authorization.k8s.io.decision` | `keyword` | None |
-|`google_kubernetes_engine.logName` | `keyword` | None |
-|`google_kubernetes_engine.receiveTimestamp` | `keyword` | None |
-|`google_kubernetes_engine.severity` | `keyword` | None |
+|`google_kubernetes_engine.insertId` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.MESSAGE` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.SYSLOG_IDENTIFIER` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._BOOT_ID` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._CAP_EFFECTIVE` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._COMM` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._GID` | `number` |  |
+|`google_kubernetes_engine.jsonPayload._STREAM_ID` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._SYSTEMD_CGROUP` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._SYSTEMD_INVOCATION_ID` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._SYSTEMD_SLICE` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._SYSTEMD_UNIT` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._TRANSPORT` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload._UID` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.apiVersion` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.eventTime` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.involvedObject.fieldPath` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.involvedObject.kind` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.involvedObject.name` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.involvedObject.resourceVersion` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.involvedObject.uid` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.kind` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.metadata.creationTimestamp` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.metadata.managedFields` | `array` |  |
+|`google_kubernetes_engine.jsonPayload.metadata.resourceVersion` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.metadata.uid` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.reportingComponent` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.reportingInstance` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.source.component` | `keyword` |  |
+|`google_kubernetes_engine.jsonPayload.type` | `keyword` |  |
+|`google_kubernetes_engine.labels.authorization.k8s.io.decision` | `keyword` |  |
+|`google_kubernetes_engine.logName` | `keyword` |  |
+|`google_kubernetes_engine.receiveTimestamp` | `keyword` |  |
+|`google_kubernetes_engine.severity` | `keyword` |  |
 |`host.id` | `keyword` | Unique host id. |
 |`host.name` | `keyword` | Name of the host. |
 |`log.syslog.facility.code` | `long` | Syslog numeric facility of the event. |

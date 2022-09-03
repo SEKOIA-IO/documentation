@@ -473,7 +473,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`azure_linux.message` | `keyword` | None |
+|`azure_linux.message` | `keyword` | The linux message |
 |`log.level` | `keyword` | Log level of the log event. |
 |`process.command_line` | `wildcard` | Full command line that started the process. |
 |`process.executable` | `keyword` | Absolute path to the process executable. |

@@ -270,16 +270,16 @@ The following table lists the fields that are extracted, normalized under the EC
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
 |`agent.id` | `keyword` | Unique identifier of this agent. |
-|`crowdstrike.customer_id` | `keyword` | None |
-|`crowdstrike.detect_description` | `keyword` | None |
-|`crowdstrike.detect_id` | `keyword` | None |
-|`crowdstrike.event_type` | `keyword` | None |
-|`crowdstrike.host_id` | `keyword` | None |
-|`crowdstrike.incident_end` | `date` | None |
-|`crowdstrike.incident_id` | `keyword` | None |
-|`crowdstrike.incident_start` | `date` | None |
-|`crowdstrike.operation_name` | `keyword` | None |
-|`crowdstrike.state` | `keyword` | None |
+|`crowdstrike.customer_id` | `keyword` | Customer ID (cid) |
+|`crowdstrike.detect_description` | `keyword` | A description of what an adversary was trying to do in the environment and guidance on how to begin an investigation. |
+|`crowdstrike.detect_id` | `keyword` | The Detection ID for the detection. Can be used in other APIs, such as Detection Resolution and ThreatGraph. |
+|`crowdstrike.event_type` | `keyword` | Type of the event |
+|`crowdstrike.host_id` | `keyword` | The crowdstrike identifier of the host |
+|`crowdstrike.incident_end` | `date` | Time of the latest activity in the incident |
+|`crowdstrike.incident_id` | `keyword` | The incident ID of the incident |
+|`crowdstrike.incident_start` | `date` | Time of the first activity in the incident |
+|`crowdstrike.operation_name` | `keyword` | Operation name |
+|`crowdstrike.state` | `keyword` | Shows if the incident is still active. open = the incident is still active, closed = the incident is not active |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |

@@ -1090,13 +1090,13 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.ip` | `ip` | IP addresses of the observer. |
 |`process.title` | `keyword` | Process title. |
 |`rule.name` | `keyword` | Rule name |
-|`sophos.customer.id` | `keyword` | None |
-|`sophos.destination.file.path` | `keyword` | None |
-|`sophos.destination.type` | `keyword` | None |
-|`sophos.endpoint.id` | `keyword` | None |
-|`sophos.endpoint.type` | `keyword` | None |
-|`sophos.event.group` | `keyword` | None |
-|`sophos.threat.name` | `keyword` | None |
+|`sophos.customer.id` | `keyword` | The identifier of the customer |
+|`sophos.destination.file.path` | `keyword` | The path of a destination transfert |
+|`sophos.destination.type` | `keyword` | The type of a destination transfert |
+|`sophos.endpoint.id` | `keyword` | The identifier of the endpoint |
+|`sophos.endpoint.type` | `keyword` | The type of the endpoint |
+|`sophos.event.group` | `keyword` | The family of the event |
+|`sophos.threat.name` | `keyword` | The name of the detected threat |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.id` | `keyword` | Unique identifier of the user. |
