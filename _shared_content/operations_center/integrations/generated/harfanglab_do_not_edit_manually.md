@@ -859,7 +859,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`action.properties` | `object` | None |
+|`action.properties` | `object` | A list of objects |
 |`agent.id` | `keyword` | Unique identifier of this agent. |
 |`agent.name` | `keyword` | Custom name of the agent. |
 |`destination.ip` | `ip` | IP address of the destination. |
@@ -880,14 +880,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`file.pe.imphash` | `keyword` | A hash of the imports in a PE file. |
 |`file.pe.original_file_name` | `keyword` | Internal name of the file, provided at compile-time. |
 |`file.pe.product` | `keyword` | Internal product name of the file, provided at compile-time. |
-|`harfanglab.aggregation_key` | `keyword` | None |
-|`harfanglab.alert_subtype` | `keyword` | None |
-|`harfanglab.alert_time` | `keyword` | None |
-|`harfanglab.alert_unique_id` | `keyword` | None |
-|`harfanglab.execution` | `long` | None |
-|`harfanglab.level` | `keyword` | None |
-|`harfanglab.process.powershell.command` | `keyword` | None |
-|`harfanglab.status` | `keyword` | None |
+|`harfanglab.aggregation_key` | `keyword` | The key to the events aggregation |
+|`harfanglab.alert_subtype` | `keyword` | The subtype of the alert |
+|`harfanglab.alert_time` | `keyword` | The timestamp of the alert |
+|`harfanglab.alert_unique_id` | `keyword` | The identifier of the alert |
+|`harfanglab.execution` | `long` | Execution time  |
+|`harfanglab.level` | `keyword` | The risk level associated to the alert |
+|`harfanglab.process.powershell.command` | `keyword` | The powershell command executed |
+|`harfanglab.status` | `keyword` | The status of the alert |
 |`host.domain` | `keyword` | Name of the directory the group is a member of. |
 |`host.hostname` | `keyword` | Hostname of the host. |
 |`host.os.full` | `keyword` | Operating system name, including the version or code name. |

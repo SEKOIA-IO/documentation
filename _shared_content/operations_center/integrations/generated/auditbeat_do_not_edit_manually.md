@@ -1622,13 +1622,13 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`agent.hostname` | `keyword` | None |
-|`cloud.image.id` | `keyword` | None |
+|`agent.hostname` | `keyword` | Deprecated - use agent.name or agent.id to identify an agent. Hostname of the agent. |
+|`cloud.image.id` | `keyword` | Image ID for the cloud instance. |
 |`container.image.name` | `keyword` | Name of the image the container was built on. |
 |`error.message` | `match_only_text` | Error message. |
-|`fields` | `object` | None |
+|`fields` | `object` | Contains user configurable fields. |
 |`host.name` | `keyword` | Name of the host. |
-|`log.hostname` | `keyword` | None |
+|`log.hostname` | `keyword` | Hostname of the computer (temporary fix for detection rules and smart description). |
 |`process.command_line` | `wildcard` | Full command line that started the process. |
 |`process.parent.pid` | `long` | Process id. |
 

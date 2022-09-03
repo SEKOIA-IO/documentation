@@ -3070,137 +3070,137 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`agent.version` | `keyword` | Version of the agent. |
-|`deepvisibility.agent.managment_url` | `keyword` | None |
-|`deepvisibility.agent.seq_id` | `long` | None |
-|`deepvisibility.agent.trace_id` | `keyword` | None |
-|`deepvisibility.agent.uuid` | `keyword` | None |
-|`deepvisibility.dns.answers.results` | `keyword` | None |
-|`deepvisibility.event.type` | `keyword` | None |
-|`deepvisibility.file.is_kernel_module` | `boolean` | None |
-|`deepvisibility.file.location` | `keyword` | None |
-|`deepvisibility.file.node.key` | `keyword` | None |
-|`deepvisibility.host.os.revision` | `keyword` | None |
-|`deepvisibility.indicator.category` | `keyword` | None |
-|`deepvisibility.indicator.classification` | `keyword` | None |
-|`deepvisibility.indicator.description` | `keyword` | None |
-|`deepvisibility.indicator.id` | `keyword` | None |
-|`deepvisibility.indicator.long_description` | `keyword` | None |
-|`deepvisibility.indicator.metadata` | `keyword` | None |
-|`deepvisibility.indicator.name` | `keyword` | None |
-|`deepvisibility.indicator.tactics` | `object` | None |
-|`deepvisibility.process.counters.cross_process` | `long` | None |
-|`deepvisibility.process.counters.cross_process_dup_process_handle` | `long` | None |
-|`deepvisibility.process.counters.cross_process_dup_thread_handle` | `long` | None |
-|`deepvisibility.process.counters.dns_lookups` | `long` | None |
-|`deepvisibility.process.counters.file_creation` | `long` | None |
-|`deepvisibility.process.counters.file_deletion` | `long` | None |
-|`deepvisibility.process.counters.file_modification` | `long` | None |
-|`deepvisibility.process.counters.model_child_process` | `long` | None |
-|`deepvisibility.process.counters.module_load` | `long` | None |
-|`deepvisibility.process.counters.net_conn_out` | `long` | None |
-|`deepvisibility.process.counters.os_child_process` | `long` | None |
-|`deepvisibility.process.counters.registry_modification` | `long` | None |
-|`deepvisibility.process.desired_access` | `long` | None |
-|`deepvisibility.process.excluded` | `keyword` | None |
-|`deepvisibility.process.executable.is_dir` | `keyword` | None |
-|`deepvisibility.process.executable.name` | `keyword` | None |
-|`deepvisibility.process.executable.node.key` | `keyword` | None |
-|`deepvisibility.process.executable.signature.signed.identity` | `keyword` | None |
-|`deepvisibility.process.executable.size_bytes` | `keyword` | None |
-|`deepvisibility.process.executable.start` | `keyword` | None |
-|`deepvisibility.process.family` | `keyword` | None |
-|`deepvisibility.process.integrity_level` | `keyword` | None |
-|`deepvisibility.process.interactive` | `keyword` | None |
-|`deepvisibility.process.is_redirected_command_processor` | `keyword` | None |
-|`deepvisibility.process.is_wow64` | `keyword` | None |
-|`deepvisibility.process.node.key` | `keyword` | None |
-|`deepvisibility.process.parent.counters.cross_process` | `long` | None |
-|`deepvisibility.process.parent.counters.cross_process_dup_process_handle` | `long` | None |
-|`deepvisibility.process.parent.counters.cross_process_dup_thread_handle` | `long` | None |
-|`deepvisibility.process.parent.counters.dns_lookups` | `long` | None |
-|`deepvisibility.process.parent.counters.file_creation` | `long` | None |
-|`deepvisibility.process.parent.counters.file_deletion` | `long` | None |
-|`deepvisibility.process.parent.counters.file_modification` | `long` | None |
-|`deepvisibility.process.parent.counters.model_child_process` | `long` | None |
-|`deepvisibility.process.parent.counters.module_load` | `long` | None |
-|`deepvisibility.process.parent.counters.net_conn_out` | `long` | None |
-|`deepvisibility.process.parent.counters.os_child_process` | `long` | None |
-|`deepvisibility.process.parent.counters.registry_modification` | `long` | None |
-|`deepvisibility.process.parent.excluded` | `keyword` | None |
-|`deepvisibility.process.parent.executable.is_dir` | `keyword` | None |
-|`deepvisibility.process.parent.executable.name` | `keyword` | None |
-|`deepvisibility.process.parent.executable.node.key` | `keyword` | None |
-|`deepvisibility.process.parent.executable.signature.signed.identity` | `keyword` | None |
-|`deepvisibility.process.parent.executable.size_bytes` | `keyword` | None |
-|`deepvisibility.process.parent.executable.start` | `keyword` | None |
-|`deepvisibility.process.parent.family` | `keyword` | None |
-|`deepvisibility.process.parent.integrity_level` | `keyword` | None |
-|`deepvisibility.process.parent.interactive` | `keyword` | None |
-|`deepvisibility.process.parent.is_redirected_command_processor` | `keyword` | None |
-|`deepvisibility.process.parent.is_wow64` | `keyword` | None |
-|`deepvisibility.process.parent.node.key` | `keyword` | None |
-|`deepvisibility.process.parent.parent.node.key` | `keyword` | None |
-|`deepvisibility.process.parent.root` | `keyword` | None |
-|`deepvisibility.process.parent.session_id` | `long` | None |
-|`deepvisibility.process.parent.true_context.key` | `keyword` | None |
-|`deepvisibility.process.parent.user.sid` | `keyword` | None |
-|`deepvisibility.process.relations` | `keyword` | None |
-|`deepvisibility.process.root` | `keyword` | None |
-|`deepvisibility.process.session_id` | `long` | None |
-|`deepvisibility.process.target.command_line` | `keyword` | None |
-|`deepvisibility.process.target.counters.cross_process` | `long` | None |
-|`deepvisibility.process.target.counters.cross_process_dup_process_handle` | `long` | None |
-|`deepvisibility.process.target.counters.cross_process_dup_thread_handle` | `long` | None |
-|`deepvisibility.process.target.counters.dns_lookups` | `long` | None |
-|`deepvisibility.process.target.counters.file_creation` | `long` | None |
-|`deepvisibility.process.target.counters.file_deletion` | `long` | None |
-|`deepvisibility.process.target.counters.file_modification` | `long` | None |
-|`deepvisibility.process.target.counters.model_child_process` | `long` | None |
-|`deepvisibility.process.target.counters.module_load` | `long` | None |
-|`deepvisibility.process.target.counters.net_conn_out` | `long` | None |
-|`deepvisibility.process.target.counters.os_child_process` | `long` | None |
-|`deepvisibility.process.target.counters.registry_modification` | `long` | None |
-|`deepvisibility.process.target.excluded` | `keyword` | None |
-|`deepvisibility.process.target.executable` | `keyword` | None |
-|`deepvisibility.process.target.executable.is_dir` | `keyword` | None |
-|`deepvisibility.process.target.executable.name` | `keyword` | None |
-|`deepvisibility.process.target.executable.node.key` | `keyword` | None |
-|`deepvisibility.process.target.executable.signature.signed.identity` | `keyword` | None |
-|`deepvisibility.process.target.executable.size_bytes` | `keyword` | None |
-|`deepvisibility.process.target.executable.start` | `keyword` | None |
-|`deepvisibility.process.target.family` | `keyword` | None |
-|`deepvisibility.process.target.hash.md5` | `keyword` | None |
-|`deepvisibility.process.target.hash.sha1` | `keyword` | None |
-|`deepvisibility.process.target.hash.sha256` | `keyword` | None |
-|`deepvisibility.process.target.integrity_level` | `keyword` | None |
-|`deepvisibility.process.target.interactive` | `keyword` | None |
-|`deepvisibility.process.target.is_redirected_command_processor` | `keyword` | None |
-|`deepvisibility.process.target.is_wow64` | `keyword` | None |
-|`deepvisibility.process.target.name` | `keyword` | None |
-|`deepvisibility.process.target.node.key` | `keyword` | None |
-|`deepvisibility.process.target.parent.node.key` | `keyword` | None |
-|`deepvisibility.process.target.pid` | `long` | None |
-|`deepvisibility.process.target.root` | `keyword` | None |
-|`deepvisibility.process.target.session_id` | `long` | None |
-|`deepvisibility.process.target.start` | `date` | None |
-|`deepvisibility.process.target.true_context.key` | `keyword` | None |
-|`deepvisibility.process.target.user.sid` | `keyword` | None |
-|`deepvisibility.process.target.working_directory` | `keyword` | None |
-|`deepvisibility.process.true_context.key` | `keyword` | None |
-|`deepvisibility.process.user.sid` | `keyword` | None |
-|`deepvisibility.registry.export_path` | `keyword` | None |
-|`deepvisibility.registry.import_path` | `keyword` | None |
-|`deepvisibility.registry.new.value_type` | `keyword` | None |
-|`deepvisibility.registry.old.data.bytes` | `keyword` | None |
-|`deepvisibility.registry.old.data.strings` | `keyword` | None |
-|`deepvisibility.registry.old.key_name` | `keyword` | None |
-|`deepvisibility.registry.old.value_type` | `keyword` | None |
-|`deepvisibility.registry.security_information` | `long` | None |
-|`deepvisibility.registry.value_type` | `keyword` | None |
-|`deepvisibility.scheduled_task.name` | `keyword` | None |
-|`deepvisibility.scheduled_task.trigger_type` | `long` | None |
-|`deepvisibility.script.app_name` | `keyword` | None |
-|`deepvisibility.true_context.key` | `keyword` | None |
+|`deepvisibility.agent.managment_url` | `keyword` |  |
+|`deepvisibility.agent.seq_id` | `long` |  |
+|`deepvisibility.agent.trace_id` | `keyword` |  |
+|`deepvisibility.agent.uuid` | `keyword` |  |
+|`deepvisibility.dns.answers.results` | `keyword` |  |
+|`deepvisibility.event.type` | `keyword` |  |
+|`deepvisibility.file.is_kernel_module` | `boolean` | Whether or not the file is part of the kernel |
+|`deepvisibility.file.location` | `keyword` |  |
+|`deepvisibility.file.node.key` | `keyword` |  |
+|`deepvisibility.host.os.revision` | `keyword` |  |
+|`deepvisibility.indicator.category` | `keyword` |  |
+|`deepvisibility.indicator.classification` | `keyword` |  |
+|`deepvisibility.indicator.description` | `keyword` |  |
+|`deepvisibility.indicator.id` | `keyword` |  |
+|`deepvisibility.indicator.long_description` | `keyword` |  |
+|`deepvisibility.indicator.metadata` | `keyword` |  |
+|`deepvisibility.indicator.name` | `keyword` |  |
+|`deepvisibility.indicator.tactics` | `object` |  |
+|`deepvisibility.process.counters.cross_process` | `long` |  |
+|`deepvisibility.process.counters.cross_process_dup_process_handle` | `long` |  |
+|`deepvisibility.process.counters.cross_process_dup_thread_handle` | `long` |  |
+|`deepvisibility.process.counters.dns_lookups` | `long` |  |
+|`deepvisibility.process.counters.file_creation` | `long` |  |
+|`deepvisibility.process.counters.file_deletion` | `long` |  |
+|`deepvisibility.process.counters.file_modification` | `long` |  |
+|`deepvisibility.process.counters.model_child_process` | `long` |  |
+|`deepvisibility.process.counters.module_load` | `long` |  |
+|`deepvisibility.process.counters.net_conn_out` | `long` |  |
+|`deepvisibility.process.counters.os_child_process` | `long` |  |
+|`deepvisibility.process.counters.registry_modification` | `long` |  |
+|`deepvisibility.process.desired_access` | `long` | Process desired access |
+|`deepvisibility.process.excluded` | `keyword` |  |
+|`deepvisibility.process.executable.is_dir` | `keyword` |  |
+|`deepvisibility.process.executable.name` | `keyword` |  |
+|`deepvisibility.process.executable.node.key` | `keyword` |  |
+|`deepvisibility.process.executable.signature.signed.identity` | `keyword` |  |
+|`deepvisibility.process.executable.size_bytes` | `keyword` |  |
+|`deepvisibility.process.executable.start` | `keyword` |  |
+|`deepvisibility.process.family` | `keyword` |  |
+|`deepvisibility.process.integrity_level` | `keyword` |  |
+|`deepvisibility.process.interactive` | `keyword` |  |
+|`deepvisibility.process.is_redirected_command_processor` | `keyword` |  |
+|`deepvisibility.process.is_wow64` | `keyword` |  |
+|`deepvisibility.process.node.key` | `keyword` |  |
+|`deepvisibility.process.parent.counters.cross_process` | `long` |  |
+|`deepvisibility.process.parent.counters.cross_process_dup_process_handle` | `long` |  |
+|`deepvisibility.process.parent.counters.cross_process_dup_thread_handle` | `long` |  |
+|`deepvisibility.process.parent.counters.dns_lookups` | `long` |  |
+|`deepvisibility.process.parent.counters.file_creation` | `long` |  |
+|`deepvisibility.process.parent.counters.file_deletion` | `long` |  |
+|`deepvisibility.process.parent.counters.file_modification` | `long` |  |
+|`deepvisibility.process.parent.counters.model_child_process` | `long` |  |
+|`deepvisibility.process.parent.counters.module_load` | `long` |  |
+|`deepvisibility.process.parent.counters.net_conn_out` | `long` |  |
+|`deepvisibility.process.parent.counters.os_child_process` | `long` |  |
+|`deepvisibility.process.parent.counters.registry_modification` | `long` |  |
+|`deepvisibility.process.parent.excluded` | `keyword` |  |
+|`deepvisibility.process.parent.executable.is_dir` | `keyword` |  |
+|`deepvisibility.process.parent.executable.name` | `keyword` |  |
+|`deepvisibility.process.parent.executable.node.key` | `keyword` |  |
+|`deepvisibility.process.parent.executable.signature.signed.identity` | `keyword` |  |
+|`deepvisibility.process.parent.executable.size_bytes` | `keyword` |  |
+|`deepvisibility.process.parent.executable.start` | `keyword` |  |
+|`deepvisibility.process.parent.family` | `keyword` |  |
+|`deepvisibility.process.parent.integrity_level` | `keyword` |  |
+|`deepvisibility.process.parent.interactive` | `keyword` |  |
+|`deepvisibility.process.parent.is_redirected_command_processor` | `keyword` |  |
+|`deepvisibility.process.parent.is_wow64` | `keyword` |  |
+|`deepvisibility.process.parent.node.key` | `keyword` |  |
+|`deepvisibility.process.parent.parent.node.key` | `keyword` |  |
+|`deepvisibility.process.parent.root` | `keyword` |  |
+|`deepvisibility.process.parent.session_id` | `long` |  |
+|`deepvisibility.process.parent.true_context.key` | `keyword` |  |
+|`deepvisibility.process.parent.user.sid` | `keyword` |  |
+|`deepvisibility.process.relations` | `keyword` | Relations between source and target |
+|`deepvisibility.process.root` | `keyword` |  |
+|`deepvisibility.process.session_id` | `long` |  |
+|`deepvisibility.process.target.command_line` | `keyword` | Full command line that started the process, including the absolute path to the executable, and all arguments. Some arguments may be filtered to protect sensitive information. |
+|`deepvisibility.process.target.counters.cross_process` | `long` |  |
+|`deepvisibility.process.target.counters.cross_process_dup_process_handle` | `long` |  |
+|`deepvisibility.process.target.counters.cross_process_dup_thread_handle` | `long` |  |
+|`deepvisibility.process.target.counters.dns_lookups` | `long` |  |
+|`deepvisibility.process.target.counters.file_creation` | `long` |  |
+|`deepvisibility.process.target.counters.file_deletion` | `long` |  |
+|`deepvisibility.process.target.counters.file_modification` | `long` |  |
+|`deepvisibility.process.target.counters.model_child_process` | `long` |  |
+|`deepvisibility.process.target.counters.module_load` | `long` |  |
+|`deepvisibility.process.target.counters.net_conn_out` | `long` |  |
+|`deepvisibility.process.target.counters.os_child_process` | `long` |  |
+|`deepvisibility.process.target.counters.registry_modification` | `long` |  |
+|`deepvisibility.process.target.excluded` | `keyword` |  |
+|`deepvisibility.process.target.executable` | `keyword` | Absolute path to the process executable. |
+|`deepvisibility.process.target.executable.is_dir` | `keyword` |  |
+|`deepvisibility.process.target.executable.name` | `keyword` |  |
+|`deepvisibility.process.target.executable.node.key` | `keyword` |  |
+|`deepvisibility.process.target.executable.signature.signed.identity` | `keyword` |  |
+|`deepvisibility.process.target.executable.size_bytes` | `keyword` |  |
+|`deepvisibility.process.target.executable.start` | `keyword` |  |
+|`deepvisibility.process.target.family` | `keyword` |  |
+|`deepvisibility.process.target.hash.md5` | `keyword` | MD5 hash. |
+|`deepvisibility.process.target.hash.sha1` | `keyword` | SHA1 hash. |
+|`deepvisibility.process.target.hash.sha256` | `keyword` | SHA256 hash. |
+|`deepvisibility.process.target.integrity_level` | `keyword` |  |
+|`deepvisibility.process.target.interactive` | `keyword` |  |
+|`deepvisibility.process.target.is_redirected_command_processor` | `keyword` |  |
+|`deepvisibility.process.target.is_wow64` | `keyword` |  |
+|`deepvisibility.process.target.name` | `keyword` | Process name. |
+|`deepvisibility.process.target.node.key` | `keyword` |  |
+|`deepvisibility.process.target.parent.node.key` | `keyword` |  |
+|`deepvisibility.process.target.pid` | `long` | Process id. |
+|`deepvisibility.process.target.root` | `keyword` |  |
+|`deepvisibility.process.target.session_id` | `long` |  |
+|`deepvisibility.process.target.start` | `date` | The time the process started. |
+|`deepvisibility.process.target.true_context.key` | `keyword` |  |
+|`deepvisibility.process.target.user.sid` | `keyword` |  |
+|`deepvisibility.process.target.working_directory` | `keyword` | The working directory of the process. |
+|`deepvisibility.process.true_context.key` | `keyword` |  |
+|`deepvisibility.process.user.sid` | `keyword` |  |
+|`deepvisibility.registry.export_path` | `keyword` |  |
+|`deepvisibility.registry.import_path` | `keyword` |  |
+|`deepvisibility.registry.new.value_type` | `keyword` |  |
+|`deepvisibility.registry.old.data.bytes` | `keyword` |  |
+|`deepvisibility.registry.old.data.strings` | `keyword` |  |
+|`deepvisibility.registry.old.key_name` | `keyword` |  |
+|`deepvisibility.registry.old.value_type` | `keyword` |  |
+|`deepvisibility.registry.security_information` | `long` |  |
+|`deepvisibility.registry.value_type` | `keyword` |  |
+|`deepvisibility.scheduled_task.name` | `keyword` | Scheduled task name |
+|`deepvisibility.scheduled_task.trigger_type` | `long` | Scheduled task trigger type |
+|`deepvisibility.script.app_name` | `keyword` |  |
+|`deepvisibility.true_context.key` | `keyword` |  |
 |`destination.address` | `keyword` | Destination network address. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.port` | `long` | Port of the destination. |
@@ -3232,7 +3232,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.code_signature.exists` | `boolean` | Boolean to capture if a signature is present. |
 |`process.code_signature.subject_name` | `keyword` | Subject name of the code signer |
 |`process.code_signature.valid` | `boolean` | Boolean to capture if the digital signature is verified against the binary content. |
-|`process.command_line` | `keyword` | None |
+|`process.command_line` | `keyword` |  |
 |`process.executable` | `keyword` | Absolute path to the process executable. |
 |`process.exit_code` | `long` | The exit code of the process. |
 |`process.hash.md5` | `keyword` | MD5 hash. |

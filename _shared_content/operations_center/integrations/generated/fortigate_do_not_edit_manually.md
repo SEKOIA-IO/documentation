@@ -1717,11 +1717,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
-|`fortinet.apprisk` | `keyword` | None |
-|`fortinet.event.desc` | `keyword` | None |
+|`fortinet.apprisk` | `keyword` | Risk level of the application. |
+|`fortinet.event.desc` | `keyword` | Type of log. |
 |`http.request.method` | `keyword` | HTTP request method. |
-|`icmp.request.code` | `keyword` | None |
-|`icmp.request.type` | `keyword` | None |
+|`icmp.request.code` | `keyword` | The request code. |
+|`icmp.request.type` | `keyword` | The request type. |
 |`log.level` | `keyword` | Log level of the log event. |
 |`network.application` | `keyword` | Application level protocol name. |
 |`network.protocol` | `keyword` | Application protocol name. |

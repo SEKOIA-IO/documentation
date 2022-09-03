@@ -129,16 +129,16 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`email.from.address` | `keyword` | None |
-|`email.message_id` | `keyword` | None |
-|`email.subject` | `keyword` | None |
-|`email.to.address` | `keyword` | None |
+|`email.from.address` | `keyword` | The sender's email address. |
+|`email.message_id` | `keyword` | Value from the Message-ID header. |
+|`email.subject` | `keyword` | The subject of the email message. |
+|`email.to.address` | `keyword` | Email address of recipient. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
-|`office365.message_trace.MessageTraceId` | `keyword` | None |
-|`office365.message_trace.Size` | `number` | None |
+|`office365.message_trace.MessageTraceId` | `keyword` | An identifier used to get the detailed message transfer trace information.  |
+|`office365.message_trace.Size` | `number` | The size of the message, in bytes. |
 |`organization.name` | `keyword` | Organization name. |
 |`source.ip` | `ip` | IP address of the source. |
 

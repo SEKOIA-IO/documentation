@@ -242,16 +242,16 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
-|`google_vpc_flow_logs.insertId` | `keyword` | None |
-|`google_vpc_flow_logs.jsonPayload.connection.protocol` | `number` | None |
-|`google_vpc_flow_logs.jsonPayload.dest_gke_details.cluster.cluster_location` | `keyword` | None |
-|`google_vpc_flow_logs.jsonPayload.dest_vpc.vpc_name` | `keyword` | None |
-|`google_vpc_flow_logs.jsonPayload.reporter` | `keyword` | None |
-|`google_vpc_flow_logs.logName` | `keyword` | None |
-|`google_vpc_flow_logs.receiveTimestamp` | `keyword` | None |
-|`google_vpc_flow_logs.resource.labels.subnetwork_id` | `keyword` | None |
-|`google_vpc_flow_logs.resource.labels.subnetwork_name` | `keyword` | None |
-|`google_vpc_flow_logs.resource.type` | `keyword` | None |
+|`google_vpc_flow_logs.insertId` | `keyword` |  |
+|`google_vpc_flow_logs.jsonPayload.connection.protocol` | `number` |  |
+|`google_vpc_flow_logs.jsonPayload.dest_gke_details.cluster.cluster_location` | `keyword` |  |
+|`google_vpc_flow_logs.jsonPayload.dest_vpc.vpc_name` | `keyword` |  |
+|`google_vpc_flow_logs.jsonPayload.reporter` | `keyword` |  |
+|`google_vpc_flow_logs.logName` | `keyword` |  |
+|`google_vpc_flow_logs.receiveTimestamp` | `keyword` |  |
+|`google_vpc_flow_logs.resource.labels.subnetwork_id` | `keyword` |  |
+|`google_vpc_flow_logs.resource.labels.subnetwork_name` | `keyword` |  |
+|`google_vpc_flow_logs.resource.type` | `keyword` |  |
 |`host.name` | `keyword` | Name of the host. |
 |`network.bytes` | `long` | Total bytes transferred in both directions. |
 |`network.iana_number` | `keyword` | IANA Protocol Number. |

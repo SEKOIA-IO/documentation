@@ -271,16 +271,16 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`email.attachments` | `array` | None |
-|`email.cc.address` | `keyword` | None |
-|`email.from.address` | `keyword` | None |
-|`email.local_id` | `keyword` | None |
-|`email.message_id` | `keyword` | None |
-|`email.reply_to.address` | `keyword` | None |
-|`email.sender.address` | `keyword` | None |
-|`email.subject` | `keyword` | None |
-|`email.to.address` | `keyword` | None |
-|`email.x_mailer` | `keyword` | None |
+|`email.attachments` | `array` | A list of objects describing the attachment files sent along with an email message |
+|`email.cc.address` | `keyword` | The email address of CC recipient |
+|`email.from.address` | `keyword` | The email address of the sender, typically from the RFC 5322 From: header field |
+|`email.local_id` | `keyword` | Unique identifier given to the email by the source that created the event |
+|`email.message_id` | `keyword` | Identifier from the RFC 5322 Message-ID: email header that refers to a particular email message |
+|`email.reply_to.address` | `keyword` | The address that replies should be delivered to based on the value in the RFC 5322 Reply-To: header |
+|`email.sender.address` | `keyword` | Per RFC 5322, specifies the address responsible for the actual transmission of the message |
+|`email.subject` | `keyword` | A brief summary of the topic of the message |
+|`email.to.address` | `keyword` | The email address of recipient |
+|`email.x_mailer` | `keyword` | The mailer that send the message |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.dataset` | `keyword` | Name of the dataset. |
@@ -288,17 +288,17 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
-|`proofpoint.tap.cluster.id` | `keyword` | None |
-|`proofpoint.tap.email.to.address` | `array` | None |
-|`proofpoint.tap.modules` | `array` | None |
-|`proofpoint.tap.threat.classifications` | `array` | None |
-|`proofpoint.tap.threat.scores.impostor` | `number` | None |
-|`proofpoint.tap.threat.scores.malware` | `number` | None |
-|`proofpoint.tap.threat.scores.phish` | `number` | None |
-|`proofpoint.tap.threat.scores.spam` | `number` | None |
+|`proofpoint.tap.cluster.id` | `keyword` | The name of the cluster which processed the message |
+|`proofpoint.tap.email.to.address` | `array` | The list of recipients from the TO header |
+|`proofpoint.tap.modules` | `array` | The list of modules which processed the message |
+|`proofpoint.tap.threat.classifications` | `array` | The list of classifications of the threat |
+|`proofpoint.tap.threat.scores.impostor` | `number` | The impostor score of the message |
+|`proofpoint.tap.threat.scores.malware` | `number` | The malware score of the message |
+|`proofpoint.tap.threat.scores.phish` | `number` | The phish score of the message |
+|`proofpoint.tap.threat.scores.spam` | `number` | The spam score of the message |
 |`rule.name` | `keyword` | Rule name |
 |`source.ip` | `ip` | IP address of the source. |
-|`threat.enrichments` | `array` | None |
+|`threat.enrichments` | `array` | Threat indicators associated to the message |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 

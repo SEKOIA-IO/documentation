@@ -833,20 +833,20 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
 |`http.response.status_code` | `long` | HTTP response status code. |
-|`imperva.attack.id` | `keyword` | None |
-|`imperva.attack.type` | `keyword` | None |
-|`imperva.client.captcha_support` | `keyword` | None |
-|`imperva.client.cookie_support` | `boolean` | None |
-|`imperva.client.js_support` | `boolean` | None |
-|`imperva.pop` | `keyword` | None |
-|`imperva.request.headers` | `array` | None |
-|`imperva.request.x_forwarded_for` | `text` | None |
-|`imperva.response.headers` | `array` | None |
-|`imperva.rule.additional_info` | `text` | None |
-|`imperva.rule.names` | `array` | None |
-|`imperva.session.id` | `long` | None |
-|`imperva.user_agent.type` | `keyword` | None |
-|`imperva.visitor.id` | `keyword` | None |
+|`imperva.attack.id` | `keyword` | Imperva attack id. |
+|`imperva.attack.type` | `keyword` | The type of attack. |
+|`imperva.client.captcha_support` | `keyword` | Whether or not the client application supports Captcha. |
+|`imperva.client.cookie_support` | `boolean` | Whether or not the client application supports cookies. |
+|`imperva.client.js_support` | `boolean` | Whether or not the client application supports JavaScript. |
+|`imperva.pop` | `keyword` | The Imperva PoP that handled the request. |
+|`imperva.request.headers` | `array` | Request headers in JSON format, with each field represented as a name-value pair. |
+|`imperva.request.x_forwarded_for` | `text` | The X-Forwarded-For request header. |
+|`imperva.response.headers` | `array` | Response headers in JSON format, with each field represented as a name-value pair. |
+|`imperva.rule.additional_info` | `text` | Additional information on the violation that triggered the rule, in JSON format. Used for API Specification Violation events. |
+|`imperva.rule.names` | `array` | The threat rule name that this request triggered. For example, SQL Injection or Blocked IP (ACL). |
+|`imperva.session.id` | `long` | The unique identification. |
+|`imperva.user_agent.type` | `keyword` | The browser type. |
+|`imperva.visitor.id` | `keyword` | The ID of the visitor. |
 |`network.protocol` | `keyword` | Application protocol name. |
 |`rule.name` | `keyword` | Rule name |
 |`source.ip` | `ip` | IP address of the source. |

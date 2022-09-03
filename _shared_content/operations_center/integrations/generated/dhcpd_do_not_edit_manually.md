@@ -178,7 +178,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`destination.ip` | `ip` | IP address of the destination. |
-|`dhcpd.query` | `keyword` | None |
+|`dhcpd.query` | `keyword` | name of the DHCP query |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.outcome` | `keyword` | The outcome of the event. The lowest level categorization field in the hierarchy. |

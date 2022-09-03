@@ -333,5 +333,5 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`source.mac` | `keyword` | MAC address of the source. |
 |`source.port` | `long` | Port of the source. |
-|`stormshield.filter.action` | `keyword` | None |
+|`stormshield.filter.action` | `keyword` | The action asociated to the filter rule |
 

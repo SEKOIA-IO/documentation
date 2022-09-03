@@ -623,14 +623,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`rule.category` | `keyword` | Rule category |
 |`rule.name` | `keyword` | Rule name |
 |`rule.ruleset` | `keyword` | Rule ruleset |
-|`skyhighsecurity.application.name` | `keyword` | None |
-|`skyhighsecurity.application.reputation` | `keyword` | None |
-|`skyhighsecurity.http.body.infected` | `keyword` | None |
-|`skyhighsecurity.http.body.modified` | `keyword` | None |
-|`skyhighsecurity.url.categories` | `text` | None |
-|`skyhighsecurity.url.reputation` | `keyword` | None |
-|`skyhighsecurity.url.reputation_code` | `number` | None |
-|`skyhighsecurity.viruses` | `text` | None |
+|`skyhighsecurity.application.name` | `keyword` | The name of the web application requested |
+|`skyhighsecurity.application.reputation` | `keyword` | The reputation string of the web application requested |
+|`skyhighsecurity.http.body.infected` | `keyword` | Flag to indicate if the body was infected |
+|`skyhighsecurity.http.body.modified` | `keyword` | Flag to indicate if the body was modified (due to infection) |
+|`skyhighsecurity.url.categories` | `text` | The list of categories associated to the url |
+|`skyhighsecurity.url.reputation` | `keyword` | The reputation string of an url |
+|`skyhighsecurity.url.reputation_code` | `number` | The reputation code of an url |
+|`skyhighsecurity.viruses` | `text` | A list of virus name |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.nat.ip` | `ip` | Source NAT ip |

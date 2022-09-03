@@ -959,16 +959,16 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`action.properties` | `object` | None |
-|`action.target` | `keyword` | None |
-|`email.attachments` | `array` | None |
-|`email.delivery_timestamp` | `date` | None |
-|`email.from.address` | `keyword` | None |
-|`email.local_id` | `keyword` | None |
-|`email.message_id` | `keyword` | None |
-|`email.reply_to.address` | `keyword` | None |
-|`email.subject` | `keyword` | None |
-|`email.to.address` | `keyword` | None |
+|`action.properties` | `object` | A list of objects describing the action |
+|`action.target` | `keyword` | The target of the action |
+|`email.attachments` | `array` | A list of objects describing the attachment files sent along with an email message |
+|`email.delivery_timestamp` | `date` | The date and time when the email message was received by the service or client |
+|`email.from.address` | `keyword` | The email address of the sender, typically from the RFC 5322 From: header field |
+|`email.local_id` | `keyword` | Unique identifier given to the email by the source that created the event |
+|`email.message_id` | `keyword` | Identifier from the RFC 5322 Message-ID: email header that refers to a particular email message |
+|`email.reply_to.address` | `keyword` | The address that replies should be delivered to based on the value in the RFC 5322 Reply-To: header |
+|`email.subject` | `keyword` | A brief summary of the topic of the message |
+|`email.to.address` | `keyword` | The email address of recipient |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
@@ -977,41 +977,41 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.url` | `keyword` | Event investigation URL |
 |`file.directory` | `keyword` | Directory where the file is located. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
-|`office365.context.aad_session_id` | `keyword` | None |
-|`office365.context.api_id` | `keyword` | None |
-|`office365.context.client.id` | `keyword` | None |
-|`office365.context.client.name` | `keyword` | None |
-|`office365.context.correlation.id` | `keyword` | None |
-|`office365.defender.additional_actions` | `array` | None |
-|`office365.defender.auth_details` | `array` | None |
-|`office365.defender.connectors` | `keyword` | None |
-|`office365.defender.detection.method` | `keyword` | None |
-|`office365.defender.detection.technology` | `keyword` | None |
-|`office365.defender.detection.type` | `keyword` | None |
-|`office365.defender.email.attachments` | `array` | None |
-|`office365.defender.email.delivery.action` | `keyword` | None |
-|`office365.defender.email.delivery.latest_location` | `keyword` | None |
-|`office365.defender.email.delivery.original_location` | `keyword` | None |
-|`office365.defender.email.verdict.confidence` | `keyword` | None |
-|`office365.defender.email.verdict.reason` | `keyword` | None |
-|`office365.defender.system_overrides` | `array` | None |
-|`office365.record_type` | `long` | None |
-|`office365.result_status` | `keyword` | None |
-|`office365.scope.code` | `long` | None |
-|`office365.teams.action` | `keyword` | None |
-|`office365.teams.channel.id` | `keyword` | None |
-|`office365.teams.channel.name` | `keyword` | None |
-|`office365.teams.channel.type` | `keyword` | None |
-|`office365.teams.communication.type` | `keyword` | None |
-|`office365.teams.invitee` | `keyword` | None |
-|`office365.teams.message.id` | `keyword` | None |
-|`office365.teams.message.size` | `long` | None |
-|`office365.teams.message.urls` | `keyword` | None |
-|`office365.teams.message.version` | `keyword` | None |
-|`office365.teams.team.id` | `keyword` | None |
-|`office365.teams.team.members` | `object` | None |
-|`office365.teams.team.name` | `keyword` | None |
-|`office365.user_type.code` | `long` | None |
+|`office365.context.aad_session_id` | `keyword` | The identifier of an Azure Active Directory session |
+|`office365.context.api_id` | `keyword` | The identifier of the API pathway |
+|`office365.context.client.id` | `keyword` | The identifier of Azure Active Directory application |
+|`office365.context.client.name` | `keyword` | The name of Azure Active Directory application |
+|`office365.context.correlation.id` | `keyword` | The identifier to correlate user's action across Microsoft 365 services |
+|`office365.defender.additional_actions` | `array` | The additional actions taken on the email |
+|`office365.defender.auth_details` | `array` | The authentication checks that are done for the email |
+|`office365.defender.connectors` | `keyword` | Identifiers of connectors associated with the email |
+|`office365.defender.detection.method` | `keyword` | The method or the technology used for the detection |
+|`office365.defender.detection.technology` | `keyword` | The threats and technologies applied on the email |
+|`office365.defender.detection.type` | `keyword` | The type of detection |
+|`office365.defender.email.attachments` | `array` | The attachements of the email |
+|`office365.defender.email.delivery.action` | `keyword` | The original action delivery on the email |
+|`office365.defender.email.delivery.latest_location` | `keyword` | The latest location delivery of the email |
+|`office365.defender.email.delivery.original_location` | `keyword` | The original location delivery of the email |
+|`office365.defender.email.verdict.confidence` | `keyword` | The confidence in the verdict |
+|`office365.defender.email.verdict.reason` | `keyword` | The verdict about the messahe |
+|`office365.defender.system_overrides` | `array` | Overrides that are applicable to the email |
+|`office365.record_type` | `long` | The type of the operation |
+|`office365.result_status` | `keyword` | Indicates whether the action was successful or not |
+|`office365.scope.code` | `long` | The origin (saas or on-premise) of the event |
+|`office365.teams.action` | `keyword` | The action taken by an invitee or the channel owner |
+|`office365.teams.channel.id` | `keyword` | The identifier of the channel |
+|`office365.teams.channel.name` | `keyword` | The name of the channel |
+|`office365.teams.channel.type` | `keyword` | The type of the channel |
+|`office365.teams.communication.type` | `keyword` | The type of communication |
+|`office365.teams.invitee` | `keyword` | The identifier of an invitee |
+|`office365.teams.message.id` | `keyword` | The identifier of the message |
+|`office365.teams.message.size` | `long` | The size of the message in bytes with UTF-16 encoding |
+|`office365.teams.message.urls` | `keyword` | A list of urls present in the message |
+|`office365.teams.message.version` | `keyword` | The version of the message |
+|`office365.teams.team.id` | `keyword` | The identifier of the team |
+|`office365.teams.team.members` | `object` | The list of users in a team |
+|`office365.teams.team.name` | `keyword` | The name of the team |
+|`office365.user_type.code` | `long` | The type of user that performed the operation |
 |`organization.id` | `keyword` | Unique identifier for the organization. |
 |`rule.category` | `keyword` | Rule category |
 |`service.name` | `keyword` | Name of the service. |

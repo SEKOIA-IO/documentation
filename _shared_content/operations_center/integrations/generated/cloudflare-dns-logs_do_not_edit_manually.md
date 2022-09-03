@@ -149,10 +149,10 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`cloudflare.ColoCode` | `keyword` | None |
-|`cloudflare.EDNSSubnet` | `keyword` | None |
-|`cloudflare.EDNSSubnetLength` | `number` | None |
-|`cloudflare.ResponseCached` | `bool` | None |
+|`cloudflare.ColoCode` | `keyword` | IATA airport code of data center that received the request |
+|`cloudflare.EDNSSubnet` | `keyword` | EDNS Client Subnet (IPv4 or IPv6) |
+|`cloudflare.EDNSSubnetLength` | `number` | EDNS Client Subnet length |
+|`cloudflare.ResponseCached` | `bool` | Whether the response was cached or not |
 |`dns.question.name` | `keyword` | The name being queried. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.dataset` | `keyword` | Name of the dataset. |

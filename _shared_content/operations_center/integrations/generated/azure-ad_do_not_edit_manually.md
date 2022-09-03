@@ -878,52 +878,52 @@ The following table lists the fields that are extracted, normalized under the EC
 | ---- | ---- | ---------------------------|
 |`action.properties` | `array` | action.properties |
 |`action.target` | `keyword` | action.target |
-|`azuread.Level` | `long` | None |
-|`azuread.activityDateTime` | `keyword` | None |
-|`azuread.additionalInfo` | `keyword` | None |
-|`azuread.authenticationDetails` | `array` | None |
-|`azuread.authenticationProtocol` | `keyword` | None |
-|`azuread.authenticationRequirement` | `keyword` | None |
-|`azuread.authenticationRequirementPolicies` | `array` | None |
-|`azuread.autonomousSystemNumber` | `long` | None |
-|`azuread.callerIpAddress` | `keyword` | None |
-|`azuread.category` | `keyword` | None |
-|`azuread.correlationId` | `keyword` | None |
-|`azuread.crossTenantAccessType` | `keyword` | None |
-|`azuread.detectedDateTime` | `keyword` | None |
-|`azuread.durationMs` | `long` | None |
-|`azuread.flaggedForReview` | `bool` | None |
-|`azuread.homeTenantId` | `keyword` | None |
-|`azuread.identity` | `keyword` | None |
-|`azuread.incomingTokenType` | `keyword` | None |
-|`azuread.isTenantRestricted` | `bool` | None |
-|`azuread.lastUpdatedDateTime` | `keyword` | None |
-|`azuread.operationName` | `keyword` | None |
-|`azuread.operationVersion` | `keyword` | None |
-|`azuread.privateLinkDetails` | `list` | None |
-|`azuread.properties.activity` | `keyword` | None |
-|`azuread.properties.correlationId` | `keyword` | None |
-|`azuread.properties.detectionTimingType` | `keyword` | None |
-|`azuread.properties.id` | `keyword` | None |
-|`azuread.properties.requestId` | `keyword` | None |
-|`azuread.properties.riskDetail` | `keyword` | None |
-|`azuread.properties.riskEventType` | `keyword` | None |
-|`azuread.properties.riskLevel` | `keyword` | None |
-|`azuread.properties.riskState` | `keyword` | None |
-|`azuread.properties.source` | `keyword` | None |
-|`azuread.properties.status.errorCode` | `keyword` | None |
-|`azuread.properties.status.failureReason` | `keyword` | None |
-|`azuread.properties.targetDevicePrincipalName` | `keyword` | None |
-|`azuread.properties.targetUserPrincipalName` | `keyword` | None |
-|`azuread.resourceId` | `keyword` | None |
-|`azuread.resourceTenantId` | `keyword` | None |
-|`azuread.resultSignature` | `keyword` | None |
-|`azuread.servicePrincipalId` | `keyword` | None |
-|`azuread.ssoExtensionVersion` | `keyword` | None |
-|`azuread.tenantId` | `keyword` | None |
-|`azuread.tokenIssuerType` | `keyword` | None |
-|`azuread.uniqueTokenIdentifier` | `keyword` | None |
-|`azuread.userType` | `keyword` | None |
+|`azuread.Level` | `long` |  |
+|`azuread.activityDateTime` | `keyword` |  |
+|`azuread.additionalInfo` | `keyword` |  |
+|`azuread.authenticationDetails` | `array` |  |
+|`azuread.authenticationProtocol` | `keyword` |  |
+|`azuread.authenticationRequirement` | `keyword` |  |
+|`azuread.authenticationRequirementPolicies` | `array` |  |
+|`azuread.autonomousSystemNumber` | `long` |  |
+|`azuread.callerIpAddress` | `keyword` |  |
+|`azuread.category` | `keyword` |  |
+|`azuread.correlationId` | `keyword` |  |
+|`azuread.crossTenantAccessType` | `keyword` |  |
+|`azuread.detectedDateTime` | `keyword` |  |
+|`azuread.durationMs` | `long` |  |
+|`azuread.flaggedForReview` | `bool` |  |
+|`azuread.homeTenantId` | `keyword` |  |
+|`azuread.identity` | `keyword` |  |
+|`azuread.incomingTokenType` | `keyword` |  |
+|`azuread.isTenantRestricted` | `bool` |  |
+|`azuread.lastUpdatedDateTime` | `keyword` |  |
+|`azuread.operationName` | `keyword` |  |
+|`azuread.operationVersion` | `keyword` |  |
+|`azuread.privateLinkDetails` | `list` |  |
+|`azuread.properties.activity` | `keyword` |  |
+|`azuread.properties.correlationId` | `keyword` |  |
+|`azuread.properties.detectionTimingType` | `keyword` |  |
+|`azuread.properties.id` | `keyword` |  |
+|`azuread.properties.requestId` | `keyword` |  |
+|`azuread.properties.riskDetail` | `keyword` |  |
+|`azuread.properties.riskEventType` | `keyword` |  |
+|`azuread.properties.riskLevel` | `keyword` |  |
+|`azuread.properties.riskState` | `keyword` |  |
+|`azuread.properties.source` | `keyword` |  |
+|`azuread.properties.status.errorCode` | `keyword` |  |
+|`azuread.properties.status.failureReason` | `keyword` |  |
+|`azuread.properties.targetDevicePrincipalName` | `keyword` |  |
+|`azuread.properties.targetUserPrincipalName` | `keyword` |  |
+|`azuread.resourceId` | `keyword` |  |
+|`azuread.resourceTenantId` | `keyword` |  |
+|`azuread.resultSignature` | `keyword` |  |
+|`azuread.servicePrincipalId` | `keyword` |  |
+|`azuread.ssoExtensionVersion` | `keyword` |  |
+|`azuread.tenantId` | `keyword` |  |
+|`azuread.tokenIssuerType` | `keyword` |  |
+|`azuread.uniqueTokenIdentifier` | `keyword` |  |
+|`azuread.userType` | `keyword` |  |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |

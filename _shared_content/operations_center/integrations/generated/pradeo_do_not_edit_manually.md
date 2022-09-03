@@ -79,8 +79,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`package.checksum` | `keyword` | Checksum of the installed package for verification. |
 |`package.name` | `keyword` | Package name |
 |`package.version` | `keyword` | Package version |
-|`pradeo.allowed` | `keyword` | None |
-|`pradeo.match_threats` | `keyword` | None |
-|`pradeo.policy` | `keyword` | None |
+|`pradeo.allowed` | `keyword` | Indicates if the application is allowed (green/orange) or denied (red) |
+|`pradeo.match_threats` | `keyword` | List of items detected in the application with a moderate/high alert associated. |
+|`pradeo.policy` | `keyword` | Name of the policy used to classify the application. |
 |`user.name` | `keyword` | Short name or login of the user. |
 

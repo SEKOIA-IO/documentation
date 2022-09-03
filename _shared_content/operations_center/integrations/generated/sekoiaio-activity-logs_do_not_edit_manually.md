@@ -281,11 +281,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`client.user.id` | `keyword` | Unique identifier of the user. |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
-|`sekoiaio.activity.action.name` | `keyword` | None |
-|`sekoiaio.activity.action.parameters` | `keyword` | None |
-|`sekoiaio.activity.action.results` | `keyword` | None |
-|`sekoiaio.activity.client.id` | `keyword` | None |
-|`sekoiaio.activity.client.type` | `keyword` | None |
+|`sekoiaio.activity.action.name` | `keyword` | The name of the operation |
+|`sekoiaio.activity.action.parameters` | `keyword` | The arguments supplied for the operation |
+|`sekoiaio.activity.action.results` | `keyword` | The results of the operation |
+|`sekoiaio.activity.client.id` | `keyword` | The identifier of the client |
+|`sekoiaio.activity.client.type` | `keyword` | The nature of the client |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`url.path` | `wildcard` | Path of the request, such as "/search". |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
