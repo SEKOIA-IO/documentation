@@ -1,59 +1,13 @@
-uuid: caa13404-9243-493b-943e-9848cadb1f99
-name: Office 365
-type: intake
+## Collect Office365 events through Azure EventHub
 
-## Overview
+This is the alternative way to collect Office365 events.
 
-Office 365 is a line of subscription services offered by Microsoft as part of the Microsoft Office product line.
-
-{!_shared_content/operations_center/integrations/generated/o365_do_not_edit_manually.md!}
-
-
-## Office365 logs
-
-Microsoft Office 365 API logs four categories of logs:
-
-- Audit.AzureActiveDirectory
-- Audit.Exchange
-- Audit.SharePoint
-- Audit.General
-
-
-## Transport to SEKOIA.IO via API
-
-Sekoia has developed an automatical setup for collecting Microsoft Office 365 logs from its dedicated API.
-
-### Prerequisite
-
-- Have access to the Operations Center in order to create an intake
-- Be Administrator of the MS O365
-- An Azure Premium P1 or Azure Premium P2 license
-- Configure the MS O365 logging in the GUI
-![SEKOIA.IO Operations Center O365 intake](/assets/operation_center/integration_catalog/cloud_and_saas/o365/tenant_o365.png){: style="max-width:60%"}
-
-### Interconnexion set-up
-
-In order to exploit the automatic interconnection method, please follow these steps:
-
-- Log to the Operations Center
-- Go to Configure > Intakes, and click on `+ INTAKE`
-- Choose Office 365 intake by clicking on `CREATE`
-- Enter the Intake name and the related Enity, then click on `Automatically`
-![SEKOIA.IO Operations Center O365 intake](/assets/operation_center/integration_catalog/cloud_and_saas/o365/intake_creation_o365.png){: style="max-width:60%"}
-- Click on `LOG IN TO OFFICE 365`, then `ADD PERMISSION INTO OFFICE 365`
-![SEKOIA.IO Operations Center O365 intake](/assets/operation_center/integration_catalog/cloud_and_saas/o365/intake_creation_o365_access.png){: style="max-width:60%"}
-- Choose your Office account
-
-## Optionnal mode
-
-### Manual mode
-
-#### Prerequisites
+### Prerequisites
 
 This setup guide will show you how to generate, store and forward events produced by Office 365 service to SEKOIA.IO.
 Theses changes have to be made from the Azure web portal ([https://portal.azure.com](https://portal.azure.com)).
 
-#### A. Event Hubs
+### A. Event Hubs
 
 As a prerequisite you need an `Event Hub` (e.g. company-eventhub) and to choose an existing `resourceGroup` or create a new one (e.g. company-resource-group).
 You also need your `Subscription ID` if you don't have a default one.
@@ -71,7 +25,7 @@ Navigate to: `Home > Event Hubs > company-eventhub > o365-event - Shared access 
 > Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
 Navigate to: `Home > Event Hubs > company-eventhub > o365-event - Consumer groups`. From there, you can create a consumer group (e.g. sekoiaio-nifi).
 
-#### B. Office 365
+### B. Office 365
 
 Office 365 has to be added through Azure portal following the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/solution-office-365)
 
@@ -81,11 +35,17 @@ Navigate to: `Home > Office 365 > Monitoring > Diagnostic settings`:
 - Select the previously created `Event hubs`, `Event Hub` and `SharedAccessKey`.
 - Choose a name for this configuration and click on `Save`.
 
+### Create the intake
 
-## Enjoy your events
+Go to the [intake page](https://app.sekoia.io/operations/intakes), create a new intake from the format `Office365` and choose the manual way.
 
-You can send to Sekoia the `Connection string-primary key` previously mentioned.
-Once the configuration has been done on Sekoia side, you can go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
+### Pull events
+
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](../../../../automate/library/microsoft-azure.md#consume-eventhub-messages). 
+
+Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the storage's container.
+
+Start the playbook and enjoy your [events](https://app.sekoia.io/operations/events).
 
 ## Further Readings
 - [Microsoft Stream Azure monitoring data to an event hub](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/stream-monitoring-data-event-hubs)
