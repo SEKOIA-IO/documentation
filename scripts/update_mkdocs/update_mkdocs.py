@@ -20,7 +20,6 @@ def analyze_parser(parser, custom_fields) -> Dict:
 
     taxonomy = ECS.copy()
     taxonomy.update(custom_fields)
-
     # extract all the fields
     fields = defaultdict(set)
     kind_values = set()
@@ -56,7 +55,9 @@ def analyze_parser(parser, custom_fields) -> Dict:
             {
                 "name": field,
                 "type": taxonomy[field]["type"],
-                "short": taxonomy[field].get("short"),
+                "short": taxonomy[field].get(
+                    "short", taxonomy[field].get("description", "-")
+                ),
             }
             for field in sorted(fields.keys())
             if field in taxonomy
