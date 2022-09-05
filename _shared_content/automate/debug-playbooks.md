@@ -2,7 +2,7 @@
 
 ## Rate limiting
 
-If too many actions are pushed, it may block running playbooks. In order to address this issue, playbooks have a rate limiting the action runs.
+If too many actions are pushed, it may block running playbooks. In order to address this issue, playbooks have rate limiting applied on their action runs.
 
 Every time an action from a playbook must run, SEKOIA.IO checks how many actions this playbook has already started during the last minute. 
 
