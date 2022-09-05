@@ -54,6 +54,9 @@ Term Operators can be used to customize the search
 | OR | Match if one of the terms is verified | `source.ip:"1.2.3.4" OR destination.ip:"1.2.3.4"` |
 | NOT | Inverse the result of the term | `NOT event.type:connection` |
 
+!!! note
+    Take care, operators need to be uppercase in your query.
+
 ### Grouping operators
 
 | Operator | Description | Example |
