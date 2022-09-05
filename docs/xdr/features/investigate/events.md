@@ -15,23 +15,20 @@ In this documentation, we will dive into the different parts that constitute the
 
 ## Search bar
 
-You can search among the list of events by using the `Dork Query Language`. A complete documentation on how to use this language is available [here]( dork_language.md).  
+You can search among the list of events by using the dedicated query language. A complete documentation on how to use this language is available [here](events_query_language.md).
 
-Fields you can use to narrow your events search are listed [here](https://docs.sekoia.io/xdr/features/investigate/querying_events/). 
+Fields you can use to narrow down your events search are listed [here](https://docs.sekoia.io/xdr/features/investigate/querying_events/). 
 
 ![search-bar-events](/assets/operation_center/events/events-search.png){: style="max-width:100%"}
 
-!!! note
-    At most 100K events can be returned by a search. If this number is reached, the search has to be narrowed.
-
 ### Filters
 
-It is possible to use and combine filters in the search bar. You can do so in various ways:
+It is possible to use and combine filters in the search bar. You can simply add filters by using the icon buttons provided when hovering over a value inside a `Smart Description` or an event's `Details`:
 
-- Add `Smart description` by hovering over a value and clicking on the `Filter for value` button 
-- Add `Details`: The query is made on the existing fields in the "details" section by clicking on the "+" button for one of the items
+- Use the `Filter for value` button to only see events with this value
+- Use the `Filter out value` button to only see events that DO NOT have this value
 
-To go back to the list of logs shown, you need to clear filters and select `Current events`.
+To clear current filters, you can use the `X` button at the end of the `Search Bar`.
 
 ### Save search query
 
@@ -58,23 +55,22 @@ Click on the `Apply` button to start your search based on these filters.
 ### Search history
 ![search-history](/assets/operation_center/events/search-history.png){ align=right }
 
-Each search result lasts 10 min by default and it’s possible to configure the retention to reach one day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
+Each search result lasts 30 minutes by default and it is possible to configure the retention to reach one day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
 
 It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
 <!-- image à changer -->
 <img width="58" alt="image" src="https://user-images.githubusercontent.com/101662967/187888092-84499da5-6fea-46e3-b21c-e6e859aed8e5.png">
 
 
-
 ### Sharing a search
 
-Search job have IDs that are available in the browser address bar.
+Each search has an unique ID that is included in the browser address bar.
 
 ```
 <https://app.sekoia.io/operations/events?jobId=2b5ce17f-517e-4dd3-8253-1495a6ba538b>
 ```
 
-You can share your events' page with other users by sending them these job IDs, which are accessible for all users within your community.
+You can share your events' page with other users by sending them this URL. All users within your community will be able to access your search results.
 
 ### Histogram 
 
@@ -82,13 +78,9 @@ Events histogram appears under the search bar when a query has been made and mat
 
 ![histogram](/assets/operation_center/events/event-histogram.png){ align=right }
 
-It gives a consolidated view of all matching events in a specific  period of time and it highlights the number of events as well as events that are present in alerts.
+It gives a consolidated view of all matching events in a specific period of time and it highlights the number of events as well as events that are present in alerts.
 
-These are the main actions that can be done on the histogram:  
-
-- Manually select a date range by clicking on the histogram and dragging the cursor over events you're interesting in. This will automatically filter your events list based on your selection
-- Reset date range by clicking on the `reset range` button
- 
+You can select a date range by clicking on the histogram and dragging the cursor over events you are intersted in. This will automatically create a new search and display filtered results. If you want to come back to the previous range, you can use the [search history](#search-history)
 
 ## Log listing
 
@@ -100,19 +92,22 @@ The columns by default are:
 - `Event.dialect`: Type of intake that sent the event
 - `Description`: Smart description with clickable links formatted by SEKOIA.IO to show the most important elements and make them easily accessible, such as IP address, type or entity
 
+!!! note
+    At most 5 000 events can be displayed in the table. If this number is reached, the search has to be narrowed.
+
 ### Show and hide columns
 
-It's possible to show or hide columns in your events table by clicking on the `Show fields` button. 
+It's possible to show or hide columns in your events table by clicking on the `Show fields & top values` button. 
 
 ![show-hide-column](/assets/operation_center/events/show-hide-columns.png){: style="max-width:100%"}
 
-Once open, you can add fields that are listed under `available fields` by simply clicking on the "+" button next to them. This will automatically add the column to your table. 
+Once open, you can add fields that are listed under `available fields` by simply clicking on the "+" button next to them. This will automatically add the column to your table.
 
 If you need to remove a column, there are two ways to do so: 
 
 - Hover on the column and a "-" will appear. Click on it and the column will be hidden 
 
-- Click on `Show fields` and hover your mouse on the `Selected fields` that you want to hide. Click the "-" that appears and they'll be hidden 
+- Click on `Show fields & top values` and hover your mouse on the `Selected fields` that you want to hide. Click the "-" that appears and they'll be hidden 
 
 You can always find these fields in the `Available fields` section.
 
@@ -132,13 +127,13 @@ Each line of log can be unrolled to show:
 
 This table explains the main actions that can be done for each of these fields: 
 
-| Action | Description |
-| --- | --- |
-| Filter for value | Adds field in the query |
-| Filter out value | Removes field in the query |
-| Toggle column in table | Adds field as a column in the table  |
+| Action                        | Description                                     |
+| ----------------------------- | ----------------------------------------------- |
+| Filter for value              | Adds field in the query                         |
+| Filter out value              | Removes field in the query                      |
+| Toggle column in table        | Adds field as a column in the table             |
 | Search events with this value | Opens right panel to search field in all events |
-| Copy | Copy value of the field |
+| Copy                          | Copy value of the field                         |
 
 ### Export the results of a search
 
@@ -157,6 +152,9 @@ The export will be made to the default folder defined for downloads. Name of the
 !!! note
     The `description` field will not be exported.
     
+!!! note
+    At most 5 000 events can be exported. If this number is reached, the search has to be narrowed.
+
 ### Toggle value selection
 
 You can toggle values in your logs by clicking on the button `Toggle value selection` in the upper right side of the logs table. 
