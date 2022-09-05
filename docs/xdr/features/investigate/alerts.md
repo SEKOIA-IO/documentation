@@ -67,7 +67,7 @@ If the event matches one of the conditions listed below, the associated similari
 | Conditions | Similarity Strategy |
 | --- | --- |
 | If `dns.question.name` exists | [`sekoiaio.entity.uuid`, [`source.ip`, `destination.ip`], `dns.question.name`] |
-| If `event.dialect` is Azure Windows and `user.name` exists | [`sekoiaio.entity.uuid`, `user.name`, `user.id`] |
+| If `event.dialect` is Windows and `user.name` exists | [`sekoiaio.entity.uuid`, `user.name`, `user.id`] |
 | If `event.dialect` is Azure Windows and `process.name` exists | [`sekoiaio.entity.uuid`, `process.name`, `process.command_line`] |
 | If `event.dialect` is Azure Active Directory and `user.name` exists and `action.name` exists  | [`sekoiaio.entity.uuid`, `user.name`, `user.id`, `action.name`, `action.type`, `action.outcome`] |
 | If `event.dialect` is Azure Active Directory and `action.name` exists | [`sekoiaio.entity.uuid`, `action.name`, `action.type`, `action.outcome`] |
