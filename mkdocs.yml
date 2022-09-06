@@ -81,6 +81,7 @@ nav:
           - Digital Shadows: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Microsoft Azure:
             - Azure Active Directory: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+            - Azure Front Door: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
             - Azure MySQL: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
             - Azure Linux machines: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
             - Azure Network Watcher: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
@@ -385,6 +386,7 @@ plugins:
       integrations/azure-network-watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
       integrations/azure-windows.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
       integrations/azure_ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+      integrations/azure_front_door.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
       integrations/azure_linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
       integrations/azure_mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
       integrations/azure_network_watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
