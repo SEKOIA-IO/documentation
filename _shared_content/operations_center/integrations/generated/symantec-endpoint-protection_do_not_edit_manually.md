@@ -18,7 +18,7 @@ In details, the following table denotes the type of events produced by this inte
 | ---- | ------ |
 | Kind | `event` |
 | Category | `malware` |
-| Type | `info` |
+| Type | `` |
 
 
 
@@ -26,6 +26,108 @@ In details, the following table denotes the type of events produced by this inte
 ## Event Samples
 
 Find below few samples of events and how they are normalized by SEKOIA.IO.
+
+
+=== "test_activity_logs.json"
+
+    ```json
+	
+    {
+        "message": "Site: OSTAM,Server Name: STR04,Domain Name: MyDomain,The client has downloaded the content package successfully,STV02,ADMIN,stv02.local",
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "user": {
+            "name": "ADMIN"
+        },
+        "host": {
+            "hostname": "STV02",
+            "name": "stv02.local"
+        },
+        "event": {
+            "reason": "The client has downloaded the content package successfully",
+            "kind": "event",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "related": {
+            "hosts": [
+                "STV02"
+            ],
+            "user": [
+                "ADMIN"
+            ]
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "server": {
+                    "domain": "MyDomain",
+                    "name": "STR04"
+                }
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_behavior_logs.json"
+
+    ```json
+	
+    {
+        "message": "INT23456,,Blocked,C:\\Program Files (x86)\\Symantec\\Symantec Endpoint Protection\\14.3.4615.2000.105\\Bin64\\ccSvcHst.exe,,Begin: 2022-08-29 11:58:20,End Time: 2022-08-29 11:58:20,Rule: ,4428,C:\\PROGRAM FILES\\SMART-X\\CONTROLUPAGENT\\VERSION 8.1.5.634\\CUAGENT.EXE,0,,C:\\Program Files (x86)\\Symantec\\Symantec Endpoint Protection\\14.3.4615.2000.105\\Bin64\\ccSvcHst.exe,User Name: Admin,Domain Name: ,Action Type: 55,File size (bytes): ,Device ID: ",
+        "event": {
+            "kind": "event",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "denied"
+            ],
+            "action": "Blocked",
+            "reason": "Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue."
+        },
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "hostname": "INT23456",
+            "name": "INT23456"
+        },
+        "user": {
+            "name": "Admin"
+        },
+        "process": {
+            "pid": 4428,
+            "executable": "C:\\PROGRAM FILES\\SMART-X\\CONTROLUPAGENT\\VERSION 8.1.5.634\\CUAGENT.EXE",
+            "name": "CUAGENT.EXE",
+            "working_directory": "C:\\PROGRAM FILES\\SMART-X\\CONTROLUPAGENT\\VERSION 8.1.5.634",
+            "args": [
+                "C:\\Program",
+                "Files",
+                "(x86)\\Symantec\\Symantec",
+                "Endpoint",
+                "Protection\\14.3.4615.2000.105\\Bin64\\ccSvcHst.exe"
+            ]
+        },
+        "related": {
+            "hosts": [
+                "INT23456"
+            ],
+            "user": [
+                "Admin"
+            ]
+        }
+    }
+    	
+	```
 
 
 === "test_sonar.json"
@@ -132,6 +234,48 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 },
                 "prevalence": "This file has been seen by fewer than 50 Symantec users.",
                 "confidence": "There is some evidence that this file is trustworthy."
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_system_logs.json"
+
+    ```json
+	
+    {
+        "message": "OND345,Category: 2,REP,Event Description: Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue.,Event time: 2022-08-29 11:35:29,Group Name: Company\\Own",
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "hostname": "OND345",
+            "name": "OND345"
+        },
+        "event": {
+            "reason": "Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue.",
+            "kind": "event",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "related": {
+            "hosts": [
+                "OND345"
+            ]
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "source": "REP",
+                "server": {
+                    "group": "Company\\Own"
+                }
             }
         }
     }
@@ -270,7 +414,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
-|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
 |`file.size` | `long` | File size in bytes. |
 |`host.hostname` | `keyword` | Hostname of the host. |
@@ -278,6 +421,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`host.name` | `keyword` | Name of the host. |
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
+|`process.args` | `keyword` | Array of process arguments. |
+|`process.executable` | `keyword` | Absolute path to the process executable. |
+|`process.name` | `keyword` | Process name. |
+|`process.pid` | `long` | Process id. |
+|`process.working_directory` | `keyword` | The working directory of the process. |
 |`threat.enrichments` | `array` |  |
 |`user.name` | `keyword` | Short name or login of the user. |
 
