@@ -60,6 +60,88 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "rdpproxy.json"
+
+    ```json
+	
+    {
+        "message": "2022-09-05T10:05:15+02:00 foo-bastion-bar rdpproxy 4597 - - [RDP Session] session_id=\"1830c6973a42698400505688c380\" client_ip=\"1.1.1.1\" target_ip=\"2.2.2.2\" user=\"adm-foobar@corp.net\" device=\"foo-bar-baz\" service=\"RDP\" account=\"adm-foobar@corp.net\" type=\"FOREGROUND_WINDOW_CHANGED\" text=\"Espace de travail - IBM Lotus Notes\" class_name=\"SWT_Window0\" command_line=\"\\\"C:/lotus/Notes852/framework/rcp/eclipse/plugins/com.ibm.rcp.base_6.2.2.20100729-1241\\\\win32\\\\x86\\\\notes2.exe\\\" --launcher.suppressErrors \\\"-nosplash\\\" \\\"-nl\\\" \\\"fr\\\" \\\"-dir\\\" \\\"ltr\\\" \\\"-NPARAMS\\\" \\\"/authenticate\\\" \\\"-RPARAMS\\\" \\\"-name\\\" \\\"IBM Lotus Notes\\\" -personality \\\"com.ibm.rcp.platform.personality\\\" -product \\\"com.ibm.rcp.personality.framework.RCPProduct:com.ibm.notes.branding.notes\\\" -data \\\"c:/Lotus/Notes852/Data/workspace\\\" -configuration \\\"c:/Lotus/Notes852/Data/workspace/.config\\\" -plugincustomization \\\"C:/lotus/Notes852/framework/rcp/plugin_customization.ini\\\" -vm \\\"C:/lotus/Notes852/framework/../jvm/bin/\\\" -startup \\\"C:/lotus/Notes852/framework/rcp/eclipse/plugins/com.ibm.rcp.base_6.2.2.20100729-1241/launcher.jar\\\" -vmargs \\\"-Djava.security.policy=C:/lotus/Notes852/framework/../java.policy\\\" \\\"-Dorg.eclipse.swt.fixCitrix=false\\\" \\\"-Dosgi.framework.extensions=com.ibm.rcp.core.logger.frameworkhook,com.ibm.rds,com.ibm.cds\\\" \\\"-Xscmx64m\\\" \\\"-Xshareclasses:name=xpdplat_.jvm,controlDir=c:/Lotus/Notes852/Data/workspace/.config/org.eclipse.osgi,groupAccess,keep,singleJVM,nonfatal\\\" \\\"-Xgcpolicy:gencon\\\" \\\"-Xjit:noResumableTrapHandler\\\" \\\"-Xmaxt0.6\\\" \\\"-Xmca8k\\\" \\\"-Xminf0.1\\\" \\\"-Xmn7m\\\" \\\"-Xms48m\\\" \\\"-Xmx256m\\\" \\\"-Xnolinenumbers\\\" \\\"-Xverify:none\\\" \\\"-Xquickstart\\\" \\\"-Xscmaxaot12m\\\" \\\"-Xtrace:none\\\" \\\"-Xzero\\\" -Drcp.home=\\\"C:\\\\lotus\\\\Notes852\\\\framework\\\" -Drcp.data=\\\"c:/Lotus/Notes852/Data/workspace\\\" -Dosgi.splashPath=\\\"platform:/base/../../shared/eclipse/plugins/com.ibm.notes.branding,platform:/base/../../shared/eclipse/plugins/com.ibm.notes.branding.nl1,platform:/base/../.shared/eclipse/plugins/com.ibm.notes.branding.nl2,platform:/base/../../shared/eclipse/plugins/com.ibm.notes.branding.nl3\\\" -Dcom.ibm.rcp.install.id=\\\"1320657906134\\\" -Drcp.install.config=\\\"user\\\" -Declipse.registry.nulltoken=\\\"true\\\" -Dautopd.logfile.generations=\\\"3\\\" -Dorg.apache.xerces.xni.parser.XMLParserConfiguration=\\\"org.apache.xerces.parsers.XIncludeAwareParserConfiguration\\\" -Dcom.ibm.pvc.webcontainer.http.address=\\\"localhost\\\" -Dosgi.nl.user=\\\"true\\\" -Dautopd.instance.area=\\\"c:/Lotus/Notes852/Data/workspace/autopd\\\" -Dorg.eclipse.swt.browser.XULRunnerPath=\\\"C:/lotus/Notes852/framework/rcp/eclipse/plugins/com.ibm.rcp.xulrunner.runtime.win32.x86_6.2.2.20100729-1241/xulrunner\\\" -Djava.util.logging.config.class=\\\"com.ibm.rcp.core.internal.logger.boot.LoggerConfig\\\" -Dcom.ibm.pvc.webcontainer.port=\\\"0,59449\\\" -Dcom.ibm.pvc.webcontainer.vhost.configfile=\\\"C:/lotus/Notes852/framework/shared/eclipse/plugins/com.ibm.collaboration.realtime.webapi_8.0.2.20100802-0849/virtualhost.properties\\\" -Dderby.stream.error.file=\\\"c:/Lotus/Notes852/Data/workspace/logs/derby.log\\\" -Djava.security.properties=\\\"file:C:/lotus/Notes852/framework/rcp/eclipse/plugins/com.ibm.rcp.base_6.2.2.20100729-1241/rcp.security.properties\\\" -Djava.protocol.handler.pkgs=\\\"com.ibm.net.ssl.www.protocol\\\" -Dosgi.hook.configurators.exclude=\\\"org.eclipse.core.runtime.internal.adaptor.EclipseLogHook\\\" -Drcp.osgi.install.area=\\\"C:\\\\lotus\\\\Notes852\\\\framework\\\\rcp\\\\eclipse\\\" -Xbootclasspath/a:\\\"C:/lotus/Notes852/framework/shared/eclipse/plugins/com.ibm.collaboration.realtime.stjavatk_8.0.2.20100802-0849/sslite140-v3.16.jar;C:/lotus/Notes852/framework/rceclipse/plugins/com.ibm.rcp.base_6.2.2.20100729-1241/rcpbootcp.jar\\\"\"\n\n",
+        "event": {
+            "action": "FOREGROUND_WINDOW_CHANGED",
+            "kind": "event"
+        },
+        "wallix": {
+            "type": "FOREGROUND_WINDOW_CHANGED"
+        },
+        "user": {
+            "name": "adm-foobar@corp.net"
+        },
+        "service": {
+            "name": "RDP"
+        },
+        "destination": {
+            "ip": "2.2.2.2",
+            "address": "2.2.2.2"
+        },
+        "source": {
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1",
+                "2.2.2.2"
+            ],
+            "user": [
+                "adm-foobar@corp.net"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "rdpproxy2.json"
+
+    ```json
+	
+    {
+        "message": "2022-09-05T10:05:15+02:00 foo-bastion-bar rdpproxy 13297 - - [RDP Session] session_id=\"1830c403be7caf0c00505688c380\" client_ip=\"1.1.1.1\" target_ip=\"2.2.2.2\" user=\"adm-bar\" device=\"foo-bastion-bar\" service=\"RDP\" account=\"adm-bar@corp.net\" type=\"FOREGROUND_WINDOW_CHANGED\" text=\"Remote Desktop Manager Free [FOO-BAR-P01]\" class_name=\"WindowsForms10.Window.8.app.0.13965fa_r6_ad1\" command_line=\"\\\"C:\\\\Program Files (x86)\\\\Devolutions\\\\Remote Desktop Manager Free\\\\RemoteDesktopManagerFree.exe\\\" \"\n\n",
+        "event": {
+            "action": "FOREGROUND_WINDOW_CHANGED",
+            "kind": "event"
+        },
+        "wallix": {
+            "type": "FOREGROUND_WINDOW_CHANGED"
+        },
+        "user": {
+            "name": "adm-bar"
+        },
+        "service": {
+            "name": "RDP"
+        },
+        "destination": {
+            "ip": "2.2.2.2",
+            "address": "2.2.2.2"
+        },
+        "source": {
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1",
+                "2.2.2.2"
+            ],
+            "user": [
+                "adm-bar"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "rexec.json"
 
     ```json
@@ -190,6 +272,43 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "user": [
                 "username123@corp.net"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "sshsession2.json"
+
+    ```json
+	
+    {
+        "message": "[SSH Session] session_id=\"1830cbf7a55a11dd005056b01296\" client_ip=\"1.1.1.1\" target_ip=\"ip-foo-bar-baz.corp.net\" user=\"user.name@corp.net\" device=\"DEVICE-FOO\" service=\"SSH\" account=\"username\" type=\"SESSION_ESTABLISHED_SUCCESSFULLY\"",
+        "event": {
+            "action": "SESSION_ESTABLISHED_SUCCESSFULLY",
+            "kind": "event",
+            "provider": "SSH Session"
+        },
+        "wallix": {
+            "type": "SESSION_ESTABLISHED_SUCCESSFULLY"
+        },
+        "user": {
+            "name": "user.name@corp.net"
+        },
+        "service": {
+            "name": "SSH"
+        },
+        "source": {
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ],
+            "user": [
+                "user.name@corp.net"
             ]
         }
     }
