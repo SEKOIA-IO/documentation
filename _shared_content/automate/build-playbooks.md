@@ -9,9 +9,9 @@ There are two ways to create a playbook:
 
 ## Templates
 
-Creating a playbook from scratch can be discouraging. That’s why we provide our users with a way to quickly generate a playbook: **templates**. 
+Creating a playbook from scratch can be complicate. That’s why we provide our users with a way to quickly generate a playbook: **templates**. 
 
-These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. 
+These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. These could be a really good working base.
 
 The Playbook Templates' Catalog is being updated frequently by our analysts and here’s a list of the main ones. All playbook templates are available in the public repo on [Github](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and our users are encouraged to add new templates to the repo.
 
