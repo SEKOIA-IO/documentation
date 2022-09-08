@@ -9,7 +9,7 @@ There are two ways to create a playbook:
 
 ## Templates
 
-Creating a playbook from scratch can be complicate. That’s why we provide our users with a way to quickly generate a playbook: **templates**. 
+Creating a playbook from scratch can be complex. That’s why we provide our users with a way to quickly generate a playbook: **templates**. 
 
 These fully customizable templates are available in our Playbooks’ Catalog. You can access them by clicking on `+ Playbook` then selecting `Use a template`. These could be a really good working base.
 
