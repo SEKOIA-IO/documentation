@@ -72,7 +72,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "start": "2022-09-01T06:56:23.7887846Z",
             "executable": "software_reporter_tool.exe",
             "command_line": "\"software_reporter_tool.exe\" --use-crash-handler-with-id=\"\\\\.\\pipe\\crashpad_11111_XXXXXXXXXXXXXXXX\" --sandboxed-process-id=2 --init-done-notifier=804 --sandbox-mojo-pipe-token=********** --mojo-platform-channel-handle=780 --engine=2",
-            "working_directory": "c:\\users\\USER\\appdata\\local\\google\\chrome\\user data\\swreporter\\102.286.200\\software_reporter_tool.exe",
+            "working_directory": "c:\\users\\USER\\appdata\\local\\google\\chrome\\user data\\swreporter\\102.286.200",
             "user": {
                 "domain": "intranet",
                 "name": "group1",
@@ -221,7 +221,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "start": "2022-09-01T07:46:34.0214941Z",
             "executable": "OneDriveSetup.exe",
             "command_line": "OneDriveSetup.exe /update /restart /updateSource:ODU /peruser /childprocess /extractFilesWithLessThreadCount /renameReplaceOneDriveExe /renameReplaceODSUExe /removeNonCurrentVersions /enableODSUReportingMode ",
-            "working_directory": "c:\\users\\USER\\appdata\\local\\microsoft\\onedrive\\update\\onedrivesetup.exe",
+            "working_directory": "c:\\users\\USER\\appdata\\local\\microsoft\\onedrive\\update",
             "user": {
                 "domain": "intranet",
                 "name": "group1",
@@ -310,7 +310,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "start": "2022-09-01T07:47:58.182445Z",
             "executable": "autosync.exe",
             "command_line": "\"autosync.exe\" /c C:\\PROGRA~2\\adobe\\8.1\\Client\\bin\\fra\\adobe.cfg /c \" usa\"",
-            "working_directory": "c:\\program files (x86)\\adobe\\8.1\\client\\bin\\autosync.exe",
+            "working_directory": "c:\\program files (x86)\\adobe\\8.1\\client\\bin",
             "user": {
                 "domain": "intranet",
                 "name": "group1",
@@ -383,7 +383,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "start": "2022-09-01T06:56:23.7887846Z",
             "executable": "software_reporter_tool.exe",
             "command_line": "\"software_reporter_tool.exe\" --use-crash-handler-with-id=\"\\\\.\\pipe\\crashpad_11111_XXXXXXXXXXXXXXXX\" --sandboxed-process-id=2 --init-done-notifier=804 --sandbox-mojo-pipe-token=********** --mojo-platform-channel-handle=780 --engine=2",
-            "working_directory": "c:\\users\\USER\\appdata\\local\\google\\chrome\\user data\\swreporter\\102.286.200\\software_reporter_tool.exe",
+            "working_directory": "c:\\users\\USER\\appdata\\local\\google\\chrome\\user data\\swreporter\\102.286.200",
             "user": {
                 "domain": "intranet",
                 "name": "group1",
