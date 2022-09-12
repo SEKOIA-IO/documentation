@@ -6,7 +6,7 @@ type: intake
 
 Microsoft Defender for Endpoint is an enterprise endpoint security platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.
 
-This setup guide shows how to forward events produced by `Microsoft Defender for Endpoints` to SEKOIA.IO.
+This setup guide describes how to forward events produced by `Microsoft Defender for Endpoints` to SEKOIA.IO XDR.
 
 {!_shared_content/operations_center/integrations/generated/microsoft-defender-for-endpoints_do_not_edit_manually.md!}
 
@@ -16,7 +16,7 @@ This setup guide shows how to forward events produced by `Microsoft Defender for
 
 To forward events to SEKOIA.IO, please follow [this guide](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub) to create an EventHubs namespace with an EventHubs that enable the data streaming on the hub.
 
-Once the data streaming configured, in your EventHubs, go to `Setting > Shared access policies`.
+Once the data streaming is configured, in your EventHubs, go to `Setting > Shared access policies`.
 Create a new policy with the option `Listen` then copy the `Connection string-primary key`.
 
 Create a `Storage accounts` or use an existing one. Go to `Data storage > containers` and create a new container.
@@ -28,7 +28,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](../../../automate/library/microsoft-azure.md#consume-eventhub-messages). 
+Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](../../../automate/library/microsoft-azure.md#consume-eventhub-messages) module. 
 
 Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 
