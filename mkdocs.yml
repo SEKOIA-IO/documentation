@@ -419,8 +419,6 @@ plugins:
       integrations/linux.md: xdr/features/collect/integrations/endpoint/linux.md
       integrations/log-insight-windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
       integrations/log_insight_windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
-      integrations/microsoft_defender_for_endpoints.md: xdr/features/collect/integrations/endpoint/microsoft_defender_for_endpoints.md
-      integrations/microsoft-defender-for-endpoints.md: xdr/features/collect/integrations/endpoint/microsoft_defender_for_endpoints.md
       integrations/netfilter.md: xdr/features/collect/integrations/network/netfilter.md
       integrations/nginx.md: xdr/features/collect/integrations/application/nginx.md
       integrations/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
