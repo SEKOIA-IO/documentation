@@ -342,64 +342,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
-=== "fortigate_traffic_forward.CEF-Axens.json"
-
-    ```json
-	
-    {
-        "message": "CEF:0|Fortinet|Fortigate|v6.0.4|00013|traffic:forward timeout|3|deviceExternalId=FGVM2V0000171868 FortinetFortiGatelogid=0000000013 cat=traffic:forward FortinetFortiGatesubtype=forward FortinetFortiGatelevel=notice FortinetFortiGatevd=root FortinetFortiGateeventtime=1572471876 src=1.1.1.1 spt=49260 deviceInboundInterface=port1 FortinetFortiGatesrcintfrole=undefined dst=3.3.3.3 dpt=80 deviceOutboundInterface=port2 FortinetFortiGatedstintfrole=undefined FortinetFortiGatepoluuid=bafe134e-c0ad-51e8-ed9c-52f798dd69d4 externalId=12812952 proto=6 FortinetFortiGateaction=timeout FortinetFortiGatepolicyid=1 FortinetFortiGatepolicytype=policy app=HTTP FortinetFortiGatedstcountry=Reserved FortinetFortiGatesrccountry=United States FortinetFortiGatetrandisp=dnat destinationTranslatedAddress=2.2.2.2 destinationTranslatedPort=80 FortinetFortiGateduration=20 out=48 in=144 FortinetFortiGatesentpkt=1 FortinetFortiGatercvdpkt=3 FortinetFortiGateappcat=unscanned FortinetFortiGatecrscore=5 FortinetFortiGatecraction=262144 FortinetFortiGatecrlevel=low",
-        "event": {
-            "severity": 3
-        },
-        "observer": {
-            "vendor": "Fortinet",
-            "type": "Fortigate",
-            "version": "v6.0.4"
-        },
-        "rule": {
-            "id": "00013"
-        },
-        "network": {
-            "protocol": "HTTP",
-            "transport": "tcp"
-        },
-        "source": {
-            "ip": "1.1.1.1",
-            "port": 49260,
-            "address": "1.1.1.1"
-        },
-        "destination": {
-            "port": 80,
-            "ip": "3.3.3.3",
-            "address": "3.3.3.3"
-        },
-        "host": {
-            "network": {
-                "ingress": {
-                    "bytes": 144
-                },
-                "egress": {
-                    "bytes": 48
-                }
-            }
-        },
-        "cef": {
-            "externalId": "12812952",
-            "dpt": "80",
-            "cat": "traffic:forward",
-            "Name": "traffic:forward timeout"
-        },
-        "related": {
-            "ip": [
-                "1.1.1.1",
-                "3.3.3.3"
-            ]
-        }
-    }
-    	
-	```
-
-
 === "fortigate_traffic_forward.CEF.json"
 
     ```json
@@ -464,6 +406,64 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "ip": [
                 "2.2.2.2",
+                "3.3.3.3"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "fortigate_traffic_forward.CEF_2.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Fortinet|Fortigate|v6.0.4|00013|traffic:forward timeout|3|deviceExternalId=FGVM2V0000171868 FortinetFortiGatelogid=0000000013 cat=traffic:forward FortinetFortiGatesubtype=forward FortinetFortiGatelevel=notice FortinetFortiGatevd=root FortinetFortiGateeventtime=1572471876 src=1.1.1.1 spt=49260 deviceInboundInterface=port1 FortinetFortiGatesrcintfrole=undefined dst=3.3.3.3 dpt=80 deviceOutboundInterface=port2 FortinetFortiGatedstintfrole=undefined FortinetFortiGatepoluuid=bafe134e-c0ad-51e8-ed9c-52f798dd69d4 externalId=12812952 proto=6 FortinetFortiGateaction=timeout FortinetFortiGatepolicyid=1 FortinetFortiGatepolicytype=policy app=HTTP FortinetFortiGatedstcountry=Reserved FortinetFortiGatesrccountry=United States FortinetFortiGatetrandisp=dnat destinationTranslatedAddress=2.2.2.2 destinationTranslatedPort=80 FortinetFortiGateduration=20 out=48 in=144 FortinetFortiGatesentpkt=1 FortinetFortiGatercvdpkt=3 FortinetFortiGateappcat=unscanned FortinetFortiGatecrscore=5 FortinetFortiGatecraction=262144 FortinetFortiGatecrlevel=low",
+        "event": {
+            "severity": 3
+        },
+        "observer": {
+            "vendor": "Fortinet",
+            "type": "Fortigate",
+            "version": "v6.0.4"
+        },
+        "rule": {
+            "id": "00013"
+        },
+        "network": {
+            "protocol": "HTTP",
+            "transport": "tcp"
+        },
+        "source": {
+            "ip": "1.1.1.1",
+            "port": 49260,
+            "address": "1.1.1.1"
+        },
+        "destination": {
+            "port": 80,
+            "ip": "3.3.3.3",
+            "address": "3.3.3.3"
+        },
+        "host": {
+            "network": {
+                "ingress": {
+                    "bytes": 144
+                },
+                "egress": {
+                    "bytes": 48
+                }
+            }
+        },
+        "cef": {
+            "externalId": "12812952",
+            "dpt": "80",
+            "cat": "traffic:forward",
+            "Name": "traffic:forward timeout"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1",
                 "3.3.3.3"
             ]
         }
