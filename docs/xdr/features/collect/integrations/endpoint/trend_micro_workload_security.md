@@ -7,7 +7,7 @@ type: intake
 Trend Micro Cloud One Workload Security detect malware, vulnerabilities and any other threats.
 It protect your physical and virtual servers as well as, your cloud and containers instances.
 
-{!_shared_content/operations_center/integrations/generated/cloud-one_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/trend-micro-deep-security_do_not_edit_manually.md!}
 
 ## Configure
 
