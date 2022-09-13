@@ -111,6 +111,7 @@ nav:
           - Sophos EDR: xdr/features/collect/integrations/endpoint/sophos_edr.md
           - Symantec Endpoint Protection: xdr/features/collect/integrations/endpoint/symantec_epp.md
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
+          - Trend Micro Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows (Log Insight): xdr/features/collect/integrations/endpoint/log_insight_windows.md
         - Network:
