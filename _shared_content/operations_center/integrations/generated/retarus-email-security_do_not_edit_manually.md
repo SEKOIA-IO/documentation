@@ -157,6 +157,61 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "event_no_sender.json"
+
+    ```json
+	
+    {
+        "message": "{\"version\":\"1.0\",\"rmxId\":\"20220912-000000-111111111111-0@example\",\"sender\":\"\",\"ts\":\"2022-09-12 16:30:58 +0200\",\"metaData\":{\"transportEncryption\":{\"protocol\":\"TLSv1.2\",\"cipherSuite\":\"ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)\",\"established\":true,\"requested\":true},\"authentication\":{\"dkim\":{\"status\":\"dkim=none\",\"details\":\"dkim=none reason=\\\"no signature\\\"\"},\"spf\":{\"status\":\"spf=none\",\"details\":\"spf=none smtp.helo=mailer.com\"}},\"header\":{\"from\":\"MAILER-DAEMON (Mail Delivery System)\",\"subject\":\"Undelivered Mail Returned to Sender\"},\"contentEncryption\":false},\"recipient\":\"user@example.org\",\"sourceIp\":\"1.2.3.4\",\"type\":\"MTA\",\"subtype\":\"INCOMING\",\"host\":\"events.retarus.com\",\"direction\":\"INBOUND\",\"status\":\"ACCEPTED\",\"customer\":\"15752FR\",\"class\":\"EVENT\",\"mimeId\":\"<00000000@mailer.com>\"}\n",
+        "event": {
+            "kind": "event"
+        },
+        "observer": {
+            "version": "1.0",
+            "hostname": "events.retarus.com"
+        },
+        "organization": {
+            "id": "15752FR"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "domain": "example.org",
+            "address": "example.org",
+            "top_level_domain": "org",
+            "registered_domain": "example.org"
+        },
+        "retarus": {
+            "timestamp": "2022-09-12 16:30:58 +0200",
+            "email_direction": "INBOUND",
+            "mime_message_id": "<00000000@mailer.com>",
+            "message_id": "20220912-000000-111111111111-0@example",
+            "recipient": "user@example.org",
+            "status": "ACCEPTED",
+            "class": "EVENT",
+            "type": "MTA"
+        },
+        "action": {
+            "name": "EVENT",
+            "outcome": "success",
+            "outcome_reason": "ACCEPTED"
+        },
+        "related": {
+            "hosts": [
+                "events.retarus.com",
+                "example.org"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "event_outbound.json"
 
     ```json
