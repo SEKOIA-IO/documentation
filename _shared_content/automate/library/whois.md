@@ -25,10 +25,9 @@ Provides data enrichment for Domains, URLs, and IP addresses.
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `DNS` | `object` |  |
-| `Whois` | `object` |  |
+| `Domain` | `object` |  |
 
 
 ## Extra
 
-Module **`Whois` v1.13**
+Module **`Whois` v1.14**

@@ -544,8 +544,8 @@ plugins:
       operation_center/integration_catalog/endpoint/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       operation_center/integration_catalog/endpoint/linux.md: xdr/features/collect/integrations/endpoint/linux.md
       operation_center/integration_catalog/endpoint/log_insight_windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
-      operation_center/integration_catalog/endpoint/panda_security_aether.md: xdr/features/collect/integrations/endpoint/panda_security_aether.md
       operation_center/integration_catalog/endpoint/microsoft_defender_for_endpoints.md: xdr/features/collect/integrations/endpoint/microsoft_defender_for_endpoints.md
+      operation_center/integration_catalog/endpoint/panda_security_aether.md: xdr/features/collect/integrations/endpoint/panda_security_aether.md
       operation_center/integration_catalog/endpoint/sentinelone.md: xdr/features/collect/integrations/endpoint/sentinelone.md
       operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
       operation_center/integration_catalog/endpoint/sophos_edr.md: xdr/features/collect/integrations/endpoint/sophos_edr.md
