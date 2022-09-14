@@ -46,6 +46,9 @@ Term Operators can be used to customize the search
 | `:<=` | The numerical value must be less than or equal to the specified number | `destination.bytes:<=42` |
 | `:[X TO Y]` | The numerical value must be between X and Y | `destination.bytes:[100 TO 200]` |
 
+!!! note
+    for IP search, `:[X TO Y]` is available with X and Y as IP ranges e.g. `source.ip:[145.0.0.0 TO 145.255.255.255]`
+
 ### Logical operators
 
 | Operator | Description | Example |
