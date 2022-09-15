@@ -46,8 +46,6 @@ Revoking an API key will make it unusable. It’s rather easy to do but keep in 
 
 To revoke an API key, please proceed with the following steps:
 
-1- Go to `Managed communities` page by clicking on your avatar in the upper right of the screen
-
-2- On the API key tab, click on the `Edit` button
-
-3- Then revoke the API key by clicking on the red button `Revoke`
+1. Go to `Managed communities` page by clicking on your avatar in the upper right of the screen
+2. On the API key tab, click on the `Edit` button
+3. Then revoke the API key by clicking on the red button `Revoke`
