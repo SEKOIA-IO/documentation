@@ -3,7 +3,7 @@ name: Upload public website to OVH
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   build_and_upload_website:
