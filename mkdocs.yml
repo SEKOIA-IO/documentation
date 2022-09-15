@@ -116,7 +116,8 @@ nav:
           - Windows (Log Insight): xdr/features/collect/integrations/endpoint/log_insight_windows.md
         - Network:
           - Checkpoint: xdr/features/collect/integrations/network/checkpoint.md
-          - Cisco: xdr/features/collect/integrations/network/cisco_asa.md
+          - Cisco ASA: xdr/features/collect/integrations/network/cisco_asa.md
+          - Cisco WSA: xdr/features/collect/integrations/network/cisco_wsa.md
           - F5 BigIP: xdr/features/collect/integrations/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
           - FortiGate: xdr/features/collect/integrations/network/fortigate.md
@@ -555,6 +556,7 @@ plugins:
       operation_center/integration_catalog/generic/cef.md: xdr/features/collect/integrations/generic/cef.md
       operation_center/integration_catalog/network/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
       operation_center/integration_catalog/network/cisco_asa.md: xdr/features/collect/integrations/network/cisco_asa.md
+      operation_center/integration_catalog/network/cisco_wsa.md: xdr/features/collect/integrations/network/cisco_wsa.md
       operation_center/integration_catalog/network/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
       operation_center/integration_catalog/network/forcepoint_web_gateway.md: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
       operation_center/integration_catalog/network/fortigate.md: xdr/features/collect/integrations/network/fortigate.md
