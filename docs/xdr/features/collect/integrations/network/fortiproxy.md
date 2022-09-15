@@ -1,4 +1,4 @@
-uuid: d971c8c7-b7d0-4de1-9b5c-b58235c1d7e4
+uuid: 270777d7-0c5a-42fb-b901-b7fadfb0ba48
 name: FortiProxy
 type: intake
 
