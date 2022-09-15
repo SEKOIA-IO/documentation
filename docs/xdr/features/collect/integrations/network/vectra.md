@@ -1,4 +1,4 @@
-uuid: 45a8b20d-60f4-4384-b5d9-8ec0efcf604c
+uuid: bf8867ee-43b7-444c-9475-a7f43754ab6d
 name: Vectra Cognito Detect
 type: intake
 
