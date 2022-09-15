@@ -1,4 +1,4 @@
-uuid: b433f418-490f-4f46-8f6f-4566df5a74dd
+uuid: 59991ced-c2a0-4fb0-91f3-49e3993c16f5
 name: Tanium
 type: intake
 
