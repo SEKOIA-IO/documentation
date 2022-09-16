@@ -170,7 +170,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "10.0.2.15",
                 "117.99.232.147"
-            ]
+            ],
+            "name": "desktop-aas6kq7"
         },
         "process": {
             "command_line": "C:\\Users\\chand\\Downloads\\BT_21.40.5_32_Win7.pdf.exe",
@@ -299,7 +300,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "INTEGRATION"
         },
         "host": {
-            "hostname": "desktop-aas6kq7"
+            "hostname": "desktop-aas6kq7",
+            "name": "desktop-aas6kq7"
         },
         "cybereason": {
             "event": {

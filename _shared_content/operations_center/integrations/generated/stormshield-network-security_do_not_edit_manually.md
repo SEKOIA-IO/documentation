@@ -215,8 +215,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "connection",
             "timezone": "+0100",
             "risk_score": 5,
-            "duration": 107331180000000.0,
-            "start": "2022-03-03T13:21:10+00:00"
+            "duration": 107331180000000.0
         },
         "stormshield": {
             "logtype": "connection",

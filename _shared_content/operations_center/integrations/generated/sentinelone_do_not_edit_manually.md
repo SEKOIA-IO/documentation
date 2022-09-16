@@ -33,25 +33,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"accountId\": \"617755838952421242\",\"accountName\": \"CORP\",\"activityType\": 90,\"agentId\": \"1109290742018175361\",\"agentUpdatedVersion\": null,\"comments\": null,\"createdAt\": \"2021-03-11T12:42:56.308213Z\",\"data\": {    \"accountName\": \"CORP\",    \"computerName\": \"debian-SentinelOne\",   \"createdAt\": \"2021-03-11T12:42:56.297860Z\", \"fullScopeDetails\": \"Group Default Group in Site Sekoia.io of Account CORP\",  \"groupName\": \"Default Group\",   \"scopeLevel\": \"Group\",  \"scopeName\": \"Default Group\",   \"siteName\": \"Sekoia.io\",    \"status\": \"started\"},\"description\": null,\"groupId\": \"1107851598374945694\",\"groupName\": \"Default Group\",\"hash\": null,\"id\": \"1109290868249950294\",\"osFamily\": null,\"primaryDescription\": \"Agent debian-SentinelOne started full disk scan at Thu, 11 Mar 2021, 12:42:56 UTC.\",\"secondaryDescription\": null,\"siteId\": \"1107851598358168475\",\"siteName\": \"Sekoia.io\",\"threatId\": null,\"updatedAt\": \"2021-03-11T12:42:56.301271Z\",\"userId\": null}",
         "event": {
-            "action": "Agent Started Full Disk Scan",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4",
-            "hash": "59ae1c109a0426a55e76ef030a2eea2e73ff6ce1",
-            "id": "1109290868249950294",
-            "kind": "event",
-            "original": "1sjze813YtXlmgHp3a1jU4rOAwYpBKMFaWtYCeTQ0QhEtg36Z68bcNi4ahZ2G7Fz",
-            "outcome": "success",
             "reason": "Agent debian-SentinelOne started full disk scan at Thu, 11 Mar 2021, 12:42:56 UTC.",
+            "action": "Agent Started Full Disk Scan",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
-        "group": {
-            "id": "1107851598374945694",
-            "name": "Default Group"
+        "sentinelone": {
+            "eventid": 1109290868249950294,
+            "siteId": 1107851598358168475,
+            "sitename": "Sekoia.io",
+            "updatedAt": "2021-03-11T12:42:56.301271Z",
+            "createdAt": "2021-03-11T12:42:56.308213Z",
+            "data": {
+                "accountName": "CORP",
+                "fullScopeDetails": "Group Default Group in Site Sekoia.io of Account CORP",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "status": "started",
+                "groupName": "Default Group",
+                "siteName": "Sekoia.io",
+                "computerName": "debian-SentinelOne",
+                "createdAt": "2021-03-11T12:42:56.297860Z"
+            }
         },
         "organization": {
             "id": "617755838952421242",
@@ -60,34 +70,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "action": {
             "type": 90
         },
-        "host": {
-            "name": "debian-SentinelOne"
+        "group": {
+            "id": "1107851598374945694",
+            "name": "Default Group"
         },
         "agent": {
             "id": "1109290742018175361"
         },
-        "sentinelone": {
-            "createdAt": "2021-03-11T12:42:56.308213Z",
-            "data": {
-                "accountName": "CORP",
-                "computerName": "debian-SentinelOne",
-                "createdAt": "2021-03-11T12:42:56.297860Z",
-                "fullScopeDetails": "Group Default Group in Site Sekoia.io of Account CORP",
-                "groupName": "Default Group",
-                "scopeLevel": "Group",
-                "scopeName": "Default Group",
-                "siteName": "Sekoia.io",
-                "status": "started"
-            },
-            "siteId": 1107851598358168475,
-            "eventid": 1109290868249950294,
-            "sitename": "Sekoia.io",
-            "updatedAt": "2021-03-11T12:42:56.301271Z"
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "debian-SentinelOne"
         }
     }
     	
@@ -99,30 +90,47 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 120
-        },
-        "agent": {
-            "id": "977351746870921161"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 120, \"agentId\": \"977351746870921161\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-11T06:49:21.769668Z\", \"data\": {\"accountName\": \"CORP\", \"computerName\": \"CL002793\", \"disabledLevel\": null, \"enabledReason\": \"expired\", \"expiration\": null, \"externalIp\": \"88.127.242.225\", \"fullScopeDetails\": \"Group DSI in Site CORP-workstations of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / CORP-workstations / DSI\", \"groupName\": \"DSI\", \"scopeLevel\": \"Group\", \"scopeName\": \"DSI\", \"siteName\": \"CORP-workstations\"}, \"description\": null, \"groupId\": \"797501649544140679\", \"hash\": null, \"id\": \"1396124097359316984\", \"osFamily\": null, \"primaryDescription\": \"The CL002793 Agent is enabled due to time expiration.\", \"secondaryDescription\": null, \"siteId\": \"551799242253151036\", \"threatId\": null, \"updatedAt\": \"2022-04-11T06:49:21.765992Z\", \"userId\": null}\n\n",
         "event": {
-            "action": "Agent Enabled",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "1113032189486913422",
-            "kind": "event",
-            "outcome": "success",
             "reason": "The CL002793 Agent is enabled due to time expiration.",
+            "action": "Agent Enabled",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
+        "sentinelone": {
+            "eventid": 1396124097359316984,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-11T06:49:21.765992Z",
+            "createdAt": "2022-04-11T06:49:21.769668Z",
+            "data": {
+                "externalIp": "88.127.242.225",
+                "accountName": "CORP",
+                "enabledReason": "expired",
+                "fullScopeDetails": "Group DSI in Site CORP-workstations of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-workstations / DSI",
+                "scopeLevel": "Group",
+                "scopeName": "DSI",
+                "groupName": "DSI",
+                "siteName": "CORP-workstations",
+                "computerName": "CL002793"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 120
+        },
         "group": {
             "id": "797501649544140679"
+        },
+        "agent": {
+            "id": "977351746870921161"
         },
         "host": {
             "ip": [
@@ -130,31 +138,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "name": "CL002793"
         },
-        "organization": {
-            "id": "551799238352448315"
-        },
         "related": {
             "ip": [
                 "88.127.242.225"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-11T06:49:21.769668Z",
-            "data": {
-                "accountName": "CORP",
-                "computerName": "CL002793",
-                "enabledReason": "expired",
-                "externalIp": "88.127.242.225",
-                "fullScopeDetails": "Group DSI in Site CORP-workstations of Account CORP",
-                "fullScopeDetailsPath": "Global / CORP / CORP-workstations / DSI",
-                "groupName": "DSI",
-                "scopeLevel": "Group",
-                "scopeName": "DSI",
-                "siteName": "CORP-workstations"
-            },
-            "eventid": 1396124097359316984,
-            "siteId": 551799242253151036,
-            "updatedAt": "2022-04-11T06:49:21.765992Z"
         }
     }
     	
@@ -166,25 +153,47 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 128, \"agentId\": \"859960378210728293\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-05T09:06:38.941691Z\", \"data\": {\"accountName\": \"corp\", \"computerName\": \"a01pwrbi005\", \"disabledLevel\": \"db corruption\", \"enabledReason\": null, \"expiration\": null, \"externalIp\": \"62.122.8.8\", \"fullScopeDetails\": \"Group Env. 01 - Prod in Site corp-servers-windows of Account corp\", \"fullScopeDetailsPath\": \"Global / corp / corp-servers-windows / Env. 01 - Prod\", \"groupName\": \"Env. 01 - Prod\", \"scopeLevel\": \"Group\", \"scopeName\": \"Env. 01 - Prod\", \"siteName\": \"corp-servers-windows\"}, \"description\": null, \"groupId\": \"834457314771868699\", \"hash\": null, \"id\": \"1391844541367588156\", \"osFamily\": null, \"primaryDescription\": \"Functionality of the SentinelOne Agent on a01pwrbi005 is limited, due to a database corruption. Contact Support.\", \"secondaryDescription\": null, \"siteId\": \"795516416264105067\", \"threatId\": null, \"updatedAt\": \"2022-04-05T09:06:38.937917Z\", \"userId\": null}",
+        "event": {
+            "reason": "Functionality of the SentinelOne Agent on a01pwrbi005 is limited, due to a database corruption. Contact Support.",
+            "action": "Agent Disabled Because of Database Corruption",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "sentinelone": {
+            "eventid": 1391844541367588156,
+            "siteId": 795516416264105067,
+            "updatedAt": "2022-04-05T09:06:38.937917Z",
+            "createdAt": "2022-04-05T09:06:38.941691Z",
+            "data": {
+                "externalIp": "62.122.8.8",
+                "accountName": "corp",
+                "disabledLevel": "db corruption",
+                "fullScopeDetails": "Group Env. 01 - Prod in Site corp-servers-windows of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-servers-windows / Env. 01 - Prod",
+                "scopeLevel": "Group",
+                "scopeName": "Env. 01 - Prod",
+                "groupName": "Env. 01 - Prod",
+                "siteName": "corp-servers-windows",
+                "computerName": "a01pwrbi005"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
         "action": {
             "type": 128
         },
-        "agent": {
-            "id": "859960378210728293"
-        },
-        "event": {
-            "category": "intrusion_detection",
-            "id": "1112953674841025235",
-            "kind": "event",
-            "outcome": "success",
-            "reason": "Functionality of the SentinelOne Agent on a01pwrbi005 is limited, due to a database corruption. Contact Support.",
-            "type": [
-                "info"
-            ],
-            "action": "Agent Disabled Because of Database Corruption"
-        },
         "group": {
             "id": "834457314771868699"
+        },
+        "agent": {
+            "id": "859960378210728293"
         },
         "host": {
             "ip": [
@@ -192,31 +201,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "name": "a01pwrbi005"
         },
-        "organization": {
-            "id": "551799238352448315"
-        },
         "related": {
             "ip": [
                 "62.122.8.8"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-05T09:06:38.941691Z",
-            "data": {
-                "accountName": "corp",
-                "computerName": "a01pwrbi005",
-                "disabledLevel": "db corruption",
-                "externalIp": "62.122.8.8",
-                "fullScopeDetails": "Group Env. 01 - Prod in Site corp-servers-windows of Account corp",
-                "fullScopeDetailsPath": "Global / corp / corp-servers-windows / Env. 01 - Prod",
-                "groupName": "Env. 01 - Prod",
-                "scopeLevel": "Group",
-                "scopeName": "Env. 01 - Prod",
-                "siteName": "corp-servers-windows"
-            },
-            "eventid": 1391844541367588156,
-            "siteId": 795516416264105067,
-            "updatedAt": "2022-04-05T09:06:38.937917Z"
         }
     }
     	
@@ -228,67 +216,66 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 2001
-        },
-        "agent": {
-            "id": "997510333395640565"
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 2001, \"agentId\": \"997510333395640565\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-05T09:10:15.006573Z\", \"data\": {\"accountName\": \"corp\", \"computerName\": \"CL001234\", \"escapedMaliciousProcessArguments\": null, \"fileContentHash\": \"08731ccac0d404da077e7029062f73ca3d8faf61\", \"fileDisplayName\": \"Run SwitchThemeColor.ps1.lnk\", \"filePath\": \"\\\\Device\\\\HarddiskVolume3\\\\Users\\\\user.name\\\\Desktop\\\\Run SwitchThemeColor.ps1.lnk\", \"fullScopeDetails\": \"Group DSI in Site corp-workstations of Account corp\", \"fullScopeDetailsPath\": \"Global / corp / corp-workstations / DSI\", \"globalStatus\": \"success\", \"groupName\": \"DSI\", \"scopeLevel\": \"Group\", \"scopeName\": \"DSI\", \"siteName\": \"corp-workstations\", \"threatClassification\": \"PUA\", \"threatClassificationSource\": \"Engine\"}, \"description\": null, \"groupId\": \"797501649544140679\", \"hash\": null, \"id\": \"1391846353852639605\", \"osFamily\": null, \"primaryDescription\": \"The agent CL001234 successfully killed the threat: Run SwitchThemeColor.ps1.lnk.\", \"secondaryDescription\": \"\\\\Device\\\\HarddiskVolume3\\\\Users\\\\user.name\\\\Desktop\\\\Run SwitchThemeColor.ps1.lnk\", \"siteId\": \"551799242253151036\", \"threatId\": \"1391846352913115209\", \"updatedAt\": \"2022-04-05T09:10:15.001215Z\", \"userId\": null}",
         "event": {
-            "action": "Threat Mitigation Report Kill Success",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "1113032189486913422",
-            "kind": "event",
-            "outcome": "success",
             "reason": "The agent CL001234 successfully killed the threat: Run SwitchThemeColor.ps1.lnk.",
+            "action": "Threat Mitigation Report Kill Success",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
-        "file": {
-            "hash": {
-                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
-            },
-            "name": "Run SwitchThemeColor.ps1.lnk",
-            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
+        "sentinelone": {
+            "eventid": 1391846353852639605,
+            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:15.001215Z",
+            "createdAt": "2022-04-05T09:10:15.006573Z",
+            "data": {
+                "accountName": "corp",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "scopeLevel": "Group",
+                "scopeName": "DSI",
+                "groupName": "DSI",
+                "siteName": "corp-workstations",
+                "computerName": "CL001234",
+                "globalStatus": "success",
+                "threatClassification": "PUA",
+                "threatClassificationSource": "Engine"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 2001
         },
         "group": {
             "id": "797501649544140679"
         },
+        "agent": {
+            "id": "997510333395640565"
+        },
         "host": {
             "name": "CL001234"
         },
-        "organization": {
-            "id": "551799238352448315"
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            }
         },
         "related": {
             "hash": [
                 "08731ccac0d404da077e7029062f73ca3d8faf61"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-05T09:10:15.006573Z",
-            "data": {
-                "accountName": "corp",
-                "computerName": "CL001234",
-                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
-                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
-                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
-                "globalStatus": "success",
-                "groupName": "DSI",
-                "scopeLevel": "Group",
-                "scopeName": "DSI",
-                "siteName": "corp-workstations",
-                "threatClassification": "PUA",
-                "threatClassificationSource": "Engine"
-            },
-            "eventid": 1391846353852639605,
-            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
-            "siteId": 551799242253151036,
-            "threatId": "1391846352913115209",
-            "updatedAt": "2022-04-05T09:10:15.001215Z"
         }
     }
     	
@@ -300,73 +287,69 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 2004
-        },
-        "agent": {
-            "id": "997510333395640565"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 2004, \"agentId\": \"997510333395640565\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-05T09:10:15.137471Z\", \"data\": {\"accountName\": \"corp\", \"computerName\": \"CL001234\", \"downloadUrl\": \"/threats/mitigation-report/1391846354842495401\", \"escapedMaliciousProcessArguments\": null, \"fileContentHash\": \"08731ccac0d404da077e7029062f73ca3d8faf61\", \"fileDisplayName\": \"Run SwitchThemeColor.ps1.lnk\", \"filePath\": \"\\\\Device\\\\HarddiskVolume3\\\\Users\\\\user.name\\\\Desktop\\\\Run SwitchThemeColor.ps1.lnk\", \"fullScopeDetails\": \"Group DSI in Site corp-workstations of Account corp\", \"fullScopeDetailsPath\": \"Global / corp / corp-workstations / DSI\", \"globalStatus\": null, \"groupName\": \"DSI\", \"scopeLevel\": \"Group\", \"scopeName\": \"DSI\", \"siteName\": \"corp-workstations\", \"threatClassification\": \"PUA\", \"threatClassificationSource\": \"Engine\"}, \"description\": null, \"groupId\": \"797501649544140679\", \"hash\": null, \"id\": \"1391846354951547317\", \"osFamily\": null, \"primaryDescription\": \"The agent CL001234 successfully quarantined the threat: Run SwitchThemeColor.ps1.lnk.\", \"secondaryDescription\": \"\\\\Device\\\\HarddiskVolume3\\\\Users\\\\user.name\\\\Desktop\\\\Run SwitchThemeColor.ps1.lnk\", \"siteId\": \"551799242253151036\", \"threatId\": \"1391846352913115209\", \"updatedAt\": \"2022-04-05T09:10:15.132383Z\", \"userId\": null}",
         "event": {
-            "action": "Threat Mitigation Report Quarantine Success",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "1113032189486913422",
-            "kind": "event",
-            "outcome": "success",
             "reason": "The agent CL001234 successfully quarantined the threat: Run SwitchThemeColor.ps1.lnk.",
+            "action": "Threat Mitigation Report Quarantine Success",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
-        "file": {
-            "hash": {
-                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
-            },
-            "name": "Run SwitchThemeColor.ps1.lnk",
-            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
+        "sentinelone": {
+            "eventid": 1391846354951547317,
+            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:15.132383Z",
+            "createdAt": "2022-04-05T09:10:15.137471Z",
+            "data": {
+                "accountName": "corp",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "scopeLevel": "Group",
+                "scopeName": "DSI",
+                "groupName": "DSI",
+                "siteName": "corp-workstations",
+                "computerName": "CL001234",
+                "threatClassification": "PUA",
+                "threatClassificationSource": "Engine"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 2004
         },
         "group": {
             "id": "797501649544140679"
         },
+        "agent": {
+            "id": "997510333395640565"
+        },
         "host": {
             "name": "CL001234"
         },
-        "organization": {
-            "id": "551799238352448315"
+        "url": {
+            "original": "/threats/mitigation-report/1391846354842495401",
+            "path": "/threats/mitigation-report/1391846354842495401"
+        },
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            }
         },
         "related": {
             "hash": [
                 "08731ccac0d404da077e7029062f73ca3d8faf61"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-05T09:10:15.137471Z",
-            "data": {
-                "accountName": "corp",
-                "computerName": "CL001234",
-                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
-                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
-                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
-                "groupName": "DSI",
-                "scopeLevel": "Group",
-                "scopeName": "DSI",
-                "siteName": "corp-workstations",
-                "threatClassification": "PUA",
-                "threatClassificationSource": "Engine"
-            },
-            "eventid": 1391846354951547317,
-            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
-            "siteId": 551799242253151036,
-            "threatId": "1391846352913115209",
-            "updatedAt": "2022-04-05T09:10:15.132383Z"
-        },
-        "url": {
-            "original": "/threats/mitigation-report/1391846354842495401",
-            "path": "/threats/mitigation-report/1391846354842495401"
         }
     }
     	
@@ -378,29 +361,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 25
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 25, \"agentId\": null, \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-14T06:19:49.402205Z\", \"data\": {\"accountName\": \"CORP\", \"byUser\": \"Jean Dupont\", \"deactivationPeriodInDays\": \"90\", \"fullScopeDetails\": \"Site CORP-servers-windows of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / CORP-servers-windows\", \"groupName\": null, \"role\": \"Contr\\u00f4le Interne\", \"scopeLevel\": \"Site\", \"scopeName\": \"CORP-servers-windows\", \"siteName\": \"CORP-servers-windows\", \"userScope\": \"site\", \"username\": \"Foo User\"}, \"description\": \"Jean Dupont\", \"groupId\": null, \"hash\": null, \"id\": \"1398283556850059260\", \"osFamily\": null, \"primaryDescription\": \"The management user Jean Dupont deleted the user Foo User.\", \"secondaryDescription\": null, \"siteId\": \"795516416264105067\", \"threatId\": null, \"updatedAt\": \"2022-04-14T06:19:49.402210Z\", \"userId\": \"1157751223520522706\"}",
         "event": {
-            "category": "intrusion_detection",
-            "kind": "event",
-            "outcome": "success",
             "reason": "The management user Jean Dupont deleted the user Foo User.",
-            "action": "User Deleted"
-        },
-        "organization": {
-            "id": "551799238352448315"
-        },
-        "related": {
-            "user": [
-                "Foo User"
+            "action": "User Deleted",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
             ]
         },
         "sentinelone": {
+            "eventid": 1398283556850059260,
+            "siteId": 795516416264105067,
+            "description": "Jean Dupont",
+            "updatedAt": "2022-04-14T06:19:49.402210Z",
             "createdAt": "2022-04-14T06:19:49.402205Z",
             "data": {
                 "accountName": "CORP",
-                "deactivationPeriodInDays": "90",
                 "byUser": "Jean Dupont",
                 "fullScopeDetails": "Site CORP-servers-windows of Account CORP",
                 "fullScopeDetailsPath": "Global / CORP / CORP-servers-windows",
@@ -408,16 +388,24 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "scopeLevel": "Site",
                 "scopeName": "CORP-servers-windows",
                 "siteName": "CORP-servers-windows",
-                "userScope": "site"
-            },
-            "description": "Jean Dupont",
-            "eventid": 1398283556850059260,
-            "siteId": 795516416264105067,
-            "updatedAt": "2022-04-14T06:19:49.402210Z"
+                "userScope": "site",
+                "deactivationPeriodInDays": "90"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 25
         },
         "user": {
-            "name": "Foo User",
-            "id": 1157751223520522706
+            "id": 1157751223520522706,
+            "name": "Foo User"
+        },
+        "related": {
+            "user": [
+                "Foo User"
+            ]
         }
     }
     	
@@ -429,58 +417,57 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "file": {
-            "path": "C:\\Windows\\system32\\diskshadow.exe"
-        },
-        "action": {
-            "type": 3016
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 3016, \"agentId\": null, \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-11T07:18:34.090547Z\", \"data\": {\"accountName\": \"CORP\", \"exclusionType\": \"path\", \"fullScopeDetails\": \"Group Env. 99 - Admin in Site CORP-servers-windows of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / CORP-servers-windows / Env. 99 - Admin\", \"groupName\": \"Env. 99 - Admin\", \"osFamily\": \"Windows\", \"scopeLevel\": \"Group\", \"scopeName\": \"Env. 99 - Admin\", \"siteName\": \"CORP-servers-windows\", \"username\": \"Jean DUPONT\", \"value\": \"C:\\\\Windows\\\\system32\\\\diskshadow.exe\"}, \"description\": null, \"groupId\": \"860506107823075486\", \"hash\": null, \"id\": \"1396138796888471533\", \"osFamily\": \"windows\", \"primaryDescription\": \"The Management user Jean DUPONT deleted the Path Exclusion C:\\\\Windows\\\\system32\\\\diskshadow.exe for Windows from the Group Env. 99 - Admin\", \"secondaryDescription\": null, \"siteId\": \"795516416264105067\", \"threatId\": null, \"updatedAt\": \"2022-04-11T07:18:34.089273Z\", \"userId\": \"827950513703271774\"}\n\n",
         "event": {
-            "action": "Path Exclusion Deleted",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "1113032189486913422",
-            "kind": "event",
-            "outcome": "success",
             "reason": "The Management user Jean DUPONT deleted the Path Exclusion C:\\Windows\\system32\\diskshadow.exe for Windows from the Group Env. 99 - Admin",
+            "action": "Path Exclusion Deleted",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
-        "group": {
-            "id": "860506107823075486"
-        },
-        "organization": {
-            "id": "551799238352448315"
-        },
-        "os": {
-            "family": "windows"
-        },
-        "related": {
-            "user": [
-                "Jean DUPONT"
-            ]
-        },
         "sentinelone": {
+            "eventid": 1396138796888471533,
+            "siteId": 795516416264105067,
+            "updatedAt": "2022-04-11T07:18:34.089273Z",
             "createdAt": "2022-04-11T07:18:34.090547Z",
             "data": {
                 "accountName": "CORP",
                 "exclusionType": "path",
                 "fullScopeDetails": "Group Env. 99 - Admin in Site CORP-servers-windows of Account CORP",
                 "fullScopeDetailsPath": "Global / CORP / CORP-servers-windows / Env. 99 - Admin",
-                "groupName": "Env. 99 - Admin",
                 "scopeLevel": "Group",
                 "scopeName": "Env. 99 - Admin",
+                "groupName": "Env. 99 - Admin",
                 "siteName": "CORP-servers-windows"
-            },
-            "eventid": 1396138796888471533,
-            "siteId": 795516416264105067,
-            "updatedAt": "2022-04-11T07:18:34.089273Z"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 3016
         },
         "user": {
             "id": 827950513703271774,
             "name": "Jean DUPONT"
+        },
+        "group": {
+            "id": "860506107823075486"
+        },
+        "os": {
+            "family": "windows"
+        },
+        "file": {
+            "path": "C:\\Windows\\system32\\diskshadow.exe"
+        },
+        "related": {
+            "user": [
+                "Jean DUPONT"
+            ]
         }
     }
     	
@@ -492,60 +479,62 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 4003, \"agentId\": \"997510333395640565\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-05T09:10:14.913348Z\", \"data\": {\"accountName\": \"corp\", \"computerName\": \"CL001234\", \"confidenceLevel\": \"suspicious\", \"escapedMaliciousProcessArguments\": null, \"fileContentHash\": \"08731ccac0d404da077e7029062f73ca3d8faf61\", \"fileDisplayName\": \"Run SwitchThemeColor.ps1.lnk\", \"filePath\": \"\\\\Device\\\\HarddiskVolume3\\\\Users\\\\user.name\\\\Desktop\\\\Run SwitchThemeColor.ps1.lnk\", \"fullScopeDetails\": \"Group DSI in Site corp-workstations of Account corp\", \"fullScopeDetailsPath\": \"Global / corp / corp-workstations / DSI\", \"groupName\": \"DSI\", \"siteName\": \"corp-workstations\", \"threatClassification\": null, \"threatClassificationSource\": null, \"username\": null}, \"description\": null, \"groupId\": \"797501649544140679\", \"hash\": null, \"id\": \"1391846353072498959\", \"osFamily\": null, \"primaryDescription\": \"Threat with confidence level suspicious detected: Run SwitchThemeColor.ps1.lnk.\", \"secondaryDescription\": \"08731ccac0d404da077e7029062f73ca3d8faf61\", \"siteId\": \"551799242253151036\", \"threatId\": \"1391846352913115209\", \"updatedAt\": \"2022-04-05T09:10:14.903935Z\", \"userId\": null}",
+        "event": {
+            "reason": "Threat with confidence level suspicious detected: Run SwitchThemeColor.ps1.lnk.",
+            "action": "New Suspicious Threat Not Mitigated",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "sentinelone": {
+            "eventid": 1391846353072498959,
+            "secondaryDescription": "08731ccac0d404da077e7029062f73ca3d8faf61",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:14.903935Z",
+            "createdAt": "2022-04-05T09:10:14.913348Z",
+            "data": {
+                "accountName": "corp",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "groupName": "DSI",
+                "siteName": "corp-workstations",
+                "computerName": "CL001234",
+                "confidenceLevel": "suspicious"
+            }
+        },
         "organization": {
             "id": "551799238352448315"
         },
         "action": {
             "type": 4003
         },
-        "agent": {
-            "id": "997510333395640565"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "intrusion_detection",
-            "kind": "event",
-            "outcome": "success",
-            "reason": "Threat with confidence level suspicious detected: Run SwitchThemeColor.ps1.lnk.",
-            "action": "New Suspicious Threat Not Mitigated"
-        },
-        "file": {
-            "hash": {
-                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
-            },
-            "name": "Run SwitchThemeColor.ps1.lnk",
-            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
-        },
         "group": {
             "id": "797501649544140679"
         },
+        "agent": {
+            "id": "997510333395640565"
+        },
         "host": {
             "name": "CL001234"
+        },
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            }
         },
         "related": {
             "hash": [
                 "08731ccac0d404da077e7029062f73ca3d8faf61"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-05T09:10:14.913348Z",
-            "data": {
-                "accountName": "corp",
-                "computerName": "CL001234",
-                "confidenceLevel": "suspicious",
-                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
-                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
-                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
-                "groupName": "DSI",
-                "siteName": "corp-workstations"
-            },
-            "eventid": 1391846353072498959,
-            "secondaryDescription": "08731ccac0d404da077e7029062f73ca3d8faf61",
-            "siteId": 551799242253151036,
-            "threatId": "1391846352913115209",
-            "updatedAt": "2022-04-05T09:10:14.903935Z"
         }
     }
     	
@@ -557,69 +546,65 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 4008
-        },
-        "agent": {
-            "id": "997510333395640565"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 4008, \"agentId\": \"997510333395640565\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-05T09:10:15.125572Z\", \"data\": {\"accountName\": \"corp\", \"computerName\": \"CL001234\", \"escapedMaliciousProcessArguments\": null, \"fileContentHash\": \"08731ccac0d404da077e7029062f73ca3d8faf61\", \"fileDisplayName\": \"Run SwitchThemeColor.ps1.lnk\", \"filePath\": \"\\\\Device\\\\HarddiskVolume3\\\\Users\\\\user.name\\\\Desktop\\\\Run SwitchThemeColor.ps1.lnk\", \"fullScopeDetails\": \"Group DSI in Site corp-workstations of Account corp\", \"fullScopeDetailsPath\": \"Global / corp / corp-workstations / DSI\", \"groupName\": \"DSI\", \"newStatus\": \"Mitigated\", \"originalStatus\": \"Not mitigated\", \"siteName\": \"corp-workstations\", \"threatClassification\": \"PUA\", \"threatClassificationSource\": \"Engine\"}, \"description\": null, \"groupId\": \"797501649544140679\", \"hash\": null, \"id\": \"1391846354850884010\", \"osFamily\": null, \"primaryDescription\": \"Status of threat Run SwitchThemeColor.ps1.lnk on agent CL001234 changed from Not mitigated to Mitigated.\", \"secondaryDescription\": \"\\\\Device\\\\HarddiskVolume3\\\\Users\\\\user.name\\\\Desktop\\\\Run SwitchThemeColor.ps1.lnk\", \"siteId\": \"551799242253151036\", \"threatId\": \"1391846352913115209\", \"updatedAt\": \"2022-04-05T09:10:15.119559Z\", \"userId\": null}",
         "event": {
-            "action": "Threat Mitigation Status Changed",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "1113032189486913422",
-            "kind": "event",
-            "outcome": "success",
             "reason": "Status of threat Run SwitchThemeColor.ps1.lnk on agent CL001234 changed from Not mitigated to Mitigated.",
+            "action": "Threat Mitigation Status Changed",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
-        "file": {
-            "hash": {
-                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
-            },
-            "name": "Run SwitchThemeColor.ps1.lnk",
-            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk"
+        "sentinelone": {
+            "eventid": 1391846354850884010,
+            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "siteId": 551799242253151036,
+            "threatId": "1391846352913115209",
+            "updatedAt": "2022-04-05T09:10:15.119559Z",
+            "createdAt": "2022-04-05T09:10:15.125572Z",
+            "data": {
+                "accountName": "corp",
+                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
+                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
+                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
+                "groupName": "DSI",
+                "siteName": "corp-workstations",
+                "computerName": "CL001234",
+                "newStatus": "Mitigated",
+                "originalStatus": "Not mitigated",
+                "threatClassification": "PUA",
+                "threatClassificationSource": "Engine"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 4008
         },
         "group": {
             "id": "797501649544140679"
         },
+        "agent": {
+            "id": "997510333395640565"
+        },
         "host": {
             "name": "CL001234"
         },
-        "organization": {
-            "id": "551799238352448315"
+        "file": {
+            "name": "Run SwitchThemeColor.ps1.lnk",
+            "path": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
+            "hash": {
+                "sha1": "08731ccac0d404da077e7029062f73ca3d8faf61"
+            }
         },
         "related": {
             "hash": [
                 "08731ccac0d404da077e7029062f73ca3d8faf61"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-05T09:10:15.125572Z",
-            "data": {
-                "accountName": "corp",
-                "computerName": "CL001234",
-                "fileDisplayName": "Run SwitchThemeColor.ps1.lnk",
-                "fullScopeDetails": "Group DSI in Site corp-workstations of Account corp",
-                "fullScopeDetailsPath": "Global / corp / corp-workstations / DSI",
-                "groupName": "DSI",
-                "newStatus": "Mitigated",
-                "originalStatus": "Not mitigated",
-                "siteName": "corp-workstations",
-                "threatClassification": "PUA",
-                "threatClassificationSource": "Engine"
-            },
-            "eventid": 1391846354850884010,
-            "secondaryDescription": "\\Device\\HarddiskVolume3\\Users\\user.name\\Desktop\\Run SwitchThemeColor.ps1.lnk",
-            "siteId": 551799242253151036,
-            "threatId": "1391846352913115209",
-            "updatedAt": "2022-04-05T09:10:15.119559Z"
         }
     }
     	
@@ -631,48 +616,49 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 47
-        },
-        "agent": {
-            "id": "1351979140358907826"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 47, \"agentId\": \"1351979140358907826\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-10T22:10:31.034788Z\", \"data\": {\"accountName\": \"CORP\", \"computerName\": \"CL-ABCEDFG\", \"fullScopeDetails\": \"Group Default Group in Site CORP-workstations of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / CORP-workstations / Default Group\", \"groupName\": \"Default Group\", \"scopeLevel\": \"Group\", \"scopeName\": \"Default Group\", \"siteName\": \"CORP-workstations\", \"username\": null, \"uuid\": \"961376bbd9694a2ba2e1bb77ba027e38\"}, \"description\": null, \"groupId\": \"551799242261539645\", \"hash\": null, \"id\": \"1395862953807825318\", \"osFamily\": null, \"primaryDescription\": \"Agent CL-ABCEDFG automatically decommissioned.\", \"secondaryDescription\": null, \"siteId\": \"551799242253151036\", \"threatId\": null, \"updatedAt\": \"2022-04-10T22:10:31.034790Z\", \"userId\": null}",
         "event": {
-            "category": "intrusion_detection",
-            "id": "1387492693815190915",
-            "kind": "event",
-            "outcome": "success",
             "reason": "Agent CL-ABCEDFG automatically decommissioned.",
-            "action": "Agent Decommissioned"
+            "action": "Agent Decommissioned",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
+            ]
         },
-        "group": {
-            "id": "551799242261539645"
-        },
-        "host": {
-            "name": "CL-ABCEDFG"
+        "sentinelone": {
+            "eventid": 1395862953807825318,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-10T22:10:31.034790Z",
+            "createdAt": "2022-04-10T22:10:31.034788Z",
+            "data": {
+                "accountName": "CORP",
+                "fullScopeDetails": "Group Default Group in Site CORP-workstations of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-workstations / Default Group",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "uuid": "961376bbd9694a2ba2e1bb77ba027e38",
+                "groupName": "Default Group",
+                "siteName": "CORP-workstations",
+                "computerName": "CL-ABCEDFG"
+            }
         },
         "organization": {
             "id": "551799238352448315"
         },
-        "sentinelone": {
-            "createdAt": "2022-04-10T22:10:31.034788Z",
-            "data": {
-                "accountName": "CORP",
-                "computerName": "CL-ABCEDFG",
-                "fullScopeDetails": "Group Default Group in Site CORP-workstations of Account CORP",
-                "fullScopeDetailsPath": "Global / CORP / CORP-workstations / Default Group",
-                "groupName": "Default Group",
-                "scopeLevel": "Group",
-                "scopeName": "Default Group",
-                "siteName": "CORP-workstations",
-                "uuid": "961376bbd9694a2ba2e1bb77ba027e38"
-            },
-            "eventid": 1395862953807825318,
-            "siteId": 551799242253151036,
-            "updatedAt": "2022-04-10T22:10:31.034790Z"
+        "action": {
+            "type": 47
+        },
+        "group": {
+            "id": "551799242261539645"
+        },
+        "agent": {
+            "id": "1351979140358907826"
+        },
+        "host": {
+            "name": "CL-ABCEDFG"
         }
     }
     	
@@ -684,56 +670,52 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 5009
-        },
-        "agent": {
-            "id": "841026328128144438"
-        },
-        "organization": {
-            "id": "551799238352448315"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 5009, \"agentId\": \"841026328128144438\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-05T09:12:46.391928Z\", \"data\": {\"accountName\": \"corp\", \"computerName\": \"CL001234\", \"fullScopeDetails\": \"Group Default Group in Site corp-workstations of Account corp\", \"fullScopeDetailsPath\": \"Global / corp / corp-workstations / Default Group\", \"groupName\": \"Default Group\", \"newGroupId\": \"551799242261539645\", \"newGroupName\": \"Default Group\", \"oldGroupId\": \"797501649544140679\", \"oldGroupName\": \"DSI\", \"scopeLevel\": \"Group\", \"scopeName\": \"Default Group\", \"siteName\": \"corp-workstations\"}, \"description\": null, \"groupId\": \"551799242261539645\", \"hash\": null, \"id\": \"1391847623762392173\", \"osFamily\": null, \"primaryDescription\": \"The Agent CL001234 moved dynamically from Group DSI to Group Default Group\", \"secondaryDescription\": null, \"siteId\": \"551799242253151036\", \"threatId\": null, \"updatedAt\": \"2022-04-05T09:12:45.472693Z\", \"userId\": null}",
         "event": {
-            "action": "Agent Moved To A Different Group",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "2222222222222222222",
-            "kind": "event",
-            "outcome": "success",
             "reason": "The Agent CL001234 moved dynamically from Group DSI to Group Default Group",
+            "action": "Agent Moved To A Different Group",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
-        "group": {
-            "id": "551799242261539645"
-        },
-        "host": {
-            "name": "CL001234"
-        },
         "sentinelone": {
+            "eventid": 1391847623762392173,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-05T09:12:45.472693Z",
             "createdAt": "2022-04-05T09:12:46.391928Z",
             "data": {
                 "accountName": "corp",
-                "computerName": "CL001234",
                 "fullScopeDetails": "Group Default Group in Site corp-workstations of Account corp",
                 "fullScopeDetailsPath": "Global / corp / corp-workstations / Default Group",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
                 "groupName": "Default Group",
+                "siteName": "corp-workstations",
+                "computerName": "CL001234",
                 "newGroupId": "551799242261539645",
                 "newGroupName": "Default Group",
                 "oldGroupId": "797501649544140679",
-                "oldGroupName": "DSI",
-                "scopeLevel": "Group",
-                "scopeName": "Default Group",
-                "siteName": "corp-workstations"
-            },
-            "eventid": 1391847623762392173,
-            "siteId": 551799242253151036,
-            "updatedAt": "2022-04-05T09:12:45.472693Z"
+                "oldGroupName": "DSI"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 5009
+        },
+        "group": {
+            "id": "551799242261539645"
+        },
+        "agent": {
+            "id": "841026328128144438"
+        },
+        "host": {
+            "name": "CL001234"
         }
     }
     	
@@ -816,82 +798,83 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "destination": {
-            "address": "1.1.1.1",
-            "ip": "1.1.1.1"
-        },
-        "action": {
-            "type": 5232
-        },
-        "agent": {
-            "id": "840949586976454071"
-        },
+        "message": "{\"accountId\": \"551799238352448315\", \"activityType\": 5232, \"agentId\": \"840949586976454071\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-14T11:30:19.543892Z\", \"data\": {\"accountName\": \"CORP\", \"action\": \"Block\", \"application\": null, \"applicationType\": \"any\", \"computerName\": \"CORP1234\", \"createdByUsername\": \"CUS_TER_211022_09_10_03_c4b7bce44eaf5d749e0399dd34f70ab83e3a1fd7\", \"direction\": \"inbound\", \"durationOfMeasurement\": 60, \"fullScopeDetails\": \"Group Default Group in Site CORP-workstations of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / CORP-workstations / Default Group\", \"groupName\": \"Default Group\", \"localHost\": null, \"localHostType\": \"any\", \"localPortType\": \"any\", \"localPorts\": \"\", \"locationNames\": [], \"numberOfEvents\": 3, \"order\": 32, \"osTypes\": [\"windows\"], \"processId\": 4, \"processName\": \"\", \"protocol\": \"\", \"remoteHost\": null, \"remoteHostType\": \"any\", \"remotePortType\": \"any\", \"remotePorts\": \"\", \"reportedDirection\": \"inbound\", \"reportedLocalHost\": null, \"reportedLocalPort\": \"\", \"reportedProtocol\": \"\", \"reportedRemoteHost\": \"1.1.1.1\", \"reportedRemotePort\": \"\", \"ruleDescription\": \"Flux\", \"ruleId\": 556166862007673241, \"ruleName\": \"Block all\", \"ruleScopeLevel\": \"site\", \"ruleScopeName\": \"CORP-workstations (CORP)\", \"siteName\": \"CORP-workstations\", \"status\": \"Enabled\", \"tagNames\": []}, \"description\": null, \"groupId\": \"551799242261539645\", \"hash\": null, \"id\": \"1398439837979472030\", \"osFamily\": null, \"primaryDescription\": \"Firewall Control blocked traffic on the Endpoint CORP1234 because of rule Block all in site CORP-workstations (CORP).\", \"secondaryDescription\": null, \"siteId\": \"551799242253151036\", \"threatId\": null, \"updatedAt\": \"2022-04-14T11:30:19.543894Z\", \"userId\": null}",
         "event": {
-            "category": "intrusion_detection",
-            "id": "1290568704943967230",
-            "kind": "event",
-            "outcome": "success",
             "reason": "Firewall Control blocked traffic on the Endpoint CORP1234 because of rule Block all in site CORP-workstations (CORP).",
+            "action": "Firewall Control Blocked Event",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
-            ],
-            "action": "Firewall Control Blocked Event"
-        },
-        "group": {
-            "id": "551799242261539645"
-        },
-        "host": {
-            "name": "CORP1234"
-        },
-        "organization": {
-            "id": "551799238352448315"
-        },
-        "related": {
-            "ip": [
-                "1.1.1.1"
             ]
         },
-        "rule": {
-            "description": "Flux",
-            "id": "556166862007673241",
-            "name": "Block all"
-        },
-        "network": {
-            "direction": "inbound"
-        },
         "sentinelone": {
+            "eventid": 1398439837979472030,
+            "siteId": 551799242253151036,
+            "updatedAt": "2022-04-14T11:30:19.543894Z",
             "createdAt": "2022-04-14T11:30:19.543892Z",
             "data": {
                 "accountName": "CORP",
                 "action": "Block",
-                "applicationType": "any",
-                "computerName": "CORP1234",
-                "createdByUsername": "CUS_TER_211022_09_10_03_c4b7bce44eaf5d749e0399dd34f70ab83e3a1fd7",
-                "durationOfMeasurement": 60,
                 "fullScopeDetails": "Group Default Group in Site CORP-workstations of Account CORP",
                 "fullScopeDetailsPath": "Global / CORP / CORP-workstations / Default Group",
+                "order": 32,
+                "status": "Enabled",
                 "groupName": "Default Group",
+                "siteName": "CORP-workstations",
+                "computerName": "CORP1234",
+                "ruleScopeName": "CORP-workstations (CORP)",
+                "applicationType": "any",
+                "createdByUsername": "CUS_TER_211022_09_10_03_c4b7bce44eaf5d749e0399dd34f70ab83e3a1fd7",
+                "direction": "inbound",
+                "durationOfMeasurement": 60,
                 "localHostType": "any",
                 "localPortType": "any",
                 "locationNames": [],
                 "numberOfEvents": 3,
-                "order": 32,
                 "osTypes": [
                     "windows"
                 ],
                 "processId": 4,
                 "remoteHostType": "any",
                 "remotePortType": "any",
-                "direction": "inbound",
                 "ruleScopeLevel": "site",
-                "ruleScopeName": "CORP-workstations (CORP)",
-                "siteName": "CORP-workstations",
-                "status": "Enabled",
                 "tagNames": []
-            },
-            "eventid": 1398439837979472030,
-            "siteId": 551799242253151036,
-            "updatedAt": "2022-04-14T11:30:19.543894Z"
+            }
+        },
+        "organization": {
+            "id": "551799238352448315"
+        },
+        "action": {
+            "type": 5232
+        },
+        "group": {
+            "id": "551799242261539645"
+        },
+        "agent": {
+            "id": "840949586976454071"
+        },
+        "host": {
+            "name": "CORP1234"
+        },
+        "rule": {
+            "name": "Block all",
+            "id": "556166862007673241",
+            "description": "Flux"
+        },
+        "network": {
+            "direction": "inbound"
+        },
+        "destination": {
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1"
+            ]
         }
     }
     	
@@ -903,30 +886,48 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "type": 71
-        },
-        "agent": {
-            "id": "1396250507390940172"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
+        "message": "{\"accountId\": \"901144152444038278\", \"activityType\": 71, \"agentId\": \"1396250507390940172\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-11T11:00:31.291987Z\", \"data\": {\"accountName\": \"CORP\", \"computerName\": \"CORP-12347\", \"externalIp\": \"11.22.33.44\", \"fullScopeDetails\": \"Group Default Group in Site DEFAULT of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / DEFAULT / Default Group\", \"groupName\": \"Default Group\", \"scopeLevel\": \"Group\", \"scopeName\": \"Default Group\", \"siteName\": \"DEFAULT\", \"system\": true, \"username\": null, \"uuid\": \"1e74916f8ac14a1b8d9b575ef7e91448\"}, \"description\": null, \"groupId\": \"901144152477592712\", \"hash\": null, \"id\": \"1396250509672642912\", \"osFamily\": null, \"primaryDescription\": \"System initiated a full disk scan to the agent: CORP-12347 (11.22.33.44).\", \"secondaryDescription\": null, \"siteId\": \"901144152460815495\", \"threatId\": null, \"updatedAt\": \"2022-04-11T11:00:31.291994Z\", \"userId\": null}\n\n",
         "event": {
-            "action": "Scan Initiated",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "1113032189486913422",
-            "kind": "event",
-            "outcome": "success",
             "reason": "System initiated a full disk scan to the agent: CORP-12347 (11.22.33.44).",
+            "action": "Scan Initiated",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
             "type": [
                 "info"
             ]
         },
+        "sentinelone": {
+            "eventid": 1396250509672642912,
+            "siteId": 901144152460815495,
+            "updatedAt": "2022-04-11T11:00:31.291994Z",
+            "createdAt": "2022-04-11T11:00:31.291987Z",
+            "data": {
+                "externalIp": "11.22.33.44",
+                "accountName": "CORP",
+                "fullScopeDetails": "Group Default Group in Site DEFAULT of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / DEFAULT / Default Group",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "system": true,
+                "uuid": "1e74916f8ac14a1b8d9b575ef7e91448",
+                "groupName": "Default Group",
+                "siteName": "DEFAULT",
+                "computerName": "CORP-12347"
+            }
+        },
+        "organization": {
+            "id": "901144152444038278"
+        },
+        "action": {
+            "type": 71
+        },
         "group": {
             "id": "901144152477592712"
+        },
+        "agent": {
+            "id": "1396250507390940172"
         },
         "host": {
             "ip": [
@@ -934,32 +935,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "name": "CORP-12347"
         },
-        "organization": {
-            "id": "901144152444038278"
-        },
         "related": {
             "ip": [
                 "11.22.33.44"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-11T11:00:31.291987Z",
-            "data": {
-                "accountName": "CORP",
-                "computerName": "CORP-12347",
-                "externalIp": "11.22.33.44",
-                "fullScopeDetails": "Group Default Group in Site DEFAULT of Account CORP",
-                "fullScopeDetailsPath": "Global / CORP / DEFAULT / Default Group",
-                "groupName": "Default Group",
-                "scopeLevel": "Group",
-                "scopeName": "Default Group",
-                "siteName": "DEFAULT",
-                "uuid": "1e74916f8ac14a1b8d9b575ef7e91448",
-                "system": true
-            },
-            "eventid": 1396250509672642912,
-            "siteId": 901144152460815495,
-            "updatedAt": "2022-04-11T11:00:31.291994Z"
         }
     }
     	
@@ -971,56 +950,128 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "file": {
-            "name": "powershell.exe"
+        "message": "{\"accountId\": \"901144152444038278\", \"activityType\": 3608, \"agentId\": \"1183145065000215213\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2021-11-16T15:29:38.431997Z\", \"data\": {\"accountName\": \"CORP\", \"alertId\": 1290568698312097725, \"alertid\": 1290568698312097725, \"detectedat\": 1637076565467, \"dveventid\": \"\", \"dveventtype\": \"BEHAVIORALINDICATORS\", \"fullScopeDetails\": \"Group LAPTOP in Site DEFAULT of Account CORP\", \"groupName\": \"LAPTOP\", \"k8sclustername\": \"\", \"k8scontainerid\": \"\", \"k8scontainerimage\": \"\", \"k8scontainerlabels\": \"\", \"k8scontainername\": \"\", \"k8scontrollerkind\": \"\", \"k8scontrollerlabels\": \"\", \"k8scontrollername\": \"\", \"k8snamespace\": \"\", \"k8snamespacelabels\": \"\", \"k8snode\": \"\", \"k8spod\": \"\", \"k8spodlabels\": \"\", \"origagentmachinetype\": \"laptop\", \"origagentname\": \"CORP-LAP-4075\", \"origagentosfamily\": \"windows\", \"origagentosname\": \"Windows 10 Pro\", \"origagentosrevision\": \"19042\", \"origagentsiteid\": \"901144152460815495\", \"origagentuuid\": \"058fd4868adb4b87be24a4c5e9f89220\", \"origagentversion\": \"4.6.14.304\", \"ruleId\": 1259119070812474070, \"ruledescription\": \"Rule migrated from Watchlist\", \"ruleid\": 1259119070812474070, \"rulename\": \"PowershellExecutionPolicyChanged Indicator Monito\", \"rulescopeid\": 901144152460815495, \"rulescopelevel\": \"E_SITE\", \"scopeId\": 901144152460815495, \"scopeLevel\": \"Group\", \"scopeName\": \"LAPTOP\", \"severity\": \"E_MEDIUM\", \"siteName\": \"DEFAULT\", \"sourcename\": \"STAR\", \"sourceparentprocesscommandline\": \"C:\\\\WINDOWS\\\\Explorer.EXE\", \"sourceparentprocessintegritylevel\": \"medium\", \"sourceparentprocesskey\": \"811577BA383803B5\", \"sourceparentprocessmd5\": \"681a21a3b848ed960073475cd77634ce\", \"sourceparentprocessname\": \"explorer.exe\", \"sourceparentprocesspath\": \"C:\\\\WINDOWS\\\\explorer.exe\", \"sourceparentprocesspid\": 11196, \"sourceparentprocesssha1\": \"3d930943fbea03c9330c4947e5749ed9ceed528a\", \"sourceparentprocesssha256\": \"08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089\", \"sourceparentprocesssigneridentity\": \"MICROSOFT WINDOWS\", \"sourceparentprocessstarttime\": 1636964894046, \"sourceparentprocessstoryline\": \"E1798FE5683F14CF\", \"sourceparentprocesssubsystem\": \"win32\", \"sourceparentprocessusername\": \"CORP\\\\user\", \"sourceprocesscommandline\": \"\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\" \\\"-Command\\\" \\\"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\\\Users\\\\user\\\\Documents\\\\git\\\\DSP2\\\\API HUB\\\\Documentation\\\\Generate.ps1'\\\"\", \"sourceprocessfilepath\": \"C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\", \"sourceprocessfilesingeridentity\": \"MICROSOFT WINDOWS\", \"sourceprocessintegritylevel\": \"medium\", \"sourceprocesskey\": \"8C3CD6D2478943E5\", \"sourceprocessmd5\": \"04029e121a0cfa5991749937dd22a1d9\", \"sourceprocessname\": \"powershell.exe\", \"sourceprocesspid\": 6676, \"sourceprocesssha1\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"sourceprocesssha256\": \"9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f\", \"sourceprocessstarttime\": 1637076505627, \"sourceprocessstoryline\": \"5D1F81C984CFD44D\", \"sourceprocesssubsystem\": \"win32\", \"sourceprocessusername\": \"CORP\\\\user\", \"systemUser\": 0, \"userId\": 111111111111111111, \"userName\": \"sentinelone\"}, \"description\": null, \"groupId\": \"924347507640996620\", \"hash\": null, \"id\": \"1290568704943967230\", \"osFamily\": null, \"primaryDescription\": \"Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.\", \"secondaryDescription\": \"f43d9bb316e30ae1a3494ac5b0624f6bea1bf054\", \"siteId\": \"901144152460815495\", \"threatId\": null, \"updatedAt\": \"2021-11-16T15:29:38.429056Z\", \"userId\": \"111111111111111111\"}",
+        "event": {
+            "reason": "Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.",
+            "action": "Custom Rules - New Alert",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "sentinelone": {
+            "eventid": 1290568704943967230,
+            "secondaryDescription": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
+            "siteId": 901144152460815495,
+            "updatedAt": "2021-11-16T15:29:38.429056Z",
+            "createdAt": "2021-11-16T15:29:38.431997Z",
+            "data": {
+                "accountName": "CORP",
+                "fullScopeDetails": "Group LAPTOP in Site DEFAULT of Account CORP",
+                "scopeLevel": "Group",
+                "scopeName": "LAPTOP",
+                "scopeId": 901144152460815495,
+                "alertId": 1290568698312097725,
+                "alertid": 1290568698312097725,
+                "detectedat": 1637076565467,
+                "dveventtype": "BEHAVIORALINDICATORS",
+                "groupName": "LAPTOP",
+                "origagentmachinetype": "laptop",
+                "origagentname": "CORP-LAP-4075",
+                "origagentosfamily": "windows",
+                "origagentosname": "Windows 10 Pro",
+                "origagentosrevision": "19042",
+                "origagentsiteid": 901144152460815495,
+                "origagentuuid": "058fd4868adb4b87be24a4c5e9f89220",
+                "origagentversion": "4.6.14.304",
+                "rulescopeid": 901144152460815495,
+                "rulescopelevel": "E_SITE",
+                "severity": "E_MEDIUM",
+                "siteName": "DEFAULT",
+                "sourcename": "STAR",
+                "sourceparentprocessintegritylevel": "medium",
+                "sourceparentprocesskey": "811577BA383803B5",
+                "sourceparentprocessstoryline": "E1798FE5683F14CF",
+                "sourceparentprocesssubsystem": "win32",
+                "sourceparentprocessusername": "CORP\\user",
+                "sourceprocessfilesingeridentity": "MICROSOFT WINDOWS",
+                "sourceprocessintegritylevel": "medium",
+                "sourceprocesskey": "8C3CD6D2478943E5",
+                "sourceprocessstoryline": "5D1F81C984CFD44D",
+                "sourceprocesssubsystem": "win32",
+                "sourceprocessusername": "CORP\\user",
+                "systemUser": 0,
+                "sourceparentprocesscommandline": "C:\\WINDOWS\\Explorer.EXE",
+                "sourceparentprocessmd5": "681a21a3b848ed960073475cd77634ce",
+                "sourceparentprocessname": "explorer.exe",
+                "sourceparentprocesspath": "C:\\WINDOWS\\explorer.exe",
+                "sourceparentprocesspid": 11196,
+                "sourceparentprocesssha1": "3d930943fbea03c9330c4947e5749ed9ceed528a",
+                "sourceparentprocesssha256": "08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089",
+                "sourceparentprocesssigneridentity": "MICROSOFT WINDOWS",
+                "sourceparentprocessstarttime": 1636964894046,
+                "sourceprocesscommandline": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"-Command\" \"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\Users\\user\\Documents\\git\\DSP2\\API HUB\\Documentation\\Generate.ps1'\"",
+                "sourceprocessfilepath": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "sourceprocessmd5": "04029e121a0cfa5991749937dd22a1d9",
+                "sourceprocessname": "powershell.exe",
+                "sourceprocesspid": 6676,
+                "sourceprocesssha1": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
+                "sourceprocesssha256": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f",
+                "sourceprocessstarttime": 1637076505627,
+                "userId": 111111111111111111
+            }
         },
         "organization": {
             "id": "901144152444038278"
         },
-        "event": {
-            "category": "intrusion_detection",
-            "id": "1290568704943967230",
-            "kind": "event",
-            "outcome": "success",
-            "reason": "Alert created for powershell.exe from Custom Rule: PowershellExecutionPolicyChanged Indicator Monito in Group LAPTOP in Site DEFAULT of Account CORP, detected on CORP-LAP-4075.",
-            "type": [
-                "info"
-            ],
-            "action": "Custom Rules - New Alert"
+        "action": {
+            "type": 3608
+        },
+        "user": {
+            "id": 111111111111111111,
+            "name": "sentinelone"
         },
         "group": {
             "id": "924347507640996620"
         },
-        "action": {
-            "type": 3608
-        },
         "agent": {
             "id": "1183145065000215213"
         },
+        "file": {
+            "name": "powershell.exe"
+        },
+        "rule": {
+            "name": "PowershellExecutionPolicyChanged Indicator Monito",
+            "id": "1259119070812474070",
+            "description": "Rule migrated from Watchlist"
+        },
         "process": {
-            "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"-Command\" \"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\Users\\user\\Documents\\git\\DSP2\\API HUB\\Documentation\\Generate.ps1'\"",
-            "executable": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
-            "hash": {
-                "md5": "04029e121a0cfa5991749937dd22a1d9",
-                "sha1": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
-                "sha256": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f"
-            },
             "parent": {
-                "code_signature": {
-                    "subject_name": "MICROSOFT WINDOWS"
-                },
                 "command_line": "C:\\WINDOWS\\Explorer.EXE",
-                "executable": "C:\\WINDOWS\\explorer.exe",
                 "hash": {
                     "md5": "681a21a3b848ed960073475cd77634ce",
                     "sha1": "3d930943fbea03c9330c4947e5749ed9ceed528a",
                     "sha256": "08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089"
                 },
                 "name": "explorer.exe",
+                "executable": "C:\\WINDOWS\\explorer.exe",
                 "pid": 11196,
+                "code_signature": {
+                    "subject_name": "MICROSOFT WINDOWS"
+                },
                 "start": "2021-11-15T08:28:14.046000Z"
             },
+            "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"-Command\" \"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\Users\\user\\Documents\\git\\DSP2\\API HUB\\Documentation\\Generate.ps1'\"",
+            "executable": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
             "pid": 6676,
+            "hash": {
+                "md5": "04029e121a0cfa5991749937dd22a1d9",
+                "sha1": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
+                "sha256": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f"
+            },
             "start": "2021-11-16T15:28:25.627000Z"
         },
         "related": {
@@ -1035,77 +1086,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "sentinelone"
             ]
-        },
-        "rule": {
-            "description": "Rule migrated from Watchlist",
-            "name": "PowershellExecutionPolicyChanged Indicator Monito",
-            "id": "1259119070812474070"
-        },
-        "sentinelone": {
-            "createdAt": "2021-11-16T15:29:38.431997Z",
-            "data": {
-                "accountName": "CORP",
-                "alertId": 1290568698312097725,
-                "alertid": 1290568698312097725,
-                "detectedat": 1637076565467,
-                "dveventtype": "BEHAVIORALINDICATORS",
-                "fullScopeDetails": "Group LAPTOP in Site DEFAULT of Account CORP",
-                "groupName": "LAPTOP",
-                "origagentmachinetype": "laptop",
-                "origagentname": "CORP-LAP-4075",
-                "origagentosfamily": "windows",
-                "origagentosname": "Windows 10 Pro",
-                "origagentosrevision": "19042",
-                "origagentsiteid": 901144152460815495,
-                "origagentuuid": "058fd4868adb4b87be24a4c5e9f89220",
-                "origagentversion": "4.6.14.304",
-                "rulescopeid": 901144152460815495,
-                "rulescopelevel": "E_SITE",
-                "scopeId": 901144152460815495,
-                "scopeLevel": "Group",
-                "scopeName": "LAPTOP",
-                "severity": "E_MEDIUM",
-                "siteName": "DEFAULT",
-                "sourcename": "STAR",
-                "sourceparentprocesscommandline": "C:\\WINDOWS\\Explorer.EXE",
-                "sourceparentprocessintegritylevel": "medium",
-                "sourceparentprocesskey": "811577BA383803B5",
-                "sourceparentprocessmd5": "681a21a3b848ed960073475cd77634ce",
-                "sourceparentprocessname": "explorer.exe",
-                "sourceparentprocesspath": "C:\\WINDOWS\\explorer.exe",
-                "sourceparentprocesspid": 11196,
-                "sourceparentprocesssha1": "3d930943fbea03c9330c4947e5749ed9ceed528a",
-                "sourceparentprocesssha256": "08d3f16dfbb5b5d7b419376a4f73350c13424de984fd43309160ce30bc1df089",
-                "sourceparentprocesssigneridentity": "MICROSOFT WINDOWS",
-                "sourceparentprocessstarttime": 1636964894046,
-                "sourceparentprocessstoryline": "E1798FE5683F14CF",
-                "sourceparentprocesssubsystem": "win32",
-                "sourceparentprocessusername": "CORP\\user",
-                "sourceprocesscommandline": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"-Command\" \"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\\Users\\user\\Documents\\git\\DSP2\\API HUB\\Documentation\\Generate.ps1'\"",
-                "sourceprocessfilepath": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "sourceprocessfilesingeridentity": "MICROSOFT WINDOWS",
-                "sourceprocessintegritylevel": "medium",
-                "sourceprocesskey": "8C3CD6D2478943E5",
-                "sourceprocessmd5": "04029e121a0cfa5991749937dd22a1d9",
-                "sourceprocessname": "powershell.exe",
-                "sourceprocesspid": 6676,
-                "sourceprocesssha1": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
-                "sourceprocesssha256": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f",
-                "sourceprocessstarttime": 1637076505627,
-                "sourceprocessstoryline": "5D1F81C984CFD44D",
-                "sourceprocesssubsystem": "win32",
-                "sourceprocessusername": "CORP\\user",
-                "systemUser": 0,
-                "userId": 111111111111111111
-            },
-            "eventid": 1290568704943967230,
-            "secondaryDescription": "f43d9bb316e30ae1a3494ac5b0624f6bea1bf054",
-            "siteId": 901144152460815495,
-            "updatedAt": "2021-11-16T15:29:38.429056Z"
-        },
-        "user": {
-            "name": "sentinelone",
-            "id": 111111111111111111
         }
     }
     	
@@ -1117,50 +1097,142 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"accountId\": \"901144152444038278\", \"activityType\": 3608, \"agentId\": \"1277428815225733296\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-03-30T09:00:18.286500Z\", \"data\": {\"accountName\": \"CORP\", \"agentipv4\": \"192.168.102.46\", \"alertid\": 1387492689895241884, \"detectedat\": 1648630801340, \"dnsrequest\": \"\", \"dnsresponse\": \"\", \"dstip\": \"\", \"dstport\": 0, \"dveventid\": \"\", \"dveventtype\": \"FILEMODIFICATION\", \"externalip\": \"11.11.11.11\", \"fullScopeDetails\": \"Group LAPTOP in Site DEFAULT of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / DEFAULT / LAPTOP\", \"groupName\": \"LAPTOP\", \"indicatorcategory\": \"\", \"indicatordescription\": \"\", \"indicatorname\": \"\", \"k8sclustername\": \"\", \"k8scontainerid\": \"\", \"k8scontainerimage\": \"\", \"k8scontainerlabels\": \"\", \"k8scontainername\": \"\", \"k8scontrollerkind\": \"\", \"k8scontrollerlabels\": \"\", \"k8scontrollername\": \"\", \"k8snamespace\": \"\", \"k8snamespacelabels\": \"\", \"k8snode\": \"\", \"k8spod\": \"\", \"k8spodlabels\": \"\", \"loginaccountdomain\": \"\", \"loginaccountsid\": \"\", \"loginisadministratorequivalent\": \"\", \"loginissuccessful\": \"\", \"loginsusername\": \"\", \"logintype\": \"\", \"modulepath\": \"\", \"modulesha1\": \"\", \"neteventdirection\": \"\", \"origagentmachinetype\": \"laptop\", \"origagentname\": \"USR-LAP-4141\", \"origagentosfamily\": \"windows\", \"origagentosname\": \"Windows 10 Pro\", \"origagentosrevision\": \"19042\", \"origagentsiteid\": \"901144152460815495\", \"origagentuuid\": \"53a4af77e0e2465abaa97d16e88a6355\", \"origagentversion\": \"21.7.5.1080\", \"physical\": \"70:b5:e8:92:72:0a\", \"registrykeypath\": \"\", \"registryoldvalue\": \"\", \"registryoldvaluetype\": \"\", \"registrypath\": \"\", \"registryvalue\": \"\", \"ruledescription\": \"Ecriture d'une dll webex \\\"atucfobj.dll\\\" inconnu du syst\\u00e8me sur le parc.\", \"ruleid\": 1360739572188076805, \"rulename\": \"Webex.Meetings.Atucfobj.dll Monitoring\", \"rulescopeid\": 901144152444038278, \"rulescopelevel\": \"E_ACCOUNT\", \"scopeId\": 901144152444038278, \"scopeLevel\": \"Group\", \"scopeName\": \"LAPTOP\", \"severity\": \"E_MEDIUM\", \"siteName\": \"DEFAULT\", \"sourcename\": \"STAR\", \"sourceparentprocesscommandline\": \"\\\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\WebEx\\\\WebexHost.exe\\\" /daemon /runFrom=autorun\", \"sourceparentprocessintegritylevel\": \"medium\", \"sourceparentprocesskey\": \"DFF45D789645E07E\", \"sourceparentprocessmd5\": \"66883dc802f65605077b0b05b1bc901b\", \"sourceparentprocessname\": \"WebexHost_old.exe\", \"sourceparentprocesspath\": \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\WebEx\\\\WebexHost_old.exe\", \"sourceparentprocesspid\": 10996, \"sourceparentprocesssha1\": \"84580370c58b1b0c9e4138257018fd98efdf28ba\", \"sourceparentprocesssha256\": \"d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23\", \"sourceparentprocesssigneridentity\": \"CISCO WEBEX LLC\", \"sourceparentprocessstarttime\": 1648628294256, \"sourceparentprocessstoryline\": \"114D19D4F405D782\", \"sourceparentprocesssubsystem\": \"win32\", \"sourceparentprocessusername\": \"CORP\\\\user\", \"sourceprocesscommandline\": \"\\\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\WebEx\\\\WebexHost.exe\\\" /job=upgradeClient /channel=2af416334939280c\", \"sourceprocessfilepath\": \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\WebEx\\\\WebexHost_old.exe\", \"sourceprocessfilesigneridentity\": \"CISCO WEBEX LLC\", \"sourceprocessintegritylevel\": \"medium\", \"sourceprocesskey\": \"634272057BAB1D81\", \"sourceprocessmd5\": \"66883dc802f65605077b0b05b1bc901b\", \"sourceprocessname\": \"WebexHost_old.exe\", \"sourceprocesspid\": 7788, \"sourceprocesssha1\": \"84580370c58b1b0c9e4138257018fd98efdf28ba\", \"sourceprocesssha256\": \"d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23\", \"sourceprocessstarttime\": 1648630694853, \"sourceprocessstoryline\": \"114D19D4F405D782\", \"sourceprocesssubsystem\": \"win32\", \"sourceprocessusername\": \"CORP\\\\user\", \"srcip\": \"\", \"srcmachineip\": \"\", \"srcport\": 0, \"systemUser\": 0, \"tgtfilecreatedat\": 1646400756503, \"tgtfilehashsha1\": \"5b1bbda6c8d9bb6e49e5e7c49909d48d5d35658a\", \"tgtfilehashsha256\": \"e89dd9db7c5f93ab2fd216d36e7432ea3b418b5df0191d4849fdb1967b2f6e2e\", \"tgtfileid\": \"5C4E2E3FE950B367\", \"tgtfileissigned\": \"signed\", \"tgtfilemodifiedat\": 1648630718596, \"tgtfileoldpath\": \"\", \"tgtfilepath\": \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\WebEx\\\\WebEx64\\\\Meetings\\\\atucfobj.dll\", \"tgtproccmdline\": \"\", \"tgtprocessstarttime\": \"\", \"tgtprocimagepath\": \"\", \"tgtprocintegritylevel\": \"unknown\", \"tgtprocname\": \"\", \"tgtprocpid\": 0, \"tgtprocsignedstatus\": \"\", \"tgtprocstorylineid\": \"\", \"tgtprocuid\": \"\", \"tiindicatorcomparisonmethod\": \"\", \"tiindicatorsource\": \"\", \"tiindicatortype\": \"\", \"tiindicatorvalue\": \"\", \"userId\": 901170701818003423, \"userName\": \"User NAME\"}, \"description\": null, \"groupId\": \"924347507640996620\", \"hash\": null, \"id\": \"1387492693815190915\", \"osFamily\": null, \"primaryDescription\": \"Alert created for WebexHost_old.exe from Custom Rule: Webex.Meetings.Atucfobj.dll Monitoring in Group LAPTOP in Site DEFAULT of Account CORP, detected on USR-LAP-4141.\", \"secondaryDescription\": \"84580370c58b1b0c9e4138257018fd98efdf28ba\", \"siteId\": \"901144152460815495\", \"threatId\": null, \"updatedAt\": \"2022-03-30T09:00:18.282935Z\", \"userId\": \"901170701818003423\"}",
         "event": {
-            "category": "intrusion_detection",
-            "id": "1387492693815190915",
-            "kind": "event",
-            "outcome": "success",
             "reason": "Alert created for WebexHost_old.exe from Custom Rule: Webex.Meetings.Atucfobj.dll Monitoring in Group LAPTOP in Site DEFAULT of Account CORP, detected on USR-LAP-4141.",
-            "action": "Custom Rules - New Alert"
+            "action": "Custom Rules - New Alert",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
+            ]
         },
-        "group": {
-            "id": "924347507640996620"
-        },
-        "action": {
-            "type": 3608
-        },
-        "agent": {
-            "id": "1277428815225733296"
+        "sentinelone": {
+            "eventid": 1387492693815190915,
+            "secondaryDescription": "84580370c58b1b0c9e4138257018fd98efdf28ba",
+            "siteId": 901144152460815495,
+            "updatedAt": "2022-03-30T09:00:18.282935Z",
+            "createdAt": "2022-03-30T09:00:18.286500Z",
+            "data": {
+                "accountName": "CORP",
+                "fullScopeDetails": "Group LAPTOP in Site DEFAULT of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / DEFAULT / LAPTOP",
+                "scopeLevel": "Group",
+                "scopeName": "LAPTOP",
+                "scopeId": 901144152444038278,
+                "alertid": 1387492689895241884,
+                "detectedat": 1648630801340,
+                "dveventtype": "FILEMODIFICATION",
+                "groupName": "LAPTOP",
+                "origagentmachinetype": "laptop",
+                "origagentname": "USR-LAP-4141",
+                "origagentosfamily": "windows",
+                "origagentosname": "Windows 10 Pro",
+                "origagentosrevision": "19042",
+                "origagentsiteid": 901144152460815495,
+                "origagentuuid": "53a4af77e0e2465abaa97d16e88a6355",
+                "origagentversion": "21.7.5.1080",
+                "rulescopeid": 901144152444038278,
+                "rulescopelevel": "E_ACCOUNT",
+                "severity": "E_MEDIUM",
+                "siteName": "DEFAULT",
+                "sourcename": "STAR",
+                "sourceparentprocessintegritylevel": "medium",
+                "sourceparentprocesskey": "DFF45D789645E07E",
+                "sourceparentprocessstoryline": "114D19D4F405D782",
+                "sourceparentprocesssubsystem": "win32",
+                "sourceparentprocessusername": "CORP\\user",
+                "sourceprocessintegritylevel": "medium",
+                "sourceprocesskey": "634272057BAB1D81",
+                "sourceprocessstoryline": "114D19D4F405D782",
+                "sourceprocesssubsystem": "win32",
+                "sourceprocessusername": "CORP\\user",
+                "systemUser": 0,
+                "agentipv4": "192.168.102.46",
+                "dstport": 0,
+                "externalip": "11.11.11.11",
+                "physical": "70:b5:e8:92:72:0a",
+                "sourceparentprocesscommandline": "\"C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost.exe\" /daemon /runFrom=autorun",
+                "sourceparentprocessmd5": "66883dc802f65605077b0b05b1bc901b",
+                "sourceparentprocessname": "WebexHost_old.exe",
+                "sourceparentprocesspath": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
+                "sourceparentprocesspid": 10996,
+                "sourceparentprocesssha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
+                "sourceparentprocesssha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23",
+                "sourceparentprocesssigneridentity": "CISCO WEBEX LLC",
+                "sourceparentprocessstarttime": 1648628294256,
+                "sourceprocesscommandline": "\"C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost.exe\" /job=upgradeClient /channel=2af416334939280c",
+                "sourceprocessfilepath": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
+                "sourceprocessfilesigneridentity": "CISCO WEBEX LLC",
+                "sourceprocessmd5": "66883dc802f65605077b0b05b1bc901b",
+                "sourceprocessname": "WebexHost_old.exe",
+                "sourceprocesspid": 7788,
+                "sourceprocesssha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
+                "sourceprocesssha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23",
+                "sourceprocessstarttime": 1648630694853,
+                "srcport": 0,
+                "tgtfilecreatedat": 1646400756503,
+                "tgtfilehashsha1": "5b1bbda6c8d9bb6e49e5e7c49909d48d5d35658a",
+                "tgtfilehashsha256": "e89dd9db7c5f93ab2fd216d36e7432ea3b418b5df0191d4849fdb1967b2f6e2e",
+                "tgtfileid": "5C4E2E3FE950B367",
+                "tgtfileissigned": "signed",
+                "tgtfilemodifiedat": 1648630718596,
+                "tgtfilepath": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebEx64\\Meetings\\atucfobj.dll",
+                "tgtprocintegritylevel": "unknown",
+                "tgtprocpid": 0,
+                "userId": 901170701818003423
+            }
         },
         "organization": {
             "id": "901144152444038278"
         },
+        "action": {
+            "type": 3608
+        },
+        "user": {
+            "id": 901170701818003423,
+            "name": "User NAME"
+        },
+        "group": {
+            "id": "924347507640996620"
+        },
+        "agent": {
+            "id": "1277428815225733296"
+        },
+        "file": {
+            "name": "WebexHost_old.exe"
+        },
+        "rule": {
+            "name": "Webex.Meetings.Atucfobj.dll Monitoring",
+            "id": "1360739572188076805",
+            "description": "Ecriture d'une dll webex \"atucfobj.dll\" inconnu du syst\u00e8me sur le parc."
+        },
         "process": {
-            "command_line": "\"C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost.exe\" /job=upgradeClient /channel=2af416334939280c",
-            "executable": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
-            "hash": {
-                "md5": "66883dc802f65605077b0b05b1bc901b",
-                "sha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
-                "sha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23"
-            },
             "parent": {
-                "code_signature": {
-                    "subject_name": "CISCO WEBEX LLC"
-                },
                 "command_line": "\"C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost.exe\" /daemon /runFrom=autorun",
-                "executable": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
                 "hash": {
                     "md5": "66883dc802f65605077b0b05b1bc901b",
                     "sha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
                     "sha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23"
                 },
                 "name": "WebexHost_old.exe",
+                "executable": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
                 "pid": 10996,
+                "code_signature": {
+                    "subject_name": "CISCO WEBEX LLC"
+                },
                 "start": "2022-03-30T08:18:14.256000Z"
             },
+            "command_line": "\"C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost.exe\" /job=upgradeClient /channel=2af416334939280c",
+            "executable": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
             "pid": 7788,
+            "hash": {
+                "md5": "66883dc802f65605077b0b05b1bc901b",
+                "sha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
+                "sha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23"
+            },
             "start": "2022-03-30T08:58:14.853000Z"
         },
         "related": {
@@ -1172,94 +1244,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "User NAME"
             ]
-        },
-        "rule": {
-            "description": "Ecriture d'une dll webex \"atucfobj.dll\" inconnu du syst\u00e8me sur le parc.",
-            "name": "Webex.Meetings.Atucfobj.dll Monitoring",
-            "id": "1360739572188076805"
-        },
-        "sentinelone": {
-            "createdAt": "2022-03-30T09:00:18.286500Z",
-            "data": {
-                "alertid": 1387492689895241884,
-                "accountName": "CORP",
-                "agentipv4": "192.168.102.46",
-                "detectedat": 1648630801340,
-                "dstport": 0,
-                "dveventtype": "FILEMODIFICATION",
-                "externalip": "11.11.11.11",
-                "fullScopeDetails": "Group LAPTOP in Site DEFAULT of Account CORP",
-                "fullScopeDetailsPath": "Global / CORP / DEFAULT / LAPTOP",
-                "groupName": "LAPTOP",
-                "origagentmachinetype": "laptop",
-                "origagentname": "USR-LAP-4141",
-                "origagentosfamily": "windows",
-                "origagentosname": "Windows 10 Pro",
-                "origagentosrevision": "19042",
-                "origagentsiteid": 901144152460815495,
-                "origagentuuid": "53a4af77e0e2465abaa97d16e88a6355",
-                "origagentversion": "21.7.5.1080",
-                "physical": "70:b5:e8:92:72:0a",
-                "rulescopeid": 901144152444038278,
-                "rulescopelevel": "E_ACCOUNT",
-                "scopeId": 901144152444038278,
-                "scopeLevel": "Group",
-                "scopeName": "LAPTOP",
-                "severity": "E_MEDIUM",
-                "siteName": "DEFAULT",
-                "sourcename": "STAR",
-                "sourceparentprocesscommandline": "\"C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost.exe\" /daemon /runFrom=autorun",
-                "sourceparentprocessintegritylevel": "medium",
-                "sourceparentprocesskey": "DFF45D789645E07E",
-                "sourceparentprocessmd5": "66883dc802f65605077b0b05b1bc901b",
-                "sourceparentprocessname": "WebexHost_old.exe",
-                "sourceparentprocesspath": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
-                "sourceparentprocesspid": 10996,
-                "sourceparentprocesssha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
-                "sourceparentprocesssha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23",
-                "sourceparentprocesssigneridentity": "CISCO WEBEX LLC",
-                "sourceparentprocessstarttime": 1648628294256,
-                "sourceparentprocessstoryline": "114D19D4F405D782",
-                "sourceparentprocesssubsystem": "win32",
-                "sourceparentprocessusername": "CORP\\user",
-                "sourceprocesscommandline": "\"C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost.exe\" /job=upgradeClient /channel=2af416334939280c",
-                "sourceprocessfilepath": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebexHost_old.exe",
-                "sourceprocessfilesigneridentity": "CISCO WEBEX LLC",
-                "sourceprocessintegritylevel": "medium",
-                "sourceprocesskey": "634272057BAB1D81",
-                "sourceprocessmd5": "66883dc802f65605077b0b05b1bc901b",
-                "sourceprocessname": "WebexHost_old.exe",
-                "sourceprocesspid": 7788,
-                "sourceprocesssha1": "84580370c58b1b0c9e4138257018fd98efdf28ba",
-                "sourceprocesssha256": "d8efbbfab923ad72057d165dc30f2c0d39a4f4d2dcb7d6fa8a8c9c5b406fcb23",
-                "sourceprocessstarttime": 1648630694853,
-                "sourceprocessstoryline": "114D19D4F405D782",
-                "sourceprocesssubsystem": "win32",
-                "sourceprocessusername": "CORP\\user",
-                "srcport": 0,
-                "systemUser": 0,
-                "tgtfilecreatedat": 1646400756503,
-                "tgtfilehashsha1": "5b1bbda6c8d9bb6e49e5e7c49909d48d5d35658a",
-                "tgtfilehashsha256": "e89dd9db7c5f93ab2fd216d36e7432ea3b418b5df0191d4849fdb1967b2f6e2e",
-                "tgtfileid": "5C4E2E3FE950B367",
-                "tgtfileissigned": "signed",
-                "tgtfilemodifiedat": 1648630718596,
-                "tgtfilepath": "C:\\Users\\user\\AppData\\Local\\WebEx\\WebEx64\\Meetings\\atucfobj.dll",
-                "tgtprocintegritylevel": "unknown",
-                "tgtprocpid": 0,
-                "userId": 901170701818003423
-            },
-            "eventid": 1387492693815190915,
-            "secondaryDescription": "84580370c58b1b0c9e4138257018fd98efdf28ba",
-            "siteId": 901144152460815495,
-            "updatedAt": "2022-03-30T09:00:18.282935Z"
-        },
-        "file": {
-            "name": "WebexHost_old.exe"
-        },
-        "user": {
-            "name": "User NAME",
-            "id": 901170701818003423
         }
     }
     	
@@ -1481,126 +1465,82 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "user": {
-            "name": "tdr-vm-template\\tdr"
-        },
-        "process": {
-            "parent": {
-                "name": "explorer.exe"
-            }
-        },
+        "message": "{\"agentDetectionInfo\":{\"accountId\":\"617755838952421242\",\"accountName\":\"CORP\",\"agentDomain\":\"WORKGROUP\",\"agentIpV4\":\"10.0.1.4,1.1.1.1\",\"agentIpV6\":\"fe80::9ddd:fd78:1f21:f709,fe80::9ddd:fd78:1f21:f708,fe80::9ddd:fd78:1f21:f707\",\"agentLastLoggedInUserName\":\"tdr\",\"agentMitigationMode\":\"detect\",\"agentOsName\":\"Windows 10 Pro\",\"agentOsRevision\":\"19041\",\"agentRegisteredAt\":\"2021-03-16T16:24:28.049913Z\",\"agentUuid\":\"ab268977a30842c88136c5afb77f3e12\",\"agentVersion\":\"4.6.12.241\",\"externalIp\":\"55.55.55.55\",\"groupId\":\"1107851598374945694\",\"groupName\":\"Default Group\",\"siteId\":\"1107851598358168475\",\"siteName\":\"Sekoia.io\"},\"agentRealtimeInfo\":{\"accountId\":\"617755838952421242\",\"accountName\":\"CORP\",\"activeThreats\":9,\"agentComputerName\":\"tdr-vm-template\",\"agentDecommissionedAt\":null,\"agentDomain\":\"WORKGROUP\",\"agentId\":\"1113026246149650919\",\"agentInfected\":true,\"agentIsActive\":false,\"agentIsDecommissioned\":false,\"agentMachineType\":\"desktop\",\"agentMitigationMode\":\"detect\",\"agentNetworkStatus\":\"connected\",\"agentOsName\":\"Windows 10 Pro\",\"agentOsRevision\":\"19041\",\"agentOsType\":\"windows\",\"agentUuid\":\"ab268977a30842c88136c5afb77f3e12\",\"agentVersion\":\"4.6.12.241\",\"groupId\":\"1107851598374945694\",\"groupName\":\"Default Group\",\"networkInterfaces\":[{\"id\":\"1113026246158039528\",\"inet\":[\"10.0.1.4\"],\"inet6\":[\"fe80::9ddd:fd78:1f21:f709\"],\"name\":\"Ethernet 2\",\"physical\":\"00:0d:3a:b0:42:18\"}],\"operationalState\":\"na\",\"rebootRequired\":false,\"scanAbortedAt\":null,\"scanFinishedAt\":null,\"scanStartedAt\":\"2021-03-16T16:25:02.304681Z\",\"scanStatus\":\"started\",\"siteId\":\"1107851598358168475\",\"siteName\":\"Sekoia.io\",\"userActionsNeeded\":[]},\"containerInfo\":{\"id\":null,\"image\":null,\"labels\":null,\"name\":null},\"id\":\"1113032189486913422\",\"indicators\":[{\"category\":\"InfoStealer\",\"description\":\"This uses mimikatz, an open-source application that shows and saves credentials.\",\"ids\":[38],\"tactics\":[]},{\"category\":\"General\",\"description\":\"This binary imports functions used to raise kernel exceptions.\",\"ids\":[24],\"tactics\":[]},{\"category\":\"General\",\"description\":\"This binary imports debugger functions.\",\"ids\":[6],\"tactics\":[]},{\"category\":\"General\",\"description\":\"This binary creates a System Service.\",\"ids\":[5],\"tactics\":[]}],\"kubernetesInfo\":{\"cluster\":null,\"controllerKind\":null,\"controllerLabels\":null,\"controllerName\":null,\"namespace\":null,\"namespaceLabels\":null,\"node\":null,\"pod\":null,\"podLabels\":null},\"mitigationStatus\":[],\"threatInfo\":{\"analystVerdict\":\"true_positive\",\"analystVerdictDescription\":\"True positive\",\"automaticallyResolved\":false,\"browserType\":null,\"certificateId\":\"OPEN SOURCE DEVELOPER, BENJAMIN DELPY\",\"classification\":\"Infostealer\",\"classificationSource\":\"Cloud\",\"cloudFilesHashVerdict\":\"black\",\"collectionId\":\"984546260612443092\",\"confidenceLevel\":\"malicious\",\"createdAt\":\"2021-03-16T16:36:16.554368Z\",\"detectionEngines\":[{\"key\":\"pre_execution_suspicious\",\"title\":\"On-Write Static AI - Suspicious\"}],\"detectionType\":\"static\",\"engines\":[\"On-Write DFI - Suspicious\"],\"externalTicketExists\":false,\"externalTicketId\":null,\"failedActions\":false,\"fileExtension\":\"EXE\",\"fileExtensionType\":\"Executable\",\"filePath\":\"\\\\Device\\\\HarddiskVolume2\\\\Users\\\\tdr\\\\Downloads\\\\mimikatz_trunk\\\\x64\\\\mimikatz.exe\",\"fileSize\":1309448,\"fileVerificationType\":\"SignedVerified\",\"identifiedAt\":\"2021-03-16T16:36:16.157000Z\",\"incidentStatus\":\"resolved\",\"incidentStatusDescription\":\"Resolved\",\"initiatedBy\":\"agent_policy\",\"initiatedByDescription\":\"Agent Policy\",\"initiatingUserId\":null,\"initiatingUsername\":null,\"isFileless\":false,\"isValidCertificate\":true,\"maliciousProcessArguments\":null,\"md5\":null,\"mitigatedPreemptively\":false,\"mitigationStatus\":\"not_mitigated\",\"mitigationStatusDescription\":\"Not mitigated\",\"originatorProcess\":\"explorer.exe\",\"pendingActions\":false,\"processUser\":\"tdr-vm-template\\\\tdr\",\"publisherName\":\"OPEN SOURCE DEVELOPER, BENJAMIN DELPY\",\"reachedEventsLimit\":false,\"rebootRequired\":false,\"sha1\":\"d241df7b9d2ec0b8194751cd5ce153e27cc40fa4\",\"sha256\":null,\"storyline\":\"D8F484ABE8543750\",\"threatId\":\"1113032189486913422\",\"threatName\":\"mimikatz.exe\",\"updatedAt\":\"2021-03-16T17:33:41.910607Z\"}}",
         "event": {
-            "category": "malware",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "1113032189486913422",
             "kind": "alert",
-            "outcome": "success",
+            "category": "malware",
             "type": [
                 "info"
             ]
         },
-        "file": {
-            "hash": {
-                "sha1": "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4"
+        "threat": {
+            "indicator": {
+                "file": {
+                    "code_signature": {
+                        "signing_id": "OPEN SOURCE DEVELOPER, BENJAMIN DELPY"
+                    },
+                    "created": "2021-03-16T16:36:16.554368Z",
+                    "size": 1309448
+                },
+                "confidence": "malicious"
             },
+            "software": {
+                "type": "Infostealer"
+            },
+            "enrichments": {
+                "matched": {
+                    "occurred": "2021-03-16T16:36:16.157000Z"
+                }
+            }
+        },
+        "file": {
             "name": "mimikatz.exe",
             "extension": "exe",
             "path": "\\Device\\HarddiskVolume2\\Users\\tdr\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe",
-            "size": 1309448
-        },
-        "host": {
-            "domain": "WORKGROUP",
-            "os": {
-                "family": "windows",
-                "version": "Windows 10 Pro"
-            },
-            "ip": [
-                "10.0.1.4",
-                "1.1.1.1",
-                "fe80::9ddd:fd78:1f21:f709",
-                "fe80::9ddd:fd78:1f21:f708",
-                "fe80::9ddd:fd78:1f21:f707",
-                "55.55.55.55"
-            ],
-            "name": "tdr-vm-template"
-        },
-        "organization": {
-            "id": "617755838952421242",
-            "name": "CORP"
-        },
-        "related": {
-            "hash": [
-                "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4"
-            ],
-            "ip": [
-                "1.1.1.1",
-                "10.0.1.4",
-                "55.55.55.55",
-                "fe80::9ddd:fd78:1f21:f707",
-                "fe80::9ddd:fd78:1f21:f708",
-                "fe80::9ddd:fd78:1f21:f709"
-            ],
-            "user": [
-                "tdr-vm-template\\tdr"
-            ]
+            "size": 1309448,
+            "hash": {
+                "sha1": "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4"
+            }
         },
         "sentinelone": {
-            "agentDetectionInfo": {
-                "accountId": "617755838952421242",
-                "accountName": "CORP",
-                "agentDomain": "WORKGROUP",
-                "agentIpV4": "10.0.1.4,1.1.1.1",
-                "agentIpV6": "fe80::9ddd:fd78:1f21:f709,fe80::9ddd:fd78:1f21:f708,fe80::9ddd:fd78:1f21:f707",
-                "agentLastLoggedInUserName": "tdr",
-                "agentMitigationMode": "detect",
-                "agentOsName": "Windows 10 Pro",
-                "agentOsRevision": "19041",
-                "agentRegisteredAt": "2021-03-16T16:24:28.049913Z",
-                "agentUuid": "ab268977a30842c88136c5afb77f3e12",
-                "agentVersion": "4.6.12.241",
-                "externalIp": "55.55.55.55",
-                "groupId": 1107851598374945694,
-                "groupName": "Default Group",
-                "siteId": 1107851598358168475,
-                "siteName": "Sekoia.io"
-            },
-            "agentRealtimeInfo": {
-                "activeThreats": 9,
-                "agentInfected": true,
-                "agentIsActive": false,
-                "agentIsDecommissioned": false,
-                "rebootRequired": false,
-                "agentComputerName": "tdr-vm-template",
-                "agentDomain": "WORKGROUP",
-                "agentId": "1113026246149650919",
-                "agentMachineType": "desktop",
-                "agentMitigationMode": "detect",
-                "agentNetworkStatus": "connected",
-                "agentOsRevision": "19041",
-                "agentUuid": "ab268977a30842c88136c5afb77f3e12",
-                "agentVersion": "4.6.12.241",
-                "groupId": 1107851598374945694,
-                "groupName": "Default Group",
-                "networkInterfaces": [
+            "threatInfo": {
+                "analystVerdict": "true_positive",
+                "analystVerdictDescription": "True positive",
+                "automaticallyResolved": false,
+                "classificationSource": "Cloud",
+                "cloudFilesHashVerdict": "black",
+                "collectionId": "984546260612443092",
+                "detectionEngines": [
                     {
-                        "id": "1113026246158039528",
-                        "inet": [
-                            "10.0.1.4"
-                        ],
-                        "inet6": [
-                            "fe80::9ddd:fd78:1f21:f709"
-                        ],
-                        "name": "Ethernet 2",
-                        "physical": "00:0d:3a:b0:42:18"
+                        "key": "pre_execution_suspicious",
+                        "title": "On-Write Static AI - Suspicious"
                     }
                 ],
-                "operationalState": "na",
-                "scanStartedAt": "2021-03-16T16:25:02.304681Z",
-                "scanStatus": "started",
-                "siteId": 1107851598358168475,
-                "siteName": "Sekoia.io",
-                "userActionsNeeded": []
+                "detectionType": "static",
+                "engines": [
+                    "On-Write DFI - Suspicious"
+                ],
+                "externalTicketExists": false,
+                "failedActions": false,
+                "fileExtensionType": "Executable",
+                "fileVerificationType": "SignedVerified",
+                "incidentStatus": "resolved",
+                "incidentStatusDescription": "Resolved",
+                "initiatedBy": "agent_policy",
+                "initiatedByDescription": "Agent Policy",
+                "isFileless": false,
+                "isValidCertificate": true,
+                "mitigatedPreemptively": false,
+                "mitigationStatus": "not_mitigated",
+                "mitigationStatusDescription": "Not mitigated",
+                "pendingActions": false,
+                "publisherName": "OPEN SOURCE DEVELOPER, BENJAMIN DELPY",
+                "reachedEventsLimit": false,
+                "rebootRequired": false,
+                "storyline": "D8F484ABE8543750",
+                "threatId": "1113032189486913422",
+                "updatedAt": "2021-03-16T17:33:41.910607Z",
+                "fileExtension": "EXE"
             },
             "eventid": 1113032189486913422,
             "indicators": [
@@ -1638,65 +1578,106 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             ],
             "mitigationStatus": [],
-            "threatInfo": {
-                "externalTicketExists": false,
-                "mitigatedPreemptively": false,
-                "reachedEventsLimit": false,
-                "analystVerdict": "true_positive",
-                "analystVerdictDescription": "True positive",
-                "automaticallyResolved": false,
-                "classificationSource": "Cloud",
-                "cloudFilesHashVerdict": "black",
-                "collectionId": "984546260612443092",
-                "detectionEngines": [
+            "agentDetectionInfo": {
+                "accountId": "617755838952421242",
+                "accountName": "CORP",
+                "agentDomain": "WORKGROUP",
+                "agentIpV4": "10.0.1.4,1.1.1.1",
+                "agentIpV6": "fe80::9ddd:fd78:1f21:f709,fe80::9ddd:fd78:1f21:f708,fe80::9ddd:fd78:1f21:f707",
+                "agentLastLoggedInUserName": "tdr",
+                "agentMitigationMode": "detect",
+                "agentOsName": "Windows 10 Pro",
+                "agentOsRevision": "19041",
+                "agentRegisteredAt": "2021-03-16T16:24:28.049913Z",
+                "agentUuid": "ab268977a30842c88136c5afb77f3e12",
+                "agentVersion": "4.6.12.241",
+                "externalIp": "55.55.55.55",
+                "groupId": 1107851598374945694,
+                "groupName": "Default Group",
+                "siteId": 1107851598358168475,
+                "siteName": "Sekoia.io"
+            },
+            "agentRealtimeInfo": {
+                "activeThreats": 9,
+                "agentComputerName": "tdr-vm-template",
+                "agentDomain": "WORKGROUP",
+                "agentId": "1113026246149650919",
+                "agentInfected": true,
+                "agentIsActive": false,
+                "agentIsDecommissioned": false,
+                "agentMachineType": "desktop",
+                "agentMitigationMode": "detect",
+                "agentNetworkStatus": "connected",
+                "agentOsRevision": "19041",
+                "agentUuid": "ab268977a30842c88136c5afb77f3e12",
+                "agentVersion": "4.6.12.241",
+                "groupId": 1107851598374945694,
+                "groupName": "Default Group",
+                "networkInterfaces": [
                     {
-                        "key": "pre_execution_suspicious",
-                        "title": "On-Write Static AI - Suspicious"
+                        "id": "1113026246158039528",
+                        "inet": [
+                            "10.0.1.4"
+                        ],
+                        "inet6": [
+                            "fe80::9ddd:fd78:1f21:f709"
+                        ],
+                        "name": "Ethernet 2",
+                        "physical": "00:0d:3a:b0:42:18"
                     }
                 ],
-                "detectionType": "static",
-                "engines": [
-                    "On-Write DFI - Suspicious"
-                ],
-                "failedActions": false,
-                "fileExtension": "EXE",
-                "fileExtensionType": "Executable",
-                "fileVerificationType": "SignedVerified",
-                "incidentStatus": "resolved",
-                "incidentStatusDescription": "Resolved",
-                "initiatedBy": "agent_policy",
-                "initiatedByDescription": "Agent Policy",
-                "isFileless": false,
-                "isValidCertificate": true,
-                "mitigationStatus": "not_mitigated",
-                "mitigationStatusDescription": "Not mitigated",
-                "pendingActions": false,
-                "publisherName": "OPEN SOURCE DEVELOPER, BENJAMIN DELPY",
+                "operationalState": "na",
                 "rebootRequired": false,
-                "storyline": "D8F484ABE8543750",
-                "threatId": "1113032189486913422",
-                "updatedAt": "2021-03-16T17:33:41.910607Z"
+                "scanStartedAt": "2021-03-16T16:25:02.304681Z",
+                "scanStatus": "started",
+                "siteId": 1107851598358168475,
+                "siteName": "Sekoia.io",
+                "userActionsNeeded": []
             }
         },
-        "threat": {
-            "enrichments": {
-                "matched": {
-                    "occurred": "2021-03-16T16:36:16.157000Z"
-                }
-            },
-            "indicator": {
-                "confidence": "malicious",
-                "file": {
-                    "code_signature": {
-                        "signing_id": "OPEN SOURCE DEVELOPER, BENJAMIN DELPY"
-                    },
-                    "created": "2021-03-16T16:36:16.554368Z",
-                    "size": 1309448
-                }
-            },
-            "software": {
-                "type": "Infostealer"
+        "process": {
+            "parent": {
+                "name": "explorer.exe"
             }
+        },
+        "user": {
+            "name": "tdr-vm-template\\tdr"
+        },
+        "host": {
+            "ip": [
+                "10.0.1.4",
+                "1.1.1.1",
+                "fe80::9ddd:fd78:1f21:f709",
+                "fe80::9ddd:fd78:1f21:f708",
+                "fe80::9ddd:fd78:1f21:f707",
+                "55.55.55.55"
+            ],
+            "domain": "WORKGROUP",
+            "os": {
+                "version": "Windows 10 Pro",
+                "family": "windows"
+            },
+            "name": "tdr-vm-template"
+        },
+        "organization": {
+            "id": "617755838952421242",
+            "name": "CORP"
+        },
+        "related": {
+            "hash": [
+                "d241df7b9d2ec0b8194751cd5ce153e27cc40fa4"
+            ],
+            "ip": [
+                "1.1.1.1",
+                "10.0.1.4",
+                "55.55.55.55",
+                "fe80::9ddd:fd78:1f21:f707",
+                "fe80::9ddd:fd78:1f21:f708",
+                "fe80::9ddd:fd78:1f21:f709"
+            ],
+            "user": [
+                "tdr-vm-template\\tdr"
+            ]
         }
     }
     	
@@ -2453,35 +2434,47 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"accountId\": \"111111111111111111\", \"activityType\": 27, \"agentId\": null, \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-04-01T08:14:35.018328Z\", \"data\": {\"accountName\": \"CORP\", \"fullScopeDetails\": \"Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP\", \"groupName\": null, \"ipAddress\": \"11.22.33.44\", \"reason\": null, \"role\": \"Admin\", \"scopeLevel\": \"Account\", \"scopeName\": \"CORP\", \"siteName\": null, \"source\": \"mgmt\", \"userScope\": \"account\", \"username\": \"Jean DUPONT\"}, \"description\": null, \"groupId\": null, \"hash\": null, \"id\": \"1388919233083515416\", \"osFamily\": null, \"primaryDescription\": \"The management user Jean DUPONT logged in to the management console with IP Address 11.22.33.44.\", \"secondaryDescription\": null, \"siteId\": null, \"threatId\": null, \"updatedAt\": \"2022-04-01T08:14:35.013748Z\", \"userId\": \"111111111111111111\"}",
+        "event": {
+            "reason": "The management user Jean DUPONT logged in to the management console with IP Address 11.22.33.44.",
+            "action": "User Logged In",
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "sentinelone": {
+            "eventid": 1388919233083515416,
+            "updatedAt": "2022-04-01T08:14:35.013748Z",
+            "createdAt": "2022-04-01T08:14:35.018328Z",
+            "data": {
+                "accountName": "CORP",
+                "fullScopeDetails": "Account CORP",
+                "fullScopeDetailsPath": "Global / CORP",
+                "role": "Admin",
+                "scopeLevel": "Account",
+                "scopeName": "CORP",
+                "source": "mgmt",
+                "ipAddress": "11.22.33.44",
+                "userScope": "account"
+            }
+        },
+        "organization": {
+            "id": "111111111111111111"
+        },
         "action": {
             "type": 27
-        },
-        "source": {
-            "address": "11.22.33.44",
-            "ip": "11.22.33.44"
         },
         "user": {
             "id": 111111111111111111,
             "name": "Jean DUPONT"
         },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "action": "User Logged In",
-            "category": "intrusion_detection",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "dialect": "sentinelone",
-            "id": "2222222222222222222",
-            "kind": "event",
-            "outcome": "success",
-            "reason": "The management user Jean DUPONT logged in to the management console with IP Address 11.22.33.44.",
-            "type": [
-                "info"
-            ]
-        },
-        "organization": {
-            "id": "111111111111111111"
+        "source": {
+            "ip": "11.22.33.44",
+            "address": "11.22.33.44"
         },
         "related": {
             "ip": [
@@ -2490,22 +2483,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "Jean DUPONT"
             ]
-        },
-        "sentinelone": {
-            "createdAt": "2022-04-01T08:14:35.018328Z",
-            "data": {
-                "accountName": "CORP",
-                "fullScopeDetails": "Account CORP",
-                "fullScopeDetailsPath": "Global / CORP",
-                "ipAddress": "11.22.33.44",
-                "role": "Admin",
-                "scopeLevel": "Account",
-                "scopeName": "CORP",
-                "userScope": "account",
-                "source": "mgmt"
-            },
-            "eventid": 1388919233083515416,
-            "updatedAt": "2022-04-01T08:14:35.013748Z"
         }
     }
     	

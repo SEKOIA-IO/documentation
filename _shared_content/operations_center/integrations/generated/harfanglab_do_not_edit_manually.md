@@ -51,10 +51,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "process",
             "type": "start",
-            "kind": "alert",
-            "dialect": "harfanglab",
-            "created": "2021-04-30T13:21:20.840949+00:00",
-            "dialect_uuid": "3c7057d3-4689-4fae-8033-6f1f887a70f2"
+            "kind": "alert"
         },
         "@timestamp": "2021-04-30T13:21:20.704Z",
         "agent": {
@@ -70,7 +67,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.19041",
                 "full": "Windows 10 Pro"
-            }
+            },
+            "name": "REDACTED"
         },
         "harfanglab": {
             "level": "high",
@@ -143,10 +141,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "process",
             "type": "start",
-            "kind": "alert",
-            "dialect": "harfanglab",
-            "created": "2021-04-30T13:21:20.840949+00:00",
-            "dialect_uuid": "3c7057d3-4689-4fae-8033-6f1f887a70f2"
+            "kind": "alert"
         },
         "@timestamp": "2022-03-15T07:26:01.276Z",
         "agent": {
@@ -162,7 +157,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.19041",
                 "full": "Windows 10 Pro"
-            }
+            },
+            "name": "pc123"
         },
         "harfanglab": {
             "level": "low",
@@ -234,10 +230,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"cmdline\":\"C:\\\\Windows\\\\system32\\\\svchost.exe -k wusvcs -p\",\"session\":0,\"pid\":3092,\"job_id\":\"c0cbd87c-c793-4af9-9ecf-53739f3f27a5\",\"process_bits\":64,\"@timestamp\":\"2021-05-01T07:49:08.043Z\",\"username\":\"NT AUTHORITY\\\\SYSTEM\",\"@version\":\"1\",\"log_type\":\"investigation\",\"binaryinfo\":{\"filename\":\"svchost.exe\",\"fullpath\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\",\"binaryinfo\":{\"root_thumbprint\":\"3b1efd3a66ea28b16697394703a72ca340a05bd5\",\"pe_file_version\":\"10.0.17763.1 (WinBuild.160101.0800)\",\"filesize\":51696,\"signer_serial_number\":\"33000001a90f2d80c9a929387c0000000001a9\",\"pe_timestamp_int\":3103846143,\"pe_legal_copyright\":\"\u00a9 Microsoft Corporation. All rights reserved.\",\"signed_catalog\":false,\"signer_display_name\":\"Microsoft Windows Publisher\",\"sha1\":\"a1385ce20ad79f55df235effd9780c31442aa234\",\"signer_issuer_name\":\"Microsoft Windows Production PCA 2011\",\"signed_authenticode\":true,\"pe_company_name\":\"Microsoft Corporation\",\"md5\":\"8a0a29438052faed8a2532da50455756\",\"pe_product_version\":\"10.0.17763.1\",\"pe_internal_name\":\"svchost.exe\",\"pe_timestamp\":\"2068-05-10 03:29:03.000\",\"root_serial_number\":\"28cc3a25bfba44ac449a9b586b4339aa\",\"pe_imphash\":\"247B9220E5D9B720A82B2C8B5069AD69\",\"sha256\":\"7fd065bac18c5278777ae44908101cdfed72d26fa741367f0ad4d02020787ab6\",\"root_display_name\":\"Microsoft Root Certificate Authority 2010\",\"pe_file_description\":\"Host Process for Windows Services\",\"root_issuer_name\":\"Microsoft Root Certificate Authority 2010\",\"pe_original_filename\":\"svchost.exe\",\"pe_product_name\":\"Microsoft\u00ae Windows\u00ae Operating System\",\"signed\":true,\"signer_thumbprint\":\"458d803a5cf470dd3f01a475214938d97a5051e8\"},\"fullpath_cmdline\":null},\"job_instance_id\":\"c580fa86-4d9c-4cf0-bebf-24d31fc2ff56\",\"integrity_level\":\"Unknown\",\"item_status\":0,\"agent\":{\"osversion\":\"10.0.17763\",\"domainname\":\"WORKGROUP\",\"agentid\":\"77af54c8-910f-455d-b887-87cbc87430a4\",\"osproducttype\":\"Windows Server 2019 Datacenter\",\"hostname\":\"REDACTED\",\"domain\":null},\"object_type\":\"process\",\"mem_working_set\":7553024,\"critical\":true,\"signature_requested\":true,\"create_time\":\"2021-05-01T07:45:59.848Z\",\"name\":\"svchost.exe\",\"maybe_hollow\":false,\"mem_private_bytes\":1777664,\"ppid\":752,\"status\":\"running\",\"exe\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\"}",
         "event": {
             "kind": "event",
-            "type": "info",
-            "created": "2021-05-01T07:49:08.292995+00:00",
-            "dialect": "harfanglab",
-            "dialect_uuid": "3c7057d3-4689-4fae-8033-6f1f887a70f2"
+            "type": "info"
         },
         "agent": {
             "id": "77af54c8-910f-455d-b887-87cbc87430a4",
@@ -252,7 +245,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.17763",
                 "full": "Windows Server 2019 Datacenter"
-            }
+            },
+            "name": "REDACTED"
         },
         "file": {
             "path": "C:\\Windows\\System32\\svchost.exe",
@@ -291,39 +285,45 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "destination": {
-            "address": "192.168.120.41",
-            "ip": "192.168.120.41",
-            "port": 2525
+        "message": "{\"event_id\":3,\"dport\":2525,\"tenant\":\"\",\"initiated\":\"true\",\"image_name\":\"E:\\\\Program Files\\\\Microsoft\\\\Exchange Server\\\\V15\\\\Bin\\\\MSExchangeHMWorker.exe\",\"username\":\"NT AUTHORITY\\\\SYSTEM\",\"saddr\":\"192.168.120.41\",\"agent\":{\"distroid\":null,\"agentid\":\"f43cb847-8227-4104-b77f-7fc849789f8e\",\"domainname\":\"EXAMPLE\",\"ostype\":\"windows\",\"hostname\":\"EXCHANGE\",\"osversion\":\"10.0.17763\",\"domain\":null,\"osproducttype\":\"Windows Server 2019 Standard\"},\"is_ipv6\":\"false\",\"sport\":21955,\"pid\":14228,\"direction\":\"out\",\"conn_type\":0,\"daddr\":\"192.168.120.41\",\"@timestamp\":\"2021-11-21T19:38:44.461Z\",\"@version\":\"1\",\"log_type\":\"network\",\"@event_create_date\":\"2021-11-21T19:38:36.820Z\",\"process_unique_id\":\"2d1de721-5d5a-46b2-3794-0097821d2ab7\"}",
+        "event": {
+            "category": "network",
+            "type": "connection",
+            "kind": "event"
         },
         "@timestamp": "2021-11-21T19:38:36.820Z",
         "agent": {
-            "name": "harfanglab",
-            "id": "f43cb847-8227-4104-b77f-7fc849789f8e"
-        },
-        "event": {
-            "category": "network",
-            "kind": "event",
-            "outcome": "success",
-            "event": {
-                "outcome": "success"
-            },
-            "type": "connection"
-        },
-        "host": {
-            "domain": "EXAMPLE",
-            "hostname": "EXCHANGE",
-            "os": {
-                "full": "Windows Server 2019 Standard",
-                "version": "10.0.17763"
-            }
+            "id": "f43cb847-8227-4104-b77f-7fc849789f8e",
+            "name": "harfanglab"
         },
         "log": {
             "hostname": "EXCHANGE"
         },
+        "host": {
+            "hostname": "EXCHANGE",
+            "domain": "EXAMPLE",
+            "os": {
+                "version": "10.0.17763",
+                "full": "Windows Server 2019 Standard"
+            },
+            "name": "EXCHANGE"
+        },
+        "destination": {
+            "ip": "192.168.120.41",
+            "port": 2525,
+            "address": "192.168.120.41"
+        },
+        "source": {
+            "ip": "192.168.120.41",
+            "port": 21955,
+            "address": "192.168.120.41"
+        },
         "process": {
-            "executable": "E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Bin\\MSExchangeHMWorker.exe",
-            "pid": 14228
+            "pid": 14228,
+            "executable": "E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Bin\\MSExchangeHMWorker.exe"
+        },
+        "user": {
+            "name": "NT AUTHORITY\\SYSTEM"
         },
         "related": {
             "hosts": [
@@ -335,14 +335,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "NT AUTHORITY\\SYSTEM"
             ]
-        },
-        "source": {
-            "address": "192.168.120.41",
-            "ip": "192.168.120.41",
-            "port": 21955
-        },
-        "user": {
-            "name": "NT AUTHORITY\\SYSTEM"
         }
     }
     	
@@ -358,10 +350,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "network",
             "type": "connection",
-            "kind": "event",
-            "dialect_uuid": "3c7057d3-4689-4fae-8033-6f1f887a70f2",
-            "created": "2021-05-01T09:55:44.797896+00:00",
-            "dialect": "harfanglab"
+            "kind": "event"
         },
         "@timestamp": "2021-05-01T09:55:30.372Z",
         "agent": {
@@ -377,7 +366,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.17763",
                 "full": "Windows Server 2019 Datacenter"
-            }
+            },
+            "name": "REDACTED"
         },
         "destination": {
             "ip": "172.31.9.222",
@@ -438,7 +428,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.17763",
                 "full": "Windows Server 2019 Standard"
-            }
+            },
+            "name": "EXCHANGE"
         },
         "process": {
             "command_line": "relog.exe E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Logging\\Diagnostics\\PerformanceLogsToBeProcessed\\ExchangeDiagnosticsPerformanceLog_11212058.blg -f csv -o E:\\Program Files\\Microsoft\\Exchange Server\\V15\\Logging\\Diagnostics\\PerformanceLogsToBeProcessed\\ExchangeDiagnosticsPerformanceLog_11212058.csvtmp -y",
@@ -497,10 +488,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "process",
             "type": "start",
-            "kind": "alert",
-            "event": {
-                "outcome": "success"
-            }
+            "kind": "alert"
         },
         "@timestamp": "2022-03-15T07:26:01.276Z",
         "agent": {
@@ -516,7 +504,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.19041",
                 "full": "Windows 10 Pro"
-            }
+            },
+            "name": "pc123"
         },
         "harfanglab": {
             "level": "low",
@@ -589,10 +578,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "category": "process",
             "type": "start",
-            "kind": "event",
-            "created": "2021-05-02T19:52:34.626001+00:00",
-            "dialect": "harfanglab",
-            "dialect_uuid": "3c7057d3-4689-4fae-8033-6f1f887a70f2"
+            "kind": "event"
         },
         "@timestamp": "2021-05-02T19:52:24.083Z",
         "agent": {
@@ -608,7 +594,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.17763",
                 "full": "Windows Server 2019 Datacenter"
-            }
+            },
+            "name": "REDACTED"
         },
         "process": {
             "command_line": "C:\\Windows\\system32\\wbem\\wmiprvse.exe -secured -Embedding",
@@ -684,7 +671,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.19041",
                 "full": "Windows 10 Pro"
-            }
+            },
+            "name": "DESKTOP-9U3171J"
         },
         "action": {
             "properties": {
@@ -713,10 +701,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": "info",
             "provider": "Microsoft-Windows-Security-Auditing",
-            "code": "4625",
-            "dialect_uuid": "3c7057d3-4689-4fae-8033-6f1f887a70f2",
-            "created": "2021-05-01T09:55:44.797896+00:00",
-            "dialect": "harfanglab"
+            "code": "4625"
         },
         "agent": {
             "id": "77af54c8-910f-455d-b887-87cbc87430a4",
@@ -731,7 +716,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.17763",
                 "full": "Windows Server 2019 Datacenter"
-            }
+            },
+            "name": "REDACTED"
         },
         "action": {
             "properties": {
@@ -778,11 +764,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "type": "info",
             "provider": "Microsoft-Windows-Windows Defender",
-            "code": "1116",
-            "created": "2022-02-07T13:30:25.317955Z",
-            "original": "uRj4yUOMrLDlgLT3thJGDJrLrodS7GIDdL6fiWnt4IMOQkw4822dnPq93BB9Xiy0",
-            "dialect_uuid": "c9a1fcc4-37f4-4805-b163-3fdda8eb8029",
-            "dialect": "harfanglab"
+            "code": "1116"
         },
         "@timestamp": "2022-01-03T05:44:57.331Z",
         "agent": {
@@ -798,7 +780,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "os": {
                 "version": "10.0.17763",
                 "full": "Windows Server 2019 Datacenter"
-            }
+            },
+            "name": "REDACTED"
         },
         "action": {
             "properties": {

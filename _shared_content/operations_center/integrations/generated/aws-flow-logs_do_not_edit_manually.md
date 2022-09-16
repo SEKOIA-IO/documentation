@@ -36,39 +36,39 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "name": "accept",
-            "outcome": "ok",
-            "target": "network-traffic",
-            "type": "forward"
-        },
-        "cloud": {
-            "account": {
-                "id": "424805057484"
-            },
-            "provider": "aws",
-            "service": {
-                "name": "vpc"
-            }
-        },
-        "destination": {
-            "address": "10.0.0.96",
-            "ip": "10.0.0.96",
-            "port": 123
-        },
+        "message": "2 424805057484 eni-0f06a40fc9be596f6 212.83.179.156 10.0.0.96 123 123 17 2 152 1599665193 1599665488 ACCEPT OK",
         "event": {
             "kind": "event",
             "category": [
                 "network"
             ],
+            "start": "2020-09-09T15:26:33.000000Z",
+            "end": "2020-09-09T15:31:28.000000Z",
+            "action": "accept",
             "type": [
                 "allowed"
-            ],
-            "action": "accept",
-            "end": "2020-09-09T15:31:28.000Z",
-            "start": "2020-09-09T15:26:33.000Z"
+            ]
         },
-        "message": "2 424805057484 eni-0f06a40fc9be596f6 212.83.179.156 10.0.0.96 123 123 17 2 152 1599665193 1599665488 ACCEPT OK",
+        "action": {
+            "outcome": "ok",
+            "type": "forward",
+            "name": "accept",
+            "target": "network-traffic"
+        },
+        "cloud": {
+            "provider": "aws",
+            "service": {
+                "name": "vpc"
+            },
+            "account": {
+                "id": "424805057484"
+            }
+        },
+        "destination": {
+            "ip": "10.0.0.96",
+            "port": 123,
+            "address": "10.0.0.96"
+        },
         "network": {
             "iana_number": "17",
             "transport": "udp"
@@ -81,11 +81,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
-            "address": "212.83.179.156",
-            "bytes": 152,
             "ip": "212.83.179.156",
+            "port": 123,
+            "bytes": 152,
             "packets": 2,
-            "port": 123
+            "address": "212.83.179.156"
         },
         "user": {
             "id": "424805057484"
@@ -101,43 +101,113 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "accept_structured.json"
+
+    ```json
+	
+    {
+        "message": "{\"version\":2,\"account_id\":\"424805057484\",\"interface_id\":\"eni-0f06a40fc9be596f6\",\"srcaddr\":\"5.6.7.8\",\"dstaddr\":\"1.2.3.4\",\"srcport\":4712,\"dstport\":53205,\"protocol\":6,\"packets\":12,\"bytes\":2610,\"start\":1661950735,\"end\":1661950746,\"action\":\"ACCEPT\",\"log_status\":\"OK\"}\n",
+        "event": {
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "start": "2022-08-31T12:58:55.000000Z",
+            "end": "2022-08-31T12:59:06.000000Z",
+            "action": "accept",
+            "type": [
+                "allowed"
+            ]
+        },
+        "action": {
+            "outcome": "ok",
+            "type": "forward",
+            "name": "accept",
+            "target": "network-traffic"
+        },
+        "cloud": {
+            "provider": "aws",
+            "service": {
+                "name": "vpc"
+            },
+            "account": {
+                "id": "424805057484"
+            }
+        },
+        "destination": {
+            "ip": "1.2.3.4",
+            "port": 53205,
+            "address": "1.2.3.4"
+        },
+        "network": {
+            "iana_number": "6",
+            "transport": "tcp"
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "eni-0f06a40fc9be596f6"
+                }
+            }
+        },
+        "source": {
+            "ip": "5.6.7.8",
+            "port": 4712,
+            "bytes": 2610,
+            "packets": 12,
+            "address": "5.6.7.8"
+        },
+        "user": {
+            "id": "424805057484"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "custom.json"
 
     ```json
 	
     {
         "message": "5 424805057484 eni-1235b8ca123456789 52.95.128.179 10.0.0.71 46945 53 17 1 73 1658131186 1658131216 ACCEPT OK vpc-abcdefab012345678 subnet-aaaaaaaa012345678 - 0 IPv4 52.95.128.179 10.0.0.71 eu-west-1 euw1-az3 - - - - egress 8",
-        "action": {
-            "name": "accept",
-            "outcome": "ok",
-            "target": "network-traffic",
-            "type": "forward"
-        },
-        "cloud": {
-            "account": {
-                "id": "424805057484"
-            },
-            "provider": "aws",
-            "service": {
-                "name": "vpc"
-            }
-        },
-        "destination": {
-            "address": "10.0.0.71",
-            "ip": "10.0.0.71",
-            "port": 53
-        },
         "event": {
             "kind": "event",
             "category": [
                 "network"
             ],
+            "start": "2022-07-18T07:59:46.000000Z",
+            "end": "2022-07-18T08:00:16.000000Z",
+            "action": "accept",
             "type": [
                 "allowed"
-            ],
-            "action": "accept",
-            "end": "2020-09-09T15:31:28.000Z",
-            "start": "2020-09-09T15:26:33.000Z"
+            ]
+        },
+        "action": {
+            "outcome": "ok",
+            "type": "forward",
+            "name": "accept",
+            "target": "network-traffic"
+        },
+        "cloud": {
+            "provider": "aws",
+            "service": {
+                "name": "vpc"
+            },
+            "account": {
+                "id": "424805057484"
+            }
+        },
+        "destination": {
+            "ip": "10.0.0.71",
+            "port": 53,
+            "address": "10.0.0.71"
         },
         "network": {
             "iana_number": "17",
@@ -151,11 +221,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
-            "address": "52.95.128.179",
-            "bytes": 73,
             "ip": "52.95.128.179",
+            "port": 46945,
+            "bytes": 73,
             "packets": 1,
-            "port": 46945
+            "address": "52.95.128.179"
         },
         "user": {
             "id": "424805057484"
@@ -176,39 +246,39 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "name": "accept",
-            "outcome": "ok",
-            "target": "network-traffic",
-            "type": "forward"
-        },
-        "cloud": {
-            "account": {
-                "id": "123456789010"
-            },
-            "provider": "aws",
-            "service": {
-                "name": "vpc"
-            }
-        },
-        "destination": {
-            "address": "2001:db8:1234:a102:3304:8879:34cf:4071",
-            "ip": "2001:db8:1234:a102:3304:8879:34cf:4071",
-            "port": 22
-        },
+        "message": "2 123456789010 eni-1235b8ca123456789 2001:db8:1234:a100:8d6e:3477:df66:f105 2001:db8:1234:a102:3304:8879:34cf:4071 34892 22 6 54 8855 1477913708 1477913820 ACCEPT OK",
         "event": {
             "kind": "event",
             "category": [
                 "network"
             ],
+            "start": "2016-10-31T11:35:08.000000Z",
+            "end": "2016-10-31T11:37:00.000000Z",
+            "action": "accept",
             "type": [
                 "allowed"
-            ],
-            "action": "accept",
-            "end": "2016-10-31T11:37:00.000Z",
-            "start": "2016-10-31T11:35:08.000Z"
+            ]
         },
-        "message": "2 123456789010 eni-1235b8ca123456789 2001:db8:1234:a100:8d6e:3477:df66:f105 2001:db8:1234:a102:3304:8879:34cf:4071 34892 22 6 54 8855 1477913708 1477913820 ACCEPT OK",
+        "action": {
+            "outcome": "ok",
+            "type": "forward",
+            "name": "accept",
+            "target": "network-traffic"
+        },
+        "cloud": {
+            "provider": "aws",
+            "service": {
+                "name": "vpc"
+            },
+            "account": {
+                "id": "123456789010"
+            }
+        },
+        "destination": {
+            "ip": "2001:db8:1234:a102:3304:8879:34cf:4071",
+            "port": 22,
+            "address": "2001:db8:1234:a102:3304:8879:34cf:4071"
+        },
         "network": {
             "iana_number": "6",
             "transport": "tcp"
@@ -221,11 +291,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
-            "address": "2001:db8:1234:a100:8d6e:3477:df66:f105",
-            "bytes": 8855,
             "ip": "2001:db8:1234:a100:8d6e:3477:df66:f105",
+            "port": 34892,
+            "bytes": 8855,
             "packets": 54,
-            "port": 34892
+            "address": "2001:db8:1234:a100:8d6e:3477:df66:f105"
         },
         "user": {
             "id": "123456789010"
@@ -246,31 +316,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "outcome": "nodata",
-            "type": "forward"
-        },
-        "cloud": {
-            "account": {
-                "id": "123456789010"
-            },
-            "provider": "aws",
-            "service": {
-                "name": "vpc"
-            }
-        },
+        "message": "2 123456789010 eni-1235b8ca123456789 - - - - - - - 1431280876 1431280934 - NODATA",
         "event": {
             "kind": "event",
             "category": [
                 "network"
             ],
-            "type": [
-                "info"
-            ],
-            "end": "2015-05-10T18:02:14.000Z",
-            "start": "2015-05-10T18:01:16.000Z"
+            "start": "2015-05-10T18:01:16.000000Z",
+            "end": "2015-05-10T18:02:14.000000Z"
         },
-        "message": "2 123456789010 eni-1235b8ca123456789 - - - - - - - 1431280876 1431280934 - NODATA",
+        "action": {
+            "outcome": "nodata",
+            "type": "forward"
+        },
+        "cloud": {
+            "provider": "aws",
+            "service": {
+                "name": "vpc"
+            },
+            "account": {
+                "id": "123456789010"
+            }
+        },
         "observer": {
             "ingress": {
                 "interface": {
@@ -291,39 +358,39 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "name": "reject",
-            "outcome": "ok",
-            "target": "network-traffic",
-            "type": "forward"
-        },
-        "cloud": {
-            "account": {
-                "id": "424805057484"
-            },
-            "provider": "aws",
-            "service": {
-                "name": "vpc"
-            }
-        },
-        "destination": {
-            "address": "10.0.0.96",
-            "ip": "10.0.0.96",
-            "port": 20248
-        },
+        "message": "2 424805057484 eni-0f06a40fc9be596f6 195.14.170.50 10.0.0.96 53996 20248 6 1 40 1599665374 1599665428 REJECT OK",
         "event": {
             "kind": "event",
             "category": [
                 "network"
             ],
+            "start": "2020-09-09T15:29:34.000000Z",
+            "end": "2020-09-09T15:30:28.000000Z",
+            "action": "reject",
             "type": [
                 "denied"
-            ],
-            "action": "reject",
-            "end": "2020-09-09T15:30:28.000Z",
-            "start": "2020-09-09T15:29:34.000Z"
+            ]
         },
-        "message": "2 424805057484 eni-0f06a40fc9be596f6 195.14.170.50 10.0.0.96 53996 20248 6 1 40 1599665374 1599665428 REJECT OK",
+        "action": {
+            "outcome": "ok",
+            "type": "forward",
+            "name": "reject",
+            "target": "network-traffic"
+        },
+        "cloud": {
+            "provider": "aws",
+            "service": {
+                "name": "vpc"
+            },
+            "account": {
+                "id": "424805057484"
+            }
+        },
+        "destination": {
+            "ip": "10.0.0.96",
+            "port": 20248,
+            "address": "10.0.0.96"
+        },
         "network": {
             "iana_number": "6",
             "transport": "tcp"
@@ -336,11 +403,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
-            "address": "195.14.170.50",
-            "bytes": 40,
             "ip": "195.14.170.50",
+            "port": 53996,
+            "bytes": 40,
             "packets": 1,
-            "port": 53996
+            "address": "195.14.170.50"
         },
         "user": {
             "id": "424805057484"
@@ -349,6 +416,76 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "10.0.0.96",
                 "195.14.170.50"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "reject_structured.json"
+
+    ```json
+	
+    {
+        "message": "{\"version\":2,\"account_id\":\"424805057484\",\"interface_id\":\"eni-0f06a40fc9be596f6\",\"srcaddr\":\"1.2.3.4\",\"dstaddr\":\"5.6.7.8\",\"srcport\":53094,\"dstport\":2323,\"protocol\":6,\"packets\":1,\"bytes\":40,\"start\":1661950735,\"end\":1661950746,\"action\":\"REJECT\",\"log_status\":\"OK\"}\n",
+        "event": {
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "start": "2022-08-31T12:58:55.000000Z",
+            "end": "2022-08-31T12:59:06.000000Z",
+            "action": "reject",
+            "type": [
+                "denied"
+            ]
+        },
+        "action": {
+            "outcome": "ok",
+            "type": "forward",
+            "name": "reject",
+            "target": "network-traffic"
+        },
+        "cloud": {
+            "provider": "aws",
+            "service": {
+                "name": "vpc"
+            },
+            "account": {
+                "id": "424805057484"
+            }
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 2323,
+            "address": "5.6.7.8"
+        },
+        "network": {
+            "iana_number": "6",
+            "transport": "tcp"
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "eni-0f06a40fc9be596f6"
+                }
+            }
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 53094,
+            "bytes": 40,
+            "packets": 1,
+            "address": "1.2.3.4"
+        },
+        "user": {
+            "id": "424805057484"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
             ]
         }
     }

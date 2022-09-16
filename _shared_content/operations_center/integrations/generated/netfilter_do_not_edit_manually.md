@@ -27,12 +27,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "DA->FEDERATEUR ACCEPT IN=enp4s0f0.82 OUT=enp4s0f1 MAC=14:58:d0:b4:65:b8:02:01:c0:a8:e0:26:08:00 SRC=192.168.224.43 DST=192.168.100.230 LEN=52 TOS=08 PREC=0x00 TTL=126 ID=0 DF PROTO=TCP SPT=44606 DPT=80 SEQ=2504400626 ACK=0 WINDOW=64612 SYN URGP=0 MARK=0",
-        "event": {
-            "dialect": "netfilter",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "original": "1sjze813YtXlmgHp3a1jU4rOAwYpBKMFaWtYCeTQ0QhEtg36Z68bcNi4ahZ2G7Fz",
-            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4"
-        },
         "destination": {
             "mac": "14:58:d0:b4:65:b8",
             "port": 80,
@@ -70,12 +64,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "INPUT DFLT DROP IN=enp4s0f0.82 OUT=enp4s0f1 MAC=14:58:d0:b4:65:b8:02:01:c0:a8:e0:26:08:00 SRC=192.168.224.43 DST=192.168.100.230 LEN=52 TOS=08 PREC=0x00 TTL=126 ID=0 DF PROTO=TCP SPT=44606 DPT=80 SEQ=2504400626 ACK=0 WINDOW=64612 SYN URGP=0 MARK=0",
-        "event": {
-            "dialect": "netfilter",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "original": "1sjze813YtXlmgHp3a1jU4rOAwYpBKMFaWtYCeTQ0QhEtg36Z68bcNi4ahZ2G7Fz",
-            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4"
-        },
         "destination": {
             "mac": "14:58:d0:b4:65:b8",
             "port": 80,
@@ -113,12 +101,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "INTERNET SPOOFING DROP  IN=enp4s0f1 OUT=enp5s0f1 MAC=14:58:d0:b4:65:bc:d8:67:d9:0f:85:41:08:00 SRC=10.16.123.245 DST=192.168.1.47 LEN=132 TOS=00 PREC=0x00 TTL=126 ID=26580 PROTO=UDP SPT=61829 DPT=65267 LEN=112 MARK=0",
-        "event": {
-            "dialect": "netfilter",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "original": "1sjze813YtXlmgHp3a1jU4rOAwYpBKMFaWtYCeTQ0QhEtg36Z68bcNi4ahZ2G7Fz",
-            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4"
-        },
         "destination": {
             "mac": "14:58:d0:b4:65:bc",
             "port": 65267,
@@ -156,12 +138,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "IPTABLES IN=net0 OUT=docker0 MAC=00:e0:4c:68:00:64:70:df:2f:d0:8c:a7:08:00 SRC=172.217.22.142 DST=172.17.0.2 LEN=84 TOS=0x00 PREC=0x00 TTL=54 ID=0 PROTO=ICMP TYPE=0 CODE=0 ID=20 SEQ=",
-        "event": {
-            "dialect": "netfilter",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "original": "1sjze813YtXlmgHp3a1jU4rOAwYpBKMFaWtYCeTQ0QhEtg36Z68bcNi4ahZ2G7Fz",
-            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4"
-        },
         "destination": {
             "mac": "00:e0:4c:68:00:64",
             "address": "172.17.0.2",
@@ -193,12 +169,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "IPTABLES IN=net0 OUT=docker0 MAC=00:e0:4c:68:00:64:70:df:2f:d0:8c:a7:08:00 SRC=216.58.213.163 DST=172.17.0.2 LEN=60 TOS=0x00 PREC=0x00 TTL=120 ID=51233 PROTO=TCP SPT=80 DPT=51212 WINDOW=60192 RES=0x00 ACK SYN URGP=0",
-        "event": {
-            "dialect": "netfilter",
-            "created": "2021-04-23T20:02:05.017771Z",
-            "original": "1sjze813YtXlmgHp3a1jU4rOAwYpBKMFaWtYCeTQ0QhEtg36Z68bcNi4ahZ2G7Fz",
-            "dialect_uuid": "1e256ea1-3947-429e-97a6-abaec8702dc4"
-        },
         "destination": {
             "mac": "00:e0:4c:68:00:64",
             "port": 51212,
