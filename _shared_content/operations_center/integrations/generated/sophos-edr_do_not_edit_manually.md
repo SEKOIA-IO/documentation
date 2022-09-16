@@ -42,10 +42,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "Controlled application blocked: Google Software Reporter Tool (Security tool)",
             "code": "Event::Endpoint::Application::Blocked",
             "category": [
-                "denied"
+                "file"
             ],
             "type": [
-                "info"
+                "denied"
             ]
         },
         "@timestamp": "2022-04-25T03:15:31.777000Z",
@@ -161,10 +161,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4",
             "code": "Event::Endpoint::DataLossPreventionAutomaticallyAllowed",
             "category": [
-                "allowed"
+                "file"
             ],
             "type": [
-                "info"
+                "allowed"
             ],
             "action": "allow file transfer"
         },
@@ -223,10 +223,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "An \u2033allow file transfer\u2033 action was taken.  Username: DDDDD\\XXXXXXXXXX  Rule names: \u2032Multimedia file\u2032  User action: File open  Application Name: Firefox (V7 and higher)  Data Control action: Allow  File type: Media Container (TFT\u2215MPEG-4)  File size: 559316722  Source path: C:\\Users\\XXXXXXXX\\Downloads\\YYYYYYYYYYYYYYYYY.mp4  Destination path: D:\\XXXXXXXXXXXXXXX\\Documents\\Videos\\YYYYY.mp4  Destination type: Removable storage",
             "code": "Event::Endpoint::DataLossPreventionAutomaticallyAllowed",
             "category": [
-                "allowed"
+                "file"
             ],
             "type": [
-                "info"
+                "allowed"
             ],
             "action": "allow file transfer"
         },
@@ -417,10 +417,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "'CodeCave' exploit prevented in Essential Objects Worker Process",
             "code": "Event::Endpoint::HmpaExploitPrevented",
             "category": [
-                "denied"
+                "file"
             ],
             "type": [
-                "file"
+                "info"
             ]
         },
         "@timestamp": "2022-04-25T03:15:31.777000Z",
@@ -598,7 +598,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "PUA detected: 'Rule Generic PUA' at 'C:\\Users\\XXXXXXXXXX\\AppData\\Local\\Microsoft\\SquirrelTemp\\tempc'",
             "code": "Event::Endpoint::CorePuaDetection",
             "category": [
-                "info"
+                "file"
             ],
             "type": [
                 "info"
@@ -659,7 +659,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "New computer registered: DESKTOP-1234",
             "code": "Event::Endpoint::Registered",
             "category": [
-                "host"
+                "iam"
             ],
             "type": [
                 "info"
@@ -720,8 +720,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "Scan 'Sophos Cloud Scheduled Scan' completed",
             "code": "Event::Endpoint::SavScanComplete",
             "category": [
-                "file",
-                "process"
+                "iam"
             ],
             "type": [
                 "info"

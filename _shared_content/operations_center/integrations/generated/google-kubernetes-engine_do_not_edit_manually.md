@@ -388,15 +388,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"insertId\":\"32ez47f5wz17i\",\"jsonPayload\":{\"apiVersion\":\"v1\",\"eventTime\":null,\"involvedObject\":{\"kind\":\"Node\",\"name\":\"gke-cluster-1-default-pool-eb66079e-k3zf\",\"uid\":\"gke-cluster-1-default-pool-eb66079e-k3zf\"},\"kind\":\"Event\",\"message\":\"{\\\"unmanaged\\\": {\\\"net.netfilter.nf_conntrack_buckets\\\": \\\"32768\\\"}}\",\"metadata\":{\"creationTimestamp\":\"2022-06-15T01:55:51Z\",\"managedFields\":[{\"apiVersion\":\"v1\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}},\"manager\":\"node-problem-detector\",\"operation\":\"Update\",\"time\":\"2022-06-15T01:55:51Z\"}],\"name\":\"gke-cluster-1-default-pool-eb66079e-k3zf.16f8813a8514b8c0\",\"namespace\":\"default\",\"resourceVersion\":\"894\",\"uid\":\"7e26b736-331a-4896-961f-96688918ba7e\"},\"reason\":\"NodeSysctlChange\",\"reportingComponent\":\"\",\"reportingInstance\":\"\",\"source\":{\"component\":\"sysctl-monitor\",\"host\":\"gke-cluster-1-default-pool-eb66079e-k3zf\"},\"type\":\"Warning\"},\"logName\":\"projects/hazel-aria-348413/logs/events\",\"receiveTimestamp\":\"2022-06-15T01:55:52.012275121Z\",\"resource\":{\"labels\":{\"cluster_name\":\"cluster-1\",\"location\":\"europe-central2-a\",\"node_name\":\"gke-cluster-1-default-pool-eb66079e-k3zf\",\"project_id\":\"hazel-aria-348413\"},\"type\":\"k8s_node\"},\"severity\":\"WARNING\",\"timestamp\":\"2022-06-15T01:55:51Z\"}",
         "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
             "kind": "event",
             "category": "process",
             "type": [
                 "change"
             ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z",
             "reason": "{\"unmanaged\": {\"net.netfilter.nf_conntrack_buckets\": \"32768\"}}",
             "action": "NodeSysctlChange"
         },

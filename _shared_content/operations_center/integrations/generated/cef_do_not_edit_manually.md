@@ -19,6 +19,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-08-01T03:34:23.000000Z",
             "start": "2022-08-01T03:30:36.000000Z"
         },
+        "@timestamp": "2022-08-01T03:30:36.000000Z",
         "observer": {
             "vendor": "Cisco",
             "type": "C390 Email Security Appliance",
@@ -46,9 +47,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.1.1.1"
         },
         "host": {
-            "hostname": "unknown"
+            "hostname": "unknown",
+            "name": "unknown"
         },
-        "@timestamp": "2022-08-01T03:30:36.000000Z",
         "cef": {
             "event_type": "base event"
         },
@@ -63,6 +64,264 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "cisco_esa_cef_no_starttime.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Cisco|C390 Email Security Appliance|14.0.0-698|ESA_CONSOLIDATED_LOG_EVENT|Consolidated Log Event|5|deviceExternalId=ABC123 ESAMID=123 E SAAMPVerdict=NOT_EVALUATED ESAASVerdict=NOT_EVALUATED ESAAVVerdict=NOT_EVALUATED ESACFVerdict=MATCH endTime=Mon Aug  1 06:40:30 2022 ESAGMVerdict=NOT_EVALUATED ESAMFVerdict=NO_MATCH ESAOFVerdict=NOT_EVALUATED ESAStatus=QUEUED\n\n",
+        "event": {
+            "severity": 5,
+            "end": "2022-08-01T06:40:30.000000Z"
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "type": "C390 Email Security Appliance",
+            "version": "14.0.0-698"
+        },
+        "rule": {
+            "id": "ESA_CONSOLIDATED_LOG_EVENT"
+        },
+        "@timestamp": "2022-08-01T06:40:30.000000Z",
+        "cef": {
+            "Name": "Consolidated Log Event"
+        }
+    }
+    	
+	```
+
+
+=== "cyber_reason_malop_connection.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Cybereason|Cybereason|1.0|5|Malop Connection Added|5|CybereasonCEFgeneratorBatchId1=58bc2665-b22f-4345-bd90-3f84be47c8b6 cs1=11.1323449861766643222 CybereasonCEFgeneratorcountry1Name=None dst=3.226.77.3 dpt=443 rt=1629500007043 cs1Label=MalopId",
+        "event": {
+            "severity": 5
+        },
+        "observer": {
+            "vendor": "Cybereason",
+            "type": "Cybereason",
+            "version": "1.0"
+        },
+        "rule": {
+            "id": "5"
+        },
+        "destination": {
+            "port": 443,
+            "ip": "3.226.77.3",
+            "address": "3.226.77.3"
+        },
+        "@timestamp": "2021-08-20T22:53:27.043000Z",
+        "cef": {
+            "cs1Label": "MalopId",
+            "rt": "1629500007043",
+            "dpt": "443",
+            "cs1": "11.1323449861766643222",
+            "Name": "Malop Connection Added"
+        },
+        "related": {
+            "ip": [
+                "3.226.77.3"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "cyber_reason_malop_created.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Cybereason|Cybereason|1.0|1|Malop Created|5|rt=1629701622409 deviceCustomDate1=1636629776184 deviceFacility=Under Investigation CybereasonCEFgeneratorBatchId1=078e369b-ea4e-4e98-bc0d-ee71fd40d19d cs1=11.4718101284717793977 cs2=EXTENSION_MANIPULATION cs3=MALICIOUS_INFECTION cs5=maliciousByDualExtensionByFileRootCause cn1=1 cs6=https://yourserver.cybereason.net:8443//#/malop/11.4718101284717793977 cn2=1 cs4=bb9dbdca921d84381c893086f65ffca17120b23d requestContext=flashget3.7.0.1220en.pdf.exe, which has an unknown reputation, has dual extensions, which is hiding the true nature of the process. cs1Label=MalopId cs2Label=MalopDetectionType cs3Label=MalopActivityType cs4Label=MalopHashList cs5Label=DecisionFeatures cs6Label=IncidentLink cn1Label=AffectedMachinesCount cn2Label=AffectedUsersCount cn3Label=isSigned deviceCustomDate1Label=ModifiedTime",
+        "event": {
+            "severity": 5
+        },
+        "observer": {
+            "vendor": "Cybereason",
+            "type": "Cybereason",
+            "version": "1.0"
+        },
+        "rule": {
+            "id": "1"
+        },
+        "log": {
+            "syslog": {
+                "facility": {
+                    "name": "Under Investigation"
+                }
+            }
+        },
+        "http": {
+            "request": {
+                "referrer": "flashget3.7.0.1220en.pdf.exe, which has an unknown reputation, has dual extensions, which is hiding the true nature of the process."
+            }
+        },
+        "@timestamp": "2021-08-23T06:53:42.409000Z",
+        "cef": {
+            "cn2Label": "AffectedUsersCount",
+            "cn1Label": "AffectedMachinesCount",
+            "cs6Label": "IncidentLink",
+            "cs5Label": "DecisionFeatures",
+            "cs4Label": "MalopHashList",
+            "cs3Label": "MalopActivityType",
+            "cs2Label": "MalopDetectionType",
+            "cs1Label": "MalopId",
+            "cs4": "bb9dbdca921d84381c893086f65ffca17120b23d",
+            "cn2": 1,
+            "cs6": "https://yourserver.cybereason.net:8443//#/malop/11.4718101284717793977",
+            "cn1": 1,
+            "cs5": "maliciousByDualExtensionByFileRootCause",
+            "cs3": "MALICIOUS_INFECTION",
+            "cs2": "EXTENSION_MANIPULATION",
+            "cs1": "11.4718101284717793977",
+            "rt": "1629701622409",
+            "Name": "Malop Created"
+        }
+    }
+    	
+	```
+
+
+=== "cyber_reason_malop_machine.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Cybereason|Cybereason|1.0|3|Malop Machine Added|5|destinationDnsDomain=desktop-aas6kq7 dst=10.0.2.15 destinationTranslatedAddress=117.99.232.147 CybereasonCEFgeneratorBatchId1=2ac124fd-def2-4073-b408-d3b3f0e764b0 cs1=11.-6654920844431693523 flexString2=True dhost=desktop-aas6kq7 CybereasonCEFgeneratorOSandVersion1=Windows_10 CybereasonCEFgeneratorMachineGuid1=-592942600.1198775089551518743 cfp3=1 rt=1625748509151 cfp2=1 cs1Label=MalopId flexString2Label=isMalicious cfp2Label=isOnline cfp3Label=isOriginalMachine request=\"C:\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe\" deviceProcessName=explorer.exe CybereasonCEFgeneratorChildProcess1=None",
+        "event": {
+            "severity": 5
+        },
+        "observer": {
+            "vendor": "Cybereason",
+            "type": "Cybereason",
+            "version": "1.0"
+        },
+        "rule": {
+            "id": "3"
+        },
+        "destination": {
+            "domain": "desktop-aas6kq7",
+            "ip": "10.0.2.15",
+            "address": "desktop-aas6kq7"
+        },
+        "url": {
+            "original": "C:\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
+            "path": "\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
+            "scheme": "c"
+        },
+        "@timestamp": "2021-07-08T12:48:29.151000Z",
+        "cef": {
+            "cfp3Label": "isOriginalMachine",
+            "cfp2Label": "isOnline",
+            "flexString2Label": "isMalicious",
+            "cs1Label": "MalopId",
+            "cfp2": 1,
+            "rt": "1625748509151",
+            "cfp3": 1,
+            "flexString2": "True",
+            "cs1": "11.-6654920844431693523",
+            "Name": "Malop Machine Added"
+        },
+        "related": {
+            "hosts": [
+                "desktop-aas6kq7"
+            ],
+            "ip": [
+                "10.0.2.15"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "cyber_reason_malop_process_added.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Cybereason|Cybereason|1.0|2|Malop Process Added|5|CybereasonCEFgeneratorBatchId1=2ac124fd-def2-4073-b408-d3b3f0e764b0 cs1=11.-6654920844431693523 cs4=76030baf8e80653b883474f56c06164c33417ece request=\"C:\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe\" flexString2=True cn3=1 reason=indifferent rt=1629700682928 cs1Label=MalopId flexString2Label=isMalicious cs4Label=processSha1 cn3Label=isSigned",
+        "event": {
+            "severity": 5,
+            "action": "indifferent"
+        },
+        "observer": {
+            "vendor": "Cybereason",
+            "type": "Cybereason",
+            "version": "1.0"
+        },
+        "rule": {
+            "id": "2"
+        },
+        "url": {
+            "original": "C:\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
+            "path": "\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
+            "scheme": "c"
+        },
+        "@timestamp": "2021-08-23T06:38:02.928000Z",
+        "cef": {
+            "cs4Label": "processSha1",
+            "flexString2Label": "isMalicious",
+            "cs1Label": "MalopId",
+            "rt": "1629700682928",
+            "cn3": 1,
+            "flexString2": "True",
+            "cs4": "76030baf8e80653b883474f56c06164c33417ece",
+            "cs1": "11.-6654920844431693523",
+            "Name": "Malop Process Added"
+        }
+    }
+    	
+	```
+
+
+=== "cyber_reason_malop_user.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Cybereason|Cybereason|1.0|6|Malop User Added|5|CybereasonCEFgeneratorBatchId1=2ac124fd-def2-4073-b408-d3b3f0e764b0 cs1=11.-6654920844431693523 dpriv=None dhost=desktop-aas6kq7 CybereasonCEFgeneratorOrganizationName1=INTEGRATION duser=system cs1Label=MalopId",
+        "event": {
+            "severity": 5
+        },
+        "observer": {
+            "vendor": "Cybereason",
+            "type": "Cybereason",
+            "version": "1.0"
+        },
+        "rule": {
+            "id": "6"
+        },
+        "destination": {
+            "domain": "desktop-aas6kq7",
+            "user": {
+                "name": "system"
+            },
+            "address": "desktop-aas6kq7"
+        },
+        "cef": {
+            "cs1Label": "MalopId",
+            "dpriv": "None",
+            "cs1": "11.-6654920844431693523",
+            "Name": "Malop User Added"
+        },
+        "related": {
+            "user": [
+                "system"
+            ],
+            "hosts": [
+                "desktop-aas6kq7"
             ]
         }
     }
@@ -384,7 +643,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "bytes": 398
                 }
             },
-            "hostname": "2.2.2.2"
+            "hostname": "2.2.2.2",
+            "name": "2.2.2.2"
         },
         "cef": {
             "cn3": 5,
@@ -560,6 +820,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cs5": "Unknown",
             "cs1Label": "AuthServerProfile",
             "cs1": "deny-attackers",
+            "cs6Label": "LogSetting",
             "cs6": "rs-logging",
             "cn2Label": "MFAAuthenticationID",
             "cn2": -5257671089978343424,
@@ -633,6 +894,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cnt": 1,
             "cn1Label": "SessionID",
             "cn1": 106112,
+            "cs6Label": "LogSetting",
             "cs6": "test",
             "cs5Label": "ToZone",
             "cs5": "ethernet4Zone-test1",
@@ -706,6 +968,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cnt": 9,
             "cn1Label": "SessionID",
             "cn1": 4016143,
+            "cs6Label": "LogSetting",
             "cs6": "test",
             "cs5Label": "ToZone",
             "cs5": "tap",
@@ -768,6 +1031,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T21:20:13.000000Z"
         },
+        "@timestamp": "2021-03-01T21:20:13.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -792,9 +1056,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "machine_name1"
         },
         "host": {
-            "hostname": "machine_name1"
+            "hostname": "machine_name1",
+            "name": "machine_name1"
         },
-        "@timestamp": "2021-03-01T21:20:13.000000Z",
         "cef": {
             "c6a1Label": "Device IPv6 Address",
             "c6a1": "xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx",
@@ -910,6 +1174,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "externalId": "xxxxxxxxxxxxx",
             "dpt": "5496",
             "cnt": 1,
+            "cs6Label": "LogSetting",
             "cs6": "test",
             "cs5Label": "ToZone",
             "cs5": "untrust",
@@ -985,6 +1250,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cnt": 1,
             "cn1Label": "SessionID",
             "cn1": 947181,
+            "cs6Label": "LogSetting",
             "cs6": "rs-logging",
             "cs5Label": "ToZone",
             "cs5": "ethernet4Zone-test4",
@@ -1079,6 +1345,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cnt": 1,
             "cn1Label": "SessionID",
             "cn1": 25596,
+            "cs6Label": "LogSetting",
             "cs6": "rs-logging",
             "cs5Label": "ToZone",
             "cs5": "ethernet4Zone-test1",
@@ -1173,6 +1440,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cnt": 1,
             "cn1Label": "SessionID",
             "cn1": 980296,
+            "cs6Label": "LogSetting",
             "cs6": "rs-logging",
             "cs5Label": "ToZone",
             "cs5": "untrust",
@@ -1246,6 +1514,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "cn2Label": "VirtualSystemID",
             "cn2": 1,
             "externalId": "xxxxxxxxxxxxx",
+            "cs6Label": "MappingDataSourceType",
             "cs6": "netbios_probing",
             "cs5Label": "MappingDataSource",
             "cs5": "probing",

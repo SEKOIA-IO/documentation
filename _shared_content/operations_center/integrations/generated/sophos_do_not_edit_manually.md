@@ -182,8 +182,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "id=\"2001\" severity=\"info\" sys=\"SecureNet\" sub=\"packetfilter\" name=\"Packet dropped\" action=\"drop\" fwrule=\"60002\" initf=\"eth1\" outitf=\"eth1\" srcmac=\"d8:94:03:g6:cd:27\" dstmac=\"00:1a:8c:g0:62:69\" srcip=\"103.188.113.55\" dstip=\"133.222.233.233\" proto=\"6\" length=\"40\" tos=\"0x00\" prec=\"0x00\" ttl=\"242\" srcport=\"54040\" dstport=\"52938\" tcpflags=\"SYN\"",
         "event": {
             "kind": "event",
-            "category": "network",
-            "type": "drop"
+            "category": "network"
         },
         "sophos": {
             "action": "drop",

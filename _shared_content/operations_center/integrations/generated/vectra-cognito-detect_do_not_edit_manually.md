@@ -234,12 +234,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "-: {\"version\": \"6.12\", \"detection_id\": 13281, \"category\": \"COMMAND & CONTROL\", \"severity\": 6.0, \"threat\": 60, \"certainty\": 72, \"d_type\": \"hidden_http_tunnel_cnc\", \"d_type_vname\": \"Hidden HTTP Tunnel\", \"triaged\": false, \"headend_addr\": \"198.51.100.94\", \"dvchost\": \"198.51.100.94\", \"href\": \"https://198.51.100.94/detections/13281?detail_id=94738\", \"dd_dst_ip\": \"198.51.100.1\", \"dd_dst_port\": 8002, \"dd_dst_dns\": \"mirror.centos.org\", \"dd_bytes_sent\": 1476677, \"dd_bytes_rcvd\": 8269214038, \"host_name\": \"IP-198.51.100.14\", \"host_ip\": \"198.51.100.14\", \"dd_proto\": \"tcp\", \"vectra_timestamp\": \"1633516306\"}",
         "event": {
             "type": "COMMAND & CONTROL",
-            "url": "https://198.51.100.94/detections/13281?detail_id=94738",
-            "ip": [
-                "198.51.100.94",
-                "198.51.100.1",
-                "198.51.100.14"
-            ]
+            "url": "https://198.51.100.94/detections/13281?detail_id=94738"
         },
         "observer": {
             "version": "6.12",

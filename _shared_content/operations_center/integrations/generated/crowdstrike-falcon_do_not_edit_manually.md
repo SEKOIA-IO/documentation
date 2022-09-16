@@ -33,31 +33,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":6755,\"eventType\":\"AuthActivityAuditEvent\",\"eventCreationTime\":1657663146099,\"version\":\"1.0\"},\"event\":{\"UserId\":\"foo.bar@sekoia.fr\",\"UserIp\":\"83.199.26.17\",\"OperationName\":\"twoFactorAuthenticate\",\"ServiceName\":\"CrowdStrike Authentication\",\"Success\":true,\"UTCTimestamp\":1657663146099}}",
+        "event": {
+            "kind": "event",
+            "type": [
+                "change"
+            ],
+            "category": [
+                "configuration"
+            ]
+        },
         "@timestamp": "2022-07-12T21:59:06.099000Z",
         "crowdstrike": {
             "event_type": "AuthActivityAuditEvent",
             "operation_name": "twoFactorAuthenticate"
         },
-        "event": {
-            "category": "configuration",
-            "kind": "event",
-            "type": "change",
-            "outcome": "success"
+        "source": {
+            "ip": "83.199.26.17",
+            "address": "83.199.26.17"
         },
         "service": {
             "name": "CrowdStrike Authentication"
+        },
+        "user": {
+            "id": "foo.bar@sekoia.fr"
         },
         "related": {
             "ip": [
                 "83.199.26.17"
             ]
-        },
-        "source": {
-            "address": "83.199.26.17",
-            "ip": "83.199.26.17"
-        },
-        "user": {
-            "id": "foo.bar@sekoia.fr"
         }
     }
     	
@@ -69,23 +73,27 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":189,\"eventType\":\"DetectionSummaryEvent\",\"eventCreationTime\":1657174538000,\"version\":\"1.0\"},\"event\":{\"ProcessStartTime\":1656688889,\"ProcessEndTime\":0,\"ProcessId\":22164474048,\"ParentProcessId\":22163465296,\"ComputerName\":\"nsewmkzevukn-vm\",\"UserName\":\"Administrator\",\"DetectName\":\"Overwatch Detection\",\"DetectDescription\":\"Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently.\",\"Severity\":5,\"SeverityName\":\"Critical\",\"FileName\":\"explorer.exe\",\"FilePath\":\"\\\\Device\\\\HarddiskVolume2\\\\Windows\",\"CommandLine\":\"C:\\\\Windows\\\\Explorer.EXE\",\"SHA256String\":\"249cb3cb46fd875196e7ed4a8736271a64ff2d8132357222a283be53e7232ed3\",\"MD5String\":\"d45bd7c7b7bf977246e9409d63435231\",\"SHA1String\":\"0000000000000000000000000000000000000000\",\"MachineDomain\":\"nsewmkzevukn-vm\"}}",
+        "event": {
+            "kind": "alert",
+            "type": [
+                "info"
+            ],
+            "category": [
+                "intrusion_detection"
+            ]
+        },
         "@timestamp": "2022-07-07T06:15:38.000000Z",
         "crowdstrike": {
-            "detect_description": "Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently.",
-            "event_type": "DetectionSummaryEvent"
-        },
-        "event": {
-            "category": "intrusion_detection",
-            "kind": "alert",
-            "outcome": "success",
-            "type": "info"
+            "event_type": "DetectionSummaryEvent",
+            "detect_description": "Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently."
         },
         "file": {
+            "name": "explorer.exe",
+            "path": "\\Device\\HarddiskVolume2\\Windows",
             "hash": {
                 "md5": "d45bd7c7b7bf977246e9409d63435231"
-            },
-            "name": "explorer.exe",
-            "path": "\\Device\\HarddiskVolume2\\Windows"
+            }
         },
         "host": {
             "name": "nsewmkzevukn-vm"
@@ -94,14 +102,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "nsewmkzevukn-vm"
         },
         "process": {
-            "command_line": "C:\\Windows\\Explorer.EXE",
-            "hash": {
-                "sha256": "249cb3cb46fd875196e7ed4a8736271a64ff2d8132357222a283be53e7232ed3"
-            },
+            "pid": 22164474048,
             "parent": {
                 "pid": 22163465296
             },
-            "pid": 22164474048
+            "hash": {
+                "sha256": "249cb3cb46fd875196e7ed4a8736271a64ff2d8132357222a283be53e7232ed3"
+            },
+            "command_line": "C:\\Windows\\Explorer.EXE"
         },
         "related": {
             "hash": [
@@ -119,33 +127,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":733,\"eventType\":\"UserActivityAuditEvent\",\"eventCreationTime\":1657614940000,\"version\":\"1.0\"},\"event\":{\"UserId\":\"foo.bar@sekoia.fr\",\"UserIp\":\"185.162.177.26\",\"OperationName\":\"detection_update\",\"ServiceName\":\"detections\",\"AuditKeyValues\":[{\"Key\":\"detection_id\",\"ValueString\":\"ldt:5418788591a444d1b45c2b39d3b07b50:21483381998\"},{\"Key\":\"new_state\",\"ValueString\":\"closed\"},{\"Key\":\"assigned_to\",\"ValueString\":\"Erwan Chevalier\"},{\"Key\":\"assigned_to_uid\",\"ValueString\":\"foo.bar@sekoia.fr\"}],\"UTCTimestamp\":1657614940}}",
+        "event": {
+            "kind": "event",
+            "type": [
+                "change"
+            ],
+            "category": [
+                "configuration"
+            ]
+        },
         "@timestamp": "2022-07-12T08:35:40.000000Z",
         "crowdstrike": {
             "event_type": "UserActivityAuditEvent",
             "operation_name": "detection_update"
         },
-        "ecs": {
-            "version": "1.10.0"
+        "source": {
+            "ip": "185.162.177.26",
+            "address": "185.162.177.26"
         },
-        "event": {
-            "category": "configuration",
-            "kind": "event",
-            "type": "change"
+        "service": {
+            "name": "detections"
+        },
+        "user": {
+            "id": "foo.bar@sekoia.fr"
         },
         "related": {
             "ip": [
                 "185.162.177.26"
             ]
-        },
-        "service": {
-            "name": "detections"
-        },
-        "source": {
-            "address": "185.162.177.26",
-            "ip": "185.162.177.26"
-        },
-        "user": {
-            "id": "foo.bar@sekoia.fr"
         }
     }
     	
@@ -157,31 +167,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"metadata\": {\"customerIDString\": \"46de5283260647ec8f28def00bffd094\", \"offset\": 174, \"eventType\": \"AuthActivityAuditEvent\", \"eventCreationTime\": 1657110865303, \"version\": \"1.0\"}, \"event\": {\"UserId\": \"api-client-id:00000000000000000000000000000000\", \"UserIp\": \"185.162.177.26\", \"OperationName\": \"streamStarted\", \"ServiceName\": \"Crowdstrike Streaming API\", \"Success\": true, \"UTCTimestamp\": 1657110865, \"AuditKeyValues\": [{\"Key\": \"partition\", \"ValueString\": \"0\"}, {\"Key\": \"offset\", \"ValueString\": \"-1\"}, {\"Key\": \"appId\", \"ValueString\": \"sio-00000\"}, {\"Key\": \"eventType\", \"ValueString\": \"All event type(s)\"}, {\"Key\": \"APIClientID\", \"ValueString\": \"00000000000000000000000000000000\"}]}}",
+        "event": {
+            "kind": "event",
+            "type": [
+                "change"
+            ],
+            "category": [
+                "configuration"
+            ]
+        },
         "@timestamp": "2022-07-06T12:34:25.303000Z",
         "crowdstrike": {
             "event_type": "AuthActivityAuditEvent",
             "operation_name": "streamStarted"
         },
-        "event": {
-            "category": "session",
-            "kind": "event",
-            "outcome": "success",
-            "type": "start"
+        "source": {
+            "ip": "185.162.177.26",
+            "address": "185.162.177.26"
+        },
+        "service": {
+            "name": "Crowdstrike Streaming API"
+        },
+        "user": {
+            "id": "api-client-id:00000000000000000000000000000000"
         },
         "related": {
             "ip": [
                 "185.162.177.26"
             ]
-        },
-        "service": {
-            "name": "Crowdstrike Streaming API"
-        },
-        "source": {
-            "address": "185.162.177.26",
-            "ip": "185.162.177.26"
-        },
-        "user": {
-            "id": "api-client-id:00000000000000000000000000000000"
         }
     }
     	
@@ -193,31 +207,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":200,\"eventType\":\"AuthActivityAuditEvent\",\"eventCreationTime\":1657203917516,\"version\":\"1.0\"},\"event\":{\"UserId\":\"api-client-id:00000000000000000000000000000000\",\"UserIp\":\"185.162.177.26\",\"OperationName\":\"streamStopped\",\"ServiceName\":\"Crowdstrike Streaming API\",\"Success\":true,\"UTCTimestamp\":1657203917,\"AuditKeyValues\":[{\"Key\":\"APIClientID\",\"ValueString\":\"00000000000000000000000000000000\"},{\"Key\":\"partition\",\"ValueString\":\"0\"},{\"Key\":\"offset\",\"ValueString\":\"-1\"},{\"Key\":\"appId\",\"ValueString\":\"sio-00000\"},{\"Key\":\"eventType\",\"ValueString\":\"All event type(s)\"}]}}",
+        "event": {
+            "kind": "event",
+            "type": [
+                "change"
+            ],
+            "category": [
+                "configuration"
+            ]
+        },
         "@timestamp": "2022-07-07T14:25:17.516000Z",
         "crowdstrike": {
             "event_type": "AuthActivityAuditEvent",
             "operation_name": "streamStopped"
         },
-        "event": {
-            "category": "session",
-            "kind": "event",
-            "outcome": "success",
-            "type": "start"
+        "source": {
+            "ip": "185.162.177.26",
+            "address": "185.162.177.26"
+        },
+        "service": {
+            "name": "Crowdstrike Streaming API"
+        },
+        "user": {
+            "id": "api-client-id:00000000000000000000000000000000"
         },
         "related": {
             "ip": [
                 "185.162.177.26"
             ]
-        },
-        "service": {
-            "name": "Crowdstrike Streaming API"
-        },
-        "source": {
-            "address": "185.162.177.26",
-            "ip": "185.162.177.26"
-        },
-        "user": {
-            "id": "api-client-id:00000000000000000000000000000000"
         }
     }
     	
@@ -229,30 +247,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":747,\"eventType\":\"UserActivityAuditEvent\",\"eventCreationTime\":1657614940000,\"version\":\"1.0\"},\"event\":{\"UserId\":\"foo.bar@sekoia.fr\",\"UserIp\":\"185.162.177.26\",\"OperationName\":\"detection_update\",\"ServiceName\":\"detections\",\"AuditKeyValues\":[{\"Key\":\"detection_id\",\"ValueString\":\"ldt:5418788591a444d1b45c2b39d3b07b50:21482411386\"},{\"Key\":\"new_state\",\"ValueString\":\"closed\"},{\"Key\":\"assigned_to\",\"ValueString\":\"Foo Bar\"},{\"Key\":\"assigned_to_uid\",\"ValueString\":\"foo.bar@sekoia.fr\"}],\"UTCTimestamp\":1657614940}}",
         "event": {
             "kind": "event",
-            "category": "configuration",
-            "type": "change"
+            "type": [
+                "change"
+            ],
+            "category": [
+                "configuration"
+            ]
         },
         "@timestamp": "2022-07-12T08:35:40.000000Z",
         "crowdstrike": {
             "event_type": "UserActivityAuditEvent",
             "operation_name": "detection_update"
         },
-        "related": {
-            "ip": [
-                "185.162.177.26"
-            ]
+        "source": {
+            "ip": "185.162.177.26",
+            "address": "185.162.177.26"
         },
         "service": {
             "name": "detections"
         },
-        "source": {
-            "address": "185.162.177.26",
-            "ip": "185.162.177.26"
-        },
         "user": {
             "id": "foo.bar@sekoia.fr"
+        },
+        "related": {
+            "ip": [
+                "185.162.177.26"
+            ]
         }
     }
     	

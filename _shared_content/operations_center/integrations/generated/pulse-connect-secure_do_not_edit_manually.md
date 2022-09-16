@@ -158,8 +158,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "id=firewall time=\"2021-03-04 17:05:15\" pri=6 fw=172.16.128.22 vpn=CB2XXPCS02 ivs=Default Network user=System realm=\"\" roles=\"\" proto= src=93.19.66.118 dst= dstname= type=vpn op= arg=\"\" result= sent= rcvd= agent=\"\" duration= msg=\"AUT31556: Unauthenticated request url /dana/js?prot=1&svc=4 came from IP 93.19.66.118.\"",
         "event": {
-            "code": "AUT31556",
-            "provider": "auth"
+            "code": "AUT31556"
         },
         "action": {
             "name": "AUT31556"

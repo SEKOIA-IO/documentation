@@ -27,18 +27,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-07-02T13:45:50.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-07-02T13:45:50.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"err\",\"EventTime\" : \"2019-07-02T13:45:50+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:auth): conversation failed\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:45:50Z\"},\"category\" : \"authpriv\",\"level\" : \"err\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "error",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-07-02T13:45:50.0000000Z",
         "azure_linux": {
             "message": "pam_unix(sudo:auth): conversation failed"
         },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "error"
-        },
-        "message": "{ \"time\" : \"2019-07-02T13:45:50.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"err\",\"EventTime\" : \"2019-07-02T13:45:50+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:auth): conversation failed\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:45:50Z\"},\"category\" : \"authpriv\",\"level\" : \"err\",\"operationName\" : \"LinuxSyslogEvent\"}",
         "os": {
             "family": "linux",
             "platform": "linux"
@@ -48,10 +45,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "open",
             "outcome": "failure"
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -63,39 +58,34 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-07-02T13:46:32.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-07-02T13:46:32.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"crit\",\"EventTime\" : \"2019-07-02T13:46:32+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:auth): auth could not identify password for [omsagent]\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:46:32Z\"},\"category\" : \"authpriv\",\"level\" : \"crit\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "critical",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-07-02T13:46:32.0000000Z",
         "azure_linux": {
             "message": "pam_unix(sudo:auth): auth could not identify password for [omsagent]"
         },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "critical"
-        },
-        "message": "{ \"time\" : \"2019-07-02T13:46:32.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"crit\",\"EventTime\" : \"2019-07-02T13:46:32+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:auth): auth could not identify password for [omsagent]\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:46:32Z\"},\"category\" : \"authpriv\",\"level\" : \"crit\",\"operationName\" : \"LinuxSyslogEvent\"}",
         "os": {
             "family": "linux",
             "platform": "linux"
-        },
-        "user": {
-            "name": "omsagent"
         },
         "action": {
             "name": "sudo:auth",
             "type": "open",
             "outcome": "failure"
         },
+        "user": {
+            "name": "omsagent"
+        },
         "related": {
             "user": [
                 "omsagent"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -107,41 +97,36 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-06-27T14:50:01.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-06-27T14:50:01.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"CROND\",\"pid\" : \"21188\",\"Ignore\" : \"syslog\",\"Facility\" : \"cron\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:50:01+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"(root) CMD (/usr/lib64/sa/sa1 1 1)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:50:01Z\"},\"category\" : \"cron\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-06-27T14:50:01.0000000Z",
         "azure_linux": {
             "message": "(root) CMD (/usr/lib64/sa/sa1 1 1)"
         },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:50:01.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"CROND\",\"pid\" : \"21188\",\"Ignore\" : \"syslog\",\"Facility\" : \"cron\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:50:01+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"(root) CMD (/usr/lib64/sa/sa1 1 1)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:50:01Z\"},\"category\" : \"cron\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
         "process": {
-            "executable": "/usr/lib64/sa/sa1",
-            "command_line": "/usr/lib64/sa/sa1 1 1",
             "parent": {
                 "pid": 21188
-            }
-        },
-        "user": {
-            "name": "root"
+            },
+            "command_line": "/usr/lib64/sa/sa1 1 1",
+            "executable": "/usr/lib64/sa/sa1"
         },
         "os": {
             "family": "linux",
             "platform": "linux"
+        },
+        "user": {
+            "name": "root"
         },
         "related": {
             "user": [
                 "root"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -153,40 +138,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-06-27T14:29:01.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-06-27T14:29:01.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"CROND\",\"pid\" : \"16373\",\"Ignore\" : \"syslog\",\"Facility\" : \"cron\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:29:01+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"(root) CMD ([ -f /etc/krb5.keytab ] && [ \\\\( ! -f /etc/opt/omi/creds/omi.keytab \\\\) -o \\\\( /etc/krb5.keytab -nt /etc/opt/omi/creds/omi.keytab \\\\) ] && /opt/omi/bin/support/ktstrip /etc/krb5.keytab /etc/opt/omi/creds/omi.keytab >/dev/null 2>&1 || true)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:29:01Z\"},\"category\" : \"cron\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-06-27T14:29:01.0000000Z",
         "azure_linux": {
             "message": "(root) CMD ([ -f /etc/krb5.keytab ] && [ \\( ! -f /etc/opt/omi/creds/omi.keytab \\) -o \\( /etc/krb5.keytab -nt /etc/opt/omi/creds/omi.keytab \\) ] && /opt/omi/bin/support/ktstrip /etc/krb5.keytab /etc/opt/omi/creds/omi.keytab >/dev/null 2>&1 || true)"
         },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:29:01.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"CROND\",\"pid\" : \"16373\",\"Ignore\" : \"syslog\",\"Facility\" : \"cron\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:29:01+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"(root) CMD ([ -f /etc/krb5.keytab ] && [ \\\\( ! -f /etc/opt/omi/creds/omi.keytab \\\\) -o \\\\( /etc/krb5.keytab -nt /etc/opt/omi/creds/omi.keytab \\\\) ] && /opt/omi/bin/support/ktstrip /etc/krb5.keytab /etc/opt/omi/creds/omi.keytab >/dev/null 2>&1 || true)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:29:01Z\"},\"category\" : \"cron\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
         "process": {
-            "command_line": "[ -f /etc/krb5.keytab ] && [ \\( ! -f /etc/opt/omi/creds/omi.keytab \\) -o \\( /etc/krb5.keytab -nt /etc/opt/omi/creds/omi.keytab \\) ] && /opt/omi/bin/support/ktstrip /etc/krb5.keytab /etc/opt/omi/creds/omi.keytab >/dev/null 2>&1 || true",
             "parent": {
                 "pid": 16373
-            }
-        },
-        "user": {
-            "name": "root"
+            },
+            "command_line": "[ -f /etc/krb5.keytab ] && [ \\( ! -f /etc/opt/omi/creds/omi.keytab \\) -o \\( /etc/krb5.keytab -nt /etc/opt/omi/creds/omi.keytab \\) ] && /opt/omi/bin/support/ktstrip /etc/krb5.keytab /etc/opt/omi/creds/omi.keytab >/dev/null 2>&1 || true"
         },
         "os": {
             "family": "linux",
             "platform": "linux"
+        },
+        "user": {
+            "name": "root"
         },
         "related": {
             "user": [
                 "root"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -198,22 +178,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-06-27T14:50:51.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-06-27T14:50:51.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sshd\",\"pid\" : \"14020\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:50:51+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"Received disconnect from 185.122.161.248 port 39070:11: disconnected by user\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:50:51Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-06-27T14:50:51.0000000Z",
         "azure_linux": {
             "message": "Received disconnect from 185.122.161.248 port 39070:11: disconnected by user"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:50:51.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sshd\",\"pid\" : \"14020\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:50:51+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"Received disconnect from 185.122.161.248 port 39070:11: disconnected by user\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:50:51Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "source": {
-            "ip": "185.122.161.248",
-            "address": "185.122.161.248",
-            "port": 39070
         },
         "process": {
             "pid": 14020
@@ -222,15 +194,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "family": "linux",
             "platform": "linux"
         },
+        "source": {
+            "ip": "185.122.161.248",
+            "port": 39070,
+            "address": "185.122.161.248"
+        },
         "related": {
             "ip": [
                 "185.122.161.248"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -242,42 +217,37 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{ \"time\" : \"2019-06-27T14:48:18.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"notice\",\"EventTime\" : \"2019-06-27T14:48:18+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"omsagent : TTY=unknown ; PWD=/opt/microsoft/omsconfig/Scripts/2.6x-2.7x ; USER=root ; COMMAND=/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:18Z\"},\"category\" : \"authpriv\",\"level\" : \"notice\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
+        },
         "@timestamp": "2019-06-27T14:48:18.0000000Z",
-        "action": {
-            "outcome": "success"
-        },
-        "event": {
-            "outcome": "success"
-        },
         "azure_linux": {
             "message": "omsagent : TTY=unknown ; PWD=/opt/microsoft/omsconfig/Scripts/2.6x-2.7x ; USER=root ; COMMAND=/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:48:18.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"notice\",\"EventTime\" : \"2019-06-27T14:48:18+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"omsagent : TTY=unknown ; PWD=/opt/microsoft/omsconfig/Scripts/2.6x-2.7x ; USER=root ; COMMAND=/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:18Z\"},\"category\" : \"authpriv\",\"level\" : \"notice\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "root"
-        },
-        "process": {
-            "executable": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh",
-            "working_directory": "/opt/microsoft/omsconfig/Scripts/2.6x-2.7x",
-            "command_line": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh"
         },
         "os": {
             "family": "linux",
             "platform": "linux"
+        },
+        "user": {
+            "name": "root"
+        },
+        "process": {
+            "command_line": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh",
+            "executable": "/opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh",
+            "working_directory": "/opt/microsoft/omsconfig/Scripts/2.6x-2.7x"
+        },
+        "action": {
+            "outcome": "success"
         },
         "related": {
             "user": [
                 "root"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -289,42 +259,37 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-07-02T13:46:15.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-07-02T13:46:15.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"notice\",\"EventTime\" : \"2019-07-02T13:46:15+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"omsagent : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/bin/test -r /var/lib/docker/containers/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16-json.log\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:46:15Z\"},\"category\" : \"authpriv\",\"level\" : \"notice\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-07-02T13:46:15.0000000Z",
         "azure_linux": {
             "message": "omsagent : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/bin/test -r /var/lib/docker/containers/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16-json.log"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-07-02T13:46:15.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"notice\",\"EventTime\" : \"2019-07-02T13:46:15+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"omsagent : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/bin/test -r /var/lib/docker/containers/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16-json.log\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T13:46:15Z\"},\"category\" : \"authpriv\",\"level\" : \"notice\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "root"
-        },
-        "process": {
-            "executable": "/bin/test",
-            "command_line": "/bin/test -r /var/lib/docker/containers/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16-json.log",
-            "working_directory": "/"
         },
         "os": {
             "family": "linux",
             "platform": "linux"
+        },
+        "user": {
+            "name": "root"
+        },
+        "process": {
+            "command_line": "/bin/test -r /var/lib/docker/containers/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16/bf64bddcdb7d18a3090980d2539e2c15c924138f489c280871941064850f7d16-json.log",
+            "executable": "/bin/test",
+            "working_directory": "/"
+        },
+        "action": {
+            "outcome": "success"
         },
         "related": {
             "user": [
                 "root"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        },
-        "action": {
-            "outcome": "success"
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -336,20 +301,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-06-27T14:48:28.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session closed for user root\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-06-27T14:48:28.0000000Z",
         "azure_linux": {
             "message": "pam_unix(sudo:session): session closed for user root"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session closed for user root\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "root"
         },
         "os": {
             "family": "linux",
@@ -360,15 +319,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "close",
             "outcome": "success"
         },
+        "user": {
+            "name": "root"
+        },
         "related": {
             "user": [
                 "root"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -380,20 +340,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-06-27T14:48:28.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session opened for user root by (uid=0)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-06-27T14:48:28.0000000Z",
         "azure_linux": {
             "message": "pam_unix(sudo:session): session opened for user root by (uid=0)"
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-06-27T14:48:28.0000000Z\",\"resourceId\" : \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"sudo\",\"Ignore\" : \"syslog\",\"Facility\" : \"authpriv\",\"Severity\" : \"info\",\"EventTime\" : \"2019-06-27T14:48:28+0000\",\"SendingHost\" : \"localhost\",\"Msg\" : \"pam_unix(sudo:session): session opened for user root by (uid=0)\",\"hostname\" : \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-06-27T14:48:28Z\"},\"category\" : \"authpriv\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "root"
         },
         "os": {
             "family": "linux",
@@ -404,15 +358,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "open",
             "outcome": "success"
         },
+        "user": {
+            "name": "root"
+        },
         "related": {
             "user": [
                 "root"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	
@@ -424,28 +379,25 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2019-07-02T14:15:01.0000000Z",
-        "event": {
-            "outcome": "success"
+        "message": "{ \"time\" : \"2019-07-02T14:15:01.0000000Z\",\"resourceId\": \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"systemd\",\"Ignore\" : \"syslog\",\"Facility\" : \"daemon\",\"Severity\" : \"info\",\"EventTime\" : \"2019-07-02T14:15:01+0000\",\"SendingHost\": \"localhost\",\"Msg\" : \"Started Session 13124 of user omsagent.\",\"hostname\": \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T14:15:01Z\"},\"category\" : \"daemon\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
+        "log": {
+            "level": "info",
+            "hostname": "LinuxRedhatDesktop"
         },
+        "@timestamp": "2019-07-02T14:15:01.0000000Z",
         "azure_linux": {
             "message": "Started Session 13124 of user omsagent."
-        },
-        "log": {
-            "hostname": "LinuxRedhatDesktop",
-            "level": "info"
-        },
-        "message": "{ \"time\" : \"2019-07-02T14:15:01.0000000Z\",\"resourceId\": \"/subscriptions/128ed5ce-4f50-4b5f-a3b0-08233b5a86b6/resourceGroups/demo.sekoia.io/providers/Microsoft.Compute/virtualMachines/LinuxRedhatDesktop\",\"properties\" : {\"ident\" : \"systemd\",\"Ignore\" : \"syslog\",\"Facility\" : \"daemon\",\"Severity\" : \"info\",\"EventTime\" : \"2019-07-02T14:15:01+0000\",\"SendingHost\": \"localhost\",\"Msg\" : \"Started Session 13124 of user omsagent.\",\"hostname\": \"LinuxRedhatDesktop\",\"FluentdIngestTimestamp\" : \"2019-07-02T14:15:01Z\"},\"category\" : \"daemon\",\"level\" : \"info\",\"operationName\" : \"LinuxSyslogEvent\"}",
-        "user": {
-            "name": "omsagent"
         },
         "os": {
             "family": "linux",
             "platform": "linux"
         },
+        "user": {
+            "name": "omsagent"
+        },
         "action": {
-            "name": "systemd:session",
             "type": "open",
+            "name": "systemd:session",
             "outcome": "success"
         },
         "related": {
@@ -453,10 +405,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "omsagent"
             ]
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
+        "host": {
+            "name": "LinuxRedhatDesktop"
         }
     }
     	

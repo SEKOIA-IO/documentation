@@ -76,6 +76,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "user1"
             ]
+        },
+        "host": {
+            "name": "hostexample"
         }
     }
     	
@@ -129,6 +132,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "user1"
             ]
+        },
+        "host": {
+            "name": "hostname_example"
         }
     }
     	
@@ -179,7 +185,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "observer": {
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
-            "version": "10.0"
+            "type": "LF",
+            "version": "2.0"
         },
         "paloalto": {
             "PanOSSourceDeviceHost": "src_host_list-0",
@@ -258,7 +265,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
-            "version": "null"
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "allow-all-employees",
@@ -356,7 +364,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             },
             "product": "PAN-OS",
-            "vendor": "Palo Alto Networks"
+            "vendor": "Palo Alto Networks",
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "dg-log-policy"
@@ -425,7 +435,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "product": "PAN-OS",
-            "vendor": "Palo Alto Networks"
+            "vendor": "Palo Alto Networks",
+            "type": "LF",
+            "version": "2.0"
         },
         "source": {
             "user": {
@@ -548,7 +560,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "product": "PAN-OS",
-            "vendor": "Palo Alto Networks"
+            "vendor": "Palo Alto Networks",
+            "type": "LF",
+            "version": "2.0"
         },
         "source": {
             "address": "1.1.1.1",
@@ -687,7 +701,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "product": "PAN-OS",
-            "vendor": "Palo Alto Networks"
+            "vendor": "Palo Alto Networks",
+            "type": "LF",
+            "version": "2.0"
         },
         "source": {
             "address": "1.1.1.1",
@@ -725,9 +741,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "denied"
             ],
-            "severity": 9,
-            "duration": 0,
-            "reason": "tcp-fin"
+            "severity": 9
         },
         "@timestamp": "2021-03-01T21:22:02.000000Z",
         "destination": {
@@ -766,7 +780,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             },
             "product": "PAN-OS",
-            "vendor": "Palo Alto Networks"
+            "vendor": "Palo Alto Networks",
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "allow-business-apps"
@@ -832,6 +848,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "paloalto": {
             "Threat_ContentType": "auth",
             "EventID": "auth-success"
+        },
+        "host": {
+            "name": "fw1"
         }
     }
     	
@@ -928,9 +947,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "denied"
             ],
-            "severity": 1,
-            "duration": 0,
-            "reason": "tcp-fin"
+            "severity": 1
         },
         "@timestamp": "2021-03-01T20:48:21.000000Z",
         "destination": {
@@ -982,7 +999,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             },
             "product": "PAN-OS",
-            "vendor": "Palo Alto Networks"
+            "vendor": "Palo Alto Networks",
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "deny-attackers",
@@ -1103,6 +1122,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "10.0.0.2",
                 "10.2.0.1"
             ]
+        },
+        "host": {
+            "name": "FW"
         }
     }
     	
@@ -1179,7 +1201,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
-            "version": "10.1"
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "SO Access",
@@ -1287,7 +1310,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
-            "version": "10.0"
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "Global_Outbound_internet_access",
@@ -1408,7 +1432,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
-            "version": "10.0"
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "deny-attackers",
@@ -1618,7 +1643,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
-            "version": "10.0"
+            "type": "LF",
+            "version": "2.0"
         },
         "rule": {
             "name": "allow-business-apps",
@@ -1716,7 +1742,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "product": "PAN-OS",
-            "vendor": "Palo Alto Networks"
+            "vendor": "Palo Alto Networks",
+            "type": "LF",
+            "version": "2.0"
         },
         "source": {
             "address": "1.1.1.1",
@@ -1796,6 +1824,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.ingress.interface.id` | `keyword` | Interface ID |
 |`observer.ingress.interface.name` | `keyword` | Interface name |
 |`observer.product` | `keyword` | The product name of the observer. |
+|`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`observer.version` | `keyword` | Observer version. |
 |`rule.name` | `keyword` | Rule name |

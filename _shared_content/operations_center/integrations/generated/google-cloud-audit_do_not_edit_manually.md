@@ -25,16 +25,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.2svDisable\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"uniqQualifier\": \"-7789616625639281959\",\n        \"timeUsec\": \"1632459962686000\"\n      },\n      \"event\": [\n        {\n          \"status\": {\n            \"success\": true\n          },\n          \"parameter\": [\n            {\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"name\": \"dusi\"\n            }\n          ],\n          \"eventName\": \"2sv_disable\",\n          \"eventType\": \"2sv_change\"\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-tn3jrd3lko\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.2svDisable\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T05:06:02.686Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T05:06:03.845372592Z\"\n}",
         "@timestamp": "2021-09-24T05:06:02.686Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T05:06:03.845372592Z",
@@ -522,17 +513,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z",
-            "reason": "NodeSysctlChange"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.2svDisable\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"uniqQualifier\": \"-7789616625639281959\",\n        \"timeUsec\": \"1632459962686000\"\n      },\n      \"event\": [\n        {\n          \"status\": {\n            \"success\": true\n          },\n          \"parameter\": [\n            {\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"name\": \"dusi\"\n            }\n          ],\n          \"eventName\": \"2sv_disable\",\n          \"eventType\": \"2sv_change\"\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-tn3jrd3lko\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.2svDisable\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T05:06:02.686Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T05:06:03.845372592Z\"\n}\n",
         "@timestamp": "2021-09-24T05:06:02.686Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T05:06:03.845372592Z",
@@ -605,16 +586,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.emailForwardingOutOfDomain\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"uniqQualifier\": \"-5683698025624301037\",\n        \"timeUsec\": \"1632501152256000\"\n      },\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventName\": \"email_forwarding_out_of_domain\",\n          \"status\": {\n            \"success\": true\n          },\n          \"parameter\": [\n            {\n              \"name\": \"dusi\",\n              \"type\": \"TYPE_STRING\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"label\": \"LABEL_OPTIONAL\"\n            },\n            {\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"test-user@google.com\",\n              \"name\": \"email_forwarding_destination_address\"\n            }\n          ],\n          \"eventType\": \"email_forwarding_change\"\n        }\n      ]\n    }\n  },\n  \"insertId\": \"rrcp9gd3y2f\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.emailForwardingOutOfDomain\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T16:32:32.256Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T16:32:33.319260836Z\"\n}",
         "@timestamp": "2021-09-24T16:32:32.256Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T16:32:33.319260836Z",
@@ -693,15 +665,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "kind": "event",
-            "category": "process",
-            "type": [
-                "change"
-            ],
-            "reason": "ImageCreate event &ImageCreate{Name:gke.gcr.io/k8s-dns-sidecar:1.21.4-gke.0,Labels:map[string]string{io.cri-containerd.image: managed,},XXX_unrecognized:[],}",
-            "outcome": "success"
-        },
+        "message": "{\"insertId\":\"2f93b0a6-f932-4d91-ad61-785ae9587360\",\"labels\":{\"authorization.k8s.io/decision\":\"allow\",\"authorization.k8s.io/reason\":\"RBAC: allowed by ClusterRoleBinding \\\"system:kube-scheduler\\\" of ClusterRole \\\"system:kube-scheduler\\\" to User \\\"system:kube-scheduler\\\"\"},\"logName\":\"projects/hazel-aria-348413/logs/cloudaudit.googleapis.com%2Factivity\",\"operation\":{\"first\":true,\"id\":\"2f93b0a6-f932-4d91-ad61-785ae9587360\",\"last\":true,\"producer\":\"k8s.io\"},\"protoPayload\":{\"@type\":\"type.googleapis.com/google.cloud.audit.AuditLog\",\"authenticationInfo\":{\"principalEmail\":\"system:kube-scheduler\"},\"authorizationInfo\":[{\"granted\":true,\"permission\":\"io.k8s.coordination.v1.leases.update\",\"resource\":\"coordination.k8s.io/v1/namespaces/kube-system/leases/kube-scheduler\"}],\"methodName\":\"io.k8s.coordination.v1.leases.update\",\"requestMetadata\":{\"callerIp\":\"10.186.0.146\",\"callerSuppliedUserAgent\":\"kube-scheduler/v1.22.8 (linux/amd64) kubernetes/2dca91e/leader-election\"},\"resourceName\":\"coordination.k8s.io/v1/namespaces/kube-system/leases/kube-scheduler\",\"serviceName\":\"k8s.io\",\"status\":{}},\"receiveTimestamp\":\"2022-06-14T14:32:10.838967694Z\",\"resource\":{\"labels\":{\"cluster_name\":\"cluster-1\",\"location\":\"europe-central2-a\",\"project_id\":\"hazel-aria-348413\"},\"type\":\"k8s_cluster\"},\"timestamp\":\"2022-06-14T14:32:09.910723Z\"}",
         "@timestamp": "2022-06-14T14:32:09.910723Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2022-06-14T14:32:10.838967694Z",
@@ -765,17 +729,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z",
-            "reason": "NodeSysctlChange"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.govAttackWarning\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1619825837106000\",\n        \"uniqQualifier\": \"7230131091737932677\"\n      },\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventName\": \"gov_attack_warning\",\n          \"eventType\": \"attack_warning\",\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ]\n    }\n  },\n  \"insertId\": \"bxuophd1vlw\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.govAttackWarning\"\n    }\n  },\n  \"timestamp\": \"2021-04-30T23:37:17.106Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-04-30T23:37:18.488559815Z\"\n}",
         "@timestamp": "2021-04-30T23:37:17.106Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-04-30T23:37:18.488559815Z",
@@ -840,16 +794,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\"insertId\":\"9d92cd5d-5043-4c8d-9a3b-92c0be113704\",\"labels\":{\"authorization.k8s.io/decision\":\"allow\",\"authorization.k8s.io/reason\":\"RBAC: allowed by ClusterRoleBinding \\\"system:kubestore-collector\\\" of ClusterRole \\\"system:kubestore-collector\\\" to User \\\"system:kubestore-collector\\\"\"},\"logName\":\"projects/hazel-aria-348413/logs/cloudaudit.googleapis.com%2Factivity\",\"operation\":{\"first\":true,\"id\":\"9d92cd5d-5043-4c8d-9a3b-92c0be113704\",\"last\":true,\"producer\":\"k8s.io\"},\"protoPayload\":{\"@type\":\"type.googleapis.com/google.cloud.audit.AuditLog\",\"authenticationInfo\":{\"principalEmail\":\"system:kubestore-collector\"},\"authorizationInfo\":[{\"granted\":true,\"permission\":\"io.k8s.core.v1.configmaps.update\",\"resource\":\"core/v1/namespaces/kube-system/configmaps/cluster-kubestore\"}],\"methodName\":\"io.k8s.core.v1.configmaps.update\",\"requestMetadata\":{\"callerIp\":\"10.186.0.146\",\"callerSuppliedUserAgent\":\"kubestore_collector/v0.0.0 (linux/amd64) kubernetes/$Format\"},\"resourceName\":\"core/v1/namespaces/kube-system/configmaps/cluster-kubestore\",\"serviceName\":\"k8s.io\",\"status\":{}},\"receiveTimestamp\":\"2022-06-15T07:27:38.524909478Z\",\"resource\":{\"labels\":{\"cluster_name\":\"cluster-1\",\"location\":\"europe-central2-a\",\"project_id\":\"hazel-aria-348413\"},\"type\":\"k8s_cluster\"},\"timestamp\":\"2022-06-15T07:27:36.652663Z\"}\n\n",
         "@timestamp": "2022-06-15T07:27:36.652663Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2022-06-15T07:27:38.524909478Z",
@@ -913,16 +858,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\"insertId\":\"ofj3qoe4mbih\",\"logName\":\"projects/hazel-aria-348413/logs/cloudaudit.googleapis.com%2Factivity\",\"operation\":{\"id\":\"operation-1655309832996-a5fd6e18\",\"last\":true,\"producer\":\"container.googleapis.com\"},\"protoPayload\":{\"@type\":\"type.googleapis.com/google.cloud.audit.AuditLog\",\"metadata\":{\"operationType\":\"DELETE_CLUSTER\"},\"methodName\":\"google.container.v1.ClusterManager.DeleteCluster\",\"policyViolationInfo\":{\"orgPolicyViolationInfo\":{}},\"resourceLocation\":{\"currentLocations\":[\"europe-central2-a\"]},\"resourceName\":\"projects/hazel-aria-348413/zones/europe-central2-a/clusters/cluster-1\",\"serviceName\":\"container.googleapis.com\",\"status\":{}},\"receiveTimestamp\":\"2022-06-15T16:19:48.068568099Z\",\"resource\":{\"labels\":{\"cluster_name\":\"cluster-1\",\"location\":\"europe-central2-a\",\"project_id\":\"hazel-aria-348413\"},\"type\":\"gke_cluster\"},\"severity\":\"NOTICE\",\"timestamp\":\"2022-06-15T16:19:47.720234784Z\"}",
         "@timestamp": "2022-06-15T16:19:47.720234784Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2022-06-15T16:19:48.068568099Z",
@@ -969,17 +905,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z",
-            "reason": "NodeSysctlChange"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.loginChallenge\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventName\": \"login_challenge\",\n          \"parameter\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"google_password\",\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\"\n            },\n            {\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_REPEATED\",\n              \"name\": \"login_challenge_method\",\n              \"multiStrValue\": [\n                \"idv_preregistered_phone\"\n              ]\n            },\n            {\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\",\n              \"value\": \"incorrect_answer_entered\",\n              \"name\": \"login_challenge_status\"\n            },\n            {\n              \"type\": \"TYPE_STRING\",\n              \"name\": \"dusi\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"IOWJlfPwgvrTfg\"\n            }\n          ],\n          \"eventType\": \"login\"\n        }\n      ],\n      \"activityId\": {\n        \"timeUsec\": \"1632500217183211\",\n        \"uniqQualifier\": \"358068855354\"\n      }\n    }\n  },\n  \"insertId\": \"-nahbepd4l2j\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.loginChallenge\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T16:16:57.183211Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T17:51:28.041126044Z\"}",
         "@timestamp": "2021-09-24T16:16:57.183211Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T17:51:28.041126044Z",
@@ -1069,16 +995,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.loginFailure\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"event\": [\n        {\n          \"eventName\": \"login_failure\",\n          \"eventType\": \"login\",\n          \"parameter\": [\n            {\n              \"value\": \"google_password\",\n              \"type\": \"TYPE_STRING\",\n              \"name\": \"login_type\",\n              \"label\": \"LABEL_OPTIONAL\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_REPEATED\",\n              \"multiStrValue\": [\n                \"password\",\n                \"idv_preregistered_phone\",\n                \"idv_preregistered_phone\"\n              ]\n            },\n            {\n              \"label\": \"LABEL_OPTIONAL\",\n              \"name\": \"dusi\",\n              \"type\": \"TYPE_STRING\",\n              \"value\": \"IOWJlfPwgvrTfg\"\n            }\n          ]\n        }\n      ],\n      \"activityId\": {\n        \"uniqQualifier\": \"358068855354\",\n        \"timeUsec\": \"1632500217183212\"\n      },\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-nahbepd4l1x\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.loginFailure\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T16:16:57.183212Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T17:51:25.034361197Z\"\n}",
         "@timestamp": "2021-09-24T16:16:57.183212Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T17:51:25.034361197Z",
@@ -1256,16 +1173,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.loginVerification\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventName\": \"login_verification\",\n          \"parameter\": [\n            {\n              \"name\": \"login_type\",\n              \"type\": \"TYPE_STRING\",\n              \"value\": \"google_password\",\n              \"label\": \"LABEL_OPTIONAL\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiStrValue\": [\n                \"idv_preregistered_phone\"\n              ],\n              \"label\": \"LABEL_REPEATED\",\n              \"type\": \"TYPE_STRING\"\n            },\n            {\n              \"value\": \"passed\",\n              \"name\": \"login_challenge_status\",\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\"\n            },\n            {\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"name\": \"dusi\",\n              \"type\": \"TYPE_STRING\"\n            },\n            {\n              \"label\": \"LABEL_OPTIONAL\",\n              \"boolValue\": true,\n              \"type\": \"TYPE_BOOL\",\n              \"name\": \"is_second_factor\"\n            }\n          ],\n          \"eventType\": \"login\"\n        }\n      ],\n      \"activityId\": {\n        \"uniqQualifier\": \"358068855354\",\n        \"timeUsec\": \"1632459936762000\"\n      }\n    }\n  },\n  \"insertId\": \"ivb9z4d41rh\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.loginVerification\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T05:05:36.762Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T06:39:22.386813664Z\"\n}",
         "@timestamp": "2021-09-24T05:05:36.762Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T06:39:22.386813664Z",
@@ -1514,16 +1422,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.recoveryEmailEdit\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1632802942940979\",\n        \"uniqQualifier\": \"-7373127890859496609\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"recovery_info_change\",\n          \"eventName\": \"recovery_email_edit\",\n          \"parameter\": [\n            {\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"name\": \"dusi\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-nkwfupd26zt\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.recoveryEmailEdit\"\n    }\n  },\n  \"timestamp\": \"2021-09-28T04:22:22.940979Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-28T04:22:26.523242112Z\"\n}",
         "@timestamp": "2021-09-28T04:22:22.940979Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-28T04:22:26.523242112Z",
@@ -1671,16 +1570,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.recoverySecretQaEdit\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"uniqQualifier\": \"8328506129139272243\",\n        \"timeUsec\": \"1632804455273424\"\n      },\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventName\": \"recovery_secret_qa_edit\",\n          \"eventType\": \"recovery_info_change\",\n          \"status\": {\n            \"success\": true\n          },\n          \"parameter\": [\n            {\n              \"type\": \"TYPE_STRING\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"name\": \"dusi\",\n              \"label\": \"LABEL_OPTIONAL\"\n            }\n          ]\n        }\n      ]\n    }\n  },\n  \"insertId\": \"vn31slcpmy\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.recoverySecretQaEdit\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-09-28T04:47:35.273424Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-28T04:47:37.650432219Z\"}",
         "@timestamp": "2021-09-28T04:47:35.273424Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-28T04:47:37.650432219Z",
@@ -1957,16 +1847,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.titaniumEnroll\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"uniqQualifier\": \"4206430548119220064\",\n        \"timeUsec\": \"1632843484846000\"\n      },\n      \"event\": [\n        {\n          \"eventName\": \"titanium_enroll\",\n          \"status\": {\n            \"success\": true\n          },\n          \"parameter\": [\n            {\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"type\": \"TYPE_STRING\",\n              \"name\": \"dusi\"\n            }\n          ],\n          \"eventType\": \"titanium_change\"\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-bxbn5bd167i\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.titaniumEnroll\"\n    }\n  },\n  \"timestamp\": \"2021-09-28T15:38:04.846Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-28T15:38:05.969683854Z\"\n}",
         "@timestamp": "2021-09-28T15:38:04.846Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-28T15:38:05.969683854Z",
@@ -2039,17 +1920,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "start": "2022-06-03T12:09:42.501046130Z",
-            "kind": "event",
-            "category": "network",
-            "type": [
-                "info"
-            ],
-            "outcome": "success",
-            "end": "2022-06-03T12:09:42.768509812Z",
-            "reason": "NodeSysctlChange"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.titaniumUnenroll\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventType\": \"titanium_change\",\n          \"status\": {\n            \"success\": true\n          },\n          \"eventName\": \"titanium_unenroll\",\n          \"parameter\": [\n            {\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"name\": \"dusi\"\n            }\n          ]\n        }\n      ],\n      \"activityId\": {\n        \"timeUsec\": \"1632843914653434\",\n        \"uniqQualifier\": \"-6706492269209711994\"\n      }\n    }\n  },\n  \"insertId\": \"-vw60qad1861\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.titaniumUnenroll\"\n    }\n  },\n  \"timestamp\": \"2021-09-28T15:45:14.653434Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-28T15:45:15.862755277Z\"\n}",
         "@timestamp": "2021-09-28T15:45:14.653434Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-28T15:45:15.862755277Z",

@@ -34,34 +34,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "Site: OSTAM,Server Name: STR04,Domain Name: MyDomain,The client has downloaded the content package successfully,STV02,ADMIN,stv02.local",
+        "event": {
+            "kind": "event",
+            "category": [
+                "malware"
+            ],
+            "reason": "The client has downloaded the content package successfully",
+            "type": [
+                "info"
+            ]
+        },
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
-        },
-        "user": {
-            "name": "ADMIN"
         },
         "host": {
             "hostname": "STV02",
             "name": "stv02.local"
         },
-        "event": {
-            "reason": "The client has downloaded the content package successfully",
-            "kind": "event",
-            "category": [
-                "host"
-            ],
-            "type": [
-                "info"
-            ]
-        },
-        "related": {
-            "hosts": [
-                "STV02"
-            ],
-            "user": [
-                "ADMIN"
-            ]
+        "user": {
+            "name": "ADMIN"
         },
         "broadcom": {
             "endpoint_protection": {
@@ -70,6 +62,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "STR04"
                 }
             }
+        },
+        "related": {
+            "hosts": [
+                "STV02"
+            ],
+            "user": [
+                "ADMIN"
+            ]
         }
     }
     	
@@ -85,13 +85,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "kind": "event",
             "category": [
-                "host"
-            ],
-            "type": [
-                "denied"
+                "malware"
             ],
             "action": "Blocked",
-            "reason": "Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue."
+            "type": [
+                "denied"
+            ]
         },
         "observer": {
             "vendor": "Broadcom",
@@ -247,6 +246,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "OND345,Category: 2,REP,Event Description: Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue.,Event time: 2022-08-29 11:35:29,Group Name: Company\\Own",
+        "event": {
+            "kind": "event",
+            "category": [
+                "malware"
+            ],
+            "reason": "Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue.",
+            "type": [
+                "info"
+            ]
+        },
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -255,21 +264,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "OND345",
             "name": "OND345"
         },
-        "event": {
-            "reason": "Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue.",
-            "kind": "event",
-            "category": [
-                "host"
-            ],
-            "type": [
-                "info"
-            ]
-        },
-        "related": {
-            "hosts": [
-                "OND345"
-            ]
-        },
         "broadcom": {
             "endpoint_protection": {
                 "source": "REP",
@@ -277,6 +271,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "group": "Company\\Own"
                 }
             }
+        },
+        "related": {
+            "hosts": [
+                "OND345"
+            ]
         }
     }
     	

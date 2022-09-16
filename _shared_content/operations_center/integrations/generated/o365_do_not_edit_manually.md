@@ -18,8 +18,8 @@ In details, the following table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `file`, `network` |
-| Type | `info` |
+| Category | `file`, `iam`, `network` |
+| Type | `change`, `info` |
 
 
 
@@ -689,33 +689,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "name": "Update group.",
-            "id": 8,
-            "outcome": "success",
-            "target": "user"
-        },
-        "organization": {
-            "id": "3e49b082-62d5-4849-a5b0-86ed519287d2"
-        },
-        "office365": {
-            "record_type": 8,
-            "result_status": "Success",
-            "user_type": {
-                "code": 0,
-                "name": "Regular"
-            }
-        },
+        "message": "{\"CreationTime\": \"2019-11-18T13:40:24\", \"Id\": \"038ae875-ffd8-45e4-9dcf-6e385cfad349\", \"Operation\": \"Update group.\", \"OrganizationId\": \"3e49b082-62d5-4849-a5b0-86ed519287d2\", \"RecordType\": 8, \"ResultStatus\": \"Success\", \"UserKey\": \"10030000A96EA230@acme.onmicrosoft.com\", \"UserType\": 0, \"Version\": 1, \"Workload\": \"AzureActiveDirectory\", \"ClientIP\": \"<null>\", \"ObjectId\": \"Not Available\", \"UserId\": \"Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com\", \"AzureActiveDirectoryEventType\": 1, \"ExtendedProperties\": [{\"Name\": \"resultType\", \"Value\": \"Success\"}]}",
         "event": {
             "action": "Update group.",
             "kind": "event",
+            "code": "8",
             "category": [
                 "iam"
             ],
             "type": [
                 "change"
-            ],
-            "code": "8"
+            ]
         },
         "service": {
             "name": "AzureActiveDirectory"
@@ -724,9 +708,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com",
             "email": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com"
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
+        "organization": {
+            "id": "3e49b082-62d5-4849-a5b0-86ed519287d2"
+        },
+        "action": {
+            "id": 8,
+            "name": "Update group.",
+            "target": "user",
+            "outcome": "success"
+        },
+        "office365": {
+            "record_type": 8,
+            "result_status": "Success",
+            "user_type": {
+                "code": 0,
+                "name": "Regular"
             }
         },
         "related": {
@@ -744,34 +740,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "action": {
-            "name": "Update user.",
-            "id": 8,
-            "outcome": "success",
-            "target": "user"
-        },
-        "organization": {
-            "id": "3e49b082-62d5-4849-a5b0-86ed519287d2"
-        },
-        "office365": {
-            "record_type": 8,
-            "result_status": "Success",
-            "user_type": {
-                "code": 0,
-                "name": "Regular"
-            }
-        },
+        "message": "{\"CreationTime\": \"2019-12-09T14:18:19\", \"Id\": \"359154c4-72c5-4ba0-bbf9-7eb1dff88af7\", \"Operation\": \"Update user.\", \"OrganizationId\": \"3e49b082-62d5-4849-a5b0-86ed519287d2\", \"RecordType\": 8, \"ResultStatus\": \"Success\", \"UserKey\": \"10030000A96EA230@acme.onmicrosoft.com\", \"UserType\": 0, \"Version\": 1, \"Workload\": \"AzureActiveDirectory\", \"ClientIP\": \"<null>\", \"ObjectId\": \"bob.smith@acme.org\", \"UserId\": \"Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com\", \"AzureActiveDirectoryEventType\": 1, \"ExtendedProperties\": [{\"Name\": \"resultType\", \"Value\": \"Success\"}, {\"Name\": \"auditEventCategory\", \"Value\": \"UserManagement\"}, {\"Name\": \"nCloud\", \"Value\": \"<null>\"}]}",
         "event": {
-            "name": "Update user.",
             "action": "Update user.",
             "kind": "event",
+            "code": "8",
             "category": [
                 "iam"
             ],
             "type": [
                 "change"
-            ],
-            "code": "8"
+            ]
         },
         "service": {
             "name": "AzureActiveDirectory"
@@ -780,9 +759,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com",
             "email": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com"
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
+        "organization": {
+            "id": "3e49b082-62d5-4849-a5b0-86ed519287d2"
+        },
+        "action": {
+            "id": 8,
+            "name": "Update user.",
+            "target": "user",
+            "outcome": "success"
+        },
+        "office365": {
+            "record_type": 8,
+            "result_status": "Success",
+            "user_type": {
+                "code": 0,
+                "name": "Regular"
             }
         },
         "related": {
@@ -800,15 +791,47 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "user": {
-            "name": "user@domain.onmicrosoft.com",
-            "email": "user@domain.onmicrosoft.com"
+        "message": "{\"CreationTime\":\"2021-03-05T14:43:17\",\"Id\":\"21a107c2-2071-4ce3-8330-cf82f3caa79f\",\"Operation\":\"Update user.\",\"OrganizationId\":\"3e49b082-62d5-4849-a5b0-86ed519287d2\",\"RecordType\":8,\"ResultStatus\":\"Success\",\"UserKey\":\"10030000A96EA230@domain.onmicrosoft.com\",\"UserType\":0,\"Version\":1,\"Workload\":\"AzureActiveDirectory\",\"ClientIP\":\"\",\"ObjectId\":\"aaaa.bbbb@example.org\",\"UserId\":\"user@domain.onmicrosoft.com\",\"AzureActiveDirectoryEventType\":1,\"ExtendedProperties\":[{\"Name\":\"additionalDetails\",\"Value\":\"{\\\"UserType\\\":\\\"Member\\\"}\"},{\"Name\":\"extendedAuditEventCategory\",\"Value\":\"User\"}],\"ModifiedProperties\":[{\"Name\":\"LastDirSyncTime\",\"NewValue\":\"[\\r\\n  \\\"2021-03-05T14:43:17Z\\\"\\r\\n]\",\"OldValue\":\"[\\r\\n  \\\"2021-03-03T12:30:50Z\\\"\\r\\n]\"},{\"Name\":\"Included Updated Properties\",\"NewValue\":\"LastDirSyncTime\",\"OldValue\":\"\"},{\"Name\":\"Action Client Name\",\"NewValue\":\"DirectorySync\",\"OldValue\":\"\"},{\"Name\":\"TargetId.UserType\",\"NewValue\":\"Member\",\"OldValue\":\"\"}],\"Actor\":[{\"ID\":\"user@domain.onmicrosoft.com\",\"Type\":5},{\"ID\":\"10030000A96EA230\",\"Type\":3},{\"ID\":\"User_c96cf894-cca6-438b-b6f2-c2744c1680f5\",\"Type\":2},{\"ID\":\"c96cf894-cca6-438b-b6f2-c2744c1680f5\",\"Type\":2},{\"ID\":\"User\",\"Type\":2}],\"ActorContextId\":\"3e49b082-62d5-4849-a5b0-86ed519287d2\",\"ActorIpAddress\":\"\",\"InterSystemsId\":\"92d46438-1e67-43e3-91ca-039ff39d7217\",\"IntraSystemId\":\"bd8cc421-efe8-4a44-b61d-44670fc6f56e\",\"SupportTicketId\":\"\",\"Target\":[{\"ID\":\"User_de76d2a9-d8bf-47d4-8f74-2ba2b560f55e\",\"Type\":2},{\"ID\":\"de76d2a9-d8bf-47d4-8f74-2ba2b560f55e\",\"Type\":2},{\"ID\":\"User\",\"Type\":2},{\"ID\":\"aaaa.bbbb@example.org\",\"Type\":5},{\"ID\":\"1003200119762B26\",\"Type\":3}],\"TargetContextId\":\"3e49b082-62d5-4849-a5b0-86ed519287d2\"}",
+        "event": {
+            "action": "Update user.",
+            "kind": "event",
+            "code": "8",
+            "category": [
+                "iam"
+            ],
+            "type": [
+                "change"
+            ]
         },
         "service": {
             "name": "AzureActiveDirectory"
         },
+        "user": {
+            "name": "user@domain.onmicrosoft.com",
+            "email": "user@domain.onmicrosoft.com"
+        },
         "organization": {
             "id": "3e49b082-62d5-4849-a5b0-86ed519287d2"
+        },
+        "action": {
+            "id": 8,
+            "name": "Update user.",
+            "properties": [
+                {
+                    "name": "LastDirSyncTime",
+                    "value": null
+                },
+                {
+                    "name": "Action Client Name",
+                    "value": null
+                },
+                {
+                    "name": "TargetId.UserType",
+                    "value": null
+                }
+            ],
+            "target": "user",
+            "outcome": "success"
         },
         "office365": {
             "record_type": 8,
@@ -816,42 +839,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user_type": {
                 "code": 0,
                 "name": "Regular"
-            }
-        },
-        "event": {
-            "action": "Update user.",
-            "kind": "event",
-            "category": [
-                "iam"
-            ],
-            "type": [
-                "change"
-            ],
-            "code": "8"
-        },
-        "action": {
-            "name": "Update user.",
-            "id": 8,
-            "outcome": "success",
-            "target": "user",
-            "properties": [
-                {
-                    "value": null,
-                    "name": "LastDirSyncTime"
-                },
-                {
-                    "value": null,
-                    "name": "Action Client Name"
-                },
-                {
-                    "value": null,
-                    "name": "TargetId.UserType"
-                }
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
             }
         },
         "related": {
