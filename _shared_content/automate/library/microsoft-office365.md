@@ -12,7 +12,7 @@ This module accepts no configuration.
 
 ### Fetch events from MessageTrace API
 
-Fetch events for MessageTrace API
+Fetch events for MessageTrace API (deprecated)
 
 #### Arguments
 
@@ -25,6 +25,22 @@ Fetch events for MessageTrace API
 | `intake_key` | `string` | Intake key to use when sending events |
 
 
+### Fetch events from MessageTrace API
+
+Fetch events for MessageTrace API (OAuth)
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `tenant_id` | `string` | The ID of the corresponding Tenant |
+| `client_id` | `string` | The account name to use |
+| `client_secret` | `string` | The password associated with the account |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+
+
 ## Extra
 
-Module **`Microsoft Office365` v1.3**
+Module **`Microsoft Office365` v2.0**

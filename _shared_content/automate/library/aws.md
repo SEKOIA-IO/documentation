@@ -76,6 +76,22 @@ Get line-oriented records from new S3 objects based on notifications
 | `intake_key` | `string` | Intake key to use when sending events |
 
 
+### Fetch new Parquet records on S3
+
+Get records from new S3 Parquet objects based on notifications
+
+#### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `queue_name` | `string` | The name of the SQS queue that received the notifications of the creation of S3 objects |
+| `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: false) |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+
+
 ### Fetch new CloudTrail records on S3
 
 Get Cloudtrail records from new S3 objects based on notifications
@@ -94,4 +110,4 @@ Get Cloudtrail records from new S3 objects based on notifications
 
 ## Extra
 
-Module **`AWS` v1.12**
+Module **`AWS` v1.13**
