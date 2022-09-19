@@ -56,4 +56,4 @@
 
 ## Extra
 
-Module **`The Hive` v1.4**
+Module **`The Hive` v1.5**

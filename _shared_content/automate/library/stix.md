@@ -335,4 +335,4 @@ Convert a list of strings into a list of observables
 
 ## Extra
 
-Module **`STIX` v1.61**
+Module **`STIX` v1.62**
