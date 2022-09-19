@@ -18,9 +18,49 @@ According to [docs.microsoft.com](https://docs.microsoft.com/en-us/microsoft-365
 
 In SEKOIA.IO XDR, [create a new intake key](xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
 
-In Microsoft Azure, create a service account with the `Reports reader` and `Security reader` rights and a strong password (for more information: [MessageTrace report required permissions](https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#permissions) and [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
+## Configure OAuth
 
-## Configure
+Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade) (For more information consult ([How to find your Azure Active Directory tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant))
+
+Add application :
+
+1. Azure Portal, navigate to `App registrations`
+2. [Register an application](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/quickStartType~/null/isMSAApp~/false)
+3. Name and create your application
+4. Collect the `Application (client) ID` (**client_id**) from the `Overview` page
+
+Create client's secret:
+
+1. From your newly created client page, navigate to `Certificates & secrets`
+2. In the `Client secrets` view
+3. Add a client secret by choosing `+ New client secret`
+4. Once create, copy the secret value (**client_secret**)
+
+Add required permissions:
+
+1. From your newly created client page, navigate to `API permissions`
+2. `Add a premission`
+3. `APIs my organization uses`
+4. `Office 365 Exchange Online`
+5. `Application permissions`
+6. `ReportingWebService.Read.All`
+7. `Add premissions`
+8. To finish, use the `Grant admin consent for TENANT_NAME` button
+
+You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Office 365 Message Trace OAuth" trigger.
+
+Create a trigger configuration and input the following information:
+
+- client_id
+- client_secret
+- intake_key
+- tenant_id
+
+Save your configuration and start the trigger.
+
+## Configure Basic Auth (Deprecated)
+
+In Microsoft Azure, create a service account with the `Reports reader` and `Security reader` rights and a strong password (for more information: [MessageTrace report required permissions](https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#permissions) and [About admin roles in the Microsoft 365 admin center](https://docs.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)).
 
 Once a dedicated service account as been created, you can validate user's rights by running the following command:
 
