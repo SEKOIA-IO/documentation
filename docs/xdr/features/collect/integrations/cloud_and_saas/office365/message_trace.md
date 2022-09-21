@@ -36,7 +36,7 @@ Create client's secret:
 3. Add a client secret by choosing `+ New client secret`
 4. Once create, copy the secret value (**client_secret**)
 
-Add required permissions:
+Add required permission:
 
 1. From your newly created client page, navigate to `API permissions`
 2. `Add a permissions`
@@ -46,6 +46,12 @@ Add required permissions:
 6. `ReportingWebService.Read.All`
 7. `Add permissions`
 8. To finish, use the `Grant admin consent for TENANT_NAME` button
+
+Add required role:
+1. From the `Azure Active Directory` page
+2. Open `Roles and administrators`
+3. Search and open `Global Reader`
+4. Use the `+ Add assignments` to add this role to your application
 
 You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Office 365 Message Trace OAuth" trigger.
 
