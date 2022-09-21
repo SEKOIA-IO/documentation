@@ -38,7 +38,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=\"2022-03-11T10:39:16.390Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.41 destination_host=\"www.forbiddensite.com\" http_status_code=403 media_type=\"\" source_bytes=131 destination_bytes=0 http_request_first_line=\"GET http://www.forbiddensite.com/ HTTP/1.1\" url_categories=\"Pornography\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-28 ruleset_name=\"Default\" rule_name=\"Block URLs Whose Category Is in Category Blocklist for Default Groups\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"forbiddenapp\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
         "event": {
             "start": "2022-03-11T10:39:16.390000Z",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "code": "10",
             "kind": "event",
             "reason": "Blocked by URL filtering"
@@ -87,8 +89,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "www",
             "registered_domain": "forbiddensite.com",
-            "path": "/",
             "scheme": "http",
+            "path": "/",
             "port": 80
         },
         "skyhighsecurity": {
@@ -133,7 +135,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=\"2022-03-17T13:14:39.134Z\" hostname=\"mwgproxy\" username=\"\" source_ip=1.2.3.4 destination_ip=2.2.2.2 destination_host=\"slscr.update.microsoft.com\" http_status_code=407 media_type=\"\" source_bytes=173 destination_bytes=0 http_request_first_line=\"CONNECT slscr.update.microsoft.com:443 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-42 ruleset_name=\"Authentication: Direct Proxy\" rule_name=\"Authenticate: Active Directory\" block_id=81 block_reason=\"Authentication Required\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
         "event": {
             "start": "2022-03-17T13:14:39.134000Z",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "code": "81",
             "kind": "event",
             "reason": "Authentication Required"
@@ -223,7 +227,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=\"2022-03-24T13:54:02.740Z\" hostname=\"mwgproxy\" username=\"myusername\" source_ip=1.2.3.4 destination_ip=255.255.255.255 destination_host=\"\" http_status_code=400 media_type=\"\" source_bytes=316 destination_bytes=0 http_request_first_line=\"CONNECT :80 HTTP/1.1\" url_categories=\"Business, Software/Hardware\" url_reputation_string=\"Minimal Risk\" url_reputation_code=-3 ruleset_name=\"Exception DFS\" rule_name=\"Forbidden Access\" block_id=10 block_reason=\"Blocked by URL filtering\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"\"",
         "event": {
             "start": "2022-03-24T13:54:02.740000Z",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "code": "10",
             "kind": "event",
             "reason": "Blocked by URL filtering"
@@ -306,7 +312,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=\"2022-03-11T09:50:47.399Z\" hostname=\"mwgproxy\" username=\"myusername\" source_ip=1.2.3.4 destination_ip=142.250.178.131 destination_host=\"www.google.fr\" http_status_code=200 media_type=\"\" source_bytes=127 destination_bytes=14678 http_request_first_line=\"GET http://www.google.fr/ HTTP/1.1\" url_categories=\"Search Engines\" url_reputation_string=\"Minimal Risk\" url_reputation_code=0 ruleset_name=\"Dynamic Content Classification\" rule_name=\"Block URLs Whose Category Is in Category Blocklist\" block_id=0 block_reason=\"\" body_infected=false virus_names=\"\" body_modified=false application_reputation=\"Unverified\" application_name=\"\" http_referer=\"\" user_agent=\"curl/7.77.0\"",
         "event": {
             "start": "2022-03-11T09:50:47.399000Z",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "code": "0",
             "kind": "event",
             "action": "allowed",
@@ -360,8 +368,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "fr",
             "subdomain": "www",
             "registered_domain": "google.fr",
-            "path": "/",
             "scheme": "http",
+            "path": "/",
             "port": 80
         },
         "user": {
@@ -410,7 +418,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "user_id=-1 username=foo source_ip=37.171.139.5 http_action=CERTVERIFY server_to_client_bytes=0 client_to_server_bytes=0 requested_host=ping-edge.smartscreen.microsoft.com requested_path=/ result=OBSERVED virus= request_timestamp_epoch=1661260270 request_timestamp=2022-08-23 13:11:10 uri_scheme=https category=Business, Software/Hardware media_type=application/x-empty application_type= reputation=Minimal Risk last_rule=Allow http_status_code=200 client_ip=10.0.2.15 location= block_reason= user_agent_product=Other user_agent_version= user_agent_comment= process_name=msedge.exe destination_ip=20.108.130.238 destination_port=443 pop_country_code=FR referer= ssl_scanned=t av_scanned_up=t av_scanned_down=f rbi=f dlp=f client_system_name=desktop-rles2a6 filename= pop_egress_ip=161.69.108.44 pop_ingress_ip=10.42.47.222 proxy_port=8080",
         "event": {
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "kind": "event",
             "action": "allowed",
             "type": [
@@ -503,7 +513,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "id=-1 username=autorite nt\\\\service r\u00c9seau source_ip=1.1.1.1 http_action=GET server_to_client_bytes=3160 client_to_server_bytes=1137 requested_host=ctldl.windowsupdate.com requested_path=/msdownload/update/v3/static/trustedr/en/pinrulesstl.cab result=DENIED virus= request_timestamp_epoch=1661266553 request_timestamp=2022-08-23 14:55:53 uri_scheme=http category=Software/Hardware media_type= application_type= reputation=Minimal Risk last_rule=Block if MCP Authentication Failed http_status_code=403 client_ip=1.1.1.1 location= block_reason=Authentication Required user_agent_product=Other user_agent_version= user_agent_comment= process_name=svchost.exe destination_ip=1.1.1.1 destination_port=80 pop_country_code=fr referer= ssl_scanned=f av_scanned_up=f av_scanned_down=f rbi=f dlp=f client_system_name= filename=pinrulesstl.cab pop_egress_ip=1.1.1.1pop_ingress_ip=1.1.1.1 proxy_port=80",
         "event": {
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "kind": "event",
             "action": "denied",
             "reason": "Authentication Required",

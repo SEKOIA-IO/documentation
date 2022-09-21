@@ -40,7 +40,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2040-10-23T01:18:10.000000Z",
             "duration": 100000000.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "access"
@@ -135,7 +137,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-04-12T14:09:58.765000Z",
             "duration": 2.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "error"
@@ -215,7 +219,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-04-12T14:09:58.765000Z",
             "duration": 2.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "denied"
@@ -295,7 +301,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-04-12T14:09:58.765000Z",
             "duration": 2.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "denied"
@@ -375,7 +383,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-04-12T14:09:58.765000Z",
             "duration": 2.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "allowed"
@@ -454,7 +464,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2040-10-23T01:18:10.000000Z",
             "duration": 100000000.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "denied"
@@ -579,7 +591,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-04-12T14:09:58.765000Z",
             "duration": 2.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "error"
@@ -659,7 +673,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-04-12T14:09:58.765000Z",
             "duration": 2.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "allowed"
@@ -738,7 +754,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-04-12T14:09:58.765000Z",
             "duration": 2.0,
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "connection",
                 "error"

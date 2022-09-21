@@ -27,7 +27,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "- :{\"version\":\"6.12\",\"account_id\":123456,\"headend_addr\":\"198.51.100.94\",\"account_uid\":\"admin-prtg@company.local\",\"threat\":0,\"certainty\":0,\"score_decreases\":true,\"privilege\":4,\"href\":\"https:/198.51.100.94/accounts/522\",\"category\":\"ACCOUNT SCORING\",\"tags\":[],\"host_access_history\":[{\"id\":22235,\"name\":\"HOSTNAME.COMPANY.LOCAL\",\"privilege\":null,\"privilegeCategory\":null,\"lastSeen\":\"2021-09-30T08:06:46+00:00\"}],\"service_access_history\":[{\"id\":1470943,\"uid\":\"cifs/serssq01.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T08:06:46+00:00\"},{\"id\":5,\"uid\":\"krbtgt/company.local.company@company\",\"privilege\":null,\"privilegeCategory\":null,\"lastSeen\":\"2021-09-30T08:04:19+00:00\"},{\"id\":2614295,\"uid\":\"rpcss/host109.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T08:04:19+00:00\"},{\"id\":2614304,\"uid\":\"rpcss/host2db01.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T08:04:04+00:00\"},{\"id\":2614297,\"uid\":\"rpcss/host110.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:57:44+00:00\"},{\"id\":990,\"uid\":\"rpcss/srv-appli02.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:54:04+00:00\"},{\"id\":2614303,\"uid\":\"rpcss/host201.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:37:28+00:00\"},{\"id\":4214403,\"uid\":\"http/alm.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:21:04+00:00\"},{\"id\":4186134,\"uid\":\"http/host109.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:20:50+00:00\"},{\"id\":3693289,\"uid\":\"http/host110.company.local@company.local\",\"privilege\":4,\"privilegeCategory\":\"Medium\",\"lastSeen\":\"2021-09-30T07:20:38+00:00\"}],\"last_detection_type\":\"Privilege Anomaly: Unusual Service - Insider\",\"vectra_timestamp\":\"1633338457\"}",
         "event": {
-            "type": "ACCOUNT SCORING",
+            "action": "ACCOUNT SCORING",
             "url": "https:/198.51.100.94/accounts/522"
         },
         "observer": {
@@ -233,7 +233,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "-: {\"version\": \"6.12\", \"detection_id\": 13281, \"category\": \"COMMAND & CONTROL\", \"severity\": 6.0, \"threat\": 60, \"certainty\": 72, \"d_type\": \"hidden_http_tunnel_cnc\", \"d_type_vname\": \"Hidden HTTP Tunnel\", \"triaged\": false, \"headend_addr\": \"198.51.100.94\", \"dvchost\": \"198.51.100.94\", \"href\": \"https://198.51.100.94/detections/13281?detail_id=94738\", \"dd_dst_ip\": \"198.51.100.1\", \"dd_dst_port\": 8002, \"dd_dst_dns\": \"mirror.centos.org\", \"dd_bytes_sent\": 1476677, \"dd_bytes_rcvd\": 8269214038, \"host_name\": \"IP-198.51.100.14\", \"host_ip\": \"198.51.100.14\", \"dd_proto\": \"tcp\", \"vectra_timestamp\": \"1633516306\"}",
         "event": {
-            "type": "COMMAND & CONTROL",
+            "action": "COMMAND & CONTROL",
             "url": "https://198.51.100.94/detections/13281?detail_id=94738"
         },
         "observer": {
@@ -297,7 +297,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "-: {\"version\": \"6.12\", \"host_id\": 27617, \"headend_addr\": \"198.51.100.94\", \"host_name\": \"IP-198.51.100.14\", \"dvchost\": \"198.51.100.94\", \"host_ip\": \"198.51.100.14\", \"threat\": 22, \"certainty\": 31, \"privilege\": 0, \"score_decreases\": false, \"href\": \"https://198.51.100.94/hosts/27617\", \"host_roles\": \"\", \"src_key_asset\": false, \"dst_key_asset\": false, \"category\": \"HOST SCORING\", \"sensor\": \"E123456789123456\", \"detection_profile\": {\"name\": \"saas\", \"vname\": \"Cloud Services\", \"scoringDetections\": [\"Hidden HTTP Tunnel (C&C)\"]}, \"host_groups\": [], \"tags\": [], \"account_access_history\": [], \"service_access_history\": [], \"mac_address\": null, \"mac_vendor\": null, \"last_detection_type\": \"Hidden HTTP Tunnel\", \"vectra_timestamp\": \"1633690973\"}",
         "event": {
-            "type": "HOST SCORING",
+            "action": "HOST SCORING",
             "url": "https://198.51.100.94/hosts/27617"
         },
         "observer": {
@@ -364,7 +364,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "-: {\"category\": \"INFO\", \"certainty\": 0, \"d_type\": \"si_new_host\", \"d_type_vname\": \"New Host\", \"dd_bytes_rcvd\": null, \"dd_bytes_sent\": null, \"dd_dst_dns\": \"\", \"dd_dst_ip\": \"0.0.0.0\", \"dd_dst_port\": 80, \"dd_proto\": \"\", \"detection_id\": 9999, \"dvchost\": \"255.255.255.1\", \"headend_addr\": \"255.255.255.1\", \"host_ip\": \"10.0.0.1\", \"host_name\": \"plop-99\", \"href\": \"https://255.255.255.1/detections/9999?detail_id=11111\", \"severity\": 0, \"threat\": 0, \"triaged\": false, \"vectra_timestamp\": \"1099999999\", \"version\": \"6.7\"}",
         "event": {
-            "type": "INFO",
+            "action": "INFO",
             "url": "https://255.255.255.1/detections/9999?detail_id=11111"
         },
         "observer": {
@@ -412,10 +412,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "-: {\"accounts\": \"user@company.net\", \"shares\": \"\", \"reason\": \"MORE_PROCESSING_REQUIRED\", \"count\": 295, \"version\": \"6.12\", \"detection_id\": 13295, \"category\": \"LATERAL MOVEMENT\", \"severity\": 2.0, \"threat\": 20, \"certainty\": 74, \"d_type\": \"smb_brute_force\", \"d_type_vname\": \"SMB Brute-Force\", \"triaged\": false, \"headend_addr\": \"198.51.100.94\", \"dvchost\": \"198.51.100.94\", \"href\": \"https://198.51.100.94/detections/13295?detail_id=94908\", \"dd_dst_ip\": \"198.51.100.38\", \"dd_dst_port\": 445, \"dd_dst_dns\": \"\", \"dd_bytes_sent\": null, \"dd_bytes_rcvd\": null, \"host_name\": \"hostname\", \"host_ip\": \"198.51.100.155\", \"dd_proto\": \"\", \"vectra_timestamp\": \"1633681756\"}",
+        "event": {
+            "action": "LATERAL MOVEMENT",
+            "url": "https://198.51.100.94/detections/13295?detail_id=94908"
+        },
+        "observer": {
+            "version": "6.12",
+            "name": "198.51.100.94",
+            "ip": "198.51.100.94"
+        },
+        "vectra": {
+            "timestamp": 1633681756,
+            "certainty": 74,
+            "detection": {
+                "type": "smb_brute_force",
+                "name": "SMB Brute-Force",
+                "id": 13295,
+                "count": "295",
+                "reason": "MORE_PROCESSING_REQUIRED",
+                "accounts": "user@company.net"
+            },
+            "severity": 2.0,
+            "risk_score_norm": 20,
+            "triaged": false
+        },
         "destination": {
-            "address": "198.51.100.38",
             "ip": "198.51.100.38",
-            "port": 445
+            "port": 445,
+            "address": "198.51.100.38"
         },
         "host": {
             "ip": [
@@ -423,37 +448,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "name": "hostname"
         },
-        "event": {
-            "outcome": "success",
-            "type": "LATERAL MOVEMENT",
-            "url": "https://198.51.100.94/detections/13295?detail_id=94908"
-        },
-        "observer": {
-            "ip": "198.51.100.94",
-            "name": "198.51.100.94",
-            "version": "6.12"
-        },
         "related": {
             "ip": [
                 "198.51.100.155",
                 "198.51.100.38",
                 "198.51.100.94"
             ]
-        },
-        "vectra": {
-            "certainty": 74,
-            "detection": {
-                "accounts": "user@company.net",
-                "id": 13295,
-                "name": "SMB Brute-Force",
-                "reason": "MORE_PROCESSING_REQUIRED",
-                "type": "smb_brute_force",
-                "count": "295"
-            },
-            "risk_score_norm": 20,
-            "severity": 2.0,
-            "timestamp": 1633681756,
-            "triaged": false
         }
     }
     	
@@ -467,7 +467,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "-: {\"version\": \"6.8\", \"detection_id\": 1900, \"category\": \"RECONNAISSANCE\", \"severity\": 7.0, \"threat\": 70, \"certainty\": 86, \"d_type\": \"rpc_recon_1to1\", \"d_type_vname\": \"RPC Targeted Recon\", \"triaged\": false, \"headend_addr\": \"255.255.255.1\", \"dvchost\": \"255.255.255.1\", \"href\": \"https://255.255.255.1/detections/1900?detail_id=66777\", \"dd_dst_ip\": \"10.43.0.81\", \"dd_dst_port\": 49668, \"dd_dst_dns\": \"\", \"dd_bytes_sent\": null, \"dd_bytes_rcvd\": null, \"host_name\": \"IP-192.168.71.1\", \"host_ip\": \"192.168.71.1\", \"dd_proto\": \"\", \"vectra_timestamp\": \"1623742534\"}",
         "event": {
-            "type": "RECONNAISSANCE",
+            "action": "RECONNAISSANCE",
             "url": "https://255.255.255.1/detections/1900?detail_id=66777"
         },
         "observer": {
@@ -523,8 +523,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.port` | `long` | Port of the destination. |
+|`event.action` | `keyword` | The action captured by the event. |
 |`event.outcome` | `keyword` | The outcome of the event. The lowest level categorization field in the hierarchy. |
-|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`event.url` | `keyword` | Event investigation URL |
 |`host.id` | `keyword` | Unique host id. |
 |`host.ip` | `ip` | Host ip addresses. |
@@ -545,7 +545,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`vectra.campaign.id` | `long` | The id of the campaign |
 |`vectra.campaign.link` | `keyword` | The link to the campaign in the UI |
 |`vectra.campaign.name` | `keyword` | The name of the campaign |
-|`vectra.certainty` | `long` | The certakeywordy of the score assigned to this host |
+|`vectra.certainty` | `long` | The certainty of the score assigned to this host |
 |`vectra.destination.id` | `keyword` | The destination of the campaign. Defaults to 'external' |
 |`vectra.destination.key_asset` | `bool` | Whether there is a detection that is targeting this host and this host is a key asset. |
 |`vectra.destination.name` | `keyword` | The external domain of the campaign destination |
