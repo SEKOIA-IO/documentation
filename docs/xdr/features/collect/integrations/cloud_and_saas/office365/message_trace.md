@@ -20,7 +20,7 @@ In SEKOIA.IO XDR, [create a new intake key](xdr/features/collect/intakes/#create
 
 ## Configure OAuth
 
-Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade) (For more information consult ([How to find your Azure Active Directory tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant))
+Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade) (for more information consult: [How to find your Azure Active Directory tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant))
 
 Add application :
 
@@ -39,12 +39,12 @@ Create client's secret:
 Add required permissions:
 
 1. From your newly created client page, navigate to `API permissions`
-2. `Add a permission`
+2. `Add a permissions`
 3. `APIs my organization uses`
 4. `Office 365 Exchange Online`
 5. `Application permissions`
 6. `ReportingWebService.Read.All`
-7. `Add premissions`
+7. `Add permissions`
 8. To finish, use the `Grant admin consent for TENANT_NAME` button
 
 You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Office 365 Message Trace OAuth" trigger.
