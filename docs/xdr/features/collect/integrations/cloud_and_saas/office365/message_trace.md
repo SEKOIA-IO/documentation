@@ -39,7 +39,7 @@ Create client's secret:
 Add required permissions:
 
 1. From your newly created client page, navigate to `API permissions`
-2. `Add a premission`
+2. `Add a permission`
 3. `APIs my organization uses`
 4. `Office 365 Exchange Online`
 5. `Application permissions`
