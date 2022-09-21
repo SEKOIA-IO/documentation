@@ -38,7 +38,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Malop Connection Added",
             "severity": 5,
             "code": "5",
-            "type": "info",
+            "type": [
+                "info"
+            ],
             "category": [
                 "session"
             ],
@@ -86,7 +88,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Malop Created",
             "severity": 5,
             "code": "1",
-            "type": "info",
+            "type": [
+                "info"
+            ],
             "reason": "flashget3.7.0.1220en.pdf.exe, which has an unknown reputation, has dual extensions, which is hiding the true nature of the process.",
             "url": "https://yourserver.cybereason.net:8443//#/malop/11.4718101284717793977",
             "category": [
@@ -149,7 +153,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Malop Machine Added",
             "severity": 5,
             "code": "3",
-            "type": "info",
+            "type": [
+                "info"
+            ],
             "category": [
                 "intrusion_detection"
             ],
@@ -226,7 +232,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Malop Process Added",
             "severity": 5,
             "code": "2",
-            "type": "info",
+            "type": [
+                "info"
+            ],
             "category": [
                 "intrusion_detection"
             ],
@@ -284,7 +292,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "Malop User Added",
             "severity": 5,
             "code": "6",
-            "type": "info",
+            "type": [
+                "info"
+            ],
             "category": [
                 "intrusion_detection"
             ],

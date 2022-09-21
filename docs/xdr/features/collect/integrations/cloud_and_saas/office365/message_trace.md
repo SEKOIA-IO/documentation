@@ -20,9 +20,9 @@ In SEKOIA.IO XDR, [create a new intake key](xdr/features/collect/intakes/#create
 
 ## Configure OAuth
 
-Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade) (for more information consult: [How to find your Azure Active Directory tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant))
+Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade) (for more information read ([How to find your Azure Active Directory tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)).
 
-Add application :
+Add application:
 
 1. Azure Portal, navigate to `App registrations`
 2. [Register an application](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/quickStartType~/null/isMSAApp~/false)
@@ -57,10 +57,10 @@ You can now create the playbook "Create a new playbook > Create a playbook from 
 
 Create a trigger configuration and input the following information:
 
-- client_id
-- client_secret
-- intake_key
-- tenant_id
+- `client_id`
+- `client_secret`
+- `intake_key`
+- `tenant_id`
 
 Save your configuration and start the trigger.
 

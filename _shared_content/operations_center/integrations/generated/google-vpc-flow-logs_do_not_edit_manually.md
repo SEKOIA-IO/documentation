@@ -38,7 +38,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-06-03T12:09:42.768509812Z",
             "start": "2022-06-03T12:09:42.501046130Z",
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "info"
             ]
@@ -135,7 +137,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2022-06-03T12:09:44.424429165Z",
             "start": "2022-06-03T12:09:44.421947861Z",
             "kind": "event",
-            "category": "network",
+            "category": [
+                "network"
+            ],
             "type": [
                 "info"
             ]
