@@ -40,8 +40,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "start": "2022-03-17T13:49:51.000000Z",
             "kind": "event",
-            "category": "network",
-            "type": "connection",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ],
             "timezone": "+0100",
             "risk_score": 5,
             "duration": 0.0
@@ -124,8 +128,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "start": "2022-03-03T13:21:10.000000Z",
             "kind": "event",
-            "category": "network",
-            "type": "connection",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ],
             "timezone": "+0100",
             "risk_score": 5,
             "duration": 2000000000.0
@@ -211,8 +219,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "time=\"2022-03-16 19:36:03\" fw=\"SN12345678912345\" tz=+0100 startime=\"\" pri=5 confid=01 slotlevel=2 ruleid=103 srcif=\"Ethernet3\" srcifname=\"in\" ipproto=tcp dstif=\"Ethernet2\" dstifname=\"out\" proto=https src=11.11.11.11 srcport=49586 srcportname=ephemeral_fw_tcp srcname=foo_bar srcmac=00:00:00:00:00:00 srccontinent=\"na\" srccountry=\"us\" dst=22.22.22.22 dstport=443 dstportname=https dstcontinent=\"eu\" dstcountry=\"be\" modsrc=11.11.11.11 modsrcport=49586 origdst=22.22.22.22 origdstport=443 ipv=4 sent=2827291 rcvd=2728401 duration=107331.18 action=pass logtype=\"connection\"",
         "event": {
             "kind": "event",
-            "category": "network",
-            "type": "connection",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ],
             "timezone": "+0100",
             "risk_score": 5,
             "duration": 107331180000000.0

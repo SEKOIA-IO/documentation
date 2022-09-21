@@ -332,8 +332,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"customer\": \"CuNo\", \"metaData\": {}, \"host\": \"events.retarus.com\", \"ts\": \"2018-10-16 14:58:18 +0200\", \"version\": \"1.0\", \"sourceIp\": \"xxx.xxx.xxx.xxx\", \"sender\": \"xxxxxxx@retarus.com\", \"type\": \"CxO\", \"direction\": \"INBOUND\", \"recipient\": \"xxxxxxx@retarus.de\", \"mimeId\": \"<164D6G96.xxxxxxx@retarus.net>\", \"status\": \"DETECTED\", \"class\": \"THREAT\", \"rmxId\": \"20181016-145817-42ZFjPxxxxxx-0@mailin01\"}",
         "event": {
             "kind": "alert",
-            "category": "malware",
-            "type": "info"
+            "category": [
+                "malware"
+            ],
+            "type": [
+                "info"
+            ]
         },
         "observer": {
             "version": "1.0",
@@ -393,8 +397,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"customer\": \"CuNo\", \"metaData\": {\"details\": \"EICAR-AV-Test\"}, \"host\": \"events.retarus.com\", \"ts\": \"2018-10-16 14:58:43 +0200\", \"version\": \"1.0\", \"sourceIp\": \"xxx.xxx.xxx.xxx\", \"sender\": \"xxxxxxx@retarus.com\", \"type\": \"MultiScan\", \"direction\": \"OUTBOUND\", \"recipient\": \"xxxxxxx@retarus.de\", \"mimeId\": \"<5616dfeid.xxxxxxxxxx@retarus.net>\", \"status\": \"INFECTED\", \"class\": \"THREAT\", \"rmxId\": \"20181016-145842-xxxxxx-xxxxxx-0@mailin27\"}",
         "event": {
             "kind": "alert",
-            "category": "malware",
-            "type": "info"
+            "category": [
+                "malware"
+            ],
+            "type": [
+                "info"
+            ]
         },
         "observer": {
             "version": "1.0",
@@ -452,37 +460,57 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"customer\": \"CuNo\", \"metaData\": {\"hashFunction\": \"sha256\", \"threatType\": \"VIRUS\", \"checksum\": \"6b84714d0fa8c77d846306f37f4f3135596d34e17dca4f84088195272fd\", \"mimeType\": \"applicationx-dosexec\", \"details\": \"EICAR-Test-File\"}, \"host\": \"events.retarus.com\", \"ts\": \"2018-10-16 14:58:56 +0200\", \"version\": \"1.0\", \"sourceIp\": \"xxx.xxx.xxx.xxx\", \"sender\": \"xxxxxx@retarus.de\", \"type\": \"PZD\", \"direction\": \"INBOUND\", \"recipient\": \"xxxxxxx@retarus.de\", \"mimeId\": \"<56168B42.xxxxxxx@retarus.net>\", \"status\": \"DETECTED\", \"class\": \"THREAT\", \"rmxId\": \"20181016-145852-xxxxxx-xxxxxx-0@mailin01\"}",
+        "event": {
+            "kind": "alert",
+            "category": [
+                "malware"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "version": "1.0",
+            "hostname": "events.retarus.com"
+        },
+        "organization": {
+            "id": "CuNo"
+        },
+        "source": {
+            "ip": "xxx.xxx.xxx.xxx",
+            "domain": "retarus.de",
+            "address": "retarus.de",
+            "top_level_domain": "de",
+            "registered_domain": "retarus.de"
+        },
+        "destination": {
+            "domain": "retarus.de",
+            "address": "retarus.de",
+            "top_level_domain": "de",
+            "registered_domain": "retarus.de"
+        },
+        "retarus": {
+            "timestamp": "2018-10-16 14:58:56 +0200",
+            "email_direction": "INBOUND",
+            "mime_message_id": "<56168B42.xxxxxxx@retarus.net>",
+            "message_id": "20181016-145852-xxxxxx-xxxxxx-0@mailin01",
+            "recipient": "xxxxxxx@retarus.de",
+            "sender": "xxxxxx@retarus.de",
+            "status": "DETECTED",
+            "class": "THREAT",
+            "type": "PZD",
+            "virus_name": "EICAR-Test-File"
+        },
         "action": {
             "name": "THREAT",
             "outcome": "failure"
         },
-        "destination": {
-            "address": "retarus.de",
-            "domain": "retarus.de",
-            "registered_domain": "retarus.de",
-            "top_level_domain": "de"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "malware",
-            "kind": "alert",
-            "type": "info"
-        },
         "file": {
+            "mimeType": "applicationx-dosexec",
             "hash": {
                 "sha256": "sha256"
-            },
-            "mimeType": "applicationx-dosexec"
-        },
-        "message": "{\"customer\": \"CuNo\", \"metaData\": {\"hashFunction\": \"sha256\", \"threatType\": \"VIRUS\", \"checksum\": \"6b84714d0fa8c77d846306f37f4f3135596d34e17dca4f84088195272fd\", \"mimeType\": \"applicationx-dosexec\", \"details\": \"EICAR-Test-File\"}, \"host\": \"events.retarus.com\", \"ts\": \"2018-10-16 14:58:56 +0200\", \"version\": \"1.0\", \"sourceIp\": \"xxx.xxx.xxx.xxx\", \"sender\": \"xxxxxx@retarus.de\", \"type\": \"PZD\", \"direction\": \"INBOUND\", \"recipient\": \"xxxxxxx@retarus.de\", \"mimeId\": \"<56168B42.xxxxxxx@retarus.net>\", \"status\": \"DETECTED\", \"class\": \"THREAT\", \"rmxId\": \"20181016-145852-xxxxxx-xxxxxx-0@mailin01\"}",
-        "observer": {
-            "hostname": "events.retarus.com",
-            "version": "1.0"
-        },
-        "organization": {
-            "id": "CuNo"
+            }
         },
         "related": {
             "hash": [
@@ -495,31 +523,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "xxx.xxx.xxx.xxx"
             ]
-        },
-        "retarus": {
-            "class": "THREAT",
-            "email_direction": "INBOUND",
-            "message_id": "20181016-145852-xxxxxx-xxxxxx-0@mailin01",
-            "mime_message_id": "<56168B42.xxxxxxx@retarus.net>",
-            "recipient": "xxxxxxx@retarus.de",
-            "sender": "xxxxxx@retarus.de",
-            "status": "DETECTED",
-            "timestamp": "2018-10-16 14:58:56 +0200",
-            "type": "PZD",
-            "virus_name": "EICAR-Test-File"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "retarus-email-security",
-                "dialect_uuid": "46fe3905-9e38-4fb2-be09-44d31626b694"
-            }
-        },
-        "source": {
-            "address": "retarus.de",
-            "domain": "retarus.de",
-            "ip": "xxx.xxx.xxx.xxx",
-            "registered_domain": "retarus.de",
-            "top_level_domain": "de"
         }
     }
     	
@@ -534,8 +537,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"customer\": \"CuNo\", \"metaData\": {\"hashFunction\": \"sha256\", \"checksum\": \"cbfdedf25f7f04daf9d705548cf6b6546d66bc206ea1a166fff15ece9434\"}, \"host\": \"events.retarus.com\", \"ts\": \"2018-10-16 15:03:43 +0200\", \"version\": \"1.0\", \"sourceIp\": \"xxx.xxx.xxx.xxx\", \"sender\": \"xxxxxxx@retarus.com\", \"type\": \"Sandboxing\", \"direction\": \"INBOUND\", \"recipient\": \"xxxxxxx@retarus.de\", \"mimeId\": \"<37357C96.xxxxxxx@retarus.net>\", \"status\": \"SUSPICIOUS\", \"class\": \"THREAT\", \"rmxId\": \"20181016-145902-xxxxxx-0@mailin08\"}",
         "event": {
             "kind": "alert",
-            "category": "malware",
-            "type": "info"
+            "category": [
+                "malware"
+            ],
+            "type": [
+                "info"
+            ]
         },
         "observer": {
             "version": "1.0",

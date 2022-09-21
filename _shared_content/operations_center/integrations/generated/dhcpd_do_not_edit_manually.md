@@ -36,8 +36,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "DHCPACK on 10.100.102.108 to 6c:88:14:1d:97:1c (PDB746) via 10.100.100.4",
         "event": {
             "kind": "event",
-            "category": "network",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "ack"
@@ -74,8 +78,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "DHCPDISCOVER from ac:cc:8e:b0:2b:8c via 192.168.102.7: network 192.168.102.0/23: no free leases",
         "event": {
             "kind": "event",
-            "category": "network",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "discover"
@@ -105,8 +113,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "DHCPRELEASE of 10.17.81.182 from 00:08:5d:71:92:15 (6867i00085D719105) via enp4s0f0 (found)",
         "event": {
             "kind": "event",
-            "category": "network",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "release"
@@ -138,8 +150,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "DHCPREQUEST for 10.100.102.108 from 6c:88:14:1d:96:0c (PDB746) via 10.100.100.4",
         "event": {
             "kind": "event",
-            "category": "network",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "request"
