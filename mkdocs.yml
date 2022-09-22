@@ -635,6 +635,7 @@ plugins:
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
+edit_uri: edit/main/docs/
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
 theme:
