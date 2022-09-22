@@ -226,7 +226,7 @@ nav:
     - Data Models: cti/features/data_model.md
     - Consume:
       - Intelligence: cti/features/consume/intelligence.md
-      - Obervables: cti/features/consume/observables.md
+      - Observables: cti/features/consume/observables.md
       - Outgoing Feeds: cti/features/consume/feeds.md
       - Graph Explorations: cti/features/consume/graph_explorations.md
       - Enrichers: cti/features/consume/enrichers.md
@@ -262,7 +262,7 @@ nav:
     - Data Models: tip/features/data_model.md
     - Consume:
       - Intelligence: tip/features/consume/intelligence.md
-      - Obervables: tip/features/consume/observables.md
+      - Observables: tip/features/consume/observables.md
       - Outgoing Feeds: tip/features/consume/feeds.md
       - Graph Explorations: tip/features/consume/graph_explorations.md
       - Enrichers: tip/features/consume/enrichers.md
