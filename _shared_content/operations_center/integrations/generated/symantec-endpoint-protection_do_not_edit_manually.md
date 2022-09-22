@@ -109,11 +109,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "CUAGENT.EXE",
             "working_directory": "C:\\PROGRAM FILES\\SMART-X\\CONTROLUPAGENT\\VERSION 8.1.5.634",
             "args": [
-                "C:\\Program",
-                "Files",
-                "(x86)\\Symantec\\Symantec",
-                "Endpoint",
-                "Protection\\14.3.4615.2000.105\\Bin64\\ccSvcHst.exe"
+                "C:\\Program Files (x86)\\Symantec\\Symantec Endpoint Protection\f.3.4615.2000.105\\Bin64\\ccSvcHst.exe"
             ]
         },
         "related": {

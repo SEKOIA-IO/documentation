@@ -17,7 +17,7 @@ In details, the following table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `email` |
+| Category | `email`, `network` |
 | Type | `info` |
 
 
@@ -84,13 +84,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"connection\":{\"protocol\":\"smtp:smtp\",\"ip\":\"66.218.66.103\",\"host\":\"n35.grp.scd.yahoo.com\",\"sid\":\"3j6jew035h\",\"resolveStatus\":\"ok\",\"helo\":\"n35.grp.scd.yahoo.com\",\"country\":\"us\"},\"filter\":{\"delivered\":{\"rcpts\":[\"amartinez@thopedia.com\"]},\"qid\":\"27Q0O7ss000303\",\"modules\":{\"spam\":{\"version\":{\"definitions\":\"main-2208250092\",\"engine\":\"8.19.0-2204280000\"},\"langs\":[\"en\",\"pt\",\"es\"],\"scores\":{\"classifiers\":{\"malware\":0,\"lowpriority\":0,\"adult\":0,\"mlx\":0,\"bulk\":0,\"spam\":0,\"phish\":0,\"mlxlog\":372,\"impostor\":0,\"suspect\":0},\"overall\":0,\"engine\":0}}},\"routes\":[\"allow_relay\",\"firewallsafe\",\"internalnet\",\"outbound\"],\"durationSecs\":0.169678,\"suborgs\":{\"sender\":\"0\",\"rcpts\":[\"0\"]},\"verified\":{\"rcpts\":[\"amartinez@thopedia.com\"]},\"disposition\":\"continue\",\"actions\":[{\"module\":\"av\",\"rule\":\"clean\",\"action\":\"add-header\"},{\"module\":\"av\",\"isFinal\":true,\"action\":\"continue\",\"rule\":\"clean\"},{\"module\":\"spam\",\"action\":\"add-header\",\"rule\":\"notspam\"}],\"msgSizeBytes\":4857,\"routeDirection\":\"outbound\"},\"guid\":\"rkuzwIede_tYDQ-P7qUoNlwm6Hz3u1R5\",\"msg\":{\"header\":{\"return-path\":[\"<sentto-4328378-18698-1074787260-gboja=proofpoint.com@returns.groups.yahoo.com>\"],\"to\":[\"\\\"wmoms\\\" <wmoms@yahoogroups.com>\"],\"message-id\":[\"<1C30CBDA666538428B33679A1FB67AFDBA380B@bumail.bradley.edu>\"],\"from\":[\"\\\"Schweigert, Wendy\\\" <wendy@bumail.bradley.edu>\"],\"reply-to\":[\"wmoms@yahoogroups.com\"],\"subject\":[\"[wmoms] ctts\"]},\"sizeBytes\":4275,\"normalizedHeader\":{\"subject\":[\"[wmoms] ctts\"],\"reply-to\":[\"wmoms@yahoogroups.com\"],\"to\":[\"\\\"wmoms\\\" <wmoms@yahoogroups.com>\"],\"message-id\":[\"1C30CBDA666538428B33679A1FB67AFDBA380B@bumail.bradley.edu\"],\"from\":[\"\\\"Schweigert, Wendy\\\" <wendy@bumail.bradley.edu>\"],\"return-path\":[\"<sentto-4328378-18698-1074787260-gboja=proofpoint.com@returns.groups.yahoo.com>\"]},\"parsedAddresses\":{\"from\":[\"wendy@bumail.bradley.edu\"],\"to\":[\"wmoms@yahoogroups.com\"],\"reply-to\":[\"wmoms@yahoogroups.com\"],\"fromDisplayNames\":[\"Schweigert, Wendy\"]},\"lang\":\"en\"},\"msgParts\":[{\"structureId\":\"0\",\"isVirtual\":false,\"labeledName\":\"text.html\",\"isCorrupted\":false,\"md5\":\"f3226e81da52c0cb05d4a7599827b70c\",\"disposition\":\"inline\",\"detectedSizeBytes\":2118,\"detectedExt\":\"HTML\",\"detectedMime\":\"text/html\",\"labeledMime\":\"text/html\",\"textExtracted\":\"U0NBTEFSKDB4N2YxMDhhNzQ3ZDM4KQ==\\n\",\"isTimedOut\":false,\"isDeleted\":false,\"isArchive\":false,\"sizeDecodedBytes\":2118,\"detectedName\":\"text.html\",\"labeledCharset\":\"US-ASCII\",\"labeledExt\":\"html\",\"dataBase64\":\"U0NBTEFSKDB4N2YxMDVlMzNmNzA4KQ==\\n\",\"metadata\":{},\"detectedCharset\":\"US-ASCII\",\"isProtected\":false,\"urls\":[{\"url\":\"http://us.adserver.yahoo.com/l?M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046\",\"src\":[\"filter\"]},{\"url\":\"http://servedby.advertising.com/site=552006/size=300250/bnum=1074787264333730/bins=1/rich=0\",\"src\":[\"filter\"]},{\"url\":\"http://docs.yahoo.com/info/terms/\",\"src\":[\"filter\"]},{\"url\":\"http://groups.yahoo.com/group/wmoms/\",\"src\":[\"filter\"]},{\"src\":[\"filter\"],\"url\":\"http://rd.yahoo.com/SIG=12co2at1q/M=243273.4326031.5516772.1261774/D=egroupweb/S=1705042054:HM/EXP=1074873664/A=1750744/R=0/*http://servedby.advertising.com/click/site=552006/bnum=1074787264333730\"},{\"src\":[\"filter\"],\"url\":\"mailto:wmoms-unsubscribe@yahoogroups.com?subject=Unsubscribe\"}],\"sha256\":\"3b9778951a276e13059b1d2254cc93ab9744b6e71081c29918ba20ccaa80db9d\"}],\"ts\":\"2022-08-25T17:25:21.071953-0700\",\"metadata\":{\"origin\":{\"data\":{\"agent\":\"m0169160.ppops.net\",\"version\":\"8.19.0.1216\",\"cid\":\"proofpointdemo_cloudadminuidemo_hosted\"}}},\"envelope\":{\"rcpts\":[\"amartinez@thopedia.com\"],\"from\":\"kpereira@cloudadminuidemo.com\"},\"type\":\"message\"}\n",
         "event": {
             "kind": "event",
-            "type": [
-                "info"
-            ],
+            "dataset": "message",
             "category": [
-                "email"
+                "email",
+                "network"
             ],
-            "dataset": "message"
+            "action": "continue",
+            "type": [
+                "allowed"
+            ]
         },
         "@timestamp": "2022-08-26T00:25:21.071953Z",
         "observer": {
@@ -165,6 +167,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         "suspect": 0
                     }
                 },
+                "routes": [
+                    "allow_relay",
+                    "firewallsafe",
+                    "internalnet",
+                    "outbound"
+                ],
                 "urls": [
                     "http://us.adserver.yahoo.com/l?M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046",
                     "http://servedby.advertising.com/site=552006/size=300250/bnum=1074787264333730/bins=1/rich=0",
@@ -184,6 +192,120 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "ip": [
                 "66.218.66.103"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_message2.json"
+
+    ```json
+	
+    {
+        "message": "{\"metadata\":{\"origin\":{\"data\":{\"cid\":\"proofpointdemo_cloudadminuidemo_hosted\",\"agent\":\"m0169161.ppops.net\",\"version\":\"8.19.0.1216\"}}},\"msgParts\":[{\"detectedCharset\":\"utf-8\",\"isProtected\":false,\"isVirtual\":false,\"labeledCharset\":\"utf-8\",\"metadata\":{},\"detectedMime\":\"text/plain\",\"dataBase64\":\"U0NBTEFSKDB4N2Y0M2I1NGQ2ZjAwKQ==\\n\",\"structureId\":\"0\",\"isTimedOut\":false,\"detectedSizeBytes\":1362,\"sha256\":\"69ed0e1af8c2e19887956b3beb7fb0acdd77df66cacb8e54d94d051cef873d18\",\"detectedExt\":\"TXT\",\"disposition\":\"inline\",\"sizeDecodedBytes\":1362,\"isArchive\":false,\"isCorrupted\":false,\"labeledMime\":\"text/plain\",\"md5\":\"0d11ab76132bd4e73a5fe46fd3af47bf\",\"urls\":[],\"detectedName\":\"text.txt\",\"labeledName\":\"text.txt\",\"isDeleted\":false,\"labeledExt\":\"txt\",\"textExtracted\":\"U0NBTEFSKDB4N2Y0M2I2ZDI2N2UwKQ==\\n\"},{\"urls\":[{\"src\":[\"filter\",\"urldefense\"],\"isRewritten\":true,\"url\":\"https://www.nittanyextra.com/jp\"},{\"src\":[\"filter\",\"urldefense\"],\"isRewritten\":true,\"url\":\"https://www.ontario-blue.com/jp\"},{\"src\":[\"filter\"],\"url\":\"https://mapp.alicdn.com/1649676480204lRk9nvDQETfQnEK.jpg\"}],\"detectedName\":\"text.html\",\"isDeleted\":false,\"labeledName\":\"text.html\",\"labeledExt\":\"html\",\"textExtracted\":\"U0NBTEFSKDB4N2Y0M2IwZjdiZGIwKQ==\\n\",\"disposition\":\"inline\",\"sizeDecodedBytes\":16002,\"isArchive\":false,\"isCorrupted\":false,\"labeledMime\":\"text/html\",\"md5\":\"fc402fec5bd622973ff39512ede206f9\",\"structureId\":\"0\",\"isTimedOut\":false,\"detectedSizeBytes\":16002,\"sha256\":\"0c9612a2ce499e646fb86d91cf8654245fbabaf0db4490b4f4aa77ca09fee650\",\"detectedExt\":\"HTML\",\"detectedCharset\":\"utf-8\",\"isProtected\":false,\"labeledCharset\":\"utf-8\",\"isVirtual\":false,\"metadata\":{\"generator\":\"MSHTML 11.00.9600.18315\"},\"detectedMime\":\"text/html\",\"dataBase64\":\"U0NBTEFSKDB4N2Y0M2IyMWRkMTIwKQ==\\n\"}],\"ts\":\"2022-09-11T18:28:19.902627-0700\",\"envelope\":{\"from\":\"rdmfe@yokm.net\",\"rcpts\":[\"ceo@exec.vogon.science\"]},\"connection\":{\"host\":\"208-86-203-0.proofpoint.com\",\"ip\":\"208.86.203.10\",\"sid\":\"3jgptm9dux\",\"tls\":{\"inbound\":{\"version\":\"TLSv1.2\",\"cipherBits\":256,\"cipher\":\"ECDHE-RSA-AES256-GCM-SHA384\"}},\"country\":\"us\",\"protocol\":\"smtp:smtp\",\"resolveStatus\":\"ok\",\"helo\":\"selabfork.ppslab.net\"},\"msg\":{\"lang\":\"ja\",\"normalizedHeader\":{\"to\":[\"<sletre@vogon.science>\"],\"subject\":[\"\u3010\u60c5\u5831\u3011 Amazon.co.jp\uff1a\u304a\u5ba2\u69d8\u306e\u304a\u652f\u6255\u3044\u65b9\u6cd5\u304c\u627f\u8a8d\u3055\u308c\u307e\u305b\u3093 #878-9442229-8829554\"],\"message-id\":[\"20220912092800466772@yokm.net\"],\"x-mailer\":[\"Xwstoxzpk 1\"],\"from\":[\"\\\"Amazon\\\" <rdmfe@yokm.net>\"]},\"parsedAddresses\":{\"fromDisplayNames\":[\"Amazon\"],\"from\":[\"rdmfe@yokm.net\"],\"to\":[\"sletre@vogon.science\"]},\"header\":{\"from\":[\"\\\"Amazon\\\" <rdmfe@yokm.net>\"],\"message-id\":[\"<20220912092800466772@yokm.net>\"],\"x-mailer\":[\"Xwstoxzpk 1\"],\"subject\":[\"=?utf-8?B?44CQ5oOF5aCx44CRIEFtYXpvbi5jby5qcO+8muOBiuWuog==?=\\r\\n\\t=?utf-8?B?5qeY44Gu44GK5pSv5omV44GE5pa55rOV44GM5om/6KqN44GV44KM44G+44Gb44KTICM4Nw==?=\\r\\n\\t=?utf-8?B?OC05NDQyMjI5LTg4Mjk1NTQ=?=\"],\"to\":[\"<sletre@vogon.science>\"]},\"sizeBytes\":33366},\"filter\":{\"actions\":[{\"rule\":\"clean\",\"action\":\"add-header\",\"module\":\"av\"},{\"rule\":\"clean\",\"action\":\"continue\",\"module\":\"av\"},{\"action\":\"add-header\",\"module\":\"spam\",\"rule\":\"phish\"},{\"rule\":\"phish\",\"action\":\"copy\",\"module\":\"spam\"},{\"rule\":\"phish\",\"module\":\"spam\",\"action\":\"quarantine\"},{\"module\":\"spam\",\"action\":\"discard\",\"rule\":\"phish\",\"isFinal\":true}],\"modules\":{\"urldefense\":{\"counts\":{\"total\":5,\"unique\":2,\"rewritten\":5},\"version\":{\"engine\":\"15\"}},\"spam\":{\"langs\":[\"en\",\"jp\",\"pt\"],\"triggeredClassifier\":\"phish\",\"scores\":{\"overall\":100,\"engine\":100,\"classifiers\":{\"adult\":0,\"mlx\":100,\"impostor\":0,\"spam\":100,\"malware\":0,\"mlxlog\":-1000,\"phish\":100,\"suspect\":0,\"lowpriority\":0,\"bulk\":0}},\"version\":{\"definitions\":\"main-2209120003\",\"engine\":\"8.19.0-2204280000\"}},\"spf\":{\"domain\":\"yokm.net\",\"result\":\"none\"},\"dmarc\":{\"records\":[{\"error\":\"NXDOMAIN\",\"query\":\"_dmarc.yokm.net\"}],\"filterdResult\":\"none\",\"authResults\":[{\"method\":\"spf\",\"emailIdentities\":{\"smtp.mailfrom\":\"rdmfe@yokm.net\"},\"result\":\"none\"},{\"method\":\"dmarc\",\"result\":\"none\"}],\"srvid\":\"ppops.net\"}},\"suborgs\":{\"sender\":\"0\",\"rcpts\":[\"0\"]},\"isMsgInDigest\":true,\"routeDirection\":\"internal\",\"verified\":{\"rcpts\":[\"ceo@exec.vogon.science\"]},\"msgSizeBytes\":33278,\"routes\":[\"allow_relay\",\"default_inbound\",\"firewallsafe\",\"internalnet\"],\"durationSecs\":0.356614,\"delivered\":{\"rcpts\":[\"ceo@exec.vogon.science\"]},\"disposition\":\"discard\",\"qid\":\"3jgptm9dux-1\",\"quarantine\":{\"module\":\"spam\",\"folderId\":\"phish\",\"type\":\"quarantine\",\"folder\":\"Phish\",\"rule\":\"phish\"}},\"guid\":\"5PVdahx3PMGFONShVUQ19uni34-uVQRm\",\"type\":\"message\"}\n",
+        "event": {
+            "kind": "event",
+            "dataset": "message",
+            "category": [
+                "email",
+                "network"
+            ],
+            "action": "discard",
+            "type": [
+                "denied"
+            ]
+        },
+        "@timestamp": "2022-09-12T01:28:19.902627Z",
+        "observer": {
+            "vendor": "ProofPoint",
+            "product": "ProofPoint On Demand"
+        },
+        "email": {
+            "local_id": "5PVdahx3PMGFONShVUQ19uni34-uVQRm",
+            "message_id": "20220912092800466772@yokm.net",
+            "subject": "\u3010\u60c5\u5831\u3011 Amazon.co.jp\uff1a\u304a\u5ba2\u69d8\u306e\u304a\u652f\u6255\u3044\u65b9\u6cd5\u304c\u627f\u8a8d\u3055\u308c\u307e\u305b\u3093 #878-9442229-8829554",
+            "from": {
+                "address": [
+                    "rdmfe@yokm.net"
+                ]
+            },
+            "to": {
+                "address": [
+                    "sletre@vogon.science"
+                ]
+            }
+        },
+        "source": {
+            "ip": "208.86.203.10",
+            "domain": "208-86-203-0.proofpoint.com",
+            "geo": {
+                "country_iso_code": "us"
+            },
+            "address": "208-86-203-0.proofpoint.com",
+            "top_level_domain": "com",
+            "subdomain": "208-86-203-0",
+            "registered_domain": "proofpoint.com"
+        },
+        "tls": {
+            "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+            "version": "TLSv1.2"
+        },
+        "network": {
+            "transport": "tcp",
+            "protocol": "smtp"
+        },
+        "proofpoint": {
+            "pod": {
+                "cluster": {
+                    "id": "proofpointdemo_cloudadminuidemo_hosted"
+                },
+                "threat": {
+                    "scores": {
+                        "adult": 0,
+                        "mlx": 100,
+                        "impostor": 0,
+                        "spam": 100,
+                        "malware": 0,
+                        "mlxlog": -1000,
+                        "phish": 100,
+                        "suspect": 0,
+                        "lowpriority": 0,
+                        "bulk": 0
+                    }
+                },
+                "routes": [
+                    "allow_relay",
+                    "default_inbound",
+                    "firewallsafe",
+                    "internalnet"
+                ],
+                "quarantine": {
+                    "module": "spam",
+                    "type": "quarantine",
+                    "folder": "Phish",
+                    "rule": "phish"
+                },
+                "urls": [
+                    "https://www.nittanyextra.com/jp",
+                    "https://www.ontario-blue.com/jp",
+                    "https://mapp.alicdn.com/1649676480204lRk9nvDQETfQnEK.jpg"
+                ],
+                "modules": [
+                    "urldefense",
+                    "spam",
+                    "spf",
+                    "dmarc"
+                ]
+            }
+        },
+        "related": {
+            "hosts": [
+                "208-86-203-0.proofpoint.com"
+            ],
+            "ip": [
+                "208.86.203.10"
             ]
         }
     }
@@ -211,6 +333,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`email.to.address` | `keyword` | The email address of recipient |
 |`email.x_mailer` | `keyword` | The mailer that send the message |
 |`error.code` | `keyword` | Error code describing the error. |
+|`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
@@ -221,6 +344,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`proofpoint.pod.cluster.id` | `keyword` | The name of the cluster which processed the message |
 |`proofpoint.pod.modules` | `array` | The list of the activated modules |
+|`proofpoint.pod.routes` | `list` | The policy route triggered by the message |
 |`proofpoint.pod.urls` | `array` | A list of urls detected in the message |
 |`source.domain` | `keyword` | The domain name of the source. |
 |`source.geo.country_iso_code` | `keyword` | Country ISO code. |
