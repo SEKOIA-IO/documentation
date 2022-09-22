@@ -53,6 +53,8 @@ Add required role:
 3. Search and open `Global Reader`
 4. Use the `+ Add assignments` to add this role to your application
 
+For a detailed explanation, please read the related documentation [Azure portal - Assign a role](https://learn.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal).
+
 You can now create the playbook "Create a new playbook > Create a playbook from scratch" and add the "Office 365 Message Trace OAuth" trigger.
 
 Create a trigger configuration and input the following information:
@@ -61,6 +63,9 @@ Create a trigger configuration and input the following information:
 - `client_secret`
 - `intake_key`
 - `tenant_id`
+
+You can also configure the trigger `timedelta` parameter to pull events from 24 hours ago (1440 minutes) to be compliant with [Microsoft documentation](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)?redirectedfrom=MSDN#data-granularity-persistence-and-availability):
+> Events may be delayed by up to 24 hours before they appear in a report.
 
 Save your configuration and start the trigger.
 
