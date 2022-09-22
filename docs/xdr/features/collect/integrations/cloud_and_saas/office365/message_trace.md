@@ -48,6 +48,7 @@ Add required permission:
 8. To finish, use the `Grant admin consent for TENANT_NAME` button
 
 Add required role:
+
 1. From the `Azure Active Directory` page
 2. Open `Roles and administrators`
 3. Search and open `Global Reader`
