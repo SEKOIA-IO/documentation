@@ -181,6 +181,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "http://rd.yahoo.com/SIG=12co2at1q/M=243273.4326031.5516772.1261774/D=egroupweb/S=1705042054:HM/EXP=1074873664/A=1750744/R=0/*http://servedby.advertising.com/click/site=552006/bnum=1074787264333730",
                     "mailto:wmoms-unsubscribe@yahoogroups.com?subject=Unsubscribe"
                 ],
+                "smtp": {
+                    "sender": "kpereira@cloudadminuidemo.com",
+                    "recipients": [
+                        "amartinez@thopedia.com"
+                    ]
+                },
                 "modules": [
                     "spam"
                 ]
@@ -292,6 +298,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "https://www.ontario-blue.com/jp",
                     "https://mapp.alicdn.com/1649676480204lRk9nvDQETfQnEK.jpg"
                 ],
+                "smtp": {
+                    "sender": "rdmfe@yokm.net",
+                    "recipients": [
+                        "ceo@exec.vogon.science"
+                    ]
+                },
                 "modules": [
                     "urldefense",
                     "spam",
@@ -306,6 +318,109 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "ip": [
                 "208.86.203.10"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_message3.json"
+
+    ```json
+	
+    {
+        "message": "{\"connection\":{\"resolveStatus\":\"[unknown]\",\"host\":\"127.0.0.1\",\"country\":\"**\",\"ip\":\"127.0.0.1\",\"helo\":\"outbound.proofpointdemo\",\"protocol\":\"smtp:smtp\",\"sid\":\"3jryreg677\"},\"ts\":\"2022-09-22T17:06:53.370514-0700\",\"metadata\":{\"origin\":{\"data\":{\"agent\":\"m0169160.ppops.net\",\"cid\":\"proofpointdemo_cloudadminuidemo_hosted\",\"version\":\"8.19.0.1216\"}}},\"msg\":{\"header\":{\"message-id\":[\"<3jryreg677-1@m0169160.ppops.net>\"],\"subject\":[\"\"]},\"lang\":\"und\",\"parsedAddresses\":{},\"normalizedHeader\":{\"message-id\":[\"3jryreg677-1@m0169160.ppops.net\"],\"subject\":[\"\"]},\"sizeBytes\":203},\"envelope\":{\"from\":\"wmacdonald@cloudadminuidemo.com\",\"rcpts\":[\"pchilson@huntingance.com\"]},\"guid\":\"xjin0zM1KZbSWy8mUJvOxTV7WqFRrbd1\",\"msgParts\":[{\"isTimedOut\":false,\"detectedCharset\":\"\",\"isVirtual\":false,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\"detectedName\":\"text.txt\",\"structureId\":\"0\",\"detectedMime\":\"text/plain\",\"labeledName\":\"\",\"sizeDecodedBytes\":0,\"urls\":[],\"labeledMime\":\"\",\"textExtracted\":\"U0NBTEFSKDB4N2Y5ZTZhZGMzYTUwKQ==\\n\",\"metadata\":{},\"labeledExt\":\"\",\"disposition\":\"inline\",\"detectedSizeBytes\":0,\"isProtected\":false,\"isArchive\":false,\"detectedExt\":\"TXT\",\"labeledCharset\":\"\",\"isDeleted\":false,\"md5\":\"d41d8cd98f00b204e9800998ecf8427e\",\"isCorrupted\":false,\"dataBase64\":\"U0NBTEFSKDB4N2Y5ZTYxNWViMWY4KQ==\\n\"}],\"filter\":{\"durationSecs\":0.096616,\"disposition\":\"continue\",\"suborgs\":{\"rcpts\":[\"0\"],\"sender\":\"0\"},\"routeDirection\":\"outbound\",\"msgSizeBytes\":728,\"modules\":{\"spam\":{\"langs\":[\"en\"],\"scores\":{\"overall\":40,\"engine\":40,\"classifiers\":{\"lowpriority\":4,\"mlxlog\":18,\"suspect\":0,\"adult\":8,\"spam\":40,\"malware\":0,\"phish\":1,\"bulk\":4,\"impostor\":0,\"mlx\":40}},\"version\":{\"definitions\":\"main-2209220155\",\"engine\":\"8.19.0-2209130001\"}}},\"verified\":{\"rcpts\":[\"pchilson@huntingance.com\"]},\"routes\":[\"allow_relay\",\"firewallsafe\",\"internalnet\",\"outbound\"],\"actions\":[{\"module\":\"av\",\"action\":\"add-header\",\"rule\":\"clean\"},{\"module\":\"av\",\"action\":\"continue\",\"rule\":\"clean\",\"isFinal\":true},{\"module\":\"spam\",\"action\":\"add-header\",\"rule\":\"notspam\"}],\"delivered\":{\"rcpts\":[\"pchilson@huntingance.com\"]},\"qid\":\"28MNsFLm006936\"},\"type\":\"message\"}\n",
+        "event": {
+            "kind": "event",
+            "dataset": "message",
+            "category": [
+                "email",
+                "network"
+            ],
+            "action": "continue",
+            "type": [
+                "allowed"
+            ]
+        },
+        "@timestamp": "2022-09-23T00:06:53.370514Z",
+        "observer": {
+            "vendor": "ProofPoint",
+            "product": "ProofPoint On Demand"
+        },
+        "email": {
+            "local_id": "xjin0zM1KZbSWy8mUJvOxTV7WqFRrbd1",
+            "message_id": "3jryreg677-1@m0169160.ppops.net",
+            "attachments": [
+                {
+                    "file": {
+                        "mime_type": "text/plain",
+                        "name": "",
+                        "extension": "",
+                        "size": "0",
+                        "hash": {
+                            "md5": "d41d8cd98f00b204e9800998ecf8427e",
+                            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                        }
+                    }
+                }
+            ]
+        },
+        "source": {
+            "ip": "127.0.0.1",
+            "domain": "127.0.0.1",
+            "geo": {
+                "country_iso_code": "**"
+            },
+            "address": "127.0.0.1"
+        },
+        "network": {
+            "transport": "tcp",
+            "protocol": "smtp"
+        },
+        "proofpoint": {
+            "pod": {
+                "cluster": {
+                    "id": "proofpointdemo_cloudadminuidemo_hosted"
+                },
+                "threat": {
+                    "scores": {
+                        "lowpriority": 4,
+                        "mlxlog": 18,
+                        "suspect": 0,
+                        "adult": 8,
+                        "spam": 40,
+                        "malware": 0,
+                        "phish": 1,
+                        "bulk": 4,
+                        "impostor": 0,
+                        "mlx": 40
+                    }
+                },
+                "routes": [
+                    "allow_relay",
+                    "firewallsafe",
+                    "internalnet",
+                    "outbound"
+                ],
+                "urls": [],
+                "smtp": {
+                    "sender": "wmacdonald@cloudadminuidemo.com",
+                    "recipients": [
+                        "pchilson@huntingance.com"
+                    ]
+                },
+                "modules": [
+                    "spam"
+                ]
+            }
+        },
+        "related": {
+            "hosts": [
+                "127.0.0.1"
+            ],
+            "ip": [
+                "127.0.0.1"
             ]
         }
     }
@@ -344,7 +459,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`proofpoint.pod.cluster.id` | `keyword` | The name of the cluster which processed the message |
 |`proofpoint.pod.modules` | `array` | The list of the activated modules |
-|`proofpoint.pod.routes` | `list` | The policy route triggered by the message |
+|`proofpoint.pod.routes` | `array` | The policy route triggered by the message |
+|`proofpoint.pod.smtp.recipients` | `array` | The SMTP recipients |
+|`proofpoint.pod.smtp.sender` | `keyword` | The SMTP sender |
 |`proofpoint.pod.urls` | `array` | A list of urls detected in the message |
 |`source.domain` | `keyword` | The domain name of the source. |
 |`source.geo.country_iso_code` | `keyword` | Country ISO code. |
