@@ -36,6 +36,7 @@ Fetch events for MessageTrace API (OAuth)
 | `tenant_id` | `string` | The ID of the corresponding Tenant |
 | `client_id` | `string` | The account name to use |
 | `client_secret` | `string` | The password associated with the account |
+| `timedelta` | `integer` | The temporal shift, in the past, in minutes, the connector applies when fetching the events (default to 5 minutes ago) |
 | `frequency` | `integer` | Batch frequency in seconds |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
@@ -43,4 +44,4 @@ Fetch events for MessageTrace API (OAuth)
 
 ## Extra
 
-Module **`Microsoft Office365` v2.0.5**
+Module **`Microsoft Office365` v2.1.0**
