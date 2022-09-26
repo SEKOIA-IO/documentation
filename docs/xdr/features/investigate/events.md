@@ -204,6 +204,10 @@ To compute aggregations on a list of events, you’ll have to:
 4. Select an aggregation field if needed 
 5. Click on the `Search` button on the upper right of the page 
 
+!!! note 
+    Aggregation view do not support the search on all events such as `alert_short_ids:*`
+
+
 ### Aggregation methods
 
 - `Average` (only for numerical data): aggregate average of field values per bucket
