@@ -19,6 +19,7 @@ Fetch events for MessageTrace API
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `frequency` | `integer` | Batch frequency in seconds |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
 | `account_name` | `string` | The account name to use |
 | `account_password` | `string` | The password associated with the account |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
@@ -38,10 +39,11 @@ Fetch events for MessageTrace API (OAuth)
 | `client_secret` | `string` | The password associated with the account |
 | `timedelta` | `integer` | The temporal shift, in the past, in minutes, the connector applies when fetching the events (default to 5 minutes ago) |
 | `frequency` | `integer` | Batch frequency in seconds |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
 
 
 ## Extra
 
-Module **`Microsoft Office365` v2.1.0**
+Module **`Microsoft Office365` v2.1.1**
