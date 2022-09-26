@@ -1,9 +1,9 @@
-## Suggested Built-in Rules
+## Related Built-in Rules
 
-This integration enables the following built-in detection rules. Use the Rules Catalog to customize and adapt these to your security posture.
+Benefit from SEKOIA.IO built-in rules and upgrade **BIND** with the following detection capabilities out-of-the-box.
 
-
-??? tip "Sliver DNS Beaconing"
+[SEKOIA.IO x BIND on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_a199fbde-508e-4cb9-ae37-842703494be0_do_not_edit_manually.json){ .md-button }
+??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 
     
