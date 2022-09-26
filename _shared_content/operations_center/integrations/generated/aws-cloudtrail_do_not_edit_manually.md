@@ -486,6 +486,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "principalId": "1111111111",
                     "type": "Root"
                 },
+                "request_parameters": {
+                    "userName": "user"
+                },
+                "response_elements": {
+                    "user": {
+                        "userName": "user",
+                        "arn": "arn:aws:iam::1111111111:user/user"
+                    }
+                },
                 "flattened": {
                     "response_elements": "{\"user\": {\"arn\": \"arn:aws:iam::1111111111:user/user\", \"createDate\": \"Aug 12, 2020 12:16:24 PM\", \"path\": \"/\", \"userId\": \"AIDA11111111111111\", \"userName\": \"user\"}}",
                     "request_parameters": "{\"userName\": \"user\"}"
@@ -1255,9 +1264,12 @@ The following table lists the fields that are extracted, normalized under the EC
 |`aws.cloudtrail.insight_details.type` | `keyword` | The type of the insight |
 |`aws.cloudtrail.recipient_account_id` | `keyword` | The account ID that received the event |
 |`aws.cloudtrail.request_parameters.userData` | `keyword` | The userData parameters sent with the request |
+|`aws.cloudtrail.request_parameters.userName` | `keyword` | The name of the user sent in the request |
 |`aws.cloudtrail.resources` | `list` | A list of resources accessed in the event |
 |`aws.cloudtrail.response_elements.pendingModifiedValues.masterUserPassword` | `keyword` | The new master password for the RDS instance |
 |`aws.cloudtrail.response_elements.publiclyAccessible` | `boolean` | Whether the requested ressource was public |
+|`aws.cloudtrail.response_elements.user.arn` | `keyword` | The arn of the user in the response |
+|`aws.cloudtrail.response_elements.user.userName` | `keyword` | The name of the user in the response |
 |`cloud.account.id` | `keyword` | The cloud account or organization id. |
 |`cloud.instance.id` | `keyword` | Instance ID of the host machine. |
 |`cloud.provider` | `keyword` | Name of the cloud provider. |
