@@ -29,6 +29,8 @@ Sysmon is a Microsoft tool you can download on their [website](https://docs.micr
 A common installation instruction and configuration file is available on [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
 > You will find dedicated NXLog configuration file for Sysmon usage at the end of this page.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_9281438c-f7c3-4001-9bcc-45fd108ba1be_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/windows_do_not_edit_manually.md!}
 
 ## Configure

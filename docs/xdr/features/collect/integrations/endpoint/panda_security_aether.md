@@ -11,6 +11,8 @@ Panda Security offers two Endpoint Detection and Response (EDR) solutions for co
 
 This setup guide shows how to forward security events collected on the Panda Security Aether platform to SEKOIA.IO.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_ee6364a1-9e3c-4363-9cb6-2f574bd4ce51_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/panda-security-aether_do_not_edit_manually.md!}
 
 ## Configure

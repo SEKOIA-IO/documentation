@@ -5,6 +5,8 @@ type: intake
 ## Overview
 Linux is a family of free and open-source software operating systems built around the Linux kernel.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_aca13e14-5f7a-4587-bd04-ce0a739f65bd_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/linux_do_not_edit_manually.md!}
 
 ## Configure
