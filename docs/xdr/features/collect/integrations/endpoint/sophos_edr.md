@@ -9,6 +9,8 @@ This EDR reduces the attack surface and prevent attacks from running with an ant
 
 This setup guide shows how to forward events produced by Sophos EDR to SEKOIA.IO.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_3f330d19-fdea-48ac-96bd-91a447bb26bd_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/sophos-edr_do_not_edit_manually.md!}
 
 ## Configure
