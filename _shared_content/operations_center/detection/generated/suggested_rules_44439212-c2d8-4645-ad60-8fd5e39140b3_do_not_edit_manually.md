@@ -1,33 +1,33 @@
-## Suggested Built-in Rules
+## Related Built-in Rules
 
-This integration enables the following built-in detection rules. Use the Rules Catalog to customize and adapt these to your security posture.
+Benefit from SEKOIA.IO built-in rules and upgrade **Google Cloud Audit** with the following detection capabilities out-of-the-box.
 
-
-??? tip "Covenant Default HTTP Beaconing"
+[SEKOIA.IO x Google Cloud Audit on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_44439212-c2d8-4645-ad60-8fd5e39140b3_do_not_edit_manually.json){ .md-button }
+??? abstract "Covenant Default HTTP Beaconing"
     
     Detects potential Covenant communications through the user-agent and specific urls
     
     - **Effort:** intermediate
 
-??? tip "Potential Bazar Loader User-Agents"
+??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
     
     - **Effort:** elementary
 
-??? tip "Potential Lemon Duck User-Agent"
+??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
     
     - **Effort:** elementary
 
-??? tip "RYUK Ransomeware - martinstevens Username"
+??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
 
-??? tip "TrevorC2 HTTP Communication"
+??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
