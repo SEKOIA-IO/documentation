@@ -1,0 +1,1 @@
+{"name": "Infoblox DDI", "versions": {"attack": "11", "layer": "4.3", "navigator": "4.3"}, "domain": "enterprise-attack", "techniques": [{"techniqueID": "T1071.004", "score": 100, "comment": "Rules: Sliver DNS Beaconing"}, {"techniqueID": "T1071", "score": 100, "comment": "Rules: Sliver DNS Beaconing"}]}
