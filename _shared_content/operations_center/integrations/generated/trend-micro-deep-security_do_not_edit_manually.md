@@ -100,6 +100,77 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "ApacheDOS.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Trend Micro|Deep Security Agent|20.0.677|1011466|Apache HTTP Server 'mod_sed' Denial Of Service Vulnerability (CVE-2022-30522)|6|cn1=318 cn1Label=Host ID dvchost=foo.bar.fr TrendMicroDsTenant=Primary TrendMicroDsTenantId=0 dmac=22:22:22:22:22:22 smac=11:11:11:11:11:11 TrendMicroDsFrameType=IP src=2.2.2.2 dst=1.1.1.1 in=0 cs3=DF 0 cs3Label=Fragmentation Bits proto=TCP spt=58407 dpt=443 cs2=ACK cs2Label=TCP Flags cnt=2 act=IDS:Reset cn3=0 cn3Label=DPI Packet Position cs5=0 cs5Label=DPI Stream Position  cs1=\"CVE-2022-30522\" cs1Label=DPI Note cs6=0 cs6Label=DPI Flags\n\n",
+        "event": {
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "type": [
+                "info"
+            ],
+            "severity": 6,
+            "action": "IDS:Reset",
+            "reason": "Apache HTTP Server 'mod_sed' Denial Of Service Vulnerability (CVE-2022-30522)"
+        },
+        "observer": {
+            "vendor": "Trend Micro",
+            "type": "Deep Security Agent",
+            "version": "20.0.677"
+        },
+        "rule": {
+            "id": "1011466"
+        },
+        "source": {
+            "ip": "2.2.2.2",
+            "mac": "11:11:11:11:11:11",
+            "port": 58407,
+            "address": "2.2.2.2"
+        },
+        "destination": {
+            "port": 443,
+            "ip": "1.1.1.1",
+            "mac": "22:22:22:22:22:22",
+            "address": "1.1.1.1"
+        },
+        "host": {
+            "network": {
+                "ingress": {
+                    "bytes": 0
+                }
+            },
+            "id": "318",
+            "name": "foo.bar.fr"
+        },
+        "trendmicro": {
+            "TrendMicroDsFrameType": "IP",
+            "TrendMicroDsTenantId": "0",
+            "TrendMicroDsTenant": "Primary",
+            "FragmentationBits": "DF 0",
+            "TCPFlags": [
+                "ACK"
+            ],
+            "ResourceType": "Other"
+        },
+        "cef": {
+            "Name": "Apache HTTP Server 'mod_sed' Denial Of Service Vulnerability (CVE-2022-30522)"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1",
+                "2.2.2.2"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "ApplicationControl.json"
 
     ```json
@@ -184,7 +255,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "info"
             ],
-            "severity": 6
+            "severity": 6,
+            "reason": "Device Control DeviceControl"
         },
         "observer": {
             "vendor": "Trend Micro",
@@ -225,7 +297,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "info"
             ],
-            "action": "Log"
+            "action": "Log",
+            "reason": "Log for TCP Port 80"
         },
         "observer": {
             "vendor": "Trend Micro",
@@ -354,7 +427,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ],
             "severity": 3,
-            "action": "IDS:Reset"
+            "action": "IDS:Reset",
+            "reason": "Test Intrusion Prevention Rule"
         },
         "observer": {
             "vendor": "Trend Micro",
@@ -589,6 +663,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
+|`event.risk_score_norm` | `float` | Normalized risk score or priority of the event (0-100). |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.hash.md5` | `keyword` | MD5 hash. |
@@ -618,6 +693,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`trendmicro.IntrusionPreventionFlags` | `keyword` | Intrusion Prevention Flags |
 |`trendmicro.IntrusionPreventionStreamPosition` | `keyword` | Intrusion Prevention Stream Position |
 |`trendmicro.LogInspectionDescription` | `keyword` |  |
+|`trendmicro.ResourceTypeId` | `keyword` | Resource Type identifier |
 |`trendmicro.TCPFlags` | `keyword` | TCP Flags |
 |`trendmicro.TrendMicroDsRelevantDetectionNames` | `keyword` |  |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
