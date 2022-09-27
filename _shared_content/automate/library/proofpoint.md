@@ -22,7 +22,7 @@ Forward Proofpoint PoD Events
 | `api_key` | `string` | The APIKey that authenticate the request |
 | `cluster_id` | `string` | The cluster ID |
 | `type` | `string` | The type of messages to collect |
-| `since_time` | `string` | The starting time (up to 30 days ago) to collect log data, as ISO8601 format |
+| `since_time` | `['string', 'null']` | The starting time (up to 30 days ago) to collect log data, as ISO8601 format |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
 | `chunk_size` | `integer` | The max size of chunks for the batch processing |
@@ -47,4 +47,4 @@ Forward Proofpoint TAP Events
 
 ## Extra
 
-Module **`Proofpoint` v1.3.4**
+Module **`Proofpoint` v1.3.7**
