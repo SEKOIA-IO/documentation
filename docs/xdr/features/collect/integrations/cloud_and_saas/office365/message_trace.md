@@ -65,9 +65,6 @@ Create a trigger configuration and input the following information:
 - `intake_key`
 - `tenant_id`
 
-You can also configure the trigger `timedelta` parameter to pull events from 24 hours ago (1440 minutes) to be compliant with [Microsoft documentation](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)?redirectedfrom=MSDN#data-granularity-persistence-and-availability):
-> Events may be delayed by up to 24 hours before they appear in a report.
-
 Save your configuration and start the trigger.
 
 ## Configure Basic Auth (Deprecated)
@@ -122,6 +119,14 @@ Create a trigger configuration and input the following information:
 - intake_key
 
 Save your configuration and start the trigger.
+
+## Configure time range
+
+Configure the trigger `timedelta` parameter to pull only events from 24 hours ago (1440 minutes) to be compliant with [Microsoft documentation](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)?redirectedfrom=MSDN#data-granularity-persistence-and-availability):
+> Events may be delayed by up to 24 hours before they appear in a report.
+
+Configure the trigger `start_time` parameter to pull events from X hours ago if you want to import events that happened in the past. You can, for example, pull events from 30 days ago to now as explain in [Microsoft documentation](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)?redirectedfrom=MSDN#data-granularity-persistence-and-availability):
+> The information for this report is available for a period of 30 days, or until the subscription is canceled.
 
 ## Debug
 
