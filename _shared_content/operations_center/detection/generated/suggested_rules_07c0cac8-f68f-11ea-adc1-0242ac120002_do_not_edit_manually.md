@@ -14,3 +14,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS Flow Logs** with the fol
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
+
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary

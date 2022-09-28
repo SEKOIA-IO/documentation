@@ -15,6 +15,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Vade M365** with the followi
     
     - **Effort:** master
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "Scam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a scam e-mail.

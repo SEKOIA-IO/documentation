@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security SIEM Feeder**
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "Sticky Key Like Backdoor Usage"
     
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).

@@ -237,6 +237,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft Defender for Endpo
     
     - **Effort:** master
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).

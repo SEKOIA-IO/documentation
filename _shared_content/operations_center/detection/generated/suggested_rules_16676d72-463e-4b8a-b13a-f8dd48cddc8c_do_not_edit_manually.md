@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cloudflare WAF events** with
     
     - **Effort:** intermediate
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
