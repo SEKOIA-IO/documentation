@@ -1,4 +1,4 @@
-Rules catalog includes **572 built-in detection rules** (_last update on 2022-09-26_).
+Rules catalog includes **578 built-in detection rules** (_last update on 2022-09-28_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -51,6 +51,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address.
     
     - **Effort:** master
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
 
 ## Resource Development
 **Acquire Infrastructure**
@@ -690,6 +696,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Scam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a scam e-mail.
@@ -1014,6 +1026,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     Detects command line being used by attackers to uninstall Malwarebytes.
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
+    
+    Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
 
 ??? abstract "Microsoft Office Creating Suspicious File"
     
@@ -1545,6 +1563,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     
     - **Effort:** advanced
 
+??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
+    
+    Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
@@ -1809,6 +1833,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     
     - **Effort:** intermediate
 
+??? abstract "Symantec EPP Event Blocked"
+    
+    Symantec EPP blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
 ??? abstract "Sysmon Windows File Block Executable"
     
     Sysmon has blocked an executable file from being written to the disk. This could be a malicious binary to investigate.  
@@ -1900,6 +1930,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     Detects Metasploit service creation when using the PSExec module. The ImagePath here is usually a malicious command line using powershell.exe and/or cmd.exe.
     
     - **Effort:** advanced
+
+??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
+    
+    Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
 
 ??? abstract "PsExec Process"
     
@@ -5576,6 +5612,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     
     - **Effort:** master
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host
@@ -6051,6 +6093,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 
@@ -6315,6 +6363,12 @@ Rules catalog includes **572 built-in detection rules** (_last update on 2022-09
     Detects the use of remote tools that copy files from or to remote systems
     
     - **Effort:** master
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
 
 **Exfiltration Over Alternative Protocol**
 

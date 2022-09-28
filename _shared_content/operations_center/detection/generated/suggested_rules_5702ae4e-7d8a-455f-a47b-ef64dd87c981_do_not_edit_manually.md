@@ -123,6 +123,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **fortigate** with the followi
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 

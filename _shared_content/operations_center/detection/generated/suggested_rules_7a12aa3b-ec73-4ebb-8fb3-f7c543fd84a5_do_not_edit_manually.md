@@ -14,3 +14,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Pulse Connect Secure** with 
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary

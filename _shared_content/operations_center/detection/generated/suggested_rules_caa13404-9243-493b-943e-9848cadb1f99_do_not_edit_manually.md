@@ -213,6 +213,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Smbexec.py Service Installation"
     
     Detects the use of smbexec.py tool by detecting a specific service installation

@@ -69,6 +69,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Symantec Endpoint Protection
     
     - **Effort:** advanced
 
+??? abstract "Symantec EPP Event Blocked"
+    
+    Symantec EPP blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host

@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **GateWatcher AIONIQ** with th
     
     - **Effort:** intermediate
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 

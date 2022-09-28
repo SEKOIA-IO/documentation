@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Vectra Cognito Detect** with
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
