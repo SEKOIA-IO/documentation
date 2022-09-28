@@ -147,6 +147,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **WALLIX Bastion** with the fo
     
     - **Effort:** advanced
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).

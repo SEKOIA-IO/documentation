@@ -69,6 +69,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.

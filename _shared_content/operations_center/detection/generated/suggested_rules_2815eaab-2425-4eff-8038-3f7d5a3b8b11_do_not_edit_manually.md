@@ -675,6 +675,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     
     - **Effort:** advanced
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'

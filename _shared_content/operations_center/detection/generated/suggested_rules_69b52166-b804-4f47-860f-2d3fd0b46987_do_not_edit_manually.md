@@ -189,6 +189,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **azure front door** with the 
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Download Links From Legitimate Services"
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.

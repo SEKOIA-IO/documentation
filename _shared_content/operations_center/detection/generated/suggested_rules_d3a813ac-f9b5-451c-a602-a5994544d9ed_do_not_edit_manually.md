@@ -147,6 +147,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the fo
     
     - **Effort:** elementary
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 

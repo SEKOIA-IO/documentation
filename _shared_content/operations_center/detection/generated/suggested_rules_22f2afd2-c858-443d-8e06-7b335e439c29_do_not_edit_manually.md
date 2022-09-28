@@ -171,6 +171,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** advanced
 
+??? abstract "SEKOIA.IO CTI"
+    
+    
+    
+    - **Effort:** elementary
+
 ??? abstract "SSH Authorized Key Alteration"
     
     The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
