@@ -94,7 +94,7 @@ nav:
         - Email:
           - FortiMail: xdr/features/collect/integrations/email/fortimail.md
           - Postfix: xdr/features/collect/integrations/email/postfix.md
-          Proofpoint:
+          - Proofpoint:
             - Proofpoint TAP: xdr/features/collect/integrations/email/proofpoint_tap.md
             - Proofpoint PoD: xdr/features/collect/integrations/email/proofpoint_pod.md
           - Retarus Email Security: xdr/features/collect/integrations/email/retarus_email_security.md
