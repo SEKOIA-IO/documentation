@@ -42,6 +42,49 @@ In details, the following table denotes the type of events produced by this inte
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "test_detection_source.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2022-09-02T22:06:00.6652718Z\",\"tenantId\":\"16ed4fbf-027f-47b3-8d1a-a342781dd2d2\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-AlertInfo\",\"properties\":{\"AlertId\":\"da637977531594995313_968283104\",\"Timestamp\":\"2022-09-02T22:04:16.134644Z\",\"Title\":\"'Lodi' unwanted software was prevented\",\"ServiceSource\":\"Microsoft Defender for Endpoint\",\"Category\":\"DefenseEvasion\",\"Severity\":\"Informational\",\"DetectionSource\":\"Antivirus\",\"MachineGroup\":\"Windows 10 - remediate threats automatically\",\"AttackTechniques\":\"\"}}",
+        "event": {
+            "kind": "alert",
+            "type": [
+                "info"
+            ],
+            "dataset": "alert_info",
+            "category": [
+                "threat"
+            ]
+        },
+        "@timestamp": "2022-09-02T22:06:00.665271Z",
+        "service": {
+            "name": "Microsoft Defender for Endpoint",
+            "type": "Antivirus"
+        },
+        "action": {
+            "properties": {
+                "ServiceSource": "Microsoft Defender for Endpoint"
+            }
+        },
+        "microsoft": {
+            "defender": {
+                "alert": {
+                    "id": "da637977531594995313_968283104",
+                    "title": "'Lodi' unwanted software was prevented"
+                },
+                "threat": {
+                    "category": "DefenseEvasion",
+                    "severity": "Informational"
+                }
+            }
+        }
+    }
+    	
+	```
+
+
 === "test_device_event.json"
 
     ```json
@@ -630,6 +673,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`rule.id` | `keyword` | Rule ID |
 |`rule.name` | `keyword` | Rule name |
 |`service.name` | `keyword` | Name of the service. |
+|`service.type` | `keyword` | The type of the service. |
 |`source.geo.city_name` | `keyword` | City name. |
 |`source.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`source.ip` | `ip` | IP address of the source. |
