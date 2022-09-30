@@ -1,4 +1,4 @@
-Rules catalog includes **578 built-in detection rules** (_last update on 2022-09-28_).
+Rules catalog includes **578 built-in detection rules** (_last update on 2022-09-30_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -51,12 +51,6 @@ Rules catalog includes **578 built-in detection rules** (_last update on 2022-09
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address.
     
     - **Effort:** master
-
-??? abstract "SEKOIA.IO Intelligence Feed"
-    
-    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
-    
-    - **Effort:** elementary
 
 ## Resource Development
 **Acquire Infrastructure**
@@ -5611,12 +5605,6 @@ Rules catalog includes **578 built-in detection rules** (_last update on 2022-09
     Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
-
-??? abstract "SEKOIA.IO Intelligence Feed"
-    
-    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
-    
-    - **Effort:** elementary
 
 ??? abstract "System Info Discovery"
     
