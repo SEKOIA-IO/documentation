@@ -78,6 +78,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "error"
         },
+        "observer": {
+            "hostname": "abc"
+        },
         "source": {
             "address": "1.1.1.1",
             "ip": "1.1.1.1",
@@ -86,6 +89,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "user": [
                 "N/A"
             ],
@@ -132,6 +138,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "information"
         },
+        "observer": {
+            "hostname": "abc"
+        },
         "source": {
             "address": "1.1.1.1",
             "ip": "1.1.1.1",
@@ -140,6 +149,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
@@ -177,6 +189,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "level": "notice"
+        },
+        "observer": {
+            "hostname": "abc"
+        },
+        "related": {
+            "hosts": [
+                "abc"
+            ]
         }
     }
     	
@@ -213,12 +233,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "error"
         },
+        "observer": {
+            "hostname": "abc"
+        },
         "source": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
             "port": 47782
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
@@ -567,12 +593,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "information"
         },
-        "network": {
-            "application": "HTTPS.BROWSER",
-            "protocol": "HTTPS",
-            "transport": "tcp"
-        },
         "observer": {
+            "hostname": "abc",
             "egress": {
                 "interface": {
                     "name": "port1"
@@ -583,6 +605,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "test"
                 }
             }
+        },
+        "network": {
+            "application": "HTTPS.BROWSER",
+            "protocol": "HTTPS",
+            "transport": "tcp"
         },
         "rule": {
             "category": "Web.Client",
@@ -600,6 +627,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "hosts": [
+                "abc",
                 "abcd"
             ],
             "ip": [
@@ -640,11 +668,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "warning"
         },
-        "network": {
-            "protocol": "icmp/0/8",
-            "transport": "icmp"
-        },
         "observer": {
+            "hostname": "abc",
             "egress": {
                 "interface": {
                     "name": "wan1"
@@ -656,6 +681,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
+        "network": {
+            "protocol": "icmp/0/8",
+            "transport": "icmp"
+        },
         "rule": {
             "category": "unscanned",
             "ruleset": "policy"
@@ -665,6 +694,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.1.1.1"
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
@@ -705,12 +737,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "notice"
         },
-        "network": {
-            "application": "icmp6/143/0",
-            "protocol": "icmp6/143/0",
-            "transport": "ipv6-icmp"
-        },
         "observer": {
+            "hostname": "abc",
             "egress": {
                 "interface": {
                     "name": "unknown0"
@@ -721,6 +749,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "AVR-GUEST-AP"
                 }
             }
+        },
+        "network": {
+            "application": "icmp6/143/0",
+            "protocol": "icmp6/143/0",
+            "transport": "ipv6-icmp"
         },
         "rule": {
             "category": "unscanned",
@@ -733,6 +766,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 1
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "ip": [
                 "00::00:00:00:00",
                 "12::16"
@@ -824,11 +860,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "notice"
         },
-        "network": {
-            "protocol": "PING",
-            "transport": "icmp"
-        },
         "observer": {
+            "hostname": "abc",
             "egress": {
                 "interface": {
                     "name": "test"
@@ -839,6 +872,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "test1"
                 }
             }
+        },
+        "network": {
+            "protocol": "PING",
+            "transport": "icmp"
         },
         "rule": {
             "category": "unscanned",
@@ -851,6 +888,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 5
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
@@ -1220,11 +1260,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "notice"
         },
-        "network": {
-            "protocol": "HTTPS",
-            "transport": "tcp"
-        },
         "observer": {
+            "hostname": "abc",
             "egress": {
                 "interface": {
                     "name": "test"
@@ -1235,6 +1272,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "port2"
                 }
             }
+        },
+        "network": {
+            "protocol": "HTTPS",
+            "transport": "tcp"
         },
         "rule": {
             "category": "unscanned",
@@ -1247,6 +1288,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 50592
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2"
@@ -1341,11 +1385,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "notice"
         },
-        "network": {
-            "protocol": "tcp/3727",
-            "transport": "tcp"
-        },
         "observer": {
+            "hostname": "abc",
             "egress": {
                 "interface": {
                     "name": "port10"
@@ -1356,6 +1397,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "port9"
                 }
             }
+        },
+        "network": {
+            "protocol": "tcp/3727",
+            "transport": "tcp"
         },
         "rule": {
             "category": "unscanned",
@@ -1369,6 +1414,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 52125
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2",
@@ -1408,6 +1456,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "information"
         },
+        "observer": {
+            "hostname": "abc"
+        },
         "source": {
             "address": "1.1.1.1",
             "bytes": 71524041,
@@ -1420,6 +1471,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "user": [
                 "test"
             ],
@@ -1460,6 +1514,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "log": {
             "level": "notice"
         },
+        "observer": {
+            "hostname": "abc"
+        },
         "source": {
             "address": "1.1.1.1",
             "bytes": 7649,
@@ -1472,6 +1529,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "related": {
+            "hosts": [
+                "abc"
+            ],
             "user": [
                 "N/A"
             ],
@@ -1514,6 +1574,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "level": "information"
+        },
+        "observer": {
+            "hostname": "abc"
+        },
+        "related": {
+            "hosts": [
+                "abc"
+            ]
         }
     }
     	
@@ -1558,6 +1626,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`network.protocol` | `keyword` | Application protocol name. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`observer.egress.interface.name` | `keyword` | Interface name |
+|`observer.hostname` | `keyword` | Hostname of the observer. |
 |`observer.ingress.interface.name` | `keyword` | Interface name |
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
