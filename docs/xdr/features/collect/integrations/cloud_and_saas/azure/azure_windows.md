@@ -5,6 +5,8 @@ type: intake
 ## Overview
 Azure Virtual Machines service is developed and managed by Microsoft Corp.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_2815eaab-2425-4eff-8038-3f7d5a3b8b11_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/azure-windows_do_not_edit_manually.md!}
 
 ## Configure

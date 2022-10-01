@@ -9,6 +9,8 @@ Amazon VPC Flow Logs is a feature that provides the ability to capture informati
 - Monitoring the traffic that is reaching your instance.
 - Determining the direction of the traffic to and from the network interfaces.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_07c0cac8-f68f-11ea-adc1-0242ac120002_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/aws-flow-logs_do_not_edit_manually.md!}
 
 ## Configure

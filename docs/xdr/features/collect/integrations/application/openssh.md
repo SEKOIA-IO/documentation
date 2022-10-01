@@ -5,6 +5,8 @@ type: intake
 ## Overview
 OpenSSH is the premier connectivity tool for remote login with the SSH protocol. It encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. In addition, OpenSSH provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_b28db14b-e3a7-463e-8659-9bf0e577944f_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/openssh_do_not_edit_manually.md!}
 
 ## Configure

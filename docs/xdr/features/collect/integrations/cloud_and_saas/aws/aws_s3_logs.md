@@ -7,6 +7,8 @@ type: connector
 AWS S3 is a service that enables to store and manage data with scalability, high availability, and low latency with high durability. AWS S3 can hold objects up to five Terabytes in size.
 Several AWS services offers to store their logs on a S3 bucket. This integration aims to collect line-oriented logs.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_2d806360-5c22-4722-b335-8eaf5ab3e4bf_do_not_edit_manually.md!}
+
 ## Configure
 
 ### Create a SQS queue

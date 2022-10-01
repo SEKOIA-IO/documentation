@@ -5,6 +5,8 @@ type: intake
 ## Overview
 Unbound is a validating, recursive, and caching DNS resolver product from NLnet Labs. It is distributed free of charge in open-source form under the BSD license.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_5d9e261a-944c-4a76-8c61-6794fd44d9a8_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/unbound_do_not_edit_manually.md!}
 
 ## Configure
