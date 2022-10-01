@@ -6,6 +6,9 @@ type: intake
 
 Fortinet cybersecurity solutions sells physical products such as firewalls, plus software and services such as anti-virus protection, intrusion prevention systems and endpoint security components.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_60af2bd6-7ef0-48a7-a6db-90fcdd7236f1_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/fortimail_do_not_edit_manually.md!}
 
 ## Configure

@@ -8,6 +8,9 @@ The Cisco ASA is a security device that combines firewall, antivirus, intrusion 
 
 - From the CISCO ASA machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/cisco-asa_do_not_edit_manually.md!}
 
 ## Configure

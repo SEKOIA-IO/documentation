@@ -5,6 +5,9 @@ type: intake
 ## Overview
 Sophos firewalls offer an integrated software solution that provides superior performance in an all-in-one firewall. Its hardened operating system, stateful packet inspection, content filtering (virus & surf protection), application proxies and IPsec based VPN provides powerful solutions to today's security issues. It is designed to maximise networks security without compromising its performance enabling telecommuters, branch offices, customers and suppliers to safely share critical business information.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_325369ba-8515-45b4-b750-5db882ea1266_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/sophos_do_not_edit_manually.md!}
 
 ## Configure

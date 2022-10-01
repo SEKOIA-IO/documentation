@@ -5,6 +5,9 @@ type: intake
 ## Overview
 Tanium solutions manage and protect networks and endpoints.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_59991ced-c2a0-4fb0-91f3-49e3993c16f5_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/tanium_do_not_edit_manually.md!}
 
 ## Configure

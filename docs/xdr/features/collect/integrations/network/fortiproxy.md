@@ -8,6 +8,9 @@ FortiProxy is a web proxy that protects clients against internet threats.
 In this documentation we will explain one way to collect and send FortiProxy logs to SEKOIA.IO.
 - From the FortiProxy server to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_270777d7-0c5a-42fb-b901-b7fadfb0ba48_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/fortiproxy_do_not_edit_manually.md!}
 
 
