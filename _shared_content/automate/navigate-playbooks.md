@@ -192,7 +192,7 @@ Under these stats lays a table with the following information:
 - When it started
 - Its status
 - The duration of the run
-- A RErun button to restart the run
+- A rerun button to restart the run
 
 To access the details of a run, just click on the run and you’ll be redirected to the graph view with the status of each block. 
 
