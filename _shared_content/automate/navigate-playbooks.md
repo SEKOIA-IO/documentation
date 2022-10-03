@@ -139,11 +139,11 @@ Depending on the type of blocks, the content of the configuration panel changes.
   
 ### Playbook code
 
-The code section is a page where you can write and edit your playbooks using a code editor. Playbooks in [SEKOIA.IO](http://SEKOIA.IO) are written using the language [JINJA 3.](https://jinja.palletsprojects.com/en/3.0.x/templates/) 
+The code section is where you can find your playbook in JSON. You may use [JINJA 3.](https://jinja.palletsprojects.com/en/3.0.x/templates/) to fill variable fields.
 
 It is possible to test your JINJA code on a JSON file:
 
-- Copy/paste the CODE of your playbook
+- Copy/paste the code of your playbook
 - Remove the nodes with this Python script:
 
 ```
