@@ -5,6 +5,9 @@ type: intake
 ## Overview
 WALLIX Bastion is a “Privileged Access Management” solution.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_6b8cb346-6605-4240-ac15-3828627ba899_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/wallix-bastion_do_not_edit_manually.md!}
 
 ## Configure

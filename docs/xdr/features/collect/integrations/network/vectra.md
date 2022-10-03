@@ -5,6 +5,9 @@ type: intake
 ## Overview
 Vectra provides AI-powered incident detection and resolution support for native and hybrid clouds.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_bf8867ee-43b7-444c-9475-a7f43754ab6d_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/vectra-cognito-detect_do_not_edit_manually.md!}
 
 ## Configure

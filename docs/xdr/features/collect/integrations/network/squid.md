@@ -6,6 +6,9 @@ type: intake
 
 Squid is a caching proxy for the Web. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. The analysis of Squid logs by SEKOIA.IO can detect web threats along as in-progress intrusion and exfiltration attempts.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_a0dbb8f3-ca1c-4c6b-aafa-595bd430c0cb_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/squid_do_not_edit_manually.md!}
 
 

@@ -9,6 +9,9 @@ It improves user experience and catches 10x more advanced threats than Microsoft
 
 In this documenation we will explain how to collect and send Vade for M365 logs to SEKOIA.IO.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_e4a758fc-7620-49e6-b8ed-b7fb3d7fa232_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/vade-m365_do_not_edit_manually.md!}
 
 ## Configure

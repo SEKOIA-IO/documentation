@@ -6,6 +6,9 @@ type: intake
 
 Proofpoint Targeted Attack Protection (TAP) helps detect, mitigate, and block advanced threats that target people through email.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_46ca6fc8-3d30-434c-92ff-0e1cde564161_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/proofpoint-tap_do_not_edit_manually.md!}
 
 ## Configure
