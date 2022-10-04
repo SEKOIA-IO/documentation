@@ -27,9 +27,9 @@ The Rules Catalog page can be used to list and manage all detection rules. Many 
 
 #### Available and verified rules
 The Rules Catalog lists all detection rules available to your organization: 
-<figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ align=right }<figcaption>Available Rules vs Verified Rules</figcaption></figure>.
+<figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png)<figcaption>Available Rules vs Verified Rules</figcaption></figure>.
 
-- ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) **Verified Rules**: rules with the logo. These rules are created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
+- **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
 - **Custom Rules**: rules created by your team that are specific to your organization.
 
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the `Verified counter` to list only Verified rules.
