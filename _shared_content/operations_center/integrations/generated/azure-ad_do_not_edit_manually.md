@@ -40,6 +40,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2019-06-24T09:21:27.369418Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -100,6 +101,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2020-01-02T13:36:37.951568Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -172,6 +174,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2019-06-24T09:18:23.586020Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -254,6 +257,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2019-06-24T09:29:28.624272Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -333,6 +337,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "start"
             ]
         },
+        "@timestamp": "2020-09-28T10:12:41.410424Z",
         "service": {
             "type": "ldap",
             "name": "Windows Azure Active Directory"
@@ -400,6 +405,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2019-06-24T09:32:07.463722Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -456,6 +462,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "authentication"
             ]
         },
+        "@timestamp": "2022-04-05T13:07:16.779653Z",
         "service": {
             "type": "ldap",
             "name": "Office 365 Exchange Online"
@@ -516,6 +523,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2019-06-24T09:21:50.041890Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -566,6 +574,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "authentication"
             ]
         },
+        "@timestamp": "2022-03-30T14:52:21.706218Z",
         "service": {
             "type": "ldap",
             "name": "Office365 Shell WCSS-Server"
@@ -636,6 +645,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "authentication"
             ]
         },
+        "@timestamp": "2022-03-31T12:26:46.019095Z",
         "service": {
             "type": "ldap",
             "name": "Windows Azure Active Directory"
@@ -705,6 +715,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2019-06-24T09:32:07.463722Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -765,6 +776,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "iam"
             ]
         },
+        "@timestamp": "2022-03-24T14:42:35.000000Z",
         "service": {
             "type": "ldap",
             "name": "Azure Active Directory"
@@ -832,6 +844,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
 |`action.properties` | `array` | action.properties |
 |`action.target` | `keyword` | action.target |
 |`azuread.Level` | `long` |  |
