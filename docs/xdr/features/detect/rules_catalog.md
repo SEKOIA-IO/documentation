@@ -21,13 +21,15 @@ The Rules Catalog page can be used to list and manage all detection rules. Many 
 !!! tip
     You can enable or disable rules one by one or all at once according to current filters. 
 
+
+
 ### Rules Attributes
 
 #### Available and verified rules
 The Rules Catalog lists all detection rules available to your organization: 
-![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ align=right }
+<figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ width=300 }</figure>.
 
-- **Verified Rules**: rules created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. This set of more than 500 rules can be used to detect known threats, attack patterns, etc. Verified rules are constantly updated to improve detection.
+- **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
 - **Custom Rules**: rules created by your team that are specific to your organization.
 
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the `Verified counter` to list only Verified rules.
