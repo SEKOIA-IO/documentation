@@ -20,3 +20,23 @@ Your inclusion filter should contain the following (don't forget to specify your
 protoPayload.@type="type.googleapis.com/google.cloud.audit.AuditLog"
 logName="organizations/<YOUR ORGANISATION ID>/logs/cloudaudit.googleapis.com%2Factivity"
 ```
+
+## Retrieve Google Cloud Audit logs with playbook module
+
+Please create a playbook with module `Connect to the specified`
+
+Fields to be completed
+|Field|Meaning|
+|---|---|
+|name| Configuration name|
+|auth_provider_x509_cert_url| The URL of the public x509 certificate, used to verify the signature on JWTs, such as ID tokens, signed by the authentication provider. `https://wwww.googleapis.com/oauth2/v1/certs`|
+|auth_url| Google authentification url `https://accounts.google.com/o/oauth2/auth`|
+|client_email| Client email|
+|client_id| Client id|
+|client_x509_cert_url| The URL of the public x509 certificate, used to verify JWTs signed by the client|
+|private_key| Private key|
+|private_key_id| Private key id|
+|project_id| Project id|
+|token_uri| token server endpoint URI `https://oauth2.googleapis.com/token`|
+|type|Activity type `service_account`|
+
