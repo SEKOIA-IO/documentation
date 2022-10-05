@@ -44,9 +44,10 @@ You can also add filters manually by clicking on the "Add Filter" icon below the
 | `<` | The field must be less than the specified number. *Only for numerical fields* |
 | `<=` | The field must be less than or equal to the specified number. *Only for numerical fields* |
 
-Each filter is added as a badge below the `Search Bar`. A filter can be removed by clicking on the `X` at the end of the badge. You can also click on a filter to access a menu that will allow you to:
 
-![event-filter](/assets/operation_center/events/events-filters.PNG){: align=right }
+![event-filter](/assets/operation_center/events/events-filters.png) {: align=right }
+
+Each filter is added as a badge below the `Search Bar`. A filter can be removed by clicking on the `X` at the end of the badge. You can also click on a filter to access a menu that will allow you to:
 
 * Edit the filter
 * Invert the filter (filtering out instead of filtering for, or vice versa)
@@ -78,7 +79,6 @@ Click on the `Apply` button to start your search based on these filters.
 
 ### Search history
 
-![search-history](/assets/operation_center/events/events-search-history.png){ align=right }
 
 Each events search performed is listed in the `Search History` for 30 days. You can use the search history to easily access past search results.
 
@@ -87,7 +87,11 @@ It is accessible by clicking on the following button (a panel will be displayed 
 <!-- image à changer -->
 <img width="58" alt="image" src="https://user-images.githubusercontent.com/101662967/187888092-84499da5-6fea-46e3-b21c-e6e859aed8e5.png">
 
-When you are creating a new search, results are available instantly for 30 minutes by default. It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exatcly the same parameters (query, filters and date range).
+When you are creating a new search, results are available instantly for 30 minutes by default. 
+
+![search-history](/assets/operation_center/events/events-search-history.png){ align=right }
+
+It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exatcly the same parameters (query, filters and date range).
 
 By default, the `Search History` panel is only listing your events search. You can access all events search by clicking on `My Searches` at the top of the panel and selecting `All Searches`.
 
