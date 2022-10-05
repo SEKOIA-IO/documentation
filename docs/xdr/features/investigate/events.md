@@ -45,7 +45,7 @@ You can also add filters manually by clicking on the "Add Filter" icon below the
 | `<=` | The field must be less than or equal to the specified number. *Only for numerical fields* |
 
 
-![event-filter](/assets/operation_center/events/events-filters.png) {: align=right }
+![event-filter](/assets/operation_center/events/events-filters.png) { align=right }
 
 Each filter is added as a badge below the `Search Bar`. A filter can be removed by clicking on the `X` at the end of the badge. You can also click on a filter to access a menu that will allow you to:
 
