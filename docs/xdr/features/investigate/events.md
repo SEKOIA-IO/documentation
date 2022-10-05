@@ -46,6 +46,8 @@ You can also add filters manually by clicking on the "Add Filter" icon below the
 
 Each filter is added as a badge below the `Search Bar`. A filter can be removed by clicking on the `X` at the end of the badge. You can also click on a filter to access a menu that will allow you to:
 
+![event-filter](/assets/operation_center/events/events-filters.PNG){: align=right }
+
 * Edit the filter
 * Invert the filter (filtering out instead of filtering for, or vice versa)
 * Temporarily disable or re-enable a filter
@@ -75,11 +77,13 @@ It is possible to select the period of time to be taken into consideration when 
 Click on the `Apply` button to start your search based on these filters.
 
 ### Search history
-![search-history](/assets/operation_center/events/search-history.png){ align=right }
+
+![search-history](/assets/operation_center/events/events-search-history.png){ align=right }
 
 Each events search performed is listed in the `Search History` for 30 days. You can use the search history to easily access past search results.
 
 It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
+
 <!-- image à changer -->
 <img width="58" alt="image" src="https://user-images.githubusercontent.com/101662967/187888092-84499da5-6fea-46e3-b21c-e6e859aed8e5.png">
 
@@ -95,7 +99,6 @@ To obtain the search URL, you can:
 
 * Click on the `Share / Link` icon inside the `Search History` panel
 * Copy the active URL from the browser address bar
-
 
 ### Histogram 
 
