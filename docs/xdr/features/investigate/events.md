@@ -23,12 +23,37 @@ Fields you can use to narrow down your events search are listed [here](https://d
 
 ### Filters
 
-It is possible to use and combine filters in the search bar. You can simply add filters by using the icon buttons provided when hovering over a value inside a `Smart Description` or an event's `Details`:
+It is possible to further restict the scope of your events search by using filters. Filters are combined together and with the search query with a logical AND.
+
+You can easily add filters by using the icon buttons provided when hovering over a value inside a `Smart Description` or an event's `Details`:
 
 - Use the `Filter for value` button to only see events with this value
 - Use the `Filter out value` button to only see events that DO NOT have this value
 
-To clear current filters, you can use the `X` button at the end of the `Search Bar`.
+You can also add filters manually by clicking on the "Add Filter" icon below the `Search Bar`. The following filter operators are available when creating filters manually:
+
+| Operator | Description |
+|----------|-------------|
+| `=` | The field must exactly match the value. |
+| `exists` | The field must exist. |
+| `starts with` | The field must start with the value. *Only for text fields* |
+| `ends with` | The field must end with the value. *Only for text fields* |
+| `contains` | The field must contain the value. *Only for text fields* |
+| `>` | The field must be greater than the specified number. *Only for numerical fields* |
+| `>=` | The field must be greater than or equal to the specified number. *Only for numerical fields* |
+| `<` | The field must be less than the specified number. *Only for numerical fields* |
+| `<=` | The field must be less than or equal to the specified number. *Only for numerical fields* |
+
+
+![event-filter](/assets/operation_center/events/events-filters.png){ align=right }
+
+Each filter is added as a badge below the `Search Bar`. A filter can be removed by clicking on the `X` at the end of the badge. You can also click on a filter to access a menu that will allow you to:
+
+* Edit the filter
+* Invert the filter (filtering out instead of filtering for, or vice versa)
+* Temporarily disable or re-enable a filter
+
+To clear current filters, you can use the `Clear all` button at the end of the filters.
 
 ### Save search query
 
@@ -53,24 +78,31 @@ It is possible to select the period of time to be taken into consideration when 
 Click on the `Apply` button to start your search based on these filters.
 
 ### Search history
-![search-history](/assets/operation_center/events/search-history.png){ align=right }
 
-Each search result lasts 30 minutes by default and it is possible to configure the retention to reach one day (24 hours). When the result is expired, you still have the possibility of replaying it using the saved relative date or a new one.
+
+Each events search performed is listed in the `Search History` for 30 days. You can use the search history to easily access past search results.
 
 It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
+
 <!-- image à changer -->
 <img width="58" alt="image" src="https://user-images.githubusercontent.com/101662967/187888092-84499da5-6fea-46e3-b21c-e6e859aed8e5.png">
 
+When you are creating a new search, results are available instantly for 30 minutes by default. 
+
+![search-history](/assets/operation_center/events/events-search-history.png)
+
+It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exatcly the same parameters (query, filters and date range).
+
+By default, the `Search History` panel is only listing your events search. You can access all events search by clicking on `My Searches` at the top of the panel and selecting `All Searches`.
 
 ### Sharing a search
 
-Each search has an unique ID that is included in the browser address bar.
+Search Results can be shared with your colleagues by sending them the unique search URL. All users that have access to your community can use this URL to access your search results.
 
-```
-<https://app.sekoia.io/operations/events?jobId=2b5ce17f-517e-4dd3-8253-1495a6ba538b>
-```
+To obtain the search URL, you can:
 
-You can share your events' page with other users by sending them this URL. All users within your community will be able to access your search results.
+* Click on the `Share / Link` icon inside the `Search History` panel
+* Copy the active URL from the browser address bar
 
 ### Histogram 
 
