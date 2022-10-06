@@ -191,7 +191,6 @@ Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Searc
 | SYMPHONY_READ_PLAYBOOK_RUNS_STATS | List and get statistics about playbook runs |
 | SYMPHONY_WRITE_PLAYBOOKS | Write playbooks |
 | SYMPHONY_WRITE_PLAYBOOK_RUNS | Modify playbook Runs |
-| SYMPHONY_WRITE_TEMPLATE | Write playbook templates |
 
 !!! note
     Symphony is the name used internally for Playbooks. 
