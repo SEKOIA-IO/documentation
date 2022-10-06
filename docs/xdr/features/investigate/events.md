@@ -89,7 +89,7 @@ It is accessible by clicking on the following button (a panel will be displayed 
 
 When you are creating a new search, results are available instantly for 30 minutes by default. 
 
-![search-history](/assets/operation_center/events/events-search-history.png){ align=right }
+![search-history](/assets/operation_center/events/events-search-history.png)
 
 It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exatcly the same parameters (query, filters and date range).
 
