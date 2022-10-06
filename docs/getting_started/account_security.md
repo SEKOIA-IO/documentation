@@ -3,7 +3,7 @@
 
 **Two-factor authentication** adds additional security to your SEKOIA.IO account by requiring a second step to sign in. It requires you to give a 6-digit verification code generated from your phone in addition to your username and password login.
 
-When two-factor authentication is enabled, you will need your `password` and a `verification cod`e from your phone whenever you want to sign in on SEKOIA.IO platform.
+When two-factor authentication is enabled, you will need your `password` and a `verification code` from your phone whenever you want to sign in on SEKOIA.IO platform.
 
 ### How do I enable two-factor authentication?
 
