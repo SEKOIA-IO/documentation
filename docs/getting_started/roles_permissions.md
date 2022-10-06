@@ -189,9 +189,6 @@ Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Searc
 | SYMPHONY_READ_PLAYBOOKS | List and get playbooks |
 | SYMPHONY_READ_PLAYBOOK_RUNS | List and get playbook runs |
 | SYMPHONY_READ_PLAYBOOK_RUNS_STATS | List and get statistics about playbook runs |
-| SYMPHONY_READ_TEMPLATES | Read playbook templates |
-| SYMPHONY_RUN_SINGLE_ACTION | Run a standalone playbook action |
-| SYMPHONY_WRITE_MODULES | Modify Modules |
 | SYMPHONY_WRITE_PLAYBOOKS | Write playbooks |
 | SYMPHONY_WRITE_PLAYBOOK_RUNS | Modify playbook Runs |
 | SYMPHONY_WRITE_TEMPLATE | Write playbook templates |
