@@ -3,7 +3,7 @@ name: Microsoft Always On VPN
 type: intake
 
 ## Overview
-Microsoft Always On VPN is a Windows 10 feature enabling secure connection to protected networks.
+Microsoft Always On VPN is a Windows feature allowing secure connection to protected networks.
 
 This guide will explain how to forward Network Policy Server (NPS) logs to SEKOIA.IO
 
@@ -17,10 +17,10 @@ This guide will explain how to forward Network Policy Server (NPS) logs to SEKOI
 
 #### Configuring NPS logging
 
-Refer to the [Microsoft documentation](https://learn.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-accounting-configure#configure-nps-log-file-properties) to activate the NPS logging on the server. The logs should be write in files with the IAS (legacy) format.
+Refer to the [Microsoft documentation](https://learn.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-accounting-configure#configure-nps-log-file-properties) to activate the NPS logging on the server. The logs should be written as files with the IAS (legacy) format.
 
 #### NXLog setup on Windows
-This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events by means of a syslog transport channel.
+This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events through syslog.
 
 First of all, download NXLog at the following link : https://nxlog.co/products/all/download. Then, open the NXLog configuration file at `C:\Program Files (x86)\nxlog\conf\nxlog.conf` and update it with the following instructions:
 ```
