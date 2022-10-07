@@ -117,6 +117,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft Defender for Endpo
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft 365 Defender Alert"
+    
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Cloud App Security Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender For Endpoint Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Office 365 Alert"
+    
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
     Detects interaction with the file NTDS.dit through command line. This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
