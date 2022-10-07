@@ -86,10 +86,95 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
  Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `145.239.192.38`. The protocol used to send events is HTTPS (443).
 
+### Update
+
+#### Disable automatic update
+
+By default the agent will update itself automatically, if you would like to disable this feature the flag `-disable-auto-update` must be specified during the installation.
+
+#### Manual update
+
+To manually update the agent follow the instructions specific to your OS:
+
+=== "Windows"
+
+    The following command must be executed **as an administrator**:
+
+    ```shell
+    $ProgramFiles\EndpointAgent\agent.exe -update
+    ```
+
+    Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
+
+=== "Linux"
+
+    The following command must be executed:
+
+    ```shell
+    sudo /opt/endpoint-agent -update
+    ```
+
+
+### Uninstall
+
+To uninstall the agent follow the instructions specific to your OS.
+
+=== "Windows"
+
+    The following command must be executed **as an administrator**:
+
+    ```shell
+    $ProgramFiles\EndpointAgent\agent.exe -uninstall
+    ```
+
+    Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
+
+=== "Linux"
+
+    The following command must be executed:
+
+    ```shell
+    sudo /opt/endpoint-agent -uninstall
+    ```
 
 {!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
 
-### Proxy Support
+## Events examples
+
+Here's a non-exhaustive list of kind of events the agent is able to detect
+
+=== "Windows"
+
+    * Files creation/deletion/rename
+    * Process lifecycle
+    * Remote thread execution
+    * DNS Resolution
+    * TCP connection
+    * Powershell commands
+    * WMI Activity
+    * NTLM
+    * Windows Defender events
+    * Sysmon events if configured
+    * ...
+
+=== "Linux"
+
+    * Root commands executions
+    * Files creation/deletion/rename/change
+    * Process lifecycle
+    * TCP connection
+    * Python/Perl commands
+    * PIP/APT installs
+    * Cron configuration & scheduled jobs
+    * Sudoers file changes
+    * Passwd operations
+    * Suspicious activity (curl, wireshark, …)
+    * ...
+
+    
+
+
+## Proxy Support
 
 If needed, the SEKOIA.IO agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
 the configuration file at:
@@ -113,7 +198,7 @@ HTTPProxyURL: "<PROXY_URL>"
 
 If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
-### Optional steps
+## Optional steps
 
 === "Windows"
 
@@ -126,25 +211,7 @@ If you want to automate the installation of the agent with this configuration op
     Sysmon is a Microsoft tool downloadable from [microsoft.com](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
     A common installation instruction and configuration file is available at [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
 
+## Resources footprint
 
-### Uninstall
-
-To uninstall the agent follow the instructions specific to your OS.
-
-=== "Windows"
-
-    The following commands must be executed **as an administrator**:
-
-    ```shell
-    $ProgramFiles\EndpointAgent\agent.exe -service uninstall
-    ```
-
-    Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
-
-=== "Linux"
-
-    The following commands must be executed:
-
-    ```shell
-    sudo /opt/endpoint-agent -service uninstall
-    ```
+We monitor the agent metrics and try to keep its footprint as small as possible. 
+Right now on average our agent uses less than 3% of CPU and less than 1% of RAM.
