@@ -1,4 +1,4 @@
-Rules catalog includes **578 built-in detection rules** (_last update on 2022-10-04_).
+Rules catalog includes **582 built-in detection rules** (_last update on 2022-10-07_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1021,6 +1021,30 @@ Rules catalog includes **578 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft 365 Defender Alert"
+    
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Cloud App Security Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender For Endpoint Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Office 365 Alert"
+    
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
     
     Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
@@ -1557,6 +1581,30 @@ Rules catalog includes **578 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** advanced
 
+??? abstract "Microsoft 365 Defender Alert"
+    
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Cloud App Security Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender For Endpoint Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Office 365 Alert"
+    
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
     
     Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
@@ -1924,6 +1972,30 @@ Rules catalog includes **578 built-in detection rules** (_last update on 2022-10
     Detects Metasploit service creation when using the PSExec module. The ImagePath here is usually a malicious command line using powershell.exe and/or cmd.exe.
     
     - **Effort:** advanced
+
+??? abstract "Microsoft 365 Defender Alert"
+    
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Cloud App Security Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender For Endpoint Alert"
+    
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Defender Office 365 Alert"
+    
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
     
