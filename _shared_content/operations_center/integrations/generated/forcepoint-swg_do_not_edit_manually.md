@@ -204,7 +204,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user": {
-            "name": "LDAP://4.3.2.1 OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL/User 1",
+            "domain": "OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL",
+            "name": "User 1",
             "id": "n_nini"
         },
         "user_agent": {
@@ -235,7 +236,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "outlook.office365.com"
             ],
             "user": [
-                "LDAP://4.3.2.1 OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL/User 1"
+                "User 1"
             ]
         }
     }
@@ -280,6 +281,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
+|`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.id` | `keyword` | Unique identifier of the user. |
 |`user.name` | `keyword` | Short name or login of the user. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
