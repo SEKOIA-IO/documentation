@@ -1173,6 +1173,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO for Endpoint** wit
     
     - **Effort:** elementary
 
+??? abstract "Phosphorus (APT35) Exchange Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about its the environment of compromised Microsoft Exchange servers. The command is the following: Get-Recipient | Select Name -ExpandProperty EmailAddresses -first 1 | Select SmtpAddress |  ft -hidetableheaders
+    
+    - **Effort:** elementary
+
+??? abstract "Phosphorus Domain Controller Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about the Domain Controller. The command is the following: "powershell.exe" /c Get-WMIObject Win32_NTDomain | findstr DomainController
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible Replay Attack"
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
