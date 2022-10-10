@@ -1,4 +1,4 @@
-Rules catalog includes **582 built-in detection rules** (_last update on 2022-10-07_).
+Rules catalog includes **584 built-in detection rules** (_last update on 2022-10-10_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -5710,6 +5710,12 @@ Rules catalog includes **582 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Phosphorus (APT35) Exchange Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about its the environment of compromised Microsoft Exchange servers. The command is the following: Get-Recipient | Select Name -ExpandProperty EmailAddresses -first 1 | Select SmtpAddress |  ft -hidetableheaders
+    
+    - **Effort:** elementary
+
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -5765,6 +5771,12 @@ Rules catalog includes **582 built-in detection rules** (_last update on 2022-10
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
+    
+    - **Effort:** intermediate
+
+??? abstract "Phosphorus Domain Controller Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about the Domain Controller. The command is the following: "powershell.exe" /c Get-WMIObject Win32_NTDomain | findstr DomainController
     
     - **Effort:** intermediate
 
