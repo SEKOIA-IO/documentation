@@ -1,4 +1,4 @@
-Rules catalog includes **584 built-in detection rules** (_last update on 2022-10-10_).
+Rules catalog includes **583 built-in detection rules** (_last update on 2022-10-11_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1045,12 +1045,6 @@ Rules catalog includes **584 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** master
 
-??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
-    
-    Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
-    
-    - **Effort:** master
-
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
@@ -1605,12 +1599,6 @@ Rules catalog includes **584 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** master
 
-??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
-    
-    Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
-    
-    - **Effort:** master
-
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
@@ -1994,12 +1982,6 @@ Rules catalog includes **584 built-in detection rules** (_last update on 2022-10
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
     Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
-    
-    - **Effort:** master
-
-??? abstract "Microsoft Defender for Endpoint High Severity Alerts"
-    
-    Microsoft Defender for Endpoint has raised a High severity alert. The alert info is then correlated with evidence events info into the same SEKOIA.IO alert. 
     
     - **Effort:** master
 
