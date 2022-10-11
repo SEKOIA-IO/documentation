@@ -90,7 +90,9 @@ Every time you enable a rule, it appears in blue on the matrix in one or many ce
 You can see how many rules are enabled in a cell by hovering over it. 
 
 The color changes depending on the number of rules activated in one cell: 
+
 - Blue cells means rules are enabled. Darker cells mean there are multiple rules enabled for this technique and lighter cells mean there are only few rules enabled for this tactic. 
+
 - A white cell means that no rules are activated in it. 
 
 ---
