@@ -136,7 +136,7 @@ nav:
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield: xdr/features/collect/integrations/network/stormshield_network_security.md
           - Suricata: xdr/features/collect/integrations/network/suricata.md
-          - Vectra: xdr/features/collect/integrations/network/vectra.md
+          - Vectra Cognito Detect: xdr/features/collect/integrations/network/vectra.md
           - Wallix: xdr/features/collect/integrations/network/wallix.md
           - Zeek: xdr/features/collect/integrations/network/zeek.md
         - Generic:
