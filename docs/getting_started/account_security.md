@@ -60,11 +60,9 @@ To disable two-factor authentication on your SEKOIA account:
 4. Enter your actual password and select `disable`
 
 ## Security tokens
-In SEKOIA.IO, we support Web Authentication and we value high security standards. That’s why our users can use multiple tools to sign in on the platform in the fastest and most secure way possible.
+WebAuthn standard (Web Authentication) is supported in SEKOIA.IO as we value high security standards. Users can use multiple tools to access their account in the fastest and most secure way possible. These security tokens can be used as a second factor of authentication instead of a verification code.
 
-Depending on your web browser, you’ll be able to use security tokens to connect to the platform. These tokens can be `physical` (a USB security key) or `embedded` in your machine (fingerprint authentication).
-
-A security token can be used as your second factor of authentication instead of a verification code.
+Depending on your web browser, you can use different types of security tokens to connect to the platform. These tokens can be `physical` (a USB security key) or `embedded` in your machine (fingerprint authentication). The platform supports [FIDO2-compliant authenticators](https://fidoalliance.org/certification/authenticator-certification-levels/) including security keys, Touch ID, Face ID and [Windows Hello](https://support.microsoft.com/en-us/windows/learn-about-windows-hello-and-set-it-up-dae28983-8242-bb2a-d3d1-87c9d265a5f0). 
 
 ### Add a security token
 
