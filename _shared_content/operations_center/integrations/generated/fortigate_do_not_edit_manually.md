@@ -16,6 +16,14 @@ The following table lists the data source offered by this integration.
 
 
 
+In details, the following table denotes the type of events produced by this integration.
+
+| Name | Values |
+| ---- | ------ |
+| Kind | `event` |
+| Category | `network` |
+| Type | `allowed`, `connection`, `denied`, `end` |
+
 
 
 
@@ -31,10 +39,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "CEF:0|Fortinet|Fortigate|v6.2.9|32102|event:system|7|deviceExternalId=FGVM2V0000171868 FortinetFortiGatelogid=0100032102 cat=event:system FortinetFortiGatesubtype=system FortinetFortiGatelevel=alert FortinetFortiGatevd=root FortinetFortiGateeventtime=1637681708541881380 FortinetFortiGatetz=+0100 FortinetFortiGatelogdesc=Configuration changed duser= sproc=console msg=Configuration is changed in the admin session",
         "event": {
+            "dataset": "event:system",
             "code": "0100032102",
             "reason": "Configuration is changed in the admin session",
             "severity": 7,
-            "timezone": "+0100"
+            "timezone": "+0100",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2021-11-23T14:35:08.541882Z",
         "action": {
@@ -62,8 +75,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|24576|utm:dlp dlp block|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0954024576 cat=utm:dlp FTNTFGTsubtype=dlp FTNTFGTeventtype=dlp FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545949776 FTNTFGTfilteridx=1 FTNTFGTdlpextra=test-dlp3 FTNTFGTfiltertype=file-type FTNTFGTfiltercat=file FTNTFGTseverity=medium FTNTFGTpolicyid=1 externalId=12680 FTNTFGTepoch=418303178 FTNTFGTeventid=0 duser=bob src=10.1.100.11 spt=33638 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=172.18.62.158 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP FTNTFGTfiletype=gif deviceDirection=0 act=block dhost=172.18.62.158 request=/dlp/flower.gif requestClientApplication=curl/7.47.0 fname=flower.gif fsize=1209 FTNTFGTprofile=test-dlp",
         "event": {
             "action": "block",
+            "dataset": "utm:dlp",
             "code": "0954024576",
-            "severity": 4
+            "severity": 4,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ]
         },
         "@timestamp": "2018-12-27T22:29:36.000000Z",
         "action": {
@@ -125,7 +148,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "pass",
             "code": "1501054802",
             "reason": "Domain is monitored",
-            "severity": 3
+            "severity": 3,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "dns:dns-response"
         },
         "@timestamp": "2018-12-27T22:45:26.000000Z",
         "action": {
@@ -175,7 +207,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "reset",
             "code": "0419016384",
             "reason": "file_transfer: Eicar.Virus.Test.File,",
-            "severity": 7
+            "severity": 7,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ],
+            "dataset": "utm:ips"
         },
         "@timestamp": "2018-12-27T19:28:07.000000Z",
         "action": {
@@ -229,8 +271,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "time=17:24:16 devname=\"abc\" devid=\"1\" logid=\"0101037130\" type=\"event\" subtype=\"vpn\" level=\"error\" vd=\"root\" eventtime=1580142256 logdesc=\"Progress IPsec phase 2\" msg=\"progress IPsec phase 2\" action=\"negotiate\" remip=1.1.1.1 locip=93.187.43.9 remport=500 locport=500 outintf=\"N/A\" cookies=\"07f928d94dd975ea/89b1d990f54f0b82\" user=\"N/A\" group=\"N/A\" xauthuser=\"N/A\" xauthgroup=\"N/A\" assignip=N/A vpntunnel=\"VPN-ACCENTURE\" status=\"failure\" init=\"local\" exch=\"CREATE_CHILD\" dir=\"inbound\" role=\"initiator\" result=\"ERROR\" version=\"IKEv2\"",
         "event": {
             "action": "negotiate",
+            "dataset": "event:vpn",
             "code": "0101037130",
-            "reason": "progress IPsec phase 2"
+            "reason": "progress IPsec phase 2",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2020-01-27T16:24:16.000000Z",
         "action": {
@@ -280,8 +327,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "time=16:48:00 devname=\"abc\" devid=\"1\" logid=\"0100032003\" type=\"event\" subtype=\"system\" level=\"information\" vd=\"root\" eventtime=1619621280 logdesc=\"Admin logout successful\" sn=\"1619620402\" user=\"test\" ui=\"jsconsole\" method=\"jsconsole\" srcip=1.1.1.1 dstip=2.2.2.2 action=\"logout\" status=\"success\" duration=878 reason=\"exit\" msg=\"Administrator test logged out from jsconsole\"",
         "event": {
             "action": "logout",
+            "dataset": "event:system",
             "code": "0100032003",
-            "reason": "Administrator test logged out from jsconsole"
+            "reason": "Administrator test logged out from jsconsole",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2021-04-28T14:48:00.000000Z",
         "action": {
@@ -341,8 +393,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "time=16:23:50 devname=\"abc\" devid=\"1\" logid=\"0100032011\" type=\"event\" subtype=\"system\" level=\"notice\" vd=\"PRX1-AA\" eventtime=1619619830 logdesc=\"Disk log rolled\" action=\"roll-log\" reason=\"file-size\" log=\"tlog\" msg=\"Disk log has rolled.\"",
         "event": {
             "action": "roll-log",
+            "dataset": "event:system",
             "code": "0100032011",
-            "reason": "Disk log has rolled."
+            "reason": "Disk log has rolled.",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2021-04-28T14:23:50.000000Z",
         "action": {
@@ -380,7 +437,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "passthrough",
             "code": "1600061002",
-            "severity": 3
+            "severity": 3,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "utm:ssh"
         },
         "@timestamp": "2018-12-27T22:36:15.000000Z",
         "action": {
@@ -429,7 +495,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "permit",
             "code": "0814044032",
-            "severity": 2
+            "severity": 2,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "utm:voip"
         },
         "@timestamp": "2018-12-28T00:47:08.000000Z",
         "action": {
@@ -478,7 +553,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "send",
             "code": "0105048039",
-            "reason": "SSL Alert sent"
+            "reason": "SSL Alert sent",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "dataset": "utm:wad"
         },
         "@timestamp": "2021-04-28T13:29:39.000000Z",
         "action": {
@@ -531,7 +611,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "passthrough",
             "code": "1203030258",
-            "severity": 4
+            "severity": 4,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "utm:waf"
         },
         "@timestamp": "2018-12-27T22:55:20.000000Z",
         "action": {
@@ -565,9 +654,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full": "http://172.16.200.55/index.html?a\\=0123456789&b\\=0123456789&c\\=0123456789",
             "original": "http://172.16.200.55/index.html?a\\=0123456789&b\\=0123456789&c\\=0123456789",
             "domain": "172.16.200.55",
+            "scheme": "http",
             "query": "a\\=0123456789&b\\=0123456789&c\\=0123456789",
             "path": "/index.html",
-            "scheme": "http",
             "port": 80
         },
         "user_agent": {
@@ -594,7 +683,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 51 > threshold 50",
-            "severity": 7
+            "severity": 7,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ],
+            "dataset": "utm:anomaly"
         },
         "@timestamp": "2018-12-27T19:40:04.000000Z",
         "action": {
@@ -643,7 +742,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
-            "severity": 7
+            "severity": 7,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ],
+            "dataset": "anomaly:anomaly"
         },
         "action": {
             "name": "clear_session",
@@ -691,7 +800,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "clear_session",
             "code": "0720018433",
-            "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times"
+            "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ],
+            "dataset": "utm:anomaly"
         },
         "action": {
             "name": "clear_session",
@@ -752,7 +871,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "clear_session",
             "code": "0720018433",
-            "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times"
+            "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ],
+            "dataset": "utm:anomaly"
         },
         "action": {
             "name": "clear_session",
@@ -812,9 +941,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|08192|utm:virus infected blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0211008192 cat=utm:virus FTNTFGTsubtype=virus FTNTFGTeventtype=infected FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938448 msg=File is infected. act=blocked app=HTTP externalId=695 src=10.1.100.11 dst=172.16.200.55 spt=44356 dpt=80 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined FTNTFGTpolicyid=1 proto=6 deviceDirection=0 fname=eicar.com FTNTFGTquarskip=File-was-not-quarantined. FTNTFGTvirus=EICAR_TEST_FILE FTNTFGTdtype=Virus FTNTFGTref=http://www.fortinet.com/ve?vn\\=EICAR_TEST_FILE FTNTFGTvirusid=2172 request=http://172.16.200.55/virus/eicar.com FTNTFGTprofile=g-default duser=bob requestClientApplication=curl/7.47.0 FTNTFGTanalyticscksum=275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f FTNTFGTanalyticssubmit=false FTNTFGTcrscore=50 FTNTFGTcrlevel=critical",
         "event": {
             "action": "blocked",
+            "dataset": "utm:virus",
             "code": "0211008192",
             "reason": "File is infected.",
-            "severity": 4
+            "severity": 4,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ]
         },
         "@timestamp": "2018-12-27T19:20:48.000000Z",
         "action": {
@@ -851,8 +990,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full": "http://172.16.200.55/virus/eicar.com",
             "original": "http://172.16.200.55/virus/eicar.com",
             "domain": "172.16.200.55",
-            "path": "/virus/eicar.com",
             "scheme": "http",
+            "path": "/virus/eicar.com",
             "port": 80
         },
         "user_agent": {
@@ -877,9 +1016,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v5.6.0|08192|utm:virus infected blocked|4|FTNTFGTlogid=0211008192 cat=utm:virus FTNTFGTsubtype=virus FTNTFGTeventtype=infected FTNTFGTlevel=warning FTNTFGTvd=vdom1 msg=File is infected act=blocked app=HTTP externalId=56633 src=1.1.1.1 dst=2.2.2.2 spt=45719 dpt=80 deviceInboundInterface=port15 deviceOutboundInterface=port19 proto=6 deviceDirection=0 fname=eicar.com FTNTFGTchecksum=1dd02bdb FTNTFGTquarskip=No-skip cs1=EICAR_TEST_FILE cs1Label=Virus FTNTFGTdtype=Virus cs2=http://www.fortinet.com/ve?vn\\=EICAR_TEST_FILE cs2Label=Reference FTNTFGTvirusid=2172 request=http://2.2.2.2/eicar.com FTNTFGTprofile=default duser= requestClientApplication=Wget/1 10 2 FTNTFGTanalyticscksum=131f95c51cc819465fa1797f6ccacf9d494aaaff46fa3eac73ae63ffbdfd8267 FTNTFGTanalyticssubmit=false FTNTFGTcrscore=50 FTNTFGTcrlevel=critical",
         "event": {
             "action": "blocked",
+            "dataset": "utm:virus",
             "code": "0211008192",
             "reason": "File is infected",
-            "severity": 4
+            "severity": 4,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ]
         },
         "action": {
             "name": "blocked",
@@ -915,8 +1064,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full": "http://2.2.2.2/eicar.com",
             "original": "http://2.2.2.2/eicar.com",
             "domain": "2.2.2.2",
-            "path": "/eicar.com",
             "scheme": "http",
+            "path": "/eicar.com",
             "port": 80
         },
         "user_agent": {
@@ -943,7 +1092,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "pass",
             "code": "1059028704",
             "reason": "Web.Client: HTTP.BROWSER_Firefox,",
-            "severity": 2
+            "severity": 2,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "utm:app-ctrl"
         },
         "@timestamp": "2018-12-27T22:28:08.000000Z",
         "action": {
@@ -998,7 +1156,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "pass",
             "code": "1501054802",
-            "reason": "Domain is monitored"
+            "reason": "Domain is monitored",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "dns:dns-response"
         },
         "@timestamp": "2018-12-27T22:45:26.000000Z",
         "action": {
@@ -1076,7 +1243,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "log-only",
             "code": "0508020503",
             "reason": "general email log",
-            "severity": 2
+            "severity": 2,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "utm:emailfilter"
         },
         "@timestamp": "2018-12-27T19:36:58.000000Z",
         "action": {
@@ -1125,9 +1301,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|32002|event:system login failed|7|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0100032002 cat=event:system FTNTFGTsubtype=system FTNTFGTlevel=alert FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938140 FTNTFGTlogdesc=Admin login failed FTNTFGTsn=0 duser=admin1 sproc=https(172.16.200.254) FTNTFGTmethod=https src=172.16.200.254 dst=172.16.200.1 act=login outcome=failed reason=name_invalid msg=Administrator admin1 login failed from https(172.16.200.254) because of invalid user name",
         "event": {
             "action": "login",
+            "dataset": "event:system",
             "code": "0100032002",
             "reason": "Administrator admin1 login failed from https(172.16.200.254) because of invalid user name",
-            "severity": 7
+            "severity": 7,
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2018-12-27T19:15:40.000000Z",
         "action": {
@@ -1170,9 +1351,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|43008|event:user authentication success|3|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0102043008 cat=event:user FTNTFGTsubtype=user FTNTFGTlevel=notice FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938255 FTNTFGTlogdesc=Authentication success src=10.1.100.11 dst=172.16.200.55 FTNTFGTpolicyid=1 deviceInboundInterface=port12 duser=bob FTNTFGTgroup=N/A FTNTFGTauthproto=TELNET(10.1.100.11) act=authentication outcome=success reason=N/A msg=User bob succeeded in authentication",
         "event": {
             "action": "authentication",
+            "dataset": "event:user",
             "code": "0102043008",
             "reason": "User bob succeeded in authentication",
-            "severity": 3
+            "severity": 3,
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2018-12-27T19:17:35.000000Z",
         "action": {
@@ -1216,7 +1402,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "pass",
             "code": "1059028704",
-            "reason": "Web.Client: HTTPS.BROWSER,"
+            "reason": "Web.Client: HTTPS.BROWSER,",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "utm:app-ctrl"
         },
         "@timestamp": "2020-01-24T10:09:50.000000Z",
         "action": {
@@ -1295,7 +1490,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "ip-conn",
             "code": "0000000011",
-            "timezone": "+0300"
+            "timezone": "+0300",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2020-10-13T09:22:43.587868Z",
         "action": {
@@ -1363,7 +1567,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0001000014",
-            "timezone": "+0200"
+            "timezone": "+0200",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:local"
         },
         "@timestamp": "2020-10-13T09:02:14.900309Z",
         "action": {
@@ -1436,7 +1649,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0001000014",
-            "severity": 3
+            "severity": 3,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:local"
         },
         "@timestamp": "2020-10-14T08:11:38.000000Z",
         "action": {
@@ -1488,7 +1710,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0000000013",
-            "timezone": "+0200"
+            "timezone": "+0200",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2020-10-13T10:22:38.311909Z",
         "action": {
@@ -1559,9 +1790,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.4|32021|event:system login failed|7|deviceExternalId=FGVM2V0000171868 FortinetFortiGatelogid=0100032021 cat=event:system FortinetFortiGatesubtype=system FortinetFortiGatelevel=alert FortinetFortiGatevd=root FortinetFortiGateeventtime=1579172447 FortinetFortiGatelogdesc=Admin login disabled sproc=1.1.1.1 FortinetFortiGateaction=login outcome=failed reason=exceed_limit msg=Login disabled from IP 1.1.1.1 for 60 seconds because of 3 bad attempts",
         "event": {
             "action": "login",
+            "dataset": "event:system",
             "code": "0100032021",
             "reason": "Login disabled from IP 1.1.1.1 for 60 seconds because of 3 bad attempts",
-            "severity": 7
+            "severity": 7,
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2020-01-16T11:00:47.000000Z",
         "action": {
@@ -1592,7 +1828,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "ssl-new-con",
             "code": "0101039943",
             "reason": "SSL new connection",
-            "severity": 2
+            "severity": 2,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "event:vpn"
         },
         "@timestamp": "2021-11-19T16:10:58.000000Z",
         "action": {
@@ -1631,7 +1876,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "timeout",
             "code": "0000000013",
-            "severity": 3
+            "severity": 3,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection",
+                "end"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2019-10-30T21:44:36.000000Z",
         "action": {
@@ -1690,7 +1944,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "close",
             "code": "0000000013",
-            "severity": 3
+            "severity": 3,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection",
+                "end"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2018-12-27T19:07:55.000000Z",
         "action": {
@@ -1748,7 +2011,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "close",
             "code": "0000000013",
-            "severity": 3
+            "severity": 3,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection",
+                "end"
+            ],
+            "dataset": "traffic:forward"
         },
         "action": {
             "name": "close",
@@ -1805,7 +2077,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=2018-07-26,time=16:51:36,logid=\"0000000013\",type=\"traffic\",subtype=\"forward\",level=\"notice\",vd=\"root\",eventtime=1532616695,srcip=1.1.1.1,srcport=10016,srcintf=\"test\",srcintfrole=\"undefined\",dstip=2.2.2.2,dstport=20,dstintf=\"dmz1\",dstintfrole=\"dmz\",sessionid=10006,proto=6,action=\"accept\",policyid=1,policytype=\"policy\",service=\"tcp/20\",dstcountry=\"France\",srccountry=\"United States\",trandisp=\"noop\",appid=35421,app=\"application\",appcat=\"Storage.Backup\",apprisk=\"medium\",applist=\"default\",duration=10,sentbyte=2000,rcvdbyte=1000,sentpkt=0,rcvdpkt=0,utmaction=\"allow\",countapp=1,devtype=\"iPad\",osname=\"Apple\",osversion=\"ver\",mastersrcmac=\"01:01:01:01:01:01\",srcmac=\"01:01:01:01:01:01\",srcserver=0,dstdevtype=\"Android Phone\",dstosname=\"Android\",dstosversion=\"ver\",masterdstmac=\"00:00:00:00:00:00\",dstmac=\"00:00:00:00:00:00\",dstserver=0,utmref=65491-194",
         "event": {
             "action": "accept",
-            "code": "0000000013"
+            "code": "0000000013",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2018-07-26T14:51:35.000000Z",
         "action": {
@@ -1878,7 +2159,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=2018-07-26 time=16:51:36 logid=\"0000000013\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"root\" eventtime=1532616695 srcip=1.1.1.1 srcport=10016 srcintf=\"test\" srcintfrole=\"undefined\" dstip=2.2.2.2 dstport=20 dstintf=\"test1\" dstintfrole=\"dmz\" sessionid=10006 proto=6 action=\"accept\" policyid=1 policytype=\"policy\" service=\"tcp/20\" dstcountry=\"France\" srccountry=\"United States\" trandisp=\"noop\" appid=35421 app=\"Dropbox_File.Download\" appcat=\"Storage.Backup\" apprisk=\"medium\" applist=\"default\" duration=10 sentbyte=2000 rcvdbyte=1000 sentpkt=0 rcvdpkt=0 utmaction=\"allow\" countapp=1 devtype=\"iPad\" osname=\"Apple\" osversion=\"ver\" mastersrcmac=\"01:01:01:01:01:01\" srcmac=\"01:01:01:01:01:01\" srcserver=0 dstdevtype=\"Android Phone\" dstosname=\"Android\" dstosversion=\"ver\" masterdstmac=\"00:00:00:00:00:00\" dstmac=\"00:00:00:00:00:00\" dstserver=0 utmref=65491-194",
         "event": {
             "action": "accept",
-            "code": "0000000013"
+            "code": "0000000013",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2018-07-26T14:51:35.000000Z",
         "action": {
@@ -1951,7 +2241,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=2021-06-21 time=09:38:29 devname=\"abc\" devid=\"1\" logid=\"0000000010\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"PRX1-AA\" eventtime=1624261109 srcip=1.1.1.1 srcport=50592 srcintf=\"port2\" srcintfrole=\"dmz\" dstip=2.2.2.2 dstport=443 dstintf=\"test\" dstintfrole=\"wan\" sessionid=1224900441 poluuid=\"1eb429d4-ff52-51ea-d119-d1db60e409a6\" dstcountry=\"United Kingdom\" srccountry=\"Reserved\" service=\"HTTPS\" wanoptapptype=\"web-proxy\" proto=6 action=\"accept\" duration=37 policyid=1 policytype=\"proxy-policy\" wanin=5851 rcvdbyte=5851 wanout=2523 lanin=2769 sentbyte=2769 lanout=5923 appcat=\"unscanned\" utmaction=\"allow\" countweb=1",
         "event": {
             "action": "accept",
-            "code": "0000000010"
+            "code": "0000000010",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2021-06-21T07:38:29.000000Z",
         "action": {
@@ -2024,7 +2323,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "dns",
             "code": "0000000011",
             "severity": 4,
-            "timezone": "+0200"
+            "timezone": "+0200",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2022-09-05T10:43:45.920035Z",
         "action": {
@@ -2073,7 +2381,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "date=2018-07-26 time=14:56:21 devname=\"abc\" devid=\"1\" logid=\"0000000013\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"root\" eventtime=1609941381 srcip=1.1.1.1 srcport=52125 srcintf=\"port9\" srcintfrole=\"undefined\" dstip=3.3.3.3 dstport=3727 dstintf=\"port10\" dstintfrole=\"undefined\" poluuid=\"d77c53b2-a3c6-51e9-49b2-61c9e68c1f7e\" sessionid=578033623 proto=6 action=\"server-rst\" policyid=207 policytype=\"policy\" service=\"tcp/3727\" dstcountry=\"France\" srccountry=\"Netherlands\" trandisp=\"dnat\" tranip=2.2.2.2 tranport=3727 duration=5 sentbyte=80 rcvdbyte=40 sentpkt=2 rcvdpkt=1 appcat=\"unscanned\" dstdevtype=\"Router/NAT Device\" dstdevcategory=\"Windows Device\" masterdstmac=\"00:00:00:00:00:00\" dstmac=\"00:00:00:00:00:00\" dstserver=1",
         "event": {
             "action": "server-rst",
-            "code": "0000000013"
+            "code": "0000000013",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection",
+                "end"
+            ],
+            "dataset": "traffic:forward"
         },
         "@timestamp": "2021-01-06T13:56:21.000000Z",
         "action": {
@@ -2151,9 +2468,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "logver=60 timestamp=1566916060 tz=\"UTC+2\" devname=\"abc\" devid=\"1\" vd=\"IPSEC\" date=2019-08-27 time=16:27:40 logid=\"0101039949\" type=\"event\" subtype=\"vpn\" level=\"information\" eventtime=1566916060 logdesc=\"SSL VPN statistics\" action=\"tunnel-stats\" tunneltype=\"ssl-tunnel\" tunnelid=1995 remip=1.1.1.1 tunnelip=2.2.2.2 user=\"test\" group=\"GRP_Generic_JAIL_VPN\" dst_host=\"N/A\" nextstat=600 duration=8437 sentbyte=71524041 rcvdbyte=6151809 msg=\"SSL tunnel statistics\"\n",
         "event": {
             "action": "tunnel-stats",
+            "dataset": "event:vpn",
             "code": "0101039949",
             "reason": "\"SSL tunnel statistics\"\n",
-            "timezone": "UTC+2"
+            "timezone": "UTC+2",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2019-08-27T12:27:40.000000Z",
         "action": {
@@ -2211,8 +2533,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": " time=12:02:57 devname=\"abc\" devid=\"1\" logid=\"0101037141\" type=\"event\" subtype=\"vpn\" level=\"notice\" vd=\"root\" eventtime=1614855777 logdesc=\"IPsec tunnel statistics\" msg=\"IPsec tunnel statistics\" action=\"tunnel-stats\" remip=1.1.1.1 locip=93.187.43.9 remport=500 locport=500 outintf=\"N/A\" cookies=\"9b064274e0648c03/662c2b1264a2295e\" user=\"N/A\" group=\"N/A\" xauthuser=\"N/A\" xauthgroup=\"N/A\" assignip=N/A vpntunnel=\"VPN-HELPLINE\" tunnelip=N/A tunnelid=0 tunneltype=\"ipsec\" duration=102908570 sentbyte=7649 rcvdbyte=0 nextstat=600",
         "event": {
             "action": "tunnel-stats",
+            "dataset": "event:vpn",
             "code": "0101037141",
-            "reason": "IPsec tunnel statistics"
+            "reason": "IPsec tunnel statistics",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2021-03-04T11:02:57.000000Z",
         "action": {
@@ -2270,8 +2597,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": " time=14:38:46 devname=\"abc\" devid=\"1\" logid=\"0101041987\" type=\"event\" subtype=\"vpn\" level=\"information\" vd=\"root\" eventtime=1615469926 logdesc=\"Certificate updated\" action=\"info\" cert-type=\"CRL\" status=\"success\" name=\"CRL_1\" method=\"HTTP\" reason=\"N/A\" msg=\"A certificate is updated\"",
         "event": {
             "action": "CRL_1",
+            "dataset": "event:vpn",
             "code": "0101041987",
-            "reason": "A certificate is updated"
+            "reason": "A certificate is updated",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
         },
         "@timestamp": "2021-03-11T13:38:46.000000Z",
         "action": {
@@ -2313,9 +2645,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|13056|utm:webfilter ftgd_blk blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0316013056 cat=utm:webfilter FTNTFGTsubtype=webfilter FTNTFGTeventtype=ftgd_blk FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938629 FTNTFGTpolicyid=1 externalId=764 duser=bob src=10.1.100.11 spt=59194 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=185.230.61.185 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP dhost=ambrishsriv.wixsite.com FTNTFGTprofile=g-default act=blocked FTNTFGTreqtype=direct request=/bizsquads out=96 in=0 deviceDirection=1 msg=URL belongs to a denied category in policy FTNTFGTmethod=domain FTNTFGTcat=26 requestContext=Malicious Websites FTNTFGTcrscore=60 FTNTFGTcrlevel=high",
         "event": {
             "action": "blocked",
+            "dataset": "utm:webfilter",
             "code": "0316013056",
             "reason": "URL belongs to a denied category in policy",
-            "severity": 4
+            "severity": 4,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied",
+                "connection",
+                "end"
+            ]
         },
         "@timestamp": "2018-12-27T19:23:49.000000Z",
         "action": {
@@ -2385,10 +2727,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`dns.question.name` | `keyword` | The name being queried. |
 |`dns.question.type` | `keyword` | The type of record being queried. |
 |`event.action` | `keyword` | The action captured by the event. |
+|`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
+|`event.dataset` | `keyword` | Name of the dataset. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`event.timezone` | `keyword` | Event time zone. |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`fortinet.apprisk` | `keyword` | Risk level of the application. |
 |`fortinet.event.desc` | `keyword` | Type of log. |
