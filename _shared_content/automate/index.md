@@ -32,7 +32,6 @@ Here is the list of permissions that constitutes this role:
 | SYMPHONY_READ_PLAYBOOKS | List and get Symphony Playbooks |
 | SYMPHONY_READ_PLAYBOOK_RUNS | List and get Symphony Playbook Runs |
 | SYMPHONY_READ_PLAYBOOK_RUNS_STATS | List and get statistics about Symphony Playbook Runs |
-| SYMPHONY_WRITE_MODULES | Modify Symphony Modules |
 | SYMPHONY_WRITE_PLAYBOOKS | Write Symphony Playbooks |
 | SYMPHONY_WRITE_PLAYBOOK_RUNS | Modify Symphony Playbook Runs |
 
