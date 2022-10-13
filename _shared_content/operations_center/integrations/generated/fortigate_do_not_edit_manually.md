@@ -39,7 +39,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "CEF:0|Fortinet|Fortigate|v6.2.9|32102|event:system|7|deviceExternalId=FGVM2V0000171868 FortinetFortiGatelogid=0100032102 cat=event:system FortinetFortiGatesubtype=system FortinetFortiGatelevel=alert FortinetFortiGatevd=root FortinetFortiGateeventtime=1637681708541881380 FortinetFortiGatetz=+0100 FortinetFortiGatelogdesc=Configuration changed duser= sproc=console msg=Configuration is changed in the admin session",
         "event": {
-            "dataset": "event:system",
             "code": "0100032102",
             "reason": "Configuration is changed in the admin session",
             "severity": 7,
@@ -47,11 +46,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "network"
-            ]
+            ],
+            "dataset": "event:system"
         },
         "@timestamp": "2021-11-23T14:35:08.541882Z",
         "action": {
-            "outcome": "success",
             "type": "system"
         },
         "log": {
@@ -75,7 +74,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|24576|utm:dlp dlp block|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0954024576 cat=utm:dlp FTNTFGTsubtype=dlp FTNTFGTeventtype=dlp FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545949776 FTNTFGTfilteridx=1 FTNTFGTdlpextra=test-dlp3 FTNTFGTfiltertype=file-type FTNTFGTfiltercat=file FTNTFGTseverity=medium FTNTFGTpolicyid=1 externalId=12680 FTNTFGTepoch=418303178 FTNTFGTeventid=0 duser=bob src=10.1.100.11 spt=33638 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=172.18.62.158 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP FTNTFGTfiletype=gif deviceDirection=0 act=block dhost=172.18.62.158 request=/dlp/flower.gif requestClientApplication=curl/7.47.0 fname=flower.gif fsize=1209 FTNTFGTprofile=test-dlp",
         "event": {
             "action": "block",
-            "dataset": "utm:dlp",
             "code": "0954024576",
             "severity": 4,
             "kind": "event",
@@ -86,41 +84,57 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "denied",
                 "connection",
                 "end"
-            ]
+            ],
+            "dataset": "utm:dlp"
         },
         "@timestamp": "2018-12-27T22:29:36.000000Z",
         "action": {
             "name": "block",
-            "outcome": "success",
             "type": "dlp"
         },
         "destination": {
             "address": "172.18.62.158",
+            "domain": "172.18.62.158",
             "ip": "172.18.62.158",
-            "port": 80
+            "port": 80,
+            "user": {
+                "name": "bob"
+            }
         },
         "file": {
-            "name": "flower.gif"
+            "name": "flower.gif",
+            "size": 1209
         },
         "log": {
             "level": "warning"
         },
         "network": {
             "application": "HTTP",
-            "transport": "tcp"
+            "protocol": "HTTP",
+            "transport": "tcp",
+            "direction": "inbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 33638
+            "port": 33638,
+            "address": "10.1.100.11"
         },
         "url": {
-            "full": "/dlp/flower.gif",
             "original": "/dlp/flower.gif",
             "path": "/dlp/flower.gif"
         },
@@ -128,6 +142,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "curl/7.47.0"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
+            "hosts": [
+                "172.18.62.158"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.18.62.158"
@@ -162,13 +182,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:45:26.000000Z",
         "action": {
             "name": "pass",
-            "outcome": "success",
             "type": "dns-response"
         },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
-            "port": 53
+            "port": 53,
+            "user": {
+                "name": "bob"
+            }
         },
         "log": {
             "level": "notice"
@@ -177,16 +199,29 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "udp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 54621
+            "port": 54621,
+            "address": "10.1.100.11"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.16.200.55"
@@ -222,37 +257,57 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T19:28:07.000000Z",
         "action": {
             "name": "reset",
-            "outcome": "success",
             "type": "ips"
         },
         "destination": {
             "address": "10.1.100.11",
+            "domain": "172.16.200.55",
             "ip": "10.1.100.11",
-            "port": 44362
+            "port": 44362,
+            "user": {
+                "name": "bob"
+            }
         },
         "log": {
             "level": "alert"
         },
         "network": {
             "application": "HTTP",
-            "transport": "tcp"
+            "protocol": "HTTP",
+            "transport": "tcp",
+            "direction": "inbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "172.16.200.55",
             "ip": "172.16.200.55",
-            "port": 80
+            "port": 80,
+            "address": "172.16.200.55"
         },
         "url": {
-            "full": "/virus/eicar.com",
             "original": "/virus/eicar.com",
             "path": "/virus/eicar.com"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
+            "hosts": [
+                "172.16.200.55"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.16.200.55"
@@ -268,7 +323,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "time=17:24:16 devname=\"abc\" devid=\"1\" logid=\"0101037130\" type=\"event\" subtype=\"vpn\" level=\"error\" vd=\"root\" eventtime=1580142256 logdesc=\"Progress IPsec phase 2\" msg=\"progress IPsec phase 2\" action=\"negotiate\" remip=1.1.1.1 locip=93.187.43.9 remport=500 locport=500 outintf=\"N/A\" cookies=\"07f928d94dd975ea/89b1d990f54f0b82\" user=\"N/A\" group=\"N/A\" xauthuser=\"N/A\" xauthgroup=\"N/A\" assignip=N/A vpntunnel=\"VPN-ACCENTURE\" status=\"failure\" init=\"local\" exch=\"CREATE_CHILD\" dir=\"inbound\" role=\"initiator\" result=\"ERROR\" version=\"IKEv2\"",
+        "message": "time=17:24:16 devname=\"abc\" devid=\"1\" logid=\"0101037130\" type=\"event\" subtype=\"vpn\" level=\"error\" vd=\"root\" eventtime=1580142256 logdesc=\"Progress IPsec phase 2\" msg=\"progress IPsec phase 2\" action=\"negotiate\" remip=1.1.1.1 locip=93.187.43.9 remport=500 locport=500 outintf=\"N/A\" cookies=\"07f928d94dd975ea/89b1d990f54f0b82\" user=\"N/A\" group=\"N/A\" xauthuser=\"N/A\" xauthgroup=\"N/A\" assignip=N/A vpntunnel=\"VPN-FOOBAR\" status=\"failure\" init=\"local\" exch=\"CREATE_CHILD\" dir=\"inbound\" role=\"initiator\" result=\"ERROR\" version=\"IKEv2\"",
         "event": {
             "action": "negotiate",
             "dataset": "event:vpn",
@@ -393,18 +448,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "time=16:23:50 devname=\"abc\" devid=\"1\" logid=\"0100032011\" type=\"event\" subtype=\"system\" level=\"notice\" vd=\"PRX1-AA\" eventtime=1619619830 logdesc=\"Disk log rolled\" action=\"roll-log\" reason=\"file-size\" log=\"tlog\" msg=\"Disk log has rolled.\"",
         "event": {
             "action": "roll-log",
-            "dataset": "event:system",
             "code": "0100032011",
             "reason": "Disk log has rolled.",
             "kind": "event",
             "category": [
                 "network"
-            ]
+            ],
+            "dataset": "event:system"
         },
         "@timestamp": "2021-04-28T14:23:50.000000Z",
         "action": {
             "name": "roll-log",
-            "outcome": "success",
             "type": "system"
         },
         "fortinet": {
@@ -451,13 +505,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:36:15.000000Z",
         "action": {
             "name": "passthrough",
-            "outcome": "success",
             "type": "ssh"
         },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
-            "port": 22
+            "port": 22,
+            "user": {
+                "name": "bob"
+            }
         },
         "log": {
             "level": "notice"
@@ -466,16 +522,29 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "tcp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 56698
+            "port": 56698,
+            "address": "10.1.100.11"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.16.200.55"
@@ -509,13 +578,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-28T00:47:08.000000Z",
         "action": {
             "name": "permit",
-            "outcome": "success",
+            "outcome": "start",
             "type": "voip"
         },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
-            "port": 5060
+            "port": 5060,
+            "user": {
+                "name": "sip:service@172.16.200.55:5060"
+            }
         },
         "log": {
             "level": "information"
@@ -524,16 +596,33 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "udp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 5060
+            "port": 5060,
+            "user": {
+                "name": "sip:sipp@127.0.0.1:5060"
+            },
+            "address": "10.1.100.11"
         },
         "related": {
+            "user": [
+                "sip:service@172.16.200.55:5060",
+                "sip:sipp@127.0.0.1:5060"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.16.200.55"
@@ -563,7 +652,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2021-04-28T13:29:39.000000Z",
         "action": {
             "name": "send",
-            "outcome": "success",
             "type": "wad"
         },
         "destination": {
@@ -625,33 +713,46 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:55:20.000000Z",
         "action": {
             "name": "passthrough",
-            "outcome": "success",
             "type": "waf"
         },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
-            "port": 80
+            "port": 80,
+            "user": {
+                "name": "bob"
+            }
         },
         "log": {
             "level": "warning"
         },
         "network": {
             "application": "HTTP",
-            "transport": "tcp"
+            "protocol": "HTTP",
+            "transport": "tcp",
+            "direction": "inbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 57304
+            "port": 57304,
+            "address": "10.1.100.11"
         },
         "url": {
-            "full": "http://172.16.200.55/index.html?a\\=0123456789&b\\=0123456789&c\\=0123456789",
             "original": "http://172.16.200.55/index.html?a\\=0123456789&b\\=0123456789&c\\=0123456789",
             "domain": "172.16.200.55",
             "scheme": "http",
@@ -663,6 +764,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "curl/7.47.0"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.16.200.55"
@@ -698,7 +802,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T19:40:04.000000Z",
         "action": {
             "name": "clear_session",
-            "outcome": "success",
             "type": "anomaly"
         },
         "destination": {
@@ -710,16 +813,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "PING",
+            "protocol": "PING",
             "transport": "icmp"
         },
         "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
-            "ip": "10.1.100.11"
+            "ip": "10.1.100.11",
+            "address": "10.1.100.11"
         },
         "related": {
             "ip": [
@@ -756,7 +865,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "action": {
             "name": "clear_session",
-            "outcome": "success",
             "type": "anomaly"
         },
         "destination": {
@@ -769,16 +877,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "icmp/146/81",
+            "protocol": "icmp/146/81",
             "transport": "icmp"
         },
         "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "port15"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v5.6.0"
         },
         "source": {
-            "address": "1.1.1.1",
-            "ip": "1.1.1.1"
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
         },
         "related": {
             "ip": [
@@ -814,7 +928,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "action": {
             "name": "clear_session",
-            "outcome": "success",
             "type": "anomaly"
         },
         "destination": {
@@ -885,7 +998,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "action": {
             "name": "clear_session",
-            "outcome": "success",
             "type": "anomaly"
         },
         "destination": {
@@ -941,7 +1053,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|08192|utm:virus infected blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0211008192 cat=utm:virus FTNTFGTsubtype=virus FTNTFGTeventtype=infected FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938448 msg=File is infected. act=blocked app=HTTP externalId=695 src=10.1.100.11 dst=172.16.200.55 spt=44356 dpt=80 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined FTNTFGTpolicyid=1 proto=6 deviceDirection=0 fname=eicar.com FTNTFGTquarskip=File-was-not-quarantined. FTNTFGTvirus=EICAR_TEST_FILE FTNTFGTdtype=Virus FTNTFGTref=http://www.fortinet.com/ve?vn\\=EICAR_TEST_FILE FTNTFGTvirusid=2172 request=http://172.16.200.55/virus/eicar.com FTNTFGTprofile=g-default duser=bob requestClientApplication=curl/7.47.0 FTNTFGTanalyticscksum=275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f FTNTFGTanalyticssubmit=false FTNTFGTcrscore=50 FTNTFGTcrlevel=critical",
         "event": {
             "action": "blocked",
-            "dataset": "utm:virus",
             "code": "0211008192",
             "reason": "File is infected.",
             "severity": 4,
@@ -953,18 +1064,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "denied",
                 "connection",
                 "end"
-            ]
+            ],
+            "dataset": "utm:virus"
         },
         "@timestamp": "2018-12-27T19:20:48.000000Z",
         "action": {
             "name": "blocked",
-            "outcome": "success",
             "type": "virus"
         },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
-            "port": 80
+            "port": 80,
+            "user": {
+                "name": "bob"
+            }
         },
         "file": {
             "name": "eicar.com"
@@ -974,20 +1088,31 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "HTTP",
-            "transport": "tcp"
+            "protocol": "HTTP",
+            "transport": "tcp",
+            "direction": "inbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 44356
+            "port": 44356,
+            "address": "10.1.100.11"
         },
         "url": {
-            "full": "http://172.16.200.55/virus/eicar.com",
             "original": "http://172.16.200.55/virus/eicar.com",
             "domain": "172.16.200.55",
             "scheme": "http",
@@ -998,6 +1123,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "curl/7.47.0"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.16.200.55"
@@ -1016,7 +1144,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v5.6.0|08192|utm:virus infected blocked|4|FTNTFGTlogid=0211008192 cat=utm:virus FTNTFGTsubtype=virus FTNTFGTeventtype=infected FTNTFGTlevel=warning FTNTFGTvd=vdom1 msg=File is infected act=blocked app=HTTP externalId=56633 src=1.1.1.1 dst=2.2.2.2 spt=45719 dpt=80 deviceInboundInterface=port15 deviceOutboundInterface=port19 proto=6 deviceDirection=0 fname=eicar.com FTNTFGTchecksum=1dd02bdb FTNTFGTquarskip=No-skip cs1=EICAR_TEST_FILE cs1Label=Virus FTNTFGTdtype=Virus cs2=http://www.fortinet.com/ve?vn\\=EICAR_TEST_FILE cs2Label=Reference FTNTFGTvirusid=2172 request=http://2.2.2.2/eicar.com FTNTFGTprofile=default duser= requestClientApplication=Wget/1 10 2 FTNTFGTanalyticscksum=131f95c51cc819465fa1797f6ccacf9d494aaaff46fa3eac73ae63ffbdfd8267 FTNTFGTanalyticssubmit=false FTNTFGTcrscore=50 FTNTFGTcrlevel=critical",
         "event": {
             "action": "blocked",
-            "dataset": "utm:virus",
             "code": "0211008192",
             "reason": "File is infected",
             "severity": 4,
@@ -1028,11 +1155,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "denied",
                 "connection",
                 "end"
-            ]
+            ],
+            "dataset": "utm:virus"
         },
         "action": {
             "name": "blocked",
-            "outcome": "success",
             "type": "virus"
         },
         "destination": {
@@ -1048,20 +1175,31 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "HTTP",
-            "transport": "tcp"
+            "protocol": "HTTP",
+            "transport": "tcp",
+            "direction": "inbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port19"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port15"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v5.6.0"
         },
         "source": {
-            "address": "1.1.1.1",
             "ip": "1.1.1.1",
-            "port": 45719
+            "port": 45719,
+            "address": "1.1.1.1"
         },
         "url": {
-            "full": "http://2.2.2.2/eicar.com",
             "original": "http://2.2.2.2/eicar.com",
             "domain": "2.2.2.2",
             "scheme": "http",
@@ -1106,11 +1244,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:28:08.000000Z",
         "action": {
             "name": "pass",
-            "outcome": "success",
             "type": "app-ctrl"
         },
         "destination": {
             "address": "104.80.89.24",
+            "domain": "detectportal.firefox.com",
             "ip": "104.80.89.24",
             "port": 80
         },
@@ -1119,24 +1257,38 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "HTTP",
-            "transport": "tcp"
+            "protocol": "HTTP",
+            "transport": "tcp",
+            "direction": "outbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 56826
+            "port": 56826,
+            "address": "10.1.100.11"
         },
         "url": {
-            "full": "/success.txt",
             "original": "/success.txt",
             "path": "/success.txt"
         },
         "related": {
+            "hosts": [
+                "detectportal.firefox.com"
+            ],
             "ip": [
                 "10.1.100.11",
                 "104.80.89.24"
@@ -1170,7 +1322,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:45:26.000000Z",
         "action": {
             "name": "pass",
-            "outcome": "success",
             "type": "dns-response"
         },
         "destination": {
@@ -1257,32 +1408,53 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T19:36:58.000000Z",
         "action": {
             "name": "log-only",
-            "outcome": "success",
             "type": "emailfilter"
         },
         "destination": {
             "address": "172.18.62.158",
             "ip": "172.18.62.158",
-            "port": 25
+            "port": 25,
+            "user": {
+                "name": "bob"
+            }
         },
         "log": {
             "level": "information"
         },
         "network": {
             "application": "SMTP",
-            "transport": "tcp"
+            "protocol": "SMTP",
+            "transport": "tcp",
+            "direction": "outbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
             "ip": "10.1.100.11",
-            "port": 35969
+            "port": 35969,
+            "user": {
+                "name": "testpc1@qa.fortinet.com"
+            },
+            "address": "10.1.100.11"
         },
         "related": {
+            "user": [
+                "bob",
+                "testpc1@qa.fortinet.com"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.18.62.158"
@@ -1301,24 +1473,27 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|32002|event:system login failed|7|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0100032002 cat=event:system FTNTFGTsubtype=system FTNTFGTlevel=alert FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938140 FTNTFGTlogdesc=Admin login failed FTNTFGTsn=0 duser=admin1 sproc=https(172.16.200.254) FTNTFGTmethod=https src=172.16.200.254 dst=172.16.200.1 act=login outcome=failed reason=name_invalid msg=Administrator admin1 login failed from https(172.16.200.254) because of invalid user name",
         "event": {
             "action": "login",
-            "dataset": "event:system",
             "code": "0100032002",
             "reason": "Administrator admin1 login failed from https(172.16.200.254) because of invalid user name",
             "severity": 7,
             "kind": "event",
             "category": [
                 "network"
-            ]
+            ],
+            "dataset": "event:system"
         },
         "@timestamp": "2018-12-27T19:15:40.000000Z",
         "action": {
             "name": "login",
-            "outcome": "success",
+            "outcome": "failed",
             "type": "system"
         },
         "destination": {
             "address": "172.16.200.1",
-            "ip": "172.16.200.1"
+            "ip": "172.16.200.1",
+            "user": {
+                "name": "admin1"
+            }
         },
         "log": {
             "level": "alert"
@@ -1333,6 +1508,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "172.16.200.254"
         },
         "related": {
+            "user": [
+                "admin1"
+            ],
             "ip": [
                 "172.16.200.1",
                 "172.16.200.254"
@@ -1351,14 +1529,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|43008|event:user authentication success|3|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0102043008 cat=event:user FTNTFGTsubtype=user FTNTFGTlevel=notice FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938255 FTNTFGTlogdesc=Authentication success src=10.1.100.11 dst=172.16.200.55 FTNTFGTpolicyid=1 deviceInboundInterface=port12 duser=bob FTNTFGTgroup=N/A FTNTFGTauthproto=TELNET(10.1.100.11) act=authentication outcome=success reason=N/A msg=User bob succeeded in authentication",
         "event": {
             "action": "authentication",
-            "dataset": "event:user",
             "code": "0102043008",
             "reason": "User bob succeeded in authentication",
             "severity": 3,
             "kind": "event",
             "category": [
                 "network"
-            ]
+            ],
+            "dataset": "event:user"
         },
         "@timestamp": "2018-12-27T19:17:35.000000Z",
         "action": {
@@ -1368,21 +1546,32 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "destination": {
             "address": "172.16.200.55",
-            "ip": "172.16.200.55"
+            "ip": "172.16.200.55",
+            "user": {
+                "name": "bob"
+            }
         },
         "log": {
             "level": "notice"
         },
         "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
-            "ip": "10.1.100.11"
+            "ip": "10.1.100.11",
+            "address": "10.1.100.11"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
             "ip": [
                 "10.1.100.11",
                 "172.16.200.55"
@@ -1416,7 +1605,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2020-01-24T10:09:50.000000Z",
         "action": {
             "name": "pass",
-            "outcome": "success",
             "type": "app-ctrl"
         },
         "destination": {
@@ -1457,12 +1645,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ruleset": "default"
         },
         "source": {
-            "address": "1.1.1.1",
             "ip": "1.1.1.1",
-            "port": 33345
+            "port": 33345,
+            "address": "1.1.1.1"
         },
         "url": {
-            "full": "/",
             "original": "/",
             "path": "/"
         },
@@ -1504,7 +1691,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2020-10-13T09:22:43.587868Z",
         "action": {
             "name": "ip-conn",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -1581,7 +1767,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2020-10-13T09:02:14.900309Z",
         "action": {
             "name": "accept",
-            "outcome": "success",
             "type": "local"
         },
         "destination": {
@@ -1663,7 +1848,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2020-10-14T08:11:38.000000Z",
         "action": {
             "name": "accept",
-            "outcome": "success",
             "type": "local"
         },
         "destination": {
@@ -1677,18 +1861,29 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "icmp/8/0",
+            "protocol": "icmp/8/0",
             "transport": "icmp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "root"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port1"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.10"
         },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 84,
             "ip": "1.1.1.1",
-            "packets": 1
+            "bytes": 84,
+            "packets": 1,
+            "address": "1.1.1.1"
         },
         "related": {
             "ip": [
@@ -1724,7 +1919,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2020-10-13T10:22:38.311909Z",
         "action": {
             "name": "accept",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -1790,19 +1984,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.4|32021|event:system login failed|7|deviceExternalId=FGVM2V0000171868 FortinetFortiGatelogid=0100032021 cat=event:system FortinetFortiGatesubtype=system FortinetFortiGatelevel=alert FortinetFortiGatevd=root FortinetFortiGateeventtime=1579172447 FortinetFortiGatelogdesc=Admin login disabled sproc=1.1.1.1 FortinetFortiGateaction=login outcome=failed reason=exceed_limit msg=Login disabled from IP 1.1.1.1 for 60 seconds because of 3 bad attempts",
         "event": {
             "action": "login",
-            "dataset": "event:system",
             "code": "0100032021",
             "reason": "Login disabled from IP 1.1.1.1 for 60 seconds because of 3 bad attempts",
             "severity": 7,
             "kind": "event",
             "category": [
                 "network"
-            ]
+            ],
+            "dataset": "event:system"
         },
         "@timestamp": "2020-01-16T11:00:47.000000Z",
         "action": {
             "name": "login",
-            "outcome": "success",
+            "outcome": "failed",
             "type": "system"
         },
         "log": {
@@ -1842,12 +2036,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2021-11-19T16:10:58.000000Z",
         "action": {
             "name": "ssl-new-con",
-            "outcome": "success",
             "type": "vpn"
         },
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2"
+            "ip": "2.2.2.2",
+            "user": {
+                "name": "N/A"
+            }
         },
         "log": {
             "level": "information"
@@ -1858,7 +2054,77 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.10"
         },
         "related": {
+            "user": [
+                "N/A"
+            ],
             "ip": [
+                "2.2.2.2"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "traffic_forward-RDP.CEF.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|Fortinet|FortiGate-1000C|5.6.14,build1727 (GA)|0000000020|forward traffic accept|5|start=Oct 12 2022 12:50:31 logver=506141727 deviceExternalId=FGT123 dvchost=FW-123 ad.vd=root ad.logid=0000000020 cat=traffic ad.subtype=forward deviceSeverity=notice ad.eventtime=1665571831 src=1.1.1.1 spt=55390 deviceInboundInterface=abc ad.srcintfrole=undefined dst=2.2.2.2 dpt=1522 deviceOutboundInterface=efg ad.dstintfrole=lan foo.poluuid=ec6ff8fe-5e41-51ec-bcbe-9e5484033dc8 externalID=3812440508 proto=6 act=accept ad.policyid=185 ad.policytype=policy app=SQLNET-1522 ad.dstcountry=Reserved ad.srccountry=Reserved ad.trandisp=noop ad.duration=268 out=202 in=52 ad.sentpkt=3 ad.rcvdpkt=1 ad.appcat=unscanned ad.sentdelta=0 ad.rcvddelta=0 tz=\"+0200\"",
+        "event": {
+            "action": "accept",
+            "severity": 5,
+            "timezone": "+0200",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed",
+                "connection"
+            ],
+            "dataset": "traffic"
+        },
+        "@timestamp": "2022-10-12T10:50:31.000000Z",
+        "action": {
+            "name": "accept"
+        },
+        "destination": {
+            "address": "2.2.2.2",
+            "bytes": 202,
+            "ip": "2.2.2.2",
+            "port": 1522
+        },
+        "network": {
+            "application": "SQLNET-1522",
+            "protocol": "SQLNET-1522",
+            "transport": "tcp"
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "name": "efg"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "abc"
+                }
+            },
+            "type": "FortiGate-1000C",
+            "vendor": "Fortinet",
+            "version": "5.6.14,build1727 (GA)"
+        },
+        "source": {
+            "ip": "1.1.1.1",
+            "bytes": 52,
+            "port": 55390,
+            "address": "1.1.1.1"
+        },
+        "related": {
+            "ip": [
+                "1.1.1.1",
                 "2.2.2.2"
             ]
         }
@@ -1890,7 +2156,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2019-10-30T21:44:36.000000Z",
         "action": {
             "name": "timeout",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -1909,19 +2174,30 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "HTTP",
+            "protocol": "HTTP",
             "transport": "tcp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port2"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port1"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.4"
         },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 144,
             "ip": "1.1.1.1",
+            "bytes": 144,
             "packets": 1,
-            "port": 49260
+            "port": 49260,
+            "address": "1.1.1.1"
         },
         "related": {
             "ip": [
@@ -1958,7 +2234,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T19:07:55.000000Z",
         "action": {
             "name": "close",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -1972,23 +2247,34 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "HTTPS",
+            "protocol": "HTTPS",
             "transport": "tcp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
         "source": {
-            "address": "10.1.100.11",
-            "bytes": 146668,
             "ip": "10.1.100.11",
+            "bytes": 146668,
             "nat": {
                 "ip": "172.16.200.1",
                 "port": 54190
             },
             "packets": 58,
-            "port": 54190
+            "port": 54190,
+            "address": "10.1.100.11"
         },
         "related": {
             "ip": [
@@ -2024,12 +2310,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "action": {
             "name": "close",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
             "address": "3.3.3.3",
             "bytes": 398,
+            "domain": "3.3.3.3",
             "ip": "3.3.3.3",
             "packets": 5,
             "port": 80
@@ -2039,25 +2325,41 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "HTTP",
+            "protocol": "HTTP",
             "transport": "tcp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port19"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port15"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v5.6.0"
         },
         "source": {
-            "address": "2.2.2.2",
-            "bytes": 1605,
             "ip": "2.2.2.2",
+            "bytes": 1605,
+            "domain": "2.2.2.2",
             "nat": {
                 "ip": "1.1.1.1",
                 "port": 45719
             },
             "packets": 5,
-            "port": 45719
+            "port": 45719,
+            "address": "2.2.2.2"
         },
         "related": {
+            "hosts": [
+                "2.2.2.2",
+                "3.3.3.3"
+            ],
             "ip": [
                 "1.1.1.1",
                 "2.2.2.2",
@@ -2091,7 +2393,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-07-26T14:51:35.000000Z",
         "action": {
             "name": "accept",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -2173,7 +2474,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-07-26T14:51:35.000000Z",
         "action": {
             "name": "accept",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -2255,7 +2555,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2021-06-21T07:38:29.000000Z",
         "action": {
             "name": "accept",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -2337,7 +2636,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-09-05T10:43:45.920035Z",
         "action": {
             "name": "dns",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -2350,17 +2648,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "application": "DNS",
+            "protocol": "DNS",
             "transport": "udp"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "RWC FRANCE 2023"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port1"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.4.9"
         },
         "source": {
-            "address": "172.16.222.150",
             "ip": "172.16.222.150",
-            "port": 49956
+            "port": 49956,
+            "address": "172.16.222.150"
         },
         "related": {
             "ip": [
@@ -2395,7 +2704,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2021-01-06T13:56:21.000000Z",
         "action": {
             "name": "server-rst",
-            "outcome": "success",
             "type": "forward"
         },
         "destination": {
@@ -2468,19 +2776,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "logver=60 timestamp=1566916060 tz=\"UTC+2\" devname=\"abc\" devid=\"1\" vd=\"IPSEC\" date=2019-08-27 time=16:27:40 logid=\"0101039949\" type=\"event\" subtype=\"vpn\" level=\"information\" eventtime=1566916060 logdesc=\"SSL VPN statistics\" action=\"tunnel-stats\" tunneltype=\"ssl-tunnel\" tunnelid=1995 remip=1.1.1.1 tunnelip=2.2.2.2 user=\"test\" group=\"GRP_Generic_JAIL_VPN\" dst_host=\"N/A\" nextstat=600 duration=8437 sentbyte=71524041 rcvdbyte=6151809 msg=\"SSL tunnel statistics\"\n",
         "event": {
             "action": "tunnel-stats",
-            "dataset": "event:vpn",
             "code": "0101039949",
             "reason": "\"SSL tunnel statistics\"\n",
             "timezone": "UTC+2",
             "kind": "event",
             "category": [
                 "network"
-            ]
+            ],
+            "dataset": "event:vpn"
         },
         "@timestamp": "2019-08-27T12:27:40.000000Z",
         "action": {
             "name": "tunnel-stats",
-            "outcome": "success",
             "type": "vpn"
         },
         "destination": {
@@ -2533,18 +2840,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": " time=12:02:57 devname=\"abc\" devid=\"1\" logid=\"0101037141\" type=\"event\" subtype=\"vpn\" level=\"notice\" vd=\"root\" eventtime=1614855777 logdesc=\"IPsec tunnel statistics\" msg=\"IPsec tunnel statistics\" action=\"tunnel-stats\" remip=1.1.1.1 locip=93.187.43.9 remport=500 locport=500 outintf=\"N/A\" cookies=\"9b064274e0648c03/662c2b1264a2295e\" user=\"N/A\" group=\"N/A\" xauthuser=\"N/A\" xauthgroup=\"N/A\" assignip=N/A vpntunnel=\"VPN-HELPLINE\" tunnelip=N/A tunnelid=0 tunneltype=\"ipsec\" duration=102908570 sentbyte=7649 rcvdbyte=0 nextstat=600",
         "event": {
             "action": "tunnel-stats",
-            "dataset": "event:vpn",
             "code": "0101037141",
             "reason": "IPsec tunnel statistics",
             "kind": "event",
             "category": [
                 "network"
-            ]
+            ],
+            "dataset": "event:vpn"
         },
         "@timestamp": "2021-03-04T11:02:57.000000Z",
         "action": {
             "name": "tunnel-stats",
-            "outcome": "success",
             "type": "vpn"
         },
         "destination": {
@@ -2645,7 +2951,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|Fortigate|v6.0.3|13056|utm:webfilter ftgd_blk blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0316013056 cat=utm:webfilter FTNTFGTsubtype=webfilter FTNTFGTeventtype=ftgd_blk FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938629 FTNTFGTpolicyid=1 externalId=764 duser=bob src=10.1.100.11 spt=59194 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=185.230.61.185 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP dhost=ambrishsriv.wixsite.com FTNTFGTprofile=g-default act=blocked FTNTFGTreqtype=direct request=/bizsquads out=96 in=0 deviceDirection=1 msg=URL belongs to a denied category in policy FTNTFGTmethod=domain FTNTFGTcat=26 requestContext=Malicious Websites FTNTFGTcrscore=60 FTNTFGTcrlevel=high",
         "event": {
             "action": "blocked",
-            "dataset": "utm:webfilter",
             "code": "0316013056",
             "reason": "URL belongs to a denied category in policy",
             "severity": 4,
@@ -2657,44 +2962,68 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "denied",
                 "connection",
                 "end"
-            ]
+            ],
+            "dataset": "utm:webfilter"
         },
         "@timestamp": "2018-12-27T19:23:49.000000Z",
         "action": {
             "name": "blocked",
-            "outcome": "success",
             "type": "webfilter"
         },
         "destination": {
             "address": "185.230.61.185",
             "bytes": 96,
+            "domain": "ambrishsriv.wixsite.com",
             "ip": "185.230.61.185",
-            "port": 80
+            "port": 80,
+            "user": {
+                "name": "bob"
+            }
         },
         "log": {
             "level": "warning"
         },
         "network": {
             "application": "HTTP",
-            "transport": "tcp"
+            "protocol": "HTTP",
+            "transport": "tcp",
+            "direction": "outbound"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "name": "port11"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "port12"
+                }
+            },
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.3"
         },
+        "rule": {
+            "category": "Malicious Websites"
+        },
         "source": {
-            "address": "10.1.100.11",
-            "bytes": 0,
             "ip": "10.1.100.11",
-            "port": 59194
+            "bytes": 0,
+            "port": 59194,
+            "address": "10.1.100.11"
         },
         "url": {
-            "full": "/bizsquads",
             "original": "/bizsquads",
             "path": "/bizsquads"
         },
         "related": {
+            "user": [
+                "bob"
+            ],
+            "hosts": [
+                "ambrishsriv.wixsite.com"
+            ],
             "ip": [
                 "10.1.100.11",
                 "185.230.61.185"
@@ -2724,6 +3053,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.nat.port` | `long` | Destination NAT Port |
 |`destination.packets` | `long` | Packets sent from the destination to the source. |
 |`destination.port` | `long` | Port of the destination. |
+|`destination.user.name` | `keyword` | Short name or login of the user. |
 |`dns.question.name` | `keyword` | The name being queried. |
 |`dns.question.type` | `keyword` | The type of record being queried. |
 |`event.action` | `keyword` | The action captured by the event. |
@@ -2736,6 +3066,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.timezone` | `keyword` | Event time zone. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
+|`file.size` | `long` | File size in bytes. |
 |`fortinet.apprisk` | `keyword` | Risk level of the application. |
 |`fortinet.event.desc` | `keyword` | Type of log. |
 |`fortinet.event.type` | `keyword` | Type of the event. |
@@ -2754,8 +3085,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.version` | `keyword` | Observer version. |
 |`rule.category` | `keyword` | Rule category |
 |`rule.ruleset` | `keyword` | Rule ruleset |
-|`source.address` | `keyword` | Source network address. |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
+|`source.domain` | `keyword` | The domain name of the source. |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.mac` | `keyword` | MAC address of the source. |
 |`source.nat.ip` | `ip` | Source NAT ip |
@@ -2763,7 +3094,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.packets` | `long` | Packets sent from the source to the destination. |
 |`source.port` | `long` | Port of the source. |
 |`source.user.name` | `keyword` | Short name or login of the user. |
-|`url.full` | `wildcard` | Full unparsed URL. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 
