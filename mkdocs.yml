@@ -10,6 +10,7 @@ extra_css:
 extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js
+- javascript/hotjar.js
 markdown_extensions:
 - admonition
 - attr_list
