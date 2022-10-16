@@ -83,13 +83,17 @@ To filter rules using tags, there are two ways:
 
 The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techniques** used by threat hunters and defenders to better classify attacks and assess an organization's risk.
 
-Every time you enable a rule, it appears on the matrix in blue in one or many cells. Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
+Every time you enable a rule, it appears in blue on the matrix in one or many cells. Each cell represents an attack technique. The cells are clickable and enable you to see or disable the rules activated in each one.
 
 ![security_profile](/assets/operation_center/rules_catalog/security_profilev2.png){: style="max-width:100%"}
 
 You can see how many rules are enabled in a cell by hovering over it. 
 
-The color changes depending on the number of rules activated in one cell. The blue gets darker when more rules are enabled and a white cell means that no rule is activated in it.
+The color changes depending on the number of rules activated in one cell: 
+
+- Blue cells means rules are enabled. Darker cells mean there are multiple rules enabled for this technique and lighter cells mean there are only few rules enabled for this tactic. 
+
+- A white cell means that no rules are activated in it. 
 
 ---
 
