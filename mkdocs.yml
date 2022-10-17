@@ -294,11 +294,13 @@ nav:
       - Splunk: tip/features/integrations/splunk.md
       - PaloAlto Cortex XSOAR: tip/features/integrations/palolto_xsoar.md
     - Automate:
-      - Overview: tip/features/automate/index.md
+      - Playbooks: tip/features/automate/index.md
+      - Navigate playbooks: tip/features/automate/navigate-playbooks.md
+      - Build playbooks: tip/features/automate/build-playbooks.md
       - Triggers: tip/features/automate/triggers.md
       - Operators: tip/features/automate/operators.md
       - Actions: tip/features/automate/actions.md
-      - Library:
+      - Actions Library:
         - AWS: tip/features/automate/library/aws.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
