@@ -90,11 +90,11 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
 #### Disable automatic update
 
-By default the agent will update itself automatically, if you would like to disable this feature the flag `-disable-auto-update` must be specified during the installation.
+By default, the agent will update itself automatically. If you would like to disable this feature, the flag `-disable-auto-update` must be specified during the installation.
 
 #### Manual update
 
-To manually update the agent follow the instructions specific to your OS:
+To manually update the agent, follow the instructions specific to your OS:
 
 === "Windows"
 
@@ -117,7 +117,7 @@ To manually update the agent follow the instructions specific to your OS:
 
 ### Uninstall
 
-To uninstall the agent follow the instructions specific to your OS.
+To uninstall the agent, follow the instructions specific to your OS.
 
 === "Windows"
 
@@ -219,4 +219,4 @@ If you want to automate the installation of the agent with this configuration op
 ## Resources footprint
 
 We monitor the agent metrics and try to keep its footprint as small as possible. 
-Right now on average our agent uses less than 3% of CPU and less than 1% of RAM.
+Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
