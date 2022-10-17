@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout `documentation` repository under `main/`
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         path: main
 
     - name: Checkout `intake-formats` repository under `intakes/`
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: SEKOIA-IO/intake-formats
         path: intakes
