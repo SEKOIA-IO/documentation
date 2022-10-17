@@ -211,6 +211,11 @@ If you want to automate the installation of the agent with this configuration op
     Sysmon is a Microsoft tool downloadable from [microsoft.com](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
     A common installation instruction and configuration file is available at [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
 
+    ### Configure Security log auditing
+
+    A proper security log auditing configuration will allow to agent to collect various security related events affecting the host.
+    This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md)
+
 ## Resources footprint
 
 We monitor the agent metrics and try to keep its footprint as small as possible. 
