@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/github-script@v3.1.0
+        uses: actions/github-script@v6.3.3
         with:
           script: |
             var artifacts = await github.actions.listWorkflowRunArtifacts({
