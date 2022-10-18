@@ -26,7 +26,7 @@ If you want to improve detection and analysis, you may want to enable Sysmon.
 > Warning: The installation of this tool will generate more logs, so it will consume more CPU ressources. Install it on equipements that are correctly dimensioned, or try it on low risk assets at first.
 
 Sysmon is a Microsoft tool you can download on their [website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
-A common installation instruction and configuration file is available on [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
+A common installation instruction and configuration file is available on [Florian Roth's Github](https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml). This configuration is an updated (and maintained) version of the [SwiftOnSecurity's configuration](https://github.com/SwiftOnSecurity/sysmon-config), which can also be used.
 > You will find dedicated NXLog configuration file for Sysmon usage at the end of this page.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9281438c-f7c3-4001-9bcc-45fd108ba1be_do_not_edit_manually.md!}
