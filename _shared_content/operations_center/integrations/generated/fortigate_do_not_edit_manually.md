@@ -312,8 +312,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2020-01-27T16:24:16.000000Z",
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
@@ -322,7 +325,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
         },
         "source": {
             "ip": "1.1.1.1",
@@ -377,8 +381,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "2.2.2.2"
         },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "http": {
@@ -392,7 +399,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
         },
         "source": {
             "ip": "1.1.1.1",
@@ -443,8 +451,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2021-04-28T14:23:50.000000Z",
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "PRX1-AA"
             }
         },
         "log": {
@@ -453,7 +464,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
         },
         "action": {
             "name": "roll-log",
@@ -636,9 +648,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 8002
         },
         "fortinet": {
-            "event": {
-                "type": "event",
-                "desc": "illegal parameter"
+            "fortigate": {
+                "event": {
+                    "type": "event",
+                    "desc": "illegal parameter"
+                },
+                "virtual_domain": "PRX1-AA"
             }
         },
         "log": {
@@ -647,7 +662,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
         },
         "source": {
             "ip": "2.2.2.2",
@@ -898,9 +914,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20882
         },
         "fortinet": {
-            "event": {
-                "type": "anomaly",
-                "severity": "critical"
+            "fortigate": {
+                "event": {
+                    "type": "anomaly",
+                    "severity": "critical"
+                },
+                "virtual_domain": "vdom1",
+                "icmp": {
+                    "request": {
+                        "type": "0x92",
+                        "code": "0x51"
+                    }
+                }
             }
         },
         "log": {
@@ -920,12 +945,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "1.1.1.1",
             "address": "1.1.1.1"
-        },
-        "icmp": {
-            "request": {
-                "type": "0x92",
-                "code": "0x51"
-            }
         },
         "action": {
             "name": "clear_session",
@@ -968,9 +987,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20882
         },
         "fortinet": {
-            "event": {
-                "type": "anomaly",
-                "severity": "critical"
+            "fortigate": {
+                "event": {
+                    "type": "anomaly",
+                    "severity": "critical"
+                },
+                "virtual_domain": "vdom1",
+                "icmp": {
+                    "request": {
+                        "type": "0x92",
+                        "code": "0x51"
+                    }
+                }
             }
         },
         "log": {
@@ -990,12 +1018,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "1.1.1.1",
             "address": "1.1.1.1"
-        },
-        "icmp": {
-            "request": {
-                "type": "0x92",
-                "code": "0x51"
-            }
         },
         "action": {
             "name": "clear_session",
@@ -1290,8 +1312,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "rtype": "A"
         },
         "fortinet": {
-            "event": {
-                "type": "dns"
+            "fortigate": {
+                "event": {
+                    "type": "dns"
+                },
+                "virtual_domain": "vdom1"
             }
         },
         "log": {
@@ -1558,10 +1583,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 443
         },
         "fortinet": {
-            "event": {
-                "type": "utm"
-            },
-            "apprisk": "medium"
+            "fortigate": {
+                "event": {
+                    "type": "utm"
+                },
+                "apprisk": "medium",
+                "virtual_domain": "root"
+            }
         },
         "log": {
             "level": "information",
@@ -1569,6 +1597,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "port1"
@@ -1644,8 +1673,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "2.2.2.2"
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
@@ -1654,6 +1686,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "wan1"
@@ -1721,8 +1754,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 0
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
@@ -1731,6 +1767,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "unknown0"
@@ -1867,8 +1904,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 5
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "ROUTER"
             }
         },
         "log": {
@@ -1877,6 +1917,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "test"
@@ -2317,10 +2358,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
-            },
-            "apprisk": "medium"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "apprisk": "medium",
+                "virtual_domain": "root"
+            }
         },
         "log": {
             "level": "notice"
@@ -2394,10 +2438,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
-            },
-            "apprisk": "medium"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "apprisk": "medium",
+                "virtual_domain": "root"
+            }
         },
         "log": {
             "level": "notice"
@@ -2469,8 +2516,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 443
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "PRX1-AA"
             }
         },
         "log": {
@@ -2479,6 +2529,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "test"
@@ -2617,8 +2668,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 3727
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
@@ -2627,6 +2681,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "port10"
@@ -2696,8 +2751,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "bytes": 6151809
         },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "IPSEC"
             }
         },
         "log": {
@@ -2706,7 +2764,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
         },
         "source": {
             "ip": "1.1.1.1",
@@ -2764,8 +2823,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "bytes": 0
         },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
@@ -2774,7 +2836,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
         },
         "source": {
             "ip": "1.1.1.1",
@@ -2830,8 +2893,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2021-03-11T13:38:46.000000Z",
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "http": {
@@ -2845,7 +2911,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
         },
         "action": {
             "name": "CRL_1",
@@ -2883,8 +2950,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2022-10-13T13:43:44.075328Z",
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
@@ -2893,7 +2963,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "FW-FOOBAR"
         },
         "observer": {
-            "hostname": "FW-FOOBAR"
+            "hostname": "FW-FOOBAR",
+            "serial_number": "FG123"
         },
         "source": {
             "ip": "1.1.1.1",
@@ -3053,13 +3124,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`file.size` | `long` | File size in bytes. |
-|`fortinet.apprisk` | `keyword` | Risk level of the application. |
-|`fortinet.event.desc` | `keyword` | Type of log. |
-|`fortinet.event.severity` | `keyword` | Anomaly severity as reported by Fortigate |
-|`fortinet.event.type` | `keyword` | Type of the event. |
+|`fortinet.fortigate.apprisk` | `keyword` | Risk level of the application. |
+|`fortinet.fortigate.event.desc` | `keyword` | Type of log. |
+|`fortinet.fortigate.event.severity` | `keyword` | Anomaly severity as reported by Fortigate |
+|`fortinet.fortigate.event.type` | `keyword` | Type of the event. |
+|`fortinet.fortigate.icmp.request.code` | `keyword` | The request code. |
+|`fortinet.fortigate.icmp.request.type` | `keyword` | The request type. |
+|`fortinet.fortigate.virtual_domain` | `keyword` | Name of the virtual domain in which the event was observed |
 |`http.request.method` | `keyword` | HTTP request method. |
-|`icmp.request.code` | `keyword` | The request code. |
-|`icmp.request.type` | `keyword` | The request type. |
 |`log.level` | `keyword` | Log level of the log event. |
 |`network.application` | `keyword` | Application level protocol name. |
 |`network.protocol` | `keyword` | Application protocol name. |
@@ -3067,6 +3139,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.egress.interface.name` | `keyword` | Interface name |
 |`observer.hostname` | `keyword` | Hostname of the observer. |
 |`observer.ingress.interface.name` | `keyword` | Interface name |
+|`observer.serial_number` | `keyword` | Observer serial number. |
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`observer.version` | `keyword` | Observer version. |
