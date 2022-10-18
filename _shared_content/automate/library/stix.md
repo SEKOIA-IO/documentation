@@ -86,6 +86,7 @@ Create STIX Relationships
 | `source` | `string` | STIX ID or JSON Path expression for the relationships' sources |
 | `target` | `string` | STIX ID or JSON Path expression for the relationships' targets |
 | `tlp` | `string` | TLP to use for relationships (as english or STIX ID) |
+| `confidence` | `integer` | Admiralty Credibility score for created relationship (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
 | `description` | `string` | Description of generated STIX relationships |
 
 
@@ -335,4 +336,4 @@ Convert a list of strings into a list of observables
 
 ## Extra
 
-Module **`STIX` v1.62**
+Module **`STIX` v1.64**
