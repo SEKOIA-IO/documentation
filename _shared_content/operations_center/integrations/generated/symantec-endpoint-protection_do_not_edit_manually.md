@@ -17,7 +17,7 @@ In details, the following table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `malware` |
+| Category | `malware`, `network`, `process` |
 | Type | `` |
 
 
@@ -37,7 +37,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "kind": "event",
             "category": [
-                "malware"
+                "network"
             ],
             "reason": "The client has downloaded the content package successfully",
             "type": [
@@ -85,9 +85,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "kind": "event",
             "category": [
-                "malware"
+                "process"
             ],
             "action": "Blocked",
+            "start": "2022-08-29T11:58:20.000000Z",
             "type": [
                 "denied"
             ]
@@ -125,6 +126,75 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_scan.json"
+
+    ```json
+	
+    {
+        "message": "Scan ID: 1664847558,Begin: 2022-10-04 17:42:10,End Time: 2022-10-04 17:44:22,Completed,Duration (seconds): 132,User1: Syst\u00e8me,User2: Syst\u00e8me,Analyse lanc\u00e9e sur lecteurs et dossiers s\u00e9lectionn\u00e9s et toutes les extensions.,Analyse Installation standard : Risques : 0 Analys\u00e9s : 1553 Fichiers/Dossiers/Lecteurs omis : 0 Fichiers approuv\u00e9s ignor\u00e9s : 844,Command: Not a command scan (),Threats: 0,Infected: 0,Total files: 1553,Omitted: 0,Computer: DNHFF3453,IP Address: 1.2.3.4,Domain Name: MyDomain,Group Name: MyDomain\\Subdivision\\Citrix VDI persistants,Server Name: XXXXX01,Scan Type: DefWatch",
+        "event": {
+            "kind": "event",
+            "category": [
+                "malware"
+            ],
+            "reason": "Analyse lanc\u00e9e sur lecteurs et dossiers s\u00e9lectionn\u00e9s et toutes les extensions.",
+            "start": "2022-10-04T17:42:10.000000Z",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hostname": "DNHFF3453",
+            "name": "DNHFF3453"
+        },
+        "user": {
+            "name": "Syst\u00e8me"
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "server": {
+                    "domain": "MyDomain",
+                    "group": "MyDomain\\Subdivision\\Citrix VDI persistants",
+                    "name": "XXXXX01"
+                },
+                "scan": {
+                    "id": "1664847558",
+                    "duration": 132,
+                    "command": "Not a command scan ()",
+                    "type": "DefWatch",
+                    "result": {
+                        "threats": 0,
+                        "infections": 0,
+                        "total": 1553,
+                        "omitted": 0
+                    },
+                    "status": "completed"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hosts": [
+                "DNHFF3453"
+            ],
+            "user": [
+                "Syst\u00e8me"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "test_sonar.json"
 
     ```json
@@ -135,7 +205,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "reason": "SONAR detection now allowed",
             "kind": "event",
             "category": [
-                "malware"
+                "process"
             ],
             "type": [
                 "info"
@@ -245,9 +315,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "kind": "event",
             "category": [
-                "malware"
+                "network"
             ],
             "reason": "Impossible d\u2019assigner un jeton d\u2019authentification client. Une erreur de communication g\u00e9n\u00e9rale est survenue.",
+            "start": "2022-08-29T11:35:29.000000Z",
             "type": [
                 "info"
             ]
@@ -376,6 +447,105 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_virus_found2.json"
+
+    ```json
+	
+    {
+        "message": "Virus found,IP Address: 1.2.3.4,Computer name: MyComputer,Source: Auto-Protect scan,Risk name: EICAR Test String,Occurrences: 1,File path: /tmp/eicar.txt,Description: ,Actual action: Quarantined,Requested action: Cleaned,Secondary action: Quarantined,Event time: 2022-10-04 19:10:48,Event Insert Time: 2022-10-04 19:15:22,End Time: 2022-10-04 19:10:48,Last update time: 2022-10-04 19:15:22,Domain Name: Par d\u00e9faut,Group Name: Mydomain\\\\Servers\\\\Linux,Server Name: XXXX01,User Name: user,Source Computer Name: ,Source Computer IP: ,Disposition: Reputation was not used in this detection.,Download site: ,Web domain: ,Downloaded by: ,Prevalence: Reputation was not used in this detection.,Confidence: Reputation was not used in this detection.,URL Tracking Status: N/A,First Seen: Reputation was not used in this detection.,Sensitivity: Low,Allowed application reason: Not on the allow list,Application hash: 131f95c51cc819465fa1797f6ccacf9d494aaaff46fa3eac73ae63ffbdfd8267,Hash type: SHA2,Company name: ,Application name: Unknown,Application version: ,Application type: -1,File size (bytes): 69,Category set: Malware,Category type: Virus,Location: ,Intensive Protection Level: 0,Certificate issuer: ,Certificate signer: ,Certificate thumbprint: ,Signing timestamp: 0,Certificate serial number: ",
+        "event": {
+            "kind": "event",
+            "category": [
+                "malware"
+            ],
+            "reason": "Virus found",
+            "action": "Cleaned",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hostname": "MyComputer",
+            "name": "MyComputer"
+        },
+        "user": {
+            "name": "user"
+        },
+        "file": {
+            "path": "/tmp/eicar.txt",
+            "size": 69
+        },
+        "threat": {
+            "enrichments": [
+                {
+                    "indicator": {
+                        "type": "file",
+                        "first_seen": "2022-10-04T19:10:48.000000Z",
+                        "last_seen": "2022-10-04T19:10:48.000000Z",
+                        "modified_at": "2022-10-04T19:15:22.000000Z",
+                        "sightings": 1,
+                        "description": "EICAR Test String",
+                        "file": {
+                            "path": "/tmp/eicar.txt",
+                            "size": 69
+                        }
+                    }
+                }
+            ]
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "source": "Auto-Protect scan",
+                "server": {
+                    "domain": "Par d\u00e9faut",
+                    "group": "Mydomain\\\\Servers\\\\Linux",
+                    "name": "XXXX01"
+                },
+                "application": {
+                    "hash": {
+                        "sha2": "131f95c51cc819465fa1797f6ccacf9d494aaaff46fa3eac73ae63ffbdfd8267"
+                    },
+                    "name": "Unknown",
+                    "code_signature": {
+                        "digest_algorithm": "sha2",
+                        "timestamp": "1970-01-01T00:00:00.000000Z"
+                    }
+                },
+                "action": {
+                    "main": "Quarantined",
+                    "secondary": "Quarantined"
+                },
+                "prevalence": "Reputation was not used in this detection.",
+                "confidence": "Reputation was not used in this detection.",
+                "threat": {
+                    "type": "Virus",
+                    "category": "Malware"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hosts": [
+                "MyComputer"
+            ],
+            "user": [
+                "user"
+            ]
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -399,6 +569,15 @@ The following table lists the fields that are extracted, normalized under the EC
 |`broadcom.endpoint_protection.confidence` | `keyword` |  |
 |`broadcom.endpoint_protection.downloaded_by.file.path` | `keyword` |  |
 |`broadcom.endpoint_protection.prevalence` | `keyword` |  |
+|`broadcom.endpoint_protection.scan.command` | `keyword` | The command scan |
+|`broadcom.endpoint_protection.scan.duration` | `number` | The duration of the scan in seconds |
+|`broadcom.endpoint_protection.scan.id` | `keyword` | The identifier of the scan |
+|`broadcom.endpoint_protection.scan.result.infections` | `number` | The number of infected files |
+|`broadcom.endpoint_protection.scan.result.omitted` | `number` | The number of omitted files |
+|`broadcom.endpoint_protection.scan.result.threats` | `number` | The number of detected threats |
+|`broadcom.endpoint_protection.scan.result.total` | `number` | The number of total files scanned |
+|`broadcom.endpoint_protection.scan.status` | `keyword` | The status of the scan |
+|`broadcom.endpoint_protection.scan.type` | `keyword` | The type of scan |
 |`broadcom.endpoint_protection.server.domain` | `keyword` |  |
 |`broadcom.endpoint_protection.server.group` | `keyword` |  |
 |`broadcom.endpoint_protection.server.name` | `keyword` |  |
@@ -407,8 +586,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`broadcom.endpoint_protection.threat.type` | `keyword` |  |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
+|`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
 |`file.size` | `long` | File size in bytes. |
 |`host.hostname` | `keyword` | Hostname of the host. |
