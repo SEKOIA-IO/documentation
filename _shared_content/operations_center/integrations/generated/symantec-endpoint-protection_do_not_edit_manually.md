@@ -126,6 +126,49 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_liveupdate.json"
+
+    ```json
+	
+    {
+        "message": "INT23456,Category: 2,LiveUpdate Manager,\"Event Description: L\u2019installation d\u2019une mise \u00e0 jour de Revocation Data a \u00e9chou\u00e9. Erreur : Echec de la correction de contenu (0xE0010005), DuResult: Succ\u00e8s (0).\",Event time: 2022-10-18 18:09:26,Group Name: MyDomain\\Servers",
+        "event": {
+            "kind": "event",
+            "category": [
+                "process"
+            ],
+            "reason": "L\u2019installation d\u2019une mise \u00e0 jour de Revocation Data a \u00e9chou\u00e9. Erreur : Echec de la correction de contenu (0xE0010005), DuResult: Succ\u00e8s (0).",
+            "start": "2022-10-18T18:09:26.000000Z",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "hostname": "INT23456",
+            "name": "INT23456"
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "source": "LiveUpdate Manager",
+                "server": {
+                    "group": "MyDomain\\Servers"
+                }
+            }
+        },
+        "related": {
+            "hosts": [
+                "INT23456"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "test_scan.json"
 
     ```json
