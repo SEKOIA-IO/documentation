@@ -124,7 +124,7 @@ If you want to automate the installation of the agent with this configuration op
     > Warning: The installation of this tool will generate more logs which will consume more CPU resources. Install it on equipment that are correctly dimensioned, or try it on low risk assets at first.
 
     Sysmon is a Microsoft tool downloadable from [microsoft.com](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
-    A common installation instruction and configuration file is available at [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
+    A common installation instruction and configuration file is available on [Florian Roth's GitHub](https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml). This configuration is an updated (and maintained) version of the [SwiftOnSecurity's configuration](https://github.com/SwiftOnSecurity/sysmon-config), which can also be used.
 
 
 ### Uninstall
