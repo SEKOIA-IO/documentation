@@ -4,9 +4,9 @@
 
 ## Modules
 
-SEKOIA alert: this module allows the analysts to receive notification in Mattermost when a new alert is raised.
-Post a message: additional information can be rooted on a specific channel with detailed context.
+- Post SEKOIA.IO alert: this module allows the analysts to receive notification in Mattermost when a new alert is raised.
 
+- Post message: additional information can be rooted on a specific channel with detailed context.
 
 ## Configuration
 
