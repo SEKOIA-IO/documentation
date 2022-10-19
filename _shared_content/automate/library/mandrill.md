@@ -25,7 +25,8 @@ The mandatory fields of the block are:
  	</ul>
 ```
 
-!!!note The dynamic content is written in JINJA. For more information on this language, please follow this [documentation](https://jinja.palletsprojects.com/en/2.10.x/templates/).
+!!! Note
+    The dynamic content is written in JINJA. For more information on this language, please follow this [documentation](https://jinja.palletsprojects.com/en/2.10.x/templates/).
 
 
 ## Configuration
@@ -38,7 +39,7 @@ The mandatory fields of the block are:
 
 ### Send Message
 
-Send a new transactional message through Mandrill
+Send a new transactional message through Mandrill.
 
 #### Arguments
 
