@@ -393,9 +393,8 @@ The colors in this page should be interpreted as follow:
 | Antivirus Relevant File Paths Alerts | <span style='color:#5373E6'>elementary</span> | <span style="color:#6a18a0">1116</span> | Microsoft-Windows-Windows Defender |
 | Suncrypt Parameters | <span style='color:#5373E6'>elementary</span> | <span style="color:#1cb238">1</span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | AD Object WriteDAC Access | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4662</span> | Microsoft-Windows-Security-Auditing |
-**Total rules in the statistics below: 376**
 
-## EventIDs occurence in rules:
+## EventIDs occurences in rules
 
 | EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 376) |
 | ------- | ------------------------- | ------------------------------------------------------ |
@@ -493,9 +492,8 @@ The colors in this page should be interpreted as follow:
 | 1117 | 1 | 0.27 % |
 | 1118 | 1 | 0.27 % |
 | 1119 | 1 | 0.27 % |
-**Total rules in the statistics below: 376**
 
-## EventProviders occurence in rules:
+## EventProviders occurences in rules
 
 | EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 376) |
 | ------- | ------------------------- | ------------------------------------------------------ |
@@ -514,7 +512,7 @@ The colors in this page should be interpreted as follow:
 | Microsoft-Windows-NTLM | 1 | 0.27 % |
 | Application Error | 1 | 0.27 % |
 
-## EffortLevel x EventIDs needed
+## EffortLevel x EventIDs
 
 | Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 376 |
 | ------------ | -------- | ----------------------- | ------------------------------------------------------- |
