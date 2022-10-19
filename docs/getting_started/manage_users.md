@@ -29,8 +29,11 @@ From this page, you can:
 
 !!! note
 MSSP community
-    - A user added on Main MSSP community will have the same role and permissions associated on all sub-communities
-    - Role set to a user directly on a sub-community is independent from other communities. Therefore a user can be set with different roles in different communities.
+    - A user added on Main MSSP community will have the same role and permissions applied on all sub-communities
+    tip:    You may add minimal roles on Main MSSP community and add extended role on sub-community needed
+    
+    - Role set to a user directly on a sub-community is independent from other communities. 
+    Therefore a user can be set with different roles in different communities.
 
 ## Create custom roles
 
