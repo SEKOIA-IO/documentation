@@ -7,7 +7,7 @@
 The module allows to request information such as:
 
 - [Whois](#whois)
-- Reverse Whois ([organization](#organization), [name server](#Name-server), [name](#name), [email](#email), [address](#address), [phone](#phone)
+- Reverse Whois ([organization](#organization), [name server](#Name-server), [name](#name), [email](#email), [address](#address), [phone](#phone))
 - Passive DNS ([Name](#name-passive-dns), [IP](#ip-passive-dns), [Hex](#hex-passive-dns))
 - [SSL hosts](#ssl-hosts), 
 - SSL Certificates ([Host](#SSL-Certificates-by-Host), [name](#SSL-Certificates-by-Name), [SHA-1](#SSL-Certificats-by-SHA-1), [Serial Number](#SSL-Certificates-by-Serial-Number))
