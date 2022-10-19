@@ -11,7 +11,7 @@ Available actions from Shodan are:
 - [Look up DNS](#lookup-dns)
 - [Get Host](#get-host)
 - [Count Hosts](#count-hosts)
-- [Search Hosts](#search-hosts)
+- [Search Host](#search-host)
 
 ## Configuration
 
