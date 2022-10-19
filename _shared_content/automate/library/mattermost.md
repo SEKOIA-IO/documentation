@@ -2,11 +2,11 @@
 
 [Mattermost](https://mattermost.com/) is a secure, open and flexible collaboration platform. 
 
-## Modules
+This module allows you to: 
 
-- Post SEKOIA.IO alert: this module allows the analysts to receive notification in Mattermost when a new alert is raised.
+- [Post SEKOIA.IO alert](#post-sekoia.oi-alert): this module allows the analysts to receive notification in Mattermost when a new alert is raised.
 
-- Post message: additional information can be rooted on a specific channel with detailed context.
+- [Post message](#post-email): additional information can be rooted on a specific channel with detailed context.
 
 ## Configuration
 
@@ -18,7 +18,7 @@
 
 ### Post SEKOIA.IO Alert
 
-Post alert to Mattermost
+Post alert to Mattermost.
 
 #### Arguments
 
@@ -32,7 +32,7 @@ Post alert to Mattermost
 
 ### Post Message
 
-Post message to Mattermost
+Post message to Mattermost.
 
 #### Arguments
 
