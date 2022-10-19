@@ -6,8 +6,8 @@
 
 The module allows to request information such as:
 
-- Scan ([SYN](#get-ip-synscan), [Onion](#get-onion-scan), [Datascan](#get-ip-datascan))
-- Lookups ([MD5](#lookup-md5), [reverse DNS](#lookup-reverse-dns), [Forward DNS](#lookup-forward-dns), [IP](#lookup-ip)
+- Scan ([SYN](#get-ip-syn-scan), [Onion](#get-onion-scan), [Datascan](#get-ip-datascan))
+- Lookups ([MD5](#lookup-md5), [reverse DNS](#lookup-reverse-dns), [Forward DNS](#lookup-forward-dns), [IP](#lookup-ip))
 - IP additional information ([Threat list](#get-ip-threat-list), [geolocalization](#geolocalize-ip))
 - [Domain Name CTLs](#get-domain-name-ctls)
 - [Inetnum information](#get-ip-inetnum)
