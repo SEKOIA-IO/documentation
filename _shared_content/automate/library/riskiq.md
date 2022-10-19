@@ -4,6 +4,14 @@
 
 [RiskIQ](https://www.riskiq.com/) is a cyber security company providing software as a service to detect phishing, fraud, malware, and other online security threats.
 
+The module allows to request information such as:
+- [Whois](#whois)
+- Reverse Whois ([organization](#Reverse-Whois-(organization)), [name server](#Reverse-Whois-(Name-server)), [name](#Reverse-Whois-(name)), [email](#reverse-whois---email), [address](#Reverse-Whois-(address)), [phone](#Reverse-Whois-(phone))
+- Passive DNS ([Name](#name-passive-dns), [IP](#ip-passive-dns), [Hex](#hex-passive-dns))
+- [SSL hosts](#ssl-hosts), 
+- SSL Certificates ([Host](#SSL-Certificates-by-Host), [name](#SSL-Certificates-by-Name), [SHA-1](#SSL-Certificats-by-SHA-1), [Serial Number](#SSL-Certificates-by-Serial-Number))
+
+
 ## Configuration
 
 | Name      |  Type   |  Description  |
@@ -16,7 +24,7 @@
 
 ### SSL Hosts
 
-Get hosts by certificate
+Get hosts by certificate.
 
 #### Arguments
 
@@ -63,7 +71,7 @@ Retrieve results by searching for specified hexadecimal bytes within PDNS record
 
 ### IP Passive DNS
 
-Retrieve results by searching for specified IP address within PDNS record data field
+Retrieve results by searching for specified IP address within PDNS record data field.
 
 #### Arguments
 
@@ -106,7 +114,7 @@ Retrieve results by searching for specified resource name within PDNS record dat
 
 ### SSL Certificates by Host
 
-Get SSL certificates by host name
+Get SSL certificates by host name.
 
 #### Arguments
 
@@ -123,7 +131,7 @@ Get SSL certificates by host name
 
 ### SSL Certificates by Name
 
-Get SSL certificates by name
+Get SSL certificates by name.
 
 #### Arguments
 
@@ -173,7 +181,7 @@ None
 
 ### SSL Certificats by SHA-1
 
-Get SSL certificate by SHA1 hash
+Get SSL certificate by SHA-1 hash.
 
 #### Arguments
 
@@ -207,7 +215,7 @@ Get SSL certificate by SHA1 hash
 
 ### Reverse Whois (address)
 
-Get WHOIS records associated with an address
+Get WHOIS records associated with an address.
 
 #### Arguments
 
@@ -227,7 +235,7 @@ Get WHOIS records associated with an address
 
 ### Whois
 
-Get the current WHOIS for a domain
+Get the current WHOIS for a domain.
 
 #### Arguments
 
@@ -248,7 +256,7 @@ Get the current WHOIS for a domain
 
 ### Reverse Whois (email)
 
-Get WHOIS records associated with an email address
+Get WHOIS records associated with an email address.
 
 #### Arguments
 
@@ -268,7 +276,7 @@ Get WHOIS records associated with an email address
 
 ### Reverse Whois (name)
 
-Get WHOIS records associated with a name
+Get WHOIS records associated with a name.
 
 #### Arguments
 
@@ -286,9 +294,9 @@ Get WHOIS records associated with a name
 | `results` | `integer` |  |
 | `domains` | `array` |  |
 
-### Reverse Whois (nameserver)
+### Reverse Whois (Name server)
 
-Get WHOIS records associated with a name server
+Get WHOIS records associated with a name server.
 
 #### Arguments
 
@@ -308,7 +316,7 @@ Get WHOIS records associated with a name server
 
 ### Reverse Whois (organization)
 
-Get WHOIS records associated with an organization
+Get WHOIS records associated with an organization.
 
 #### Arguments
 
@@ -328,7 +336,7 @@ Get WHOIS records associated with an organization
 
 ### Reverse Whois (phone)
 
-Get WHOIS records associated with a phone number
+Get WHOIS records associated with a phone number.
 
 #### Arguments
 
