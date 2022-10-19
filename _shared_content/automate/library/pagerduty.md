@@ -1,6 +1,8 @@
 # PagerDuty
 
-[PagerDuty](https://www.pagerduty.com/) is an incident response platform for IT departments it allows triggering alerts and managing incidents.
+[PagerDuty](https://www.pagerduty.com/) is an incident response platform for IT departments that allows triggering alerts and managing incidents.
+
+With this module, you can [trigger alerts](#Trigger-Alert) to PagerDuty, which allows you to receive notifications in PagerDuty when a new alert is raised.
 
 ## Configuration
 
@@ -13,7 +15,7 @@
 
 ### Trigger Alert
 
-Trigger alert to PagerDuty: This module allows the analysts to receive notification in PagerDuty when a new alert is raised.
+Trigger alert to PagerDuty.
 
 #### Arguments
 
