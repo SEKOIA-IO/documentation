@@ -13,7 +13,7 @@
 
 ### Trigger Alert
 
-Trigger alert to PagerDuty
+Trigger alert to PagerDuty: This module allows the analysts to receive notification in PagerDuty when a new alert is raised.
 
 #### Arguments
 
