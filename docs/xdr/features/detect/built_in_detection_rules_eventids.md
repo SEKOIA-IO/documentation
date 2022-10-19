@@ -1,381 +1,381 @@
 | Rule Name | Effort Level | EventIDs | Event Providers |
 | --------- | ------------ | -------- | --------------- |
-| PowerShell Malicious PowerShell Commandlets | <span style"color:#B60016">master</span> | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Putty Sessions Listing | [color=#B60016] master [/color] | 1, [color=#B60016]4656[/color], [color=#B60016]4663[/color] | Microsoft-Windows-Security-Auditing, Microsoft-Windows-Sysmon |
-| FoggyWeb Backdoor DLL Loading | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
-| Windows Defender History Deleted | [color=#B60016] master [/color] | [color=#6a18a0]1013[/color] | Microsoft-Windows-Windows Defender |
-| Svchost DLL Search Order Hijack | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
-| Rubeus Register New Logon Process | [color=#B60016] master [/color] | [color=#B60016]4611[/color] | Microsoft-Windows-Security-Auditing |
-| Suspicious DLL Loaded Via Office Applications | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
-| Suspicious PsExec Execution | [color=#B60016] master [/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Account Removed From A Security Enabled Group | [color=#B60016] master [/color] | [color=#60BBD8]4729[/color] | Microsoft-Windows-Security-Auditing |
-| Netsh Port Opening | [color=#B60016] master [/color] | 1 | Microsoft-Windows-Sysmon |
-| In-memory PowerShell | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
-| Failed Logon Source From Public IP Addresses | [color=#B60016] master [/color] | 4625 | Microsoft-Windows-Security-Auditing |
-| TOR Usage Generic Rule | [color=#B60016] master [/color] | 3 | Microsoft-Windows-Sysmon |
-| Windows Defender Configuration Changed | [color=#B60016] master [/color] | [color=#6a18a0]5007[/color] | Microsoft-Windows-Windows Defender |
-| Office 365 MCAS New Country | [color=#B60016] master [/color] | 98 |  |
-| Registry Checked For Lanmanserver DisableCompression Parameter | [color=#B60016] master [/color] | [color=#B60016]4663[/color] | Microsoft-Windows-Security-Auditing |
-| DNS ServerLevelPluginDll Installation | [color=#B60016] master [/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Advanced IP Scanner | [color=#B60016] master [/color] | 1 | Microsoft-Windows-Sysmon |
-| Network Share Discovery | [color=#B60016] master [/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Usage Of Sysinternals Tools | [color=#B60016] master [/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| LSASS Access From Non System Account | [color=#B60016] master [/color] | [color=#B60016]4656[/color], [color=#B60016]4663[/color] | Microsoft-Windows-Security-Auditing |
-| Local Account Deleted | [color=#B60016] master [/color] | 4726, [color=#B60016]4743[/color] | Microsoft-Windows-Security-Auditing |
-| Protected Storage Service Access | [color=#B60016] master [/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Admin Share Access | [color=#B60016] master [/color] | [color=#B60016]5140[/color], [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Office 365 MCAS Inbox Hiding | [color=#B60016] master [/color] | 98 |  |
-| Office 365 MCAS Repeated Failed Login | [color=#B60016] master [/color] | 98 |  |
-| WMIC Loading Scripting Libraries | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
-| Autorun Keys Modification | [color=#B60016] master [/color] | 12 | Microsoft-Windows-Sysmon |
-| DNS Server Error Failed Loading The ServerLevelPluginDLL | [color=#B60016] master [/color] | 150, 770, 771 | Microsoft-Windows-DNS-Server-Service |
-| Disable Security Events Logging Adding Reg Key MiniNt | [color=#B60016] master [/color] | 13 | Microsoft-Windows-Sysmon |
-| Windows Firewall Changes | [color=#B60016] master [/color] | 1 | Microsoft-Windows-Sysmon |
-| Webshell Creation | [color=#B60016] master [/color] | 11, [color=#B60016]4656[/color], [color=#B60016]4663[/color] | Microsoft-Windows-Sysmon |
-| List Shadow Copies | [color=#B60016] master [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Sysmon Windows File Block Executable | [color=#B60016] master [/color] | 27 | Microsoft-Windows-Sysmon |
-| AD User Enumeration | [color=#B60016] master [/color] | [color=#B60016]4662[/color] | Microsoft-Windows-Security-Auditing |
-| WMI DLL Loaded Via Office | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
-| Credential Dumping-Tools Common Named Pipes | [color=#B60016] master [/color] | 17 | Microsoft-Windows-Sysmon |
-| Account Added To A Security Enabled Group | [color=#B60016] master [/color] | [color=#60BBD8]4728[/color] | Microsoft-Windows-Security-Auditing |
-| Office 365 MCAS Detection Velocity | [color=#B60016] master [/color] | 98 |  |
-| Office 365 MCAS Repeated Delete | [color=#B60016] master [/color] | 98 |  |
-| Local Account Created | [color=#B60016] master [/color] | [color=#60BBD8]4720[/color] | Microsoft-Windows-Security-Auditing |
-| Potential RDP Connection To Non-Domain Host | [color=#B60016] master [/color] | [color=#B60016]8001[/color] | Microsoft-Windows-NTLM |
-| Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys | [color=#B60016] master [/color] | 13 | Microsoft-Windows-Sysmon |
-| Suspicious Access To Sensitive File Extensions | [color=#B60016] master [/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Cobalt Strike Named Pipes | [color=#B60016] master [/color] | 17 | Microsoft-Windows-Sysmon |
-| User Couldn't Call A Privileged Service LsaRegisterLogonProcess | [color=#B60016] master [/color] | [color=#B60016]4673[/color] | Microsoft-Windows-Security-Auditing |
-| Office 365 MCAS Risky IP | [color=#B60016] master [/color] | 98 |  |
-| CVE-2017-11882 Microsoft Office Equation Editor Vulnerability | [color=#B60016] master [/color] | 3 | Microsoft-Windows-Sysmon |
-| Windows Registry Persistence COM Key Linking | [color=#B60016] master [/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| SCM Database Handle Failure | [color=#B60016] master [/color] | [color=#B60016]4656[/color] | Microsoft-Windows-Security-Auditing |
-| Abusing Azure Browser SSO | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
-| Admin User RDP Remote Logon | [color=#B60016] master [/color] | 4624 | Microsoft-Windows-Security-Auditing |
-| Suspicious New Printer Ports In Registry | [color=#B60016] master [/color] | 13 | Microsoft-Windows-Sysmon |
-| Remote Registry Management Using Reg Utility | [color=#B60016] master [/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| SCM Database Privileged Operation | [color=#B60016] master [/color] | [color=#B60016]4674[/color] | Microsoft-Windows-Security-Auditing |
-| Net.exe User Account Creation | [color=#B60016] master [/color] | 1 | Microsoft-Windows-Sysmon |
-| Narrator Feedback-Hub Persistence | [color=#B60016] master [/color] | 13 | Microsoft-Windows-Sysmon |
-| CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv | [color=#B60016] master [/color] | 7, 11 | Microsoft-Windows-Sysmon |
-| File Or Folder Permissions Modifications | [color=#B60016] master [/color] | 1 | Microsoft-Windows-Sysmon |
-| Stop Backup Services | [color=#B60016] master [/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Windows Defender Deactivation Using PowerShell Script | [color=#B60016] master [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Process Herpaderping | [color=#B60016] master [/color] | 25 | Microsoft-Windows-Sysmon |
-| Malware Persistence Registry Key | [color=#B60016] master [/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| AD Privileged Users Or Groups Reconnaissance | [color=#B60016] master [/color] | [color=#B60016]4661[/color] | Microsoft-Windows-Security-Auditing |
-| FromBase64String Command Line | [color=#B60016] master [/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Process Hollowing Detection | [color=#B60016] master [/color] | 25 | Microsoft-Windows-Sysmon |
-| Suspicious Outbound Kerberos Connection | [color=#60BBD8] advanced [/color] | [color=#B60016]5156[/color] | Microsoft-Windows-Security-Auditing |
-| PowerShell Invoke-Obfuscation Obfuscated IEX Invocation | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Remote Service Activity Via SVCCTL Named Pipe | [color=#60BBD8] advanced [/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Exfiltration And Tunneling Tools Execution | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Alternate PowerShell Hosts Pipe | [color=#60BBD8] advanced [/color] | 17 | Microsoft-Windows-Sysmon |
-| Powershell Web Request | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Active Directory Replication from Non Machine Account | [color=#60BBD8] advanced [/color] | [color=#B60016]4662[/color] | Microsoft-Windows-Security-Auditing |
-| Rare Logonui Child Found | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Logon Scripts (UserInitMprLogonScript) | [color=#60BBD8] advanced [/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Suspicious desktop.ini Action | [color=#60BBD8] advanced [/color] | 15 | Microsoft-Windows-Sysmon |
-| Winlogon wrong parent | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious XOR Encoded PowerShell Command Line | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Control Panel Items | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Taskhost or Taskhostw Suspicious Child Found | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Netsh Allow Command | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Metasploit PSExec Service Creation | [color=#60BBD8] advanced [/color] | [color=#B60016]7045[/color] | Service Control Manager |
-| Default Encoding To UTF-8 PowerShell | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Rubeus Tool Command-line | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Domain Group And Permission Enumeration | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Active Directory Replication User Backdoor | [color=#60BBD8] advanced [/color] | [color=#B60016]5136[/color] | Microsoft-Windows-Security-Auditing |
-| Csrss Wrong Parent | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious PrinterPorts Creation (CVE-2020-1048) | [color=#60BBD8] advanced [/color] | 10 | Microsoft-Windows-Sysmon |
-| XCopy Suspicious Usage | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Python Opening Ports | [color=#60BBD8] advanced [/color] | [color=#B60016]5154[/color] | Microsoft-Windows-Security-Auditing |
-| Telegram Bot API Request | [color=#60BBD8] advanced [/color] | 22 | Microsoft-Windows-Sysmon |
-| Suspicious PROCEXP152.sys File Created In Tmp | [color=#60BBD8] advanced [/color] | 11 | Microsoft-Windows-Sysmon |
-| Legitimate Process Execution From Unusual Folder | [color=#60BBD8] advanced [/color] | 1, 5, [color=#60BBD8]4688[/color] | Microsoft-Windows-Sysmon |
-| CreateRemoteThread Common Process Injection | [color=#60BBD8] advanced [/color] | 8 | Microsoft-Windows-Sysmon |
-| PowerShell Data Compressed | [color=#60BBD8] advanced [/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Dynwrapx Module Loading | [color=#60BBD8] advanced [/color] | 7 | Microsoft-Windows-Sysmon |
-| Suspicious Windows DNS Queries | [color=#60BBD8] advanced [/color] | 22 | Microsoft-Windows-Sysmon |
-| Microsoft Office Product Spawning Windows Shell | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Control Process | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| PowerShell Malicious Nishang PowerShell Commandlets | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| External Disk Drive Or USB Storage Device | [color=#60BBD8] advanced [/color] | [color=#B60016]6416[/color] | Microsoft-Windows-Security-Auditing |
-| Load Of dbghelp/dbgcore DLL From Suspicious Process | [color=#60BBD8] advanced [/color] | 7 | Microsoft-Windows-Sysmon |
-| PowerView commandlets 2 | [color=#60BBD8] advanced [/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| PowerView commandlets 1 | [color=#60BBD8] advanced [/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| WMI Event Subscription | [color=#60BBD8] advanced [/color] | 19, 20, 21 | Microsoft-Windows-Sysmon |
-| NTDS.dit File In Suspicious Directory | [color=#60BBD8] advanced [/color] | 11 | Microsoft-Windows-Sysmon |
-| Lateral Movement - Remote Named Pipe | [color=#60BBD8] advanced [/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Domain Trust Created Or Removed | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4706[/color], [color=#60BBD8]4707[/color] | Microsoft-Windows-Security-Auditing |
-| Winword wrong parent | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4688[/color] | Microsoft-Windows-Security-Auditing |
-| Unsigned Image Loaded Into LSASS Process | [color=#60BBD8] advanced [/color] | 7 | Microsoft-Windows-Sysmon |
-| Windows Registry Persistence COM Search Order Hijacking | [color=#60BBD8] advanced [/color] | 13 | Microsoft-Windows-Sysmon |
-| WMI Persistence Script Event Consumer File Write | [color=#60BBD8] advanced [/color] | 11 | Microsoft-Windows-Sysmon |
-| Privileged AD Builtin Group Modified | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4727[/color], [color=#60BBD8]4728[/color], [color=#60BBD8]4729[/color], [color=#60BBD8]4730[/color], [color=#60BBD8]4754[/color], [color=#60BBD8]4756[/color], [color=#60BBD8]4757[/color], [color=#60BBD8]4758[/color], [color=#60BBD8]4764[/color] | Microsoft-Windows-Security-Auditing |
-| PsExec Process | [color=#60BBD8] advanced [/color] | 13, [color=#B60016]7045[/color] | Microsoft-Windows-Sysmon, Service Control Manager |
-| Disabled IE Security Features | [color=#60BBD8] advanced [/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Change Default File Association | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Rclone Process | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| RDP Sensitive Settings Changed | [color=#60BBD8] advanced [/color] | 13 | Microsoft-Windows-Sysmon |
-| Adexplorer Usage | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| New Service Creation | [color=#60BBD8] advanced [/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Account Tampering - Suspicious Failed Logon Reasons | [color=#60BBD8] advanced [/color] | 4625, [color=#B60016]4776[/color] | Microsoft-Windows-Security-Auditing |
-| Suspicious PowerShell Keywords | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| SAM Registry Hive Handle Request | [color=#60BBD8] advanced [/color] | [color=#B60016]4656[/color] | Microsoft-Windows-Security-Auditing |
-| Suspicious ADSI-Cache Usage By Unknown Tool | [color=#60BBD8] advanced [/color] | 11 | Microsoft-Windows-Sysmon |
-| Cmd.exe Used To Run Reconnaissance Commands | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Cmd.exe Command Line | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Hiding Files With Attrib.exe | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| RDP Session Discovery | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| Exploit For CVE-2017-0261 Or CVE-2017-0262 | [color=#60BBD8] advanced [/color] | 1 | Microsoft-Windows-Sysmon |
-| PowerShell - NTFS Alternate Data Stream | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Svchost Wrong Parent | [color=#60BBD8] advanced [/color] | [color=#60BBD8]4688[/color] | Microsoft-Windows-Security-Auditing |
-| Suspicious Finger Usage | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious DLL Loading By Ordinal | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Clear EventLogs Through CommandLine | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Taskhostw Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Scripting In A WMI Consumer | [color=#60BBD8]intermediate[/color] | 20 | Microsoft-Windows-Sysmon |
-| Suspicious Windows Installer Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Wmic Process Call Creation | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Active Directory User Backdoors | [color=#60BBD8]intermediate[/color] | [color=#B60016]4662[/color], [color=#B60016]5136[/color] | Microsoft-Windows-Security-Auditing |
-| Suspicious Windows Script Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| ETW Tampering | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Password Dumper Activity On LSASS | [color=#60BBD8]intermediate[/color] | [color=#B60016]4656[/color] | Microsoft-Windows-Security-Auditing |
-| Transfering Files With Credential Data Via Network Shares | [color=#60BBD8]intermediate[/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| MS Office Product Spawning Exe in User Dir | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Powershell Winlogon Helper DLL | [color=#60BBD8]intermediate[/color] | 13, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| SquirrelWaffle Malspam Execution Loading DLL | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Office 365 Malware Uploaded On SharePoint | [color=#60BBD8]intermediate[/color] | 6 |  |
-| NTDS.dit File Interaction Through Command Line | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Grabbing Sensitive Hives Via Reg Utility | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| LSASS Memory Dump | [color=#60BBD8]intermediate[/color] | 10 | Microsoft-Windows-Sysmon |
-| Credential Dumping Tools Service Execution | [color=#60BBD8]intermediate[/color] | [color=#B60016]7045[/color] | Service Control Manager |
-| NjRat Registry Changes | [color=#60BBD8]intermediate[/color] | 1, 12, 13 | Microsoft-Windows-Sysmon |
-| Koadic Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Mshta Execution From Wmi | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Hostname | [color=#60BBD8]intermediate[/color] | 4624 | Microsoft-Windows-Security-Auditing |
-| StoneDrill Service Install | [color=#60BBD8]intermediate[/color] | [color=#B60016]7045[/color] | Service Control Manager |
-| MMC20 Lateral Movement | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Possible Replay Attack | [color=#60BBD8]intermediate[/color] | [color=#B60016]4649[/color] | Microsoft-Windows-Security-Auditing |
-| Hijack Legit RDP Session To Move Laterally | [color=#60BBD8]intermediate[/color] | 11 | Microsoft-Windows-Sysmon |
-| Audio Capture via PowerShell | [color=#60BBD8]intermediate[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Suspicious LDAP-Attributes Used | [color=#60BBD8]intermediate[/color] | [color=#B60016]5136[/color] | Microsoft-Windows-Security-Auditing |
-| DPAPI Domain Backup Key Extraction | [color=#60BBD8]intermediate[/color] | [color=#B60016]4662[/color] | Microsoft-Windows-Security-Auditing |
-| Backup Catalog Deleted | [color=#60BBD8]intermediate[/color] | 524 | Microsoft-Windows-Backup |
-| Exchange Server Spawning Suspicious Processes | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Disable Windows Defender Credential Guard | [color=#60BBD8]intermediate[/color] | 13 | Microsoft-Windows-Sysmon |
-| MSBuild Abuse | [color=#60BBD8]intermediate[/color] | 1, 3 | Microsoft-Windows-Sysmon |
-| Office 365 Malware Uploaded On OneDrive | [color=#60BBD8]intermediate[/color] | 6 |  |
-| Suspicious PowerShell Invocations - Generic | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Exchange Mailbox Export | [color=#60BBD8]intermediate[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| MMC Spawning Windows Shell | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Denied Access To Remote Desktop | [color=#60BBD8]intermediate[/color] | 4825 | Microsoft-Windows-Security-Auditing |
-| QakBot Process Creation | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Ngrok Process Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| WCE wceaux.dll Creation | [color=#60BBD8]intermediate[/color] | 30 | Microsoft-Windows-Kernel-File |
-| Qakbot Persistence Using Schtasks | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Impacket Secretsdump.py Tool | [color=#60BBD8]intermediate[/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Suspect Svchost Memory Access | [color=#60BBD8]intermediate[/color] | 10 | Microsoft-Windows-Sysmon |
-| Explorer Process Executing HTA File | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious PowerShell Invocations - Specific | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| DC Shadow via Service Principal Name (SPN) creation | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4742[/color], [color=#B60016]5136[/color] | Microsoft-Windows-Security-Auditing |
-| DHCP Server Error Failed Loading the CallOut DLL | [color=#60BBD8]intermediate[/color] | 1031, 1032, 1033, 1034 | Microsoft-Windows-DHCP-Server |
-| Data Compressed With Rar With Password | [color=#60BBD8]intermediate[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Lsass Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| NetSh Used To Disable Windows Firewall | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Wmiprvse Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Exploiting SetupComplete.cmd CVE-2019-1378 | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Formbook Hijacked Process Command | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Creation or Modification of a GPO Scheduled Task | [color=#60BBD8]intermediate[/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| LSASS Memory Dump File Creation | [color=#60BBD8]intermediate[/color] | 11 | Microsoft-Windows-Sysmon |
-| New Or Renamed User Account With '$' In Attribute 'SamAccountName' | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4720[/color] | Microsoft-Windows-Security-Auditing |
-| Userinit Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Outlook Child Process | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4688[/color] | Microsoft-Windows-Security-Auditing |
-| Netsh RDP Port Opening | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Network Connection Via Certutil | [color=#60BBD8]intermediate[/color] | 3 | Microsoft-Windows-Sysmon |
-| Password Change On Directory Service Restore Mode (DSRM) Account | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4794[/color] | Microsoft-Windows-Security-Auditing |
-| Successful Overpass The Hash Attempt | [color=#60BBD8]intermediate[/color] | 4624 | Microsoft-Windows-Security-Auditing |
-| Suspicious Taskkill Command | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| OceanLotus Registry Activity | [color=#60BBD8]intermediate[/color] | 13 | Microsoft-Windows-Sysmon |
-| Remote Task Creation Via ATSVC Named Pipe | [color=#60BBD8]intermediate[/color] | [color=#B60016]5145[/color] | Microsoft-Windows-Security-Auditing |
-| Capture a network trace with netsh.exe | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Rundll32.exe Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Logonui Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Wininit Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Netsh Allowed Python Program | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Network Args In Command Line | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Cred Dump Tools Dropped Files | [color=#60BBD8]intermediate[/color] | 11 | Microsoft-Windows-Sysmon |
-| RDP Port Change Using Powershell | [color=#60BBD8]intermediate[/color] | 13, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| BazarLoader Persistence Using Schtasks | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| WMIC Command To Determine The Antivirus | [color=#60BBD8]intermediate[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Ryuk Ransomware Persistence Registry Key | [color=#60BBD8]intermediate[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Mimikatz LSASS Memory Access | [color=#60BBD8]intermediate[/color] | 10 | Microsoft-Windows-Sysmon |
-| Spoolsv Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Formbook File Creation DB1 | [color=#60BBD8]intermediate[/color] | 11 | Microsoft-Windows-Sysmon |
-| Lsass Access Through WinRM | [color=#60BBD8]intermediate[/color] | 10 | Microsoft-Windows-Sysmon |
-| Registry Key Used By Some Old Agent Tesla Samples | [color=#60BBD8]intermediate[/color] | 13 | Microsoft-Windows-Sysmon |
-| NlTest Usage | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Detection of default Mimikatz banner | [color=#60BBD8]intermediate[/color] | [color=#B60016]4103[/color] | Microsoft-Windows-PowerShell |
-| Taskhost Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| TUN/TAP Driver Installation | [color=#60BBD8]intermediate[/color] | [color=#B60016]4697[/color], [color=#B60016]7045[/color] | Service Control Manager |
-| Suspicious Regsvr32 Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| PowerShell Malicious PowerShell Keywords | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Possible RottenPotato Attack | [color=#60BBD8]intermediate[/color] | 4624 | Microsoft-Windows-Security-Auditing |
-| Sysprep On AppData Folder | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Netsh Program Allowed With Suspicious Location | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| MalwareBytes Uninstallation | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| STRRAT Scheduled Task | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious SAM Dump | [color=#60BBD8]intermediate[/color] | 16 | Microsoft-Windows-Kernel-General |
-| Exchange Server Creating Unusual Files | [color=#60BBD8]intermediate[/color] | 11 | Microsoft-Windows-Sysmon |
-| Csrss Child Found | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Pandemic Windows Implant | [color=#60BBD8]intermediate[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| PowerCat Function Loading | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| COM Hijack Via Sdclt | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| DCSync Attack | [color=#60BBD8]intermediate[/color] | [color=#B60016]4662[/color] | Microsoft-Windows-Security-Auditing |
-| Cmdkey Cached Credentials Recon | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Microsoft Office Spawning Script | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Eventlog Cleared | [color=#60BBD8]intermediate[/color] | 517, 1102 | Microsoft-Windows-Eventlog |
-| Suspicious Driver Loaded | [color=#60BBD8]intermediate[/color] | 13 | Microsoft-Windows-Sysmon |
-| Commonly Used Commands To Stop Services And Remove Backups | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| DLL Load via LSASS Registry Key | [color=#60BBD8]intermediate[/color] | 12, 13 | Microsoft-Windows-Sysmon |
-| Sliver DNS Beaconing | [color=#60BBD8]intermediate[/color] | 22 | Microsoft-Windows-Sysmon |
-| CMSTP Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Searchprotocolhost Child Found | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| SolarWinds Suspicious File Creation | [color=#60BBD8]intermediate[/color] | 11 | Microsoft-Windows-Sysmon |
-| Wsmprovhost Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Python HTTP Server | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Inhibit System Recovery Deleting Backups | [color=#60BBD8]intermediate[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Suspicious Scheduled Task Creation | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4688[/color] | Microsoft-Windows-Security-Auditing |
-| Office 365 AtpDetection | [color=#60BBD8]intermediate[/color] | 47 |  |
-| PowerShell Execution Via Rundll32 | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Microsoft Office Creating Suspicious File | [color=#60BBD8]intermediate[/color] | 11 | Microsoft-Windows-Sysmon |
-| MavInject Process Injection | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| CMSTP UAC Bypass via COM Object Access | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Desktopimgdownldr Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious certutil command | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Process Requiring DLL Starts Without DLL | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Active Directory Delegate To KRBTGT Service | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4738[/color] | Microsoft-Windows-Security-Auditing |
-| DNS Exfiltration and Tunneling Tools Execution | [color=#60BBD8]intermediate[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Chafer (APT 39) Activity | [color=#60BBD8]intermediate[/color] | [color=#B60016]4697[/color], [color=#B60016]7045[/color] | Microsoft-Windows-Security-Auditing, Service Control Manager |
-| Microsoft Malware Protection Engine Crash | [color=#60BBD8]intermediate[/color] | 1000 | Application Error |
-| Rare Lsass Child Found | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Trickbot Malware Activity | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Network Sniffing Windows | [color=#60BBD8]intermediate[/color] | 1, 5 | Microsoft-Windows-Sysmon |
-| New DLL Added To AppCertDlls Registry Key | [color=#60BBD8]intermediate[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Suspicious DLL side loading from ProgramData | [color=#60BBD8]intermediate[/color] | 7 | Microsoft-Windows-Sysmon |
-| Secure Deletion With SDelete | [color=#60BBD8]intermediate[/color] | [color=#B60016]4656[/color], [color=#B60016]4658[/color], [color=#B60016]4663[/color] | Microsoft-Windows-Security-Auditing |
-| Searchindexer Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| XSL Script Processing And SquiblyTwo Attack | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Bloodhound and Sharphound Tools Usage | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| MOFComp Execution | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Schtasks Suspicious Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Disable .NET ETW Through COMPlus_ETWEnabled | [color=#60BBD8]intermediate[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Windows Defender Tampering Detected | [color=#60BBD8]intermediate[/color] | [color=#6a18a0]1127[/color], [color=#6a18a0]2013[/color], [color=#6a18a0]5001[/color], [color=#6a18a0]5010[/color], [color=#6a18a0]5012[/color], [color=#6a18a0]5101[/color] | Microsoft-Windows-Windows Defender |
-| Suspicious DNS Child Process | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Malicious Named Pipe | [color=#60BBD8]intermediate[/color] | 17 | Microsoft-Windows-Sysmon |
-| PowerShell Download From URL | [color=#60BBD8]intermediate[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| UAC Bypass Using Fodhelper | [color=#60BBD8]intermediate[/color] | 13 | Microsoft-Windows-Sysmon |
-| Winrshost Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Searchprotocolhost Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Smss Wrong Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| User Added to Local Administrators | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4732[/color] | Microsoft-Windows-Security-Auditing |
-| NetNTLM Downgrade Attack | [color=#60BBD8]intermediate[/color] | 13, [color=#B60016]4657[/color] | Microsoft-Windows-Sysmon |
-| Gpscript Suspicious Parent | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Commands From MS SQL Server Shell | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| WMImplant Hack Tool | [color=#60BBD8]intermediate[/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| SolarWinds Wrong Child Process | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| KeePass Config XML In Command-Line | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| DHCP Callout DLL Installation | [color=#60BBD8]intermediate[/color] | 13 | Microsoft-Windows-Sysmon |
-| WMIC Uninstall Product | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| Windows Defender Threat Detected | [color=#60BBD8]intermediate[/color] | [color=#6a18a0]1006[/color], [color=#6a18a0]1007[/color], [color=#6a18a0]1008[/color], [color=#6a18a0]1015[/color], [color=#6a18a0]1116[/color], [color=#6a18a0]1117[/color], [color=#6a18a0]1118[/color], [color=#6a18a0]1119[/color] | Microsoft-Windows-Windows Defender |
-| Spyware Persistence Using Schtasks | [color=#60BBD8]intermediate[/color] | 1 | Microsoft-Windows-Sysmon |
-| DHCP Server Loaded the CallOut DLL | [color=#60BBD8]intermediate[/color] | 1033 |  |
-| Antivirus Password Dumper Detection | [color=#5373E6]elementary[/color] | [color=#6a18a0]1116[/color] | Microsoft-Windows-Windows Defender |
-| Mustang Panda Dropper | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Malicious Service Installations | [color=#5373E6]elementary[/color] | [color=#B60016]4697[/color], [color=#B60016]7045[/color] | Service Control Manager |
-| Cobalt Strike Default Service Creation Usage | [color=#5373E6]elementary[/color] | [color=#B60016]4697[/color], [color=#B60016]7045[/color] | Microsoft-Windows-Security-Auditing, Service Control Manager |
-| Winword Document Droppers | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Malspam Execution Registering Malicious DLL | [color=#5373E6]elementary[/color] | 1, 11 | Microsoft-Windows-Sysmon |
-| Windows Defender History Directory Deleted | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious Double Extension | [color=#5373E6]elementary[/color] | 5 | Microsoft-Windows-Sysmon |
-| Equation Group DLL_U Load | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| PasswordDump SecurityXploded Tool | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Windows Defender Disabled Base64 Encoded | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Netsh RDP Port Forwarding | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Turla Named Pipes | [color=#5373E6]elementary[/color] | 17 | Microsoft-Windows-Sysmon |
-| RedMimicry Winnti Playbook Registry Manipulation | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| DNS Tunnel Technique From MuddyWater | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| APT29 Fake Google Update Service Install | [color=#5373E6]elementary[/color] | [color=#B60016]7045[/color] | Service Control Manager |
-| Explorer Wrong Parent | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Disable Task Manager Through Registry Key | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| UAC Bypass Via Sdclt | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Microsoft Office Startup Add-In | [color=#5373E6]elementary[/color] | 11 | Microsoft-Windows-Sysmon |
-| Exploited CVE-2020-10189 Zoho ManageEngine | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Ursnif Registry Key | [color=#5373E6]elementary[/color] | 13 | Microsoft-Windows-Sysmon |
-| SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory | [color=#5373E6]elementary[/color] | [color=#B60016]4704[/color] | Microsoft-Windows-Security-Auditing |
-| Suspicious Netsh DLL Persistence | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| CVE-2019-0708 Scan | [color=#5373E6]elementary[/color] | 4625 | Microsoft-Windows-Security-Auditing |
-| WiFi Credentials Harvesting Using Netsh | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Exploit For CVE-2015-1641 | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Smbexec.py Service Installation | [color=#5373E6]elementary[/color] | 6, [color=#B60016]4697[/color], [color=#B60016]7045[/color] | Service Control Manager |
-| Disable Workstation Lock | [color=#5373E6]elementary[/color] | 13 | Microsoft-Windows-Sysmon |
-| Debugging Software Deactivation | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| PowerShell Credential Prompt | [color=#5373E6]elementary[/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Mshta JavaScript Execution | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Elise Backdoor | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious VBS Execution Parameter | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| FlowCloud Malware | [color=#5373E6]elementary[/color] | 13 | Microsoft-Windows-Sysmon |
-| Schtasks Persistence With High Privileges | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| UAC Bypass via Event Viewer | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Sticky Key Like Backdoor Usage | [color=#5373E6]elementary[/color] | 13 | Microsoft-Windows-Sysmon |
-| RYUK Ransomeware - martinstevens Username | [color=#5373E6]elementary[/color] | [color=#B60016]4103[/color] | Microsoft-Windows-PowerShell |
-| Security Support Provider (SSP) Added to LSA Configuration | [color=#5373E6]elementary[/color] | 13 | Microsoft-Windows-Sysmon |
-| Phorpiex DriveMgr Command | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Audit CVE Event | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Audit-CVE |
-| Invoke-TheHash Commandlets | [color=#5373E6]elementary[/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Antivirus Exploitation Framework Detection | [color=#5373E6]elementary[/color] | [color=#6a18a0]1116[/color] | Microsoft-Windows-Windows Defender |
-| RDP Login From Localhost | [color=#5373E6]elementary[/color] | 4624 | Microsoft-Windows-Security-Auditing |
-| Lazarus Loaders | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| SysKey Registry Keys Access | [color=#5373E6]elementary[/color] | [color=#B60016]4656[/color], [color=#B60016]4663[/color] | Microsoft-Windows-Security-Auditing |
-| Copying Sensitive Files With Credential Data | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Windows Update LolBins | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Windows Defender Signatures Removed With MpCmdRun | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Leviathan Registry Key Activity | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Suspicious Windows ANONYMOUS LOGON Local Account Created | [color=#5373E6]elementary[/color] | [color=#60BBD8]4720[/color] | Microsoft-Windows-Security-Auditing |
-| Meterpreter or Cobalt Strike Getsystem Service Installation | [color=#5373E6]elementary[/color] | 1, 13, 17, [color=#B60016]4697[/color], [color=#B60016]7045[/color] | Microsoft-Windows-Security-Auditing, Microsoft-Windows-Sysmon, Service Control Manager |
-| Dumpert LSASS Process Dumper | [color=#5373E6]elementary[/color] | 7, 11 | Microsoft-Windows-Sysmon |
-| Windows Defender Exclusion Configuration | [color=#5373E6]elementary[/color] | 13, [color=#6a18a0]5007[/color] | Microsoft-Windows-Sysmon, Microsoft-Windows-Windows Defender |
-| Mimikatz Basic Commands | [color=#5373E6]elementary[/color] | [color=#B60016]4103[/color] | Microsoft-Windows-PowerShell |
-| Cobalt Strike Default Beacons Names | [color=#5373E6]elementary[/color] | 1, 15 | Microsoft-Windows-Sysmon |
-| PowerShell Downgrade Attack | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Outlook Registry Access | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| AdFind Usage | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Domain Trust Discovery Through LDAP | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Empire Monkey Activity | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| WMI Persistence Command Line Event Consumer | [color=#5373E6]elementary[/color] | 7 | Microsoft-Windows-Sysmon |
-| Antivirus Web Shell Detection | [color=#5373E6]elementary[/color] | [color=#6a18a0]1116[/color] | Microsoft-Windows-Windows Defender |
-| Office Application Startup Office Test | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Msdt (Follina) File Browse Process Execution | [color=#5373E6]elementary[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| Phorpiex Process Masquerading | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| WMI Install Of Binary | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| ICacls Granting Access To All | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Credential Dumping By LaZagne | [color=#5373E6]elementary[/color] | 10 | Microsoft-Windows-Sysmon |
-| Process Memory Dump Using Comsvcs | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Suspicious HWP Child Process | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| IcedID Execution Using Excel | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Dllhost Wrong Parent | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Ryuk Ransomware Command Line | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| RedMimicry Winnti Playbook Dropped File | [color=#5373E6]elementary[/color] | 11 | Microsoft-Windows-Sysmon |
-| Blue Mockingbird Malware | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| Windows Credential Editor Registry Key | [color=#5373E6]elementary[/color] | 13 | Microsoft-Windows-Sysmon |
-| Raccine Uninstall | [color=#5373E6]elementary[/color] | 1 | Microsoft-Windows-Sysmon |
-| PowerShell AMSI Deactivation Bypass Using .NET Reflection | [color=#5373E6]elementary[/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
-| Wdigest Enable UseLogonCredential | [color=#5373E6]elementary[/color] | 1, 13 | Microsoft-Windows-Sysmon |
-| Antivirus Relevant File Paths Alerts | [color=#5373E6]elementary[/color] | [color=#6a18a0]1116[/color] | Microsoft-Windows-Windows Defender |
-| Suncrypt Parameters | [color=#5373E6]elementary[/color] | 1, [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
-| AD Object WriteDAC Access | [color=#5373E6]elementary[/color] | [color=#B60016]4662[/color] | Microsoft-Windows-Security-Auditing |
+| PowerShell Malicious PowerShell Commandlets | <span style='color:#B60016'>master</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Putty Sessions Listing | <span style='color:#B60016'>master</span> | 1, <span style="color:#B60016">4656</span>, <span style="color:#B60016">4663</span> | Microsoft-Windows-Security-Auditing, Microsoft-Windows-Sysmon |
+| FoggyWeb Backdoor DLL Loading | <span style='color:#B60016'>master</span> | 7 | Microsoft-Windows-Sysmon |
+| Windows Defender History Deleted | <span style='color:#B60016'>master</span> | <span style="color:#6a18a0">1013</span> | Microsoft-Windows-Windows Defender |
+| Svchost DLL Search Order Hijack | <span style='color:#B60016'>master</span> | 7 | Microsoft-Windows-Sysmon |
+| Rubeus Register New Logon Process | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4611</span> | Microsoft-Windows-Security-Auditing |
+| Suspicious DLL Loaded Via Office Applications | <span style='color:#B60016'>master</span> | 7 | Microsoft-Windows-Sysmon |
+| Suspicious PsExec Execution | <span style='color:#B60016'>master</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Account Removed From A Security Enabled Group | <span style='color:#B60016'>master</span> | <span style="color:#60BBD8">4729</span> | Microsoft-Windows-Security-Auditing |
+| Netsh Port Opening | <span style='color:#B60016'>master</span> | 1 | Microsoft-Windows-Sysmon |
+| In-memory PowerShell | <span style='color:#B60016'>master</span> | 7 | Microsoft-Windows-Sysmon |
+| Failed Logon Source From Public IP Addresses | <span style='color:#B60016'>master</span> | 4625 | Microsoft-Windows-Security-Auditing |
+| TOR Usage Generic Rule | <span style='color:#B60016'>master</span> | 3 | Microsoft-Windows-Sysmon |
+| Windows Defender Configuration Changed | <span style='color:#B60016'>master</span> | <span style="color:#6a18a0">5007</span> | Microsoft-Windows-Windows Defender |
+| Office 365 MCAS New Country | <span style='color:#B60016'>master</span> | 98 |  |
+| Registry Checked For Lanmanserver DisableCompression Parameter | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4663</span> | Microsoft-Windows-Security-Auditing |
+| DNS ServerLevelPluginDll Installation | <span style='color:#B60016'>master</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Advanced IP Scanner | <span style='color:#B60016'>master</span> | 1 | Microsoft-Windows-Sysmon |
+| Network Share Discovery | <span style='color:#B60016'>master</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Usage Of Sysinternals Tools | <span style='color:#B60016'>master</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| LSASS Access From Non System Account | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4656</span>, <span style="color:#B60016">4663</span> | Microsoft-Windows-Security-Auditing |
+| Local Account Deleted | <span style='color:#B60016'>master</span> | 4726, <span style="color:#B60016">4743</span> | Microsoft-Windows-Security-Auditing |
+| Protected Storage Service Access | <span style='color:#B60016'>master</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Admin Share Access | <span style='color:#B60016'>master</span> | <span style="color:#B60016">5140</span>, <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Office 365 MCAS Inbox Hiding | <span style='color:#B60016'>master</span> | 98 |  |
+| Office 365 MCAS Repeated Failed Login | <span style='color:#B60016'>master</span> | 98 |  |
+| WMIC Loading Scripting Libraries | <span style='color:#B60016'>master</span> | 7 | Microsoft-Windows-Sysmon |
+| Autorun Keys Modification | <span style='color:#B60016'>master</span> | 12 | Microsoft-Windows-Sysmon |
+| DNS Server Error Failed Loading The ServerLevelPluginDLL | <span style='color:#B60016'>master</span> | 150, 770, 771 | Microsoft-Windows-DNS-Server-Service |
+| Disable Security Events Logging Adding Reg Key MiniNt | <span style='color:#B60016'>master</span> | 13 | Microsoft-Windows-Sysmon |
+| Windows Firewall Changes | <span style='color:#B60016'>master</span> | 1 | Microsoft-Windows-Sysmon |
+| Webshell Creation | <span style='color:#B60016'>master</span> | 11, <span style="color:#B60016">4656</span>, <span style="color:#B60016">4663</span> | Microsoft-Windows-Sysmon |
+| List Shadow Copies | <span style='color:#B60016'>master</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Sysmon Windows File Block Executable | <span style='color:#B60016'>master</span> | 27 | Microsoft-Windows-Sysmon |
+| AD User Enumeration | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4662</span> | Microsoft-Windows-Security-Auditing |
+| WMI DLL Loaded Via Office | <span style='color:#B60016'>master</span> | 7 | Microsoft-Windows-Sysmon |
+| Credential Dumping-Tools Common Named Pipes | <span style='color:#B60016'>master</span> | 17 | Microsoft-Windows-Sysmon |
+| Account Added To A Security Enabled Group | <span style='color:#B60016'>master</span> | <span style="color:#60BBD8">4728</span> | Microsoft-Windows-Security-Auditing |
+| Office 365 MCAS Detection Velocity | <span style='color:#B60016'>master</span> | 98 |  |
+| Office 365 MCAS Repeated Delete | <span style='color:#B60016'>master</span> | 98 |  |
+| Local Account Created | <span style='color:#B60016'>master</span> | <span style="color:#60BBD8">4720</span> | Microsoft-Windows-Security-Auditing |
+| Potential RDP Connection To Non-Domain Host | <span style='color:#B60016'>master</span> | <span style="color:#B60016">8001</span> | Microsoft-Windows-NTLM |
+| Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys | <span style='color:#B60016'>master</span> | 13 | Microsoft-Windows-Sysmon |
+| Suspicious Access To Sensitive File Extensions | <span style='color:#B60016'>master</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Cobalt Strike Named Pipes | <span style='color:#B60016'>master</span> | 17 | Microsoft-Windows-Sysmon |
+| User Couldn't Call A Privileged Service LsaRegisterLogonProcess | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4673</span> | Microsoft-Windows-Security-Auditing |
+| Office 365 MCAS Risky IP | <span style='color:#B60016'>master</span> | 98 |  |
+| CVE-2017-11882 Microsoft Office Equation Editor Vulnerability | <span style='color:#B60016'>master</span> | 3 | Microsoft-Windows-Sysmon |
+| Windows Registry Persistence COM Key Linking | <span style='color:#B60016'>master</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| SCM Database Handle Failure | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4656</span> | Microsoft-Windows-Security-Auditing |
+| Abusing Azure Browser SSO | <span style='color:#B60016'>master</span> | 7 | Microsoft-Windows-Sysmon |
+| Admin User RDP Remote Logon | <span style='color:#B60016'>master</span> | 4624 | Microsoft-Windows-Security-Auditing |
+| Suspicious New Printer Ports In Registry | <span style='color:#B60016'>master</span> | 13 | Microsoft-Windows-Sysmon |
+| Remote Registry Management Using Reg Utility | <span style='color:#B60016'>master</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| SCM Database Privileged Operation | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4674</span> | Microsoft-Windows-Security-Auditing |
+| Net.exe User Account Creation | <span style='color:#B60016'>master</span> | 1 | Microsoft-Windows-Sysmon |
+| Narrator Feedback-Hub Persistence | <span style='color:#B60016'>master</span> | 13 | Microsoft-Windows-Sysmon |
+| CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv | <span style='color:#B60016'>master</span> | 7, 11 | Microsoft-Windows-Sysmon |
+| File Or Folder Permissions Modifications | <span style='color:#B60016'>master</span> | 1 | Microsoft-Windows-Sysmon |
+| Stop Backup Services | <span style='color:#B60016'>master</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Windows Defender Deactivation Using PowerShell Script | <span style='color:#B60016'>master</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Process Herpaderping | <span style='color:#B60016'>master</span> | 25 | Microsoft-Windows-Sysmon |
+| Malware Persistence Registry Key | <span style='color:#B60016'>master</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| AD Privileged Users Or Groups Reconnaissance | <span style='color:#B60016'>master</span> | <span style="color:#B60016">4661</span> | Microsoft-Windows-Security-Auditing |
+| FromBase64String Command Line | <span style='color:#B60016'>master</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Process Hollowing Detection | <span style='color:#B60016'>master</span> | 25 | Microsoft-Windows-Sysmon |
+| Suspicious Outbound Kerberos Connection | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">5156</span> | Microsoft-Windows-Security-Auditing |
+| PowerShell Invoke-Obfuscation Obfuscated IEX Invocation | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Remote Service Activity Via SVCCTL Named Pipe | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Exfiltration And Tunneling Tools Execution | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Alternate PowerShell Hosts Pipe | <span style='color:#60BBD8'>advanced</span> | 17 | Microsoft-Windows-Sysmon |
+| Powershell Web Request | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Active Directory Replication from Non Machine Account | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">4662</span> | Microsoft-Windows-Security-Auditing |
+| Rare Logonui Child Found | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Logon Scripts (UserInitMprLogonScript) | <span style='color:#60BBD8'>advanced</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Suspicious desktop.ini Action | <span style='color:#60BBD8'>advanced</span> | 15 | Microsoft-Windows-Sysmon |
+| Winlogon wrong parent | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious XOR Encoded PowerShell Command Line | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Control Panel Items | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Taskhost or Taskhostw Suspicious Child Found | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Netsh Allow Command | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Metasploit PSExec Service Creation | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">7045</span> | Service Control Manager |
+| Default Encoding To UTF-8 PowerShell | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Rubeus Tool Command-line | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Domain Group And Permission Enumeration | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Active Directory Replication User Backdoor | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">5136</span> | Microsoft-Windows-Security-Auditing |
+| Csrss Wrong Parent | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious PrinterPorts Creation (CVE-2020-1048) | <span style='color:#60BBD8'>advanced</span> | 10 | Microsoft-Windows-Sysmon |
+| XCopy Suspicious Usage | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Python Opening Ports | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">5154</span> | Microsoft-Windows-Security-Auditing |
+| Telegram Bot API Request | <span style='color:#60BBD8'>advanced</span> | 22 | Microsoft-Windows-Sysmon |
+| Suspicious PROCEXP152.sys File Created In Tmp | <span style='color:#60BBD8'>advanced</span> | 11 | Microsoft-Windows-Sysmon |
+| Legitimate Process Execution From Unusual Folder | <span style='color:#60BBD8'>advanced</span> | 1, 5, <span style="color:#60BBD8">4688</span> | Microsoft-Windows-Sysmon |
+| CreateRemoteThread Common Process Injection | <span style='color:#60BBD8'>advanced</span> | 8 | Microsoft-Windows-Sysmon |
+| PowerShell Data Compressed | <span style='color:#60BBD8'>advanced</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Dynwrapx Module Loading | <span style='color:#60BBD8'>advanced</span> | 7 | Microsoft-Windows-Sysmon |
+| Suspicious Windows DNS Queries | <span style='color:#60BBD8'>advanced</span> | 22 | Microsoft-Windows-Sysmon |
+| Microsoft Office Product Spawning Windows Shell | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Control Process | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| PowerShell Malicious Nishang PowerShell Commandlets | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| External Disk Drive Or USB Storage Device | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">6416</span> | Microsoft-Windows-Security-Auditing |
+| Load Of dbghelp/dbgcore DLL From Suspicious Process | <span style='color:#60BBD8'>advanced</span> | 7 | Microsoft-Windows-Sysmon |
+| PowerView commandlets 2 | <span style='color:#60BBD8'>advanced</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| PowerView commandlets 1 | <span style='color:#60BBD8'>advanced</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| WMI Event Subscription | <span style='color:#60BBD8'>advanced</span> | 19, 20, 21 | Microsoft-Windows-Sysmon |
+| NTDS.dit File In Suspicious Directory | <span style='color:#60BBD8'>advanced</span> | 11 | Microsoft-Windows-Sysmon |
+| Lateral Movement - Remote Named Pipe | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Domain Trust Created Or Removed | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4706</span>, <span style="color:#60BBD8">4707</span> | Microsoft-Windows-Security-Auditing |
+| Winword wrong parent | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4688</span> | Microsoft-Windows-Security-Auditing |
+| Unsigned Image Loaded Into LSASS Process | <span style='color:#60BBD8'>advanced</span> | 7 | Microsoft-Windows-Sysmon |
+| Windows Registry Persistence COM Search Order Hijacking | <span style='color:#60BBD8'>advanced</span> | 13 | Microsoft-Windows-Sysmon |
+| WMI Persistence Script Event Consumer File Write | <span style='color:#60BBD8'>advanced</span> | 11 | Microsoft-Windows-Sysmon |
+| Privileged AD Builtin Group Modified | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4727</span>, <span style="color:#60BBD8">4728</span>, <span style="color:#60BBD8">4729</span>, <span style="color:#60BBD8">4730</span>, <span style="color:#60BBD8">4754</span>, <span style="color:#60BBD8">4756</span>, <span style="color:#60BBD8">4757</span>, <span style="color:#60BBD8">4758</span>, <span style="color:#60BBD8">4764</span> | Microsoft-Windows-Security-Auditing |
+| PsExec Process | <span style='color:#60BBD8'>advanced</span> | 13, <span style="color:#B60016">7045</span> | Microsoft-Windows-Sysmon, Service Control Manager |
+| Disabled IE Security Features | <span style='color:#60BBD8'>advanced</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Change Default File Association | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Rclone Process | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| RDP Sensitive Settings Changed | <span style='color:#60BBD8'>advanced</span> | 13 | Microsoft-Windows-Sysmon |
+| Adexplorer Usage | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| New Service Creation | <span style='color:#60BBD8'>advanced</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Account Tampering - Suspicious Failed Logon Reasons | <span style='color:#60BBD8'>advanced</span> | 4625, <span style="color:#B60016">4776</span> | Microsoft-Windows-Security-Auditing |
+| Suspicious PowerShell Keywords | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| SAM Registry Hive Handle Request | <span style='color:#60BBD8'>advanced</span> | <span style="color:#B60016">4656</span> | Microsoft-Windows-Security-Auditing |
+| Suspicious ADSI-Cache Usage By Unknown Tool | <span style='color:#60BBD8'>advanced</span> | 11 | Microsoft-Windows-Sysmon |
+| Cmd.exe Used To Run Reconnaissance Commands | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Cmd.exe Command Line | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Hiding Files With Attrib.exe | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| RDP Session Discovery | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| Exploit For CVE-2017-0261 Or CVE-2017-0262 | <span style='color:#60BBD8'>advanced</span> | 1 | Microsoft-Windows-Sysmon |
+| PowerShell - NTFS Alternate Data Stream | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Svchost Wrong Parent | <span style='color:#60BBD8'>advanced</span> | <span style="color:#60BBD8">4688</span> | Microsoft-Windows-Security-Auditing |
+| Suspicious Finger Usage | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious DLL Loading By Ordinal | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Clear EventLogs Through CommandLine | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Taskhostw Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Scripting In A WMI Consumer | <span style='color:#60BBD8'>intermediate</span> | 20 | Microsoft-Windows-Sysmon |
+| Suspicious Windows Installer Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Wmic Process Call Creation | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Active Directory User Backdoors | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4662</span>, <span style="color:#B60016">5136</span> | Microsoft-Windows-Security-Auditing |
+| Suspicious Windows Script Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| ETW Tampering | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Password Dumper Activity On LSASS | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4656</span> | Microsoft-Windows-Security-Auditing |
+| Transfering Files With Credential Data Via Network Shares | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| MS Office Product Spawning Exe in User Dir | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Powershell Winlogon Helper DLL | <span style='color:#60BBD8'>intermediate</span> | 13, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| SquirrelWaffle Malspam Execution Loading DLL | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Office 365 Malware Uploaded On SharePoint | <span style='color:#60BBD8'>intermediate</span> | 6 |  |
+| NTDS.dit File Interaction Through Command Line | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Grabbing Sensitive Hives Via Reg Utility | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| LSASS Memory Dump | <span style='color:#60BBD8'>intermediate</span> | 10 | Microsoft-Windows-Sysmon |
+| Credential Dumping Tools Service Execution | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">7045</span> | Service Control Manager |
+| NjRat Registry Changes | <span style='color:#60BBD8'>intermediate</span> | 1, 12, 13 | Microsoft-Windows-Sysmon |
+| Koadic Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Mshta Execution From Wmi | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Hostname | <span style='color:#60BBD8'>intermediate</span> | 4624 | Microsoft-Windows-Security-Auditing |
+| StoneDrill Service Install | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">7045</span> | Service Control Manager |
+| MMC20 Lateral Movement | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Possible Replay Attack | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4649</span> | Microsoft-Windows-Security-Auditing |
+| Hijack Legit RDP Session To Move Laterally | <span style='color:#60BBD8'>intermediate</span> | 11 | Microsoft-Windows-Sysmon |
+| Audio Capture via PowerShell | <span style='color:#60BBD8'>intermediate</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Suspicious LDAP-Attributes Used | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">5136</span> | Microsoft-Windows-Security-Auditing |
+| DPAPI Domain Backup Key Extraction | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4662</span> | Microsoft-Windows-Security-Auditing |
+| Backup Catalog Deleted | <span style='color:#60BBD8'>intermediate</span> | 524 | Microsoft-Windows-Backup |
+| Exchange Server Spawning Suspicious Processes | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Disable Windows Defender Credential Guard | <span style='color:#60BBD8'>intermediate</span> | 13 | Microsoft-Windows-Sysmon |
+| MSBuild Abuse | <span style='color:#60BBD8'>intermediate</span> | 1, 3 | Microsoft-Windows-Sysmon |
+| Office 365 Malware Uploaded On OneDrive | <span style='color:#60BBD8'>intermediate</span> | 6 |  |
+| Suspicious PowerShell Invocations - Generic | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Exchange Mailbox Export | <span style='color:#60BBD8'>intermediate</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| MMC Spawning Windows Shell | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Denied Access To Remote Desktop | <span style='color:#60BBD8'>intermediate</span> | 4825 | Microsoft-Windows-Security-Auditing |
+| QakBot Process Creation | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Ngrok Process Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| WCE wceaux.dll Creation | <span style='color:#60BBD8'>intermediate</span> | 30 | Microsoft-Windows-Kernel-File |
+| Qakbot Persistence Using Schtasks | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Impacket Secretsdump.py Tool | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Suspect Svchost Memory Access | <span style='color:#60BBD8'>intermediate</span> | 10 | Microsoft-Windows-Sysmon |
+| Explorer Process Executing HTA File | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious PowerShell Invocations - Specific | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| DC Shadow via Service Principal Name (SPN) creation | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4742</span>, <span style="color:#B60016">5136</span> | Microsoft-Windows-Security-Auditing |
+| DHCP Server Error Failed Loading the CallOut DLL | <span style='color:#60BBD8'>intermediate</span> | 1031, 1032, 1033, 1034 | Microsoft-Windows-DHCP-Server |
+| Data Compressed With Rar With Password | <span style='color:#60BBD8'>intermediate</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Lsass Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| NetSh Used To Disable Windows Firewall | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Wmiprvse Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Exploiting SetupComplete.cmd CVE-2019-1378 | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Formbook Hijacked Process Command | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Creation or Modification of a GPO Scheduled Task | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| LSASS Memory Dump File Creation | <span style='color:#60BBD8'>intermediate</span> | 11 | Microsoft-Windows-Sysmon |
+| New Or Renamed User Account With '$' In Attribute 'SamAccountName' | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4720</span> | Microsoft-Windows-Security-Auditing |
+| Userinit Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Outlook Child Process | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4688</span> | Microsoft-Windows-Security-Auditing |
+| Netsh RDP Port Opening | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Network Connection Via Certutil | <span style='color:#60BBD8'>intermediate</span> | 3 | Microsoft-Windows-Sysmon |
+| Password Change On Directory Service Restore Mode (DSRM) Account | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4794</span> | Microsoft-Windows-Security-Auditing |
+| Successful Overpass The Hash Attempt | <span style='color:#60BBD8'>intermediate</span> | 4624 | Microsoft-Windows-Security-Auditing |
+| Suspicious Taskkill Command | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| OceanLotus Registry Activity | <span style='color:#60BBD8'>intermediate</span> | 13 | Microsoft-Windows-Sysmon |
+| Remote Task Creation Via ATSVC Named Pipe | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">5145</span> | Microsoft-Windows-Security-Auditing |
+| Capture a network trace with netsh.exe | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Rundll32.exe Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Logonui Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Wininit Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Netsh Allowed Python Program | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Network Args In Command Line | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Cred Dump Tools Dropped Files | <span style='color:#60BBD8'>intermediate</span> | 11 | Microsoft-Windows-Sysmon |
+| RDP Port Change Using Powershell | <span style='color:#60BBD8'>intermediate</span> | 13, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| BazarLoader Persistence Using Schtasks | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| WMIC Command To Determine The Antivirus | <span style='color:#60BBD8'>intermediate</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Ryuk Ransomware Persistence Registry Key | <span style='color:#60BBD8'>intermediate</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Mimikatz LSASS Memory Access | <span style='color:#60BBD8'>intermediate</span> | 10 | Microsoft-Windows-Sysmon |
+| Spoolsv Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Formbook File Creation DB1 | <span style='color:#60BBD8'>intermediate</span> | 11 | Microsoft-Windows-Sysmon |
+| Lsass Access Through WinRM | <span style='color:#60BBD8'>intermediate</span> | 10 | Microsoft-Windows-Sysmon |
+| Registry Key Used By Some Old Agent Tesla Samples | <span style='color:#60BBD8'>intermediate</span> | 13 | Microsoft-Windows-Sysmon |
+| NlTest Usage | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Detection of default Mimikatz banner | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4103</span> | Microsoft-Windows-PowerShell |
+| Taskhost Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| TUN/TAP Driver Installation | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4697</span>, <span style="color:#B60016">7045</span> | Service Control Manager |
+| Suspicious Regsvr32 Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| PowerShell Malicious PowerShell Keywords | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Possible RottenPotato Attack | <span style='color:#60BBD8'>intermediate</span> | 4624 | Microsoft-Windows-Security-Auditing |
+| Sysprep On AppData Folder | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Netsh Program Allowed With Suspicious Location | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| MalwareBytes Uninstallation | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| STRRAT Scheduled Task | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious SAM Dump | <span style='color:#60BBD8'>intermediate</span> | 16 | Microsoft-Windows-Kernel-General |
+| Exchange Server Creating Unusual Files | <span style='color:#60BBD8'>intermediate</span> | 11 | Microsoft-Windows-Sysmon |
+| Csrss Child Found | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Pandemic Windows Implant | <span style='color:#60BBD8'>intermediate</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| PowerCat Function Loading | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| COM Hijack Via Sdclt | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| DCSync Attack | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4662</span> | Microsoft-Windows-Security-Auditing |
+| Cmdkey Cached Credentials Recon | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Microsoft Office Spawning Script | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Eventlog Cleared | <span style='color:#60BBD8'>intermediate</span> | 517, 1102 | Microsoft-Windows-Eventlog |
+| Suspicious Driver Loaded | <span style='color:#60BBD8'>intermediate</span> | 13 | Microsoft-Windows-Sysmon |
+| Commonly Used Commands To Stop Services And Remove Backups | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| DLL Load via LSASS Registry Key | <span style='color:#60BBD8'>intermediate</span> | 12, 13 | Microsoft-Windows-Sysmon |
+| Sliver DNS Beaconing | <span style='color:#60BBD8'>intermediate</span> | 22 | Microsoft-Windows-Sysmon |
+| CMSTP Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Searchprotocolhost Child Found | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| SolarWinds Suspicious File Creation | <span style='color:#60BBD8'>intermediate</span> | 11 | Microsoft-Windows-Sysmon |
+| Wsmprovhost Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Python HTTP Server | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Inhibit System Recovery Deleting Backups | <span style='color:#60BBD8'>intermediate</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Suspicious Scheduled Task Creation | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4688</span> | Microsoft-Windows-Security-Auditing |
+| Office 365 AtpDetection | <span style='color:#60BBD8'>intermediate</span> | 47 |  |
+| PowerShell Execution Via Rundll32 | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Microsoft Office Creating Suspicious File | <span style='color:#60BBD8'>intermediate</span> | 11 | Microsoft-Windows-Sysmon |
+| MavInject Process Injection | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| CMSTP UAC Bypass via COM Object Access | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Desktopimgdownldr Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious certutil command | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Process Requiring DLL Starts Without DLL | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Active Directory Delegate To KRBTGT Service | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4738</span> | Microsoft-Windows-Security-Auditing |
+| DNS Exfiltration and Tunneling Tools Execution | <span style='color:#60BBD8'>intermediate</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Chafer (APT 39) Activity | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4697</span>, <span style="color:#B60016">7045</span> | Microsoft-Windows-Security-Auditing, Service Control Manager |
+| Microsoft Malware Protection Engine Crash | <span style='color:#60BBD8'>intermediate</span> | 1000 | Application Error |
+| Rare Lsass Child Found | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Trickbot Malware Activity | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Network Sniffing Windows | <span style='color:#60BBD8'>intermediate</span> | 1, 5 | Microsoft-Windows-Sysmon |
+| New DLL Added To AppCertDlls Registry Key | <span style='color:#60BBD8'>intermediate</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Suspicious DLL side loading from ProgramData | <span style='color:#60BBD8'>intermediate</span> | 7 | Microsoft-Windows-Sysmon |
+| Secure Deletion With SDelete | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#B60016">4656</span>, <span style="color:#B60016">4658</span>, <span style="color:#B60016">4663</span> | Microsoft-Windows-Security-Auditing |
+| Searchindexer Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| XSL Script Processing And SquiblyTwo Attack | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Bloodhound and Sharphound Tools Usage | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| MOFComp Execution | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Schtasks Suspicious Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Disable .NET ETW Through COMPlus_ETWEnabled | <span style='color:#60BBD8'>intermediate</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Windows Defender Tampering Detected | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#6a18a0">1127</span>, <span style="color:#6a18a0">2013</span>, <span style="color:#6a18a0">5001</span>, <span style="color:#6a18a0">5010</span>, <span style="color:#6a18a0">5012</span>, <span style="color:#6a18a0">5101</span> | Microsoft-Windows-Windows Defender |
+| Suspicious DNS Child Process | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Malicious Named Pipe | <span style='color:#60BBD8'>intermediate</span> | 17 | Microsoft-Windows-Sysmon |
+| PowerShell Download From URL | <span style='color:#60BBD8'>intermediate</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| UAC Bypass Using Fodhelper | <span style='color:#60BBD8'>intermediate</span> | 13 | Microsoft-Windows-Sysmon |
+| Winrshost Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Searchprotocolhost Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Smss Wrong Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| User Added to Local Administrators | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4732</span> | Microsoft-Windows-Security-Auditing |
+| NetNTLM Downgrade Attack | <span style='color:#60BBD8'>intermediate</span> | 13, <span style="color:#B60016">4657</span> | Microsoft-Windows-Sysmon |
+| Gpscript Suspicious Parent | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Commands From MS SQL Server Shell | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| WMImplant Hack Tool | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| SolarWinds Wrong Child Process | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| KeePass Config XML In Command-Line | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| DHCP Callout DLL Installation | <span style='color:#60BBD8'>intermediate</span> | 13 | Microsoft-Windows-Sysmon |
+| WMIC Uninstall Product | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| Windows Defender Threat Detected | <span style='color:#60BBD8'>intermediate</span> | <span style="color:#6a18a0">1006</span>, <span style="color:#6a18a0">1007</span>, <span style="color:#6a18a0">1008</span>, <span style="color:#6a18a0">1015</span>, <span style="color:#6a18a0">1116</span>, <span style="color:#6a18a0">1117</span>, <span style="color:#6a18a0">1118</span>, <span style="color:#6a18a0">1119</span> | Microsoft-Windows-Windows Defender |
+| Spyware Persistence Using Schtasks | <span style='color:#60BBD8'>intermediate</span> | 1 | Microsoft-Windows-Sysmon |
+| DHCP Server Loaded the CallOut DLL | <span style='color:#60BBD8'>intermediate</span> | 1033 |  |
+| Antivirus Password Dumper Detection | <span style='color:#5373E6'>elementary</span> | <span style="color:#6a18a0">1116</span> | Microsoft-Windows-Windows Defender |
+| Mustang Panda Dropper | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Malicious Service Installations | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4697</span>, <span style="color:#B60016">7045</span> | Service Control Manager |
+| Cobalt Strike Default Service Creation Usage | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4697</span>, <span style="color:#B60016">7045</span> | Microsoft-Windows-Security-Auditing, Service Control Manager |
+| Winword Document Droppers | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Malspam Execution Registering Malicious DLL | <span style='color:#5373E6'>elementary</span> | 1, 11 | Microsoft-Windows-Sysmon |
+| Windows Defender History Directory Deleted | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious Double Extension | <span style='color:#5373E6'>elementary</span> | 5 | Microsoft-Windows-Sysmon |
+| Equation Group DLL_U Load | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| PasswordDump SecurityXploded Tool | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Windows Defender Disabled Base64 Encoded | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Netsh RDP Port Forwarding | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Turla Named Pipes | <span style='color:#5373E6'>elementary</span> | 17 | Microsoft-Windows-Sysmon |
+| RedMimicry Winnti Playbook Registry Manipulation | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| DNS Tunnel Technique From MuddyWater | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| APT29 Fake Google Update Service Install | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">7045</span> | Service Control Manager |
+| Explorer Wrong Parent | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Disable Task Manager Through Registry Key | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| UAC Bypass Via Sdclt | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Microsoft Office Startup Add-In | <span style='color:#5373E6'>elementary</span> | 11 | Microsoft-Windows-Sysmon |
+| Exploited CVE-2020-10189 Zoho ManageEngine | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Ursnif Registry Key | <span style='color:#5373E6'>elementary</span> | 13 | Microsoft-Windows-Sysmon |
+| SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4704</span> | Microsoft-Windows-Security-Auditing |
+| Suspicious Netsh DLL Persistence | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| CVE-2019-0708 Scan | <span style='color:#5373E6'>elementary</span> | 4625 | Microsoft-Windows-Security-Auditing |
+| WiFi Credentials Harvesting Using Netsh | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Exploit For CVE-2015-1641 | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Smbexec.py Service Installation | <span style='color:#5373E6'>elementary</span> | 6, <span style="color:#B60016">4697</span>, <span style="color:#B60016">7045</span> | Service Control Manager |
+| Disable Workstation Lock | <span style='color:#5373E6'>elementary</span> | 13 | Microsoft-Windows-Sysmon |
+| Debugging Software Deactivation | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| PowerShell Credential Prompt | <span style='color:#5373E6'>elementary</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Mshta JavaScript Execution | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Elise Backdoor | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious VBS Execution Parameter | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| FlowCloud Malware | <span style='color:#5373E6'>elementary</span> | 13 | Microsoft-Windows-Sysmon |
+| Schtasks Persistence With High Privileges | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| UAC Bypass via Event Viewer | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Sticky Key Like Backdoor Usage | <span style='color:#5373E6'>elementary</span> | 13 | Microsoft-Windows-Sysmon |
+| RYUK Ransomeware - martinstevens Username | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4103</span> | Microsoft-Windows-PowerShell |
+| Security Support Provider (SSP) Added to LSA Configuration | <span style='color:#5373E6'>elementary</span> | 13 | Microsoft-Windows-Sysmon |
+| Phorpiex DriveMgr Command | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Audit CVE Event | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Audit-CVE |
+| Invoke-TheHash Commandlets | <span style='color:#5373E6'>elementary</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Antivirus Exploitation Framework Detection | <span style='color:#5373E6'>elementary</span> | <span style="color:#6a18a0">1116</span> | Microsoft-Windows-Windows Defender |
+| RDP Login From Localhost | <span style='color:#5373E6'>elementary</span> | 4624 | Microsoft-Windows-Security-Auditing |
+| Lazarus Loaders | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| SysKey Registry Keys Access | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4656</span>, <span style="color:#B60016">4663</span> | Microsoft-Windows-Security-Auditing |
+| Copying Sensitive Files With Credential Data | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Windows Update LolBins | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Windows Defender Signatures Removed With MpCmdRun | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Leviathan Registry Key Activity | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Suspicious Windows ANONYMOUS LOGON Local Account Created | <span style='color:#5373E6'>elementary</span> | <span style="color:#60BBD8">4720</span> | Microsoft-Windows-Security-Auditing |
+| Meterpreter or Cobalt Strike Getsystem Service Installation | <span style='color:#5373E6'>elementary</span> | 1, 13, 17, <span style="color:#B60016">4697</span>, <span style="color:#B60016">7045</span> | Microsoft-Windows-Security-Auditing, Microsoft-Windows-Sysmon, Service Control Manager |
+| Dumpert LSASS Process Dumper | <span style='color:#5373E6'>elementary</span> | 7, 11 | Microsoft-Windows-Sysmon |
+| Windows Defender Exclusion Configuration | <span style='color:#5373E6'>elementary</span> | 13, <span style="color:#6a18a0">5007</span> | Microsoft-Windows-Sysmon, Microsoft-Windows-Windows Defender |
+| Mimikatz Basic Commands | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4103</span> | Microsoft-Windows-PowerShell |
+| Cobalt Strike Default Beacons Names | <span style='color:#5373E6'>elementary</span> | 1, 15 | Microsoft-Windows-Sysmon |
+| PowerShell Downgrade Attack | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Outlook Registry Access | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| AdFind Usage | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Domain Trust Discovery Through LDAP | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Empire Monkey Activity | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| WMI Persistence Command Line Event Consumer | <span style='color:#5373E6'>elementary</span> | 7 | Microsoft-Windows-Sysmon |
+| Antivirus Web Shell Detection | <span style='color:#5373E6'>elementary</span> | <span style="color:#6a18a0">1116</span> | Microsoft-Windows-Windows Defender |
+| Office Application Startup Office Test | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Msdt (Follina) File Browse Process Execution | <span style='color:#5373E6'>elementary</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| Phorpiex Process Masquerading | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| WMI Install Of Binary | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| ICacls Granting Access To All | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Credential Dumping By LaZagne | <span style='color:#5373E6'>elementary</span> | 10 | Microsoft-Windows-Sysmon |
+| Process Memory Dump Using Comsvcs | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Suspicious HWP Child Process | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| IcedID Execution Using Excel | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Dllhost Wrong Parent | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Ryuk Ransomware Command Line | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| RedMimicry Winnti Playbook Dropped File | <span style='color:#5373E6'>elementary</span> | 11 | Microsoft-Windows-Sysmon |
+| Blue Mockingbird Malware | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| Windows Credential Editor Registry Key | <span style='color:#5373E6'>elementary</span> | 13 | Microsoft-Windows-Sysmon |
+| Raccine Uninstall | <span style='color:#5373E6'>elementary</span> | 1 | Microsoft-Windows-Sysmon |
+| PowerShell AMSI Deactivation Bypass Using .NET Reflection | <span style='color:#5373E6'>elementary</span> | <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell |
+| Wdigest Enable UseLogonCredential | <span style='color:#5373E6'>elementary</span> | 1, 13 | Microsoft-Windows-Sysmon |
+| Antivirus Relevant File Paths Alerts | <span style='color:#5373E6'>elementary</span> | <span style="color:#6a18a0">1116</span> | Microsoft-Windows-Windows Defender |
+| Suncrypt Parameters | <span style='color:#5373E6'>elementary</span> | 1, <span style="color:#60BBD8">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
+| AD Object WriteDAC Access | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4662</span> | Microsoft-Windows-Security-Auditing |
 
 # Statistics
 
