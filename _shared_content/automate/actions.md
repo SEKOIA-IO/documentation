@@ -16,17 +16,26 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 ### Getters
 
-- Get alerts: To retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events.
+- Get Event Field Common Values: to retrieve the most common values of an ECS field based on the time window.
+- List Assets: to retrieve detailed information about assets based on a filter.
+- Search Alerts: to retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter.
+- Get Alert: to retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events.
+- Get Events: to retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip`=xx.xxx.xx), and earliest time/latest time: two dates to determine the date range of the search.
 
-- Get events: To retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip`=xx.xxx.xx), and earliest time/latest time: two dates to determine the date range of the search.
-
-`get events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
+!!!note
+`Get Events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
 
 ### Setters
 
-- Edit alert
-- Comment alert
-- Update alert status
+- Edit alert: to edit an alert such as the urgency or the alert category.
+- Comment alert: to add a comment to the alert.
+- Update alert status: to change the status of an alert.
+- Push Events to Intake: to push one or more events to an Intake.
+- Create an asset: to create an asset.
+- Delete an asset: to delete an asset.
+- Add attribute to Asset: to add an attribute to an asset.
+- Add key to Asset: to add a key to an asset.
+- Attach Alerts to Case: to attach one or more alerts to a case.
 
 #### How to update an alert status
 
