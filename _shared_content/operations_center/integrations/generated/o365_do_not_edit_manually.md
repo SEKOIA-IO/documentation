@@ -34,6 +34,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"CreationTime\": \"2020-09-29T08:59:26\", \"Id\": \"e1717ca5-c13e-4382-ad7e-4864faa11e85\", \"Operation\": \"UserLoggedIn\", \"OrganizationId\": \"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\", \"RecordType\": 15, \"ResultStatus\": \"Succeeded\", \"UserKey\": \"10030000A9F382C6@sekoiacorp.onmicrosoft.com\", \"UserType\": 0, \"Version\": 1, \"Workload\": \"AzureActiveDirectory\", \"ClientIP\": \"1.2.3.4\", \"ObjectId\": \"cc15fd57-2c6c-4117-a88c-83b1d56b4bbe\", \"UserId\": \"user@company.onmicrosoft.com\", \"AzureActiveDirectoryEventType\": 1, \"ExtendedProperties\": [{\"Name\": \"UserAgent\", \"Value\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36\"}, {\"Name\": \"UserAuthenticationMethod\", \"Value\": \"1\"}, {\"Name\": \"RequestType\", \"Value\": \"OAuth2:Authorize\"}, {\"Name\": \"ResultStatusDetail\", \"Value\": \"Redirect\"}, {\"Name\": \"KeepMeSignedIn\", \"Value\": \"True\"}], \"ModifiedProperties\": [], \"Actor\": [{\"ID\": \"cb42ef6c-989f-49d0-86cd-7706b8d14528\", \"Type\": 0}, {\"ID\": \"user@company.onmicrosoft.com\", \"Type\": 5}, {\"ID\": \"10030000A9F382C6\", \"Type\": 3}], \"ActorContextId\": \"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\", \"ActorIpAddress\": \"1.2.3.4\", \"InterSystemsId\": \"d23dd5d2-ccc8-4928-b7a0-f446a2ca4a90\", \"IntraSystemId\": \"a196489a-9a7c-4824-b35a-5bfdec600c00\", \"SupportTicketId\": \"\", \"Target\": [{\"ID\": \"cc15fd57-2c6c-4117-a88c-83b1d56b4bbe\", \"Type\": 0}], \"TargetContextId\": \"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\", \"ApplicationId\": \"5e3ce6c0-2b1f-4285-8d4b-75ee78787346\"}",
+        "event": {
+            "action": "UserLoggedIn",
+            "kind": "event",
+            "code": "15",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "start"
+            ]
+        },
+        "service": {
+            "name": "AzureActiveDirectory"
+        },
         "user": {
             "name": "user@company.onmicrosoft.com",
             "email": "user@company.onmicrosoft.com"
@@ -41,51 +56,37 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "aa09a079-7796-46a8-a4d4-4d21b0dcf1b2"
         },
-        "service": {
-            "name": "AzureActiveDirectory"
-        },
-        "event": {
-            "action": "UserLoggedIn",
-            "kind": "event",
-            "type": [
-                "start"
-            ],
-            "category": [
-                "authentication"
-            ],
-            "code": "15"
-        },
         "action": {
-            "name": "UserLoggedIn",
             "id": 15,
-            "outcome": "success",
+            "name": "UserLoggedIn",
             "target": "network-traffic",
+            "outcome": "success",
             "properties": [
                 {
-                    "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36",
-                    "name": "UserAgent"
+                    "name": "UserAgent",
+                    "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
                 },
                 {
-                    "value": "1",
-                    "name": "UserAuthenticationMethod"
+                    "name": "UserAuthenticationMethod",
+                    "value": "1"
                 },
                 {
-                    "value": "OAuth2:Authorize",
-                    "name": "RequestType"
+                    "name": "RequestType",
+                    "value": "OAuth2:Authorize"
                 },
                 {
-                    "value": "Redirect",
-                    "name": "ResultStatusDetail"
+                    "name": "ResultStatusDetail",
+                    "value": "Redirect"
                 },
                 {
-                    "value": "True",
-                    "name": "KeepMeSignedIn"
+                    "name": "KeepMeSignedIn",
+                    "value": "True"
                 }
             ]
         },
         "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "office365": {
             "record_type": 15,
@@ -93,11 +94,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user_type": {
                 "code": 0,
                 "name": "Regular"
-            }
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
+            },
+            "audit": {
+                "object_id": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe"
             }
         },
         "related": {
@@ -182,62 +181,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"CreationTime\": \"2020-09-29T07:32:51\", \"Id\": \"4e597c8c-e185-4ea5-3413-08d86449df74\", \"Operation\": \"FilePreviewed\", \"OrganizationId\": \"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\", \"RecordType\": 6, \"UserKey\": \"i:0h.f|membership|10032000e70d7559@live.com\", \"UserType\": 0, \"Version\": 1, \"Workload\": \"OneDrive\", \"ClientIP\": \"1.2.3.4\", \"ObjectId\": \"https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx\", \"UserId\": \"jane.doe@company.onmicrosoft.com\", \"ApplicationId\": \"4345a7b9-9a63-4910-a426-35363201d503\", \"CorrelationId\": \"41af7e9f-30a8-9000-8f78-756aca9a7474\", \"DoNotDistributeEvent\": \"True\", \"EventSource\": \"SharePoint\", \"ItemType\": \"File\", \"ListId\": \"2db6ee74-6bd7-4d9b-a63f-26ae6eef9fb3\", \"ListItemUniqueId\": \"0e3f3538-8a03-4728-b431-225bc10687b6\", \"Site\": \"2d3c44c1-d225-499d-a47f-bda2751a00b9\", \"UserAgent\": \"OneDriveMpc-Transform_Thumbnail/1.0\", \"WebId\": \"c4b81f7e-4f91-4b3a-97a7-660709edef15\", \"HighPriorityMediaProcessing\": \"False\", \"SourceFileExtension\": \"xlsx\", \"SiteUrl\": \"https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/\", \"SourceFileName\": \"MyDocument.docx\", \"SourceRelativeUrl\": \"Documents\"}",
         "event": {
             "action": "FilePreviewed",
             "kind": "event",
+            "code": "6",
             "category": [
                 "file"
             ],
             "type": [
                 "info"
-            ],
-            "code": "6"
-        },
-        "organization": {
-            "id": "aa09a079-7796-46a8-a4d4-4d21b0dcf1b2"
-        },
-        "office365": {
-            "record_type": 6,
-            "user_type": {
-                "code": 0,
-                "name": "Regular"
-            }
-        },
-        "action": {
-            "name": "FilePreviewed",
-            "outcome": "success",
-            "id": 6,
-            "target": "user",
-            "properties": [
-                {
-                    "SiteUrl": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/",
-                    "SourceFileName": "MyDocument.docx",
-                    "SourceRelativeUrl": "Documents",
-                    "UserAgent": "OneDriveMpc-Transform_Thumbnail/1.0"
-                }
             ]
-        },
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
-        },
-        "file": {
-            "directory": "Documents",
-            "name": "MyDocument.docx"
-        },
-        "url": {
-            "domain": "company-my.sharepoint.com",
-            "full": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
-            "original": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
-            "path": "/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
-            "port": 443,
-            "registered_domain": "sharepoint.com",
-            "scheme": "https",
-            "subdomain": "company-my",
-            "top_level_domain": "com"
-        },
-        "user_agent": {
-            "original": "OneDriveMpc-Transform_Thumbnail/1.0"
         },
         "service": {
             "name": "OneDrive"
@@ -246,10 +200,54 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "jane.doe@company.onmicrosoft.com",
             "email": "jane.doe@company.onmicrosoft.com"
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
+        "organization": {
+            "id": "aa09a079-7796-46a8-a4d4-4d21b0dcf1b2"
+        },
+        "action": {
+            "id": 6,
+            "name": "FilePreviewed",
+            "target": "user",
+            "outcome": "success",
+            "properties": [
+                {
+                    "SourceFileName": "MyDocument.docx",
+                    "SourceRelativeUrl": "Documents",
+                    "SiteUrl": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/",
+                    "UserAgent": "OneDriveMpc-Transform_Thumbnail/1.0"
+                }
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "office365": {
+            "record_type": 6,
+            "user_type": {
+                "code": 0,
+                "name": "Regular"
+            },
+            "audit": {
+                "object_id": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx"
             }
+        },
+        "file": {
+            "name": "MyDocument.docx",
+            "directory": "Documents"
+        },
+        "user_agent": {
+            "original": "OneDriveMpc-Transform_Thumbnail/1.0"
+        },
+        "url": {
+            "full": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
+            "original": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
+            "domain": "company-my.sharepoint.com",
+            "top_level_domain": "com",
+            "subdomain": "company-my",
+            "registered_domain": "sharepoint.com",
+            "scheme": "https",
+            "path": "/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
+            "port": 443
         },
         "related": {
             "ip": [
@@ -269,68 +267,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"AppAccessContext\":{\"AADSessionId\":\"0e042318-7c78-4acb-ae00-5ee74465bca3\",\"CorrelationId\":\"c299a0a0-14da-428a-b08d-481d562298cb\",\"UniqueTokenId\":\"0000000000000000000000\"},\"CreationTime\":\"2022-06-10T12:00:14\",\"Id\":\"7c13b5d5-aa8d-48d1-b3d1-5f4b657136ba\",\"Operation\":\"FileSyncDownloadedFull\",\"OrganizationId\":\"2d7585dc-97bc-4494-b98c-79f2a4946931\",\"RecordType\":6,\"UserKey\":\"i:0h.f|membership|0000000000000000@live.com\",\"UserType\":0,\"Version\":1,\"Workload\":\"SharePoint\",\"ClientIP\":\"1.2.3.4\",\"ObjectId\":\"https://company.sharepoint.com/sites/shared/public/assets/website/logo.png\",\"UserId\":\"marketing@company.com\",\"CorrelationId\":\"4b25e3d9-1e4f-4c62-a544-da747449f144\",\"EventSource\":\"SharePoint\",\"ItemType\":\"File\",\"ListId\":\"ca07dda5-0cdc-4399-94a6-303a7aa8ac00\",\"ListItemUniqueId\":\"ab5a159c-c8fd-409c-a48f-524c29df0341\",\"Site\":\"1a53ae0f-8405-42ec-8c43-724101fd34a2\",\"UserAgent\":\"Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)\",\"WebId\":\"ba71b4fe-22e8-41cf-9eaf-48b1787bad16\",\"MachineDomainInfo\":\"f059d209-e819-402b-a391-4941ff3860c6\",\"MachineId\":\"884ecccb-1e44-4dd4-a2b5-b60517893ce0\",\"FileSyncBytesCommitted\":\"1344200\",\"HighPriorityMediaProcessing\":false,\"SourceFileExtension\":\"png\",\"SiteUrl\":\"https://company.sharepoint.com/sites/shared\",\"SourceFileName\":\"logo.png\",\"SourceRelativeUrl\":\"public/assets/website\"}",
         "event": {
             "action": "FileSyncDownloadedFull",
             "kind": "event",
+            "code": "6",
             "category": [
                 "file"
             ],
             "type": [
                 "info"
-            ],
-            "code": "6"
-        },
-        "action": {
-            "name": "FileSyncDownloadedFull",
-            "outcome": "success",
-            "id": 6,
-            "target": "user",
-            "properties": [
-                {
-                    "SiteUrl": "https://company.sharepoint.com/sites/shared",
-                    "SourceFileName": "logo.png",
-                    "SourceRelativeUrl": "public/assets/website",
-                    "UserAgent": "Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)"
-                }
             ]
-        },
-        "organization": {
-            "id": "2d7585dc-97bc-4494-b98c-79f2a4946931"
-        },
-        "office365": {
-            "record_type": 6,
-            "user_type": {
-                "code": 0,
-                "name": "Regular"
-            },
-            "context": {
-                "aad_session_id": "0e042318-7c78-4acb-ae00-5ee74465bca3",
-                "correlation": {
-                    "id": "c299a0a0-14da-428a-b08d-481d562298cb"
-                }
-            }
-        },
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
-        },
-        "file": {
-            "directory": "public/assets/website",
-            "name": "logo.png"
-        },
-        "url": {
-            "domain": "company.sharepoint.com",
-            "full": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png",
-            "original": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png",
-            "path": "/sites/shared/public/assets/website/logo.png",
-            "port": 443,
-            "registered_domain": "sharepoint.com",
-            "scheme": "https",
-            "subdomain": "company",
-            "top_level_domain": "com"
-        },
-        "user_agent": {
-            "original": "Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)"
         },
         "service": {
             "name": "SharePoint"
@@ -339,10 +286,60 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "marketing@company.com",
             "email": "marketing@company.com"
         },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
+        "organization": {
+            "id": "2d7585dc-97bc-4494-b98c-79f2a4946931"
+        },
+        "action": {
+            "id": 6,
+            "name": "FileSyncDownloadedFull",
+            "target": "user",
+            "outcome": "success",
+            "properties": [
+                {
+                    "SourceFileName": "logo.png",
+                    "SourceRelativeUrl": "public/assets/website",
+                    "SiteUrl": "https://company.sharepoint.com/sites/shared",
+                    "UserAgent": "Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)"
+                }
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "office365": {
+            "record_type": 6,
+            "user_type": {
+                "code": 0,
+                "name": "Regular"
+            },
+            "audit": {
+                "object_id": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png"
+            },
+            "context": {
+                "aad_session_id": "0e042318-7c78-4acb-ae00-5ee74465bca3",
+                "correlation": {
+                    "id": "c299a0a0-14da-428a-b08d-481d562298cb"
+                }
             }
+        },
+        "file": {
+            "name": "logo.png",
+            "directory": "public/assets/website"
+        },
+        "user_agent": {
+            "original": "Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)"
+        },
+        "url": {
+            "full": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png",
+            "original": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png",
+            "domain": "company.sharepoint.com",
+            "top_level_domain": "com",
+            "subdomain": "company",
+            "registered_domain": "sharepoint.com",
+            "scheme": "https",
+            "path": "/sites/shared/public/assets/website/logo.png",
+            "port": 443
         },
         "related": {
             "ip": [
@@ -415,54 +412,64 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "{\"CreationTime\":\"2022-07-08T09:10:19\",\"Id\":\"50906475-74dd-4447-ae4d-595d225d0055\",\"Operation\":\"TIMailData\",\"OrganizationId\":\"8a457951-a594-4607-a5dc-dfc72338eb13\",\"RecordType\":28,\"UserKey\":\"ThreatIntel\",\"UserType\":4,\"Version\":1,\"Workload\":\"ThreatIntelligence\",\"ObjectId\":\"4ca2df96-4488-4f3b-a265-b4edaa3c4d8f\",\"UserId\":\"ThreatIntel\",\"AdditionalActionsAndResults\":[\"OriginalDelivery: [N/A]\"],\"AttachmentData\":[{\"FileName\":\"malicious.pdf.exe\",\"FileType\":\"exe;zip\",\"FileVerdict\":1,\"MalwareFamily\":\"Trojan_Gen_FileWithSpoofedExtension_A\",\"SHA256\":\"E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855\"}],\"AuthDetails\":[{\"Name\":\"SPF\",\"Value\":\"Pass\"},{\"Name\":\"DKIM\",\"Value\":\"Fail\"},{\"Name\":\"DMARC\",\"Value\":\"Best guess pass\"},{\"Name\":\"Comp Auth\",\"Value\":\"pass\"}],\"DeliveryAction\":\"Blocked\",\"DetectionMethod\":\"File detonation\",\"DetectionType\":\"Inline\",\"Directionality\":\"Inbound\",\"EventDeepLink\":\"https://protection.office.com/?hash=/threatexplorer?messageParams=a4dbf74a-89e0-40de-b14d-df573f48aa45,a4dbf74a-89e0-40de-b14d-df573f48aa45-0000000000000000000-1,2022-07-08T00:00:00,2022-07-08T23:59:59&view=Malware\",\"InternetMessageId\":\"<4cc4a74e-a195-4222-abd7-a8adf2cd347d@sender.com>\",\"LatestDeliveryLocation\":\"Quarantine\",\"MessageTime\":\"2022-07-08T09:07:47\",\"NetworkMessageId\":\"7250ff78-fd13-45a2-bb5d-23a5d59c2699\",\"OriginalDeliveryLocation\":\"Quarantine\",\"P1Sender\":\"prvs=0000000000=human@sender.com\",\"P2Sender\":\"human@sender.com\",\"Policy\":\"SafeAttachements\",\"PolicyAction\":\"Quarantine\",\"Recipients\":[\"human@example.com\"],\"SenderIp\":\"1.2.3.4\",\"Subject\":\"Refund to you\",\"SystemOverrides\":[{\"Details\":\"Antimalware policy block by file type\",\"FinalOverride\":\"No\",\"Result\":\"Block\",\"Source\":\"Tenant\"}],\"ThreatsAndDetectionTech\":[\"Malware: [File detonation]\",\"Spam: [General filter]\"],\"Verdict\":\"Malware\"}\n",
+        "event": {
+            "action": "Blocked",
+            "kind": "event",
+            "code": "28",
+            "url": "https://protection.office.com/?hash=/threatexplorer?messageParams=a4dbf74a-89e0-40de-b14d-df573f48aa45,a4dbf74a-89e0-40de-b14d-df573f48aa45-0000000000000000000-1,2022-07-08T00:00:00,2022-07-08T23:59:59&view=Malware"
+        },
+        "service": {
+            "name": "ThreatIntelligence"
+        },
+        "user": {
+            "name": "ThreatIntel"
+        },
+        "organization": {
+            "id": "8a457951-a594-4607-a5dc-dfc72338eb13"
+        },
         "action": {
             "id": 28,
             "name": "Blocked",
-            "outcome": "success",
-            "target": "user"
-        },
-        "event": {
-            "action": "Blocked",
-            "code": "28",
-            "kind": "event",
-            "outcome": "success",
-            "id": "00000000-0000-0000-0000-000000000000'",
-            "url": "https://protection.office.com/?hash=/threatexplorer?messageParams=a4dbf74a-89e0-40de-b14d-df573f48aa45,a4dbf74a-89e0-40de-b14d-df573f48aa45-0000000000000000000-1,2022-07-08T00:00:00,2022-07-08T23:59:59&view=Malware"
-        },
-        "email": {
-            "attachments": [
-                {
-                    "file": {
-                        "hash": {
-                            "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
-                        },
-                        "mime_type": "exe;zip",
-                        "name": "malicious.pdf.exe"
-                    }
-                }
-            ],
-            "delivery_timestamp": "2022-07-08T09:07:47",
-            "from": {
-                "address": [
-                    "human@sender.com"
-                ]
-            },
-            "local_id": "7250ff78-fd13-45a2-bb5d-23a5d59c2699",
-            "message_id": "4cc4a74e-a195-4222-abd7-a8adf2cd347d@sender.com",
-            "reply_to": {
-                "address": [
-                    "prvs=0000000000=human@sender.com"
-                ]
-            },
-            "subject": "Refund to you",
-            "to": {
-                "address": [
-                    "human@example.com"
-                ]
-            }
+            "target": "user",
+            "outcome": "success"
         },
         "office365": {
+            "record_type": 28,
+            "user_type": {
+                "code": 4,
+                "name": "System"
+            },
+            "audit": {
+                "object_id": "4ca2df96-4488-4f3b-a265-b4edaa3c4d8f"
+            },
             "defender": {
+                "email": {
+                    "verdict": {
+                        "reason": "Malware"
+                    },
+                    "delivery": {
+                        "action": "Blocked",
+                        "original_location": "Quarantine",
+                        "latest_location": "Quarantine"
+                    },
+                    "attachments": [
+                        {
+                            "name": "Trojan_Gen_FileWithSpoofedExtension_A",
+                            "verdict": {
+                                "code": "1",
+                                "name": "bad"
+                            }
+                        }
+                    ]
+                },
+                "detection": {
+                    "type": "Inline",
+                    "method": "File detonation",
+                    "technology": [
+                        "Malware: [File detonation]",
+                        "Spam: [General filter]"
+                    ]
+                },
                 "additional_actions": [
                     "OriginalDelivery: [N/A]"
                 ],
@@ -484,33 +491,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         "Value": "pass"
                     }
                 ],
-                "detection": {
-                    "method": "File detonation",
-                    "technology": [
-                        "Malware: [File detonation]",
-                        "Spam: [General filter]"
-                    ],
-                    "type": "Inline"
-                },
-                "email": {
-                    "attachments": [
-                        {
-                            "name": "Trojan_Gen_FileWithSpoofedExtension_A",
-                            "verdict": {
-                                "code": "1",
-                                "name": "bad"
-                            }
-                        }
-                    ],
-                    "delivery": {
-                        "action": "Blocked",
-                        "latest_location": "Quarantine",
-                        "original_location": "Quarantine"
-                    },
-                    "verdict": {
-                        "reason": "Malware"
-                    }
-                },
                 "system_overrides": [
                     {
                         "Details": "Antimalware policy block by file type",
@@ -519,15 +499,43 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         "Source": "Tenant"
                     }
                 ]
-            },
-            "record_type": 28,
-            "user_type": {
-                "code": 4,
-                "name": "System"
             }
         },
-        "organization": {
-            "id": "8a457951-a594-4607-a5dc-dfc72338eb13"
+        "email": {
+            "local_id": "7250ff78-fd13-45a2-bb5d-23a5d59c2699",
+            "subject": "Refund to you",
+            "delivery_timestamp": "2022-07-08T09:07:47",
+            "message_id": "4cc4a74e-a195-4222-abd7-a8adf2cd347d@sender.com",
+            "reply_to": {
+                "address": [
+                    "prvs=0000000000=human@sender.com"
+                ]
+            },
+            "from": {
+                "address": [
+                    "human@sender.com"
+                ]
+            },
+            "to": {
+                "address": [
+                    "human@example.com"
+                ]
+            },
+            "attachments": [
+                {
+                    "file": {
+                        "name": "malicious.pdf.exe",
+                        "mime_type": "exe;zip",
+                        "hash": {
+                            "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                        }
+                    }
+                }
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "related": {
             "ip": [
@@ -536,16 +544,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "ThreatIntel"
             ]
-        },
-        "service": {
-            "name": "ThreatIntelligence"
-        },
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
-        },
-        "user": {
-            "name": "ThreatIntel"
         }
     }
     	
@@ -723,6 +721,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user_type": {
                 "code": 0,
                 "name": "Regular"
+            },
+            "audit": {
+                "object_id": "Not Available"
             }
         },
         "related": {
@@ -774,6 +775,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user_type": {
                 "code": 0,
                 "name": "Regular"
+            },
+            "audit": {
+                "object_id": "bob.smith@acme.org"
             }
         },
         "related": {
@@ -839,6 +843,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user_type": {
                 "code": 0,
                 "name": "Regular"
+            },
+            "audit": {
+                "object_id": "aaaa.bbbb@example.org"
             }
         },
         "related": {
@@ -856,6 +863,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"CreationTime\": \"2019-11-18T10:15:52\", \"Id\": \"405f795f-8bff-45d2-98c9-ef675d7d2db6\", \"Operation\": \"UserLoggedIn\", \"OrganizationId\": \"3e49b082-62d5-4849-a5b0-86ed519287d2\", \"RecordType\": 15, \"ResultStatus\": \"Succeeded\", \"UserKey\": \"10037FFEA0A22006@company.onmicrosoft.com\", \"UserType\": 0, \"Version\": 1, \"Workload\": \"AzureActiveDirectory\", \"ClientIP\": \"1.2.3.4:8085\", \"ObjectId\": \"5f09333a-842c-47da-a157-57da27fcbca5\", \"UserId\": \"REDACTED@company.onmicrosoft.com\", \"AzureActiveDirectoryEventType\": 1, \"ExtendedProperties\": [{\"Name\": \"UserAgent\", \"Value\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763\"}, {\"Name\": \"UserAuthenticationMethod\", \"Value\": \"1\"}, {\"Name\": \"RequestType\", \"Value\": \"OAuth2:Authorize\"}, {\"Name\": \"ResultStatusDetail\", \"Value\": \"Redirect\"}, {\"Name\": \"KeepMeSignedIn\", \"Value\": \"True\"}], \"ModifiedProperties\": [], \"Actor\": [{\"ID\": \"3d0e7ff9-261e-440f-a2f8-9e1ec4072f3e\", \"Type\": 0}, {\"ID\": \"REDACTED@company.onmicrosoft.com\", \"Type\": 5}, {\"ID\": \"10037FFEA0A22006\", \"Type\": 3}], \"ActorContextId\": \"3e49b082-62d5-4849-a5b0-86ed519287d2\", \"ActorIpAddress\": \"1.2.3.4\", \"InterSystemsId\": \"794c9504-66fe-441c-831a-5fc2badfcdc8\", \"IntraSystemId\": \"99f54f6a-ddfe-4916-b89b-edd9fcac4500\", \"SupportTicketId\": \"\", \"Target\": [{\"ID\": \"5f09333a-842c-47da-a157-57da27fcbca5\", \"Type\": 0}], \"TargetContextId\": \"3e49b082-62d5-4849-a5b0-86ed519287d2\", \"ApplicationId\": \"89bee1f7-5e6e-4d8a-9f3d-ecd601259da7\"}",
+        "event": {
+            "action": "UserLoggedIn",
+            "kind": "event",
+            "code": "15",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "start"
+            ]
+        },
+        "service": {
+            "name": "AzureActiveDirectory"
+        },
         "user": {
             "name": "REDACTED@company.onmicrosoft.com",
             "email": "REDACTED@company.onmicrosoft.com"
@@ -863,64 +885,48 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "organization": {
             "id": "3e49b082-62d5-4849-a5b0-86ed519287d2"
         },
+        "action": {
+            "id": 15,
+            "name": "UserLoggedIn",
+            "target": "network-traffic",
+            "outcome": "success",
+            "properties": [
+                {
+                    "name": "UserAgent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763"
+                },
+                {
+                    "name": "UserAuthenticationMethod",
+                    "value": "1"
+                },
+                {
+                    "name": "RequestType",
+                    "value": "OAuth2:Authorize"
+                },
+                {
+                    "name": "ResultStatusDetail",
+                    "value": "Redirect"
+                },
+                {
+                    "name": "KeepMeSignedIn",
+                    "value": "True"
+                }
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 8085,
+            "address": "1.2.3.4"
+        },
         "office365": {
             "record_type": 15,
             "result_status": "Succeeded",
             "user_type": {
                 "code": 0,
                 "name": "Regular"
-            }
-        },
-        "service": {
-            "name": "AzureActiveDirectory"
-        },
-        "event": {
-            "action": "UserLoggedIn",
-            "kind": "event",
-            "type": [
-                "start"
-            ],
-            "category": [
-                "authentication"
-            ],
-            "code": "15"
-        },
-        "action": {
-            "name": "UserLoggedIn",
-            "id": 15,
-            "outcome": "success",
-            "target": "network-traffic",
-            "properties": [
-                {
-                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763",
-                    "name": "UserAgent"
-                },
-                {
-                    "value": "1",
-                    "name": "UserAuthenticationMethod"
-                },
-                {
-                    "value": "OAuth2:Authorize",
-                    "name": "RequestType"
-                },
-                {
-                    "value": "Redirect",
-                    "name": "ResultStatusDetail"
-                },
-                {
-                    "value": "True",
-                    "name": "KeepMeSignedIn"
-                }
-            ]
-        },
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4",
-            "port": 8085
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
+            },
+            "audit": {
+                "object_id": "5f09333a-842c-47da-a157-57da27fcbca5"
             }
         },
         "related": {
@@ -964,6 +970,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.url` | `keyword` | Event investigation URL |
 |`file.directory` | `keyword` | Directory where the file is located. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
+|`office365.audit.object_id` | `keyword` | For Exchange admin audit logging, the name of the object that was modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Azure AD activity, the name of the user account that was modified. |
 |`office365.context.aad_session_id` | `keyword` | The identifier of an Azure Active Directory session |
 |`office365.context.api_id` | `keyword` | The identifier of the API pathway |
 |`office365.context.client.id` | `keyword` | The identifier of Azure Active Directory application |
