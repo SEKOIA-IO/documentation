@@ -71,9 +71,9 @@ If you have an account in one of the listed tools below, you can easily extract 
 
 These helpers need their associated trigger to function properly: 
 
-- [MISP](_shared_content/automate/library/misp.md)
-- [MWDB](_shared_content/automate/library/mwdb.md)
-- [Triage](_shared_content/automate/library/triage.md)
+- [MISP](library/misp.md)
+- [MWDB](library/mwdb.md)
+- [Triage](library/triage.md)
 
 ## Third-party applications
 
