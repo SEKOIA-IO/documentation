@@ -7,7 +7,7 @@
 The module allows to request information such as:
 
 - [Whois](#whois)
-- Reverse Whois ([organization](#Reverse-Whois-(-organization-)), [name server](#Reverse-Whois-(-Name-server-)), [name](#Reverse-Whois-(-name-)), [email](#reverse-whois-(-email-), [address](#Reverse-Whois-(-address-)), [phone](#Reverse-Whois-(-phone-))
+- Reverse Whois ([organization](#organization), [name server](#Name-server), [name](#name), [email](#email), [address](#address), [phone](#phone)
 - Passive DNS ([Name](#name-passive-dns), [IP](#ip-passive-dns), [Hex](#hex-passive-dns))
 - [SSL hosts](#ssl-hosts), 
 - SSL Certificates ([Host](#SSL-Certificates-by-Host), [name](#SSL-Certificates-by-Name), [SHA-1](#SSL-Certificats-by-SHA-1), [Serial Number](#SSL-Certificates-by-Serial-Number))
@@ -214,26 +214,6 @@ Get SSL certificate by SHA-1 hash.
 | `subjectID` | `string` |  |
 | `version` | `integer` |  |
 
-### Reverse Whois (address)
-
-Get WHOIS records associated with an address.
-
-#### Arguments
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `address` | `string` |  |
-| `exact` | `string` |  |
-| `maxResults` | `string` |  |
-
-
-#### Outputs
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `results` | `integer` |  |
-| `domains` | `array` |  |
-
 ### Whois
 
 Get the current WHOIS for a domain.
@@ -255,11 +235,34 @@ Get the current WHOIS for a domain.
 | `results` | `integer` |  |
 | `domains` | `array` |  |
 
-### Reverse Whois (email)
+### Reverse Whois 
+
+#### Address
+
+Get WHOIS records associated with an address.
+
+##### Arguments
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `address` | `string` |  |
+| `exact` | `string` |  |
+| `maxResults` | `string` |  |
+
+
+##### Outputs
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `results` | `integer` |  |
+| `domains` | `array` |  |
+
+
+#### Email
 
 Get WHOIS records associated with an email address.
 
-#### Arguments
+##### Arguments
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -268,18 +271,18 @@ Get WHOIS records associated with an email address.
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+##### Outputs
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `results` | `integer` |  |
 | `domains` | `array` |  |
 
-### Reverse Whois (name)
+#### Name
 
 Get WHOIS records associated with a name.
 
-#### Arguments
+##### Arguments
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -288,18 +291,18 @@ Get WHOIS records associated with a name.
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+##### Outputs
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `results` | `integer` |  |
 | `domains` | `array` |  |
 
-### Reverse Whois (Name server)
+#### Name server
 
 Get WHOIS records associated with a name server.
 
-#### Arguments
+##### Arguments
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -308,18 +311,18 @@ Get WHOIS records associated with a name server.
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+##### Outputs
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `results` | `integer` |  |
 | `domains` | `array` |  |
 
-### Reverse Whois (organization)
+#### Organization
 
 Get WHOIS records associated with an organization.
 
-#### Arguments
+##### Arguments
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -328,18 +331,18 @@ Get WHOIS records associated with an organization.
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+##### Outputs
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `results` | `integer` |  |
 | `domains` | `array` |  |
 
-### Reverse Whois (phone)
+#### Phone
 
 Get WHOIS records associated with a phone number.
 
-#### Arguments
+##### Arguments
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -348,7 +351,7 @@ Get WHOIS records associated with a phone number.
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+##### Outputs
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
