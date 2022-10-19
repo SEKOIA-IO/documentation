@@ -65,9 +65,9 @@ If you have an account in one of the listed tools below, you can easily extract 
 
 ## Helpers
 
-- [fileutils](_shared_content/automate/library/fileutils.md)
-- [http](_shared_content/automate/library/http.md)
-- [STIX](_shared_content/automate/library/stix.md)
+- [fileutils](library/fileutils.md)
+- [http](library/http.md)
+- [STIX](library/stix.md)
 
 These helpers need their associated trigger to function properly: 
 
