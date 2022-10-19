@@ -27,6 +27,11 @@ From this page, you can:
 
 <img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
 
+!!! note
+MSSP community
+    - A user added on Main MSSP community will have the same role and permissions associated on all sub-communities
+    - Role set to a user directly on a sub-community is independent from other communities. Therefore a user can be set with different roles in different communities.
+
 ## Create custom roles
 
 As an admin of your community, you can control what kind of actions your guests are allowed to do. Our roles’ system is based on permissions already defined by us and we keep them up to date following our latest features.
