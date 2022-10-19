@@ -52,16 +52,16 @@ To get notified, you can rely on these tools:
 
 If you have an account in one of the listed tools below, you can easily extract data from there and import it to SEKOIA.IO. This is made possible with an API key. 
 
-- [BinaryEdge](_shared_content/automate/library/binaryedge-s-api.md)
-- [Censys](_shared_content/automate/library/censys.md)
-- [GLIMPS](_shared_content/automate/library/glimps.md)
-- [IKnowWhatYouDownloaded](_shared_content/automate/library/iknowwhatyoudownload.md)
-- [Onyphe](_shared_content/automate/library/onyphe.md)
-- [Public Suffix](_shared_content/automate/library/public-suffix.md)
-- [RiskIQ](_shared_content/automate/library/riskiq.md)
-- [Shodan](_shared_content/automate/library/shodan.md)
-- [VirusTotal](_shared_content/automate/library/virustotal.md)
-- [Whois](_shared_content/automate/library/whois.md)
+- [BinaryEdge](library/binaryedge-s-api.md)
+- [Censys](library/censys.md)
+- [GLIMPS](library/glimps.md)
+- [IKnowWhatYouDownloaded](library/iknowwhatyoudownload.md)
+- [Onyphe](library/onyphe.md)
+- [Public Suffix](library/public-suffix.md)
+- [RiskIQ](library/riskiq.md)
+- [Shodan](library/shodan.md)
+- [VirusTotal](library/virustotal.md)
+- [Whois](library/whois.md)
 
 ## Helpers
 
