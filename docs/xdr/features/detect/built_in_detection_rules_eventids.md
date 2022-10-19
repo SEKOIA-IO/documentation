@@ -6,6 +6,7 @@ This page aims at helping partners & customers in having their detection coverag
 
 
 The colors in this page should be interpreted as follow:
+
   - Effort Levels colors correspond to the one in the Operations Center.
   - For the EventIDs:
       * <span style='color:#B60016'>Red</span>: This EventID is not logged by default on a Windows 10+ or Windows Server 2016+ machine.
