@@ -2,6 +2,31 @@
 
 Mandrill is a transactional email platform from Mailchimp.
 
+## Example
+
+Email notification is available on SEKOIA.IO, and the following example shows an automatic email sent when a new alert is raised.
+
+The mandatory fields of the block are:
+- The recipient email address, name
+- The sender email address, name
+- The subject
+- The HTML mail content, here is a simple example:
+
+```HTML
+<h1>A new alert is declared: {{ node.2.rule.name }}.</h1>
+<h2>Description: {{ node.2.rule.description }}.</h2>
+<p>More details:</p>
+	<ul><li>Urgency: {{ node.2.urgency.value }}</li>
+		<li>Entity: {{ node.2.entity.name }}</li>
+	 	<li>Kill chain: {{ node.2.kill_chain_short_id }}</li>
+	 	<li>Source: {{ node.2.source }}</li>
+	 	<li>Target: {{ node.2.target }}</li>
+ 	</ul>
+```
+
+!!!note The dynamic content is written in JINJA. For more information on this language, please follow this [documentation](https://jinja.palletsprojects.com/en/2.10.x/templates/).
+
+
 ## Configuration
 
 | Name      |  Type   |  Description  |
