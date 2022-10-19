@@ -43,10 +43,10 @@ To update an alert status, you need to copy the `action_uuid` corresponding to t
 
 To get notified, you can rely on these tools: 
 
-- [Mandrill](_shared_content/automate/library/mandrill.md): Send Message
-- [Mattermost](_shared_content/automate/library/mattermost.md): Post message / Post SEKOIA.IO alert
-- [Pagerduty](_shared_content/automate/library/pagerduty.md): Trigger Alert
-- [The Hive](_shared_content/automate/library/the-hive.md): Create an alert in the Hive
+- [Mandrill](library/mandrill.md): Send Message
+- [Mattermost](library/mattermost.md): Post message / Post SEKOIA.IO alert
+- [Pagerduty](library/pagerduty.md): Trigger Alert
+- [The Hive](library/the-hive.md): Create an alert in the Hive
 
 ## Data collection
 
