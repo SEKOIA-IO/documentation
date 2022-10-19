@@ -5,8 +5,9 @@
 [RiskIQ](https://www.riskiq.com/) is a cyber security company providing software as a service to detect phishing, fraud, malware, and other online security threats.
 
 The module allows to request information such as:
+
 - [Whois](#whois)
-- Reverse Whois ([organization](#Reverse-Whois-(organization)), [name server](#Reverse-Whois-(Name-server)), [name](#Reverse-Whois-(name)), [email](#reverse-whois---email), [address](#Reverse-Whois-(address)), [phone](#Reverse-Whois-(phone))
+- Reverse Whois ([organization](#Reverse-Whois-(-organization-)), [name server](#Reverse-Whois-(-Name-server-)), [name](#Reverse-Whois-(-name-)), [email](#reverse-whois-(-email-), [address](#Reverse-Whois-(-address-)), [phone](#Reverse-Whois-(-phone-))
 - Passive DNS ([Name](#name-passive-dns), [IP](#ip-passive-dns), [Hex](#hex-passive-dns))
 - [SSL hosts](#ssl-hosts), 
 - SSL Certificates ([Host](#SSL-Certificates-by-Host), [name](#SSL-Certificates-by-Name), [SHA-1](#SSL-Certificats-by-SHA-1), [Serial Number](#SSL-Certificates-by-Serial-Number))
