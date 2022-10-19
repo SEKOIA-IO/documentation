@@ -1,6 +1,6 @@
 | Rule Name | Effort Level | EventIDs | Event Providers |
 | --------- | ------------ | -------- | --------------- |
-| PowerShell Malicious PowerShell Commandlets | [color=#B60016] master [/color] | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
+| PowerShell Malicious PowerShell Commandlets | <span style"color:#B60016">master</span> | [color=#60BBD8]4104[/color] | Microsoft-Windows-PowerShell |
 | Putty Sessions Listing | [color=#B60016] master [/color] | 1, [color=#B60016]4656[/color], [color=#B60016]4663[/color] | Microsoft-Windows-Security-Auditing, Microsoft-Windows-Sysmon |
 | FoggyWeb Backdoor DLL Loading | [color=#B60016] master [/color] | 7 | Microsoft-Windows-Sysmon |
 | Windows Defender History Deleted | [color=#B60016] master [/color] | [color=#6a18a0]1013[/color] | Microsoft-Windows-Windows Defender |
