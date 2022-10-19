@@ -2,7 +2,18 @@
 
 ![Onyphe](/assets/playbooks/library/onyphe.png){ align=right width=150 }
 
-[Onyphe](https://www.onyphe.io/) is a Cyber Defense Search Engine for open-source and cyber threat intelligence data collected by crawling various sources available on the Internet or by listening to Internet background noise
+[Onyphe](https://www.onyphe.io/) is a Cyber Defense Search Engine for open-source and cyber threat intelligence data collected by crawling various sources available on the Internet or by listening to Internet background noise. 
+
+The module allows to request information such as:
+
+- Scan ([SYN](#get-ip-synscan), [Onion](#get-onion-scan), [Datascan](#get-ip-datascan))
+- Lookups ([MD5](#lookup-md5), [reverse DNS](#lookup-reverse-dns), [Forward DNS](#lookup-forward-dns), [IP](#lookup-ip)
+- IP additional information ([Threat list](#get-ip-threat-list), [geolocalization](#geolocalize-ip))
+- [Domain Name CTLs](#get-domain-name-ctls)
+- [Inetnum information](#get-ip-inetnum)
+- [Pastries information](#get-pastries)
+- [Sniffer information](#get-ip-sniffer)
+
 
 ## Configuration
 
@@ -14,7 +25,7 @@
 
 ### Get Domain Name CTLs
 
-Get domain name X509 certificate information from Certificate Transparency Logs (CTLs) with Onyphe
+Get domain name X509 certificate information from Certificate Transparency Logs (CTLs) with Onyphe.
 
 #### Arguments
 
@@ -42,7 +53,7 @@ Get domain name X509 certificate information from Certificate Transparency Logs 
 
 ### Get IP Datascan
 
-Get datascan information on IP with Onyphe: "Application responses to [Onyphe's] application requests"
+Get datascan information on IP with Onyphe: "Application responses to Onyphe's application requests".
 
 #### Arguments
 
@@ -71,7 +82,7 @@ Get datascan information on IP with Onyphe: "Application responses to [Onyphe's]
 
 ### Lookup Forward DNS
 
-Get forward DNS lookup information on IP with Onyphe
+Get forward DNS lookup information on IP with Onyphe.
 
 #### Arguments
 
@@ -99,7 +110,7 @@ Get forward DNS lookup information on IP with Onyphe
 
 ### Geolocalize IP
 
-Geo-localize ip with Onyphe
+Geolocalize IPs with Onyphe.
 
 #### Arguments
 
@@ -123,7 +134,7 @@ Geo-localize ip with Onyphe
 
 ### Get IP Inetnum
 
-Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description as given by RIRs (Regional Internet Registries), except for the United States which does not disclose that information publicly."
+Get Inetnum information on IP with Onyphe: "IP (v4 and v6) networks description as given by RIRs (Regional Internet Registries), except for the United States which does not disclose that information publicly."
 
 #### Arguments
 
@@ -151,7 +162,7 @@ Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description 
 
 ### Lookup IP
 
-Get information on IP with Onyphe
+Get information on IP with Onyphe. 
 
 #### Arguments
 
@@ -179,7 +190,7 @@ Get information on IP with Onyphe
 
 ### Lookup MD5
 
-Get Onyphe datascans with the given md5 in the datamd5 field
+Get Onyphe datascans with the given md5 in the datamd5 field.
 
 #### Arguments
 
@@ -207,7 +218,7 @@ Get Onyphe datascans with the given md5 in the datamd5 field
 
 ### Get Onion Scan
 
-Get information on the given onion domain with Onyphe
+Get information on the given onion domain with Onyphe.
 
 #### Arguments
 
@@ -235,7 +246,7 @@ Get information on the given onion domain with Onyphe
 
 ### Get Pastries
 
-Get pastries information collected by Onyphe on pastebin.com
+Get pastries information collected by Onyphe on pastebin.com.
 
 #### Arguments
 
@@ -263,7 +274,7 @@ Get pastries information collected by Onyphe on pastebin.com
 
 ### Lookup Reverse DNS
 
-Get reverse DNS lookup information on IP with Onyphe
+Get reverse DNS lookup information on IP with Onyphe.
 
 #### Arguments
 
@@ -291,7 +302,7 @@ Get reverse DNS lookup information on IP with Onyphe
 
 ### Get IP Sniffer
 
-Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed honeypots on the Internet. [They] are listening to Internet background noise and performing passive operating system identification"
+Get sniffer information on IP with Onyphe: "Onyphe has a number of distributed honeypots on the Internet. They are listening to Internet background noise and performing passive operating system identification".
 
 #### Arguments
 
@@ -347,7 +358,7 @@ Get synscan information on IP with Onyphe: "Open TCP ports found on the Internet
 
 ### Get IP Threat List
 
-Get threatlist information on IP with Onyphe
+Get threat list information on IP with Onyphe. 
 
 #### Arguments
 
