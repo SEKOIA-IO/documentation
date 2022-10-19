@@ -4,6 +4,15 @@
 
 [Shodan](https://www.shodan.io/) is a Cybersecurity company keeping track of devices exposed to the Internet. It collect information on devices, running software and related CVEs.
 
+Available actions from Shodan are: 
+
+- [Get DNS domain](#get-dns-domain)
+- [Look up IPs](#lookup-ips)
+- [Look up DNS](#lookup-dns)
+- [Get Host](#get-host)
+- [Count Hosts](#count-hosts)
+- [Search Hosts](#search-hosts)
+
 ## Configuration
 
 | Name      |  Type   |  Description  |
