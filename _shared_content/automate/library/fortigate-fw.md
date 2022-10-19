@@ -4,6 +4,12 @@
 
 Fortigate is a firewall appliance from [Fortinet](http://www.fortinet.com/) with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere
 
+With the Fortigate actions, you'll be able to:
+
+- Add an IP in the Address list of a Fortigate FW: [Post Fortigate IP Address](#post-fortigate-ip-address)
+- Add a FQDN in the Address list of a Fortigate FW: [Post Fortigate FQDN Address](#post-fortigate-fqdn-address)
+- Create a Group with an Address member: [Post Fortigate Address Group](#post-fortigate-address-group)
+
 ## Configuration
 
 
@@ -11,11 +17,6 @@ Fortigate is a firewall appliance from [Fortinet](http://www.fortinet.com/) with
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | firewalls | array |  |
-
-
-
-
-
 
 
 
@@ -33,12 +34,6 @@ Add a new Address Group to a Fortigate Firewall
 | --------- | ------- | --------------------------- |
 | name | string | The name of the Address Group. |
 | member | array | The Object LIST to be added in the Address Group (can be an IP address, a FQDN or event a Group), for example Address1 |
-
-
-
-
-
-
 
 
 
