@@ -4,7 +4,7 @@
 
 With this module, you can: 
 
-- Trigger [livehunt notifications from the files endpoint](#Livehunt-notification-files)
+- Trigger [livehunt notifications from the files endpoint](#livehunt-notification-files)
 - [Get comments](#get-comments)
 - [Post comments](#post-comment)
 - Scan [domains](#scan-domain), [files](#scan-file), [hash](#scan-hash), [IPs](#scan-ip), [URLs](#scan-url)
