@@ -393,9 +393,6 @@ The colors in this page should be interpreted as follow:
 | Antivirus Relevant File Paths Alerts | <span style='color:#5373E6'>elementary</span> | <span style="color:#6a18a0">1116</span> | Microsoft-Windows-Windows Defender |
 | Suncrypt Parameters | <span style='color:#5373E6'>elementary</span> | <span style="color:#1cb238">1</span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | AD Object WriteDAC Access | <span style='color:#5373E6'>elementary</span> | <span style="color:#B60016">4662</span> | Microsoft-Windows-Security-Auditing |
-
-# Statistics
-
 **Total rules in the statistics below: 376**
 
 ## EventIDs occurence in rules:
