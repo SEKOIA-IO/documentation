@@ -2,6 +2,13 @@
 
 [VirusTotal](https://www.virustotal.com) is a cybersecurity company specialized in malware analysis.
 
+With this module, you can: 
+
+- Trigger [livehunt notifications from the files endpoint](#Livehunt-notification-files)
+- [Get comments](#get-comments)
+- [Post comments](#post-comment)
+- Scan [domains](#scan-domain), [files](#scan-file), [hash](#scan-hash), [IPs](#scan-ip), [URLs](#scan-url)
+
 ## Configuration
 
 | Name      |  Type   |  Description  |
@@ -10,9 +17,9 @@
 
 ## Triggers
 
-### livehunt_notification_files
+### Livehunt notification files
 
-Get LiveHunt notifications from the files endpoint
+Get LiveHunt notifications from the files endpoint. 
 
 #### Arguments
 
@@ -40,7 +47,7 @@ Get LiveHunt notifications from the files endpoint
 
 ### Get Comments
 
-Get comments from Virus Total
+Get comments from Virus Total.
 
 #### Arguments
 
@@ -60,7 +67,7 @@ Get comments from Virus Total
 
 ### Post Comment
 
-Post comment to Virus Total
+Post comment to Virus Total.
 
 #### Arguments
 
@@ -79,7 +86,7 @@ Post comment to Virus Total
 
 ### Scan Domain
 
-Scan domain with Virus Total
+Scan domain with Virus Total.
 
 #### Arguments
 
@@ -107,7 +114,7 @@ Scan domain with Virus Total
 
 ### Scan File
 
-Scan file with Virus Total
+Scan file with Virus Total.
 
 #### Arguments
 
@@ -136,7 +143,7 @@ Scan file with Virus Total
 
 ### Scan Hash
 
-Scan hash with Virus Total
+Scan Hash with Virus Total.
 
 #### Arguments
 
@@ -164,7 +171,7 @@ Scan hash with Virus Total
 
 ### Scan IP
 
-Scan ip with Virus Total
+Scan IP with Virus Total.
 
 #### Arguments
 
@@ -189,7 +196,7 @@ Scan ip with Virus Total
 
 ### Scan URL
 
-Scan url with Virus Total
+Scan URL with Virus Total.
 
 #### Arguments
 
