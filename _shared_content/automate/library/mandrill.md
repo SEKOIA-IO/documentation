@@ -7,6 +7,7 @@ Mandrill is a transactional email platform from Mailchimp.
 Email notification is available on SEKOIA.IO, and the following example shows an automatic email sent when a new alert is raised.
 
 The mandatory fields of the block are:
+
 - The recipient email address, name
 - The sender email address, name
 - The subject
