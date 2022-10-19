@@ -32,15 +32,18 @@ From this page, you can:
 
 In an MSSP community, role management can be a bit tricky. 
 
-When you invite someone to the main MSSP community, the roles you assign to this person are applied to all managed communities. 
+When a user is invited to the main MSSP community, the roles assign to this person are applied to all managed communities.
+Same behavior when a user is added on Main MSSP community.
 
-For example, if the user has the role `IC_viewer` in the main MSSP community, they will have this role in all other managed communities. 
+In addition to that, external roles can be added in any managed community to the user role set previously in the main MSSP community.
+Roles assigned to a user in a managed community are independent from their roles in other subcommunities.
 
-In addition to that, you can add external roles in any managed community in addition to the user role in the main MSSP community. Roles assigned to a user in a managed community are independant from their roles in other subcommunities. 
+For example, 
+1) A user has been added with the role `IC_viewer` set in the main MSSP community.
+This user will have this role applied in all other managed communities.
 
-For instance, the user who has the role `IC_viewer` in the main MSSP community could also have the role `IC_writer` in a specific managed community.
-
-A user added on Main MSSP community will have the same role and permissions applied in all subcommunities. 
+2) Then the admin add the role `IC_writer` in a specific managed community to this user.
+It will have the role `IC_writer` in this specific managed community plus the role `IC_writer` set in the main MSSP community.
 
 To learn more about how to invite users to MSSP communities, please refer to [this documentation](https://docs.sekoia.io/getting_started/invite_users/#in-an-mssp-community). 
 
