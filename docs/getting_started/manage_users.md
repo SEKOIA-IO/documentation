@@ -27,13 +27,22 @@ From this page, you can:
 
 <img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
 
-!!! note
-MSSP community
-    - A user added on Main MSSP community will have the same role and permissions applied on all sub-communities
-    tip:    You may add minimal roles on Main MSSP community and add extended role on sub-community needed
-    
-    - Role set to a user directly on a sub-community is independent from other communities. 
-    Therefore a user can be set with different roles in different communities.
+
+## In MSSP communities
+
+In an MSSP community, role management can be a bit tricky. 
+
+When you invite someone to the main MSSP community, the roles you assign to this person are applied to all managed communities. 
+
+For example, if the user has the role `IC_viewer` in the main MSSP community, they will have this role in all other managed communities. 
+
+In addition to that, you can add external roles in any managed community in addition to the user role in the main MSSP community. Roles assigned to a user in a managed community are independant from their roles in other subcommunities. 
+
+For instance, the user who has the role `IC_viewer` in the main MSSP community could also have the role `IC_writer` in a specific managed community.
+
+A user added on Main MSSP community will have the same role and permissions applied in all subcommunities. 
+
+To learn more about how to invite users to MSSP communities, please refer to [this documentation](https://docs.sekoia.io/getting_started/invite_users/#in-an-mssp-community). 
 
 ## Create custom roles
 
