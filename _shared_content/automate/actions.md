@@ -77,12 +77,12 @@ These helpers need their associated trigger to function properly:
 
 ## Third-party applications
 
-- [Azure AD](_shared_content/automate/library/azure-active-directory.md) 
-- [Fortigate Firewalls](_shared_content/automate/library/fortigate-firewalls.md)
-- [HarfangLab](_shared_content/automate/library/harfanglab.md)
-- [Panda Security](_shared_content/automate/library/panda-security.md)
-- [Sentinel One](_shared_content/automate/library/sentinel-one.md)
-- [ServiceNow](_shared_content/automate/library/servicenow.md)
+- [Azure AD](library/azure-active-directory.md) 
+- [Fortigate Firewalls](library/fortigate-firewalls.md)
+- [HarfangLab](library/harfanglab.md)
+- [Panda Security](library/panda-security.md)
+- [Sentinel One](library/sentinel-one.md)
+- [ServiceNow](library/servicenow.md)
 
 More actions are available in the Actions Library. To learn how to set up an action, please refer to its documentation. 
 
