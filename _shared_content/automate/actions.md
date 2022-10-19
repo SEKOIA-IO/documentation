@@ -16,9 +16,9 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 ### Getters
 
-**Get alerts**: To retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events.
+- Get alerts: To retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events.
 
-**Get events**: To retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip`=xx.xxx.xx), and earliest time/latest time: two dates to determine the date range of the search.
+- Get events: To retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip`=xx.xxx.xx), and earliest time/latest time: two dates to determine the date range of the search.
 
 `get events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
 
