@@ -79,15 +79,19 @@ If you have an account in one of the listed tools below, you can easily extract 
 
 ## Helpers
 
-- [fileutils](library/fileutils.md)
-- [http](library/http.md)
-- [STIX](library/stix.md)
+| Name | Description |
+| --- | --- |
+| [fileutils](library/fileutils.md) | Extract data from XML or JSON files |
+| [http](library/http.md) | Request HTTP resources (download file, request URL) |
+| [STIX](library/stix.md) | Add source, ass tags, create relationships, cryptolaemus to STIX, CVE to STIX, filter bundle, JSON objects to observables, VirusTotal LiveHunt to observables, MISP to STIX, observables to contextualized indicators, observables to indicators, remove orphan objects, STIX to MISP, string to observables |
 
 These helpers need their associated trigger to function properly: 
 
-- [MISP](library/misp.md)
-- [MWDB](library/mwdb.md)
-- [Triage](library/triage.md)
+| Name | Description |
+| --- | --- |
+| [MISP](library/misp.md) | Gather, store, share and correlate threat intelligence. Convert from MISP to STIX, publish MISP event |
+| [MWDB](library/mwdb.md) | Convert a MWDB config to a bundle of observables |
+| [Triage](library/triage.md) | Triage raw results to observables |
 
 ## Third-party applications
 
