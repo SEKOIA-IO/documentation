@@ -16,26 +16,31 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 ### Getters
 
-- Get Event Field Common Values: to retrieve the most common values of an ECS field based on the time window.
-- List Assets: to retrieve detailed information about assets based on a filter.
-- Search Alerts: to retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter.
-- Get Alert: to retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events.
-- Get Events: to retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip`=xx.xxx.xx), and earliest time/latest time: two dates to determine the date range of the search.
+| Name | Description |
+| --- | --- |
+| [Get Event Field Common Values](library/sekoia-io/#get-event-field-common-values.md) | Retrieve the most common values of an ECS field based on the time window |
+| [List Assets](library/sekoia-io/#list-assets.md) | Retrieve detailed information about assets based on a filter |
+| [Search Alerts](library/sekoia-io/#search-alerts.md) | Retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter. |
+| [Get Alert](library/sekoia-io/#get-alert.md) | Retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events. |
+| [Get Events](library/sekoia-io/#get-events.md) | Retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip=xx.xxx.xx`), and earliest time/latest time: two dates to determine the date range of the search. |
 
 !!!note
-`Get Events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
+	`Get Events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
 
 ### Setters
 
-- Edit alert: to edit an alert such as the urgency or the alert category.
-- Comment alert: to add a comment to the alert.
-- Update alert status: to change the status of an alert.
-- Push Events to Intake: to push one or more events to an Intake.
-- Create an asset: to create an asset.
-- Delete an asset: to delete an asset.
-- Add attribute to Asset: to add an attribute to an asset.
-- Add key to Asset: to add a key to an asset.
-- Attach Alerts to Case: to attach one or more alerts to a case.
+| Name | Description |
+| --- | --- |
+| [Create an asset](library/sekoia-io/#delete-an-asset.md) | Create an asset |
+| [Delete an asset](library/sekoia-io/#create-asset.md) | Delete an asset |
+| [Add attribute to asset](library/sekoia-io/#add-attribute-to-asset.md) | Add attribute to asset |
+| [Add key to asset](library/sekoia-io/#add-key-to-asset.md) | Add key to asset |
+| [Edit alert](library/sekoia-io/#edit-alert.md) | Edit an alert details such as the urgency or the alert category |
+| [Comment alert](library/sekoia-io/#comment-alert.md) | Add a comment to the alert |
+| [Update alert status](library/sekoia-io/#update-alert-status.md) | Change the status of an alert |
+| [Push Events to Intake](library/sekoia-io/#push-events-to-intake.md) | Push one or more events to an Intake |
+| [Attach Alerts to Case](library/sekoia-io/#attach-alerts-to-case.md) | Attach one or more alerts to a case. |
+
 
 #### How to update an alert status
 
