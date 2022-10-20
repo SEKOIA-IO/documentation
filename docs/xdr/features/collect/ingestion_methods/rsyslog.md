@@ -10,15 +10,15 @@ Before processing, you have to:
 
 - Connect to [SEKOIA.IO Operations Center](https://app.sekoia.io/operations/)
 - Add an Intake to the relevant Entity
-- Keep trace of the automatically generated **Intake Key**.
+- Keep trace of the automatically generated Intake key
 
 ## Rsyslog installation prerequisites
 
 The following prerequisites are needed in order to setup efficient Rsyslog:
 
-- Administrator privileges of the Debian server: `root`.
-- Inbound traffic from the equipment to the Rsyslog must be open on `TCP 514`.
-- Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`).
+- Administrator privileges of the Debian server: `root`
+- Inbound traffic from the equipment to the Rsyslog must be open on `TCP 514`
+- Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`)
 
 ## Rsyslog installation procedure
 
@@ -92,9 +92,9 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 
 ## Configure Rsyslog server to receive and process incoming logs
 
-### Example: Windows logs 
+### Use case: Windows logs 
 
-To receive and process Windows logs, follow these steps: 
+To receive and process Windows logs, you have to follow these steps: 
 
 1. Verify that traffic is incoming from your log source
 
@@ -115,84 +115,83 @@ To receive and process Windows logs, follow these steps:
 
 3. Create a configuration file to identify syslog headers that will be used later
 
-This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
+	This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
 
-Log all the raw events received by the Rsyslog server to a **temporary file** named `00-testing.conf`.
+	Log all the raw events received by the Rsyslog server to a **temporary file** named `00-testing.conf`.
 
-To identify syslog headers that will be used later, follow these steps: 
+	To identify syslog headers that will be used later, follow these steps: 
 
-1. Create a dedicated configuration file
+	1. Create a dedicated configuration file
 
-	```bash
-	sudo touch /etc/rsyslog.d/00-testing.conf
-	```
-
-2. Edit the configuration file with the following information
-
-	```bash
-	sudo vim /etc/rsyslog.d/00-testing.conf
-	```
-
-3. Make sure the file contains the following information only: 
-
-	```bash
-	template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
-	*.* /var/log/testing.log;SEKOIAIOTesting
-	```
-
-4. Restart the Rsyslog service and verify its status
-
-	```bash
-	sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
-	```
-
-5. Search for Windows events that now contains the syslog headers
-
-	```bash
-	sudo tail -f /var/log/testing.log | grep -i "Hostname"
-	```
-
-	Similar log lines should be displayed within seconds: 
-
-	```text
-		<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] 	{"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-	922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
+		```bash
+		sudo touch /etc/rsyslog.d/00-testing.conf
 		```
 
-	In this example, the syslog header is: `<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]`
+	2. Edit the configuration file with the following information
 
-	It corresponds to what was requested in the template "SEKOIAIOTesting": `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]`
+		```bash
+		sudo vim /etc/rsyslog.d/00-testing.conf
+		```
 
-	!!!note 
-		More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
+	3. Make sure the file contains the following information only: 
 
-6. Find unique information to isolate this particular technology
+		```bash
+		template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+		*.* /var/log/testing.log;SEKOIAIOTesting
+		```
 
-	In this example, "DESKTOP-XXXXXXX" or "Microsoft-Windows" information is precious.
+	4. Restart the Rsyslog service and verify its status
 
-	The `hostname`, `app-name` or `syslogtag` in the syslog headers are often used to determine which intake the log should be forwarded to.
+		```bash
+		sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
+		```
 
-	The comparison operators such as `contains`, `isequal` or `startswith` are most of the time used to link a syslog property to a value in the event log, in the `if` condition that will be used in the next paragraph.
+	5. Search for Windows events that now contains the syslog headers
 
-	The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
+		```bash
+		sudo tail -f /var/log/testing.log | grep -i "Hostname"
+		```
 
-7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
+		Similar log lines should be displayed within seconds: 
 
-	```bash
-	# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 	intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+		```text
+			<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] 	{"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-	922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
+			```
+
+		In this example, the syslog header is: `<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]`
+
+		It corresponds to what was requested in the template "SEKOIAIOTesting": `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]`
+
+		!!!note 
+			More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
+
+	6. Find unique information to isolate this particular technology
+
+		In this example, "DESKTOP-XXXXXXX" or "Microsoft-Windows" information is precious.
+
+		The `hostname`, `app-name` or `syslogtag` in the syslog headers are often used to determine which intake the log should be forwarded to.
+
+		The comparison operators such as `contains`, `isequal` or `startswith` are most of the time used to link a syslog property to a value in the event log, in the `if` condition that will be used in the next paragraph.
+
+		The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
+
+	7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
+		```bash
+# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
 # *.* /var/log/testing.log;SEKOIAIOTesting
-	```
+```
 
-8.  Restart the Rsyslog service and check its status
+	8.  Restart the Rsyslog service and check its status
 
-	```bash
-	sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
-	```
+		```bash
+		sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
+		```
 
-9. Remove the "/var/log/testing.log" file
+	9. Remove the "/var/log/testing.log" file
 
-	```bash
-	sudo rm /var/log/testing.log
-	```
+		```bash
+		sudo rm /var/log/testing.log
+		```
 
 ## Forward logs to SEKOIA.IO
 
@@ -217,31 +216,31 @@ To identify syslog headers that will be used later, follow these steps:
 	You should also adapt the template name `SEKOIAIOWindowsTemplate` and the `if` condition parameters with appropriate content as explained in the previous section.
 
 	Following the same example for Windows log collection:
+	```bash
+# Refer to the location of the certificate
+$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
-		```bash
-		# Refer to the location of the certificate
-		$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+# Customize the syslog header the an Intake Key to be collected on SEKOIA.IO while adding a new intake from the catalogue
+template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-		# Customize the syslog header of the logs collected in SEKOIA.IO by adding the intake key to it
-		template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+# Use a condition that identifies specifically Windows logs that send them to SEKOIA.IO
+if ($syslogtag contains 'Microsoft-Windows') then {
+    action(
+        type="omfwd"
+        protocol="tcp"
+        target="intake.sekoia.io"
+        port="10514"
+        TCP_Framing="octet-counted"
+        StreamDriver="gtls"
+        StreamDriverMode="1"
+        StreamDriverAuthMode="x509/name"
+        StreamDriverPermittedPeers="intake.sekoia.io"
+        Template="SEKOIAIOWindowsTemplate"
+    )
+}
+```
 
-		# Use a condition that specifically identifies Windows logs then send them to SEKOIA.IO
-		if ($syslogtag contains 'Microsoft-Windows') then {
-		    action(
-			type="omfwd"
-			protocol="tcp"
-			target="intake.sekoia.io"
-			port="10514"
-			TCP_Framing="octet-counted"
-			StreamDriver="gtls"
-			StreamDriverMode="1"
-			StreamDriverAuthMode="x509/name"
-			StreamDriverPermittedPeers="intake.sekoia.io"
-			Template="SEKOIAIOWindowsTemplate"
-		    )
-		}
-			```
-
+		
 3. Start the Rsyslog service and make sure it is correctly set up 
 
 	```bash
