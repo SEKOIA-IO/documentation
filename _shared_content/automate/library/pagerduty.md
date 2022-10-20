@@ -15,7 +15,7 @@
 
 Trigger alert to PagerDuty
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

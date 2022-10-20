@@ -12,7 +12,7 @@ This module accepts no configuration.
 
 Donwload the given file and save it
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -20,7 +20,7 @@ Donwload the given file and save it
 | `headers` | `object` | Headers to use when sending the requests |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -30,7 +30,7 @@ Donwload the given file and save it
 
 Requests a resource at a specified URL and returns the response as Raw or JSON
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -42,7 +42,7 @@ Requests a resource at a specified URL and returns the response as Raw or JSON
 | `params` | `string` | Query string parameters to append to the URL |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

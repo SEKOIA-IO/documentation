@@ -14,7 +14,7 @@
 
 Get LiveHunt notifications from the files endpoint
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -22,7 +22,7 @@ Get LiveHunt notifications from the files endpoint
 | `skip_history` | `boolean` | only process new notifications |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -42,14 +42,14 @@ Get LiveHunt notifications from the files endpoint
 
 Get comments from Virus Total
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `resource` | `string` | The hash or url to get comments from |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -62,7 +62,7 @@ Get comments from Virus Total
 
 Post comment to Virus Total
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -70,7 +70,7 @@ Post comment to Virus Total
 | `resource` | `string` | The hash or url to comment |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -81,14 +81,14 @@ Post comment to Virus Total
 
 Scan domain with Virus Total
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `domain` | `string` | The domain to scan |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -109,7 +109,7 @@ Scan domain with Virus Total
 
 Scan file with Virus Total
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -117,7 +117,7 @@ Scan file with Virus Total
 | `detect_treshold` | `integer` | The number of positives from VirusTotal that will be used as a treshold of detection |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -138,14 +138,14 @@ Scan file with Virus Total
 
 Scan hash with Virus Total
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `hash` | `string` | The hash to check |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -166,14 +166,14 @@ Scan hash with Virus Total
 
 Scan ip with Virus Total
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `ip` | `string` | The ip to scan |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -191,7 +191,7 @@ Scan ip with Virus Total
 
 Scan url with Virus Total
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -199,7 +199,7 @@ Scan url with Virus Total
 | `detect_treshold` | `integer` | The number of positives from VirusTotal that will be used as a treshold of detection |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

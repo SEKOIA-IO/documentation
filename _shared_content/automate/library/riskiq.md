@@ -18,14 +18,14 @@
 
 Get hosts by certificate
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `certSha1` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -43,7 +43,7 @@ Get hosts by certificate
 
 Retrieve results by searching for specified hexadecimal bytes within PDNS record data field.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -54,7 +54,7 @@ Retrieve results by searching for specified hexadecimal bytes within PDNS record
 | `hex` | `string` | Hexadecimal encoding of data field bytes |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -65,7 +65,7 @@ Retrieve results by searching for specified hexadecimal bytes within PDNS record
 
 Retrieve results by searching for specified IP address within PDNS record data field
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -75,7 +75,7 @@ Retrieve results by searching for specified IP address within PDNS record data f
 | `firstSeenBefore` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -86,7 +86,7 @@ Retrieve results by searching for specified IP address within PDNS record data f
 
 Retrieve results by searching for specified resource name within PDNS record data field.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -97,7 +97,7 @@ Retrieve results by searching for specified resource name within PDNS record dat
 | `firstSeenBefore` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -108,14 +108,14 @@ Retrieve results by searching for specified resource name within PDNS record dat
 
 Get SSL certificates by host name
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `host` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -125,14 +125,14 @@ Get SSL certificates by host name
 
 Get SSL certificates by name
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `name` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -150,14 +150,14 @@ Get SSL certificates by name
 
 None
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `serial` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -175,14 +175,14 @@ None
 
 Get SSL certificate by SHA1 hash
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `sha1` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -209,7 +209,7 @@ Get SSL certificate by SHA1 hash
 
 Get WHOIS records associated with an address
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -218,7 +218,7 @@ Get WHOIS records associated with an address
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -229,7 +229,7 @@ Get WHOIS records associated with an address
 
 Get the current WHOIS for a domain
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -239,7 +239,7 @@ Get the current WHOIS for a domain
 | `Authorization` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -250,7 +250,7 @@ Get the current WHOIS for a domain
 
 Get WHOIS records associated with an email address
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -259,7 +259,7 @@ Get WHOIS records associated with an email address
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -270,7 +270,7 @@ Get WHOIS records associated with an email address
 
 Get WHOIS records associated with a name
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -279,7 +279,7 @@ Get WHOIS records associated with a name
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -290,7 +290,7 @@ Get WHOIS records associated with a name
 
 Get WHOIS records associated with a name server
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -299,7 +299,7 @@ Get WHOIS records associated with a name server
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -310,7 +310,7 @@ Get WHOIS records associated with a name server
 
 Get WHOIS records associated with an organization
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -319,7 +319,7 @@ Get WHOIS records associated with an organization
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -330,7 +330,7 @@ Get WHOIS records associated with an organization
 
 Get WHOIS records associated with a phone number
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -339,7 +339,7 @@ Get WHOIS records associated with a phone number
 | `maxResults` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

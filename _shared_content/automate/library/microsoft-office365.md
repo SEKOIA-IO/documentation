@@ -14,7 +14,7 @@ This module accepts no configuration.
 
 Fetch events for MessageTrace API
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -32,7 +32,7 @@ Fetch events for MessageTrace API
 
 Fetch events for MessageTrace API (OAuth)
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

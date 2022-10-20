@@ -18,7 +18,7 @@ Integrates with CrowdStrike Falcon EDR
 
 Get latest events from CrowdStrike Falcon
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

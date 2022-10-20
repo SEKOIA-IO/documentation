@@ -18,7 +18,7 @@
 
 
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -29,7 +29,7 @@
 | `artifact_ignore_similarity` | `boolean` | Observable's similarity ignore flag. `True` to ignore the observable during similarity computing. Default: True |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

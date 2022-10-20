@@ -14,14 +14,14 @@ Provides data enrichment for domains and IP addresses.
 
 Provides data enrichment for Domains, URLs, and IP addresses.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `query` | `string` | URL, IP, or domain to be enriched |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

@@ -19,7 +19,7 @@ Sophos Module
 
 Forward Sophos Events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

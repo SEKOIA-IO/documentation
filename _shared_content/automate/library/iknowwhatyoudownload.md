@@ -17,14 +17,14 @@
 
 Fast check if IP exists or not in the IKnowWhatYouDownload database
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `ip` | `string` | The IP address to query |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -36,14 +36,14 @@ Fast check if IP exists or not in the IKnowWhatYouDownload database
 
 Fetches the historical data of downloaded and shared content using the BitTorrent protocol of an IP
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `ip` | `string` | The IP address to query |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -58,14 +58,14 @@ Fetches the historical data of downloaded and shared content using the BitTorren
 
 Fetch the list IP that can be found in a CIDR notation
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `cidr` | `string` | The CIDR address to query |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

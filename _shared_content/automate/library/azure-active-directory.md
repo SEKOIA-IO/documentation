@@ -16,7 +16,7 @@
 
 Disable an Azure Active Directory user. Requires the User.ReadWrite.All permission.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -27,7 +27,7 @@ Disable an Azure Active Directory user. Requires the User.ReadWrite.All permissi
 
 Enable an Azure Active Directory user. Requires the User.ReadWrite.All permission.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -38,7 +38,7 @@ Enable an Azure Active Directory user. Requires the User.ReadWrite.All permissio
 
 Get the last sign ins of an Azure AD user. Requires the AuditLog.Read.All and Directory.Read.All permissions.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -46,7 +46,7 @@ Get the last sign ins of an Azure AD user. Requires the AuditLog.Read.All and Di
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -56,7 +56,7 @@ Get the last sign ins of an Azure AD user. Requires the AuditLog.Read.All and Di
 
 Get information about an Azure Active Directory user. Requires the User.Read.All permission.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -64,7 +64,7 @@ Get information about an Azure Active Directory user. Requires the User.Read.All
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -90,7 +90,7 @@ Get information about an Azure Active Directory user. Requires the User.Read.All
 
 Get information about an user's authentication methods (such as their MFA status). Requires the UserAuthenticationMethod.Read.All permission.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -98,7 +98,7 @@ Get information about an user's authentication methods (such as their MFA status
 | `userPrincipalName` | `string` | Principal Name of the user. id or userPrincipalName should be specified. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

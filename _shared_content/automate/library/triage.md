@@ -15,7 +15,7 @@
 
 Get Triage configs
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -23,7 +23,7 @@ Get Triage configs
 | `malware_list` | `array` | List of malware family |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -35,7 +35,7 @@ Get Triage configs
 
 Triage raw results to observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -43,7 +43,7 @@ Triage raw results to observables
 | `triage_raw_results_path` | `string` | Path of objects that contain Triage raw results |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

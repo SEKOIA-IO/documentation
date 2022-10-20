@@ -17,7 +17,7 @@
 
 Trigger a playbook on a new MISP event
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -25,7 +25,7 @@ Trigger a playbook on a new MISP event
 | `attributes_filter` | `integer` | Time in seconds after which attributes are no longer considered new (0 for no filter) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -37,14 +37,14 @@ Trigger a playbook on a new MISP event
 
 Convert MISP event to STIX 2
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `event` | `object` | MISP event to convert to STIX |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -54,7 +54,7 @@ Convert MISP event to STIX 2
 
 Publish an event on a MISP server
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -62,7 +62,7 @@ Publish an event on a MISP server
 | `event_path` | `string` | MISP event (from file) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

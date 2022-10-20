@@ -21,14 +21,14 @@ Get list of CVEs that migh affect a specific IP.
 
  **Note**: Available for paid subscriptions only.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -43,14 +43,14 @@ Allows you to search across multiple data breaches to see if any of your email a
 
  **Note:** Available for paid subscriptions only.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `email` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -62,7 +62,7 @@ Allows you to search across multiple data breaches to see if any of your email a
 
 Get all available information about the dataleaks our platform keeps track.
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -76,14 +76,14 @@ Verify how many emails are affected by dataleaks for a specific domain. We don't
 
  **Note:** Available for paid subscriptions only.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `domain` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -97,7 +97,7 @@ Return list of known DNS results for the target domain. Possible types of record
 
  -A, AAAA, NS, MX
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -105,7 +105,7 @@ Return list of known DNS results for the target domain. Possible types of record
 | `page` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -121,7 +121,7 @@ Return records that have the specified IP address in their A or AAAA records.
 
  **Nota**: Available for paid subscriptions only.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -129,7 +129,7 @@ Return records that have the specified IP address in their A or AAAA records.
 | `page` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -145,7 +145,7 @@ List of Domains/DNS data based on a Query. Can be used with specific parameters 
 
  -A, AAAA, NS, MX, CNAME, TXT
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -153,7 +153,7 @@ List of Domains/DNS data based on a Query. Can be used with specific parameters 
 | `page` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -167,7 +167,7 @@ List of Domains/DNS data based on a Query. Can be used with specific parameters 
 
 Return list of subdomains known from the target domains.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -175,7 +175,7 @@ Return list of subdomains known from the target domains.
 | `page` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -189,7 +189,7 @@ Return list of subdomains known from the target domains.
 
 Details about Remote Desktops found on an Host. List of screenshots and details extracted from them for the specified host, including OCR and whether faces were found or not, with data up to 2 months.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -197,7 +197,7 @@ Details about Remote Desktops found on an Host. List of screenshots and details 
 | `page` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -211,7 +211,7 @@ Details about Remote Desktops found on an Host. List of screenshots and details 
 
 Remote Desktops based on a Query. List of screenshots and details extracted from them for the given query, including OCR and whether faces were found or not. Can be used with specific parameters and/or full-text search.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -219,7 +219,7 @@ Remote Desktops based on a Query. List of screenshots and details extracted from
 | `page` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -238,14 +238,14 @@ Details about an Host. List of recent events for the specified host, including d
 
  **Note**: Querying CIDRs is available for paid subscriptions only. When using CIDR, the number of credits that will be spent correspond to the number of targets that returned results. Example: a request for a /24 (256 targets) in which only 200 targets have results, will decrement 200 credits.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -262,14 +262,14 @@ Details about an Host, with data up to 6 months.
  - A service was found running
  - Other modules were successfully executed
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -285,14 +285,14 @@ IP Risk Score. Scoring is based on all information found on our databases regard
 
  **Note**: Available for paid subscriptions only.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -306,7 +306,7 @@ IP Risk Score. Scoring is based on all information found on our databases regard
 
 Events based on a Query. List of recent events for the given query, including details of exposed ports and services. Can be used with [specific parameters](https://docs.binaryedge.io/image-search/) and/or full-text search.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -315,7 +315,7 @@ Events based on a Query. List of recent events for the given query, including de
 | `only_ips` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -329,7 +329,7 @@ Events based on a Query. List of recent events for the given query, including de
 
 Statistics of recent events for the given query. Can be used with specific parameters and/or full-text search.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -343,14 +343,14 @@ Details about an Scanner. List of recent events form the specified host, includi
 
  **Note**: Querying CIDRs is available for paid subscriptions only. When using CIDR, the number of credits that will be spent correspond to the number of targets that returned results. Example: a request for a /24 (256 targets) in which only 200 targets have results, will decrement 200 credits.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -363,7 +363,7 @@ Details about an Scanner. List of recent events form the specified host, includi
 
 Events based on a Query. List of recent events for the given query, including details of scanned ports, payloads and tags. Can be used with specific parameters and/or full-text search.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -373,7 +373,7 @@ Events based on a Query. List of recent events for the given query, including de
 | `only_ips` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -387,7 +387,7 @@ Events based on a Query. List of recent events for the given query, including de
 
 Statistics of recent events for the given query. Can be used with specific parameters and/or full-text search.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -400,7 +400,7 @@ Statistics of recent events for the given query. Can be used with specific param
 
 Get a list of IPs that have been associated with a specific TAG.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -415,14 +415,14 @@ Details about torrents transferred by an Host, with data up to 6 months.
 
  **Note:** Available for paid subscriptions only.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -434,14 +434,14 @@ Details about torrents transferred by an Host, with data up to 6 months.
 
 Details about torrents transferred by an Host. List of recent torrent events for the specified host, including details of the peer and torrent. See [Torrent Data](https://docs.binaryedge.io/torrent/) for more details.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `target` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -453,7 +453,7 @@ Details about torrents transferred by an Host. List of recent torrent events for
 
 Events based on a Query. List of recent events for the given query, including details of the peer and torrent. Can be used with specific parameters and/or full-text search.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -461,7 +461,7 @@ Events based on a Query. List of recent events for the given query, including de
 | `page` | `integer` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -475,7 +475,7 @@ Events based on a Query. List of recent events for the given query, including de
 
 Statistics of events for the given query. Can be used with specific parameters and/or full-text search.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -488,7 +488,7 @@ Statistics of events for the given query. Can be used with specific parameters a
 
 Return details about your current subscription package.
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
