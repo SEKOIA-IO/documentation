@@ -9,8 +9,8 @@ The module allows to request information such as:
 - [Whois](#whois)
 - Reverse Whois ([organization](#organization), [name server](#Name-server), [name](#name), [email](#email), [address](#address), [phone](#phone))
 - Passive DNS ([Name](#name-passive-dns), [IP](#ip-passive-dns), [Hex](#hex-passive-dns))
-- [SSL hosts](#ssl-hosts), 
-- SSL Certificates ([Host](#ssl-certificates-by-host), [name](#ssl-Certificates-by-name), [SHA-1](#ssl-certificates-by-SHA-1), [Serial Number](#ssl-certificates-by-serial-number))
+- [SSL hosts](#ssl-hosts)
+- SSL Certificates ([Host](#ssl-certificates-by-host), [name](#ssl-certificates-by-name), [SHA-1](#ssl-certificates-by-SHA-1), [Serial Number](#ssl-certificates-by-serial-number))
 
 
 ## Configuration
@@ -180,7 +180,7 @@ None
 | `totalElements` | `integer` |  |
 | `totalPages` | `integer` |  |
 
-### SSL Certificats by SHA-1
+### SSL Certificates by SHA-1
 
 Get SSL certificate by SHA-1 hash.
 
