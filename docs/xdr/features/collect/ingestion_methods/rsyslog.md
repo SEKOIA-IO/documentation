@@ -8,7 +8,7 @@ We recommend you centralize them on a dedicated server: Rsyslog.
 
 Before processing, you have to:
 
-- Connect to SEKOIA.IO Operations Center
+- Connect to [SEKOIA.IO Operations Center](https://app.sekoia.io/operations/)
 - Add an Intake to the relevant Entity
 - Keep trace of the automatically generated **Intake Key**.
 
@@ -16,7 +16,7 @@ Before processing, you have to:
 
 The following prerequisites are needed in order to setup efficient Rsyslog:
 
-- Have administrator privileges of the Debian server: `root`.
+- Administrator privileges of the Debian server: `root`.
 - Inbound traffic from the equipment to the Rsyslog must be open on `TCP 514`.
 - Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `145.239.192.38`).
 
@@ -28,67 +28,67 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 
 2. Install the relevant packages
 
-```bash
-sudo apt update
-sudo apt install -y rsyslog rsyslog-gnutls wget
-```
+	```bash
+	sudo apt update
+	sudo apt install -y rsyslog rsyslog-gnutls wget
+	```
 
 3. Download the SEKOIA.IO certificate
 
-```bash
-sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
-```
+	```bash
+	sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+	```
 
 4. Modify the `/etc/rsyslog.conf` main configuration file 
 
-This is an example of standard configuration file, to adapt if needed:
+	This is an example of standard configuration file, to adapt if needed:
 
-```bash
-# /etc/rsyslog.conf configuration file for Rsyslog
-module(load="imuxsock") # provides support for local system logging
-module(load="imklog")   # provides kernel logging support
+	```bash
+	# /etc/rsyslog.conf configuration file for Rsyslog
+	module(load="imuxsock") # provides support for local system logging
+	module(load="imklog")   # provides kernel logging support
 
-# Set the maximum supported message size
-$MaxMessageSize 20k
+	# Set the maximum supported message size
+	$MaxMessageSize 20k
 
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
+	# provides UDP syslog reception
+	module(load="imudp")
+	input(type="imudp" port="514")
 
-# provides TCP syslog reception
-module(load="imtcp")
-input(type="imtcp" port="514")
+	# provides TCP syslog reception
+	module(load="imtcp")
+	input(type="imtcp" port="514")
 
-# Use traditional timestamp format.
-$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+	# Use traditional timestamp format.
+	$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 
-# Set the default permissions for all log files.
-$FileOwner root
-$FileGroup adm
-$FileCreateMode 0640
-$DirCreateMode 0755
-$Umask 0022
+	# Set the default permissions for all log files.
+	$FileOwner root
+	$FileGroup adm
+	$FileCreateMode 0640
+	$DirCreateMode 0755
+	$Umask 0022
 
-$ActionQueueType LinkedList     # create a queue stored in the RAM
-$ActionQueueFileName sek_fwd    # set up the prefix for writting
-$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
-$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
-$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
+	$ActionQueueType LinkedList     # create a queue stored in the RAM
+	$ActionQueueFileName sek_fwd    # set up the prefix for writting
+	$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
+	$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
+	$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
 
-# Where to place spool and state files
-$WorkDirectory /var/spool/rsyslog
-$IncludeConfig /etc/rsyslog.d/*.conf
+	# Where to place spool and state files
+	$WorkDirectory /var/spool/rsyslog
+	$IncludeConfig /etc/rsyslog.d/*.conf
 
-# Rules
-*.*;auth,authpriv.none          -/var/log/syslog
-```
+	# Rules
+	*.*;auth,authpriv.none          -/var/log/syslog
+	```
 
 5. Ensure Rsyslog service is running
 
-```bash
-ps -A | grep rsyslog
-sudo systemctl status rsyslog.service
-```
+	```bash
+	ps -A | grep rsyslog
+	sudo systemctl status rsyslog.service
+	```
 
 ## Configure Rsyslog server to receive and process incoming logs
 
@@ -98,119 +98,119 @@ To receive and process Windows logs, follow these steps:
 
 A. Verify that traffic is incoming from your log source
 
-```bash
-sudo tcpdump -i <change_with_interface_name> -c10 -nn src <IP_OF_THE_SOURCE> -vv
+	```bash
+	sudo tcpdump -i <change_with_interface_name> -c10 -nn src <IP_OF_THE_SOURCE> -vv
 
-```
-!!!tip
-	Use `ip addr` command to find the relevant information to relace `<change_with_interface_name>`.
+	```
+	!!!tip
+		Use `ip addr` command to find the relevant information to relace `<change_with_interface_name>`.
 
 B. Ensure syslog events are correctly handled by the Rsyslog server
 
-For example, in Windows event logs, the field `hostname` is often used. 
+	For example, in Windows event logs, the field `hostname` is often used. 
 
-```bash
-sudo tail -f /var/log/syslog | grep -i "Hostname"
-```
+	```bash
+	sudo tail -f /var/log/syslog | grep -i "Hostname"
+	```
 
 C. Create a configuration file to identify syslog headers that will be used later
 
-This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
+	This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
 
-Log all the raw events received by the Rsyslog server to a **temporary file** named `00-testing.conf`.
+	Log all the raw events received by the Rsyslog server to a **temporary file** named `00-testing.conf`.
 
-To identify syslog headers that will be used later, follow these steps: 
+	To identify syslog headers that will be used later, follow these steps: 
 
-1. Create a dedicated configuration file
+	1. Create a dedicated configuration file
 
-```bash
-sudo touch /etc/rsyslog.d/00-testing.conf
-```
+		```bash
+		sudo touch /etc/rsyslog.d/00-testing.conf
+		```
 
-2. Edit the configuration file with the following information
+	2. Edit the configuration file with the following information
 
-```bash
-sudo vim /etc/rsyslog.d/00-testing.conf
-```
+		```bash
+		sudo vim /etc/rsyslog.d/00-testing.conf
+		```
 
-3. Make sure the file contains the following information only: 
+	3. Make sure the file contains the following information only: 
 
-```bash
-template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
-*.* /var/log/testing.log;SEKOIAIOTesting
-```
+		```bash
+		template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+		*.* /var/log/testing.log;SEKOIAIOTesting
+		```
 
-4. Restart the Rsyslog service and verify its status
+	4. Restart the Rsyslog service and verify its status
 
-```bash
-sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
-```
+		```bash
+		sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
+		```
 
-5. Search for Windows events that now contains the syslog headers
+	5. Search for Windows events that now contains the syslog headers
 
-```bash
-sudo tail -f /var/log/testing.log | grep -i "Hostname"
-```
+		```bash
+		sudo tail -f /var/log/testing.log | grep -i "Hostname"
+		```
 
-Similar log lines should be displayed within seconds: 
+	Similar log lines should be displayed within seconds: 
 
-```text
-<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] {"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
-```
+		```text
+		<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] 	{"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-	922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
+		```
 
-In this example, the syslog header is: `<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]`
+	In this example, the syslog header is: `<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]`
 
-It corresponds to what was requested in the template "SEKOIAIOTesting": `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]`
+	It corresponds to what was requested in the template "SEKOIAIOTesting": `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]`
 
-!!!note 
-	More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
+	!!!note 
+		More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
 
-6. Find unique information to isolate this particular technology
+	6. Find unique information to isolate this particular technology
 
-In this example, "DESKTOP-XXXXXXX" or "Microsoft-Windows" information is precious.
+	In this example, "DESKTOP-XXXXXXX" or "Microsoft-Windows" information is precious.
 
-The `hostname`, `app-name` or `syslogtag` in the syslog headers are often used to determine which intake the log should be forwarded to.
+	The `hostname`, `app-name` or `syslogtag` in the syslog headers are often used to determine which intake the log should be forwarded to.
 
-The comparison operators such as `contains`, `isequal` or `startswith` are most of the time used to link a syslog property to a value in the event log, in the `if` condition that will be used in the next paragraph.
+	The comparison operators such as `contains`, `isequal` or `startswith` are most of the time used to link a syslog property to a value in the event log, in the `if` condition that will be used in the next paragraph.
 
-The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
+	The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
 
-7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
+	7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
 
-```bash
-# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+	```bash
+	# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 	intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
 # *.* /var/log/testing.log;SEKOIAIOTesting
-```
+	```
 
-8.  Restart the Rsyslog service and check its status
+	8.  Restart the Rsyslog service and check its status
 
-```bash
-sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
-```
+	```bash
+	sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
+	```
 
-9. Remove the "/var/log/testing.log" file
+	9. Remove the "/var/log/testing.log" file
 
-```bash
-sudo rm /var/log/testing.log
-```
+	```bash
+	sudo rm /var/log/testing.log
+	```
 
 ## Forward logs to SEKOIA.IO
 
 1. Create configuration files for each technology you want to forward to SEKOIA.IO
 
-It is recommended to create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
+	It is recommended to create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
 
-Example for the Windows log collection:
+	Example for the Windows log collection:
 
-```bash
-sudo touch /etc/rsyslog.d/15-windows.conf
-```
+	```bash
+	sudo touch /etc/rsyslog.d/15-windows.conf
+	```
 
 2. Edit each configuration file as needed
 
-```bash
-sudo vim /etc/rsyslog.d/15-windows.conf
-```
+	```bash
+	sudo vim /etc/rsyslog.d/15-windows.conf
+	```
 
 The **Intake key** is needed in this step. Ensure to replace "YOUR_INTAKE_KEY" by your Windows Intake Key.
 
@@ -218,14 +218,14 @@ You should also adapt the template name "SEKOIAIOWindowsTemplate" and the `if` c
 
 Following the same example for Windows log collection:
 
-```bash
-# Refer to the location of the certificate
-$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+	```bash
+	# Refer to the location of the certificate
+	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
-# Customize the syslog header of the logs collected in SEKOIA.IO by adding the intake key to it
-template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+	# Customize the syslog header of the logs collected in SEKOIA.IO by adding the intake key to it
+	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-# Use a condition that specifically identifies Windows logs then send them to SEKOIA.IO
+	# Use a condition that specifically identifies Windows logs then send them to SEKOIA.IO
 if ($syslogtag contains 'Microsoft-Windows') then {
     action(
         type="omfwd"
@@ -240,13 +240,13 @@ if ($syslogtag contains 'Microsoft-Windows') then {
         Template="SEKOIAIOWindowsTemplate"
     )
 }
-```
+	```
 
 3. Start the Rsyslog service and make sure it is correctly set up 
 
-```bash
-sudo systemctl restart rsyslog.service
-```
+	```bash
+	sudo systemctl restart rsyslog.service
+	```
 
 ## See your events on SEKOIA.IO XDR
 
@@ -275,9 +275,9 @@ Follow these steps to forward logs using RELP Protocol:
 
 2. Edit your main Rsyslog configuration to load the `omrelp` module:
 
-```bash
-module(load="omrelp" tls.tlslib="openssl")
-```
+	```bash
+	module(load="omrelp" tls.tlslib="openssl")
+	```
 
 3. Configure the output action to push your events to SEKOIA.IO via the RELP protocol. 
 
@@ -305,6 +305,7 @@ if ($programname startswith 'unbound') then {
 After setting up your Rsyslog, you may encounter errors due to the contextual environment or omissions while copying and pasting information.
 
 Useful troubleshooting resources are:
+
 - The [rsyslog documentation](https://www.rsyslog.com/doc/master/index.html)
 - The syslog [github issue tracker](https://github.com/rsyslog/rsyslog/issues) 
 
@@ -334,26 +335,27 @@ To fix this:
 
 1. Run the following command:
 
-```bash
-tail -n 15 /var/log/syslog
-```
+	```bash
+	tail -n 15 /var/log/syslog
+	```
+
 2. Make sure the following lines are not commented in the configuration file `/etc/rsyslog.conf`:
 
-```bash
-# provide TCP syslog reception
-module(load="imtcp")
-input(type="imtcp" port="514")
+	```bash
+	# provide TCP syslog reception
+	module(load="imtcp")
+	input(type="imtcp" port="514")
 
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
-```
+	# provides UDP syslog reception
+	module(load="imudp")
+	input(type="imudp" port="514")
+	```
 
 3. Verify that traffic is incoming from your log source
 
-```bash
-sudo tcpdump -i <change_with_interface_name> -c10 -nn src 1.1.1.1 -vv
-```
+	```bash
+	sudo tcpdump -i <change_with_interface_name> -c10 -nn src 1.1.1.1 -vv
+	```
 
 ### A `/etc/rsyslog/xx-<technology>.conf` file is misconfigured
 
@@ -407,96 +409,96 @@ It will automatically configure you Rsyslog server to collect and forward Window
 !!!note 
 	It is possible to copy and paste this configuration locally then upload it with SCP command, or simple copy and paste it from the web to your remote server.
 
-```bash
-#!/bin/bash
-##### This file is used to automate the Rsyslog setup
+	```bash
+	#!/bin/bash
+	##### This file is used to automate the Rsyslog setup
 
-# Install service and dependances
-sudo apt update
-sudo apt install -y rsyslog rsyslog-gnutls wget
+	# Install service and dependances
+	sudo apt update
+	sudo apt install -y rsyslog rsyslog-gnutls wget
 
-### Create a dedicated Rsyslog configuration file
-RsyslogConfFile="/etc/rsyslog.conf"
+	### Create a dedicated Rsyslog configuration file
+	RsyslogConfFile="/etc/rsyslog.conf"
 
-sudo /bin/cat <<\EOM >$RsyslogConfFile
-# /etc/rsyslog.conf configuration file for Rsyslog
-module(load="imuxsock") # provides support for local system logging
-module(load="imklog")   # provides kernel logging support
+	sudo /bin/cat <<\EOM >$RsyslogConfFile
+	# /etc/rsyslog.conf configuration file for Rsyslog
+	module(load="imuxsock") # provides support for local system logging
+	module(load="imklog")   # provides kernel logging support
 
-# Set the maximum supported message size
-$MaxMessageSize 20k
+	# Set the maximum supported message size
+	$MaxMessageSize 20k
 
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
+	# provides UDP syslog reception
+	module(load="imudp")
+	input(type="imudp" port="514")
 
-# provides TCP syslog reception
-module(load="imtcp")
-input(type="imtcp" port="514")
+	# provides TCP syslog reception
+	module(load="imtcp")
+	input(type="imtcp" port="514")
 
-# Use traditional timestamp format.
-$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+	# Use traditional timestamp format.
+	$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 
-# Set the default permissions for all log files.
-$FileOwner root
-$FileGroup adm
-$FileCreateMode 0640
-$DirCreateMode 0755
-$Umask 0022
+	# Set the default permissions for all log files.
+	$FileOwner root
+	$FileGroup adm
+	$FileCreateMode 0640
+	$DirCreateMode 0755
+	$Umask 0022
 
-$ActionQueueType LinkedList     # create a queue stored in the RAM
-$ActionQueueFileName sek_fwd    # set up the prefix for writting
-$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
-$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
-$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
+	$ActionQueueType LinkedList     # create a queue stored in the RAM
+	$ActionQueueFileName sek_fwd    # set up the prefix for writting
+	$ActionQueueMaxDiskSpace 5g     # allow 5 giga of storage for the buffer
+	$ActionQueueSaveOnShutdown on   # write on disk is the Rsyslog is whut down
+	$ActionResumeRetryCount -1      # prevent the Rsyslog from droping the logs if the connexion is interrupted
 
-# Where to place spool and state files
-$WorkDirectory /var/spool/rsyslog
-$IncludeConfig /etc/rsyslog.d/*.conf
+	# Where to place spool and state files
+	$WorkDirectory /var/spool/rsyslog
+	$IncludeConfig /etc/rsyslog.d/*.conf
 
-# Rules
-*.*;auth,authpriv.none          -/var/log/syslog
-EOM
+	# Rules
+	*.*;auth,authpriv.none          -/var/log/syslog
+	EOM
 
-### Create a dedicated Windows configuration file
-WindowsFile="/etc/rsyslog.d/15-windows.conf"
+	### Create a dedicated Windows configuration file
+	WindowsFile="/etc/rsyslog.d/15-windows.conf"
 
-sudo /bin/cat <<\EOM >$WindowsFile
-$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+	sudo /bin/cat <<\EOM >$WindowsFile
+	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
-template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-if ($syslogtag contains 'Microsoft-Windows') then {
-    action(
-        type="omfwd"
-        protocol="tcp"
-        target="intake.sekoia.io"
-        port="10514"
-        TCP_Framing="octet-counted"
-        StreamDriver="gtls"
-        StreamDriverMode="1"
-        StreamDriverAuthMode="x509/name"
-        StreamDriverPermittedPeers="intake.sekoia.io"
-        Template="SEKOIAIOWindowsTemplate"
-    )
-}
-EOM
+	if ($syslogtag contains 'Microsoft-Windows') then {
+	    action(
+		type="omfwd"
+		protocol="tcp"
+		target="intake.sekoia.io"
+		port="10514"
+		TCP_Framing="octet-counted"
+		StreamDriver="gtls"
+		StreamDriverMode="1"
+		StreamDriverAuthMode="x509/name"
+		StreamDriverPermittedPeers="intake.sekoia.io"
+		Template="SEKOIAIOWindowsTemplate"
+	    )
+	}
+	EOM
 
-# Collect the SEKOIA Key for encryption between Rsyslog and SEKOIA.IO
-sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
-```
+	# Collect the SEKOIA Key for encryption between Rsyslog and SEKOIA.IO
+	sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+	```
 
 2. Once the file created on the Rsyslog, make it executable with the command `chmod +x <filename.sh>`.
 
 3. Run it using this command: 
 
-```bash
-./<filename.sh>
-```
+	```bash
+	./<filename.sh>
+	```
 
-- Change the intake key value in the `/etc/rsyslog.d/15-windows.conf` file
-- Restart the Rsyslog service:
+4. Change the intake key value in the `/etc/rsyslog.d/15-windows.conf` file
+5. Restart the Rsyslog service:
 
-```bash
-sudo systemctl restart rsyslog.service
-```
+	```bash
+	sudo systemctl restart rsyslog.service
+	```
