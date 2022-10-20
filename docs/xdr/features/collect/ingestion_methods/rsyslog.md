@@ -121,40 +121,40 @@ Log all the raw events received by the Rsyslog server to a **temporary file** na
 
 To identify syslog headers that will be used later, follow these steps: 
 
-	1. Create a dedicated configuration file
+1. Create a dedicated configuration file
 
-		```bash
-		sudo touch /etc/rsyslog.d/00-testing.conf
-		```
+	```bash
+	sudo touch /etc/rsyslog.d/00-testing.conf
+	```
 
-	2. Edit the configuration file with the following information
+2. Edit the configuration file with the following information
 
-		```bash
-		sudo vim /etc/rsyslog.d/00-testing.conf
-		```
+	```bash
+	sudo vim /etc/rsyslog.d/00-testing.conf
+	```
 
-	3. Make sure the file contains the following information only: 
+3. Make sure the file contains the following information only: 
 
-		```bash
-		template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
-		*.* /var/log/testing.log;SEKOIAIOTesting
-		```
+	```bash
+	template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+	*.* /var/log/testing.log;SEKOIAIOTesting
+	```
 
-	4. Restart the Rsyslog service and verify its status
+4. Restart the Rsyslog service and verify its status
 
-		```bash
-		sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
-		```
+	```bash
+	sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
+	```
 
-	5. Search for Windows events that now contains the syslog headers
+5. Search for Windows events that now contains the syslog headers
 
-		```bash
-		sudo tail -f /var/log/testing.log | grep -i "Hostname"
-		```
+	```bash
+	sudo tail -f /var/log/testing.log | grep -i "Hostname"
+	```
 
 	Similar log lines should be displayed within seconds: 
 
-		```text
+	```text
 		<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] 	{"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-	922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
 		```
 
@@ -165,7 +165,7 @@ To identify syslog headers that will be used later, follow these steps:
 	!!!note 
 		More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
 
-	6. Find unique information to isolate this particular technology
+6. Find unique information to isolate this particular technology
 
 	In this example, "DESKTOP-XXXXXXX" or "Microsoft-Windows" information is precious.
 
@@ -175,20 +175,20 @@ To identify syslog headers that will be used later, follow these steps:
 
 	The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
 
-	7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
+7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
 
 	```bash
 	# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 	intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
 # *.* /var/log/testing.log;SEKOIAIOTesting
 	```
 
-	8.  Restart the Rsyslog service and check its status
+8.  Restart the Rsyslog service and check its status
 
 	```bash
 	sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
 	```
 
-	9. Remove the "/var/log/testing.log" file
+9. Remove the "/var/log/testing.log" file
 
 	```bash
 	sudo rm /var/log/testing.log
@@ -212,9 +212,9 @@ To identify syslog headers that will be used later, follow these steps:
 	sudo vim /etc/rsyslog.d/15-windows.conf
 	```
 
-	The **Intake key** is needed in this step. Ensure to replace "YOUR_INTAKE_KEY" by your Windows Intake Key.
+	The **Intake key** is needed in this step. Ensure to replace `YOUR_INTAKE_KEY` by your Windows Intake Key.
 
-	You should also adapt the template name "SEKOIAIOWindowsTemplate" and the `if` condition parameters with appropriate content as explained in the previous section.
+	You should also adapt the template name `SEKOIAIOWindowsTemplate` and the `if` condition parameters with appropriate content as explained in the previous section.
 
 	Following the same example for Windows log collection:
 
@@ -226,21 +226,21 @@ To identify syslog headers that will be used later, follow these steps:
 		template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
 		# Use a condition that specifically identifies Windows logs then send them to SEKOIA.IO
-	if ($syslogtag contains 'Microsoft-Windows') then {
-	    action(
-		type="omfwd"
-		protocol="tcp"
-		target="intake.sekoia.io"
-		port="10514"
-		TCP_Framing="octet-counted"
-		StreamDriver="gtls"
-		StreamDriverMode="1"
-		StreamDriverAuthMode="x509/name"
-		StreamDriverPermittedPeers="intake.sekoia.io"
-		Template="SEKOIAIOWindowsTemplate"
-	    )
-	}
-		```
+		if ($syslogtag contains 'Microsoft-Windows') then {
+		    action(
+			type="omfwd"
+			protocol="tcp"
+			target="intake.sekoia.io"
+			port="10514"
+			TCP_Framing="octet-counted"
+			StreamDriver="gtls"
+			StreamDriverMode="1"
+			StreamDriverAuthMode="x509/name"
+			StreamDriverPermittedPeers="intake.sekoia.io"
+			Template="SEKOIAIOWindowsTemplate"
+		    )
+		}
+			```
 
 3. Start the Rsyslog service and make sure it is correctly set up 
 
@@ -367,14 +367,14 @@ If the Rsyslog service starts, the logs are correctly received and the `/etc/rsy
 In this case:
 
 1. Ensure the relevant `Intake Key` is provided in the template: [SEKOIA@53288 intake_key=\"**YOUR_INTAKE_KEY**\"]
-2. Uncomment the lines in the "/etc/rsyslog.d/00-testing.conf"
+2. Uncomment the lines in the `/etc/rsyslog.d/00-testing.conf`
 3. Restart the Rsyslog service
-4. Use the `grep` function to filter on the relevant data from "/var/log/testing.log" file
+4. Use the `grep` function to filter on the relevant data from `/var/log/testing.log` file
 5. Identify the right information on the syslog header and adapt the `if` condition accordingly
 
 It is possible to test your specific `if` condition. To do so: 
 
-1. Add the following lines in the "/etc/rsyslog.d/00-testing.conf" and use your condition instead of "TO_BE_ADAPTED". 
+1. Add the following lines in the `/etc/rsyslog.d/00-testing.conf` and use your condition instead of `TO_BE_ADAPTED`. 
 
 	```bash
 	template(name="SEKOIAIOTroubleshoot" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
@@ -388,10 +388,10 @@ It is possible to test your specific `if` condition. To do so:
 	}
 	```
 
-2. Restart the Rsyslog service and see if the new file "/var/log/troubleshoot.log" is created and populated with logs using `grep` command.
+2. Restart the Rsyslog service and see if the new file `/var/log/troubleshoot.log` is created and populated with logs using `grep` command.
 3. Comment the lines in the "/etc/rsyslog.d/00-testing.conf"
 4. Restart the Rsyslog service
-5. Remove the "/var/log/testing.log" file and "/var/log/troubleshoot.log" file if necessary
+5. Remove the "/var/log/testing.log" file and `/var/log/troubleshoot.log file if necessary
 
 ## Example of auto-setup configuration
 
