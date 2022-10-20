@@ -39,11 +39,12 @@ In addition to that, external roles can be added in any managed community to the
 Roles assigned to a user in a managed community are independent from their roles in other subcommunities.
 
 For example, 
+
 1) A user has been added with the role `IC_viewer` set in the main MSSP community.
 This user will have this role applied in all other managed communities.
 
-2) Then the admin add the role `IC_writer` in a specific managed community to this user.
-It will have the role `IC_writer` in this specific managed community plus the role `IC_writer` set in the main MSSP community.
+2) Then the admin adds the role `IC_writer` to this user in a specific managed community.
+The user will have the role `IC_writer` in this specific managed community in addition to the role `IC_writer` set in the main MSSP community.
 
 To learn more about how to invite users to MSSP communities, please refer to [this documentation](https://docs.sekoia.io/getting_started/invite_users/#in-an-mssp-community). 
 
