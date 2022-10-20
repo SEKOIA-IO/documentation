@@ -96,7 +96,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 
 To receive and process Windows logs, follow these steps: 
 
-A. Verify that traffic is incoming from your log source
+1. Verify that traffic is incoming from your log source
 
 	```bash
 	sudo tcpdump -i <change_with_interface_name> -c10 -nn src <IP_OF_THE_SOURCE> -vv
@@ -105,7 +105,7 @@ A. Verify that traffic is incoming from your log source
 	!!!tip
 		Use `ip addr` command to find the relevant information to relace `<change_with_interface_name>`.
 
-B. Ensure syslog events are correctly handled by the Rsyslog server
+2. Ensure syslog events are correctly handled by the Rsyslog server
 
 	For example, in Windows event logs, the field `hostname` is often used. 
 
@@ -113,13 +113,13 @@ B. Ensure syslog events are correctly handled by the Rsyslog server
 	sudo tail -f /var/log/syslog | grep -i "Hostname"
 	```
 
-C. Create a configuration file to identify syslog headers that will be used later
+3. Create a configuration file to identify syslog headers that will be used later
 
-	This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
+This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
 
-	Log all the raw events received by the Rsyslog server to a **temporary file** named `00-testing.conf`.
+Log all the raw events received by the Rsyslog server to a **temporary file** named `00-testing.conf`.
 
-	To identify syslog headers that will be used later, follow these steps: 
+To identify syslog headers that will be used later, follow these steps: 
 
 	1. Create a dedicated configuration file
 
@@ -196,7 +196,7 @@ C. Create a configuration file to identify syslog headers that will be used late
 
 ## Forward logs to SEKOIA.IO
 
-1. Create configuration files for each technology you want to forward to SEKOIA.IO
+1. Create configuration files for each technology you want to forward to SEKOIA.IO.
 
 	It is recommended to create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
 
@@ -212,35 +212,35 @@ C. Create a configuration file to identify syslog headers that will be used late
 	sudo vim /etc/rsyslog.d/15-windows.conf
 	```
 
-The **Intake key** is needed in this step. Ensure to replace "YOUR_INTAKE_KEY" by your Windows Intake Key.
+	The **Intake key** is needed in this step. Ensure to replace "YOUR_INTAKE_KEY" by your Windows Intake Key.
 
-You should also adapt the template name "SEKOIAIOWindowsTemplate" and the `if` condition parameters with appropriate content as explained in the previous section.
+	You should also adapt the template name "SEKOIAIOWindowsTemplate" and the `if` condition parameters with appropriate content as explained in the previous section.
 
-Following the same example for Windows log collection:
+	Following the same example for Windows log collection:
 
-	```bash
-	# Refer to the location of the certificate
-	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+		```bash
+		# Refer to the location of the certificate
+		$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
-	# Customize the syslog header of the logs collected in SEKOIA.IO by adding the intake key to it
-	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+		# Customize the syslog header of the logs collected in SEKOIA.IO by adding the intake key to it
+		template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG 	[SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-	# Use a condition that specifically identifies Windows logs then send them to SEKOIA.IO
-if ($syslogtag contains 'Microsoft-Windows') then {
-    action(
-        type="omfwd"
-        protocol="tcp"
-        target="intake.sekoia.io"
-        port="10514"
-        TCP_Framing="octet-counted"
-        StreamDriver="gtls"
-        StreamDriverMode="1"
-        StreamDriverAuthMode="x509/name"
-        StreamDriverPermittedPeers="intake.sekoia.io"
-        Template="SEKOIAIOWindowsTemplate"
-    )
-}
-	```
+		# Use a condition that specifically identifies Windows logs then send them to SEKOIA.IO
+	if ($syslogtag contains 'Microsoft-Windows') then {
+	    action(
+		type="omfwd"
+		protocol="tcp"
+		target="intake.sekoia.io"
+		port="10514"
+		TCP_Framing="octet-counted"
+		StreamDriver="gtls"
+		StreamDriverMode="1"
+		StreamDriverAuthMode="x509/name"
+		StreamDriverPermittedPeers="intake.sekoia.io"
+		Template="SEKOIAIOWindowsTemplate"
+	    )
+	}
+		```
 
 3. Start the Rsyslog service and make sure it is correctly set up 
 
@@ -271,7 +271,8 @@ The most noticeable change using RELP in Rsyslog is the output module used (`omr
 
 Follow these steps to forward logs using RELP Protocol: 
 
-1. Install `rsyslog-relp` and `rsyslog-openssl` packages to be able to push logs. Most distributions are providing these packages natively.
+1. Install `rsyslog-relp` and `rsyslog-openssl` packages to be able to push logs. 
+	Most distributions are providing these packages natively.
 
 2. Edit your main Rsyslog configuration to load the `omrelp` module:
 
@@ -281,24 +282,24 @@ Follow these steps to forward logs using RELP Protocol:
 
 3. Configure the output action to push your events to SEKOIA.IO via the RELP protocol. 
 
-In this example, we are pushing Unbound events:
+	In this example, we are pushing Unbound events:
 
-```bash
-template(name="SEKOIAIOUnboundTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+	```bash
+	template(name="SEKOIAIOUnboundTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-if ($programname startswith 'unbound') then {
-  action(
-        type="omrelp"
-        target="relp.intake.sekoia.io"
-        port="11514"
-        tls="on"
-        tls.caCert="/etc/rsyslog.d/SEKOIA-IO-intake.pem"
-        tls.authmode="name"
-        tls.permittedPeer=["relp.intake.sekoia.io"]
-        template="SEKOIAIOUnboundTemplate"
-    )
-}
-```
+	if ($programname startswith 'unbound') then {
+	  action(
+		type="omrelp"
+		target="relp.intake.sekoia.io"
+		port="11514"
+		tls="on"
+		tls.caCert="/etc/rsyslog.d/SEKOIA-IO-intake.pem"
+		tls.authmode="name"
+		tls.permittedPeer=["relp.intake.sekoia.io"]
+		template="SEKOIAIOUnboundTemplate"
+	    )
+	}
+	```
 
 ## Troubleshooting
 
@@ -375,22 +376,19 @@ It is possible to test your specific `if` condition. To do so:
 
 1. Add the following lines in the "/etc/rsyslog.d/00-testing.conf" and use your condition instead of "TO_BE_ADAPTED". 
 
-```bash
-template(name="SEKOIAIOTroubleshoot" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+	```bash
+	template(name="SEKOIAIOTroubleshoot" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
 
-if (TO_BE_ADAPTED) then {
-    action(
-	    type="omfile"
-	    file="/var/log/troubleshoot.log"
-	    Template="SEKOIAIOTroubleshoot"
-    )
-}
-```
+	if (TO_BE_ADAPTED) then {
+	    action(
+		    type="omfile"
+		    file="/var/log/troubleshoot.log"
+		    Template="SEKOIAIOTroubleshoot"
+	    )
+	}
+	```
 
 2. Restart the Rsyslog service and see if the new file "/var/log/troubleshoot.log" is created and populated with logs using `grep` command.
-
-Once these corrections performed:
-
 3. Comment the lines in the "/etc/rsyslog.d/00-testing.conf"
 4. Restart the Rsyslog service
 5. Remove the "/var/log/testing.log" file and "/var/log/troubleshoot.log" file if necessary
@@ -405,9 +403,8 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	`sudo` must be installed and set up for the current user.
 
 1. Connect to SEKOIA.IO Operations Center, add a Windows Intake to the relevant Entity and copy the `Intake Key`.
-
-!!!note 
 	It is possible to copy and paste this configuration locally then upload it with SCP command, or simple copy and paste it from the web to your remote server.
+
 
 	```bash
 	#!/bin/bash
