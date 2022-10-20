@@ -60,29 +60,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": 15,
             "name": "UserLoggedIn",
             "target": "network-traffic",
-            "outcome": "success",
-            "properties": [
-                {
-                    "name": "UserAgent",
-                    "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
-                },
-                {
-                    "name": "UserAuthenticationMethod",
-                    "value": "1"
-                },
-                {
-                    "name": "RequestType",
-                    "value": "OAuth2:Authorize"
-                },
-                {
-                    "name": "ResultStatusDetail",
-                    "value": "Redirect"
-                },
-                {
-                    "name": "KeepMeSignedIn",
-                    "value": "True"
-                }
-            ]
+            "outcome": "success"
         },
         "source": {
             "ip": "1.2.3.4",
@@ -95,9 +73,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "code": 0,
                 "name": "Regular"
             },
+            "auth": {
+                "user_authentication_method": 1,
+                "request_type": "OAuth2:Authorize",
+                "result_status_detail": "Redirect",
+                "keep_me_signed_in": true
+            },
             "audit": {
                 "object_id": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe"
             }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
         },
         "related": {
             "ip": [
@@ -820,20 +807,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "action": {
             "id": 8,
             "name": "Update user.",
-            "properties": [
-                {
-                    "name": "LastDirSyncTime",
-                    "value": null
-                },
-                {
-                    "name": "Action Client Name",
-                    "value": null
-                },
-                {
-                    "name": "TargetId.UserType",
-                    "value": null
-                }
-            ],
             "target": "user",
             "outcome": "success"
         },
@@ -889,29 +862,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": 15,
             "name": "UserLoggedIn",
             "target": "network-traffic",
-            "outcome": "success",
-            "properties": [
-                {
-                    "name": "UserAgent",
-                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763"
-                },
-                {
-                    "name": "UserAuthenticationMethod",
-                    "value": "1"
-                },
-                {
-                    "name": "RequestType",
-                    "value": "OAuth2:Authorize"
-                },
-                {
-                    "name": "ResultStatusDetail",
-                    "value": "Redirect"
-                },
-                {
-                    "name": "KeepMeSignedIn",
-                    "value": "True"
-                }
-            ]
+            "outcome": "success"
         },
         "source": {
             "ip": "1.2.3.4",
@@ -925,9 +876,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "code": 0,
                 "name": "Regular"
             },
+            "auth": {
+                "user_authentication_method": 1,
+                "request_type": "OAuth2:Authorize",
+                "result_status_detail": "Redirect",
+                "keep_me_signed_in": true
+            },
             "audit": {
                 "object_id": "5f09333a-842c-47da-a157-57da27fcbca5"
             }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763"
         },
         "related": {
             "ip": [
@@ -935,6 +895,77 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "user": [
                 "REDACTED@company.onmicrosoft.com"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "user_login_failed.json"
+
+    ```json
+	
+    {
+        "message": "{\"CreationTime\":\"2022-10-14T13:48:03\",\"Id\":\"4af0b443-42dd-4dc6-9bd1-751a55441000\",\"Operation\":\"UserLoginFailed\",\"OrganizationId\":\"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\",\"RecordType\":15,\"ResultStatus\":\"Success\",\"UserKey\":\"785d81fb-82aa-4ff3-9cbc-e3280761f36a\",\"UserType\":0,\"Version\":1,\"Workload\":\"AzureActiveDirectory\",\"ClientIP\":\"20.250.8.183\",\"ObjectId\":\"00000003-0000-0ff1-ce00-000000000000\",\"UserId\":\"user@mycompany.com\",\"AzureActiveDirectoryEventType\":1,\"ExtendedProperties\":[{\"Name\":\"ResultStatusDetail\",\"Value\":\"Success\"},{\"Name\":\"UserAgent\",\"Value\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0\"},{\"Name\":\"UserAuthenticationMethod\",\"Value\":\"1\"},{\"Name\":\"RequestType\",\"Value\":\"SAS:EndAuth\"}],\"ModifiedProperties\":[],\"Actor\":[{\"ID\":\"785d81fb-82aa-4ff3-9cbc-e3280761f36a\",\"Type\":0},{\"ID\":\"user@mycompany.com\",\"Type\":5}],\"ActorContextId\":\"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\",\"ActorIpAddress\":\"20.250.8.183\",\"InterSystemsId\":\"d48e6ea0-40c1-5000-5eba-0ee33d13b1ca\",\"IntraSystemId\":\"4af0b443-42dd-4dc6-9bd1-751a55441000\",\"SupportTicketId\":\"\",\"Target\":[{\"ID\":\"00000003-0000-0ff1-ce00-000000000000\",\"Type\":0}],\"TargetContextId\":\"aa09a079-7796-46a8-a4d4-4d21b0dcf1b2\",\"ApplicationId\":\"00000003-0000-0ff1-ce00-000000000000\",\"DeviceProperties\":[{\"Name\":\"OS\",\"Value\":\"Windows 10\"},{\"Name\":\"BrowserType\",\"Value\":\"Firefox\"},{\"Name\":\"IsCompliantAndManaged\",\"Value\":\"False\"},{\"Name\":\"SessionId\",\"Value\":\"b3a9b2b4-57c9-406b-9a2d-106b7f612248\"}],\"ErrorNumber\":\"500121\",\"LogonError\":\"AuthenticationFailedSasError\"}",
+        "event": {
+            "action": "UserLoginFailed",
+            "kind": "event",
+            "code": "15",
+            "category": [
+                "iam"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "service": {
+            "name": "AzureActiveDirectory"
+        },
+        "user": {
+            "name": "user@mycompany.com",
+            "email": "user@mycompany.com"
+        },
+        "organization": {
+            "id": "aa09a079-7796-46a8-a4d4-4d21b0dcf1b2"
+        },
+        "action": {
+            "id": 15,
+            "name": "UserLoginFailed",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
+        "source": {
+            "ip": "20.250.8.183",
+            "address": "20.250.8.183"
+        },
+        "office365": {
+            "record_type": 15,
+            "result_status": "Success",
+            "user_type": {
+                "code": 0,
+                "name": "Regular"
+            },
+            "audit": {
+                "object_id": "00000003-0000-0ff1-ce00-000000000000"
+            },
+            "logon_error": "AuthenticationFailedSasError",
+            "error_number": 500121,
+            "auth": {
+                "user_authentication_method": 1,
+                "request_type": "SAS:EndAuth",
+                "result_status_detail": "Success"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0"
+        },
+        "related": {
+            "ip": [
+                "20.250.8.183"
+            ],
+            "user": [
+                "user@mycompany.com"
             ]
         }
     }
@@ -971,6 +1002,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`file.directory` | `keyword` | Directory where the file is located. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`office365.audit.object_id` | `keyword` | For Exchange admin audit logging, the name of the object that was modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Azure AD activity, the name of the user account that was modified. |
+|`office365.auth.keep_me_signed_in` | `boolean` | User KeepMeSignedIn choice |
+|`office365.auth.request_type` | `keyword` | Authentifcation type |
+|`office365.auth.result_status_detail` | `keyword` | Authentication result detail |
+|`office365.auth.user_authentication_method` | `long` | User authentication method |
 |`office365.context.aad_session_id` | `keyword` | The identifier of an Azure Active Directory session |
 |`office365.context.api_id` | `keyword` | The identifier of the API pathway |
 |`office365.context.client.id` | `keyword` | The identifier of Azure Active Directory application |
@@ -989,6 +1024,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`office365.defender.email.verdict.confidence` | `keyword` | The confidence in the verdict |
 |`office365.defender.email.verdict.reason` | `keyword` | The verdict about the messahe |
 |`office365.defender.system_overrides` | `array` | Overrides that are applicable to the email |
+|`office365.error_number` | `long` | Error number |
+|`office365.logon_error` | `keyword` | Logon error detailed reason |
 |`office365.record_type` | `long` | The type of the operation |
 |`office365.result_status` | `keyword` | Indicates whether the action was successful or not |
 |`office365.scope.code` | `long` | The origin (saas or on-premise) of the event |
