@@ -17,14 +17,14 @@
 
 Get all the subdomains and other DNS entries for the given domain. Uses 1 query credit per lookup.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `domain` | `string` | Domain name to lookup; example "cnn.com". |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -36,14 +36,14 @@ Get all the subdomains and other DNS entries for the given domain. Uses 1 query 
 
 Look up the IP address for the provided list of hostnames.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `hostnames` | `array` | List of hostnames; example "google.com". |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -53,14 +53,14 @@ Look up the IP address for the provided list of hostnames.
 
 Look up the hostnames that have been defined for the given list of IP addresses.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `ips` | `array` | List of IP addresses; example "74.125.227.230" |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -70,7 +70,7 @@ Look up the hostnames that have been defined for the given list of IP addresses.
 
 Returns all services that have been found for the given host IP.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -79,7 +79,7 @@ Returns all services that have been found for the given host IP.
 | `minify` | `boolean` | True to only return the list of ports and the general host information, no banners. (default: False)  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -103,7 +103,7 @@ Returns all services that have been found for the given host IP.
 
 This method behaves identical to "/shodan/host/search" with the only difference that this method does not return any host results, it only returns the total number of results that matched the query and any facet information that was requested. As a result this method does not consume query credits.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -111,7 +111,7 @@ This method behaves identical to "/shodan/host/search" with the only difference 
 | `facets` | `string` | A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. "country:100" to get the top 100 countries for a search query). |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -123,7 +123,7 @@ This method behaves identical to "/shodan/host/search" with the only difference 
 
 Search Shodan using the same query syntax as the website and use facets to get summary information for different properties.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -133,7 +133,7 @@ Search Shodan using the same query syntax as the website and use facets to get s
 | `minify` | `boolean` | True or False; whether or not to truncate some of the larger fields (default: True)  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

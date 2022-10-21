@@ -17,7 +17,7 @@ This module provides triggers to collect events from AWS
 
 Get the last records from CloudTrail (deprecated in flavor of Fetch new CloudTrail records on S3)
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -27,7 +27,7 @@ Get the last records from CloudTrail (deprecated in flavor of Fetch new CloudTra
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -39,7 +39,7 @@ Get the last records from CloudTrail (deprecated in flavor of Fetch new CloudTra
 
 Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -49,7 +49,7 @@ Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -61,7 +61,7 @@ Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
 Get line-oriented records from new S3 objects based on notifications
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -80,7 +80,7 @@ Get line-oriented records from new S3 objects based on notifications
 
 Get records from new S3 Parquet objects based on notifications
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -96,7 +96,7 @@ Get records from new S3 Parquet objects based on notifications
 
 Get Cloudtrail records from new S3 objects based on notifications
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

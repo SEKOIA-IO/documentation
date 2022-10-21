@@ -14,7 +14,7 @@ This module accepts no configuration.
 
 Fetch events from Skyhigh Security Secure Web Gateway (SWG) API
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

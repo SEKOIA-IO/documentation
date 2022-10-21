@@ -12,7 +12,7 @@ This module accepts no configuration.
 
 Get the list of private domains
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

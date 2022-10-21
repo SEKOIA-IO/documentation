@@ -14,7 +14,7 @@ This module accepts no configuration.
 
 Forward Proofpoint PoD Events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -32,7 +32,7 @@ Forward Proofpoint PoD Events
 
 Forward Proofpoint TAP Events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

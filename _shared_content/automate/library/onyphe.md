@@ -16,7 +16,7 @@
 
 Get domain name X509 certificate information from Certificate Transparency Logs (CTLs) with Onyphe
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -25,7 +25,7 @@ Get domain name X509 certificate information from Certificate Transparency Logs 
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -44,7 +44,7 @@ Get domain name X509 certificate information from Certificate Transparency Logs 
 
 Get datascan information on IP with Onyphe: "Application responses to [Onyphe's] application requests"
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -54,7 +54,7 @@ Get datascan information on IP with Onyphe: "Application responses to [Onyphe's]
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -73,7 +73,7 @@ Get datascan information on IP with Onyphe: "Application responses to [Onyphe's]
 
 Get forward DNS lookup information on IP with Onyphe
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -82,7 +82,7 @@ Get forward DNS lookup information on IP with Onyphe
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -101,14 +101,14 @@ Get forward DNS lookup information on IP with Onyphe
 
 Geo-localize ip with Onyphe
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `ip` | `string` | The ip to scan |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -125,7 +125,7 @@ Geo-localize ip with Onyphe
 
 Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description as given by RIRs (Regional Internet Registries), except for the United States which does not disclose that information publicly."
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -134,7 +134,7 @@ Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description 
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -153,7 +153,7 @@ Get inetnum information on IP with Onyphe: "IP (v4 and v6) networks description 
 
 Get information on IP with Onyphe
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -162,7 +162,7 @@ Get information on IP with Onyphe
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -181,7 +181,7 @@ Get information on IP with Onyphe
 
 Get Onyphe datascans with the given md5 in the datamd5 field
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -190,7 +190,7 @@ Get Onyphe datascans with the given md5 in the datamd5 field
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -209,7 +209,7 @@ Get Onyphe datascans with the given md5 in the datamd5 field
 
 Get information on the given onion domain with Onyphe
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -218,7 +218,7 @@ Get information on the given onion domain with Onyphe
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -237,7 +237,7 @@ Get information on the given onion domain with Onyphe
 
 Get pastries information collected by Onyphe on pastebin.com
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -246,7 +246,7 @@ Get pastries information collected by Onyphe on pastebin.com
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -265,7 +265,7 @@ Get pastries information collected by Onyphe on pastebin.com
 
 Get reverse DNS lookup information on IP with Onyphe
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -274,7 +274,7 @@ Get reverse DNS lookup information on IP with Onyphe
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -293,7 +293,7 @@ Get reverse DNS lookup information on IP with Onyphe
 
 Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed honeypots on the Internet. [They] are listening to Internet background noise and performing passive operating system identification"
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -302,7 +302,7 @@ Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -321,7 +321,7 @@ Get sniffer information on IP with Onyphe: "[Onyphe has] a number of distributed
 
 Get synscan information on IP with Onyphe: "Open TCP ports found on the Internet. Each open port is also enriched with detected operating system"
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -330,7 +330,7 @@ Get synscan information on IP with Onyphe: "Open TCP ports found on the Internet
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -349,7 +349,7 @@ Get synscan information on IP with Onyphe: "Open TCP ports found on the Internet
 
 Get threatlist information on IP with Onyphe
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -358,7 +358,7 @@ Get threatlist information on IP with Onyphe
 | `first_page` | `integer` | Start retrieving data from this page |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

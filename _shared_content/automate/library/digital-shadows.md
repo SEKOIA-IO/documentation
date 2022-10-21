@@ -19,14 +19,14 @@ Digital Shadows Module
 
 Get last created SearchLight alerts and incidents
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `frequency` | `integer` | Batch frequency in seconds |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |

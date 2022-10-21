@@ -17,7 +17,7 @@ This module interacts with the Sentinel One API
 
 Connect the endpoint back to the network
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -28,7 +28,7 @@ Connect the endpoint back to the network
 | `query` | `string` | Free-text search term to use |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -38,7 +38,7 @@ Connect the endpoint back to the network
 
 Fetch the malwares associated to a threat
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -47,7 +47,7 @@ Fetch the malwares associated to a threat
 | `filters` | `object` | Filters to select the agents from which the malware will be transferred |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -59,7 +59,7 @@ Fetch the malwares associated to a threat
 
 Disconnect the endpoint from the network
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -70,7 +70,7 @@ Disconnect the endpoint from the network
 | `query` | `string` | Free-text search term to use |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -80,7 +80,7 @@ Disconnect the endpoint from the network
 
 Create a query in Deep Visibility and get the events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -92,7 +92,7 @@ Create a query in Deep Visibility and get the events
 | `timeout` | `integer` | The maximum time, in seconds, the query should be processed in (default 300s) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -104,7 +104,7 @@ Create a query in Deep Visibility and get the events
 
 Execute a remote script and get the results
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -116,7 +116,7 @@ Execute a remote script and get the results
 | `filters` | `object` | Filters to select the agents that will run the remote script |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
