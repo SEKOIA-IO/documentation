@@ -341,6 +341,67 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "file_visited.json"
+
+    ```json
+	
+    {
+        "message": "{\"Id\":\"40094389-7baf-a3ba-5acc-2773c002cfbe\",\"RecordType\":22,\"CreationTime\":\"2022-09-07T12:22:07\",\"Operation\":\"FileVisited\",\"OrganizationId\":\"12b674a1-3497-4997-b4ab-2a40bf0e5139\",\"UserType\":0,\"UserKey\":\"10032001cf3045ad\",\"Workload\":\"Yammer\",\"ResultStatus\":\"TRUE\",\"ObjectId\":\"Pix_C'est la rentre!.png\",\"ClientIP\":\"2503:1026:c0a:70::5\",\"UserId\":\"Frodon.Saquet@comte.com\",\"ActorYammerUserId\":1315924230144,\"ActorUserId\":\"Frodon.Saquet@comte.com\",\"YammerNetworkId\":6358000,\"Version\":1,\"FileId\":1439262310400,\"FileName\":\"Pix_C'est la rentre!.png\",\"VersionId\":1460243079168}",
+        "event": {
+            "action": "FileVisited",
+            "kind": "event",
+            "code": "22",
+            "category": [
+                "file"
+            ]
+        },
+        "service": {
+            "name": "Yammer"
+        },
+        "user": {
+            "name": "Frodon.Saquet@comte.com",
+            "email": "Frodon.Saquet@comte.com"
+        },
+        "organization": {
+            "id": "12b674a1-3497-4997-b4ab-2a40bf0e5139"
+        },
+        "action": {
+            "id": 22,
+            "name": "FileVisited",
+            "target": "user",
+            "outcome": "success"
+        },
+        "source": {
+            "ip": "2503:1026:c0a:70::5",
+            "address": "2503:1026:c0a:70::5"
+        },
+        "office365": {
+            "record_type": 22,
+            "result_status": "TRUE",
+            "user_type": {
+                "code": 0,
+                "name": "Regular"
+            },
+            "audit": {
+                "object_id": "Pix_C'est la rentre!.png"
+            }
+        },
+        "file": {
+            "name": "Pix_C'est la rentre!.png"
+        },
+        "related": {
+            "ip": [
+                "2503:1026:c0a:70::5"
+            ],
+            "user": [
+                "Frodon.Saquet@comte.com"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "microsoft_defender_threatintelligence_atp.json"
 
     ```json
