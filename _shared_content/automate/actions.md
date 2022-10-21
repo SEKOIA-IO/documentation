@@ -2,169 +2,107 @@
 
 ## Types of Actions
 
-Once the user has selected and configured a `Trigger`, most of the time an `Operator` will follow, then it is time to insert a first `Action`.
+An `Action` helps you execute specific tasks depending on your needs. There are 5 main types of actions in the playbooks: 
 
-![SEKOIA.IO Operations Center Filter on Actions](/assets/operation_center/playbooks/filter_actions.png){: style="max-width:60%"}
+- Interact with the platform: [getters](#getters) and [setters](#setters)
+- Extract data: [data collection enrichers](#data-collection)
+- Connect and use [third-party applications](#third-party-applications)
+- Set up [notifications](#notifications)
+- Use [helpers](#Helpers) to build your own actions
 
-The `Actions` execute specific activities depending on the needs. You will find hereafter the main `Actions` that a user will be able to use.
+The Actions Library lists all available actions in playbooks with their detailed configuration.
 
-### Sekoia suggestions
+## SEKOIA.IO Actions 
 
-#### Getters
+### Getters
 
-##### Get an Alert or Get a Case
+| Name | Description |
+| --- | --- |
+| [Get Event Field Common Values](library/sekoia-io/#get-event-field-common-values.md) | Retrieve the most common values of an ECS field based on the time window |
+| [List Assets](library/sekoia-io/#list-assets.md) | Retrieve detailed information about assets based on a filter |
+| [Search Alerts](library/sekoia-io/#search-alerts.md) | Retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter. |
+| [Get Alert](library/sekoia-io/#get-alert.md) | Retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events. |
+| [Get Events](library/sekoia-io/#get-events.md) | Retrieve events based on a search. This action is equivalent to a search on the event page and takes into consideration 3 parameters: a query with filters (`source.ip=xx.xxx.xx`), and earliest time/latest time: two dates to determine the date range of the search. |
 
-> Note: Copy-past in the research section: `get_an_alert` and `get_a_case` to retreive the related `Blocks`.
-Allows a user to collect information on an Alert or a Case (incident) such as, but not limited to, the:
+!!!note
+	`Get Events` can be used to retrieve events from an alert. Events associated to an alert contain the key `alert_short_ids` with the value of the ID of the alert.
 
-- Created (at, by) and update (at, by)
-- Rule that raised the alert (uuid, name, type, pattern, severity, description)
-- Related entity
-- Source and Target
-- Status (uuid, name, description)
-- Urgency (value, severity, criticity, current_value)
-- Comments (uuid, date, author, content)
-- Countermeasures (comments, actions steps)
-- Is_incident status
+### Setters
 
-##### Get the list of comments of a case or the comment of a case
+| Name | Description |
+| --- | --- |
+| [Create an asset](library/sekoia-io/#delete-an-asset.md) | Create an asset |
+| [Delete an asset](library/sekoia-io/#create-asset.md) | Delete an asset |
+| [Add attribute to asset](library/sekoia-io/#add-attribute-to-asset.md) | Add attribute to asset |
+| [Add key to asset](library/sekoia-io/#add-key-to-asset.md) | Add key to asset |
+| [Edit alert](library/sekoia-io/#edit-alert.md) | Edit an alert details such as the urgency or the alert category |
+| [Comment alert](library/sekoia-io/#comment-alert.md) | Add a comment to the alert |
+| [Update alert status](library/sekoia-io/#update-alert-status.md) | Change the status of an alert |
+| [Push Events to Intake](library/sekoia-io/#push-events-to-intake.md) | Push one or more events to an Intake |
+| [Attach Alerts to Case](library/sekoia-io/#attach-alerts-to-case.md) | Attach one or more alerts to a case. |
 
-> Note: Copy-past in the research section: `get_the_list_of_comments_of_a_case` and `get_the_comment_of_a_case` to retreive the related `Blocks`.
-In order to exploit the comment posted on a case, it is first needed to collect all the meta information of the needed comment(s):
-The only mandatory information needed is the `case_uuid` that you can collect by using the `Get a Case` module.
 
-Then the user can exploit: the number of comments, uuid, created_at, created_by, created_by_type, content of the comment.
+#### How to update an alert status
 
-##### Read JSON File
+To update an alert status, you need to copy the `action_uuid` corresponding to the needed action.
 
-> Note: Copy-past in the research section: `Read JSON File` to retreive the related `Block`.
-With this module, a user can collect the output of the `Action > Get an alert` when the `parameter STIX` is activated. Here is an example of use:
+| Action | Description | action_uuid |
+| --- | --- | --- |
+| Acknowledge | Acknowledge the alert | `937bdabf-6a08-434b-b6d3-d7447e4e452a` |
+| Validate | Validate alert | `c39a0a95-aa2c-4d0d-8d2e-d3decf426eea` |
+| Reject | Reject alert | `ade85d7b-7507-4026-bfc6-cc006d10ddac` |
+| Close | Close alert | `1390be4e-ced8-4dd6-9bed-573471b235ab` |
 
-![SEKOIA.IO Operations Center Trigger JSON File](/assets/operation_center/playbooks/json_file.png){: style="max-width:60%"}
+## Notifications
 
-#### Setters
-On the playbook GUI, it is possible to set `Blocks` such as Create, Update, Patch, Add, Post, Delete activities.
+To get notified, you can rely on these tools: 
 
-##### Create Blocks
-With the Create `Blocks` a user will be able to:
+- [Mandrill](library/mandrill.md): Send Message
+- [Mattermost](library/mattermost.md): Post message / Post SEKOIA.IO alert
+- [Pagerduty](library/pagerduty.md): Trigger Alert
+- [The Hive](library/the-hive.md): Create an alert in the Hive
 
-- Create a case: `creates_a_new_case`
-- Create an alert: `create_an_alert`
-- Create asset: `creates_a_new_asset`
-- Add owners to an asset: `adds_owners_to_an_asset`
-- Add key to the asset: `adds_an_key_to_the_asset`
-- Add attribute to the asset: : `adds_an_attribute_to_the_asset`
+## Data collection
 
-##### Update Blocks
-With the Update `Blocks` a user will be able to:
+If you have an account in one of the listed tools below, you can easily extract data from there and import it to SEKOIA.IO. This is made possible with an API key. 
 
-- Update a case: `updates_an_case`
-- Patch an alert: `patch_an_alert`
+- [BinaryEdge](library/binaryedge-s-api.md)
+- [Censys](library/censys.md)
+- [GLIMPS](library/glimps.md)
+- [IKnowWhatYouDownloaded](library/iknowwhatyoudownload.md)
+- [Onyphe](library/onyphe.md)
+- [Public Suffix](library/public-suffix.md)
+- [RiskIQ](library/riskiq.md)
+- [Shodan](library/shodan.md)
+- [VirusTotal](library/virustotal.md)
+- [Whois](library/whois.md)
 
-##### Delete Blocks
-With the Delete `Blocks` a user will be able to:
+## Helpers
 
-- Delete a comment on an alert: `delete_a_comment_from_an_alert`
-- Delete an asset: `deletes_an_asset`
-- Delete an owner from an asset: `deletes_an_owner_from_an_asset`
-- Delete a key from an asset: `deletes_an_key_from_an_asset`
-- Delete an attribute form an asset: `deletes_an_attribute_from_an_asset`
+| Name | Description |
+| --- | --- |
+| [fileutils](library/fileutils.md) | Extract data from XML or JSON files |
+| [http](library/http.md) | Request HTTP resources (download file, request URL) |
+| [STIX](library/stix.md) | Add source, ass tags, create relationships, cryptolaemus to STIX, CVE to STIX, filter bundle, JSON objects to observables, VirusTotal LiveHunt to observables, MISP to STIX, observables to contextualized indicators, observables to indicators, remove orphan objects, STIX to MISP, string to observables |
 
-##### Trigger an action on the event workflow
-Is is possible to trigger an action on an alert as explained in the webhook section. For instance the following image shows how to properly close an alert afer analysing it.
+These helpers need their associated trigger to function properly: 
 
-![SEKOIA.IO Operations Center Trigger an alert on worksflow](/assets/operation_center/playbooks/trigger_an_action_on_the_alert_workflow.png){: style="max-width:60%"}
+| Name | Description |
+| --- | --- |
+| [MISP](library/misp.md) | Gather, store, share and correlate threat intelligence. Convert from MISP to STIX, publish MISP event |
+| [MWDB](library/mwdb.md) | Convert a MWDB config to a bundle of observables |
+| [Triage](library/triage.md) | Triage raw results to observables |
 
-As of today, the available action_uuid are the following :
-```r
-Action:"Acknowledge", 	Description: "Acknowledge the alert", 	action_uuid:"937bdabf-6a08-434b-b6d3-d7447e4e452a"
-Action:"Validate", 		Description: "Validate the alert", 		action_uuid:"c39a0a95-aa2c-4d0d-8d2e-d3decf426eea"
-Action:"Reject", 		Description: "Reject the alert", 		action_uuid:"ade85d7b-7507-4026-bfc6-cc006d10ddac"
-Action:"Close", 		Description: "Close the alert", 		action_uuid:"1390be4e-ced8-4dd6-9bed-573471b235ab"
-```
+## Third-party applications
 
-Other Sekoia `Blocks` are available, such as:
+- [Azure AD](library/azure-active-directory.md) 
+- [Fortigate Firewalls](library/fortigate-firewalls.md)
+- [HarfangLab](library/harfanglab.md)
+- [Panda Security](library/panda-security.md)
+- [Sentinel One](library/sentinel-one.md)
+- [ServiceNow](library/servicenow.md)
 
-- Associate new rule on a case
-- Associate new alert on a case
-- Activate or deny a countermeasure
+More actions are available in the Actions Library. To learn how to set up an action, please refer to its documentation. 
 
-##### Fortigate Blocks
-With the Fortigate `Blocks` a user will be able to:
-- Add an IP in the Address list of a Fortigate FW:`Post Fortigate IP Address`
-- Add a FQDN in the Address list of a Fortigate FW:`Post Fortigate FQDN Address`
-- Create a Group with an Address member: `Post Fortigate Address Group`
-
-### External Data Enrichers
-
-Most of the time an analyst uses external tools in order to better understand the severity of the alert.
-> If you have subscribed to one or more of the following online tools, you should be able to get an API key, and simply use it on your playbooks.
-
-##### IKnowWhatYouDownload
-The module allows to request information such as:
-
-- IP history
-- IP Check
-- IP List
-
-##### Onyphe
-The module allows to request information such as:
-
-- Scan (SYN, Onion...)
-- Lookups (Md5, reverse DNS)
-- Get IP additional information (Threat list, geolocalisation...)
-- Scan Domain Name CTLs
-
-##### RiskIQ
-The module allows to request information such as:
-
-- Whois
-- Reverse Whois (organisation, nameserver, name, email, address)
-- Passive DNS (Name, IP, Hex)
-- SSL host, certificate (SHA-1, Serial Number) / DNS
-
-##### Shodan
-The module allows to request information such as:
-
-- Search for Host information
-- Get DNS reverse, resolve, domain
-
-##### Virustotal
-The module allows to request information such as:
-
-- Scan (URL, IP, Hash, File, Domain)
-
-### Notifications
-
-##### PagerDuty
-This module allows the analysts to receive notification in PagerDuty when a new alert is raised.
-
-##### MatterMost
-
-- Sekoia alert: this module allows the analysts to receive notification in MatterMost when a new alert is raised.
-- Post a message: additional information can be rooted on a specific channel with detailed context
-
-##### Mandrill
-Email notification is available, the following example shows an automatic email sent when a new alert is raised.
-
-![SEKOIA.IO Operations Center Filter on Actions](/assets/operation_center/playbooks/mandril.png){: style="max-width:60%"}
-
-The mandatory fields are:
-
-- The recipient email address, name
-- The sender email address, name
-- The subject
-- The HTML mail content, here is a simple example:
-```HTML
-<h1>A new alert is declared: {{ node.2.rule.name }}.</h1>
-<h2>Description: {{ node.2.rule.description }}.</h2>
-<p>More details:</p>
-	<ul><li>Urgency: {{ node.2.urgency.value }}</li>
-		<li>Entity: {{ node.2.entity.name }}</li>
-	 	<li>Kill chain: {{ node.2.kill_chain_short_id }}</li>
-	 	<li>Source: {{ node.2.source }}</li>
-	 	<li>Target: {{ node.2.target }}</li>
- 	</ul>
-```
-
-> The dynamic content is written in JINJA. For more information on this language, please follow this [documentation](https://jinja.palletsprojects.com/en/2.10.x/templates/).
+!!!note 
+	The dynamic content is written in JINJA. For more information on this language, please follow this [documentation](https://jinja.palletsprojects.com/en/2.10.x/templates/).
