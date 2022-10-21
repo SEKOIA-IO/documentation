@@ -158,16 +158,16 @@ To receive and process Windows logs, you have to follow these steps:
 			<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] 	{"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-	922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
 			```
 
-		In this example, the syslog header is: `<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]`
+	In this example, the syslog header is: `<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]`
 
-		It corresponds to what was requested in the template "SEKOIAIOTesting": `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]`
+	It corresponds to what was requested in the template "SEKOIAIOTesting": `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]`
 
-		!!!note 
-			More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
+	!!!note 
+		More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
 
 	6. Find unique information to isolate this particular technology
 
-		In this example, "DESKTOP-XXXXXXX" or "Microsoft-Windows" information is precious.
+		In this example, `DESKTOP-XXXXXXX` or `Microsoft-Windows` information is precious.
 
 		The `hostname`, `app-name` or `syslogtag` in the syslog headers are often used to determine which intake the log should be forwarded to.
 
@@ -177,9 +177,9 @@ To receive and process Windows logs, you have to follow these steps:
 
 	7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
 		```bash
-# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
-# *.* /var/log/testing.log;SEKOIAIOTesting
-```
+		# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
+		# *.* /var/log/testing.log;SEKOIAIOTesting
+		```
 
 	8.  Restart the Rsyslog service and check its status
 
@@ -217,28 +217,28 @@ To receive and process Windows logs, you have to follow these steps:
 
 	Following the same example for Windows log collection:
 	```bash
-# Refer to the location of the certificate
-$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+	# Refer to the location of the certificate
+	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
 
-# Customize the syslog header the an Intake Key to be collected on SEKOIA.IO while adding a new intake from the catalogue
-template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+	# Customize the syslog header the an Intake Key to be collected on SEKOIA.IO while adding a new intake from the catalogue
+	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-# Use a condition that identifies specifically Windows logs that send them to SEKOIA.IO
-if ($syslogtag contains 'Microsoft-Windows') then {
-    action(
-        type="omfwd"
-        protocol="tcp"
-        target="intake.sekoia.io"
-        port="10514"
-        TCP_Framing="octet-counted"
-        StreamDriver="gtls"
-        StreamDriverMode="1"
-        StreamDriverAuthMode="x509/name"
-        StreamDriverPermittedPeers="intake.sekoia.io"
-        Template="SEKOIAIOWindowsTemplate"
-    )
-}
-```
+	# Use a condition that identifies specifically Windows logs that send them to SEKOIA.IO
+	if ($syslogtag contains 'Microsoft-Windows') then {
+	    action(
+		type="omfwd"
+		protocol="tcp"
+		target="intake.sekoia.io"
+		port="10514"
+		TCP_Framing="octet-counted"
+		StreamDriver="gtls"
+		StreamDriverMode="1"
+		StreamDriverAuthMode="x509/name"
+		StreamDriverPermittedPeers="intake.sekoia.io"
+		Template="SEKOIAIOWindowsTemplate"
+	    )
+	}
+	```
 
 		
 3. Start the Rsyslog service and make sure it is correctly set up 
@@ -388,9 +388,9 @@ It is possible to test your specific `if` condition. To do so:
 	```
 
 2. Restart the Rsyslog service and see if the new file `/var/log/troubleshoot.log` is created and populated with logs using `grep` command.
-3. Comment the lines in the "/etc/rsyslog.d/00-testing.conf"
+3. Comment the lines in the `/etc/rsyslog.d/00-testing.conf`
 4. Restart the Rsyslog service
-5. Remove the "/var/log/testing.log" file and `/var/log/troubleshoot.log file if necessary
+5. Remove the `/var/log/testing.log` file and `/var/log/troubleshoot.log` file if necessary
 
 ## Example of auto-setup configuration
 
