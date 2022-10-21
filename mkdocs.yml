@@ -139,7 +139,7 @@ nav:
           - Suricata: xdr/features/collect/integrations/network/suricata.md
           - Vectra Cognito Detect: xdr/features/collect/integrations/network/vectra.md
           - Wallix: xdr/features/collect/integrations/network/wallix.md
-          - WatchGuard Firefox: xdr/features/collect/integrations/network/watchguard_firebox.md
+          - WatchGuard Firebox: xdr/features/collect/integrations/network/watchguard_firebox.md
           - Zeek: xdr/features/collect/integrations/network/zeek.md
         - Generic:
           - Common Event Format: xdr/features/collect/integrations/generic/cef.md
