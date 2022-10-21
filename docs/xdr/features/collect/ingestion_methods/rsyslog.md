@@ -155,15 +155,21 @@ To receive and process Windows logs, you have to follow these steps:
 		Similar log lines should be displayed within seconds: 
 
 		```text
-			<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] 	{"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-	922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
-			```
+		<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"] 	{"EventTime":"2022-03-24 14:33:36","Hostname":"DESKTOP-XXXXXXX","Keywords":-	922337203685XXXXXXX,"EventType":"INFO","SeverityValue":2,"Severity":"INFO","EventID":3,"SourceName":"Microsoft-Windows-Sysmon" [...]}
+		```
 
-	In this example, the syslog header is: `<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]`
+		In this example, the syslog header is: 
+		```text
+		<14>1 2022-03-24T14:33:36.738171+01:00 DESKTOP-XXXXXXX Microsoft-Windows-Sysmon 5504 LOG [SEKOIA@53288 intake_key="DO_NOT_CHANGE"]
+		```
 
-	It corresponds to what was requested in the template "SEKOIAIOTesting": `<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]`
+		It corresponds to what was requested in the template `SEKOIAIOTesting`: 
+		```text
+		<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"]
+		```
 
-	!!!note 
-		More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
+		!!!note 
+			More information about the syslog properties can be found [here](https://www.rsyslog.com/doc/master/configuration/properties.html).
 
 	6. Find unique information to isolate this particular technology
 
@@ -175,7 +181,7 @@ To receive and process Windows logs, you have to follow these steps:
 
 		The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
 
-	7. Comment the lines of the file "/etc/rsyslog.d/00-testing.conf"
+	7. Comment the lines of the file `/etc/rsyslog.d/00-testing.conf`
 		```bash
 		# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
 		# *.* /var/log/testing.log;SEKOIAIOTesting
@@ -256,9 +262,9 @@ To verify that everything works well, connect to [SEKOIA.IO Events' page](https:
 If you would like to filter on specific intakes:
 
 - Go to [SEKOIA.IO Intakes page](https://app.sekoia.io/operations/intakes)
-- Copy your Intake Key, for instance: `88EYbSaG55YbVaTne8Gu93wKQbLE4axZ`
+- Copy your Intake Key. In this example, it can be: `88EYbSaG55YbVaTne8Gu93wKQbLE4axZ`
 - Come back to [SEKOIA.IO Events' page](https://app.sekoia.io/operations/events)
-- Query the following in the search bar: `customer.intake_key:"88EYbSaG55YbVaTne8Gu93wKQbLE4axZ"` press `Enter`
+- Query the following in the search bar: `customer.intake_key:"88EYbSaG55YbVaTne8Gu93wKQbLE4axZ"` and press `Enter`
 
 ## Forward Logs Using RELP Protocol
 
