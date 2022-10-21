@@ -1787,9 +1787,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
+            "transport": "ipv6-icmp",
+            "bytes": 76,
             "application": "icmp6/143/0",
-            "protocol": "icmp6/143/0",
-            "transport": "ipv6-icmp"
+            "protocol": "icmp6/143/0"
         },
         "rule": {
             "category": "unscanned",
@@ -1848,9 +1849,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "icmp",
+            "bytes": 168,
             "application": "icmp/8/0",
-            "protocol": "icmp/8/0",
-            "transport": "icmp"
+            "protocol": "icmp/8/0"
         },
         "observer": {
             "egress": {
@@ -1938,6 +1940,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "icmp",
+            "bytes": 840,
             "protocol": "ping"
         },
         "rule": {
@@ -2025,10 +2028,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2021-11-19T16:10:58.000000Z",
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2",
-            "user": {
-                "name": "N/A"
-            }
+            "ip": "2.2.2.2"
         },
         "log": {
             "level": "information"
@@ -2046,9 +2046,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "outcome": "success"
         },
         "related": {
-            "user": [
-                "N/A"
-            ],
             "ip": [
                 "2.2.2.2"
             ]
@@ -2066,6 +2063,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|FortiGate-1000C|5.6.14,build1727 (GA)|0000000020|forward traffic accept|5|start=Oct 12 2022 12:50:31 logver=506141727 deviceExternalId=FGT123 dvchost=FW-123 ad.vd=root ad.logid=0000000020 cat=traffic ad.subtype=forward deviceSeverity=notice ad.eventtime=1665571831 src=1.1.1.1 spt=55390 deviceInboundInterface=abc ad.srcintfrole=undefined dst=2.2.2.2 dpt=1522 deviceOutboundInterface=efg ad.dstintfrole=lan foo.poluuid=ec6ff8fe-5e41-51ec-bcbe-9e5484033dc8 externalID=3812440508 proto=6 act=accept ad.policyid=185 ad.policytype=policy app=SQLNET-1522 ad.dstcountry=Reserved ad.srccountry=Reserved ad.trandisp=noop ad.duration=268 out=202 in=52 ad.sentpkt=3 ad.rcvdpkt=1 ad.appcat=unscanned ad.sentdelta=0 ad.rcvddelta=0 tz=\"+0200\"",
         "event": {
             "action": "accept",
+            "code": "0000000020",
             "severity": 5,
             "timezone": "+0200",
             "dataset": "traffic",
@@ -2080,6 +2078,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp",
+            "bytes": 254,
             "application": "SQLNET-1522",
             "protocol": "sqlnet-1522"
         },
@@ -2150,6 +2149,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp",
+            "bytes": 192,
             "application": "HTTP",
             "protocol": "http"
         },
@@ -2218,6 +2218,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp",
+            "bytes": 150320,
             "application": "HTTPS",
             "protocol": "https"
         },
@@ -2291,6 +2292,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp",
+            "bytes": 2003,
             "application": "HTTP",
             "protocol": "http"
         },
@@ -2377,9 +2379,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 3000,
             "application": "application",
-            "protocol": "tcp/20",
-            "transport": "tcp"
+            "protocol": "tcp/20"
         },
         "observer": {
             "egress": {
@@ -2457,9 +2460,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 3000,
             "application": "Dropbox_File.Download",
-            "protocol": "tcp/20",
-            "transport": "tcp"
+            "protocol": "tcp/20"
         },
         "observer": {
             "egress": {
@@ -2550,6 +2554,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp",
+            "bytes": 8620,
             "protocol": "https"
         },
         "rule": {
@@ -2701,8 +2706,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
-            "protocol": "tcp/3727",
-            "transport": "tcp"
+            "transport": "tcp",
+            "bytes": 120,
+            "protocol": "tcp/3727"
         },
         "rule": {
             "category": "unscanned",
@@ -2785,6 +2791,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "address": "1.1.1.1"
         },
+        "network": {
+            "bytes": 77675850
+        },
         "action": {
             "name": "tunnel-stats",
             "type": "vpn",
@@ -2856,6 +2865,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "N/A"
             },
             "address": "1.1.1.1"
+        },
+        "network": {
+            "bytes": 7649
         },
         "action": {
             "name": "tunnel-stats",
@@ -3037,6 +3049,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp",
+            "bytes": 96,
             "application": "HTTP",
             "protocol": "http",
             "direction": "outbound"
@@ -3143,6 +3156,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.request.method` | `keyword` | HTTP request method. |
 |`log.level` | `keyword` | Log level of the log event. |
 |`network.application` | `keyword` | Application level protocol name. |
+|`network.bytes` | `long` | Total bytes transferred in both directions. |
 |`network.protocol` | `keyword` | Application protocol name. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`observer.egress.interface.name` | `keyword` | Interface name |
