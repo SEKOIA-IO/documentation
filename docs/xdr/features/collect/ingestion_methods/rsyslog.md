@@ -103,7 +103,8 @@ To receive and process Windows logs, you have to follow these steps:
 
 	```
 	!!!tip
-		Use `ip addr` command to find the relevant information to relace `<change_with_interface_name>`.
+		Use `ip addr` command to find the relevant information to replace `<change_with_interface_name>`.
+
 
 2. Ensure syslog events are correctly handled by the Rsyslog server
 
