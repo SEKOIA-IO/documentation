@@ -89,9 +89,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -243,9 +243,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "alert"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -720,9 +720,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -800,9 +800,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "alert"
         },
         "network": {
+            "transport": "icmp",
             "application": "PING",
-            "protocol": "PING",
-            "transport": "icmp"
+            "protocol": "ping"
         },
         "observer": {
             "ingress": {
@@ -1071,9 +1071,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -1154,9 +1154,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -1213,7 +1213,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|28704|utm:app-ctrl app-ctrl-all pass|2|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=1059028704 cat=utm:app-ctrl FTNTFGTsubtype=app-ctrl FTNTFGTeventtype=app-ctrl-all FTNTFGTlevel=information FTNTFGTvd=vdom1 FTNTFGTeventtime=1545949688 FTNTFGTappid=34050 src=10.1.100.11 dst=104.80.89.24 spt=56826 dpt=80 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP deviceDirection=1 FTNTFGTpolicyid=1 externalId=12567 FTNTFGTapplist=g-default FTNTFGTappcat=Web.Client FTNTFGTapp=HTTP.BROWSER_Firefox act=pass dhost=detectportal.firefox.com FTNTFGTincidentserialno=1702350499 request=/success.txt msg=Web.Client: HTTP.BROWSER_Firefox, FTNTFGTapprisk=elevated",
+        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|28704|utm:app-ctrl app-ctrl-all pass|2|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=1059028704 cat=utm:app-ctrl FTNTFGTsubtype=app-ctrl FTNTFGTeventtype=app-ctrl-all FTNTFGTlevel=information FTNTFGTvd=vdom1 FTNTFGTeventtime=1545949688 FTNTFGTappid=34050 src=10.1.100.11 dst=104.80.89.24 spt=56826 dpt=80 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP deviceDirection=1 FTNTFGTpolicyid=1 externalId=12567 FTNTFGTapplist=g-default FTNTFGTappcat=Web.Client FTNTFGTapp=HTTP.BROWSER_Firefox act=pass dhost=detectportal.firefox.com FTNTFGTincidentserialno=1702350499 request=/success.txt msg=Web.Client: HTTP.BROWSER_Firefox, FTNTFGTapprisk=elevated suser=Domain\\\\alice",
         "event": {
             "action": "pass",
             "code": "1059028704",
@@ -1233,9 +1233,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "information"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "outbound"
         },
         "observer": {
@@ -1256,7 +1256,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "10.1.100.11",
             "port": 56826,
-            "address": "10.1.100.11"
+            "address": "10.1.100.11",
+            "user": {
+                "name": "alice",
+                "domain": "Domain"
+            }
         },
         "url": {
             "original": "/success.txt",
@@ -1277,6 +1281,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "10.1.100.11",
                 "104.80.89.24"
+            ],
+            "user": [
+                "alice"
             ]
         }
     }
@@ -1308,8 +1315,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "detectportal.firefox.com",
                 "type": "A"
             },
-            "rname": "detectportal.firefox.com",
-            "rtype": "A"
+            "rrname": "detectportal.firefox.com",
+            "rrtype": "A"
         },
         "fortinet": {
             "fortigate": {
@@ -1397,9 +1404,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "information"
         },
         "network": {
-            "application": "SMTP",
-            "protocol": "SMTP",
             "transport": "tcp",
+            "application": "SMTP",
+            "protocol": "smtp",
             "direction": "outbound"
         },
         "observer": {
@@ -1610,9 +1617,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
+            "transport": "tcp",
             "application": "HTTPS.BROWSER",
-            "protocol": "HTTPS",
-            "transport": "tcp"
+            "protocol": "https"
         },
         "rule": {
             "category": "Web.Client",
@@ -1930,8 +1937,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
-            "protocol": "PING",
-            "transport": "icmp"
+            "transport": "icmp",
+            "protocol": "ping"
         },
         "rule": {
             "category": "unscanned",
@@ -2072,9 +2079,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 1522
         },
         "network": {
+            "transport": "tcp",
             "application": "SQLNET-1522",
-            "protocol": "SQLNET-1522",
-            "transport": "tcp"
+            "protocol": "sqlnet-1522"
         },
         "observer": {
             "egress": {
@@ -2142,9 +2149,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
             "application": "HTTP",
-            "protocol": "HTTP",
-            "transport": "tcp"
+            "protocol": "http"
         },
         "observer": {
             "egress": {
@@ -2210,9 +2217,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
             "application": "HTTPS",
-            "protocol": "HTTPS",
-            "transport": "tcp"
+            "protocol": "https"
         },
         "observer": {
             "egress": {
@@ -2283,9 +2290,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
             "application": "HTTP",
-            "protocol": "HTTP",
-            "transport": "tcp"
+            "protocol": "http"
         },
         "observer": {
             "egress": {
@@ -2542,8 +2549,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
-            "protocol": "HTTPS",
-            "transport": "tcp"
+            "transport": "tcp",
+            "protocol": "https"
         },
         "rule": {
             "category": "unscanned",
@@ -2602,9 +2609,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
+            "transport": "udp",
             "application": "DNS",
-            "protocol": "DNS",
-            "transport": "udp"
+            "protocol": "dns"
         },
         "observer": {
             "egress": {
@@ -3004,7 +3011,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|13056|utm:webfilter ftgd_blk blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0316013056 cat=utm:webfilter FTNTFGTsubtype=webfilter FTNTFGTeventtype=ftgd_blk FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938629 FTNTFGTpolicyid=1 externalId=764 duser=bob src=10.1.100.11 spt=59194 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=185.230.61.185 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP dhost=ambrishsriv.wixsite.com FTNTFGTprofile=g-default act=blocked FTNTFGTreqtype=direct request=/bizsquads out=96 in=0 deviceDirection=1 msg=URL belongs to a denied category in policy FTNTFGTmethod=domain FTNTFGTcat=26 requestContext=Malicious Websites FTNTFGTcrscore=60 FTNTFGTcrlevel=high",
+        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|13056|utm:webfilter ftgd_blk blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0316013056 cat=utm:webfilter FTNTFGTsubtype=webfilter FTNTFGTeventtype=ftgd_blk FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938629 FTNTFGTpolicyid=1 externalId=764 duser=Domain\\\\\\\\bob src=10.1.100.11 spt=59194 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=185.230.61.185 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP dhost=ambrishsriv.wixsite.com FTNTFGTprofile=g-default act=blocked FTNTFGTreqtype=direct request=/bizsquads out=96 in=0 deviceDirection=1 msg=URL belongs to a denied category in policy FTNTFGTmethod=domain FTNTFGTcat=26 requestContext=Malicious Websites FTNTFGTcrscore=60 FTNTFGTcrlevel=high",
         "event": {
             "action": "blocked",
             "code": "0316013056",
@@ -3021,16 +3028,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "185.230.61.185",
             "port": 80,
             "user": {
-                "name": "bob"
+                "name": "bob",
+                "domain": "Domain"
             }
         },
         "log": {
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "outbound"
         },
         "observer": {
@@ -3108,11 +3116,12 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.nat.port` | `long` | Destination NAT Port |
 |`destination.packets` | `long` | Packets sent from the destination to the source. |
 |`destination.port` | `long` | Port of the destination. |
+|`destination.user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`destination.user.name` | `keyword` | Short name or login of the user. |
 |`dns.question.name` | `keyword` | The name being queried. |
 |`dns.question.type` | `keyword` | The type of record being queried. |
-|`dns.rname` | `keyword` | DNS requested name (backward compatibility) |
-|`dns.rtype` | `keyword` | DNS request type (backward compatibility) |
+|`dns.rrname` | `keyword` | DNS requested name (backward compatibility) |
+|`dns.rrtype` | `keyword` | DNS request type (backward compatibility) |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
@@ -3154,6 +3163,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.nat.port` | `long` | Source NAT port |
 |`source.packets` | `long` | Packets sent from the source to the destination. |
 |`source.port` | `long` | Port of the source. |
+|`source.user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`source.user.name` | `keyword` | Short name or login of the user. |
 |`url.full` | `wildcard` | Full unparsed URL. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
