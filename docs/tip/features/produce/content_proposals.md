@@ -44,6 +44,7 @@ The Objects tab allows you to:
 - Add existing objects from the CTI database to your Content Proposal
 - Create new objects
 - Create relationships (one by one or in chain)
+- Update objects
 
 In this tab, you can display all the objects present in the Content Proposals and filter them by type, review status or whether or not objects have an associated warning.
 
@@ -52,6 +53,7 @@ A button also allows multiple selection to perform different `bulk` actions such
 - Adding existing relationships
 - Creating new relationships
 - Deleting objects
+- Updating objects
 
 ### The Observables tab
 
