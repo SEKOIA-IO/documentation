@@ -193,7 +193,7 @@ To receive and process Windows logs, you have to follow these steps:
 		sudo systemctl restart rsyslog.service && sudo systemctl status rsyslog.service
 		```
 
-	9. Remove the `/var/log/testing.log file
+	9. Remove the `/var/log/testing.log` file
 
 		```bash
 		sudo rm /var/log/testing.log
