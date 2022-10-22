@@ -37,7 +37,7 @@ jobs:
 
       - name: Get PR number
         id: pr_number
-        run: echo "::set-output name=pr_number::$(cat PR_NUMBER)"
+        run: echo "pr_number=$(cat PR_NUMBER)" >> $GITHUB_OUTPUT
 
       - name: Install Swift
         run: |
