@@ -40,7 +40,7 @@ jobs:
 
       - name: Get PR number
         id: pr_number
-        run: echo "::set-output name=pr_number::$(cat site/.pr_number)"
+        run: echo "pr_number=$(cat site/.pr_number)" >> $GITHUB_OUTPUT
 
       - name: Fix URLs and relative links
         run: |
@@ -85,7 +85,7 @@ jobs:
 
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%F %H:%M:%S')"
+        run: echo "date=$(date +'%F %H:%M:%S')" >> $GITHUB_OUTPUT
 
       - name: Add comment to PR
         uses: peter-evans/create-or-update-comment@v1
