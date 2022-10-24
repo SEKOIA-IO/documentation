@@ -18,7 +18,7 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 | Name | Description |
 | --- | --- |
-| [Get Event Field Common Values](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#get-event-field-common-values) | Retrieve the most common values of an ECS field based on the time window |
+| [Get Event Field Common Values](../library/sekoia-io/#get-event-field-common-values) | Retrieve the most common values of an ECS field based on the time window |
 | [List Assets](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#list-assets) | Retrieve detailed information about assets based on a filter |
 | [Search Alerts](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#search-alerts) | Retrieve detailed information about alerts (such as the urgency, name of the rule, etc… except events) based on a filter. |
 | [Get Alert](https://docs.sekoia.io/xdr/features/automate/library/sekoia-io/#get-alert) | Retrieve detailed alert information such as the urgency, name of the rule, pattern, etc… except events. |
