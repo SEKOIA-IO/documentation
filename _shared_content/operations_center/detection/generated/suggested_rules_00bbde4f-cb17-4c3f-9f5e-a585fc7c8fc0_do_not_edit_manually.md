@@ -39,6 +39,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Google Kubernetes Engine (GK
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Formbook Hijacked Process Command"
     
     Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.

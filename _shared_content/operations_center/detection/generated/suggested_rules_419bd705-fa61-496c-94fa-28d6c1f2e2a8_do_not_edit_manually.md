@@ -75,6 +75,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Symantec Endpoint Protection
     
     - **Effort:** master
 
+??? abstract "Symantec EPP Event Cleaned"
+    
+    Symantec EPP had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Symantec EPP Event Quarantined"
+    
+    Symantec EPP had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Symantec EPP Event Terminate"
+    
+    Symantec EPP had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host

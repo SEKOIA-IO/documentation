@@ -81,6 +81,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 

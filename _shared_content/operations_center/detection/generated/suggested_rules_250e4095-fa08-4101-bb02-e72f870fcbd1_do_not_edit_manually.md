@@ -579,6 +579,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO for Endpoint** wit
     
     - **Effort:** advanced
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
@@ -1430,6 +1436,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO for Endpoint** wit
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.
     
     - **Effort:** intermediate
+
+??? abstract "Raw Reverse Shell"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using sh and or bash commands
+    
+    - **Effort:** master
 
 ??? abstract "Rclone Process"
     

@@ -1,4 +1,4 @@
-Rules catalog includes **583 built-in detection rules** (_last update on 2022-10-11_).
+Rules catalog includes **588 built-in detection rules** (_last update on 2022-10-25_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1866,6 +1866,24 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "Symantec EPP Event Blocked"
     
     Symantec EPP blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Symantec EPP Event Cleaned"
+    
+    Symantec EPP had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Symantec EPP Event Quarantined"
+    
+    Symantec EPP had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Symantec EPP Event Terminate"
+    
+    Symantec EPP had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
     
     - **Effort:** master
 
@@ -6432,6 +6450,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
+
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential DNS Tunnel"
     
     Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
@@ -6453,6 +6483,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     - **Effort:** intermediate
 
 **Exfiltration Over Web Service**
+
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
+
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Outgoing Bytes Peak"
     

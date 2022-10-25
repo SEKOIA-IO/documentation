@@ -153,6 +153,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     
     - **Effort:** advanced
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
