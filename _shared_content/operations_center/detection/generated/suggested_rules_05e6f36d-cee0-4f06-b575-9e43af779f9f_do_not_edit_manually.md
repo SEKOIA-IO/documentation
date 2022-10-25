@@ -75,6 +75,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft Defender for Endpo
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "FlowCloud Malware"
     
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.

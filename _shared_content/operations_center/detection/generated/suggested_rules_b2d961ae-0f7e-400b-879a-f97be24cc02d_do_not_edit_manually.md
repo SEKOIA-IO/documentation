@@ -165,6 +165,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Trend Micro Deep Security / 
     
     - **Effort:** advanced
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
