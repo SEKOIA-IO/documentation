@@ -121,7 +121,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 
 	```bash
 	sudo systemctl restart rsyslog
-    	sudo systemctl status rsyslog
+	sudo systemctl status rsyslog
 	```
 
 ## Configure Rsyslog server to receive and process logs
