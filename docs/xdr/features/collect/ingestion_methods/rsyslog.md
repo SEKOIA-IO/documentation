@@ -43,7 +43,8 @@ After receiving the IDs to connect to the Linux server, the main activities are 
         ```
 
     === "Fedora, Red Hat, CentOS (dnf)"
-        ```bash
+        
+	```bash
         sudo dnf update
         sudo dnf install -y rsyslog rsyslog-gnutls wget
 	    ```
@@ -118,10 +119,9 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 
 6. Restart Rsyslog service and check its status
 
-
 	```bash
 	sudo systemctl restart rsyslog
-    sudo systemctl status rsyslog
+    	sudo systemctl status rsyslog
 	```
 
 ## Configure Rsyslog server to receive and process logs
@@ -150,24 +150,23 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
 
     Create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
 
-    
     In this example one file is created for Windows events.
 
     ```bash
-	sudo touch /etc/rsyslog.d/15-windows.conf
-	```
+    sudo touch /etc/rsyslog.d/15-windows.conf
+    ```
 
 3. Edit each configuration file as needed
 
     ```bash
-	sudo vim /etc/rsyslog.d/15-windows.conf
-	```
+    sudo vim /etc/rsyslog.d/15-windows.conf
+    ```
 
     In this file, an input is specified for the port `20516` in `TCP` and this input is associated to the ruleset `remote20516`.
 
     The name of the ruleset is not important but must be the same as the one defined below.
 
-    To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the SEKOIA.IO syslog endpoint.
+    To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the SEKOIA.IO syslog endpointon a specific Intake. Please change  using the YOUR_INTAKE_KEY accordingly.
 
     ```bash
     $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
@@ -192,7 +191,6 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
 
 4. Restart the Rsyslog service and make sure it is correctly set up 
 
-
 	```bash
 	sudo systemctl restart rsyslog.service
 	```
@@ -207,8 +205,8 @@ To receive and process Windows logs, you have to follow these steps:
 
 	```bash
 	sudo tcpdump -i <change_with_interface_name> -c10 -nn src <IP_OF_THE_SOURCE> -vv
-
 	```
+	
 	!!!tip
 		Use `ip addr` command to find the relevant information to replace `<change_with_interface_name>`.
 
@@ -228,21 +226,22 @@ To receive and process Windows logs, you have to follow these steps:
 
     **Method 1**: By watching messages in `/var/log/syslog`
 
-    
     Messages in `/var/log/syslog` - or `/var/log/messages` depending of your `/etc/rsyslog.conf` configuration - are not raw syslog messages but contain information about syslog header such as the `hostname` or the `app-name` which can be used to identify your events.
 
 
     1. Search for Windows events in the file
+    
     	```bash
 	    sudo tail -f /var/log/syslog | grep -i "Hostname"
 	    ```
 
     2. Identify the pattern. Similar log lines should be displayed within seconds:
+    
         ```text
         Sep 16 12:39:18 windows-vm-0 Microsoft-Windows-Sysmon[3524] {"EventTime":"2022-09-16 12:39:18", [...] }
         ```
     
-        In this example :
+        In this example:
 
         * `windows-vm-0` corresponds to the `hostname`
         * `Microsoft-Windows-Sysmon` corresponds to the `app-name`
@@ -253,7 +252,6 @@ To receive and process Windows logs, you have to follow these steps:
             If `Microsoft-Windows-Sysmon` is used, only Sysmon events will be catched. To get the other Windows event logs, only `Microsoft-Windows` should be used.
 
     **Method 2: Create a configuration file to view raw syslog messages**
-
 
 	This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
 
@@ -322,6 +320,7 @@ To receive and process Windows logs, you have to follow these steps:
 		The `$hostname` in the `if condition` refers to the `%hostname%` value in the syslog header. Indeed, depending of your network, the syslog `%hostname%` can be an FQDN, an IP address (with or without NAT) or the real Hostname of the source machine.
 
 	7. Comment the lines of the file `/etc/rsyslog.d/00-testing.conf`
+	
 		```bash
 		# template(name="SEKOIAIOTesting" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"DO_NOT_CHANGE\"] %msg%\n")
 		# *.* /var/log/testing.log;SEKOIAIOTesting
@@ -362,6 +361,7 @@ To receive and process Windows logs, you have to follow these steps:
 	You should also adapt the template name `SEKOIAIOWindowsTemplate` and the `if` condition parameters with appropriate content as explained in the previous section.
 
 	Following the same example for Windows log collection:
+	
 	```bash
 	# Refer to the location of the certificate
 	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
@@ -385,7 +385,6 @@ To receive and process Windows logs, you have to follow these steps:
 	    )
 	}
 	```
-
 		
 3. Restart the Rsyslog service and make sure it is correctly set up 
 
@@ -417,6 +416,7 @@ The most noticeable change using RELP in Rsyslog is the output module used (`omr
 Follow these steps to forward logs using RELP Protocol: 
 
 1. Install `rsyslog-relp` and `rsyslog-openssl` packages to be able to push logs. 
+
 	Most distributions are providing these packages natively.
 
 2. Edit your main Rsyslog configuration to load the `omrelp` module:
@@ -508,7 +508,8 @@ To fix this:
 
 If the Rsyslog service is failing to start, a mistyping may have been introduced in one of the `/etc/rsyslog/xx-<technology>.conf` files.
 
-Run the following command to confirm it and get information about the error :
+Run the following command to confirm it and get information about the error:
+
 ```bash
 rsyslogd -N1
 ```
