@@ -228,7 +228,8 @@ To receive and process Windows logs, you have to follow these steps:
 
     **Method 1** : By watching messages in `/var/log/syslog`
     
-    Messages in `/var/log/syslog` - or `/var/log/messages` depending of your `/etc/rsyslog.conf` configuration - are not raw syslog messages but contains information about syslog header such as the `hostname` or the `app-name` which can be used to identify your events.
+    Messages in `/var/log/syslog` - or `/var/log/messages` depending of your `/etc/rsyslog.conf` configuration - are not raw syslog messages but contain information about syslog header such as the `hostname` or the `app-name` which can be used to identify your events.
+
 
     1. Search for Windows events in the file
     	```bash
