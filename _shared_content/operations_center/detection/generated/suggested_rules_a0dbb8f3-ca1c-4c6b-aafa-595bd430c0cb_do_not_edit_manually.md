@@ -213,6 +213,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Squid** with the following d
     
     - **Effort:** elementary
 
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Download Links From Legitimate Services"
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Cisco Secure Web Appliance on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_23b75d0c-2026-4d3e-b916-636c27ba4931_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Cisco Secure Firewall on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.json){ .md-button }
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -141,6 +141,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     
     - **Effort:** intermediate
 
+??? abstract "Exchange Server Creating Unusual Files"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
+    
+    - **Effort:** intermediate
+
+??? abstract "Exfiltration And Tunneling Tools Execution"
+    
+    Execution of well known tools for data exfiltration and tunneling
+    
+    - **Effort:** advanced
+
 ??? abstract "FoggyWeb HTTP Default GET/POST Requests"
     
     Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
@@ -158,6 +170,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     Detects default C2 URL for trojan LokiBot
     
     - **Effort:** elementary
+
+??? abstract "Network Scanning and Discovery"
+    
+    Tools and command lines used for network discovery from current system
+    
+    - **Effort:** advanced
+
+??? abstract "Network Sniffing"
+    
+    List of common tools used for network packages sniffing
+    
+    - **Effort:** advanced
 
 ??? abstract "Possible Malicious File Double Extension"
     
@@ -213,11 +237,35 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     
     - **Effort:** elementary
 
+??? abstract "SolarWinds Suspicious File Creation"
+    
+    Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Double Extension"
+    
+    Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
     
     - **Effort:** intermediate
+
+??? abstract "System Info Discovery"
+    
+    System info discovery, attempt to detects basic command use to fingerprint a host
+    
+    - **Effort:** master
+
+??? abstract "TOR Usage"
+    
+    Detects TOR usage, based on the IP address and the destination port (filtered on NTP). TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
 
 ??? abstract "Telegram Bot API Request"
     

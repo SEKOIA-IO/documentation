@@ -231,6 +231,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
     
     - **Effort:** elementary
 
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
+
 ??? abstract "SolarWinds Suspicious File Creation"
     
     Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
