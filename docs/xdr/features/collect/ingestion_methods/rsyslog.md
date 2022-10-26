@@ -252,7 +252,8 @@ To receive and process Windows logs, you have to follow these steps:
         !!!important
             If `Microsoft-Windows-Sysmon` is used, only Sysmon events will be catched. To get the other Windows event logs, only `Microsoft-Windows` should be used.
 
-    **Method 2 : Create a configuration file to view raw syslog messages**
+    **Method 2: Create a configuration file to view raw syslog messages**
+
 
 	This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
 
