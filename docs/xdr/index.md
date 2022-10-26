@@ -1,4 +1,4 @@
-# SEKOIA.IO XDRR
+# SEKOIA.IO XDR
 
 SEKOIA.IO XDR is **an eXtended Detection and Response platform** that automates your SOC.
 
