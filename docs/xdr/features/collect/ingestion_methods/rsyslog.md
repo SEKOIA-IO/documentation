@@ -116,7 +116,8 @@ After receiving the IDs to connect to the Linux server, the main activities are 
     !!!note
         Rsyslogd may not be in your distribution PATH. It is usually found in `/sbin/rsyslogd`
 
-5. Restart Rsyslog service and check its status
+6. Restart Rsyslog service and check its status
+
 
 	```bash
 	sudo systemctl restart rsyslog
