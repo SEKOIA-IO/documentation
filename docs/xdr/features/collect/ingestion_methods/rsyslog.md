@@ -44,7 +44,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 
     === "Fedora, Red Hat, CentOS (dnf)"
         
-	```bash
+	    ```bash
         sudo dnf update
         sudo dnf install -y rsyslog rsyslog-gnutls wget
 	    ```
@@ -166,7 +166,7 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
 
     The name of the ruleset is not important but must be the same as the one defined below.
 
-    To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the SEKOIA.IO syslog endpointon a specific Intake. Please change  using the YOUR_INTAKE_KEY accordingly.
+    To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the SEKOIA.IO syslog endpoint on a specific Intake. Please change using the YOUR_INTAKE_KEY accordingly.
 
     ```bash
     $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
