@@ -190,7 +190,8 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
     }
     ```
 
-    4. Restart the Rsyslog service and make sure it is correctly set up 
+4. Restart the Rsyslog service and make sure it is correctly set up 
+
 
 	```bash
 	sudo systemctl restart rsyslog.service
