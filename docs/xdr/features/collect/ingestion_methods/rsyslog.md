@@ -148,7 +148,8 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
 
 2. Create a configuration file for each technology you want to forward to SEKOIA.IO.
 
-    Create a dedicated file in /etc/rsyslog.d/ for each technology to be collected.
+    Create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
+
     
     In this example one file is created for Windows events.
 
