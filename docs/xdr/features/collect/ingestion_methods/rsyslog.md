@@ -226,7 +226,8 @@ To receive and process Windows logs, you have to follow these steps:
 
 3. Identify syslog headers that will be used later
 
-    **Method 1** : By watching messages in `/var/log/syslog`
+    **Method 1**: By watching messages in `/var/log/syslog`
+
     
     Messages in `/var/log/syslog` - or `/var/log/messages` depending of your `/etc/rsyslog.conf` configuration - are not raw syslog messages but contain information about syslog header such as the `hostname` or the `app-name` which can be used to identify your events.
 
