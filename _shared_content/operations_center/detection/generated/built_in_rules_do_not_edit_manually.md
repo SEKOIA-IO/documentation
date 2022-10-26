@@ -1,4 +1,4 @@
-Rules catalog includes **588 built-in detection rules** (_last update on 2022-10-25_).
+Rules catalog includes **589 built-in detection rules** (_last update on 2022-10-26_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -4054,7 +4054,7 @@ Rules catalog includes **588 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
-**Indicator Removal on Host**
+**Indicator Removal**
 
 ??? abstract "AWS KMS CMK Key Deleted"
     
@@ -4423,6 +4423,12 @@ Rules catalog includes **588 built-in detection rules** (_last update on 2022-10
     Detects a crash of the Microsoft Malware Protection Engine process (MsMpEng.exe), which is suspicious and could be related to an attacker disabling the Windows protection.
     
     - **Effort:** intermediate
+
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
 
 **System Binary Proxy Execution**
 
@@ -5109,6 +5115,12 @@ Rules catalog includes **588 built-in detection rules** (_last update on 2022-10
     Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow. 
     
     - **Effort:** master
+
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
 
 ## Credential Access
 **OS Credential Dumping**
