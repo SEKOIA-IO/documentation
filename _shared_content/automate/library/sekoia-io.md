@@ -369,6 +369,33 @@ Mark as denied a countermeasure
 | `assignee` | `string` | UUID of the profile assigned to the progress of the countermeasure |
 | `created_at` | `string` | Date the countermeasure was created |
 
+### Get aggregation query
+
+Make an aggregation query
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `aggregation_type` | `string` | The aggregation type. Can be `avg`, `cardinality`, `max`, `min`, `sum` or `count`. |
+| `aggregation_field` | `string` | The field on which apply the aggregation. Should be null only for `count` aggregation. |
+| `query_term` | `string` |  |
+| `earliest_time` | `string` |  |
+| `latest_time` | `string` |  |
+| `minutes_per_bucket` | `integer` |  |
+| `filters` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `aggregations` | `array` |  |
+| `anomaly_detection_candidate_score_y_acf1` | `number` |  |
+| `anomaly_detection_candidate_score_y_acf5` | `number` |  |
+| `anomaly_detection_candidate_score_seas_acf1` | `number` |  |
+| `anomaly_detection_candidate` | `boolean` |  |
+
 ### Get Alert
 
 Retrieve the definition of an alert
@@ -788,4 +815,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.21**
+Module **`SEKOIA.IO` v2.25**
