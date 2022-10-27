@@ -148,7 +148,6 @@ nav:
     - Detect:
       - Rules Catalog: xdr/features/detect/rules_catalog.md
       - Built-in Rules: xdr/features/detect/built_in_detection_rules.md
-      - Built-in Rules and Windows EventIDs: xdr/features/detect/built_in_detection_rules_eventids.md
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
     - Investigate:
