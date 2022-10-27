@@ -65,6 +65,12 @@ Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create
 
 Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.
 
+!!!important
+    In the "Trigger Configuration" settings of your Cloudtrail playbook, we recommand the following configuration by default:
+    - chunk_size = `10000`
+    - frequency = `10`
+    - Tick the box "delete_consumed_messages" that will delete [S3 notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html) of your Amazon Simple Queue Service, avoiding duplicates.
+
 Start the playbook and enjoy your events.
 
 ## Further Readings
