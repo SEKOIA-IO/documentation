@@ -67,6 +67,7 @@ Set up the module configuration with the [AWS Access Key](https://docs.aws.amazo
 
 !!!important
     In the "Trigger Configuration" settings of your Cloudtrail playbook, we recommand the following configuration by default:
+    
     - chunk_size = `10000`
     - frequency = `10`
     - Tick the box "delete_consumed_messages" that will delete [S3 notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html) of your Amazon Simple Queue Service, avoiding duplicates.
