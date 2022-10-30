@@ -34,7 +34,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "device=\"SFW\" date=2020-05-16 time=02:54:39 timezone=\"+11\" device_name=\"SG330\" device_id=S3105611453B86C log_id=050901616001 log_type=\"Content Filtering\" log_component=\"HTTP\" log_subtype=\"Allowed\" status=\"\" priority=Information fw_rule_id=6 user_name=\"b.orowi@cci.adds\" user_gp=\"CCI - Proxy - Filtrage All\u00e9g\u00e9\" iap=13 category=\"Search Engines\" category_type=\"Acceptable\" url=\"http://www.google.com/dl/release2/TnV3rQKAz82ODPFMuxq1wQ_1089/f9YORelAF3Z1VnI84ysPJA\" contenttype=\"application/octet-stream\" override_token=\"\" httpresponsecode=\"\" src_ip=10.0.5.23 dst_ip=216.58.203.100 protocol=\"TCP\" src_port=56332 dst_port=80 sent_bytes=310 recv_bytes=4563 domain=www.google.com exceptions=\"\" activityname=\"\" reason=\"\" user_agent=\"Microsoft BITS/7.8\" status_code=\"416\" transactionid=\"\" referer=\"\" download_file_name=\"\" download_file_type=\"\" upload_file_name=\"\" upload_file_type=\"\" con_id=484085624 application=\"\" app_is_cloud=0 override_name=\"\" override_authorizer=\"\"",
+        "message": "device=\"SFW\" date=2020-05-16 time=02:54:39 timezone=\"+11\" device_name=\"SG330\" device_id=S3105611453B86C log_id=050901616001 log_type=\"Content Filtering\" log_component=\"HTTP\" log_subtype=\"Allowed\" status=\"\" priority=Information fw_rule_id=6 user_name=\"F.Saquet@ACME.coyotte\" user_gp=\"ACME - Proxy - Filtrage All\u00e9g\u00e9\" iap=13 category=\"Search Engines\" category_type=\"Acceptable\" url=\"http://www.google.com/dl/release2/TnV3rQKAz82ODPFMuxq1wQ_1089/f9YORelAF3Z1VnI84ysPJA\" contenttype=\"application/octet-stream\" override_token=\"\" httpresponsecode=\"\" src_ip=10.0.5.23 dst_ip=216.58.203.100 protocol=\"TCP\" src_port=56332 dst_port=80 sent_bytes=310 recv_bytes=4563 domain=www.google.com exceptions=\"\" activityname=\"\" reason=\"\" user_agent=\"Microsoft BITS/7.8\" status_code=\"416\" transactionid=\"\" referer=\"\" download_file_name=\"\" download_file_type=\"\" upload_file_name=\"\" upload_file_type=\"\" con_id=484085624 application=\"\" app_is_cloud=0 override_name=\"\" override_authorizer=\"\"",
         "event": {
             "kind": "event",
             "category": [
@@ -80,7 +80,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "TCP"
         },
         "user": {
-            "name": "b.orowi@cci.adds"
+            "name": "F.Saquet@ACME.coyotte"
         },
         "action": {
             "name": "allow"
@@ -94,7 +94,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "216.58.203.100"
             ],
             "user": [
-                "b.orowi@cci.adds"
+                "F.Saquet@ACME.coyotte"
             ]
         }
     }

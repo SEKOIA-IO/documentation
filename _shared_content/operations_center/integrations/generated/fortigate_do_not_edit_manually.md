@@ -33,7 +33,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "code": "0100032102",
             "reason": "Configuration is changed in the admin session",
-            "severity": 7,
             "timezone": "+0100",
             "dataset": "event:system",
             "category": "event"
@@ -67,7 +66,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "block",
             "code": "0954024576",
-            "severity": 4,
             "dataset": "utm:dlp",
             "category": "utm"
         },
@@ -79,6 +77,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80,
             "user": {
                 "name": "bob"
+            }
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "medium"
+                }
             }
         },
         "file": {
@@ -155,7 +160,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "pass",
             "code": "1501054802",
             "reason": "Domain is monitored",
-            "severity": 3,
             "dataset": "dns:dns-response",
             "category": "dns"
         },
@@ -225,7 +229,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "reset",
             "code": "0419016384",
             "reason": "file_transfer: Eicar.Virus.Test.File,",
-            "severity": 7,
             "dataset": "utm:ips",
             "category": "utm"
         },
@@ -237,6 +240,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 44362,
             "user": {
                 "name": "bob"
+            }
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "info"
+                }
             }
         },
         "log": {
@@ -496,7 +506,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "passthrough",
             "code": "1600061002",
-            "severity": 3,
             "dataset": "utm:ssh",
             "category": "utm"
         },
@@ -507,6 +516,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 22,
             "user": {
                 "name": "bob"
+            }
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "low"
+                }
             }
         },
         "log": {
@@ -564,7 +580,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "permit",
             "code": "0814044032",
-            "severity": 2,
             "dataset": "utm:voip",
             "category": "utm"
         },
@@ -703,7 +718,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "passthrough",
             "code": "1203030258",
-            "severity": 4,
             "dataset": "utm:waf",
             "category": "utm"
         },
@@ -714,6 +728,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80,
             "user": {
                 "name": "bob"
+            }
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "medium"
+                }
             }
         },
         "log": {
@@ -787,7 +808,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 51 > threshold 50",
-            "severity": 7,
             "dataset": "utm:anomaly",
             "category": "utm"
         },
@@ -795,6 +815,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55"
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "critical"
+                }
+            }
         },
         "log": {
             "level": "alert"
@@ -846,7 +873,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
-            "severity": 7,
             "dataset": "anomaly:anomaly",
             "category": "anomaly"
         },
@@ -854,6 +880,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
             "port": 20882
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "critical"
+                }
+            }
         },
         "log": {
             "level": "alert"
@@ -1051,7 +1084,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "blocked",
             "code": "0211008192",
             "reason": "File is infected.",
-            "severity": 4,
             "dataset": "utm:virus",
             "category": "utm"
         },
@@ -1138,7 +1170,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "blocked",
             "code": "0211008192",
             "reason": "File is infected",
-            "severity": 4,
             "dataset": "utm:virus",
             "category": "utm"
         },
@@ -1218,7 +1249,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "pass",
             "code": "1059028704",
             "reason": "Web.Client: HTTP.BROWSER_Firefox,",
-            "severity": 2,
             "dataset": "utm:app-ctrl",
             "category": "utm"
         },
@@ -1387,7 +1417,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "log-only",
             "code": "0508020503",
             "reason": "general email log",
-            "severity": 2,
             "dataset": "utm:emailfilter",
             "category": "utm"
         },
@@ -1464,7 +1493,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "login",
             "code": "0100032002",
             "reason": "name_invalid",
-            "severity": 7,
             "dataset": "event:system",
             "category": "event"
         },
@@ -1519,7 +1547,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "authentication",
             "code": "0102043008",
             "reason": "N/A",
-            "severity": 3,
             "dataset": "event:user",
             "category": "event"
         },
@@ -1834,7 +1861,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0001000014",
-            "severity": 3,
             "dataset": "traffic:local",
             "category": "traffic"
         },
@@ -1986,7 +2012,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "login",
             "code": "0100032021",
             "reason": "exceed_limit",
-            "severity": 7,
             "dataset": "event:system",
             "category": "event"
         },
@@ -2021,7 +2046,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "ssl-new-con",
             "code": "0101039943",
             "reason": "N/A",
-            "severity": 2,
             "dataset": "event:vpn",
             "category": "event"
         },
@@ -2064,7 +2088,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0000000020",
-            "severity": 5,
             "timezone": "+0200",
             "dataset": "traffic",
             "category": "traffic"
@@ -2128,7 +2151,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "timeout",
             "code": "0000000013",
-            "severity": 3,
             "dataset": "traffic:forward",
             "category": "traffic"
         },
@@ -2202,7 +2224,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "close",
             "code": "0000000013",
-            "severity": 3,
             "dataset": "traffic:forward",
             "category": "traffic"
         },
@@ -2275,7 +2296,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "close",
             "code": "0000000013",
-            "severity": 3,
             "dataset": "traffic:forward",
             "category": "traffic"
         },
@@ -2599,7 +2619,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "dns",
             "code": "0000000011",
-            "severity": 4,
             "timezone": "+0200",
             "dataset": "traffic:forward",
             "category": "traffic"
@@ -3028,7 +3047,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "blocked",
             "code": "0316013056",
             "reason": "URL belongs to a denied category in policy",
-            "severity": 4,
             "dataset": "utm:webfilter",
             "category": "utm"
         },
@@ -3141,7 +3159,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.provider` | `keyword` | Source of the event. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
-|`event.severity` | `long` | Numeric severity of the event. |
 |`event.timezone` | `keyword` | Event time zone. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
