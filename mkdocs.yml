@@ -177,7 +177,7 @@ nav:
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
-        - Digital Shadows SearchLight: xdr/features/automate/library/digital-shadows.md
+        - Digital Shadows: xdr/features/automate/library/digital-shadows.md
         - fileutils: xdr/features/automate/library/fileutils.md
         - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
         - Git: xdr/features/automate/library/git.md
