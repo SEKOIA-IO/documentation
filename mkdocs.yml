@@ -76,7 +76,7 @@ nav:
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
             - DNS logs: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-dns-logs.md
             - Firewall events: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-firewall-events.md
-          - Digital Shadows: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
+          - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Google Cloud:
             - Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
             - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
