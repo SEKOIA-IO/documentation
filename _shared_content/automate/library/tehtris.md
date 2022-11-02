@@ -13,7 +13,7 @@
 
 ## Triggers
 
-### [Alpha] Fetch new events from Tehtris
+### Fetch new events from Tehtris
 
 Get last events from the Tehtris XDR platform
 
@@ -29,4 +29,4 @@ Get last events from the Tehtris XDR platform
 
 ## Extra
 
-Module **`Tehtris` v1.0.2**
+Module **`Tehtris` v1.0.3**
