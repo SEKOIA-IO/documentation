@@ -1343,7 +1343,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "question": {
                 "name": "detectportal.firefox.com",
-                "type": "A"
+                "type": "A",
+                "top_level_domain": "com",
+                "subdomain": "detectportal",
+                "registered_domain": "firefox.com"
             },
             "rrname": "detectportal.firefox.com",
             "rrtype": "A"

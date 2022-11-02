@@ -39,9 +39,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "type": "query",
             "question": {
-                "type": "AAAA",
                 "class": "IN",
-                "name": "docs.sekoia.io"
+                "type": "AAAA",
+                "name": "docs.sekoia.io",
+                "top_level_domain": "io",
+                "subdomain": "docs",
+                "registered_domain": "sekoia.io"
             },
             "header_flags": [
                 "RD"
@@ -71,9 +74,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "type": "query",
             "question": {
-                "type": "AAAA",
                 "class": "IN",
-                "name": "docs.sekoia.io"
+                "type": "AAAA",
+                "name": "docs.sekoia.io",
+                "top_level_domain": "io",
+                "subdomain": "docs",
+                "registered_domain": "sekoia.io"
             },
             "header_flags": [
                 "RD",
@@ -107,9 +113,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "type": "query",
             "question": {
-                "type": "A",
                 "class": "IN",
-                "name": "ipv6.google.com"
+                "type": "A",
+                "name": "ipv6.google.com",
+                "top_level_domain": "com",
+                "subdomain": "ipv6",
+                "registered_domain": "google.com"
             },
             "header_flags": [
                 "RD",
@@ -140,9 +149,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "type": "query",
             "question": {
-                "type": "AAAA",
                 "class": "IN",
-                "name": "global.vortex.data.trafficmanager.net"
+                "type": "AAAA",
+                "name": "global.vortex.data.trafficmanager.net",
+                "top_level_domain": "net",
+                "subdomain": "global.vortex.data",
+                "registered_domain": "trafficmanager.net"
             },
             "header_flags": [
                 "RD"
@@ -160,23 +172,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "client 192.168.103.66#57980 (ipv6.google.com): query: ipv6.google.com IN AAAA - (192.168.100.102)",
         "source": {
-            "address": "192.168.103.66",
             "ip": "192.168.103.66",
-            "port": 57980
+            "port": 57980,
+            "address": "192.168.103.66"
+        },
+        "dns": {
+            "question": {
+                "class": "IN",
+                "type": "AAAA",
+                "name": "ipv6.google.com",
+                "top_level_domain": "com",
+                "subdomain": "ipv6",
+                "registered_domain": "google.com"
+            },
+            "type": "query",
+            "header_flags": []
         },
         "related": {
             "ip": [
                 "192.168.103.66"
             ]
-        },
-        "dns": {
-            "header_flags": [],
-            "type": "query",
-            "question": {
-                "type": "AAAA",
-                "class": "IN",
-                "name": "ipv6.google.com"
-            }
         }
     }
     	
@@ -202,9 +217,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "type": "query",
             "question": {
-                "type": "PTR",
                 "class": "IN",
-                "name": "107.100.168.192.in-addr.arpa"
+                "type": "PTR",
+                "name": "107.100.168.192.in-addr.arpa",
+                "top_level_domain": "in-addr.arpa",
+                "subdomain": "107.100.168",
+                "registered_domain": "192.in-addr.arpa"
             },
             "header_flags": [
                 "RD"
@@ -234,9 +252,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "type": "query",
             "question": {
-                "type": "AAAA",
                 "class": "IN",
-                "name": "docs.sekoia.io"
+                "type": "AAAA",
+                "name": "docs.sekoia.io",
+                "top_level_domain": "io",
+                "subdomain": "docs",
+                "registered_domain": "sekoia.io"
             },
             "header_flags": [
                 "RD"

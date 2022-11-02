@@ -603,6 +603,52 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_ASA_302014.json"
+
+    ```json
+	
+    {
+        "message": "%ASA-6-302014: Teardown TCP connection 3142352458 for Pika:10.79.66.29/47864 to pa_asa:10.79.2.75/80 duration 5:55:15 bytes 0 TCP FINs from Pika",
+        "event": {
+            "code": "302014",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "teardown"
+        },
+        "destination": {
+            "ip": "10.79.2.75",
+            "port": 80,
+            "address": "10.79.2.75"
+        },
+        "network": {
+            "bytes": 0,
+            "transport": "tcp"
+        },
+        "source": {
+            "ip": "10.79.66.29",
+            "port": 47864,
+            "address": "10.79.66.29"
+        },
+        "related": {
+            "ip": [
+                "10.79.2.75",
+                "10.79.66.29"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "test_ASA_302020.json"
 
     ```json
@@ -1501,6 +1547,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.response.status_code` | `long` | HTTP response status code. |
 |`log.level` | `keyword` | Log level of the log event. |
 |`network.application` | `keyword` | Application level protocol name. |
+|`network.bytes` | `long` | Total bytes transferred in both directions. |
 |`network.direction` | `keyword` | Direction of the network traffic. |
 |`network.protocol` | `keyword` | Application protocol name. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |

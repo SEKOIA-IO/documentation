@@ -33,14 +33,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-07-07T22:42:06.004000Z",
-        "dns": {
-            "question": {
-                "name": "foO-BAR-baz.xYz",
-                "type": "A"
-            },
-            "response_code": "NoError"
-        },
+        "message": "{\"QueryName\":\"foO-BAR-baz.xYz.\",\"QueryType\":1,\"ResponseCode\":0,\"Timestamp\":1657233726004000000}\n",
         "event": {
             "kind": "event",
             "category": [
@@ -50,6 +43,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ],
             "dataset": "dns_logs"
+        },
+        "@timestamp": "2022-07-07T22:42:06.004000Z",
+        "dns": {
+            "question": {
+                "name": "foO-BAR-baz.xYz",
+                "type": "A",
+                "top_level_domain": "xYz",
+                "registered_domain": "foO-BAR-baz.xYz"
+            },
+            "response_code": "NoError"
         }
     }
     	
@@ -61,14 +64,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-07-07T22:42:06.004000Z",
-        "dns": {
-            "question": {
-                "name": "foO-BAR-baz.xYz",
-                "type": "NS"
-            },
-            "response_code": "NoError"
-        },
+        "message": "{\"QueryName\":\"foO-BAR-baz.xYz.\",\"QueryType\":2,\"ResponseCode\":0,\"Timestamp\":1657233726004000000}\n",
         "event": {
             "kind": "event",
             "category": [
@@ -78,6 +74,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ],
             "dataset": "dns_logs"
+        },
+        "@timestamp": "2022-07-07T22:42:06.004000Z",
+        "dns": {
+            "question": {
+                "name": "foO-BAR-baz.xYz",
+                "type": "NS",
+                "top_level_domain": "xYz",
+                "registered_domain": "foO-BAR-baz.xYz"
+            },
+            "response_code": "NoError"
         }
     }
     	
@@ -89,14 +95,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-07-07T22:42:06.004000Z",
-        "dns": {
-            "question": {
-                "name": "foO-BAR-baz.xYz",
-                "type": "AAAA"
-            },
-            "response_code": "NoError"
-        },
+        "message": "{\"QueryName\":\"foO-BAR-baz.xYz.\",\"QueryType\":28,\"ResponseCode\":0,\"Timestamp\":1657233726004000000}\n",
         "event": {
             "kind": "event",
             "category": [
@@ -106,6 +105,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ],
             "dataset": "dns_logs"
+        },
+        "@timestamp": "2022-07-07T22:42:06.004000Z",
+        "dns": {
+            "question": {
+                "name": "foO-BAR-baz.xYz",
+                "type": "AAAA",
+                "top_level_domain": "xYz",
+                "registered_domain": "foO-BAR-baz.xYz"
+            },
+            "response_code": "NoError"
         }
     }
     	
@@ -117,13 +126,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-07-07T22:42:06.004000Z",
-        "dns": {
-            "question": {
-                "name": "foO-BAR-baz.xYz"
-            },
-            "response_code": "NoError"
-        },
+        "message": "{\"QueryName\":\"foO-BAR-baz.xYz.\",\"QueryType\":65353,\"ResponseCode\":0,\"Timestamp\":1657233726004000000}\n",
         "event": {
             "kind": "event",
             "category": [
@@ -133,6 +136,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ],
             "dataset": "dns_logs"
+        },
+        "@timestamp": "2022-07-07T22:42:06.004000Z",
+        "dns": {
+            "question": {
+                "name": "foO-BAR-baz.xYz",
+                "top_level_domain": "xYz",
+                "registered_domain": "foO-BAR-baz.xYz"
+            },
+            "response_code": "NoError"
         }
     }
     	
