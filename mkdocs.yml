@@ -122,7 +122,7 @@ nav:
           - Check Point Firewall: xdr/features/collect/integrations/network/checkpoint.md
           - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco_asa.md
           - Cisco WSA: xdr/features/collect/integrations/network/cisco_wsa.md
-          - GateWatcher AIONIQ: xdr/features/collect/integrations/network/gatewatcher_aioniq.md
+          - Gatewatcher AionIQ: xdr/features/collect/integrations/network/gatewatcher_aioniq.md
           - F5 BIG-IP: xdr/features/collect/integrations/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
           - Fortinet:
