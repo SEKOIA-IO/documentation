@@ -1,10 +1,10 @@
 uuid: bba2bed2-d925-440f-a0ce-dbcae04eaf26
-name: GateWatcher AIONIQ
+name: Gatewatcher AionIQ
 type: intake
 
 ## Overview
 
-GateWatcher AIONIQ is a detection and response platform for your network that identifies malicious actions and suspicious behaviors.
+Gatewatcher AionIQ is a detection and response platform for your network that identifies malicious actions and suspicious behaviors.
 
 {!_shared_content/operations_center/integrations/generated/aioniq_do_not_edit_manually.md!}
 
@@ -23,7 +23,7 @@ Select `json` as the codec, `5424` as RFC and `tcp` as the protocol.
 
 ## Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format GateWatcher AIONIQ.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Gatewatcher AionIQ.
 
 ## Transport to SEKOIA.IO
 
