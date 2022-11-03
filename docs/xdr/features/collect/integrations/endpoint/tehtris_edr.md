@@ -4,8 +4,7 @@ type: intake
 
 ## Overview
 
-Tehtris EDR is a security product to monitor, detects and mitigates threats on endpoints. It reduces the attack surface and prevent attacks.
-Combined with Tehtris EPP, it detects malwares and prevent exploits on your devices.
+Tehtris EDR is a security product to monitor, detect and mitigate threats on endpoints. It reduces the attack surface and prevent attacks.
 
 This setup guide shows how to forward events produced by Tehtris EDR to SEKOIA.IO.
 
