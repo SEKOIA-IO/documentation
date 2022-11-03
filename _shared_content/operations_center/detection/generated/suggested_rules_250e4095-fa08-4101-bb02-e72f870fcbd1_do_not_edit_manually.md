@@ -723,6 +723,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO for Endpoint** wit
     
     - **Effort:** intermediate
 
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
+    
+    - **Effort:** elementary
+
 ??? abstract "In-memory PowerShell"
     
     Detects loading of essential DLL used by PowerShell, but not by the process powershell.exe. Detects meterpreter's "load powershell" extension and tool such PowerShDll.
