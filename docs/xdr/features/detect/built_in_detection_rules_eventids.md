@@ -1,3 +1,8 @@
+---
+show:
+  - navigation
+---
+
 # Built-in detection rules, EventIDs and EventProviders relations
 
 SEKOIA.IO provides built-in detection rules to illuminate intrusions, adversarial behaviours and suspicious activity escalation chains so you can immediately take steps to remediate. Built-in rules can be customized to your context and according to your security posture.
