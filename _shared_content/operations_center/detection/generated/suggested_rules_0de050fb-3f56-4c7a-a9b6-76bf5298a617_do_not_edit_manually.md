@@ -219,6 +219,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     
     - **Effort:** elementary
 
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
+    
+    - **Effort:** elementary
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.

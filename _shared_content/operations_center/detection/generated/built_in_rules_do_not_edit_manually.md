@@ -1,4 +1,4 @@
-Rules catalog includes **589 built-in detection rules** (_last update on 2022-10-26_).
+Rules catalog includes **592 built-in detection rules** (_last update on 2022-11-03_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -540,6 +540,12 @@ Rules catalog includes **589 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** master
 
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Office 365 Anti-Phishing Policy Deletion"
     
     Detects when the anti-phishing policy is removed from Office 365. By default, Office 365 includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
@@ -774,6 +780,12 @@ Rules catalog includes **589 built-in detection rules** (_last update on 2022-10
 ??? abstract "Blue Mockingbird Malware"
     
     Attempts to detect system changes made by Blue Mockingbird
+    
+    - **Effort:** elementary
+
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
     
     - **Effort:** elementary
 
@@ -5417,6 +5429,14 @@ Rules catalog includes **589 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+**Multi-Factor Authentication Interception**
+
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
+
 **Exploitation for Credential Access**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -5494,6 +5514,12 @@ Rules catalog includes **589 built-in detection rules** (_last update on 2022-10
     - **Effort:** intermediate
 
 **Adversary-in-the-Middle**
+
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Possible RottenPotato Attack"
     
@@ -6020,6 +6046,12 @@ Rules catalog includes **589 built-in detection rules** (_last update on 2022-10
 
 **Adversary-in-the-Middle**
 
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
@@ -6336,6 +6368,12 @@ Rules catalog includes **589 built-in detection rules** (_last update on 2022-10
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
     - **Effort:** elementary
+
+??? abstract "Remote Access Tool Domain"
+    
+    Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
 
 **Non-Standard Port**
 
