@@ -115,6 +115,7 @@ nav:
           - Sophos EDR: xdr/features/collect/integrations/endpoint/sophos_edr.md
           - Symantec/Broadcom Endpoint Security: xdr/features/collect/integrations/endpoint/symantec_epp.md
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
+          - Tehtris EDR: xdr/features/collect/integrations/endpoint/tehtris_edr.md
           - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
@@ -210,6 +211,7 @@ nav:
         - Skyhigh Security Secure Web Gateway (SWG): xdr/features/automate/library/skyhigh-security-secure-web-gateway-swg.md
         - Sophos: xdr/features/automate/library/sophos.md
         - The Hive: xdr/features/automate/library/the-hive.md
+        - Tehtris: xdr/features/automate/library/tehtris.md
         - Tranco: xdr/features/automate/library/tranco.md
         - Triage: xdr/features/automate/library/triage.md
         - Vade Secure: xdr/features/automate/library/vade-secure.md
