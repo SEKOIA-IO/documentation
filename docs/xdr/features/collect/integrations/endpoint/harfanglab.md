@@ -13,9 +13,13 @@ This setup guide shows how to forward events produced by HarfangLab EDR to SEKOI
 
 ## Configure
 
-First your need to navigate to `Personal Settings`,  and in the `Api token` get your token or generate a new one.
+**Pre-requisite**
+Harfang must setup openssl to the server (then Protocol `TCP/SSL` will be available)
 
-Then you need to navigate to `Administration > Configuration`, and switch to the `Connectors` tab.
+**Steps**
+Go to `Personal Settings` > `API Key` and get your token or generate a new one.
+
+Then you need to navigate to `Administration` > `Configuration`, and switch to the `Connectors` tab.
 
 In the `Syslog connector` panel, select the logs you want to export:
 
@@ -34,6 +38,7 @@ Configure the syslog information with the following details:
 * Source host: name of your choice
 * Structured data: `[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"]`
 * Protocol: `TCP/SSL`
+* RFC : `RFC5424`
 
 In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable with your intake key generated in SEKOIA.IO.
 
