@@ -17,9 +17,9 @@ This setup guide shows how to forward events produced by HarfangLab EDR to SEKOI
 Harfang must setup openssl to the server (then Protocol `TCP/SSL` will be available)
 
 **Steps**
-First your need to navigate to `Personal Settings`,  and in the `Api token` get your token or generate a new one.
+Go to `Personal Settings` > `API Key` and get your token or generate a new one.
 
-Then you need to navigate to `Administration > Configuration`, and switch to the `Connectors` tab.
+Then you need to navigate to `Administration` > `Configuration`, and switch to the `Connectors` tab.
 
 In the `Syslog connector` panel, select the logs you want to export:
 
