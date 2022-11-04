@@ -121,13 +121,17 @@ To uninstall the agent, follow the instructions specific to your OS.
 
 === "Windows"
 
+    In order to completely uninstall the agent on Windows the command must be executed using a copy of the running executable.
+    You can either:
+
+    * Download the latest version of the agent and use this binary to perform the uninstall
+    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe` (`$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`)
+
     The following command must be executed **as an administrator**:
 
     ```shell
-    $ProgramFiles\EndpointAgent\agent.exe -uninstall
+    agent.exe -uninstall
     ```
-
-    Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
 
 === "Linux"
 
