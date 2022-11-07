@@ -33,4 +33,4 @@ Send a new transactional message through Mandrill
 
 ## Extra
 
-Module **`Mandrill` v1.12**
+Module **`Mandrill` v2.0.0**
