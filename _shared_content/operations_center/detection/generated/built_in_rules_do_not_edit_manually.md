@@ -1,4 +1,4 @@
-Rules catalog includes **592 built-in detection rules** (_last update on 2022-11-03_).
+Rules catalog includes **594 built-in detection rules** (_last update on 2022-11-07_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2452,6 +2452,12 @@ Rules catalog includes **592 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** master
 
+??? abstract "AWS Root ConsoleLogin"
+    
+    Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Active Directory Delegate To KRBTGT Service"
     
     Detects potential persistence installation from an already compromised administrator domain account. The attacker will create a TGT and abuse a service account with the constrained delegation and update it with the krbtgt service. The detection relies on the Event ID 4738.
@@ -4748,6 +4754,12 @@ Rules catalog includes **592 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** elementary
 
+??? abstract "AWS Disable MFA"
+    
+    Detects a user disabling the multi factor authentication mechanism for its account. It could be a sign of malicious activity.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS EC2 Security Group Modified"
     
     Detects when an AWS EC2 security group has been modified
@@ -5119,6 +5131,12 @@ Rules catalog includes **592 built-in detection rules** (_last update on 2022-11
     Detects change on AWS IAM Policy
     
     - **Effort:** master
+
+??? abstract "AWS Root ConsoleLogin"
+    
+    Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
 
 **Network Boundary Bridging**
 

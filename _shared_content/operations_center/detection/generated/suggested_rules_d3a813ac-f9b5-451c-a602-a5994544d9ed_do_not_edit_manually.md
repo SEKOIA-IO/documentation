@@ -15,6 +15,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the fo
     
     - **Effort:** elementary
 
+??? abstract "AWS Disable MFA"
+    
+    Detects a user disabling the multi factor authentication mechanism for its account. It could be a sign of malicious activity.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS EC2 Security Group Modified"
     
     Detects when an AWS EC2 security group has been modified
