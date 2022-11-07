@@ -1,21 +1,21 @@
-# Tehtris
+# TEHTRIS
 
-![Tehtris](/assets/playbooks/library/tehtris.png){ align=right width=150 }
+![TEHTRIS](/assets/playbooks/library/tehtris.png){ align=right width=150 }
 
-[Tehtris](https://tehtris.com) is a cybersecurity company offering products designed to protect endpoints against knwon and unknown threats
+[TEHTRIS](https://tehtris.com) is a cybersecurity company offering products designed to protect endpoints against knwon and unknown threats
 
 ## Configuration
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `apikey` | `string` | The APIkey to authenticate call to the API |
-| `tenant_id` | `string` | The identifier of your tenant (most of the time, your tenant id is a trigram in the url of your tethris instance; eg: https://{tenant_id}.tehtris.net) |
+| `tenant_id` | `string` | The identifier of your tenant (most of the time, your tenant id is a trigram in the url of your TETHRIS instance; eg: https://{tenant_id}.tehtris.net) |
 
 ## Triggers
 
-### Fetch new events from Tehtris
+### Fetch new events from TEHTRIS
 
-Get last events from the Tehtris XDR platform
+Get last events from the TEHTRIS XDR platform
 
 **Arguments**
 
@@ -29,4 +29,4 @@ Get last events from the Tehtris XDR platform
 
 ## Extra
 
-Module **`Tehtris` v1.0.3**
+Module **`TEHTRIS` v1.0.4**

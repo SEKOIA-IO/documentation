@@ -8,7 +8,6 @@ SEKOIA.IO
 | --------- | ------- | --------------------------- |
 | `api_key` | `string` | SEKOIA.IO API key |
 | `base_url` | `string` | SEKOIA.IO base URL (ex. https://api.sekoia.io) |
-| `liveapi_url` | `string` | SEKOIA.IO's LiveAPI URL (ex. wss://live.sekoia.io) |
 
 ## Triggers
 
@@ -815,4 +814,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.26**
+Module **`SEKOIA.IO` v2.27**
