@@ -50,4 +50,4 @@ Add a new IP Address object to a Fortigate Firewall
 
 ## Extra
 
-Module **`Fortigate Firewalls` v1.15**
+Module **`Fortigate Firewalls` v1.16**

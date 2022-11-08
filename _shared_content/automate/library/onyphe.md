@@ -376,4 +376,4 @@ Get threatlist information on IP with Onyphe
 
 ## Extra
 
-Module **`Onyphe` v1.12**
+Module **`Onyphe` v1.13**

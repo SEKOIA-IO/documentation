@@ -127,4 +127,4 @@ Execute a remote script and get the results
 
 ## Extra
 
-Module **`Sentinel One` v1.2.3**
+Module **`Sentinel One` v1.3.0**

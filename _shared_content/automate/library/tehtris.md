@@ -29,4 +29,4 @@ Get last events from the TEHTRIS XDR platform
 
 ## Extra
 
-Module **`TEHTRIS` v1.0.4**
+Module **`TEHTRIS` v1.1.0**

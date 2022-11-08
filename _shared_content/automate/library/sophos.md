@@ -32,4 +32,4 @@ Forward Sophos Events
 
 ## Extra
 
-Module **`Sophos` v1.1.3**
+Module **`Sophos` v1.2.0**

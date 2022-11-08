@@ -133,4 +133,4 @@ Get the list of processes on the systems
 
 ## Extra
 
-Module **`HarfangLab` v1.10**
+Module **`HarfangLab` v1.11**

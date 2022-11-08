@@ -117,4 +117,4 @@ Get information about an user's authentication methods (such as their MFA status
 
 ## Extra
 
-Module **`Azure Active Directory` v1.0.0**
+Module **`Azure Active Directory` v1.1.0**

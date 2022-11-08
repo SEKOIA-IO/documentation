@@ -30,4 +30,4 @@ Provides data enrichment for Domains, URLs, and IP addresses.
 
 ## Extra
 
-Module **`Whois` v1.14**
+Module **`Whois` v1.15**

@@ -814,4 +814,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.27**
+Module **`SEKOIA.IO` v2.28**

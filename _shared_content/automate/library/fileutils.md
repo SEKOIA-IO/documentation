@@ -56,4 +56,4 @@ Read the XML file and return its content evaluated against specified xpath
 
 ## Extra
 
-Module **`fileutils` v1.18**
+Module **`fileutils` v1.19**

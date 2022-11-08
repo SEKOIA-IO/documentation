@@ -26,4 +26,4 @@ Trigger alert to PagerDuty
 
 ## Extra
 
-Module **`PagerDuty` v1.11**
+Module **`PagerDuty` v1.12**
