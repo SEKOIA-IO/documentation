@@ -75,6 +75,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the fo
     
     - **Effort:** intermediate
 
+??? abstract "AWS IAM Password Policy Updated"
+    
+    Detects an update to the password policy. This could be an attempt to lower accounts security level.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS IAM Policy Changed"
     
     Detects change on AWS IAM Policy

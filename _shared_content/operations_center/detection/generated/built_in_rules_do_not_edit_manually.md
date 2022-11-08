@@ -1,4 +1,4 @@
-Rules catalog includes **594 built-in detection rules** (_last update on 2022-11-07_).
+Rules catalog includes **595 built-in detection rules** (_last update on 2022-11-08_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2445,6 +2445,12 @@ Rules catalog includes **594 built-in detection rules** (_last update on 2022-11
     - **Effort:** intermediate
 
 **Account Manipulation**
+
+??? abstract "AWS IAM Password Policy Updated"
+    
+    Detects an update to the password policy. This could be an attempt to lower accounts security level.
+    
+    - **Effort:** intermediate
 
 ??? abstract "AWS IAM Policy Changed"
     
@@ -5123,6 +5129,12 @@ Rules catalog includes **594 built-in detection rules** (_last update on 2022-11
 ??? abstract "AWS ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS IAM Password Policy Updated"
+    
+    Detects an update to the password policy. This could be an attempt to lower accounts security level.
     
     - **Effort:** intermediate
 
