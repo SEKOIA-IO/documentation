@@ -412,4 +412,4 @@ Uninstalls protection from the specified devices.
 
 ## Extra
 
-Module **`Panda Security` v1.9**
+Module **`Panda Security` v1.10**

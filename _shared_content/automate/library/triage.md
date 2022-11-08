@@ -53,4 +53,4 @@ Triage raw results to observables
 
 ## Extra
 
-Module **`Triage` v1.19**
+Module **`Triage` v1.22**

@@ -216,4 +216,4 @@ Scan url with Virus Total
 
 ## Extra
 
-Module **`VirusTotal` v1.17**
+Module **`VirusTotal` v1.18**
