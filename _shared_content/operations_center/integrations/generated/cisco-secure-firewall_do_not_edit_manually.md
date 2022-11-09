@@ -549,6 +549,44 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_ASA_111007.json"
+
+    ```json
+	
+    {
+        "message": "%ASA-5-111007: Begin configuration: 10.24.25.21 reading from http [POST]",
+        "event": {
+            "code": "111007",
+            "kind": "event",
+            "category": [
+                "network"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "begin configuration"
+        },
+        "network": {
+            "transport": "http"
+        },
+        "source": {
+            "ip": "10.24.25.21",
+            "address": "10.24.25.21"
+        },
+        "related": {
+            "ip": [
+                "10.24.25.21"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "test_ASA_302013.json"
 
     ```json
@@ -608,7 +646,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "%ASA-6-302014: Teardown TCP connection 3142352458 for Pika:10.79.66.29/47864 to pa_asa:10.79.2.75/80 duration 5:55:15 bytes 0 TCP FINs from Pika",
+        "message": "%ASA-6-302014: Teardown TCP connection 3642851852 for outside:9.27.0.93/63677 to Pika:172.17.1.200/443 duration 0:10:06 bytes 4666 FIN Timeout from Pika",
         "event": {
             "code": "302014",
             "kind": "event",
@@ -625,23 +663,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "teardown"
         },
         "destination": {
-            "ip": "10.79.2.75",
-            "port": 80,
-            "address": "10.79.2.75"
+            "ip": "172.17.1.200",
+            "port": 443,
+            "address": "172.17.1.200"
         },
         "network": {
-            "bytes": 0,
+            "bytes": 4666,
             "transport": "tcp"
         },
         "source": {
-            "ip": "10.79.66.29",
-            "port": 47864,
-            "address": "10.79.66.29"
+            "ip": "9.27.0.93",
+            "port": 63677,
+            "address": "9.27.0.93"
         },
         "related": {
             "ip": [
-                "10.79.2.75",
-                "10.79.66.29"
+                "172.17.1.200",
+                "9.27.0.93"
             ]
         }
     }
@@ -1411,7 +1449,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "%ASA-6-725007: SSL session with client WAN:195.101.173.60/49486 terminated.",
+        "message": "<166>Nov 09 2022 10:01:59: %ASA-6-725007: SSL session with client WAN:195.101.173.60/49486 terminated.",
         "event": {
             "category": [
                 "network"

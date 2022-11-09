@@ -51,6 +51,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "user@company.onmicrosoft.com",
+            "id": "10030000A9F382C6@sekoiacorp.onmicrosoft.com",
             "email": "user@company.onmicrosoft.com"
         },
         "organization": {
@@ -73,14 +74,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "code": 0,
                 "name": "Regular"
             },
+            "audit": {
+                "object_id": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe"
+            },
             "auth": {
                 "user_authentication_method": 1,
                 "request_type": "OAuth2:Authorize",
                 "result_status_detail": "Redirect",
                 "keep_me_signed_in": true
-            },
-            "audit": {
-                "object_id": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe"
             }
         },
         "user_agent": {
@@ -99,16 +100,85 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "compliancemanager-scorechange.json"
+
+    ```json
+	
+    {
+        "message": "{\"ActionId\":\"a81edede-be03-41f4-aae2-b6b25186adc6\",\"ActionName\":\"Enable self-service password reset\",\"ActionProducts\":[],\"ActionScore\":26.0,\"ActionScoreChange\":-1.0,\"ActionActivity\":\"COMPLIANCEMANAGER-SCORECHANGE\",\"Assessments\":[],\"Templates\":[],\"Solutions\":[],\"ManagedBy\":\"User\",\"ActionScope\":\"Tenant\",\"UserId\":\"\",\"Id\":\"aa9367e4-9fa3-4709-8326-b35c04f784d2\",\"RecordType\":155,\"CreationTime\":\"2022-10-05T10:12:57\",\"Operation\":\"COMPLIANCEMANAGER-SCORECHANGE\",\"OrganizationId\":\"163381f4-6b9c-43c2-8b57-bfc16b7354f2\",\"UserType\":2,\"UserKey\":\"Organization\",\"Workload\":\"ComplianceManager\",\"ResultStatus\":\"Successful\",\"Version\":1}",
+        "event": {
+            "action": "COMPLIANCEMANAGER-SCORECHANGE",
+            "kind": "event",
+            "code": "155",
+            "reason": "Enable self-service password reset"
+        },
+        "service": {
+            "name": "ComplianceManager"
+        },
+        "user": {
+            "id": "Organization"
+        },
+        "organization": {
+            "id": "163381f4-6b9c-43c2-8b57-bfc16b7354f2"
+        },
+        "action": {
+            "id": 155,
+            "name": "COMPLIANCEMANAGER-SCORECHANGE",
+            "target": "user",
+            "outcome": "success"
+        },
+        "office365": {
+            "record_type": 155,
+            "result_status": "Successful",
+            "user_type": {
+                "code": 2,
+                "name": "Admin"
+            }
+        }
+    }
+    	
+	```
+
+
 === "exchange_event1.json"
 
     ```json
 	
     {
+        "message": "{\"CreationTime\":\"2022-04-05T20:35:01\",\"Id\":\"5615b32d-4c18-4ada-cc88-08da1743c258\",\"Operation\":\"Create\",\"OrganizationId\":\"7f7e5b97-b780-473c-9c76-9182a9d7f2b4\",\"RecordType\":2,\"ResultStatus\":\"Succeeded\",\"UserKey\":\"10033FFF80D15ECF\",\"UserType\":0,\"Version\":1,\"Workload\":\"Exchange\",\"ClientIP\":\"d498:796:298e:be16:1b11:29eb:9996:8a36\",\"UserId\":\"email@example.org\",\"AppId\":\"27922004-5251-4030-b22d-91ecd9a37ea4\",\"ClientIPAddress\":\"d498:796:298e:be16:1b11:29eb:9996:8a36\",\"ClientInfoString\":\"Client=OutlookService;Outlook-iOS/2.0;\",\"ClientRequestId\":\"1725\",\"ExternalAccess\":false,\"InternalLogonType\":0,\"LogonType\":0,\"LogonUserSid\":\"S-1-5-21-3620271904-3241272990-2175486473-1085344\",\"MailboxGuid\":\"24683bc8-fab1-48b3-b834-cb11b95bb911\",\"MailboxOwnerSid\":\"S-1-5-21-3620271904-3241272990-2175486473-1085344\",\"MailboxOwnerUPN\":\"email@example.org\",\"OrganizationName\":\"xxxx.onmicrosoft.com\",\"OriginatingServer\":\"PR3PR03MB6601 (15.20.4200.000)\\r\\n\",\"SessionId\":\"8ad3822b-1cfd-40e7-aeaa-6d0708691ad8\",\"Item\":{\"Id\":\"LgAAAAAdhAMRqmYRzZvIAKoAL8RaDQCB1ldAzYsRRItL+noffZbOAATJxTeHAAAJ\",\"InternetMessageId\":\"<PR3PR03MB6601D07B33E82733537EF049DEE49@PR3PR03MB6601.eurprd03.prod.outlook.com>\",\"IsRecord\":false,\"ParentFolder\":{\"Id\":\"LgAAAAAbOnSFmOkITaMliEZRj+Z3AQAPzmaC0nx3Qo/JWqclreA/AAAEUskDAAAB\",\"Path\":\"\\\\Drafts1\"},\"SizeInBytes\":34785,\"Subject\":\"Email subject\"}}",
+        "event": {
+            "action": "Create",
+            "kind": "event",
+            "code": "2",
+            "category": [
+                "email",
+                "file"
+            ],
+            "type": [
+                "info",
+                "creation"
+            ]
+        },
         "service": {
             "name": "Exchange"
         },
+        "user": {
+            "name": "email@example.org",
+            "id": "10033FFF80D15ECF",
+            "email": "email@example.org"
+        },
         "organization": {
             "id": "7f7e5b97-b780-473c-9c76-9182a9d7f2b4"
+        },
+        "action": {
+            "id": 2,
+            "name": "Create",
+            "target": "user",
+            "outcome": "success"
+        },
+        "source": {
+            "ip": "d498:796:298e:be16:1b11:29eb:9996:8a36",
+            "address": "d498:796:298e:be16:1b11:29eb:9996:8a36"
         },
         "office365": {
             "record_type": 2,
@@ -117,38 +187,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "code": 0,
                 "name": "Regular"
             }
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        },
-        "source": {
-            "address": "d498:796:298e:be16:1b11:29eb:9996:8a36",
-            "ip": "d498:796:298e:be16:1b11:29eb:9996:8a36"
-        },
-        "event": {
-            "action": "Create",
-            "kind": "event",
-            "category": [
-                "email",
-                "file"
-            ],
-            "type": [
-                "info",
-                "creation"
-            ],
-            "code": "2"
-        },
-        "action": {
-            "id": 2,
-            "outcome": "success",
-            "target": "user",
-            "name": "Create"
-        },
-        "user": {
-            "email": "email@example.org",
-            "name": "email@example.org"
         },
         "related": {
             "ip": [
@@ -185,6 +223,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "jane.doe@company.onmicrosoft.com",
+            "id": "i:0h.f|membership|10032000e70d7559@live.com",
             "email": "jane.doe@company.onmicrosoft.com"
         },
         "organization": {
@@ -232,8 +271,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "company-my",
             "registered_domain": "sharepoint.com",
-            "scheme": "https",
             "path": "/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
+            "scheme": "https",
             "port": 443
         },
         "related": {
@@ -271,6 +310,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "marketing@company.com",
+            "id": "i:0h.f|membership|0000000000000000@live.com",
             "email": "marketing@company.com"
         },
         "organization": {
@@ -324,8 +364,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "company",
             "registered_domain": "sharepoint.com",
-            "scheme": "https",
             "path": "/sites/shared/public/assets/website/logo.png",
+            "scheme": "https",
             "port": 443
         },
         "related": {
@@ -360,6 +400,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "Frodon.Saquet@comte.com",
+            "id": "10032001cf3045ad",
             "email": "Frodon.Saquet@comte.com"
         },
         "organization": {
@@ -408,46 +449,45 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "{\"CreationTime\":\"2022-07-07T22:38:49\",\"Id\":\"266f5962-ffad-4fce-a101-3197581af3d4\",\"Operation\":\"AtpDetection\",\"OrganizationId\":\"7f7e5b97-b780-473c-9c76-9182a9d7f2b4\",\"RecordType\":47,\"UserKey\":\"ThreatIntel\",\"UserType\":4,\"Version\":1,\"Workload\":\"ThreatIntelligence\",\"UserId\":\"people@example.org\",\"DetectionDate\":\"2022-07-07T22:38:11\",\"DetectionMethod\":\"AntiMalware\",\"EventDeepLink\":\"https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=MalwareContent&query-Id=2ab4791e-fdd4-42f9-ad3c-c54ef7a4d548\",\"FileData\":{\"DocumentId\":\"03254108-f682-417d-f3e6-08da605bf091\",\"FileName\":\"malware\",\"FilePath\":\"https://example.sharepoint.com/personal/people_example_org/Documents/malware\",\"FileSize\":\"12345\",\"FileVerdict\":1,\"MalwareFamily\":\"iPhoneOS/Vortex.C\",\"SHA256\":\"SnltYq0lbVwFlAIf+lQugPXaMcDNV9t9pN/Zkhx7hQ8=\"},\"LastModifiedBy\":\"people@example.org\",\"LastModifiedDate\":\"2022-01-01T13:00:53\",\"SourceWorkload\":1}\n",
-        "action": {
-            "id": 47,
-            "name": "AtpDetection",
-            "outcome": "success",
-            "target": "user"
-        },
         "event": {
             "action": "AtpDetection",
-            "code": "47",
             "kind": "event",
-            "outcome": "success",
-            "id": "00000000-0000-0000-0000-000000000000'",
+            "code": "47",
             "url": "https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=MalwareContent&query-Id=2ab4791e-fdd4-42f9-ad3c-c54ef7a4d548"
-        },
-        "office365": {
-            "defender": {
-                "detection": {
-                    "method": "AntiMalware"
-                }
-            },
-            "record_type": 47,
-            "user_type": {
-                "code": 4,
-                "name": "System"
-            }
-        },
-        "organization": {
-            "id": "7f7e5b97-b780-473c-9c76-9182a9d7f2b4"
-        },
-        "related": {
-            "user": [
-                "people@example.org"
-            ]
         },
         "service": {
             "name": "ThreatIntelligence"
         },
         "user": {
-            "email": "people@example.org",
-            "name": "people@example.org"
+            "name": "people@example.org",
+            "id": "ThreatIntel",
+            "email": "people@example.org"
+        },
+        "organization": {
+            "id": "7f7e5b97-b780-473c-9c76-9182a9d7f2b4"
+        },
+        "action": {
+            "id": 47,
+            "name": "AtpDetection",
+            "target": "user",
+            "outcome": "success"
+        },
+        "office365": {
+            "record_type": 47,
+            "user_type": {
+                "code": 4,
+                "name": "System"
+            },
+            "defender": {
+                "detection": {
+                    "method": "AntiMalware"
+                }
+            }
+        },
+        "related": {
+            "user": [
+                "people@example.org"
+            ]
         }
     }
     	
@@ -470,7 +510,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "ThreatIntelligence"
         },
         "user": {
-            "name": "ThreatIntel"
+            "name": "ThreatIntel",
+            "id": "ThreatIntel"
         },
         "organization": {
             "id": "8a457951-a594-4607-a5dc-dfc72338eb13"
@@ -604,19 +645,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "{\"CreationTime\":\"2022-07-07T10:10:52\",\"Id\":\"47bf7844-15bf-4cf2-91a3-15b32ceb89b5\",\"Operation\":\"TIUrlClickData\",\"OrganizationId\":\"0eaa2260-b241-410b-bcae-e38c8b68787f\",\"RecordType\":41,\"UserKey\":\"ThreatIntel\",\"UserType\":4,\"Version\":1,\"Workload\":\"ThreatIntelligence\",\"UserId\":\"human@example.org\",\"AppName\":\"Mail\",\"AppVersion\":\"0.0.0000\",\"EventDeepLink\":\"https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=Phish&query-Recipients=people@xample.org&query-NetworkMessageId=53b5da37-1893-4e78-a89f-a4d26b53184c\",\"SourceId\":\"8a8634d0-d803-4bc9-b221-2863bff6a001\",\"TimeOfClick\":\"2022-07-07T09:33:33\",\"Url\":\"https://malicious.domain.com\",\"UserIp\":\"1.2.3.4\"}\n",
+        "event": {
+            "action": "TIUrlClickData",
+            "kind": "event",
+            "code": "41",
+            "url": "https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=Phish&query-Recipients=people@xample.org&query-NetworkMessageId=53b5da37-1893-4e78-a89f-a4d26b53184c"
+        },
+        "service": {
+            "name": "ThreatIntelligence"
+        },
+        "user": {
+            "name": "human@example.org",
+            "id": "ThreatIntel",
+            "email": "human@example.org"
+        },
+        "organization": {
+            "id": "0eaa2260-b241-410b-bcae-e38c8b68787f"
+        },
         "action": {
             "id": 41,
             "name": "TIUrlClickData",
-            "outcome": "success",
-            "target": "user"
-        },
-        "event": {
-            "action": "TIUrlClickData",
-            "code": "41",
-            "kind": "event",
-            "outcome": "success",
-            "id": "00000000-0000-0000-0000-000000000000'",
-            "url": "https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=Phish&query-Recipients=people@xample.org&query-NetworkMessageId=53b5da37-1893-4e78-a89f-a4d26b53184c"
+            "target": "user",
+            "outcome": "success"
         },
         "office365": {
             "record_type": 41,
@@ -625,20 +675,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "System"
             }
         },
-        "organization": {
-            "id": "0eaa2260-b241-410b-bcae-e38c8b68787f"
-        },
         "related": {
             "user": [
                 "human@example.org"
             ]
-        },
-        "service": {
-            "name": "ThreatIntelligence"
-        },
-        "user": {
-            "email": "human@example.org",
-            "name": "human@example.org"
         }
     }
     	
@@ -650,12 +690,38 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
+        "message": "{\"CreationTime\":\"2022-04-05T19:51:35\",\"Id\":\"1324e3d2-f29c-5c15-9f44-1ca64e42250f\",\"Operation\":\"MessageCreatedHasLink\",\"OrganizationId\":\"34314e6e-4023-4e4b-a15e-143f63244e2b\",\"RecordType\":25,\"UserKey\":\"11dbae04-5d5d-4bc7-9766-16793ed91233\",\"UserType\":0,\"Version\":1,\"Workload\":\"MicrosoftTeams\",\"ClientIP\":\"::ffff:1.2.3.4\",\"UserId\":\"email@example.org\",\"ChatThreadId\":\"19:11dbae04-5d5d-4bc7-9766-16793ed91233_4fdb1e07-a7e9-475c-a5e2-8d042a6c8102@unq.gbl.spaces\",\"CommunicationType\":\"OneOnOne\",\"ExtraProperties\":[{\"Key\":\"TimeZone\",\"Value\":\"Europe/Paris\"},{\"Key\":\"OsName\",\"Value\":\"windows\"},{\"Key\":\"OsVersion\",\"Value\":\"10\"},{\"Key\":\"Country\",\"Value\":\"fr\"},{\"Key\":\"ClientName\",\"Value\":\"skypeteams\"},{\"Key\":\"ClientVersion\",\"Value\":\"27/1.0.0.2022031814\"},{\"Key\":\"ClientUtcOffsetSeconds\",\"Value\":\"7200\"}],\"MessageId\":\"1649188295480\",\"MessageVersion\":\"1649188295480\",\"ItemName\":\"19:11dbae04-5d5d-4bc7-9766-16793ed91233_4fdb1e07-a7e9-475c-a5e2-8d042a6c8102@unq.gbl.spaces\",\"MessageURLs\":[\"https://www.amazon.fr/s?i=merchant-items&amp;me=A1TLEYKQIC7812&amp;marketplaceID=A13V1IB3VIYZZH&amp;qid=1649187214&amp;ref=sr_pg_1\"],\"Members\": [{\"UPN\": \"admin@example.org\", \"Role\": 1}, {\"UPN\": \"user1@example.org\", \"Role\": 0}]}",
+        "event": {
+            "action": "MessageCreatedHasLink",
+            "kind": "event",
+            "code": "25",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "service": {
+            "name": "MicrosoftTeams"
+        },
+        "user": {
+            "name": "email@example.org",
+            "id": "11dbae04-5d5d-4bc7-9766-16793ed91233",
+            "email": "email@example.org"
         },
         "organization": {
             "id": "34314e6e-4023-4e4b-a15e-143f63244e2b"
+        },
+        "action": {
+            "id": 25,
+            "name": "MessageCreatedHasLink",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "office365": {
             "record_type": 25,
@@ -687,35 +753,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     ]
                 }
             }
-        },
-        "user": {
-            "email": "email@example.org",
-            "name": "email@example.org"
-        },
-        "service": {
-            "name": "MicrosoftTeams"
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        },
-        "event": {
-            "action": "MessageCreatedHasLink",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "info"
-            ],
-            "code": "25"
-        },
-        "action": {
-            "target": "network-traffic",
-            "id": 25,
-            "outcome": "success",
-            "name": "MessageCreatedHasLink"
         },
         "related": {
             "ip": [
@@ -752,6 +789,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com",
+            "id": "10030000A96EA230@acme.onmicrosoft.com",
             "email": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com"
         },
         "organization": {
@@ -806,6 +844,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com",
+            "id": "10030000A96EA230@acme.onmicrosoft.com",
             "email": "Sync_V-WATT_83d3b7098669@acme.onmicrosoft.com"
         },
         "organization": {
@@ -860,6 +899,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "user@domain.onmicrosoft.com",
+            "id": "10030000A96EA230@domain.onmicrosoft.com",
             "email": "user@domain.onmicrosoft.com"
         },
         "organization": {
@@ -914,6 +954,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "REDACTED@company.onmicrosoft.com",
+            "id": "10037FFEA0A22006@company.onmicrosoft.com",
             "email": "REDACTED@company.onmicrosoft.com"
         },
         "organization": {
@@ -937,14 +978,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "code": 0,
                 "name": "Regular"
             },
+            "audit": {
+                "object_id": "5f09333a-842c-47da-a157-57da27fcbca5"
+            },
             "auth": {
                 "user_authentication_method": 1,
                 "request_type": "OAuth2:Authorize",
                 "result_status_detail": "Redirect",
                 "keep_me_signed_in": true
-            },
-            "audit": {
-                "object_id": "5f09333a-842c-47da-a157-57da27fcbca5"
             }
         },
         "user_agent": {
@@ -985,6 +1026,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "user@mycompany.com",
+            "id": "785d81fb-82aa-4ff3-9cbc-e3280761f36a",
             "email": "user@mycompany.com"
         },
         "organization": {
@@ -1058,6 +1100,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`event.url` | `keyword` | Event investigation URL |
 |`file.directory` | `keyword` | Directory where the file is located. |
@@ -1112,6 +1155,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`url.full` | `wildcard` | Full unparsed URL. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user.email` | `keyword` | User email address. |
+|`user.id` | `keyword` | Unique identifier of the user. |
 |`user.name` | `keyword` | Short name or login of the user. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 

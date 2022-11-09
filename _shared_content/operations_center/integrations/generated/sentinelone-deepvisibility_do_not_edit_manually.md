@@ -225,82 +225,83 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"meta\": {\"seqId\": 35, \"uuid\": \"4d311e18709146cba8797a22e3c20762\", \"traceId\": \"BA1BE2835D6E4FF7B023C72DCE8B3829\", \"agentVersion\": \"S1-WIN/4.6.14.304\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"19042\", \"computerName\": \"LAPTOP-COM13\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"timestamp\": {\"millisecondsSinceEpoch\": \"1628516010404\"}, \"trueContext\": {\"key\": {\"value\": \"C20F3967ACBB2FE7\"}}, \"source\": {\"node\": {\"key\": {\"value\": \"87E0B0E05D9D6CC8\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"C8E88AA83F5B15B6\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"1628149542879\"}, \"path\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"2442584\", \"signature\": {\"signed\": {\"identity\": \"GOOGLE LLC\", \"valid\": {}}}, \"hashes\": {}, \"fileLocation\": \"Local\"}, \"commandLine\": \"\\\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\\\" --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=1692,16822032697640791725,9639588106693567222,131072 --lang=fr --service-sandbox-type=none --mojo-platform-channel-handle=2056 /prefetch:8\", \"fullPid\": {\"pid\": 13796, \"startTime\": {\"millisecondsSinceEpoch\": \"1628515734223\"}}, \"user\": {\"name\": \"CLIENT\\\\t.Naohisa\", \"sid\": \"S-1-5-21-1525252525-7987987987-1111111111-6174\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"BAE25D38782A6941\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"Google Chrome\", \"root\": \"E_FALSE\", \"subsystem\": \"SYS_WIN32\", \"sessionId\": 11, \"integrityLevel\": \"MEDIUM\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"C20F3967ACBB2FE7\"}}, \"counters\": {\"moduleLoad\": 90, \"fileCreation\": 45, \"fileDeletion\": 19, \"fileModification\": 101, \"netConnOut\": 31, \"dnsLookups\": 35}}, \"query\": \"lh5.googleusercontent.com\", \"results\": \"type:  5 googlehosted.l.googleusercontent.com;142.250.179.65;\", \"event_type\": \"dns\"}",
         "event": {
-            "start": "2021-08-09T13:33:30.404000Z",
-            "action": "dns"
+            "action": "dns",
+            "start": "2021-08-09T13:33:30.404000Z"
+        },
+        "agent": {
+            "version": "S1-WIN/4.6.14.304"
         },
         "deepvisibility": {
+            "agent": {
+                "managment_url": "https://euce1-110-nfr.sentinelone.net",
+                "seq_id": 35,
+                "trace_id": "BA1BE2835D6E4FF7B023C72DCE8B3829",
+                "uuid": "4d311e18709146cba8797a22e3c20762"
+            },
             "event": {
                 "type": "dns"
-            },
-            "true_context": {
-                "key": "C20F3967ACBB2FE7"
-            },
-            "agent": {
-                "seq_id": 35,
-                "uuid": "4d311e18709146cba8797a22e3c20762",
-                "trace_id": "BA1BE2835D6E4FF7B023C72DCE8B3829",
-                "managment_url": "https://euce1-110-nfr.sentinelone.net"
             },
             "host": {
                 "os": {
                     "revision": "19042"
                 }
             },
-            "dns": {
-                "answers": {
-                    "results": "type:  5 googlehosted.l.googleusercontent.com;142.250.179.65;"
-                }
+            "true_context": {
+                "key": "C20F3967ACBB2FE7"
             },
             "process": {
-                "family": "SYS_WIN32",
+                "counters": {
+                    "dns_lookups": 35,
+                    "file_creation": 45,
+                    "file_deletion": 19,
+                    "file_modification": 101,
+                    "module_load": 90,
+                    "net_conn_out": 31
+                },
+                "excluded": "E_FALSE",
                 "executable": {
+                    "is_dir": "E_FALSE",
                     "name": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
                     "node": {
                         "key": "C8E88AA83F5B15B6"
                     },
-                    "start": "2021-08-05T07:45:42.879000Z",
-                    "is_dir": "E_FALSE",
-                    "size_bytes": "2442584",
                     "signature": {
                         "signed": {
                             "identity": "GOOGLE LLC"
                         }
-                    }
+                    },
+                    "size_bytes": "2442584",
+                    "start": "2021-08-05T07:45:42.879000Z"
+                },
+                "family": "SYS_WIN32",
+                "integrity_level": "MEDIUM",
+                "interactive": "E_FALSE",
+                "is_redirected_command_processor": "E_FALSE",
+                "is_wow64": "E_FALSE",
+                "node": {
+                    "key": "87E0B0E05D9D6CC8"
                 },
                 "parent": {
                     "node": {
                         "key": "BAE25D38782A6941"
                     }
                 },
-                "counters": {
-                    "module_load": 90,
-                    "file_creation": 45,
-                    "file_deletion": 19,
-                    "file_modification": 101,
-                    "net_conn_out": 31,
-                    "dns_lookups": 35
-                },
-                "user": {
-                    "sid": "S-1-5-21-1525252525-7987987987-1111111111-6174"
-                },
-                "interactive": "E_FALSE",
-                "excluded": "E_FALSE",
                 "root": "E_FALSE",
                 "session_id": 11,
-                "integrity_level": "MEDIUM",
-                "is_wow64": "E_FALSE",
-                "is_redirected_command_processor": "E_FALSE",
                 "true_context": {
                     "key": "C20F3967ACBB2FE7"
                 },
-                "node": {
-                    "key": "87E0B0E05D9D6CC8"
+                "user": {
+                    "sid": "S-1-5-21-1525252525-7987987987-1111111111-6174"
+                }
+            },
+            "dns": {
+                "answers": {
+                    "results": "type:  5 googlehosted.l.googleusercontent.com;142.250.179.65;"
                 }
             }
-        },
-        "agent": {
-            "version": "S1-WIN/4.6.14.304"
         },
         "host": {
             "name": "LAPTOP-COM13",
@@ -311,30 +312,30 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "laptop"
         },
         "process": {
-            "title": "Google Chrome",
-            "name": "chrome.exe",
-            "working_directory": "C:\\Program Files\\Google\\Chrome\\Application",
             "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=1692,16822032697640791725,9639588106693567222,131072 --lang=fr --service-sandbox-type=none --mojo-platform-channel-handle=2056 /prefetch:8",
+            "title": "Google Chrome",
+            "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
             "pid": 13796,
+            "working_directory": "C:\\Program Files\\Google\\Chrome\\Application",
             "start": "2021-08-09T13:28:54.223000Z",
-            "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+            "name": "chrome.exe"
+        },
+        "user": {
+            "name": "CLIENT\\t.Naohisa",
+            "id": "S-1-5-21-1525252525-7987987987-1111111111-6174"
         },
         "dns": {
             "question": {
-                "name": "lh5.googleusercontent.com"
+                "name": "lh5.googleusercontent.com",
+                "top_level_domain": "com",
+                "subdomain": "lh5",
+                "registered_domain": "googleusercontent.com"
             }
-        },
-        "ecs": {
-            "version": "1.10.0"
         },
         "related": {
             "user": [
                 "CLIENT\\t.Naohisa"
             ]
-        },
-        "user": {
-            "name": "CLIENT\\t.Naohisa",
-            "id": "S-1-5-21-1525252525-7987987987-1111111111-6174"
         }
     }
     	
