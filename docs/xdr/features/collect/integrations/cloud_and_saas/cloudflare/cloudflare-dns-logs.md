@@ -8,6 +8,8 @@ Cloudflare is a global network designed to make everything you connect to the In
 
 In this documentation, you will learn how to collect and send Cloudflare DNS logs to SEKOIA.IO.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_bd9d0f51-114e-499a-bb7a-4f2d0a518b04_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/cloudflare-dns-logs_do_not_edit_manually.md!}
 
 ## Configuration
