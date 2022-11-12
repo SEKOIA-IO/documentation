@@ -8,6 +8,8 @@ Cloudflare is a global network designed to make everything you connect to the In
 
 In this documentation, you will learn how to collect and send Cloudflare HTTP requests to SEKOIA.IO.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_0ba58f32-7dba-4084-ab17-90c0be6b1f10_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/cloudflare-http-requests_do_not_edit_manually.md!}
 
 ## Configure
