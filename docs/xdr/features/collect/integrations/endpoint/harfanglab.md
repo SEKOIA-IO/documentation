@@ -15,7 +15,7 @@ This setup guide shows how to forward events produced by HarfangLab EDR to SEKOI
 
 ### On SEKOIA.IO
 
-Please select ***manually*** to create the intake key to be used when setting up on **Harfang Lab** 
+To create the intake key to be used when setting up HarfangLab, please select `manual` mode. 
 
 ### On Harfang Lab
 
