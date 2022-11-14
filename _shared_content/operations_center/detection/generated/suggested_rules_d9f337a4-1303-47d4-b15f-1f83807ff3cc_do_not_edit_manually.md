@@ -57,6 +57,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Imperva WAF** with the follo
     
     - **Effort:** advanced
 
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
     
     Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902

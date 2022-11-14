@@ -27,6 +27,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** elementary
 
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
     Detects the exploitation of SonicWall Unauthenticated Admin Access.
@@ -204,6 +210,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
+    
+    - **Effort:** elementary
+
+??? abstract "Process Memory Dump Using Comsvcs"
+    
+    Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
 

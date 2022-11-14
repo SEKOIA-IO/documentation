@@ -129,6 +129,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Google Kubernetes Engine (GK
     
     - **Effort:** elementary
 
+??? abstract "Process Memory Dump Using Comsvcs"
+    
+    Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
+
 ??? abstract "Qakbot Persistence Using Schtasks"
     
     Detects possible Qakbot persistence using schtasks.

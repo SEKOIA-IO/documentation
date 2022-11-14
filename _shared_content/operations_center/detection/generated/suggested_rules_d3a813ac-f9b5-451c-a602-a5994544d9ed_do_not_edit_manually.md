@@ -75,6 +75,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the fo
     
     - **Effort:** intermediate
 
+??? abstract "AWS IAM Failed User Creation"
+    
+    Detects an attemp to create a user account where the result is an explicit denied.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS IAM Password Policy Updated"
     
     Detects an update to the password policy. This could be an attempt to lower accounts security level.

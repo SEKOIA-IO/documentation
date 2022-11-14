@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** advanced
 
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
     Detects the exploitation of SonicWall Unauthenticated Admin Access.

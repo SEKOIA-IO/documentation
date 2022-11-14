@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x AuditBeat on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x AuditBeat Linux on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.json){ .md-button }
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
@@ -120,6 +120,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat** with the followi
 ??? abstract "Phorpiex DriveMgr Command"
     
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
+    
+    - **Effort:** elementary
+
+??? abstract "Process Memory Dump Using Comsvcs"
+    
+    Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
 

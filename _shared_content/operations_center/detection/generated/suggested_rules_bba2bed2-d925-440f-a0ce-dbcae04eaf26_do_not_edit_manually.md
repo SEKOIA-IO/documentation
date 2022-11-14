@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **GateWatcher AIONIQ** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Gatewatcher AionIQ** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x GateWatcher AIONIQ on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_bba2bed2-d925-440f-a0ce-dbcae04eaf26_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Gatewatcher AionIQ on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_bba2bed2-d925-440f-a0ce-dbcae04eaf26_do_not_edit_manually.json){ .md-button }
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
