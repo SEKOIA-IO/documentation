@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Symantec Endpoint Protection** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint Security** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Symantec Endpoint Protection on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_419bd705-fa61-496c-94fa-28d6c1f2e2a8_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Broadcom/Symantec Endpoint Security on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_419bd705-fa61-496c-94fa-28d6c1f2e2a8_do_not_edit_manually.json){ .md-button }
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling

@@ -27,6 +27,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft Defender for Endpo
     
     - **Effort:** elementary
 
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
     Detects the exploitation of SonicWall Unauthenticated Admin Access.
@@ -222,6 +228,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft Defender for Endpo
 ??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
+    
+    - **Effort:** elementary
+
+??? abstract "Process Memory Dump Using Comsvcs"
+    
+    Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
 

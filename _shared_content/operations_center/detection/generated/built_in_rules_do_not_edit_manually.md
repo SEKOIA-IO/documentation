@@ -1,4 +1,4 @@
-Rules catalog includes **595 built-in detection rules** (_last update on 2022-11-09_).
+Rules catalog includes **596 built-in detection rules** (_last update on 2022-11-14_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -392,11 +392,11 @@ Rules catalog includes **595 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** advanced
 
-??? abstract "CVE-2020-17530 Apach Struts RCE"
+??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530)
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
     
@@ -421,6 +421,12 @@ Rules catalog includes **595 built-in detection rules** (_last update on 2022-11
     The vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
     
     - **Effort:** intermediate
+
+??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
+    
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
+    
+    - **Effort:** advanced
 
 ??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
     
@@ -469,12 +475,6 @@ Rules catalog includes **595 built-in detection rules** (_last update on 2022-11
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
     
     - **Effort:** master
-
-??? abstract "Fortinet FortiWeb OS Command Injection"
-    
-    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
-    
-    - **Effort:** advanced
 
 ??? abstract "GitLab CVE-2021-22205"
     
@@ -2445,6 +2445,12 @@ Rules catalog includes **595 built-in detection rules** (_last update on 2022-11
     - **Effort:** intermediate
 
 **Account Manipulation**
+
+??? abstract "AWS IAM Failed User Creation"
+    
+    Detects an attemp to create a user account where the result is an explicit denied.
+    
+    - **Effort:** intermediate
 
 ??? abstract "AWS IAM Password Policy Updated"
     
@@ -5129,6 +5135,12 @@ Rules catalog includes **595 built-in detection rules** (_last update on 2022-11
 ??? abstract "AWS ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS IAM Failed User Creation"
+    
+    Detects an attemp to create a user account where the result is an explicit denied.
     
     - **Effort:** intermediate
 
