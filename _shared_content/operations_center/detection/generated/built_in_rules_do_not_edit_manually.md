@@ -1,4 +1,4 @@
-Rules catalog includes **596 built-in detection rules** (_last update on 2022-11-14_).
+Rules catalog includes **597 built-in detection rules** (_last update on 2022-11-15_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2469,6 +2469,12 @@ Rules catalog includes **596 built-in detection rules** (_last update on 2022-11
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
     
     - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+    
+    Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
+    
+    - **Effort:** elementary
 
 ??? abstract "Active Directory Delegate To KRBTGT Service"
     
@@ -5161,6 +5167,12 @@ Rules catalog includes **596 built-in detection rules** (_last update on 2022-11
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
     
     - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+    
+    Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
+    
+    - **Effort:** elementary
 
 **Network Boundary Bridging**
 
