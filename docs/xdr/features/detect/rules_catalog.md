@@ -120,7 +120,7 @@ Rules are automatically enabled based on the configured effort level, or you can
 **Manually:**
 To ensure the rules enable are complient with your security policy, you can choose wich rules you want to enable. 
 For an MSSP Community, you can easily enable in multiple managed communities your custom rules or verified rules. 
-
+![security_profile](/assets/operation_center/rules_catalog/enable_multi_communities.png){: style="max-width:100%"}
 
 
 
