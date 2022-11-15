@@ -27,10 +27,10 @@ The Rules Catalog page can be used to list and manage all detection rules. Many 
 
 #### Available and verified rules
 The Rules Catalog lists all detection rules available to your organization: 
-<figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ width=300 }</figure>.
+<figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ width=300 }</figure>. 
 
 - **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
-- **Custom Rules**: rules created by your team that are specific to your organization.
+- **Your Rules**: rules created by your team that are specific to your organization.
 
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the `Verified counter` to list only Verified rules.
 
@@ -109,19 +109,20 @@ You can click on the name of a rule to display additional details, such as, but 
 
 ![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
 
-### Limiting the scope of a rule
+### Enable new rules
+**Automatically:**
+New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the `configure` icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
 
-When the Rule Details panel is open, you can click on the `Configure` icon at the top right to edit the rule's configuration. 
+![auto-enable](/assets/operation_center/rules_catalog/enable_rules.png){: style="max-width:100%"}
 
-If the rule is Custom, you will be able to edit every aspect of it. Otherwise, you will only be able to limit its applicable scope with the following filters:
+Rules are automatically enabled based on the configured effort level, or you can decide to never automatically enable rules.
 
-- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../../investigate/alerts/#create-an-alert-filter).
-- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
-- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets
+**Manually:**
+To ensure the rules enable are complient with your security policy, you can choose wich rules you want to enable. 
+For an MSSP Community, you can easily enable in multiple managed communities your custom rules or verified rules. 
 
-![limit-scope](/assets/operation_center/rules_catalog/rules_catalog_filters.png)
 
-When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
+
 
 ----
 
@@ -134,6 +135,7 @@ The Rule creation form has the following sections:
 - **General definition of the rule:**
   The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
   Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
+  For an MSSP community, you can select the community you want to create your rule in. Two options are available multi-communities or select a specific community. If you choose multi-communities, your rule will be available for all your communities and you can active it later on the community desired.
 
 - **Detection Pattern:**
   This is the detection logic itself. It varies according to the selected rule type.
@@ -141,21 +143,37 @@ The Rule creation form has the following sections:
 - **Security alerts:**
   In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
 
-- **Entities & Assets:**
-  As discussed in the [limiting the scope](#limiting-the-scope-of-a-rule) section, you can select specific entities or assets this rule should apply to.
 
 ![custom_rule](/assets/operation_center/rules_catalog/create_new_rule.png)
   
 !!! note 
     You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
+    
 
-### Automatically enable new rules
+### Edit your custom rules
+When the Rule Details panel is open, you can click on the `Configure` icon at the top right to edit the rule's configuration. 
+For Custom rule, you will be able to edit its main definition: 
+- General definition of the rule
+- Detection Pattern
+- Security alerts
 
-New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the `configure` icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
+For an MSSP communty, when you edit this part and your rule is multi-communities, changes will be share with all your managed communities.
 
-![auto-enable](/assets/operation_center/rules_catalog/enable_rules.png){: style="max-width:100%"}
 
-Rules are automatically enabled based on the configured effort level, or you can decide to never automatically enable rules.
+
+### Limiting the scope of a rule
+
+For all types of rules, You will be able to limit its applicable scope with the following filters. For an MSSP community, these filters will be applied only on the community selected:
+
+- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../../investigate/alerts/#create-an-alert-filter).
+- **Entities**: select the entities this rule should apply to. By default, rules apply to all entities.
+- **Assets**: select the assets this rule should apply to. By default, rules apply to all assets
+
+![limit-scope](/assets/operation_center/rules_catalog/rules_catalog_filters.png)
+
+When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
+
+
 
 ### Notify on new rules
 
