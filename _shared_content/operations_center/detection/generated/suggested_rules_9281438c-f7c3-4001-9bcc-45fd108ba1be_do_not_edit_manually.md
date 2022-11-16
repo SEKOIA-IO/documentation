@@ -1257,6 +1257,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Execution Via Rundll32"
     
     Detects PowerShell Strings applied to rundll as seen in PowerShdll.dll Rule modified
@@ -1538,6 +1544,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects non-system users performing privileged operation on the SCM database
     
     - **Effort:** master
+
+??? abstract "SOCKS Tunneling Tool"
+    
+    Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "STRRAT Scheduled Task"
     
@@ -2192,6 +2204,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
+
+??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Defender Signatures Removed With MpCmdRun"
     
