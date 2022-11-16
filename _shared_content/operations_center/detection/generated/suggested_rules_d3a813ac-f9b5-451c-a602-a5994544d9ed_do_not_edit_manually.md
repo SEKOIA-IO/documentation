@@ -123,6 +123,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the fo
     
     - **Effort:** elementary
 
+??? abstract "AWS Route 53 Domain Transfer Attempt"
+    
+    Detects when a request in success or failure is made to transfer a domain name to an other AWS account
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
     
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
