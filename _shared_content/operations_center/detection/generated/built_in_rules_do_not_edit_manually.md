@@ -1,4 +1,4 @@
-Rules catalog includes **600 built-in detection rules** (_last update on 2022-11-16_).
+Rules catalog includes **602 built-in detection rules** (_last update on 2022-11-16_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1333,6 +1333,12 @@ Rules catalog includes **600 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Windows Script Execution"
     
     Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
@@ -2479,6 +2485,12 @@ Rules catalog includes **600 built-in detection rules** (_last update on 2022-11
 ??? abstract "AWS Root ConsoleLogin"
     
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Attempt"
+    
+    Detects when a request in success or failure is made to transfer a domain name to an other AWS account
     
     - **Effort:** intermediate
 
@@ -4408,6 +4420,12 @@ Rules catalog includes **600 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
     
     Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
@@ -5024,6 +5042,12 @@ Rules catalog includes **600 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
@@ -5195,6 +5219,12 @@ Rules catalog includes **600 built-in detection rules** (_last update on 2022-11
 ??? abstract "AWS Root ConsoleLogin"
     
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Attempt"
+    
+    Detects when a request in success or failure is made to transfer a domain name to an other AWS account
     
     - **Effort:** intermediate
 

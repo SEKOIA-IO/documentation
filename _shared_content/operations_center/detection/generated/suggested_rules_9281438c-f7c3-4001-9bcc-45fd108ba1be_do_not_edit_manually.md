@@ -1923,6 +1923,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Windows Installer Execution"
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
