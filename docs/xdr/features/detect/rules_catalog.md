@@ -158,7 +158,7 @@ For Custom rule, you will be able to edit its main definition:
 - Detection Pattern
 - Security alerts
 
-For an MSSP communty, when you edit this part and your rule is multi-communities, changes will be share with all your managed communities.
+For an MSSP communty, when you edit this part and your rule is multi-communities, changes will be shared with all your managed communities.
 
 
 
