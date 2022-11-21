@@ -154,6 +154,7 @@ The Rule creation form has the following sections:
 ### Edit your custom rules
 When the Rule Details panel is open, you can click on the `Configure` icon at the top right to edit the rule's configuration. 
 For Custom rule, you will be able to edit its main definition: 
+
 - General definition of the rule
 - Detection Pattern
 - Security alerts
