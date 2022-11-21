@@ -120,7 +120,7 @@ Rules are automatically enabled based on the configured effort level, or you can
 **Manually:**
 To ensure that activated rules comply with your security policy, you can choose which rules you want to enable. 
 For an MSSP Community, you can easily enable in multiple managed communities your custom rules or verified rules. 
-![Enable rules for MSSP community](/assets/operation_center/rules_catalog/enable_multi_communities.png){: style="max-width:50%"}
+![Enable rules for MSSP community](/assets/operation_center/rules_catalog/enable_multi_communities.png){: style="max-width:30%"}
 
 
 
@@ -136,6 +136,7 @@ The Rule creation form has the following sections:
   The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
   Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
   For an MSSP community, you can select the community you want to create your rule in. Two options are available multi-communities or select a specific community. If you choose multi-communities, your rule will be available for all your communities and you can active it later on the community desired.
+  ![auto-enable](assets/operation_center/rules_catalog/create_new_rule_mssp_communities.png){: style="max-width:30%"}
 
 - **Detection Pattern:**
   This is the detection logic itself. It varies according to the selected rule type.
