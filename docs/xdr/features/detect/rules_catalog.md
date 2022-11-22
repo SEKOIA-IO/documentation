@@ -110,7 +110,8 @@ You can click on the name of a rule to display additional details, such as, but 
 ![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
 
 ### Enable new rules
-**Automatically:**
+#### Automatically
+
 New verified rules are created regularly. You may not want to look at the rules catalog daily to decide if you want to enable them or not. By clicking on the `configure` icon at the top right of the Rules Catalog page, you can configure which rules should be automatically enabled for your organization.
 
 ![auto-enable](/assets/operation_center/rules_catalog/enable_rules.png){: style="max-width:100%"}
