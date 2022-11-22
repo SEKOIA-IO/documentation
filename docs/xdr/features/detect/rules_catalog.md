@@ -134,7 +134,7 @@ In addition to the verified rules that are already built-in, you can create your
 
 The Rule creation form has the following sections:
 
-- **General definition of the rule:**
+#### General definition of the rule 
   The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
   Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
   For an MSSP community, first select the community you want to create your rule in. Two options are available: select multiple communities or select a specific community. If you choose multi-communities, your rule will be available for all your communities and you can active it later on the community desired.
