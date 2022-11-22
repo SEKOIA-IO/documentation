@@ -43,10 +43,10 @@ To create an intake, you have to:
 ## Configure a notification to report on inactive intake
 You can be notify when an intake stops sending events to SEKOIA.IO. 
 To set up your notification, you will have to: 
-1. Go on Intakes pages and click on ![intakes_creation](assets/operation_center/intakes/Monitor_intake_logo.png){: style="max-width:70%"}
+1. Go on Intakes pages and click on: ![Notification logo](assets/operation_center/intakes/Monitor_intake_logo.png){: style="max-width:70%"}
 2. Specify how long the intake should be inactive before sending a notification.
 3. Choose how you want to be notified. Triggers action available are mentioned is this page [Turn on notifications](notifications.md). You can also set up your notification from the user center>notification.
-![intakes_creation](operation_center/intakes/Monitor_intake_create_notification.png){: style="max-width:70%"}
+![Create notification](operation_center/intakes/Monitor_intake_create_notification.png){: style="max-width:70%"}
 
 ## Custom intakes
 
