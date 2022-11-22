@@ -140,7 +140,8 @@ The Rule creation form has the following sections:
   For an MSSP community, first select the community you want to create your rule in. Two options are available: select multiple communities or select a specific community. If you choose multi-communities, your rule will be available for all your communities and you can active it later on the community desired.
   ![Create rules for MSSP community](/assets/operation_center/rules_catalog/create_new_rule_mssp_communities.png){: style="max-width:60%"}
 
-- **Detection Pattern:**
+#### Detection Pattern
+
   This is the detection logic itself. It varies according to the selected rule type.
 
 #### Security alerts
