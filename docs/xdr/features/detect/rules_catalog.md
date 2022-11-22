@@ -143,7 +143,7 @@ The Rule creation form has the following sections:
 - **Detection Pattern:**
   This is the detection logic itself. It varies according to the selected rule type.
 
-- **Security alerts:**
+#### Security alerts
   In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
 
 
