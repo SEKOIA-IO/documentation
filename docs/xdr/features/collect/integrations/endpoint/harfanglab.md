@@ -13,35 +13,46 @@ This setup guide shows how to forward events produced by HarfangLab EDR to SEKOI
 
 ## Configure
 
-**Pre-requisite**
-Harfang must setup openssl to the server (then Protocol `TCP/SSL` will be available)
+### Pre-requisite
 
-**Steps**
-Go to `Personal Settings` > `API Key` and get your token or generate a new one.
+HarfangLab must setup OpenSSL to the server for protocol `TCP/SSL` to be available.
 
-Then you need to navigate to `Administration` > `Configuration`, and switch to the `Connectors` tab.
+### Steps
 
-In the `Syslog connector` panel, select the logs you want to export:
+#### In SEKOIA.IO
 
-* Process
-* Network
-* Event log
-* Remote thread
-* InjectedThread
-* Security Event
+Create a new HarfangLab intake on SEKOIA.IO and select the manual mode.
+![Create HarfangLab Intake Key](/assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab_createintake.png){: style="max-width:60%"}
 
-Configure the syslog information with the following details:
 
-* Host: `intake.sekoia.io`
-* Port: `10514`
-* App name: name of your choice
-* Source host: name of your choice
-* Structured data: `[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"]`
-* Protocol: `TCP/SSL`
-* RFC : `RFC5424`
+#### In HarfangLab
 
-In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable with your intake key generated in SEKOIA.IO.
+1. Go to `Personal Settings` > `API Key` and get your token or generate a new one.
 
-Finaly select the `Protocol` option: `TCP/SSL`, leave the other options to default.
+2. Navigate to `Administration` > `Configuration`, and switch to the `Connectors` tab.
+
+3. In the `Syslog connector` panel, select the logs you want to export:
+
+    * Process
+    * Network
+    * Event log
+    * Remote thread
+    * InjectedThread
+    * Security Event
+
+4. Configure the Syslog information with the following details and by replacing `YOUR_INTAKE_KEY` with the Intake key previously generated in SEKOIA.IO:
+
+    * Host: `intake.sekoia.io`
+    * Port: `10514`
+    * App name: name of your choice - **NO SPACES**
+    * Source host: name of your choice **NO SPACES**
+    * Structured data: `[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"]`
+    * Protocol: `TCP/SSL`
+    * RFC : `RFC5424`
+
+    !!! WARNING
+        Don't insert spaces in `App name` or `Source host`. These fields are part of the Syslog header and spaces will break the format.
+
+5. Finally select the `Protocol` option: `TCP/SSL`, leave the other options to default.
 
 ![HarfangLab EDR](/assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab_edr.png){: style="max-width:60%"}
