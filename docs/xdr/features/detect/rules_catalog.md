@@ -138,7 +138,7 @@ The Rule creation form has the following sections:
   The rule name is mandatory during the creation, it will be used to name the corresponding raised alerts by default. You can add an optional description below.
   Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
   For an MSSP community, first select the community you want to create your rule in. Two options are available: select multiple communities or select a specific community. If you choose multi-communities, your rule will be available for all your communities and you can active it later on the community desired.
-  ![Create rules for MSSP community](/assets/operation_center/rules_catalog/create_new_rule_mssp_communities.png){: style="max-width:30%"}
+  ![Create rules for MSSP community](/assets/operation_center/rules_catalog/create_new_rule_mssp_communities.png){: style="max-width:70%"}
 
 - **Detection Pattern:**
   This is the detection logic itself. It varies according to the selected rule type.
