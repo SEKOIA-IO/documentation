@@ -176,7 +176,7 @@ To add an event to a case:
 1. Click on the `Add to Case` icon on the left of the event line.
 2. Select the target case or create a new one.
 
-![add-event-to-case](/assets/operation_center/add-event-to-case-events.png){: style="max-width:100%"}
+![add-event-to-case](/assets/operation_center/add-event-to-case-events.png){: style="max-width:70%"}
 
 ![active-case](/assets/operation_center/cases-in-event.png){ align=right }
 
