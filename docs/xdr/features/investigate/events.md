@@ -171,16 +171,16 @@ This table explains the main actions that can be done for each of these fields:
 
 When searching through your event logs, you will often find events valuable to your current investigation. You can add these events to a case to keep track of them and use them as potential pivots.
 
+![add-event-to-case](/assets/operation_center/add-event-to-case-events.png){ align=right }
+
 To add an event to a case:
 
 1. Click on the `Add to Case` icon on the left of the event line.
 2. Select the target case or create a new one.
 
-FIXME Screenshot ?
+![active-case](/assets/operation_center/case-in-event.png){ align=right }
 
 After adding an event to a case, you will notice that the selected case becomes active and appears at the top of the events table. Step 2 is no longer necessary: you can now add (or remove) an event to a case with a single click.
-
-FIXME Screenshot
 
 To deselect the active case, click on the `X` next to its name.
 

@@ -67,13 +67,11 @@ To add alerts to a case, you can either:
 
 The Tasks tab allows you to manage tasks and subtasks associated with the case.
 
-![tasks](FIXME){: style="max-width:100%"}
-
 ### Events
 
 The Events tab lists the events that are associated with the case in a display similar to the [Events page](events.md).
 
-![events](FIXME){: style="max-width:100%"}
+![events](/assets/operation_center/events-in-case.png){: style="max-width:100%"}
 
 Events associated with the case are:
 
@@ -112,7 +110,7 @@ A side panel opens with the search results, allowing you to investigate a case w
 
 The Graph Investigation Tab is presenting the analyst with a graphical visualization of the Case.
 
-![graph](FIXME){: style="max-width:100%"}
+![graph](/assets/operation_center/graph-in-case.png){: style="max-width:100%"}
 
 The following items appear on the graph:
 
