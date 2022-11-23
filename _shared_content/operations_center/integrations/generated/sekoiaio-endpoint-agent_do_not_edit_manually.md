@@ -183,6 +183,52 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "endpoint_stats_event_list.json"
+
+    ```json
+	
+    {
+        "message": "{\"@timestamp\": \"2022-06-02T12:18:37.6722336Z\", \"agent\": {\"id\": \"c7a2ee33b4ac7c46c28c597d69f4d9ad327ead3601af4375d68bc250eb62e857\", \"version\": \"0.1.0\"}, \"event\": {\"action\": \"stats\", \"category\": \"host\", \"kind\": \"metric\", \"type\": [\"info\"]}, \"host\": {\"hostname\": \"test-PC\", \"uptime\": 17899}, \"sekoiaio\": {\"agent\": {\"cpu_usage\": 0.26030037, \"memory_usage\": 0.14199863}, \"host\": {\"cpu_usage\": 12.285156, \"memory_total\": 16961064960, \"memory_available\": 8049606656, \"memory_usage\": 52}}}",
+        "event": {
+            "action": "stats",
+            "category": "host",
+            "kind": "metric",
+            "type": [
+                "info"
+            ]
+        },
+        "sekoiaio": {
+            "agent": {
+                "cpu_usage": 0.26030037,
+                "memory_usage": 0.14199863
+            },
+            "host": {
+                "cpu_usage": 12.285156,
+                "memory_total": 16961064960,
+                "memory_available": 8049606656,
+                "memory_usage": 52
+            }
+        },
+        "@timestamp": "2022-06-02T12:18:37.6722336Z",
+        "agent": {
+            "id": "c7a2ee33b4ac7c46c28c597d69f4d9ad327ead3601af4375d68bc250eb62e857",
+            "version": "0.1.0"
+        },
+        "host": {
+            "hostname": "test-PC",
+            "uptime": 17899,
+            "name": "test-PC"
+        },
+        "related": {
+            "hosts": [
+                "test-PC"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "remote_thread.json"
 
     ```json
