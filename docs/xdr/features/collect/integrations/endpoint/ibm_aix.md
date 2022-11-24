@@ -22,7 +22,7 @@ Log on your NIOS appliance and follow [this guide](https://www.ibm.com/docs/en/d
 
 ## Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format IBM AIX .
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format IBM AIX.
 
 
 ## Transport to SEKOIA.IO
