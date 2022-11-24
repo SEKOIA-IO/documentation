@@ -25,6 +25,6 @@ Follow [this guide](https://www.ibm.com/docs/en/dsm?topic=aado-configuring-aix-a
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format IBM AIX.
 
 
-## Transport to SEKOIA.IO
+## Send logs to SEKOIA.IO
 
 Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
