@@ -18,7 +18,7 @@ An internal log concentrator (Rsyslog) is required to collect and forward events
 
 ### Enable Syslog forwarding
 
-Log on your NIOS appliance and follow [this guide](https://www.ibm.com/docs/en/dsm?topic=aado-configuring-aix-audit-dsm-send-syslog-events-qradar) to enable syslog forwarding
+Follow [this guide](https://www.ibm.com/docs/en/dsm?topic=aado-configuring-aix-audit-dsm-send-syslog-events-qradar) to enable syslog forwarding for audit events
 
 ## Create the intake
 
