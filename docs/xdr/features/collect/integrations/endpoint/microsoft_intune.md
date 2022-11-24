@@ -22,7 +22,7 @@ Create a new policy with the option `Listen` then copy the `Connection string-pr
 Create a [Storage accounts](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) or use an existing one. Go to `Data storage > containers` and create a new container.
 Then go to `Security + networking > Access keys` and copy the key1 `Connection string`
 
-Configure Azure Front door to stream its logs to the EventHub with [this guide](https://docs.microsoft.com/en-us/azure/frontdoor/standard-premium/how-to-logs#configure-logs).
+Configure Microsoft Intune door to stream its logs to the EventHub with [this guide](https://learn.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor).
 
 ## Create the intake
 
