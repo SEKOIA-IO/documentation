@@ -80,9 +80,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "a262506e-3c9e-4afe-9233-f2335167ea86;windows;MR11111;example.org"
         },
         "file": {
-            "path": "C:\\WINDOWS\\System32\\InstallServiceTasks.dll",
-            "name": "InstallServiceTasks.dll",
-            "directory": "C:\\WINDOWS\\System32",
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
             }
@@ -181,9 +178,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "EXAMPLE-NT"
         },
         "file": {
-            "path": "C:\\Windows\\System32\\cmd.exe",
-            "name": "cmd.exe",
-            "directory": "C:\\Windows\\System32",
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
             }
@@ -493,9 +487,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "EXAMPLE-NT"
         },
         "file": {
-            "path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\106.0.1370.52\\identity_helper.exe",
-            "name": "identity_helper.exe",
-            "directory": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\106.0.1370.52",
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
             }
@@ -610,9 +601,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "EXAMPLE-NT"
         },
         "file": {
-            "path": "C:\\Program Files\\Vendor\\Product\\program.exe",
-            "name": "program.exe",
-            "directory": "C:\\Program Files\\Vendor\\Product",
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
             }
