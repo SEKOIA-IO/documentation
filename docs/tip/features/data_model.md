@@ -9,7 +9,7 @@ STIX uses JSON objects with pre-defined schemas to represent Cyber Threat Intell
 
 The Intelligence Center supports the following STIX Domain Objects:
 
-![objects-types](/assets/intelligence_center/data-model-objects.png)
+![objects-types](/assets/intelligence_center/data-model-objects.png){: style="max-width:100%"}
 
 ## Observables
 
@@ -22,7 +22,7 @@ Observables are automatically extracted from various sources : public, subscript
 
 The Intelligence Center supports the following observables: 
 
-![observables-types](/assets/intelligence_center/data-model-observables.png)
+![observables-types](/assets/intelligence_center/data-model-observables.png){: style="max-width:100%"}
 
 ### What is the difference between an indicator and an observable? 
 To understand the difference between an indicator (an object type) and an observable, we have to dig deeper into the definition of each one of these. 
