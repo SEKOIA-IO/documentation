@@ -17,7 +17,7 @@ In details, the following table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `malware`, `network`, `process` |
+| Category | `intrusion_detection`, `malware`, `network`, `process` |
 | Type | `` |
 
 
@@ -126,6 +126,63 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_control_ready.json"
+
+    ```json
+	
+    {
+        "message": "INT23456,1.2.3.4,Continue,Le contr\u00f4le des applications et des p\u00e9riph\u00e9riques est pr\u00eat.,Syst\u00e8me,Begin: 2022-10-19 06:45:39,End Time: 2022-10-19 06:45:39,Rule: R\u00e8gle int\u00e9gr\u00e9e,0,SysPlant,0,SysPlant,Aucun(e),User Name: Aucun(e),Domain Name: DOMAIN,Action Type: ,File size (bytes): 0,Device ID: ",
+        "event": {
+            "kind": "event",
+            "category": [
+                "process"
+            ],
+            "action": "Continue",
+            "start": "2022-10-19T06:45:39.000000Z",
+            "reason": "Le contr\u00f4le des applications et des p\u00e9riph\u00e9riques est pr\u00eat.",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hostname": "INT23456",
+            "name": "INT23456"
+        },
+        "file": {
+            "size": 0
+        },
+        "process": {
+            "pid": 0,
+            "executable": "SysPlant",
+            "name": "SysPlant"
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "server": {
+                    "domain": "DOMAIN"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hosts": [
+                "INT23456"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "test_liveupdate.json"
 
     ```json
@@ -160,6 +217,136 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "related": {
+            "hosts": [
+                "INT23456"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_liveupdate_failed.json"
+
+    ```json
+	
+    {
+        "message": "INT23456,Category: 2,LiveUpdate Manager,\"Event Description: L\u2019installation d\u2019une mise \u00e0 jour de Virus and Spyware Definitions SDS Win64 (Reduced) a \u00e9chou\u00e9. Erreur : Echec de la correction de contenu (0xE0010005), DuResult: Succ\u00e8s (0).\",Event time: 2022-10-19 07:32:25,Group Name: MyDomain\\Servers",
+        "event": {
+            "kind": "event",
+            "category": [
+                "malware"
+            ],
+            "reason": "L\u2019installation d\u2019une mise \u00e0 jour de Virus and Spyware Definitions SDS Win64 (Reduced) a \u00e9chou\u00e9. Erreur : Echec de la correction de contenu (0xE0010005), DuResult: Succ\u00e8s (0).",
+            "start": "2022-10-19T07:32:25.000000Z",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "hostname": "INT23456",
+            "name": "INT23456"
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "source": "LiveUpdate Manager",
+                "server": {
+                    "group": "MyDomain\\Servers"
+                }
+            }
+        },
+        "related": {
+            "hosts": [
+                "INT23456"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_malicious_scan.json"
+
+    ```json
+	
+    {
+        "message": "INT23456,Event Description: [SID\u00a0: 32329] attaque de Audit: Malicious Scan Attempt 2 d\u00e9tect\u00e9e mais pas bloqu\u00e9e. Chemin d\u2019application\u00a0: SYSTEM,Event Type: ,Local Host IP: 1.2.3.4,Local Host MAC: 000000000000,Remote Host Name: ,Remote Host IP: 5.6.7.8,Remote Host MAC: 000000000000,Outbound,TCP,,Begin: 2022-10-19 09:25:40,End Time: 2022-10-19 09:25:40,Occurrences: 1,Application: SYSTEM,Location: Par d\u00e9faut,User Name: none,Domain Name: ,Local Port: 443,Remote Port: 14867,CIDS Signature ID: 32329,CIDS Signature string: Audit: Malicious Scan Attempt 2,CIDS Signature SubID: 68040,Intrusion URL: http://9.8.7.6:443/,Intrusion Payload URL: ,SHA-256: 0000000000000000000000000000000000000000000000000000000000000000,MD-5: ,Intensive Protection Level: N/A,URL Risk: N/A,URL Category: N/A",
+        "event": {
+            "kind": "event",
+            "category": [
+                "intrusion_detection"
+            ],
+            "reason": "attaque de Audit: Malicious Scan Attempt 2 d\u00e9tect\u00e9e mais pas bloqu\u00e9e. Chemin d\u2019application\u00a0: SYSTEM",
+            "start": "2022-10-19T09:25:40.000000Z",
+            "type": [
+                "info"
+            ]
+        },
+        "observer": {
+            "vendor": "Broadcom",
+            "product": "Symantec Endpoint Protection"
+        },
+        "host": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hostname": "INT23456",
+            "name": "INT23456"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 14867,
+            "address": "5.6.7.8"
+        },
+        "url": {
+            "original": "http://9.8.7.6:443/",
+            "domain": "9.8.7.6",
+            "port": 443,
+            "scheme": "http",
+            "path": "/"
+        },
+        "network": {
+            "direction": "outbound",
+            "transport": "tcp"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 443,
+            "address": "1.2.3.4"
+        },
+        "threat": {
+            "enrichments": [
+                {
+                    "indicator": {
+                        "type": "file",
+                        "sightings": 1
+                    }
+                }
+            ]
+        },
+        "broadcom": {
+            "endpoint_protection": {
+                "application": {
+                    "name": "SYSTEM"
+                },
+                "cids": {
+                    "signature": {
+                        "id": 32329,
+                        "label": "Audit: Malicious Scan Attempt 2",
+                        "sub_id": 68040
+                    }
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ],
             "hosts": [
                 "INT23456"
             ]
@@ -313,6 +500,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "threat": {
                     "type": "Insight Network Threat",
                     "category": "Malware"
+                },
+                "protection": {
+                    "level": 0
                 },
                 "application": {
                     "code_signature": {
@@ -468,6 +658,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "type": "Virus",
                     "category": "Malware"
                 },
+                "protection": {
+                    "level": 0
+                },
                 "application": {
                     "code_signature": {
                         "digest_algorithm": "sha2"
@@ -561,6 +754,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         "timestamp": "1970-01-01T00:00:00.000000Z"
                     }
                 },
+                "protection": {
+                    "level": 0
+                },
                 "action": {
                     "main": "Quarantined",
                     "secondary": "Quarantined"
@@ -609,9 +805,13 @@ The following table lists the fields that are extracted, normalized under the EC
 |`broadcom.endpoint_protection.application.hash.sha2` | `keyword` |  |
 |`broadcom.endpoint_protection.application.name` | `keyword` |  |
 |`broadcom.endpoint_protection.application.version` | `keyword` |  |
+|`broadcom.endpoint_protection.cids.signature.id` | `number` | The identifier of the CIDS sgnature |
+|`broadcom.endpoint_protection.cids.signature.label` | `string` | The label of the CIDS sgnature |
+|`broadcom.endpoint_protection.cids.signature.sub_id` | `number` | The sub-identifier of the CIDS sgnature |
 |`broadcom.endpoint_protection.confidence` | `keyword` |  |
 |`broadcom.endpoint_protection.downloaded_by.file.path` | `keyword` |  |
 |`broadcom.endpoint_protection.prevalence` | `keyword` |  |
+|`broadcom.endpoint_protection.protection.level` | `number` | The level of intensve protection |
 |`broadcom.endpoint_protection.scan.command` | `keyword` | The command scan |
 |`broadcom.endpoint_protection.scan.duration` | `number` | The duration of the scan in seconds |
 |`broadcom.endpoint_protection.scan.id` | `keyword` | The identifier of the scan |
@@ -626,18 +826,29 @@ The following table lists the fields that are extracted, normalized under the EC
 |`broadcom.endpoint_protection.server.name` | `keyword` |  |
 |`broadcom.endpoint_protection.source` | `keyword` |  |
 |`broadcom.endpoint_protection.threat.category` | `keyword` |  |
+|`broadcom.endpoint_protection.threat.payload` | `string` | The url of the intrusion payload |
+|`broadcom.endpoint_protection.threat.risk` | `string` | The risk associated to the intrusion url |
 |`broadcom.endpoint_protection.threat.type` | `keyword` |  |
+|`destination.domain` | `keyword` | The domain name of the destination. |
+|`destination.ip` | `ip` | IP address of the destination. |
+|`destination.mac` | `keyword` | MAC address of the destination. |
+|`destination.port` | `long` | Port of the destination. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
+|`file.hash.md5` | `keyword` | MD5 hash. |
+|`file.hash.sha256` | `keyword` | SHA256 hash. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
 |`file.size` | `long` | File size in bytes. |
 |`host.hostname` | `keyword` | Hostname of the host. |
 |`host.ip` | `ip` | Host ip addresses. |
+|`host.mac` | `keyword` | Host MAC addresses. |
 |`host.name` | `keyword` | Name of the host. |
+|`network.direction` | `keyword` | Direction of the network traffic. |
+|`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`process.args` | `keyword` | Array of process arguments. |
@@ -645,6 +856,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.name` | `keyword` | Process name. |
 |`process.pid` | `long` | Process id. |
 |`process.working_directory` | `keyword` | The working directory of the process. |
+|`source.ip` | `ip` | IP address of the source. |
+|`source.port` | `long` | Port of the source. |
 |`threat.enrichments` | `array` |  |
+|`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user.name` | `keyword` | Short name or login of the user. |
 
