@@ -27,12 +27,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** advanced
 
-??? abstract "CVE-2020-14882 Oracle WebLogic Server"
-    
-    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952)
-    
-    - **Effort:** advanced
-
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
     Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).

@@ -339,6 +339,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Trend Micro Cloud One / Deep
     
     - **Effort:** intermediate
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -459,6 +465,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Trend Micro Cloud One / Deep
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Control Process"
     
     Detects suspicious execution of control.exe process when used to execute a DLL file.
@@ -560,6 +572,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Trend Micro Cloud One / Deep
     System info discovery, attempt to detects basic command use to fingerprint a host
     
     - **Effort:** master
+
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WCE wceaux.dll Creation"
     
