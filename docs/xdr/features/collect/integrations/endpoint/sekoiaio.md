@@ -75,7 +75,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
     ```shell
     chmod +x ./agent
-    sudo ./agent -install -intake_key <INTAKE_KEY>
+    sudo ./agent -install -intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent has been successfully installed as a service you can run the following command:
@@ -125,7 +125,8 @@ To uninstall the agent, follow the instructions specific to your OS.
     You can either:
 
     * Download the latest version of the agent and use this binary to perform the uninstall
-    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe` (`$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`)
+    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe` 
+      * `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`)
 
     The following command must be executed **as an administrator**:
 
