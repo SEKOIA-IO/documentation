@@ -25,7 +25,9 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ### Pull events
 
 Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the template `Forward Okta system logs with SEKOIA.IO`.
+
 Set up the frequency of the `Cron` trigger, copy the API token in the configuration of the `Request URL` action and paste the intake key in the `Push Events to Intake` action.
+
 Set up the trigger and the action with their module configurations.
 
 Start the playbook and enjoy your events.
