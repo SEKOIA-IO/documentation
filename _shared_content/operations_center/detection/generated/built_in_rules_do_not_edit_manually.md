@@ -1,4 +1,4 @@
-Rules catalog includes **602 built-in detection rules** (_last update on 2022-11-16_).
+Rules catalog includes **607 built-in detection rules** (_last update on 2022-11-28_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1015,6 +1015,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** elementary
 
+??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Malspam Execution Registering Malicious DLL"
     
     Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
@@ -1519,12 +1525,6 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** master
 
-??? abstract "Windows Defender Configuration Changed"
-    
-    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
-    
-    - **Effort:** master
-
 **User Execution**
 
 ??? abstract "Cobalt Strike Default Beacons Names"
@@ -1580,6 +1580,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
     
     - **Effort:** elementary
+
+??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    
+    - **Effort:** intermediate
 
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     
@@ -1979,6 +1985,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** intermediate
 
+??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
@@ -2222,6 +2234,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
+    
+    - **Effort:** intermediate
+
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
 
@@ -3978,6 +3996,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** intermediate
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Phorpiex Process Masquerading"
     
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
@@ -3989,6 +4013,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     Detects request to potential malicious file with double extension
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Cmd.exe Command Line"
     
@@ -5054,6 +5084,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** intermediate
 
+??? abstract "Windows Defender Configuration Changed"
+    
+    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
+    
+    - **Effort:** master
+
 ??? abstract "Windows Defender Deactivation Using PowerShell Script"
     
     Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
@@ -5256,6 +5292,12 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
     An access has been denied while opening or editing sensitives files.
     
     - **Effort:** advanced
+
+??? abstract "Active Directory Database Dump Via Ntdsutil"
+    
+    Detects the dump of ntdis.dit database by using the utility ntdsutil.exe. NTDS.dit database stores Active Directory data, including passwords hashes for all users in the domain.
+    
+    - **Effort:** elementary
 
 ??? abstract "Active Directory Replication from Non Machine Account"
     
@@ -6098,7 +6140,7 @@ Rules catalog includes **602 built-in detection rules** (_last update on 2022-11
 
 ??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
     
-    Detects PowerShell SnapIn command line to export Exchange mailbox data.
+    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
 
