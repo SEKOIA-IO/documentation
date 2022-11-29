@@ -44,18 +44,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "Pipin"
         },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "Pipin"
         },
         "user": {
             "name": "audit"
@@ -83,10 +84,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "name": "cron",
@@ -94,9 +99,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -116,10 +118,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "name": "cron",
@@ -127,9 +133,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -149,10 +152,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "name": "cron",
@@ -160,9 +167,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "root"
             },
             "command_line": "/usr/share/centrifydc/bin/logrotate.sh 2>&1 >> /var/log/centrify_logrotate.log"
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -182,7 +186,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -191,13 +196,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "/usr/bin/cdax/ksh93",
             "target_path": "/usr/bin/cdax/bsh"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "dad"
@@ -225,7 +230,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -233,13 +239,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "/bin/cdax/ksh"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "dad"
@@ -267,7 +273,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -306,7 +313,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -341,7 +349,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -350,13 +359,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": " /var/opt/BESClient/besclient.config",
             "path": "/var/opt/BESClient/besclient.config.tmp"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "BESClient"
@@ -384,7 +393,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -392,14 +402,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "syslog_ng"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "name": "srcmstr",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -419,7 +429,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -427,13 +438,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "/var/adm/nim/glock"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "Pipin"
@@ -461,7 +472,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -469,14 +481,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "/var/empty"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "name": "sshd",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -496,7 +508,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -504,13 +517,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "directory": "/var/adm/nim/6292044"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "Pipin"
@@ -538,7 +551,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -546,14 +560,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "directory": "/var/adm/nim/6292046"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "name": "rm",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -573,7 +587,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -597,7 +612,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "PROC_Execute rm root root OK 25 sep 2022 23:14:16.738289 No associated roles euid: 0 egid: 0 epriv: ffffffff:ffffffff name /usr/bin/rm /tmp/5833044*",
+        "message": "PROC_Execute    sh                              root     Pipin FAIL          22 Nov 2022 10:20:32.056053  No associated roles                      euid: 503 egid: 403 epriv: 0:0 name sh -c /app/DB2/11.1/instance/db2iset -i Pipin DB2AUTOSTART 2>&1 ",
         "event": {
             "kind": "event",
             "category": [
@@ -605,26 +620,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "FAIL"
         },
         "observer": {
             "vendor": "IBM"
         },
         "file": {
-            "name": "/tmp/5833044*"
-        },
-        "process": {
-            "name": "/usr/bin/rm",
-            "user": {
-                "name": "root"
-            }
+            "name": "-c"
         },
         "group": {
             "name": "root",
-            "id": "0"
+            "id": "403"
+        },
+        "process": {
+            "name": "sh",
+            "user": {
+                "name": "Pipin"
+            },
+            "command_line": " /app/DB2/11.1/instance/db2iset -i Pipin DB2AUTOSTART 2>&1 "
         },
         "user": {
-            "id": "0"
+            "id": "503"
         }
     }
     	
@@ -644,10 +661,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "name": "rsyslogd",
@@ -655,9 +676,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -709,19 +727,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "name": "rm_mlcache_file",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -741,19 +760,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "name": "cron",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -765,7 +785,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "PROC_SetUserIDs rm_mlcache_file root root OK 25 sep 2022 23:13:28.996170 No associated roles effect: 0, real: -1, saved: -1, login: -1",
+        "message": "PROC_SetUserIDs db2fm                           root     db2inst1 OK          22 Nov 2022 14:19:42.790048  No associated roles                      effect: 503, real: 503, saved: -1, login: -1#012",
         "event": {
             "kind": "event",
             "category": [
@@ -773,19 +793,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
         },
+        "group": {
+            "name": "db2inst1"
+        },
         "process": {
-            "name": "rm_mlcache_file",
+            "name": "db2fm",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -805,19 +826,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "name": "exportfs",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -837,7 +859,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -845,13 +868,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "/etc/security/passwd"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "cron"
@@ -879,7 +902,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -887,11 +911,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "/etc/security/user"
         },
-        "process": {
-            "name": "vi"
-        },
         "group": {
             "name": "root"
+        },
+        "process": {
+            "name": "vi"
         },
         "user": {
             "name": "Pipin"
@@ -919,10 +943,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "user": {
@@ -933,9 +961,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "10.30.134.100",
             "port": 1022,
             "address": "10.30.134.100"
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "Pipin"
@@ -966,7 +991,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -974,13 +1000,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "/dev/.SRC-unix/SRC0006292046YEya"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "Pipin"
@@ -1008,18 +1034,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
+        },
+        "group": {
+            "name": "root"
         },
         "process": {
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         },
         "user": {
             "name": "Pipin"
@@ -1047,7 +1074,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
@@ -1055,14 +1083,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "file": {
             "name": "/usr/lib/security/DCE"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "name": "sshd",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -1074,7 +1102,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "USER_Login sshd root root OK 28 jul 2022 10:58:58.704264 No associated roles user: Pipin tty: ssh",
+        "message": "USER_Login      db2ckpw                         root     Pipin OK          22 Nov 2022 13:41:34.586022  No associated roles                      user: Pipin tty: #012",
         "event": {
             "kind": "event",
             "category": [
@@ -1082,19 +1110,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "target": "process"
+            "target": "process",
+            "status": "OK"
         },
         "observer": {
             "vendor": "IBM"
         },
-        "process": {
-            "name": "sshd",
-            "user": {
-                "name": "root"
-            }
-        },
         "group": {
             "name": "root"
+        },
+        "process": {
+            "name": "db2ckpw",
+            "user": {
+                "name": "Pipin"
+            }
         },
         "user": {
             "name": "Pipin"
@@ -1118,6 +1147,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`action.status` | `keyword` | The status of the action |
 |`action.target` | `keyword` | The target of the action. This field is mandatory for STIX2 compliance |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
