@@ -28,11 +28,10 @@ The urgency can have two different representations on the interface: a numerical
 
 | Display | Value |
 | --- | --- |
-| Low | [0-20[ |
-| Moderate | [20-40[ |
-| High | [40-60[ |
-| Major | [60-80[ |
-| Urgent | [80-100] |
+| Low | [0-50[ |
+| Medium | [50-75[ |
+| High | [75-100] |
+
 
 ### Alert Similarity 
 Alert similarity (Occurence) is the process by which we collect similar events in the same alert. 
