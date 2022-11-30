@@ -30,7 +30,7 @@ The urgency can have two different representations on the interface: a numerical
 | --- | --- |
 | Low | [0-50[ |
 | Medium | [50-75[ |
-| High | [75-100[ |
+| High | [75-100] |
 
 
 ### Alert Similarity 
