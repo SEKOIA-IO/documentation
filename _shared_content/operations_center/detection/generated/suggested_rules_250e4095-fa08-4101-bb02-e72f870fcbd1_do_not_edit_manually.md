@@ -1323,6 +1323,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     - **Effort:** advanced
 
+??? abstract "Powershell UploadString Function"
+    
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Powershell Web Request"
     
     Detects the use of various web request methods executed remotely via Windows PowerShell
