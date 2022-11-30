@@ -139,7 +139,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     The following command must be executed:
 
     ```shell
-    sudo /opt/endpoint-agent -uninstall
+    sudo /opt/endpoint-agent/agent -service uninstall
     ```
 
 {!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
