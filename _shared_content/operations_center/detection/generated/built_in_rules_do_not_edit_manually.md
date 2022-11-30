@@ -1,4 +1,4 @@
-Rules catalog includes **607 built-in detection rules** (_last update on 2022-11-28_).
+Rules catalog includes **608 built-in detection rules** (_last update on 2022-11-30_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -4942,7 +4942,7 @@ Rules catalog includes **607 built-in detection rules** (_last update on 2022-11
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow. 
+    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
 
@@ -5274,7 +5274,7 @@ Rules catalog includes **607 built-in detection rules** (_last update on 2022-11
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow. 
+    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
 
@@ -6680,6 +6680,12 @@ Rules catalog includes **607 built-in detection rules** (_last update on 2022-11
     
     - **Effort:** advanced
 
+??? abstract "Powershell UploadString Function"
+    
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "TUN/TAP Driver Installation"
     
     Detects the installation of the TUN or TAP driver service, this activity could be related to data exfiltration using tunneling techniques. The TUN/TAP Windows Adapter is a network driver that enables some VPN providers to facilitate a VPN connection to their server. TUN/TAP driver is only used by specific VPNs (e.g. OpenVPN, Wireguard), not by thoses based on IKE protocols (e.g. IPsec).
@@ -6713,6 +6719,12 @@ Rules catalog includes **607 built-in detection rules** (_last update on 2022-11
     Spots outgoing bytes traffic peak to detect a data exfiltration. 
     
     - **Effort:** advanced
+
+??? abstract "Powershell UploadString Function"
+    
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "Rclone Process"
     
