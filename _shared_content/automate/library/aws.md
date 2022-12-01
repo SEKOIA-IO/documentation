@@ -126,4 +126,4 @@ Get messages from SQS
 
 ## Extra
 
-Module **`AWS` v1.15**
+Module **`AWS` v1.15.1**
