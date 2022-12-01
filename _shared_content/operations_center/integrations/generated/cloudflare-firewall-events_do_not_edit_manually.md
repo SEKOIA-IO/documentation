@@ -33,27 +33,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-07-12T12:57:06.219000Z",
+        "message": "{\"Action\":\"block\",\"ClientIP\":\"113.206.179.28\",\"ClientRequestHost\":\"foo-bar-baz.xyz\",\"ClientRequestMethod\":\"GET\",\"ClientRequestPath\":\"/static/favicon.ico\",\"ClientRequestQuery\":\"\",\"Datetime\":1657630626219000000,\"EdgeResponseStatus\":403,\"RayID\":\"7299f155dda47d6b\"}",
         "event": {
+            "action": "block",
             "kind": "event",
             "category": [
                 "network"
             ],
+            "dataset": "firewall-events",
             "type": [
                 "denied"
-            ],
-            "action": "block",
-            "dataset": "firewall-events"
+            ]
         },
+        "@timestamp": "2022-07-12T12:57:06.219000Z",
         "source": {
             "ip": "113.206.179.28",
             "address": "113.206.179.28"
         },
         "destination": {
-            "address": "foo-bar-baz.xyz",
             "domain": "foo-bar-baz.xyz",
-            "registered_domain": "foo-bar-baz.xyz",
-            "top_level_domain": "xyz"
+            "address": "foo-bar-baz.xyz",
+            "top_level_domain": "xyz",
+            "registered_domain": "foo-bar-baz.xyz"
         },
         "http": {
             "request": {
@@ -66,8 +67,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "url": {
             "domain": "foo-bar-baz.xyz",
             "path": "/static/favicon.ico",
-            "registered_domain": "foo-bar-baz.xyz",
-            "top_level_domain": "xyz"
+            "top_level_domain": "xyz",
+            "registered_domain": "foo-bar-baz.xyz"
+        },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "firewall"
+        },
+        "cloudflare": {
+            "EdgeResponseStatus": 403,
+            "RayID": "7299f155dda47d6b"
         },
         "related": {
             "hosts": [
@@ -76,10 +85,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "113.206.179.28"
             ]
-        },
-        "cloudflare": {
-            "RayID": "7299f155dda47d6b",
-            "EdgeResponseStatus": 403
         }
     }
     	
@@ -122,6 +127,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.response.status_code` | `long` | HTTP response status code. |
 |`http.version` | `keyword` | HTTP version. |
 |`network.protocol` | `keyword` | Application protocol name. |
+|`observer.type` | `keyword` | The type of the observer the data is coming from. |
+|`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`rule.id` | `keyword` | Rule ID |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`source.as.number` | `long` | Unique number allocated to the autonomous system. |
