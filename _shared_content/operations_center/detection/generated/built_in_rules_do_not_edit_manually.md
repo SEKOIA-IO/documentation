@@ -1,4 +1,4 @@
-Rules catalog includes **608 built-in detection rules** (_last update on 2022-11-30_).
+Rules catalog includes **609 built-in detection rules** (_last update on 2022-12-01_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -3965,6 +3965,12 @@ Rules catalog includes **608 built-in detection rules** (_last update on 2022-11
     - **Effort:** advanced
 
 **Masquerading**
+
+??? abstract "Execution From Suspicious Folder"
+    
+    Detects a suspicious execution from an uncommon folder
+    
+    - **Effort:** master
 
 ??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
     
