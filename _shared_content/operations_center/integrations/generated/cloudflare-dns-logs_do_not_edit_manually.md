@@ -53,6 +53,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "registered_domain": "foO-BAR-baz.xYz"
             },
             "response_code": "NoError"
+        },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "dns"
         }
     }
     	
@@ -84,6 +88,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "registered_domain": "foO-BAR-baz.xYz"
             },
             "response_code": "NoError"
+        },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "dns"
         }
     }
     	
@@ -115,6 +123,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "registered_domain": "foO-BAR-baz.xYz"
             },
             "response_code": "NoError"
+        },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "dns"
         }
     }
     	
@@ -145,6 +157,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "registered_domain": "foO-BAR-baz.xYz"
             },
             "response_code": "NoError"
+        },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "dns"
         }
     }
     	
@@ -170,5 +186,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`observer.type` | `keyword` | The type of the observer the data is coming from. |
+|`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`source.ip` | `ip` | IP address of the source. |
 

@@ -34,18 +34,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"ClientIP\":\"34.142.121.18\",\"ClientRequestHost\":\"foo-bar-baz.xyz\",\"ClientRequestMethod\":\"GET\",\"ClientRequestURI\":\"/wp1/wp-includes/wlwmanifest.xml\",\"EdgeEndTimestamp\":1658281702371000000,\"EdgeResponseBytes\":279,\"EdgeResponseStatus\":522,\"EdgeStartTimestamp\":1658281671671000000,\"RayID\":\"72d807ffeba5753d\"}",
         "event": {
+            "kind": "event",
             "category": [
                 "web"
             ],
-            "dataset": "http_requests",
-            "end": "2022-07-20T01:48:22.371000Z",
-            "kind": "event",
-            "outcome": "success",
-            "start": "2022-07-20T01:47:51.671000Z",
             "type": [
                 "access"
-            ]
+            ],
+            "dataset": "http_requests",
+            "start": "2022-07-20T01:47:51.671000Z",
+            "end": "2022-07-20T01:48:22.371000Z"
         },
         "source": {
             "ip": "34.142.121.18",
@@ -66,6 +66,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "url": {
             "path": "/wp1/wp-includes/wlwmanifest.xml"
         },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "proxy"
+        },
         "cloudflare": {
             "ClientIP": "34.142.121.18",
             "ClientRequestHost": "foo-bar-baz.xyz",
@@ -76,9 +80,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "EdgeResponseStatus": 522,
             "EdgeStartTimestamp": "1658281671671000000",
             "RayID": "72d807ffeba5753d"
-        },
-        "ecs": {
-            "version": "1.10.0"
         },
         "related": {
             "ip": [
@@ -95,16 +96,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"WAFMatchedVar\":\"\",\"WAFProfile\":\"unknown\",\"WAFRuleID\":\"\",\"WAFRuleMessage\":\"\",\"WorkerCPUTime\":0,\"WorkerStatus\":\"unknown\",\"WorkerSubrequest\":false,\"WorkerSubrequestCount\":0,\"ZoneID\":545468107,\"ZoneName\":\"foo-bar-baz.xyz\"}\n\n",
         "event": {
+            "kind": "event",
             "category": [
                 "web"
             ],
-            "dataset": "http_requests",
-            "kind": "event",
-            "outcome": "success",
             "type": [
                 "access"
-            ]
+            ],
+            "dataset": "http_requests"
+        },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "proxy"
         },
         "cloudflare": {
             "WAFMatchedVar": "",
@@ -117,9 +122,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "WorkerSubrequestCount": 0,
             "ZoneID": 545468107,
             "ZoneName": "foo-bar-baz.xyz"
-        },
-        "ecs": {
-            "version": "1.10.0"
         }
     }
     	
@@ -150,6 +152,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.response.bytes` | `long` | Total size in bytes of the response (body and headers). |
 |`http.response.status_code` | `long` | HTTP response status code. |
 |`network.protocol` | `keyword` | Application protocol name. |
+|`observer.type` | `keyword` | The type of the observer the data is coming from. |
+|`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`rule.id` | `keyword` | Rule ID |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`source.as.number` | `long` | Unique number allocated to the autonomous system. |
