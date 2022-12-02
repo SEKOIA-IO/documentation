@@ -579,6 +579,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     - **Effort:** intermediate
 
+??? abstract "Execution From Suspicious Folder"
+    
+    Detects a suspicious execution from an uncommon folder
+    
+    - **Effort:** master
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
