@@ -1,5 +1,5 @@
 uuid: 9f89b634-0531-437b-b060-a9d9f2d270db
-name: Cybereason MalOp
+name: Cybereason MalOp [BETA]
 type: intake
 
 ## Overview
