@@ -19,7 +19,7 @@ Please find below information available in MalOp activities:
 
 ## Configure
 
-This setup guide shows how to forward all MalOp activities to SEKOIA.IO.
+This setup guide will lead you into forwarding all MalOp activities to SEKOIA.IO.
 
 ### Create your intake
 
@@ -29,6 +29,8 @@ Keep aside the intake key.
 ### Setup the Syslog collector
 
 Check the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to install and set up the syslog collector.
+
+Once the setup has completed, write down the IP address and port. This information will be used in the next step.
 
 ### Setup the CybeReason CEF Forwarder
 
