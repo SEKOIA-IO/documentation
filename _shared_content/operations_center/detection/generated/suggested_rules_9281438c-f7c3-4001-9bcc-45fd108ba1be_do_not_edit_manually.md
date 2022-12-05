@@ -903,6 +903,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Malicious PowerShell Keywords"
+    
+    Detects keywords from well-known PowerShell exploitation frameworks
+    
+    - **Effort:** advanced
+
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -1310,12 +1316,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...)
     
     - **Effort:** master
-
-??? abstract "PowerShell Malicious PowerShell Keywords"
-    
-    Detects keywords from well-known PowerShell exploitation frameworks
-    
-    - **Effort:** intermediate
 
 ??? abstract "PowerView commandlets 1"
     
