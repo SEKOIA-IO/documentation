@@ -106,6 +106,7 @@ nav:
           - Auditbeat Linux: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
           - CrowdStrike Falcon: xdr/features/collect/integrations/endpoint/crowdstrike_falcon.md
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
+          - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - IBM AIX: xdr/features/collect/integrations/endpoint/ibm_aix.md
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
@@ -180,6 +181,7 @@ nav:
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
+        - Cybereason: xdr/features/automate/library/cybereason.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
         - Digital Shadows: xdr/features/automate/library/digital-shadows.md
@@ -562,7 +564,7 @@ plugins:
       operation_center/integration_catalog/email/spamassassin.md: xdr/features/collect/integrations/email/spamassassin.md
       operation_center/integration_catalog/email/vade.md: xdr/features/collect/integrations/email/vade.md
       operation_center/integration_catalog/endpoint/auditbeat_linux.md: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
-      operation_center/integration_catalog/endpoint/cybereason_malop.md: xdr/features/collect/integrations/endpoint/cybereason_malop.md
+      operation_center/integration_catalog/endpoint/cybereason_malop_activity.md: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
       operation_center/integration_catalog/endpoint/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       operation_center/integration_catalog/endpoint/linux.md: xdr/features/collect/integrations/endpoint/linux.md
       operation_center/integration_catalog/endpoint/log_insight_windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
