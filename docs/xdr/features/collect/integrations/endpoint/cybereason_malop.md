@@ -15,7 +15,7 @@ Please find below information available in MalOp activities:
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_0de050fb-3f56-4c7a-a9b6-76bf5298a617_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cybereason-malop_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/cybereason-malop-cef_do_not_edit_manually.md!}
 
 ## Configure
 
