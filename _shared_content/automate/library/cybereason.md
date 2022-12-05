@@ -31,4 +31,4 @@ Get last events from the Cybereason platform
 
 ## Extra
 
-Module **`Cybereason` v1.0.2**
+Module **`Cybereason` v1.0.5**
