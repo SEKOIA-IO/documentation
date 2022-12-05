@@ -1,10 +1,13 @@
 uuid: 9f89b634-0531-437b-b060-a9d9f2d270db
-name: Cybereason MalOp [BETA]
+name: Cybereason MalOp
 type: intake
 
 ## Overview
 
 Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Through the Cybereason platform, all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
+
+!!! warning
+    This format is still in beta. Use it wisely
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.md!}
