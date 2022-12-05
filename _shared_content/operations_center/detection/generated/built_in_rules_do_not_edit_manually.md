@@ -1,4 +1,4 @@
-Rules catalog includes **609 built-in detection rules** (_last update on 2022-12-01_).
+Rules catalog includes **609 built-in detection rules** (_last update on 2022-12-05_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1021,6 +1021,12 @@ Rules catalog includes **609 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
+??? abstract "Malicious PowerShell Keywords"
+    
+    Detects keywords from well-known PowerShell exploitation frameworks
+    
+    - **Effort:** advanced
+
 ??? abstract "Malspam Execution Registering Malicious DLL"
     
     Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
@@ -1140,12 +1146,6 @@ Rules catalog includes **609 built-in detection rules** (_last update on 2022-12
     Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...)
     
     - **Effort:** master
-
-??? abstract "PowerShell Malicious PowerShell Keywords"
-    
-    Detects keywords from well-known PowerShell exploitation frameworks
-    
-    - **Effort:** intermediate
 
 ??? abstract "Powershell Web Request"
     
