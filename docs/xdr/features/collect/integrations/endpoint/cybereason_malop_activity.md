@@ -1,5 +1,5 @@
 uuid: 0de050fb-3f56-4c7a-a9b6-76bf5298a617
-name: Cybereason MalOp
+name: Cybereason MalOp activity
 type: intake
 
 ## Overview
@@ -15,7 +15,7 @@ Please find below information available in MalOp activities:
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_0de050fb-3f56-4c7a-a9b6-76bf5298a617_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cybereason-malop-cef_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/cybereason-malop-activity_do_not_edit_manually.md!}
 
 ## Configure
 
@@ -23,7 +23,7 @@ This setup guide shows how to forward all MalOp activities to SEKOIA.IO.
 
 ### Create your intake
 
-On SEKOIA.IO, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp` format.
+On SEKOIA.IO, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp Activities` format.
 Keep aside the intake key.
 
 ### Setup the Syslog collector
