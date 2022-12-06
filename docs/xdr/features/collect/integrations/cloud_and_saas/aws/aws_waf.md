@@ -18,7 +18,9 @@ AWS WAF is a web application firewall that lets you monitor the HTTP(S) requests
 
 #### Create a S3 bucket
 
-Your web ACL traffic logs will be collected in an Amazon S3 bucket. Please refer to [this guide](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) to set up your bucket.
+Your web ACL traffic logs will be collected in an Amazon S3 bucket.
+
+To set up the bucket, please refer to [this guide](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
 
 #### Create a SQS queue
 
@@ -50,8 +52,11 @@ To be enable to set the S3 Event Notification:
 
 #### Create a S3 Event Notification
 
-Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification.
-Select the notification for object creation in the Event type section. As the destination, choose the SQS service and select the queue you create in the previous section.
+Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification and then:
+
+1. Select the notification for object creation in the Event type section.
+2. As the destination, choose the SQS service
+3. Select the queue you create in the previous section.
 
 #### Forward traffic logs to S3
 
@@ -71,6 +76,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ### Pull events
 
 To start to pull events, you have to: 
+
 1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws.md#fetch-new-logs-on-s3).
 2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.
 3. Start the playbook and enjoy your events.
