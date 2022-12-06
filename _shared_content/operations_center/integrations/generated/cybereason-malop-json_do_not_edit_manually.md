@@ -33,7 +33,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": \"1668945737625\"},\n  \"@class\": \".FileSuspectDetailsModel\",\n  \"firstSeen\": 1657923190000,\n  \"lastSeen\": 1667946935000,\n  \"counter\": 2,\n  \"wasEverDetectedInScan\": false,\n  \"wasEverDetectedByAccess\": true,\n  \"detectionDecisionStatus\": \"DDS_PREVENTED\",\n  \"guid\": \"11.7498520112250262440\",\n  \"ownerMachineName\": \"desktop-aaaaaa\",\n  \"ownerMachineGuid\": \"aaaaaaaaaaaaaaaa\",\n  \"sha1String\": \"adc83b19e793491b1c6ea0fd8b46cd9f32e592fc\",\n  \"behaviourIdString\": null,\n  \"correctedPath\": \"c:\\\\System\\\\kprocesshacker.sys\",\n  \"modifiedTime\": null,\n  \"elementDisplayName\": \"kprocesshacker.sys\"\n}\n",
+        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": 1668945737625},\n  \"@class\": \".FileSuspectDetailsModel\",\n  \"firstSeen\": 1657923190000,\n  \"lastSeen\": 1667946935000,\n  \"counter\": 2,\n  \"wasEverDetectedInScan\": false,\n  \"wasEverDetectedByAccess\": true,\n  \"detectionDecisionStatus\": \"DDS_PREVENTED\",\n  \"guid\": \"11.7498520112250262440\",\n  \"ownerMachineName\": \"desktop-aaaaaa\",\n  \"ownerMachineGuid\": \"aaaaaaaaaaaaaaaa\",\n  \"sha1String\": \"adc83b19e793491b1c6ea0fd8b46cd9f32e592fc\",\n  \"behaviourIdString\": null,\n  \"correctedPath\": \"c:\\\\System\\\\kprocesshacker.sys\",\n  \"modifiedTime\": null,\n  \"elementDisplayName\": \"kprocesshacker.sys\"\n}\n",
         "event": {
             "kind": "event",
             "category": [
@@ -87,7 +87,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": \"1668945737625\"},\n  \"@class\": \".MachineDetailsModel\",\n  \"guid\": \"-576002811.1198775089551518743\",\n  \"displayName\": \"desktop-aaaaaa\",\n  \"osType\": \"WINDOWS\",\n  \"connected\": false,\n  \"isolated\": false,\n  \"lastConnected\": 1668439428578,\n  \"adOU\": null,\n  \"adOrganization\": null,\n  \"adDisplayName\": \"DESKTOP-AAAAAA\",\n  \"adDNSHostName\": \"desktop-aaaaaa.example.org\",\n  \"adDepartment\": null,\n  \"adCompany\": null,\n  \"adLocation\": null,\n  \"adMachineRole\": null,\n  \"pylumId\": \"MARVELCLIENT_INTEGRATION_DESKTOP-AAAAAA_000000000000\",\n  \"empty\": true\n}\n",
+        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": 1668945737625},\n  \"@class\": \".MachineDetailsModel\",\n  \"guid\": \"-576002811.1198775089551518743\",\n  \"displayName\": \"desktop-aaaaaa\",\n  \"osType\": \"WINDOWS\",\n  \"connected\": false,\n  \"isolated\": false,\n  \"lastConnected\": 1668439428578,\n  \"adOU\": null,\n  \"adOrganization\": null,\n  \"adDisplayName\": \"DESKTOP-AAAAAA\",\n  \"adDNSHostName\": \"desktop-aaaaaa.example.org\",\n  \"adDepartment\": null,\n  \"adCompany\": null,\n  \"adLocation\": null,\n  \"adMachineRole\": null,\n  \"pylumId\": \"MARVELCLIENT_INTEGRATION_DESKTOP-AAAAAA_000000000000\",\n  \"empty\": true\n}\n",
         "event": {
             "kind": "event",
             "category": [
@@ -130,7 +130,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": \"1668945737625\"},\n  \"@class\": \".MachineInboxModel\",\n  \"guid\": \"11.7498520112250262440\",\n  \"displayName\": \"desktop-aaaaaa\",\n  \"osType\": \"WINDOWS\",\n  \"connected\": false,\n  \"isolated\": false,\n  \"lastConnected\": 1668439428578,\n  \"empty\": true\n}\n",
+        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": 1668945737625},\n  \"@class\": \".MachineInboxModel\",\n  \"guid\": \"11.7498520112250262440\",\n  \"displayName\": \"desktop-aaaaaa\",\n  \"osType\": \"WINDOWS\",\n  \"connected\": false,\n  \"isolated\": false,\n  \"lastConnected\": 1668439428578,\n  \"empty\": true\n}\n",
         "event": {
             "kind": "event",
             "category": [
@@ -368,7 +368,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": \"1668945737625\"},\n  \"@class\": \".UserInboxModel\",\n  \"guid\": \"0.2548072792133848559\",\n  \"displayName\": \"desktop-aaaaa\\\\system\",\n  \"admin\": false,\n  \"localSystem\": false,\n  \"domainUser\": false\n}\n",
+        "message": "{\n  \"metadata\": {\"malopGuid\": \"11.-6654920844431693523\", \"timestamp\": 1668945737625},\n  \"@class\": \".UserInboxModel\",\n  \"guid\": \"0.2548072792133848559\",\n  \"displayName\": \"desktop-aaaaa\\\\system\",\n  \"admin\": false,\n  \"localSystem\": false,\n  \"domainUser\": false\n}\n",
         "event": {
             "kind": "event",
             "category": [
