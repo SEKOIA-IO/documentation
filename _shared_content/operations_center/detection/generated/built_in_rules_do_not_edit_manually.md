@@ -1,4 +1,4 @@
-Rules catalog includes **609 built-in detection rules** (_last update on 2022-12-05_).
+Rules catalog includes **613 built-in detection rules** (_last update on 2022-12-07_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2554,6 +2554,18 @@ Rules catalog includes **609 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** elementary
 
+??? abstract "Okta Application deleted"
+    
+    An application has been delete on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Application modified"
+    
+    An application has been updated on Okta SSO.
+    
+    - **Effort:** advanced
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -3450,6 +3462,18 @@ Rules catalog includes **609 built-in detection rules** (_last update on 2022-12
     Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
     
     - **Effort:** elementary
+
+??? abstract "Okta API Token created"
+    
+    A new API Token has been created on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta API Token revoked"
+    
+    A new API Token has been deleted on Okta SSO.
+    
+    - **Effort:** advanced
 
 ??? abstract "Possible RottenPotato Attack"
     
@@ -4435,6 +4459,18 @@ Rules catalog includes **609 built-in detection rules** (_last update on 2022-12
     Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
     
     - **Effort:** elementary
+
+??? abstract "Okta API Token created"
+    
+    A new API Token has been created on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta API Token revoked"
+    
+    A new API Token has been deleted on Okta SSO.
+    
+    - **Effort:** advanced
 
 ??? abstract "Possible RottenPotato Attack"
     

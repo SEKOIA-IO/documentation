@@ -9,6 +9,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     
     - **Effort:** intermediate
 
+??? abstract "Okta API Token created"
+    
+    A new API Token has been created on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta API Token revoked"
+    
+    A new API Token has been deleted on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Application deleted"
+    
+    An application has been delete on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Application modified"
+    
+    An application has been updated on Okta SSO.
+    
+    - **Effort:** advanced
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
