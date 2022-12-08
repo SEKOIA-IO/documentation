@@ -51,18 +51,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Linux** with the follo
     
     - **Effort:** intermediate
 
-??? abstract "Fortinet Firewall Login In Failure"
-    
-    Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
-    
-    - **Effort:** master
-
-??? abstract "Fortinet Firewall Successful External Login"
-    
-    Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
-    
-    - **Effort:** master
-
 ??? abstract "ICacls Granting Access To All"
     
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.

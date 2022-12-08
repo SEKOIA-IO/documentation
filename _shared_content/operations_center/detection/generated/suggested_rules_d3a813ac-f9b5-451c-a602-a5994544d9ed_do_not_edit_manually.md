@@ -147,18 +147,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the fo
     
     - **Effort:** intermediate
 
-??? abstract "Fortinet Firewall Login In Failure"
-    
-    Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
-    
-    - **Effort:** master
-
-??? abstract "Fortinet Firewall Successful External Login"
-    
-    Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
-    
-    - **Effort:** master
-
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
