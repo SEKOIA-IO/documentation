@@ -119,6 +119,8 @@ To manually update the agent, follow the instructions specific to your OS:
 
 To uninstall the agent, follow the instructions specific to your OS.
 
+#### Since version 0.3.0
+
 === "Windows"
 
     In order to completely uninstall the agent on Windows the command must be executed using a copy of the running executable.
@@ -139,7 +141,41 @@ To uninstall the agent, follow the instructions specific to your OS.
     The following command must be executed:
 
     ```shell
+    sudo /opt/endpoint-agent/agent -uninstall
+    ```
+
+#### For versions prior to 0.3.0
+
+=== "Windows"
+
+    The following commands must be executed **as an administrator** to remove the service:
+
+    ```shell
+    agent.exe -service stop
+    agent.exe -service uninstall
+    ```
+
+    The folders created by the agent must then be removed:
+
+      * `$ProgramFiles\EndpointAgent`
+        * Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`
+      * `$ProgramData\EndpointAgent`
+        * Where `$ProgramData` refers to the path to the `ProgramData` folder, usually `c:\ProgramData` 
+
+=== "Linux"
+
+    The following commands must be executed to remove the service:
+
+    ```shell
+    sudo /opt/endpoint-agent/agent -service stop
     sudo /opt/endpoint-agent/agent -service uninstall
+    ```
+
+    The folders created by the agent must then be removed:
+
+    ```shell
+    sudo rm -rf /opt/endpoint-agent
+    sudo rm -rf /etc/endpoint-agent
     ```
 
 {!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
