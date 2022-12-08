@@ -41,7 +41,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "AUD_It"
         },
         "action": {
             "target": "process",
@@ -54,9 +55,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Pipin"
         },
         "process": {
+            "args": "0",
             "user": {
                 "name": "root"
-            }
+            },
+            "command_line": "1"
         },
         "user": {
             "name": "audit"
@@ -81,7 +84,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "AUD_Proc"
         },
         "action": {
             "target": "process",
@@ -115,7 +119,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "CRON_Finish"
         },
         "action": {
             "target": "process",
@@ -149,7 +154,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "CRON_Start"
         },
         "action": {
             "target": "process",
@@ -166,7 +172,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": {
                 "name": "root"
             },
-            "command_line": "/usr/share/centrifydc/bin/logrotate.sh 2>&1 >> /var/log/centrify_logrotate.log"
+            "command_line": "cron /usr/share/centrifydc/bin/logrotate.sh 2>&1 >> /var/log/centrify_logrotate.log"
         }
     }
     	
@@ -183,7 +189,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FILE_Link"
         },
         "action": {
             "target": "process",
@@ -227,7 +234,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FILE_Link"
         },
         "action": {
             "target": "process",
@@ -270,7 +278,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FILE_Pipe"
         },
         "action": {
             "target": "process",
@@ -310,7 +319,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FILE_Read"
         },
         "action": {
             "target": "process",
@@ -346,7 +356,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FILE_Rename"
         },
         "action": {
             "target": "process",
@@ -390,7 +401,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "SRC_Start"
         },
         "action": {
             "target": "process",
@@ -426,7 +438,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FILE_Unlink"
         },
         "action": {
             "target": "process",
@@ -469,7 +482,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FS_Chroot"
         },
         "action": {
             "target": "process",
@@ -505,7 +519,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FS_Mkdir"
         },
         "action": {
             "target": "process",
@@ -548,7 +563,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "FS_Rmdir"
         },
         "action": {
             "target": "process",
@@ -584,7 +600,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_Adjtime"
         },
         "action": {
             "target": "process",
@@ -617,7 +634,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_Execute"
         },
         "action": {
             "target": "process",
@@ -638,7 +656,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": {
                 "name": "Pipin"
             },
-            "command_line": " /app/DB2/11.1/instance/db2iset -i Pipin DB2AUTOSTART 2>&1 "
+            "command_line": "sh  /app/DB2/11.1/instance/db2iset -i Pipin DB2AUTOSTART 2>&1 "
         },
         "user": {
             "id": "503"
@@ -658,7 +676,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_Kill"
         },
         "action": {
             "target": "process",
@@ -692,7 +711,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_LoadError"
         },
         "action": {
             "target": "process"
@@ -700,14 +720,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "observer": {
             "vendor": "IBM"
         },
+        "group": {
+            "name": "root"
+        },
         "process": {
             "name": "perl5.28.1",
             "user": {
                 "name": "root"
             }
-        },
-        "group": {
-            "name": "root"
         }
     }
     	
@@ -724,7 +744,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_RealGID"
         },
         "action": {
             "target": "process",
@@ -757,7 +778,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_SetGroups"
         },
         "action": {
             "target": "process",
@@ -790,7 +812,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_SetUserIDs"
         },
         "action": {
             "target": "process",
@@ -823,7 +846,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "PROC_Sysconfig"
         },
         "action": {
             "target": "process",
@@ -856,7 +880,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "S_PASSWD_READ"
         },
         "action": {
             "target": "process",
@@ -899,7 +924,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "S_USER_WRITE"
         },
         "action": {
             "target": "process",
@@ -940,7 +966,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "TCP_kaccept"
         },
         "action": {
             "target": "process",
@@ -988,7 +1015,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "TCP_kbind"
         },
         "action": {
             "target": "process",
@@ -1031,7 +1059,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "TCP_klisten"
         },
         "action": {
             "target": "process",
@@ -1071,7 +1100,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "USER_Login"
         },
         "action": {
             "target": "process",
@@ -1107,7 +1137,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "category": [
                 "process"
-            ]
+            ],
+            "action": "USER_Login"
         },
         "action": {
             "target": "process",
@@ -1149,6 +1180,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | ---- | ---- | ---------------------------|
 |`action.status` | `keyword` | The status of the action |
 |`action.target` | `keyword` | The target of the action. This field is mandatory for STIX2 compliance |
+|`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
@@ -1159,6 +1191,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`group.id` | `keyword` | Unique identifier for the group on the system/platform. |
 |`group.name` | `keyword` | Name of the group. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
+|`process.args` | `keyword` | Array of process arguments. |
 |`process.command_line` | `wildcard` | Full command line that started the process. |
 |`process.name` | `keyword` | Process name. |
 |`process.pid` | `long` | Process id. |

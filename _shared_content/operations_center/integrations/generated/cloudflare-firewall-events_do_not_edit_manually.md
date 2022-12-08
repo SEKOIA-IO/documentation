@@ -91,6 +91,92 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "block.json"
+
+    ```json
+	
+    {
+        "message": "{\"Action\":\"block\",\"ClientASN\":4562,\"ClientASNDescription\":\"PERFORMIVE\",\"ClientCountry\":\"us\",\"ClientIP\":\"10.6.12.26\",\"ClientIPClass\":\"noRecord\",\"ClientRefererHost\":\"\",\"ClientRefererPath\":\"\",\"ClientRefererQuery\":\"\",\"ClientRefererScheme\":\"\",\"ClientRequestHost\":\"foo-bar-baz.xyz\",\"ClientRequestMethod\":\"GET\",\"ClientRequestPath\":\"/.env\",\"ClientRequestProtocol\":\"HTTP/1.1\",\"ClientRequestQuery\":\"\",\"ClientRequestScheme\":\"http\",\"ClientRequestUserAgent\":\"Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; HM NOTE 1W Build/KOT49H) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/11.0.5.850 U3/0.8.0 Mobile Safari/534.30\",\"Datetime\":1669858111716000000,\"EdgeColoCode\":\"EWR\",\"EdgeResponseStatus\":403,\"Kind\":\"firewall\",\"MatchIndex\":0,\"Metadata\":{\"group\":\"cloudflare_specials\",\"rule_message\":\"Version Control - Information Disclosure\"},\"OriginResponseStatus\":0,\"OriginatorRayID\":\"00\",\"RayID\":\"77280bee38a6c461\",\"RuleID\":\"100016\",\"Source\":\"waf\"}",
+        "event": {
+            "action": "block",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "dataset": "firewall-events",
+            "type": [
+                "denied"
+            ],
+            "module": "cloudflare.waf"
+        },
+        "@timestamp": "2022-12-01T01:28:31.716000Z",
+        "source": {
+            "ip": "10.6.12.26",
+            "geo": {
+                "country_name": "us"
+            },
+            "address": "10.6.12.26"
+        },
+        "destination": {
+            "domain": "foo-bar-baz.xyz",
+            "address": "foo-bar-baz.xyz",
+            "top_level_domain": "xyz",
+            "registered_domain": "foo-bar-baz.xyz"
+        },
+        "http": {
+            "request": {
+                "method": "GET"
+            },
+            "version": "HTTP/1.1",
+            "response": {
+                "status_code": 403
+            }
+        },
+        "url": {
+            "domain": "foo-bar-baz.xyz",
+            "path": "/.env",
+            "scheme": "http",
+            "top_level_domain": "xyz",
+            "registered_domain": "foo-bar-baz.xyz"
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; HM NOTE 1W Build/KOT49H) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/11.0.5.850 U3/0.8.0 Mobile Safari/534.30"
+        },
+        "network": {
+            "protocol": "HTTP/1.1"
+        },
+        "observer": {
+            "vendor": "Cloudflare",
+            "type": "firewall"
+        },
+        "cloudflare": {
+            "ClientIPClass": "noRecord",
+            "ClientRefererHost": "",
+            "ClientRefererPath": "",
+            "ClientRefererQuery": "",
+            "ClientRefererScheme": "",
+            "EdgeColoCode": "EWR",
+            "EdgeResponseStatus": 403,
+            "Kind": "firewall",
+            "Metadata": {},
+            "OriginResponseStatus": 0,
+            "OriginatorRayID": "00",
+            "RayID": "77280bee38a6c461",
+            "source": "waf"
+        },
+        "related": {
+            "hosts": [
+                "foo-bar-baz.xyz"
+            ],
+            "ip": [
+                "10.6.12.26"
+            ]
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -121,6 +207,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.module` | `keyword` | Name of the module this data is coming from. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
