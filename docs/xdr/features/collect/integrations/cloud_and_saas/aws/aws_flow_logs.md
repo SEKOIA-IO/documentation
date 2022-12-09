@@ -28,19 +28,53 @@ For VPC and subnet:
 - Click on *Create flow log*
 - Set up the flow log: we recommend to capture all traffic (accepted and rejected).
 
+### Create a SQS queue
+
+This integration relies on S3 Event Notifications to discover new S3 objects.
+
+To be enable to set the S3 Event Notification:
+
+1. Create a queue  in the SQS service according [this guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-create-queue.html).
+2. In the Access Policy step choose the advanced configuration and adapt this configuration sample with your own SQS arn (the main change is the Service directive allowing S3 bucket access):
+    ```json
+    {
+      "Version": "2008-10-17",
+      "Id": "__default_policy_ID",
+      "Statement": [
+        {
+          "Sid": "__owner_statement",
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "s3.amazonaws.com"
+          },
+          "Action": "SQS:*",
+          "Resource": "arn:aws:sqs:XXX:XXX"
+        }
+      ]
+    }
+    ```
+
+    Please, keep in mind, to create the SQS queue in the same region as the S3 bucket you want to watch.
+
+### Create a S3 Event Notification
+
+Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification and then:
+
+1. Select the notification for object creation in the Event type section.
+2. As the destination, choose the SQS service
+3. Select the queue you create in the previous section.
+
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `AWS Flowlogs`.
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Flowlogs trigger](../../../../automate/library/aws.md#fetch-flowlog-records). You can use the existing template to fasten and ease the creation of your playbook.
+To start to pull events, you have to: 
 
-Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the S3 Bucket, hosting the Flowlogs records, and a prefix to select the objects (optional, e.g `WSLogs/313000002243/vpcflowlogs/`).
-
-At the end of the playbook, set up the action `Push events to intake` with a SEKOIA.IO API key and the intake key, from the intake previously created.
-
-Start the playbook and enjoy your events.
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws.md#fetch-new-logs-on-s3).
+2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.
+3. Start the playbook and enjoy your events.
 
 
 ## Further Readings
