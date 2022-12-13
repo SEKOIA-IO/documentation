@@ -21,42 +21,109 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "activity_log_event_search.json"
+
+    ```json
+	
+    {
+        "message": "{\"timestamp\":\"2022-11-22T16:03:33.617764\",\"observer\":{\"name\":\"sekoia.webapi\"},\"visit\":{\"ip\":\"149.202.162.59\",\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36\",\"referrer\":\"https://app.sekoia.io/operations/events?jobId=e2516dab-a983-40bd-bc08-edfd76c5c07c\"},\"action\":{\"name\":\"event-searchjob-start\",\"path\":\"/v1/sic/conf/events/search/jobs\",\"url\":\"http://api.sekoia.io/v1/sic/conf/events/search/jobs\",\"method\":\"POST\",\"parameters\":{\"events_search\":{\"earliest_time\":\"2022-11-22T15:58:33.027Z\",\"latest_time\":\"2022-11-22T16:03:33.027Z\",\"results_ttl\":1800,\"filters_json\":\"[{\\\"field\\\":\\\"http.request.method\\\",\\\"value\\\":\\\"GET\\\",\\\"operator\\\":\\\"=\\\",\\\"excluded\\\":true,\\\"disabled\\\":false}]\"},\"archive_view\":{\"uuid\":null}},\"results\":{\"events_search\":{\"uuid\":\"6f297d0e-451b-49ba-9835-b49c16a33fcc\"}},\"communities\":[\"73d366f0-0ff0-44c5-afcc-f23f7f831902\",\"9b1f77fc-cf38-4b3d-b1d7-ad0157649c70\",\"fbdcf078-7c3e-4263-91a7-354e69fd7c5e\",\"03d5d61a-1e39-40e0-bee9-e14983fd4206\",\"08303d95-46cf-4111-afd4-ae7e954e81fb\",\"03896dd0-5d46-4214-8533-14284d05905e\"]},\"identity\":{\"user_uuid\":\"335cbc80-648d-433a-8396-050c7b5777c8\",\"community_uuid\":\"73d366f0-0ff0-44c5-afcc-f23f7f831902\",\"profile_type\":\"avatar\",\"profile_identity\":\"4afbe05b-bf54-427e-bd61-b43b5039528c\",\"profile_name\":\"Michael S.\"}}",
+        "event": {
+            "action": "event-searchjob-start"
+        },
+        "sekoiaio": {
+            "activity": {
+                "client": {
+                    "id": "4afbe05b-bf54-427e-bd61-b43b5039528c",
+                    "type": "avatar"
+                },
+                "communities": [
+                    "73d366f0-0ff0-44c5-afcc-f23f7f831902",
+                    "9b1f77fc-cf38-4b3d-b1d7-ad0157649c70",
+                    "fbdcf078-7c3e-4263-91a7-354e69fd7c5e",
+                    "03d5d61a-1e39-40e0-bee9-e14983fd4206",
+                    "08303d95-46cf-4111-afd4-ae7e954e81fb",
+                    "03896dd0-5d46-4214-8533-14284d05905e"
+                ],
+                "events_search": {
+                    "uuid": "6f297d0e-451b-49ba-9835-b49c16a33fcc",
+                    "earliest_time": "2022-11-22T15:58:33.027Z",
+                    "latest_time": "2022-11-22T16:03:33.027Z",
+                    "results_ttl": 1800
+                }
+            }
+        },
+        "@timestamp": "2022-11-22T16:03:33.617764Z",
+        "client": {
+            "ip": "149.202.162.59",
+            "address": "149.202.162.59"
+        },
+        "http": {
+            "request": {
+                "method": "POST",
+                "referrer": "https://app.sekoia.io/operations/events?jobId=e2516dab-a983-40bd-bc08-edfd76c5c07c"
+            }
+        },
+        "observer": {
+            "name": "sekoia.webapi"
+        },
+        "url": {
+            "original": "http://api.sekoia.io/v1/sic/conf/events/search/jobs",
+            "path": "/v1/sic/conf/events/search/jobs",
+            "domain": "api.sekoia.io",
+            "top_level_domain": "io",
+            "subdomain": "api",
+            "registered_domain": "sekoia.io",
+            "scheme": "http",
+            "port": 80
+        },
+        "user": {
+            "id": "335cbc80-648d-433a-8396-050c7b5777c8",
+            "domain": "SEKOIA.IO",
+            "full_name": "Michael S."
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+        },
+        "related": {
+            "ip": [
+                "149.202.162.59"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "activity_log_get_intake_format_picture.json"
 
     ```json
 	
     {
         "message": "{\"timestamp\":\"2022-02-22T16:31:58.286485\",\"observer\":{\"name\":\"sekoia.webapi\",\"version\":null},\"visit\":{\"id\":null,\"ip\":\"1.2.3.4\",\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36\",\"referrer\":\"https://app.test.sekoia.io/operations/intakes/new\"},\"action\":{\"name\":\"intake-format-picture-retrieval\",\"path\":\"/v1/ingest/formats/4d05ecd7-1a8a-4ce1-8e6d-c2de2593fa97/picture\",\"url\":\"http://api.sekoia.io/v1/ingest/formats/4d05ecd7-1a8a-4ce1-8e6d-c2de2593fa97/picture\",\"method\":\"GET\"},\"identity\":{\"user_uuid\":\"54e0ec48-8430-4ba2-b70b-710341f41447\",\"community_uuid\":\"79997bd0-dd71-4e25-a70d-a94fa475cd2b\",\"profile_type\":\"avatar\",\"profile_identity\":\"41b811fa-6571-4d3e-9d35-38fb916adfcb\"}}",
+        "event": {
+            "action": "intake-format-picture-retrieval"
+        },
         "sekoiaio": {
             "activity": {
                 "client": {
                     "id": "41b811fa-6571-4d3e-9d35-38fb916adfcb",
                     "type": "avatar"
-                },
-                "action": {
-                    "name": "intake-format-picture-retrieval"
                 }
             }
         },
         "@timestamp": "2022-02-22T16:31:58.286485Z",
-        "agent": {
-            "name": "sekoia.webapi"
-        },
         "client": {
-            "user": {
-                "id": "54e0ec48-8430-4ba2-b70b-710341f41447"
-            },
             "ip": "1.2.3.4",
             "address": "1.2.3.4"
-        },
-        "user_agent": {
-            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
         },
         "http": {
             "request": {
                 "method": "GET",
                 "referrer": "https://app.test.sekoia.io/operations/intakes/new"
             }
+        },
+        "observer": {
+            "name": "sekoia.webapi"
         },
         "url": {
             "original": "http://api.sekoia.io/v1/ingest/formats/4d05ecd7-1a8a-4ce1-8e6d-c2de2593fa97/picture",
@@ -67,6 +134,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "registered_domain": "sekoia.io",
             "scheme": "http",
             "port": 80
+        },
+        "user": {
+            "id": "54e0ec48-8430-4ba2-b70b-710341f41447",
+            "domain": "SEKOIA.IO"
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
         },
         "related": {
             "ip": [
@@ -93,24 +167,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "@timestamp": "2021-10-29T11:34:23.000000Z",
-        "agent": {
-            "name": "sekoia.webapi"
-        },
         "client": {
-            "user": {
-                "id": "5beacab7-4fc9-4c07-8ec0-e6ad73ed77fe"
-            },
             "ip": "141.229.130.228",
             "address": "141.229.130.228"
-        },
-        "user_agent": {
-            "original": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8"
         },
         "http": {
             "request": {
                 "method": "GET",
                 "referrer": "https://api.sekoia.io/v1/user/profile/settings"
             }
+        },
+        "observer": {
+            "name": "sekoia.webapi"
         },
         "url": {
             "original": "http://api.sekoia.io/v1/me?extended=true",
@@ -119,13 +187,85 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "io",
             "subdomain": "api",
             "registered_domain": "sekoia.io",
-            "scheme": "http",
             "query": "extended=true",
+            "scheme": "http",
             "port": 80
+        },
+        "user": {
+            "id": "5beacab7-4fc9-4c07-8ec0-e6ad73ed77fe",
+            "domain": "SEKOIA.IO"
+        },
+        "user_agent": {
+            "original": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8"
         },
         "related": {
             "ip": [
                 "141.229.130.228"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "activity_log_invitation.json"
+
+    ```json
+	
+    {
+        "message": "{\"timestamp\":\"2022-11-22T17:51:33.207472\",\"observer\":{\"name\":\"sekoia.webapi\"},\"visit\":{\"ip\":\"149.202.162.59\",\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36\",\"referrer\":\"https://app.sekoia.io/user/profile/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/members\"},\"action\":{\"name\":\"invitation\",\"path\":\"/v1/invitations\",\"url\":\"http://api.sekoia.io/v1/invitations\",\"method\":\"POST\",\"parameters\":{\"user\":{\"email\":\"demo.user@example.com\"}}},\"identity\":{\"user_uuid\":\"335cbc80-648d-433a-8396-050c7b5777c8\",\"profile_type\":\"user\",\"profile_identity\":\"335cbc80-648d-433a-8396-050c7b5777c8\",\"profile_name\":\"Michael S.\"}}\n",
+        "event": {
+            "action": "invitation"
+        },
+        "sekoiaio": {
+            "activity": {
+                "client": {
+                    "id": "335cbc80-648d-433a-8396-050c7b5777c8",
+                    "type": "user"
+                },
+                "user": {
+                    "email": "demo.user@example.com"
+                }
+            }
+        },
+        "@timestamp": "2022-11-22T17:51:33.207472Z",
+        "client": {
+            "ip": "149.202.162.59",
+            "address": "149.202.162.59"
+        },
+        "http": {
+            "request": {
+                "method": "POST",
+                "referrer": "https://app.sekoia.io/user/profile/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/members"
+            }
+        },
+        "observer": {
+            "name": "sekoia.webapi"
+        },
+        "url": {
+            "original": "http://api.sekoia.io/v1/invitations",
+            "path": "/v1/invitations",
+            "domain": "api.sekoia.io",
+            "top_level_domain": "io",
+            "subdomain": "api",
+            "registered_domain": "sekoia.io",
+            "scheme": "http",
+            "port": 80
+        },
+        "user": {
+            "id": "335cbc80-648d-433a-8396-050c7b5777c8",
+            "domain": "SEKOIA.IO",
+            "full_name": "Michael S.",
+            "target": {
+                "email": "demo.user@example.com"
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+        },
+        "related": {
+            "ip": [
+                "149.202.162.59"
             ]
         }
     }
@@ -148,20 +288,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "@timestamp": "2021-11-01T12:16:21.815546Z",
-        "agent": {
-            "name": "sekoia.webapi"
-        },
         "client": {
             "ip": "51.255.128.104",
             "address": "51.255.128.104"
-        },
-        "user_agent": {
-            "original": "python-requests/2.26.0"
         },
         "http": {
             "request": {
                 "method": "POST"
             }
+        },
+        "observer": {
+            "name": "sekoia.webapi"
         },
         "url": {
             "original": "http://api.sekoia.io/v2/inthreat/bundles?auto_merge=1",
@@ -170,13 +307,93 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "io",
             "subdomain": "api",
             "registered_domain": "sekoia.io",
-            "scheme": "http",
             "query": "auto_merge=1",
+            "scheme": "http",
             "port": 80
+        },
+        "user": {
+            "domain": "SEKOIA.IO"
+        },
+        "user_agent": {
+            "original": "python-requests/2.26.0"
         },
         "related": {
             "ip": [
                 "51.255.128.104"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "activity_log_role_assignment.json"
+
+    ```json
+	
+    {
+        "message": "{\"timestamp\":\"2022-11-22T17:51:17.134509\",\"observer\":{\"name\":\"sekoia.webapi\"},\"visit\":{\"ip\":\"149.202.162.59\",\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36\",\"referrer\":\"https://app.sekoia.io/user/profile/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/members/1b28fe10-fa7c-430b-b97e-10874c9eca2e\"},\"action\":{\"name\":\"role-assignment\",\"path\":\"/v1/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/roles/2379a555-2817-4503-b7da-a30595fd8af5\",\"url\":\"http://api.sekoia.io/v1/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/roles/2379a555-2817-4503-b7da-a30595fd8af5\",\"method\":\"POST\",\"parameters\":{\"role\":{\"uuid\":\"2379a555-2817-4503-b7da-a30595fd8af5\",\"name\":\"soar_operator\"},\"user\":{\"uuid\":\"0422a57e-1e71-4236-8ba2-538428220c9f\",\"name\":\"Dwight S.\"}},\"communities\":[\"09c6528e-1b9f-4b81-98c8-482cea4e7974\"]},\"identity\":{\"user_uuid\":\"335cbc80-648d-433a-8396-050c7b5777c8\",\"community_uuid\":\"09c6528e-1b9f-4b81-98c8-482cea4e7974\",\"profile_type\":\"avatar\",\"profile_identity\":\"4f66b6da-924a-47ee-8638-972935a07f02\",\"profile_name\":\"Michael S.\"}}\n",
+        "event": {
+            "action": "role-assignment"
+        },
+        "sekoiaio": {
+            "activity": {
+                "client": {
+                    "id": "4f66b6da-924a-47ee-8638-972935a07f02",
+                    "type": "avatar"
+                },
+                "communities": [
+                    "09c6528e-1b9f-4b81-98c8-482cea4e7974"
+                ],
+                "role": {
+                    "name": "soar_operator",
+                    "uuid": "2379a555-2817-4503-b7da-a30595fd8af5"
+                },
+                "user": {
+                    "name": "Dwight S.",
+                    "uuid": "0422a57e-1e71-4236-8ba2-538428220c9f"
+                }
+            }
+        },
+        "@timestamp": "2022-11-22T17:51:17.134509Z",
+        "client": {
+            "ip": "149.202.162.59",
+            "address": "149.202.162.59"
+        },
+        "http": {
+            "request": {
+                "method": "POST",
+                "referrer": "https://app.sekoia.io/user/profile/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/members/1b28fe10-fa7c-430b-b97e-10874c9eca2e"
+            }
+        },
+        "observer": {
+            "name": "sekoia.webapi"
+        },
+        "url": {
+            "original": "http://api.sekoia.io/v1/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/roles/2379a555-2817-4503-b7da-a30595fd8af5",
+            "path": "/v1/communities/09c6528e-1b9f-4b81-98c8-482cea4e7974/roles/2379a555-2817-4503-b7da-a30595fd8af5",
+            "domain": "api.sekoia.io",
+            "top_level_domain": "io",
+            "subdomain": "api",
+            "registered_domain": "sekoia.io",
+            "scheme": "http",
+            "port": 80
+        },
+        "user": {
+            "id": "335cbc80-648d-433a-8396-050c7b5777c8",
+            "domain": "SEKOIA.IO",
+            "full_name": "Michael S.",
+            "target": {
+                "id": "0422a57e-1e71-4236-8ba2-538428220c9f",
+                "full_name": "Dwight S."
+            }
+        },
+        "user_agent": {
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+        },
+        "related": {
+            "ip": [
+                "149.202.162.59"
             ]
         }
     }
@@ -194,18 +411,83 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
-|`agent.name` | `keyword` | Custom name of the agent. |
-|`agent.version` | `keyword` | Version of the agent. |
 |`client.ip` | `ip` | IP address of the client. |
-|`client.user.id` | `keyword` | Unique identifier of the user. |
+|`error.code` | `keyword` | Error code describing the error. |
+|`error.message` | `match_only_text` | Error message. |
+|`event.action` | `keyword` | The action captured by the event. |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
-|`sekoiaio.activity.action.name` | `keyword` | The name of the operation |
-|`sekoiaio.activity.action.parameters` | `keyword` | The arguments supplied for the operation |
-|`sekoiaio.activity.action.results` | `keyword` | The results of the operation |
+|`observer.name` | `keyword` | Custom name of the observer. |
+|`observer.version` | `keyword` | Observer version. |
+|`sekoiaio.activity.alert_type.uuid` | `keyword` | UUID of the Alert Type |
+|`sekoiaio.activity.apikey.description` | `keyword` | Description of the API key |
+|`sekoiaio.activity.apikey.name` | `keyword` | Name of the API key |
+|`sekoiaio.activity.archive.name` | `keyword` | Name of the archive |
+|`sekoiaio.activity.archive.provider` | `keyword` | Provider of the archive |
+|`sekoiaio.activity.archive.short_id` | `keyword` | Short ID of the archive |
+|`sekoiaio.activity.archive.snapshot.uuid` | `keyword` | UUID of the archive snapshot |
+|`sekoiaio.activity.archive.uuid` | `keyword` | UUID of the archive |
+|`sekoiaio.activity.archive_view.date_end` | `keyword` | End Date of the Archive View |
+|`sekoiaio.activity.archive_view.date_start` | `keyword` | Start date of the Archive View |
+|`sekoiaio.activity.archive_view.name` | `keyword` | Name of the Archive View |
+|`sekoiaio.activity.archive_view.uuid` | `keyword` | UUID of the Archive View |
+|`sekoiaio.activity.asset.name` | `keyword` | Name of the Asset |
+|`sekoiaio.activity.asset.uuid` | `keyword` | UUID of the Asset |
 |`sekoiaio.activity.client.id` | `keyword` | The identifier of the client |
 |`sekoiaio.activity.client.type` | `keyword` | The nature of the client |
+|`sekoiaio.activity.communities` | `keyword` | List of impacted communities' UUIDs |
+|`sekoiaio.activity.community.description` | `keyword` | Description of the community |
+|`sekoiaio.activity.community.homepage_url` | `keyword` | Homepage URL of the community |
+|`sekoiaio.activity.community.name` | `keyword` | Name of the community |
+|`sekoiaio.activity.countermeasure_list.description` | `keyword` | Description of the CounterMeasure list |
+|`sekoiaio.activity.countermeasure_list.name` | `keyword` | Name of the CounterMeasure list |
+|`sekoiaio.activity.countermeasure_list.relevance` | `keyword` | Relevance of the CounterMeasure list |
+|`sekoiaio.activity.countermeasure_list.uuid` | `keyword` | UUID of the CounterMeasure list |
+|`sekoiaio.activity.delegate.type` | `keyword` | Type of the delegate |
+|`sekoiaio.activity.delegate.uuid` | `keyword` | UUID of the delegate |
+|`sekoiaio.activity.entity.description` | `keyword` | Description of the Entity |
+|`sekoiaio.activity.entity.id` | `keyword` | ID of the Entity |
+|`sekoiaio.activity.entity.name` | `keyword` | Name of the Entity |
+|`sekoiaio.activity.entity.uuid` | `keyword` | UUID of the Entity |
+|`sekoiaio.activity.events_search.earliest_time` | `keyword` | Term searched into events |
+|`sekoiaio.activity.events_search.latest_time` | `keyword` | Term searched into events |
+|`sekoiaio.activity.events_search.results_ttl` | `long` | The number of seconds during which results are instantly available |
+|`sekoiaio.activity.events_search.term` | `keyword` | Term searched into events |
+|`sekoiaio.activity.events_search.uuid` | `keyword` | UUID of an Events Search Job |
+|`sekoiaio.activity.generation_mode.description` | `keyword` | Description of the Alert Generation Mode |
+|`sekoiaio.activity.generation_mode.name` | `keyword` | Name of the Alert Generation Mode |
+|`sekoiaio.activity.generation_mode.uuid` | `keyword` | UUID of the Alert Generation Mode |
+|`sekoiaio.activity.intake.format.module.description` | `keyword` | Description of the Intake Format Module |
+|`sekoiaio.activity.intake.format.module.name` | `keyword` | Name of the Intake Format Module |
+|`sekoiaio.activity.intake.format.module.slug` | `keyword` | Slug of the Intake Format Module |
+|`sekoiaio.activity.intake.format.module.uuid` | `keyword` | UUID of the Intake Format Module |
+|`sekoiaio.activity.intake.format.name` | `keyword` | Name of the Intake Format |
+|`sekoiaio.activity.intake.format.slug` | `keyword` | Slug of the Intake Format |
+|`sekoiaio.activity.intake.format.uuid` | `keyword` | UUID of the Intake Format |
+|`sekoiaio.activity.intake.name` | `keyword` | Name of the Intake |
+|`sekoiaio.activity.intake.uuid` | `keyword` | UUID of the Intake |
+|`sekoiaio.activity.invitation.email_address` | `keyword` | Email address of the invited user |
+|`sekoiaio.activity.mfa_method` | `keyword` | Type of factor used for Multi-Factor Authentication (MFA) |
+|`sekoiaio.activity.permissions` | `keyword` | Permissions associated with the role or the delegate |
+|`sekoiaio.activity.role.description` | `keyword` | Description of the role |
+|`sekoiaio.activity.role.name` | `keyword` | Name of the role |
+|`sekoiaio.activity.role.uuid` | `keyword` | UUID of the role |
+|`sekoiaio.activity.rule.definition_uuid` | `keyword` | UUID of the Rule Definition |
+|`sekoiaio.activity.rule.name` | `keyword` | Name of the Rule |
+|`sekoiaio.activity.user.company_name` | `keyword` | New company name of the user when updating their account |
+|`sekoiaio.activity.user.email` | `keyword` | User Email Address |
+|`sekoiaio.activity.user.firstname` | `keyword` | User First Name |
+|`sekoiaio.activity.user.lastname` | `keyword` | User Last Name |
+|`sekoiaio.activity.user.name` | `keyword` | User Full Name |
+|`sekoiaio.activity.user.uuid` | `keyword` | User UUID |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`url.path` | `wildcard` | Path of the request, such as "/search". |
+|`user.domain` | `keyword` | Name of the directory the user is a member of. |
+|`user.full_name` | `keyword` | User's full name, if available. |
+|`user.id` | `keyword` | Unique identifier of the user. |
+|`user.target.email` | `keyword` | User email address. |
+|`user.target.full_name` | `keyword` | User's full name, if available. |
+|`user.target.id` | `keyword` | Unique identifier of the user. |
+|`user.target.roles` | `keyword` | Array of user roles at the time of the event. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 
