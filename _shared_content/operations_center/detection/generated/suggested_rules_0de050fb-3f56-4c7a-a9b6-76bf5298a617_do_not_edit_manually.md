@@ -201,11 +201,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp activity** 
     
     - **Effort:** intermediate
 
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
     
     - **Effort:** advanced
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
 
 ??? abstract "ICacls Granting Access To All"
     

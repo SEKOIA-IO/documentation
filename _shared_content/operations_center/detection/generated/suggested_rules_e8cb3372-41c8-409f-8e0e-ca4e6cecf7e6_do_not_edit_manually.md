@@ -165,11 +165,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** intermediate
 
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
     
     - **Effort:** advanced
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
@@ -182,6 +194,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
 
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -357,6 +375,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** elementary
 
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Qakbot Persistence Using Schtasks"
     
     Detects possible Qakbot persistence using schtasks.
@@ -393,6 +417,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** elementary
 
+??? abstract "SELinux Disabling"
+    
+    An attacker can disable SELinux to make workstation or server compromise easier as it disables several protections.
+    
+    - **Effort:** intermediate
+
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
@@ -404,6 +434,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
+
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** intermediate
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
+    
+    - **Effort:** intermediate
 
 ??? abstract "SolarWinds Suspicious File Creation"
     

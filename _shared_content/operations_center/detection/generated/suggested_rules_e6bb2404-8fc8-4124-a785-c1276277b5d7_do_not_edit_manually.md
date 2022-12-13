@@ -21,6 +21,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     
     - **Effort:** advanced
 
+??? abstract "Okta Admin Privilege Granted"
+    
+    Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Application deleted"
     
     An application has been delete on Okta SSO.
@@ -32,6 +38,54 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     An application has been updated on Okta SSO.
     
     - **Effort:** advanced
+
+??? abstract "Okta Blacklist Manipulations"
+    
+    Detects when some manipulation are done in blacklist configurations.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta MFA Disabled"
+    
+    A MFA has beed disabled in Okta SSO. This is a common behavior to gain permanent access over a system.
+    
+    - **Effort:** elementary
+
+??? abstract "Okta Policy Modified or Deleted"
+    
+    Detects when an Okta policy is modified or deleted.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Policy Rule Modified or Deleted"
+    
+    Detects when an Okta Policy Rule is Modified or Deleted.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Security Threat Configuration Updated"
+    
+    Detects when the threat configuration has been updated in Okta.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta Security Threat Detected"
+    
+    Detects when a security threat is detected in Okta.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta User Account Locked"
+    
+    An user has been locked in Okta.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Potential Bazar Loader User-Agents"
     

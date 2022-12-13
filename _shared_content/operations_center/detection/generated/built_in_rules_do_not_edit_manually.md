@@ -1,4 +1,4 @@
-Rules catalog includes **613 built-in detection rules** (_last update on 2022-12-08_).
+Rules catalog includes **625 built-in detection rules** (_last update on 2022-12-13_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -313,6 +313,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     Detects successful access to administration console of a firewall after several failure.
     
     - **Effort:** advanced
+
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
 
 ??? abstract "User Added to Local Administrators"
     
@@ -1087,6 +1093,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** elementary
 
+??? abstract "Okta Security Threat Detected"
+    
+    Detects when a security threat is detected in Okta.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Phorpiex DriveMgr Command"
     
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
@@ -1581,6 +1593,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** elementary
 
+??? abstract "LNK Malware Chain"
+    
+    Detection of an ISO download followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
@@ -1772,6 +1790,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
     
     - **Effort:** master
+
+??? abstract "Okta Security Threat Detected"
+    
+    Detects when a security threat is detected in Okta.
+    
+    - **Effort:** intermediate
 
 ??? abstract "SentinelOne Agent Disabled"
     
@@ -2044,6 +2068,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
     
     - **Effort:** master
+
+??? abstract "Okta Security Threat Detected"
+    
+    Detects when a security threat is detected in Okta.
+    
+    - **Effort:** intermediate
 
 ??? abstract "PsExec Process"
     
@@ -2474,6 +2504,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** advanced
 
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
+
 ??? abstract "User Added to Local Administrators"
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
@@ -2553,6 +2589,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     Detects Mimikatz most popular commands. 
     
     - **Effort:** elementary
+
+??? abstract "Okta Admin Privilege Granted"
+    
+    Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
+    
+    - **Effort:** advanced
 
 ??? abstract "Okta Application deleted"
     
@@ -3367,6 +3409,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
+??? abstract "Okta Admin Privilege Granted"
+    
+    Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious New Printer Ports In Registry"
     
     Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14). 
@@ -3441,6 +3489,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** advanced
 
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
+
 ??? abstract "User Added to Local Administrators"
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
@@ -3492,6 +3546,18 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Policy Modified or Deleted"
+    
+    Detects when an Okta policy is modified or deleted.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Policy Rule Modified or Deleted"
+    
+    Detects when an Okta Policy Rule is Modified or Deleted.
     
     - **Effort:** advanced
 
@@ -4212,6 +4278,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Secure Deletion With SDelete"
     
     Detects renaming of file while deletion with SDelete tool. SDelete is a tool that permits to securely delete files by overwriting them (no recovery possible). Few threat actors are using it to delete traces of their malware.
@@ -4303,6 +4375,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     Detects successful access to administration console of a firewall after several failure.
     
     - **Effort:** advanced
+
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
 
 ??? abstract "User Added to Local Administrators"
     
@@ -4774,6 +4852,18 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** advanced
 
+??? abstract "Okta Policy Modified or Deleted"
+    
+    Detects when an Okta policy is modified or deleted.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Policy Rule Modified or Deleted"
+    
+    Detects when an Okta Policy Rule is Modified or Deleted.
+    
+    - **Effort:** advanced
+
 ??? abstract "Privileged AD Builtin Group Modified"
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
@@ -5051,6 +5141,24 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
 ??? abstract "Netsh RDP Port Opening"
     
     Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta Blacklist Manipulations"
+    
+    Detects when some manipulation are done in blacklist configurations.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta MFA Disabled"
+    
+    A MFA has beed disabled in Okta SSO. This is a common behavior to gain permanent access over a system.
+    
+    - **Effort:** elementary
+
+??? abstract "Okta Security Threat Configuration Updated"
+    
+    Detects when the threat configuration has been updated in Okta.
     
     - **Effort:** intermediate
 
@@ -5412,6 +5520,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
     
     - **Effort:** elementary
+
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Impacket Secretsdump.py Tool"
     
@@ -6876,6 +6990,12 @@ Rules catalog includes **613 built-in detection rules** (_last update on 2022-12
     Detects local user deletion
     
     - **Effort:** master
+
+??? abstract "Okta User Account Locked"
+    
+    An user has been locked in Okta.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Privileged AD Builtin Group Modified"
     
