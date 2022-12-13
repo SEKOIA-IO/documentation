@@ -51,6 +51,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** intermediate
 
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
 ??? abstract "FoggyWeb HTTP Default GET/POST Requests"
     
     Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
