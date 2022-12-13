@@ -345,6 +345,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
+
 ??? abstract "HarfangLab Process Execution Blocked"
     
     HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
@@ -362,6 +368,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects usage of attrib.exe to hide files from users.
     
     - **Effort:** advanced
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
