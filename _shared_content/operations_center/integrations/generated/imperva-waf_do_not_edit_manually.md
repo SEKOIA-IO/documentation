@@ -46,7 +46,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "connection",
                 "access"
-            ]
+            ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf"
         },
         "user_agent": {
             "original": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0"
@@ -86,6 +88,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "12.12.12.12"
         },
         "@timestamp": "2009-02-13T23:31:30.000000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "tls": {
             "version": "1.2",
             "version_protocol": "tls",
@@ -144,6 +151,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "connection",
                 "error"
             ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf",
             "reason": "The HTTP request was malformated"
         },
         "user_agent": {
@@ -180,6 +189,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "@timestamp": "2022-04-12T14:09:58.763000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "imperva": {
             "pop": "cdg",
             "session": {
@@ -226,6 +240,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "connection",
                 "denied"
             ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf",
             "reason": "The destination was blacklisted"
         },
         "user_agent": {
@@ -262,6 +278,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "@timestamp": "2022-04-12T14:09:58.763000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "imperva": {
             "pop": "cdg",
             "session": {
@@ -308,6 +329,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "connection",
                 "denied"
             ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf",
             "reason": "The request was blocked based on WAF settings"
         },
         "user_agent": {
@@ -344,6 +367,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "@timestamp": "2022-04-12T14:09:58.763000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "imperva": {
             "pop": "cdg",
             "session": {
@@ -389,7 +417,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "connection",
                 "allowed"
-            ]
+            ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf"
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
@@ -425,6 +455,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "@timestamp": "2022-04-12T14:09:58.763000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "imperva": {
             "pop": "cdg",
             "session": {
@@ -471,6 +506,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "connection",
                 "denied"
             ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf",
             "reason": "A challenge was submitted to the client"
         },
         "user_agent": {
@@ -515,6 +552,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "Block Malicious User,High Risk Resources,"
         },
         "@timestamp": "2009-02-13T23:31:30.000000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "tls": {
             "version": "1.2",
             "version_protocol": "tls",
@@ -598,6 +640,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "connection",
                 "error"
             ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf",
             "reason": "The destination doesn't support IPv6 addresses"
         },
         "user_agent": {
@@ -634,6 +678,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "@timestamp": "2022-04-12T14:09:58.763000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "imperva": {
             "pop": "cdg",
             "session": {
@@ -679,7 +728,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "connection",
                 "allowed"
-            ]
+            ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf"
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
@@ -715,6 +766,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "@timestamp": "2022-04-12T14:09:58.763000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "imperva": {
             "pop": "cdg",
             "session": {
@@ -761,6 +817,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "connection",
                 "error"
             ],
+            "dataset": "imperva-waf",
+            "module": "imperva.waf",
             "reason": "The proxy failed to resolve the destination"
         },
         "user_agent": {
@@ -797,6 +855,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "@timestamp": "2022-04-12T14:09:58.763000Z",
+        "observer": {
+            "vendor": "Imperva",
+            "type": "firewall",
+            "product": "Web Application Firewall"
+        },
         "imperva": {
             "pop": "cdg",
             "session": {
@@ -839,9 +902,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`client.geo.location` | `geo_point` | Longitude and latitude. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.dataset` | `keyword` | Name of the dataset. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.module` | `keyword` | Name of the module this data is coming from. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
@@ -865,6 +930,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`imperva.user_agent.type` | `keyword` | The browser type. |
 |`imperva.visitor.id` | `keyword` | The ID of the visitor. |
 |`network.protocol` | `keyword` | Application protocol name. |
+|`observer.product` | `keyword` | The product name of the observer. |
+|`observer.type` | `keyword` | The type of the observer the data is coming from. |
+|`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`rule.name` | `keyword` | Rule name |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
