@@ -3,12 +3,6 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **Cloudflare WAF events** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x Cloudflare WAF events on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_16676d72-463e-4b8a-b13a-f8dd48cddc8c_do_not_edit_manually.json){ .md-button }
-??? abstract "CloudFlare Firewall Block Rule"
-    
-    Detects when one of CloudFlare Firewall rule (previously WAF's custom rule or managed rule) blocked an HTTP request 
-    
-    - **Effort:** master
-
 ??? abstract "Covenant Default HTTP Beaconing"
     
     Detects potential Covenant communications through the user-agent and specific urls
@@ -50,3 +44,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cloudflare WAF events** with
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
     - **Effort:** elementary
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request 
+    
+    - **Effort:** master
