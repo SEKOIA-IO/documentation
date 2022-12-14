@@ -1,4 +1,4 @@
-Rules catalog includes **625 built-in detection rules** (_last update on 2022-12-13_).
+Rules catalog includes **627 built-in detection rules** (_last update on 2022-12-13_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -943,6 +943,18 @@ Rules catalog includes **625 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** advanced
 
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
+??? abstract "Cybereason MalOp Malware Detection"
+    
+    Cybereason MalOp telemetry has detected a malware
+    
+    - **Effort:** advanced
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -1551,6 +1563,18 @@ Rules catalog includes **625 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** advanced
 
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
+??? abstract "Cybereason MalOp Malware Detection"
+    
+    Cybereason MalOp telemetry has detected a malware
+    
+    - **Effort:** advanced
+
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
@@ -1994,6 +2018,18 @@ Rules catalog includes **625 built-in detection rules** (_last update on 2022-12
 ??? abstract "Csrss Wrong Parent"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
+??? abstract "Cybereason MalOp Malware Detection"
+    
+    Cybereason MalOp telemetry has detected a malware
     
     - **Effort:** advanced
 

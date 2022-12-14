@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     
     - **Effort:** intermediate
 
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
 ??? abstract "Email Classified As Malware But Allowed (Proofpoint)"
     
     An email was classified as malware with a threat score greater than 0 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.

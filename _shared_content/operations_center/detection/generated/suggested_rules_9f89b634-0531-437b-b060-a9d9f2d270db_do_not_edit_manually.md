@@ -9,6 +9,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the 
     
     - **Effort:** advanced
 
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
+??? abstract "Cybereason MalOp Malware Detection"
+    
+    Cybereason MalOp telemetry has detected a malware
+    
+    - **Effort:** advanced
+
 ??? abstract "Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
