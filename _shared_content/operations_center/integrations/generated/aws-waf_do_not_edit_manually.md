@@ -42,7 +42,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "dataset": "aws-waf",
+            "module": "aws.waf",
             "action": "BLOCK",
             "reason": [
                 "XSS"
@@ -128,7 +128,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "dataset": "aws-waf",
+            "module": "aws.waf",
             "action": "BLOCK",
             "reason": [
                 "SQL_INJECTION"
@@ -218,7 +218,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "dataset": "aws-waf",
+            "module": "aws.waf",
             "action": "BLOCK",
             "reason": [
                 "XSS"
@@ -304,7 +304,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "dataset": "aws-waf",
+            "module": "aws.waf",
             "action": "ALLOW"
         },
         "@timestamp": "2022-11-26T08:02:03.944000Z",
@@ -392,7 +392,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "dataset": "aws-waf",
+            "module": "aws.waf",
             "action": "ALLOW"
         },
         "@timestamp": "2022-11-26T05:39:03.965000Z",
@@ -478,7 +478,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "dataset": "aws-waf",
+            "module": "aws.waf",
             "action": "ALLOW"
         },
         "@timestamp": "2022-11-28T12:42:39.431000Z",
@@ -566,7 +566,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "access"
             ],
-            "dataset": "aws-waf",
+            "module": "aws.waf",
             "action": "ALLOW"
         },
         "@timestamp": "2022-11-26T08:02:15.564000Z",
@@ -653,8 +653,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
-|`event.dataset` | `keyword` | Name of the dataset. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.module` | `keyword` | Name of the module this data is coming from. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`http.request.body.bytes` | `long` | Size in bytes of the request body. |

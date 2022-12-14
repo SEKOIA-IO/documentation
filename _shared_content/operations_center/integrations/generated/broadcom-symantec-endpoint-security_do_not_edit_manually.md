@@ -89,10 +89,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "action": "Blocked",
             "start": "2022-08-29T11:58:20.000000Z",
+            "end": "2022-08-29T11:58:20.000000Z",
             "type": [
                 "denied"
             ]
         },
+        "@timestamp": "2022-08-29T11:58:20.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -100,9 +102,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "hostname": "INT23456",
             "name": "INT23456"
-        },
-        "user": {
-            "name": "Admin"
         },
         "process": {
             "pid": 4428,
@@ -112,6 +111,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "args": [
                 "C:\\Program Files (x86)\\Symantec\\Symantec Endpoint Protection\f.3.4615.2000.105\\Bin64\\ccSvcHst.exe"
             ]
+        },
+        "user": {
+            "name": "Admin"
         },
         "related": {
             "hosts": [
@@ -139,11 +141,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "action": "Continue",
             "start": "2022-10-19T06:45:39.000000Z",
+            "end": "2022-10-19T06:45:39.000000Z",
             "reason": "Le contr\u00f4le des applications et des p\u00e9riph\u00e9riques est pr\u00eat.",
             "type": [
                 "info"
             ]
         },
+        "@timestamp": "2022-10-19T06:45:39.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -200,6 +204,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-10-18T18:09:26.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -243,6 +248,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-10-19T07:32:25.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -282,10 +288,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "reason": "attaque de Audit: Malicious Scan Attempt 2 d\u00e9tect\u00e9e mais pas bloqu\u00e9e. Chemin d\u2019application\u00a0: SYSTEM",
             "start": "2022-10-19T09:25:40.000000Z",
+            "end": "2022-10-19T09:25:40.000000Z",
             "type": [
                 "info"
             ]
         },
+        "@timestamp": "2022-10-19T09:25:40.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -305,8 +313,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "url": {
             "original": "http://9.8.7.6:443/",
             "domain": "9.8.7.6",
-            "port": 443,
             "scheme": "http",
+            "port": 443,
             "path": "/"
         },
         "network": {
@@ -369,10 +377,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "reason": "Analyse lanc\u00e9e sur lecteurs et dossiers s\u00e9lectionn\u00e9s et toutes les extensions.",
             "start": "2022-10-04T17:42:10.000000Z",
+            "end": "2022-10-04T17:44:22.000000Z",
             "type": [
                 "info"
             ]
         },
+        "@timestamp": "2022-10-04T17:44:22.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -432,16 +442,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "SONAR detection now allowed,IP Address: 1.2.3.4,Computer name: DNHFF3453,Source: Auto-Protect scan,Risk name: WS.Reputation.1,Occurrences: 1,File path: c:\\program files (x86)\\visualxxxxxxxxxx\\vtomxvision.exe,Description: ,Actual action: Action invalid,Requested action: Process terminate pending restart,Secondary action: 102,Event time: 2022-07-07 17:01:05,Event Insert Time: 2022-07-07 17:24:14,End Time: 2022-07-07 17:01:05,Last update time: 2022-07-07 17:24:14,Domain Name: MyDomain,Group Name: MyDomain\\Subdivision\\Citrix VDI persistants,Server Name: XXXXX01,User Name: Doe,Source Computer Name: ,Source Computer IP: ,Disposition: Good,Download site: ,Web domain: ,Downloaded by: c:/windows/explorer.exe,Prevalence: This file has been seen by fewer than 50 Symantec users.,Confidence: There is some evidence that this file is trustworthy.,URL Tracking Status: On,First Seen: Symantec has known about this file approximately 2 days.,Sensitivity: ,Allowed application reason: User allow list,Application hash: E13D72DE479A65E6448C779B3B2BCE45DB7B5AE52B1BAA0FE915380A667D3C01,Hash type: SHA2,Company name: Absyss S.A.S,Application name: Visual TOM,Application version: 6.6.1 (FR),Application type: 127,File size (bytes): 67352,Category set: Malware,Category type: Insight Network Threat,Location: MyDomain,Intensive Protection Level: 0,Certificate issuer: Absyss,Certificate signer: Sectigo RSA Code Signing CA,Certificate thumbprint: D31433F4C8C0BE4846E7E90318CD0CF5046EE95C,Signing timestamp: 1649155201,Certificate serial number: 044541E287C90A879334BFD15D6A3ED3",
         "event": {
-            "reason": "SONAR detection now allowed",
             "kind": "event",
             "category": [
                 "process"
             ],
+            "reason": "SONAR detection now allowed",
+            "action": "Process terminate pending restart",
             "type": [
                 "info"
-            ],
-            "action": "Process terminate pending restart"
+            ]
         },
+        "@timestamp": "2022-07-07T17:24:14.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -453,19 +464,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "DNHFF3453",
             "name": "DNHFF3453"
         },
+        "file": {
+            "path": "c:\\program files (x86)\\visualxxxxxxxxxx\\vtomxvision.exe",
+            "size": 67352
+        },
         "user": {
             "name": "Doe"
-        },
-        "related": {
-            "hosts": [
-                "DNHFF3453"
-            ],
-            "ip": [
-                "1.2.3.4"
-            ],
-            "user": [
-                "Doe"
-            ]
         },
         "threat": {
             "enrichments": [
@@ -485,10 +489,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             ]
         },
-        "file": {
-            "path": "c:\\program files (x86)\\visualxxxxxxxxxx\\vtomxvision.exe",
-            "size": 67352
-        },
         "broadcom": {
             "endpoint_protection": {
                 "source": "Auto-Protect scan",
@@ -497,23 +497,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "group": "MyDomain\\Subdivision\\Citrix VDI persistants",
                     "name": "XXXXX01"
                 },
-                "threat": {
-                    "type": "Insight Network Threat",
-                    "category": "Malware"
-                },
-                "protection": {
-                    "level": 0
-                },
                 "application": {
                     "code_signature": {
-                        "digest_algorithm": "sha2",
-                        "subject_name": "Absyss",
-                        "signer": "Sectigo RSA Code Signing CA",
                         "timestamp": "2022-04-05T10:40:01.000000Z",
                         "certificate": {
-                            "thumbprint": "D31433F4C8C0BE4846E7E90318CD0CF5046EE95C",
-                            "serial_number": "044541E287C90A879334BFD15D6A3ED3"
-                        }
+                            "serial_number": "044541E287C90A879334BFD15D6A3ED3",
+                            "thumbprint": "D31433F4C8C0BE4846E7E90318CD0CF5046EE95C"
+                        },
+                        "signer": "Sectigo RSA Code Signing CA",
+                        "subject_name": "Absyss",
+                        "digest_algorithm": "sha2"
                     },
                     "hash": {
                         "sha2": "E13D72DE479A65E6448C779B3B2BCE45DB7B5AE52B1BAA0FE915380A667D3C01"
@@ -521,18 +514,36 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "name": "Visual TOM",
                     "version": "6.6.1 (FR)"
                 },
-                "downloaded_by": {
-                    "file": {
-                        "path": "c:/windows/explorer.exe"
-                    }
-                },
                 "action": {
                     "main": "Action invalid",
                     "secondary": "102"
                 },
                 "prevalence": "This file has been seen by fewer than 50 Symantec users.",
-                "confidence": "There is some evidence that this file is trustworthy."
+                "confidence": "There is some evidence that this file is trustworthy.",
+                "downloaded_by": {
+                    "file": {
+                        "path": "c:/windows/explorer.exe"
+                    }
+                },
+                "threat": {
+                    "type": "Insight Network Threat",
+                    "category": "Malware"
+                },
+                "protection": {
+                    "level": 0
+                }
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hosts": [
+                "DNHFF3453"
+            ],
+            "user": [
+                "Doe"
+            ]
         }
     }
     	
@@ -556,6 +567,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-08-29T11:35:29.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -589,16 +601,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "Virus found,IP Address: 1.2.3.4,Computer name: DNHFF3453,Source: Auto-Protect scan,Risk name: EICAR Test String,Occurrences: 1,File path: C:\\Users\\admin\\Desktop\\test.txt,Description: AP realtime deferred scanning,Actual action: Cleaned by deletion,Requested action: Cleaned,Secondary action: Quarantined,Event time: 2022-07-07 14:28:39,Event Insert Time: 2022-07-07 14:30:43,End Time: 2022-07-07 14:28:39,Last update time: 2022-07-07 14:30:43,Domain Name: MyDomain,Group Name: MyDomain\\Subdivision\\Citrix VDI persistants,Server Name: XXXXX01,User Name: ADMIN,Source Computer Name: ,Source Computer IP: ,Disposition: Bad,Download site: ,Web domain: ,Downloaded by: ,Prevalence: This file has been seen by millions of Symantec users.,Confidence: This file is untrustworthy.,URL Tracking Status: On,First Seen: Reputation was not used in this detection.,Sensitivity: ,Allowed application reason: Not on the allow list,Application hash: 275A021BBFB6489E54D471899F7DB9D1663FC695EC2FE2A2C4538AABF651FD0F,Hash type: SHA2,Company name: ,Application name: Nouveau document texte.txt,Application version: ,Application type: 127,File size (bytes): 68,Category set: Malware,Category type: Virus,Location: MyDomain,Intensive Protection Level: 0,Certificate issuer: ,Certificate signer: ,Certificate thumbprint: ,Signing timestamp: ,Certificate serial number: ",
         "event": {
-            "reason": "Virus found",
             "kind": "event",
             "category": [
                 "malware"
             ],
+            "reason": "Virus found",
+            "action": "Cleaned",
             "type": [
                 "info"
-            ],
-            "action": "Cleaned"
+            ]
         },
+        "@timestamp": "2022-07-07T14:30:43.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -610,19 +623,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "DNHFF3453",
             "name": "DNHFF3453"
         },
+        "file": {
+            "path": "C:\\Users\\admin\\Desktop\\test.txt",
+            "size": 68
+        },
         "user": {
             "name": "ADMIN"
-        },
-        "related": {
-            "hosts": [
-                "DNHFF3453"
-            ],
-            "ip": [
-                "1.2.3.4"
-            ],
-            "user": [
-                "ADMIN"
-            ]
         },
         "threat": {
             "enrichments": [
@@ -642,10 +648,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             ]
         },
-        "file": {
-            "path": "C:\\Users\\admin\\Desktop\\test.txt",
-            "size": 68
-        },
         "broadcom": {
             "endpoint_protection": {
                 "source": "Auto-Protect scan",
@@ -654,29 +656,40 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "group": "MyDomain\\Subdivision\\Citrix VDI persistants",
                     "name": "XXXXX01"
                 },
-                "threat": {
-                    "type": "Virus",
-                    "category": "Malware"
-                },
-                "protection": {
-                    "level": 0
-                },
                 "application": {
-                    "code_signature": {
-                        "digest_algorithm": "sha2"
-                    },
                     "hash": {
                         "sha2": "275A021BBFB6489E54D471899F7DB9D1663FC695EC2FE2A2C4538AABF651FD0F"
                     },
-                    "name": "Nouveau document texte.txt"
+                    "name": "Nouveau document texte.txt",
+                    "code_signature": {
+                        "digest_algorithm": "sha2"
+                    }
                 },
                 "action": {
                     "main": "Cleaned by deletion",
                     "secondary": "Quarantined"
                 },
                 "prevalence": "This file has been seen by millions of Symantec users.",
-                "confidence": "This file is untrustworthy."
+                "confidence": "This file is untrustworthy.",
+                "threat": {
+                    "type": "Virus",
+                    "category": "Malware"
+                },
+                "protection": {
+                    "level": 0
+                }
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "hosts": [
+                "DNHFF3453"
+            ],
+            "user": [
+                "ADMIN"
+            ]
         }
     }
     	
@@ -700,6 +713,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-10-04T19:15:22.000000Z",
         "observer": {
             "vendor": "Broadcom",
             "product": "Symantec Endpoint Protection"
@@ -711,12 +725,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "MyComputer",
             "name": "MyComputer"
         },
-        "user": {
-            "name": "user"
-        },
         "file": {
             "path": "/tmp/eicar.txt",
             "size": 69
+        },
+        "user": {
+            "name": "user"
         },
         "threat": {
             "enrichments": [
@@ -750,12 +764,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     },
                     "name": "Unknown",
                     "code_signature": {
-                        "digest_algorithm": "sha2",
-                        "timestamp": "1970-01-01T00:00:00.000000Z"
+                        "digest_algorithm": "sha2"
                     }
-                },
-                "protection": {
-                    "level": 0
                 },
                 "action": {
                     "main": "Quarantined",
@@ -766,6 +776,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "threat": {
                     "type": "Virus",
                     "category": "Malware"
+                },
+                "protection": {
+                    "level": 0
                 }
             }
         },
@@ -794,6 +807,7 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
 |`broadcom.endpoint_protection.action.main` | `keyword` |  |
 |`broadcom.endpoint_protection.action.secondary` | `keyword` |  |
 |`broadcom.endpoint_protection.application.code_signature.certificate.serial_number` | `keyword` |  |
