@@ -1,4 +1,4 @@
-Rules catalog includes **627 built-in detection rules** (_last update on 2022-12-13_).
+Rules catalog includes **627 built-in detection rules** (_last update on 2022-12-14_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -22,12 +22,6 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
-??? abstract "CloudFlare Firewall Block Rule"
-    
-    Detects when one of CloudFlare Firewall rule (previously WAF's custom rule or managed rule) blocked an HTTP request 
-    
-    - **Effort:** master
-
 ??? abstract "CloudFlare HTTP Requests Rule Block Or Drop"
     
     Detects when one of CloudFlare Web Application Firewall (WAF) Managed rule blocked or dropped an HTTP request. It requires only CloudFlare HTTP requests logs. 
@@ -49,6 +43,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
 ??? abstract "Internet Scanner Target"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address.
+    
+    - **Effort:** master
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request 
     
     - **Effort:** master
 
