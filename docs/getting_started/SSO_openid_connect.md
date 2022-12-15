@@ -8,7 +8,7 @@ To make it easier for employees to access SEKOIA.IO, you can enable SSO on SEKOI
 
 ## Configure SSO on SEKOIA.IO
 
-To set up SSO, follow these instruction :
+To set up SSO, follow these instructions :
 
 1. Log in to SEKOIA.IO platform
 2. Click on your profile picture and select `Account settings` to access the User center
@@ -34,6 +34,7 @@ Only users who create their account via invitation and set up username/password 
 
 
 ## Diseable account
+To prevent a user from retrieving your organization's data, deactivate the user from your community and your identity provider.
 
 
 
