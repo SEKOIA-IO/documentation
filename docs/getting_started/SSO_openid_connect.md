@@ -31,6 +31,7 @@ If you don't enable it, you will have to manually create user accounts. You can 
 Once you have completed your configuration of SAML SSO, users will be able to log in via SSO.
 Users who create their account via SSO, can only log in via this method. 
 Only users who create their account via invitation and set up username/password can use both methods to log in : SSO and username/password. 
+When Two-factor authentication is enabled or enforced to your account, if you log in via single sign-on, you will not be subject to this.
 
 
 ## Diseable account
