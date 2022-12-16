@@ -5,9 +5,9 @@ type: intake
 ## Overview
 Amazon VPC Flow Logs is a feature that provides the ability to capture information about IP network traffic as it enters or exits from network interface in your Amazon VPC (Amazon Virtual Private Cloud). VPC Flow Logs can help you with a number of tasks, such as:
 
-- Diagnosing overly restrictive security group rules.
-- Monitoring the traffic that is reaching your instance.
-- Determining the direction of the traffic to and from the network interfaces.
+- Diagnosing overly restrictive security group rules
+- Monitoring the traffic that is reaching your instance
+- Determining the direction of the traffic to and from the network interfaces
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_07c0cac8-f68f-11ea-adc1-0242ac120002_do_not_edit_manually.md!}
 
@@ -17,15 +17,15 @@ Amazon VPC Flow Logs is a feature that provides the ability to capture informati
 
 ### VPC Flow Logs
 
-As a prerequisite you need an existing VPC, subnet or network interface (Elastic Load Balancing, Amazon RDS, Amazon ElastiCache, Amazon Redshift, Amazon WorkSpaces, NAT gateways, Transit gateways) to create a flow log. If you create a flow log for a subnet or VPC, each network interface in that subnet or VPC is monitored.
+As a prerequisite, you need an existing VPC, subnet or network interface (Elastic Load Balancing, Amazon RDS, Amazon ElastiCache, Amazon Redshift, Amazon WorkSpaces, NAT gateways, Transit gateways) to create a flow log. If you create a flow log for a subnet or VPC, each network interface in that subnet or VPC is monitored.
 
 In the AWS console, navigate to: `Services > VPC`. From there, select the resource for which you want to capture information. The flow logs are available on the following resources: VPC, subnet, or network interfaces.
 
 For VPC and subnet:
 
 - Select the specific resource to monitor
-- Go to the tab *Flow logs*
-- Click on *Create flow log*
+- Go to the tab `Flow logs`
+- Click on `Create flow log`
 - Set up the flow log: we recommend to capture all traffic (accepted and rejected).
 
 ### Create a SQS queue
@@ -35,7 +35,7 @@ This integration relies on S3 Event Notifications (SQS) to discover new S3 objec
 To enable the S3 Event Notification:
 
 1. Create a queue  in the SQS service according [this guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-create-queue.html).
-2. In the Access Policy step choose the advanced configuration and adapt this configuration sample with your own SQS Amazon Resource Name (ARN) (the main change is the Service directive allowing S3 bucket access):
+2. In the Access Policy step, choose the advanced configuration and adapt this configuration sample with your own SQS Amazon Resource Name (ARN) (the main change is the Service directive allowing S3 bucket access):
     ```json
     {
       "Version": "2008-10-17",
@@ -54,15 +54,16 @@ To enable the S3 Event Notification:
     }
     ```
 
-Please, keep in mind, to create the SQS queue in the same region as the S3 bucket you want to watch.
+!!! note
+    Please, keep in mind, you have to create the SQS queue in the same region as the S3 bucket you want to watch.
 
 ### Create a S3 Event Notification
 
 Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification and then:
 
-1. Select the notification for object creation in the Event type section.
+1. Select the notification for object creation in the Event type section
 2. As the destination, choose the SQS service
-3. Select the queue you created in the previous section.
+3. Select the queue you created in the previous section
 
 ### Create the intake
 
