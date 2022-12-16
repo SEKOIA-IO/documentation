@@ -19,3 +19,11 @@ From a list of runs, you can see a `Rerun` action button with a refresh icon. Th
 
 When a successful run is restarted (thus restarting all actions in the playbook), it will create a new entry in the runs' list. 
 When a failed or a pending run is restarted, it will update the run that was restarted, but not create add a new run in the runs' list.
+
+## Playbook logs
+
+#### Switch Mode
+
+After a playbook run is executed, it is possible to switch mode after selecting a module, log information will be displayed in the different modes:
+- Edition :  logs returned and displayed in a tab
+- Run Results : results of executed module
