@@ -30,7 +30,8 @@ Keep aside the intake key.
 ### Pull events
 
 To start pulling events, you have to: 
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from Cybereason](../../../automate/library/cybereason) module. 
+
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from Cybereason](../../../../automate/library/cybereason) module. 
 2. Set up the module configuration with your Cybereason username and password.
 3. Set up the trigger configuration with your intake key
 4. Start the playbook and enjoy your [events](https://app.sekoia.io/operations/events).
