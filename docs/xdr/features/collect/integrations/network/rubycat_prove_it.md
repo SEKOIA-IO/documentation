@@ -6,6 +6,11 @@ type: intake
 
 PROVE IT by rubycat is a privileged access management solution.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_ad8c93b0-3f41-4f6f-bde3-7a55cc30cee8_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/rubycat-prove-it_do_not_edit_manually.md!}
+
+
 ## Setup
 
 This setup guide will show you how to forward logs produced by PROVE IT to SEKOIA.IO by means of an Rsyslog transport channel.
