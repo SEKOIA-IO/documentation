@@ -30,12 +30,12 @@ For VPC and subnet:
 
 ### Create a SQS queue
 
-This integration relies on S3 Event Notifications to discover new S3 objects.
+This integration relies on S3 Event Notifications (SQS) to discover new S3 objects.
 
-To be enable to set the S3 Event Notification:
+To enable the S3 Event Notification:
 
 1. Create a queue  in the SQS service according [this guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-create-queue.html).
-2. In the Access Policy step choose the advanced configuration and adapt this configuration sample with your own SQS arn (the main change is the Service directive allowing S3 bucket access):
+2. In the Access Policy step choose the advanced configuration and adapt this configuration sample with your own SQS Amazon Resource Name (ARN) (the main change is the Service directive allowing S3 bucket access):
     ```json
     {
       "Version": "2008-10-17",
@@ -54,7 +54,7 @@ To be enable to set the S3 Event Notification:
     }
     ```
 
-    Please, keep in mind, to create the SQS queue in the same region as the S3 bucket you want to watch.
+Please, keep in mind, to create the SQS queue in the same region as the S3 bucket you want to watch.
 
 ### Create a S3 Event Notification
 
@@ -62,7 +62,7 @@ Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/
 
 1. Select the notification for object creation in the Event type section.
 2. As the destination, choose the SQS service
-3. Select the queue you create in the previous section.
+3. Select the queue you created in the previous section.
 
 ### Create the intake
 
