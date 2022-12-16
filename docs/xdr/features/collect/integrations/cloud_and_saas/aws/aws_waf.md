@@ -5,9 +5,6 @@ type: intake
 ## Overview
 AWS WAF is a web application firewall that lets you monitor the HTTP(S) requests that are forwarded to your protected web application resources.
 
-!!! warning
-    This format is still in beta. Use it wisely
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_46e45417-187b-45bb-bf81-30df7b1963a0_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/aws-waf_do_not_edit_manually.md!}
