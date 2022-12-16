@@ -18,11 +18,12 @@ To set up SSO, follow these instructions :
 
 Once SSO is set up and your IdP is configure to accept requests, users can log in via the Single Sign-on URL available on this page.
 Share it with your users.
-
+![SSO_URL](/assets/getting_started/SSO_URL.png)
 
 
 ## Just in time provisioning (JIT)
 You can choose to enable automatic creation of your users. When your user logs in for the first time, his account will be automatically created. You can set the default role for new JIT users. You can choose the default rôle among all the roles available in your community.
+![SSO_JIT](/assets/getting_started/SSO_JIT.png)
 
 If you don't enable it, you will have to manually create user accounts. You can find all the details on how to "Invite users to join your community" [Here](https://docs.sekoia.io/getting_started/invite_users/).
 
