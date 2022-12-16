@@ -12,9 +12,12 @@ To set up SSO, follow these instructions :
 
 1. Log in to SEKOIA.IO platform
 2. Click on your profile picture and select `Account settings` to access the User center
-3. Under Manage community > Authicafication, click on the button `Configure` 
+3. Under Manage community > Authicafication, click on the button `Configure`
+![SSO_Form](/assets/getting_started/SSO_Authentication.png)
+
 5. Fill in identidy provider details
-6. Save the configuration
+![SSO_Form](/assets/getting_started/SSO_identity.png)
+7. Save the configuration
 
 Once SSO is set up and your IdP is configure to accept requests, users can log in via the Single Sign-on URL available on this page.
 Share it with your users.
