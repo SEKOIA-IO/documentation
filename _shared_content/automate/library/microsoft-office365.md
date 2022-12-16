@@ -49,4 +49,4 @@ Fetch events for MessageTrace API (OAuth)
 
 ## Extra
 
-Module **`Microsoft Office365` v2.4.0**
+Module **`Microsoft Office365` v2.4.1**
