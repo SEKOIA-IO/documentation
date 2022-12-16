@@ -54,8 +54,11 @@ The Playbook Templates' Catalog is being updated frequently by our analysts and 
 
 To create a playbook from scratch, you will need to create an empty playbook, go to the graphical view and start adding and configuring the following bricks in this specific order:
 
-- [Triggers](triggers.md): Alerts related triggers, manual triggers or Cron
-- [Operators](operators.md): Condition, Foreach, Store
-- [Actions](actions.md): Getters, Setters, External Data Enrichers, Notifications
+1. [Triggers](triggers.md): Alerts related triggers, manual triggers or Cron
+2. [Operators](operators.md): Condition, Foreach, Store
+3. [Actions](actions.md): Getters, Setters, External Data Enrichers, Notifications
 
 Please refer to the documentation for each of these types to learn how to use them efficiently. 
+
+Please refer to our [playbook templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) or [use case](../../docs/xdr/usecases/playbook/synchronize_alerts.md) for inspiration
+
