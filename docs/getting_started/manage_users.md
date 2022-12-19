@@ -6,7 +6,7 @@ Admins and users with the right permissions are able to add users with a role.
 
 A role has attached permissions allowing a user to access, view pages and use its features.
 
-In the following sections, we describe how to set and use to manage your users.
+In the following sections, you will learn how to manage your users.
 
 ## Needed role and permissions
 
