@@ -1,10 +1,10 @@
-# Single Sign On With openID Connect
+# Single Sign-On With OpenID Connect
 
-To make it easier for employees to access SEKOIA.IO, you can enable SSO on SEKOIA.IO. 
+To make it easier for employees to access SEKOIA.IO, you can enable SSO for users of your SEKOIA.IO community. 
 
-## Prerequisites for Open ID connect
-- Your Identity Provider (IdP) must support the OpenID connect standard
-- Only admin user with the following permission "COMMUNITY_WRITE_ROLE" can configure the SSO
+## Prerequisites for OpenID Connect
+- Your Identity Provider (IdP) must support the OpenID Connect standard
+- Only admin user with the `COMMUNITY_WRITE_ROLE` permission can configure the SSO.
 
 ## Configure SSO on SEKOIA.IO
 
@@ -24,21 +24,21 @@ Share it with your users.
 ![SSO_URL](/assets/getting_started/SSO_URL.png)
 
 
-## Just in time provisioning (JIT)
-You can choose to enable automatic creation of your users. When your user logs in for the first time, his account will be automatically created. You can set the default role for new JIT users. You can choose the default rôle among all the roles available in your community.
+## “Just-in-time” (JIT) Account Provisioning 
+You can choose to enable automatic creation of your users. When your user logs-in for the first time, his/her account will be automatically created. You can set the default role for newly created users. You can choose the default rôle among all the roles available in your community.
 ![SSO_JIT](/assets/getting_started/SSO_JIT.png)
 
-If you don't enable it, you will have to manually create user accounts. You can find all the details on how to "Invite users to join your community" [Here](https://docs.sekoia.io/getting_started/invite_users/).
+If you don't enable “just-in-time” account creation, you will have to manually create user accounts. You can find all the details on how to “[Invite users to join your community](https://docs.sekoia.io/getting_started/invite_users/)”.
 
 
 ## Login method
-Once you have completed your configuration of SAML SSO, users will be able to log in via SSO.
-Users who create their account via SSO, can only log in via this method. 
-Only users who create their account via invitation and set up username/password can use both methods to log in : SSO and username/password. 
-When Two-factor authentication is enabled or enforced to your account, if you log in via single sign-on, you will not be subject to this.
+Once you have completed your configuration of OpenID Connect SSO, users will be able to log-in via SSO.
+Users who created their account via SSO, can only log in via this method. 
+Only users who create their account via invitation and set up username/password can use both methods to log-in: SSO and username/password. 
+When the “two-factor authentication” (MFA) is enabled or enforced for your account, you won’t be asked for it when authenticating via your SSO provider.
 
 
-## Diseable account
+## Disable Account
 To prevent a user from retrieving your organization's data, deactivate the user from your community and your identity provider.
 
 
