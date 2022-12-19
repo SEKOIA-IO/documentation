@@ -27,4 +27,4 @@ When a failed or a pending run is restarted, it will update the run that was res
 After a playbook run is executed, it is possible to switch modes after selecting a module. Log information will be displayed in the different modes:
 
 - Edition:  logs returned and displayed in a tab
-- Run Results : results of executed module
+- Run Results: results of an executed module
