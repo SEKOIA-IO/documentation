@@ -96,6 +96,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "id": "jI80snAs0ZMym5tvc8Jbp",
                     "type": "WEB"
                 },
+                "outcome": {
+                    "result": "SUCCESS"
+                },
                 "authentication_context": {
                     "interface": "IDP Instance",
                     "authentication": {
@@ -192,6 +195,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "id": "jI80snAs0ZMym5tvc8Jbp",
                     "type": "WEB"
                 },
+                "outcome": {
+                    "result": "SUCCESS"
+                },
                 "authentication_context": {
                     "authentication": {
                         "provider": "FACTOR_PROVIDER"
@@ -287,6 +293,100 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "transaction": {
                     "id": "jI80snAs0ZMym5tvc8Jbp",
                     "type": "WEB"
+                },
+                "outcome": {
+                    "result": "SUCCESS"
+                }
+            }
+        },
+        "related": {
+            "hosts": [
+                "example.org"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "john.doe@example.org"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_authentication_sso_failure.json"
+
+    ```json
+	
+    {
+        "message": "{\n  \"uuid\": \"fa4adf13-1469-4059-9d2c-7cfdb464b123\",\n  \"actor\": {\n    \"id\": \"fWiaLPtSTpjyy1BIwNFXg\",\n    \"type\": \"User\",\n    \"alternateId\": \"john.doe@example.org\",\n    \"detailEntry\": null,\n    \"displayName\": \"John Doe\"\n  },\n  \"client\": {\n    \"id\": \"fWiaLPtSTpjyy1BIwNFXg\",\n    \"zone\": \"null\",\n    \"device\": \"Unknown\",\n    \"ipAddress\": \"1.2.3.4\",\n    \"userAgent\": {\n      \"os\": \"Unknown\",\n      \"browser\": \"UNKNOWN\",\n      \"rawUserAgent\": \"axios/0.19.2\"\n    },\n    \"geographicalContext\": {\n      \"city\": \"Paris\",\n      \"state\": \"Ile-de-France\",\n      \"country\": \"France\",\n      \"postalCode\": null,\n      \"geolocation\": {\n        \"lat\": 48.856944,\n        \"lon\": 2.351389\n      }\n    }\n  },\n  \"device\": null,\n  \"target\": [\n    {\n      \"id\": \"kdYO9RZnIHNhV6vii333b\",\n      \"type\": \"AppInstance\",\n      \"alternateId\": \"Architecture Website\",\n      \"detailEntry\": {\n        \"signOnModeType\": \"OPENID_CONNECT\"\n      },\n      \"displayName\": \"OpenID Connect Client\"\n    },\n    {\n      \"id\": \"fWiaLPtSTpjyy1BIwNFXg\",\n      \"type\": \"AppUser\",\n      \"alternateId\": \"john.doe@example.org\",\n      \"detailEntry\": null,\n      \"displayName\": \"John Doe\"\n    }\n  ],\n  \"outcome\": {\n    \"reason\": \"INVALID_CREDENTIALS\",\n    \"result\": \"FAILURE\"\n  },\n  \"request\": {\n    \"ipChain\": [\n      {\n        \"ip\": \"1.2.3.4\",\n        \"source\": null,\n        \"version\": \"V4\",\n        \"geographicalContext\": {\n          \"city\": \"Paris\",\n          \"state\": \"Ile-de-France\",\n          \"country\": \"France\",\n          \"postalCode\": null,\n          \"geolocation\": {\n            \"lat\": 48.856944,\n            \"lon\": 2.351389\n          }\n        }\n      }\n    ]\n  },\n  \"version\": \"0\",\n  \"severity\": \"INFO\",\n  \"eventType\": \"user.authentication.sso\",\n  \"published\": \"2022-12-16T17:05:07.656Z\",\n  \"transaction\": {\n    \"id\": \"jI80snAs0ZMym5tvc8Jbp\",\n    \"type\": \"WEB\",\n    \"detail\": {}\n  },\n  \"displayMessage\": \"User single sign on to app\",\n  \"legacyEventType\": \"app.auth.sso\",\n  \"securityContext\": {\n    \"isp\": \"Easttel\",\n    \"asOrg\": \"Easttel\",\n    \"domain\": \"example.org\",\n    \"isProxy\": false,\n    \"asNumber\": 3741\n  },\n  \"authenticationContext\": {\n    \"issuer\": null,\n    \"interface\": null,\n    \"credentialType\": null,\n    \"externalSessionId\": \"unknown\",\n    \"authenticationStep\": 0,\n    \"credentialProvider\": null,\n    \"authenticationProvider\": null\n  }\n}\n",
+        "event": {
+            "kind": "event",
+            "dataset": "system-log",
+            "action": "user.authentication.sso",
+            "reason": "User single sign on to app",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "start"
+            ]
+        },
+        "@timestamp": "2022-12-16T17:05:07.656Z",
+        "observer": {
+            "vendor": "Okta"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "user": {
+                "id": "fWiaLPtSTpjyy1BIwNFXg"
+            },
+            "domain": "example.org",
+            "as": {
+                "number": 3741,
+                "organization": {
+                    "name": "Easttel"
+                }
+            },
+            "geo": {
+                "city_name": "Paris",
+                "region_name": "Ile-de-France",
+                "country_name": "France",
+                "location": {
+                    "lat": 48.856944,
+                    "lon": 2.351389
+                }
+            },
+            "address": "example.org",
+            "top_level_domain": "org",
+            "registered_domain": "example.org"
+        },
+        "user": {
+            "id": "fWiaLPtSTpjyy1BIwNFXg",
+            "name": "john.doe@example.org",
+            "email": "john.doe@example.org",
+            "full_name": "John Doe"
+        },
+        "user_agent": {
+            "original": "axios/0.19.2"
+        },
+        "okta": {
+            "system": {
+                "severity": "INFO",
+                "actor": {
+                    "id": "fWiaLPtSTpjyy1BIwNFXg",
+                    "type": "User",
+                    "alternate_id": "john.doe@example.org",
+                    "display_name": "John Doe"
+                },
+                "transaction": {
+                    "id": "jI80snAs0ZMym5tvc8Jbp",
+                    "type": "WEB"
+                },
+                "outcome": {
+                    "reason": "INVALID_CREDENTIALS",
+                    "result": "FAILURE"
                 }
             }
         },
@@ -350,6 +450,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "transaction": {
                     "id": "V04Oy4ubUOc5UuG6s9DyNQAABtc",
                     "type": "WEB"
+                },
+                "outcome": {
+                    "result": "SUCCESS"
                 },
                 "authentication_context": {
                     "external_session_id": "1013FfF-DKQSvCI4RVXChzX-w"
@@ -436,6 +539,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "transaction": {
                     "id": "Y3NH1qHvAmGouHz6XfAtaQAABNU",
                     "type": "WEB"
+                },
+                "outcome": {
+                    "result": "SUCCESS"
                 },
                 "authentication_context": {
                     "external_session_id": "kjrgFtXuZnABQV9Vq1A2c"
@@ -525,6 +631,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "id": "jI80snAs0ZMym5tvc8Jbp",
                     "type": "WEB"
                 },
+                "outcome": {
+                    "result": "SUCCESS"
+                },
                 "authentication_context": {
                     "external_session_id": "kjrgFtXuZnABQV9Vq1A2c"
                 }
@@ -574,6 +683,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`okta.system.authentication_context.interface` | `keyword` | The third-party user interface that the actor authenticates |
 |`okta.system.authentication_context.issuer.id` | `keyword` | The identifier of the issuer |
 |`okta.system.authentication_context.issuer.type` | `keyword` | The type of the issuer |
+|`okta.system.outcome.reason` | `keyword` | The outcome reason |
+|`okta.system.outcome.result` | `keyword` | The outcome result |
 |`okta.system.security_context.is_proxy` | `boolean` | Specifies whether the request come from a proxy |
 |`okta.system.security_context.isp` | `keyword` | The name of the Internet Service Provider |
 |`okta.system.severity` | `keyword` | The label of the severity of the event |
