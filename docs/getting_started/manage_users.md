@@ -2,7 +2,7 @@
 
 ## Overview
 
-Admins or user with the right permissions are able to add users with a role.
+Admins and users with the right permissions are able to add users with a role.
 
 A role has attached permissions allowing a user to access, view pages and use its features.
 
