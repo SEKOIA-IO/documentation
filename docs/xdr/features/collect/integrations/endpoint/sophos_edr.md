@@ -15,22 +15,35 @@ This setup guide shows how to forward events produced by Sophos EDR to SEKOIA.IO
 
 ## Configure
 
-### Credentials
+### Create SOPHOS EDR Credentials
 
-In the Sophos Central Admin console, go to `Global Settings > API Credentials Management`.
-Create a new token with `Add Credential`. Complete the name, appropriate role and description.
-On the `API credential Summary`, copy the `Client ID` and the `Client Secret`.
+In the Sophos Central Admin console:
+
+1. On the left panel, go to `Global Settings` and select `API Credentials Management`.
+2. Click on `Add Credential` to create a credential dedicated to SEKOIA.IO.
+3. Give it a name, select the role `Service Principal ReadOnly` and click on `Add`.
+4. In the `API credential Summary`, copy the `Client ID` and the `Client Secret`. It will be used later in SEKOIA.IO to retrieve the events.
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Sophos EDR`.
+1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Sophos EDR` intake.
+2. Copy the associated Intake key
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Sophos EDR connector](../../../automate/library/sophos.md).
+1. Go to the [Playbook page](https://app.sekoia.io/operations/playbooks).
+2. Click on `+ PLAYBOOK` and choose `Create a playbook from scratch`.  
+3. Give it a name and a description and click on `Next`.
+4. In `Choose a trigger`, select the [Get Sophos events](../../../../automate/library/sophos/#get-sophos-events).
+5. Click on the `Get Sophos events` module on the right sidebar and in the `Module Configuration` section, select `Create new configuration`.
+6. Write a `name` and paste the `client_id` and `client_secret` from the Sophos console and click on `Save`.
+7. In the `Trigger Configuration` section, click on `Create new configuration`.
+8. Write a `name`, choose a `frequency` - Default is `60` -, paste the `intake_key` associated to your `Sophos EDR` intake and click on `Save`.
+9. On the top right corner, start the Playbook. You should see monitoring messages in the `Logs` section.
+10. Check on the Events page that the Sophos logs are being received.
 
-Set up the connector configuration with the `Client ID`, the `Client Secret` and the intake key
-
+![Sophos Module Configuration](/assets/operation_center/integration_catalog/cloud_and_saas/sophos_edr/sophos_module_configuration.png){: style="max-width:60%"}
+![Sophos Trigger Configuration](/assets/operation_center/integration_catalog/cloud_and_saas/sophos_edr/sophos_trigger_configuration.png){: style="max-width:60%"}
 
 ## Further Readings
 
