@@ -32,7 +32,7 @@ To start to pull events, you have to:
 
     !!! note
 
-        According your Okta subscription, you may need to decrease the ratelimit_per_minute in the trigger configuration. Please see the [OKTA documentation](https://help.okta.com/en-us/Content/Topics/Security/API.htm) for more information
+        According to your Okta subscription, you may need to decrease the ratelimit_per_minute in the trigger configuration. Please see the [OKTA documentation](https://help.okta.com/en-us/Content/Topics/Security/API.htm) for more information
 
 ## Further Readings
 
