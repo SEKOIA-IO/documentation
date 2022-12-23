@@ -31,3 +31,25 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 # tail -n 1 /tmp/nginx-output.log
 <30>1 2021-01-13T14:52:06.934860+01:00 ote unbound - LOG [SEKOIA@53288 intake_key="jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5"]  [596451:0] info: 127.0.0.1 intake.sekoia.io. A IN
 ```
+
+
+
+# Events
+
+## How events are attached to an alert and latency ?
+2 mecanisms executed in parallel : alert generation and events externalisation attaching to an alert in the interface.
+Some latency might happen between alert generation and attaching events to an alert.
+
+## Event search request on IP range
+It is possible with example of IP starting with 145 to search by range such as    source.ip:[145.0.0.0 TO 145.255.255.255]
+
+## timestamp, event.created, event.start, event.end meaning
+**timestamp** and **event.created** are the same (reception of logs and beginning of processing in SEKOIA.IO)
+
+**event.created** is parsed and can be selected. The timezone is defined with UTC.
+**event.start**   contains the date when the event started or when the activity was first observed.
+**event.end**   contains the date when the event ended or when the activity was last observed.
+
+**event.start** & **event.end** are activity and monitoring of the event (Pre-SEKOIA.IO if not produce by SEKOIA.IO)
+
+`event.start` <= `event.end` <= `event.created`
