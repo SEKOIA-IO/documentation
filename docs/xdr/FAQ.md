@@ -31,3 +31,19 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 # tail -n 1 /tmp/nginx-output.log
 <30>1 2021-01-13T14:52:06.934860+01:00 ote unbound - LOG [SEKOIA@53288 intake_key="jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5"]  [596451:0] info: 127.0.0.1 intake.sekoia.io. A IN
 ```
+
+
+
+
+
+
+
+
+
+# Rules
+## In a rule, what is the meaning of successfully compiled ?
+Meaning that the rule is correct and ongoing
+To know the information of the rule update, it is `updated at`
+
+## Timestamp
+Based on event timestamp (created on the machine) and not on ingestion timestamp in SEKOIA.IO
