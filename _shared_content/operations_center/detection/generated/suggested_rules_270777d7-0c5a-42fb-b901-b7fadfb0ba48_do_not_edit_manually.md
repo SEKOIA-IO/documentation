@@ -87,6 +87,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortiproxy** with t
     
     - **Effort:** master
 
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
+
 ??? abstract "LokiBot Default C2 URL"
     
     Detects default C2 URL for trojan LokiBot
@@ -111,7 +117,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortiproxy** with t
     
     - **Effort:** elementary
 
-??? abstract "ProxyLogon Exchange Suspicious Paths"
+??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     

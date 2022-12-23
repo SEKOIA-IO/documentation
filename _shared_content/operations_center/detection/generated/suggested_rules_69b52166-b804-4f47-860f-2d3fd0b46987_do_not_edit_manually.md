@@ -201,7 +201,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Front Door** with the 
     
     - **Effort:** elementary
 
-??? abstract "ProxyLogon Exchange Suspicious Paths"
+??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     

@@ -93,6 +93,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortigate** with th
     
     - **Effort:** master
 
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
