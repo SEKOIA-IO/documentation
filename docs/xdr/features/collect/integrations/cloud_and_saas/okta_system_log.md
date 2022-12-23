@@ -24,13 +24,15 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the template `Forward Okta system logs with SEKOIA.IO`.
+To start to pull events, you have to: 
 
-Set up the frequency of the `Cron` trigger, copy the API token in the configuration of the `Request URL` action and paste the intake key in the `Push Events to Intake` action.
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new system logs from OKTA](../../../automate/library/okta.md) trigger
+2. Set up the module configuration with your API Key and the base url of your Okta instance. Set up the trigger configuration with the intake key
+3. Start the playbook and enjoy your events
 
-Set up the trigger and the action with their module configurations.
+    !!! note
 
-Start the playbook and enjoy your events.
+        According to your Okta subscription, you may need to decrease the ratelimit_per_minute in the trigger configuration. Please see the [OKTA documentation](https://help.okta.com/en-us/Content/Topics/Security/API.htm) for more information
 
 ## Further Readings
 
