@@ -28,10 +28,11 @@ To start to pull events, you have to:
 
 1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new system logs from OKTA](../../../automate/library/okta.md)
 2. Set up the module configuration with your API Key and the base url of your Okta instance. Set up the trigger configuration with the intake key
+3. Start the playbook and enjoy your events
+
     !!! note
 
-        According your Okta subscription, you may need to decrease the ratelimit_per_minute. See [OKTA documentation](https://help.okta.com/en-us/Content/Topics/Security/API.htm).
-4. Start the playbook and enjoy your events
+        According your Okta subscription, you may need to decrease the ratelimit_per_minute in the trigger configuration. Please see the [OKTA documentation](https://help.okta.com/en-us/Content/Topics/Security/API.htm) for more information
 
 ## Further Readings
 
