@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Pulse Connect Secure** with 
     
     - **Effort:** elementary
 
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.

@@ -1,4 +1,4 @@
-Rules catalog includes **627 built-in detection rules** (_last update on 2022-12-20_).
+Rules catalog includes **635 built-in detection rules** (_last update on 2022-12-23_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -299,6 +299,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
 ??? abstract "Google Cloud Audit Account Suspended"
     
     Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    
+    - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
     
     - **Effort:** intermediate
 
@@ -812,6 +818,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     Detects Windows Management Instrumentation (WMI) DLL loaded via Office process. This activity may correspond to VBA macro executing WMI commands, which is highly suspicious. The prerequisite is to log Loaded DLLs images, which can be done with the Sysmon Event ID 7 (DLL image loaded by process).
     
     - **Effort:** master
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WMI Install Of Binary"
     
@@ -2528,6 +2540,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Google Cloud Audit Attack Warning"
     
     Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
@@ -2790,7 +2808,7 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
-??? abstract "ProxyLogon Exchange Suspicious Paths"
+??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
@@ -3510,6 +3528,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
 ??? abstract "Google Cloud Audit Account Suspended"
     
     Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    
+    - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
     
     - **Effort:** intermediate
 
@@ -4400,6 +4424,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Google Cloud Audit Attack Warning"
     
     Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
@@ -4984,6 +5014,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** master
 
+??? abstract "Intune Non-Compliant Device"
+    
+    Detects Intune reporting a device in a non-compliant state. This can indicate either a misconfiguration in Intune or a change of configuration on said device.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious certutil command"
     
     Detects suspicious certutil command which can be used by threat actors to download and/or decode payload. 
@@ -5105,6 +5141,18 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
 ??? abstract "ETW Tampering"
     
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
+    
+    - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Trusted Domain Added"
+    
+    Detects when a domain name is added to Google Workspace Trusted Domain. This could be used by an attacker to bypass some security controls or just be a legit admin action.
+    
+    - **Effort:** intermediate
+
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
     
     - **Effort:** intermediate
 
@@ -6070,6 +6118,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** master
 
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** intermediate
+
 **Account Discovery**
 
 ??? abstract "AD Privileged Users Or Groups Reconnaissance"
@@ -6372,6 +6426,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Custom Gmail Route"
+    
+    Detects when a custom Gmail route is added or modified. This could be abused by attackers to exfiltrate data.
+    
+    - **Effort:** advanced
+
 ??? abstract "Google Cloud Audit Email Forwarding"
     
     Detects when an out of domain email forwarding is enabled on Google Cloud.
@@ -6470,6 +6530,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
 ??? abstract "Cobalt Strike HTTP Default POST Beaconing"
     
     Detects POST HTTP queries from known Cobalt Strike beacons (source code 4.3)
+    
+    - **Effort:** advanced
+
+??? abstract "Correlation Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -6891,6 +6957,12 @@ Rules catalog includes **627 built-in detection rules** (_last update on 2022-12
     Detects attempt to export an AWS EC2 instance. A VM Export might indicate an attempt to extract information from an instance.
     
     - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Drive Ownership Transferred"
+    
+    Detects when Drive/Docs user files ownership is transferred. The legit use case is when a user is being removed, but this could also be abused by an attacker for exfiltration.
+    
+    - **Effort:** advanced
 
 **Exfiltration Over Web Service**
 

@@ -93,6 +93,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Active Directory** wit
     
     - **Effort:** intermediate
 
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
