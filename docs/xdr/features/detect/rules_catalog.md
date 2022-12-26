@@ -164,7 +164,7 @@ For Custom rule, you will be able to edit its main definition:
 
 - General definition of the rule
 - Detection Pattern
-- Security alerts
+- Security alerts  (event field can be selected to define the similarity strategy in the box `RULE.form.alert-properties.similarity-strategy`)
 
 For an MSSP communty, when you edit this part and your rule is multi-communities, changes will be shared with all your managed communities.
 
