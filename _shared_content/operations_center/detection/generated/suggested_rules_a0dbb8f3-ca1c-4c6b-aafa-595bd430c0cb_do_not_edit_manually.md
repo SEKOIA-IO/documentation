@@ -153,12 +153,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Squid** with the following d
     
     - **Effort:** intermediate
 
-??? abstract "Cybereason MalOp Alert"
-    
-    Cybereason MalOp telemetry has raised an alert
-    
-    - **Effort:** intermediate
-
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
