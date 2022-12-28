@@ -60,3 +60,10 @@ There are 2 steps:
     - **content** = `{{node.x['data'][0]['location']['city']}}`   replace x by the node of `Get host` (in code tab, search `Get host` and you will find the node number to be used)
     - **uuid** = copy value and pasting of `short_id` (found in `Alert Created` block)
   - Link the blocks `Get host` to `Comment alert`  
+
+Your playbook should look like the following:
+
+//to add picture on assets temps
+temp  ![image](https://user-images.githubusercontent.com/101662967/209848334-2ac52b48-e5b3-490a-9892-347af546c877.png)
+
+![Playbook Use Case](/assets/operation_center/playbooks/playbook_usecase_request_url.PNG)
