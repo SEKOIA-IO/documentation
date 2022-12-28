@@ -34,18 +34,22 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 <30>1 2021-01-13T14:52:06.934860+01:00 ote unbound - LOG [SEKOIA@53288 intake_key="jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5"]  [596451:0] info: 127.0.0.1 intake.sekoia.io. A IN
 ```
 
-# Alert
+# Alerts
 
 ## Alert date
-An event is linked to an alert
-When an alert is triggered, next events enrich the alert but the date of the alert is not updated (date= 1st trigger)
 
-## Bell in alert page
-Bell icon mean that "the event is involved in an alert"
-When a bell on an event is displayed on alert page, the event is involved in the current alert + another alert.
-If it is involved in the current alert, the bell is not display
+When an alert is triggered, additional events can enrich this alert but the date of the alert will not updated (date= 1st trigger). 
+
+## Bell icon in alerts page
+
+The bell icon means that "the event is involved in an alert". 
+
+When a bell on an event is displayed on an alert page, the event is involved in the current alert AND in another alert.
+
+If it is involved in the current alert, the bell is not displayed.
 
 ## How an alert is triggered with a delay ?
-besides matching a rule and on real time
-    - when an IOC is published, old events are scanned and this event that match the rule will trigger an alert
-    - when reingesting old logs
+
+Besides matching a rule in real time, an alert can be triggered with a delay when: 
+    - An IOC is published, old events are scanned and if an event matches, the rule will automatically trigger an alert. 
+    - Reingesting old logs
