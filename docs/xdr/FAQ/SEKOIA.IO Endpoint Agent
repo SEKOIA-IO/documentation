@@ -1,0 +1,4 @@
+## Is SEKOIA.IO Endpoint Agent in Windows version is able to retrieve events link to file accesses such as denied access to file, modification on file, ... ?
+
+SEKOIA.IO Agent track information on file creation / deletion but not for denied / modified access.
+However, an event will probably be linked to a process that try to open a file
