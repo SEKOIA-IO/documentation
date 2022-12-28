@@ -21,3 +21,21 @@ The Agent 0.2.8 will bring the following elements :
     - Improvement of Integration with rules produce by SEKOIA.IO Analysts
     - Collect new event types
 
+## Are DNS logs DNS collected by SEKOIA.IO agent ?
+
+Yes, in the Windows version through system calls (not in the available in the Linux version at the moment)
+
+## Is the usage will generate duplicates ? For example, in my Sysmon configuration, If I ask events already present in SEKOIA.IO agent ?
+
+For some events, the Agent will ignore Sysmon events as it will already cover the same scope and in the same way, here are some examples:
+
+- sysmonProcessCreation
+- sysmonNetworkConnection
+- sysmonProcessTerminated
+- sysmonCreateRemoteThread
+- sysmonFileCreate
+- sysmonDNSEvent
+- sysmonFileDelete
+- sysmonFileDeleteDetected
+
+
