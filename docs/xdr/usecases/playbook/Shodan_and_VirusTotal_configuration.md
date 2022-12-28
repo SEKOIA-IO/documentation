@@ -31,3 +31,19 @@ There are 2 steps:
     * **Base_url**: `https://api.sekoia.io`
   - Click on the `Save` button
 
+2. Configure the `Get Events` block
+
+  - On the left panel, **search for** the `Get Events` block
+  - **Drag and drop** it underneath the `Alert Created` block
+
+  Copy data from previous block
+  - On the right panel, select the **ReadAlertContent** configuration previously created
+  - Select the `Alert Created` block and copy values in the following fields with **copy** icon on the right
+    - **earliest_time** = copy and pasting value of `first_seen_at`
+    - **latest_time** = copy and pasting value of `last_seen_at`
+    - **query** = copy value and pasting of `short_id` and pre-filling `alert_short_ids:"`<replace by short_id>`"`
+  - Link the blocks `Get Alert` to `Get Events`
+
+
+
+
