@@ -44,6 +44,12 @@ There are 2 steps:
     - **query** = copy value and pasting of `short_id` and pre-filling `alert_short_ids:"`<replace by short_id>`"`
   - Link the blocks `Get Alert` to `Get Events`
 
+3. Configure the `Get host` Shodan block
 
+  - On the left panel, **search for** the `Get host` block
+  - **Drag and drop** it underneath the `Get Events` block
+  - On the right panel, **complete the form** with the following information:
+    - **ip** = `{{node.x.['events'][0]['destination.ip']}}`   replace x by the node of `Get Events` (in code tab, search `Get Events` and you will find the node number to be used)
+  - Link the blocks `Foreach` to `Get host`  
 
 
