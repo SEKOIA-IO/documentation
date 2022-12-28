@@ -9,3 +9,9 @@ It is not possible to add an Event ID.
 For each Event ID, we format the event to follow our Taxonomy (ECS norm) so we cannot add them on the fly.
 However, we welcome any suggestions of Event IDs to be collected that seems relevant.
 
+## Is SEKOIA.IO Agent allow to retrieve events link to blocked accounts on AD ?
+
+It is not possible at the moment.
+This subject has been identified for improvement of SEKOIA.IO Agent integration with AD.
+
+
