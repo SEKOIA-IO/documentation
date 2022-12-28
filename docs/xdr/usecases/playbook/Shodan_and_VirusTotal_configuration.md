@@ -67,3 +67,13 @@ Your playbook should look like the following:
 temp  ![image](https://user-images.githubusercontent.com/101662967/209848334-2ac52b48-e5b3-490a-9892-347af546c877.png)
 
 ![Playbook Use Case](/assets/operation_center/playbooks/playbook_usecase_request_url.PNG)
+
+### Enrich Shodan with VirusTotal template
+
+  1. Use **Enhance network alerts with VirusTotal** template
+  2. Change part of the playbook and add the Shodan part (to enrich Lookup IPs)
+  - **Lookup** (Shodan) = add form and fill hostname (copy `Url` of `Scan Url` block)
+  - **Comment Alert** :
+    - content = copy `type` of `Lookup` block
+    - uuid = copy `uuid` of `Comment : Domain enrich by VT` block  	
+
