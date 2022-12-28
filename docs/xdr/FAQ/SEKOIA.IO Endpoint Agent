@@ -42,3 +42,6 @@ For some events, the Agent will ignore Sysmon events as it will already cover th
 
 We plan to cover all the ANSSI recommendations and SEKOIA rules as much as possible in the next beta.
 
+## Do you plan to remove the possibility to select Sysmon option or Will we allow users to add a Sysmon configuration ?
+
+We most probably will support Sysmon for users who wish to continue to use it.
