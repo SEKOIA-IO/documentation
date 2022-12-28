@@ -14,4 +14,10 @@ However, we welcome any suggestions of Event IDs to be collected that seems rele
 It is not possible at the moment.
 This subject has been identified for improvement of SEKOIA.IO Agent integration with AD.
 
+## What brings the new SEKOIA.IO Agent version 0.2.8 in comparison to other versions ?
+
+The Agent 0.2.8 will bring the following elements :
+    - Automatic update of Agent
+    - Improvement of Integration with rules produce by SEKOIA.IO Analysts
+    - Collect new event types
 
