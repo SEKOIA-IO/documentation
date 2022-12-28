@@ -27,6 +27,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** elementary
 
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
     Detects the exploitation of SonicWall Unauthenticated Admin Access.
@@ -81,6 +87,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
@@ -93,9 +105,27 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** intermediate
 
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
+
 ??? abstract "ICacls Granting Access To All"
     
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
+    
+    - **Effort:** elementary
+
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
     
     - **Effort:** elementary
 
@@ -165,6 +195,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** elementary
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -192,6 +228,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
+    
+    - **Effort:** elementary
+
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
+??? abstract "Process Memory Dump Using Comsvcs"
+    
+    Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
 
@@ -230,6 +278,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
+
+??? abstract "SOCKS Tunneling Tool"
+    
+    Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "SSH Authorized Key Alteration"
     
@@ -345,6 +399,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Cmd.exe Command Line"
     
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
@@ -416,6 +476,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
     
     - **Effort:** advanced
+
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WCE wceaux.dll Creation"
     

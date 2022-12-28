@@ -261,6 +261,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     
     - **Effort:** advanced
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
@@ -327,11 +333,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     
     - **Effort:** intermediate
 
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
     
     - **Effort:** advanced
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
@@ -348,6 +366,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
 ??? abstract "IcedID Execution Using Excel"
     
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
+    
+    - **Effort:** elementary
+
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
     
     - **Effort:** elementary
 
@@ -555,6 +579,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     
     - **Effort:** intermediate
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "OceanLotus Registry Activity"
     
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -596,6 +626,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
     
     - **Effort:** elementary
+
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Execution Via Rundll32"
     
@@ -680,6 +716,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
+
+??? abstract "SOCKS Tunneling Tool"
+    
+    Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "STRRAT Scheduled Task"
     
@@ -788,6 +830,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. It needs file monitoring capabilities (Sysmon Event ID 11 with .sch file creation logging).
     
     - **Effort:** advanced
+
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Cmd.exe Command Line"
     
@@ -1028,6 +1076,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     Detects a new registry key created by Ursnif malware. The rule requires to log for Registry Events, which can be done using SYsmon's Event IDs 12,13 and 14.
     
     - **Effort:** elementary
+
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Userinit Wrong Parent"
     

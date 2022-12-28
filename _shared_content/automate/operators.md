@@ -62,7 +62,7 @@ The `Foreach` module has 3 outputs:
 - `node.X.default.index` - The number of iterations performed (starts at 0)
 - `node.X.default.total` - The total number of items
 
-For instance, if the `Foreach` is the node `3` and we want to get the reference of the current item in the loop, we will use `{{node.3.default.value}}`
+For instance, if the `Foreach` is the node `3` and you want to get the reference of the current item in the loop, you can use `{{node.3.default.value}}`
 
 ### Store
 
@@ -75,17 +75,17 @@ To configure your modification, you need to fill 3 fields :
 
 - `key` - The key will be used to retrieve the data in another module or to edit it in another store.
 - `type` - The type correponds to the action you want to do.
-- `value` - The value of the data
+- `value` - The value of the data.
 
-#### Retrieve a data from the store
+#### Retrieve data from the store
 
 To retrieve information from the store in a module, you need to specify the key associated to it. 
 
 **Example**:
 
-To retrieve the list of IPs stored in the key `ip`, I need to write `{{ store.ip }}`
+To retrieve the list of IPs stored in the key `ip`: use `{{ store.ip }}`. 
 
-#### Type
+#### Types of store
 
 4 types are available within a `Store`:
 
@@ -93,3 +93,8 @@ To retrieve the list of IPs stored in the key `ip`, I need to write `{{ store.ip
 - `unset`: to unset the value of the specified key.
 - `append`: to store the value in a list referenced by the key. If the list does not exist, it is created, otherwise the value is appended to it.
 - `remove`: to remove a value from a list referenced by the key.
+
+#### Access a key from a store in another module
+
+To access a key from a store in another module: use `{{ store.name_of_the_key }}`.
+

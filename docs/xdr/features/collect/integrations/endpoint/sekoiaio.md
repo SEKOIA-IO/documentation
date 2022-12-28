@@ -75,7 +75,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
     ```shell
     chmod +x ./agent
-    sudo ./agent -install -intake_key <INTAKE_KEY>
+    sudo ./agent -install -intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent has been successfully installed as a service you can run the following command:
@@ -86,10 +86,136 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
  Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `145.239.192.38`. The protocol used to send events is HTTPS (443).
 
+### Update
+
+#### Disable automatic update
+
+By default, the agent will update itself automatically. If you would like to disable this feature, the flag `-disable-auto-update` must be specified during the installation.
+
+#### Manual update
+
+To manually update the agent, follow the instructions specific to your OS:
+
+=== "Windows"
+
+    The following command must be executed **as an administrator**:
+
+    ```shell
+    $ProgramFiles\EndpointAgent\agent.exe -update
+    ```
+
+    Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
+
+=== "Linux"
+
+    The following command must be executed:
+
+    ```shell
+    sudo /opt/endpoint-agent -update
+    ```
+
+
+### Uninstall
+
+To uninstall the agent, follow the instructions specific to your OS.
+
+#### Since version 0.3.0
+
+=== "Windows"
+
+    In order to completely uninstall the agent on Windows the command must be executed using a copy of the running executable.
+    You can either:
+
+    * Download the latest version of the agent and use this binary to perform the uninstall
+    * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe` 
+      * `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`)
+
+    The following command must be executed **as an administrator**:
+
+    ```shell
+    agent.exe -uninstall
+    ```
+
+=== "Linux"
+
+    The following command must be executed:
+
+    ```shell
+    sudo /opt/endpoint-agent/agent -uninstall
+    ```
+
+#### For versions prior to 0.3.0
+
+=== "Windows"
+
+    The following commands must be executed **as an administrator** to remove the service:
+
+    ```shell
+    agent.exe -service stop
+    agent.exe -service uninstall
+    ```
+
+    The folders created by the agent must then be removed:
+
+      * `$ProgramFiles\EndpointAgent`
+        * Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`
+      * `$ProgramData\EndpointAgent`
+        * Where `$ProgramData` refers to the path to the `ProgramData` folder, usually `c:\ProgramData` 
+
+=== "Linux"
+
+    The following commands must be executed to remove the service:
+
+    ```shell
+    sudo /opt/endpoint-agent/agent -service stop
+    sudo /opt/endpoint-agent/agent -service uninstall
+    ```
+
+    The folders created by the agent must then be removed:
+
+    ```shell
+    sudo rm -rf /opt/endpoint-agent
+    sudo rm -rf /etc/endpoint-agent
+    ```
 
 {!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
 
-### Proxy Support
+## Events examples
+
+Here's a non-exhaustive list of kind of events the agent is able to detect
+
+=== "Windows"
+
+    * Files creation/deletion/rename
+    * Process lifecycle
+    * Remote thread execution
+    * DNS Resolution
+    * TCP connection
+    * Powershell commands
+    * WMI Activity
+    * NTLM
+    * Windows Defender events
+    * Sysmon events if configured
+    * ...
+
+=== "Linux"
+
+    * Root commands executions
+    * Files creation/deletion/rename/change
+    * Process lifecycle
+    * TCP connection
+    * Python/Perl commands
+    * PIP/APT installs
+    * Cron configuration & scheduled jobs
+    * Sudoers file changes
+    * Passwd operations
+    * Suspicious activity (curl, wireshark, …)
+    * ...
+
+    
+
+
+## Proxy Support
 
 If needed, the SEKOIA.IO agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
 the configuration file at:
@@ -113,7 +239,7 @@ HTTPProxyURL: "<PROXY_URL>"
 
 If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
-### Optional steps
+## Optional steps
 
 === "Windows"
 
@@ -121,30 +247,19 @@ If you want to automate the installation of the agent with this configuration op
 
     If you want to improve detection and investigation capabilities, you may want to enable Sysmon. When installed, the SEKOIA.IO Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
 
-    > Warning: The installation of this tool will generate more logs which will consume more CPU resources. Install it on equipment that are correctly dimensioned, or try it on low risk assets at first.
+    !!! warning
+    	The installation of this tool will generate more logs which will consume more CPU resources. Install it on equipment that are correctly 		dimensioned, or try it on low risk assets at first.
 
     Sysmon is a Microsoft tool downloadable from [microsoft.com](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
-    A common installation instruction and configuration file is available at [SwiftOnSecurity's Github](https://github.com/SwiftOnSecurity/sysmon-config).
+    A common installation instruction and configuration file is available on [Florian Roth's GitHub](https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml). This configuration is an updated (and maintained) version of the [SwiftOnSecurity's configuration](https://github.com/SwiftOnSecurity/sysmon-config), which can also be used.
 
+    #### Configure Security log auditing
 
-### Uninstall
+    A proper security log auditing configuration will allow the agent to collect various  interresting security related events.
+    
+    This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
 
-To uninstall the agent follow the instructions specific to your OS.
+## Resources footprint
 
-=== "Windows"
-
-    The following commands must be executed **as an administrator**:
-
-    ```shell
-    $ProgramFiles\EndpointAgent\agent.exe -service uninstall
-    ```
-
-    Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
-
-=== "Linux"
-
-    The following commands must be executed:
-
-    ```shell
-    sudo /opt/endpoint-agent -service uninstall
-    ```
+We monitor the agent metrics and try to keep its footprint as small as possible. 
+Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.

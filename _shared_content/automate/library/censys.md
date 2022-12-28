@@ -17,7 +17,7 @@
 
 Generate a Censys report from results
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -27,7 +27,7 @@ Generate a Censys report from results
 | `buckets` | `integer` | The maximum number of values to be returned in the report. Maximum: 500. Default: 50 |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -37,7 +37,7 @@ Generate a Censys report from results
 
 Search items from Censys API
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -48,7 +48,7 @@ Search items from Censys API
 | `max_requests` | `integer` | Maximum number of requests to send to the API. Useful to avoid spending too much credits on the same query. 0 is no limit. Defaults to 1 |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -58,7 +58,7 @@ Search items from Censys API
 
 Return the item as a structured data
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -66,7 +66,7 @@ Return the item as a structured data
 | `item` | `string` | Item to retrieve |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -75,4 +75,4 @@ Return the item as a structured data
 
 ## Extra
 
-Module **`Censys` v1.13**
+Module **`Censys` v1.14**

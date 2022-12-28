@@ -93,17 +93,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Active Directory** wit
     
     - **Effort:** intermediate
 
-??? abstract "Fortinet Firewall Login In Failure"
+??? abstract "Intune Policy Change"
     
-    Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
+    Detects edits, deletions or creations made to an organization Intune policies.
     
-    - **Effort:** master
-
-??? abstract "Fortinet Firewall Successful External Login"
-    
-    Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
-    
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "Potential Bazar Loader User-Agents"
     

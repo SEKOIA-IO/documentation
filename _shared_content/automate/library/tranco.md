@@ -12,7 +12,7 @@ This module accepts no configuration.
 
 Fetches Tranco list
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -20,7 +20,7 @@ Fetches Tranco list
 | `interval` | `integer` | Interval in hours to wait between each trigger call. Defaults to 24. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -31,4 +31,4 @@ Fetches Tranco list
 
 ## Extra
 
-Module **`Tranco` v1.15**
+Module **`Tranco` v1.16**

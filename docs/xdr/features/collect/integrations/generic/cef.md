@@ -23,4 +23,4 @@ Please refer to the documentation of your vendor to forward events to your rsysl
 
 
 ## Further Reading
-- [CEF specification](https://community.microfocus.com/dcvta86296/attachments/dcvta86296/connector-documentation/1197/2/CommonEventFormatV25.pdf)
+- [CEF specification](https://www.microfocus.com/documentation/arcsight/arcsight-smartconnectors/pdfdoc/common-event-format-v25/common-event-format-v25.pdf)

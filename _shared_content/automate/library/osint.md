@@ -12,14 +12,14 @@ This module accepts no configuration.
 
 Fetch objects from a osint collection source
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `collection_sources` | `array` | OSINT Sources |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -28,4 +28,4 @@ Fetch objects from a osint collection source
 
 ## Extra
 
-Module **`OSINT` v1.35**
+Module **`OSINT` v1.36**

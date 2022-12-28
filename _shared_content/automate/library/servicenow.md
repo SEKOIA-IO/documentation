@@ -18,14 +18,14 @@
 
 Retrieve Service Now table
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `table_name` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -34,4 +34,4 @@ Retrieve Service Now table
 
 ## Extra
 
-Module **`ServiceNow` v1.12**
+Module **`ServiceNow` v1.13**

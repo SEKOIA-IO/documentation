@@ -12,14 +12,14 @@ This module accepts no configuration.
 
 Trigger playbooks when new snort rules are detected of a repository
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `archives` | `array` | Snort rules archives |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -28,4 +28,4 @@ Trigger playbooks when new snort rules are detected of a repository
 
 ## Extra
 
-Module **`Detection Rules` v1.13**
+Module **`Detection Rules` v1.14**

@@ -21,11 +21,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** wi
     
     - **Effort:** advanced
 
-??? abstract "CVE-2020-14882 Oracle WebLogic Server"
+??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952)
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
     
-    - **Effort:** advanced
+    - **Effort:** intermediate
 
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     

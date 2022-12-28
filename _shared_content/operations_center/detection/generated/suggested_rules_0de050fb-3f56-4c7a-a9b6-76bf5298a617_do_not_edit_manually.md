@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp activity** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x CybeReason MalOp on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_0de050fb-3f56-4c7a-a9b6-76bf5298a617_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Cybereason MalOp activity on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_0de050fb-3f56-4c7a-a9b6-76bf5298a617_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -153,6 +153,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     
     - **Effort:** advanced
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
@@ -195,11 +201,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     
     - **Effort:** intermediate
 
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
     
     - **Effort:** advanced
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
 
 ??? abstract "ICacls Granting Access To All"
     
@@ -210,6 +228,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
 ??? abstract "IcedID Execution Using Excel"
     
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
+    
+    - **Effort:** elementary
+
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
     
     - **Effort:** elementary
 
@@ -357,6 +381,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     
     - **Effort:** intermediate
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -374,6 +404,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
     
     - **Effort:** elementary
+
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Execution Via Rundll32"
     
@@ -435,6 +471,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     
     - **Effort:** elementary
 
+??? abstract "SOCKS Tunneling Tool"
+    
+    Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -462,6 +504,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
     
     - **Effort:** intermediate
 
@@ -602,6 +650,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CybeReason MalOp** with the 
     System info discovery, attempt to detects basic command use to fingerprint a host
     
     - **Effort:** master
+
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WMI Install Of Binary"
     

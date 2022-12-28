@@ -16,14 +16,6 @@ The following table lists the data source offered by this integration.
 
 
 
-In details, the following table denotes the type of events produced by this integration.
-
-| Name | Values |
-| ---- | ------ |
-| Kind | `event` |
-| Category | `network` |
-| Type | `allowed`, `connection`, `denied`, `end` |
-
 
 
 
@@ -41,18 +33,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "code": "0100032102",
             "reason": "Configuration is changed in the admin session",
-            "severity": 7,
             "timezone": "+0100",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "event:system"
+            "dataset": "event:system",
+            "category": "event"
         },
         "@timestamp": "2021-11-23T14:35:08.541882Z",
-        "action": {
-            "type": "system"
-        },
         "log": {
             "level": "alert"
         },
@@ -60,6 +45,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.2.9"
+        },
+        "action": {
+            "type": "system",
+            "outcome_reason": "Configuration is changed in the admin session",
+            "target": "network-traffic",
+            "outcome": "success"
         }
     }
     	
@@ -75,23 +66,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "block",
             "code": "0954024576",
-            "severity": 4,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:dlp"
+            "dataset": "utm:dlp",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T22:29:36.000000Z",
-        "action": {
-            "name": "block",
-            "type": "dlp"
-        },
         "destination": {
             "address": "172.18.62.158",
             "domain": "172.18.62.158",
@@ -99,6 +77,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80,
             "user": {
                 "name": "bob"
+            }
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "medium"
+                }
             }
         },
         "file": {
@@ -109,9 +94,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -136,10 +121,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/dlp/flower.gif",
+            "full": "/dlp/flower.gif",
             "path": "/dlp/flower.gif"
         },
         "user_agent": {
             "original": "curl/7.47.0"
+        },
+        "action": {
+            "name": "block",
+            "type": "dlp - dlp",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "user": [
@@ -168,22 +160,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "pass",
             "code": "1501054802",
             "reason": "Domain is monitored",
-            "severity": 3,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "dns:dns-response"
+            "dataset": "dns:dns-response",
+            "category": "dns"
         },
         "@timestamp": "2018-12-27T22:45:26.000000Z",
-        "action": {
-            "name": "pass",
-            "type": "dns-response"
-        },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
@@ -218,6 +198,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 54621,
             "address": "10.1.100.11"
         },
+        "action": {
+            "name": "pass",
+            "type": "dns-response",
+            "outcome_reason": "Domain is monitored",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "user": [
                 "bob"
@@ -242,23 +229,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "reset",
             "code": "0419016384",
             "reason": "file_transfer: Eicar.Virus.Test.File,",
-            "severity": 7,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:ips"
+            "dataset": "utm:ips",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T19:28:07.000000Z",
-        "action": {
-            "name": "reset",
-            "type": "ips"
-        },
         "destination": {
             "address": "10.1.100.11",
             "domain": "172.16.200.55",
@@ -268,13 +242,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "bob"
             }
         },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "info"
+                }
+            }
+        },
         "log": {
             "level": "alert"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -299,7 +280,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/virus/eicar.com",
+            "full": "/virus/eicar.com",
             "path": "/virus/eicar.com"
+        },
+        "action": {
+            "name": "reset",
+            "type": "signature - ips",
+            "outcome_reason": "file_transfer: Eicar.Virus.Test.File,",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "user": [
@@ -326,37 +315,42 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "time=17:24:16 devname=\"abc\" devid=\"1\" logid=\"0101037130\" type=\"event\" subtype=\"vpn\" level=\"error\" vd=\"root\" eventtime=1580142256 logdesc=\"Progress IPsec phase 2\" msg=\"progress IPsec phase 2\" action=\"negotiate\" remip=1.1.1.1 locip=93.187.43.9 remport=500 locport=500 outintf=\"N/A\" cookies=\"07f928d94dd975ea/89b1d990f54f0b82\" user=\"N/A\" group=\"N/A\" xauthuser=\"N/A\" xauthgroup=\"N/A\" assignip=N/A vpntunnel=\"VPN-FOOBAR\" status=\"failure\" init=\"local\" exch=\"CREATE_CHILD\" dir=\"inbound\" role=\"initiator\" result=\"ERROR\" version=\"IKEv2\"",
         "event": {
             "action": "negotiate",
-            "dataset": "event:vpn",
             "code": "0101037130",
             "reason": "progress IPsec phase 2",
-            "kind": "event",
-            "category": [
-                "network"
-            ]
+            "dataset": "event:vpn",
+            "category": "event"
         },
         "@timestamp": "2020-01-27T16:24:16.000000Z",
-        "action": {
-            "name": "negotiate",
-            "outcome": "failure",
-            "type": "vpn"
-        },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
-            "level": "error"
-        },
-        "observer": {
+            "level": "error",
+            "description": "Progress IPsec phase 2",
             "hostname": "abc"
         },
+        "observer": {
+            "hostname": "abc",
+            "serial_number": "1"
+        },
         "source": {
-            "address": "1.1.1.1",
             "ip": "1.1.1.1",
             "user": {
                 "name": "N/A"
-            }
+            },
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "negotiate",
+            "type": "vpn",
+            "outcome": "failure",
+            "outcome_reason": "progress IPsec phase 2",
+            "target": "network-traffic"
         },
         "related": {
             "hosts": [
@@ -368,6 +362,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.1.1.1"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -382,27 +379,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "time=16:48:00 devname=\"abc\" devid=\"1\" logid=\"0100032003\" type=\"event\" subtype=\"system\" level=\"information\" vd=\"root\" eventtime=1619621280 logdesc=\"Admin logout successful\" sn=\"1619620402\" user=\"test\" ui=\"jsconsole\" method=\"jsconsole\" srcip=1.1.1.1 dstip=2.2.2.2 action=\"logout\" status=\"success\" duration=878 reason=\"exit\" msg=\"Administrator test logged out from jsconsole\"",
         "event": {
             "action": "logout",
-            "dataset": "event:system",
             "code": "0100032003",
-            "reason": "Administrator test logged out from jsconsole",
-            "kind": "event",
-            "category": [
-                "network"
-            ]
+            "reason": "exit",
+            "dataset": "event:system",
+            "category": "event",
+            "provider": "jsconsole"
         },
         "@timestamp": "2021-04-28T14:48:00.000000Z",
-        "action": {
-            "name": "logout",
-            "outcome": "success",
-            "type": "system"
-        },
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2"
         },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "http": {
@@ -411,17 +404,27 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "log": {
-            "level": "information"
-        },
-        "observer": {
+            "level": "information",
+            "description": "Admin logout successful",
             "hostname": "abc"
         },
+        "observer": {
+            "hostname": "abc",
+            "serial_number": "1"
+        },
         "source": {
-            "address": "1.1.1.1",
             "ip": "1.1.1.1",
             "user": {
                 "name": "test"
-            }
+            },
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "logout",
+            "type": "system",
+            "outcome": "success",
+            "outcome_reason": "Administrator test logged out from jsconsole",
+            "target": "network-traffic"
         },
         "related": {
             "hosts": [
@@ -434,6 +437,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "test"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -449,33 +455,42 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "roll-log",
             "code": "0100032011",
-            "reason": "Disk log has rolled.",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "event:system"
+            "reason": "file-size",
+            "dataset": "event:system",
+            "category": "event"
         },
         "@timestamp": "2021-04-28T14:23:50.000000Z",
-        "action": {
-            "name": "roll-log",
-            "type": "system"
-        },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "PRX1-AA"
             }
         },
         "log": {
-            "level": "notice"
+            "level": "notice",
+            "description": "Disk log rolled",
+            "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
+        },
+        "action": {
+            "name": "roll-log",
+            "type": "system",
+            "outcome_reason": "Disk log has rolled.",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
                 "abc"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -491,28 +506,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "passthrough",
             "code": "1600061002",
-            "severity": 3,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "utm:ssh"
+            "dataset": "utm:ssh",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T22:36:15.000000Z",
-        "action": {
-            "name": "passthrough",
-            "type": "ssh"
-        },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
             "port": 22,
             "user": {
                 "name": "bob"
+            }
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "low"
+                }
             }
         },
         "log": {
@@ -541,6 +551,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 56698,
             "address": "10.1.100.11"
         },
+        "action": {
+            "name": "passthrough",
+            "type": "ssh-command - ssh",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "user": [
                 "bob"
@@ -564,23 +580,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "permit",
             "code": "0814044032",
-            "severity": 2,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "utm:voip"
+            "dataset": "utm:voip",
+            "category": "utm"
         },
         "@timestamp": "2018-12-28T00:47:08.000000Z",
-        "action": {
-            "name": "permit",
-            "outcome": "start",
-            "type": "voip"
-        },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
@@ -618,6 +621,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "address": "10.1.100.11"
         },
+        "action": {
+            "name": "permit",
+            "type": "voip - voip",
+            "outcome": "start",
+            "target": "network-traffic"
+        },
         "related": {
             "user": [
                 "sip:service@172.16.200.55:5060",
@@ -643,38 +652,45 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "send",
             "code": "0105048039",
             "reason": "SSL Alert sent",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "utm:wad"
+            "dataset": "utm:wad",
+            "category": "event",
+            "type": "illegal parameter"
         },
         "@timestamp": "2021-04-28T13:29:39.000000Z",
-        "action": {
-            "name": "send",
-            "type": "wad"
-        },
         "destination": {
             "address": "1.1.1.1",
             "ip": "1.1.1.1",
             "port": 8002
         },
         "fortinet": {
-            "event": {
-                "type": "event",
-                "desc": "illegal parameter"
+            "fortigate": {
+                "event": {
+                    "type": "event",
+                    "desc": "illegal parameter"
+                },
+                "virtual_domain": "PRX1-AA"
             }
         },
         "log": {
-            "level": "error"
-        },
-        "observer": {
+            "level": "error",
+            "description": "SSL fatal alert sent",
             "hostname": "abc"
         },
+        "observer": {
+            "hostname": "abc",
+            "serial_number": "1"
+        },
         "source": {
-            "address": "2.2.2.2",
             "ip": "2.2.2.2",
-            "port": 47782
+            "port": 47782,
+            "address": "2.2.2.2"
+        },
+        "action": {
+            "name": "send",
+            "type": "wad",
+            "outcome_reason": "SSL Alert sent",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -684,6 +700,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -699,22 +718,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "passthrough",
             "code": "1203030258",
-            "severity": 4,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "utm:waf"
+            "dataset": "utm:waf",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T22:55:20.000000Z",
-        "action": {
-            "name": "passthrough",
-            "type": "waf"
-        },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
@@ -723,13 +730,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "bob"
             }
         },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "medium"
+                }
+            }
+        },
         "log": {
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -754,14 +768,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "http://172.16.200.55/index.html?a\\=0123456789&b\\=0123456789&c\\=0123456789",
+            "full": "http://172.16.200.55/index.html?a\\=0123456789&b\\=0123456789&c\\=0123456789",
             "domain": "172.16.200.55",
+            "path": "/index.html",
             "scheme": "http",
             "query": "a\\=0123456789&b\\=0123456789&c\\=0123456789",
-            "path": "/index.html",
             "port": 80
         },
         "user_agent": {
             "original": "curl/7.47.0"
+        },
+        "action": {
+            "name": "passthrough",
+            "type": "waf-http-constraint - waf",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "user": [
@@ -787,34 +808,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 51 > threshold 50",
-            "severity": 7,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:anomaly"
+            "dataset": "utm:anomaly",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T19:40:04.000000Z",
-        "action": {
-            "name": "clear_session",
-            "type": "anomaly"
-        },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55"
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "critical"
+                }
+            }
         },
         "log": {
             "level": "alert"
         },
         "network": {
+            "transport": "icmp",
             "application": "PING",
-            "protocol": "PING",
-            "transport": "icmp"
+            "protocol": "ping"
         },
         "observer": {
             "ingress": {
@@ -829,6 +844,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "10.1.100.11",
             "address": "10.1.100.11"
+        },
+        "action": {
+            "name": "clear_session",
+            "type": "anomaly - anomaly",
+            "outcome_reason": "anomaly: icmp_flood, 51 > threshold 50",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "ip": [
@@ -851,26 +873,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
-            "severity": 7,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "anomaly:anomaly"
-        },
-        "action": {
-            "name": "clear_session",
-            "type": "anomaly"
+            "dataset": "anomaly:anomaly",
+            "category": "anomaly"
         },
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
             "port": 20882
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "severity": "critical"
+                }
+            }
         },
         "log": {
             "level": "alert"
@@ -894,6 +910,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
+        "action": {
+            "name": "clear_session",
+            "type": "anomaly",
+            "outcome_reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "ip": [
                 "1.1.1.1",
@@ -915,20 +938,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:anomaly"
-        },
-        "action": {
-            "name": "clear_session",
-            "type": "anomaly"
+            "dataset": "utm:anomaly",
+            "category": "anomaly"
         },
         "destination": {
             "address": "2.2.2.2",
@@ -936,8 +947,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20882
         },
         "fortinet": {
-            "event": {
-                "type": "anomaly"
+            "fortigate": {
+                "event": {
+                    "type": "anomaly",
+                    "severity": "critical"
+                },
+                "virtual_domain": "vdom1",
+                "icmp": {
+                    "request": {
+                        "type": "0x92",
+                        "code": "0x51"
+                    }
+                }
             }
         },
         "log": {
@@ -955,14 +976,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
-            "address": "1.1.1.1",
-            "ip": "1.1.1.1"
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
         },
-        "icmp": {
-            "request": {
-                "type": "0x92",
-                "code": "0x51"
-            }
+        "action": {
+            "name": "clear_session",
+            "type": "anomaly",
+            "outcome_reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
+            "properties": {
+                "icmp_code": "0x51",
+                "icmp_type": "0x92"
+            },
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "ip": [
@@ -985,20 +1011,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "clear_session",
             "code": "0720018433",
             "reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:anomaly"
-        },
-        "action": {
-            "name": "clear_session",
-            "type": "anomaly"
+            "dataset": "utm:anomaly",
+            "category": "anomaly"
         },
         "destination": {
             "address": "2.2.2.2",
@@ -1006,8 +1020,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20882
         },
         "fortinet": {
-            "event": {
-                "type": "anomaly"
+            "fortigate": {
+                "event": {
+                    "type": "anomaly",
+                    "severity": "critical"
+                },
+                "virtual_domain": "vdom1",
+                "icmp": {
+                    "request": {
+                        "type": "0x92",
+                        "code": "0x51"
+                    }
+                }
             }
         },
         "log": {
@@ -1025,14 +1049,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "source": {
-            "address": "1.1.1.1",
-            "ip": "1.1.1.1"
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
         },
-        "icmp": {
-            "request": {
-                "type": "0x92",
-                "code": "0x51"
-            }
+        "action": {
+            "name": "clear_session",
+            "type": "anomaly",
+            "outcome_reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
+            "properties": {
+                "icmp_code": "0x51",
+                "icmp_type": "0x92"
+            },
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "ip": [
@@ -1055,23 +1084,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "blocked",
             "code": "0211008192",
             "reason": "File is infected.",
-            "severity": 4,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:virus"
+            "dataset": "utm:virus",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T19:20:48.000000Z",
-        "action": {
-            "name": "blocked",
-            "type": "virus"
-        },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
@@ -1087,9 +1103,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -1114,13 +1130,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "http://172.16.200.55/virus/eicar.com",
+            "full": "http://172.16.200.55/virus/eicar.com",
             "domain": "172.16.200.55",
-            "scheme": "http",
             "path": "/virus/eicar.com",
+            "scheme": "http",
             "port": 80
         },
         "user_agent": {
             "original": "curl/7.47.0"
+        },
+        "action": {
+            "name": "blocked",
+            "type": "infected - virus",
+            "outcome_reason": "File is infected.",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "user": [
@@ -1146,21 +1170,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "blocked",
             "code": "0211008192",
             "reason": "File is infected",
-            "severity": 4,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:virus"
-        },
-        "action": {
-            "name": "blocked",
-            "type": "virus"
+            "dataset": "utm:virus",
+            "category": "utm"
         },
         "destination": {
             "address": "2.2.2.2",
@@ -1174,9 +1185,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "inbound"
         },
         "observer": {
@@ -1201,13 +1212,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "http://2.2.2.2/eicar.com",
+            "full": "http://2.2.2.2/eicar.com",
             "domain": "2.2.2.2",
-            "scheme": "http",
             "path": "/eicar.com",
+            "scheme": "http",
             "port": 80
         },
         "user_agent": {
             "original": "Wget/1 10 2"
+        },
+        "action": {
+            "name": "blocked",
+            "type": "infected - virus",
+            "outcome_reason": "File is infected",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "ip": [
@@ -1225,27 +1244,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|28704|utm:app-ctrl app-ctrl-all pass|2|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=1059028704 cat=utm:app-ctrl FTNTFGTsubtype=app-ctrl FTNTFGTeventtype=app-ctrl-all FTNTFGTlevel=information FTNTFGTvd=vdom1 FTNTFGTeventtime=1545949688 FTNTFGTappid=34050 src=10.1.100.11 dst=104.80.89.24 spt=56826 dpt=80 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP deviceDirection=1 FTNTFGTpolicyid=1 externalId=12567 FTNTFGTapplist=g-default FTNTFGTappcat=Web.Client FTNTFGTapp=HTTP.BROWSER_Firefox act=pass dhost=detectportal.firefox.com FTNTFGTincidentserialno=1702350499 request=/success.txt msg=Web.Client: HTTP.BROWSER_Firefox, FTNTFGTapprisk=elevated",
+        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|28704|utm:app-ctrl app-ctrl-all pass|2|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=1059028704 cat=utm:app-ctrl FTNTFGTsubtype=app-ctrl FTNTFGTeventtype=app-ctrl-all FTNTFGTlevel=information FTNTFGTvd=vdom1 FTNTFGTeventtime=1545949688 FTNTFGTappid=34050 src=10.1.100.11 dst=104.80.89.24 spt=56826 dpt=80 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP deviceDirection=1 FTNTFGTpolicyid=1 externalId=12567 FTNTFGTapplist=g-default FTNTFGTappcat=Web.Client FTNTFGTapp=HTTP.BROWSER_Firefox act=pass dhost=detectportal.firefox.com FTNTFGTincidentserialno=1702350499 request=/success.txt msg=Web.Client: HTTP.BROWSER_Firefox, FTNTFGTapprisk=elevated suser=Domain\\\\alice",
         "event": {
             "action": "pass",
             "code": "1059028704",
             "reason": "Web.Client: HTTP.BROWSER_Firefox,",
-            "severity": 2,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "utm:app-ctrl"
+            "dataset": "utm:app-ctrl",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T22:28:08.000000Z",
-        "action": {
-            "name": "pass",
-            "type": "app-ctrl"
-        },
         "destination": {
             "address": "104.80.89.24",
             "domain": "detectportal.firefox.com",
@@ -1256,9 +1263,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "information"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "outbound"
         },
         "observer": {
@@ -1279,11 +1286,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "10.1.100.11",
             "port": 56826,
-            "address": "10.1.100.11"
+            "address": "10.1.100.11",
+            "user": {
+                "name": "alice",
+                "domain": "Domain"
+            }
         },
         "url": {
             "original": "/success.txt",
+            "full": "/success.txt",
             "path": "/success.txt"
+        },
+        "action": {
+            "name": "pass",
+            "type": "app-ctrl-all - app-ctrl",
+            "outcome_reason": "Web.Client: HTTP.BROWSER_Firefox,",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -1292,6 +1311,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "10.1.100.11",
                 "104.80.89.24"
+            ],
+            "user": [
+                "alice"
             ]
         }
     }
@@ -1309,21 +1331,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "pass",
             "code": "1501054802",
             "reason": "Domain is monitored",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "dns:dns-response"
+            "dataset": "dns:dns-response",
+            "category": "dns"
         },
         "@timestamp": "2018-12-27T22:45:26.000000Z",
-        "action": {
-            "name": "pass",
-            "type": "dns-response"
-        },
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2",
@@ -1332,12 +1343,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "dns": {
             "question": {
                 "name": "detectportal.firefox.com",
-                "type": "A"
-            }
+                "type": "A",
+                "top_level_domain": "com",
+                "subdomain": "detectportal",
+                "registered_domain": "firefox.com"
+            },
+            "rrname": "detectportal.firefox.com",
+            "rrtype": "A"
         },
         "fortinet": {
-            "event": {
-                "type": "dns"
+            "fortigate": {
+                "event": {
+                    "type": "dns"
+                },
+                "virtual_domain": "vdom1"
             }
         },
         "log": {
@@ -1362,13 +1381,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "Information Technology"
         },
         "source": {
-            "address": "1.1.1.1",
             "ip": "1.1.1.1",
             "mac": "00:00:00:00:00:00",
             "port": 54621,
             "user": {
                 "name": "bob"
-            }
+            },
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "pass",
+            "type": "dns-response",
+            "outcome_reason": "Domain is monitored",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "ip": [
@@ -1394,22 +1420,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "log-only",
             "code": "0508020503",
             "reason": "general email log",
-            "severity": 2,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "utm:emailfilter"
+            "dataset": "utm:emailfilter",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T19:36:58.000000Z",
-        "action": {
-            "name": "log-only",
-            "type": "emailfilter"
-        },
         "destination": {
             "address": "172.18.62.158",
             "ip": "172.18.62.158",
@@ -1422,9 +1436,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "information"
         },
         "network": {
-            "application": "SMTP",
-            "protocol": "SMTP",
             "transport": "tcp",
+            "application": "SMTP",
+            "protocol": "smtp",
             "direction": "outbound"
         },
         "observer": {
@@ -1450,6 +1464,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "address": "10.1.100.11"
         },
+        "action": {
+            "name": "log-only",
+            "type": "smtp - emailfilter",
+            "outcome_reason": "general email log",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "user": [
                 "bob",
@@ -1474,20 +1495,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "login",
             "code": "0100032002",
-            "reason": "Administrator admin1 login failed from https(172.16.200.254) because of invalid user name",
-            "severity": 7,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "event:system"
+            "reason": "name_invalid",
+            "dataset": "event:system",
+            "category": "event"
         },
         "@timestamp": "2018-12-27T19:15:40.000000Z",
-        "action": {
-            "name": "login",
-            "outcome": "failed",
-            "type": "system"
-        },
         "destination": {
             "address": "172.16.200.1",
             "ip": "172.16.200.1",
@@ -1504,8 +1516,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "address": "172.16.200.254",
-            "ip": "172.16.200.254"
+            "ip": "172.16.200.254",
+            "address": "172.16.200.254"
+        },
+        "action": {
+            "name": "login",
+            "type": "system",
+            "outcome": "failed",
+            "outcome_reason": "Administrator admin1 login failed from https(172.16.200.254) because of invalid user name",
+            "target": "network-traffic"
         },
         "related": {
             "user": [
@@ -1530,20 +1549,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "authentication",
             "code": "0102043008",
-            "reason": "User bob succeeded in authentication",
-            "severity": 3,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "event:user"
+            "reason": "N/A",
+            "dataset": "event:user",
+            "category": "event"
         },
         "@timestamp": "2018-12-27T19:17:35.000000Z",
-        "action": {
-            "name": "authentication",
-            "outcome": "success",
-            "type": "user"
-        },
         "destination": {
             "address": "172.16.200.55",
             "ip": "172.16.200.55",
@@ -1567,6 +1577,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "10.1.100.11",
             "address": "10.1.100.11"
+        },
+        "action": {
+            "name": "authentication",
+            "type": "user",
+            "outcome": "success",
+            "outcome_reason": "User bob succeeded in authentication",
+            "target": "network-traffic"
         },
         "related": {
             "user": [
@@ -1592,21 +1609,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "pass",
             "code": "1059028704",
             "reason": "Web.Client: HTTPS.BROWSER,",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "utm:app-ctrl"
+            "dataset": "utm:app-ctrl",
+            "category": "utm"
         },
         "@timestamp": "2020-01-24T10:09:50.000000Z",
-        "action": {
-            "name": "pass",
-            "type": "app-ctrl"
-        },
         "destination": {
             "address": "2.2.2.2",
             "domain": "abcd",
@@ -1614,16 +1620,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 443
         },
         "fortinet": {
-            "event": {
-                "type": "utm"
-            },
-            "apprisk": "medium"
+            "fortigate": {
+                "event": {
+                    "type": "utm"
+                },
+                "apprisk": "medium",
+                "virtual_domain": "root"
+            }
         },
         "log": {
-            "level": "information"
+            "level": "information",
+            "hostname": "abc"
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "port1"
@@ -1636,13 +1647,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
+            "transport": "tcp",
             "application": "HTTPS.BROWSER",
-            "protocol": "HTTPS",
-            "transport": "tcp"
+            "protocol": "https"
         },
         "rule": {
             "category": "Web.Client",
-            "ruleset": "default"
+            "ruleset": "default",
+            "apprisk": "medium"
         },
         "source": {
             "ip": "1.1.1.1",
@@ -1651,7 +1663,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/",
+            "full": "/",
             "path": "/"
+        },
+        "action": {
+            "name": "pass",
+            "type": "app-ctrl",
+            "outcome_reason": "Web.Client: HTTPS.BROWSER,",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -1662,6 +1682,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -1678,35 +1701,29 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "ip-conn",
             "code": "0000000011",
             "timezone": "+0300",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2020-10-13T09:22:43.587868Z",
-        "action": {
-            "name": "ip-conn",
-            "type": "forward"
-        },
         "destination": {
             "address": "2.2.2.2",
             "ip": "2.2.2.2"
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
-            "level": "warning"
+            "level": "warning",
+            "hostname": "abc"
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "wan1"
@@ -1727,8 +1744,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ruleset": "policy"
         },
         "source": {
-            "address": "1.1.1.1",
-            "ip": "1.1.1.1"
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "ip-conn",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -1738,6 +1761,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -1754,21 +1780,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "accept",
             "code": "0001000014",
             "timezone": "+0200",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:local"
+            "dataset": "traffic:local",
+            "category": "traffic"
         },
         "@timestamp": "2020-10-13T09:02:14.900309Z",
-        "action": {
-            "name": "accept",
-            "type": "local"
-        },
         "destination": {
             "address": "12::16",
             "bytes": 0,
@@ -1776,15 +1791,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 0
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
-            "level": "notice"
+            "level": "notice",
+            "hostname": "abc"
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "unknown0"
@@ -1797,19 +1817,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
+            "transport": "ipv6-icmp",
+            "bytes": 76,
             "application": "icmp6/143/0",
-            "protocol": "icmp6/143/0",
-            "transport": "ipv6-icmp"
+            "protocol": "icmp6/143/0"
         },
         "rule": {
             "category": "unscanned",
             "ruleset": "local-in-policy6"
         },
         "source": {
-            "address": "00::00:00:00:00",
-            "bytes": 76,
             "ip": "00::00:00:00:00",
-            "packets": 1
+            "bytes": 76,
+            "packets": 1,
+            "address": "00::00:00:00:00"
+        },
+        "action": {
+            "name": "accept",
+            "type": "local",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -1819,6 +1846,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "00::00:00:00:00",
                 "12::16"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -1834,22 +1864,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0001000014",
-            "severity": 3,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:local"
+            "dataset": "traffic:local",
+            "category": "traffic"
         },
         "@timestamp": "2020-10-14T08:11:38.000000Z",
-        "action": {
-            "name": "accept",
-            "type": "local"
-        },
         "destination": {
             "address": "2.2.2.2",
             "bytes": 84,
@@ -1860,9 +1878,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "icmp",
+            "bytes": 168,
             "application": "icmp/8/0",
-            "protocol": "icmp/8/0",
-            "transport": "icmp"
+            "protocol": "icmp/8/0"
         },
         "observer": {
             "egress": {
@@ -1885,6 +1904,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 1,
             "address": "1.1.1.1"
         },
+        "action": {
+            "name": "accept",
+            "type": "local",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "ip": [
                 "1.1.1.1",
@@ -1906,21 +1931,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "accept",
             "code": "0000000013",
             "timezone": "+0200",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2020-10-13T10:22:38.311909Z",
-        "action": {
-            "name": "accept",
-            "type": "forward"
-        },
         "destination": {
             "address": "2.2.2.2",
             "bytes": 420,
@@ -1928,15 +1942,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 5
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "ROUTER"
             }
         },
         "log": {
-            "level": "notice"
+            "level": "notice",
+            "hostname": "abc"
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "test"
@@ -1949,18 +1968,25 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
-            "protocol": "PING",
-            "transport": "icmp"
+            "transport": "icmp",
+            "bytes": 840,
+            "protocol": "ping"
         },
         "rule": {
             "category": "unscanned",
             "ruleset": "policy"
         },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 420,
             "ip": "1.1.1.1",
-            "packets": 5
+            "bytes": 420,
+            "packets": 5,
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "accept",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -1970,6 +1996,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -1985,20 +2014,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "login",
             "code": "0100032021",
-            "reason": "Login disabled from IP 1.1.1.1 for 60 seconds because of 3 bad attempts",
-            "severity": 7,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "event:system"
+            "reason": "exceed_limit",
+            "dataset": "event:system",
+            "category": "event"
         },
         "@timestamp": "2020-01-16T11:00:47.000000Z",
-        "action": {
-            "name": "login",
-            "outcome": "failed",
-            "type": "system"
-        },
         "log": {
             "level": "alert"
         },
@@ -2006,6 +2026,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "Fortigate",
             "vendor": "Fortinet",
             "version": "v6.0.4"
+        },
+        "action": {
+            "name": "login",
+            "type": "system",
+            "outcome": "failed",
+            "outcome_reason": "Login disabled from IP 1.1.1.1 for 60 seconds because of 3 bad attempts",
+            "target": "network-traffic"
         }
     }
     	
@@ -2021,29 +2048,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "ssl-new-con",
             "code": "0101039943",
-            "reason": "SSL new connection",
-            "severity": 2,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "event:vpn"
+            "reason": "N/A",
+            "dataset": "event:vpn",
+            "category": "event"
         },
         "@timestamp": "2021-11-19T16:10:58.000000Z",
-        "action": {
-            "name": "ssl-new-con",
-            "type": "vpn"
-        },
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2",
-            "user": {
-                "name": "N/A"
-            }
+            "ip": "2.2.2.2"
         },
         "log": {
             "level": "information"
@@ -2053,10 +2065,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "vendor": "Fortinet",
             "version": "v6.0.10"
         },
+        "action": {
+            "name": "ssl-new-con",
+            "type": "vpn",
+            "outcome_reason": "SSL new connection",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
-            "user": [
-                "N/A"
-            ],
             "ip": [
                 "2.2.2.2"
             ]
@@ -2074,22 +2090,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Fortinet|FortiGate-1000C|5.6.14,build1727 (GA)|0000000020|forward traffic accept|5|start=Oct 12 2022 12:50:31 logver=506141727 deviceExternalId=FGT123 dvchost=FW-123 ad.vd=root ad.logid=0000000020 cat=traffic ad.subtype=forward deviceSeverity=notice ad.eventtime=1665571831 src=1.1.1.1 spt=55390 deviceInboundInterface=abc ad.srcintfrole=undefined dst=2.2.2.2 dpt=1522 deviceOutboundInterface=efg ad.dstintfrole=lan foo.poluuid=ec6ff8fe-5e41-51ec-bcbe-9e5484033dc8 externalID=3812440508 proto=6 act=accept ad.policyid=185 ad.policytype=policy app=SQLNET-1522 ad.dstcountry=Reserved ad.srccountry=Reserved ad.trandisp=noop ad.duration=268 out=202 in=52 ad.sentpkt=3 ad.rcvdpkt=1 ad.appcat=unscanned ad.sentdelta=0 ad.rcvddelta=0 tz=\"+0200\"",
         "event": {
             "action": "accept",
-            "severity": 5,
+            "code": "0000000020",
             "timezone": "+0200",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic"
+            "dataset": "traffic",
+            "category": "traffic"
         },
         "@timestamp": "2022-10-12T10:50:31.000000Z",
-        "action": {
-            "name": "accept"
-        },
         "destination": {
             "address": "2.2.2.2",
             "bytes": 202,
@@ -2097,9 +2103,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 1522
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 254,
             "application": "SQLNET-1522",
-            "protocol": "SQLNET-1522",
-            "transport": "tcp"
+            "protocol": "sqlnet-1522"
         },
         "observer": {
             "egress": {
@@ -2122,6 +2129,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 55390,
             "address": "1.1.1.1"
         },
+        "action": {
+            "name": "accept",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "ip": [
                 "1.1.1.1",
@@ -2142,22 +2154,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "timeout",
             "code": "0000000013",
-            "severity": 3,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "connection",
-                "end"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2019-10-30T21:44:36.000000Z",
-        "action": {
-            "name": "timeout",
-            "type": "forward"
-        },
         "destination": {
             "address": "3.3.3.3",
             "bytes": 48,
@@ -2173,9 +2173,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 192,
             "application": "HTTP",
-            "protocol": "HTTP",
-            "transport": "tcp"
+            "protocol": "http"
         },
         "observer": {
             "egress": {
@@ -2199,6 +2200,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 49260,
             "address": "1.1.1.1"
         },
+        "action": {
+            "name": "timeout",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "ip": [
                 "1.1.1.1",
@@ -2220,22 +2227,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "close",
             "code": "0000000013",
-            "severity": 3,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "connection",
-                "end"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2018-12-27T19:07:55.000000Z",
-        "action": {
-            "name": "close",
-            "type": "forward"
-        },
         "destination": {
             "address": "52.53.140.235",
             "bytes": 3652,
@@ -2246,9 +2241,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 150320,
             "application": "HTTPS",
-            "protocol": "HTTPS",
-            "transport": "tcp"
+            "protocol": "https"
         },
         "observer": {
             "egress": {
@@ -2276,6 +2272,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 54190,
             "address": "10.1.100.11"
         },
+        "action": {
+            "name": "close",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "ip": [
                 "10.1.100.11",
@@ -2297,20 +2299,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "close",
             "code": "0000000013",
-            "severity": 3,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "connection",
-                "end"
-            ],
-            "dataset": "traffic:forward"
-        },
-        "action": {
-            "name": "close",
-            "type": "forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "destination": {
             "address": "3.3.3.3",
@@ -2324,9 +2314,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 2003,
             "application": "HTTP",
-            "protocol": "HTTP",
-            "transport": "tcp"
+            "protocol": "http"
         },
         "observer": {
             "egress": {
@@ -2355,6 +2346,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 45719,
             "address": "2.2.2.2"
         },
+        "action": {
+            "name": "close",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "hosts": [
                 "2.2.2.2",
@@ -2380,21 +2377,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0000000013",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2018-07-26T14:51:35.000000Z",
-        "action": {
-            "name": "accept",
-            "type": "forward"
-        },
         "destination": {
             "address": "2.2.2.2",
             "bytes": 1000,
@@ -2404,18 +2390,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
-            },
-            "apprisk": "medium"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "apprisk": "medium",
+                "virtual_domain": "root"
+            }
         },
         "log": {
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 3000,
             "application": "application",
-            "protocol": "tcp/20",
-            "transport": "tcp"
+            "protocol": "tcp/20"
         },
         "observer": {
             "egress": {
@@ -2431,15 +2421,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "rule": {
             "category": "Storage.Backup",
-            "ruleset": "default"
+            "ruleset": "default",
+            "apprisk": "medium"
         },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 2000,
             "ip": "1.1.1.1",
+            "bytes": 2000,
             "mac": "01:01:01:01:01:01",
             "packets": 0,
-            "port": 10016
+            "port": 10016,
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "accept",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "ip": [
@@ -2461,21 +2458,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0000000013",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2018-07-26T14:51:35.000000Z",
-        "action": {
-            "name": "accept",
-            "type": "forward"
-        },
         "destination": {
             "address": "2.2.2.2",
             "bytes": 1000,
@@ -2485,18 +2471,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 20
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
-            },
-            "apprisk": "medium"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "apprisk": "medium",
+                "virtual_domain": "root"
+            }
         },
         "log": {
             "level": "notice"
         },
         "network": {
+            "transport": "tcp",
+            "bytes": 3000,
             "application": "Dropbox_File.Download",
-            "protocol": "tcp/20",
-            "transport": "tcp"
+            "protocol": "tcp/20"
         },
         "observer": {
             "egress": {
@@ -2512,15 +2502,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "rule": {
             "category": "Storage.Backup",
-            "ruleset": "default"
+            "ruleset": "default",
+            "apprisk": "medium"
         },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 2000,
             "ip": "1.1.1.1",
+            "bytes": 2000,
             "mac": "01:01:01:01:01:01",
             "packets": 0,
-            "port": 10016
+            "port": 10016,
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "accept",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "ip": [
@@ -2542,21 +2539,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "accept",
             "code": "0000000010",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2021-06-21T07:38:29.000000Z",
-        "action": {
-            "name": "accept",
-            "type": "forward"
-        },
         "destination": {
             "address": "2.2.2.2",
             "bytes": 5851,
@@ -2564,15 +2550,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 443
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "PRX1-AA"
             }
         },
         "log": {
-            "level": "notice"
+            "level": "notice",
+            "hostname": "abc"
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "test"
@@ -2585,18 +2576,25 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
-            "protocol": "HTTPS",
-            "transport": "tcp"
+            "transport": "tcp",
+            "bytes": 8620,
+            "protocol": "https"
         },
         "rule": {
             "category": "unscanned",
             "ruleset": "proxy-policy"
         },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 2769,
             "ip": "1.1.1.1",
-            "port": 50592
+            "bytes": 2769,
+            "port": 50592,
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "accept",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -2606,6 +2604,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -2621,23 +2622,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "dns",
             "code": "0000000011",
-            "severity": 4,
             "timezone": "+0200",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "allowed",
-                "connection"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2022-09-05T10:43:45.920035Z",
-        "action": {
-            "name": "dns",
-            "type": "forward"
-        },
         "destination": {
             "address": "172.18.67.10",
             "ip": "172.18.67.10",
@@ -2647,9 +2636,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "warning"
         },
         "network": {
+            "transport": "udp",
             "application": "DNS",
-            "protocol": "DNS",
-            "transport": "udp"
+            "protocol": "dns"
         },
         "observer": {
             "egress": {
@@ -2671,6 +2660,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 49956,
             "address": "172.16.222.150"
         },
+        "action": {
+            "name": "dns",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
         "related": {
             "ip": [
                 "172.16.222.150",
@@ -2691,21 +2686,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "action": "server-rst",
             "code": "0000000013",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "connection",
-                "end"
-            ],
-            "dataset": "traffic:forward"
+            "dataset": "traffic:forward",
+            "category": "traffic"
         },
         "@timestamp": "2021-01-06T13:56:21.000000Z",
-        "action": {
-            "name": "server-rst",
-            "type": "forward"
-        },
         "destination": {
             "address": "3.3.3.3",
             "bytes": 40,
@@ -2718,15 +2702,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 3727
         },
         "fortinet": {
-            "event": {
-                "type": "traffic"
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
-            "level": "notice"
+            "level": "notice",
+            "hostname": "abc"
         },
         "observer": {
             "hostname": "abc",
+            "serial_number": "1",
             "egress": {
                 "interface": {
                     "name": "port10"
@@ -2739,19 +2728,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
-            "protocol": "tcp/3727",
-            "transport": "tcp"
+            "transport": "tcp",
+            "bytes": 120,
+            "protocol": "tcp/3727"
         },
         "rule": {
             "category": "unscanned",
             "ruleset": "policy"
         },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 80,
             "ip": "1.1.1.1",
+            "bytes": 80,
             "packets": 2,
-            "port": 52125
+            "port": 52125,
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "server-rst",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -2762,6 +2758,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "2.2.2.2",
                 "3.3.3.3"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -2779,41 +2778,50 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "code": "0101039949",
             "reason": "\"SSL tunnel statistics\"\n",
             "timezone": "UTC+2",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "event:vpn"
+            "dataset": "event:vpn",
+            "category": "event"
         },
         "@timestamp": "2019-08-27T12:27:40.000000Z",
-        "action": {
-            "name": "tunnel-stats",
-            "type": "vpn"
-        },
         "destination": {
             "bytes": 6151809
         },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "IPSEC"
             }
         },
         "log": {
-            "level": "information"
-        },
-        "observer": {
+            "level": "information",
+            "description": "SSL VPN statistics",
             "hostname": "abc"
         },
+        "observer": {
+            "hostname": "abc",
+            "serial_number": "1"
+        },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 71524041,
             "ip": "1.1.1.1",
+            "bytes": 71524041,
             "nat": {
                 "ip": "2.2.2.2"
             },
             "user": {
                 "name": "test"
-            }
+            },
+            "address": "1.1.1.1"
+        },
+        "network": {
+            "bytes": 77675850
+        },
+        "action": {
+            "name": "tunnel-stats",
+            "type": "vpn",
+            "outcome_reason": "SSL tunnel statistics",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -2826,6 +2834,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -2842,41 +2853,50 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "action": "tunnel-stats",
             "code": "0101037141",
             "reason": "IPsec tunnel statistics",
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "dataset": "event:vpn"
+            "dataset": "event:vpn",
+            "category": "event"
         },
         "@timestamp": "2021-03-04T11:02:57.000000Z",
-        "action": {
-            "name": "tunnel-stats",
-            "type": "vpn"
-        },
         "destination": {
             "bytes": 0
         },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "log": {
-            "level": "notice"
-        },
-        "observer": {
+            "level": "notice",
+            "description": "IPsec tunnel statistics",
             "hostname": "abc"
         },
+        "observer": {
+            "hostname": "abc",
+            "serial_number": "1"
+        },
         "source": {
-            "address": "1.1.1.1",
-            "bytes": 7649,
             "ip": "1.1.1.1",
+            "bytes": 7649,
             "nat": {
                 "ip": "N/A"
             },
             "user": {
                 "name": "N/A"
-            }
+            },
+            "address": "1.1.1.1"
+        },
+        "network": {
+            "bytes": 7649
+        },
+        "action": {
+            "name": "tunnel-stats",
+            "type": "vpn",
+            "outcome_reason": "IPsec tunnel statistics",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "hosts": [
@@ -2889,6 +2909,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "N/A"
             ]
+        },
+        "host": {
+            "name": "abc"
         }
     }
     	
@@ -2903,23 +2926,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": " time=14:38:46 devname=\"abc\" devid=\"1\" logid=\"0101041987\" type=\"event\" subtype=\"vpn\" level=\"information\" vd=\"root\" eventtime=1615469926 logdesc=\"Certificate updated\" action=\"info\" cert-type=\"CRL\" status=\"success\" name=\"CRL_1\" method=\"HTTP\" reason=\"N/A\" msg=\"A certificate is updated\"",
         "event": {
             "action": "CRL_1",
-            "dataset": "event:vpn",
             "code": "0101041987",
-            "reason": "A certificate is updated",
-            "kind": "event",
-            "category": [
-                "network"
-            ]
+            "reason": "N/A",
+            "dataset": "event:vpn",
+            "category": "event",
+            "provider": "HTTP"
         },
         "@timestamp": "2021-03-11T13:38:46.000000Z",
-        "action": {
-            "name": "CRL_1",
-            "outcome": "success",
-            "type": "vpn"
-        },
         "fortinet": {
-            "event": {
-                "type": "event"
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
             }
         },
         "http": {
@@ -2928,15 +2947,93 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "log": {
-            "level": "information"
+            "level": "information",
+            "description": "Certificate updated",
+            "hostname": "abc"
         },
         "observer": {
-            "hostname": "abc"
+            "hostname": "abc",
+            "serial_number": "1"
+        },
+        "action": {
+            "name": "CRL_1",
+            "type": "vpn",
+            "outcome": "success",
+            "outcome_reason": "A certificate is updated",
+            "target": "network-traffic"
         },
         "related": {
             "hosts": [
                 "abc"
             ]
+        },
+        "host": {
+            "name": "abc"
+        }
+    }
+    	
+	```
+
+
+=== "vpn_login_failed.STANDARD.json"
+
+    ```json
+	
+    {
+        "message": "time=17:43:43 devname=\"FW-FOOBAR\" devid=\"FG123\" eventtime=1665675824075327440 tz=\"+0200\" logid=\"0101039426\" type=\"event\" subtype=\"vpn\" level=\"alert\" vd=\"root\" logdesc=\"SSL VPN login fail\" action=\"ssl-login-fail\" tunneltype=\"ssl-web\" tunnelid=0 remip=1.1.1.1 user=\"CN = foo.bar.baz.com\" group=\"N/A\" dst_host=\"N/A\" reason=\"sslvpn_login_cert_checked_error\" msg=\"SSL user failed to logged in\"",
+        "event": {
+            "action": "ssl-login-fail",
+            "code": "0101039426",
+            "reason": "sslvpn_login_cert_checked_error",
+            "timezone": "+0200",
+            "dataset": "event:vpn",
+            "category": "event"
+        },
+        "@timestamp": "2022-10-13T13:43:44.075328Z",
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
+            }
+        },
+        "log": {
+            "level": "alert",
+            "description": "SSL VPN login fail",
+            "hostname": "FW-FOOBAR"
+        },
+        "observer": {
+            "hostname": "FW-FOOBAR",
+            "serial_number": "FG123"
+        },
+        "source": {
+            "ip": "1.1.1.1",
+            "user": {
+                "name": "CN = foo.bar.baz.com"
+            },
+            "address": "1.1.1.1"
+        },
+        "action": {
+            "name": "ssl-login-fail",
+            "type": "vpn",
+            "outcome_reason": "SSL user failed to logged in",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
+        "related": {
+            "hosts": [
+                "FW-FOOBAR"
+            ],
+            "user": [
+                "CN = foo.bar.baz.com"
+            ],
+            "ip": [
+                "1.1.1.1"
+            ]
+        },
+        "host": {
+            "name": "FW-FOOBAR"
         }
     }
     	
@@ -2948,28 +3045,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|13056|utm:webfilter ftgd_blk blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0316013056 cat=utm:webfilter FTNTFGTsubtype=webfilter FTNTFGTeventtype=ftgd_blk FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938629 FTNTFGTpolicyid=1 externalId=764 duser=bob src=10.1.100.11 spt=59194 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=185.230.61.185 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP dhost=ambrishsriv.wixsite.com FTNTFGTprofile=g-default act=blocked FTNTFGTreqtype=direct request=/bizsquads out=96 in=0 deviceDirection=1 msg=URL belongs to a denied category in policy FTNTFGTmethod=domain FTNTFGTcat=26 requestContext=Malicious Websites FTNTFGTcrscore=60 FTNTFGTcrlevel=high",
+        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|13056|utm:webfilter ftgd_blk blocked|4|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0316013056 cat=utm:webfilter FTNTFGTsubtype=webfilter FTNTFGTeventtype=ftgd_blk FTNTFGTlevel=warning FTNTFGTvd=vdom1 FTNTFGTeventtime=1545938629 FTNTFGTpolicyid=1 externalId=764 duser=Domain\\\\\\\\bob src=10.1.100.11 spt=59194 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined dst=185.230.61.185 dpt=80 deviceOutboundInterface=port11 FTNTFGTdstintfrole=undefined proto=6 app=HTTP dhost=ambrishsriv.wixsite.com FTNTFGTprofile=g-default act=blocked FTNTFGTreqtype=direct request=/bizsquads out=96 in=0 deviceDirection=1 msg=URL belongs to a denied category in policy FTNTFGTmethod=domain FTNTFGTcat=26 requestContext=Malicious Websites FTNTFGTcrscore=60 FTNTFGTcrlevel=high",
         "event": {
             "action": "blocked",
             "code": "0316013056",
             "reason": "URL belongs to a denied category in policy",
-            "severity": 4,
-            "kind": "event",
-            "category": [
-                "network"
-            ],
-            "type": [
-                "denied",
-                "connection",
-                "end"
-            ],
-            "dataset": "utm:webfilter"
+            "dataset": "utm:webfilter",
+            "category": "utm"
         },
         "@timestamp": "2018-12-27T19:23:49.000000Z",
-        "action": {
-            "name": "blocked",
-            "type": "webfilter"
-        },
         "destination": {
             "address": "185.230.61.185",
             "bytes": 96,
@@ -2977,16 +3061,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "185.230.61.185",
             "port": 80,
             "user": {
-                "name": "bob"
+                "name": "bob",
+                "domain": "Domain"
             }
         },
         "log": {
             "level": "warning"
         },
         "network": {
-            "application": "HTTP",
-            "protocol": "HTTP",
             "transport": "tcp",
+            "bytes": 96,
+            "application": "HTTP",
+            "protocol": "http",
             "direction": "outbound"
         },
         "observer": {
@@ -3015,7 +3101,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/bizsquads",
+            "full": "/bizsquads",
             "path": "/bizsquads"
+        },
+        "action": {
+            "name": "blocked",
+            "type": "ftgd_blk - webfilter",
+            "outcome_reason": "URL belongs to a denied category in policy",
+            "target": "network-traffic",
+            "outcome": "success"
         },
         "related": {
             "user": [
@@ -3044,6 +3138,9 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
+|`action.properties.icmp_code` | `keyword` | ICMP code (backward compatibility) |
+|`action.properties.icmp_type` | `keyword` | ICMP type (backward compatibility) |
+|`action.target` | `keyword` | Target of the action (backward compatibility) |
 |`destination.address` | `keyword` | Destination network address. |
 |`destination.bytes` | `long` | Bytes sent from the destination to the source. |
 |`destination.domain` | `keyword` | The domain name of the destination. |
@@ -3053,36 +3150,43 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.nat.port` | `long` | Destination NAT Port |
 |`destination.packets` | `long` | Packets sent from the destination to the source. |
 |`destination.port` | `long` | Port of the destination. |
+|`destination.user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`destination.user.name` | `keyword` | Short name or login of the user. |
 |`dns.question.name` | `keyword` | The name being queried. |
 |`dns.question.type` | `keyword` | The type of record being queried. |
+|`dns.rrname` | `keyword` | DNS requested name (backward compatibility) |
+|`dns.rrtype` | `keyword` | DNS request type (backward compatibility) |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.dataset` | `keyword` | Name of the dataset. |
-|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.provider` | `keyword` | Source of the event. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
-|`event.severity` | `long` | Numeric severity of the event. |
 |`event.timezone` | `keyword` | Event time zone. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`file.size` | `long` | File size in bytes. |
-|`fortinet.apprisk` | `keyword` | Risk level of the application. |
-|`fortinet.event.desc` | `keyword` | Type of log. |
-|`fortinet.event.type` | `keyword` | Type of the event. |
+|`fortinet.fortigate.apprisk` | `keyword` | Risk level of the application. |
+|`fortinet.fortigate.event.desc` | `keyword` | Type of log. |
+|`fortinet.fortigate.event.severity` | `keyword` | Anomaly severity as reported by Fortigate |
+|`fortinet.fortigate.event.type` | `keyword` | Type of the event. |
+|`fortinet.fortigate.icmp.request.code` | `keyword` | The request code. |
+|`fortinet.fortigate.icmp.request.type` | `keyword` | The request type. |
+|`fortinet.fortigate.virtual_domain` | `keyword` | Name of the virtual domain in which the event was observed |
 |`http.request.method` | `keyword` | HTTP request method. |
-|`icmp.request.code` | `keyword` | The request code. |
-|`icmp.request.type` | `keyword` | The request type. |
 |`log.level` | `keyword` | Log level of the log event. |
 |`network.application` | `keyword` | Application level protocol name. |
+|`network.bytes` | `long` | Total bytes transferred in both directions. |
 |`network.protocol` | `keyword` | Application protocol name. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`observer.egress.interface.name` | `keyword` | Interface name |
 |`observer.hostname` | `keyword` | Hostname of the observer. |
 |`observer.ingress.interface.name` | `keyword` | Interface name |
+|`observer.serial_number` | `keyword` | Observer serial number. |
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`observer.version` | `keyword` | Observer version. |
+|`rule.apprisk` | `keyword` | App risk reported by Fortigate (backward compatibility) |
 |`rule.category` | `keyword` | Rule category |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
@@ -3093,7 +3197,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.nat.port` | `long` | Source NAT port |
 |`source.packets` | `long` | Packets sent from the source to the destination. |
 |`source.port` | `long` | Port of the source. |
+|`source.user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`source.user.name` | `keyword` | Short name or login of the user. |
+|`url.full` | `wildcard` | Full unparsed URL. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 

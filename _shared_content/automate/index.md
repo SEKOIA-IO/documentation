@@ -54,8 +54,8 @@ To generate this API Key:
 
 1. Go to Account Settings > Managed Communities > API Keys > `+ API Key` 
 2. Provide a name and a description (both are mandatory)
-3. Select necessary roles for your API Key (Symphony Operator + necessary roles depending on which app you're using) 
-4. Save and copy the value of the API Key in your volt (or any safe place)
+3. Select necessary roles for your API Key, depending on if you are looking to automate operations or intelligence tasks
+4. Save and copy the value of the API Key in your vault (or any safe place)
 5. Paste your API Key in the Module Configuration of your playbook actions
 
 !!! note

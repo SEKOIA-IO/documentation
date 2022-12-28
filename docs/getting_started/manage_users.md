@@ -1,5 +1,13 @@
 # Manage users
 
+## Overview
+
+Admins and users with the right permissions are able to add users with a role.
+
+A role has attached permissions allowing a user to access, view pages and use its features.
+
+In the following sections, you will learn how to manage your users.
+
 ## Needed role and permissions
 
 To manage users in a community, you need to have the role `manage_member`. This role contains the following permissions: 
@@ -27,6 +35,27 @@ From this page, you can:
 
 <img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
 
+
+## In MSSP communities
+
+In an MSSP community, role management can be a bit tricky. 
+
+When a user is invited to the main MSSP community, the roles assign to this person are applied to all managed communities.
+Same behavior when a user is added on Main MSSP community.
+
+In addition to that, external roles can be added in any managed community to the user role set previously in the main MSSP community.
+Roles assigned to a user in a managed community are independent from their roles in other subcommunities.
+
+For example, 
+
+1) A user has been added with the role `IC_viewer` set in the main MSSP community.
+This user will have this role applied in all other managed communities.
+
+2) Then the admin adds the role `IC_writer` to this user in a specific managed community.
+The user will have the role `IC_writer` in this specific managed community in addition to the role `IC_writer` set in the main MSSP community.
+
+To learn more about how to invite users to MSSP communities, please refer to [this documentation](https://docs.sekoia.io/getting_started/invite_users/#in-an-mssp-community). 
+
 ## Create custom roles
 
 As an admin of your community, you can control what kind of actions your guests are allowed to do. Our roles’ system is based on permissions already defined by us and we keep them up to date following our latest features.
@@ -46,4 +75,7 @@ To create custom roles for your guests, you’ll have to:
 
 ## Add permissions
 
-Permissions can be different depending on your job position at your company. In this section, you’ll have a look at all our permissions depending on which product you are subscribed to. There are three main categories to all of these permissions: `Admin`, `Manage` or `View`.
+Permissions can be different depending on your job position at your company.
+There are three main categories to all of these permissions: `Admin`, `Manage` or `View`.
+
+In the [next page](roles_permissions.md), you’ll have a look at all our permissions depending on which product you are subscribed to.

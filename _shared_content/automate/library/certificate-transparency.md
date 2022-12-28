@@ -14,7 +14,7 @@ This module accepts no configuration.
 
 Trigger playbook run on certificate of interest update
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -23,7 +23,7 @@ Trigger playbook run on certificate of interest update
 | `ignoring` | `array` | Ignoring words list for faster processing. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -34,4 +34,4 @@ Trigger playbook run on certificate of interest update
 
 ## Extra
 
-Module **`Certificate Transparency` v1.15**
+Module **`Certificate Transparency` v1.16**

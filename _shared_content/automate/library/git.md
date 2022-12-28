@@ -14,7 +14,7 @@
 
 Trigger playbook run on file changes inside Git Repository
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -25,7 +25,7 @@ Trigger playbook run on file changes inside Git Repository
 | `include_repository` | `boolean` | Include the full repository everytime |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -39,14 +39,14 @@ Trigger playbook run on file changes inside Git Repository
 
 Trigger playbook run on every Git commit
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `sleep_time` | `integer` | Time in seconds the trigger sleeps between the checks of new commits |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -56,4 +56,4 @@ Trigger playbook run on every Git commit
 
 ## Extra
 
-Module **`Git` v1.19**
+Module **`Git` v1.2.0**

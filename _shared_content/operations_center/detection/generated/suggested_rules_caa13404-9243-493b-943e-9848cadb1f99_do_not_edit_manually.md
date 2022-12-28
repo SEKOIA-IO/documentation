@@ -21,6 +21,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** elementary
 
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
     Detects the exploitation of SonicWall Unauthenticated Admin Access.
@@ -50,6 +56,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
     
     - **Effort:** master
+
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Local Account Deleted"
     

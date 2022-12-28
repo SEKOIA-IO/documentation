@@ -14,7 +14,7 @@ This module accepts no configuration.
 
 Fetch objects from a TAXII 2 Server
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -22,7 +22,7 @@ Fetch objects from a TAXII 2 Server
 | `collection_url` | `string` | URL of the TAXII Collection |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -34,7 +34,7 @@ Fetch objects from a TAXII 2 Server
 
 Add a Source to a STIX Bundle
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -44,7 +44,7 @@ Add a Source to a STIX Bundle
 | `source_path` | `string` | STIX Identity Source (from file) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -55,7 +55,7 @@ Add a Source to a STIX Bundle
 
 Add Tags to Observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -65,7 +65,7 @@ Add Tags to Observables
 | `valid_for` | `integer` | Period of validity for created tags (in days) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -76,7 +76,7 @@ Add Tags to Observables
 
 Create STIX Relationships
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -86,10 +86,11 @@ Create STIX Relationships
 | `source` | `string` | STIX ID or JSON Path expression for the relationships' sources |
 | `target` | `string` | STIX ID or JSON Path expression for the relationships' targets |
 | `tlp` | `string` | TLP to use for relationships (as english or STIX ID) |
+| `confidence` | `integer` | Admiralty Credibility score for created relationship (from 1 - Confirmed by other sources, to 6 - Truth cannot be judged) |
 | `description` | `string` | Description of generated STIX relationships |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -100,7 +101,7 @@ Create STIX Relationships
 
 Parse Cryptolaemus content
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -110,7 +111,7 @@ Parse Cryptolaemus content
 | `campaign_ids` | `object` | Ids of the campaigns. The key must be the campaign name and the value its id. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -120,7 +121,7 @@ Parse Cryptolaemus content
 
 Convert CVE JSON to STIX 2.1
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -128,7 +129,7 @@ Convert CVE JSON to STIX 2.1
 | `cve_list_paths` | `array` | CVE Objects to convert to STIX, from file paths |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -138,7 +139,7 @@ Convert CVE JSON to STIX 2.1
 
 Filter objects inside a bundle
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -147,7 +148,7 @@ Filter objects inside a bundle
 | `condition` | `object` | Condition to match |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -160,7 +161,7 @@ Filter objects inside a bundle
 
 Convert a list of json objects into a list of observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -172,7 +173,7 @@ Convert a list of json objects into a list of observables
 | `source` | `object` | STIX Identity Source |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -183,7 +184,7 @@ Convert a list of json objects into a list of observables
 
 Convert a livehunt notification into a list of observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -192,7 +193,7 @@ Convert a livehunt notification into a list of observables
 | `notification_to_history` | `boolean` | Whether or not the notification should be added to the observable's history. Default to false |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -203,14 +204,14 @@ Convert a livehunt notification into a list of observables
 
 Convert MISP event to STIX 2.1
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `event` | `object` | MISP event to convert to STIX |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -220,7 +221,7 @@ Convert MISP event to STIX 2.1
 
 Generate Contextualized Indicators from Observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -237,7 +238,7 @@ Generate Contextualized Indicators from Observables
 | `network_traffic_direction` | `string` | Direction of the network traffic. Either 'src' or 'dst' |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -248,7 +249,7 @@ Generate Contextualized Indicators from Observables
 
 Generate Indicators from Observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -264,7 +265,7 @@ Generate Indicators from Observables
 | `network_traffic_direction` | `string` | Direction of the network traffic. Either 'src' or 'dst' |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -275,7 +276,7 @@ Generate Indicators from Observables
 
 Remove objects without any relationship from a STIX bundle.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -283,7 +284,7 @@ Remove objects without any relationship from a STIX bundle.
 | `bundle_path` | `string` | STIX Bundle (from file) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -294,7 +295,7 @@ Remove objects without any relationship from a STIX bundle.
 
 Convert STIX bundle to MISP event
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -303,7 +304,7 @@ Convert STIX bundle to MISP event
 | `organization` | `object` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -314,7 +315,7 @@ Convert STIX bundle to MISP event
 
 Convert a list of strings into a list of observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -325,7 +326,7 @@ Convert a list of strings into a list of observables
 | `source` | `object` | STIX Identity Source |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -335,4 +336,4 @@ Convert a list of strings into a list of observables
 
 ## Extra
 
-Module **`STIX` v1.62**
+Module **`STIX` v1.65**

@@ -192,7 +192,29 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 ]
             }
         },
+        "url": {
+            "original": "http://us.adserver.yahoo.com/l?M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046",
+            "domain": "us.adserver.yahoo.com",
+            "top_level_domain": "com",
+            "subdomain": "us.adserver",
+            "registered_domain": "yahoo.com",
+            "path": "/l",
+            "scheme": "http",
+            "query": "M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046",
+            "port": 80
+        },
+        "file": {
+            "name": "text.html",
+            "hash": {
+                "sha256": "3b9778951a276e13059b1d2254cc93ab9744b6e71081c29918ba20ccaa80db9d",
+                "md5": "f3226e81da52c0cb05d4a7599827b70c"
+            }
+        },
         "related": {
+            "hash": [
+                "3b9778951a276e13059b1d2254cc93ab9744b6e71081c29918ba20ccaa80db9d",
+                "f3226e81da52c0cb05d4a7599827b70c"
+            ],
             "hosts": [
                 "n35.grp.scd.yahoo.com"
             ],
@@ -312,6 +334,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 ]
             }
         },
+        "url": {
+            "original": "https://www.nittanyextra.com/jp",
+            "domain": "www.nittanyextra.com",
+            "top_level_domain": "com",
+            "subdomain": "www",
+            "registered_domain": "nittanyextra.com",
+            "path": "/jp",
+            "scheme": "https",
+            "port": 443
+        },
         "related": {
             "hosts": [
                 "208-86-203-0.proofpoint.com"
@@ -355,8 +387,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 {
                     "file": {
                         "mime_type": "text/plain",
-                        "name": "",
-                        "extension": "",
+                        "name": "text.txt",
+                        "extension": "TXT",
                         "size": "0",
                         "hash": {
                             "md5": "d41d8cd98f00b204e9800998ecf8427e",
@@ -415,7 +447,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 ]
             }
         },
+        "file": {
+            "name": "text.txt",
+            "hash": {
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "md5": "d41d8cd98f00b204e9800998ecf8427e"
+            }
+        },
         "related": {
+            "hash": [
+                "d41d8cd98f00b204e9800998ecf8427e",
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
             "hosts": [
                 "127.0.0.1"
             ],
@@ -453,6 +496,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`file.hash.md5` | `keyword` | MD5 hash. |
+|`file.hash.sha256` | `keyword` | SHA256 hash. |
+|`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`network.protocol` | `keyword` | Application protocol name. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`observer.product` | `keyword` | The product name of the observer. |
@@ -468,4 +514,5 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`tls.cipher` | `keyword` | String indicating the cipher used during the current connection. |
 |`tls.version` | `keyword` | Numeric part of the version parsed from the original string. |
+|`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 

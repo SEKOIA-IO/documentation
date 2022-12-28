@@ -15,7 +15,7 @@ Follow Google's documentation to [configure a dedicated PubSub receiver](https:/
    - Add a subscription 
    - Try your setup by publishing a message to the topic
 
-Next, create a [dedicated service account](https://cloud.google.com/pubsub/docs/reference/libraries#setting_up_authentication). At the end of the documentation you should have done the following:
+Next, create a [dedicated service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts). At the end of the documentation you should have done the following:
 
 - Create a service account with the role `Pub/Sub Subscriber`
 - Create and download JSON keys (*service account credentials*)

@@ -51,6 +51,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** advanced
 
+??? abstract "Active Directory Database Dump Via Ntdsutil"
+    
+    Detects the dump of ntdis.dit database by using the utility ntdsutil.exe. NTDS.dit database stores Active Directory data, including passwords hashes for all users in the domain.
+    
+    - **Effort:** elementary
+
 ??? abstract "Active Directory Delegate To KRBTGT Service"
     
     Detects potential persistence installation from an already compromised administrator domain account. The attacker will create a TGT and abuse a service account with the constrained delegation and update it with the krbtgt service. The detection relies on the Event ID 4738.
@@ -557,7 +563,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 
 ??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
     
-    Detects PowerShell SnapIn command line to export Exchange mailbox data.
+    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
 
@@ -573,11 +579,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Execution From Suspicious Folder"
+    
+    Detects a suspicious execution from an uncommon folder
+    
+    - **Effort:** master
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Exploit For CVE-2015-1641"
     
@@ -687,11 +705,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** elementary
 
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
     
     - **Effort:** advanced
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
@@ -716,6 +746,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects credential dumping via secretdump of impacket suite.
     
     - **Effort:** intermediate
+
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
+    
+    - **Effort:** elementary
 
 ??? abstract "In-memory PowerShell"
     
@@ -750,6 +786,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 ??? abstract "Koadic Execution"
     
     Detects command line parameters used by Koadic hack tool
+    
+    - **Effort:** intermediate
+
+??? abstract "LNK Malware Chain"
+    
+    Detection of an ISO download followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
     - **Effort:** intermediate
 
@@ -878,6 +920,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
     
     - **Effort:** intermediate
+
+??? abstract "Malicious PowerShell Keywords"
+    
+    Detects keywords from well-known PowerShell exploitation frameworks
+    
+    - **Effort:** advanced
 
 ??? abstract "Malicious Service Installations"
     
@@ -1119,6 +1167,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "OceanLotus Registry Activity"
     
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -1245,6 +1299,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Execution Via Rundll32"
     
     Detects PowerShell Strings applied to rundll as seen in PowerShdll.dll Rule modified
@@ -1275,12 +1335,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** master
 
-??? abstract "PowerShell Malicious PowerShell Keywords"
-    
-    Detects keywords from well-known PowerShell exploitation frameworks
-    
-    - **Effort:** intermediate
-
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -1292,6 +1346,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
     - **Effort:** advanced
+
+??? abstract "Powershell UploadString Function"
+    
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "Powershell Web Request"
     
@@ -1527,6 +1587,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** master
 
+??? abstract "SOCKS Tunneling Tool"
+    
+    Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -1676,6 +1742,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects known sensitive file extensions accessed on a network share. This activity could possibly correspond to a malicious one (removing backup, reading sensitive files, etc.).
     
     - **Effort:** master
+
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Cmd.exe Command Line"
     
@@ -1899,6 +1971,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Windows Installer Execution"
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
@@ -2031,6 +2109,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** elementary
 
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Usage Of Sysinternals Tools"
     
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
@@ -2072,6 +2156,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects creation of WMI event subscription persistence method 
     
     - **Effort:** advanced
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WMI Install Of Binary"
     
@@ -2180,6 +2270,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
+
+??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Defender Signatures Removed With MpCmdRun"
     

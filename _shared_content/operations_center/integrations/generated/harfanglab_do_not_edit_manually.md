@@ -868,6 +868,64 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "wineventlog4.json"
+
+    ```json
+	
+    {
+        "message": "{\"provider_guid\":\"{54849625-5478-4994-A5BA-3E3B0328C30D}\",\"task\":null,\"opcode\":null,\"agent\":{\"distroid\":null,\"hostname\":\"REDACTED\",\"ostype\":\"windows\",\"domain\":null,\"osproducttype\":\"Windows Server 2012 Standard\",\"agentid\":\"aa7cf2c6-5c46-45c4-b918-ba5cd7082e53\",\"osversion\":\"6.2.9200\",\"domainname\":\"REDACTED\",\"version\":\"2.19.5\"},\"@event_create_date\":\"2022-11-14T08:41:03.066Z\",\"level\":\"Information\",\"destination\":\"syslog\",\"record_number\":1475418032,\"keywords\":[\"Audit Success\"],\"event_id\":5145,\"computer_name\":\"REDACTED.LOCAL\",\"tenant\":\"\",\"type\":\"wineventlog\",\"log_name\":\"Security\",\"process_id\":720,\"@version\":\"1\",\"thread_id\":728,\"event_data\":{\"SubjectDomainName\":\"AUTORITE NT\",\"IpAddress\":\"10.84.128.186\",\"ShareLocalPath\":null,\"SubjectUserSid\":\"S-1-5-7\",\"AccessList\":\"%%1538\\n\\t\\t\\t\\t%%1541\\n\\t\\t\\t\\t%%4416\\n\\t\\t\\t\\t%%4417\\n\\t\\t\\t\\t%%4418\\n\\t\\t\\t\\t%%4419\\n\\t\\t\\t\\t%%4420\\n\\t\\t\\t\\t%%4423\\n\\t\\t\\t\\t%%4424\\n\\t\\t\\t\\t\",\"ShareName\":\"\\\\\\\\*\\\\IPC$\",\"AccessReason\":\"-\",\"SubjectUserName\":\"ANONYMOUS LOGON\",\"ObjectType\":\"File\",\"IpPort\":\"50846\",\"SubjectLogonId\":\"0x3ad88f7f3\",\"AccessMask\":\"0x12019f\",\"RelativeTargetName\":\"NETLOGON\"},\"log_type\":\"eventlog\",\"@timestamp\":\"2022-11-14T08:41:05.337Z\",\"user_data\":{},\"user\":null,\"source_name\":\"Microsoft-Windows-Security-Auditing\"}",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "provider": "Microsoft-Windows-Security-Auditing",
+            "code": "5145"
+        },
+        "@timestamp": "2022-11-14T08:41:03.066Z",
+        "agent": {
+            "id": "aa7cf2c6-5c46-45c4-b918-ba5cd7082e53",
+            "name": "harfanglab"
+        },
+        "log": {
+            "hostname": "REDACTED"
+        },
+        "host": {
+            "hostname": "REDACTED",
+            "domain": "REDACTED",
+            "os": {
+                "version": "6.2.9200",
+                "full": "Windows Server 2012 Standard"
+            },
+            "name": "REDACTED"
+        },
+        "action": {
+            "properties": {
+                "SubjectDomainName": "AUTORITE NT",
+                "IpAddress": "10.84.128.186",
+                "SubjectUserSid": "S-1-5-7",
+                "AccessList": "%%1538\t\t\t\t%%1541\t\t\t\t%%4416\t\t\t\t%%4417\t\t\t\t%%4418\t\t\t\t%%4419\t\t\t\t%%4420\t\t\t\t%%4423\t\t\t\t%%4424\t\t\t\t",
+                "ShareName": "\\\\*\\IPC$",
+                "AccessReason": "-",
+                "SubjectUserName": "ANONYMOUS LOGON",
+                "ObjectType": "File",
+                "IpPort": "50846",
+                "SubjectLogonId": "0x3ad88f7f3",
+                "AccessMask": "0x12019f",
+                "RelativeTargetName": "NETLOGON"
+            },
+            "id": 5145
+        },
+        "related": {
+            "hosts": [
+                "REDACTED"
+            ]
+        }
+    }
+    	
+	```
+
+
 
 
 

@@ -367,6 +367,13 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
+|`auditd.data.a1` | `keyword` | argument 1 of syscall |
+|`auditd.data.a2` | `keyword` | argument 2 of syscall |
+|`auditd.data.a3` | `keyword` | argument 3 of syscall |
+|`auditd.data.socket.addr` | `keyword` |  |
+|`auditd.data.socket.family` | `keyword` |  |
+|`auditd.data.socket.port` | `keyword` |  |
+|`auditd.data.syscall` | `keyword` | name of the invoked system call that generated the event |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.code` | `keyword` | Identification code for this event. |

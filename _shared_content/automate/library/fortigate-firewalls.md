@@ -14,7 +14,7 @@ Fortigate is a firewall appliance from [Fortinet](http://www.fortinet.com/) with
 
 Add a new Address Group to a Fortigate Firewall
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -25,7 +25,7 @@ Add a new Address Group to a Fortigate Firewall
 
 Add a new FQDN object to a Fortigate Firewall
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -38,7 +38,7 @@ Add a new FQDN object to a Fortigate Firewall
 
 Add a new IP Address object to a Fortigate Firewall
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -50,4 +50,4 @@ Add a new IP Address object to a Fortigate Firewall
 
 ## Extra
 
-Module **`Fortigate Firewalls` v1.15**
+Module **`Fortigate Firewalls` v1.16**

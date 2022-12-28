@@ -1,4 +1,4 @@
-Rules catalog includes **583 built-in detection rules** (_last update on 2022-10-11_).
+Rules catalog includes **635 built-in detection rules** (_last update on 2022-12-27_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -22,12 +22,6 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
-??? abstract "CloudFlare Firewall Block Rule"
-    
-    Detects when one of CloudFlare Firewall rule (previously WAF's custom rule or managed rule) blocked an HTTP request 
-    
-    - **Effort:** master
-
 ??? abstract "CloudFlare HTTP Requests Rule Block Or Drop"
     
     Detects when one of CloudFlare Web Application Firewall (WAF) Managed rule blocked or dropped an HTTP request. It requires only CloudFlare HTTP requests logs. 
@@ -49,6 +43,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "Internet Scanner Target"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address.
+    
+    - **Effort:** master
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request 
     
     - **Effort:** master
 
@@ -302,6 +302,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Google Cloud Audit Attack Warning"
     
     Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
@@ -313,6 +319,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects successful access to administration console of a firewall after several failure.
     
     - **Effort:** advanced
+
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
 
 ??? abstract "User Added to Local Administrators"
     
@@ -392,11 +404,11 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** advanced
 
-??? abstract "CVE-2020-17530 Apach Struts RCE"
+??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530)
+    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
     
@@ -421,6 +433,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     The vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
     
     - **Effort:** intermediate
+
+??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
+    
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
+    
+    - **Effort:** advanced
 
 ??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
     
@@ -469,12 +487,6 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
     
     - **Effort:** master
-
-??? abstract "Fortinet FortiWeb OS Command Injection"
-    
-    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
-    
-    - **Effort:** advanced
 
 ??? abstract "GitLab CVE-2021-22205"
     
@@ -539,6 +551,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Vade Secure product Vade for M365 has detected a malware contained in the message.
     
     - **Effort:** master
+
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Office 365 Anti-Phishing Policy Deletion"
     
@@ -777,6 +795,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
+    
+    - **Effort:** elementary
+
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -794,6 +818,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects Windows Management Instrumentation (WMI) DLL loaded via Office process. This activity may correspond to VBA macro executing WMI commands, which is highly suspicious. The prerequisite is to log Loaded DLLs images, which can be done with the Sysmon Event ID 7 (DLL image loaded by process).
     
     - **Effort:** master
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WMI Install Of Binary"
     
@@ -925,6 +955,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** advanced
 
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
+??? abstract "Cybereason MalOp Malware Detection"
+    
+    Cybereason MalOp telemetry has detected a malware
+    
+    - **Effort:** advanced
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -1003,6 +1045,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
+??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    
+    - **Effort:** intermediate
+
+??? abstract "Malicious PowerShell Keywords"
+    
+    Detects keywords from well-known PowerShell exploitation frameworks
+    
+    - **Effort:** advanced
+
 ??? abstract "Malspam Execution Registering Malicious DLL"
     
     Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
@@ -1063,6 +1117,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
+??? abstract "Okta Security Threat Detected"
+    
+    Detects when a security threat is detected in Okta.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Phorpiex DriveMgr Command"
     
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
@@ -1093,6 +1153,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Invoke Expression With Registry"
     
     Detects keywords from well-known PowerShell techniques to get registry key values
@@ -1116,12 +1182,6 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...)
     
     - **Effort:** master
-
-??? abstract "PowerShell Malicious PowerShell Keywords"
-    
-    Detects keywords from well-known PowerShell exploitation frameworks
-    
-    - **Effort:** intermediate
 
 ??? abstract "Powershell Web Request"
     
@@ -1315,6 +1375,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Windows Script Execution"
     
     Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
@@ -1368,6 +1434,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
     - **Effort:** elementary
+
+??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Defender Threat Detected"
     
@@ -1489,12 +1561,6 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** master
 
-??? abstract "Windows Defender Configuration Changed"
-    
-    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
-    
-    - **Effort:** master
-
 **User Execution**
 
 ??? abstract "Cobalt Strike Default Beacons Names"
@@ -1506,6 +1572,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "CrowdStrike Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
+    
+    - **Effort:** advanced
+
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
+??? abstract "Cybereason MalOp Malware Detection"
+    
+    Cybereason MalOp telemetry has detected a malware
     
     - **Effort:** advanced
 
@@ -1550,6 +1628,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
     
     - **Effort:** elementary
+
+??? abstract "LNK Malware Chain"
+    
+    Detection of an ISO download followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+
+??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    
+    - **Effort:** intermediate
 
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     
@@ -1737,6 +1827,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** master
 
+??? abstract "Okta Security Threat Detected"
+    
+    Detects when a security threat is detected in Okta.
+    
+    - **Effort:** intermediate
+
 ??? abstract "SentinelOne Agent Disabled"
     
     A SentinelOne agent has been disabled according to SentinelOne logs.
@@ -1869,6 +1965,24 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** master
 
+??? abstract "Symantec EPP Event Cleaned"
+    
+    Symantec EPP had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Symantec EPP Event Quarantined"
+    
+    Symantec EPP had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Symantec EPP Event Terminate"
+    
+    Symantec EPP had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
 ??? abstract "Sysmon Windows File Block Executable"
     
     Sysmon has blocked an executable file from being written to the disk. This could be a malicious binary to investigate.  
@@ -1919,6 +2033,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** advanced
 
+??? abstract "Cybereason MalOp Alert"
+    
+    Cybereason MalOp telemetry has raised an alert
+    
+    - **Effort:** intermediate
+
+??? abstract "Cybereason MalOp Malware Detection"
+    
+    Cybereason MalOp telemetry has detected a malware
+    
+    - **Effort:** advanced
+
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
@@ -1928,6 +2054,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
+    
+    - **Effort:** intermediate
+
+??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
     
     - **Effort:** intermediate
 
@@ -1984,6 +2116,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
     
     - **Effort:** master
+
+??? abstract "Okta Security Threat Detected"
+    
+    Detects when a security threat is detected in Okta.
+    
+    - **Effort:** intermediate
 
 ??? abstract "PsExec Process"
     
@@ -2174,6 +2312,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
+    
+    - **Effort:** intermediate
+
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
 
@@ -2396,6 +2540,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Google Cloud Audit Attack Warning"
     
     Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
@@ -2408,6 +2558,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** advanced
 
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
+
 ??? abstract "User Added to Local Administrators"
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
@@ -2416,11 +2572,41 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 
 **Account Manipulation**
 
+??? abstract "AWS IAM Failed User Creation"
+    
+    Detects an attemp to create a user account where the result is an explicit denied.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS IAM Password Policy Updated"
+    
+    Detects an update to the password policy. This could be an attempt to lower accounts security level.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS IAM Policy Changed"
     
     Detects change on AWS IAM Policy
     
     - **Effort:** master
+
+??? abstract "AWS Root ConsoleLogin"
+    
+    Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Attempt"
+    
+    Detects when a request in success or failure is made to transfer a domain name to an other AWS account
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+    
+    Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
+    
+    - **Effort:** elementary
 
 ??? abstract "Active Directory Delegate To KRBTGT Service"
     
@@ -2457,6 +2643,24 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects Mimikatz most popular commands. 
     
     - **Effort:** elementary
+
+??? abstract "Okta Admin Privilege Granted"
+    
+    Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Application deleted"
+    
+    An application has been delete on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Application modified"
+    
+    An application has been updated on Okta SSO.
+    
+    - **Effort:** advanced
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -2604,7 +2808,7 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
-??? abstract "ProxyLogon Exchange Suspicious Paths"
+??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
@@ -3259,6 +3463,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Okta Admin Privilege Granted"
+    
+    Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious New Printer Ports In Registry"
     
     Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14). 
@@ -3321,6 +3531,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Google Cloud Audit Attack Warning"
     
     Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
@@ -3332,6 +3548,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects successful access to administration console of a firewall after several failure.
     
     - **Effort:** advanced
+
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
 
 ??? abstract "User Added to Local Administrators"
     
@@ -3355,6 +3577,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
+??? abstract "Okta API Token created"
+    
+    A new API Token has been created on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta API Token revoked"
+    
+    A new API Token has been deleted on Okta SSO.
+    
+    - **Effort:** advanced
+
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
@@ -3372,6 +3606,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Policy Modified or Deleted"
+    
+    Detects when an Okta policy is modified or deleted.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Policy Rule Modified or Deleted"
+    
+    Detects when an Okta Policy Rule is Modified or Deleted.
     
     - **Effort:** advanced
 
@@ -3844,6 +4090,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ## Defense Evasion
 **Obfuscated Files or Information**
 
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Invoke-Obfuscation Obfuscated IEX Invocation"
     
     Detects all variations of obfuscated powershell IEX invocation code generated by Invoke-Obfuscation framework
@@ -3863,6 +4115,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     - **Effort:** advanced
 
 **Masquerading**
+
+??? abstract "Execution From Suspicious Folder"
+    
+    Detects a suspicious execution from an uncommon folder
+    
+    - **Effort:** master
 
 ??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
     
@@ -3894,6 +4152,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Phorpiex Process Masquerading"
     
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
@@ -3905,6 +4169,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects request to potential malicious file with double extension
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Cmd.exe Command Line"
     
@@ -4036,7 +4306,7 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
-**Indicator Removal on Host**
+**Indicator Removal**
 
 ??? abstract "AWS KMS CMK Key Deleted"
     
@@ -4065,6 +4335,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "Eventlog Cleared"
     
     Some threat groups tend to delete local EventLogs (Security being the most common one to be deleted) using certain utilities. The EventID 517 is old and 1102 should be used for this instead on newer Windows versions.
+    
+    - **Effort:** intermediate
+
+??? abstract "High Privileges Network Share Removal"
+    
+    Detects high privileges shares being deleted with the net share command.
     
     - **Effort:** intermediate
 
@@ -4148,6 +4424,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Application Added"
+    
+    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Google Cloud Audit Attack Warning"
     
     Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
@@ -4159,6 +4441,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects successful access to administration console of a firewall after several failure.
     
     - **Effort:** advanced
+
+??? abstract "Okta Unauthorized Access to App"
+    
+    An user tries to access an unauthorized application.
+    
+    - **Effort:** intermediate
 
 ??? abstract "User Added to Local Administrators"
     
@@ -4316,6 +4604,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
+??? abstract "Okta API Token created"
+    
+    A new API Token has been created on Okta SSO.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta API Token revoked"
+    
+    A new API Token has been deleted on Okta SSO.
+    
+    - **Effort:** advanced
+
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
@@ -4336,6 +4636,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
     
     Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
@@ -4353,6 +4659,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
     - **Effort:** elementary
+
+??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
 
 **CMSTP**
 
@@ -4405,6 +4717,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects a crash of the Microsoft Malware Protection Engine process (MsMpEng.exe), which is suspicious and could be related to an attacker disabling the Windows protection.
     
     - **Effort:** intermediate
+
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
 
 **System Binary Proxy Execution**
 
@@ -4600,6 +4918,18 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** advanced
 
+??? abstract "Okta Policy Modified or Deleted"
+    
+    Detects when an Okta policy is modified or deleted.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Policy Rule Modified or Deleted"
+    
+    Detects when an Okta Policy Rule is Modified or Deleted.
+    
+    - **Effort:** advanced
+
 ??? abstract "Privileged AD Builtin Group Modified"
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
@@ -4684,6 +5014,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** master
 
+??? abstract "Intune Non-Compliant Device"
+    
+    Detects Intune reporting a device in a non-compliant state. This can indicate either a misconfiguration in Intune or a change of configuration on said device.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious certutil command"
     
     Detects suspicious certutil command which can be used by threat actors to download and/or decode payload. 
@@ -4711,6 +5047,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects AWS Config Service disabling channel or recorder
     
     - **Effort:** elementary
+
+??? abstract "AWS Disable MFA"
+    
+    Detects a user disabling the multi factor authentication mechanism for its account. It could be a sign of malicious activity.
+    
+    - **Effort:** intermediate
 
 ??? abstract "AWS EC2 Security Group Modified"
     
@@ -4802,9 +5144,21 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Trusted Domain Added"
+    
+    Detects when a domain name is added to Google Workspace Trusted Domain. This could be used by an attacker to bypass some security controls or just be a legit admin action.
+    
+    - **Effort:** intermediate
+
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow. 
+    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
 
@@ -4874,6 +5228,24 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Okta Blacklist Manipulations"
+    
+    Detects when some manipulation are done in blacklist configurations.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta MFA Disabled"
+    
+    A MFA has beed disabled in Okta SSO. This is a common behavior to gain permanent access over a system.
+    
+    - **Effort:** elementary
+
+??? abstract "Okta Security Threat Configuration Updated"
+    
+    Detects when the threat configuration has been updated in Okta.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Package Manager Alteration"
     
     Package manager (eg: apt, yum) can be altered to install malicious software
@@ -4934,11 +5306,23 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
     
     - **Effort:** intermediate
+
+??? abstract "Windows Defender Configuration Changed"
+    
+    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
+    
+    - **Effort:** master
 
 ??? abstract "Windows Defender Deactivation Using PowerShell Script"
     
@@ -4963,6 +5347,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
     
     - **Effort:** elementary
+
+??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Defender Signatures Removed With MpCmdRun"
     
@@ -5078,19 +5468,55 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "AWS IAM Failed User Creation"
+    
+    Detects an attemp to create a user account where the result is an explicit denied.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS IAM Password Policy Updated"
+    
+    Detects an update to the password policy. This could be an attempt to lower accounts security level.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS IAM Policy Changed"
     
     Detects change on AWS IAM Policy
     
     - **Effort:** master
 
+??? abstract "AWS Root ConsoleLogin"
+    
+    Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Attempt"
+    
+    Detects when a request in success or failure is made to transfer a domain name to an other AWS account
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+    
+    Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
+    
+    - **Effort:** elementary
+
 **Network Boundary Bridging**
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow. 
+    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
+
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
 
 ## Credential Access
 **OS Credential Dumping**
@@ -5100,6 +5526,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     An access has been denied while opening or editing sensitives files.
     
     - **Effort:** advanced
+
+??? abstract "Active Directory Database Dump Via Ntdsutil"
+    
+    Detects the dump of ntdis.dit database by using the utility ntdsutil.exe. NTDS.dit database stores Active Directory data, including passwords hashes for all users in the domain.
+    
+    - **Effort:** elementary
 
 ??? abstract "Active Directory Replication from Non Machine Account"
     
@@ -5172,6 +5604,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
     
     - **Effort:** elementary
+
+??? abstract "HackTools Suspicious Process Names In Command Line"
+    
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Impacket Secretsdump.py Tool"
     
@@ -5387,6 +5825,14 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+**Multi-Factor Authentication Interception**
+
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
+
 **Exploitation for Credential Access**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -5464,6 +5910,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     - **Effort:** intermediate
 
 **Adversary-in-the-Middle**
+
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Possible RottenPotato Attack"
     
@@ -5665,6 +6117,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     System info discovery, attempt to detects basic command use to fingerprint a host
     
     - **Effort:** master
+
+??? abstract "WMI Fingerprint Commands"
+    
+    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
+    
+    - **Effort:** intermediate
 
 **Account Discovery**
 
@@ -5928,7 +6386,7 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 
 ??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
     
-    Detects PowerShell SnapIn command line to export Exchange mailbox data.
+    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
 
@@ -5968,6 +6426,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Custom Gmail Route"
+    
+    Detects when a custom Gmail route is added or modified. This could be abused by attackers to exfiltrate data.
+    
+    - **Effort:** advanced
+
 ??? abstract "Google Cloud Audit Email Forwarding"
     
     Detects when an out of domain email forwarding is enabled on Google Cloud.
@@ -5989,6 +6453,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     - **Effort:** intermediate
 
 **Adversary-in-the-Middle**
+
+??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Possible RottenPotato Attack"
     
@@ -6060,6 +6530,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
 ??? abstract "Cobalt Strike HTTP Default POST Beaconing"
     
     Detects POST HTTP queries from known Cobalt Strike beacons (source code 4.3)
+    
+    - **Effort:** advanced
+
+??? abstract "Correlation Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
 
@@ -6307,6 +6783,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** elementary
 
+??? abstract "Remote Access Tool Domain"
+    
+    Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
 **Non-Standard Port**
 
 ??? abstract "RDP Port Change Using Powershell"
@@ -6346,6 +6828,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "SOCKS Tunneling Tool"
+    
+    Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "SSH Port Binding"
     
@@ -6432,11 +6920,29 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
+
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential DNS Tunnel"
     
     Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
     
     - **Effort:** advanced
+
+??? abstract "Powershell UploadString Function"
+    
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "TUN/TAP Driver Installation"
     
@@ -6452,13 +6958,37 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     
     - **Effort:** intermediate
 
+??? abstract "Google Cloud Audit Drive Ownership Transferred"
+    
+    Detects when Drive/Docs user files ownership is transferred. The legit use case is when a user is being removed, but this could also be abused by an attacker for exfiltration.
+    
+    - **Effort:** advanced
+
 **Exfiltration Over Web Service**
+
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
+
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Outgoing Bytes Peak"
     
     Spots outgoing bytes traffic peak to detect a data exfiltration. 
     
     - **Effort:** advanced
+
+??? abstract "Powershell UploadString Function"
+    
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    
+    - **Effort:** intermediate
 
 ??? abstract "Rclone Process"
     
@@ -6568,6 +7098,12 @@ Rules catalog includes **583 built-in detection rules** (_last update on 2022-10
     Detects local user deletion
     
     - **Effort:** master
+
+??? abstract "Okta User Account Locked"
+    
+    An user has been locked in Okta.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Privileged AD Builtin Group Modified"
     

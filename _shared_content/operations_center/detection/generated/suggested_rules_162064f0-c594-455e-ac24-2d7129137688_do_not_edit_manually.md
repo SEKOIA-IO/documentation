@@ -39,29 +39,41 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Linux** with the follo
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Domain In Command Line"
+    
+    Detects commands containing a domain linked to http exfiltration.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Formbook Hijacked Process Command"
     
     Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
     
     - **Effort:** intermediate
 
-??? abstract "Fortinet Firewall Login In Failure"
+??? abstract "HackTools Suspicious Process Names In Command Line"
     
-    Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
+    Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "High Privileges Network Share Removal"
     
-    Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
+    Detects high privileges shares being deleted with the net share command.
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "ICacls Granting Access To All"
     
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
 
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -117,6 +129,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Linux** with the follo
     
     - **Effort:** elementary
 
+??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
+    
+    Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -132,6 +150,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Linux** with the follo
 ??? abstract "Phorpiex Process Masquerading"
     
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
+    
+    - **Effort:** elementary
+
+??? abstract "PowerShell EncodedCommand"
+    
+    Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
+??? abstract "Process Memory Dump Using Comsvcs"
+    
+    Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
 
@@ -165,9 +195,21 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Linux** with the follo
     
     - **Effort:** elementary
 
+??? abstract "SOCKS Tunneling Tool"
+    
+    Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Cmd File Copy Command To Network Share"
+    
+    Copy suspicious files through Windows cmd prompt to network share
     
     - **Effort:** intermediate
 
@@ -210,6 +252,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Linux** with the follo
 ??? abstract "Suspicious Windows Installer Execution"
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
+    
+    - **Effort:** intermediate
+
+??? abstract "Usage Of Procdump With Common Arguments"
+    
+    Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
 

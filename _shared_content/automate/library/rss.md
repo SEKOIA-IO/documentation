@@ -14,14 +14,14 @@ This module accepts no configuration.
 
 Trigger playbook when new posts are published
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `feeds` | `array` | RSS Feeds configuration |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -32,4 +32,4 @@ Trigger playbook when new posts are published
 
 ## Extra
 
-Module **`RSS` v1.18**
+Module **`RSS` v1.19**

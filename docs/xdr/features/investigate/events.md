@@ -167,6 +167,24 @@ This table explains the main actions that can be done for each of these fields:
 | Search events with this value | Opens right panel to search field in all events |
 | Copy                          | Copy value of the field                         |
 
+### Adding events to cases
+
+When searching through your event logs, you will often find events valuable to your current investigation. You can add these events to a case to keep track of them and use them as potential pivots.
+
+To add an event to a case:
+
+1. Click on the `Add to Case` icon on the left of the event line.
+2. Select the target case or create a new one.
+
+![add-event-to-case](/assets/operation_center/add-event-to-case-events.png){: style="max-width:70%"}
+
+![active-case](/assets/operation_center/cases-in-event.png){ align=right }
+
+After adding an event to a case, you will notice that the selected case becomes active and appears at the top of the events table. Step 2 is no longer necessary: you can now add (or remove) an event to a case with a single click.
+
+To deselect the active case, click on the `X` next to its name.
+
+
 ### Export the results of a search
 
 You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export.
@@ -235,6 +253,10 @@ To compute aggregations on a list of events, you’ll have to:
 3. Select an aggregation method from the list
 4. Select an aggregation field if needed 
 5. Click on the `Search` button on the upper right of the page 
+
+!!! note 
+    Aggregation view feature does not support the field `alert_short_ids`.
+
 
 ### Aggregation methods
 

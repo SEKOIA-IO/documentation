@@ -1,15 +1,50 @@
 # Data Model
+ 
 
 The Intelligence Center uses the industry standard STIX ([version 2.1](https://oasis-open.github.io/cti-documentation/stix/intro.html)) to represent information.
+
+## Objects
 
 STIX uses JSON objects with pre-defined schemas to represent Cyber Threat Intelligence data. The knowledge graph is based on nodes (STIX Domain Objects or SDO) and relationships (STIX Relationship Objects or SRO).
 
 The Intelligence Center supports the following STIX Domain Objects:
 
-| Attack Pattern | Campaign | Course of Action | Identity |
-| --- | --- | --- | --- |
-|**Indicator** | **Intrusion Set** | **Location** | **Malware** |
-| **Report** | **Threat Actor** | **Tool** | **Vulnerability** |
+![objects-types](/assets/intelligence_center/data-model-objects.png){: style="max-width:100%"}
+
+## Observables
+
+An observable is a technical information that can detect a potential threat. They are derived from all data contained in the Intelligence Center but are not always contextualized.
+
+!!! note
+    If an observable clearly represent a malicious activity then it is an IoC (Indicator of Compromise).
+
+Observables are automatically extracted from various sources : public, subscriptions, partners, SEKOIA internal analysis.
+
+The Intelligence Center supports the following observables: 
+
+![observables-types](/assets/intelligence_center/data-model-observables.png){: style="max-width:100%"}
+
+### What is the difference between an indicator and an observable? 
+To understand the difference between an indicator (an object type) and an observable, we have to dig deeper into the definition of each one of these. 
+
+**Observables**
+
+- These are different kinds of technical artifacts
+- They are not necessary malicious (example: `google.com`)
+- They can be enriched with tags to contextualize the (non)-threat
+    - These tags allow you to enrich logs/events in SEKOIA.IO XDR
+- They are not provided in the CTI feed (API / TAXII / MISP, etc.)
+- They don’t directly raise alerts in SEKOIA.IO XDR but tag-based detection rules can be created to allow that
+- They can be manually enriched through the web application and can have dedicated relations (for example : `resolves-to`, `belongs-to`, etc.)
+- They are usable (thanks to the tags system) within SEKOIA.IO XDR to create warning rules that provide context to the analysts who are in charge of producing Intelligence or to avoid false positives creation.
+
+**Indicators**
+
+- These are Indicators of Compromise (IoC)
+- They are always related to a threat (malware, campaign, intrusion set, threat actor, vulnerability, etc.) and they are always contextualized with a confidence rating, a validity date and a Kill chain phase
+- They are based on observables
+- They are exported in the CTI feed (API / TAXII / MISP, etc.) to allow a contextualized detection
+- They raise real-time alerts in SEKOIA.IO XDR but also in the past through retro hunting which depends on the validity period of the indicator and the log retention duration
 
 ## External Sources
 
