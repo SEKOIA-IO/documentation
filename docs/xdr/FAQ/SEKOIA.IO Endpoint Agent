@@ -38,4 +38,7 @@ For some events, the Agent will ignore Sysmon events as it will already cover th
 - sysmonFileDelete
 - sysmonFileDeleteDetected
 
+## Do you confirm that SEKOIA.IO Agent without Sysmon will with all SEKOIA rules and ANSSI recommendations is an ongoing subject ?
+
+We plan to cover all the ANSSI recommendations and SEKOIA rules as much as possible in the next beta.
 
