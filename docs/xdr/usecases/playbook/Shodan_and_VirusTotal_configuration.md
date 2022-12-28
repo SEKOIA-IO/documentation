@@ -18,3 +18,16 @@ There are 2 steps:
 
 > To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
 
+## Playbook configuration
+
+### Create a comment on SEKOIA.IO alert from Shodan
+
+1. Configure the `Alert Created` block
+
+  - On the right panel, under the Module Configuration section, click on `+ Create new configuration`
+  - Complete the form with the following information:
+    * **Name**: ReadAlertContent
+    * **Api_key**: TO BE REPLACED BY YOUR SEKOIA.IO API KEY
+    * **Base_url**: `https://api.sekoia.io`
+  - Click on the `Save` button
+
