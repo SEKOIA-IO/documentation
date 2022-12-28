@@ -13,7 +13,17 @@ This setup guide shows how to forward events produced by HarfangLab EDR to SEKOI
 
 ## Configure
 
+
+### On SEKOIA.IO
+
+To create the intake key to be used when setting up HarfangLab, please select `manual` mode. 
+
+### On Harfang Lab
+
+First your need to navigate to `Personal Settings`,  and in the `Api token` get your token or generate a new one.
+
 ### Pre-requisite
+
 
 HarfangLab must setup OpenSSL to the server for protocol `TCP/SSL` to be available.
 
@@ -23,6 +33,19 @@ HarfangLab must setup OpenSSL to the server for protocol `TCP/SSL` to be availab
 
 Create a new HarfangLab intake on SEKOIA.IO and select the manual mode.
 ![Create HarfangLab Intake Key](/assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab_createintake.png){: style="max-width:60%"}
+
+
+* Host: `intake.sekoia.io`
+* Port: `10514`
+* App name: in the syslog header (cf illustration below), please use [RFC5424 format](https://www.rfc-editor.org/rfc/rfc5424.html#page-14)
+* Source host: name of your choice
+* Structured data: `[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"]`
+* Protocol: `TCP/TLS`
+* RFC: `RFC5424`
+
+- **Syslog header and fields**
+![AppName](https://user-images.githubusercontent.com/101662967/195819283-06e69207-a245-470d-83e5-c83687606719.png)
+
 
 
 #### In HarfangLab
@@ -55,4 +78,5 @@ Create a new HarfangLab intake on SEKOIA.IO and select the manual mode.
 
 5. Finally select the `Protocol` option: `TCP/SSL`, leave the other options to default.
 
-![HarfangLab EDR](/assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab_edr.png){: style="max-width:60%"}
+
+In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable with your intake key generated in SEKOIA.IO.
