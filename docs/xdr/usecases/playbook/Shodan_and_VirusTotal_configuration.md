@@ -52,4 +52,11 @@ There are 2 steps:
     - **ip** = `{{node.x.['events'][0]['destination.ip']}}`   replace x by the node of `Get Events` (in code tab, search `Get Events` and you will find the node number to be used)
   - Link the blocks `Foreach` to `Get host`  
 
+4. Configure the `Comment alert` block
 
+  - On the left panel, **search for** the `Comment alert` block
+  - **Drag and drop** it underneath the `Get host` Shodan block
+  - On the right panel, **complete the form** with the following information:
+    - **content** = `{{node.x['data'][0]['location']['city']}}`   replace x by the node of `Get host` (in code tab, search `Get host` and you will find the node number to be used)
+    - **uuid** = copy value and pasting of `short_id` (found in `Alert Created` block)
+  - Link the blocks `Get host` to `Comment alert`  
