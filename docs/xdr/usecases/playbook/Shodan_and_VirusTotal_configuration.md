@@ -77,3 +77,6 @@ temp  ![image](https://user-images.githubusercontent.com/101662967/209848334-2ac
     - content = copy `type` of `Lookup` block
     - uuid = copy `uuid` of `Comment : Domain enrich by VT` block  	
 
+Your playbook should look like the following:
+
+![Shodan playbook]()
