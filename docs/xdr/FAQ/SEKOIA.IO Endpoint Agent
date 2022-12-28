@@ -2,3 +2,10 @@
 
 SEKOIA.IO Agent track information on file creation / deletion but not for denied / modified access.
 However, an event will probably be linked to a process that try to open a file
+
+## Is it possible to add a Windows Event ID to a file that SEKOIA.IO Agent load ?
+
+It is not possible to add an Event ID. 
+For each Event ID, we format the event to follow our Taxonomy (ECS norm) so we cannot add them on the fly.
+However, we welcome any suggestions of Event IDs to be collected that seems relevant.
+
