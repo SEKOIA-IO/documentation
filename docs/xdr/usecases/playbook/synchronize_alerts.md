@@ -1,4 +1,4 @@
-# Synchronise Alerts with an external tool
+# Synchronize Alerts with an external tool
 
 This use case describes how to automatically push new Alerts in an external security tool such as SIRP, SOAR or EDR etc.
 
@@ -42,7 +42,7 @@ First create a new playbook by following those steps:
 - On the right panel, select the **ReadAlertContent** configuration previously created
 - Select the `Alert Created` block and click on `alert_uuid` **copy** icon
 - Select the `Get Alert` block and **past** the content in the Configuration section, on the `uuid` cell
-- Link the blocs `Alert Created` to `Get Alert`
+- Link the trigger `Alert Created` to the action module `Get Alert`
 
 3. Make HTTP Requests
 
@@ -65,13 +65,13 @@ Your playbook should look like the following:
 ## Your Playbook is ready
 
 - **Save** your Playbook by clicking on the `SAVE` button on the center of the page
-- **Activate** your Playbook by toggling the value form Off to `On`, on the top right of the page
+- **Activate** your Playbook by toggling the value from `Off` to `On`, on the top right of the page
 
 ## See your Playbook runs
 
 - On the top right of the page, **click** on `Runs`
 - **Confirm** the displayed `Status` is `Succeeded`
-- If you click on a run form the history, you will be redirected to the Graph page. Then you will be able to see the results of each block by clicking on it, as of the following picture:
+- If you click on a run from the history, you will be redirected to the Graph page. Then you will be able to see the results of each block by clicking on it, as of the following picture:
 
 ![Playbook History](/assets/operation_center/playbooks/playbook_history.PNG)
 
