@@ -44,7 +44,7 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 
 
 # Rules
-## In a rule, what is the meaning of successfully compiled ?
+## In a rule, what does "successfully compiled" mean?
 A rule that is successfully compiled means that it is correct and ongoing.
 To know the information of the rule update, it is `updated at`
 
