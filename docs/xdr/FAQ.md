@@ -35,6 +35,23 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 ```
 
 
+
+
+
+
+
+
+
+
+# Rules
+## In a rule, what does "successfully compiled" mean?
+A rule that is successfully compiled means that it is correct and ongoing.
+To access the rule's last update, you can search for the label `updated at` in the rule details panel. 
+
+
+## What is the timestamp based on?
+The event timestamp is based on the event timestamp (when it's created in the machine), not on the ingestion timestamp in SEKOIA.IO. 
+
 # Logs
 ## Retention
 Logs are available and displayed for 90 days in SEKOIA.IO.
@@ -86,5 +103,6 @@ If it is involved in the current alert, the bell is not displayed.
 Besides matching a rule in real time, an alert can be triggered with a delay when: 
     - An IOC is published, old events are scanned and if an event matches, the rule will automatically trigger an alert. 
     - Reingesting old logs
+
 
 
