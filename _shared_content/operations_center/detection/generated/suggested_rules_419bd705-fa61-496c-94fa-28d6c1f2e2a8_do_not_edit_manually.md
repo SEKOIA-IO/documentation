@@ -33,12 +33,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** advanced
 
-??? abstract "Cybereason MalOp Alert"
-    
-    Cybereason MalOp telemetry has raised an alert
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling

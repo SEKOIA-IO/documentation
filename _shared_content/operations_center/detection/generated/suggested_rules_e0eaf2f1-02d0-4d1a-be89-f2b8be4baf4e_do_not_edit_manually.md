@@ -27,12 +27,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **ProofPoint PoD** with the fo
     
     - **Effort:** advanced
 
-??? abstract "Cybereason MalOp Alert"
-    
-    Cybereason MalOp telemetry has raised an alert
-    
-    - **Effort:** intermediate
-
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
