@@ -1,6 +1,8 @@
+# IP
+
 ## Is the IP behind `intake.sekoia.io` static?
 
-**IP for `intake.sekoia.io` is `145.239.192.38`.**
+**IP for `intake.sekoia.io` is `51.159.9.95`.**
 
 `intake.sekoia.io` is the domain name used to send your logs to SEKOIA.IO, either via Syslog or HTTP protocols. The IP address behind that service is static and stable. You can use that IP to configure your firewalls to allow connections from your forwarding systems to SEKOIA.IO.
 
@@ -33,7 +35,6 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 ```
 
 
-
 # Events
 
 ## What happens when you add events to an alert? 
@@ -56,3 +57,25 @@ You can easily request an event search on IP range. For instance, with an IP add
 **event.start** & **event.end** are activity and monitoring of the event (Pre-SEKOIA.IO if not producedd by SEKOIA.IO)
 
 `event.start` <= `event.end` <= `event.created`
+
+
+# Alerts
+
+## Alert date
+
+When an alert is triggered, additional events can enrich this alert but the date of the alert will not updated (date= 1st trigger). 
+
+## Bell icon in alerts page
+
+The bell icon means that "the event is involved in an alert". 
+
+When a bell on an event is displayed on an alert page, the event is involved in the current alert AND in another alert.
+
+If it is involved in the current alert, the bell is not displayed.
+
+## How an alert is triggered with a delay ?
+
+Besides matching a rule in real time, an alert can be triggered with a delay when: 
+    - An IOC is published, old events are scanned and if an event matches, the rule will automatically trigger an alert. 
+    - Reingesting old logs
+
