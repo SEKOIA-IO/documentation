@@ -141,7 +141,7 @@ The Rule creation form has the following sections:
 -  
 Two options are available: select `All communities` or select a specific community. 
 
-If you choose "All communities", your rule will be available for all your communities and you can active it later on the community desired.
+If you choose `All communities`, your rule will be available for all your communities and you can enable it later on the desired community.
 
   ![Create rules for MSSP community](/assets/operation_center/rules_catalog/create_new_rule_mssp_communities.png){: style="max-width:60%"}
 
