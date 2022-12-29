@@ -153,12 +153,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
     
     - **Effort:** intermediate
 
-??? abstract "Cybereason MalOp Alert"
-    
-    Cybereason MalOp telemetry has raised an alert
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability

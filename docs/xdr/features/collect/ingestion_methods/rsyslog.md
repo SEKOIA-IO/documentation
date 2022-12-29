@@ -457,7 +457,7 @@ Useful troubleshooting resources are:
 
 Here's a non-exhaustive list of known errors: 
 
-### Rsyslog daemon error
+### 1- Rsyslog daemon error
 
 Ensure the Rsyslog service is currently running on the server. 
 
@@ -471,7 +471,31 @@ If the service is down, try to restart Rsyslog:
 sudo systemctl restart rsyslog.service
 ```
 
-### Local messages not seen on the Rsyslog server
+### 2- Checking logs sent to Rsyslog
+
+In your configuration files, there will be a section that look like the following example:
+
+```
+template(name="SEKOIAIOUnboundTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"<intake_key>\"] %msg%\n")
+if $programname startswith 'unbound' then @@(o)intake.sekoia.io:10514;SEKOIAIOUnboundTemplate
+
+```
+
+If you want to retrieve the raw data that is forwarded to SEKOIA.IO, you can duplicate the last line and make Rsyslog dump logs to a local file:
+
+```
+if $programname startswith 'unbound' then /tmp/nginx-output.log;SEKOIAIOUnboundTemplate
+```
+
+This way, you will be able to exactly identify what data is sent to SEKOIA.IO and to fix it if needed.
+
+```
+# tail -n 1 /tmp/nginx-output.log
+<30>1 2021-01-13T14:52:06.934860+01:00 ote unbound - LOG [SEKOIA@53288 intake_key="<intake_key>"]  [596451:0] info: 127.0.0.1 intake.sekoia.io. A IN
+```
+
+
+### 3- Local messages not seen on the Rsyslog server
 
 If you can't see local messages on the Rsyslog server, you have to make sure the logs are received on the Rsyslog server. This means that: 
 
@@ -504,7 +528,7 @@ To fix this:
 	sudo tcpdump -i <change_with_interface_name> -c10 -nn src 1.1.1.1 -vv
 	```
 
-### A `/etc/rsyslog/xx-<technology>.conf` file is misconfigured
+### 4- A `/etc/rsyslog/xx-<technology>.conf` file is misconfigured
 
 If the Rsyslog service is failing to start, a mistyping may have been introduced in one of the `/etc/rsyslog/xx-<technology>.conf` files.
 
