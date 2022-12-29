@@ -194,7 +194,9 @@ nav:
         - Whois: xdr/features/automate/library/whois.md
   - Usecases:
     - Synchronise Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
-  - FAQ: xdr/FAQ.md
+  - FAQ: 
+    - xdr/FAQ.md
+    - FAQ/S.IO_Endpoint_Agent.md
   - Develop:
     - Overview: xdr/develop/index.md
     - Guides:
