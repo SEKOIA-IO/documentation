@@ -139,7 +139,7 @@ The Rule creation form has the following sections:
 - Select the effort level required and the threats detected with this rule if any, by selecting it from the MITRE ATT&CK or by using the search bar through keywords or the drop-down list.
 - For an MSSP community, first select the community you want to create your rule in.
 -  
-Two options are available: select "All communities" or select a specific community. 
+Two options are available: select `All communities` or select a specific community. 
 
 If you choose "All communities", your rule will be available for all your communities and you can active it later on the community desired.
 
