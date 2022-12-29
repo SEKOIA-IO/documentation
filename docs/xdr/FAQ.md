@@ -50,7 +50,7 @@ To access the rule's last update, you can search for the label `updated at` in t
 
 
 ## What is the timestamp based on?
-Based on event timestamp (created on the machine) and not on ingestion timestamp in SEKOIA.IO
+The event timestamp is based on the event timestamp (when it's created in the machine), not on the ingestion timestamp in SEKOIA.IO. 
 
 # Logs
 ## Retention
