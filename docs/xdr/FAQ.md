@@ -1,3 +1,5 @@
+# IP
+
 ## Is the IP behind `intake.sekoia.io` static?
 
 **IP for `intake.sekoia.io` is `51.159.9.95`.**
@@ -31,3 +33,23 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 # tail -n 1 /tmp/nginx-output.log
 <30>1 2021-01-13T14:52:06.934860+01:00 ote unbound - LOG [SEKOIA@53288 intake_key="jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5"]  [596451:0] info: 127.0.0.1 intake.sekoia.io. A IN
 ```
+
+# Alerts
+
+## Alert date
+
+When an alert is triggered, additional events can enrich this alert but the date of the alert will not updated (date= 1st trigger). 
+
+## Bell icon in alerts page
+
+The bell icon means that "the event is involved in an alert". 
+
+When a bell on an event is displayed on an alert page, the event is involved in the current alert AND in another alert.
+
+If it is involved in the current alert, the bell is not displayed.
+
+## How an alert is triggered with a delay ?
+
+Besides matching a rule in real time, an alert can be triggered with a delay when: 
+    - An IOC is published, old events are scanned and if an event matches, the rule will automatically trigger an alert. 
+    - Reingesting old logs
