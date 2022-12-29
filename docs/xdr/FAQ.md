@@ -48,7 +48,7 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 Meaning that the rule is correct and ongoing
 To know the information of the rule update, it is `updated at`
 
-## Timestamp
+## What is the timestamp based on?
 Based on event timestamp (created on the machine) and not on ingestion timestamp in SEKOIA.IO
 
 # Logs
