@@ -46,7 +46,8 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 # Rules
 ## In a rule, what does "successfully compiled" mean?
 A rule that is successfully compiled means that it is correct and ongoing.
-To know the information of the rule update, it is `updated at`
+To access the rule's last update, you can search for the label `updated at` in the rule details panel. 
+
 
 ## What is the timestamp based on?
 Based on event timestamp (created on the machine) and not on ingestion timestamp in SEKOIA.IO
