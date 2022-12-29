@@ -35,6 +35,56 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 <30>1 2021-01-13T14:52:06.934860+01:00 ote unbound - LOG [SEKOIA@53288 intake_key="jOK5bMVXz5Iz7gfogQDbCcC7l7S2IrOs5"]  [596451:0] info: 127.0.0.1 intake.sekoia.io. A IN
 ```
 
+
+
+
+
+
+
+
+
+
+# Rules
+## In a rule, what does "successfully compiled" mean?
+A rule that is successfully compiled means that it is correct and ongoing.
+To access the rule's last update, you can search for the label `updated at` in the rule details panel. 
+
+
+## What is the timestamp based on?
+The event timestamp is based on the event timestamp (when it's created in the machine), not on the ingestion timestamp in SEKOIA.IO. 
+
+# Logs
+## Retention
+Logs are available and displayed for 90 days in SEKOIA.IO.
+
+## Archiving & Rehydratation
+Please contact `support@sekoia.io` for more information on archives and events rehydratation, with a clear description of your needs. 
+
+
+# Events
+
+## What happens when you add events to an alert? 
+When you attach events to an alert, there are two mechanisms that are executed in parallel: alert generation and events externalisation.
+Some latency might happen between alert generation and attaching events to an alert.
+
+## Event search request on IP range
+You can easily request an event search on IP range. For instance, with an IP address starting with 145, you can search by range as follow: `source.ip:[145.0.0.0 TO 145.255.255.255]`. 
+
+## timestamp, event.created, event.start, event.end meaning
+
+**timestamp** and **event.created** are the same (reception of logs and beginning of processing in SEKOIA.IO).
+
+**event.created** is parsed and can be selected. The timezone is defined with UTC.
+
+**event.start**   contains the date when the event started or when the activity was first observed.
+
+**event.end**   contains the date when the event ended or when the activity was last observed.
+
+**event.start** & **event.end** are activity and monitoring of the event (Pre-SEKOIA.IO if not producedd by SEKOIA.IO)
+
+`event.start` <= `event.end` <= `event.created`
+
+
 # Alerts
 
 ## Alert date
@@ -54,4 +104,5 @@ If it is involved in the current alert, the bell is not displayed.
 Besides matching a rule in real time, an alert can be triggered with a delay when: 
     - An IOC is published, old events are scanned and if an event matches, the rule will automatically trigger an alert. 
     - Reingesting old logs
+
 
