@@ -14,7 +14,7 @@
 
 Get Malware configs from MWDB
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -35,7 +35,7 @@ Get Malware configs from MWDB
 
 Convert a MWDB config to a bundle of observables
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -43,7 +43,7 @@ Convert a MWDB config to a bundle of observables
 | `config` | `object` | The JSON content of the config. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -53,4 +53,4 @@ Convert a MWDB config to a bundle of observables
 
 ## Extra
 
-Module **`MWDB` v1.28**
+Module **`MWDB` v1.29**

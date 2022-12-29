@@ -13,11 +13,11 @@ This module provides triggers to collect events from AWS
 
 ## Triggers
 
-### Fetch CloudTrail logs
+### Fetch CloudTrail logs (deprecated)
 
-Get the last records from CloudTrail
+Get the last records from CloudTrail (deprecated in flavor of Fetch new CloudTrail records on S3)
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -27,7 +27,7 @@ Get the last records from CloudTrail
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -35,11 +35,11 @@ Get the last records from CloudTrail
 | `records_path` | `string` | The filename containing the records |
 
 
-### Fetch Flowlog records
+### Fetch Flowlog records (deprecated)
 
-Get the last records from FlowLog
+Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -49,7 +49,7 @@ Get the last records from FlowLog
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -61,7 +61,7 @@ Get the last records from FlowLog
 
 Get line-oriented records from new S3 objects based on notifications
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -76,11 +76,11 @@ Get line-oriented records from new S3 objects based on notifications
 | `intake_key` | `string` | Intake key to use when sending events |
 
 
-### Fetch new CloudTrail records on S3
+### Fetch new Parquet records on S3
 
-Get Cloudtrail records from new S3 objects based on notifications
+Get records from new S3 Parquet objects based on notifications
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -92,6 +92,38 @@ Get Cloudtrail records from new S3 objects based on notifications
 | `intake_key` | `string` | Intake key to use when sending events |
 
 
+### Fetch new CloudTrail records on S3
+
+Get Cloudtrail records from new S3 objects based on notifications
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `queue_name` | `string` | The name of the SQS queue that received the notifications of the creation of S3 objects |
+| `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: false) |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+
+
+### Fetch new messages from the SQS
+
+Get messages from SQS
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `queue_name` | `string` | The name of the SQS queue |
+| `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: false) |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+
+
 ## Extra
 
-Module **`AWS` v1.11.4**
+Module **`AWS` v1.15.2**

@@ -34,95 +34,94 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-05-26T09:26:53.000000Z",
         "message": "0|Forcepoint|Security|8.5.4|9|Transaction blocked|7| act=blocked app=http dvc=9.8.7.6 dst=5.6.7.8 dhost=ctldl.windowsupdate.com dpt=80 src=1.2.3.4 spt=62062 suser=- loginID=- destinationTranslatedPort=0 rt=1653557213000 in=0 out=0 requestMethod=GET requestClientApplication=Microsoft-CryptoAPI/10.0 reason=- cs1Label=Policy cs1=SupAd**_O365_ cs2Label=DynCat cs2=0 cs3Label=ContentType cs3=- cn1Label=DispositionCode cn1=1025 cn2Label=ScanDuration cn2=5 request=http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab logRecordSource=OnPrem",
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4",
-            "port": 62062
-        },
-        "destination": {
-            "ip": "5.6.7.8",
-            "address": "ctldl.windowsupdate.com",
-            "domain": "ctldl.windowsupdate.com",
-            "registered_domain": "windowsupdate.com",
-            "subdomain": "ctldl",
-            "top_level_domain": "com",
-            "port": 80
-        },
         "event": {
+            "action": "Transaction blocked",
             "severity": 7,
             "code": "1025",
-            "kind": "event",
-            "type": [
-                "access",
-                "denied"
-            ],
             "category": [
                 "network"
             ],
-            "action": "Transaction blocked",
-            "duration": 5,
+            "kind": "event",
+            "type": [
+                "connection",
+                "denied"
+            ],
             "reason": "Category blocked"
         },
+        "@timestamp": "2022-05-26T09:26:53.000000Z",
         "observer": {
-            "version": "8.5.4",
+            "vendor": "Forcepoint",
             "product": "Secure Web Gateway",
-            "vendor": "Forcepoint"
+            "version": "8.5.4"
         },
         "host": {
             "ip": [
                 "9.8.7.6"
             ]
         },
-        "related": {
-            "hosts": [
-                "ctldl.windowsupdate.com"
-            ],
-            "ip": [
-                "1.2.3.4",
-                "5.6.7.8",
-                "9.8.7.6"
-            ]
-        },
-        "url": {
-            "original": "http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab",
-            "domain": "ctldl.windowsupdate.com",
-            "path": "/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab",
-            "port": 80,
-            "registered_domain": "windowsupdate.com",
-            "subdomain": "ctldl",
-            "top_level_domain": "com",
-            "scheme": "http"
-        },
-        "user_agent": {
-            "original": "Microsoft-CryptoAPI/10.0"
-        },
         "network": {
             "protocol": "http"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 80,
+            "domain": "ctldl.windowsupdate.com",
+            "address": "ctldl.windowsupdate.com",
+            "top_level_domain": "com",
+            "subdomain": "ctldl",
+            "registered_domain": "windowsupdate.com"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 62062,
+            "address": "1.2.3.4"
         },
         "rule": {
             "id": "9",
             "ruleset": "Information Technology"
+        },
+        "url": {
+            "original": "http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab",
+            "domain": "ctldl.windowsupdate.com",
+            "top_level_domain": "com",
+            "subdomain": "ctldl",
+            "registered_domain": "windowsupdate.com",
+            "scheme": "http",
+            "path": "/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab",
+            "port": 80
         },
         "http": {
             "request": {
                 "method": "GET"
             }
         },
+        "user_agent": {
+            "original": "Microsoft-CryptoAPI/10.0"
+        },
         "forcepoint": {
-            "cef": {
-                "version": "0"
-            },
             "webgateway": {
+                "policies": [
+                    "SupAd**_O365_"
+                ],
                 "category": "0",
                 "log": {
                     "source": "OnPrem"
-                },
-                "policies": [
-                    "SupAd**_O365_"
-                ]
+                }
+            },
+            "cef": {
+                "version": "0"
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8",
+                "9.8.7.6"
+            ],
+            "hosts": [
+                "ctldl.windowsupdate.com"
+            ]
         }
     }
     	
@@ -134,86 +133,65 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2022-05-26T08:58:41.000000Z",
         "message": "0|Forcepoint|Security|8.5.4|222|Transaction permitted|1| act=permitted app=https dvc=9.8.7.6 dst=5.6.7.8 dhost=outlook.office365.com dpt=443 src=1.2.3.4 spt=50345 suser=LDAP://4.3.2.1 OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL/User 1 loginID=n_nini destinationTranslatedPort=47486 rt=1653555521000 in=1038458 out=3967 requestMethod=POST requestClientApplication=Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.10386; Pro) reason=- cs1Label=Policy cs1=SupAd**1,SupAd**2 cs2Label=DynCat cs2=0 cs3Label=ContentType cs3=application/mapi-http cn1Label=DispositionCode cn1=1026 cn2Label=ScanDuration cn2=31 request=https://outlook.office365.com/ logRecordSource=OnPrem",
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4",
-            "port": 50345
-        },
-        "destination": {
-            "address": "outlook.office365.com",
-            "ip": "5.6.7.8",
-            "domain": "outlook.office365.com",
-            "registered_domain": "office365.com",
-            "subdomain": "outlook",
-            "top_level_domain": "com",
-            "port": 443,
-            "nat": {
-                "port": 47486
-            }
-        },
         "event": {
+            "action": "Transaction permitted",
             "severity": 1,
             "code": "1026",
-            "kind": "event",
-            "type": [
-                "access",
-                "allowed"
-            ],
             "category": [
                 "network"
             ],
-            "action": "Transaction permitted",
-            "duration": 31,
+            "kind": "event",
+            "type": [
+                "connection",
+                "allowed"
+            ],
             "reason": "Category permitted"
         },
+        "@timestamp": "2022-05-26T08:58:41.000000Z",
         "observer": {
-            "version": "8.5.4",
+            "vendor": "Forcepoint",
             "product": "Secure Web Gateway",
-            "vendor": "Forcepoint"
+            "version": "8.5.4"
         },
         "host": {
             "ip": [
                 "9.8.7.6"
             ]
         },
-        "related": {
-            "hosts": [
-                "outlook.office365.com"
-            ],
-            "ip": [
-                "1.2.3.4",
-                "5.6.7.8",
-                "9.8.7.6"
-            ],
-            "user": [
-                "LDAP://4.3.2.1 OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL/User 1"
-            ]
-        },
-        "url": {
-            "original": "https://outlook.office365.com/",
-            "path": "/",
-            "domain": "outlook.office365.com",
-            "port": 443,
-            "registered_domain": "office365.com",
-            "subdomain": "outlook",
-            "top_level_domain": "com",
-            "scheme": "https"
-        },
-        "user_agent": {
-            "original": "Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.10386; Pro)"
-        },
-        "user": {
-            "name": "LDAP://4.3.2.1 OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL/User 1",
-            "id": "n_nini"
-        },
         "network": {
             "protocol": "https"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 443,
+            "domain": "outlook.office365.com",
+            "nat": {
+                "port": 47486
+            },
+            "address": "outlook.office365.com",
+            "top_level_domain": "com",
+            "subdomain": "outlook",
+            "registered_domain": "office365.com"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 50345,
+            "address": "1.2.3.4"
         },
         "rule": {
             "id": "222",
             "ruleset": "Collaboration - Office"
+        },
+        "url": {
+            "original": "https://outlook.office365.com/",
+            "domain": "outlook.office365.com",
+            "top_level_domain": "com",
+            "subdomain": "outlook",
+            "registered_domain": "office365.com",
+            "scheme": "https",
+            "path": "/",
+            "port": 443
         },
         "http": {
             "request": {
@@ -225,20 +203,41 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "bytes": 1038458
             }
         },
+        "user": {
+            "domain": "OU\\=MyOrg,OU\\=Users,DC\\=Domain,DC\\=LOCAL",
+            "name": "User 1",
+            "id": "n_nini"
+        },
+        "user_agent": {
+            "original": "Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.10386; Pro)"
+        },
         "forcepoint": {
-            "cef": {
-                "version": "0"
-            },
             "webgateway": {
-                "category": "0",
-                "log": {
-                    "source": "OnPrem"
-                },
                 "policies": [
                     "SupAd**1",
                     "SupAd**2"
-                ]
+                ],
+                "category": "0",
+                "log": {
+                    "source": "OnPrem"
+                }
+            },
+            "cef": {
+                "version": "0"
             }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8",
+                "9.8.7.6"
+            ],
+            "hosts": [
+                "outlook.office365.com"
+            ],
+            "user": [
+                "User 1"
+            ]
         }
     }
     	
@@ -265,10 +264,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.severity` | `long` | Numeric severity of the event. |
-|`forcepoint.cef.version` | `keyword` | None |
-|`forcepoint.webgateway.category` | `keyword` | None |
-|`forcepoint.webgateway.log.source` | `keyword` | None |
-|`forcepoint.webgateway.policies` | `keyword` | None |
+|`forcepoint.cef.version` | `keyword` | The version of the CEF message |
+|`forcepoint.webgateway.category` | `keyword` | The category determined by real-time content analysis |
+|`forcepoint.webgateway.log.source` | `keyword` | The origin of the log |
+|`forcepoint.webgateway.policies` | `keyword` | The policies applied to the request |
 |`host.ip` | `ip` | Host ip addresses. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.method` | `keyword` | HTTP request method. |
@@ -282,6 +281,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.ip` | `ip` | IP address of the source. |
 |`source.port` | `long` | Port of the source. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
+|`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.id` | `keyword` | Unique identifier of the user. |
 |`user.name` | `keyword` | Short name or login of the user. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |

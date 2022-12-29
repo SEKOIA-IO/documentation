@@ -3,14 +3,14 @@
 
 **Two-factor authentication** adds additional security to your SEKOIA.IO account by requiring a second step to sign in. It requires you to give a 6-digit verification code generated from your phone in addition to your username and password login.
 
-When two-factor authentication is enabled, you will need your `password` and a `verification cod`e from your phone whenever you want to sign in on SEKOIA.IO platform.
+When two-factor authentication is enabled, you will need your `password` and a `verification code` from your phone whenever you want to sign in on SEKOIA.IO platform.
 
 ### How do I enable two-factor authentication?
 
 To enable two-factor authentication, follow these instructions:
 
 1. Log in to SEKOIA.IO platform
-2. Click on your profile picture and select `settings` to access the User center
+2. Click on your profile picture and select `Account settings` to access the User center
 3. Under User > Security, click on the button `Enable Two-Factor Authentication`
 4. Follow the steps to complete the process
 5. Enter your password
@@ -55,16 +55,14 @@ To log in with your backup codes, you will need to:
 To disable two-factor authentication on your SEKOIA account:
 
 1. Log in to your SEKOIA account
-2. Click on your profile picture and select `settings` to access the User center
+2. Click on your profile picture and select `Account settings` to access the User center
 3. Under User > Security, click on the button `Disable Two-Factor Authentication`
 4. Enter your actual password and select `disable`
 
 ## Security tokens
-In SEKOIA.IO, we support Web Authentication and we value high security standards. That’s why our users can use multiple tools to sign in on the platform in the fastest and most secure way possible.
+WebAuthn standard (Web Authentication) is supported in SEKOIA.IO as we value high security standards. Users can use multiple tools to access their account in the fastest and most secure way possible. These security tokens can be used as a second factor of authentication instead of a verification code.
 
-Depending on your web browser, you’ll be able to use security tokens to connect to the platform. These tokens can be `physical` (a USB security key) or `embedded` in your machine (fingerprint authentication).
-
-A security token can be used as your second factor of authentication instead of a verification code.
+Depending on your web browser, you can use different types of security tokens to connect to the platform. These tokens can be `physical` (a USB security key) or `embedded` in your machine (fingerprint authentication). The platform supports [FIDO2-compliant authenticators](https://fidoalliance.org/certification/authenticator-certification-levels/) including security keys, Touch ID, Face ID and [Windows Hello](https://support.microsoft.com/en-us/windows/learn-about-windows-hello-and-set-it-up-dae28983-8242-bb2a-d3d1-87c9d265a5f0). 
 
 ### Add a security token
 

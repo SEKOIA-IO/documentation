@@ -3,11 +3,15 @@ name: SEKOIA.IO activity logs
 type: intake
 
 ## Overview
-SEKOIA.IO activity logs collect operations done, on SEKOIA.IO, by the members of the community. It helps to monitor activities and detect malicious behavior. The activity logs collect various operations such as
+SEKOIA.IO activity logs collect operations done, on SEKOIA.IO, by the members of the community. It helps to monitor activities and detect malicious behavior. The activity logs collect various operations such as:
+
 - listing observables
 - creating a new rule
 - updating the status of an alert
 - inviting a new member in the community
+
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_41e3ca4e-a714-41aa-ad69-684a0b3835fc_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/sekoiaio-activity-logs_do_not_edit_manually.md!}
 

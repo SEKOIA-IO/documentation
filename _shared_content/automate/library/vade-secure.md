@@ -19,7 +19,7 @@ Vade Secure Module
 
 Get last M365 Email Events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -28,7 +28,7 @@ Get last M365 Email Events
 | `chunk_size` | `integer` | The max size of chunks for the batch processing |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -37,4 +37,4 @@ Get last M365 Email Events
 
 ## Extra
 
-Module **`Vade Secure` v1.33**
+Module **`Vade Secure` v1.35.1**

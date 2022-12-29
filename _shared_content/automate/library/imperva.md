@@ -19,7 +19,7 @@ Imperva Module
 
 Fetch Imperva WAF logs
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -27,7 +27,7 @@ Fetch Imperva WAF logs
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -37,4 +37,4 @@ Fetch Imperva WAF logs
 
 ## Extra
 
-Module **`Imperva` v1.6**
+Module **`Imperva` v1.7**

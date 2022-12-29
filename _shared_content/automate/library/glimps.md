@@ -17,14 +17,14 @@
 
 
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | Unique analysis identifier |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -54,14 +54,14 @@
 
 
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `sha256` | `string` | string hex encoded input file SHA256 |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -91,7 +91,7 @@
 
 
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -99,7 +99,7 @@
 | `file` | `string` | The file to scan |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -110,4 +110,4 @@
 
 ## Extra
 
-Module **`GLIMPS` v1.1**
+Module **`GLIMPS` v1.2**

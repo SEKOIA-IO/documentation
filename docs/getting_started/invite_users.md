@@ -1,33 +1,53 @@
 # Invite users to join your community
-To invite users to your community, you’ll have to send them invitations through the User Center.
 
-If your guest already has an account on SEKOIA.IO, they will automatically be added to your community.
+To invite users to your community, you need to send them invitations through the User Center. You can invite as many users as needed if you have [the role](/manage_users/#needed-role-and-permissions) `manage_member`. 
 
-If your guest does not have an account on SEKOIA.IO, they will receive an activation email to [create an account](create_account.md).
+However, depending on the [type of community](/getting_started/create_community.md) you are in, the invitation process can differ. 
 
-## Send invitations
-To invite new members to your community, follow these steps:
+In this documentation, you will learn how to add users in these communities.
+
+---
+
+## Add new users to a community
+
+### In a managed community
+
+To invite new users to a managed community:
 
 1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
 2. On the tab `Users`, click on the `+ User` button
 3. Type in the `user’s email` and select the `community` you want to invite them in
-4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions.
-5. Once you’re done, press `Validate` and wait for your guest to accept your invitation
+4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
+5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
 
-## Create custom roles
-As an admin of your community, you can control what kind of actions your guests are allowed to do. Our roles’ system is based on permissions already defined by us and we keep them up to date following our latest features.
-For example, some users in your community will only be able to view data but cannot interact with it. Others can change the status of an alert, write a content proposal or simply duplicate a dashboard, without being able to access other parts of the app.
+### In an MSSP community
 
-To create custom roles for your guests, you’ll have to:
+An MSSP community is one main community with multiple managed communities inside of it. The admin of an MSSP community can access all of the managed communities.
 
-1. Access your `Managed Communities` by clicking on your avatar on the upper right of the screen
-2. Click on the `Roles` tab then on the `+Role` button
-3. Provide a `name` and a `description` to your new role
-4. Select `permissions` you want to give to your users
-5. Save your changes
+You can either invite users to join the main MSSP community or invite them to one or more managed communities inside the MSSP community. 
 
-!!! note
-    You can edit or delete roles by clicking on the icons on the right side of the table that lists all the roles.
+#### In the main MSSP community
 
-### Permissions
-Permissions can be different depending on your job position at your company. In this section, you’ll have a look at all our permissions depending on which product you are subscribed to. There are three main categories to all of these permissions: `Admin`, `Manage` or `View`.
+To add users to the main MSSP community: 
+
+1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
+2. On the tab `Users`, click on the `+ User` button
+3. Type in the `user’s email` and select the MSSP community (the first one in the list) 
+4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
+5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
+
+The invited user will have access to the main MSSP community as well as all other managed communities inside of it. 
+
+#### In an MSSP managed community
+
+If you need the invited user to access only some managed communities within the MSSP community, invite them to only some specific communities. 
+
+To add users to some managed communities within a main MSSP community: 
+
+1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
+2. On the tab `Users`, click on the `+ User` button
+3. Type in the `user’s email` and select communities you want to invite your user in
+4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
+5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
+
+The invited user will only have access to the selected MSSP managed communities, but not the main MSSP community.

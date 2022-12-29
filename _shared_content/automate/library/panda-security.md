@@ -23,14 +23,14 @@ This module provides actions and triggers to interact with the [Watchguard Panda
 
 Fetch the last security events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `frequency` | `integer` | Batch frequency in seconds (default 12h) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -42,7 +42,7 @@ Fetch the last security events
 
 Retrieves a list of security events of the specified type for the specified device for a specific time period.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -51,7 +51,7 @@ Retrieves a list of security events of the specified type for the specified devi
 | `hostname` | `string` | Host name (base-64 encoded) of the device you want to retrieve security events for. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -123,7 +123,7 @@ Retrieves a list of security events of the specified type for the specified devi
 
 Isolates the specified devices. When you isolate a device, communication to and from the device is denied.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -133,7 +133,7 @@ Isolates the specified devices. When you isolate a device, communication to and 
 | `hide_customized_alert` | `boolean` | Indicates whether to hide the customized alert message on isolated devices. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -143,7 +143,7 @@ Isolates the specified devices. When you isolate a device, communication to and 
 
 Links devices to a specified configuration.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -155,7 +155,7 @@ Links devices to a specified configuration.
 
 Retrieves a list of devices, and additional information, such as the device IP address and operating system.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -167,7 +167,7 @@ Retrieves a list of devices, and additional information, such as the device IP a
 | `$config` | `boolean` | Indicates whether the security configuration name and ID are returned. The default value is true.<br/>Example: true |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -178,7 +178,7 @@ Retrieves a list of devices, and additional information, such as the device IP a
 
 Retrieves a list of the specified type of managed configurations associated with your WatchGuard Cloud account.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -190,7 +190,7 @@ Retrieves a list of the specified type of managed configurations associated with
 | `$orderby` | `str` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -201,7 +201,7 @@ Retrieves a list of the specified type of managed configurations associated with
 
 Retrieves a list of unmanaged devices discovered on the network.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -212,7 +212,7 @@ Retrieves a list of unmanaged devices discovered on the network.
 | `$orderby` | `str` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -223,7 +223,7 @@ Retrieves a list of unmanaged devices discovered on the network.
 
 Retrieves counts of detected security events for the specified types.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -231,7 +231,7 @@ Retrieves counts of detected security events for the specified types.
 | `filter` | `str` | Filters the security event counters by date<br/>Specify the type of security event:<br/>	- 33001 — Antivirus<br/>	- 32001 — Other types<br/>Specify the length of the time period in the format [x, y] where x is the number of units and y is the unit of time:<br/>	- 1 — Years<br/>	- 2 - Months<br/>	- 3 - Days<br/>	- 4 - Hours<br/>For example, this retrieves threats detected by AV for the last 7 days: filter=33001%20AmongTheLast%20[7,3].<br/>This retrieves security event counters for the other types for the last 3 months: filter=32001%20AmongTheLast%20[3,2].<br/>If you do not specify a filter, the API returns all of the security events for the last 30 days.<br/>Example: 33001%20AmongTheLast%20[7,3] |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -245,7 +245,7 @@ Retrieves counts of detected security events for the specified types.
 
 Retrieves a count of files and devices that Data Control identified with each type of Personally Identifiable Information (PII).
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -256,7 +256,7 @@ Retrieves a count of files and devices that Data Control identified with each ty
 
 Retrieves a list of devices with their protection status and other device information.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -267,7 +267,7 @@ Retrieves a list of devices with their protection status and other device inform
 | `$orderby` | `str` | Specifies how to order results. You can order by any parameter in the response and sort results in ascending or descending order.<br/>Specify a parameter name with any underscores removed, followed by a + (plus sign) and either asc (ascending) or desc (descending).<br/>For example, to order results by the host_name parameter in descending order, specify hostname+desc. If you do not specify a field to order by, the API will use the order in the database.<br/>Example: hostname+desc |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -278,7 +278,7 @@ Retrieves a list of devices with their protection status and other device inform
 
 Retrieves Full Encryption statistics.
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -296,7 +296,7 @@ Retrieves Full Encryption statistics.
 
 Retrieves Patch Management statistics.
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -313,14 +313,14 @@ Retrieves Patch Management statistics.
 
 Retrieves counters for security overview.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `period` | `integer` | Period of time to retrieve security event counters for. Specify one of these values:<br/>	- 1 - Previous 24 hours<br/>	- 7 - Previous 7 days<br/>	- 30 - Previous 30 days<br/>Example: 7 |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -337,7 +337,7 @@ Retrieves counters for security overview.
 
 Starts a task to scan the specified devices immediately.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -356,7 +356,7 @@ Starts a task to scan the specified devices immediately.
 | `execution_window_expiration` | `str` | Time period in which the scan must run before it times out. The default is 7 days.<br/>Example: 8.07:06:05 specifies 8 days, 7 hours, 6 minutes, and 5 seconds |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -367,7 +367,7 @@ Starts a task to scan the specified devices immediately.
 
 Initiates an action on the specified devices. For example, send an action to reboot a device.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -376,7 +376,7 @@ Initiates an action on the specified devices. For example, send an action to reb
 | `count_down_type` | `integer` | Amount of time to count down to the action. Specify one of these values:<br/>	- 1 - Immediate<br/>	- 2 - Fifteen minutes<br/>	- 3 - Thirty minutes<br/>	- 4 - One hour<br/>	- 5 - Two hours<br/>	- 6 - Four hours<br/>	- 7 - Eight hours |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -386,14 +386,14 @@ Initiates an action on the specified devices. For example, send an action to reb
 
 Stops isolation on the specified devices.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `device_ids` | `array` | List of IDs of devices to remove from isolation.<br/>Example: "cb509c17-7b88-461a-ba3b-3d43e29e6cd4","2c13685e-7d1f-4726-9ad3-5c8fa7718bab" |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -403,7 +403,7 @@ Stops isolation on the specified devices.
 
 Uninstalls protection from the specified devices.
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -412,4 +412,4 @@ Uninstalls protection from the specified devices.
 
 ## Extra
 
-Module **`Panda Security` v1.9**
+Module **`Panda Security` v1.10**

@@ -14,7 +14,7 @@ This module accepts no configuration.
 
 Consume messages from Microsoft Azure Eventhub
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -30,4 +30,4 @@ Consume messages from Microsoft Azure Eventhub
 
 ## Extra
 
-Module **`Microsoft Azure` v1.1.1**
+Module **`Microsoft Azure` v1.4.1**

@@ -1,10 +1,13 @@
-uuid: d971c8c7-b7d0-4de1-9b5c-b58235c1d8e4
+uuid: 2259adc3-9d93-4150-9c1c-46804e636084
 name: FortiWeb
 type: intake
 
 ## Overview
 
 This documentation details one way to collect and send FortiWeb logs to SEKOIA.IO: from the FortiWeb machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
+
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_2259adc3-9d93-4150-9c1c-46804e636084_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/fortiweb_do_not_edit_manually.md!}
 

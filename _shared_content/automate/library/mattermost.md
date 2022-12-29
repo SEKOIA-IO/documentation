@@ -14,7 +14,7 @@
 
 Post alert to Mattermost
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -28,7 +28,7 @@ Post alert to Mattermost
 
 Post message to Mattermost
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -39,4 +39,4 @@ Post message to Mattermost
 
 ## Extra
 
-Module **`Mattermost` v1.11**
+Module **`Mattermost` v1.12**

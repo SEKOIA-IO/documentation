@@ -12,7 +12,7 @@ This module accepts no configuration.
 
 Get the list of private domains
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -21,4 +21,4 @@ Get the list of private domains
 
 ## Extra
 
-Module **`Public Suffix` v1.11**
+Module **`Public Suffix` v1.12**

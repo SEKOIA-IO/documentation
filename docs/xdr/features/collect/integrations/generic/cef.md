@@ -8,6 +8,9 @@ If one of your applications or devices is not covered by one of the other intake
 
 Still we recommend using an intake tailored to your specific application or device, even with CEF, in order to ensure you get the most out of your logs. If an intake is missing, please [contact us](mailto:support@sekoia.io).
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_1d172ee6-cdc0-4713-9cfd-43f7d9595777_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/cef_do_not_edit_manually.md!}
 
 ## Configure
@@ -20,4 +23,4 @@ Please refer to the documentation of your vendor to forward events to your rsysl
 
 
 ## Further Reading
-- [CEF specification](https://community.microfocus.com/dcvta86296/attachments/dcvta86296/connector-documentation/1197/2/CommonEventFormatV25.pdf)
+- [CEF specification](https://www.microfocus.com/documentation/arcsight/arcsight-smartconnectors/pdfdoc/common-event-format-v25/common-event-format-v25.pdf)

@@ -14,7 +14,7 @@ Google module
 
 Connect to the Google Cloud Pub/Sub topic and return events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -26,7 +26,7 @@ Connect to the Google Cloud Pub/Sub topic and return events
 | `chunk_size` | `integer` | The size of chunks for the batch processing (max is 1000) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -38,7 +38,7 @@ Connect to the Google Cloud Pub/Sub topic and return events
 
 Execute the given query and return the results
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -46,7 +46,7 @@ Execute the given query and return the results
 | `parameters` | `array` | Parameters to use inside the query |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -55,4 +55,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google` v1.5.3**
+Module **`Google` v1.6.0**

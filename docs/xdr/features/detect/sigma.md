@@ -113,8 +113,15 @@ It supports the following expressions:
   **Example** : Let's suppose we have 4 `Search-Identifier`s: `selection1`, `selection2`, `selection3` and `pattern`. The condition can be `1 of selection* and pattern`.
 
 - Negation with `not`
-
+  
   **Example**: `selection1 and not selection2`
+  
+  Now if in that example selection2 is simply `process.parent.name: 'test'` for instance, **Note that you might need to put in selection1 an "exists" value for the field you are excluding**:
+  ```
+  selection1:
+    process.parent.name: '*'
+  ```
+  Otherwise the rule will also raise an alert if the field `process.parent.name` does not exist. Sometimes it is not an issue, however it can be in case of high false positives without that field for instance.
 
 ## Correlation
 Detection objects apply a signature to a single event to determine if there is a match. What if you want to create more complex signatures that would require several events to match? You can do this with Sigma Correlation rules.

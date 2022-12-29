@@ -35,22 +35,51 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "CEF:1|Panda Security|paps|02.45.00.0000|registryc|registryc|1|Client=1212122 Date=2018-09-27 02:26:52.200188 MachineName=DESKTOP-PC MachineIP=192.168.0.11 User=NT AUTHORITY\\SYSTEM MUID=713FC2B45B429J291EB53467357AC1B7 Op=CreateExeKey Hash=C86854DF4F3AEC59D523DBAD1F5031FD DriveType=Fixed Path=SYSTEMX86|\\CompatTelRunner.exe ValidSig=true Company=Microsoft Corporation Broken=true ImageType=EXE 32 ExeType=Unknown Prevalence=Medium PrevLastDay=Low Cat=Goodware MWName= TargetPath=3|PROGRAM_FILESX86|\\Windows Defender\\MsMpeng.exe RegKey=\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\WicaAvPathsExpiredTemp?0",
         "event": {
+            "kind": "event",
             "category": [
                 "host"
             ],
-            "kind": "event",
-            "outcome": "success",
             "type": [
                 "info"
             ]
         },
+        "siemfeeder": {
+            "RegKey": "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\WicaAvPathsExpiredTemp?0",
+            "TargetPath": "3|PROGRAM_FILESX86|\\Windows Defender\\MsMpeng.exe",
+            "Cat": "Goodware",
+            "PrevLastDay": "Low",
+            "Prevalence": "Medium",
+            "ExeType": "Unknown",
+            "ImageType": "EXE 32",
+            "Broken": "true",
+            "Company": "Microsoft Corporation",
+            "ValidSig": "true",
+            "Path": "SYSTEMX86|\\CompatTelRunner.exe",
+            "DriveType": "Fixed",
+            "Hash": "C86854DF4F3AEC59D523DBAD1F5031FD",
+            "Op": "CreateExeKey",
+            "MUID": "713FC2B45B429J291EB53467357AC1B7",
+            "User": "NT AUTHORITY\\SYSTEM",
+            "MachineIP": "192.168.0.11",
+            "MachineName": "DESKTOP-PC",
+            "Date": "2018-09-27 02:26:52.200188",
+            "Client": "1212122"
+        },
         "host": {
-            "id": "713FC2B45B429J291EB53467357AC1B7",
-            "name": "DESKTOP-PC"
+            "name": "DESKTOP-PC",
+            "id": "713FC2B45B429J291EB53467357AC1B7"
+        },
+        "source": {
+            "ip": "192.168.0.11",
+            "address": "192.168.0.11"
+        },
+        "user": {
+            "name": "NT AUTHORITY\\SYSTEM"
         },
         "registry": {
-            "key": "\\Windows Defender\\MsMpeng.exe RegKey=\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\WicaAvPathsExpiredTemp?0"
+            "key": "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\WicaAvPathsExpiredTemp?0"
         },
         "related": {
             "ip": [
@@ -59,29 +88,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "NT AUTHORITY\\SYSTEM"
             ]
-        },
-        "siemfeeder": {
-            "broken": "true",
-            "cat": "Goodware",
-            "client": "1212122",
-            "company": "Microsoft Corporation",
-            "date": "2018-09-27 02:26:52.200188",
-            "drivetype": "Fixed",
-            "exetype": "Unknown",
-            "hash": "C86854DF4F3AEC59D523DBAD1F5031FD",
-            "imagetype": "EXE 32",
-            "op": "CreateExeKey",
-            "prevlastday": "Low",
-            "prevalence": "Medium",
-            "targetpath": "3",
-            "validsig": "true"
-        },
-        "source": {
-            "address": "192.168.0.11",
-            "ip": "192.168.0.11"
-        },
-        "user": {
-            "name": "NT AUTHORITY\\SYSTEM"
         }
     }
     	
@@ -104,21 +110,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`host.name` | `keyword` | Name of the host. |
 |`registry.key` | `keyword` | Hive-relative path of keys. |
 |`registry.path` | `keyword` | Full path, including hive, key and value |
-|`siemfeeder.broken` | `keyword` | None |
-|`siemfeeder.cat` | `keyword` | None |
-|`siemfeeder.client` | `keyword` | None |
-|`siemfeeder.company` | `keyword` | None |
-|`siemfeeder.date` | `keyword` | None |
-|`siemfeeder.drivetype` | `keyword` | None |
-|`siemfeeder.exetype` | `keyword` | None |
-|`siemfeeder.hash` | `keyword` | None |
-|`siemfeeder.imagetype` | `keyword` | None |
-|`siemfeeder.mwname` | `keyword` | None |
-|`siemfeeder.op` | `keyword` | None |
-|`siemfeeder.prevalence` | `keyword` | None |
-|`siemfeeder.prevlastday` | `keyword` | None |
-|`siemfeeder.targetpath` | `keyword` | None |
-|`siemfeeder.validsig` | `keyword` | None |
 |`source.ip` | `ip` | IP address of the source. |
 |`user.name` | `keyword` | Short name or login of the user. |
 

@@ -8,7 +8,6 @@ SEKOIA.IO
 | --------- | ------- | --------------------------- |
 | `api_key` | `string` | SEKOIA.IO API key |
 | `base_url` | `string` | SEKOIA.IO base URL (ex. https://api.sekoia.io) |
-| `liveapi_url` | `string` | SEKOIA.IO's LiveAPI URL (ex. wss://live.sekoia.io) |
 
 ## Triggers
 
@@ -16,7 +15,14 @@ SEKOIA.IO
 
 A comment was added to an existing Alert
 
-#### Outputs
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+
+
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -29,13 +35,23 @@ A comment was added to an existing Alert
 | `urgency` | `integer` | Current urgency of the Alert. |
 | `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
 | `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
 
 
 ### Alert Created
 
 A new Alert was created in the Operation Center
 
-#### Outputs
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+
+
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -48,13 +64,23 @@ A new Alert was created in the Operation Center
 | `urgency` | `integer` | Current urgency of the Alert. |
 | `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
 | `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
 
 
 ### Alert Status Changed
 
 The status of an existing alert was changed
 
-#### Outputs
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+
+
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -67,13 +93,23 @@ The status of an existing alert was changed
 | `urgency` | `integer` | Current urgency of the Alert. |
 | `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
 | `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
 
 
 ### Alert Updated
 
 An existing alert was updated
 
-#### Outputs
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+
+
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -86,13 +122,16 @@ An existing alert was updated
 | `urgency` | `integer` | Current urgency of the Alert. |
 | `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
 | `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
 
 
 ### Manual Trigger
 
 Webhook Trigger to receive specific SEKOIA.IO Alerts
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -103,7 +142,14 @@ Webhook Trigger to receive specific SEKOIA.IO Alerts
 
 Create an event for each alert creation or modification
 
-#### Outputs
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+
+
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -116,6 +162,9 @@ Create an event for each alert creation or modification
 | `urgency` | `integer` | Current urgency of the Alert. |
 | `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
 | `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
 
 ## Actions
 
@@ -123,7 +172,7 @@ Create an event for each alert creation or modification
 
 Mark as active a countermeasure
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -131,7 +180,7 @@ Mark as active a countermeasure
 | `comment` | `object` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -162,7 +211,7 @@ Mark as active a countermeasure
 
 Add an attribute to an asset
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -171,7 +220,7 @@ Add an attribute to an asset
 | `value` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -183,7 +232,7 @@ Add an attribute to an asset
 
 Adds a key to an asset
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -192,7 +241,7 @@ Adds a key to an asset
 | `value` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -204,7 +253,7 @@ Adds a key to an asset
 
 Attach one or more alerts to a specific case
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -212,7 +261,7 @@ Attach one or more alerts to a specific case
 | `alerts` | `array` | The list of identifiers of alerts to add |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -222,14 +271,14 @@ Attach one or more alerts to a specific case
 
 Create a notification for a specific tracker
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `data` | `object` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -239,7 +288,7 @@ Create a notification for a specific tracker
 
 Create a new asset
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -253,7 +302,7 @@ Create a new asset
 | `community_uuid` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -274,7 +323,7 @@ Create a new asset
 
 Delete the requested asset
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -284,7 +333,7 @@ Delete the requested asset
 
 Mark as denied a countermeasure
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -292,7 +341,7 @@ Mark as denied a countermeasure
 | `comment` | `object` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -319,11 +368,38 @@ Mark as denied a countermeasure
 | `assignee` | `string` | UUID of the profile assigned to the progress of the countermeasure |
 | `created_at` | `string` | Date the countermeasure was created |
 
+### Get aggregation query
+
+Make an aggregation query
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `aggregation_type` | `string` | The aggregation type. Can be `avg`, `cardinality`, `max`, `min`, `sum` or `count`. |
+| `aggregation_field` | `string` | The field on which apply the aggregation. Should be null only for `count` aggregation. |
+| `query_term` | `string` |  |
+| `earliest_time` | `string` |  |
+| `latest_time` | `string` |  |
+| `minutes_per_bucket` | `integer` |  |
+| `filters` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `aggregations` | `array` |  |
+| `anomaly_detection_candidate_score_y_acf1` | `number` |  |
+| `anomaly_detection_candidate_score_y_acf5` | `number` |  |
+| `anomaly_detection_candidate_score_seas_acf1` | `number` |  |
+| `anomaly_detection_candidate` | `boolean` |  |
+
 ### Get Alert
 
 Retrieve the definition of an alert
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -331,7 +407,7 @@ Retrieve the definition of an alert
 | `stix` | `boolean` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -373,7 +449,7 @@ Retrieve the definition of an alert
 
 Get the most common values of fields observed under a specific query
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -383,7 +459,7 @@ Get the most common values of fields observed under a specific query
 | `fields` | `string` | Fields to compute the most common values (use a coma between fields) |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -393,7 +469,7 @@ Get the most common values of fields observed under a specific query
 
 Query events
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -402,7 +478,7 @@ Query events
 | `latest_time` | `string` | The latest time of the time range of the search |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -412,7 +488,7 @@ Query events
 
 Create Content Proposal
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -424,7 +500,7 @@ Create Content Proposal
 | `assigned_to` | `string` | Avatar assigned to the content proposal |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -435,7 +511,7 @@ Create Content Proposal
 
 Upload observables to inthreat
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -446,7 +522,7 @@ Upload observables to inthreat
 
 find alerts that match your filters
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -479,7 +555,7 @@ find alerts that match your filters
 | `with_count` | `boolean` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -491,7 +567,7 @@ find alerts that match your filters
 
 Return a list of assets according to the filters
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -510,7 +586,7 @@ Return a list of assets according to the filters
 | `direction` | `string` | The direction to sort the list |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -521,7 +597,7 @@ Return a list of assets according to the filters
 
 Edit the details of an alert
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -534,7 +610,7 @@ Edit the details of an alert
 | `title` | `string` | Title of the alert |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -573,7 +649,7 @@ Edit the details of an alert
 
 Attach a new comment on an Alert
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -582,7 +658,7 @@ Attach a new comment on an Alert
 | `author` | `string` | Author of the comment |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -598,7 +674,7 @@ Attach a new comment on an Alert
 
 Creates a content proposal with the content extracted from the specified PDF
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -607,7 +683,7 @@ Creates a content proposal with the content extracted from the specified PDF
 | `source_ref` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -617,7 +693,7 @@ Creates a content proposal with the content extracted from the specified PDF
 
 Creates a content proposal with the content extracted from the specified URL
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -625,7 +701,7 @@ Creates a content proposal with the content extracted from the specified URL
 | `source_ref` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -635,14 +711,14 @@ Creates a content proposal with the content extracted from the specified URL
 
 Predict the state of an alert
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `alert` | `object` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -652,7 +728,7 @@ Predict the state of an alert
 
 
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -665,7 +741,7 @@ Predict the state of an alert
 | `keep_file_after_push` | `boolean` | If set and if the events are supplied through a file, this option keeps the file after the events were sent to the intake |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -675,14 +751,14 @@ Predict the state of an alert
 
 Retrieve the details of a report
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` |  |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -692,14 +768,14 @@ Retrieve the details of a report
 
 Return an asset according its identifier
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The identifier of the asset |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -720,7 +796,7 @@ Return an asset according its identifier
 
 Triggers an action on an alert to update its status
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -729,7 +805,7 @@ Triggers an action on an alert to update its status
 | `comment` | `string` | a comment to describe why the alert status has changed |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -738,4 +814,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.17**
+Module **`SEKOIA.IO` v2.28**

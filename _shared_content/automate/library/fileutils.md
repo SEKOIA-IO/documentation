@@ -12,7 +12,7 @@ This module accepts no configuration.
 
 Read the json file and return its content evaluated against specified jsonpath
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -23,7 +23,7 @@ Read the json file and return its content evaluated against specified jsonpath
 | `to_file` | `boolean` | Whether the event should be saved in a file or sent directly |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -34,7 +34,7 @@ Read the json file and return its content evaluated against specified jsonpath
 
 Read the XML file and return its content evaluated against specified xpath
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -46,7 +46,7 @@ Read the XML file and return its content evaluated against specified xpath
 | `to_file` | `boolean` | Whether the event should be saved in a file or sent directly |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -56,4 +56,4 @@ Read the XML file and return its content evaluated against specified xpath
 
 ## Extra
 
-Module **`fileutils` v1.18**
+Module **`fileutils` v1.19**

@@ -12,7 +12,7 @@ This module accepts no configuration.
 
 Download the IPtoASN database recurrently
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -20,7 +20,7 @@ Download the IPtoASN database recurrently
 | `interval` | `integer` | Interval in hours to wait between each trigger call. Defaults to 24. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -31,4 +31,4 @@ Download the IPtoASN database recurrently
 
 ## Extra
 
-Module **`IPtoASN` v1.20**
+Module **`IPtoASN` v1.21**

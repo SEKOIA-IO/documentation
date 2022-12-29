@@ -14,7 +14,7 @@ Mandrill is a transactional email platform from Mailchimp.
 
 Send a new transactional message through Mandrill
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -24,7 +24,7 @@ Send a new transactional message through Mandrill
 | `send_at` | `string` | When this message should be sent as a UTC timestamp in YYYY-MM-DD HH:MM:SS format. If you specify a time in the past, the message will be sent immediately. An additional fee applies for scheduled email, and this feature is only available to accounts with a positive balance. |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -33,4 +33,4 @@ Send a new transactional message through Mandrill
 
 ## Extra
 
-Module **`Mandrill` v1.11**
+Module **`Mandrill` v2.0.0**

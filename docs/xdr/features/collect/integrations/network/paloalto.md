@@ -6,6 +6,9 @@ type: intake
 
 Palo Alto Networks offers an enterprise cybersecurity platform which provides network security, cloud security, endpoint protection, and various cloud-delivered security services.
 
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_903ec1b8-f206-4ba5-8563-db21da09cafd_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/paloalto_do_not_edit_manually.md!}
 
 ## Configure

@@ -188,11 +188,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`source.ip` | `ip` | IP address of the source. |
 |`vadesecure.attachments` | `array` | vadesecure.to_header |
-|`vadesecure.campaign.actions` | `array` | None |
-|`vadesecure.campaign.id` | `keyword` | None |
-|`vadesecure.campaign.nb_messages_remediated` | `long` | None |
-|`vadesecure.campaign.nb_messages_remediated_read` | `long` | None |
-|`vadesecure.campaign.nb_messages_remediated_unread` | `long` | None |
+|`vadesecure.campaign.actions` | `array` | The actions carried out for the remediation campaign. |
+|`vadesecure.campaign.id` | `keyword` | The ID of the campaign |
+|`vadesecure.campaign.nb_messages_remediated` | `long` | The total number of messages involved in the remediation. |
+|`vadesecure.campaign.nb_messages_remediated_read` | `long` | The number of total read messages involved in the remediation. |
+|`vadesecure.campaign.nb_messages_remediated_unread` | `long` | The number of total unread messages involved in the remediation. |
 |`vadesecure.folder` | `keyword` | vadesecure.folder |
 |`vadesecure.from_header` | `keyword` | vadesecure.from_header |
 |`vadesecure.status` | `keyword` | vadesecure.status |

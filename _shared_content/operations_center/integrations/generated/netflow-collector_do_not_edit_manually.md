@@ -162,9 +162,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.response.mime_type` | `keyword` | Mime type of the body of the response. |
 |`http.response.status_code` | `long` | HTTP response status code. |
 |`http.version` | `keyword` | HTTP version. |
-|`netflow.bgp.next_hop` | `keyword` | None |
-|`netflow.next_hop` | `keyword` | None |
-|`netflow.tcp.flags` | `number` | None |
+|`netflow.bgp.next_hop` | `keyword` | Address of next-hop router in the BGP domain |
+|`netflow.next_hop` | `keyword` | Address of next-hop router |
+|`netflow.tcp.flags` | `number` | Cumulative of all the TCP flags seen for this flow |
 |`network.application` | `keyword` | Application level protocol name. |
 |`network.bytes` | `long` | Total bytes transferred in both directions. |
 |`network.iana_number` | `keyword` | IANA Protocol Number. |

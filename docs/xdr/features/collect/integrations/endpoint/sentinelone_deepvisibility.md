@@ -32,6 +32,8 @@ Please find bellow a short list of activities that are available for security su
 - Scheduled Task Start
 - Scheduled Task Trigger
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/sentinelone_do_not_edit_manually.md!}
 
 ## Configure

@@ -13,7 +13,7 @@ An alert can have five possible statuses:
 | **Closed** | All necessary actions have been applied to the alert. This status is a final status. | No action accepted |
 | **Rejected** | The alert was a false positive. This status is a final status. |  No action accepted |
 
-### Alerts workflow
+### Alerts Workflow
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
 
 ### Alert Urgency
@@ -28,37 +28,117 @@ The urgency can have two different representations on the interface: a numerical
 
 | Display | Value |
 | --- | --- |
-| Low | [0-20[ |
-| Moderate | [20-40[ |
-| High | [40-60[ |
-| Major | [60-80[ |
-| Urgent | [80-100] |
+| Low | [0-50[ |
+| Medium | [50-75[ |
+| High | [75-100] |
 
+
+### Alert Similarity 
+Alert similarity (Occurence) is the process by which we collect similar events in the same alert. 
+The information is available in the Alerts table → Column `Occurrence`. 
+
+
+**Example**
+
+If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert. 
+
+### Similarity strategies
+Alerts are considered similar if a list of fields defined by the similarity strategy have the same values for all events. Some fields may also be grouped together to specify that their values may be swapped.
+There are three possibilities to define the similarity strategy to use. By order:  
+
+1. [Similarity is forced by the rule](#similarity-by-rule)
+2. [Similarity is forced by event](#similarity-by-event)
+3. [Similarity by default](#default-similarity)
+
+#### Similarity by rule
+
+Rules written by SEKOIA.IO and available in the Rules Catalog may define specific similarity strategies.
+
+Similarity strategies by rule are not shown and cannot be edited on the interface. The API may be used to access this parameter.
+
+
+#### Similarity by event
+
+Depending on the events that triggered an alert, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly.
+
+If the event matches one of the conditions listed below, the associated similarity strategy is used.
+
+| Conditions | Similarity Strategy |
+| --- | --- |
+| If `dns.question.name` exists | [`sekoiaio.entity.uuid`, [`source.ip`, `destination.ip`], `dns.question.name`] |
+| If `event.dialect` is Windows and `user.name` exists | [`sekoiaio.entity.uuid`, `user.name`, `user.id`] |
+| If `event.dialect` is Azure Windows and `process.name` exists | [`sekoiaio.entity.uuid`, `process.name`, `process.command_line`] |
+| If `event.dialect` is Azure Active Directory and `user.name` exists and `action.name` exists  | [`sekoiaio.entity.uuid`, `user.name`, `user.id`, `action.name`, `action.type`, `action.outcome`] |
+| If `event.dialect` is Azure Active Directory and `action.name` exists | [`sekoiaio.entity.uuid`, `action.name`, `action.type`, `action.outcome`] |
+| If `event.dialect` is postfix | [`sekoiaio.entity.uuid`, `email.from.address`] |
+| If `file.hash.sha256`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.sha256`] |
+| If `file.hash.sha1` matches the rule | [`sekoiaio.entity.uuid`, `file.hash.sha1`] |
+| If `file.hash.md5`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.md5`] |
+
+!!!note
+    In case similarity forced by your events does not answer your needs, feel free to contact us at support@sekoia.io.
+
+#### Default similarity
+
+If there is no similarity forced by the rule or by the event, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+
+`source.ip` and `destination.ip` can be used interchangeably. 
+
+!!! important 
+    When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
+    
+#### Similarity and alert status
+As long as there is an existing similar alert with status **Pending**, **Acknowledged** or **Ongoing**, new matches are added to the alert as occurrences.
+
+If only **Closed** or **Rejected** alerts are similar, a new alert is created. **Closed** and **Rejected** similar alerts are listed inside the [Similar Alerts](#similar-alerts) tab.
 ## Alert types and categories
 The Alert type is associated with the rule that triggered it but can be changed with the value associated to specific indicators in case of CTI rules.
 The Alert type is defined according to a custom set of values derived from the Reference Incident Classification Taxonomy of ENISA.
 ![alert_categories](/assets/operation_center/alerts/alert_categories.png){: style="max-width:100%"}
 
 ## Alerts listing
-When you first connect to [SEKOIA.IO](http://app.sekoia.io/), the alerts list will display the last 10 alerts raised on your community ordered by Date.
+
+When you first connect to [SEKOIA.IO](http://app.sekoia.io/), the alerts list will display the last 10 alerts raised on your community ordered by `Date`.
 ![alert_listing](/assets/operation_center/alerts/alert_listing.png){: style="max-width:100%"}
+
+### Main features
 
 From the left to the right, 7 features are available on the top screen:
 
 - A `refresh` button to show the newly generated alerts
 - Two tabs: `All` to list all alerts and `New today` to list today’s alerts
 - A `show/hide` columns button that lets you display fields you’re interested in. You can select or deselect columns but also drag and drop them depending on the order you need
-- `filters`that let you display alerts by order of Most Frequent, Recently Updated, Recently Created or Most Urgent
-- Filters that let you display alerts by `status` Status: Pending, Acknowledged, Ongoing, Rejected or Closed
-- Advanced filters capacities: Date range, Entity, Urgency, Type, Rule, Asset, Threats, Source and Target.
+- Filters that let you display alerts by order of `Most Frequent`, `Recently Updated`, `Recently Created` or `Most Urgent`
+- Filters that let you display alerts by `status`: Pending, Acknowledged, Ongoing, Rejected or Closed
+- Advanced filters capacities: Date range, Entity, Urgency, Type, Rule, Asset, Threats, Source and Target
+- Direct links to the [Intelligence Center](https://docs.sekoia.io/cti/) by clicking on the listed `related threats`
 
-On the main alert listing, it is also possible to:
+!!! tip
+    To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.  
 
-- Select multiple alerts in the same time, then choose and apply a massive change of status
-- Filter all rules with the same Rule Name
-- Get more information on the related threats by clicking on it, so you should be redirected on the Intelligence Center focused on this specific Threat
+### Bulk actions
 
-By default, the alert listing displays the following information (more information on the meaning of these fields is provided after the Alert Details section):
+On the main alert listing, it is possible to treat alerts faster. With the bulk actions, users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context. 
+
+![bulk-action](/assets/operation_center/alerts/bulk-action.png){align=right}
+
+To change statuses in bulk, you have to: 
+
+- Apply filters to alerts listing if needed
+- Select some or all alerts in the list using the checkbox in the upper left of the table. A counter will let you know how many alerts are selected 
+- Choose the action you want to apply to all these alerts 
+- Click on `Apply`
+
+A modal with the total number of alerts that can be edited is shown. Some alerts will not be included if their status cannot be changed to the status chosen by the user. Learn more about alert status change in the [Alerts workflow](#alerts-workflow) section. 
+
+- Leave a comment explaining your decision and save your changes. 
+
+!!! note 
+    It is recommended to leave a comment to provide more context to the status change but it's not mandatory. 
+
+### Alerts table columns
+
+By default, the alert listing displays the following columns:
 
 - A `Selector` so you can perform an action on multiple alerts on the same time
 - A `Similarity` counter, showing the alert was raised multiple time for the same reason, rather than simply adding a new line on the alert feed
@@ -69,13 +149,13 @@ By default, the alert listing displays the following information (more informati
 - The `Type` of alert
 - The `Name` of the rule which triggered the alert
 - The `Threats` related to the alert in termes of malicious activities, related tools, Campaign...
-- A `first seen` and `last seen`date
+- A `first seen` and `last seen` date
 - The `ID` and the `UUID` of the alert
 - The `source` and `target`of the alert
 
 > Your custom configuration will be saved in order to allow you to keep your selected filters when you come back to this page.
 >
-> For Partners, an additional filter is available in order to display all or a subset of alerts related to its managed communities.
+> For Partners, an additional filter is available in order to display all or a subset of alerts related to their managed communities.
 >
 > The alert listing also displays the Communities related to the alerts.
 
@@ -167,17 +247,43 @@ The `Value Selection` mode can be toggled with the button at the top right of th
 - [Create an Alert Filter](#create-an-alert-filter)
 - [Search events with these values](#search-events-with-this-value)
 
-### Create an Alert Filter
+#### Create an Alert Filter
 
 Alert Filters can be used to prevent known false positives from raising the same alert in the future.
 
-You can create an Alert Filter for the Rule that triggered the alert easily by selecting multiple values and clicking on the Alert Filter button. The filter's pattern is automatically created from selected values.
+![alert-filter](/assets/operation_center/alerts/alert-filter.png){align=right}
 
-By default, `Reject the Alert` is selected to automatically reject the alert after creating the Alert Filter.
+You can create an Alert Filter for the rule that triggered the alert by following these steps: 
 
-### Search Events with this value
+- On the `alert`page, go to `events` tab 
+- Click on `Toggle value selection` button in the upper right of the logs list
+- Select `values` you want to filter by clicking on them in the logs list
+- Click on the button `Create an Alert filter` as shown in the screenshot
+- As the modal appears, fill in the `name` of the alert filter (mandatory)
+- Provide a `description` (optional)
+- The filter's pattern is automatically created from selected values.
+- Click on `Add` to add this alert filter to the rule that triggered this alert
 
-The "Search Events with this value" feature can be used to perform a search into all events that occurred during the alert's timeframe (+- 1 hour). The search query is automatically created from selected values. A side panel opens with the search results, allowing to investigate an alert without leaving its page.
+!!!note 
+    By default, `Reject the Alert` is selected by default to automatically reject the alert after creating the Alert Filter.
+
+
+#### Search Events with this value
+
+The "Search Events with this value" feature can be used to perform a search into all events that occurred during the alert's timeframe (+- 1 hour).
+
+![search-events](/assets/operation_center/alerts/search-events.png){align=right}
+
+The search query is automatically created from selected values. 
+
+To search events with a value: 
+
+- On the `alert`page, go to `events` tab 
+- Click on `Toggle value selection` button in the upper right of the logs list
+- Select `values` you want to search for by clicking on them in the logs list
+- Click on the button `Perform a search` as shown in the screenshot
+
+A side panel opens with the search results, allowing you to investigate an alert without leaving the page.
 
 ### Graph Investigation
 

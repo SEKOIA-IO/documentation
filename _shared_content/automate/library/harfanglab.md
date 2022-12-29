@@ -17,14 +17,14 @@ HarfangLab is an Endpoint detection and response (EDR) solution certified by ANS
 
 Deisolate an agent
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `id` | `string` | The identifier of the agent to deisolate |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -35,14 +35,14 @@ Deisolate an agent
 
 Isolate an agent
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `id` | `string` | The identifier of the agent to isolate |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -53,14 +53,14 @@ Isolate an agent
 
 Deisolate a group of endpoints
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `id` | `string` | The identifier of the group to deisolate |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -71,14 +71,14 @@ Deisolate a group of endpoints
 
 Isolate a group of endpoints
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `id` | `string` | The identifier of the group to isolate |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -89,7 +89,7 @@ Isolate a group of endpoints
 
 Get the list of named pipe on the systems
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -97,7 +97,7 @@ Get the list of named pipe on the systems
 | `target_groups` | `string` | Targeted groups identifier |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -110,7 +110,7 @@ Get the list of named pipe on the systems
 
 Get the list of processes on the systems
 
-#### Arguments
+**Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -121,7 +121,7 @@ Get the list of processes on the systems
 | `get_signatures_list` | `boolean` | Get signature info of processes and DLLs |
 
 
-#### Outputs
+**Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
@@ -133,4 +133,4 @@ Get the list of processes on the systems
 
 ## Extra
 
-Module **`HarfangLab` v1.10**
+Module **`HarfangLab` v1.11**

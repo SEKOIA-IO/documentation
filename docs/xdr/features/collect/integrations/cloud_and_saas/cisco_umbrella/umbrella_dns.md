@@ -5,6 +5,8 @@ type: intake
 ## Overview
 Cisco Umbrella offers flexible, cloud-delivered security. It combines multiple security functions into one solution, so that protection can be extended to devices, remote users, and distributed locations anywhere.
 
+{!_shared_content/operations_center/detection/generated/suggested_rules_90179796-f949-490c-8729-8cbc9c65be55_do_not_edit_manually.md!}
+
 {!_shared_content/operations_center/integrations/generated/umbrella-dns_do_not_edit_manually.md!}
 
 ## Configure

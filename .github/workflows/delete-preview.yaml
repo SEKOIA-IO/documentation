@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/github-script@v3.1.0
+        uses: actions/github-script@v6.3.3
         with:
           script: |
-            var artifacts = await github.actions.listWorkflowRunArtifacts({
+            var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
                owner: context.repo.owner,
                repo: context.repo.repo,
                run_id: ${{github.event.workflow_run.id }},
@@ -24,7 +24,7 @@ jobs:
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "PR"
             })[0];
-            var download = await github.actions.downloadArtifact({
+            var download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
                repo: context.repo.repo,
                artifact_id: matchArtifact.id,
@@ -37,7 +37,7 @@ jobs:
 
       - name: Get PR number
         id: pr_number
-        run: echo "::set-output name=pr_number::$(cat PR_NUMBER)"
+        run: echo "pr_number=$(cat PR_NUMBER)" >> $GITHUB_OUTPUT
 
       - name: Install Swift
         run: |
@@ -56,7 +56,7 @@ jobs:
           OS_REGION_NAME: "GRA"
 
       - name: Find Comment
-        uses: peter-evans/find-comment@v1
+        uses: peter-evans/find-comment@v2
         id: fc
         with:
           issue-number: ${{ steps.pr_number.outputs.pr_number }}
@@ -64,7 +64,7 @@ jobs:
           body-includes: Newest code from ${{ github.actor}} has been published to
 
       - name: Add comment to PR
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ steps.pr_number.outputs.pr_number }}

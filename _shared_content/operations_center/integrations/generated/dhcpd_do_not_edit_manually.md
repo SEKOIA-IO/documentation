@@ -33,23 +33,37 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "DHCPACK on 10.100.102.108 to 6c:88:14:1d:97:1c (PDB746) via 10.100.100.4",
         "event": {
-            "outcome": "success",
-            "category": "network",
             "kind": "event",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "ack"
         },
-        "destination": {
-            "ip": "10.100.100.4"
-        },
         "source": {
             "ip": "10.100.102.108",
-            "address": "PDB746",
+            "mac": "6c:88:14:1d:97:1c",
             "domain": "PDB746",
-            "mac": "6c:88:14:1d:97:1c"
+            "address": "PDB746"
+        },
+        "destination": {
+            "ip": "10.100.100.4",
+            "address": "10.100.100.4"
+        },
+        "related": {
+            "ip": [
+                "10.100.100.4",
+                "10.100.102.108"
+            ],
+            "hosts": [
+                "PDB746"
+            ]
         }
     }
     	
@@ -61,20 +75,30 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "DHCPDISCOVER from ac:cc:8e:b0:2b:8c via 192.168.102.7: network 192.168.102.0/23: no free leases",
         "event": {
-            "outcome": "success",
-            "category": "network",
             "kind": "event",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "discover"
         },
-        "destination": {
-            "ip": "192.168.102.7"
-        },
         "source": {
             "mac": "ac:cc:8e:b0:2b:8c"
+        },
+        "destination": {
+            "ip": "192.168.102.7",
+            "address": "192.168.102.7"
+        },
+        "related": {
+            "ip": [
+                "192.168.102.7"
+            ]
         }
     }
     	
@@ -86,11 +110,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "DHCPRELEASE of 10.17.81.182 from 00:08:5d:71:92:15 (6867i00085D719105) via enp4s0f0 (found)",
         "event": {
-            "outcome": "success",
-            "category": "network",
             "kind": "event",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "release"
@@ -98,7 +126,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "10.17.81.182",
             "mac": "00:08:5d:71:92:15",
-            "domain": "6867i00085D719105"
+            "domain": "6867i00085D719105",
+            "address": "6867i00085D719105"
+        },
+        "related": {
+            "hosts": [
+                "6867i00085D719105"
+            ],
+            "ip": [
+                "10.17.81.182"
+            ]
         }
     }
     	
@@ -110,11 +147,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "DHCPREQUEST for 10.100.102.108 from 6c:88:14:1d:96:0c (PDB746) via 10.100.100.4",
         "event": {
-            "outcome": "success",
-            "category": "network",
             "kind": "event",
-            "type": "connection"
+            "category": [
+                "network"
+            ],
+            "type": [
+                "connection"
+            ]
         },
         "dhcpd": {
             "query": "request"
@@ -122,10 +163,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "source": {
             "ip": "10.100.102.108",
             "mac": "6c:88:14:1d:96:0c",
-            "domain": "PDB746"
+            "domain": "PDB746",
+            "address": "PDB746"
         },
         "destination": {
-            "ip": "10.100.100.4"
+            "ip": "10.100.100.4",
+            "address": "10.100.100.4"
+        },
+        "related": {
+            "ip": [
+                "10.100.100.4",
+                "10.100.102.108"
+            ],
+            "hosts": [
+                "PDB746"
+            ]
         }
     }
     	
@@ -142,7 +194,7 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`destination.ip` | `ip` | IP address of the destination. |
-|`dhcpd.query` | `keyword` | None |
+|`dhcpd.query` | `keyword` | name of the DHCP query |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.outcome` | `keyword` | The outcome of the event. The lowest level categorization field in the hierarchy. |
