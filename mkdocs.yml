@@ -228,9 +228,12 @@ nav:
         - Whois: xdr/features/automate/library/whois.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
   - Usecases:
-    - Synchronise Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
+    - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
   - FAQ: 
     - General: xdr/FAQ.md
+    - Alerts: xdr/FAQ/Alerts_qa.md
+    - Events: xdr/FAQ/Events_qa.md
+    - Rules: xdr/FAQ/Rules_qa.md
     - SEKOIA.IO Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Develop:
     - Overview: xdr/develop/index.md
