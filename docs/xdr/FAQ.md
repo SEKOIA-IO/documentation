@@ -35,6 +35,14 @@ This way, you will be able to exactly identify what data is sent to SEKOIA.IO.
 ```
 
 
+# Logs
+## Retention
+Logs are available and displayed for 90 days in SEKOIA.IO.
+
+## Archiving & Rehydratation
+Please contact `support@sekoia.io` for more information on archives and events rehydratation, with a clear description of your needs. 
+
+
 # Events
 
 ## What happens when you add events to an alert? 
@@ -78,4 +86,5 @@ If it is involved in the current alert, the bell is not displayed.
 Besides matching a rule in real time, an alert can be triggered with a delay when: 
     - An IOC is published, old events are scanned and if an event matches, the rule will automatically trigger an alert. 
     - Reingesting old logs
+
 
