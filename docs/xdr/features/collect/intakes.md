@@ -482,6 +482,21 @@ The editor contains a list of smart descriptions. Each description has the follo
 
 When several conditions match the same event, the smart description with the most conditions is used as you can see in the test section.
 
+## Notification when an intake is not receiving events
+
+You can set notification when the intake does not receive events:
+- in the intake page by clicking on the bell (next to the delete icon)
+- in the `Notification page` of the `User Center`
+
+![Intake notification](docs/assets/operation_center/intakes/2022-12-30_16h35_06.png)
+
+Configuration setup:
+- Trigger : `No Events are received`
+- Period : Period of time when the intake selected did not receive any events
+- Intake
+- Actions to perform :  Choose a channel where the notification will be sent
+- Notification name
+
 ---
 
 Do not hesitate to contact us at [support@sekoia.io](mailto:support@sekoia.io) if:
