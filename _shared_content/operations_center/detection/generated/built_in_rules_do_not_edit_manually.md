@@ -1,4 +1,4 @@
-Rules catalog includes **636 built-in detection rules** (_last update on 2023-01-02_).
+Rules catalog includes **637 built-in detection rules** (_last update on 2023-01-02_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2831,6 +2831,12 @@ Rules catalog includes **636 built-in detection rules** (_last update on 2023-01
     Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
     
     - **Effort:** master
+
+??? abstract "Webshell Execution W3WP Process"
+    
+    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    
+    - **Effort:** advanced
 
 **Create or Modify System Process**
 
