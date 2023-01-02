@@ -94,6 +94,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Load Of dbghelp/dbgcore DLL From Suspicious Process | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>7</a></span> | Microsoft-Windows-Sysmon |
 | Adexplorer Usage | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Suspicious PrinterPorts Creation (CVE-2020-1048) | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>10</a></span> | Microsoft-Windows-Sysmon |
+| Webshell Execution W3WP Process | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | PsExec Process | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span>, <span style="color:#B60016">7045</span> | Microsoft-Windows-Sysmon, Service Control Manager |
 | Exploit For CVE-2017-0261 Or CVE-2017-0262 | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Logon Scripts (UserInitMprLogonScript) | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
@@ -407,22 +408,22 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Suspicious Windows ANONYMOUS LOGON Local Account Created | elementary | <span style="color:#D89462"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4720' style='color: inherit;'>4720</a></span> | Microsoft-Windows-Security-Auditing |
 
 ## EventIDs occurences in rules
-| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 393) |
+| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 394) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| 1 | 196 | 49.87 % |
-| 13 | 45 | 11.45 % |
-| 4104 | 35 | 8.91 % |
-| 11 | 17 | 4.33 % |
-| 7 | 14 | 3.56 % |
-| 7045 | 11 | 2.8 % |
-| 5145 | 11 | 2.8 % |
-| 4656 | 8 | 2.04 % |
-| 98 | 6 | 1.53 % |
-| 17 | 6 | 1.53 % |
-| 4662 | 6 | 1.53 % |
-| 4697 | 6 | 1.53 % |
-| 10 | 6 | 1.53 % |
-| 4663 | 6 | 1.53 % |
+| 1 | 197 | 50.0 % |
+| 13 | 45 | 11.42 % |
+| 4104 | 35 | 8.88 % |
+| 11 | 17 | 4.31 % |
+| 7 | 14 | 3.55 % |
+| 7045 | 11 | 2.79 % |
+| 5145 | 11 | 2.79 % |
+| 4656 | 8 | 2.03 % |
+| 98 | 6 | 1.52 % |
+| 17 | 6 | 1.52 % |
+| 4662 | 6 | 1.52 % |
+| 4697 | 6 | 1.52 % |
+| 10 | 6 | 1.52 % |
+| 4663 | 6 | 1.52 % |
 | 4688 | 5 | 1.27 % |
 | 1116 | 5 | 1.27 % |
 | 4624 | 5 | 1.27 % |
@@ -508,13 +509,13 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 4825 | 1 | 0.25 % |
 
 ## EventProviders occurences in rules
-| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 393) |
+| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 394) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| Microsoft-Windows-Sysmon | 274 | 69.72 % |
-| Microsoft-Windows-Security-Auditing | 64 | 16.28 % |
-| Microsoft-Windows-PowerShell | 38 | 9.67 % |
-| Service Control Manager | 11 | 2.8 % |
-| Microsoft-Windows-Windows Defender | 9 | 2.29 % |
+| Microsoft-Windows-Sysmon | 275 | 69.8 % |
+| Microsoft-Windows-Security-Auditing | 64 | 16.24 % |
+| Microsoft-Windows-PowerShell | 38 | 9.64 % |
+| Service Control Manager | 11 | 2.79 % |
+| Microsoft-Windows-Windows Defender | 9 | 2.28 % |
 | Microsoft-Windows-Kernel-File | 2 | 0.51 % |
 | Microsoft-Windows-DHCP-Server | 2 | 0.51 % |
 | Application Error | 1 | 0.25 % |
@@ -528,9 +529,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Microsoft-Windows-DNS-Server-Service | 1 | 0.25 % |
 
 ## EffortLevel x EventIDs
-| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 393 |
+| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 394 |
 | ------------ | -------- | ----------------------- | ------------------------------------------------------- |
-| master | 1, 1013, 11, 12, 13, 150, 17, 25, 27, 3, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4728, 4729, 4743, 5007, 5140, 5145, 7, 770, 771, 8001, 98 | 69 | 17.56 % |
-| advanced | 1, 10, 11, 13, 15, 17, 19, 20, 21, 22, 4104, 4625, 4656, 4662, 4688, 4706, 4707, 4727, 4728, 4729, 4730, 4754, 4756, 4757, 4758, 4764, 4776, 5, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 67 | 17.05 % |
-| intermediate | 1, 10, 1000, 1006, 1007, 1008, 1015, 1031, 1032, 1033, 1034, 11, 1102, 1116, 1117, 1118, 1119, 1125, 1126, 1127, 12, 13, 16, 17, 20, 2013, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 47, 4720, 4732, 4738, 4742, 4794, 4825, 5, 5001, 5010, 5012, 5101, 5136, 5145, 517, 524, 6, 7, 7045 | 171 | 43.51 % |
-| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4624, 4625, 4656, 4662, 4663, 4697, 4704, 4720, 5, 5007, 6, 7, 7045 | 86 | 21.88 % |
+| master | 1, 1013, 11, 12, 13, 150, 17, 25, 27, 3, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4728, 4729, 4743, 5007, 5140, 5145, 7, 770, 771, 8001, 98 | 69 | 17.51 % |
+| advanced | 1, 10, 11, 13, 15, 17, 19, 20, 21, 22, 4104, 4625, 4656, 4662, 4688, 4706, 4707, 4727, 4728, 4729, 4730, 4754, 4756, 4757, 4758, 4764, 4776, 5, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 68 | 17.26 % |
+| intermediate | 1, 10, 1000, 1006, 1007, 1008, 1015, 1031, 1032, 1033, 1034, 11, 1102, 1116, 1117, 1118, 1119, 1125, 1126, 1127, 12, 13, 16, 17, 20, 2013, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 47, 4720, 4732, 4738, 4742, 4794, 4825, 5, 5001, 5010, 5012, 5101, 5136, 5145, 517, 524, 6, 7, 7045 | 171 | 43.4 % |
+| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4624, 4625, 4656, 4662, 4663, 4697, 4704, 4720, 5, 5007, 6, 7, 7045 | 86 | 21.83 % |
