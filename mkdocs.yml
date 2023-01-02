@@ -202,6 +202,7 @@ nav:
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
         - Mattermost: xdr/features/automate/library/mattermost.md
+        - Netskope: xdr/features/automate/library/netskope.md
         - OKTA: xdr/features/automate/library/okta.md
         - OSINT: xdr/features/automate/library/osint.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
