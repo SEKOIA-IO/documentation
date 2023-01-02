@@ -1,4 +1,4 @@
-Rules catalog includes **635 built-in detection rules** (_last update on 2022-12-27_).
+Rules catalog includes **636 built-in detection rules** (_last update on 2023-01-02_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -133,15 +133,21 @@ Rules catalog includes **635 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
-??? abstract "Login Brute-Force Successful On AzureAD"
+??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
-    A user has attempted to login several times (brute-force) on AzureAD and succeeded to login.
+    A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
     
     - **Effort:** advanced
 
-??? abstract "Login Failed Brute-Force On AzureAD"
+??? abstract "Login Failed Brute-Force On AzureAD From Single IP Address"
     
-    A user has attempted to login several times (brute-force) on AzureAD and failed every time.
+    A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
+    
+    - **Effort:** advanced
+
+??? abstract "Successful Password Spraying On AzureAD From Single IP Address"
+    
+    An IP address performed several failed logins on multiple users to then have a successful login on one of them.
     
     - **Effort:** advanced
 
@@ -225,15 +231,21 @@ Rules catalog includes **635 built-in detection rules** (_last update on 2022-12
     
     - **Effort:** intermediate
 
-??? abstract "Login Brute-Force Successful On AzureAD"
+??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
-    A user has attempted to login several times (brute-force) on AzureAD and succeeded to login.
+    A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
     
     - **Effort:** advanced
 
-??? abstract "Login Failed Brute-Force On AzureAD"
+??? abstract "Login Failed Brute-Force On AzureAD From Single IP Address"
     
-    A user has attempted to login several times (brute-force) on AzureAD and failed every time.
+    A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
+    
+    - **Effort:** advanced
+
+??? abstract "Successful Password Spraying On AzureAD From Single IP Address"
+    
+    An IP address performed several failed logins on multiple users to then have a successful login on one of them.
     
     - **Effort:** advanced
 
