@@ -1,6 +1,6 @@
 uuid: de9ca004-991e-4f5c-89c5-e075f3fb3216
 name: Netskope Events
-type: Intake
+type: intake
 
 
 ## Overview
@@ -31,7 +31,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Pull events
 
-To start to pull events, you have to: 
+To start to pull events, you have to:
 
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from Netskope](../../../automate/library/netskope.md) trigger
 2. Set up the module configuration with the base URL of your Netskope instance. Set up the trigger configuration with the API token and the intake key
