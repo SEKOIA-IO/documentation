@@ -94,6 +94,7 @@ nav:
             - Office365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
             - Microsoft Defender for Office 365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
             - Message trace: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
+          - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
@@ -202,6 +203,7 @@ nav:
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
         - Mattermost: xdr/features/automate/library/mattermost.md
+        - Netskope: xdr/features/automate/library/netskope.md
         - OKTA: xdr/features/automate/library/okta.md
         - OSINT: xdr/features/automate/library/osint.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
