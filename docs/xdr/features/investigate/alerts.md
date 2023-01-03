@@ -185,6 +185,7 @@ The first column contains the following items:
 - The alert type
 - The impacted assets
 - The impacted entity
+- The similarity strategy of the rule
 - Related cases (cases in which this alert appears)
 - The Kill Chain phase (can be edited on hover)
 - Details about the rule that was triggered
