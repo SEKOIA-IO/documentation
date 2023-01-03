@@ -120,7 +120,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/dlp/flower.gif",
-            "full": "/dlp/flower.gif",
             "path": "/dlp/flower.gif"
         },
         "user_agent": {
@@ -452,7 +451,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/virus/eicar.com",
-            "full": "/virus/eicar.com",
             "path": "/virus/eicar.com"
         },
         "action": {
@@ -1466,7 +1464,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/success.txt",
-            "full": "/success.txt",
             "path": "/success.txt"
         },
         "action": {
@@ -1836,7 +1833,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/",
-            "full": "/",
             "path": "/"
         },
         "action": {
@@ -3051,11 +3047,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "serial_number": "1"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 7649,
-            "nat": {
-                "ip": "N/A"
-            },
+            "ip": "1.1.1.1",
             "user": {
                 "name": "N/A"
             },
@@ -3079,8 +3072,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "N/A"
             ],
             "ip": [
-                "1.1.1.1",
-                "N/A"
+                "1.1.1.1"
             ]
         },
         "host": {
@@ -3213,6 +3205,66 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "vpn_na_ip.STANDARD.json"
+
+    ```json
+	
+    {
+        "message": "time=17:43:43 devname=\"FW-FOOBAR\" devid=\"FG123\" eventtime=1665675824075327440 tz=\"+0200\" logid=\"0101039426\" type=\"event\" subtype=\"vpn\" level=\"alert\" vd=\"root\" logdesc=\"SSL VPN login fail\" action=\"ssl-login-fail\" tunneltype=\"ssl-web\" tunnelid=0 remip=\"N/A\" user=\"CN = foo.bar.baz.com\" group=\"N/A\" dst_host=\"N/A\" reason=\"sslvpn_login_cert_checked_error\" msg=\"SSL user failed to logged in\"",
+        "event": {
+            "action": "ssl-login-fail",
+            "code": "0101039426",
+            "reason": "sslvpn_login_cert_checked_error",
+            "timezone": "+0200",
+            "dataset": "event:vpn",
+            "category": "event"
+        },
+        "@timestamp": "2022-10-13T13:43:44.075328Z",
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "type": "event"
+                },
+                "virtual_domain": "root"
+            }
+        },
+        "log": {
+            "level": "alert",
+            "description": "SSL VPN login fail",
+            "hostname": "FW-FOOBAR"
+        },
+        "observer": {
+            "hostname": "FW-FOOBAR",
+            "serial_number": "FG123"
+        },
+        "source": {
+            "user": {
+                "name": "CN = foo.bar.baz.com"
+            }
+        },
+        "action": {
+            "name": "ssl-login-fail",
+            "type": "vpn",
+            "outcome_reason": "SSL user failed to logged in",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
+        "related": {
+            "hosts": [
+                "FW-FOOBAR"
+            ],
+            "user": [
+                "CN = foo.bar.baz.com"
+            ]
+        },
+        "host": {
+            "name": "FW-FOOBAR"
+        }
+    }
+    	
+	```
+
+
 === "webfilter.CEF.json"
 
     ```json
@@ -3274,7 +3326,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "/bizsquads",
-            "full": "/bizsquads",
             "path": "/bizsquads"
         },
         "action": {
