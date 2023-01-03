@@ -45,7 +45,7 @@ Redirecting...
             with filename.open() as f:
                 _, metadata = get_data(f.read())
 
-                if "uuid" not in metadata or metadata.get("type") != "intake":
+                if "uuid" not in metadata or metadata.get("type").lower() !=  "intake":
                     continue
 
                 dialect_uuid = metadata["uuid"]
