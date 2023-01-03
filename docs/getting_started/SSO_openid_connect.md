@@ -15,7 +15,7 @@ To set up SSO, follow these instructions :
 3. Under Manage community > Authentication, click on the button `Configure`
 ![SSO_Form](/assets/getting_started/SSO_Authentication.png)
 
-5. Fill in identidy provider details
+5. Fill in identity provider details
 ![SSO_Form](/assets/getting_started/SSO_identity.png)
 7. Save the configuration
 
