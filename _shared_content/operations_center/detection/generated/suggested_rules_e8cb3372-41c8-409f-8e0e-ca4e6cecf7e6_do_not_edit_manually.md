@@ -633,6 +633,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Wmic Service Call"
+    
+    Detects either remote or local code execution using wmic tool.
+    
+    - **Effort:** intermediate
+
 ??? abstract "XCopy Suspicious Usage"
     
     Detects the usage of xcopy with suspicious command line options (used by Judgment Panda APT in the past). The rule is based on command line only in case xcopy is renamed.

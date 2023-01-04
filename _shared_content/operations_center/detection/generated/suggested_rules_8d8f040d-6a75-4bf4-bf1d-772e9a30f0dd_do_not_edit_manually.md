@@ -627,6 +627,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
     
     - **Effort:** master
 
+??? abstract "Tehtris EDR Alert"
+    
+    Tehtris EDR telemetry has raised an alert.
+    
+    - **Effort:** master
+
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -690,6 +696,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
+    
+    - **Effort:** intermediate
+
+??? abstract "Wmic Service Call"
+    
+    Detects either remote or local code execution using wmic tool.
     
     - **Effort:** intermediate
 

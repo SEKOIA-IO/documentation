@@ -1,4 +1,4 @@
-Rules catalog includes **637 built-in detection rules** (_last update on 2023-01-02_).
+Rules catalog includes **643 built-in detection rules** (_last update on 2023-01-04_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -564,6 +564,12 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** master
 
+??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -696,6 +702,12 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** master
 
+??? abstract "Phishing Detected By Vade For M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365 has detected a phishing attempt and didn't move it to junk folder.
+    
+    - **Effort:** advanced
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
@@ -732,11 +744,23 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** master
 
+??? abstract "Scam Detected By Vade For M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365, has detected a scam e-mail and didn't block it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
     
     - **Effort:** master
+
+??? abstract "Spam Detected By Vade For M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365, has detected a spam e-mail and didn't block it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Spearphishing (CEO Fraud) Detected By Vade For M365"
     
@@ -858,6 +882,12 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
+    
+    - **Effort:** intermediate
+
+??? abstract "Wmic Service Call"
+    
+    Detects either remote or local code execution using wmic tool.
     
     - **Effort:** intermediate
 
@@ -1411,6 +1441,12 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** intermediate
 
+??? abstract "Tehtris EDR Alert"
+    
+    Tehtris EDR telemetry has raised an alert.
+    
+    - **Effort:** master
+
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
@@ -1670,6 +1706,12 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
     Vade Secure product Vade for M365 has detected a malware contained in the message.
     
     - **Effort:** master
+
+??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Malware Outbreak"
     
@@ -2001,6 +2043,12 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** master
 
+??? abstract "Tehtris EDR Alert"
+    
+    Tehtris EDR telemetry has raised an alert.
+    
+    - **Effort:** master
+
 ??? abstract "Vectra General Threat Detection"
     
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
@@ -2326,6 +2374,12 @@ Rules catalog includes **637 built-in detection rules** (_last update on 2023-01
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
+
+??? abstract "Tehtris EDR Alert"
+    
+    Tehtris EDR telemetry has raised an alert.
+    
+    - **Effort:** master
 
 ??? abstract "Usage Of Procdump With Common Arguments"
     
