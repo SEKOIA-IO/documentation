@@ -1204,13 +1204,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "id": "111111111"
         },
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
-        },
         "tls": {
             "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
             "version": "TLSv1.2"
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
         },
         "aws": {
             "cloudtrail": {

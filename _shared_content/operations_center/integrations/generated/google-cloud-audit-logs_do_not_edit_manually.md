@@ -98,9 +98,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "outcome": "success"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.2svEnroll\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"uniqQualifier\": \"1624031130844323135\",\n        \"timeUsec\": \"1632458745769000\"\n      },\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventType\": \"2sv_change\",\n          \"status\": {\n            \"success\": true\n          },\n          \"eventName\": \"2sv_enroll\",\n          \"parameter\": [\n            {\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"name\": \"dusi\"\n            }\n          ]\n        }\n      ]\n    }\n  },\n  \"insertId\": \"g3k8gid3b3p\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.2svEnroll\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T04:45:45.769Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T04:45:46.331843829Z\"\n}",
         "@timestamp": "2021-09-24T04:45:45.769Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T04:45:46.331843829Z",
@@ -173,6 +171,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.accountDisabledGeneric\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1619825589352000\",\n        \"uniqQualifier\": \"-3303614929287073633\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"account_disabled_generic\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"nlgrf8d6ygj\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.accountDisabledGeneric\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-04-30T23:33:09.352Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-04-30T23:33:10.673412983Z\"\n}",
         "@timestamp": "2021-04-30T23:33:09.352Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-04-30T23:33:10.673412983Z",
@@ -216,11 +215,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "resourceName": "organizations/123"
             }
         },
-        "service": {
-            "name": "login.googleapis.com"
-        },
         "user": {
             "email": "test-user@example.com"
+        },
+        "service": {
+            "name": "login.googleapis.com"
         },
         "source": {
             "ip": "2001:db8:ffff:ffff:ffff:ffff:ffff:ffff",
@@ -241,6 +240,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.accountDisabledHijacked\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1619825589352000\",\n        \"uniqQualifier\": \"-3303614929287073633\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"account_disabled_hijacked\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"nlgrf8d6ygj\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.accountDisabledHijacked\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-04-30T23:33:09.352Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-04-30T23:33:10.673412983Z\"\n}",
         "@timestamp": "2021-04-30T23:33:09.352Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-04-30T23:33:10.673412983Z",
@@ -284,11 +284,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "resourceName": "organizations/123"
             }
         },
-        "service": {
-            "name": "login.googleapis.com"
-        },
         "user": {
             "email": "test-user@example.com"
+        },
+        "service": {
+            "name": "login.googleapis.com"
         },
         "source": {
             "ip": "2001:db8:ffff:ffff:ffff:ffff:ffff:ffff",
@@ -309,6 +309,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.accountDisabledPasswordLeak\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1619808083475000\",\n        \"uniqQualifier\": \"6286848759980589624\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"account_disabled_password_leak\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-xkklkzcxkl\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.accountDisabledPasswordLeak\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-04-30T18:41:23.475Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-04-30T18:41:24.650965796Z\"\n}",
         "@timestamp": "2021-04-30T18:41:23.475Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-04-30T18:41:24.650965796Z",
@@ -377,6 +378,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.accountDisabledSpamming\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1619808083475000\",\n        \"uniqQualifier\": \"6286848759980589624\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"account_disabled_spamming\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-xkklkzcxkl\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.accountDisabledSpamming\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-04-30T18:41:23.475Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-04-30T18:41:24.650965796Z\"\n}",
         "@timestamp": "2021-04-30T18:41:23.475Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-04-30T18:41:24.650965796Z",
@@ -420,11 +422,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "resourceName": "organizations/123"
             }
         },
-        "service": {
-            "name": "login.googleapis.com"
-        },
         "user": {
             "email": "test-user@example.com"
+        },
+        "service": {
+            "name": "login.googleapis.com"
         },
         "source": {
             "ip": "2001:db8:ffff:ffff:ffff:ffff:ffff:ffff",
@@ -445,6 +447,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.accountDisabledSpammingThroughRelay\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1619808083475000\",\n        \"uniqQualifier\": \"6286848759980589624\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"account_disabled_spamming_through_relay\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-xkklkzcxkl\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"method\": \"google.login.LoginService.accountDisabledSpammingThroughRelay\",\n      \"service\": \"login.googleapis.com\"\n    }\n  },\n  \"timestamp\": \"2021-04-30T18:41:23.475Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-04-30T18:41:24.650965796Z\"\n}",
         "@timestamp": "2021-04-30T18:41:23.475Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-04-30T18:41:24.650965796Z",
@@ -488,11 +491,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "resourceName": "organizations/123"
             }
         },
-        "service": {
-            "name": "login.googleapis.com"
-        },
         "user": {
             "email": "test-user@example.com"
+        },
+        "service": {
+            "name": "login.googleapis.com"
         },
         "source": {
             "ip": "2001:db8:ffff:ffff:ffff:ffff:ffff:ffff",
@@ -1081,9 +1084,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "outcome": "success"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.loginSuccess\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"activityId\": {\n        \"timeUsec\": \"1632458429811809\",\n        \"uniqQualifier\": \"358068855354\"\n      },\n      \"event\": [\n        {\n          \"parameter\": [\n            {\n              \"type\": \"TYPE_STRING\",\n              \"value\": \"google_password\",\n              \"name\": \"login_type\",\n              \"label\": \"LABEL_OPTIONAL\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"label\": \"LABEL_REPEATED\",\n              \"type\": \"TYPE_STRING\",\n              \"multiStrValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"type\": \"TYPE_BOOL\",\n              \"boolValue\": false,\n              \"name\": \"is_suspicious\",\n              \"label\": \"LABEL_OPTIONAL\"\n            },\n            {\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"name\": \"dusi\",\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\"\n            }\n          ],\n          \"eventType\": \"login\",\n          \"eventName\": \"login_success\"\n        }\n      ]\n    }\n  },\n  \"insertId\": \"ci1svzd3hfk\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.loginSuccess\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T04:40:29.811809Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T05:43:20.474338130Z\"\n}",
         "@timestamp": "2021-09-24T04:40:29.811809Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T05:43:20.474338130Z",
@@ -1269,9 +1270,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "outcome": "success"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.logout\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"event\": [\n        {\n          \"eventName\": \"logout\",\n          \"eventType\": \"login\",\n          \"parameter\": [\n            {\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"name\": \"login_type\",\n              \"value\": \"google_password\"\n            },\n            {\n              \"type\": \"TYPE_STRING\",\n              \"name\": \"dusi\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"INfDlrzP9IH8_QE\"\n            }\n          ]\n        }\n      ],\n      \"activityId\": {\n        \"uniqQualifier\": \"358068855354\",\n        \"timeUsec\": \"1632459903014598\"\n      },\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"v37ytid14th\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.logout\"\n    }\n  },\n  \"timestamp\": \"2021-09-24T05:05:03.014598Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-24T06:39:22.229734504Z\"\n}",
         "@timestamp": "2021-09-24T05:05:03.014598Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-24T06:39:22.229734504Z",
@@ -1347,9 +1346,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "outcome": "success"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.passwordEdit\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"event\": [\n        {\n          \"eventName\": \"password_edit\",\n          \"status\": {\n            \"success\": true\n          },\n          \"parameter\": [\n            {\n              \"type\": \"TYPE_STRING\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"name\": \"dusi\"\n            }\n          ],\n          \"eventType\": \"password_change\"\n        }\n      ],\n      \"activityId\": {\n        \"uniqQualifier\": \"8894052787391296929\",\n        \"timeUsec\": \"1632803013900566\"\n      }\n    }\n  },\n  \"insertId\": \"-u8coc0d6n78\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.passwordEdit\"\n    }\n  },\n  \"timestamp\": \"2021-09-28T04:23:33.900566Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-28T04:23:37.724654918Z\"\n}",
         "@timestamp": "2021-09-28T04:23:33.900566Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-28T04:23:37.724654918Z",
@@ -1495,9 +1492,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "event": {
-            "outcome": "success"
-        },
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {\n      \"principalEmail\": \"test-user@example.com\"\n    },\n    \"requestMetadata\": {\n      \"callerIp\": \"203.0.113.255\",\n      \"requestAttributes\": {},\n      \"destinationAttributes\": {}\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.recoveryPhoneEdit\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"event\": [\n        {\n          \"status\": {\n            \"success\": true\n          },\n          \"eventType\": \"recovery_info_change\",\n          \"eventName\": \"recovery_phone_edit\",\n          \"parameter\": [\n            {\n              \"label\": \"LABEL_OPTIONAL\",\n              \"value\": \"INfDlrzP9IH8_QE\",\n              \"type\": \"TYPE_STRING\",\n              \"name\": \"dusi\"\n            }\n          ]\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\",\n      \"activityId\": {\n        \"timeUsec\": \"1632804439611095\",\n        \"uniqQualifier\": \"1470137036135837564\"\n      }\n    }\n  },\n  \"insertId\": \"-1xtrgbd2vl2\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.recoveryPhoneEdit\"\n    }\n  },\n  \"timestamp\": \"2021-09-28T04:47:19.611095Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-09-28T04:47:25.741574446Z\"}",
         "@timestamp": "2021-09-28T04:47:19.611095Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-09-28T04:47:25.741574446Z",
@@ -1643,6 +1638,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.suspiciousLogin\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1620095181000000\",\n        \"uniqQualifier\": \"-2034771694824799453\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"suspicious_login\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-778d70d2n5b\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.suspiciousLogin\"\n    }\n  },\n  \"timestamp\": \"2021-05-04T02:26:21Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-05-04T02:56:23.806722355Z\"\n}",
         "@timestamp": "2021-05-04T02:26:21Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-05-04T02:56:23.806722355Z",
@@ -1686,11 +1682,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "resourceName": "organizations/123"
             }
         },
-        "service": {
-            "name": "login.googleapis.com"
-        },
         "user": {
             "email": "test-user@example.com"
+        },
+        "service": {
+            "name": "login.googleapis.com"
         },
         "source": {
             "ip": "2001:db8:ffff:ffff:ffff:ffff:ffff:ffff",
@@ -1711,6 +1707,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.suspiciousLoginLessSecureApp\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1620095181000000\",\n        \"uniqQualifier\": \"-2034771694824799453\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"suspicious_login_less_secure_app\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-778d70d2n5b\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.suspiciousLoginLessSecureApp\"\n    }\n  },\n  \"timestamp\": \"2021-05-04T02:26:21Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-05-04T02:56:23.806722355Z\"\n}",
         "@timestamp": "2021-05-04T02:26:21Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-05-04T02:56:23.806722355Z",
@@ -1754,11 +1751,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "resourceName": "organizations/123"
             }
         },
-        "service": {
-            "name": "login.googleapis.com"
-        },
         "user": {
             "email": "test-user@example.com"
+        },
+        "service": {
+            "name": "login.googleapis.com"
         },
         "source": {
             "ip": "2001:db8:ffff:ffff:ffff:ffff:ffff:ffff",
@@ -1779,6 +1776,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\n  \"protoPayload\": {\n    \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\",\n    \"authenticationInfo\": {},\n    \"requestMetadata\": {\n      \"callerIp\": \"2001:db8:ffff:ffff:ffff:ffff:ffff:ffff\"\n    },\n    \"serviceName\": \"login.googleapis.com\",\n    \"methodName\": \"google.login.LoginService.suspiciousProgrammaticLogin\",\n    \"resourceName\": \"organizations/123\",\n    \"metadata\": {\n      \"activityId\": {\n        \"timeUsec\": \"1620095181000000\",\n        \"uniqQualifier\": \"-2034771694824799453\"\n      },\n      \"event\": [\n        {\n          \"eventType\": \"account_warning\",\n          \"eventName\": \"suspicious_programmatic_login\",\n          \"parameter\": [\n            {\n              \"name\": \"affected_email_address\",\n              \"value\": \"test-user@example.com\",\n              \"label\": \"LABEL_OPTIONAL\",\n              \"type\": \"TYPE_STRING\"\n            }\n          ],\n          \"status\": {\n            \"success\": true\n          }\n        }\n      ],\n      \"@type\": \"type.googleapis.com/ccc_hosted_reporting.ActivityProto\"\n    }\n  },\n  \"insertId\": \"-778d70d2n5b\",\n  \"resource\": {\n    \"type\": \"audited_resource\",\n    \"labels\": {\n      \"service\": \"login.googleapis.com\",\n      \"method\": \"google.login.LoginService.suspiciousProgrammaticLogin\"\n    }\n  },\n  \"timestamp\": \"2021-05-04T02:26:21Z\",\n  \"severity\": \"NOTICE\",\n  \"logName\": \"organizations/123/logs/cloudaudit.googleapis.com%2Fdata_access\",\n  \"receiveTimestamp\": \"2021-05-04T02:56:23.806722355Z\"\n}",
         "@timestamp": "2021-05-04T02:26:21Z",
         "google_cloud_audit": {
             "receiveTimestamp": "2021-05-04T02:56:23.806722355Z",

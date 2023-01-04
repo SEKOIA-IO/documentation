@@ -72,8 +72,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "172.18.62.158",
             "domain": "172.18.62.158",
-            "ip": "172.18.62.158",
             "port": 80,
+            "ip": "172.18.62.158",
             "user": {
                 "name": "bob"
             }
@@ -114,8 +114,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 33638,
+            "ip": "10.1.100.11",
             "address": "10.1.100.11"
         },
         "url": {
@@ -164,8 +164,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:45:26.000000Z",
         "destination": {
             "address": "172.16.200.55",
-            "ip": "172.16.200.55",
             "port": 53,
+            "ip": "172.16.200.55",
             "user": {
                 "name": "bob"
             }
@@ -192,8 +192,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 54621,
+            "ip": "10.1.100.11",
             "address": "10.1.100.11"
         },
         "action": {
@@ -231,8 +231,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-11-09T12:51:59.663486Z",
         "destination": {
             "address": "8.8.8.8",
-            "ip": "8.8.8.8",
-            "port": 53
+            "port": 53,
+            "ip": "8.8.8.8"
         },
         "dns": {
             "question": {
@@ -313,8 +313,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-11-09T12:58:39.383196Z",
         "destination": {
             "address": "8.8.8.8",
-            "ip": "8.8.8.8",
-            "port": 53
+            "port": 53,
+            "ip": "8.8.8.8"
         },
         "dns": {
             "question": {
@@ -359,8 +359,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ruleset": "policy"
         },
         "source": {
-            "ip": "1.2.3.4",
             "port": 45362,
+            "ip": "1.2.3.4",
             "user": {
                 "name": "agt"
             },
@@ -407,8 +407,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "10.1.100.11",
             "domain": "172.16.200.55",
-            "ip": "10.1.100.11",
             "port": 44362,
+            "ip": "10.1.100.11",
             "user": {
                 "name": "bob"
             }
@@ -445,8 +445,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "172.16.200.55",
             "port": 80,
+            "ip": "172.16.200.55",
             "address": "172.16.200.55"
         },
         "url": {
@@ -682,8 +682,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:36:15.000000Z",
         "destination": {
             "address": "172.16.200.55",
-            "ip": "172.16.200.55",
             "port": 22,
+            "ip": "172.16.200.55",
             "user": {
                 "name": "bob"
             }
@@ -717,8 +717,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 56698,
+            "ip": "10.1.100.11",
             "address": "10.1.100.11"
         },
         "action": {
@@ -756,8 +756,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-28T00:47:08.000000Z",
         "destination": {
             "address": "172.16.200.55",
-            "ip": "172.16.200.55",
             "port": 5060,
+            "ip": "172.16.200.55",
             "user": {
                 "name": "sip:service@172.16.200.55:5060"
             }
@@ -784,8 +784,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 5060,
+            "ip": "10.1.100.11",
             "user": {
                 "name": "sip:sipp@127.0.0.1:5060"
             },
@@ -829,8 +829,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2021-04-28T13:29:39.000000Z",
         "destination": {
             "address": "1.1.1.1",
-            "ip": "1.1.1.1",
-            "port": 8002
+            "port": 8002,
+            "ip": "1.1.1.1"
         },
         "fortinet": {
             "fortigate": {
@@ -851,8 +851,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "serial_number": "1"
         },
         "source": {
-            "ip": "2.2.2.2",
             "port": 47782,
+            "ip": "2.2.2.2",
             "address": "2.2.2.2"
         },
         "action": {
@@ -894,8 +894,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:55:20.000000Z",
         "destination": {
             "address": "172.16.200.55",
-            "ip": "172.16.200.55",
             "port": 80,
+            "ip": "172.16.200.55",
             "user": {
                 "name": "bob"
             }
@@ -932,8 +932,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 57304,
+            "ip": "10.1.100.11",
             "address": "10.1.100.11"
         },
         "url": {
@@ -941,8 +941,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full": "http://172.16.200.55/index.html?a\\=0123456789&b\\=0123456789&c\\=0123456789",
             "domain": "172.16.200.55",
             "path": "/index.html",
-            "scheme": "http",
             "query": "a\\=0123456789&b\\=0123456789&c\\=0123456789",
+            "scheme": "http",
             "port": 80
         },
         "user_agent": {
@@ -1048,8 +1048,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2",
-            "port": 20882
+            "port": 20882,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -1062,9 +1062,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "alert"
         },
         "network": {
+            "transport": "icmp",
             "application": "icmp/146/81",
-            "protocol": "icmp/146/81",
-            "transport": "icmp"
+            "protocol": "icmp/146/81"
         },
         "observer": {
             "ingress": {
@@ -1113,8 +1113,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2",
-            "port": 20882
+            "port": 20882,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -1135,8 +1135,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "alert"
         },
         "network": {
-            "protocol": "icmp/146/81",
-            "transport": "icmp"
+            "transport": "icmp",
+            "protocol": "icmp/146/81"
         },
         "observer": {
             "ingress": {
@@ -1152,11 +1152,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "action": {
             "name": "clear_session",
             "type": "anomaly",
-            "outcome_reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
             "properties": {
                 "icmp_code": "0x51",
                 "icmp_type": "0x92"
             },
+            "outcome_reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
             "target": "network-traffic",
             "outcome": "success"
         },
@@ -1186,8 +1186,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2",
-            "port": 20882
+            "port": 20882,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -1208,8 +1208,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "level": "alert"
         },
         "network": {
-            "protocol": "icmp/146/81",
-            "transport": "icmp"
+            "transport": "icmp",
+            "protocol": "icmp/146/81"
         },
         "observer": {
             "ingress": {
@@ -1225,11 +1225,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "action": {
             "name": "clear_session",
             "type": "anomaly",
-            "outcome_reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
             "properties": {
                 "icmp_code": "0x51",
                 "icmp_type": "0x92"
             },
+            "outcome_reason": "anomaly: icmp_flood, 34 > threshold 25, repeats 306 times",
             "target": "network-traffic",
             "outcome": "success"
         },
@@ -1260,8 +1260,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T19:20:48.000000Z",
         "destination": {
             "address": "172.16.200.55",
-            "ip": "172.16.200.55",
             "port": 80,
+            "ip": "172.16.200.55",
             "user": {
                 "name": "bob"
             }
@@ -1294,8 +1294,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 44356,
+            "ip": "10.1.100.11",
             "address": "10.1.100.11"
         },
         "url": {
@@ -1345,8 +1345,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2",
-            "port": 80
+            "port": 80,
+            "ip": "2.2.2.2"
         },
         "file": {
             "name": "eicar.com"
@@ -1376,8 +1376,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v5.6.0"
         },
         "source": {
-            "ip": "1.1.1.1",
             "port": 45719,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "url": {
@@ -1426,8 +1426,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "104.80.89.24",
             "domain": "detectportal.firefox.com",
-            "ip": "104.80.89.24",
-            "port": 80
+            "port": 80,
+            "ip": "104.80.89.24"
         },
         "log": {
             "level": "information"
@@ -1454,13 +1454,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 56826,
-            "address": "10.1.100.11",
+            "ip": "10.1.100.11",
             "user": {
                 "name": "alice",
                 "domain": "Domain"
-            }
+            },
+            "address": "10.1.100.11"
         },
         "url": {
             "original": "/success.txt",
@@ -1506,14 +1506,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T22:45:26.000000Z",
         "destination": {
             "address": "2.2.2.2",
-            "ip": "2.2.2.2",
-            "port": 53
+            "port": 53,
+            "ip": "2.2.2.2"
         },
         "dns": {
             "question": {
-                "class": "IN",
                 "name": "detectportal.firefox.com",
                 "type": "A",
+                "class": "IN",
                 "top_level_domain": "com",
                 "subdomain": "detectportal",
                 "registered_domain": "firefox.com"
@@ -1551,9 +1551,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "Information Technology"
         },
         "source": {
-            "ip": "1.1.1.1",
             "mac": "00:00:00:00:00:00",
             "port": 54621,
+            "ip": "1.1.1.1",
             "user": {
                 "name": "bob"
             },
@@ -1596,8 +1596,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2018-12-27T19:36:58.000000Z",
         "destination": {
             "address": "172.18.62.158",
-            "ip": "172.18.62.158",
             "port": 25,
+            "ip": "172.18.62.158",
             "user": {
                 "name": "bob"
             }
@@ -1627,8 +1627,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "port": 35969,
+            "ip": "10.1.100.11",
             "user": {
                 "name": "testpc1@qa.fortinet.com"
             },
@@ -1786,8 +1786,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "2.2.2.2",
             "domain": "abcd",
-            "ip": "2.2.2.2",
-            "port": 443
+            "port": 443,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -1827,8 +1827,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "apprisk": "medium"
         },
         "source": {
-            "ip": "1.1.1.1",
             "port": 33345,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "url": {
@@ -1905,8 +1905,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "network": {
-            "protocol": "icmp/0/8",
-            "transport": "icmp"
+            "transport": "icmp",
+            "protocol": "icmp/0/8"
         },
         "rule": {
             "category": "unscanned",
@@ -1956,8 +1956,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "12::16",
             "bytes": 0,
-            "ip": "12::16",
-            "packets": 0
+            "packets": 0,
+            "ip": "12::16"
         },
         "fortinet": {
             "fortigate": {
@@ -1996,9 +1996,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ruleset": "local-in-policy6"
         },
         "source": {
-            "ip": "00::00:00:00:00",
             "bytes": 76,
             "packets": 1,
+            "ip": "00::00:00:00:00",
             "address": "00::00:00:00:00"
         },
         "action": {
@@ -2040,8 +2040,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "2.2.2.2",
             "bytes": 84,
-            "ip": "2.2.2.2",
-            "packets": 1
+            "packets": 1,
+            "ip": "2.2.2.2"
         },
         "log": {
             "level": "notice"
@@ -2068,9 +2068,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.10"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 84,
             "packets": 1,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2107,8 +2107,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "2.2.2.2",
             "bytes": 420,
-            "ip": "2.2.2.2",
-            "packets": 5
+            "packets": 5,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -2146,9 +2146,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ruleset": "policy"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 420,
             "packets": 5,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2268,8 +2268,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "2.2.2.2",
             "bytes": 202,
-            "ip": "2.2.2.2",
-            "port": 1522
+            "port": 1522,
+            "ip": "2.2.2.2"
         },
         "network": {
             "transport": "tcp",
@@ -2293,9 +2293,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "5.6.14,build1727 (GA)"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 52,
             "port": 55390,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2330,13 +2330,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "3.3.3.3",
             "bytes": 48,
-            "ip": "3.3.3.3",
             "nat": {
                 "ip": "2.2.2.2",
                 "port": 80
             },
             "packets": 3,
-            "port": 80
+            "port": 80,
+            "ip": "3.3.3.3"
         },
         "log": {
             "level": "notice"
@@ -2363,10 +2363,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.4"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 144,
             "packets": 1,
             "port": 49260,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2403,8 +2403,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "52.53.140.235",
             "bytes": 3652,
-            "ip": "52.53.140.235",
-            "port": 443
+            "port": 443,
+            "ip": "52.53.140.235"
         },
         "log": {
             "level": "notice"
@@ -2431,14 +2431,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.0.3"
         },
         "source": {
-            "ip": "10.1.100.11",
             "bytes": 146668,
             "nat": {
-                "ip": "172.16.200.1",
-                "port": 54190
+                "port": 54190,
+                "ip": "172.16.200.1"
             },
             "packets": 58,
             "port": 54190,
+            "ip": "10.1.100.11",
             "address": "10.1.100.11"
         },
         "action": {
@@ -2475,9 +2475,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "3.3.3.3",
             "bytes": 398,
             "domain": "3.3.3.3",
-            "ip": "3.3.3.3",
             "packets": 5,
-            "port": 80
+            "port": 80,
+            "ip": "3.3.3.3"
         },
         "log": {
             "level": "notice"
@@ -2504,15 +2504,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v5.6.0"
         },
         "source": {
-            "ip": "2.2.2.2",
             "bytes": 1605,
             "domain": "2.2.2.2",
             "nat": {
-                "ip": "1.1.1.1",
-                "port": 45719
+                "port": 45719,
+                "ip": "1.1.1.1"
             },
             "packets": 5,
             "port": 45719,
+            "ip": "2.2.2.2",
             "address": "2.2.2.2"
         },
         "action": {
@@ -2553,10 +2553,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "2.2.2.2",
             "bytes": 1000,
-            "ip": "2.2.2.2",
             "mac": "00:00:00:00:00:00",
             "packets": 0,
-            "port": 20
+            "port": 20,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -2594,11 +2594,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "apprisk": "medium"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 2000,
             "mac": "01:01:01:01:01:01",
             "packets": 0,
             "port": 10016,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2634,10 +2634,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "2.2.2.2",
             "bytes": 1000,
-            "ip": "2.2.2.2",
             "mac": "00:00:00:00:00:00",
             "packets": 0,
-            "port": 20
+            "port": 20,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -2675,11 +2675,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "apprisk": "medium"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 2000,
             "mac": "01:01:01:01:01:01",
             "packets": 0,
             "port": 10016,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2715,8 +2715,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "2.2.2.2",
             "bytes": 5851,
-            "ip": "2.2.2.2",
-            "port": 443
+            "port": 443,
+            "ip": "2.2.2.2"
         },
         "fortinet": {
             "fortigate": {
@@ -2754,9 +2754,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ruleset": "proxy-policy"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 2769,
             "port": 50592,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2798,8 +2798,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-09-05T10:43:45.920035Z",
         "destination": {
             "address": "172.18.67.10",
-            "ip": "172.18.67.10",
-            "port": 53
+            "port": 53,
+            "ip": "172.18.67.10"
         },
         "log": {
             "level": "warning"
@@ -2825,8 +2825,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "v6.4.9"
         },
         "source": {
-            "ip": "172.16.222.150",
             "port": 49956,
+            "ip": "172.16.222.150",
             "address": "172.16.222.150"
         },
         "action": {
@@ -2862,13 +2862,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "address": "3.3.3.3",
             "bytes": 40,
-            "ip": "3.3.3.3",
             "mac": "00:00:00:00:00:00",
             "nat": {
                 "ip": "2.2.2.2"
             },
             "packets": 1,
-            "port": 3727
+            "port": 3727,
+            "ip": "3.3.3.3"
         },
         "fortinet": {
             "fortigate": {
@@ -2906,10 +2906,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ruleset": "policy"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 80,
             "packets": 2,
             "port": 52125,
+            "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
         "action": {
@@ -2972,8 +2972,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "serial_number": "1"
         },
         "source": {
-            "ip": "1.1.1.1",
             "bytes": 71524041,
+            "ip": "1.1.1.1",
             "nat": {
                 "ip": "2.2.2.2"
             },
@@ -3283,8 +3283,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "185.230.61.185",
             "bytes": 96,
             "domain": "ambrishsriv.wixsite.com",
-            "ip": "185.230.61.185",
             "port": 80,
+            "ip": "185.230.61.185",
             "user": {
                 "name": "bob",
                 "domain": "Domain"
@@ -3319,9 +3319,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "Malicious Websites"
         },
         "source": {
-            "ip": "10.1.100.11",
             "bytes": 0,
             "port": 59194,
+            "ip": "10.1.100.11",
             "address": "10.1.100.11"
         },
         "url": {

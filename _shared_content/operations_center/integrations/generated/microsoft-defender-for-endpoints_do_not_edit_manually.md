@@ -101,10 +101,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "host"
             ]
         },
-        "destination": {
-            "ip": "5.6.7.8",
-            "address": "5.6.7.8"
-        },
         "@timestamp": "2022-09-01T07:28:59.512717Z",
         "host": {
             "id": "1111111111111111111111111111111111111111",
@@ -136,10 +132,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "--engine=2"
             ]
         },
-        "source": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
         "action": {
             "type": "NtAllocateVirtualMemoryApiCall",
             "properties": {
@@ -160,6 +152,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "id": "104061"
                 }
             }
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "address": "5.6.7.8"
         },
         "related": {
             "ip": [

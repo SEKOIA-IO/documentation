@@ -280,12 +280,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "5c3ff0bc-5101-4152-a330-923e569c9229;windows;MR11111;example.org"
         },
         "file": {
-            "path": "C:\\Users\\doe-j\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\AAAAA\\suspicious.docx",
-            "name": "suspicious.docx",
-            "directory": "C:\\Users\\doe-j\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\AAAAA",
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-            }
+            },
+            "path": "C:\\Users\\doe-j\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\AAAAA\\suspicious.docx",
+            "name": "suspicious.docx",
+            "directory": "C:\\Users\\doe-j\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\AAAAA"
         },
         "url": {
             "original": "http://www.google.com",
@@ -383,12 +383,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "5c3ff0bc-5101-4152-a330-923e569c9229;windows;MR11111;example.org"
         },
         "file": {
-            "path": "C:\\Users\\doe-j\\AppData\\Local\\Analysis\\FUNCRES.XLAM",
-            "name": "FUNCRES.XLAM",
-            "directory": "C:\\Users\\doe-j\\AppData\\Local\\Analysis",
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-            }
+            },
+            "path": "C:\\Users\\doe-j\\AppData\\Local\\Analysis\\FUNCRES.XLAM",
+            "name": "FUNCRES.XLAM",
+            "directory": "C:\\Users\\doe-j\\AppData\\Local\\Analysis"
         },
         "tehtris": {
             "edr": {

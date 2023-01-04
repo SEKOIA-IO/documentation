@@ -36,13 +36,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"data\":\"2022-08-25T17:06:21.935763-07:00 m0169160 sendmail[22003]: 27PNO8ta032355: to=/dev/null, ctladdr=<jcarpenter@bobsbank.ca> (8/0), delay=00:00:00, xdelay=00:00:00, mailer=*file*, tls_verify=NONE, tls_version=NONE, cipher=NONE, pri=32434, dsn=2.0.0, stat=Sent\",\"tls\":{\"version\":\"NONE\",\"verify\":\"NONE\",\"cipher\":\"NONE\"},\"sm\":{\"delay\":\"00:00:00\",\"to\":[\"/dev/null\"],\"pri\":\"32434\",\"dsn\":\"2.0.0\",\"ctladdr\":\"<jcarpenter@bobsbank.ca> (8/0)\",\"qid\":\"27PNO8ta032355\",\"xdelay\":\"00:00:00\",\"stat\":\"Sent\",\"mailer\":\"*file*\"},\"pps\":{\"cid\":\"proofpointdemo_cloudadminuidemo_hosted\",\"agent\":\"m0169160.ppops.net\"},\"ts\":\"2022-08-25T17:06:21.935763-0700\",\"id\":\"41K7tSNsqcyiZCuOX1wmnQ\",\"metadata\":{\"origin\":{\"schemaVersion\":\"20200420\",\"data\":{\"cid\":\"proofpointdemo_cloudadminuidemo_hosted\",\"agent\":\"m0169160.ppops.net\"}},\"customerId\":\"6ae809da-7151-354f-8d3c-40fe90ec6eca\"},\"type\":\"maillog\"}\n",
         "event": {
             "kind": "event",
+            "dataset": "maillog",
             "type": [
                 "info"
             ],
             "category": [
                 "email"
-            ],
-            "dataset": "maillog"
+            ]
         },
         "@timestamp": "2022-08-26T00:06:21.935763Z",
         "observer": {
@@ -198,9 +198,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "us.adserver",
             "registered_domain": "yahoo.com",
+            "query": "M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046",
             "path": "/l",
             "scheme": "http",
-            "query": "M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046",
             "port": 80
         },
         "file": {

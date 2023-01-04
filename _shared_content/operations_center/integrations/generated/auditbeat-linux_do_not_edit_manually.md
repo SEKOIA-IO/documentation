@@ -6,10 +6,10 @@ The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
-| `Authentication logs` | From system module, login dataset retreive User logins, logouts, and system boots |
-| `File monitoring` | From audit module, the file metricset sends events when a file is changed (created, updated, or deleted) on disk. The events contain file metadata and hashes |
-| `Process monitoring` | From system module, process dataset retreive Started and stopped processes |
-| `Process use of network` | From system module, socket dataset retreive Opened and Closed sockets |
+| `Authentication logs` | From system module, login dataset retrieve User logins, logouts, and system boots |
+| `File monitoring` | From audit module, the file metric-set sends events when a file is changed (created, updated, or deleted) on disk. The events contain file metadata and hashes |
+| `Process monitoring` | From system module, process dataset retrieve Started and stopped processes |
+| `Process use of network` | From system module, socket dataset retrieve Opened and Closed sockets |
 
 
 

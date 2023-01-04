@@ -336,12 +336,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "vendor": "Cybereason",
             "product": "Cybereason"
         },
-        "threat": {
-            "technique": {
-                "id": "T1060",
-                "name": "Registry Run Keys / Startup Folder"
-            }
-        },
         "@timestamp": "2022-11-20T12:02:17.625000Z",
         "cybereason": {
             "malop": {
@@ -356,6 +350,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         "manyUnresolvedRecordNotExistsEvidence"
                     ]
                 }
+            }
+        },
+        "threat": {
+            "technique": {
+                "id": "T1060",
+                "name": "Registry Run Keys / Startup Folder"
             }
         }
     }

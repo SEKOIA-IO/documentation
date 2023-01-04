@@ -36,11 +36,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":6755,\"eventType\":\"AuthActivityAuditEvent\",\"eventCreationTime\":1657663146099,\"version\":\"1.0\"},\"event\":{\"UserId\":\"foo.bar@sekoia.fr\",\"UserIp\":\"83.199.26.17\",\"OperationName\":\"twoFactorAuthenticate\",\"ServiceName\":\"CrowdStrike Authentication\",\"Success\":true,\"UTCTimestamp\":1657663146099}}",
         "event": {
             "kind": "event",
-            "type": [
-                "change"
-            ],
             "category": [
                 "configuration"
+            ],
+            "type": [
+                "change"
             ]
         },
         "@timestamp": "2022-07-12T21:59:06.099000Z",
