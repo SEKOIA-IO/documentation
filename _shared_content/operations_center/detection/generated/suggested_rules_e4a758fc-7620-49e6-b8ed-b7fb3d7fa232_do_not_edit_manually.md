@@ -9,11 +9,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Vade M365** with the followi
     
     - **Effort:** master
 
+??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Phishing Detected By Vade For M365"
     
     Vade Secure product Vade for M365 has detected a phishing attempt.
     
     - **Effort:** master
+
+??? abstract "Phishing Detected By Vade For M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365 has detected a phishing attempt and didn't move it to junk folder.
+    
+    - **Effort:** advanced
 
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
@@ -26,6 +38,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Vade M365** with the followi
     Vade Secure product Vade for M365, has detected a scam e-mail.
     
     - **Effort:** master
+
+??? abstract "Scam Detected By Vade For M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365, has detected a scam e-mail and didn't block it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Spam Detected By Vade For M365"
     

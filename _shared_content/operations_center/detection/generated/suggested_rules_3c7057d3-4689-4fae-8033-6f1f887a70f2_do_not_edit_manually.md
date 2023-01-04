@@ -1221,6 +1221,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
+??? abstract "Wmic Service Call"
+    
+    Detects either remote or local code execution using wmic tool.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
