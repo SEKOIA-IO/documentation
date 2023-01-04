@@ -93,30 +93,45 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"customer\": \"CuNo\",\"metaData\": {\"authentication\": {\"dkim\": {\"status\": \"dkim=none\",\"details\": \"dkim=none reason=\\\"no signature\\\"\"}},\"transportEncryption\": {\"requested\": false,\"established\": false},\"header\": {\"subject\": \"This is a test mail\",\"from\": \"sender@example.com\"},\"contentEncryption\": false},\"host\": \"events.retarus.com\",\"ts\": \"2021-07-11 14:58:43 +0200\",\"version\": \"1.0\",\"sourceIp\": \"xxx.xxx.xxx.xxx\",\"sender\": \"xxxxxxx@retarus.com\",\"type\": \"MTA\",\"subtype\": \"INCOMING\",\"direction\": \"INBOUND\",\"recipient\": \"xxxxxxx@retarus.de\",\"mimeId\": \"<5616dfeid.xxxxxxxxxx@retarus.net>\",\"status\": \"ACCEPTED\",\"class\": \"EVENT\",\"rmxId\": \"20210711-145842-xxxxxx-xxxxxx-0@mailin27\"}",
+        "event": {
+            "kind": "event"
+        },
+        "observer": {
+            "version": "1.0",
+            "hostname": "events.retarus.com"
+        },
+        "organization": {
+            "id": "CuNo"
+        },
+        "source": {
+            "ip": "xxx.xxx.xxx.xxx",
+            "domain": "retarus.com",
+            "address": "retarus.com",
+            "top_level_domain": "com",
+            "registered_domain": "retarus.com"
+        },
+        "destination": {
+            "domain": "retarus.de",
+            "address": "retarus.de",
+            "top_level_domain": "de",
+            "registered_domain": "retarus.de"
+        },
+        "retarus": {
+            "timestamp": "2021-07-11 14:58:43 +0200",
+            "email_direction": "INBOUND",
+            "mime_message_id": "<5616dfeid.xxxxxxxxxx@retarus.net>",
+            "message_id": "20210711-145842-xxxxxx-xxxxxx-0@mailin27",
+            "recipient": "xxxxxxx@retarus.de",
+            "sender": "xxxxxxx@retarus.com",
+            "status": "ACCEPTED",
+            "class": "EVENT",
+            "type": "MTA"
+        },
         "action": {
             "name": "EVENT",
             "outcome": "success",
             "outcome_reason": "ACCEPTED"
-        },
-        "destination": {
-            "address": "retarus.de",
-            "domain": "retarus.de",
-            "registered_domain": "retarus.de",
-            "top_level_domain": "de"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "kind": "event"
-        },
-        "message": "{\"customer\": \"CuNo\",\"metaData\": {\"authentication\": {\"dkim\": {\"status\": \"dkim=none\",\"details\": \"dkim=none reason=\\\"no signature\\\"\"}},\"transportEncryption\": {\"requested\": false,\"established\": false},\"header\": {\"subject\": \"This is a test mail\",\"from\": \"sender@example.com\"},\"contentEncryption\": false},\"host\": \"events.retarus.com\",\"ts\": \"2021-07-11 14:58:43 +0200\",\"version\": \"1.0\",\"sourceIp\": \"xxx.xxx.xxx.xxx\",\"sender\": \"xxxxxxx@retarus.com\",\"type\": \"MTA\",\"subtype\": \"INCOMING\",\"direction\": \"INBOUND\",\"recipient\": \"xxxxxxx@retarus.de\",\"mimeId\": \"<5616dfeid.xxxxxxxxxx@retarus.net>\",\"status\": \"ACCEPTED\",\"class\": \"EVENT\",\"rmxId\": \"20210711-145842-xxxxxx-xxxxxx-0@mailin27\"}",
-        "observer": {
-            "hostname": "events.retarus.com",
-            "version": "1.0"
-        },
-        "organization": {
-            "id": "CuNo"
         },
         "related": {
             "hosts": [
@@ -127,30 +142,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "xxx.xxx.xxx.xxx"
             ]
-        },
-        "retarus": {
-            "class": "EVENT",
-            "email_direction": "INBOUND",
-            "message_id": "20210711-145842-xxxxxx-xxxxxx-0@mailin27",
-            "mime_message_id": "<5616dfeid.xxxxxxxxxx@retarus.net>",
-            "recipient": "xxxxxxx@retarus.de",
-            "sender": "xxxxxxx@retarus.com",
-            "status": "ACCEPTED",
-            "timestamp": "2021-07-11 14:58:43 +0200",
-            "type": "MTA"
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "retarus-email-security",
-                "dialect_uuid": "46fe3905-9e38-4fb2-be09-44d31626b694"
-            }
-        },
-        "source": {
-            "address": "retarus.com",
-            "domain": "retarus.com",
-            "ip": "xxx.xxx.xxx.xxx",
-            "registered_domain": "retarus.com",
-            "top_level_domain": "com"
         }
     }
     	

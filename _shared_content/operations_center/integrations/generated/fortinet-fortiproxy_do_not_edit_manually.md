@@ -124,70 +124,88 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=14:29:04 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"dlp\" eventtype=\"dlp\" level=\"notice\" vd=\"root\" eventtime=1631190544 filteridx=0 filtertype=\"none\" filtercat=\"none\" severity=\"medium\" policyid=6 sessionid=000000001 epoch=402874927 eventid=0 user=\"USERNAME\" group=\"GROUPNAME\" srcip=192.168.1.2 srcport=12345 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=2.2.2.2 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" filetype=\"png\" direction=\"incoming\" action=\"log-only\" hostname=\"example.fr\" url=\"/rmn.png?foo=bar\" agent=\"Custom Useragent\" filename=\"picture.png\" filesize=100 profile=\"profile_name\"",
+        "event": {
+            "start": "2021-09-09T12:29:04.0Z",
+            "kind": "utm",
+            "category": "dlp"
+        },
         "action": {
             "name": "log-only",
             "type": "dlp"
         },
-        "destination": {
-            "address": "example.fr",
-            "domain": "example.fr",
-            "ip": "2.2.2.2",
-            "port": 443,
-            "registered_domain": "example.fr",
-            "top_level_domain": "fr"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "dlp",
-            "kind": "utm",
-            "start": "2021-09-09T12:29:04.0Z"
-        },
-        "file": {
-            "name": "picture.png",
-            "size": 100,
-            "type": "png"
-        },
         "fortinet": {
+            "vd": "root",
             "devid": "OIDL03VZRZEDKKD",
-            "direction": "incoming",
-            "dstintfrole": "undefined",
-            "eventid": "0",
-            "filtercat": "none",
-            "filteridx": "0",
-            "filtertype": "none",
-            "group": "GROUPNAME",
-            "level": "notice",
             "logid": "1000234512",
-            "policyid": "6",
-            "profile": "profile_name",
-            "proto": "6",
             "sessionid": "000000001",
-            "severity": "medium",
             "srcintfrole": "undefined",
-            "vd": "root"
+            "dstintfrole": "undefined",
+            "policyid": "6",
+            "level": "notice",
+            "proto": "6",
+            "group": "GROUPNAME",
+            "filteridx": "0",
+            "filtercat": "none",
+            "profile": "profile_name",
+            "filtertype": "none",
+            "eventid": "0",
+            "severity": "medium",
+            "direction": "incoming"
         },
-        "message": "time=14:29:04 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"dlp\" eventtype=\"dlp\" level=\"notice\" vd=\"root\" eventtime=1631190544 filteridx=0 filtertype=\"none\" filtercat=\"none\" severity=\"medium\" policyid=6 sessionid=000000001 epoch=402874927 eventid=0 user=\"USERNAME\" group=\"GROUPNAME\" srcip=192.168.1.2 srcport=12345 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=2.2.2.2 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" filetype=\"png\" direction=\"incoming\" action=\"log-only\" hostname=\"example.fr\" url=\"/rmn.png?foo=bar\" agent=\"Custom Useragent\" filename=\"picture.png\" filesize=100 profile=\"profile_name\"",
-        "network": {
-            "direction": "inbound",
-            "protocol": "tcp"
+        "source": {
+            "ip": "192.168.1.2",
+            "port": 12345,
+            "address": "192.168.1.2"
         },
         "observer": {
-            "egress": {
-                "interface": {
-                    "name": "eth"
-                }
-            },
-            "hostname": "fortiproxyunit",
             "ingress": {
                 "interface": {
                     "name": "eth"
                 }
             },
-            "product": "FortiProxy",
+            "egress": {
+                "interface": {
+                    "name": "eth"
+                }
+            },
             "type": "proxy",
-            "vendor": "Fortinet"
+            "vendor": "Fortinet",
+            "product": "FortiProxy",
+            "hostname": "fortiproxyunit"
+        },
+        "destination": {
+            "ip": "2.2.2.2",
+            "port": 443,
+            "domain": "example.fr",
+            "address": "example.fr",
+            "top_level_domain": "fr",
+            "registered_domain": "example.fr"
+        },
+        "service": {
+            "name": "https"
+        },
+        "user": {
+            "name": "USERNAME"
+        },
+        "url": {
+            "domain": "example.fr",
+            "full": "example.fr/rmn.png?foo=bar",
+            "original": "/rmn.png?foo=bar",
+            "query": "foo=bar",
+            "path": "/rmn.png"
+        },
+        "file": {
+            "type": "png",
+            "name": "picture.png",
+            "size": 100
+        },
+        "user_agent": {
+            "original": "Custom Useragent"
+        },
+        "network": {
+            "protocol": "tcp",
+            "direction": "inbound"
         },
         "related": {
             "hosts": [
@@ -201,33 +219,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "USERNAME"
             ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
-            }
-        },
-        "service": {
-            "name": "https"
-        },
-        "source": {
-            "address": "192.168.1.2",
-            "ip": "192.168.1.2",
-            "port": 12345
-        },
-        "url": {
-            "domain": "example.fr",
-            "full": "example.fr/rmn.png?foo=bar",
-            "original": "/rmn.png?foo=bar",
-            "path": "/rmn.png",
-            "query": "foo=bar"
-        },
-        "user": {
-            "name": "USERNAME"
-        },
-        "user_agent": {
-            "original": "Custom Useragent"
         }
     }
     	
@@ -239,44 +230,35 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=09:44:52 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"event\" subtype=\"system\" level=\"warning\" vd=\"root\" eventtime=1631778292 logdesc=\"File dropped due to poor network connection\" count=6 action=\"transfer\" status=\"drop\" reason=\"poor-network-condition\" msg=\"1 file were dropped by quard to FortiSandbox: 0 reached max retries, 1 reached TTL.\"",
+        "event": {
+            "start": "2021-09-16T07:44:52.0Z",
+            "kind": "event",
+            "category": "system"
+        },
         "action": {
             "name": "transfer"
         },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "system",
-            "kind": "event",
-            "start": "2021-09-16T07:44:52.0Z"
-        },
         "fortinet": {
+            "vd": "root",
             "devid": "OIDL03VZRZEDKKD",
-            "level": "warning",
-            "logdesc": "File dropped due to poor network connection",
             "logid": "1000234512",
+            "level": "warning",
             "msg": "1 file were dropped by quard to FortiSandbox: 0 reached max retries, 1 reached TTL.",
             "reason": "poor-network-condition",
-            "status": "drop",
-            "vd": "root"
+            "logdesc": "File dropped due to poor network connection",
+            "status": "drop"
         },
-        "message": "time=09:44:52 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"event\" subtype=\"system\" level=\"warning\" vd=\"root\" eventtime=1631778292 logdesc=\"File dropped due to poor network connection\" count=6 action=\"transfer\" status=\"drop\" reason=\"poor-network-condition\" msg=\"1 file were dropped by quard to FortiSandbox: 0 reached max retries, 1 reached TTL.\"",
         "observer": {
-            "hostname": "fortiproxyunit",
-            "product": "FortiProxy",
             "type": "proxy",
-            "vendor": "Fortinet"
+            "vendor": "Fortinet",
+            "product": "FortiProxy",
+            "hostname": "fortiproxyunit"
         },
         "related": {
             "hosts": [
                 "fortiproxyunit"
             ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
-            }
         }
     }
     	
@@ -288,63 +270,72 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=09:40:24 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"root\" eventtime=1631086824 srcip=192.168.1.2 srcport=11111 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=1.2.3.4 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" sessionid=000000001 dstcountry=\"France\" srccountry=\"Reserved\" service=\"HTTPS\" wanoptapptype=\"web\" proto=6 action=\"accept\" duration=100 policyid=1 policytype=\"policy\" wanin=01 rcvdbyte=1000 wanout=2000 lanin=3000 sentbyte=4000 lanout=5000 appcat=\"appcat1\" utmaction=\"allow\" countweb=4",
+        "event": {
+            "start": "2021-09-08T07:40:24.0Z",
+            "kind": "traffic",
+            "category": "forward",
+            "duration": 100
+        },
         "action": {
             "name": "accept",
             "type": "allow"
         },
-        "destination": {
-            "address": "1.2.3.4",
-            "bytes": 1000,
-            "geo": {
-                "country_name": "France"
-            },
-            "ip": "1.2.3.4",
-            "port": 443
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "forward",
-            "duration": 100,
-            "kind": "traffic",
-            "start": "2021-09-08T07:40:24.0Z"
-        },
         "fortinet": {
-            "appcat": "appcat1",
+            "vd": "root",
             "devid": "OIDL03VZRZEDKKD",
-            "dstintfrole": "undefined",
-            "lanout": "5000",
-            "level": "notice",
             "logid": "1000234512",
-            "policyid": "1",
-            "policytype": "policy",
-            "proto": "6",
             "sessionid": "000000001",
             "srcintfrole": "undefined",
-            "vd": "root",
+            "dstintfrole": "undefined",
+            "policyid": "1",
+            "policytype": "policy",
+            "level": "notice",
+            "proto": "6",
+            "appcat": "appcat1",
             "wanin": "01",
-            "wanout": "2000"
+            "wanout": "2000",
+            "lanout": "5000"
         },
-        "message": "time=09:40:24 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"root\" eventtime=1631086824 srcip=192.168.1.2 srcport=11111 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=1.2.3.4 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" sessionid=000000001 dstcountry=\"France\" srccountry=\"Reserved\" service=\"HTTPS\" wanoptapptype=\"web\" proto=6 action=\"accept\" duration=100 policyid=1 policytype=\"policy\" wanin=01 rcvdbyte=1000 wanout=2000 lanin=3000 sentbyte=4000 lanout=5000 appcat=\"appcat1\" utmaction=\"allow\" countweb=4",
-        "network": {
-            "protocol": "tcp"
+        "source": {
+            "bytes": 4000,
+            "ip": "192.168.1.2",
+            "port": 11111,
+            "geo": {
+                "country_name": "Reserved"
+            },
+            "address": "192.168.1.2"
         },
         "observer": {
-            "egress": {
-                "interface": {
-                    "name": "eth"
-                }
-            },
-            "hostname": "fortiproxyunit",
             "ingress": {
                 "interface": {
                     "name": "eth"
                 }
             },
-            "product": "FortiProxy",
+            "egress": {
+                "interface": {
+                    "name": "eth"
+                }
+            },
             "type": "proxy",
-            "vendor": "Fortinet"
+            "vendor": "Fortinet",
+            "product": "FortiProxy",
+            "hostname": "fortiproxyunit"
+        },
+        "destination": {
+            "ip": "1.2.3.4",
+            "port": 443,
+            "geo": {
+                "country_name": "France"
+            },
+            "bytes": 1000,
+            "address": "1.2.3.4"
+        },
+        "service": {
+            "name": "https"
+        },
+        "network": {
+            "protocol": "tcp"
         },
         "related": {
             "hosts": [
@@ -354,24 +345,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "192.168.1.2"
             ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
-            }
-        },
-        "service": {
-            "name": "https"
-        },
-        "source": {
-            "address": "192.168.1.2",
-            "bytes": 4000,
-            "geo": {
-                "country_name": "Reserved"
-            },
-            "ip": "192.168.1.2",
-            "port": 11111
         }
     }
     	
@@ -425,8 +398,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "https://example.com/foo.html?id=123",
             "top_level_domain": "com",
             "registered_domain": "example.com",
-            "query": "id=123",
             "scheme": "https",
+            "query": "id=123",
             "path": "/foo.html",
             "port": 443
         },
@@ -459,58 +432,73 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "time=14:19:19 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"webfilter\" eventtype=\"ftgd_allow\" level=\"notice\" vd=\"root\" eventtime=1631179959 policyid=5 sessionid=10000000 user=\"john\" group=\"groupname\" srcip=192.168.1.2 srcport=10000 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=1.1.1.1 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" hostname=\"example.fr\" profile=\"standard\" action=\"passthrough\" reqtype=\"referral\" url=\"/foo/bar.html?id=1\"",
+        "event": {
+            "start": "2021-09-09T09:32:39.0Z",
+            "kind": "utm",
+            "category": "webfilter"
+        },
         "action": {
             "name": "passthrough",
             "type": "ftgd_allow"
         },
-        "destination": {
-            "address": "example.fr",
-            "domain": "example.fr",
-            "ip": "1.1.1.1",
-            "port": 443,
-            "registered_domain": "example.fr",
-            "top_level_domain": "fr"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "category": "webfilter",
-            "kind": "utm",
-            "start": "2021-09-09T09:32:39.0Z"
-        },
         "fortinet": {
+            "vd": "root",
             "devid": "OIDL03VZRZEDKKD",
-            "dstintfrole": "undefined",
-            "group": "groupname",
-            "level": "notice",
             "logid": "1000234512",
-            "policyid": "5",
-            "proto": "6",
-            "reqtype": "referral",
             "sessionid": "10000000",
             "srcintfrole": "undefined",
-            "vd": "root"
+            "dstintfrole": "undefined",
+            "policyid": "5",
+            "level": "notice",
+            "reqtype": "referral",
+            "proto": "6",
+            "group": "groupname"
         },
-        "message": "time=14:19:19 devname=\"fortiproxyunit\" devid=\"OIDL03VZRZEDKKD\" logid=\"1000234512\" type=\"utm\" subtype=\"webfilter\" eventtype=\"ftgd_allow\" level=\"notice\" vd=\"root\" eventtime=1631179959 policyid=5 sessionid=10000000 user=\"john\" group=\"groupname\" srcip=192.168.1.2 srcport=10000 srcintf=\"eth\" srcintfrole=\"undefined\" dstip=1.1.1.1 dstport=443 dstintf=\"eth\" dstintfrole=\"undefined\" proto=6 service=\"HTTPS\" hostname=\"example.fr\" profile=\"standard\" action=\"passthrough\" reqtype=\"referral\" url=\"/foo/bar.html?id=1\"",
-        "network": {
-            "protocol": "tcp"
+        "source": {
+            "ip": "192.168.1.2",
+            "port": 10000,
+            "address": "192.168.1.2"
         },
         "observer": {
-            "egress": {
-                "interface": {
-                    "name": "eth"
-                }
-            },
-            "hostname": "fortiproxyunit",
             "ingress": {
                 "interface": {
                     "name": "eth"
                 }
             },
-            "product": "FortiProxy",
+            "egress": {
+                "interface": {
+                    "name": "eth"
+                }
+            },
             "type": "proxy",
-            "vendor": "Fortinet"
+            "vendor": "Fortinet",
+            "product": "FortiProxy",
+            "hostname": "fortiproxyunit"
+        },
+        "destination": {
+            "ip": "1.1.1.1",
+            "port": 443,
+            "domain": "example.fr",
+            "address": "example.fr",
+            "top_level_domain": "fr",
+            "registered_domain": "example.fr"
+        },
+        "service": {
+            "name": "https"
+        },
+        "user": {
+            "name": "john"
+        },
+        "url": {
+            "domain": "example.fr",
+            "full": "example.fr/foo/bar.html?id=1",
+            "original": "/foo/bar.html?id=1",
+            "query": "id=1",
+            "path": "/foo/bar.html"
+        },
+        "network": {
+            "protocol": "tcp"
         },
         "related": {
             "hosts": [
@@ -524,30 +512,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "john"
             ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "fortiproxy",
-                "dialect_uuid": "270777d7-0c5a-42fb-b901-b7fadfb0ba48"
-            }
-        },
-        "service": {
-            "name": "https"
-        },
-        "source": {
-            "address": "192.168.1.2",
-            "ip": "192.168.1.2",
-            "port": 10000
-        },
-        "url": {
-            "domain": "example.fr",
-            "full": "example.fr/foo/bar.html?id=1",
-            "original": "/foo/bar.html?id=1",
-            "path": "/foo/bar.html",
-            "query": "id=1"
-        },
-        "user": {
-            "name": "john"
         }
     }
     	

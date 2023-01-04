@@ -347,87 +347,88 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"meta\": {\"seqId\": 35, \"uuid\": \"4d311e18709146cba871111111111111\", \"traceId\": \"BABABABABEEE43452345234523423423\", \"agentVersion\": \"S1-WIN/2.2.11.333\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"88888\", \"computerName\": \"LAPTOP-COM13\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"timestamp\": {\"millisecondsSinceEpoch\": \"7474746212121\"}, \"trueContext\": {\"key\": {\"value\": \"CCC43343435EABDF\"}}, \"source\": {\"node\": {\"key\": {\"value\": \"BAE25D38782A6941\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"C8E88AA83F5B15B6\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"1628149542456\"}, \"path\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"2442584\", \"signature\": {\"signed\": {\"identity\": \"GOOGLE LLC\", \"valid\": {}}}, \"hashes\": {}, \"fileLocation\": \"Local\"}, \"commandLine\": \"\\\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\\\"\", \"fullPid\": {\"pid\": 14896, \"startTime\": {\"millisecondsSinceEpoch\": \"1628515733321\"}}, \"user\": {\"name\": \"CORP\\\\user.name\", \"sid\": \"S-1-5-21-6562365326-8585787878-2021012021-6543\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"03267F6915111A61\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"Google Chrome\", \"root\": \"E_TRUE\", \"subsystem\": \"SYS_WIN32\", \"sessionId\": 11, \"integrityLevel\": \"MEDIUM\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"CCC43343435EABDF\"}}, \"counters\": {\"modelChildProcess\": 25, \"osChildProcess\": 25, \"crossProcess\": 1610, \"moduleLoad\": 245, \"fileCreation\": 148, \"fileDeletion\": 58, \"fileModification\": 416, \"registryModification\": 32, \"crossProcessDupThreadHandle\": 20, \"crossProcessDupProcessHandle\": 1590}}, \"targetFile\": {\"node\": {\"key\": {\"value\": \"737373ABCDEF7373\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"1628515733666\"}, \"path\": \"C:\\\\Users\\\\user.name\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\", \"owner\": {}, \"isDir\": \"test_not_E_FALSE\", \"hashes\": {}, \"fileLocation\": \"Local\"}, \"event_type\": \"fileCreation\"}",
         "event": {
-            "start": "2206-11-13T06:23:32.121000Z",
-            "action": "fileCreation"
+            "action": "fileCreation",
+            "start": "2206-11-13T06:23:32.121000Z"
+        },
+        "agent": {
+            "version": "S1-WIN/2.2.11.333"
         },
         "deepvisibility": {
-            "true_context": {
-                "key": "CCC43343435EABDF"
+            "agent": {
+                "managment_url": "https://euce1-110-nfr.sentinelone.net",
+                "seq_id": 35,
+                "trace_id": "BABABABABEEE43452345234523423423",
+                "uuid": "4d311e18709146cba871111111111111"
             },
             "event": {
                 "type": "fileCreation"
             },
-            "agent": {
-                "seq_id": 35,
-                "uuid": "4d311e18709146cba871111111111111",
-                "trace_id": "BABABABABEEE43452345234523423423",
-                "managment_url": "https://euce1-110-nfr.sentinelone.net"
+            "host": {
+                "os": {
+                    "revision": "88888"
+                }
+            },
+            "true_context": {
+                "key": "CCC43343435EABDF"
             },
             "process": {
-                "node": {
-                    "key": "BAE25D38782A6941"
+                "counters": {
+                    "cross_process_dup_process_handle": 1590,
+                    "cross_process_dup_thread_handle": 20,
+                    "cross_process": 1610,
+                    "file_creation": 148,
+                    "file_deletion": 58,
+                    "file_modification": 416,
+                    "model_child_process": 25,
+                    "module_load": 245,
+                    "os_child_process": 25,
+                    "registry_modification": 32
                 },
-                "user": {
-                    "sid": "S-1-5-21-6562365326-8585787878-2021012021-6543"
-                },
-                "interactive": "E_FALSE",
                 "excluded": "E_FALSE",
-                "root": "E_TRUE",
-                "session_id": 11,
-                "integrity_level": "MEDIUM",
-                "is_wow64": "E_FALSE",
-                "is_redirected_command_processor": "E_FALSE",
-                "true_context": {
-                    "key": "CCC43343435EABDF"
-                },
-                "family": "SYS_WIN32",
                 "executable": {
+                    "is_dir": "E_FALSE",
                     "name": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
                     "node": {
                         "key": "C8E88AA83F5B15B6"
                     },
-                    "start": "2021-08-05T07:45:42.456000Z",
-                    "is_dir": "E_FALSE",
-                    "size_bytes": "2442584",
                     "signature": {
                         "signed": {
                             "identity": "GOOGLE LLC"
                         }
-                    }
+                    },
+                    "size_bytes": "2442584",
+                    "start": "2021-08-05T07:45:42.456000Z"
+                },
+                "family": "SYS_WIN32",
+                "integrity_level": "MEDIUM",
+                "interactive": "E_FALSE",
+                "is_redirected_command_processor": "E_FALSE",
+                "is_wow64": "E_FALSE",
+                "node": {
+                    "key": "BAE25D38782A6941"
                 },
                 "parent": {
                     "node": {
                         "key": "03267F6915111A61"
                     }
                 },
-                "counters": {
-                    "model_child_process": 25,
-                    "os_child_process": 25,
-                    "cross_process": 1610,
-                    "module_load": 245,
-                    "file_creation": 148,
-                    "file_deletion": 58,
-                    "file_modification": 416,
-                    "registry_modification": 32,
-                    "cross_process_dup_thread_handle": 20,
-                    "cross_process_dup_process_handle": 1590
+                "root": "E_TRUE",
+                "session_id": 11,
+                "true_context": {
+                    "key": "CCC43343435EABDF"
+                },
+                "user": {
+                    "sid": "S-1-5-21-6562365326-8585787878-2021012021-6543"
                 }
             },
             "file": {
+                "location": "Local",
                 "node": {
                     "key": "737373ABCDEF7373"
-                },
-                "location": "Local"
-            },
-            "host": {
-                "os": {
-                    "revision": "88888"
                 }
             }
-        },
-        "agent": {
-            "version": "S1-WIN/2.2.11.333"
         },
         "host": {
             "name": "LAPTOP-COM13",
@@ -438,25 +439,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "laptop"
         },
         "process": {
-            "title": "Google Chrome",
-            "name": "chrome.exe",
-            "working_directory": "C:\\Program Files\\Google\\Chrome\\Application",
             "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"",
+            "title": "Google Chrome",
+            "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
             "pid": 14896,
+            "working_directory": "C:\\Program Files\\Google\\Chrome\\Application",
             "start": "2021-08-09T13:28:53.321000Z",
-            "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+            "name": "chrome.exe"
         },
         "user": {
             "name": "CORP\\user.name",
             "id": "S-1-5-21-6562365326-8585787878-2021012021-6543"
         },
         "file": {
-            "created": "2021-08-09T13:28:53.666000Z",
             "path": "C:\\Users\\user.name\\AppData\\Local\\Google\\Chrome\\User Data",
-            "type": "dir"
-        },
-        "ecs": {
-            "version": "1.10.0"
+            "type": "dir",
+            "created": "2021-08-09T13:28:53.666000Z"
         },
         "related": {
             "user": [
@@ -473,123 +471,121 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"meta\": {\"seqId\": 35, \"uuid\": \"4d311e18709146cba871111111111111\", \"traceId\": \"BABABABABEEE43452345234523423423\", \"agentVersion\": \"S1-WIN/2.2.11.333\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"88888\", \"computerName\": \"LAPTOP-COM13\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"timestamp\": {\"millisecondsSinceEpoch\": \"7474746212121\"}, \"trueContext\": {\"key\": {\"value\": \"CCC43343435EABDF\"}}, \"source\": {\"node\": {\"key\": {\"value\": \"BAE25D38782A6941\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"C8E88AA83F5B15B6\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"1628149542654\"}, \"path\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"2442584\", \"signature\": {\"signed\": {\"identity\": \"GOOGLE LLC\", \"valid\": {}}}, \"hashes\": {}, \"fileLocation\": \"Local\"}, \"commandLine\": \"\\\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\\\"\", \"fullPid\": {\"pid\": 14896, \"startTime\": {\"millisecondsSinceEpoch\": \"1628515733932\"}}, \"user\": {\"name\": \"CORP\\\\user.name\", \"sid\": \"S-1-5-21-6562365326-8585787878-2021012021-6543\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"03267F6915111A61\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"Google Chrome\", \"root\": \"E_TRUE\", \"subsystem\": \"SYS_WIN32\", \"sessionId\": 11, \"integrityLevel\": \"MEDIUM\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"CCC43343435EABDF\"}}, \"counters\": {\"modelChildProcess\": 25, \"osChildProcess\": 25, \"crossProcess\": 1610, \"moduleLoad\": 245, \"fileCreation\": 148, \"fileDeletion\": 58, \"fileModification\": 416, \"registryModification\": 32, \"crossProcessDupThreadHandle\": 20, \"crossProcessDupProcessHandle\": 1590}}, \"targetFile\": {\"node\": {\"key\": {\"value\": \"737373ABCDEF7373\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"7474746212121\"}, \"path\": \"C:\\\\Users\\\\user.name\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data\\\\98798798-bbb2-9898-aaaa-1212121212f.tmp\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"hashes\": {}, \"fileLocation\": \"Local\"}, \"event_type\": \"fileCreation\"}",
         "event": {
-            "start": "2206-11-13T06:23:32.121000Z",
-            "action": "fileCreation"
+            "action": "fileCreation",
+            "start": "2206-11-13T06:23:32.121000Z"
+        },
+        "agent": {
+            "version": "S1-WIN/2.2.11.333"
         },
         "deepvisibility": {
+            "agent": {
+                "managment_url": "https://euce1-110-nfr.sentinelone.net",
+                "seq_id": 35,
+                "trace_id": "BABABABABEEE43452345234523423423",
+                "uuid": "4d311e18709146cba871111111111111"
+            },
             "event": {
                 "type": "fileCreation"
-            },
-            "true_context": {
-                "key": "CCC43343435EABDF"
-            },
-            "agent": {
-                "seq_id": 35,
-                "uuid": "4d311e18709146cba871111111111111",
-                "trace_id": "BABABABABEEE43452345234523423423",
-                "managment_url": "https://euce1-110-nfr.sentinelone.net"
-            },
-            "process": {
-                "family": "SYS_WIN32",
-                "executable": {
-                    "name": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-                    "node": {
-                        "key": "C8E88AA83F5B15B6"
-                    },
-                    "start": "2021-08-05T07:45:42.654000Z",
-                    "is_dir": "E_FALSE",
-                    "size_bytes": "2442584",
-                    "signature": {
-                        "signed": {
-                            "identity": "GOOGLE LLC"
-                        }
-                    }
-                },
-                "parent": {
-                    "node": {
-                        "key": "03267F6915111A61"
-                    }
-                },
-                "counters": {
-                    "model_child_process": 25,
-                    "os_child_process": 25,
-                    "cross_process": 1610,
-                    "module_load": 245,
-                    "file_creation": 148,
-                    "file_deletion": 58,
-                    "file_modification": 416,
-                    "registry_modification": 32,
-                    "cross_process_dup_thread_handle": 20,
-                    "cross_process_dup_process_handle": 1590
-                },
-                "node": {
-                    "key": "BAE25D38782A6941"
-                },
-                "user": {
-                    "sid": "S-1-5-21-6562365326-8585787878-2021012021-6543"
-                },
-                "interactive": "E_FALSE",
-                "excluded": "E_FALSE",
-                "root": "E_TRUE",
-                "session_id": 11,
-                "integrity_level": "MEDIUM",
-                "is_wow64": "E_FALSE",
-                "is_redirected_command_processor": "E_FALSE",
-                "true_context": {
-                    "key": "CCC43343435EABDF"
-                }
             },
             "host": {
                 "os": {
                     "revision": "88888"
                 }
             },
+            "true_context": {
+                "key": "CCC43343435EABDF"
+            },
+            "process": {
+                "counters": {
+                    "cross_process_dup_process_handle": 1590,
+                    "cross_process_dup_thread_handle": 20,
+                    "cross_process": 1610,
+                    "file_creation": 148,
+                    "file_deletion": 58,
+                    "file_modification": 416,
+                    "model_child_process": 25,
+                    "module_load": 245,
+                    "os_child_process": 25,
+                    "registry_modification": 32
+                },
+                "excluded": "E_FALSE",
+                "executable": {
+                    "is_dir": "E_FALSE",
+                    "name": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+                    "node": {
+                        "key": "C8E88AA83F5B15B6"
+                    },
+                    "signature": {
+                        "signed": {
+                            "identity": "GOOGLE LLC"
+                        }
+                    },
+                    "size_bytes": "2442584",
+                    "start": "2021-08-05T07:45:42.654000Z"
+                },
+                "family": "SYS_WIN32",
+                "integrity_level": "MEDIUM",
+                "interactive": "E_FALSE",
+                "is_redirected_command_processor": "E_FALSE",
+                "is_wow64": "E_FALSE",
+                "node": {
+                    "key": "BAE25D38782A6941"
+                },
+                "parent": {
+                    "node": {
+                        "key": "03267F6915111A61"
+                    }
+                },
+                "root": "E_TRUE",
+                "session_id": 11,
+                "true_context": {
+                    "key": "CCC43343435EABDF"
+                },
+                "user": {
+                    "sid": "S-1-5-21-6562365326-8585787878-2021012021-6543"
+                }
+            },
             "file": {
+                "location": "Local",
                 "node": {
                     "key": "737373ABCDEF7373"
-                },
-                "location": "Local"
+                }
             }
         },
-        "agent": {
-            "version": "S1-WIN/2.2.11.333"
+        "host": {
+            "name": "LAPTOP-COM13",
+            "os": {
+                "family": "windows",
+                "name": "Windows 10 Pro"
+            },
+            "type": "laptop"
         },
         "process": {
-            "working_directory": "C:\\Program Files\\Google\\Chrome\\Application",
             "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"",
-            "pid": 14896,
-            "start": "2021-08-09T13:28:53.932000Z",
-            "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
             "title": "Google Chrome",
+            "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+            "pid": 14896,
+            "working_directory": "C:\\Program Files\\Google\\Chrome\\Application",
+            "start": "2021-08-09T13:28:53.932000Z",
             "name": "chrome.exe"
-        },
-        "file": {
-            "created": "2206-11-13T06:23:32.121000Z",
-            "path": "C:\\Users\\user.name\\AppData\\Local\\Google\\Chrome\\User Data\\98798798-bbb2-9898-aaaa-1212121212f.tmp",
-            "type": "file",
-            "extension": "tmp",
-            "name": "98798798-bbb2-9898-aaaa-1212121212f.tmp"
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "related": {
-            "user": [
-                "CORP\\user.name"
-            ]
         },
         "user": {
             "name": "CORP\\user.name",
             "id": "S-1-5-21-6562365326-8585787878-2021012021-6543"
         },
-        "host": {
-            "type": "laptop",
-            "name": "LAPTOP-COM13",
-            "os": {
-                "family": "windows",
-                "name": "Windows 10 Pro"
-            }
+        "file": {
+            "path": "C:\\Users\\user.name\\AppData\\Local\\Google\\Chrome\\User Data\\98798798-bbb2-9898-aaaa-1212121212f.tmp",
+            "type": "file",
+            "name": "98798798-bbb2-9898-aaaa-1212121212f.tmp",
+            "extension": "tmp",
+            "created": "2206-11-13T06:23:32.121000Z"
+        },
+        "related": {
+            "user": [
+                "CORP\\user.name"
+            ]
         }
     }
     	
@@ -1533,10 +1529,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "automation",
             "registered_domain": "alticap.com",
-            "path": "/media/images/1548943185788.jpg",
-            "scheme": "https",
-            "fragment": "frag",
             "query": "foo=bar",
+            "path": "/media/images/1548943185788.jpg",
+            "fragment": "frag",
+            "scheme": "https",
             "port": 443
         },
         "related": {
@@ -2121,6 +2117,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"meta\": {\"seqId\": 10, \"uuid\": \"bfd21e8929fd49768299fae02a0557a6\", \"traceId\": \"7892FB424053407899299D5319FEB9C5\", \"agentVersion\": \"S1-WIN/21.5.7.370\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"19042\", \"computerName\": \"LAPTOP-TECH19\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"timestamp\": {\"millisecondsSinceEpoch\": \"1631785108303\"}, \"event_type\": \"regKeySecurityChanged\", \"trueContext\": {\"key\": {\"value\": \"D1A7307582B51DFF\"}}, \"regKey\": {\"key\": {}, \"path\": \"MACHINE\\\\BCD00000000\\\\Objects\\\\{9dea862c-5cdd-4e70-acc1-f32b344d4795}\\\\Elements\\\\11000001\"}, \"securityInformation\": 4, \"source\": {\"node\": {\"key\": {\"value\": \"C02A3567256C6DE9\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"61D0DBC75EA434C4\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"18446732429235951616\"}, \"path\": \"C:\\\\Windows\\\\system32\\\\taskhostw.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"97096\", \"signature\": {\"signed\": {\"identity\": \"MICROSOFT WINDOWS\", \"valid\": {}}}, \"hashes\": {\"sha1\": \"fed4b4a753a9541389aa670c69e624be07569ccd\", \"sha256\": \"0322728dbce3a577c4a13b907ad7375d27e74880b63f7371384f67d19197a0ad\", \"md5\": \"564e4806ab18f93b93d551cd10c1598e\"}, \"fileLocation\": \"Local\"}, \"commandLine\": \"taskhostw.exe\", \"fullPid\": {\"pid\": 25104, \"startTime\": {\"millisecondsSinceEpoch\": \"1631775524677\"}}, \"user\": {\"name\": \"CORP\\\\user.name\", \"sid\": \"S-1-5-21-3542462677-1213864171-2030164332-6186\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"7A33A49AFDF1C571\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"Host Process for Windows Tasks\", \"root\": \"E_FALSE\", \"subsystem\": \"SYS_WIN32\", \"sessionId\": 15, \"integrityLevel\": \"HIGH\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"D1A7307582B51DFF\"}}, \"counters\": {\"moduleLoad\": 52}}}",
+        "event": {
+            "action": "regKeySecurityChanged",
+            "start": "2021-09-16T09:38:28.303000Z"
+        },
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -2138,6 +2139,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "os": {
                     "revision": "19042"
                 }
+            },
+            "true_context": {
+                "key": "D1A7307582B51DFF"
             },
             "process": {
                 "counters": {
@@ -2182,17 +2186,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "registry": {
                 "security_information": 4
-            },
-            "true_context": {
-                "key": "D1A7307582B51DFF"
             }
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "action": "regKeySecurityChanged",
-            "start": "2021-09-16T09:38:28.303000Z"
         },
         "host": {
             "name": "LAPTOP-TECH19",
@@ -2202,20 +2196,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "type": "laptop"
         },
-        "message": "{\"meta\": {\"seqId\": 10, \"uuid\": \"bfd21e8929fd49768299fae02a0557a6\", \"traceId\": \"7892FB424053407899299D5319FEB9C5\", \"agentVersion\": \"S1-WIN/21.5.7.370\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"19042\", \"computerName\": \"LAPTOP-TECH19\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"timestamp\": {\"millisecondsSinceEpoch\": \"1631785108303\"}, \"event_type\": \"regKeySecurityChanged\", \"trueContext\": {\"key\": {\"value\": \"D1A7307582B51DFF\"}}, \"regKey\": {\"key\": {}, \"path\": \"MACHINE\\\\BCD00000000\\\\Objects\\\\{9dea862c-5cdd-4e70-acc1-f32b344d4795}\\\\Elements\\\\11000001\"}, \"securityInformation\": 4, \"source\": {\"node\": {\"key\": {\"value\": \"C02A3567256C6DE9\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"61D0DBC75EA434C4\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"18446732429235951616\"}, \"path\": \"C:\\\\Windows\\\\system32\\\\taskhostw.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"97096\", \"signature\": {\"signed\": {\"identity\": \"MICROSOFT WINDOWS\", \"valid\": {}}}, \"hashes\": {\"sha1\": \"fed4b4a753a9541389aa670c69e624be07569ccd\", \"sha256\": \"0322728dbce3a577c4a13b907ad7375d27e74880b63f7371384f67d19197a0ad\", \"md5\": \"564e4806ab18f93b93d551cd10c1598e\"}, \"fileLocation\": \"Local\"}, \"commandLine\": \"taskhostw.exe\", \"fullPid\": {\"pid\": 25104, \"startTime\": {\"millisecondsSinceEpoch\": \"1631775524677\"}}, \"user\": {\"name\": \"CORP\\\\user.name\", \"sid\": \"S-1-5-21-3542462677-1213864171-2030164332-6186\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"7A33A49AFDF1C571\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"Host Process for Windows Tasks\", \"root\": \"E_FALSE\", \"subsystem\": \"SYS_WIN32\", \"sessionId\": 15, \"integrityLevel\": \"HIGH\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"D1A7307582B51DFF\"}}, \"counters\": {\"moduleLoad\": 52}}}",
         "process": {
             "command_line": "taskhostw.exe",
+            "title": "Host Process for Windows Tasks",
             "executable": "C:\\Windows\\system32\\taskhostw.exe",
+            "pid": 25104,
+            "working_directory": "C:\\Windows\\system32",
             "hash": {
                 "md5": "564e4806ab18f93b93d551cd10c1598e",
                 "sha1": "fed4b4a753a9541389aa670c69e624be07569ccd",
                 "sha256": "0322728dbce3a577c4a13b907ad7375d27e74880b63f7371384f67d19197a0ad"
             },
-            "title": "Host Process for Windows Tasks",
-            "name": "taskhostw.exe",
-            "pid": 25104,
             "start": "2021-09-16T06:58:44.677000Z",
-            "working_directory": "C:\\Windows\\system32"
+            "name": "taskhostw.exe"
+        },
+        "user": {
+            "name": "CORP\\user.name",
+            "id": "S-1-5-21-3542462677-1213864171-2030164332-6186"
         },
         "registry": {
             "path": "MACHINE\\BCD00000000\\Objects\\{9dea862c-5cdd-4e70-acc1-f32b344d4795}\\Elements\\11000001",
@@ -2230,16 +2227,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "CORP\\user.name"
             ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "deep-visibility",
-                "dialect_uuid": "8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d"
-            }
-        },
-        "user": {
-            "id": "S-1-5-21-3542462677-1213864171-2030164332-6186",
-            "name": "CORP\\user.name"
         }
     }
     	
@@ -2375,6 +2362,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"meta\": {\"seqId\": 43, \"uuid\": \"19f22913365942f2afeed1463c96104b\", \"traceId\": \"63014A4A2D8B42148CBD53DA4C5937A8\", \"agentVersion\": \"S1-WIN/21.5.7.370\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"19042\", \"computerName\": \"LAPTOP-COM11\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"timestamp\": {\"millisecondsSinceEpoch\": \"1631785105794\"}, \"event_type\": \"regValueDelete\", \"trueContext\": {\"key\": {\"value\": \"6508114A467ECCA8\"}}, \"regValue\": {\"key\": {}, \"path\": \"MACHINE\\\\SYSTEM\\\\ControlSet001\\\\Services\\\\SentinelDeviceControl\\\\Enum\\\\53\"}, \"source\": {\"node\": {\"key\": {\"value\": \"1BA4624EB033A7CC\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"AC786EF3445E33CE\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"18446732429235951616\"}, \"path\": \"C:\\\\Windows\\\\System32\\\\ntoskrnl.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"10848576\", \"signature\": {\"signed\": {\"identity\": \"MICROSOFT WINDOWS\", \"valid\": {}}}, \"hashes\": {\"sha1\": \"560b6a3b55112d9834e28def41d5ac3de0e03928\"}}, \"fullPid\": {\"pid\": 4, \"startTime\": {\"millisecondsSinceEpoch\": \"1631781067519\"}}, \"user\": {\"name\": \"SYSTEM\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"1BA4624EB033A7CC\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"NT Kernel & System\", \"root\": \"E_TRUE\", \"subsystem\": \"SYS_WIN32\", \"integrityLevel\": \"SYSTEM\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"6508114A467ECCA8\"}}, \"counters\": {\"modelChildProcess\": 2, \"osChildProcess\": 2, \"fileModification\": 1, \"netConnIn\": 16, \"netConnOut\": 26}}}",
+        "event": {
+            "action": "regValueDelete",
+            "start": "2021-09-16T09:38:25.794000Z"
+        },
         "agent": {
             "version": "S1-WIN/21.5.7.370"
         },
@@ -2392,6 +2384,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "os": {
                     "revision": "19042"
                 }
+            },
+            "true_context": {
+                "key": "6508114A467ECCA8"
             },
             "process": {
                 "counters": {
@@ -2432,17 +2427,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "true_context": {
                     "key": "6508114A467ECCA8"
                 }
-            },
-            "true_context": {
-                "key": "6508114A467ECCA8"
             }
-        },
-        "ecs": {
-            "version": "1.10.0"
-        },
-        "event": {
-            "action": "regValueDelete",
-            "start": "2021-09-16T09:38:25.794000Z"
         },
         "host": {
             "name": "LAPTOP-COM11",
@@ -2452,17 +2437,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "type": "laptop"
         },
-        "message": "{\"meta\": {\"seqId\": 43, \"uuid\": \"19f22913365942f2afeed1463c96104b\", \"traceId\": \"63014A4A2D8B42148CBD53DA4C5937A8\", \"agentVersion\": \"S1-WIN/21.5.7.370\", \"osFamily\": \"windows\", \"osName\": \"Windows 10 Pro\", \"osRevision\": \"19042\", \"computerName\": \"LAPTOP-COM11\", \"machineType\": \"laptop\", \"mgmtUrl\": \"https://euce1-110-nfr.sentinelone.net\"}, \"timestamp\": {\"millisecondsSinceEpoch\": \"1631785105794\"}, \"event_type\": \"regValueDelete\", \"trueContext\": {\"key\": {\"value\": \"6508114A467ECCA8\"}}, \"regValue\": {\"key\": {}, \"path\": \"MACHINE\\\\SYSTEM\\\\ControlSet001\\\\Services\\\\SentinelDeviceControl\\\\Enum\\\\53\"}, \"source\": {\"node\": {\"key\": {\"value\": \"1BA4624EB033A7CC\"}}, \"executable\": {\"node\": {\"key\": {\"value\": \"AC786EF3445E33CE\"}}, \"creationTime\": {\"millisecondsSinceEpoch\": \"18446732429235951616\"}, \"path\": \"C:\\\\Windows\\\\System32\\\\ntoskrnl.exe\", \"owner\": {}, \"isDir\": \"E_FALSE\", \"sizeBytes\": \"10848576\", \"signature\": {\"signed\": {\"identity\": \"MICROSOFT WINDOWS\", \"valid\": {}}}, \"hashes\": {\"sha1\": \"560b6a3b55112d9834e28def41d5ac3de0e03928\"}}, \"fullPid\": {\"pid\": 4, \"startTime\": {\"millisecondsSinceEpoch\": \"1631781067519\"}}, \"user\": {\"name\": \"SYSTEM\"}, \"interactive\": \"E_FALSE\", \"parent\": {\"node\": {\"key\": {\"value\": \"1BA4624EB033A7CC\"}}, \"fullPid\": {\"startTime\": {}}}, \"excluded\": \"E_FALSE\", \"name\": \"NT Kernel & System\", \"root\": \"E_TRUE\", \"subsystem\": \"SYS_WIN32\", \"integrityLevel\": \"SYSTEM\", \"isWow64\": \"E_FALSE\", \"isRedirectedCommandProcessor\": \"E_FALSE\", \"trueContext\": {\"key\": {\"value\": \"6508114A467ECCA8\"}}, \"counters\": {\"modelChildProcess\": 2, \"osChildProcess\": 2, \"fileModification\": 1, \"netConnIn\": 16, \"netConnOut\": 26}}}",
         "process": {
+            "title": "NT Kernel & System",
             "executable": "C:\\Windows\\System32\\ntoskrnl.exe",
+            "pid": 4,
+            "working_directory": "C:\\Windows\\System32",
             "hash": {
                 "sha1": "560b6a3b55112d9834e28def41d5ac3de0e03928"
             },
-            "title": "NT Kernel & System",
-            "name": "ntoskrnl.exe",
-            "pid": 4,
             "start": "2021-09-16T08:31:07.519000Z",
-            "working_directory": "C:\\Windows\\System32"
+            "name": "ntoskrnl.exe"
+        },
+        "user": {
+            "name": "SYSTEM"
         },
         "registry": {
             "path": "MACHINE\\SYSTEM\\ControlSet001\\Services\\SentinelDeviceControl\\Enum\\53",
@@ -2475,15 +2462,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "SYSTEM"
             ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "dialect": "deep-visibility",
-                "dialect_uuid": "8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d"
-            }
-        },
-        "user": {
-            "name": "SYSTEM"
         }
     }
     	

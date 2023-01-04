@@ -173,8 +173,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "INCOMING_CONNECTION"
         },
         "source": {
-            "ip": "10.17.86.250",
             "port": 53344,
+            "ip": "10.17.86.250",
             "address": "10.17.86.250"
         },
         "related": {
@@ -206,10 +206,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "service": {
             "name": "ssh"
         },
-        "source": {
-            "ip": "10.10.43.84",
-            "address": "10.10.43.84"
-        },
         "host": {
             "ip": [
                 "10.10.47.53"
@@ -218,6 +214,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "destination": {
             "ip": "10.10.47.53",
             "address": "10.10.47.53"
+        },
+        "source": {
+            "ip": "10.10.43.84",
+            "address": "10.10.43.84"
         },
         "related": {
             "ip": [
@@ -253,16 +253,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "service": {
             "name": "SSH"
         },
-        "source": {
-            "ip": "1.1.1.1",
-            "address": "1.1.1.1"
-        },
         "host": {
             "ip": [
                 "1.1.1.1"
             ]
         },
         "destination": {
+            "ip": "1.1.1.1",
+            "address": "1.1.1.1"
+        },
+        "source": {
             "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },

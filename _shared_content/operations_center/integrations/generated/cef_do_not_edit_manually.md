@@ -81,6 +81,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "severity": 5,
             "end": "2022-08-01T06:40:30.000000Z"
         },
+        "@timestamp": "2022-08-01T06:40:30.000000Z",
         "observer": {
             "vendor": "Cisco",
             "type": "C390 Email Security Appliance",
@@ -89,7 +90,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "rule": {
             "id": "ESA_CONSOLIDATED_LOG_EVENT"
         },
-        "@timestamp": "2022-08-01T06:40:30.000000Z",
         "cef": {
             "Name": "Consolidated Log Event"
         }
@@ -107,6 +107,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "severity": 5
         },
+        "@timestamp": "2021-08-20T22:53:27.043000Z",
         "observer": {
             "vendor": "Cybereason",
             "type": "Cybereason",
@@ -120,7 +121,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "3.226.77.3",
             "address": "3.226.77.3"
         },
-        "@timestamp": "2021-08-20T22:53:27.043000Z",
         "cef": {
             "cs1Label": "MalopId",
             "rt": "1629500007043",
@@ -147,6 +147,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "severity": 5
         },
+        "@timestamp": "2021-08-23T06:53:42.409000Z",
         "observer": {
             "vendor": "Cybereason",
             "type": "Cybereason",
@@ -167,7 +168,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "referrer": "flashget3.7.0.1220en.pdf.exe, which has an unknown reputation, has dual extensions, which is hiding the true nature of the process."
             }
         },
-        "@timestamp": "2021-08-23T06:53:42.409000Z",
         "cef": {
             "cn2Label": "AffectedUsersCount",
             "cn1Label": "AffectedMachinesCount",
@@ -202,6 +202,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "severity": 5
         },
+        "@timestamp": "2021-07-08T12:48:29.151000Z",
         "observer": {
             "vendor": "Cybereason",
             "type": "Cybereason",
@@ -217,10 +218,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "C:\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
-            "path": "\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
-            "scheme": "c"
+            "scheme": "c",
+            "path": "\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe"
         },
-        "@timestamp": "2021-07-08T12:48:29.151000Z",
         "cef": {
             "cfp3Label": "isOriginalMachine",
             "cfp2Label": "isOnline",
@@ -256,6 +256,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "severity": 5,
             "action": "indifferent"
         },
+        "@timestamp": "2021-08-23T06:38:02.928000Z",
         "observer": {
             "vendor": "Cybereason",
             "type": "Cybereason",
@@ -266,10 +267,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "C:\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
-            "path": "\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe",
-            "scheme": "c"
+            "scheme": "c",
+            "path": "\\\\Users\\\\chand\\\\Downloads\\\\BT_21.40.5_32_Win7.pdf.exe"
         },
-        "@timestamp": "2021-08-23T06:38:02.928000Z",
         "cef": {
             "cs4Label": "processSha1",
             "flexString2Label": "isMalicious",
@@ -449,8 +449,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "url": {
             "original": "http://2.2.2.2/eicar.com",
             "domain": "2.2.2.2",
-            "path": "/eicar.com",
             "scheme": "http",
+            "path": "/eicar.com",
             "port": 80
         },
         "cef": {
@@ -795,6 +795,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-02-28T18:20:40.000000Z"
         },
+        "@timestamp": "2021-02-28T18:20:40.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -811,7 +812,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "paloaltonetwork\\\\xxxxx"
             }
         },
-        "@timestamp": "2021-02-28T18:20:40.000000Z",
         "cef": {
             "externalId": "xxxxxxxxxxxxx",
             "cn1Label": "AuthFactorNo",
@@ -860,6 +860,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T20:35:54.000000Z"
         },
+        "@timestamp": "2021-03-01T20:35:54.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -887,7 +888,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "address": "1.1.1.1"
         },
-        "@timestamp": "2021-03-01T20:35:54.000000Z",
         "cef": {
             "externalId": "xxxxxxxxxxxxx",
             "dpt": "20122",
@@ -932,6 +932,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T21:06:06.000000Z"
         },
+        "@timestamp": "2021-03-01T21:06:06.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -957,7 +958,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "inode": "0",
             "path": "page-icon.png"
         },
-        "@timestamp": "2021-03-01T21:06:06.000000Z",
         "cef": {
             "externalId": "xxxxxxxxxxxxx",
             "flexString2Label": "DirectionOfAttack",
@@ -1002,6 +1002,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T20:35:54.000000Z"
         },
+        "@timestamp": "2021-03-01T20:35:54.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1010,7 +1011,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "rule": {
             "id": "GLOBALPROTECT"
         },
-        "@timestamp": "2021-03-01T20:35:54.000000Z",
         "cef": {
             "rt": "Mar 01 2021 20:35:54",
             "Name": "globalprotect"
@@ -1102,6 +1102,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T21:20:13.000000Z"
         },
+        "@timestamp": "2021-03-01T21:20:13.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1118,7 +1119,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
-        "@timestamp": "2021-03-01T21:20:13.000000Z",
         "cef": {
             "cn2Label": "VirtualSystemID",
             "cn2": 1,
@@ -1151,6 +1151,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T21:22:02.000000Z"
         },
+        "@timestamp": "2021-03-01T21:22:02.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1169,7 +1170,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.1.1.1",
             "address": "1.1.1.1"
         },
-        "@timestamp": "2021-03-01T21:22:02.000000Z",
         "cef": {
             "externalId": "xxxxxxxxxxxxx",
             "dpt": "5496",
@@ -1209,6 +1209,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T20:48:16.000000Z"
         },
+        "@timestamp": "2021-03-01T20:48:16.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1241,7 +1242,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "original": "some other fake filename",
             "path": "some other fake filename"
         },
-        "@timestamp": "2021-03-01T20:48:16.000000Z",
         "cef": {
             "externalId": "xxxxxxxxxxxxx",
             "flexString2Label": "DirectionOfAttack",
@@ -1294,6 +1294,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-02-27T20:16:17.000000Z"
         },
+        "@timestamp": "2021-02-27T20:16:17.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1332,7 +1333,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 }
             }
         },
-        "@timestamp": "2021-02-27T20:16:17.000000Z",
         "cef": {
             "cat": "unknown",
             "externalId": "xxxxxxxxxxxxx",
@@ -1388,6 +1388,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "timezone": "UTC",
             "start": "2021-03-01T20:48:16.000000Z"
         },
+        "@timestamp": "2021-03-01T20:48:16.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1429,7 +1430,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "method": "post"
             }
         },
-        "@timestamp": "2021-03-01T20:48:16.000000Z",
         "cef": {
             "externalId": "xxxxxxxxxxxxx",
             "flexString2Label": "DirectionOfAttack",
@@ -1483,6 +1483,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "end": "2019-07-09T18:15:44.000000Z",
             "start": "2021-03-01T21:06:02.000000Z"
         },
+        "@timestamp": "2021-03-01T21:06:02.000000Z",
         "observer": {
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1505,7 +1506,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "address": "paloaltonetwork"
         },
-        "@timestamp": "2021-03-01T21:06:02.000000Z",
         "cef": {
             "cn1Label": "AuthFactorNo",
             "cn1": 3,

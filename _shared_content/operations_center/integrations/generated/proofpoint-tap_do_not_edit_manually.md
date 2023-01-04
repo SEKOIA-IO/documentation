@@ -33,56 +33,51 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2016-06-24T19:17:44.000Z",
         "message": "{\"campaignId\":\"46e01b8a-c899-404d-bcd9-189bb393d1a7\",\"classification\":\"MALWARE\",\"clickIP\":\"192.0.2.1\",\"clickTime\":\"2016-06-24T19:17:44.000Z\",\"GUID\":\"b27dbea0-87d5-463b-b93c-4e8b708289ce\",\"id\":\"8c8b4895-a277-449f-r797-547e3c89b25a\",\"messageID\":\"8c6cfedd-3050-4d65-8c09-c5f65c38da81\",\"recipient\":\"bruce.wayne@pharmtech.zz\",\"sender\":\"9facbf452def2d7efc5b5c48cdb837fa@badguy.zz\",\"senderIP\":\"192.0.2.255\",\"threatID\":\"61f7622167144dba5e3ae4480eeee78b23d66f7dfed970cfc3d086cc0dabdf50\",\"threatTime\":\"2016-06-24T19:17:46.000Z\",\"threatURL\":\"https://threatinsight.proofpoint.com/#/73aa0499-dfc8-75eb-1de8-a471b24a2e75/threat/u/61f7622167144dba5e3ae4480eeee78b23d66f7dfed970cfc3d086cc0dabdf50\",\"threatStatus\":\"active\",\"url\":\"http://badguy.zz/\",\"userAgent\":\"Mozilla/5.0(WindowsNT6.1;WOW64;rv:27.0)Gecko/20100101Firefox/27.0\",\"type\":\"click\",\"status\":\"permitted\"}\n",
         "event": {
+            "action": "permitted",
+            "dataset": "click",
             "kind": "event",
-            "type": [
-                "allowed"
-            ],
             "category": [
                 "network"
             ],
-            "action": "permitted",
-            "dataset": "click"
-        },
-        "observer": {
-            "vendor": "ProofPoint",
-            "product": "Targeted Attack Protection"
+            "type": [
+                "allowed"
+            ]
         },
         "email": {
-            "to": {
-                "address": [
-                    "bruce.wayne@pharmtech.zz"
-                ]
-            },
+            "local_id": "b27dbea0-87d5-463b-b93c-4e8b708289ce",
+            "message_id": "8c6cfedd-3050-4d65-8c09-c5f65c38da81",
             "sender": {
                 "address": [
                     "9facbf452def2d7efc5b5c48cdb837fa@badguy.zz"
                 ]
             },
-            "local_id": "b27dbea0-87d5-463b-b93c-4e8b708289ce",
-            "message_id": "8c6cfedd-3050-4d65-8c09-c5f65c38da81"
-        },
-        "related": {
-            "ip": [
-                "192.0.2.255"
-            ]
+            "to": {
+                "address": [
+                    "bruce.wayne@pharmtech.zz"
+                ]
+            }
         },
         "source": {
             "ip": "192.0.2.255",
             "address": "192.0.2.255"
         },
+        "observer": {
+            "vendor": "ProofPoint",
+            "product": "Targeted Attack Protection"
+        },
+        "@timestamp": "2016-06-24T19:17:44.000Z",
+        "user_agent": {
+            "original": "Mozilla/5.0(WindowsNT6.1;WOW64;rv:27.0)Gecko/20100101Firefox/27.0"
+        },
         "url": {
             "original": "http://badguy.zz/",
             "domain": "badguy.zz",
-            "path": "/",
-            "port": 80,
+            "subdomain": "badguy",
             "scheme": "http",
-            "subdomain": "badguy"
-        },
-        "user_agent": {
-            "original": "Mozilla/5.0(WindowsNT6.1;WOW64;rv:27.0)Gecko/20100101Firefox/27.0"
+            "path": "/",
+            "port": 80
         },
         "threat": {
             "enrichments": [
@@ -107,6 +102,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     ]
                 }
             }
+        },
+        "related": {
+            "ip": [
+                "192.0.2.255"
+            ]
         }
     }
     	
@@ -118,45 +118,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "@timestamp": "2016-06-24T21:18:38.000Z",
         "message": "{\"GUID\":\"c26dbea0-80d5-463b-b93c-4e8b708219ce\",\"status\":\"delivered\",\"type\":\"message\",\"QID\":\"r2FNwRHF004109\",\"ccAddresses\":[\"bruce.wayne@university-of-education.zz\"],\"clusterId\":\"pharmtech_hosted\",\"completelyRewritten\":\"true\",\"fromAddress\":[\"badguy@evil.zz\"],\"headerCC\":\"\\\"Bruce Wayne\\\" <bruce.wayne@university-of-education.zz>\",\"headerFrom\":\"\\\"A. Badguy\\\" <badguy@evil.zz>\",\"headerReplyTo\":null,\"headerTo\":\"\\\"Clark Kent\\\" <clark.kent@pharmtech.zz>; \\\"Diana Prince\\\" <diana.prince@pharmtech.zz>\",\"impostorScore\":0,\"malwareScore\":100,\"messageID\":\"20160624211145.62086.mail@evil.zz\",\"messageParts\":[{\"contentType\":\"text/plain\",\"disposition\":\"inline\",\"filename\":\"text.txt\",\"md5\":\"008c5926ca861023c1d2a36653fd88e2\",\"oContentType\":\"text/plain\",\"sandboxStatus\":\"unsupported\",\"sha256\":\"85738f8f9a7f1b04b5329c590ebcb9e425925c6d0984089c43a022de4f19c281\"},{\"contentType\":\"application/pdf\",\"disposition\":\"attached\",\"filename\":\"Invoice for Pharmtech.pdf\",\"md5\":\"5873c7d37608e0d49bcaa6f32b6c731f\",\"oContentType\":\"application/pdf\",\"sandboxStatus\":\"threat\",\"sha256\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\"}],\"messageTime\":\"2016-06-24T21:18:38.000Z\",\"modulesRun\":[\"pdr\",\"sandbox\",\"spam\",\"urldefense\"],\"phishScore\":46,\"policyRoutes\":[\"default_inbound\",\"executives\"],\"quarantineFolder\":\"Attachment Defense\",\"quarantineRule\":\"module.sandbox.threat\",\"recipient\":[\"clark.kent@pharmtech.zz\",\"diana.prince@pharmtech.zz\"],\"replyToAddress\":null,\"sender\":\"e99d7ed5580193f36a51f597bc2c0210@evil.zz\",\"senderIP\":\"192.0.2.255\",\"spamScore\":4,\"subject\":\"Please find a totally safe invoice attached.\",\"threatsInfoMap\":[{\"campaignId\":\"46e01b8a-c899-404d-bcd9-189bb393d1a7\",\"classification\":\"MALWARE\",\"threat\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\",\"threatId\":\"2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\",\"threatStatus\":\"active\",\"threatTime\":\"2016-06-24T21:18:38.000Z\",\"threatType\":\"ATTACHMENT\",\"threatUrl\":\"https://threatinsight.proofpoint.com/#/73aa0499-dfc8-75eb-1de8-a471b24a2e75/threat/u/2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca\"},{\"campaignId\":\"46e01b8a-c899-404d-bcd9-189bb393d1a7\",\"classification\":\"MALWARE\",\"threat\":\"badsite.zz\",\"threatId\":\"3ba97fc852c66a7ba761450edfdfb9f4ffab74715b591294f78b5e37a76481aa\",\"threatTime\":\"2016-06-24T21:18:07.000Z\",\"threatType\":\"url\",\"threatUrl\":\"https://threatinsight.proofpoint.com/#/73aa0499-dfc8-75eb-1de8-a471b24a2e75/threat/u/3ba97fc852c66a7ba761450edfdfb9f4ffab74715b591294f78b5e37a76481aa\"}],\"toAddresses\":[\"clark.kent@pharmtech.zz\",\"diana.prince@pharmtech.zz\"],\"xmailer\":\"Spambot v2.5\"}",
         "event": {
-            "kind": "event",
             "action": "delivered",
+            "dataset": "message",
+            "kind": "event",
             "type": [
                 "info"
             ],
             "category": [
                 "email"
-            ],
-            "dataset": "message"
-        },
-        "related": {
-            "ip": [
-                "192.0.2.255"
             ]
         },
-        "observer": {
-            "vendor": "ProofPoint",
-            "product": "Targeted Attack Protection"
-        },
         "email": {
-            "cc": {
-                "address": [
-                    "bruce.wayne@university-of-education.zz"
-                ]
-            },
-            "from": {
-                "address": [
-                    "badguy@evil.zz"
-                ]
-            },
-            "to": {
-                "address": [
-                    "clark.kent@pharmtech.zz",
-                    "diana.prince@pharmtech.zz"
-                ]
-            },
+            "local_id": "c26dbea0-80d5-463b-b93c-4e8b708219ce",
+            "message_id": "20160624211145.62086.mail@evil.zz",
             "sender": {
                 "address": [
                     "e99d7ed5580193f36a51f597bc2c0210@evil.zz"
@@ -164,26 +140,40 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "x_mailer": "Spambot v2.5",
             "subject": "Please find a totally safe invoice attached.",
-            "local_id": "c26dbea0-80d5-463b-b93c-4e8b708219ce",
-            "message_id": "20160624211145.62086.mail@evil.zz",
+            "to": {
+                "address": [
+                    "clark.kent@pharmtech.zz",
+                    "diana.prince@pharmtech.zz"
+                ]
+            },
+            "from": {
+                "address": [
+                    "badguy@evil.zz"
+                ]
+            },
+            "cc": {
+                "address": [
+                    "bruce.wayne@university-of-education.zz"
+                ]
+            },
             "attachments": [
                 {
                     "file": {
-                        "mime_type": "text/plain",
                         "name": "text.txt",
+                        "mime_type": "text/plain",
                         "hash": {
-                            "md5": "008c5926ca861023c1d2a36653fd88e2",
-                            "sha256": "85738f8f9a7f1b04b5329c590ebcb9e425925c6d0984089c43a022de4f19c281"
+                            "sha256": "85738f8f9a7f1b04b5329c590ebcb9e425925c6d0984089c43a022de4f19c281",
+                            "md5": "008c5926ca861023c1d2a36653fd88e2"
                         }
                     }
                 },
                 {
                     "file": {
-                        "mime_type": "application/pdf",
                         "name": "Invoice for Pharmtech.pdf",
+                        "mime_type": "application/pdf",
                         "hash": {
-                            "md5": "5873c7d37608e0d49bcaa6f32b6c731f",
-                            "sha256": "2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca"
+                            "sha256": "2fab740f143fc1aa4c1cd0146d334c5593b1428f6d062b2c406e5efe8abe95ca",
+                            "md5": "5873c7d37608e0d49bcaa6f32b6c731f"
                         }
                     }
                 }
@@ -193,6 +183,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "192.0.2.255",
             "address": "192.0.2.255"
         },
+        "observer": {
+            "vendor": "ProofPoint",
+            "product": "Targeted Attack Protection"
+        },
+        "@timestamp": "2016-06-24T21:18:38.000Z",
         "rule": {
             "name": "module.sandbox.threat"
         },
@@ -226,6 +221,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "proofpoint": {
             "tap": {
+                "threat": {
+                    "classifications": [
+                        "malware"
+                    ],
+                    "scores": {
+                        "spam": 4,
+                        "impostor": 0,
+                        "malware": 100,
+                        "phish": 46
+                    }
+                },
                 "modules": [
                     "pdr",
                     "sandbox",
@@ -242,19 +248,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                             "diana.prince@pharmtech.zz"
                         ]
                     }
-                },
-                "threat": {
-                    "scores": {
-                        "spam": 4,
-                        "impostor": 0,
-                        "malware": 100,
-                        "phish": 46
-                    },
-                    "classifications": [
-                        "malware"
-                    ]
                 }
             }
+        },
+        "related": {
+            "ip": [
+                "192.0.2.255"
+            ]
         }
     }
     	

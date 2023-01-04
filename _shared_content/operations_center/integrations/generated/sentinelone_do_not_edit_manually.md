@@ -727,28 +727,56 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"accountId\": \"123456789831564686\", \"activityType\": 5126, \"agentId\": \"1098352279374896038\", \"agentUpdatedVersion\": null, \"applications\": null, \"comments\": null, \"createdAt\": \"2022-03-29T17:20:31.139698Z\", \"data\": {\"accountName\": \"CORP\", \"bluetoothAddress\": \"\", \"computerName\": \"CORP123\", \"creator\": \"N/A\", \"deviceClass\": \"E0h\", \"deviceInformationServiceInfoKey\": \"\", \"deviceInformationServiceInfoValue\": \"\", \"deviceName\": \"\", \"eventId\": \"{1988659d-af84-11ec-914c-806e6f6e6963}\", \"eventTime\": \"2022-03-29T17:17:40.622+00:00\", \"eventType\": \"connected\", \"fullScopeDetails\": \"Group Default Group in Site CORP-Users of Account CORP\", \"fullScopeDetailsPath\": \"Global / CORP / CORP-Users / Default Group\", \"gattService\": \"\", \"groupId\": \"1083054176758610128\", \"groupName\": \"Default Group\", \"interface\": \"USB\", \"lastLoggedInUserName\": \"user.name\", \"lmpVersion\": \"N/A\", \"manufacturerName\": \"\", \"minorClass\": \"N/A\", \"osType\": \"windows\", \"productId\": \"AAA\", \"profileUuids\": \"N/A\", \"ruleId\": -1, \"ruleName\": null, \"ruleScopeName\": null, \"ruleType\": \"productId\", \"scopeLevel\": \"Group\", \"scopeName\": \"Default Group\", \"siteName\": \"CORP-Users\", \"uid\": \"\", \"vendorId\": \"8087\", \"version\": \"N/A\"}, \"description\": null, \"groupId\": \"1083054176758610128\", \"hash\": null, \"id\": \"1387019684138751044\", \"osFamily\": null, \"primaryDescription\": \"USB device  was connected on CORP123.\", \"secondaryDescription\": null, \"siteId\": \"1083054176741832911\", \"threatId\": null, \"updatedAt\": \"2022-03-29T17:20:30.998054Z\", \"userId\": null}",
         "event": {
-            "category": "host",
-            "id": "1387019684138751044",
-            "kind": "event",
-            "outcome": "success",
             "reason": "USB device  was connected on CORP123.",
+            "action": "Device Control Approved Event",
+            "kind": "event",
+            "category": "host",
             "type": [
                 "allowed"
-            ],
-            "action": "Device Control Approved Event"
+            ]
         },
-        "group": {
-            "id": "1083054176758610128"
+        "sentinelone": {
+            "eventid": 1387019684138751044,
+            "siteId": 1083054176741832911,
+            "updatedAt": "2022-03-29T17:20:30.998054Z",
+            "createdAt": "2022-03-29T17:20:31.139698Z",
+            "data": {
+                "accountName": "CORP",
+                "deviceClass": "E0h",
+                "fullScopeDetails": "Group Default Group in Site CORP-Users of Account CORP",
+                "fullScopeDetailsPath": "Global / CORP / CORP-Users / Default Group",
+                "interface": "USB",
+                "lmpVersion": "N/A",
+                "productId": "AAA",
+                "profileUuids": "N/A",
+                "ruleType": "productId",
+                "scopeLevel": "Group",
+                "scopeName": "Default Group",
+                "vendorId": 8087,
+                "version": "N/A",
+                "groupName": "Default Group",
+                "siteName": "CORP-Users",
+                "computerName": "CORP123",
+                "creator": "N/A",
+                "eventId": "{1988659d-af84-11ec-914c-806e6f6e6963}",
+                "eventTime": "2022-03-29T17:17:40.622+00:00",
+                "eventType": "connected",
+                "groupId": 1083054176758610128,
+                "lastLoggedInUserName": "user.name",
+                "minorClass": "N/A",
+                "osType": "windows"
+            }
         },
         "organization": {
             "id": "123456789831564686"
         },
-        "rule": {
-            "id": "-1"
-        },
         "action": {
             "type": 5126
+        },
+        "group": {
+            "id": "1083054176758610128"
         },
         "agent": {
             "id": "1098352279374896038"
@@ -756,37 +784,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "host": {
             "name": "CORP123"
         },
-        "sentinelone": {
-            "createdAt": "2022-03-29T17:20:31.139698Z",
-            "data": {
-                "accountName": "CORP",
-                "computerName": "CORP123",
-                "creator": "N/A",
-                "deviceClass": "E0h",
-                "eventId": "{1988659d-af84-11ec-914c-806e6f6e6963}",
-                "eventTime": "2022-03-29T17:17:40.622+00:00",
-                "eventType": "connected",
-                "fullScopeDetails": "Group Default Group in Site CORP-Users of Account CORP",
-                "fullScopeDetailsPath": "Global / CORP / CORP-Users / Default Group",
-                "groupId": 1083054176758610128,
-                "groupName": "Default Group",
-                "interface": "USB",
-                "lastLoggedInUserName": "user.name",
-                "lmpVersion": "N/A",
-                "minorClass": "N/A",
-                "osType": "windows",
-                "productId": "AAA",
-                "profileUuids": "N/A",
-                "ruleType": "productId",
-                "scopeLevel": "Group",
-                "scopeName": "Default Group",
-                "siteName": "CORP-Users",
-                "vendorId": 8087,
-                "version": "N/A"
-            },
-            "eventid": 1387019684138751044,
-            "siteId": 1083054176741832911,
-            "updatedAt": "2022-03-29T17:20:30.998054Z"
+        "rule": {
+            "id": "-1"
         }
     }
     	

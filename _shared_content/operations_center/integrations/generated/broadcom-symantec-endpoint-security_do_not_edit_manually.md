@@ -313,9 +313,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "url": {
             "original": "http://9.8.7.6:443/",
             "domain": "9.8.7.6",
-            "scheme": "http",
+            "path": "/",
             "port": 443,
-            "path": "/"
+            "scheme": "http"
         },
         "network": {
             "direction": "outbound",
@@ -499,13 +499,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 },
                 "application": {
                     "code_signature": {
-                        "timestamp": "2022-04-05T10:40:01.000000Z",
                         "certificate": {
                             "serial_number": "044541E287C90A879334BFD15D6A3ED3",
                             "thumbprint": "D31433F4C8C0BE4846E7E90318CD0CF5046EE95C"
                         },
                         "signer": "Sectigo RSA Code Signing CA",
                         "subject_name": "Absyss",
+                        "timestamp": "2022-04-05T10:40:01.000000Z",
                         "digest_algorithm": "sha2"
                     },
                     "hash": {

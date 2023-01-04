@@ -96,9 +96,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "id": "jI80snAs0ZMym5tvc8Jbp",
                     "type": "WEB"
                 },
-                "outcome": {
-                    "result": "SUCCESS"
-                },
                 "authentication_context": {
                     "interface": "IDP Instance",
                     "authentication": {
@@ -108,6 +105,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         "type": "ASSERTION"
                     },
                     "external_session_id": "kjrgFtXuZnABQV9Vq1A2c"
+                },
+                "outcome": {
+                    "result": "SUCCESS"
                 }
             }
         },
@@ -195,9 +195,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "id": "jI80snAs0ZMym5tvc8Jbp",
                     "type": "WEB"
                 },
-                "outcome": {
-                    "result": "SUCCESS"
-                },
                 "authentication_context": {
                     "authentication": {
                         "provider": "FACTOR_PROVIDER"
@@ -206,6 +203,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                         "provider": "OKTA_CREDENTIAL_PROVIDER"
                     },
                     "external_session_id": "kjrgFtXuZnABQV9Vq1A2c"
+                },
+                "outcome": {
+                    "result": "SUCCESS"
                 }
             }
         },

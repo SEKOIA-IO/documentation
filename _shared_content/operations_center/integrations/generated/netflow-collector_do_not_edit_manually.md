@@ -31,32 +31,32 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "duration": 416000000
         },
         "source": {
-            "address": "1.2.3.4",
             "ip": "1.2.3.4",
-            "port": 443
+            "port": 443,
+            "address": "1.2.3.4"
         },
         "destination": {
-            "address": "5.6.7.8",
             "ip": "5.6.7.8",
-            "port": 37500
+            "port": 37500,
+            "address": "5.6.7.8"
+        },
+        "network": {
+            "bytes": 6561,
+            "packets": 12,
+            "iana_number": "6",
+            "type": "ipv4",
+            "transport": "tcp"
+        },
+        "netflow": {
+            "tcp": {
+                "flags": 27
+            }
         },
         "related": {
             "ip": [
                 "1.2.3.4",
                 "5.6.7.8"
             ]
-        },
-        "network": {
-            "type": "ipv4",
-            "transport": "tcp",
-            "iana_number": "6",
-            "bytes": 6561,
-            "packets": 12
-        },
-        "netflow": {
-            "tcp": {
-                "flags": 27
-            }
         }
     }
     	
@@ -73,32 +73,32 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "duration": 113000000
         },
         "source": {
-            "address": "1.2.3.4",
             "ip": "1.2.3.4",
-            "port": 54840
+            "port": 54840,
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 443,
+            "address": "5.6.7.8"
+        },
+        "network": {
+            "bytes": 1732,
+            "packets": 17,
+            "iana_number": "6",
+            "type": "ipv4",
+            "transport": "tcp"
+        },
+        "netflow": {
+            "tcp": {
+                "flags": 27
+            }
         },
         "related": {
             "ip": [
                 "1.2.3.4",
                 "5.6.7.8"
             ]
-        },
-        "destination": {
-            "address": "5.6.7.8",
-            "ip": "5.6.7.8",
-            "port": 443
-        },
-        "network": {
-            "transport": "tcp",
-            "type": "ipv4",
-            "iana_number": "6",
-            "bytes": 1732,
-            "packets": 17
-        },
-        "netflow": {
-            "tcp": {
-                "flags": 27
-            }
         }
     }
     	
@@ -116,26 +116,26 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "source": {
             "ip": "1.2.3.4",
-            "address": "1.2.3.4",
-            "port": 38005
+            "port": 38005,
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 123,
+            "address": "5.6.7.8"
+        },
+        "network": {
+            "bytes": 76,
+            "packets": 1,
+            "iana_number": "17",
+            "type": "ipv4",
+            "transport": "udp"
         },
         "related": {
             "ip": [
                 "1.2.3.4",
                 "5.6.7.8"
             ]
-        },
-        "destination": {
-            "address": "5.6.7.8",
-            "ip": "5.6.7.8",
-            "port": 123
-        },
-        "network": {
-            "transport": "udp",
-            "type": "ipv4",
-            "iana_number": "17",
-            "bytes": 76,
-            "packets": 1
         }
     }
     	

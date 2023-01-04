@@ -27,17 +27,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "client @0x7f62b80115d0 192.168.101.70#55575 (docs.sekoia.io): query: docs.sekoia.io IN AAAA + (192.168.100.102)",
         "source": {
-            "address": "192.168.101.70",
             "ip": "192.168.101.70",
-            "port": 55575
-        },
-        "related": {
-            "ip": [
-                "192.168.101.70"
-            ]
+            "port": 55575,
+            "address": "192.168.101.70"
         },
         "dns": {
-            "type": "query",
             "question": {
                 "class": "IN",
                 "type": "AAAA",
@@ -46,8 +40,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "subdomain": "docs",
                 "registered_domain": "sekoia.io"
             },
+            "type": "query",
             "header_flags": [
                 "RD"
+            ]
+        },
+        "related": {
+            "ip": [
+                "192.168.101.70"
             ]
         }
     }
@@ -62,17 +62,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "client 192.168.101.70#55575 (docs.sekoia.io): query: docs.sekoia.io IN AAAA +TC (192.168.100.102)",
         "source": {
-            "address": "192.168.101.70",
             "ip": "192.168.101.70",
-            "port": 55575
-        },
-        "related": {
-            "ip": [
-                "192.168.101.70"
-            ]
+            "port": 55575,
+            "address": "192.168.101.70"
         },
         "dns": {
-            "type": "query",
             "question": {
                 "class": "IN",
                 "type": "AAAA",
@@ -81,6 +75,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "subdomain": "docs",
                 "registered_domain": "sekoia.io"
             },
+            "type": "query",
             "header_flags": [
                 "RD",
                 "CD"
@@ -88,6 +83,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp"
+        },
+        "related": {
+            "ip": [
+                "192.168.101.70"
+            ]
         }
     }
     	
@@ -101,17 +101,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "client 192.168.103.66#42811 (ipv6.google.com): query: ipv6.google.com IN A +EDC (192.168.100.102)",
         "source": {
-            "address": "192.168.103.66",
             "ip": "192.168.103.66",
-            "port": 42811
-        },
-        "related": {
-            "ip": [
-                "192.168.103.66"
-            ]
+            "port": 42811,
+            "address": "192.168.103.66"
         },
         "dns": {
-            "type": "query",
             "question": {
                 "class": "IN",
                 "type": "A",
@@ -120,9 +114,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "subdomain": "ipv6",
                 "registered_domain": "google.com"
             },
+            "type": "query",
             "header_flags": [
                 "RD",
                 "CD"
+            ]
+        },
+        "related": {
+            "ip": [
+                "192.168.103.66"
             ]
         }
     }
@@ -137,17 +137,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "client @0x7f4f8003d9e0 192.168.101.61#38251 (global.vortex.data.trafficmanager.net): query: global.vortex.data.trafficmanager.net IN AAAA +E(0) (192.168.100.102)",
         "source": {
-            "address": "192.168.101.61",
             "ip": "192.168.101.61",
-            "port": 38251
-        },
-        "related": {
-            "ip": [
-                "192.168.101.61"
-            ]
+            "port": 38251,
+            "address": "192.168.101.61"
         },
         "dns": {
-            "type": "query",
             "question": {
                 "class": "IN",
                 "type": "AAAA",
@@ -156,8 +150,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "subdomain": "global.vortex.data",
                 "registered_domain": "trafficmanager.net"
             },
+            "type": "query",
             "header_flags": [
                 "RD"
+            ]
+        },
+        "related": {
+            "ip": [
+                "192.168.101.61"
             ]
         }
     }
@@ -205,17 +205,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "client 192.168.103.66#45041 (107.100.168.192.in-addr.arpa): query: 107.100.168.192.in-addr.arpa IN PTR +E (192.168.100.102)",
         "source": {
-            "address": "192.168.103.66",
             "ip": "192.168.103.66",
-            "port": 45041
-        },
-        "related": {
-            "ip": [
-                "192.168.103.66"
-            ]
+            "port": 45041,
+            "address": "192.168.103.66"
         },
         "dns": {
-            "type": "query",
             "question": {
                 "class": "IN",
                 "type": "PTR",
@@ -224,8 +218,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "subdomain": "107.100.168",
                 "registered_domain": "192.in-addr.arpa"
             },
+            "type": "query",
             "header_flags": [
                 "RD"
+            ]
+        },
+        "related": {
+            "ip": [
+                "192.168.103.66"
             ]
         }
     }
@@ -240,17 +240,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "client 192.168.101.70#55575 (docs.sekoia.io): query: docs.sekoia.io IN AAAA +ET (192.168.100.102)",
         "source": {
-            "address": "192.168.101.70",
             "ip": "192.168.101.70",
-            "port": 55575
-        },
-        "related": {
-            "ip": [
-                "192.168.101.70"
-            ]
+            "port": 55575,
+            "address": "192.168.101.70"
         },
         "dns": {
-            "type": "query",
             "question": {
                 "class": "IN",
                 "type": "AAAA",
@@ -259,12 +253,18 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "subdomain": "docs",
                 "registered_domain": "sekoia.io"
             },
+            "type": "query",
             "header_flags": [
                 "RD"
             ]
         },
         "network": {
             "transport": "tcp"
+        },
+        "related": {
+            "ip": [
+                "192.168.101.70"
+            ]
         }
     }
     	

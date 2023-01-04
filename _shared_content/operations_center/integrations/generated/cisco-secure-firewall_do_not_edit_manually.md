@@ -39,15 +39,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%FTD-2-106001: Inbound TCP connection denied from 172.16.10.234/901 to 192.168.122.55/111 flags SYN  on interface LAN",
         "event": {
+            "code": "106001",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "106001",
-            "kind": "event"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Firepower Threat Defense"
         },
         "action": {
-            "name": "denied",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "denied"
         },
         "destination": {
             "ip": "192.168.122.55",
@@ -57,10 +61,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "network": {
             "direction": "Inbound",
             "transport": "tcp"
-        },
-        "observer": {
-            "vendor": "Cisco",
-            "product": "Firepower Threat Defense"
         },
         "source": {
             "ip": "172.16.10.234",
@@ -85,15 +85,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%FTD-2-106006: Deny inbound UDP from 172.16.10.234/901 to 192.168.122.55/111 on interface LAN",
         "event": {
+            "code": "106006",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "106006",
-            "kind": "event"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Firepower Threat Defense"
         },
         "action": {
-            "name": "deny",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "deny"
         },
         "destination": {
             "ip": "192.168.122.55",
@@ -103,10 +107,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "network": {
             "direction": "inbound",
             "transport": "udp"
-        },
-        "observer": {
-            "vendor": "Cisco",
-            "product": "Firepower Threat Defense"
         },
         "source": {
             "ip": "172.16.10.234",
@@ -310,8 +310,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "org",
             "subdomain": "www",
             "registered_domain": "eicar.org",
-            "scheme": "http",
             "path": "/download/eicar_com.zip",
+            "scheme": "http",
             "port": 80
         },
         "user": {
@@ -341,23 +341,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-106012: Deny IP from 192.168.122.143 to 224.0.0.22, IP options: \"Router Alert\"",
         "event": {
+            "code": "106012",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "106012",
-            "kind": "event"
-        },
-        "action": {
-            "name": "deny",
-            "target": "network-traffic"
-        },
-        "destination": {
-            "ip": "224.0.0.22",
-            "address": "224.0.0.22"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "deny"
+        },
+        "destination": {
+            "ip": "224.0.0.22",
+            "address": "224.0.0.22"
         },
         "source": {
             "ip": "192.168.122.143",
@@ -392,8 +392,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "deny",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "deny"
         },
         "destination": {
             "ip": "161.5.222.141",
@@ -437,8 +437,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "deny",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "deny"
         },
         "destination": {
             "ip": "224.0.1.129",
@@ -482,8 +482,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "permitted",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "permitted"
         },
         "destination": {
             "ip": "10.1.1.76",
@@ -516,23 +516,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-110003: Routing failed to locate next hop for icmp from WAN:10.11.0.2/0 to WAN:10.112.115.1/0",
         "event": {
+            "code": "110003",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "110003",
-            "kind": "event"
-        },
-        "action": {
-            "name": "routing failed to locate next hop for icmp",
-            "target": "network-traffic"
-        },
-        "destination": {
-            "ip": "10.112.115.1",
-            "address": "10.112.115.1"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "routing failed to locate next hop for icmp"
+        },
+        "destination": {
+            "ip": "10.112.115.1",
+            "address": "10.112.115.1"
         },
         "source": {
             "ip": "10.11.0.2",
@@ -605,8 +605,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "built",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "built"
         },
         "destination": {
             "ip": "10.1.0.10",
@@ -694,15 +694,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-302020: Built inbound ICMP connection for faddr 47.241.116.84/10800 gaddr 10.11.0.2/0 laddr 10.11.0.2/0",
         "event": {
+            "code": "302020",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "302020",
-            "kind": "event"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "built",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "built"
         },
         "destination": {
             "ip": "47.241.116.84",
@@ -712,10 +716,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "network": {
             "direction": "inbound",
             "transport": "icmp"
-        },
-        "observer": {
-            "vendor": "Cisco",
-            "product": "Adaptive Security Appliance"
         },
         "source": {
             "ip": "10.11.0.2",
@@ -739,15 +739,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-302021: Teardown ICMP connection for faddr 172.16.10.208/2189 gaddr 172.16.19.90/0 laddr 172.16.19.90/0 (karibou)",
         "event": {
+            "code": "302021",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "302021",
-            "kind": "event"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "teardown",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "teardown"
         },
         "destination": {
             "ip": "172.16.10.208",
@@ -756,10 +760,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "icmp"
-        },
-        "observer": {
-            "vendor": "Cisco",
-            "product": "Adaptive Security Appliance"
         },
         "source": {
             "ip": "172.16.19.90",
@@ -789,15 +789,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-305011: Built dynamic TCP translation from interco_pa_asa:10.79.16.23/35928 to dmz-gce:126.189.129.55/35928",
         "event": {
+            "code": "305011",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "305011",
-            "kind": "event"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "built",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "built"
         },
         "destination": {
             "ip": "126.189.129.55",
@@ -806,10 +810,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp"
-        },
-        "observer": {
-            "vendor": "Cisco",
-            "product": "Adaptive Security Appliance"
         },
         "source": {
             "ip": "10.79.16.23",
@@ -834,15 +834,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-305012: Teardown dynamic TCP translation from interco_asa:10.79.16.24/55924 to dmz:12.18.129.56/55924 duration 0:00:15",
         "event": {
+            "code": "305012",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "305012",
-            "kind": "event"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "teardown",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "teardown"
         },
         "destination": {
             "ip": "12.18.129.56",
@@ -851,10 +855,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "tcp"
-        },
-        "observer": {
-            "vendor": "Cisco",
-            "product": "Adaptive Security Appliance"
         },
         "source": {
             "ip": "10.79.16.24",
@@ -879,15 +879,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-3-313008: Denied IPv6-ICMP type=136, code=0 from fe80::f037:5fbc:b824:230d on interface NEA-FOR-WIFOR",
         "event": {
+            "code": "313008",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "313008",
-            "kind": "event"
+            ]
+        },
+        "observer": {
+            "vendor": "Cisco",
+            "product": "Adaptive Security Appliance"
         },
         "action": {
-            "name": "denied",
-            "target": "network-traffic"
+            "target": "network-traffic",
+            "name": "denied"
         },
         "cisco": {
             "ftd": {
@@ -897,10 +901,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "network": {
             "transport": "ipv6-icmp"
-        },
-        "observer": {
-            "vendor": "Cisco",
-            "product": "Adaptive Security Appliance"
         },
         "source": {
             "ip": "fe80::f037:5fbc:b824:230d",
@@ -923,19 +923,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-716058: Group <CLIENT_VPN> User <Acme_account> IP <86.199.78.204> AnyConnect session lost connection. Waiting to resume.",
         "event": {
+            "code": "716058",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "716058",
-            "kind": "event"
-        },
-        "action": {
-            "name": "anyconnect session lost connection",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "anyconnect session lost connection"
         },
         "source": {
             "ip": "86.199.78.204",
@@ -965,19 +965,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-716059: Group <CLIENT_VPN> User <User_Acme> IP <10.17.100.175> AnyConnect session resumed connection from IP <10.17.100.175>.",
         "event": {
+            "code": "716059",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "716059",
-            "kind": "event"
-        },
-        "action": {
-            "name": "anyconnect session resumed",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "anyconnect session resumed"
         },
         "source": {
             "ip": "10.17.100.175",
@@ -1007,19 +1007,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-5-722011: Group <GroupPolicy_CLIENT_VPN> User <User_acme> IP <91.172.139.4> SVC Message: 17/WARNING: Reconnecting the VPN tunnel..",
         "event": {
+            "code": "722011",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722011",
-            "kind": "event"
-        },
-        "action": {
-            "name": "reconnecting the vpn tunnel..",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "reconnecting the vpn tunnel.."
         },
         "source": {
             "ip": "91.172.139.4",
@@ -1049,19 +1049,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-5-722012: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <86.217.237.163> SVC Message: 16/NOTICE: Client PC is going into suspend mode (Sleep, Hibernate, etc)..",
         "event": {
+            "code": "722012",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722012",
-            "kind": "event"
-        },
-        "action": {
-            "name": "client pc is going into suspend mode (sleep, hibernate, etc)..",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "client pc is going into suspend mode (sleep, hibernate, etc).."
         },
         "source": {
             "ip": "86.217.237.163",
@@ -1091,19 +1091,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-722023: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <86.215.190.93> TCP SVC connection terminated without compression",
         "event": {
+            "code": "722023",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722023",
-            "kind": "event"
-        },
-        "action": {
-            "name": "svc connection terminated",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "svc connection terminated"
         },
         "source": {
             "ip": "86.215.190.93",
@@ -1133,19 +1133,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-5-722028: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <91.172.139.4> Stale SVC connection closed.",
         "event": {
+            "code": "722028",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722028",
-            "kind": "event"
-        },
-        "action": {
-            "name": "connection closed.",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "connection closed."
         },
         "source": {
             "ip": "91.172.139.4",
@@ -1175,19 +1175,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-5-722032: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <93.23.18.76> New UDP SVC connection replacing old connection.",
         "event": {
+            "code": "722032",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722032",
-            "kind": "event"
-        },
-        "action": {
-            "name": "connection replacing old connection.",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "connection replacing old connection."
         },
         "source": {
             "ip": "93.23.18.76",
@@ -1217,19 +1217,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-5-722033: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <77.205.143.138> First TCP SVC connection established for SVC session.",
         "event": {
+            "code": "722033",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722033",
-            "kind": "event"
-        },
-        "action": {
-            "name": "connection established for svc session.",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "connection established for svc session."
         },
         "source": {
             "ip": "77.205.143.138",
@@ -1259,19 +1259,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-5-722034: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <109.17.100.175> New TCP SVC connection, no existing connection.",
         "event": {
+            "code": "722034",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722034",
-            "kind": "event"
-        },
-        "action": {
-            "name": "connection, no existing connection.",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "connection, no existing connection."
         },
         "source": {
             "ip": "109.17.100.175",
@@ -1301,19 +1301,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-4-722037: Group <GroupPolicy_CLIENT_VPN> User <User_Acme> IP <92.131.212.102> SVC closing connection: Transport closing.",
         "event": {
+            "code": "722037",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "722037",
-            "kind": "event"
-        },
-        "action": {
-            "name": "closing connection",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "closing connection"
         },
         "source": {
             "ip": "92.131.212.102",
@@ -1343,19 +1343,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-725001: Starting SSL handshake with client WAN:195.101.173.60/49238 for TLS session.",
         "event": {
+            "code": "725001",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "725001",
-            "kind": "event"
-        },
-        "action": {
-            "name": "starting ssl handshake",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "starting ssl handshake"
         },
         "source": {
             "ip": "195.101.173.60",
@@ -1379,19 +1379,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-725002: Device completed SSL handshake with client WAN:90.114.208.186/65531",
         "event": {
+            "code": "725002",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "725002",
-            "kind": "event"
-        },
-        "action": {
-            "name": "device completed ssl handshake",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "device completed ssl handshake"
         },
         "source": {
             "ip": "90.114.208.186",
@@ -1415,19 +1415,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-725006: Device failed SSL handshake with client WAN:195.101.173.60/49699",
         "event": {
+            "code": "725006",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "725006",
-            "kind": "event"
-        },
-        "action": {
-            "name": "device failed ssl handshake",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "device failed ssl handshake"
         },
         "source": {
             "ip": "195.101.173.60",
@@ -1451,19 +1451,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "<166>Nov 09 2022 10:01:59: %ASA-6-725007: SSL session with client WAN:195.101.173.60/49486 terminated.",
         "event": {
+            "code": "725007",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "725007",
-            "kind": "event"
-        },
-        "action": {
-            "name": "ssl session",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "ssl session"
         },
         "source": {
             "ip": "195.101.173.60",
@@ -1487,19 +1487,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-4-733100: [scanning] drop rate-1 exceeded. Current burst rate is 8 per second, max configured rate is 10; Current average rate is 23 per second, max configured rate is 5; Cumulative total count is 14188",
         "event": {
+            "code": "733100",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "733100",
-            "kind": "event"
-        },
-        "action": {
-            "name": "scanning",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "scanning"
         }
     }
     	
@@ -1513,19 +1513,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "%ASA-6-737016: IPAA: Freeing local pool address 192.168.122.247",
         "event": {
+            "code": "737016",
+            "kind": "event",
             "category": [
                 "network"
-            ],
-            "code": "737016",
-            "kind": "event"
-        },
-        "action": {
-            "name": "freeing local pool address",
-            "target": "network-traffic"
+            ]
         },
         "observer": {
             "vendor": "Cisco",
             "product": "Adaptive Security Appliance"
+        },
+        "action": {
+            "target": "network-traffic",
+            "name": "freeing local pool address"
         },
         "source": {
             "ip": "192.168.122.247",

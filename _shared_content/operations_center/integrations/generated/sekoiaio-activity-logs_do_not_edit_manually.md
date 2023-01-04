@@ -45,10 +45,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "03896dd0-5d46-4214-8533-14284d05905e"
                 ],
                 "events_search": {
-                    "uuid": "6f297d0e-451b-49ba-9835-b49c16a33fcc",
                     "earliest_time": "2022-11-22T15:58:33.027Z",
                     "latest_time": "2022-11-22T16:03:33.027Z",
-                    "results_ttl": 1800
+                    "results_ttl": 1800,
+                    "uuid": "6f297d0e-451b-49ba-9835-b49c16a33fcc"
                 }
             }
         },

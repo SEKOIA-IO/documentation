@@ -33,52 +33,49 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
+        "message": "{\"malware_counters\":{\"total_alerts\":1,\"total_executed\":1,\"total_data_access\":1,\"total_external_communications\":1,\"total_affected_devices\":1},\"pups_counters\":{\"total_alerts\":1,\"total_executed\":1,\"total_data_access\":1,\"total_external_communications\":1,\"total_affected_devices\":1},\"exploit_counters\":{\"total_alerts\":1,\"total_executed\":1,\"total_data_access\":1,\"total_external_communications\":1,\"total_affected_devices\":1},\"program_blocked_counters\":{\"total_programs_blocked\":1},\"threats_by_av_counters\":{\"total_phishing_detected_by_av\":1,\"total_tracking_cookies_detected_by_av\":1,\"total_devices_blocked_by_av\":1,\"total_malware_urls_blocked_by_av\":1,\"total_intrusion_attempted_blocked_by_av\":1,\"total_dangerous_actions_blocked_by_av\":1}}",
         "event": {
+            "kind": "metric",
             "category": [
                 "host"
             ],
-            "kind": "metric",
-            "outcome": "success",
             "type": [
                 "info"
             ]
         },
         "aether": {
-            "exploit_counters": {
-                "total_affected_devices": 1,
-                "total_alerts": 1,
-                "total_data_access": 1,
-                "total_executed": 1,
-                "total_external_communications": 1
-            },
             "malware_counters": {
-                "total_affected_devices": 1,
                 "total_alerts": 1,
-                "total_data_access": 1,
                 "total_executed": 1,
-                "total_external_communications": 1
+                "total_data_access": 1,
+                "total_external_communications": 1,
+                "total_affected_devices": 1
+            },
+            "pups_counters": {
+                "total_alerts": 1,
+                "total_executed": 1,
+                "total_data_access": 1,
+                "total_external_communications": 1,
+                "total_affected_devices": 1
+            },
+            "exploit_counters": {
+                "total_alerts": 1,
+                "total_executed": 1,
+                "total_data_access": 1,
+                "total_external_communications": 1,
+                "total_affected_devices": 1
             },
             "program_blocked_counters": {
                 "total_programs_blocked": 1
             },
-            "pups_counters": {
-                "total_affected_devices": 1,
-                "total_alerts": 1,
-                "total_data_access": 1,
-                "total_executed": 1,
-                "total_external_communications": 1
-            },
             "threats_by_av_counters": {
-                "total_dangerous_actions_blocked_by_av": 1,
-                "total_devices_blocked_by_av": 1,
-                "total_intrusion_attempted_blocked_by_av": 1,
-                "total_malware_urls_blocked_by_av": 1,
                 "total_phishing_detected_by_av": 1,
-                "total_tracking_cookies_detected_by_av": 1
+                "total_tracking_cookies_detected_by_av": 1,
+                "total_devices_blocked_by_av": 1,
+                "total_malware_urls_blocked_by_av": 1,
+                "total_intrusion_attempted_blocked_by_av": 1,
+                "total_dangerous_actions_blocked_by_av": 1
             }
-        },
-        "ecs": {
-            "version": "1.10.0"
         }
     }
     	

@@ -74,9 +74,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "net",
             "subdomain": "example.1",
             "registered_domain": "azurefd.net",
+            "scheme": "http",
             "port": 80,
-            "path": "/",
-            "scheme": "http"
+            "path": "/"
         },
         "user_agent": {
             "original": "curl/7.77.0"
@@ -107,16 +107,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	
     {
         "message": "{\"time\":\"2022-08-28T13:01:19.0427677Z\",\"resourceId\":\"/SUBSCRIPTIONS/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/RESOURCEGROUPS/YYYYYYYYYYYYYYYYY/PROVIDERS/MICROSOFT.CDN/PROFILES/ZZZZZZZZZZZZZZZ\",\"category\":\"FrontDoorHealthProbeLog\",\"operationName\":\"Microsoft.Cdn/Profiles/FrontDoorHealthProbeLog/Write\",\"properties\":{\"healthProbeId\":\"A07EBB1B3DF34A71A8AC75CBA4C33607\",\"POP\":\"BUD\",\"httpVerb\":\"HEAD\",\"result\":\"OriginError\",\"httpStatusCode\":\"301\",\"probeURL\":\"http://example.azurestaticapps.net:80/\",\"originName\":\"example.azurestaticapps.net\",\"originIP\":\"1.2.3.4\",\"totalLatencyMilliseconds\":\"97\",\"connectionLatencyMilliseconds\":\"24\",\"DNSLatencyMicroseconds\":\"48133\"}}",
-        "@timestamp": "2022-08-28T13:01:19.0427677Z",
-        "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
-        },
-        "related": {
-            "ip": [
-                "1.2.3.4"
-            ]
-        },
         "event": {
             "kind": "event",
             "category": [
@@ -125,12 +115,17 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": [
                 "info"
             ],
-            "dataset": "health",
-            "action": "Microsoft.Cdn/Profiles/FrontDoorHealthProbeLog/Write"
+            "action": "Microsoft.Cdn/Profiles/FrontDoorHealthProbeLog/Write",
+            "dataset": "health"
         },
+        "@timestamp": "2022-08-28T13:01:19.0427677Z",
         "observer": {
             "vendor": "Microsoft",
             "product": "Azure Front Door"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "http": {
             "request": {
@@ -142,18 +137,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "url": {
             "original": "http://example.azurestaticapps.net:80/",
-            "path": "/",
-            "port": 80,
             "domain": "example.azurestaticapps.net",
-            "registered_domain": "azurestaticapps.net",
-            "subdomain": "example",
             "top_level_domain": "net",
-            "scheme": "http"
+            "subdomain": "example",
+            "registered_domain": "azurestaticapps.net",
+            "scheme": "http",
+            "port": 80,
+            "path": "/"
         },
         "azure_front_door": {
             "resource_id": "/SUBSCRIPTIONS/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/RESOURCEGROUPS/YYYYYYYYYYYYYYYYY/PROVIDERS/MICROSOFT.CDN/PROFILES/ZZZZZZZZZZZZZZZ",
-            "category": "FrontDoorHealthProbeLog",
-            "health_probe_id": "A07EBB1B3DF34A71A8AC75CBA4C33607"
+            "health_probe_id": "A07EBB1B3DF34A71A8AC75CBA4C33607",
+            "category": "FrontDoorHealthProbeLog"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ]
         }
     }
     	
