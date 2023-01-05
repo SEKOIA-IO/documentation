@@ -100,12 +100,13 @@ The color changes depending on the number of rules activated in one cell:
 ### Rule Details
 You can click on the name of a rule to display additional details, such as, but not limited to:
 
-- The Severity which should be used to later determine the Alert's Urgency
-- The Category of created alerts
+- The severity which should be used to later determine the [Alert's Urgency](../../investigate/alerts/#alert-urgency)
+- The category of created alerts
 - Associated Threats
 - Associated Data Sources
 - Known False Positives
 - The actual detection logic (the pattern)
+- [Similarity strategy](../../investigate/alerts/#similarity-strategies) for the produced alerts
 
 ![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
 
@@ -130,7 +131,7 @@ For an MSSP Community, you can easily enable your custom and verified rules in m
 
 ### Create custom rules
 
-In addition to the verified rules that are already built-in, you can create your own rules to support other detection use cases. To create a rule, click on the `+ Rules` button at the top right of the page and fill out the form.
+In addition to the verified rules that are already built-in, you can create your own rules to support other detection use cases. To create a rule, click on the `+ Rule` button at the top right of the page and fill out the form.
 
 The Rule creation form has the following sections:
 
@@ -153,13 +154,23 @@ If you choose `All communities`, your rule will be available for all your commun
     Fields available to create a detection pattern follow the [ECS standard](features/investigate/events_query_language.md) and can be found on Events page  > **Show fields and top values**. 
     
 #### Security alerts
-  In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
+In the Alert properties part, you should indicate the category and type of the alerts raised by the rule and the severity of the rule, which is used to calculate the urgency of the corresponding raised alerts in association with assets criticality for events matching assets.
 
-
-![custom_rule](/assets/operation_center/rules_catalog/create_new_rule.png)
+##### Fields displayed in alert events 
   
-!!! note 
-    You can also pre-select fields that will be displayed inside alerts to speed up alert qualification.
+You can select fields that will be displayed in events present inside your raised alerts to speed up alert qualification.
+
+To search for fields you want to display, click on the select and type in your event field. This field works as an auto-complete.
+  
+##### Custom similarity strategy
+Alerts are considered similar when some event fields have identical values. 
+
+You can select these event fields in your rule configuration. To do so, click on the select and type in your event field. You can select as many fields as needed. 
+
+In addition to that, these event fields can be added to the `Swappable fields`. A typical example of that is  `source.ip` and `destination.ip`.
+
+!!! note
+    You can learn more about similarity strategies in this [section](../../investigate/alerts/#similarity-strategies).
     
 
 ### Edit your custom rules

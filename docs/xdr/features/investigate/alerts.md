@@ -44,6 +44,10 @@ If an alert has 24 occurrences, it means that it contains 24 events that were cl
 
 ### Similarity strategies
 Alerts are considered similar if a list of fields defined by the similarity strategy have the same values for all events. Some fields may also be grouped together to specify that their values may be swapped.
+
+!!! note
+    The effective similarity strategy for an alert is displayed in the alert details tab.
+
 There are three possibilities to define the similarity strategy to use. By order:  
 
 1. [Similarity is forced by the rule](#similarity-by-rule)
@@ -54,7 +58,7 @@ There are three possibilities to define the similarity strategy to use. By order
 
 Rules written by SEKOIA.IO and available in the Rules Catalog may define specific similarity strategies.
 
-Similarity strategies by rule are not shown and cannot be edited on the interface. The API may be used to access this parameter.
+Similarity strategies by rule can be defined during the rule creation process. Learn more about how to do it in [this section](../../detect/rules_catalog/#custom-similarity-strategy).
 
 
 #### Similarity by event
@@ -184,6 +188,7 @@ The first column contains the following items:
 - The alert type
 - The impacted assets
 - The impacted entity
+- The similarity strategy of the rule
 - Related cases (cases in which this alert appears)
 - The Kill Chain phase (can be edited on hover)
 - Details about the rule that was triggered
