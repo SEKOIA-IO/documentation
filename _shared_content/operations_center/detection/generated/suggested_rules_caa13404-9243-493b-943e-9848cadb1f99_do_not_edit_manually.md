@@ -63,12 +63,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Local Account Deleted"
-    
-    Detects local user deletion
-    
-    - **Effort:** master
-
 ??? abstract "Office 365 Anti-Phishing Policy Deletion"
     
     Detects when the anti-phishing policy is removed from Office 365. By default, Office 365 includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
@@ -248,6 +242,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
     - **Effort:** elementary
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master
 
 ??? abstract "WCE wceaux.dll Creation"
     
