@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security Aether** with
     
     - **Effort:** intermediate
 
+??? abstract "Possible Replay Attack"
+    
+    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
+    
+    - **Effort:** intermediate
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
@@ -45,11 +51,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security Aether** with
     
     - **Effort:** elementary
 
-??? abstract "Smbexec.py Service Installation"
+??? abstract "User Account Created"
     
-    Detects the use of smbexec.py tool by detecting a specific service installation
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "User Account Deleted"
     

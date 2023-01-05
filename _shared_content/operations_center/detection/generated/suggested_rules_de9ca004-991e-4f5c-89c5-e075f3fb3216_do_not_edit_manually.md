@@ -27,9 +27,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events [BETA]** wit
     
     - **Effort:** advanced
 
-??? abstract "Covenant Default HTTP Beaconing"
+??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
     
-    Detects potential Covenant communications through the user-agent and specific urls
+    Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
     
     - **Effort:** intermediate
 
@@ -38,6 +38,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events [BETA]** wit
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
     
     - **Effort:** advanced
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
 
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -66,6 +78,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events [BETA]** wit
 ??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
+    
+    - **Effort:** elementary
+
+??? abstract "ProxyShell Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -104,12 +122,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events [BETA]** wit
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
     
     - **Effort:** intermediate
-
-??? abstract "TrevorC2 HTTP Communication"
-    
-    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
-    
-    - **Effort:** elementary
 
 ??? abstract "WCE wceaux.dll Creation"
     

@@ -51,6 +51,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Vade M365** with the followi
     
     - **Effort:** master
 
+??? abstract "Spam Detected By Vade For M365 And Not Blocked"
+    
+    Vade Secure product Vade for M365, has detected a spam e-mail and didn't block it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Spearphishing (CEO Fraud) Detected By Vade For M365"
     
     Vade Secure product Vade for M365 has detected a spearphishing attempt with CEO fraud thematic. Impersonation of CEO or senior management members requesting urgent money transfer, usually on an unknown RIB.

@@ -3,6 +3,12 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortiproxy** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x Fortinet Fortiproxy on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_270777d7-0c5a-42fb-b901-b7fadfb0ba48_do_not_edit_manually.json){ .md-button }
+??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
+    
+    Detects Bazar Loader domains based on the Bazar Loader DGA
+    
+    - **Effort:** elementary
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -69,21 +75,27 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortiproxy** with t
     
     - **Effort:** intermediate
 
-??? abstract "Covenant Default HTTP Beaconing"
-    
-    Detects potential Covenant communications through the user-agent and specific urls
-    
-    - **Effort:** intermediate
-
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
     
     - **Effort:** master
 
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
+
 ??? abstract "Intune Policy Change"
     
     Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
 
@@ -140,6 +152,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortiproxy** with t
     Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     

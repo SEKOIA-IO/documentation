@@ -141,11 +141,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Front Door** with the 
     
     - **Effort:** advanced
 
-??? abstract "Covenant Default HTTP Beaconing"
+??? abstract "Download Files From Suspicious TLDs"
     
-    Detects potential Covenant communications through the user-agent and specific urls
+    Detects download of certain file types from hosts in suspicious TLDs
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "FoggyWeb HTTP Default GET/POST Requests"
     
@@ -156,6 +156,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Front Door** with the 
 ??? abstract "GitLab CVE-2021-22205"
     
     Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
+    
+    - **Effort:** intermediate
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
 
@@ -230,9 +236,3 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Front Door** with the 
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
     
     - **Effort:** intermediate
-
-??? abstract "TrevorC2 HTTP Communication"
-    
-    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
-    
-    - **Effort:** elementary

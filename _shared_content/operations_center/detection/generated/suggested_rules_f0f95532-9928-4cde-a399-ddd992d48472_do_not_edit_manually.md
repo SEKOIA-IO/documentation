@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** intermediate
 
+??? abstract "CVE-2018-11776 Apache Struts2"
+    
+    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "CVE-2019-0604 SharePoint"
     
     Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604)
@@ -24,6 +30,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
 ??? abstract "CVE-2020-1147 SharePoint"
     
     Detection of SharePoint vulnerability CVE-2020-1147
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2020-14882 Oracle WebLogic Server"
+    
+    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952)
     
     - **Effort:** advanced
 
@@ -45,17 +57,53 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** advanced
 
-??? abstract "Covenant Default HTTP Beaconing"
+??? abstract "CVE-2021-21972 VMware vCenter"
     
-    Detects potential Covenant communications through the user-agent and specific urls
+    The vSphere Client (HTML5) contains a remote code execution vulnerability in a vCenter Server plugin. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.x before 7.0 U1c, 6.7 before 6.7 U3l and 6.5 before 6.5 U3n) and VMware Cloud Foundation (4.x before 4.2 and 3.x before 3.10.1.2). POST request on the following PATH "/ui/vropspluginui/rest/services/uploadova". If in response body (500) the words it has "uploadFile", that means the vCenter is available to accept files via POST without any restrictions.
     
     - **Effort:** intermediate
+
+??? abstract "CVE-2021-21985 VMware vCenter"
+    
+    The vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
+    
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
+    
+    Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-26855 Exchange SSRF"
+    
+    Detects the exploitation of ProyxLogon vulerability on Exchange servers.
+    
+    - **Effort:** advanced
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
 
 ??? abstract "FoggyWeb HTTP Default GET/POST Requests"
     
     Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
     
     - **Effort:** advanced
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
 
 ??? abstract "Possible Malicious File Double Extension"
     
@@ -87,6 +135,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** elementary
 
+??? abstract "ProxyShell Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    
+    - **Effort:** elementary
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
@@ -105,6 +159,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** elementary
 
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
@@ -116,9 +176,3 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
-
-??? abstract "TrevorC2 HTTP Communication"
-    
-    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
-    
-    - **Effort:** elementary
