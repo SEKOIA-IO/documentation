@@ -85,7 +85,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the 
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
