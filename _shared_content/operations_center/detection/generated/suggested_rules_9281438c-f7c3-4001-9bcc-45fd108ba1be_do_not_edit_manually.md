@@ -849,18 +849,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** advanced
 
-??? abstract "Local Account Created"
-    
-    Detects local user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
-    
-    - **Effort:** master
-
-??? abstract "Local Account Deleted"
-    
-    Detects local user deletion
-    
-    - **Effort:** master
-
 ??? abstract "Logon Scripts (UserInitMprLogonScript)"
     
     Detects creation or execution of UserInitMprLogonScript persistence method. The rule requires to log for process command lines and registry creations or update, which can be done using Sysmon Event IDs 1, 12, 13 and 14.
@@ -2118,6 +2106,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 ??? abstract "Usage Of Sysinternals Tools"
     
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
     
     - **Effort:** master
 

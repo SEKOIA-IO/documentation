@@ -1,4 +1,4 @@
-Rules catalog includes **643 built-in detection rules** (_last update on 2023-01-04_).
+Rules catalog includes **643 built-in detection rules** (_last update on 2023-01-05_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2790,12 +2790,6 @@ Rules catalog includes **643 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
-??? abstract "Local Account Created"
-    
-    Detects local user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
-    
-    - **Effort:** master
-
 ??? abstract "Net.exe User Account Creation"
     
     Identifies creation of local users via the net.exe command
@@ -2807,6 +2801,12 @@ Rules catalog includes **643 built-in detection rules** (_last update on 2023-01
     Detects the creation of suspicious accounts simliar to ANONYMOUS LOGON, such as using additional spaces. Created as a covering detection for attackers trying to created an ANONYMOUS LOGON account as it is an account named used in internal Windows events and frequently filtered by attackers.
     
     - **Effort:** elementary
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
 
 **Office Application Startup**
 
@@ -7165,12 +7165,6 @@ Rules catalog includes **643 built-in detection rules** (_last update on 2023-01
 
 **Account Access Removal**
 
-??? abstract "Local Account Deleted"
-    
-    Detects local user deletion
-    
-    - **Effort:** master
-
 ??? abstract "Okta User Account Locked"
     
     An user has been locked in Okta.
@@ -7182,3 +7176,9 @@ Rules catalog includes **643 built-in detection rules** (_last update on 2023-01
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
     - **Effort:** advanced
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master

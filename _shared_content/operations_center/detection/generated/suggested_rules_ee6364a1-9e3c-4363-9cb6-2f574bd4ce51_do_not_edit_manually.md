@@ -27,12 +27,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security Aether** with
     
     - **Effort:** master
 
-??? abstract "Local Account Deleted"
-    
-    Detects local user deletion
-    
-    - **Effort:** master
-
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -56,3 +50,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security Aether** with
     Detects the use of smbexec.py tool by detecting a specific service installation
     
     - **Effort:** elementary
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master
