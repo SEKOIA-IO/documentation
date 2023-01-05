@@ -3,12 +3,6 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security SIEM Feeder** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x Panda Security SIEM Feeder on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_da3555f9-8213-41b8-8659-4cb814431e29_do_not_edit_manually.json){ .md-button }
-??? abstract "Blue Mockingbird Malware"
-    
-    Attempts to detect system changes made by Blue Mockingbird
-    
-    - **Effort:** elementary
-
 ??? abstract "Disable Workstation Lock"
     
     Registry change in order to disable the ability to lock the computer by using CTRL+ALT+DELETE or CTRL+L. This registry key does not exist by default. Its creation is suspicious and the value set to "1" means an activation. It has been used by FatalRAT, but other attacker/malware could probably use it. This rule needs Windows Registry changes (add,modification,deletion) logging which can be done through Sysmon Event IDs 12,13,14.
@@ -21,11 +15,29 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security SIEM Feeder**
     
     - **Effort:** elementary
 
+??? abstract "Leviathan Registry Key Activity"
+    
+    Detects registry key used by Leviathan APT in Malaysian focused campaign.
+    
+    - **Effort:** elementary
+
 ??? abstract "OceanLotus Registry Activity"
     
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
+
+??? abstract "Pandemic Windows Implant"
+    
+    Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+
+??? abstract "RDP Sensitive Settings Changed"
+    
+    Detects changes to RDP terminal service sensitive settings. Logging for registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** advanced
 
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
@@ -45,11 +57,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security SIEM Feeder**
     
     - **Effort:** elementary
 
-??? abstract "Stop Backup Services"
+??? abstract "Suspicious Driver Loaded"
     
-    Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
+    Checks the registry key for suspicious driver names that are vulnerable most of the time and loaded in a specific location by the KDU tool from hfiref0x. Some drivers are used by several SysInternals tools, which should have been whitelisted in the filter condition. The driver named "DBUtilDrv2" has been removed as it caused too many false positives unfortunately. It can be added under "drv_name" if more coverage is wanted. This rule needs registry key monitoring (can be done with Sysmon Event IDs 12,13 and 14).
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -57,14 +69,38 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security SIEM Feeder**
     
     - **Effort:** intermediate
 
+??? abstract "UAC Bypass Via Sdclt"
+    
+    Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
+    
+    - **Effort:** elementary
+
+??? abstract "UAC Bypass via Event Viewer"
+    
+    Detects UAC bypass method using Windows event viewer. 
+    
+    - **Effort:** elementary
+
 ??? abstract "Ursnif Registry Key"
     
     Detects a new registry key created by Ursnif malware. The rule requires to log for Registry Events, which can be done using SYsmon's Event IDs 12,13 and 14.
     
     - **Effort:** elementary
 
+??? abstract "Usage Of Sysinternals Tools"
+    
+    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
 ??? abstract "Windows Credential Editor Registry Key"
     
     Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Windows Registry Persistence COM Key Linking"
+    
+    Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
+    
+    - **Effort:** master

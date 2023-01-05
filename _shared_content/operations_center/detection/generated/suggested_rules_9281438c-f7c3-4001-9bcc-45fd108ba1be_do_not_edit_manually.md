@@ -201,12 +201,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
-??? abstract "COM Hijack Via Sdclt"
-    
-    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
-    
-    - **Effort:** intermediate
-
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
@@ -483,12 +477,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** advanced
 
-??? abstract "Discovery Commands Correlation"
-    
-    Detects some frequent discovery commands used by some ransomware operators.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
@@ -759,12 +747,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** master
 
-??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
-    
-    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc. 
-    
-    - **Effort:** intermediate
-
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
@@ -786,12 +768,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 ??? abstract "Koadic Execution"
     
     Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
-??? abstract "LNK Malware Chain"
-    
-    Detection of an ISO download followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
     - **Effort:** intermediate
 
@@ -926,12 +902,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
     
     - **Effort:** elementary
-
-??? abstract "Malware Outbreak"
-    
-    Spots a peak of malware detection by windows defender on this perimeter. 
-    
-    - **Effort:** advanced
 
 ??? abstract "Malware Persistence Registry Key"
     
@@ -2156,12 +2126,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects creation of WMI event subscription persistence method 
     
     - **Effort:** advanced
-
-??? abstract "WMI Fingerprint Commands"
-    
-    Detects attacker fingerprint activities based on the correlation of specific WMIC commands. This has been observed with Aurora malware.
-    
-    - **Effort:** intermediate
 
 ??? abstract "WMI Install Of Binary"
     

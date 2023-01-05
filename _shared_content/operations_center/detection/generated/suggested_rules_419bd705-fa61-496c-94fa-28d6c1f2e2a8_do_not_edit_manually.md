@@ -3,9 +3,33 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint Security** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x Broadcom/Symantec Endpoint Security on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_419bd705-fa61-496c-94fa-28d6c1f2e2a8_do_not_edit_manually.json){ .md-button }
+??? abstract "AdFind Usage"
+    
+    Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
+    
+    - **Effort:** elementary
+
+??? abstract "Adexplorer Usage"
+    
+    Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    
+    - **Effort:** intermediate
+
+??? abstract "CMSTP Execution"
+    
+    Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
 
@@ -33,6 +57,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** advanced
 
+??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
+    
+    Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
+    
+    - **Effort:** intermediate
+
+??? abstract "Certificate Authority Modification"
+    
+    Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
+    
+    - **Effort:** master
+
+??? abstract "Disabled Service"
+    
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    
+    - **Effort:** advanced
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
+
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
@@ -51,6 +99,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** advanced
 
+??? abstract "Kernel Module Alteration"
+    
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
+
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
@@ -62,6 +122,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     List of common tools used for network packages sniffing
     
     - **Effort:** advanced
+
+??? abstract "Network Sniffing Windows"
+    
+    Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
+    
+    - **Effort:** intermediate
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
 
 ??? abstract "Phorpiex Process Masquerading"
     
@@ -75,9 +147,27 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** elementary
 
+??? abstract "ProxyShell Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    
+    - **Effort:** elementary
+
+??? abstract "PsExec Process"
+    
+    Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
+    
+    - **Effort:** advanced
+
 ??? abstract "Python Exfiltration Tools"
     
     Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
+
+??? abstract "RDP Session Discovery"
+    
+    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
 
@@ -111,9 +201,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** elementary
 
-??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+??? abstract "Suspicious TOR Gateway"
     
-    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** advanced
 
@@ -150,12 +240,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host
-    
-    - **Effort:** master
-
-??? abstract "TOR Usage"
-    
-    Detects TOR usage, based on the IP address and the destination port (filtered on NTP). TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
 

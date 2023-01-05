@@ -3,9 +3,33 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x Cisco Secure Firewall on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.json){ .md-button }
+??? abstract "AdFind Usage"
+    
+    Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
+    
+    - **Effort:** elementary
+
+??? abstract "Adexplorer Usage"
+    
+    Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    
+    - **Effort:** intermediate
+
+??? abstract "CMSTP Execution"
+    
+    Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
 
@@ -135,6 +159,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** intermediate
 
+??? abstract "Certificate Authority Modification"
+    
+    Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
+    
+    - **Effort:** master
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** elementary
+
 ??? abstract "Cobalt Strike HTTP Default GET beaconing"
     
     Detects GET HTTP queries from known Cobalt Strike beacons (source code 4.3)
@@ -147,11 +183,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** advanced
 
-??? abstract "Covenant Default HTTP Beaconing"
+??? abstract "Download Files From Suspicious TLDs"
     
-    Detects potential Covenant communications through the user-agent and specific urls
+    Detects download of certain file types from hosts in suspicious TLDs
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Exchange Server Creating Unusual Files"
     
@@ -183,6 +219,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** intermediate
 
+??? abstract "Kernel Module Alteration"
+    
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
+
 ??? abstract "LokiBot Default C2 URL"
     
     Detects default C2 URL for trojan LokiBot
@@ -200,6 +248,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     List of common tools used for network packages sniffing
     
     - **Effort:** advanced
+
+??? abstract "Network Sniffing Windows"
+    
+    Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
+    
+    - **Effort:** intermediate
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
 
 ??? abstract "Possible Malicious File Double Extension"
     
@@ -237,6 +297,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** elementary
 
+??? abstract "PsExec Process"
+    
+    Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
+    
+    - **Effort:** advanced
+
+??? abstract "RDP Session Discovery"
+    
+    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
+    
+    - **Effort:** advanced
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
@@ -273,6 +345,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** elementary
 
+??? abstract "Suspicious TOR Gateway"
+    
+    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
@@ -285,23 +363,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** master
 
-??? abstract "TOR Usage"
-    
-    Detects TOR usage, based on the IP address and the destination port (filtered on NTP). TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
-    
-    - **Effort:** master
-
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
-
-??? abstract "TrevorC2 HTTP Communication"
-    
-    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
-    
-    - **Effort:** elementary
 
 ??? abstract "WCE wceaux.dll Creation"
     

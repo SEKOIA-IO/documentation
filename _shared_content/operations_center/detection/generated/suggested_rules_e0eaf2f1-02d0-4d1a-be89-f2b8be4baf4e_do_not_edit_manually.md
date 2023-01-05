@@ -27,9 +27,33 @@ Benefit from SEKOIA.IO built-in rules and upgrade **ProofPoint PoD** with the fo
     
     - **Effort:** advanced
 
+??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
+    
+    Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
+    
+    - **Effort:** intermediate
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
+    
+    - **Effort:** elementary
+
+??? abstract "ProxyShell Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 

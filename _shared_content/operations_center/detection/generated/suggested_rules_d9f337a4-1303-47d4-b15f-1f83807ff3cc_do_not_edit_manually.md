@@ -129,11 +129,17 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Imperva WAF** with the follo
     
     - **Effort:** intermediate
 
-??? abstract "Covenant Default HTTP Beaconing"
+??? abstract "Download Files From Non-Legitimate TLDs"
     
-    Detects potential Covenant communications through the user-agent and specific urls
+    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
     
-    - **Effort:** intermediate
+    - **Effort:** master
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
 
 ??? abstract "FoggyWeb HTTP Default GET/POST Requests"
     
@@ -144,6 +150,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Imperva WAF** with the follo
 ??? abstract "GitLab CVE-2021-22205"
     
     Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
+    
+    - **Effort:** intermediate
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
 

@@ -3,6 +3,48 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x Cybereason MalOp on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.json){ .md-button }
+??? abstract "AdFind Usage"
+    
+    Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
+    
+    - **Effort:** elementary
+
+??? abstract "Adexplorer Usage"
+    
+    Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
+
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
+??? abstract "CMSTP Execution"
+    
+    Detects various indicators of Microsoft Connection Manager Profile Installer execution
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
+    
+    Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
+    
+    - **Effort:** master
+
+??? abstract "Certificate Authority Modification"
+    
+    Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
+    
+    - **Effort:** master
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** elementary
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -14,12 +56,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the 
     Cybereason MalOp telemetry has raised an alert
     
     - **Effort:** intermediate
-
-??? abstract "Cybereason MalOp Malware Detection"
-    
-    Cybereason MalOp telemetry has detected a malware
-    
-    - **Effort:** advanced
 
 ??? abstract "Exchange Server Creating Unusual Files"
     
@@ -38,6 +74,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the 
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
     
     - **Effort:** intermediate
+
+??? abstract "Kernel Module Alteration"
+    
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
 
 ??? abstract "Microsoft Office Creating Suspicious File"
     
@@ -63,9 +105,33 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the 
     
     - **Effort:** advanced
 
+??? abstract "Network Sniffing Windows"
+    
+    Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Package Manager Alteration"
     
     Package manager (eg: apt, yum) can be altered to install malicious software
+    
+    - **Effort:** advanced
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
+??? abstract "PsExec Process"
+    
+    Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
+    
+    - **Effort:** advanced
+
+??? abstract "RDP Session Discovery"
+    
+    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
 

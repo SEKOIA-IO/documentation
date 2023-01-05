@@ -39,9 +39,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** advanced
 
-??? abstract "Covenant Default HTTP Beaconing"
+??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
     
-    Detects potential Covenant communications through the user-agent and specific urls
+    Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
     
     - **Effort:** intermediate
 
@@ -50,6 +50,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
+
+??? abstract "Download Files From Non-Legitimate TLDs"
+    
+    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
+    
+    - **Effort:** master
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
 
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
@@ -60,6 +72,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
 ??? abstract "Intune Policy Change"
     
     Detects edits, deletions or creations made to an organization Intune policies.
+    
+    - **Effort:** intermediate
+
+??? abstract "Koadic MSHTML Command"
+    
+    Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
 
@@ -195,6 +213,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** elementary
 
+??? abstract "Possible Replay Attack"
+    
+    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -204,6 +228,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
 ??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
+    
+    - **Effort:** elementary
+
+??? abstract "ProxyShell Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -225,12 +255,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** elementary
 
-??? abstract "Smbexec.py Service Installation"
-    
-    Detects the use of smbexec.py tool by detecting a specific service installation
-    
-    - **Effort:** elementary
-
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
@@ -242,6 +266,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
     - **Effort:** elementary
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
 
 ??? abstract "User Account Deleted"
     

@@ -9,12 +9,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Gatewatcher AionIQ** with th
     
     - **Effort:** elementary
 
-??? abstract "Covenant Default HTTP Beaconing"
-    
-    Detects potential Covenant communications through the user-agent and specific urls
-    
-    - **Effort:** intermediate
-
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -44,18 +38,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Gatewatcher AionIQ** with th
     Detects suspicious DNS queries known from Sliver beaconing 
     
     - **Effort:** intermediate
-
-??? abstract "TOR Usage"
-    
-    Detects TOR usage, based on the IP address and the destination port (filtered on NTP). TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
-    
-    - **Effort:** master
-
-??? abstract "TrevorC2 HTTP Communication"
-    
-    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
-    
-    - **Effort:** elementary
 
 ??? abstract "WCE wceaux.dll Creation"
     

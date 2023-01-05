@@ -3,11 +3,11 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **NetFlow** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x NetFlow on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_b23668b2-5716-4432-9af7-bc4f81ad6df3_do_not_edit_manually.json){ .md-button }
-??? abstract "Covenant Default HTTP Beaconing"
+??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
-    Detects potential Covenant communications through the user-agent and specific urls
+    Detects Bazar Loader domains based on the Bazar Loader DGA
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "Potential Bazar Loader User-Agents"
     
@@ -30,11 +30,5 @@ Benefit from SEKOIA.IO built-in rules and upgrade **NetFlow** with the following
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
-    
-    - **Effort:** elementary
-
-??? abstract "TrevorC2 HTTP Communication"
-    
-    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
     - **Effort:** elementary

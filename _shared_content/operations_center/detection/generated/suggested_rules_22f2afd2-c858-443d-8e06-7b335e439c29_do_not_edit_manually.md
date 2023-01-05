@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "Add User to Privileged Group"
+    
+    Add user in a potential privileged group which can be used to elevate privileges on the system
+    
+    - **Effort:** advanced
+
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
@@ -27,15 +33,39 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** master
 
+??? abstract "Audio Capture via PowerShell"
+    
+    Detects audio capture via PowerShell Cmdlet
+    
+    - **Effort:** intermediate
+
 ??? abstract "BITSAdmin Download"
     
     Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.
     
     - **Effort:** advanced
 
+??? abstract "BazarLoader Persistence Using Schtasks"
+    
+    Detects possible BazarLoader persistence using schtasks. BazarLoader will create a Scheduled Task using a specific command line to establish its persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
+??? abstract "Blue Mockingbird Malware"
+    
+    Attempts to detect system changes made by Blue Mockingbird
+    
+    - **Effort:** elementary
+
+??? abstract "CMSTP Execution"
+    
+    Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
 
@@ -87,6 +117,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** intermediate
 
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** elementary
+
 ??? abstract "Commonly Used Commands To Stop Services And Remove Backups"
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
@@ -123,15 +159,51 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** advanced
 
+??? abstract "DNS Exfiltration and Tunneling Tools Execution"
+    
+    Well-known DNS exfiltration tools execution
+    
+    - **Effort:** intermediate
+
 ??? abstract "DNS Tunnel Technique From MuddyWater"
     
     Detecting DNS Tunnel Activity For Muddywater intrusion set. This is the loading of a specific DLL from an Excel macro which is detected.
     
     - **Effort:** elementary
 
+??? abstract "Data Compressed With Rar"
+    
+    An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program.
+    
+    - **Effort:** master
+
+??? abstract "Data Compressed With Rar With Password"
+    
+    An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program. This is a more specific one for rar where the arguments allow to encrypt both file data and headers with a given password.
+    
+    - **Effort:** intermediate
+
+??? abstract "Debugging Software Deactivation"
+    
+    Deactivation of some debugging softwares using taskkill command. It was observed being used by Ransomware operators.
+    
+    - **Effort:** elementary
+
 ??? abstract "Default Encoding To UTF-8 PowerShell"
     
     Detects PowerShell encoding to UTF-8, which is used by Sliver implants. The command line just sets the default encoding to UTF-8 in PowerShell.
+    
+    - **Effort:** advanced
+
+??? abstract "Disable Task Manager Through Registry Key"
+    
+    Detects commands used to disable the Windows Task Manager by modifying the proper registry key in order to impair security tools. This technique is used by the Agent Tesla RAT, among others.
+    
+    - **Effort:** elementary
+
+??? abstract "Disabled IE Security Features"
+    
+    Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
     
     - **Effort:** advanced
 
@@ -146,6 +218,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
     
     - **Effort:** advanced
+
+??? abstract "Domain Trust Discovery Through LDAP"
+    
+    Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
+    
+    - **Effort:** elementary
 
 ??? abstract "Dynamic Linker Hijacking From Environment Variable"
     
@@ -183,6 +261,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** advanced
 
+??? abstract "Exchange Mailbox Export"
+    
+    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file.
+    
+    - **Effort:** intermediate
+
+??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exchange Server Creating Unusual Files"
     
     Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
@@ -213,11 +303,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
+    
+    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262. This is a very basic detection method relying on the rare usage of EPS files from Winword.
+    
+    - **Effort:** advanced
+
 ??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
     
     Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189
     
     - **Effort:** elementary
+
+??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
+    
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    
+    - **Effort:** intermediate
 
 ??? abstract "Explorer Process Executing HTA File"
     
@@ -240,12 +342,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
 ??? abstract "Formbook Hijacked Process Command"
     
     Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
-    
-    - **Effort:** intermediate
-
-??? abstract "Gpscript Suspicious Parent"
-    
-    Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
     
     - **Effort:** intermediate
 
@@ -291,11 +387,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "Inhibit System Recovery Deleting Backups"
+    
+    Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** intermediate
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
     
     - **Effort:** intermediate
+
+??? abstract "Kernel Module Alteration"
+    
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
 
 ??? abstract "Koadic Execution"
     
@@ -309,11 +417,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
-??? abstract "Legitimate Process Execution From Unusual Folder"
+??? abstract "List Shadow Copies"
     
-    Detects the execution of a legitimate, windows built-in process name from an unusual / suspicious folder. Legitimate folders are c:\windows\system32\, \SystemRoot\system32\, c:\windows\syswow64\ and c:\windows\winsxs\. Many malwares/attackers use legitimate names to masquerade but if they are not Administrator yet, they often can't write file into these legitimate folders.
+    Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Logonui Wrong Parent"
     
@@ -351,6 +459,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** intermediate
 
+??? abstract "MSBuild Abuse"
+    
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    
+    - **Effort:** intermediate
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -363,6 +477,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** intermediate
 
+??? abstract "Meterpreter or Cobalt Strike Getsystem Service Installation"
+    
+    Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
+    
+    - **Effort:** elementary
+
 ??? abstract "Microsoft Office Product Spawning Windows Shell"
     
     Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
@@ -374,6 +494,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
     
     - **Effort:** intermediate
+
+??? abstract "Msdt (Follina) File Browse Process Execution"
+    
+    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
+    
+    - **Effort:** elementary
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -453,6 +579,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** advanced
 
+??? abstract "Network Sniffing Windows"
+    
+    Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
+    
+    - **Effort:** intermediate
+
+??? abstract "New DLL Added To AppCertDlls Registry Key"
+    
+    Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+
+??? abstract "New Service Creation"
+    
+    Detects creation of a new service from command line
+    
+    - **Effort:** advanced
+
+??? abstract "Ngrok Process Execution"
+    
+    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -471,6 +621,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
 ??? abstract "Phorpiex DriveMgr Command"
     
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
@@ -483,11 +639,29 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "PowerCat Function Loading"
+    
+    Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
+    
+    - **Effort:** intermediate
+
+??? abstract "PowerShell AMSI Deactivation Bypass Using .NET Reflection"
+    
+    Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
+    
+    - **Effort:** elementary
+
 ??? abstract "PowerShell Downgrade Attack"
     
     Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
     
     - **Effort:** elementary
+
+??? abstract "PowerShell Download From URL"
+    
+    Detects a Powershell process that contains download commands in its command line string
+    
+    - **Effort:** intermediate
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -498,6 +672,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
 ??? abstract "PowerShell Execution Via Rundll32"
     
     Detects PowerShell Strings applied to rundll as seen in PowerShdll.dll Rule modified
+    
+    - **Effort:** intermediate
+
+??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
+    
+    Detects Commandlet names and arguments from the Nishang exploitation framework
+    
+    - **Effort:** advanced
+
+??? abstract "Powershell UploadString Function"
+    
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
     
     - **Effort:** intermediate
 
@@ -513,6 +699,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "Process Trace Alteration"
+    
+    PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
+    
+    - **Effort:** advanced
+
+??? abstract "PsExec Process"
+    
+    Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
+    
+    - **Effort:** advanced
+
+??? abstract "Python HTTP Server"
+    
+    Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
+    
+    - **Effort:** intermediate
+
+??? abstract "Python Offensive Tools and Packages"
+    
+    Track installation and usage of offensive python packages and project that are used for lateral movement
+    
+    - **Effort:** master
+
 ??? abstract "QakBot Process Creation"
     
     Detects QakBot like process executions
@@ -524,6 +734,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects possible Qakbot persistence using schtasks.
     
     - **Effort:** intermediate
+
+??? abstract "RDP Session Discovery"
+    
+    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
+    
+    - **Effort:** advanced
 
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
@@ -554,6 +770,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
     
     - **Effort:** advanced
+
+??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
+    
+    Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** elementary
 
 ??? abstract "Rubeus Tool Command-line"
     
@@ -615,6 +837,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** intermediate
 
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** intermediate
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
+    
+    - **Effort:** intermediate
+
 ??? abstract "SolarWinds Suspicious File Creation"
     
     Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
@@ -644,6 +878,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
     
     - **Effort:** intermediate
+
+??? abstract "Suncrypt Parameters"
+    
+    Detects SunCrypt ransomware's parameters, most of which are unique.
+    
+    - **Effort:** elementary
 
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     
@@ -729,17 +969,17 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
-    
-    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
-    
-    - **Effort:** advanced
-
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
     Detects suspicious PowerShell invocation command parameters
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
+    
+    Detects new commands that add new printer port which point to suspicious file
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -776,6 +1016,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Windows Defender Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
 
 ??? abstract "Suspicious Windows Installer Execution"
     
@@ -867,6 +1113,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "WMIC Command To Determine The Antivirus"
+    
+    Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
+    
+    - **Effort:** intermediate
+
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
@@ -885,11 +1137,29 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "Windows Defender Disabled"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
+    
+    - **Effort:** intermediate
+
+??? abstract "Windows Defender Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+
 ??? abstract "Windows Defender History Directory Deleted"
     
     Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
+
+??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Defender Signatures Removed With MpCmdRun"
     
