@@ -231,7 +231,7 @@ nav:
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
   - Usecases:
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
-  - FAQ: 
+  - FAQ:
     - General: xdr/FAQ.md
     - Alerts: xdr/FAQ/Alerts_qa.md
     - Events: xdr/FAQ/Events_qa.md
@@ -678,6 +678,7 @@ theme:
   - navigation.tabs
   - navigation.top
   - content.code.annotate
+  - content.action.edit
   font:
     text: Open Sans
   include_search_page: true
