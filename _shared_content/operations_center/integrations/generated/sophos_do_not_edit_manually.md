@@ -114,6 +114,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "network"
             ]
         },
+        "log": {
+            "level": "info"
+        },
         "sophos": {
             "action": "accept",
             "sub": "packetfilter"
@@ -153,6 +156,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "network"
             ]
         },
+        "log": {
+            "level": "info"
+        },
         "sophos": {
             "action": "DNS request",
             "sub": "packetfilter"
@@ -191,6 +197,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": [
                 "network"
             ]
+        },
+        "log": {
+            "level": "info"
         },
         "sophos": {
             "action": "drop",
