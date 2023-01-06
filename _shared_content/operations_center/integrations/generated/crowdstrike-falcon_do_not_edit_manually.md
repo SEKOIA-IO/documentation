@@ -81,12 +81,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "category": [
                 "intrusion_detection"
-            ]
+            ],
+            "severity": 5
         },
         "@timestamp": "2022-07-07T06:15:38.000000Z",
         "crowdstrike": {
             "event_type": "DetectionSummaryEvent",
-            "detect_description": "Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently."
+            "detect_description": "Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently.",
+            "severity_name": "Critical"
         },
         "host": {
             "name": "nsewmkzevukn-vm"
@@ -558,6 +560,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`crowdstrike.object_id` | `keyword` | The identifier of a vertex |
 |`crowdstrike.operation_name` | `keyword` | Operation name |
 |`crowdstrike.scope` | `keyword` | The scope of a vertex |
+|`crowdstrike.severity_name` | `keyword` | Name of the severity of the event |
 |`crowdstrike.state` | `keyword` | Shows if the incident is still active. open = the incident is still active, closed = the incident is not active |
 |`crowdstrike.vertex_type` | `keyword` | The type of the vertex |
 |`destination.ip` | `ip` | IP address of the destination. |
@@ -565,6 +568,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
+|`event.severity` | `long` | Numeric severity of the event. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.hash.md5` | `keyword` | MD5 hash. |
 |`file.hash.sha1` | `keyword` | SHA1 hash. |
