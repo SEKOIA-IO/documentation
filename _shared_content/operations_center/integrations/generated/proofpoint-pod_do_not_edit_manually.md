@@ -504,7 +504,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`proofpoint.pod.cluster.id` | `keyword` | The name of the cluster which processed the message |
-|`proofpoint.pod.modules` | `array` | The list of the activated modules |
+|`proofpoint.pod.modules` | `array` | The list of modules which processed the message |
 |`proofpoint.pod.routes` | `array` | The policy route triggered by the message |
 |`proofpoint.pod.smtp.recipients` | `array` | The SMTP recipients |
 |`proofpoint.pod.smtp.sender` | `keyword` | The SMTP sender |
