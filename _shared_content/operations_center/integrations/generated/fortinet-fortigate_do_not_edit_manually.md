@@ -2251,6 +2251,103 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_unauthuser.json"
+
+    ```json
+	
+    {
+        "message": "time=08:20:44 devname=\"computer-039482\" devid=\"C10382849\" eventtime=1669620044749365658 tz=\"+0100\" logid=\"0000000020\" type=\"traffic\" subtype=\"forward\" level=\"notice\" vd=\"root\" srcip=1.2.3.4 srcname=\"C-3424\" srcport=52272 srcintf=\"ID102\" srcintfrole=\"lan\" dstip=5.6.7.8 dstport=443 dstintf=\"ID015\" dstintfrole=\"wan\" srcuuid=\"ccd49675-9207-46cf-9c4b-8d522c2b977e\" srccountry=\"Reserved\" dstinetsvc=\"Microsoft-Office365.Published\" dstcountry=\"France\" dstregion=\"Ile-de-France\" dstcity=\"Paris\" dstreputation=5 sessionid=111111111 proto=6 action=\"accept\" policyid=37 policytype=\"policy\" poluuid=\"6a8f76d0-1459-4ddb-948a-62700ddbf241\" service=\"Microsoft-Office365.Published\" trandisp=\"snat\" transip=4.3.2.1 transport=52272 duration=258 sentbyte=160972 rcvdbyte=58449 sentpkt=333 rcvdpkt=192 vwlid=8 vwlquality=\"Seq_num(13 ID015), alive, custom1: 78.211: 0.000% 7.754 0.067 897379Kbps, selected\" vwlname=\"TO-INTERNET\" appcat=\"unscanned\" sentdelta=31328 rcvddelta=10476 srchwvendor=\"Dell\" devtype=\"Home & Office\" srcfamily=\"Computer\" osname=\"Windows\" srcswversion=\"10\" unauthuser=\"DOMAIN\\jdoe\" unauthusersource=\"kerberos\" mastersrcmac=\"00:00:00:00:00:00\" srcmac=\"00:00:00:00:00:00\" srcserver=0",
+        "event": {
+            "action": "accept",
+            "code": "0000000020",
+            "timezone": "+0100",
+            "dataset": "traffic:forward",
+            "category": "traffic"
+        },
+        "@timestamp": "2022-11-28T06:20:44.749366Z",
+        "destination": {
+            "address": "5.6.7.8",
+            "bytes": 58449,
+            "packets": 192,
+            "port": 443,
+            "ip": "5.6.7.8"
+        },
+        "fortinet": {
+            "fortigate": {
+                "event": {
+                    "type": "traffic"
+                },
+                "virtual_domain": "root",
+                "user": {
+                    "source": "kerberos"
+                }
+            }
+        },
+        "log": {
+            "level": "notice",
+            "hostname": "computer-039482"
+        },
+        "observer": {
+            "hostname": "computer-039482",
+            "serial_number": "C10382849",
+            "egress": {
+                "interface": {
+                    "name": "ID015"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "ID102"
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "bytes": 219421,
+            "protocol": "microsoft-office365.published"
+        },
+        "rule": {
+            "category": "unscanned",
+            "ruleset": "policy"
+        },
+        "source": {
+            "bytes": 160972,
+            "mac": "00:00:00:00:00:00",
+            "packets": 333,
+            "port": 52272,
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "user": {
+            "name": "jdoe",
+            "domain": "DOMAIN"
+        },
+        "action": {
+            "name": "accept",
+            "type": "forward",
+            "target": "network-traffic",
+            "outcome": "success"
+        },
+        "related": {
+            "hosts": [
+                "computer-039482"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ],
+            "user": [
+                "jdoe"
+            ]
+        },
+        "host": {
+            "name": "computer-039482"
+        }
+    }
+    	
+	```
+
+
 === "traffic_forward-RDP.CEF.json"
 
     ```json
@@ -3397,6 +3494,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`fortinet.fortigate.event.type` | `keyword` | Type of the event. |
 |`fortinet.fortigate.icmp.request.code` | `keyword` | The request code. |
 |`fortinet.fortigate.icmp.request.type` | `keyword` | The request type. |
+|`fortinet.fortigate.user.source` | `keyword` | The source of the username |
 |`fortinet.fortigate.virtual_domain` | `keyword` | Name of the virtual domain in which the event was observed |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`log.level` | `keyword` | Log level of the log event. |
@@ -3426,5 +3524,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.user.name` | `keyword` | Short name or login of the user. |
 |`url.full` | `wildcard` | Full unparsed URL. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
+|`user.domain` | `keyword` | Name of the directory the user is a member of. |
+|`user.name` | `keyword` | Short name or login of the user. |
 |`user_agent.original` | `keyword` | Unparsed user_agent string. |
 
