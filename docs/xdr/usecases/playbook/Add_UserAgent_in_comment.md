@@ -23,7 +23,7 @@ Find the playbook configuration below:
 | Module | Configuration |
 | --- | --- |
 | Alert Created | configure module & trigger configuration |
-| Get_an_alert | uuid = `alert_uuid` of **Created alert** |
+| Get Alert | uuid = `alert_uuid` of **Created alert** |
 | Get Event Field Common Values | See fields below |
 | post_a_comment_on_an_alert | See fields below |
 
