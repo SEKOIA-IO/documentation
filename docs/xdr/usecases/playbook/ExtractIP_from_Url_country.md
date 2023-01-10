@@ -29,7 +29,7 @@ For example, we would like to extract the IP `65.74.70.888` from `url.original :
 
 Read JSON File module,  **Jsonpath** = `{{ value.split()[0].split("/ManageIP/New/")[1] }}`
 
-   !!! note
+!!! note
    You can find the CODE Feature section in documentation page and in particular built-in filters existing in Jinja [here](https://jinja.palletsprojects.com/en/3.0.x/templates/#builtin-filters). 
    (split is coming from Python)
 
