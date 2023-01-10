@@ -486,7 +486,7 @@ When several conditions match the same event, the smart description with the mos
 
 You can set a notification when an intake stops receiving events:
 - in the intake page by clicking on the bell (next to the delete icon)
-- in the `Notification page` of the `User Center`
+- On the `Notifications` page of the User Center
 
 ![Intake notification](docs/assets/operation_center/intakes/2022-12-30_16h35_06.png)
 
