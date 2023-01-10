@@ -1,6 +1,6 @@
 # Get events information from alert
 
-This use case describes how to get the Mac Address of an alert. 
+This use case describes how to get the MAC address of events associated with an alert. 
 
 ## Prerequisites
 
