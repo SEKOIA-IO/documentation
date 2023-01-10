@@ -34,6 +34,6 @@ Here is the configuration below:
 - **latest_time** = `last_seen_at` of **Get alert**
 - **query** = `short_id` of **Get alert**
 
-**Read Json file** 
+**Read JSON File** 
 - **jsonpath** = `mac-addr` more information on this documentation [here](http://docs.oasis-open.org/cti/stix/v2.0/cs01/part4-cyber-observable-objects/stix-v2.0-cs01-part4-cyber-observable-objects.html#_Toc496716255)
 - **file with** = `{{node.x['events']}}`  x = event node (that can be found in code tab)
