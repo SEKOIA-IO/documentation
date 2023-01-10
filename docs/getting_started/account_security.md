@@ -18,7 +18,7 @@ To enable two-factor authentication, follow these instructions:
 7. Enter your `6-digit code`
 8. Generate and save your backup codes
 
-### How to require two-factor authentication for users in your community?
+### How to enforce two-factor authentication for users in your community?
 As an administrator of a community, you can secure access to your community by requiring users to activate their second factor to access the SEKOIA.IO platform. 
 
 To access this feature, you must have the following permission: `COMMUNITY_WRITE_ROLE` and 2FA enable on your account.
@@ -30,6 +30,8 @@ To enable two-factor authentication, follow these instructions:
 3. Under Manage community > Authentication, click on the button `Enable` in the section « Two-factor authentication (2FA) »![SSO_URL](/assets/getting_started/Enforced 2FA.png)
 4. Provide your password 
 
+!!! note 
+As a mssp community manager, you need to enforce it in each of your managed community. 
 
 ### Get the code through an authenticator app
 
