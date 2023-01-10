@@ -1,4 +1,4 @@
-Rules catalog includes **645 built-in detection rules** (_last update on 2023-01-10_).
+Rules catalog includes **646 built-in detection rules** (_last update on 2023-01-10_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -3330,6 +3330,12 @@ Rules catalog includes **645 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** master
 
+??? abstract "Werfault DLL Injection"
+    
+    Werfault DLL search order look first in the current file, which lets an attacker use th legitimate exe to run its own DLL.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
     Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
@@ -4172,6 +4178,12 @@ Rules catalog includes **645 built-in detection rules** (_last update on 2023-01
     Detects svchost process hijacking through DLL loading. IKEEXT and SessionEnv service, as they call LoadLibrary on files that do not exist within C:\Windows\System32\ by default. An attacker can place their malicious logic within the PROCESS_ATTACH block of their library and restart the aforementioned services "svchost.exe -k netsvcs" to gain code execution on a remote machine.
     
     - **Effort:** master
+
+??? abstract "Werfault DLL Injection"
+    
+    Werfault DLL search order look first in the current file, which lets an attacker use th legitimate exe to run its own DLL.  
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     
@@ -5539,6 +5551,12 @@ Rules catalog includes **645 built-in detection rules** (_last update on 2023-01
     Detects svchost process hijacking through DLL loading. IKEEXT and SessionEnv service, as they call LoadLibrary on files that do not exist within C:\Windows\System32\ by default. An attacker can place their malicious logic within the PROCESS_ATTACH block of their library and restart the aforementioned services "svchost.exe -k netsvcs" to gain code execution on a remote machine.
     
     - **Effort:** master
+
+??? abstract "Werfault DLL Injection"
+    
+    Werfault DLL search order look first in the current file, which lets an attacker use th legitimate exe to run its own DLL.  
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Registry Persistence COM Search Order Hijacking"
     

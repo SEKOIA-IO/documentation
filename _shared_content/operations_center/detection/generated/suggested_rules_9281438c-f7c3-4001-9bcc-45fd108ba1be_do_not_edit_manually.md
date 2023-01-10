@@ -2187,6 +2187,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** advanced
 
+??? abstract "Werfault DLL Injection"
+    
+    Werfault DLL search order look first in the current file, which lets an attacker use th legitimate exe to run its own DLL.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
     Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
