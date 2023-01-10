@@ -1,4 +1,4 @@
-Rules catalog includes **643 built-in detection rules** (_last update on 2023-01-05_).
+Rules catalog includes **645 built-in detection rules** (_last update on 2023-01-10_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -139,6 +139,12 @@ Rules catalog includes **643 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "Login Brute-Force Successful On Okta"
+    
+    A user has attempted to login several times (brute-force) on Okta and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Login Failed Brute-Force On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
@@ -237,6 +243,12 @@ Rules catalog includes **643 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "Login Brute-Force Successful On Okta"
+    
+    A user has attempted to login several times (brute-force) on Okta and succeeded to login.
+    
+    - **Effort:** advanced
+
 ??? abstract "Login Failed Brute-Force On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
@@ -248,6 +260,14 @@ Rules catalog includes **643 built-in detection rules** (_last update on 2023-01
     An IP address performed several failed logins on multiple users to then have a successful login on one of them.
     
     - **Effort:** advanced
+
+**Compromise Accounts**
+
+??? abstract "Okta User Logged In From Multiple Countries"
+    
+    Detection of login events from multiple countries.
+    
+    - **Effort:** intermediate
 
 **Obtain Capabilities**
 

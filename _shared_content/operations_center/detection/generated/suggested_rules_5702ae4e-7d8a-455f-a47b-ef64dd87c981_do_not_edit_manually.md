@@ -165,6 +165,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortigate** with th
     
     - **Effort:** elementary
 
+??? abstract "RYUK Ransomeware - martinstevens Username"
+    
+    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
+    
+    - **Effort:** elementary
+
 ??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
     
     Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
