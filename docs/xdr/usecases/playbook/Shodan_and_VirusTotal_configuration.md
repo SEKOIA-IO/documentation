@@ -63,10 +63,7 @@ There are 2 steps:
 
 Your playbook should look like the following:
 
-//to add picture on assets temps
-temp  ![image](https://user-images.githubusercontent.com/101662967/209848334-2ac52b48-e5b3-490a-9892-347af546c877.png)
-
-![Playbook Use Case](/assets/operation_center/playbooks/playbook_usecase_request_url.PNG)
+![Playbook Shodan-SIO Use Case](/assets/playbooks/library/UseCases/Shodan_VT_1.png)
 
 ### Enrich Shodan with VirusTotal template
 
@@ -79,4 +76,4 @@ temp  ![image](https://user-images.githubusercontent.com/101662967/209848334-2ac
 
 Your playbook should look like the following:
 
-![Shodan playbook]()
+![Playbook Shodan-VT Use Case](/assets/playbooks/library/UseCases/Shodan_VT_2.png)
