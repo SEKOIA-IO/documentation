@@ -29,6 +29,7 @@ This setup guide will lead you into forwarding netskope's events to SEKOIA.IO.
 Please follow [this guide](https://docs.netskope.com/en/rest-api-v2-overview-312207.html) to create an API token.
 
 To the API token, add the following scopes with the privilege `Read`:
+
 - /api/v2/events/dataexport/events/page	
 - /api/v2/events/dataexport/events/alert	
 - /api/v2/events/dataexport/events/incident	
