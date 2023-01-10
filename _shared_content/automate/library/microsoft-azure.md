@@ -30,4 +30,4 @@ Consume messages from Microsoft Azure Eventhub
 
 ## Extra
 
-Module **`Microsoft Azure` v1.4.1**
+Module **`Microsoft Azure` v1.4.4**
