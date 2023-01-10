@@ -1,6 +1,6 @@
 # Enrich Alert with User agent in comment
 
-This use case describes how to enrich an alert with the User agent in comment
+This use case describes how to enrich the comments of an alert with the User agent extracted from the associated events.
 
 ## Prerequisites
 
