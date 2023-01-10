@@ -484,7 +484,7 @@ When several conditions match the same event, the smart description with the mos
 
 ## Notification when an intake is not receiving events
 
-You can set notification when the intake does not receive events:
+You can set a notification when an intake stops receiving events:
 - in the intake page by clicking on the bell (next to the delete icon)
 - in the `Notification page` of the `User Center`
 
