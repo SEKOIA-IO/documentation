@@ -31,7 +31,7 @@ To enable two-factor authentication, follow these instructions:
 4. Provide your password 
 
 !!! note 
-As a mssp community manager, you need to enforce it in each of your managed community. 
+    As a mssp community manager, you need to enforce it in each of your managed community. 
 
 ### Get the code through an authenticator app
 
