@@ -1,4 +1,4 @@
-# WhoIs module configuration
+# Whois module configuration
 
 This use case describes how to use WhoIs module to retrieve information.
 
