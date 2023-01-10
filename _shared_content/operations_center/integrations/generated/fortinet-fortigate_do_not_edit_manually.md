@@ -491,12 +491,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "category": "event"
         },
         "@timestamp": "2020-01-27T16:24:16.000000Z",
+        "destination": {
+            "port": 500,
+            "ip": "93.187.43.9",
+            "address": "93.187.43.9"
+        },
         "fortinet": {
             "fortigate": {
                 "event": {
                     "type": "event"
                 },
-                "virtual_domain": "root"
+                "virtual_domain": "root",
+                "tunnel": {
+                    "name": "VPN-FOOBAR",
+                    "version": "IKEv2"
+                }
             }
         },
         "log": {
@@ -509,10 +518,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "serial_number": "1"
         },
         "source": {
+            "port": 500,
             "ip": "1.1.1.1",
-            "user": {
-                "name": "N/A"
-            },
             "address": "1.1.1.1"
         },
         "action": {
@@ -526,11 +533,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hosts": [
                 "abc"
             ],
-            "user": [
-                "N/A"
-            ],
             "ip": [
-                "1.1.1.1"
+                "1.1.1.1",
+                "93.187.43.9"
             ]
         },
         "host": {
@@ -3056,7 +3061,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "event": {
                     "type": "event"
                 },
-                "virtual_domain": "IPSEC"
+                "virtual_domain": "IPSEC",
+                "tunnel": {
+                    "type": "ssl-tunnel",
+                    "id": "1995",
+                    "ip": "2.2.2.2"
+                }
             }
         },
         "log": {
@@ -3124,14 +3134,22 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2021-03-04T11:02:57.000000Z",
         "destination": {
-            "bytes": 0
+            "bytes": 0,
+            "port": 500,
+            "ip": "93.187.43.9",
+            "address": "93.187.43.9"
         },
         "fortinet": {
             "fortigate": {
                 "event": {
                     "type": "event"
                 },
-                "virtual_domain": "root"
+                "virtual_domain": "root",
+                "tunnel": {
+                    "name": "VPN-HELPLINE",
+                    "type": "ipsec",
+                    "id": "0"
+                }
             }
         },
         "log": {
@@ -3145,10 +3163,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "source": {
             "bytes": 7649,
+            "port": 500,
             "ip": "1.1.1.1",
-            "user": {
-                "name": "N/A"
-            },
             "address": "1.1.1.1"
         },
         "network": {
@@ -3165,11 +3181,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hosts": [
                 "abc"
             ],
-            "user": [
-                "N/A"
-            ],
             "ip": [
-                "1.1.1.1"
+                "1.1.1.1",
+                "93.187.43.9"
             ]
         },
         "host": {
@@ -3257,7 +3271,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "event": {
                     "type": "event"
                 },
-                "virtual_domain": "root"
+                "virtual_domain": "root",
+                "tunnel": {
+                    "type": "ssl-web",
+                    "id": "0"
+                }
             }
         },
         "log": {
@@ -3322,7 +3340,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "event": {
                     "type": "event"
                 },
-                "virtual_domain": "root"
+                "virtual_domain": "root",
+                "tunnel": {
+                    "type": "ssl-web",
+                    "id": "0"
+                }
             }
         },
         "log": {
@@ -3494,6 +3516,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`fortinet.fortigate.event.type` | `keyword` | Type of the event. |
 |`fortinet.fortigate.icmp.request.code` | `keyword` | The request code. |
 |`fortinet.fortigate.icmp.request.type` | `keyword` | The request type. |
+|`fortinet.fortigate.tunnel.id` | `keyword` | The id of the tunnel |
+|`fortinet.fortigate.tunnel.ip` | `keyword` | The ip of the tunnel |
+|`fortinet.fortigate.tunnel.name` | `keyword` | The name of the tunnel |
+|`fortinet.fortigate.tunnel.type` | `keyword` | The type of the tunnel |
+|`fortinet.fortigate.tunnel.version` | `keyword` | The version of the tunnel |
 |`fortinet.fortigate.user.source` | `keyword` | The source of the username |
 |`fortinet.fortigate.virtual_domain` | `keyword` | Name of the virtual domain in which the event was observed |
 |`http.request.method` | `keyword` | HTTP request method. |
