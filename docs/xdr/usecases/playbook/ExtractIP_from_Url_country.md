@@ -1,4 +1,4 @@
-# Extract IP from url & Country  
+# Extract IP from URL & Country  
 
 This use case describes how to extract an IP address from a URL and a country.  
 
