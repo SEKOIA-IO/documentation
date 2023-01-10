@@ -24,7 +24,7 @@ Here is the configuration below:
 
 | Module | Configuration |
 | --- | --- |
-| Alert created | configure module & trigger configuration |
+| Alert Created | configure module & trigger configuration |
 | Get alert   | uuid = `alert_uuid`  of **Alert created** |
 | Get Events | See fields below |
 | Read JSON File | See fields below |
