@@ -6,7 +6,7 @@ This use case describes how to use WhoIs module in order to enrich an IP address
 
 - A SEKOIA.IO XDR licence
 - The user that configures the Playbook should have a role that contains:
-	* The SYMPHONY permissions
+	* The [SYMPHONY permissions](https://docs.sekoia.io/getting_started/roles_permissions/#playbooks)
 - An API Key with a role that contains at least the following permissions:
 	* `SIC_READ_ALERTS`
 	* `EVENTS_READ_STATS`
