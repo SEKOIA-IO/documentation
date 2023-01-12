@@ -11,7 +11,7 @@ This use case describes how to enrich the comments of an alert with the User age
 	* `SIC_READ_ALERTS`
 	* `SIC_WRITE_ALERTS_COMMENT`
 
-!!! note
+!!!note
     To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
 
 ## Playbook configuration
