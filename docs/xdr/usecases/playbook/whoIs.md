@@ -13,7 +13,7 @@ This use case describes how to use WhoIs module to retrieve information.
 	* `EVENTS_READ_DATASETS`
 	* `SIC_READ_EVENT_STATS`
 
-!!! note
+!!!note
     To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
 
 ## Playbook configuration
