@@ -30,6 +30,6 @@ You can find the configuration below:
 | Foreach | items = `Events` of Get Events |
 | Store | item, append, `{{ node.x.default.value['source.ip'] }}` x is the node of ForEach (that can be found in the code tab) |
 | Foreach | items = {{ store.item|unique|list }} |
-| Whois | `Node.x.Domain.Whois.raw` x is the node of ForEach (that can be found in the code tab) |
+| Whois | query = `Node.x.Domain.Whois.raw` x is the node of ForEach (that can be found in the code tab) |
 | Comment alert | **content** = Domain Name : `{{ node.12['Domain']['Name'] }}`, uuid = `alert_uuid` of **Alert webhook** |
 
