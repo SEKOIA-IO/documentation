@@ -34,7 +34,7 @@ This Jinja recipe consists in splitting the URL into 2 strings: the one precedin
 The value is set with the second string stored in the array, with the use of [1].
 ```
 
-!!! note
+!!!note
    You can find the CODE Feature section in documentation page and in particular built-in filters existing in Jinja [here](https://jinja.palletsprojects.com/en/3.0.x/templates/#builtin-filters). 
    (split is coming from Python)
 
