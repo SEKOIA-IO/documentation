@@ -1,6 +1,6 @@
 # WHOIS MODULE CONFIGURATION
 
-This use case describes how to use WhoIs module to retrieve information.
+This use case describes how to use WhoIs module in order to enrich an IP address, a domain name or a URL.
 
 ## Prerequisites
 
