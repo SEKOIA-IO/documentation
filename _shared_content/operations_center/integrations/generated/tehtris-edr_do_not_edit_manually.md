@@ -76,9 +76,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "MR11111"
         },
-        "user": {
-            "id": "a262506e-3c9e-4afe-9233-f2335167ea86;windows;MR11111;example.org"
-        },
         "file": {
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
@@ -91,6 +88,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "tehtris": {
             "edr": {
+                "antivirus": {
+                    "total": 65,
+                    "positives": 1
+                },
                 "event": {
                     "id": "999999999",
                     "appliance": {
@@ -174,7 +175,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "doe-j",
-            "id": "5c3ff0bc-5101-4152-a330-923e569c9229;windows;MR11111;example.org",
             "domain": "EXAMPLE-NT"
         },
         "file": {
@@ -276,9 +276,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             },
             "name": "MR11111"
         },
-        "user": {
-            "id": "5c3ff0bc-5101-4152-a330-923e569c9229;windows;MR11111;example.org"
-        },
         "file": {
             "hash": {
                 "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
@@ -378,9 +375,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "version": "10.0.19041"
             },
             "name": "MR11111"
-        },
-        "user": {
-            "id": "5c3ff0bc-5101-4152-a330-923e569c9229;windows;MR11111;example.org"
         },
         "file": {
             "hash": {
@@ -483,7 +477,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "doe-j",
-            "id": "5c3ff0bc-5101-4152-a330-923e569c9229;windows;MR11111;example.org",
             "domain": "EXAMPLE-NT"
         },
         "file": {
@@ -597,7 +590,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user": {
             "name": "doe-j",
-            "id": "64a2fa85-0852-4745-81d6-0815eb2d5248;windows;MR11111;example.org",
             "domain": "EXAMPLE-NT"
         },
         "file": {
@@ -694,6 +686,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.start` | `date` | The time the process started. |
 |`rule.name` | `keyword` | Rule name |
 |`source.ip` | `ip` | IP address of the source. |
+|`tehtris.edr.antivirus.positives` | `number` | The number of malicious files |
+|`tehtris.edr.antivirus.total` | `number` | The number of scanned files |
 |`tehtris.edr.event.appliance.id` | `keyword` | The identifier of the Event Appliance |
 |`tehtris.edr.event.egKBId` | `keyword` | The identifier in the Event Knowledge Base |
 |`tehtris.edr.event.id` | `keyword` | The identifier of the event (from the Tehtris side) |
@@ -713,6 +707,5 @@ The following table lists the fields that are extracted, normalized under the EC
 |`threat.technique.name` | `keyword` | Threat technique name. |
 |`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
 |`user.domain` | `keyword` | Name of the directory the user is a member of. |
-|`user.id` | `keyword` | Unique identifier of the user. |
 |`user.name` | `keyword` | Short name or login of the user. |
 
