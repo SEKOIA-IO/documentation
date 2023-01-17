@@ -671,12 +671,14 @@ plugins:
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
+copyright: Copyright &copy; 2023 - SEKOIA.IO
 theme:
   custom_dir: theme
   favicon: assets/favicon.png
   features:
   - navigation.tabs
   - navigation.top
+  - navigation.footer
   - content.code.annotate
   - content.action.edit
   font:
