@@ -147,6 +147,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
+    
+    - **Effort:** advanced
+
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.

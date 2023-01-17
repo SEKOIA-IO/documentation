@@ -1,4 +1,4 @@
-Rules catalog includes **646 built-in detection rules** (_last update on 2023-01-11_).
+Rules catalog includes **652 built-in detection rules** (_last update on 2023-01-17_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1017,6 +1017,30 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
+    
+    - **Effort:** advanced
+
 ??? abstract "Cybereason MalOp Alert"
     
     Cybereason MalOp telemetry has raised an alert
@@ -1643,6 +1667,30 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
+    
+    - **Effort:** advanced
+
 ??? abstract "Cybereason MalOp Alert"
     
     Cybereason MalOp telemetry has raised an alert
@@ -2098,6 +2146,30 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
 ??? abstract "CrowdStrike Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
     - **Effort:** advanced
 
@@ -6703,6 +6775,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** elementary
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -7009,6 +7087,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
     - **Effort:** elementary
+
+??? abstract "Netskope Alert"
+    
+    Forward alerts reported by Netskope.  
+    
+    - **Effort:** advanced
 
 ??? abstract "Remote File Copy"
     

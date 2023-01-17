@@ -57,6 +57,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events [BETA]** wit
     
     - **Effort:** advanced
 
+??? abstract "Netskope Alert"
+    
+    Forward alerts reported by Netskope.  
+    
+    - **Effort:** advanced
+
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Package Manager Alteration"
     
     Package manager (eg: apt, yum) can be altered to install malicious software
