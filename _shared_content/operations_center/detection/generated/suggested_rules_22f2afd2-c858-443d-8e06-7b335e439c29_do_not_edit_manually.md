@@ -147,6 +147,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
+
 ??? abstract "CrowdStrike Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity

@@ -1,4 +1,4 @@
-Rules catalog includes **652 built-in detection rules** (_last update on 2023-01-17_).
+Rules catalog includes **653 built-in detection rules** (_last update on 2023-01-18_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1017,6 +1017,12 @@ Rules catalog includes **652 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
+
 ??? abstract "CrowdStrike Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -1667,6 +1673,12 @@ Rules catalog includes **652 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
+
 ??? abstract "CrowdStrike Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
@@ -2148,6 +2160,12 @@ Rules catalog includes **652 built-in detection rules** (_last update on 2023-01
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
     - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
 
 ??? abstract "CrowdStrike Intrusion Detection High Severity"
     
