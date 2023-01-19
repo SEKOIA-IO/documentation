@@ -1,4 +1,4 @@
-Rules catalog includes **653 built-in detection rules** (_last update on 2023-01-18_).
+Rules catalog includes **654 built-in detection rules** (_last update on 2023-01-19_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6068,6 +6068,12 @@ Rules catalog includes **653 built-in detection rules** (_last update on 2023-01
     Detects when Google Cloud Audit notify the 2FA deactivation for a user account.
     
     - **Effort:** intermediate
+
+??? abstract "Opening Of a Password File"
+    
+    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Outlook Registry Access"
     
