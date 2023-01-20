@@ -1,4 +1,4 @@
-Rules catalog includes **654 built-in detection rules** (_last update on 2023-01-19_).
+Rules catalog includes **654 built-in detection rules** (_last update on 2023-01-20_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
