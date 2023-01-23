@@ -33,6 +33,42 @@ The following table lists the data source offered by this integration.
 Find below few samples of events and how they are normalized by SEKOIA.IO.
 
 
+=== "agent_log.json"
+
+    ```json
+	
+    {
+        "message": "{\"@timestamp\":\"2023-01-23T09:35:34.99Z\",\"agent\":{\"id\":\"1236c43def406f675318c07468d7b7e0984ba5a406da30251e102b6f2a103b24\",\"version\":\"v0.8.0\"},\"event\":{\"category\":[\"host\"],\"kind\":\"event\",\"reason\":\"Starting Events watcher\",\"provider\":\"SEKOIA-IO-Endpoint\"},\"host\":{\"hostname\":\"raphael-XPS-13-9370\",\"os\":{\"family\":\"linux\"}},\"log\":{\"level\":\"info\",\"logger\":\"SEKOIA-IO-Endpoint\"}}",
+        "event": {
+            "category": [
+                "host"
+            ],
+            "kind": "event",
+            "reason": "Starting Events watcher",
+            "provider": "SEKOIA-IO-Endpoint"
+        },
+        "@timestamp": "2023-01-23T09:35:34.99Z",
+        "agent": {
+            "id": "1236c43def406f675318c07468d7b7e0984ba5a406da30251e102b6f2a103b24",
+            "version": "v0.8.0"
+        },
+        "host": {
+            "hostname": "raphael-XPS-13-9370",
+            "os": {
+                "family": "linux"
+            },
+            "name": "raphael-XPS-13-9370"
+        },
+        "related": {
+            "hosts": [
+                "raphael-XPS-13-9370"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "dns_results.json"
 
     ```json
@@ -425,5 +461,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.provider` | `keyword` | Source of the event. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 
