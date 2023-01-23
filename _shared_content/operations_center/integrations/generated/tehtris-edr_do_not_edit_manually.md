@@ -89,8 +89,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "tehtris": {
             "edr": {
                 "antivirus": {
-                    "total": 65,
-                    "positives": 1
+                    "positives": 1,
+                    "total": 65
                 },
                 "event": {
                     "id": "999999999",
