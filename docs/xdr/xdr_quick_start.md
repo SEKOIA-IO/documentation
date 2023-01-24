@@ -3,40 +3,56 @@
 ## Introduction
 
 
-Following the creation of a new community, there is a set of standard configurations on SEKOIA.IO Operations Center pages that needs to be completed. This executive note provides guidance on the primary steps to be taken in the first few minutes of setting up a community.
+Following the creation of a new community, which represents your instance that is provided to you with the licence, there is a set of standard configurations on SEKOIA.IO Operations Center pages that needs to be completed. This note summarises a guidance on the primary steps to be taken in the first few minutes of setting up a community.
 
 ## Out of scope content 
 
-The full guide on how to create and setup an account, create and invite users to a community, manage roles, permissions and notifications and much more, is available [here](https://docs.sekoia.io/getting_started/).
+The full guide on how to create and set up an account, create and invite users to a community, manage roles, permissions and notifications and much more, is available [here](https://docs.sekoia.io/getting_started/).
 
 ## Let's get started
 
 ### Create an entity
 
-1. Go to the Entities page and create an Entity
-2. Select the `Alert generation` mode of your choice. More details [here](https://docs.sekoia.io/xdr/features/collect/entities/)
+An Entity is an organizational unit mostly used for configuration and reporting easiness. Entities allow a logical grouping of your data sources and associated alerts.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0e0edb32-607d-4a0f-88aa-67687e9b3f5c/Untitled.png)
+1. Go to the Entities page and create an Entity
+2. Select the `Alert generation` mode of your choice.  We suggest you to select “Automatic” which will simplify the workflow of alert management for you. More details [here](https://docs.sekoia.io/xdr/features/collect/entities/)
+
+![entities](/assets/operation_center/quick_start/entities.png){: style="max-width:100%"}
 
 ### Create intakes 
 
-To create intakes associated to the technology you woud like to collect: 
+The Intakes correspond to the different technologies used (also called Data Sources) that forward their logs to SEKOIA.IO XDR to be centralized for security monitoring. You can configure as much intakes as you need to increase your infrastructure security with SEKOIA.IO knowledge.
+
+To create intakes associated to the technology you would like to collect: 
 
 1. Go to the Intakes page and create intakes one by one from the catalog
-2. Make sure the logs are pushed to [SEKOIA.IO](http://SEKOIA.IO) using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the Intake key accordingly, or pulled by API
+2. Make sure the logs are pushed to [SEKOIA.IO](http://SEKOIA.IO) using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the `Intake key` accordingly, or pulled by API
 
 !!! note
     Find more details on each integration [here](https://docs.sekoia.io/xdr/features/collect/integrations/). 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e802b9ae-29fd-4a58-bf8e-e255fc4a5974/Untitled.png)
+![intakes](/assets/operation_center/quick_start/intakes.png){: style="max-width:100%"}
 
-### Activate detection rules 
+### Activate detection rules
 
-1. Enable all detection rules of effort levels 1 or 2 by filtring on each effort level then clicking on the `Enable all` button
+Once your event logs are collected and normalized by SEKOIA.IO, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
+
+1. Enable all detection rules of effort levels 1 or 2 by filtering on each effort level then clicking on the `Enable all` button
 2. Automate the activation of future detection rule of the same effort levels following [this procedure](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ca3b5de-d7e0-46c4-931d-fc1454632d64/Untitled.png)
+![rules](/assets/operation_center/quick_start/rules.png){: style="max-width:100%"}
 
 **That’s it!**
+
+### And then what?
+
+The Events page provides a centralized view of your events and enables in-depth investigation in the latest logs sent to SEKOIA.IO. With its query-based search bar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
+
+Enjoy your collected [Events](https://docs.sekoia.io/xdr/features/investigate/events/) and investigate latest logs sent to SEKOIA.IO with its query-based search bar.
+
+When events match the pattern of your activated detection rules, this will raise an [Alert](https://docs.sekoia.io/xdr/features/investigate/alerts/#alerts-listing) to be investigated. If you consider it as a True Positive, change its status from Ongoing to Closed and add a comment that synthesis your analysis.
+
+### More information
 
 Feel free to configure and customize your community to fit your needs, using other features as listed [here](https://docs.sekoia.io/xdr/).
