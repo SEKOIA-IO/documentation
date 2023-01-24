@@ -48,6 +48,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "192.168.101.70"
+            ],
+            "hosts": [
+                "docs.sekoia.io"
             ]
         }
     }
@@ -87,6 +90,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "192.168.101.70"
+            ],
+            "hosts": [
+                "docs.sekoia.io"
             ]
         }
     }
@@ -123,6 +129,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "192.168.103.66"
+            ],
+            "hosts": [
+                "ipv6.google.com"
             ]
         }
     }
@@ -158,6 +167,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "192.168.101.61"
+            ],
+            "hosts": [
+                "global.vortex.data.trafficmanager.net"
             ]
         }
     }
@@ -191,6 +203,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "192.168.103.66"
+            ],
+            "hosts": [
+                "ipv6.google.com"
             ]
         }
     }
@@ -226,6 +241,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "192.168.103.66"
+            ],
+            "hosts": [
+                "107.100.168.192.in-addr.arpa"
             ]
         }
     }
@@ -264,6 +282,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "ip": [
                 "192.168.101.70"
+            ],
+            "hosts": [
+                "docs.sekoia.io"
             ]
         }
     }

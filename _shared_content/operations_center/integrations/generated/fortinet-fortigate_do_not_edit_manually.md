@@ -372,6 +372,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "hosts": [
+                "'fr.pool.ntp.org'",
                 "dev-name"
             ],
             "ip": [
@@ -1578,6 +1579,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "user": [
                 "bob"
+            ],
+            "hosts": [
+                "detectportal.firefox.com"
             ]
         }
     }
