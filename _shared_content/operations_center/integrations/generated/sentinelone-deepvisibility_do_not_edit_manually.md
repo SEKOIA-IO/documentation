@@ -335,6 +335,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "related": {
             "user": [
                 "CLIENT\\t.Naohisa"
+            ],
+            "hosts": [
+                "lh5.googleusercontent.com"
             ]
         }
     }

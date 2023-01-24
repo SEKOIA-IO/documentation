@@ -57,6 +57,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "observer": {
             "vendor": "Cloudflare",
             "type": "dns"
+        },
+        "related": {
+            "hosts": [
+                "foO-BAR-baz.xYz"
+            ]
         }
     }
     	
@@ -92,6 +97,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "observer": {
             "vendor": "Cloudflare",
             "type": "dns"
+        },
+        "related": {
+            "hosts": [
+                "foO-BAR-baz.xYz"
+            ]
         }
     }
     	
@@ -127,6 +137,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "observer": {
             "vendor": "Cloudflare",
             "type": "dns"
+        },
+        "related": {
+            "hosts": [
+                "foO-BAR-baz.xYz"
+            ]
         }
     }
     	
@@ -161,6 +176,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "observer": {
             "vendor": "Cloudflare",
             "type": "dns"
+        },
+        "related": {
+            "hosts": [
+                "foO-BAR-baz.xYz"
+            ]
         }
     }
     	

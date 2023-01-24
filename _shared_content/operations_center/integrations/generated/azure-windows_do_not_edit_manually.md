@@ -960,7 +960,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "hosts": [
-                "WinAzureTest"
+                "WinAzureTest",
+                "v10.events.data.microsoft.com"
             ]
         }
     }
