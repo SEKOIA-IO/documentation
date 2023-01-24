@@ -38,7 +38,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\"@timestamp\":\"2023-01-23T09:35:34.99Z\",\"agent\":{\"id\":\"1236c43def406f675318c07468d7b7e0984ba5a406da30251e102b6f2a103b24\",\"version\":\"v0.8.0\"},\"event\":{\"category\":[\"host\"],\"kind\":\"event\",\"reason\":\"Starting Events watcher\",\"provider\":\"SEKOIA-IO-Endpoint\"},\"host\":{\"hostname\":\"raphael-XPS-13-9370\",\"os\":{\"family\":\"linux\"}},\"log\":{\"level\":\"info\",\"logger\":\"SEKOIA-IO-Endpoint\"}}",
+        "message": "{\"@timestamp\":\"2023-01-23T09:35:34.99Z\",\"agent\":{\"id\":\"1236c43def406f675318c07468d7b7e0984ba5a406da30251e102b6f2a103b24\",\"version\":\"v0.8.0\"},\"event\":{\"category\":[\"host\"],\"kind\":\"event\",\"reason\":\"Starting Events watcher\",\"provider\":\"SEKOIA-IO-Endpoint\"},\"host\":{\"hostname\":\"raphael-XPS-13-9370\",\"os\":{\"family\":\"linux\"}},\"log\":{\"level\":\"info\",\"logger\":\"SEKOIA-IO-Endpoint\"}, \"error\": {\"message\": \"My error\"}}",
         "event": {
             "category": [
                 "host"
@@ -52,12 +52,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "1236c43def406f675318c07468d7b7e0984ba5a406da30251e102b6f2a103b24",
             "version": "v0.8.0"
         },
+        "error": {
+            "message": "My error"
+        },
         "host": {
             "hostname": "raphael-XPS-13-9370",
             "os": {
                 "family": "linux"
             },
             "name": "raphael-XPS-13-9370"
+        },
+        "log": {
+            "level": "info",
+            "logger": "SEKOIA-IO-Endpoint"
         },
         "related": {
             "hosts": [
