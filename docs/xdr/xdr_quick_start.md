@@ -7,7 +7,7 @@ Following the creation of a new community, there is a set of standard configurat
 
 ## Out of scope content 
 
-The configuration of your User Center, available [here](https://docs.sekoia.io/getting_started/).
+The full guide on how to create and setup an account, create and invite users to a community, manage roles, permissions and notifications and much more, is available [here](https://docs.sekoia.io/getting_started/).
 
 ## Let's get started
 
