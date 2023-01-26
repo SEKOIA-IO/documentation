@@ -26,7 +26,7 @@ To create intakes associated to the technology you woud like to collect:
 2. Make sure the logs are pushed to [SEKOIA.IO](http://SEKOIA.IO) using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the Intake key accordingly, or pulled by API
 
 !!! note
-    Find more details on each integration [here](https://docs.sekoia.io/xdr/features/collect/integrations/). 
+    Find more details on each integration in our [integrations catalog](https://docs.sekoia.io/xdr/features/collect/integrations/). 
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e802b9ae-29fd-4a58-bf8e-e255fc4a5974/Untitled.png)
 
