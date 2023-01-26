@@ -1,4 +1,4 @@
-Rules catalog includes **654 built-in detection rules** (_last update on 2023-01-20_).
+Rules catalog includes **658 built-in detection rules** (_last update on 2023-01-26_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -349,6 +349,12 @@ Rules catalog includes **654 built-in detection rules** (_last update on 2023-01
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
+    
+    - **Effort:** advanced
+
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
     
     - **Effort:** advanced
 
@@ -2734,6 +2740,12 @@ Rules catalog includes **654 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Unauthorized Access to App"
     
     An user tries to access an unauthorized application.
@@ -2838,6 +2850,12 @@ Rules catalog includes **654 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "Okta User Account Deactivated"
+    
+    An user account has been deactivated in Okta.
+    
+    - **Effort:** master
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -2903,6 +2921,12 @@ Rules catalog includes **654 built-in detection rules** (_last update on 2023-01
 ??? abstract "Net.exe User Account Creation"
     
     Identifies creation of local users via the net.exe command
+    
+    - **Effort:** master
+
+??? abstract "Okta User Account Created"
+    
+    An user account has been created in Okta.
     
     - **Effort:** master
 
@@ -3734,6 +3758,12 @@ Rules catalog includes **654 built-in detection rules** (_last update on 2023-01
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
+    
+    - **Effort:** advanced
+
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
     
     - **Effort:** advanced
 
@@ -4633,6 +4663,12 @@ Rules catalog includes **654 built-in detection rules** (_last update on 2023-01
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
+    
+    - **Effort:** advanced
+
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
     
     - **Effort:** advanced
 
@@ -6030,6 +6066,12 @@ Rules catalog includes **654 built-in detection rules** (_last update on 2023-01
 ??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta MFA Bypass Attempt"
+    
+    A bypass of MFA may have been attempted.
     
     - **Effort:** intermediate
 

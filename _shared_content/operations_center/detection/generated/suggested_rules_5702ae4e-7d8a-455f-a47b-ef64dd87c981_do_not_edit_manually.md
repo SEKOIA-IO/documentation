@@ -129,6 +129,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortigate** with the followi
     
     - **Effort:** intermediate
 
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
