@@ -12,7 +12,7 @@
 
 ## Triggers
 
-### [BETA] Fetch new events from Netskope
+### Fetch new events from Netskope
 
 Get last events from the Netskope platform through the API v2
 
@@ -28,4 +28,4 @@ Get last events from the Netskope platform through the API v2
 
 ## Extra
 
-Module **`Netskope` v0.3**
+Module **`Netskope` v1.0.0**
