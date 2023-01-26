@@ -32,7 +32,7 @@ To create intakes associated to the technology you woud like to collect:
 
 ### Activate detection rules 
 
-1. Enable all detection rules of effort levels 1 or 2 by filtring on each effort level then clicking on the “Enable all” button
+1. Enable all detection rules of effort levels 1 or 2 by filtring on each effort level then clicking on the `Enable all` button
 2. Automate the activation of future detection rule of the same effort levels following [this procedure](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules)
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ca3b5de-d7e0-46c4-931d-fc1454632d64/Untitled.png)
