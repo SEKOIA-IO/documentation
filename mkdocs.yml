@@ -1,4 +1,4 @@
-copyright: Copyright 2022 SEKOIA. All rights reserved.
+copyright: Copyright &copy; 2023 - SEKOIA.IO
 edit_uri: edit/main/docs/
 extra:
   social:
@@ -671,7 +671,6 @@ plugins:
 repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
-copyright: Copyright &copy; 2023 - SEKOIA.IO
 theme:
   custom_dir: theme
   favicon: assets/favicon.png
