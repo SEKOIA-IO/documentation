@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Palo Alto Next-Generation Fi
     
     - **Effort:** intermediate
 
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.

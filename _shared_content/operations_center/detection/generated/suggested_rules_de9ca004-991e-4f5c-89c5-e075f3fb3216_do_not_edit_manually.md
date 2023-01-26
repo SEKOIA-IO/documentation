@@ -57,6 +57,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events [BETA]** wit
     
     - **Effort:** advanced
 
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
 ??? abstract "Netskope Alert"
     
     Forward alerts reported by Netskope.  

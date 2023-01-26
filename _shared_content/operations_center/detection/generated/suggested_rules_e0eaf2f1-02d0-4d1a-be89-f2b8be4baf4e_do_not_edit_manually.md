@@ -45,6 +45,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **ProofPoint PoD** with the fo
     
     - **Effort:** intermediate
 
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
