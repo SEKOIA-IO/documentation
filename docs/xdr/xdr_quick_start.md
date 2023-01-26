@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Right after the creation of a brand new community, a first set of standard configurations are to be completed on SEKOIA.IO Operations Center pages. This executive note guides you on the principal steps to follow on the fisrt minutes of a community setup. 
+
+Following the creation of a new community, there is a set of standard configurations on SEKOIA.IO Operations Center pages that needs to be completed. This executive note provides guidance on the primary steps to be taken in the first few minutes of setting up a community.
 
 ## Out of scope content 
 
