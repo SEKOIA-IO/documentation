@@ -18,8 +18,8 @@ In details, the following table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `network` |
-| Type | `info` |
+| Category | `web` |
+| Type | `` |
 
 
 
@@ -38,13 +38,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "kind": "event",
             "category": [
-                "network"
-            ],
-            "type": [
-                "info"
+                "web"
             ],
             "action": "Microsoft.Cdn/Profiles/AccessLog/Write",
-            "dataset": "access"
+            "dataset": "access",
+            "type": [
+                "access"
+            ]
         },
         "@timestamp": "2022-08-29T15:03:25.4715017Z",
         "observer": {
@@ -110,13 +110,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "kind": "event",
             "category": [
-                "network"
-            ],
-            "type": [
-                "info"
+                "web"
             ],
             "action": "Microsoft.Cdn/Profiles/FrontDoorHealthProbeLog/Write",
-            "dataset": "health"
+            "dataset": "health",
+            "type": [
+                "info"
+            ]
         },
         "@timestamp": "2022-08-28T13:01:19.0427677Z",
         "observer": {
@@ -180,7 +180,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
-|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`http.request.bytes` | `long` | Total size in bytes of the request (body and headers). |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
