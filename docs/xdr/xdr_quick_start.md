@@ -5,8 +5,6 @@
 
 Following the creation of a new community, which represents your instance that is provided to you with the licence, there is a set of standard configurations on SEKOIA.IO Operations Center pages that needs to be completed. This note summarises a guidance on the primary steps to be taken in the first few minutes of setting up a community.
 
-## Out of scope content 
-
 The full guide on how to create and set up an account, create and invite users to a community, manage roles, permissions and notifications and much more, is available [here](https://docs.sekoia.io/getting_started/).
 
 ## Let's get started
