@@ -40,6 +40,7 @@ nav:
   - Generate API Keys: getting_started/generate_api_keys.md
 - SEKOIA.IO XDR:
   - Introduction: xdr/index.md
+  - Quick start guide: xdr/xdr_quick_start.md
   - Features:
     - Collect:
       - Overview: xdr/features/collect/ingestion_methods/index.md
