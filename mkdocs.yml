@@ -47,7 +47,16 @@ nav:
     - Collect:
       - Overview: xdr/features/collect/ingestion_methods/index.md
       - Ingestion methods:
-        - Rsyslog: xdr/features/collect/ingestion_methods/rsyslog.md
+        - Rsyslog: 
+          - Overview: 	xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-overview.md
+          - Setup:
+              - installation prerequisites: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-inst_prerequisites.md
+              - installation procedure: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-inst_procedure.md
+              - Configure Rsyslog server: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-configure.md
+          - Forward Logs to SEKOIA.IO: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-forward_logs.md
+          - See your events on SEKOIA.IO XDR: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-check_events.md
+          - Troubleshooting: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-troubleshooting.md
+          - Example of auto-setup configuration: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-auto_setup_config.md
         - Logstash: xdr/features/collect/ingestion_methods/logstash.md
         - syslog-ng: xdr/features/collect/ingestion_methods/syslog-ng.md
         - Graylog: xdr/features/collect/ingestion_methods/graylog.md
