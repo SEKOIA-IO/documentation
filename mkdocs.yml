@@ -36,7 +36,7 @@ nav:
   - Manage users: getting_started/manage_users.md
   - Roles and permissions: 
     - Roles: getting_started/roles.md
-    - Permissions :getting_started/Permissions.md
+    - Permissions: getting_started/Permissions.md
   - Navigation on the platform: getting_started/navigation.md
   - Turn on notifications: getting_started/notifications.md
   - Generate API Keys: getting_started/generate_api_keys.md
