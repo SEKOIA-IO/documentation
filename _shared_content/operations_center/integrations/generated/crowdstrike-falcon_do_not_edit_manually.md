@@ -140,6 +140,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-07-12T08:35:40.000000Z",
         "crowdstrike": {
             "event_type": "UserActivityAuditEvent",
+            "detect_id": "ldt:5418788591a444d1b45c2b39d3b07b50:21483381998",
             "operation_name": "detection_update"
         },
         "source": {
@@ -427,6 +428,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2022-07-12T08:35:40.000000Z",
         "crowdstrike": {
             "event_type": "UserActivityAuditEvent",
+            "detect_id": "ldt:5418788591a444d1b45c2b39d3b07b50:21482411386",
             "operation_name": "detection_update"
         },
         "source": {
