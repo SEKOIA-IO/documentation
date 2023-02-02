@@ -20,8 +20,8 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `` |
-| Category | `authentication`, `configuration`, `iam`, `intrusion_detection`, `malware`, `network` |
+| Kind | `alert` |
+| Category | `authentication`, `configuration`, `file`, `iam`, `intrusion_detection`, `malware`, `network` |
 | Type | `change`, `info` |
 
 
@@ -49,6 +49,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2022-05-02T00:29:01.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -98,6 +99,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2022-05-02T11:09:47.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -147,6 +149,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-05-02T12:20:31.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -196,6 +199,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "start"
             ]
         },
+        "@timestamp": "2022-12-22T16:38:07.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -246,6 +250,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "end"
             ]
         },
+        "@timestamp": "2022-12-07T10:46:07.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -295,6 +300,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2022-05-02T11:09:47.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -348,6 +354,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T16:12:20.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -422,6 +429,88 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_dlp_incident.json"
+
+    ```json
+	
+    {
+        "message": "{\"_id\":\"11fc1dee8256ff3645f6d25f06244e0ebf0d904515849b0c49f7901e2a2ad495\",\"access_method\":\"Client\",\"acting_user\":\"john.doe@example.org\",\"activity\":\"Upload\",\"app\":\"NextCloud\",\"app_session_id\":1111111111111111111,\"assignee\":\"None\",\"connection_id\":0,\"destination_app\":\"aws\",\"destination_instance_id\":\"securityforensic\",\"dlp_incident_id\":2222222222222222222,\"dlp_match_info\":[{\"dlp_action\":\"useralert\",\"dlp_forensic_id\":2222222222222222222,\"dlp_policy\":\"[DLP] Block sensitive files on Cloud Storage\",\"dlp_profile_name\":\"DLP-PII\",\"dlp_rules\":[{\"dlp_data_identifiers\":{\"industries/healthcare/medical_conditions/eng\":5,\"persons/proper_names/us/last\":5},\"dlp_incident_rule_count\":5,\"dlp_rule_name\":\"Name-Medical Condition\",\"dlp_rule_score\":10,\"dlp_rule_severity\":\"Low\",\"is_unique_count\":false,\"weighted\":false}]}],\"dlp_parent_id\":2222222222222222222,\"dst_location\":\"Paris\",\"file_lang\":\"ENGLISH\",\"file_size\":19154,\"file_type\":\"eicar.txt\",\"from_user\":\"john.doe@example.org\",\"instance_id\":\"example.org\",\"md5\":\"68b329da9893e34099c7d8ad5cb9c940\",\"object\":\"Ruby\",\"object_type\":\"Notebook\",\"referer\":\"https://intranet.example.org/\",\"severity\":\"Low\",\"site\":\"nextcloud\",\"src_location\":\"Rennes\",\"status\":\"new\",\"timestamp\":1675152713,\"title\":\"NextCloud\",\"true_obj_category\":\"Text\",\"true_obj_type\":\"Plain Text file\",\"url\":\"storage.example.org/files/eicar.txt\",\"user\":\"john.doe@example.org\",\"user_id\":\"example-netskope-repo-secu\",\"zip_file_id\":\"inci_2222222222222222222.zip\",\"exposure\":\"\",\"owner\":\"\",\"latest_incident_id\":0,\"file_path\":\"\",\"instance\":\"\",\"inline_dlp_match_info\":[],\"original_file_snapshot_id\":\"\",\"bcc\":\"\",\"to_user\":\"\",\"dlp_file\":\"\",\"classification\":\"\",\"cc\":\"\",\"owner_pdl\":\"\",\"channel\":\"\"}\n",
+        "event": {
+            "action": "Upload",
+            "kind": "alert",
+            "category": [
+                "file"
+            ],
+            "type": [
+                "info"
+            ],
+            "dataset": "dlp_incident"
+        },
+        "@timestamp": "2023-01-31T08:11:53.000000Z",
+        "observer": {
+            "vendor": "Netskope"
+        },
+        "user": {
+            "email": "john.doe@example.org",
+            "name": "john.doe",
+            "domain": "example.org"
+        },
+        "source": {
+            "geo": {
+                "city_name": "Rennes"
+            }
+        },
+        "destination": {
+            "geo": {
+                "city_name": "Paris"
+            }
+        },
+        "url": {
+            "original": "storage.example.org/files/eicar.txt",
+            "path": "storage.example.org/files/eicar.txt"
+        },
+        "http": {
+            "request": {
+                "referrer": "https://intranet.example.org/"
+            }
+        },
+        "cloud": {
+            "instance": {
+                "id": "example.org"
+            }
+        },
+        "file": {
+            "hash": {
+                "md5": "68b329da9893e34099c7d8ad5cb9c940"
+            },
+            "mime_type": "eicar.txt"
+        },
+        "netskope": {
+            "events": {
+                "application": {
+                    "name": "NextCloud"
+                },
+                "access_method": "Client"
+            },
+            "dlp": {
+                "incident": {
+                    "id": "2222222222222222222"
+                }
+            }
+        },
+        "related": {
+            "hash": [
+                "68b329da9893e34099c7d8ad5cb9c940"
+            ],
+            "user": [
+                "john.doe"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "test_malware_alert.json"
 
     ```json
@@ -440,6 +529,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T14:12:08.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -556,6 +646,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T15:52:00.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -682,6 +773,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T14:52:01.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -802,6 +894,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
@@ -818,6 +911,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
 |`netskope.alerts.name` | `keyword` | The name of the alert |
 |`netskope.alerts.type` | `keyword` | The type of the alert |
+|`netskope.dlp.incident.id` | `keyword` | The identifier of the DLP incident |
+|`netskope.dlp.incident.parent_id` | `keyword` | The identifier of the DLP incident parent |
 |`netskope.events.access_method` | `keyword` | The action done on the application |
 |`netskope.events.action.type` | `keyword` | The name of the action |
 |`netskope.events.action.values` | `array` | The targets of the action |
