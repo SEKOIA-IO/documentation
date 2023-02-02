@@ -1491,6 +1491,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** master
 
+??? abstract "Remote Privileged Group Enumeration"
+    
+    Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
+    
+    - **Effort:** advanced
+
 ??? abstract "Remote Registry Management Using Reg Utility"
     
     Remote registry management using REG utility from non-admin workstation. This requires Windows Security events logging.

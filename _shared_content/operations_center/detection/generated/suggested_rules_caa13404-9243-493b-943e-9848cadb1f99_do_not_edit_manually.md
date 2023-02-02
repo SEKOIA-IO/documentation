@@ -69,12 +69,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** master
 
-??? abstract "Intune Policy Change"
-    
-    Detects edits, deletions or creations made to an organization Intune policies.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module

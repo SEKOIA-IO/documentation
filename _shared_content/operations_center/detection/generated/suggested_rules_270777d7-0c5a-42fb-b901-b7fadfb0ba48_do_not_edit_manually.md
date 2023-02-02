@@ -87,12 +87,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortiproxy** with t
     
     - **Effort:** master
 
-??? abstract "Intune Policy Change"
-    
-    Detects edits, deletions or creations made to an organization Intune policies.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
