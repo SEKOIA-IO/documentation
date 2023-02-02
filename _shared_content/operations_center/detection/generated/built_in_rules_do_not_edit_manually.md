@@ -1,4 +1,4 @@
-Rules catalog includes **658 built-in detection rules** (_last update on 2023-01-26_).
+Rules catalog includes **659 built-in detection rules** (_last update on 2023-02-02_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6413,6 +6413,12 @@ Rules catalog includes **658 built-in detection rules** (_last update on 2023-01
 ??? abstract "PowerView commandlets 2"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "Remote Privileged Group Enumeration"
+    
+    Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
     
     - **Effort:** advanced
 

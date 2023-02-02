@@ -15,12 +15,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Retarus Email Security** wit
     
     - **Effort:** master
 
-??? abstract "Intune Policy Change"
-    
-    Detects edits, deletions or creations made to an organization Intune policies.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Retarus Email Security Threat Detected (CxO Or Patient Zero Detection)"
     
     Cx0 fraud and Patient Zero Detection alerts detected by Retarus Email Security. CxO Fraud Detection uses algorithms that identify from-spoofing and domain-spoofing, to detect falsified sender addresses (e.g. from high level executives - CEO, CFO...). Patient Zero Detection® uses a digital fingerprint to identify emails containing malware that have already been delivered.
