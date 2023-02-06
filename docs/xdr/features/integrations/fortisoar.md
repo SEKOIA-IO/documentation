@@ -20,7 +20,7 @@ On SEKOIA.IO XDR, create an API KEY with the following permission:
 - `SIC_READ_COUNTERMEASURES` (`cd2fe256-8ee0-4fcf-b255-cbc237a49ab9`): Get information about a set of countermeasures
 - `ASSETMANAGEMENT_VIEW_ASSET_TYPE` (`d53187c1-b6c4-4660-a2e7-30b598b6150e`): Allow to list types of assets
 
-[More information on API KEY creation](../../../getting_started/generate_api_keys.md)
+[More information on API KEY creation](../../../getting_started/manage_api_keys.md)
 
 On the FortiSOAR server, ensure you have the outbound connectivity to app.sekoia.io on the port 443 (HTTPS).
 
