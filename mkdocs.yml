@@ -326,7 +326,7 @@ nav:
       - Microsoft Sentinel: tip/features/integrations/microsoft-sentinel.md
       - OpenCTI: tip/features/integrations/opencti.md
       - Splunk: tip/features/integrations/splunk.md
-      - PaloAlto Cortex XSOAR: tip/features/integrations/palolto_xsoar.md
+      - PaloAlto Cortex XSOAR: tip/features/integrations/paloalto_xsoar.md
     - Automate:
       - Playbooks: tip/features/automate/index.md
       - Navigate playbooks: tip/features/automate/navigate-playbooks.md
