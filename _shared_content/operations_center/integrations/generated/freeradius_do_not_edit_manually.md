@@ -12,7 +12,250 @@ The following table lists the data source offered by this integration.
 
 
 
+In details, the following table denotes the type of events produced by this integration.
+
+| Name | Values |
+| ---- | ------ |
+| Kind | `event` |
+| Category | `authentication` |
+| Type | `info` |
 
 
 
+
+## Event Samples
+
+Find below few samples of events and how they are normalized by SEKOIA.IO.
+
+
+=== "test_invalid_user.json"
+
+    ```json
+	
+    {
+        "message": "(548804) Invalid user (Rejected: User-Name contains whitespace): [john.doe@example.org ] (from client WLAN port 9815 cli 00-11-22-33-44-55)",
+        "event": {
+            "kind": "event",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "info"
+            ],
+            "dataset": "freeradius.authentication",
+            "reason": "Rejected: User-Name contains whitespace"
+        },
+        "user": {
+            "email": "john.doe@example.org ",
+            "name": "john.doe",
+            "domain": "example.org "
+        },
+        "network": {
+            "name": "WLAN"
+        },
+        "source": {
+            "port": 9815,
+            "mac": "00-11-22-33-44-55"
+        },
+        "freeradius": {
+            "outcome": "Invalid user"
+        },
+        "related": {
+            "user": [
+                "john.doe"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_login_incorrect.json"
+
+    ```json
+	
+    {
+        "message": "(29512) Login incorrect (No Auth-Type found: rejecting the user via Post-Auth-Type = Reject): [test] (from client LAN port 0)",
+        "event": {
+            "kind": "event",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "info"
+            ],
+            "dataset": "freeradius.authentication",
+            "reason": "No Auth-Type found: rejecting the user via Post-Auth-Type = Reject"
+        },
+        "user": {
+            "name": "test"
+        },
+        "network": {
+            "name": "LAN"
+        },
+        "source": {
+            "port": 0
+        },
+        "freeradius": {
+            "outcome": "Login incorrect"
+        },
+        "related": {
+            "user": [
+                "test"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_login_ok1.json"
+
+    ```json
+	
+    {
+        "message": "(549077) Login OK: [host/hostname.example.org] (from client WLAN port 9815 cli 00-11-22-33-44-55)",
+        "event": {
+            "kind": "event",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "info"
+            ],
+            "dataset": "freeradius.authentication"
+        },
+        "network": {
+            "name": "WLAN"
+        },
+        "source": {
+            "port": 9815,
+            "mac": "00-11-22-33-44-55",
+            "domain": "hostname.example.org",
+            "address": "hostname.example.org",
+            "top_level_domain": "org",
+            "subdomain": "hostname",
+            "registered_domain": "example.org"
+        },
+        "freeradius": {
+            "outcome": "Login OK"
+        },
+        "related": {
+            "hosts": [
+                "hostname.example.org"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_login_ok2.json"
+
+    ```json
+	
+    {
+        "message": "(549117) Login OK: [john.doe@example.org] (from client abcdef port 2010 cli 1.2.3.4 via TLS tunnel)",
+        "event": {
+            "kind": "event",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "info"
+            ],
+            "dataset": "freeradius.authentication"
+        },
+        "user": {
+            "email": "john.doe@example.org",
+            "name": "john.doe",
+            "domain": "example.org"
+        },
+        "network": {
+            "name": "abcdef",
+            "protocol": "TLS"
+        },
+        "source": {
+            "port": 2010,
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "freeradius": {
+            "outcome": "Login OK"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "john.doe"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_login_ok3.json"
+
+    ```json
+	
+    {
+        "message": "(29559) Login OK: [nagios_check] (from client abcdef port 0)",
+        "event": {
+            "kind": "event",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "info"
+            ],
+            "dataset": "freeradius.authentication"
+        },
+        "user": {
+            "name": "nagios_check"
+        },
+        "network": {
+            "name": "abcdef"
+        },
+        "source": {
+            "port": 0
+        },
+        "freeradius": {
+            "outcome": "Login OK"
+        },
+        "related": {
+            "user": [
+                "nagios_check"
+            ]
+        }
+    }
+    	
+	```
+
+
+
+
+
+## Extracted Fields
+
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+
+| Name | Type | Description                |
+| ---- | ---- | ---------------------------|
+|`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.dataset` | `keyword` | Name of the dataset. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`freeradius.outcome` | `keyword` | The outcome of the event |
+|`network.name` | `keyword` | Name given by operators to sections of their network. |
+|`network.protocol` | `keyword` | Application protocol name. |
+|`source.domain` | `keyword` | The domain name of the source. |
+|`source.ip` | `ip` | IP address of the source. |
+|`source.mac` | `keyword` | MAC address of the source. |
+|`source.port` | `long` | Port of the source. |
+|`user.domain` | `keyword` | Name of the directory the user is a member of. |
+|`user.email` | `keyword` | User email address. |
+|`user.name` | `keyword` | Short name or login of the user. |
 
