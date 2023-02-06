@@ -1,4 +1,4 @@
-Rules catalog includes **646 built-in detection rules** (_last update on 2023-01-11_).
+Rules catalog includes **659 built-in detection rules** (_last update on 2023-02-02_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -349,6 +349,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
+    
+    - **Effort:** advanced
+
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
     
     - **Effort:** advanced
 
@@ -1017,6 +1023,36 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
+    
+    - **Effort:** advanced
+
 ??? abstract "Cybereason MalOp Alert"
     
     Cybereason MalOp telemetry has raised an alert
@@ -1643,6 +1679,36 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
+    
+    - **Effort:** advanced
+
 ??? abstract "Cybereason MalOp Alert"
     
     Cybereason MalOp telemetry has raised an alert
@@ -2098,6 +2164,36 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
 ??? abstract "CrowdStrike Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
     - **Effort:** advanced
 
@@ -2644,6 +2740,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Unauthorized Access to App"
     
     An user tries to access an unauthorized application.
@@ -2748,6 +2850,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** advanced
 
+??? abstract "Okta User Account Deactivated"
+    
+    An user account has been deactivated in Okta.
+    
+    - **Effort:** master
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -2813,6 +2921,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
 ??? abstract "Net.exe User Account Creation"
     
     Identifies creation of local users via the net.exe command
+    
+    - **Effort:** master
+
+??? abstract "Okta User Account Created"
+    
+    An user account has been created in Okta.
     
     - **Effort:** master
 
@@ -3644,6 +3758,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
+    
+    - **Effort:** advanced
+
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
     
     - **Effort:** advanced
 
@@ -4543,6 +4663,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
+    
+    - **Effort:** advanced
+
+??? abstract "Netskope Admin Audit"
+    
+    Audit events for admin activites, from Logins to policies' changes.
     
     - **Effort:** advanced
 
@@ -5943,6 +6069,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** intermediate
 
+??? abstract "Okta MFA Bypass Attempt"
+    
+    A bypass of MFA may have been attempted.
+    
+    - **Effort:** intermediate
+
 **Exploitation for Credential Access**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -5978,6 +6110,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     Detects when Google Cloud Audit notify the 2FA deactivation for a user account.
     
     - **Effort:** intermediate
+
+??? abstract "Opening Of a Password File"
+    
+    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Outlook Registry Access"
     
@@ -6275,6 +6413,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
 ??? abstract "PowerView commandlets 2"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "Remote Privileged Group Enumeration"
+    
+    Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
     
     - **Effort:** advanced
 
@@ -6703,6 +6847,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     
     - **Effort:** elementary
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -7009,6 +7159,12 @@ Rules catalog includes **646 built-in detection rules** (_last update on 2023-01
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
     - **Effort:** elementary
+
+??? abstract "Netskope Alert"
+    
+    Forward alerts reported by Netskope.  
+    
+    - **Effort:** advanced
 
 ??? abstract "Remote File Copy"
     

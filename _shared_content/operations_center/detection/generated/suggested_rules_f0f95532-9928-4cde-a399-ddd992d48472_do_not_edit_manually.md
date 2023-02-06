@@ -105,6 +105,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** intermediate
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
@@ -158,12 +164,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "Suspicious TOR Gateway"
-    
-    Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
-    
-    - **Effort:** advanced
 
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     

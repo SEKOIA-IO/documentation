@@ -1143,6 +1143,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** elementary
 
+??? abstract "Opening Of a Password File"
+    
+    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -1484,6 +1490,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects persistence registry keys. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** master
+
+??? abstract "Remote Privileged Group Enumeration"
+    
+    Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
+    
+    - **Effort:** advanced
 
 ??? abstract "Remote Registry Management Using Reg Utility"
     

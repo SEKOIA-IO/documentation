@@ -25,9 +25,9 @@ Get last events from the TEHTRIS XDR platform
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
-| `filter_id` | `integer` | The Filter ID used to retrieve events |
+| `filter_id` | `['integer', 'string']` | The Filter ID used to retrieve events |
 
 
 ## Extra
 
-Module **`TEHTRIS` v1.1.2**
+Module **`TEHTRIS` v1.3.0**

@@ -116,7 +116,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
             ],
             "hosts": [
-                "network.internal"
+                "network.internal",
+                "www.xmlformats.com"
             ],
             "ip": [
                 "1.2.3.4",
@@ -211,7 +212,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "hosts": [
-                "network.internal"
+                "network.internal",
+                "www.xmlformats.com"
             ],
             "ip": [
                 "1.2.3.4",
@@ -303,7 +305,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
             ],
             "hosts": [
-                "gcap-sekoia.gatewatcher.com"
+                "gcap-sekoia.gatewatcher.com",
+                "www.xmlformats.com"
             ],
             "ip": [
                 "1.2.3.4",
@@ -386,7 +389,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "related": {
             "hosts": [
-                "gcap-sekoia.gatewatcher.com"
+                "gcap-sekoia.gatewatcher.com",
+                "www.xmlformats.com"
             ],
             "ip": [
                 "1.2.3.4",

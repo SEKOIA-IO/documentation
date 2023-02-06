@@ -3,6 +3,12 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **Google Cloud Audit Logs** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x Google Cloud Audit Logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_44439212-c2d8-4645-ad60-8fd5e39140b3_do_not_edit_manually.json){ .md-button }
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent

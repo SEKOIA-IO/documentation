@@ -1,4 +1,4 @@
-copyright: Copyright 2022 SEKOIA. All rights reserved.
+copyright: Copyright &copy; 2023 - SEKOIA.IO
 edit_uri: edit/main/docs/
 extra:
   social:
@@ -46,6 +46,7 @@ nav:
   - 6. Manage API Keys: getting_started/manage_api_keys.md
 - SEKOIA.IO XDR:
   - Introduction: xdr/index.md
+  - Quick start guide: xdr/xdr_quick_start.md
   - Features:
     - Collect:
       - Overview: xdr/features/collect/ingestion_methods/index.md
@@ -134,8 +135,10 @@ nav:
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
         - Network:
           - Check Point Firewall: xdr/features/collect/integrations/network/checkpoint.md
-          - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco_asa.md
-          - Cisco WSA: xdr/features/collect/integrations/network/cisco_wsa.md
+          - Cisco:
+            - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco/cisco_asa.md
+            - Cisco Secure Web Appliance: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
+            - Cisco NX-OS: xdr/features/collect/integrations/network/cisco/cisco_nx_os.md
           - Gatewatcher AionIQ: xdr/features/collect/integrations/network/gatewatcher_aioniq.md
           - F5 BIG-IP: xdr/features/collect/integrations/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
@@ -437,8 +440,8 @@ plugins:
       integrations/bind.md: xdr/features/collect/integrations/application/bind.md
       integrations/cef.md: xdr/features/collect/integrations/generic/cef.md
       integrations/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
-      integrations/cisco-asa.md: xdr/features/collect/integrations/network/cisco_asa.md
-      integrations/cisco_asa.md: xdr/features/collect/integrations/network/cisco_asa.md
+      integrations/cisco-asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
+      integrations/cisco_asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
       integrations/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
       integrations/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
@@ -595,8 +598,8 @@ plugins:
       operation_center/integration_catalog/endpoint/windows.md: xdr/features/collect/integrations/endpoint/windows.md
       operation_center/integration_catalog/generic/cef.md: xdr/features/collect/integrations/generic/cef.md
       operation_center/integration_catalog/network/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
-      operation_center/integration_catalog/network/cisco_asa.md: xdr/features/collect/integrations/network/cisco_asa.md
-      operation_center/integration_catalog/network/cisco_wsa.md: xdr/features/collect/integrations/network/cisco_wsa.md
+      operation_center/integration_catalog/network/cisco_asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
+      operation_center/integration_catalog/network/cisco_wsa.md: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
       operation_center/integration_catalog/network/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
       operation_center/integration_catalog/network/forcepoint_web_gateway.md: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
       operation_center/integration_catalog/network/fortigate.md: xdr/features/collect/integrations/network/fortigate.md
@@ -683,6 +686,7 @@ theme:
   features:
   - navigation.tabs
   - navigation.top
+  - navigation.footer
   - content.code.annotate
   - content.action.edit
   font:

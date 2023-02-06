@@ -531,6 +531,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
     
     - **Effort:** intermediate
 
+??? abstract "Opening Of a Password File"
+    
+    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -822,12 +828,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
 ??? abstract "Suspicious Rundll32.exe Execution"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
     
     - **Effort:** intermediate
 

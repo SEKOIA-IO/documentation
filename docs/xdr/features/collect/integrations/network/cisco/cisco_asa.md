@@ -1,12 +1,18 @@
 uuid: 466aeca2-e112-4ccc-a109-c6d85b91bbcf
-name: Cisco ASA
+name: Cisco Secure Firewall
 type: intake
 
 ## Overview
 
-The Cisco ASA is a security device that combines firewall, antivirus, intrusion prevention, and virtual private network (VPN) capabilities. It provides proactive threat defense that stops attacks before they spread through the network. Therefore, the Cisco ASA firewall is the whole package, so to speak.
+The Cisco Secure Firewall (formely Next-Generation Firewall) is a security product to protect your network, from physical ones to ones hosted in the cloud.
 
-- From the CISCO ASA machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
+Cisco Secure Firewall include:
+
+  - Adaptive Security Appliance (ASA): that combines firewall, antivirus, intrusion prevention, and virtual private network (VPN) capabilities.
+  - Firepower Threat Defense (FTD): a unified software image, which includes the Cisco ASA features and FirePOWER Services. This unified software is capable of offering the function of ASA and FirePOWER in one platform, both in terms of hardware and software features.
+  - Next Generation IPS (NGIPS): that detect and stop intrusions in your internal network or in your public cloud. NGIPS helps you to mitigate vulnerabilities and manage patch application helps you to mitigate vulnerabilities and manage patch applications.
+
+Sending Cisco logs to SEKOIA.IO will help you discovering potential network security threats, which are contextualized  thanks to our Cyber Threat Intelligence (CTI).
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.md!}
@@ -15,7 +21,7 @@ The Cisco ASA is a security device that combines firewall, antivirus, intrusion 
 
 ## Configure
 
-### CISCO ASA logs
+### CISCO Secure Firewall logs
 
 On CISCO appliances, most of the important hardward and software activities that are relevant for security detection and analysis, are enable by one simple command.
 To enable logging, enter the following commands:
@@ -31,10 +37,10 @@ hostname(config)# logging trap informational
 #### Prerequisites
 The following prerequisites are needed in order to setup efficient log concentration:
 
-- Have administrator privileges on the CISCO ASA
+- Have administrator privileges on the CISCO appliance
 - Traffic towards the Rsyslog must be open on `UDP 514`
 
-#### Configure the CISCO ASA
+#### Configure the CISCO Appliance
 In ordre to forward the logs to a Rsyslog, please follow those commands:
 
 > Note the interface name

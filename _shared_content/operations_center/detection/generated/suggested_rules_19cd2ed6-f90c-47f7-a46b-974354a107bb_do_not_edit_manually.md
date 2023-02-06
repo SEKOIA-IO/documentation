@@ -87,9 +87,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Active Directory** wit
     
     - **Effort:** intermediate
 
-??? abstract "Intune Policy Change"
+??? abstract "Nimbo-C2 User Agent"
     
-    Detects edits, deletions or creations made to an organization Intune policies.
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
     
     - **Effort:** intermediate
 

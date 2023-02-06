@@ -309,6 +309,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft Defender for Endpo
     
     - **Effort:** intermediate
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NjRat Registry Changes"
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.

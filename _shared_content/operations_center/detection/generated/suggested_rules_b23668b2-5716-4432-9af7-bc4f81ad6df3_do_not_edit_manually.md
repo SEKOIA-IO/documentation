@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **NetFlow** with the following
     
     - **Effort:** elementary
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent

@@ -171,6 +171,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Front Door** with the 
     
     - **Effort:** elementary
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension

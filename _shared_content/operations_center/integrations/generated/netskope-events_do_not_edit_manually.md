@@ -20,8 +20,8 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `` |
-| Category | `authentication`, `configuration`, `iam`, `intrusion_detection`, `malware`, `network` |
+| Kind | `alert` |
+| Category | `authentication`, `configuration`, `file`, `iam`, `intrusion_detection`, `malware`, `network` |
 | Type | `change`, `info` |
 
 
@@ -49,6 +49,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2022-05-02T00:29:01.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -98,6 +99,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2022-05-02T11:09:47.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -147,6 +149,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-05-02T12:20:31.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -196,6 +199,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "start"
             ]
         },
+        "@timestamp": "2022-12-22T16:38:07.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -246,6 +250,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "end"
             ]
         },
+        "@timestamp": "2022-12-07T10:46:07.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -295,6 +300,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2022-05-02T11:09:47.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -348,6 +354,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T16:12:20.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -422,12 +429,94 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_dlp_incident.json"
+
+    ```json
+	
+    {
+        "message": "{\"_id\":\"11fc1dee8256ff3645f6d25f06244e0ebf0d904515849b0c49f7901e2a2ad495\",\"access_method\":\"Client\",\"acting_user\":\"john.doe@example.org\",\"activity\":\"Upload\",\"app\":\"NextCloud\",\"app_session_id\":1111111111111111111,\"assignee\":\"None\",\"connection_id\":0,\"destination_app\":\"aws\",\"destination_instance_id\":\"securityforensic\",\"dlp_incident_id\":2222222222222222222,\"dlp_match_info\":[{\"dlp_action\":\"useralert\",\"dlp_forensic_id\":2222222222222222222,\"dlp_policy\":\"[DLP] Block sensitive files on Cloud Storage\",\"dlp_profile_name\":\"DLP-PII\",\"dlp_rules\":[{\"dlp_data_identifiers\":{\"industries/healthcare/medical_conditions/eng\":5,\"persons/proper_names/us/last\":5},\"dlp_incident_rule_count\":5,\"dlp_rule_name\":\"Name-Medical Condition\",\"dlp_rule_score\":10,\"dlp_rule_severity\":\"Low\",\"is_unique_count\":false,\"weighted\":false}]}],\"dlp_parent_id\":2222222222222222222,\"dst_location\":\"Paris\",\"file_lang\":\"ENGLISH\",\"file_size\":19154,\"file_type\":\"eicar.txt\",\"from_user\":\"john.doe@example.org\",\"instance_id\":\"example.org\",\"md5\":\"68b329da9893e34099c7d8ad5cb9c940\",\"object\":\"Ruby\",\"object_type\":\"Notebook\",\"referer\":\"https://intranet.example.org/\",\"severity\":\"Low\",\"site\":\"nextcloud\",\"src_location\":\"Rennes\",\"status\":\"new\",\"timestamp\":1675152713,\"title\":\"NextCloud\",\"true_obj_category\":\"Text\",\"true_obj_type\":\"Plain Text file\",\"url\":\"storage.example.org/files/eicar.txt\",\"user\":\"john.doe@example.org\",\"user_id\":\"example-netskope-repo-secu\",\"zip_file_id\":\"inci_2222222222222222222.zip\",\"exposure\":\"\",\"owner\":\"\",\"latest_incident_id\":0,\"file_path\":\"\",\"instance\":\"\",\"inline_dlp_match_info\":[],\"original_file_snapshot_id\":\"\",\"bcc\":\"\",\"to_user\":\"\",\"dlp_file\":\"\",\"classification\":\"\",\"cc\":\"\",\"owner_pdl\":\"\",\"channel\":\"\"}\n",
+        "event": {
+            "action": "Upload",
+            "kind": "alert",
+            "category": [
+                "file"
+            ],
+            "type": [
+                "info"
+            ],
+            "dataset": "dlp_incident"
+        },
+        "@timestamp": "2023-01-31T08:11:53.000000Z",
+        "observer": {
+            "vendor": "Netskope"
+        },
+        "user": {
+            "email": "john.doe@example.org",
+            "name": "john.doe",
+            "domain": "example.org"
+        },
+        "source": {
+            "geo": {
+                "city_name": "Rennes"
+            }
+        },
+        "destination": {
+            "geo": {
+                "city_name": "Paris"
+            }
+        },
+        "url": {
+            "original": "storage.example.org/files/eicar.txt",
+            "path": "storage.example.org/files/eicar.txt"
+        },
+        "http": {
+            "request": {
+                "referrer": "https://intranet.example.org/"
+            }
+        },
+        "cloud": {
+            "instance": {
+                "id": "example.org"
+            }
+        },
+        "file": {
+            "hash": {
+                "md5": "68b329da9893e34099c7d8ad5cb9c940"
+            },
+            "mime_type": "eicar.txt"
+        },
+        "netskope": {
+            "events": {
+                "application": {
+                    "name": "NextCloud"
+                },
+                "access_method": "Client"
+            },
+            "dlp": {
+                "incident": {
+                    "id": "2222222222222222222"
+                }
+            }
+        },
+        "related": {
+            "hash": [
+                "68b329da9893e34099c7d8ad5cb9c940"
+            ],
+            "user": [
+                "john.doe"
+            ]
+        }
+    }
+    	
+	```
+
+
 === "test_malware_alert.json"
 
     ```json
 	
     {
-        "message": "{\n  \"_id\": \"882049056ee9e069c1c329b7\",\n  \"access_method\": \"Client\",\n  \"action\": \"Detection\",\n  \"activity\": \"Download\",\n  \"alert\": \"yes\",\n  \"alert_type\": \"Malware\",\n  \"app\": \"eicar\",\n  \"app_session_id\": 111111111111111111,\n  \"appcategory\": \"n/a\",\n  \"browser\": \"Safari\",\n  \"category\": \"n/a\",\n  \"cci\": \"\",\n  \"ccl\": \"unknown\",\n  \"connection_id\": 0,\n  \"count\": 1,\n  \"device\": \"Mac Device\",\n  \"dst_country\": \"US\",\n  \"dst_geoip_src\": 2,\n  \"dst_latitude\": 47.6711,\n  \"dst_location\": \"Redmond\",\n  \"dst_longitude\": -122.1253,\n  \"dst_region\": \"Washington\",\n  \"dst_timezone\": \"America/Los_Angeles\",\n  \"dst_zipcode\": \"98073\",\n  \"dstip\": \"5.6.7.8\",\n  \"file_path\": \"NA\",\n  \"file_size\": 308,\n  \"file_type\": \"application/zip\",\n  \"hostname\": \"MacBook Pro\",\n  \"instance\": null,\n  \"managementID\": \"99999999999999999999999999999999\",\n  \"md5\": \"68b329da9893e34099c7d8ad5cb9c940\",\n  \"mime_type\": \"\",\n  \"nsdeviceuid\": \"BC848089-186A-4F2D-A26F-E5CC94C29E56\",\n  \"object\": \"eicarcom2.zip\",\n  \"object_id\": \"68b329da9893e34099c7d8ad5cb9c940\",\n  \"object_type\": \"File\",\n  \"organization_unit\": \"\",\n  \"os\": \"Monterey\",\n  \"referer\": \"https://www.eicar.org/\",\n  \"request_id\": 2222222222222222222,\n  \"severity\": \"high\",\n  \"site\": \"eicar\",\n  \"src_country\": \"FR\",\n  \"src_geoip_src\": 2,\n  \"src_latitude\": 48.11,\n  \"src_location\": \"Rennes\",\n  \"src_longitude\": -1.6744,\n  \"src_region\": \"Brittany\",\n  \"src_timezone\": \"Europe/Paris\",\n  \"src_zipcode\": \"35000\",\n  \"srcip\": \"4.3.2.1\",\n  \"timestamp\": 1671631928,\n  \"title\": \"eicarcom2.zip\",\n  \"traffic_type\": \"CloudApp\",\n  \"transaction_id\": 3333333333333333333,\n  \"tss_mode\": \"inline\",\n  \"type\": \"nspolicy\",\n  \"ur_normalized\": \"john.doe@example.org\",\n  \"url\": \"secure.eicar.org/eicarcom2.zip\",\n  \"user\": \"john.doe@example.org\",\n  \"user_id\": \"john.doe@example.org\",\n  \"userip\": \"1.2.3.4\",\n  \"userkey\": \"john.doe@example.org\",\n  \"dlp_file\": \"\",\n  \"data_center\": \"\",\n  \"browser_version\": \"\",\n  \"owner\": \"\",\n  \"dlp_incident_id\": 0,\n  \"channel_id\": \"\",\n  \"from_user_category\": \"\",\n  \"resp_cnt\": 0,\n  \"suppression_key\": \"\",\n  \"loginurl\": \"\",\n  \"total_collaborator_count\": 0,\n  \"os_version\": \"\",\n  \"dlp_rule\": \"\",\n  \"dlp_mail_parent_id\": \"\",\n  \"instance_id\": \"\",\n  \"to_user\": \"\",\n  \"suppression_end_time\": 0,\n  \"fromlogs\": \"\",\n  \"dlp_parent_id\": 0,\n  \"dstport\": 0,\n  \"dst_timezone\": \"\",\n  \"serial\": \"\",\n  \"audit_category\": \"\",\n  \"sha256\": \"\",\n  \"from_user\": \"\",\n  \"sAMAccountName\": \"\",\n  \"app_activity\": \"\",\n  \"useragent\": \"\",\n  \"netskope_activity\": \"\",\n  \"conn_duration\": 0,\n  \"other_categories\": [],\n  \"custom_connector\": \"\",\n  \"dlp_rule_severity\": \"\",\n  \"numbytes\": 0,\n  \"telemetry_app\": \"\",\n  \"true_obj_category\": \"\",\n  \"userPrincipalName\": \"\",\n  \"logintype\": \"\",\n  \"suppression_start_time\": 0,\n  \"browser_session_id\": 0,\n  \"dlp_profile\": \"\",\n  \"src_time\": \"\",\n  \"modified\": 0,\n  \"policy\": \"\",\n  \"policy_id\": \"\",\n  \"notify_template\": \"\",\n  \"audit_type\": \"\",\n  \"orignal_file_path\": \"\",\n  \"dlp_is_unique_count\": \"\",\n  \"org\": \"\",\n  \"user_category\": \"\",\n  \"dlp_unique_count\": 0,\n  \"exposure\": \"\",\n  \"netskope_pop\": \"\",\n  \"shared_with\": \"\",\n  \"client_bytes\": 0,\n  \"sanctioned_instance\": \"\",\n  \"device_classification\": \"\",\n  \"data_type\": \"\",\n  \"scan_type\": \"\",\n  \"internal_collaborator_count\": 0,\n  \"CononicalName\": \"\",\n  \"workspace\": \"\",\n  \"log_file_name\": \"\",\n  \"parent_id\": \"\",\n  \"true_obj_type\": \"\",\n  \"dlp_rule_count\": 0,\n  \"sessionid\": \"\",\n  \"workspace_id\": \"\",\n  \"page_site\": \"\",\n  \"universal_connector\": \"\",\n  \"server_bytes\": 0,\n  \"req_cnt\": 0,\n  \"file_lang\": \"\",\n  \"protocol\": \"\",\n  \"web_universal_connector\": \"\",\n  \"dsthost\": \"\",\n  \"appsuite\": \"\",\n  \"managed_app\": \"\",\n  \"page\": \"\"\n}\n",
+        "message": "{\n  \"_id\": \"882049056ee9e069c1c329b7\",\n  \"access_method\": \"Client\",\n  \"action\": \"Detection\",\n  \"activity\": \"Download\",\n  \"alert\": \"yes\",\n  \"alert_type\": \"Malware\",\n  \"app\": \"eicar\",\n  \"app_session_id\": 111111111111111111,\n  \"appcategory\": \"n/a\",\n  \"browser\": \"Safari\",\n  \"category\": \"n/a\",\n  \"cci\": \"\",\n  \"ccl\": \"unknown\",\n  \"connection_id\": 0,\n  \"count\": 1,\n  \"device\": \"Mac Device\",\n  \"dst_country\": \"US\",\n  \"dst_geoip_src\": 2,\n  \"dst_latitude\": 47.6711,\n  \"dst_location\": \"Redmond\",\n  \"dst_longitude\": -122.1253,\n  \"dst_region\": \"Washington\",\n  \"dst_timezone\": \"America/Los_Angeles\",\n  \"dst_zipcode\": \"98073\",\n  \"dstip\": \"5.6.7.8\",\n  \"file_path\": \"NA\",\n  \"file_size\": 308,\n  \"file_type\": \"File Type Not Detected\",\n  \"hostname\": \"MacBook Pro\",\n  \"instance\": null,\n  \"managementID\": \"99999999999999999999999999999999\",\n  \"md5\": \"68b329da9893e34099c7d8ad5cb9c940\",\n  \"mime_type\": \"\",\n  \"nsdeviceuid\": \"BC848089-186A-4F2D-A26F-E5CC94C29E56\",\n  \"object\": \"eicarcom2.zip\",\n  \"object_id\": \"68b329da9893e34099c7d8ad5cb9c940\",\n  \"object_type\": \"File\",\n  \"organization_unit\": \"\",\n  \"os\": \"Monterey\",\n  \"referer\": \"https://www.eicar.org/\",\n  \"request_id\": 2222222222222222222,\n  \"severity\": \"high\",\n  \"site\": \"eicar\",\n  \"src_country\": \"FR\",\n  \"src_geoip_src\": 2,\n  \"src_latitude\": 48.11,\n  \"src_location\": \"Rennes\",\n  \"src_longitude\": -1.6744,\n  \"src_region\": \"Brittany\",\n  \"src_timezone\": \"Europe/Paris\",\n  \"src_zipcode\": \"35000\",\n  \"srcip\": \"4.3.2.1\",\n  \"timestamp\": 1671631928,\n  \"title\": \"eicarcom2.zip\",\n  \"traffic_type\": \"CloudApp\",\n  \"transaction_id\": 3333333333333333333,\n  \"tss_mode\": \"inline\",\n  \"type\": \"nspolicy\",\n  \"ur_normalized\": \"john.doe@example.org\",\n  \"url\": \"secure.eicar.org/eicarcom2.zip\",\n  \"user\": \"john.doe@example.org\",\n  \"user_id\": \"john.doe@example.org\",\n  \"userip\": \"1.2.3.4\",\n  \"userkey\": \"john.doe@example.org\",\n  \"dlp_file\": \"\",\n  \"data_center\": \"\",\n  \"browser_version\": \"\",\n  \"owner\": \"\",\n  \"dlp_incident_id\": 0,\n  \"channel_id\": \"\",\n  \"from_user_category\": \"\",\n  \"resp_cnt\": 0,\n  \"suppression_key\": \"\",\n  \"loginurl\": \"\",\n  \"total_collaborator_count\": 0,\n  \"os_version\": \"\",\n  \"dlp_rule\": \"\",\n  \"dlp_mail_parent_id\": \"\",\n  \"instance_id\": \"\",\n  \"to_user\": \"\",\n  \"suppression_end_time\": 0,\n  \"fromlogs\": \"\",\n  \"dlp_parent_id\": 0,\n  \"dstport\": 0,\n  \"dst_timezone\": \"\",\n  \"serial\": \"\",\n  \"audit_category\": \"\",\n  \"sha256\": \"\",\n  \"from_user\": \"\",\n  \"sAMAccountName\": \"\",\n  \"app_activity\": \"\",\n  \"useragent\": \"\",\n  \"netskope_activity\": \"\",\n  \"conn_duration\": 0,\n  \"other_categories\": [],\n  \"custom_connector\": \"\",\n  \"dlp_rule_severity\": \"\",\n  \"numbytes\": 0,\n  \"telemetry_app\": \"\",\n  \"true_obj_category\": \"\",\n  \"userPrincipalName\": \"\",\n  \"logintype\": \"\",\n  \"suppression_start_time\": 0,\n  \"browser_session_id\": 0,\n  \"dlp_profile\": \"\",\n  \"src_time\": \"\",\n  \"modified\": 0,\n  \"policy\": \"\",\n  \"policy_id\": \"\",\n  \"notify_template\": \"\",\n  \"audit_type\": \"\",\n  \"orignal_file_path\": \"\",\n  \"dlp_is_unique_count\": \"\",\n  \"org\": \"\",\n  \"user_category\": \"\",\n  \"dlp_unique_count\": 0,\n  \"exposure\": \"\",\n  \"netskope_pop\": \"\",\n  \"shared_with\": \"\",\n  \"client_bytes\": 0,\n  \"sanctioned_instance\": \"\",\n  \"device_classification\": \"\",\n  \"data_type\": \"\",\n  \"scan_type\": \"\",\n  \"internal_collaborator_count\": 0,\n  \"CononicalName\": \"\",\n  \"workspace\": \"\",\n  \"log_file_name\": \"\",\n  \"parent_id\": \"\",\n  \"true_obj_type\": \"\",\n  \"dlp_rule_count\": 0,\n  \"sessionid\": \"\",\n  \"workspace_id\": \"\",\n  \"page_site\": \"\",\n  \"universal_connector\": \"\",\n  \"server_bytes\": 0,\n  \"req_cnt\": 0,\n  \"file_lang\": \"\",\n  \"protocol\": \"\",\n  \"web_universal_connector\": \"\",\n  \"dsthost\": \"\",\n  \"appsuite\": \"\",\n  \"managed_app\": \"\",\n  \"page\": \"\"\n}\n",
         "event": {
             "dataset": "nspolicy",
             "action": "Download",
@@ -440,6 +529,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T14:12:08.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -506,8 +596,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hash": {
                 "md5": "68b329da9893e34099c7d8ad5cb9c940"
             },
-            "path": "NA",
-            "mime_type": "application/zip",
             "name": "eicarcom2.zip"
         },
         "netskope": {
@@ -558,6 +646,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T15:52:00.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -684,6 +773,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-12-21T14:52:01.000000Z",
         "observer": {
             "vendor": "Netskope"
         },
@@ -804,6 +894,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
@@ -820,6 +911,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
 |`netskope.alerts.name` | `keyword` | The name of the alert |
 |`netskope.alerts.type` | `keyword` | The type of the alert |
+|`netskope.dlp.incident.id` | `keyword` | The identifier of the DLP incident |
+|`netskope.dlp.incident.parent_id` | `keyword` | The identifier of the DLP incident parent |
 |`netskope.events.access_method` | `keyword` | The action done on the application |
 |`netskope.events.action.type` | `keyword` | The name of the action |
 |`netskope.events.action.values` | `array` | The targets of the action |

@@ -147,6 +147,36 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** advanced
 
+??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection High Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Low Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+    
+    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
+    
+    - **Effort:** advanced
+
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
@@ -614,6 +644,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
     - **Effort:** intermediate
+
+??? abstract "Opening Of a Password File"
+    
+    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    
+    - **Effort:** advanced
 
 ??? abstract "Outlook Registry Access"
     
