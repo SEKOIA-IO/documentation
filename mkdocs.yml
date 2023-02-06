@@ -28,7 +28,7 @@ markdown_extensions:
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
-  - 1. Setup account:
+  - 1. Set up account
     - Join a community: getting_started/join_community.md
     - Create your account: getting_started/create_account.md
     - Set up account security: getting_started/account_security.md
