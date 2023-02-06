@@ -6,7 +6,7 @@
 On SEKOIA.IO XDR, create an API KEY with the following permission:
 - `INTHREAT_READ_OBJECTS` (`8d9901dc-0508-4472-b3c1-5ad5efc96032`): Read objects from InThreat
 
-[More information on API KEY creation](../../../getting_started/generate_api_keys.md)
+[More information on API KEY creation](../../../getting_started/manage_api_keys.md)
 
 ## Install
 
