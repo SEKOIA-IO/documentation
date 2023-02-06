@@ -2,7 +2,7 @@
 
 When your conditions are configured, you'll have to choose which actions should be triggered by the notification mechanism. You can enable one or more actions for each notification rule.
 
-For example you can decide to send an e-mail and to send a message on a Mattermost channel.
+For instance, you can decide to send an e-mail AND send a message on a Mattermost channel.
 
 ### SEKOIA.IO Notification
 
