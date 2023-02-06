@@ -36,7 +36,7 @@ nav:
 	- Edit a community: getting_started/community-edit.md
 	- (MSSP ONLY) Create a sub community: getting_started/community-create_sub_com.md
   - 3. Navigate on the platform: getting_started/navigation.md
-  - 4. Manage User :
+  - 4. Manage users
     - Invite users to join: getting_started/invite_users.md
     - Manage users: getting_started/manage_users.md
     - Roles and permissions: getting_started/roles_permissions.md
