@@ -28,18 +28,24 @@ markdown_extensions:
 nav:
 - Getting Started:
   - Overview: getting_started/index.md
-  - Join a community: getting_started/join_community.md
-  - Create your account: getting_started/create_account.md
-  - Set up account security: getting_started/account_security.md
-  - Create a community: getting_started/create_community.md
-  - Invite users to join: getting_started/invite_users.md
-  - Manage users: getting_started/manage_users.md
-  - Roles and permissions:
-    - Roles: getting_started/roles.md
-    - Permissions: getting_started/Permissions.md
-  - Navigation on the platform: getting_started/navigation.md
-  - Turn on notifications: getting_started/notifications.md
-  - Generate API Keys: getting_started/generate_api_keys.md
+  - 1. Set up account
+    - Join a community: getting_started/join_community.md
+    - Create your account: getting_started/create_account.md
+    - Set up account security: getting_started/account_security.md
+  - 2. Manage a community
+    - Edit a community: getting_started/community-edit.md
+    - (MSSP ONLY) Create a sub-community: getting_started/community-create_sub_com.md
+  - 3. Navigate on the platform: getting_started/navigation.md
+  - 4. Manage users
+    - Invite users to join: getting_started/invite_users.md
+    - Manage users: getting_started/manage_users.md
+    - Roles and permissions:
+    	- Roles: getting_started/roles.md
+    	- Permissions: getting_started/Permissions.md
+  - 5. Manage notifications
+    - Listing and creation: getting_started/notifications-Listing_Creation.md
+    - Notification examples: getting_started/notifications-Examples.md
+  - 6. Manage API Keys: getting_started/manage_api_keys.md
 - SEKOIA.IO XDR:
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
