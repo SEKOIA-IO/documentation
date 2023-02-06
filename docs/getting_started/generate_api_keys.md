@@ -1,4 +1,4 @@
-# Generate API keys
+# Manage API keys
 
 ## Overview
 
