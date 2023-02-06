@@ -9,11 +9,11 @@
 3. Once redirected to the `New Web App Integration`, be sure to select:
     - `Grant type`: `Client credentials`
     - `Sign-in redirect URIs`: https://app.sekoia.io/user/callback
-4. In `Assignments` > `Controlled access`, you can limit access to certain group of users
+4. In `Assignments` > `Controlled access`, you can limit access to specific groups of users
 
 ## Configure
 
-Once your app as been created:
+Once your app has been created:
 
 1. Save the `Client ID` & `Client secret` for latter use
 2. Create your `Authentication provider base URL` https://${yourOktaDomain}/ (More info
@@ -23,7 +23,7 @@ You are ready to input your configuration to SEKOIA.IO.
 
 ## Restrict access
 
-Okta can be configured to restrict which user are allowed to access SEKOIA.IO.
+Okta can be configured to restrict which users are allowed to access SEKOIA.IO.
 
 1. `Applications` > `Applications`: select your application
 2. In `Assignments` > `Assign` you can select `Assign to People` or `Assign to Groups`

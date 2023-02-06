@@ -30,4 +30,4 @@ Azure Active Directory can be configured to restrict which user are allowed to a
 1. In `Azure Active Directory` > `Enterprise applications`: select your application
 2. In the `Application | Overview` > `Getting Started` > `1. Assign users and groups`
 
-You are ready to configure input your configuration to SEKOIA.IO.
+You are ready to configure input your configuration to SEKOIA.IO
