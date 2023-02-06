@@ -39,7 +39,9 @@ nav:
   - 4. Manage users
     - Invite users to join: getting_started/invite_users.md
     - Manage users: getting_started/manage_users.md
-    - Roles and permissions: getting_started/roles_permissions.md
+    - Roles and permissions:
+    	- Roles: getting_started/roles.md
+    	- Permissions: getting_started/Permissions.md
   - 5. Manage notifications
     - Listing and creation: getting_started/notifications-Listing_Creation.md
 	  - Notification examples: getting_started/notifications-Examples.md
