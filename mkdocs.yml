@@ -40,7 +40,7 @@ nav:
     - Invite users to join: getting_started/invite_users.md
     - Manage users: getting_started/manage_users.md
     - Roles and permissions: getting_started/roles_permissions.md
-  - 5. Manage notifications:
+  - 5. Manage notifications
     - Listing & Creation: getting_started/notifications-Listing_Creation.md
 	  - Examples: getting_started/notifications-Examples.md
   - 6. Manage API Keys: getting_started/manage_api_keys.md
