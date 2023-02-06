@@ -1,4 +1,4 @@
-Rules catalog includes **659 built-in detection rules** (_last update on 2023-02-02_).
+Rules catalog includes **660 built-in detection rules** (_last update on 2023-02-03_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -336,9 +336,15 @@ Rules catalog includes **659 built-in detection rules** (_last update on 2023-02
 
 ??? abstract "Google Cloud Audit Application Added"
     
-    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Application Authorized"
+    
+    Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
+    
+    - **Effort:** master
 
 ??? abstract "Google Cloud Audit Attack Warning"
     
@@ -2724,9 +2730,15 @@ Rules catalog includes **659 built-in detection rules** (_last update on 2023-02
 
 ??? abstract "Google Cloud Audit Application Added"
     
-    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Application Authorized"
+    
+    Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
+    
+    - **Effort:** master
 
 ??? abstract "Google Cloud Audit Attack Warning"
     
@@ -3745,9 +3757,15 @@ Rules catalog includes **659 built-in detection rules** (_last update on 2023-02
 
 ??? abstract "Google Cloud Audit Application Added"
     
-    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Application Authorized"
+    
+    Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
+    
+    - **Effort:** master
 
 ??? abstract "Google Cloud Audit Attack Warning"
     
@@ -4650,9 +4668,15 @@ Rules catalog includes **659 built-in detection rules** (_last update on 2023-02
 
 ??? abstract "Google Cloud Audit Application Added"
     
-    Detects when an application is added to Googe Workspace Domain. This should an expected change made by an administrator and need to be verify.
+    Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
+
+??? abstract "Google Cloud Audit Application Authorized"
+    
+    Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
+    
+    - **Effort:** master
 
 ??? abstract "Google Cloud Audit Attack Warning"
     
