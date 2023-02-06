@@ -42,7 +42,7 @@ nav:
     - Roles and permissions: getting_started/roles_permissions.md
   - 5. Manage notifications
     - Listing and creation: getting_started/notifications-Listing_Creation.md
-	  - Examples: getting_started/notifications-Examples.md
+	  - Notification examples: getting_started/notifications-Examples.md
   - 6. Manage API Keys: getting_started/manage_api_keys.md
 - SEKOIA.IO XDR:
   - Introduction: xdr/index.md
