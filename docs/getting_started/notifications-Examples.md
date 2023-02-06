@@ -25,7 +25,8 @@ You can refer to the Mattermost documentation on how to [create a new Mattermost
 
 The “WebHook notification” will let you send message to interact with third party softwares. Technical informations related to the event will be pushed to an HTTP server. That latter will be able to understand the received payload and act (for example, retrieve more information about the event itself via SEKOIA.IO APIs and then push notification to an internal messaging service).
 
-!!! info You can’t use the WebHook notification mechanism to push information directly to third parties (such as Slack or Telegram), you have to use an intermediate server. To do so, you can use solutions like IFTTT or a simple HTTP server (see below).
+!!! info 
+    You can’t use the WebHook notification mechanism to push information directly to third parties (such as Slack or Telegram), you have to use an intermediate server. To do so, you can use solutions like IFTTT or a simple HTTP server (see below).
 
 Here’s an example of a posted content to a configured destination via the WebHook mechanism:
 
