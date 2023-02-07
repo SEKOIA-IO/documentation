@@ -158,7 +158,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "EdgeColoCode": "EWR",
             "EdgeResponseStatus": 403,
             "Kind": "firewall",
-            "Metadata": {},
             "OriginResponseStatus": 0,
             "OriginatorRayID": "00",
             "RayID": "77280bee38a6c461",

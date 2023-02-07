@@ -49,31 +49,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "7.13.0"
         },
         "auditbeat": {
-            "@metadata": {},
-            "event": {},
-            "process": {
-                "hash": {}
-            },
-            "message": "Process smtp (PID: 123123) by user postfix STOPPED",
-            "user": {
-                "effective": {
-                    "group": {}
-                },
-                "saved": {
-                    "group": {}
-                },
-                "group": {}
-            },
-            "service": {},
-            "ecs": {},
-            "host": {},
-            "agent": {}
+            "message": "Process smtp (PID: 123123) by user postfix STOPPED"
         },
         "auditd": {
             "user": {
-                "effective": {
-                    "group": {}
-                },
                 "saved": {
                     "id": "999",
                     "group": {
@@ -175,40 +154,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "auditbeat"
         },
         "auditbeat": {
-            "@metadata": {},
-            "process": {},
             "auditd": {
-                "summary": {
-                    "actor": {},
-                    "object": {}
-                },
                 "paths": [
                     {},
                     {}
-                ],
-                "data": {}
+                ]
             },
-            "event": {},
-            "user": {
-                "filesystem": {
-                    "group": {}
-                },
-                "audit": {},
-                "saved": {
-                    "group": {}
-                },
-                "group": {}
-            },
-            "host": {
-                "os": {}
-            },
-            "file": {},
             "tags": [
                 "access"
-            ],
-            "service": {},
-            "ecs": {},
-            "agent": {}
+            ]
         },
         "auditd": {
             "session": "3",
@@ -269,10 +223,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "syscall": "creat"
             },
             "user": {
-                "filesystem": {
-                    "group": {}
-                },
-                "audit": {},
                 "saved": {
                     "group": {
                         "id": "5511617b-5ca7-4dd5-bb80-d8590dff4430",
@@ -401,28 +351,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "xps-UWWL21LVdEVmqrbT",
             "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a"
         },
-        "auditbeat": {
-            "@metadata": {},
-            "event": {},
-            "user": {
-                "audit": {},
-                "group": {}
-            },
-            "process": {},
-            "host": {
-                "os": {}
-            },
-            "agent": {},
-            "ecs": {},
-            "auditd": {
-                "summary": {
-                    "actor": {},
-                    "object": {}
-                },
-                "data": {}
-            },
-            "service": {}
-        },
+        "auditbeat": {},
         "auditd": {
             "session": "2",
             "summary": {
@@ -448,7 +377,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "sig": "0"
             },
             "user": {
-                "audit": {},
                 "group": {
                     "id": "56d2c11c-9371-4617-bac3-2c18e86042c6"
                 }
@@ -541,29 +469,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "7.15.1",
             "hostname": "web-65"
         },
-        "auditbeat": {
-            "@metadata": {},
-            "related": {},
-            "service": {},
-            "event": {},
-            "user": {
-                "audit": {},
-                "effective": {}
-            },
-            "ecs": {},
-            "host": {
-                "os": {}
-            },
-            "agent": {},
-            "process": {},
-            "auditd": {
-                "data": {},
-                "summary": {
-                    "actor": {},
-                    "object": {}
-                }
-            }
-        },
+        "auditbeat": {},
         "auditd": {
             "data": {
                 "tty": "(none)",
@@ -583,10 +489,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "message_type": "login",
             "sequence": 11578,
             "result": "success",
-            "user": {
-                "audit": {},
-                "effective": {}
-            }
+            "user": {}
         },
         "host": {
             "containerized": false,
@@ -668,25 +571,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "auditbeat",
             "version": "7.15.1"
         },
-        "auditbeat": {
-            "@metadata": {},
-            "event": {},
-            "user": {},
-            "process": {},
-            "auditd": {
-                "data": {},
-                "summary": {
-                    "actor": {},
-                    "object": {}
-                }
-            },
-            "service": {},
-            "ecs": {},
-            "host": {
-                "os": {}
-            },
-            "agent": {}
-        },
+        "auditbeat": {},
         "auditd": {
             "result": "success",
             "data": {
@@ -787,33 +672,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "7.13.0"
         },
         "auditbeat": {
-            "@metadata": {},
-            "message": "Process containerd (PID: 1197) by user root is RUNNING",
-            "user": {
-                "group": {},
-                "effective": {
-                    "group": {}
-                },
-                "saved": {
-                    "group": {}
-                }
-            },
-            "ecs": {},
-            "host": {},
-            "agent": {},
-            "service": {},
-            "event": {},
-            "process": {
-                "hash": {}
-            }
+            "message": "Process containerd (PID: 1197) by user root is RUNNING"
         },
         "auditd": {
             "user": {
                 "group": {
                     "id": "0"
-                },
-                "effective": {
-                    "group": {}
                 },
                 "saved": {
                     "id": "0",
@@ -909,33 +773,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "auditbeat"
         },
         "auditbeat": {
-            "@metadata": {},
-            "message": "Process unattended-upgr (PID: 1195) by user root is RUNNING",
-            "user": {
-                "group": {},
-                "effective": {
-                    "group": {}
-                },
-                "saved": {
-                    "group": {}
-                }
-            },
-            "service": {},
-            "event": {},
-            "process": {
-                "hash": {}
-            },
-            "ecs": {},
-            "host": {},
-            "agent": {}
+            "message": "Process unattended-upgr (PID: 1195) by user root is RUNNING"
         },
         "auditd": {
             "user": {
                 "group": {
                     "id": "0"
-                },
-                "effective": {
-                    "group": {}
                 },
                 "saved": {
                     "id": "0",
@@ -1033,31 +876,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "type": "auditbeat"
         },
         "auditbeat": {
-            "@metadata": {},
-            "ecs": {},
-            "host": {},
-            "agent": {},
-            "user": {
-                "effective": {
-                    "group": {}
-                },
-                "saved": {
-                    "group": {}
-                },
-                "group": {}
-            },
-            "service": {},
-            "event": {},
-            "process": {
-                "hash": {}
-            },
             "message": "Process postgres (PID: 207706) by user postgres is RUNNING"
         },
         "auditd": {
             "user": {
-                "effective": {
-                    "group": {}
-                },
                 "saved": {
                     "id": "114",
                     "group": {
@@ -1155,26 +977,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "fame",
             "type": "auditbeat"
         },
-        "auditbeat": {
-            "@metadata": {},
-            "related": {},
-            "service": {},
-            "ecs": {},
-            "host": {},
-            "client": {},
-            "system": {
-                "audit": {
-                    "socket": {}
-                }
-            },
-            "network": {},
-            "event": {},
-            "flow": {},
-            "agent": {},
-            "source": {},
-            "destination": {},
-            "server": {}
-        },
+        "auditbeat": {},
         "client": {
             "port": 88888,
             "packets": 1,
@@ -1224,11 +1027,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 88888,
             "address": "127.0.0.1"
         },
-        "system": {
-            "audit": {
-                "socket": {}
-            }
-        },
+        "system": {},
         "@timestamp": "2021-01-01T00:01:01.000Z"
     }
     	
@@ -1261,33 +1060,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "7.13.0"
         },
         "auditbeat": {
-            "@metadata": {},
-            "user": {
-                "group": {},
-                "effective": {
-                    "group": {}
-                },
-                "saved": {
-                    "group": {}
-                }
-            },
-            "ecs": {},
-            "host": {},
-            "agent": {},
-            "service": {},
-            "event": {},
-            "process": {
-                "hash": {}
-            },
             "message": "Process dbus-daemon (PID: 645) by user messagebus is RUNNING"
         },
         "auditd": {
             "user": {
                 "group": {
                     "id": "110"
-                },
-                "effective": {
-                    "group": {}
                 },
                 "saved": {
                     "group": {
@@ -1389,31 +1167,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "fame"
         },
         "auditbeat": {
-            "@metadata": {},
-            "service": {},
-            "event": {},
-            "process": {
-                "hash": {}
-            },
-            "host": {},
-            "agent": {},
-            "ecs": {},
-            "message": "Process postgres (PID: 1234) by user postgres is RUNNING",
-            "user": {
-                "effective": {
-                    "group": {}
-                },
-                "saved": {
-                    "group": {}
-                },
-                "group": {}
-            }
+            "message": "Process postgres (PID: 1234) by user postgres is RUNNING"
         },
         "auditd": {
             "user": {
-                "effective": {
-                    "group": {}
-                },
                 "saved": {
                     "id": "114",
                     "group": {
@@ -1511,29 +1268,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "version": "7.13.0",
             "hostname": "fame"
         },
-        "auditbeat": {
-            "@metadata": {},
-            "destination": {},
-            "event": {},
-            "process": {},
-            "client": {},
-            "ecs": {},
-            "server": {},
-            "source": {},
-            "network": {},
-            "group": {},
-            "service": {},
-            "host": {},
-            "agent": {},
-            "flow": {},
-            "related": {},
-            "user": {},
-            "system": {
-                "audit": {
-                    "socket": {}
-                }
-            }
-        },
+        "auditbeat": {},
         "auditd": {
             "user": {}
         },
@@ -1618,11 +1353,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "subdomain": "malware1",
             "registered_domain": "viralstudio.org"
         },
-        "system": {
-            "audit": {
-                "socket": {}
-            }
-        },
+        "system": {},
         "@timestamp": "2021-01-01T00:01:01.000Z",
         "user": {
             "id": "0",
@@ -1658,27 +1389,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "web-66",
             "ephemeral_id": "f1ac5b09-4f0c-42cf-b9f7-f854eeae073a"
         },
-        "auditbeat": {
-            "@metadata": {},
-            "event": {},
-            "user": {
-                "audit": {}
-            },
-            "host": {
-                "os": {}
-            },
-            "agent": {},
-            "ecs": {},
-            "process": {},
-            "auditd": {
-                "data": {},
-                "summary": {
-                    "actor": {},
-                    "object": {}
-                }
-            },
-            "service": {}
-        },
+        "auditbeat": {},
         "auditd": {
             "data": {
                 "terminal": "pts/3",
@@ -1698,9 +1409,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "message_type": "user_cmd",
             "sequence": 465,
             "result": "success",
-            "user": {
-                "audit": {}
-            }
+            "user": {}
         },
         "host": {
             "hostname": "web-66",
