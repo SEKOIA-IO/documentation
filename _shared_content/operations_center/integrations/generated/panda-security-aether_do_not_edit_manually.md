@@ -423,7 +423,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "remote_endpoint": [
                 {}
             ],
-            "firewall_rule_definition": {},
             "rule_id": "8b7205bc-60e0-45a0-9956-b17b6a8673f6",
             "rule_name": "RuleName",
             "rule_configuration_id": "9b7205bc-60e0-45a0-9956-b17b6a8673f6",

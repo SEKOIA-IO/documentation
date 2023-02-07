@@ -97,6 +97,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hostname": "nsewmkzevukn-vm"
         },
         "process": {
+            "start": 1656688889,
+            "end": 0,
             "pid": 22164474048,
             "parent": {
                 "pid": 22163465296
@@ -115,7 +117,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hash": [
                 "249cb3cb46fd875196e7ed4a8736271a64ff2d8132357222a283be53e7232ed3",
                 "d45bd7c7b7bf977246e9409d63435231"
+            ],
+            "user": [
+                "Administrator"
             ]
+        },
+        "user": {
+            "name": "Administrator"
         }
     }
     	
