@@ -32,6 +32,7 @@ nav:
     - Join a community: getting_started/join_community.md
     - Create your account: getting_started/create_account.md
     - Set up account security: getting_started/account_security.md
+    - Single Sign-On With OpenID Connect: getting_started/SSO_openid_connect.md
   - 2. Manage a community:
     - Edit a community: getting_started/community-edit.md
     - (MSSP ONLY) Create a sub-community: getting_started/community-create_sub_com.md
