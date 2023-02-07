@@ -12,7 +12,7 @@ Follow Google's documentation to [configure a dedicated PubSub receiver](https:/
 
    - Setup a project
    - Create a topic
-   - Add a subscription (*you should have the role `logging.admin` explicitly set on your account (for more information, see [associated documentation](https://cloud.google.com/logging/docs/export/configure_export_v2))*)
+   - Add a subscription (*you should have the role `logging.admin` explicitly set on your account; for more information, see [associated documentation](https://cloud.google.com/logging/docs/export/configure_export_v2)*)
    - Try your setup by publishing a message to the topic
 
 Next, create a [dedicated service account](https://cloud.google.com/pubsub/docs/reference/libraries#setting_up_authentication). At the end of the documentation you should have done the following:
