@@ -15,7 +15,7 @@ To use Azure AD as an authentication provider, you will need to:
 1. Visit `Azure Active Directory` > `Manage` > [App Registrations](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps)
 2. Use the `+ New registration` button to start the creation
 3. Choose a name and input the redirect URI: https://app.sekoia.io/user/callback
-4. Clic `Register`
+4. Click on `Register`
 
 ## Configure
 
