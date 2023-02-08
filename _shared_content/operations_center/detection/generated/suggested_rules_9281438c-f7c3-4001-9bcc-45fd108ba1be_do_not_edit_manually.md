@@ -779,9 +779,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 
 ??? abstract "LSASS Memory Dump"
     
-    Detects process accessing LSASS memory which is typical for credentials dumping tools
+    Detects process accessing LSASS memory which is typical for credentials dumping tools. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "LSASS Memory Dump File Creation"
     
@@ -971,9 +971,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 
 ??? abstract "Mimikatz LSASS Memory Access"
     
-    Detection of in-memory Mimikatz by focusing on processes opening the Local Security Authority (Lsass.exe) process and reading the memory contents of it. This probably means that Mimikatz has been executed on the host, meaning the attacker already has high privileges and is looking to dump credentials, most likely for lateral movement or privilege escalation purposes.
+    Detection of in-memory Mimikatz by focusing on processes opening the Local Security Authority (Lsass.exe) process and reading the memory contents of it. This probably means that Mimikatz has been executed on the host, meaning the attacker already has high privileges and is looking to dump credentials, most likely for lateral movement or privilege escalation purposes. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Msdt (Follina) File Browse Process Execution"
     
@@ -1142,6 +1142,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
     
     - **Effort:** elementary
+
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
 
 ??? abstract "Opening Of a Password File"
     
