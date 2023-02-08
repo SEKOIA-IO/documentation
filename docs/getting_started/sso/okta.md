@@ -15,7 +15,7 @@
 
 Once your app has been created:
 
-1. Save the `Client ID` & `Client secret` for latter use
+1. Save the `Client ID` & `Client secret` for further use
 2. Create your `Authentication provider base URL` https://${yourOktaDomain}/ (More info
    on [okta.com: Composing your base URL](https://developer.okta.com/docs/reference/api/oidc/#composing-your-base-url)).
 
