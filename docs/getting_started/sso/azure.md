@@ -21,7 +21,7 @@ To use Azure AD as an authentication provider, you will need to:
 
 1. On the main page, save the `Application (client) ID` for latter use
 2. On the main page, in `Endpoints`, copy your `OAuth 2.0 authorization endpoint` such as https://login.microsoftonline.com/<YOUR TENANT ID>/
-3. In `Certificates & secrets > Client secrets` use the `+ New client secret` button to create a secret Save this secret for latter use
+3. In `Certificates and secrets > Client secrets` use the `+ New client secret` button to create a secret. Save this secret for latter use. 
 
 ## Restrict access
 
