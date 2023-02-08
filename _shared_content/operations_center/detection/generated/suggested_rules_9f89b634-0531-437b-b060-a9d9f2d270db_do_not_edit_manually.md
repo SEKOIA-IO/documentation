@@ -111,6 +111,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the 
     
     - **Effort:** intermediate
 
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "Package Manager Alteration"
     
     Package manager (eg: apt, yum) can be altered to install malicious software

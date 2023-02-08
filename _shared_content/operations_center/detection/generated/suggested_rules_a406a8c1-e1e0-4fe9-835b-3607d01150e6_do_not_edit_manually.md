@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Netwrix Auditor** with the f
     
     - **Effort:** advanced
 
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.

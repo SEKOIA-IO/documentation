@@ -525,6 +525,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Trend Micro Cloud One / Deep
     
     - **Effort:** intermediate
 
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "Opening Of a Password File"
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.

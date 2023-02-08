@@ -207,6 +207,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CEF** with the following det
     
     - **Effort:** intermediate
 
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool

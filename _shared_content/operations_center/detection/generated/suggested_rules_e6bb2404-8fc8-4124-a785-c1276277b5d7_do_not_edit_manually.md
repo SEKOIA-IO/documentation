@@ -57,6 +57,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     
     - **Effort:** elementary
 
+??? abstract "Okta Network Zone Deactivated"
+    
+    Detects attempts to deactivate an Okta network zone. Okta network zones can be configured to limit or restrict access to a network based on IP addresses or geolocations. An adversary may attempt to modify, delete, or deactivate an Okta network zone in order to remove or weaken an organization's security controls.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Network Zone Deleted"
+    
+    Detects attempts to delete an Okta network zone. Okta network zones can be configured to limit or restrict access to a network based on IP addresses or geolocations. An adversary may attempt to modify, delete, or deactivate an Okta network zone in order to remove or weaken an organization's security controls.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Network Zone Modified"
+    
+    Detects attempts to modify an Okta network zone. Okta network zones can be configured to limit or restrict access to a network based on IP addresses or geolocations. An adversary may attempt to modify, delete, or deactivate an Okta network zone in order to remove or weaken an organization's security controls.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Okta Policy Modified or Deleted"
     
     Detects when an Okta policy is modified or deleted.
@@ -81,6 +99,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     
     - **Effort:** intermediate
 
+??? abstract "Okta Suspicious Activity Reported"
+    
+    Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Unauthorized Access to App"
     
     An user tries to access an unauthorized application.
@@ -104,6 +128,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     An user has been locked in Okta.
     
     - **Effort:** intermediate
+
+??? abstract "Okta User Impersonation Access"
+    
+    A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
+    
+    - **Effort:** advanced
 
 ??? abstract "Potential Bazar Loader User-Agents"
     

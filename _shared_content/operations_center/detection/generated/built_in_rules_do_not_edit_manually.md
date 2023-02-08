@@ -1,4 +1,4 @@
-Rules catalog includes **660 built-in detection rules** (_last update on 2023-02-03_).
+Rules catalog includes **666 built-in detection rules** (_last update on 2023-02-08_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -361,6 +361,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Suspicious Activity Reported"
+    
+    Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
     
     - **Effort:** advanced
 
@@ -2758,6 +2764,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta Suspicious Activity Reported"
+    
+    Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Unauthorized Access to App"
     
     An user tries to access an unauthorized application.
@@ -2867,6 +2879,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
     An user account has been deactivated in Okta.
     
     - **Effort:** master
+
+??? abstract "Okta User Impersonation Access"
+    
+    A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
+    
+    - **Effort:** advanced
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -3785,6 +3803,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta Suspicious Activity Reported"
+    
+    Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Unauthorized Access to App"
     
     An user tries to access an unauthorized application.
@@ -4231,6 +4255,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** intermediate
 
+??? abstract "Okta User Impersonation Access"
+    
+    A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
+    
+    - **Effort:** advanced
+
 ??? abstract "UAC Bypass Using Fodhelper"
     
     Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
@@ -4331,6 +4361,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
 
 ## Defense Evasion
 **Obfuscated Files or Information**
+
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -4693,6 +4729,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Suspicious Activity Reported"
+    
+    Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
     
     - **Effort:** advanced
 
@@ -5210,6 +5252,12 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** intermediate
 
+??? abstract "Okta User Impersonation Access"
+    
+    A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
+    
+    - **Effort:** advanced
+
 ??? abstract "UAC Bypass Using Fodhelper"
     
     Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
@@ -5493,6 +5541,24 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
     A MFA has beed disabled in Okta SSO. This is a common behavior to gain permanent access over a system.
     
     - **Effort:** elementary
+
+??? abstract "Okta Network Zone Deactivated"
+    
+    Detects attempts to deactivate an Okta network zone. Okta network zones can be configured to limit or restrict access to a network based on IP addresses or geolocations. An adversary may attempt to modify, delete, or deactivate an Okta network zone in order to remove or weaken an organization's security controls.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Network Zone Deleted"
+    
+    Detects attempts to delete an Okta network zone. Okta network zones can be configured to limit or restrict access to a network based on IP addresses or geolocations. An adversary may attempt to modify, delete, or deactivate an Okta network zone in order to remove or weaken an organization's security controls.
+    
+    - **Effort:** advanced
+
+??? abstract "Okta Network Zone Modified"
+    
+    Detects attempts to modify an Okta network zone. Okta network zones can be configured to limit or restrict access to a network based on IP addresses or geolocations. An adversary may attempt to modify, delete, or deactivate an Okta network zone in order to remove or weaken an organization's security controls.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Okta Security Threat Configuration Updated"
     
@@ -5885,9 +5951,9 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
 
 ??? abstract "LSASS Memory Dump"
     
-    Detects process accessing LSASS memory which is typical for credentials dumping tools
+    Detects process accessing LSASS memory which is typical for credentials dumping tools. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "LSASS Memory Dump File Creation"
     
@@ -5921,9 +5987,9 @@ Rules catalog includes **660 built-in detection rules** (_last update on 2023-02
 
 ??? abstract "Mimikatz LSASS Memory Access"
     
-    Detection of in-memory Mimikatz by focusing on processes opening the Local Security Authority (Lsass.exe) process and reading the memory contents of it. This probably means that Mimikatz has been executed on the host, meaning the attacker already has high privileges and is looking to dump credentials, most likely for lateral movement or privilege escalation purposes.
+    Detection of in-memory Mimikatz by focusing on processes opening the Local Security Authority (Lsass.exe) process and reading the memory contents of it. This probably means that Mimikatz has been executed on the host, meaning the attacker already has high privileges and is looking to dump credentials, most likely for lateral movement or privilege escalation purposes. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
