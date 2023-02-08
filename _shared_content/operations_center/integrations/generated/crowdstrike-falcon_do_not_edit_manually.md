@@ -73,7 +73,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":189,\"eventType\":\"DetectionSummaryEvent\",\"eventCreationTime\":1657174538000,\"version\":\"1.0\"},\"event\":{\"ProcessStartTime\":1656688889,\"ProcessEndTime\":0,\"ProcessId\":22164474048,\"ParentProcessId\":22163465296,\"ComputerName\":\"nsewmkzevukn-vm\",\"UserName\":\"Administrator\",\"DetectName\":\"Overwatch Detection\",\"DetectDescription\":\"Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently.\",\"Severity\":5,\"SeverityName\":\"Critical\",\"FileName\":\"explorer.exe\",\"FilePath\":\"\\\\Device\\\\HarddiskVolume2\\\\Windows\",\"CommandLine\":\"C:\\\\Windows\\\\Explorer.EXE\",\"SHA256String\":\"249cb3cb46fd875196e7ed4a8736271a64ff2d8132357222a283be53e7232ed3\",\"MD5String\":\"d45bd7c7b7bf977246e9409d63435231\",\"SHA1String\":\"0000000000000000000000000000000000000000\",\"MachineDomain\":\"nsewmkzevukn-vm\"}}",
+        "message": "{\"metadata\":{\"customerIDString\":\"46de5283260647ec8f28def00bffd094\",\"offset\":189,\"eventType\":\"DetectionSummaryEvent\",\"eventCreationTime\":1657174538000,\"version\":\"1.0\"},\"event\":{\"ProcessStartTime\":1656688889,\"ProcessEndTime\":0,\"ProcessId\":22164474048,\"ParentProcessId\":22163465296,\"ComputerName\":\"nsewmkzevukn-vm\",\"UserName\":\"Administrator\",\"DetectName\":\"Overwatch Detection\",\"DetectDescription\":\"Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently.\",\"Severity\":5,\"SeverityName\":\"Critical\",\"FileName\":\"explorer.exe\",\"FilePath\":\"\\\\Device\\\\HarddiskVolume2\\\\Windows\",\"CommandLine\":\"C:\\\\Windows\\\\Explorer.EXE\",\"SHA256String\":\"249cb3cb46fd875196e7ed4a8736271a64ff2d8132357222a283be53e7232ed3\",\"MD5String\":\"d45bd7c7b7bf977246e9409d63435231\",\"SHA1String\":\"0000000000000000000000000000000000000000\",\"MachineDomain\":\"nsewmkzevukn-vm\",\"HostGroups\": \"6252fc7505974dc38abfef73269b8deb,b3365faa2fe44893b3c2c6b3bfbf6650,e114797a97894ed3bfd6442ef7eead92,1cd4a1385cac4db1a4d5f4d7ce035b65,2faa12f2f1e046f2bc21cad5d01ae723,37f2ae7c641845a4918f4348a52b4874\"}}",
         "event": {
             "kind": "alert",
             "type": [
@@ -88,7 +88,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "crowdstrike": {
             "event_type": "DetectionSummaryEvent",
             "detect_description": "Falcon Overwatch has identified malicious activity carried out by a suspected or known eCrime operator. This activity has been raised for critical action and should be investigated urgently.",
-            "severity_name": "Critical"
+            "severity_name": "Critical",
+            "host_groups": [
+                "6252fc7505974dc38abfef73269b8deb",
+                "b3365faa2fe44893b3c2c6b3bfbf6650",
+                "e114797a97894ed3bfd6442ef7eead92",
+                "1cd4a1385cac4db1a4d5f4d7ce035b65",
+                "2faa12f2f1e046f2bc21cad5d01ae723",
+                "37f2ae7c641845a4918f4348a52b4874"
+            ]
         },
         "host": {
             "name": "nsewmkzevukn-vm"
@@ -573,6 +581,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`crowdstrike.edge.subject_id` | `keyword` | The identifier of a parent vertex in the graph exploration |
 |`crowdstrike.edge.type` | `keyword` | The type of relationship with the subject |
 |`crowdstrike.event_type` | `keyword` | Type of the event |
+|`crowdstrike.host_groups` | `keyword` | The ids of groups the host belongs to |
 |`crowdstrike.host_id` | `keyword` | The crowdstrike identifier of the host |
 |`crowdstrike.incident_end` | `date` | Time of the latest activity in the incident |
 |`crowdstrike.incident_id` | `keyword` | The incident ID of the incident |
