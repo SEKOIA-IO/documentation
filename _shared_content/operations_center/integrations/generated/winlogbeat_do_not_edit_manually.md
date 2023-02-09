@@ -1,0 +1,222 @@
+
+## Event Categories
+
+
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `Access tokens` | security identifiers are extracted from several events |
+| `Authentication logs` | audit logon events are examined in detail |
+| `DLL monitoring` | information about dlls are extracted from several events |
+| `File monitoring` | information about files are extracted from several events |
+| `Host network interface` | Windows Filtering Platform collects information on processes having network activities |
+| `Loaded DLLs` | Sysmon events provide information on DLL loading |
+| `PowerShell logs` | Windows PowerShell logs are analyzed, and need to be specifically set up |
+| `Process command-line parameters` | Windows Security Auditing logs provide information about process creation |
+| `Process monitoring` | Windows Security Auditing logs are process tracking events |
+| `Process use of network` | Windows Filtering Platform collects information on processes having network activities |
+| `Windows event logs` | events related to Windows Event logs shutdown or restart are analyzed |
+| `Windows Registry` | registry auditing events are examined in detail |
+| `WMI Objects` | Windows WMI Activity events are analyzed, and events related to WMI process too |
+
+
+
+
+
+
+
+
+## Event Samples
+
+Find below few samples of events and how they are normalized by SEKOIA.IO.
+
+
+=== "test_filtering.json"
+
+    ```json
+	
+    {
+        "message": "{\"@timestamp\":\"2023-01-31T18:02:52.597Z\",\"@version\":\"1\",\"agent\":{\"ephemeral_id\":\"379a53ae-f8df-4fb9-9968-382db61f6dda\",\"hostname\":\"vm204d\",\"id\":\"9ecce8bd-f6ab-41ac-9936-14f8c2c81242\",\"type\":\"winlogbeat\",\"version\":\"7.0.0\"},\"ecs\":{\"version\":\"1.0.0\"},\"event\":{\"action\":\"Filtering Platform Connection\",\"code\":5156,\"created\":\"2023-01-31T18:02:53.233Z\",\"kind\":\"event\"},\"host\":{\"architecture\":\"x86_64\",\"hostname\":\"vm204d\",\"id\":\"68884df7-2cc9-4c09-a619-e1ccce85ac4e\",\"name\":\"vm204d\",\"os\":{\"build\":\"20348.1487\",\"family\":\"windows\",\"kernel\":\"10.0.20348.1487 (WinBuild.160101.0800)\",\"name\":\"Windows Server 2022 Datacenter\",\"platform\":\"windows\",\"version\":\"10.0\"}},\"log\":{\"level\":\"information\"},\"message\":\"The Windows Filtering Platform has permitted a connection.\\n\\nApplication Information:\\n\\tProcess ID:\\t\\t4\\n\\tApplication Name:\\tSystem\\n\\nNetwork Information:\\n\\tDirection:\\t\\tInbound\\n\\tSource Address:\\t\\t192.168.83.100\\n\\tSource Port:\\t\\t58499\\n\\tDestination Address:\\t192.168.240.196\\n\\tDestination Port:\\t\\t445\\n\\tProtocol:\\t\\t6\\n\\tInterface Index:\\t\\t9\\n\\nFilter Information:\\n\\tFilter Origin:\\t\\tUnknown\\n\\tFilter Run-Time ID:\\t71694\\n\\tLayer Name:\\t\\tReceive/Accept\\n\\tLayer Run-Time ID:\\t44\\n\\tRemote User ID:\\t\\tS-1-0-0\\n\\tRemote Machine ID:\\tS-1-0-0\",\"tags\":[\"beats_input_codec_plain_applied\"],\"type\":\"winlogbeat\",\"winlog\":{\"api\":\"wineventlog\",\"channel\":\"Security\",\"computer_name\":\"vm204d.example.org\",\"event_data\":{\"Application\":\"System\",\"DestAddress\":\"5.6.7.8\",\"DestPort\":\"445\",\"Direction\":\"%%14592\",\"FilterOrigin\":\"Unknown\",\"FilterRTID\":\"71694\",\"InterfaceIndex\":\"9\",\"LayerName\":\"%%14610\",\"LayerRTID\":\"44\",\"ProcessID\":\"4\",\"Protocol\":\"6\",\"RemoteMachineID\":\"S-1-0-0\",\"RemoteUserID\":\"S-1-0-0\",\"SourceAddress\":\"1.2.3.4\",\"SourcePort\":\"58499\"},\"event_id\":5156,\"keywords\":[\"Audit Success\"],\"opcode\":\"Info\",\"process\":{\"pid\":4,\"thread\":{\"id\":1940}},\"provider_guid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"provider_name\":\"Microsoft-Windows-Security-Auditing\",\"record_id\":614833249,\"task\":\"Filtering Platform Connection\",\"version\":1}}\n",
+        "event": {
+            "action": "Filtering Platform Connection",
+            "code": "5156",
+            "kind": "event",
+            "original": "The Windows Filtering Platform has permitted a connection.\n\nApplication Information:\n\tProcess ID:\t\t4\n\tApplication Name:\tSystem\n\nNetwork Information:\n\tDirection:\t\tInbound\n\tSource Address:\t\t192.168.83.100\n\tSource Port:\t\t58499\n\tDestination Address:\t192.168.240.196\n\tDestination Port:\t\t445\n\tProtocol:\t\t6\n\tInterface Index:\t\t9\n\nFilter Information:\n\tFilter Origin:\t\tUnknown\n\tFilter Run-Time ID:\t71694\n\tLayer Name:\t\tReceive/Accept\n\tLayer Run-Time ID:\t44\n\tRemote User ID:\t\tS-1-0-0\n\tRemote Machine ID:\tS-1-0-0",
+            "hash": "ab796c9b97ae44dbe45db2b945d2c773175b2e08"
+        },
+        "@timestamp": "2023-01-31T18:02:52.597Z",
+        "agent": {
+            "ephemeral_id": "379a53ae-f8df-4fb9-9968-382db61f6dda",
+            "id": "9ecce8bd-f6ab-41ac-9936-14f8c2c81242",
+            "type": "winlogbeat",
+            "version": "7.0.0"
+        },
+        "host": {
+            "architecture": "x86_64",
+            "hostname": "vm204d",
+            "id": "68884df7-2cc9-4c09-a619-e1ccce85ac4e",
+            "name": "vm204d",
+            "os": {
+                "build": "20348.1487",
+                "family": "windows",
+                "kernel": "10.0.20348.1487 (WinBuild.160101.0800)",
+                "name": "Windows Server 2022 Datacenter",
+                "platform": "windows",
+                "version": "10.0"
+            }
+        },
+        "log": {
+            "level": "information"
+        },
+        "winlog": {
+            "api": "wineventlog",
+            "channel": "Security",
+            "computer_name": "vm204d.example.org",
+            "event_data": {
+                "Application": "System",
+                "DestAddress": "5.6.7.8",
+                "DestPort": "445",
+                "Direction": "%%14592",
+                "FilterOrigin": "Unknown",
+                "FilterRTID": "71694",
+                "InterfaceIndex": "9",
+                "LayerName": "%%14610",
+                "LayerRTID": "44",
+                "ProcessID": "4",
+                "Protocol": "6",
+                "RemoteMachineID": "S-1-0-0",
+                "RemoteUserID": "S-1-0-0",
+                "SourceAddress": "1.2.3.4",
+                "SourcePort": "58499"
+            },
+            "event_id": "5156",
+            "keywords": [
+                "Audit Success"
+            ],
+            "opcode": "Info",
+            "process": {
+                "pid": 4,
+                "thread": {
+                    "id": 1940
+                }
+            },
+            "provider_guid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+            "provider_name": "Microsoft-Windows-Security-Auditing",
+            "record_id": "614833249",
+            "task": "Filtering Platform Connection",
+            "version": 1
+        },
+        "related": {
+            "hash": [
+                "ab796c9b97ae44dbe45db2b945d2c773175b2e08"
+            ],
+            "hosts": [
+                "vm204d"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_logon.json"
+
+    ```json
+	
+    {
+        "message": "{\"@timestamp\":\"2023-01-31T18:02:50.013Z\",\"@version\":\"1\",\"agent\":{\"ephemeral_id\":\"f1b3df69-328e-4e41-be73-bec093727c32\",\"hostname\":\"vm-exc-msg-3\",\"id\":\"d47011da-0be2-4021-8336-e418c1eb2c3b\",\"type\":\"winlogbeat\",\"version\":\"7.0.0\"},\"ecs\":{\"version\":\"1.0.0\"},\"event\":{\"action\":\"Special Logon\",\"code\":4672,\"created\":\"2023-01-31T18:02:50.783Z\",\"kind\":\"event\"},\"host\":{\"architecture\":\"x86_64\",\"hostname\":\"vm-exc-msg-3\",\"id\":\"010a5b7c-d244-42f9-a547-bd544c30d518\",\"name\":\"vm-exc-msg-3\",\"os\":{\"build\":\"14393.5648\",\"family\":\"windows\",\"kernel\":\"10.0.14393.5648 (rs1_release.230105-1654)\",\"name\":\"Windows Server 2016 Datacenter\",\"platform\":\"windows\",\"version\":\"10.0\"}},\"log\":{\"level\":\"information\"},\"message\":\"Special privileges assigned to new logon.\\n\\nSubject:\\n\\tSecurity ID:\\t\\tS-1-5-21-776561741-920026266-725345543-17198\\n\\tAccount Name:\\t\\tVM-EXC-MSG-4$\\n\\tAccount Domain:\\t\\tEXAMPLE\\n\\tLogon ID:\\t\\t0xC5D72273\\n\\nPrivileges:\\t\\tSeSecurityPrivilege\\n\\t\\t\\tSeBackupPrivilege\\n\\t\\t\\tSeRestorePrivilege\\n\\t\\t\\tSeTakeOwnershipPrivilege\\n\\t\\t\\tSeDebugPrivilege\\n\\t\\t\\tSeSystemEnvironmentPrivilege\\n\\t\\t\\tSeLoadDriverPrivilege\\n\\t\\t\\tSeImpersonatePrivilege\\n\\t\\t\\tSeDelegateSessionUserImpersonatePrivilege\",\"tags\":[\"beats_input_codec_plain_applied\"],\"type\":\"winlogbeat\",\"winlog\":{\"activity_id\":\"{9F4E14C8-2C13-0004-4326-4E9F132CD901}\",\"api\":\"wineventlog\",\"channel\":\"Security\",\"computer_name\":\"vm-exc-msg-3.example.org\",\"event_data\":{\"PrivilegeList\":\"SeSecurityPrivilege\\n\\t\\t\\tSeBackupPrivilege\\n\\t\\t\\tSeRestorePrivilege\\n\\t\\t\\tSeTakeOwnershipPrivilege\\n\\t\\t\\tSeDebugPrivilege\\n\\t\\t\\tSeSystemEnvironmentPrivilege\\n\\t\\t\\tSeLoadDriverPrivilege\\n\\t\\t\\tSeImpersonatePrivilege\\n\\t\\t\\tSeDelegateSessionUserImpersonatePrivilege\",\"SubjectDomainName\":\"EXAMPLE\",\"SubjectLogonId\":\"0xc5d72273\",\"SubjectUserName\":\"VM-EXC-MSG-4$\",\"SubjectUserSid\":\"S-1-5-21-776561741-920026266-725345543-17198\"},\"event_id\":4672,\"keywords\":[\"Audit Success\"],\"opcode\":\"Info\",\"process\":{\"pid\":856,\"thread\":{\"id\":1784}},\"provider_guid\":\"{54849625-5478-4994-A5BA-3E3B0328C30D}\",\"provider_name\":\"Microsoft-Windows-Security-Auditing\",\"record_id\":1842784185,\"task\":\"Special Logon\"}}\n",
+        "event": {
+            "action": "Special Logon",
+            "code": "4672",
+            "kind": "event",
+            "original": "Special privileges assigned to new logon.\n\nSubject:\n\tSecurity ID:\t\tS-1-5-21-776561741-920026266-725345543-17198\n\tAccount Name:\t\tVM-EXC-MSG-4$\n\tAccount Domain:\t\tEXAMPLE\n\tLogon ID:\t\t0xC5D72273\n\nPrivileges:\t\tSeSecurityPrivilege\n\t\t\tSeBackupPrivilege\n\t\t\tSeRestorePrivilege\n\t\t\tSeTakeOwnershipPrivilege\n\t\t\tSeDebugPrivilege\n\t\t\tSeSystemEnvironmentPrivilege\n\t\t\tSeLoadDriverPrivilege\n\t\t\tSeImpersonatePrivilege\n\t\t\tSeDelegateSessionUserImpersonatePrivilege",
+            "hash": "b6bb91718122b7f68c88dccd13cbb6a0eec95599"
+        },
+        "@timestamp": "2023-01-31T18:02:50.013Z",
+        "agent": {
+            "ephemeral_id": "f1b3df69-328e-4e41-be73-bec093727c32",
+            "id": "d47011da-0be2-4021-8336-e418c1eb2c3b",
+            "type": "winlogbeat",
+            "version": "7.0.0"
+        },
+        "host": {
+            "architecture": "x86_64",
+            "hostname": "vm-exc-msg-3",
+            "id": "010a5b7c-d244-42f9-a547-bd544c30d518",
+            "name": "vm-exc-msg-3",
+            "os": {
+                "build": "14393.5648",
+                "family": "windows",
+                "kernel": "10.0.14393.5648 (rs1_release.230105-1654)",
+                "name": "Windows Server 2016 Datacenter",
+                "platform": "windows",
+                "version": "10.0"
+            }
+        },
+        "log": {
+            "level": "information"
+        },
+        "winlog": {
+            "activity_id": "{9f4e14c8-2c13-0004-4326-4e9f132cd901}",
+            "api": "wineventlog",
+            "channel": "Security",
+            "computer_name": "vm-exc-msg-3.example.org",
+            "event_data": {
+                "PrivilegeList": "SeSecurityPrivilege\n\t\t\tSeBackupPrivilege\n\t\t\tSeRestorePrivilege\n\t\t\tSeTakeOwnershipPrivilege\n\t\t\tSeDebugPrivilege\n\t\t\tSeSystemEnvironmentPrivilege\n\t\t\tSeLoadDriverPrivilege\n\t\t\tSeImpersonatePrivilege\n\t\t\tSeDelegateSessionUserImpersonatePrivilege",
+                "SubjectDomainName": "EXAMPLE",
+                "SubjectLogonId": "0xc5d72273",
+                "SubjectUserName": "VM-EXC-MSG-4$",
+                "SubjectUserSid": "S-1-5-21-776561741-920026266-725345543-17198"
+            },
+            "event_id": "4672",
+            "keywords": [
+                "Audit Success"
+            ],
+            "opcode": "Info",
+            "process": {
+                "pid": 856,
+                "thread": {
+                    "id": 1784
+                }
+            },
+            "provider_guid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+            "provider_name": "Microsoft-Windows-Security-Auditing",
+            "record_id": "1842784185",
+            "task": "Special Logon"
+        },
+        "related": {
+            "hash": [
+                "b6bb91718122b7f68c88dccd13cbb6a0eec95599"
+            ],
+            "hosts": [
+                "vm-exc-msg-3"
+            ]
+        }
+    }
+    	
+	```
+
+
+
+
+
+## Extracted Fields
+
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+
+| Name | Type | Description                |
+| ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
+|`event.action` | `keyword` | The action captured by the event. |
+|`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.code` | `keyword` | Identification code for this event. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.module` | `keyword` | Name of the module this data is coming from. |
+|`event.original` | `keyword` | Raw text message of entire event. |
+|`event.provider` | `keyword` | Source of the event. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`winlog.activity_id` | `keyword` | A globally unique identifier that identifies the current activity. The events that are published with this identifier are part of the same activity. |
+|`winlog.provider_guid` | `keyword` | A globally unique identifier that identifies the provider that logged the event. |
+
