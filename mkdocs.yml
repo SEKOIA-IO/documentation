@@ -31,11 +31,16 @@ nav:
   - 1. Set up account:
     - Join a community: getting_started/join_community.md
     - Create your account: getting_started/create_account.md
-    - Set up account security: getting_started/account_security.md
-    - Single Sign-On With OpenID Connect: getting_started/SSO_openid_connect.md
+    - Set up account security: 
+       - Two-Factor Authentication: getting_started/account_security.md
+       - Security tokens: getting_started/securitytokens.md
   - 2. Manage a community:
     - Edit a community: getting_started/community-edit.md
     - (MSSP ONLY) Create a sub-community: getting_started/community-create_sub_com.md
+    - Set up community security: 
+      - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
+      - SSO with Azure AD: getting_started/sso/azure.md
+      - SSO with OKTA: getting_started/sso/okta.md
   - 3. Navigate on the platform: getting_started/navigation.md
   - 4. Manage users:
     - Invite users to join: getting_started/invite_users.md
