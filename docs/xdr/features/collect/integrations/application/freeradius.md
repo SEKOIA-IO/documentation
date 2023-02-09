@@ -51,7 +51,7 @@ On the system hosting the FreeRADIUS:
 	}
 	```
 
-2. Foward logs to the concentrator:
+2. Forward logs to the concentrator:
 
 	- For Debian-based and RedHat-based linux distribution, edit the file `/etc/rsyslog.conf` and forward facility `local1`'s logs to our log concentrator:
 
