@@ -66,6 +66,7 @@ nav:
           - Alsid / Tenable.ad: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
           - BIND: xdr/features/collect/integrations/application/bind.md
+          - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
           - Nginx: xdr/features/collect/integrations/application/nginx.md
