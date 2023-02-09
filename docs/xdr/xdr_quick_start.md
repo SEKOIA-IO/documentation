@@ -37,7 +37,7 @@ To create intakes associated to the technology you would like to collect:
 Once your event logs are collected and normalized by SEKOIA.IO, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
 
 1. Enable all detection rules of effort levels 1 or 2 by filtering on each effort level then clicking on the `Enable all` button.
-2. Automate the activation of future detection rules with the same effort levels following [this procedure].(https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules)
+2. Automate the activation of future detection rules with the same effort levels following [this procedure](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules).
 
 ![rules](/assets/operation_center/quick_start/rules.png){: style="max-width:100%"}
 
