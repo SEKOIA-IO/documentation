@@ -16,7 +16,7 @@ You can open the IOC Collection creation modal by clicking on `+ Collection`. Yo
 - (Optional) Add a description to the collection
 - Choose if you want to automatically add IOCs from this collection into your detection by creating a dedicated detection rule. Note that you will be able to manually create a detection rule for this collection later if you want
 
-![ioc_creation](/assets/operation_center/iocscollections/ioc-create.png){: style="max-width:100%"}
+![ioc_creation](/assets/operation_center/IOCscollections/ioc-create.png){: style="max-width:100%"}
 
 
 !!! Note
@@ -41,11 +41,11 @@ Text Import can be used when you want to import a list of IOCs (typically one IO
 
 Add all your IOCs in the text field, then click on `Next`. 
 
-![collectiontypes](/assets/operation_center/iocscollections/ioc-types.png){: style="max-width:100%"}
+![collectiontypes](/assets/operation_center/IOCscollections/ioc-types.png){: style="max-width:100%"}
 
 On the next screen, select the additional properties to add intelligence context to your indicators. All fields are optional here:
 
-![collectionform](/assets/operation_center/iocscollections/ioc_import.png){: style="max-width:100%"}
+![collectionform](/assets/operation_center/IOCscollections/ioc_import.png){: style="max-width:100%"}
 
 Finally, click on `Import` to add indicators to your collection. Depending on the number of indicators your are importing at once, this can take some time.
 
@@ -56,13 +56,13 @@ IOCs are commonly shared in tabular files where each indicator has its own row a
 1. Upload the file you would like to process
 2. The application will display the first 10 lines of the file, which a suggestion on how each column should be mapped to an indicator’s properties
 
-![collectiontable](/assets/operation_center/iocscollections/ioc_table.png){: style="max-width:100%"}
+![collectiontable](/assets/operation_center/IOCscollections/ioc_table.png){: style="max-width:100%"}
 
 
 3. Make sure the suggestions are correct and adjust if necessary by clicking on the chevron next to the column mapping. Use special value “Ignore” if the column should not be mapped to a property. In that case, the content of the column will be discarded.
 4. Click on `Next`. If some indicator properties are not mapped by any column, you will have the opportunity to define values that will apply to all indicators.
 
-![collectionthreats](/assets/operation_center/iocscollections/ioc_relatedthreats.png){: style="max-width:100%"}
+![collectionthreats](/assets/operation_center/IOCscollections/ioc_relatedthreats.png){: style="max-width:100%"}
 
 
 5. Finally, click on `Import` and wait for indicators to be created. Depending on the numbers of indicators in your file, this can take some time.
