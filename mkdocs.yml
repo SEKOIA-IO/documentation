@@ -31,7 +31,9 @@ nav:
   - 1. Set up account:
     - Join a community: getting_started/join_community.md
     - Create your account: getting_started/create_account.md
-    - Set up account security: getting_started/account_security.md
+    - Set up account security: 
+       - Two-Factor Authentication: getting_started/account_security.md
+       - Security tokens: getting_started/securitytokens.md
        - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
        - SSO with Azure AD: getting_started/sso/azure.md
        - SSO with OKTA: getting_started/sso/okta.md
