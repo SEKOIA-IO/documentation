@@ -6,7 +6,7 @@ type: intake
 
 FreeRADIUS is an implementation of RADIUS, a protocol for remote user Authentication, Authorization and Accounting.
 
-In this documentation we will explain how to collect and send FreeRADIUS logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send FreeRADIUS logs to SEKOIA.IO.
 
 !!! warning
     This format is still in beta, please use it wisely.
