@@ -13,8 +13,8 @@ The full guide on how to create and set up an account, create and invite users t
 
 An Entity is an organizational unit mostly used for configuration and reporting easiness. Entities allow a logical grouping of your data sources and associated alerts.
 
-1. Go to the Entities page and create an Entity
-2. Select the `Alert generation` mode of your choice.  We suggest you to select “Automatic” which will simplify the workflow of alert management for you. More details [here](https://docs.sekoia.io/xdr/features/collect/entities/)
+1. Go to the Entities page and create an Entity.
+2. Select the `Alert generation` mode of your choice.  We suggest you to select “Automatic” which will simplify the workflow of alert management for you. More details [here](https://docs.sekoia.io/xdr/features/collect/entities/).
 
 ![entities](/assets/operation_center/quick_start/entities.png){: style="max-width:100%"}
 
@@ -24,8 +24,8 @@ The Intakes correspond to the different technologies used (also called Data Sour
 
 To create intakes associated to the technology you would like to collect: 
 
-1. Go to the Intakes page and create intakes one by one from the catalog
-2. Make sure the logs are pushed to [SEKOIA.IO](http://SEKOIA.IO) using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the `Intake key` accordingly, or pulled by API
+1. Go to the Intakes page and create intakes one by one from the catalog.
+2. Make sure the logs are pushed to [SEKOIA.IO](http://SEKOIA.IO) using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the `Intake key` accordingly, or pulled by API.
 
 !!! note
     Find more details on each integration in our [integrations catalog](https://docs.sekoia.io/xdr/features/collect/integrations/). 
@@ -36,8 +36,8 @@ To create intakes associated to the technology you would like to collect:
 
 Once your event logs are collected and normalized by SEKOIA.IO, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
 
-1. Enable all detection rules of effort levels 1 or 2 by filtering on each effort level then clicking on the `Enable all` button
-2. Automate the activation of future detection rules with the same effort levels following [this procedure](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules)
+1. Enable all detection rules of effort levels 1 or 2 by filtering on each effort level then clicking on the `Enable all` button.
+2. Automate the activation of future detection rules with the same effort levels following [this procedure].(https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules)
 
 ![rules](/assets/operation_center/quick_start/rules.png){: style="max-width:100%"}
 
