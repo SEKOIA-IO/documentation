@@ -17,4 +17,4 @@ To add a security token and enhance the overall security of your account, follow
 
 ### Remove a security token
 
-To remove or change a security token, simply go to your profile > security section, and click on `Disable` next to the Security Token section. Enter your password and save your changes.
+To remove or change a security token, simply go to your Profile > Security section, and click on `Disable` next to the Security Token section. Enter your password and save your changes.
