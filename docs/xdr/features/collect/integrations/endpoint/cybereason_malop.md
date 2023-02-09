@@ -23,7 +23,7 @@ This setup guide will lead you into forwarding all MalOp activities to SEKOIA.IO
 To forward events produced by Cybereason to SEKOIA.IO, you will need your Cybereason username and password. 
 
 !!! warning
-    Please ensure the user have, at least, `Analyst L2` rights granted.
+    Please ensure the user has, at least, `Analyst L2` rights granted.
 
 ### Create your intake
 
