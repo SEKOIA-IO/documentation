@@ -9,7 +9,7 @@ The first step consists in creating a new incoming feed. To do so, click on `Set
 When creating a new incoming feed, it is possible to choose between:
 
 - A SEKOIA.IO TIP feed
-- A TAXII server
+- A TAXII 2.1 server
 
 Depending on the feed type chosen, different options will be offered to contact the remote server. It is possible to choose:
 
