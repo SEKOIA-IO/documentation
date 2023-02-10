@@ -216,6 +216,68 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_export_files.json"
+
+    ```json
+	
+    {
+        "message": "Info: Completed aggregating export files (#files: DOMAINS_BY_APP_TYPE 2023-02-10-11-40 #files: 1 #rows: 2 #total rows 6698) #duration(s): 0.01 #rate: 156/s\n",
+        "event": {
+            "kind": "event",
+            "category": [
+                "web",
+                "network"
+            ]
+        },
+        "observer": {
+            "product": "Cisco Web Security Appliances",
+            "type": "proxy",
+            "vendor": "Cisco"
+        },
+        "network": {
+            "direction": "egress"
+        },
+        "cisco_wsa": {
+            "threat": {
+                "category": "Not Set"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_export_to_database.json"
+
+    ```json
+	
+    {
+        "message": "Info: Completed writing export files to database (#counter_group: WEB_APPLICATION_TYPE_APPLICATION_NAME_DETAIL #interval 2023-02-10-11-40 #Serial number: 123456-789101112 #Time since data generated: 369\n",
+        "event": {
+            "kind": "event",
+            "category": [
+                "web",
+                "network"
+            ]
+        },
+        "observer": {
+            "product": "Cisco Web Security Appliances",
+            "type": "proxy",
+            "vendor": "Cisco"
+        },
+        "network": {
+            "direction": "egress"
+        },
+        "cisco_wsa": {
+            "threat": {
+                "category": "Not Set"
+            }
+        }
+    }
+    	
+	```
+
+
 === "w3c.json"
 
     ```json
