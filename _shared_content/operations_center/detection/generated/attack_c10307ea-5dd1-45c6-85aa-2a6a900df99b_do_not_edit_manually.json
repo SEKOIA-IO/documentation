@@ -1,0 +1,1 @@
+{"name": "SEKOIA.IO x Winlogbeat [BETA]", "versions": {"attack": "11", "layer": "4.3", "navigator": "4.3"}, "domain": "enterprise-attack", "techniques": [{"techniqueID": "T1595.002", "score": 100, "comment": "Rules: WAF Block Rule"}, {"techniqueID": "T1595", "score": 100, "comment": "Rules: WAF Block Rule"}]}

@@ -1,49 +1,19 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Meraki MX** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Cisco Secure Web Appliance on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_23b75d0c-2026-4d3e-b916-636c27ba4931_do_not_edit_manually.json){ .md-button }
-??? abstract "Burp Suite Tool Detected"
-    
-    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
-    
-    - **Effort:** intermediate
-
+[SEKOIA.IO x Cisco Meraki MX on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_995d7daf-4e4a-42ec-b90d-9af2f7be7019_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
     Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace. 
     
     - **Effort:** intermediate
 
-??? abstract "CVE-2018-13379 Fortinet Exploit"
-    
-    Detects the successful exploitation of the Fortinet FortiOS CVE-2018-13379. This CVE is one of the most exploited CVEs since 2018. It is exploited by APT threat actors as well as cybercriminals. The exploitation of this CVE lead an unauthenticated user to get full access to FortiOS system file through SSL VPN via specially crafted HTTP resource requests. The exploit read /dev/cmdb/sslvpn_websession file, that contains login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects FortiOS 5.6.3 to 5.6.7 and FortiOS 6.0.0 to 6.0.4.
-    
-    - **Effort:** advanced
-
 ??? abstract "CVE-2019-0604 SharePoint"
     
     Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604)
     
     - **Effort:** advanced
-
-??? abstract "CVE-2019-11510 Pulse Secure Exploit"
-    
-    Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement. Among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). 	 An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
-    
-    - **Effort:** elementary
-
-??? abstract "CVE-2019-19781 Citrix Netscaler"
-    
-    Detects CVE-2019-19781 exploitation attempt against Citrix Netscaler, Application Delivery Controller and Citrix Gateway Attack
-    
-    - **Effort:** elementary
-
-??? abstract "CVE-2019-2725 Oracle Weblogic Exploit"
-    
-    Detects the successful exploitation of a deserialization vulnerability in Oracle Weblogic Server, CVE-2019-2725. This vulnerability affects versions 10.X and 12.1.3 of WebLogic that have the components wls9_async_response.war and wls-wsat.war enabled. It is a remote code execution which can be exploited without authentication via HTTP. An HTTP response status code = 202, means the target is vulnerable, the analyst then has to look in depth to check if a webshell has been uploaded or something else has been done.
-    
-    - **Effort:** elementary
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
@@ -68,12 +38,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
-
-??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
-    
-    Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902
-    
-    - **Effort:** elementary
 
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
@@ -117,36 +81,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     
     - **Effort:** advanced
 
-??? abstract "CVE-2021-34473 ProxyShell Attempt"
-    
-    Detects CVE-2021-34473 ProxyShell attempt against Microsoft Exchange Server, Remote Code Execution Vulnerability.
-    
-    - **Effort:** advanced
-
-??? abstract "CVE-2021-41773 Apache 2.4.49 Path Traversal"
-    
-    Detects successful exploitation of the Apache Path Traversal CVE-2021-41773.
-    
-    - **Effort:** advanced
-
-??? abstract "CVE-2021-43798 Grafana Directory Traversal"
-    
-    Grafana version 8.x has a 0day arbitrary file read (with no fix yet) based on a directory traversal vulnerability
-    
-    - **Effort:** intermediate
-
-??? abstract "Cobalt Strike HTTP Default GET beaconing"
-    
-    Detects GET HTTP queries from known Cobalt Strike beacons (source code 4.3)
-    
-    - **Effort:** advanced
-
-??? abstract "Cobalt Strike HTTP Default POST Beaconing"
-    
-    Detects POST HTTP queries from known Cobalt Strike beacons (source code 4.3)
-    
-    - **Effort:** advanced
-
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
@@ -159,23 +93,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     
     - **Effort:** advanced
 
-??? abstract "GitLab CVE-2021-22205"
-    
-    Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
     
     - **Effort:** intermediate
-
-??? abstract "LokiBot Default C2 URL"
-    
-    Detects default C2 URL for trojan LokiBot
-    
-    - **Effort:** elementary
 
 ??? abstract "Nimbo-C2 User Agent"
     
@@ -219,12 +141,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     
     - **Effort:** elementary
 
-??? abstract "RTLO Character"
-    
-    Detects RTLO (Right-To-Left character) in file and process names.
-    
-    - **Effort:** elementary
-
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
@@ -243,26 +159,8 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     
     - **Effort:** elementary
 
-??? abstract "SharePoint Authenticated SSRF"
-    
-    Detects succesful SSRF from an authenticated SharePoint user.
-    
-    - **Effort:** elementary
-
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
-    
-    - **Effort:** intermediate
-
-??? abstract "Telegram Bot API Request"
-    
-    Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
-    
-    - **Effort:** advanced
-
-??? abstract "WCE wceaux.dll Creation"
-    
-    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate

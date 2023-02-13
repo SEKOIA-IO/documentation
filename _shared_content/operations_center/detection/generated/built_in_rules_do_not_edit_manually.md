@@ -1,4 +1,4 @@
-Rules catalog includes **666 built-in detection rules** (_last update on 2023-02-08_).
+Rules catalog includes **669 built-in detection rules** (_last update on 2023-02-13_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2311,6 +2311,12 @@ Rules catalog includes **666 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** intermediate
 
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** elementary
+
 ??? abstract "PsExec Process"
     
     Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
@@ -3129,6 +3135,12 @@ Rules catalog includes **666 built-in detection rules** (_last update on 2023-02
     Detects creation of a new service from command line
     
     - **Effort:** advanced
+
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** elementary
 
 ??? abstract "Rare Logonui Child Found"
     
@@ -3961,6 +3973,12 @@ Rules catalog includes **666 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** elementary
+
 ??? abstract "Rare Logonui Child Found"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
@@ -4445,6 +4463,12 @@ Rules catalog includes **666 built-in detection rules** (_last update on 2023-02
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
+    
+    - **Effort:** elementary
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
     
     - **Effort:** elementary
 
@@ -6462,6 +6486,14 @@ Rules catalog includes **666 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** intermediate
 
+**File and Directory Discovery**
+
+??? abstract "Netskope DLP Alert"
+    
+    Detects DLP alerts which are not allowed.  
+    
+    - **Effort:** intermediate
+
 **Account Discovery**
 
 ??? abstract "AD Privileged Users Or Groups Reconnaissance"
@@ -6793,6 +6825,14 @@ Rules catalog includes **666 built-in detection rules** (_last update on 2023-02
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
+    
+    - **Effort:** intermediate
+
+**Data from Cloud Storage**
+
+??? abstract "Netskope DLP Alert"
+    
+    Detects DLP alerts which are not allowed.  
     
     - **Effort:** intermediate
 
