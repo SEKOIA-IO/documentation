@@ -1147,6 +1147,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`office365.teams.team.members` | `object` | The list of users in a team |
 |`office365.teams.team.name` | `keyword` | The name of the team |
 |`office365.user_type.code` | `long` | The type of user that performed the operation |
+|`office365.virus_info` | `keyword` | VirusInfo |
+|`office365.virus_vendor` | `keyword` | VirusVendor |
 |`organization.id` | `keyword` | Unique identifier for the organization. |
 |`rule.category` | `keyword` | Rule category |
 |`service.name` | `keyword` | Name of the service. |

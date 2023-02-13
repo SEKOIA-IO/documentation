@@ -1,0 +1,694 @@
+
+## Event Categories
+
+
+The following table lists the data source offered by this integration.
+
+| Data Source | Description                          |
+| ----------- | ------------------------------------ |
+| `DNS records` | Both DNS queries and responses handled by the SonicWall domain name servers can be recorded. |
+| `Host network interface` | SonicWall produces log about every packets. |
+| `Network device logs` | SonicWall can record traffic logs flowing through their firewall. |
+| `Network intrusion detection system` | The monitoring of the network generates log about prevented intrusions. |
+| `Network protocol analysis` | TCP and UDP packets are analyzed. |
+| `Web logs` | SonicWall produces log about URL access. |
+
+
+
+
+
+In details, the following table denotes the type of events produced by this integration.
+
+| Name | Values |
+| ---- | ------ |
+| Kind | `alert`, `event` |
+| Category | `network` |
+| Type | `allowed`, `denied`, `error`, `protocol` |
+
+
+
+
+## Event Samples
+
+Find below few samples of events and how they are normalized by SEKOIA.IO.
+
+
+=== "test_app_control_detection_alert.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|SonicWall|NSa 4700|7.0.1-1234-R5678|1154|Application Control Detection Alert|9|cat=0 gcat=3 smac=00:11:22:33:44:55 src=10.0.10.20 spt= 12345 deviceInboundInterface=X1 cs3Label=WAN dmac=12:cc:44:00:66:11 dst=10.0.20.30 dpt=49773 deviceOutboundInterface=X6-V320 cs4Label=WORKSTATION proto=tcp/https in=1240 app=49000 appName=\"General HTTPS\" sid=7900 appcat=\"PROTOCOLS\" appid=1234 catid=77 msg=\"Application Control Detection Alert: PROTOCOLS SSL/TLS Protocol -- TLSv1.2 Version, SID: 7900, AppID: 1200, CatID: 77\" msg=\"Application Control Detection Alert: PROTOCOLS SSL/TLS Protocol -- TLSv1.2 Version\" sid=7800 appcat=\"PROTOCOLS SSL/TLS Protocol -- TLSv1.2 Version\" appid=1234 catid=55 cnt=7800123 fw_action=\"NA\"",
+        "event": {
+            "code": "1154",
+            "severity": 9,
+            "category": [
+                "network"
+            ],
+            "kind": "alert",
+            "reason": "Application Control Detection Alert: PROTOCOLS SSL/TLS Protocol -- TLSv1.2 Version, SID: 7900, AppID: 1200, CatID: 77",
+            "type": [
+                "protocol"
+            ]
+        },
+        "observer": {
+            "vendor": "SonicWall",
+            "type": "firewall",
+            "version": "7.0.1-1234-R5678",
+            "egress": {
+                "interface": {
+                    "name": "X6-V320"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "X1"
+                }
+            }
+        },
+        "sonicwall": {
+            "fw": {
+                "cnt": 7800123,
+                "catid": 77,
+                "appcat": "PROTOCOLS",
+                "sid": 7900,
+                "cs4Label": "WORKSTATION",
+                "cs3Label": "WAN",
+                "gcat": 3,
+                "cat": 0,
+                "event": {
+                    "name": "Application Control Detection Alert"
+                },
+                "gcatname": "Security Services",
+                "priority": "ALERT"
+            }
+        },
+        "destination": {
+            "bytes": 1240,
+            "port": 49773,
+            "ip": "10.0.20.30",
+            "mac": "12:cc:44:00:66:11",
+            "address": "10.0.20.30"
+        },
+        "host": {
+            "network": {
+                "ingress": {
+                    "bytes": 1240
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "protocol": "https"
+        },
+        "process": {
+            "entity_id": "1234",
+            "name": "General HTTPS"
+        },
+        "source": {
+            "ip": "10.0.10.20",
+            "mac": "00:11:22:33:44:55",
+            "port": 12345,
+            "address": "10.0.10.20"
+        },
+        "cef": {
+            "event_type": "base event"
+        },
+        "related": {
+            "ip": [
+                "10.0.10.20",
+                "10.0.20.30"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_connection_closed.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|SonicWall|NSa 4500|7.0.1-1234-R5678|537|Connection Closed|4|cat=1024 gcat=6 src=12.3.123.123 spt=40000 deviceInboundInterface=X0-V12 cs3Label=LAN dmac=33:33:33:33:33:33 dst=22.3.4.55 dpt=55 deviceOutboundInterface=X0-V13 cs4Label=LAN proto=udp/dns out=77 in=99 cn2Label=1 cn1Label=1 cn3Label=33333 cs1=\"Default Access Rule\" app=49169 appName=\"General DNS\" cnt=2162123123 fw_action=\"NA\" dpi=0",
+        "event": {
+            "code": "537",
+            "severity": 4,
+            "category": [
+                "network"
+            ],
+            "kind": "event",
+            "type": [
+                "protocol"
+            ]
+        },
+        "observer": {
+            "vendor": "SonicWall",
+            "type": "firewall",
+            "version": "7.0.1-1234-R5678",
+            "egress": {
+                "interface": {
+                    "name": "X0-V13"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "X0-V12"
+                }
+            }
+        },
+        "sonicwall": {
+            "fw": {
+                "dpi": false,
+                "cnt": 2162123123,
+                "cs4Label": "LAN",
+                "cs3Label": "LAN",
+                "gcat": 6,
+                "cat": 1024,
+                "event": {
+                    "name": "Connection Closed"
+                },
+                "gcatname": "Network",
+                "priority": "INFO"
+            }
+        },
+        "destination": {
+            "bytes": 99,
+            "port": 55,
+            "ip": "22.3.4.55",
+            "mac": "33:33:33:33:33:33",
+            "packets": 1,
+            "address": "22.3.4.55"
+        },
+        "host": {
+            "network": {
+                "ingress": {
+                    "bytes": 99
+                },
+                "egress": {
+                    "bytes": 77
+                }
+            }
+        },
+        "network": {
+            "transport": "udp",
+            "protocol": "dns"
+        },
+        "process": {
+            "name": "General DNS"
+        },
+        "rule": {
+            "name": "Default Access Rule"
+        },
+        "source": {
+            "bytes": 77,
+            "ip": "12.3.123.123",
+            "packets": 1,
+            "port": 40000,
+            "address": "12.3.123.123"
+        },
+        "cef": {
+            "event_type": "base event"
+        },
+        "related": {
+            "ip": [
+                "12.3.123.123",
+                "22.3.4.55"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_connection_opened.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|SonicWall|NSa 4500|7.0.1-1234-R5678|98|Connection Opened|4|cat=262111 gcat=6 src=10.0.10.20 spt=12345 deviceInboundInterface=X6-V333 cs1Label=123.123.123.123 snpt=12345 dst=123.45.67.123 dpt=123 deviceOutboundInterface=X1 cs2Label=123.45.67.123 dnpt=123 susr=\"ABC\\user\" proto=tcp/https out=12 cs5Label=\"Auto\" app=12345 appName=\"General HTTPS\" cnt=1234567890 fw_action=\"NA\" dpi=0",
+        "event": {
+            "code": "98",
+            "severity": 4,
+            "category": [
+                "network"
+            ],
+            "kind": "event",
+            "type": [
+                "protocol"
+            ]
+        },
+        "observer": {
+            "vendor": "SonicWall",
+            "type": "firewall",
+            "version": "7.0.1-1234-R5678",
+            "egress": {
+                "interface": {
+                    "name": "X1"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "X6-V333"
+                }
+            }
+        },
+        "sonicwall": {
+            "fw": {
+                "dpi": false,
+                "cnt": 1234567890,
+                "cs5Label": "Auto",
+                "gcat": 6,
+                "cat": 262111,
+                "event": {
+                    "name": "Connection Opened"
+                },
+                "gcatname": "Network",
+                "priority": "INFO"
+            }
+        },
+        "destination": {
+            "port": 123,
+            "ip": "123.45.67.123",
+            "nat": {
+                "ip": "123.45.67.123",
+                "port": 123
+            },
+            "address": "123.45.67.123"
+        },
+        "host": {
+            "network": {
+                "egress": {
+                    "bytes": 12
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "protocol": "https"
+        },
+        "process": {
+            "name": "General HTTPS"
+        },
+        "source": {
+            "bytes": 12,
+            "ip": "10.0.10.20",
+            "nat": {
+                "ip": "123.123.123.123",
+                "port": 12345
+            },
+            "port": 12345,
+            "address": "10.0.10.20"
+        },
+        "user": {
+            "name": "user",
+            "domain": "ABC"
+        },
+        "cef": {
+            "event_type": "base event"
+        },
+        "related": {
+            "ip": [
+                "10.0.10.20",
+                "123.123.123.123",
+                "123.45.67.123"
+            ],
+            "user": [
+                "user"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_file_transfer_result.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|SonicWall|NSa 4700|7.0.1-5000-R3000|1460|Capture ATP File Transfer Result|5|cat=1 gcat=3 src=10.0.10.20 spt=444 deviceInboundInterface=X6-V333 dst=123.45.67.123  dpt=123 deviceOutboundInterface=X1 proto=tcp/12345 in=1500 msg=\"Gateway Anti-Virus Status: SMB file restart detected. File forwarding to Sandbox truncated for filename: hello.xlsx.\" cnt=123456 fw_action=\"NA\" fileid=\"0b9999999999999999ff99\" filetxstatus=230",
+        "event": {
+            "code": "1460",
+            "severity": 5,
+            "category": [
+                "network"
+            ],
+            "kind": "event",
+            "reason": "Gateway Anti-Virus Status: SMB file restart detected. File forwarding to Sandbox truncated for filename: hello.xlsx.",
+            "type": [
+                "protocol"
+            ]
+        },
+        "observer": {
+            "vendor": "SonicWall",
+            "type": "firewall",
+            "version": "7.0.1-5000-R3000",
+            "egress": {
+                "interface": {
+                    "name": "X1"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "X6-V333"
+                }
+            }
+        },
+        "sonicwall": {
+            "fw": {
+                "filetxstatus": 230,
+                "fileid": "0b9999999999999999ff99",
+                "cnt": 123456,
+                "gcat": 3,
+                "cat": 1,
+                "event": {
+                    "name": "Capture ATP File Transfer Result"
+                },
+                "gcatname": "Security Services",
+                "priority": "INFO"
+            }
+        },
+        "destination": {
+            "bytes": 1500,
+            "port": 123,
+            "ip": "123.45.67.123 ",
+            "address": "123.45.67.123 "
+        },
+        "file": {
+            "name": "hello.xlsx"
+        },
+        "host": {
+            "network": {
+                "ingress": {
+                    "bytes": 1500
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp"
+        },
+        "source": {
+            "ip": "10.0.10.20",
+            "port": 444,
+            "address": "10.0.10.20"
+        },
+        "cef": {
+            "event_type": "base event"
+        },
+        "related": {
+            "ip": [
+                "10.0.10.20",
+                "123.45.67.123 "
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_filename_logging.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|SonicWall|NSa 4500|7.0.1-1234-R5678|1574|Filename Logging|5|cat=0 gcat=3 smac=00:11:22:33:44:55 src=10.0.30.40 spt=12345 deviceInboundInterface=X3-V333 cs3Label=WORKSTATION dmac=66:77:88:99:00:11 dst=22.3.4.55 dpt=444 deviceOutboundInterface=X3-V33 cs4Label=LAN susr=\"USER\" proto=tcp/445 out=32701234 in=31445678 cs5Label=\"Auto\" cs1=\"555 (WORKSTATION->WORK)\" app=9876 msg=\"Filename: FILENAME\" cnt=123456789 fw_action=\"NA\" dpi=1",
+        "event": {
+            "code": "1574",
+            "severity": 5,
+            "category": [
+                "network"
+            ],
+            "kind": "event",
+            "reason": "Filename: FILENAME",
+            "type": [
+                "protocol"
+            ]
+        },
+        "observer": {
+            "vendor": "SonicWall",
+            "type": "firewall",
+            "version": "7.0.1-1234-R5678",
+            "egress": {
+                "interface": {
+                    "name": "X3-V33"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "X3-V333"
+                }
+            }
+        },
+        "sonicwall": {
+            "fw": {
+                "dpi": true,
+                "cnt": 123456789,
+                "cs5Label": "Auto",
+                "cs4Label": "LAN",
+                "cs3Label": "WORKSTATION",
+                "gcat": 3,
+                "cat": 0,
+                "event": {
+                    "name": "Filename Logging"
+                },
+                "gcatname": "Security Services",
+                "priority": "INFO"
+            }
+        },
+        "destination": {
+            "bytes": 31445678,
+            "port": 444,
+            "ip": "22.3.4.55",
+            "mac": "66:77:88:99:00:11",
+            "address": "22.3.4.55"
+        },
+        "file": {
+            "name": "FILENAME"
+        },
+        "host": {
+            "network": {
+                "ingress": {
+                    "bytes": 31445678
+                },
+                "egress": {
+                    "bytes": 32701234
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp"
+        },
+        "rule": {
+            "name": "555 (WORKSTATION->WORK)"
+        },
+        "source": {
+            "bytes": 32701234,
+            "ip": "10.0.30.40",
+            "mac": "00:11:22:33:44:55",
+            "port": 12345,
+            "address": "10.0.30.40"
+        },
+        "user": {
+            "name": "USER"
+        },
+        "cef": {
+            "event_type": "base event"
+        },
+        "related": {
+            "ip": [
+                "10.0.30.40",
+                "22.3.4.55"
+            ],
+            "user": [
+                "USER"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_syslog_website_accessed.json"
+
+    ```json
+	
+    {
+        "message": "CEF:0|SonicWall|NSa 4500|7.0.1-1234-R5678|97|Syslog Website Accessed|4|cat=1024 gcat=2 smac=00:11:22:33:44:55 src=12.3.123.123 spt=60000 deviceInboundInterface=X0-V123 cs3Label=WORKSTATION cs1Label=123.123.123.123 snpt=12345 dmac=33:33:33:33:33:33 dst=123.3.4.55 dpt=444 deviceOutboundInterface=X1 cs4Label=WAN cs2Label=123.45.67.123 dnpt=444 susr=\"USER\" proto=tcp/https out=1234 in=4567 cs5Label=\"Auto\" cs1=\"WORKSTATIONS -> WEB\" app=2233 request=microsoft.com/ reason=22 Category-\"Computers\" cs6=\"Policy: Default Policy\" cnt=123456789 fw_action=\"drop\" dpi=1",
+        "event": {
+            "code": "97",
+            "severity": 4,
+            "category": [
+                "network"
+            ],
+            "kind": "event",
+            "type": [
+                "denied"
+            ],
+            "action": "dropped"
+        },
+        "observer": {
+            "vendor": "SonicWall",
+            "type": "firewall",
+            "version": "7.0.1-1234-R5678",
+            "egress": {
+                "interface": {
+                    "name": "X1"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "name": "X0-V123"
+                }
+            }
+        },
+        "sonicwall": {
+            "fw": {
+                "dpi": true,
+                "fw_action": "drop",
+                "cnt": 123456789,
+                "cs6": "Policy: Default Policy",
+                "cs5Label": "Auto",
+                "cs4Label": "WAN",
+                "cs3Label": "WORKSTATION",
+                "gcat": 2,
+                "cat": 1024,
+                "event": {
+                    "name": "Syslog Website Accessed"
+                },
+                "gcatname": "Log",
+                "priority": "INFO"
+            }
+        },
+        "destination": {
+            "bytes": 4567,
+            "port": 444,
+            "ip": "123.3.4.55",
+            "mac": "33:33:33:33:33:33",
+            "nat": {
+                "ip": "123.45.67.123",
+                "port": 444
+            },
+            "address": "123.3.4.55"
+        },
+        "host": {
+            "network": {
+                "ingress": {
+                    "bytes": 4567
+                },
+                "egress": {
+                    "bytes": 1234
+                }
+            }
+        },
+        "network": {
+            "transport": "tcp",
+            "protocol": "https"
+        },
+        "rule": {
+            "name": "WORKSTATIONS -> WEB\" app=2233 request=microsoft.com/ reason=22 Category-\"Computers"
+        },
+        "source": {
+            "bytes": 1234,
+            "ip": "12.3.123.123",
+            "mac": "00:11:22:33:44:55",
+            "nat": {
+                "ip": "123.123.123.123",
+                "port": 12345
+            },
+            "port": 60000,
+            "address": "12.3.123.123"
+        },
+        "user": {
+            "name": "USER"
+        },
+        "cef": {
+            "event_type": "base event"
+        },
+        "related": {
+            "ip": [
+                "12.3.123.123",
+                "123.123.123.123",
+                "123.3.4.55",
+                "123.45.67.123"
+            ],
+            "user": [
+                "USER"
+            ]
+        }
+    }
+    	
+	```
+
+
+
+
+
+## Extracted Fields
+
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+
+| Name | Type | Description                |
+| ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
+|`destination.bytes` | `long` | Bytes sent from the destination to the source. |
+|`destination.domain` | `keyword` | The domain name of the destination. |
+|`destination.ip` | `ip` | IP address of the destination. |
+|`destination.mac` | `keyword` | MAC address of the destination. |
+|`destination.nat.ip` | `ip` | Destination NAT ip |
+|`destination.nat.port` | `long` | Destination NAT Port |
+|`destination.packets` | `long` | Packets sent from the destination to the source. |
+|`destination.port` | `long` | Port of the destination. |
+|`destination.user.id` | `keyword` | Unique identifier of the user. |
+|`destination.user.name` | `keyword` | Short name or login of the user. |
+|`event.action` | `keyword` | The action captured by the event. |
+|`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.code` | `keyword` | Identification code for this event. |
+|`event.end` | `date` | event.end contains the date when the event ended or when the activity was last observed. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.outcome` | `keyword` | The outcome of the event. The lowest level categorization field in the hierarchy. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
+|`event.severity` | `long` | Numeric severity of the event. |
+|`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
+|`event.timezone` | `keyword` | Event time zone. |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`file.inode` | `keyword` | Inode representing the file in the filesystem. |
+|`file.mtime` | `date` | Last time the file content was modified. |
+|`file.name` | `keyword` | Name of the file including the extension, without the directory. |
+|`file.path` | `keyword` | Full path to the file, including the file name. |
+|`file.size` | `long` | File size in bytes. |
+|`file.type` | `keyword` | File type (file, dir, or symlink). |
+|`host.domain` | `keyword` | Name of the directory the group is a member of. |
+|`host.hostname` | `keyword` | Hostname of the host. |
+|`host.id` | `keyword` | Unique host id. |
+|`host.name` | `keyword` | Name of the host. |
+|`host.network.egress.bytes` | `long` | The number of bytes sent on all network interfaces. |
+|`host.network.ingress.bytes` | `long` | The number of bytes received on all network interfaces. |
+|`http.request.method` | `keyword` | HTTP request method. |
+|`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
+|`log.syslog.facility.name` | `keyword` | Syslog text-based facility of the event. |
+|`observer.egress.interface.name` | `keyword` | Interface name |
+|`observer.ingress.interface.name` | `keyword` | Interface name |
+|`observer.type` | `keyword` | The type of the observer the data is coming from. |
+|`observer.vendor` | `keyword` | Vendor name of the observer. |
+|`observer.version` | `keyword` | Observer version. |
+|`process.entity_id` | `keyword` | Unique identifier for the process. |
+|`process.name` | `keyword` | Process name. |
+|`rule.name` | `keyword` | Rule name |
+|`server.ip` | `ip` | IP address of the server. |
+|`service.name` | `keyword` | Name of the service. |
+|`sonicwall.fw.event.name` | `keyword` | Name of the event. |
+|`source.bytes` | `long` | Bytes sent from the source to the destination. |
+|`source.domain` | `keyword` | The domain name of the source. |
+|`source.ip` | `ip` | IP address of the source. |
+|`source.mac` | `keyword` | MAC address of the source. |
+|`source.nat.ip` | `ip` | Source NAT ip |
+|`source.nat.port` | `long` | Source NAT port |
+|`source.packets` | `long` | Packets sent from the source to the destination. |
+|`source.port` | `long` | Port of the source. |
+|`source.user.name` | `keyword` | Short name or login of the user. |
+|`url.original` | `wildcard` | Unmodified original url as seen in the event source. |
+|`user.domain` | `keyword` | Name of the directory the user is a member of. |
+|`user.name` | `keyword` | Short name or login of the user. |
+|`user_agent.original` | `keyword` | Unparsed user_agent string. |
+
