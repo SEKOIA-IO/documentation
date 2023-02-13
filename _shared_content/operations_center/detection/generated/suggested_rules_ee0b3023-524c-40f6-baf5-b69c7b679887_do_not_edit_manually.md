@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **SonicWall Firewall [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Cisco Secure Firewall on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x SonicWall Firewall [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_ee0b3023-524c-40f6-baf5-b69c7b679887_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -39,35 +39,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** intermediate
 
-??? abstract "CVE-2018-13379 Fortinet Exploit"
-    
-    Detects the successful exploitation of the Fortinet FortiOS CVE-2018-13379. This CVE is one of the most exploited CVEs since 2018. It is exploited by APT threat actors as well as cybercriminals. The exploitation of this CVE lead an unauthenticated user to get full access to FortiOS system file through SSL VPN via specially crafted HTTP resource requests. The exploit read /dev/cmdb/sslvpn_websession file, that contains login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects FortiOS 5.6.3 to 5.6.7 and FortiOS 6.0.0 to 6.0.4.
-    
-    - **Effort:** advanced
-
 ??? abstract "CVE-2019-0604 SharePoint"
     
     Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604)
     
     - **Effort:** advanced
-
-??? abstract "CVE-2019-11510 Pulse Secure Exploit"
-    
-    Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement. Among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). 	 An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
-    
-    - **Effort:** elementary
-
-??? abstract "CVE-2019-19781 Citrix Netscaler"
-    
-    Detects CVE-2019-19781 exploitation attempt against Citrix Netscaler, Application Delivery Controller and Citrix Gateway Attack
-    
-    - **Effort:** elementary
-
-??? abstract "CVE-2019-2725 Oracle Weblogic Exploit"
-    
-    Detects the successful exploitation of a deserialization vulnerability in Oracle Weblogic Server, CVE-2019-2725. This vulnerability affects versions 10.X and 12.1.3 of WebLogic that have the components wls9_async_response.war and wls-wsat.war enabled. It is a remote code execution which can be exploited without authentication via HTTP. An HTTP response status code = 202, means the target is vulnerable, the analyst then has to look in depth to check if a webshell has been uploaded or something else has been done.
-    
-    - **Effort:** elementary
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
@@ -92,12 +68,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
-
-??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
-    
-    Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902
-    
-    - **Effort:** elementary
 
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
@@ -141,23 +111,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** advanced
 
-??? abstract "CVE-2021-34473 ProxyShell Attempt"
+??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
     
-    Detects CVE-2021-34473 ProxyShell attempt against Microsoft Exchange Server, Remote Code Execution Vulnerability.
+    Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
     
-    - **Effort:** advanced
-
-??? abstract "CVE-2021-41773 Apache 2.4.49 Path Traversal"
-    
-    Detects successful exploitation of the Apache Path Traversal CVE-2021-41773.
-    
-    - **Effort:** advanced
-
-??? abstract "CVE-2021-43798 Grafana Directory Traversal"
-    
-    Grafana version 8.x has a 0day arbitrary file read (with no fix yet) based on a directory traversal vulnerability
-    
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Certificate Authority Modification"
     
@@ -171,15 +129,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** elementary
 
-??? abstract "Cobalt Strike HTTP Default GET beaconing"
+??? abstract "Cron Files Alteration"
     
-    Detects GET HTTP queries from known Cobalt Strike beacons (source code 4.3)
-    
-    - **Effort:** advanced
-
-??? abstract "Cobalt Strike HTTP Default POST Beaconing"
-    
-    Detects POST HTTP queries from known Cobalt Strike beacons (source code 4.3)
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
     
     - **Effort:** advanced
 
@@ -207,9 +159,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** advanced
 
-??? abstract "GitLab CVE-2021-22205"
+??? abstract "Hijack Legit RDP Session To Move Laterally"
     
-    Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
+    Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
     
     - **Effort:** intermediate
 
@@ -225,11 +177,17 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** intermediate
 
-??? abstract "LokiBot Default C2 URL"
+??? abstract "Microsoft Office Creating Suspicious File"
     
-    Detects default C2 URL for trojan LokiBot
+    Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
     
-    - **Effort:** elementary
+    - **Effort:** master
+
+??? abstract "NTDS.dit File In Suspicious Directory"
+    
+    The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
+    
+    - **Effort:** advanced
 
 ??? abstract "Network Scanning and Discovery"
     
@@ -254,6 +212,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
     
     - **Effort:** intermediate
+
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
+??? abstract "Package Manager Alteration"
+    
+    Package manager (eg: apt, yum) can be altered to install malicious software
+    
+    - **Effort:** advanced
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     
@@ -333,11 +303,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     
     - **Effort:** elementary
 
-??? abstract "SharePoint Authenticated SSRF"
+??? abstract "SSH Authorized Key Alteration"
     
-    Detects succesful SSRF from an authenticated SharePoint user.
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -348,6 +318,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Download Links From Legitimate Services"
+    
+    Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
     - **Effort:** elementary
 
@@ -374,3 +350,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Firewall** with
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate
+
+??? abstract "WMI Persistence Script Event Consumer File Write"
+    
+    Detects file writes through WMI script event consumer.
+    
+    - **Effort:** advanced
+
+??? abstract "Webshell Creation"
+    
+    Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
+    
+    - **Effort:** master

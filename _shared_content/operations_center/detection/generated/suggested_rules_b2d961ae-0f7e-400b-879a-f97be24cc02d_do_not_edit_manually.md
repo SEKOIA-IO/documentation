@@ -669,6 +669,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Trend Micro Cloud One / Deep
     
     - **Effort:** advanced
 
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.

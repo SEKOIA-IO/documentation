@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Gatewatcher AionIQ** with th
     
     - **Effort:** intermediate
 
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.

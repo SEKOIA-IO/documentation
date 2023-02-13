@@ -675,6 +675,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
     
     - **Effort:** advanced
 
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.

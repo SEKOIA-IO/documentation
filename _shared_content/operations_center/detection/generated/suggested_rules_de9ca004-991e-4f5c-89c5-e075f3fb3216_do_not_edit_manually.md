@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Netskope events** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x netskope_events on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_de9ca004-991e-4f5c-89c5-e075f3fb3216_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Netskope events on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_de9ca004-991e-4f5c-89c5-e075f3fb3216_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
     Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
@@ -69,6 +69,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events** with the f
     
     - **Effort:** advanced
 
+??? abstract "Netskope DLP Alert"
+    
+    Detects DLP alerts which are not allowed.  
+    
+    - **Effort:** intermediate
+
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
@@ -108,6 +114,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **netskope_events** with the f
 ??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    
+    - **Effort:** elementary
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
     
     - **Effort:** elementary
 
