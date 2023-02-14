@@ -19,6 +19,7 @@ to SEKOIA.IO by means of an Rsyslog transport channel.
 
 - Must have GMS server or On-Prem Analytics server installed and configured.
 - Have an Address Object Created on the Firewall for SonicWall Analytics system.
+- Have an internal log concentrator (Rsyslog)
 
 ### SonicWall 6.5 et 7.X
 
