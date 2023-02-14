@@ -179,6 +179,7 @@ nav:
       - Built-in Rules: xdr/features/detect/built_in_detection_rules.md
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
+      - IOCs Collections: xdr/features/detect/ioccollections.md
     - Investigate:
       - Alerts: xdr/features/investigate/alerts.md
       - Events: xdr/features/investigate/events.md
