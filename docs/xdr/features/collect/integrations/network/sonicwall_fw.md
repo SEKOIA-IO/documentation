@@ -21,6 +21,6 @@ to SEKOIA.IO by means of an Rsyslog transport channel.
 - Have an Address Object Created on the Firewall for SonicWall Analytics system.
 - Have an internal log concentrator (Rsyslog)
 
-### SonicWall 6.5 et 7.X
+### SonicWall 6.5 and 7.X
 
 Follow this [guide](https://www.sonicwall.com/support/knowledge-base/how-can-i-configure-a-syslog-server-on-a-sonicwall-firewall/170505984096810/) and the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to setup the syslog server.
