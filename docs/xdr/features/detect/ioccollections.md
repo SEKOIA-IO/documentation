@@ -8,6 +8,8 @@ You can then easily see telemetry on these collections and use them inside detec
 
 IOC Collections are available directly from the menu inside the Intelligence Center.
 
+![collection_menu](/assets/operation_center/IOCscollections/collections_menu.png){: style="max-width:100%"}
+
 ## Create an IOC Collection
 
 You can open the IOC Collection creation modal by clicking on `+ Collection`. You will then have to fill out the form:
