@@ -46,6 +46,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "start"
             ]
         },
+        "@timestamp": "2020-09-29T08:59:26",
         "service": {
             "name": "AzureActiveDirectory"
         },
@@ -112,6 +113,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "code": "155",
             "reason": "Enable self-service password reset"
         },
+        "@timestamp": "2022-10-05T10:12:57",
         "service": {
             "name": "ComplianceManager"
         },
@@ -159,6 +161,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "creation"
             ]
         },
+        "@timestamp": "2022-04-05T20:35:01",
         "service": {
             "name": "Exchange"
         },
@@ -218,6 +221,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2020-09-29T07:32:51",
         "service": {
             "name": "OneDrive"
         },
@@ -305,6 +309,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-06-10T12:00:14",
         "service": {
             "name": "SharePoint"
         },
@@ -395,6 +400,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "file"
             ]
         },
+        "@timestamp": "2022-09-07T12:22:07",
         "service": {
             "name": "Yammer"
         },
@@ -455,6 +461,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "code": "47",
             "url": "https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=MalwareContent&query-Id=2ab4791e-fdd4-42f9-ad3c-c54ef7a4d548"
         },
+        "@timestamp": "2022-07-07T22:38:49",
         "service": {
             "name": "ThreatIntelligence"
         },
@@ -506,6 +513,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "code": "28",
             "url": "https://protection.office.com/?hash=/threatexplorer?messageParams=a4dbf74a-89e0-40de-b14d-df573f48aa45,a4dbf74a-89e0-40de-b14d-df573f48aa45-0000000000000000000-1,2022-07-08T00:00:00,2022-07-08T23:59:59&view=Malware"
         },
+        "@timestamp": "2022-07-08T09:10:19",
         "service": {
             "name": "ThreatIntelligence"
         },
@@ -651,6 +659,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "code": "41",
             "url": "https://protection.office.com/threatexplorer?dltarget=Explorer&dlstorage=Url&viewid=Phish&query-Recipients=people@xample.org&query-NetworkMessageId=53b5da37-1893-4e78-a89f-a4d26b53184c"
         },
+        "@timestamp": "2022-07-07T10:10:52",
         "service": {
             "name": "ThreatIntelligence"
         },
@@ -702,6 +711,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-04-05T19:51:35",
         "service": {
             "name": "MicrosoftTeams"
         },
@@ -784,6 +794,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2019-11-18T13:40:24",
         "service": {
             "name": "AzureActiveDirectory"
         },
@@ -839,6 +850,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2019-12-09T14:18:19",
         "service": {
             "name": "AzureActiveDirectory"
         },
@@ -894,6 +906,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
+        "@timestamp": "2021-03-05T14:43:17",
         "service": {
             "name": "AzureActiveDirectory"
         },
@@ -949,6 +962,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "start"
             ]
         },
+        "@timestamp": "2019-11-18T10:15:52",
         "service": {
             "name": "AzureActiveDirectory"
         },
@@ -1021,6 +1035,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "info"
             ]
         },
+        "@timestamp": "2022-10-14T13:48:03",
         "service": {
             "name": "AzureActiveDirectory"
         },
