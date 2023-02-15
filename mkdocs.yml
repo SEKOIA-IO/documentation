@@ -282,6 +282,7 @@ nav:
       - Graph Explorations: cti/features/consume/graph_explorations.md
       - Enrichers: cti/features/consume/enrichers.md
       - Export: cti/features/consume/export.md
+      - IOCs Collections: cti/features/consume/ioccollections.md
     - Monitor:
       - Dashboards: cti/features/monitor/dashboard.md
     - External Integrations:
@@ -319,6 +320,7 @@ nav:
       - Graph Explorations: tip/features/consume/graph_explorations.md
       - Enrichers: tip/features/consume/enrichers.md
       - Export: tip/features/consume/export.md
+      - IOCs Collections: tip/features/consume/ioccollections.md        
     - Produce and investigate:
       - Content Proposals: tip/features/produce/content_proposals.md
       - Incoming Feeds: tip/features/produce/incoming_feeds.md
