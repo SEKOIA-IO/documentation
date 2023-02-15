@@ -1,4 +1,4 @@
-Rules catalog includes **669 built-in detection rules** (_last update on 2023-02-13_).
+Rules catalog includes **672 built-in detection rules** (_last update on 2023-02-15_).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -151,6 +151,12 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta MFA Brute-Force Successful"
+    
+    A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
+    
+    - **Effort:** advanced
+
 ??? abstract "Successful Password Spraying On AzureAD From Single IP Address"
     
     An IP address performed several failed logins on multiple users to then have a successful login on one of them.
@@ -255,6 +261,12 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta MFA Brute-Force Successful"
+    
+    A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
+    
+    - **Effort:** advanced
+
 ??? abstract "Successful Password Spraying On AzureAD From Single IP Address"
     
     An IP address performed several failed logins on multiple users to then have a successful login on one of them.
@@ -266,6 +278,12 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
 ??? abstract "Okta User Logged In From Multiple Countries"
     
     Detection of login events from multiple countries.
+    
+    - **Effort:** intermediate
+
+??? abstract "Okta User Logged In Multiple Applications"
+    
+    Detection of login events on multiple application.
     
     - **Effort:** intermediate
 
@@ -364,6 +382,12 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta Many Passwords Reset Attempt"
+    
+    This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Suspicious Activity Reported"
     
     Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
@@ -374,7 +398,7 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     An user tries to access an unauthorized application.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "User Added to Local Administrators"
     
@@ -2770,6 +2794,12 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta Many Passwords Reset Attempt"
+    
+    This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Suspicious Activity Reported"
     
     Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
@@ -2780,7 +2810,7 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     An user tries to access an unauthorized application.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "User Added to Local Administrators"
     
@@ -3815,6 +3845,12 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta Many Passwords Reset Attempt"
+    
+    This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Suspicious Activity Reported"
     
     Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
@@ -3825,7 +3861,7 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     An user tries to access an unauthorized application.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "User Added to Local Administrators"
     
@@ -4756,6 +4792,12 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** advanced
 
+??? abstract "Okta Many Passwords Reset Attempt"
+    
+    This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
+    
+    - **Effort:** advanced
+
 ??? abstract "Okta Suspicious Activity Reported"
     
     Detects when a user reports suspicious activity for their Okta account. These events should be investigated, as they can help security teams identify when an adversary is attempting to gain access to their network.
@@ -4766,7 +4808,7 @@ Rules catalog includes **669 built-in detection rules** (_last update on 2023-02
     
     An user tries to access an unauthorized application.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "User Added to Local Administrators"
     

@@ -109,7 +109,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     
     An user tries to access an unauthorized application.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Okta User Account Created"
     
