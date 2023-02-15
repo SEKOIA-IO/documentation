@@ -4422,10 +4422,10 @@ Rules catalog includes **672 built-in detection rules** (_last update on 2023-02
     
     - **Effort:** intermediate
     
-    * **Changelog:**
-      - Date: 09/02/23
-      - Changelog Importance: minor
-      - Changes: Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote
+    - **Changelog:**
+      * Date: 09/02/23
+      * Changelog Importance: minor
+      * Changes: Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote
     
 ??? abstract "PowerShell EncodedCommand"
     
