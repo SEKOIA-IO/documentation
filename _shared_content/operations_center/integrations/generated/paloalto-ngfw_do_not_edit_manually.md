@@ -18,8 +18,8 @@ In details, the following table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `network` |
-| Type | `` |
+| Category | `authentication`, `network` |
+| Type | `info` |
 
 
 
@@ -37,11 +37,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "1,2020/12/04 16:00:02,016401002222,USERID,login,2305,2020/12/04 16:00:02,vsys,1.2.3.4,user1,srv1.example.local,0,1,12000,0,0,active-directory,,968683723,0x8000000000000000,12,0,0,0,,hostexample,1,,2020/12/04 16:00:02,1,0x80,user1",
         "event": {
             "category": [
-                "network"
+                "authentication"
             ],
             "kind": "event",
             "type": [
-                "denied"
+                "start"
             ]
         },
         "action": {
@@ -93,11 +93,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "1,2020/12/04 16:00:02,01640103000,USERID,login,2200,2020/12/04 16:00:02,vsys,10.0.0.2,user1,srv1.example.local,0,1,13000,0,0,active-directory,,968700000,0x8000000000000000,12,0,0,0,,hostname_example,1,,2020/12/04 16:00:02,1,0x0,user1",
         "event": {
             "category": [
-                "network"
+                "authentication"
             ],
             "kind": "event",
             "type": [
-                "denied"
+                "start"
             ]
         },
         "action": {
@@ -149,14 +149,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Palo Alto Networks|LF|2.0|AUTH|Radius|3|ProfileToken=xxxxx dtz=UTC rt=Feb 28 2021 18:20:54 deviceExternalId=xxxxxxxxxxxxx PanOSConfigVersion=10.0 PanOSAuthenticatedUserDomain=paloaltonetwork PanOSAuthenticatedUserName=xxxxx PanOSAuthenticatedUserUUID= PanOSClientTypeName= PanOSCortexDataLakeTenantID=xxxxxxxxxxxxx PanOSIsDuplicateLog=false PanOSIsPrismaNetworks=false PanOSIsPrismaUsers=false PanOSLogExported=false PanOSLogForwarded=true PanOSLogSource=firewall PanOSLogSourceTimeZoneOffset= PanOSRuleMatched= start=Feb 28 2021 18:20:40 cs3=vsys1 cs3Label=VirtualLocation c6a2=::ffff:0 c6a2Label=Source IPv6 Address c6a3=::ffff:0 c6a3Label=Destination IPv6 Address duser=paloaltonetwork\\\\xxxxx cs2=paloaltonetwork\\\\xxxxx cs2Label=NormalizeUser fname=Authentication object2 cs4=DC cs4Label=AuthenticationPolicy cnt=33554432 cn2=-5257671089978343424 cn2Label=MFAAuthenticationID PanOSMFAVendor=Symantec VIP cs6=rs-logging cs6Label=LogSetting cs1=deny-attackers cs1Label=AuthServerProfile PanOSAuthenticationDescription=www.something cs5=Unknown cs5Label=ClientType msg=Invalid Certificate cn1=0 cn1Label=AuthFactorNo externalId=xxxxxxxxxxxxx PanOSDGHierarchyLevel1=11 PanOSDGHierarchyLevel2=0 PanOSDGHierarchyLevel3=0 PanOSDGHierarchyLevel4=0 PanOSVirtualSystemName= dvchost=xxxxx PanOSVirtualSystemID=1 PanOSAuthenticationProtocol=EAP-TTLS with PAP PanOSRuleMatchedUUID= PanOSTimeGeneratedHighResolution=Feb 28 2021 18:20:41 PanOSSourceDeviceCategory=src_category_list-1 PanOSSourceDeviceProfile=src_profile_list-1 PanOSSourceDeviceModel=src_model_list-1 PanOSSourceDeviceVendor=src_vendor_list-1 PanOSSourceDeviceOSFamily=src_osfamily_list-0 PanOSSourceDeviceOSVersion=src_osversion_list-2 PanOSSourceDeviceHost=src_host_list-0 PanOSSourceDeviceMac=src_mac_list-2 PanOSAuthCacheServiceRegion= PanOSUserAgentString= PanOSSessionID=",
         "event": {
             "start": "2021-02-28T18:20:40.000000Z",
-            "category": [
-                "network"
-            ],
             "timezone": "UTC",
             "dataset": "auth",
             "kind": "event",
+            "category": [
+                "authentication"
+            ],
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 3
         },
@@ -179,7 +179,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "xxxxx",
-            "level": "3",
             "logger": "auth"
         },
         "observer": {
@@ -223,7 +222,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "dataset": "decryption",
             "kind": "event",
             "type": [
-                "end"
+                "info"
             ],
             "severity": 3
         },
@@ -241,7 +240,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "log": {
-            "level": "3",
             "logger": "decryption"
         },
         "network": {
@@ -310,14 +308,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "start": "2021-03-01T21:06:06.000000Z",
             "action": "alert",
-            "category": [
-                "network"
-            ],
             "timezone": "UTC",
             "dataset": "threat",
             "kind": "event",
+            "category": [
+                "file"
+            ],
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 3
         },
@@ -341,7 +339,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "PA-5220",
-            "level": "3",
             "logger": "threat"
         },
         "network": {
@@ -414,7 +411,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "reason": "Client cert not present",
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 3
         },
@@ -427,7 +424,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "log": {
-            "level": "3",
             "logger": "globalprotect"
         },
         "network": {
@@ -475,7 +471,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event",
             "type": [
-                "denied"
+                "info"
             ]
         },
         "action": {
@@ -536,7 +532,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "dataset": "hipmatch",
             "kind": "event",
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 3
         },
@@ -555,7 +551,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "PA-5220",
-            "level": "3",
             "logger": "hipmatch"
         },
         "observer": {
@@ -606,7 +601,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "duration": 0,
             "kind": "event",
             "type": [
-                "denied"
+                "start"
             ]
         },
         "action": {
@@ -680,7 +675,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "dataset": "iptag",
             "kind": "event",
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 3
         },
@@ -696,7 +691,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "PA-VM",
-            "level": "3",
             "logger": "iptag"
         },
         "observer": {
@@ -739,7 +733,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "dataset": "sctp",
             "kind": "event",
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 9
         },
@@ -760,7 +754,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "PA-5220",
-            "level": "9",
             "logger": "sctp"
         },
         "network": {
@@ -825,13 +818,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "1,2020/12/08 13:44:55,11111114444,SYSTEM,auth,0,2020/12/08 13:44:55,,auth-success,GP,0,0,general,informational,\"authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.\",5211100,0x8000000000000000,0,0,0,0,,fw1",
         "event": {
-            "category": [
-                "network"
-            ],
             "kind": "event",
             "reason": "authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.",
+            "category": [
+                "authentication"
+            ],
             "type": [
-                "denied"
+                "start"
             ]
         },
         "action": {
@@ -845,9 +838,24 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "observer": {
             "product": "PAN-OS"
         },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "user": {
+            "name": "user1"
+        },
         "paloalto": {
             "Threat_ContentType": "auth",
             "EventID": "auth-success"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "user1"
+            ]
         },
         "host": {
             "name": "fw1"
@@ -870,7 +878,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "duration": 0,
             "kind": "event",
             "type": [
-                "denied"
+                "start"
             ]
         },
         "action": {
@@ -938,14 +946,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "event": {
             "start": "2021-03-01T20:48:16.000000Z",
             "action": "drop-all",
-            "category": [
-                "network"
-            ],
             "timezone": "UTC",
             "dataset": "threat",
             "kind": "event",
+            "category": [
+                "malware"
+            ],
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 1
         },
@@ -976,7 +984,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "xxxxx",
-            "level": "1",
             "logger": "threat"
         },
         "network": {
@@ -1063,13 +1070,13 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "1,2021/08/31 14:00:02,001701000000,THREAT,vulnerability,2049,2021/08/31 14:00:02,10.0.0.2,10.2.0.1,0.0.0.0,0.0.0.0,abcd,,,web-browsing,vsys,env,zone2,a1.1,aec.2,podl,2021/08/31 14:00:02,279429,2,12345,80,0,0,0x2000,tcp,alert,\"EXAMPLE.PDF\",PDF Exploit Evasion Found(34805),any,informational,server-to-client,1320000,0x2000000000000000,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,FW,,,,,0,,0,,N/A,code-execution,AppThreat-0000-1111,0x0,0,422342342,",
         "event": {
             "action": "code-execution",
-            "category": [
-                "network"
-            ],
             "kind": "event",
             "reason": "PDF Exploit Evasion Found(34805)",
+            "category": [
+                "vulnerability"
+            ],
             "type": [
-                "denied"
+                "info"
             ]
         },
         "action": {
@@ -1149,7 +1156,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "reason": "tcp-fin",
             "type": [
-                "end"
+                "allowed"
             ],
             "severity": 3
         },
@@ -1175,7 +1182,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "LF-5698-NR",
-            "level": "3",
             "logger": "traffic"
         },
         "network": {
@@ -1258,7 +1264,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "reason": "tcp-fin",
             "type": [
-                "end"
+                "allowed"
             ],
             "severity": 3
         },
@@ -1284,7 +1290,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "GP cloud service",
-            "level": "3",
             "logger": "traffic"
         },
         "network": {
@@ -1371,7 +1376,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "event",
             "reason": "unknown",
             "type": [
-                "end"
+                "denied"
             ],
             "severity": 3
         },
@@ -1406,7 +1411,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "xxxxx",
-            "level": "3",
             "logger": "traffic"
         },
         "network": {
@@ -1586,7 +1590,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "dataset": "threat",
             "kind": "event",
             "type": [
-                "denied"
+                "info"
             ],
             "severity": 1
         },
@@ -1619,7 +1623,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "xxxxx",
-            "level": "1",
             "logger": "threat"
         },
         "network": {
@@ -1710,14 +1713,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Palo Alto Networks|LF|2.0|USERID|logout|3|ProfileToken=xxxxx dtz=UTC rt=Mar 01 2021 21:06:02 deviceExternalId=xxxxxxxxxxxxx PanOSConfigVersion= dntdom=paloaltonetwork duser=xxxxx duid= PanOSCortexDataLakeTenantID=xxxxxxxxxxxxx PanOSIsDuplicateLog=false PanOSIsDuplicateUser= PanOSIsPrismaNetworks=false PanOSIsPrismaUsers=false PanOSLogExported=false PanOSLogForwarded=true PanOSLogSource=firewall PanOSLogSourceTimeZoneOffset= PanOSUserGroupFound= start=Mar 01 2021 21:06:02 cs3=vsys1 cs3Label=VirtualLocation src=1.1.1.1 dst=1.1.1.1 duser0=paloaltonetworks\\\\xxxxx cs4=fake-data-source-169 cs4Label=MappingDataSourceName cat=0 cnt=1 cn3=3531 cn3Label=MappingTimeout spt=21015 dpt=49760 cs5=probing cs5Label=MappingDataSource cs6=netbios_probing cs6Label=MappingDataSourceType externalId=xxxxxxxxxxxxx PanOSDGHierarchyLevel1=12 PanOSDGHierarchyLevel2=0 PanOSDGHierarchyLevel3=0 PanOSDGHierarchyLevel4=0 PanOSVirtualSystemName= dvchost=PA-5220 cn2=1 cn2Label=VirtualSystemID cs1=xxxxx cs1Label=MFAFactorType end=Jul 09 2019 18:15:44 cn1=3 cn1Label=AuthFactorNo PanOSUGFlags=0x100 PanOSUserIdentifiedBySource=xxxxxxxxxxxxxx PanOSTag= PanOSTimeGeneratedHighResolution=Jul 25 2019 23:30:12",
         "event": {
             "start": "2021-03-01T21:06:02.000000Z",
-            "category": [
-                "network"
-            ],
             "timezone": "UTC",
             "dataset": "userid",
             "kind": "event",
+            "category": [
+                "authentication"
+            ],
             "type": [
-                "denied"
+                "end"
             ],
             "severity": 3
         },
@@ -1737,7 +1740,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "log": {
             "hostname": "PA-5220",
-            "level": "3",
             "logger": "userid"
         },
         "observer": {
@@ -1799,6 +1801,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.severity` | `long` | Numeric severity of the event. |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.timezone` | `keyword` | Event time zone. |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
 |`host.hostname` | `keyword` | Hostname of the host. |
 |`host.id` | `keyword` | Unique host id. |
@@ -1827,9 +1830,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`observer.version` | `keyword` | Observer version. |
+|`paloalto.Threat_ContentType` | `keyword` | Type associated with the threat |
 |`rule.name` | `keyword` | Rule name |
 |`rule.uuid` | `keyword` | Rule UUID |
-|`source.address` | `keyword` | Source network address. |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
 |`source.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`source.ip` | `ip` | IP address of the source. |
