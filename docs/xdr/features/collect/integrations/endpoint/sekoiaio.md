@@ -39,10 +39,8 @@ The Endpoint Detection Agent supports the following operating systems:
 
 ### Intake creation and download of the executable
 
-The first step to use the agent is to create a new intake associated to the SEKOIA.IO Agent.
+The first step to use the agent is to create a [new intake associated to the SEKOIA.IO Agent](https://app.sekoia.io/operations/intakes/new?match[name]=SEKOIA.IO%20Endpoint%20Agent){:target="_blank"}.
 A link to download the latest version of the agent is available in the description of the intake.
-
-![SEKOIA.IO for Endpoints intake](/assets/operation_center/data_collection/ingestion_methods/agent/sekoiaio_for_endpoints.png){: style="max-width:100%"}
 
 ### Installation
 
