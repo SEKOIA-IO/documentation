@@ -6,9 +6,9 @@ type: intake
 
 SonicWall firewalls enable you to identify and control all applications that are running on your network. By identifying applications based on their unique signatures rather than ports or protocols, this additional control improves compliance and data leakage prevention.
 
-{!_shared_content/operations_center/integrations/generated/sonicwall-fw_do_not_edit_manually.md!}
-
 {!_shared_content/operations_center/detection/generated/attack_ee0b3023-524c-40f6-baf5-b69c7b679887_do_not_edit_manually.json!}
+
+{!_shared_content/operations_center/integrations/generated/sonicwall-fw_do_not_edit_manually.md!}
 
 ## Configure
 
