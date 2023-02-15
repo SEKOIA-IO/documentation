@@ -160,6 +160,7 @@ nav:
           - Palo Alto Next-Generation Firewall: xdr/features/collect/integrations/network/paloalto.md
           - Pulse / Ivanti Secure Connect: xdr/features/collect/integrations/network/pulse.md
           - Rubycat PROVE IT: xdr/features/collect/integrations/network/rubycat_prove_it.md
+          - SonicWall Firewall: xdr/features/collect/integrations/network/sonicwall_fw.md
           - Sophos Firewall: xdr/features/collect/integrations/network/sophos_fw.md
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield SNS: xdr/features/collect/integrations/network/stormshield_network_security.md
