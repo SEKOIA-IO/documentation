@@ -21,6 +21,14 @@ to SEKOIA.IO by means of an Rsyslog transport channel.
 - Have an Address Object Created on the Firewall for SonicWall Analytics system.
 - Have an internal log concentrator (Rsyslog)
 
-### SonicWall 6.5 and 7.X
+### Enable Syslog forwarding for SonicWall 6.5 and 7.X
 
-Follow this [guide](https://www.sonicwall.com/support/knowledge-base/how-can-i-configure-a-syslog-server-on-a-sonicwall-firewall/170505984096810/) and the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to setup the syslog server.
+Log on your SonicWall appliance and follow this [guide](https://www.sonicwall.com/support/knowledge-base/how-can-i-configure-a-syslog-server-on-a-sonicwall-firewall/170505984096810/) to enable syslog forwarding.
+
+### Create the intake
+
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format SonicWall Firewall.
+
+### Transport to SEKOIA.IO
+
+Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
