@@ -4423,9 +4423,9 @@ Rules catalog includes **672 built-in detection rules** (_last update on 2023-02
     - **Effort:** intermediate
     
     - **Changelog:**
-        - Date: 09/02/23
-        - Changelog importance: minor
-        - Changes: Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote
+        ??? Date: 09/02/23
+            - Changelog importance: minor
+            - Changes: Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote
     
 ??? abstract "PowerShell EncodedCommand"
     
@@ -7203,9 +7203,9 @@ Rules catalog includes **672 built-in detection rules** (_last update on 2023-02
     - **Effort:** intermediate
     
     - **Changelog:**
-      - Date: 15/02/23
-      - Changelog Importance: minor
-      - Changes: "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
+        ??? Date: 15/02/23
+            - Changelog Importance: minor
+            - Changes: "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
     
 **Data Encoding**
 
