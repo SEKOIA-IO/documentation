@@ -284,3 +284,6 @@ sudo tcpdump -i <change_with_interface_name> -c10 -nn src <remote_ip> -vv
    meaning the flow is opened.
 
 3. Finally check the status of the SEKOIA.IO plateform on [https://status.sekoia.io](https://status.sekoia.io)
+
+## Additional information
+The image used to run the concentrator is maintained on [this github repository](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator). Feel free to contribute and make a pull request to improve the concentrator !
