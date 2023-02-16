@@ -485,16 +485,18 @@ When several conditions match the same event, the smart description with the mos
 ## Notification when an intake is not receiving events
 
 You can set a notification when an intake stops receiving events:
-- On the Intake's page by clicking on the bell (next to the delete icon)
+
+- On the Intake's page by clicking on the bell next to the delete button
 - On the `Notifications` page of the User Center
 
-![Intake notification](docs/assets/operation_center/intakes/2022-12-30_16h35_06.png)
+![Intakenotification](/assets/operation_center/intakes/2022-12-30_16h35_06.png)
 
-Configuration setup:
-- Trigger : `No Events are received`
-- Period : Period of time when the intake selected did not receive any events
+Here is the needed configuration setup:
+
+- Trigger: `No Events are received`
+- Period: Period of time when the intake selected did not receive any events
 - Intake
-- Actions to perform :  Choose a channel where the notification will be sent
+- Actions to perform:  Choose a channel where the notification will be sent
 - Notification name
 
 ---
