@@ -1,13 +1,11 @@
 # SEKOIA.IO Docker concentrator
 ## Overview
 [Docker](https://docs.docker.com/get-started/overview/) is a tool that can be used to run packaged applications in an isolated environment on a host.
-Packaged applications are stored in an object called an image, which includes an OS, the dependencies and the configuration. With that, the application will have the same behaviour whatever the OS used on the host as long as it's a x86-64 Linux host.
+Packaged applications are stored in an object called an image, which includes an OS, the dependencies and the configuration. the application will have the same behaviour on all OS used on the host as long as it's a x86-64 Linux host.
 
-SEKOIA.IO offers a preconfigured concentrator based on Docker to forward events on the platform.
+SEKOIA.IO offers a simplified process to forward your events on the platform with a preconfigured concentrator based on Docker.
 
-This method simplfies as much as possible the configuration needed to set up a concentrator.
-
-For that, each technologies will send their logs to a specific port on the concentrator, to easily identify them and forward them to the right Intake.
+Each technologies will send their logs to a specific port on the concentrator, to easily identify them and forward them to the right Intake.
 
 ## Prerequisites
 * A x86-64 Linux host
@@ -19,12 +17,13 @@ For that, each technologies will send their logs to a specific port on the conce
 This section describe how to install Docker using the `apt` repository on one of those Debian 64-bit versions:
 
 * Debian Bullseye 11 (stable)
-* Debian Buster 10 (oldstable)
+* Debian Buster 10 (old stable)
 
-All of the installation steps come from the [official Docker Engine installation for Debian](https://docs.docker.com/engine/install/debian/). Feel free to consult the official installation page for more information.
+All of the installation steps come from the [official Docker Engine installation for Debian](https://docs.docker.com/engine/install/debian/). 
+Feel free to consult the official installation page for more information.
 To install Docker on another Linux OS, please consult the [official Docker documentation](https://docs.docker.com/engine/install/)
 
-### Uninstall old verions
+### Uninstall old versions
 Run the following command to uninstall old Docker versions:
 ```bash
 sudo apt-get remove docker docker-engine docker.io containerd runc
@@ -147,7 +146,7 @@ logging:
 Docker logging system offers the flexibility to view events received on the container in real time with the command `docker logs <container_name>`. These logs are stored by default in `/var/lib/docker/containers/<container_uuid>/<container_uuid>-json.log`. To avoid the overload of disk space on your host, some options are specified. `max-size` specifies the maximum size of one file and `max-file` specifies the total number of files allowed. When the maximum number of files is reached, a log rotation is performed and the oldest file is deleted.
 
 !!!Note
-  Docker logging system has nothing to do with SEKOIA.IO or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
+  Docker logging system is an independent solution from SEKOIA.IO IO or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
 
 #### Environment variables
 ```yaml
@@ -156,7 +155,7 @@ environment:
     - DISK_SPACE=32g
 ```
 
-Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporaly issue in transmitting events to SEKOIA.IO. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
+Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to SEKOIA.IO. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
 
 * `MEMORY_MESSAGES=1000000` means the queue is allowed to store up to 100000 messages in memory. Since in the image configuration, the maximum value of a message is 20k, 100000 means 100000 * 20000 = 2G
 * `DISK_SPACE=32g` means the queue is allowed to store on disk up to 32 giga of messages.
@@ -167,7 +166,7 @@ ports:
     - "20516-20518:20516-20518"
 ```
 
-As specified in the Overview section, the concentrator will be run in a isolated environment. That means, by default, no flow is open between the host and the concentrator. 
+As specified in the Overview section, the concentrator will be run in an isolated environment. That means, by default, no flow is open between the host and the concentrator. 
 `20516-20518:20516-20518` means that every packets coming through the TCP port `20516`, `20517` or `20518` to the host will be forwarded to the concentrator container on the port 20516, 20517 or 20518. Please adapt these values accordingly to the intakes.yaml file.
 
 #### Volumes
@@ -229,13 +228,13 @@ sudo docker compose logs -f
 sudo docker compose stop
 ```
 
-**To delete the concentrator (the concentrator needs to be stopped):**
+**To delete the concentrator (the concentrator needs to be stopped first):**
 ```bash
 sudo docker compose rm
 ```
 
 ## Troubleshooting
-You can't the logs in your community ? No worries this section will give you the advice to see what is happening.
+You can't see the logs in your community ? No worries this section will provide you some advices to see what is happening.
 
 ### Step 1: check if the events are received by the concentrator
 To check if the events are received by the concentrator, you can run the following command that will display all the last logs received:
@@ -253,14 +252,14 @@ Finally, if you want to check if events are coming in real time:
 sudo docker compose logs -f
 ```
 
-**You don't see your events with these commands ?** 
+**You still don't see your events with these commands ?** 
 
-1. Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted. You can also verify these information are taken into account by the concentrator. At start-up the concentrator always shows the list of Intakes with the protocols and ports.
+1. Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted. You can also verify these information are taken into account by the concentrator. After the system has started, the concentrator always shows the list of Intakes with the protocols and ports.
   ```bash
   sudo docker compose logs | more
   ```
 
-2. Check that you correctly declared the `ports` section in the `docker-compose.yml` file accordingly with the ports declared in  the `intakes.yaml` file.
+2. Check that you have correctly declared the `ports` section in the `docker-compose.yml` file accordingly with the ports declared in  the `intakes.yaml` file.
    For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be `"25020-25023"`. 
 
 3. Verify that traffic is incoming from your log source, meaning no firewall is blocking the events:
