@@ -426,12 +426,14 @@ To receive and process HaProxy logs, you have to follow these steps:
 
     Uncomment the following lines in the `/etc/rsyslog.conf` file.
     ```bash
+    # module(load="imuxsock") # provides support for local system logging
+    # module(load="immark")  # provides --MARK-- message capability
+
     # module(load="imudp")
     # input(type="imudp" port="514")
     # input(type="imtcp" port="514")
     
-    # Set the maximum supported message size
-    # $MaxMessageSize 20k
+    # $MaxMessageSize 20k  # Set the maximum supported message size
     ```
 
 2. Create configuration files for each technology you want to forward to SEKOIA.IO.
