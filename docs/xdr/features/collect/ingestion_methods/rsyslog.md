@@ -392,6 +392,82 @@ To receive and process Windows logs, you have to follow these steps:
 	sudo systemctl restart rsyslog.service
 	```
 
+### Use case: pattern matching for incoming HaProxy logs
+
+#### Identify the pattern
+
+To receive and process HaProxy logs, you have to follow these steps: 
+
+1. Verify that traffic is incoming from your log source
+
+	```bash
+	sudo tcpdump -i <change_with_interface_name> -c10 -nn src <IP_OF_THE_SOURCE> -vv
+	```
+	
+	!!!tip
+		Use `ip addr` command to find the relevant information to replace `<change_with_interface_name>`.
+
+
+2. Ensure syslog events are correctly handled by the Rsyslog server
+
+	For example, in HaProxy event logs, the field `hostname` is often used. 
+
+	```bash
+	sudo tail -f /var/log/syslog | grep -i "Hostname"
+	```
+
+    !!!note
+        Depending of the rules set in `/etc/rsyslog.conf`, adapt the path `/var/log/syslog` with the path where the syslog messages are stored - For instance `/var/log/messages`
+
+
+#### Forward HaProxylogs to SEKOIA.IO
+
+1. Create configuration files for each technology you want to forward to SEKOIA.IO.
+
+	Create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
+
+	Example for the HaProxy log collection:
+
+	```bash
+	sudo touch /etc/rsyslog.d/49-haproxy.conf
+	```
+
+2. Edit each configuration file as needed
+
+	```bash
+	sudo vim /etc/rsyslog.d/49-haproxy.conf
+	```
+
+	The **Intake key** is needed in this step. Ensure to replace `YOUR_INTAKE_KEY` by your HaProxy Intake Key.
+
+	You should also adapt the template name `SEKOIAIOHaProxyTemplate` and the `if` condition parameters with appropriate content as explained in the previous section.
+
+	Following the same example for HaProxy log collection:
+	
+	```bash
+	# Customize the syslog header the an Intake Key to be collected on SEKOIA.IO while adding a new intake from the catalogue
+	template(name="SEKOIAIOHaProxyTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
+
+	# Use a condition that identifies specifically HaProxy logs that send them to SEKOIA.IO
+	if ($programname startswith 'haproxy') then {
+	    action(
+		type="omfwd"
+		protocol="tcp"
+		target="<Your_Concentrator_domain>"
+		port="10514"
+		TCP_Framing="octet-counted"
+		Template="SEKOIAIOHaProxyTemplate"
+	    )
+	}
+	```
+		
+3. Restart the Rsyslog service and make sure it is correctly set up 
+
+	```bash
+	sudo systemctl restart rsyslog.service && systemctl status rsyslog.service
+	```
+
+
 ## See your events on SEKOIA.IO XDR
 
 Once you're done with all the actions above, you should see your events displayed in real-time on SEKOIA.IO.
