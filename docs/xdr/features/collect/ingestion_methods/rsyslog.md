@@ -422,7 +422,19 @@ To receive and process HaProxy logs, you have to follow these steps:
 
 #### Forward HaProxylogs to SEKOIA.IO
 
-1. Create configuration files for each technology you want to forward to SEKOIA.IO.
+1. Modify the `/etc/rsyslog.conf` main configuration file
+
+    Uncomment the following lines in the `/etc/rsyslog.conf` file.
+    ```bash
+    # module(load="imudp")
+    # input(type="imudp" port="514")
+    # input(type="imtcp" port="514")
+    
+    # Set the maximum supported message size
+    # $MaxMessageSize 20k
+    ```
+
+2. Create configuration files for each technology you want to forward to SEKOIA.IO.
 
 	Create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
 
@@ -432,7 +444,7 @@ To receive and process HaProxy logs, you have to follow these steps:
 	sudo touch /etc/rsyslog.d/49-haproxy.conf
 	```
 
-2. Edit each configuration file as needed
+3. Edit each configuration file as needed
 
 	```bash
 	sudo vim /etc/rsyslog.d/49-haproxy.conf
@@ -461,7 +473,7 @@ To receive and process HaProxy logs, you have to follow these steps:
 	}
 	```
 		
-3. Restart the Rsyslog service and make sure it is correctly set up 
+4. Restart the Rsyslog service and make sure it is correctly set up 
 
 	```bash
 	sudo systemctl restart rsyslog.service && systemctl status rsyslog.service
