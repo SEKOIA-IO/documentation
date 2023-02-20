@@ -468,7 +468,7 @@ To receive and process HaProxy logs, you have to follow these steps:
 		type="omfwd"
 		protocol="tcp"
 		target="<Your_Concentrator_domain>"
-		port="10514"
+		port="<your_Port>"
 		TCP_Framing="octet-counted"
 		Template="SEKOIAIOHaProxyTemplate"
 	    )
