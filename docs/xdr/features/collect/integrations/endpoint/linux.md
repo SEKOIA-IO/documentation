@@ -5,18 +5,19 @@ type: intake
 ## Overview
 Linux is a family of free and open-source software operating systems built around the Linux kernel.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_aca13e14-5f7a-4587-bd04-ce0a739f65bd_do_not_edit_manually.md!}
+!!! warning
+    This format is deprecated. We highly recommend you to use one of these alternative formats:
 
-{!_shared_content/operations_center/integrations/generated/linux_do_not_edit_manually.md!}
+    - [SEKOIA.IO endpoint agent](sekoiaio.md)
+    - [auditbeat](auditbeat_linux.md)
 
-## Configure
+    or one of these numerous EDR formats supported by SEKOIA.IO:
 
-As of now, the main solution to collect Linux logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
+    - [CrowdStrike Falcon](crowdstrike_falcon.md)
+    - [Cybereason](cybereason_malop.md)
+    - [Harfanglab](harfanglab.md)
+    - [Sentinel One](sentinelone.md)
+    - [Sophos EDR](sophos_edr.md)
+    - [Tehtris](tehtris_edr.md)
+    - [Trend Micro Deep Security](trend_micro_deep_security.md)
 
-### Rsyslog
-
-Please refer to the documentation of Linux to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
-
-## Further Readings
-
-- [Logging with rsyslog on Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/s1-basic_configuration_of_rsyslog)
