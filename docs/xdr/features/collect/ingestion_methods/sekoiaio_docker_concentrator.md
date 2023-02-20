@@ -355,3 +355,37 @@ sudo apt remove telnet
 ## Additional information
 
 The image used to run the concentrator is maintained on [this github repository](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator). Feel free to contribute and make a pull request to improve the concentrator!
+
+## 5 minutes setup
+
+!!! Warning
+  This script will automate all the steps detailed on this page. Please carrefully read the content of this page prior to execute it.
+
+Connect to the remote server where you would like to install the SEKOIA.IO Docker Concentrator.
+Then follow those steps:
+
+1. Execute a script to setup the docker
+
+```bash
+wget https://github.com/SEKOIA-IO/documentation/blob/main/docs/assets/operation_center/ingestion_methods/sekoiaio_docker_concentrator/sekoiaio_docker_concentrator_autosetup.sh
+chmod +x sekoiaio_docker_concentrator_autosetup.sh
+./sekoiaio_docker_concentrator_autosetup.sh
+rm sekoiaio_docker_concentrator_autosetup.sh
+```
+
+2. Edit the configuration files
+
+- `sekoiaio-concentrator/intakes.yaml` by replacing the `name`, `protocol`, `port` and `intake_key` for each intake you would like to collect 
+- `sekoiaio-concentrator/docker-compose.yml` by remplacing the value `"20516-20518:20516-20518"` by a relevant content according to the `sekoiaio-concentrator/intakes.yaml` previously edited
+
+3. Start the docker
+
+Follow the process you can find on the section [Start the contenctrator](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_docker_concentrator.md/#start-the-concentrator) of this page.
+
+```bash
+sudo docker compose up -d
+sudo docker compose ps
+sudo docker compose logs -f
+```
+
+Enjoy your docker!
