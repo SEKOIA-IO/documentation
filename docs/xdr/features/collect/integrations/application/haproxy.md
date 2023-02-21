@@ -28,7 +28,7 @@ HaProxy logs are now generated on your machine.
 
 After HaProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO
 
-Here is an example of HaProxy configuration file on Rsyslog to be used (to be adapted):
+Here is an example of HAProxy configuration file on Rsyslog to be used (to be adapted):
 ````
 # Use a condition that identifies specifically HaProxy logs that send them to a syslog concentrator
 if ($programname startswith 'haproxy') then {
