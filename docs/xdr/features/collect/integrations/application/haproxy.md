@@ -9,7 +9,7 @@ HAProxy is a free, open source software that provides a high availability load b
 
 {!_shared_content/operations_center/integrations/generated/haproxy_do_not_edit_manually.md!}
 
-## HaProxy Configuration
+## HAProxy Configuration
 
 1- Setup HaProxy following the official documentation on section below
 HaProxy configuration default file `haproxy.cfg` will be found on repo `/etc/haproxy`
