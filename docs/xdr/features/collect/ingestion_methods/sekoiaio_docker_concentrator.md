@@ -369,13 +369,13 @@ To update the concentrator, just change the tag in `docker-compose.yml`, then re
 sudo docker compose up -d
 ```
 
-There is a special tag called `latest` which always refers to the latest version. If you use this tag, every time the concentrator will be recreated, the image will be updated with the latest version.
+There is a special tag called `latest` which always refers to the latest version. If you use this tag, every time the concentrator will be recreated, the image will be updated to the latest version.
 
 !!! Important
     Be very careful if you use the tag `latest` in production! If a major change is present in a new version, it could break your current concentrator with the settings in place.
 
 !!! Important
-    Each image version is also updated every week in order to update the OS contained in the image with the latest security patches. You are responsible for re-creating the concentrator periodically to initiate the image update.
+    Each image version is also updated every week in order to update the OS contained in the image with the latest security patches. You are responsible for recreating the concentrator periodically to initiate the image update.
 
 
 ## How do I add a new Intake later ?
