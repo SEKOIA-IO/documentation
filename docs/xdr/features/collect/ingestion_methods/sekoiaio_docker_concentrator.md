@@ -7,10 +7,10 @@ Packaged applications are stored in an object called an image, which includes an
 
 SEKOIA.IO offers a preconfigured concentrator based on Docker to forward events on the platform.
 
-This method simplfies as much as possible the configuration needed to set up a concentrator in order to collect logs and send them on the each relevant Intakes.
+This method simplifies as much as possible the configuration needed to set up a concentrator in order to collect logs and send them on each relevant Intakes.
 
 !!! Warning
-    In this method each technology MUST send their logs on different ports (of your choice) of the concentrator in order to make it work. The main principale of this methode is to discriminate each technology by port to link them with the right Intake key.
+    In this method each technology MUST send their logs on different ports (of your choice) of the concentrator in order to make it work. The main principle of this method is to discriminate each technology by port to link them with the right Intake key.
 
 
 ## Prerequisites
@@ -177,7 +177,7 @@ logging:
 Docker logging system offers the flexibility to view events received on the container in real time with the command `docker logs <container_name>`. These logs are stored by default in `/var/lib/docker/containers/<container_uuid>/<container_uuid>-json.log`. To avoid the overload of disk space on your host, some options are specified. `max-size` specifies the maximum size of one file and `max-file` specifies the total number of files allowed. When the maximum number of files is reached, a log rotation is performed and the oldest file is deleted.
 
 !!! Note
-    Docker logging system is an independent solution from SEKOIA.IO IO or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
+    Docker logging system is an independent solution from SEKOIA.IO or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
 
 #### Environment variables
 
@@ -315,7 +315,7 @@ sudo docker compose logs -f
     sudo docker compose logs | more
     ```
 
-3. Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the sames as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be `"25020-25023:25020-25023"`. 
+3. Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be `"25020-25023:25020-25023"`. 
 
 4. Verify that traffic is incoming from your log source, meaning no firewall is blocking the events.
     ```bash
@@ -404,7 +404,7 @@ To add a new Intake, it's very simple ! Follow these steps:
 ## 5 minutes setup on Debian
 
 !!! Warning
-    This script will automate all the steps detailed on this page **for a Debian host**. Please carefully read the content of this page prior to execute it.
+    This script will automate all the steps detailed on this page **for a Debian host**. Please read carefully the content of this page prior to execute it.
 
 Connect to the remote server where you would like to install the SEKOIA.IO Docker Concentrator.
 Then follow those steps:
