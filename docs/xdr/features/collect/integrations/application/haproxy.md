@@ -21,7 +21,7 @@ HAProxy configuration default file `haproxy.cfg` will be found in the directory 
 
 3- Restart HAProxy for configuration to be taken account and verify the status
 ````
-	sudo systemctl restart HaProxy.conf && systemctl status HaProxy.conf
+	sudo systemctl restart haproxy && systemctl status haproxy
 ````
 
 HAProxy logs are now generated on your machine.
