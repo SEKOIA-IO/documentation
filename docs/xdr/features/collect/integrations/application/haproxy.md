@@ -24,7 +24,7 @@ HAProxy configuration default file `haproxy.cfg` will be found in the directory 
 	sudo systemctl restart HaProxy.conf && systemctl status HaProxy.conf
 ````
 
-HaProxy logs are now generated on your machine.
+HAProxy logs are now generated on your machine.
 
 After HAProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO
 
