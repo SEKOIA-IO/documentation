@@ -26,7 +26,7 @@ HaProxy configuration default file `haproxy.cfg` will be found on repo `/etc/hap
 
 HaProxy logs are now generated on your machine.
 
-After HaProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO
+After HAProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO
 
 Here is an example of HAProxy configuration file on Rsyslog to be used (to be adapted):
 ````
