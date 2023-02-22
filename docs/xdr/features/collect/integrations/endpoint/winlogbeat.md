@@ -29,14 +29,14 @@ The following prerequisites are needed in order to setup efficient log concentra
 2. Extract the archive into `C:\Program Files\winlogbeat`
 3. Open a PowerShell prompt as an Administrator and run the following commands to install the service
 
-```bash
+```powershell
 PS C:\Users\Administrator> cd 'C:\Program Files\winlogbeat'
 PS C:\Program Files\winlogbeat> .\install-service-winlogbeat.ps1
 ```
 
 4. Replace the configuration file `C:\Program Files\winlogbeat\winlogbeat.yml` by the following content:
 
-```bash
+```yaml
 winlogbeat.event_logs:
   - name: Application
     ignore_older: 72h
@@ -103,19 +103,19 @@ logging.level: info
 
 5. Save and validate the configuration with the command:
 
-```bash
+```powershell
 PS C:\Program Files\Winlogbeat> .\winlogbeat.exe test config -c .\winlogbeat.yml -e
 ```
 
 6. Set up assets:
 
-```bash
+```powershell
 PS C:\Program Files\Winlogbeat> .\winlogbeat.exe setup -e
 ```
 
 7. Start the Winlogbeat service:
 
-```bash
+```powershell
 PS C:\Program Files\Winlogbeat> Start-Service winlogbeat
 ```
 
