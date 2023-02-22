@@ -22,41 +22,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 {!_shared_content/operations_center/integrations/cloudflare_necessary_info.md!}
 
-#### Configure Logpush
-
-##### Retrieve all available fields with your subscription
-
-Depending on your subscription, you first need to get all the fields that you can forward to SEKOIA.IO by using the Cloudflare API [Retrieve all available fields for a dataset](https://developers.cloudflare.com/logs/get-started/api-configuration/){:target="_blank"}.
-
-With cURL you can use this command:
-```bash
-curl -s -H "X-Auth-Email: <Cloudflare Email Address>" \
--H "X-Auth-Key: <Cloudflare API Token>" \
-"https://api.cloudflare.com/client/v4/zones/<Cloudflare Zone ID>/logpush/datasets/dns_logs/fields" \
-| jq '.result' # (1)
-```
-
-1. will return
-```json
-{
-  "ColoCode": "string; IATA airport code of data center that received the request",
-  "EDNSSubnet": "string; EDNS Client Subnet (IPv4 or IPv6). See here: [EDNS Client Subnet](/logs/reference/glossary/#edns-client-subnet-ecs)",
-  "EDNSSubnetLength": "int; EDNS Client Subnet length. See here: [EDNS Client Subnet](/logs/reference/glossary/#edns-client-subnet-ecs)",
-  "QueryName": "string; name of the query that was sent",
-  "QueryType": "int; integer value of query type. See here: [Query type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4)",
-  "ResponseCached": "bool; whether the response was cached or not",
-  "ResponseCode": "int; integer value of response code. See here: [Response code](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6)",
-  "SourceIP": "string; IP address of the client (IPv4 or IPv6)",
-  "Timestamp": "int or string; timestamp at which the query occurred"
-}
-```
-
-Save the fields you want to send to SEKOIA.IO. It will be used to [configure the Logpush job](#configure-logpush). It this example :
-```bash
-ColoCode,EDNSSubnet,EDNSSubnetLength,QueryName,QueryType,ResponseCached,ResponseCode,SourceIP,Timestamp
-```
-
-##### Create a Logpush job
+#### Create a Logpush job
 
 Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpush-api-configuration/){:target="_blank"} with the following destination:
 
@@ -66,16 +32,15 @@ Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpu
 To do so, you can manage Logpush with cURL:
 
 ```bash
-$ curl -X POST https://api.cloudflare.com/client/v4/zones/<Cloudflare Zone ID>/logpush/jobs \
--h "X-Auth-Email: <Cloudflare Email Address>" \
--H "X-Auth-Key: <Cloudflare API Token>" \
+$ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/logpush/jobs \
+-H "Authorization: Bearer <CLOUDFLARE_API_TOKEN>" \
 -H "Content-Type: application/json" \
 --data '{
     "dataset": "dns_logs",
     "enabled": true,
     "max_upload_bytes": 5000000,
     "max_upload_records": 1000,
-    "logpull_options":"fields=<LIST_OF_FIELDS>&timestamps=rfc3339",
+    "logpull_options":"fields=ColoCode,EDNSSubnet,EDNSSubnetLength,QueryName,QueryType,ResponseCached,ResponseCode,SourceIP,Timestamp&timestamps=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>"
 }' # (1)
 ```
@@ -104,6 +69,7 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<Cloudflare Zone ID>/l
     Replace :
 
     - `<YOUR_INTAKE_KEY>` with the Intake key you generated in the [Create the intake on SEKOIA.IO](#create-the-intake-on-sekoiaio) step.
-    - `<LIST_OF_FIELDS>` with the fields you identified in the [Retrieve all available fields with your subscription](#retrieve-all-available-fields-with-your-subscription) section (for instance `ColoCode,EDNSSubnet,EDNSSubnetLength,QueryName,QueryType,ResponseCached,ResponseCode,SourceIP,Timestamp`).
+    - `<CLOUDFLARE_API_TOKEN>` with the API Token you generated
+    - `<CLOUDFLARE_ZONE_ID>` with the Zone ID you grabbed
 
 {!_shared_content/operations_center/integrations/cloudflare_useful_api_endpoints.md!}
