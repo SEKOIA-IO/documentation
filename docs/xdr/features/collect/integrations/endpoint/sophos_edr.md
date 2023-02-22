@@ -17,6 +17,9 @@ This setup guide shows how to forward events produced by Sophos EDR to SEKOIA.IO
 
 ### Create SOPHOS EDR Credentials
 
+!!! Warning
+    If you have a "Partner" or "Organization" entity, you need to do the following procedure on every tenant attached to it. Please find more information on the [official documentation](https://developer.sophos.com/intro)
+
 In the Sophos Central Admin console:
 
 1. On the left panel, go to `Global Settings` and select `API Credentials Management`.
