@@ -15,21 +15,26 @@ HAProxy is a free, open source software that provides a high availability load b
 HAProxy configuration default file `haproxy.cfg` will be found in the directory `/etc/haproxy`
 
 2- Add the following line to this file as the 1st line of the `global` section 
-````
+
+```
         log 127.0.0.1    local2
-````
+```
 
 3- Restart HAProxy for configuration to be taken account and verify the status
-````
+
+```bash
 	sudo systemctl restart haproxy && systemctl status haproxy
-````
+```
 
 HAProxy logs are now generated on your machine.
 
-After HAProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO
+## Forward the HAProxy logs to a concentrator
 
-Here is an example of HAProxy configuration file on Rsyslog to be used (to be adapted):
-````
+After HAProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO.
+
+Here is an example of rsyslog configuration file to be adapted, that can be created under `/etc/rsyslog.d/`:
+
+```
 # Use a condition that identifies specifically HaProxy logs that send them to a syslog concentrator
 if ($programname startswith 'haproxy') then {
     action(
@@ -40,7 +45,7 @@ if ($programname startswith 'haproxy') then {
     TCP_Framing="octet-counted"
     )
 }
-````
+```
 
 For more information on Rsyslog configuration, please consult the next section.
 
