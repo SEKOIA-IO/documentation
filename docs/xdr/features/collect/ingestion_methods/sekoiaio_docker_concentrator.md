@@ -1,6 +1,9 @@
 # SEKOIA.IO Docker concentrator
 
 ## Overview
+!!! Important
+    This concentrator is still in BETA and will be released soon in GA. Some customers already tried it in production without encountering any problem but we want to get more feedback.
+    Please, do not hesite to give us feedback on our support platform if you try it !
 
 [Docker](https://docs.docker.com/get-started/overview/) is a tool that can be used to run packaged applications in an isolated environment on a host.
 Packaged applications are stored in an object called an image, which includes an OS, the dependencies and the configuration. With that, the application will have the same behaviour whatever the OS used on the host as long as it's a x86-64 Linux host.
