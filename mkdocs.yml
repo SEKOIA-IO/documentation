@@ -48,7 +48,7 @@ nav:
       - Overview: xdr/features/collect/ingestion_methods/index.md
       - Ingestion methods:
         - Rsyslog: 
-          - Overview: 	xdr/features/collect/ingestion_methods/Rsyslog/rsyslog.md
+          - Overview & Setup: 	xdr/features/collect/ingestion_methods/rsyslog.md
           - Forward Logs to SEKOIA.IO: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-forward_logs.md
           - See your events on SEKOIA.IO XDR: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-check_events.md
           - Troubleshooting: xdr/features/collect/ingestion_methods/Rsyslog/rsyslog-troubleshooting.md
