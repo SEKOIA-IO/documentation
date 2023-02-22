@@ -16,7 +16,7 @@ Connect to [Cloudflare Console](https://dash.cloudflare.com/) to collect the fol
       | Zone    | Logs              | Read  |
       | Zone    | Logs              | Edit  |
 
-   [see the Cloudflare documentation](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/)
+	[see the Cloudflare documentation](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/)
 
 2. **Cloudflare Zone ID** :
     - This information is specific to a Website.
