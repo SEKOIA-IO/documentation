@@ -9,6 +9,10 @@ Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Thro
 !!! warning
     This format is still in beta. Use it wisely
 
+!!! warning
+    If your tenant uses an allowlist to authorize connections, please ensure that SEKOIA.IO's IPs are allowed.
+    See our [FAQ](../../../../FAQ.md) to get our IPs.
+
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.md!}
 
