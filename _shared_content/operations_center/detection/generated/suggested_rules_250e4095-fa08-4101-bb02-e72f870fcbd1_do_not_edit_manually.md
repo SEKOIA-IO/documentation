@@ -669,6 +669,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     - **Effort:** master
 
+??? abstract "GPO Executable Delivery"
+    
+    Detects MSI binaries run through GPOs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "GitLab CVE-2021-22205"
     
     Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
