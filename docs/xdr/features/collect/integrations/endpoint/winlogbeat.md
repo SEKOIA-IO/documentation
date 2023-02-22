@@ -19,7 +19,7 @@ Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator privileges on the host
-- Traffic towards the log collector sever which is using Rsyslog must be open on port `TCP/514`
+- Traffic towards a logstash server which must listen beats input on port `TCP/5044`
 
 #### Configure the client
 
