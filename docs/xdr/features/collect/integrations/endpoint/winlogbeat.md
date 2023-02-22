@@ -13,17 +13,17 @@ Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON
 
 {!_shared_content/operations_center/integrations/generated/winlogbeat_do_not_edit_manually.md!}
 
-### Transport to the collector
+## Transport to the collector
 
-#### Prerequisites
+### Prerequisites
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator privileges on the host
 - Traffic towards a logstash server which must listen beats input on port `TCP/5044`
 
-#### Configure the client
+### Configure the client
 
-##### Install and configure Winlogbeat
+#### Install and configure Winlogbeat
 
 1. Download Winlogbeat zip from the Elastic.co [download page](https://www.elastic.co/downloads/beats/winlogbeat)
 2. Extract the archive into `C:\Program Files\winlogbeat`
