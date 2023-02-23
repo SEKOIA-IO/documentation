@@ -416,7 +416,7 @@ Then follow those steps:
 1. Execute a script to setup the docker
 
     ```bash
-    wget https://github.com/SEKOIA-IO/documentation/blob/main/docs/assets/operation_center/ingestion_methods/sekoiaio_docker_concentrator/sekoiaio_docker_concentrator_autosetup.sh
+    wget https://raw.githubusercontent.com/SEKOIA-IO/documentation/main/docs/assets/operation_center/ingestion_methods/sekoiaio_docker_concentrator/sekoiaio_docker_concentrator_autosetup.sh
     chmod +x sekoiaio_docker_concentrator_autosetup.sh
     ./sekoiaio_docker_concentrator_autosetup.sh
     rm sekoiaio_docker_concentrator_autosetup.sh
