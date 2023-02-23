@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-Cisco Meraki MX is multifunctional security and SD-WAN enterprise appliance with a wide set of capabilities.
+Cisco Meraki MX is a multifunctional security and SD-WAN enterprise appliance with a wide set of capabilities.
 
 !!! warning
     This format is still in beta, please use it wisely.
