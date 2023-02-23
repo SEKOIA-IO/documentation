@@ -18,7 +18,7 @@ In details, the following table denotes the type of events produced by this inte
 | Name | Values |
 | ---- | ------ |
 | Kind | `event` |
-| Category | `authentication`, `network` |
+| Category | `authentication`, `host`, `network`, `session` |
 | Type | `info` |
 
 
@@ -36,10 +36,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "1,2020/12/04 16:00:02,016401002222,USERID,login,2305,2020/12/04 16:00:02,vsys,1.2.3.4,user1,srv1.example.local,0,1,12000,0,0,active-directory,,968683723,0x8000000000000000,12,0,0,0,,hostexample,1,,2020/12/04 16:00:02,1,0x80,user1",
         "event": {
+            "dataset": "userid",
+            "kind": "event",
             "category": [
                 "authentication"
             ],
-            "kind": "event",
             "type": [
                 "start"
             ]
@@ -55,7 +56,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "logger": "userid"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "016401002222"
         },
         "source": {
             "address": "1.2.3.4",
@@ -66,8 +68,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "user1"
         },
         "paloalto": {
-            "Threat_ContentType": "login",
-            "EventID": "0"
+            "VirtualLocation": "vsys",
+            "EventID": "0",
+            "DGHierarchyLevel1": "12",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "VirtualSystemID": "1",
+            "Threat_ContentType": "login"
         },
         "related": {
             "ip": [
@@ -92,10 +100,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "1,2020/12/04 16:00:02,01640103000,USERID,login,2200,2020/12/04 16:00:02,vsys,10.0.0.2,user1,srv1.example.local,0,1,13000,0,0,active-directory,,968700000,0x8000000000000000,12,0,0,0,,hostname_example,1,,2020/12/04 16:00:02,1,0x0,user1",
         "event": {
+            "dataset": "userid",
+            "kind": "event",
             "category": [
                 "authentication"
             ],
-            "kind": "event",
             "type": [
                 "start"
             ]
@@ -111,7 +120,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "logger": "userid"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "01640103000"
         },
         "source": {
             "address": "10.0.0.2",
@@ -122,8 +132,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "user1"
         },
         "paloalto": {
-            "Threat_ContentType": "login",
-            "EventID": "0"
+            "VirtualLocation": "vsys",
+            "EventID": "0",
+            "DGHierarchyLevel1": "12",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "VirtualSystemID": "1",
+            "Threat_ContentType": "login"
         },
         "related": {
             "ip": [
@@ -182,6 +198,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "logger": "auth"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "alias": "Unknown"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "alias": "DC"
+                }
+            },
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -191,7 +217,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDeviceHost": "src_host_list-0",
             "PanOSSourceDeviceVendor": "src_vendor_list-1",
             "PanOSSourceDeviceModel": "src_model_list-1",
-            "PanOSSourceDeviceProfile": "src_profile_list-1"
+            "PanOSSourceDeviceProfile": "src_profile_list-1",
+            "VirtualLocation": "vsys1"
         },
         "related": {
             "hosts": [
@@ -285,7 +312,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "user": {
             "name": "paloaltonetwork\\\\\\\\xxxxx"
         },
-        "paloalto": {},
+        "paloalto": {
+            "VirtualLocation": "vsys1"
+        },
         "related": {
             "user": [
                 "paloaltonetwork\\\\\\\\xxxxx"
@@ -322,9 +351,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "@timestamp": "2021-03-01T21:06:06.000000Z",
         "destination": {
             "address": "1.1.1.1",
-            "geo": {
-                "country_iso_code": "1.1.1.1-1.1.1.1"
-            },
             "ip": "1.1.1.1",
             "nat": {
                 "ip": "1.1.1.1",
@@ -380,6 +406,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "paloalto": {
             "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx",
             "PanOSSourceLocation": "1.1.1.1-1.1.1.1",
+            "VirtualLocation": "smtp",
             "URLCategory": "any"
         },
         "related": {
@@ -403,15 +430,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "CEF:0|Palo Alto Networks|LF|2.0|GLOBALPROTECT|globalprotect|3|ProfileToken=xxxxx dtz=UTC rt=Mar 01 2021 20:35:54 PanOSDeviceSN=xxxxxxxxxxxxx PanOSConfigVersion= start=Mar 01 2021 20:35:54 PanOSVirtualSystem=vsys1 PanOSEventIDValue=satellite-gateway-update-route PanOSStage=connected PanOSAuthMethod=RADIUS PanOSTunnelType=ipsec PanOSSourceUserName=xxxxx\\\\\\\\xxxxx PanOSSourceRegion=ET PanOSEndpointDeviceName=machine_name2 PanOSPublicIPv4=1.1.1.1 PanOSPublicIPv6=xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx PanOSPrivateIPv4=1.1.1.1 PanOSPrivateIPv6=xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx PanOSHostID=xxxxxxxxxxxxxxe667947f-d92e-4815-9222-89438203bc2b PanOSEndpointSN=serialno_list-1 PanOSGlobalProtectClientVersion=3.0.9 PanOSEndpointOSType=Intel Mac OS PanOSEndpointOSVersion=9.3.5 PanOSCountOfRepeats=16777216 PanOSQuarantineReason=Malicious Traffic PanOSConnectionError=Client cert not present PanOSDescription=opaque_list-1 PanOSEventStatus=failure PanOSGlobalProtectGatewayLocation=San Francisco PanOSLoginDuration=1 PanOSConnectionMethod=connect_method_list-1 PanOSConnectionErrorID=0 PanOSPortal=portal_list-2 PanOSSequenceNo=34401910 PanOSTimeGeneratedHighResolution=Jul 25 2019 23:30:12 PanOSGatewaySelectionType= PanOSSSLResponseTime= PanOSGatewayPriority= PanOSAttemptedGateways= PanOSGateway= PanOSDGHierarchyLevel1=20 PanOSDGHierarchyLevel2=0 PanOSDGHierarchyLevel3=0 PanOSDGHierarchyLevel4=0 PanOSVirtualSystemName= PanOSDeviceName=PA-VM PanOSVirtualSystemID=1",
         "event": {
             "start": "2021-03-01T20:35:54.000000Z",
-            "category": [
-                "network"
-            ],
             "timezone": "UTC",
             "dataset": "globalprotect",
             "kind": "event",
             "reason": "Client cert not present",
+            "category": [
+                "session"
+            ],
             "type": [
-                "info"
+                "start"
             ],
             "severity": 3
         },
@@ -444,7 +471,14 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "xxxxx\\\\\\\\xxxxx"
         },
         "paloalto": {
-            "PanOSQuarantineReason": "Malicious Traffic"
+            "PanOSQuarantineReason": "Malicious Traffic",
+            "connection": {
+                "stage": "connected",
+                "method": "connect_method_list-1"
+            },
+            "authentication": {
+                "method": "RADIUS"
+            }
         },
         "related": {
             "hosts": [
@@ -466,30 +500,42 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "1,2020/12/08 14:30:55,011111114444,GLOBALPROTECT,0,2305,2020/12/08 13:30:55,vsys1,gw-auth,login,Other,,user,FR,AAAABBBBB,1.2.3.4,0.0.0.0,0.0.0.0,0.0.0.0,aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee,ABCDEFG,5.1.4,Windows,\"Microsoft Windows 10 Pro , 64-bit\",1,,,\"\",success,,0,user-logon,0,gw1,1234567,0x8000000000000000",
         "event": {
-            "category": [
-                "network"
-            ],
+            "dataset": "globalprotect",
             "kind": "event",
+            "category": [
+                "session"
+            ],
             "type": [
-                "info"
+                "start"
             ]
         },
         "action": {
             "type": "0",
+            "name": "gw-auth",
             "outcome": "success"
+        },
+        "host": {
+            "name": "AAAABBBBB",
+            "os": {
+                "version": "Microsoft Windows 10 Pro , 64-bit"
+            }
         },
         "log": {
             "logger": "globalprotect"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "ABCDEFG"
         },
         "source": {
-            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "user": {
+                "name": "user"
+            },
             "geo": {
                 "country_iso_code": "FR"
             },
-            "ip": "1.2.3.4"
+            "address": "1.2.3.4"
         },
         "user_agent": {
             "os": {
@@ -501,15 +547,19 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "user"
         },
         "paloalto": {
+            "VirtualLocation": "vsys1",
+            "EventID": "gw-auth",
             "Threat_ContentType": "0",
-            "EventID": "gw-auth"
+            "connection": {
+                "stage": "login"
+            }
         },
         "related": {
-            "ip": [
-                "1.2.3.4"
-            ],
             "user": [
                 "user"
+            ],
+            "ip": [
+                "1.2.3.4"
             ]
         }
     }
@@ -570,7 +620,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "xxxxx xxxxx"
         },
         "paloalto": {
-            "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx"
+            "PanOSEndpointSerialNumber": "xxxxxxxxxxxxxx",
+            "VirtualLocation": "vsys1",
+            "VirtualSystemID": "1"
         },
         "related": {
             "hosts": [
@@ -595,11 +647,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "<14>Sep 16 10:00:02 PP 1,9/16/19 10:00,1801017000,TRAFFIC,start,2049,9/16/19 10:00,1.2.3.4,4.3.2.1,1.2.3.4,10.0.1.2,PING,,,ping,vsys,AAAAA,Zone1,ethernet1/1,ae2.11,Secure,9/16/19 10:00,24100,3,0,0,0,0,0x500000,icmp,allow,222,222,0,3,9/16/19 10:00,0,any,0,50660388939,0x0,Spain,France,0,3,0,n/a,0,0,0,0,,PA,from-policy,,,0,,0,,N/A,0,0,0,0",
         "event": {
+            "dataset": "traffic",
+            "duration": 0,
+            "kind": "event",
             "category": [
                 "network"
             ],
-            "duration": 0,
-            "kind": "event",
             "type": [
                 "start"
             ]
@@ -629,7 +682,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "icmp"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "1801017000"
         },
         "rule": {
             "name": "PING"
@@ -646,6 +700,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 0
         },
         "paloalto": {
+            "VirtualLocation": "vsys",
             "Threat_ContentType": "start"
         },
         "related": {
@@ -703,7 +758,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.1.1.1",
             "ip": "1.1.1.1"
         },
-        "paloalto": {},
+        "paloalto": {
+            "VirtualLocation": "vsys1",
+            "VirtualSystemID": "1"
+        },
         "related": {
             "hosts": [
                 "PA-VM"
@@ -793,7 +851,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "name": "xxxxx"
         },
         "paloalto": {
-            "PanOSSourceLocation": "US"
+            "PanOSSourceLocation": "US",
+            "VirtualLocation": "vsys1"
         },
         "related": {
             "hosts": [
@@ -818,6 +877,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "1,2020/12/08 13:44:55,11111114444,SYSTEM,auth,0,2020/12/08 13:44:55,,auth-success,GP,0,0,general,informational,\"authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.\",5211100,0x8000000000000000,0,0,0,0,,fw1",
         "event": {
+            "dataset": "system",
             "kind": "event",
             "reason": "authenticated for user 'user1'.   auth profile 'GP', vsys 'vsys123', server profile 'LDAP', server address 'srv01.entreprise.local', From: 1.2.3.4.",
             "category": [
@@ -828,7 +888,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ]
         },
         "action": {
-            "type": "auth"
+            "type": "auth",
+            "name": "auth-success"
         },
         "log": {
             "hostname": "fw1",
@@ -836,18 +897,23 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "logger": "system"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "11111114444"
         },
         "source": {
-            "address": "1.2.3.4",
-            "ip": "1.2.3.4"
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
         },
         "user": {
             "name": "user1"
         },
         "paloalto": {
-            "Threat_ContentType": "auth",
-            "EventID": "auth-success"
+            "EventID": "auth-success",
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "auth"
         },
         "related": {
             "ip": [
@@ -872,11 +938,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "<14>Sep 16 10:00:02 PA-1 1,9/16/19 10:00,1801016000,TRAFFIC,start,2049,9/16/19 10:00,1.2.3.4,4.3.2.1,0.0.0.0,0.0.0.0,proxy1,,,web-browsing,vsys1234,v10213,zone1,a.1,b.2,Secure,9/16/19 10:00,60000,1,61000,80,0,0,0x0,tcp,allow,800,700,70,2,9/16/19 10:00,0,any,0,50660381839,0x0,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,0,2,1,n/a,0,0,0,0,,PP,from-policy,,,0,,0,,N/A,0,0,0,0",
         "event": {
+            "dataset": "traffic",
+            "duration": 0,
+            "kind": "event",
             "category": [
                 "network"
             ],
-            "duration": 0,
-            "kind": "event",
             "type": [
                 "start"
             ]
@@ -906,7 +973,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "tcp"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "1801016000"
         },
         "rule": {
             "name": "proxy1"
@@ -923,6 +991,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 61000
         },
         "paloalto": {
+            "VirtualLocation": "vsys1234",
             "Threat_ContentType": "start"
         },
         "related": {
@@ -930,6 +999,1401 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "0.0.0.0",
                 "1.2.3.4",
                 "4.3.2.1"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_cloud_election_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:36:37.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"url-filtering\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:36:23.000000Z\",\"VirtualLocation\":null,\"EventName\":\"cloud-election\",\"EventComponent\":\"\",\"VendorSeverity\":\"Informational\",\"EventDescription\":\"CLOUD ELECTION: serverlist2.urlcloud.paloaltonetworks.com IP: 35.244.229.101 was elected, measured alive test 143294.\",\"SequenceNo\":7200776623254143113,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:36:23.710000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "CLOUD ELECTION: serverlist2.urlcloud.paloaltonetworks.com IP: 35.244.229.101 was elected, measured alive test 143294.",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:36:23.000000Z",
+        "action": {
+            "type": "url-filtering"
+        },
+        "destination": {
+            "domain": "serverlist2.urlcloud.paloaltonetworks.com",
+            "ip": "35.244.229.101",
+            "address": "serverlist2.urlcloud.paloaltonetworks.com",
+            "top_level_domain": "com",
+            "subdomain": "serverlist2.urlcloud",
+            "registered_domain": "paloaltonetworks.com"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "url-filtering"
+        },
+        "related": {
+            "hosts": [
+                "serverlist2.urlcloud.paloaltonetworks.com"
+            ],
+            "ip": [
+                "35.244.229.101"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_dhcp_renew_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T17:08:26.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"dhcp\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T17:08:17.000000Z\",\"VirtualLocation\":null,\"EventName\":\"if-renew-trigger\",\"EventComponent\":\"\",\"VendorSeverity\":\"Informational\",\"EventDescription\":\"DHCP RENEW: interface eth0, ip 1.2.3.4 netmask 255.255.255.0 dhcp server: 1.2.3.1\",\"SequenceNo\":7200776623254143234,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T17:08:17.774000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "DHCP RENEW: interface eth0, ip 1.2.3.4 netmask 255.255.255.0 dhcp server: 1.2.3.1",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T17:08:17.000000Z",
+        "action": {
+            "type": "dhcp"
+        },
+        "destination": {
+            "address": "1.2.3.1"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "eth0"
+                }
+            },
+            "product": "PAN-OS"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "dhcp"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_dns_proxy_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:31:51.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"dnsproxy\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:31:50.000000Z\",\"VirtualLocation\":null,\"EventName\":\"if-inherit\",\"EventComponent\":\"mgmt-obj\",\"VendorSeverity\":\"Informational\",\"EventDescription\":\"DNS Proxy object: mgmt-obj inherited following values from dynamic interface: mgmt-if: Primary DNS: 1.2.3.1 Secondary DNS: ::\",\"SequenceNo\":7200776623254142979,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:31:50.584000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "DNS Proxy object: mgmt-obj inherited following values from dynamic interface: mgmt-if: Primary DNS: 1.2.3.1 Secondary DNS: ::",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:31:50.000000Z",
+        "action": {
+            "type": "dnsproxy"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "dnsproxy"
+        }
+    }
+    	
+	```
+
+
+=== "test_installed_package_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:49:04.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"general\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:48:57.000000Z\",\"VirtualLocation\":\"\",\"EventName\":\"general\",\"EventComponent\":null,\"VendorSeverity\":\"Informational\",\"EventDescription\":\"Installed contents package: panupv2-all-contents-8676-7858.tgz\",\"SequenceNo\":7200776623254143152,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:48:57.395000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Installed contents package: panupv2-all-contents-8676-7858.tgz",
+            "module": "contents",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:48:57.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "file": {
+            "name": "panupv2-all-contents-8676-7858.tgz"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_ntp_sync_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:46:40.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"ntpd\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:46:33.000000Z\",\"VirtualLocation\":null,\"EventName\":\"sync\",\"EventComponent\":\"\",\"VendorSeverity\":\"Informational\",\"EventDescription\":\"NTP sync to server de.pool.ntp.org\",\"SequenceNo\":7200776623254143145,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:46:33.917000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "NTP sync to server de.pool.ntp.org",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:46:33.000000Z",
+        "action": {
+            "type": "ntpd"
+        },
+        "destination": {
+            "address": "de.pool.ntp.org"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "ntpd"
+        }
+    }
+    	
+	```
+
+
+=== "test_port_up_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:31:51.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"port\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:31:50.000000Z\",\"VirtualLocation\":null,\"EventName\":\"link-change\",\"EventComponent\":\"ethernet1/2\",\"VendorSeverity\":\"Informational\",\"EventDescription\":\"Port ethernet1/2: Up   10Gb/s-full duplex\",\"SequenceNo\":7200776623254143073,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:31:50.851000Z\"}\n",
+        "event": {
+            "action": "Up",
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Port ethernet1/2: Up   10Gb/s-full duplex",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:31:50.000000Z",
+        "action": {
+            "name": "Up",
+            "type": "port"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "ethernet1/2"
+                }
+            },
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "port"
+        }
+    }
+    	
+	```
+
+
+=== "test_registration_succeed_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:31:51.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"fb\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:31:51.000000Z\",\"VirtualLocation\":null,\"EventName\":\"wildfire-conn-success\",\"EventComponent\":\"\",\"VendorSeverity\":\"Medium\",\"EventDescription\":\"Successfully registered to Public Cloud wildfire.paloaltonetworks.com\",\"SequenceNo\":7200776623254143102,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:31:51.387000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Successfully registered to Public Cloud wildfire.paloaltonetworks.com",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:31:51.000000Z",
+        "action": {
+            "type": "fb"
+        },
+        "destination": {
+            "domain": "wildfire.paloaltonetworks.com",
+            "address": "wildfire.paloaltonetworks.com",
+            "top_level_domain": "com",
+            "subdomain": "wildfire",
+            "registered_domain": "paloaltonetworks.com"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Medium",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "fb"
+        },
+        "related": {
+            "hosts": [
+                "wildfire.paloaltonetworks.com"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_10_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"Successfully connect to address: 5.6.7.8 port: 3978, conn id: triallr-5.6.7.8-2-def\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:31:56.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:32:07.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170508,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:31:56.151000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Successfully connect to address: 5.6.7.8 port: 3978, conn id: triallr-5.6.7.8-2-def",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:31:56.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 3978,
+            "address": "5.6.7.8"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        },
+        "related": {
+            "ip": [
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_11_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": \"\",\"EventDescription\": \"PAN-DB was upgraded to version 20230203.20250.\",\"EventName\": \"upgrade-url-database-success\",\"EventTime\": \"2023-02-03T16:37:22.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:37:31.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170511,\"Subtype\": \"url-filtering\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:37:22.476000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": null,\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "PAN-DB was upgraded to version 20230203.20250.",
+            "module": "PAN-DB",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:37:22.000000Z",
+        "action": {
+            "type": "url-filtering"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "url-filtering"
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_12_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": \"\",\"EventDescription\": \"DHCP RENEW: interface eth0, ip 1.2.3.4 netmask 255.255.255.0 dhcp server: 1.2.3.1\",\"EventName\": \"if-renew-trigger\",\"EventTime\": \"2023-02-03T16:39:46.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:39:55.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170512,\"Subtype\": \"dhcp\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:39:46.612000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": null,\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "DHCP RENEW: interface eth0, ip 1.2.3.4 netmask 255.255.255.0 dhcp server: 1.2.3.1",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:39:46.000000Z",
+        "action": {
+            "type": "dhcp"
+        },
+        "destination": {
+            "address": "1.2.3.1"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "eth0"
+                }
+            },
+            "product": "PAN-OS"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "dhcp"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_1_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"Installed WildFire package: panupv3-all-wildfire-739610-742990.tgz\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:30:44.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:30:52.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170505,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:30:44.868000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Installed WildFire package: panupv3-all-wildfire-739610-742990.tgz",
+            "module": "WildFire",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:30:44.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "file": {
+            "name": "panupv3-all-wildfire-739610-742990.tgz"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_2_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"WildFire update job succeeded  for user Auto update agent\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:56.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:46:05.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170521,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:56.725000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "WildFire update job succeeded  for user Auto update agent",
+            "module": "WildFire",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:56.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_3_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"Connection to Update server:  completed successfully, initiated by 1.2.3.4\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:51.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:45:56.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170515,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:51.118000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Connection to Update server:  completed successfully, initiated by 1.2.3.4",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:51.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_4_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"WildFire job started processing. Dequeue time=2023/02/03 17:45:52. Job Id=72.   \",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:52.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:45:56.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170518,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:52.888000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "WildFire job started processing. Dequeue time=2023/02/03 17:45:52. Job Id=72.   ",
+            "module": "WildFire",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:52.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_5_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"WildFire package upgraded from version 739610-742990 to 739613-742993 by Auto update agent\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:55.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:45:56.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170520,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:55.982000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "WildFire package upgraded from version 739610-742990 to 739613-742993 by Auto update agent",
+            "module": "WildFire",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:55.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_6_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"WildFire job enqueued. Enqueue time=2023/02/03 17:45:52. JobId=72.  . Type: Full\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:52.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:45:56.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170517,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:52.887000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "WildFire job enqueued. Enqueue time=2023/02/03 17:45:52. JobId=72.  . Type: Full",
+            "module": "WildFire",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:52.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_7_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"Connection to Update server: updates.paloaltonetworks.com completed successfully, initiated by 1.2.3.4\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:49.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:45:56.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170514,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:49.557000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Connection to Update server: updates.paloaltonetworks.com completed successfully, initiated by 1.2.3.4",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:49.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "destination": {
+            "address": "updates.paloaltonetworks.com"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_8_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"Installed WildFire package: panupv3-all-wildfire-739613-742993.tgz\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:54.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:45:56.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170519,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:54.757000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Installed WildFire package: panupv3-all-wildfire-739613-742993.tgz",
+            "module": "WildFire",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:54.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "file": {
+            "name": "panupv3-all-wildfire-739613-742993.tgz"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_system_event_9_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"ConfigVersion\": \"10.1\",\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DeviceGroup\": null,\"EventComponent\": null,\"EventDescription\": \"WildFire version 739613-742993 downloaded by Auto update agent\",\"EventName\": \"general\",\"EventTime\": \"2023-02-03T16:45:52.000000Z\",\"LogSourceID\": \"007954000351998\",\"LogSourceName\": \"PA-VM\",\"LogTime\": \"2023-02-03T16:45:56.000000Z\",\"LogType\": \"SYSTEM\",\"SequenceNo\": 7195838274152170516,\"Subtype\": \"general\",\"Template\": null,\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:52.887000Z\",\"VendorSeverity\": \"Informational\",\"VirtualLocation\": \"\",\"VirtualSystemName\": null}",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "WildFire version 739613-742993 downloaded by Auto update agent",
+            "module": "WildFire",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:52.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        }
+    }
+    	
+	```
+
+
+=== "test_traffic_event_1_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"Action\": \"allow\",\"ActionSource\": \"from-policy\",\"Application\": \"incomplete\",\"Bytes\": 74,\"BytesReceived\": 0,\"BytesSent\": 74,\"ChunksReceived\": 0,\"ChunksSent\": 0,\"ChunksTotal\": 0,\"ConfigVersion\": \"10.1\",\"ContainerID\": null,\"ContainerName\": null,\"ContainerNameSpace\": null,\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DestinationAddress\": \"5.6.7.8\",\"DestinationDeviceCategory\": null,\"DestinationDeviceHost\": null,\"DestinationDeviceMac\": null,\"DestinationDeviceModel\": null,\"DestinationDeviceOSFamily\": null,\"DestinationDeviceOSVersion\": null,\"DestinationDeviceProfile\": null,\"DestinationDeviceVendor\": null,\"DestinationDynamicAddressGroup\": null,\"DestinationEDL\": null,\"DestinationLocation\": \"US\",\"DestinationPort\": 443,\"DestinationUUID\": null,\"DestinationUser\": null,\"DeviceName\": \"PA-VM\",\"DeviceSN\": \"007954000351998\",\"DynamicUserGroupName\": null,\"EndpointAssociationID\": 0,\"EndpointSerialNumber\": null,\"FromZone\": \"untrusted\",\"GPHostID\": null,\"HASessionOwner\": null,\"HTTP2Connection\": 0,\"IMEI\": null,\"IMSI\": 0,\"InboundInterface\": \"ethernet1/1\",\"LinkChangeCount\": 0,\"LinkSwitches\": null,\"LogSetting\": \"default\",\"LogType\": \"TRAFFIC\",\"NATDestination\": \"\",\"NATDestinationPort\": 0,\"NATSource\": \"\",\"NATSourcePort\": 0,\"NSSAINetworkSliceDifferentiator\": null,\"NSSAINetworkSliceType\": null,\"OutboundInterface\": \"ethernet1/1\",\"PacketsReceived\": 0,\"PacketsSent\": 1,\"PacketsTotal\": 1,\"ParentSessionID\": 0,\"ParentStarttime\": \"1970-01-01T00:00:00.000000Z\",\"Protocol\": \"tcp\",\"RepeatCount\": 1,\"Rule\": \"intrazone-default\",\"RuleUUID\": \"f903db52-4b89-4610-b908-67be412704f0\",\"SDWANCluster\": null,\"SDWANClusterType\": null,\"SDWANDeviceType\": null,\"SDWANPolicyName\": null,\"SDWANSite\": null,\"SequenceNo\": 7195838274152187101,\"SessionDuration\": 0,\"SessionEndReason\": \"aged-out\",\"SessionID\": 17635,\"SessionStartTime\": \"2023-02-03T16:46:00.000000Z\",\"SourceAddress\": \"1.2.3.4\",\"SourceDeviceCategory\": null,\"SourceDeviceHost\": null,\"SourceDeviceMac\": null,\"SourceDeviceModel\": null,\"SourceDeviceOSFamily\": null,\"SourceDeviceOSVersion\": null,\"SourceDeviceProfile\": null,\"SourceDeviceVendor\": null,\"SourceDynamicAddressGroup\": null,\"SourceEDL\": null,\"SourceLocation\": \"1.2.0.0-1.2.255.255\",\"SourcePort\": 59087,\"SourceUUID\": null,\"SourceUser\": null,\"Subtype\": \"end\",\"TimeGenerated\": \"2023-02-03T16:46:07.000000Z\",\"TimeGeneratedHighResolution\": \"2023-02-03T16:46:07.584000Z\",\"TimeReceived\": \"2023-02-03T16:46:14.000000Z\",\"ToZone\": \"untrusted\",\"Tunnel\": \"N/A\",\"URLCategory\": \"any\",\"VirtualLocation\": \"vsys1\",\"VirtualSystemName\": \"\",\"X-Forwarded-ForIP\": null}",
+        "event": {
+            "start": "2023-02-03T16:46:00.000000Z",
+            "dataset": "traffic",
+            "duration": 0,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "end"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:46:07.000000Z",
+        "action": {
+            "name": "allow",
+            "type": "end",
+            "outcome": "success"
+        },
+        "destination": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "nat": {
+                "port": 0
+            },
+            "port": 443,
+            "geo": {
+                "country_iso_code": "US"
+            }
+        },
+        "log": {
+            "hostname": "PA-VM",
+            "logger": "traffic"
+        },
+        "network": {
+            "bytes": 74,
+            "packets": 1
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "alias": "untrusted"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "alias": "untrusted"
+                }
+            },
+            "product": "PAN-OS",
+            "serial_number": "007954000351998"
+        },
+        "rule": {
+            "name": "intrazone-default",
+            "uuid": "f903db52-4b89-4610-b908-67be412704f0"
+        },
+        "source": {
+            "bytes": 74,
+            "ip": "1.2.3.4",
+            "port": 59087,
+            "address": "1.2.3.4"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "URLCategory": "any",
+            "VirtualLocation": "vsys1",
+            "Threat_ContentType": "end"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "host": {
+            "name": "PA-VM"
+        }
+    }
+    	
+	```
+
+
+=== "test_traffic_event_2_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"Action\": \"allow\",\"ActionSource\": \"from-policy\",\"Application\": \"incomplete\",\"Bytes\": 74,\"BytesReceived\": 0,\"BytesSent\": 74,\"ChunksReceived\": 0,\"ChunksSent\": 0,\"ChunksTotal\": 0,\"ConfigVersion\": \"10.1\",\"ContainerID\": null,\"ContainerName\": null,\"ContainerNameSpace\": null,\"DGHierarchyLevel1\": 0,\"DGHierarchyLevel2\": 0,\"DGHierarchyLevel3\": 0,\"DGHierarchyLevel4\": 0,\"DestinationAddress\": \"5.6.7.8\",\"DestinationDeviceCategory\": null,\"DestinationDeviceHost\": null,\"DestinationDeviceMac\": null,\"DestinationDeviceModel\": null,\"DestinationDeviceOSFamily\": null,\"DestinationDeviceOSVersion\": null,\"DestinationDeviceProfile\": null,\"DestinationDeviceVendor\": null,\"DestinationDynamicAddressGroup\": null,\"DestinationEDL\": null,\"DestinationLocation\": \"US\",\"DestinationPort\": 443,\"DestinationUUID\": null,\"DestinationUser\": null,\"DeviceName\": \"PA-VM\",\"DeviceSN\": \"007954000351998\",\"DynamicUserGroupName\": null,\"EndpointAssociationID\": 0,\"EndpointSerialNumber\": null,\"FromZone\": \"untrusted\",\"GPHostID\": null,\"HASessionOwner\": null,\"HTTP2Connection\": 0,\"IMEI\": null,\"IMSI\": 0,\"InboundInterface\": \"ethernet1/1\",\"LinkChangeCount\": 0,\"LinkSwitches\": null,\"LogSetting\": \"default\",\"LogType\": \"TRAFFIC\",\"NATDestination\": \"\",\"NATDestinationPort\": 0,\"NATSource\": \"\",\"NATSourcePort\": 0,\"NSSAINetworkSliceDifferentiator\": null,\"NSSAINetworkSliceType\": null,\"OutboundInterface\": \"ethernet1/1\",\"PacketsReceived\": 0,\"PacketsSent\": 1,\"PacketsTotal\": 1,\"ParentSessionID\": 0,\"ParentStarttime\": \"1970-01-01T00:00:00.000000Z\",\"Protocol\": \"tcp\",\"RepeatCount\": 1,\"Rule\": \"intrazone-default\",\"RuleUUID\": \"f903db52-4b89-4610-b908-67be412704f0\",\"SDWANCluster\": null,\"SDWANClusterType\": null,\"SDWANDeviceType\": null,\"SDWANPolicyName\": null,\"SDWANSite\": null,\"SequenceNo\": 7195838274152187100,\"SessionDuration\": 0,\"SessionEndReason\": \"aged-out\",\"SessionID\": 17634,\"SessionStartTime\": \"2023-02-03T16:45:44.000000Z\",\"SourceAddress\": \"1.2.3.4\",\"SourceDeviceCategory\": null,\"SourceDeviceHost\": null,\"SourceDeviceMac\": null,\"SourceDeviceModel\": null,\"SourceDeviceOSFamily\": null,\"SourceDeviceOSVersion\": null,\"SourceDeviceProfile\": null,\"SourceDeviceVendor\": null,\"SourceDynamicAddressGroup\": null,\"SourceEDL\": null,\"SourceLocation\": \"1.2.0.0-1.2.255.255\",\"SourcePort\": 59087,\"SourceUUID\": null,\"SourceUser\": null,\"Subtype\": \"end\",\"TimeGenerated\": \"2023-02-03T16:45:52.000000Z\",\"TimeGeneratedHighResolution\": \"2023-02-03T16:45:52.582000Z\",\"TimeReceived\": \"2023-02-03T16:45:56.000000Z\",\"ToZone\": \"untrusted\",\"Tunnel\": \"N/A\",\"URLCategory\": \"any\",\"VirtualLocation\": \"vsys1\",\"VirtualSystemName\": \"\",\"X-Forwarded-ForIP\": null}",
+        "event": {
+            "start": "2023-02-03T16:45:44.000000Z",
+            "dataset": "traffic",
+            "duration": 0,
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "end"
+            ]
+        },
+        "@timestamp": "2023-02-03T16:45:52.000000Z",
+        "action": {
+            "name": "allow",
+            "type": "end",
+            "outcome": "success"
+        },
+        "destination": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "nat": {
+                "port": 0
+            },
+            "port": 443,
+            "geo": {
+                "country_iso_code": "US"
+            }
+        },
+        "log": {
+            "hostname": "PA-VM",
+            "logger": "traffic"
+        },
+        "network": {
+            "bytes": 74,
+            "packets": 1
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "alias": "untrusted"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "alias": "untrusted"
+                }
+            },
+            "product": "PAN-OS",
+            "serial_number": "007954000351998"
+        },
+        "rule": {
+            "name": "intrazone-default",
+            "uuid": "f903db52-4b89-4610-b908-67be412704f0"
+        },
+        "source": {
+            "bytes": 74,
+            "ip": "1.2.3.4",
+            "port": 59087,
+            "address": "1.2.3.4"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "URLCategory": "any",
+            "VirtualLocation": "vsys1",
+            "Threat_ContentType": "end"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        },
+        "host": {
+            "name": "PA-VM"
+        }
+    }
+    	
+	```
+
+
+=== "test_update_content_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:50:25.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"general\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:50:14.000000Z\",\"VirtualLocation\":\"\",\"EventName\":\"general\",\"EventComponent\":null,\"VendorSeverity\":\"Informational\",\"EventDescription\":\"Content update job succeeded  for user admin\",\"SequenceNo\":7200776623254143155,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:50:14.343000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Content update job succeeded  for user admin",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:50:14.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "user": {
+            "name": "admin"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        },
+        "related": {
+            "user": [
+                "admin"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_upgrade_package_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:49:49.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"general\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:49:34.000000Z\",\"VirtualLocation\":\"\",\"EventName\":\"general\",\"EventComponent\":null,\"VendorSeverity\":\"Informational\",\"EventDescription\":\"Content package upgraded from version 8671-7826 to 8676-7858 by admin\",\"SequenceNo\":7200776623254143153,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:49:34.604000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Content package upgraded from version 8671-7826 to 8676-7858 by admin",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:49:34.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "user": {
+            "name": "admin"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        },
+        "related": {
+            "user": [
+                "admin"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_user_authentication_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:41:25.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"auth\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:41:18.000000Z\",\"VirtualLocation\":null,\"EventName\":\"auth-success\",\"EventComponent\":\"\",\"VendorSeverity\":\"Informational\",\"EventDescription\":\"authenticated for user 'admin'.   From: 1.2.3.4.\",\"SequenceNo\":7200776623254143115,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:41:18.813000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "authenticated for user 'admin'.   From: 1.2.3.4.",
+            "category": [
+                "authentication"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:41:18.000000Z",
+        "action": {
+            "type": "auth"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "user": {
+            "name": "admin"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "auth"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "admin"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_web_authentication_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T15:41:25.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"general\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T15:41:18.000000Z\",\"VirtualLocation\":\"\",\"EventName\":\"general\",\"EventComponent\":null,\"VendorSeverity\":\"Informational\",\"EventDescription\":\"User admin logged in via Web from 1.2.3.4 using https\",\"SequenceNo\":7200776623254143116,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T15:41:18.825000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "User admin logged in via Web from 1.2.3.4 using https",
+            "category": [
+                "host"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T15:41:18.000000Z",
+        "action": {
+            "type": "general"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "network": {
+            "protocol": "https"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "user": {
+            "name": "admin"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "general"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "admin"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_wildfire_failure_json.json"
+
+    ```json
+	
+    {
+        "message": "{\"LogTime\":\"2023-02-16T17:45:55.000000Z\",\"LogSourceID\":\"007954000351998\",\"LogType\":\"SYSTEM\",\"Subtype\":\"fb\",\"ConfigVersion\":\"10.1\",\"EventTime\":\"2023-02-16T17:45:43.000000Z\",\"VirtualLocation\":null,\"EventName\":\"wildfire-conn-failed\",\"EventComponent\":\"\",\"VendorSeverity\":\"Informational\",\"EventDescription\":\"Failed to perform task resulting in connection timeout with WildFire Cloud wildfire.paloaltonetworks.com\",\"SequenceNo\":7200776623254143341,\"DGHierarchyLevel1\":0,\"DGHierarchyLevel2\":0,\"DGHierarchyLevel3\":0,\"DGHierarchyLevel4\":0,\"VirtualSystemName\":null,\"LogSourceName\":\"PA-VM\",\"DeviceGroup\":null,\"Template\":null,\"TimeGeneratedHighResolution\":\"2023-02-16T17:45:43.111000Z\"}\n",
+        "event": {
+            "dataset": "system",
+            "kind": "event",
+            "reason": "Failed to perform task resulting in connection timeout with WildFire Cloud wildfire.paloaltonetworks.com",
+            "module": "WildFire",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-02-16T17:45:43.000000Z",
+        "action": {
+            "type": "fb"
+        },
+        "destination": {
+            "domain": "wildfire.paloaltonetworks.com",
+            "address": "wildfire.paloaltonetworks.com",
+            "top_level_domain": "com",
+            "subdomain": "wildfire",
+            "registered_domain": "paloaltonetworks.com"
+        },
+        "host": {
+            "name": "PA-VM"
+        },
+        "log": {
+            "level": "Informational",
+            "logger": "system"
+        },
+        "observer": {
+            "product": "PAN-OS"
+        },
+        "paloalto": {
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "fb"
+        },
+        "related": {
+            "hosts": [
+                "wildfire.paloaltonetworks.com"
             ]
         }
     }
@@ -1044,7 +2508,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDeviceProfile": "x-profile",
             "PanOSThreatCategory": "unknown",
             "PanOSSourceLocation": "LY",
-            "PanOSThreatID": "27379(27379)"
+            "PanOSThreatID": "27379(27379)",
+            "VirtualLocation": "vsys1"
         },
         "related": {
             "hosts": [
@@ -1070,6 +2535,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "message": "1,2021/08/31 14:00:02,001701000000,THREAT,vulnerability,2049,2021/08/31 14:00:02,10.0.0.2,10.2.0.1,0.0.0.0,0.0.0.0,abcd,,,web-browsing,vsys,env,zone2,a1.1,aec.2,podl,2021/08/31 14:00:02,279429,2,12345,80,0,0,0x2000,tcp,alert,\"EXAMPLE.PDF\",PDF Exploit Evasion Found(34805),any,informational,server-to-client,1320000,0x2000000000000000,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,FW,,,,,0,,0,,N/A,code-execution,AppThreat-0000-1111,0x0,0,422342342,",
         "event": {
             "action": "code-execution",
+            "dataset": "threat",
             "kind": "event",
             "reason": "PDF Exploit Evasion Found(34805)",
             "category": [
@@ -1094,7 +2560,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80
         },
         "file": {
-            "path": "EXAMPLE.PDF"
+            "path": "EXAMPLE.PDF",
+            "name": "EXAMPLE.PDF"
         },
         "log": {
             "hostname": "FW",
@@ -1105,7 +2572,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "tcp"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "001701000000"
         },
         "rule": {
             "name": "abcd"
@@ -1120,8 +2588,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 12345
         },
         "paloalto": {
-            "Threat_ContentType": "vulnerability",
-            "ContentType": ""
+            "VirtualLocation": "vsys",
+            "DGHierarchyLevel1": "0",
+            "DGHierarchyLevel2": "0",
+            "DGHierarchyLevel3": "0",
+            "DGHierarchyLevel4": "0",
+            "Threat_ContentType": "vulnerability"
         },
         "related": {
             "ip": [
@@ -1228,6 +2700,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "paloalto": {
             "PanOSSourceLocation": "10.0.0.0-10.255.255.255",
             "PanOSSessionStartTime": "Jul 31 2022 12:43:06",
+            "VirtualLocation": "vsys1",
             "URLCategory": "computer-and-internet-info"
         },
         "related": {
@@ -1340,6 +2813,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         "paloalto": {
             "PanOSSourceLocation": "10.0.0.0-10.255.255.255",
             "PanOSSessionStartTime": "Aug 02 2022 06:41:44",
+            "VirtualLocation": "vsys1",
             "URLCategory": "low-risk"
         },
         "related": {
@@ -1482,6 +2956,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSX-Forwarded-ForIP": "1.1.1.1",
             "PanOSSourceLocation": "east-coast",
             "PanOSSessionStartTime": "Feb 27 2021 20:15:48",
+            "VirtualLocation": "vsys1",
             "URLCategory": "custom-category"
         },
         "related": {
@@ -1508,11 +2983,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     {
         "message": "<14>Sep 16 10:00:00 PA 1,9/16/19 10:00,1801017000,TRAFFIC,deny,2049,9/16/19 10:00,10.0.0.2,1.2.3.4,5.4.4.3,5.4.3.2,DENYALL,,,protection,vsys1,DNS,AAAAA,ae2.503,ethernet1/1,Secure,9/16/19 10:00,11111,1,130000,53,6379,53,0x400000,udp,reset-both,284,284,0,1,9/16/19 10:00,0,any,0,50660381851,0x0,10.0.0.0-10.255.255.255,Spain,0,1,0,policy-deny,0,0,0,0,,PA-1,from-application,,,0,,0,,N/A,0,0,0,0",
         "event": {
+            "dataset": "traffic",
+            "duration": 0,
+            "kind": "event",
             "category": [
                 "network"
             ],
-            "duration": 0,
-            "kind": "event",
             "type": [
                 "denied"
             ]
@@ -1542,7 +3018,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "transport": "udp"
         },
         "observer": {
-            "product": "PAN-OS"
+            "product": "PAN-OS",
+            "serial_number": "1801017000"
         },
         "rule": {
             "name": "DENYALL"
@@ -1559,6 +3036,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 130000
         },
         "paloalto": {
+            "VirtualLocation": "vsys1",
             "Threat_ContentType": "deny"
         },
         "related": {
@@ -1686,6 +3164,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "PanOSSourceDeviceModel": "Note 4G",
             "PanOSSourceDeviceProfile": "l-profile",
             "PanOSSourceLocation": "west-coast",
+            "VirtualLocation": "vsys1",
             "URLCategory": "sports"
         },
         "related": {
@@ -1743,6 +3222,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "logger": "userid"
         },
         "observer": {
+            "egress": {
+                "interface": {
+                    "alias": "probing"
+                }
+            },
+            "ingress": {
+                "interface": {
+                    "alias": "fake-data-source-169"
+                }
+            },
             "product": "PAN-OS",
             "vendor": "Palo Alto Networks",
             "type": "LF",
@@ -1753,7 +3242,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": "1.1.1.1",
             "port": 21015
         },
-        "paloalto": {},
+        "paloalto": {
+            "VirtualSystemID": "1",
+            "VirtualLocation": "vsys1"
+        },
         "related": {
             "hosts": [
                 "PA-5220"
@@ -1780,8 +3272,11 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
+|`container.id` | `keyword` | Unique container id. |
+|`container.name` | `keyword` | Container name. |
 |`destination.address` | `keyword` | Destination network address. |
 |`destination.bytes` | `long` | Bytes sent from the destination to the source. |
+|`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.geo.country_iso_code` | `keyword` | Country ISO code. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.nat.ip` | `ip` | Destination NAT ip |
@@ -1797,11 +3292,13 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.dataset` | `keyword` | Name of the dataset. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.module` | `keyword` | Name of the module this data is coming from. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.timezone` | `keyword` | Event time zone. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
 |`host.hostname` | `keyword` | Hostname of the host. |
 |`host.id` | `keyword` | Unique host id. |
@@ -1818,6 +3315,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`network.application` | `keyword` | Application level protocol name. |
 |`network.bytes` | `long` | Total bytes transferred in both directions. |
 |`network.packets` | `long` | Total packets transferred in both directions. |
+|`network.protocol` | `keyword` | Application protocol name. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`network.type` | `keyword` | In the OSI Model this would be the Network Layer. ipv4, ipv6, ipsec, pim, etc |
 |`observer.egress.interface.alias` | `keyword` | Interface alias |
@@ -1827,10 +3325,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.ingress.interface.id` | `keyword` | Interface ID |
 |`observer.ingress.interface.name` | `keyword` | Interface name |
 |`observer.product` | `keyword` | The product name of the observer. |
+|`observer.serial_number` | `keyword` | Observer serial number. |
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`observer.version` | `keyword` | Observer version. |
 |`paloalto.Threat_ContentType` | `keyword` | Type associated with the threat |
+|`paloalto.authentication.method` | `keyword` | The authentication method for the GlobalProtect connection |
+|`paloalto.connection.method` | `keyword` | Identifies how the GlobalProtect app connected to the the Gateway |
+|`paloalto.connection.stage` | `keyword` | The stage of the GlobalProtect connection |
 |`rule.name` | `keyword` | Rule name |
 |`rule.uuid` | `keyword` | Rule UUID |
 |`source.bytes` | `long` | Bytes sent from the source to the destination. |
