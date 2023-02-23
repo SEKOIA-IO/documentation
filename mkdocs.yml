@@ -149,6 +149,7 @@ nav:
             - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco/cisco_asa.md
             - Cisco Secure Web Appliance: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
             - Cisco NX-OS: xdr/features/collect/integrations/network/cisco/cisco_nx_os.md
+            - Cisco Meraki MX: xdr/features/collect/integrations/network/cisco/cisco_meraki_mx.md
           - Gatewatcher AionIQ: xdr/features/collect/integrations/network/gatewatcher_aioniq.md
           - F5 BIG-IP: xdr/features/collect/integrations/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
