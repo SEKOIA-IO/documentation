@@ -63,11 +63,13 @@ Each action is described and contains the following information:
 
 Depending of the endpoint, the data passed through the API is done as `query parameters` or in an `application/json` body. `Query parameters` means the data is passed in the URL.
 
+**Example with query parameters**
 The following example uses the action `List rules` and the `query parameter` `match[name]` is used to retrieve only the rule `Suspicious Windows Defender Exclusion Command`
 ```bash
 curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules?match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command
 ```
 
+**Example with POST parameters**
 The following example uses the action `Invite a user` which is a `POST` request with an `application/json` body:
 ```bash
 curl -X POST https://api.sekoia.io/v1/invitations \
@@ -129,6 +131,9 @@ if __name__ == '__main__':
 In this example, we want to invite the user `john.doe@example.com` to the Community with UUID `88dcb0c6-4efe-4256-95f1-40d2c4fefefd` and with the role `44aaa41f-24ee-41d3-a7c1-4677da8b9243`
 This can be achieved with the endpoint [Invite a user in a list of communities](https://docs.sekoia.io/xdr/develop/rest_api/community/#tag/invitations/operation/post_invitation_resource)
 
+!!! Note
+    The role UUIDs can be found with the endpoint [List the roles of a community](https://docs.sekoia.io/xdr/develop/rest_api/community/#tag/roles/operation/get_roles_resource)
+
 ```python
 import logging
 
@@ -167,10 +172,12 @@ if __name__ == '__main__':
 ```
 
 ### Another example - Search events
-It is possible to search in your events by using the SEKOIA.IO API. Search for events can request some time to be processed. As a reminder, the API is stateless, that means no connection is maintained.
+It is possible to search in your events by using the SEKOIA.IO API. Search for events can request some time to be processed and as a reminder, the API is stateless, that means no connection is maintained between two requests.
 
 For this reason, SEKOIA.IO offers a solution to answer to this asynchronous problematic: the notion of search job.
+
 3 steps are needed:
+
 * [Create an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/post_event_search_resource) - This step requires to provide the search query and the time window. The endpoint return a `job UUID` which will be used in the next steps.
 * [Get an event search job](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_info_resource) - This step is used to get information about the status of a job by providing its UUID. Jobs can have 5 statuses:
     * `0`: the job is not started
@@ -180,23 +187,11 @@ For this reason, SEKOIA.IO offers a solution to answer to this asynchronous prob
     * `4`: the job has failed
 * [Get the events found by an event search job in descending order](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/events/operation/get_event_search_job_events_resource) - This steps is used to retrieved the events when the job is done (status `2`). It gives you the events in descending order (latest events first) and by default the limit is set to 100 events (up to 1000). An offset can be specified to get more of them.
 
+#### Python3 script
 This Python script uses these 3 actions to perform a search and print the events to STDOUT. Only the latest 100 are printed.
-Here is how to use it:
-```bash
-search_events.py [-h] --dates DATES --query QUERY [-v] APIKEY
-```
 
-* `--dates` is used to specify to the time windows. The format used is `earliest_time,latest_time`. Dates can be in ISO8601 or relative format.
-* `--query` is the query in Dork format (same langage as the SEKOIA.IO event page)
-* `-v` to get verbose mode
-* `APIKEY` is the SEKOIA.IO key with the `SIC_READ_INTAKES` permission
-
-**Example**:
-
-To get events with source IP `1.2.3.4` in the last 30 days:
-```bash
-search_events.py [-h] --dates="-30d,now" --query='source.ip: \"1.2.3.4\"' YOUR_API_KEY
-```
+!!! Note
+    You need at least Python 3.10 to run this script.
 
 ```python
 #!/usr/bin/env python3
@@ -280,7 +275,7 @@ def get_search_job_status(
 
     # In case of authentication failed
     elif response.status_code == 401:
-        logging.error(f"Cannot create the search job. Authentication failed: {response.status_code}")
+        logging.error(f"Cannot get the search job status. Authentication failed: {response.status_code}")
         logging.error(response.text)
         exit()
     # In case of insufficient permissions
@@ -401,4 +396,22 @@ if __name__ == "__main__":
         query=args.query,
         verbose=args.v,
     )
+```
+
+#### How to use the script
+Here is how to use the script:
+```bash
+search_events.py [-h] --dates DATES --query QUERY [-v] APIKEY
+```
+
+* `--dates` is used to specify to the time windows. The format used is `earliest_time,latest_time`. Dates can be in ISO8601 or relative format.
+* `--query` is the query in Dork format (same langage as the SEKOIA.IO event page)
+* `-v` to get verbose mode
+* `APIKEY` is the SEKOIA.IO key with the `SIC_READ_INTAKES` permission
+
+**Example**:
+
+To get events with source IP `1.2.3.4` in the last 30 days:
+```bash
+search_events.py [-h] --dates="-30d,now" --query='source.ip: \"1.2.3.4\"' YOUR_API_KEY
 ```

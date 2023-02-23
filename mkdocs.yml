@@ -231,7 +231,7 @@ nav:
     - Synchronise Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
   - FAQ: xdr/FAQ.md
   - Develop:
-    - Overview: xdr/develop/index.md
+    - Quickstart: xdr/develop/quickstart.md
     - Guides:
       - Filtering: xdr/develop/guides/filtering.md
     - REST API:
