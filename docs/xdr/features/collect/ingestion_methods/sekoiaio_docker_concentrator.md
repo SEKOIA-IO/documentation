@@ -19,75 +19,9 @@ This method simplifies as much as possible the configuration needed to set up a 
 ## Prerequisites
 
 * A x86-64 Linux host
-* Last version of Docker Engine
+* Last version of Docker Engine. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
 * OUTBOUND TCP flow opened towards intake.sekoia.io on port 10514
-
-## Docker Engine installation
-
-This section describes how to install Docker using the `apt` repository on one of those Debian 64-bit versions:
-
-* Debian Bullseye 11 (stable)
-* Debian Buster 10 (oldstable)
-
-All of the installation steps come from the [official Docker Engine installation for Debian](https://docs.docker.com/engine/install/debian/). Feel free to consult the official installation page for more information.
-To install Docker on another Linux OS, please consult the [official Docker documentation](https://docs.docker.com/engine/install/)
-
-### Uninstall old versions (if applicable)
-
-Run the following command to uninstall old Docker versions:
-
-```bash
-sudo apt-get remove docker docker-engine docker.io containerd runc
-```
-
-### Set up the repository
-
-1. Update the `apt` package index and install packages to allow `apt` to use a repository over HTTPS
-
-```bash
-sudo apt-get update
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-```
-
-2. Add Docker's official GPG key
-
-```bash
-sudo mkdir -m 0755 -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-```
-
-3. Use the following command to set up the repository
-
-```bash
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-### Install Docker Engine
-
-1. Update the `apt` package index
-
-```bash
-sudo apt-get update
-```
-
-2. Install Docker Engine, containerd, and Docker compose
-
-```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-3. Verify that the Docker Engine installation is successful by running the hello-world image
-
-```bash
-sudo docker run hello-world
-```
 
 ## Configure your concentrator
 
@@ -404,6 +338,72 @@ To add a new Intake, it's very simple ! Follow these steps:
     ```bash
     sudo docker compose logs | more
     ```
+
+## Docker Engine installation
+
+This section describes how to install Docker using the `apt` repository on one of those Debian 64-bit versions:
+
+* Debian Bullseye 11 (stable)
+* Debian Buster 10 (oldstable)
+
+All of the installation steps come from the [official Docker Engine installation for Debian](https://docs.docker.com/engine/install/debian/). Feel free to consult the official installation page for more information.
+To install Docker on another Linux OS, please consult the [official Docker documentation](https://docs.docker.com/engine/install/)
+
+### Uninstall old versions (if applicable)
+
+Run the following command to uninstall old Docker versions:
+
+```bash
+sudo apt-get remove docker docker-engine docker.io containerd runc
+```
+
+### Set up the repository
+
+1. Update the `apt` package index and install packages to allow `apt` to use a repository over HTTPS
+
+```bash
+sudo apt-get update
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
+2. Add Docker's official GPG key
+
+```bash
+sudo mkdir -m 0755 -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+3. Use the following command to set up the repository
+
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+### Install Docker Engine
+
+1. Update the `apt` package index
+
+```bash
+sudo apt-get update
+```
+
+2. Install Docker Engine, containerd, and Docker compose
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+3. Verify that the Docker Engine installation is successful by running the hello-world image
+
+```bash
+sudo docker run hello-world
+```
 
 ## 5 minutes setup on Debian
 
