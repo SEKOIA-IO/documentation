@@ -18,13 +18,13 @@ HAProxy configuration default file `haproxy.cfg` will be found in the directory 
 2- Add the following line to this file as the 1st line of the `global` section 
 
 ```
-        log 127.0.0.1    local2
+log 127.0.0.1    local2
 ```
 
 3- Restart HAProxy for configuration to be taken account and verify the status
 
 ```bash
-	sudo systemctl restart haproxy && systemctl status haproxy
+sudo systemctl restart haproxy && systemctl status haproxy
 ```
 
 HAProxy logs are now generated on your machine.
