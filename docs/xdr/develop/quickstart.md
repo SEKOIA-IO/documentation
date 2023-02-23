@@ -82,7 +82,8 @@ curl -X POST https://api.sekoia.io/v1/invitations \
 ```
 
 ## Python scripts
-Python is a langage that can be used to interact with the SEKOIA.IO API. Please find below two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
+Python is a language that can be used to interact with the SEKOIA.IO API. Please find below two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
+
 
 ### Get request with query parameters
 In this example, we want to get information about the rule "Suspicious Windows Defender Exclusion Command".
