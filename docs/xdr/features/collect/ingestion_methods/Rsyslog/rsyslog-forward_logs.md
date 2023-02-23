@@ -1,7 +1,7 @@
 # Overview
 
 There are two ways to forward logs to SEKOIA.IO:
-- [Rsyslog](#1.-Rsyslog)
+- By using [Rsyslog](#1.-Rsyslog)
 - [RELP protocol](#2.-RELP-protocol)
 
 # 1. Rsyslog
