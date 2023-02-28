@@ -69,7 +69,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "@timestamp": "2016-06-24T19:17:44.000Z",
         "user_agent": {
-            "original": "Mozilla/5.0(WindowsNT6.1;WOW64;rv:27.0)Gecko/20100101Firefox/27.0"
+            "original": "Mozilla/5.0(WindowsNT6.1;WOW64;rv:27.0)Gecko/20100101Firefox/27.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Firefox",
+            "version": "27.0"
         },
         "url": {
             "original": "http://badguy.zz/",
@@ -107,6 +112,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "192.0.2.255"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "NT"
         }
     }
     	

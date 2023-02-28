@@ -201,7 +201,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "size": 100
         },
         "user_agent": {
-            "original": "Custom Useragent"
+            "original": "Custom Useragent",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "network": {
             "protocol": "tcp",
@@ -219,6 +223,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "USERNAME"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	

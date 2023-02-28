@@ -82,12 +82,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full_name": "Michael S."
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "107.0.0"
         },
         "related": {
             "ip": [
                 "149.202.162.59"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -140,12 +148,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "SEKOIA.IO"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+            "device": {
+                "name": "Mac"
+            },
+            "name": "Chrome",
+            "version": "98.0.4758"
         },
         "related": {
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Mac OS X",
+            "version": "10.15.7"
         }
     }
     	
@@ -196,12 +213,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "domain": "SEKOIA.IO"
         },
         "user_agent": {
-            "original": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8"
+            "original": "'Mozilla/5.0 (X11; Linux i686; rv:1.9.7.20) Gecko/2020-08-24 06:07:18 Firefox/3.8",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Firefox",
+            "version": "3.8"
         },
         "related": {
             "ip": [
                 "141.229.130.228"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -261,12 +286,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "107.0.0"
         },
         "related": {
             "ip": [
                 "149.202.162.59"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -307,20 +340,28 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "io",
             "subdomain": "api",
             "registered_domain": "sekoia.io",
-            "query": "auto_merge=1",
             "scheme": "http",
+            "query": "auto_merge=1",
             "port": 80
         },
         "user": {
             "domain": "SEKOIA.IO"
         },
         "user_agent": {
-            "original": "python-requests/2.26.0"
+            "original": "python-requests/2.26.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Python Requests",
+            "version": "2.26"
         },
         "related": {
             "ip": [
                 "51.255.128.104"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -389,12 +430,20 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "107.0.0"
         },
         "related": {
             "ip": [
                 "149.202.162.59"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	

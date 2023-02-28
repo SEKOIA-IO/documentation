@@ -81,7 +81,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
-            "name": "Chrome"
+            "name": "Chrome",
+            "device": {
+                "name": "Other"
+            },
+            "version": "107.0.0"
         },
         "okta": {
             "system": {
@@ -121,6 +125,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "john.doe@example.org"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -180,7 +188,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
-            "name": "Chrome"
+            "name": "Chrome",
+            "device": {
+                "name": "Other"
+            },
+            "version": "107.0.0"
         },
         "okta": {
             "system": {
@@ -219,6 +231,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "john.doe@example.org"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -279,7 +295,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full_name": "John Doe"
         },
         "user_agent": {
-            "original": "axios/0.19.2"
+            "original": "axios/0.19.2",
+            "device": {
+                "name": "Other"
+            },
+            "name": "axios",
+            "version": "0.19.2"
         },
         "okta": {
             "system": {
@@ -309,6 +330,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "john.doe@example.org"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -369,7 +393,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full_name": "John Doe"
         },
         "user_agent": {
-            "original": "axios/0.19.2"
+            "original": "axios/0.19.2",
+            "device": {
+                "name": "Other"
+            },
+            "name": "axios",
+            "version": "0.19.2"
         },
         "okta": {
             "system": {
@@ -400,6 +429,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "john.doe@example.org"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -525,7 +557,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
-            "name": "Chrome"
+            "name": "Chrome",
+            "device": {
+                "name": "Other"
+            },
+            "version": "107.0.0"
         },
         "okta": {
             "system": {
@@ -558,6 +594,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "john.doe@example.org"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -616,7 +656,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "full_name": "John Doe"
         },
         "user_agent": {
-            "original": "Okta-Integrations"
+            "original": "Okta-Integrations",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "okta": {
             "system": {
@@ -649,6 +693,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "john.doe@example.org"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	

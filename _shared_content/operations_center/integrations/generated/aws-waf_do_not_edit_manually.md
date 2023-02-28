@@ -99,7 +99,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/config/postProcessing/testNaming"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.2117.157 Safari/537.36"
+            "original": "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.2117.157 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "35.0.2117"
         },
         "related": {
             "hosts": [
@@ -108,6 +113,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "84.46.249.194"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "XP"
         }
     }
     	
@@ -189,7 +198,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/login.php"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "70.0.3538"
         },
         "related": {
             "hosts": [
@@ -198,6 +212,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "84.46.249.194"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -275,7 +293,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/wp-admin/options-general.php"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36"
+            "original": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "37.0.2049"
         },
         "related": {
             "hosts": [
@@ -284,6 +307,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "84.46.249.194"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "8.1"
         }
     }
     	
@@ -363,7 +390,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/graphql"
         },
         "user_agent": {
-            "original": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+            "original": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "related": {
             "hosts": [
@@ -372,6 +403,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "30.255.150.197"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -449,7 +483,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/subscriptions"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Mac"
+            },
+            "name": "Chrome",
+            "version": "107.0.0"
         },
         "related": {
             "hosts": [
@@ -458,6 +497,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "2600:4040:2974:1c00:5404:1cac:9f62:ffff"
             ]
+        },
+        "os": {
+            "name": "Mac OS X",
+            "version": "10.15.7"
         }
     }
     	
@@ -537,7 +580,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/graphql"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "107.0.0"
         },
         "related": {
             "hosts": [
@@ -546,6 +594,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "36.37.214.134"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -620,7 +672,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/subscriptions"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "107.0.0"
         },
         "related": {
             "hosts": [
@@ -629,6 +686,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "140.161.225.89"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	

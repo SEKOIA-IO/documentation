@@ -123,7 +123,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "path": "/dlp/flower.gif"
         },
         "user_agent": {
-            "original": "curl/7.47.0"
+            "original": "curl/7.47.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "curl",
+            "version": "7.47.0"
         },
         "action": {
             "name": "block",
@@ -142,6 +147,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "10.1.100.11",
                 "172.18.62.158"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -952,7 +960,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80
         },
         "user_agent": {
-            "original": "curl/7.47.0"
+            "original": "curl/7.47.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "curl",
+            "version": "7.47.0"
         },
         "action": {
             "name": "passthrough",
@@ -968,6 +981,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "10.1.100.11",
                 "172.16.200.55"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -979,7 +995,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
     ```json
 	
     {
-        "message": "CEF:0|Fortinet|Fortigate|v6.0.3|18433|utm:anomaly anomaly clear_session|7|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0720018433 cat=utm:anomaly FTNTFGTsubtype=anomaly FTNTFGTeventtype=anomaly FTNTFGTlevel=alert FTNTFGTvd=vdom1 FTNTFGTeventtime=1545939604 FTNTFGTseverity=critical src=10.1.100.11 FTNTFGTsrccountry=Reserved dst=172.16.200.55 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined externalId=0 act=clear_session proto=1 app=PING cnt=1 FTNTFGTattack=icmp_flood FTNTFGTicmpid=0x3053 FTNTFGTicmptype=0x08 FTNTFGTicmpcode=0x00 FTNTFGTattackid=16777316 FTNTFGTpolicyid=1 FTNTFGTpolicytype=DoS-policy FTNTFGTref=http://www.fortinet.com/ids/VID16777316 msg=anomaly: icmp_flood, 51 > threshold 50 FTNTFGTcrscore=50 FTNTFGTcrlevel=critical",
+        "message": "0|Fortinet|Fortigate|v6.0.3|18433|utm:anomaly anomaly clear_session|7|deviceExternalId=FGT5HD3915800610 FTNTFGTlogid=0720018433 cat=utm:anomaly FTNTFGTsubtype=anomaly FTNTFGTeventtype=anomaly FTNTFGTlevel=alert FTNTFGTvd=vdom1 FTNTFGTeventtime=1545939604 FTNTFGTseverity=critical src=10.1.100.11 FTNTFGTsrccountry=Reserved dst=172.16.200.55 deviceInboundInterface=port12 FTNTFGTsrcintfrole=undefined externalId=0 act=clear_session proto=1 app=PING cnt=1 FTNTFGTattack=icmp_flood FTNTFGTicmpid=0x3053 FTNTFGTicmptype=0x08 FTNTFGTicmpcode=0x00 FTNTFGTattackid=16777316 FTNTFGTpolicyid=1 FTNTFGTpolicytype=DoS-policy FTNTFGTref=http://www.fortinet.com/ids/VID16777316 msg=anomaly: icmp_flood, 51 > threshold 50 FTNTFGTcrscore=50 FTNTFGTcrlevel=critical",
         "event": {
             "action": "clear_session",
             "code": "0720018433",
@@ -1313,7 +1329,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80
         },
         "user_agent": {
-            "original": "curl/7.47.0"
+            "original": "curl/7.47.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "curl",
+            "version": "7.47.0"
         },
         "action": {
             "name": "blocked",
@@ -1330,6 +1351,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "10.1.100.11",
                 "172.16.200.55"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -1395,7 +1419,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80
         },
         "user_agent": {
-            "original": "Wget/1 10 2"
+            "original": "Wget/1 10 2",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Wget",
+            "version": "1"
         },
         "action": {
             "name": "blocked",
@@ -1409,6 +1438,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	

@@ -89,7 +89,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "aws.internal"
+            "original": "aws.internal",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "user": {
             "id": "1111111111"
@@ -130,6 +134,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hosts": [
                 "aws.internal"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -190,7 +197,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "console.amazonaws.com"
+            "original": "console.amazonaws.com",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "user": {
             "id": "1111111111"
@@ -227,6 +238,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -286,7 +300,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "aws-cli/1.18.87 Python/3.7.3 Linux/4.19.0-6-amd64 botocore/1.17.30"
+            "original": "aws-cli/1.18.87 Python/3.7.3 Linux/4.19.0-6-amd64 botocore/1.17.30",
+            "device": {
+                "name": "Spider"
+            },
+            "name": "aws-cli",
+            "version": "1.18.87"
         },
         "user": {
             "id": "1111111111"
@@ -315,6 +334,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux",
+            "version": "4.19.0"
         }
     }
     	
@@ -381,7 +404,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "AWS Internal"
+            "original": "AWS Internal",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "user": {
             "id": "111111111111"
@@ -413,6 +440,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "request_parameters": "{\"instanceId\": \"i-00000000000000000\", \"userData\": \"\\u003csensitiveDataRemoved\\u003e\"}"
                 }
             }
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -465,7 +495,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "aws-cli/1.18.87 Python/3.7.3 Linux/4.19.0-6-amd64 botocore/1.17.30"
+            "original": "aws-cli/1.18.87 Python/3.7.3 Linux/4.19.0-6-amd64 botocore/1.17.30",
+            "device": {
+                "name": "Spider"
+            },
+            "name": "aws-cli",
+            "version": "1.18.87"
         },
         "user": {
             "id": "1111111111",
@@ -508,6 +543,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "AIDA11111111111111"
             ]
+        },
+        "os": {
+            "name": "Linux",
+            "version": "4.19.0"
         }
     }
     	
@@ -581,7 +620,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "aws-internal/3 aws-sdk-java/1.11.802 Linux/4.14.181-108.257.amzn1.x86_64 OpenJDK_64-Bit_Server_VM/11.0.7+10-LTS java/11.0.7 vendor/Amazon.com_Inc."
+            "original": "aws-internal/3 aws-sdk-java/1.11.802 Linux/4.14.181-108.257.amzn1.x86_64 OpenJDK_64-Bit_Server_VM/11.0.7+10-LTS java/11.0.7 vendor/Amazon.com_Inc.",
+            "device": {
+                "name": "Other"
+            },
+            "name": "aws-sdk-java",
+            "version": "1.11.802"
         },
         "user": {
             "id": "1111111111"
@@ -631,6 +675,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux",
+            "version": "4.14.181"
         }
     }
     	
@@ -694,7 +742,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "AWS Internal"
+            "original": "AWS Internal",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "user": {
             "id": "111111111111"
@@ -729,6 +781,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "request_parameters": "{\"allowMajorVersionUpgrade\": false, \"applyImmediately\": true, \"dBInstanceIdentifier\": \"database-1\", \"masterUserPassword\": \"****\", \"maxAllocatedStorage\": 1000}"
                 }
             }
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -782,7 +837,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "lambda.amazonaws.com"
+            "original": "lambda.amazonaws.com",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "source": {
             "address": "lambda.amazonaws.com",
@@ -812,6 +871,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hosts": [
                 "lambda.amazonaws.com"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -864,7 +926,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+            "original": "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Firefox",
+            "version": "68.0"
         },
         "user": {
             "id": "1111111111"
@@ -893,6 +960,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -946,7 +1016,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "lambda.amazonaws.com"
+            "original": "lambda.amazonaws.com",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "source": {
             "address": "lambda.amazonaws.com",
@@ -976,6 +1050,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hosts": [
                 "lambda.amazonaws.com"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -1105,7 +1182,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "elasticfilesystem"
+            "original": "elasticfilesystem",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "user": {
             "id": "1111111111"
@@ -1148,6 +1229,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     }
                 ]
             }
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -1199,7 +1283,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "105.0.0"
         },
         "user": {
             "id": "111111111"
@@ -1231,6 +1320,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	

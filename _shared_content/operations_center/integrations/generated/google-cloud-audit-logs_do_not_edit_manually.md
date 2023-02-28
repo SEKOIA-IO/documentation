@@ -712,7 +712,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "10.186.0.146"
         },
         "user_agent": {
-            "original": "kube-scheduler/v1.22.8 (linux/amd64) kubernetes/2dca91e/leader-election"
+            "original": "kube-scheduler/v1.22.8 (linux/amd64) kubernetes/2dca91e/leader-election",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "related": {
             "ip": [
@@ -721,6 +725,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "system:kube-scheduler"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -841,7 +848,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "10.186.0.146"
         },
         "user_agent": {
-            "original": "kubestore_collector/v0.0.0 (linux/amd64) kubernetes/$Format"
+            "original": "kubestore_collector/v0.0.0 (linux/amd64) kubernetes/$Format",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "related": {
             "ip": [
@@ -850,6 +861,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "system:kubestore-collector"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
