@@ -108,7 +108,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)"
+            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "version": "2016"
         },
         "related": {
             "hash": [
@@ -123,6 +128,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -203,7 +211,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)"
+            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "version": "2016"
         },
         "rule": {
             "name": "ETPRO INFO Observed Suspicious Base64 Encoded Wide String Inbound (exe)",
@@ -219,6 +232,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -289,7 +305,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)"
+            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "version": "2016"
         },
         "file": {
             "name": "/exploit.html",
@@ -312,6 +333,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -385,7 +409,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Microsoft Office Existence Discovery"
+            "original": "Microsoft Office Existence Discovery",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "related": {
             "hosts": [
@@ -396,6 +424,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	

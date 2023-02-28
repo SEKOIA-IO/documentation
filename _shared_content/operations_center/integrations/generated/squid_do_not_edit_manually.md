@@ -665,7 +665,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "product": "Squid"
         },
         "user_agent": {
-            "original": "TMUFE"
+            "original": "TMUFE",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "source": {
             "ip": "192.168.95.17",
@@ -696,6 +700,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "192.168.95.17"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	

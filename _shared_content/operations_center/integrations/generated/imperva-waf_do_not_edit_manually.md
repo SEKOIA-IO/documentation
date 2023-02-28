@@ -51,7 +51,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "module": "imperva.waf"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0"
+            "original": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Firefox",
+            "version": "40.0"
         },
         "client": {
             "geo": {
@@ -126,6 +131,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "12.12.12.12"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "7"
         }
     }
     	
@@ -157,7 +166,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
-            "name": "Webkit Browser"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "99.0"
         },
         "client": {
             "geo": {
@@ -215,6 +228,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -246,7 +262,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
-            "name": "Webkit Browser"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "99.0"
         },
         "client": {
             "geo": {
@@ -304,6 +324,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -335,7 +358,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
-            "name": "Webkit Browser"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "99.0"
         },
         "client": {
             "geo": {
@@ -393,6 +420,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -423,7 +453,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
-            "name": "Webkit Browser"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "99.0"
         },
         "client": {
             "geo": {
@@ -481,6 +515,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -512,7 +549,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0",
-            "name": "Firefox"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "40.0"
         },
         "client": {
             "geo": {
@@ -615,6 +656,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "12.12.12.12"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "7"
         }
     }
     	
@@ -646,7 +691,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
-            "name": "Webkit Browser"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "99.0"
         },
         "client": {
             "geo": {
@@ -704,6 +753,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -734,7 +786,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
-            "name": "Webkit Browser"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "99.0"
         },
         "client": {
             "geo": {
@@ -792,6 +848,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -823,7 +882,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0",
-            "name": "Webkit Browser"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "99.0"
         },
         "client": {
             "geo": {
@@ -881,6 +944,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	

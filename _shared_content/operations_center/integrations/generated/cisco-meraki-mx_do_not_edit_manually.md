@@ -841,7 +841,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+            "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+            "device": {
+                "name": "Mac"
+            },
+            "name": "Chrome",
+            "version": "108.0.0"
         },
         "related": {
             "hosts": [
@@ -851,6 +856,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "5.6.7.8"
             ]
+        },
+        "os": {
+            "name": "Mac OS X",
+            "version": "10.15.7"
         }
     }
     	

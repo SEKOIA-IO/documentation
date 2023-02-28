@@ -97,7 +97,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Microsoft-CryptoAPI/10.0"
+            "original": "Microsoft-CryptoAPI/10.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Microsoft-CryptoAPI",
+            "version": "10.0"
         },
         "forcepoint": {
             "webgateway": {
@@ -122,6 +127,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "hosts": [
                 "ctldl.windowsupdate.com"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -209,7 +217,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "id": "n_nini"
         },
         "user_agent": {
-            "original": "Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.10386; Pro)"
+            "original": "Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.10386; Pro)",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "version": "2016"
         },
         "forcepoint": {
             "webgateway": {
@@ -238,6 +251,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "User 1"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	

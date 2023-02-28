@@ -352,7 +352,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         },
         "user_agent": {
             "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0",
-            "name": "Firefox 81.0"
+            "name": "Firefox",
+            "device": {
+                "name": "Other"
+            },
+            "version": "81.0"
         },
         "azuread": {
             "resourceId": "00000002-0000-0000-c000-000000000000",
@@ -388,6 +392,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "jane.doe@sekoiacorp.onmicrosoft.com"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -506,12 +514,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "email": "jean.dupont@corp.com"
         },
         "user_agent": {
-            "original": "Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.14326; Pro)"
+            "original": "Microsoft Office/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.14326; Pro)",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "version": "2016"
         },
         "related": {
             "ip": [
                 "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -634,12 +651,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "email": "User.Name@corp.name"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "99.0.4844"
         },
         "related": {
             "ip": [
                 "11.11.11.11"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -710,12 +736,21 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "email": "admin.jdupont@corp.net"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Firefox",
+            "version": "98.0"
         },
         "related": {
             "ip": [
                 "11.11.11.11"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	

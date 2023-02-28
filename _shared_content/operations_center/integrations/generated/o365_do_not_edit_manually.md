@@ -86,7 +86,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+            "original": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Chrome",
+            "version": "85.0.4183"
         },
         "related": {
             "ip": [
@@ -95,6 +100,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "user@company.onmicrosoft.com"
             ]
+        },
+        "os": {
+            "name": "Linux"
         }
     }
     	
@@ -266,7 +274,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "directory": "Documents"
         },
         "user_agent": {
-            "original": "OneDriveMpc-Transform_Thumbnail/1.0"
+            "original": "OneDriveMpc-Transform_Thumbnail/1.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other"
         },
         "url": {
             "full": "https://company-my.sharepoint.com/personal/jane_doe_company_onmicrosoft_com/Documents/MyDocument.docx",
@@ -286,6 +298,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "jane.doe@company.onmicrosoft.com"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -360,7 +375,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "directory": "public/assets/website"
         },
         "user_agent": {
-            "original": "Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)"
+            "original": "Microsoft SkyDriveSync 22.099.0508.0001 ship; Windows NT 10.0 (19043)",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Microsoft SkyDriveSync",
+            "version": "22.099.0508"
         },
         "url": {
             "full": "https://company.sharepoint.com/sites/shared/public/assets/website/logo.png",
@@ -380,6 +400,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "marketing@company.com"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -1003,7 +1027,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Edge",
+            "version": "18.17763"
         },
         "related": {
             "ip": [
@@ -1012,6 +1041,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "REDACTED@company.onmicrosoft.com"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	
@@ -1076,7 +1109,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             }
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0"
+            "original": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "Firefox",
+            "version": "105.0"
         },
         "related": {
             "ip": [
@@ -1085,6 +1123,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "user@mycompany.com"
             ]
+        },
+        "os": {
+            "name": "Windows",
+            "version": "10"
         }
     }
     	

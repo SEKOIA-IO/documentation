@@ -81,7 +81,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "user_agent": {
-            "original": "curl/7.77.0"
+            "original": "curl/7.77.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "curl",
+            "version": "7.77.0"
         },
         "url": {
             "original": "http://www.forbiddensite.com/",
@@ -121,6 +126,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "2.2.2.41"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	
@@ -360,7 +368,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "address": "1.2.3.4"
         },
         "user_agent": {
-            "original": "curl/7.77.0"
+            "original": "curl/7.77.0",
+            "device": {
+                "name": "Other"
+            },
+            "name": "curl",
+            "version": "7.77.0"
         },
         "url": {
             "original": "http://www.google.fr/",
@@ -405,6 +418,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "myusername"
             ]
+        },
+        "os": {
+            "name": "Other"
         }
     }
     	

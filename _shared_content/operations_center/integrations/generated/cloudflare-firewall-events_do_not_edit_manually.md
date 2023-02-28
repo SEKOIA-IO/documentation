@@ -140,7 +140,12 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "registered_domain": "foo-bar-baz.xyz"
         },
         "user_agent": {
-            "original": "Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; HM NOTE 1W Build/KOT49H) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/11.0.5.850 U3/0.8.0 Mobile Safari/534.30"
+            "original": "Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; HM NOTE 1W Build/KOT49H) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/11.0.5.850 U3/0.8.0 Mobile Safari/534.30",
+            "device": {
+                "name": "XiaoMi HM NOTE 1W"
+            },
+            "name": "UC Browser",
+            "version": "11.0.5"
         },
         "network": {
             "protocol": "HTTP/1.1"
@@ -170,6 +175,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "10.6.12.26"
             ]
+        },
+        "os": {
+            "name": "Android",
+            "version": "4.4.2"
         }
     }
     	
@@ -215,7 +224,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`network.protocol` | `keyword` | Application protocol name. |
 |`observer.type` | `keyword` | The type of the observer the data is coming from. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
+|`rule.description` | `keyword` | Rule description |
 |`rule.id` | `keyword` | Rule ID |
+|`rule.reference` | `keyword` | Rule reference URL |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`source.as.number` | `long` | Unique number allocated to the autonomous system. |
 |`source.geo.country_name` | `keyword` | Country name. |
