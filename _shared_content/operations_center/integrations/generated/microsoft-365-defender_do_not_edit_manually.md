@@ -404,6 +404,529 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_device_info_event_add_join.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2023-01-02T17:21:10.6891411Z\",\"tenantId\":\"d9eae684-f70a-4ac1-b304-53de40a8db56\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-DeviceInfo\",\"properties\":{\"ClientVersion\":\"10.8295.19041.2311\",\"PublicIP\":\"4.3.2.1\",\"DeviceName\":\"ml-002\",\"DeviceId\":\"9766ea323abe48f9b9d86b4fb3dc6c14\",\"ReportId\":11111,\"Timestamp\":\"2023-01-02T17:18:18.4028562Z\",\"OSArchitecture\":null,\"OSPlatform\":null,\"OSBuild\":null,\"IsAzureADJoined\":true,\"LoggedOnUsers\":\"[{\\\"UserName\\\":\\\"JOHNDOE\\\",\\\"DomainName\\\":\\\"INTRANET\\\",\\\"Sid\\\":\\\"S-1-11-1-1111111111-1111111111-1111111111-1111111111\\\"}]\",\"RegistryDeviceTag\":null,\"OSVersion\":null,\"AdditionalFields\":\"[]\",\"AadDeviceId\":\"cc8601ad-6446-4277-b110-9f01e636b653\",\"MergedDeviceIds\":\"\",\"MergedToDeviceId\":\"\",\"Vendor\":\"\",\"Model\":\"\",\"OnboardingStatus\":\"Onboarded\",\"DeviceCategory\":\"Endpoint\",\"DeviceType\":\"Workstation\",\"DeviceSubtype\":null,\"OSVersionInfo\":\"\",\"OSDistribution\":\"\",\"JoinType\":\"AAD Joined\",\"MachineGroup\":\"UnassignedGroup\"},\"Tenant\":\"DefaultTenant\"}\n",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "dataset": "device_info_events",
+            "category": [
+                "host"
+            ]
+        },
+        "@timestamp": "2023-01-02T17:21:10.689141Z",
+        "agent": {
+            "version": "10.8295.19041.2311"
+        },
+        "host": {
+            "id": "9766ea323abe48f9b9d86b4fb3dc6c14",
+            "name": "ml-002",
+            "type": "Workstation"
+        },
+        "microsoft": {
+            "defender": {
+                "report": {
+                    "id": "11111"
+                },
+                "host": {
+                    "category": "Endpoint"
+                }
+            }
+        },
+        "source": {
+            "ip": "4.3.2.1",
+            "address": "4.3.2.1"
+        },
+        "action": {
+            "properties": {
+                "IsAzureADJoined": true,
+                "AadDeviceId": "cc8601ad-6446-4277-b110-9f01e636b653",
+                "LoggedOnUsers": [
+                    "{\"DomainName\": \"INTRANET\", \"Sid\": \"S-1-11-1-1111111111-1111111111-1111111111-1111111111\", \"UserName\": \"JOHNDOE\"}"
+                ],
+                "MachineGroup": "UnassignedGroup",
+                "OnboardingStatus": "Onboarded",
+                "JoinType": "AAD Joined"
+            }
+        },
+        "user": {
+            "name": "JOHNDOE",
+            "domain": "INTRANET",
+            "id": "S-1-11-1-1111111111-1111111111-1111111111-1111111111"
+        },
+        "related": {
+            "ip": [
+                "4.3.2.1"
+            ],
+            "user": [
+                "JOHNDOE"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_device_info_event_hybrid_join.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2023-01-02T17:21:10.6890829Z\",\"tenantId\":\"d9eae684-f70a-4ac1-b304-53de40a8db56\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-DeviceInfo\",\"properties\":{\"ClientVersion\":\"10.8295.19041.2311\",\"PublicIP\":\"4.3.2.1\",\"DeviceName\":\"ml-002\",\"DeviceId\":\"9766ea323abe48f9b9d86b4fb3dc6c14\",\"ReportId\":22222,\"Timestamp\":\"2023-01-02T17:16:49.4177838Z\",\"OSArchitecture\":null,\"OSPlatform\":null,\"OSBuild\":null,\"IsAzureADJoined\":true,\"LoggedOnUsers\":\"[]\",\"RegistryDeviceTag\":null,\"OSVersion\":null,\"AdditionalFields\":\"[]\",\"AadDeviceId\":\"cc8601ad-6446-4277-b110-9f01e636b653\",\"MergedDeviceIds\":\"\",\"MergedToDeviceId\":\"\",\"Vendor\":\"\",\"Model\":\"\",\"OnboardingStatus\":\"Onboarded\",\"DeviceCategory\":\"Endpoint\",\"DeviceType\":\"Workstation\",\"DeviceSubtype\":null,\"OSVersionInfo\":\"\",\"OSDistribution\":\"\",\"JoinType\":\"Hybrid Azure AD Join\",\"MachineGroup\":\"Windows 10 - remediate threats automatically\"},\"Tenant\":\"DefaultTenant\"}\n",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "dataset": "device_info_events",
+            "category": [
+                "host"
+            ]
+        },
+        "@timestamp": "2023-01-02T17:21:10.689082Z",
+        "agent": {
+            "version": "10.8295.19041.2311"
+        },
+        "host": {
+            "id": "9766ea323abe48f9b9d86b4fb3dc6c14",
+            "name": "ml-002",
+            "type": "Workstation"
+        },
+        "microsoft": {
+            "defender": {
+                "report": {
+                    "id": "22222"
+                },
+                "host": {
+                    "category": "Endpoint"
+                }
+            }
+        },
+        "source": {
+            "ip": "4.3.2.1",
+            "address": "4.3.2.1"
+        },
+        "action": {
+            "properties": {
+                "IsAzureADJoined": true,
+                "AadDeviceId": "cc8601ad-6446-4277-b110-9f01e636b653",
+                "LoggedOnUsers": [],
+                "MachineGroup": "Windows 10 - remediate threats automatically",
+                "OnboardingStatus": "Onboarded",
+                "JoinType": "Hybrid Azure AD Join"
+            }
+        },
+        "related": {
+            "ip": [
+                "4.3.2.1"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_device_logon_events.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2023-01-04T14:26:25.0567375Z\",\"tenantId\":\"d9eae684-f70a-4ac1-b304-53de40a8db56\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-DeviceLogonEvents\",\"properties\":{\"AccountName\":\"dwm-3\",\"AccountDomain\":\"window manager\",\"LogonType\":\"Interactive\",\"DeviceId\":\"dbe5c34434fb4792bea6874dd0b1f107\",\"DeviceName\":\"ml022\",\"ReportId\":21833,\"Timestamp\":\"2023-01-04T13:25:36.1936997Z\",\"AccountSid\":\"S-1-1-11-1-1\",\"AppGuardContainerId\":\"\",\"LogonId\":111111,\"RemoteIP\":\"\",\"RemotePort\":null,\"RemoteDeviceName\":\"\",\"ActionType\":\"LogonSuccess\",\"InitiatingProcessId\":3660,\"InitiatingProcessCreationTime\":\"2023-01-04T13:25:35.9877068Z\",\"InitiatingProcessFileName\":\"winlogon.exe\",\"InitiatingProcessFolderPath\":\"C:\\\\Windows\\\\System32\",\"InitiatingProcessSHA1\":\"0c8b6c1f8c1d248000192e2569735848051b3ce1\",\"InitiatingProcessSHA256\":null,\"InitiatingProcessMD5\":\"f597fa958fd63accc90cb469e7ddc2a5\",\"InitiatingProcessCommandLine\":\"WinLogon.exe -SpecialSession\",\"InitiatingProcessAccountName\":\"system\",\"InitiatingProcessAccountDomain\":\"NT\",\"InitiatingProcessAccountSid\":\"S-1-1-11\",\"InitiatingProcessTokenElevation\":\"None\",\"InitiatingProcessIntegrityLevel\":null,\"InitiatingProcessParentId\":12776,\"InitiatingProcessParentCreationTime\":\"2023-01-04T13:25:35.9028371Z\",\"InitiatingProcessParentFileName\":\"\\\\Device\\\\HarddiskVolume3\\\\Windows\\\\System32\\\\smss.exe\",\"AdditionalFields\":\"{\\\"IsLocalLogon\\\":true}\",\"RemoteIPType\":null,\"IsLocalAdmin\":null,\"InitiatingProcessAccountUpn\":null,\"InitiatingProcessAccountObjectId\":null,\"Protocol\":\"Negotiate\",\"FailureReason\":null,\"InitiatingProcessFileSize\":null,\"InitiatingProcessVersionInfoCompanyName\":null,\"InitiatingProcessVersionInfoProductName\":null,\"InitiatingProcessVersionInfoProductVersion\":null,\"InitiatingProcessVersionInfoInternalFileName\":null,\"InitiatingProcessVersionInfoOriginalFileName\":null,\"InitiatingProcessVersionInfoFileDescription\":null,\"MachineGroup\":\"UnassignedGroup\"},\"Tenant\":\"DefaultTenant\"}\n",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "dataset": "device_logon_events",
+            "category": [
+                "authentication"
+            ]
+        },
+        "@timestamp": "2023-01-04T14:26:25.056737Z",
+        "host": {
+            "id": "dbe5c34434fb4792bea6874dd0b1f107",
+            "name": "ml022"
+        },
+        "process": {
+            "pid": 3660,
+            "start": "2023-01-04T13:25:35.9877068Z",
+            "executable": "winlogon.exe",
+            "command_line": "WinLogon.exe -SpecialSession",
+            "working_directory": "C:\\Windows",
+            "user": {
+                "domain": "NT",
+                "name": "system",
+                "id": "S-1-1-11"
+            },
+            "parent": {
+                "pid": 12776,
+                "executable": "\\Device\\HarddiskVolume3\\Windows\\System32\\smss.exe",
+                "start": "2023-01-04T13:25:35.9028371Z"
+            },
+            "args": [
+                "-SpecialSession"
+            ]
+        },
+        "user": {
+            "domain": "window manager",
+            "name": "dwm-3"
+        },
+        "action": {
+            "type": "LogonSuccess",
+            "properties": {
+                "LogonId": "111111",
+                "LogonType": "Interactive",
+                "AccountSid": "S-1-1-11-1-1"
+            }
+        },
+        "microsoft": {
+            "defender": {
+                "report": {
+                    "id": "21833"
+                }
+            }
+        },
+        "related": {
+            "user": [
+                "dwm-3"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_device_network_events.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2023-01-04T14:07:32.6213639Z\",\"tenantId\":\"d9eae684-f70a-4ac1-b304-53de40a8db56\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-DeviceNetworkEvents\",\"properties\":{\"DeviceId\":\"dbe5c34434fb4792bea6874dd0b1f107\",\"DeviceName\":\"ml022\",\"ReportId\":37827,\"Timestamp\":\"2023-01-04T14:05:32.3148625Z\",\"RemoteIP\":\"5.6.7.8\",\"RemotePort\":443,\"LocalIP\":\"1.2.3.4\",\"LocalPort\":59985,\"Protocol\":\"Tcp\",\"RemoteUrl\":\"www.example.org\",\"InitiatingProcessCreationTime\":\"2023-01-04T14:05:22.8079798Z\",\"InitiatingProcessId\":18288,\"InitiatingProcessCommandLine\":\"\\\"EXCEL.EXE\\\" \\\"C:\\\\Users\\\\USER\\\\MyDocument.xslx\",\"InitiatingProcessParentCreationTime\":\"2023-01-04T14:04:35.708037Z\",\"InitiatingProcessParentId\":23332,\"InitiatingProcessParentFileName\":\"explorer.exe\",\"InitiatingProcessSHA1\":\"2b684979d6174bad69d895c7d8a852e7b206b95f\",\"InitiatingProcessMD5\":\"4d5b7b6c06159d6b967f2c2c73f10145\",\"InitiatingProcessFolderPath\":\"c:\\\\program files\\\\microsoft office\\\\root\\\\office16\\\\excel.exe\",\"InitiatingProcessAccountName\":\"USER\",\"InitiatingProcessAccountDomain\":\"intranet\",\"InitiatingProcessAccountSid\":\"S-1-11-1-11111111-1111111111-111111111-111111111\",\"InitiatingProcessFileName\":\"EXCEL.EXE\",\"InitiatingProcessIntegrityLevel\":\"Medium\",\"InitiatingProcessTokenElevation\":\"TokenElevationTypeDefault\",\"AppGuardContainerId\":\"\",\"LocalIPType\":\"Private\",\"RemoteIPType\":\"Public\",\"ActionType\":\"ConnectionSuccess\",\"InitiatingProcessSHA256\":\"1e22c9b2e6562fa32d410bc4957279a46b614eed4cd5f45c200b4a24237bd095\",\"InitiatingProcessAccountUpn\":\"john.doe@example.org\",\"InitiatingProcessAccountObjectId\":\"e0e5e759-c1e1-4cf9-91d5-c1099ef74614\",\"AdditionalFields\":null,\"InitiatingProcessFileSize\":63984520,\"InitiatingProcessVersionInfoCompanyName\":\"Microsoft Corporation\",\"InitiatingProcessVersionInfoProductName\":\"Microsoft Office\",\"InitiatingProcessVersionInfoProductVersion\":\"16.0.15601.20538\",\"InitiatingProcessVersionInfoInternalFileName\":\"Excel\",\"InitiatingProcessVersionInfoOriginalFileName\":\"Excel.exe\",\"InitiatingProcessVersionInfoFileDescription\":\"Microsoft Excel\",\"MachineGroup\":\"UnassignedGroup\"},\"Tenant\":\"DefaultTenant\"}\n",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "dataset": "device_network_events",
+            "category": [
+                "network"
+            ]
+        },
+        "@timestamp": "2023-01-04T14:07:32.621363Z",
+        "destination": {
+            "port": 443,
+            "ip": "5.6.7.8",
+            "address": "5.6.7.8"
+        },
+        "host": {
+            "id": "dbe5c34434fb4792bea6874dd0b1f107",
+            "name": "ml022"
+        },
+        "network": {
+            "protocol": "Tcp"
+        },
+        "process": {
+            "pid": 18288,
+            "start": "2023-01-04T14:05:22.8079798Z",
+            "executable": "EXCEL.EXE",
+            "command_line": "\"EXCEL.EXE\" \"C:\\Users\\USER\\MyDocument.xslx",
+            "working_directory": "c:\\program files\\microsoft office\\root\\office16",
+            "user": {
+                "domain": "intranet",
+                "name": "USER",
+                "id": "S-1-11-1-11111111-1111111111-111111111-111111111",
+                "email": "john.doe@example.org"
+            },
+            "parent": {
+                "pid": 23332,
+                "executable": "explorer.exe",
+                "start": "2023-01-04T14:04:35.708037Z"
+            },
+            "args": [
+                "\"C:\\Users\\USER\\MyDocument.xslx"
+            ]
+        },
+        "source": {
+            "port": 59985,
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "action": {
+            "type": "ConnectionSuccess",
+            "properties": {
+                "InitiatingProcessAccountObjectId": "e0e5e759-c1e1-4cf9-91d5-c1099ef74614",
+                "InitiatingProcessFileSize": 63984520,
+                "InitiatingProcessIntegrityLevel": "Medium",
+                "InitiatingProcessTokenElevation": "TokenElevationTypeDefault",
+                "InitiatingProcessVersionInfoCompanyName": "Microsoft Corporation",
+                "InitiatingProcessVersionInfoFileDescription": "Microsoft Excel",
+                "InitiatingProcessVersionInfoInternalFileName": "Excel",
+                "InitiatingProcessVersionInfoOriginalFileName": "Excel.exe",
+                "InitiatingProcessVersionInfoProductName": "Microsoft Office",
+                "InitiatingProcessVersionInfoProductVersion": "16.0.15601.20538",
+                "LocalIPType": "Private",
+                "RemoteIPType": "Public"
+            }
+        },
+        "microsoft": {
+            "defender": {
+                "report": {
+                    "id": "37827"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_device_network_info.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2023-01-04T14:07:34.1999095Z\",\"tenantId\":\"d9eae684-f70a-4ac1-b304-53de40a8db56\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-DeviceNetworkInfo\",\"properties\":{\"DeviceId\":\"dbe5c34434fb4792bea6874dd0b1f107\",\"DeviceName\":\"ml022\",\"Timestamp\":\"2023-01-04T14:04:35.622431Z\",\"ReportId\":13489,\"NetworkAdapterName\":\"{B844C2B6-E379-47C8-A28B-784DF7D3D731}\",\"NetworkAdapterType\":\"Guest\",\"NetworkAdapterStatus\":\"Down\",\"TunnelType\":\"None\",\"ConnectedNetworks\":null,\"DnsAddresses\":\"[\\\"fff0:0:0:ffff::1\\\",\\\"fff0:0:0:ffff::2\\\",\\\"fff0:0:0:ffff::3\\\"]\",\"DefaultGateways\":null,\"MacAddress\":\"C8B29B8AEAAE\",\"IPv4Dhcp\":\"\",\"IPv6Dhcp\":\"\",\"IPAddresses\":\"[{\\\"IPAddress\\\":\\\"1.2.3.4\\\",\\\"SubnetPrefix\\\":16,\\\"AddressType\\\":\\\"LinkLocal\\\"},{\\\"IPAddress\\\":\\\"ffff::fff:fff:aaa:ccc\\\",\\\"SubnetPrefix\\\":64,\\\"AddressType\\\":\\\"Private\\\"}]\",\"NetworkAdapterVendor\":null,\"MachineGroup\":\"UnassignedGroup\"},\"Tenant\":\"DefaultTenant\"}\n",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "dataset": "device_network_info",
+            "category": [
+                "host"
+            ]
+        },
+        "@timestamp": "2023-01-04T14:07:34.199909Z",
+        "host": {
+            "id": "dbe5c34434fb4792bea6874dd0b1f107",
+            "name": "ml022",
+            "mac": [
+                "C8B29B8AEAAE"
+            ]
+        },
+        "microsoft": {
+            "defender": {
+                "report": {
+                    "id": "13489"
+                },
+                "observer": {
+                    "interface": {
+                        "name": "{B844C2B6-E379-47C8-A28B-784DF7D3D731}",
+                        "type": "Guest",
+                        "status": "Down",
+                        "dns": [
+                            "fff0:0:0:ffff::1",
+                            "fff0:0:0:ffff::2",
+                            "fff0:0:0:ffff::3"
+                        ],
+                        "ips": [
+                            "{\"AddressType\": \"LinkLocal\", \"IPAddress\": \"1.2.3.4\", \"SubnetPrefix\": 16}",
+                            "{\"AddressType\": \"Private\", \"IPAddress\": \"ffff::fff:fff:aaa:ccc\", \"SubnetPrefix\": 64}"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_device_process_events.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2023-01-04T14:16:55.5041166Z\",\"tenantId\":\"d9eae684-f70a-4ac1-b304-53de40a8db56\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-DeviceProcessEvents\",\"properties\":{\"InitiatingProcessSHA1\":\"5bfbb0f965e2761d75a51faacc9db6a146a7c5ae\",\"InitiatingProcessFileSize\":133576,\"InitiatingProcessMD5\":\"5d5608654828cf052ba013b3c37cbb61\",\"InitiatingProcessFileName\":\"MsMpEng.exe\",\"InitiatingProcessParentFileName\":\"services.exe\",\"InitiatingProcessFolderPath\":\"c:\\\\programdata\\\\microsoft\\\\windows defender\\\\platform\\\\4.18.2301.6-0\\\\msmpeng.exe\",\"InitiatingProcessCommandLine\":\"\\\"MsMpEng.exe\\\"\",\"SHA1\":\"81ea1283c9c328fef3ea93e92dc827f1280b32aa\",\"FileSize\":1592184,\"MD5\":\"17bd5d291205f95eb9ede9e75d5641d7\",\"FolderPath\":\"C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\4.18.2301.6-0\\\\MpCmdRun.exe\",\"ProcessCommandLine\":\"\\\"MpCmdRun.exe\\\" Scan -ScheduleJob -RestrictPrivileges -DailyScan -ScanTrigger 54\",\"FileName\":\"MpCmdRun.exe\",\"ProcessId\":37788,\"InitiatingProcessId\":5456,\"ProcessCreationTime\":\"2023-01-04T14:15:10.3550336Z\",\"DeviceId\":\"dbe5c34434fb4792bea6874dd0b1f107\",\"DeviceName\":\"ml022\",\"InitiatingProcessCreationTime\":\"2023-01-03T08:51:29.2692792Z\",\"InitiatingProcessAccountName\":\"System\",\"InitiatingProcessAccountDomain\":\"NT\",\"InitiatingProcessAccountSid\":\"S-1-1-11\",\"InitiatingProcessSignatureStatus\":\"Valid\",\"InitiatingProcessSignerType\":\"OsVendor\",\"InitiatingProcessParentId\":1032,\"ReportId\":104118,\"Timestamp\":\"2023-01-04T14:15:10.4684522Z\",\"InitiatingProcessParentCreationTime\":\"2023-01-03T08:51:26.7402415Z\",\"InitiatingProcessTokenElevation\":\"TokenElevationTypeDefault\",\"InitiatingProcessIntegrityLevel\":\"System\",\"AccountDomain\":\"NT\",\"AccountName\":\"system\",\"ProcessTokenElevation\":\"TokenElevationTypeDefault\",\"ProcessIntegrityLevel\":\"System\",\"AccountSid\":\"S-1-1-11\",\"AppGuardContainerId\":\"\",\"SHA256\":\"60d88450bc4d6e9bcb83fbcd0342376694dc55eb8f40b0f79580d1df399a7bdf\",\"InitiatingProcessSHA256\":\"52bd0a4d149f7913b9c3ba111eff1e75188abfcdc54b927390bc3bfad419860e\",\"InitiatingProcessLogonId\":999,\"LogonId\":999,\"InitiatingProcessAccountUpn\":null,\"InitiatingProcessAccountObjectId\":null,\"AccountUpn\":null,\"AccountObjectId\":null,\"AdditionalFields\":null,\"InitiatingProcessVersionInfoCompanyName\":\"Microsoft Corporation\",\"InitiatingProcessVersionInfoProductName\":\"Microsoft\u00ae Windows\u00ae Operating System\",\"InitiatingProcessVersionInfoProductVersion\":\"4.18.2301.6\",\"InitiatingProcessVersionInfoInternalFileName\":\"MsMpEng.exe\",\"InitiatingProcessVersionInfoOriginalFileName\":\"MsMpEng.exe\",\"InitiatingProcessVersionInfoFileDescription\":\"Antimalware Service Executable\",\"ProcessVersionInfoCompanyName\":\"Microsoft Corporation\",\"ProcessVersionInfoProductName\":\"Microsoft\u00ae Windows\u00ae Operating System\",\"ProcessVersionInfoProductVersion\":\"4.18.2301.6\",\"ProcessVersionInfoInternalFileName\":\"MpCmdRun\",\"ProcessVersionInfoOriginalFileName\":\"MpCmdRun.exe\",\"ProcessVersionInfoFileDescription\":\"Microsoft Malware Protection Command Line Utility\",\"MachineGroup\":\"UnassignedGroup\",\"ActionType\":\"ProcessCreated\"},\"Tenant\":\"DefaultTenant\"}\n",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "dataset": "device_process_events",
+            "category": [
+                "process"
+            ]
+        },
+        "@timestamp": "2023-01-04T14:16:55.504116Z",
+        "file": {
+            "directory": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2301.6-0\\MpCmdRun.exe",
+            "hash": {
+                "md5": "17bd5d291205f95eb9ede9e75d5641d7",
+                "sha1": "81ea1283c9c328fef3ea93e92dc827f1280b32aa",
+                "sha256": "60d88450bc4d6e9bcb83fbcd0342376694dc55eb8f40b0f79580d1df399a7bdf"
+            },
+            "name": "MpCmdRun.exe",
+            "size": 1592184
+        },
+        "host": {
+            "id": "dbe5c34434fb4792bea6874dd0b1f107",
+            "name": "ml022"
+        },
+        "process": {
+            "pid": 37788,
+            "start": "2023-01-04T14:15:10.3550336Z",
+            "executable": "MsMpEng.exe",
+            "command_line": "\"MpCmdRun.exe\" Scan -ScheduleJob -RestrictPrivileges -DailyScan -ScanTrigger 54",
+            "working_directory": "c:\\programdata\\microsoft\\windows defender\\platform\\4.18.2301.6-0",
+            "user": {
+                "domain": "NT",
+                "name": "System",
+                "id": "S-1-1-11"
+            },
+            "parent": {
+                "pid": 1032,
+                "executable": "services.exe",
+                "start": "2023-01-03T08:51:26.7402415Z"
+            },
+            "args": [
+                "Scan",
+                "-ScheduleJob",
+                "-RestrictPrivileges",
+                "-DailyScan",
+                "-ScanTrigger",
+                "54"
+            ],
+            "code_signature": {
+                "status": "Valid",
+                "subject_name": "OsVendor"
+            }
+        },
+        "user": {
+            "domain": "NT",
+            "name": "system"
+        },
+        "action": {
+            "type": "ProcessCreated",
+            "properties": {
+                "InitiatingProcessFileSize": 133576,
+                "InitiatingProcessIntegrityLevel": "System",
+                "InitiatingProcessLogonId": "999",
+                "InitiatingProcessTokenElevation": "TokenElevationTypeDefault",
+                "InitiatingProcessVersionInfoCompanyName": "Microsoft Corporation",
+                "InitiatingProcessVersionInfoFileDescription": "Antimalware Service Executable",
+                "InitiatingProcessVersionInfoInternalFileName": "MsMpEng.exe",
+                "InitiatingProcessVersionInfoOriginalFileName": "MsMpEng.exe",
+                "InitiatingProcessVersionInfoProductName": "Microsoft\u00ae Windows\u00ae Operating System",
+                "InitiatingProcessVersionInfoProductVersion": "4.18.2301.6",
+                "LogonId": "999",
+                "AccountSid": "S-1-1-11",
+                "ProcessIntegrityLevel": "System",
+                "ProcessVersionInfoCompanyName": "Microsoft Corporation",
+                "ProcessVersionInfoFileDescription": "Microsoft Malware Protection Command Line Utility",
+                "ProcessVersionInfoInternalFileName": "MpCmdRun",
+                "ProcessVersionInfoOriginalFileName": "MpCmdRun.exe",
+                "ProcessVersionInfoProductName": "Microsoft\u00ae Windows\u00ae Operating System",
+                "ProcessVersionInfoProductVersion": "4.18.2301.6"
+            }
+        },
+        "microsoft": {
+            "defender": {
+                "report": {
+                    "id": "104118"
+                }
+            }
+        },
+        "related": {
+            "hash": [
+                "17bd5d291205f95eb9ede9e75d5641d7",
+                "60d88450bc4d6e9bcb83fbcd0342376694dc55eb8f40b0f79580d1df399a7bdf",
+                "81ea1283c9c328fef3ea93e92dc827f1280b32aa"
+            ],
+            "user": [
+                "system"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_device_registry_events.json"
+
+    ```json
+	
+    {
+        "message": "{\"time\":\"2023-01-04T14:37:14.9238631Z\",\"tenantId\":\"d9eae684-f70a-4ac1-b304-53de40a8db56\",\"operationName\":\"Publish\",\"category\":\"AdvancedHunting-DeviceRegistryEvents\",\"properties\":{\"DeviceId\":\"dbe5c34434fb4792bea6874dd0b1f107\",\"DeviceName\":\"ml022\",\"ReportId\":19168,\"Timestamp\":\"2023-01-04T14:35:20.6161937Z\",\"RegistryKey\":\"\",\"RegistryValueName\":null,\"RegistryValueType\":\"None\",\"RegistryValueData\":null,\"PreviousRegistryValueData\":null,\"InitiatingProcessSHA1\":\"9df2bc8901233492b2488de8742a35d3d5c46c12\",\"InitiatingProcessFileSize\":445440,\"InitiatingProcessMD5\":\"655381bd34fa7f6421e3740f1fc3c1b1\",\"InitiatingProcessFileName\":\"omadmclient.exe\",\"InitiatingProcessParentFileName\":\"svchost.exe\",\"InitiatingProcessFolderPath\":\"c:\\\\windows\\\\system32\\\\omadmclient.exe\",\"InitiatingProcessCommandLine\":\"\\\"omadmclient.exe\\\" /serverid \\\"1F2E9005-CEAB-4280-83A7-8429D26DE773\\\" /lookuptype 1 /initiator 0\",\"InitiatingProcessCreationTime\":\"2023-03-01T14:34:55.9883418Z\",\"InitiatingProcessParentCreationTime\":\"2023-03-01T09:01:41.8134369Z\",\"InitiatingProcessAccountName\":\"system\",\"InitiatingProcessAccountDomain\":\"NT\",\"InitiatingProcessAccountSid\":\"S-1-1-11\",\"InitiatingProcessParentId\":2196,\"InitiatingProcessId\":25072,\"InitiatingProcessIntegrityLevel\":\"System\",\"InitiatingProcessTokenElevation\":\"TokenElevationTypeDefault\",\"PreviousRegistryKey\":\"HKEY_LOCAL_MACHINE\\\\BCD00000000\\\\Objects\\\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\\\Elements\",\"PreviousRegistryValueName\":null,\"AppGuardContainerId\":\"\",\"ActionType\":\"RegistryKeyDeleted\",\"InitiatingProcessSHA256\":\"5e7dfefc195fb0286fda79b22d9c9334ed0162d0d3774ca342343df2e4e5df50\",\"InitiatingProcessAccountUpn\":null,\"InitiatingProcessAccountObjectId\":null,\"InitiatingProcessVersionInfoCompanyName\":\"Microsoft Corporation\",\"InitiatingProcessVersionInfoProductName\":\"Microsoft\u00ae Windows\u00ae Operating System\",\"InitiatingProcessVersionInfoProductVersion\":\"10.0.19041.2193\",\"InitiatingProcessVersionInfoInternalFileName\":\"omadmclient\",\"InitiatingProcessVersionInfoOriginalFileName\":\"omadmclient.exe\",\"InitiatingProcessVersionInfoFileDescription\":\"Host Process for OMA-DM Client\",\"MachineGroup\":\"UnassignedGroup\"},\"Tenant\":\"DefaultTenant\"}\n",
+        "event": {
+            "kind": "event",
+            "type": [
+                "info"
+            ],
+            "dataset": "device_registry_events",
+            "category": [
+                "process"
+            ]
+        },
+        "@timestamp": "2023-01-04T14:37:14.923863Z",
+        "host": {
+            "id": "dbe5c34434fb4792bea6874dd0b1f107",
+            "name": "ml022"
+        },
+        "process": {
+            "pid": 25072,
+            "start": "2023-03-01T14:34:55.9883418Z",
+            "executable": "omadmclient.exe",
+            "command_line": "\"omadmclient.exe\" /serverid \"1F2E9005-CEAB-4280-83A7-8429D26DE773\" /lookuptype 1 /initiator 0",
+            "working_directory": "c:\\windows\\system32",
+            "user": {
+                "domain": "NT",
+                "name": "system",
+                "id": "S-1-1-11"
+            },
+            "parent": {
+                "pid": 2196,
+                "executable": "svchost.exe",
+                "start": "2023-03-01T09:01:41.8134369Z"
+            },
+            "args": [
+                "/serverid",
+                "\"1F2E9005-CEAB-4280-83A7-8429D26DE773\"",
+                "/lookuptype",
+                "1",
+                "/initiator",
+                "0"
+            ]
+        },
+        "action": {
+            "type": "RegistryKeyDeleted",
+            "properties": {
+                "InitiatingProcessFileSize": 445440,
+                "InitiatingProcessIntegrityLevel": "System",
+                "InitiatingProcessTokenElevation": "TokenElevationTypeDefault",
+                "InitiatingProcessVersionInfoCompanyName": "Microsoft Corporation",
+                "InitiatingProcessVersionInfoFileDescription": "Host Process for OMA-DM Client",
+                "InitiatingProcessVersionInfoInternalFileName": "omadmclient",
+                "InitiatingProcessVersionInfoOriginalFileName": "omadmclient.exe",
+                "InitiatingProcessVersionInfoProductName": "Microsoft\u00ae Windows\u00ae Operating System",
+                "InitiatingProcessVersionInfoProductVersion": "10.0.19041.2193",
+                "PreviousRegistryKey": "HKEY_LOCAL_MACHINE\\BCD00000000\\Objects\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\Elements"
+            }
+        },
+        "microsoft": {
+            "defender": {
+                "report": {
+                    "id": "19168"
+                }
+            }
+        }
+    }
+    	
+	```
+
+
 === "test_local_ip.json"
 
     ```json
@@ -529,6 +1052,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`action.properties.IsExternalUser` | `boolean` | Indicates whether a user inside the network doesn't belong to the organization's domain |
 |`action.properties.IsImpersonated` | `boolean` | Indicates whether the activity was performed by one user for another (impersonated) user |
 |`action.properties.IsLocalAdmin` | `boolean` | Boolean indicator of whether the user is a local administrator on the machine |
+|`action.properties.JoinType` | `keyword` | The nature of the joint |
 |`action.properties.LocalIPType` | `keyword` | Type of IP address, for example Public, Private, Reserved, Loopback, Teredo, FourToSixMapping, and Broadcast |
 |`action.properties.Location` | `keyword` | City, country, or other geographic location associated with the event |
 |`action.properties.LoggedOnUsers` | `keyword` | List of all users that are logged on the machine at the time of the event in JSON array format |

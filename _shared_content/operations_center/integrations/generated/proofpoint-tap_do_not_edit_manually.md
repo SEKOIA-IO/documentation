@@ -74,7 +74,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Firefox",
-            "version": "27.0"
+            "version": "27.0",
+            "os": {
+                "name": "Windows",
+                "version": "NT"
+            }
         },
         "url": {
             "original": "http://badguy.zz/",
@@ -112,10 +116,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "192.0.2.255"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "NT"
         }
     }
     	

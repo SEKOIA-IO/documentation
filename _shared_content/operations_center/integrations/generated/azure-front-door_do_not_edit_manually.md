@@ -84,7 +84,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "curl",
-            "version": "7.77.0"
+            "version": "7.77.0",
+            "os": {
+                "name": "Other"
+            }
         },
         "network": {
             "protocol": "HTTP"
@@ -100,9 +103,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	

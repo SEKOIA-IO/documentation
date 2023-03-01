@@ -846,7 +846,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Mac"
             },
             "name": "Chrome",
-            "version": "108.0.0"
+            "version": "108.0.0",
+            "os": {
+                "name": "Mac OS X",
+                "version": "10.15.7"
+            }
         },
         "related": {
             "hosts": [
@@ -856,10 +860,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "5.6.7.8"
             ]
-        },
-        "os": {
-            "name": "Mac OS X",
-            "version": "10.15.7"
         }
     }
     	
