@@ -145,7 +145,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "XiaoMi HM NOTE 1W"
             },
             "name": "UC Browser",
-            "version": "11.0.5"
+            "version": "11.0.5",
+            "os": {
+                "name": "Android",
+                "version": "4.4.2"
+            }
         },
         "network": {
             "protocol": "HTTP/1.1"
@@ -175,10 +179,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "10.6.12.26"
             ]
-        },
-        "os": {
-            "name": "Android",
-            "version": "4.4.2"
         }
     }
     	

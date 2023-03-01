@@ -104,7 +104,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "35.0.2117"
+            "version": "35.0.2117",
+            "os": {
+                "name": "Windows",
+                "version": "XP"
+            }
         },
         "related": {
             "hosts": [
@@ -113,10 +117,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "84.46.249.194"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "XP"
         }
     }
     	
@@ -203,7 +203,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "70.0.3538"
+            "version": "70.0.3538",
+            "os": {
+                "name": "Windows",
+                "version": "10"
+            }
         },
         "related": {
             "hosts": [
@@ -212,10 +216,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "84.46.249.194"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "10"
         }
     }
     	
@@ -298,7 +298,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "37.0.2049"
+            "version": "37.0.2049",
+            "os": {
+                "name": "Windows",
+                "version": "8.1"
+            }
         },
         "related": {
             "hosts": [
@@ -307,10 +311,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "84.46.249.194"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "8.1"
         }
     }
     	
@@ -394,7 +394,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "name": "Other"
+            "name": "Other",
+            "os": {
+                "name": "Other"
+            }
         },
         "related": {
             "hosts": [
@@ -403,9 +406,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "30.255.150.197"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -488,7 +488,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Mac"
             },
             "name": "Chrome",
-            "version": "107.0.0"
+            "version": "107.0.0",
+            "os": {
+                "name": "Mac OS X",
+                "version": "10.15.7"
+            }
         },
         "related": {
             "hosts": [
@@ -497,10 +501,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "2600:4040:2974:1c00:5404:1cac:9f62:ffff"
             ]
-        },
-        "os": {
-            "name": "Mac OS X",
-            "version": "10.15.7"
         }
     }
     	
@@ -585,7 +585,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "107.0.0"
+            "version": "107.0.0",
+            "os": {
+                "name": "Windows",
+                "version": "10"
+            }
         },
         "related": {
             "hosts": [
@@ -594,10 +598,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "36.37.214.134"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "10"
         }
     }
     	
@@ -677,7 +677,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "107.0.0"
+            "version": "107.0.0",
+            "os": {
+                "name": "Windows",
+                "version": "10"
+            }
         },
         "related": {
             "hosts": [
@@ -686,10 +690,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "140.161.225.89"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "10"
         }
     }
     	

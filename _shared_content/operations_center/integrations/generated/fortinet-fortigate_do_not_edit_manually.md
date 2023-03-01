@@ -128,7 +128,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "curl",
-            "version": "7.47.0"
+            "version": "7.47.0",
+            "os": {
+                "name": "Other"
+            }
         },
         "action": {
             "name": "block",
@@ -147,9 +150,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "10.1.100.11",
                 "172.18.62.158"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -965,7 +965,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "curl",
-            "version": "7.47.0"
+            "version": "7.47.0",
+            "os": {
+                "name": "Other"
+            }
         },
         "action": {
             "name": "passthrough",
@@ -981,9 +984,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "10.1.100.11",
                 "172.16.200.55"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -1334,7 +1334,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "curl",
-            "version": "7.47.0"
+            "version": "7.47.0",
+            "os": {
+                "name": "Other"
+            }
         },
         "action": {
             "name": "blocked",
@@ -1351,9 +1354,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "10.1.100.11",
                 "172.16.200.55"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -1424,7 +1424,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Wget",
-            "version": "1"
+            "version": "1",
+            "os": {
+                "name": "Other"
+            }
         },
         "action": {
             "name": "blocked",
@@ -1438,9 +1441,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.1.1.1",
                 "2.2.2.2"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	

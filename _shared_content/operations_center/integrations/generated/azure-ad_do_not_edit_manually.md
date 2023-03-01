@@ -356,7 +356,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "81.0"
+            "version": "81.0",
+            "os": {
+                "name": "Windows",
+                "version": "10"
+            }
         },
         "azuread": {
             "resourceId": "00000002-0000-0000-c000-000000000000",
@@ -392,10 +396,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "jane.doe@sekoiacorp.onmicrosoft.com"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "10"
         }
     }
     	
@@ -519,16 +519,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Outlook",
-            "version": "2016"
+            "version": "2016",
+            "os": {
+                "name": "Windows",
+                "version": "10"
+            }
         },
         "related": {
             "ip": [
                 "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "10"
         }
     }
     	
@@ -656,16 +656,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "99.0.4844"
+            "version": "99.0.4844",
+            "os": {
+                "name": "Windows",
+                "version": "10"
+            }
         },
         "related": {
             "ip": [
                 "11.11.11.11"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "10"
         }
     }
     	
@@ -741,16 +741,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Firefox",
-            "version": "98.0"
+            "version": "98.0",
+            "os": {
+                "name": "Windows",
+                "version": "10"
+            }
         },
         "related": {
             "ip": [
                 "11.11.11.11"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "10"
         }
     }
     	

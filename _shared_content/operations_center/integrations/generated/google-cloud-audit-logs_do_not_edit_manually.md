@@ -716,7 +716,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "name": "Other"
+            "name": "Other",
+            "os": {
+                "name": "Linux"
+            }
         },
         "related": {
             "ip": [
@@ -725,9 +728,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "system:kube-scheduler"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -852,7 +852,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "name": "Other"
+            "name": "Other",
+            "os": {
+                "name": "Linux"
+            }
         },
         "related": {
             "ip": [
@@ -861,9 +864,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "system:kubestore-collector"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	

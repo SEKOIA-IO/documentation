@@ -113,7 +113,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Outlook",
-            "version": "2016"
+            "version": "2016",
+            "os": {
+                "name": "Other"
+            }
         },
         "related": {
             "hash": [
@@ -128,9 +131,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -216,7 +216,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Outlook",
-            "version": "2016"
+            "version": "2016",
+            "os": {
+                "name": "Other"
+            }
         },
         "rule": {
             "name": "ETPRO INFO Observed Suspicious Base64 Encoded Wide String Inbound (exe)",
@@ -232,9 +235,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -310,7 +310,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Outlook",
-            "version": "2016"
+            "version": "2016",
+            "os": {
+                "name": "Other"
+            }
         },
         "file": {
             "name": "/exploit.html",
@@ -333,9 +336,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -413,7 +413,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "name": "Other"
+            "name": "Other",
+            "os": {
+                "name": "Other"
+            }
         },
         "related": {
             "hosts": [
@@ -424,9 +427,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	

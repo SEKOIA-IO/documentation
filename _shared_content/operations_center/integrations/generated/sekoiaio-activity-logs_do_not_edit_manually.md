@@ -87,15 +87,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "107.0.0"
+            "version": "107.0.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "related": {
             "ip": [
                 "149.202.162.59"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -153,16 +153,16 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Mac"
             },
             "name": "Chrome",
-            "version": "98.0.4758"
+            "version": "98.0.4758",
+            "os": {
+                "name": "Mac OS X",
+                "version": "10.15.7"
+            }
         },
         "related": {
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Mac OS X",
-            "version": "10.15.7"
         }
     }
     	
@@ -218,15 +218,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Firefox",
-            "version": "3.8"
+            "version": "3.8",
+            "os": {
+                "name": "Linux"
+            }
         },
         "related": {
             "ip": [
                 "141.229.130.228"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -291,15 +291,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "107.0.0"
+            "version": "107.0.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "related": {
             "ip": [
                 "149.202.162.59"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -353,15 +353,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Python Requests",
-            "version": "2.26"
+            "version": "2.26",
+            "os": {
+                "name": "Other"
+            }
         },
         "related": {
             "ip": [
                 "51.255.128.104"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
@@ -435,15 +435,15 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Chrome",
-            "version": "107.0.0"
+            "version": "107.0.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "related": {
             "ip": [
                 "149.202.162.59"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	

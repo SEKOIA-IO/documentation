@@ -56,7 +56,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "name": "Other"
             },
             "name": "Firefox",
-            "version": "40.0"
+            "version": "40.0",
+            "os": {
+                "name": "Windows",
+                "version": "7"
+            }
         },
         "client": {
             "geo": {
@@ -131,10 +135,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "12.12.12.12"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "7"
         }
     }
     	
@@ -170,7 +170,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "99.0"
+            "version": "99.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "client": {
             "geo": {
@@ -228,9 +231,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -266,7 +266,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "99.0"
+            "version": "99.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "client": {
             "geo": {
@@ -324,9 +327,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -362,7 +362,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "99.0"
+            "version": "99.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "client": {
             "geo": {
@@ -420,9 +423,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -457,7 +457,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "99.0"
+            "version": "99.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "client": {
             "geo": {
@@ -515,9 +518,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -553,7 +553,11 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "40.0"
+            "version": "40.0",
+            "os": {
+                "name": "Windows",
+                "version": "7"
+            }
         },
         "client": {
             "geo": {
@@ -656,10 +660,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "12.12.12.12"
             ]
-        },
-        "os": {
-            "name": "Windows",
-            "version": "7"
         }
     }
     	
@@ -695,7 +695,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "99.0"
+            "version": "99.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "client": {
             "geo": {
@@ -753,9 +756,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -790,7 +790,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "99.0"
+            "version": "99.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "client": {
             "geo": {
@@ -848,9 +851,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	
@@ -886,7 +886,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "version": "99.0"
+            "version": "99.0",
+            "os": {
+                "name": "Linux"
+            }
         },
         "client": {
             "geo": {
@@ -944,9 +947,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "ip": [
                 "1.2.3.4"
             ]
-        },
-        "os": {
-            "name": "Linux"
         }
     }
     	

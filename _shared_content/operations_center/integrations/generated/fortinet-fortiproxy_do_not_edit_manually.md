@@ -205,7 +205,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "device": {
                 "name": "Other"
             },
-            "name": "Other"
+            "name": "Other",
+            "os": {
+                "name": "Other"
+            }
         },
         "network": {
             "protocol": "tcp",
@@ -223,9 +226,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "user": [
                 "USERNAME"
             ]
-        },
-        "os": {
-            "name": "Other"
         }
     }
     	
