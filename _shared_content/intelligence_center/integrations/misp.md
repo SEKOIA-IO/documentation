@@ -4,7 +4,7 @@ The default feed is available as a MISP feed.
 
 It can be added to an existing MISP instance by following [MISP's documentation](https://www.circl.lu/doc/misp/managing-feeds/).
 
-In order to be able to fetch SEKOIA.IO’s MISP feed, you’ll have to generate an API key with the `INTHREAT_READ_OBJECTS` permission. Please read the “[Generate API keys](/getting/started/generate_api_keys.md)“ and “[Permissions](/getting_started/role_permissions.md)” page to understand how to create a new API key with the proper permissions.
+In order to be able to fetch SEKOIA.IO’s MISP feed, you’ll have to generate an API key with the `INTHREAT_READ_OBJECTS` permission. Please read the “[Generate API keys](/getting_started/manage_api_keys.md)“ and “[Permissions](/getting_started/Permissions.md)” page to understand how to create a new API key with the proper permissions.
 
 The following field values are required for the feed to work properly:
 
