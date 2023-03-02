@@ -61,5 +61,5 @@ To generate this API Key:
 !!! note
     Beware, the generated API Key will no longer be accessible after you’ve closed the modal. 
 
-To learn more about how to generate and revoke API keys, please refer to this [section.](https://docs.sekoia.io/getting_started/manage_api_keys/)
+To learn more about how to generate and revoke API keys, please refer to this [section.](docs/getting_started/manage_api_keys.md)
 
