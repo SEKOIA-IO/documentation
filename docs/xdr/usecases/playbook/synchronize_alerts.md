@@ -10,7 +10,7 @@ This use case describes how to automatically push new Alerts in an external secu
 - An API Key with a Role that contains at least the following permission:
 	* SIC_READ_ALERTS
 
-> To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
+> To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
 
 ## Playbook creation
 
