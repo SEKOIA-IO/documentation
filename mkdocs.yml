@@ -430,7 +430,7 @@ plugins:
       develop/rest_api/operation_center/parser.md: xdr/develop/rest_api/parser.md
       develop/rest_api/playbooks.md: xdr/develop/rest_api/playbooks.md
       getting_started/2fa.md: getting_started/account_security.md
-      getting_started/apikey_creation.md: getting_started/generate_api_keys.md
+      getting_started/apikey_creation.md: getting_started/manage_api_keys.md
       getting_started/first_steps.md: getting_started/index.md
       getting_started/inviting_users_to_join_your_community.md: getting_started/invite_users.md
       integrations/alsid.md: xdr/features/collect/integrations/application/alsid.md
@@ -686,7 +686,7 @@ plugins:
       searching/search_events.md: xdr/features/investigate/events.md
       tip/develop/rest_api/identity_and_authentication.md: tip/develop/rest_api/community.md
       user_center.md: getting_started/index.md
-      user_center/apikeys.md: getting_started/generate_api_keys.md
+      user_center/apikeys.md: getting_started/manage_api_keys.md
       user_center/multi_factor_authentication.md: getting_started/account_security.md
       user_center/notifications.md: getting_started/notifications.md
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
