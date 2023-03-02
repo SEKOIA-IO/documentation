@@ -16,7 +16,7 @@ There are 2 steps:
 	* EVENTS_READ_DATASETS
 	* SIC_READ_EVENT_STATS
 
-> To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
+> To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
 
 ## Playbook configuration
 
