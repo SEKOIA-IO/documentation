@@ -14,7 +14,7 @@
 
 ## Triggers
 
-### [BETA] Fetch new events from Cybereason
+### Fetch new events from Cybereason
 
 Get last events from the Cybereason platform
 
@@ -31,4 +31,4 @@ Get last events from the Cybereason platform
 
 ## Extra
 
-Module **`Cybereason` v1.1.0**
+Module **`Cybereason` v1.2.0**
