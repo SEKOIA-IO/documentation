@@ -37,7 +37,7 @@ Here is the list of permissions that constitutes this role:
 
 If you need to attribute this role to someone, go to Your Account settings > Managed Communities > The user in question > `+ Role` > Select `Symphony Operator`. 
 
-To learn more about how to attribute roles within your community, please refer to this [section.](https://docs.sekoia.io/getting_started/manage_users/)
+To learn more about how to attribute roles within your community, please refer to this [section.](docs/getting_started/manage_users.md) 
 
 !!! note 
     Depending on which app you’ll be creating playbooks for, you might need to have additional permissions linked to each app (Intelligence Center or Operations Center). 
