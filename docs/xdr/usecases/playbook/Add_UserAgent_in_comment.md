@@ -28,6 +28,11 @@ Find the playbook configuration below:
 | Comment Alert | See fields below |
 
 
+!!!note
+    The query could vary according to the event types / intakes. 
+    If the events does not contain user Agent, it will not retrieve any events
+
+So I will just let this example and add a note
 
 `Get Event Field Common Values`
   - **earliest_time**   `{{ ((node.2.first_seen_at | iso8601_to_timestamp) - 3600000) | timestamp_to_iso8601 }}`
