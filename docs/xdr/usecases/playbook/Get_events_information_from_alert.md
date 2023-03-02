@@ -32,7 +32,7 @@ Here is the configuration below:
 **Get Events**  
 - **earliest_time** = `first_seen_at` of **Get alert**
 - **latest_time** = `last_seen_at` of **Get alert**
-- **query** = `short_id` of **Get alert**
+- **query** = alert_short_ids: `{{ node.x.alert_uuid }}`  copy `short_id` of **Get alert****
 
 **Read JSON File** 
 - **jsonpath** = `mac-addr` more information on this documentation [here](http://docs.oasis-open.org/cti/stix/v2.0/cs01/part4-cyber-observable-objects/stix-v2.0-cs01-part4-cyber-observable-objects.html#_Toc496716255)
