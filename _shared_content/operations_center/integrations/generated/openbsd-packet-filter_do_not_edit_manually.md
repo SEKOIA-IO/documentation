@@ -1,0 +1,662 @@
+
+## Event Categories
+
+
+
+
+In details, the following table denotes the type of events produced by this integration.
+
+| Name | Values |
+| ---- | ------ |
+| Kind | `event` |
+| Category | `network` |
+| Type | `connection` |
+
+
+
+
+## Event Samples
+
+Find below few samples of events and how they are normalized by SEKOIA.IO.
+
+
+=== "test_ingest_ipv4_carp_logs.json"
+
+    ```json
+	
+    {
+        "message": "183,,,41cbdd1cea144179a26efd069e1ee54f,vtnet9,match,block,out,4,0x0,,63,18292,0,DF,112,vrrp,72,1.2.3.4,5.6.7.8,3,255,13,2,0,1",
+        "event": {
+            "reason": "match",
+            "action": "block",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "denied"
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "address": "5.6.7.8"
+        },
+        "rule": {
+            "id": "183"
+        },
+        "openbsd": {
+            "pf": {
+                "event": {
+                    "tracker": {
+                        "id": "41cbdd1cea144179a26efd069e1ee54f"
+                    }
+                },
+                "routing": {
+                    "class": "0x0",
+                    "hoplimit": 255,
+                    "offset": 0,
+                    "flags": "DF"
+                },
+                "carp": {
+                    "vhid": "13",
+                    "version": "2",
+                    "advskew": "0",
+                    "advbase": "1",
+                    "type": 3
+                }
+            }
+        },
+        "network": {
+            "direction": "outbound",
+            "iana_number": "112",
+            "transport": "vrrp",
+            "bytes": 72
+        },
+        "observer": {
+            "egress": {
+                "interface": {
+                    "name": "vtnet9"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_ingest_ipv4_icmp_logs.json"
+
+    ```json
+	
+    {
+        "message": "70,,,6524e587872444838f901ac45cbf807c,vtnet1,match,pass,in,4,0x0,,19,36147,0,none,1,icmp,128,1.2.3.4,5.6.7.8,datalength=108",
+        "event": {
+            "reason": "match",
+            "action": "pass",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed"
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "address": "5.6.7.8"
+        },
+        "rule": {
+            "id": "70"
+        },
+        "openbsd": {
+            "pf": {
+                "event": {
+                    "tracker": {
+                        "id": "6524e587872444838f901ac45cbf807c"
+                    }
+                },
+                "routing": {
+                    "class": "0x0",
+                    "hoplimit": 19,
+                    "offset": 0,
+                    "flags": "none"
+                },
+                "icmp": {
+                    "datalength": 108
+                }
+            }
+        },
+        "network": {
+            "direction": "inbound",
+            "iana_number": "1",
+            "transport": "icmp",
+            "bytes": 128
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "vtnet1"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_ingest_ipv4_tcp_logs.json"
+
+    ```json
+	
+    {
+        "message": "341,,,138b9664ed0d438b9fa1a14116606d50,vtnet9,match,pass,in,4,0x0,,63,26567,0,DF,6,tcp,60,1.2.3.4,5.6.7.8,40234,10050,0,S,3917296601,,64240,,mss",
+        "event": {
+            "reason": "match",
+            "action": "pass",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed"
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 40234,
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 10050,
+            "address": "5.6.7.8"
+        },
+        "rule": {
+            "id": "341"
+        },
+        "openbsd": {
+            "pf": {
+                "event": {
+                    "tracker": {
+                        "id": "138b9664ed0d438b9fa1a14116606d50"
+                    }
+                },
+                "routing": {
+                    "class": "0x0",
+                    "hoplimit": 63,
+                    "offset": 0,
+                    "flags": "DF"
+                },
+                "transport": {
+                    "bytes": 0,
+                    "tcp_flags": "S",
+                    "sequence_number": 3917296601,
+                    "window_size": 64240
+                }
+            }
+        },
+        "network": {
+            "direction": "inbound",
+            "iana_number": "6",
+            "transport": "tcp",
+            "bytes": 60
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "vtnet9"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_ingest_ipv4_udp_logs.json"
+
+    ```json
+	
+    {
+        "message": "183,,,41cbdd1cea144179a26efd069e1ee54f,vtnet9,match,pass,in,4,0x0,,63,18292,0,DF,17,udp,72,1.2.3.4,5.6.7.8,18448,53,52",
+        "event": {
+            "reason": "match",
+            "action": "pass",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed"
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 18448,
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 53,
+            "address": "5.6.7.8"
+        },
+        "rule": {
+            "id": "183"
+        },
+        "openbsd": {
+            "pf": {
+                "event": {
+                    "tracker": {
+                        "id": "41cbdd1cea144179a26efd069e1ee54f"
+                    }
+                },
+                "routing": {
+                    "class": "0x0",
+                    "hoplimit": 63,
+                    "offset": 0,
+                    "flags": "DF"
+                },
+                "transport": {
+                    "bytes": 52
+                }
+            }
+        },
+        "network": {
+            "direction": "inbound",
+            "iana_number": "17",
+            "transport": "udp",
+            "bytes": 72
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "vtnet9"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_ingest_ipv6_carp_logs.json"
+
+    ```json
+	
+    {
+        "message": "123,001,anchor1,label2,eth0,match,pass,in,6,,123,64,12345,0,DF,vrrp,6,80,2001:0db8:85a3:0000:0000:8a2e:0370:7334,2001:0db8:85a3:0000:0000:ac1f:0001:0023,3,64,1,2,3,4",
+        "event": {
+            "reason": "match",
+            "action": "pass",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed"
+            ]
+        },
+        "source": {
+            "ip": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+            "address": "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+        },
+        "destination": {
+            "ip": "2001:0db8:85a3:0000:0000:ac1f:0001:0023",
+            "address": "2001:0db8:85a3:0000:0000:ac1f:0001:0023"
+        },
+        "rule": {
+            "id": "123",
+            "ruleset": "anchor1"
+        },
+        "openbsd": {
+            "pf": {
+                "rule": {
+                    "subrulenr": "001"
+                },
+                "event": {
+                    "tracker": {
+                        "id": "label2"
+                    }
+                },
+                "routing": {
+                    "hoplimit": 64,
+                    "flow": "123"
+                },
+                "carp": {
+                    "vhid": "1",
+                    "version": "2",
+                    "advskew": "3",
+                    "advbase": "4",
+                    "type": 3
+                }
+            }
+        },
+        "network": {
+            "direction": "inbound",
+            "iana_number": "6",
+            "transport": "vrrp",
+            "bytes": 80
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "eth0"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2001:0db8:85a3:0000:0000:ac1f:0001:0023"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_ingest_ipv6_tcp_logs.json"
+
+    ```json
+	
+    {
+        "message": "123,001,anchor1,label2,eth0,match,pass,in,6,,1234,64,tcp,6,60,2001:0db8:85a3:0000:0000:8a2e:0370:7334,2001:0db8:85a3:0000:0000:ac1f:0001:0023,12345,80,20,AP,1234,5678,8192,0,MMS=1460 NOP WS=256 SACK_PERM=1",
+        "event": {
+            "reason": "match",
+            "action": "pass",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed"
+            ]
+        },
+        "source": {
+            "ip": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+            "port": 12345,
+            "address": "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+        },
+        "destination": {
+            "ip": "2001:0db8:85a3:0000:0000:ac1f:0001:0023",
+            "port": 80,
+            "address": "2001:0db8:85a3:0000:0000:ac1f:0001:0023"
+        },
+        "rule": {
+            "id": "123",
+            "ruleset": "anchor1"
+        },
+        "openbsd": {
+            "pf": {
+                "rule": {
+                    "subrulenr": "001"
+                },
+                "event": {
+                    "tracker": {
+                        "id": "label2"
+                    }
+                },
+                "routing": {
+                    "hoplimit": 64,
+                    "flow": "1234"
+                },
+                "transport": {
+                    "bytes": 20,
+                    "tcp_flags": "AP",
+                    "sequence_number": 1234,
+                    "ack": "5678",
+                    "window_size": 8192,
+                    "urgency": "0"
+                }
+            }
+        },
+        "network": {
+            "direction": "inbound",
+            "iana_number": "6",
+            "transport": "tcp",
+            "bytes": 60
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "eth0"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2001:0db8:85a3:0000:0000:ac1f:0001:0023"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_ingest_ipv6_udp_logs.json"
+
+    ```json
+	
+    {
+        "message": "123,001,anchor1,label2,eth0,match,pass,in,6,,1234,64,udp,17,1024,2001:0db8:85a3:0000:0000:8a2e:0370:7334,2001:0db8:85a3:0000:0000:ac1f:0001:0023,12345,80,1024",
+        "event": {
+            "reason": "match",
+            "action": "pass",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed"
+            ]
+        },
+        "source": {
+            "ip": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+            "port": 12345,
+            "address": "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+        },
+        "destination": {
+            "ip": "2001:0db8:85a3:0000:0000:ac1f:0001:0023",
+            "port": 80,
+            "address": "2001:0db8:85a3:0000:0000:ac1f:0001:0023"
+        },
+        "rule": {
+            "id": "123",
+            "ruleset": "anchor1"
+        },
+        "openbsd": {
+            "pf": {
+                "rule": {
+                    "subrulenr": "001"
+                },
+                "event": {
+                    "tracker": {
+                        "id": "label2"
+                    }
+                },
+                "routing": {
+                    "hoplimit": 64,
+                    "flow": "1234"
+                },
+                "transport": {
+                    "bytes": 1024
+                }
+            }
+        },
+        "network": {
+            "direction": "inbound",
+            "iana_number": "17",
+            "transport": "udp",
+            "bytes": 1024
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "eth0"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2001:0db8:85a3:0000:0000:ac1f:0001:0023"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "test_ingest_pass_logs.json"
+
+    ```json
+	
+    {
+        "message": "183,,,41cbdd1cea144179a26efd069e1ee54f,vtnet9,match,pass,in,4,0x0,,63,18292,0,DF,17,udp,72,1.2.3.4,5.6.7.8,18448,53,52",
+        "event": {
+            "reason": "match",
+            "action": "pass",
+            "kind": "event",
+            "category": [
+                "network"
+            ],
+            "type": [
+                "allowed"
+            ]
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "port": 18448,
+            "address": "1.2.3.4"
+        },
+        "destination": {
+            "ip": "5.6.7.8",
+            "port": 53,
+            "address": "5.6.7.8"
+        },
+        "rule": {
+            "id": "183"
+        },
+        "openbsd": {
+            "pf": {
+                "event": {
+                    "tracker": {
+                        "id": "41cbdd1cea144179a26efd069e1ee54f"
+                    }
+                },
+                "routing": {
+                    "class": "0x0",
+                    "hoplimit": 63,
+                    "offset": 0,
+                    "flags": "DF"
+                },
+                "transport": {
+                    "bytes": 52
+                }
+            }
+        },
+        "network": {
+            "direction": "inbound",
+            "iana_number": "17",
+            "transport": "udp",
+            "bytes": 72
+        },
+        "observer": {
+            "ingress": {
+                "interface": {
+                    "name": "vtnet9"
+                }
+            }
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4",
+                "5.6.7.8"
+            ]
+        }
+    }
+    	
+	```
+
+
+
+
+
+## Extracted Fields
+
+The following table lists the fields that are extracted, normalized under the ECS format, analyzed and indexed by the parser. It should be noted that infered fields are not listed.
+
+| Name | Type | Description                |
+| ---- | ---- | ---------------------------|
+|`destination.ip` | `ip` | IP address of the destination. |
+|`destination.port` | `long` | Port of the destination. |
+|`event.action` | `keyword` | The action captured by the event. |
+|`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
+|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
+|`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
+|`network.bytes` | `long` | Total bytes transferred in both directions. |
+|`network.direction` | `keyword` | Direction of the network traffic. |
+|`network.iana_number` | `keyword` | IANA Protocol Number. |
+|`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
+|`observer.egress.interface.name` | `keyword` | Interface name |
+|`observer.ingress.interface.name` | `keyword` | Interface name |
+|`openbsd.pf.carp.advbase` | `keyword` |  |
+|`openbsd.pf.carp.advskew` | `keyword` |  |
+|`openbsd.pf.carp.type` | `number` |  |
+|`openbsd.pf.carp.version` | `keyword` |  |
+|`openbsd.pf.carp.vhid` | `keyword` | The identifier of the virtual host that the appliance belong to in the CARP virtual group |
+|`openbsd.pf.event.tracker.id` | `tracker` | tracker ID |
+|`openbsd.pf.icmp.datalength` | `long` | the length of the content of the ICMP packet |
+|`openbsd.pf.routing.class` | `keyword` |  |
+|`openbsd.pf.routing.flags` | `keyword` |  |
+|`openbsd.pf.routing.flow` | `keyword` |  |
+|`openbsd.pf.routing.hoplimit` | `number` |  |
+|`openbsd.pf.routing.offset` | `number` |  |
+|`openbsd.pf.rule.subrulenr` | `integer` | number of the subrule |
+|`openbsd.pf.transport.ack` | `keyword` |  |
+|`openbsd.pf.transport.bytes` | `number` |  |
+|`openbsd.pf.transport.classification` | `keyword` |  |
+|`openbsd.pf.transport.options` | `keyword` |  |
+|`openbsd.pf.transport.sequence_number` | `number` |  |
+|`openbsd.pf.transport.tcp_flags` | `keyword` |  |
+|`openbsd.pf.transport.urgency` | `keyword` |  |
+|`openbsd.pf.transport.window_size` | `number` |  |
+|`rule.id` | `keyword` | Rule ID |
+|`rule.ruleset` | `keyword` | Rule ruleset |
+|`source.ip` | `ip` | IP address of the source. |
+|`source.port` | `long` | Port of the source. |
+
