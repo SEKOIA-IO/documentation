@@ -9,7 +9,7 @@ ProofPoint On Demand (PoD) offers a real-time email processing feed to detect, c
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_e0eaf2f1-02d0-4d1a-be89-f2b8be4baf4e_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/proofpoint-pod_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/e0eaf2f1-02d0-4d1a-be89-f2b8be4baf4e.md!}
 
 ## Configure
 

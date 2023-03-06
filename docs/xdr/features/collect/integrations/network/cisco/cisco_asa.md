@@ -17,7 +17,7 @@ Sending Cisco logs to SEKOIA.IO will help you discovering potential network secu
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cisco-asa_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/466aeca2-e112-4ccc-a109-c6d85b91bbcf.md!}
 
 ## Configure
 

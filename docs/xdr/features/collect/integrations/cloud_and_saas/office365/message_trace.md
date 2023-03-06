@@ -8,7 +8,7 @@ Microsoft 365 Message trace follows email messages as they travel through your E
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_8461aabe-6eba-4044-ad7f-a0c39a2b2279_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/o365-message-trace_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/8461aabe-6eba-4044-ad7f-a0c39a2b2279.md!}
 
 ## Prerequisite
 

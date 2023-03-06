@@ -11,7 +11,7 @@ Cisco Meraki MX is a multifunctional security and SD-WAN enterprise appliance wi
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_995d7daf-4e4a-42ec-b90d-9af2f7be7019_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cisco-meraki-mx_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/995d7daf-4e4a-42ec-b90d-9af2f7be7019.md!}
 
 ## Configure
 

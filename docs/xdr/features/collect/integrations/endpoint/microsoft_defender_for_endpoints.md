@@ -11,7 +11,7 @@ This setup guide describes how to forward events produced by `Microsoft Defender
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/microsoft-365-defender_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/05e6f36d-cee0-4f06-b575-9e43af779f9f.md!}
 
 ## Configure
 

@@ -7,7 +7,7 @@ AWS CloudTrail is a service that enables governance, compliance, operational aud
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_d3a813ac-f9b5-451c-a602-a5994544d9ed_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/aws-cloudtrail_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/d3a813ac-f9b5-451c-a602-a5994544d9ed.md!}
 
 ## Configure
 

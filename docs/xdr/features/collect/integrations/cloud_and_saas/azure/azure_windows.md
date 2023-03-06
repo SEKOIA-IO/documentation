@@ -7,7 +7,7 @@ Azure Virtual Machines service is developed and managed by Microsoft Corp.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2815eaab-2425-4eff-8038-3f7d5a3b8b11_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/azure-windows_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/2815eaab-2425-4eff-8038-3f7d5a3b8b11.md!}
 
 ## Configure
 This setup guide will show you how to forward events produced by a Windows Virtual Machine hosted on Azure platform to SEKOIA.IO.

@@ -9,7 +9,7 @@ Check Point’s Next Generation Firewalls (NGFW’s) are trusted by customers fo
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_f0a10c21-37d1-419f-8671-77903dc8de69_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/checkpoint_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/f0a10c21-37d1-419f-8671-77903dc8de69.md!}
 
 ## Configure
 

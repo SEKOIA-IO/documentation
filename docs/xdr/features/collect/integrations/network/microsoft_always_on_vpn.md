@@ -9,7 +9,7 @@ This guide will explain how to forward Network Policy Server (NPS) logs to SEKOI
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_80b8382e-0667-4469-bbc9-74be1e0ca1c1_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/microsoft-always-on-vpn_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/80b8382e-0667-4469-bbc9-74be1e0ca1c1.md!}
 
 ## Configure
 

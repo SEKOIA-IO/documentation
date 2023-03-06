@@ -9,7 +9,7 @@ This documentation details one way to collect and send FortiWeb logs to SEKOIA.I
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2259adc3-9d93-4150-9c1c-46804e636084_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/fortiweb_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/2259adc3-9d93-4150-9c1c-46804e636084.md!}
 
 ## Configure
 

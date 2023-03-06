@@ -9,7 +9,7 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_a14b1141-2d61-414b-bf79-da99b487b1af_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/f5-big-ip_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/a14b1141-2d61-414b-bf79-da99b487b1af.md!}
 
 ## Configure
 

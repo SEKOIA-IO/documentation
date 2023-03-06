@@ -9,7 +9,7 @@ Infoblox DNS, DHCP and IP address management (DDI) enables customer to control a
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_864ade96-a96d-4a0e-ab3d-b7cb7b7db618_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/infoblox-ddi_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/864ade96-a96d-4a0e-ab3d-b7cb7b7db618.md!}
 
 ## Configure
 

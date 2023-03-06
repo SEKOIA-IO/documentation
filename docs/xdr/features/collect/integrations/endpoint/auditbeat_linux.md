@@ -8,7 +8,7 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/auditbeat_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/021e9def-5a55-4369-941e-af269b45bef1.md!}
 
 ## Configure
 

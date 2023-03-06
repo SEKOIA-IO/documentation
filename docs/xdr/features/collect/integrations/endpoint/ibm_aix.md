@@ -7,7 +7,7 @@ type: intake
 AIX (Advanced Interactive eXecutive), is a series of proprietary Unix operating systems developed and sold by IBM for several of its computer platforms.
 {!_shared_content/operations_center/detection/generated/suggested_rules_e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/ibm-aix_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6.md!}
 
 ## Configure
 

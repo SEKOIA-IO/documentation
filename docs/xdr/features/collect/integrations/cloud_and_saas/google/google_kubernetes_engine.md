@@ -4,7 +4,7 @@ type: intake
 
 {!_shared_content/operations_center/integrations/google_cloud.md!}
 
-{!_shared_content/operations_center/integrations/generated/google-kubernetes-engine_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/00bbde4f-cb17-4c3f-9f5e-a585fc7c8fc0.md!}
 
 
 ## Google Kubernetes Engine (GKE) configuration

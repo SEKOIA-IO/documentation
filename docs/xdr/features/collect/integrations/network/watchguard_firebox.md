@@ -9,7 +9,7 @@ Sending WatchGuard Firebox logs to SEKOIA.IO enables the discovering of potentia
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_d719e8b5-85a1-4dad-bf71-46155af56570_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/watchguard-firebox_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/d719e8b5-85a1-4dad-bf71-46155af56570.md!}
 
 
 ## Configure

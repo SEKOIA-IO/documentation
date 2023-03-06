@@ -9,7 +9,7 @@ Pulse Connect Secure is an SSL VPN solution for remote and mobile users.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_7a12aa3b-ec73-4ebb-8fb3-f7c543fd84a5_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/pulse-connect-secure_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/7a12aa3b-ec73-4ebb-8fb3-f7c543fd84a5.md!}
 
 ## Configure
 

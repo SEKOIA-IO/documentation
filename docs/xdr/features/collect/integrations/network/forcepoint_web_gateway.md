@@ -9,7 +9,7 @@ This product is supported by Forcepoint LLC.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_f0f95532-9928-4cde-a399-ddd992d48472_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/forcepoint-swg_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/f0f95532-9928-4cde-a399-ddd992d48472.md!}
 
 ## Configure
 

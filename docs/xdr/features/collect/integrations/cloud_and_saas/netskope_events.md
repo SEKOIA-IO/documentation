@@ -11,7 +11,7 @@ This integration will collect events from your netskope's tenant to monitor auth
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_de9ca004-991e-4f5c-89c5-e075f3fb3216_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/netskope-events_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/de9ca004-991e-4f5c-89c5-e075f3fb3216.md!}
 
 ## Configure
 

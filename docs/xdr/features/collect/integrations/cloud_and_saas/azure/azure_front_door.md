@@ -10,7 +10,7 @@ This setup guide describe how to forward events produced by `Azure Front Door` t
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_69b52166-b804-4f47-860f-2d3fd0b46987_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/azure-front-door_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/69b52166-b804-4f47-860f-2d3fd0b46987.md!}
 
 ## Configure
 

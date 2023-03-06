@@ -14,7 +14,7 @@ It's available in three variants:
 {!_shared_content/operations_center/detection/generated/suggested_rules_ee54dd8e-4bd4-4fe8-9d9d-1a018cd8c4bb_do_not_edit_manually.md!}
 
 
-{!_shared_content/operations_center/integrations/generated/log-insight-windows_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/ee54dd8e-4bd4-4fe8-9d9d-1a018cd8c4bb.md!}
 
 ## Configure
 

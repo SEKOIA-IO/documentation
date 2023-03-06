@@ -10,7 +10,7 @@ In this documentation, you will learn how to collect and send Cloudflare DNS log
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_bd9d0f51-114e-499a-bb7a-4f2d0a518b04_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cloudflare-dns-logs_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/bd9d0f51-114e-499a-bb7a-4f2d0a518b04.md!}
 
 ## Configuration
 

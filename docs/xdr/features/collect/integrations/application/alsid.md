@@ -8,7 +8,7 @@ Alsid is an automated security solution that monitors the components of Active D
 {!_shared_content/operations_center/detection/generated/suggested_rules_44d41a2b-96cb-4d37-84e0-4f0c0f9138b8_do_not_edit_manually.md!}
 
 
-{!_shared_content/operations_center/integrations/generated/alsid_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/44d41a2b-96cb-4d37-84e0-4f0c0f9138b8.md!}
 
 ## Configure
 

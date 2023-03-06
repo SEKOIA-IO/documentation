@@ -4,7 +4,7 @@ type: intake
 
 {!_shared_content/operations_center/integrations/google_cloud.md!}
 
-{!_shared_content/operations_center/integrations/generated/google-cloud-audit_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/44439212-c2d8-4645-ad60-8fd5e39140b3.md!}
 
 ## Google Workspace configuration
 

@@ -21,7 +21,7 @@ example).
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_c3888137-b34e-4526-ab61-836b2d45a742_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/netfilter_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/c3888137-b34e-4526-ab61-836b2d45a742.md!}
 
 ## Configure
 

@@ -38,7 +38,7 @@ You will find dedicated NXLog configuration file for Sysmon usage in [this secti
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9281438c-f7c3-4001-9bcc-45fd108ba1be_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/windows_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/9281438c-f7c3-4001-9bcc-45fd108ba1be.md!}
 
 ## NXLog directly to SEKOIA.IO
 This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events by means of a syslog transport channel.

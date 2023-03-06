@@ -7,7 +7,7 @@ NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TC
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ab25af2e-4916-40ba-955c-34d2301c1f51_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/nginx_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/ab25af2e-4916-40ba-955c-34d2301c1f51.md!}
 
 ## Configure
 
