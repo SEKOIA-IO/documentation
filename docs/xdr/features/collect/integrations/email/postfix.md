@@ -12,7 +12,7 @@ Postfix is a free and open-source mail transfer agent that routes and delivers e
 
 ## Configure
 
-As of now, the main solution to collect POstfix logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
+As of now, the main solution to collect Postfix logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
 
 ### Rsyslog
 
