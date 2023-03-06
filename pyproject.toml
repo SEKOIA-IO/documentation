@@ -19,6 +19,9 @@ mkdocs-redirects = "^1.2.0"
 markdown-include = "^0.8.1"
 lightgallery = "^0.5"
 
+[tool.poetry.group.dev.dependencies]
+mkdocs-material = "^9.1.1"
+
 [build-system]
 requires = [ "poetry-core>=1.0.0",]
 build-backend = "poetry.core.masonry.api"
