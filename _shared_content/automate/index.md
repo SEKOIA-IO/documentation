@@ -37,7 +37,7 @@ Here is the list of permissions that constitutes this role:
 
 If you need to attribute this role to someone, go to Your Account settings > Managed Communities > The user in question > `+ Role` > Select `Symphony Operator`. 
 
-To learn more about how to attribute roles within your community, please refer to this [section.](docs/getting_started/manage_users.md) 
+To learn more about how to attribute roles within your community, please refer to this [section.](docs/getting_started/manage_users) 
 
 !!! note 
     Depending on which app you’ll be creating playbooks for, you might need to have additional permissions linked to each app (Intelligence Center or Operations Center). 
@@ -61,5 +61,5 @@ To generate this API Key:
 !!! note
     Beware, the generated API Key will no longer be accessible after you’ve closed the modal. 
 
-To learn more about how to generate and revoke API keys, please refer to this [section.](docs/getting_started/manage_api_keys.md)
+To learn more about how to generate and revoke API keys, please refer to this [section.](docs/getting_started/manage_api_keys)
 
