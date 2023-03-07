@@ -11,17 +11,12 @@ HAProxy is a free, open source software that provides a high availability load b
 
 ## HAProxy Configuration
 
-1- Setup HAProxy following the official documentation on section below
+1- HAProxy Configuration file is created by default when HAProxy is setup on the machine
 
-HAProxy configuration default file `haproxy.cfg` will be found in the directory `/etc/haproxy`.
+!!! Note
+    HAProxy configuration default file `haproxy.cfg` will be found in the directory `/etc/haproxy`
 
-2- Add the following line to this file as the 1st line of the `global` section 
-
-```
-log 127.0.0.1    local2
-```
-
-3- Restart HAProxy for configuration to be taken account and verify the status
+2- Restart HAProxy for configuration to be taken account and verify the status
 
 ```bash
 sudo systemctl restart haproxy && systemctl status haproxy
@@ -33,11 +28,25 @@ HAProxy logs are now generated on your machine.
 
 After HAProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO.
 
-Here is an example of rsyslog configuration file to be adapted, that can be created under `/etc/rsyslog.d/`:
+Here is an example of rsyslog configuration file to be adapted, that will be available under `/etc/rsyslog.d/`:
 
 ```
+# Create an additionnal socket in haproxy's chroot in order to allow logging via 
+# /dev/log to chroot'ed HAProxy processes
+$AddUnixListenSocket /var/lib/haproxy/dev/log
+
+# Send HAProxy messages to a dedicated logfile
+:programname, startswith, "haproxy" {
+    /var/log/haproxy.log
+    stop
+}
+
 # Use a condition that identifies specifically HaProxy logs that send them to a syslog concentrator
 if ($programname startswith 'haproxy') then {
+    # Log events locally
+    /var/log/haproxy.log
+    
+    # Forward HAProxy logs to a concentrator
     action(
     type="omfwd"
     protocol="tcp"
