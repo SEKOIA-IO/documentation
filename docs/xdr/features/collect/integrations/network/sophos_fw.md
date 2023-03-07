@@ -8,7 +8,7 @@ Sophos firewalls offer an integrated software solution that provides superior pe
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_325369ba-8515-45b4-b750-5db882ea1266_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/sophos_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/325369ba-8515-45b4-b750-5db882ea1266.md!}
 
 ## Configure
 

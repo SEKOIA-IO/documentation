@@ -11,7 +11,7 @@ Still we recommend using an intake tailored to your specific application or devi
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_1d172ee6-cdc0-4713-9cfd-43f7d9595777_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cef_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/1d172ee6-cdc0-4713-9cfd-43f7d9595777.md!}
 
 ## Configure
 

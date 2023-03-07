@@ -5,7 +5,7 @@ type: intake
 ## Overview
 Cisco Umbrella offers flexible, cloud-delivered security. It combines multiple security functions into one solution, so that protection can be extended to devices, remote users, and distributed locations anywhere. CISCO Umbrella is a leading provider of network security and recursive DNS services.
 
-{!_shared_content/operations_center/integrations/generated/umbrella-ip_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/5cf6cc3b-50ca-48f5-a3ea-b9be92914fa2.md!}
 
 ## Configure
 This setup guide will show you how to forward logs produced by CISCO Umbrella service to SEKOIA.IO by means of an Rsyslog transport channel.

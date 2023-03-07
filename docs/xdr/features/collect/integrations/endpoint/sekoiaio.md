@@ -176,7 +176,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     sudo rm -rf /etc/endpoint-agent
     ```
 
-{!_shared_content/operations_center/integrations/generated/sekoiaio-endpoint_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/250e4095-fa08-4101-bb02-e72f870fcbd1.md!}
 
 ## Events examples
 

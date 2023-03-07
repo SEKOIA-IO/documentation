@@ -7,7 +7,7 @@ HAProxy is a free, open source software that provides a high availability load b
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/haproxy_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/ff1873e7-8757-4b1a-b0ca-b33f9b27f3d9.md!}
 
 ## HAProxy Configuration
 

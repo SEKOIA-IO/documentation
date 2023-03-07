@@ -7,7 +7,7 @@ Unbound is a validating, recursive, and caching DNS resolver product from NLnet 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_5d9e261a-944c-4a76-8c61-6794fd44d9a8_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/unbound_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/5d9e261a-944c-4a76-8c61-6794fd44d9a8.md!}
 
 ## Configure
 This setup guide will show you how to forward logs produced by your Unbound server to SEKOIA.IO by means of an rsyslog transport channel.

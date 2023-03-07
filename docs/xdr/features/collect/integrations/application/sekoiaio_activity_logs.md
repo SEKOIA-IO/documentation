@@ -13,7 +13,7 @@ SEKOIA.IO activity logs collect operations done, on SEKOIA.IO, by the members of
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_41e3ca4e-a714-41aa-ad69-684a0b3835fc_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/sekoiaio-activity-logs_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/41e3ca4e-a714-41aa-ad69-684a0b3835fc.md!}
 
 ## Configure
 

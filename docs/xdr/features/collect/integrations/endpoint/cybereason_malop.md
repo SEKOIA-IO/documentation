@@ -13,7 +13,7 @@ Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Thro
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cybereason-malop-json_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/9f89b634-0531-437b-b060-a9d9f2d270db.md!}
 
 ## Configure
 

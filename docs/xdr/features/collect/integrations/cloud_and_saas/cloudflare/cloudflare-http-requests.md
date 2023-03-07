@@ -10,7 +10,7 @@ In this documentation, you will learn how to collect and send Cloudflare HTTP re
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_0ba58f32-7dba-4084-ab17-90c0be6b1f10_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cloudflare-http-requests_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/0ba58f32-7dba-4084-ab17-90c0be6b1f10.md!}
 
 ## Configure
 

@@ -11,7 +11,7 @@ SonicWall firewalls enable you to identify and control all applications that are
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ee0b3023-524c-40f6-baf5-b69c7b679887_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/sonicwall-fw_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/ee0b3023-524c-40f6-baf5-b69c7b679887.md!}
 
 ## Configure
 

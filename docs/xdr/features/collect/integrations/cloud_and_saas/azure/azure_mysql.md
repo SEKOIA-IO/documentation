@@ -8,7 +8,7 @@ Azure Database for MySQL provides fully managed, enterprise-ready community MySQ
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_3f99cdd8-aeca-4860-a846-6f2a794583e1_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/azure-mysql_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/3f99cdd8-aeca-4860-a846-6f2a794583e1.md!}
 
 ## Configure
 

@@ -170,7 +170,7 @@ def update_doc(intake_repository: str, documentation_repository: str):
             / "operations_center"
             / "integrations"
             / "generated"
-            / f"{intake['manifest']['slug']}_do_not_edit_manually.md"
+            / f"{intake['manifest']['uuid']}.md"
         )
 
         with open(generated_file_path, "w") as fd:

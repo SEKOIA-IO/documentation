@@ -7,7 +7,7 @@ Cisco Umbrella offers flexible, cloud-delivered security. It combines multiple s
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_90179796-f949-490c-8729-8cbc9c65be55_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/umbrella-dns_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/90179796-f949-490c-8729-8cbc9c65be55.md!}
 
 ## Configure
 This setup guide will show you how to forward logs produced by CISCO Umbrella service to SEKOIA.IO by means of an Rsyslog transport channel.

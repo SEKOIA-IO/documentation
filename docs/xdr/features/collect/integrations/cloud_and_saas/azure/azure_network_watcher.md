@@ -7,7 +7,7 @@ Azure Network Watcher provides tools to monitor, diagnose, view metrics, and ena
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_340e3bc7-2b76-48e4-9833-e971451b2979_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/azure-network-watcher_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/340e3bc7-2b76-48e4-9833-e971451b2979.md!}
 
 ## Configure
 Please [contact us](mailto:support@sekoia.io) to discuss about the network security group to monitor in your Azure infrastructure in order to find the appropriate solution to forward your logs to SEKOIA.IO.

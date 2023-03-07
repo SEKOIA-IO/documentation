@@ -9,7 +9,7 @@ Microsoft Intune helps you protect your workforce's corporate data by managing d
 This setup guide describe how to forward events produced by `Microsoft Intune` to SEKOIA.IO.
 {!_shared_content/operations_center/detection/generated/suggested_rules_c20528c1-621e-4959-83ba-652eca2e8ed0_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/microsoft-intune_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/c20528c1-621e-4959-83ba-652eca2e8ed0.md!}
 
 ## Configure
 

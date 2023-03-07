@@ -7,7 +7,7 @@ OpenSSH is the premier connectivity tool for remote login with the SSH protocol.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_b28db14b-e3a7-463e-8659-9bf0e577944f_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/openssh_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/b28db14b-e3a7-463e-8659-9bf0e577944f.md!}
 
 ## Configure
 

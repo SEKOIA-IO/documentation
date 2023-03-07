@@ -9,7 +9,7 @@ This setup guide shows how to forward events produced by HarfangLab EDR to SEKOI
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_3c7057d3-4689-4fae-8033-6f1f887a70f2_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/harfanglab_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/3c7057d3-4689-4fae-8033-6f1f887a70f2.md!}
 
 ## Configure
 

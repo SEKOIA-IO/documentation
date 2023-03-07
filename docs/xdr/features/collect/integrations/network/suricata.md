@@ -8,7 +8,7 @@ Suricata is a free and open source, mature, fast and robust network threat detec
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_331fa58d-8cf9-454a-a87f-48a3dc07d4d3_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/suricata_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/331fa58d-8cf9-454a-a87f-48a3dc07d4d3.md!}
 
 ## Configure
 Suricata leverages its EVE output module to report alerts, metadata, file info and protocol records in JSON. As described in the official documentation, this module can report its findings through the syslog facility.

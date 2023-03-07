@@ -10,7 +10,7 @@ In this documentation, you will learn how to collect and send FreeRADIUS logs to
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_aeb7d407-db57-44b2-90b6-7df6738d5d7f_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/freeradius_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/aeb7d407-db57-44b2-90b6-7df6738d5d7f.md!}
 
 ## Configure
 

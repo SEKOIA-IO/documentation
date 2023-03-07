@@ -8,7 +8,7 @@ Azure Active Directory is a cloud-based Identity and Rights management service. 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_19cd2ed6-f90c-47f7-a46b-974354a107bb_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/azure-ad_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/19cd2ed6-f90c-47f7-a46b-974354a107bb.md!}
 
 ## Configure
 

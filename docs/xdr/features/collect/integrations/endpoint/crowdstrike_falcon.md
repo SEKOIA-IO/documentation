@@ -9,7 +9,7 @@ This setup guide explains how to forward and collect the detections and activity
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_22f2afd2-c858-443d-8e06-7b335e439c29_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/crowdstrike-falcon_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/22f2afd2-c858-443d-8e06-7b335e439c29.md!}
 
 ## Configure
 

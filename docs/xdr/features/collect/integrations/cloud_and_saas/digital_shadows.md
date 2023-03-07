@@ -10,7 +10,7 @@ In this documenation we will explain how to collect and send SearchLight logs to
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ccf942fe-c839-42be-a081-5c3f946e80f5_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/digital-shadows-searchlight_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/ccf942fe-c839-42be-a081-5c3f946e80f5.md!}
 
 ## Configure
 

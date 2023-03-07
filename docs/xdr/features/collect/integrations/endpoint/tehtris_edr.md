@@ -10,7 +10,7 @@ This setup guide shows how to forward events produced by TEHTRIS EDR to SEKOIA.I
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_8d8f040d-6a75-4bf4-bf1d-772e9a30f0dd_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/tehtris-edr_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/8d8f040d-6a75-4bf4-bf1d-772e9a30f0dd.md!}
 
 ## Configure
 

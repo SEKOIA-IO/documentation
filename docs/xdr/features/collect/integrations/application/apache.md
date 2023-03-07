@@ -8,7 +8,7 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 {!_shared_content/operations_center/detection/generated/suggested_rules_6c2a44e3-a86a-4d98-97a6-d575ffcb29f7_do_not_edit_manually.md!}
 
 
-{!_shared_content/operations_center/integrations/generated/apache_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/6c2a44e3-a86a-4d98-97a6-d575ffcb29f7.md!}
 
 ## Configure
 

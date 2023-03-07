@@ -9,7 +9,7 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_5702ae4e-7d8a-455f-a47b-ef64dd87c981_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/fortigate_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/5702ae4e-7d8a-455f-a47b-ef64dd87c981.md!}
 
 
 ## Configure

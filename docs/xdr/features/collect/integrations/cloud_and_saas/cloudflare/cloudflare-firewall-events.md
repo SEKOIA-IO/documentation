@@ -10,7 +10,7 @@ In this documentation, you will learn how to collect and send Cloudflare Firewal
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_16676d72-463e-4b8a-b13a-f8dd48cddc8c_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/cloudflare-firewall-events_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/16676d72-463e-4b8a-b13a-f8dd48cddc8c.md!}
 
 ## Configuration
 

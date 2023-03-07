@@ -10,7 +10,7 @@ Okta System log provides activity records related to your organization.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_e6bb2404-8fc8-4124-a785-c1276277b5d7_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/okta-system-logs_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/e6bb2404-8fc8-4124-a785-c1276277b5d7.md!}
 
 ## Configure
 

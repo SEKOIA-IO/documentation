@@ -11,7 +11,7 @@ This setup guide describes how to forward security events collected on the Imper
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_d9f337a4-1303-47d4-b15f-1f83807ff3cc_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/imperva-waf_do_not_edit_manually.md!}
+{!_shared_content/operations_center/integrations/generated/d9f337a4-1303-47d4-b15f-1f83807ff3cc.md!}
 
 ## Configure
 
