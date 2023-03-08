@@ -1,6 +1,6 @@
 # Overview
 
-## What is a playbook module
+## What is a playbook module?
 
 A playbook module is a set of triggers and actions covering a specific service.
 
@@ -15,14 +15,14 @@ The module folder contains all the informations required to be able to run the t
 Each module contains a `manifest.json` file that describes the module. This file contains:
 
 * The name of the module
-* A unique uuid identifying the module
+* A unique UUID identifying the module
 * A version
 * A description
 * The configuration of the module
     * All the informations that are needed for the module to be able to communicate with the external service
-    * The `configuration` key should be a valid json schema object
+    * The `configuration` key should be a valid JSON schema object
 
-Here's an example of a manifest:
+Here's an example of a `manifest.json` file:
 
 ```json
 {
@@ -86,9 +86,9 @@ i.e. The manifest for the action allowing to download a file is named `action_do
 The manifest contains:
 
 * The name of the trigger/action
-* A unique uuid
+* A unique UUID
 * A description
-* The docker parameters that will be specified when running the trigger/action
+* The Docker parameters that will be specified when running the trigger/action
   * It allows to execute the appropriate action/trigger in a module that may have many of them 
 * The arguments expected to run
     * Additionally to those arguments, the trigger/action will also have access to the configuration of the module
@@ -164,7 +164,7 @@ The `main.py` file is the only entrypoint in the module actions and trigger.
 It will execute the appropriate action or trigger depending on the argument that is provided to the command.
 This argument is defined by the `docker_parameters` attribute in the manifest files.
 
-The sekoia automation SDK makes it easier to declare the trigger and actions that can be executed.
+The `sekoia-automation-sdk` PIP package makes it easier to declare the trigger and actions that can be executed.
 
 Here's an example of a module entrypoint:
 
@@ -187,9 +187,9 @@ if __name__ == "__main__":
 
 Additionally a module should contain a logo image file. The file should be name either `logo.png` or `logo.svg` and located at the root of the module
 
-### Dockerfile
+### `Dockerfile`
 
-The dockerfile allows to create an image that will contain all the required code and dependencies to run the module's actions and triggers.
+The `Dockerfile` allows to create an image that will contain all the required code and dependencies to run the module's actions and triggers.
 
 Here's an example of a `Dockerfile` allowing to run some python code:
 

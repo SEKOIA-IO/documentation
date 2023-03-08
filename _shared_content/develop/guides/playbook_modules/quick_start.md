@@ -161,7 +161,7 @@ poetry lock
 
 #### Create the action
 
-Inside our python package `testhttp_modules` we can create a new file `action_request.py` that will contain the logic of our action:
+Inside our Python package `testhttp_modules` we can create a new file `action_request.py` that will contain the logic of our action:
 
 ```python
 import requests
