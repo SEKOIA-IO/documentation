@@ -284,6 +284,9 @@ nav:
     - Quickstart: xdr/develop/quickstart.md
     - Guides:
       - Filtering: xdr/develop/guides/filtering.md
+      - Playbooks:
+        - Overview: xdr/develop/guides/playbook_modules/overview.md
+        - Quick start: xdr/develop/guides/playbook_modules/quick_start.md
     - REST API:
       - Authentication and Community: xdr/develop/rest_api/community.md
       - Dashboard: xdr/develop/rest_api/dashboard.md
@@ -414,6 +417,9 @@ nav:
     - Overview: tip/develop/index.md
     - Guides:
       - Filtering: tip/develop/guides/filtering.md
+      - Playbooks:
+        - Overview: tip/develop/guides/playbook_modules/overview.md
+        - Quick start: tip/develop/guides/playbook_modules/quick_start.md
     - REST API:
       - Authentication and Community: tip/develop/rest_api/community.md
       - Intelligence: tip/develop/rest_api/intelligence.md
