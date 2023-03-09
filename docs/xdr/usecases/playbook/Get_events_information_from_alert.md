@@ -25,14 +25,14 @@ Here is the configuration below:
 | Module | Configuration |
 | --- | --- |
 | Alert Created | configure module & trigger configuration |
-| Get Alert | uuid = `alert_uuid`  of **Alert created** |
+| Get Alert | uuid = `alert_uuid`  of the **Alert created** module |
 | Get Events | See fields below |
 | Read JSON File | See fields below |
 
 **Get Events**  
-- **earliest_time** = `first_seen_at` of **Get alert**
-- **latest_time** = `last_seen_at` of **Get alert**
-- **query** = alert_short_ids: `{{ node.x.alert_uuid }}`  copy `short_id` of **Get alert****
+- **earliest_time** = `first_seen_at` of the **Get alert** module
+- **latest_time** = `last_seen_at` of the **Get alert** module
+- **query** = alert_short_ids: `{{ node.x.alert_uuid }}`  copy `short_id` of the **Get alert** module
 
 **Read JSON File** 
 - **jsonpath** = `mac-addr` more information on this documentation [here](http://docs.oasis-open.org/cti/stix/v2.0/cs01/part4-cyber-observable-objects/stix-v2.0-cs01-part4-cyber-observable-objects.html#_Toc496716255)
