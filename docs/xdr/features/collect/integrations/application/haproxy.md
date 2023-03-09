@@ -11,24 +11,18 @@ HAProxy is a free, open source software that provides a high availability load b
 
 ## HAProxy Configuration
 
-1- HAProxy Configuration file is created by default when HAProxy is setup on the machine
+HAProxy Configuration file is created by default when HAProxy is setup on the machine
 
 !!! Note
     HAProxy configuration default file `haproxy.cfg` will be found in the directory `/etc/haproxy`
 
-2- Restart HAProxy for configuration to be taken account and verify the status
-
-```bash
-sudo systemctl restart haproxy && systemctl status haproxy
-```
-
-HAProxy logs are now generated on your machine.
+By default events are forwarded to `/var/lib/haproxy/dev/log` then processed by a local rsyslog to store them on `/var/log/haproxy.log`.
 
 ## Forward the HAProxy logs to a concentrator
 
-After HAProxy has been setup and configured, the logs have to be sent to a Rsyslog collector then forward to SEKOIA.IO.
+After HAProxy has been setup and configured, the logs have to be sent to a syslog concentrator then forwarded to SEKOIA.IO.
 
-Here is an example of rsyslog configuration file to be adapted, that will be available under `/etc/rsyslog.d/`:
+By default, at HAProxy first installation, an rsyslog configuration is created on the repository `/etc/rsyslog.d/`, it contains the following lines:
 
 ```
 # Create an additionnal socket in haproxy's chroot in order to allow logging via 
@@ -40,6 +34,14 @@ $AddUnixListenSocket /var/lib/haproxy/dev/log
     /var/log/haproxy.log
     stop
 }
+```
+
+You only have to replace the configuration by the following lines:
+
+```
+# Create an additionnal socket in haproxy's chroot in order to allow logging via 
+# /dev/log to chroot'ed HAProxy processes
+$AddUnixListenSocket /var/lib/haproxy/dev/log
 
 # Use a condition that identifies specifically HaProxy logs that send them to a syslog concentrator
 if ($programname startswith 'haproxy') then {
