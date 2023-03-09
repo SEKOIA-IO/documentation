@@ -12,26 +12,18 @@ The module folder contains all the informations required to be able to run the t
 
 ## The manifest file
 
-Each module contains a `manifest.json` file that describes the module. This file contains:
+Each module contains a `manifest.json` file that describes the module.
 
-* The name of the module
-* A unique UUID identifying the module
-* A version
-* A description
-* The configuration of the module
-    * All the informations that are needed for the module to be able to communicate with the external service
-    * The `configuration` key should be a valid JSON schema object
-
-Here's an example of a `manifest.json` file:
+Here's an annotated example of a `manifest.json` file:
 
 ```json
 {
-  "name": "Okta",
-  "uuid": "4ef895d1-3f21-4678-8d0a-5c39c37210fe",
+  "name": "Okta",  // (1)!
+  "uuid": "4ef895d1-3f21-4678-8d0a-5c39c37210fe",  // (2)!
   "slug": "okta",
-  "version": "2.0.0",
+  "version": "2.0.0",  // (3)!
   "description": "[Okta](https://www.okta.com/) is an entreprise-grade, identity management service compatible with cloud apps as well as many on-premises applications",
-  "configuration": {
+  "configuration": {  // (4)!
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Okta",
     "type": "object",
@@ -46,13 +38,21 @@ Here's an example of a `manifest.json` file:
         "type": "string"
       }
     },
-    "required": [
+    "required": [  // (5)!
       "base_url",
       "apikey"
     ]
   }
 }
 ```
+
+1. The name of the module. It will be dispalyed to the user in the playbook UI
+2. The UUID of the module. It must be unique
+3. A version for the module. This version must be incremented each time a change is made in the module
+4. The configuration of the module
+      * All the informations that are needed for the module to be able to communicate with the external service
+      * The `configuration` attribute should be a valid JSON Schema object
+5. A configuration item can be mandatory
 
 ## Triggers and Actions
 
@@ -83,30 +83,15 @@ Each trigger/action has its own manifest file that describes it. This manifest f
 
 i.e. The manifest for the action allowing to download a file is named `action_download_file.json`
 
-The manifest contains:
-
-* The name of the trigger/action
-* A unique UUID
-* A description
-* The Docker parameters that will be specified when running the trigger/action
-  * It allows to execute the appropriate action/trigger in a module that may have many of them 
-* The arguments expected to run
-    * Additionally to those arguments, the trigger/action will also have access to the configuration of the module
-    * The `arguments` key should be a valid json schema object
-* The kind of events this trigger will create or the result of the action
-    * It is located under the `results` key 
-    * The `results` key should be a valid json schema object
-
-
-Here's an example of an action manifest:
+Here's an annotated example of an action manifest:
 
 ```json
 {
-    "name": "Download File",
-    "uuid": "09e9dc3a-aeb2-4dde-ad96-3ee543afdf51",
+    "name": "Download File",  // (1)!
+    "uuid": "09e9dc3a-aeb2-4dde-ad96-3ee543afdf51",  // (2)!
     "description": "Donwload the given file and save it",
-    "docker_parameters": "download-file",
-    "arguments": {
+    "docker_parameters": "download-file",  // (3)!
+    "arguments": {  // (4)!
         "$schema": "http://json-schema.org/draft-07/schema#",
         "properties": {
             "url": {
@@ -119,13 +104,13 @@ Here's an example of an action manifest:
                 "type": "object"
             }
         },
-        "required": [
+        "required": [  // (5)!
             "url"
         ],
         "title": "Arguments",
         "type": "object"
     },
-    "results": {
+    "results": {  // (6)!
         "$schema": "http://json-schema.org/draft-07/schema#",
         "properties": {
             "file_path": {
@@ -142,6 +127,17 @@ Here's an example of an action manifest:
 }
 ```
 
+1. The name of the trigger/action. It will be dispalyed to the user in the playbook UI
+2. The UUID of the trigger/action. It must be unique
+3. The Docker parameters that will be specified when running the trigger/action
+      * It allows to execute the appropriate action/trigger in a module that may have many of them 
+4. The arguments expected to run
+      * Additionally to those arguments, the trigger/action will also have access to the configuration of the module
+      * The `arguments` attribute must be a valid JSON Schema object
+5. Arguments can be mandatory
+6. The kind of events this trigger will create or the result of the action
+      * It is located under the `results` key 
+      * The `results` attribute should be a valid JSON Schema object
 
 ## Business logic
 
@@ -171,15 +167,18 @@ Here's an example of a module entrypoint:
 ```python
 from sekoia_automation.module import Module
 
-from mwdb_module.action_config_to_observables import ConfigToObservablesAction
+from mwdb_module.action_config_to_observables import ConfigToObservablesAction  # (1)!
 from mwdb_module.triggers import MWDBConfigsTrigger
 
 if __name__ == "__main__":
     module = Module()
     module.register(MWDBConfigsTrigger, "trigger_mwdb_configs")
-    module.register(ConfigToObservablesAction, "config_to_observables")
+    module.register(ConfigToObservablesAction, "config_to_observables")  # (2)!
     module.run()
 ```
+
+1. Import the action or trigger that should be registered in the entrypoint
+2. Register the action. The first arguments of `module.register` is our action class and the second is the `docker_parameter` that was specified in our action's manifest.
 
 ## Additional files
 
