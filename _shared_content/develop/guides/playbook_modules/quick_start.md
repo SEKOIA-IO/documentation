@@ -21,7 +21,7 @@ pip install sekoia-automation-sdk
 !!! note
     The SDK needs a python version equal or newer to python3.10
 
-Once the SDK is installed we can use it to crea an empty module:
+Once the SDK is installed we can use it to create an empty module:
 
 ```
 sekoia-automation new-module modules  # modules is the path of the folder containing the modules
@@ -51,13 +51,13 @@ TestHTTP
 
 ## Create our action
 
-Out action will take three arguments:
+Our action will take three arguments:
 
 * The URL to query
 * The HTTP method to use
 * The HTTP headers to provide
 
-Two of those arguemtns will be required, the URL and the method.
+Two of those arguments will be required, the URL and the method.
 
 The result of our action will contain:
 
@@ -67,7 +67,7 @@ The result of our action will contain:
 
 ### Define the manifest
 
-Let's create an `action_request.json` file that describe out action:
+Let's create an `action_request.json` file that describe our action:
 
 ```json
 {
@@ -199,7 +199,7 @@ class RequestAction(Action):
 
 Let's explain a bit the code of the action.
 
-Our action is a class that inherit from `Action`, a base class from SEKOIA's automation SDK.
+Our action is a class that inherit from `Action`, a base class from SEKOIA.IO's automation SDK.
 The child actions must define the `run` method that will be passed the arguments provided to the action
 
 The base `Action` class provides few helpers like the `log` and `error` methods:
@@ -231,4 +231,4 @@ if __name__ == "__main__":
 
 The action has been registered between the creation of the module and the call running it. The first arguments of `module.register` is our action class and the second is the `docker_parameter` that was specified in our action's manifest.
 
-That it! Now we have a module containing our action and ready to run !
+That's it! Now we have a module containing our action and ready to run !
