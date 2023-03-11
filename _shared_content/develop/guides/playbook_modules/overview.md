@@ -1,14 +1,46 @@
 # Overview
 
+Automation playbooks are highly flexible and can be used to automate any processes that require a specific set of actions. 
+For example, an automation playbook can automate the triage and investigation of phishing alerts. 
+
+An automation playbook is composed of interconnected triggers and actions as basic blocks. 
+For this reason, the core element of [SEKOIA.IO](http://sekoia.io/)'s automation is the notion of a module, 
+which defines the actions and triggers that cover a specific service.
+
+This section provides details on how modules are developed.
+
 ## What is a playbook module?
 
 A playbook module is a set of triggers and actions covering a specific service.
 
-The module folder contains all the informations required to be able to run the triggers and actions:
-
+The module folder contains all the information required to be able to run the triggers and actions:
 * A manifest that describes the module and the expected configuration
 * For each action and trigger a manifest file describing the expected arguments and the results 
 * The code to execute
+
+For example, a module named `CyberEnricher` is organized under the following folder structure:
+```
+CyberEnricher/
+├── manifest.json // (1)!
+├── action_enrich_ip.json  //(2)!
+├── trigger_pull_logs.json // (3)!
+├── logo.png // (4)!
+├── main.py // (5)!
+├── poetry.lock // (6)!
+├── pyproject.toml // (7)!
+├── cyber_enricher/ // (8)!
+├── tests/ // (9)!
+```
+
+1. the module manifest file that specifies elements such as the name or the module's configuration
+2. the manifest file of the action `enrich_ip`
+3. the manifest file of the trigger `trigger_pull_logs`
+4. the logo of the module
+5. the code entrypoint
+6. the poetry dependency listing file
+7. the python project definition
+8. the module source code
+9. the tests source code
 
 ## The manifest file
 
@@ -46,7 +78,7 @@ Here's an annotated example of a `manifest.json` file:
 }
 ```
 
-1. The name of the module. It will be dispalyed to the user in the playbook UI
+1. The name of the module. It will be displayed to the user in the playbook UI
 2. The UUID of the module. It must be unique
 3. A version for the module. This version must be incremented each time a change is made in the module
 4. The configuration of the module
@@ -90,7 +122,7 @@ Here's an annotated example of an action manifest:
     "name": "Download File",  // (1)!
     "uuid": "09e9dc3a-aeb2-4dde-ad96-3ee543afdf51",  // (2)!
     "description": "Donwload the given file and save it",
-    "docker_parameters": "download-file",  // (3)!
+    "slug": "download-file",  // (3)!
     "arguments": {  // (4)!
         "$schema": "http://json-schema.org/draft-07/schema#",
         "properties": {
@@ -127,12 +159,12 @@ Here's an annotated example of an action manifest:
 }
 ```
 
-1. The name of the trigger/action. It will be dispalyed to the user in the playbook UI
+1. The name of the trigger/action. It will be displayed to the user in the playbook UI
 2. The UUID of the trigger/action. It must be unique
-3. The Docker parameters that will be specified when running the trigger/action
+3. The slug name of the trigger/action
       * It allows to execute the appropriate action/trigger in a module that may have many of them 
 4. The arguments expected to run
-      * Additionally to those arguments, the trigger/action will also have access to the configuration of the module
+      * In addition to those arguments, the trigger/action will also have access to the configuration of the module
       * The `arguments` attribute must be a valid JSON Schema object
 5. Arguments can be mandatory
 6. The kind of events this trigger will create or the result of the action
@@ -184,29 +216,4 @@ if __name__ == "__main__":
 
 ### Logo
 
-Additionally a module should contain a logo image file. The file should be named either `logo.png` or `logo.svg` and located at the root of the module
-
-### `Dockerfile`
-
-The `Dockerfile` allows to create an image that will contain all the required code and dependencies to run the module's actions and triggers.
-
-Here's an example of a `Dockerfile` allowing to run some python code:
-
-```dockerfile
-FROM python:3.11
-
-WORKDIR /app
-
-RUN pip install poetry
-
-# Install dependencies
-COPY poetry.lock pyproject.toml /app/
-RUN poetry config virtualenvs.create false && poetry install --no-dev
-
-COPY . .
-
-RUN useradd -ms /bin/bash sekoiaio-runtime
-USER sekoiaio-runtime
-
-ENTRYPOINT [ "python", "./main.py" ]
-```
+Additionally, a module should contain a logo image file. The file should be named either `logo.png` or `logo.svg` and located at the root of the module
