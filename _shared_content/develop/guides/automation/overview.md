@@ -1,35 +1,35 @@
-# Overview
+# Automation Module
 
-Automation playbooks are highly flexible and can be used to automate any processes that require a specific set of actions. 
-For example, an automation playbook can automate the triage and investigation of phishing alerts. 
+Playbooks are highly flexible and can be used to automate any processes that require a specific set of actions. 
+For example, a playbook can automate the triage and investigation of recurrent phishing alerts. 
 
-An automation playbook is composed of interconnected triggers and actions as basic blocks. 
-For this reason, the core element of [SEKOIA.IO](http://sekoia.io/)'s automation is the notion of a module, 
-which defines the actions and triggers that cover a specific service.
+A playbook is made of interconnected triggers and actions as basic blocks. 
+These basic blocs implement the logic of a specific service and are part of a module.
 
-This section provides details on how modules are developed.
+This section provides details on how modules are organized and developed.
 
-## What is a playbook module?
+## Overview
 
-A playbook module is a set of triggers and actions covering a specific service.
+A module is a set of triggers and actions covering a specific service.
 
 The module folder contains all the information required to be able to run the triggers and actions:
+
 * A manifest that describes the module and the expected configuration
 * For each action and trigger a manifest file describing the expected arguments and the results 
 * The code to execute
 
-For example, a module named `CyberEnricher` is organized under the following folder structure:
-```
-CyberEnricher/
-├── manifest.json // (1)!
+For example, a module named `MyCyberEnricher` is organized under the following folder structure:
+```json
+MyCyberEnricher/
+├── manifest.json  // (1)!
 ├── action_enrich_ip.json  //(2)!
-├── trigger_pull_logs.json // (3)!
-├── logo.png // (4)!
-├── main.py // (5)!
-├── poetry.lock // (6)!
-├── pyproject.toml // (7)!
-├── cyber_enricher/ // (8)!
-├── tests/ // (9)!
+├── trigger_pull_logs.json  // (3)!
+├── logo.png  // (4)!
+├── main.py  // (5)!
+├── poetry.lock  // (6)!
+├── pyproject.toml  // (7)!
+├── cyber_enricher/  // (8)!
+├── tests/  // (9)!
 ```
 
 1. the module manifest file that specifies elements such as the name or the module's configuration

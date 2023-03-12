@@ -1,11 +1,12 @@
-# Quick start
+# Create a Module
 
 In this section we will see how to create a simple module from scratch.
 
-This module will conain one action and one trigger:
+This module will contain one trigger and one action:
 
+* The trigger will watch for new entries exposed by an HTTP endpoint
 * The action will allow to send an HTTP request and return its response.
-* The trigger will watch for ??
+
 
 ## Initialize the module
 
@@ -36,7 +37,6 @@ Once the command is executed we should have a new module created with all the bo
 
 ```
 TestHTTP
-├── Dockerfile
 ├── main.py
 ├── manifest.json
 ├── pyproject.toml
@@ -47,6 +47,44 @@ TestHTTP
     ├── conftest.py
     └── __init__.py
 ```
+
+## Create our trigger
+
+Our trigger will take one argument, the URL that exposed the objects we want to handle with our module.
+This argument will be required.
+
+On the other hand, our action will contain a single string object.
+
+```json
+{
+    "description": "Get last entries in the listing returned by HTTP endpoint",
+    "slug": "Pull",
+    "name": "Fetch new objects from HTTP",
+    "arguments": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "HTTP Url to monitor"
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "Configuration of the trigger",
+      "type": "object"
+    },
+    "results": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {},
+      "title": "The events"
+    },
+    "uuid": "a5af82d3-d035-4e7e-8ccf-1953906d73ff"    
+}
+```
+
+### Add the code
+
 
 
 ## Create our action
@@ -145,7 +183,7 @@ class Request(Action):  # (4)!
 5. The child actions must define the `run` method that will be passed the arguments provided to the action
 6. The base `Action` class provides few helpers like the `log` method. This method makes sure the log is sent to the API so when checking the run of the action we can see a trace of what happened.
 7. The `error` method will mark the action as failed and send back the error to the API.
-8. Finally if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
+8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
 
 ### Generate the manifest and update the entrypoint
 
@@ -168,7 +206,7 @@ We can edit the manifest to add a description:
   "name": "Request URL",
   "uuid": "429e8715-fdde-4064-b8e8-96e408917d25",
   "description": "Requests a resource at a specified URL and returns the response",
-  "docker_parameters": "Request",
+  "slug": "Request",
   "arguments": {  // (1)!
     "title": "RequestArguments",
     "type": "object",
@@ -251,6 +289,6 @@ if __name__ == "__main__":
 ```
 
 1. Our action is imported
-2. Action is registered. The first argument of `module.register` is our action class and the second is the `docker_parameter` that is specified in our action's manifest.
+2. Action is registered. The first argument of `module.register` is our action class and the second is the `slug` that is specified in our action's manifest.
 
 That's it! Now we have a module containing our action and ready to run !
