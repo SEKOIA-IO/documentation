@@ -423,6 +423,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp activity** 
     
     - **Effort:** elementary
 
+??? abstract "Mshta Suspicious Child Process"
+    
+    Detects the use of various web request methods executed remotely via Windows PowerShell
+    
+    - **Effort:** intermediate
+
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
     Detects interaction with the file NTDS.dit through command line. This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.

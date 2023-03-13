@@ -669,6 +669,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     - **Effort:** master
 
+??? abstract "GPO Executable Delivery"
+    
+    Detects MSI binaries run through GPOs.
+    
+    - **Effort:** intermediate
+
 ??? abstract "GitLab CVE-2021-22205"
     
     Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
@@ -986,6 +992,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
     
     - **Effort:** elementary
+
+??? abstract "Mshta Suspicious Child Process"
+    
+    Detects the use of various web request methods executed remotely via Windows PowerShell
+    
+    - **Effort:** intermediate
 
 ??? abstract "Mustang Panda Dropper"
     
