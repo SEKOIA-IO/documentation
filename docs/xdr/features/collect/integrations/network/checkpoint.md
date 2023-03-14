@@ -13,10 +13,10 @@ Check Point’s Next Generation Firewalls (NGFW’s) are trusted by customers fo
 
 ## Configure
 
-As of now, the main solution to collect Checkpoint logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
+The solution to collect Checkpoint logs leverages the [Log Exporter](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323) method and Syslog forwarding. 
 
-We are currently supporting the following firewall versions: R77.30, R80.10, R80.20, R80.30.
+Log Exporter must be configured to send logs in the **CEF format**.
 
-### Rsyslog
+### Syslog forwading
 
-Please refer to the documentation of the [Log Exporter](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323) of checkpoint to forward events to your rsyslog server. The reader is also invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please refer to the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
