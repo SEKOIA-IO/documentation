@@ -203,7 +203,7 @@ The export will be made to the default folder defined for downloads. Name of the
     The `description` field will not be exported.
     
 !!! note
-    At most 5 000 events can be exported. If this number is reached, the search has to be narrowed.
+    At most 5 000 events can be exported if a filter or query is specified. Otherwise only 500 events will be exported. If this number is reached, the search has to be narrowed.
 
 ### Toggle value selection
 
