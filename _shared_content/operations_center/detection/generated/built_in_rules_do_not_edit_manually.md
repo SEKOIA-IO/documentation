@@ -1813,7 +1813,7 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Changelog:**
     
-        - 13/03/2023 - minor Extended the list of suspicious process names being spawned from explorer.exe
+        - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
             
 ??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
     
@@ -4440,8 +4440,8 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Changelog:**
     
-        - 20/02/2023 - minor Adding the .chm and .wsf file extensions for a file opened from a OneNote.
-        - 09/02/2023 - minor Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote.
+        - 20/02/2023 - minor - Adding the .chm and .wsf file extensions for a file opened from a OneNote.
+        - 09/02/2023 - minor - Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote.
             
 ??? abstract "PowerShell EncodedCommand"
     
@@ -5039,7 +5039,7 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Changelog:**
     
-        - 15/02/2023 - minor "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
+        - 15/02/2023 - minor - "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
             
 ??? abstract "Windows Defender Disabled Base64 Encoded"
     
@@ -5427,7 +5427,7 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Changelog:**
     
-        - 15/02/2023 - minor "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
+        - 15/02/2023 - minor - "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
             
 **Modify Authentication Process**
 
@@ -7230,7 +7230,7 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Changelog:**
     
-        - 15/02/2023 - minor "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
+        - 15/02/2023 - minor - "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
             
 **Data Encoding**
 
