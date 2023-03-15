@@ -697,6 +697,7 @@ repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
 theme:
+  lang: en
   custom_dir: theme
   favicon: assets/favicon.png
   features:
