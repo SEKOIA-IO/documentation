@@ -200,55 +200,7 @@ nav:
       - Operators: xdr/features/automate/operators.md
       - Actions: xdr/features/automate/actions.md
       - Actions Library:
-        - AWS: xdr/features/automate/library/aws.md
-        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
-        - Azure Active Directory: xdr/features/automate/library/azure-active-directory.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
-        - Censys: xdr/features/automate/library/censys.md
-        - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
-        - Cybereason: xdr/features/automate/library/cybereason.md
-        - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
-        - Detection Rules: xdr/features/automate/library/detection-rules.md
-        - Digital Shadows: xdr/features/automate/library/digital-shadows.md
-        - fileutils: xdr/features/automate/library/fileutils.md
-        - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
-        - Git: xdr/features/automate/library/git.md
-        - GLIMPS: xdr/features/automate/library/glimps.md
-        - Google: xdr/features/automate/library/google.md
-        - HTTP: xdr/features/automate/library/http.md
-        - HarfangLab: xdr/features/automate/library/harfanglab.md
-        - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
-        - IPtoASN: xdr/features/automate/library/iptoasn.md
-        - Imperva: xdr/features/automate/library/imperva.md
-        - MISP: xdr/features/automate/library/misp.md
-        - MWDB: xdr/features/automate/library/mwdb.md
-        - Mandrill: xdr/features/automate/library/mandrill.md
-        - Mattermost: xdr/features/automate/library/mattermost.md
-        - Netskope: xdr/features/automate/library/netskope.md
-        - OKTA: xdr/features/automate/library/okta.md
-        - OSINT: xdr/features/automate/library/osint.md
-        - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
-        - Onyphe: xdr/features/automate/library/onyphe.md
-        - PagerDuty: xdr/features/automate/library/pagerduty.md
-        - Panda Security: xdr/features/automate/library/panda-security.md
-        - Proofpoint: xdr/features/automate/library/proofpoint.md
-        - Public Suffix: xdr/features/automate/library/public-suffix.md
-        - RSS: xdr/features/automate/library/rss.md
-        - RiskIQ: xdr/features/automate/library/riskiq.md
-        - SEKOIA.IO: xdr/features/automate/library/sekoia-io.md
-        - STIX: xdr/features/automate/library/stix.md
-        - Sentinel One: xdr/features/automate/library/sentinel-one.md
-        - ServiceNow: xdr/features/automate/library/servicenow.md
-        - Shodan: xdr/features/automate/library/shodan.md
-        - Skyhigh Security Secure Web Gateway (SWG): xdr/features/automate/library/skyhigh-security-secure-web-gateway-swg.md
-        - Sophos: xdr/features/automate/library/sophos.md
-        - The Hive: xdr/features/automate/library/the-hive.md
-        - Tehtris: xdr/features/automate/library/tehtris.md
-        - Tranco: xdr/features/automate/library/tranco.md
-        - Triage: xdr/features/automate/library/triage.md
-        - Vade Secure: xdr/features/automate/library/vade-secure.md
-        - VirusTotal: xdr/features/automate/library/virustotal.md
-        - Whois: xdr/features/automate/library/whois.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
@@ -349,43 +301,7 @@ nav:
       - Operators: tip/features/automate/operators.md
       - Actions: tip/features/automate/actions.md
       - Actions Library:
-        - AWS: tip/features/automate/library/aws.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
-        - Censys: tip/features/automate/library/censys.md
-        - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
-        - Detection Rules: tip/features/automate/library/detection-rules.md
-        - Digital Shadows: tip/features/automate/library/digital-shadows.md
-        - fileutils: tip/features/automate/library/fileutils.md
-        - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
-        - Git: tip/features/automate/library/git.md
-        - GLIMPS: tip/features/automate/library/glimps.md
-        - Google: tip/features/automate/library/google.md
-        - HTTP: tip/features/automate/library/http.md
-        - HarfangLab: tip/features/automate/library/harfanglab.md
-        - IKnowWhatYouDownload: tip/features/automate/library/iknowwhatyoudownload.md
-        - IPtoASN: tip/features/automate/library/iptoasn.md
-        - Imperva: tip/features/automate/library/imperva.md
-        - MISP: tip/features/automate/library/misp.md
-        - MWDB: tip/features/automate/library/mwdb.md
-        - Mandrill: tip/features/automate/library/mandrill.md
-        - Mattermost: tip/features/automate/library/mattermost.md
-        - OSINT: tip/features/automate/library/osint.md
-        - Onyphe: tip/features/automate/library/onyphe.md
-        - PagerDuty: tip/features/automate/library/pagerduty.md
-        - Panda Security: tip/features/automate/library/panda-security.md
-        - Public Suffix: tip/features/automate/library/public-suffix.md
-        - RSS: tip/features/automate/library/rss.md
-        - RiskIQ: tip/features/automate/library/riskiq.md
-        - SEKOIA.IO: tip/features/automate/library/sekoia-io.md
-        - STIX: tip/features/automate/library/stix.md
-        - ServiceNow: tip/features/automate/library/servicenow.md
-        - Shodan: tip/features/automate/library/shodan.md
-        - The Hive: tip/features/automate/library/the-hive.md
-        - Tranco: tip/features/automate/library/tranco.md
-        - Triage: tip/features/automate/library/triage.md
-        - Vade Secure: tip/features/automate/library/vade-secure.md
-        - VirusTotal: tip/features/automate/library/virustotal.md
-        - Whois: tip/features/automate/library/whois.md
   - Develop:
     - Overview: tip/develop/index.md
     - Guides:
@@ -697,7 +613,6 @@ repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
 theme:
-  lang: en
   custom_dir: theme
   favicon: assets/favicon.png
   features:
@@ -709,6 +624,7 @@ theme:
   font:
     text: Open Sans
   include_search_page: true
+  lang: en
   logo: assets/sekoiaio.svg
   name: material
   search_index_only: false

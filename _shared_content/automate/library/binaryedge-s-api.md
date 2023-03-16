@@ -500,4 +500,4 @@ Return details about your current subscription package.
 
 ## Extra
 
-Module **`BinaryEdge's API` v1.11**
+Module **`BinaryEdge's API` v1.15.1**
