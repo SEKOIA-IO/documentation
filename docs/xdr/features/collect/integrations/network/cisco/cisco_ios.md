@@ -24,7 +24,7 @@ Log on your Cisco appliance and follow [this guide](https://www.cisco.com/c/en/u
 
 ## Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cisco NX-OS.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cisco IOS.
 
 ## Transport to SEKOIA.IO
 
