@@ -17,7 +17,7 @@ An internal log concentrator is required to collect and forward events to SEKOIA
 
 ### Enable Syslog forwarding
 
-Log on your Web Security appliance and follow [this guide](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_010111.html#ariaid-title7) to create a log subscription with the retrieval method `Syslog Push` with the concentrator as the destination.
+Log on your Web Security appliance and follow [this guide](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_010111.html#ariaid-title7) to create a log subscription with the retrieval method `Syslog Push` and the concentrator as the destination.
 
 
 ## Create the intake
