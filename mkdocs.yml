@@ -147,6 +147,7 @@ nav:
           - Cisco:
             - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco/cisco_asa.md
             - Cisco Secure Web Appliance: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
+            - Cisco IOS: xdr/features/collect/integrations/network/cisco/cisco_ios.md
             - Cisco NX-OS: xdr/features/collect/integrations/network/cisco/cisco_nx_os.md
             - Cisco Meraki MX: xdr/features/collect/integrations/network/cisco/cisco_meraki_mx.md
           - Gatewatcher AionIQ: xdr/features/collect/integrations/network/gatewatcher_aioniq.md
