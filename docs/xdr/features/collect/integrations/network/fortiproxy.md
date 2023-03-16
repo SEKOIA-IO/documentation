@@ -6,7 +6,7 @@ type: intake
 
 FortiProxy is a web proxy that protects clients against internet threats.
 In this documentation we will explain one way to collect and send FortiProxy logs to SEKOIA.IO.
-- From the FortiProxy server to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
+- From the FortiProxy server to an internal syslog concentrator, then forwarded to SEKOIA.IO
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_270777d7-0c5a-42fb-b901-b7fadfb0ba48_do_not_edit_manually.md!}
@@ -26,7 +26,7 @@ On FortiProxy appliances, differents type of logs are available. This intake cur
 
 The following prerequisites are needed in order to setup efficient log concentration:
 - Have administrator rights on FortiProxy
-- Traffic towards the Rsyslog must be open on `UDP 514`
+- Traffic towards the syslog concentrator must be open on `UDP 514`
 
 #### Configure logging to a RSYSLOG server
 
@@ -43,4 +43,4 @@ For more information please refer to the official documentation of [FortiProxy](
 
 ### Transport to SEKOIA.IO
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.

@@ -17,4 +17,4 @@ As of now, the main solution to collect Pulse Secure Connect logs leverages the 
 
 ### Rsyslog
 
-Please refer to the documentation of Pulse Secure Connect to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please refer to the documentation of Pulse Secure Connect to forward events to your syslog concentrator. The reader can consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.

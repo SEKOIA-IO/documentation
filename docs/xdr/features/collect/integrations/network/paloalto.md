@@ -70,7 +70,7 @@ For detailed information about configuring a log forwarding profile and assignin
 
 #### Transport to SEKOIA.IO
 
-Please refer to the documentation of the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please refer to the documentation of the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
 
 ### Forward events through Palo Alto Cortex Data Lake
 

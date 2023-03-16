@@ -182,10 +182,10 @@ Please consult the dedicated documentation for each concentrator :
 * [Logstash](../../../ingestion_methods/logstash/)
 * [Syslog-ng](../../../ingestion_methods/syslog-ng/)
 * [Graylog](../../../ingestion_methods/graylog/)
+* [SEKOIA.IO docker concentrator](../../../ingestion_methods/sekoiaio_docker_concentrator/)
 
 !!!Note
-    Rsyslog is now recommanded because it is on this concentrator that SEKOIA has the best expertise.
-    However, feel free to use the one you are the most confortable with.
+    Although SEKOIA.IO docker concentrator is highly recommended, feel free to use the one you are the most confortable with.
 
 ## Windows Event Forwarder to Windows Event Collector to a concentrator
 Most of the following commands are to be run as Administrator in a Powershell interpretor.

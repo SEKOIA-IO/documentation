@@ -30,11 +30,11 @@ On FortiMail appliances, most of the important hardware and software activities 
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator privileges on the FortiMail appliance
-- Traffic towards the Rsyslog must be open on `UDP 514`
+- Traffic towards the syslog must be open on `UDP 514`
 
 ### Configure FortiMail
 
-#### Configure logging to a RSYSLOG server
+#### Configure logging to a syslog server
 
 1. Go to `Log and Report > Log Settings > Remote`.
 2. Click `New` to create a new entry OR double-click an existing entry to modify it. *A dialog appears*.
@@ -55,4 +55,4 @@ For detailed information about configuring a log forwarding, see [Configure Fort
 
 ## Transport to SEKOIA.IO
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.

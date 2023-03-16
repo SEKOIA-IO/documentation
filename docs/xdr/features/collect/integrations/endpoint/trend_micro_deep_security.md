@@ -17,7 +17,7 @@ In this guide, you will configure your Security Manager to forward events throug
 
 ### Prerequisites
 
-An internal log concentrator (Rsyslog) is required to collect and forward events to SEKOIA.IO.
+An internal syslog concentrator is required to collect and forward events to SEKOIA.IO.
 
 ### Enable Syslog forwarding
 
@@ -51,4 +51,4 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Transport to SEKOIA.IO
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.

@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-This documentation details one way to collect and send FortiWeb logs to SEKOIA.IO: from the FortiWeb machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
+This documentation details one way to collect and send FortiWeb logs to SEKOIA.IO: from the FortiWeb machine to an internal syslog concentrator, then forwarded to SEKOIA.IO
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2259adc3-9d93-4150-9c1c-46804e636084_do_not_edit_manually.md!}
@@ -23,7 +23,7 @@ On FortiWeb appliances, most of the important hardware and software activities t
 
 The following prerequisites are needed in order to setup efficient log concentration:
 - Have administrator writes on the FortiWeb (read & write permission)
-- Traffic towards the Rsyslog must be open on `UDP 514`
+- Traffic towards the syslog concentrator must be open on `UDP 514`
 
 #### Configure FortiWeb
 
@@ -58,6 +58,4 @@ For more information please refer to the official documentation of [FortiWeb](ht
 
 ### Transport to SEKOIA.IO
 
-#### Rsyslog
-
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+The reader is invited to consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
