@@ -1,16 +1,16 @@
 # Triggers
 
-To start creating a playbook, a `Trigger` is needed in order to launch the start of the playbook execution.
+To create a playbook, you need a `Trigger` to launch its execution.
 
 ## Types of Triggers
 
-To access triggers
+To access triggers: 
 
 1. Go to a `Playbook` graph 
 2. In the `Actions Library`, right under the search bar are two checkboxes: Actions and Triggers
 3. Select `Triggers`
 
-The `Triggers` collects data that will be used by the Operators and Actions to answer a specific need.
+The `Triggers` collect data that will be used by the Operators and Actions to answer a specific need.
 
 ### Alerts
 
