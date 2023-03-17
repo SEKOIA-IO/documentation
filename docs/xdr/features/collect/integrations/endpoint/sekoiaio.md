@@ -30,6 +30,7 @@ The Endpoint Detection Agent supports the following operating systems:
     * Ubuntu 14.04 and newer
     * Debian 8 and newer
     * CentOS 7 and newer
+    * Redhat 7 and newer
 
 
 ## Installation
@@ -70,11 +71,14 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     sudo systemctl disable auditd
     ```
 
+    !!! note
+    	It is very important that the auditd service is **stopped** for the agent to work properly. The disable command is used to allow persistence of the configuration.  
+
     Now that `auditd` is disabled you can install the agent:
 
     ```shell
-    chmod +x ./agent
-    sudo ./agent -install -intake-key <INTAKE_KEY>
+    chmod +x ./agent-latest
+    sudo ./agent-latest -install -intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent has been successfully installed as a service you can run the following command:
