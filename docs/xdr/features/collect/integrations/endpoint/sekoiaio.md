@@ -63,6 +63,10 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
     ```shell
     sudo systemctl stop auditd
+    # In case of error "Failed to stop auditd.service: Operation refused"
+    # try to set "RefuseManualStop" to "no" inside "/usr/lib/systemd/system/auditd.service"
+    # reload the systemctl daemon "sudo systemctl daemon-reload"
+    # and retry "sudo systemctl stop auditd"
     sudo systemctl disable auditd
     ```
 
