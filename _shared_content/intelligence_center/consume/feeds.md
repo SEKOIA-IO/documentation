@@ -58,7 +58,7 @@ To create a new feed:
 5. Save your changes
 
 !!! note
-    Filter categories are combined together with a logical AND. Different values in the same filter category are combined together with a logical OR. This means you can define a feed with values matching ((Locations: France OR Germany) AND (Sectors: Financial Services AND Industrial).
+    Filter categories are combined together with a logical AND. Different values in the same filter category are combined together with a logical OR. This means you can define a feed with values matching ((Locations: France OR Germany) AND (Sectors: Financial Services OR Industrial).
 
 ### Edit a feed
 
