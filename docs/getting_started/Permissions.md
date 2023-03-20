@@ -126,6 +126,9 @@ Need to access the Intelligence Center ? Here are all the permissions linked to 
 | INTHREAT_READ_OBSERVABLES | Read observables |
 | INTHREAT_READ_OBJECTS | Read objects |
 | READ_TELEMETRY | Read the telemetry measures |
+| INTHREAT_READ_IOC_COLLECTIONS | Read IOC Collections |
+| INTHREAT_WRITE_IOC_COLLECTIONS | Write IOC Collections |
+| INTHREAT_READ_IOC_COLLECTIONS_TELEMETRY | Read IOC Collections telemetry |
 
 !!! note
     InThreat is the term we use internally for the Intelligence Center 
