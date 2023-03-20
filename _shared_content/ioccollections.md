@@ -6,7 +6,7 @@ While IOCs produced by SEKOIA.IO’s own Threat & Detection Research team are di
 
 You can then easily see telemetry on these collections and use them inside detection rules.
 
-IOC Collections are available directly from the menu inside the Intelligence Center with CTI permissions describe [here](/docs/getting_started/Permissions)
+IOC Collections are available directly from the menu inside the Intelligence Center with CTI permissions describe [here](/docs/getting_started/Permissions.md)
 
 ![collection_menu](/assets/operation_center/IOCscollections/collections_menu.png){: style="max-width:100%"}
 
