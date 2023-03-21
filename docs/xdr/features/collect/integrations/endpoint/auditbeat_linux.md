@@ -18,7 +18,7 @@ Auditbeat communicates directly with the Linux audit framework, collects the sam
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator privileges on the server
-- Traffic towards the log collector sever which is using Rsyslog must be open on port `TCP/514`
+- Traffic towards the log collector sever which is using syslog must be open on port `TCP/514`
 
 #### Configure the client
 
@@ -266,7 +266,7 @@ sudo systemctl restart rsyslog.service
 
 ### Transport to SEKOIA.IO
 
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to transport logs to SEKOIA.IO.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to transport logs to SEKOIA.IO.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

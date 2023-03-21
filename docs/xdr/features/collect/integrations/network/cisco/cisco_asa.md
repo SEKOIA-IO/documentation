@@ -38,10 +38,10 @@ hostname(config)# logging trap informational
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator privileges on the CISCO appliance
-- Traffic towards the Rsyslog must be open on `UDP 514`
+- Traffic towards the concentrator must be open on `UDP 514`
 
 #### Configure the CISCO Appliance
-In ordre to forward the logs to a Rsyslog, please follow those commands:
+In order to forward the logs to the concentrator, please follow those commands:
 
 > Note the interface name
 ```bash
@@ -76,6 +76,4 @@ Explanations:
 
 ## Transport to SEKOIA.IO
 
-### Rsyslog
-
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+The reader is invited to consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.

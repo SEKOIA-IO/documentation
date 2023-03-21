@@ -13,7 +13,7 @@ This guide will explain how to forward Network Policy Server (NPS) logs to SEKOI
 
 ## Configure
 
-### NXLog agent to the Rsyslog
+### NXLog agent to a syslog concentrator
 
 #### Configuring NPS logging
 
@@ -51,26 +51,26 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
     File      '%SYSTEMROOT%\System32\LogFile\*.log'
 </Input>
 
-<Output rsyslog>
+<Output concentrator>
   Module om_tcp
-  Host RSYSLOG_HOST
+  Host CONCENTRATOR_HOST
   Port 514
   OutputType Syslog_TLS
 
   Exec to_syslog_ietf();
 </Output>
-<Route eventlog_to_rsyslog>
-  Path eventlog => rsyslog
+<Route eventlog_to_concentrator>
+  Path eventlog => concentrator
 </Route>
 ```
 
-> In the above configuration make sure to replace `RSYSLOG_HOST` variable by your Rsyslog server IP.
+> In the above configuration make sure to replace `CONCENTRATOR_HOST` variable by your syslog concentrator IP.
 
 Restart the NXLog service through the Services tool as Administrator or use Powershell command line: `Restart-Service nxlog`
 
-### Configure the Rsyslog to forward to SEKOIA.IO
+### Transport to SEKOIA.IO
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

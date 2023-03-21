@@ -15,7 +15,7 @@ In this guide, you will configure the gateway to forward events to syslog.
 
 ### Prerequisites
 
-An internal log concentrator (Rsyslog) is required to collect and forward events to SEKOIA.IO.
+An internal syslog concentrator is required to collect and forward events to SEKOIA.IO.
 
 ### Enable Syslog forwarding
 
@@ -28,4 +28,4 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Send logs to SEKOIA.IO
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.

@@ -16,7 +16,7 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 
 In this documentation we explain one way to collect and send Fortigate logs to SEKOIA.IO.
 
-- From the Fortigate machine to an internal log concentrator (Rsyslog), then forwarded to SEKOIA.IO
+- From the Fortigate machine to an internal syslog concentrator, then forwarded to SEKOIA.IO
 
 ## Fortigate logs
 
@@ -34,7 +34,7 @@ On Fortigate appliances, most of the important hardward and software activities 
 The following prerequisites are needed in order to setup efficient log concentration:
 
 - Have administrator writes on the Fortigate
-- Traffic towards the Rsyslog must be open on `TCP/514`
+- Traffic towards the syslog concentrator must be open on `TCP/514`
 
 ### Configure Fortigate
 
@@ -85,4 +85,4 @@ end
 
 ## Transport to SEKOIA.IO
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.

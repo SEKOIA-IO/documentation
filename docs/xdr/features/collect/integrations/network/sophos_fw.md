@@ -13,7 +13,7 @@ Sophos firewalls offer an integrated software solution that provides superior pe
 ## Configure
 
 This setup guide will show you how to forward your Sophos logs
-to SEKOIA.IO by means of an Rsyslog transport channel.
+to SEKOIA.IO by means of a syslog transport channel.
 
 ### Configure Sophos Firewall
 You can configure a syslog server in Sophos Firewall by following the instructions below (Which is appropriate for an XG Firewall, please refer to your documentation in other cases).
@@ -26,5 +26,7 @@ You can configure a syslog server in Sophos Firewall by following the instructio
 - Select the Severity Level from the available options.
 - Click Save to save the configuration.
 
-### Configure the Rsyslog server
-You can configure your Rsyslog server to forward your Sophos logs to SEKOIA.IO. Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+### Transport to SEKOIA.IO
+
+Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+

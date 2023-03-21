@@ -15,9 +15,13 @@ F5's BIG-IP is a family of products covering software and hardware designed arou
 
 We expect logs formated in priority as CEF or under the reporting format (key/value pairs).
 
-In this setup guide you will set up an rsyslog server to add your intake key and forward securely your BIG-IP logs to our servers. We first explain how to configure your rsyslog server, then we show how to configure a *Log Publisher* to format your logs as CEF and send them to your rsyslog server.
+In this setup guide you will forward securely your BIG-IP logs to our servers. We first explain how to configure your syslog concentrator, then we show how to configure a *Log Publisher* to format your logs as CEF and send them to your syslog concentrator.
 
-Most BIG-IP modules can use Log Publishers, some can directly log messages as CEF to an rsyslog server.
+Most BIG-IP modules can use Log Publishers, some can directly log messages as CEF to a syslog server.
+
+### Set up the concentrator
+
+Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to set up the concentrator that will forward your logs to SEKOIA.IO.
 
 ### Configure a Log Publisher
 
@@ -25,8 +29,8 @@ Before creating a log publisher, you first need a *management port* log destinat
 ```
 System -> Logs -> Configuration -> Log Destinations -> Create...
 ```
-Give it a name, choose type `Management Port`, fill the address and port of your rsyslog server and select protocol UDP
-(alternatively you can define a pool of rsyslog servers and use it as a remote high speed log destination).
+Give it a name, choose type `Management Port`, fill the address and port of your syslog concentrator and select protocol UDP
+(alternatively you can define a pool of syslog servers and use it as a remote high speed log destination).
 
 Then you need another log destination to format your logs in CEF:
 ```
@@ -52,18 +56,14 @@ Security -> Event Logs -> Logging Profiles -> Create... -> Publisher
 
 ### Direct Configuration
 
-Some modules allow direct configuration to the rsyslog server. As an example:
+Some modules allow direct configuration to the syslog concentrator. As an example:
 ```
 Security -> Event Logs -> Logging Profiles -> Create...
 ```
-Then choose `Application Security`, select `Remote Storage` as a storage destination, `Common Event Format (ArcSight)` as a logging format, and fill in your rsyslog server info.
+Then choose `Application Security`, select `Remote Storage` as a storage destination, `Common Event Format (ArcSight)` as a logging format, and fill in your syslog concentrator info.
 
 The resulting logging profile can be applied to a given virtual server in:
 ```
 Local Traffic -> Virtual Servers -> Virtual Server List
 ```
 Then choose a virtual server, go to the `Security -> Policies` tab and apply the log profile.
-
-### Rsyslog
-
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
