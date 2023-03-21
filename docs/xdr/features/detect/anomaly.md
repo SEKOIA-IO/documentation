@@ -11,8 +11,9 @@ This module provides 1-Dimensional time series chart illustrating historical and
 The machine learning features enable you to seek anomalies in your time series data combining temporal deviations in values, count of frequencies and statistical rarity.
 
 For now, these features only tackle univariate anomaly detection. If you are uncertain how to use anomaly detection rules and whether it is relevant, you have to answer the following questions:
-- Am I interested in monitoring deviation of a specific metric compared to its historical data ?
-- Does my time series have some periodic seasonalities (daily seasonality/weekly seasonlaity) ?
+
+- Am I interested in monitoring deviation of a specific metric compared to its historical data?
+- Does my time series have some periodic seasonalities (daily seasonality/weekly seasonlaity)?
 
 If yes, you can create an anomaly detection rule. An additional tool for specifying if time series data is a good candidate is set to ensure relevancy.
 
@@ -21,21 +22,30 @@ If yes, you can create an anomaly detection rule. An additional tool for specify
 Anomaly detection rules contain the configuration information necessary to perform the machine learning analysis. They can run for a specific time period or continuously against incoming data.
 
 For a complete configuration, you need to set:
+
 - a filter query (to aggregate events from a specific area)
 
 ![!](/assets/xdr/rules/anomaly/172566414-fbb7ecc9-78ea-474d-b1db-f8248fb927c7.png)
+
 - aggregation method (`Average`, `Cardinality`,`Count`, `Max`, `Min`, `Sum`)
 
-![!](/assets/xdr/rules/anomaly/77491073/172566563-23702360-16d2-4eed-8bc9-ce2b58dfcc9a.png)
+![!](/assets/xdr/rules/anomaly/172566563-23702360-16d2-4eed-8bc9-ce2b58dfcc9a.png)
+
 - field to aggregate if aggregation method is not `Count` (ex: source.ip, destination.bytes ...)
 
-![!](/assets/xdr/rules/anomaly/77491073/172567053-4941b348-9097-4a67-82c1-68075c0c196d.png)
+![!](/assets/xdr/rules/anomaly/172567053-4941b348-9097-4a67-82c1-68075c0c196d.png)
+
 - bucket time interval (`10 min`, `30min`, `1 hour`, `6 hours`, `12 hours` or `1 day`)
 
-![!](/assets/xdr/rules/anomaly/77491073/172567318-cb8d9304-b86b-4b2e-ab21-8e43b177324b.png)
+![!](/assets/xdr/rules/anomaly/172567318-cb8d9304-b86b-4b2e-ab21-8e43b177324b.png)
+
+!!! Note
+  `Time to raise an Anomaly alert = 30 minutes + 2*Time interval`, after the behaviour matches the detection pattern based on Aggregation mechanism
+
 - type of anomalies you want to detect (high, low or both)
 
-![!](/assets/xdr/rules/anomaly/77491073/172567367-0aa07dab-e203-441a-8484-2defb9b6189a.png)
+![!](/assets/xdr/rules/anomaly/172567367-0aa07dab-e203-441a-8484-2defb9b6189a.png)
+
 - minimum anomaly score raising alerts (`Low`, `Medium` or `High`)
 - severity of the rule
 
