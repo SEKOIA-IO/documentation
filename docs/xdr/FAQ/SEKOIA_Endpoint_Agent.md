@@ -15,7 +15,7 @@ For each Event ID, we format the event to follow our Taxonomy (ECS norm) so we c
 
 However, we welcome any suggestions of Event IDs to be collected that seems relevant.
 
-## Retrieve events linked to clocked accounts on AD
+## Retrieve events linked to blocked accounts on AD
 
 **Is SEKOIA.IO Agent allowed to retrieve events linked to blocked accounts on AD?**
 
