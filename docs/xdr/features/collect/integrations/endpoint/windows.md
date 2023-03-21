@@ -390,7 +390,7 @@ Expand-Archive -Path Sysmon.zip -DestinationPath Sysmon
 2. Download the configuration you want to use, for instance from [Florian Roth's Github](https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml). With Powershell:
 ```powershell
 cd .\Sysmon\
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export.xml" -OutFile "sysmonconfig-export.xml" -OutFile "sysmonconfig-export.xml"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export.xml" -OutFile "sysmonconfig-export.xml"
 ```
 
 3. Install Sysmon
