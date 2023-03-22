@@ -44,7 +44,7 @@ To create an archive, follow these instructions:
         | Access Key ID | ? |
         | Access Key Secret | ? |
 
-    3. **Describe your archive **
+    3. **Describe your archive**
     4. **Add GPK Key to access your events (optional)**: Archives are stored as GPG encrypted files so that the selected cloud provider does not have access to your events. You will always be able to load your archives inside SEKOIA.IO but if you want to access your events outside of the app, you can add your own public key.
 
 === "OVHCloud"
