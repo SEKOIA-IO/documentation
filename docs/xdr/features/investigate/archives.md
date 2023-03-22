@@ -63,7 +63,7 @@ To create an archive, follow these instructions:
     4. **Add GPK Key to access your events (optional)**: Archives are stored as GPG encrypted files so that the selected cloud provider does not have access to your events. You will always be able to load your archives inside SEKOIA.IO but if you want to access your events outside of the app, you can add your own public key.
 
 !!! info
-    The format used in archives are logs compressed in JSON format and it keeps enrichments made by SEKOIA.IO. Since we keep the original logs and message fields, the volumes are therefore larger in the archives compared to the originals.
+    The format used in archives are logs compressed in JSON format with enrichments made by SEKOIA.IO. Since we keep the original logs and message fields, the volumes are therefore larger in the archives compared to the originals.
 
 ## How to access saved archives and re-hydrated events
 
