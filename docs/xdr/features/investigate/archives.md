@@ -74,7 +74,7 @@ When the archives feature is made available in a community, the Events page show
 3. Click on `Search` and wait for your re-hydrated logs to appear on the Events page 
 
 !!! tip 
-    Change the date range if you cannot find events you’re looking for. 
+    If you can't find events you're searching for, try changing the date range.
 
 !!! warning
     Detection rules and capabilities do not work on rehydrated events, which means that these events will not generate alerts. This feature only allows analysts to go through events and perform the usual searches enabled by the Events page.
