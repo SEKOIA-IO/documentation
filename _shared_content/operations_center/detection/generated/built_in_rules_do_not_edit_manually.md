@@ -1,4 +1,4 @@
-Rules catalog includes **675 built-in detection rules** ([_last update on 2023-03-15_](rules_changelog.md)).
+Rules catalog includes **675 built-in detection rules** ([_last update on 2023-03-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -139,6 +139,10 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+            
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
@@ -249,6 +253,10 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+            
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.

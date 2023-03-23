@@ -1,7 +1,10 @@
-Changelog _last update on 2023-03-15_
+Changelog _last update on 2023-03-23_
 
 ## Changelog
 
+### Login Brute-Force Successful On AzureAD From Single IP Address
+  - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
+    
 ### LNK Malware Chain
   - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
     
