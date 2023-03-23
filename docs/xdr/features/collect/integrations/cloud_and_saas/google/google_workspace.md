@@ -67,7 +67,7 @@ On the left panel, go to `Logs Router` then click on `Create Sink`
 * Select Cloud Pub/Sub topic: `Use a Cloud Pub/Sub topic in a project`
 
 !!! Note
-Replace `[PROJECT_ID]` and `[TOPIC_ID]` by their values according to your PubSub topic (Google Cloud related documentation).
+	Replace `[PROJECT_ID]` and `[TOPIC_ID]` by their values according to your PubSub topic (Google Cloud related documentation).
 
 - Choose logs to include in sink
 
