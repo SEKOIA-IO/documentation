@@ -1,5 +1,5 @@
 uuid: 44439212-c2d8-4645-ad60-8fd5e39140b3
-name: Google Workspace Audit
+name: Google Workspace Audit Logs
 type: intake
 
 ## Overview
@@ -14,7 +14,6 @@ In this documentation, you will learn how to collect and send Google Workspace a
 
 - Google licence Enterprise standard or higher
 - Access to SEKOIA.IO Intakes and Playbook pages with write permissions
-- The Google Cloud service account MUST have the "Pub/Sub Subscriber" permission 
 - Administrator access to the Google Cloud console
 
 !!! Warning
@@ -28,7 +27,9 @@ In this documentation, you will learn how to collect and send Google Workspace a
 
 ### Centralise Google Workspace logs on your Google Cloud
 
-1. Create a topic that will hold messages to be delivered
+1. Create a topic
+
+This topic will hold messages to be delivered.
 
 - In the Google Cloud console available at `console.cloud.google.com`, go to your **Pub/Sub page**
 - Click **Create topic**
@@ -92,15 +93,19 @@ This should add an entry in the log router sinks list named `sekoia-gca-sink` wi
 
 4. Confirm the logs are received in your Pub/Sub
 
+By following these steps, you should see events appearing on the list
+
 - Go to your **Pub/Sub page**, then click on **Topics** on the left panel
 - Click on your sekoia `sekoia-gca-topic` topic previously configured
 - On the bottom of the page, click on the **Message tab**
 - Select your project
-- Click on **Pull button**, you should see events appearing on the list
+- Click on **Pull button**
 
 5. Create a dedicated service account 
 
-- Go to the Create service account page
+The service account will be used on SEKOIA.IO to pull logs available on your Google Cloud instance.
+
+- Go to the **Create service account** page
 - Select your cloud project
 - Enter `sekoia-gca-service-account` as a service account name
 - Click **Create and continue**
@@ -124,31 +129,34 @@ To use a service account from outside of Google Cloud, such as on SEKOIA.IO, you
 - Select **JSON** as the Key type and click **Create**
 
 !!! Important
-	Clicking **Create** downloads a service account key file. After you download the key file, you cannot download it again.
+	Clicking **Create** downloads a service account key file. After you download the key file, you cannot download it again. You will need it on the following steps on SEKOIA.IO.
 
 Find more information on the [official google documentation](https://cloud.google.com/iam/docs/keys-create-delete).
 
-**Fields description**
+**Example of JSON key file**
 
-|Field|Meaning|
-|---|---|
-|name| Configuration name|
-|auth_provider_x509_cert_url| The URL of the public x509 certificate, used to verify the signature on JWTs, such as ID tokens, signed by the authentication provider. `https://wwww.googleapis.com/oauth2/v1/certs`|
-|auth_url| Google authentification url `https://accounts.google.com/o/oauth2/auth`|
-|client_email| Client email|
-|client_id| Client id|
-|client_x509_cert_url| The URL of the public x509 certificate, used to verify JWTs signed by the client|
-|private_key| Private key|
-|private_key_id| Private key id|
-|project_id| Project id|
-|token_uri| token server endpoint URI `https://oauth2.googleapis.com/token`|
-|type|Activity type `service_account`|
+```JSON
+{
+  "type": "service_account",
+  "project_id": "PROJECT_ID",
+  "private_key_id": "KEY_ID",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nPRIVATE_KEY\n-----END PRIVATE KEY-----\n",
+  "client_email": "SERVICE_ACCOUNT_EMAIL",
+  "client_id": "CLIENT_ID",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/SERVICE_ACCOUNT_EMAIL"
+}
+```
+
 
 ## SEKOIA.IO configuration procedure
 
 1. Create your intake
 
-- Go to your SEKOIA.IO [Intakes page](https://app.sekoia.io/operations/intakes)
+Go to your SEKOIA.IO [Intakes page](https://app.sekoia.io/operations/intakes), and follow these steps:
+
 - Click on **+ Intake** button to create a new one
 - Choose **Google Cloud Audit Logs**, give it a name and choose the relevant Entity
 - Click on **Create** button
@@ -159,7 +167,8 @@ Find more information on the [official google documentation](https://cloud.googl
 
 2. Pull the logs to collect them on SEKOIA.IO
 
-- Go to the SEKOIA.IO [playbook page](https://app.sekoia.io/operations/playbooks)
+Go to the SEKOIA.IO [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
+
 - Click on **+ PLAYBOOK** button to create a new one
 - Select **Use a template**
 - Search for `Google` keywork on the search bar and select the template named `Forward Google Pubsub records to SEKOIA.IO`
