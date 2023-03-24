@@ -166,22 +166,23 @@ Go to your SEKOIA.IO [Intakes page](https://app.sekoia.io/operations/intakes), a
 
 Go to the SEKOIA.IO [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 
-1. Click on **+ PLAYBOOK** button to create a new one
-2. Select **Use a template**
-3. Search for `Google` keywork on the search bar and select the template named `Forward Google Pubsub records to SEKOIA.IO`
+- Click on **+ PLAYBOOK** button to create a new one
+- Select **Use a template**
+- Search for `Google` keywork on the search bar and select the template named `Forward Google Pubsub records to SEKOIA.IO`
 
 ![google-playbook-template](/assets/operation_center/integration_catalog/cloud_and_saas/google/google-template.PNG){: style="max-width:100%"} 
 
-4. Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
+- Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
 
 ![template-playbook-configuration](/assets/operation_center/integration_catalog/cloud_and_saas/google/template-configuration.png ){: style="max-width:100%"}
 
-#### Create a **Trigger configuration** using:
-	* The `Intake key` created on the previous
+-  Create a **Trigger configuration** using:
+
+	* `Intake key` created on the previous
 	* The project ID 
 	* The suject ID that is `sekoia-gca-subscription`
 
-5. Click on the **Save** button
-6. **Activate the playbook** with the toggle button on the top right corner of the page
+- Click on the **Save** button
+- **Activate the playbook** with the toggle button on the top right corner of the page
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
