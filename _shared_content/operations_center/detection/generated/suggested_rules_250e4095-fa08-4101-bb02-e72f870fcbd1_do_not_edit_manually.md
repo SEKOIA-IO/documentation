@@ -285,6 +285,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     - **Effort:** advanced
 
+??? abstract "Copying Browser Files With Credentials"
+    
+    Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
+    
+    - **Effort:** elementary
+
 ??? abstract "Copying Sensitive Files With Credential Data"
     
     Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
