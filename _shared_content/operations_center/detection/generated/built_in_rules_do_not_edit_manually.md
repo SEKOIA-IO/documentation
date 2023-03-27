@@ -1,4 +1,4 @@
-Rules catalog includes **675 built-in detection rules** ([_last update on 2023-03-23_](rules_changelog.md)).
+Rules catalog includes **676 built-in detection rules** ([_last update on 2023-03-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1445,6 +1445,10 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+            
 ??? abstract "Socat Relaying Socket"
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
@@ -2111,6 +2115,10 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+            
 ??? abstract "Sophos EDR Application Blocked"
     
     Sophos EDR detected a potentially malicious application and blocked it.
@@ -2479,6 +2487,10 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+            
 ??? abstract "Smbexec.py Service Installation"
     
     Detects the use of smbexec.py tool by detecting a specific service installation
@@ -2593,6 +2605,10 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 24/03/2023 - minor - The legitimate DLL UpdateDeploymentProvider.dll is now excluded from the rule as it triggered several false positives.
+            
 ??? abstract "Wininit Wrong Parent"
     
     Windows Boot is a background application launcher for the Windows operating system. Wininit.exe is responsible for performing the Windows initialization process. This rule analyse if the parent of this process is a legitimate one or not.
@@ -5980,6 +5996,12 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Copying Browser Files With Credentials"
+    
+    Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Copying Sensitive Files With Credential Data"
     
     Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
@@ -6302,6 +6324,14 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+**Steal Web Session Cookie**
+
+??? abstract "Copying Browser Files With Credentials"
+    
+    Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
+    
+    - **Effort:** elementary
+    
 **Unsecured Credentials**
 
 ??? abstract "Adexplorer Usage"
@@ -6310,6 +6340,10 @@ Rules catalog includes **675 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
+            
 ??? abstract "Google Cloud Audit 2FA Disabled"
     
     Detects when Google Cloud Audit notify the 2FA deactivation for a user account.

@@ -1,7 +1,13 @@
-Changelog _last update on 2023-03-23_
+Changelog _last update on 2023-03-27_
 
 ## Changelog
 
+### Adexplorer Usage
+  - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
+    
+### SentinelOne User Logged In To The Management Console
+  - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+    
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
     
