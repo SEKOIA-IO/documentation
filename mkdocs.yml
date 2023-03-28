@@ -7,6 +7,8 @@ extra:
 extra_css:
 - stylesheets/sekoiaio.css
 - stylesheets/lightgallery.min.css
+- stylesheets/poppins.min.css
+- stylesheets/inter.min.css
 extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js
@@ -707,8 +709,7 @@ theme:
   - navigation.footer
   - content.code.annotate
   - content.action.edit
-  font:
-    text: Open Sans
+  font: false
   include_search_page: true
   logo: assets/sekoiaio.svg
   name: material

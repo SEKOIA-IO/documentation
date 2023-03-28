@@ -1,5 +1,8 @@
 :root {
     --md-default-fg-color: #111233;
+    --md-text-font: 'Inter', sans-serif;
+    --md-code-font: 'Inter', sans-serif;
+
 }
 
 .md-search__inner  {
@@ -82,6 +85,7 @@
 
         h1 {
             font-weight: bold;
+            font-family: 'Poppins', sans-serif;
         }
 
         h2 {
@@ -142,7 +146,7 @@
 
     footer {
         .md-footer__inner {
-            background-color: #992a85;
+            background-color: #171930;
             margin-left: 0;
             margin-right: 0;
             max-width: 100%;
@@ -201,8 +205,9 @@
 
             h1 {
                 color: white;
-                font-weight: 800;
+                font-weight: bold;
                 font-size: 48px;
+                font-family: 'Poppins', sans-serif;
                 line-height: 52px;
             }
 
@@ -238,7 +243,7 @@
             margin: 5em;
 
             h2 {
-                color: #12005e;
+                color: #171930;
                 font-size: 40px;
                 line-height: 48px;
             }
@@ -279,7 +284,7 @@
         justify-content: center;
 
         h2 {
-            color: #12005e;
+            color: #171930;
             font-size: 24px;
             line-height: 36px;
 
@@ -292,8 +297,7 @@
                 margin: 0 auto;
                 margin-top: 1em;
 
-                background: rgb(45,46,131);
-                background: linear-gradient(90deg, rgba(45,46,131,1) 0%, rgba(227,35,77,1) 100%);
+                background:  #5D4FF2;
             }
 
         }
@@ -314,17 +318,17 @@
                 font-size: 16px;
                 line-height: 16px;
                 text-decoration: none;
-                color: #2d2e83;
-                border: 2px solid #2d2e83;
+                color: #5D4FF2;
+                border: 2px solid #5D4FF2;
                 border-radius: 8px;
                 width: 230px;
                 display: block;
                 padding: 17px 0;
 
 		&:hover {
-		    background-color: #526cfe;
+		    background-color: #3027AE;
 		    color: #ffffff;
-		    border-color: #526cfe;
+		    border-color: #3027AE;
 		}
 
             }
