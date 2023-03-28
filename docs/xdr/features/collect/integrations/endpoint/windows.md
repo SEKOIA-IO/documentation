@@ -168,6 +168,9 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
     `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. **It does not depend on SSL transport at all**.
 
     **Remove it ONLY** if you use `UDP` - `om_udp`. For more information, consult [NXLog documentation](https://docs.nxlog.co/refman/current/xm/syslog.html)
+    
+    French characters (with iso8859-1) might not be interpreted correctly.
+    We recommend to use our [agent SEKOIA.IO](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/)
 
 Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as admin:
 
