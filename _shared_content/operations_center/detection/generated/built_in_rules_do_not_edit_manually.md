@@ -1,4 +1,4 @@
-Rules catalog includes **676 built-in detection rules** ([_last update on 2023-03-27_](rules_changelog.md)).
+Rules catalog includes **676 built-in detection rules** ([_last update on 2023-03-28_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1491,6 +1491,10 @@ Rules catalog includes **676 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/03/2023 - minor - Excluded some commonly observed false positives.
+            
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
     Detects suspicious PowerShell invocation command parameters

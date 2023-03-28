@@ -1,7 +1,10 @@
-Changelog _last update on 2023-03-27_
+Changelog _last update on 2023-03-28_
 
 ## Changelog
 
+### Suspicious PowerShell Invocations - Generic
+  - 28/03/2023 - minor - Excluded some commonly observed false positives.
+    
 ### Adexplorer Usage
   - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
     
