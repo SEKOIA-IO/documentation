@@ -202,19 +202,18 @@ nav:
       - Actions: xdr/features/automate/actions.md
       - Actions Library:
         - AWS: xdr/features/automate/library/aws.md
-        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Azure Active Directory: xdr/features/automate/library/azure-active-directory.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
-        - Cybereason: xdr/features/automate/library/cybereason.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
+        - Cybereason: xdr/features/automate/library/cybereason.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
         - Digital Shadows: xdr/features/automate/library/digital-shadows.md
-        - fileutils: xdr/features/automate/library/fileutils.md
         - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
-        - Git: xdr/features/automate/library/git.md
         - GLIMPS: xdr/features/automate/library/glimps.md
+        - Git: xdr/features/automate/library/git.md
+        - Git: xdr/features/automate/library/git.md
         - Google: xdr/features/automate/library/google.md
         - HTTP: xdr/features/automate/library/http.md
         - HarfangLab: xdr/features/automate/library/harfanglab.md
@@ -225,10 +224,11 @@ nav:
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
         - Mattermost: xdr/features/automate/library/mattermost.md
+        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
+        - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Netskope: xdr/features/automate/library/netskope.md
         - OKTA: xdr/features/automate/library/okta.md
         - OSINT: xdr/features/automate/library/osint.md
-        - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Onyphe: xdr/features/automate/library/onyphe.md
         - PagerDuty: xdr/features/automate/library/pagerduty.md
         - Panda Security: xdr/features/automate/library/panda-security.md
@@ -243,13 +243,14 @@ nav:
         - Shodan: xdr/features/automate/library/shodan.md
         - Skyhigh Security Secure Web Gateway (SWG): xdr/features/automate/library/skyhigh-security-secure-web-gateway-swg.md
         - Sophos: xdr/features/automate/library/sophos.md
-        - The Hive: xdr/features/automate/library/the-hive.md
         - Tehtris: xdr/features/automate/library/tehtris.md
+        - The Hive: xdr/features/automate/library/the-hive.md
         - Tranco: xdr/features/automate/library/tranco.md
         - Triage: xdr/features/automate/library/triage.md
         - Vade Secure: xdr/features/automate/library/vade-secure.md
         - VirusTotal: xdr/features/automate/library/virustotal.md
         - Whois: xdr/features/automate/library/whois.md
+        - fileutils: xdr/features/automate/library/fileutils.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
@@ -356,10 +357,10 @@ nav:
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
         - Detection Rules: tip/features/automate/library/detection-rules.md
         - Digital Shadows: tip/features/automate/library/digital-shadows.md
-        - fileutils: tip/features/automate/library/fileutils.md
         - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
-        - Git: tip/features/automate/library/git.md
         - GLIMPS: tip/features/automate/library/glimps.md
+        - Git: tip/features/automate/library/git.md
+        - Git: tip/features/automate/library/git.md
         - Google: tip/features/automate/library/google.md
         - HTTP: tip/features/automate/library/http.md
         - HarfangLab: tip/features/automate/library/harfanglab.md
@@ -387,6 +388,7 @@ nav:
         - Vade Secure: tip/features/automate/library/vade-secure.md
         - VirusTotal: tip/features/automate/library/virustotal.md
         - Whois: tip/features/automate/library/whois.md
+        - fileutils: tip/features/automate/library/fileutils.md
   - Develop:
     - Overview: tip/develop/index.md
     - Guides:
@@ -698,7 +700,6 @@ repo_url: https://github.com/SEKOIA-IO/documentation
 site_name: SEKOIA.IO Documentation
 site_url: https://docs.sekoia.io
 theme:
-  lang: en
   custom_dir: theme
   favicon: assets/favicon.png
   features:
@@ -710,6 +711,7 @@ theme:
   font:
     text: Open Sans
   include_search_page: true
+  lang: en
   logo: assets/sekoiaio.svg
   name: material
   search_index_only: false
