@@ -891,12 +891,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco NX-OS [BETA]** with th
     
     - **Effort:** intermediate
 
-??? abstract "WAF Block Rule"
-    
-    Detects when one of WAF rule blocked an HTTP request 
-    
-    - **Effort:** master
-
 ??? abstract "WCE wceaux.dll Creation"
     
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.

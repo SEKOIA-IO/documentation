@@ -242,9 +242,3 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS WAF** with the following
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
-
-??? abstract "WAF Block Rule"
-    
-    Detects when one of WAF rule blocked an HTTP request 
-    
-    - **Effort:** master

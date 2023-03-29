@@ -387,12 +387,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "WAF Block Rule"
-    
-    Detects when one of WAF rule blocked an HTTP request 
-    
-    - **Effort:** master
-
 ??? abstract "WMI Install Of Binary"
     
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
