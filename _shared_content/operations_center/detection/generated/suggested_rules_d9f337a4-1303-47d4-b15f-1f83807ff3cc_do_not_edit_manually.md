@@ -242,9 +242,3 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Imperva WAF** with the follo
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
     - **Effort:** elementary
-
-??? abstract "WAF Block Rule"
-    
-    Detects when one of WAF rule blocked an HTTP request 
-    
-    - **Effort:** master
