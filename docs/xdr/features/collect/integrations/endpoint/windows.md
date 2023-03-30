@@ -184,12 +184,12 @@ To get started, follow these steps:
 ```
 
 !!! Info
-   To ensure proper configuration, it is important to replace the `RSYSLOG_HOST` variable with the IP address of your concentrator.
+    To ensure proper configuration, it is important to replace the `RSYSLOG_HOST` variable with the IP address of your concentrator.
 
 !!! Warning
-  `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. It does not depend on SSL transport at all.
+    `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. It does not depend on SSL transport at all.
   **Remove it ONLY** if you use `UDP` - `om_udp`. 
-  For more information, consult [NXLog documentation.](https://docs.nxlog.co/refman/current/xm/syslog.html)
+    For more information, consult [NXLog documentation.](https://docs.nxlog.co/refman/current/xm/syslog.html)
     
 !!! Note
     The iso8859-1 character encoding is limited to 256 characters, which is not enough to represent all French characters. This means that some French characters might not be correctly interpreted or displayed when using iso8859-1 encoding. For example, iso8859-1 does not include characters such as é, è, ê, and ë. 
@@ -228,7 +228,7 @@ Log in the Windows Event Collector and execute the following command:
 ```
 
 !!! Note 
-   Please take note of the following information as it will be required in the upcoming section "Deploying the GPO'. Specifically, you will need to replace the `FQDN_WEC_SERVER` field with this information to complete the deployment process.
+    Please take note of the following information as it will be required in the upcoming section "Deploying the GPO'. Specifically, you will need to replace the `FQDN_WEC_SERVER` field with this information to complete the deployment process.
     
 ** 2. Configure the subscription file**
 Get the SDDL information by executing the following command:
@@ -237,7 +237,7 @@ wevtutil gl security
 ```
 
 !!! Note
-   Take note of the `channelAccess` information.
+    Take note of the `channelAccess` information.
 
 On the WEC server, create an XML file, named `DC_SUBSCRIPTION.xml` with the following information:
 
@@ -283,8 +283,8 @@ On the WEC server, create an XML file, named `DC_SUBSCRIPTION.xml` with the foll
 </Subscription>
 ```
 !!! warning
-   You have to replace Domain Computers domain group "(A;;GA;;;DC)" by "(A;;GA;;;S-1-5-....)" using information you previously collected in the        `channelAccess`. 
-   More information of the SDDL format can be found [here.](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379567(v=vs.85).aspx)
+    You have to replace Domain Computers domain group "(A;;GA;;;DC)" by "(A;;GA;;;S-1-5-....)" using information you previously collected in the        `channelAccess`. 
+    More information of the SDDL format can be found [here.](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379567(v=vs.85).aspx)
 
 Ensure the file is correctly saved, then close it.
 
@@ -348,8 +348,9 @@ winrm qc -q
 **Deploying the GPO**
 
 In Computer Configuration > Administrative Templates > Windows Components > Event Forwarding -> Configure target Subscription Manager, execute the following command:
-!!!warn
-   Please replace the `FQDN_WEC_SERVER` by the previously collected information
+
+!!! warn
+    Please replace the `FQDN_WEC_SERVER` by the previously collected information
 
 ```
 Server=http://FQDN_WEC_SERVER:5985/wsman/SubscriptionManager/WEC,Refresh=60
@@ -371,66 +372,66 @@ To ensure proper logging configuration, please follow the steps below:
 1. Verify that logs are being correctly received on the Windows Event Collector (WEC) server. To do this, open the Windows Event Viewer and navigate to Windows Logs > Forwarded Events.
 2. Set up the Nxlog agent to forward the logs to the concentrator by using the following configuration:
 
-  ```
-  define ROOT C:\Program Files (x86)\nxlog
+      ```
+      define ROOT C:\Program Files (x86)\nxlog
 
-  Moduledir %ROOT%\modules
-  CacheDir %ROOT%\data
-  Pidfile %ROOT%\data\nxlog.pid
-  SpoolDir %ROOT%\data
-  LogFile %ROOT%\data\nxlog.log
+      Moduledir %ROOT%\modules
+      CacheDir %ROOT%\data
+      Pidfile %ROOT%\data\nxlog.pid
+      SpoolDir %ROOT%\data
+      LogFile %ROOT%\data\nxlog.log
 
-  <Extension _syslog>
-    Module xm_syslog
-  </Extension>
+      <Extension _syslog>
+        Module xm_syslog
+      </Extension>
 
-  <Extension _json>
-    Module xm_json
-  </Extension>
+      <Extension _json>
+        Module xm_json
+      </Extension>
 
-  <Input eventlog1>
-    Module im_msvistalog
-    Query <QueryList><Query Id="0"><Select Path="Application">*</Select></Query></QueryList>
-    Exec $Message = to_json();
-  </Input>
-  <Input eventlog2>
-    Module im_msvistalog
-    Query <QueryList><Query Id="0"><Select Path="System">*</Select></Query></QueryList>
-    Exec $Message = to_json();
-  </Input>
-  <Input eventlog3>
-    Module im_msvistalog
-    Query <QueryList><Query Id="0"><Select Path="Security">*</Select></Query></QueryList>
-    Exec $Message = to_json();
-  </Input>
-  <Input eventlog4>
-    Module im_msvistalog
-    Query <QueryList><Query Id="0"><Select Path="ForwardedEvents">*</Select></Query></QueryList>
-    Exec $Message = to_json();
-  </Input>
+      <Input eventlog1>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="Application">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
+      <Input eventlog2>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="System">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
+      <Input eventlog3>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="Security">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
+      <Input eventlog4>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="ForwardedEvents">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
 
-  <Output rsyslog>
-    Module om_tcp
-    Host RSYSLOG_HOST
-    Port 514
-    OutputType Syslog_TLS
+      <Output rsyslog>
+        Module om_tcp
+        Host RSYSLOG_HOST
+        Port 514
+        OutputType Syslog_TLS
 
-    Exec to_syslog_ietf();
-  </Output>
+        Exec to_syslog_ietf();
+      </Output>
 
-  <Route eventlog_to_rsyslog>
-    Path eventlog1, eventlog2, eventlog3, eventlog4 => rsyslog
-  </Route>
-  ```
+      <Route eventlog_to_rsyslog>
+        Path eventlog1, eventlog2, eventlog3, eventlog4 => rsyslog
+      </Route>
+      ```
 
 !!! important
     In the above configuration, make sure to replace `RSYSLOG_HOST` variable by the IP of your concentrator.
 
 3. Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as Administrator:
 
-```poweshell
-Restart-Service nxlog
-```
+    ```poweshell
+    Restart-Service nxlog
+    ```
 
 ## Sysmon usage
 Sysmon is a Microsoft tool you can download on their [website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
