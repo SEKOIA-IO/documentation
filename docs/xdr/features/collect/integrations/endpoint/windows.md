@@ -3,26 +3,27 @@ name: Windows
 type: intake
 
 ## Overview
-Microsoft Windows is a popular operating system developed by Microsoft since 1985.
 
-In this documentation we will explain 2 ways to collect and send Windows logs to SEKOIA.IO.
+Microsoft Windows is a widely used operating system that has been developed by Microsoft since 1985.
 
-- From the Windows machine directly to SEKOIA.IO using the NXLog agent
-- From the Windows machine using NXLog to an internal log concentrator, then forwarded to SEKOIA.IO
+This page will provide you with two methods for collecting and forwarding Windows logs to SEKOIA.IO. 
 
-In addition, this documentation will explain how to collect and send Windows logs from sensitive assets such as Domain Controllers, if you don't want to install a third party agent.
+- The first method involves using the NXLog agent to send logs directly from the Windows machine to SEKOIA.IO. 
 
-!!!Warning
-    Be careful, in this documentation 64 bits version of NXLog is used.
-    If you use the 32 bits version, be sure to replace all the commands and configuration files containing `C:\Program Files\nxlog\` with `C:\Program Files (x86)\nxlog\`
+- The second method involves using NXLog to forward logs from an internal log concentrator to SEKOIA.IO.
+
+Additionally, this documentation will offer guidance on collecting and forwarding logs from sensitive assets, such as Domain Controllers, without requiring the installation of a third-party agent. 
+
+!!! Warning
+    Please be advised that this documentation assumes the use of the 64-bit version of NXLog. If you are using the 32-bit version, it is crucial that you replace all references to `C:\Program Files\nxlog\` in the commands and configuration files with `C:\Program Files (x86)\nxlog\`. Failure to make this adjustment may result in errors.
 
 ## Windows Event logs
 
-On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files.
+On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files: 
 
-- Application: for Windows components such as drivers and built-in interface elements
-- System: records the events related to programs installed on a system
-- Security: records the events related to security, such as logon attempts and ressource access
+- `Application`: for Windows components such as drivers and built-in interface elements
+- `System`: records events related to programs installed on a system
+- `Security`: records events related to security (such as logon attempts and ressource access)
 
 Those logs a readable locally in the Windows Event Viewer, in the section Windows Logs.
 
@@ -31,9 +32,10 @@ If you want to improve detection and analysis, you may want to enable Sysmon.
 Sysmon is a Microsoft tool you can download on their [website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
 A common installation instruction and configuration file is available on [Florian Roth's Github](https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml). This configuration is an updated (and maintained) version of the [SwiftOnSecurity's configuration](https://github.com/SwiftOnSecurity/sysmon-config), which can also be used.
 
-!!!Warning
-    The installation of this tool will generate more logs, so it will consume more CPU ressources. Install it on equipements that are correctly dimensioned, or try it on low risk assets at first.
-
+!!! Warning
+    Please be aware that installing this tool may generate additional logs, resulting in increased consumption of CPU resources. It is important to ensure that the equipment on which the tool is installed is appropriately sized and has sufficient resources to handle the additional workload.
+    We recommend that you first test the installation on lower-risk assets before deploying it on more critical systems.
+    
 You will find dedicated NXLog configuration file for Sysmon usage in [this section](#nxlog-configuration-for-sysmon-usage).
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9281438c-f7c3-4001-9bcc-45fd108ba1be_do_not_edit_manually.md!}
@@ -41,17 +43,27 @@ You will find dedicated NXLog configuration file for Sysmon usage in [this secti
 {!_shared_content/operations_center/integrations/generated/9281438c-f7c3-4001-9bcc-45fd108ba1be.md!}
 
 ## NXLog directly to SEKOIA.IO
+
 This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events by means of a syslog transport channel.
 
 ### NXLog setup
-First of all, download NXLog at the following link : https://nxlog.co/products/all/download. Install it, then, open the NXLog configuration file at `C:\Program Files\nxlog\conf\nxlog.conf` and update it with the following instructions:
-> In the this template instruction, please replace `YOUR_INTAKE_KEY` variable with your intake key.
-```
- ## This is a sample configuration file. See the nxlog reference manual about the
- ## configuration options. It should be installed locally and is also available
- ## online at http://nxlog.org/nxlog-docs/en/nxlog-reference-manual.html
 
- ## Please set the ROOT to the folder your nxlog was installed into,
+To get started with NXLog, follow these steps:
+
+1. Download the NXLog installation package from the [official website](https://nxlog.co/products/all/download)
+2. After the download is complete, proceed with the installation
+3. Navigate to the NXLog configuration file, which is located at `C:\Program Files\nxlog\conf\nxlog.conf`
+4. Update the configuration file with your intake key by following these instructions:
+
+!!! Note 
+    Don't forget to replace `YOUR_INTAKE_KEY` variable with your actual intake key.
+
+
+```
+ ## This is a sample configuration file. See the nxlog reference manual about the configuration options. 
+ ## It should be installed locally and is also available online at http://nxlog.org/nxlog-docs/en/nxlog-reference-manual.html
+
+ ## Please set the ROOT to the folder your nxlog was installed into, 
  ## otherwise it will not start.
 
  #define ROOT C:\Program Files (x86)\nxlog
@@ -96,18 +108,22 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 ```
 
 ### Download the certificate
-In order to allow the connection of your events forwarder to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate.
 
-In a PowerShell console run as administrator, retrieve the certificate with the following command:
-```powershell
-Invoke-WebRequest -Uri https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem -OutFile 'C:\Program Files\nxlog\cert\SEKOIA-IO-intake.pem'
-```
+To enable the connection between your events forwarder and the SEKOIA.IO intake, it is necessary to download the SEKOIA.IO intake certificate. Please follow these steps:
 
-Restart the NXLog service through the Services tool as Administrator or use this PowerShell command line as Administrator:
+1. Open a PowerShell console as an administrator. 
+2. Use the following command to retrieve the certificate and save it to the appropriate directory:
+   ```powershell
+    Invoke-WebRequest -Uri https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem -OutFile 'C:\Program Files\nxlog\cert\SEKOIA-IO-intake.pem'
+    ```
 
-```powershell
-Restart-Service nxlog
-```
+3. Restart the NXLog service through the Services tool as an administrator or use the following PowerShell command line as an administrator:
+    ```powershell
+    Restart-Service nxlog
+    ```
+
+After completing these steps, your events forwarder should be able to establish a secure connection with the SEKOIA.IO intake using the newly downloaded certificate.
+
 
 ## NXLog to a concentrator
 
@@ -115,8 +131,14 @@ Restart-Service nxlog
 
 This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events by means of a syslog transport channel to a concentrator.
 
-First of all, download NXLog at the following link : https://nxlog.co/products/all/download. Then, open the NXLog configuration file at `C:\Program Files (x86)\nxlog\conf\nxlog.conf` and update it with the following instructions:
-```
+To get started, follow these steps:
+
+1. Download the NXLog installation package from the [official website](https://nxlog.co/products/all/download)
+2. After the download is complete, proceed with the installation
+3. Navigate to the NXLog configuration file, which is located at `C:\Program Files\nxlog\conf\nxlog.conf`
+4. Update the configuration file by following these instructions:
+
+```shell 
  ## This is a sample configuration file. See the nxlog reference manual about the
  ## configuration options. It should be installed locally and is also available
  ## online at http://nxlog.org/nxlog-docs/en/nxlog-reference-manual.html
@@ -161,13 +183,17 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 </Route>
 ```
 
-!!!important
-    In the above configuration make sure to replace `RSYSLOG_HOST` variable by the IP of your concentrator.
+!!! Info
+    To ensure proper configuration, it is important to replace the `RSYSLOG_HOST` variable with the IP address of your concentrator.
 
-!!!warning
-    `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. **It does not depend on SSL transport at all**.
-
-    **Remove it ONLY** if you use `UDP` - `om_udp`. For more information, consult [NXLog documentation](https://docs.nxlog.co/refman/current/xm/syslog.html)
+!!! Warning
+    `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. It does not depend on SSL transport at all.
+  **Remove it ONLY** if you use `UDP` - `om_udp`. 
+    For more information, consult [NXLog documentation.](https://docs.nxlog.co/refman/current/xm/syslog.html)
+    
+!!! Note
+    The iso8859-1 character encoding is limited to 256 characters, which is not enough to represent all French characters. This means that some French characters might not be correctly interpreted or displayed when using iso8859-1 encoding. For example, iso8859-1 does not include characters such as é, è, ê, and ë. 
+    In order to correctly represent these characters, it is recommended to install the [SEKOIA.IO agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/). This endpoint agent is specifically designed to handle such issues, ensuring the accurate and secure transmission of data.
 
 Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as admin:
 
@@ -176,7 +202,7 @@ Restart-Service nxlog
 ```
 
 ### Configure the concentrator to forward events to SEKOIA.IO
-Please consult the dedicated documentation for each concentrator :
+Please read the dedicated documentation for each concentrator:
 
 * [Rsyslog](../../../ingestion_methods/rsyslog/)
 * [Logstash](../../../ingestion_methods/logstash/)
@@ -184,30 +210,37 @@ Please consult the dedicated documentation for each concentrator :
 * [Graylog](../../../ingestion_methods/graylog/)
 * [SEKOIA.IO docker concentrator](../../../ingestion_methods/sekoiaio_docker_concentrator/)
 
-!!!Note
-    Although SEKOIA.IO docker concentrator is highly recommended, feel free to use the one you are the most confortable with.
+!!! Note
+    While SEKOIA.IO docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.
 
 ## Windows Event Forwarder to Windows Event Collector to a concentrator
+
 Most of the following commands are to be run as Administrator in a Powershell interpretor.
 
 ### Windows Event Collector (WEC) setup
-The Windows Event Collector, also known as WEC is a Microsoft service that can be activate and configured to aggregate logs from the Windows Event Forwarders (WEF).
+The Windows Event Collector, also known as WEC, is a Microsoft service that can be enabled and configured to aggregate logs from the Windows Event Forwarders (WEF).
 
-#### Get the WEC FQDN
-Log in the Windows Event Collector, and execute the following command:
+** 1. Get the WEC FQDN **
+
+Log in the Windows Event Collector and execute the following command:
 ```powershell
 ([System.Net.Dns]::GetHostByName(($env:computerName))).Hostname
 ```
-> Note it, you will need it on the section WEF: "Deploying the GPO" for `FQDN_WEC_SERVER` field to replace
 
-#### Configure the subscription file
+!!! Note 
+    Please take note of the following information as it will be required in the upcoming section "Deploying the GPO'. Specifically, you will need to replace the `FQDN_WEC_SERVER` field with this information to complete the deployment process.
+    
+** 2. Configure the subscription file**
 Get the SDDL information by executing the following command:
 ```
 wevtutil gl security
 ```
-> Note the `channelAccess` information.
+
+!!! Note
+    Take note of the `channelAccess` information.
 
 On the WEC server, create an XML file, named `DC_SUBSCRIPTION.xml` with the following information:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Subscription xmlns="http://schemas.microsoft.com/2006/03/windows/events/subscription">
@@ -249,134 +282,160 @@ On the WEC server, create an XML file, named `DC_SUBSCRIPTION.xml` with the foll
     <AllowedSourceDomainComputers>O:NSG:NSD:(A;;GA;;;DC)(A;;GA;;;NS)</AllowedSourceDomainComputers>
 </Subscription>
 ```
-> Warning: replace Domain Computers domain group "(A;;GA;;;DC)" by "(A;;GA;;;S-1-5-....)" previously collected in the `channelAccess`
-> More information of the SDDL format (https://msdn.microsoft.com/en-us/library/windows/desktop/aa379567(v=vs.85).aspx)
+!!! warning
+    You have to replace Domain Computers domain group "(A;;GA;;;DC)" by "(A;;GA;;;S-1-5-....)" using information you previously collected in the        `channelAccess`. 
+    More information of the SDDL format can be found [here.](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379567(v=vs.85).aspx)
 
 Ensure the file is correctly saved, then close it.
 
-#### Configure the Windows Remote Management
+** 3. Configure the Windows Remote Management**
+
 On the WEC server, open a command interpretor as Administrator, and run the following command:
 ```powershell
 winrm qc -q
 ```
 
-#### Activate the "Event Collector" service
+** 4. Activate the "Event Collector" service**
+
 As Administrator, enter the following command:
 ```powershell
 wecutil qc /q
 ```
 
-#### Activate the subscription to a zone
+** 5. Activate the subscription to a zone**
+
 As Administrator, enter the following command:
-> Warning: please change the character `FILE_PATH`
+
+!!! Warning
+    Please change the character `FILE_PATH`. 
+    
 ```powershell
 wecutil cs "<FILE_PATH>\DC_SUBSCRIPTION.xml"
 ```
 
-#### Display the state of the subscription to this zone
+** 6. Display the state of the subscription to this zone**
+
 As Administrator, enter the following command:
 ```powershell
 wecutil gr DC_SUBSCRIPTION
 ```
 
 ### Windows Event Forwarder (WEF) setup
-The Windows Event Forwarder, also known as WEF is a Microsoft service that can be activated for log forwarding towards a Windows Event Collector (WEC).
+
+The Windows Event Forwarder, also known as WEF, is a Microsoft service that can be activated for log forwarding towards a Windows Event Collector (WEC).
 
 #### Configure the Event Log Reader
-- Configure the collector URI(s).
-- Start the WinRM service (run as Administrator)
-- Add the Network Service account to the built-in Event Log Readers security group. As show hereafter:
+
+To configure the Event Log Reader, follow the steps below:
+
+1. Configure the collector URI(s) to specify the location where you want to send the logs. The collector URI must be a valid HTTP or HTTPS address. 
+
+2. Start the WinRM service. Open a command prompt as an Administrator and run the following command: `net start winrm`
+
+3. Add the Network Service account to the built-in Event Log Readers security group. This will allow the Event Log Reader to access the Windows event logs.
 
 ![SEKOIA.IO Operations Center Windows WEF](/assets/operation_center/integration_catalog/endpoint/windows/wef_client_config.png){: style="max-width:60%"}
 
-#### Configure the Windows Remote Management
-On the AD admin console, open a command interpretor as Administrator, and run the following command:
+Note that these steps are necessary to allow the Event Log Reader to access the Windows event logs.
+
+**Configure the Windows Remote Management**
+
+On the AD admin console, open a command interpretor as Administrator and run the following command:
 ```powershell
 winrm qc -q
 ```
 
-#### Deploying the GPO
+**Deploying the GPO**
+
 In Computer Configuration > Administrative Templates > Windows Components > Event Forwarding -> Configure target Subscription Manager, execute the following command:
-> Warning: Please replace the `FQDN_WEC_SERVER` by the previously collected information
+
+!!! warn
+    Please replace the `FQDN_WEC_SERVER` by the previously collected information
+
 ```
 Server=http://FQDN_WEC_SERVER:5985/wsman/SubscriptionManager/WEC,Refresh=60
 ```
 
-#### Apply the GPO
-On the AD admin console, open a command interpretor as Administrator, and run the following command:
+**Apply the GPO**
+
+On the AD admin console, open a command interpretor as Administrator and run the following command:
 ```powershell
 gpupdate /force
 ```
-
-- More documentation available here on [Microsoft documentation](https://docs.microsoft.com/fr-fr/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection)
+!!! tip
+    More documentation is available on the official [Microsoft documentation.](https://docs.microsoft.com/fr-fr/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection)
 
 ### Windows Event Collector to a concentrator
 
-- Ensure the logs are correctly reveived on the WEC server, using the Windows Event Viewer and selecting Windows Logs > Forwarded Events
-- Setup the Nxlog agent to forward the logs to the concentrator by using this configuration :
+To ensure proper logging configuration, please follow the steps below:
 
-```
-define ROOT C:\Program Files (x86)\nxlog
+1. Verify that logs are being correctly received on the Windows Event Collector (WEC) server. To do this, open the Windows Event Viewer and navigate to Windows Logs > Forwarded Events.
+2. Set up the Nxlog agent to forward the logs to the concentrator by using the following configuration:
 
-Moduledir %ROOT%\modules
-CacheDir %ROOT%\data
-Pidfile %ROOT%\data\nxlog.pid
-SpoolDir %ROOT%\data
-LogFile %ROOT%\data\nxlog.log
+      ```
+      define ROOT C:\Program Files (x86)\nxlog
 
-<Extension _syslog>
-  Module xm_syslog
-</Extension>
+      Moduledir %ROOT%\modules
+      CacheDir %ROOT%\data
+      Pidfile %ROOT%\data\nxlog.pid
+      SpoolDir %ROOT%\data
+      LogFile %ROOT%\data\nxlog.log
 
-<Extension _json>
-  Module xm_json
-</Extension>
+      <Extension _syslog>
+        Module xm_syslog
+      </Extension>
 
-<Input eventlog1>
-  Module im_msvistalog
-  Query <QueryList><Query Id="0"><Select Path="Application">*</Select></Query></QueryList>
-  Exec $Message = to_json();
-</Input>
-<Input eventlog2>
-  Module im_msvistalog
-  Query <QueryList><Query Id="0"><Select Path="System">*</Select></Query></QueryList>
-  Exec $Message = to_json();
-</Input>
-<Input eventlog3>
-  Module im_msvistalog
-  Query <QueryList><Query Id="0"><Select Path="Security">*</Select></Query></QueryList>
-  Exec $Message = to_json();
-</Input>
-<Input eventlog4>
-  Module im_msvistalog
-  Query <QueryList><Query Id="0"><Select Path="ForwardedEvents">*</Select></Query></QueryList>
-  Exec $Message = to_json();
-</Input>
+      <Extension _json>
+        Module xm_json
+      </Extension>
 
-<Output rsyslog>
-  Module om_tcp
-  Host RSYSLOG_HOST
-  Port 514
-  OutputType Syslog_TLS
+      <Input eventlog1>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="Application">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
+      <Input eventlog2>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="System">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
+      <Input eventlog3>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="Security">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
+      <Input eventlog4>
+        Module im_msvistalog
+        Query <QueryList><Query Id="0"><Select Path="ForwardedEvents">*</Select></Query></QueryList>
+        Exec $Message = to_json();
+      </Input>
 
-  Exec to_syslog_ietf();
-</Output>
+      <Output rsyslog>
+        Module om_tcp
+        Host RSYSLOG_HOST
+        Port 514
+        OutputType Syslog_TLS
 
-<Route eventlog_to_rsyslog>
-  Path eventlog1, eventlog2, eventlog3, eventlog4 => rsyslog
-</Route>
-```
+        Exec to_syslog_ietf();
+      </Output>
 
-!!!important
-    In the above configuration make sure to replace `RSYSLOG_HOST` variable by the IP of your concentrator.
+      <Route eventlog_to_rsyslog>
+        Path eventlog1, eventlog2, eventlog3, eventlog4 => rsyslog
+      </Route>
+      ```
 
-Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as Administrator:
-```poweshell
-Restart-Service nxlog
-```
+!!! important
+    In the above configuration, make sure to replace `RSYSLOG_HOST` variable by the IP of your concentrator.
+
+3. Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as Administrator:
+
+    ```poweshell
+    Restart-Service nxlog
+    ```
 
 ## Sysmon usage
 Sysmon is a Microsoft tool you can download on their [website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
+
 A common installation instruction and configuration file is available on [Florian Roth's Github](https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml). This configuration is an updated (and maintained) version of the [SwiftOnSecurity's configuration](https://github.com/SwiftOnSecurity/sysmon-config), which can also be used.
 
 ### Install Sysmon
