@@ -35,6 +35,11 @@ The Endpoint Detection Agent supports the following operating systems:
 
 ## Installation
 
+### Disclamer
+
+!!! Warning
+	If you want to install this agent on the same machine where an EDR is installed. Most EDR perform actions on the machines to detect malwares or other types of Threats. Those actions generate events that are collected by our agent. This may result to the raising of False Positive alerts from our detection rules of effort level 3 and 4, considered as to be tuned by our customers.
+
 ### Intake creation and download of the executable
 
 The first step to use the agent is to create a [new intake associated to the SEKOIA.IO Agent](https://app.sekoia.io/operations/intakes/new?match[name]=SEKOIA.IO%20Endpoint%20Agent){:target="_blank"}.
