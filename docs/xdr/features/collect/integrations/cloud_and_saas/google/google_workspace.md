@@ -1,12 +1,12 @@
 uuid: 44439212-c2d8-4645-ad60-8fd5e39140b3
-name: Google Workspace Audit Logs
+name: Google Workspace and Google Cloud Audit Logs
 type: intake
 
 ## Overview
 
 Google Cloud Logging centralizes logs from Google Cloud products.
 
-In this documentation, you will learn how to collect and send Google Workspace audit logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send Google Workspace and Google Cloud audit logs to SEKOIA.IO.
 
 {!_shared_content/operations_center/integrations/generated/44439212-c2d8-4645-ad60-8fd5e39140b3.md!}
 
