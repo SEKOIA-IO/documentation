@@ -21,7 +21,7 @@ In order to configure Azure with SEKOIA.IO, the following steps must be done:
 
 ## Restrict access for SEKOIA.IO to specific users
 
-Azure Active Directory can be configured to restrict which user are allowed to access SEKOIA.IO.
+Azure Active Directory can be configured to prevent some users from accessing SEKOIA.IO.
 
 1. In "Azure Active Directory" > "Enterprise applications": select your application
 2. In the "Application | Overview" > "Getting Started" > "1. Assign users and groups"
