@@ -2,7 +2,7 @@
 
 In order to configure Okta with SEKOIA.IO, the following steps must be done:
 
-1. Create a new application on Okta.
+1. Create a new application in your Okta admin console
 2. Connect to SEKOIA.IO and add a new domain that belongs to your community and wait for its validation.
 3. Configure OpenID Connect in SEKOIA.IO (see associated documentation [Single Sign-On With OpenID Connect](../SSO_openid_connect.md))
 
