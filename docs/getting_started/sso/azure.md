@@ -13,7 +13,7 @@ In order to configure Azure with SEKOIA.IO, the following steps must be done:
 3. Choose a name and input the redirect URI: https://app.sekoia.io/user/callback
 4. Click on "Register"
 
-## Configure
+## Configure the registration
 
 1. On the main page, save the "Application (client) ID" for further use
 2. On the main page, in "Endpoints", copy your "OAuth 2.0 authorization endpoint" such as https://login.microsoftonline.com/<YOUR TENANT ID>/
