@@ -18,7 +18,7 @@ In order to configure Okta with SEKOIA.IO, the following steps must be done:
     - Sign-in redirect URIs: `https://app.sekoia.io/user/callback`
 4. Under "Assignments" > "Controlled access", you can limit access to specific groups of users. During tests, you can use the option "Allow everyone in your organization to access"
 
-## Configure
+## Configure your Okta application for SEKOIA.IO
 
 Once your app has been created:
 
