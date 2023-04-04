@@ -12,7 +12,7 @@ In order to configure Okta with SEKOIA.IO, the following steps must be done:
 1. Naivgate to "admin console" > "Applications" > "Applications"
 2. Use the "Create App Integration" function to start the integration:
     - As "Sign-in method" choose "OIDC - OpenID Connect"
-    - As "Application type" choose "Web Application".
+    - As "Application type" choose "Web Application"
 3. Once redirected to the "New Web App Integration", be sure to select:
     - Grant type: "Client acting on behalf of a user" > "Authorization Code"
     - Sign-in redirect URIs: `https://app.sekoia.io/user/callback`
