@@ -10,7 +10,7 @@ SEKOIA.IO provides its own agent allowing to collect interresting events with a 
 
 ## Supported OS versions
 
-The Endpoint Detection Agent supports the following operating systems:
+The Endpoint Detection Agent supports the following operating systems, **on 64 bits version only**:
 
 === "Windows"
 
@@ -180,6 +180,10 @@ To uninstall the agent, follow the instructions specific to your OS.
     sudo rm -rf /opt/endpoint-agent
     sudo rm -rf /etc/endpoint-agent
     ```
+
+## Retention
+
+The agent sends the host logs through the internet. If the host stops accessing the internet, the agent will store the logs locally on disk on a 100 MB memory space that cannot be customized. Once the logs exceed the size of the buffer, the older onces are replaced by newers. When the internet connexion is operational again, the older logs are sent first to SEKOIA.IO.
 
 {!_shared_content/operations_center/integrations/generated/250e4095-fa08-4101-bb02-e72f870fcbd1.md!}
 
