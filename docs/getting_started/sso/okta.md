@@ -3,7 +3,7 @@
 In order to configure Okta with SEKOIA.IO, the following steps must be done:
 
 1. Create a new application on Okta.
-2. Connect to [SEKOIA.IO](http://SEKOIA.IO) and add a new domain that belongs to your community and wait for its validation.
+2. Connect to SEKOIA.IO and add a new domain that belongs to your community and wait for its validation.
 3. Configure OpenID Connect in SEKOIA.IO (see associated documentation [Single Sign-On With OpenID Connect](../SSO_openid_connect.md))
 
 
@@ -15,7 +15,7 @@ In order to configure Okta with SEKOIA.IO, the following steps must be done:
     - As "Application type" choose "`Web Application`".
 3. Once redirected to the "New Web App Integration", be sure to select:
     - Grant type: "Client acting on behalf of a user" > "`Authorization Code`"
-    - Sign-in redirect URIs: [`https://app.sekoia.io/user/callback`](https://app.sekoia.io/user/callback)
+    - Sign-in redirect URIs: `https://app.sekoia.io/user/callback`
 4. In "Assignments" > "Controlled access", you can limit access to specific groups of users (during tests you can use the option "Allow everyone in your organization to access").
 
 ## Configure
@@ -23,7 +23,7 @@ In order to configure Okta with SEKOIA.IO, the following steps must be done:
 Once your app has been created:
 
 1. Save the "Client ID" & "Client secret" for later use.
-2. Save your Okta domain (go to the user menu in the top right corner of the Okta interface, you will find it under your email address), you will need it to provide it in [SEKOIA.IO](http://SEKOIA.IO) "Authentication provider base URL" field: `https://${yourOktaDomain}/` (More info
+2. Save your Okta domain (go to the user menu in the top right corner of the Okta interface, you will find it under your email address), you will need it to provide it in SEKOIA.IO "Authentication provider base URL" field: `https://${yourOktaDomain}/` (More info
 on Okta documentation: [Composing your base URL](https://developer.okta.com/docs/reference/api/oidc/#composing-your-base-url)). Be aware that, your Okta domain is not the domain of the "Okta Admin Console".
 
 You are ready to input your configuration to SEKOIA.IO.
