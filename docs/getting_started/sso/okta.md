@@ -1,4 +1,4 @@
-# SEKOIA.IO: Configure Single Sign-on with Okta
+# Configure Single Sign-on with Okta
 
 In order to configure Okta with SEKOIA.IO, the following steps must be done:
 

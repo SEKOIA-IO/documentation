@@ -1,4 +1,4 @@
-# SEKOIA.IO: Configure Single Sign-on with Azure Active Directory
+# Configure Single Sign-on with Azure Active Directory
 
 In order to configure Azure with SEKOIA.IO, the following steps must be done:
 
