@@ -16,7 +16,7 @@ In order to configure Okta with SEKOIA.IO, the following steps must be done:
 3. Once redirected to the "New Web App Integration", be sure to select:
     - Grant type: "Client acting on behalf of a user" > "Authorization Code"
     - Sign-in redirect URIs: `https://app.sekoia.io/user/callback`
-4. In "Assignments" > "Controlled access", you can limit access to specific groups of users (during tests you can use the option "Allow everyone in your organization to access").
+4. Under "Assignments" > "Controlled access", you can limit access to specific groups of users. During tests, you can use the option "Allow everyone in your organization to access"
 
 ## Configure
 
