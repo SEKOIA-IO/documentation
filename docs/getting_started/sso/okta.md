@@ -24,7 +24,9 @@ Once your app has been created:
 
 1. Save the "Client ID" & "Client secret" for later use.
 2. Save your Okta domain (go to the user menu in the top right corner of the Okta interface, you will find it under your email address), you will need it to provide it in SEKOIA.IO "Authentication provider base URL" field: `https://${yourOktaDomain}/` (More info
-on Okta documentation: [Composing your base URL](https://developer.okta.com/docs/reference/api/oidc/#composing-your-base-url)). Be aware that, your Okta domain is not the domain of the "Okta Admin Console".
+ 
+ !!! note 
+     You can find more info on Okta documentation: [Composing your base URL](https://developer.okta.com/docs/reference/api/oidc/#composing-your-base-url)). Be aware that, your Okta domain is not the domain of the "Okta Admin Console".
 
 You are ready to input your configuration to SEKOIA.IO.
 
