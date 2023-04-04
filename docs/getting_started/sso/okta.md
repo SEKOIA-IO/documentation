@@ -30,7 +30,7 @@ Once your app has been created:
 
 You are ready to input your configuration to SEKOIA.IO.
 
-## Display application icon to users
+## Display SEKOIA.IO application icon to your Okta users
 
 When your users login to Okta, the SEKOIA.IO app can be displayed. This feature allows users to quickly connect to their apps.
 
