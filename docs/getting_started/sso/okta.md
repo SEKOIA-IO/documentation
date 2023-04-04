@@ -45,6 +45,8 @@ When your users login to Okta, the SEKOIA.IO app can be displayed. This feature 
 
 Okta can be configured to restrict which users are allowed to access SEKOIA.IO.
 
+To restrict access to a user or a group of users, follow these steps: 
+
 1. "Applications" > "Applications": select your application
 2. In "Assignments" > "Settings icon" >  "Assign": you can select "Assign to People" or "Assign to Groups"
 
