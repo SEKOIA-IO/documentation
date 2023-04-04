@@ -1,6 +1,6 @@
 # Single Sign-On With OpenID Connect
 
-To make it easier for employees to access SEKOIA.IO, you can enable SSO for users of your SEKOIA.IO community. 
+To make it easier for employees to access SEKOIA.IO, you can enable SSO in your SEKOIA.IO community. 
 
 ## Prerequisites for OpenID Connect
 
