@@ -9,7 +9,7 @@ In order to configure Okta with SEKOIA.IO, the following steps must be done:
 
 ## Create a new application in Okta
 
-1. Naivgate to "admin console" > "Applications" > "Applications"
+1. Navigate to "admin console" > "Applications" > "Applications"
 2. Use the "Create App Integration" function to start the integration:
     - As "Sign-in method" choose "OIDC - OpenID Connect"
     - As "Application type" choose "Web Application"
@@ -26,7 +26,7 @@ Once your app has been created:
 2. Save your Okta domain. You can find this by navigating to the user menu in the top right corner of the Okta interface, and it will be listed under your email address. You will need it to provide it in SEKOIA.IO "Authentication provider base URL" field: `https://${yourOktaDomain}/`
  
  !!! note 
-     You can find more info on Okta documentation: [Composing your base URL](https://developer.okta.com/docs/reference/api/oidc/#composing-your-base-url)). Be aware that, your Okta domain is not the domain of the "Okta Admin Console".
+     You can find more info on Okta documentation: [Composing your base URL](https://developer.okta.com/docs/reference/api/oidc/#composing-your-base-url). Be aware that, your Okta domain is not the domain of the "Okta Admin Console".
 
 You are ready to input your configuration to SEKOIA.IO.
 
@@ -36,11 +36,11 @@ When your users login to Okta, the SEKOIA.IO app can be displayed. This feature 
 
 1. Navigate to "Okta admin dashboard" > "Applications" > "Applications": choose your application
 2. Under "General Settings" > "Edit" > "Login", select "Either Okta or App" as the login initiation method
-4. Under "Application visibility", choose: "Display application icon to users"
-5. Under "Login flow", choose: "Redirect to app to initiate login (OIDC Compliant)"
-6. In the "Initiate login URI", input your SEKOIA.IO SSO login URL (This URL is displayed in the SEKOIA.IO SSO configuration page at "Managed communities" > "Security" > "Configure single Sign-on (SSO)" > "Configure")
-7. Save your changes
-8. Visit the end user dashboard to validate that your changes are working as expected
+3. Under "Application visibility", choose: "Display application icon to users"
+4. Under "Login flow", choose: "Redirect to app to initiate login (OIDC Compliant)"
+5. In the "Initiate login URI", input your SEKOIA.IO SSO login URL (This URL is displayed in the SEKOIA.IO SSO configuration page at "Managed communities" > "Security" > "Configure single Sign-on (SSO)" > "Configure")
+6. Save your changes
+7. Visit the end user dashboard to validate that your changes are working as expected
 
 ## Restrict access
 
