@@ -11,10 +11,10 @@ In order to configure Okta with SEKOIA.IO, the following steps must be done:
 
 1. Follow the menu to "admin console" > "Applications" > "Applications"
 2. Use the "Create App Integration" function to start the integration:
-    - As "Sign-in method" choose "`OIDC - OpenID Connect`".
-    - As "Application type" choose "`Web Application`".
+    - As "Sign-in method" choose "OIDC - OpenID Connect".
+    - As "Application type" choose "Web Application".
 3. Once redirected to the "New Web App Integration", be sure to select:
-    - Grant type: "Client acting on behalf of a user" > "`Authorization Code`"
+    - Grant type: "Client acting on behalf of a user" > "Authorization Code"
     - Sign-in redirect URIs: `https://app.sekoia.io/user/callback`
 4. In "Assignments" > "Controlled access", you can limit access to specific groups of users (during tests you can use the option "Allow everyone in your organization to access").
 
@@ -46,7 +46,7 @@ When your users login to Okta the SEKOIA.IO application can be displayed. This f
 Okta can be configured to restrict which users are allowed to access SEKOIA.IO.
 
 1. "Applications" > "Applications": select your application
-2. In "Assignments"> Setting icon "Assign" you can select `Assign to People` or `Assign to Groups`
+2. In "Assignments"> Setting icon "Assign" you can select "Assign to People" or "Assign to Groups"
 
 ## Readings
 
