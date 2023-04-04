@@ -30,7 +30,7 @@ You are ready to input your configuration to SEKOIA.IO.
 
 ## Display application icon to users
 
-When your users login to Okta the SEKOIA.IO application can be displayed. This feature allow the user to quickly connect to its applications.
+When your users login to Okta, the SEKOIA.IO app can be displayed. This feature allows users to quickly connect to their apps.
 
 1. Navigate to "Okta admin dashboard" > "Applications" > "Applications": choose your application
 2. In "General Settings" > "Edit" > "Login"
