@@ -21,7 +21,7 @@ To do so:
 
 ## Configure SSO on SEKOIA.IO
 
-To set up SSO, follow these instructions :
+To set up SSO, follow these instructions:
 
 1. Go to "Managed communities" > "Security" > "Configure single Sign-on (SSO)" > "Configure"
 2. Fill in identity provider details
