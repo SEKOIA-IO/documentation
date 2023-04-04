@@ -37,7 +37,7 @@ When your users login to Okta, the SEKOIA.IO app can be displayed. This feature 
 4. "Application visibility" choose: "Display application icon to users"
 5. "Login flow" choose: "Redirect to app to initiate login (OIDC Compliant)"
 6. "Initiate login URI" input your SEKOIA.IO SSO login URL (This URL is displayed in the SEKOIA.IO SSO configuration page at "Managed communities" > "Security" > "Configure single Sign-on (SSO)" > "Configure")
-7. Save
+7. Save your changes
 8. Visit the end user dashboard to validate that your changes are working as expected
 
 ## Restrict access
