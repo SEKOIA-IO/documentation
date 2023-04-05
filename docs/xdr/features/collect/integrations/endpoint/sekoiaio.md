@@ -38,7 +38,7 @@ The Endpoint Detection Agent supports the following operating systems:
 ### Disclamer
 
 !!! Warning
-	If you want to install this agent on the same machine where an EDR is installed. Most EDR perform actions on the machines to detect malwares or other types of Threats. Those actions generate events that are collected by our agent. This may result to the raising of False Positive alerts from our detection rules of effort level 3 and 4, considered as to be tuned by our customers.
+	If you want to install this agent on a machine that already has an EDR in place, be aware that most EDR perform actions on the machines to detect malwares or other types of threats. Those actions generate events that are collected by our agent. This may result to the raising of false positive alerts from our detection rules of effort level 3 and 4. It's important for customers to fine-tune these rules to reduce the occurrence of false positives.
 
 ### Intake creation and download of the executable
 
