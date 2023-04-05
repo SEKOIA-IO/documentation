@@ -109,6 +109,9 @@ The service account will be used on SEKOIA.IO to pull logs available on your Goo
 5. Set the role **Pub/Sub Subscriber**
 6. Click **Continue**, then click **Done** to finish creating the service account
 
+!!! Note
+	Ensure that this user has the role **Pub/Sub Subscriber** in both **Topic** and **Subsciption** pages. Otherwise, you will have an error with status 403 when you will activate the playbook detailed on the bottom of this page. 
+
 Find more information on the [official google documentation](https://cloud.google.com/iam/docs/service-accounts-create).
 
 #### Create and download JSON keys (service account credentials)
