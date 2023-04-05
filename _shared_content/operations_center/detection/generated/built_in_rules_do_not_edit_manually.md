@@ -1,4 +1,4 @@
-Rules catalog includes **676 built-in detection rules** ([_last update on 2023-03-30_](rules_changelog.md)).
+Rules catalog includes **677 built-in detection rules** ([_last update on 2023-04-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -3362,6 +3362,12 @@ Rules catalog includes **676 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -4211,6 +4217,12 @@ Rules catalog includes **676 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -4344,6 +4356,12 @@ Rules catalog includes **676 built-in detection rules** ([_last update on 2023-0
 ??? abstract "COM Hijack Via Sdclt"
     
     Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
+    
+    - **Effort:** intermediate
+    
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
     - **Effort:** intermediate
     
@@ -5368,6 +5386,12 @@ Rules catalog includes **676 built-in detection rules** ([_last update on 2023-0
 ??? abstract "COM Hijack Via Sdclt"
     
     Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
+    
+    - **Effort:** intermediate
+    
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
     - **Effort:** intermediate
     
