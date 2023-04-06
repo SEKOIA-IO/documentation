@@ -95,7 +95,7 @@ nav:
             - Firewall events: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-firewall-events.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Google Cloud:
-            - Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
+            - Google Workspace and Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
             - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
             - Google Cloud VPC Flow Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
           - Imperva WAF: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md

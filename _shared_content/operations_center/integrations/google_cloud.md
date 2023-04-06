@@ -18,6 +18,10 @@ Follow Google's documentation to [configure a dedicated PubSub receiver](https:/
 Next, create a [dedicated service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts). At the end of the documentation you should have done the following:
 
 - Create a service account with the role `Pub/Sub Subscriber`
+
+!!! Note
+   Ensure that this user has the role **Pub/Sub Subscriber** in both **Topic** and **Subsciption** pages. Otherwise, you will have an error with status 403 when you will activate the playbook detailed on the bottom of this page. 
+
 - Create and download JSON keys (*service account credentials*) 
 
 You should now have:
