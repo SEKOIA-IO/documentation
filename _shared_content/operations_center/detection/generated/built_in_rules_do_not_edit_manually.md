@@ -1,4 +1,4 @@
-Rules catalog includes **677 built-in detection rules** ([_last update on 2023-04-05_](rules_changelog.md)).
+Rules catalog includes **677 built-in detection rules** ([_last update on 2023-04-06_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2912,6 +2912,10 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
+            
 ??? abstract "Add User to Privileged Group"
     
     Add user in a potential privileged group which can be used to elevate privileges on the system
@@ -6150,6 +6154,10 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+            
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
     The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.

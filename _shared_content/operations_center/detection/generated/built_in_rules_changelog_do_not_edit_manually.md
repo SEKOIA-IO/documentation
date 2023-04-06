@@ -1,15 +1,18 @@
-Changelog _last update on 2023-04-05_
+Changelog _last update on 2023-04-06_
 
 ## Changelog
 
+### Mimikatz LSASS Memory Access
+  - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+    
 ### Suspicious PowerShell Invocations - Generic
   - 28/03/2023 - minor - Excluded some commonly observed false positives.
     
 ### Adexplorer Usage
   - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
     
-### SentinelOne User Logged In To The Management Console
-  - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+### Windows Update LolBins
+  - 24/03/2023 - minor - The legitimate DLL UpdateDeploymentProvider.dll is now excluded from the rule as it triggered several false positives.
     
 ### Login Brute-Force Successful On AzureAD From Single IP Address
   - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
