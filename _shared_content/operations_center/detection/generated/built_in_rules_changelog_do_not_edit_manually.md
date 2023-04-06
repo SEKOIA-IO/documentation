@@ -2,8 +2,8 @@ Changelog _last update on 2023-04-06_
 
 ## Changelog
 
-### Mimikatz LSASS Memory Access
-  - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+### LSASS Memory Dump
+  - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
     
 ### Suspicious PowerShell Invocations - Generic
   - 28/03/2023 - minor - Excluded some commonly observed false positives.
