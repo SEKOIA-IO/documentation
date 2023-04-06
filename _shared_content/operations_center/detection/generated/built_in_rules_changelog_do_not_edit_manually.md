@@ -2,6 +2,15 @@ Changelog _last update on 2023-04-06_
 
 ## Changelog
 
+### Active Directory User Backdoors
+  - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
+    
+### Mimikatz LSASS Memory Access
+  - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+    
+### Mimikatz Basic Commands
+  - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
+    
 ### LSASS Memory Dump
   - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
     
@@ -11,6 +20,9 @@ Changelog _last update on 2023-04-06_
 ### Adexplorer Usage
   - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
     
+### SentinelOne User Logged In To The Management Console
+  - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
+    
 ### Windows Update LolBins
   - 24/03/2023 - minor - The legitimate DLL UpdateDeploymentProvider.dll is now excluded from the rule as it triggered several false positives.
     
@@ -19,9 +31,6 @@ Changelog _last update on 2023-04-06_
     
 ### LNK Malware Chain
   - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
-    
-### OneNote Embedded File
-  - 20/02/2023 - minor - Adding the .chm and .wsf file extensions for a file opened from a OneNote.
     
 ### Suspicious certutil command
   - 15/02/2023 - minor - "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
