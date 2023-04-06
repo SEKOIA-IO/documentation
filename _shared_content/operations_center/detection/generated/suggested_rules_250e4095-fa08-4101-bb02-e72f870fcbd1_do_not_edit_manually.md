@@ -793,7 +793,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     Detects process accessing LSASS memory which is typical for credentials dumping tools. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "LSASS Memory Dump File Creation"
     

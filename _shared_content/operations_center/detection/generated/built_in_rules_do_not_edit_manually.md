@@ -2934,6 +2934,10 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
+            
 ??? abstract "Okta Admin Privilege Granted"
     
     Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
@@ -6116,8 +6120,12 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     Detects process accessing LSASS memory which is typical for credentials dumping tools. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
+            
 ??? abstract "LSASS Memory Dump File Creation"
     
     LSASS memory dump creation using operating systems utilities. Procdump will use process name in output file if no name is specified.
@@ -6148,6 +6156,10 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
+            
 ??? abstract "Mimikatz LSASS Memory Access"
     
     Detection of in-memory Mimikatz by focusing on processes opening the Local Security Authority (Lsass.exe) process and reading the memory contents of it. This probably means that Mimikatz has been executed on the host, meaning the attacker already has high privileges and is looking to dump credentials, most likely for lateral movement or privilege escalation purposes. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
