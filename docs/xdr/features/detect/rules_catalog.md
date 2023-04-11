@@ -125,6 +125,11 @@ To ensure that activated rules comply with your security policy, you can choose 
 For an MSSP Community, you can easily enable your custom and verified rules in multiple managed communities. 
 ![Enable rules for MSSP community](/assets/operation_center/rules_catalog/enable_multi_communities.png){: style="max-width:70%"}
 
+### Enable / Disable all rules
+
+As seen previously, rules can be filtered by type, status, effort level and tags. To enable or disable these filtered rules, you can simply click on the button `Enable all` or `Disable all` that are displayed under the search bar. 
+
+![enable-disable](/assets/operation_center/rules_catalog/rules-enable-disable.png){: style="max-width:100%"}
 
 
 ----
