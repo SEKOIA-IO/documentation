@@ -19,43 +19,9 @@ Your web ACL traffic logs will be collected in an Amazon S3 bucket.
 
 To set up the bucket, please refer to [this guide](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
 
-#### Create a SQS queue
+{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
 
-This integration relies on S3 Event Notifications to discover new S3 objects.
-
-To be enable to set the S3 Event Notification:
-
-1. Create a queue  in the SQS service according [this guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-create-queue.html)
-2. In the Access Policy, step choose the advanced configuration and adapt this configuration sample with your own SQS arn (the main change is the Service directive allowing S3 bucket access):
-    ```json
-    {
-      "Version": "2008-10-17",
-      "Id": "__default_policy_ID",
-      "Statement": [
-        {
-          "Sid": "__owner_statement",
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "s3.amazonaws.com"
-          },
-          "Action": "SQS:*",
-          "Resource": "arn:aws:sqs:XXX:XXX"
-        }
-      ]
-    }
-    ```
-
-!!! note
-
-    Please, keep in mind, to create the SQS queue in the same region as the S3 bucket you want to watch.
-
-#### Create a S3 Event Notification
-
-Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification and then:
-
-1. Select the notification for object creation in the Event type section
-2. As the destination, choose the SQS service
-3. Select the queue you create in the previous section
+{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
 
 #### Forward traffic logs to S3
 
@@ -65,7 +31,7 @@ To forward events produced by AWS WAF to S3, you have to:
 2. Select the acl you want forwarding logs to your bucket
 3. Select the tab `Logging and metrics`
 4. In the first section, in front of the title `Logging`, click the button `Enable`
-5. Check `S3 bucket` as `Loggng destination` and select your bucket in the dropdown
+5. Check `S3 bucket` as `Logging destination` and select your bucket in the dropdown
 6. Click the button `Save`
 
 ### Create the intake

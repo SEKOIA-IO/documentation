@@ -11,17 +11,9 @@ Several AWS services offers to store their logs on a S3 bucket. This integration
 
 ## Configure
 
-### Create a SQS queue
+{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
 
-This integration relies on S3 Event Notifications to discover new S3 objects.
-
-To be enable to set the S3 Event Notification, create a queue  in the SQS service according [this guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-create-queue.html).
-Please, keep in mind, to create the SQS queue in the same region as the S3 bucket you want to watch.
-
-### Create a S3 Event Notification
-
-Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification.
-Select the notification for object create in the Event type section. As the destination, choose the SQS service and select the queue you create in the previous section.
+{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
 
 ### Create the intake
 

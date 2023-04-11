@@ -28,42 +28,9 @@ For VPC and subnet:
 - Click on `Create flow log`
 - Set up the flow log: we recommend to capture all traffic (accepted and rejected).
 
-### Create a SQS queue
+{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
 
-This integration relies on S3 Event Notifications (SQS) to discover new S3 objects.
-
-To enable the S3 Event Notification:
-
-1. Create a queue  in the SQS service according [this guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-create-queue.html).
-2. In the Access Policy step, choose the advanced configuration and adapt this configuration sample with your own SQS Amazon Resource Name (ARN) (the main change is the Service directive allowing S3 bucket access):
-    ```json
-    {
-      "Version": "2008-10-17",
-      "Id": "__default_policy_ID",
-      "Statement": [
-        {
-          "Sid": "__owner_statement",
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "s3.amazonaws.com"
-          },
-          "Action": "SQS:*",
-          "Resource": "arn:aws:sqs:XXX:XXX"
-        }
-      ]
-    }
-    ```
-
-!!! note
-    Please, keep in mind, you have to create the SQS queue in the same region as the S3 bucket you want to watch.
-
-### Create a S3 Event Notification
-
-Use the [following guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-event-notifications.html) to create S3 Event Notification and then:
-
-1. Select the notification for object creation in the Event type section
-2. As the destination, choose the SQS service
-3. Select the queue you created in the previous section
+{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
 
 ### Create the intake
 
