@@ -25,4 +25,4 @@ To enable the S3 Event Notification:
     ```
 
 !!! note
-    Please, keep in mind, you have to create the SQS queue in the same region as the S3 bucket you want to watch.
+    Keep in mind that you have to create the SQS queue in the same region as the S3 bucket you want to watch.
