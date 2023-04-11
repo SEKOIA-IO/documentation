@@ -1,6 +1,7 @@
 # Shodan and VirusTotal configuration
 
 This use case describes how to activate Shodan playbook if an alert is coming from VirusTotal
+
 There are 2 steps:
 1- How to create a Shodan playbook
 2- Combine Shodan playbook into VirusTotal
