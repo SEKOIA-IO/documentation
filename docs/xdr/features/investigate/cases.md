@@ -58,10 +58,12 @@ The Alerts tab contains a list of alerts that were added to the case.
 To add alerts to a case, you can either:
 
 - Use the `Add alerts` button on this tab
-- Use the `Add to case` button on the detailed page of any alert
-
 !!! tip
-    To add multiple alerts to a case, we recommend you copy the ID of your case in the case details page, then paste it into the modal that shows up after clicking on the `Add to case` modal.
+    To add multiple alerts to a case, we recommend to either copy the ID of your case found in the case details page then paste it in the search bar. The case will be displayed then you can select it and click on `Add to alerts` button.
+
+- Use the `Add to case` button on the detailed page of any alert
+!!! tip
+    To add alerts to multiple case, we recommend to copy the ID of your alert found in the alert details page then paste it in the search bar. The alert will be displayed then you can select it OR you can scroll and select all alerts needed and click on `Add to case` button.
 
 ### Tasks
 
