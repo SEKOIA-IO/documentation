@@ -127,10 +127,10 @@ For an MSSP Community, you can easily enable your custom and verified rules in m
 
 ### Enable / Disable all rules
 
-It is possible to Enable or Disable rules that have been filtered (by Type, Status, Effort Level, Tags) by clicking on the button displayed
+As seen previously, rules can be filtered by type, status, effort level and tags. To enable or disable these filtered rules, you can simply click on the button `Enable all` or `Disable all` that are displayed under the search bar. 
 
-![2023-03-24_15h32_53](https://user-images.githubusercontent.com/101662967/227554770-2ac8efc7-fa2e-4a0b-ab18-30dcf1665d0b.png)
-<Screenshot for illustration to be changed>
+![enable-disable](/assets/operation_center/rules_catalog/rules-enable-disable.png){: style="max-width:100%"}
+
 
 ----
 
