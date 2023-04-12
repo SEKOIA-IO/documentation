@@ -34,7 +34,7 @@ You have to:
 
 1. In your AWS console, navigate to: `Services > GuardDuty > Settings` 
 2. Go to the `Finding export options` section
-3. Select the bucket you created previously. Ensure your bucket policy allows GuardDuty to add new objects.
+3. Select the bucket you created previously. Ensure your bucket policy allows GuardDuty to add new objects
 4. Select or create a key for the KMS encryption
 6. Click the button `Save`
 
