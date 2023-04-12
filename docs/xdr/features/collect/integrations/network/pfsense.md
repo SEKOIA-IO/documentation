@@ -27,7 +27,7 @@ to SEKOIA.IO by means of a syslog transport channel.
 
 1. Follow the [official guide](https://docs.netgate.com/pfsense/en/latest/monitoring/logs/remote.html) to enable syslog forwarding from your pfSense firewall to the internal log concentrator.
 
-Define your log concentrator as a remote syslog server and select `Firewall Events` as the remote syslog content.
+2. Define your log concentrator as a remote syslog server and select `Firewall Events` as the remote syslog content.
 
 3. Save your changes.
 
