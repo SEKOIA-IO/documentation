@@ -57,15 +57,11 @@ IOCs are commonly shared in tabular files where each indicator has its own row a
 
 1. Upload the file you would like to process
 2. The application will display the first 10 lines of the file, which a suggestion on how each column should be mapped to an indicator’s properties
-
-![collectiontable](/assets/operation_center/IOCscollections/ioc_table.png){: style="max-width:100%"}
-
+    ![collectiontable](/assets/operation_center/IOCscollections/ioc_table.png){: style="max-width:100%"}
 
 3. Make sure the suggestions are correct and adjust if necessary by clicking on the chevron next to the column mapping. Use special value “Ignore” if the column should not be mapped to a property. In that case, the content of the column will be discarded.
 4. Click on `Next`. If some indicator properties are not mapped by any column, you will have the opportunity to define values that will apply to all indicators.
-
-![collectionthreats](/assets/operation_center/IOCscollections/ioc_relatedthreats.png){: style="max-width:100%"}
-
+    ![collectionthreats](/assets/operation_center/IOCscollections/ioc_relatedthreats.png){: style="max-width:100%"}
 
 5. Finally, click on `Import` and wait for indicators to be created. Depending on the numbers of indicators in your file, this can take some time.
 
