@@ -3,7 +3,7 @@ name: Amazon GuardDuty
 type: intake
 
 ## Overview
-AWS GuardDuty is a service that detects potential security issue within your network.
+AWS GuardDuty is a service that detects potential security issues within your network.
 
 !!! warning
     This format is still in beta, please use it wisely.
