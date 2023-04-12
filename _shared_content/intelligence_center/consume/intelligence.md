@@ -4,6 +4,12 @@
 
 Looking for a Threat actor? A specific Malware? A report on a topic of interest? Or a URL that looks suspicious? The Intelligence page possesses a search engine with complex filtering capabilities to navigate through millions of data. This threat knowledge base is updated on a daily basis by SEKOIA.IO analysts to make sure all kinds of threats are covered. 
 
+
+
+## How to search
+
+### Search bars
+
 The two ways to find what you need in the knowledge base is to: 
 
 1. Use the search bar embedded in the header. It’s accessible from any page of the Intelligence Center and enables a quick search in the database. 
@@ -11,26 +17,31 @@ The two ways to find what you need in the knowledge base is to:
 
 ![Intelligence-search](/assets/intelligence_center/intelligence%20search.png){: style="max-width:100%"}
 
-## How to search
+You can search for **multiple items at the same time**. To skip a line and paste multiple items, press `Shift-Enter` and paste your content. 
 
-You can either search in all the database or only in the objects or the observables database. To do so, use the select on the left of the search bar to select the needed scope. 
+
+!!! tip
+    You can easily open multiple search results in new tabs by right-clicking on an object and using your mouse, `option+click` (for Mac), or `shift+click` (for Windows).
+
 
 ### Tabs
 
-After you’ve typed your search and clicked on `enter`, two tabs appear under the search bar: one for objects and one for observables. 
+After you’ve typed your search and clicked on `enter`, two or three tabs appear under the search bar: one for **objects**, one for **observables** and one for **unknown observables**. 
 
-Each tab has a counter that informs users about the number of items in the database for each category. 
+You can refer to [this page](/_shared_content/intelligence_center/data_model.md) to understand what objects and observables are and how our data model works. 
+
+Each tab has a counter that informs users about the **number of items** in the database for each category. 
 
 For instance, if you search for `Google`, you will find numerous objects (reports, Intrusion sets, Indicators…) but only two observables. 
 
 !!! tip
-    Always check both tabs to be sure to get all information needed on a topic. Observables may not be harmful but they can be helpful in an investigation.
+    Always check all tabs to be sure to get all information needed on a topic. Observables may not be harmful but they can be helpful in an investigation.
 
 ## Search for objects
 
 ### How the search engine works
 
-When searching for a term, SEKOIA.IO will list objects with fields that match the term. 
+When searching for a term or multiple terms, Sekoia.io will list objects with fields that match the term(s). 
 
 The following fields are taken into consideration by the search engine: 
 
@@ -41,10 +52,16 @@ The following fields are taken into consideration by the search engine:
 - External references
 - The location’s country code (if the search term contains 2 characters)
 
-By default, search results are sorted by **relevance**, but you can choose to display them by the last edition date.
+By default, search results are sorted by **pertinence**, but you can choose to display them by the **last edition date**.
 
 !!! Tip
     When the search contains multiple words, it can be useful to see the results matching exactly what has been entered. Putting the search between quotes (`" "`) will search for objects containing the exact term in one of their fields.
+
+!!! Note 
+    The search bar is **tokenized**. It means that if the user searches for `FLINT 2022-05` it will look for `FLINT`, `2022` and `05` and then apply scoring depending on the attribute the value was found in and the number of times it was found.
+    
+    To get only the item where the name starts with `FLINT 2022-05`, this dork search can be performed: `name:^"FLINT 2022-05"`
+
 
 ### Table Columns
 
@@ -95,6 +112,8 @@ To remove a filter, just click on the `cross` inside the tag. To remove all filt
 
 ## Search for observables
 
+### How the search engine works
+
 When searching for observables, SEKOIA.IO will investigate the field `x_inthreat_short_display`, a custom attribute that is equal to the main value of the observable (`value` for IP, `name` for organizations, ...).
 
 If the search is a hash, the search engine will consider the number of characters and look for the right hashes. 
@@ -108,9 +127,6 @@ If the search is a hash, the search engine will consider the number of character
 
 If the search is an IP CIDR, the search engine will look for the IPs contained in it: `185.213.83.0/24` will return `185.213.83.102`, `185.213.83.106`, ...
 
-### Search for multiple observables
-
-To search for a list of observables, you can paste a list of values and search for them in bulk (multiple lines). To skip a line and paste multiple observables, press `Shift-Enter` and paste your content. 
 
 ### Known and unknown observables
 
