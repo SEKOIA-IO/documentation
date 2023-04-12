@@ -41,6 +41,8 @@ nav:
     - (MSSP ONLY) Create a sub-community: getting_started/community-create_sub_com.md
     - Set up community security:
       - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
+      - SSO with Azure AD: getting_started/sso/azure.md
+      - SSO with Okta: getting_started/sso/okta.md
   - 3. Navigate on the platform: getting_started/navigation.md
   - 4. Manage users:
     - Invite users to join: getting_started/invite_users.md
