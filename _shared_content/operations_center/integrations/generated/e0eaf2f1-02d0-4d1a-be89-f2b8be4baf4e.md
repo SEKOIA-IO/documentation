@@ -386,12 +386,58 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 	```
 
 
+=== "test_msgpart_url.json"
+
+    ```json
+	
+    {
+        "message": "{\"guid\":\"1234567890\",\"ts\":\"2023-04-12T06:00:05.289102-0700\",\"type\":\"msgPartsUrl\",\"part_uuid\":\"607330be-4eb6-4f6e-9f74-0cbcab2e1ad4\",\"url\":\"http://www.example.org/\",\"src\":[\"filter\"]}\n",
+        "event": {
+            "kind": "event",
+            "category": [
+                "email"
+            ],
+            "dataset": "msgPartsUrl",
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2023-04-12T13:00:05.289102Z",
+        "observer": {
+            "vendor": "ProofPoint",
+            "product": "ProofPoint On Demand"
+        },
+        "email": {
+            "local_id": "1234567890"
+        },
+        "url": {
+            "original": "http://www.example.org/",
+            "domain": "www.example.org",
+            "top_level_domain": "org",
+            "subdomain": "www",
+            "registered_domain": "example.org",
+            "scheme": "http",
+            "path": "/",
+            "port": 80
+        },
+        "proofpoint": {
+            "pod": {
+                "msgpart": {
+                    "id": "607330be-4eb6-4f6e-9f74-0cbcab2e1ad4"
+                }
+            }
+        }
+    }
+    	
+	```
+
+
 === "test_msgparts.json"
 
     ```json
 	
     {
-        "message": "{\"msgParts\":{\"structureId\":\"0\",\"isVirtual\":false,\"labeledName\":\"text.html\",\"isCorrupted\":false,\"md5\":\"f3226e81da52c0cb05d4a7599827b70c\",\"disposition\":\"inline\",\"detectedSizeBytes\":2118,\"detectedExt\":\"HTML\",\"detectedMime\":\"text/html\",\"labeledMime\":\"text/html\",\"textExtracted\":\"U0NBTEFSKDB4N2YxMDhhNzQ3ZDM4KQ==n\",\"isTimedOut\":false,\"isDeleted\":false,\"isArchive\":false,\"sizeDecodedBytes\":2118,\"detectedName\":\"text.html\",\"labeledCharset\":\"US-ASCII\",\"labeledExt\":\"html\",\"dataBase64\":\"U0NBTEFSKDB4N2YxMDVlMzNmNzA4KQ==n\",\"metadata\":{},\"detectedCharset\":\"US-ASCII\",\"isProtected\":false,\"urls\":[{\"url\":\"http://us.adserver.yahoo.com/l?M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046\",\"src\":[\"filter\"]},{\"url\":\"http://servedby.advertising.com/site=552006/size=300250/bnum=1074787264333730/bins=1/rich=0\",\"src\":[\"filter\"]},{\"url\":\"http://docs.yahoo.com/info/terms/\",\"src\":[\"filter\"]},{\"url\":\"http://groups.yahoo.com/group/wmoms/\",\"src\":[\"filter\"]},{\"src\":[\"filter\"],\"url\":\"http://rd.yahoo.com/SIG=12co2at1q/M=243273.4326031.5516772.1261774/D=egroupweb/S=1705042054:HM/EXP=1074873664/A=1750744/R=0/*http://servedby.advertising.com/click/site=552006/bnum=1074787264333730\"},{\"src\":[\"filter\"],\"url\":\"mailto:wmoms-unsubscribe@yahoogroups.com?subject=Unsubscribe\"}],\"sha256\":\"3b9778951a276e13059b1d2254cc93ab9744b6e71081c29918ba20ccaa80db9d\"}, \"type\": \"msgParts\", \"guid\": \"1234567890\"}",
+        "message": "{\"msgParts\":{\"structureId\":\"0\",\"isVirtual\":false,\"labeledName\":\"text.html\",\"isCorrupted\":false,\"md5\":\"f3226e81da52c0cb05d4a7599827b70c\",\"disposition\":\"inline\",\"detectedSizeBytes\":2118,\"detectedExt\":\"HTML\",\"detectedMime\":\"text/html\",\"labeledMime\":\"text/html\",\"textExtracted\":\"U0NBTEFSKDB4N2YxMDhhNzQ3ZDM4KQ==n\",\"isTimedOut\":false,\"isDeleted\":false,\"isArchive\":false,\"sizeDecodedBytes\":2118,\"detectedName\":\"text.html\",\"labeledCharset\":\"US-ASCII\",\"labeledExt\":\"html\",\"dataBase64\":\"U0NBTEFSKDB4N2YxMDVlMzNmNzA4KQ==n\",\"metadata\":{},\"detectedCharset\":\"US-ASCII\",\"isProtected\":false,\"urls\":[{\"url\":\"http://us.adserver.yahoo.com/l?M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046\",\"src\":[\"filter\"]},{\"url\":\"http://servedby.advertising.com/site=552006/size=300250/bnum=1074787264333730/bins=1/rich=0\",\"src\":[\"filter\"]},{\"url\":\"http://docs.yahoo.com/info/terms/\",\"src\":[\"filter\"]},{\"url\":\"http://groups.yahoo.com/group/wmoms/\",\"src\":[\"filter\"]},{\"src\":[\"filter\"],\"url\":\"http://rd.yahoo.com/SIG=12co2at1q/M=243273.4326031.5516772.1261774/D=egroupweb/S=1705042054:HM/EXP=1074873664/A=1750744/R=0/*http://servedby.advertising.com/click/site=552006/bnum=1074787264333730\"},{\"src\":[\"filter\"],\"url\":\"mailto:wmoms-unsubscribe@yahoogroups.com?subject=Unsubscribe\"}],\"sha256\":\"3b9778951a276e13059b1d2254cc93ab9744b6e71081c29918ba20ccaa80db9d\"}, \"type\": \"msgParts\", \"guid\": \"1234567890\", \"uuid\": \"eb99b626-c278-4af3-96f8-5a194e016a43\"}",
         "event": {
             "kind": "event",
             "category": [
@@ -432,7 +478,10 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                     "http://groups.yahoo.com/group/wmoms/",
                     "http://rd.yahoo.com/SIG=12co2at1q/M=243273.4326031.5516772.1261774/D=egroupweb/S=1705042054:HM/EXP=1074873664/A=1750744/R=0/*http://servedby.advertising.com/click/site=552006/bnum=1074787264333730",
                     "mailto:wmoms-unsubscribe@yahoogroups.com?subject=Unsubscribe"
-                ]
+                ],
+                "msgpart": {
+                    "id": "eb99b626-c278-4af3-96f8-5a194e016a43"
+                }
             }
         },
         "url": {
@@ -498,6 +547,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
 |`proofpoint.pod.cluster.id` | `keyword` | The name of the cluster which processed the message |
 |`proofpoint.pod.modules` | `array` | The list of modules which processed the message |
+|`proofpoint.pod.msgpart.id` | `keyword` | The identifier of the message part |
 |`proofpoint.pod.routes` | `array` | The policy route triggered by the message |
 |`proofpoint.pod.smtp.recipients` | `array` | The SMTP recipients |
 |`proofpoint.pod.smtp.sender` | `keyword` | The SMTP sender |
