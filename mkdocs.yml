@@ -240,6 +240,7 @@ nav:
         - PagerDuty: xdr/features/automate/library/pagerduty.md
         - Panda Security: xdr/features/automate/library/panda-security.md
         - Proofpoint: xdr/features/automate/library/proofpoint.md
+        - Proofpoint: xdr/features/automate/library/proofpoint.md
         - Public Suffix: xdr/features/automate/library/public-suffix.md
         - RSS: xdr/features/automate/library/rss.md
         - RiskIQ: xdr/features/automate/library/riskiq.md
@@ -382,6 +383,7 @@ nav:
         - Onyphe: tip/features/automate/library/onyphe.md
         - PagerDuty: tip/features/automate/library/pagerduty.md
         - Panda Security: tip/features/automate/library/panda-security.md
+        - Proofpoint: tip/features/automate/library/proofpoint.md
         - Public Suffix: tip/features/automate/library/public-suffix.md
         - RSS: tip/features/automate/library/rss.md
         - RiskIQ: tip/features/automate/library/riskiq.md
