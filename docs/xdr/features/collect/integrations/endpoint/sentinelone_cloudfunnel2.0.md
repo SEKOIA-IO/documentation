@@ -8,7 +8,8 @@ SentinelOne Cloud Funnel 2.0 is the state of the art method to collect SentinelO
 
 SentinelOne Deep Visibility logs provides in-depth logs that are useful for detection and investigation purposes.
 
-**Important**: Please contact your point of contact at SentinelOne in order to subscribe to this option and collect the required technical information to retrieve those logs via a SentinelOne Kafka.
+!!! warning
+    This format is still in beta, please use it wisely.
 
 > No additional installation or configuration on the agents is needed.
 
@@ -59,9 +60,10 @@ Please find bellow a short list of activities that are available for security su
 
 This setup guide will show you how to pull events produced by SentinelOne Deep Visibility on [SEKOIA.IO](https://app.sekoia.io/).
 
-### Create a S3 bucket
+### Create a AWS S3 bucket
 
-***To be completed with SentinelOne documentation***
+The AWS S3 bucket that will hold the SentinelOne Deep Visibility telemetry can be created in any region you like, the bucket name must be globally unique and follow AWS naming rules (https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
+You will need to authorize SentinelOne's AWS account to list and write objects on your bucket (please refer to SentinelOne documentation to obtain the account canonical ID).
 
 {!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
 
@@ -69,8 +71,7 @@ This setup guide will show you how to pull events produced by SentinelOne Deep V
 
 ### Setup SentinelOne Cloud Funnel 2.0
 
-To collect the SentinelOne Deep Visibility logs, the API format is not appropriate due to the Sentinel rate limits and high amount of logs to be pulled from SentinelOne instance.
-SentinelOne implemented a solution to publish Deep Visibility to a customer-owned AWS S3 bucket.
+Once the AWS S3 bucket is created, you can configure your SentinelOne instance to stream the telemetry to it. This is done in the "Settings > Integrations > Cloud Funnel" page of your SentinelOne instance (a SentinelOne admin account with a "Account" user scope is required to performe this configuration).
 
 **Important**: If you have multiple SentinelOne Management Consoles, you must configure Cloud Funnel 2.0 for each console.
 
