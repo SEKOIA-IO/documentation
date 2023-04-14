@@ -117,6 +117,7 @@ nav:
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
+          - Cisco ESA: xdr/features/collect/integrations/email/cisco_esa.md
           - Fortinet Fortimail: xdr/features/collect/integrations/email/fortimail.md
           - Postfix: xdr/features/collect/integrations/email/postfix.md
           - Proofpoint:
