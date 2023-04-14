@@ -62,7 +62,7 @@ This setup guide will show you how to pull events produced by SentinelOne Deep V
 
 ### Create a AWS S3 bucket
 
-The AWS S3 bucket that will hold the SentinelOne Deep Visibility telemetry can be created in any region you like, the bucket name must be globally unique and follow AWS naming rules (https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
+The AWS S3 bucket that will hold the SentinelOne Deep Visibility telemetry can be created in any region you like, the bucket name must be globally unique and follow [AWS naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
 You will need to authorize SentinelOne's AWS account to list and write objects on your bucket (please refer to SentinelOne documentation to obtain the account canonical ID).
 
 {!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
