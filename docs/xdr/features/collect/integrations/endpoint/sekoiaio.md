@@ -54,7 +54,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     The following commands must be executed **as an administrator**:
 
     ```shell
-    agent.exe -install -intake-key <INTAKE_KEY>
+    agent.exe install --intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent has been successfully installed as a service you can run the following command:
@@ -83,7 +83,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
     ```shell
     chmod +x ./agent-latest
-    sudo ./agent-latest -install -intake-key <INTAKE_KEY>
+    sudo ./agent-latest install --intake-key <INTAKE_KEY>
     ```
 
     To make sure the agent has been successfully installed as a service you can run the following command:
@@ -98,7 +98,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
 #### Disable automatic update
 
-By default, the agent will update itself automatically. If you would like to disable this feature, the flag `-disable-auto-update` must be specified during the installation.
+By default, the agent will update itself automatically. If you would like to disable this feature, the flag `--disable-auto-update` must be specified during the installation.
 
 #### Manual update
 
@@ -109,7 +109,7 @@ To manually update the agent, follow the instructions specific to your OS:
     The following command must be executed **as an administrator**:
 
     ```shell
-    $ProgramFiles\EndpointAgent\agent.exe -update
+    $ProgramFiles\EndpointAgent\agent.exe update
     ```
 
     Where `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`.
@@ -119,7 +119,7 @@ To manually update the agent, follow the instructions specific to your OS:
     The following command must be executed:
 
     ```shell
-    sudo /opt/endpoint-agent -update
+    sudo /opt/endpoint-agent update
     ```
 
 
@@ -141,7 +141,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     The following command must be executed **as an administrator**:
 
     ```shell
-    agent.exe -uninstall
+    agent.exe uninstall
     ```
 
 === "Linux"
@@ -149,7 +149,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     The following command must be executed:
 
     ```shell
-    sudo /opt/endpoint-agent/agent -uninstall
+    sudo /opt/endpoint-agent/agent uninstall
     ```
 
 #### For versions prior to 0.3.0
