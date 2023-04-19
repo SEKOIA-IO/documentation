@@ -102,7 +102,7 @@ The table below lists all sectors present in Sekoia.io as well as their sub-type
 |                             | Healthcare-Hospital                           |
 |                             | Hospitality-Leisure                           |
 | Industry                    | Industry-Semiconductor                        |
-|                             | Industry - Food and beverage                  |
+|                             | Industry-Food and beverage                  |
 |                             | Industry-Pharmacy                             |
 |                             | Industry-Agrobusiness                         |
 |                             | Industry-Agriculture                          |
