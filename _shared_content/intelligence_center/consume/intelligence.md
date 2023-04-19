@@ -152,7 +152,7 @@ In STIX format, a Country is a **Location** object that represents a geographica
 There are two ways to look for Intelligence related to a specific country: 
 
 - Search for the country’s name in English 
-- Use the location’s country code following the **[ISO 3166-1](https://www.iso.org/obp/ui/#search)** referential. For instance, FR for France, AE for United Arab Emirates, NG for Nigeria... 
+- Use the location’s country code (2 letters) following the **[ISO 3166-1](https://www.iso.org/obp/ui/#iso:pub:PUB500001:en)** referential. For instance, FR for France, AE for United Arab Emirates, NG for Nigeria... 
 
 ### Table Columns
 
