@@ -36,7 +36,7 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
 -H 'Authorization: Bearer <CLOUDFLARE_API_TOKEN>' \
 -H "Content-Type: application/json" \
 -d '{
-    "dataset": "access_request",    
+    "dataset": "access_requests",    
     "enabled": true,     
     "max_upload_bytes": 5000000,     
     "max_upload_records": 1000,
