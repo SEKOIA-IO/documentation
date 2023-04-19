@@ -52,7 +52,7 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
   "messages": [],
   "result": {
     "id": "<ID>",
-    "dataset": "access_request",
+    "dataset": "access_requests",
     "frequency":"high",
     "kind":"", 
     "max_upload_bytes": 5000000,     
