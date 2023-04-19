@@ -40,7 +40,7 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
     "enabled": true,     
     "max_upload_bytes": 5000000,     
     "max_upload_records": 1000,
-    "logpull_options":"fields=ColoCode,EDNSSubnet,EDNSSubnetLength,QueryName,QueryType,ResponseCached,ResponseCode,SourceIP,Timestamp&timestamps=unix",
+    "logpull_options":"fields=ActionResult,ActionType,ActorEmail,ActorID,ActorIP,ActorType,ID,Interface,Metadata,NewValue,OldValue,OwnerID,ResourceID,ResourceType,When&timestamps=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>"
     }' # (1)
 ```
