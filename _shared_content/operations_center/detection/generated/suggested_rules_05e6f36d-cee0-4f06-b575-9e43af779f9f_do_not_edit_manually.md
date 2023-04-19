@@ -675,6 +675,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     
     - **Effort:** elementary
 
+??? abstract "Windows Defender Abuse Restoration"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Windows Defender Disabled"
     
     The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).

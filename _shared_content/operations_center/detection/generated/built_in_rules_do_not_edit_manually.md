@@ -1,4 +1,4 @@
-Rules catalog includes **677 built-in detection rules** ([_last update on 2023-04-11_](rules_changelog.md)).
+Rules catalog includes **679 built-in detection rules** ([_last update on 2023-04-19_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -5799,6 +5799,12 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Windows Defender Abuse Restoration"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Windows Defender Configuration Changed"
     
     Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
@@ -5810,6 +5816,12 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
     
     - **Effort:** master
+    
+??? abstract "Windows Defender Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
     
 ??? abstract "Windows Defender Disabled"
     
@@ -6717,6 +6729,10 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
+            
 **Network Share Discovery**
 
 ??? abstract "Network Share Discovery"
@@ -7001,6 +7017,10 @@ Rules catalog includes **677 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 18/04/2023 - minor - Use more specific patterns to fix false positives.
+            
 **Data from Cloud Storage**
 
 ??? abstract "Netskope DLP Alert"
