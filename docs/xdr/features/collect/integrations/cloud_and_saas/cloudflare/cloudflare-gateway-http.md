@@ -33,7 +33,7 @@ To do so, you can manage Logpush with cURL:
 
 ```bash
 $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUNT_ID>/logpush/jobs' \
--H 'Authorization: Bearer <CLOUDFLARE_API_TOKE?>' \
+-H 'Authorization: Bearer <CLOUDFLARE_API_TOKEN>' \
 -H "Content-Type: application/json" \
 -d '{
     "dataset": "gateway_http",    
