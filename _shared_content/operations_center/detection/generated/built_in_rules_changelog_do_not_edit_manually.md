@@ -1,7 +1,13 @@
-Changelog _last update on 2023-04-11_
+Changelog _last update on 2023-04-19_
 
 ## Changelog
 
+### Audio Capture via PowerShell
+  - 18/04/2023 - minor - Use more specific patterns to fix false positives.
+    
+### Remote Privileged Group Enumeration
+  - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
+    
 ### Active Directory User Backdoors
   - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
     

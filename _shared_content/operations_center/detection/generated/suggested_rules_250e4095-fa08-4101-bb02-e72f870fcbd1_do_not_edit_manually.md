@@ -2253,6 +2253,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     - **Effort:** elementary
 
+??? abstract "Windows Defender Abuse Restoration"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Windows Defender Configuration Changed"
     
     Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
@@ -2264,6 +2270,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
     
     - **Effort:** master
+
+??? abstract "Windows Defender Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Defender Disabled"
     
