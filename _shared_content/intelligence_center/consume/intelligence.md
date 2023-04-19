@@ -62,6 +62,97 @@ By default, search results are sorted by **pertinence**, but you can choose to d
     
     To get only the item where the name starts with `FLINT 2022-05`, this dork search can be performed: `name:^"FLINT 2022-05"`
 
+#### Search for specific sectors
+
+In the STIX format, a Sector is an **Identity object** that represents a broad business sector or industry. Sectors are used to contextualize threat actors, campaigns, and other CTI entities based on their targeting of specific sectors. For example, a Sector object could represent the Finance sector, Healthcare sector, or Government sector. 
+
+The table below lists all sectors present in Sekoia.io as well as their sub-types: 
+
+| **Sector**                  | **Subtypes**                                  |
+|-----------------------------|-----------------------------------------------|
+| Defence                     | Defence-Military                              |
+|                             | Defence-Industry                              |
+| Education                   | Education-R&D                                 |
+|                             | Education-Institutions                        |
+| Energy                      | Energy-Electricity                            |
+|                             | Energy-Renewable                              |
+|                             | Energy-Gas                                    |
+|                             | Energy-Nuclear                                |
+|                             | Energy-Transportation                         |
+|                             | Energy-Oil                                    |
+| Entertainment               | Entertainment-Gaming                          |
+|                             | Entertainment-Culture                         |
+|                             | Entertainment-Gambling                        |
+|                             | Entertainment-Sport                           |
+| Financial-Services          | Financial-Services-Real Estate                |
+|                             | Financial-Services-Cryptocurrencies           |
+|                             | Financial-Services-Insurance                  |
+| Government                  | Government-Education                          |
+|                             | Government-Interior                           |
+|                             | Government-Local                              |
+|                             | Government-Regional                           |
+|                             | Government-Foreign Affairs                    |
+|                             | Government-Justice                            |
+|                             | Government-Intelligence and Security Services |
+|                             | Government-National                           |
+|                             | Government-Defence                            |
+| Healthcare                  | Healthcare-Pharmaceuticals                    |
+|                             | Healthcare-R&D                                |
+|                             | Healthcare-Equipment                          |
+|                             | Healthcare-Hospital                           |
+|                             | Hospitality-Leisure                           |
+| Industry                    | Industry-Semiconductor                        |
+|                             | Industry-Food and beverage                  |
+|                             | Industry-Pharmacy                             |
+|                             | Industry-Agrobusiness                         |
+|                             | Industry-Agriculture                          |
+|                             | Industry-Wholesale                            |
+|                             | Industry-Manufacturing                        |
+|                             | Industry-Mining                               |
+|                             | Industry-Construction                         |
+|                             | Industry-Retail                               |
+|                             | Industry-Chemical                             |
+|                             | Industry-Automotive                           |
+| Infrastructure              | Infrastructure-Critical                       |
+| Legal                       |                                               |
+| Media                       | Media-Social network                          |
+|                             | Media-Individual                              |
+|                             | Media-TV channel                              |
+|                             | Media-Radio                                   |
+|                             | Media-Newspaper                               |
+| NGO/Civil-Society/Political | NGO/Civil-Society/Political-Dissident         |
+|                             | NGO/Civil-Society/Political-Activist          |
+| Professional services       | Professional services-Consulting              |
+|                             | Professional services-Management              |
+|                             | Professional services-Printing                |
+|                             | Professional services-Marketing               |
+| Technology                  | Technology-High-Tech                          |
+|                             | Technology-Services                           |
+| Telecommunications          | Telecommunications-Satellite                  |
+|                             | Telecommunications-Phone                      |
+|                             | Telecommunications-Internet                   |
+| Transportation              | Transportation-Shipping                       |
+|                             | Transportation-Air                            |
+|                             | Transportation-Road                           |
+|                             | Transportation-Maritime                       |
+|                             | Transportation-Rail                           |
+
+
+
+!!! Note
+    Note that **Media** is a subtype of Entertainement.
+
+!!!tip 
+    Select the object type `Identity` in the filter `By object type` on top of the Intelligence table to refine your search and list only Identity objects.
+
+#### Search for a country
+
+In STIX format, a Country is a **Location** object that represents a geographical region (e.g., North America), civic address (e.g. New York, US), latitude and longitude. Countries are used to contextualize threat actors, campaigns, and other CTI entities based on their geographic targeting. 
+
+There are two ways to look for Intelligence related to a specific country: 
+
+- Search for the country’s name in English 
+- Use the location’s country code (2 letters) following the **[ISO 3166-1](https://www.iso.org/obp/ui/#iso:pub:PUB500001:en)** referential. For instance, FR for France, AE for United Arab Emirates, NG for Nigeria... 
 
 ### Table Columns
 
