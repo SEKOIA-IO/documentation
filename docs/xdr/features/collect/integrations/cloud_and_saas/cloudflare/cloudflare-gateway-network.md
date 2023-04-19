@@ -55,7 +55,7 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
     "dataset": "gateway_network",
     "enabled": false,
     "name": "<DOMAIN_NAME>",
-    "logpull_options": "fields=<LIST_OF_FIELDS>=rfc3339",
+    "logpull_options": "fields=<LIST_OF_FIELDS>",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>",
     "last_complete": null,
     "last_error": null,
