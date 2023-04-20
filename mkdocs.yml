@@ -223,6 +223,7 @@ nav:
         - GLIMPS: xdr/features/automate/library/glimps.md
         - Git: xdr/features/automate/library/git.md
         - Google: xdr/features/automate/library/google.md
+        - Google: xdr/features/automate/library/google.md
         - HTTP: xdr/features/automate/library/http.md
         - HarfangLab: xdr/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
@@ -370,6 +371,7 @@ nav:
         - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
         - GLIMPS: tip/features/automate/library/glimps.md
         - Git: tip/features/automate/library/git.md
+        - Google: tip/features/automate/library/google.md
         - Google: tip/features/automate/library/google.md
         - HTTP: tip/features/automate/library/http.md
         - HarfangLab: tip/features/automate/library/harfanglab.md

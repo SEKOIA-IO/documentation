@@ -1,5 +1,7 @@
 # Google
 
+![Google](/assets/playbooks/library/google.svg){ align=right width=150 }
+
 Google module
 
 ## Configuration
@@ -55,4 +57,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google` v1.6.0**
+Module **`Google` v1.9.2**
