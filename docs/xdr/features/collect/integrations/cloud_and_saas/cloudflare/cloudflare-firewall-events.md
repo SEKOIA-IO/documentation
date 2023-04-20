@@ -71,4 +71,5 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
     - `<CLOUDFLARE_API_TOKEN>` with the API Token you generated
     - `<CLOUDFLARE_ZONE_ID>` with the Zone ID you grabbed
 
-{!_shared_content/operations_center/integrations/cloudflare_useful_api_endpoints.md!}
+{!_shared_content/operations_center/integrations/cloudflare_useful_zones_scoped_api_endpoints.md!}
+

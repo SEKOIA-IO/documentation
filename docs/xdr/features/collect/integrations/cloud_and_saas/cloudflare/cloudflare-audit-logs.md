@@ -76,4 +76,4 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
     - `<YOUR_INTAKE_KEY>` with the Intake key you generated in the [Create the intake on SEKOIA.IO](#create-the-intake-on-sekoiaio) step.
     - `<CLOUDFLARE_ACCOUNT_ID>` with the ACCOUNT_ID found on the overview page
     - `<CLOUDFLARE_API_TOKEN>` with the API Token you generated
-{!_shared_content/operations_center/integrations/cloudflare_useful_api_endpoints.md!}
+{!_shared_content/operations_center/integrations/cloudflare_useful_accounts_scoped_api_endpoints.md!}

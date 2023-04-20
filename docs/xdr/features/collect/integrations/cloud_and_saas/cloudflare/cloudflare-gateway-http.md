@@ -77,4 +77,5 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
     - `<CLOUDFLARE_ACCOUNT_ID>` with the ACCOUNT_ID found on the overview page
     - `<CLOUDFLARE_API_TOKEN>` with the API Token you generated
 
-{!_shared_content/operations_center/integrations/cloudflare_useful_api_endpoints.md!}
+{!_shared_content/operations_center/integrations/cloudflare_useful_accounts_scoped_api_endpoints.md!}
+
