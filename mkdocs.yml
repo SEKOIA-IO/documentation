@@ -96,7 +96,7 @@ nav:
             - Access requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-access-requests.md
             - Audit logs: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-audit-logs.md
             - DNS logs: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-dns-logs.md
-            - Firewall events: xdr/features/collect/integrations/cloud_and_saas/cloudflare/
+            - Firewall events: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-firewall-events.md
             - Gateway DNS: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-dns.md
             - Gateway HTTP: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-http.md
             - Gateway Network: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-network.md
