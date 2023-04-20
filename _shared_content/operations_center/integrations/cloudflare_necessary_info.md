@@ -16,6 +16,12 @@ Connect to [Cloudflare Console](https://dash.cloudflare.com/) to collect the fol
       | Zone    | Logs              | Read  |
       | Zone    | Logs              | Edit  |
 
+    - If you want zerotrust logs you should also add:
+
+      |  Scope  |       Group       | Level |
+      | ------- | ----------------- | ----- |
+      | Account | Zero Trust        | Read  |
+
 	[see the Cloudflare documentation](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/)
 
 2. **Cloudflare Zone ID** :

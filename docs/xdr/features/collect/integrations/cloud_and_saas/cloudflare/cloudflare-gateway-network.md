@@ -1,16 +1,16 @@
-uuid: 16676d72-463e-4b8a-b13a-f8dd48cddc8c
-name: Cloudflare Firewall Events
+uuid: d14567dd-56b1-42f8-aa64-fb65d4b0a4cf
+name: Cloudflare Gateway Network
 type: intake
 
 ## Overview
 
 Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable.
 
-In this documentation, you will learn how to collect and send Cloudflare Firewall events to SEKOIA.IO.
+In this documentation, you will learn how to collect and send Gateway Network logs to SEKOIA.IO.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_16676d72-463e-4b8a-b13a-f8dd48cddc8c_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_d14567dd-56b1-42f8-aa64-fb65d4b0a4cf_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/16676d72-463e-4b8a-b13a-f8dd48cddc8c.md!}
+{!_shared_content/operations_center/integrations/generated/d14567dd-56b1-42f8-aa64-fb65d4b0a4cf.md!}
 
 ## Configuration
 
@@ -28,6 +28,7 @@ Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpu
 
 `https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>`
 
+
 To do so, you can manage Logpush with cURL:
 
 ```bash
@@ -35,11 +36,11 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
 -H "Authorization: Bearer <CLOUDFLARE_API_TOKEN>" \
 -H "Content-Type: application/json" \
 --data '{
-    "dataset": "firewall_events",
+    "dataset": "gateway_network",
     "enabled": true,
     "max_upload_bytes": 5000000,
     "max_upload_records": 1000,
-    "logpull_options":"fields=Action,ClientASN,ClientASNDescription,ClientCountry,ClientIP,ClientIPClass,ClientRefererHost,ClientRefererPath,ClientRefererQuery,ClientRefererScheme,ClientRequestHost,ClientRequestMethod,ClientRequestPath,ClientRequestProtocol,ClientRequestQuery,ClientRequestScheme,ClientRequestUserAgent,Datetime,EdgeColoCode,EdgeResponseStatus,Kind,MatchIndex,Metadata,OriginResponseStatus,OriginatorRayID,RayID,RuleID,Source&timestamps=unix",
+    "logpull_options":"fields=AccountID,Action,Datetime,DestinationIP,DestinationPort,DeviceID,DeviceName,Email,OverrideIP,OverridePort,PolicyID,PolicyName,SNI,SessionID,SourceIP,SourceInternalIP,SourcePort,Transport,UserID&timestamps=rfc3339",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>"
 }' # (1)
 ```
@@ -50,11 +51,11 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
   "errors": [],
   "messages": [],
   "result": {
-    "id": 147,
-    "dataset": "firewall_events",
+    "id": 148,
+    "dataset": "gateway_network",
     "enabled": false,
     "name": "<DOMAIN_NAME>",
-    "logpull_options": "fields=<LIST_OF_FIELDS>&timestamps=rfc3339",
+    "logpull_options": "fields=<LIST_OF_FIELDS>",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>",
     "last_complete": null,
     "last_error": null,
@@ -71,5 +72,5 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
     - `<CLOUDFLARE_API_TOKEN>` with the API Token you generated
     - `<CLOUDFLARE_ZONE_ID>` with the Zone ID you grabbed
 
-{!_shared_content/operations_center/integrations/cloudflare_useful_zones_scoped_api_endpoints.md!}
+{!_shared_content/operations_center/integrations/cloudflare_useful_accounts_scoped_api_endpoints.md!}
 
