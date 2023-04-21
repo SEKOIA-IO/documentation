@@ -9,7 +9,21 @@
 ## IP behind Triggers available in Playbooks Section
 
 
-For all the triggers available in the Playbooks section and that are used to retrieve your logs, we use the IP `141.95.157.224`. This IP will be useful to setup filtering options if needed.
+For all the triggers available in the Playbooks section and that are used to retrieve your logs, we use the following IPs. This IP will be useful to setup filtering options if needed.
+
+- `51.158.97.25`
+- `51.158.116.234`
+- `163.172.144.251`
+- `51.158.74.186`
+- `51.15.222.132`
+- `51.15.233.254`
+- `51.15.227.161`
+- `51.158.122.207`
+- `51.158.121.97`
+- `51.15.129.241`
+- `163.172.140.188`
+- `163.172.190.12`
+- `51.158.98.140`
 
 ## How to debug Rsyslog’s forward configuration to SEKOIA.IO?
 
