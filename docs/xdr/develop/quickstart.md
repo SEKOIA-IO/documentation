@@ -183,7 +183,7 @@ def post_request():
     res = requests.post(url, json=body, headers={"Authorization": f"Bearer {API_KEY}"})
 
     # In case of a success, the status code 204 is returned by the API
-    if res.status_code == 204:
+    if res.status_code == 200:
         logging.info(f"The rule has been created on your community")
     # In case of authentication failed
     elif res.status_code == 401:
