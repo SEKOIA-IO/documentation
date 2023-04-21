@@ -1,7 +1,7 @@
 # Quickstart
 API stands for Application Programming Interface and is the code that governs the server's access point.
 
-When to use the SEKOIA.IO API ?
+When to use the SEKOIA.IO API?
 
 * **Data sharing**: when you want an application to get data from SEKOIA.IO
 * **Integration**: when you want an application to perform actions on SEKOIA.IO
@@ -38,15 +38,15 @@ Our documentation provides information on each endpoint and specifies the requir
 ## Documentation organization
 Our API documentation is divided according to the different functionalities the platform offers:
 
-* [Authentication and Community](/xdr/develop/rest_api/community/)
-* [Dashboard](xdr/develop/rest_api/dashboard/)
-* [Notification](xdr/develop/rest_api/notification/)
-* [Configuration](xdr/develop/rest_api/configuration/)
-* [Parser](xdr/develop/rest_api/parser/)
-* [Alert](/xdr/develop/rest_api/alert/)
-* [Assets](/xdr/develop/rest_api/assets/)
-* [Playbooks](/xdr/develop/rest_api/playbooks/)
-* [Telemetry](/xdr/develop/rest_api/telemetry/)
+* [Authentication and Community](rest_api/community/)
+* [Dashboard](rest_api/dashboard/)
+* [Notification](rest_api/notification/)
+* [Configuration](rest_api/configuration/)
+* [Parser](rest_api/parser/)
+* [Alert](rest_api/alert/)
+* [Assets](rest_api/assets/)
+* [Playbooks](rest_api/playbooks/)
+* [Telemetry](rest_api/telemetry/)
 
 In each of these categories, you will find the different actions available.
 
@@ -63,13 +63,25 @@ Each action is described and contains the following information:
 
 Depending of the endpoint, the data passed through the API is done as `query parameters` or in an `application/json` body. `Query parameters` means the data is passed in the URL.
 
-**Example with query parameters**
-The following example uses the action `List rules` and the `query parameter` `match[name]` is used to retrieve only the rule `Suspicious Windows Defender Exclusion Command`
+**Two differents uses cases**
+
+1. URL parameters are a way to pass data directly in the URL. 
+
+They come after the question mark (?) in the URL and are separated by an ampersand (&). 
+For example, in the following request, "match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command" and "limit=10" are the URL parameters. 
+
 ```bash
-curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules?match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command
+curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules?match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command&limit=10
 ```
 
-**Example with POST parameters**
+These parameters are often used for simple requests like **search queries**, where the data being passed is short and simple, such as **`GET`  requests**.
+
+2. Use the request body to send JSON payload. 
+
+JSON is a data format that is easy for both humans and machines to read and write. To send data as JSON, you will need to include a "Content-Type" header in your request, and the request body should be a JSON object. 
+
+This is often used for more complex requests like **creating or updating resources on the server**, such as **`POST` or `PUT` requests** for instance.
+
 The following example uses the action `Invite a user` which is a `POST` request with an `application/json` body:
 ```bash
 curl -X POST https://api.sekoia.io/v1/invitations \
@@ -81,13 +93,16 @@ curl -X POST https://api.sekoia.io/v1/invitations \
    # This information is retrieved with the action "List the roles of a community"
 ```
 
+!!! Note
+    Such requests that create or update resources on the server may request to **ALSO** add parameters in the URL to specify the object one wants to have action on. With SEKOIA.IO API you will often pass through the URL the UUID of the specific object you are expecting to be modified.  
+
 ## Python scripts
-Python is a language that can be used to interact with the SEKOIA.IO API. Please find below two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
+Python is a language that can be used to interact with the SEKOIA.IO API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
 
 
 ### Get request with query parameters
 In this example, we want to get information about the rule "Suspicious Windows Defender Exclusion Command".
-We can get this information using the endpoint [List Rules](https://docs.sekoia.io/develop/rest_api/operation_center/configuration/#tag/rules-catalog/operation/get_rules_resource)
+We can get this information using the endpoint [List Rules](https://docs.sekoia.io/develop/rest_api/operation_center/configuration/#tag/rules-catalog/operation/get_rules_resource). As you can see in this documentation no parameter is mandatory (otherwise it will explicitly be written "required" in red color) for this request to be successfully executed but to fit our need we chose to use the `match[name]` parameter defined as "Match rules by their name (separated by commas).".
 The following script will try to retrieve this information and print the result to STDOUT.
 
 ```python
