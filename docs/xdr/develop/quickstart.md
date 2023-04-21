@@ -144,15 +144,22 @@ if __name__ == '__main__':
 ```
 
 ### Post request with JSON body
-In this example, we want to invite the user `john.doe@example.com` to the Community with UUID `88dcb0c6-4efe-4256-95f1-40d2c4fefefd` and with the role `44aaa41f-24ee-41d3-a7c1-4677da8b9243`
-This can be achieved with the endpoint [Invite a user in a list of communities](https://docs.sekoia.io/xdr/develop/rest_api/community/#tag/invitations/operation/post_invitation_resource)
 
-!!! Note
-    The role UUIDs can be found with the endpoint [List the roles of a community](https://docs.sekoia.io/xdr/develop/rest_api/community/#tag/roles/operation/get_roles_resource)
+In this example, we will create a simple SIGMA rule nammed "My custom SIGMA rule", so it will be a `POST` request. According to [this documentation](https://docs.sekoia.io/xdr/develop/rest_api/configuration/#tag/rules-catalog/operation/post_rules_resource) in order to create a new rule we must provide the request with a minimum of mandatory fields. You will find in the following table what we will use in the Python script:
+
+| Fields | Value for the example |
+| --- | --- |
+| name | "My custom SIGMA rule" |
+| type | "sigma" |
+| description | "Detect spawn of Powershell" |
+| payload | "detection:\\n  selection:\\n    process.command\_line\|contains: 'powershell'\\n  condition: selection" |
+| severity | 40 |
+| effort | 3 |
+| alert\_type\_uuid | "599f4b1a-dd60-43fe-8ee9-07d3c5d00ded" |
+| enabled | True |
 
 ```python
 import logging
-
 import requests
 
 API_KEY = "YOUR_API_KEY"
@@ -160,12 +167,16 @@ BASE_URL = "https://api.sekoia.io/v1"
 
 def post_request():
 
-    url = f"{BASE_URL}/invitations"
+    url = f"{BASE_URL}/sic/conf/rules-catalog/rules"
     body = {
-        "email": "john.doe@example.com",
-        "communities": {
-            "88dcb0c6-4efe-4256-95f1-40d2c4fefefd": ["44aaa41f-24ee-41d3-a7c1-4677da8b9243"]
-        }
+      "name": "My custom SIGMA rule",
+      "type": "sigma",
+      "description": "Detect spawn of Powershell",
+      "payload": "detection:\n  selection:\n    process.command_line|contains: 'powershell'\n  condition: selection",
+      "severity": 40,
+      "effort": 3,
+      "alert_type_uuid": "599f4b1a-dd60-43fe-8ee9-07d3c5d00ded",
+      "enabled": True
     }
 
     # The body is passed as a parameter of the post method.
@@ -173,10 +184,10 @@ def post_request():
 
     # In case of a success, the status code 204 is returned by the API
     if res.status_code == 204:
-        logging.info(f"The user has been added to the community")
+        logging.info(f"The rule has been created on your community")
     # In case of authentication failed
     elif res.status_code == 401:
-        logging.error(f"Cannot invite the user. Authentication failed: {res.status_code}")
+        logging.error(f"Cannot create the rule. Authentication failed: {res.status_code}")
         logging.error(res.text)
     # In case of another status code
     else:
