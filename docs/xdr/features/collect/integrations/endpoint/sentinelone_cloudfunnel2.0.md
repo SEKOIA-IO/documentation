@@ -79,7 +79,7 @@ Once the AWS S3 bucket is created, you can configure your SentinelOne instance t
 
 ### Create a SentinelOne Cloud Funnel 2.0 intake
 
-In the [SEKOIA.IO Operation Center](https://app.sekoia.io/operations/intakes):
+In the [SEKOIA.IO Operations Center](https://app.sekoia.io/operations/intakes):
 
 1. Click on the `Intake` page.
 2. Search for `SentinelOne Cloud Funnel 2.0` by navigating the page or using the search bar.
