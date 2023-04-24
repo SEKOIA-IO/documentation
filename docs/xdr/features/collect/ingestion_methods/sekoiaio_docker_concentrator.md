@@ -59,7 +59,7 @@ intakes:
   port: 20516
   intake_key: INTAKE_KEY_FOR_TECHNO_1
 - name: Techno2
-  protocol: udp
+  protocol: tcp
   port: 20517
   intake_key: INTAKE_KEY_FOR_TECHNO_2
 - name: Techno3
@@ -137,7 +137,15 @@ ports:
 ```
 
 As specified in the Overview section, the concentrator will be run in an isolated environment. That means, by default, no flow is open between the host and the concentrator. 
-`20516-20518:20516-20518` means that every packets coming through the TCP port `20516`, `20517` or `20518` to the host will be forwarded to the concentrator container on the port 20516, 20517 or 20518. 
+`20516-20518:20516-20518` means that every packets coming through the TCP port `20516`, `20517` or `20518` to the host will be forwarded to the concentrator container on the port 20516, 20517 or 20518.
+
+If you want to open a UDP flow, please add a line with `/udp` at the end. For instance, to open the TCP flows `20516`, `20517`, `20518` and the UDP flow `20519`, the ports section will be:
+
+```yaml
+ports:
+    - "20516-20518:20516-20518"
+    - "20519:20519/udp"
+```
 
 !!! Warning
     Please adapt these values according to the intakes.yaml file.
