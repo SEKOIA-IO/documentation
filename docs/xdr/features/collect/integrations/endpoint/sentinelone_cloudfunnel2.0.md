@@ -72,7 +72,7 @@ You will need to authorize SentinelOne's AWS account to list and write objects o
 
 ### Setup SentinelOne Cloud Funnel 2.0
 
-Once the AWS S3 bucket is created, you can configure your SentinelOne instance to stream the telemetry to it. This is done in the "Settings > Integrations > Cloud Funnel" page of your SentinelOne instance (a SentinelOne admin account with a "Account" user scope is required to performe this configuration).
+Once the AWS S3 bucket is created, you can configure your SentinelOne instance to stream the telemetry to it. This is done in the "Settings > Integrations > Cloud Funnel" page of your SentinelOne instance (a SentinelOne admin account with a "Account" user scope is required to perform this configuration).
 
 **Important**: If you have multiple SentinelOne Management Consoles, you must configure Cloud Funnel 2.0 for each console.
 
