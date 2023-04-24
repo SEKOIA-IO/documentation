@@ -265,6 +265,7 @@ nav:
         - Vade Secure: xdr/features/automate/library/vade-secure.md
         - VirusTotal: xdr/features/automate/library/virustotal.md
         - Whois: xdr/features/automate/library/whois.md
+        - WithSecure: xdr/features/automate/library/withsecure.md
         - fileutils: xdr/features/automate/library/fileutils.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
     - External integrations:
@@ -405,6 +406,7 @@ nav:
         - Vade Secure: tip/features/automate/library/vade-secure.md
         - VirusTotal: tip/features/automate/library/virustotal.md
         - Whois: tip/features/automate/library/whois.md
+        - WithSecure: tip/features/automate/library/withsecure.md
         - fileutils: tip/features/automate/library/fileutils.md
   - Develop:
     - Overview: tip/develop/index.md
