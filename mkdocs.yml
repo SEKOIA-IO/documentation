@@ -278,7 +278,7 @@ nav:
     - Rules: xdr/FAQ/Rules_qa.md
     - SEKOIA.IO Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Develop:
-    - Overview: xdr/develop/index.md
+    - Quickstart: xdr/develop/quickstart.md
     - Guides:
       - Filtering: xdr/develop/guides/filtering.md
     - REST API:
