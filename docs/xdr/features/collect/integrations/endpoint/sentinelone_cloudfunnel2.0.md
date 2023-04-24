@@ -11,7 +11,8 @@ SentinelOne Deep Visibility logs provides in-depth logs that are useful for dete
 !!! warning
     This format is still in beta, please use it wisely.
 
-> No additional installation or configuration on the agents is needed.
+!!! note
+    No additional installation or configuration on the agents is needed.
 
 Please find bellow a short list of activities that are available for security supervision thanks to SentinelOne Deep Visibility logs:
 
