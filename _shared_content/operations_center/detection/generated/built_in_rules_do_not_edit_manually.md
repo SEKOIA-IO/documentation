@@ -1,4 +1,4 @@
-Rules catalog includes **679 built-in detection rules** ([_last update on 2023-04-19_](rules_changelog.md)).
+Rules catalog includes **681 built-in detection rules** ([_last update on 2023-04-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -5793,6 +5793,12 @@ Rules catalog includes **679 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "TrustedInstaller Impersonation"
+    
+    The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
+    
+    - **Effort:** elementary
+    
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
@@ -6209,6 +6215,12 @@ Rules catalog includes **679 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Process Memory Dump Using Comsvcs"
     
     Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
+    
+??? abstract "Process Memory Dump Using Rdrleakdiag"
+    
+    Detects the use of rdrleakdiag.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
     

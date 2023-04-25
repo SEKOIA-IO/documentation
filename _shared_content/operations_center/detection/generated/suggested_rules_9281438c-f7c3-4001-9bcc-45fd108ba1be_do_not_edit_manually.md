@@ -1389,6 +1389,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** elementary
 
+??? abstract "Process Memory Dump Using Rdrleakdiag"
+    
+    Detects the use of rdrleakdiag.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
+
 ??? abstract "Protected Storage Service Access"
     
     Detects access to a protected_storage service over the network. It could identify potential abuse of DPAPI to extract domain backup keys from Domain Controllers.
@@ -2078,6 +2084,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
     
     - **Effort:** intermediate
+
+??? abstract "TrustedInstaller Impersonation"
+    
+    The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
+    
+    - **Effort:** elementary
 
 ??? abstract "Turla Named Pipes"
     
