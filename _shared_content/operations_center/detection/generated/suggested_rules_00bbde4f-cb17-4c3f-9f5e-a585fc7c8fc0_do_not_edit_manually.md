@@ -267,6 +267,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Google Kubernetes Engine (GK
     
     - **Effort:** elementary
 
+??? abstract "Process Memory Dump Using Rdrleakdiag"
+    
+    Detects the use of rdrleakdiag.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
+
 ??? abstract "Process Trace Alteration"
     
     PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
