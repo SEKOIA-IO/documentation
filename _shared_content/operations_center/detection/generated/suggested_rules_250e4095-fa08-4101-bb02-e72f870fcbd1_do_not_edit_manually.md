@@ -2289,6 +2289,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO Endpoint Agent** w
     
     - **Effort:** intermediate
 
+??? abstract "Windows Defender Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+
+??? abstract "Windows Defender Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Windows Defender Disabled"
     
     The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).

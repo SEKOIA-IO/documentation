@@ -1,4 +1,4 @@
-Rules catalog includes **681 built-in detection rules** ([_last update on 2023-04-25_](rules_changelog.md)).
+Rules catalog includes **685 built-in detection rules** ([_last update on 2023-04-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -383,6 +383,12 @@ Rules catalog includes **681 built-in detection rules** ([_last update on 2023-0
     Detects successful access to administration console of a firewall after several failure.
     
     - **Effort:** advanced
+    
+??? abstract "Login Brute-Force On FreeRadius"
+    
+    A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Netskope Admin Audit"
     
@@ -2826,6 +2832,12 @@ Rules catalog includes **681 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Login Brute-Force On FreeRadius"
+    
+    A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
@@ -3891,6 +3903,12 @@ Rules catalog includes **681 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Login Brute-Force On FreeRadius"
+    
+    A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
@@ -4861,6 +4879,12 @@ Rules catalog includes **681 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Login Brute-Force On FreeRadius"
+    
+    A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
@@ -5829,6 +5853,18 @@ Rules catalog includes **681 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Windows Defender Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Windows Defender Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Windows Defender Disabled"
     
     The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
@@ -6162,6 +6198,12 @@ Rules catalog includes **681 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Main Memory Dumping"
+    
+    Attacker might want to leverage their permission on the system or steal authentication tokens to third parties software, website, etc. To do so, attacker might try to dump main memory of computer.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -6347,6 +6389,12 @@ Rules catalog includes **681 built-in detection rules** ([_last update on 2023-0
     Detects successful access to administration console of a firewall after several failure.
     
     - **Effort:** advanced
+    
+??? abstract "Login Brute-Force On FreeRadius"
+    
+    A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Password Change Brute-Force On AzureAD"
     
