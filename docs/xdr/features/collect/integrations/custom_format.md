@@ -127,6 +127,8 @@ You will need to provide the stage with:
 
 **Example**
 
+- Generic
+
 In the following event, a JSON is present in the `message` field. The JSON stage can be used to get all the information you need.
 
 ```json
@@ -137,9 +139,26 @@ In the following event, a JSON is present in the `message` field. The JSON stage
 
 To get the reference of the source IP in another stage, we will use the reference `{{stage1.message.traffic.source}}`
 
-- `stage1` is the name of the JSON stage
-- `message` is the name of the `Output_field`
-- `traffic.source` is the field we want in the JSON
+    - `stage1` is the name of the JSON stage
+    - `message` is the name of the `Output_field`
+    - `traffic.source` is the field we want in the JSON
+
+- field with '-'
+
+We would like to parse `rules-match` of the following event:
+
+```json
+{
+"protocol":"tcp","traffic":{"source":"127.0.0.1","target":"8.8.8.8","rules-match":"rule1"}
+}
+```
+
+To get the reference of the `rules-match` in another stage, we will use the reference `{{stage1.message.get('rules-match')}}`
+    - `stage1` is the name of the JSON stage
+    - `message` is the name of the `Output_field`
+    - `rules-match` is the field we want in the JSON
+    - `get('<field>')` needs to be added
+
 
 #### Key Value
 ![!SEKOIA.IO Key Value stage](/assets/operation_center/custom_format/kv_stage.png){: style="max-width:100%"}
