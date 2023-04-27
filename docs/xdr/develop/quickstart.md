@@ -30,7 +30,7 @@ Authentication is done by Bearer Token which means that in all requests, the hea
 curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules
 ```
 
-To create an API key, follow our guide [here](/getting_started/generate_api_keys/).
+To create an API key, follow our guide [here](https://docs.sekoia.io/getting_started/manage_api_keys/).
 The roles needed for your key will depend on what you want to achieve. If you plan to only get information from SEKOIA.IO, read only permissions will be enough. If you want to perform actions on SEKOIA.IO, you will also need to add write permissions.
 
 Our documentation provides information on each endpoint and specifies the required permissions.
@@ -38,15 +38,15 @@ Our documentation provides information on each endpoint and specifies the requir
 ## Documentation organization
 Our API documentation is divided according to the different functionalities the platform offers:
 
-* [Authentication and Community](rest_api/community/)
-* [Dashboard](rest_api/dashboard/)
-* [Notification](rest_api/notification/)
-* [Configuration](rest_api/configuration/)
-* [Parser](rest_api/parser/)
-* [Alert](rest_api/alert/)
-* [Assets](rest_api/assets/)
-* [Playbooks](rest_api/playbooks/)
-* [Telemetry](rest_api/telemetry/)
+* [Authentication and Community](https://docs.sekoia.io/xdr/develop/rest_api/community/)
+* [Dashboard](https://docs.sekoia.io/xdr/develop/rest_api/dashboard/)
+* [Notification](https://docs.sekoia.io/xdr/develop/rest_api/notification/)
+* [Configuration](https://docs.sekoia.io/xdr/develop/rest_api/configuration/)
+* [Parser](https://docs.sekoia.io/xdr/develop/rest_api/parser/)
+* [Alert](https://docs.sekoia.io/xdr/develop/rest_api/alert/)
+* [Assets](https://docs.sekoia.io/xdr/develop/rest_api/assets/)
+* [Playbooks](https://docs.sekoia.io/xdr/develop/rest_api/playbooks/)
+* [Telemetry](https://docs.sekoia.io/xdr/develop/rest_api/telemetry/)
 
 In each of these categories, you will find the different actions available.
 
