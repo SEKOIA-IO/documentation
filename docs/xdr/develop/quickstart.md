@@ -38,15 +38,15 @@ Our documentation provides information on each endpoint and specifies the requir
 ## Documentation organization
 Our API documentation is divided according to the different functionalities the platform offers:
 
-* [Authentication and Community](https://docs.sekoia.io/xdr/develop/rest_api/community/)
-* [Dashboard](https://docs.sekoia.io/xdr/develop/rest_api/dashboard/)
-* [Notification](https://docs.sekoia.io/xdr/develop/rest_api/notification/)
-* [Configuration](https://docs.sekoia.io/xdr/develop/rest_api/configuration/)
-* [Parser](https://docs.sekoia.io/xdr/develop/rest_api/parser/)
-* [Alert](https://docs.sekoia.io/xdr/develop/rest_api/alert/)
-* [Assets](https://docs.sekoia.io/xdr/develop/rest_api/assets/)
-* [Playbooks](https://docs.sekoia.io/xdr/develop/rest_api/playbooks/)
-* [Telemetry](https://docs.sekoia.io/xdr/develop/rest_api/telemetry/)
+* [Authentication and Community](/xdr/develop/rest_api/community/)
+* [Dashboard](/xdr/develop/rest_api/dashboard/)
+* [Notification](/xdr/develop/rest_api/notification/)
+* [Configuration](/xdr/develop/rest_api/configuration/)
+* [Parser](/xdr/develop/rest_api/parser/)
+* [Alert](/xdr/develop/rest_api/alert/)
+* [Assets](/xdr/develop/rest_api/assets/)
+* [Playbooks](/xdr/develop/rest_api/playbooks/)
+* [Telemetry](/xdr/develop/rest_api/telemetry/)
 
 In each of these categories, you will find the different actions available.
 
