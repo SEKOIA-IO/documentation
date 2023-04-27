@@ -154,6 +154,7 @@ We would like to parse `rules-match` of the following event:
 ```
 
 To get the reference of the `rules-match` in another stage, we will use the reference `{{stage1.message.get('rules-match')}}`
+
     - `stage1` is the name of the JSON stage
     - `message` is the name of the `Output_field`
     - `rules-match` is the field we want in the JSON
