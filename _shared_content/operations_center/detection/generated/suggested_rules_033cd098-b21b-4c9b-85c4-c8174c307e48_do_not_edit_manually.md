@@ -1,20 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **WithSecure Elements [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x HarfangLab on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3c7057d3-4689-4fae-8033-6f1f887a70f2_do_not_edit_manually.json){ .md-button }
-??? abstract "Account Added To A Security Enabled Group"
-    
-    Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
-    
-    - **Effort:** master
-
-??? abstract "Account Removed From A Security Enabled Group"
-    
-    Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
-    
-    - **Effort:** master
-
+[SEKOIA.IO x WithSecure Elements [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_033cd098-b21b-4c9b-85c4-c8174c307e48_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -51,23 +39,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Autorun Keys Modification"
-    
-    Detects modification of autostart extensibility point (ASEP) in registry. Prerequisites are Logging for Registry events in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** master
-
 ??? abstract "BITSAdmin Download"
     
     Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.
     
     - **Effort:** advanced
-
-??? abstract "Backup Catalog Deleted"
-    
-    The rule detects when the Backup Catalog has been deleted. It means the administrators will not be able to access any backups that were created earlier to perform recoveries. This is often being done using the wbadmin.exe tool.
-    
-    - **Effort:** intermediate
 
 ??? abstract "BazarLoader Persistence Using Schtasks"
     
@@ -92,24 +68,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
-
-??? abstract "CMSTP UAC Bypass via COM Object Access"
-    
-    Detects UAC Bypass Attempt Using Microsoft Connection Manager Profile Installer Autoelevate-capable COM Objects
-    
-    - **Effort:** intermediate
-
-??? abstract "CVE 2022-1292"
-    
-    The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
-    
-    - **Effort:** advanced
-
-??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
-    
-    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
-    
-    - **Effort:** master
 
 ??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
     
@@ -140,12 +98,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
     
     - **Effort:** intermediate
-
-??? abstract "Cmd.exe Used To Run Reconnaissance Commands"
-    
-    Detects command lines with suspicious args
-    
-    - **Effort:** advanced
 
 ??? abstract "Cmdkey Cached Credentials Recon"
     
@@ -189,47 +141,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** advanced
 
-??? abstract "Csrss Child Found"
-    
-    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
-
-??? abstract "Csrss Wrong Parent"
-    
-    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** advanced
-
-??? abstract "DHCP Server Error Failed Loading the CallOut DLL"
-    
-    This rule detects a DHCP server error in which a specified Callout DLL (in registry) could not be loaded.
-    
-    - **Effort:** intermediate
-
-??? abstract "DHCP Server Loaded the CallOut DLL"
-    
-    This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded. This would indicate a succesful attack against DHCP service allowing to disrupt the service or alter the integrity of the responses.
-    
-    - **Effort:** intermediate
-
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
-
-??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
-    
-    This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded. This requires the dedicated Windows event provider Microsoft-Windows-DNS-Server-Service.
-    
-    - **Effort:** master
-
-??? abstract "DNS Tunnel Technique From MuddyWater"
-    
-    Detecting DNS Tunnel Activity For Muddywater intrusion set. This is the loading of a specific DLL from an Excel macro which is detected.
-    
-    - **Effort:** elementary
 
 ??? abstract "Data Compressed With Rar"
     
@@ -261,33 +177,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
-??? abstract "Disable Workstation Lock"
-    
-    Registry change in order to disable the ability to lock the computer by using CTRL+ALT+DELETE or CTRL+L. This registry key does not exist by default. Its creation is suspicious and the value set to "1" means an activation. It has been used by FatalRAT, but other attacker/malware could probably use it. This rule needs Windows Registry changes (add,modification,deletion) logging which can be done through Sysmon Event IDs 12,13,14.
-    
-    - **Effort:** elementary
-
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
     
     - **Effort:** advanced
 
-??? abstract "Dllhost Wrong Parent"
-    
-    Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** elementary
-
 ??? abstract "Domain Group And Permission Enumeration"
     
     Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
-    
-    - **Effort:** advanced
-
-??? abstract "Domain Trust Created Or Removed"
-    
-    A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
 
@@ -296,6 +194,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
     
     - **Effort:** elementary
+
+??? abstract "Download Files From Non-Legitimate TLDs"
+    
+    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
+    
+    - **Effort:** master
 
 ??? abstract "Dynamic Linker Hijacking From Environment Variable"
     
@@ -351,12 +255,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Exchange Server Spawning Suspicious Processes"
-    
-    Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
@@ -369,69 +267,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Exploit For CVE-2015-1641"
-    
-    Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
-    
-    - **Effort:** elementary
-
-??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
-    
-    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262. This is a very basic detection method relying on the rare usage of EPS files from Winword.
-    
-    - **Effort:** advanced
-
-??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
-    
-    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189
-    
-    - **Effort:** elementary
-
-??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
-    
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
-    
-    - **Effort:** intermediate
-
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
     
     - **Effort:** intermediate
 
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** elementary
-
-??? abstract "Failed Logon Source From Public IP Addresses"
-    
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
-    
-    - **Effort:** master
-
-??? abstract "File Or Folder Permissions Modifications"
-    
-    Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.
-    
-    - **Effort:** master
-
-??? abstract "FlowCloud Malware"
-    
-    Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
-    
-    - **Effort:** elementary
-
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
-    
-    - **Effort:** intermediate
-
-??? abstract "Formbook Hijacked Process Command"
-    
-    Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
     
     - **Effort:** intermediate
 
@@ -441,29 +285,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "HackTools Suspicious Process Names"
-    
-    Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
-    
-    - **Effort:** elementary
-
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
     
     - **Effort:** intermediate
-
-??? abstract "HarfangLab Process Execution Blocked"
-    
-    HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
-    
-    - **Effort:** elementary
-
-??? abstract "HarfangLab Suspicious Process Behavior Has Been Detected"
-    
-    HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
-    
-    - **Effort:** master
 
 ??? abstract "Hiding Files With Attrib.exe"
     
@@ -486,18 +312,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
 ??? abstract "ICacls Granting Access To All"
     
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
-    
-    - **Effort:** elementary
-
-??? abstract "IcedID Execution Using Excel"
-    
-    Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
-    
-    - **Effort:** elementary
-
-??? abstract "Impacket Wmiexec Module"
-    
-    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
     
     - **Effort:** elementary
 
@@ -531,53 +345,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
-??? abstract "Leviathan Registry Key Activity"
-    
-    Detects registry key used by Leviathan APT in Malaysian focused campaign.
-    
-    - **Effort:** elementary
-
 ??? abstract "List Shadow Copies"
     
     Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
-
-??? abstract "Logonui Wrong Parent"
-    
-    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** intermediate
-
-??? abstract "Lsass Wrong Parent"
-    
-    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** intermediate
-
-??? abstract "MMC Spawning Windows Shell"
-    
-    Detects a Windows command line executable started from MMC process
-    
-    - **Effort:** intermediate
-
-??? abstract "MMC20 Lateral Movement"
-    
-    Detects MMC20.Application Lateral Movement; specifically looks for the spawning of the parent MMC.exe with a command line of "-Embedding" as a child of svchost.exe.
-    
-    - **Effort:** intermediate
-
-??? abstract "MOFComp Execution"
-    
-    Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
-    
-    - **Effort:** intermediate
-
-??? abstract "MS Office Product Spawning Exe in User Dir"
-    
-    Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
-    
-    - **Effort:** intermediate
 
 ??? abstract "MSBuild Abuse"
     
@@ -609,18 +381,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** master
 
-??? abstract "Microsoft Office Product Spawning Windows Shell"
-    
-    Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
-    
-    - **Effort:** advanced
-
-??? abstract "Microsoft Office Spawning Script"
-    
-    Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
-    
-    - **Effort:** intermediate
-
 ??? abstract "Msdt (Follina) File Browse Process Execution"
     
     Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
@@ -632,12 +392,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
     
     - **Effort:** elementary
-
-??? abstract "Mshta Suspicious Child Process"
-    
-    Detects the use of various web request methods executed remotely via Windows PowerShell
-    
-    - **Effort:** intermediate
 
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -687,12 +441,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** master
 
-??? abstract "Netsh Program Allowed With Suspicious Location"
-    
-    Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Netsh RDP Port Forwarding"
     
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
@@ -741,12 +489,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "NjRat Registry Changes"
-    
-    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
-    
-    - **Effort:** intermediate
-
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -759,23 +501,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "OceanLotus Registry Activity"
-    
-    Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** intermediate
-
 ??? abstract "OneNote Embedded File"
     
     Detects creation or uses of OneNote embedded files with unusual extensions.  
     
     - **Effort:** intermediate
-
-??? abstract "OneNote Suspicious Children Process"
-    
-    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
-    
-    - **Effort:** elementary
 
 ??? abstract "Opening Of a Password File"
     
@@ -795,18 +525,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** advanced
 
-??? abstract "Pandemic Windows Implant"
-    
-    Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** intermediate
-
-??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
-    
-    The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
-    
-    - **Effort:** intermediate
-
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
@@ -824,12 +542,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
     
     - **Effort:** elementary
-
-??? abstract "Possible Replay Attack"
-    
-    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
-    
-    - **Effort:** intermediate
 
 ??? abstract "PowerCat Function Loading"
     
@@ -891,12 +603,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
-??? abstract "Process Memory Dump Using Createdump"
-    
-    Detects the use of createdump.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
-    
-    - **Effort:** elementary
-
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
     Detects the use of rdrleakdiag.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
@@ -927,23 +633,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** master
 
-??? abstract "QakBot Process Creation"
-    
-    Detects QakBot like process executions
-    
-    - **Effort:** intermediate
-
 ??? abstract "Qakbot Persistence Using Schtasks"
     
     Detects possible Qakbot persistence using schtasks.
     
     - **Effort:** intermediate
-
-??? abstract "RDP Sensitive Settings Changed"
-    
-    Detects changes to RDP terminal service sensitive settings. Logging for registry events is needed in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** advanced
 
 ??? abstract "RDP Session Discovery"
     
@@ -957,12 +651,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
-??? abstract "RUN Registry Key Created From Suspicious Folder"
-    
-    Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
-    
-    - **Effort:** advanced
-
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
@@ -974,18 +662,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
     
     - **Effort:** elementary
-
-??? abstract "Rare Logonui Child Found"
-    
-    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
-    
-    - **Effort:** advanced
-
-??? abstract "Rare Lsass Child Found"
-    
-    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
 
 ??? abstract "Rclone Process"
     
@@ -1023,53 +699,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** advanced
 
-??? abstract "STRRAT Scheduled Task"
-    
-    Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
-    
-    - **Effort:** intermediate
-
 ??? abstract "Schtasks Persistence With High Privileges"
     
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
-
-??? abstract "Schtasks Suspicious Parent"
-    
-    Detects schtasks started from suspicious and/or unusual processes.
-    
-    - **Effort:** intermediate
-
-??? abstract "Searchindexer Wrong Parent"
-    
-    Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
-    
-    - **Effort:** intermediate
-
-??? abstract "Searchprotocolhost Child Found"
-    
-    SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
-
-??? abstract "Searchprotocolhost Wrong Parent"
-    
-    Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
-    
-    - **Effort:** intermediate
-
-??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
-    
-    Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
-    
-    - **Effort:** elementary
-
-??? abstract "Smss Wrong Parent"
-    
-    Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
-    
-    - **Effort:** intermediate
 
 ??? abstract "Socat Relaying Socket"
     
@@ -1089,35 +723,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "SolarWinds Wrong Child Process"
-    
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
-    
-    - **Effort:** intermediate
-
-??? abstract "Spoolsv Wrong Parent"
-    
-    Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
     
     - **Effort:** intermediate
-
-??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
-    
-    Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
-    
-    - **Effort:** intermediate
-
-??? abstract "Sticky Key Like Backdoor Usage"
-    
-    Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
-    
-    - **Effort:** elementary
 
 ??? abstract "Suncrypt Parameters"
     
@@ -1137,18 +747,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Cmd.exe Command Line"
-    
-    Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
-    
-    - **Effort:** advanced
-
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Control Process"
     
     Detects suspicious execution of control.exe process when used to execute a DLL file.
@@ -1161,23 +759,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious DNS Child Process"
-    
-    Detects suspicious processes spawned by the dns.exe process. It could be a great indication of the exploitation of the DNS RCE bug reported in CVE-2020-1350 (SIGRED).
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
     - **Effort:** elementary
-
-??? abstract "Suspicious Driver Loaded"
-    
-    Checks the registry key for suspicious driver names that are vulnerable most of the time and loaded in a specific location by the KDU tool from hfiref0x. Some drivers are used by several SysInternals tools, which should have been whitelisted in the filter condition. The driver named "DBUtilDrv2" has been removed as it caused too many false positives unfortunately. It can be added under "drv_name" if more coverage is wanted. This rule needs registry key monitoring (can be done with Sysmon Event IDs 12,13 and 14).
-    
-    - **Effort:** intermediate
 
 ??? abstract "Suspicious Finger Usage"
     
@@ -1185,21 +771,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious HWP Child Process"
-    
-    Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
-    
-    - **Effort:** elementary
-
 ??? abstract "Suspicious Mshta Execution"
     
     Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Mshta Execution From Wmi"
-    
-    Detects mshta executed by wmiprvse as parent. It has been used by TA505 with some malicious documents.
     
     - **Effort:** intermediate
 
@@ -1215,12 +789,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Outlook Child Process"
-    
-    Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
     Detects suspicious PowerShell invocation command parameters
@@ -1232,18 +800,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects new commands that add new printer port which point to suspicious file
     
     - **Effort:** advanced
-
-??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
-    
-    Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Regsvr32 Execution"
-    
-    Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
-    
-    - **Effort:** intermediate
 
 ??? abstract "Suspicious Rundll32.exe Execution"
     
@@ -1293,18 +849,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** advanced
 
-??? abstract "Svchost Wrong Parent"
-    
-    Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
-    
-    - **Effort:** advanced
-
-??? abstract "Sysmon Windows File Block Executable"
-    
-    Sysmon has blocked an executable file from being written to the disk. This could be a malicious binary to investigate.  
-    
-    - **Effort:** master
-
 ??? abstract "Sysprep On AppData Folder"
     
     Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
@@ -1317,81 +861,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** master
 
-??? abstract "Taskhost Wrong Parent"
-    
-    Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
-    
-    - **Effort:** intermediate
-
-??? abstract "Taskhost or Taskhostw Suspicious Child Found"
-    
-    Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
-    
-    - **Effort:** advanced
-
-??? abstract "Taskhostw Wrong Parent"
-    
-    Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
-    
-    - **Effort:** intermediate
-
-??? abstract "Trickbot Malware Activity"
-    
-    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
-    
-    - **Effort:** intermediate
-
-??? abstract "UAC Bypass Using Fodhelper"
-    
-    Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** intermediate
-
-??? abstract "UAC Bypass Via Sdclt"
-    
-    Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
-    
-    - **Effort:** elementary
-
-??? abstract "UAC Bypass via Event Viewer"
-    
-    Detects UAC bypass method using Windows event viewer. 
-    
-    - **Effort:** elementary
-
-??? abstract "Ursnif Registry Key"
-    
-    Detects a new registry key created by Ursnif malware. The rule requires to log for Registry Events, which can be done using SYsmon's Event IDs 12,13 and 14.
-    
-    - **Effort:** elementary
-
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
-    
-    - **Effort:** intermediate
-
-??? abstract "Usage Of Sysinternals Tools"
-    
-    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
-    
-    - **Effort:** master
-
-??? abstract "User Account Created"
-    
-    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
-    
-    - **Effort:** master
-
-??? abstract "User Account Deleted"
-    
-    Detects local user deletion
-    
-    - **Effort:** master
-
-??? abstract "Userinit Wrong Parent"
-    
-    Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
 
@@ -1413,12 +885,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** advanced
 
-??? abstract "WMIC Command To Determine The Antivirus"
-    
-    Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
-    
-    - **Effort:** intermediate
-
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
@@ -1431,21 +897,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** master
 
-??? abstract "Webshell Execution W3WP Process"
-    
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
-    
-    - **Effort:** advanced
-
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
     Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Credential Editor Registry Key"
-    
-    Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
 
@@ -1473,12 +927,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
-??? abstract "Windows Defender History Deleted"
-    
-    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** master
-
 ??? abstract "Windows Defender History Directory Deleted"
     
     Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -1497,65 +945,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
-??? abstract "Windows Defender Tampering Detected"
-    
-    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
-
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
     
     - **Effort:** master
-
-??? abstract "Windows Registry Persistence COM Key Linking"
-    
-    Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
-    
-    - **Effort:** master
-
-??? abstract "Windows Update LolBins"
-    
-    This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.
-    
-    - **Effort:** elementary
-
-??? abstract "Wininit Wrong Parent"
-    
-    Windows Boot is a background application launcher for the Windows operating system. Wininit.exe is responsible for performing the Windows initialization process. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** intermediate
-
-??? abstract "Winlogon wrong parent"
-    
-    Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** advanced
-
-??? abstract "Winrshost Wrong Parent"
-    
-    Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
-    
-    - **Effort:** intermediate
-
-??? abstract "Winword Document Droppers"
-    
-    Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
-    
-    - **Effort:** elementary
-
-??? abstract "Winword wrong parent"
-    
-    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
-    
-    - **Effort:** advanced
 
 ??? abstract "Wmic Process Call Creation"
     
@@ -1566,18 +960,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
 ??? abstract "Wmic Service Call"
     
     Detects either remote or local code execution using wmic tool.
-    
-    - **Effort:** intermediate
-
-??? abstract "Wmiprvse Wrong Parent"
-    
-    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
-    
-    - **Effort:** intermediate
-
-??? abstract "Wsmprovhost Wrong Parent"
-    
-    Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
 
