@@ -32,7 +32,7 @@ Configure a [Logpush job](https://developers.cloudflare.com/logs/reference/logpu
 To do so, you can manage Logpush with cURL:
 
 ```bash
-$ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/logpush/jobs \
+$ curl -X POST https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUNT_ID>/logpush/jobs \
 -H "Authorization: Bearer <CLOUDFLARE_API_TOKEN>" \
 -H "Content-Type: application/json" \
 --data '{
@@ -51,15 +51,20 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
   "errors": [],
   "messages": [],
   "result": {
-    "id": 148,
+    "id": <ID>,
     "dataset": "gateway_network",
-    "enabled": false,
-    "name": "<DOMAIN_NAME>",
+    "frequency": "high",
+    "kind": "",
+    "max_upload_bytes": 5000000,
+    "max_upload_records": 1000,
+    "enabled": true,
+    "name": null,
     "logpull_options": "fields=<LIST_OF_FIELDS>",
     "destination_conf": "https://intake.sekoia.io/plain/batch?header_X-SEKOIAIO-INTAKE-KEY=<YOUR_INTAKE_KEY>",
     "last_complete": null,
     "last_error": null,
-    "error_message": null
+    "error_message": null,
+    "time_created": "<TIMESTAMP>"
   },
   "success": true
 }
@@ -69,8 +74,8 @@ $ curl -X POST https://api.cloudflare.com/client/v4/zones/<CLOUDFLARE_ZONE_ID>/l
     Replace :
 
     - `<YOUR_INTAKE_KEY>` with the Intake key you generated in the [Create the intake on SEKOIA.IO](#create-the-intake-on-sekoiaio) step.
+    - `<CLOUDFLARE_ACCOUNT_ID>` with the ACCOUNT_ID found on the overview page
     - `<CLOUDFLARE_API_TOKEN>` with the API Token you generated
-    - `<CLOUDFLARE_ZONE_ID>` with the Zone ID you grabbed
 
 {!_shared_content/operations_center/integrations/cloudflare_useful_accounts_scoped_api_endpoints.md!}
 
