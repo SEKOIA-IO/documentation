@@ -2,6 +2,12 @@ Changelog _last update on 2023-05-02_
 
 ## Changelog
 
+### Internet Scanner
+  - 28/04/2023 - minor - Support for standard ECS FW fields
+    
+### Internet Scanner Target
+  - 28/04/2023 - minor - Support for standard ECS FW fields
+    
 ### Audio Capture via PowerShell
   - 18/04/2023 - minor - Use more specific patterns to fix false positives.
     

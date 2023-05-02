@@ -4,16 +4,24 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
 
 ??? abstract "Internet Scanner"
     
-    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP.
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/04/2023 - minor - Support for standard ECS FW fields
+            
 ??? abstract "Internet Scanner Target"
     
-    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address.
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/04/2023 - minor - Support for standard ECS FW fields
+            
 **Active Scanning**
 
 ??? abstract "Burp Suite Tool Detected"
@@ -36,16 +44,24 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Internet Scanner"
     
-    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP.
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/04/2023 - minor - Support for standard ECS FW fields
+            
 ??? abstract "Internet Scanner Target"
     
-    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address.
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/04/2023 - minor - Support for standard ECS FW fields
+            
 ??? abstract "WAF Block Rule"
     
     Detects when one of WAF rule blocked an HTTP request 
