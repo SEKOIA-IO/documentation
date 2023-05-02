@@ -1,4 +1,4 @@
-Rules catalog includes **685 built-in detection rules** ([_last update on 2023-04-26_](rules_changelog.md)).
+Rules catalog includes **686 built-in detection rules** ([_last update on 2023-05-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6257,6 +6257,12 @@ Rules catalog includes **685 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Process Memory Dump Using Comsvcs"
     
     Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
+    
+    - **Effort:** elementary
+    
+??? abstract "Process Memory Dump Using Createdump"
+    
+    Detects the use of createdump.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
     
