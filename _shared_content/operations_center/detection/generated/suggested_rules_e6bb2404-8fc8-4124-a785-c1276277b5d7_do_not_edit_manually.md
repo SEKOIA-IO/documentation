@@ -75,6 +75,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     
     - **Effort:** intermediate
 
+??? abstract "Okta Phishing Detection with FastPass Origin Check"
+    
+    Okta's FastPass prevents known phishing sites.
+    
+    - **Effort:** elementary
+
 ??? abstract "Okta Policy Modified or Deleted"
     
     Detects when an Okta policy is modified or deleted.

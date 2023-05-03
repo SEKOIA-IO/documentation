@@ -3,6 +3,24 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **AWS GuardDuty [BETA]** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x AWS GuardDuty [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3e060900-4004-4754-a597-d2944a601930_do_not_edit_manually.json){ .md-button }
+??? abstract "AWS GuardDuty High Severity Alert"
+    
+    GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS GuardDuty Low Severity Alert"
+    
+    GuardDuty has detected a threat with a low severity level. A low severity level indicates attempted suspicious activity that did not compromise your network, for example, a port scan or a failed intrusion attempt.
+    
+    - **Effort:** master
+
+??? abstract "AWS GuardDuty Medium Severity Alert"
+    
+    GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
+    
+    - **Effort:** advanced
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
