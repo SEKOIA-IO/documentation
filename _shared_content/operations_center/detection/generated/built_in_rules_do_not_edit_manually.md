@@ -1,4 +1,4 @@
-Rules catalog includes **686 built-in detection rules** ([_last update on 2023-05-02_](rules_changelog.md)).
+Rules catalog includes **691 built-in detection rules** ([_last update on 2023-05-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -788,6 +788,12 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "Okta Phishing Detection with FastPass Origin Check"
+    
+    Okta's FastPass prevents known phishing sites.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Phishing Detected By Vade For M365"
     
     Vade Secure product Vade for M365 has detected a phishing attempt.
@@ -1070,6 +1076,24 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
     Detects changes to the EC2 instance startup script. The shell script will be executed as root/SYSTEM everytime the specific instances are booted up.
     
     - **Effort:** intermediate
+    
+??? abstract "AWS GuardDuty High Severity Alert"
+    
+    GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS GuardDuty Low Severity Alert"
+    
+    GuardDuty has detected a threat with a low severity level. A low severity level indicates attempted suspicious activity that did not compromise your network, for example, a port scan or a failed intrusion attempt.
+    
+    - **Effort:** master
+    
+??? abstract "AWS GuardDuty Medium Severity Alert"
+    
+    GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
+    
+    - **Effort:** advanced
     
 ??? abstract "Alternate PowerShell Hosts Pipe"
     
@@ -1747,6 +1771,24 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
     
 **User Execution**
 
+??? abstract "AWS GuardDuty High Severity Alert"
+    
+    GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS GuardDuty Low Severity Alert"
+    
+    GuardDuty has detected a threat with a low severity level. A low severity level indicates attempted suspicious activity that did not compromise your network, for example, a port scan or a failed intrusion attempt.
+    
+    - **Effort:** master
+    
+??? abstract "AWS GuardDuty Medium Severity Alert"
+    
+    GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Cobalt Strike Default Beacons Names"
     
     Detects the default names of Cobalt Strike beacons / payloads.
@@ -4939,14 +4981,6 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-**Disabling Security Tools**
-
-??? abstract "AWS GuardDuty Detector Deleted"
-    
-    Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
-    
-    - **Effort:** elementary
-    
 **Modify Registry**
 
 ??? abstract "Blue Mockingbird Malware"
@@ -5568,6 +5602,12 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
     Detects when an attacker is trying to evade defenses by deleting or disabling EventBridge rules
     
     - **Effort:** master
+    
+??? abstract "AWS GuardDuty Detector Deleted"
+    
+    Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
+    
+    - **Effort:** elementary
     
 ??? abstract "AWS GuardDuty Detector Suspended"
     
@@ -6353,6 +6393,12 @@ Rules catalog includes **686 built-in detection rules** ([_last update on 2023-0
     Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
+    
+??? abstract "Write To File In Sudoers.d Folder"
+    
+    A user tried to write something to a file in /etc/sudoers.d. It can be used to elevate privilege related to sudo and make it persistent.
+    
+    - **Effort:** advanced
     
 **Network Sniffing**
 
