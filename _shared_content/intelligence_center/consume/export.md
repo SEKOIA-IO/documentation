@@ -10,5 +10,3 @@ The export modal lets you to select:
 The CSV format will convert some values (such as the TLP, sources and kill chain phases) to a human-readable format instead of IDs.
 
 The MITRE ATT&CK format can be used in the MITRE ATT&CK® Navigator (https://mitre-attack.github.io/attack-navigator/) to generate a more visual ATT&CK matrix.
-
-![Data Export](/assets/intelligence_center/data_export.gif)
