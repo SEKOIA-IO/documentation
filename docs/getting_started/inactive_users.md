@@ -19,7 +19,6 @@ If you need to reactivate a deactivated account on your community, follow these 
 2. Locate the deactivated user's name and click the ellipsis `"..."` menu on the right-hand side. You can use the `Filter by Status` and select `Deactivated` to list only deactivated accounts 
 3. Choose the `Reactivate` option and confirm your choice
 
-
 !!! note
     Please note that only admins have the right permissions to reactivate accounts. Additionally, the reactivated user must re-authenticate their account **at least once before midnight** **on the same day**. If they fail to do so within this time frame, their account will be deactivated again.
 
@@ -28,3 +27,4 @@ If you need to reactivate a deactivated account on your community, follow these 
 If your account has been deactivated and you need to reconnect to the platform, contact your community's admin as they are the ones who can [reactivate your account](#how-to-reactivate-an-account). 
 
 After your account has been reactivated, it's essential to re-authenticate your account by logging in **at least once before midnight on the same day.** If you do not log in within this time frame, your account will be deactivated again.
+
