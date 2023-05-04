@@ -47,6 +47,7 @@ nav:
   - 4. Manage users:
     - Invite users to join: getting_started/invite_users.md
     - Manage users: getting_started/manage_users.md
+    - Deactivate inactive users: getting_started/inactive_users.md
     - Roles and Permissions:
       - Roles: getting_started/roles.md
       - Permissions: getting_started/Permissions.md
