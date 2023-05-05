@@ -102,20 +102,79 @@ The Alert type is defined according to a custom set of values derived from the R
 
 ## Alerts listing
 
-When you first connect to [SEKOIA.IO](http://app.sekoia.io/), the alerts list will display the last 10 alerts raised on your community ordered by `Date`.
+When you first connect to Sekoia.io, the alerts page will display the last 10 alerts raised on your community ordered by `Most Recent` ones.
+
 ![alert_listing](/assets/operation_center/alerts/alert_listing.png){: style="max-width:100%"}
 
 ### Main features
 
-From the left to the right, 7 features are available on the top screen:
+From the left to the right, several features are available on the top screen:
 
-- A `refresh` button to show the newly generated alerts
-- Two tabs: `All` to list all alerts and `New today` to list today’s alerts
+- A `refresh` button in the breadcrumb next to the page title `Alerts` to show the newly generated alerts
+- A `Filters`button to filter your alerts' table (more details here)
 - A `show/hide` columns button that lets you display fields you’re interested in. You can select or deselect columns but also drag and drop them depending on the order you need
 - Filters that let you display alerts by order of `Most Frequent`, `Recently Updated`, `Recently Created` or `Most Urgent`
-- Filters that let you display alerts by `status`: Pending, Acknowledged, Ongoing, Rejected or Closed
-- Advanced filters capacities: Date range, Entity, Urgency, Type, Rule, Asset, Threats, Source and Target
-- Direct links to the [Intelligence Center](https://docs.sekoia.io/cti/) by clicking on the listed `related threats`
+
+### Filters 
+
+The new filter feature will give analysts the ability to construct complex queries and exclude specific values, providing them with greater control and allowing them to make more informed decisions based on a richer set of data.
+
+#### Apply filters
+
+To use complex filters, just click on the `Filter` button or hit your `f` key on your keyboard. 
+
+The menu is now opened and you can directly search for the filter you want to apply. Right after you choose your filter, you are invited to search and select one or multiple values for this filter.
+
+You can change the operator (filer *is* value, filter *is not* value, filter *is any of* values) to have more advanced exclusion capacities.
+
+!!! tip
+    You can combine filters and add as many filters as you want. The default operator between filters is AND.
+
+!!! note 
+    To edit filters (values, operator), just click on the value or the operator and select what you need. These new filters will be applied automatically.
+
+#### Keyboard navigation
+
+To improve navigation and accessibility, you can now navigate within the filter component just by using your keyboard.
+
+Here is a list of keyboard shortcuts that can be useful to you: 
+
+| Key | Action |
+| --- | --- |
+| Letter “f” | Open the filter menu |
+| Up and down arrows | Navigate through filter or values lists |
+| Enter | Selection values |
+| Esc | Close the filter menu |
+
+#### Pre-made filters
+
+At the top of the available filters list, you will find two pre-made filters :  `New today` and `Open`.  
+
+We hope these two most used filters will save you time!
+
+| Pre-made filter | Composition |
+| --- | --- |
+| Open | Status is *any of* Acknowledged, Ongoing, Pending |
+| New Today | Created at *within* Today |
+
+#### List of all filters
+
+Here is the updated list of all available filters. 
+
+| Filter | Composition |
+| --- | --- |
+| Asset | Lists impacted assets within the alert |
+| Created at | Select a date of creation (date range, relative dates…) |
+| Entity | Select entities where alerts happened that are listed in your alert table |
+| Rule | Lists all rules that have raised alerts. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the “+” button |
+| Source | Lists all alert sources. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the “+” button  |
+| Status | Can be acknowledged, closed, ongoing, pending, and rejected  |
+| Target | Lists all alert targets. You can also filter by a specific value by hovering on a value in the Source column in the table and clicking on the “+” button  |
+| Threat | Lists all threats that are related to alerts.  |
+| Type | Lists all types of alerts present in the table. The type of rule is defined by the detection rule that triggered the alert.  |
+| Updated | Date of last update (date range, relative dates…) |
+| Urgency | High [75-100], Medium (50-75], Low [0-50] |
+
 
 !!! tip
     To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.  
@@ -156,12 +215,14 @@ By default, the alert listing displays the following columns:
 - A `first seen` and `last seen` date
 - The `ID` and the `UUID` of the alert
 - The `source` and `target`of the alert
+- The `Commu.`which means the communities related to the alerts 
 
-> Your custom configuration will be saved in order to allow you to keep your selected filters when you come back to this page.
->
-> For Partners, an additional filter is available in order to display all or a subset of alerts related to their managed communities.
->
-> The alert listing also displays the Communities related to the alerts.
+!!! note
+    Your custom configuration will be saved in order to allow you to keep your selected filters when you come back to this page.
+
+!!! tip
+    For Partners, an additional filter is available in order to display all or a subset of alerts related to their managed communities.
+
 
 ## Alert details
 
