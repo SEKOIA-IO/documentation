@@ -37,6 +37,7 @@ Once the command is executed we should have a new module created with all the bo
 
 ```
 TestHTTP
+├── Dockerfile
 ├── main.py
 ├── manifest.json
 ├── pyproject.toml
@@ -48,43 +49,82 @@ TestHTTP
     └── __init__.py
 ```
 
+### Specify the requirements
+
+Our trigger and action are going to use `requests` to send HTTP requests, so the first step is to add the package in our requirements.
+
+Poetry can be used to add the requirements by simply running:
+
+```
+poetry add requests
+```
+
+!!! note
+    If poetry is not installed on your system you may need to run `pip install poetry` before.
+
 ## Create our trigger
 
 Our trigger will take one argument, the URL that exposed the objects we want to handle with our module.
 This argument will be required.
 
-On the other hand, our action will contain a single string object.
-
-```json
-{
-    "description": "Get last entries in the listing returned by HTTP endpoint",
-    "slug": "Pull",
-    "name": "Fetch new objects from HTTP",
-    "arguments": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "properties": {
-        "url": {
-          "type": "string",
-          "description": "HTTP Url to monitor"
-        }
-      },
-      "required": [
-        "url"
-      ],
-      "title": "Configuration of the trigger",
-      "type": "object"
-    },
-    "results": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "properties": {},
-      "title": "The events"
-    },
-    "uuid": "a5af82d3-d035-4e7e-8ccf-1953906d73ff"    
-}
-```
-
 ### Add the code
 
+Inside our Python package `testhttp_modules` we can create a new file `trigger_new_entries.py` that will contain the logic of our trigger:
+
+```python
+import time
+
+from pydantic import BaseModel, HttpUrl
+import requests
+from requests import HTTPError
+from sekoia_automation.trigger import Trigger  # (1)!
+
+
+class TriggerConfiguration(BaseModel):
+    url: HttpUrl
+
+
+class Entry(BaseModel):
+    id: int
+    value: str
+    timestamp: int
+
+
+class NewEntries(BaseModel):
+    entries: list[Entry]
+
+
+class NewEntriesTrigger(Trigger):
+    configuration: TriggerConfiguration  # (2)!
+    results_model = NewEntries  # (3)!
+
+    def run(self):  # (4)!
+        while True:
+            try:
+                response = requests.get(self.configuration.url)
+                response.raise_for_status()
+
+                entries = response.json()
+                self.send_event(  # (5)!
+                    event_name=f"Pushing {len(entries)} new entries", 
+                    event=NewEntries(entries=entries),
+                )
+            except HTTPError:
+                self.log(  # (6)!
+                    f"HTTP Request failed: {self.configuration.url} with {response.status_code}",
+                    level="error",
+                )
+            time.sleep(3600)
+```
+
+1. We import the base `Trigger` class from the SEKOIA.IO automation SDK
+2. Define the expected configuration using the `Pydantic` lib
+3. Define the format of the results using the `Pydantic` lib
+4. The child triggers must define the `run` method that runs the trigger.
+  This method must run forever
+  It must handle all the expected errors 
+1. The base `Trigger` class provides a `send_event` method that allows to trigger a new event. For each playbook having this trigger a new run will be started with `event` as argument.
+2. The `log` method allows to log errors and informations. Those logs are visible in the UI.
 
 
 ## Create our action
@@ -106,23 +146,6 @@ The result of our action will contain:
 ### Add the code
 
 Now that we have a manifest describing our action we can add the code!
-
-
-#### Specify the requirements
-
-Our action is going to use `requests` to send HTTP requests, so the first step is to add the package in our requirements.
-
-Poetry can be used to add the requirements by simply running:
-
-```
-poetry add requests
-```
-
-!!! note
-    If poetry is not installed on your system you may need to run `pip install poetry` before.
-
-
-#### Create the action
 
 Inside our Python package `testhttp_modules` we can create a new file `action_request.py` that will contain the logic of our action:
 
@@ -185,7 +208,7 @@ class Request(Action):  # (4)!
 7. The `error` method will mark the action as failed and send back the error to the API.
 8. Finally, if everything went well we can return the results. The base action will take care of sending it back to the playbook API.
 
-### Generate the manifest and update the entrypoint
+## Generate the manifest and update the entrypoint
 
 Now that the code has been created we can generate the manifest and update the entrypoint by calling
 
@@ -196,99 +219,185 @@ sekoia-automation generate-files-from-code
 !!! note
     The command must be executed from the root of the module or we can provide the path to the module as argument
 
-### Update the manifest
+### Generated manifests
 
-The previous step generated an `action_request.json` manifest file for us.
-We can edit the manifest to add a description:
+The previous step generated two manifests files for us:
 
-```json
-{
-  "name": "Request URL",
-  "uuid": "429e8715-fdde-4064-b8e8-96e408917d25",
-  "description": "Requests a resource at a specified URL and returns the response",
-  "slug": "Request",
-  "arguments": {  // (1)!
-    "title": "RequestArguments",
-    "type": "object",
-    "properties": {
-      "url": {
-        "title": "Url",
-        "minLength": 1,
-        "maxLength": 2083,
-        "format": "uri",
-        "type": "string"
+* `trigger_newentriestrigger.json` describing the trigger
+* `action_request.json` for the action
+
+We can edit the manifests to add a description:
+
+=== "action_request.json"
+
+    ```json
+    {
+      "name": "Request URL",
+      "uuid": "429e8715-fdde-4064-b8e8-96e408917d25",
+      "description": "Requests a resource at a specified URL and returns the response",
+      "slug": "Request",
+      "docker_parameters": "Request",
+      "arguments": {  // (1)!
+        "title": "RequestArguments",
+        "type": "object",
+        "properties": {
+          "url": {
+            "title": "Url",
+            "minLength": 1,
+            "maxLength": 2083,
+            "format": "uri",
+            "type": "string"
+          },
+          "headers": {
+            "title": "Headers",
+            "type": "object"
+          },
+          "method": {
+            "title": "Method",
+            "enum": [
+              "get",
+              "post",
+              "put",
+              "patch",
+              "delete"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [  // (2)!
+          "url",
+          "method"
+        ]
       },
-      "headers": {
-        "title": "Headers",
-        "type": "object"
+      "results": {  // (3)!
+        "title": "Response",
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "title": "Status Code",
+            "type": "integer"
+          },
+          "headers": {
+            "title": "Headers",
+            "type": "object"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status_code",
+          "headers",
+          "text"
+        ]
+      }
+    }
+    ```
+
+    1.  Arguments is a JSON Schema that describes the expected arguments. 
+        It was generated based on the `RequestArguments` class we defined
+    2.  Required arguments have been specified in the schema
+    3.  Results is a JSON Schema describing the output of the action.
+        It was generated based on the `Response` class we defined
+
+=== "trigger_newentriestrigger.json"
+
+    ```json
+    {
+      "name": "NewEntriesTrigger",
+      "description": "Fetch new entries from the remote URL",
+      "uuid": "acc45c1f-f203-55c2-96e7-87c534e7d2e4",
+      "docker_parameters": "NewEntriesTrigger",
+      "arguments": {  // (1)!
+        "title": "TriggerConfiguration",
+        "type": "object",
+        "properties": {
+          "url": {
+            "title": "Url",
+            "minLength": 1,
+            "maxLength": 2083,
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "required": [  // (2)!
+          "url"
+        ]
       },
-      "method": {
-        "title": "Method",
-        "enum": [
-          "get",
-          "post",
-          "put",
-          "patch",
-          "delete"
+      "results": {  // (3)!
+        "title": "NewEntries",
+        "type": "object",
+        "properties": {
+          "entries": {
+            "title": "Entries",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Entry"
+            }
+          }
+        },
+        "required": [
+          "entries"
         ],
-        "type": "string"
+        "definitions": {
+          "Entry": {
+            "title": "Entry",
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Id",
+                "type": "integer"
+              },
+              "value": {
+                "title": "Value",
+                "type": "string"
+              },
+              "timestamp": {
+                "title": "Timestamp",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "value",
+              "timestamp"
+            ]
+          }
+        }
       }
-    },
-    "required": [  // (2)!
-      "url",
-      "method"
-    ]
-  },
-  "results": {  // (3)!
-    "title": "Response",
-    "type": "object",
-    "properties": {
-      "status_code": {
-        "title": "Status Code",
-        "type": "integer"
-      },
-      "headers": {
-        "title": "Headers",
-        "type": "object"
-      },
-      "text": {
-        "title": "Text",
-        "type": "string"
-      }
-    },
-    "required": [
-      "status_code",
-      "headers",
-      "text"
-    ]
-  }
-}
-```
+    }
+    ```
 
-1.  Arguments is a JSON Schema that describes the expected arguments. 
-    It was generated based on the `RequestArguments` class we defined
-2.  Required arguments have been specified in the schema
-3.  Results is a JSON Schema describing the output of the action.
-    It was generated based on the `Response` class we defined
+    1.  Arguments is a JSON Schema that describes the expected arguments. 
+        It was generated based on the `TriggerConfiguration` class we defined
+    2.  Required arguments have been specified in the schema
+    3.  Results is a JSON Schema describing the output of the trigger.
+        It was generated based on the `NewEntries` class we defined
 
 
 #### Generated entrypoint
 
-The `main.py` entrypoint file has been updated as well. It now contains our action.
+The `main.py` entrypoint file has been updated as well. It now contains our trigger and our action.
 
 ```python
 from testhttp_modules import TesthttpModule
 
-from testhttp_modules.action_request import Request  # (1)!
+from testhttp_modules.trigger_new_entries import NewEntriesTrigger  # (1)!
+from testhttp_modules.action_request import Request  # (2)!
 
 
 if __name__ == "__main__":
     module = TesthttpModule()
-    module.register(Request, "Request")  # (2)!
+    module.register(NewEntriesTrigger, "NewEntriesTrigger")  # (3)!
+    module.register(Request, "Request")    # (4)!
     module.run()
+
 ```
 
-1. Our action is imported
-2. Action is registered. The first argument of `module.register` is our action class and the second is the `slug` that is specified in our action's manifest.
+1. Our trigger is imported.
+2. Our action is imported.
+3. Trigger is registered. The first argument of `module.register` is our action class and the second is the `docker_parameter` that is specified in our trigger's manifest.
+4. Action is registered.
 
-That's it! Now we have a module containing our action and ready to run !
+That's it! Now we have a module ready to run !

@@ -36,6 +36,16 @@ The roles needed for your key will depend on what you want to achieve. If you pl
 Our documentation provides information on each endpoint and specifies the required permissions.
 
 ## Documentation organization
+
+### Guides
+
+The documentation offers a few guides:
+
+* A small page on [filtering](/xdr/develop/guides/filtering/)
+* A guide on [how to create automation modules](/xdr/develop/guides/automation/overview/)
+
+### APIs
+
 Our API documentation is divided according to the different functionalities the platform offers:
 
 * [Authentication and Community](/xdr/develop/rest_api/community/)
@@ -50,7 +60,7 @@ Our API documentation is divided according to the different functionalities the 
 
 In each of these categories, you will find the different actions available.
 
-### Structure
+#### Structure
 Each action is described and contains the following information:
 
 * Action name

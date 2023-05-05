@@ -28,8 +28,9 @@ MyCyberEnricher/
 ├── main.py  // (5)!
 ├── poetry.lock  // (6)!
 ├── pyproject.toml  // (7)!
-├── cyber_enricher/  // (8)!
-├── tests/  // (9)!
+├── Dockerfile  // (8)!
+├── cyber_enricher/  // (9)!
+└── tests/  // (10)!
 ```
 
 1. the module manifest file that specifies elements such as the name or the module's configuration
@@ -39,8 +40,9 @@ MyCyberEnricher/
 5. the code entrypoint
 6. the poetry dependency listing file
 7. the python project definition
-8. the module source code
-9. the tests source code
+8. Dockerfile to build the module
+9. the module source code
+10. the tests source code
 
 ## The manifest file
 
@@ -123,7 +125,8 @@ Here's an annotated example of an action manifest:
     "uuid": "09e9dc3a-aeb2-4dde-ad96-3ee543afdf51",  // (2)!
     "description": "Donwload the given file and save it",
     "slug": "download-file",  // (3)!
-    "arguments": {  // (4)!
+    "docker_parameters": "download-file",  // (4)!
+    "arguments": {  // (5)!
         "$schema": "http://json-schema.org/draft-07/schema#",
         "properties": {
             "url": {
@@ -136,13 +139,13 @@ Here's an annotated example of an action manifest:
                 "type": "object"
             }
         },
-        "required": [  // (5)!
+        "required": [  // (6)!
             "url"
         ],
         "title": "Arguments",
         "type": "object"
     },
-    "results": {  // (6)!
+    "results": {  // (7)!
         "$schema": "http://json-schema.org/draft-07/schema#",
         "properties": {
             "file_path": {
@@ -163,11 +166,12 @@ Here's an annotated example of an action manifest:
 2. The UUID of the trigger/action. It must be unique
 3. The slug name of the trigger/action
       * It allows to execute the appropriate action/trigger in a module that may have many of them 
-4. The arguments expected to run
+4. The Docker parameters that will be specified when running the trigger/action
+5. The arguments expected to run
       * In addition to those arguments, the trigger/action will also have access to the configuration of the module
       * The `arguments` attribute must be a valid JSON Schema object
-5. Arguments can be mandatory
-6. The kind of events this trigger will create or the result of the action
+6. Arguments can be mandatory
+7. The kind of events this trigger will create or the result of the action
       * It is located under the `results` key 
       * The `results` attribute should be a valid JSON Schema object
 
