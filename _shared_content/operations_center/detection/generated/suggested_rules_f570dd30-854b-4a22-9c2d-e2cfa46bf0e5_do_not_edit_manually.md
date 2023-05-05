@@ -137,8 +137,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cloudflare Gateway HTTP** wi
 
 ??? abstract "Cloudflare Gateway HTTP File Blocked By Anti-Virus Scan"
     
-    Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway.
-AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
+    Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway. AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
     
     - **Effort:** advanced
 
