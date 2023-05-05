@@ -1,4 +1,4 @@
-Rules catalog includes **691 built-in detection rules** ([_last update on 2023-05-03_](rules_changelog.md)).
+Rules catalog includes **692 built-in detection rules** ([_last update on 2023-05-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -7220,6 +7220,13 @@ Rules catalog includes **691 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Cloudflare Gateway HTTP File Blocked By Anti-Virus Scan"
+    
+    Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway.
+AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Cobalt Strike DNS Beaconing"
     
     Detects suspicious DNS queries known from Cobalt Strike beacons. We only keep the a high number of DNS requests to avoid false positives. 
@@ -7412,6 +7419,13 @@ Rules catalog includes **691 built-in detection rules** ([_last update on 2023-0
     
 **Ingress Tool Transfer**
 
+??? abstract "Cloudflare Gateway HTTP File Blocked By Anti-Virus Scan"
+    
+    Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway.
+AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
     Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc. 
