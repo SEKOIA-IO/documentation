@@ -13,7 +13,7 @@ intakes_by_uuid = "plugins.intakes_by_uuid:IntakesByUUIDPlugin"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-mkdocs = "^1.4.2"
+mkdocs = "^1.4.3"
 mkdocs-material = "^9.0.1"
 mkdocs-redirects = "^1.2.0"
 markdown-include = "^0.8.1"
