@@ -251,6 +251,8 @@ HTTPProxyURL: "<PROXY_URL>"
 
 If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
+The proxy URL should follow the format `http://user:pass@host:port`.
+
 ## Optional steps
 
 === "Windows"
