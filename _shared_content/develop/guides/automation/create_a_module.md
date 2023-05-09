@@ -20,7 +20,7 @@ pip install sekoia-automation-sdk
 ```
 
 !!! note
-    The SDK needs a python version equal or newer to python3.10
+    The SDK needs a Python version equal or newer to 3.10.
 
 Once the SDK is installed we can use it to create an empty module:
 

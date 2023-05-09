@@ -38,8 +38,8 @@ MyCyberEnricher/
 3. the manifest file of the trigger `trigger_pull_logs`
 4. the logo of the module
 5. the code entrypoint
-6. the poetry dependency listing file
-7. the python project definition
+6. the Poetry dependency listing file
+7. the Python project definition
 8. Dockerfile to build the module
 9. the module source code
 10. the tests source code
