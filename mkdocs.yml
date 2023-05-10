@@ -155,6 +155,7 @@ nav:
           - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
+          - WithSecure Elements: xdr/features/collect/integrations/endpoint/withsecure_elements.md
         - Network:
           - Check Point Firewall: xdr/features/collect/integrations/network/checkpoint.md
           - Cisco:
