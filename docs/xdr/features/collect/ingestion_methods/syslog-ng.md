@@ -99,7 +99,7 @@ To check if syslog-ng is forwarding events to SEKOIA.IO, you can start it with t
 The following output should be displayed:
 
 ```
-[2022-03-31T11:46:55.939706] Syslog connection established; fd='12', server='AF_INET(145.239.192.38:10514)', local='AF_INET(0.0.0.0:0)'
+[2022-03-31T11:46:55.939706] Syslog connection established; fd='12', server='AF_INET(51.159.9.95:10514)', local='AF_INET(0.0.0.0:0)'
 …
 [2022-03-31T11:46:59.319748] Certificate validation progress; subject='CN=ISRG Root X1, O=Internet Security Research Group, C=US', issuer='CN=ISRG Root X1, O=Internet Security Research Group, C=US'
 [2022-03-31T11:46:59.319967] Certificate validation progress; subject='CN=R3, O=Let\'s Encrypt, C=US', issuer='CN=ISRG Root X1, O=Internet Security Research Group, C=US'
