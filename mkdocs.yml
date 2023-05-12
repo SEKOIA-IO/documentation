@@ -80,7 +80,7 @@ nav:
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
           - Nginx: xdr/features/collect/integrations/application/nginx.md
           - OpenSSH: xdr/features/collect/integrations/application/openssh.md
-          - RSA SecureID: xdr/features/collect/integrations/application/rsa_securid.md
+          - RSA SecurID: xdr/features/collect/integrations/application/rsa_securid.md
           - SEKOIA.IO activity logs: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
           - Unbound: xdr/features/collect/integrations/application/unbound.md
         - Cloud and SaaS:
