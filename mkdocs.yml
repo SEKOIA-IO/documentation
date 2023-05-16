@@ -226,6 +226,7 @@ nav:
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
+        - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Cybereason: xdr/features/automate/library/cybereason.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
         - Digital Shadows: xdr/features/automate/library/digital-shadows.md
@@ -377,6 +378,7 @@ nav:
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
+        - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - Detection Rules: tip/features/automate/library/detection-rules.md
         - Digital Shadows: tip/features/automate/library/digital-shadows.md
