@@ -112,7 +112,6 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 	systemctl restart systemd-journald
 	
 	A reboot may be necessary if the audit events are still appearing in the logs.
-	More details:	https://fishilico.github.io/generic-config/sysadmin/systemd.html#logging-audit-logs-and-journald
 
 ### Update
 
