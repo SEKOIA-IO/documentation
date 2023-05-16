@@ -99,6 +99,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
 	To disable audit logging the following should be done as root:
 	
+        ```
 	# Stop listening to audit events
 	systemctl stop systemd-journald-audit.socket 
 	
@@ -110,6 +111,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 	
 	# Restart journald
 	systemctl restart systemd-journald
+       ```
 	
 	A reboot may be necessary if the audit events are still appearing in the logs.
 
