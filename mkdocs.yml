@@ -261,6 +261,7 @@ nav:
         - Sentinel One: xdr/features/automate/library/sentinel-one.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
+        - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
         - Skyhigh Security Secure Web Gateway (SWG): xdr/features/automate/library/skyhigh-security-secure-web-gateway-swg.md
         - Sophos: xdr/features/automate/library/sophos.md
         - Tehtris: xdr/features/automate/library/tehtris.md
@@ -405,6 +406,7 @@ nav:
         - STIX: tip/features/automate/library/stix.md
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
+        - Skyhigh Security: tip/features/automate/library/skyhigh-security.md
         - The Hive: tip/features/automate/library/the-hive.md
         - Tranco: tip/features/automate/library/tranco.md
         - Triage: tip/features/automate/library/triage.md
