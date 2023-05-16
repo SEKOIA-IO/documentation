@@ -6,9 +6,6 @@ type: intake
 
 Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON events.
 
-!!! warning
-    This format is still in beta, please use it wisely.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_c10307ea-5dd1-45c6-85aa-2a6a900df99b_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/c10307ea-5dd1-45c6-85aa-2a6a900df99b.md!}
