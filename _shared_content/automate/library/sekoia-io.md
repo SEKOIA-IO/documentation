@@ -1,6 +1,8 @@
 # SEKOIA.IO
 
-SEKOIA.IO
+![SEKOIA.IO](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }
+
+Sekoia.io
 
 ## Configuration
 
@@ -136,6 +138,42 @@ Webhook Trigger to receive specific SEKOIA.IO Alerts
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+
+
+### Feed Consumption
+
+Get all non-revoked objects from SEKOIA.IO Intelligence feed
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `feed_id` | `string` | ID of the SEKOIA.IO feed to get data from |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects` | `object` | STIX objects returned by the feed |
+
+
+### Feed IOC Consumption
+
+Get all valid IOCs from SEKOIA.IO Intelligence feed
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `feed_id` | `string` | ID of the SEKOIA.IO feed to get data from |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects` | `object` | IOCs returned by the feed (STIX objects) |
 
 
 ### Any Alert Update
@@ -814,4 +852,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.28**
+Module **`SEKOIA.IO` v2.36**
