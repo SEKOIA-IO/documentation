@@ -334,7 +334,6 @@ nav:
       - Dashboard: cti/develop/rest_api/dashboard.md
       - Notification: cti/develop/rest_api/notification.md
       - Playbooks: cti/develop/rest_api/playbooks.md
-      - External Dynamic List: cti/develop/rest_api/edl-gateway.md
 - SEKOIA.IO TIP:
   - Introduction: tip/index.md
   - Features:
