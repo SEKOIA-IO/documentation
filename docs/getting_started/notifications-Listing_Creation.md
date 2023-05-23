@@ -20,8 +20,8 @@ You can also search and filter your notifications from this page.
 
 You can filter by type of trigger or type of actions.
 
-!!!Warning
-  Each notification is visibile only for the one that configured it AND on the community it was created.
+!!! Warning
+    Each notification is visibile only for the one that configured it AND on the community it was created.
 
 ## Create a new notification
 
