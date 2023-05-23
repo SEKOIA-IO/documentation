@@ -243,5 +243,5 @@ The validity of observables is determined by our analysts and indicated by a spe
 
 When an observable is accompanied by a **blue tag**, it means that the observable is currently valid.
 
-On the other hand, if an observable is marked with an o**range tag**, it means that the validity date has passed, rendering the observable invalid.
+On the other hand, if an observable is marked with an **orange tag**, it means that the validity date has passed, rendering the observable invalid.
 
