@@ -32,7 +32,8 @@ This setup guide will show you how to pull events produced by SentinelOne EDR on
 
 **Important**: If you have multiple SentinelOne Management Consoles, you must generate an API Token for each one.
 
-> The API token you generate is time limited. To regenerate a new token (and invalidate the old one), you will need to copy the Service User. Please refer to the SentinelOne documentation to obtain guidance on how to do this action.
+!!! note
+    The API token you generate is time limited. To regenerate a new token (and invalidate the old one), you will need to copy the Service User. Please refer to the SentinelOne documentation to obtain guidance on how to do this action.
 
 1. In the SentinelOne management console, go to `Settings`, click on `USERS` and then on `Service Users`.
 2. Create a new `Service User` by specifying a name and an expiration date.
