@@ -139,7 +139,7 @@ nav:
           - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
           - SEKOIA.IO Endpoint Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
           - SentinelOne EDR: xdr/features/collect/integrations/endpoint/sentinelone.md
-          - SentinelOne Deep Visibility [DEPRECATED]: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
+          - SentinelOne Cloud Funnel 1.0 [Deprecated]: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
           - SentinelOne Cloud Funnel 2.0: xdr/features/collect/integrations/endpoint/sentinelone_cloudfunnel2.0.md
           - Sophos EDR: xdr/features/collect/integrations/endpoint/sophos_edr.md
           - Symantec/Broadcom Endpoint Security: xdr/features/collect/integrations/endpoint/symantec_epp.md
