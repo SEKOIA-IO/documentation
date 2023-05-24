@@ -18,7 +18,9 @@ And depending on the context of the log, additional content could be available, 
 - Network information
 - File information
 
-> For advanced log collection, we suggest you to use SentinelOne Cloud Funnel 2.0 option, as described offered by the [SentinelOne Cloud Funnel 2.0 integration](sentinelone_cloudfunnel2.0.md).
+!!! Tip
+    For advanced log collection, we suggest you to use SentinelOne Cloud Funnel 2.0 option, as described offered by the [SentinelOne Cloud Funnel 2.0 integration](sentinelone_cloudfunnel2.0.md).
+     
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_07c556c0-0675-478c-9803-e7990afe78b6_do_not_edit_manually.md!}
 
