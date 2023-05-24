@@ -1,5 +1,5 @@
 uuid: 8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d
-name: SentinelOne Deep Visibility [DEPRECATED]
+name: SentinelOne Cloud Funnel 1.0 [Deprecated]
 type: intake
 
 ## Overview
