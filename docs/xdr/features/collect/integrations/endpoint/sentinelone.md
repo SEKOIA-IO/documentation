@@ -40,7 +40,8 @@ This setup guide will show you how to pull events produced by SentinelOne EDR on
 3. Choose the `Scope` of the `Service User`: `Global`, `Account` or `Site`, select the appropriate `Account(s)` or `Site(s)` and the role to grant to the `Service User`
 4. Click on `Create User` and copy the API token generated.
 
-**Note**: A `Service User` with a role of `Site Admin` or `IR Team` can mitigate threats from [Sekoia.io](https://app.sekoia.io/) using [SentinelOne playbook actions](../../../automate/library/sentinel-one.md). A user with a role of `Site Viewer` can view activity events and threats but cannot take action.
+!!! note
+    A `Service User` with a role of `Site Admin` or `IR Team` can mitigate threats from [Sekoia.io](https://app.sekoia.io/) using [SentinelOne playbook actions](../../../automate/library/sentinel-one.md). A user with a role of `Site Viewer` can view activity events and threats but cannot take action.
 
 ## Create a SentinelOne intake
 
