@@ -17,7 +17,7 @@ In this documenation we will explain how to collect and send Vade for M365 logs 
 ## Configure
 
 !!! info
-Consuming logs from Vade now requires the Vade Threat Intel & Investigation (TII) module. MSSP partners can benefit from this module from their Partner's Portal. Final customers are invited to contact their Vade commercial contact to setup this module.
+      Consuming logs from Vade now requires the Vade Threat Intel & Investigation (TII) module. MSSP partners can benefit from this module from their Partner's Portal. Final customers are invited to contact their Vade commercial contact to setup this module.
 
 First you need to reach the `Playbooks` page in order to initiate your playbook using the dedicated button.
 
