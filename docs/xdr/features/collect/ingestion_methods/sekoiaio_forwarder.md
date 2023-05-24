@@ -1,20 +1,19 @@
-# SEKOIA.IO Docker concentrator
+# Sekoia.io Forwarder
 
 ## Overview
-!!! Important
-    This concentrator is still in BETA and will be released soon in GA. Some customers already tried it in production without encountering any problem but we want to get more feedback.
-    Please, do not hesite to give us feedback on our support platform if you try it !
 
 [Docker](https://docs.docker.com/get-started/overview/) is a tool that can be used to run packaged applications in an isolated environment on a host.
 Packaged applications are stored in an object called an image, which includes an OS, the dependencies and the configuration. With that, the application will have the same behaviour whatever the OS used on the host as long as it's a x86-64 Linux host.
 
-SEKOIA.IO offers a preconfigured concentrator based on Docker to forward events on the platform.
+Sekoia.io offers a preconfigured concentrator based on Docker to forward events on the platform.
 
 This method simplifies as much as possible the configuration needed to set up a concentrator in order to collect logs and send them on each relevant Intakes.
 
 !!! Warning
     In this method each technology MUST send their logs on different ports (of your choice) of the concentrator in order to make it work. The main principle of this method is to discriminate each technology by port to link them with the right Intake key.
 
+Please find our English tutorial video below to see how to configure the forwarder ! French version is also available [here](https://youtu.be/CSEG2flmffE){:target="_blank"}.
+[![French tutorial](https://img.youtube.com/vi/CSEG2flmffE/0.jpg)](https://youtu.be/BwydQiWMlv0){:target="_blank"}
 
 ## Prerequisites
 
@@ -44,7 +43,7 @@ touch docker-compose.yml && touch intakes.yaml
 The `intakes.yaml` file is used to tell the concentrator how to bind a port where logs are received to its technology represented by the Intake key.
 For each technology, specify:
 
-* a name: it has nothing to do with SEKOIA.IO, feel free to use the explicite value of your choice
+* a name: it has nothing to do with Sekoia.io, feel free to use the explicite value of your choice
 * the protocol: `tcp` or `udp`
 * a port: to process incoming events
 * the Intake key: can be retreived from the Intakes page of your community
@@ -114,7 +113,7 @@ logging:
 Docker logging system offers the flexibility to view events received on the container in real time with the command `docker logs <container_name>`. These logs are stored by default in `/var/lib/docker/containers/<container_uuid>/<container_uuid>-json.log`. To avoid the overload of disk space on your host, some options are specified. `max-size` specifies the maximum size of one file and `max-file` specifies the total number of files allowed. When the maximum number of files is reached, a log rotation is performed and the oldest file is deleted.
 
 !!! Note
-    Docker logging system is an independent solution from SEKOIA.IO or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
+    Docker logging system is an independent solution from Sekoia.io or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
 
 #### Environment variables
 
@@ -272,11 +271,11 @@ sudo docker compose logs -f
     - `change_with_interface_name`use the command `ip addr`
     - `remote_ip`is the IP from which the logs should be incoming 
 
-### Step 2: verify everything is correctly configured to forward events to SEKOIA.IO
+### Step 2: verify everything is correctly configured to forward events to Sekoia.io
 
 1. Check the Intake keys you wrote in `intakes.yaml` are correct.
 
-2. Check the network flow between the concentrator host and SEKOIA.IO is opened to the destination `intake.sekoia.io` on protocol `TCP` and port `10514`. You can easily check it with `telnet`:
+2. Check the network flow between the concentrator host and Sekoia.io is opened to the destination `intake.sekoia.io` on protocol `TCP` and port `10514`. You can easily check it with `telnet`:
     ```bash
     sudo apt install telnet && telnet intake.sekoia.io 10514
     ```
@@ -294,7 +293,7 @@ sudo docker compose logs -f
     sudo apt remove telnet
     ```
 
-3. Finally check the status of the SEKOIA.IO plateform on [https://status.sekoia.io](https://status.sekoia.io).
+3. Finally check the status of the Sekoia.io plateform on [https://status.sekoia.io](https://status.sekoia.io).
 
 ## Additional information
 
@@ -418,7 +417,7 @@ sudo docker run hello-world
 !!! Warning
     This script will automate all the steps detailed on this page **for a Debian host**. Please read carefully the content of this page prior to execute it.
 
-Connect to the remote server where you would like to install the SEKOIA.IO Docker Concentrator.
+Connect to the remote server where you would like to install the Sekoia.io Forwarder.
 Then follow those steps:
 
 1. Execute a script to setup the docker

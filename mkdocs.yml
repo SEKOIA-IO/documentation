@@ -62,7 +62,7 @@ nav:
     - Collect:
       - Overview: xdr/features/collect/ingestion_methods/index.md
       - Ingestion methods:
-        - SEKOIA.IO Docker concentrator: xdr/features/collect/ingestion_methods/sekoiaio_docker_concentrator.md
+        - Sekoia.io Forwarder: xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md
         - Rsyslog: xdr/features/collect/ingestion_methods/rsyslog.md
         - Logstash: xdr/features/collect/ingestion_methods/logstash.md
         - syslog-ng: xdr/features/collect/ingestion_methods/syslog-ng.md
