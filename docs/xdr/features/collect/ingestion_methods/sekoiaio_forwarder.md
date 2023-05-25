@@ -10,7 +10,7 @@ Sekoia.io offers a preconfigured concentrator based on Docker to forward events 
 This method simplifies as much as possible the configuration needed to set up a concentrator in order to collect logs and send them on each relevant Intakes.
 
 !!! Warning
-    In this method each technology MUST send their logs on different ports (of your choice) of the concentrator in order to make it work. The main principle of this method is to discriminate each technology by port to link them with the right Intake key.
+    In this method, each technology MUST send their logs on different ports (of your choice) of the concentrator in order to make it work. The main principle of this method is to discriminate each technology by port to link them with the right Intake key.
 
 Please find our English tutorial video below to see how to configure the forwarder ! French version is also available [here](https://youtu.be/CSEG2flmffE){:target="_blank"}.
 [![French tutorial](https://img.youtube.com/vi/CSEG2flmffE/0.jpg)](https://youtu.be/BwydQiWMlv0){:target="_blank"}
@@ -28,15 +28,15 @@ Two files are needed to run the concentrator: `docker-compose.yml` and `intakes.
 
 1. Create a folder where the configuration and data of the concentrator will be stored
 
-```bash
-mkdir sekoiaio-concentrator && cd sekoiaio-concentrator
-```
+    ```bash
+    mkdir sekoiaio-concentrator && cd sekoiaio-concentrator
+    ```
 
 2. Create the two files
 
-```bash
-touch docker-compose.yml && touch intakes.yaml
-```
+    ```bash
+    touch docker-compose.yml && touch intakes.yaml
+    ```
 
 ### Configure intakes.yaml file
 
@@ -110,7 +110,9 @@ logging:
     max-file: "2"
 ```
 
-Docker logging system offers the flexibility to view events received on the container in real time with the command `docker logs <container_name>`. These logs are stored by default in `/var/lib/docker/containers/<container_uuid>/<container_uuid>-json.log`. To avoid the overload of disk space on your host, some options are specified. `max-size` specifies the maximum size of one file and `max-file` specifies the total number of files allowed. When the maximum number of files is reached, a log rotation is performed and the oldest file is deleted.
+Docker logging system offers the flexibility to view events received on the container in real time with the command `docker logs <container_name>`. These logs are stored by default in `/var/lib/docker/containers/<container_uuid>/<container_uuid>-json.log`. 
+
+To avoid the overload of disk space on your host, some options are specified. `max-size` specifies the maximum size of one file and `max-file` specifies the total number of files allowed. When the maximum number of files is reached, a log rotation is performed and the oldest file is deleted.
 
 !!! Note
     Docker logging system is an independent solution from Sekoia.io or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
@@ -123,7 +125,7 @@ environment:
     - DISK_SPACE=32g
 ```
 
-Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to SEKOIA.IO. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
+Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to Sekoia.io. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
 
 * `MEMORY_MESSAGES=100000` means the queue is allowed to store up to 100,000 messages in memory. Since in the image configuration the maximum value of a message is 20ko, 100,000 means 100,000 * 20,000 = 2Go 
 * `DISK_SPACE=32g` means the queue is allowed to store on disk up to 32 giga of messages.
@@ -182,7 +184,7 @@ To start the concentrator, run the following command in the folder where `docker
 sudo docker compose up -d
 ```
 
-You should have have an answer like this:
+You should have an answer like this:
 
 ```bash
 [+] Running 1/1
@@ -322,7 +324,7 @@ There is a special tag called `latest` which always refers to the latest version
     Each image version is also updated every week in order to update the OS contained in the image with the latest security patches. You are responsible for recreating the concentrator periodically to initiate the image update.
 
 
-## How do I add a new Intake later ?
+## How do I add a new Intake later?
 To add a new Intake, it's very simple ! Follow these steps:
 
 1. Edit the `intakes.yaml` file and add the new intake
@@ -332,7 +334,7 @@ To add a new Intake, it's very simple ! Follow these steps:
       port: 20519
       intake_key: INTAKE_KEY_FOR_NEW_INTAKE
     ```
-2. Edit the `docker-compose.yml` file and modify the `ports` section accordlingly to the `intakes.yaml` file
+2. Edit the `docker-compose.yml` file and modify the `ports` section according to the `intakes.yaml` file
     ```yaml
     ports:
     - "20516-20519:20516-20519"
@@ -368,57 +370,56 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 1. Update the `apt` package index and install packages to allow `apt` to use a repository over HTTPS
 
-```bash
-sudo apt-get update
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-```
+    ```bash
+    sudo apt-get update
+    sudo apt-get install \
+        ca-certificates \
+        curl \
+        gnupg \
+        lsb-release
+    ```
 
 2. Add Docker's official GPG key
 
-```bash
-sudo mkdir -m 0755 -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-```
+    ```bash
+    sudo mkdir -m 0755 -p /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    ```
 
 3. Use the following command to set up the repository
 
-```bash
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
+    ```bash
+    echo \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    ```
 
 ### Install Docker Engine
 
 1. Update the `apt` package index
 
-```bash
-sudo apt-get update
-```
+    ```bash
+    sudo apt-get update
+    ```
 
 2. Install Docker Engine, containerd, and Docker compose
 
-```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
+    ```bash
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    ```
 
 3. Verify that the Docker Engine installation is successful by running the hello-world image
 
-```bash
-sudo docker run hello-world
-```
+    ```bash
+    sudo docker run hello-world
+    ```
 
 ## 5 minutes setup on Debian
 
 !!! Warning
-    This script will automate all the steps detailed on this page **for a Debian host**. Please read carefully the content of this page prior to execute it.
+    This script will automate all the steps detailed on this page **for a Debian host**. Please read  the content of this page carefully before executing it.
 
-Connect to the remote server where you would like to install the Sekoia.io Forwarder.
-Then follow those steps:
+Connect to the remote server where you would like to install the Sekoia.io Forwarder, then follow those steps:
 
 1. Execute a script to setup the docker
 
