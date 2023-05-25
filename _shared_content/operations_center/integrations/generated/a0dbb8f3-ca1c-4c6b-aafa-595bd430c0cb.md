@@ -322,9 +322,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "dt",
             "registered_domain": "adsafeprotected.com",
-            "scheme": "http",
-            "query": "anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
             "path": "/dt",
+            "query": "anId=929475&asId=f0fc9c04-7168-68e3-32ca-6cc17dd2223a&tv={c:l4fyeI,pingTime:-1,time:7884,type:u,clog:[{piv:100,vs:i,r:,w:1,h:1,t:78},{piv:0,vs:o,r:l,t:5971}],ndt:6,es:0,sc:1,ha:1,gm:1,slTimes:{i:5971,o:1913,n:0,pp:0,pm:0},slEvents:[{sl:i,t:78,wc:0.0.1920.1040,ac:952.74.1.1,am:i,cc:952.74.1.1,piv:100,obst:0,th:0,reas:,bkn:{piv:[5898~100],as:[5898~1.1]}},{sl:o,t:5971,wc:0.0.1920.1040,ac:952.-516.1.1,am:i,cc:952.-516.1.1,piv:0,obst:0,th:0,reas:l,bkn:{piv:[1914~0],as:[1914~1.1]}}],slEventCount:2,em:true,fr:true,e:,tt:jload,dtt:254,metricIdList:[publ1,grpm1],fm:ryV6ZcU+11|12|13|14*.929475|141|15.929475|151|152|16,idMap:14.c4c75fac-ccbe-9ba7-61b1-d1276709f9ec.31_289523-36779676|14*,rend:0,renddet:WINDOW,rmeas:0,lt:1}&br=c",
+            "scheme": "http",
             "port": 80
         },
         "destination": {
@@ -399,8 +399,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "smex10-2-en.url",
             "registered_domain": "trendmicro.com",
-            "scheme": "http",
             "path": "/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "scheme": "http",
             "port": 80
         },
         "destination": {
@@ -477,8 +477,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "org",
             "subdomain": "api",
             "registered_domain": "example.org",
-            "scheme": "http",
             "path": "/api/v2/check",
+            "scheme": "http",
             "port": 80
         },
         "related": {
@@ -540,8 +540,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "download",
             "registered_domain": "windowsupdate.com",
-            "scheme": "http",
             "path": "/c/msdownload/update/others/2019/07/29477140_324519a81d0af914f765c56a1dc7141a5759ad4c.cab",
+            "scheme": "http",
             "port": 80
         },
         "destination": {
@@ -608,8 +608,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "edgedl.me",
             "registered_domain": "gvt1.com",
-            "scheme": "http",
             "path": "/edgedl/release2/chrome_component/adbzvrjxj3ir3yvy5lknhgbxo6tq_92.267.200/gkmgaooipdjhmangpemjhigmamcehddo_92.267.200_win64_ac37t7snjqk4qthomil6kwgo54hq.crx3",
+            "scheme": "http",
             "port": 80
         },
         "related": {
@@ -685,8 +685,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "smex10-2-en.url",
             "registered_domain": "trendmicro.com",
-            "scheme": "http",
             "path": "/T/152/oiCEKI6Xe7maaxpSHK-gvDyUEBfC6_avSkwxG5MiT4-LQlujnVUK3SbBFHZKimvaG-TwxeMEqOnp0BelYbpVeMfVAZU85B8kltUSjYiidio-IBs_8MdCCFayLkMpM2lboKcOX-RrnDx2oFrUco0cMA==",
+            "scheme": "http",
             "port": 80
         },
         "destination": {

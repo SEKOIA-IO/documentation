@@ -416,8 +416,8 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "org",
             "subdomain": "www",
             "registered_domain": "example.org",
-            "scheme": "http",
             "path": "/",
+            "scheme": "http",
             "port": 80
         },
         "proofpoint": {
@@ -490,9 +490,9 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "top_level_domain": "com",
             "subdomain": "us.adserver",
             "registered_domain": "yahoo.com",
+            "path": "/l",
             "query": "M=243273.4326031.5516772.1261774/D=egroupmail/S=:HM/A=1750744/rand=299818046",
             "scheme": "http",
-            "path": "/l",
             "port": 80
         },
         "file": {
