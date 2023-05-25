@@ -1,4 +1,4 @@
-Rules catalog includes **692 built-in detection rules** ([_last update on 2023-05-15_](rules_changelog.md)).
+Rules catalog includes **698 built-in detection rules** ([_last update on 2023-05-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -299,6 +299,18 @@ Rules catalog includes **692 built-in detection rules** ([_last update on 2023-0
     
 **Compromise Accounts**
 
+??? abstract "Defender for O365 High Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
+    
+    - **Effort:** elementary
+    
+??? abstract "Defender for O365 Medium Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Okta User Logged In From Multiple Countries"
     
     Detection of login events from multiple countries.
@@ -619,6 +631,30 @@ Rules catalog includes **692 built-in detection rules** ([_last update on 2023-0
     Cisco Umbrella has detected a malicious traffic categorized as malware, phishing or adware.
     
     - **Effort:** intermediate
+    
+??? abstract "Defender for O365 High Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
+    
+    - **Effort:** elementary
+    
+??? abstract "Defender for O365 Low Severity AIR Alert Handled Automatically"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** advanced
+    
+??? abstract "Defender for O365 Low Severity AIR Alert Requires Action"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Defender for O365 Medium Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
+    
+    - **Effort:** elementary
     
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
@@ -4599,6 +4635,12 @@ Rules catalog includes **692 built-in detection rules** ([_last update on 2023-0
     
 **Masquerading**
 
+??? abstract "Copy Of Legitimate System32 Executable"
+    
+    A script has copied a System32 executable.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Execution From Suspicious Folder"
     
     Detects a suspicious execution from an uncommon folder
@@ -7271,6 +7313,12 @@ Rules catalog includes **692 built-in detection rules** ([_last update on 2023-0
 ??? abstract "DNS Tunnel Technique From MuddyWater"
     
     Detecting DNS Tunnel Activity For Muddywater intrusion set. This is the loading of a specific DLL from an Excel macro which is detected.
+    
+    - **Effort:** elementary
+    
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
     
     - **Effort:** elementary
     

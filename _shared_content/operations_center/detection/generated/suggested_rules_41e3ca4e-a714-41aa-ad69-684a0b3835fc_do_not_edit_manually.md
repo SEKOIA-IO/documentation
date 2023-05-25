@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io activity logs** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x SEKOIA.IO activity logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_41e3ca4e-a714-41aa-ad69-684a0b3835fc_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Sekoia.io activity logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_41e3ca4e-a714-41aa-ad69-684a0b3835fc_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
     Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace. 
@@ -80,6 +80,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** wi
     Detects the exploitation of ProyxLogon vulerability on Exchange servers.
     
     - **Effort:** advanced
+
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
 
 ??? abstract "Download Files From Suspicious TLDs"
     

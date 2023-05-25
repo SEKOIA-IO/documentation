@@ -159,6 +159,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **NGINX** with the following d
     
     - **Effort:** intermediate
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Discord Suspicious Download"
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
