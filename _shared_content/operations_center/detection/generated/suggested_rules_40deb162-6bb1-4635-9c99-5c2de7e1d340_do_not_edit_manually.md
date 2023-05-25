@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **S1 Deep Visibility CF2.0 [BETA]** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0 [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x S1 Deep Visibility CF2.0 [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_40deb162-6bb1-4635-9c99-5c2de7e1d340_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x SentinelOne Cloud Funnel 2.0 [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_40deb162-6bb1-4635-9c99-5c2de7e1d340_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -272,6 +272,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **S1 Deep Visibility CF2.0 [BE
     Detects PowerShell encoding to UTF-8, which is used by Sliver implants. The command line just sets the default encoding to UTF-8 in PowerShell.
     
     - **Effort:** advanced
+
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
 
 ??? abstract "Disable .NET ETW Through COMPlus_ETWEnabled"
     

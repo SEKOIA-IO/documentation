@@ -123,6 +123,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     
     - **Effort:** advanced
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Disable .NET ETW Through COMPlus_ETWEnabled"
     
     Detects potential adversaries stopping ETW providers recording loaded .NET assemblies. Prerequisites are logging for Registry events or logging command line parameters (both is better). Careful for registry events, if SwiftOnSecurity's SYSMON default configuration is used, you will need to update the configuration to include the .NETFramework registry key path. Same issue with Windows 4657 EventID logging, the registry path must be specified.

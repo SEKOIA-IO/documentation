@@ -285,6 +285,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** advanced
 
+??? abstract "Copy Of Legitimate System32 Executable"
+    
+    A script has copied a System32 executable.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Copying Browser Files With Credentials"
     
     Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.

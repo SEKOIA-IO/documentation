@@ -135,6 +135,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS WAF** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs

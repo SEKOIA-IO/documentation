@@ -69,6 +69,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** master
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Disabled Service"
     
     Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
