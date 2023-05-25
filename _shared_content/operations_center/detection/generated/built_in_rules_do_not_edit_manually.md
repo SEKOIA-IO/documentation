@@ -1,4 +1,4 @@
-Rules catalog includes **698 built-in detection rules** ([_last update on 2023-05-25_](rules_changelog.md)).
+Rules catalog includes **703 built-in detection rules** ([_last update on 2023-05-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1902,6 +1902,36 @@ Rules catalog includes **698 built-in detection rules** ([_last update on 2023-0
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
     
     - **Effort:** intermediate
+    
+??? abstract "HarfangLab Critical Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
+    
+    - **Effort:** master
+    
+??? abstract "HarfangLab High Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
+    
+    - **Effort:** master
+    
+??? abstract "HarfangLab Hlai Engine Detection"
+    
+    HarfangLab EDR has raised an alert based on its hlai engine
+    
+    - **Effort:** advanced
+    
+??? abstract "HarfangLab Low Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
+    
+    - **Effort:** master
+    
+??? abstract "HarfangLab Medium Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
+    
+    - **Effort:** master
     
 ??? abstract "HarfangLab Process Execution Blocked"
     
