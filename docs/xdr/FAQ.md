@@ -6,24 +6,13 @@
 
 `intake.sekoia.io` is the domain name used to send your logs to SEKOIA.IO, either via Syslog or HTTP protocols. The IP address behind that service is static and stable. You can use that IP to configure your firewalls to allow connections from your forwarding systems to SEKOIA.IO.
 
-## IP behind Triggers available in Playbooks Section
+## Outgoing IP addresses for playbooks runs and connectors
 
 
-For all the triggers available in the Playbooks section and that are used to retrieve your logs, we use the following IPs. This IP will be useful to setup filtering options if needed.
+For all the actions available in the Playbooks section of Sekoia.io (include connectors used to retrieve logs from external sources), we use a number of outbound IP addresses. The full list is publicly accessible and can be retrieved at the following URL : [https://api.sekoia.io/outgoing-ips](https://api.sekoia.io/outgoing-ips). This will be useful to setup filtering options if needed, and even automate any future update.
 
-- `51.158.97.25`
-- `51.158.116.234`
-- `163.172.144.251`
-- `51.158.74.186`
-- `51.15.222.132`
-- `51.15.233.254`
-- `51.15.227.161`
-- `51.158.122.207`
-- `51.158.121.97`
-- `51.15.129.241`
-- `163.172.140.188`
-- `163.172.190.12`
-- `51.158.98.140`
+We try to make this list as stable as possible, but events out of our control may result in changes. In case of modification, we will do our best to warn our customer at least 2 weeks in advance, either via a dedicated communication, or via our [status page](https://status.sekoia.io/).
+
 
 ## How to debug Rsyslog’s forward configuration to SEKOIA.IO?
 
