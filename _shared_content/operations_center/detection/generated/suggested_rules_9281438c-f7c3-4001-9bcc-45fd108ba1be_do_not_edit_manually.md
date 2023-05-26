@@ -717,6 +717,48 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "HarfangLab Critical Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab High Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab Hlai Engine Detection"
+    
+    HarfangLab EDR has raised an alert based on its hlai engine
+    
+    - **Effort:** advanced
+
+??? abstract "HarfangLab Low Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab Medium Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab Process Execution Blocked"
+    
+    HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
+    
+    - **Effort:** elementary
+
+??? abstract "HarfangLab Suspicious Process Behavior Has Been Detected"
+    
+    HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
+    
+    - **Effort:** master
+
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
