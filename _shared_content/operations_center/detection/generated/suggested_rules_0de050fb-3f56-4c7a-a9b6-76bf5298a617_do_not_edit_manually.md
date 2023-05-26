@@ -363,6 +363,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp activity** 
     
     - **Effort:** master
 
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+
 ??? abstract "MMC Spawning Windows Shell"
     
     Detects a Windows command line executable started from MMC process

@@ -573,6 +573,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** master
 
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.

@@ -153,6 +153,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **RSA SecurID [BETA]** with th
     
     - **Effort:** elementary
 
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.

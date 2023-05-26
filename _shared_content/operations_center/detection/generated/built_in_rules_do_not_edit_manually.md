@@ -1,4 +1,4 @@
-Rules catalog includes **703 built-in detection rules** ([_last update on 2023-05-25_](rules_changelog.md)).
+Rules catalog includes **706 built-in detection rules** ([_last update on 2023-05-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1654,6 +1654,12 @@ Rules catalog includes **703 built-in detection rules** ([_last update on 2023-0
     Detects a named pipe used by Turla group samples. Prerequisites: Logging for PipeEvents is needed in Sysmon config
     
     - **Effort:** elementary
+    
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
+    
+    - **Effort:** intermediate
     
 ??? abstract "WMI DLL Loaded Via Office"
     
@@ -6472,6 +6478,12 @@ Rules catalog includes **703 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Write To File In Systemd"
+    
+    A user tried to write something to a file in /etc/systemd.system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges.
+    
+    - **Effort:** intermediate
+    
 **Network Sniffing**
 
 ??? abstract "Capture a network trace with netsh.exe"
@@ -6858,6 +6870,12 @@ Rules catalog includes **703 built-in detection rules** ([_last update on 2023-0
     Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
     
     - **Effort:** master
+    
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
     
 ??? abstract "System Info Discovery"
     
@@ -7667,6 +7685,12 @@ Rules catalog includes **703 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
+    
+    - **Effort:** intermediate
+    
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
     

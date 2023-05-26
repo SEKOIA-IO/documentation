@@ -345,6 +345,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** master
 
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+
 ??? abstract "MSBuild Abuse"
     
     Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
@@ -846,6 +852,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
+
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
 
