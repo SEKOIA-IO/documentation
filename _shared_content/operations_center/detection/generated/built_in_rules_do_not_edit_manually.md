@@ -1,4 +1,4 @@
-Rules catalog includes **706 built-in detection rules** ([_last update on 2023-05-26_](rules_changelog.md)).
+Rules catalog includes **709 built-in detection rules** ([_last update on 2023-05-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -30,9 +30,9 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "CloudFlare HTTP Requests Rule Block Or Drop"
+??? abstract "Cloudflare HTTP Requests Rule Block Or Drop"
     
-    Detects when one of CloudFlare Web Application Firewall (WAF) Managed rule blocked or dropped an HTTP request. It requires only CloudFlare HTTP requests logs. 
+    Detects when one of Cloudflare Web Application Firewall (WAF) Managed rule blocked or dropped an HTTP request. It requires only Cloudflare HTTP requests logs.
     
     - **Effort:** master
     
@@ -1013,6 +1013,10 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+            
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
@@ -1383,6 +1387,10 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+            
 ??? abstract "PowerShell EncodedCommand"
     
     Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
@@ -1583,6 +1591,10 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+            
 ??? abstract "Suspicious PowerShell Keywords"
     
     Detects keywords that could indicate the use of some PowerShell exploitation framework
@@ -1679,6 +1691,10 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+            
 ??? abstract "Windows Defender Disabled Base64 Encoded"
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
@@ -3221,6 +3237,14 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
 ??? abstract "BITSAdmin Download"
     
     Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.
+    
+    - **Effort:** advanced
+    
+**Traffic Signaling**
+
+??? abstract "Linux Binary List TCP Connections"
+    
+    A binary is trying to list TCP connections.
     
     - **Effort:** advanced
     
@@ -5289,6 +5313,14 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+**Traffic Signaling**
+
+??? abstract "Linux Binary List TCP Connections"
+    
+    A binary is trying to list TCP connections.
+    
+    - **Effort:** advanced
+    
 **Rogue Domain Controller**
 
 ??? abstract "DC Shadow via Service Principal Name (SPN) creation"
@@ -6548,6 +6580,12 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Brute-Force Successful Using Su"
+    
+    A user has attempted to login several times (brute-force) on su command and succeeded to login.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Password Change Brute-Force On AzureAD"
     
     A change of password has failed on Azure Active Directory, 5 times for the same user
@@ -7400,6 +7438,12 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+??? abstract "Many Downloads From Several Binaries"
+    
+    Threat Actors might use all the binaries to download the payload to make sure at least one is present on the target.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
@@ -7585,6 +7629,14 @@ Rules catalog includes **706 built-in detection rules** ([_last update on 2023-0
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+    
+**Traffic Signaling**
+
+??? abstract "Linux Binary List TCP Connections"
+    
+    A binary is trying to list TCP connections.
+    
+    - **Effort:** advanced
     
 **Remote Access Software**
 
