@@ -9,7 +9,7 @@
 ## Outgoing IP addresses for playbooks runs and connectors
 
 
-For all the actions available in the Playbooks section of Sekoia.io (include connectors used to retrieve logs from external sources), we use a number of outbound IP addresses. The full list is publicly accessible and can be retrieved at the following URL : [https://api.sekoia.io/outgoing-ips](https://api.sekoia.io/outgoing-ips). This will be useful to setup filtering options if needed, and even automate any future update.
+For all the actions available in the Playbooks section of Sekoia.io (include connectors used to retrieve logs from external sources), we use a number of outbound IP addresses. The full list is publicly accessible and can be retrieved at the following URL: [https://api.sekoia.io/outgoing-ips](https://api.sekoia.io/outgoing-ips). This will be useful to setup filtering options if needed, and even automate any future update.
 
 We try to make this list as stable as possible, but events out of our control may result in changes. In case of modification, we will do our best to warn our customer at least 2 weeks in advance, either via a dedicated communication, or via our [status page](https://status.sekoia.io/).
 
