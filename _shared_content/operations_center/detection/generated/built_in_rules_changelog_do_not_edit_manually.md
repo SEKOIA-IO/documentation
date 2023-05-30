@@ -1,7 +1,16 @@
-Changelog _last update on 2023-05-26_
+Changelog _last update on 2023-05-30_
 
 ## Changelog
 
+### Suspicious PowerShell Invocations - Specific
+  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+    
+### WMImplant Hack Tool
+  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+    
+### PowerShell Download From URL
+  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+    
 ### Internet Scanner Target
   - 28/04/2023 - minor - Support for standard ECS FW fields
     
