@@ -497,13 +497,13 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
 
 ??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively.
+    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
 
 ??? abstract "SentinelOne Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it.
+    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
 
@@ -515,7 +515,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
 
 ??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it.
+    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
 
@@ -533,25 +533,25 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
 
 ??? abstract "SentinelOne Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process).
+    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
 
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat.
+    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
 
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success. 
+    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
 
 ??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat.
+    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
 
