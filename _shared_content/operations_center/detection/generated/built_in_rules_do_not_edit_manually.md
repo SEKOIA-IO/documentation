@@ -1,4 +1,4 @@
-Rules catalog includes **709 built-in detection rules** ([_last update on 2023-05-30_](rules_changelog.md)).
+Rules catalog includes **710 built-in detection rules** ([_last update on 2023-05-31_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1465,13 +1465,13 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively.
+    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it.
+    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -1483,7 +1483,7 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it.
+    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -1501,25 +1501,25 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process).
+    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat.
+    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success. 
+    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat.
+    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -1563,6 +1563,10 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
+            
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
     Detects suspicious DLL being loaded by an Microsoft Office Product. Considered as suspects are some .NET DLLs, clr.dll, GAC DLL, DSParse (Active Directoryi services API) or Kerberos DLLs which may be loaded by MS Office processes when executing a potentially malicious macro. The prerequisite is to log the Sysmon Event ID 7 (DLL image loaded by process). 
@@ -2201,13 +2205,13 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively.
+    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it.
+    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -2219,7 +2223,7 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it.
+    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -2237,25 +2241,25 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process).
+    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat.
+    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success. 
+    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat.
+    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -2573,13 +2577,13 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively.
+    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it.
+    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -2591,7 +2595,7 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it.
+    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -2609,25 +2613,25 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SentinelOne Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process).
+    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat.
+    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
 ??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success. 
+    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
 ??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat.
+    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
@@ -3277,6 +3281,12 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Exchange Server Spawning Suspicious Processes"
     
     Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.
+    
+    - **Effort:** intermediate
+    
+??? abstract "IIS Module Installation Using AppCmd"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
     
     - **Effort:** intermediate
     
@@ -4773,6 +4783,10 @@ Rules catalog includes **709 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
+            
 **Process Injection**
 
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
