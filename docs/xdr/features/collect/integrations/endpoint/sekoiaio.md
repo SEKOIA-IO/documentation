@@ -277,3 +277,12 @@ The proxy URL should follow the format `http://user:pass@host:port`.
 
 We monitor the agent metrics and try to keep its footprint as small as possible. 
 Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
+
+## Troubleshoot
+1- Check the Sekoia.io agent version (the latest version must be used)
+
+```
+agent-latest.exe --version
+```
+    
+2- Provide results of the setup request in case of failure (stack trace) + machine configuration
