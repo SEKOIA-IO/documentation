@@ -279,6 +279,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco NX-OS [BETA]** with th
     
     - **Effort:** intermediate
 
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 

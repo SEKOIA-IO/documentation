@@ -369,6 +369,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
 ??? abstract "File Or Folder Permissions Modifications"
     
     Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.

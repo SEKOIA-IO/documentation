@@ -1,4 +1,4 @@
-Rules catalog includes **710 built-in detection rules** ([_last update on 2023-05-31_](rules_changelog.md)).
+Rules catalog includes **711 built-in detection rules** ([_last update on 2023-06-01_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -5810,6 +5810,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
     
     - **Effort:** intermediate
+    
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
     
 ??? abstract "Google Cloud Audit Trusted Domain Added"
     

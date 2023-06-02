@@ -417,6 +417,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     
     - **Effort:** elementary
 
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
