@@ -29,7 +29,7 @@ Sekoia.io combines Cyber Threat Intelligence, anomaly detection and advanced Thr
 Sekoia.io XDR allows you to conduct investigations on malicious activities directly from an alert or by means of the event history.
 Case management makes it possible to reconcile alerts with each other and to document the associated analyzes and results.
 
-1. Review [Security Alerts](features/investigate/alerts.md) raised by SEKOIA.IO and investigate on their malicious activities.
+1. Review [Security Alerts](features/investigate/alerts.md) raised by Sekoia.io and investigate on their malicious activities.
 2. Hunt down the intruders with the [Event History](features/investigate/events.md) and its drill down capabilities.
 3. Use [Case Management](features/investigate/cases.md) to centralize your observations on an incident and collaborate with other stake holders.
 
