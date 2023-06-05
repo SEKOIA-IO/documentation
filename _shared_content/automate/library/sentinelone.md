@@ -2,7 +2,7 @@
 
 ![SentinelOne](/assets/playbooks/library/sentinelone.png){ align=right width=150 }
 
-This module interacts with the SentinelOne
+This module interacts with the SentinelOne management console.
 
 ## Configuration
 
