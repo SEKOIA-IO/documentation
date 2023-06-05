@@ -1,4 +1,4 @@
-# SEKOIA.IO CTI
+# Sekoia.io CTI
 
 Cyber Threat Intelligence is at the core of cybersecurity operations. Everyone can trigger indicators when damage has already happened.
 Conversely, showcasing high volumes of indicators is easy when these are long expired. Contrary to other threat intel tools, every single bit of information presented on our feed is framed within explicit validity timestamps and constantly updated, so that you are presented with relevant intelligence, just in time.
@@ -7,17 +7,17 @@ Through our publications and access to the database of the Intelligence Center, 
 
 Our 500+ sources of information help us track over 200 attackers groups and their attack infrastructures over the entire world. This information is thoroughly processed, cross-analysed and contextualised by our analysts, in order to provide you with trustworthy intelligence about real threats, with global coverage wherever your assets are located, and whatever industry you are operating in.
 
-At SEKOIA.IO, The **Intelligence Center** is a Threat Intelligence knowledge base that is being constantly updated by SEKOIA analysts.
+At Sekoia.io, the **Intelligence Center** is a Threat Intelligence knowledge base that is being constantly updated by Sekoia.io's analysts.
 
 ## Product Features
 
 ### Consume and Investigate
 
-To fully protect your business, you need to have a deep knowledge and understanding of attackers groups. Consume world class and daily updated intelligence through the Intelligence database and our reports. All the intelligence produced by SEKOIA.IO is contextualized and exploitable, which is useful to both strategic and operational teams.
+To fully protect your business, you need to have a deep knowledge and understanding of attackers groups. Consume world class and daily updated intelligence through the Intelligence database and our reports. All the intelligence produced by Sekoia.io is contextualized and exploitable, which is useful to both strategic and operational teams.
 
 Discover the fully open cyber threat knowledge base and benefit from intuitive interfaces to browse and find the information you are looking for.
 
-- Search through the [Intelligence database](features/consume/intelligence.md): Continuously updated by hundreds of qualified intelligence sources and processed and enriched by SEKOIA.IO, this database is enhanced with research and analysis carried out by our analysts on a daily basis.
+- Search through the [Intelligence database](features/consume/intelligence.md): Continuously updated by hundreds of qualified intelligence sources and processed and enriched by Sekoia.io, this database is enhanced with research and analysis carried out by our analysts on a daily basis.
 - Stay up to date with our [feeds](features/consume/feeds.md): Setup custom feeds to be able to receive and read the latest news directly in your app. Get notified whenever a new report is updated.
 - Investigate trends and cases with [Graph Explorations](features/consume/graph_explorations.md).
 

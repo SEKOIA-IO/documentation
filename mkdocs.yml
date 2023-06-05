@@ -1,4 +1,4 @@
-copyright: Copyright &copy; 2023 - SEKOIA.IO
+copyright: Copyright &copy; 2023 - Sekoia.io
 edit_uri: edit/main/docs/
 extra:
   social:
@@ -38,7 +38,7 @@ nav:
       - Security tokens: getting_started/securitytokens.md
   - 2. Manage communities:
     - Edit a community: getting_started/community-edit.md
-    - (MSSP ONLY) Create a sub-community: getting_started/community-create_sub_com.md
+    - Create a sub-community: getting_started/community-create_sub_com.md
     - Set up community security:
       - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
       - SSO with Azure AD: getting_started/sso/azure.md
@@ -55,7 +55,7 @@ nav:
     - Listing and creation: getting_started/notifications-Listing_Creation.md
     - Notification examples: getting_started/notifications-Examples.md
   - 6. Manage API Keys: getting_started/manage_api_keys.md
-- SEKOIA.IO XDR:
+- Sekoia.io XDR:
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
   - Features:
@@ -145,7 +145,7 @@ nav:
           - Microsoft Defender for Endpoints: xdr/features/collect/integrations/endpoint/microsoft_defender_for_endpoints.md
           - Microsoft Intune: xdr/features/collect/integrations/endpoint/microsoft_intune.md
           - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
-          - SEKOIA.IO Endpoint Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
+          - Sekoia.io Endpoint Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
           - SentinelOne EDR: xdr/features/collect/integrations/endpoint/sentinelone.md
           - SentinelOne Cloud Funnel 1.0 [Deprecated]: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
           - SentinelOne Cloud Funnel 2.0: xdr/features/collect/integrations/endpoint/sentinelone_cloudfunnel2.0.md
@@ -255,7 +255,7 @@ nav:
         - Public Suffix: xdr/features/automate/library/public-suffix.md
         - RSS: xdr/features/automate/library/rss.md
         - RiskIQ: xdr/features/automate/library/riskiq.md
-        - SEKOIA.IO: xdr/features/automate/library/sekoia-io.md
+        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - STIX: xdr/features/automate/library/stix.md
         - Sentinel One: xdr/features/automate/library/sentinel-one.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
@@ -282,7 +282,7 @@ nav:
     - Alerts: xdr/FAQ/Alerts_qa.md
     - Events: xdr/FAQ/Events_qa.md
     - Rules: xdr/FAQ/Rules_qa.md
-    - SEKOIA.IO Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
+    - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Develop:
     - Quickstart: xdr/develop/quickstart.md
     - Guides:
@@ -297,7 +297,7 @@ nav:
       - Assets: xdr/develop/rest_api/assets.md
       - Playbooks: xdr/develop/rest_api/playbooks.md
       - Telemetry: xdr/develop/rest_api/telemetry.md
-- SEKOIA.IO CTI:
+- Sekoia.io CTI:
   - Introduction: cti/index.md
   - Features:
     - Data Models: cti/features/data_model.md
@@ -335,7 +335,7 @@ nav:
       - Notification: cti/develop/rest_api/notification.md
       - Playbooks: cti/develop/rest_api/playbooks.md
       - External Dynamic List: cti/develop/rest_api/edl-gateway.md
-- SEKOIA.IO TIP:
+- Sekoia.io TIP:
   - Introduction: tip/index.md
   - Features:
     - Data Models: tip/features/data_model.md
@@ -401,7 +401,7 @@ nav:
         - Public Suffix: tip/features/automate/library/public-suffix.md
         - RSS: tip/features/automate/library/rss.md
         - RiskIQ: tip/features/automate/library/riskiq.md
-        - SEKOIA.IO: tip/features/automate/library/sekoia-io.md
+        - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - STIX: tip/features/automate/library/stix.md
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
@@ -722,7 +722,7 @@ plugins:
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
-site_name: SEKOIA.IO Documentation
+site_name: Sekoia.io Documentation
 site_url: https://docs.sekoia.io
 theme:
   custom_dir: theme
