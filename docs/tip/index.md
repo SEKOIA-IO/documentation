@@ -1,6 +1,6 @@
-# SEKOIA.IO TIP
+# Sekoia.io TIP
 
-The Threat Intelligence Platform is an app made by [SEKOIA.IO](http://SEKOIA.IO) to help you build and disseminate your own Cyber Threat Intelligence.
+The Threat Intelligence Platform is an app made by [Sekoia.io](http://SEKOIA.IO) to help you build and disseminate your own Cyber Threat Intelligence.
 
 It is meant to store all levels of Cyber Threat Intelligence (CTI), from strategic (targets, motivations) to technical (indicator of compromises). It also provides you with Content Creation tools as well as Investigation means to help you stay up-to-date when it comes to analyzing Cyber threats.
 
@@ -8,11 +8,11 @@ It is meant to store all levels of Cyber Threat Intelligence (CTI), from strateg
 
 ### Consume and Investigate
 
-To fully protect your business, you need to have a deep knowledge and understanding of attackers groups. Consume world class and daily updated intelligence through the Intelligence database and our reports. All the intelligence produced by SEKOIA.IO is contextualized and exploitable, which is useful to both strategic and operational teams.
+To fully protect your business, you need to have a deep knowledge and understanding of attackers groups. Consume world class and daily updated intelligence through the Intelligence database and our reports. All the intelligence produced by Sekoia.io is contextualized and exploitable, which is useful to both strategic and operational teams.
 
 Discover the fully open cyber threat knowledge base and benefit from intuitive interfaces to browse and find the information you are looking for.
 
-- Search through the [Intelligence database](features/consume/intelligence.md): Continuously updated by hundreds of qualified intelligence sources and processed and enriched by SEKOIA.IO, this database is enhanced with research and analysis carried out by our analysts on a daily basis.
+- Search through the [Intelligence database](features/consume/intelligence.md): Continuously updated by hundreds of qualified intelligence sources and processed and enriched by Sekoia.io, this database is enhanced with research and analysis carried out by our analysts on a daily basis.
 - Stay up to date with our [feeds](features/consume/feeds.md): Setup custom feeds to be able to receive and read the latest news directly in your app. Get notified whenever a new report is updated.
 - Investigate trends and cases with [Graph Explorations](features/consume/graph_explorations.md).
 
