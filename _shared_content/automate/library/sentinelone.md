@@ -13,7 +13,7 @@ This module interacts with the SentinelOne management console.
 
 ## Triggers
 
-### Consume events from SentinelOne DeepVisibility
+### Consume events from SentinelOne DeepVisibility [Deprecated]
 
 Consume events from SentinelOne DeepVisibility’s Kafka brokers
 
