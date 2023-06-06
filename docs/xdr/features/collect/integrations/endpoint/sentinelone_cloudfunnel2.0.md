@@ -59,12 +59,16 @@ Please find bellow a short list of activities that are available for security su
 
 ## Configure
 
-This setup guide will show you how to pull events produced by SentinelOne Deep Visibility on [SEKOIA.IO](https://app.sekoia.io/).
+This setup guide will show you how to pull events produced by SentinelOne Deep Visibility on [Sekoia.io](https://app.sekoia.io/).
 
 ### Create a AWS S3 bucket
 
-The AWS S3 bucket that will hold the SentinelOne Deep Visibility telemetry can be created in any region you like, the bucket name must be globally unique and follow [AWS naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
-You will need to authorize SentinelOne's AWS account to list and write objects on your bucket (please refer to SentinelOne documentation to obtain the account canonical ID).
+The AWS S3 bucket used to store SentinelOne Deep Visibility telemetry can be created in any preferred AWS region. However, it is important to ensure that the chosen bucket name adheres to the [AWS naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) and remains globally unique.
+
+To enable SentinelOne's AWS account to perform necessary operations such as listing and writing objects in your bucket, it is required to authorize their account with the appropriate permissions. You can refer to the SentinelOne documentation to obtain the account's canonical ID, which is necessary for the authorization process.
+
+By following these steps, you can set up the AWS S3 bucket to seamlessly handle SentinelOne Deep Visibility telemetry data.
+
 
 {!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
 
@@ -72,24 +76,28 @@ You will need to authorize SentinelOne's AWS account to list and write objects o
 
 ### Setup SentinelOne Cloud Funnel 2.0
 
-Once the AWS S3 bucket is created, you can configure your SentinelOne instance to stream the telemetry to it. This is done in the "Settings > Integrations > Cloud Funnel" page of your SentinelOne instance (a SentinelOne admin account with a "Account" user scope is required to perform this configuration).
+Once the AWS S3 bucket is created, you can configure your SentinelOne instance to stream the telemetry to it. This is done in the "Settings > Integrations > Cloud Funnel" page of your SentinelOne instance.
+
+A SentinelOne admin account with a "Account" user scope is required to perform this configuration.
 
 !!! warning
     If you have multiple SentinelOne Management Consoles, you must configure Cloud Funnel 2.0 for each console.
 
 ### Create a SentinelOne Cloud Funnel 2.0 intake
 
-In the [SEKOIA.IO Operations Center](https://app.sekoia.io/operations/intakes):
+In the [Sekoia.io Operations Center](https://app.sekoia.io/operations/intakes):
 
-1. Click on the `Intake` page.
-2. Search for `SentinelOne Cloud Funnel 2.0` by navigating the page or using the search bar.
-3. Click `Create` on the relevant object.
-4. Specify the `Name` of your intake that will be displayed and the related `Entity`:
+1. Click on the `Intake` page
+2. Search for `SentinelOne Cloud Funnel 2.0` by navigating the page or using the search bar
+3. Click `Create` on the relevant object
+4. Specify the `Name` of your intake that will be displayed and select the `Entity` needed
 
 ### Pull events
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws#fetch-new-logs-on-s3).
+To start pulling events, follow these steps: 
 
-Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.
-
-Start the playbook and enjoy your events.
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) 
+2. Create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws#fetch-new-logs-on-s3)
+3. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name
+4. Set up the trigger configuration with the name of the SQS queue and the intake key (from the intake previously created)
+5. Start the playbook and enjoy your events
