@@ -13,7 +13,8 @@ Citrix ADC is a delivery controller and load-balancing tool that offers enhanced
 ## Configure
 
 ### Prerequisites
-- Must use either SYSLOG or NSLOG protocol or both of them.
+- Have an internal log concentrator
+- Have a NSLog server with the syslog protocol
 - Have an auditing module which runs on the NetScaler appliance.
 
 ### Enable syslog
