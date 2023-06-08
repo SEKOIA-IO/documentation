@@ -1,4 +1,4 @@
-Rules catalog includes **711 built-in detection rules** ([_last update on 2023-06-01_](rules_changelog.md)).
+Rules catalog includes **711 built-in detection rules** ([_last update on 2023-06-08_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
