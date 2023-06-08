@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-Citrix ADC is a delivery controller and load-balancing tool that offers enhanced security and application performance.
+Citrix ADC (formely Citrix NetScaler) is a delivery controller and load-balancing tool that offers enhanced security and application performance.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_02a74ceb-a9b0-467c-97d1-588319e39d71_do_not_edit_manually.md!}
 
