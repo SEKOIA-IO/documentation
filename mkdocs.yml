@@ -122,6 +122,7 @@ nav:
             - Microsoft Defender for Office 365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
             - Message trace: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
           - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
+          - OGO shield: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
