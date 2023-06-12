@@ -1,4 +1,4 @@
-Rules catalog includes **711 built-in detection rules** ([_last update on 2023-06-08_](rules_changelog.md)).
+Rules catalog includes **717 built-in detection rules** ([_last update on 2023-06-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -67,6 +67,18 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     Detects when one of WAF rule blocked an HTTP request 
     
     - **Effort:** master
+    
+??? abstract "WAF Correlation Block Multiple Destinations"
+    
+    Detection of multiple block actions (more than 10) by the Web Application Firewall (WAF) triggered by the same source to mutliple destinations
+    
+    - **Effort:** intermediate
+    
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
+    
+    - **Effort:** advanced
     
 ## Resource Development
 **Acquire Infrastructure**
@@ -415,6 +427,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On SEKOIA.IO"
+    
+    Detects successful access to SEKOIA.IO after several failure.
     
     - **Effort:** intermediate
     
@@ -1279,6 +1297,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Malicious PowerShell Keywords"
     
     Detects keywords from well-known PowerShell exploitation frameworks
@@ -1993,6 +2017,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    
+    - **Effort:** advanced
+    
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     
     Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
@@ -2460,6 +2490,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    
+    - **Effort:** advanced
     
 ??? abstract "Logonui Wrong Parent"
     
@@ -2985,6 +3021,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On SEKOIA.IO"
+    
+    Detects successful access to SEKOIA.IO after several failure.
     
     - **Effort:** intermediate
     
@@ -3558,6 +3600,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys"
     
     Detects persistence registry keys. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
@@ -4073,6 +4121,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Brute-Force On SEKOIA.IO"
+    
+    Detects successful access to SEKOIA.IO after several failure.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
@@ -4419,6 +4473,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys"
     
     Detects persistence registry keys. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
@@ -4566,6 +4626,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
     
     - **Effort:** advanced
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
     
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -5056,6 +5122,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On SEKOIA.IO"
+    
+    Detects successful access to SEKOIA.IO after several failure.
     
     - **Effort:** intermediate
     
@@ -5612,6 +5684,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
     
     - **Effort:** advanced
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
     
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -6600,6 +6678,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Brute-Force On SEKOIA.IO"
+    
+    Detects successful access to SEKOIA.IO after several failure.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Login Brute-Force Successful Using Su"
     
     A user has attempted to login several times (brute-force) on su command and succeeded to login.
@@ -6763,6 +6847,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Suspicious Outbound Kerberos Connection"
     
     Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.
+    
+    - **Effort:** advanced
+    
+??? abstract "Suspicious TGS requests (Kerberoasting)"
+    
+    The rule aims at detecting the Kerberoasting technique, when an attacker requests TGS in order to crack them offline. Toease its task, the attacker requests tickets with weak encryption (such as RC4_HMAC_MD5). The rule therefore detects when an user is requesting 5 TGS for different users in 5 minutes.
     
     - **Effort:** advanced
     

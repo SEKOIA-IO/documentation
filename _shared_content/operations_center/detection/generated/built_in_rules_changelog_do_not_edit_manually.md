@@ -1,4 +1,4 @@
-Changelog _last update on 2023-06-08_
+Changelog _last update on 2023-06-12_
 
 ## Changelog
 
@@ -8,26 +8,23 @@ Changelog _last update on 2023-06-08_
 ### WMImplant Hack Tool
   - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
     
-### Suspicious PowerShell Invocations - Specific
-  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
-    
 ### PowerShell Download From URL
   - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
     
-### Internet Scanner
-  - 28/04/2023 - minor - Support for standard ECS FW fields
+### Suspicious PowerShell Invocations - Specific
+  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
     
 ### Internet Scanner Target
   - 28/04/2023 - minor - Support for standard ECS FW fields
     
-### Remote Privileged Group Enumeration
-  - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
+### Internet Scanner
+  - 28/04/2023 - minor - Support for standard ECS FW fields
     
 ### Audio Capture via PowerShell
   - 18/04/2023 - minor - Use more specific patterns to fix false positives.
     
-### Active Directory User Backdoors
-  - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
+### Remote Privileged Group Enumeration
+  - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
     
 ### Mimikatz LSASS Memory Access
   - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
@@ -37,6 +34,9 @@ Changelog _last update on 2023-06-08_
     
 ### Mimikatz Basic Commands
   - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
+    
+### Active Directory User Backdoors
+  - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
     
 ### Suspicious PowerShell Invocations - Generic
   - 28/03/2023 - minor - Excluded some commonly observed false positives.
