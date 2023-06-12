@@ -6,7 +6,7 @@ type: intake
 
 OGO Shield Web Application Firewall provides protection and performance for your web applications and APIs.
 
-This setup guide describes how to forward security events from OGO to SEKOIA.IO.
+This setup guide describes how to forward security events from OGO to Sekoia.io.
 
 !!! warning
     This format is still in beta, please use it wisely.
