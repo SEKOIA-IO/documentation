@@ -77,6 +77,7 @@ nav:
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
           - BIND: xdr/features/collect/integrations/application/bind.md
           - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
+          - Github Audit Logs: xdr/features/collect/integrations/application/github_audit_logs.md
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
           - Nginx: xdr/features/collect/integrations/application/nginx.md
@@ -501,6 +502,7 @@ plugins:
       integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
+      integrations/github_audit_logs.md: xdr/features/collect/integrations/application/github_audit_logs.md
       integrations/haproxy.md: xdr/features/collect/integrations/application/haproxy.md
       integrations/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       integrations/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
