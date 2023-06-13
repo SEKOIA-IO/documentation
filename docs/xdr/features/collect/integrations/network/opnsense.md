@@ -8,9 +8,6 @@ OPNSense is a firewall software distribution based on FreeBSD.
 
 This intake ingest filterlog from OPNSense.
 
-!!! warning
-    This format is still in beta, please use it wisely.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_8510051d-c7cf-4b0c-a398-031afe91faa0_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/8510051d-c7cf-4b0c-a398-031afe91faa0.md!}
