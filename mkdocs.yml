@@ -124,6 +124,7 @@ nav:
           - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
           - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
+          - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
           - Cisco ESA: xdr/features/collect/integrations/email/cisco_esa.md
