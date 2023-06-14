@@ -4,6 +4,8 @@ type: intake
 
 ## Overview
 
+Varonis offers solutions to track and protect data.
+
 
 !!! warning
     This format is still in beta, please use it wisely.
