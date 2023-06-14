@@ -105,6 +105,7 @@ nav:
             - Gateway Network: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-network.md
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
+          - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
           - Google Cloud:
             - Google Workspace and Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
             - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
@@ -504,6 +505,7 @@ plugins:
       integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
+      integrations/github_audit_logs.md: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
       integrations/haproxy.md: xdr/features/collect/integrations/application/haproxy.md
       integrations/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       integrations/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
