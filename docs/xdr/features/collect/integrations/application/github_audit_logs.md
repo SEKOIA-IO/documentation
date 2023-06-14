@@ -13,4 +13,21 @@ Github audit logs represents activities on your Github organization.
 
 ### Creating the Github API key
 
-To create an API key, go to https://github.com/. On the top right corner, click on your profile picture and go to Settings. Then Developper Settings, create a Personnal access token (classic) with read access to the audit_logs. Validate the configuration and save the token for the configuration of the connector.
+To create an API key on [Github](https://github.com/):
+
+1. On the top right corner, click on your profile picture then on `Settings`.
+2. On the Developper Settings, create a Personnal access token (classic) with read access to the audit_logs.
+3. Validate the configuration and save the token for the configuration of the connector.
+
+
+### Create the intake in SEKOIA.IO
+
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Github  audit logs`. Copy the intake key.
+
+### Pull events
+
+To start to pull events, you have to:
+
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new audit logs from Github](../../../automate/library/github.md) trigger
+2. Set up the module configuration with the Github organization and the APIkey. Set up the trigger configuration with the intake key
+3. Start the playbook and enjoy your events
