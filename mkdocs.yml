@@ -191,6 +191,7 @@ nav:
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield SNS: xdr/features/collect/integrations/network/stormshield_network_security.md
           - Suricata: xdr/features/collect/integrations/network/suricata.md
+          - Varonis Data Security: xdr/features/collect/integrations/network/varonis_data_security.md
           - Vectra Cognito Detect: xdr/features/collect/integrations/network/vectra.md
           - Wallix: xdr/features/collect/integrations/network/wallix.md
           - WatchGuard Firebox: xdr/features/collect/integrations/network/watchguard_firebox.md
