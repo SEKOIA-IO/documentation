@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **WALLIX Bastion** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **WALLIX Bastion** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x WALLIX Bastion on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_6b8cb346-6605-4240-ac15-3828627ba899_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x WALLIX Bastion on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_6b8cb346-6605-4240-ac15-3828627ba899_do_not_edit_manually.json){ .md-button }
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
@@ -315,7 +315,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **WALLIX Bastion** with the fo
     
     - **Effort:** advanced
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

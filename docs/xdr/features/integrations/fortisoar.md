@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-To install the FortiSOAR integration, you first have to create an API Key in SEKOIA.IO XDR with the following permissions: 
+To install the FortiSOAR integration, you first have to create an API Key in Sekoia.io XDR with the following permissions: 
 
 | Name of the permission | ID | Description |
 | --- | --- | --- |
@@ -34,7 +34,7 @@ To install the FortiSOAR integration, follow these steps:
 
 1. In your FortiSOAR instance, go to the `Connector Store` and search for "sekoia"
 
-2. Choose the `SEKOIA.IO XDR` connector and click on the `Install` button
+2. Choose the `Sekoia.io XDR` connector and click on the `Install` button
 
 3. Navigate to `Configurations`. Give a name to the configuration and paste the APIKEY as requested.
 

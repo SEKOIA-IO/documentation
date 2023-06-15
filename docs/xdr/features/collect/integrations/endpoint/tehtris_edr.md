@@ -6,7 +6,7 @@ type: intake
 
 TEHTRIS EDR is a security product to monitor, detect and mitigate threats on endpoints. It reduces the attack surface and prevents attacks.
 
-This setup guide shows how to forward events produced by TEHTRIS EDR to SEKOIA.IO.
+This setup guide shows how to forward events produced by TEHTRIS EDR to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_8d8f040d-6a75-4bf4-bf1d-772e9a30f0dd_do_not_edit_manually.md!}
 
@@ -16,9 +16,9 @@ This setup guide shows how to forward events produced by TEHTRIS EDR to SEKOIA.I
 
 ### Prerequisites
 
-To forward events produced by TEHTRIS EDR to SEKOIA.IO, you have to: 
+To forward events produced by TEHTRIS EDR to Sekoia.io, you have to: 
 
-1. Contact your TEHTRIS referent to activate the XDR Platform APIs for your tenant and ask to add the [SEKOIA.IO IP address](../../../../FAQ.md#ip-behind-triggers-available-in-playbooks-section) to the allowlist
+1. Contact your TEHTRIS referent to activate the XDR Platform APIs for your tenant and ask to add the [Sekoia.io IP address](../../../../FAQ.md#ip-behind-triggers-available-in-playbooks-section) to the allowlist
 
 2. Log on the TEHTRIS XDR platform and navigate to `SOAR > Key Management`
 

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Cybereason MalOp** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Cybereason MalOp on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Cybereason MalOp on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 

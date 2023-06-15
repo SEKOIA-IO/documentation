@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Azure Active Directory** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Azure Active Directory** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Azure Active Directory on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_19cd2ed6-f90c-47f7-a46b-974354a107bb_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Azure Active Directory on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_19cd2ed6-f90c-47f7-a46b-974354a107bb_do_not_edit_manually.json){ .md-button }
 ??? abstract "Azure Active Directory Abnormal Token"
     
     Detects when Azure Active Directory indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -111,7 +111,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Active Directory** wit
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh Secure Web Gateway** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **McAfee Web Gateway / Skyhigh Secure Web Gateway** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x McAfee Web Gateway / Skyhigh Secure Web Gateway on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_40bac399-2d8e-40e3-af3b-f73a622c9687_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x McAfee Web Gateway / Skyhigh Secure Web Gateway on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_40bac399-2d8e-40e3-af3b-f73a622c9687_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -339,7 +339,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

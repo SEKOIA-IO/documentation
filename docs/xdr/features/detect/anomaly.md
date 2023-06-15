@@ -1,6 +1,6 @@
 # Anomaly Detection Rules
 
-You can use SEKOIA.IO Anomaly Detection Rules to analyze time series data, identify anomalous patterns and raise alerts.
+You can use Sekoia.io Anomaly Detection Rules to analyze time series data, identify anomalous patterns and raise alerts.
 
 Anomaly detection rules are based on machine learning anomaly detection features automating the analysis of univariate time series data by creating accurate baselines of normal behavior in your data. These baselines are used to identify anomalous patterns in your time series data and raise alerts with different levels of criticality.
 

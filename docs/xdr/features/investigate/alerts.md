@@ -56,14 +56,14 @@ There are three possibilities to define the similarity strategy to use. By order
 
 #### Similarity by rule
 
-Rules written by SEKOIA.IO and available in the Rules Catalog may define specific similarity strategies.
+Rules written by Sekoia.io and available in the Rules Catalog may define specific similarity strategies.
 
 Similarity strategies by rule can be defined during the rule creation process. Learn more about how to do it in [this section](../../detect/rules_catalog/#custom-similarity-strategy).
 
 
 #### Similarity by event
 
-Depending on the events that triggered an alert, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly.
+Depending on the events that triggered an alert, Sekoia.io applies a similarity logic. This logic follows Sekoia.io guidelines and cannot be edited by users directly.
 
 If the event matches one of the conditions listed below, the associated similarity strategy is used.
 
@@ -84,7 +84,7 @@ If the event matches one of the conditions listed below, the associated similari
 
 #### Default similarity
 
-If there is no similarity forced by the rule or by the event, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+If there is no similarity forced by the rule or by the event, you can rely on Sekoia.io default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
 
 `source.ip` and `destination.ip` can be used interchangeably. 
 
@@ -276,7 +276,7 @@ Subtasks can have an OpenC2 specification which can be displayed by clicking on 
 
 ### Similar alerts
 
-Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, SEKOIA.IO has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions.
+Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, Sekoia.io has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions.
 
 To find similar alerts linked to a specific alert, you will need to access the detail page dedicated to this alert. The similar alerts tab will be automatically loaded next to the [Details](#details), [Tasks](#tasks), [Graph Investigation](#graph-investigation) and [Events](#events) tabs.
 
@@ -294,7 +294,7 @@ The similar alerts tab is divided into two parts:
 
 
 !!! note
-    Please note that if SEKOIA.IO doesn’t find previous similar alerts, a message will be displayed to notify you.
+    Please note that if Sekoia.io doesn’t find previous similar alerts, a message will be displayed to notify you.
 
 ### Events
 

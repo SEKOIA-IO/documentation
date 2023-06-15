@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Sekoia.io Endpoint Agent** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Sekoia.io Endpoint Agent on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Sekoia.io Endpoint Agent on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.json){ .md-button }
 ??? abstract "AD Object WriteDAC Access"
     
     Detects WRITE_DAC access to a domain object. This requires Windows Event ID 4662.

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Imperva WAF** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Imperva WAF** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Imperva WAF on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_d9f337a4-1303-47d4-b15f-1f83807ff3cc_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Imperva WAF on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_d9f337a4-1303-47d4-b15f-1f83807ff3cc_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
     Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace. 
@@ -219,7 +219,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Imperva WAF** with the follo
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

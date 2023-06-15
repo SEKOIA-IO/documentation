@@ -4,7 +4,7 @@ type: intake
 
 # Squid
 
-Squid is a caching proxy for the Web. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. The analysis of Squid logs by SEKOIA.IO can detect web threats along as in-progress intrusion and exfiltration attempts.
+Squid is a caching proxy for the Web. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. The analysis of Squid logs by Sekoia.io can detect web threats along as in-progress intrusion and exfiltration attempts.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_a0dbb8f3-ca1c-4c6b-aafa-595bd430c0cb_do_not_edit_manually.md!}
@@ -18,13 +18,13 @@ As of now, the main solution to collect Squid logs leverages the Rsyslog recipe.
 
 ### Rsyslog
 
-In this Section, we detail how to configure Squid’s logging output for SEKOIA.IO by means of the Rsyslog transport. We hereby focus on the configuration of Squid and invite the reader to the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+In this Section, we detail how to configure Squid’s logging output for Sekoia.io by means of the Rsyslog transport. We hereby focus on the configuration of Squid and invite the reader to the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
 
 To configure Squid logging, you can create a new configuration `99-sekoiaio.conf` file in the `/etc/squid/conf.d/` directory of your server. With most of Squid configurations (including Debian, Red Hat Entreprise Linux, etc.), this file will automatically be used.
 
 This file should contain two information:
 
-- The log format used for SEKOIA.IO.
+- The log format used for Sekoia.io.
 - The Syslog facility and priority we would like to use.
 
 Content of `/etc/squid/conf.d/99-sekoiaio.conf` file:

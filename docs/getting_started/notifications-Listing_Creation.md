@@ -4,11 +4,11 @@ To stay informed about the latest activities on your community, you can set up n
 
 Notifications Rules, accessible through the User Center or the contextual menu, will let you:
 
-- Focus on specific SEKOIA.IO events (Operations Center alerts and Intelligence Center reports)
+- Focus on specific Sekoia.io events (Operations Center alerts and Intelligence Center reports)
 - Add precise conditions
-- Configure actions to be triggered (send an e-mail, display a notification in SEKOIA.IO, …)
+- Configure actions to be triggered (send an e-mail, display a notification in Sekoia.io, …)
 
-This documentation will let you go deeper into [SEKOIA.IO](http://sekoia.io/)’s notifications mechanism.
+This documentation will let you go deeper into [Sekoia.io](http://sekoia.io/)’s notifications mechanism.
 
 ## Notifications listing
 
@@ -45,7 +45,7 @@ For example, you can decide to trigger a notification when the following criteri
 
 ### Intelligence Center Notifications
 
-You can configure your notification rule to be triggered when a new `report` is merged in SEKOIA.IO’s Intelligence Center.
+You can configure your notification rule to be triggered when a new `report` is merged in Sekoia.io’s Intelligence Center.
 
 To do so, you have to:
 

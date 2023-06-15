@@ -1,16 +1,16 @@
 # Quickstart
 API stands for Application Programming Interface and is the code that governs the server's access point.
 
-When to use the SEKOIA.IO API?
+When to use the Sekoia.io API?
 
-* **Data sharing**: when you want an application to get data from SEKOIA.IO
-* **Integration**: when you want an application to perform actions on SEKOIA.IO
-* **Automation**: when you want to build a script to automate actions with SEKOIA.IO
+* **Data sharing**: when you want an application to get data from Sekoia.io
+* **Integration**: when you want an application to perform actions on Sekoia.io
+* **Automation**: when you want to build a script to automate actions with Sekoia.io
 
-SEKOIA.IO offers a public REST API to interact with the platform.
+Sekoia.io offers a public REST API to interact with the platform.
 
 !!!note
-    The SEKOIA.IO GUI is based on that API
+    The Sekoia.io GUI is based on that API
 
 Here are some characteristics of a REST API:
 
@@ -31,7 +31,7 @@ curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/
 ```
 
 To create an API key, follow our guide [here](https://docs.sekoia.io/getting_started/manage_api_keys/).
-The roles needed for your key will depend on what you want to achieve. If you plan to only get information from SEKOIA.IO, read only permissions will be enough. If you want to perform actions on SEKOIA.IO, you will also need to add write permissions.
+The roles needed for your key will depend on what you want to achieve. If you plan to only get information from Sekoia.io, read only permissions will be enough. If you want to perform actions on Sekoia.io, you will also need to add write permissions.
 
 Our documentation provides information on each endpoint and specifies the required permissions.
 
@@ -94,10 +94,10 @@ curl -X POST https://api.sekoia.io/v1/invitations \
 ```
 
 !!! Note
-    Such requests that create or update resources on the server may request to **ALSO** add parameters in the URL to specify the object one wants to have action on. With SEKOIA.IO API you will often pass through the URL the UUID of the specific object you are expecting to be modified.  
+    Such requests that create or update resources on the server may request to **ALSO** add parameters in the URL to specify the object one wants to have action on. With Sekoia.io API you will often pass through the URL the UUID of the specific object you are expecting to be modified.  
 
 ## Python scripts
-Python is a language that can be used to interact with the SEKOIA.IO API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
+Python is a language that can be used to interact with the Sekoia.io API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
 
 
 ### Get request with query parameters
@@ -199,9 +199,9 @@ if __name__ == '__main__':
 ```
 
 ### Another example - Search events
-It is possible to search in your events by using the SEKOIA.IO API. Search for events can request some time to be processed and as a reminder, the API is stateless, that means no connection is maintained between two requests.
+It is possible to search in your events by using the Sekoia.io API. Search for events can request some time to be processed and as a reminder, the API is stateless, that means no connection is maintained between two requests.
 
-For this reason, SEKOIA.IO offers a solution to answer to this asynchronous problematic: the notion of search job.
+For this reason, Sekoia.io offers a solution to answer to this asynchronous problematic: the notion of search job.
 
 3 steps are needed:
 
@@ -223,7 +223,7 @@ This Python script uses these 3 actions to perform a search and print the events
 ```python
 #!/usr/bin/env python3
 """
-This script uses the SEKOIA.IO API to search events
+This script uses the Sekoia.io API to search events
 and print the last 100 events to STDOUT
 """
 
@@ -405,7 +405,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "APIKEY",
-        help="SEKOIA.IO API key with the SIC_READ_INTAKES permission",
+        help="Sekoia.io API key with the SIC_READ_INTAKES permission",
     )
     parser.add_argument(
         "--dates",
@@ -432,9 +432,9 @@ search_events.py [-h] --dates DATES --query QUERY [-v] APIKEY
 ```
 
 * `--dates` is used to specify to the time windows. The format used is `earliest_time,latest_time`. Dates can be in ISO8601 or relative format.
-* `--query` is the query in Dork format (same langage as the SEKOIA.IO event page)
+* `--query` is the query in Dork format (same langage as the Sekoia.io event page)
 * `-v` to get verbose mode
-* `APIKEY` is the SEKOIA.IO key with the `SIC_READ_INTAKES` permission
+* `APIKEY` is the Sekoia.io key with the `SIC_READ_INTAKES` permission
 
 **Example**:
 

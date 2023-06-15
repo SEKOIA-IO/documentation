@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **NGINX** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **NGINX** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x NGINX on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_ab25af2e-4916-40ba-955c-34d2301c1f51_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x NGINX on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_ab25af2e-4916-40ba-955c-34d2301c1f51_do_not_edit_manually.json){ .md-button }
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
@@ -255,7 +255,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **NGINX** with the following d
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

@@ -12,7 +12,7 @@ An `Action` helps you execute specific tasks depending on your needs. There are 
 
 The Actions Library lists all available actions in playbooks with their detailed configuration.
 
-## SEKOIA.IO Actions 
+## Sekoia.io Actions 
 
 ### Getters
 
@@ -58,13 +58,13 @@ To update an alert status, you need to copy the `action_uuid` corresponding to t
 To get notified, you can rely on these tools: 
 
 - [Mandrill](library/mandrill.md): Send Message
-- [Mattermost](library/mattermost.md): Post message / Post SEKOIA.IO alert
+- [Mattermost](library/mattermost.md): Post message / Post Sekoia.io alert
 - [Pagerduty](library/pagerduty.md): Trigger Alert
 - [The Hive](library/the-hive.md): Create an alert in the Hive
 
 ## Data collection
 
-If you have an account in one of the listed tools below, you can easily extract data from there and import it to SEKOIA.IO. This is made possible with an API key. 
+If you have an account in one of the listed tools below, you can easily extract data from there and import it to Sekoia.io. This is made possible with an API key. 
 
 - [BinaryEdge](library/binaryedge-s-api.md)
 - [Censys](library/censys.md)

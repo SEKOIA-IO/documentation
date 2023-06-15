@@ -6,7 +6,7 @@ type: intake
 
 Microsoft Defender for Endpoint is an enterprise endpoint security platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.
 
-This setup guide describes how to forward events produced by `Microsoft Defender for Endpoints` to SEKOIA.IO XDR.
+This setup guide describes how to forward events produced by `Microsoft Defender for Endpoints` to Sekoia.io XDR.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.md!}
@@ -17,7 +17,7 @@ This setup guide describes how to forward events produced by `Microsoft Defender
 
 ### Prerequisites
 
-To forward events to SEKOIA.IO, please follow [this guide](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub) to create an EventHubs namespace with an EventHubs that enable the data streaming on the hub.
+To forward events to Sekoia.io, please follow [this guide](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub) to create an EventHubs namespace with an EventHubs that enable the data streaming on the hub.
 
 Once the data streaming is configured, in your EventHubs, go to `Setting > Shared access policies`.
 Create a new policy with the option `Listen` then copy the `Connection string-primary key`.

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security SIEM Feeder** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Panda Security SIEM Feeder** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Panda Security SIEM Feeder on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_da3555f9-8213-41b8-8659-4cb814431e29_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Panda Security SIEM Feeder on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_da3555f9-8213-41b8-8659-4cb814431e29_do_not_edit_manually.json){ .md-button }
 ??? abstract "Disable Workstation Lock"
     
     Registry change in order to disable the ability to lock the computer by using CTRL+ALT+DELETE or CTRL+L. This registry key does not exist by default. Its creation is suspicious and the value set to "1" means an activation. It has been used by FatalRAT, but other attacker/malware could probably use it. This rule needs Windows Registry changes (add,modification,deletion) logging which can be done through Sysmon Event IDs 12,13,14.
@@ -45,7 +45,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security SIEM Feeder**
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

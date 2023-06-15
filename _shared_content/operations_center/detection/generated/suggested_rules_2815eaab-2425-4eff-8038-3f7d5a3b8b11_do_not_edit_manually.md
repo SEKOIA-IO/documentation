@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Azure Windows** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Azure Windows on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2815eaab-2425-4eff-8038-3f7d5a3b8b11_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Azure Windows on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2815eaab-2425-4eff-8038-3f7d5a3b8b11_do_not_edit_manually.json){ .md-button }
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -1005,7 +1005,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Windows** with the fol
     
     - **Effort:** advanced
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

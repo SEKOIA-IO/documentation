@@ -28,7 +28,7 @@ And depending on the context of the log, additional content could be available, 
 
 ## Configure
 
-This setup guide will show you how to pull events produced by SentinelOne EDR on [SEKOIA.IO](https://app.sekoia.io/). To collect the SentinelOne logs, you must generate an API token from the SentinelOne Management Console. We recommend creating a Service User to use a dedicated account for the integration.
+This setup guide will show you how to pull events produced by SentinelOne EDR on [Sekoia.io](https://app.sekoia.io/). To collect the SentinelOne logs, you must generate an API token from the SentinelOne Management Console. We recommend creating a Service User to use a dedicated account for the integration.
 
 **Important**: If you have multiple SentinelOne Management Consoles, you must generate an API Token for each one.
 
@@ -45,7 +45,7 @@ This setup guide will show you how to pull events produced by SentinelOne EDR on
 
 ## Create a SentinelOne intake
 
-In the [SEKOIA.IO Operation Center](https://app.sekoia.io/operations/intakes):
+In the [Sekoia.io Operation Center](https://app.sekoia.io/operations/intakes):
 
 1. Click on the `Intake` page.
 2. Search for `SentinelOne` by navigating the page or using the search bar.

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Okta System logs** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Okta System logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_e6bb2404-8fc8-4124-a785-c1276277b5d7_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Okta System logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_e6bb2404-8fc8-4124-a785-c1276277b5d7_do_not_edit_manually.json){ .md-button }
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
@@ -159,7 +159,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Okta System logs** with the 
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

@@ -14,7 +14,7 @@ The `Triggers` collect data that will be used by the Operators and Actions to an
 
 ### Alerts
 
-The `Security alerts` triggers are made by SEKOIA.IO and allow users to collect information about alerts. To find them in the listing, filter by `Triggers` and click on SEKOIA.IO. 
+The `Security alerts` triggers are made by Sekoia.io and allow users to collect information about alerts. To find them in the listing, filter by `Triggers` and click on Sekoia.io. 
 
 There you can find the following triggers: 
 
@@ -39,7 +39,7 @@ By using these triggers, you can get:
 
 ### Manual trigger (webhook) 
 
-The `Manual trigger` can be found in the Triggers listing by clicking on SEKOIA.IO. It allows users to automatically trigger actions once a human has raised and removed a doubt on an alert.
+The `Manual trigger` can be found in the Triggers listing by clicking on Sekoia.io. It allows users to automatically trigger actions once a human has raised and removed a doubt on an alert.
 
 ### Cron
 

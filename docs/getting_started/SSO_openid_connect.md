@@ -1,6 +1,6 @@
 # Configure SSO with OpenID Connect
 
-To make it easier for employees to access SEKOIA.IO, you can enable SSO in your SEKOIA.IO community. 
+To make it easier for employees to access Sekoia.io, you can enable SSO in your Sekoia.io community. 
 
 ## Prerequisites for OpenID Connect
 
@@ -9,7 +9,7 @@ To make it easier for employees to access SEKOIA.IO, you can enable SSO in your 
 
 ## Verify your domains
 
-SEKOIA.IO requires your domains to be verified in order to be used for authentication.
+Sekoia.io requires your domains to be verified in order to be used for authentication.
 
 To do so:
 
@@ -19,7 +19,7 @@ To do so:
 4. Once it has been validated by our team, this status will become "Verified"
 
 
-## Configure SSO on SEKOIA.IO
+## Configure SSO on Sekoia.io
 
 To set up SSO, follow these instructions:
 

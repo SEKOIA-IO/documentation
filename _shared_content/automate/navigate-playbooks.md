@@ -42,7 +42,7 @@ The graphical view is composed of three main sections:
 
 Accessible in a side panel that appears when clicking on the `+` on the left of the screen, this library provides you with a set of [triggers](https://docs.sekoia.io/xdr/features/automate/triggers/), [actions](https://docs.sekoia.io/xdr/features/automate/actions/) and [operators](https://docs.sekoia.io/xdr/features/automate/operators/) to help automate your workflow. 
 
-These actions are regrouped in apps and services that are interconnected with SEKOIA.IO. 
+These actions are regrouped in apps and services that are interconnected with Sekoia.io. 
 
 To find actions in the listing, you can either: 
 

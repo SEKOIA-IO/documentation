@@ -4,7 +4,7 @@ This is the alternative way to collect Office365 events.
 
 ### Prerequisites
 
-This setup guide will show you how to generate, store and forward events produced by Office 365 service to SEKOIA.IO.
+This setup guide will show you how to generate, store and forward events produced by Office 365 service to Sekoia.io.
 Theses changes have to be made from the Azure web portal ([https://portal.azure.com](https://portal.azure.com)).
 
 ### A. Event Hubs
@@ -22,7 +22,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 Navigate to: `Home > Event Hubs > company-eventhub - Shared access policies`. From there, you can create a policy (e.g. RootManageSharedAccessKey) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
 Navigate to: `Home > Event Hubs > company-eventhub > o365-event - Shared access policies`. From there, you can create a policy (e.g. sekoiaio-nifi) with the claims `Listen`.
-> Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
+> Once created, click on the policy and save the `Connection string-primary key`, to be sent to Sekoia.io.
 Navigate to: `Home > Event Hubs > company-eventhub > o365-event - Consumer groups`. From there, you can create a consumer group (e.g. sekoiaio-nifi).
 
 ### B. Office 365

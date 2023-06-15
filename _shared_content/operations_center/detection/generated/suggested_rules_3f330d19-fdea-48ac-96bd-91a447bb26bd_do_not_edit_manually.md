@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Sophos EDR** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Sophos EDR** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Sophos EDR on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3f330d19-fdea-48ac-96bd-91a447bb26bd_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Sophos EDR on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3f330d19-fdea-48ac-96bd-91a447bb26bd_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
     Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
@@ -87,7 +87,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos EDR** with the follow
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

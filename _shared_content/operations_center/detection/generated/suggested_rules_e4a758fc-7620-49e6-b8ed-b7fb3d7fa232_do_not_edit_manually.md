@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Vade M365** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Vade M365** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Vade M365 on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_e4a758fc-7620-49e6-b8ed-b7fb3d7fa232_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Vade M365 on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_e4a758fc-7620-49e6-b8ed-b7fb3d7fa232_do_not_edit_manually.json){ .md-button }
 ??? abstract "Malware Detected By Vade For M365"
     
     Vade Secure product Vade for M365 has detected a malware contained in the message.
@@ -27,7 +27,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Vade M365** with the followi
     
     - **Effort:** advanced
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

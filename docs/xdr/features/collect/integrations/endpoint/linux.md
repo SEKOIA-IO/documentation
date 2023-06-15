@@ -8,10 +8,10 @@ Linux is a family of free and open-source software operating systems built aroun
 !!! warning
     This format is deprecated. We highly recommend you to use one of these alternative formats:
 
-    - [SEKOIA.IO endpoint agent](sekoiaio.md)
+    - [Sekoia.io endpoint agent](sekoiaio.md)
     - [auditbeat](auditbeat_linux.md)
 
-    or one of these numerous EDR formats supported by SEKOIA.IO:
+    or one of these numerous EDR formats supported by Sekoia.io:
 
     - [CrowdStrike Falcon](crowdstrike_falcon.md)
     - [Cybereason](cybereason_malop.md)

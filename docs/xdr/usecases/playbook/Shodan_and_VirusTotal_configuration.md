@@ -8,7 +8,7 @@ There are 2 steps:
 
 ## Prerequisites
 
-- A SEKOIA.IO XDR licence
+- A Sekoia.io XDR licence
 - The user that configures the Playbook should have a Role that contains:
 	* The SYMPHONY permissions
 - An API Key with a Role that contains at least the following permission:
@@ -21,14 +21,14 @@ There are 2 steps:
 
 ## Playbook configuration
 
-### Create a comment on SEKOIA.IO alert from Shodan
+### Create a comment on Sekoia.io alert from Shodan
 
 1. Configure the `Alert Created` block
 
   - On the right panel, under the Module Configuration section, click on `+ Create new configuration`
   - Complete the form with the following information:
     * **Name**: ReadAlertContent
-    * **Api_key**: TO BE REPLACED BY YOUR SEKOIA.IO API KEY
+    * **Api_key**: TO BE REPLACED BY YOUR Sekoia.io API KEY
     * **Base_url**: `https://api.sekoia.io`
   - Click on the `Save` button
 

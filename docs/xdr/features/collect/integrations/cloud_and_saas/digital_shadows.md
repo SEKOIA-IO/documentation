@@ -6,7 +6,7 @@ type: intake
 
 Digital Shadows SearchLight continuously searches and identifies any unwanted exposures, and provides contextualised alerts to better understand the associated risks.
 
-In this documenation we will explain how to collect and send SearchLight logs to SEKOIA.IO.
+In this documenation we will explain how to collect and send SearchLight logs to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ccf942fe-c839-42be-a081-5c3f946e80f5_do_not_edit_manually.md!}
 
@@ -23,11 +23,11 @@ Then, you will need to retrieve the following information from the portal:
 - `Basicauth secret`
 - Your Searchlight account ID
 
-You now have all information to configure the Digital Shadows Searchlight module and its `Send events` action to SEKOIA.IO.
+You now have all information to configure the Digital Shadows Searchlight module and its `Send events` action to Sekoia.io.
 
 To start your playbook with a template, go to: "Create a new playbook" > "Use a template" > Search for Searchlight.
 
-You can also create your own on the same basis. A typical playbook to retrieve and send Searchlight logs to SEKOIA.IO will use this kind of chain:
+You can also create your own on the same basis. A typical playbook to retrieve and send Searchlight logs to Sekoia.io will use this kind of chain:
 
 - A "Pull alerts from Searchlight" trigger
-- An action that sends events to SEKOIA.IO
+- An action that sends events to Sekoia.io

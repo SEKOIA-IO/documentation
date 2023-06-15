@@ -14,13 +14,13 @@ PROVE IT by rubycat is a privileged access management solution.
 
 ## Setup
 
-This setup guide will show you how to forward logs produced by PROVE IT to SEKOIA.IO by means of an Rsyslog transport channel.
+This setup guide will show you how to forward logs produced by PROVE IT to Sekoia.io by means of an Rsyslog transport channel.
 
 On most GNU/Linux servers, two packages need to be installed: `rsyslog` and `rsyslog-gnutls`.
 
 ### Download the certificate
 
-In order to allow the connection of your rsyslog server to the SEKOIA.IO intake, please download the SEKOIA.IO intake certificate:
+In order to allow the connection of your rsyslog server to the Sekoia.io intake, please download the Sekoia.io intake certificate:
 
 ```bash
 $ wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
@@ -34,7 +34,7 @@ Open or create a new PROVE IT configuration file for rsyslog:
 sudo vim /etc/rsyslog.d/46-proveit.conf
 ```
 
-Paste the following rsyslog configuration to trigger the emission of Pulse Connect Secure logs by your Rsyslog server to SEKOIA.IO:
+Paste the following rsyslog configuration to trigger the emission of Pulse Connect Secure logs by your Rsyslog server to Sekoia.io:
 
 ```bash
 # Define the SEKIOA-IO intake certificate
@@ -49,7 +49,7 @@ $ActionSendStreamDriverAuthMode x509/name # server is authenticated
 # IMPORTANT: don't forget to set your intake key in the template
 template(name="SEKOIAIOProveITTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-# Send your events to SEKOIA.IO intake servers under SEKOIAIOPulseTemplate template
+# Send your events to Sekoia.io intake servers under SEKOIAIOPulseTemplate template
 if $hostname == "YOUR_PROVEIT_HOSTNAME" then @@(o)intake.sekoia.io:10514;SEKOIAIOProveITTemplate
 ```
 
@@ -67,4 +67,4 @@ Go to the [events page](https://app.sekoia.io/operations/events) to watch your i
 
 ## Related files
 
-- [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): SEKOIA.IO TLS Server Certificate (1674b)
+- [SEKOIA-IO-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): Sekoia.io TLS Server Certificate (1674b)

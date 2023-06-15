@@ -26,19 +26,19 @@ The Playbook Templates' Catalog is being updated frequently by our analysts and 
 | Alerts | Alert urgency to 0 when rejected | Put the urgency of an alert to 0 when it is rejected |
 | Alerts, Enrichment | Enrich alerts with VirusTotal | Enrich alerts with VirusTotal informations |
 | Alert, cron | Reject old alerts (1 year) | Reject old alerts not updated for 1 year. |
-| Alert, Webhook, enrichment | Enrich with IKnowWhatYouDownload | Enrich with IKnowWhatYouDownload to check if the IP is known from this service, directly from SEKOIA.IO. |
-| Alerts, TheHive | Automatically create an alert on TheHive | Automatically create an alert on TheHive when a new alert is raised in SEKOIA.IO. |
+| Alert, Webhook, enrichment | Enrich with IKnowWhatYouDownload | Enrich with IKnowWhatYouDownload to check if the IP is known from this service, directly from Sekoia.io. |
+| Alerts, TheHive | Automatically create an alert on TheHive | Automatically create an alert on TheHive when a new alert is raised in Sekoia.io. |
 | Alerts, TheHive | Manually create an Alert on TheHive | Create an alert on TheHive via the alert page. |
 | Alerts, Notifications | Slack notification on alert | Notify by Slack when new alerts are created. If the target is defined, it is used in the notification, otherwise the hostnames from events are used. |
-| Alerts, Enrichment | Enrich alerts with AbuseIPDB | Enrich with AbuseIPDB to check if the IP is known from this service, directly from SEKOIA.IO. |
-| Alerts, Enrichment | Alerts Enrichment Shodan Playbook | Enrich with Shodan to check if the IP is known from this service, directly from SEKOIA.IO. |
-| Alerts, OSINT | Fetch alerts from Digital Shadows SearchLight | Synchronise alerts from Digital Shadows SearchLight to SEKOIA.IO events |
-| AWS, Events | Forward AWS CloudTrail records to SEKOIA.IO | This playbook pulls records from AWS CloudTrail then push the fetched records to SEKOIA.IO |
-| AWS, Events | Forward AWS Flow Logs records to SEKOIA.IO | This playbook pulls records from AWS Flow Logs then push the fetched records to SEKOIA.IO |
-| Events | Forward Panda Security Events to SEKOIA.IO | This playbook pulls security events from the Panda Security Aether platform then push them to SEKOIA.IO |
-| Events | Imperva WAF fetch logs | Fetch events from Imperva Web Application Firewall and forward them to SEKOIA.IO intake |
-| Events | Forward Vade M365 email Events to SEKOIA.IO | This playbook collect logs from 'Vade for M365' then push them to SEKOIA.IO |
-| Events, Google | Forward Google Pubsub records to SEKOIA.IO | This playbook consumes records from Google Pubsub and push them to SEKOIA.IO |
+| Alerts, Enrichment | Enrich alerts with AbuseIPDB | Enrich with AbuseIPDB to check if the IP is known from this service, directly from Sekoia.io. |
+| Alerts, Enrichment | Alerts Enrichment Shodan Playbook | Enrich with Shodan to check if the IP is known from this service, directly from Sekoia.io. |
+| Alerts, OSINT | Fetch alerts from Digital Shadows SearchLight | Synchronise alerts from Digital Shadows SearchLight to Sekoia.io events |
+| AWS, Events | Forward AWS CloudTrail records to Sekoia.io | This playbook pulls records from AWS CloudTrail then push the fetched records to Sekoia.io |
+| AWS, Events | Forward AWS Flow Logs records to Sekoia.io | This playbook pulls records from AWS Flow Logs then push the fetched records to Sekoia.io |
+| Events | Forward Panda Security Events to Sekoia.io | This playbook pulls security events from the Panda Security Aether platform then push them to Sekoia.io |
+| Events | Imperva WAF fetch logs | Fetch events from Imperva Web Application Firewall and forward them to Sekoia.io intake |
+| Events | Forward Vade M365 email Events to Sekoia.io | This playbook collect logs from 'Vade for M365' then push them to Sekoia.io |
+| Events, Google | Forward Google Pubsub records to Sekoia.io | This playbook consumes records from Google Pubsub and push them to Sekoia.io |
 
 ### Intelligence Center templates
 

@@ -7,7 +7,7 @@ type: intake
 Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Through the Cybereason platform, all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
 
 !!! warning
-    If your tenant uses an allowlist to authorize connections, please ensure that SEKOIA.IO's IPs are allowed.
+    If your tenant uses an allowlist to authorize connections, please ensure that Sekoia.io's IPs are allowed.
     See our [FAQ](../../../../FAQ.md) to get our IPs.
 
 
@@ -17,18 +17,18 @@ Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Thro
 
 ## Configure
 
-This setup guide will lead you into forwarding all MalOp activities to SEKOIA.IO.
+This setup guide will lead you into forwarding all MalOp activities to Sekoia.io.
 
 ### Prerequisites
 
-To forward events produced by Cybereason to SEKOIA.IO, you will need your Cybereason username and password. 
+To forward events produced by Cybereason to Sekoia.io, you will need your Cybereason username and password. 
 
 !!! warning
     Please ensure the user has, at least, `Analyst L2` rights granted.
 
 ### Create your intake
 
-On SEKOIA.IO, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp` format.
+On Sekoia.io, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp` format.
 Keep aside the intake key.
 
 ### Pull events

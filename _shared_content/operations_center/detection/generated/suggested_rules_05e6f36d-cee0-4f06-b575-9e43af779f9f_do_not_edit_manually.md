@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Microsoft 365 Defender** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Microsoft 365 Defender on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Microsoft 365 Defender on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -533,25 +533,25 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
 
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
@@ -927,7 +927,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     
     - **Effort:** advanced
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

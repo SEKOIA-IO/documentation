@@ -1,9 +1,9 @@
-# Configure SEKOIA.IO XDR in 5 minutes
+# Configure Sekoia.io XDR in 5 minutes
 
 ## Introduction
 
 
-Following the creation of a new community, which represents your instance that is provided to you with the licence, there is a set of standard configurations on SEKOIA.IO Operations Center pages that needs to be completed. This note summarises a guidance on the primary steps to be taken in the first few minutes of setting up a community.
+Following the creation of a new community, which represents your instance that is provided to you with the licence, there is a set of standard configurations on Sekoia.io Operations Center pages that needs to be completed. This note summarises a guidance on the primary steps to be taken in the first few minutes of setting up a community.
 
 The full guide on how to create and set up an account, create and invite users to a community, manage roles, permissions and notifications and much more, is available [here](https://docs.sekoia.io/getting_started/).
 
@@ -20,12 +20,12 @@ An Entity is an organizational unit mostly used for configuration and reporting 
 
 ### Create intakes 
 
-The Intakes correspond to the different technologies used (also called Data Sources) that forward their logs to SEKOIA.IO XDR to be centralized for security monitoring. You can configure as much intakes as you need to increase your infrastructure security with SEKOIA.IO knowledge.
+The Intakes correspond to the different technologies used (also called Data Sources) that forward their logs to Sekoia.io XDR to be centralized for security monitoring. You can configure as much intakes as you need to increase your infrastructure security with Sekoia.io knowledge.
 
 To create intakes associated to the technology you would like to collect: 
 
 1. Go to the Intakes page and create intakes one by one from the catalog.
-2. Make sure the logs are pushed to [SEKOIA.IO](http://SEKOIA.IO) using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the `Intake key` accordingly, or pulled by API.
+2. Make sure the logs are pushed to [Sekoia.io](http://Sekoia.io) using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the `Intake key` accordingly, or pulled by API.
 
 !!! note
     Find more details on each integration in our [integrations catalog](https://docs.sekoia.io/xdr/features/collect/integrations/). 
@@ -34,7 +34,7 @@ To create intakes associated to the technology you would like to collect:
 
 ### Activate detection rules
 
-Once your event logs are collected and normalized by SEKOIA.IO, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
+Once your event logs are collected and normalized by Sekoia.io, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
 
 1. Enable all detection rules of effort levels 1 or 2 by filtering on each effort level then clicking on the `Enable all` button.
 2. Automate the activation of future detection rules with the same effort levels following [this procedure](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules).
@@ -45,9 +45,9 @@ Once your event logs are collected and normalized by SEKOIA.IO, you probably wan
 
 ### And then what?
 
-The Events page provides a centralized view of your events and enables in-depth investigation in the latest logs sent to SEKOIA.IO. With its query-based search bar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
+The Events page provides a centralized view of your events and enables in-depth investigation in the latest logs sent to Sekoia.io. With its query-based search bar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
 
-Enjoy your collected [Events](https://docs.sekoia.io/xdr/features/investigate/events/) and investigate latest logs sent to SEKOIA.IO with its query-based search bar.
+Enjoy your collected [Events](https://docs.sekoia.io/xdr/features/investigate/events/) and investigate latest logs sent to Sekoia.io with its query-based search bar.
 
 When events match the pattern of your activated detection rules, this will raise an [Alert](https://docs.sekoia.io/xdr/features/investigate/alerts/#alerts-listing) to be investigated. If you consider it as a True Positive, change its status from Ongoing to Closed and add a comment that synthesis your analysis.
 

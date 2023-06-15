@@ -1,6 +1,6 @@
 # Permissions
 
-In SEKOIA.IO, permissions do not necessarily have common names across the platform. 
+In Sekoia.io, permissions do not necessarily have common names across the platform. 
 
 Use the search bar on top of the permissions list to filter permissions depending on the needed service.
   

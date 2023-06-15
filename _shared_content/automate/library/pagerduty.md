@@ -20,8 +20,8 @@ Trigger alert to PagerDuty
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `alert_uuid` | `string` | The Unique identifier of the alert |
-| `api_key` | `string` | The SEKOIA.IO API-Key to read the alert content. |
-| `base_url` | `string` | Base URL of SEKOIA.IO api (e.g. https://api.sekoia.io/). |
+| `api_key` | `string` | The Sekoia.io API-Key to read the alert content. |
+| `base_url` | `string` | Base URL of Sekoia.io api (e.g. https://api.sekoia.io/). |
 
 
 ## Extra

@@ -12,7 +12,7 @@ Azure Active Directory is a cloud-based Identity and Rights management service. 
 
 ## Configure
 
-This setup guide will show you how to forward events produced by Azure Active Directory service to SEKOIA.IO.
+This setup guide will show you how to forward events produced by Azure Active Directory service to Sekoia.io.
 
 Theses changes have to be made from the [Azure Web Portal](https://portal.azure.com).
 
@@ -45,12 +45,12 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 #### Create “Shared Access Policies”
 
 1. Navigate to “Home”, “Event Hubs”, “company-eventhub - Shared access policies”. From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
-2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “active-directory-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
+2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “active-directory-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to Sekoia.io.
 3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”active-directory-event - Consumer groups”. From there, you can create a consumer group (e.g. `sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
-In order to allow SEKOIA.IO keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
+In order to allow Sekoia.io keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
 
 To proceed, you can use Azure PowerShell:
 
@@ -79,9 +79,9 @@ Navigate to “Home”, “Azure Active Directory” (e.g. `company-ad`), “Mon
 - In the log section, select “AuditLogs” and “SignInLogs”.
 - Choose a name for this configuration and click on “Save”.
 
-### Connection Keys to SEKOIA.IO via Playbook
+### Connection Keys to Sekoia.io via Playbook
 
-Last step to integrate your log into SEKOIA.IO, please follow the steps below:
+Last step to integrate your log into Sekoia.io, please follow the steps below:
 
 1. Create a playbook with Trigger module **Consume Eventhub messages** in Microsoft Azure technology
 2. Setup Module configuration (= default)

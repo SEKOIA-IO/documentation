@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **AWS CloudTrail** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x AWS CloudTrail on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_d3a813ac-f9b5-451c-a602-a5994544d9ed_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x AWS CloudTrail on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_d3a813ac-f9b5-451c-a602-a5994544d9ed_do_not_edit_manually.json){ .md-button }
 ??? abstract "AWS CloudTrail Important Change"
     
     Detects disabling, deleting and updating of a Trail source which could be done by some attackers trying to masquerade their activity.
@@ -153,7 +153,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS CloudTrail** with the fo
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

@@ -1,15 +1,15 @@
 # Rules Catalog
 
-Once your event logs are collected and normalized by SEKOIA.IO, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
+Once your event logs are collected and normalized by Sekoia.io, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
 
 All rules are applied to your event stream in real-time, so that you can detect - and respond to - threats as fast as possible.
 
 ## Rule Types
 
-SEKOIA.IO supports the following rule types:
+Sekoia.io supports the following rule types:
 
 - **Sigma**: signature rules using the [Sigma detection language](sigma.md)
-- **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from SEKOIA.IO's own Intelligence feed, continuously updated by our Threat & Detection Research team
+- **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from Sekoia.io's own Intelligence feed, continuously updated by our Threat & Detection Research team
 - **Anomaly**: [univariate anomaly detection rules](anomaly.md).
 - **STIX** (deprecated): signature rules using the STIX Patterning language
 
@@ -29,7 +29,7 @@ The Rules Catalog page can be used to list and manage all detection rules. Many 
 The Rules Catalog lists all detection rules available to your organization: 
 <figure markdown>![available_verified_rules](/assets/operation_center/rules_catalog/available_verified.png){ width=300 }</figure>. 
 
-- **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by SEKOIA.IO's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
+- **Verified Rules**: rules with the following logo ![verified_logo](/assets/operation_center/rules_catalog/verified_logo.PNG) are verified. These rules are created for you by Sekoia.io's Threat & Detection Research team and already built-in. Verified rules are constantly updated to improve detection. Furthermore, they follow a specific process to test them and be certain they won't cause many false positives. This process is described in our blogpost [XDR detection engineering at scale: crafting detection rules for SecOps efficiency](https://blog.sekoia.io/xdr-detection-rules-at-scale/). This set of more than 550 rules can be used to detect known threats, attack patterns, etc.
 - **Your Rules**: rules created by your team that are specific to your organization.
 
 The Available Rules counter displays the total number of rules (verified + custom). You can click on the `Verified counter` to list only Verified rules.
@@ -65,7 +65,7 @@ Capabilities that have associated rules inside the catalog are listed on the lef
 
 To have a filtered view of your rules, you can rely on filters cited before ([Available/Verified](#available-and-verified-rules), [Effort level](#effort-level), [Capabilities](#capabilities)) but also on tags associated with rules. 
 
-These tags are defined by SEKOIA.IO analysts to help make searching for a rule easier and provide categories such as `AWS`, `CVE`, `O365` and `phishing`.
+These tags are defined by Sekoia.io analysts to help make searching for a rule easier and provide categories such as `AWS`, `CVE`, `O365` and `phishing`.
 
 To filter rules using tags, there are two ways:
 
@@ -211,6 +211,6 @@ When rules have limited scope with selected entities or assets, these rules will
 We continuously update the rules catalog with new rules. 
 
 To keep posted, we introduced a dedicated trigger in the Notification Center.
-This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by SEKOIA.IO.
+This new notification trigger enables the creation of notification rules that triggers when a new detection rule is added to the Rules Catalog by Sekoia.io.
 
 This trigger supports additionnal filters on the name of the detection rule, its description, pattern or severity.

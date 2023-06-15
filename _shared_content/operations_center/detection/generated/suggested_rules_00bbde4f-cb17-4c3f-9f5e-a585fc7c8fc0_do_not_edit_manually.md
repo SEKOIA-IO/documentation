@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Google Kubernetes Engine (GKE)** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Google Kubernetes Engine (GKE)** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Google Kubernetes Engine (GKE) on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_00bbde4f-cb17-4c3f-9f5e-a585fc7c8fc0_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Google Kubernetes Engine (GKE) on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_00bbde4f-cb17-4c3f-9f5e-a585fc7c8fc0_do_not_edit_manually.json){ .md-button }
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Proofpoint TAP** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Proofpoint TAP on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_46ca6fc8-3d30-434c-92ff-0e1cde564161_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Proofpoint TAP on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_46ca6fc8-3d30-434c-92ff-0e1cde564161_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
     Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
@@ -105,7 +105,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

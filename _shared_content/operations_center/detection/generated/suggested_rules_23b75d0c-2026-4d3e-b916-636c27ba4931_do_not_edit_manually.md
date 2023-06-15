@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Cisco Secure Web Appliance** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Cisco Secure Web Appliance on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_23b75d0c-2026-4d3e-b916-636c27ba4931_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Cisco Secure Web Appliance on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_23b75d0c-2026-4d3e-b916-636c27ba4931_do_not_edit_manually.json){ .md-button }
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -243,7 +243,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Secure Web Appliance**
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

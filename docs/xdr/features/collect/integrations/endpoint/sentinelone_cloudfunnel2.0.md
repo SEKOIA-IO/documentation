@@ -59,7 +59,7 @@ Please find bellow a short list of activities that are available for security su
 
 ## Configure
 
-This setup guide will show you how to pull events produced by SentinelOne Deep Visibility on [SEKOIA.IO](https://app.sekoia.io/).
+This setup guide will show you how to pull events produced by SentinelOne Deep Visibility on [Sekoia.io](https://app.sekoia.io/).
 
 ### Create a AWS S3 bucket
 
@@ -79,7 +79,7 @@ Once the AWS S3 bucket is created, you can configure your SentinelOne instance t
 
 ### Create a SentinelOne Cloud Funnel 2.0 intake
 
-In the [SEKOIA.IO Operations Center](https://app.sekoia.io/operations/intakes):
+In the [Sekoia.io Operations Center](https://app.sekoia.io/operations/intakes):
 
 1. Click on the `Intake` page.
 2. Search for `SentinelOne Cloud Funnel 2.0` by navigating the page or using the search bar.

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security Aether** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Panda Security Aether** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Panda Security Aether on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_ee6364a1-9e3c-4363-9cb6-2f574bd4ce51_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Panda Security Aether on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_ee6364a1-9e3c-4363-9cb6-2f574bd4ce51_do_not_edit_manually.json){ .md-button }
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -45,7 +45,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Panda Security Aether** with
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

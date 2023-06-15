@@ -38,7 +38,7 @@ Please find bellow a short list of activities that are available for security su
 
 ## Configure
 
-This setup guide will show you how to pull events produced by SentinelOne Deep Visibility on [SEKOIA.IO](https://app.sekoia.io/).
+This setup guide will show you how to pull events produced by SentinelOne Deep Visibility on [Sekoia.io](https://app.sekoia.io/).
 
 ### Setup a SentinelOne Kafka server
 
@@ -52,7 +52,7 @@ Thus SentinelOne have a solution using Kafka technology which can be delivered a
 
 ### Create a SentinelOne Deep Visibility intake
 
-In the [SEKOIA.IO Operation Center](https://app.sekoia.io/operations/intakes):
+In the [Sekoia.io Operation Center](https://app.sekoia.io/operations/intakes):
 
 1. Click on the `Intake` page.
 2. Search for `SentinelOne Deep Visibility` by navigating the page or using the search bar.

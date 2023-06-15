@@ -1,12 +1,12 @@
 # Dashboards
 
-**SEKOIA.IO’s Intelligence Center homepage uses a dashboard mechanism that is fully configurable and adaptable to your needs.**
+**Sekoia.io’s Intelligence Center homepage uses a dashboard mechanism that is fully configurable and adaptable to your needs.**
 
 Dashboards are composed of modular widgets that can be placed and edited wherever you want on the screen. Widgets can be fully configured as you can specify the date range, apply filters, change the display, etc.
 
 ## Default Dashboard
 
-Accounts on SEKOIA.IO come with a preconfigured dashboard that gives a synthetic view of the current community activity, either from an operational security perspective (risk level, number of alerts, etc.) or from an activity perspective (list of last posted comments, last created alerts, etc.).
+Accounts on Sekoia.io come with a preconfigured dashboard that gives a synthetic view of the current community activity, either from an operational security perspective (risk level, number of alerts, etc.) or from an activity perspective (list of last posted comments, last created alerts, etc.).
 
 ### Time range and refresh period
 
@@ -16,7 +16,7 @@ You can easily manage the time range and the refresh period of your dashboard by
 
 ### Create from scratch
 
-The default [SEKOIA.IO](http://SEKOIA.IO) dashboard cannot be edited. However, you can create your own dashboards to meet your needs.
+The default [Sekoia.io](http://Sekoia.io) dashboard cannot be edited. However, you can create your own dashboards to meet your needs.
 To do so, several widgets are available to you with the possibility to configure and add multiple filters to them.
 To create a new dashboard, you have to:
 

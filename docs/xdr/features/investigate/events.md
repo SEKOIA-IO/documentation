@@ -1,17 +1,17 @@
 # Events
 
-The events page provides a centralized view of your events and enables in depth investigation in the latest logs sent to SEKOIA.IO.
+The events page provides a centralized view of your events and enables in depth investigation in the latest logs sent to Sekoia.io.
 With its query-based search bar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner. 
 
 In this documentation, we will dive into the different parts that constitute the Events page: 
 
 - The [Search bar](#search-bar) and its filtering and sharing options
 - The [list of events](#log-listing) and the detailed view of your parsed events 
-- The mechanism behind [events enrichment](#events-enrichment) or how events are contextualized in SEKOIA.IO 
+- The mechanism behind [events enrichment](#events-enrichment) or how events are contextualized in Sekoia.io 
 - The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](Create-Anomaly-Detection-rule-from-the-aggregation-view) from your query
 
 !!! note
-    To send your logs to SEKOIA.IO, please refer to this [section](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/).
+    To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/).
 
 ## Search bar
 
@@ -122,7 +122,7 @@ The columns by default are:
 
 - `Timestamp`: Event date
 - `Event.dialect`: Type of intake that sent the event
-- `Description`: Smart description with clickable links formatted by SEKOIA.IO to show the most important elements and make them easily accessible, such as IP address, type or entity
+- `Description`: Smart description with clickable links formatted by Sekoia.io to show the most important elements and make them easily accessible, such as IP address, type or entity
 
 !!! note
     At most 5 000 events can be displayed in the table. If this number is reached, the search has to be narrowed.
@@ -154,7 +154,7 @@ Each line of log can be unrolled to show:
 
 
 - `STIX`: Event as a STIX bundle that will be used by detection engines
-- `Raw event`: Event as received by SEKOIA.IO
+- `Raw event`: Event as received by Sekoia.io
 - `Detail`: Detailed information retrieved from the log after parsing with elements from the event related to the intake and the community. 
 
 This table explains the main actions that can be done for each of these fields: 
@@ -219,9 +219,9 @@ Once you’ve selected these values, you can either perform a search on these va
 
 Event enrichment consists of adding contextualization data to the standardized event. The objective is to increase the reliability of detection and qualification.
 
-Two sources are used by SEKOIA.IO XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
+Two sources are used by Sekoia.io XDR to systematically enrich each event: [Observables](https://docs.sekoia.io/cti/features/consume/observables/) and [Assets](https://docs.sekoia.io/xdr/features/collect/assets/).
 
-The first source gathers all the technical artefacts, also called observables, collected by SEKOIA.IO analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
+The first source gathers all the technical artefacts, also called observables, collected by Sekoia.io analysts during their investigations. Consisting of tens of millions of objects, this database allows us to provide legitimate and/or malicious context to each event. For example, observables are used to geolocate public IP addresses and recognize all legitimate binaries according to Microsoft Windows.
 
 The second source of enrichment relies on a configuration management database (i.e. assets) to provide organization-specific context. The user is invited to consolidate a list of key resources such as brands, users, applications, or hardware present in the organisation. These assets are used continuously to contextualize events with information from the associated resources. This contextualization greatly increases the effectiveness of qualification. 
 
@@ -238,7 +238,7 @@ To see the value of enriched values, click on the enriched field and you'll be p
 
 ## Aggregation
 
-Aggregation is a new (beta) feature on SEKOIA.IO! 
+Aggregation is a new (beta) feature on Sekoia.io! 
 
 By using line charts, you can now visualize change in your logs over a continuous range. Visualizing change with a line chart allows the overall trend to be displayed at once, and multiple trends to be compared simultaneously. This new view on the events page can be useful to visualize events during a hunting phase or incident response. 
 

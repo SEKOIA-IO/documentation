@@ -6,7 +6,7 @@ type: intake
 
 Microsoft Azure Front Door is a scalable and secure entry point for fast delivery of your global web applications.
 
-This setup guide describe how to forward events produced by `Azure Front Door` to SEKOIA.IO.
+This setup guide describe how to forward events produced by `Azure Front Door` to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_69b52166-b804-4f47-860f-2d3fd0b46987_do_not_edit_manually.md!}
 
@@ -16,7 +16,7 @@ This setup guide describe how to forward events produced by `Azure Front Door` t
 
 ### Prerequisites
 
-To forward events to SEKOIA.IO, create [an Event hub namespace and an Event hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) with a consumergroup.
+To forward events to Sekoia.io, create [an Event hub namespace and an Event hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) with a consumergroup.
 
 Once created, in your EventHubs, go to `Setting > Shared access policies`.
 Create a new policy with the option `Listen` then copy the `Connection string-primary key`.

@@ -430,9 +430,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -884,7 +884,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
@@ -1329,25 +1329,25 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -1469,9 +1469,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "SEKOIA.IO EICAR Detection"
+??? abstract "Sekoia.io EICAR Detection"
     
-    Detects observables in SEKOIA.IO CTI tagged as EICAR, which are fake samples meant to test detection.
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** elementary
     
@@ -2055,25 +2055,25 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2529,25 +2529,25 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -3024,9 +3024,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -4121,9 +4121,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -5125,9 +5125,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -5909,7 +5909,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -6313,7 +6313,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -6678,9 +6678,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -7590,7 +7590,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
@@ -7903,7 +7903,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

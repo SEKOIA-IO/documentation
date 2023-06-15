@@ -2,7 +2,7 @@
 
 Indicators Of Compromise (IOCs) are commonly shared between CERT and SOC teams and by Cyber Threat Intelligence providers. They are an important part of detection.
 
-While IOCs produced by SEKOIA.IO’s own Threat & Detection Research team are directly available inside the application, IOC Collections allow you to import indicators from other sources.
+While IOCs produced by Sekoia.io’s own Threat & Detection Research team are directly available inside the application, IOC Collections allow you to import indicators from other sources.
 
 You can then easily see telemetry on these collections and use them inside detection rules.
 

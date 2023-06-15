@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gateway** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Forcepoint Secure Web Gateway** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Forcepoint Secure Web Gateway on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f0f95532-9928-4cde-a399-ddd992d48472_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Forcepoint Secure Web Gateway on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f0f95532-9928-4cde-a399-ddd992d48472_do_not_edit_manually.json){ .md-button }
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -165,7 +165,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Forcepoint Secure Web Gatewa
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

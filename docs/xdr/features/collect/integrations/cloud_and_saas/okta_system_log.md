@@ -18,7 +18,7 @@ Okta System log provides activity records related to your organization.
 
 Sign in your Okta organization with administrator role and follow [this guide](https://developer.okta.com/docs/guides/create-an-api-token/main/#create-the-token) to create an API token.
 
-### Create the intake in SEKOIA.IO
+### Create the intake in Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Okta System logs`. Copy the intake key.
 

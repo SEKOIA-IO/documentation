@@ -6,7 +6,7 @@ type: intake
 
 Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable.
 
-In this documentation, you will learn how to collect and send Cloudflare Gateway DNS logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send Cloudflare Gateway DNS logs to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_7b1317ec-3f87-4b53-9b6d-3f79045f28fa_do_not_edit_manually.md!}
 
@@ -14,7 +14,7 @@ In this documentation, you will learn how to collect and send Cloudflare Gateway
 
 ## Configuration
 
-### Create the intake on SEKOIA.IO
+### Create the intake on Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cloudflare.
 
@@ -73,7 +73,7 @@ $ curl -X POST 'https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUN
 !!! Important
     Replace :
 
-    - `<YOUR_INTAKE_KEY>` with the Intake key you generated in the [Create the intake on SEKOIA.IO](#create-the-intake-on-sekoiaio) step.
+    - `<YOUR_INTAKE_KEY>` with the Intake key you generated in the [Create the intake on Sekoia.io](#create-the-intake-on-sekoiaio) step.
     - `<CLOUDFLARE_ACCOUNT_ID>` with the ACCOUNT_ID found on the overview page
     - `<CLOUDFLARE_API_TOKEN>` with the API Token you generated
 

@@ -5,7 +5,7 @@ type: intake
 ## Overview
 
 HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020.
-This setup guide shows how to forward events produced by HarfangLab EDR to SEKOIA.IO.
+This setup guide shows how to forward events produced by HarfangLab EDR to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_3c7057d3-4689-4fae-8033-6f1f887a70f2_do_not_edit_manually.md!}
 
@@ -14,7 +14,7 @@ This setup guide shows how to forward events produced by HarfangLab EDR to SEKOI
 ## Configure
 
 
-### On SEKOIA.IO
+### On Sekoia.io
 
 To create the intake key to be used when setting up HarfangLab, please select `manual` mode. 
 
@@ -29,9 +29,9 @@ HarfangLab must setup OpenSSL to the server for protocol `TCP/SSL` to be availab
 
 ### Steps
 
-#### In SEKOIA.IO
+#### In Sekoia.io
 
-Create a new HarfangLab intake on SEKOIA.IO and select the manual mode.
+Create a new HarfangLab intake on Sekoia.io and select the manual mode.
 ![Create HarfangLab Intake Key](/assets/operation_center/integration_catalog/endpoint/harfanglab/harfanglab_createintake.png){: style="max-width:60%"}
 
 
@@ -63,7 +63,7 @@ Create a new HarfangLab intake on SEKOIA.IO and select the manual mode.
     * InjectedThread
     * Security Event
 
-4. Configure the Syslog information with the following details and by replacing `YOUR_INTAKE_KEY` with the Intake key previously generated in SEKOIA.IO:
+4. Configure the Syslog information with the following details and by replacing `YOUR_INTAKE_KEY` with the Intake key previously generated in Sekoia.io:
 
     * Host: `intake.sekoia.io`
     * Port: `10514`
@@ -79,4 +79,4 @@ Create a new HarfangLab intake on SEKOIA.IO and select the manual mode.
 5. Finally select the `Protocol` option: `TCP/SSL`, leave the other options to default.
 
 
-In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable with your intake key generated in SEKOIA.IO.
+In the above field `Structured data`, please replace `YOUR_INTAKE_KEY` variable with your intake key generated in Sekoia.io.

@@ -2,7 +2,7 @@
 
 Google Cloud Logging centralizes logs from Google Cloud products.
 
-In this documentation, you will learn how to collect and send Google Cloud logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send Google Cloud logs to Sekoia.io.
 
 ## Configure
 
@@ -35,9 +35,9 @@ To pull events, you have to:
 1. Go to [the playbooks' page](https://app.sekoia.io/operations/playbooks) 
 2. Click on `+New playbook` to create a new playbook 
 3. Select `Use a template` when creating a playbook
-4. Search for `Google Cloud` then select `Forward Google Pubsub records to SEKOIA.IO`
+4. Search for `Google Cloud` then select `Forward Google Pubsub records to Sekoia.io`
 
-This playbook consumes records from Google Pubsub and pushes them to SEKOIA.IO. 
+This playbook consumes records from Google Pubsub and pushes them to Sekoia.io. 
 
 
 You can also create your own on the same basis by using the "Google Pub/Sub" trigger (`Connect to the specified`)
@@ -60,6 +60,6 @@ You can also create your own on the same basis by using the "Google Pub/Sub" tri
 |token_uri| token server endpoint URI `https://oauth2.googleapis.com/token`|
 |type|Activity type `service_account`|
 
-To start sending Logs to SEKOIA.IO, please create a [Logs Router Sinks](https://cloud.google.com/logging/docs/export/configure_export_v2?hl=en#creating_sink) with an [Inclusion Filter](https://cloud.google.com/logging/docs/view/logging-query-language) that fits your needs (Read the documentation dedicated to the product you want to monitor).
+To start sending Logs to Sekoia.io, please create a [Logs Router Sinks](https://cloud.google.com/logging/docs/export/configure_export_v2?hl=en#creating_sink) with an [Inclusion Filter](https://cloud.google.com/logging/docs/view/logging-query-language) that fits your needs (Read the documentation dedicated to the product you want to monitor).
 
 Last configuration on Google to setup is describe on each Intake.

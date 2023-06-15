@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Github Audit Logs** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **Github Audit Logs** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Github Audit Logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_80de6ccb-7246-40de-bcbb-bc830118c1f9_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x Github Audit Logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_80de6ccb-7246-40de-bcbb-bc830118c1f9_do_not_edit_manually.json){ .md-button }
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.

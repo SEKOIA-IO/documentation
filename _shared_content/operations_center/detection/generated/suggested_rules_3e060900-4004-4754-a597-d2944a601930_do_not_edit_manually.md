@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **AWS GuardDuty [BETA]** with the following detection capabilities out-of-the-box.
+Benefit from Sekoia.io built-in rules and upgrade **AWS GuardDuty [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x AWS GuardDuty [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3e060900-4004-4754-a597-d2944a601930_do_not_edit_manually.json){ .md-button }
+[Sekoia.io x AWS GuardDuty [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3e060900-4004-4754-a597-d2944a601930_do_not_edit_manually.json){ .md-button }
 ??? abstract "AWS GuardDuty High Severity Alert"
     
     GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
@@ -51,7 +51,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AWS GuardDuty [BETA]** with 
     
     - **Effort:** elementary
 
-??? abstract "SEKOIA.IO Intelligence Feed"
+??? abstract "Sekoia.io Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     

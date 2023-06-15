@@ -1,10 +1,10 @@
-# Forward Logs to SEKOIA.IO From Logstash
+# Forward Logs to Sekoia.io From Logstash
 
-If you are using Logstash as a log collector and/or parser, you can configure it to push your logs to SEKOIA.IO. This operation is done by using the “[Http output plugin][logstash-http-output-plugin]”, which is bundled into the default version of Logstash.
+If you are using Logstash as a log collector and/or parser, you can configure it to push your logs to Sekoia.io. This operation is done by using the “[Http output plugin][logstash-http-output-plugin]”, which is bundled into the default version of Logstash.
 
 To push logs, you have to configure some filters in Logstash that will add the proper “intake key” considering your logs.
 
-In the following example, we are pushing Apache HTTP Server and NGINX logs to SEKOIA.IO. To filter in events, we are relying on Logstash tags. Make sure you update your intake key value by changing `CHANGE_ME_INTAKE_KEY` below. You can add as many “filters“ you want in the `filter` section.
+In the following example, we are pushing Apache HTTP Server and NGINX logs to Sekoia.io. To filter in events, we are relying on Logstash tags. Make sure you update your intake key value by changing `CHANGE_ME_INTAKE_KEY` below. You can add as many “filters“ you want in the `filter` section.
 
 ```
 filter {

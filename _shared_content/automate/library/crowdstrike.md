@@ -17,7 +17,7 @@
 
 ### [ALPHA] Fetch new events from CrowdStrike Data replication
 
-Forward Crowdstrike Falcon Data Replication events to SEKOIA.IO
+Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 
 **Arguments**
 

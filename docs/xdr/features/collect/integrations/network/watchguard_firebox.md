@@ -5,7 +5,7 @@ type: intake
 ## Overview
 
 WatchGuard Firebox is a serie of high-performance firewalls to protect computer networks.
-Sending WatchGuard Firebox logs to SEKOIA.IO enables the discovering of potential network security threats. Spotted threats are contextualized by means of  SEKOIA.IO's Cyber Threat Intelligence (CTI).
+Sending WatchGuard Firebox logs to Sekoia.io enables the discovering of potential network security threats. Spotted threats are contextualized by means of  Sekoia.io's Cyber Threat Intelligence (CTI).
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_d719e8b5-85a1-4dad-bf71-46155af56570_do_not_edit_manually.md!}
 
@@ -16,7 +16,7 @@ Sending WatchGuard Firebox logs to SEKOIA.IO enables the discovering of potentia
 
 ### Prerequisites
 
-An internal log concentrator (Rsyslog) is required to collect and forward events to SEKOIA.IO.
+An internal log concentrator (Rsyslog) is required to collect and forward events to Sekoia.io.
 
 ### Enable Syslog forwarding
 
@@ -28,9 +28,9 @@ Configure the event forwarding to use the IBM LEEF format (for more information,
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format WatchGuard Firebox.
 
-## Transport to SEKOIA.IO
+## Transport to Sekoia.io
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 
 ## Further Readings
 - [Watchguard Firebox Rsyslog Integration Overview](https://www.watchguard.com/help/docs/help-center/en-US/Content/Integration-Guides/General/ubuntu_rsyslog.html)
