@@ -508,10 +508,10 @@ plugins:
       integrations/fortiweb.md: xdr/features/collect/integrations/network/fortiweb.md
       integrations/freeradius.md: xdr/index.md
       integrations/fsecure.md: xdr/index.md
+      integrations/github_audit_logs.md: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
       integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
-      integrations/github_audit_logs.md: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
       integrations/haproxy.md: xdr/features/collect/integrations/application/haproxy.md
       integrations/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       integrations/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
