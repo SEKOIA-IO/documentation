@@ -14,10 +14,6 @@ Salesforce provides customer relationship management software and applications f
 
 This setup guide will show you how to provide an integration between Salesforce events and SEKOIA.IO.
 
-### Prerequisites
-
-- Have an internal concentrator (Salesforce)
-
 ### Configure OAuth
 
 1. Go to the [Salesforce App Manager](https://login.salesforce.com)
@@ -29,5 +25,11 @@ This setup guide will show you how to provide an integration between Salesforce 
 
 ### Create an intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Salesforce.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Salesforce. Copy the intake key.
 
+### Pull events
+
+To start to pull events, you have to:
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Salesforce](../../../automate/library/salesforce.md) trigger
+2. Set up the module configuration with the Client Id and Client Secret. Set up the trigger configuration with the intake key
+3. Start the playbook and enjoy your events
