@@ -333,12 +333,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **RSA SecurID [BETA]** with th
     
     - **Effort:** intermediate
 
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
-    
-    - **Effort:** intermediate
-
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
