@@ -1,4 +1,4 @@
-Rules catalog includes **717 built-in detection rules** ([_last update on 2023-06-12_](rules_changelog.md)).
+Rules catalog includes **719 built-in detection rules** ([_last update on 2023-06-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -644,6 +644,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 **Phishing**
 
+??? abstract "Cisco ESA Suspicious Email With Attachment"
+    
+    Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
+    
+    - **Effort:** advanced
+    
 ??? abstract "Cisco Umbrella Threat Detected"
     
     Cisco Umbrella has detected a malicious traffic categorized as malware, phishing or adware.
@@ -1575,6 +1581,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule for false positives such as SenseNDR module, command to get version of socat, and document opened with Word or Acrobat Reader.
+            
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
@@ -2707,10 +2717,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
@@ -3474,10 +3488,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
@@ -4347,10 +4365,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
@@ -5396,6 +5418,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
 ??? abstract "CVE 2022-1292"
     
     The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
+    
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
     
     - **Effort:** advanced
     
@@ -6702,6 +6730,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
+    
+    - **Effort:** advanced
+    
 **Multi-Factor Authentication Interception**
 
 ??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
@@ -7590,6 +7624,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
@@ -7698,6 +7736,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "Rclone Process"
     
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
@@ -7850,6 +7892,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule for false positives such as SenseNDR module, command to get version of socat, and document opened with Word or Acrobat Reader.
+            
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
