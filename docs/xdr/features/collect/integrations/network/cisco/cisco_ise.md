@@ -14,7 +14,7 @@ Cisco ISE is an intelligent security policy enforcement platform that reduces se
 
 ### Prerequisites
 
-An syslog server, called target is required to collect and forward events to SEKOIA.IO.
+- Have an internal log concentrator
 
 ### Enable Syslog forwarding
 
