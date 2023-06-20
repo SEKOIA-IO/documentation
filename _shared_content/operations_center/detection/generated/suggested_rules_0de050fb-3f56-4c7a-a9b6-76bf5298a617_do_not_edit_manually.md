@@ -435,12 +435,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp activity** 
     
     - **Effort:** intermediate
 
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
-
 ??? abstract "Mshta JavaScript Execution"
     
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
@@ -738,12 +732,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp activity** 
 ??? abstract "Schtasks Suspicious Parent"
     
     Detects schtasks started from suspicious and/or unusual processes.
-    
-    - **Effort:** intermediate
-
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
     - **Effort:** intermediate
 

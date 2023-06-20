@@ -1,12 +1,18 @@
-Changelog _last update on 2023-06-16_
+Changelog _last update on 2023-06-20_
 
 ## Changelog
 
+### Msdt (Follina) File Browse Process Execution
+  - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+    
 ### SolarWinds Wrong Child Process
   - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
     
 ### Socat Reverse Shell Detection
-  - 14/06/2023 - minor - Added filter to the rule for false positives such as SenseNDR module, command to get version of socat, and document opened with Word or Acrobat Reader.
+  - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+    
+### Socat Relaying Socket
+  - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
     
 ### Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL
   - 13/06/2023 - minor - Adding private IPs as sources
