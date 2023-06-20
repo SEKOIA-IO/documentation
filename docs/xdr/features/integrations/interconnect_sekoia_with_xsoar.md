@@ -7,7 +7,7 @@ Some information will be automatically sent to Cortex XSOAR but you will be able
 
 Here is a schema that illustrates this interconnection:
 
-![Sekoia Cortex XSOAR Schema](/assets/operation_center/external_integrations/sekoia_xsoar_integration.png){: style="max-width:50%"}
+![Sekoia Cortex XSOAR Schema](/assets/operation_center/external_integrations/sekoia_xsoar_integration.png){: style="max-width:100%"}
 
 ## Prerequisites
 
