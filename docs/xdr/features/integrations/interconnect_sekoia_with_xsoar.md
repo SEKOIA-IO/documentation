@@ -40,7 +40,7 @@ To allow Sekoia.io to create a new incident when a new alert is raised, we need 
 - From the XSOAR GUI, install the `Generic Webhook` published by XSOAR from the Market Place
 - Go to `Settings` > `INTEGRATIONS` > `Instances` and search `Generic Webhook`
 - Click on `Add instance`
-- name it `sekoia`
+- Name it `sekoia`
 - Under `Incident type`, select `Sekoia.io`
 - Follow the webhook documentation and configure Cortex XSOAR server rerouting to make your webhook available from your XSOAR Url in HTTPS.
 - Fill out `Username` with `_header: Authorization` and `Password` with `Bearer YOUR_XSOAR_TOKEN`. Replace `YOUR_XSOAR_TOKEN` with a complex string. It will be use as an authentication.
@@ -67,7 +67,7 @@ To allow Sekoia.io to create a new incident when a new alert is raised, we need 
     * In the `Url` section, change `<YOUR_XSOAR_DOMAIN>` with the correct value.
     * The `Json` section contains the information that will be sent to XSOAR. By default, it will send the name of the rule that triggered the alert, the creation date, the alert short id, the alert URL, the urgency of the alert and the first event associated to the alert. Please adapt it to your need if you want more information to be sent.
 
-Your playbook is now ready !
+Your playbook is now ready!
 
 - **Save** your Playbook by clicking on the `Save` button on the center of the page
 - **Activate** your Playbook by toggling the value from `Off` to `On`, on the top right of the page
@@ -102,7 +102,7 @@ To do this mapping, follow these steps:
 9. Under `Mapper (incoming)`, select the `Sekoia.io mapping` previously created
 10. Click on `Save & exit`
 
-Congratulations ! The integration with Palo Alto XSOAR is now finished !
+Congratulations! The integration with Palo Alto XSOAR is now completed!
 
 ## View Sekoia.io Playbook runs
 
