@@ -1,11 +1,20 @@
-# Forward Logs to SEKOIA.IO From Logstash
+# Forward logs to Sekoia.io from Logstash
 
 If you are using Logstash as a log collector and/or parser, you can configure it to push your logs to Sekoia.io. This operation is done by using the “[Http output plugin][logstash-http-output-plugin]”, which is bundled into the default version of Logstash.
 
-To push logs, you have to configure some filters in Logstash that will add the proper “intake key” considering your logs.
+To push logs, you have to configure some filters in Logstash that will add the proper `intake key` considering your logs.
 
-In the following example, we have multiple inputs to handle logs collected via Syslog (Apache HTTP Server and NGINX logs) and via Beats (Winlogbeat) and forward them to Sekoia.io. To filter in events, we are relying on Logstash tags. Make sure you update your intake key value by changing `CHANGE_ME_INTAKE_KEY` below. You can add as many “filters“ you want in the `filter` section.
-Beats agents require a specific output configuration as we need to forward the complete JSON event to Sekoia.io.
+## Example
+
+In the following example, we have multiple inputs to handle logs collected via Syslog (Apache HTTP Server and NGINX logs) and via [Beats (Winlogbeat)](../integrations/endpoint/winlogbeat.md) and forward them to Sekoia.io. 
+
+In order to filter events effectively, Logstash uses tags as a key component. To ensure proper functionality, make sure to update the intake key value by editing the placeholder `CHANGE_ME_INTAKE_KEY` mentioned below. Additionally, you have the flexibility to incorporate multiple filters within the `filter` section as per your requirements.
+
+!!! tip 
+    By adding additional filters, you can enhance the filtering capabilities of Logstash and customize the processing of events to suit your requirements.
+
+!!! note    
+    Beats agents require a specific output configuration as you need to forward the complete JSON event to Sekoia.io.
 
 ```
 input {
