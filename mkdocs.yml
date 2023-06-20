@@ -263,7 +263,7 @@ nav:
         - RiskIQ: xdr/features/automate/library/riskiq.md
         - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - STIX: xdr/features/automate/library/stix.md
-        - Sentinel One: xdr/features/automate/library/sentinel-one.md
+        - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
         - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
@@ -412,6 +412,7 @@ nav:
         - RiskIQ: tip/features/automate/library/riskiq.md
         - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - STIX: tip/features/automate/library/stix.md
+        - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
         - Skyhigh Security: tip/features/automate/library/skyhigh-security.md
