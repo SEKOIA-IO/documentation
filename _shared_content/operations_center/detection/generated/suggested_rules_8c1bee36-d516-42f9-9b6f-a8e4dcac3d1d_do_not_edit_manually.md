@@ -645,12 +645,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 1.0
     
     - **Effort:** intermediate
 
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
-
 ??? abstract "Mshta JavaScript Execution"
     
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
@@ -1050,12 +1044,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 1.0
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
-    
-    - **Effort:** intermediate
-
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
     - **Effort:** intermediate
 

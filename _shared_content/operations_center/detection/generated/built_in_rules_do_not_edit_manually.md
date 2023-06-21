@@ -1,4 +1,4 @@
-Rules catalog includes **719 built-in detection rules** ([_last update on 2023-06-16_](rules_changelog.md)).
+Rules catalog includes **720 built-in detection rules** ([_last update on 2023-06-20_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1573,8 +1573,12 @@ Rules catalog includes **719 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
@@ -1583,7 +1587,7 @@ Rules catalog includes **719 built-in detection rules** ([_last update on 2023-0
     
     - **Changelog:**
     
-        - 14/06/2023 - minor - Added filter to the rule for false positives such as SenseNDR module, command to get version of socat, and document opened with Word or Acrobat Reader.
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
             
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
@@ -1853,6 +1857,10 @@ Rules catalog includes **719 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious HWP Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
@@ -6730,6 +6738,12 @@ Rules catalog includes **719 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Successful Brute Force Login From Internet"
     
     Detects a spike of failed login followed by a success one from Internet for a given source and target
@@ -7884,8 +7898,12 @@ Rules catalog includes **719 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
@@ -7894,7 +7912,7 @@ Rules catalog includes **719 built-in detection rules** ([_last update on 2023-0
     
     - **Changelog:**
     
-        - 14/06/2023 - minor - Added filter to the rule for false positives such as SenseNDR module, command to get version of socat, and document opened with Word or Acrobat Reader.
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
             
 ??? abstract "Venom Multi-hop Proxy agent detection"
     

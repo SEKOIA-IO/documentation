@@ -267,12 +267,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** intermediate
 
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
-
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
     The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
@@ -560,12 +554,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     A user has logged in to the management console.
     
     - **Effort:** master
-
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** intermediate
 
 ??? abstract "SolarWinds Wrong Child Process"
     
