@@ -101,7 +101,8 @@ To do this mapping, follow these steps:
 4. On the left panel, find the XSOAR fields `Alert ID`, `Alert URL`, `Events` and `severity` and click `Choose data path` to give them the value of the corresponding `JSON key name` (for instance `Alert ID` > `alertId`)
 5. Click on `Save Version`
 
-To use this mapping with the Generic Webhook, 
+To use this mapping with the Generic Webhook:
+ 
 1. Go back to `Settings` > `INTEGRATIONS` > `Instances` and find the `Generic Webhook`,
 2. On the `sekoia` instance, click on the edit button
 3. Under `Mapper (incoming)`, select the `Sekoia.io mapping` previously created
