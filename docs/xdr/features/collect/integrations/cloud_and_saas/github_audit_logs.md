@@ -16,6 +16,8 @@ This setup guide describes how to forward audit logs from Github to Sekoia.io.
 
 ## Configure
 
+**Note: according to [GitHub](https://docs.github.com/en/enterprise-cloud@latest/rest/enterprise-admin/audit-log) you must have GitHub enterprise and be Enterprise Admin to collect the Audit Logs.**
+
 ### Creating the Github API key
 
 To create an API key on [Github](https://github.com/):
