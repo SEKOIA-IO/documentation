@@ -120,5 +120,5 @@ To access Sekoia.io playbook runs, follow these steps:
 4. **Verify** that the displayed `Status` is `Succeeded`
 5. If you click on a run from the history, you will be redirected to the Graph page. From there, you will be able to see the results of each block by clicking on it:
 
-![Playbook History](/assets/operation_center/playbooks/playbook_history.PNG)
+![Playbook History](/assets/operation_center/playbooks/playbook_history.PNG){: style="max-width:100%"}
 
