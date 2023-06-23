@@ -199,6 +199,24 @@ A modal with the total number of alerts that can be edited is shown. Some alerts
 !!! note 
     It is recommended to leave a comment to provide more context to the status change but it's not mandatory. 
 
+### Select all alerts
+
+With the select all feature, users can select all alerts returned by the current filter.
+
+![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png){align=right}
+
+To select all alerts, you have to:
+
+- Select at least one alert
+- Click on the `Select all XX alerts.` label
+
+</br></br>
+
+A message will confirm that all alerts are selected including the number of alerts.
+To unselect all alerts, simply click on the `Clear selection.` label
+
+![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png){: style="max-width:100%"}
+
 ### Alerts table columns
 
 By default, the alert listing displays the following columns:
