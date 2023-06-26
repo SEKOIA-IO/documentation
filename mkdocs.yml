@@ -13,7 +13,6 @@ extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js
 - javascript/hotjar.js
-- javascript/posthog.js
 markdown_extensions:
 - admonition
 - attr_list
