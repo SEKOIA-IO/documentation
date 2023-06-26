@@ -10,8 +10,7 @@ Please find bellow a limited list of field types that are available with Sentine
 
 - Information about the Endpoint
 - Information about the SentinelOne agent installed
-- Activity type and its description
-- Alerts and events from the SentinelOne console such as access logs
+- Activity type and its description (authentication access, user management, 2FA setup...)
 
 And depending on the context of the log, additional content could be available, such as:
 
