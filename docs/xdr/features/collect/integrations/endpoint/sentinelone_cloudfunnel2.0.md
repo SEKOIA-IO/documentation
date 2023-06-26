@@ -14,6 +14,9 @@ SentinelOne Deep Visibility logs provides in-depth logs that are useful for dete
 !!! note
     No additional installation or configuration on the agents is needed.
 
+!!! warning
+    Alerts and Events logs from the SentinelOne console are not available with CloudFunnel. To collect events to be able to have information on access to the console, one must configure the SentinelOne log collection from API as documented [here](docs/xdr/features/collect/integrations/endpoint/sentinelone.md).
+
 Please find bellow a short list of activities that are available for security supervision thanks to SentinelOne Deep Visibility logs:
 
 - Process Creation
@@ -31,7 +34,7 @@ Please find bellow a short list of activities that are available for security su
 - File Rename
 - Pre Execution Detection
 - Behavioral Indicators
-- Login 
+- Login
 - Logout
 - Module Load
 - Driver Load
@@ -94,9 +97,9 @@ In the [Sekoia.io Operations Center](https://app.sekoia.io/operations/intakes):
 
 ### Pull events
 
-To start pulling events, follow these steps: 
+To start pulling events, follow these steps:
 
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) 
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks)
 2. Create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws#fetch-new-logs-on-s3)
 3. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name
 4. Set up the trigger configuration with the name of the SQS queue and the intake key (from the intake previously created)
