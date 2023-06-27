@@ -189,10 +189,10 @@ To change statuses in bulk, you have to:
 
 - Apply filters to alerts listing if needed
 - Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected 
-- You can select all available alerts (including alerts in other pages) by clicking on the `Select all XX alerts.` label
-![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png){: style="max-width:100%"}
+- You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts.`
+![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
 - A message will confirm that all alerts are selected including their count
-![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png){: style="max-width:100%"}
+![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
 - Choose the new status you want to apply 
 - Leave a comment explaining your decision and click on the `Update status` button.
 
