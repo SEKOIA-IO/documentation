@@ -45,16 +45,6 @@ For example, you can decide to trigger a notification when the following criteri
 5. Save your changes
 
 
-!!! Note 
-    **Notifications concerning playbooks**
-    
-    The "A playbook encountered an error" trigger will send a notification for every error encountered by a playbook in your community. This doesn't mean that the playbook has stopped.
-    
-    If you wish to be notified only if the playbook encounters an error *and* crashes, you can select the "And crashed" condition.
-
-    ⚠️ The notification is only available for single-tenant account at the moment.
-
-
 ### Intelligence Center Notifications
 
 You can configure your notification rule to be triggered when a new `report` is merged in SEKOIA.IO’s Intelligence Center.
@@ -71,3 +61,14 @@ For example, you can decide to trigger a notification when the following criteri
 3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
 4. Give your notification a `name`
 5. Save your changes
+
+
+### Playbooks notifications
+
+!!! Warning
+    The notification is only available for single-tenant account at the moment.
+
+The "A playbook has encountered an error" trigger, if selected alone, will send a notification for each error encountered by a playbook in your community, whether or not this error causes the playbook to crash.
+
+If you wish to be notified only if the playbook encounters an error *and* crashed, you can select the "And crashed" condition.
+
