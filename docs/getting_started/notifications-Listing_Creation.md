@@ -1,3 +1,4 @@
+
 ## Overview
 
 To stay informed about the latest activities on your community, you can set up notifications and get alerts each time a new alert pops up or a new report is online.
@@ -21,7 +22,7 @@ You can also search and filter your notifications from this page.
 You can filter by type of trigger or type of actions.
 
 !!! Warning
-    Each notification is visibile only for the one that configured it AND on the community it was created.
+    Each notification is exclusively visible to the user who configured it AND within the community where it was created.
 
 ## Create a new notification
 
@@ -43,6 +44,7 @@ For example, you can decide to trigger a notification when the following criteri
 4. Give your notification a `name`
 5. Save your changes
 
+
 ### Intelligence Center Notifications
 
 You can configure your notification rule to be triggered when a new `report` is merged in SEKOIA.IO’s Intelligence Center.
@@ -59,3 +61,14 @@ For example, you can decide to trigger a notification when the following criteri
 3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
 4. Give your notification a `name`
 5. Save your changes
+
+
+### Playbooks notifications
+
+!!! Warning
+    The notification is only available for single-tenant account at the moment.
+
+The "A playbook has encountered an error" trigger, if selected alone, will send a notification for each error encountered by a playbook in your community, whether or not this error causes the playbook to crash.
+
+If you wish to be notified only if the playbook encounters an error *and* crashed, you can select the "And crashed" condition.
+
