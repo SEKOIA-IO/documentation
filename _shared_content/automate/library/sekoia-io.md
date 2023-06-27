@@ -1,6 +1,6 @@
-# SEKOIA.IO
+# Sekoia.io
 
-![SEKOIA.IO](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }
+![Sekoia.io](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }
 
 Sekoia.io
 
@@ -8,8 +8,8 @@ Sekoia.io
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `api_key` | `string` | SEKOIA.IO API key |
-| `base_url` | `string` | SEKOIA.IO base URL (ex. https://api.sekoia.io) |
+| `api_key` | `string` | Sekoia.io API key |
+| `base_url` | `string` | Sekoia.io base URL (ex. https://api.sekoia.io) |
 
 ## Triggers
 
@@ -852,4 +852,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.36**
+Module **`Sekoia.io` v2.38.1**
