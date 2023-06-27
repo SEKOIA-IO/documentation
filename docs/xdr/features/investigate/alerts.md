@@ -179,43 +179,25 @@ Here is the updated list of all available filters.
 !!! tip
     To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.  
 
-### Bulk actions
+### Change alert status in bulk
 
-On the main alert listing, it is possible to treat alerts faster. With the bulk actions, users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context. 
+On the main alert listing, it is possible to treat alerts faster. Users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context. 
 
-![bulk-action](/assets/operation_center/alerts/bulk-action.png){align=right}
+![alert-status](/assets/operation_center/alerts/alert-status.png){: style="max-width:100%"}
 
 To change statuses in bulk, you have to: 
 
 - Apply filters to alerts listing if needed
-- Select some or all alerts in the list using the checkbox in the upper left of the table. A counter will let you know how many alerts are selected 
-- Choose the action you want to apply to all these alerts 
-- Click on `Apply`
-
-A modal with the total number of alerts that can be edited is shown. Some alerts will not be included if their status cannot be changed to the status chosen by the user. Learn more about alert status change in the [Alerts workflow](#alerts-workflow) section. 
-
-- Leave a comment explaining your decision and save your changes. 
+- Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected 
+- You can select all available alerts (including alerts in other pages) by clicking on the `Select all XX alerts.` label
+![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png){: style="max-width:100%"}
+- A message will confirm that all alerts are selected including their count
+![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png){: style="max-width:100%"}
+- Choose the new status you want to apply 
+- Leave a comment explaining your decision and click on the `Update status` button.
 
 !!! note 
     It is recommended to leave a comment to provide more context to the status change but it's not mandatory. 
-
-### Select all alerts
-
-With the select all feature, users can select all alerts returned by the current filter.
-
-![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png){align=right}
-
-To select all alerts, you have to:
-
-- Select at least one alert
-- Click on the `Select all XX alerts.` label
-
-</br></br>
-
-A message will confirm that all alerts are selected including the number of alerts.
-To unselect all alerts, simply click on the `Clear selection.` label
-
-![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png){: style="max-width:100%"}
 
 ### Alerts table columns
 
