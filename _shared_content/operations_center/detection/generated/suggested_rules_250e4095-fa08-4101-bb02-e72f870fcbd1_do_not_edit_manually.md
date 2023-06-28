@@ -225,6 +225,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     
     - **Effort:** intermediate
 
+??? abstract "Certificate Authority Modification"
+    
+    Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
+    
+    - **Effort:** master
+
 ??? abstract "Chafer (APT 39) Activity"
     
     Detects previous Chafer (APT 39) activity attributed to OilRig as reported in Nyotron report in March 2018.
@@ -831,6 +837,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     
     - **Effort:** intermediate
 
+??? abstract "Kernel Module Alteration"
+    
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
+
 ??? abstract "Koadic Execution"
     
     Detects command line parameters used by Koadic hack tool
@@ -1149,11 +1161,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     
     - **Effort:** intermediate
 
+??? abstract "Network Scanning and Discovery"
+    
+    Tools and command lines used for network discovery from current system
+    
+    - **Effort:** advanced
+
 ??? abstract "Network Share Discovery"
     
     Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
     
     - **Effort:** master
+
+??? abstract "Network Sniffing"
+    
+    List of common tools used for network packages sniffing
+    
+    - **Effort:** advanced
 
 ??? abstract "Network Sniffing Windows"
     
@@ -1665,6 +1689,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     
     - **Effort:** intermediate
 
+??? abstract "SSH Tunnel Traffic"
+    
+    When a user creates and uses a SSH tunnel in Linux, the sshd process opens sockets to communicate with other machines or ports. With SSH tunneling, the SSH server can be used as a getaway to access internal systems. The traffic will seem to be coming from the SSH server whereas it only acts as a relay for an attacker. By using this technique, an attacker can successfully bypass external firewall rules and gain foothold to your network, allowing him to scan,hunt and attack your internal systems. This rule includes a filter on port 22, this filter is created to avoid false positive when a user is connecting via ssh. If you do not use port 22 for your machines, please create an alert filter.
+    
+    - **Effort:** advanced
+
+??? abstract "SSH X11 Forwarding"
+    
+    When a user creates and uses SSH X11 Forwarding in Linux, the sshd process opens sockets to communicate with the client machine via a ssh tunnel. X11 forwarding is used to deport graphic programs on the client side.
+    
+    - **Effort:** advanced
+
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -2108,6 +2144,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
     
     - **Effort:** intermediate
+
+??? abstract "System Info Discovery"
+    
+    System info discovery, attempt to detects basic command use to fingerprint a host
+    
+    - **Effort:** master
 
 ??? abstract "TUN/TAP Driver Installation"
     
