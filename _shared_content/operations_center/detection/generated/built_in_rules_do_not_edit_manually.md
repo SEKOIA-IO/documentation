@@ -1,4 +1,4 @@
-Rules catalog includes **720 built-in detection rules** ([_last update on 2023-06-22_](rules_changelog.md)).
+Rules catalog includes **722 built-in detection rules** ([_last update on 2023-06-28_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -3240,6 +3240,14 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+**Authentication Package**
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **External Remote Services**
 
 ??? abstract "Failed Logon Source From Public IP Addresses"
@@ -4217,6 +4225,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Domain Policy Modification**
 
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
@@ -4660,6 +4674,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
     - **Effort:** intermediate
     
@@ -5351,6 +5371,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Deobfuscate/Decode Files or Information**
 
 ??? abstract "FromBase64String Command Line"
@@ -5724,6 +5750,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
     - **Effort:** intermediate
     
@@ -6458,6 +6490,10 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Impacket Secretsdump.py Tool"
     
     Detects credential dumping via secretdump of impacket suite.
@@ -6529,6 +6565,7 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+        - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -6764,6 +6801,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
 **Exploitation for Credential Access**
 
 ??? abstract "Abusing Azure Browser SSO"
@@ -6869,6 +6912,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
     
@@ -6982,6 +7031,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
     - **Effort:** advanced
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 **System Owner/User Discovery**
 
@@ -7147,6 +7202,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
         - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
             
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Network Share Discovery**
 
 ??? abstract "Network Share Discovery"
@@ -7457,6 +7518,12 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
 **Archive Collected Data**
 
 ??? abstract "Data Compressed With Rar"
@@ -7760,6 +7827,10 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
@@ -7870,6 +7941,10 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+            
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
@@ -7999,6 +8074,10 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+            
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
@@ -8057,6 +8136,10 @@ Rules catalog includes **720 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ## Impact
 **Data Destruction**
 

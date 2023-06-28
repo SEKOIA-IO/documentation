@@ -1,8 +1,20 @@
-Changelog _last update on 2023-06-22_
+Changelog _last update on 2023-06-28_
 
 ## Changelog
 
+### Rclone Process
+  - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+    
+### Potential DNS Tunnel
+  - 22/06/2023 - minor - Filter some domains to reduce false positives.
+    
+### Mimikatz LSASS Memory Access
+  - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
+    
 ### Msdt (Follina) File Browse Process Execution
+  - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+    
+### HackTools Suspicious Process Names In Command Line
   - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
     
 ### Socat Relaying Socket
@@ -43,9 +55,6 @@ Changelog _last update on 2023-06-22_
     
 ### Mimikatz Basic Commands
   - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
-    
-### Mimikatz LSASS Memory Access
-  - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
     
 ### LSASS Memory Dump
   - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
