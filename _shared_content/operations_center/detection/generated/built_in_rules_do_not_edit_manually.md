@@ -1,4 +1,4 @@
-Rules catalog includes **722 built-in detection rules** ([_last update on 2023-06-28_](rules_changelog.md)).
+Rules catalog includes **723 built-in detection rules** ([_last update on 2023-06-28_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6253,6 +6253,12 @@ Rules catalog includes **722 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 **Hijack Execution Flow**
 
 ??? abstract "DHCP Callout DLL Installation"
@@ -7012,6 +7018,14 @@ Rules catalog includes **722 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+**System Network Configuration Discovery**
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 **Remote System Discovery**
 
 ??? abstract "Network Scanning and Discovery"
@@ -7125,6 +7139,12 @@ Rules catalog includes **722 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Listing Systemd Environment"
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+    
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
     
     - **Effort:** elementary
     
@@ -7842,6 +7862,12 @@ Rules catalog includes **722 built-in detection rules** ([_last update on 2023-0
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
     
     - **Effort:** intermediate
+    
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
     
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
