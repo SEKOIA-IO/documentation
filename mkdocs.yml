@@ -105,6 +105,7 @@ nav:
             - Gateway Network: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-network.md
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
+          - Duo Security: xdr/features/collect/integrations/cloud_and_saas/duo_security.md
           - Google Cloud:
             - Google Workspace and Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
             - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
