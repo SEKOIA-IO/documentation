@@ -84,7 +84,7 @@ For numerous events, you can use the alternative endpoint `/batch`. The events s
 
 ## Push our events to SEKOIA.IO as JSON array
 
-To send us events as JSON array, you should set `Content-Type` HTTP header to `application/JSON`.
+To send us events as JSON array, you should set `Content-Type` HTTP header to `application/json`.
 
 The following headers are handled by SEKOIA.IO’S HTTPS log collector:
 
@@ -142,7 +142,7 @@ To push text events, one can just `POST` content to `https://intake.sekoia.io`:
 ```python
 import requests
 
-content = {"intake_key": "YOUR_INTAKE_KEY", "JSON": "[764008:0] info: 198.51.100.10 example.org. A IN"}
+content = {"intake_key": "YOUR_INTAKE_KEY", "json": "[764008:0] info: 198.51.100.10 example.org. A IN"}
 response = requests.post("https://intake.sekoia.io", json=content)
 print(response.text) # (1)
 ```
@@ -156,7 +156,7 @@ import requests
 import json
 
 structured_log = {"key": "value"}
-content = {"intake_key": "YOUR_INTAKE_KEY", "JSON": JSON.dumps(structured_log)}
+content = {"intake_key": "YOUR_INTAKE_KEY", "json": json.dumps(structured_log)}
 response = requests.post("https://intake.sekoia.io", json=content)
 print(response.text) # (1)
 ```
@@ -168,7 +168,7 @@ For numerous events, you can use the alternative endpoint `/batch`. This endpoin
 ```python
 import requests
 
-content = {"intake_key": "YOUR_INTAKE_KEY", "JSONs": ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]}
+content = {"intake_key": "YOUR_INTAKE_KEY", "jsons": ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]}
 response = requests.post("https://intake.sekoia.io/batch", json=content)
 print(response.text) # (1)
 ```
