@@ -5,8 +5,9 @@ type: intake
 
 ## Overview
 
-Okta System log provides activity records related to your organization.
+Duo Security offers solutions for strong authentication.
 
+This setup guide describes how to forward security events from Duo to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_547234b3-82ea-4507-b28f-3ee3cd5b9a8e_do_not_edit_manually.md!}
 
