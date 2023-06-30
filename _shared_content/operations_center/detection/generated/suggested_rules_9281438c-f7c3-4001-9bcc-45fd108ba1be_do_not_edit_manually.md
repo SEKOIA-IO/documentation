@@ -1745,7 +1745,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
 
@@ -1890,6 +1890,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 ??? abstract "Suspicious HWP Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
     
     - **Effort:** elementary
 

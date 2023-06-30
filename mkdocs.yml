@@ -106,6 +106,7 @@ nav:
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Duo Security: xdr/features/collect/integrations/cloud_and_saas/duo_security.md
+          - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
           - Google Cloud:
             - Google Workspace and Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
             - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
@@ -125,6 +126,7 @@ nav:
           - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
           - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
+          - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
           - Cisco ESA: xdr/features/collect/integrations/email/cisco_esa.md
@@ -167,6 +169,7 @@ nav:
             - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco/cisco_asa.md
             - Cisco Secure Web Appliance: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
             - Cisco IOS: xdr/features/collect/integrations/network/cisco/cisco_ios.md
+            - Cisco ISE: xdr/features/collect/integrations/network/cisco/cisco_ise.md
             - Cisco NX-OS: xdr/features/collect/integrations/network/cisco/cisco_nx_os.md
             - Cisco Meraki MX: xdr/features/collect/integrations/network/cisco/cisco_meraki_mx.md
           - Citrix ADC: xdr/features/collect/integrations/network/citrix_adc.md
@@ -191,6 +194,7 @@ nav:
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield SNS: xdr/features/collect/integrations/network/stormshield_network_security.md
           - Suricata: xdr/features/collect/integrations/network/suricata.md
+          - Varonis Data Security: xdr/features/collect/integrations/network/varonis_data_security.md
           - Vectra Cognito Detect: xdr/features/collect/integrations/network/vectra.md
           - Wallix: xdr/features/collect/integrations/network/wallix.md
           - WatchGuard Firebox: xdr/features/collect/integrations/network/watchguard_firebox.md
@@ -261,7 +265,7 @@ nav:
         - RiskIQ: xdr/features/automate/library/riskiq.md
         - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - STIX: xdr/features/automate/library/stix.md
-        - Sentinel One: xdr/features/automate/library/sentinel-one.md
+        - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
         - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
@@ -279,6 +283,7 @@ nav:
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
+      - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
   - Usecases:
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
   - FAQ:
@@ -291,6 +296,9 @@ nav:
     - Quickstart: xdr/develop/quickstart.md
     - Guides:
       - Filtering: xdr/develop/guides/filtering.md
+      - Automation:
+        - Overview: xdr/develop/guides/automation/overview.md
+        - Create a Module: xdr/develop/guides/automation/create_a_module.md
     - REST API:
       - Authentication and Community: xdr/develop/rest_api/community.md
       - Dashboard: xdr/develop/rest_api/dashboard.md
@@ -407,6 +415,7 @@ nav:
         - RiskIQ: tip/features/automate/library/riskiq.md
         - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - STIX: tip/features/automate/library/stix.md
+        - SentinelOne: tip/features/automate/library/sentinelone.md
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
         - Skyhigh Security: tip/features/automate/library/skyhigh-security.md
@@ -422,6 +431,9 @@ nav:
     - Overview: tip/develop/index.md
     - Guides:
       - Filtering: tip/develop/guides/filtering.md
+      - Playbooks:
+        - Overview: tip/develop/guides/automation/overview.md
+        - Quick start: tip/develop/guides/automation/create_a_module.md
     - REST API:
       - Authentication and Community: tip/develop/rest_api/community.md
       - Intelligence: tip/develop/rest_api/intelligence.md
@@ -500,6 +512,7 @@ plugins:
       integrations/fortiweb.md: xdr/features/collect/integrations/network/fortiweb.md
       integrations/freeradius.md: xdr/index.md
       integrations/fsecure.md: xdr/index.md
+      integrations/github_audit_logs.md: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
       integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md

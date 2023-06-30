@@ -533,25 +533,25 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
 
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
@@ -566,12 +566,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
     
     - **Effort:** intermediate
-
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -897,12 +891,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     
     - **Effort:** elementary
 
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
-    
-    - **Effort:** elementary
-
 ??? abstract "Rclone Process"
     
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
@@ -967,7 +955,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Socat Reverse Shell Detection"
     
@@ -983,7 +971,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
 
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
 
@@ -1068,6 +1056,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
 ??? abstract "Suspicious HWP Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
     
     - **Effort:** elementary
 

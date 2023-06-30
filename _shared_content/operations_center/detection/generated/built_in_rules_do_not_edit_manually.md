@@ -1,4 +1,4 @@
-Rules catalog includes **717 built-in detection rules** ([_last update on 2023-06-12_](rules_changelog.md)).
+Rules catalog includes **723 built-in detection rules** ([_last update on 2023-06-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -430,9 +430,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -644,6 +644,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 **Phishing**
 
+??? abstract "Cisco ESA Suspicious Email With Attachment"
+    
+    Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
+    
+    - **Effort:** advanced
+    
 ??? abstract "Cisco Umbrella Threat Detected"
     
     Cisco Umbrella has detected a malicious traffic categorized as malware, phishing or adware.
@@ -1329,25 +1335,25 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -1469,9 +1475,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "SEKOIA.IO EICAR Detection"
+??? abstract "Sekoia.io EICAR Detection"
     
-    Detects observables in SEKOIA.IO CTI tagged as EICAR, which are fake samples meant to test detection.
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** elementary
     
@@ -1567,14 +1573,22 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
@@ -1843,6 +1857,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious HWP Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
@@ -2055,25 +2073,25 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2529,25 +2547,25 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2707,10 +2725,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
@@ -3024,9 +3046,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -3217,6 +3239,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
     
     - **Effort:** master
+    
+**Authentication Package**
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 **External Remote Services**
 
@@ -3474,10 +3504,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
@@ -4121,9 +4155,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -4188,6 +4222,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
     - **Effort:** intermediate
     
@@ -4347,10 +4387,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
@@ -4630,6 +4674,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
     
     - **Effort:** intermediate
     
@@ -5125,9 +5175,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -5321,6 +5371,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Deobfuscate/Decode Files or Information**
 
 ??? abstract "FromBase64String Command Line"
@@ -5396,6 +5452,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
 ??? abstract "CVE 2022-1292"
     
     The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
+    
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
     
     - **Effort:** advanced
     
@@ -5691,6 +5753,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "UAC Bypass Using Fodhelper"
     
     Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
@@ -5909,7 +5977,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -6185,6 +6253,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 **Hijack Execution Flow**
 
 ??? abstract "DHCP Callout DLL Installation"
@@ -6313,7 +6387,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -6422,6 +6496,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Impacket Secretsdump.py Tool"
     
     Detects credential dumping via secretdump of impacket suite.
@@ -6493,6 +6571,7 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+        - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -6678,9 +6757,9 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force On SEKOIA.IO"
+??? abstract "Login Brute-Force On Sekoia.io"
     
-    Detects successful access to SEKOIA.IO after several failure.
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -6702,6 +6781,18 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+    
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
+    
+    - **Effort:** advanced
+    
 **Multi-Factor Authentication Interception**
 
 ??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
@@ -6713,6 +6804,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Okta MFA Bypass Attempt"
     
     A bypass of MFA may have been attempted.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
     
@@ -6824,6 +6921,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
 **Steal or Forge Kerberos Tickets**
 
 ??? abstract "Possible Replay Attack"
@@ -6915,6 +7018,14 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+**System Network Configuration Discovery**
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 **Remote System Discovery**
 
 ??? abstract "Network Scanning and Discovery"
@@ -6934,6 +7045,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
     - **Effort:** advanced
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 **System Owner/User Discovery**
 
@@ -7025,6 +7142,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host
@@ -7099,6 +7222,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
         - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
             
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Network Share Discovery**
 
 ??? abstract "Network Share Discovery"
@@ -7409,6 +7538,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
 **Archive Collected Data**
 
 ??? abstract "Data Compressed With Rar"
@@ -7590,6 +7725,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
@@ -7698,12 +7837,20 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "Rclone Process"
     
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
@@ -7715,6 +7862,12 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
     
     - **Effort:** intermediate
+    
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
     
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
@@ -7814,6 +7967,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+            
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
@@ -7842,14 +7999,22 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -7935,6 +8100,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+            
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
@@ -7993,6 +8162,10 @@ Rules catalog includes **717 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ## Impact
 **Data Destruction**
 

@@ -645,12 +645,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     
     - **Effort:** intermediate
 
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
-
 ??? abstract "Mshta JavaScript Execution"
     
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
@@ -969,12 +963,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     
     - **Effort:** elementary
 
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
-    
-    - **Effort:** elementary
-
 ??? abstract "Rare Logonui Child Found"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
@@ -1071,21 +1059,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     
     - **Effort:** intermediate
 
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** intermediate
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
-    
-    - **Effort:** intermediate
-
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
 
@@ -1176,6 +1152,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
 ??? abstract "Suspicious HWP Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
     
     - **Effort:** elementary
 
