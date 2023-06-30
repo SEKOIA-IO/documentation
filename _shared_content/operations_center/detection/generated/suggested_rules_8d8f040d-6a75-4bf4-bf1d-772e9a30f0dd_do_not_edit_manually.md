@@ -441,12 +441,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
     
     - **Effort:** master
 
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
-
 ??? abstract "Mshta JavaScript Execution"
     
     Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
@@ -729,12 +723,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
     
     - **Effort:** elementary
 
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
-    
-    - **Effort:** elementary
-
 ??? abstract "Rclone Process"
     
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
@@ -776,18 +764,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
-
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** intermediate
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
-    
-    - **Effort:** intermediate
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -842,6 +818,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **TEHTRIS Endpoint Detection &
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
 
 ??? abstract "Suspicious Mshta Execution"
     

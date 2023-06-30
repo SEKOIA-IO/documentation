@@ -28,10 +28,11 @@ Forward Crowdstrike Falcon Data Replication events to SEKOIA.IO
 | `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: true) |
 | `is_fifo` | `boolean` | Flag to determine if the queue is a FIFO queue (default: false) |
 | `queue_name` | `string` | The name of the SQS queue that received messages with files information |
+| `queue_url` | `string` | The URL of the SQS queue that received messages with files information |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
 
 
 ## Extra
 
-Module **`CrowdStrike` v1.0.8**
+Module **`CrowdStrike` v1.1.0**

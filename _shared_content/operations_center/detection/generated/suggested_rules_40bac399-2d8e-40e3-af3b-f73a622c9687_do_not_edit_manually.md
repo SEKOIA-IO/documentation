@@ -279,6 +279,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
     
     - **Effort:** elementary
 
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -330,12 +336,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
     
     - **Effort:** elementary
 
