@@ -7,6 +7,9 @@ type: intake
 
 Okta System log provides activity records related to your organization.
 
+!!! warning
+    This format is still in beta, please use it wisely.
+
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_547234b3-82ea-4507-b28f-3ee3cd5b9a8e_do_not_edit_manually.md!}
 
