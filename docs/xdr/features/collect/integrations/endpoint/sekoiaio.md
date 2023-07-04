@@ -286,18 +286,18 @@ agent-latest.exe <command> [<args>]
 ````
 
 Options:
-  |Options | Meaning|
+|Options | Meaning|
 |--|--|
-  |--help, -h|             display this help and exit|
-  |--version|              display version and exit|
+|--help, -h|display this help and exit|
+|--version|display version and exit|
 
 Commands:
-  |Commands | Meaning|
+|Commands | Meaning|
 |--|--|
-  |install    |            install the agent|
-  |update    |             update the agent|
-  |uninstall|              uninstall the agent|
-  |service|                control the service|
+|install|install the agent|
+|update|update the agent|
+|uninstall|uninstall the agent|
+|service|control the service|
 
 
 ## Resources footprint
