@@ -280,24 +280,26 @@ Please find options and arguments available for Sekoia Agent by typing
 agent.exe -h
 ````
 
-Usage: 
+**Usage**: 
 ````
 agent-latest.exe <command> [<args>]
 ````
 
-Options:
-|Options | Meaning|
-|--|--|
-|--help, -h|display this help and exit|
-|--version|display version and exit|
+**Options**:
 
-Commands:
-|Commands | Meaning|
-|--|--|
-|install|install the agent|
-|update|update the agent|
-|uninstall|uninstall the agent|
-|service|control the service|
+| Options | Meaning |
+| -- | -- |
+| --help, -h | display this help and exit |
+| --version | display version and exit |
+
+**Commands**:
+
+| Commands | Meaning|
+| -- | -- |
+| install | install the agent |
+| update | update the agent |
+| uninstall |uninstall the agent |
+| service | control the service |
 
 
 ## Resources footprint
