@@ -273,6 +273,33 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     
     This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
 
+## Additionnal information
+
+Please find options and arguments available for Sekoia Agent by typing
+````
+agent.exe -h
+````
+
+Usage: 
+````
+agent-latest.exe <command> [<args>]
+````
+
+Options:
+  |Options | Meaning|
+|--|--|
+  |--help, -h|             display this help and exit|
+  |--version|              display version and exit|
+
+Commands:
+  |Commands | Meaning|
+|--|--|
+  |install    |            install the agent|
+  |update    |             update the agent|
+  |uninstall|              uninstall the agent|
+  |service|                control the service|
+
+
 ## Resources footprint
 
 We monitor the agent metrics and try to keep its footprint as small as possible. 
