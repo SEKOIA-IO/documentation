@@ -52,3 +52,15 @@ To delete a dashboard, you have to:
 2. Click on `Delete this dashboard`
 
 The Default Dashboard cannot be deleted.
+
+## Risk Level Widget
+
+The Risk Level Widget shows the risk level of your infrastructure based on your alerts.
+
+The risk level is computed by entity. The maximum risk level is then considered to be the community risk level.
+
+All the pending, acknowledged, or ongoing alerts seen in the last 30 days are taken into consideration to calculate the risk level.
+Then, for each alert, we apply some weighting based on the urgency, occurrence, and date of the alert.
+The goal is to give more importance to the more recent, urgent, and recurrent alerts.
+
+Finally, the value is normalized to provide a number between 0 and 100.
