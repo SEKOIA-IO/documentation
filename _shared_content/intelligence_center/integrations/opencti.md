@@ -1,4 +1,4 @@
-# External integration with OpenCTI
+# External integration: OpenCTI
 
 ## Objective
 
@@ -59,15 +59,14 @@ sudo sysctl -w vm.max_map_count=1048575
 
 ```
 mkdir sekoia-docker
-```
-
-```
 cd sekoia-docker
 ```
 
 3. Setup Docker in this repo by cloning the repo of  the following https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia
 
-`git clone https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia`
+```
+git clone https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia
+```
 
 3. Change the following variables value in the docker-compose file :
    - OPENCTI_URL
