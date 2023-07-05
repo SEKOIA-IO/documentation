@@ -1,16 +1,17 @@
 # External integration with OpenCTI
 
-# 1- Objective
+## Objective
 
 Collect Sekoia.io CTI feed in an existing OpenCTI instance self managed, for any operational purpose such as CTI aggregation, dissemination, hunting...
 
 ## Prerequisites for the public documentation:
 - An operational OpenCTI instance with administrator privileges
-- Download `dock-compose` for [Linux](https://docs.docker.com/engine/install/ubuntu/) or [Windows](https://docs.docker.com/desktop/install/windows-install/) and [MacOS](https://docs.docker.com/desktop/install/mac-install/)
+- An active Sekoia.io licence with access to the CTI
+- An access to Sekoia.io User Center with the permissions to create an API key
 
-# 2- Setup / Configuration
+## Configuration
 
-## 2-1- Feed on Sekoia.io
+### 2-1- Feed on Sekoia.io
 
 By default, all Sekoia.io CTI feed will be consumed in OpenCTI
 
