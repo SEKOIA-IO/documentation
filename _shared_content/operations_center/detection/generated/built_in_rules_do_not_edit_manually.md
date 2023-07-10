@@ -1,4 +1,4 @@
-Rules catalog includes **723 built-in detection rules** ([_last update on 2023-06-29_](rules_changelog.md)).
+Rules catalog includes **725 built-in detection rules** ([_last update on 2023-07-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2479,6 +2479,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Cybereason MalOp Alert"
     
     Cybereason MalOp telemetry has raised an alert
@@ -2497,6 +2501,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -2521,12 +2529,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -2605,6 +2621,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -2617,6 +2637,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SentinelOne Agent Disabled"
     
     A SentinelOne agent has been disabled according to SentinelOne logs.
@@ -2717,6 +2741,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SolarWinds Suspicious File Creation"
     
     Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
@@ -2739,6 +2767,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
     Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
@@ -2763,12 +2795,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -2781,6 +2821,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Tehtris EDR Alert"
     
     Tehtris EDR telemetry has raised an alert.
@@ -2805,6 +2849,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -2833,36 +2881,60 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -3418,18 +3490,30 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -3442,12 +3526,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -3484,6 +3576,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -3496,12 +3592,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SolarWinds Wrong Child Process"
     
     Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
@@ -3518,6 +3622,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
@@ -3536,12 +3644,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -3554,12 +3670,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -3572,36 +3696,60 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Event Triggered Execution**
 
 ??? abstract "COM Hijack Via Sdclt"
@@ -3953,6 +4101,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -3983,24 +4135,40 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
@@ -4013,30 +4181,50 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Exploitation for Privilege Escalation**
 
 ??? abstract "Audit CVE Event"
@@ -4233,6 +4421,12 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
 **Domain Policy Modification**
 
+??? abstract "Azure AD Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
@@ -4301,18 +4495,30 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -4325,12 +4531,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -4367,6 +4581,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -4379,12 +4597,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SolarWinds Wrong Child Process"
     
     Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
@@ -4401,6 +4627,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
@@ -4419,12 +4649,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -4437,12 +4675,20 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -4455,36 +4701,60 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Event Triggered Execution**
 
 ??? abstract "COM Hijack Via Sdclt"
@@ -4677,6 +4947,12 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
@@ -4845,6 +5121,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Formbook Hijacked Process Command"
     
     Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
@@ -4935,6 +5215,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -4965,24 +5249,40 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
@@ -4995,30 +5295,50 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Scripting**
 
 ??? abstract "Suspicious VBS Execution Parameter"
@@ -5679,6 +5999,12 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
 **Domain Policy Modification**
 
+??? abstract "Azure AD Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
@@ -5750,6 +6076,12 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid.
     
     - **Effort:** intermediate
     
@@ -6867,6 +7199,10 @@ Rules catalog includes **723 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/07/2023 - minor - Added french words for the command lines.
+            
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
