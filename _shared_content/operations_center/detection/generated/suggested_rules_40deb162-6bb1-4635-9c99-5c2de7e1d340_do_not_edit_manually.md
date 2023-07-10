@@ -1227,12 +1227,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     
     - **Effort:** master
 
-??? abstract "Taskhost Wrong Parent"
-    
-    Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
