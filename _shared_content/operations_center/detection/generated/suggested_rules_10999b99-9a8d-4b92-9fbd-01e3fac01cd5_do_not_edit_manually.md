@@ -1,31 +1,13 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **crowdstrike-telemetry** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x AuditBeat Linux on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.json){ .md-button }
-??? abstract "AdFind Usage"
-    
-    Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
-    
-    - **Effort:** elementary
-
-??? abstract "Add User to Privileged Group"
-    
-    Add user in a potential privileged group which can be used to elevate privileges on the system
-    
-    - **Effort:** advanced
-
+[SEKOIA.IO x crowdstrike-telemetry on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_10999b99-9a8d-4b92-9fbd-01e3fac01cd5_do_not_edit_manually.json){ .md-button }
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
     
     - **Effort:** intermediate
-
-??? abstract "Adexplorer Usage"
-    
-    Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
-    
-    - **Effort:** advanced
 
 ??? abstract "Advanced IP Scanner"
     
@@ -39,21 +21,21 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "BITSAdmin Download"
+??? abstract "Autorun Keys Modification"
     
-    Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.
+    Detects modification of autostart extensibility point (ASEP) in registry. Prerequisites are Logging for Registry events in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** advanced
+    - **Effort:** master
+
+??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
+    
+    Detects Bazar Loader domains based on the Bazar Loader DGA
+    
+    - **Effort:** elementary
 
 ??? abstract "BazarLoader Persistence Using Schtasks"
     
     Detects possible BazarLoader persistence using schtasks. BazarLoader will create a Scheduled Task using a specific command line to establish its persistence.
-    
-    - **Effort:** intermediate
-
-??? abstract "Bloodhound and Sharphound Tools Usage"
-    
-    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
     
     - **Effort:** intermediate
 
@@ -62,24 +44,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     Attempts to detect system changes made by Blue Mockingbird
     
     - **Effort:** elementary
-
-??? abstract "CMSTP Execution"
-    
-    Detects various indicators of Microsoft Connection Manager Profile Installer execution
-    
-    - **Effort:** intermediate
-
-??? abstract "Capture a network trace with netsh.exe"
-    
-    Detects capture a network trace via netsh.exe trace functionality
-    
-    - **Effort:** intermediate
-
-??? abstract "Certificate Authority Modification"
-    
-    Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
-    
-    - **Effort:** master
 
 ??? abstract "Change Default File Association"
     
@@ -90,12 +54,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
 ??? abstract "Clear EventLogs Through CommandLine"
     
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
-    
-    - **Effort:** intermediate
-
-??? abstract "Cmdkey Cached Credentials Recon"
-    
-    Detects usage of cmdkey to look for cached credentials.
     
     - **Effort:** intermediate
 
@@ -111,29 +69,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** advanced
 
-??? abstract "Copying Browser Files With Credentials"
-    
-    Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
-    
-    - **Effort:** elementary
-
-??? abstract "Copying Sensitive Files With Credential Data"
-    
-    Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
-    
-    - **Effort:** elementary
-
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
-
-??? abstract "Data Compressed With Rar"
-    
-    An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program.
-    
-    - **Effort:** master
 
 ??? abstract "Data Compressed With Rar With Password"
     
@@ -159,15 +99,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** elementary
 
+??? abstract "Disable Workstation Lock"
+    
+    Registry change in order to disable the ability to lock the computer by using CTRL+ALT+DELETE or CTRL+L. This registry key does not exist by default. Its creation is suspicious and the value set to "1" means an activation. It has been used by FatalRAT, but other attacker/malware could probably use it. This rule needs Windows Registry changes (add,modification,deletion) logging which can be done through Sysmon Event IDs 12,13,14.
+    
+    - **Effort:** elementary
+
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
-    
-    - **Effort:** advanced
-
-??? abstract "Domain Group And Permission Enumeration"
-    
-    Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
     
     - **Effort:** advanced
 
@@ -189,47 +129,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "Elise Backdoor"
-    
-    Detects Elise backdoor activity as used by Lotus Blossom
-    
-    - **Effort:** elementary
-
-??? abstract "Empire Monkey Activity"
-    
-    Detects EmpireMonkey APT reported Activity
-    
-    - **Effort:** elementary
-
-??? abstract "Equation Group DLL_U Load"
-    
-    Detects a specific tool and export used by EquationGroup
-    
-    - **Effort:** elementary
-
-??? abstract "Erase Shell History"
-    
-    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history
-    
-    - **Effort:** advanced
-
-??? abstract "Exchange Mailbox Export"
-    
-    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
     
     Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
-
-??? abstract "Exfiltration And Tunneling Tools Execution"
-    
-    Execution of well known tools for data exfiltration and tunneling
-    
-    - **Effort:** advanced
 
 ??? abstract "Exfiltration Domain In Command Line"
     
@@ -237,35 +141,17 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "Explorer Process Executing HTA File"
+??? abstract "FlowCloud Malware"
     
-    Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
+    Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
     
-    - **Effort:** intermediate
-
-??? abstract "Fail2ban Unban IP"
-    
-    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
-    
-    - **Effort:** advanced
-
-??? abstract "Grabbing Sensitive Hives Via Reg Utility"
-    
-    Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
-    
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
     
     - **Effort:** intermediate
-
-??? abstract "Hiding Files With Attrib.exe"
-    
-    Detects usage of attrib.exe to hide files from users.
-    
-    - **Effort:** advanced
 
 ??? abstract "High Privileges Network Share Removal"
     
@@ -279,33 +165,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** elementary
 
-??? abstract "IIS Module Installation Using AppCmd"
-    
-    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
-    
-    - **Effort:** intermediate
-
-??? abstract "Inhibit System Recovery Deleting Backups"
-    
-    Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
-    
-    - **Effort:** intermediate
-
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
-    
-    - **Effort:** intermediate
-
-??? abstract "Kernel Module Alteration"
-    
-    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
-    
-    - **Effort:** advanced
-
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
     
     - **Effort:** intermediate
 
@@ -315,23 +177,17 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** elementary
 
-??? abstract "List Shadow Copies"
+??? abstract "Leviathan Registry Key Activity"
     
-    Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
+    Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
-    - **Effort:** master
+    - **Effort:** elementary
 
 ??? abstract "Listing Systemd Environment"
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
     - **Effort:** elementary
-
-??? abstract "MSBuild Abuse"
-    
-    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
-    
-    - **Effort:** intermediate
 
 ??? abstract "MalwareBytes Uninstallation"
     
@@ -345,41 +201,17 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "Meterpreter or Cobalt Strike Getsystem Service Installation"
-    
-    Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
-    
-    - **Effort:** elementary
-
-??? abstract "Mshta JavaScript Execution"
-    
-    Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
-    
-    - **Effort:** elementary
-
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
     Detects interaction with the file NTDS.dit through command line. This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
     
     - **Effort:** intermediate
 
-??? abstract "Net.exe User Account Creation"
-    
-    Identifies creation of local users via the net.exe command
-    
-    - **Effort:** master
-
 ??? abstract "NetSh Used To Disable Windows Firewall"
     
     Detects NetSh commands used to disable the Windows Firewall
     
     - **Effort:** intermediate
-
-??? abstract "Netsh Allow Command"
-    
-    Netsh command line to allow a program to pass through firewall.
-    
-    - **Effort:** advanced
 
 ??? abstract "Netsh Allowed Python Program"
     
@@ -393,41 +225,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** elementary
 
-??? abstract "Netsh Port Opening"
-    
-    Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
-    
-    - **Effort:** master
-
 ??? abstract "Netsh RDP Port Forwarding"
     
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
     
     - **Effort:** elementary
-
-??? abstract "Netsh RDP Port Opening"
-    
-    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware
-    
-    - **Effort:** intermediate
-
-??? abstract "Network Scanning and Discovery"
-    
-    Tools and command lines used for network discovery from current system
-    
-    - **Effort:** advanced
-
-??? abstract "Network Sniffing"
-    
-    List of common tools used for network packages sniffing
-    
-    - **Effort:** advanced
-
-??? abstract "Network Sniffing Windows"
-    
-    Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
-    
-    - **Effort:** intermediate
 
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
@@ -435,15 +237,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "New Service Creation"
+??? abstract "NjRat Registry Changes"
     
-    Detects creation of a new service from command line
-    
-    - **Effort:** advanced
-
-??? abstract "Ngrok Process Execution"
-    
-    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling. 
+    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
     - **Effort:** intermediate
 
@@ -459,11 +255,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "Opening Of a Password File"
+??? abstract "OceanLotus Registry Activity"
     
-    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** advanced
+    - **Effort:** intermediate
 
 ??? abstract "Outlook Registry Access"
     
@@ -471,17 +267,29 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** elementary
 
-??? abstract "PasswordDump SecurityXploded Tool"
+??? abstract "Pandemic Windows Implant"
     
-    Detects the execution of the PasswordDump SecurityXploded Tool
+    Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Phorpiex DriveMgr Command"
     
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
     
     - **Effort:** elementary
+
+??? abstract "Phorpiex Process Masquerading"
+    
+    Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
+    
+    - **Effort:** elementary
+
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
 
 ??? abstract "PowerCat Function Loading"
     
@@ -495,33 +303,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** elementary
 
-??? abstract "PowerShell Downgrade Attack"
-    
-    Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
-    
-    - **Effort:** elementary
-
-??? abstract "PowerShell Download From URL"
-    
-    Detects a Powershell process that contains download commands in its command line string
-    
-    - **Effort:** intermediate
-
 ??? abstract "PowerShell EncodedCommand"
     
     Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
-    
-    - **Effort:** advanced
-
-??? abstract "PowerShell Execution Via Rundll32"
-    
-    Detects PowerShell Strings applied to rundll as seen in PowerShdll.dll Rule modified
-    
-    - **Effort:** intermediate
-
-??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
-    
-    Detects Commandlet names and arguments from the Nishang exploitation framework
     
     - **Effort:** advanced
 
@@ -530,12 +314,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
     
     - **Effort:** intermediate
-
-??? abstract "Powershell Web Request"
-    
-    Detects the use of various web request methods executed remotely via Windows PowerShell
-    
-    - **Effort:** advanced
 
 ??? abstract "Process Memory Dump Using Comsvcs"
     
@@ -555,23 +333,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** advanced
 
-??? abstract "PsExec Process"
-    
-    Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
-    
-    - **Effort:** advanced
-
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
     
     - **Effort:** intermediate
-
-??? abstract "Python Offensive Tools and Packages"
-    
-    Track installation and usage of offensive python packages and project that are used for lateral movement
-    
-    - **Effort:** master
 
 ??? abstract "Qakbot Persistence Using Schtasks"
     
@@ -579,23 +345,29 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "RDP Session Discovery"
+??? abstract "RDP Sensitive Settings Changed"
     
-    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
+    Detects changes to RDP terminal service sensitive settings. Logging for registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** advanced
+
+??? abstract "RUN Registry Key Created From Suspicious Folder"
+    
+    Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
+    
+    - **Effort:** advanced
+
+??? abstract "RYUK Ransomeware - martinstevens Username"
+    
+    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
+    
+    - **Effort:** elementary
 
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
     
     - **Effort:** elementary
-
-??? abstract "Rclone Process"
-    
-    Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
-    
-    - **Effort:** advanced
 
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
@@ -609,23 +381,41 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** advanced
 
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
+
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
     
     - **Effort:** intermediate
 
-??? abstract "Schtasks Persistence With High Privileges"
+??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
-    Detection of scheduled task with high privileges used by attacker for persistence.
+    Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Sliver DNS Beaconing"
+    
+    Detects suspicious DNS queries known from Sliver beaconing 
+    
+    - **Effort:** intermediate
 
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
     
     - **Effort:** intermediate
+
+??? abstract "Sticky Key Like Backdoor Usage"
+    
+    Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
+    
+    - **Effort:** elementary
 
 ??? abstract "Suncrypt Parameters"
     
@@ -639,39 +429,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Control Process"
-    
-    Detects suspicious execution of control.exe process when used to execute a DLL file.
-    
-    - **Effort:** advanced
-
 ??? abstract "Suspicious DLL Loading By Ordinal"
     
     Detects suspicious DLL Loading by ordinal number in a non legitimate or rare folders. For example, Sofacy (APT28) used this technique to load their Trojan in a campaign of 2018.
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Double Extension"
+??? abstract "Suspicious Driver Loaded"
     
-    Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
-    
-    - **Effort:** elementary
-
-??? abstract "Suspicious Finger Usage"
-    
-    Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Headless Web Browser Execution To Download File"
-    
-    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
-    
-    - **Effort:** elementary
-
-??? abstract "Suspicious Mshta Execution"
-    
-    Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
+    Checks the registry key for suspicious driver names that are vulnerable most of the time and loaded in a specific location by the KDU tool from hfiref0x. Some drivers are used by several SysInternals tools, which should have been whitelisted in the filter condition. The driver named "DBUtilDrv2" has been removed as it caused too many false positives unfortunately. It can be added under "drv_name" if more coverage is wanted. This rule needs registry key monitoring (can be done with Sysmon Event IDs 12,13 and 14).
     
     - **Effort:** intermediate
 
@@ -699,9 +465,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Rundll32.exe Execution"
+??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
-    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Scheduled Task Creation"
+    
+    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
     
     - **Effort:** intermediate
 
@@ -710,12 +482,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
     
     - **Effort:** intermediate
-
-??? abstract "Suspicious VBS Execution Parameter"
-    
-    Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
-    
-    - **Effort:** elementary
 
 ??? abstract "Suspicious Windows Defender Exclusion Command"
     
@@ -729,33 +495,45 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Windows Script Execution"
+??? abstract "UAC Bypass Using Fodhelper"
     
-    Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious certutil command"
-    
-    Detects suspicious certutil command which can be used by threat actors to download and/or decode payload. 
+    Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
 
-??? abstract "Sysprep On AppData Folder"
+??? abstract "UAC Bypass Via Sdclt"
     
-    Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
+    Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
-??? abstract "System Info Discovery"
+??? abstract "UAC Bypass via Event Viewer"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    Detects UAC bypass method using Windows event viewer. 
     
-    - **Effort:** master
+    - **Effort:** elementary
+
+??? abstract "Ursnif Registry Key"
+    
+    Detects a new registry key created by Ursnif malware. The rule requires to log for Registry Events, which can be done using SYsmon's Event IDs 12,13 and 14.
+    
+    - **Effort:** elementary
 
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
+
+??? abstract "Usage Of Sysinternals Tools"
+    
+    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
 
@@ -777,15 +555,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** elementary
 
+??? abstract "Windows Credential Editor Registry Key"
+    
+    Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** elementary
+
 ??? abstract "Windows Defender Abuse Restoration"
     
     The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disable Scheduled Tasks"
-    
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
     
     - **Effort:** intermediate
 
@@ -825,11 +603,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** master
 
-??? abstract "Wmic Process Call Creation"
+??? abstract "Windows Registry Persistence COM Key Linking"
     
-    The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
+    Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Wmic Service Call"
     
@@ -842,9 +620,3 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     Detects the usage of xcopy with suspicious command line options (used by Judgment Panda APT in the past). The rule is based on command line only in case xcopy is renamed.
     
     - **Effort:** advanced
-
-??? abstract "XSL Script Processing And SquiblyTwo Attack"
-    
-    Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
-    
-    - **Effort:** intermediate
