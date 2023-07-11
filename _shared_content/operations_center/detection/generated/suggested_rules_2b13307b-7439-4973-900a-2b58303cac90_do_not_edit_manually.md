@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Salesforce Events** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **VMware ESXi [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Salesforce Events on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2b13307b-7439-4973-900a-2b58303cac90_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x VMware ESXi [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2b13307b-7439-4973-900a-2b58303cac90_do_not_edit_manually.json){ .md-button }
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
@@ -237,12 +237,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Salesforce Events** with the
     
     - **Effort:** elementary
 
-??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
-    
-    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -254,12 +248,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Salesforce Events** with the
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
     
     - **Effort:** elementary
-
-??? abstract "Potential LokiBot User-Agent"
-    
-    Detects potential LokiBot communications through the user-agent
-    
-    - **Effort:** intermediate
 
 ??? abstract "PowerCat Function Loading"
     
@@ -404,12 +392,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Salesforce Events** with the
     Detects new commands that add new printer port which point to suspicious file
     
     - **Effort:** advanced
-
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
-    
-    - **Effort:** intermediate
 
 ??? abstract "Suspicious Taskkill Command"
     
