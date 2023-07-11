@@ -5,7 +5,12 @@ type: intake
 # SEKOIA.IO Endpoint Agent
 
 SEKOIA.IO provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to SEKOIA.IO.
-	
+
+### Disclamer
+
+!!! INFO
+    The SEKOIA.IO Endpoint Detection Agent preserves the integrity of logs collected from the operating system event log, it does NOT modify or rewrite logs.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}	
 
 ## Supported OS versions
