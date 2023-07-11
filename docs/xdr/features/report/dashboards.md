@@ -63,4 +63,4 @@ All the opened (i.e. in status pending, acknowledged, or ongoing) alerts seen in
 Then, for each alert, we apply some weighting based on the urgency, occurrence, and date of the alert.
 The goal is to give more importance to the more recent, urgent, and recurrent alerts.
 
-Finally, the value is normalized to provide a number between 0 and 100.
+The Risk Level value is normalized to provide a number between 0 and 100.
