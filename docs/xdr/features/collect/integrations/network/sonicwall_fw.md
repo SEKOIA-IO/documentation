@@ -28,7 +28,7 @@ to SEKOIA.IO by means of a syslog transport channel.
 
 
 !!! info
-    Syslog format must be ArcSight.
+    Only the Syslog format `ArcSight` is supported by this integration.
 
 Log on your SonicWall appliance and follow this [guide](https://www.sonicwall.com/support/knowledge-base/how-can-i-configure-a-syslog-server-on-a-sonicwall-firewall/170505984096810/) to enable syslog forwarding,
 except for the step 4 : Select Syslog Format as 'Enhanced', you must select Syslog format 'ArcSight' instead. 
