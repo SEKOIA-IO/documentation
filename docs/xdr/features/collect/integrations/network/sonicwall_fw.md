@@ -26,7 +26,6 @@ to SEKOIA.IO by means of a syslog transport channel.
 
 ### Enable Syslog forwarding for SonicWall 6.5 and 7.X
 
-### Disclamer
 
 !!! info
     Syslog format must be ArcSight.
