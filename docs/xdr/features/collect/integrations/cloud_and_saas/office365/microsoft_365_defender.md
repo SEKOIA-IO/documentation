@@ -36,7 +36,6 @@ Here is a list of all the Microsoft 365 Defender event types supported by this i
 * IdentityQueryEvents
 * IdentityDirectoryEvents
 * CloudAppEvents
-* UrlClickEvents
 
 Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/security/defender/supported-event-types?view=o365-worldwide) to see all the types provided by Microsoft. 
 
