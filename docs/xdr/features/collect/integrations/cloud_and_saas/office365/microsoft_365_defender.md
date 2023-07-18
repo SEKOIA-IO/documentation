@@ -8,7 +8,7 @@ type: intake
 
 Microsoft 365 Defender is a unified pre- and post-breach enterprise defense suite that natively coordinates detection, prevention, investigation, and response across endpoints, identities, email, and applications to provide integrated protection against sophisticated attacks.
 
-This setup guide describes how to forward events produced by `Microsoft 365 Defender` to SEKOIA.IO XDR.
+This setup guide describes how to forward events produced by `Microsoft 365 Defender` to Sekoia.io XDR.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.md!}
