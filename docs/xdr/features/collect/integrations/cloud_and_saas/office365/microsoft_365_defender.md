@@ -16,7 +16,7 @@ This setup guide describes how to forward events produced by `Microsoft 365 Defe
 {!_shared_content/operations_center/integrations/generated/05e6f36d-cee0-4f06-b575-9e43af779f9f.md!}
 
 ## Microsoft 365 Defender event types supported
-Here is a list of all the Microsoft 365 Defender event types supported by this integration :
+Here is a list of all the Microsoft 365 Defender event types supported by this integration:
 
 * Alert Evidence
 * AlertInfo
