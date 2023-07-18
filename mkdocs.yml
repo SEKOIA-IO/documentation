@@ -129,7 +129,7 @@ nav:
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
           - Sophos:
             - Sophos Firewall: xdr/features/collect/integrations/network/sophos_fw.md
-            - Sophos sophos Threat Analysis Center: xdr/features/collect/integrations/network/sophos-threat-analysis-centerr.md
+            - Sophos Threat Analysis Center: xdr/features/collect/integrations/network/sophos-threat-analysis-center.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
