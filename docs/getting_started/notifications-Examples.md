@@ -19,7 +19,7 @@ The “Email notification” will let you send an e-mail to an arbitrary address
 
 Mattermost is a popular professional chat service. The “Mattermost notification” will send messages to any Mattermost instance.  To do so, you’ll have to configure a new `Incoming Webhook` on your Mattermost instance and choose to which Mattermost channel the message should be sent to.
 
-You can refer to the Mattermost documentation on how to [create a new Mattermost “incoming webhook”](https://docs.mattermost.com/developer/webhooks-incoming.html).
+You can refer to the Mattermost documentation on how to [create a new Mattermost “incoming webhook”](https://developers.mattermost.com/integrate/webhooks/incoming/).
 
 ### WebHook Notification
 

@@ -5,7 +5,12 @@ type: intake
 # SEKOIA.IO Endpoint Agent
 
 SEKOIA.IO provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to SEKOIA.IO.
-	
+
+### Disclamer
+
+!!! INFO
+    The SEKOIA.IO Endpoint Detection Agent preserves the integrity of logs collected from the operating system event log, it does NOT modify or rewrite logs.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}	
 
 ## Supported OS versions
@@ -272,6 +277,35 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     A proper security log auditing configuration will allow the agent to collect various  interresting security related events.
     
     This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
+
+## Additionnal information
+
+Please find options and arguments available for Sekoia Agent by typing
+````
+agent.exe -h
+````
+
+**Usage**: 
+````
+agent-latest.exe <command> [<args>]
+````
+
+**Options**:
+
+| Options | Meaning |
+| -- | -- |
+| --help, -h | display this help and exit |
+| --version | display version and exit |
+
+**Commands**:
+
+| Commands | Meaning|
+| -- | -- |
+| install | install the agent |
+| update | update the agent |
+| uninstall |uninstall the agent |
+| service | control the service |
+
 
 ## Resources footprint
 

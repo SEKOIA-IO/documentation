@@ -46,7 +46,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 1. Navigate to “Home”, “Event Hubs”, “company-eventhub - Shared access policies”. From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
 2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “active-directory-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
-3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”active-directory-event - Consumer groups”. From there, you can create a consumer group (e.g. `sekoiaio`).
+3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”active-directory-event - Consumer groups”. From there, you can create a consumer group (e.g. `consumergroup_sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
@@ -89,7 +89,7 @@ Last step to integrate your log into SEKOIA.IO, please follow the steps below:
 3. Setup Trigger configuration
 
  - hub_connection_string = Connection string–primary key finishing by `Entitypath =`
- - hub_consumer_group = `sekoiaio`
+ - hub_consumer_group = Consumer Group name (eg. `consumergroup_sekoiaio`)
  - hub_name = value of EntityPath
  - intake_key = Microsoft Azure Intake key that can be found on intake page
  - intake_server = `https://intake.sekoia.io`
@@ -99,7 +99,7 @@ Last step to integrate your log into SEKOIA.IO, please follow the steps below:
 **Format example**
 
 - Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=active-directory-event"`).
-- Azure Event Hub’s consumer group name (e.g. `sekoiaio`).
+- Azure Event Hub’s consumer group name (e.g. `consumergroup_sekoiaio`).
 - Azure Blob Storage’s connection string (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
 
 <img width="100%" alt="image" src="https://user-images.githubusercontent.com/101662967/185440012-876508a5-bdf6-4ad5-a212-6f4f7bc0564e.png">

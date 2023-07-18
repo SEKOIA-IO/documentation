@@ -1,4 +1,4 @@
-Rules catalog includes **711 built-in detection rules** ([_last update on 2023-06-01_](rules_changelog.md)).
+Rules catalog includes **725 built-in detection rules** ([_last update on 2023-07-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -67,6 +67,18 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     Detects when one of WAF rule blocked an HTTP request 
     
     - **Effort:** master
+    
+??? abstract "WAF Correlation Block Multiple Destinations"
+    
+    Detection of multiple block actions (more than 10) by the Web Application Firewall (WAF) triggered by the same source to mutliple destinations
+    
+    - **Effort:** intermediate
+    
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
+    
+    - **Effort:** advanced
     
 ## Resource Development
 **Acquire Infrastructure**
@@ -418,6 +430,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
@@ -626,6 +644,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
 **Phishing**
 
+??? abstract "Cisco ESA Suspicious Email With Attachment"
+    
+    Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
+    
+    - **Effort:** advanced
+    
 ??? abstract "Cisco Umbrella Threat Detected"
     
     Cisco Umbrella has detected a malicious traffic categorized as malware, phishing or adware.
@@ -1279,6 +1303,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Malicious PowerShell Keywords"
     
     Detects keywords from well-known PowerShell exploitation frameworks
@@ -1305,25 +1335,25 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -1445,9 +1475,9 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "SEKOIA.IO EICAR Detection"
+??? abstract "Sekoia.io EICAR Detection"
     
-    Detects observables in SEKOIA.IO CTI tagged as EICAR, which are fake samples meant to test detection.
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** elementary
     
@@ -1543,14 +1573,22 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
@@ -1819,6 +1857,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious HWP Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
@@ -1993,6 +2035,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    
+    - **Effort:** advanced
+    
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     
     Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
@@ -2025,25 +2073,25 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2431,6 +2479,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Cybereason MalOp Alert"
     
     Cybereason MalOp telemetry has raised an alert
@@ -2449,6 +2501,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -2461,18 +2517,32 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -2493,25 +2563,25 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2551,6 +2621,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -2563,6 +2637,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SentinelOne Agent Disabled"
     
     A SentinelOne agent has been disabled according to SentinelOne logs.
@@ -2663,6 +2741,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SolarWinds Suspicious File Creation"
     
     Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
@@ -2671,16 +2753,24 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
     Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
@@ -2705,12 +2795,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -2723,6 +2821,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Tehtris EDR Alert"
     
     Tehtris EDR telemetry has raised an alert.
@@ -2747,6 +2849,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -2775,36 +2881,60 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -2985,6 +3115,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -3176,6 +3312,14 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+**Authentication Package**
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **External Remote Services**
 
 ??? abstract "Failed Logon Source From Public IP Addresses"
@@ -3346,18 +3490,30 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -3370,12 +3526,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -3412,6 +3576,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -3424,24 +3592,40 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
@@ -3460,12 +3644,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -3478,12 +3670,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -3496,36 +3696,60 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Event Triggered Execution**
 
 ??? abstract "COM Hijack Via Sdclt"
@@ -3555,6 +3779,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
     
     - **Effort:** intermediate
     
@@ -3871,6 +4101,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -3901,24 +4135,40 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
@@ -3931,30 +4181,50 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Exploitation for Privilege Escalation**
 
 ??? abstract "Audit CVE Event"
@@ -4073,6 +4343,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Netskope Admin Audit"
     
     Audit events for admin activites, from Logins to policies' changes.
@@ -4137,8 +4413,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Domain Policy Modification**
 
+??? abstract "Azure AD Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
@@ -4207,18 +4495,30 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -4231,12 +4531,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -4273,6 +4581,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -4285,24 +4597,40 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
@@ -4321,12 +4649,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -4339,12 +4675,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -4357,36 +4701,60 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Event Triggered Execution**
 
 ??? abstract "COM Hijack Via Sdclt"
@@ -4416,6 +4784,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
     
     - **Effort:** intermediate
     
@@ -4566,6 +4940,24 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
     
     - **Effort:** advanced
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -4729,6 +5121,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Formbook Hijacked Process Command"
     
     Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
@@ -4819,6 +5215,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -4849,24 +5249,40 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
@@ -4879,30 +5295,50 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+            
 **Scripting**
 
 ??? abstract "Suspicious VBS Execution Parameter"
@@ -5056,6 +5492,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Login Brute-Force On FreeRadius"
     
     A user has attempted to login several times (brute-force) with error then one success.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
     
@@ -5249,6 +5691,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Deobfuscate/Decode Files or Information**
 
 ??? abstract "FromBase64String Command Line"
@@ -5324,6 +5772,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "CVE 2022-1292"
     
     The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
+    
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
     
     - **Effort:** advanced
     
@@ -5545,6 +5999,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
 **Domain Policy Modification**
 
+??? abstract "Azure AD Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
@@ -5612,6 +6072,24 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
     
     - **Effort:** advanced
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -5831,7 +6309,7 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -6107,6 +6585,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 **Hijack Execution Flow**
 
 ??? abstract "DHCP Callout DLL Installation"
@@ -6235,7 +6719,7 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -6344,6 +6828,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Impacket Secretsdump.py Tool"
     
     Detects credential dumping via secretdump of impacket suite.
@@ -6415,6 +6903,7 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+        - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -6600,6 +7089,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Login Brute-Force Successful Using Su"
     
     A user has attempted to login several times (brute-force) on su command and succeeded to login.
@@ -6618,6 +7113,18 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+    
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
+    
+    - **Effort:** advanced
+    
 **Multi-Factor Authentication Interception**
 
 ??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
@@ -6629,6 +7136,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Okta MFA Bypass Attempt"
     
     A bypass of MFA may have been attempted.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
     
@@ -6686,6 +7199,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/07/2023 - minor - Added french words for the command lines.
+            
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -6740,6 +7257,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
 **Steal or Forge Kerberos Tickets**
 
 ??? abstract "Possible Replay Attack"
@@ -6763,6 +7286,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Suspicious Outbound Kerberos Connection"
     
     Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.
+    
+    - **Effort:** advanced
+    
+??? abstract "Suspicious TGS requests (Kerberoasting)"
+    
+    The rule aims at detecting the Kerberoasting technique, when an attacker requests TGS in order to crack them offline. Toease its task, the attacker requests tickets with weak encryption (such as RC4_HMAC_MD5). The rule therefore detects when an user is requesting 5 TGS for different users in 5 minutes.
     
     - **Effort:** advanced
     
@@ -6825,6 +7354,14 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+**System Network Configuration Discovery**
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 **Remote System Discovery**
 
 ??? abstract "Network Scanning and Discovery"
@@ -6844,6 +7381,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
     - **Effort:** advanced
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 **System Owner/User Discovery**
 
@@ -6935,6 +7478,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host
@@ -7009,6 +7558,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
         - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
             
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Network Share Discovery**
 
 ??? abstract "Network Share Discovery"
@@ -7319,6 +7874,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+    
 **Archive Collected Data**
 
 ??? abstract "Data Compressed With Rar"
@@ -7500,6 +8061,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
@@ -7608,12 +8173,20 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "Rclone Process"
     
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
@@ -7625,6 +8198,12 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
     
     - **Effort:** intermediate
+    
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
     
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
@@ -7724,6 +8303,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+            
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
@@ -7752,14 +8335,22 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -7845,6 +8436,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+            
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
@@ -7903,6 +8498,10 @@ Rules catalog includes **711 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ## Impact
 **Data Destruction**
 
