@@ -12,31 +12,35 @@ type: intake
 
 ## Configure
 
-### Transport to the collector
 
-#### Prerequisites
+### Prerequisites
 The following prerequisites are needed in order to setup efficient events handling:
 
-- Have Falcon Administrator
-- Amazon Simple Storage Service (S3), which is the technology used to store event data outside of Falcon
-- Amazon Simple Queue Service (SQS), which notifies you when new data is available from FDR
+- Have a Falcon Administrator account
 
-#### Configure the client
+### Generate the Credentials
 
-##### Install and configure CrowdStrike Telemetry
+To set up the integration:
+1. Contact your CrowdStrike account representative to set up your Falcon Data Replicator feed (This request may take 2 to 5 days)
+2. Create the credentials for the feed:
+   1. In the console, got to `Support and resources > Resources and tools > Falcon data replicator`.
+   2. Click on the burger menu (the three vertical point) and select `Create credentials`
+   3. Get the client ID, the client secret, the queue name and the region.
 
-Please follow the [official documentation](https://falcon.eu-1.crowdstrike.com/documentation/9/falcon-data-replicator#falcon-data-replicator-setup).
-You should be able to get `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `QUEUE_NAME` and `AWS_REGION` from the previous step.
 
-Settup local environment:
+### Create the intake
 
-```bash
-### Install necessary dependencies
-poetry install
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `CrowdStrike Telemetry`. Copy the intake key.
 
-### Run script
-poetry run python main.py crowdstrike_telemetry
-```
 
-### Enjoy your events
-Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.
+### Pull events
+
+To start to pull events, you have to:
+
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Fetch new events from CrowdStrike Data replication](../../../automate/library/crowdstrike.md) trigger
+2. Set up the module configuration with your client id, the client secret and the region. Set up the trigger configuration with the intake key and the queue name.
+3. Start the playbook and enjoy your events
+
+## Further Readings
+
+- [Falcon Data Replicator documentation](https://falcon.eu-1.crowdstrike.com/documentation/9/falcon-data-replicator#falcon-data-replicator-setup)
