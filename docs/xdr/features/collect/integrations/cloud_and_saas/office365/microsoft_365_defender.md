@@ -1,17 +1,45 @@
 uuid: 05e6f36d-cee0-4f06-b575-9e43af779f9f
-name: Microsoft Defender for Endpoints
+name: Microsoft 365 Defender
 type: intake
 
 ## Overview
 
-Microsoft Defender for Endpoint is an enterprise endpoint security platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.
+**This Intake was previously called Microsoft Defender for Endpoints.**
 
-This setup guide describes how to forward events produced by `Microsoft Defender for Endpoints` to SEKOIA.IO XDR.
+Microsoft 365 Defender is a unified pre- and post-breach enterprise defense suite that natively coordinates detection, prevention, investigation, and response across endpoints, identities, email, and applications to provide integrated protection against sophisticated attacks.
+
+This setup guide describes how to forward events produced by `Microsoft 365 Defender` to Sekoia.io XDR.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/05e6f36d-cee0-4f06-b575-9e43af779f9f.md!}
+
+## Microsoft 365 Defender event types supported
+Here is a list of all the Microsoft 365 Defender event types supported by this integration:
+
+* Alert Evidence
+* AlertInfo
+* DeviceEvents
+* DeviceFileCertificateInfo
+* DeviceFileEvent
+* DeviceImageLoadEvents
+* DeviceInfo
+* DeviceLogonEvents
+* DeviceNetworkEvents
+* DeviceNetworkInfo
+* DeviceProcessEvents
+* DeviceRegistryEvents
+* EmailAttachmentInfo
+* EmailEvents
+* EmailPostDeliveryEvents
+* EmailUrlInfo
+* IdentityLogonEvents
+* IdentityQueryEvents
+* IdentityDirectoryEvents
+* CloudAppEvents
+
+Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/security/defender/supported-event-types?view=o365-worldwide) to see all the types provided by Microsoft. 
 
 ## Configure
 
