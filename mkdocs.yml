@@ -612,7 +612,6 @@ plugins:
       operation_center/intakes.md: xdr/features/collect/intakes.md
       operation_center/intakes_customformat.md: xdr/features/collect/integrations/custom_format.md
       operation_center/integration_catalog/application/alsid.md: xdr/features/collect/integrations/application/alsid.md
-      operation_center/integration_catalog/application/darktrace_threat_visualizer.md: xdr/features/collect/integrations/application/darktrace_threat_visualizer.md
       operation_center/integration_catalog/application/apache.md: xdr/features/collect/integrations/application/apache.md
       operation_center/integration_catalog/application/bind.md: xdr/features/collect/integrations/application/bind.md
       operation_center/integration_catalog/application/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
