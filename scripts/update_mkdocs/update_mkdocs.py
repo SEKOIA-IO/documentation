@@ -19,7 +19,7 @@ with open("ecs_flat.yml", "r") as fd:
 def analyze_parser(parser, custom_fields) -> Dict:
 
     taxonomy = ECS.copy()
-    taxonomy.update(custom_fields)
+    taxonomy.update(custom_fields or {})
     # extract all the fields
     fields = defaultdict(set)
     kind_values = set()
@@ -93,7 +93,7 @@ def load_intakes(intake_repository: str) -> List[Dict]:
             intake_fields = intake_path / "_meta" / "fields.yml"
             if intake_fields.exists():
                 with open(intake_fields, "r") as fd:
-                    intake["fields"] = yaml.safe_load(fd)
+                    intake["fields"] = yaml.safe_load(fd) or {}
             else:
                 intake["fields"] = {}
 

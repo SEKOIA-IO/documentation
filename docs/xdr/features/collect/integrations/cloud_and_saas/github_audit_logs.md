@@ -16,6 +16,9 @@ This setup guide describes how to forward audit logs from Github to Sekoia.io.
 
 ## Configure
 
+!!! Note
+    You must be Administrator of the organization to create the audit logs API KEY.
+
 ### Creating the Github API key
 
 To create an API key on [Github](https://github.com/):
