@@ -76,7 +76,6 @@ nav:
           - Alsid / Tenable.ad: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
           - BIND: xdr/features/collect/integrations/application/bind.md
-          - Darktrace Threat Visualizer: xdr/features/collect/integrations/application/darktrace_threat_visualizer.md
           - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
@@ -147,6 +146,7 @@ nav:
           - CrowdStrike Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_telemetry.md
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
           - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
+          - Darktrace Threat Visualizer: xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - IBM AIX: xdr/features/collect/integrations/endpoint/ibm_aix.md
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
@@ -505,7 +505,6 @@ plugins:
       integrations/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
       integrations/cisco-asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
       integrations/cisco_asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
-      integrations/darktrace_threat_visualizer.md: xdr/features/collect/integrations/application/darktrace_threat_visualizer.md
       integrations/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
       integrations/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
