@@ -127,7 +127,6 @@ nav:
           - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
           - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
-          - Trellix ePO: xdr/features/collect/integrations/cloud_and_saas/trellix_epo.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
@@ -163,6 +162,7 @@ nav:
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
           - TEHTRIS EDR: xdr/features/collect/integrations/endpoint/tehtris_edr.md
           - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
+          - Trellix ePO: xdr/features/collect/integrations/endpoints/trellix_epo.md
           - VMware ESXi: xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
@@ -565,7 +565,6 @@ plugins:
       integrations/transport/logstash.md: xdr/features/collect/ingestion_methods/logstash.md
       integrations/transport/rsyslog.md: xdr/features/collect/ingestion_methods/rsyslog.md
       integrations/transport/syslog-ng.md: xdr/features/collect/ingestion_methods/syslog-ng.md
-      integrations/trellix-epo.md: xdr/features/collect/integrations/cloud_and_saas/trellix_epo.md
       integrations/umbrella-dns.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_dns.md
       integrations/umbrella-ip.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_ip.md
       integrations/umbrella-proxy.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
