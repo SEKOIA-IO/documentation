@@ -146,6 +146,7 @@ nav:
           - CrowdStrike Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_telemetry.md
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
           - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
+          - Darktrace Threat Visualizer: xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - IBM AIX: xdr/features/collect/integrations/endpoint/ibm_aix.md
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
