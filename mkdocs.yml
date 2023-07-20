@@ -127,6 +127,7 @@ nav:
           - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
           - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
+          - Salesforce: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
@@ -543,6 +544,7 @@ plugins:
       integrations/pulse.md: xdr/features/collect/integrations/network/pulse.md
       integrations/raw.md: xdr/features/collect/integrations/generic/raw.md
       integrations/retarus-email-security.md: xdr/features/collect/integrations/email/retarus_email_security.md
+      integrations/salesforce.md: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
       integrations/sekoiaio-activity-logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
       integrations/sekoiaio_activity_logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
       integrations/sentinelone-deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
