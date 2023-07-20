@@ -128,6 +128,7 @@ nav:
           - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
           - Salesforce: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
+          - Sophos Threat Analysis Center: xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
@@ -185,6 +186,7 @@ nav:
             - Fortinet Fortiproxy: xdr/features/collect/integrations/network/fortiproxy.md
             - Fortinet Fortiweb: xdr/features/collect/integrations/network/fortiweb.md
           - Infoblox DDI: xdr/features/collect/integrations/network/infoblox_ddi.md
+          - Sophos Firewall: xdr/features/collect/integrations/network/sophos_fw.md
           - Mc Afee/Skyhigh Secure Web Gateway: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
           - Microsoft Always On VPN: xdr/features/collect/integrations/network/microsoft_always_on_vpn.md
           - NetFilter: xdr/features/collect/integrations/network/netfilter.md
@@ -194,7 +196,6 @@ nav:
           - Pulse / Ivanti Secure Connect: xdr/features/collect/integrations/network/pulse.md
           - Rubycat PROVE IT: xdr/features/collect/integrations/network/rubycat_prove_it.md
           - SonicWall Firewall: xdr/features/collect/integrations/network/sonicwall_fw.md
-          - Sophos Firewall: xdr/features/collect/integrations/network/sophos_fw.md
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield SNS: xdr/features/collect/integrations/network/stormshield_network_security.md
           - Suricata: xdr/features/collect/integrations/network/suricata.md

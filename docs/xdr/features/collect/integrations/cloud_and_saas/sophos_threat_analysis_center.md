@@ -1,10 +1,13 @@
 uuid: 99da26fc-bf7b-4e5b-a76c-408472fcfebb
-name: Sophos Analysis Threat Center
+name: Sophos Threat Analysis Center
 type: intake
 
 ## Overview
 
-The Sophos Threat Analysis Center (STAC), is a dedicated tool for research and analysis of cybersecurity threats. so it can help continuously on monitoring the cyber threat landscape and analyze new forms of malware, attack techniques, and cybercrime trends. which has also the most important part which the *live Discover* , with usage of queries you can have device informations from Sophos data lake.
+The Sophos Threat Analysis Center (STAC), is a dedicated tool for research and analysis of cybersecurity threats. so it can help continuously on monitoring the cyber threat landscape and analyze new forms of malware, attack techniques, and cybercrime trends. which has also the most important part which the _live Discover_ , with usage of queries you can have device informations from Sophos data lake.
+
+!!! warning
+    This format is still in beta, please use it wisely.
 
 {!\_shared_content/operations_center/detection/generated/suggested_rules_99da26fc-bf7b-4e5b-a76c-408472fcfebb_do_not_edit_manually.md!}
 
@@ -15,10 +18,10 @@ The Sophos Threat Analysis Center (STAC), is a dedicated tool for research and a
 ### Prerequisites
 
 You can find the system requirements for each respective platform below : <br />
+
 - [Windows Requirements](https://support.sophos.com/support/s/article/KB-000035144?language=en_US)
 - [Windows Server Requirements](https://support.sophos.com/support/s/article/KB-000034074?language=en_US)
 - [MacOS Requirements](https://support.sophos.com/support/s/article/KB-000034670?language=en_US)
-
 
 ### Enable Syslog forwarding
 
