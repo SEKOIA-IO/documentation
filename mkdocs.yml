@@ -162,7 +162,7 @@ nav:
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
           - TEHTRIS EDR: xdr/features/collect/integrations/endpoint/tehtris_edr.md
           - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
-          - Trellix ePO: xdr/features/collect/integrations/endpoints/trellix_epo.md
+          - Trellix ePO: xdr/features/collect/integrations/endpoint/trellix_epo.md
           - VMware ESXi: xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
