@@ -1,3 +1,8 @@
+### Prerequisites
+
+- An administator access to the [Amazon console]( https://console.aws.amazon.com) with the permission to create SQS queue and S3 notifications.
+- A **self managed** AWS S3 bucket where events will be published prior to be consumed by Sekoia.io.
+
 ### Create a SQS queue
 
 This integration relies on S3 Event Notifications (SQS) to discover new S3 objects.
