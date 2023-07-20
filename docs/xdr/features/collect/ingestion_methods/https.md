@@ -52,6 +52,19 @@ To push one event, just POST content to `https://intake.sekoia.io/plain`
 
     1. Will print  `{"event_id": "uuid"}`
 
+=== "With the intake key through query string"
+
+    ```python
+    import requests
+
+    params = {"intake_key": "YOUR_INTAKE_KEY"}
+    content = "[764008:0] info: 198.51.100.10 example.org. A IN"
+    response = requests.post("https://intake.sekoia.io/plain", data=content, params=params)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_id": "uuid"}`
+
 For numerous events, you can use the alternative endpoint `/batch`. The events should be separated by the line feed character (`U+000A` or `\n`):
 
 === "With the intake key as header"
@@ -77,6 +90,20 @@ For numerous events, you can use the alternative endpoint `/batch`. The events s
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     content = "\n".join(events)
     response = requests.post("https://intake.sekoia.io/plain/batch", data=content, auth=auth)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+=== "With the intake key through query string"
+
+    ```python
+    import requests
+
+    params = {"intake_key": "YOUR_INTAKE_KEY"}
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    content = "\n".join(events)
+    response = requests.post("https://intake.sekoia.io/plain/batch", data=content, params=params)
     print(response.text) # (1)
     ```
 
@@ -119,6 +146,19 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
     auth = request.auth.HTTPBasicAuth(None, "YOUR_INTAKE_KEY")
     events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
     response = requests.post("https://intake.sekoia.io/jsons", json=events, auth=auth)
+    print(response.text) # (1)
+    ```
+
+    1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+=== "With the intake key through query string"
+
+    ```python
+    import requests
+
+    params = {"intake_key": "YOUR_INTAKE_KEY"}
+    events = ["[764008:0] info: 198.51.100.10 example.org. A IN", "[764023:0] info: 2.34.100.56 text.org. A IN"]
+    response = requests.post("https://intake.sekoia.io/jsons", json=events, params=params)
     print(response.text) # (1)
     ```
 
