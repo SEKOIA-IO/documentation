@@ -4,9 +4,9 @@ To create a playbook, you need a `Trigger` to launch its execution.
 
 ## Types of Triggers
 
-To access triggers: 
+To access triggers:
 
-1. Go to a `Playbook` graph 
+1. Go to a `Playbook` graph
 2. In the `Actions Library`, right under the search bar are two checkboxes: Actions and Triggers
 3. Select `Triggers`
 
@@ -14,32 +14,32 @@ The `Triggers` collect data that will be used by the Operators and Actions to an
 
 ### Alerts
 
-The `Security alerts` triggers are made by SEKOIA.IO and allow users to collect information about alerts. To find them in the listing, filter by `Triggers` and click on SEKOIA.IO. 
+The `Security alerts` triggers are made by Sekoia.io and allow users to collect information about alerts. To find them in the listing, filter by `Triggers` and click on Sekoia.io.
 
-There you can find the following triggers: 
+There you can find the following triggers:
 
 - Alert comment created
 - Alert created
 - Alert status changed
-- Alert updated 
+- Alert updated
 
-The trigger named `Any Alert Update` regroups all of the triggers cited above. 
+The trigger named `Any Alert Update` regroups all of the triggers cited above.
 
-By using these triggers, you can get: 
+By using these triggers, you can get:
 
 - An alert UUID `alert_uuid`
-- Its date of creation (`created_at`), 
-- Its category (`alert_type`), 
-- Its `urgency` 
-- The action that triggered the alert notification (`event_type`) 
+- Its date of creation (`created_at`),
+- Its category (`alert_type`),
+- Its `urgency`
+- The action that triggered the alert notification (`event_type`)
 
 !!! note
     This trigger is only applicable in the Operations Center.
 
 
-### Manual trigger (webhook) 
+### Manual trigger (webhook)
 
-The `Manual trigger` can be found in the Triggers listing by clicking on SEKOIA.IO. It allows users to automatically trigger actions once a human has raised and removed a doubt on an alert.
+The `Manual trigger` can be found in the Triggers listing by clicking on Sekoia.io. It allows users to automatically trigger actions once a human has raised and removed a doubt on an alert.
 
 ### Cron
 
