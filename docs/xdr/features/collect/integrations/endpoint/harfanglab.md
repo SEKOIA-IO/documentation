@@ -28,7 +28,6 @@ Create a new HarfangLab intake on Sekoia.io.
 1. Navigate to `Administration` > `Configuration`, and switch to the `Connectors` tab.
 
 2. In the `Syslog connector` panel, select the logs you want to export:
-
    * Process
    * Network
    * Event log
@@ -37,7 +36,6 @@ Create a new HarfangLab intake on Sekoia.io.
    * Security Event
 
 3. Configure the Syslog information with the following details and by replacing `YOUR_INTAKE_KEY` with the Intake key previously generated in SEKOIA.IO:
-
    * Host: `intake.sekoia.io`
    * Port: `10514`
    * App name: name of your choice - **NO SPACES**
