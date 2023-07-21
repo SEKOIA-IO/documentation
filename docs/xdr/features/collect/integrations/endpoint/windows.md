@@ -6,11 +6,11 @@ type: intake
 
 Microsoft Windows is a widely used operating system that has been developed by Microsoft since 1985.
 
-This page will provide you with two methods for collecting and forwarding Windows logs to SEKOIA.IO. 
+This page will provide you with two methods for collecting and forwarding Windows logs to Sekoia.io. 
 
-- The first method involves using the NXLog agent to send logs directly from the Windows machine to SEKOIA.IO. 
+- The first method involves using the NXLog agent to send logs directly from the Windows machine to Sekoia.io. 
 
-- The second method involves using NXLog to forward logs from an internal log concentrator to SEKOIA.IO.
+- The second method involves using NXLog to forward logs from an internal log concentrator to Sekoia.io.
 
 Additionally, this documentation will offer guidance on collecting and forwarding logs from sensitive assets, such as Domain Controllers, without requiring the installation of a third-party agent. 
 
@@ -42,7 +42,7 @@ You will find dedicated NXLog configuration file for Sysmon usage in [this secti
 
 {!_shared_content/operations_center/integrations/generated/9281438c-f7c3-4001-9bcc-45fd108ba1be.md!}
 
-## NXLog directly to SEKOIA.IO
+## NXLog directly to Sekoia.io
 
 This section describes how to configure [NXLog](https://nxlog.co/) to forward your Windows events by means of a syslog transport channel.
 
@@ -94,7 +94,7 @@ To get started with NXLog, follow these steps:
   Module om_ssl
   Host intake.sekoia.io
   Port 10514
-  CAFile %CERTDIR%\SEKOIA-IO-intake.pem
+  CAFile %CERTDIR%\Sekoia.io-intake.pem
   AllowUntrusted  FALSE
 
   Exec to_syslog_ietf();
@@ -109,12 +109,12 @@ To get started with NXLog, follow these steps:
 
 ### Download the certificate
 
-To enable the connection between your events forwarder and the SEKOIA.IO intake, it is necessary to download the SEKOIA.IO intake certificate. Please follow these steps:
+To enable the connection between your events forwarder and the Sekoia.io intake, it is necessary to download the Sekoia.io intake certificate. Please follow these steps:
 
 1. Open a PowerShell console as an administrator. 
 2. Use the following command to retrieve the certificate and save it to the appropriate directory:
    ```powershell
-    Invoke-WebRequest -Uri https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem -OutFile 'C:\Program Files\nxlog\cert\SEKOIA-IO-intake.pem'
+    Invoke-WebRequest -Uri https://app.sekoia.io/assets/files/Sekoia.io-intake.pem -OutFile 'C:\Program Files\nxlog\cert\Sekoia.io-intake.pem'
     ```
 
 3. Restart the NXLog service through the Services tool as an administrator or use the following PowerShell command line as an administrator:
@@ -122,7 +122,7 @@ To enable the connection between your events forwarder and the SEKOIA.IO intake,
     Restart-Service nxlog
     ```
 
-After completing these steps, your events forwarder should be able to establish a secure connection with the SEKOIA.IO intake using the newly downloaded certificate.
+After completing these steps, your events forwarder should be able to establish a secure connection with the Sekoia.io intake using the newly downloaded certificate.
 
 
 ## NXLog to a concentrator
@@ -193,7 +193,7 @@ To get started, follow these steps:
     
 !!! Note
     The iso8859-1 character encoding is limited to 256 characters, which is not enough to represent all French characters. This means that some French characters might not be correctly interpreted or displayed when using iso8859-1 encoding. For example, iso8859-1 does not include characters such as é, è, ê, and ë. 
-    In order to correctly represent these characters, it is recommended to install the [SEKOIA.IO agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/). This endpoint agent is specifically designed to handle such issues, ensuring the accurate and secure transmission of data.
+    In order to correctly represent these characters, it is recommended to install the [Sekoia.io agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/). This endpoint agent is specifically designed to handle such issues, ensuring the accurate and secure transmission of data.
 
 Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as admin:
 
@@ -201,17 +201,17 @@ Restart the NXLog service through the Services tool as Administrator or use this
 Restart-Service nxlog
 ```
 
-### Configure the concentrator to forward events to SEKOIA.IO
+### Configure the concentrator to forward events to Sekoia.io
 Please read the dedicated documentation for each concentrator:
 
 * [Rsyslog](../../../ingestion_methods/rsyslog/)
 * [Logstash](../../../ingestion_methods/logstash/)
 * [Syslog-ng](../../../ingestion_methods/syslog-ng/)
 * [Graylog](../../../ingestion_methods/graylog/)
-* [SEKOIA.IO docker concentrator](../../../ingestion_methods/sekoiaio_docker_concentrator/)
+* [Sekoia.io docker concentrator](../../../ingestion_methods/sekoiaio_docker_concentrator/)
 
 !!! Note
-    While SEKOIA.IO docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.
+    While Sekoia.io docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.
 
 ## Windows Event Forwarder to Windows Event Collector to a concentrator
 
@@ -334,7 +334,7 @@ To configure the Event Log Reader, follow the steps below:
 
 3. Add the Network Service account to the built-in Event Log Readers security group. This will allow the Event Log Reader to access the Windows event logs.
 
-![SEKOIA.IO Operations Center Windows WEF](/assets/operation_center/integration_catalog/endpoint/windows/wef_client_config.png){: style="max-width:60%"}
+![Sekoia.io Operations Center Windows WEF](/assets/operation_center/integration_catalog/endpoint/windows/wef_client_config.png){: style="max-width:60%"}
 
 Note that these steps are necessary to allow the Event Log Reader to access the Windows event logs.
 

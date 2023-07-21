@@ -2,7 +2,7 @@
 
 ## Types of Actions
 
-An `Action` helps you execute specific tasks depending on your needs. There are 5 main types of actions in the playbooks: 
+An `Action` helps you execute specific tasks depending on your needs. There are 5 main types of actions in the playbooks:
 
 - Interact with the platform: [getters](#getters) and [setters](#setters)
 - Extract data: [data collection enrichers](#data-collection)
@@ -12,7 +12,7 @@ An `Action` helps you execute specific tasks depending on your needs. There are 
 
 The Actions Library lists all available actions in playbooks with their detailed configuration.
 
-## SEKOIA.IO Actions 
+## Sekoia.io Actions
 
 ### Getters
 
@@ -55,16 +55,16 @@ To update an alert status, you need to copy the `action_uuid` corresponding to t
 
 ## Notifications
 
-To get notified, you can rely on these tools: 
+To get notified, you can rely on these tools:
 
 - [Mandrill](library/mandrill.md): Send Message
-- [Mattermost](library/mattermost.md): Post message / Post SEKOIA.IO alert
+- [Mattermost](library/mattermost.md): Post message / Post Sekoia.io alert
 - [Pagerduty](library/pagerduty.md): Trigger Alert
 - [The Hive](library/the-hive.md): Create an alert in the Hive
 
 ## Data collection
 
-If you have an account in one of the listed tools below, you can easily extract data from there and import it to SEKOIA.IO. This is made possible with an API key. 
+If you have an account in one of the listed tools below, you can easily extract data from there and import it to Sekoia.io. This is made possible with an API key.
 
 - [BinaryEdge](library/binaryedge-s-api.md)
 - [Censys](library/censys.md)
@@ -85,7 +85,7 @@ If you have an account in one of the listed tools below, you can easily extract 
 | [http](library/http.md) | Request HTTP resources (download file, request URL) |
 | [STIX](library/stix.md) | Add source, ass tags, create relationships, cryptolaemus to STIX, CVE to STIX, filter bundle, JSON objects to observables, VirusTotal LiveHunt to observables, MISP to STIX, observables to contextualized indicators, observables to indicators, remove orphan objects, STIX to MISP, string to observables |
 
-These helpers need their associated trigger to function properly: 
+These helpers need their associated trigger to function properly:
 
 | Name | Description |
 | --- | --- |
@@ -95,14 +95,14 @@ These helpers need their associated trigger to function properly:
 
 ## Third-party applications
 
-- [Azure AD](library/azure-active-directory.md) 
+- [Azure AD](library/azure-active-directory.md)
 - [Fortigate Firewalls](library/fortigate-firewalls.md)
 - [HarfangLab](library/harfanglab.md)
 - [Panda Security](library/panda-security.md)
 - [Sentinel One](library/sentinel-one.md)
 - [ServiceNow](library/servicenow.md)
 
-More actions are available in the Actions Library. To learn how to set up an action, please refer to its documentation. 
+More actions are available in the Actions Library. To learn how to set up an action, please refer to its documentation.
 
-!!!note 
+!!!note
 	The dynamic content is written in JINJA. For more information on this language, please follow this [documentation](https://jinja.palletsprojects.com/en/2.10.x/templates/).

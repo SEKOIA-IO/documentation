@@ -1,14 +1,14 @@
 # Permissions
 
-In SEKOIA.IO, permissions do not necessarily have common names across the platform. 
+In Sekoia.io, permissions do not necessarily have common names across the platform.
 
 Use the search bar on top of the permissions list to filter permissions depending on the needed service.
-  
+
 ## XDR - Operations Center
 
 ### Alerts
 
-Need to access the [alerts](https://docs.sekoia.io/xdr/features/investigate/alerts/) page? Search `alert` and you’ll get all the permissions linked to this page. 
+Need to access the [alerts](https://docs.sekoia.io/xdr/features/investigate/alerts/) page? Search `alert` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -21,12 +21,12 @@ Need to access the [alerts](https://docs.sekoia.io/xdr/features/investigate/aler
 | SIC_READ_GENERATION_MODES | Get generation modes |
 
 !!! note
-    SIC is the term we use internally for the Operations Center. 
+    SIC is the term we use internally for the Operations Center.
 
 
 ### Assets
 
-Need to access the [Assets](https://docs.sekoia.io/xdr/features/collect/assets/) page? Search `Assets` and you’ll get all the permissions linked to this page. 
+Need to access the [Assets](https://docs.sekoia.io/xdr/features/collect/assets/) page? Search `Assets` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -51,7 +51,7 @@ Need to access the [Assets](https://docs.sekoia.io/xdr/features/collect/assets/)
 
 ### Cases
 
-Need to access the [Cases](https://docs.sekoia.io/xdr/features/investigate/cases/) page? Search `incident` and you’ll get all the permissions linked to this page. 
+Need to access the [Cases](https://docs.sekoia.io/xdr/features/investigate/cases/) page? Search `incident` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -64,7 +64,7 @@ Need to access the [Cases](https://docs.sekoia.io/xdr/features/investigate/cases
 
 ### Countermeasures
 
-Need to access the Countermeasures page? Search `countermeasure` and you’ll get all the permissions linked to this page. 
+Need to access the Countermeasures page? Search `countermeasure` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -74,7 +74,7 @@ Need to access the Countermeasures page? Search `countermeasure` and you’ll ge
 
 ### Entities
 
-Need to access the [Entities](https://docs.sekoia.io/xdr/features/collect/entities/) page? Search `entity` and you’ll get all the permissions linked to this page. 
+Need to access the [Entities](https://docs.sekoia.io/xdr/features/collect/entities/) page? Search `entity` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -84,7 +84,7 @@ Need to access the [Entities](https://docs.sekoia.io/xdr/features/collect/entiti
 
 ### Events
 
-Need to access the [events](https://docs.sekoia.io/xdr/features/investigate/events/) page? Search `events` and you’ll get all the permissions linked to this page. 
+Need to access the [events](https://docs.sekoia.io/xdr/features/investigate/events/) page? Search `events` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -94,7 +94,7 @@ Need to access the [events](https://docs.sekoia.io/xdr/features/investigate/even
 
 ### Intakes
 
-Need to access the [intakes](https://docs.sekoia.io/xdr/features/collect/intakes/) page and create or edit some intakes? Search `intake` and you’ll get all the permissions linked to this page. 
+Need to access the [intakes](https://docs.sekoia.io/xdr/features/collect/intakes/) page and create or edit some intakes? Search `intake` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -103,7 +103,7 @@ Need to access the [intakes](https://docs.sekoia.io/xdr/features/collect/intakes
 
 ### Rules
 
-Need to set up a role for the [Rules Catalog](https://docs.sekoia.io/xdr/features/detect/rules_catalog/)? Search `rule` and you’ll get all the permissions linked to this page. 
+Need to set up a role for the [Rules Catalog](https://docs.sekoia.io/xdr/features/detect/rules_catalog/)? Search `rule` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -131,13 +131,13 @@ Need to access the Intelligence Center ? Here are all the permissions linked to 
 | INTHREAT_READ_IOC_COLLECTIONS_TELEMETRY | Read IOC Collections telemetry |
 
 !!! note
-    InThreat is the term we use internally for the Intelligence Center 
+    InThreat is the term we use internally for the Intelligence Center
 
 ## TIP permissions
 
 In addition to the following list of permissions, you might also need permissions for [playbooks](#playbooks), [dashboards](#dashboards) and [manage communities](#manage-communities)
 
-Need to access the TIP? Here are all the permissions linked to the product. 
+Need to access the TIP? Here are all the permissions linked to the product.
 
 ### TIP Reader
 
@@ -169,9 +169,9 @@ Need to access the TIP? Here are all the permissions linked to the product.
 | INTHREAT_READ_WARNING_RULES | Read warning rules  |
 
 
-### Enrichments 
+### Enrichments
 
-Need to access enrichments in the TIP? Search `enricher` and you'll get all the permissions linked to the feature. 
+Need to access enrichments in the TIP? Search `enricher` and you'll get all the permissions linked to the feature.
 
 | Name | Description |
 | --- | --- |
@@ -184,7 +184,7 @@ Need to access enrichments in the TIP? Search `enricher` and you'll get all the 
 
 ### Playbooks
 
-Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Search `symphony` and you’ll get all the permissions linked to this page. 
+Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Search `symphony` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -196,12 +196,12 @@ Need to access [playbooks](https://docs.sekoia.io/tip/features/automate/)? Searc
 | SYMPHONY_WRITE_PLAYBOOK_RUNS | Modify playbook Runs |
 
 !!! note
-    Symphony is the name used internally for Playbooks. 
+    Symphony is the name used internally for Playbooks.
 
 
 ### Dashboards
 
-Need to access dashboards? Search `dashboard` and you’ll get all the permissions linked to this page. 
+Need to access dashboards? Search `dashboard` and you’ll get all the permissions linked to this page.
 
 | Name | Description |
 | --- | --- |
@@ -210,7 +210,7 @@ Need to access dashboards? Search `dashboard` and you’ll get all the permissio
 
 ### Manage communities
 
-Need to manage your communities? Search `community` and you’ll get all the permissions linked to this section. 
+Need to manage your communities? Search `community` and you’ll get all the permissions linked to this section.
 
 | Name | Description |
 | --- | --- |
@@ -227,7 +227,3 @@ Need to manage your communities? Search `community` and you’ll get all the per
 | COMMUNITY_WRITE_APIKEY | Generate and revoke community api keys |
 | COMMUNITY_WRITE_DELEGATION | Create or revoke delegations |
 | COMMUNITY_WRITE_ROLE | Write roles |
-
-
-
-

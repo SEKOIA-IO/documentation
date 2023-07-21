@@ -1,3 +1,3 @@
-# SEKOIA.IO Intakes
+# Sekoia.io Intakes
 
 <!-- This page is automatically built by MkDocs -->

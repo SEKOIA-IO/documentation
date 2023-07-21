@@ -12,7 +12,7 @@ Azure Virtual Machines service is developed and managed by Microsoft Corp.
 
 ## Configure
 
-This setup guide will show you how to forward events produced by a Linux Virtual Machine hosted on Azure platform to SEKOIA.IO.
+This setup guide will show you how to forward events produced by a Linux Virtual Machine hosted on Azure platform to Sekoia.io.
 
 Theses changes have to be made from the [Azure Web Portal](https://portal.azure.com).
 
@@ -45,12 +45,12 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 #### Create “Shared Access Policies”
 
 1. Navigate to “Home”, “Event Hubs”, “company-eventhub - Shared access policies”. From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
-2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “linux-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
+2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “linux-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to Sekoia.io.
 3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”linux-event - Consumer groups”. From there, you can create a consumer group (e.g. `sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
-In order to allow SEKOIA.IO keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
+In order to allow Sekoia.io keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
 
 To proceed, you can use Azure PowerShell:
 
@@ -222,9 +222,9 @@ Finally you could push the change of the diagnostic extension configuration (ada
 PS Azure:\> az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group company-resource-group --vm-name company-linux --protected-settings protected_settings.json --settings public_settings.json --subscription uuid
 ```
 
-### Forward the Connection Keys to SEKOIA.IO
+### Forward the Connection Keys to Sekoia.io
 
-Finally, please send to SEKOIA.IO the following information:
+Finally, please send to Sekoia.io the following information:
 
 - Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=linux-event"`).
 - Azure Event Hub’s consumer group name (e.g. `sekoiaio`).

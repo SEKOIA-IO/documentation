@@ -1,5 +1,7 @@
 # Fortigate Firewalls
 
+![Fortigate Firewalls](/assets/playbooks/library/fortigate-firewalls.svg){ align=right width=150 }
+
 Fortigate is a firewall appliance from [Fortinet](http://www.fortinet.com/) with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere
 
 ## Configuration
@@ -50,4 +52,4 @@ Add a new IP Address object to a Fortigate Firewall
 
 ## Extra
 
-Module **`Fortigate Firewalls` v1.16**
+Module **`Fortigate Firewalls` v1.24**

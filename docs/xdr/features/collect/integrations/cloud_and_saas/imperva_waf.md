@@ -6,7 +6,7 @@ type: intake
 
 Imperva Web Application Firewall helps you to protect your web applications and your APIs.
 
-This setup guide describes how to forward security events collected on the Imperva WAF platform to SEKOIA.IO.
+This setup guide describes how to forward security events collected on the Imperva WAF platform to Sekoia.io.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_d9f337a4-1303-47d4-b15f-1f83807ff3cc_do_not_edit_manually.md!}
@@ -21,9 +21,9 @@ In your Imperva control panel, go to [Account > Account Management > SIEM Logs >
 Select Imperva API, CEF format and enable compression.
 Copy the API ID, the API Key and the Log Server URI.
 
-Then go to [SIEM Logs > Websites Logs Level](https://management.service.imperva.com/my/web-logs/sites-settings) and enable for each website the log level you want to get on SEKOIA.IO.
+Then go to [SIEM Logs > Websites Logs Level](https://management.service.imperva.com/my/web-logs/sites-settings) and enable for each website the log level you want to get on Sekoia.io.
 
-### Create the intake in SEKOIA.IO
+### Create the intake in Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Imperva WAF. Copy the intake key.
 
@@ -33,7 +33,7 @@ Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create
 Set up a new module configuration with the information you copied previously.
 Set up the trigger configuration with the frequency of the pull.
 
-At the end of the playbook, set up the action `Push events to intake` with a SEKOIA.IO API key and the intake key, from the intake previously created.
+At the end of the playbook, set up the action `Push events to intake` with a Sekoia.io API key and the intake key, from the intake previously created.
 
 Start the playbook and enjoy your events.
 

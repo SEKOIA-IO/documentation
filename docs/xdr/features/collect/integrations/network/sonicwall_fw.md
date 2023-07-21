@@ -16,7 +16,7 @@ SonicWall firewalls enable you to identify and control all applications that are
 ## Configure
 
 This setup guide will show you how to forward your SonicWall logs
-to SEKOIA.IO by means of a syslog transport channel.
+to Sekoia.io by means of a syslog transport channel.
 
 ### Prerequisites
 
@@ -38,6 +38,6 @@ except for the step 4 : Select Syslog Format as 'Enhanced', you must select Sysl
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format SonicWall Firewall.
 
-### Transport to SEKOIA.IO
+### Transport to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.

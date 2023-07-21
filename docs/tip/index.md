@@ -1,6 +1,6 @@
 # Sekoia.io TIP
 
-The Threat Intelligence Platform is an app made by [Sekoia.io](http://SEKOIA.IO) to help you build and disseminate your own Cyber Threat Intelligence.
+The Threat Intelligence Platform is an app made by [Sekoia.io](http://Sekoia.io) to help you build and disseminate your own Cyber Threat Intelligence.
 
 It is meant to store all levels of Cyber Threat Intelligence (CTI), from strategic (targets, motivations) to technical (indicator of compromises). It also provides you with Content Creation tools as well as Investigation means to help you stay up-to-date when it comes to analyzing Cyber threats.
 
@@ -38,6 +38,6 @@ To automate recurrent processes and tasks (enrichment, contextualization, invest
 
 ### Report
 
-The spread of security products within a system can make it hard to follow the actual state of your security stance. With SEKOIA.IO, you can use the dashboard module and its widgets to customize your reportings in order to visualize your own KPIs.
+The spread of security products within a system can make it hard to follow the actual state of your security stance. With Sekoia.io, you can use the dashboard module and its widgets to customize your reportings in order to visualize your own KPIs.
 
 - Create and edit your [dashboards](features/monitor/dashboard.md) to monitor sectors, content being produced or your threat database evolution.

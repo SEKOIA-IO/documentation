@@ -45,7 +45,7 @@ Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/securi
 
 ### Prerequisites
 
-To forward events to SEKOIA.IO, please follow [this guide](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub) to create an EventHubs namespace with an EventHubs that enable the data streaming on the hub.
+To forward events to Sekoia.io, please follow [this guide](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub) to create an EventHubs namespace with an EventHubs that enable the data streaming on the hub.
 
 Once the data streaming is configured, in your EventHubs, go to `Setting > Shared access policies`.
 Create a new policy with the option `Listen` then copy the `Connection string-primary key`.

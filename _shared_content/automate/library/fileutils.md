@@ -1,5 +1,7 @@
 # fileutils
 
+![fileutils](/assets/playbooks/library/fileutils.svg){ align=right width=150 }
+
 This module exposes action to manipulate files. It extracts data from XML or JSON files.
 
 ## Configuration
@@ -56,4 +58,4 @@ Read the XML file and return its content evaluated against specified xpath
 
 ## Extra
 
-Module **`fileutils` v1.19**
+Module **`fileutils` v1.26**

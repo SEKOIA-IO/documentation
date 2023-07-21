@@ -1,6 +1,6 @@
-# Forward Logs to SEKOIA.IO via HTTPS
+# Forward Logs to Sekoia.io via HTTPS
 
-To push your events to SEKOIA.IO, you can use our HTTPS log collector. It's the simpler way to send us your logs, especially for non-syslog system.
+To push your events to Sekoia.io, you can use our HTTPS log collector. It's the simpler way to send us your logs, especially for non-syslog system.
 
 For the forwarding, several options are available:
 
@@ -8,13 +8,13 @@ For the forwarding, several options are available:
 - Send your events in a JSON array
 - Send your events as a structured JSON payload
 
-For each option, we will have to supply an intake key. The collector will return the events' identifiers in the SEKOIA.IO detection workflow, as a JSON payload.
+For each option, we will have to supply an intake key. The collector will return the events' identifiers in the Sekoia.io detection workflow, as a JSON payload.
 
-## Push our events to SEKOIA.IO as line-oriented records
+## Push our events to Sekoia.io as line-oriented records
 
 To forward events, you can use the `/plain` endpoint.
 
-The following headers are handled by SEKOIA.IO’S HTTPS log collector:
+The following headers are handled by Sekoia.io’S HTTPS log collector:
 
 | Header                       | Mandatory? | Type     | Description                                                                            |
 |------------------------------|------------|----------|----------------------------------------------------------------------------------------|
@@ -109,11 +109,11 @@ For numerous events, you can use the alternative endpoint `/batch`. The events s
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
-## Push our events to SEKOIA.IO as JSON array
+## Push our events to Sekoia.io as JSON array
 
 To send us events as JSON array, you should set `Content-Type` HTTP header to `application/json`.
 
-The following headers are handled by SEKOIA.IO’S HTTPS log collector:
+The following headers are handled by Sekoia.io’S HTTPS log collector:
 
 | Header                       | Mandatory? | Type     | Description                                                                            |
 |------------------------------|------------|----------|----------------------------------------------------------------------------------------|
@@ -164,11 +164,11 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
-## Push our events to SEKOIA.IO as structured content
+## Push our events to Sekoia.io as structured content
 
 To send us events, you should set `Content-Type` HTTP header to `application/json`.
 
-The following fields are currently handled by SEKOIA.IO’S HTTPS log collector:
+The following fields are currently handled by Sekoia.io’S HTTPS log collector:
 
 | Field         | Mandatory? | Type     | Description                                                                                            |
 |---------------|------------|----------|--------------------------------------------------------------------------------------------------------|
@@ -189,7 +189,7 @@ print(response.text) # (1)
 
 1. Will print  `{"event_id": "uuid"}`
 
-To push structured data to SEKOIA.IO, you can push your payload as quoted JSON in the `POST`ed payload:
+To push structured data to Sekoia.io, you can push your payload as quoted JSON in the `POST`ed payload:
 
 ```python
 import requests

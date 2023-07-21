@@ -4,15 +4,15 @@ When your conditions are configured, you'll have to choose which actions should 
 
 For instance, you can decide to send an e-mail AND send a message on a Mattermost channel.
 
-### SEKOIA.IO Notification
+### Sekoia.io Notification
 
-The “Notification” action allows you to send an in-app notification that will be made available across SEKOIA.IO. All notifications can be accessed from the `bell icon` on the top right. By clicking there, the notification panel with all notifications will be displayed.
+The “Notification” action allows you to send an in-app notification that will be made available across Sekoia.io. All notifications can be accessed from the `bell icon` on the top right. By clicking there, the notification panel with all notifications will be displayed.
 
 ### Email Notification
 
 The “Email notification” will let you send an e-mail to an arbitrary address with the two different options:
 
-- By default, simple notification content will be sent with a link to SEKOIA.IO page corresponding of the Condition(s) set up
+- By default, simple notification content will be sent with a link to Sekoia.io page corresponding of the Condition(s) set up
 - If you enable the `Enrich email with contextual infos` toggle, more contextual information related to your alert will be communicated.
 
 ### Mattermost Notification
@@ -23,7 +23,7 @@ You can refer to the Mattermost documentation on how to [create a new Mattermost
 
 ### WebHook Notification
 
-The “WebHook notification” will let you send message to interact with third party softwares. Technical informations related to the event will be pushed to an HTTP server. That latter will be able to understand the received payload and act (for example, retrieve more information about the event itself via SEKOIA.IO APIs and then push notification to an internal messaging service).
+The “WebHook notification” will let you send message to interact with third party softwares. Technical informations related to the event will be pushed to an HTTP server. That latter will be able to understand the received payload and act (for example, retrieve more information about the event itself via Sekoia.io APIs and then push notification to an internal messaging service).
 
 !!! info 
     You can’t use the WebHook notification mechanism to push information directly to third parties (such as Slack or Telegram), you have to use an intermediate server. To do so, you can use solutions like IFTTT or a simple HTTP server (see below).
@@ -62,7 +62,7 @@ Here's the description of the payload fields description:
 | `metadata.created`        | Always         | Date of creation of the _event_.                                                                       |
 | `metadata.community_uuid` | Always         | Community concerned by the event.                                                                      |
 | `metadata.avatar_uuid`    | Always         | Event that concerns only a single member of a community (not used for alerts or reports).              |
-| `metadata.user_uuid`      | Always         | Event that concerns only a single user of SEKOIA.IO.                                                   |
+| `metadata.user_uuid`      | Always         | Event that concerns only a single user of Sekoia.io.                                                   |
 | `metadata.permissions`    | Always         | Unused.                                                                                                |
 | `attributes.uuid`         | Alert specific | Unique identifier of the alert (UUID). Can be used to talk to the Alert API.                           |
 | `attributes.short_id`     | Alert specific | Human readable alert unique identifer.                                                                 |
@@ -71,15 +71,15 @@ Here's the description of the payload fields description:
 Now, let’s say that you want to post a notification to your internal Microsoft Teams messaging system when a new alert is raised. To do so, you have to:
 
 - Configure a small HTTP server that will receive the payload
-- It will then talk to SEKOIA.IO’s Alert API to retrieve more information about the alert itself (its title, its urgency, etc.)
+- It will then talk to Sekoia.io’s Alert API to retrieve more information about the alert itself (its title, its urgency, etc.)
 - The final message is computed and pushed to Microsoft Teams via their incoming WebHook system
 
 Here’s an example of an HTTP server written in Python and FastAPI:
 
 ```python title="main.py"
-"""Sample notification handler for SEKOIA.IO WebHook Notifications.
+"""Sample notification handler for Sekoia.io WebHook Notifications.
 
-Sample FastAPI application that is in charge of receiving WebHook events from SEKOIA.IO’s Notification mechanism, enrich event by talking to SEKOIA.IO’s Alert API and then to push a notification to Microsoft Teams, via an incoming WebHook.
+Sample FastAPI application that is in charge of receiving WebHook events from Sekoia.io’s Notification mechanism, enrich event by talking to Sekoia.io’s Alert API and then to push a notification to Microsoft Teams, via an incoming WebHook.
 
 """
 
@@ -123,7 +123,7 @@ settings = WebHookSettings()
 
 async def push_notification_to_teams(event: SEKOIAIOWebHookEvent):
     """Simple task that will extract the retrieve the full alert via
-    SEKOIA.IO API and then creates a message that will be posted on
+    Sekoia.io API and then creates a message that will be posted on
     Microsoft Teams via a predefined incoming WebHook.
 
     """
@@ -136,7 +136,7 @@ async def push_notification_to_teams(event: SEKOIAIOWebHookEvent):
         if response.status_code == 200:
             alert = response.json()
             message = (
-                f"A new alert “{alert['title']}” was created on SEKOIA.IO with "
+                f"A new alert “{alert['title']}” was created on Sekoia.io with "
                 "status “{alert['status']['name']}” and “{alert['urgency']['display']}” severity."
             )
             if settings.teams_webhook_url:
@@ -150,13 +150,13 @@ async def handle_new_alert(
     background_tasks.add_task(push_notification_to_teams, event)
 ```
 
-1. Entrypoint of our HTTP server that receives SEKOIA.IO WebHook notifications. Please define a unique URL, using and UUID for example.
-2. Code in charge of collecting more information on the alert itself by talking to SEKOIA.IO APIs.
+1. Entrypoint of our HTTP server that receives Sekoia.io WebHook notifications. Please define a unique URL, using and UUID for example.
+2. Code in charge of collecting more information on the alert itself by talking to Sekoia.io APIs.
 3. Send the final text message to Microsoft Teams.
 4. Environment variables that needs to be defined to let the server work.
 5. Base model that will be used to parse incoming events (this version only handles alerts).
 
-Now, you have to create a new API Key in SEKOIA.IO’s User Center. That one should have at least the right to read alerts (`SIC_READ_ALERT` permissions).
+Now, you have to create a new API Key in Sekoia.io’s User Center. That one should have at least the right to read alerts (`SIC_READ_ALERT` permissions).
 
 Then you have to install requirements and start the HTTP server with the appropriate environment variables:
 
@@ -180,4 +180,4 @@ ngrok http 8000 # (5)
 4. Start the server
 5. Use ngrok to provide access to your local code (development only)
 
-Finally, you can configure SEKOIA.IO’s WebHook notification to push events to your HTTP server on the following URL: `https://ad76-2a01-cb08-8b87-5600-777f-e748-9e82-49c2.ngrok.io/hooks/67a7472b-b43c-415d-b1ce-c135fb1dfb0e`.
+Finally, you can configure Sekoia.io’s WebHook notification to push events to your HTTP server on the following URL: `https://ad76-2a01-cb08-8b87-5600-777f-e748-9e82-49c2.ngrok.io/hooks/67a7472b-b43c-415d-b1ce-c135fb1dfb0e`.

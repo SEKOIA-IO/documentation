@@ -1,5 +1,7 @@
 # Whois
 
+![Whois](/assets/playbooks/library/whois.svg){ align=right width=150 }
+
 Provides data enrichment for domains and IP addresses.
 
 ## Configuration
@@ -30,4 +32,4 @@ Provides data enrichment for Domains, URLs, and IP addresses.
 
 ## Extra
 
-Module **`Whois` v1.15**
+Module **`Whois` v1.21**

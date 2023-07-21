@@ -35,4 +35,4 @@ Use an OpenAI GPT model to provide an answer to any prompt
 
 ## Extra
 
-Module **`OpenAI` v1.0.2**
+Module **`OpenAI` v1.3**

@@ -1,29 +1,29 @@
-# Forward Logs to SEKOIA.IO From syslog-ng
+# Forward Logs to Sekoia.io From syslog-ng
 
-If you are using syslog-ng as a log collector, you can configure it to push your logs to SEKOIA.IO. This operation is done by using Syslog protocol.
+If you are using syslog-ng as a log collector, you can configure it to push your logs to Sekoia.io. This operation is done by using Syslog protocol.
 
 To push logs, you have to configure some filters and rewrite rules in syslog-ng that will add the proper “intake key” considering your logs.
 
 ## Destination Configuration
 
-The first thing to do is to add the SEKOIA.IO certification authority (CA) file in the `/etc/syslog-ng/ca.d` directory. Certificates should be in names by their hash values (that can be done via the `openssl rehash` command).
+The first thing to do is to add the Sekoia.io certification authority (CA) file in the `/etc/syslog-ng/ca.d` directory. Certificates should be in names by their hash values (that can be done via the `openssl rehash` command).
 
 To proceed, you can execute the following commands in your favorite shell:
 
 ```
 sudo mkdir -p /etc/syslog-ng/ca.d
 
-# Retrieve SEKOIA.IO’s Certificate Authority (Let’s Encrypt)
-sudo wget -O /etc/syslog-ng/ca.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+# Retrieve Sekoia.io’s Certificate Authority (Let’s Encrypt)
+sudo wget -O /etc/syslog-ng/ca.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/Sekoia.io-intake.pem
 
-# Split PEM file into multiples PEM files (one for each certificate containes in `SEKOIA-IO-intake.pem`).
-sudo awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "cert." c ".pem"}' < SEKOIA-IO-intake.pem
+# Split PEM file into multiples PEM files (one for each certificate containes in `Sekoia.io-intake.pem`).
+sudo awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "cert." c ".pem"}' < Sekoia.io-intake.pem
 
 # Ask OpenSSL to create a hash for each PEM file.
 sudo openssl rehash /etc/syslog-ng/ca.d
 ```
 
-Then, you have to define syslog-ng’s destination module to push Syslog events to SEKOIA.IO in `/etc/syslog-ng/syslog-ng.conf`:
+Then, you have to define syslog-ng’s destination module to push Syslog events to Sekoia.io in `/etc/syslog-ng/syslog-ng.conf`:
 
 ```
 destination d_sekoia_io {
@@ -39,7 +39,7 @@ destination d_sekoia_io {
 
 ## Dispatching Events
 
-In the following example, we are pushing Apache HTTP Server and NGINX logs to SEKOIA.IO. To filter in events, we are relying on process names. Make sure you update your intake key value by changing `CHANGE_ME_INTAKE_KEY` below.
+In the following example, we are pushing Apache HTTP Server and NGINX logs to Sekoia.io. To filter in events, we are relying on process names. Make sure you update your intake key value by changing `CHANGE_ME_INTAKE_KEY` below.
 
 You have to add the following configuration snippet in your main syslog-ng configuration file, `/etc/syslog-ng/syslog-ng.conf`:
 
@@ -77,7 +77,7 @@ log {
 
 ## syslog-ng and Red Hat Enterprise Linux
 
-If you can’t see your events on SEKOIA.IO, you might encounter an issue with your syslog-ng and its capability dropping feature. This problem was faced by some of our customers with Red Hat Enterprise Linux for example.
+If you can’t see your events on Sekoia.io, you might encounter an issue with your syslog-ng and its capability dropping feature. This problem was faced by some of our customers with Red Hat Enterprise Linux for example.
 
 As explained in syslog-ng’s article “[Working around Linux capabilities problems for syslog-ng](https://www.syslog-ng.com/community/b/blog/posts/working-around-linux-capabilities-problems-for-syslog-ng)”, you can execute the following commands to solve this issue:
 
@@ -90,7 +90,7 @@ EOF
 
 ## How to Debug syslog-ng?
 
-To check if syslog-ng is forwarding events to SEKOIA.IO, you can start it with the `-d` (to enable debug mode) and `-e` (to ensure that all logs are displayed to the standard output) flags:
+To check if syslog-ng is forwarding events to Sekoia.io, you can start it with the `-d` (to enable debug mode) and `-e` (to ensure that all logs are displayed to the standard output) flags:
 
 ```
 /usr/sbin/syslog-ng -F --no-caps -d -e

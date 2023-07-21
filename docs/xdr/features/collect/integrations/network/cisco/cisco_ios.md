@@ -15,7 +15,7 @@ Cisco IOS is a network operating system for Cisco ASR routers and Cisco Catalyst
 
 ### Prerequisites
 
-An internal log concentrator is required to collect and forward events to SEKOIA.IO.
+An internal log concentrator is required to collect and forward events to Sekoia.io.
 
 ### Enable Syslog forwarding
 
@@ -26,9 +26,9 @@ Log on your Cisco appliance and follow [this guide](https://www.cisco.com/c/en/u
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cisco IOS.
 
-## Transport to SEKOIA.IO
+## Transport to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 
 ## Further Readings
 - [Cisco System Message Logging](https://www.cisco.com/c/en/us/td/docs/routers/access/wireless/software/guide/SysMsgLogging.html)

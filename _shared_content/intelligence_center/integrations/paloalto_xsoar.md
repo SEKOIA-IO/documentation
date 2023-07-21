@@ -3,7 +3,7 @@
 
 ## Prerequisite
 
-On SEKOIA.IO XDR, create an API KEY with the following permission:
+On Sekoia.io XDR, create an API KEY with the following permission:
 - `INTHREAT_READ_OBJECTS` (`8d9901dc-0508-4472-b3c1-5ad5efc96032`): Read objects from InThreat
 
 [More information on API KEY creation](../../../getting_started/manage_api_keys.md)
@@ -12,19 +12,19 @@ On SEKOIA.IO XDR, create an API KEY with the following permission:
 
 In your Palo Alto Cortex XSAOR instance go to "Marketplace" and search for "sekoia".
 
-![!View of SEKOIA.IO CTI integration in PaloAlto Marketplace](paloalto_xsoar_images/marketplace.png)
+![!View of Sekoia.io CTI integration in PaloAlto Marketplace](paloalto_xsoar_images/marketplace.png)
 
 Choose the "SEKOIAIntelligenceCenter" pack to open pack description and use the "Install" button to add the pack to your instance.
 
-![!Installation of SEKOIA.IO CTI integration](paloalto_xsoar_images/installation.png)
+![!Installation of Sekoia.io CTI integration](paloalto_xsoar_images/installation.png)
 
-![!Installed SEKOIA.IO CTI integration](paloalto_xsoar_images/installed.png)
+![!Installed Sekoia.io CTI integration](paloalto_xsoar_images/installed.png)
 
 Navigate to "Settings" where "SEKOIAIntelligenceCenter" should have appeared and clic the "Add instance" button to add a new instance.
 
 ![!Add a new instance of the integratino](paloalto_xsoar_images/add_instance.png)
 
-Input a SEKOIA.IO XDR API KEY and save your configuration.
+Input a Sekoia.io XDR API KEY and save your configuration.
 
 ![!Configure instance API KEY](paloalto_xsoar_images/configure_apikey.png)
 

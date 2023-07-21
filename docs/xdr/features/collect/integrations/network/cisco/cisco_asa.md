@@ -12,7 +12,7 @@ Cisco Secure Firewall include:
   - Firepower Threat Defense (FTD): a unified software image, which includes the Cisco ASA features and FirePOWER Services. This unified software is capable of offering the function of ASA and FirePOWER in one platform, both in terms of hardware and software features.
   - Next Generation IPS (NGIPS): that detect and stop intrusions in your internal network or in your public cloud. NGIPS helps you to mitigate vulnerabilities and manage patch application helps you to mitigate vulnerabilities and manage patch applications.
 
-Sending Cisco logs to SEKOIA.IO will help you discovering potential network security threats, which are contextualized  thanks to our Cyber Threat Intelligence (CTI).
+Sending Cisco logs to Sekoia.io will help you discovering potential network security threats, which are contextualized  thanks to our Cyber Threat Intelligence (CTI).
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_466aeca2-e112-4ccc-a109-c6d85b91bbcf_do_not_edit_manually.md!}
@@ -74,6 +74,6 @@ Explanations:
 > If you specify UDP, the ASA continues to allow new connections whether or not the syslog server is operational. Valid port values for either protocol are 1025 through 65535. The default UDP port is 514. The default TCP port is 1470.
 > For more information about Cisco ASA logging, please refer to your [Cisco documentation](https://www.cisco.com/c/en/us/td/docs/security/asa/asa-cli-reference/S/asa-command-ref-S.html).
 
-## Transport to SEKOIA.IO
+## Transport to Sekoia.io
 
-The reader is invited to consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+The reader is invited to consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.

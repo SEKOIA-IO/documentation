@@ -1,4 +1,4 @@
-# Forward Logs to SEKOIA.IO Using Rsyslog
+# Forward Logs to Sekoia.io Using Rsyslog
 
 ## Overview
 
@@ -8,7 +8,7 @@ We recommend you centralize them on a dedicated server: Rsyslog.
 
 Before processing, you have to:
 
-- Connect to [SEKOIA.IO Operations Center](https://app.sekoia.io/operations/)
+- Connect to [Sekoia.io Operations Center](https://app.sekoia.io/operations/)
 - Add an Intake to the relevant Entity
 - Keep trace of the automatically generated Intake key
 
@@ -18,7 +18,7 @@ The following prerequisites are needed in order to setup efficient Rsyslog:
 
 - Administrator privileges of the server: `root`
 - Inbound traffic from the equipment to the Rsyslog must be open on `TCP 514`
-- Outbound traffic from the Rsyslog to the SEKOIA.IO platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `51.159.9.95`)
+- Outbound traffic from the Rsyslog to the Sekoia.io platform must be open on `TCP 10514` (IP for `intake.sekoia.io` is `51.159.9.95`)
 
 ## Rsyslog installation procedure
 
@@ -49,10 +49,10 @@ After receiving the IDs to connect to the Linux server, the main activities are 
         sudo dnf install -y rsyslog rsyslog-gnutls wget
 	    ```
 
-3. Download the SEKOIA.IO certificate
+3. Download the Sekoia.io certificate
 
 	```bash
-	sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/Sekoia.io-intake.pem
 	```
 
 4. Modify the `/etc/rsyslog.conf` main configuration file 
@@ -146,7 +146,7 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
     module(load="imtcp")
     ```
 
-2. Create a configuration file for each technology you want to forward to SEKOIA.IO.
+2. Create a configuration file for each technology you want to forward to Sekoia.io.
 
     Create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
 
@@ -166,10 +166,10 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
 
     The name of the ruleset is not important but must be the same as the one defined below.
 
-    To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the SEKOIA.IO syslog endpoint on a specific Intake. Please change using the YOUR_INTAKE_KEY accordingly.
+    To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the Sekoia.io syslog endpoint on a specific Intake. Please change using the YOUR_INTAKE_KEY accordingly.
 
     ```bash
-    $DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+    $DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia.io-intake.pem
     input(type="imtcp" port="20516" ruleset="remote20516")
 
     template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
@@ -253,7 +253,7 @@ To receive and process Windows logs, you have to follow these steps:
 
     **Method 2: Create a configuration file to view raw syslog messages**
 
-	This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on SEKOIA.IO.
+	This method helps find key information located in the syslog headers to split technologies into separate pipelines to be forwarded to the right Intakes on Sekoia.io.
 
 	Log all the raw events received by the Rsyslog server to a **temporary file** named `00-testing.conf`.
 
@@ -338,9 +338,9 @@ To receive and process Windows logs, you have to follow these steps:
 		sudo rm /var/log/testing.log
 		```
 
-#### Forward logs to SEKOIA.IO
+#### Forward logs to Sekoia.io
 
-1. Create configuration files for each technology you want to forward to SEKOIA.IO.
+1. Create configuration files for each technology you want to forward to Sekoia.io.
 
 	Create a dedicated file in `/etc/rsyslog.d/` for each technology to be collected.
 
@@ -364,12 +364,12 @@ To receive and process Windows logs, you have to follow these steps:
 	
 	```bash
 	# Refer to the location of the certificate
-	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia.io-intake.pem
 
-	# Customize the syslog header the an Intake Key to be collected on SEKOIA.IO while adding a new intake from the catalogue
+	# Customize the syslog header the an Intake Key to be collected on Sekoia.io while adding a new intake from the catalogue
 	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
-	# Use a condition that identifies specifically Windows logs that send them to SEKOIA.IO
+	# Use a condition that identifies specifically Windows logs that send them to Sekoia.io
 	if ($syslogtag contains 'Microsoft-Windows') then {
 	    action(
 		type="omfwd"
@@ -392,24 +392,24 @@ To receive and process Windows logs, you have to follow these steps:
 	sudo systemctl restart rsyslog.service
 	```
 
-## See your events on SEKOIA.IO XDR
+## See your events on Sekoia.io XDR
 
-Once you're done with all the actions above, you should see your events displayed in real-time on SEKOIA.IO.
+Once you're done with all the actions above, you should see your events displayed in real-time on Sekoia.io.
 
-To verify that everything works well, connect to [SEKOIA.IO Events' page](https://app.sekoia.io/operations/events) and wait for events to come. 
+To verify that everything works well, connect to [Sekoia.io Events' page](https://app.sekoia.io/operations/events) and wait for events to come. 
 
 If you would like to filter on specific intakes:
 
-- Go to [SEKOIA.IO Intakes page](https://app.sekoia.io/operations/intakes)
+- Go to [Sekoia.io Intakes page](https://app.sekoia.io/operations/intakes)
 - Copy your Intake Key. In this example, it can be: `88EYbSaG55YbVaTne8Gu93wKQbLE4axZ`
-- Come back to [SEKOIA.IO Events' page](https://app.sekoia.io/operations/events)
+- Come back to [Sekoia.io Events' page](https://app.sekoia.io/operations/events)
 - Query the following in the search bar: `sekoiaio.intake.key:"88EYbSaG55YbVaTne8Gu93wKQbLE4axZ"` and press `Enter`
 
 ## Forward Logs Using RELP Protocol
 
-Rsyslog is able to push logs via a reliable protocol, called RELP. By using this protocol, SEKOIA.IO’s collection point will acknowledge logs when receiving it. This will let the client Rsyslog be able to resend events if an error occurs.
+Rsyslog is able to push logs via a reliable protocol, called RELP. By using this protocol, Sekoia.io’s collection point will acknowledge logs when receiving it. This will let the client Rsyslog be able to resend events if an error occurs.
 
-SEKOIA.IO’s RELP endpoint is available at `relp.intake.sekoia.io` (`145.239.192.124`) on port `11514`.
+Sekoia.io’s RELP endpoint is available at `relp.intake.sekoia.io` (`145.239.192.124`) on port `11514`.
 
 The most noticeable change using RELP in Rsyslog is the output module used (`omrelp`). 
 
@@ -425,7 +425,7 @@ Follow these steps to forward logs using RELP Protocol:
 	module(load="omrelp" tls.tlslib="openssl")
 	```
 
-3. Configure the output action to push your events to SEKOIA.IO via the RELP protocol. 
+3. Configure the output action to push your events to Sekoia.io via the RELP protocol. 
 
 	In this example, we are pushing Unbound events:
 
@@ -438,7 +438,7 @@ Follow these steps to forward logs using RELP Protocol:
 		target="relp.intake.sekoia.io"
 		port="11514"
 		tls="on"
-		tls.caCert="/etc/rsyslog.d/SEKOIA-IO-intake.pem"
+		tls.caCert="/etc/rsyslog.d/Sekoia.io-intake.pem"
 		tls.authmode="name"
 		tls.permittedPeer=["relp.intake.sekoia.io"]
 		template="SEKOIAIOUnboundTemplate"
@@ -481,13 +481,13 @@ if $programname startswith 'unbound' then @@(o)intake.sekoia.io:10514;SEKOIAIOUn
 
 ```
 
-If you want to retrieve the raw data that is forwarded to SEKOIA.IO, you can duplicate the last line and make Rsyslog dump logs to a local file:
+If you want to retrieve the raw data that is forwarded to Sekoia.io, you can duplicate the last line and make Rsyslog dump logs to a local file:
 
 ```
 if $programname startswith 'unbound' then /tmp/nginx-output.log;SEKOIAIOUnboundTemplate
 ```
 
-This way, you will be able to exactly identify what data is sent to SEKOIA.IO and to fix it if needed.
+This way, you will be able to exactly identify what data is sent to Sekoia.io and to fix it if needed.
 
 ```
 # tail -n 1 /tmp/nginx-output.log
@@ -582,7 +582,7 @@ It will automatically configure you Rsyslog server to collect and forward Window
 !!!note
 	`sudo` must be installed and set up for the current user.
 
-1. Connect to SEKOIA.IO Operations Center, add a Windows Intake to the relevant Entity and copy the `Intake Key`.
+1. Connect to Sekoia.io Operations Center, add a Windows Intake to the relevant Entity and copy the `Intake Key`.
 	It is possible to copy and paste this configuration locally then upload it with SCP command, or simple copy and paste it from the web to your remote server.
 
 
@@ -641,7 +641,7 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	WindowsFile="/etc/rsyslog.d/15-windows.conf"
 
 	sudo /bin/cat <<\EOM >$WindowsFile
-	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/SEKOIA-IO-intake.pem
+	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia.io-intake.pem
 
 	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
@@ -661,8 +661,8 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	}
 	EOM
 
-	# Collect the SEKOIA Key for encryption between Rsyslog and SEKOIA.IO
-	sudo wget -O /etc/rsyslog.d/SEKOIA-IO-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+	# Collect the SEKOIA Key for encryption between Rsyslog and Sekoia.io
+	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/Sekoia.io-intake.pem
 	```
 
 2. Once the file created on the Rsyslog, make it executable with the command `chmod +x <filename.sh>`.

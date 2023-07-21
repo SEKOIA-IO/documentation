@@ -6,7 +6,7 @@ type: intake
 
 Google Cloud Logging centralizes logs from Google Cloud products.
 
-In this documentation, you will learn how to collect and send Google Workspace and Google Cloud audit logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send Google Workspace and Google Cloud audit logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/44439212-c2d8-4645-ad60-8fd5e39140b3.md!}
 
@@ -16,7 +16,7 @@ In this documentation, you will learn how to collect and send Google Workspace a
 ### Prerequisites
 
 - Google licence Enterprise standard or higher
-- Access to SEKOIA.IO Intakes and Playbook pages with write permissions
+- Access to Sekoia.io Intakes and Playbook pages with write permissions
 - Administrator access to the Google Cloud console
 
 !!! Warning
@@ -60,7 +60,7 @@ On the left panel, go to **Logs Router** then click on **Create Sink**
 
 - Sink details
 	* Name: `sekoia-gca-sink`
-	* Description: `Routing sink to forward audit logs to SEKOIA.IO`
+	* Description: `Routing sink to forward audit logs to Sekoia.io`
 
 - Sink destination
 	* Select sink service: **Cloud Pub/Sub topic**
@@ -100,7 +100,7 @@ By following these steps, you should see events appearing on the list
 
 #### Create a dedicated service account 
 
-The service account will be used on SEKOIA.IO to pull logs available on your Google Cloud instance.
+The service account will be used on Sekoia.io to pull logs available on your Google Cloud instance.
 
 1. Go to the **Create service account** page
 2. Select your cloud project
@@ -116,7 +116,7 @@ Find more information on the [official google documentation](https://cloud.googl
 
 #### Create and download JSON keys (service account credentials)
 
-To use a service account from outside of Google Cloud, such as on SEKOIA.IO, you must first establish the identity of the service account. Public/private key pairs provide a secure way of accomplishing this goal. When you create a service account key, the public portion is stored on Google Cloud, while the private portion is available only to you.
+To use a service account from outside of Google Cloud, such as on Sekoia.io, you must first establish the identity of the service account. Public/private key pairs provide a secure way of accomplishing this goal. When you create a service account key, the public portion is stored on Google Cloud, while the private portion is available only to you.
 
 !!! Note
 	By default, service account keys never expire.
@@ -129,7 +129,7 @@ To use a service account from outside of Google Cloud, such as on SEKOIA.IO, you
 6. Select **JSON** as the Key type and click **Create**
 
 !!! Important
-	Clicking **Create** downloads a service account key file. After you download the key file, you cannot download it again. You will need it on the following steps on SEKOIA.IO.
+	Clicking **Create** downloads a service account key file. After you download the key file, you cannot download it again. You will need it on the following steps on Sekoia.io.
 
 Find more information on the [official google documentation](https://cloud.google.com/iam/docs/keys-create-delete).
 
@@ -151,11 +151,11 @@ Find more information on the [official google documentation](https://cloud.googl
 ```
 
 
-## SEKOIA.IO configuration procedure
+## Sekoia.io configuration procedure
 
 #### Create your intake
 
-Go to your SEKOIA.IO [Intakes page](https://app.sekoia.io/operations/intakes), and follow these steps:
+Go to your Sekoia.io [Intakes page](https://app.sekoia.io/operations/intakes), and follow these steps:
 
 1. Click on **+ Intake** button to create a new one
 2. Choose **Google Cloud Audit Logs**, give it a name and choose the relevant Entity
@@ -165,13 +165,13 @@ Go to your SEKOIA.IO [Intakes page](https://app.sekoia.io/operations/intakes), a
 !!! Note
 	Save the `Intake key` on a block note. It will be used in the next step.
 
-#### Pull the logs to collect them on SEKOIA.IO
+#### Pull the logs to collect them on Sekoia.io
 
-Go to the SEKOIA.IO [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
+Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 
 - Click on **+ PLAYBOOK** button to create a new one
 - Select **Use a template**
-- Search for `Google` keywork on the search bar and select the template named `Forward Google Pubsub records to SEKOIA.IO`
+- Search for `Google` keywork on the search bar and select the template named `Forward Google Pubsub records to Sekoia.io`
 
 ![google-playbook-template](/assets/operation_center/integration_catalog/cloud_and_saas/google/google-template.PNG){: style="max-width:100%"} 
 

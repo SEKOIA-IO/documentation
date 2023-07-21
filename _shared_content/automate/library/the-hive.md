@@ -22,7 +22,7 @@
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `alert` | `object` | A SEKOIA.IO alert |
+| `alert` | `object` | A Sekoia.io alert |
 | `events` | `array` | The alert events used to create TheHive alert artifacts |
 | `artifact_tlp` | `integer` | Case's TLP: 0, 1, 2, 3 for WHITE, GREEN, AMBER, RED. Default: 1 |
 | `artifact_sighted` | `boolean` | Observable's sighted flag, True to mark the observable as sighted. Default: True |
@@ -56,4 +56,4 @@
 
 ## Extra
 
-Module **`The Hive` v1.6**
+Module **`The Hive` v1.14**

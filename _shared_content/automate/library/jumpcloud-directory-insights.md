@@ -30,4 +30,4 @@ Directory Insights allows you to read event logs, view activity in your director
 
 ## Extra
 
-Module **`Jumpcloud Directory Insights` v1.2.1**
+Module **`Jumpcloud Directory Insights` v1.4**

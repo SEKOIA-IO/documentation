@@ -15,7 +15,7 @@ Salesforce provides customer relationship management software and applications f
 
 ## Configure
 
-This setup guide will show you how to provide an integration between Salesforce events and SEKOIA.IO.
+This setup guide will show you how to provide an integration between Salesforce events and Sekoia.io.
 
 ### Configure OAuth
 

@@ -29,6 +29,6 @@ Adapt and customize your intelligence flows based on your needs. To get more inf
 
 ### Report
 
-The spread of security products within a system can make it hard to follow the actual state of your security stance. With SEKOIA.IO, you can use the dashboard module and its widgets to customize your reportings in order to visualize your own KPIs.
+The spread of security products within a system can make it hard to follow the actual state of your security stance. With Sekoia.io, you can use the dashboard module and its widgets to customize your reportings in order to visualize your own KPIs.
 
 - Create and edit your [dashboards](features/monitor/dashboard.md) to monitor sectors, content being produced or your threat database evolution.

@@ -1,5 +1,7 @@
 # OSINT
 
+![OSINT](/assets/playbooks/library/osint.svg){ align=right width=150 }
+
 This module exposes actions to process OSINT data
 
 ## Configuration
@@ -28,4 +30,4 @@ Fetch objects from a osint collection source
 
 ## Extra
 
-Module **`OSINT` v1.37**
+Module **`OSINT` v1.43**

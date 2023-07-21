@@ -7,15 +7,15 @@ You can easily request an event search on IP range. For instance, with an IP add
 
 ## timestamp, event.created, event.start, event.end meaning
 
-**timestamp** and **event.created** are the same (reception of logs and beginning of processing in SEKOIA.IO).
+**timestamp** and **event.created** are the same (reception of logs and beginning of processing in Sekoia.io).
 
 **event.created** is parsed and can be selected. The timezone is defined with UTC.
 **event.start**   contains the date when the event started or when the activity was first observed.
 **event.end**   contains the date when the event ended or when the activity was last observed.
 
-**event.start** & **event.end** are activity and monitoring of the event (Pre-SEKOIA.IO if not producedd by SEKOIA.IO)
+**event.start** & **event.end** are activity and monitoring of the event (Pre-Sekoia.io if not producedd by Sekoia.io)
 
 `event.start` <= `event.end` <= `event.created`
 
 ## What is the timestamp based on?
-The event timestamp is based on the event timestamp (when it's created in the machine), not on the ingestion timestamp in SEKOIA.IO. 
+The event timestamp is based on the event timestamp (when it's created in the machine), not on the ingestion timestamp in Sekoia.io. 

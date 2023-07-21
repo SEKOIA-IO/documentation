@@ -20,6 +20,7 @@ Donwload the given file and save it
 | --------- | ------- | --------------------------- |
 | `url` | `string` | Url of the file to download |
 | `headers` | `object` | Headers to use when sending the requests. i.e. {"authorization": "Bearer foo"} |
+| `verify_ssl` | `boolean` | Wether the SSL certificate must be verified. Default to true. |
 
 
 **Outputs**
@@ -43,6 +44,7 @@ Requests a resource at a specified URL and returns the response as Raw or JSON
 | `json` | `object` | The JSON to attach as body of the request |
 | `params` | `string` | Query string parameters to append to the URL |
 | `fail_on_http_error` | `boolean` | Fail when the HTTP query returns in error. Default to true. |
+| `verify_ssl` | `boolean` | Wether the SSL certificate must be verified. Default to true. |
 
 
 **Outputs**
@@ -61,4 +63,4 @@ Requests a resource at a specified URL and returns the response as Raw or JSON
 
 ## Extra
 
-Module **`HTTP` v1.107**
+Module **`HTTP` v1.111**

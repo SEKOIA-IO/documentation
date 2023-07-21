@@ -15,7 +15,7 @@ Trellix ePO - On-prem monitors and manages your network, collects data on events
 
 ## Configure
 
-This setup guide will show you how to forward your Trellix ePO events to SEKOIA.IO.
+This setup guide will show you how to forward your Trellix ePO events to Sekoia.io.
 
 ### Configure OAuth
 
