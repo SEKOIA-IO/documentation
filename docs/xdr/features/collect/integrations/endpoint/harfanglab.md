@@ -28,24 +28,25 @@ Create a new HarfangLab intake on Sekoia.io.
 1. Navigate to `Administration` > `Configuration`, and switch to the `Connectors` tab.
 
 2. In the `Syslog connector` panel, select the logs you want to export:
-   * Process
-   * Network
-   * Event log
-   * Remote thread
-   * InjectedThread
-   * Security Event
+
+   - Process
+   - Network
+   - Event log
+   - Remote thread
+   - InjectedThread
+   - Security Event
 
 3. Configure the Syslog information with the following details and by replacing `YOUR_INTAKE_KEY` with the Intake key previously generated in SEKOIA.IO:
-   * Host: `intake.sekoia.io`
-   * Port: `10514`
-   * App name: name of your choice - **NO SPACES**
-   * Source host: name of your choice **NO SPACES**
-   * Structured data: `[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"]` - please replace `YOUR_INTAKE_KEY` variable with your intake key generated in SEKOIA.IO.
-   * Protocol: `TCP/SSL`
-   * RFC : `RFC5424`
+   - Host: `intake.sekoia.io`
+   - Port: `10514`
+   - App name: name of your choice - **NO SPACES**
+   - Source host: name of your choice **NO SPACES**
+   - Structured data: `[SEKOIA@53288 intake_key="YOUR_INTAKE_KEY"]` - please replace `YOUR_INTAKE_KEY` variable with your intake key generated in SEKOIA.IO.
+   - Protocol: `TCP/SSL`
+   - RFC : `RFC5424`
 
 !!! warning
-   Do not insert spaces in `App name` or `Source host`. These fields are part of the Syslog header and spaces will break the format.
+    Do not insert spaces in `App name` or `Source host`. These fields are part of the Syslog header and spaces will break the format.
 
 4. Finally select the `Protocol` option: `TCP/SSL`, leave the other options to default.
 
