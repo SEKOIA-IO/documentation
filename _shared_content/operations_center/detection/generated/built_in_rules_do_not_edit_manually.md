@@ -1,4 +1,4 @@
-Rules catalog includes **725 built-in detection rules** ([_last update on 2023-07-17_](rules_changelog.md)).
+Rules catalog includes **725 built-in detection rules** ([_last update on 2023-07-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -3276,8 +3276,12 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 ??? abstract "SSH Authorized Key Alteration"
     
     The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
@@ -4461,8 +4465,12 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 **Create or Modify System Process**
 
 ??? abstract "APT29 Fake Google Update Service Install"
@@ -6039,8 +6047,12 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 **Abuse Elevation Control Mechanism**
 
 ??? abstract "CMSTP UAC Bypass via COM Object Access"
@@ -7959,6 +7971,10 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/07/2023 - major - New regex pattern and new filters.
+            
 ??? abstract "Covenant Default HTTP Beaconing"
     
     Detects potential Covenant communications through the user-agent and specific urls
@@ -8306,6 +8322,7 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 22/06/2023 - minor - Filter some domains to reduce false positives.
+        - 19/07/2023 - major - New regex pattern and new filters.
             
 ??? abstract "SOCKS Tunneling Tool"
     
@@ -8439,6 +8456,7 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 22/06/2023 - minor - Filter some domains to reduce false positives.
+        - 19/07/2023 - major - New regex pattern and new filters.
             
 ??? abstract "Powershell UploadString Function"
     
@@ -8609,8 +8627,12 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 ??? abstract "User Account Deleted"
     
     Detects local user deletion

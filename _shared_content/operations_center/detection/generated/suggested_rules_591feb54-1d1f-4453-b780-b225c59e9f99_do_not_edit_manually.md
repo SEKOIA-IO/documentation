@@ -567,6 +567,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco NX-OS [BETA]** with th
     
     - **Effort:** elementary
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.

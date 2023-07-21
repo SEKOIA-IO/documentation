@@ -1423,7 +1423,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Process Herpaderping"
     
