@@ -1,5 +1,7 @@
 # Mattermost
 
+![Mattermost](/assets/playbooks/library/mattermost.svg){ align=right width=150 }
+
 [Mattermost](https://mattermost.com/) is a secure, open and flexible collaboration platform
 
 ## Configuration
@@ -10,7 +12,7 @@
 
 ## Actions
 
-### Post SEKOIA.IO Alert
+### Post Sekoia.io Alert
 
 Post alert to Mattermost
 
@@ -20,8 +22,8 @@ Post alert to Mattermost
 | --------- | ------- | --------------------------- |
 | `alert_uuid` | `string` | The Unique identifier of the alert |
 | `channel` | `string` | The channel the message posts in. Use the channel’s name and not the display name, e.g. use town-square, not Town Square. |
-| `api_key` | `string` | The SEKOIA.IO API-Key to read the alert content. |
-| `base_url` | `string` | Base URL of SEKOIA.IO api (e.g. https://api.sekoia.io/). |
+| `api_key` | `string` | The Sekoia.io API-Key to read the alert content. |
+| `base_url` | `string` | Base URL of Sekoia.io api (e.g. https://api.sekoia.io/). |
 | `pretext` | `string` | An optional line of text that will be shown above the alert |
 
 ### Post Message
@@ -39,4 +41,4 @@ Post message to Mattermost
 
 ## Extra
 
-Module **`Mattermost` v1.12**
+Module **`Mattermost` v1.18**

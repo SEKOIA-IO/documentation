@@ -1,5 +1,7 @@
 # Tranco
 
+![Tranco](/assets/playbooks/library/tranco.svg){ align=right width=150 }
+
 [Tranco](https://tranco-list.eu/) is an top sites ranking list hardened against manipulation.
 
 ## Configuration
@@ -31,4 +33,4 @@ Fetches Tranco list
 
 ## Extra
 
-Module **`Tranco` v1.16**
+Module **`Tranco` v1.22**

@@ -1,5 +1,7 @@
 # VirusTotal
 
+![VirusTotal](/assets/playbooks/library/virustotal.svg){ align=right width=150 }
+
 [VirusTotal](https://www.virustotal.com) is a cybersecurity company specialized in malware analysis.
 
 ## Configuration
@@ -216,4 +218,4 @@ Scan url with Virus Total
 
 ## Extra
 
-Module **`VirusTotal` v1.18**
+Module **`VirusTotal` v1.25**

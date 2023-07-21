@@ -34,4 +34,4 @@ Retrieve Service Now table
 
 ## Extra
 
-Module **`ServiceNow` v1.13**
+Module **`ServiceNow` v1.22**

@@ -349,4 +349,4 @@ Get WHOIS records associated with a phone number
 
 ## Extra
 
-Module **`RiskIQ` v1.15**
+Module **`RiskIQ` v1.22**

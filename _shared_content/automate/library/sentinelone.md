@@ -2,7 +2,7 @@
 
 ![SentinelOne](/assets/playbooks/library/sentinelone.png){ align=right width=150 }
 
-This module interacts with the SentinelOne management console.
+This module interacts with the SentinelOne
 
 ## Configuration
 
@@ -13,7 +13,7 @@ This module interacts with the SentinelOne management console.
 
 ## Triggers
 
-### Consume events from SentinelOne DeepVisibility [Deprecated]
+### Consume events from SentinelOne DeepVisibility
 
 Consume events from SentinelOne DeepVisibility’s Kafka brokers
 
@@ -146,4 +146,4 @@ Execute a remote script and get the results
 
 ## Extra
 
-Module **`SentinelOne` v1.4.3**
+Module **`SentinelOne` v1.12**
