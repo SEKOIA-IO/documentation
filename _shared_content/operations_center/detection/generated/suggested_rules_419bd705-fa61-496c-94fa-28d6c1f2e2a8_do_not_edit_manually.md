@@ -153,6 +153,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** elementary
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.

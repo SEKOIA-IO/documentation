@@ -9,6 +9,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cloudflare Gateway Network [
     
     - **Effort:** intermediate
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
