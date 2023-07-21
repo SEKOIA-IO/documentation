@@ -2,7 +2,7 @@
 
 Warning Rules are designed to help analysts when producing intelligence in Content Proposals. They make it possible to avoid adding false positives to the CTI database and they also provide more context during an investigation.
 
-In a Content Proposal, SEKOIA.IO’s default Warning Rules let you know if an Indicator has no relationship with another object present in the Content Proposal. They also warn you if the Kill Chain step has not been defined.
+In a Content Proposal, Sekoia.io’s default Warning Rules let you know if an Indicator has no relationship with another object present in the Content Proposal. They also warn you if the Kill Chain step has not been defined.
 
 ## Create a warning rule
 

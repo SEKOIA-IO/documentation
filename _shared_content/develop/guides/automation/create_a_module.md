@@ -117,7 +117,7 @@ class NewEntriesTrigger(Trigger):
             time.sleep(3600)
 ```
 
-1. We import the base `Trigger` class from the SEKOIA.IO automation SDK
+1. We import the base `Trigger` class from the Sekoia.io automation SDK
 2. Define the expected configuration using the `Pydantic` lib
 3. Define the format of the results using the `Pydantic` lib
 4. The child triggers must define the `run` method that runs the trigger.
@@ -199,10 +199,10 @@ class Request(Action):  # (4)!
         )
 ```
 
-1. We import the base `Action` class from the SEKOIA.IO automation SDK
+1. We import the base `Action` class from the Sekoia.io automation SDK
 2. Define the expected arguments using the `Pydantic` lib
 3. Define the format of the response using the `Pydantic` lib
-4. Our action is a class that inherit from `Action`, a base class from SEKOIA.IO's automation SDK.
+4. Our action is a class that inherit from `Action`, a base class from Sekoia.io's automation SDK.
 5. The child actions must define the `run` method that will be passed the arguments provided to the action
 6. The base `Action` class provides few helpers like the `log` method. This method makes sure the log is sent to the API so when checking the run of the action we can see a trace of what happened.
 7. The `error` method will mark the action as failed and send back the error to the API.

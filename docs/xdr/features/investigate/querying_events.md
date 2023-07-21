@@ -16,7 +16,7 @@ The Tables below detail the main fields that can be used to narrow down your sea
 | action.name    | string | Name of the action           |
 | action.outcome | string | Outcome status of the action |
 
-#### SEKOIA.IO
+#### Sekoia.io
 
 | name                           | type   | description                                 |
 | ------------------------------ | ------ | ------------------------------------------- |

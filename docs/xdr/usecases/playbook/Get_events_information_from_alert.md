@@ -4,7 +4,7 @@ This use case describes how to get the MAC address of events associated with an 
 
 ## Prerequisites
 
-- A SEKOIA.IO XDR licence
+- A Sekoia.io XDR licence
 - The user that configures the Playbook should have a role that contains:
 	* The SYMPHONY permissions
 - An API Key with a role that contains at least the following permissions:

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Looking for a Threat actor? A specific Malware? A report on a topic of interest? Or a URL that looks suspicious? The Intelligence page possesses a search engine with complex filtering capabilities to navigate through millions of data. This threat knowledge base is updated on a daily basis by SEKOIA.IO analysts to make sure all kinds of threats are covered. 
+Looking for a Threat actor? A specific Malware? A report on a topic of interest? Or a URL that looks suspicious? The Intelligence page possesses a search engine with complex filtering capabilities to navigate through millions of data. This threat knowledge base is updated on a daily basis by Sekoia.io analysts to make sure all kinds of threats are covered. 
 
 
 
@@ -162,11 +162,11 @@ By default, these columns are:
 
 | Column | Description |
 | --- | --- |
-| TLP | How sensitive is the information. Types of TLP in SEKOIA.IO: White, green, amber, red |
+| TLP | How sensitive is the information. Types of TLP in Sekoia.io: White, green, amber, red |
 | Type | Type of object. Hover on the object icon to see the type of object |
 | Name | Name of object. Hover on the name to read the full name |
 | Sub-types | Some objects have sub-types like indicators, malware, reports, tool   |
-| Confidence | How confident SEKOIA.IO is about this object |
+| Confidence | How confident Sekoia.io is about this object |
 | Sources | Where this object came from |
 | Last edited | Date of last edition |
 | Created | Date of creation |
@@ -205,7 +205,7 @@ To remove a filter, just click on the `cross` inside the tag. To remove all filt
 
 ### How the search engine works
 
-When searching for observables, SEKOIA.IO will investigate the field `x_inthreat_short_display`, a custom attribute that is equal to the main value of the observable (`value` for IP, `name` for organizations, ...).
+When searching for observables, Sekoia.io will investigate the field `x_inthreat_short_display`, a custom attribute that is equal to the main value of the observable (`value` for IP, `name` for organizations, ...).
 
 If the search is a hash, the search engine will consider the number of characters and look for the right hashes. 
 
@@ -221,7 +221,7 @@ If the search is an IP CIDR, the search engine will look for the IPs contained i
 
 ### Known and unknown observables
 
-If you paste a list of observables in the search bar, chances are SEKOIA.IO will recognize some of them, but some may be unknown. 
+If you paste a list of observables in the search bar, chances are Sekoia.io will recognize some of them, but some may be unknown. 
 
 To differentiate between the two, a tab with `Known` and `Unknown` helps understand which observables are in the database and which ones are not. 
 

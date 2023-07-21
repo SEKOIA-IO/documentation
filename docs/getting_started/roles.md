@@ -1,8 +1,8 @@
 ## Overview
 
-Here are listed all roles available by default in SEKOIA.IO.  
+Here are listed all roles available by default in Sekoia.io.
 
-To create your own roles, please refer to this [section](https://docs.sekoia.io/getting_started/manage_users/#create-custom-roles). 
+To create your own roles, please refer to this [section](https://docs.sekoia.io/getting_started/manage_users/#create-custom-roles).
 
 | Name | Description|
 |--|--|

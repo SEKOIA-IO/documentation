@@ -17,7 +17,7 @@ Cisco Email Security Appliance (ESA) is a email gateway appliance that provides 
 
 ### Prerequisites
 
-An internal log concentrator is required to collect and forward events to SEKOIA.IO.
+An internal log concentrator is required to collect and forward events to Sekoia.io.
 
 ### Enable Syslog forwarding
 
@@ -34,9 +34,9 @@ To enable log forwarding:
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Cisco Email Security Appliance`.
 
-## Transport to SEKOIA.IO
+## Transport to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 
 ## Further Readings
 - [Single Log Line (SLL)](https://docs.ces.cisco.com/docs/single-log-line-sll)

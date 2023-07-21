@@ -95,7 +95,7 @@ Here's an annotated example of a `manifest.json` file:
 A trigger is some code that runs indefinitely waiting for events to occur. Once an event happens the trigger will push it to the playbook API.
 Those events will trigger new playbook runs for all the playbooks that have the trigger as an entrypoint.
 
-An example of a trigger is when an alert is raised in SEKOIA.IO. There is a trigger that watches for alert creations. Once a new alert is created, all the playbooks that wait for an event from this trigger will have a new run created.
+An example of a trigger is when an alert is raised in Sekoia.io. There is a trigger that watches for alert creations. Once a new alert is created, all the playbooks that wait for an event from this trigger will have a new run created.
 
 ### Action
 

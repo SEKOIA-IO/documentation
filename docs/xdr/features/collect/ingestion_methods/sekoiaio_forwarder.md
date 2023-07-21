@@ -299,7 +299,7 @@ sudo docker compose logs -f
 
 ## Additional information
 
-The image used to run the concentrator is maintained on [this github repository](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator). Feel free to contribute and make a pull request to improve the concentrator!
+The image used to run the concentrator is maintained on [this github repository](https://github.com/Sekoia.io/sekoiaio-docker-concentrator). Feel free to contribute and make a pull request to improve the concentrator!
 
 ## How to update the concentrator
 Docker uses the notion of tag to identify the version of an image. The tag is always referenced in line starting with `image` in `docker-compose.yml`:
@@ -308,7 +308,7 @@ Docker uses the notion of tag to identify the version of an image. The tag is al
 image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:0.9
 ```
 
-`0.9` means the version used by `docker compose` is 0.9. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
+`0.9` means the version used by `docker compose` is 0.9. You can find all the versions available on the GitHub repository [here](https://github.com/Sekoia.io/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
 
 To update the concentrator, just change the tag in `docker-compose.yml`, then recreate the concentrator with the command:
 ```bash
@@ -424,7 +424,7 @@ Connect to the remote server where you would like to install the Sekoia.io Forwa
 1. Execute a script to setup the docker
 
     ```bash
-    wget https://raw.githubusercontent.com/SEKOIA-IO/documentation/main/docs/assets/operation_center/ingestion_methods/sekoiaio_docker_concentrator/sekoiaio_docker_concentrator_autosetup.sh
+    wget https://raw.githubusercontent.com/Sekoia.io/documentation/main/docs/assets/operation_center/ingestion_methods/sekoiaio_docker_concentrator/sekoiaio_docker_concentrator_autosetup.sh
     chmod +x sekoiaio_docker_concentrator_autosetup.sh
     ./sekoiaio_docker_concentrator_autosetup.sh
     rm sekoiaio_docker_concentrator_autosetup.sh

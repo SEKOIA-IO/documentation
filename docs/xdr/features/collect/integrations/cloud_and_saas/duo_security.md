@@ -26,7 +26,7 @@ Duo Security offers solutions for strong authentication.
 
 More details in [Duo documentation](https://duo.com/docs/adminapi#first-steps)
 
-### Create the intake in SEKOIA.IO
+### Create the intake in Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Duo Security`. Copy the intake key.
 

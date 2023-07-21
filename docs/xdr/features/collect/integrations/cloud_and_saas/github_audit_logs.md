@@ -28,7 +28,7 @@ To create an API key on [Github](https://github.com/):
 3. Validate the configuration and save the token for the configuration of the connector.
 
 
-### Create the intake in SEKOIA.IO
+### Create the intake in Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Github  audit logs`. Copy the intake key.
 

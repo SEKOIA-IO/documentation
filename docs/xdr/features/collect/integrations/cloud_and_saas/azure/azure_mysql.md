@@ -12,7 +12,7 @@ Azure Database for MySQL provides fully managed, enterprise-ready community MySQ
 
 ## Configure
 
-This setup guide will show you how to forward events produced by Azure MySQL service to SEKOIA.IO.
+This setup guide will show you how to forward events produced by Azure MySQL service to Sekoia.io.
 
 Theses changes have to be made from the [Azure Web Portal](https://portal.azure.com).
 
@@ -45,12 +45,12 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 #### Create “Shared Access Policies”
 
 1. Navigate to “Home”, “Event Hubs”, “company-eventhub - Shared access policies”. From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
-2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “mysql-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
+2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “mysql-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to Sekoia.io.
 3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”mysql-event - Consumer groups”. From there, you can create a consumer group (e.g. `sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
-In order to allow SEKOIA.IO keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
+In order to allow Sekoia.io keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
 
 To proceed, you can use Azure PowerShell:
 
@@ -79,9 +79,9 @@ Navigate to “Home”, “SQL databases” (e.g. `company-mysql`), “Monitorin
 - In the log section, select `MySqlAuditLogs` and `MySqlSlowLogs`.
 - Choose a name for this configuration and click on “Save”.
 
-### Forward the Connection Keys to SEKOIA.IO
+### Forward the Connection Keys to Sekoia.io
 
-Finally, please send to SEKOIA.IO the following information:
+Finally, please send to Sekoia.io the following information:
 
 - Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=mysql-event"`).
 - Azure Event Hub’s consumer group name (e.g. `sekoiaio`).

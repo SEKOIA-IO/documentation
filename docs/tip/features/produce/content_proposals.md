@@ -136,4 +136,4 @@ Once you’ve created the request, a new content proposal will be automatically 
 You can filter the RFI Content Proposals using the checkbox: `Show only RFI`.
 
 !!! note
-    This feature is available to the TIP users that have the `INTHREAT_WRITE_REQUEST_FOR_INTELLIGENCE` permission. This permission will be delivered to all SEKOIA.IO TIPs. 
+    This feature is available to the TIP users that have the `INTHREAT_WRITE_REQUEST_FOR_INTELLIGENCE` permission. This permission will be delivered to all Sekoia.io TIPs. 

@@ -13,6 +13,6 @@ To start working with VPC Flow Logs, activate the option by editing or creating 
 
 This subnet can be assigned to your node or kubernetes cluster.
 
-The network logs should now be visible in Cloud Logging. A filter can now be created to stream your logs to SEKOIA.IO. To create this filter, follow this [documentation](https://cloud.google.com/vpc/docs/using-flow-logs#access-logs).
+The network logs should now be visible in Cloud Logging. A filter can now be created to stream your logs to Sekoia.io. To create this filter, follow this [documentation](https://cloud.google.com/vpc/docs/using-flow-logs#access-logs).
 
 Start the playbook and enjoy your events.

@@ -14,9 +14,9 @@ The range of Fortigate firewalls is a complete appliance solution whose security
 
 ## Configure
 
-In this documentation we explain one way to collect and send Fortigate logs to SEKOIA.IO.
+In this documentation we explain one way to collect and send Fortigate logs to Sekoia.io.
 
-- From the Fortigate machine to an internal syslog concentrator, then forwarded to SEKOIA.IO
+- From the Fortigate machine to an internal syslog concentrator, then forwarded to Sekoia.io
 
 ## Fortigate logs
 
@@ -39,7 +39,7 @@ The following prerequisites are needed in order to setup efficient log concentra
 ### Configure Fortigate
 
 The first step is to configure Fortigate to log the awaited traffic.
-You can configure FortiOS to send log messages to remote syslog servers in standard, CSV or CEF (Common Event Format) format. These three formats are accepted by the SEKOIA.IO intake.
+You can configure FortiOS to send log messages to remote syslog servers in standard, CSV or CEF (Common Event Format) format. These three formats are accepted by the Sekoia.io intake.
 To enable syslog, log into the CLI and enter the following commands:
 
 ```bash
@@ -83,6 +83,6 @@ set format cef
 end
 ```
 
-## Transport to SEKOIA.IO
+## Transport to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.

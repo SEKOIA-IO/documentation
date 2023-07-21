@@ -2,7 +2,7 @@
 
 ## What is an asset?
 
-In SEKOIA.IO, assets participate to the security workflow of your community. When an incoming event matches with a defined asset, the event is enriched with assets information. Their criticality will be taken into account when calculating the urgency of an alert, together with the severity of the rule that triggered the alert.
+In Sekoia.io, assets participate to the security workflow of your community. When an incoming event matches with a defined asset, the event is enriched with assets information. Their criticality will be taken into account when calculating the urgency of an alert, together with the severity of the rule that triggered the alert.
 
 When more than one asset match with an event, the highest criticality is used for urgency calculation.
 
@@ -10,7 +10,7 @@ Assets also permit the selective application of detection rules: rules can be ap
 
 ## Types of assets
 
-Assets in SEKOIA.IO can be of different types. There are three main categories:
+Assets in Sekoia.io can be of different types. There are three main categories:
 
 - **Branding** (banking, brand, project, social network)
 - **People** (a person)

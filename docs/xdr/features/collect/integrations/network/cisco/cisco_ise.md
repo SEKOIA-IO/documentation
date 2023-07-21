@@ -24,9 +24,9 @@ Log on your ISE Administration Interface and follow [this guide](https://www.cis
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cisco ISE.
 
-## Transport to SEKOIA.IO
+## Transport to Sekoia.io
 
-Please consult the [Syslog Forwarding](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 ## Further Readings
 

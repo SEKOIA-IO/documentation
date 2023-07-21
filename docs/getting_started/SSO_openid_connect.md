@@ -1,6 +1,6 @@
 # Configure SSO with OpenID Connect
 
-To make it easier for employees to access SEKOIA.IO, you can enable SSO in your SEKOIA.IO community. 
+To make it easier for employees to access Sekoia.io, you can enable SSO in your Sekoia.io community.
 
 ## Prerequisites for OpenID Connect
 
@@ -9,7 +9,7 @@ To make it easier for employees to access SEKOIA.IO, you can enable SSO in your 
 
 ## Verify your domains
 
-SEKOIA.IO requires your domains to be verified in order to be used for authentication.
+Sekoia.io requires your domains to be verified in order to be used for authentication.
 
 To do so:
 
@@ -19,7 +19,7 @@ To do so:
 4. Once it has been validated by our team, this status will become "Verified"
 
 
-## Configure SSO on SEKOIA.IO
+## Configure SSO on Sekoia.io
 
 To set up SSO, follow these instructions:
 
@@ -33,20 +33,20 @@ Share it with your users.
 
 ## "Just-in-time" (JIT) Account Provisioning
 
-You can choose to enable the automatic creation of users' accounts in your community. 
+You can choose to enable the automatic creation of users' accounts in your community.
 
 By using this feature, when a user logs-in for the first time, their account will be automatically created. You can set the default role for newly created users, and you can choose the default role among all the roles available in your community.
 
-If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article "[Invite users to join your community](https://docs.sekoia.io/getting_started/invite_users/)". 
+If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article "[Invite users to join your community](https://docs.sekoia.io/getting_started/invite_users/)".
 
 
 ## Login method
 
 Once you have completed your configuration of OpenID Connect SSO, users will be able to log in via SSO.
 
-Users who created their account via SSO, can only log in via this method. 
+Users who created their account via SSO, can only log in via this method.
 
-Only users who create their account via invitation and set up username/password can use both methods to log-in: SSO and username/password. 
+Only users who create their account via invitation and set up username/password can use both methods to log-in: SSO and username/password.
 
 When the "two-factor authentication" (MFA) is enabled or enforced for your account, you won’t be asked for it when authenticating via your SSO provider.
 
@@ -54,7 +54,3 @@ When the "two-factor authentication" (MFA) is enabled or enforced for your accou
 ## Disable Account
 
 To prevent a user from retrieving your organization's data, you can easily deactivate the user from your community and your identity provider.
-
-
-
-
