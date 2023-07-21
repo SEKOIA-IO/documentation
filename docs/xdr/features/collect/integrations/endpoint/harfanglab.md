@@ -47,7 +47,7 @@ Create a new HarfangLab intake on Sekoia.io.
    * RFC : `RFC5424`
 
 !!! warning
-   Don't insert spaces in `App name` or `Source host`. These fields are part of the Syslog header and spaces will break the format.
+   Do not insert spaces in `App name` or `Source host`. These fields are part of the Syslog header and spaces will break the format.
 
 4. Finally select the `Protocol` option: `TCP/SSL`, leave the other options to default.
 
