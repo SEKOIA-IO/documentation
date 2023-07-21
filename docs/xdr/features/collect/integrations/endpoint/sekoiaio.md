@@ -11,8 +11,6 @@ SEKOIA.IO provides its own agent allowing to collect interresting events with a 
 !!! INFO
     The SEKOIA.IO Endpoint Detection Agent preserves the integrity of logs collected from the operating system event log, it does NOT modify or rewrite logs.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}	
-
 ## Supported OS versions
 
 The Endpoint Detection Agent supports the following operating systems, **on 64 bits version only**:
@@ -45,10 +43,17 @@ The Endpoint Detection Agent supports the following operating systems, **on 64 b
 !!! Warning
 	If you want to install this agent on a machine that already has an EDR in place, be aware that most EDR perform actions on the machines to detect malwares or other types of threats. Those actions generate events that are collected by our agent. This may result to the raising of false positive alerts from our detection rules of effort level 3 and 4. It's important for customers to fine-tune these rules to reduce the occurrence of false positives.
 
-### Intake creation and download of the executable
+### Step 1: Create an intake
 
 The first step to use the agent is to create a [new intake associated to the SEKOIA.IO Agent](https://app.sekoia.io/operations/intakes/new?match[name]=SEKOIA.IO%20Endpoint%20Agent){:target="_blank"}.
-A link to download the latest version of the agent is available in the description of the intake.
+
+### Step 2: Download executable
+
+| OS | Link |
+| -- | -- |
+| Windows | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe) |
+|Linux | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest) |
+
 
 ### Installation
 
@@ -311,3 +316,5 @@ agent-latest.exe <command> [<args>]
 
 We monitor the agent metrics and try to keep its footprint as small as possible. 
 Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
