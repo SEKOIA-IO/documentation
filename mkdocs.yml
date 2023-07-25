@@ -135,6 +135,7 @@ nav:
             - Proofpoint PoD: xdr/features/collect/integrations/email/proofpoint_pod.md
             - Proofpoint TAP: xdr/features/collect/integrations/email/proofpoint_tap.md
           - Retarus Email Security: xdr/features/collect/integrations/email/retarus_email_security.md
+          - Vade Cloud: xdr/features/collect/integrations/email/vade_cloud.md
           - Vade for M365: xdr/features/collect/integrations/email/vade.md
         - Endpoint:
           - Beats:
