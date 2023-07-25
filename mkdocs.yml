@@ -227,6 +227,7 @@ nav:
       - Dashboards: xdr/features/report/dashboards.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
+      - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: xdr/features/automate/navigate-playbooks.md
       - Build playbooks: xdr/features/automate/build-playbooks.md
       - Triggers: xdr/features/automate/triggers.md
@@ -384,6 +385,7 @@ nav:
       - PaloAlto Cortex XSOAR: tip/features/integrations/paloalto_xsoar.md
     - Automate:
       - Playbooks: tip/features/automate/index.md
+      - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: tip/features/automate/navigate-playbooks.md
       - Build playbooks: tip/features/automate/build-playbooks.md
       - Triggers: tip/features/automate/triggers.md
