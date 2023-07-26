@@ -52,7 +52,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 3. Download the Sekoia.io certificate
 
 	```bash
-	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/Sekoia.io-intake.pem
+	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 	```
 
 4. Modify the `/etc/rsyslog.conf` main configuration file 
