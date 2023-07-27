@@ -165,6 +165,7 @@ nav:
           - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
           - Trellix ePO: xdr/features/collect/integrations/endpoint/trellix_epo.md
           - VMware ESXi: xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md
+          - VMware VCenter: xdr/features/collect/integrations/endpoint/vmware/vmware_vcenter.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
           - WithSecure Elements: xdr/features/collect/integrations/endpoint/withsecure_elements.md
