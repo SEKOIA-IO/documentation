@@ -43,6 +43,9 @@ To create an asset from our UI, you have to:
 7. Add `attributes` with values
 8. Save your settings
 
+!!! Warning 
+    In MSSP mode, an asset created in the parent community enriches only the events received in this parent community.
+
 | Category | Type of asset | Key characteristics |
 | --- | --- | --- |
 | **Branding** | Banking | BIC, BIN |
@@ -56,6 +59,21 @@ To create an asset from our UI, you have to:
 |  | Phone | Phone |
 |  | Product | cpe-item, cpe-unknown |
 |  | Custom | zone_name |
+
+| Type of asset | Key characteristics | events ECS field |
+| --- | --- | --- |
+| **Brand** |  Domain | dns.question.name, dns.question.registered_domain, client.domain, client.registered_domain, destination.domain, destination.registered_domain, source.domain, source.registered_domain, server.domain, server.registered_domain, url.domain, url.registered_domain, x509.subject.common_name, x509.alternative_names, tls.client.x509.alternative_names |  
+| **Person** | Email | client.user.email, destination.user.email, file.x509.alternative_names, x509.alternative_names, host.user.email, server.user.email, source.user.email, user.email, user.changes.email, user.effective.email, user.target.email, email.from.address, email.to.address, email.from, email.to, tls.client.x509.alternative_names |  
+|  | Last name | user.full_name |  
+|  | Name | user.name |  
+| **Certificate** | x509 | x509.subject.common_name, x509.subject.distinguished_name |  
+| **Computer** | fqdn | dns.question.name, dns.question.registered_domain, client.domain, client.registered_domain, destination.domain, destination.registered_domain, source.domain, source.registered_domain, server.domain, server.registered_domain, url.domain, url.registered_domain |  
+|  | host | log.hostname, host.hostname, host.name |  
+|  | ip-v4 | client.ip, destination.ip, host.ip, server.ip, source.ip |  
+|  | ip-v6 | client.ip, destination.ip, host.ip, server.ip, source.ip |  
+| **Network** | cidr-v4 | client.ip, destination.ip, host.ip, server.ip, source.ip |  
+|  | cidr-v6 | client.ip, destination.ip, host.ip, server.ip, source.ip |  
+| **Custom** |zone_name | customer.zone_name |  
 
 !!! tip
     To edit an asset, you have to click on an asset in the list, change what needs to be changed and click on `Save`.
