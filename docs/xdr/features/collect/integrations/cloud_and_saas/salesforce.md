@@ -1,4 +1,4 @@
-uuid: 2b13307b-7439-4973-900a-2b58303cac90
+uuid: d2725f97-0c7b-4942-a847-983f38efb8ff
 name: Salesforce
 type: intake
 
@@ -9,9 +9,9 @@ Salesforce provides customer relationship management software and applications f
 !!! warning
     This format is still in beta, please use it wisely.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_2b13307b-7439-4973-900a-2b58303cac90_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_d2725f97-0c7b-4942-a847-983f38efb8ff_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/2b13307b-7439-4973-900a-2b58303cac90.md!}
+{!_shared_content/operations_center/integrations/generated/d2725f97-0c7b-4942-a847-983f38efb8ff.md!}
 
 ## Configure
 
