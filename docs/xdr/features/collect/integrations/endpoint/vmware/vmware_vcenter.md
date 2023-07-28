@@ -28,6 +28,6 @@ Follow [this guide](https://kb.vmware.com/s/article/2003322) to enable the log f
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `VMWare VCenter`.
 
-## Transport to Sekoia.io
+## Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.

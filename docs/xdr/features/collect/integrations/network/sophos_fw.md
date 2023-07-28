@@ -26,7 +26,7 @@ You can configure a syslog server in Sophos Firewall by following the instructio
 - Select the Severity Level from the available options.
 - Click Save to save the configuration.
 
-### Transport to Sekoia.io
+### Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 

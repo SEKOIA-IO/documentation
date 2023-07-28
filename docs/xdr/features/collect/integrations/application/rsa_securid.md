@@ -36,7 +36,7 @@ In the Security Console of the RSA Authentication Manager:
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `RSA SecurID`.
 
-## Transport to Sekoia.io
+## Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 

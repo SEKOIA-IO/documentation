@@ -120,7 +120,7 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Winlogbeat.
 
-## Transport to Sekoia.io
+## Forward logs to Sekoia.io
 
 Please consult our [guide](../../../ingestion_methods/logstash/) to configure logs forwarding from Logstash to Sekoia.io.
 

@@ -53,6 +53,6 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 For detailed information about configuring a log forwarding, see [Configure FortiMail Log Forwarding](https://docs.fortinet.com/document/fortimail/6.2.0/administration-guide/332364/configuring-logging#logging_2063907032_1949484)
 
-## Transport to Sekoia.io
+## Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.

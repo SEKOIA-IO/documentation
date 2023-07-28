@@ -68,7 +68,7 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 
 Restart the NXLog service through the Services tool as Administrator or use Powershell command line: `Restart-Service nxlog`
 
-### Transport to Sekoia.io
+### Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 
