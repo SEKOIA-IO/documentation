@@ -11,12 +11,12 @@ NGINX is an HTTP and reverse proxy server, a mail proxy server, and a generic TC
 
 ## Configure
 
-There are 2 methods to collect the NGINX Logs: 
+There are 2 methods to collect NGINX Logs: 
 
-1. You can use a local Rsyslog to read the log files and send them directly to Sekoia.io or through a concentrator.
-2. You can configure NGINX to forwards the logs using syslog and the UDP protocol to a concentrator.
+1. You can use a local Rsyslog to read log files and send them directly to Sekoia.io or through a concentrator.
+2. You can configure NGINX to forwards logs using syslog and the UDP protocol to a concentrator.
 
-### Rsyslog method
+### Method 1: local Rsyslog method
 
 The following snippet is an illustration of rsyslog configuration to monitor nginx's `error.log` and `access.log` files.
 
@@ -42,7 +42,8 @@ $InputRunFileMonitor
 
 The reader can consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
 
-### NGINX Configuration to forward logs in syslog UDP
+### Method 2: configure NGINX to forwards logs using syslog and the UDP protocol
+This method is simplier as you don't need to set up a Rsyslog to forward logs.
 To configure NGINX to forward logs to an IP with syslog and the UDP protocol, please add these lines in `/etc/nginx/nginx.conf`:
 
 ```
