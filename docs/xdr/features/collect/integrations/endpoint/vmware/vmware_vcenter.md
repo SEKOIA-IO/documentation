@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-VMWare VCenter is a centralized management software. It allows to manage virtual machines and ESXi hosts from in a centralized interface.
+VMWare VCenter is a centralized management software. It provides a single point of control for managing virtual machines and ESXi hosts from a centralized interface.
 
 !!! warning
     This format is still in beta, please use it wisely.
