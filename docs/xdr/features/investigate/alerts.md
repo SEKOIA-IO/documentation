@@ -233,9 +233,12 @@ The Alert Details page can be reached by clicking on any alert in the Alert List
 
 The Alert Details header contains the `urgency`, the `name` and the `short ID` of the alert, as well as the following actions:
 
-- `Alert Status`: can be used to move the Alert through its lifecycle
-- Add to `Case`: add the alert to a case to gather all the needed information for an extensive investigation
-- `Playbooks`: display the list of on-demand playbooks and be able to trigger them
+- `Alert Status`: can be used to move the Alert through its lifecycle by changing its status
+- `Add to case`: add the alert to a case to gather all the needed information for an extensive investigation
+- `Playbooks`: display the list of on-demand playbooks and be able to trigger them.
+
+!!! note
+    Playbooks that can be enabled on alerts are "manual" playbooks (ie with a Manual Trigger). They also have to be enabled in the community to appear in the UI. 
 
 The different sections of the page are then separated into 4 tabs: `Details`, `Tasks`, `Events` and `Graph Investigation`.
 
