@@ -68,7 +68,7 @@ For detailed information about configuring a log forwarding profile and assignin
 1. In the GUI, go to `Device > Log Settings`.
 2. Click each Severity level (High and Critical if also fine), select the `Syslog server` profile, and click `OK`.
 
-#### Transport to Sekoia.io
+#### Forward logs to Sekoia.io
 
 Please refer to the documentation of the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 

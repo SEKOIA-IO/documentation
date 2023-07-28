@@ -28,6 +28,6 @@ Log on your NIOS appliance and follow [this guide](https://docs.infoblox.com/spa
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Infoblox DDI.
 
 
-## Transport to Sekoia.io
+## Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.

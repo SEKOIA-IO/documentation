@@ -28,7 +28,7 @@ Configure the event forwarding to use the IBM LEEF format (for more information,
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format WatchGuard Firebox.
 
-## Transport to Sekoia.io
+## Forward logs to Sekoia.io
 
 Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
 

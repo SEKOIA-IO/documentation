@@ -14,7 +14,7 @@ The Apache HTTP Server, colloquially called Apache, is free and open-source cros
 
 As of now, the main solution to collect Apache logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
 
-### Transport to Sekoia.io
+### Forward logs to Sekoia.io
 
 This setup guide will show you how to forward both your access and error logs to Sekoia.io by means of an rsyslog transport channel. The reader is also invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
 

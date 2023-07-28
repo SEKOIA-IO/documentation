@@ -56,6 +56,6 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 For more information please refer to the official documentation of [FortiWeb](https://docs.fortinet.com/document/fortiweb/6.1.1/administration-guide/303842/logging)
 
-### Transport to Sekoia.io
+### Forward logs to Sekoia.io
 
 The reader is invited to consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
