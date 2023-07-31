@@ -24,5 +24,5 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 To start to pull events, you have to:
 
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the `Fetch new logs from Vade Cloud` trigger
-2. Set up the module configuration with the base URL of your Netskope instance. Set up the trigger configuration with the API token and the intake key
+2. Set up the module configuration with the Vade Cloud API hostname, the username and the user password. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
