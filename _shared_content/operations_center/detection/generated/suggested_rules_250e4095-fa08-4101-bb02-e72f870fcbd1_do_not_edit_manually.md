@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     
     - **Effort:** master
 
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
