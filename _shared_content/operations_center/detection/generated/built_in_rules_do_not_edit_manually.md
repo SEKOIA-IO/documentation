@@ -1,4 +1,4 @@
-Rules catalog includes **725 built-in detection rules** ([_last update on 2023-07-21_](rules_changelog.md)).
+Rules catalog includes **726 built-in detection rules** ([_last update on 2023-08-01_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -364,6 +364,10 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
@@ -3052,6 +3056,10 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
@@ -4281,6 +4289,10 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
@@ -5437,6 +5449,10 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
@@ -5827,6 +5843,12 @@ Rules catalog includes **725 built-in detection rules** ([_last update on 2023-0
     
 **System Binary Proxy Execution**
 
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+    
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution

@@ -1,7 +1,10 @@
-Changelog _last update on 2023-07-21_
+Changelog _last update on 2023-08-01_
 
 ## Changelog
 
+### Account Tampering - Suspicious Failed Logon Reasons
+  - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+    
 ### Correlation Potential DNS Tunnel
   - 19/07/2023 - major - New regex pattern and new filters.
     
