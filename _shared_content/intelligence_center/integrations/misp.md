@@ -26,7 +26,7 @@ You then need to make sure you have a scheduled task in place to regularly fetch
 
 !!! warning
 
-    This feed is still considered as beta and should be used carefuly. If you find any regression or issue with this new feed, please contact Sekoia.io’s support team at [`support@sekoia.io`](mailto:support@sekoia.io).
+    This feed is still considered as beta and should be used carefuly. If you find any regression or issue with this new feed, please contact your support.
 
 The new MISP feed contains all non-expired Sekoia.io intelligence material and is constantly kept in sync with SEKOIA.IO’s intelligence feed. This way, when an indicator is updated in SEKOIA.IO, that latter will be also updated in the MISP feed. This will ensure that the indicator is not duplicated each time an indicator is updated.
 

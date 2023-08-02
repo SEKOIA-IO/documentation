@@ -44,4 +44,4 @@ This way, you will be able to exactly identify what data is sent to Sekoia.io.
 Logs are available and displayed for 90 days in Sekoia.io.
 
 ## Archiving & Rehydratation
-Please contact `support@sekoia.io` for more information on archives and events rehydratation, with a clear description of your needs. 
+Please contact your support for more information on archives and events rehydratation, with a clear description of your needs.
