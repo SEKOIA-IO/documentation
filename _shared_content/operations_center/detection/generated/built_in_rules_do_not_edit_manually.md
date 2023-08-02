@@ -1,4 +1,4 @@
-Rules catalog includes **726 built-in detection rules** ([_last update on 2023-08-01_](rules_changelog.md)).
+Rules catalog includes **726 built-in detection rules** ([_last update on 2023-08-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -83,84 +83,6 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
 ## Resource Development
 **Acquire Infrastructure**
 
-??? abstract "Azure Active Directory Abnormal Token"
-    
-    Detects when Azure Active Directory indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Anonymous IP"
-    
-    Detects when Azure Active Directory identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Impossible Travel"
-    
-    Detects when Azure Active Directory identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Leaked Credentials"
-    
-    Detects when Azure Active Directory identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Malicious IP"
-    
-    Detects when Azure Active Directory identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Password Spray"
-    
-    Detects when Azure Active Directory indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Sign-in From Unlikely Country"
-    
-    Detects when Azure Active Directory identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious Browser"
-    
-    Detects when Azure Active Directory identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious IP"
-    
-    Detects when Azure Active Directory identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Suspicious Inbox Forwarding"
-    
-    Detects when Azure Active Directory identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Threat Intelligence"
-    
-    Detects when Azure Active Directory identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Token Issuer Anomaly"
-    
-    Detects when Azure Active Directory indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Unfamiliar Features"
-    
-    Detects when Azure Active Directory identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
@@ -182,6 +104,84 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
     
     - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Abnormal Token"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Anonymous IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Impossible Travel"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Malicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Password Spray"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Browser"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Inbox Forwarding"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Threat Intelligence"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Token Issuer Anomaly"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Unfamiliar Features"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta MFA Brute-Force Successful"
     
@@ -197,84 +197,6 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Compromise Infrastructure**
 
-??? abstract "Azure Active Directory Abnormal Token"
-    
-    Detects when Azure Active Directory indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Anonymous IP"
-    
-    Detects when Azure Active Directory identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Impossible Travel"
-    
-    Detects when Azure Active Directory identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Leaked Credentials"
-    
-    Detects when Azure Active Directory identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Malicious IP"
-    
-    Detects when Azure Active Directory identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Password Spray"
-    
-    Detects when Azure Active Directory indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Sign-in From Unlikely Country"
-    
-    Detects when Azure Active Directory identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious Browser"
-    
-    Detects when Azure Active Directory identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious IP"
-    
-    Detects when Azure Active Directory identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Suspicious Inbox Forwarding"
-    
-    Detects when Azure Active Directory identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Threat Intelligence"
-    
-    Detects when Azure Active Directory identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Token Issuer Anomaly"
-    
-    Detects when Azure Active Directory indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Unfamiliar Features"
-    
-    Detects when Azure Active Directory identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
@@ -296,6 +218,84 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
     
     - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Abnormal Token"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Anonymous IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Impossible Travel"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Malicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Password Spray"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Browser"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Inbox Forwarding"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Threat Intelligence"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Token Issuer Anomaly"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Unfamiliar Features"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta MFA Brute-Force Successful"
     
@@ -720,7 +720,7 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+??? abstract "Malware Detected By Vade For M365 And Not Blocked"
     
     Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
     
@@ -1051,6 +1051,10 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/08/2023 - major - Rewritten as a regex to reduce false positives
+            
 ??? abstract "Wmic Service Call"
     
     Detects either remote or local code execution using wmic tool.
@@ -1139,7 +1143,7 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Command and Scripting Interpreter**
 
-??? abstract "AWS EC2 Startup Script Changed"
+??? abstract "AWS CloudTrail EC2 Startup Script Changed"
     
     Detects changes to the EC2 instance startup script. The shell script will be executed as root/SYSTEM everytime the specific instances are booted up.
     
@@ -2063,7 +2067,7 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+??? abstract "Malware Detected By Vade For M365 And Not Blocked"
     
     Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
     
@@ -3164,37 +3168,37 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Account Manipulation**
 
-??? abstract "AWS IAM Failed User Creation"
+??? abstract "AWS CloudTrail IAM Failed User Creation"
     
     Detects an attemp to create a user account where the result is an explicit denied.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Password Policy Updated"
+??? abstract "AWS CloudTrail IAM Password Policy Updated"
     
     Detects an update to the password policy. This could be an attempt to lower accounts security level.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Policy Changed"
+??? abstract "AWS CloudTrail IAM Policy Changed"
     
     Detects change on AWS IAM Policy
     
     - **Effort:** master
     
-??? abstract "AWS Root ConsoleLogin"
+??? abstract "AWS CloudTrail Root ConsoleLogin"
     
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Attempt"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Attempt"
     
     Detects when a request in success or failure is made to transfer a domain name to an other AWS account
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Lock Disabled"
     
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
     
@@ -3228,7 +3232,7 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
-??? abstract "Azure Active Directory Self Service Password Reset In Failure"
+??? abstract "Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure"
     
     Detects self-service password reset in failure for various reasons (except licence or policy ones)
     
@@ -4437,12 +4441,6 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Domain Policy Modification**
 
-??? abstract "Azure AD Domain Trust Modification"
-    
-    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
@@ -4460,6 +4458,12 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     Detects MSI binaries run through GPOs.
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
     
 ??? abstract "Okta Policy Modified or Deleted"
     
@@ -5369,7 +5373,7 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Indicator Removal**
 
-??? abstract "AWS KMS CMK Key Deleted"
+??? abstract "AWS CloudTrail KMS CMK Key Deleted"
     
     Detects when a CMK is deleted or scheduled for deletion
     
@@ -6029,12 +6033,6 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Domain Policy Modification**
 
-??? abstract "Azure AD Domain Trust Modification"
-    
-    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
@@ -6052,6 +6050,12 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     Detects MSI binaries run through GPOs.
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
     
 ??? abstract "Okta Policy Modified or Deleted"
     
@@ -6209,55 +6213,55 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Impair Defenses**
 
+??? abstract "AWS CloudTrail Config Disable Channel/Recorder"
+    
+    Detects AWS Config Service disabling channel or recorder
+    
+    - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail Disable MFA"
+    
+    Detects a user disabling the multi factor authentication mechanism for its account. It could be a sign of malicious activity.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail EC2 Security Group Modified"
+    
+    Detects when an AWS EC2 security group has been modified
+    
+    - **Effort:** master
+    
+??? abstract "AWS CloudTrail EventBridge Rule Disabled Or Deleted"
+    
+    Detects when an attacker is trying to evade defenses by deleting or disabling EventBridge rules
+    
+    - **Effort:** master
+    
+??? abstract "AWS CloudTrail GuardDuty Detector Deleted"
+    
+    Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
+    
+    - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail GuardDuty Detector Suspended"
+    
+    Detects the suspension of the GuardDuty service
+    
+    - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail GuardDuty Disruption"
+    
+    Detects updates of the GuardDuty list of trusted IPs, perhaps to disable security alerts against malicious IPs
+    
+    - **Effort:** intermediate
+    
 ??? abstract "AWS CloudTrail Important Change"
     
     Detects disabling, deleting and updating of a Trail source which could be done by some attackers trying to masquerade their activity.
     
     - **Effort:** advanced
     
-??? abstract "AWS Config Disable Channel/Recorder"
-    
-    Detects AWS Config Service disabling channel or recorder
-    
-    - **Effort:** elementary
-    
-??? abstract "AWS Disable MFA"
-    
-    Detects a user disabling the multi factor authentication mechanism for its account. It could be a sign of malicious activity.
-    
-    - **Effort:** intermediate
-    
-??? abstract "AWS EC2 Security Group Modified"
-    
-    Detects when an AWS EC2 security group has been modified
-    
-    - **Effort:** master
-    
-??? abstract "AWS EventBridge Rule Disabled Or Deleted"
-    
-    Detects when an attacker is trying to evade defenses by deleting or disabling EventBridge rules
-    
-    - **Effort:** master
-    
-??? abstract "AWS GuardDuty Detector Deleted"
-    
-    Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
-    
-    - **Effort:** elementary
-    
-??? abstract "AWS GuardDuty Detector Suspended"
-    
-    Detects the suspension of the GuardDuty service
-    
-    - **Effort:** elementary
-    
-??? abstract "AWS GuardDuty Disruption"
-    
-    Detects updates of the GuardDuty list of trusted IPs, perhaps to disable security alerts against malicious IPs
-    
-    - **Effort:** intermediate
-    
-??? abstract "AWS Remove Flow logs"
+??? abstract "AWS CloudTrail Remove Flow logs"
     
     Detects when an attacker is removing Flow Logs to cover their tracks
     
@@ -6701,49 +6705,49 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Modify Cloud Compute Infrastructure**
 
-??? abstract "AWS EC2 Subnet Deleted"
+??? abstract "AWS CloudTrail EC2 Subnet Deleted"
     
     Detects when an attacker is destroying an EC2 subnet.
     
     - **Effort:** master
     
-??? abstract "AWS ECS Cluster Deleted"
+??? abstract "AWS CloudTrail ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Failed User Creation"
+??? abstract "AWS CloudTrail IAM Failed User Creation"
     
     Detects an attemp to create a user account where the result is an explicit denied.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Password Policy Updated"
+??? abstract "AWS CloudTrail IAM Password Policy Updated"
     
     Detects an update to the password policy. This could be an attempt to lower accounts security level.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Policy Changed"
+??? abstract "AWS CloudTrail IAM Policy Changed"
     
     Detects change on AWS IAM Policy
     
     - **Effort:** master
     
-??? abstract "AWS Root ConsoleLogin"
+??? abstract "AWS CloudTrail Root ConsoleLogin"
     
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Attempt"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Attempt"
     
     Detects when a request in success or failure is made to transfer a domain name to an other AWS account
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Lock Disabled"
     
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
     
@@ -7808,7 +7812,7 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
 ## Collection
 **Data from Local System**
 
-??? abstract "AWS EC2 VM Export Failure"
+??? abstract "AWS CloudTrail EC2 VM Export Failure"
     
     Detects attempt to export an AWS EC2 instance. A VM Export might indicate an attempt to extract information from an instance.
     
@@ -8399,13 +8403,13 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
 ## Exfiltration
 **Automated Exfiltration**
 
-??? abstract "AWS RDS Change Master Password"
+??? abstract "AWS CloudTrail RDS Change Master Password"
     
     Detects the change of database master password. It may be a part of data exfiltration.
     
     - **Effort:** intermediate
     
-??? abstract "AWS RDS Public DB Restore"
+??? abstract "AWS CloudTrail RDS Public DB Restore"
     
     Detects the recovery of a new public database instance from a snapshot. It may be a part of data exfiltration.
     
@@ -8494,7 +8498,7 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
     
 **Transfer Data to Cloud Account**
 
-??? abstract "AWS EC2 VM Export Failure"
+??? abstract "AWS CloudTrail EC2 VM Export Failure"
     
     Detects attempt to export an AWS EC2 instance. A VM Export might indicate an attempt to extract information from an instance.
     
@@ -8545,13 +8549,13 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
 ## Impact
 **Data Destruction**
 
-??? abstract "AWS ECS Cluster Deleted"
+??? abstract "AWS CloudTrail ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
     
     - **Effort:** intermediate
     
-??? abstract "AWS RDS DB Cluster/Instance Deleted"
+??? abstract "AWS CloudTrail RDS DB Cluster/Instance Deleted"
     
     Detects when an attacker is destroying a RDS Cluster or Instance
     

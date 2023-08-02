@@ -1,9 +1,12 @@
-Changelog _last update on 2023-08-01_
+Changelog _last update on 2023-08-02_
 
 ## Changelog
 
 ### Account Tampering - Suspicious Failed Logon Reasons
   - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+    
+### Wmic Process Call Creation
+  - 01/08/2023 - major - Rewritten as a regex to reduce false positives
     
 ### Correlation Potential DNS Tunnel
   - 19/07/2023 - major - New regex pattern and new filters.

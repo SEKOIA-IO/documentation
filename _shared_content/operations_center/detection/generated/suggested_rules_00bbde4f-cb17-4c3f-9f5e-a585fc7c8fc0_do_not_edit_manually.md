@@ -447,6 +447,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Google Kubernetes Engine (GK
     
     - **Effort:** master
 
+??? abstract "Wmic Process Call Creation"
+    
+    The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Wmic Service Call"
     
     Detects either remote or local code execution using wmic tool.

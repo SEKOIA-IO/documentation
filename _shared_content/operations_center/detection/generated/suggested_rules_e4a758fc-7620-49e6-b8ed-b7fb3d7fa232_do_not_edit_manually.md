@@ -9,7 +9,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Vade M365** with the followi
     
     - **Effort:** master
 
-??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+??? abstract "Malware Detected By Vade For M365 And Not Blocked"
     
     Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
     
