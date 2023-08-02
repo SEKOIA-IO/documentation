@@ -1,4 +1,4 @@
-Rules catalog includes **726 built-in detection rules** ([_last update on 2023-08-02_](rules_changelog.md)).
+Rules catalog includes **731 built-in detection rules** ([_last update on 2023-08-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6330,6 +6330,36 @@ Rules catalog includes **726 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Fail2ban Unban IP"
     
     An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub Delete Action"
+    
+    Detects a Delete/Destroy action in GitHub audit logs.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub Dependabot Or Vulnerability Alerts Disabled"
+    
+    Detects dependabot or vulnerability alerts being disabled. Dependabot performs a scan to detect insecure dependencies, and sends Dependabot alerts.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub High Risk Configuration Disabled"
+    
+    Detects a configuration being disabled in GitHub. It detects only configuration judged as highly risky if disabled. An organization should adapt this rule according to its environment.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub New Organization Member"
+    
+    Detects when a member is added or invited to a GitHub organization.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub Outside Collaborator Detected"
+    
+    Detects an outside collaborator being removed or having its permissions changed.
     
     - **Effort:** advanced
     
