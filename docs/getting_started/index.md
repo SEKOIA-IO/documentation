@@ -15,4 +15,4 @@ This documentation platform is made to guide you through the different features 
 
 If you are interested in our products, contact us to plan a demo by filling out [this form](https://www.sekoia.io/en/contact/).
 
-If you don't find what you're looking for in this documentation, feel free to contact us at support@sekoia.io or send us a ticket at [support.sekoia.io](https://support.sekoia.io).
+If you don't find what you're looking for in this documentation, feel free to contact your support.

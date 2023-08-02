@@ -6,7 +6,7 @@ type: intake
 ArcSight's Common Event Format (CEF) is an open log management standard.
 If one of your applications or devices is not covered by one of the other intakes we support but can produce logs in CEF you can use this intake.
 
-Still we recommend using an intake tailored to your specific application or device, even with CEF, in order to ensure you get the most out of your logs. If an intake is missing, please [contact us](mailto:support@sekoia.io).
+Still we recommend using an intake tailored to your specific application or device, even with CEF, in order to ensure you get the most out of your logs. If an intake is missing, please make a formal Integration request to your usual points of contact.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_1d172ee6-cdc0-4713-9cfd-43f7d9595777_do_not_edit_manually.md!}

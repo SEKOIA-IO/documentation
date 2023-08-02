@@ -39,18 +39,18 @@ To create an intake, you have to:
 
 !!! Note
     The documentation about the integration of your data sources is also available in the [integrations](integrations/index.md) page.
-    
-## Configure a notification to report on inactive intake
-An inactive intake may have devastating consequences on your security monitoring. To prevent incidents from happening, you can set up notifications to get alerted when an intake stops sending events to Sekoia.io. 
 
-To set up your notification, you will have to: 
+## Configure a notification to report on inactive intake
+An inactive intake may have devastating consequences on your security monitoring. To prevent incidents from happening, you can set up notifications to get alerted when an intake stops sending events to Sekoia.io.
+
+To set up your notification, you will have to:
 
 1. Go to the Intakes listing page and click on:  ![Notification logo](/assets/operation_center/intakes/Monitor_intake_logo.png){: style="max-width:10%"} on the right side of the table
-2. Specify how long the intake should be inactive before sending a notification. The duration can go from 15 min to 24 hours. 
-3. Select how you want to be notified. Triggered actions that are available are mentioned in the page [Turn on notifications](/getting_started/notifications/#triggered-actions.md). 
+2. Specify how long the intake should be inactive before sending a notification. The duration can go from 15 min to 24 hours.
+3. Select how you want to be notified. Triggered actions that are available are mentioned in the page [Turn on notifications](/getting_started/notifications/#triggered-actions.md).
 
 !!! note
-     You can also set up this notification from the User Center > Notifications by selecting the trigger `No events are received`. 
+     You can also set up this notification from the User Center > Notifications by selecting the trigger `No events are received`.
 
 ![Create notification](/assets/operation_center/intakes/Monitor_intake_create_notification.png){: style="max-width:100%"}
 
@@ -58,7 +58,7 @@ To set up your notification, you will have to:
 
 Sekoia.io provides a list of intakes that allows you to integrate events from different sources such as systems, applications and security appliances.
 
-Some technologies may not have an associated Intake in the official Sekoia.io catalog and therefore cannot be parsed in Sekoia.io. 
+Some technologies may not have an associated Intake in the official Sekoia.io catalog and therefore cannot be parsed in Sekoia.io.
 
 The "Custom format" feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the Events page.
 
@@ -158,7 +158,7 @@ The following action will delete the fields `source.ip` and `destination.ip` fro
 ![Sekoia.io Delete action](/assets/operation_center/intakes/example_delete.png){: style="max-width:100%"}
 
 ### Common stages
-Common stages are provided by Sekoia.io to help you parse your events. 
+Common stages are provided by Sekoia.io to help you parse your events.
 
 There are currently 5 different common stages, each having its specifities:
 
@@ -212,15 +212,15 @@ The Key-Value stage can be used to deserialize a Key-Value string.
 You will need to provide the stage with:
 
  - A `Name`
- 
+
  - A `Description` (optional)
- 
+
  - An `Input_field` -  As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field. `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
- 
+
  - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a value corresponding to a key.
- 
+
  - A `Value Separator` - It is the separator that differentiates the key from the value. It it set to `=` by default.
- 
+
  - An `Item Separator` - It is the separator that differentiates two different key-value. The default separator is `\s` which means a whitespace character.
 
 **Example**
@@ -280,7 +280,7 @@ To get the duration, you can use `{{stage1.message.duration}}`.
 
 #### Date
 
-The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601, which is the format used by Sekoia.io. 
+The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601, which is the format used by Sekoia.io.
 
 This stage accepts, as optional properties, the format to parse the date and the IANA timezone of the parsed date.
 
@@ -289,16 +289,16 @@ This stage accepts, as optional properties, the format to parse the date and the
 You will need to provide the stage with:
 
  - A `Name`
- 
+
  - A `Description` (optional)
- 
+
  - An `Input_field` - As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
 `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
 
  - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get the output value.
- 
+
  - A `Format` (optional) - You can specify the format of the date. By default, the stage tries to autodetect the format.
- 
+
  - A `Timezone` (optional) - You can specify the timezone of the date. It is set to `UTC` by default.
 
 **Example**
@@ -323,7 +323,7 @@ To get the date parsed in a next stage, you will then use the reference `{{stage
 
 #### Delimiter Separated Values
 
-The Delimiter Separated Values stage can be used to extract values from a delimiter-separated values string. 
+The Delimiter Separated Values stage can be used to extract values from a delimiter-separated values string.
 
 This stage needs the list of columns and, as optional, the delimiter (by default, the delimiter is the comma ',').
 
@@ -332,16 +332,16 @@ This stage needs the list of columns and, as optional, the delimiter (by default
 You will need to provide the stage with:
 
  - A `Name`
- 
+
  - A `Description` (optional)
- 
+
  - An `Input_field` - As its name suggests, this is the stage's entry. It corresponds to the chain of characters you want to deserialize. It is set to `{{original.message}}` by default. When you start sending your logs in an empty parser, your log will be placed in that field.
 `original` refers to the event at the entry of the pipeline and `message` to the field corresponding to the log.
 
  - An `Output_field` - It corresponds to the output of the stage and will be used in next stages to get a value corresponding to a key.
- 
+
  - A `Column Names` - You need to list the column names used to retrieve information. The format has to be the following : `<column_A>,<column_B>,<column_C>...`
- 
+
  - A `Delimiter` - The delimiter used to differenciate two columns (By default `,`).
 
 **Example**
@@ -460,7 +460,7 @@ After this last step, your custom field is ready to be used in your parser. The 
 
 **Example**
 
-The product `technoexample` has a field called `environment` which is custom to this technology and does not exist in ECS. With the taxonomy manager, you can create a custom field `technoexample.environment`. 
+The product `technoexample` has a field called `environment` which is custom to this technology and does not exist in ECS. With the taxonomy manager, you can create a custom field `technoexample.environment`.
 
 This field will then be available in the [Custom Stage](#custom-stage).
 
@@ -501,7 +501,7 @@ Here is the needed configuration setup:
 
 ---
 
-Do not hesitate to contact us at [support@sekoia.io](mailto:support@sekoia.io) if:
+Do not hesitate to contact your support if:
 
 - The settings’ recommendations provided are not sufficient or not applicable to your system. We can then see with you how to transfer your events in the best conditions.
 - The format of the logs you want to send us is not in the list. We regularly add new formats and we can let you know when yours is available in our catalog.

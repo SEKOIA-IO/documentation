@@ -33,14 +33,14 @@ The urgency can have two different representations on the interface: a numerical
 | High | [75-100] |
 
 
-### Alert Similarity 
-Alert similarity (Occurence) is the process by which we collect similar events in the same alert. 
-The information is available in the Alerts table → Column `Occurrence`. 
+### Alert Similarity
+Alert similarity (Occurence) is the process by which we collect similar events in the same alert.
+The information is available in the Alerts table → Column `Occurrence`.
 
 
 **Example**
 
-If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert. 
+If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert.
 
 ### Similarity strategies
 Alerts are considered similar if a list of fields defined by the similarity strategy have the same values for all events. Some fields may also be grouped together to specify that their values may be swapped.
@@ -48,7 +48,7 @@ Alerts are considered similar if a list of fields defined by the similarity stra
 !!! note
     The effective similarity strategy for an alert is displayed in the alert details tab.
 
-There are three possibilities to define the similarity strategy to use. By order:  
+There are three possibilities to define the similarity strategy to use. By order:
 
 1. [Similarity is forced by the rule](#similarity-by-rule)
 2. [Similarity is forced by event](#similarity-by-event)
@@ -80,17 +80,17 @@ If the event matches one of the conditions listed below, the associated similari
 | If `file.hash.md5`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.md5`] |
 
 !!!note
-    In case similarity forced by your events does not answer your needs, feel free to contact us at support@sekoia.io.
+    In case similarity forced by your events does not answer your needs, feel free to contact your support.
 
 #### Default similarity
 
-If there is no similarity forced by the rule or by the event, you can rely on Sekoia.io default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+If there is no similarity forced by the rule or by the event, you can rely on Sekoia.io default similarity formula: same `entity`, same `source.ip` and `destination.ip`.
 
-`source.ip` and `destination.ip` can be used interchangeably. 
+`source.ip` and `destination.ip` can be used interchangeably.
 
-!!! important 
+!!! important
     When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
-    
+
 #### Similarity and alert status
 As long as there is an existing similar alert with status **Pending**, **Acknowledged** or **Ongoing**, new matches are added to the alert as occurrences.
 
@@ -115,13 +115,13 @@ From the left to the right, several features are available on the top screen:
 - A `show/hide` columns button that lets you display fields you’re interested in. You can select or deselect columns but also drag and drop them depending on the order you need
 - Filters that let you display alerts by order of `Most Frequent`, `Recently Updated`, `Recently Created` or `Most Urgent`
 
-### Filters 
+### Filters
 
 The new filter feature will give analysts the ability to construct complex queries and exclude specific values, providing them with greater control and allowing them to make more informed decisions based on a richer set of data.
 
 #### Apply filters
 
-To use complex filters, just click on the `Filter` button or hit your `f` key on your keyboard. 
+To use complex filters, just click on the `Filter` button or hit your `f` key on your keyboard.
 
 The menu is now opened and you can directly search for the filter you want to apply. Right after you choose your filter, you are invited to search and select one or multiple values for this filter.
 
@@ -130,14 +130,14 @@ You can change the operator (filer *is* value, filter *is not* value, filter *is
 !!! tip
     You can combine filters and add as many filters as you want. The default operator between filters is AND.
 
-!!! note 
+!!! note
     To edit filters (values, operator), just click on the value or the operator and select what you need. These new filters will be applied automatically.
 
 #### Keyboard navigation
 
 To improve navigation and accessibility, you can now navigate within the filter component just by using your keyboard.
 
-Here is a list of keyboard shortcuts that can be useful to you: 
+Here is a list of keyboard shortcuts that can be useful to you:
 
 | Key | Action |
 | --- | --- |
@@ -148,7 +148,7 @@ Here is a list of keyboard shortcuts that can be useful to you:
 
 #### Pre-made filters
 
-At the top of the available filters list, you will find two pre-made filters :  `New today` and `Open`.  
+At the top of the available filters list, you will find two pre-made filters :  `New today` and `Open`.
 
 We hope these two most used filters will save you time!
 
@@ -159,7 +159,7 @@ We hope these two most used filters will save you time!
 
 #### List of all filters
 
-Here is the updated list of all available filters. 
+Here is the updated list of all available filters.
 
 | Filter | Composition |
 | --- | --- |
@@ -177,27 +177,27 @@ Here is the updated list of all available filters.
 
 
 !!! tip
-    To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.  
+    To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.
 
 ### Change alert status in bulk
 
-On the main alert listing, it is possible to treat alerts faster. Users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context. 
+On the main alert listing, it is possible to treat alerts faster. Users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context.
 
 ![alert-status](/assets/operation_center/alerts/alert-status.png){: style="max-width:100%"}
 
-To change statuses in bulk, you have to: 
+To change statuses in bulk, you have to:
 
 - Apply filters to alerts listing if needed
-- Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected 
+- Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected
 - You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts.`
 ![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
 - A message will confirm that all alerts are selected including their count
 ![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
-- Choose the new status you want to apply 
+- Choose the new status you want to apply
 - Leave a comment explaining your decision and click on the `Update status` button.
 
-!!! note 
-    It is recommended to leave a comment to provide more context to the status change but it's not mandatory. 
+!!! note
+    It is recommended to leave a comment to provide more context to the status change but it's not mandatory.
 
 ### Alerts table columns
 
@@ -215,7 +215,7 @@ By default, the alert listing displays the following columns:
 - A `first seen` and `last seen` date
 - The `ID` and the `UUID` of the alert
 - The `source` and `target`of the alert
-- The `Commu.`which means the communities related to the alerts 
+- The `Commu.`which means the communities related to the alerts
 
 !!! note
     Your custom configuration will be saved in order to allow you to keep your selected filters when you come back to this page.
@@ -238,7 +238,7 @@ The Alert Details header contains the `urgency`, the `name` and the `short ID` o
 - `Playbooks`: display the list of on-demand playbooks and be able to trigger them.
 
 !!! note
-    Playbooks that can be enabled on alerts are "manual" playbooks (ie with a Manual Trigger). They also have to be enabled in the community to appear in the UI. 
+    Playbooks that can be enabled on alerts are "manual" playbooks (ie with a Manual Trigger). They also have to be enabled in the community to appear in the UI.
 
 The different sections of the page are then separated into 4 tabs: `Details`, `Tasks`, `Events` and `Graph Investigation`.
 
@@ -322,9 +322,9 @@ Alert Filters can be used to prevent known false positives from raising the same
 
 ![alert-filter](/assets/operation_center/alerts/alert-filter.png){align=right}
 
-You can create an Alert Filter for the rule that triggered the alert by following these steps: 
+You can create an Alert Filter for the rule that triggered the alert by following these steps:
 
-- On the `alert`page, go to `events` tab 
+- On the `alert`page, go to `events` tab
 - Click on `Toggle value selection` button in the upper right of the logs list
 - Select `values` you want to filter by clicking on them in the logs list
 - Click on the button `Create an Alert filter` as shown in the screenshot
@@ -333,7 +333,7 @@ You can create an Alert Filter for the rule that triggered the alert by followin
 - The filter's pattern is automatically created from selected values.
 - Click on `Add` to add this alert filter to the rule that triggered this alert
 
-!!!note 
+!!!note
     By default, `Reject the Alert` is selected by default to automatically reject the alert after creating the Alert Filter.
 
 
@@ -343,11 +343,11 @@ The "Search Events with this value" feature can be used to perform a search into
 
 ![search-events](/assets/operation_center/alerts/search-events.png){align=right}
 
-The search query is automatically created from selected values. 
+The search query is automatically created from selected values.
 
-To search events with a value: 
+To search events with a value:
 
-- On the `alert`page, go to `events` tab 
+- On the `alert`page, go to `events` tab
 - Click on `Toggle value selection` button in the upper right of the logs list
 - Select `values` you want to search for by clicking on them in the logs list
 - Click on the button `Perform a search` as shown in the screenshot
