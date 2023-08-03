@@ -1,6 +1,6 @@
 # How to write smart descriptions
 
-An event can be hard to read as a raw data. To make the visualization and the understand of events easier, smart-descriptions help to display important information to the user.
+An event can be hard to read as a raw data. To make the visualization and the understanding of events easier, smart-descriptions help displaying important information to the user.
 
 ## Organization
 
@@ -35,7 +35,7 @@ A smart description consists of:
 
 	These conditions define when the description should be displayed. For a same event, the description, with the largest number of matching conditions, will succeed.
 
-	A condition is compound of a path (dot-notation) to the field to test, and the expected value of the field (equal operation).
+	A condition is a compound of a path (dot-notation) to the field to test, and the expected value of the field (equal operation).
 
 	e.g:
 	With a structured event containing:
@@ -85,7 +85,7 @@ A smart description consists of:
 
 - A list of relationships (optional): The relationships help to connect information from the structured event.
 
-	A relationship is compound of:
+	A relationship is a compound of:
 
 	- the source: the path to the field, in the structured data, to consider as the source of the relationship
 	- the target: the path to the field, in the structured data, to consider as the target of the relationship

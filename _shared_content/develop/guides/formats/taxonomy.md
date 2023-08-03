@@ -1,14 +1,14 @@
 # Definition of the taxomony
 
-The taxonomy of [structured events](structured_event.md) is based on the [ECS](https://www.elastic.co/guide/en/ecs/current/ecs-reference.html) specification. This taxonomy defines a set of field available for values in [parsers](parser.md).
+The taxonomy of [structured events](structured_event.md) is based on the [ECS](https://www.elastic.co/guide/en/ecs/current/ecs-reference.html) specification. This taxonomy defines a set of fields available for values in [parsers](parser.md).
 
 ## Best Practices
 
 - When a raw event encompasses a datetime, parse this information with a stage date and set the result in the field `@timestamp`.
 - Define `event.category`, `event.type` and `event.kind` according to the [event categorization fields](https://www.elastic.co/guide/en/ecs/current/ecs-category-field-values-reference.html).
-- Define `event.category` and `event.type` as array.
-- As possible, define [`event.dataset`](https://www.elastic.co/guide/en/ecs/current/ecs-event.html#field-event-dataset).
-- As possbile, define observer information in [`observer.*`](https://www.elastic.co/guide/en/ecs/current/ecs-observer.html).
+- Define `event.category` and `event.type` as arrays.
+- If possible, define [`event.dataset`](https://www.elastic.co/guide/en/ecs/current/ecs-event.html#field-event-dataset).
+- If possible, define observer information in [`observer.*`](https://www.elastic.co/guide/en/ecs/current/ecs-observer.html).
 - For events collected from cloud services, provide cloud information in [`cloud.*`](https://www.elastic.co/guide/en/ecs/current/ecs-cloud.html) (The cloud account id must land in `cloud.account.id`).
 - The name of an action must be hosted in `event.action`
 - The reason of the event must be hosted in `event.reason`
@@ -29,7 +29,7 @@ The custom taxonomy is defined in the directory `_meta/fields.yml` in the format
 
 A custom field consists of three elements:
 
-- name: The name of the field. it corresponds to the path (dot-notation) of the field in the [structured event](structured_event.md).
+- name: The name of the field. It corresponds to the path (dot-notation) of the field in the [structured event](structured_event.md).
 
 	We recommend prefixing the field with the vendor and the name of the product (e.g for AWS cloud trail, custom taxonomy is prefixing with `aws.cloudtrail`)
 

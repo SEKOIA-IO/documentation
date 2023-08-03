@@ -6,7 +6,7 @@
 
 ## Create a module
 
-If not existing, you need to create a module that will contain your format.
+If the module that will contain your format doesn't exist, you will need to create it.
 
 To create a new module, execute the following command:
 
@@ -15,7 +15,7 @@ To create a new module, execute the following command:
 > poetry run python3 generate.py new-module
 ```
 
-Fill with the name of the module, its description and its destination directory.
+Complete the form with the name of the module, its description and its destination directory.
 
 A new directory, with the name of the module, will appear at the root of your workspace.
 
@@ -36,7 +36,7 @@ To create a new format, execute the following command:
 > poetry run python3 generate.py new-format <module_directory>
 ```
 
-Fill with the name of the format, its slug and its description.
+Complete the form with the name of the format, its slug and its description.
 
 Your new format will appear, as a directory, under its module directory.
 

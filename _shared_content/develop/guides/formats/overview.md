@@ -4,7 +4,7 @@ A format defines the steps to extract and to transform useful information from e
 
 ## Overview
 
-Formats are grouped by module (module correlate to a vendor most of the time).
+Formats are grouped by module (a module usually correlates to a vendor).
 
 ### Module
 
