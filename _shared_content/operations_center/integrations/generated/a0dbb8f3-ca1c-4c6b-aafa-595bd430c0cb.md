@@ -40,9 +40,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2019-08-01T10:34:44.277000Z",
             "duration": 3387
         },
+        "@timestamp": "2019-08-01T10:34:44.277000Z",
         "http": {
             "request": {
                 "method": "CONNECT"
@@ -100,9 +100,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2019-07-31T12:39:01.982000Z",
             "duration": 5756
         },
+        "@timestamp": "2019-07-31T12:39:01.982000Z",
         "http": {
             "request": {
                 "method": "CONNECT"
@@ -161,9 +161,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2020-04-16T13:09:56.494000Z",
             "duration": 1717
         },
+        "@timestamp": "2020-04-16T13:09:56.494000Z",
         "http": {
             "request": {
                 "method": "CONNECT"
@@ -222,7 +222,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2022-01-20T08:23:57.129000Z",
             "duration": 0,
             "type": [
                 "connection",
@@ -230,6 +229,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "error"
             ]
         },
+        "@timestamp": "2022-01-20T08:23:57.129000Z",
         "http": {
             "request": {
                 "method": "CONNECT"
@@ -285,9 +285,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2019-08-12T08:33:21.353000Z",
             "duration": 24
         },
+        "@timestamp": "2019-08-12T08:33:21.353000Z",
         "http": {
             "request": {
                 "method": "GET"
@@ -359,13 +359,13 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2019-08-01T14:35:12.892000Z",
             "duration": 5007,
             "type": [
                 "connection",
                 "error"
             ]
         },
+        "@timestamp": "2019-08-01T14:35:12.892000Z",
         "http": {
             "request": {
                 "method": "GET"
@@ -435,7 +435,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2019-08-12T08:55:28.411000Z",
             "duration": 0,
             "type": [
                 "connection",
@@ -443,6 +442,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "error"
             ]
         },
+        "@timestamp": "2019-08-12T08:55:28.411000Z",
         "http": {
             "request": {
                 "method": "GET"
@@ -503,9 +503,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2021-08-04T13:36:43.491000Z",
             "duration": 82
         },
+        "@timestamp": "2021-08-04T13:36:43.491000Z",
         "http": {
             "request": {
                 "method": "GET"
@@ -571,9 +571,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2021-08-05T08:01:50.448000Z",
             "duration": 549
         },
+        "@timestamp": "2021-08-05T08:01:50.448000Z",
         "http": {
             "request": {
                 "method": "GET"
@@ -634,13 +634,13 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web",
                 "network"
             ],
-            "start": "2019-08-01T14:35:12.892000Z",
             "duration": 5007,
             "type": [
                 "connection",
                 "error"
             ]
         },
+        "@timestamp": "2019-08-01T14:35:12.892000Z",
         "http": {
             "request": {
                 "method": "GET",
@@ -718,13 +718,13 @@ The following table lists the fields that are extracted, normalized under the EC
 
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
+|`@timestamp` | `date` | Date/time when the event originated. |
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.port` | `long` | Port of the destination. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
-|`event.start` | `date` | event.start contains the date when the event started or when the activity was first observed. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |
