@@ -1,3 +1,4 @@
+uuid: 19cd2ed6-f90c-47f7-a46b-974354a107bb
 name: Azure Active Directory
 type: intake
 
@@ -109,12 +110,12 @@ You have to retrieve the connection string from Azure Web Portal.
 Go to “Storage Accounts”, "sekoiacheckpoint", "Access Keys". 
 
 Click on "Show Keys" on the first Connection String. 
-![Connection Stirng](https://github.com/jdpju/documentation/assets/113444861/dc6e176c-ac19-46d4-a65a-b97a1331a2d8)
+![Connection String](https://github.com/jdpju/documentation/assets/113444861/dc6e176c-ac19-46d4-a65a-b97a1331a2d8){: style="max-width:100%"}
 
 !!! info
     Carefully store the Connection String that will be used in step 10.
 
-### Step 8: Activate Azure Active Directory diagnostic settings
+#### Step 8: Activate Azure Active Directory diagnostic settings
 
 You need to activate and configure the Azure Active Directory diagnostic settings (e.g. `company-ad`).
 
@@ -122,12 +123,12 @@ Navigate to “Home”, “Azure Active Directory” (e.g. `company-ad`), “Mon
 
 - Add a new diagnostic setting, and select “Stream to an event hub” and click on configure.
 - Select the previously created “Event hubs”, “Event Hub” and “SharedAccessKey” (**see step 2**).
-- In the log section, select “AuditLogs” and “SignInLogs”.
+- In the log section, select all log categories (as shown below).
 - Choose a name for this configuration and click on “Save”.
   
-![diag](https://github.com/jdpju/documentation/assets/113444861/b5e55fd3-da86-4f2f-8095-3c1704ae7a20)
+![diag](https://github.com/jdpju/documentation/assets/113444861/b5e55fd3-da86-4f2f-8095-3c1704ae7a20){: style="max-width:100%"}
 
-### Step 9: Create an Azure ID intake on your Sekoia.io community
+#### Step 9: Create an Azure ID intake on your Sekoia.io community
 
 Go to your Sekoia.io console. 
 
@@ -141,7 +142,7 @@ Once the intake is created, carefully store the intake key for the Azure AD inta
 
 <img width="1438" alt="image" src="https://github.com/jdpju/documentation/assets/113444861/9b92b2b3-8840-4497-a77c-f1948685c361">
 
-### Step 10: Create and configure a playbook on Sekoia.io to collect your logs 
+#### Step 10: Create and configure a playbook on Sekoia.io to collect your logs 
 
 The last step to integrate your log into Sekoia.io, is to create a playbook that will consume your logs.
 To do so, please go the playbook section. 
