@@ -1,4 +1,4 @@
-Rules catalog includes **731 built-in detection rules** ([_last update on 2023-08-02_](rules_changelog.md)).
+Rules catalog includes **731 built-in detection rules** ([_last update on 2023-08-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8121,6 +8121,10 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/08/2023 - minor - Added a condition to only match on internal IP as source
+            
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.

@@ -201,12 +201,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Front Door** with the 
     
     - **Effort:** elementary
 
-??? abstract "Potential LokiBot User-Agent"
-    
-    Detects potential LokiBot communications through the user-agent
-    
-    - **Effort:** intermediate
-
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries

@@ -33,12 +33,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Gatewatcher AionIQ** with th
     
     - **Effort:** elementary
 
-??? abstract "Potential LokiBot User-Agent"
-    
-    Detects potential LokiBot communications through the user-agent
-    
-    - **Effort:** intermediate
-
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.

@@ -27,12 +27,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cloudflare HTTP requests** w
     
     - **Effort:** elementary
 
-??? abstract "Potential LokiBot User-Agent"
-    
-    Detects potential LokiBot communications through the user-agent
-    
-    - **Effort:** intermediate
-
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.

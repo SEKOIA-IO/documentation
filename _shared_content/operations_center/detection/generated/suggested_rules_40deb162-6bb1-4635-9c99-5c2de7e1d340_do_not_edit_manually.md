@@ -231,6 +231,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     
     - **Effort:** elementary
 
+??? abstract "Cron Files Alteration"
+    
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    
+    - **Effort:** advanced
+
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
@@ -771,6 +777,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     
     - **Effort:** elementary
 
+??? abstract "Package Manager Alteration"
+    
+    Package manager (eg: apt, yum) can be altered to install malicious software
+    
+    - **Effort:** advanced
+
 ??? abstract "Pandemic Windows Implant"
     
     Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
@@ -897,6 +909,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     
     - **Effort:** intermediate
 
+??? abstract "Python Offensive Tools and Packages"
+    
+    Track installation and usage of offensive python packages and project that are used for lateral movement
+    
+    - **Effort:** master
+
 ??? abstract "QakBot Process Creation"
     
     Detects QakBot like process executions
@@ -980,6 +998,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 2.0
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
     
     - **Effort:** intermediate
+
+??? abstract "SSH Authorized Key Alteration"
+    
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    
+    - **Effort:** advanced
 
 ??? abstract "STRRAT Scheduled Task"
     
