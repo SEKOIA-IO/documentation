@@ -1,24 +1,24 @@
-Changelog _last update on 2023-08-02_
+Changelog _last update on 2023-08-04_
 
 ## Changelog
 
-### Account Tampering - Suspicious Failed Logon Reasons
-  - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+### Potential LokiBot User-Agent
+  - 04/08/2023 - minor - Added a condition to only match on internal IP as source
     
 ### Wmic Process Call Creation
   - 01/08/2023 - major - Rewritten as a regex to reduce false positives
     
-### Correlation Potential DNS Tunnel
-  - 19/07/2023 - major - New regex pattern and new filters.
+### Account Tampering - Suspicious Failed Logon Reasons
+  - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
     
 ### Potential DNS Tunnel
   - 19/07/2023 - major - New regex pattern and new filters.
     
+### Correlation Potential DNS Tunnel
+  - 19/07/2023 - major - New regex pattern and new filters.
+    
 ### Privileged AD Builtin Group Modified
   - 10/07/2023 - minor - Added AD groups and change to effort master.
-    
-### Userinit Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
     
 ### Csrss Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
@@ -26,52 +26,55 @@ Changelog _last update on 2023-08-02_
 ### Dllhost Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Wsmprovhost Wrong Parent
+### Searchprotocolhost Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
 ### Taskhost Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Searchprotocolhost Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Wininit Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Svchost Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Explorer Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Lsass Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Smss Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Searchindexer Wrong Parent
+### Spoolsv Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
 ### Taskhostw Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Spoolsv Wrong Parent
+### Explorer Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Wmiprvse Wrong Parent
+### Winlogon wrong parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Logonui Wrong Parent
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Winword wrong parent
+### Svchost Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
 ### Winrshost Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
-### Winlogon wrong parent
+### Lsass Wrong Parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Wininit Wrong Parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Wsmprovhost Wrong Parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Wmiprvse Wrong Parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Winword wrong parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Smss Wrong Parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Logonui Wrong Parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Searchindexer Wrong Parent
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
+### Userinit Wrong Parent
   - 04/07/2023 - major - Added filter to reduce false positives
     
 ### Opening Of a Password File
@@ -83,19 +86,19 @@ Changelog _last update on 2023-08-02_
 ### Mimikatz LSASS Memory Access
   - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
     
-### HackTools Suspicious Process Names In Command Line
+### Msdt (Follina) File Browse Process Execution
   - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
     
-### Msdt (Follina) File Browse Process Execution
+### HackTools Suspicious Process Names In Command Line
   - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
     
 ### SolarWinds Wrong Child Process
   - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
     
-### Socat Relaying Socket
+### Socat Reverse Shell Detection
   - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
     
-### Socat Reverse Shell Detection
+### Socat Relaying Socket
   - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
     
 ### Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL
@@ -104,35 +107,35 @@ Changelog _last update on 2023-08-02_
 ### Suspicious Cmd.exe Command Line
   - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
     
-### Suspicious PowerShell Invocations - Specific
+### WMImplant Hack Tool
   - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
     
-### WMImplant Hack Tool
+### Suspicious PowerShell Invocations - Specific
   - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
     
 ### PowerShell Download From URL
   - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
     
-### Internet Scanner Target
-  - 28/04/2023 - minor - Support for standard ECS FW fields
-    
 ### Internet Scanner
   - 28/04/2023 - minor - Support for standard ECS FW fields
     
-### Audio Capture via PowerShell
-  - 18/04/2023 - minor - Use more specific patterns to fix false positives.
+### Internet Scanner Target
+  - 28/04/2023 - minor - Support for standard ECS FW fields
     
 ### Remote Privileged Group Enumeration
   - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
     
-### LSASS Memory Dump
-  - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
+### Audio Capture via PowerShell
+  - 18/04/2023 - minor - Use more specific patterns to fix false positives.
+    
+### Mimikatz Basic Commands
+  - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
     
 ### Active Directory User Backdoors
   - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
     
-### Mimikatz Basic Commands
-  - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
+### LSASS Memory Dump
+  - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
     
 ### Suspicious PowerShell Invocations - Generic
   - 28/03/2023 - minor - Excluded some commonly observed false positives.
