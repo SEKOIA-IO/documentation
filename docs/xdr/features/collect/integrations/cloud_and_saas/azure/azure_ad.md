@@ -20,35 +20,72 @@ Theses changes have to be made from the [Azure Web Portal](https://portal.azure.
 
 As a prerequisite, you need to choose an existing “resource group”, or create a new one (e.g. `company-resource-group`).
 
-#### Retrieve your Subscription ID
+#### Step 1: Retrieve your Subscription ID
 
-You also need your “Subscription ID” if you don't have a default one. In Azure Web Portal, navigate to: “Home”, “Cost Management + Billing”, ”Subscriptions”. From there, copy the relevant “Subscription ID” that will be used in the command line (e.g. `uuid`)
+If you don't have a default one, in Azure Web Portal, go to: "Home" -  "Cost Management + Billing" - "Subscriptions". 
 
-#### Create the Event Hubs
+From there, keep the relevant “Subscription ID” that will be used along the process (e.g. `uuid`).
 
-Use Azure PowerShell (within Cloud Shell interface for example) to create a namespace (e.g. `company-eventhub`) and a specific `Event Hub` (e.g. `active-directory-event`) within your “resource group” (e.g. `company-resource-group`)
+#### Step 2: Create Event Hub Namespace and associated Event Hub
+
+Use Azure PowerShell (within Cloud Shell interface for example) to create an Event Hub Namespace and a specific "Event Hub" (that will be created within this Event Hub Namespace).
+
+All of these resources will be created within your Resource Group (e.g. `company-resource-group`).
+
 
 ```powershell
-PS Azure:\> az eventhubs namespace create --name company-eventhub --resource-group company-resource-group --enable-kafka true --subscription uuid
+PS Azure:\> az eventhubs namespace create --name company-eventhubnamespace --resource-group company-resource-group --enable-kafka true --subscription uuid
 ```
 
+!!! info
+    Please replace :
+    
+    - `company-resource-group` with the name of your “resource group”.
+    - `uuid` with your subscription ID retrieved previously (see above).
+    - `company-eventhubnamespace` with the name you wish for your Event Hub Namespace
+    
 ```powershell
 PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group --namespace-name company-eventhub --name active-directory-event --message-retention 3 --partition-count 4 --subscription uuid
 ```
 
 !!! info
     Please replace :
-
+    
     - `company-resource-group` with the name of your “resource group”.
-    - `uuid` with your subscription ID retrieved previously (see below).
+    - `uuid` with your subscription ID retrieved previously (see above).
+    - `active-directory-event` with the name you wish for your Event Hub
 
-#### Create “Shared Access Policies”
+#### Step 3: Create “Shared Access Policies” for the Event Hub Namespace 
 
-1. Navigate to “Home”, “Event Hubs”, “company-eventhub - Shared access policies”. From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
-2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “active-directory-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to Sekoia.io.
-3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”active-directory-event - Consumer groups”. From there, you can create a consumer group (e.g. `consumergroup_sekoiaio`).
+Navigate to “Home”, “Event Hubs”, “company-eventhubnamespace - Shared access policies”. 
 
-#### Create a Blob Storage for Checkpointing
+From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`.
+
+!!! info
+    Carefully store the `Connection String Primary Key` that will be used as the `SharedAccessKey` in step 8.
+
+#### Step 4: Create “Shared Access Policies” for the Event Hub 
+
+Navigate to “Home”, “Event Hubs”, “company-eventhubnamespace”, “active-directory-event - Shared access policies”. 
+
+From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. 
+
+Once created, click on the policy.
+
+!!! info
+    Carefully store the `Connection String Primary Key` that will be used in step 10.
+    
+
+#### Step 5: Create a Consumer group
+   
+Navigate to “Home”, “Event Hubs”, “company-eventhubnamespace”, ”active-directory-event - Consumer groups”. 
+
+From there, you can create a consumer group (e.g. `consumergroup_sekoiaio`).
+
+!!! info
+    Carefully store the Consumer Group name that will be used in step 10.
+
+#### Step 6: Create a Blob Storage for Checkpointing
 
 In order to allow Sekoia.io keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
 
@@ -66,35 +103,62 @@ PS Azure:\> az storage container create --name "active-directory-event" --accoun
     The container name, here `active-directory-event` should be the same as the Event Hub’s one.
     You also need to replace `company-resource-group` with the name of your “resource group”.
 
-Finally, you have to retrieve the connection string from Azure Web Portal by going in “Storage Accounts”, then in the created storage (`sekoiaiocheckpoint`) and finally in the “Access Keys” section. After clicking on “Show keys”, you can copy the first of the two connection strings.
+#### Step 7: Retrieve Connection String
 
-### Azure Active Directory
+You have to retrieve the connection string from Azure Web Portal.
+
+Go to “Storage Accounts”, "sekoiacheckpoint", "Access Keys". 
+
+Click on "Show Keys" on the first Connection String. 
+![Connection String](https://github.com/jdpju/documentation/assets/113444861/dc6e176c-ac19-46d4-a65a-b97a1331a2d8){: style="max-width:100%"}
+
+!!! info
+    Carefully store the Connection String that will be used in step 10.
+
+#### Step 8: Activate Azure Active Directory diagnostic settings
 
 You need to activate and configure the Azure Active Directory diagnostic settings (e.g. `company-ad`).
 
 Navigate to “Home”, “Azure Active Directory” (e.g. `company-ad`), “Monitoring”, ”Diagnostic settings”:
 
 - Add a new diagnostic setting, and select “Stream to an event hub” and click on configure.
-- Select the previously created “Event hubs”, “Event Hub” and “SharedAccessKey”.
-- In the log section, select “AuditLogs” and “SignInLogs”.
+- Select the previously created “Event hubs”, “Event Hub” and “SharedAccessKey” (**see step 2**).
+- In the log section, select all log categories (as shown below).
 - Choose a name for this configuration and click on “Save”.
+  
+![diag](https://github.com/jdpju/documentation/assets/113444861/b5e55fd3-da86-4f2f-8095-3c1704ae7a20){: style="max-width:100%"}
 
-### Connection Keys to Sekoia.io via Playbook
+#### Step 9: Create an Azure ID intake on your Sekoia.io community
 
-Last step to integrate your log into Sekoia.io, please follow the steps below:
+Go to your Sekoia.io console. 
 
-1. Create a playbook with Trigger module **Consume Eventhub messages** in Microsoft Azure technology
+Go to the intake page. 
+
+Click on the '+' on the top-right corner to add an Azure AD intake.
+
+Create the intake. 
+
+Once the intake is created, carefully store the intake key for the Azure AD intake you just created: 
+
+<img width="1438" alt="image" src="https://github.com/jdpju/documentation/assets/113444861/9b92b2b3-8840-4497-a77c-f1948685c361">
+
+#### Step 10: Create and configure a playbook on Sekoia.io to collect your logs 
+
+The last step to integrate your log into Sekoia.io, is to create a playbook that will consume your logs.
+To do so, please go the playbook section. 
+
+1. Create a playbook with the Trigger module **Consume Eventhub messages** in Microsoft Azure technology
 2. Setup Module configuration (= default)
 
 3. Setup Trigger configuration
 
- - hub_connection_string = Connection string–primary key finishing by `Entitypath =`
- - hub_consumer_group = Consumer Group name (eg. `consumergroup_sekoiaio`)
- - hub_name = value of EntityPath
- - intake_key = Microsoft Azure Intake key that can be found on intake page
+ - hub_connection_string = Connection string–primary key finishing by `Entitypath =` that was found in **step 4**.
+ - hub_consumer_group = Consumer Group name found in **step 5** (eg. `consumergroup_sekoiaio`)
+ - hub_name = value of EntityPath within the `hub_connection_string` AKA the name of the Event Hub you specified in **step 2**
+ - intake_key = Microsoft Azure Intake key that can be found on intake page, found in **step 9**
  - intake_server = `https://intake.sekoia.io`
- - storage_connection_string = Storage Connection string
- - storage_container_name = value of EntityPath
+ - storage_connection_string = Storage Connection string, found in **step 7**
+ - storage_container_name = value of EntityPath within the storage_connection_string AKA the name of your Blob Storage (container name), created in **step 6** (eg. `active-directory-event`)
 
 **Format example**
 
