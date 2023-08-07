@@ -43,37 +43,43 @@ Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/securi
 
 ## Configure
 
-To forward Microsoft 365 Defender events from Microsoft to Sekoia.io you need to send your event to an Azure Event Hub where Sekoia.io will collect the events.
+To forward **Microsoft 365 Defender** events from Microsoft to Sekoia.io you need to send your event to an **Azure Event Hub** where Sekoia.io will collect the events.
+<div style="text-align: center;">
+    <img width="100%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/consume_azure_logs.png">
+</div>
+
+### Prerequisite
+
+You must have the following rights to perform the installation:  
+- Global Administrator or Security Administrator rights on **Microsoft 365 Defender**  
+- Contributor write on **Azure** 
+
+{!_shared_content/operations_center/integrations/event_hub.md!}
+
+### Send logs from 365 Defender to Azure Event Hub
+
+When you have an **Event Hub** follow this guide to send your events from **Microsoft 365 Defender** to the **Event Hub**:
+
+1. Log on to **Microsoft 365 Defender** portal as a Global Administrator or Security Administrator.
+2. Go to the Streaming API settings page.
+3. Click on Add.
+4. Choose a name for your new settings.
+5. Choose Forward events to **Azure Event Hub**.
+6. To export the event data to a single **Event Hub**, enter your **Event Hub** name and your **Event Hub** resource ID.
+7. To get your **Event Hub** resource ID, go to your **Azure Event Hub Namespace** page on Azure > Properties tab > copy the text under Resource ID:
+(e.g. `/subscriptions/XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/resourceGroups/resourcegroupname/providers/Microsoft.EventHub/namespaces/namespacename`).
+8. Go to the supported **Microsoft 365 Defender** event types in event streaming API to review the support status of event types in the Microsoft 365 Streaming API.
+9. Choose the events you want to stream and click Save.
+
+!!! Info
+    We advise to send one event type by **Event Hub**, to avoid performance issue with **Microsoft 365 Defender** events
+
+#### Further Readings
+
+- [Configure Microsoft 365 Defender to stream Advanced Hunting events to your Azure Event Hub](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub)
 
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Microsoft 365 Defender`.
 
-### Create an Azure Event Hub
-
-If you do not already have a Event Hub follow this guide :
-{!_shared_content/operations_center/integrations/event_hub.md!}
-
-### Send logs from 365 Defender to Azure Event Hub
-
-When you have an Event Hub follow this guide to send your events from Microsoft 365 Defender to the Event Hub :
-
-- Log on to Microsoft 365 Defender portal as a Global Administrator or Security Administrator.
-- Go to the Streaming API settings page.
-- Click on Add.
-- Choose a name for your new settings.
-- Choose Forward events to Azure Event Hub.
-
-- You can select if you want to export the event data to a single Event Hub, or to export each event table to a different Event Hubs in your Event Hubs namespace.
-- To export the event data to a single Event Hub, enter your Event Hub name and your Event Hub resource ID.
-- To get your Event Hub resource ID, go to your Azure Event Hubs namespace page on Azure > Properties tab > copy the text under Resource ID:
-(e.g. `/subscriptions/XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/resourceGroups/resourcegroupname/providers/Microsoft.EventHub/namespaces/namespacename`).
-- An Event Hub resource ID
-- Go to the Supported Microsoft 365 Defender event types in event streaming API to review the support status of event types in the Microsoft 365 Streaming API.
-- Choose the events you want to stream and click Save.
-
 {!_shared_content/operations_center/integrations/configure_consume_event_hub.md!}
-
-#### Further Readings
-
-- [Configure Microsoft 365 Defender to stream Advanced Hunting events to your Azure Event Hub](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub)
