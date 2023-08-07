@@ -43,29 +43,37 @@ Please follow [this link](https://learn.microsoft.com/en-us/microsoft-365/securi
 
 ## Configure
 
-### Prerequisites
-
-To forward events to Sekoia.io, please follow [this guide](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub) to create an EventHubs namespace with an EventHubs that enable the data streaming on the hub.
-
-Once the data streaming is configured, in your EventHubs, go to `Setting > Shared access policies`.
-Create a new policy with the option `Listen` then copy the `Connection string-primary key`.
-
-Create a `Storage accounts` or use an existing one. Go to `Data storage > containers` and create a new container.
-Then go to `Security + networking > Access keys` and copy the key1 `Connection string`
+To forward Microsoft 365 Defender events from Microsoft to Sekoia.io you need to send your event to an Azure Event Hub where Sekoia.io will collect the events.
 
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Microsoft 365 Defender`.
 
-### Pull events
+### Create an Azure Event Hub
 
-Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](../../../automate/library/microsoft-azure.md#consume-eventhub-messages) module. 
+If you do not already have a Event Hub follow this guide :
+{!_shared_content/operations_center/integrations/event_hub.md!}
 
-Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
+### Send logs from 365 Defender to Azure Event Hub
 
-Start the playbook and enjoy your [events](https://app.sekoia.io/operations/events).
+When you have an Event Hub follow this guide to send your events from Microsoft 365 Defender to the Event Hub :
 
+- Log on to Microsoft 365 Defender portal as a Global Administrator or Security Administrator.
+- Go to the Streaming API settings page.
+- Click on Add.
+- Choose a name for your new settings.
+- Choose Forward events to Azure Event Hub.
 
-## Further Readings
+- You can select if you want to export the event data to a single Event Hub, or to export each event table to a different Event Hubs in your Event Hubs namespace.
+- To export the event data to a single Event Hub, enter your Event Hub name and your Event Hub resource ID.
+- To get your Event Hub resource ID, go to your Azure Event Hubs namespace page on Azure > Properties tab > copy the text under Resource ID:
+(e.g. `/subscriptions/XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/resourceGroups/resourcegroupname/providers/Microsoft.EventHub/namespaces/namespacename`).
+- An Event Hub resource ID
+- Go to the Supported Microsoft 365 Defender event types in event streaming API to review the support status of event types in the Microsoft 365 Streaming API.
+- Choose the events you want to stream and click Save.
+
+{!_shared_content/operations_center/integrations/configure_consume_event_hub.md!}
+
+#### Further Readings
 
 - [Configure Microsoft 365 Defender to stream Advanced Hunting events to your Azure Event Hub](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub)
