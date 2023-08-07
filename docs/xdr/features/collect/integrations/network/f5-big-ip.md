@@ -21,7 +21,7 @@ Most BIG-IP modules can use Log Publishers, some can directly log messages as CE
 
 ### Set up the concentrator
 
-Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to set up the concentrator that will forward your logs to Sekoia.io.
+Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to set up the concentrator that will forward your logs to Sekoia.io.
 
 ### Configure a Log Publisher
 

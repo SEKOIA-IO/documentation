@@ -76,4 +76,4 @@ Explanations:
 
 ## Forward logs to Sekoia.io
 
-The reader is invited to consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
+The reader is invited to consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
