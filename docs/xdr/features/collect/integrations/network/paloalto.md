@@ -70,7 +70,7 @@ For detailed information about configuring a log forwarding profile and assignin
 
 #### Forward logs to Sekoia.io
 
-Please refer to the documentation of the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
+Please refer to the documentation of the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 ### Forward events through Palo Alto Cortex Data Lake
 

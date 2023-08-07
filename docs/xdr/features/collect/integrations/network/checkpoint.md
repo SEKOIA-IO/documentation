@@ -19,4 +19,4 @@ Log Exporter must be configured to send logs in the **CEF format**.
 
 ### Syslog forwading
 
-Please refer to the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to Sekoia.io.
+Please refer to the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
