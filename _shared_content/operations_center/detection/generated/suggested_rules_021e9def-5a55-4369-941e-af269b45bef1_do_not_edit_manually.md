@@ -795,12 +795,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     
     - **Effort:** intermediate
 
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-
 ??? abstract "Windows Defender Disabled Base64 Encoded"
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
@@ -854,3 +848,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

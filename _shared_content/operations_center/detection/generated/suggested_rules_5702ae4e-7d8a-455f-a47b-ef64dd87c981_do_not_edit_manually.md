@@ -111,7 +111,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortigate** with the followi
     
     - **Effort:** advanced
 
-??? abstract "Fortinet Firewall Login In Failure"
+??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
     

@@ -1,9 +1,21 @@
-Changelog _last update on 2023-08-04_
+Changelog _last update on 2023-08-08_
 
 ## Changelog
 
+### Windows Defender Tampering Detected
+  - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+    
+### Windows Defender Exclusion Configuration
+  - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
+    
+### Okta User Logged In Multiple Applications
+  - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
+    
 ### Potential LokiBot User-Agent
   - 04/08/2023 - minor - Added a condition to only match on internal IP as source
+    
+### Suspicious Windows DNS Queries
+  - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
     
 ### Wmic Process Call Creation
   - 01/08/2023 - major - Rewritten as a regex to reduce false positives
@@ -146,7 +158,7 @@ Changelog _last update on 2023-08-04_
 ### Windows Update LolBins
   - 24/03/2023 - minor - The legitimate DLL UpdateDeploymentProvider.dll is now excluded from the rule as it triggered several false positives.
     
-### SentinelOne User Logged In To The Management Console
+### SentinelOne EDR User Logged In To The Management Console
   - 24/03/2023 - minor - Adjusting displayed columns when the rule triggers an alert. Now timestamp and username will be displayed.
     
 ### Login Brute-Force Successful On AzureAD From Single IP Address

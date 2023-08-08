@@ -555,9 +555,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     
     - **Effort:** master
 
-??? abstract "Microsoft 365 Defender Office 365 Alert"
+??? abstract "Microsoft Defender for Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
 
@@ -1269,12 +1269,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     
     - **Effort:** intermediate
 
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-
 ??? abstract "Windows Defender Disabled Base64 Encoded"
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
@@ -1364,3 +1358,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Microsoft 365 Defender** wit
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

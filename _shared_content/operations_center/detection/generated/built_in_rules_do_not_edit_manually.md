@@ -1,4 +1,4 @@
-Rules catalog includes **731 built-in detection rules** ([_last update on 2023-08-04_](rules_changelog.md)).
+Rules catalog includes **733 built-in detection rules** ([_last update on 2023-08-08_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -311,13 +311,13 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
 **Compromise Accounts**
 
-??? abstract "Defender for O365 High Severity AIR Alert"
+??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
     
     - **Effort:** elementary
     
-??? abstract "Defender for O365 Medium Severity AIR Alert"
+??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
     
@@ -335,6 +335,10 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
+            
 **Obtain Capabilities**
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
@@ -392,33 +396,33 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -439,6 +443,18 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -660,30 +676,6 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Defender for O365 High Severity AIR Alert"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
-    
-    - **Effort:** elementary
-    
-??? abstract "Defender for O365 Low Severity AIR Alert Handled Automatically"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
-    
-    - **Effort:** advanced
-    
-??? abstract "Defender for O365 Low Severity AIR Alert Requires Action"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Defender for O365 Medium Severity AIR Alert"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
@@ -695,24 +687,6 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     Detects download of certain file types from hosts in suspicious TLDs
     
     - **Effort:** master
-    
-??? abstract "Email Classified As Malware But Allowed (Proofpoint)"
-    
-    An email was classified as malware with a threat score greater than 0 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-    
-??? abstract "Email Classified As Phishing But Allowed (Proofpoint)"
-    
-    An email was classified as phishing with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-    
-??? abstract "Email Classified As Spam But Allowed (Proofpoint)"
-    
-    An email was classified as spam with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
     
 ??? abstract "Malware Detected By Vade For M365"
     
@@ -726,131 +700,155 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
     
-    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 Anti-Phishing Policy Deletion"
-    
-    Detects when the anti-phishing policy is removed from Office 365. By default, Office 365 includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
+    Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
     
     - **Effort:** master
     
-??? abstract "Office 365 Anti-Phishing Rule Deletion"
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Rule Deletion"
     
-    Detects the deactivation of the anti-phishing rule from Office 365. The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
+    Detects the deactivation of the anti-phishing rule from Microsoft 365 (Office 365). The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
     
     - **Effort:** master
     
-??? abstract "Office 365 AtpDetection"
+??? abstract "Microsoft 365 (Office 365) AtpDetection"
     
     Detects when an AtpDetection (Advanced Threat Protection) event from the Office365 ThreatIntelligence service is raised. AtpDetection is a service which secures emails, attachments, and files by scanning them for threats.
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 DLP Policy Removed"
+??? abstract "Microsoft 365 (Office 365) DLP Policy Removed"
     
-    Detects when a DLP (Data Loss Prevention) policy is removed in Office 365. DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Detection Velocity"
-    
-    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when a DLP (Data Loss Prevention) policy is removed in Microsoft 365 (Office 365). DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
     
     - **Effort:** master
     
-??? abstract "Office 365 MCAS Inbox Hiding"
+??? abstract "Microsoft 365 (Office 365) MCAS Detection Velocity"
     
-    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS New Country"
-    
-    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 MCAS Repeated Delete"
+??? abstract "Microsoft 365 (Office 365) MCAS Inbox Hiding"
     
-    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Repeated Failed Login"
-    
-    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 MCAS Risky IP"
+??? abstract "Microsoft 365 (Office 365) MCAS New Country"
     
-    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MailBoxAuditBypassAssociation Option Implementation"
-    
-    Detects the implementation of a MailBoxAuditBypassAssociation option in Office 365. This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 Malware Filter Policy Removed"
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Delete"
     
-    Detects when a malware policy has been deleted in Office 365. A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Filter Rule Deletion"
-    
-    Detects when a malware filter rule has been deleted in Office 365. The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 Malware Uploaded On OneDrive"
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Failed Login"
     
-    Detects when Office 365 identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
+    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Risky IP"
+    
+    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MailBoxAuditBypassAssociation Option Implementation"
+    
+    Detects the implementation of a MailBoxAuditBypassAssociation option in Microsoft 365 (Office 365). This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Policy Removed"
+    
+    Detects when a malware policy has been deleted in Microsoft 365 (Office 365). A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Rule Deletion"
+    
+    Detects when a malware filter rule has been deleted in Microsoft 365 (Office 365). The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On OneDrive"
+    
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 Malware Uploaded On SharePoint"
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On SharePoint"
     
-    Detects when Office 365 identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 Mass Download By A Single User"
+??? abstract "Microsoft 365 (Office 365) Mass Download By A Single User"
     
     Identifies when Microsoft Cloud App Security reports that a single user performs more than 50 downloads within 1 minute.
     
     - **Effort:** master
     
-??? abstract "Office 365 Potential Ransomware Activity Detected"
+??? abstract "Microsoft 365 (Office 365) Potential Ransomware Activity Detected"
     
     Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
     
     - **Effort:** master
     
-??? abstract "Office 365 Safe Attachment Rule Disabled"
+??? abstract "Microsoft 365 (Office 365) Safe Attachment Rule Disabled"
     
-    Detects when the safe attachment rule has been deleted in Office 365. Safe Attachments is a feature in Microsoft Defender for Office 365 that opens email attachments in a special hypervisor environment to detect malicious activity.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Safelinks Disabled"
-    
-    Detects when a safelink rule has been deleted in Office 365. Safe Links is a feature in Defender for Office 365 that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    Detects when the safe attachment rule has been deleted in Microsoft 365 (Office 365). Safe Attachments is a feature in Microsoft Defender for Microsoft 365 (Office 365) that opens email attachments in a special hypervisor environment to detect malicious activity.
     
     - **Effort:** master
     
-??? abstract "Office 365 Unusual Volume Of File Deletion"
+??? abstract "Microsoft 365 (Office 365) Safelinks Disabled"
+    
+    Detects when a safelink rule has been deleted in Microsoft 365 (Office 365). Safe Links is a feature in Defender for Microsoft 365 (Office 365) that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Unusual Volume Of File Deletion"
     
     Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
     
     - **Effort:** master
+    
+??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
+    
+    - **Effort:** elementary
+    
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta Phishing Detection with FastPass Origin Check"
     
@@ -875,6 +873,24 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     Detects request to potential malicious file with double extension
     
     - **Effort:** elementary
+    
+??? abstract "Proofpoint TAP Email Classified As Malware But Allowed"
+    
+    An email was classified as malware with a threat score greater than 0 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+    
+??? abstract "Proofpoint TAP Email Classified As Phishing But Allowed"
+    
+    An email was classified as phishing with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+    
+??? abstract "Proofpoint TAP Email Classified As Spam But Allowed"
+    
+    An email was classified as spam with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
     
 ??? abstract "Retarus Email Security Threat Detected (CxO Or Patient Zero Detection)"
     
@@ -1179,51 +1195,51 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection"
+??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection High Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Low Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
     - **Effort:** advanced
     
-??? abstract "Cybereason MalOp Alert"
+??? abstract "Cybereason EDR Alert"
     
-    Cybereason MalOp telemetry has raised an alert
+    Cybereason EDR telemetry has raised an alert
     
     - **Effort:** intermediate
     
-??? abstract "Cybereason MalOp Malware Detection"
+??? abstract "Cybereason EDR Malware Detection"
     
-    Cybereason MalOp telemetry has detected a malware
+    Cybereason EDR telemetry has detected a malware
     
     - **Effort:** advanced
     
@@ -1305,15 +1321,15 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
     - **Effort:** intermediate
     
-??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
     
     - **Effort:** advanced
     
@@ -1359,9 +1375,9 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Microsoft 365 Defender Office 365 Alert"
+??? abstract "Microsoft Defender for Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -1489,85 +1505,85 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Agent Disabled"
+??? abstract "SentinelOne EDR Agent Disabled"
     
-    A SentinelOne agent has been disabled according to SentinelOne logs.
+    A SentinelOne EDR agent has been disabled according to SentinelOne logs.
     
     - **Effort:** master
     
-??? abstract "SentinelOne Custom Rule Alert"
+??? abstract "SentinelOne EDR Custom Rule Alert"
     
-    A SentinelOne agent has detected a threat related to a Custom Rule and raised an alert for it.
+    A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
+??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Malicious Threat Not Mitigated"
+??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne SSO User Added"
+??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
+??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Detected (Malicious)"
+??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
-    A SentinelOne agent has detected a threat with a high confidence level (malicious).
+    A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Threat Detected (Suspicious)"
+??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious).
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Kill Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne User Failed To Log In To The Management Console"
+??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
     
     - **Effort:** master
     
-??? abstract "SentinelOne User Logged In To The Management Console"
+??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
     
@@ -1901,57 +1917,81 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
+    
+    Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
+??? abstract "Broadcom/Symantec Endpoint Security Event Cleaned"
+    
+    Broadcom/Symantec Endpoint Security had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
+??? abstract "Broadcom/Symantec Endpoint Security Event Quarantined"
+    
+    Broadcom/Symantec Endpoint Security had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
+??? abstract "Broadcom/Symantec Endpoint Security Event Terminate"
+    
+    Broadcom/Symantec Endpoint Security had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
 ??? abstract "Cobalt Strike Default Beacons Names"
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
     - **Effort:** elementary
     
-??? abstract "CrowdStrike Intrusion Detection"
+??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection High Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Low Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
     - **Effort:** advanced
     
-??? abstract "Cybereason MalOp Alert"
+??? abstract "Cybereason EDR Alert"
     
-    Cybereason MalOp telemetry has raised an alert
+    Cybereason EDR telemetry has raised an alert
     
     - **Effort:** intermediate
     
-??? abstract "Cybereason MalOp Malware Detection"
+??? abstract "Cybereason EDR Malware Detection"
     
-    Cybereason MalOp telemetry has detected a malware
+    Cybereason EDR telemetry has detected a malware
     
     - **Effort:** advanced
     
@@ -1979,43 +2019,43 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "HarfangLab Critical Level Rule Detection"
+??? abstract "HarfangLab EDR Critical Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab High Level Rule Detection"
+??? abstract "HarfangLab EDR High Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab Hlai Engine Detection"
+??? abstract "HarfangLab EDR Hlai Engine Detection"
     
     HarfangLab EDR has raised an alert based on its hlai engine
     
     - **Effort:** advanced
     
-??? abstract "HarfangLab Low Level Rule Detection"
+??? abstract "HarfangLab EDR Low Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab Medium Level Rule Detection"
+??? abstract "HarfangLab EDR Medium Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab Process Execution Blocked"
+??? abstract "HarfangLab EDR Process Execution Blocked"
     
     HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
     
-??? abstract "HarfangLab Suspicious Process Behavior Has Been Detected"
+??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
     HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
     
@@ -2037,15 +2077,15 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
         - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
             
-??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
     - **Effort:** intermediate
     
-??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
     
     - **Effort:** advanced
     
@@ -2079,6 +2119,126 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
+    
+    Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Rule Deletion"
+    
+    Detects the deactivation of the anti-phishing rule from Microsoft 365 (Office 365). The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) AtpDetection"
+    
+    Detects when an AtpDetection (Advanced Threat Protection) event from the Office365 ThreatIntelligence service is raised. AtpDetection is a service which secures emails, attachments, and files by scanning them for threats.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 (Office 365) DLP Policy Removed"
+    
+    Detects when a DLP (Data Loss Prevention) policy is removed in Microsoft 365 (Office 365). DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Detection Velocity"
+    
+    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Inbox Hiding"
+    
+    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS New Country"
+    
+    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Delete"
+    
+    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Failed Login"
+    
+    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Risky IP"
+    
+    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MailBoxAuditBypassAssociation Option Implementation"
+    
+    Detects the implementation of a MailBoxAuditBypassAssociation option in Microsoft 365 (Office 365). This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Policy Removed"
+    
+    Detects when a malware policy has been deleted in Microsoft 365 (Office 365). A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Rule Deletion"
+    
+    Detects when a malware filter rule has been deleted in Microsoft 365 (Office 365). The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On OneDrive"
+    
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On SharePoint"
+    
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 (Office 365) Mass Download By A Single User"
+    
+    Identifies when Microsoft Cloud App Security reports that a single user performs more than 50 downloads within 1 minute.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Potential Ransomware Activity Detected"
+    
+    Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Safe Attachment Rule Disabled"
+    
+    Detects when the safe attachment rule has been deleted in Microsoft 365 (Office 365). Safe Attachments is a feature in Microsoft Defender for Microsoft 365 (Office 365) that opens email attachments in a special hypervisor environment to detect malicious activity.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Safelinks Disabled"
+    
+    Detects when a safelink rule has been deleted in Microsoft 365 (Office 365). Safe Links is a feature in Defender for Microsoft 365 (Office 365) that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Unusual Volume Of File Deletion"
+    
+    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft 365 Defender Alert"
     
     Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
@@ -2097,9 +2257,9 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Microsoft 365 Defender Office 365 Alert"
+??? abstract "Microsoft Defender for Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2121,211 +2281,91 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 Anti-Phishing Policy Deletion"
-    
-    Detects when the anti-phishing policy is removed from Office 365. By default, Office 365 includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Anti-Phishing Rule Deletion"
-    
-    Detects the deactivation of the anti-phishing rule from Office 365. The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 AtpDetection"
-    
-    Detects when an AtpDetection (Advanced Threat Protection) event from the Office365 ThreatIntelligence service is raised. AtpDetection is a service which secures emails, attachments, and files by scanning them for threats.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 DLP Policy Removed"
-    
-    Detects when a DLP (Data Loss Prevention) policy is removed in Office 365. DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Detection Velocity"
-    
-    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Inbox Hiding"
-    
-    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS New Country"
-    
-    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Repeated Delete"
-    
-    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Repeated Failed Login"
-    
-    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Risky IP"
-    
-    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MailBoxAuditBypassAssociation Option Implementation"
-    
-    Detects the implementation of a MailBoxAuditBypassAssociation option in Office 365. This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Filter Policy Removed"
-    
-    Detects when a malware policy has been deleted in Office 365. A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Filter Rule Deletion"
-    
-    Detects when a malware filter rule has been deleted in Office 365. The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Uploaded On OneDrive"
-    
-    Detects when Office 365 identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 Malware Uploaded On SharePoint"
-    
-    Detects when Office 365 identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 Mass Download By A Single User"
-    
-    Identifies when Microsoft Cloud App Security reports that a single user performs more than 50 downloads within 1 minute.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Potential Ransomware Activity Detected"
-    
-    Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Safe Attachment Rule Disabled"
-    
-    Detects when the safe attachment rule has been deleted in Office 365. Safe Attachments is a feature in Microsoft Defender for Office 365 that opens email attachments in a special hypervisor environment to detect malicious activity.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Safelinks Disabled"
-    
-    Detects when a safelink rule has been deleted in Office 365. Safe Links is a feature in Defender for Office 365 that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Unusual Volume Of File Deletion"
-    
-    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
-    
-    - **Effort:** master
-    
 ??? abstract "Okta Security Threat Detected"
     
     Detects when a security threat is detected in Okta.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Agent Disabled"
+??? abstract "SentinelOne EDR Agent Disabled"
     
-    A SentinelOne agent has been disabled according to SentinelOne logs.
+    A SentinelOne EDR agent has been disabled according to SentinelOne logs.
     
     - **Effort:** master
     
-??? abstract "SentinelOne Custom Rule Alert"
+??? abstract "SentinelOne EDR Custom Rule Alert"
     
-    A SentinelOne agent has detected a threat related to a Custom Rule and raised an alert for it.
+    A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
+??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Malicious Threat Not Mitigated"
+??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne SSO User Added"
+??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
+??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Detected (Malicious)"
+??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
-    A SentinelOne agent has detected a threat with a high confidence level (malicious).
+    A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Threat Detected (Suspicious)"
+??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious).
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Kill Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne User Failed To Log In To The Management Console"
+??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
     
     - **Effort:** master
     
-??? abstract "SentinelOne User Logged In To The Management Console"
+??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
     
@@ -2377,30 +2417,6 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Symantec EPP Event Blocked"
-    
-    Symantec EPP blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
-??? abstract "Symantec EPP Event Cleaned"
-    
-    Symantec EPP had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
-??? abstract "Symantec EPP Event Quarantined"
-    
-    Symantec EPP had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
-??? abstract "Symantec EPP Event Terminate"
-    
-    Symantec EPP had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
 ??? abstract "Sysmon Windows File Block Executable"
     
     Sysmon has blocked an executable file from being written to the disk. This could be a malicious binary to investigate.  
@@ -2439,37 +2455,37 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection"
+??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection High Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Low Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
@@ -2491,15 +2507,15 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
             
-??? abstract "Cybereason MalOp Alert"
+??? abstract "Cybereason EDR Alert"
     
-    Cybereason MalOp telemetry has raised an alert
+    Cybereason EDR telemetry has raised an alert
     
     - **Effort:** intermediate
     
-??? abstract "Cybereason MalOp Malware Detection"
+??? abstract "Cybereason EDR Malware Detection"
     
-    Cybereason MalOp telemetry has detected a malware
+    Cybereason EDR telemetry has detected a malware
     
     - **Effort:** advanced
     
@@ -2519,15 +2535,15 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
     - **Effort:** intermediate
     
-??? abstract "Login Failed Brute-Force On SentinelOne Management Console"
+??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and failed every time.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
     
     - **Effort:** advanced
     
@@ -2587,9 +2603,9 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Microsoft 365 Defender Office 365 Alert"
+??? abstract "Microsoft Defender for Office 365 Alert"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2649,85 +2665,85 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
             
-??? abstract "SentinelOne Agent Disabled"
+??? abstract "SentinelOne EDR Agent Disabled"
     
-    A SentinelOne agent has been disabled according to SentinelOne logs.
+    A SentinelOne EDR agent has been disabled according to SentinelOne logs.
     
     - **Effort:** master
     
-??? abstract "SentinelOne Custom Rule Alert"
+??? abstract "SentinelOne EDR Custom Rule Alert"
     
-    A SentinelOne agent has detected a threat related to a Custom Rule and raised an alert for it.
+    A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
+??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Malicious Threat Not Mitigated"
+??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne SSO User Added"
+??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
+??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Detected (Malicious)"
+??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
-    A SentinelOne agent has detected a threat with a high confidence level (malicious).
+    A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Threat Detected (Suspicious)"
+??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious).
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Kill Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne User Failed To Log In To The Management Console"
+??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
     
     - **Effort:** master
     
-??? abstract "SentinelOne User Logged In To The Management Console"
+??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
     
@@ -3088,33 +3104,33 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -3135,6 +3151,18 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -4321,33 +4349,33 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -4368,6 +4396,18 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -5431,8 +5471,12 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+            
 **Valid Accounts**
 
 ??? abstract "Account Added To A Security Enabled Group"
@@ -5481,33 +5525,33 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -5528,6 +5572,18 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     Detects successful access to Sekoia.io after several failure.
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -5991,6 +6047,12 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master
+    
 **XSL Script Processing**
 
 ??? abstract "WMIC Loading Scripting Libraries"
@@ -6363,7 +6425,7 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
-??? abstract "Google Cloud Audit Trusted Domain Added"
+??? abstract "Google Cloud Audit Logs Trusted Domain Added"
     
     Detects when a domain name is added to Google Workspace Trusted Domain. This could be used by an attacker to bypass some security controls or just be a legit admin action.
     
@@ -6597,12 +6659,6 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Windows Defender Disabled Base64 Encoded"
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
@@ -6613,8 +6669,12 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
+            
 ??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
     
     Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
@@ -6631,8 +6691,12 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+            
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
@@ -7127,13 +7191,13 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Login In Failure"
+??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
@@ -7195,7 +7259,7 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
 **Multi-Factor Authentication Interception**
 
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
     
@@ -7255,9 +7319,9 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
         - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
             
-??? abstract "Google Cloud Audit 2FA Disabled"
+??? abstract "Google Cloud Audit Logs 2FA Disabled"
     
-    Detects when Google Cloud Audit notify the 2FA deactivation for a user account.
+    Detects when Google Cloud Audit Logs notify the 2FA deactivation for a user account.
     
     - **Effort:** intermediate
     
@@ -7313,7 +7377,7 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
 **Adversary-in-the-Middle**
 
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
     
@@ -7890,13 +7954,13 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Custom Gmail Route"
+??? abstract "Google Cloud Audit Logs Custom Gmail Route"
     
     Detects when a custom Gmail route is added or modified. This could be abused by attackers to exfiltrate data.
     
     - **Effort:** advanced
     
-??? abstract "Google Cloud Audit Email Forwarding"
+??? abstract "Google Cloud Audit Logs Email Forwarding"
     
     Detects when an out of domain email forwarding is enabled on Google Cloud.
     
@@ -7930,7 +7994,7 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
 **Adversary-in-the-Middle**
 
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
     
@@ -8165,6 +8229,10 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
+            
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
@@ -8538,7 +8606,7 @@ Rules catalog includes **731 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Drive Ownership Transferred"
+??? abstract "Google Cloud Audit Logs Drive Ownership Transferred"
     
     Detects when Drive/Docs user files ownership is transferred. The legit use case is when a user is being removed, but this could also be abused by an attacker for exfiltration.
     

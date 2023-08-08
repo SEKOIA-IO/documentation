@@ -21,6 +21,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** intermediate
 
+??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
+    
+    Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Broadcom/Symantec Endpoint Security Event Cleaned"
+    
+    Broadcom/Symantec Endpoint Security had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Broadcom/Symantec Endpoint Security Event Quarantined"
+    
+    Broadcom/Symantec Endpoint Security had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Broadcom/Symantec Endpoint Security Event Terminate"
+    
+    Broadcom/Symantec Endpoint Security had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -212,30 +236,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
     
     - **Effort:** intermediate
-
-??? abstract "Symantec EPP Event Blocked"
-    
-    Symantec EPP blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-
-??? abstract "Symantec EPP Event Cleaned"
-    
-    Symantec EPP had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-
-??? abstract "Symantec EPP Event Quarantined"
-    
-    Symantec EPP had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-
-??? abstract "Symantec EPP Event Terminate"
-    
-    Symantec EPP had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
 
 ??? abstract "System Info Discovery"
     
