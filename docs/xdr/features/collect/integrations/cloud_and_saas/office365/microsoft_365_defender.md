@@ -71,7 +71,7 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 8. Go to the supported **Microsoft 365 Defender** event types in event streaming API to review the support status of event types in the Microsoft 365 Streaming API.
 9. Choose the events you want to stream and click Save.
 
-!!! Info
+!!! Disclamer
     We advise to send one event type by **Event Hub**, to avoid performance issue with **Microsoft 365 Defender** events
 
 #### Further Readings

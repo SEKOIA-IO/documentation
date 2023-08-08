@@ -8,14 +8,15 @@ This setup guide will show you how to create an **Event Hub**.
 
 Theses changes have to be made from the [Azure Web Portal](https://portal.azure.com).
 
-Some resources created during this procedure are needed to connect Sekoia.io to the **Event Hub**, you can complete the following file to save all the useful informations for later use.
-```   
-    - hub_name = **To be completed at step 3** (EntityPath within the `hub_connection_string` AKA the name of the Event Hub)
-    - hub_connection_string = **To be completed at step 5** (Connection string–primary key finishing by `Entitypath =`)
-    - hub_consumer_group = **To be completed at step 6**
-    - storage_container_name = **To be completed at step 7* (EntityPath within the storage_connection_string AKA the name of your container)
-    - storage_connection_string = **To be completed at step 8**
-```
+Some resources created during this procedure are needed to connect Sekoia.io to the **Event Hub**, you can complete the following table to save all the useful informations for later use.
+
+| **Name** | **Value** | **Description** | **Example** |
+| --- | --- | --- | --- |
+| hub_name | **To be completed at step 3** | Name of the Event Hub | sekoia_event_hub |
+| hub_connection_string | **To be completed at step 5** | Connection string–primary key | Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=sekoia_event_hub |
+| hub_consumer_group | **To be completed at step 6** | Name of the comsumer group | consumergroup_sekoiaio |
+| storage_container_name | **To be completed at step 7** | Name of your container | sekoia_event_hub |
+| storage_connection_string | **To be completed at step 8** | Storage connection string | DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX |
 
 As a prerequisite, you need to choose an existing Resource group, or create a new one (e.g. `company-resource-group`).
 
@@ -95,9 +96,9 @@ When your **Event Hub Namespace** is created you can create an **Event Hub** ins
 !!! info
     Carefully store the **Consumer group** name that will be used for sekoia playbook configuration.
 
-#### Step 7: Create a Blob Storage for Checkpointing
+#### Step 7: Create a Storage Account with a container
 
-In order to allow Sekoia.io keep track of the consumed events, the next step consists in creating a dedicated **Azure Blob Storage**.
+In order to allow Sekoia.io keep track of the consumed events, the next step consists in creating a dedicated **Storage account**.
 
 1. Navigate to [Home > Storage accounts](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts).  
 2. Create a **Storage account**.  
