@@ -15,6 +15,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Azure Active Directory** wit
     
     - **Effort:** advanced
 
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Entra ID (Azure AD) Domain Trust Modification"
     
     Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.

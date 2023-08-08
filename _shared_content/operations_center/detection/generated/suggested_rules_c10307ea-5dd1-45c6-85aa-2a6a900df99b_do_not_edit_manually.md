@@ -85,7 +85,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Winlogbeat** with the follow
     
     Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Windows Defender Threat Detected"
     

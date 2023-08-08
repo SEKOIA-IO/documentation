@@ -723,43 +723,43 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
-??? abstract "HarfangLab Critical Level Rule Detection"
+??? abstract "HarfangLab EDR Critical Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
     
     - **Effort:** master
 
-??? abstract "HarfangLab High Level Rule Detection"
+??? abstract "HarfangLab EDR High Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
     
     - **Effort:** master
 
-??? abstract "HarfangLab Hlai Engine Detection"
+??? abstract "HarfangLab EDR Hlai Engine Detection"
     
     HarfangLab EDR has raised an alert based on its hlai engine
     
     - **Effort:** advanced
 
-??? abstract "HarfangLab Low Level Rule Detection"
+??? abstract "HarfangLab EDR Low Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
     
     - **Effort:** master
 
-??? abstract "HarfangLab Medium Level Rule Detection"
+??? abstract "HarfangLab EDR Medium Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
     
     - **Effort:** master
 
-??? abstract "HarfangLab Process Execution Blocked"
+??? abstract "HarfangLab EDR Process Execution Blocked"
     
     HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
 
-??? abstract "HarfangLab Suspicious Process Behavior Has Been Detected"
+??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
     HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
     
@@ -2379,12 +2379,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-
 ??? abstract "Windows Defender Disabled Base64 Encoded"
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
@@ -2395,7 +2389,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Windows Defender History Deleted"
     
@@ -2425,7 +2419,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Windows Defender Threat Detected"
     
@@ -2522,3 +2516,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

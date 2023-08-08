@@ -45,24 +45,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     
     - **Effort:** master
 
-??? abstract "Email Classified As Malware But Allowed (Proofpoint)"
-    
-    An email was classified as malware with a threat score greater than 0 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-
-??? abstract "Email Classified As Phishing But Allowed (Proofpoint)"
-    
-    An email was classified as phishing with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-
-??? abstract "Email Classified As Spam But Allowed (Proofpoint)"
-    
-    An email was classified as spam with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -92,6 +74,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
     
     - **Effort:** elementary
+
+??? abstract "Proofpoint TAP Email Classified As Malware But Allowed"
+    
+    An email was classified as malware with a threat score greater than 0 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+
+??? abstract "Proofpoint TAP Email Classified As Phishing But Allowed"
+    
+    An email was classified as phishing with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+
+??? abstract "Proofpoint TAP Email Classified As Spam But Allowed"
+    
+    An email was classified as spam with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
 
 ??? abstract "ProxyShell Exchange Suspicious Paths"
     

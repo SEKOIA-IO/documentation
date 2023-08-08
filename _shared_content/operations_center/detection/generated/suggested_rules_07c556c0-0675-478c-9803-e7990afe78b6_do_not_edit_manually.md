@@ -471,85 +471,85 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
     
     - **Effort:** intermediate
 
-??? abstract "SentinelOne Agent Disabled"
+??? abstract "SentinelOne EDR Agent Disabled"
     
-    A SentinelOne agent has been disabled according to SentinelOne logs.
+    A SentinelOne EDR agent has been disabled according to SentinelOne logs.
     
     - **Effort:** master
 
-??? abstract "SentinelOne Custom Rule Alert"
+??? abstract "SentinelOne EDR Custom Rule Alert"
     
-    A SentinelOne agent has detected a threat related to a Custom Rule and raised an alert for it.
+    A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
     - **Effort:** intermediate
 
-??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
+??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
 
-??? abstract "SentinelOne Malicious Threat Not Mitigated"
+??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
 
-??? abstract "SentinelOne SSO User Added"
+??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
     - **Effort:** advanced
 
-??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
+??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
 
-??? abstract "SentinelOne Threat Detected (Malicious)"
+??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
-    A SentinelOne agent has detected a threat with a high confidence level (malicious).
+    A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
     - **Effort:** elementary
 
-??? abstract "SentinelOne Threat Detected (Suspicious)"
+??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious).
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
     - **Effort:** intermediate
 
-??? abstract "SentinelOne Threat Mitigation Report Kill Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
 
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
 
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
 
-??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
 
-??? abstract "SentinelOne User Failed To Log In To The Management Console"
+??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
     
     - **Effort:** master
 
-??? abstract "SentinelOne User Logged In To The Management Console"
+??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
     
@@ -714,12 +714,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne** with the follo
 ??? abstract "Windows Defender Abuse Restoration"
     
     The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
     
     - **Effort:** intermediate
 
