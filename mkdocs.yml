@@ -326,6 +326,7 @@ nav:
     - Consume:
       - Intelligence: cti/features/consume/intelligence.md
       - Observables: cti/features/consume/observables.md
+      - Telemetry: cti/features/consume/telemetry.md      
       - Outgoing Feeds: cti/features/consume/feeds.md
       - Graph Explorations: cti/features/consume/graph_explorations.md
       - Enrichers: cti/features/consume/enrichers.md
