@@ -18,6 +18,7 @@ Please find our English tutorial video below to see how to configure the forward
 ## Prerequisites
 
 * A x86-64 Linux host using one of these templates:
+  
   | Number of assets |  vCPUs |  RAM (Go) | Disk size (Go) | Sekoia concentrator settings                |
   |------------------|:------:|:---------:|:--------------:|:-------------------------------------------:|
   | 1000             |    2   |   4       |      200       |  MEMORY_MESSAGES=2000000 / DISK_SPACE=180g  |
