@@ -4,134 +4,105 @@
 
 Collect Sekoia.io CTI feed in an existing OpenCTI instance self managed, for any operational purpose such as CTI aggregation, dissemination, hunting...
 
-## Prerequisites for the public documentation:
+## Prerequisites:
 - An operational OpenCTI instance with administrator privileges
 - An active Sekoia.io licence with access to the CTI
-- An access to Sekoia.io User Center with the permissions to create an API key
+- An access to Sekoia.io User Center with the permissions to create an API key with [CTI permissions](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
 
-## Configuration
+## 1. Configuration
 
-### 2-1- Feed on Sekoia.io
+1- Add the following code to the end of **docker-compose.yml** file in the OpenCTI docker repo
 
-By default, all Sekoia.io CTI feed will be consumed in OpenCTI
+````
+connector-sekoia:
+    image: opencti/connector-sekoia:5.7.6
+    environment:
+      - OPENCTI_URL=http://opencti:8080
+      - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
+      - CONNECTOR_ID=<Replace_by_email>
+      - CONNECTOR_TYPE=EXTERNAL_IMPORT
+      - CONNECTOR_NAME=SEKOIA.IO
+      - CONNECTOR_SCOPE=identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator
+      - CONNECTOR_CONFIDENCE_LEVEL=15 # From 0 (Unknown) to 100 (Fully trusted)
+      - CONNECTOR_UPDATE_EXISTING_DATA=false
+      - CONNECTOR_LOG_LEVEL=info
+      - SEKOIA_API_KEY=<Replace_by_Sekoia_API_key>
+      - SEKOIA_COLLECTION=d6092c37-d8d7-45c3-8aff-c4dc26030608
+      - SEKOIA_START_DATE=2022-01-01    # Optional, the date to start consuming data from. Maybe in the formats YYYY-MM-DD or YYYY-MM-DDT00:00:00
+      - SEKOIA_CREATE_OBSERVABLES=true  # Create observables from indicators
+    depends_on:
+      - opencti
 
-Besides, it is possible to create a custom feed that will also be consumed in OpenCTI
+volumes:
+  esdata:
+  s3data:
+  redisdata:
+  amqpdata:
+````
 
-Please refer to this [page]( https://docs.sekoia.io/cti/features/consume/feeds/#create-new-feed) for Custom feed creation
+Replace following parameters:
+- `CONNECTOR_ID`=_<Replace_by_email>_
+- `CONNECTOR_SCOPE` =_identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator_ => Sekoia intelligence elements set to be exported in OpenCTI that can be chosen in this list
+- `SEKOIA_API_KEY`=_<Sekoia_API_key_with_CTI_Permissions>_
+- `SEKOIA_START_DATE`=_<start_date_to_retrieve_feed>_ e.g. _2023-05-01_
 
-## 2-2- Setup OpenCTI
+2- Build and launch Sekoia connector
+- Build    `docker-compose pull connector-sekoia`
+- Run      `docker-compose up -d connector-sekoia`
 
-    !!!note
-        This is a summary of the main steps to follow for Setup.
-        Please note that the setup might be updated by OpenCTI
-        
-        Thank you for your understanding.
-        
-        As a reference, please find the installation guide with docker to Linux on OpenCTI documentation 
-        https://docs.opencti.io/5.7.X/deployment/installation/#using-docker
+!!note
+   Sekoia connector should be name **connector-sekoia** as describe on top
+   **docker-compose ps**   to check all connectors available and set on the server
 
-#### 2-2-1. Clone the repository
-1. create a repo for your OpenCTI connector
-2. clone OpenCTI connector
+3- Check if Sekoia connector is running
+`docker-compose ps connector-sekoia`
 
-```
-git clone https://github.com/OpenCTI-Platform/docker.git
-```
+## 2. Connect to OpenCTI
 
-#### 2-2-2. Configure the environment
+1-  In a Web browser, type the following	_http://<server_ip>:<port>/dashboard_
+<image1>
 
-1. rename the file `.env.sample` to `.env`  (contain environment variables for Docker)
-2. Change the following variables value:
-- OPENCTI_ADMIN_EMAIL= *to be set by user*
-- OPENCTI_ADMIN_PASSWORD= *to be set by user*
-- OPENCTI_BASE_URL=http://*your_server_IP*:*port*
+2- Enter your login and password set in **.env** file
 
-#### 2-2-3. Memory management settings
+## 3. Sekoia intelligence in OpenCTI
 
-set the `vm.max_map_count` in `systcl` file before running the containers, as mentioned in the [ElasticSearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-cli-run-prod-mode).
+**1- Check if the connector is running and up to date**
 
-```
-sudo sysctl -w vm.max_map_count=1048575
-```
+Go to Sekoia connector    _Data > Connectors > Sekoia.io >_
+<image2>
 
-#### 2-2-4. Setup Sekoia Docker
-1. Create a separate repo for Sekoia Docker and go to this repo
+In this page, the interesting information can be found about:
+- `Update date` :  Last update date of the connector in OpenCTI
+- `Status` :	   Status of the connector in OpenCTI
+- `Perimeter` :    Sekoia intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
+- `Last cursor` :  **SEKOIA_START_DATE** set in _docker-compose.yml_ file in base64 format
 
-```
-mkdir sekoia-docker
-cd sekoia-docker
-```
-
-3. Setup Docker in this repo by cloning the repo of  the following https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia
-
-```
-git clone https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia
-```
-
-3. Change the following variables value in the docker-compose file :
-   - OPENCTI_URL
-   - OPENCTI_TOKEN
-   - CONNECTOR_ID
-   - SEKOIA_API_KEY = <to be created in [Sekoia.io](http://Sekoia.io) with the IC permissions>
-
-Using for example VIM
-
-```
-Vim docker-compose
-```
-
-For more information, please refer to [OpenCTI documentation on connector setting](https://docs.opencti.io/5.8.X/deployment/connectors/#connector-configuration)
-        
-
-#### 2-2-5. Run OpenCTI
-
-After changing your `.env` file (step 2), please run `docker-compose` in detached (-d) mode:
-
-```
-sudo systemctl start docker.service
-```
-
-Then Run docker-compose in detached
-
-```
-Sudo docker-compose up -d
-```
-
-#### 2-2-6. Launching OpenCTI services
-
-```
-sudo docker stack deploy --compose-file docker-compose.yml opencti
-```
-
-You can now go to `http://localhost:<your_server_port>`  (Port is usually `8080`) and log in with the credentials configured in your environment variables.
-
-## 3- Feed consumption
-#### Search for an IOC
-**- Sekoia.io**
-
-Please refer to this [documentation](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects)
-
-**- OpenCTI**
-- Objects and Relations of Sekoia.io CTI will be available in OpenCTI with the tag Sekoia and not 
-- Objects and Relations will be displayed in STIX in OpenCTI
+<image3>
     
+**2- Where to find Sekoia intelligence feed**
 
-## 4- Troubleshoot
+Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
 
-**Differences between Sekoia.io and OpenCTI ?**
+|OpenCTI|Sekoia.io|
+|--|--|
+|Analysis|Threat-reports|
+|Observations|Sightings|
+|Arsenal|Malwares|
+|Techniques|Intrusion-sets|
+|Data|Indicators|
 
-- Check IOCs dates / updates
-- Volume
-- Latency of Feed updates might happen
 
+## 3- Troubleshoot
+|Issue|Action|Linux command|
+|--|--|--|
+|Space disk full|check the logs|docker logs <container-id>|
+|Conflict with containers|list containers on server|docker-compose ps|
 
 ## 5- Other resources
 - **OpenCTI official documentation**
-
+  
 https://github.com/OpenCTI-Platform/opencti
+
 https://docs.opencti.io/5.7.X/deployment/installation/#using-docker
+
 https://docs.opencti.io/5.8.X/deployment/connectors/#connector-configuration
-
-- **Sekoia docker**
-
-https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia
