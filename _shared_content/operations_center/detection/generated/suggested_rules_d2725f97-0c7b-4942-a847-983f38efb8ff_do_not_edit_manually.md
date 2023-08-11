@@ -27,9 +27,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Salesforce Events [BETA]** w
     
     - **Effort:** elementary
 
-??? abstract "CVE-2019-19781 Citrix Netscaler"
+??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
     
-    Detects CVE-2019-19781 exploitation attempt against Citrix Netscaler, Application Delivery Controller and Citrix Gateway Attack
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack
     
     - **Effort:** elementary
 
