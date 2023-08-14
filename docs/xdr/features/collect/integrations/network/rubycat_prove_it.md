@@ -23,7 +23,7 @@ On most GNU/Linux servers, two packages need to be installed: `rsyslog` and `rsy
 In order to allow the connection of your rsyslog server to the Sekoia.io intake, please download the Sekoia.io intake certificate:
 
 ```bash
-$ wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/Sekoia.io-intake.pem
+$ wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 ```
 
 ### Configure the rsyslog server
@@ -67,4 +67,4 @@ Go to the [events page](https://app.sekoia.io/operations/events) to watch your i
 
 ## Related files
 
-- [Sekoia.io-intake.pem](https://app.sekoia.io/assets/files/Sekoia.io-intake.pem): Sekoia.io TLS Server Certificate (1674b)
+- [Sekoia.io-intake.pem](https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem): Sekoia.io TLS Server Certificate (1674b)

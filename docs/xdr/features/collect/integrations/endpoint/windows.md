@@ -114,7 +114,7 @@ To enable the connection between your events forwarder and the Sekoia.io intake,
 1. Open a PowerShell console as an administrator. 
 2. Use the following command to retrieve the certificate and save it to the appropriate directory:
    ```powershell
-    Invoke-WebRequest -Uri https://app.sekoia.io/assets/files/Sekoia.io-intake.pem -OutFile 'C:\Program Files\nxlog\cert\Sekoia.io-intake.pem'
+    Invoke-WebRequest -Uri https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem -OutFile 'C:\Program Files\nxlog\cert\Sekoia.io-intake.pem'
     ```
 
 3. Restart the NXLog service through the Services tool as an administrator or use the following PowerShell command line as an administrator:
