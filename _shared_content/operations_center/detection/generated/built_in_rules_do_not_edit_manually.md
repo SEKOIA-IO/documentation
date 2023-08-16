@@ -1,4 +1,4 @@
-Rules catalog includes **734 built-in detection rules** ([_last update on 2023-08-11_](rules_changelog.md)).
+Rules catalog includes **734 built-in detection rules** ([_last update on 2023-08-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -4034,6 +4034,10 @@ Rules catalog includes **734 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
 
@@ -5125,6 +5129,10 @@ Rules catalog includes **734 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 ## Defense Evasion
 **Obfuscated Files or Information**
 
@@ -6807,6 +6815,10 @@ Rules catalog includes **734 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 **Modify Cloud Compute Infrastructure**
 
 ??? abstract "AWS CloudTrail EC2 Subnet Deleted"

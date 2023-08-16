@@ -1,7 +1,10 @@
-Changelog _last update on 2023-08-11_
+Changelog _last update on 2023-08-16_
 
 ## Changelog
 
+### Windows Registry Persistence COM Search Order Hijacking
+  - 16/08/2023 - minor - Adding filtering for some FPs
+    
 ### Suspicious Network Args In Command Line
   - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.
     
