@@ -123,6 +123,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Citrix ADC / NetScaler [BETA
     
     - **Effort:** elementary
 
+??? abstract "RYUK Ransomeware - martinstevens Username"
+    
+    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
+    
+    - **Effort:** elementary
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
