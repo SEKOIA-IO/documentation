@@ -1,4 +1,4 @@
-Rules catalog includes **734 built-in detection rules** ([_last update on 2023-08-17_](rules_changelog.md)).
+Rules catalog includes **737 built-in detection rules** ([_last update on 2023-08-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -7987,6 +7987,24 @@ Rules catalog includes **734 built-in detection rules** ([_last update on 2023-0
     Detects when an out of domain email forwarding is enabled on Google Cloud.
     
     - **Effort:** advanced
+    
+??? abstract "Microsoft 365 Email Forwarding To Consumer Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common consumer email services).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Email Forwarding To Email Address With Rare TLD"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (less common top-level domain).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Email Forwarding To Privacy Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common privacy email services).
+    
+    - **Effort:** elementary
     
 ??? abstract "Outlook Registry Access"
     
