@@ -80,6 +80,7 @@ nav:
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
           - Nginx: xdr/features/collect/integrations/application/nginx.md
+          - OpenLDAP: xdr/features/collect/integrations/application/openldap.md
           - OpenSSH: xdr/features/collect/integrations/application/openssh.md
           - RSA SecurID: xdr/features/collect/integrations/application/rsa_securid.md
           - SEKOIA.IO activity logs: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
@@ -537,6 +538,7 @@ plugins:
       integrations/nginx.md: xdr/features/collect/integrations/application/nginx.md
       integrations/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
       integrations/o365.md: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
+      integrations/openldap.md: xdr/features/collect/integrations/application/openldap.md
       integrations/openssh.md: xdr/features/collect/integrations/application/openssh.md
       integrations/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
       integrations/panda-security-aether.md: xdr/features/collect/integrations/endpoint/panda_security_aether.md
@@ -623,6 +625,7 @@ plugins:
       operation_center/integration_catalog/application/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
       operation_center/integration_catalog/application/haproxy.md: xdr/features/collect/integrations/application/haproxy.md
       operation_center/integration_catalog/application/nginx.md: xdr/features/collect/integrations/application/nginx.md
+      operation_center/integration_catalog/application/openldap.md: xdr/features/collect/integrations/application/openldap.md
       operation_center/integration_catalog/application/openssh.md: xdr/features/collect/integrations/application/openssh.md
       operation_center/integration_catalog/application/prove-it.md: xdr/features/collect/integrations/application/prove-it.md
       operation_center/integration_catalog/application/sekoiaio_activity_logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
