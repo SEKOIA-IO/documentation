@@ -24,7 +24,7 @@ You can find the system requirements for each respective platform below : <br />
 - [MacOS Requirements](https://support.sophos.com/support/s/article/KB-000034670?language=en_US)
 
 !!! Warning
-It's also necessary to know that you have to install Sophos agents on the necessary machines.
+    It's also necessary to know that you have to install Sophos agents on the necessary machines.
 
 ### Create Sophos Threat Analysis Center Credentials
 
