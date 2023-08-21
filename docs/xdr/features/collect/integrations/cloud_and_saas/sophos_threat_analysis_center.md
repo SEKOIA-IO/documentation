@@ -32,7 +32,7 @@ In the Sophos Central Admin console:
 
 1. Go to `Global Settings` > `API Credentials Management`.
 2. Click `Add Credential` and give the credential a name and description.
-3. Choose which role you want to assign. For Sophos Threat Analysis Center Choose from the following roles:
+3. Choose which role you want to assign. You can choose from the following roles:
     - Service Principal Super Admin: Users with this role can perform all API operations with full CRUD (Create Read Update Delete) capabilities and have access to queries.
     - Service Principal Forensics: Users with this role can create, view, run, and delete Live Discover queries.
 4. Click `Add`.
