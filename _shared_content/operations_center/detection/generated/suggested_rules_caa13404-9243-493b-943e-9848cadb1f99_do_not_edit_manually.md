@@ -207,6 +207,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** master
 
+??? abstract "Microsoft 365 Email Forwarding To Consumer Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common consumer email services).
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft 365 Email Forwarding To Email Address With Rare TLD"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (less common top-level domain).
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft 365 Email Forwarding To Privacy Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common privacy email services).
+    
+    - **Effort:** elementary
+
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.

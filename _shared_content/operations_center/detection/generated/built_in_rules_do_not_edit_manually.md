@@ -1,4 +1,4 @@
-Rules catalog includes **733 built-in detection rules** ([_last update on 2023-08-08_](rules_changelog.md)).
+Rules catalog includes **737 built-in detection rules** ([_last update on 2023-08-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -528,9 +528,9 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "CVE-2019-19781 Citrix Netscaler"
+??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
     
-    Detects CVE-2019-19781 exploitation attempt against Citrix Netscaler, Application Delivery Controller and Citrix Gateway Attack
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack
     
     - **Effort:** elementary
     
@@ -1375,6 +1375,24 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Microsoft Defender for Office 365 Alert"
     
     Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
@@ -1635,6 +1653,12 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+    
 ??? abstract "Suspicious Outlook Child Process"
     
     Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
@@ -1691,12 +1715,6 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
-    
 ??? abstract "Suspicious Windows Script Execution"
     
     Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
@@ -1715,7 +1733,7 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Tehtris EDR Alert"
+??? abstract "TEHTRIS EDR Alert"
     
     Tehtris EDR telemetry has raised an alert.
     
@@ -1761,24 +1779,6 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
         - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
             
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
-    
 ??? abstract "XSL Script Processing And SquiblyTwo Attack"
     
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
@@ -2095,6 +2095,10 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
+            
 ??? abstract "Malspam Execution Registering Malicious DLL"
     
     Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
@@ -2256,6 +2260,12 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
+    
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
     
 ??? abstract "Microsoft Defender for Office 365 Alert"
     
@@ -2423,7 +2433,7 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Tehtris EDR Alert"
+??? abstract "TEHTRIS EDR Alert"
     
     Tehtris EDR telemetry has raised an alert.
     
@@ -2434,12 +2444,6 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
     
     - **Effort:** master
-    
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
     
 ??? abstract "Winword Document Droppers"
     
@@ -2602,6 +2606,12 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
+    
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
     
 ??? abstract "Microsoft Defender for Office 365 Alert"
     
@@ -2823,6 +2833,12 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
             
+??? abstract "TEHTRIS EDR Alert"
+    
+    Tehtris EDR telemetry has raised an alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
@@ -2849,12 +2865,6 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
             
-??? abstract "Tehtris EDR Alert"
-    
-    Tehtris EDR telemetry has raised an alert.
-    
-    - **Effort:** master
-    
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -2882,12 +2892,6 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     Detects WMI command line event consumers.
     
     - **Effort:** elementary
-    
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
     
 ??? abstract "Windows Update LolBins"
     
@@ -4030,6 +4034,10 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
 
@@ -5121,6 +5129,10 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 ## Defense Evasion
 **Obfuscated Files or Information**
 
@@ -5449,25 +5461,19 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Secure Deletion With SDelete"
-    
-    Detects renaming of file while deletion with SDelete tool. SDelete is a tool that permits to securely delete files by overwriting them (no recovery possible). Few threat actors are using it to delete traces of their malware.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender History Deleted"
+??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
     
     - **Effort:** master
     
-??? abstract "Windows Defender History Directory Deleted"
+??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
     Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
     
-??? abstract "Windows Defender Tampering Detected"
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
     
     Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
     
@@ -5477,6 +5483,12 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
         - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
             
+??? abstract "Secure Deletion With SDelete"
+    
+    Detects renaming of file while deletion with SDelete tool. SDelete is a tool that permits to securely delete files by overwriting them (no recovery possible). Few threat actors are using it to delete traces of their malware.
+    
+    - **Effort:** intermediate
+    
 **Valid Accounts**
 
 ??? abstract "Account Added To A Security Enabled Group"
@@ -5789,17 +5801,29 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+    
 ??? abstract "Suspicious Mshta Execution"
     
     Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
     
     - **Effort:** intermediate
-    
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
     
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
     
@@ -5817,18 +5841,6 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
         - 15/02/2023 - minor - "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
             
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-    
 **CMSTP**
 
 ??? abstract "CMSTP Execution"
@@ -5926,6 +5938,12 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
     
     - **Effort:** master
+    
+??? abstract "CertOC Loading Dll"
+    
+    Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Control Panel Items"
     
@@ -6249,9 +6267,9 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Intune Non-Compliant Device"
+??? abstract "Microsoft Intune Non-Compliant Device"
     
-    Detects Intune reporting a device in a non-compliant state. This can indicate either a misconfiguration in Intune or a change of configuration on said device.
+    Detects Microsoft Intune reporting a device in a non-compliant state. This can indicate either a misconfiguration in Intune or a change of configuration on said device.
     
     - **Effort:** advanced
     
@@ -6431,12 +6449,6 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Intune Policy Change"
-    
-    Detects edits, deletions or creations made to an organization Intune policies.
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Loss Of Parsing"
     
     Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
@@ -6446,6 +6458,80 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Configuration Changed"
+    
+    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Exclusion Configuration"
+    
+    Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
+            
+??? abstract "Microsoft Defender Antivirus Restoration Abuse"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Signatures Removed With MpCmdRun"
+    
+    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
+    
+    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+            
+??? abstract "Microsoft Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Microsoft Intune policies.
     
     - **Effort:** intermediate
     
@@ -6599,17 +6685,17 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+    
 ??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
     
     Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
     
     - **Effort:** advanced
-    
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
     
 ??? abstract "TrustedInstaller Impersonation"
     
@@ -6623,80 +6709,12 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Windows Defender Abuse Restoration"
-    
-    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Configuration Changed"
-    
-    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
-    
-    - **Effort:** master
-    
 ??? abstract "Windows Defender Deactivation Using PowerShell Script"
     
     Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
     
     - **Effort:** master
     
-??? abstract "Windows Defender Disable Scheduled Tasks"
-    
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Disable SecurityHealth"
-    
-    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Disable Services"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Exclusion Configuration"
-    
-    Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
-    
-    - **Effort:** master
-    
-    - **Changelog:**
-    
-        - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
-            
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Signatures Removed With MpCmdRun"
-    
-    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Tampering Detected"
-    
-    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
-    
-    - **Effort:** advanced
-    
-    - **Changelog:**
-    
-        - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
-            
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
@@ -6797,6 +6815,10 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 **Modify Cloud Compute Infrastructure**
 
 ??? abstract "AWS CloudTrail EC2 Subnet Deleted"
@@ -7966,6 +7988,24 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Microsoft 365 Email Forwarding To Consumer Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common consumer email services).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Email Forwarding To Email Address With Rare TLD"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (less common top-level domain).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Email Forwarding To Privacy Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common privacy email services).
+    
+    - **Effort:** elementary
+    
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -8417,10 +8457,14 @@ Rules catalog includes **733 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Suspicious Network Args In Command Line"
     
-    Detection on suspicious network arguments in processes command lines using HTTP schema with port 443.
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.
+            
 **Protocol Tunneling**
 
 ??? abstract "Exfiltration And Tunneling Tools Execution"

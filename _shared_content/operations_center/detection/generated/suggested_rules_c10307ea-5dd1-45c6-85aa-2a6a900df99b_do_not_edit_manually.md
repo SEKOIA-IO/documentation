@@ -45,6 +45,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Winlogbeat** with the follow
     
     - **Effort:** advanced
 
+??? abstract "Microsoft Defender Antivirus History Deleted"
+    
+    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
+    
+    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
@@ -74,21 +92,3 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Winlogbeat** with the follow
     Detects local user deletion
     
     - **Effort:** master
-
-??? abstract "Windows Defender History Deleted"
-    
-    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** master
-
-??? abstract "Windows Defender Tampering Detected"
-    
-    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
-    
-    - **Effort:** advanced
-
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate

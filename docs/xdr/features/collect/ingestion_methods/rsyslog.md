@@ -662,7 +662,7 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	EOM
 
 	# Collect the SEKOIA Key for encryption between Rsyslog and Sekoia.io
-	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/Sekoia.io-intake.pem
+	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 	```
 
 2. Once the file created on the Rsyslog, make it executable with the command `chmod +x <filename.sh>`.

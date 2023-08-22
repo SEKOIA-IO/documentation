@@ -1,12 +1,21 @@
-Changelog _last update on 2023-08-08_
+Changelog _last update on 2023-08-18_
 
 ## Changelog
 
-### Windows Defender Tampering Detected
-  - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+### Windows Registry Persistence COM Search Order Hijacking
+  - 16/08/2023 - minor - Adding filtering for some FPs
     
-### Windows Defender Exclusion Configuration
+### Suspicious Network Args In Command Line
+  - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.
+    
+### MS Office Product Spawning Exe in User Dir
+  - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
+    
+### Microsoft Defender Antivirus Exclusion Configuration
   - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
+    
+### Microsoft Defender Antivirus Tampering Detected
+  - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
     
 ### Okta User Logged In Multiple Applications
   - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
