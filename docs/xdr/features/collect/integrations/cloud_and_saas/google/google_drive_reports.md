@@ -12,13 +12,13 @@ Google Reports is a data reporting and analysis platform offered by Google, desi
 
 ## Google Cloud configuration procedure
 
-#### Prerequisites
+### Prerequisites
 
 - Google licence Enterprise standard or higher
 - Access to Sekoia.io Intakes and Playbook pages with write permissions
 - Administrator access to the Google Cloud console
 
-#### Create a dedicated service account
+### Create a dedicated service account
 
 To create a service account you have to :
  - Create a project
@@ -28,7 +28,7 @@ To create a service account you have to :
 
 For more details in each steps please read this [Documentation](https://support.google.com/a/answer/7378726?hl=en)
 
-#### Create and download JSON keys (service account credentials)
+### Create and download JSON keys (service account credentials)
 
 To use a service account from outside of Google Cloud, such as on Sekoia.io, you must first establish the identity of the service account. Public/private key pairs provide a secure way of accomplishing this goal. When you create a service account key, the public portion is stored on Google Cloud, while the private portion is available only to you.
 
@@ -66,18 +66,20 @@ Find more information on the [official google documentation](https://cloud.googl
 
 ## Sekoia.io configuration procedure
 
-#### Create your intake
+### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the Google drive reports.
 2. Copy the associated Intake key
 
-#### Pull the logs to collect them on Sekoia.io
+### Pull the logs to collect them on Sekoia.io
 
 Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 
 - Click on **+ PLAYBOOK** button to create a new one
-- Select **Use a template**
-- Search for `Google` keywork on the search bar and select the template named `Get activities from drive`
+- Select **Create a playbook from scratch**
+- Give it a name in the field **Name**
+- Search for `Drive` keywork on the search bar and select the template named `Get activities from drive`
+- Click on **Create**
 
 - Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
 
@@ -85,8 +87,9 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 -  Create a **Trigger configuration** using:
 
 	* `Intake key` created on the previous
+  * `Admin email`
 
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page
 
-#### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
