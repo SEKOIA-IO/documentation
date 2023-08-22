@@ -48,4 +48,4 @@ To disable two-factor authentication on your SEKOIA account:
 4. Enter your current password and select `disable`
 
 !!! Note
-    In case your two-factor authentication and recovery codes have been lost, please follow this [process](https://support.sekoia.io/hc/fr/articles/10904006738845-Faire-une-demande-de-r%C3%A9initialisation-d-un-2FA)
+    In case your two-factor authentication and recovery codes have been lost, please follow this [process](https://support.sekoia.io/hc/fr/articles/10904006738845-Faire-une-demande-de-r%C3%A9initialisation-d-un-2FA).
