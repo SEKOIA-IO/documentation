@@ -42,12 +42,13 @@ volumes:
 
 Replace following parameters:
 
-- `CONNECTOR_ID`=_<Replace_by_email>_
+- `CONNECTOR_ID`=_Replace_by_email_
 - `CONNECTOR_SCOPE` =_identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator_ => Sekoia intelligence elements set to be exported in OpenCTI that can be chosen in this list
-- `SEKOIA_API_KEY`=_<Sekoia_API_key_with_CTI_Permissions>_
+- `SEKOIA_API_KEY`=_Sekoia API key with CTI_Permissions_
 - `SEKOIA_START_DATE`=_<start_date_to_retrieve_feed>_ e.g. _2023-05-01_
 
 2- Build and launch Sekoia connector
+
 - Build    `docker-compose pull connector-sekoia`
 - Run      `docker-compose up -d connector-sekoia`
 
