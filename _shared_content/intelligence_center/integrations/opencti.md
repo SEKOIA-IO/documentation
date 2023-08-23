@@ -11,11 +11,11 @@ Collect Sekoia.io CTI feed in an existing OpenCTI instance self managed, for any
 
 ## 1. Configuration
 
-1- Add the following code to the end of **docker-compose.yml** file in the OpenCTI docker repo
+1- Add the following code **to the end** of **docker-compose.yml** file in the OpenCTI docker repository
 
 ````
 connector-sekoia:
-    image: opencti/connector-sekoia:5.7.6
+    image: opencti/connector-sekoia:latest
     environment:
       - OPENCTI_URL=http://opencti:8080
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
@@ -72,6 +72,7 @@ Go to Sekoia connector    _Data > Connectors > Sekoia.io >_
 ![OpenCTI_Sekoia_connector1](../OpenCTI_images/open-cti-connectors.png)
 
 In this page, the interesting information can be found about:
+
 - `Update date` :  Last update date of the connector in OpenCTI
 - `Status` :	   Status of the connector in OpenCTI
 - `Perimeter` :    Sekoia intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
