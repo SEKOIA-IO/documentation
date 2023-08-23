@@ -41,6 +41,7 @@ volumes:
 ````
 
 Replace following parameters:
+
 - `CONNECTOR_ID`=_<Replace_by_email>_
 - `CONNECTOR_SCOPE` =_identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator_ => Sekoia intelligence elements set to be exported in OpenCTI that can be chosen in this list
 - `SEKOIA_API_KEY`=_<Sekoia_API_key_with_CTI_Permissions>_
