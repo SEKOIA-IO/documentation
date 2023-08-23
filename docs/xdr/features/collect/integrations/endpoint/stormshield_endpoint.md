@@ -19,13 +19,13 @@ Stormshield Endpoint Security is a comprehensive cybersecurity solution designed
 ### Exporting logs via Syslog
 
 To export logs via Syslog, follow the steps below:
-1. Define the Syslog redirection settings in the Syslog configuration panel of the server configuration policy:
-- In the Address/Hostname field,enter the IP address of the Syslog server. 
-- In the Port field,change the port number(if necessary).
-- In the Protocol field,enter the protocol required(TCP or UDP).
-- Select a Facility level.
-- Select a Severity level.
-2. Validate your modifications.
+* Define the Syslog redirection settings in the Syslog configuration panel of the server configuration policy:
+    * In the Address/Hostname field,enter the IP address of the Syslog server. 
+    * In the Port field,change the port number(if necessary).
+    * In the Protocol field,enter the protocol required(TCP or UDP).
+    * Select a Facility level.
+    * Select a Severity level.
+* Validate your modifications.
 
 ### Create the intake
 

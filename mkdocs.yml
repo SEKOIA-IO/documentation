@@ -560,6 +560,7 @@ plugins:
       integrations/spamassassin.md: xdr/features/collect/integrations/email/spamassassin.md
       integrations/squid.md: xdr/features/collect/integrations/network/squid.md
       integrations/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
+      integrations/stormshield_endpoint.md: xdr/features/collect/integrations/network/stormshield_endpoint.md
       integrations/suricata.md: xdr/features/collect/integrations/network/suricata.md
       integrations/symantec-endpoint-protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
       integrations/symantec_endpoint_protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
