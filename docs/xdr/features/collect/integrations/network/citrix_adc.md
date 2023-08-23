@@ -25,6 +25,8 @@ Citrix ADC (formely Citrix NetScaler) is a delivery controller and load-balancin
 
 follow this [guide](https://docs.netscaler.com/en-us/citrix-adc/current-release/system/audit-logging/configuring-audit-logging.html) to enable syslog forwarding.
 
+**IMPORTANT:** please make sure `-dateFormat MMDDYYYY` is set and date is present in logs
+
 ### Create an intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Citrix ADC.
