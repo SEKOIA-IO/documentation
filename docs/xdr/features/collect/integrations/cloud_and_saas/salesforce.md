@@ -37,3 +37,8 @@ To start to pull events, you have to:
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Salesforce](../../../automate/library/salesforce.md) trigger
 2. Set up the module configuration with the Client Id and Client Secret. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
+
+## Further Readings
+
+- [Salesforce Real-Time Event Monitoring feature is turned off by default](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_em_generate_event_log_files.htm&release=244&type=5)
+- [Real-Time Event Monitoring enable instructions](https://help.salesforce.com/s/articleView?id=sf.real_time_event_monitoring_enable.htm&type=5)
