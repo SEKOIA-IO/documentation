@@ -60,7 +60,7 @@ Replace following parameters:
 ## 2. Connect to OpenCTI
 
 1-  In a Web browser, type the following	_http://<server_ip>:<port>/dashboard_
-![OpenCTI_login](_shared_content/intelligence_center/integrations/OpenCTI_images/opencti-login.png)
+![OpenCTI_login](../OpenCTI_images/opencti-login.png)
 
 2- Enter your login and password set in **.env** file
 
@@ -69,7 +69,7 @@ Replace following parameters:
 **1- Check if the connector is running and up to date**
 
 Go to Sekoia connector    _Data > Connectors > Sekoia.io >_
-![OpenCTI_Sekoia_connector1](_shared_content/intelligence_center/integrations/OpenCTI_images/open-cti-connectors.png)
+![OpenCTI_Sekoia_connector1]../OpenCTI_images/open-cti-connectors.png)
 
 In this page, the interesting information can be found about:
 - `Update date` :  Last update date of the connector in OpenCTI
@@ -77,7 +77,7 @@ In this page, the interesting information can be found about:
 - `Perimeter` :    Sekoia intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
 - `Last cursor` :  **SEKOIA_START_DATE** set in _docker-compose.yml_ file in base64 format
 
-![OpenCTI_Sekoia_connector2](_shared_content/intelligence_center/integrations/OpenCTI_images/opencti-sekoia.png)
+![OpenCTI_Sekoia_connector2](../OpenCTI_images/opencti-sekoia.png)
     
 **2- Where to find Sekoia intelligence feed**
 
