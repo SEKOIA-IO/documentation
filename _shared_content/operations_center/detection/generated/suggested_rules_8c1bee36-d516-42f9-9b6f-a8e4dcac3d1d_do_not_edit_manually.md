@@ -621,6 +621,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 1.0
     
     - **Effort:** intermediate
 
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -644,6 +650,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 1.0
     The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     

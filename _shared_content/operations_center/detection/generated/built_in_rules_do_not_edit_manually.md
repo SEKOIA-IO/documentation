@@ -1,4 +1,4 @@
-Rules catalog includes **737 built-in detection rules** ([_last update on 2023-08-18_](rules_changelog.md)).
+Rules catalog includes **741 built-in detection rules** ([_last update on 2023-08-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1995,6 +1995,18 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Darktrace Threat Visualizer Model Breach Critical Alert"
+    
+    Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
+    
+    - **Effort:** master
+    
+??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Alert"
+    
+    Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
+    
+    - **Effort:** master
+    
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
     Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
@@ -2510,6 +2522,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Cybereason EDR Alert"
     
@@ -2532,6 +2545,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -2539,6 +2553,10 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -2560,6 +2578,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -2570,6 +2589,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Malicious Service Installations"
     
@@ -2658,6 +2678,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -2674,6 +2695,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -2778,6 +2800,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -2804,6 +2827,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
@@ -2832,6 +2856,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "TEHTRIS EDR Alert"
     
@@ -2848,6 +2873,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -2864,6 +2890,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Usage Of Procdump With Common Arguments"
     
@@ -2886,6 +2913,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -2912,6 +2940,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winlogon wrong parent"
     
@@ -2922,6 +2951,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -2932,6 +2962,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winword wrong parent"
     
@@ -2942,6 +2973,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -2952,6 +2984,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -2962,6 +2995,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ## Persistence
 **Boot or Logon Initialization Scripts**
@@ -3428,6 +3462,14 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+**Browser Extensions**
+
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+    
 **BITS Jobs**
 
 ??? abstract "BITSAdmin Download"
@@ -3541,6 +3583,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -3551,6 +3594,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Explorer Wrong Parent"
     
@@ -3561,6 +3605,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -3568,6 +3613,10 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
@@ -3577,6 +3626,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -3587,6 +3637,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Malicious Service Installations"
     
@@ -3627,6 +3678,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -3643,6 +3695,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Smss Wrong Parent"
     
@@ -3653,6 +3706,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -3673,6 +3727,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "StoneDrill Service Install"
     
@@ -3695,6 +3750,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -3705,6 +3761,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -3721,6 +3778,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Userinit Wrong Parent"
     
@@ -3731,6 +3789,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -3747,6 +3806,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winlogon wrong parent"
     
@@ -3757,6 +3817,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -3767,6 +3828,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winword wrong parent"
     
@@ -3777,6 +3839,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -3787,6 +3850,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -3797,6 +3861,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 **Event Triggered Execution**
 
@@ -4156,6 +4221,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Malicious Named Pipe"
     
@@ -4190,6 +4256,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -4200,6 +4267,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Smss Wrong Parent"
     
@@ -4210,6 +4278,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -4220,6 +4289,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -4236,6 +4306,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -4246,6 +4317,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -4256,6 +4328,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -4266,6 +4339,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -4276,6 +4350,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 **Exploitation for Privilege Escalation**
 
@@ -4570,6 +4645,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -4580,6 +4656,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Explorer Wrong Parent"
     
@@ -4590,6 +4667,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -4597,6 +4675,10 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
@@ -4606,6 +4688,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -4616,6 +4699,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Malicious Service Installations"
     
@@ -4656,6 +4740,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -4672,6 +4757,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Smss Wrong Parent"
     
@@ -4682,6 +4768,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -4702,6 +4789,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "StoneDrill Service Install"
     
@@ -4724,6 +4812,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -4734,6 +4823,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -4750,6 +4840,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Userinit Wrong Parent"
     
@@ -4760,6 +4851,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -4776,6 +4868,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winlogon wrong parent"
     
@@ -4786,6 +4879,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -4796,6 +4890,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Winword wrong parent"
     
@@ -4806,6 +4901,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -4816,6 +4912,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -4826,6 +4923,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 **Event Triggered Execution**
 
@@ -5200,6 +5298,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Formbook Hijacked Process Command"
     
@@ -5294,6 +5393,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Malicious Named Pipe"
     
@@ -5328,6 +5428,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -5338,6 +5439,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Smss Wrong Parent"
     
@@ -5348,6 +5450,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -5358,6 +5461,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -5374,6 +5478,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -5384,6 +5489,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -5394,6 +5500,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -5404,6 +5511,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -5414,6 +5522,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 **Scripting**
 
@@ -6485,6 +6594,12 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
@@ -7356,6 +7471,7 @@ Rules catalog includes **737 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 03/07/2023 - minor - Added french words for the command lines.
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
 ??? abstract "Outlook Registry Access"
     

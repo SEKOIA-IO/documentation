@@ -69,6 +69,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    
+    - **Effort:** intermediate
+
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
@@ -531,6 +537,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** intermediate
 
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -554,6 +566,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
@@ -746,6 +764,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
     
     - **Effort:** elementary
+
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerCat Function Loading"
     
@@ -1196,6 +1220,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
+
+??? abstract "Telegram Bot API Request"
+    
+    Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
+    
+    - **Effort:** advanced
 
 ??? abstract "Trickbot Malware Activity"
     
