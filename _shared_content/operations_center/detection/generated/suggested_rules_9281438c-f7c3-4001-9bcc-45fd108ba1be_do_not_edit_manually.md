@@ -957,6 +957,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -1034,6 +1040,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
     
     - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
