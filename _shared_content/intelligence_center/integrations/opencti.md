@@ -69,7 +69,7 @@ Replace following parameters:
 **1- Check if the connector is running and up to date**
 
 Go to Sekoia connector    _Data > Connectors > Sekoia.io >_
-![OpenCTI_Sekoia_connector1]../OpenCTI_images/open-cti-connectors.png)
+![OpenCTI_Sekoia_connector1](../OpenCTI_images/open-cti-connectors.png)
 
 In this page, the interesting information can be found about:
 - `Update date` :  Last update date of the connector in OpenCTI
