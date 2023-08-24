@@ -95,13 +95,13 @@ Here are the elements of the Sekoia feed that can be found on OpenCTI after expo
 |Data|Indicators|
 
 
-## 3- Troubleshoot
+## 4. Troubleshoot
 |Issue|Action|Linux command|
 |--|--|--|
 |Space disk full|check the logs|docker logs <container-id>|
 |Conflict with containers|list containers on server|docker-compose ps|
 
-## 5- Other resources
+## 5. Other resources
 - **OpenCTI official documentation**
   
 https://github.com/OpenCTI-Platform/opencti
