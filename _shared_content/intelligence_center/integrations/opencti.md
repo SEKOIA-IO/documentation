@@ -61,7 +61,7 @@ Replace following parameters:
 
 ## 2. Connect to OpenCTI
 
-1-  In a Web browser, type the following	_http://<server_ip>:<port>/dashboard_
+1-  In a Web browser, type the following	_http://server_ip:port/dashboard_
 ![OpenCTI_login](../OpenCTI_images/opencti-login.png)
 
 2- Enter your login and password set in **.env** file
