@@ -52,9 +52,9 @@ Replace following parameters:
 - Build    `docker-compose pull connector-sekoia`
 - Run      `docker-compose up -d connector-sekoia`
 
-!!note
-   Sekoia connector should be name **connector-sekoia** as describe on top
-   **docker-compose ps**   to check all connectors available and set on the server
+!!!note
+    Sekoia connector should be name **connector-sekoia** as describe on top
+    **docker-compose ps**   to check all connectors available and set on the server
 
 3- Check if Sekoia connector is running
 `docker-compose ps connector-sekoia`
