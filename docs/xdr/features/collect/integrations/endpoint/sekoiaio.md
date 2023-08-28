@@ -102,7 +102,29 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     sudo systemctl status SEKOIAEndpointAgent.service
     ```
 
- Once installed, the agent collects event logs, normalizes them and sends them to Sekoia.io. The contacted domain `intake.sekoia.io` uses the ip `51.159.9.95`. The protocol used to send events is HTTPS (443).
+Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `51.159.9.95`. The protocol used to send events is HTTPS (443).
+
+#### journald configuration
+
+In order to get events, the agent pushes rules to the audit framework. By default **journald**  might listen to the audit socket for events.
+
+To disable audit logging the following should be done as root:
+	
+        ```
+	# Stop listening to audit events
+	systemctl stop systemd-journald-audit.socket 
+	
+	# Disable it to avoid future start
+	systemctl disable systemd-journald-audit.socket
+	
+	# Masking will prevent starting by other services
+	systemctl mask systemd-journald-audit.socket
+	
+	# Restart journald
+	systemctl restart systemd-journald
+       ```
+       
+A reboot may be necessary if the audit events are still appearing in the logs.
 
 ### Update
 
