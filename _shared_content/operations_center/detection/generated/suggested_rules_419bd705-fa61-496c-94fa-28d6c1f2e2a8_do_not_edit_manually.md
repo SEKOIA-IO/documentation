@@ -21,6 +21,30 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** intermediate
 
+??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
+    
+    Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Broadcom/Symantec Endpoint Security Event Cleaned"
+    
+    Broadcom/Symantec Endpoint Security had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Broadcom/Symantec Endpoint Security Event Quarantined"
+    
+    Broadcom/Symantec Endpoint Security had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
+??? abstract "Broadcom/Symantec Endpoint Security Event Terminate"
+    
+    Broadcom/Symantec Endpoint Security had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -68,6 +92,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
 
 ??? abstract "Disabled Service"
     
@@ -147,6 +177,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** elementary
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
@@ -177,12 +213,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** elementary
 
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
-    
-    - **Effort:** elementary
-
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
@@ -207,30 +237,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     
     - **Effort:** intermediate
 
-??? abstract "Symantec EPP Event Blocked"
-    
-    Symantec EPP blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-
-??? abstract "Symantec EPP Event Cleaned"
-    
-    Symantec EPP had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-
-??? abstract "Symantec EPP Event Quarantined"
-    
-    Symantec EPP had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-
-??? abstract "Symantec EPP Event Terminate"
-    
-    Symantec EPP had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host
@@ -242,6 +248,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Broadcom/Symantec Endpoint S
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WMI Persistence Script Event Consumer File Write"
     

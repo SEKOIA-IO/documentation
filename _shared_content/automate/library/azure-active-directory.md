@@ -1,5 +1,7 @@
 # Azure Active Directory
 
+![Azure Active Directory](/assets/playbooks/library/azure-active-directory.svg){ align=right width=150 }
+
 [Azure Active Directory (Azure AD)](https://azure.microsoft.com/en-us/services/active-directory/#overview) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
 
 ## Configuration
@@ -117,4 +119,4 @@ Get information about an user's authentication methods (such as their MFA status
 
 ## Extra
 
-Module **`Azure Active Directory` v1.1.0**
+Module **`Azure Active Directory` v2.4**

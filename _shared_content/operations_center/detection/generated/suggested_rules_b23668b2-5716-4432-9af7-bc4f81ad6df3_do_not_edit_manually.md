@@ -15,6 +15,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **NetFlow** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -26,12 +32,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **NetFlow** with the following
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
     
     - **Effort:** elementary
-
-??? abstract "Potential LokiBot User-Agent"
-    
-    Detects potential LokiBot communications through the user-agent
-    
-    - **Effort:** intermediate
 
 ??? abstract "SEKOIA.IO Intelligence Feed"
     

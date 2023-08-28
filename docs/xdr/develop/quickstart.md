@@ -1,16 +1,16 @@
 # Quickstart
 API stands for Application Programming Interface and is the code that governs the server's access point.
 
-When to use the SEKOIA.IO API?
+When to use the Sekoia.io API?
 
-* **Data sharing**: when you want an application to get data from SEKOIA.IO
-* **Integration**: when you want an application to perform actions on SEKOIA.IO
-* **Automation**: when you want to build a script to automate actions with SEKOIA.IO
+* **Data sharing**: when you want an application to get data from Sekoia.io
+* **Integration**: when you want an application to perform actions on Sekoia.io
+* **Automation**: when you want to build a script to automate actions with Sekoia.io
 
-SEKOIA.IO offers a public REST API to interact with the platform.
+Sekoia.io offers a public REST API to interact with the platform.
 
 !!!note
-    The SEKOIA.IO GUI is based on that API
+    The Sekoia.io GUI is based on that API
 
 Here are some characteristics of a REST API:
 
@@ -31,11 +31,21 @@ curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/
 ```
 
 To create an API key, follow our guide [here](https://docs.sekoia.io/getting_started/manage_api_keys/).
-The roles needed for your key will depend on what you want to achieve. If you plan to only get information from SEKOIA.IO, read only permissions will be enough. If you want to perform actions on SEKOIA.IO, you will also need to add write permissions.
+The roles needed for your key will depend on what you want to achieve. If you plan to only get information from Sekoia.io, read only permissions will be enough. If you want to perform actions on Sekoia.io, you will also need to add write permissions.
 
 Our documentation provides information on each endpoint and specifies the required permissions.
 
 ## Documentation organization
+
+### Guides
+
+The documentation offers a few guides:
+
+* A small page on [filtering](/xdr/develop/guides/filtering/)
+* A guide on [how to create automation modules](/xdr/develop/guides/automation/overview/)
+
+### APIs
+
 Our API documentation is divided according to the different functionalities the platform offers:
 
 * [Authentication and Community](/xdr/develop/rest_api/community/)
@@ -50,7 +60,7 @@ Our API documentation is divided according to the different functionalities the 
 
 In each of these categories, you will find the different actions available.
 
-### Structure
+#### Structure
 Each action is described and contains the following information:
 
 * Action name
@@ -65,10 +75,10 @@ Depending of the endpoint, the data passed through the API is done as `query par
 
 **Two differents uses cases**
 
-1. URL parameters are a way to pass data directly in the URL. 
+1. URL parameters are a way to pass data directly in the URL.
 
-They come after the question mark (?) in the URL and are separated by an ampersand (&). 
-For example, in the following request, "match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command" and "limit=10" are the URL parameters. 
+They come after the question mark (?) in the URL and are separated by an ampersand (&).
+For example, in the following request, "match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command" and "limit=10" are the URL parameters.
 
 ```bash
 curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/conf/rules-catalog/rules?match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command&limit=10
@@ -76,9 +86,9 @@ curl -XGET -H "Authorization: Bearer YOUR_API_KEY" https://api.sekoia.io/v1/sic/
 
 These parameters are often used for simple requests like **search queries**, where the data being passed is short and simple, such as **`GET`  requests**.
 
-2. Use the request body to send JSON payload. 
+2. Use the request body to send JSON payload.
 
-JSON is a data format that is easy for both humans and machines to read and write. To send data as JSON, you will need to include a "Content-Type" header in your request, and the request body should be a JSON object. 
+JSON is a data format that is easy for both humans and machines to read and write. To send data as JSON, you will need to include a "Content-Type" header in your request, and the request body should be a JSON object.
 
 This is often used for more complex requests like **creating or updating resources on the server**, such as **`POST` or `PUT` requests** for instance.
 
@@ -94,10 +104,10 @@ curl -X POST https://api.sekoia.io/v1/invitations \
 ```
 
 !!! Note
-    Such requests that create or update resources on the server may request to **ALSO** add parameters in the URL to specify the object one wants to have action on. With SEKOIA.IO API you will often pass through the URL the UUID of the specific object you are expecting to be modified.  
+    Such requests that create or update resources on the server may request to **ALSO** add parameters in the URL to specify the object one wants to have action on. With Sekoia.io API you will often pass through the URL the UUID of the specific object you are expecting to be modified.
 
 ## Python scripts
-Python is a language that can be used to interact with the SEKOIA.IO API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
+Python is a language that can be used to interact with the Sekoia.io API. Please find bellow two examples, one with a `GET` request with `query parameters` and another with a `POST` request and an `application/json` body.
 
 
 ### Get request with query parameters
@@ -199,9 +209,9 @@ if __name__ == '__main__':
 ```
 
 ### Another example - Search events
-It is possible to search in your events by using the SEKOIA.IO API. Search for events can request some time to be processed and as a reminder, the API is stateless, that means no connection is maintained between two requests.
+It is possible to search in your events by using the Sekoia.io API. Search for events can request some time to be processed and as a reminder, the API is stateless, that means no connection is maintained between two requests.
 
-For this reason, SEKOIA.IO offers a solution to answer to this asynchronous problematic: the notion of search job.
+For this reason, Sekoia.io offers a solution to answer to this asynchronous problematic: the notion of search job.
 
 3 steps are needed:
 
@@ -223,7 +233,7 @@ This Python script uses these 3 actions to perform a search and print the events
 ```python
 #!/usr/bin/env python3
 """
-This script uses the SEKOIA.IO API to search events
+This script uses the Sekoia.io API to search events
 and print the last 100 events to STDOUT
 """
 
@@ -405,7 +415,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "APIKEY",
-        help="SEKOIA.IO API key with the SIC_READ_INTAKES permission",
+        help="Sekoia.io API key with the SIC_READ_INTAKES permission",
     )
     parser.add_argument(
         "--dates",
@@ -432,9 +442,9 @@ search_events.py [-h] --dates DATES --query QUERY [-v] APIKEY
 ```
 
 * `--dates` is used to specify to the time windows. The format used is `earliest_time,latest_time`. Dates can be in ISO8601 or relative format.
-* `--query` is the query in Dork format (same langage as the SEKOIA.IO event page)
+* `--query` is the query in Dork format (same langage as the Sekoia.io event page)
 * `-v` to get verbose mode
-* `APIKEY` is the SEKOIA.IO key with the `SIC_READ_INTAKES` permission
+* `APIKEY` is the Sekoia.io key with the `SIC_READ_INTAKES` permission
 
 **Example**:
 

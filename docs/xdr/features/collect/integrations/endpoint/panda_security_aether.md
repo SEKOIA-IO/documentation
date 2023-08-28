@@ -9,7 +9,7 @@ Panda Security offers two Endpoint Detection and Response (EDR) solutions for co
 - Adaptive Defense and Adaptive Defense 360
 - Endpoint Protection and Endpoint Protection Plus
 
-This setup guide shows how to forward security events collected on the Panda Security Aether platform to SEKOIA.IO.
+This setup guide shows how to forward security events collected on the Panda Security Aether platform to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_ee6364a1-9e3c-4363-9cb6-2f574bd4ce51_do_not_edit_manually.md!}
 
@@ -37,7 +37,7 @@ Set up the module configuration with an access ID, the password of the access ID
 Set the `base_url` with the domain part of the API Url (e.g: for the API URL `https://api.usa.cloud.watchguard.com/rest/`, the `base_url` is `https://api.usa.cloud.watchguard.com`).
 Set up the trigger configuration with the frequency of the pull.
 
-At the end of the playbook, set up the action `Push events to intake` with a SEKOIA.IO API key and the intake key, from the intake previously created.
+At the end of the playbook, set up the action `Push events to intake` with a Sekoia.io API key and the intake key, from the intake previously created.
 
 Start the playbook and enjoy your events.
 

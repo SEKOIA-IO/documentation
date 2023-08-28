@@ -19,11 +19,11 @@ On Palo Alto appliances, most of the important hardward and software activities 
 - System
 - Security
 
-### Create the intake on SEKOIA.IO
+### Create the intake on Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Palo Alto Next-Generation Firewall`
 
-### Send events to SEKOIA.IO
+### Send events to Sekoia.io
 
 #### Forward events through syslog
 
@@ -68,9 +68,9 @@ For detailed information about configuring a log forwarding profile and assignin
 1. In the GUI, go to `Device > Log Settings`.
 2. Click each Severity level (High and Critical if also fine), select the `Syslog server` profile, and click `OK`.
 
-#### Transport to SEKOIA.IO
+#### Forward logs to Sekoia.io
 
-Please refer to the documentation of the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please refer to the documentation of the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 ### Forward events through Palo Alto Cortex Data Lake
 

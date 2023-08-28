@@ -3,6 +3,12 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x IBM AIX on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6_do_not_edit_manually.json){ .md-button }
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -78,6 +84,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
 ??? abstract "Capture a network trace with netsh.exe"
     
     Detects capture a network trace via netsh.exe trace functionality
+    
+    - **Effort:** intermediate
+
+??? abstract "CertOC Loading Dll"
+    
+    Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
     
     - **Effort:** intermediate
 
@@ -267,6 +279,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
 ??? abstract "Grabbing Sensitive Hives Via Reg Utility"
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
@@ -302,6 +320,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "IIS Module Installation Using AppCmd"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
@@ -345,11 +369,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** master
 
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+
 ??? abstract "MSBuild Abuse"
     
     Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
     
     - **Effort:** intermediate
+
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
 
 ??? abstract "MalwareBytes Uninstallation"
     
@@ -369,17 +405,53 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus History Directory Deleted"
+    
+    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Restoration Abuse"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Signatures Removed With MpCmdRun"
+    
+    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
+    
+    - **Effort:** elementary
+
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
     
     - **Effort:** master
-
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -697,7 +769,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Socat Reverse Shell Detection"
     
@@ -753,6 +825,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Mshta Execution"
     
     Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
@@ -767,7 +851,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
 
 ??? abstract "Suspicious Network Args In Command Line"
     
-    Detection on suspicious network arguments in processes command lines using HTTP schema with port 443.
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
     
     - **Effort:** intermediate
 
@@ -807,12 +891,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** elementary
 
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
-
 ??? abstract "Suspicious Windows Installer Execution"
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
@@ -846,6 +924,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
+    
+    - **Effort:** intermediate
+
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
 
@@ -885,48 +969,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     
     - **Effort:** elementary
 
-??? abstract "Windows Defender Abuse Restoration"
-    
-    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disable Scheduled Tasks"
-    
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender History Directory Deleted"
-    
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Signatures Removed With MpCmdRun"
-    
-    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
-    
-    - **Effort:** elementary
-
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
@@ -956,3 +998,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **IBM AIX** with the following
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

@@ -8,9 +8,6 @@ OPNSense is a firewall software distribution based on FreeBSD.
 
 This intake ingest filterlog from OPNSense.
 
-!!! warning
-    This format is still in beta, please use it wisely.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_8510051d-c7cf-4b0c-a398-031afe91faa0_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/8510051d-c7cf-4b0c-a398-031afe91faa0.md!}
@@ -18,7 +15,7 @@ This intake ingest filterlog from OPNSense.
 ## Configure
 
 This setup guide will show you how to forward your Firewall logs
-to SEKOIA.IO by means of a syslog transport channel.
+to Sekoia.io by means of a syslog transport channel.
 
 ### Prerequisites
 
@@ -43,9 +40,9 @@ To enable syslog forwarding:
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `OpenBSD Packet Filter`.
 
-### Transport to SEKOIA.IO
+### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 
 

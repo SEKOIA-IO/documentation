@@ -1,13 +1,15 @@
-# SEKOIA.IO
+# Sekoia.io
 
-SEKOIA.IO
+![Sekoia.io](/assets/playbooks/library/sekoia-io.svg){ align=right width=150 }
+
+Sekoia.io
 
 ## Configuration
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `api_key` | `string` | SEKOIA.IO API key |
-| `base_url` | `string` | SEKOIA.IO base URL (ex. https://api.sekoia.io) |
+| `api_key` | `string` | Sekoia.io API key |
+| `base_url` | `string` | Sekoia.io base URL (ex. https://api.sekoia.io) |
 
 ## Triggers
 
@@ -27,7 +29,7 @@ A comment was added to an existing Alert
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `file_path` | `string` | File path to the alert on disk. |
-| `event_type` | `string` | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
 | `short_id` | `string` | Unique short identifier of the Alert. |
 | `status` | `object` | Status of the Alert (object containing status description and name). |
@@ -56,7 +58,7 @@ A new Alert was created in the Operation Center
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `file_path` | `string` | File path to the alert on disk. |
-| `event_type` | `string` | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
 | `short_id` | `string` | Unique short identifier of the Alert. |
 | `status` | `object` | Status of the Alert (object containing status description and name). |
@@ -85,7 +87,7 @@ The status of an existing alert was changed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `file_path` | `string` | File path to the alert on disk. |
-| `event_type` | `string` | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
 | `short_id` | `string` | Unique short identifier of the Alert. |
 | `status` | `object` | Status of the Alert (object containing status description and name). |
@@ -114,7 +116,7 @@ An existing alert was updated
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `file_path` | `string` | File path to the alert on disk. |
-| `event_type` | `string` | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
 | `short_id` | `string` | Unique short identifier of the Alert. |
 | `status` | `object` | Status of the Alert (object containing status description and name). |
@@ -129,13 +131,49 @@ An existing alert was updated
 
 ### Manual Trigger
 
-Webhook Trigger to receive specific SEKOIA.IO Alerts
+Webhook Trigger to receive specific Sekoia.io Alerts
 
 **Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+
+
+### Feed Consumption
+
+Get all non-revoked objects from Sekoia.io Intelligence feed
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects` | `object` | STIX objects returned by the feed |
+
+
+### Feed IOC Consumption
+
+Get all valid IOCs from Sekoia.io Intelligence feed
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects` | `object` | IOCs returned by the feed (STIX objects) |
 
 
 ### Any Alert Update
@@ -154,7 +192,7 @@ Create an event for each alert creation or modification
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `file_path` | `string` | File path to the alert on disk. |
-| `event_type` | `string` | Action that triggered this SEKOIA.IO Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
 | `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
 | `short_id` | `string` | Unique short identifier of the Alert. |
 | `status` | `object` | Status of the Alert (object containing status description and name). |
@@ -814,4 +852,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`SEKOIA.IO` v2.28**
+Module **`Sekoia.io` v2.43**

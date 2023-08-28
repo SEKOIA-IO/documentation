@@ -63,9 +63,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
     
     - **Effort:** elementary
 
-??? abstract "CVE-2019-19781 Citrix Netscaler"
+??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
     
-    Detects CVE-2019-19781 exploitation attempt against Citrix Netscaler, Application Delivery Controller and Citrix Gateway Attack
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack
     
     - **Effort:** elementary
 
@@ -189,6 +189,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
     
     - **Effort:** advanced
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
@@ -273,23 +279,29 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
     
     - **Effort:** elementary
 
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
     
     - **Effort:** elementary
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
     
     - **Effort:** elementary
-
-??? abstract "Potential LokiBot User-Agent"
-    
-    Detects potential LokiBot communications through the user-agent
-    
-    - **Effort:** intermediate
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
@@ -324,12 +336,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **McAfee Web Gateway / Skyhigh
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
     
     - **Effort:** elementary
 

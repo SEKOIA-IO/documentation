@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io activity logs** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x SEKOIA.IO activity logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_41e3ca4e-a714-41aa-ad69-684a0b3835fc_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Sekoia.io activity logs on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_41e3ca4e-a714-41aa-ad69-684a0b3835fc_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
     Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace. 
@@ -81,6 +81,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** wi
     
     - **Effort:** advanced
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
@@ -111,6 +117,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** wi
     
     - **Effort:** elementary
 
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Potential Bazar Loader User-Agents"
     
     Detects potential Bazar loader communications through the user-agent
@@ -123,12 +135,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** wi
     
     - **Effort:** elementary
 
-??? abstract "Potential LokiBot User-Agent"
-    
-    Detects potential LokiBot communications through the user-agent
-    
-    - **Effort:** intermediate
-
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
     
     Detect PEAS privileges escalation scripts and binaries
@@ -138,12 +144,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SEKOIA.IO activity logs** wi
 ??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
-    
-    - **Effort:** elementary
-
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
     
     - **Effort:** elementary
 

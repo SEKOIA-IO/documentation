@@ -1,8 +1,14 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility [Deprecated]** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Cloud Funnel 1.0 [Deprecated]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x SentinelOne Deep Visibility [Deprecated] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x SentinelOne Cloud Funnel 1.0 [Deprecated] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_8c1bee36-d516-42f9-9b6f-a8e4dcac3d1d_do_not_edit_manually.json){ .md-button }
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -171,6 +177,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** intermediate
 
+??? abstract "CertOC Loading Dll"
+    
+    Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Certificate Authority Modification"
     
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
@@ -278,6 +290,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     Detects PowerShell encoding to UTF-8, which is used by Sliver implants. The command line just sets the default encoding to UTF-8 in PowerShell.
     
     - **Effort:** advanced
+
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
 
 ??? abstract "Disable Task Manager Through Registry Key"
     
@@ -423,6 +441,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** elementary
 
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
 ??? abstract "File Or Folder Permissions Modifications"
     
     Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.
@@ -483,6 +507,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** elementary
 
+??? abstract "IIS Module Installation Using AppCmd"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** intermediate
+
 ??? abstract "IcedID Execution Using Excel"
     
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
@@ -537,6 +567,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** master
 
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+
 ??? abstract "Load Of dbghelp/dbgcore DLL From Suspicious Process"
     
     Detects the load of dbghelp/dbgcore DLL (used to make memory dumps) by suspicious processes. Many tools import dbghelp.dll and / or dbgcore.dll to use the MiniDumpWriteDump function. As an example, SilentTrynity C2 Framework has a module that leverages this API to dump the contents of Lsass.exe and transfer it over the network back to the attacker's machine. Dumpert from OUTFLANK also uses this.
@@ -585,6 +621,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** intermediate
 
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -600,6 +642,48 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
 ??? abstract "Meterpreter or Cobalt Strike Getsystem Service Installation"
     
     Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus History Directory Deleted"
+    
+    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Restoration Abuse"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Signatures Removed With MpCmdRun"
+    
+    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
     
     - **Effort:** elementary
 
@@ -620,12 +704,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
     
     - **Effort:** intermediate
-
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -939,12 +1017,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** elementary
 
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
-    
-    - **Effort:** elementary
-
 ??? abstract "Rare Logonui Child Found"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
@@ -1035,18 +1107,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** intermediate
 
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** intermediate
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
-    
-    - **Effort:** intermediate
-
 ??? abstract "SolarWinds Suspicious File Creation"
     
     Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
@@ -1055,7 +1115,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
 
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
 
@@ -1143,6 +1203,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Mshta Execution"
     
     Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
@@ -1163,7 +1235,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
 
 ??? abstract "Suspicious Network Args In Command Line"
     
-    Detection on suspicious network arguments in processes command lines using HTTP schema with port 443.
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
     
     - **Effort:** intermediate
 
@@ -1226,12 +1298,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
     
     - **Effort:** elementary
-
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
 
 ??? abstract "Suspicious Windows Installer Execution"
     
@@ -1377,48 +1443,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     
     - **Effort:** elementary
 
-??? abstract "Windows Defender Abuse Restoration"
-    
-    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disable Scheduled Tasks"
-    
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender History Directory Deleted"
-    
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Signatures Removed With MpCmdRun"
-    
-    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
-    
-    - **Effort:** elementary
-
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
@@ -1496,3 +1520,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **SentinelOne Deep Visibility 
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

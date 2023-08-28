@@ -6,7 +6,7 @@ type: intake
 
 FreeRADIUS is an implementation of RADIUS, a protocol for remote user Authentication, Authorization and Accounting.
 
-In this documentation, you will learn how to collect and send FreeRADIUS logs to SEKOIA.IO.
+In this documentation, you will learn how to collect and send FreeRADIUS logs to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_aeb7d407-db57-44b2-90b6-7df6738d5d7f_do_not_edit_manually.md!}
 
@@ -14,19 +14,19 @@ In this documentation, you will learn how to collect and send FreeRADIUS logs to
 
 ## Configure
 
-This setup guide will lead you into forwarding FreeRADIUS's logs to SEKOIA.IO
+This setup guide will lead you into forwarding FreeRADIUS's logs to Sekoia.io
 
 ### Prerequisites
 
-An internal syslog concentrator is required to collect and forward events to SEKOIA.IO.
+An internal syslog concentrator is required to collect and forward events to Sekoia.io.
 
-### Create the intake in SEKOIA.IO
+### Create the intake in Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `FreeRADIUS`. Copy the intake key.
 
-### Transport to SEKOIA.IO
+### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io
 
 ### Enable Syslog forwarding for FreeRADIUS
 

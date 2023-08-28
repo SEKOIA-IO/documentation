@@ -6,7 +6,7 @@ type: intake
 
 WithSecure Elements is an advanced cloud-based EDR/EPP platform that provides a unified solution to protect your organization from cyber threats. By integrating WithSecure Elements with Sekoia.io, you can easily monitor and correlate alerts across all endpoints, ensuring maximum security for your business.
 
-This setup guide shows how to forward events produced by WithSecures Elements to SEKOIA.IO.
+This setup guide shows how to forward events produced by WithSecures Elements to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_033cd098-b21b-4c9b-85c4-c8174c307e48_do_not_edit_manually.md!}
 

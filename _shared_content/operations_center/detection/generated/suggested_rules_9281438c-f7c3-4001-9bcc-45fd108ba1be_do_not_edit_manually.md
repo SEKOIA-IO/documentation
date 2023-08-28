@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** master
 
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -225,6 +231,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "CertOC Loading Dll"
+    
+    Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Chafer (APT 39) Activity"
     
     Detects previous Chafer (APT 39) activity attributed to OilRig as reported in Nyotron report in March 2018.
@@ -284,6 +296,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects the malicious use of a control panel item
     
     - **Effort:** advanced
+
+??? abstract "Copy Of Legitimate System32 Executable"
+    
+    A script has copied a System32 executable.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Copying Browser Files With Credentials"
     
@@ -711,6 +729,48 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "HarfangLab EDR Critical Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR High Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR Hlai Engine Detection"
+    
+    HarfangLab EDR has raised an alert based on its hlai engine
+    
+    - **Effort:** advanced
+
+??? abstract "HarfangLab EDR Low Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR Medium Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR Process Execution Blocked"
+    
+    HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
+    
+    - **Effort:** elementary
+
+??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
+    
+    HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
+    
+    - **Effort:** master
+
 ??? abstract "Hiding Files With Attrib.exe"
     
     Detects usage of attrib.exe to hide files from users.
@@ -734,6 +794,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "IIS Module Installation Using AppCmd"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** intermediate
 
 ??? abstract "IcedID Execution Using Excel"
     
@@ -891,6 +957,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -944,6 +1016,90 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Configuration Changed"
+    
+    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Exclusion Configuration"
+    
+    Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus History Deleted"
+    
+    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus History Directory Deleted"
+    
+    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Restoration Abuse"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Signatures Removed With MpCmdRun"
+    
+    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
+    
+    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Malware Protection Engine Crash"
     
@@ -1369,7 +1525,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Process Herpaderping"
     
@@ -1691,7 +1847,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
 
@@ -1839,6 +1995,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Hostname"
     
     Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
@@ -1850,6 +2012,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects the usage of particular AttributeLDAPDisplayNames, which are known for data exchange via LDAP by the tool LDAPFragger and are additionally not commonly used in companies. Careful as the 5136 is only on domain controllers and needs to be activated through the Group Policy.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
 
 ??? abstract "Suspicious Mshta Execution"
     
@@ -1871,7 +2039,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
 
 ??? abstract "Suspicious Network Args In Command Line"
     
-    Detection on suspicious network arguments in processes command lines using HTTP schema with port 443.
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
     
     - **Effort:** intermediate
 
@@ -1988,12 +2156,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detects a suspicious Windows command-line process making a DNS query via known abuse text paste web services. This is based on Microsoft Windows Sysmon events (Event ID 22).
     
     - **Effort:** advanced
-
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
 
 ??? abstract "Suspicious Windows Installer Execution"
     
@@ -2175,6 +2337,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** intermediate
 
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
+    
+    - **Effort:** intermediate
+
 ??? abstract "WCE wceaux.dll Creation"
     
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
@@ -2271,95 +2439,11 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     
     - **Effort:** elementary
 
-??? abstract "Windows Defender Abuse Restoration"
-    
-    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Configuration Changed"
-    
-    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
-    
-    - **Effort:** master
-
 ??? abstract "Windows Defender Deactivation Using PowerShell Script"
     
     Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
     
     - **Effort:** master
-
-??? abstract "Windows Defender Disable Scheduled Tasks"
-    
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disable SecurityHealth"
-    
-    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disable Services"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender Exclusion Configuration"
-    
-    Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender History Deleted"
-    
-    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** master
-
-??? abstract "Windows Defender History Directory Deleted"
-    
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Signatures Removed With MpCmdRun"
-    
-    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender Tampering Detected"
-    
-    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
 
 ??? abstract "Windows Firewall Changes"
     
@@ -2450,3 +2534,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Windows** with the following
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

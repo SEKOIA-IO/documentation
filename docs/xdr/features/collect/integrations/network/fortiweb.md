@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-This documentation details one way to collect and send FortiWeb logs to SEKOIA.IO: from the FortiWeb machine to an internal syslog concentrator, then forwarded to SEKOIA.IO
+This documentation details one way to collect and send FortiWeb logs to Sekoia.io: from the FortiWeb machine to an internal syslog concentrator, then forwarded to Sekoia.io
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2259adc3-9d93-4150-9c1c-46804e636084_do_not_edit_manually.md!}
@@ -56,6 +56,6 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 For more information please refer to the official documentation of [FortiWeb](https://docs.fortinet.com/document/fortiweb/6.1.1/administration-guide/303842/logging)
 
-### Transport to SEKOIA.IO
+### Forward logs to Sekoia.io
 
-The reader is invited to consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+The reader is invited to consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.

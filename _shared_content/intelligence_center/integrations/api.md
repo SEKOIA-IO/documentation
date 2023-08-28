@@ -35,7 +35,7 @@ The special feed ID to use is `d6092c37-d8d7-45c3-8aff-c4dc26030608`.
 
 The easiest way to create feed configurations is to use the Intelligence Center interface, by clicking on `Feeds` in the left menu. The dropdown next to the feed's name will allow you to copy the ID or the consumption URLs of the feed.
 
-![SEKOIA.IO Intelligence Center Feeds](/assets/intelligence_center/feeds.png){: style="width: 100%; max-width: 100%"}
+![Sekoia.io Intelligence Center Feeds](/assets/intelligence_center/feeds.png){: style="width: 100%; max-width: 100%"}
 
 If you would prefer creating the feed with the API, you can use the [feeds](../../../develop/rest_api/intelligence/#operation/post_feeds_resource) endpoint.
 
@@ -97,7 +97,7 @@ Note that if the type is not available in the feed it will not be returned even 
 
 #### Filtering on Last Modification Date
 
-The feed entries are sorted by date from the oldest to the youngest. Since SEKOIA.IO started its default feed in 2019,
+The feed entries are sorted by date from the oldest to the youngest. Since Sekoia.io started its default feed in 2019,
 the consumer must download a massive amount of data before getting recent intelligence.
 We introduced the `modified_after` parameter to help our users consume our feed when they are only interested in recent intelligence. When set, the `modified_after` filters intelligence entries that were created or modified after the specified value.
 

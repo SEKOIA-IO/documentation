@@ -34,4 +34,4 @@ Trigger playbook run on certificate of interest update
 
 ## Extra
 
-Module **`Certificate Transparency` v1.16**
+Module **`Certificate Transparency` v1.24**

@@ -1,4 +1,4 @@
-copyright: Copyright &copy; 2023 - SEKOIA.IO
+copyright: Copyright &copy; 2023 - Sekoia.io
 edit_uri: edit/main/docs/
 extra:
   social:
@@ -13,6 +13,7 @@ extra_javascript:
 - javascript/sekoiaio.js
 - javascript/lightgallery.min.js
 - javascript/hotjar.js
+- javascript/posthog.js
 markdown_extensions:
 - admonition
 - attr_list
@@ -38,7 +39,7 @@ nav:
       - Security tokens: getting_started/securitytokens.md
   - 2. Manage communities:
     - Edit a community: getting_started/community-edit.md
-    - (MSSP ONLY) Create a sub-community: getting_started/community-create_sub_com.md
+    - Create a sub-community: getting_started/community-create_sub_com.md
     - Set up community security:
       - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
       - SSO with Azure AD: getting_started/sso/azure.md
@@ -55,14 +56,14 @@ nav:
     - Listing and creation: getting_started/notifications-Listing_Creation.md
     - Notification examples: getting_started/notifications-Examples.md
   - 6. Manage API Keys: getting_started/manage_api_keys.md
-- SEKOIA.IO XDR:
+- Sekoia.io XDR:
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
   - Features:
     - Collect:
       - Overview: xdr/features/collect/ingestion_methods/index.md
       - Ingestion methods:
-        - SEKOIA.IO Docker concentrator: xdr/features/collect/ingestion_methods/sekoiaio_docker_concentrator.md
+        - Sekoia.io Forwarder: xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md
         - Rsyslog: xdr/features/collect/ingestion_methods/rsyslog.md
         - Logstash: xdr/features/collect/ingestion_methods/logstash.md
         - syslog-ng: xdr/features/collect/ingestion_methods/syslog-ng.md
@@ -104,6 +105,8 @@ nav:
             - Gateway Network: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-network.md
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
+          - Duo Security: xdr/features/collect/integrations/cloud_and_saas/duo_security.md
+          - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
           - Google Cloud:
             - Google Workspace and Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
             - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
@@ -119,9 +122,14 @@ nav:
           - Microsoft Office 365:
             - Office365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
             - Microsoft Defender for Office 365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
+            - Microsoft 365 Defender: xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender.md
             - Message trace: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
           - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
+          - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
+          - Salesforce: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
+          - Sophos Threat Analysis Center: xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md
+          - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
           - Cisco ESA: xdr/features/collect/integrations/email/cisco_esa.md
@@ -137,24 +145,27 @@ nav:
             - Auditbeat Linux: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
             - Winlogbeat: xdr/features/collect/integrations/endpoint/winlogbeat.md
           - CrowdStrike Falcon: xdr/features/collect/integrations/endpoint/crowdstrike_falcon.md
+          - CrowdStrike Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_telemetry.md
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
           - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
+          - Darktrace Threat Visualizer: xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - IBM AIX: xdr/features/collect/integrations/endpoint/ibm_aix.md
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
-          - Microsoft Defender for Endpoints: xdr/features/collect/integrations/endpoint/microsoft_defender_for_endpoints.md
           - Microsoft Intune: xdr/features/collect/integrations/endpoint/microsoft_intune.md
           - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
-          - SEKOIA.IO Endpoint Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
+          - Sekoia.io Endpoint Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
           - SentinelOne EDR: xdr/features/collect/integrations/endpoint/sentinelone.md
-          - SentinelOne Deep Visibility: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
+          - SentinelOne Cloud Funnel 1.0 [Deprecated]: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
           - SentinelOne Cloud Funnel 2.0: xdr/features/collect/integrations/endpoint/sentinelone_cloudfunnel2.0.md
           - Sophos EDR: xdr/features/collect/integrations/endpoint/sophos_edr.md
           - Symantec/Broadcom Endpoint Security: xdr/features/collect/integrations/endpoint/symantec_epp.md
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
           - TEHTRIS EDR: xdr/features/collect/integrations/endpoint/tehtris_edr.md
           - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
+          - Trellix ePO: xdr/features/collect/integrations/endpoint/trellix_epo.md
           - VMware ESXi: xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md
+          - VMware VCenter: xdr/features/collect/integrations/endpoint/vmware/vmware_vcenter.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
           - WithSecure Elements: xdr/features/collect/integrations/endpoint/withsecure_elements.md
@@ -164,8 +175,10 @@ nav:
             - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco/cisco_asa.md
             - Cisco Secure Web Appliance: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
             - Cisco IOS: xdr/features/collect/integrations/network/cisco/cisco_ios.md
+            - Cisco ISE: xdr/features/collect/integrations/network/cisco/cisco_ise.md
             - Cisco NX-OS: xdr/features/collect/integrations/network/cisco/cisco_nx_os.md
             - Cisco Meraki MX: xdr/features/collect/integrations/network/cisco/cisco_meraki_mx.md
+          - Citrix ADC: xdr/features/collect/integrations/network/citrix_adc.md
           - Gatewatcher AionIQ: xdr/features/collect/integrations/network/gatewatcher_aioniq.md
           - F5 BIG-IP: xdr/features/collect/integrations/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: xdr/features/collect/integrations/network/forcepoint_web_gateway.md
@@ -174,6 +187,7 @@ nav:
             - Fortinet Fortiproxy: xdr/features/collect/integrations/network/fortiproxy.md
             - Fortinet Fortiweb: xdr/features/collect/integrations/network/fortiweb.md
           - Infoblox DDI: xdr/features/collect/integrations/network/infoblox_ddi.md
+          - Sophos Firewall: xdr/features/collect/integrations/network/sophos_fw.md
           - Mc Afee/Skyhigh Secure Web Gateway: xdr/features/collect/integrations/network/skyhigh_secure_web_gateway.md
           - Microsoft Always On VPN: xdr/features/collect/integrations/network/microsoft_always_on_vpn.md
           - NetFilter: xdr/features/collect/integrations/network/netfilter.md
@@ -183,10 +197,10 @@ nav:
           - Pulse / Ivanti Secure Connect: xdr/features/collect/integrations/network/pulse.md
           - Rubycat PROVE IT: xdr/features/collect/integrations/network/rubycat_prove_it.md
           - SonicWall Firewall: xdr/features/collect/integrations/network/sonicwall_fw.md
-          - Sophos Firewall: xdr/features/collect/integrations/network/sophos_fw.md
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield SNS: xdr/features/collect/integrations/network/stormshield_network_security.md
           - Suricata: xdr/features/collect/integrations/network/suricata.md
+          - Varonis Data Security: xdr/features/collect/integrations/network/varonis_data_security.md
           - Vectra Cognito Detect: xdr/features/collect/integrations/network/vectra.md
           - Wallix: xdr/features/collect/integrations/network/wallix.md
           - WatchGuard Firebox: xdr/features/collect/integrations/network/watchguard_firebox.md
@@ -213,6 +227,7 @@ nav:
       - Dashboards: xdr/features/report/dashboards.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
+      - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: xdr/features/automate/navigate-playbooks.md
       - Build playbooks: xdr/features/automate/build-playbooks.md
       - Triggers: xdr/features/automate/triggers.md
@@ -224,7 +239,6 @@ nav:
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
-        - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Cybereason: xdr/features/automate/library/cybereason.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
@@ -256,11 +270,12 @@ nav:
         - Public Suffix: xdr/features/automate/library/public-suffix.md
         - RSS: xdr/features/automate/library/rss.md
         - RiskIQ: xdr/features/automate/library/riskiq.md
-        - SEKOIA.IO: xdr/features/automate/library/sekoia-io.md
+        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - STIX: xdr/features/automate/library/stix.md
-        - Sentinel One: xdr/features/automate/library/sentinel-one.md
+        - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
+        - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
         - Skyhigh Security Secure Web Gateway (SWG): xdr/features/automate/library/skyhigh-security-secure-web-gateway-swg.md
         - Sophos: xdr/features/automate/library/sophos.md
         - Tehtris: xdr/features/automate/library/tehtris.md
@@ -275,6 +290,7 @@ nav:
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
+      - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
   - Usecases:
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
   - FAQ:
@@ -282,11 +298,14 @@ nav:
     - Alerts: xdr/FAQ/Alerts_qa.md
     - Events: xdr/FAQ/Events_qa.md
     - Rules: xdr/FAQ/Rules_qa.md
-    - SEKOIA.IO Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
+    - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
   - Develop:
     - Quickstart: xdr/develop/quickstart.md
     - Guides:
       - Filtering: xdr/develop/guides/filtering.md
+      - Automation:
+        - Overview: xdr/develop/guides/automation/overview.md
+        - Create a Module: xdr/develop/guides/automation/create_a_module.md
     - REST API:
       - Authentication and Community: xdr/develop/rest_api/community.md
       - Dashboard: xdr/develop/rest_api/dashboard.md
@@ -297,7 +316,7 @@ nav:
       - Assets: xdr/develop/rest_api/assets.md
       - Playbooks: xdr/develop/rest_api/playbooks.md
       - Telemetry: xdr/develop/rest_api/telemetry.md
-- SEKOIA.IO CTI:
+- Sekoia.io CTI:
   - Introduction: cti/index.md
   - Features:
     - Data Models: cti/features/data_model.md
@@ -335,7 +354,7 @@ nav:
       - Notification: cti/develop/rest_api/notification.md
       - Playbooks: cti/develop/rest_api/playbooks.md
       - External Dynamic List: cti/develop/rest_api/edl-gateway.md
-- SEKOIA.IO TIP:
+- Sekoia.io TIP:
   - Introduction: tip/index.md
   - Features:
     - Data Models: tip/features/data_model.md
@@ -366,6 +385,7 @@ nav:
       - PaloAlto Cortex XSOAR: tip/features/integrations/paloalto_xsoar.md
     - Automate:
       - Playbooks: tip/features/automate/index.md
+      - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: tip/features/automate/navigate-playbooks.md
       - Build playbooks: tip/features/automate/build-playbooks.md
       - Triggers: tip/features/automate/triggers.md
@@ -401,10 +421,12 @@ nav:
         - Public Suffix: tip/features/automate/library/public-suffix.md
         - RSS: tip/features/automate/library/rss.md
         - RiskIQ: tip/features/automate/library/riskiq.md
-        - SEKOIA.IO: tip/features/automate/library/sekoia-io.md
+        - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - STIX: tip/features/automate/library/stix.md
+        - SentinelOne: tip/features/automate/library/sentinelone.md
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
+        - Skyhigh Security: tip/features/automate/library/skyhigh-security.md
         - The Hive: tip/features/automate/library/the-hive.md
         - Tranco: tip/features/automate/library/tranco.md
         - Triage: tip/features/automate/library/triage.md
@@ -417,6 +439,9 @@ nav:
     - Overview: tip/develop/index.md
     - Guides:
       - Filtering: tip/develop/guides/filtering.md
+      - Playbooks:
+        - Overview: tip/develop/guides/automation/overview.md
+        - Quick start: tip/develop/guides/automation/create_a_module.md
     - REST API:
       - Authentication and Community: tip/develop/rest_api/community.md
       - Intelligence: tip/develop/rest_api/intelligence.md
@@ -495,6 +520,7 @@ plugins:
       integrations/fortiweb.md: xdr/features/collect/integrations/network/fortiweb.md
       integrations/freeradius.md: xdr/index.md
       integrations/fsecure.md: xdr/index.md
+      integrations/github_audit_logs.md: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
       integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
@@ -522,6 +548,7 @@ plugins:
       integrations/pulse.md: xdr/features/collect/integrations/network/pulse.md
       integrations/raw.md: xdr/features/collect/integrations/generic/raw.md
       integrations/retarus-email-security.md: xdr/features/collect/integrations/email/retarus_email_security.md
+      integrations/salesforce.md: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
       integrations/sekoiaio-activity-logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
       integrations/sekoiaio_activity_logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
       integrations/sentinelone-deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
@@ -721,7 +748,7 @@ plugins:
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
-site_name: SEKOIA.IO Documentation
+site_name: Sekoia.io Documentation
 site_url: https://docs.sekoia.io
 theme:
   custom_dir: theme

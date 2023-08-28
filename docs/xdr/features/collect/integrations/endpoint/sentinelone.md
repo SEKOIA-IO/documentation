@@ -10,7 +10,7 @@ Please find bellow a limited list of field types that are available with Sentine
 
 - Information about the Endpoint
 - Information about the SentinelOne agent installed
-- Activity type and its description
+- Activity type and its description (authentication access, user management, 2FA setup...)
 
 And depending on the context of the log, additional content could be available, such as:
 
@@ -18,7 +18,9 @@ And depending on the context of the log, additional content could be available, 
 - Network information
 - File information
 
-> For advanced log collection, we suggest you to use SentinelOne Deep Visibility kafka option, as described offered by the [SentinelOne DeepVisibility integration](sentinelone_deepvisibility.md).
+!!! Tip
+    For advanced log collection, we suggest you to use SentinelOne Cloud Funnel 2.0 option, as described offered by the [SentinelOne Cloud Funnel 2.0 integration](sentinelone_cloudfunnel2.0.md).
+
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_07c556c0-0675-478c-9803-e7990afe78b6_do_not_edit_manually.md!}
 
@@ -26,24 +28,24 @@ And depending on the context of the log, additional content could be available, 
 
 ## Configure
 
-This setup guide will show you how to pull events produced by SentinelOne EDR on [SEKOIA.IO](https://app.sekoia.io/). To collect the SentinelOne logs, you must generate an API token from the SentinelOne Management Console
+This setup guide will show you how to pull events produced by SentinelOne EDR on [Sekoia.io](https://app.sekoia.io/). To collect the SentinelOne logs, you must generate an API token from the SentinelOne Management Console. We recommend creating a Service User to use a dedicated account for the integration.
 
 **Important**: If you have multiple SentinelOne Management Consoles, you must generate an API Token for each one.
 
-> The API token you generate is time limited. To regenerate a new token (and invalidate the old one), log in with the dedicated SentinelOne account. You do not need to create a new account.
+!!! note
+    The API token you generate is time limited. To regenerate a new token (and invalidate the old one), you will need to copy the Service User. Please refer to the SentinelOne documentation to obtain guidance on how to do this action.
 
-1. In the SentinelOne management console, go to `Settings`, and then click `USERS`.
-2. Click on the `Admin user` for which you want to generate the API token.
+1. In the SentinelOne management console, go to `Settings`, click on `USERS` and then on `Service Users`.
+2. Create a new `Service User` by specifying a name and an expiration date.
+3. Choose the `Scope` of the `Service User`: `Global`, `Account` or `Site`, select the appropriate `Account(s)` or `Site(s)` and the role to grant to the `Service User`
+4. Click on `Create User` and copy the API token generated.
 
-**Note**: A user with a role of "Site Admin" can mitigate threats from the [SEKOIA.IO](https://app.sekoia.io/). A user with a role of "Site Viewer" can view threats but cannot take action.
-**Note**: You can generate a token only for your own user.
-
-3. Click `Generate` next to API Token. It shows the token string and the date that the token expires.
-4. Copy the token or click `Download` to save it.
+!!! note
+    A `Service User` with a role of `Site Admin` or `IR Team` can mitigate threats from [Sekoia.io](https://app.sekoia.io/) using [SentinelOne playbook actions](../../../automate/library/sentinel-one.md). A user with a role of `Site Viewer` can view activity events and threats but cannot take action.
 
 ## Create a SentinelOne intake
 
-In the [SEKOIA.IO Operation Center](https://app.sekoia.io/operations/intakes):
+In the [Sekoia.io Operation Center](https://app.sekoia.io/operations/intakes):
 
 1. Click on the `Intake` page.
 2. Search for `SentinelOne` by navigating the page or using the search bar.

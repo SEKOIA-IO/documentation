@@ -16,7 +16,7 @@ In this guide, you will configure your Symantec Endpoint Protection Manager or y
 
 ### Prerequisites
 
-An internal syslog concentrator is required to collect and forward events to SEKOIA.IO.
+An internal syslog concentrator is required to collect and forward events to Sekoia.io.
 
 ### Enable Syslog forwarding
 
@@ -27,6 +27,6 @@ Log on the console of our management server and follow [this guide](https://tech
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Symantec Endpoint Protection.
 
 
-## Transport to SEKOIA.IO
+## Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.

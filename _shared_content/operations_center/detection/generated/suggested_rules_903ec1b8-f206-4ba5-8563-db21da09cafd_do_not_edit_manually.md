@@ -33,6 +33,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Palo Alto Next-Generation Fi
     
     - **Effort:** advanced
 
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.

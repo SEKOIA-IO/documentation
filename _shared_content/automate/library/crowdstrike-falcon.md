@@ -27,7 +27,53 @@ Get latest events from CrowdStrike Falcon
 | `tg_username` | `['string', 'null']` | The username for the ThreatGraphAPI |
 | `tg_password` | `['string', 'null']` | The password for the ThreatGraphAPI |
 
+## Actions
+
+### Block IOC
+
+Block the provided IOC
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `value` | `string` | The value of the IOC to block |
+| `type` | `string` | Type of the IOC to block: md5, sha256 |
+
+### Monitor IOC
+
+Enable detection for the provided IOC
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `value` | `string` | The value of the IOC to monitor |
+| `type` | `string` | Type of the IOC to monitor: md5, sha256, domain, ipv4, ipv6 |
+
+### Push IOCs for prevention
+
+Block the provided IOCs: md5 / sha256 file hashes
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects` | `object` | The IOCs to disseminate |
+| `sekoia_base_url` | `string` | [Optional] Sekoia base url, used to generate direct links to IOCs |
+
+### Push IOCs for detection
+
+Enable detections on the provided IOCs: md5 / sha256 file hashes, IPv4/v6 address, domains
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects` | `object` | The IOCs to disseminate |
+| `sekoia_base_url` | `string` | [Optional] Sekoia base url, used to generate direct links to IOCs |
+
 
 ## Extra
 
-Module **`CrowdStrike Falcon` v1.5.1**
+Module **`CrowdStrike Falcon` v1.11**

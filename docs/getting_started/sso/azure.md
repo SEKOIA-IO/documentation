@@ -1,10 +1,10 @@
 # Configure Single Sign-on with Azure Active Directory
 
-In order to configure Azure with SEKOIA.IO, the following steps must be done:
+In order to configure Azure with Sekoia.io, the following steps must be done:
 
 1. Create a new application on Azure
-2. Connect to SEKOIA.IO, add a new domain that belongs to your community and wait for its validation
-3. Configure OpenID Connect in SEKOIA.IO (see associated documentation [Single Sign-On With OpenID Connect](../SSO_openid_connect.md))
+2. Connect to Sekoia.io, add a new domain that belongs to your community and wait for its validation
+3. Configure OpenID Connect in Sekoia.io (see associated documentation [Single Sign-On With OpenID Connect](../SSO_openid_connect.md))
 
 ## Create an Azure Active Directory app registration
 
@@ -19,11 +19,11 @@ In order to configure Azure with SEKOIA.IO, the following steps must be done:
 2. On the main page, in "Endpoints", copy your "OAuth 2.0 authorization endpoint" such as `https://login.microsoftonline.com/<YOUR TENANT ID>/`. Be sure to remove the `/oauth2/v2.0/authorize` suffix from the URL.
 3. Under "Certificates and secrets > Client secrets" use the "+ New client secret" button to create a secret. Save this secret for later use. 
 
-## Restrict access for SEKOIA.IO to specific users
+## Restrict access for Sekoia.io to specific users
 
-Azure Active Directory can be configured to prevent some users from accessing SEKOIA.IO.
+Azure Active Directory can be configured to prevent some users from accessing Sekoia.io.
 
 1. In "Azure Active Directory" > "Enterprise applications": select your application
 2. In the "Application | Overview" > "Getting Started" > "1. Assign users and groups"
 
-You are ready to input your configuration to SEKOIA.IO
+You are ready to input your configuration to Sekoia.io

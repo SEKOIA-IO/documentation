@@ -1,4 +1,4 @@
 ---
 template: overrides/develop/cti.html
-title: SEKOIA.IO CTI - Develop
+title: Sekoia.io CTI - Develop
 ---

@@ -33,29 +33,17 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     
     - **Effort:** intermediate
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
     
     - **Effort:** master
-
-??? abstract "Email Classified As Malware But Allowed (Proofpoint)"
-    
-    An email was classified as malware with a threat score greater than 0 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-
-??? abstract "Email Classified As Phishing But Allowed (Proofpoint)"
-    
-    An email was classified as phishing with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-
-??? abstract "Email Classified As Spam But Allowed (Proofpoint)"
-    
-    An email was classified as spam with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
 
 ??? abstract "Koadic MSHTML Command"
     
@@ -87,15 +75,27 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     
     - **Effort:** elementary
 
+??? abstract "Proofpoint TAP Email Classified As Malware But Allowed"
+    
+    An email was classified as malware with a threat score greater than 0 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+
+??? abstract "Proofpoint TAP Email Classified As Phishing But Allowed"
+    
+    An email was classified as phishing with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+
+??? abstract "Proofpoint TAP Email Classified As Spam But Allowed"
+    
+    An email was classified as spam with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+
 ??? abstract "ProxyShell Exchange Suspicious Paths"
     
     Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
-    
-    - **Effort:** elementary
-
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
     
     - **Effort:** elementary
 

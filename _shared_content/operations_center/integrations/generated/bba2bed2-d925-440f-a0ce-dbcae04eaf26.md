@@ -26,7 +26,7 @@ In details, the following table denotes the type of events produced by this inte
 
 ## Event Samples
 
-Find below few samples of events and how they are normalized by SEKOIA.IO.
+Find below few samples of events and how they are normalized by Sekoia.io.
 
 
 === "malcore_event.json"
@@ -45,7 +45,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "severity": 1,
             "kind": "event"
         },
-        "@timestamp": "2022-06-03T15:00:20.531000Z",
         "source": {
             "ip": "9.8.7.6",
             "port": 80,
@@ -56,6 +55,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 49804,
             "address": "1.2.3.4"
         },
+        "@timestamp": "2022-06-03T15:00:20.531000Z",
         "observer": {
             "name": "gcap-nti.gatewatcher.com",
             "version": "0.2",
@@ -154,7 +154,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "kind": "alert",
             "action": "allowed"
         },
-        "@timestamp": "2022-06-03T14:59:41.373000Z",
         "source": {
             "ip": "9.8.7.6",
             "port": 80,
@@ -169,6 +168,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "packets": 4,
             "address": "1.2.3.4"
         },
+        "@timestamp": "2022-06-03T14:59:41.373000Z",
         "observer": {
             "name": "gcap-sekoia.gatewatcher.com",
             "version": "0.2",
@@ -256,7 +256,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event"
         },
-        "@timestamp": "2022-06-03T14:59:41.374000Z",
         "source": {
             "ip": "9.8.7.6",
             "port": 80,
@@ -267,6 +266,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 49804,
             "address": "1.2.3.4"
         },
+        "@timestamp": "2022-06-03T14:59:41.374000Z",
         "observer": {
             "name": "gcap-sekoia.gatewatcher.com",
             "version": "0.2",
@@ -357,7 +357,6 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             ],
             "kind": "event"
         },
-        "@timestamp": "2022-06-03T14:59:41.378000Z",
         "source": {
             "ip": "9.8.7.6",
             "port": 49804,
@@ -368,6 +367,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
             "port": 80,
             "address": "1.2.3.4"
         },
+        "@timestamp": "2022-06-03T14:59:41.378000Z",
         "observer": {
             "name": "gcap-sekoia.gatewatcher.com",
             "version": "0.2",

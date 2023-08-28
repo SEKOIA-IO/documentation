@@ -72,4 +72,4 @@ Publish an event on a MISP server
 
 ## Extra
 
-Module **`MISP` v1.28**
+Module **`MISP` v2.5**

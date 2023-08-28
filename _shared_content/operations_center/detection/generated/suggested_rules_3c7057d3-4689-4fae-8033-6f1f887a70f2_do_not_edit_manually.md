@@ -3,6 +3,12 @@
 Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the following detection capabilities out-of-the-box.
 
 [SEKOIA.IO x HarfangLab on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3c7057d3-4689-4fae-8033-6f1f887a70f2_do_not_edit_manually.json){ .md-button }
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -120,6 +126,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
 ??? abstract "Capture a network trace with netsh.exe"
     
     Detects capture a network trace via netsh.exe trace functionality
+    
+    - **Effort:** intermediate
+
+??? abstract "CertOC Loading Dll"
+    
+    Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
     
     - **Effort:** intermediate
 
@@ -405,6 +417,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
@@ -453,13 +471,43 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "HarfangLab Process Execution Blocked"
+??? abstract "HarfangLab EDR Critical Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR High Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR Hlai Engine Detection"
+    
+    HarfangLab EDR has raised an alert based on its hlai engine
+    
+    - **Effort:** advanced
+
+??? abstract "HarfangLab EDR Low Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR Medium Level Rule Detection"
+    
+    HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR Process Execution Blocked"
     
     HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
 
-??? abstract "HarfangLab Suspicious Process Behavior Has Been Detected"
+??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
     HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
     
@@ -488,6 +536,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+
+??? abstract "IIS Module Installation Using AppCmd"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** intermediate
 
 ??? abstract "IcedID Execution Using Excel"
     
@@ -543,6 +597,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** master
 
+??? abstract "Listing Systemd Environment"
+    
+    Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
+    
+    - **Effort:** elementary
+
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
@@ -585,6 +645,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -603,6 +669,66 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus History Deleted"
+    
+    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus History Directory Deleted"
+    
+    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Restoration Abuse"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Signatures Removed With MpCmdRun"
+    
+    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
+    
+    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
+
 ??? abstract "Microsoft Office Creating Suspicious File"
     
     Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
@@ -620,12 +746,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
     
     - **Effort:** intermediate
-
-??? abstract "Msdt (Follina) File Browse Process Execution"
-    
-    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
-    
-    - **Effort:** elementary
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -741,6 +861,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
 ??? abstract "NjRat Registry Changes"
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
@@ -830,6 +956,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
     - **Effort:** intermediate
+
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
+    
+    - **Effort:** intermediate
+
+??? abstract "Potential Bazar Loader User-Agents"
+    
+    Detects potential Bazar loader communications through the user-agent
+    
+    - **Effort:** elementary
+
+??? abstract "Potential Lemon Duck User-Agent"
+    
+    Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
+    
+    - **Effort:** elementary
 
 ??? abstract "PowerCat Function Loading"
     
@@ -1065,21 +1209,15 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
+??? abstract "Sliver DNS Beaconing"
+    
+    Detects suspicious DNS queries known from Sliver beaconing 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
-    
-    - **Effort:** intermediate
-
-??? abstract "Socat Relaying Socket"
-    
-    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
-    
-    - **Effort:** intermediate
-
-??? abstract "Socat Reverse Shell Detection"
-    
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
     
     - **Effort:** intermediate
 
@@ -1091,7 +1229,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
 
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
 
@@ -1191,6 +1329,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+
 ??? abstract "Suspicious Mshta Execution"
     
     Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
@@ -1211,7 +1361,7 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
 
 ??? abstract "Suspicious Network Args In Command Line"
     
-    Detection on suspicious network arguments in processes command lines using HTTP schema with port 443.
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
     
     - **Effort:** intermediate
 
@@ -1251,6 +1401,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Scheduled Task Creation"
+    
+    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -1262,12 +1418,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
     
     - **Effort:** elementary
-
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
 
 ??? abstract "Suspicious Windows Installer Execution"
     
@@ -1449,66 +1599,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     
     - **Effort:** elementary
 
-??? abstract "Windows Defender Abuse Restoration"
-    
-    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disable Scheduled Tasks"
-    
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender History Deleted"
-    
-    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** master
-
-??? abstract "Windows Defender History Directory Deleted"
-    
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Signatures Removed With MpCmdRun"
-    
-    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
-    
-    - **Effort:** elementary
-
-??? abstract "Windows Defender Tampering Detected"
-    
-    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
-    
-    - **Effort:** intermediate
-
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
-
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
@@ -1592,3 +1682,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **HarfangLab** with the follow
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
     
     - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

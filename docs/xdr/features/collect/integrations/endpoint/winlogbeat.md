@@ -6,9 +6,6 @@ type: intake
 
 Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON events.
 
-!!! warning
-    This format is still in beta, please use it wisely.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_c10307ea-5dd1-45c6-85aa-2a6a900df99b_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/c10307ea-5dd1-45c6-85aa-2a6a900df99b.md!}
@@ -123,9 +120,9 @@ The following prerequisites are needed in order to setup efficient log concentra
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Winlogbeat.
 
-## Transport to SEKOIA.IO
+## Forward logs to Sekoia.io
 
-Please consult our [guide](../../../ingestion_methods/logstash/) to configure logs forwarding from Logstash to SEKOIA.IO.
+Please consult our [guide](../../../ingestion_methods/logstash/) to configure logs forwarding from Logstash to Sekoia.io.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

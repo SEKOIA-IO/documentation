@@ -5,7 +5,7 @@ type: intake
 ## Overview
 Microsoft Always On VPN is a Windows feature allowing secure connection to protected networks.
 
-This guide will explain how to forward Network Policy Server (NPS) logs to SEKOIA.IO
+This guide will explain how to forward Network Policy Server (NPS) logs to Sekoia.io
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_80b8382e-0667-4469-bbc9-74be1e0ca1c1_do_not_edit_manually.md!}
 
@@ -68,9 +68,9 @@ First of all, download NXLog at the following link : https://nxlog.co/products/a
 
 Restart the NXLog service through the Services tool as Administrator or use Powershell command line: `Restart-Service nxlog`
 
-### Transport to SEKOIA.IO
+### Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

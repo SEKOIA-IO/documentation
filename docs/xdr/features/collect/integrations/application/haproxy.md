@@ -20,7 +20,7 @@ By default events are forwarded to `/var/lib/haproxy/dev/log` then processed by 
 
 ## Forward the HAProxy logs to a concentrator
 
-After HAProxy has been setup and configured, the logs have to be sent to a syslog concentrator then forwarded to SEKOIA.IO.
+After HAProxy has been setup and configured, the logs have to be sent to a syslog concentrator then forwarded to Sekoia.io.
 
 By default, at HAProxy first installation, an rsyslog configuration is created on the repository `/etc/rsyslog.d/`, it contains the following lines:
 
@@ -63,7 +63,7 @@ For more information on Rsyslog configuration, please consult the next section.
 
 ### Rsyslog
 
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
 
 ## Further Reading
 - [HAProxy Official Documentation](http://www.haproxy.org/#docs)

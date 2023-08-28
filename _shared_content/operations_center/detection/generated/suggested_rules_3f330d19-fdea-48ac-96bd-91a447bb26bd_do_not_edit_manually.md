@@ -39,6 +39,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos EDR** with the follow
     
     - **Effort:** advanced
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Download Files From Suspicious TLDs"
     
     Detects download of certain file types from hosts in suspicious TLDs
@@ -72,12 +78,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos EDR** with the follow
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
     
     - **Effort:** elementary
 

@@ -57,4 +57,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google` v1.9.2**
+Module **`Google` v1.14**

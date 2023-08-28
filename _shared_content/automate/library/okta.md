@@ -13,7 +13,7 @@
 
 ## Triggers
 
-### [BETA] Fetch new audit logs from OKTA
+### Fetch new audit logs from OKTA
 
 Get last system logs from the OKTA platform
 
@@ -32,4 +32,4 @@ Get last system logs from the OKTA platform
 
 ## Extra
 
-Module **`Okta` v0.3**
+Module **`Okta` v2.4.1**

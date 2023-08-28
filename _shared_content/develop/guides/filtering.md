@@ -1,6 +1,6 @@
 # Filtering
 
-Many API methods accept filtering and matching parameters. A client can request specific content from the SEKOIA.IO API by specifying a set of filters.
+Many API methods accept filtering and matching parameters. A client can request specific content from the Sekoia.io API by specifying a set of filters.
 
 ## Match
 

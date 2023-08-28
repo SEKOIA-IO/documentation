@@ -1,5 +1,7 @@
 # RSS
 
+![RSS](/assets/playbooks/library/rss.svg){ align=right width=150 }
+
 RSS is a internet standard for web syndication. It usually used by websites to publish frequently updated information.
 
 This module exposes triggers to subscribe to RSS feeds.
@@ -32,4 +34,4 @@ Trigger playbook when new posts are published
 
 ## Extra
 
-Module **`RSS` v1.19**
+Module **`RSS` v1.25**

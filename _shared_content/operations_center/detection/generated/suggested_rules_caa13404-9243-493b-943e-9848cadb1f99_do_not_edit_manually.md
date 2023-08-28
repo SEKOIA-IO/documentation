@@ -45,6 +45,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** intermediate
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
@@ -75,131 +81,179 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** intermediate
 
-??? abstract "Nimbo-C2 User Agent"
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
     
-    Nimbo-C2 Uses an unusual User-Agent format in its implants.
-    
-    - **Effort:** intermediate
-
-??? abstract "Office 365 Anti-Phishing Policy Deletion"
-    
-    Detects when the anti-phishing policy is removed from Office 365. By default, Office 365 includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
+    Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
     
     - **Effort:** master
 
-??? abstract "Office 365 Anti-Phishing Rule Deletion"
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Rule Deletion"
     
-    Detects the deactivation of the anti-phishing rule from Office 365. The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
+    Detects the deactivation of the anti-phishing rule from Microsoft 365 (Office 365). The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
     
     - **Effort:** master
 
-??? abstract "Office 365 AtpDetection"
+??? abstract "Microsoft 365 (Office 365) AtpDetection"
     
     Detects when an AtpDetection (Advanced Threat Protection) event from the Office365 ThreatIntelligence service is raised. AtpDetection is a service which secures emails, attachments, and files by scanning them for threats.
     
     - **Effort:** intermediate
 
-??? abstract "Office 365 DLP Policy Removed"
+??? abstract "Microsoft 365 (Office 365) DLP Policy Removed"
     
-    Detects when a DLP (Data Loss Prevention) policy is removed in Office 365. DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
-    
-    - **Effort:** master
-
-??? abstract "Office 365 MCAS Detection Velocity"
-    
-    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when a DLP (Data Loss Prevention) policy is removed in Microsoft 365 (Office 365). DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
     
     - **Effort:** master
 
-??? abstract "Office 365 MCAS Inbox Hiding"
+??? abstract "Microsoft 365 (Office 365) MCAS Detection Velocity"
     
-    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-
-??? abstract "Office 365 MCAS New Country"
-    
-    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
 
-??? abstract "Office 365 MCAS Repeated Delete"
+??? abstract "Microsoft 365 (Office 365) MCAS Inbox Hiding"
     
-    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-
-??? abstract "Office 365 MCAS Repeated Failed Login"
-    
-    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
 
-??? abstract "Office 365 MCAS Risky IP"
+??? abstract "Microsoft 365 (Office 365) MCAS New Country"
     
-    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-
-??? abstract "Office 365 MailBoxAuditBypassAssociation Option Implementation"
-    
-    Detects the implementation of a MailBoxAuditBypassAssociation option in Office 365. This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
 
-??? abstract "Office 365 Malware Filter Policy Removed"
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Delete"
     
-    Detects when a malware policy has been deleted in Office 365. A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
-    
-    - **Effort:** master
-
-??? abstract "Office 365 Malware Filter Rule Deletion"
-    
-    Detects when a malware filter rule has been deleted in Office 365. The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
 
-??? abstract "Office 365 Malware Uploaded On OneDrive"
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Failed Login"
     
-    Detects when Office 365 identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
+    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 (Office 365) MCAS Risky IP"
+    
+    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 (Office 365) MailBoxAuditBypassAssociation Option Implementation"
+    
+    Detects the implementation of a MailBoxAuditBypassAssociation option in Microsoft 365 (Office 365). This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 (Office 365) Malware Filter Policy Removed"
+    
+    Detects when a malware policy has been deleted in Microsoft 365 (Office 365). A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 (Office 365) Malware Filter Rule Deletion"
+    
+    Detects when a malware filter rule has been deleted in Microsoft 365 (Office 365). The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On OneDrive"
+    
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
     
     - **Effort:** intermediate
 
-??? abstract "Office 365 Malware Uploaded On SharePoint"
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On SharePoint"
     
-    Detects when Office 365 identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
     
     - **Effort:** intermediate
 
-??? abstract "Office 365 Mass Download By A Single User"
+??? abstract "Microsoft 365 (Office 365) Mass Download By A Single User"
     
     Identifies when Microsoft Cloud App Security reports that a single user performs more than 50 downloads within 1 minute.
     
     - **Effort:** master
 
-??? abstract "Office 365 Potential Ransomware Activity Detected"
+??? abstract "Microsoft 365 (Office 365) Potential Ransomware Activity Detected"
     
     Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
     
     - **Effort:** master
 
-??? abstract "Office 365 Safe Attachment Rule Disabled"
+??? abstract "Microsoft 365 (Office 365) Safe Attachment Rule Disabled"
     
-    Detects when the safe attachment rule has been deleted in Office 365. Safe Attachments is a feature in Microsoft Defender for Office 365 that opens email attachments in a special hypervisor environment to detect malicious activity.
-    
-    - **Effort:** master
-
-??? abstract "Office 365 Safelinks Disabled"
-    
-    Detects when a safelink rule has been deleted in Office 365. Safe Links is a feature in Defender for Office 365 that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    Detects when the safe attachment rule has been deleted in Microsoft 365 (Office 365). Safe Attachments is a feature in Microsoft Defender for Microsoft 365 (Office 365) that opens email attachments in a special hypervisor environment to detect malicious activity.
     
     - **Effort:** master
 
-??? abstract "Office 365 Unusual Volume Of File Deletion"
+??? abstract "Microsoft 365 (Office 365) Safelinks Disabled"
+    
+    Detects when a safelink rule has been deleted in Microsoft 365 (Office 365). Safe Links is a feature in Defender for Microsoft 365 (Office 365) that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 (Office 365) Unusual Volume Of File Deletion"
     
     Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
     
     - **Effort:** master
+
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft 365 Email Forwarding To Consumer Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common consumer email services).
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft 365 Email Forwarding To Email Address With Rare TLD"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (less common top-level domain).
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft 365 Email Forwarding To Privacy Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common privacy email services).
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
+    
+    - **Effort:** elementary
+
+??? abstract "Nimbo-C2 User Agent"
+    
+    Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
@@ -246,12 +300,6 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
-??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
-    
-    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
     
     - **Effort:** elementary
 
