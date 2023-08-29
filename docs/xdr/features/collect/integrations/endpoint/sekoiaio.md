@@ -218,6 +218,57 @@ To uninstall the agent, follow the instructions specific to your OS.
     sudo rm -rf /etc/endpoint-agent
     ```
 
+## Watch for events in files
+
+!!! INFO
+    This feature is currently in beta.
+
+The agent offers to send to Sekoia.io the events contained in files.
+If you want to enable this feature, edit the configuration file at:
+
+=== "Windows"
+
+    ```
+    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+    ```
+
+=== "Linux"
+
+    ```
+    /etc/endpoint-agent/config.yaml
+    ```
+
+And add the following configuration:
+
+```yaml
+logfiles:
+    - filepath: /var/log/nginx/access.log  # Path to the file to watch
+      intakekey: {intake key}  # Intake key to use to send the events
+```
+
+!!! WARNING
+    It is important to use an intake key from a format that matches the content of the log file.
+
+    i.e. To watch NGINX access logs we must have a intake key from the NGINX format.
+
+Once the configuration file has been modified the agent must be restarted:
+
+=== "Windows"
+
+    The following command must be executed **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    The following command must be executed:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
 ## Retention
 
 The agent sends the host logs through the internet. If the host stops accessing the internet, the agent will store the logs locally on disk on a 100 MB memory space that cannot be customized. Once the logs exceed the size of the buffer, the older ones are replaced by newers. When the internet connexion is operational again, the older logs are sent first to Sekoia.io.
@@ -331,12 +382,11 @@ agent-latest.exe <command> [<args>]
 | install | install the agent |
 | update | update the agent |
 | uninstall |uninstall the agent |
-| service | control the service |
 
 
 ## Resources footprint
 
 We monitor the agent metrics and try to keep its footprint as small as possible. 
-Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
+Right now, our agent uses on average less than 1% of CPU and around 36MB RAM.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
