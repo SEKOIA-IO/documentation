@@ -270,8 +270,8 @@ nav:
         - Public Suffix: xdr/features/automate/library/public-suffix.md
         - RSS: xdr/features/automate/library/rss.md
         - RiskIQ: xdr/features/automate/library/riskiq.md
-        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - STIX: xdr/features/automate/library/stix.md
+        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
@@ -282,6 +282,7 @@ nav:
         - The Hive: xdr/features/automate/library/the-hive.md
         - Tranco: xdr/features/automate/library/tranco.md
         - Triage: xdr/features/automate/library/triage.md
+        - Vade Cloud: xdr/features/automate/library/vade-cloud.md
         - Vade Secure: xdr/features/automate/library/vade-secure.md
         - VirusTotal: xdr/features/automate/library/virustotal.md
         - Whois: xdr/features/automate/library/whois.md
@@ -421,8 +422,8 @@ nav:
         - Public Suffix: tip/features/automate/library/public-suffix.md
         - RSS: tip/features/automate/library/rss.md
         - RiskIQ: tip/features/automate/library/riskiq.md
-        - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - STIX: tip/features/automate/library/stix.md
+        - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - SentinelOne: tip/features/automate/library/sentinelone.md
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
@@ -430,6 +431,7 @@ nav:
         - The Hive: tip/features/automate/library/the-hive.md
         - Tranco: tip/features/automate/library/tranco.md
         - Triage: tip/features/automate/library/triage.md
+        - Vade Cloud: tip/features/automate/library/vade-cloud.md
         - Vade Secure: tip/features/automate/library/vade-secure.md
         - VirusTotal: tip/features/automate/library/virustotal.md
         - Whois: tip/features/automate/library/whois.md
