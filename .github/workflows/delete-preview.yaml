@@ -45,7 +45,7 @@ jobs:
 
       - name: OVH Object Storage
         run: |
-          swift delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }}
+          swift delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }} --object-threads 5
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3

@@ -59,7 +59,7 @@ jobs:
         run: |
           swift list sekoiaio-public-documentation -j | jq -r ".[].name" | while read remote_file; do
               if [ ! -f "site/${remote_file}" ]; then
-                  swift delete sekoiaio-public-documentation "$remote_file"
+                  swift delete sekoiaio-public-documentation "$remote_file" --object-threads 5
               fi
           done
         env:
@@ -73,7 +73,7 @@ jobs:
 
       - name: OVH Object Storage
         run: |
-          swift upload sekoiaio-public-documentation site --object-name /
+          swift upload sekoiaio-public-documentation site --object-name / --object-threads 5
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3
