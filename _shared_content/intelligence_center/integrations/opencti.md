@@ -2,7 +2,7 @@
 
 ## Objective
 
-Collect Sekoia.io CTI feed in an existing OpenCTI instance self managed, for any operational purpose such as CTI aggregation, dissemination, hunting...
+Collect Sekoia.io CTI feed in an existing OpenCTI instance self-managed, for any operational purpose such as CTI aggregation, dissemination, hunting...
 
 ## Prerequisites:
 - An operational OpenCTI instance with administrator privileges
