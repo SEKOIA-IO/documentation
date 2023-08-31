@@ -33,7 +33,7 @@ The following prerequisites are needed in order to setup efficient events handli
 
 ### Generate the Credentials
 
-1. Log in the crowdstrike interface
+1. Log in to the crowdstrike interface
 2. Click on the burger menu and go to `Support and resources` > `Resources and tools` > `API client and keys`.
 3. In the `OAuth2 API Clients` tab, create an new OAuth2 API Client with the `Read` permission for the scopes `Event Stream` and `Detection`.
 
