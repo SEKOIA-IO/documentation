@@ -226,6 +226,7 @@ To uninstall the agent, follow the instructions specific to your OS.
 The agent offers to send to Sekoia.io the events contained in files.
 
 If you want to enable this feature, follow these steps: 
+
 1. Edit the configuration file at:
 	
 	=== "Windows"
