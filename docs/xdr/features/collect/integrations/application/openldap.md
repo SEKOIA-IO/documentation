@@ -13,11 +13,9 @@ OpenLDAP (Lightweight Directory Access Protocol) is an open-source implementatio
 
 As of now, the main solution to collect OpenLDAP logs leverages the Rsyslog recipe. Please share your experiences with other recipes by editing this documentation.
 
-### Rsyslog
+### Collect the logs
 
-Please refer to the documentation of OpenLDAP to forward events to your rsyslog server. The reader can consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
-
-Below is a couple of suggestions you can follow to configure your system:
+Below is a couple of suggestions you can follow to configure your system to collect openLDAP logs with rsyslog:
 
 1. Local `slapd.conf` or `slapd.d/cn=config.ldif` and modify loglvl setting there. For example:
    ```bash
@@ -36,6 +34,9 @@ Below is a couple of suggestions you can follow to configure your system:
    ```bash
    tail -f /var/log/openldap.log
    ```
+
+### Forward logs to SEKOIA.IO
+Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
 
 ## Further Readings
 
