@@ -224,34 +224,36 @@ To uninstall the agent, follow the instructions specific to your OS.
     This feature is currently in beta.
 
 The agent offers to send to Sekoia.io the events contained in files.
-If you want to enable this feature, edit the configuration file at:
 
-=== "Windows"
+If you want to enable this feature, follow these steps: 
+1. Edit the configuration file at:
+	
+	=== "Windows"
+	
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
 
-    ```
-    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-    ```
-
-=== "Linux"
-
-    ```
-    /etc/endpoint-agent/config.yaml
-    ```
-
-And add the following configuration:
-
-```yaml
-logfiles:
-    - filepath: /var/log/nginx/access.log  # Path to the file to watch
-      intakekey: {intake key}  # Intake key to use to send the events
-```
+2. Add the following configuration:
+	
+	```yaml
+	logfiles:
+	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
+	      intakekey: {intake key}  # Intake key to use to send the events
+	```
 
 !!! WARNING
     It is important to use an intake key from a format that matches the content of the log file.
 
     i.e. To watch NGINX access logs we must have a intake key from the NGINX format.
 
-Once the configuration file has been modified the agent must be restarted:
+Once the configuration file has been modified, the agent must be restarted:
 
 === "Windows"
 
@@ -312,25 +314,26 @@ Here's a non-exhaustive list of kind of events the agent is able to detect
 
 ## Proxy Support
 
-If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
-the configuration file at:
+If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests. 
+If you want to enable this feature, follow these steps: 
+1. Edit the configuration file at:
+	
+	=== "Windows"
+	
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
 
-=== "Windows"
-
-    ```
-    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-    ```
-
-=== "Linux"
-
-    ```
-    /etc/endpoint-agent/config.yaml
-    ```
-
-and add the following line:
-```
-HTTPProxyURL: "<PROXY_URL>"
-```
+2. Add the following line:
+	```
+	HTTPProxyURL: "<PROXY_URL>"
+	```
 
 If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
