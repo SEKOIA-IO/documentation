@@ -225,6 +225,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** elementary
 
+??? abstract "Microsoft 365 Suspicious Inbox Rule"
+    
+    Business Email Compromise threat actors often create inbox rules to forward, hide, or delete emails containing sensitive information. This rule detects common caracteristics of malicious inbox rules.
+    
+    - **Effort:** elementary
+
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.

@@ -1521,6 +1521,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     
     - **Effort:** advanced
 
+??? abstract "Powershell AMSI Bypass"
+    
+    This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
+    
+    - **Effort:** advanced
+
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
