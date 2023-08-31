@@ -1,4 +1,4 @@
-Rules catalog includes **741 built-in detection rules** ([_last update on 2023-08-23_](rules_changelog.md)).
+Rules catalog includes **743 built-in detection rules** ([_last update on 2023-08-31_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6758,6 +6758,12 @@ Rules catalog includes **741 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+??? abstract "Powershell AMSI Bypass"
+    
+    This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Process Anti Debug Checking"
     
     Entries in /proc/self/status are used by malware to checks if current process is being debug
@@ -6843,6 +6849,12 @@ Rules catalog includes **741 built-in detection rules** ([_last update on 2023-0
     Detects usage of attrib.exe to hide files from users.
     
     - **Effort:** advanced
+    
+??? abstract "Microsoft 365 Suspicious Inbox Rule"
+    
+    Business Email Compromise threat actors often create inbox rules to forward, hide, or delete emails containing sensitive information. This rule detects common caracteristics of malicious inbox rules.
+    
+    - **Effort:** elementary
     
 ??? abstract "PowerShell - NTFS Alternate Data Stream"
     
