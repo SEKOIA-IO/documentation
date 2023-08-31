@@ -24,6 +24,7 @@ The following prerequisites are needed in order to setup efficient events handli
 ### Generate the Credentials
 
 To set up the integration:
+
 1. Contact your CrowdStrike account representative to set up your Falcon Data Replicator feed (This request may take 2 to 5 days)
 2. Create the credentials for the feed:
    1. In the console, got to `Support and resources > Resources and tools > Falcon data replicator`.
