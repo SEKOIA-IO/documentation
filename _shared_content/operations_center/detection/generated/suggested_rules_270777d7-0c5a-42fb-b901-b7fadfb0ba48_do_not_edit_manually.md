@@ -159,6 +159,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet Fortiproxy** with t
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Download Links From Legitimate Services"
+    
+    Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Email Attachment Received"
     
     Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
