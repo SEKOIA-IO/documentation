@@ -374,14 +374,10 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         },
         "@timestamp": "2025-12-12T10:00:51Z",
         "user": {
-            "name": "AC000TEST0011"
-        },
-        "destination": {
-            "user": {
+            "name": "AC000TEST0011",
+            "target": {
                 "name": "Administrateur"
-            },
-            "domain": "AC000-TEST0011",
-            "address": "AC000-TEST0011"
+            }
         },
         "registry": {
             "data": {
@@ -416,6 +412,10 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         },
         "process": {
             "name": "IOC worker name"
+        },
+        "destination": {
+            "domain": "AC000-TEST0011",
+            "address": "AC000-TEST0011"
         },
         "server": {
             "domain": "TEST/1.2.3.4"
@@ -467,16 +467,15 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             }
         },
         "related": {
-            "user": [
-                "AC000TEST0011",
-                "Administrateur"
-            ],
             "hosts": [
                 "AC000-TEST0011",
                 "TEST/1.2.3.4"
             ],
             "ip": [
                 "1.2.3.4"
+            ],
+            "user": [
+                "AC000TEST0011"
             ]
         }
     }
@@ -496,12 +495,10 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "reason": "A user account was locked out.",
             "ingested": "2025-12-12T13:59:11.487000Z"
         },
-        "destination": {
-            "user": {
+        "user": {
+            "target": {
                 "name": "Administrateur"
-            },
-            "domain": "AC000-TEST0011",
-            "address": "AC000-TEST0011"
+            }
         },
         "registry": {
             "data": {
@@ -540,6 +537,10 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "exists": true
             }
         },
+        "destination": {
+            "domain": "AC000-TEST0011",
+            "address": "AC000-TEST0011"
+        },
         "threat": {
             "indicator": {
                 "provider": "threat_source"
@@ -549,7 +550,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "domain": "TEST/1.2.3.4"
         },
         "file": {
-            "path": "C:\\Program Files (x86)\\TEST.EXE"
+            "path": "C:\\Program Files (x86)\\TEST.EXE",
+            "name": "TEST.EXE",
+            "directory": "C:\\Program Files (x86)"
         },
         "sophos": {
             "threat_center": {
@@ -598,9 +601,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "94256542e235681ba64a20bc50910dd745d52347",
                 "d4baeeb9180a4284b33fa3602d86c"
             ],
-            "user": [
-                "Administrateur"
-            ],
             "hosts": [
                 "AC000-TEST0011",
                 "TEST/1.2.3.4"
@@ -627,7 +627,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.address` | `keyword` | Destination network address. |
 |`destination.domain` | `keyword` | The domain name of the destination. |
 |`destination.port` | `long` | Port of the destination. |
-|`destination.user.name` | `keyword` | Short name or login of the user. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.ingested` | `date` | Timestamp when an event arrived in the central data store. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
@@ -698,6 +697,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.mac` | `keyword` | MAC address of the source. |
 |`threat.indicator.provider` | `keyword` | Indicator provider |
 |`user.name` | `keyword` | Short name or login of the user. |
+|`user.target.name` | `keyword` | Short name or login of the user. |
 |`vulnerability.description` | `keyword` | Description of the vulnerability. |
 |`vulnerability.reference` | `keyword` | Reference of the vulnerability. |
 
