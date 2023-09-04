@@ -1,4 +1,4 @@
-Rules catalog includes **743 built-in detection rules** ([_last update on 2023-08-31_](rules_changelog.md)).
+Rules catalog includes **745 built-in detection rules** ([_last update on 2023-09-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -377,6 +377,12 @@ Rules catalog includes **743 built-in detection rules** ([_last update on 2023-0
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
     
     - **Effort:** master
+    
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -3124,6 +3130,12 @@ Rules catalog includes **743 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
     Spots many failed attempts to log on an administration interface. 
@@ -4414,6 +4426,12 @@ Rules catalog includes **743 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
     Spots many failed attempts to log on an administration interface. 
@@ -5627,6 +5645,12 @@ Rules catalog includes **743 built-in detection rules** ([_last update on 2023-0
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
     
     - **Effort:** master
+    
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -7334,6 +7358,12 @@ Rules catalog includes **743 built-in detection rules** ([_last update on 2023-0
     
 **Brute Force**
 
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
     Spots many failed attempts to log on an administration interface. 
@@ -7829,6 +7859,12 @@ Rules catalog includes **743 built-in detection rules** ([_last update on 2023-0
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
     - **Effort:** advanced
+    
+??? abstract "Remote Enumeration of Lateral Movement Groups"
+    
+    Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Remote Privileged Group Enumeration"
     
