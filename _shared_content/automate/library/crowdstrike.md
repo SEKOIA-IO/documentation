@@ -23,7 +23,7 @@ Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `chunk_size` | `integer` | The size of max number of messages for the batch processing. Must be between 1 and 10 (default: 1) |
+| `chunk_size` | `integer` | The size of max number of messages for the batch processing (default: 20000) |
 | `frequency` | `integer` | Batch frequency in seconds. Should be greater than 0 and lower then 20 (default: 10) |
 | `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: true) |
 | `is_fifo` | `boolean` | Flag to determine if the queue is a FIFO queue (default: false) |
@@ -35,4 +35,4 @@ Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 
 ## Extra
 
-Module **`CrowdStrike` v1.5**
+Module **`CrowdStrike` v1.6.4**
