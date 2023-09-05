@@ -6,6 +6,9 @@ type: intake
 
 Google Reports is a data reporting and analysis platform offered by Google, designed to provide insights and metrics about user activities and interactions within various Google services. It allows organizations to track and visualize user engagement, application usage, and other relevant data points, enabling informed decision-making and optimization of digital experiences. And Google Reports Drive is just for the Google Drive service.
 
+!!! warning
+    This format is in beta.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_bb11239e-3dc6-11ee-be56-0242ac120002_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/bb11239e-3dc6-11ee-be56-0242ac120002.md!}
