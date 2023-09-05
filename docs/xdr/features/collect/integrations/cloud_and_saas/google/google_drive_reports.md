@@ -72,7 +72,7 @@ Find more information on the [official google documentation](https://cloud.googl
 
 ### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the Google drive reports.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Google Report`.
 2. Copy the associated Intake key
 
 ### Pull the logs to collect them on Sekoia.io
