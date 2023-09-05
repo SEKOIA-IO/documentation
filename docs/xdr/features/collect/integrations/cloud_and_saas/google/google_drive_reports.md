@@ -24,6 +24,7 @@ Google Reports is a data reporting and analysis platform offered by Google, desi
 ### Create a dedicated service account
 
 To create a service account you have to :
+
  - Create a project
  - Turn on the APIs for the service account
  - Set up the OAuth consent screen
