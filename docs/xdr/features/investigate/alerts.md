@@ -17,12 +17,15 @@ An alert can have five possible statuses:
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
 
 ### Alert Urgency
-The Urgency is a number used to give a score to the risk associated with a specific alert.
-It is calculated from the severity of a rule and the criticality of assets related to the alert.
-This gives a value between 1 (very low risk) and 100 (very high risk).
+
+The Urgency is a number used to give a score to the risk associated with a specific alert. It is calculated from the severity of a rule and the criticality of assets related to the alert. This gives a value between 1 (very low risk) and 100 (very high risk).
 
 The urgency of an alert is calculated using the following formula:
-`Alert urgency = (Severity of the rule + Criticality of the asset) / 2`
+
+**Alert urgency = (Severity of the rule + Criticality of the asset) / 2**
+
+!!! note
+    When the criticality of an asset is equal to 0 (N/A), the alert urgency is equal to the severity of the rule.
 
 The urgency can have two different representations on the interface: a numerical and a textual representation.
 
