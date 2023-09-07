@@ -7,7 +7,7 @@ Collect Sekoia.io CTI feed in an existing OpenCTI instance self-managed, for any
 ## Prerequisites:
 - An operational OpenCTI instance with administrator privileges
 - An active Sekoia.io licence with access to the CTI
-- An access to Sekoia.io User Center with the permissions to create an API key with [CTI permissions](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
+- An access to Sekoia.io User Center with the permissions to create an API key with  [**all CTI permissions**](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
 
 ## 1. Configuration
 
@@ -94,6 +94,17 @@ Here are the elements of the Sekoia feed that can be found on OpenCTI after expo
 |Techniques|Intrusion-sets|
 |Data|Indicators|
 
+**How to find a Sekoia.io Indicator ?**
+
+_Here is an example with an indicator_ 
+- In **Sekoia.io**, we look for the indicator `blog.google` in the intelligence page
+<image1>
+
+- In **OpenCTI**, we search this indicator in the Data page
+<image2>
+
+- The content of the indicator will look like the one below
+<image3>
 
 ## 4. Troubleshoot
 |Issue|Action|Linux command|
