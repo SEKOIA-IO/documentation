@@ -1,14 +1,14 @@
 # How to write smart descriptions
 
-An event can be hard to read as a raw data. To make the visualization and the understanding of events easier, smart-descriptions help displaying important information to the user.
+An event can be hard to read as a raw data. To make the visualization and the understanding of events easier, smart descriptions help displaying important information to the user.
 
 ## Organization
 
-Smart-descriptions are defined in the directory `_meta/smart-descriptions.json` in the format. The document is written in [JSON](https://json.org) dialect.
+Smart descriptions are defined in the directory `_meta/smart-descriptions.json` in the format. The document is written in [JSON](https://json.org) dialect.
 
-The root element of the document is a JSON-array. This array contains a set of smart-descriptions.
+The root element of the document is a JSON-array. This array contains a set of smart descriptions.
 
-## Smart-description
+## Smart description components
 
 A smart description consists of:
 
@@ -48,7 +48,7 @@ A smart description consists of:
 	}
 	```
 
-	The condition
+	This condition will match
 
 	```json
 	{
@@ -57,9 +57,7 @@ A smart description consists of:
 	}
 	```
 
-	will match
-
-	while the condition
+	while the condition will not match
 
 	```json
 	{
@@ -68,12 +66,12 @@ A smart description consists of:
 	}
 	```
 
-	will not match
 
-	To test the existence of a field in the structured event, only define the field in the condition.
+	To test the existence of a field in the structured event, define the field in the condition only.
 
 	e.g:
-	The condition
+
+	This condition 	will test the existence of `event.kind`:
 
 	```json
 	{
@@ -81,9 +79,8 @@ A smart description consists of:
 	}
 	```
 
-	will test the existence of `event.kind`
 
-- A list of relationships (optional): The relationships help to connect information from the structured event.
+- A list of relationships (optional): The relationships help connect information from the structured event.
 
 	A relationship is a compound of:
 
@@ -92,6 +89,7 @@ A smart description consists of:
 	- the type: a sentence that describes the nature of the relationship
 
 	e.g:
+
 	With a structured event containing:
 
 	```json
@@ -105,7 +103,8 @@ A smart description consists of:
 	}
 	```
 
-	The relationship
+	This relationship will connect `1.2.3.4` to `5.6.7.8` as a `was connected to` relation: 
+
 
 	```json
 	{
@@ -115,8 +114,7 @@ A smart description consists of:
 	}
 	```
 
-	  will connect `1.2.3.4` to `5.6.7.8` as a `was connected to` relation
 
 ## Example
 
-see [Windows smart-descriptions](https://github.com/SEKOIA-IO/intake-formats/blob/main/Windows/windows/_meta/smart-descriptions.json)
+See [Windows smart-descriptions](https://github.com/SEKOIA-IO/intake-formats/blob/main/Windows/windows/_meta/smart-descriptions.json).
