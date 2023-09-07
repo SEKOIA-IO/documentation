@@ -12,6 +12,22 @@ Google module
 
 ## Triggers
 
+### [BETA] Get user activities
+
+Get user activities using google reports
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `application_name` | `string` | The application from which the activities should be fetched |
+| `chunk_size` | `integer` | The max size of chunks for the batch processing |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+| `admin_mail` | `string` | Email of your google admin |
+
+
 ### Connect to the specified project subscription
 
 Connect to the Google Cloud Pub/Sub topic and return events
@@ -57,4 +73,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google` v1.14**
+Module **`Google` v1.14.9**
