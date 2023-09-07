@@ -91,7 +91,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 -  Create a **Trigger configuration** using:
 
     * Type the `Intake key` created on the previous
-    * Select the application name when you to fetch events from
+    * Select the `application name` what you to fetch events from
     * Type the `Admin email`
 
 - Click on the **Save** button
