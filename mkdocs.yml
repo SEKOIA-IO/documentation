@@ -109,10 +109,10 @@ nav:
           - Duo Security: xdr/features/collect/integrations/cloud_and_saas/duo_security.md
           - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
           - Google Cloud:
-            - Google Workspace and Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
+            - Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_cloud_audit.md
             - Google Kubernetes Engine: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
             - Google Cloud VPC Flow Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
-            - Google Drive Reports: xdr/features/collect/integrations/cloud_and_saas/google/google_drive_reports.md
+            - Google Workspace: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
           - Imperva WAF: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
           - Microsoft Azure:
             - Azure Active Directory: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
