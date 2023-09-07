@@ -9,9 +9,9 @@ Google Reports is a data reporting and analysis platform offered by Google for G
 !!! warning
     This format is in beta.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_bb11239e-3dc6-11ee-be56-0242ac120002_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_04d36706-ee4a-419b-906d-f92f3a46bcdd_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/bb11239e-3dc6-11ee-be56-0242ac120002.md!}
+{!_shared_content/operations_center/integrations/generated/04d36706-ee4a-419b-906d-f92f3a46bcdd.md!}
 
 ## Configure
 
