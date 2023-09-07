@@ -1,6 +1,6 @@
 # Create a new format
 
-## Technical Requirements:
+## Technical Requirements
 
 - Clone the Github repository [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats)
 
@@ -8,67 +8,73 @@
 
 If the module that will contain your format doesn't exist, you will need to create it.
 
-To create a new module, execute the following command:
+To create a new module, follow these steps: 
 
-```bash
-> cd ~/dev/intake-formats/utils
-> poetry run python3 generate.py new-module
-```
+1. Execute the following command:
 
-Complete the form with the name of the module, its description and its destination directory.
+  ```bash
+  > cd ~/dev/intake-formats/utils
+  > poetry run python3 generate.py new-module
+  ```
 
-A new directory, with the name of the module, will appear at the root of your workspace.
+2. Complete the form with the name of the module, its description and its destination directory. 
+  A new directory, with the name of the module, will appear at the root of your workspace.
 
-In the `_meta` directory, add a logo to illustrate your module with the following criteria:
+3. In the `_meta` directory, add a logo to illustrate your module with the following criteria:
 
-- The logo must be a PNG image
-- The logo must be named `logo.png`
-- The background must be transparent
-- The image must be squared, ie the width is equal to the height
-- The weight of the logo must be lesser than 50kb.
+  - The logo must be a PNG image
+  - The logo must be named `logo.png`
+  - The background must be transparent
+  - The image must be squared, ie the width is equal to the height
+  - The weight of the logo must be lesser than 50kb
 
 ## Create a format
 
-To create a new format, execute the following command:
+To create a new format, follow these steps: 
 
-```bash
-> cd ~/dev/intake-formats/utils
-> poetry run python3 generate.py new-format <module_directory>
-```
+1. Execute the following command:
 
-Complete the form with the name of the format, its slug and its description.
+  ```bash
+  > cd ~/dev/intake-formats/utils
+  > poetry run python3 generate.py new-format <module_directory>
+  ```
 
-Your new format will appear, as a directory, under its module directory.
+2. Complete the form with the name of the format, its slug and a description. 
+ Your new format will appear, as a directory, under its module directory.
 
-Open your format’s manifest (`_meta/manifest.yml`) and provides some [data sources](datasources.md) with a description for each one.
+3. Open your format’s manifest (`_meta/manifest.yml`) and provide some [data sources](datasources.md) with a description for each one
 
-In the `_meta` directory, add a logo to illustrate your format with the following criteria:
+4. In the `_meta` directory, add a logo to illustrate your format with the following criteria:
 
-- The logo must be a PNG image
-- The logo must be named `logo.png`
-- The background must be transparent
-- The image must be squared, ie the width is equal to the height
-- The weight of the logo must be lesser than 50kb.
+  - The logo must be a PNG image
+  - The logo must be named `logo.png`
+  - The background must be transparent
+  - The image must be squared, ie the width is equal to the height
+  - The weight of the logo must be lesser than 50kb.
 
 ## Create the parser
 
-In the format directory, go to the `ingest` folder and edit `parser.yml`
+To create the parser, follow these steps: 
 
-Follow [this guide](parser.md) to develop our parser.
+1. In the format directory, go to the `ingest` folder and edit `parser.yml`
 
-The parser must generate [structured events](structured_event.md) that respect the [taxonomy of the format](taxonomy.md).
+2. Follow [this guide](parser.md) to develop the parser
 
-## Create test
+Note that the parser must generate [structured events](structured_event.md) that respect the [taxonomy of the format](taxonomy.md)
 
-From a sample event, use [create_test.py](https://github.com/SEKOIA-IO/intake-formats/blob/main/utils/create_test.py) to create a new test file..
+## Create a test
 
-```bash
-> cd ~/dev/intake-formats/utils
-> poetry run python3 create_test.py ~/dev/intake-formats/<module>/<format>/tests/test_my_event.json <event>
-> cat /tmp/raw_event.txt | poetry run python3 create_test.py ~/dev/intake-formats/<module>/<format>/tests/test_my_second_event.json -
-```
+To create the test file, follow these steps: 
 
-Complete the test file with expected fields.
+1. From a sample event, use [create_test.py](https://github.com/SEKOIA-IO/intake-formats/blob/main/utils/create_test.py) to create a new test file
+
+  ```bash
+  > cd ~/dev/intake-formats/utils
+  > poetry run python3 create_test.py ~/dev/intake-formats/<module>/<format>/tests/test_my_event.json <event>
+  > cat /tmp/raw_event.txt | poetry run python3 create_test.py ~/dev/intake-formats/<module>/<format>/tests/test_my_second_event.json -
+  ```
+
+2. Complete the test file with expected fields
 
 ## Run tests
 
@@ -83,10 +89,12 @@ Tests are run from the `intake-formats/utils` directory.
 > poetry run pytest test_formats.py --format='format-name' --fix-expectations # fix test expectations
 ```
 
-## Write smart-descriptions
+## Write smart descriptions
 
-The [structured events](structured_event.md), generated by the parser, can be hardly readable for a human. The smart descriptions will define how to describe the events and which important information must be displayed in the description to ease the decision-making process.
+The [structured events](structured_event.md), generated by the parser can be hardly readable for a human. The smart descriptions will define how to describe the events and which important information must be displayed in the description to ease the decision-making process.
 
-In the format directory, go to the `_meta` folder and edit `smart-descriptions.json`
+To write smart descriptions, follow these steps:
 
-Follow [this guide](smartdescriptions.md) to write smart-descriptions for your format.
+1. In the format directory, go to the `_meta` folder and edit `smart-descriptions.json`
+  
+2. Follow [this guide](smartdescriptions.md) to write smart descriptions for your format
