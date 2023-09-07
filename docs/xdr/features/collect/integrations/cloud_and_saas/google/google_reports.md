@@ -1,10 +1,10 @@
 uuid: bb11239e-3dc6-11ee-be56-0242ac120002
-name: Google Drive Reports
+name: Google Reports
 type: intake
 
 ## Overview
 
-Google Reports is a data reporting and analysis platform offered by Google, designed to provide insights and metrics about user activities and interactions within various Google services. It allows organizations to track and visualize user engagement, application usage, and other relevant data points, enabling informed decision-making and optimization of digital experiences. And Google Reports Drive is just for the Google Drive service.
+Google Reports is a data reporting and analysis platform offered by Google for Google Workspace services, designed to provide insights and metrics about user activities and interactions within various Google services. It allows organizations to track and visualize user engagement, application usage, and other relevant data points, enabling informed decision-making and optimization of digital experiences. 
 
 !!! warning
     This format is in beta.
@@ -13,7 +13,7 @@ Google Reports is a data reporting and analysis platform offered by Google, desi
 
 {!_shared_content/operations_center/integrations/generated/bb11239e-3dc6-11ee-be56-0242ac120002.md!}
 
-## Google Cloud configuration procedure
+## Configure
 
 ### Prerequisites
 
@@ -82,7 +82,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - Click on **+ PLAYBOOK** button to create a new one
 - Select **Create a playbook from scratch**
 - Give it a name in the field **Name**
-- Search for `Drive` keywork on the search bar and select the template named `Get activities from drive`
+- Open the left panel, click **Google** then select the trigger `Get user activities`
 - Click on **Create**
 
 - Create a **Module configuration** using your service account credentials from your Google Cloud environment extracted on a JSON file. Name the module configuration as you wish
@@ -90,8 +90,9 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 
 -  Create a **Trigger configuration** using:
 
-	* `Intake key` created on the previous
-  * `Admin email`
+    * Type the `Intake key` created on the previous
+    * Select the application name when you to fetch events from
+    * Type the `Admin email`
 
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page
