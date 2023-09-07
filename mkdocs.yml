@@ -252,6 +252,7 @@ nav:
         - Git: xdr/features/automate/library/git.md
         - Google: xdr/features/automate/library/google.md
         - Google: xdr/features/automate/library/google.md
+        - Google: xdr/features/automate/library/google.md
         - HTTP: xdr/features/automate/library/http.md
         - HarfangLab: xdr/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
@@ -411,6 +412,7 @@ nav:
         - Git: tip/features/automate/library/git.md
         - Google: tip/features/automate/library/google.md
         - Google: tip/features/automate/library/google.md
+        - Google: tip/features/automate/library/google.md
         - HTTP: tip/features/automate/library/http.md
         - HarfangLab: tip/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: tip/features/automate/library/iknowwhatyoudownload.md
@@ -529,10 +531,10 @@ plugins:
       integrations/freeradius.md: xdr/index.md
       integrations/fsecure.md: xdr/index.md
       integrations/github_audit_logs.md: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
+      integrations/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_drive_reports.md
       integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
-      integrations/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_drive_reports.md
       integrations/haproxy.md: xdr/features/collect/integrations/application/haproxy.md
       integrations/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       integrations/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
@@ -654,10 +656,10 @@ plugins:
       operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare-http-requests.md: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
       operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
       operation_center/integration_catalog/cloud_and_saas/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
+      operation_center/integration_catalog/cloud_and_saas/google/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_drive_reports.md
       operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
-      operation_center/integration_catalog/cloud_and_saas/google/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_drive_reports.md
       operation_center/integration_catalog/cloud_and_saas/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
       operation_center/integration_catalog/cloud_and_saas/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
       operation_center/integration_catalog/cloud_and_saas/o365.md: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
