@@ -9,10 +9,6 @@ Google Reports is a data reporting and analysis platform offered by Google for G
 !!! warning
     This format is in beta.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_04d36706-ee4a-419b-906d-f92f3a46bcdd_do_not_edit_manually.md!}
-
-{!_shared_content/operations_center/integrations/generated/04d36706-ee4a-419b-906d-f92f3a46bcdd.md!}
-
 ### Supported applications
 
 This integration can collect activities from the following GSuite applications:
@@ -36,6 +32,10 @@ This integration can collect activities from the following GSuite applications:
 
 Only activities from one applications can be collected from one playbook.
 To collect activities from several Google Application, create as many playbooks as applications to collect.
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_04d36706-ee4a-419b-906d-f92f3a46bcdd_do_not_edit_manually.md!}
+
+{!_shared_content/operations_center/integrations/generated/04d36706-ee4a-419b-906d-f92f3a46bcdd.md!}
 
 ## Configure
 
