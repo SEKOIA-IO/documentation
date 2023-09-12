@@ -165,7 +165,9 @@ nav:
           - Symantec/Broadcom Endpoint Security: xdr/features/collect/integrations/endpoint/symantec_epp.md
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
           - TEHTRIS EDR: xdr/features/collect/integrations/endpoint/tehtris_edr.md
-          - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md
+          - Trend Micro:
+            - Trend Micro Apex One: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_apex_one.md
+            - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
           - Trellix ePO: xdr/features/collect/integrations/endpoint/trellix_epo.md
           - VMware ESXi: xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md
           - VMware VCenter: xdr/features/collect/integrations/endpoint/vmware/vmware_vcenter.md
