@@ -7,7 +7,7 @@ type: intake
 Salesforce provides customer relationship management software and applications focused on sales, customer service, marketing automation, e-commerce, analytics, and application development.
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_d2725f97-0c7b-4942-a847-983f38efb8ff_do_not_edit_manually.md!}
 

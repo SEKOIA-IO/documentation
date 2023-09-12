@@ -7,7 +7,7 @@ type: intake
 Cisco Email Security Appliance (ESA) is a email gateway appliance that provides protection against spam, malware, viruses, and other email threats.
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2ee6048e-8322-4575-8e47-1574946412b6_do_not_edit_manually.md!}
 

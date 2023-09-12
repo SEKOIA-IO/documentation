@@ -9,7 +9,7 @@ SentinelOne Cloud Funnel 2.0 is the state of the art method to collect SentinelO
 SentinelOne Deep Visibility logs provides in-depth logs that are useful for detection and investigation purposes.
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 !!! note
     No additional installation or configuration on the agents is needed.
