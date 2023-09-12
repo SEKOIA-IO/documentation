@@ -7,7 +7,7 @@ type: intake
 Ubika WAAP Gateway detect and prevent threats against your web applications and your APIs.
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_6dbdd199-77ae-4705-a5de-5c2722fa020e_do_not_edit_manually.md!}
 

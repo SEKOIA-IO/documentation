@@ -8,7 +8,7 @@ Varonis offers solutions to track and protect data.
 
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_7b75d498-4a65-4d44-aa81-31090d723a60_do_not_edit_manually.md!}
 

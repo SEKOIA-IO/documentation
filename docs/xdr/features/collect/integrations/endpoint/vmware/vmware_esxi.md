@@ -7,7 +7,7 @@ type: intake
 VMware ESXi is a hypervisor and an operation system. It serves virtual computers while running directly on the server hardware
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2b13307b-7439-4973-900a-2b58303cac90_do_not_edit_manually.md!}
