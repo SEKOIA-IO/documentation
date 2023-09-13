@@ -14,9 +14,17 @@ Cato Networks is a software company providing solutions to protect cloud applica
 
 This setup guide will show you how to provide an integration between Cato SASE events and Sekoia.io.
 
-### Configure connector
+### Generate the API key
 
-1. Get `api_key` and `account_id` from your Cato Networks account
+To collect the events from the Cato Networks platform, an API key is required:
+
+1. Log in our Cato Management Application
+2. Go to the `API Management` section then click on the `Administration` tab
+3. Click on the button `New` to generate a new api key
+
+In addition to the API key, our account ID is also required:
+
+1. In our Cato Management Application, please note the four digits in the browser address.
 
 ### Create an intake
 
