@@ -252,6 +252,7 @@ nav:
         - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
         - GLIMPS: xdr/features/automate/library/glimps.md
         - Git: xdr/features/automate/library/git.md
+        - Github: xdr/features/automate/library/github.md
         - Google: xdr/features/automate/library/google.md
         - Google: xdr/features/automate/library/google.md
         - Google: xdr/features/automate/library/google.md
@@ -420,6 +421,7 @@ nav:
         - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
         - GLIMPS: tip/features/automate/library/glimps.md
         - Git: tip/features/automate/library/git.md
+        - Github: tip/features/automate/library/github.md
         - Google: tip/features/automate/library/google.md
         - Google: tip/features/automate/library/google.md
         - Google: tip/features/automate/library/google.md
@@ -768,9 +770,9 @@ plugins:
       user_center/notifications.md: getting_started/notifications.md
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
-      xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
+      xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
