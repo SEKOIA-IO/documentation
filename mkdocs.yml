@@ -322,6 +322,7 @@ nav:
         - Definition of the taxonomy: xdr/develop/guides/formats/taxonomy.md
         - How to write a parser: xdr/develop/guides/formats/parser.md
         - How to write smart descriptions: xdr/develop/guides/formats/smartdescriptions.md
+        - Best Practices: xdr/develop/guides/formats/best_practices.md
     - REST API:
       - Authentication and Community: xdr/develop/rest_api/community.md
       - Dashboard: xdr/develop/rest_api/dashboard.md
