@@ -27,7 +27,7 @@ This integration supports the following log types:
 
 
 !!! warning
-    This format is still in beta
+    This format is in beta
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_064f7e8b-ce5f-474d-802e-e88fe2193365_do_not_edit_manually.md!}
 

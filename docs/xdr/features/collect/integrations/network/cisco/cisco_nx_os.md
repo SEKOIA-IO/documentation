@@ -7,7 +7,7 @@ type: intake
 Cisco NX-OS is a network operating system for Cisco Nexus-series switches.
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_591feb54-1d1f-4453-b780-b225c59e9f99_do_not_edit_manually.md!}
 

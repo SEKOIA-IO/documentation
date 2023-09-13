@@ -8,7 +8,7 @@ type: intake
 Duo Security offers solutions for strong authentication.
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_547234b3-82ea-4507-b28f-3ee3cd5b9a8e_do_not_edit_manually.md!}
 
