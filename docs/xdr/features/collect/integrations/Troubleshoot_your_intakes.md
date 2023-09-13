@@ -17,7 +17,7 @@ Please consult our documentation for each technology used
 2. Check your account configuration (credentials, url...)
 
 *Using a log concentrator*
-1. Check the logs and send it to a local file
+1. Check the logs and send it to a local file for testing
 2. Redo the installation following our documentation
 
    !!note
@@ -26,13 +26,10 @@ Please consult our documentation for each technology used
 ### Test
 
 1. Check the field `sekoia.intake.parsing_error` in the events page
-<image>
 2. Compare events send with the event sample in the documentation of the intake (expected log format)
-<image>
 3. For most intakes, it is possible to test through `intakes page > + new intake > <intake name>` and click on `See format`
-<image>
 4. Paste log and check the field `sekoia.intake.parsing_error`
-<image>
+
 
    !!note
    Please contact Support if you have any questions or feedbacks. We will be glad to assist you.
