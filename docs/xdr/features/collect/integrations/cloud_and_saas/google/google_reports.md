@@ -27,7 +27,9 @@ To create a service account you have to :
 
  - Create a project
  - Turn on the APIs for the service account
- - Set up the OAuth consent screen
+ - Set up the OAuth consent screen with the following scopes (see [Choose Reports API scopes](https://developers.google.com/admin-sdk/reports/auth)):
+   - https://www.googleapis.com/auth/admin.reports.audit.readonly
+   - https://www.googleapis.com/auth/admin.reports.usage.readonly
  - Create the service account
 
 For more details in each steps please read this [Documentation](https://support.google.com/a/answer/7378726?hl=en)
@@ -98,3 +100,10 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - **Activate the playbook** with the toggle button on the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
+
+
+## Further readings
+
+- [Choose Reports API scopes](https://developers.google.com/admin-sdk/reports/auth)
+- [Create a service account](https://support.google.com/a/answer/7378726?hl=en)
+- [Create and delete service account keys](https://cloud.google.com/iam/docs/keys-create-delete)
