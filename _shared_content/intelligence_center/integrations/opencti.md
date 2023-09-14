@@ -14,7 +14,7 @@ Collect Sekoia.io CTI feed in an existing OpenCTI instance self-managed, for any
 
 1- Add the following code **to the end** of **docker-compose.yml** file in the OpenCTI docker repository
 
-````
+```YAML
 connector-sekoia:
     image: opencti/connector-sekoia:latest
     environment:
@@ -39,7 +39,7 @@ volumes:
   s3data:
   redisdata:
   amqpdata:
-````
+```
 
 Replace following parameters:
 
@@ -63,9 +63,9 @@ Replace following parameters:
 
 ## 2. Connect to OpenCTI
 
-1-  In a Web browser, type the following	_http://server_ip:port/dashboard_
+1-  In a Web browser, type the following _http://server_ip:port/dashboard_
 
-![OpenCTI_login](../../../../docs/assets/intelligence_center/OpenCTI_1.png)
+![OpenCTI_login](/assets/intelligence_center/opencti_1.png)
 
 2- Enter your login and password set in **.env** file
 
@@ -75,17 +75,17 @@ Replace following parameters:
 
 Go to Sekoia connector    _Data > Connectors > Sekoia.io_
 
-![OpenCTI_Sekoia_connector1](../../../../docs/assets/intelligence_center/OpenCTI_2.png)
+![OpenCTI_Sekoia_connector1](/assets/intelligence_center/opencti_2.png)
 
 In this page, the interesting information can be found about:
 
 - `Update date`:  Last update date of the connector in OpenCTI
-- `Status`:	   Status of the connector in OpenCTI
+- `Status`:   Status of the connector in OpenCTI
 - `Perimeter`:    Sekoia intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
 - `Last cursor`:  **SEKOIA_START_DATE** set in _docker-compose.yml_ file in base64 format
 
-![OpenCTI_Sekoia_connector2](../../../../docs/assets/intelligence_center/OpenCTI_3.png)
-    
+![OpenCTI_Sekoia_connector2](/assets/intelligence_center/opencti_3.png)
+
 2- Where to find Sekoia intelligence feed
 
 Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
@@ -100,19 +100,19 @@ Here are the elements of the Sekoia feed that can be found on OpenCTI after expo
 
 **How to find a Sekoia.io Indicator ?**
 
-_Here is an example with an indicator_ 
+Here is an example with an indicator
 
 - In **Sekoia.io**, we look for the indicator `blog.google` in the intelligence page
-  
-![OpenCTI_search1](../../../../docs/assets/intelligence_center/OpenCTI_indicator_search1.png)
+
+![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png)
 
 - In **OpenCTI**, we search this indicator in the Data page
-  
-![OpenCTI_search2](../../../../docs/assets/intelligence_center/OpenCTI_indicator_search2.png)
+
+![OpenCTI_search2](/assets/intelligence_center/opencti_indicator_search2.png)
 
 - The content of the indicator will look like the one below
-  
-![OpenCTI_Sekoia_search2](../../../../docs/assets/intelligence_center/Sekoia_indicator.png)
+
+![OpenCTI_Sekoia_search2](/assets/intelligence_center/sekoia_indicator.png)
 
 ## 4. Troubleshoot
 
@@ -124,7 +124,7 @@ _Here is an example with an indicator_
 ## 5. Other resources
 
 - **OpenCTI official documentation**
-  
+
 https://github.com/OpenCTI-Platform/opencti
 
 https://docs.opencti.io/5.7.X/deployment/installation/#using-docker
