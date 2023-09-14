@@ -29,21 +29,21 @@ Collect Sekoia.io CTI feed in an existing self-managed Cortex instance, for any 
 1. Connect into Cortex with `orgadmin` role
 
 2. Select your organization on the top right corner
-![Orga_setup_1](/assets/intelligence_center/Orga_setup_1.png){: style="width: 100%; max-width: 100%"}
+![Orga_setup_1](/assets/intelligence_center/orga_setup_1.png){: style="width: 100%; max-width: 100%"}
 
 3. Go to _Analyzers Config_ tab and search `SekoiaIntelligenceCenter`
-![Orga_setup_2](/assets/intelligence_center/Orga_setup_2.png){: style="width: 100%; max-width: 100%"}
+![Orga_setup_2](/assets/intelligence_center/orga_setup_2.png){: style="width: 100%; max-width: 100%"}
 
 4. Edit and add your Sekoia API key and base url
-![Orga_setup_3](/assets/intelligence_center/Orga_setup_3.png){: style="width: 100%; max-width: 100%"}
+![Orga_setup_3](/assets/intelligence_center/orga_setup_3.png){: style="width: 100%; max-width: 100%"}
 
 ### Check Sekoia intelligence
 
 1. Go to Analyzers tab and search `SekoiaIntelligenceCenter`
-![Analyzer_ config_1](../../../../docs/assets/intelligence_center/Analyzer_ config_1.png){: style="width: 100%; max-width: 100%"}
+![Analyzer_ config_1](../../../../docs/assets/intelligence_center/analyzer_ config_1.png){: style="width: 100%; max-width: 100%"}
 
 2. Edit and add your Sekoia API key and base url
-![Analyzer_ config_2](../../../../docs/assets/intelligence_center/Analyzer_ config_2.png){: style="width: 100%; max-width: 100%"}
+![Analyzer_ config_2](../../../../docs/assets/intelligence_center/analyzer_ config_2.png){: style="width: 100%; max-width: 100%"}
 
 ### Check Sekoia intelligence
 
