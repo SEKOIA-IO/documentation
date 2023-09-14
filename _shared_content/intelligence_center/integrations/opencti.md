@@ -75,7 +75,7 @@ Replace following parameters:
 
 Go to Sekoia connector    _Data > Connectors > Sekoia.io_
 
-![OpenCTI_Sekoia_connector1](../../../../docs/assets/intelligence_center/opencti.png)
+![OpenCTI_Sekoia_connector1](../../../../docs/assets/intelligence_center/opencti_2.png)
 
 In this page, the interesting information can be found about:
 
