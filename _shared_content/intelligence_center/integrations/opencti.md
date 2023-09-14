@@ -4,7 +4,8 @@
 
 Collect Sekoia.io CTI feed in an existing OpenCTI instance self-managed, for any operational purpose such as CTI aggregation, dissemination, hunting...
 
-## Prerequisites:
+## Prerequisites
+
 - An operational OpenCTI instance with administrator privileges
 - An active Sekoia.io licence with access to the CTI
 - An access to Sekoia.io User Center with the permissions to create an API key with  [**all CTI permissions**](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
@@ -53,36 +54,39 @@ Replace following parameters:
 - Run      `docker-compose up -d connector-sekoia`
 
 !!!note
-    Sekoia connector should be name **connector-sekoia** as describe on top
+    Sekoia connector should be name **connector-sekoia** as described on top
     **docker-compose ps**   to check all connectors available and set on the server
 
 3- Check if Sekoia connector is running
+
 `docker-compose ps connector-sekoia`
 
 ## 2. Connect to OpenCTI
 
 1-  In a Web browser, type the following	_http://server_ip:port/dashboard_
+
 ![OpenCTI_login](../../../../docs/assets/intelligence_center/OpenCTI_1.png)
 
 2- Enter your login and password set in **.env** file
 
 ## 3. Sekoia intelligence in OpenCTI
 
-**1- Check if the connector is running and up to date**
+1- Check if the connector is running and up to date
 
-Go to Sekoia connector    _Data > Connectors > Sekoia.io >_
+Go to Sekoia connector    _Data > Connectors > Sekoia.io_
+
 ![OpenCTI_Sekoia_connector1](../../../../docs/assets/intelligence_center/OpenCTI_2.png)
 
 In this page, the interesting information can be found about:
 
-- `Update date` :  Last update date of the connector in OpenCTI
-- `Status` :	   Status of the connector in OpenCTI
-- `Perimeter` :    Sekoia intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
-- `Last cursor` :  **SEKOIA_START_DATE** set in _docker-compose.yml_ file in base64 format
+- `Update date`:  Last update date of the connector in OpenCTI
+- `Status`:	   Status of the connector in OpenCTI
+- `Perimeter`:    Sekoia intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
+- `Last cursor`:  **SEKOIA_START_DATE** set in _docker-compose.yml_ file in base64 format
 
 ![OpenCTI_Sekoia_connector2](../../../../docs/assets/intelligence_center/OpenCTI_3.png)
     
-**2- Where to find Sekoia intelligence feed**
+2- Where to find Sekoia intelligence feed
 
 Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
 
@@ -97,22 +101,28 @@ Here are the elements of the Sekoia feed that can be found on OpenCTI after expo
 **How to find a Sekoia.io Indicator ?**
 
 _Here is an example with an indicator_ 
+
 - In **Sekoia.io**, we look for the indicator `blog.google` in the intelligence page
+  
 ![OpenCTI_search1](../../../../docs/assets/intelligence_center/OpenCTI_indicator_search1.png)
 
 - In **OpenCTI**, we search this indicator in the Data page
+  
 ![OpenCTI_search2](../../../../docs/assets/intelligence_center/OpenCTI_indicator_search2.png)
 
 - The content of the indicator will look like the one below
+  
 ![OpenCTI_Sekoia_search2](../../../../docs/assets/intelligence_center/Sekoia_indicator.png)
 
 ## 4. Troubleshoot
+
 |Issue|Action|Linux command|
 |--|--|--|
 |Space disk full|check the logs|docker logs <container-id>|
 |Conflict with containers|list containers on server|docker-compose ps|
 
 ## 5. Other resources
+
 - **OpenCTI official documentation**
   
 https://github.com/OpenCTI-Platform/opencti
