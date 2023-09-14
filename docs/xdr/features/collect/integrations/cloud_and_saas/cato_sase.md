@@ -41,3 +41,6 @@ To start to pull events, you have to:
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Cato SASE](../../../automate/library/cato_sase.md) trigger
 2. Set up the module configuration with the Api Key and Account Id. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
+
+## Further readings
+- [Cato Networks - Generating API Keys for the Cato API](https://support.catonetworks.com/hc/en-us/articles/4413280536081-Generating-API-Keys-for-the-Cato-API)
