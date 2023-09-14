@@ -6,6 +6,9 @@ type: intake
 
 Cato Networks is a software company providing solutions to protect cloud applications. Cato SASE Cloud provides zero trust network access to on-premises and cloud applications.
 
+!!! warning
+    This format is in beta.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_469bd3ae-61c9-4c39-9703-7452882e70da_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/469bd3ae-61c9-4c39-9703-7452882e70da.md!}
