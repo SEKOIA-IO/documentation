@@ -28,8 +28,8 @@ To create a service account you have to :
  - Create a project
  - Turn on the APIs for the service account
  - Set up the OAuth consent screen with the following scopes (see [Choose Reports API scopes](https://developers.google.com/admin-sdk/reports/auth)):
-   - https://www.googleapis.com/auth/admin.reports.audit.readonly
-   - https://www.googleapis.com/auth/admin.reports.usage.readonly
+	- https://www.googleapis.com/auth/admin.reports.audit.readonly
+	- https://www.googleapis.com/auth/admin.reports.usage.readonly
  - Create the service account
 
 For more details in each steps please read this [Documentation](https://support.google.com/a/answer/7378726?hl=en)
