@@ -279,10 +279,21 @@ We monitor the agent metrics and try to keep its footprint as small as possible.
 Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
 
 ## Troubleshoot
-1- Check the Sekoia.io agent version (the latest version must be used)
+Check the logs
 
+|OS|path|
+|--|--|
+|Windows|C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\|
+|Linux|/etc/endpoint-agent/|
+
+!!! note
+    	If you need further assistance, here are the information to provide
+
+1- Sekoia.io agent version (the latest version must be used)
 ```
 agent-latest.exe --version
 ```
-    
+
 2- Provide results of the setup request in case of failure (stack trace) + machine configuration
+
+3- Provide the full path where Sekoia Agent was setup
