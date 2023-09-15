@@ -218,12 +218,12 @@ To uninstall the agent, follow the instructions specific to your OS.
     sudo rm -rf /etc/endpoint-agent
     ```
 
-## Watch for events in files
+## Watch for logs in files
 
 !!! INFO
     This feature is currently in beta.
 
-The agent offers to send to Sekoia.io the events contained in files.
+The agent offers to send to Sekoia.io logs contained in files.
 
 If you want to enable this feature, follow these steps: 
 
