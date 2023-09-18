@@ -1,4 +1,4 @@
-Rules catalog includes **745 built-in detection rules** ([_last update on 2023-09-05_](rules_changelog.md)).
+Rules catalog includes **748 built-in detection rules** ([_last update on 2023-09-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1195,6 +1195,12 @@ Rules catalog includes **745 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "AutoIt3 Execution From Suspicious Folder"
+    
+    Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
@@ -2037,6 +2043,12 @@ Rules catalog includes **745 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP and HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** intermediate
+    
 ??? abstract "HarfangLab EDR Critical Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
@@ -2079,22 +2091,23 @@ Rules catalog includes **745 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 18/09/2023 - minor - File paths added to filter some false positives.
+        - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
+            
 ??? abstract "IcedID Execution Using Excel"
     
     Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
     
     - **Effort:** elementary
     
-??? abstract "LNK Malware Chain"
-    
-    Detection of an ISO download followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
-    
-    - **Effort:** intermediate
-    
-    - **Changelog:**
-    
-        - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
-            
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
@@ -5289,6 +5302,12 @@ Rules catalog includes **745 built-in detection rules** ([_last update on 2023-0
     
 **Masquerading**
 
+??? abstract "AutoIt3 Execution From Suspicious Folder"
+    
+    Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Copy Of Legitimate System32 Executable"
     
     A script has copied a System32 executable.
@@ -7438,6 +7457,12 @@ Rules catalog includes **745 built-in detection rules** ([_last update on 2023-0
     
 **Multi-Factor Authentication Interception**
 
+??? abstract "Microsoft 365 Sign-in With No User Agent"
+    
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -7557,6 +7582,12 @@ Rules catalog includes **745 built-in detection rules** ([_last update on 2023-0
     
 **Adversary-in-the-Middle**
 
+??? abstract "Microsoft 365 Sign-in With No User Agent"
+    
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -8198,6 +8229,12 @@ Rules catalog includes **745 built-in detection rules** ([_last update on 2023-0
     
 **Adversary-in-the-Middle**
 
+??? abstract "Microsoft 365 Sign-in With No User Agent"
+    
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
