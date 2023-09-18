@@ -23,6 +23,7 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 
 
 ## 2. Configuration
+
 #### 1- Setup the organization
 
 1- Connect into Cortex with `orgadmin` role
