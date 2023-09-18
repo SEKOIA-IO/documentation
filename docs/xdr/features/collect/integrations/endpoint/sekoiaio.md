@@ -283,8 +283,8 @@ Check the logs
 
 |OS|path|
 |--|--|
-|Windows|C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\|
-|Linux|/etc/endpoint-agent/|
+|Windows|C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\logs|
+|Linux|/var/log/endpoint-agent/agent.log|
 
 !!! note
     	If you need further assistance, here are the information to provide
