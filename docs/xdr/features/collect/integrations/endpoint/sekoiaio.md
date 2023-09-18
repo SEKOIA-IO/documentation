@@ -110,7 +110,7 @@ In order to get events, the agent pushes rules to the audit framework. By defaul
 
 To disable audit logging the following should be done as root:
 	
-        ```
+       
 	# Stop listening to audit events
 	systemctl stop systemd-journald-audit.socket 
 	
@@ -122,7 +122,7 @@ To disable audit logging the following should be done as root:
 	
 	# Restart journald
 	systemctl restart systemd-journald
-       ```
+       
        
 A reboot may be necessary if the audit events are still appearing in the logs.
 
