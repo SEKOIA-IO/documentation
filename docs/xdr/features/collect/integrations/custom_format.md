@@ -1,13 +1,13 @@
 # Custom format
 
-SEKOIA.IO provides a list of intakes that allows you to integrate events from different sources such as systems, applications and security appliances.
+Sekoia.io provides a list of intakes that allows you to integrate events from different sources such as systems, applications and security appliances.
 
-Some technologies may not have an associated Intake in the official SEKOIA.IO catalog and therefore cannot be parsed in SEKOIA.IO.
+Some technologies may not have an associated Intake in the official Sekoia.io catalog and therefore cannot be parsed in Sekoia.io.
 
 The "Custom format" feature allows you to easily develop your own Intake. It gives you the tools to parse your events in the Elastic Common Schema (ECS) format to ensure agnostic detection and to index fields for search in the Events page.
 
 !!!note
-    In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your SEKOIA.IO account. This permission also allows you to create an existing Intake.
+    In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your Sekoia.io account. This permission also allows you to create an existing Intake.
 
 ## Overview
 ### Create an empty Custom format
@@ -24,7 +24,7 @@ To create an empty custom format:
 5. Select the data sources associated to your events. You can have multiple ones. Data sources can be use when you want to deploy rules.
 6. Click on `Save`
 
-![!SEKOIA.IO Custom format creation](/assets/operation_center/custom_format/create_custom_format.png){: style="max-width:100%}
+![!Sekoia.io Custom format creation](/assets/operation_center/custom_format/create_custom_format.png){: style="max-width:100%}
 
 
 ### Panel overview
@@ -36,7 +36,7 @@ The custom format panel is structured like this:
 4. A button to display the `Taxonomy manager`
 5. An area to test your Intake with an event sample.
 
-![!SEKOIA.IO Custom format Panel Overview](/assets/operation_center/custom_format/panel_overview.png){: style="max-width:100%}
+![!Sekoia.io Custom format Panel Overview](/assets/operation_center/custom_format/panel_overview.png){: style="max-width:100%}
 
 ## Stages
 A Custom format consists of a sequence of stages organized under a pipeline that modifies the event on the fly.
@@ -47,10 +47,10 @@ The goal is to define a sequence of stages that will parse your events in the EC
 
 The custom stage is used to create actions. An action is an elementary operation that can `set`, `translate` or `delete` a field.
 !!! Important
-    While the [Common stages](#common-stages) are used to extract fields from your logs, this stage must be present in every intake to set the extracted fields in the ECS format expected by SEKOIA.IO.
+    While the [Common stages](#common-stages) are used to extract fields from your logs, this stage must be present in every intake to set the extracted fields in the ECS format expected by Sekoia.io.
 
 #### Set
-![!SEKOIA.IO Set action](/assets/operation_center/custom_format/set_action.png){: style="max-width:100%"}
+![!Sekoia.io Set action](/assets/operation_center/custom_format/set_action.png){: style="max-width:100%"}
 
 This action is used to set the value of one field in the ECS format in the final version of the event.
 
@@ -73,12 +73,12 @@ was previously used to parse the following event:
 
 To put the `source` and the `target` IP in the final version of the parsed event, the `Set` action can be used:
 
-![!SEKOIA.IO Set example](/assets/operation_center/custom_format/set_example.png){: style="max-width:100%"}
+![!Sekoia.io Set example](/assets/operation_center/custom_format/set_example.png){: style="max-width:100%"}
 
 `source.ip` and `destination.ip` are the fields used in Elastic Common Format taxonomy.
 
 #### Translate
-![!SEKOIA.IO Set action](/assets/operation_center/custom_format/translate_action.png){: style="max-width:100%"}
+![!Sekoia.io Set action](/assets/operation_center/custom_format/translate_action.png){: style="max-width:100%"}
 
 The `Translate` action sets value of one or more fields according to the value of a source field and a dictionary that connects values.
 An optional "fallback" value can be defined.
@@ -91,20 +91,20 @@ You want to set the value of `http.response.status_message` according to the val
 `http.response.status_code` contains only status codes values.
 
 You can define a `Translate` action with the following parameters:
-![!SEKOIA.IO Set action](/assets/operation_center/custom_format/translate_example.png){: style="max-width:100%"}
+![!Sekoia.io Set action](/assets/operation_center/custom_format/translate_example.png){: style="max-width:100%"}
 
 #### Delete
-![!SEKOIA.IO Delete action](/assets/operation_center/custom_format/delete_action.png){: style="max-width:100%"}
+![!Sekoia.io Delete action](/assets/operation_center/custom_format/delete_action.png){: style="max-width:100%"}
 
 The `Delete` action allows you to delete fields in the final version of the event.
 
 **Example**
 
 The following action will delete the fields `source.ip` and `destination.ip` from the final event.
-![!SEKOIA.IO Delete action](/assets/operation_center/custom_format/delete_example.png){: style="max-width:100%"}
+![!Sekoia.io Delete action](/assets/operation_center/custom_format/delete_example.png){: style="max-width:100%"}
 
 ### Common stages
-Common stages are provided by SEKOIA.IO to help you parse your events. There are currently 5 different common stages, each having its specifities:
+Common stages are provided by Sekoia.io to help you parse your events. There are currently 5 different common stages, each having its specifities:
 
 - [Json](#json-stage)
 - [Date](#date)
@@ -114,7 +114,7 @@ Common stages are provided by SEKOIA.IO to help you parse your events. There are
 
 #### JSON Stage
 
-![!SEKOIA.IO Json stage](/assets/operation_center/custom_format/json_stage.png){: style="max-width:100%"}
+![!Sekoia.io Json stage](/assets/operation_center/custom_format/json_stage.png){: style="max-width:100%"}
 
 The JSON stage can be used to deserialize a JSON from a string.
 
@@ -162,7 +162,7 @@ To get the reference of the `rules-match` in another stage, we will use the refe
 
 
 #### Key Value
-![!SEKOIA.IO Key Value stage](/assets/operation_center/custom_format/kv_stage.png){: style="max-width:100%"}
+![!Sekoia.io Key Value stage](/assets/operation_center/custom_format/kv_stage.png){: style="max-width:100%"}
 
 The Key-Value stage can be used to deserialize a Key-Value string.
 You will need to provide the stage with:
@@ -189,7 +189,7 @@ With `Value Separator: "="` and `Item Separator: ",\s"`, the log can be parsed. 
 - `relay` if the key corresponding to the value we want
 
 #### Grok
-![!SEKOIA.IO Grok stage](/assets/operation_center/custom_format/grok_stage.png){: style="max-width:100%"}
+![!Sekoia.io Grok stage](/assets/operation_center/custom_format/grok_stage.png){: style="max-width:100%"}
 
 The Grok stage can be used to match a field against a Grok pattern. Grok is a tool provided by Elasticsearch that gives you the ability to parse an arbitrary string and structure it.
 You can find more information about Grok in the [official documentation](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html).
@@ -226,10 +226,10 @@ To get the duration, you can use `{{stage1.message.duration}}`.
     The pattern should take into account every singe character of your event, from the first one to the last one.
 
 #### Date
-![!SEKOIA.IO Date stage](/assets/operation_center/custom_format/date_stage.png){: style="max-width:100%"}
+![!Sekoia.io Date stage](/assets/operation_center/custom_format/date_stage.png){: style="max-width:100%"}
 
 
-The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601, which is the format used by SEKOIA.IO. This stage accepts, as optional properties, the format to parse the date and the IANA timezone of the parsed date.
+The Date stage can be used to parse a date field. The output of this stage is a date normalized in ISO 8601, which is the format used by Sekoia.io. This stage accepts, as optional properties, the format to parse the date and the IANA timezone of the parsed date.
 
 You will need to provide the stage with:
 
@@ -260,7 +260,7 @@ To get the date parsed in a next stage, you will then use the reference `{{stage
 
 
 #### Delimiter Separated Values
-![!SEKOIA.IO DSV stage](/assets/operation_center/custom_format/dsv_stage.png){: style="max-width:100%"}
+![!Sekoia.io DSV stage](/assets/operation_center/custom_format/dsv_stage.png){: style="max-width:100%"}
 
 The Delimiter Separated Values stage can be used to extract values from a delimiter-separated values string. This stage needs the list of columns and, as optional, the delimiter (by default, the delimiter is the comma ',').
 
@@ -324,11 +324,11 @@ This feature is called `Filter` too but applies to a block. It should not be con
 **Example**
 
 To run the stage `set_stage` when the value of the `type` field is equal to `network`, you can use this filter:
-![!SEKOIA.IO Condition example](/assets/operation_center/custom_format/conditions_example.png)
+![!Sekoia.io Condition example](/assets/operation_center/custom_format/conditions_example.png)
 
 
 ## Taxonomy manager
-A taxonomy is a hierarchical schema used to normalize events. The taxonomy used by SEKOIA.IO is the ECS standard (Elastic Common Schema).
+A taxonomy is a hierarchical schema used to normalize events. The taxonomy used by Sekoia.io is the ECS standard (Elastic Common Schema).
 The taxonomy manager allows you to view all the ECS fields available with their description.
 If a field in an event is custom to the technology and cannot be placed in any field of the ECS standard, you can create your own field.
 !!! note
@@ -338,7 +338,7 @@ If a field in an event is custom to the technology and cannot be placed in any f
 
 The product `technoexample` has a field called `environment` which is custom to this technology and does not exist in ECS. With the taxonomy manager, you can create a custom field
 `technoexample.environment`. This field will then be available in the [Custom Stage](#custom-stage)
-![!SEKOIA.IO Taxonomy custom field](/assets/operation_center/custom_format/taxonomy_custom_field.png)
+![!Sekoia.io Taxonomy custom field](/assets/operation_center/custom_format/taxonomy_custom_field.png)
 
 ## Practical example
 You now have all the knowledge to start developing your custom Intake! To deepen your knowledge, you can follow the example below that uses the different notions explained before.
@@ -375,7 +375,7 @@ Let's get into it!
 #### Identify the type of event
 To identify the type, we can use a `Grok` stage with the following pattern:
 `^%{WORD:type} logs: %{DATA:jsondata}$`
-![!SEKOIA.IO Solution Grok stage](/assets/operation_center/custom_format/exercice_grok_stage.png){: style="max-width:100%"}
+![!Sekoia.io Solution Grok stage](/assets/operation_center/custom_format/exercice_grok_stage.png){: style="max-width:100%"}
 
 This pattern will extract :
 
@@ -386,29 +386,29 @@ This pattern will extract :
 #### Parse the JSON
 
 To parse the JSON, we will use a `JSON` stage:
-![!SEKOIA.IO Solution JSON stage](/assets/operation_center/custom_format/exercice_json_stage.png){: style="max-width:100%"}
+![!Sekoia.io Solution JSON stage](/assets/operation_center/custom_format/exercice_json_stage.png){: style="max-width:100%"}
 
 #### Parse the date of the event
 
 To parse the date of the event, we will use a `Date` stage:
-![!SEKOIA.IO Solution Date stage](/assets/operation_center/custom_format/exercice_date_stage.png){: style="max-width:100%"}
+![!Sekoia.io Solution Date stage](/assets/operation_center/custom_format/exercice_date_stage.png){: style="max-width:100%"}
 
 #### Set the fields in ECS for traffic logs
 
 Now that everything is parsed, we can use a "Custom stage" to set the values in ECS for traffic logs:
-![!SEKOIA.IO Solution set traffic stage](/assets/operation_center/custom_format/exercice_set_traffic.png){: style="max-width:100%"}
+![!Sekoia.io Solution set traffic stage](/assets/operation_center/custom_format/exercice_set_traffic.png){: style="max-width:100%"}
 
 #### Set the fields in ECS for audit logs
 
 We can use a custom stage to set the values in ECS for audit logs:
-![!SEKOIA.IO Solution set audit stage](/assets/operation_center/custom_format/exercice_set_audit.png){: style="max-width:100%"}
+![!Sekoia.io Solution set audit stage](/assets/operation_center/custom_format/exercice_set_audit.png){: style="max-width:100%"}
 
 ### Results
 
 With the `Test your parser` feature, you can see the results.
 
 **Traffic event**:
-![!SEKOIA.IO Solution result traffic](/assets/operation_center/custom_format/exercice_result_traffic.png){: style="max-width:60%"}
+![!Sekoia.io Solution result traffic](/assets/operation_center/custom_format/exercice_result_traffic.png){: style="max-width:60%"}
 
 **Audit event**:
-![!SEKOIA.IO Solution result audit](/assets/operation_center/custom_format/exercice_result_audit.png){: style="max-width:60%"}
+![!Sekoia.io Solution result audit](/assets/operation_center/custom_format/exercice_result_audit.png){: style="max-width:60%"}

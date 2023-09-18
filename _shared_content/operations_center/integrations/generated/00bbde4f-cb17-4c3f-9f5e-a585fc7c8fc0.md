@@ -25,7 +25,7 @@ In details, the following table denotes the type of events produced by this inte
 
 ## Event Samples
 
-Find below few samples of events and how they are normalized by SEKOIA.IO.
+Find below few samples of events and how they are normalized by Sekoia.io.
 
 
 === "gke_container_runtime2.json"
@@ -499,7 +499,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
                 "change"
             ]
         },
-        "@timestamp": "2022-06-16T09:42:39.200653463Z",
+        "@timestamp": "2022-06-16T09:42:39.200653Z",
         "orchestrator": {
             "type": "kubernetes",
             "cluster": {

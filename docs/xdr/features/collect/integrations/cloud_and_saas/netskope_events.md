@@ -15,7 +15,7 @@ This integration will collect events from your netskope's tenant to monitor auth
 
 ## Configure
 
-This setup guide will lead you into forwarding netskope's events to SEKOIA.IO.
+This setup guide will lead you into forwarding netskope's events to Sekoia.io.
 
 !!! note
     This integration will collect events from the APIv2 of the Netskope platform.
@@ -35,7 +35,7 @@ To the API token, add the following scopes with the privilege `Read`:
 - /api/v2/events/dataexport/events/network	
 - /api/v2/events/dataexport/events/connection	
 
-### Create the intake in SEKOIA.IO
+### Create the intake in Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Netskope events`. Copy the intake key.
 

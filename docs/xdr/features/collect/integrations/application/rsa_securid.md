@@ -7,7 +7,7 @@ type: intake
 SecurID is a token system, or authenticator, produced by RSA Security and intended to offer strong authentication to its user in the context of access to an information system.
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_20876735-c423-4bbc-9d19-67edc91fb063_do_not_edit_manually.md!}
@@ -18,7 +18,7 @@ SecurID is a token system, or authenticator, produced by RSA Security and intend
 
 ### Prerequisites
 
-An internal log concentrator is required to collect and forward events to SEKOIA.IO.
+An internal log concentrator is required to collect and forward events to Sekoia.io.
 
 ### Enable Syslog forwarding
 
@@ -36,9 +36,9 @@ In the Security Console of the RSA Authentication Manager:
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `RSA SecurID`.
 
-## Transport to SEKOIA.IO
+## Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 
 ## Further Readings

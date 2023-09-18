@@ -1,10 +1,10 @@
-# Forward Logs to SEKOIA.IO From Graylog
+# Forward Logs to Sekoia.io From Graylog
 
-If you are using Graylog as a log collector, you can configure it to push your logs to SEKOIA.IO. This operation is done by using the “[HttpOutput Plugin for Graylog][graylog-http-plugin]”.
+If you are using Graylog as a log collector, you can configure it to push your logs to Sekoia.io. This operation is done by using the “[HttpOutput Plugin for Graylog][graylog-http-plugin]”.
 
 Prerequisites:
 
-- Access to SEKOIA.IO
+- Access to Sekoia.io
 - Intake key(s) created
 - Priviledge account on the Graylog server
 
@@ -68,11 +68,11 @@ Your logs should now appear in your dedicated Stream.
 
 ### Create a HTTP output for your events.
 
-Now that you have your logs in your stream, you need to configure an Output to send your events to SEKOIA.IO
+Now that you have your logs in your stream, you need to configure an Output to send your events to Sekoia.io
 
 1. Go to `Streams`
 2. Identify your stream and click on `More Actions` > `Manage Outputs`
-3. Declare the output mode associated to the SEKOIA.IO stream with the type `com.plugin.HttpOutput` with the unique parameter `https://intake.sekoia.io` and your API key.
+3. Declare the output mode associated to the Sekoia.io stream with the type `com.plugin.HttpOutput` with the unique parameter `https://intake.sekoia.io` and your API key.
 
 ![image](/assets/operation_center/data_collection/ingestion_methods/graylog/graylog_output_declaration.png)
 

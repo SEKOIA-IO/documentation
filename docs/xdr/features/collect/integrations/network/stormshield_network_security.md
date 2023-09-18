@@ -6,7 +6,7 @@ type: intake
 
 Stormshield Network Security firewalls provides comprehensive security and high performance network protection. In addition, they offer a high degree of scalability to support the evolution of IT and OT networks
 
-In this documentation we will explain how to collect and send Stormshield Network Security logs to SEKOIA.IO.
+In this documentation we will explain how to collect and send Stormshield Network Security logs to Sekoia.io.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_79029ef9-e5d3-44f3-b70f-fd3b54ba1fe4_do_not_edit_manually.md!}
@@ -37,7 +37,7 @@ You can find more information using [this documentation](https://stormshield.pl/
 
 ### Generate the intake_key
 
-You have to go on your SEKOIA.IO instance to generate an "intake key".
+You have to go on your Sekoia.io instance to generate an "intake key".
 Everything you need to do for this part of the configuration is described [here](../../../collect/intakes.md).
 
 Finally, to push logs, you have to [configure](../../../collect/ingestion_methods/index.md) some filters and rewrite rules in Syslog that will add the proper “intake key” considering your logs.

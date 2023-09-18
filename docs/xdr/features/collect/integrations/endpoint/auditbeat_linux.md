@@ -264,9 +264,9 @@ if ($syslogtag contains 'linux_auditbeat') then {
 sudo systemctl restart rsyslog.service
 ```
 
-### Transport to SEKOIA.IO
+### Forward logs to Sekoia.io
 
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to transport logs to SEKOIA.IO.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to transport logs to Sekoia.io.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

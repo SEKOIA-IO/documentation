@@ -67,4 +67,4 @@ Release a device from network isolation.
 
 ## Extra
 
-Module **`WithSecure` v2.3**
+Module **`WithSecure` v2.7**

@@ -41,11 +41,11 @@ jobs:
 
       - name: Install Swift
         run: |
-          pip install python-swiftclient==3.10.1 python-keystoneclient==4.1.1
+          pip install python-swiftclient==4.3.0 python-keystoneclient==5.1.0
 
       - name: OVH Object Storage
         run: |
-          swift delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }}
+          swift delete sekoiaio-documentation-previews -p ${{ steps.pr_number.outputs.pr_number }} --object-threads 5
         env:
           OS_AUTH_URL: "https://auth.cloud.ovh.net/v3/"
           OS_IDENTITY_API_VERSION: 3

@@ -1,5 +1,7 @@
 # Mandrill
 
+![Mandrill](/assets/playbooks/library/mandrill.svg){ align=right width=150 }
+
 Mandrill is a transactional email platform from Mailchimp.
 
 ## Configuration
@@ -33,4 +35,4 @@ Send a new transactional message through Mandrill
 
 ## Extra
 
-Module **`Mandrill` v2.0.0**
+Module **`Mandrill` v2.7**

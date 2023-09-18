@@ -17,7 +17,17 @@ Please find our English tutorial video below to see how to configure the forward
 
 ## Prerequisites
 
-* A x86-64 Linux host
+* A x86-64 Linux host using one of these templates:
+
+  | Number of assets |  vCPUs |  RAM (Go) | Disk size (Go) | Sekoia concentrator settings                |
+  |------------------|:------:|:---------:|:--------------:|:-------------------------------------------:|
+  | 1000             |    2   |   4       |      200       |  MEMORY_MESSAGES=2000000 / DISK_SPACE=180g  |
+  | 10 000           |    4   |   8       |      1000      |  MEMORY_MESSAGES=5000000 / DISK_SPACE=980g  |
+  | 50 000           |    6   |   16      |      5000      |  MEMORY_MESSAGES=12000000 / DISK_SPACE=4980g |
+
+  !!! info 
+      These data are recommendations based on standards and observed averages on Sekoia.io, so they may change depending on use cases.
+
 * Last version of Docker Engine. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
 * OUTBOUND TCP flow opened towards intake.sekoia.io on port 10514
@@ -127,8 +137,10 @@ environment:
 
 Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to Sekoia.io. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
 
-* `MEMORY_MESSAGES=100000` means the queue is allowed to store up to 100,000 messages in memory. Since in the image configuration the maximum value of a message is 20ko, 100,000 means 100,000 * 20,000 = 2Go 
+* `MEMORY_MESSAGES=100000` means the queue is allowed to store up to 100,000 messages in memory. For instance, if your message size is 20KB, then you will use 2GB of RAM memory (100,000 * 20KB = 2GB).
 * `DISK_SPACE=32g` means the queue is allowed to store on disk up to 32 giga of messages.
+
+[Here](#prerequisites) you will find recommendations to set these variables based on the number of assets. You can also define your own values, which should be chosen according to your virtual machine's template.
 
 #### Ports
 
@@ -424,7 +436,7 @@ Connect to the remote server where you would like to install the Sekoia.io Forwa
 1. Execute a script to setup the docker
 
     ```bash
-    wget https://raw.githubusercontent.com/SEKOIA-IO/documentation/main/docs/assets/operation_center/ingestion_methods/sekoiaio_docker_concentrator/sekoiaio_docker_concentrator_autosetup.sh
+    wget https://raw.githubusercontent.com/SEKOIA-IO/documentation/main/docs/assets/operation_center/ingestion_methods/sekoiaio_forwarder/sekoiaio_docker_concentrator_autosetup.sh
     chmod +x sekoiaio_docker_concentrator_autosetup.sh
     ./sekoiaio_docker_concentrator_autosetup.sh
     rm sekoiaio_docker_concentrator_autosetup.sh
@@ -437,7 +449,7 @@ Connect to the remote server where you would like to install the Sekoia.io Forwa
 
 3. Start the docker
 
-    Follow the process you can find on the section [Start the concentrator](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_docker_concentrator.md/#start-the-concentrator) of this page.
+    Follow the process you can find on the section [Start the concentrator](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md/#start-the-concentrator) of this page.
     ```bash
     sudo docker compose up -d
     sudo docker compose ps

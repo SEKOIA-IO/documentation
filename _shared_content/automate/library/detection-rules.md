@@ -1,5 +1,7 @@
 # Detection Rules
 
+![Detection Rules](/assets/playbooks/library/detection-rules.svg){ align=right width=150 }
+
 This module exposes a trigger to detect new snort rules on a repository
 
 ## Configuration
@@ -28,4 +30,4 @@ Trigger playbooks when new snort rules are detected of a repository
 
 ## Extra
 
-Module **`Detection Rules` v1.14**
+Module **`Detection Rules` v1.22**

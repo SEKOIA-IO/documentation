@@ -10,7 +10,7 @@ Azure Virtual Machines service is developed and managed by Microsoft Corp.
 {!_shared_content/operations_center/integrations/generated/2815eaab-2425-4eff-8038-3f7d5a3b8b11.md!}
 
 ## Configure
-This setup guide will show you how to forward events produced by a Windows Virtual Machine hosted on Azure platform to SEKOIA.IO.
+This setup guide will show you how to forward events produced by a Windows Virtual Machine hosted on Azure platform to Sekoia.io.
 
 Theses changes have to be made from the [Azure Web Portal](https://portal.azure.com).
 
@@ -43,12 +43,12 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 #### Create “Shared Access Policies”
 
 1. Navigate to “Home”, “Event Hubs”, “company-eventhub - Shared access policies”. From there, you can create a policy (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the `Primary Key` that will be used as the `SharedAccessKey`.
-2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “windows-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to SEKOIA.IO.
+2. Navigate to “Home”, “Event Hubs”, “company-eventhub”, “windows-event - Shared access policies”. From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. Once created, click on the policy and save the `Connection string-primary key`, to be sent to Sekoia.io.
 3. Navigate to “Home”, “Event Hubs”, “company-eventhub”, ”windows-event - Consumer groups”. From there, you can create a consumer group (e.g. `sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
-In order to allow SEKOIA.IO keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
+In order to allow Sekoia.io keep track of the consumed events, the next step consists in creating a dedicated Azure Blob Storage.
 
 To proceed, you can use Azure PowerShell:
 
@@ -179,9 +179,9 @@ Sysmon tool from Microsoft could improve the detection on Windows computers.
 You could download the tool on [Microsoft website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
 If you do not know how to use and configure it, please check [SwiftOnSecurity github](https://github.com/SwiftOnSecurity/sysmon-config).
 
-### Forward the Connection Keys to SEKOIA.IO
+### Forward the Connection Keys to Sekoia.io
 
-Finally, please send to SEKOIA.IO the following information:
+Finally, please send to Sekoia.io the following information:
 
 - Azure Event Hub’s “Connection string-primary key” (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=windows-event"`).
 - Azure Event Hub’s consumer group name (e.g. `sekoiaio`).

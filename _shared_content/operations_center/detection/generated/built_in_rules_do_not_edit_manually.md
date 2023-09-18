@@ -1,4 +1,4 @@
-Rules catalog includes **710 built-in detection rules** ([_last update on 2023-05-31_](rules_changelog.md)).
+Rules catalog includes **745 built-in detection rules** ([_last update on 2023-09-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -68,87 +68,21 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "WAF Correlation Block Multiple Destinations"
+    
+    Detection of multiple block actions (more than 10) by the Web Application Firewall (WAF) triggered by the same source to mutliple destinations
+    
+    - **Effort:** intermediate
+    
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
+    
+    - **Effort:** advanced
+    
 ## Resource Development
 **Acquire Infrastructure**
 
-??? abstract "Azure Active Directory Abnormal Token"
-    
-    Detects when Azure Active Directory indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Anonymous IP"
-    
-    Detects when Azure Active Directory identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Impossible Travel"
-    
-    Detects when Azure Active Directory identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Leaked Credentials"
-    
-    Detects when Azure Active Directory identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Malicious IP"
-    
-    Detects when Azure Active Directory identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Password Spray"
-    
-    Detects when Azure Active Directory indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Sign-in From Unlikely Country"
-    
-    Detects when Azure Active Directory identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious Browser"
-    
-    Detects when Azure Active Directory identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious IP"
-    
-    Detects when Azure Active Directory identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Suspicious Inbox Forwarding"
-    
-    Detects when Azure Active Directory identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Threat Intelligence"
-    
-    Detects when Azure Active Directory identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Token Issuer Anomaly"
-    
-    Detects when Azure Active Directory indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Unfamiliar Features"
-    
-    Detects when Azure Active Directory identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
@@ -170,6 +104,84 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
     
     - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Abnormal Token"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Anonymous IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Impossible Travel"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Malicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Password Spray"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Browser"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Inbox Forwarding"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Threat Intelligence"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Token Issuer Anomaly"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Unfamiliar Features"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta MFA Brute-Force Successful"
     
@@ -185,84 +197,6 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Compromise Infrastructure**
 
-??? abstract "Azure Active Directory Abnormal Token"
-    
-    Detects when Azure Active Directory indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Anonymous IP"
-    
-    Detects when Azure Active Directory identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Impossible Travel"
-    
-    Detects when Azure Active Directory identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Leaked Credentials"
-    
-    Detects when Azure Active Directory identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Malicious IP"
-    
-    Detects when Azure Active Directory identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Password Spray"
-    
-    Detects when Azure Active Directory indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Sign-in From Unlikely Country"
-    
-    Detects when Azure Active Directory identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious Browser"
-    
-    Detects when Azure Active Directory identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Suspicious IP"
-    
-    Detects when Azure Active Directory identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Suspicious Inbox Forwarding"
-    
-    Detects when Azure Active Directory identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** master
-    
-??? abstract "Azure Active Directory Threat Intelligence"
-    
-    Detects when Azure Active Directory identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Azure Active Directory Token Issuer Anomaly"
-    
-    Detects when Azure Active Directory indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** advanced
-    
-??? abstract "Azure Active Directory Unfamiliar Features"
-    
-    Detects when Azure Active Directory identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Azure Active Directory Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Login Brute-Force Successful On AzureAD From Single IP Address"
     
     A user has attempted to login several times (brute-force) on AzureAD and succeeded to login, all from the same source IP address and in a timerange of 5 minutes.
@@ -285,6 +219,84 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Microsoft Entra ID (Azure AD) Abnormal Token"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Anonymous IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Impossible Travel"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies that the user's valid credentials have been leaked. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Malicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Password Spray"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Sign-in From Unlikely Country"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins originating from geographically distant locations, where at least one of the locations may also be atypical for the user, given past behavior. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Browser"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious IP"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a suspicious IP address. An IP address is considered suspicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Suspicious Inbox Forwarding"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Threat Intelligence"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies a sign-in activity that is unusual for the given user or is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) Token Issuer Anomaly"
+    
+    Detects when Microsoft Entra ID (Azure AD) indicates that The SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Unfamiliar Features"
+    
+    Detects when Microsoft Entra ID (Azure AD) identifies sign-ins with characteristics that deviate from past sign-in properties. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Okta MFA Brute-Force Successful"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
@@ -299,13 +311,13 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Compromise Accounts**
 
-??? abstract "Defender for O365 High Severity AIR Alert"
+??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
     
     - **Effort:** elementary
     
-??? abstract "Defender for O365 Medium Severity AIR Alert"
+??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
     
@@ -323,6 +335,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
+            
 **Obtain Capabilities**
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
@@ -352,11 +368,21 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
     
     - **Effort:** master
+    
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -376,33 +402,33 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -417,6 +443,24 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) with error then one success.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -490,9 +534,9 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "CVE-2019-19781 Citrix Netscaler"
+??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
     
-    Detects CVE-2019-19781 exploitation attempt against Citrix Netscaler, Application Delivery Controller and Citrix Gateway Attack
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack
     
     - **Effort:** elementary
     
@@ -626,35 +670,17 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Phishing**
 
+??? abstract "Cisco ESA Suspicious Email With Attachment"
+    
+    Detects an email with an attachment, from a sender tagged as suspect, detected by either the Antivirus or the Advanced Malware Protection (AMP) engine and delivered to the recipient
+    
+    - **Effort:** advanced
+    
 ??? abstract "Cisco Umbrella Threat Detected"
     
     Cisco Umbrella has detected a malicious traffic categorized as malware, phishing or adware.
     
     - **Effort:** intermediate
-    
-??? abstract "Defender for O365 High Severity AIR Alert"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
-    
-    - **Effort:** elementary
-    
-??? abstract "Defender for O365 Low Severity AIR Alert Handled Automatically"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
-    
-    - **Effort:** advanced
-    
-??? abstract "Defender for O365 Low Severity AIR Alert Requires Action"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Defender for O365 Medium Severity AIR Alert"
-    
-    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
-    
-    - **Effort:** elementary
     
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
@@ -668,161 +694,167 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Email Classified As Malware But Allowed (Proofpoint)"
-    
-    An email was classified as malware with a threat score greater than 0 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-    
-??? abstract "Email Classified As Phishing But Allowed (Proofpoint)"
-    
-    An email was classified as phishing with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-    
-??? abstract "Email Classified As Spam But Allowed (Proofpoint)"
-    
-    An email was classified as spam with a threat score greater than 50 by ProofPoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
-    
-    - **Effort:** advanced
-    
 ??? abstract "Malware Detected By Vade For M365"
     
     Vade Secure product Vade for M365 has detected a malware contained in the message.
     
     - **Effort:** master
     
-??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+??? abstract "Malware Detected By Vade For M365 And Not Blocked"
     
     Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
     
     - **Effort:** advanced
     
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
     
-    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 Anti-Phishing Policy Deletion"
-    
-    Detects when the anti-phishing policy is removed from Office 365. By default, Office 365 includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
+    Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
     
     - **Effort:** master
     
-??? abstract "Office 365 Anti-Phishing Rule Deletion"
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Rule Deletion"
     
-    Detects the deactivation of the anti-phishing rule from Office 365. The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
+    Detects the deactivation of the anti-phishing rule from Microsoft 365 (Office 365). The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
     
     - **Effort:** master
     
-??? abstract "Office 365 AtpDetection"
+??? abstract "Microsoft 365 (Office 365) AtpDetection"
     
     Detects when an AtpDetection (Advanced Threat Protection) event from the Office365 ThreatIntelligence service is raised. AtpDetection is a service which secures emails, attachments, and files by scanning them for threats.
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 DLP Policy Removed"
+??? abstract "Microsoft 365 (Office 365) DLP Policy Removed"
     
-    Detects when a DLP (Data Loss Prevention) policy is removed in Office 365. DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Detection Velocity"
-    
-    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when a DLP (Data Loss Prevention) policy is removed in Microsoft 365 (Office 365). DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
     
     - **Effort:** master
     
-??? abstract "Office 365 MCAS Inbox Hiding"
+??? abstract "Microsoft 365 (Office 365) MCAS Detection Velocity"
     
-    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS New Country"
-    
-    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 MCAS Repeated Delete"
+??? abstract "Microsoft 365 (Office 365) MCAS Inbox Hiding"
     
-    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Repeated Failed Login"
-    
-    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 MCAS Risky IP"
+??? abstract "Microsoft 365 (Office 365) MCAS New Country"
     
-    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MailBoxAuditBypassAssociation Option Implementation"
-    
-    Detects the implementation of a MailBoxAuditBypassAssociation option in Office 365. This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 Malware Filter Policy Removed"
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Delete"
     
-    Detects when a malware policy has been deleted in Office 365. A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Filter Rule Deletion"
-    
-    Detects when a malware filter rule has been deleted in Office 365. The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
     
     - **Effort:** master
     
-??? abstract "Office 365 Malware Uploaded On OneDrive"
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Failed Login"
     
-    Detects when Office 365 identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
+    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Risky IP"
+    
+    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MailBoxAuditBypassAssociation Option Implementation"
+    
+    Detects the implementation of a MailBoxAuditBypassAssociation option in Microsoft 365 (Office 365). This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Policy Removed"
+    
+    Detects when a malware policy has been deleted in Microsoft 365 (Office 365). A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Rule Deletion"
+    
+    Detects when a malware filter rule has been deleted in Microsoft 365 (Office 365). The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On OneDrive"
+    
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 Malware Uploaded On SharePoint"
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On SharePoint"
     
-    Detects when Office 365 identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 Mass Download By A Single User"
+??? abstract "Microsoft 365 (Office 365) Mass Download By A Single User"
     
     Identifies when Microsoft Cloud App Security reports that a single user performs more than 50 downloads within 1 minute.
     
     - **Effort:** master
     
-??? abstract "Office 365 Potential Ransomware Activity Detected"
+??? abstract "Microsoft 365 (Office 365) Potential Ransomware Activity Detected"
     
     Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
     
     - **Effort:** master
     
-??? abstract "Office 365 Safe Attachment Rule Disabled"
+??? abstract "Microsoft 365 (Office 365) Safe Attachment Rule Disabled"
     
-    Detects when the safe attachment rule has been deleted in Office 365. Safe Attachments is a feature in Microsoft Defender for Office 365 that opens email attachments in a special hypervisor environment to detect malicious activity.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Safelinks Disabled"
-    
-    Detects when a safelink rule has been deleted in Office 365. Safe Links is a feature in Defender for Office 365 that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    Detects when the safe attachment rule has been deleted in Microsoft 365 (Office 365). Safe Attachments is a feature in Microsoft Defender for Microsoft 365 (Office 365) that opens email attachments in a special hypervisor environment to detect malicious activity.
     
     - **Effort:** master
     
-??? abstract "Office 365 Unusual Volume Of File Deletion"
+??? abstract "Microsoft 365 (Office 365) Safelinks Disabled"
+    
+    Detects when a safelink rule has been deleted in Microsoft 365 (Office 365). Safe Links is a feature in Defender for Microsoft 365 (Office 365) that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Unusual Volume Of File Deletion"
     
     Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
     
     - **Effort:** master
+    
+??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
+    
+    Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
+    
+    - **Effort:** elementary
+    
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
+    
+    Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta Phishing Detection with FastPass Origin Check"
     
@@ -847,6 +879,24 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Detects request to potential malicious file with double extension
     
     - **Effort:** elementary
+    
+??? abstract "Proofpoint TAP Email Classified As Malware But Allowed"
+    
+    An email was classified as malware with a threat score greater than 0 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+    
+??? abstract "Proofpoint TAP Email Classified As Phishing But Allowed"
+    
+    An email was classified as phishing with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
+    
+??? abstract "Proofpoint TAP Email Classified As Spam But Allowed"
+    
+    An email was classified as spam with a threat score greater than 50 by Proofpoint TAP but was not blocked. The threshold on the Threat Score has been defined to avoid a high amount of false positives.
+    
+    - **Effort:** advanced
     
 ??? abstract "Retarus Email Security Threat Detected (CxO Or Patient Zero Detection)"
     
@@ -1023,6 +1073,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 01/08/2023 - major - Rewritten as a regex to reduce false positives
+            
 ??? abstract "Wmic Service Call"
     
     Detects either remote or local code execution using wmic tool.
@@ -1111,7 +1165,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Command and Scripting Interpreter**
 
-??? abstract "AWS EC2 Startup Script Changed"
+??? abstract "AWS CloudTrail EC2 Startup Script Changed"
     
     Detects changes to the EC2 instance startup script. The shell script will be executed as root/SYSTEM everytime the specific instances are booted up.
     
@@ -1147,51 +1201,51 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection"
+??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection High Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Low Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
     - **Effort:** advanced
     
-??? abstract "Cybereason MalOp Alert"
+??? abstract "Cybereason EDR Alert"
     
-    Cybereason MalOp telemetry has raised an alert
+    Cybereason EDR telemetry has raised an alert
     
     - **Effort:** intermediate
     
-??? abstract "Cybereason MalOp Malware Detection"
+??? abstract "Cybereason EDR Malware Detection"
     
-    Cybereason MalOp telemetry has detected a malware
+    Cybereason EDR telemetry has detected a malware
     
     - **Effort:** advanced
     
@@ -1273,11 +1327,17 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
+    
+    - **Effort:** advanced
     
 ??? abstract "Malicious PowerShell Keywords"
     
@@ -1305,25 +1365,43 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
-??? abstract "Microsoft 365 Defender Office 365 Alert"
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender for Office 365 Alert"
+    
+    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -1445,91 +1523,91 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "SEKOIA.IO EICAR Detection"
+??? abstract "Sekoia.io EICAR Detection"
     
-    Detects observables in SEKOIA.IO CTI tagged as EICAR, which are fake samples meant to test detection.
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Agent Disabled"
+??? abstract "SentinelOne EDR Agent Disabled"
     
-    A SentinelOne agent has been disabled according to SentinelOne logs.
+    A SentinelOne EDR agent has been disabled according to SentinelOne logs.
     
     - **Effort:** master
     
-??? abstract "SentinelOne Custom Rule Alert"
+??? abstract "SentinelOne EDR Custom Rule Alert"
     
-    A SentinelOne agent has detected a threat related to a Custom Rule and raised an alert for it.
+    A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
+??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Malicious Threat Not Mitigated"
+??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne SSO User Added"
+??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
+??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Detected (Malicious)"
+??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
-    A SentinelOne agent has detected a threat with a high confidence level (malicious).
+    A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Threat Detected (Suspicious)"
+??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious).
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Kill Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne User Failed To Log In To The Management Console"
+??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
     
     - **Effort:** master
     
-??? abstract "SentinelOne User Logged In To The Management Console"
+??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
     
@@ -1543,14 +1621,22 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
     
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
@@ -1570,6 +1656,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
     Detects suspicious DLL being loaded by an Microsoft Office Product. Considered as suspects are some .NET DLLs, clr.dll, GAC DLL, DSParse (Active Directoryi services API) or Kerberos DLLs which may be loaded by MS Office processes when executing a potentially malicious macro. The prerequisite is to log the Sysmon Event ID 7 (DLL image loaded by process). 
+    
+    - **Effort:** master
+    
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
     
     - **Effort:** master
     
@@ -1629,12 +1721,6 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
-    
 ??? abstract "Suspicious Windows Script Execution"
     
     Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
@@ -1653,7 +1739,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Tehtris EDR Alert"
+??? abstract "TEHTRIS EDR Alert"
     
     Tehtris EDR telemetry has raised an alert.
     
@@ -1699,24 +1785,6 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
         - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
             
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
-    
 ??? abstract "XSL Script Processing And SquiblyTwo Attack"
     
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
@@ -1819,6 +1887,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious HWP Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
@@ -1851,59 +1923,95 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
+    
+    Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
+??? abstract "Broadcom/Symantec Endpoint Security Event Cleaned"
+    
+    Broadcom/Symantec Endpoint Security had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
+??? abstract "Broadcom/Symantec Endpoint Security Event Quarantined"
+    
+    Broadcom/Symantec Endpoint Security had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
+??? abstract "Broadcom/Symantec Endpoint Security Event Terminate"
+    
+    Broadcom/Symantec Endpoint Security had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
+    
+    - **Effort:** master
+    
 ??? abstract "Cobalt Strike Default Beacons Names"
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
     - **Effort:** elementary
     
-??? abstract "CrowdStrike Intrusion Detection"
+??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection High Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Low Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
     - **Effort:** advanced
     
-??? abstract "Cybereason MalOp Alert"
+??? abstract "Cybereason EDR Alert"
     
-    Cybereason MalOp telemetry has raised an alert
+    Cybereason EDR telemetry has raised an alert
     
     - **Effort:** intermediate
     
-??? abstract "Cybereason MalOp Malware Detection"
+??? abstract "Cybereason EDR Malware Detection"
     
-    Cybereason MalOp telemetry has detected a malware
+    Cybereason EDR telemetry has detected a malware
     
     - **Effort:** advanced
+    
+??? abstract "Darktrace Threat Visualizer Model Breach Critical Alert"
+    
+    Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
+    
+    - **Effort:** master
+    
+??? abstract "Darktrace Threat Visualizer Model Breach Suspicious Alert"
+    
+    Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
+    
+    - **Effort:** master
     
 ??? abstract "Download Files From Non-Legitimate TLDs"
     
@@ -1929,43 +2037,43 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "HarfangLab Critical Level Rule Detection"
+??? abstract "HarfangLab EDR Critical Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab High Level Rule Detection"
+??? abstract "HarfangLab EDR High Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab Hlai Engine Detection"
+??? abstract "HarfangLab EDR Hlai Engine Detection"
     
     HarfangLab EDR has raised an alert based on its hlai engine
     
     - **Effort:** advanced
     
-??? abstract "HarfangLab Low Level Rule Detection"
+??? abstract "HarfangLab EDR Low Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab Medium Level Rule Detection"
+??? abstract "HarfangLab EDR Medium Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
     
     - **Effort:** master
     
-??? abstract "HarfangLab Process Execution Blocked"
+??? abstract "HarfangLab EDR Process Execution Blocked"
     
     HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
     
-??? abstract "HarfangLab Suspicious Process Behavior Has Been Detected"
+??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
     HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
     
@@ -1987,11 +2095,17 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
         - 13/03/2023 - minor - Extended the list of suspicious process names being spawned from explorer.exe
             
-??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
+    
+    - **Effort:** advanced
     
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     
@@ -1999,6 +2113,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
+            
 ??? abstract "Malspam Execution Registering Malicious DLL"
     
     Detects the creation of a file in the C:\Datop folder, or DLL registering a file in the C:\Datop folder. Files located in the Datop folder are very characteristic of malspam execution related to Qakbot or SquirrelWaffle. Prerequisites are Logging for File Creation events, which can be done in the Sysmon configuration (events 11), for the first part of the pattern (TargetFilename).
@@ -2011,7 +2129,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Malware Detected By Vade for M365 And Not Blocked"
+??? abstract "Malware Detected By Vade For M365 And Not Blocked"
     
     Vade Secure product Vade for M365 has detected a malware contained in the message and didn't delete it.
     
@@ -2023,27 +2141,153 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
+    
+    Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Anti-Phishing Rule Deletion"
+    
+    Detects the deactivation of the anti-phishing rule from Microsoft 365 (Office 365). The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) AtpDetection"
+    
+    Detects when an AtpDetection (Advanced Threat Protection) event from the Office365 ThreatIntelligence service is raised. AtpDetection is a service which secures emails, attachments, and files by scanning them for threats.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 (Office 365) DLP Policy Removed"
+    
+    Detects when a DLP (Data Loss Prevention) policy is removed in Microsoft 365 (Office 365). DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Detection Velocity"
+    
+    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Inbox Hiding"
+    
+    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS New Country"
+    
+    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Delete"
+    
+    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Repeated Failed Login"
+    
+    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MCAS Risky IP"
+    
+    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Microsoft 365 (Office 365) E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) MailBoxAuditBypassAssociation Option Implementation"
+    
+    Detects the implementation of a MailBoxAuditBypassAssociation option in Microsoft 365 (Office 365). This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Policy Removed"
+    
+    Detects when a malware policy has been deleted in Microsoft 365 (Office 365). A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Filter Rule Deletion"
+    
+    Detects when a malware filter rule has been deleted in Microsoft 365 (Office 365). The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On OneDrive"
+    
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 (Office 365) Malware Uploaded On SharePoint"
+    
+    Detects when Microsoft 365 (Office 365) identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 (Office 365) Mass Download By A Single User"
+    
+    Identifies when Microsoft Cloud App Security reports that a single user performs more than 50 downloads within 1 minute.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Potential Ransomware Activity Detected"
+    
+    Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Safe Attachment Rule Disabled"
+    
+    Detects when the safe attachment rule has been deleted in Microsoft 365 (Office 365). Safe Attachments is a feature in Microsoft Defender for Microsoft 365 (Office 365) that opens email attachments in a special hypervisor environment to detect malicious activity.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Safelinks Disabled"
+    
+    Detects when a safelink rule has been deleted in Microsoft 365 (Office 365). Safe Links is a feature in Defender for Microsoft 365 (Office 365) that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft 365 (Office 365) Unusual Volume Of File Deletion"
+    
+    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
-??? abstract "Microsoft 365 Defender Office 365 Alert"
+??? abstract "Microsoft Defender Antivirus Threat Detected"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender for Office 365 Alert"
+    
+    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2065,211 +2309,91 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Office 365 Anti-Phishing Policy Deletion"
-    
-    Detects when the anti-phishing policy is removed from Office 365. By default, Office 365 includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Anti-Phishing Rule Deletion"
-    
-    Detects the deactivation of the anti-phishing rule from Office 365. The anti-phishing rule specifies the priority and recipient filters (who the policy applies to) for an anti-phish policy.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 AtpDetection"
-    
-    Detects when an AtpDetection (Advanced Threat Protection) event from the Office365 ThreatIntelligence service is raised. AtpDetection is a service which secures emails, attachments, and files by scanning them for threats.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 DLP Policy Removed"
-    
-    Detects when a DLP (Data Loss Prevention) policy is removed in Office 365. DLP policies defines which resources can be shared and with whom, preventing sensitive information from being leaked.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Detection Velocity"
-    
-    Detects when Microsoft Cloud App Security identifies two user activities (a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Inbox Hiding"
-    
-    Detects when Microsoft Cloud App Security identifies that a suspicious inbox rule was set on a user’s inbox. This may indicate that the user account is compromised, and that the mailbox is being used to distribute spam and malware in your organization. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS New Country"
-    
-    Detects when Microsoft Cloud App Security identifies a sign-in from a country where it has never connected. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Repeated Delete"
-    
-    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Repeated Failed Login"
-    
-    Detects when Microsoft Cloud App Security identifies a large number of failed login attempts which may indicate a brute-force attempt. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MCAS Risky IP"
-    
-    Detects when Microsoft Cloud App Security identifies sign-ins from a risky IP address, for example, using an anonymous browser or VPN. To use this feature, you must have an Office 365 E5 license (https://docs.microsoft.com/en-us/defender-cloud-apps/get-started?culture=fr-fr&country=FR).
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 MailBoxAuditBypassAssociation Option Implementation"
-    
-    Detects the implementation of a MailBoxAuditBypassAssociation option in Office 365. This option is used when you configure a user or computer account to bypass mailbox audit logging, access or actions taken by the user or computer account to any mailbox isn't logged.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Filter Policy Removed"
-    
-    Detects when a malware policy has been deleted in Office 365. A malware filter policy is used to alert administrators that an internal user sent a message that contained malware.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Filter Rule Deletion"
-    
-    Detects when a malware filter rule has been deleted in Office 365. The malware filter rule specifies the priority and recipient filters (who the policy applies to) for a malware filter policy.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Malware Uploaded On OneDrive"
-    
-    Detects when Office 365 identifies a malicious file uploaded to OneDrive. Attackers can use this method to propagate through the network.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 Malware Uploaded On SharePoint"
-    
-    Detects when Office 365 identifies a malicious file uploaded to SharePoint. Attackers can use this method to propagate through the network.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Office 365 Mass Download By A Single User"
-    
-    Identifies when Microsoft Cloud App Security reports that a single user performs more than 50 downloads within 1 minute.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Potential Ransomware Activity Detected"
-    
-    Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Safe Attachment Rule Disabled"
-    
-    Detects when the safe attachment rule has been deleted in Office 365. Safe Attachments is a feature in Microsoft Defender for Office 365 that opens email attachments in a special hypervisor environment to detect malicious activity.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Safelinks Disabled"
-    
-    Detects when a safelink rule has been deleted in Office 365. Safe Links is a feature in Defender for Office 365 that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs and links in email messages and other locations.
-    
-    - **Effort:** master
-    
-??? abstract "Office 365 Unusual Volume Of File Deletion"
-    
-    Detects when Microsoft Cloud App Security identifies that a user has deleted an unusually large volume of files.
-    
-    - **Effort:** master
-    
 ??? abstract "Okta Security Threat Detected"
     
     Detects when a security threat is detected in Okta.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Agent Disabled"
+??? abstract "SentinelOne EDR Agent Disabled"
     
-    A SentinelOne agent has been disabled according to SentinelOne logs.
+    A SentinelOne EDR agent has been disabled according to SentinelOne logs.
     
     - **Effort:** master
     
-??? abstract "SentinelOne Custom Rule Alert"
+??? abstract "SentinelOne EDR Custom Rule Alert"
     
-    A SentinelOne agent has detected a threat related to a Custom Rule and raised an alert for it.
+    A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
+??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Malicious Threat Not Mitigated"
+??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne SSO User Added"
+??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
+??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Detected (Malicious)"
+??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
-    A SentinelOne agent has detected a threat with a high confidence level (malicious).
+    A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Threat Detected (Suspicious)"
+??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious).
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Kill Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne User Failed To Log In To The Management Console"
+??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
     
     - **Effort:** master
     
-??? abstract "SentinelOne User Logged In To The Management Console"
+??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
     
@@ -2321,37 +2445,13 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Symantec EPP Event Blocked"
-    
-    Symantec EPP blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
-??? abstract "Symantec EPP Event Cleaned"
-    
-    Symantec EPP had cleaned action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
-??? abstract "Symantec EPP Event Quarantined"
-    
-    Symantec EPP had a quarantined action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
-??? abstract "Symantec EPP Event Terminate"
-    
-    Symantec EPP had a process terminate action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
-    
-    - **Effort:** master
-    
 ??? abstract "Sysmon Windows File Block Executable"
     
     Sysmon has blocked an executable file from being written to the disk. This could be a malicious binary to investigate.  
     
     - **Effort:** master
     
-??? abstract "Tehtris EDR Alert"
+??? abstract "TEHTRIS EDR Alert"
     
     Tehtris EDR telemetry has raised an alert.
     
@@ -2362,12 +2462,6 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
     
     - **Effort:** master
-    
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
     
 ??? abstract "Winword Document Droppers"
     
@@ -2383,37 +2477,37 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection"
+??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Critical Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection High Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
     - **Effort:** intermediate
     
-??? abstract "CrowdStrike Intrusion Detection Informational Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Low Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
     - **Effort:** advanced
     
-??? abstract "CrowdStrike Intrusion Detection Medium Severity"
+??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
@@ -2431,15 +2525,20 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
-??? abstract "Cybereason MalOp Alert"
+    - **Changelog:**
     
-    Cybereason MalOp telemetry has raised an alert
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
+??? abstract "Cybereason EDR Alert"
+    
+    Cybereason EDR telemetry has raised an alert
     
     - **Effort:** intermediate
     
-??? abstract "Cybereason MalOp Malware Detection"
+??? abstract "Cybereason EDR Malware Detection"
     
-    Cybereason MalOp telemetry has detected a malware
+    Cybereason EDR telemetry has detected a malware
     
     - **Effort:** advanced
     
@@ -2449,17 +2548,32 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force Successful On SentinelOne Management Console"
+    - **Changelog:**
     
-    A user has attempted to login several times (brute-force) on the SentinelOne Management Console and succeeded to login.
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
+??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
+    
+    A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
+    
+    - **Effort:** advanced
     
 ??? abstract "Logonui Wrong Parent"
     
@@ -2467,12 +2581,22 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -2493,25 +2617,31 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Microsoft 365 Defender Alert"
     
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender Cloud App Security Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
 ??? abstract "Microsoft 365 Defender For Endpoint Alert"
     
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
-??? abstract "Microsoft 365 Defender Office 365 Alert"
+??? abstract "Microsoft Defender Antivirus Threat Detected"
     
-    Microsoft 365 Defender has raised an alert for Office 365. The alert info and evidence events are grouped with the similarity into the same SEKOIA.IO alert. 
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender for Office 365 Alert"
+    
+    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
     
     - **Effort:** master
     
@@ -2551,6 +2681,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -2563,85 +2698,90 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Agent Disabled"
+    - **Changelog:**
     
-    A SentinelOne agent has been disabled according to SentinelOne logs.
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
+??? abstract "SentinelOne EDR Agent Disabled"
+    
+    A SentinelOne EDR agent has been disabled according to SentinelOne logs.
     
     - **Effort:** master
     
-??? abstract "SentinelOne Custom Rule Alert"
+??? abstract "SentinelOne EDR Custom Rule Alert"
     
-    A SentinelOne agent has detected a threat related to a Custom Rule and raised an alert for it.
+    A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Malicious Threat Detected And Mitigated Preemptively"
+??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
-    A SentinelOne agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Malicious Threat Not Mitigated"
+??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
-    A SentinelOne agent has detected a threat but did not mitigate it, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne SSO User Added"
+??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Suspicious Threat Not Mitigated (Medium Confidence)"
+??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Detected (Malicious)"
+??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
-    A SentinelOne agent has detected a threat with a high confidence level (malicious).
+    A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
     - **Effort:** elementary
     
-??? abstract "SentinelOne Threat Detected (Suspicious)"
+??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
-    A SentinelOne agent has detected a threat with a medium confidence level (suspicious).
+    A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Kill Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
-    A SentinelOne agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Failed"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
-    A SentinelOne agent has failed to quarantine a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne Threat Mitigation Report Quarantine Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
-    A SentinelOne agent has detected and quarantined a threat with success, defined by the action.type field's value.
+    A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
     - **Effort:** advanced
     
-??? abstract "SentinelOne Threat Mitigation Report Remediate Success"
+??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
-    A SentinelOne agent has remediated a threat, defined by the action.type field's value.
+    A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
     - **Effort:** intermediate
     
-??? abstract "SentinelOne User Failed To Log In To The Management Console"
+??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
     
     - **Effort:** master
     
-??? abstract "SentinelOne User Logged In To The Management Console"
+??? abstract "SentinelOne EDR User Logged In To The Management Console"
     
     A user has logged in to the management console.
     
@@ -2663,6 +2803,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "SolarWinds Suspicious File Creation"
     
     Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
@@ -2671,16 +2816,25 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
     Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
@@ -2705,12 +2859,28 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
+??? abstract "TEHTRIS EDR Alert"
+    
+    Tehtris EDR telemetry has raised an alert.
+    
+    - **Effort:** master
+    
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -2723,12 +2893,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Tehtris EDR Alert"
+    - **Changelog:**
     
-    Tehtris EDR telemetry has raised an alert.
-    
-    - **Effort:** master
-    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -2747,17 +2916,16 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
     
     - **Effort:** elementary
-    
-??? abstract "Windows Defender Threat Detected"
-    
-    Detection of a windows defender alert indicating the presence of potential malware
-    
-    - **Effort:** intermediate
     
 ??? abstract "Windows Update LolBins"
     
@@ -2775,36 +2943,66 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -2922,11 +3120,21 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
     
     - **Effort:** master
+    
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -2946,33 +3154,33 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -2987,6 +3195,24 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) with error then one success.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -3020,37 +3246,37 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Account Manipulation**
 
-??? abstract "AWS IAM Failed User Creation"
+??? abstract "AWS CloudTrail IAM Failed User Creation"
     
     Detects an attemp to create a user account where the result is an explicit denied.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Password Policy Updated"
+??? abstract "AWS CloudTrail IAM Password Policy Updated"
     
     Detects an update to the password policy. This could be an attempt to lower accounts security level.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Policy Changed"
+??? abstract "AWS CloudTrail IAM Policy Changed"
     
     Detects change on AWS IAM Policy
     
     - **Effort:** master
     
-??? abstract "AWS Root ConsoleLogin"
+??? abstract "AWS CloudTrail Root ConsoleLogin"
     
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Attempt"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Attempt"
     
     Detects when a request in success or failure is made to transfer a domain name to an other AWS account
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Lock Disabled"
     
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
     
@@ -3084,7 +3310,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
-??? abstract "Azure Active Directory Self Service Password Reset In Failure"
+??? abstract "Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure"
     
     Detects self-service password reset in failure for various reasons (except licence or policy ones)
     
@@ -3140,8 +3366,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 ??? abstract "SSH Authorized Key Alteration"
     
     The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
@@ -3175,6 +3405,14 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
     
     - **Effort:** master
+    
+**Authentication Package**
+
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 **External Remote Services**
 
@@ -3235,6 +3473,14 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Detects the addition of office test registry that allows a user to specify an arbitrary DLL that will be executed everytime an Office application is started. An adversaries may abuse the Microsoft Office "Office Test" Registry key to obtain persistence on a compromised system.
     
     - **Effort:** elementary
+    
+**Browser Extensions**
+
+??? abstract "Malicious Browser Extensions"
+    
+    Detects browser extensions being loaded with the --load-extension and -base-url options, which works on Chromium-based browsers. We are looking for potentially malicious browser extensions. These extensions can get access to informations.
+    
+    - **Effort:** advanced
     
 **BITS Jobs**
 
@@ -3346,36 +3592,65 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -3412,6 +3687,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -3424,24 +3704,43 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
@@ -3460,12 +3759,22 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -3478,12 +3787,22 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -3496,36 +3815,66 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 **Event Triggered Execution**
 
 ??? abstract "COM Hijack Via Sdclt"
@@ -3555,6 +3904,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
     
     - **Effort:** intermediate
     
@@ -3756,6 +4111,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
 
@@ -3871,6 +4230,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -3901,24 +4265,44 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
@@ -3931,30 +4315,55 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 **Exploitation for Privilege Escalation**
 
 ??? abstract "Audit CVE Event"
@@ -4007,11 +4416,21 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
     
     - **Effort:** master
+    
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -4031,33 +4450,33 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -4072,6 +4491,24 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) with error then one success.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -4137,6 +4574,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Domain Policy Modification**
 
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
@@ -4157,6 +4600,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft Entra ID (Azure AD) Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Okta Policy Modified or Deleted"
     
     Detects when an Okta policy is modified or deleted.
@@ -4173,8 +4622,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 **Create or Modify System Process**
 
 ??? abstract "APT29 Fake Google Update Service Install"
@@ -4207,36 +4660,65 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Lsass Wrong Parent"
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Malicious Service Installations"
     
     Generic and known malicious service installation that appear in cases of lateral movement, credential dumping and other suspicious activity. It detects the use of PAExec, Wannacry commonly used malicious service, APT29 known malicious service name and net user service file name which is known as a sign of persistence.
@@ -4273,6 +4755,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Searchprotocolhost Child Found"
     
     SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
@@ -4285,24 +4772,43 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "SolarWinds Wrong Child Process"
     
-    Detects SolarWinds process starting an unusual child process. The process solarwinds.businesslayerhost.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
@@ -4321,12 +4827,22 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
     Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
@@ -4339,12 +4855,22 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
     Detects WMI command line event consumers.
@@ -4357,36 +4883,66 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winlogon wrong parent"
     
     Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Winword wrong parent"
     
     Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 **Event Triggered Execution**
 
 ??? abstract "COM Hijack Via Sdclt"
@@ -4416,6 +4972,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
     
     - **Effort:** intermediate
     
@@ -4567,6 +5129,24 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "UAC Bypass Using Fodhelper"
     
     Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
@@ -4665,6 +5245,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 ## Defense Evasion
 **Obfuscated Files or Information**
 
@@ -4729,6 +5313,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Formbook Hijacked Process Command"
     
     Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
@@ -4819,6 +5408,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Malicious Named Pipe"
     
     Detects the creation of a named pipe used by known malware. Prerequisites are logging for PipeEvents in Sysmon config (Event ID 17 and 18).
@@ -4849,24 +5443,44 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Searchprotocolhost Wrong Parent"
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Spoolsv Wrong Parent"
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
@@ -4879,30 +5493,55 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhost Wrong Parent"
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2023 - major - Added filter to reduce false positives
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 **Scripting**
 
 ??? abstract "Suspicious VBS Execution Parameter"
@@ -4913,7 +5552,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Indicator Removal**
 
-??? abstract "AWS KMS CMK Key Deleted"
+??? abstract "AWS CloudTrail KMS CMK Key Deleted"
     
     Detects when a CMK is deleted or scheduled for deletion
     
@@ -4949,27 +5588,31 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Secure Deletion With SDelete"
-    
-    Detects renaming of file while deletion with SDelete tool. SDelete is a tool that permits to securely delete files by overwriting them (no recovery possible). Few threat actors are using it to delete traces of their malware.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender History Deleted"
+??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
     
     - **Effort:** master
     
-??? abstract "Windows Defender History Directory Deleted"
+??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
     Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
     
-??? abstract "Windows Defender Tampering Detected"
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
     
     Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+            
+??? abstract "Secure Deletion With SDelete"
+    
+    Detects renaming of file while deletion with SDelete tool. SDelete is a tool that permits to securely delete files by overwriting them (no recovery possible). Few threat actors are using it to delete traces of their malware.
     
     - **Effort:** intermediate
     
@@ -4993,11 +5636,21 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+            
 ??? abstract "Admin User RDP Remote Logon"
     
     Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
     
     - **Effort:** master
+    
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
@@ -5017,33 +5670,33 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Account Suspended"
+??? abstract "Google Cloud Audit Logs Account Suspended"
     
-    Detects when Google Cloud Audit notify a user account suspended for a suspicious activity
+    Detects when Google Cloud Audit Logs notify a user account suspended for a suspicious activity
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Added"
+??? abstract "Google Cloud Audit Logs Application Added"
     
     Detects when an application is added to Google Workspace Domain. This should be an expected change made by an administrator and need to be checked.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Application Authorized"
+??? abstract "Google Cloud Audit Logs Application Authorized"
     
     Detects when an application is authorized to access a Google user account. An exception is currently made for GMAIL because of the large number of hits.
     
     - **Effort:** master
     
-??? abstract "Google Cloud Audit Attack Warning"
+??? abstract "Google Cloud Audit Logs Attack Warning"
     
-    Detects when Google Cloud Audit notify an attack warning such as the famous "Government-backed attack".
+    Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
     
@@ -5058,6 +5711,24 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     A user has attempted to login several times (brute-force) with error then one success.
     
     - **Effort:** intermediate
+    
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Entra ID (Azure AD) Device Code Authentication"
+    
+    Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.)
+    
+    - **Effort:** master
     
 ??? abstract "Netskope Admin Audit"
     
@@ -5249,6 +5920,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Deobfuscate/Decode Files or Information**
 
 ??? abstract "FromBase64String Command Line"
@@ -5257,17 +5934,29 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+    
 ??? abstract "Suspicious Mshta Execution"
     
     Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
     
     - **Effort:** intermediate
-    
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
     
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
     
@@ -5285,18 +5974,6 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
         - 15/02/2023 - minor - "encode" and "decode" were removed as it was causing too much false positives while not being the main usage of the certutil command by attackers.
             
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-    
 **CMSTP**
 
 ??? abstract "CMSTP Execution"
@@ -5324,6 +6001,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "CVE 2022-1292"
     
     The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
+    
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
     
     - **Effort:** advanced
     
@@ -5365,6 +6048,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **System Binary Proxy Execution**
 
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+    
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
@@ -5382,6 +6071,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
     
     - **Effort:** master
+    
+??? abstract "CertOC Loading Dll"
+    
+    Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Control Panel Items"
     
@@ -5503,6 +6198,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master
+    
 **XSL Script Processing**
 
 ??? abstract "WMIC Loading Scripting Libraries"
@@ -5563,6 +6264,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft Entra ID (Azure AD) Domain Trust Modification"
+    
+    Adversaries may add new domain trusts or modify the properties of existing domain trusts to evade defenses and/or elevate privileges. Confirm the added or modified target domain/URL is legitimate administrator behavior.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Okta Policy Modified or Deleted"
     
     Detects when an Okta policy is modified or deleted.
@@ -5579,8 +6286,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 **Abuse Elevation Control Mechanism**
 
 ??? abstract "CMSTP UAC Bypass via COM Object Access"
@@ -5612,6 +6323,24 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
     
     - **Effort:** advanced
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Setuid Or Setgid Usage"
+    
+    Detects the usage of a setuid or a setgid.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -5671,9 +6400,9 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** master
     
-??? abstract "Intune Non-Compliant Device"
+??? abstract "Microsoft Intune Non-Compliant Device"
     
-    Detects Intune reporting a device in a non-compliant state. This can indicate either a misconfiguration in Intune or a change of configuration on said device.
+    Detects Microsoft Intune reporting a device in a non-compliant state. This can indicate either a misconfiguration in Intune or a change of configuration on said device.
     
     - **Effort:** advanced
     
@@ -5697,55 +6426,55 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Impair Defenses**
 
+??? abstract "AWS CloudTrail Config Disable Channel/Recorder"
+    
+    Detects AWS Config Service disabling channel or recorder
+    
+    - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail Disable MFA"
+    
+    Detects a user disabling the multi factor authentication mechanism for its account. It could be a sign of malicious activity.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail EC2 Security Group Modified"
+    
+    Detects when an AWS EC2 security group has been modified
+    
+    - **Effort:** master
+    
+??? abstract "AWS CloudTrail EventBridge Rule Disabled Or Deleted"
+    
+    Detects when an attacker is trying to evade defenses by deleting or disabling EventBridge rules
+    
+    - **Effort:** master
+    
+??? abstract "AWS CloudTrail GuardDuty Detector Deleted"
+    
+    Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
+    
+    - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail GuardDuty Detector Suspended"
+    
+    Detects the suspension of the GuardDuty service
+    
+    - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail GuardDuty Disruption"
+    
+    Detects updates of the GuardDuty list of trusted IPs, perhaps to disable security alerts against malicious IPs
+    
+    - **Effort:** intermediate
+    
 ??? abstract "AWS CloudTrail Important Change"
     
     Detects disabling, deleting and updating of a Trail source which could be done by some attackers trying to masquerade their activity.
     
     - **Effort:** advanced
     
-??? abstract "AWS Config Disable Channel/Recorder"
-    
-    Detects AWS Config Service disabling channel or recorder
-    
-    - **Effort:** elementary
-    
-??? abstract "AWS Disable MFA"
-    
-    Detects a user disabling the multi factor authentication mechanism for its account. It could be a sign of malicious activity.
-    
-    - **Effort:** intermediate
-    
-??? abstract "AWS EC2 Security Group Modified"
-    
-    Detects when an AWS EC2 security group has been modified
-    
-    - **Effort:** master
-    
-??? abstract "AWS EventBridge Rule Disabled Or Deleted"
-    
-    Detects when an attacker is trying to evade defenses by deleting or disabling EventBridge rules
-    
-    - **Effort:** master
-    
-??? abstract "AWS GuardDuty Detector Deleted"
-    
-    Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
-    
-    - **Effort:** elementary
-    
-??? abstract "AWS GuardDuty Detector Suspended"
-    
-    Detects the suspension of the GuardDuty service
-    
-    - **Effort:** elementary
-    
-??? abstract "AWS GuardDuty Disruption"
-    
-    Detects updates of the GuardDuty list of trusted IPs, perhaps to disable security alerts against malicious IPs
-    
-    - **Effort:** intermediate
-    
-??? abstract "AWS Remove Flow logs"
+??? abstract "AWS CloudTrail Remove Flow logs"
     
     Detects when an attacker is removing Flow Logs to cover their tracks
     
@@ -5811,27 +6540,137 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Trusted Domain Added"
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub Delete Action"
+    
+    Detects a Delete/Destroy action in GitHub audit logs.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub Dependabot Or Vulnerability Alerts Disabled"
+    
+    Detects dependabot or vulnerability alerts being disabled. Dependabot performs a scan to detect insecure dependencies, and sends Dependabot alerts.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub High Risk Configuration Disabled"
+    
+    Detects a configuration being disabled in GitHub. It detects only configuration judged as highly risky if disabled. An organization should adapt this rule according to its environment.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub New Organization Member"
+    
+    Detects when a member is added or invited to a GitHub organization.
+    
+    - **Effort:** advanced
+    
+??? abstract "GitHub Outside Collaborator Detected"
+    
+    Detects an outside collaborator being removed or having its permissions changed.
+    
+    - **Effort:** advanced
+    
+??? abstract "Google Cloud Audit Logs Trusted Domain Added"
     
     Detects when a domain name is added to Google Workspace Trusted Domain. This could be used by an attacker to bypass some security controls or just be a legit admin action.
     
     - **Effort:** intermediate
     
-??? abstract "Intune Policy Change"
-    
-    Detects edits, deletions or creations made to an organization Intune policies.
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Configuration Changed"
+    
+    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Disable Using Registry"
+    
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
+    
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Exclusion Configuration"
+    
+    Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
+            
+??? abstract "Microsoft Defender Antivirus Restoration Abuse"
+    
+    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
+    
+    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Defender Antivirus Signatures Removed With MpCmdRun"
+    
+    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
+    
+    - **Effort:** elementary
+    
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
+    
+    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+            
+??? abstract "Microsoft Intune Policy Change"
+    
+    Detects edits, deletions or creations made to an organization Microsoft Intune policies.
     
     - **Effort:** intermediate
     
@@ -5943,6 +6782,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+??? abstract "Powershell AMSI Bypass"
+    
+    This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Process Anti Debug Checking"
     
     Entries in /proc/self/status are used by malware to checks if current process is being debug
@@ -5985,17 +6830,17 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
+    
+    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
+    
+    - **Effort:** master
+    
 ??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
     
     Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
     
     - **Effort:** advanced
-    
-??? abstract "Suspicious Windows Defender Exclusion Command"
-    
-    Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
-    
-    - **Effort:** master
     
 ??? abstract "TrustedInstaller Impersonation"
     
@@ -6009,77 +6854,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Windows Defender Abuse Restoration"
-    
-    The rule detects attempts to abuse Windows Defender file restoration tool. The Windows Defender process is allowed to write files in its own protected directory. This functionality can be used by a threat actor to overwrite Windows Defender files in order to prevent it from running correctly or use Windows Defender to execute a malicious DLL.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Configuration Changed"
-    
-    Detects when an feature configuration change is made to Microsoft Windows Defender (enabling or disabling real-time protection, etc.)
-    
-    - **Effort:** master
-    
 ??? abstract "Windows Defender Deactivation Using PowerShell Script"
     
     Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
     
     - **Effort:** master
-    
-??? abstract "Windows Defender Disable Scheduled Tasks"
-    
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Disable SecurityHealth"
-    
-    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Disable Services"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Disabled"
-    
-    The rule detects attempts to deactivate/disable Windows Defender through command line or registry. To fully use this rule Windows Registry logging is needed. This can be done for instance using Sysmon with Event IDs 12,13 and 14 (and adding the correct path in its configuration).
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Disabled Base64 Encoded"
-    
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Exclusion Configuration"
-    
-    Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Set-MpPreference Base64 Encoded"
-    
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Windows Defender Signatures Removed With MpCmdRun"
-    
-    Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
-    
-    - **Effort:** elementary
-    
-??? abstract "Windows Defender Tampering Detected"
-    
-    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
-    
-    - **Effort:** intermediate
     
 ??? abstract "Windows Firewall Changes"
     
@@ -6095,11 +6874,23 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Microsoft 365 Suspicious Inbox Rule"
+    
+    Business Email Compromise threat actors often create inbox rules to forward, hide, or delete emails containing sensitive information. This rule detects common caracteristics of malicious inbox rules.
+    
+    - **Effort:** elementary
+    
 ??? abstract "PowerShell - NTFS Alternate Data Stream"
     
     Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
     
     - **Effort:** advanced
+    
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
     
 **Hijack Execution Flow**
 
@@ -6175,51 +6966,55 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 16/08/2023 - minor - Adding filtering for some FPs
+            
 **Modify Cloud Compute Infrastructure**
 
-??? abstract "AWS EC2 Subnet Deleted"
+??? abstract "AWS CloudTrail EC2 Subnet Deleted"
     
     Detects when an attacker is destroying an EC2 subnet.
     
     - **Effort:** master
     
-??? abstract "AWS ECS Cluster Deleted"
+??? abstract "AWS CloudTrail ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Failed User Creation"
+??? abstract "AWS CloudTrail IAM Failed User Creation"
     
     Detects an attemp to create a user account where the result is an explicit denied.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Password Policy Updated"
+??? abstract "AWS CloudTrail IAM Password Policy Updated"
     
     Detects an update to the password policy. This could be an attempt to lower accounts security level.
     
     - **Effort:** intermediate
     
-??? abstract "AWS IAM Policy Changed"
+??? abstract "AWS CloudTrail IAM Policy Changed"
     
     Detects change on AWS IAM Policy
     
     - **Effort:** master
     
-??? abstract "AWS Root ConsoleLogin"
+??? abstract "AWS CloudTrail Root ConsoleLogin"
     
     Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Attempt"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Attempt"
     
     Detects when a request in success or failure is made to transfer a domain name to an other AWS account
     
     - **Effort:** intermediate
     
-??? abstract "AWS Route 53 Domain Transfer Lock Disabled"
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Lock Disabled"
     
     Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
     
@@ -6229,7 +7024,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by SEKOIA.IO, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -6338,6 +7133,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Impacket Secretsdump.py Tool"
     
     Detects credential dumping via secretdump of impacket suite.
@@ -6409,6 +7208,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     - **Changelog:**
     
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
+        - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -6558,19 +7358,25 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Brute Force**
 
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
     Spots many failed attempts to log on an administration interface. 
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Login In Failure"
+??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
     
-??? abstract "Fortinet Firewall Successful External Login"
+??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
     
@@ -6594,6 +7400,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Login Brute-Force On Sekoia.io"
+    
+    Detects successful access to Sekoia.io after several failure.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Login Brute-Force Successful Using Su"
     
     A user has attempted to login several times (brute-force) on su command and succeeded to login.
@@ -6612,9 +7424,21 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "RSA SecurID Failed Authentification"
+    
+    Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
+    
+    - **Effort:** advanced
+    
+??? abstract "Successful Brute Force Login From Internet"
+    
+    Detects a spike of failed login followed by a success one from Internet for a given source and target
+    
+    - **Effort:** advanced
+    
 **Multi-Factor Authentication Interception**
 
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
     
@@ -6623,6 +7447,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Okta MFA Bypass Attempt"
     
     A bypass of MFA may have been attempted.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
     
@@ -6668,9 +7498,9 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
         - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
             
-??? abstract "Google Cloud Audit 2FA Disabled"
+??? abstract "Google Cloud Audit Logs 2FA Disabled"
     
-    Detects when Google Cloud Audit notify the 2FA deactivation for a user account.
+    Detects when Google Cloud Audit Logs notify the 2FA deactivation for a user account.
     
     - **Effort:** intermediate
     
@@ -6680,6 +7510,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 03/07/2023 - minor - Added french words for the command lines.
+        - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+            
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -6722,7 +7557,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Adversary-in-the-Middle**
 
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
     
@@ -6731,6 +7566,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
     
@@ -6757,6 +7598,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Suspicious Outbound Kerberos Connection"
     
     Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.
+    
+    - **Effort:** advanced
+    
+??? abstract "Suspicious TGS requests (Kerberoasting)"
+    
+    The rule aims at detecting the Kerberoasting technique, when an attacker requests TGS in order to crack them offline. Toease its task, the attacker requests tickets with weak encryption (such as RC4_HMAC_MD5). The rule therefore detects when an user is requesting 5 TGS for different users in 5 minutes.
     
     - **Effort:** advanced
     
@@ -6819,6 +7666,14 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+**System Network Configuration Discovery**
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 **Remote System Discovery**
 
 ??? abstract "Network Scanning and Discovery"
@@ -6838,6 +7693,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
     
     - **Effort:** advanced
+    
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
     
 **System Owner/User Discovery**
 
@@ -6929,6 +7790,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
+    
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host
@@ -6993,6 +7860,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+??? abstract "Remote Enumeration of Lateral Movement Groups"
+    
+    Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Remote Privileged Group Enumeration"
     
     Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
@@ -7003,6 +7876,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
         - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
             
+??? abstract "Shell PID Injection"
+    
+    Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
+    
+    - **Effort:** intermediate
+    
 **Network Share Discovery**
 
 ??? abstract "Network Share Discovery"
@@ -7213,7 +8092,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ## Collection
 **Data from Local System**
 
-??? abstract "AWS EC2 VM Export Failure"
+??? abstract "AWS CloudTrail EC2 VM Export Failure"
     
     Detects attempt to export an AWS EC2 instance. A VM Export might indicate an attempt to extract information from an instance.
     
@@ -7261,17 +8140,35 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Custom Gmail Route"
+??? abstract "Google Cloud Audit Logs Custom Gmail Route"
     
     Detects when a custom Gmail route is added or modified. This could be abused by attackers to exfiltrate data.
     
     - **Effort:** advanced
     
-??? abstract "Google Cloud Audit Email Forwarding"
+??? abstract "Google Cloud Audit Logs Email Forwarding"
     
     Detects when an out of domain email forwarding is enabled on Google Cloud.
     
     - **Effort:** advanced
+    
+??? abstract "Microsoft 365 Email Forwarding To Consumer Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common consumer email services).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Email Forwarding To Email Address With Rare TLD"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (less common top-level domain).
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft 365 Email Forwarding To Privacy Email Address"
+    
+    An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (most common privacy email services).
+    
+    - **Effort:** elementary
     
 ??? abstract "Outlook Registry Access"
     
@@ -7301,7 +8198,7 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Adversary-in-the-Middle**
 
-??? abstract "Multiple Authentication On Office 365 Portal From Two IP Addresses"
+??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
     
@@ -7310,6 +8207,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ??? abstract "Possible RottenPotato Attack"
     
     Detects logon events that have characteristics of events generated during an attack leveraging RottenPotato.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
+    
+    Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
     
     - **Effort:** intermediate
     
@@ -7392,6 +8295,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/07/2023 - major - New regex pattern and new filters.
+            
 ??? abstract "Covenant Default HTTP Beaconing"
     
     Detects potential Covenant communications through the user-agent and specific urls
@@ -7482,6 +8389,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/08/2023 - minor - Added a condition to only match on internal IP as source
+            
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
@@ -7494,6 +8405,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
@@ -7518,6 +8433,10 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
+            
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
@@ -7602,12 +8521,20 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/06/2023 - minor - Adding private IPs as sources
+            
 ??? abstract "Rclone Process"
     
     Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
@@ -7619,6 +8546,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
     
     - **Effort:** intermediate
+    
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
     
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
@@ -7688,10 +8621,14 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 ??? abstract "Suspicious Network Args In Command Line"
     
-    Detection on suspicious network arguments in processes command lines using HTTP schema with port 443.
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.
+            
 **Protocol Tunneling**
 
 ??? abstract "Exfiltration And Tunneling Tools Execution"
@@ -7718,6 +8655,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+        - 19/07/2023 - major - New regex pattern and new filters.
+            
 ??? abstract "SOCKS Tunneling Tool"
     
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
@@ -7746,14 +8688,22 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Socat Reverse Shell Detection"
     
     Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
     Detects Venom Multi-hop Proxy agent.
@@ -7763,13 +8713,13 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
 ## Exfiltration
 **Automated Exfiltration**
 
-??? abstract "AWS RDS Change Master Password"
+??? abstract "AWS CloudTrail RDS Change Master Password"
     
     Detects the change of database master password. It may be a part of data exfiltration.
     
     - **Effort:** intermediate
     
-??? abstract "AWS RDS Public DB Restore"
+??? abstract "AWS CloudTrail RDS Public DB Restore"
     
     Detects the recovery of a new public database instance from a snapshot. It may be a part of data exfiltration.
     
@@ -7839,6 +8789,11 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 22/06/2023 - minor - Filter some domains to reduce false positives.
+        - 19/07/2023 - major - New regex pattern and new filters.
+            
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
@@ -7853,13 +8808,13 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
 **Transfer Data to Cloud Account**
 
-??? abstract "AWS EC2 VM Export Failure"
+??? abstract "AWS CloudTrail EC2 VM Export Failure"
     
     Detects attempt to export an AWS EC2 instance. A VM Export might indicate an attempt to extract information from an instance.
     
     - **Effort:** intermediate
     
-??? abstract "Google Cloud Audit Drive Ownership Transferred"
+??? abstract "Google Cloud Audit Logs Drive Ownership Transferred"
     
     Detects when Drive/Docs user files ownership is transferred. The legit use case is when a user is being removed, but this could also be abused by an attacker for exfiltration.
     
@@ -7897,16 +8852,20 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
+            
 ## Impact
 **Data Destruction**
 
-??? abstract "AWS ECS Cluster Deleted"
+??? abstract "AWS CloudTrail ECS Cluster Deleted"
     
     Detects when an attacker is destroying an AWS ECS Cluster
     
     - **Effort:** intermediate
     
-??? abstract "AWS RDS DB Cluster/Instance Deleted"
+??? abstract "AWS CloudTrail RDS DB Cluster/Instance Deleted"
     
     Detects when an attacker is destroying a RDS Cluster or Instance
     
@@ -8004,8 +8963,12 @@ Rules catalog includes **710 built-in detection rules** ([_last update on 2023-0
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
 ??? abstract "User Account Deleted"
     
     Detects local user deletion

@@ -33,14 +33,14 @@ The urgency can have two different representations on the interface: a numerical
 | High | [75-100] |
 
 
-### Alert Similarity 
-Alert similarity (Occurence) is the process by which we collect similar events in the same alert. 
-The information is available in the Alerts table → Column `Occurrence`. 
+### Alert Similarity
+Alert similarity (Occurence) is the process by which we collect similar events in the same alert.
+The information is available in the Alerts table → Column `Occurrence`.
 
 
 **Example**
 
-If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert. 
+If an alert has 24 occurrences, it means that it contains 24 events that were classified as similar and put in the same alert.
 
 ### Similarity strategies
 Alerts are considered similar if a list of fields defined by the similarity strategy have the same values for all events. Some fields may also be grouped together to specify that their values may be swapped.
@@ -48,7 +48,7 @@ Alerts are considered similar if a list of fields defined by the similarity stra
 !!! note
     The effective similarity strategy for an alert is displayed in the alert details tab.
 
-There are three possibilities to define the similarity strategy to use. By order:  
+There are three possibilities to define the similarity strategy to use. By order:
 
 1. [Similarity is forced by the rule](#similarity-by-rule)
 2. [Similarity is forced by event](#similarity-by-event)
@@ -56,14 +56,14 @@ There are three possibilities to define the similarity strategy to use. By order
 
 #### Similarity by rule
 
-Rules written by SEKOIA.IO and available in the Rules Catalog may define specific similarity strategies.
+Rules written by Sekoia.io and available in the Rules Catalog may define specific similarity strategies.
 
 Similarity strategies by rule can be defined during the rule creation process. Learn more about how to do it in [this section](../../detect/rules_catalog/#custom-similarity-strategy).
 
 
 #### Similarity by event
 
-Depending on the events that triggered an alert, SEKOIA.IO applies a similarity logic. This logic follows SEKOIA.IO guidelines and cannot be edited by users directly.
+Depending on the events that triggered an alert, Sekoia.io applies a similarity logic. This logic follows Sekoia.io guidelines and cannot be edited by users directly.
 
 If the event matches one of the conditions listed below, the associated similarity strategy is used.
 
@@ -80,17 +80,17 @@ If the event matches one of the conditions listed below, the associated similari
 | If `file.hash.md5`matches the rule | [`sekoiaio.entity.uuid`, `file.hash.md5`] |
 
 !!!note
-    In case similarity forced by your events does not answer your needs, feel free to contact us at support@sekoia.io.
+    In case similarity forced by your events does not answer your needs, feel free to contact your support.
 
 #### Default similarity
 
-If there is no similarity forced by the rule or by the event, you can rely on SEKOIA.IO default similarity formula: same `entity`, same `source.ip` and `destination.ip`. 
+If there is no similarity forced by the rule or by the event, you can rely on Sekoia.io default similarity formula: same `entity`, same `source.ip` and `destination.ip`.
 
-`source.ip` and `destination.ip` can be used interchangeably. 
+`source.ip` and `destination.ip` can be used interchangeably.
 
-!!! important 
+!!! important
     When there is no data due to parsing issues, alert similarity is not shown except when there is a NULL propriety in `source.ip` or `destination.ip`. When the `source.ip` and the `destination.ip` are empty, we might use the value NULL as a similarity basis.
-    
+
 #### Similarity and alert status
 As long as there is an existing similar alert with status **Pending**, **Acknowledged** or **Ongoing**, new matches are added to the alert as occurrences.
 
@@ -115,13 +115,13 @@ From the left to the right, several features are available on the top screen:
 - A `show/hide` columns button that lets you display fields you’re interested in. You can select or deselect columns but also drag and drop them depending on the order you need
 - Filters that let you display alerts by order of `Most Frequent`, `Recently Updated`, `Recently Created` or `Most Urgent`
 
-### Filters 
+### Filters
 
 The new filter feature will give analysts the ability to construct complex queries and exclude specific values, providing them with greater control and allowing them to make more informed decisions based on a richer set of data.
 
 #### Apply filters
 
-To use complex filters, just click on the `Filter` button or hit your `f` key on your keyboard. 
+To use complex filters, just click on the `Filter` button or hit your `f` key on your keyboard.
 
 The menu is now opened and you can directly search for the filter you want to apply. Right after you choose your filter, you are invited to search and select one or multiple values for this filter.
 
@@ -130,14 +130,14 @@ You can change the operator (filer *is* value, filter *is not* value, filter *is
 !!! tip
     You can combine filters and add as many filters as you want. The default operator between filters is AND.
 
-!!! note 
+!!! note
     To edit filters (values, operator), just click on the value or the operator and select what you need. These new filters will be applied automatically.
 
 #### Keyboard navigation
 
 To improve navigation and accessibility, you can now navigate within the filter component just by using your keyboard.
 
-Here is a list of keyboard shortcuts that can be useful to you: 
+Here is a list of keyboard shortcuts that can be useful to you:
 
 | Key | Action |
 | --- | --- |
@@ -148,7 +148,7 @@ Here is a list of keyboard shortcuts that can be useful to you:
 
 #### Pre-made filters
 
-At the top of the available filters list, you will find two pre-made filters :  `New today` and `Open`.  
+At the top of the available filters list, you will find two pre-made filters :  `New today` and `Open`.
 
 We hope these two most used filters will save you time!
 
@@ -159,7 +159,7 @@ We hope these two most used filters will save you time!
 
 #### List of all filters
 
-Here is the updated list of all available filters. 
+Here is the updated list of all available filters.
 
 | Filter | Composition |
 | --- | --- |
@@ -177,27 +177,27 @@ Here is the updated list of all available filters.
 
 
 !!! tip
-    To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.  
+    To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.
 
-### Bulk actions
+### Change alert status in bulk
 
-On the main alert listing, it is possible to treat alerts faster. With the bulk actions, users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context. 
+On the main alert listing, it is possible to treat alerts faster. Users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context.
 
-![bulk-action](/assets/operation_center/alerts/bulk-action.png){align=right}
+![alert-status](/assets/operation_center/alerts/alert-status.png){: style="max-width:100%"}
 
-To change statuses in bulk, you have to: 
+To change statuses in bulk, you have to:
 
 - Apply filters to alerts listing if needed
-- Select some or all alerts in the list using the checkbox in the upper left of the table. A counter will let you know how many alerts are selected 
-- Choose the action you want to apply to all these alerts 
-- Click on `Apply`
+- Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected
+- You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts.`
+![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
+- A message will confirm that all alerts are selected including their count
+![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
+- Choose the new status you want to apply
+- Leave a comment explaining your decision and click on the `Update status` button.
 
-A modal with the total number of alerts that can be edited is shown. Some alerts will not be included if their status cannot be changed to the status chosen by the user. Learn more about alert status change in the [Alerts workflow](#alerts-workflow) section. 
-
-- Leave a comment explaining your decision and save your changes. 
-
-!!! note 
-    It is recommended to leave a comment to provide more context to the status change but it's not mandatory. 
+!!! note
+    It is recommended to leave a comment to provide more context to the status change but it's not mandatory.
 
 ### Alerts table columns
 
@@ -215,7 +215,7 @@ By default, the alert listing displays the following columns:
 - A `first seen` and `last seen` date
 - The `ID` and the `UUID` of the alert
 - The `source` and `target`of the alert
-- The `Commu.`which means the communities related to the alerts 
+- The `Commu.`which means the communities related to the alerts
 
 !!! note
     Your custom configuration will be saved in order to allow you to keep your selected filters when you come back to this page.
@@ -233,9 +233,12 @@ The Alert Details page can be reached by clicking on any alert in the Alert List
 
 The Alert Details header contains the `urgency`, the `name` and the `short ID` of the alert, as well as the following actions:
 
-- `Alert Status`: can be used to move the Alert through its lifecycle
-- Add to `Case`: add the alert to a case to gather all the needed information for an extensive investigation
-- `Playbooks`: display the list of on-demand playbooks and be able to trigger them
+- `Alert Status`: can be used to move the Alert through its lifecycle by changing its status
+- `Add to case`: add the alert to a case to gather all the needed information for an extensive investigation
+- `Playbooks`: display the list of on-demand playbooks and be able to trigger them.
+
+!!! note
+    Playbooks that can be enabled on alerts are "manual" playbooks (ie with a Manual Trigger). They also have to be enabled in the community to appear in the UI.
 
 The different sections of the page are then separated into 4 tabs: `Details`, `Tasks`, `Events` and `Graph Investigation`.
 
@@ -276,7 +279,7 @@ Subtasks can have an OpenC2 specification which can be displayed by clicking on 
 
 ### Similar alerts
 
-Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, SEKOIA.IO has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions.
+Operators need as much information as possible to determine what to do with a new alert. With the similar alerts tab, Sekoia.io has that information in store and is able to display it to the operator in a comprehensive and useful way, while also providing recommendations based on the previous operator decisions.
 
 To find similar alerts linked to a specific alert, you will need to access the detail page dedicated to this alert. The similar alerts tab will be automatically loaded next to the [Details](#details), [Tasks](#tasks), [Graph Investigation](#graph-investigation) and [Events](#events) tabs.
 
@@ -294,7 +297,7 @@ The similar alerts tab is divided into two parts:
 
 
 !!! note
-    Please note that if SEKOIA.IO doesn’t find previous similar alerts, a message will be displayed to notify you.
+    Please note that if Sekoia.io doesn’t find previous similar alerts, a message will be displayed to notify you.
 
 ### Events
 
@@ -319,9 +322,9 @@ Alert Filters can be used to prevent known false positives from raising the same
 
 ![alert-filter](/assets/operation_center/alerts/alert-filter.png){align=right}
 
-You can create an Alert Filter for the rule that triggered the alert by following these steps: 
+You can create an Alert Filter for the rule that triggered the alert by following these steps:
 
-- On the `alert`page, go to `events` tab 
+- On the `alert`page, go to `events` tab
 - Click on `Toggle value selection` button in the upper right of the logs list
 - Select `values` you want to filter by clicking on them in the logs list
 - Click on the button `Create an Alert filter` as shown in the screenshot
@@ -330,7 +333,7 @@ You can create an Alert Filter for the rule that triggered the alert by followin
 - The filter's pattern is automatically created from selected values.
 - Click on `Add` to add this alert filter to the rule that triggered this alert
 
-!!!note 
+!!!note
     By default, `Reject the Alert` is selected by default to automatically reject the alert after creating the Alert Filter.
 
 
@@ -340,11 +343,11 @@ The "Search Events with this value" feature can be used to perform a search into
 
 ![search-events](/assets/operation_center/alerts/search-events.png){align=right}
 
-The search query is automatically created from selected values. 
+The search query is automatically created from selected values.
 
-To search events with a value: 
+To search events with a value:
 
-- On the `alert`page, go to `events` tab 
+- On the `alert`page, go to `events` tab
 - Click on `Toggle value selection` button in the upper right of the logs list
 - Select `values` you want to search for by clicking on them in the logs list
 - Click on the button `Perform a search` as shown in the screenshot
@@ -360,7 +363,7 @@ The Graph Tab is presenting the analyst with a graphical visualization of the Al
 The following items appear on the graph:
 
 - `Observables`: these are automatically extracted from events (IP addresses, Domain Names, URLs, User Account, etc.)
-- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](https://github.com/SEKOIA-IO/Community/tree/main/events) definitions
+- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](https://github.com/Sekoia.io/Community/tree/main/events) definitions
 - `CTI Objects`: STIX objects from the Intelligence Center that provide additional context
 - `STIX relationships` between Threat Objects
 

@@ -7,7 +7,7 @@ type: intake
 Sophos EDR monitors, detects and mitigates threats on endpoints.
 This EDR reduces the attack surface and prevent attacks from running with an anti-exploit, an anti-ransomware and advanced control technology.
 
-This setup guide shows how to forward events produced by Sophos EDR to SEKOIA.IO.
+This setup guide shows how to forward events produced by Sophos EDR to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_3f330d19-fdea-48ac-96bd-91a447bb26bd_do_not_edit_manually.md!}
 
@@ -23,9 +23,9 @@ This setup guide shows how to forward events produced by Sophos EDR to SEKOIA.IO
 In the Sophos Central Admin console:
 
 1. On the left panel, go to `Global Settings` and select `API Credentials Management`.
-2. Click on `Add Credential` to create a credential dedicated to SEKOIA.IO.
+2. Click on `Add Credential` to create a credential dedicated to Sekoia.io.
 3. Give it a name, select the role `Service Principal ReadOnly` and click on `Add`.
-4. In the `API credential Summary`, copy the `Client ID` and the `Client Secret`. It will be used later in SEKOIA.IO to retrieve the events.
+4. In the `API credential Summary`, copy the `Client ID` and the `Client Secret`. It will be used later in Sekoia.io to retrieve the events.
 
 ### Create the intake
 

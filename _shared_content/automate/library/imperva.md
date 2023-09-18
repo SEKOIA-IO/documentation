@@ -25,6 +25,7 @@ Fetch Imperva WAF logs
 | --------- | ------- | --------------------------- |
 | `frequency` | `integer` | Batch frequency in seconds, default 2s |
 | `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `intake_key` | `string` | Intake key to use when sending events |
 
 
 **Outputs**
@@ -37,4 +38,4 @@ Fetch Imperva WAF logs
 
 ## Extra
 
-Module **`Imperva` v1.7**
+Module **`Imperva` v1.16**

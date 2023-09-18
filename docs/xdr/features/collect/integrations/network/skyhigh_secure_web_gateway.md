@@ -26,7 +26,7 @@ In your SWG console:
 - Select `Policy` section then the `Rule sets` tab. From the menu, select `Log Handler`.
 - Right-click on the `Default` Log Handler in the tree then select `Add > Rule Set from Library...`.
 - Once the `Add from Rule Set library` window opened, under the `Rule Set Library` tree, click on the `Import from file...` button and import `SEKOIAIO_mwg.xml` file.
-- Select the `Rule Set` `SEKOIA.IO` and ensure the rule `forward logs` is enabled.
+- Select the `Rule Set` `Sekoia.io` and ensure the rule `forward logs` is enabled.
 
 
 ### Configure Rsyslog
@@ -35,4 +35,4 @@ To forward your logs to our servers, in our MWG console:
 
 - Select `Configuration` section then the `File Editor` tab.
 - In the tree, select `rsyslog.conf`.
-- Consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to configure Rsyslog in order to forward these logs to SEKOIA.IO.
+- Consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to configure Rsyslog in order to forward these logs to Sekoia.io.

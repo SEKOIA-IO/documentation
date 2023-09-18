@@ -13,7 +13,7 @@ tools such as `Iptables` or `Nftables` or even with high level
 configuration tools such as firewalld, UFW or ferm. The framework also
 provides several ways to log events (`LOG`, `NFLOG`, `ULOG`, etc.).
 
-The only requirement from SEKOIA.IO’s perspective is that your
+The only requirement from Sekoia.io’s perspective is that your
 logs uses the following prefix: `IPTABLES: XXX ` (`XXX` is user
 configurable and represents the action, could be `dropped` or `accept` for
 example).
@@ -25,11 +25,11 @@ example).
 
 ## Configure
 
-As of now, the main solution to send Netfilter events to SEKOIA.IO is to use a Rsyslog concentrator. Please share your experiences with other recipes by editing this documentation.
+As of now, the main solution to send Netfilter events to Sekoia.io is to use a Rsyslog concentrator. Please share your experiences with other recipes by editing this documentation.
 
 ### Rsyslog
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to SEKOIA.IO
+Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io
 
 ### Configure Netfilter using Iptables
 The first step is to configure Netfilter to log the awaited

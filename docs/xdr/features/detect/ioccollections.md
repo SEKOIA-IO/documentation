@@ -12,7 +12,7 @@ Telemetry Reports have the following properties:
 
 ### Generate a telemetry report
 
-Click on `Generate telemetry report` to automatically check all indicators against SEKOIA.IO’s telemetry. Depending on the numbers of indicators inside your collection, this can take a few minutes. When the report is available, the button will change to `See telemetry report`.
+Click on `Generate telemetry report` to automatically check all indicators against Sekoia.io’s telemetry. Depending on the numbers of indicators inside your collection, this can take a few minutes. When the report is available, the button will change to `See telemetry report`.
 
 !!! Tip
     You don’t have to stay on this page waiting for your report to be available. When it eventually is, you will receive an in-app notification with a link.

@@ -7,7 +7,7 @@ type: intake
 VMware ESXi is a hypervisor and an operation system. It serves virtual computers while running directly on the server hardware
 
 !!! warning
-    This format is still in beta, please use it wisely.
+    This format is in beta.
 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_2b13307b-7439-4973-900a-2b58303cac90_do_not_edit_manually.md!}
@@ -18,7 +18,7 @@ VMware ESXi is a hypervisor and an operation system. It serves virtual computers
 
 ### Prerequisites
 
-An internal log concentrator is required to collect and forward events to SEKOIA.IO.
+An internal log concentrator is required to collect and forward events to Sekoia.io.
 
 ### Enable Syslog forwarding
 
@@ -28,6 +28,6 @@ Browse to the host thank to the vSphere Client inventory and follow [this guide]
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `VMWare ESXi`.
 
-## Transport to SEKOIA.IO
+## Forward logs to Sekoia.io
 
-Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to forward these logs to SEKOIA.IO.
+Please consult the [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.

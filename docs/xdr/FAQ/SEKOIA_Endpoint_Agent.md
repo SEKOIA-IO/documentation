@@ -1,13 +1,13 @@
 ## Retrieve events linked to a file access
 
-**Can SEKOIA.IO Endpoint Agent (Windows) retrieve events linked to file accesses such as denied access to file, modification on file, ...?**
+**Can Sekoia.io Endpoint Agent (Windows) retrieve events linked to file accesses such as denied access to file, modification on file, ...?**
 
-SEKOIA.IO Agent tracks information on file creation / deletion but not for denied / modified access.
+Sekoia.io Agent tracks information on file creation / deletion but not for denied / modified access.
 However, an event will probably be linked to a process that tries to open a file. 
 
 ## Add Windows Event ID to a file the endpoint agent loaded
 
-**Is it possible to add a Windows Event ID to a file that SEKOIA.IO Agent loaded?**
+**Is it possible to add a Windows Event ID to a file that Sekoia.io Agent loaded?**
 
 It is not possible to add an Event ID. 
 
@@ -17,29 +17,29 @@ However, we welcome any suggestions of Event IDs to be collected that seems rele
 
 ## Retrieve events linked to blocked accounts on AD
 
-**Is SEKOIA.IO Agent allowed to retrieve events linked to blocked accounts on AD?**
+**Is Sekoia.io Agent allowed to retrieve events linked to blocked accounts on AD?**
 
 It is not possible at the moment.
-This subject has been identified for improvement of SEKOIA.IO Agent integration with AD.
+This subject has been identified for improvement of Sekoia.io Agent integration with AD.
 
-## SEKOIA.IO Agent version 0.2.8
+## Sekoia.io Agent version 0.2.8
 
-**What brings the new SEKOIA.IO Agent version 0.2.8 in comparison to other versions?**
+**What brings the new Sekoia.io Agent version 0.2.8 in comparison to other versions?**
 The Agent 0.2.8 will bring the following elements:
 
    - Automatic update of the Agent
-   - Improvement of Integration with rules produced by SEKOIA.IO analysts
+   - Improvement of Integration with rules produced by Sekoia.io analysts
    - Collect new event types
 
 ## DNS logs
 
-**Are DNS logs collected by SEKOIA.IO agent?**
+**Are DNS logs collected by Sekoia.io agent?**
 
 Yes, DNS logs are collected by the Agent in the Windows version through system calls. It's not available in the Linux version at the moment. 
 
-## SEKOIA.IO Agent and Sysmon
+## Sekoia.io Agent and Sysmon
 
-**Will there be any duplicates when using SEKOIA Agent and Sysmon? For instance, what happens if I search for events in my Sysmon configuration that are already sent by the SEKOIA.IO agent?**
+**Will there be any duplicates when using SEKOIA Agent and Sysmon? For instance, what happens if I search for events in my Sysmon configuration that are already sent by the Sekoia.io agent?**
 
 For some events, the Agent will ignore Sysmon events as it will already cover the same scope and in the same way. Here are some examples:
 
@@ -52,9 +52,9 @@ For some events, the Agent will ignore Sysmon events as it will already cover th
 - sysmonFileDelete
 - sysmonFileDeleteDetected
 
-## SEKOIA.IO Agent and ANSSI recommendations
+## Sekoia.io Agent and ANSSI recommendations
 
-**Do you confirm that SEKOIA.IO Agent (without Sysmon) will apply all SEKOIA rules and ANSSI recommendations? Is it an ongoing subject?**
+**Do you confirm that Sekoia.io Agent (without Sysmon) will apply all SEKOIA rules and ANSSI recommendations? Is it an ongoing subject?**
 
 We plan to cover all the ANSSI recommendations and SEKOIA rules to the greatest extent in the next beta.
 

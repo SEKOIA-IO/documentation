@@ -1,12 +1,15 @@
 uuid: 250e4095-fa08-4101-bb02-e72f870fcbd1
-name: SEKOIA.IO Endpoint Agent
+name: Sekoia.io Endpoint Agent
 type: intake
 
-# SEKOIA.IO Endpoint Agent
+# Sekoia.io Endpoint Agent
 
-SEKOIA.IO provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to SEKOIA.IO.
-	
-{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!}	
+Sekoia.io provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to Sekoia.io.
+
+### Disclamer
+
+!!! INFO
+    The Sekoia.io Endpoint Detection Agent preserves the integrity of logs collected from the operating system event log, it does NOT modify or rewrite logs.
 
 ## Supported OS versions
 
@@ -40,14 +43,21 @@ The Endpoint Detection Agent supports the following operating systems, **on 64 b
 !!! Warning
 	If you want to install this agent on a machine that already has an EDR in place, be aware that most EDR perform actions on the machines to detect malwares or other types of threats. Those actions generate events that are collected by our agent. This may result to the raising of false positive alerts from our detection rules of effort level 3 and 4. It's important for customers to fine-tune these rules to reduce the occurrence of false positives.
 
-### Intake creation and download of the executable
+### Step 1: Create an intake
 
-The first step to use the agent is to create a [new intake associated to the SEKOIA.IO Agent](https://app.sekoia.io/operations/intakes/new?match[name]=SEKOIA.IO%20Endpoint%20Agent){:target="_blank"}.
-A link to download the latest version of the agent is available in the description of the intake.
+The first step to use the agent is to create a [new intake associated to the Sekoia.io Agent](https://app.sekoia.io/operations/intakes/new?match[name]=Sekoia.io%20Endpoint%20Agent){:target="_blank"}.
+
+### Step 2: Download executable
+
+| OS | Link |
+| -- | -- |
+| Windows | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe) |
+|Linux | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest) |
+
 
 ### Installation
 
-The Endpoint Detection Agent is easy to install on Windows or Linux systems once you created a dedicated intake key on SEKOIA.IO XDR.
+The Endpoint Detection Agent is easy to install on Windows or Linux systems once you created a dedicated intake key on Sekoia.io XDR.
 
 === "Windows"
 
@@ -92,7 +102,29 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     sudo systemctl status SEKOIAEndpointAgent.service
     ```
 
- Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `51.159.9.95`. The protocol used to send events is HTTPS (443).
+Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `51.159.9.95`. The protocol used to send events is HTTPS (443).
+
+#### journald configuration
+
+In order to get events, the agent pushes rules to the audit framework. By default **journald**  might listen to the audit socket for events.
+
+To disable audit logging the following should be done as root:
+	
+        ```
+	# Stop listening to audit events
+	systemctl stop systemd-journald-audit.socket 
+	
+	# Disable it to avoid future start
+	systemctl disable systemd-journald-audit.socket
+	
+	# Masking will prevent starting by other services
+	systemctl mask systemd-journald-audit.socket
+	
+	# Restart journald
+	systemctl restart systemd-journald
+       ```
+       
+A reboot may be necessary if the audit events are still appearing in the logs.
 
 ### Update
 
@@ -188,7 +220,7 @@ To uninstall the agent, follow the instructions specific to your OS.
 
 ## Retention
 
-The agent sends the host logs through the internet. If the host stops accessing the internet, the agent will store the logs locally on disk on a 100 MB memory space that cannot be customized. Once the logs exceed the size of the buffer, the older ones are replaced by newers. When the internet connexion is operational again, the older logs are sent first to SEKOIA.IO.
+The agent sends the host logs through the internet. If the host stops accessing the internet, the agent will store the logs locally on disk on a 100 MB memory space that cannot be customized. Once the logs exceed the size of the buffer, the older ones are replaced by newers. When the internet connexion is operational again, the older logs are sent first to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/250e4095-fa08-4101-bb02-e72f870fcbd1.md!}
 
@@ -229,13 +261,13 @@ Here's a non-exhaustive list of kind of events the agent is able to detect
 
 ## Proxy Support
 
-If needed, the SEKOIA.IO agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
+If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
 the configuration file at:
 
 === "Windows"
 
     ```
-    C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\config.yaml
+    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
     ```
 
 === "Linux"
@@ -259,7 +291,7 @@ The proxy URL should follow the format `http://user:pass@host:port`.
 
     #### Install Sysmon
 
-    If you want to improve detection and investigation capabilities, you may want to enable Sysmon. When installed, the SEKOIA.IO Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
+    If you want to improve detection and investigation capabilities, you may want to enable Sysmon. When installed, the Sekoia.io Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
 
     !!! warning
     	The installation of this tool will generate more logs which will consume more CPU resources. Install it on equipment that are correctly 		dimensioned, or try it on low risk assets at first.
@@ -272,6 +304,35 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     A proper security log auditing configuration will allow the agent to collect various  interresting security related events.
     
     This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
+
+## Additionnal information
+
+Please find options and arguments available for Sekoia Agent by typing
+````
+agent.exe -h
+````
+
+**Usage**: 
+````
+agent-latest.exe <command> [<args>]
+````
+
+**Options**:
+
+| Options | Meaning |
+| -- | -- |
+| --help, -h | display this help and exit |
+| --version | display version and exit |
+
+**Commands**:
+
+| Commands | Meaning|
+| -- | -- |
+| install | install the agent |
+| update | update the agent |
+| uninstall |uninstall the agent |
+| service | control the service |
+
 
 ## Resources footprint
 
@@ -297,3 +358,6 @@ agent-latest.exe --version
 2- Provide results of the setup request in case of failure (stack trace) + machine configuration
 
 3- Provide the full path where Sekoia Agent was setup
+
+{!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
+

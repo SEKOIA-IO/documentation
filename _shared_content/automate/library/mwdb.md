@@ -1,5 +1,7 @@
 # MWDB
 
+![MWDB](/assets/playbooks/library/mwdb.svg){ align=right width=150 }
+
 [MWDB](https://mwdb.cert.pl/) is a malware repository for automated malware collection and analysis systems hosted by CERT.pl
 
 ## Configuration
@@ -53,4 +55,4 @@ Convert a MWDB config to a bundle of observables
 
 ## Extra
 
-Module **`MWDB` v1.29**
+Module **`MWDB` v1.38**

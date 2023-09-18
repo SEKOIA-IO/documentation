@@ -1,5 +1,7 @@
 # Triage
 
+![Triage](/assets/playbooks/library/triage.svg){ align=right width=150 }
+
 [Triage](https://tria.ge/) is a malware analysis sandbox as a service, brought by [Hatching](https://hatching.io/)
 
 ## Configuration
@@ -53,4 +55,4 @@ Triage raw results to observables
 
 ## Extra
 
-Module **`Triage` v1.22**
+Module **`Triage` v1.33**

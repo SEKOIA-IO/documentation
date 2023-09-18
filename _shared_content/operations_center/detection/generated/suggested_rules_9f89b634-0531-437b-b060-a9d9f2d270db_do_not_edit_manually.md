@@ -51,9 +51,9 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cybereason MalOp** with the 
     
     - **Effort:** advanced
 
-??? abstract "Cybereason MalOp Alert"
+??? abstract "Cybereason EDR Alert"
     
-    Cybereason MalOp telemetry has raised an alert
+    Cybereason EDR telemetry has raised an alert
     
     - **Effort:** intermediate
 

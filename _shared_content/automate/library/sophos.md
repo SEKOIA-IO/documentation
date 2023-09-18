@@ -30,6 +30,20 @@ Forward Sophos Events
 | `exclude_types` | `array` | A list of type to exclude from the pulling |
 
 
+### Query IoC from data lake [BETA]
+
+Query last IoCs from the Sophos Data lake
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `chunk_size` | `integer` | The max size of chunks for the batch processing |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+
+
 ## Extra
 
-Module **`Sophos` v1.2.2**
+Module **`Sophos` v1.11.7**

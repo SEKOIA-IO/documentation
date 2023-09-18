@@ -19,16 +19,16 @@ Please find below information available in MalOp activities:
 
 ## Configure
 
-This setup guide will lead you into forwarding all MalOp activities to SEKOIA.IO.
+This setup guide will lead you into forwarding all MalOp activities to Sekoia.io.
 
 ### Create your intake
 
-On SEKOIA.IO, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp Activities` format.
+On Sekoia.io, go to the [Intakes page](https://app.sekoia.io/operations/intakes/new) and generate a new intake with the `Cybereason MalOp Activities` format.
 Keep aside the intake key.
 
 ### Setup the Syslog collector
 
-Check the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_docker_concentrator/) documentation to install and set up the syslog collector.
+Check the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to install and set up the syslog collector.
 
 Once the setup has completed, write down the IP address and port. This information will be used in the next step.
 

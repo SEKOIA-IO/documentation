@@ -21,7 +21,7 @@ In this section, you’ll learn how to navigate the platform with ease.
 
 The app toolbar is made of multiple components:
 
-- The `SEKOIA.IO logo` that redirects you to the main page (dashboards) when you click on it
+- The `Sekoia.io logo` that redirects you to the main page (dashboards) when you click on it
 - Your current `community’s name` with the possibility to have a look into your other communities
 - An `info button` that lets you have an easy access to the roadmap, product documentation, changelog and feedbacks
 - A `notification bell` from where you can access the latest notifications you’ve received
