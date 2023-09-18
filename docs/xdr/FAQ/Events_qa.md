@@ -9,6 +9,7 @@ You can easily request an event search on IP range. For instance, with an IP add
 
 **timestamp** and **event.created** are the same (reception of logs and beginning of processing in Sekoia.io).
 
+**timestamp** is defined with the timezone of the machine
 **event.created** is parsed and can be selected. The timezone is defined with UTC.
 **event.start**   contains the date when the event started or when the activity was first observed.
 **event.end**   contains the date when the event ended or when the activity was last observed.
