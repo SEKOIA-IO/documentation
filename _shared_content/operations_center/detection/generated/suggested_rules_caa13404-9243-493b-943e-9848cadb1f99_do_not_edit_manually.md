@@ -225,6 +225,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Office 365** with the follow
     
     - **Effort:** elementary
 
+??? abstract "Microsoft 365 Sign-in With No User Agent"
+    
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    
+    - **Effort:** elementary
+
 ??? abstract "Microsoft 365 Suspicious Inbox Rule"
     
     Business Email Compromise threat actors often create inbox rules to forward, hide, or delete emails containing sensitive information. This rule detects common caracteristics of malicious inbox rules.
