@@ -23,7 +23,7 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 
 
 ## 2. Configuration
-**1- Setup the organization**
+#### 1- Setup the organization
 
 1- Connect into Cortex with `orgadmin` role
 
@@ -36,14 +36,15 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 4- Edit and Add your Sekoia API key and Base url
 ![Orga_setup_3](assets/intelligence_center/orga_setup_3.png){: style="width: 100%; max-width: 100%"}
 
-**2- Check Sekoia intelligence**
+#### 2- Check Sekoia intelligence
+
 1- Go to _Analyzers_ tab and Search `SekoiaIntelligenceCenter`
-![Analyzer_ config_1](assets/intelligence_center/analyzer_ config_1.png){: style="width: 100%; max-width: 100%"}
+![Analyzer_ config_1](assets/intelligence_center/analyzer_config_1.png){: style="width: 100%; max-width: 100%"}
 
 2- Edit and Add your Sekoia API key and Base url
-![Analyzer_ config_2](assets/intelligence_center/analyzer_ config_2.png){: style="width: 100%; max-width: 100%"}
+![Analyzer_ config_2](assets/intelligence_center/analyzer_config_2.png){: style="width: 100%; max-width: 100%"}
 
-**3- Check Sekoia intelligence**
+#### 3- Check Sekoia intelligence**
 
 1- Go to job page
 
@@ -54,13 +55,18 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 ![job_2](assets/intelligence_center/job_2.png){: style="width: 100%; max-width: 100%"}
 
 ## 3. Troubleshoot
+
 1- Go to _Analyzers_ tab > Run an analyzer
 
 2- Check the jobs in _Jobs History_ tab
 
 ## 4. Other resources
+
 - **The Cortex official documentation**
+
 https://github.com/TheHive-Project/CortexDocs/blob/master/installation/install-guide.md#docker
+
 http://docs.thehive-project.org/cortex/user-guides/first-start/
+
 https://github.com/TheHive-Project/CortexDocs/blob/master/admin/quick-start.md
 
