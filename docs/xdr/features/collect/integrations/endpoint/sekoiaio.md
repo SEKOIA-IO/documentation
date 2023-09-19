@@ -340,24 +340,22 @@ We monitor the agent metrics and try to keep its footprint as small as possible.
 Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
 
 ## Troubleshoot
-Check the logs
+The first step to troubleshoot your Sekoia agent installation is to check the logs
 
+Here are the paths where to find the logs:
 |OS|path|
 |--|--|
 |Windows|C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\logs|
 |Linux|/var/log/endpoint-agent/agent.log|
 
 !!! note
-    	If you need further assistance, here are the information to provide
+	Please remember to always use the latest Sekoia.io agent version. We recommand to activate the update option.
 
-1- Sekoia.io agent version (the latest version must be used)
-```
-agent-latest.exe --version
-```
+If you need further assistance, here are the information to provide:
 
-2- Provide results of the setup request in case of failure (stack trace) + machine configuration
+1- Provide results of the setup request in case of failure (stack trace) + machine configuration
 
-3- Provide the logs of the agent
+2- Provide the logs of the agent
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
 
