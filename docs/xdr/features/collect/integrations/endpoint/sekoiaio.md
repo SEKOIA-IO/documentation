@@ -357,7 +357,7 @@ agent-latest.exe --version
 
 2- Provide results of the setup request in case of failure (stack trace) + machine configuration
 
-3- Provide the full path where Sekoia Agent was setup
+3- Provide the logs of the agent
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
 
