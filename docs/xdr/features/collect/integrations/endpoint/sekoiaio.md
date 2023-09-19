@@ -110,7 +110,7 @@ In order to get events, the agent pushes rules to the audit framework. By defaul
 
 To disable audit logging the following should be done as root:
 	
-        ```
+       
 	# Stop listening to audit events
 	systemctl stop systemd-journald-audit.socket 
 	
@@ -122,7 +122,7 @@ To disable audit logging the following should be done as root:
 	
 	# Restart journald
 	systemctl restart systemd-journald
-       ```
+       
        
 A reboot may be necessary if the audit events are still appearing in the logs.
 
@@ -339,4 +339,23 @@ agent-latest.exe <command> [<args>]
 We monitor the agent metrics and try to keep its footprint as small as possible. 
 Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
 
+## Troubleshoot
+The first step to troubleshoot your Sekoia agent installation is to check the logs
+
+Here are the paths where to find the logs:
+|OS|path|
+|--|--|
+|Windows|C:\Windows\System32\config\systemprofile\AppData\Local\SEKOIA.IO\EndpointAgent\logs|
+|Linux|/var/log/endpoint-agent/agent.log|
+
+!!! note
+	Please remember to always use the latest Sekoia.io agent version. We recommand to activate the update option.
+
+If you need further assistance, here are the information to provide:
+
+1- Provide results of the setup request in case of failure (stack trace) + machine configuration
+
+2- Provide the logs of the agent
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
+
