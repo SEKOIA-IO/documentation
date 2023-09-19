@@ -24,9 +24,9 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 
 ## 2. Configuration
 
-#### 1- Setup the organization
+#### 1- Setup the Analyzer configuration
 
-1- Select your _organization_ on the top right corner
+1- Select your _Organization_ on the top right corner
 ![Orga_setup_1](/assets/intelligence_center/orga_setup_1.png){: style="width: 100%; max-width: 100%"}
 
 2- Go to _Analyzers Config_ tab and Search `SekoiaIntelligenceCenter`
@@ -35,7 +35,7 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 3- Edit and Add your Sekoia API key and Base url
 ![Orga_setup_3](/assets/intelligence_center/orga_setup_3.png){: style="width: 100%; max-width: 100%"}
 
-#### 2- Check Sekoia intelligence
+#### 2- Setup the Analyzer
 
 1- Go to _Analyzers_ tab and Search `SekoiaIntelligenceCenter`
 ![Analyzer_ config_1](/assets/intelligence_center/analyzer_config_1.png){: style="width: 100%; max-width: 100%"}
@@ -43,7 +43,7 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 2- Edit and Add your Sekoia API key and Base url
 ![Analyzer_ config_2](/assets/intelligence_center/analyzer_config_2.png){: style="width: 100%; max-width: 100%"}
 
-#### 3- Check Sekoia intelligence**
+#### 3- Check Sekoia intelligence
 
 1- Go to job page
 
