@@ -13,7 +13,7 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 - An access to Sekoia.io User Center with the permissions to create an API key with [CTI permissions](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
 
 !!!note
-   Sekoia Intelligence Center will be available upon Cortex setup
+   Sekoia Intelligence feed will be available upon Cortex setup
 
 ## 1. Connect to Cortex
 
