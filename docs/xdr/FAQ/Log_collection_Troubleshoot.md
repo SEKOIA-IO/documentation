@@ -15,15 +15,17 @@ Please find some general information that will help you to troubleshoot your log
 Please consult our documentation for each technology used
 
 *Using a playbook connector*
+
 1. Check the playbook logs
 2. Check your account configuration (credentials, url...)
 3. Check if the logs are generated on your technological platform
 
 *Using a log concentrator*
+
 1. Check the logs and send it to a local file for testing
 2. Redo the installation following our documentation
 
-   !!note
+!!! note
    When possible, we recommend using Sekoia.io Forwarder as it is simple and quick to use
 
 ### Parsing verification when in error
@@ -35,12 +37,13 @@ Please consult our documentation for each technology used
 
 4. Paste log and check the field `sekoia.intake.parsing_error`, please refer to [this section to test your log](https://docs.sekoia.io/xdr/features/collect/intakes/#panel-overview)
 
-**fields to observe**
+**Fields to observe**
+
 |fields|meaning|
 |--|--|
-|sekoiaio.intake.parsing_status|result of the parsing (success / failure)|
-|sekoiaio.intake.parsing_error|when the parsing is in failure, this field is available with information on the error that causes the failure|
-|sekoiaio.intake.parsing_warning|some fields are not parsed correctly (detail will be displayed)|
+|`sekoiaio.intake.parsing_status`|result of the parsing (success / failure)|
+|`sekoiaio.intake.parsing_error`|when the parsing is in failure, this field is available with information on the error that causes the failure|
+|`sekoiaio.intake.parsing_warning`|some fields are not parsed correctly (detail will be displayed)|
 
-   !!note
+!!! note
    Please contact Support if you have any questions or feedbacks. We will be glad to assist you.
