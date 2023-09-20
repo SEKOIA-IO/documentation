@@ -14,9 +14,24 @@
 
 ## Triggers
 
-### Fetch new events from Cybereason
+### [LEGACY] Fetch new events from Cybereason
 
-Get last events from the Cybereason platform
+Get last events from the Cybereason platform up to version 23.1.152
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+| `group_ids` | `array` | The sensors' group ids from which events must be retrieved |
+
+
+### Fetch new events from Cybereason [23.1.152+]
+
+Get last events from the Cybereason platform from versions 23.1.152 and higher
 
 **Arguments**
 
@@ -31,4 +46,4 @@ Get last events from the Cybereason platform
 
 ## Extra
 
-Module **`Cybereason` v1.9**
+Module **`Cybereason` v1.9.4**
