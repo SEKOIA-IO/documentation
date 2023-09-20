@@ -1,4 +1,4 @@
-Rules catalog includes **748 built-in detection rules** ([_last update on 2023-09-18_](rules_changelog.md)).
+Rules catalog includes **749 built-in detection rules** ([_last update on 2023-09-20_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -5124,6 +5124,12 @@ Rules catalog includes **748 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+??? abstract "Citrix NetScaler (ADC) Actions Blocked"
+    
+    This rule aims to detect a large amount of actions blocked performed from the same source.
+    
+    - **Effort:** advanced
+    
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
@@ -6324,6 +6330,12 @@ Rules catalog includes **748 built-in detection rules** ([_last update on 2023-0
     Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
     
     - **Effort:** intermediate
+    
+??? abstract "Citrix NetScaler (ADC) Actions Blocked"
+    
+    This rule aims to detect a large amount of actions blocked performed from the same source.
+    
+    - **Effort:** advanced
     
 ??? abstract "HTML Smuggling Suspicious Usage"
     
