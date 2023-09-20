@@ -84,6 +84,7 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
         }
     }
 }
+
 	```
 
 
