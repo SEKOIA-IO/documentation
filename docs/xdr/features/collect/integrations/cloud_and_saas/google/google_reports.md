@@ -9,6 +9,30 @@ Google Reports is a data reporting and analysis platform offered by Google for G
 !!! warning
     This format is in beta.
 
+### Supported applications
+
+This integration can collect activities from the following GSuite applications:
+
+- `admin` to collect activities on the Admin console 
+- `calendar` to collect events from Google calendar
+- `chat` to collect Chat activities
+- `drive` to supervise Google Drive events
+- `gcp` for the Google Cloud platform activiaties
+- `groups` to collect Google groups events
+- `groups_entreprise` to collect Entreprise groups events
+- `jamboard` to collect Jamboard activities
+- `login` to monitor authentication in Google applications
+- `meet` to supervise Google meet events
+- `token` for authentication supervision
+- `user_accounts` to monitor Users accounts activities
+- `keep` to supervices Google Keep activities
+
+
+### Limitation
+
+Only activities from one applications can be collected from one playbook.
+To collect activities from several Google Application, create as many playbooks as applications to collect.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_04d36706-ee4a-419b-906d-f92f3a46bcdd_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/04d36706-ee4a-419b-906d-f92f3a46bcdd.md!}
