@@ -44,7 +44,7 @@ The Sekoia.io syslog endpoint is secured with a [Letsencrypt](https://letsencryp
 According to our SES Agent handler installation, it may be necessary to install `ISRG ROOT X1` certificate in our **trusted root certification authorities certificate store**:
 
 1. On the SES Agent handler machines
-2. Download the `ISRG ROOT X1` certificate: https://letsencrypt.org/certs/isrgrootx1.pem
+2. Download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
 3. Rename the downloaded certificate by suffixing it with the extension`.crt`
 4. Import the certificate in the trusted root certification authorities certificate store of the machine
    ![Certificate store](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_03.png){: style="max-width:100%"} 
