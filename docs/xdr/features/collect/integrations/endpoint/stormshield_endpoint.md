@@ -1,10 +1,10 @@
 uuid: f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0
-name: Stormshield Endpoint Security
+name: Stormshield SES
 type: intake
 
 ## Overview
 
-Stormshield Endpoint Security is a comprehensive cybersecurity solution designed to protect individual devices, such as computers and servers, from various cyber threats and attacks. It encompasses advanced features like antivirus, firewall, intrusion detection and prevention, application control, and data encryption. This solution aims to safeguard endpoints from malware, ransomware, phishing, and other malicious activities, while providing centralized management and real-time threat visibility for enhanced security posture.
+Stormshield SES is a comprehensive cybersecurity solution designed to protect individual devices, such as computers and servers, from various cyber threats and attacks. It encompasses advanced features like antivirus, firewall, intrusion detection and prevention, application control, and data encryption. This solution aims to safeguard endpoints from malware, ransomware, phishing, and other malicious activities, while providing centralized management and real-time threat visibility for enhanced security posture.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.md!}
 
@@ -12,29 +12,43 @@ Stormshield Endpoint Security is a comprehensive cybersecurity solution designed
 
 ## Configure
 
-### Prerequisites
-
-- Have an internal log concentrator 
-
-### Exporting logs via Syslog
-
-To export logs via Syslog, follow the steps below:
-* Define the Syslog redirection settings in the Syslog configuration panel of the server configuration policy:
-    * In the Address/Hostname field,enter the IP address of the Syslog server. 
-    * In the Port field,change the port number(if necessary).
-    * In the Protocol field,enter the protocol required(TCP or UDP).
-    * Select a Facility level.
-    * Select a Severity level.
-* Validate your modifications.
+This section will guide you to forward Stormshield SES logs to SEKOIA.IO
 
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Stormshield Endpoint Security.
 
-### Forward logs to Sekoia.io
+### Configure the Agent handler
 
-Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+1. Log on out Stormshield SES console
+2. Go to `Backoffice > Agent handlers`
+3. Select an Agent handler group or create a new one.
+4. On the Agent handler group, in the `Syslog servers`, click `+ Add a server`
+   ![Agent handlers](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_01.png){: style="max-width:100%"} 
+5. In the syslog server configuration
+   1. Set the address of the syslog destination to `intake.sekoia.io`
+   2. Select `TCP/TLS` as the protocol
+   3. Define the syslog destination port to 10514
+   4. Select `Raw Json` as message Content
+   5. Select `Non-Transparent-Framing` as transfert-type
+   6. In the `Structured data` input, add `[SEKOIA@53288 intake_key="<YOUR_INTAKE_KEY>"]` with our intake key as replacement of the placeholder.
+   7. Save the configuration
+   ![Configuration](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_02.png){: style="max-width:100%"} 
 
-#### Further Readings
+## Troubleshooting
+
+### The SES Agent handler cannot authenticate the Sekoia.io syslog endpoint
+
+The Sekoia.io syslog endpoint is secured with a [Letsencrypt](https://letsencrypt.org) certificate.
+
+According to our SES Agent handler installation, it may be necessary to install `ISRG ROOT X1` certificate in our **trusted root certification authorities certificate store**:
+
+1. On the SES Agent handler machines
+2. Download the `ISRG ROOT X1` certificate: https://letsencrypt.org/certs/isrgrootx1.pem
+3. Rename the downloaded certificate by suffixing it with the extension`.crt`
+4. Import the certificate in the trusted root certification authorities certificate store of the machine
+
+
+## Further Readings
 
 You can read all documentation [here](https://documentation.stormshield.eu/SES/v7.2/en/Content/PDF/ses-en-administration_guide-v7.2.pdf)
