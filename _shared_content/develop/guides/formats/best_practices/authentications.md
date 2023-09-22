@@ -1,11 +1,4 @@
-# Best Pratices
-
-Raw events may represent information in different ways. For each datasource, the parser will extract important information and generate a normalized JSON document.
-
-This document describes some principles can help define how to generate the JSON document.
-
-
-## Authentications
+# Authentications
 
 In order to simplify the recognition and semantic interpretation of authentications, it is necessary to respect some standardization.
 
@@ -16,9 +9,13 @@ An authentication is fully recognized as valid when all of these four fields are
 - action.outcome : with the value `success` if the authentication successed or `failure` else
 - user.name, user.id or user.email: with the name, the identifier or the email of the principal
 
-### Examples
+You can also extract some additional information like ip addresses, hostname or urls.
 
-These following examples describe a successfully authentication
+## Application authentications
+
+### How to parse authentication events
+
+These following examples describe a set of successfully authentications provided by an application or a Cloud application
 
 #### AWS Cloudtrail
 
@@ -57,7 +54,7 @@ These following examples describe a successfully authentication
 2. The outcome of the event
 3. The identifier of the principal
 
-will result in the ECS document
+will result into this ECS document
 
 ```json
 {
@@ -99,7 +96,7 @@ will result in the ECS document
 2. The outcome of the event
 3. The email of the principal
 
-will result in the ECS document
+will result into this ECS document
 
 ```json
 {
@@ -115,6 +112,9 @@ will result in the ECS document
   },
   "source": {
     "ip": "192.168.0.1"
+  },
+  "url": {
+    "original": "https://login.salesforce.com"
   }
 }
 ```
@@ -129,7 +129,7 @@ will result in the ECS document
 2. The value SUCCESS allows to define the outcome
 3. The 
 
-will result in the ECS document
+will result into this ECS document
 
 ```json
 {
@@ -146,13 +146,55 @@ will result in the ECS document
   },
   "source": {
     "ip": "1.2.3.4"
+  },
+  "destination": {
+    "address": "example.intranet"
   }
 }
 ```
 
-### Host authentication
+### How to write a good smart-description for authentication events
 
-Operating systems may provide further information on authentications.
+From the previous samples, we can build the following smart-description:
+
+```json
+{
+  "value": "{user.name} sign in from {source.ip}",
+  "conditions": [
+     {"field": "event.category", "value": "authentication"},
+     {"field": "event.type", "value": "start"},
+     {"field": "user.name"},
+     {"field": "source.ip"}
+  ]
+}
+```
+
+For the AWS cloudtrail event, this smart-description will result into:
+
+`1111111111 sign in from 1.2.3.4`
+
+However, If you extract more information from the event, you can improve the smart-description:
+
+```json
+{
+  "value": "{user.name} sign in from {source.ip} on {url.original}",
+  "conditions": [
+     {"field": "event.category", "value": "authentication"},
+     {"field": "event.type", "value": "start"},
+     {"field": "user.name"},
+     {"field": "source.ip"}
+     {"field": "url.original"}
+  ]
+}
+```
+
+For the Salesforce event, this smart-description will result into:
+
+`john.doe@example.org sign in from 192.168.0.1 on https://login.salesforce.com`
+
+## OS authentications
+
+Operating systems may provide further information about authentications.
 
 Other fields are necessary in order to be able to fully describe the authentication. These fields are described in the table below
 
@@ -183,14 +225,14 @@ Other fields are necessary in order to be able to fully describe the authenticat
 In the following, we give concrete examples on different dialects, to help fill in these fields.
 
 
-#### An user authentication on a Windows Host
+### An user authentication on a Windows Host
 
 Sources:
 
-- [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
+- [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
 - [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
 
-##### action.outcome
+#### action.outcome
 
 For windows events, we can map action.id with action.outcome as follow:
 
@@ -199,7 +241,7 @@ For windows events, we can map action.id with action.outcome as follow:
 | 4624      | `success`      |
 | 4625      | `failure`      |
 
-##### event.action
+#### event.action
 
 For windows events, we can map `action.properties.LogonType` with `event.action` as follow:
 
@@ -235,3 +277,121 @@ For windows events, we can map `action.properties.SubStatus` with `event.reason`
 | 0xC0000224                  |	need_to_update_password                  |
 | 0xC0000225                  |	os_problem                               |
 | 0xc000015b                  |	user_not_granted                         |
+
+
+#### How to parse and describe a Windows authentication
+
+This event represents a successful authentication on a Windows host collected through a nxlog collector.
+
+```json
+{
+  "EventTime": "2010-06-18 15:28:23",
+  "Hostname": "V-FOO",
+  "Keywords": -9214364837600034816,
+  "EventType": "AUDIT_SUCCESS",
+  "SeverityValue": 2,
+  "Severity": "INFO",
+  "EventID": 4624,
+  "SourceName": "Microsoft-Windows-Security-Auditing",
+  "ProviderGuid": "{54849625-5478-4994-A5BA-3E3B0328C30D}",
+  "Version": 1,
+  "Task": 12544,
+  "OpcodeValue": 0,
+  "RecordNumber": 10457874880,
+  "ProcessID": 744,
+  "ThreadID": 2352,
+  "Channel": "Security",
+  "Message": "An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nLogon Type:\t\t\t3\r\n\r\nImpersonation Level:\t\tImpersonation\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-21-1574594750-1263408776-2012955550-69701\r\n\tAccount Name:\t\tSVC_DD_SP-SEARCH\r\n\tAccount Domain:\t\tKEY\r\n\tLogon ID:\t\t0xFBEE0744\r\n\tLogon GUID:\t\t{00000000-0000-0000-0000-000000000000}\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0x0\r\n\tProcess Name:\t\t-\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tV-FOO\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tNtLmSsp \r\n\tAuthentication Package:\tNTLM\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\tNTLM V2\r\n\tKey Length:\t\t128\r\n\r\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\r\n\r\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\r\n\r\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\r\n\r\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\r\n\r\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\r\n\r\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\r\n\r\nThe authentication information fields provide detailed information about this specific logon request.\r\n\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\r\n\t- Transited services indicate which intermediate services have participated in this logon request.\r\n\t- Package name indicates which sub-protocol was used among the NTLM protocols.\r\n\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.",
+  "Category": "Logon",
+  "Opcode": "Info",
+  "SubjectUserSid": "S-1-0-0",
+  "SubjectUserName": "-",
+  "SubjectDomainName": "-",
+  "SubjectLogonId": "0x0",
+  "TargetUserSid": "S-1-5-21-1574594750-1263408776-2012955550-69701",
+  "TargetUserName": "SVC_DD_SP-SEARCH",
+  "TargetDomainName": "KEY",
+  "TargetLogonId": "0xfbee0744",
+  "LogonType": "3",
+  "LogonProcessName": "NtLmSsp ",
+  "AuthenticationPackageName": "NTLM",
+  "WorkstationName": "V-FOO",
+  "LogonGuid": "{00000000-0000-0000-0000-000000000000}",
+  "TransmittedServices": "-",
+  "LmPackageName": "NTLM V2",
+  "KeyLength": "128",
+  "ProcessName": "-",
+  "IpAddress": "-",
+  "IpPort": "-",
+  "ImpersonationLevel": "%%1833",
+  "EventReceivedTime": "2010-06-18 15:28:24",
+  "SourceModuleName": "in",
+  "SourceModuleType": "im_msvistalog"
+}
+```
+
+The previous event will result into this ECS document:
+
+```json
+{
+  "event": {
+    "code": "4624",
+    "provider": "Microsoft-Windows-Security-Auditing",
+    "category": [
+      "authentication"
+    ],
+    "type": [
+      "start"
+    ]
+  },
+  "action": {
+    "record_id": 10457874880,
+    "type": "Security",
+    "id": 4624,
+    "name": "An account was successfully logged on",
+    "outcome": "success",
+    "properties": [{
+          "LogonType": "3",
+    }]
+  },
+  "host": {
+    "hostname": "V-FOO",
+    "name": "V-FOO"
+  },
+  "user": {
+    "id": "S-1-0-0",
+    "target": {
+      "name": "SVC_DD_SP-SEARCH",
+      "domain": "KEY",
+      "id": "S-1-5-21-1574594750-1263408776-2012955550-69701"
+    }
+  }
+}
+```
+
+With the following smart-description:
+
+```json
+  {
+    "value": "{user.target.domain}\\{user.target.name} logged on to {host.name} (LogonType {action.properties.LogonType})",
+    "relationships": [
+      {
+        "source": "user.target.name",
+        "target": "host.name",
+        "type": "logged on to"
+      }
+    ],
+    "conditions": [
+      {"field": "action.id", "value": 4624},
+      {"field": "user.target.name"},
+      {"field": "user.target.domain"},
+      {"field": "host.name"},
+      {"field": "action.properties.LogonType"},
+      { "field": "event.provider", "value": "Microsoft-Windows-Security-Auditing"}
+    ]
+  }
+```
+
+will result into the description:
+
+`KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (LogonType 3)`
