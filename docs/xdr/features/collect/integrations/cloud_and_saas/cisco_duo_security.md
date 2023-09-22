@@ -1,14 +1,11 @@
 uuid: 547234b3-82ea-4507-b28f-3ee3cd5b9a8e
-name: Duo Security
+name: Cisco Duo Security
 type: intake
 
 
 ## Overview
 
-Duo Security offers solutions for strong authentication.
-
-!!! warning
-    This format is in beta.
+Cisco Duo Security offers solutions for strong authentication.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_547234b3-82ea-4507-b28f-3ee3cd5b9a8e_do_not_edit_manually.md!}
 
@@ -28,7 +25,7 @@ More details in [Duo documentation](https://duo.com/docs/adminapi#first-steps)
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Duo Security`. Copy the intake key.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Cisco Duo Security`. Copy the intake key.
 
 ### Pull events
 

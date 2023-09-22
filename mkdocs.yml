@@ -107,7 +107,7 @@ nav:
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Cato SASE: xdr/features/collect/integrations/cloud_and_saas/cato_sase.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
-          - Duo Security: xdr/features/collect/integrations/cloud_and_saas/duo_security.md
+          - Cisco Duo Security: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
           - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
           - Google Cloud:
             - Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_cloud_audit.md
@@ -181,7 +181,7 @@ nav:
             - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco/cisco_asa.md
             - Cisco Secure Web Appliance: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
             - Cisco IOS: xdr/features/collect/integrations/network/cisco/cisco_ios.md
-            - Cisco ISE: xdr/features/collect/integrations/network/cisco/cisco_ise.md
+            - Cisco Identity Services Engine (ISE): xdr/features/collect/integrations/network/cisco/cisco_identity_services_engine_ise.md
             - Cisco NX-OS: xdr/features/collect/integrations/network/cisco/cisco_nx_os.md
             - Cisco Meraki MX: xdr/features/collect/integrations/network/cisco/cisco_meraki_mx.md
           - Citrix ADC: xdr/features/collect/integrations/network/citrix_adc.md
