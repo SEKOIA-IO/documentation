@@ -58,6 +58,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         },
         "source": {
             "ip": "1.2.3.4",
+            "nat": {
+                "ip": "1.2.3.4"
+            },
             "mac": "01:02:03:04:05:06",
             "geo": {
                 "country_iso_code": "FR",
@@ -173,6 +176,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         },
         "source": {
             "ip": "1.2.3.4",
+            "nat": {
+                "ip": "1.2.3.4"
+            },
             "mac": "01:02:03:04:05:06",
             "bytes": 1291,
             "address": "1.2.3.4"
@@ -268,15 +274,11 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "ingested": "2023-07-17T11:34:57.356000Z"
         },
         "@timestamp": "2023-07-17T11:34:45Z",
-        "registry": {
-            "data": {
-                "strings": [
-                    ""
-                ]
-            }
-        },
         "source": {
             "ip": "1.2.3.4",
+            "nat": {
+                "ip": "1.2.3.4"
+            },
             "mac": "00:01:02:03:04:05",
             "geo": {
                 "country_iso_code": "FR",
@@ -379,15 +381,11 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "name": "Administrateur"
             }
         },
-        "registry": {
-            "data": {
-                "strings": [
-                    ""
-                ]
-            }
-        },
         "source": {
             "ip": "1.2.3.4",
+            "nat": {
+                "ip": "1.2.3.4"
+            },
             "mac": "00:11:22:33:44:55",
             "geo": {
                 "country_iso_code": "FR",
@@ -500,15 +498,11 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "name": "Administrateur"
             }
         },
-        "registry": {
-            "data": {
-                "strings": [
-                    ""
-                ]
-            }
-        },
         "source": {
             "ip": "1.2.3.4",
+            "nat": {
+                "ip": "1.2.3.4"
+            },
             "mac": "00:11:22:33:44:55",
             "geo": {
                 "country_iso_code": "FR"
@@ -551,6 +545,10 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         },
         "file": {
             "path": "C:\\Program Files (x86)\\TEST.EXE",
+            "hash": {
+                "sha1": "d4baeeb9180a4284b33fa3602d86c",
+                "sha256": "94256542e235681ba64a20bc50910dd745d52347"
+            },
             "name": "TEST.EXE",
             "directory": "C:\\Program Files (x86)"
         },
@@ -569,6 +567,11 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 },
                 "aggressive_activity": "False",
                 "threat_type": "threat_type",
+                "process": {
+                    "executable": {
+                        "is_signed": true
+                    }
+                },
                 "ioc": {
                     "attack_type": "Suspicious Activity",
                     "detection": {
@@ -588,8 +591,12 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 },
                 "ml": {
                     "score": "19",
-                    "score_label": "score_label",
                     "score_band": "ml_score"
+                },
+                "lolbins_ml_results": {
+                    "score": "19",
+                    "score_label": "score_label",
+                    "sha256": "dd6748642b108262f933260c3ae8"
                 },
                 "password": {
                     "last_set": "2021-08-18T03:37:25.000000Z"
@@ -607,6 +614,160 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             ],
             "ip": [
                 "1.2.3.4"
+            ]
+        }
+    }
+    	
+	```
+
+
+=== "ioc_view_query5.json"
+
+    ```json
+	
+    {
+        "message": "{\n  \"parent\": 25740,\n  \"sha256\": \"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b\",\n  \"upload_size\": 2376,\n  \"record_identifier\": \"f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044\",\n  \"ioc_severity\": 5,\n  \"path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\",\n  \"is_process_file_signed\": \"1\",\n  \"ml_score_data\": \"{\\\"configVersion\\\":\\\"f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044\\\",\\\"expireTime\\\":0,\\\"peMalwareScore\\\":7,\\\"pePuaScore\\\":15,\\\"vdlFlags\\\":0,\\\"version\\\":2}\",\n  \"ioc_detection_sigma\": \"{\\\"id\\\":\\\"WIN-EXE-ENR-ML-SUSPICIOUS-1.star\\\",\\\"logsource\\\":{\\\"dedup_fields\\\":[\\\"machine_data.columns.sophosPID\\\",\\\"detection.id\\\"]}}\",\n  \"company_name\": \"Microsoft Corporation\",\n  \"pua_score\": 15,\n  \"folded\": 0,\n  \"meta_mac_address\": \"00:05:9a:3c:7a:00\",\n  \"endpoint_id\": \"7df406c7-efc9-4c7d-806f-1c7216031630\",\n  \"meta_public_ip_country_code\": \"FR\",\n  \"schema_version\": \"22\",\n  \"uid\": 292948,\n  \"ioc_detection_mitre_attack\": \"[{\\\"tactic\\\":{\\\"id\\\":\\\"TA0002\\\",\\\"name\\\":\\\"Execution\\\",\\\"techniques\\\":[{\\\"id\\\":\\\"T1059\\\",\\\"name\\\":\\\"Command and Scripting Interpreter\\\"}]}}]\",\n  \"meta_licence\": \"\",\n  \"ioc_detection_experiment_level\": 0,\n  \"ioc_created_at\": \"2023-08-30T15:04:40.934Z\",\n  \"cmdline\": \"wmic /Namespace:\\\\\\\\root\\\\SecurityCenter2 Path AntivirusProduct Get displayName,productState\",\n  \"ingestion_timestamp\": \"2023-08-30T15:04:17.022Z\",\n  \"ioc_detection_attack\": \"Execution\",\n  \"numerics\": false,\n  \"meta_public_ip\": \"194.0.166.130\",\n  \"counter\": 1414,\n  \"detection_id_dedup\": \"b758901433312f4077ce4ed46b776ecc895712ff\",\n  \"meta_hostname\": \"H3333333333333\",\n  \"username\": \"U11111111\",\n  \"ioc_worker_name\": \"Security Event Service\",\n  \"ioc_detection_type\": \"process\",\n  \"sha1\": \"adc83b19e793491b1c6ea0fd8b46cd9f32e592fc\",\n  \"ioc_detection_category\": \"Threat\",\n  \"ioc_unix_time\": \"2023-08-30T15:03:56.000Z\",\n  \"epoch\": 1693206450,\n  \"meta_ip_mask\": \"255.255.252.0\",\n  \"file_size\": 576000,\n  \"ioc_worker_id\": \"security-event-service\",\n  \"global_rep_data\": \"{\\\"expireTime\\\":0,\\\"lookupType\\\":0,\\\"reputation\\\":-1,\\\"reputationData\\\":\\\"\\\",\\\"sampleRate\\\":0,\\\"version\\\":1}\",\n  \"parent_name\": \"idea64.exe\",\n  \"unix_time\": \"2023-08-30T15:03:56.000Z\",\n  \"pid\": 3984,\n  \"ioc_log_type\": \"summary\",\n  \"original_filename\": \"wmic.exe\",\n  \"ml_score_band\": \"LIKELY_BENIGN\",\n  \"query_source\": \"xdr_only\",\n  \"sophos_pid\": \"3984:133378811508910039\",\n  \"host_identifier\": \"689FF239-6905-4EB3-8CA4-716E63BDB63D\",\n  \"partition_bucket\": \"87\",\n  \"meta_public_ip_country\": \"United-Kingdom\",\n  \"meta_boot_time\": 1693382499,\n  \"local_rep\": 91,\n  \"meta_os_name\": \"Microsoft Windows 10 Professionnel\",\n  \"sha256_reputation_score\": 70,\n  \"osquery_action\": \"added\",\n  \"lolbins_ml_results\": {\n    \"score\": 99.0,\n    \"score_label\": \"Suspicious\",\n    \"sha256\": \"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b\"\n  },\n  \"parent_path\": \"C:\\\\Program Files\\\\JetBrains\\\\IntelliJ IDEA 2021.3.3\\\\bin\\\\idea64.exe\",\n  \"meta_query_pack_version\": \"1.17.56\",\n  \"calendar_time\": \"2023-08-30T15:03:56.000Z\",\n  \"meta_eid\": \"aecc2aae-83d8-4f39-b65a-53413caa415f\",\n  \"meta_public_ip_longitude\": -0.076198,\n  \"ioc_detection_id\": \"WIN-EXE-ENR-ML-SUSPICIOUS-1\",\n  \"meta_os_platform\": \"windows\",\n  \"meta_username\": \"U111111111\",\n  \"detection_identifier\": \"f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044_b758901433312f4077ce4ed46b776ecc895712ff\",\n  \"query_name\": \"running_processes_windows_sophos\",\n  \"meta_os_type\": \"\",\n  \"meta_os_version\": \"10.0.19045\",\n  \"parent_cmdline\": \"\\\"C:\\\\Program Files\\\\JetBrains\\\\IntelliJ IDEA 2021.3.3\\\\bin\\\\idea64.exe\\\" \",\n  \"meta_public_ip_latitude\": 51.5082,\n  \"local_rep_data\": \"{\\\"reputationData\\\":{\\\"isSigned\\\":1,\\\"signerInfo\\\":[{\\\"cryptoAlgorithm\\\":32780,\\\"cryptoStrength\\\":112,\\\"isValid\\\":1,\\\"signer\\\":\\\"Microsoft Windows\\\",\\\"thumbprint\\\":\\\"2724aeb0c497bf5fd732958120d1ae3341cfd252ab1680de03d10503abc666c1\\\"}]}}\",\n  \"ioc_detection_licenses\": \"[\\\"MTR\\\"]\",\n  \"parent_sophos_pid\": \"22222:666666666666666666\",\n  \"name\": \"WMIC.exe\",\n  \"global_rep\": -1,\n  \"meta_aggressive_activity\": \"False\",\n  \"meta_ip_address\": \"1.2.3.4\",\n  \"time\": 1693407550,\n  \"file_version\": \"10.0.19041.1741 (WinBuild.160101.0800)\",\n  \"ingest_date\": \"2023-08-30\",\n  \"file_description\": \"WMI Commandline Utility\",\n  \"ml_score\": 7,\n  \"sha256_reputation_band\": \"KNOWN_GOOD\",\n  \"meta_endpoint_type\": \"computer\",\n  \"meta_domain_controller\": \"False\",\n  \"customer_id\": \"9cc350ec-283c-451a-b072-4c7df065d350\",\n  \"ioc_detection_description\": \"Identifies Lolbin processes labeled as suspicious by a machine learning model.\",\n  \"message_identifier\": \"f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044\",\n  \"ioc_attack_type\": \"Security Event Service Detections\",\n  \"product_name\": \"Microsoft\u00ae Windows\u00ae Operating System\",\n  \"gid\": 292948,\n  \"ioc_detection_weight\": 5\n}\n",
+        "event": {
+            "kind": "event",
+            "severity": 5,
+            "code": "WIN-EXE-ENR-ML-SUSPICIOUS-1",
+            "ingested": "2023-08-30T15:04:17.022000Z"
+        },
+        "@timestamp": "2023-08-30T15:03:56Z",
+        "user": {
+            "name": "U111111111"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "nat": {
+                "ip": "194.0.166.130"
+            },
+            "mac": "00:05:9a:3c:7a:00",
+            "geo": {
+                "country_iso_code": "FR",
+                "country_name": "United-Kingdom"
+            },
+            "bytes": 2376,
+            "address": "1.2.3.4"
+        },
+        "host": {
+            "name": "H3333333333333",
+            "id": "689FF239-6905-4EB3-8CA4-716E63BDB63D",
+            "os": {
+                "full": "Microsoft Windows 10 Professionnel",
+                "name": "windows",
+                "version": "10.0.19045"
+            }
+        },
+        "vulnerability": {
+            "description": "Identifies Lolbin processes labeled as suspicious by a machine learning model."
+        },
+        "process": {
+            "pid": 3984,
+            "name": "Security Event Service",
+            "hash": {
+                "sha1": "adc83b19e793491b1c6ea0fd8b46cd9f32e592fc",
+                "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            },
+            "parent": {
+                "name": "idea64.exe",
+                "executable": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2021.3.3\\bin\\idea64.exe",
+                "command_line": "\"C:\\Program Files\\JetBrains\\IntelliJ IDEA 2021.3.3\\bin\\idea64.exe\" "
+            },
+            "command_line": "wmic /Namespace:\\\\root\\SecurityCenter2 Path AntivirusProduct Get displayName,productState",
+            "code_signature": {
+                "exists": true
+            }
+        },
+        "file": {
+            "size": 576000,
+            "hash": {
+                "sha1": "adc83b19e793491b1c6ea0fd8b46cd9f32e592fc",
+                "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            },
+            "name": "WMIC.exe",
+            "path": "C:\\Windows\\System32\\wbem\\WMIC.exe"
+        },
+        "sophos": {
+            "threat_center": {
+                "record_identifier": "f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044",
+                "id": "7df406c7-efc9-4c7d-806f-1c7216031630",
+                "sha256": {
+                    "reputation_band": "KNOWN_GOOD",
+                    "reputation_score": "70"
+                },
+                "endpoint": {
+                    "type": "computer"
+                },
+                "worker": {
+                    "id": "security-event-service"
+                },
+                "file": {
+                    "version": "10.0.19041.1741 (WinBuild.160101.0800)",
+                    "description": "WMI Commandline Utility",
+                    "original": {
+                        "name": "wmic.exe"
+                    }
+                },
+                "aggressive_activity": "False",
+                "detection_id_dedup": "b758901433312f4077ce4ed46b776ecc895712ff",
+                "process": {
+                    "executable": {
+                        "is_signed": true
+                    }
+                },
+                "ioc": {
+                    "log_type": "summary",
+                    "attack_type": "Security Event Service Detections",
+                    "unix_time": "2023-08-30T15:03:56.000000Z",
+                    "detection": {
+                        "attack": "Execution",
+                        "weight": "5",
+                        "licences": [
+                            "MTR"
+                        ],
+                        "type": "process",
+                        "category": "Threat",
+                        "sigma": {
+                            "id": "WIN-EXE-ENR-ML-SUSPICIOUS-1.star"
+                        }
+                    }
+                },
+                "query": {
+                    "source": "xdr_only",
+                    "action": "added",
+                    "pack_version": "1.17.56",
+                    "name": "running_processes_windows_sophos"
+                },
+                "ml": {
+                    "score": "7",
+                    "score_band": "LIKELY_BENIGN"
+                },
+                "lolbins_ml_results": {
+                    "score": "99.0",
+                    "score_label": "Suspicious",
+                    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+                },
+                "pua": {
+                    "score": "15"
+                },
+                "global_rep": -1,
+                "ml_score_data": {
+                    "config_version": "f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044"
+                }
+            }
+        },
+        "related": {
+            "hash": [
+                "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                "adc83b19e793491b1c6ea0fd8b46cd9f32e592fc"
+            ],
+            "ip": [
+                "1.2.3.4",
+                "194.0.166.130"
+            ],
+            "user": [
+                "U111111111"
             ]
         }
     }
@@ -632,7 +793,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.severity` | `long` | Numeric severity of the event. |
+|`file.hash.sha1` | `keyword` | SHA1 hash. |
+|`file.hash.sha256` | `keyword` | SHA256 hash. |
+|`file.name` | `keyword` | Name of the file including the extension, without the directory. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
+|`file.size` | `long` | File size in bytes. |
 |`host.domain` | `keyword` | Name of the directory the group is a member of. |
 |`host.id` | `keyword` | Unique host id. |
 |`host.name` | `keyword` | Name of the host. |
@@ -644,7 +809,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.hash.sha1` | `keyword` | SHA1 hash. |
 |`process.hash.sha256` | `keyword` | SHA256 hash. |
 |`process.name` | `keyword` | Process name. |
+|`process.parent.command_line` | `wildcard` | Full command line that started the process. |
+|`process.parent.executable` | `keyword` | Absolute path to the process executable. |
 |`process.parent.name` | `keyword` | Process name. |
+|`process.pid` | `long` | Process id. |
 |`registry.data.strings` | `wildcard` | List of strings representing what was written to the registry. |
 |`registry.data.type` | `keyword` | Standard registry type for encoding contents |
 |`registry.key` | `keyword` | Hive-relative path of keys. |
@@ -656,6 +824,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sophos.threat_center.endpoint.type` | `keyword` | The type of the endpoint |
 |`sophos.threat_center.event.id` | `long` | Event id |
 |`sophos.threat_center.file.description` | `keyword` | File description |
+|`sophos.threat_center.file.original.name` | `keyword` | The original name of the file |
+|`sophos.threat_center.file.version` | `keyword` | The version of the file |
+|`sophos.threat_center.global_rep` | `integer` | The global response |
 |`sophos.threat_center.id` | `keyword` | The identifier of the endpoint |
 |`sophos.threat_center.ioc.attack_type` | `keyword` | The attack type |
 |`sophos.threat_center.ioc.detection.access.authentication` | `keyword` | Authentication access |
@@ -674,17 +845,27 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sophos.threat_center.ioc.log_type` | `keyword` | Log type |
 |`sophos.threat_center.ioc.unix_time` | `keyword` | Unix time |
 |`sophos.threat_center.logon_process` | `keyword` | Verify the identity of the user or system attempting to access the resources |
+|`sophos.threat_center.lolbins_ml_results.score` | `keyword` | Lolbins machine learning score |
+|`sophos.threat_center.lolbins_ml_results.score_label` | `keyword` | Lolbins machine learning score label |
+|`sophos.threat_center.lolbins_ml_results.sha256` | `keyword` | Lolbins machine learning sha256 |
 |`sophos.threat_center.ml.score` | `keyword` | Machine learning score |
 |`sophos.threat_center.ml.score_band` | `keyword` | Machine learning score band |
-|`sophos.threat_center.ml.score_label` | `keyword` | Machine learning score label |
+|`sophos.threat_center.ml_score_data.config_version` | `keyword` |  |
+|`sophos.threat_center.ml_score_data.expire_time` | `keyword` |  |
+|`sophos.threat_center.ml_score_data.pe.malware.score` | `keyword` |  |
+|`sophos.threat_center.ml_score_data.pe.pua.score` | `keyword` |  |
+|`sophos.threat_center.ml_score_data.vldflags` | `keyword` |  |
 |`sophos.threat_center.package` | `keyword` | Name of package files |
 |`sophos.threat_center.password.last_set` | `keyword` | last time the password is set  |
+|`sophos.threat_center.process.executable.is_signed` | `boolean` | Is the image of the process signed |
+|`sophos.threat_center.pua.score` | `keyword` | The PUA score |
 |`sophos.threat_center.query.action` | `keyword` | The query action |
 |`sophos.threat_center.query.name` | `keyword` | The query name |
 |`sophos.threat_center.query.pack_version` | `keyword` | The query pack version |
 |`sophos.threat_center.query.source` | `keyword` | The query source |
 |`sophos.threat_center.record_identifier` | `keyword` | Record identifier |
 |`sophos.threat_center.sha256.reputation_band` | `keyword` | sha256 reputation |
+|`sophos.threat_center.sha256.reputation_score` | `keyword` | sha256 reputation |
 |`sophos.threat_center.threat_type` | `keyword` | Threat type |
 |`sophos.threat_center.user_upn` | `keyword` | User Principal Name |
 |`sophos.threat_center.worker.id` | `keyword` | Process worker ID (it's a text not a number) |
@@ -695,6 +876,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.geo.postal_code` | `keyword` | Postal code. |
 |`source.ip` | `ip` | IP address of the source. |
 |`source.mac` | `keyword` | MAC address of the source. |
+|`source.nat.ip` | `ip` | Source NAT ip |
 |`threat.indicator.provider` | `keyword` | Indicator provider |
 |`user.name` | `keyword` | Short name or login of the user. |
 |`user.target.name` | `keyword` | Short name or login of the user. |
