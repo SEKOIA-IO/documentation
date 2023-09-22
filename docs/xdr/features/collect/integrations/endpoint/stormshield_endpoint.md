@@ -47,6 +47,7 @@ According to our SES Agent handler installation, it may be necessary to install 
 2. Download the `ISRG ROOT X1` certificate: https://letsencrypt.org/certs/isrgrootx1.pem
 3. Rename the downloaded certificate by suffixing it with the extension`.crt`
 4. Import the certificate in the trusted root certification authorities certificate store of the machine
+   ![Certificate store](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_03.png){: style="max-width:100%"} 
 
 
 ## Further Readings
