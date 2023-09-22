@@ -23,7 +23,7 @@ Other fields are necessary in order to be able to fully describe the authenticat
 | sekoiaio.client.name        | Hostname from which authentication is requested                      |
 | sekoiaio.client.domain      | Domain of the host from which authentication is requested            |
 | client.ip                   | IP of the host from which authentication is requested                |
-| client.os.type              | OS type of the host from which authentication is requested           |
+| sekoia.client.os.type       | OS type of the host from which authentication is requested           |
 | client.geo.country_iso_code | ISO COUNTRY CODE of the host from which authentication is requested  |
 | process.name                | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
 | sekoiaio.server.name        | Host name  targeted by the authentication                            |
@@ -43,7 +43,7 @@ Other fields are necessary in order to be able to fully describe the authenticat
 In the following, we give concrete examples on different dialects, to help fill in these fields.
 
 
-### A user authenticate on a Windows Host
+### An user authentication on a Windows Host
 Sources:
 - [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
 - [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
@@ -73,6 +73,23 @@ For windows events, we can map `action.properties.LogonType` with `event.action`
 | 12                          | authentication_cached_remote_interactive |
 | 13                          | authentication_cached_unlock             |
 
+#### event.reason
+For windows events, we can map `action.properties.SubStatus` with `event.reason` as follow:
+
+| action.properties.SubStatus | event.reason                             |
+| --------------------------- | ---------------------------------------- |
+| 0xC0000064                  | user_not_exist                           |
+| 0xC000006A                  |	bad_password                             |
+| 0xC0000234                  |	user_locked_out                          |
+| 0xC0000072                  |	user_disabled                            |
+| 0xC000006F                  |	time_restriction                         |
+| 0xC0000070                  |	policy_restriction                       |
+| 0xC0000193                  |	account_expired                          |
+| 0xC0000071                  |	password_expired                         |
+| 0xC0000133                  |	clock_not_sync                           |
+| 0xC0000224                  |	need_to_update_password                  |
+| 0xC0000225                  |	os_problem                               |
+| 0xc000015b                  |	user_not_granted                         |
 
 
 This event, from a Windows host, describes a successfully authentication:
