@@ -8,7 +8,7 @@ Github audit logs represents activities on your Github organization.
 This setup guide describes how to forward audit logs from Github to Sekoia.io.
 
 !!! warning
-    This format is in beta.
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_80de6ccb-7246-40de-bcbb-bc830118c1f9_do_not_edit_manually.md!}
 

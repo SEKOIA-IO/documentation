@@ -7,7 +7,7 @@ type: intake
 CrowdStrike provides cloud workload and endpoint security, threat intelligence, and cyberattack response services and products.
 
 !!! warning
-    This format is in beta.
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_10999b99-9a8d-4b92-9fbd-01e3fac01cd5_do_not_edit_manually.md!}
 
