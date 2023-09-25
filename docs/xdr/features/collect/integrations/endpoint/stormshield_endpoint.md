@@ -25,16 +25,17 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 1. Log on out Stormshield SES console
 2. Go to `Backoffice > Agent handlers`
-3. Select an Agent handler group or create a new one.
+3. Select an Agent handler group or create a new one
 4. On the Agent handler group, in the `Syslog servers`, click `+ Add a server`
    ![Agent handlers](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_01.png){: style="max-width:100%"} 
-5. In the syslog server configuration
+5. In the syslog server configuration:
+   
    1. Set the address of the syslog destination to `intake.sekoia.io`
    2. Select `TCP/TLS` as the protocol
    3. Define the syslog destination port to 10514
    4. Select `Raw Json` as message Content
    5. Select `Non-Transparent-Framing` as transfert-type
-   6. In the `Structured data` input, add `[SEKOIA@53288 intake_key="<YOUR_INTAKE_KEY>"]` with our intake key as replacement of the placeholder.
+   6. In the `Structured data` input, add `[SEKOIA@53288 intake_key="<YOUR_INTAKE_KEY>"]` with our intake key as replacement of the placeholder
    7. Save the configuration
    ![Configuration](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_02.png){: style="max-width:100%"} 
 
@@ -46,10 +47,11 @@ The Sekoia.io syslog endpoint is secured with a [Letsencrypt](https://letsencryp
 
 According to our SES Agent handler installation, it may be necessary to install `ISRG ROOT X1` certificate in our **trusted root certification authorities certificate store**:
 
-1. On the SES Agent handler machines
-2. Download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
-3. Rename the downloaded certificate by suffixing it with the extension`.crt`
-4. Import the certificate in the trusted root certification authorities certificate store of the machine
+On the SES Agent handler machines: 
+
+1. Download the `ISRG ROOT X1` certificate: <https://letsencrypt.org/certs/isrgrootx1.pem>
+2. Rename the downloaded certificate by suffixing it with the extension`.crt`
+3. Import the certificate in the trusted root certification authorities certificate store of the machine
    ![Certificate store](/assets/operation_center/integration_catalog/endpoint/stormshield/stormshield_ses_03.png){: style="max-width:100%"} 
 
 
