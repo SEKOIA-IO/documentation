@@ -6,9 +6,9 @@ The following table lists the data source offered by this integration.
 
 | Data Source | Description                          |
 | ----------- | ------------------------------------ |
-| `Anti-virus` | Stormshield Endpoint Security can be configured to perfom malware analysis. |
-| `File monitoring` | Stormshield Endpoint Security can handle the user behavior ( Files included ) |
-| `Application logs` | Stormshield Endpoint Security can handle the user behavior ( Applications included ) |
+| `Anti-virus` | Stormshield SES can be configured to perfom malware analysis. |
+| `File monitoring` | Stormshield SES can handle the user behavior ( Files included ) |
+| `Application logs` | Stormshield SES can handle the user behavior ( Applications included ) |
 
 
 
