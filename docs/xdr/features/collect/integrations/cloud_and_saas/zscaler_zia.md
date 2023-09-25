@@ -27,7 +27,7 @@ This integration can ingest the following logs:
 
 ## Configure
 
-This section will guide you to forward Zscaler ZIA events to SEKOIA.IO
+This section will guide you to forward Zscaler ZIA events to Sekoia.io. 
 
 ### Create the intake
 
@@ -37,7 +37,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 #### Prerequisites
 
-- Have an internal log concentrator
+You must have an internal log concentrator to forward events with NSS servers. 
 
 #### Configure the forwarding
 
@@ -48,43 +48,43 @@ In the Zscaler ZIA console:
 2. According to your tenant configuration, select `NSS Feeds` tab
    ![nanolog](/assets/operation_center/integration_catalog/cloud_and_saas/zscaler/zia_nss_feeds.png){: style="max-width:100%"} 
 3. Click on the button `Add NSS Feed` for each type of log type you want to forward
-4. In the modal, type a name for the feed, select the `NSS Server` and select the status `Enabled`.
-5. Fill the `SIEM IP Address` and the `SIEM TCP Port` with the ip address and port of the log concentrator.
-6. Select the desired log type.
-7. Select `Custom` as the `Feed Output Type`. When possible, Fill the `Feed Escape Character` input with the characters `,\"`
+4. In the modal, type a name for the feed, select the `NSS Server` and select the status `Enabled`
+5. Fill the `SIEM IP Address` and the `SIEM TCP Port` with the ip address and port of the log concentrator
+6. Select the desired log type
+7. Select `Custom` as the `Feed Output Type`. When possible, fill the `Feed Escape Character` input with the characters `,\"`
 8. For `Feed Output Format`, paste the following format according to the Log Type:
 
-	- Web Log:
+	=== "Web Log"
 	```
 	%s{mon} %02d{dd} %02d{hh}:%02d{mm}:%02d{ss} zscaler-nss \{ "sourcetype" : "zscalernss-web", "event" : \{"datetime":"%d{yy}-%02d{mth}-%02d{dd} %02d{hh}:%02d{mm}:%02d{ss}","reason":"%s{reason}","event_id":"%d{recordid}","protocol":"%s{proto}","action":"%s{action}","transactionsize":"%d{totalsize}","responsesize":"%d{respsize}","requestsize":"%d{reqsize}","urlcategory":"%s{urlcat}","serverip":"%s{sip}","requestmethod":"%s{reqmethod}","refererURL":"%s{ereferer}","useragent":"%s{eua}","product":"NSS","location":"%s{elocation}","ClientIP":"%s{cip}","status":"%s{respcode}","user":"%s{elogin}","url":"%s{eurl}","vendor":"Zscaler","hostname":"%s{ehost}","clientpublicIP":"%s{cintip}","threatcategory":"%s{malwarecat}","threatname":"%s{threatname}","filetype":"%s{filetype}","appname":"%s{appname}","pagerisk":"%d{riskscore}","department":"%s{edepartment}","urlsupercategory":"%s{urlsupercat}","appclass":"%s{appclass}","dlpengine":"%s{dlpeng}","urlclass":"%s{urlclass}","threatclass":"%s{malwareclass}","dlpdictionaries":"%s{dlpdict}","fileclass":"%s{fileclass}","bwthrottle":"%s{bwthrottle}","contenttype":"%s{contenttype}","unscannabletype":"%s{unscannabletype}","deviceowner":"%s{deviceowner}","devicehostname":"%s{devicehostname}","keyprotectiontype":"%s{keyprotectiontype}"\}\}
 	```
 
-	- SaaS Security
+	=== "SaaS Security"
 	```
 	%s{mon} %02d{dd} %02d{hh}:%02d{mm}:%02d{ss} zscaler-nss \{ "sourcetype" : "zscalernss-casb", "event" :\{"datetime":"%s{time}","recordid":"%d{recordid}","company":"%s{company}","tenant":"%s{tenant}","login":"%s{user}","dept":"%s{department}","applicationname":"%s{applicationname}","filename":"%s{filename}","filesource":"%s{filesource}","filemd5":"%s{filemd5}","threatname":"%s{threatname}","policy":"%s{policy}","dlpdictnames":"%s{dlpdictnames}","dlpdictcount":"%s{dlpdictcount}","dlpenginenames":"%s{dlpenginenames}","fullurl":"%s{fullurl}","lastmodtime":"%s{lastmodtime}","filescantimems":"%d{filescantimems}","filedownloadtimems":"%d{filedownloadtimems}"\}\}
 	```
 
-	- SaaS Security Activity
+	=== "SaaS Security Activity"
 	```
 	%s{mon} %02d{dd} %02d{hh}:%02d{mm}:%02d{ss} zscaler-nss \{ "sourcetype" : "zscalernss-casb", "event" :\{"login":"%s{username}","tenant":"%s{tenant}","object_type":"%d{objtype1}","applicationname":"%s{appname}","object_name_1":"%s{objnames1}","object_name_2":"%s{objnames2}"\}\}
 	```
 
-	- Tunnel IKE Phase 1
+	=== "Tunnel IKE Phase 1"
 	```
 	%s{mon} %02d{dd} %02d{hh}:%02d{mm}:%02d{ss} zscaler-nss \{ "sourcetype" : "zscalernss-tunnel", "event" : \{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"IPSEC IKEV %d{ikeversion}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","destinationport":"%d{dstport}","lifetime":"%d{lifetime}","ikeversion":"%d{ikeversion}","spi_in":"%lu{spi_in}","spi_out":"%lu{spi_out}","algo":"%s{algo}","authentication":"%s{authentication}","authtype":"%s{authtype}","recordid":"%d{recordid}"\}\}
 	```
 
-	- Tunnel IKE Phase 2
+	=== "Tunnel IKE Phase 2"
 	```
 	%s{mon} %02d{dd} %02d{hh}:%02d{mm}:%02d{ss} zscaler-nss \{ "sourcetype" : "zscalernss-tunnel", "event" : \{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"IPSEC IKEV %d{ikeversion}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","sourceportstart":"%d{srcportstart}","destinationportstart":"%d{destportstart}","srcipstart":"%s{srcipstart}","srcipend":"%s{srcipend}","destinationipstart":"%s{destipstart}","destinationipend":"%s{destipend}","lifetime":"%d{lifetime}","ikeversion":"%d{ikeversion}","lifebytes":"%d{lifebytes}","spi":"%d{spi}","algo":"%s{algo}","authentication":"%s{authentication}","authtype":"%s{authtype}","protocol":"%s{protocol}","tunnelprotocol":"%s{tunnelprotocol}","policydirection":"%s{policydirection}","recordid":"%d{recordid}"\}\}
 	```
 
-	- Tunnel
+	=== "Tunnel"
 	```
 	%s{mon} %02d{dd} %02d{hh}:%02d{mm}:%02d{ss} zscaler-nss \{ "sourcetype" : "zscalernss-tunnel", "event" : \{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"%s{tunneltype}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","event":"%s{event}","eventreason":"%s{eventreason}","recordid":"%d{recordid}"\}\}
 	```
 
-	- Admin Audit
+	=== "Admin Audit"
 	```
 	%s{mon} %02d{dd} %02d{hh}:%02d{mm}:%02d{ss} zscaler-nss \{ "sourcetype" : "zscalernss-audit", "event" :\{"time":"%s{time}","recordid":"%d{recordid}","action":"%s{action}","category":"%s{category}","subcategory":"%s{subcategory}","resource":"%s{resource}","interface":"%s{interface}","adminid":"%s{adminid}","clientip":"%s{clientip}","result":"%s{result}","errorcode":"%s{errorcode}","auditlogtype":"%s{auditlogtype}","preaction":"%s{epreaction}","postaction":"%s{epostaction}"\}\}
 	```
@@ -104,7 +104,7 @@ In the Zscaler ZIA console:
 2. According to your tenant configuration, select `Cloud NSS Feeds` tab
    ![nanolog](/assets/operation_center/integration_catalog/cloud_and_saas/zscaler/zia_cloud.png){: style="max-width:100%"} 
 3. Click on the button `Add Clous NSS Feed` for each type of log type you want to forward
-4. In the modal, in the `General section`, type a name for the feed, select the status `Enabled` . According to the log type you want to forward, select the `NSS type`
+4. In the modal, in the `General section`, type a name for the feed, select the status `Enabled`. According to the log type you want to forward, select the `NSS type`
     1. For `Admin Audit`, `SaaS Security`, `SaaS Security Activity` and `Web Log`, select `NSS for web`
       ![General/web](/assets/operation_center/integration_catalog/cloud_and_saas/zscaler/zia_general_web.png){: style="max-width:100%"} 
     2. For `Firewall Logs` or `DNS logs`, select `NSS for firewall`
