@@ -163,7 +163,7 @@ nav:
           - SentinelOne Cloud Funnel 1.0 [Deprecated]: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
           - SentinelOne Cloud Funnel 2.0: xdr/features/collect/integrations/endpoint/sentinelone_cloudfunnel2.0.md
           - Sophos EDR: xdr/features/collect/integrations/endpoint/sophos_edr.md
-          - Stormshield Endpoint Security: xdr/features/collect/integrations/endpoint/stormshield_endpoint.md
+          - Stormshield SES: xdr/features/collect/integrations/endpoint/stormshield_endpoint.md
           - Symantec/Broadcom Endpoint Security: xdr/features/collect/integrations/endpoint/symantec_epp.md
           - Tanium: xdr/features/collect/integrations/endpoint/tanium.md
           - TEHTRIS EDR: xdr/features/collect/integrations/endpoint/tehtris_edr.md
