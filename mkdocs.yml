@@ -305,6 +305,7 @@ nav:
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
   - Usecases:
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
+    - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
   - FAQ:
     - General: xdr/FAQ.md
     - Alerts: xdr/FAQ/Alerts_qa.md
