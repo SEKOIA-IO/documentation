@@ -27,7 +27,7 @@ The “WebHook notification” will let you send message to interact with third 
 
 !!! info 
     You can’t use the WebHook notification mechanism to push information directly to third parties (such as Slack or Telegram), you have to use an intermediate server. To do so, you can use solutions like IFTTT or a simple HTTP server (see below).
-    There are also playbook templates that can be used to send notifications to Slack or Microsoft Teams directly using Webhooks, see this documentation for more information [Send notifications to a Webhook using a playbook](../xdr/usecases/playbook/notifications_using_playbooks.md
+    There are also playbook templates that can be used to send notifications to Slack or Microsoft Teams directly using Webhooks, see this documentation for more information [Send notifications to a Webhook using a playbook](../xdr/usecases/playbook/notifications_using_playbooks.md)
 
 Here’s an example of a posted content to a configured destination via the WebHook mechanism:
 
