@@ -18,9 +18,29 @@ This setup guide will show you a method to enable and give us access to NSG flow
 
 The following instructions are provided for the Azure web portal (https://portal.azure.com).
 
-As a prerequisite you need at least one virtual machine with a network security group, to enable Network Watcher and to register the Microsoft.Insights provider.
+As a prerequisite you need at least one virtual machine with a network security group:
 
-Navigate to the Network Watcher service, and select `NSG flow logs` under `LOGS`. From the list of NSGs, select your VM(s), and under `Flow logs settings`, select `On` to enable the NSG flow logs. Please, select the Version 2 NSG flow log format sample which is integrated to the Operations Center.
+1. Create a virtual network
+   
+   ![VirtualNetwork](/assets/xdr/features/collect/integrations/cloud_and_saas/azure/virtual-network-azure-portal.png){ align=right width=150 }
+
+2. Create a virtual machine and Register Insights provider
+
+    ![MicrosoftInsights](/assets/xdr/features/collect/integrations/cloud_and_saas/azure/register-microsoft-insights.png){ align=right width=150 }
+
+3. Create a storage account
+
+To enable Network Watcher and to register the Microsoft.Insights provider.
+
+1. Navigate to the Network Watcher service, and select `NSG flow logs` under `LOGS`. 
+2. From the list of NSGs, select your VM(s), and under `Flow logs settings`
+3. Select `On` to enable the NSG flow logs. 
+
+As result you should see the NSG flow logs in the list of NSG flow logs.
+
+![FlowLogsList](/assets/xdr/features/collect/integrations/cloud_and_saas/azure/flow-logs-list.png){ align=right width=150 }
+
+Please, select the Version 2 NSG flow log format sample which is integrated to the Operations Center.
 
 These instructions are illustrated and more detailled [here](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal).
 
