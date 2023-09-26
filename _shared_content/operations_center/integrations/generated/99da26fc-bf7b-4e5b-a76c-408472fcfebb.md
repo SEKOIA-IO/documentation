@@ -46,16 +46,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "user": {
             "name": "AC712341234"
         },
-        "registry": {
-            "path": "HKEY_LOCAL Options",
-            "key": "HKEY_LOCAL_MACHINE Control",
-            "data": {
-                "type": "REG_SZ",
-                "strings": [
-                    " NOEXECUTE=OPTIN  FVEBOOT=1234567  NOVGA"
-                ]
-            }
-        },
         "source": {
             "ip": "1.2.3.4",
             "nat": {
@@ -87,10 +77,23 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "process": {
             "name": "Direct Mapping Worker"
         },
+        "registry": {
+            "path": "HKEY_LOCAL Options",
+            "key": "HKEY_LOCAL_MACHINE Control",
+            "data": {
+                "type": "REG_SZ",
+                "strings": [
+                    " NOEXECUTE=OPTIN  FVEBOOT=1234567  NOVGA"
+                ]
+            }
+        },
         "sophos": {
             "threat_center": {
                 "record_identifier": "d327f865227909ad464d67f8",
                 "id": "0a7e076f-k4p1-428a-8304-azedazedazef",
+                "message": {
+                    "id": "ofiazefoazebfaozuefazeo"
+                },
                 "endpoint": {
                     "type": "computer"
                 },
@@ -164,16 +167,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "user": {
             "name": "AC7500JOIJOIJ"
         },
-        "registry": {
-            "path": "LOCAL_MACHINE/test.exe",
-            "key": "LOCAL_MACHINE/Layers",
-            "data": {
-                "type": "REG_SZ",
-                "strings": [
-                    "HIGHDPITEST"
-                ]
-            }
-        },
         "source": {
             "ip": "1.2.3.4",
             "nat": {
@@ -199,10 +192,23 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "process": {
             "name": "Direct Mapping Worker"
         },
+        "registry": {
+            "path": "LOCAL_MACHINE/test.exe",
+            "key": "LOCAL_MACHINE/Layers",
+            "data": {
+                "type": "REG_SZ",
+                "strings": [
+                    "HIGHDPITEST"
+                ]
+            }
+        },
         "sophos": {
             "threat_center": {
                 "record_identifier": "09dd5e717aa664189dqehbfazuebfazuebfiaze",
                 "id": "a3288afe-799d-aizuef-azfeef-fazef",
+                "message": {
+                    "id": "75e420b40149f07eada47bdb23c28281"
+                },
                 "endpoint": {
                     "type": "computer"
                 },
@@ -317,6 +323,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 },
                 "id": "51a8f1a0-db9d",
                 "logon_process": "NtLmSsp ",
+                "message": {
+                    "id": "7f181e964e95390587e73b"
+                },
                 "endpoint": {
                     "type": "computer"
                 },
@@ -427,6 +436,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "id": "70599d12-fec7-4129-8844-7c6cfded4642",
                 "user_upn": "user.mail@company.fr",
                 "package": "TEST",
+                "message": {
+                    "id": "0cd6e1e0428211eebe560242ac1200020cd6e1e0428211eebe560242ac120002"
+                },
                 "endpoint": {
                     "type": "server"
                 },
@@ -562,6 +574,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "user_upn": "user.mail@company.fr",
                 "logon_process": "logon_process",
                 "package": "TEST",
+                "message": {
+                    "id": "0cd6e1e0428211eebe560242ac1200020cd6e1e0428211eebe560242ac120002"
+                },
                 "endpoint": {
                     "type": "server"
                 },
@@ -692,6 +707,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "threat_center": {
                 "record_identifier": "f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044",
                 "id": "7df406c7-efc9-4c7d-806f-1c7216031630",
+                "message": {
+                    "id": "f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044"
+                },
                 "sha256": {
                     "reputation_band": "KNOWN_GOOD",
                     "reputation_score": "70"
@@ -775,6 +793,127 @@ Find below few samples of events and how they are normalized by Sekoia.io.
 	```
 
 
+=== "ioc_view_query6.json"
+
+    ```json
+	
+    {
+        "message": "{\"upload_size\":4486,\"record_identifier\":\"9be070bb55a846a99c85f38e82afb01b9be070bb55a846a99c85f3\",\"ioc_severity\":5,\"process_cmd_line\":\"\\\"C:\\\\process_cmd_line.EXE\\\" \",\"ioc_event_path\":\"C:\\\\ioc_event_path.EXE\",\"process_ml_score_band\":\"LIKELY_BENIGN\",\"process_parent_name\":\"process_parent_name.exe\",\"folded\":0,\"meta_mac_address\":\"00:11:22:33:44:55\",\"endpoint_id\":\"3494ce1f-08fd-4a03-8948-0cb0945ac521\",\"meta_public_ip_country_code\":\"MAR\",\"schema_version\":\"22\",\"ioc_detection_mitre_attack\":\"[{\\\"tactic\\\":{\\\"description\\\":\\\"description tactic \\\",\\\"external_references\\\":[{\\\"external_id\\\":\\\"EE0003\\\",\\\"source_name\\\":\\\"mitre-attack\\\",\\\"url\\\":\\\"https://test.org/tactics/EE0003\\\"}],\\\"id\\\":\\\"EE0003\\\",\\\"name\\\":\\\"Persistence\\\",\\\"techniques\\\":[{\\\"description\\\":\\\"techniques description\\\",\\\"external_references\\\":[{\\\"external_id\\\":\\\"E1997.009\\\",\\\"source_name\\\":\\\"mitre-attack\\\",\\\"url\\\":\\\"https://test.org/techniques/E1997/009\\\"},{\\\"external_id\\\":\\\"EEEEE-132\\\",\\\"source_name\\\":\\\"EEEEE\\\",\\\"url\\\":\\\"https://test.org/132.html\\\"},{\\\"description\\\":\\\"EEE description\\\",\\\"source_name\\\":\\\"source name 2020 - LNK Elastic\\\",\\\"url\\\":\\\"https://www.youtube.com/watch?v=EEEEEEEE\\\"}],\\\"id\\\":\\\"T1547.009\\\",\\\"name\\\":\\\"Shortcut Modification\\\",\\\"platforms\\\":[\\\"Windows\\\"]}]}}]\",\"ioc_detection_experiment_level\":0,\"ioc_created_at\":\"2023-09-20T09:31:41.937Z\",\"process_name\":\"process_name.EXE\",\"ingestion_timestamp\":\"2023-09-20T09:31:41.090Z\",\"ioc_detection_attack\":\"Suspicious Activity\",\"numerics\":false,\"ioc_event_sid\":\"\",\"process_global_rep\":-1,\"meta_public_ip\":\"1.2.3.4\",\"counter\":33,\"detection_id_dedup\":\"e880fc47a0dc0086a8c2f05b92971d2bce2bdaf3\",\"process_sha256_reputation_band\":\"KNOWN_GOOD\",\"meta_hostname\":\"H3333333333333\",\"ioc_event_sophos_tid\":\"\",\"ioc_event_threat_source\":\"Behavioral\",\"ioc_detection_references\":\"[]\",\"process_file_size\":2119600,\"ioc_worker_name\":\"Direct Mapping Worker\",\"ioc_detection_type\":\"Threat\",\"ioc_event_username\":\"\",\"process_path\":\"C:\\\\process_path.EXE\",\"ioc_detection_category\":\"Threat\",\"ioc_unix_time\":\"2023-09-20T09:28:15.000Z\",\"epoch\":1695009925,\"meta_ip_mask\":\"255.255.255.0\",\"ioc_worker_id\":\"direct_mapping_worker\",\"unix_time\":\"2023-09-20T09:28:15.000Z\",\"ioc_log_type\":\"summary\",\"query_source\":\"xdr_only\",\"sophos_pid\":\"12120:111111111111111111\",\"host_identifier\":\"6f80b628-5b7c-11ee-8c99-0242ac120002\",\"partition_bucket\":\"87\",\"meta_public_ip_country\":\"France\",\"process_local_rep_signers\":\"{\\\"reputationData\\\":{\\\"isSigned\\\":1,\\\"signerInfo\\\":[{\\\"isValid\\\":1,\\\"signer\\\":\\\"Microsoft Corporation\\\"},{\\\"isValid\\\":1,\\\"signer\\\":\\\"Microsoft Corporation\\\"}]}}\",\"meta_boot_time\":1695182611,\"process_pua_score\":17,\"process_sha256_reputation_score\":70,\"meta_os_name\":\"Microsoft Windows 10 Professionnel\",\"process_ml_score\":8,\"osquery_action\":\"added\",\"meta_query_pack_version\":\"1.18.1\",\"calendar_time\":\"2023-09-20T09:28:15.000Z\",\"meta_eid\":\"9cc350ec-283c-451a-b072-4c7df065d350\",\"meta_public_ip_longitude\":-0.076198,\"ioc_detection_id\":\"WIN-DET-T1547.009\",\"meta_os_platform\":\"windows\",\"meta_username\":\"JDOE\",\"process_parent_sophos_pid\":\"14208:111111111111111111\",\"detection_identifier\":\"f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044_b758901433312f4077ce4ed46b776ecc895712ff\",\"query_name\":\"sophos_runtime_iocs_windows\",\"process_cmd_line_truncated\":0,\"meta_os_version\":\"10.0.19045\",\"meta_public_ip_latitude\":51.5082,\"process_sha256\":\"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b\",\"event_count\":1,\"ioc_event_time\":\"2023-09-20T09:28:15.000Z\",\"meta_aggressive_activity\":\"False\",\"ioc_event_events\":\"[{\\\"cmdline\\\":\\\"\\\\\\\"C:\\\\\\\\Program Files (x86)\\\\\\\\Microsoft Office\\\\\\\\root\\\\\\\\Office16\\\\\\\\ONENOTE.EXE\\\\\\\" \\\",\\\"irep\\\":5,\\\"newSpid\\\":{\\\"!spid\\\":\\\"[12120:111111111111111111]\\\"},\\\"pwin32Path\\\":\\\"c:\\\\\\\\Windows\\\\\\\\explorer.exe\\\",\\\"rep\\\":5,\\\"sha256\\\":{\\\"!sha256\\\":\\\"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b\\\"},\\\"spid\\\":{\\\"!spid\\\":\\\"[14208:111111111111111111]\\\"},\\\"type\\\":\\\"ProcessCreate\\\",\\\"win32Path\\\":\\\"C:\\\\\\\\Program Files (x86)\\\\\\\\Microsoft Office\\\\\\\\root\\\\\\\\Office16\\\\\\\\ONENOTE.EXE\\\"},{\\\"fileAttributes\\\":32,\\\"irep\\\":5,\\\"process\\\":\\\"C:\\\\\\\\Program Files (x86)\\\\\\\\Microsoft Office\\\\\\\\root\\\\\\\\Office16\\\\\\\\ONENOTE.EXE\\\",\\\"rep\\\":5,\\\"size\\\":{\\\"!uint64\\\":\\\"0\\\"},\\\"spid\\\":{\\\"!spid\\\":\\\"[12120:111111111111111111]\\\"},\\\"stid\\\":{\\\"!stid\\\":\\\"[5816:111111111111111111]\\\"},\\\"type\\\":\\\"FileOpen\\\",\\\"win32Path\\\":\\\"C:\\\\\\\\Users\\\\\\\\JDOE\\\\\\\\AppData\\\\\\\\Roaming\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\Start Menu\\\\\\\\Programs\\\\\\\\Startup\\\\\\\\Envoyer \\\\u00e0 OneNote.lnk\\\"}]\",\"meta_ip_address\":\"1.2.3.4\",\"process_local_rep\":91,\"ingest_date\":\"2023-09-20\",\"meta_endpoint_type\":\"computer\",\"meta_domain_controller\":\"False\",\"ioc_event_ttp_summary\":\"TA0003-T1547.009\",\"customer_id\":\"9cc350ec-283c-451a-b072-4c7df065d350\",\"message_identifier\":\"f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044\",\"ioc_attack_type\":\"Suspicious Activity\",\"process_pid\":12120,\"ioc_events_size\":1247,\"process_parent_path\":\"C:\\\\Windows\\\\process_parent_path.exe\",\"ioc_detection_weight\":5}",
+        "event": {
+            "kind": "event",
+            "severity": 5,
+            "code": "WIN-DET-T1547.009",
+            "ingested": "2023-09-20T09:31:41.090000Z"
+        },
+        "@timestamp": "2023-09-20T09:28:15Z",
+        "user": {
+            "name": "JDOE"
+        },
+        "source": {
+            "ip": "1.2.3.4",
+            "nat": {
+                "ip": "1.2.3.4"
+            },
+            "mac": "00:11:22:33:44:55",
+            "geo": {
+                "country_iso_code": "MAR",
+                "country_name": "France"
+            },
+            "bytes": 4486,
+            "address": "1.2.3.4"
+        },
+        "host": {
+            "name": "H3333333333333",
+            "id": "6f80b628-5b7c-11ee-8c99-0242ac120002",
+            "os": {
+                "full": "Microsoft Windows 10 Professionnel",
+                "name": "windows",
+                "version": "10.0.19045"
+            }
+        },
+        "process": {
+            "name": "Direct Mapping Worker",
+            "parent": {
+                "name": "process_parent_name.exe",
+                "working_directory": "C:\\Windows\\process_parent_path.exe"
+            },
+            "command_line": "\"C:\\process_cmd_line.EXE\" ",
+            "hash": {
+                "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            }
+        },
+        "file": {
+            "path": "C:\\ioc_event_path.EXE",
+            "size": 2119600,
+            "name": "ioc_event_path.EXE",
+            "directory": "C:"
+        },
+        "sophos": {
+            "threat_center": {
+                "record_identifier": "9be070bb55a846a99c85f38e82afb01b9be070bb55a846a99c85f3",
+                "id": "3494ce1f-08fd-4a03-8948-0cb0945ac521",
+                "message": {
+                    "id": "f94976c04e9a3863965cf49ea581e5a0cb2cad90fa949a44a443b7b2b3c9a044"
+                },
+                "endpoint": {
+                    "type": "computer"
+                },
+                "worker": {
+                    "id": "direct_mapping_worker"
+                },
+                "aggressive_activity": "False",
+                "detection_id_dedup": "e880fc47a0dc0086a8c2f05b92971d2bce2bdaf3",
+                "process": {
+                    "ml_score": "8",
+                    "pua": {
+                        "score": "17"
+                    },
+                    "hash": {
+                        "sha256": {
+                            "reputation_band": "KNOWN_GOOD",
+                            "reputation_score": "70"
+                        }
+                    }
+                },
+                "ioc": {
+                    "ttp_summary": "TA0003-T1547.009",
+                    "log_type": "summary",
+                    "attack_type": "Suspicious Activity",
+                    "unix_time": "2023-09-20T09:28:15.000000Z",
+                    "detection": {
+                        "attack": "Suspicious Activity",
+                        "weight": "5",
+                        "type": "Threat",
+                        "category": "Threat"
+                    }
+                },
+                "query": {
+                    "source": "xdr_only",
+                    "action": "added",
+                    "pack_version": "1.18.1",
+                    "name": "sophos_runtime_iocs_windows"
+                },
+                "ml": {
+                    "score_band": "LIKELY_BENIGN"
+                }
+            }
+        },
+        "related": {
+            "hash": [
+                "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            ],
+            "ip": [
+                "1.2.3.4"
+            ],
+            "user": [
+                "JDOE"
+            ]
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -812,6 +951,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.parent.command_line` | `wildcard` | Full command line that started the process. |
 |`process.parent.executable` | `keyword` | Absolute path to the process executable. |
 |`process.parent.name` | `keyword` | Process name. |
+|`process.parent.working_directory` | `keyword` | The working directory of the process. |
 |`process.pid` | `long` | Process id. |
 |`registry.data.strings` | `wildcard` | List of strings representing what was written to the registry. |
 |`registry.data.type` | `keyword` | Standard registry type for encoding contents |
@@ -843,11 +983,13 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sophos.threat_center.ioc.detection.type` | `keyword` | IOC type |
 |`sophos.threat_center.ioc.detection.weight` | `keyword` | vulnerability weight |
 |`sophos.threat_center.ioc.log_type` | `keyword` | Log type |
+|`sophos.threat_center.ioc.ttp_summary` | `keyword` | Tactics, Techniques, and Procedures summary |
 |`sophos.threat_center.ioc.unix_time` | `keyword` | Unix time |
 |`sophos.threat_center.logon_process` | `keyword` | Verify the identity of the user or system attempting to access the resources |
 |`sophos.threat_center.lolbins_ml_results.score` | `keyword` | Lolbins machine learning score |
 |`sophos.threat_center.lolbins_ml_results.score_label` | `keyword` | Lolbins machine learning score label |
 |`sophos.threat_center.lolbins_ml_results.sha256` | `keyword` | Lolbins machine learning sha256 |
+|`sophos.threat_center.message.id` | `keyword` | Message ID |
 |`sophos.threat_center.ml.score` | `keyword` | Machine learning score |
 |`sophos.threat_center.ml.score_band` | `keyword` | Machine learning score band |
 |`sophos.threat_center.ml_score_data.config_version` | `keyword` |  |
@@ -858,6 +1000,10 @@ The following table lists the fields that are extracted, normalized under the EC
 |`sophos.threat_center.package` | `keyword` | Name of package files |
 |`sophos.threat_center.password.last_set` | `keyword` | last time the password is set  |
 |`sophos.threat_center.process.executable.is_signed` | `boolean` | Is the image of the process signed |
+|`sophos.threat_center.process.hash.sha256.reputation_band` | `keyword` | Hash reputation band |
+|`sophos.threat_center.process.hash.sha256.reputation_score` | `keyword` | Hash reputation score |
+|`sophos.threat_center.process.ml_score` | `keyword` | An AI detection score |
+|`sophos.threat_center.process.pua.score` | `keyword` | Potentially Unwanted Application score |
 |`sophos.threat_center.pua.score` | `keyword` | The PUA score |
 |`sophos.threat_center.query.action` | `keyword` | The query action |
 |`sophos.threat_center.query.name` | `keyword` | The query name |
