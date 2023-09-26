@@ -36,7 +36,9 @@ Once your playbook is created, the following configuration steps are required:
 
 ## Customize your notifications
 
-The Slack and Teams playbook templates are provided as examples of notifications that can be sent to these solutions, you can customize the playbooks to your needs by adding additionnal actions to retrieve more data from the alerts and events and add them to the payload sent. Keep in mind that the payload must match the format expected by the third parties.
+The Slack and Teams playbook templates are provided as examples of notifications that can be sent to these solutions. You can customize the playbooks to suit your needs by adding additional actions to retrieve more data from the alerts and events and add them to the payload sent. 
+
+Keep in mind that the payload must match the format expected by the third parties.
 
 ## External references
 
