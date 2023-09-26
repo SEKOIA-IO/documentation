@@ -211,6 +211,6 @@ output {
 
 ## External references
 
-[logstash HTTP output plugin]: https://www.elastic.co/guide/en/logstash/current/plugins-outputs-http.html
-[Logstash Multiple Pipelines]: https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
-[Logstash Pipeline-to-pipeline communication]: https://www.elastic.co/guide/en/logstash/current/pipeline-to-pipeline.html
+- [logstash HTTP output plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-http.html)
+- [Logstash Multiple Pipelines](https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html)
+- [Logstash Pipeline-to-pipeline communication](https://www.elastic.co/guide/en/logstash/current/pipeline-to-pipeline.html)
