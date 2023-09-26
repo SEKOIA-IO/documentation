@@ -115,6 +115,7 @@ nav:
             - Google Cloud VPC Flow Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
             - Google Workspace: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
           - Imperva WAF: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
+          - Jumpcloud Directory Insights: xdr/features/collect/integrations/cloud_and_saas/jumpcloud_directory_insights.md
           - Microsoft Azure:
             - Azure Active Directory: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
             - Azure Front Door: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
@@ -264,6 +265,7 @@ nav:
         - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
         - IPtoASN: xdr/features/automate/library/iptoasn.md
         - Imperva: xdr/features/automate/library/imperva.md
+        - Jumpcloud: xdr/features/automate/library/jumpcloud-directory-insights.md
         - MISP: xdr/features/automate/library/misp.md
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
