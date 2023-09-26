@@ -17,6 +17,9 @@ This use case describes how to send a notification to a third party system like 
 
 Playbook templates were created to ease the process of setting up the playbooks to send the notifications to Slack or Teams. 
 
+To create one, follow these steps: 
+
+
 - **Go to** the [Playbook page](https://app.sekoia.io/operations/playbooks)
 - **Click** on `+ New Playbook`
 - If multi-tenant is available, **select** the Community where the Playbook should be executed
