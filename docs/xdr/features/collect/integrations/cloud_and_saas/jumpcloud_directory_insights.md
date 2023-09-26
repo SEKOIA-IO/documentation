@@ -16,7 +16,9 @@ Jumpcloud Directory Insights provides activity records related to your organizat
 
 ### Generate API token
 
-Sign-in in your Jumpcloud tenant with administrator role, click on your username on the top right of the screen and select `My API Key`.
+1. Sign-in in your Jumpcloud tenant with administrator role
+2. Click on your username on the top right of the screen 
+3. Select `My API Key
 
 ### Create the intake in Sekoia.io
 
