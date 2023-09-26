@@ -22,7 +22,9 @@ Jumpcloud Directory Insights provides activity records related to your organizat
 
 ### Create the intake in Sekoia.io
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Jumpcloud Directory Insights`. Copy the intake key.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) 
+2. Create a new intake from the format `Jumpcloud Directory Insights`. 
+3. Copy the intake key
 
 ### Pull events
 
