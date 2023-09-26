@@ -70,8 +70,8 @@ output {
 
 ## Advanced configuration
 
-!!! warn
-    This advanced configuration is provided as-is by Sekoia.io for experienced Logstash administrators. Sekoia.io will only provide best effort support on this configuration.
+!!! warning
+    This advanced configuration is provided as-is by Sekoia.io for experienced Logstash administrators. Sekoia.io will provide best effort support on this configuration.
 
 The above configuration will send your logs one at a time (one HTTP request per log), this configuration will work for single pipeline / low log throughput.
 
