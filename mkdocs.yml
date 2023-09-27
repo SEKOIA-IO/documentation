@@ -252,6 +252,7 @@ nav:
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Cybereason: xdr/features/automate/library/cybereason.md
         - Cybereason: xdr/features/automate/library/cybereason.md
+        - Cybereason: xdr/features/automate/library/cybereason.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
         - Digital Shadows: xdr/features/automate/library/digital-shadows.md
         - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
@@ -426,6 +427,7 @@ nav:
         - CrowdStrike: tip/features/automate/library/crowdstrike.md
         - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - Cybereason: tip/features/automate/library/cybereason.md
+        - Cybereason: tip/features/automate/library/cybereason.md
         - Detection Rules: tip/features/automate/library/detection-rules.md
         - Digital Shadows: tip/features/automate/library/digital-shadows.md
         - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
@@ -592,8 +594,8 @@ plugins:
       integrations/sophos_fw.md: xdr/features/collect/integrations/network/sophos_fw.md
       integrations/spamassassin.md: xdr/features/collect/integrations/email/spamassassin.md
       integrations/squid.md: xdr/features/collect/integrations/network/squid.md
-      integrations/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
       integrations/stormshield_endpoint.md: xdr/features/collect/integrations/network/stormshield_endpoint.md
+      integrations/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
       integrations/suricata.md: xdr/features/collect/integrations/network/suricata.md
       integrations/symantec-endpoint-protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
       integrations/symantec_endpoint_protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
