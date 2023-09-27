@@ -119,7 +119,7 @@ In the Zscaler ZIA console:
     1. Select `Other` as the `SIEM Type`
     2. Uncheck `OAUTH2.0 Authentication`
     3. For the `Max batch size`, set `512 kb`
-    4. As the API URL, type `[https://intake.sekoia.io/plain?status_code=200](https://intake.sekoia.io/plain?status_code=200)`
+    4. As the API URL, type `https://intake.sekoia.io/plain?status_code=200`
     5. Click on the button `Add HTTP Header` and add the HTTP header `X-SEKOIAIO-INTAKE-KEY` with our intake key as the value
     ![Connectivity](/assets/operation_center/integration_catalog/cloud_and_saas/zscaler/zia_siem_connectivity.png){: style="max-width:100%"} 
 6. In the `Formatting` section
