@@ -45,12 +45,3 @@ Logs are available and displayed for 90 days in Sekoia.io.
 
 ## Archiving & Rehydratation
 Please contact your support for more information on archives and events rehydratation, with a clear description of your needs.
-
-## Ingestion
-
-### Datetime representation
-
-SEKOIA.IO accepts two kind of representations of a datetime in the events:
-
-- as a string with a timezone (like ISO8601 or RFC3339 strings)
-- as a timestamp (from the seconds to the nanoseconds representation) or as a string without a timezone, in the UTC timezone

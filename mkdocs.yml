@@ -313,6 +313,7 @@ nav:
       - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
     - Rules: xdr/FAQ/Rules_qa.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
+    - Datetime representation: xdr/FAQ/datetime.md
   - Develop:
     - Quickstart: xdr/develop/quickstart.md
     - Guides:
