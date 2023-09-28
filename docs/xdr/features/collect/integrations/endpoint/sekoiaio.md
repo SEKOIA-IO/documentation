@@ -218,6 +218,60 @@ To uninstall the agent, follow the instructions specific to your OS.
     sudo rm -rf /etc/endpoint-agent
     ```
 
+## Watch for logs in files
+
+!!! INFO
+    This feature is currently in beta.
+
+The agent offers to send to Sekoia.io logs contained in files.
+
+If you want to enable this feature, follow these steps: 
+
+1. Edit the configuration file at:
+	
+	=== "Windows"
+	
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
+
+2. Add the following configuration:
+	
+	```yaml
+	logfiles:
+	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
+	      intakekey: {intake key}  # Intake key to use to send the events
+	```
+
+!!! WARNING
+    It is important to use an intake key from a format that matches the content of the log file.
+
+    i.e. To watch NGINX access logs we must have a intake key from the NGINX format.
+
+Once the configuration file has been modified, the agent must be restarted:
+
+=== "Windows"
+
+    The following command must be executed **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    The following command must be executed:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
 ## Retention
 
 The agent sends the host logs through the internet. If the host stops accessing the internet, the agent will store the logs locally on disk on a 100 MB memory space that cannot be customized. Once the logs exceed the size of the buffer, the older ones are replaced by newers. When the internet connexion is operational again, the older logs are sent first to Sekoia.io.
@@ -261,25 +315,26 @@ Here's a non-exhaustive list of kind of events the agent is able to detect
 
 ## Proxy Support
 
-If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests. If you want to enable this feature, edit
-the configuration file at:
+If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests. 
+If you want to enable this feature, follow these steps: 
+1. Edit the configuration file at:
+	
+	=== "Windows"
+	
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
 
-=== "Windows"
-
-    ```
-    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-    ```
-
-=== "Linux"
-
-    ```
-    /etc/endpoint-agent/config.yaml
-    ```
-
-and add the following line:
-```
-HTTPProxyURL: "<PROXY_URL>"
-```
+2. Add the following line:
+	```
+	HTTPProxyURL: "<PROXY_URL>"
+	```
 
 If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
@@ -331,13 +386,12 @@ agent-latest.exe <command> [<args>]
 | install | install the agent |
 | update | update the agent |
 | uninstall |uninstall the agent |
-| service | control the service |
 
 
 ## Resources footprint
 
 We monitor the agent metrics and try to keep its footprint as small as possible. 
-Right now, our agent uses on average less than 3% of CPU and less than 1% of RAM.
+Right now, our agent uses on average less than 1% of CPU and around 36MB RAM.
 
 ## Troubleshoot
 The first step to troubleshoot your Sekoia agent installation is to check the logs
