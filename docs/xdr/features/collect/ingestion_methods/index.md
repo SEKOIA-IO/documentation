@@ -28,3 +28,7 @@ To push your events through our HTTP log collector, you have to `POST` your logs
 ## Cloud & SaaS integration
 
 Sekoia.io is also able to retrieve logs and data from cloud platforms, such as Microsoft Azure, Amazon Web Services or Google Cloud.
+
+## Datetime representation in the events
+
+Sekoia.io accepts any representation of a datetime; see [Datetime representation](../../../FAQ/datetime.md) for more details.
