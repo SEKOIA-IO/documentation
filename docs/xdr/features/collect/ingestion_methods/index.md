@@ -31,4 +31,4 @@ Sekoia.io is also able to retrieve logs and data from cloud platforms, such as M
 
 ## Datetime representation in the events
 
-SEKOIA.IO accepts any representation of a datetime; see [Datetime representation](../../../FAQ/datetime.md) for more details.
+Sekoia.io accepts any representation of a datetime; see [Datetime representation](../../../FAQ/datetime.md) for more details.
