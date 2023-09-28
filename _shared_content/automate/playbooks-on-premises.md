@@ -97,9 +97,8 @@ It can be used with any action in Sekoia.io playbooks.
 To create a playbook runner, follow these steps: 
 
 1. On the playbooks listing page, click on the `Playbook runners` button in the top right of the screen
-    ![create playbook runner](/assets/playbooks/create_runner.png)
+    ![create playbook runner](/assets/playbooks/create_runner.png){: style="max-width:100%"}
 2. In the playbook runners page, click on `+ Set up a playbook runner` or `+ Playbook runner`
-    ![setup playbook runner](/assets/playbooks/setup_playbook_runner.png)
 3. Give a name to your playbook runner
 4. Follow the instructions displayed to install the playbook runner on your machine.
     ![playbook runner instructions](/assets/playbooks/playbook_runner_instructions.png){: style="max-width:100%"}
