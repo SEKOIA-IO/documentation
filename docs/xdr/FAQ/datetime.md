@@ -3,7 +3,7 @@
 
 ## Representation
 
-In the events, SEKOIA.IO accepts any representation of a datetime:
+In the events, Sekoia.io accepts any representation of a datetime:
 
 - as a string representation:
 	- [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) representation
