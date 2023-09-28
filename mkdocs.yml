@@ -237,6 +237,7 @@ nav:
       - Dashboards: xdr/features/report/dashboards.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
+      - Playbooks On-premises: xdr/features/automate/playbooks-on-premises.md
       - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: xdr/features/automate/navigate-playbooks.md
       - Build playbooks: xdr/features/automate/build-playbooks.md
@@ -304,6 +305,7 @@ nav:
         - WithSecure: xdr/features/automate/library/withsecure.md
         - fileutils: xdr/features/automate/library/fileutils.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
+      
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
