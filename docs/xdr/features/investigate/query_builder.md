@@ -1,6 +1,6 @@
 # Query Builder (beta)
 
-Start exploring your data with the Query Builder. Hunt for threats, get analytics, create reports. Query Builder is a simple form which allows you to build queries to explore your data. 
+Start exploring your data with the Query Builder. Hunt for threats, get analytics, create reports. The Query Builder is a simple form which allows you to build queries to explore your data. 
 Using a SQL syntax, you can now aggregate your data to extract new insights. Query Builder also offer the possibility to visualize data through different kind of charts.
 
 At the moment, only the `Events` table is available but more tables are coming: Alerts, Cases, Assets, CTI and more.
