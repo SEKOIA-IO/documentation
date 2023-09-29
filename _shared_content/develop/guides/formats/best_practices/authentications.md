@@ -333,55 +333,55 @@ This event represents a successful authentication on a Windows host collected th
 The previous event will result into this ECS document:
 
 ```json
-    "event": {
-      "code": "4624",
-      "provider": "Microsoft-Windows-Security-Auditing",
-      "category": [
-        "authentication"
-      ],
-      "type": [
-        "start"
-      ],
-      "action": "authentication_network"
-    },
-    "sekoiaio": {
-      "client": {
-        "os": {
-          "type": "windows"
-        },
-        "name": "V-FOO"
+{
+  "event": {
+    "code": "4624",
+    "provider": "Microsoft-Windows-Security-Auditing",
+    "category": [
+      "authentication"
+    ],
+    "type": [
+      "start"
+    ],
+    "action": "authentication_network"
+  },
+  "sekoiaio": {
+    "client": {
+      "os": {
+        "type": "windows"
       },
-      "server": {
-        "name": "V-FOO",
-        "os": {
-          "type": "windows"
-        }
-      }
-    },
-    "action": {
-      "outcome": "success"
-    },
-    "host": {
       "name": "V-FOO"
     },
-    "process": {
-      "thread": {
-        "id": 2352
-      },
-      "pid": 744,
-      "id": 744,
-      "name": "NtLmSsp "
-    },
-    "user": {
-      "id": "S-1-0-0",
-      "target": {
-        "name": "SVC_DD_SP-SEARCH",
-        "domain": "KEY",
-        "id": "S-1-5-21-1574594750-1263408776-2012955550-69701"
-      },
-      "name": "-",
-      "domain": "-"
+    "server": {
+      "name": "V-FOO",
+      "os": {
+        "type": "windows"
+      }
     }
+  },
+  "action": {
+    "outcome": "success"
+  },
+  "host": {
+    "name": "V-FOO"
+  },
+  "process": {
+    "thread": {
+      "id": 2352
+    },
+    "pid": 744,
+    "id": 744,
+    "name": "NtLmSsp "
+  },
+  "user": {
+    "id": "S-1-0-0",
+    "target": {
+      "name": "SVC_DD_SP-SEARCH",
+      "domain": "KEY",
+      "id": "S-1-5-21-1574594750-1263408776-2012955550-69701"
+    },
+    "name": "-",
+    "domain": "-"
   }
 }
 ```
