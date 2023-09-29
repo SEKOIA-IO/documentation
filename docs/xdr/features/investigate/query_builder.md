@@ -13,7 +13,7 @@ Select a table to query in the `From` clause and use `Add clause` button to refi
 
 ![clauses](/assets/operation_center/events/qb-clauses.gif){: style="max-width:100%"}
 
-The Query Builder comes with standard SQL clauses.
+The Query Builder comes with the following clauses:
 
 | Clause | Description |
 | --- | --- |
