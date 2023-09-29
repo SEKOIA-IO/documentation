@@ -9,7 +9,7 @@ At the moment, only the `Events` table is available but more tables are coming: 
 
 ## Build your query
 
-Start by selecting a table to query in `From` clause and use the `Add clause` button to refine your query.
+Select a table to query in the `From` clause and use `Add clause` button to refine your query.
 
 ![clauses](/assets/operation_center/events/qb-clauses.png){: style="max-width:100%"}
 
@@ -17,16 +17,16 @@ The Query Builder comes with standard SQL clauses.
 
 | Clause | Description |
 | --- | --- |
-| SELECT | Choose the columns you want to display |
+| SELECT | Choose columns you want to display |
 | AGGREGATION | Aggregate rows with `average` / `count` / `min` / `max` / `sum` / `unique count` |
 | WHERE | Define query conditions |
-| GROUP BY | Group by a value |
-| ORDER BY | Order by a value |
+| GROUP BY | Group rows by identical data |
+| ORDER BY | Order rows by a specific value |
 | LIMIT | Limit the number of rows in results |
 
 ### Aggregation
 
-Create an aggregation by using the `Aggregate` clause. Select a type of aggregation, a column and a label for the result column.
+Create an aggregation by using the `Aggregate` clause. Select a type of aggregation, a column and a label for your aggregation.
 
 ![aggregation](/assets/operation_center/events/qb-aggregation.png){: style="max-width:100%"}
 
@@ -114,8 +114,8 @@ Choose a title for your query and click on the `Save` button.
 Your last result is also saved and will be displayed when you open your saved query.
 
 !!! note 
-    Saved queries are visible to all users of your community.<br/>
-    For MSSP multi-tenant, saved queries are not visible in sub or parent communities.
+    - Saved queries are visible to all users of your community.<br/>
+    - In MSSP multi-tenancy, saved queries are not visible in sub or parent communities.
 
 ## Export your results
 
