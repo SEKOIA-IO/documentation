@@ -7,9 +7,35 @@ An authentication is fully recognized as valid when all of these four fields are
 - event.category : with the value `authentication`
 - event.type : with the value `start`
 - action.outcome : with the value `success` if the authentication successed or `failure` else
-- user.name, user.id or user.email: with the name, the identifier or the email of the principal
 
-You can also extract some additional information like ip addresses, hostname or urls.
+Other fields are necessary in order to be able to fully describe the authentication. These fields are described in the table below
+
+| Field                       | Description                                                          |
+| --------------------------- | -------------------------------------------------------------------- |
+| event.action                | Logon action type                                                    |
+| event.reason                | Reason type                                                          |
+| sekoiaio.client.name        | Hostname from which authentication is requested                      |
+| sekoiaio.client.domain      | Domain of the host from which authentication is requested            |
+| sekoiaio.client.os.type     | OS type of the host from which authentication is requested           |
+| client.ip                   | IP of the host from which authentication is requested                |
+| client.geo.country_iso_code | ISO COUNTRY CODE of the host from which authentication is requested  |
+| sekoiaio.server.name        | Host name  targeted by the authentication                            |
+| sekoiaio.server.domain      | Host domain targeted by the authentication                           |
+| sekoiaio.server.os.type     | OS type of the host targeted by the authentication                   |
+| server.ip                   | Host ip targeted by the authentication                               |
+| server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
+| process.name                | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
+| user.name                   | user name has requested authentication                               |
+| user.domain                 | user domain has requested authentication                             |
+| user.id                     | user id has requested authentication                                 |
+| user.email                  | user email has requested authentication                              |
+| user.target.name            | user name targeted by the authentication                             |
+| user.target.domain          | user domain targeted by the authentication                           |
+| user.target.id              | user id targeted by the authentication                               |
+| user.target.email           | user email targeted by the authentication                            |
+
+
+You can also extract some additional information like urls, user agent, ...
 
 ## Application authentications
 
@@ -68,7 +94,7 @@ will result into this ECS document
   "action": {
     "outcome": "success"
   },
-  "source": {
+  "client": {
     "ip": "1.2.3.4"
   }
 }
@@ -110,7 +136,7 @@ will result into this ECS document
   "action": {
     "outcome": "success"
   },
-  "source": {
+  "client": {
     "ip": "192.168.0.1"
   },
   "url": {
@@ -144,11 +170,16 @@ will result into this ECS document
   "action": {
     "outcome": "success"
   },
-  "source": {
+  "client": {
     "ip": "1.2.3.4"
   },
-  "destination": {
-    "address": "example.intranet"
+  "sekoiaio": {
+    "client": {
+      "name": "source.hostname"
+    },
+    "server": {
+      "name": "example.intranet"
+    }
   }
 }
 ```
@@ -159,30 +190,32 @@ From the previous samples, we can build the following smart-description:
 
 ```json
 {
-  "value": "{user.name} sign in from {source.ip}",
+  "value": "{user.name} sign in from {sekoiaio.client.name} ({client.ip})",
   "conditions": [
      {"field": "event.category", "value": "authentication"},
      {"field": "event.type", "value": "start"},
      {"field": "user.name"},
-     {"field": "source.ip"}
+     {"field": "sekoiaio.client.name"},
+     {"field": "client.ip"}
   ]
 }
 ```
 
 For the AWS cloudtrail event, this smart-description will result into:
 
-`1111111111 sign in from 1.2.3.4`
+`1111111111 sign in from source.hostname (1.2.3.4)`
 
 However, If you extract more information from the event, you can improve the smart-description:
 
 ```json
 {
-  "value": "{user.name} sign in from {source.ip} on {url.original}",
+  "value": "{user.name} sign in from {sekoiaio.client.name} ({client.ip}) on {url.original}",
   "conditions": [
      {"field": "event.category", "value": "authentication"},
      {"field": "event.type", "value": "start"},
      {"field": "user.name"},
-     {"field": "source.ip"}
+     {"field": "sekoiaio.client.name"},
+     {"field": "client.ip"},
      {"field": "url.original"}
   ]
 }
@@ -190,49 +223,16 @@ However, If you extract more information from the event, you can improve the sma
 
 For the Salesforce event, this smart-description will result into:
 
-`john.doe@example.org sign in from 192.168.0.1 on https://login.salesforce.com`
+`john.doe@example.org sign in from source.hostname (192.168.0.1) on https://login.salesforce.com`
 
-## OS authentications
-
-Operating systems may provide further information about authentications.
-
-Other fields are necessary in order to be able to fully describe the authentication. These fields are described in the table below
-
-| Field                       | Description                                                          |
-| --------------------------- | -------------------------------------------------------------------- |
-| event.action                | Logon action type                                                    |
-| event.reason                | Reason type                                                          |
-| sekoiaio.client.name        | Hostname from which authentication is requested                      |
-| sekoiaio.client.domain      | Domain of the host from which authentication is requested            |
-| client.ip                   | IP of the host from which authentication is requested                |
-| sekoia.client.os.type       | OS type of the host from which authentication is requested           |
-| client.geo.country_iso_code | ISO COUNTRY CODE of the host from which authentication is requested  |
-| process.name                | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
-| sekoiaio.server.name        | Host name  targeted by the authentication                            |
-| sekoiaio.server.domain      | Host domain targeted by the authentication                           |
-| server.ip                   | Host ip targeted by the authentication                               |
-| server.os.type              | Host os targeted by the authentication                               |
-| server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
-| client.user.name            | user name has requested authentication                               |
-| client.user.domain          | user domain has requested authentication                             |
-| client.user.id              | user id has requested authentication                                 |
-| client.user.email           | user email has requested authentication                              |
-| user.target.name            | user name targeted by the authentication                             |
-| user.target.domain          | user domain targeted by the authentication                           |
-| user.target.id              | user id targeted by the authentication                               |
-| user.target.email           | user email targeted by the authentication                            |
-
-In the following, we give concrete examples on different dialects, to help fill in these fields.
-
-
-### An user authentication on a Windows Host
+## Windows OS authentications
 
 Sources:
 
 - [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
 - [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
 
-#### action.outcome
+### action.outcome
 
 For windows events, we can map action.id with action.outcome as follow:
 
@@ -241,7 +241,7 @@ For windows events, we can map action.id with action.outcome as follow:
 | 4624      | `success`      |
 | 4625      | `failure`      |
 
-#### event.action
+### event.action
 
 For windows events, we can map `action.properties.LogonType` with `event.action` as follow:
 
@@ -259,7 +259,7 @@ For windows events, we can map `action.properties.LogonType` with `event.action`
 | 12                          | authentication_cached_remote_interactive |
 | 13                          | authentication_cached_unlock             |
 
-#### event.reason
+### event.reason
 
 For windows events, we can map `action.properties.SubStatus` with `event.reason` as follow:
 
@@ -279,11 +279,12 @@ For windows events, we can map `action.properties.SubStatus` with `event.reason`
 | 0xc000015b                  |	user_not_granted                         |
 
 
-#### How to parse and describe a Windows authentication
+### Parsing example for a Windows authentication
 
+#### Success authentication example
 This event represents a successful authentication on a Windows host collected through a nxlog collector.
 
-```json
+```
 {
   "EventTime": "2010-06-18 15:28:23",
   "Hostname": "V-FOO",
@@ -301,7 +302,6 @@ This event represents a successful authentication on a Windows host collected th
   "ProcessID": 744,
   "ThreadID": 2352,
   "Channel": "Security",
-  "Message": "An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nLogon Type:\t\t\t3\r\n\r\nImpersonation Level:\t\tImpersonation\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-21-1574594750-1263408776-2012955550-69701\r\n\tAccount Name:\t\tSVC_DD_SP-SEARCH\r\n\tAccount Domain:\t\tKEY\r\n\tLogon ID:\t\t0xFBEE0744\r\n\tLogon GUID:\t\t{00000000-0000-0000-0000-000000000000}\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0x0\r\n\tProcess Name:\t\t-\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tV-FOO\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tNtLmSsp \r\n\tAuthentication Package:\tNTLM\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\tNTLM V2\r\n\tKey Length:\t\t128\r\n\r\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\r\n\r\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\r\n\r\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\r\n\r\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\r\n\r\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\r\n\r\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\r\n\r\nThe authentication information fields provide detailed information about this specific logon request.\r\n\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\r\n\t- Transited services indicate which intermediate services have participated in this logon request.\r\n\t- Package name indicates which sub-protocol was used among the NTLM protocols.\r\n\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.",
   "Category": "Logon",
   "Opcode": "Info",
   "SubjectUserSid": "S-1-0-0",
@@ -333,37 +333,54 @@ This event represents a successful authentication on a Windows host collected th
 The previous event will result into this ECS document:
 
 ```json
-{
-  "event": {
-    "code": "4624",
-    "provider": "Microsoft-Windows-Security-Auditing",
-    "category": [
-      "authentication"
-    ],
-    "type": [
-      "start"
-    ]
-  },
-  "action": {
-    "record_id": 10457874880,
-    "type": "Security",
-    "id": 4624,
-    "name": "An account was successfully logged on",
-    "outcome": "success",
-    "properties": [{
-          "LogonType": "3",
-    }]
-  },
-  "host": {
-    "hostname": "V-FOO",
-    "name": "V-FOO"
-  },
-  "user": {
-    "id": "S-1-0-0",
-    "target": {
-      "name": "SVC_DD_SP-SEARCH",
-      "domain": "KEY",
-      "id": "S-1-5-21-1574594750-1263408776-2012955550-69701"
+    "event": {
+      "code": "4624",
+      "provider": "Microsoft-Windows-Security-Auditing",
+      "category": [
+        "authentication"
+      ],
+      "type": [
+        "start"
+      ],
+      "action": "authentication_network"
+    },
+    "sekoiaio": {
+      "client": {
+        "os": {
+          "type": "windows"
+        },
+        "name": "V-FOO"
+      },
+      "server": {
+        "name": "V-FOO",
+        "os": {
+          "type": "windows"
+        }
+      }
+    },
+    "action": {
+      "outcome": "success"
+    },
+    "host": {
+      "name": "V-FOO"
+    },
+    "process": {
+      "thread": {
+        "id": 2352
+      },
+      "pid": 744,
+      "id": 744,
+      "name": "NtLmSsp "
+    },
+    "user": {
+      "id": "S-1-0-0",
+      "target": {
+        "name": "SVC_DD_SP-SEARCH",
+        "domain": "KEY",
+        "id": "S-1-5-21-1574594750-1263408776-2012955550-69701"
+      },
+      "name": "-",
+      "domain": "-"
     }
   }
 }
@@ -372,26 +389,132 @@ The previous event will result into this ECS document:
 With the following smart-description:
 
 ```json
-  {
-    "value": "{user.target.domain}\\{user.target.name} logged on to {host.name} (LogonType {action.properties.LogonType})",
-    "relationships": [
-      {
-        "source": "user.target.name",
-        "target": "host.name",
-        "type": "logged on to"
-      }
-    ],
-    "conditions": [
-      {"field": "action.id", "value": 4624},
-      {"field": "user.target.name"},
-      {"field": "user.target.domain"},
-      {"field": "host.name"},
-      {"field": "action.properties.LogonType"},
-      { "field": "event.provider", "value": "Microsoft-Windows-Security-Auditing"}
-    ]
-  }
+{
+  "value": "{user.target.domain}\\{user.target.name} logged on to {sekoiaio.server.name} ({event.action})",
+  "relationships": [
+    {
+      "source": "user.target.name",
+      "target": "sekoiaio.server.name",
+      "type": "event.action"
+    }
+  ],
+  "conditions": [
+    {"field": "event.category", "value": "authentication"},
+    {"field": "event.type", "value": "start"},
+    {"field": "action.outcome", "value": "success"},
+    {"field": "event.action"},
+    {"field": "user.target.name"},
+    {"field": "user.target.domain"},
+    {"field": "sekoiaio.server.name"},
+    {"field": "event.provider", "value": "Microsoft-Windows-Security-Auditing"}
+  ]
+}
 ```
 
 will result into the description:
 
-`KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (LogonType 3)`
+`KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (authentication_network)`
+
+
+#### Failure authentication example
+This event represents a failing authentication on a Windows host collected through a nxlog collector.
+
+```
+{
+  "ProcessName": "-",
+  "Channel": "Security",
+  "Hostname": "vm-foo",
+  "LogonType": "3",
+  "SourceName": "Microsoft-Windows-Security-Auditing",
+  "IpPort": "-",
+  "Severity": "Info",
+  "SubjectLogonId": "0x3e7",
+  "SubjectUserName": "VM-FOO$",
+  "EventID": "4625",
+  "IpAddress": "-",
+  "SubjectDomainName": "CORPDOMAIN",
+  "ProcessId": "0x354",
+  "LogonProcessName": "Schannel",
+  "SubjectUserSid": "S-1-5-18",
+  "TargetUserSid": "S-1-0-0"
+}
+```
+
+The previous event will result into this ECS document:
+
+```json
+{
+  "event": {
+    "code": "4625",
+    "provider": "Microsoft-Windows-Security-Auditing",
+    "category": [
+      "authentication"
+    ],
+    "type": [
+      "start"
+    ],
+    "action": "authentication_network"
+  },
+  "sekoiaio": {
+    "client": {
+      "os": {
+        "type": "windows"
+      },
+      "name": "vm-foo"
+    },
+    "server": {
+      "name": "vm-foo",
+      "os": {
+        "type": "windows"
+      }
+    }
+  },
+  "action": {
+    "outcome": "failure"
+  },
+  "host": {
+    "name": "vm-foo"
+  },
+  "user": {
+    "id": "S-1-5-18",
+    "target": {
+      "id": "S-1-0-0"
+    },
+    "name": "VM-FOO$",
+    "domain": "CORPDOMAIN"
+  },
+  "process": {
+    "name": "Schannel"
+  }
+}
+```
+
+With the following smart-description:
+
+```json
+{
+  "value": "{user.target.domain}\\{user.target.name} failed to log on to {sekoiaio.server.name} ({event.action})",
+  "relationships": [
+    {
+      "source": "user.target.name",
+      "target": "sekoiaio.server.name",
+      "type": "event.action"
+    }
+  ],
+  "conditions": [
+    {"field": "event.category", "value": "authentication"},
+    {"field": "event.type", "value": "start"},
+    {"field": "action.outcome", "value": "failure"},
+    {"field": "event.action"},
+    {"field": "user.target.name"},
+    {"field": "user.target.domain"},
+    {"field": "sekoiaio.server.name"},
+    {"field": "event.provider", "value": "Microsoft-Windows-Security-Auditing"}
+  ]
+}
+```
+
+will result into the description:
+
+`KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (authentication_network)`
+
