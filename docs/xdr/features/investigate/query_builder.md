@@ -90,7 +90,7 @@ You can display your results in a table or select a chart type (Pie chart or Ver
 
 ![pie chart](/assets/operation_center/events/qb-pie-chart.png){: style="max-width:100%"}
 
-Use the pie chart to show how a total amount is divided between distinct groups. We have limited the max number of values in pie chart to 10 to ensure a correct display.
+Use the pie chart to show how a total amount is divided between distinct groups. We have limited the max number of values in pie chart to 40 to ensure a correct display.
 
 - In `Label` field, select the column you want to use as a label.
 - In `Value` field, select the column you want to use as a value.
@@ -101,7 +101,7 @@ If possible, we will try to automatically select adequate columns.
 
 ![bar chart](/assets/operation_center/events/qb-bar-chart.png){: style="max-width:100%"}
 
-Use the vertical bar chart to compare values between different groups. We have limited the max number of values in vertical chart to 20 to ensure a correct display.
+Use the vertical bar chart to compare values between different groups. We have limited the max number of values in vertical chart to 80 to ensure a correct display.
 
 - In `X-axis`, select the column you want to use. This column can be of any type.
 - In `Y-axis`, select the column you want to use. This column must be a numeric value.
