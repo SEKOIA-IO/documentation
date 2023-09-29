@@ -233,6 +233,7 @@ nav:
       - Cases: xdr/features/investigate/cases.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
+      - Query Builder (beta): xdr/features/investigate/query_builder.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
     - Automate:
