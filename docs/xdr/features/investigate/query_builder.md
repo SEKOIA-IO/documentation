@@ -76,7 +76,7 @@ You can display your results in a table or select a chart type (Pie chart or Ver
 
     There are 3 **rate limits**:
 
-    1. **Maximum number of processed rows:** At the moment the maximum value is 10 000. We are working on increasing this limit.
+    1. **Maximum number of processed rows:** At the moment the maximum value is 10 000. ```
     2. **Maximum number of query:** 10 query executions are allowed per minute.
     3. **Query timeout:** A query will timeout automatically after 10 minutes.
 
