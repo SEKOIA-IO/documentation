@@ -5,13 +5,13 @@ Using a SQL syntax, you can now aggregate your data to extract new insights. Que
 
 At the moment, only the `Events` table is available but more tables are coming: Alerts, Cases, Assets, CTI and more.
 
-![query builder](/assets/operation_center/events/query-builder.png){: style="max-width:100%"}
+![query builder](/assets/operation_center/events/qb-run.gif){: style="max-width:100%"}
 
 ## Build your query
 
 Select a table to query in the `From` clause and use `Add clause` button to refine your query.
 
-![clauses](/assets/operation_center/events/qb-clauses.png){: style="max-width:100%"}
+![clauses](/assets/operation_center/events/qb-clauses.gif){: style="max-width:100%"}
 
 The Query Builder comes with standard SQL clauses.
 
@@ -28,7 +28,7 @@ The Query Builder comes with standard SQL clauses.
 
 Create an aggregation by using the `Aggregate` clause. Select a type of aggregation, a column and a label for your aggregation.
 
-![aggregation](/assets/operation_center/events/qb-aggregation.png){: style="max-width:100%"}
+![aggregation](/assets/operation_center/events/qb-aggregation.gif){: style="max-width:100%"}
 
 The following aggregation types are available.
 
@@ -47,23 +47,21 @@ Use the following operators to define your conditions in the `WHERE` clause.
 
 | Operator | Description |
 | --- | --- |
-| is | Equals |
-| is not | Not equals |
-| starts with | Starts with the specified value. `starts with` is case-sensitive |
-| does not start with | Does not start with the specified value. `does not start with` is case-sensitive |
-| ends with | Ends with the specified value. `ends with` is case-sensitive |
-| does not end with | Does not end with the specified value. `does not end with` is case-sensitive |
-| contains | Contains the specified value. `contains` is case-sensitive |
-| does not contain | Does not contain the specified value. `does not contain` is case-sensitive |
+| is | Equals (case-sensitive) |
+| is not | Not equals (case-sensitive) |
+| starts with | Starts with the specified value (case-sensitive) |
+| does not start with | Does not start with the specified value (case-sensitive) |
+| ends with | Ends with the specified value (case-sensitive) |
+| does not end with | Does not end with the specified value (case-sensitive) |
+| contains | Contains the specified value (case-sensitive) |
+| does not contain | Does not contain the specified value (case-sensitive) |
 | exists | Has a value |
 | does not exists | Does not have a value |
+| within | Within the specified date range |
 | < | Strictly less than |
 | <= | Less than or equal to |
 | > | Strictly more than |
 | >= | More than or equal to |
-
-!!! note
-    Operators `starts with`, `does not start with`, `ends with`, `does not end with`, `contains`, `does not contain` are case-sensitive
 
 ## Run your query
 
