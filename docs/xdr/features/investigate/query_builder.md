@@ -113,7 +113,7 @@ Your last result is also saved and will be displayed when you open your saved qu
 
 !!! note 
     - Saved queries are visible to all users of your community.<br/>
-    - In MSSP multi-tenancy, saved queries are not visible in sub or parent communities.
+    - In MSSP multi-tenancy, saved queries are not visible in sub-communities.
 
 ## Export your results
 
