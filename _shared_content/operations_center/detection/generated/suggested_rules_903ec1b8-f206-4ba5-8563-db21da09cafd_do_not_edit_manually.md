@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Palo Alto Next-Generation Firewall** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Palo Alto NGFW** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Palo Alto Next-Generation Firewall on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_903ec1b8-f206-4ba5-8563-db21da09cafd_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Palo Alto NGFW on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_903ec1b8-f206-4ba5-8563-db21da09cafd_do_not_edit_manually.json){ .md-button }
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -14,6 +14,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Palo Alto Next-Generation Fi
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
     
     - **Effort:** advanced
+
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
+    
+    - **Effort:** intermediate
 
 ??? abstract "NTDS.dit File In Suspicious Directory"
     

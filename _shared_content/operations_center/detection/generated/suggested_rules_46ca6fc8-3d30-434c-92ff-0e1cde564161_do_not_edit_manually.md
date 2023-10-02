@@ -45,6 +45,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Proofpoint TAP** with the fo
     
     - **Effort:** master
 
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module

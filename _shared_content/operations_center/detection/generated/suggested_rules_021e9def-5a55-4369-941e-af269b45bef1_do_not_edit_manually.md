@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Elastic AuditBeat Linux** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x AuditBeat Linux on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Elastic AuditBeat Linux on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_021e9def-5a55-4369-941e-af269b45bef1_do_not_edit_manually.json){ .md-button }
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -300,6 +300,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **AuditBeat Linux** with the f
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** intermediate
+
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
     
     - **Effort:** intermediate
 

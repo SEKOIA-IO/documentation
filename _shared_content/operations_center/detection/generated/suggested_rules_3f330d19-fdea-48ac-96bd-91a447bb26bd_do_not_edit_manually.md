@@ -51,6 +51,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos EDR** with the follow
     
     - **Effort:** master
 
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
