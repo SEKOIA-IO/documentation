@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **StormShield Endpoint Security [BETA]** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **StormShield SES [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x StormShield Endpoint Security [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x StormShield SES [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.json){ .md-button }
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -480,6 +480,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **StormShield Endpoint Securit
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** intermediate
+
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
     
     - **Effort:** intermediate
 

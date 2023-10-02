@@ -849,6 +849,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sekoia.io Endpoint Agent** w
     
     - **Effort:** elementary
 
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
+    
+    - **Effort:** intermediate
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.

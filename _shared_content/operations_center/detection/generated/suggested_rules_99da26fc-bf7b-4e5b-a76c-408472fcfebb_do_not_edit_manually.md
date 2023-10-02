@@ -87,6 +87,24 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** intermediate
 
+??? abstract "CMSTP UAC Bypass via COM Object Access"
+    
+    Detects UAC Bypass Attempt Using Microsoft Connection Manager Profile Installer Autoelevate-capable COM Objects
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE 2022-1292"
+    
+    The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
+    
+    Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
+    
+    - **Effort:** master
+
 ??? abstract "Capture a network trace with netsh.exe"
     
     Detects capture a network trace via netsh.exe trace functionality
@@ -129,6 +147,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** intermediate
 
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** elementary
+
 ??? abstract "Commonly Used Commands To Stop Services And Remove Backups"
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
@@ -152,6 +176,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
     
     - **Effort:** elementary
+
+??? abstract "Csrss Child Found"
+    
+    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
+    
+    - **Effort:** intermediate
 
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
@@ -273,6 +303,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** intermediate
 
+??? abstract "Exchange Server Creating Unusual Files"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
+    
+    - **Effort:** intermediate
+
 ??? abstract "Exchange Server Spawning Suspicious Processes"
     
     Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.
@@ -303,6 +339,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** advanced
 
+??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
+    
+    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189
+    
+    - **Effort:** elementary
+
+??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
+    
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    
+    - **Effort:** intermediate
+
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
@@ -332,6 +380,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
     
     - **Effort:** elementary
+
+??? abstract "Formbook Hijacked Process Command"
+    
+    Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Grabbing Sensitive Hives Via Reg Utility"
     
@@ -525,6 +579,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Office Creating Suspicious File"
+    
+    Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Office Product Spawning Windows Shell"
     
     Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
@@ -548,6 +608,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     Detects the use of various web request methods executed remotely via Windows PowerShell
     
     - **Effort:** intermediate
+
+??? abstract "NTDS.dit File In Suspicious Directory"
+    
+    The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
+    
+    - **Effort:** advanced
 
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
@@ -590,6 +656,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
     
     - **Effort:** master
+
+??? abstract "Netsh Program Allowed With Suspicious Location"
+    
+    Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -654,6 +726,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
 ??? abstract "OceanLotus Registry Activity"
     
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
     
     - **Effort:** intermediate
 
@@ -801,6 +879,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** advanced
 
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
@@ -812,6 +896,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
     
     - **Effort:** elementary
+
+??? abstract "Rare Logonui Child Found"
+    
+    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
+    
+    - **Effort:** advanced
+
+??? abstract "Rare Lsass Child Found"
+    
+    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Rclone Process"
     
@@ -858,6 +954,18 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
 ??? abstract "Schtasks Suspicious Parent"
     
     Detects schtasks started from suspicious and/or unusual processes.
+    
+    - **Effort:** intermediate
+
+??? abstract "Searchprotocolhost Child Found"
+    
+    SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
+    
+    - **Effort:** intermediate
+
+??? abstract "SolarWinds Suspicious File Creation"
+    
+    Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
     
     - **Effort:** intermediate
 
@@ -1005,6 +1113,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
+    
+    Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Regsvr32 Execution"
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
@@ -1059,11 +1173,23 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** master
 
+??? abstract "Taskhost or Taskhostw Suspicious Child Found"
+    
+    Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
+    
+    - **Effort:** advanced
+
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "Trickbot Malware Activity"
+    
+    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
+    
+    - **Effort:** intermediate
 
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -1101,6 +1227,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     
     - **Effort:** master
 
+??? abstract "WCE wceaux.dll Creation"
+    
+    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
+
 ??? abstract "WMI Install Of Binary"
     
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
@@ -1124,6 +1256,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Sophos Analysis Threat Cente
     Detects products being uninstalled using WMIC command.
     
     - **Effort:** intermediate
+
+??? abstract "Webshell Creation"
+    
+    Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
+    
+    - **Effort:** master
 
 ??? abstract "Webshell Execution W3WP Process"
     

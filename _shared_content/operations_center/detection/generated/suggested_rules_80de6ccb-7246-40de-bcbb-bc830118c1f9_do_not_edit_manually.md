@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Github Audit Logs [BETA]** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Github Audit logs [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Github Audit Logs [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_80de6ccb-7246-40de-bcbb-bc830118c1f9_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Github Audit logs [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_80de6ccb-7246-40de-bcbb-bc830118c1f9_do_not_edit_manually.json){ .md-button }
 ??? abstract "GitHub Delete Action"
     
     Detects a Delete/Destroy action in GitHub audit logs.
@@ -32,6 +32,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Github Audit Logs [BETA]** w
     Detects an outside collaborator being removed or having its permissions changed.
     
     - **Effort:** advanced
+
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Nimbo-C2 User Agent"
     

@@ -1,4 +1,4 @@
-Rules catalog includes **749 built-in detection rules** ([_last update on 2023-09-20_](rules_changelog.md)).
+Rules catalog includes **752 built-in detection rules** ([_last update on 2023-10-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -4563,6 +4563,12 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
     
 **Access Token Manipulation**
 
+??? abstract "Jumpcloud Api Key Updated"
+    
+    An API Token has been updated on Jumplcoud portal.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Meterpreter or Cobalt Strike Getsystem Service Installation"
     
     Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
@@ -4610,6 +4616,12 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
     
     - **Effort:** intermediate
     
@@ -5184,6 +5196,10 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/09/2023 - minor - Improve filter to reduce false positives
+            
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
     Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
@@ -5921,6 +5937,12 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
     
 **Access Token Manipulation**
 
+??? abstract "Jumpcloud Api Key Updated"
+    
+    An API Token has been updated on Jumplcoud portal.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Meterpreter or Cobalt Strike Getsystem Service Installation"
     
     Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
@@ -6211,6 +6233,10 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/09/2023 - minor - Extend to some usage without dll filename
+            
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -6286,6 +6312,12 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
     
     - **Effort:** intermediate
     
@@ -6391,6 +6423,10 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/09/2023 - minor - Improve filter to reduce false positives
+            
 ??? abstract "Unusual Process Executed in Temporary Directory"
     
     Identifies processes running in a temporary folder. This is sometimes done by adversaries to hide malware.
@@ -9002,6 +9038,12 @@ Rules catalog includes **749 built-in detection rules** ([_last update on 2023-0
     
 **Account Access Removal**
 
+??? abstract "Jumpcloud Account Locked"
+    
+    A user has been locked on Jumpcloud portal.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Okta User Account Locked"
     
     An user has been locked in Okta.

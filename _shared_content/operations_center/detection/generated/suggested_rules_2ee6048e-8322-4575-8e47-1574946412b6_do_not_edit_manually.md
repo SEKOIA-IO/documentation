@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Email Security Appliance [BETA]** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Cisco ESA [BETA]** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Cisco Email Security Appliance [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2ee6048e-8322-4575-8e47-1574946412b6_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Cisco ESA [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_2ee6048e-8322-4575-8e47-1574946412b6_do_not_edit_manually.json){ .md-button }
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -168,6 +168,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Cisco Email Security Applian
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
     
     - **Effort:** intermediate
 

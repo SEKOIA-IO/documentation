@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Fortigate** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Fortinet FortiGate** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Fortigate on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_5702ae4e-7d8a-455f-a47b-ef64dd87c981_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Fortinet FortiGate on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_5702ae4e-7d8a-455f-a47b-ef64dd87c981_do_not_edit_manually.json){ .md-button }
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
@@ -116,6 +116,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Fortigate** with the followi
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
     
     - **Effort:** master
+
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Koadic MSHTML Command"
     

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Winlogbeat** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Elastic Winlogbeat** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Winlogbeat on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_c10307ea-5dd1-45c6-85aa-2a6a900df99b_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Elastic Winlogbeat on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_c10307ea-5dd1-45c6-85aa-2a6a900df99b_do_not_edit_manually.json){ .md-button }
 ??? abstract "Account Added To A Security Enabled Group"
     
     Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
@@ -44,6 +44,12 @@ Benefit from SEKOIA.IO built-in rules and upgrade **Winlogbeat** with the follow
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
+
+??? abstract "Jumpcloud Policy Modified"
+    
+    Detects when a Jumpcloud policy is modified.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
