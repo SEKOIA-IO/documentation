@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Crowdstrike Falcon Telemetry [BETA]** with the following detection capabilities out-of-the-box.
+Benefit from SEKOIA.IO built-in rules and upgrade **Crowdstrike Falcon Telemetry** with the following detection capabilities out-of-the-box.
 
-[SEKOIA.IO x Crowdstrike Falcon Telemetry [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_10999b99-9a8d-4b92-9fbd-01e3fac01cd5_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Crowdstrike Falcon Telemetry on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_10999b99-9a8d-4b92-9fbd-01e3fac01cd5_do_not_edit_manually.json){ .md-button }
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it

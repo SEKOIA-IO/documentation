@@ -1,7 +1,13 @@
-Changelog _last update on 2023-10-02_
+Changelog _last update on 2023-10-09_
 
 ## Changelog
 
+### Login Brute-Force Successful
+  - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
+    
+### PowerView commandlets 2
+  - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+    
 ### Suspicious Rundll32.exe Execution
   - 21/09/2023 - minor - Extend to some usage without dll filename
     
