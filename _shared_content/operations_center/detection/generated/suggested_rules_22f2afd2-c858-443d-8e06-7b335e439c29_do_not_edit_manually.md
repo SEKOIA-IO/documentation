@@ -171,6 +171,36 @@ Benefit from SEKOIA.IO built-in rules and upgrade **CrowdStrike Falcon** with th
     
     - **Effort:** elementary
 
+??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with high severity
+    
+    - **Effort:** intermediate
+
+??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with informational severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with low severity
+    
+    - **Effort:** advanced
+
+??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with medium severity
+    
+    - **Effort:** advanced
+
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection

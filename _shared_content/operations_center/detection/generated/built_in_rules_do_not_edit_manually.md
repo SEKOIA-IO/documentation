@@ -1,4 +1,4 @@
-Rules catalog includes **752 built-in detection rules** ([_last update on 2023-10-02_](rules_changelog.md)).
+Rules catalog includes **757 built-in detection rules** ([_last update on 2023-10-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -7473,12 +7473,16 @@ Rules catalog includes **752 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
-??? abstract "Login Brute-Force Successful Using Su"
+??? abstract "Login Brute-Force Successful"
     
-    A user has attempted to login several times (brute-force) on su command and succeeded to login.
+    A user has attempted to login several times (brute-force) and succeeded to login.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
+            
 ??? abstract "Password Change Brute-Force On AzureAD"
     
     A change of password has failed on Azure Active Directory, 5 times for the same user
@@ -7707,6 +7711,10 @@ Rules catalog includes **752 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+            
 ??? abstract "SCM Database Handle Failure"
     
     Detects non-system users failing to get a handle of the SCM database.
@@ -7773,6 +7781,10 @@ Rules catalog includes **752 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+            
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
@@ -7939,6 +7951,10 @@ Rules catalog includes **752 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+            
 ??? abstract "Remote Enumeration of Lateral Movement Groups"
     
     Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
@@ -7981,6 +7997,10 @@ Rules catalog includes **752 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+            
 **Domain Trust Discovery**
 
 ??? abstract "AdFind Usage"
@@ -8025,6 +8045,10 @@ Rules catalog includes **752 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+            
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
