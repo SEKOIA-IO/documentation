@@ -1,7 +1,16 @@
-Changelog _last update on 2023-10-09_
+Changelog _last update on 2023-10-10_
 
 ## Changelog
 
+### Microsoft 365 (Office 365) Mass Download By A Single User
+  - 09/10/2023 - major - Fix field names to match the current parser.
+    
+### Microsoft 365 (Office 365) Unusual Volume Of File Deletion
+  - 09/10/2023 - major - Fix field names to match the current parser.
+    
+### Microsoft 365 (Office 365) Potential Ransomware Activity Detected
+  - 09/10/2023 - major - Fix field names to match the current parser.
+    
 ### Login Brute-Force Successful
   - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
     

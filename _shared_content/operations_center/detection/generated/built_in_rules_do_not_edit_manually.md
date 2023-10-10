@@ -1,4 +1,4 @@
-Rules catalog includes **757 built-in detection rules** ([_last update on 2023-10-09_](rules_changelog.md)).
+Rules catalog includes **760 built-in detection rules** ([_last update on 2023-10-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -508,6 +508,12 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+??? abstract "Trend Micro Apex One Intrusion Detection Alert"
+    
+    Trend Micro Apex One has raised an alert for an intrusion detection.
+    
+    - **Effort:** intermediate
+    
 **Exploit Public-Facing Application**
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
@@ -802,12 +808,20 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2023 - major - Fix field names to match the current parser.
+            
 ??? abstract "Microsoft 365 (Office 365) Potential Ransomware Activity Detected"
     
     Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2023 - major - Fix field names to match the current parser.
+            
 ??? abstract "Microsoft 365 (Office 365) Safe Attachment Rule Disabled"
     
     Detects when the safe attachment rule has been deleted in Microsoft 365 (Office 365). Safe Attachments is a feature in Microsoft Defender for Microsoft 365 (Office 365) that opens email attachments in a special hypervisor environment to detect malicious activity.
@@ -826,6 +840,10 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2023 - major - Fix field names to match the current parser.
+            
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -1751,6 +1769,18 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
+    
+    Trend Micro Apex One has raised an alert for data loss prevention.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Trend Micro Apex One Malware Alert"
+    
+    Trend Micro Apex One has detected a malware.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
@@ -2250,12 +2280,20 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2023 - major - Fix field names to match the current parser.
+            
 ??? abstract "Microsoft 365 (Office 365) Potential Ransomware Activity Detected"
     
     Detects when Microsoft Cloud App Security reports that a user has uploaded files to the cloud that might be infected with ransomware.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2023 - major - Fix field names to match the current parser.
+            
 ??? abstract "Microsoft 365 (Office 365) Safe Attachment Rule Disabled"
     
     Detects when the safe attachment rule has been deleted in Microsoft 365 (Office 365). Safe Attachments is a feature in Microsoft Defender for Microsoft 365 (Office 365) that opens email attachments in a special hypervisor environment to detect malicious activity.
@@ -2274,6 +2312,10 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/10/2023 - major - Fix field names to match the current parser.
+            
 ??? abstract "Microsoft 365 Defender Alert"
     
     Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
@@ -2469,6 +2511,18 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     Tehtris EDR telemetry has raised an alert.
     
     - **Effort:** master
+    
+??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
+    
+    Trend Micro Apex One has raised an alert for data loss prevention.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Trend Micro Apex One Malware Alert"
+    
+    Trend Micro Apex One has detected a malware.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Vectra General Threat Detection"
     
@@ -2911,6 +2965,18 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
+??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
+    
+    Trend Micro Apex One has raised an alert for data loss prevention.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Trend Micro Apex One Malware Alert"
+    
+    Trend Micro Apex One has detected a malware.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -3434,6 +3500,12 @@ Rules catalog includes **757 built-in detection rules** ([_last update on 2023-1
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
     
     - **Effort:** master
+    
+??? abstract "Trend Micro Apex One Intrusion Detection Alert"
+    
+    Trend Micro Apex One has raised an alert for an intrusion detection.
+    
+    - **Effort:** intermediate
     
 **Create Account**
 
