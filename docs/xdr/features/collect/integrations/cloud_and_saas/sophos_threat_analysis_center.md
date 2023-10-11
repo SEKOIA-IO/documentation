@@ -9,9 +9,9 @@ The Sophos Threat Analysis Center (STAC), is a dedicated tool for research and a
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-{!\_shared_content/operations_center/detection/generated/suggested_rules_99da26fc-bf7b-4e5b-a76c-408472fcfebb_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_99da26fc-bf7b-4e5b-a76c-408472fcfebb_do_not_edit_manually.md!}
 
-{!\_shared_content/operations_center/integrations/generated/99da26fc-bf7b-4e5b-a76c-408472fcfebb.md!}
+{!_shared_content/operations_center/integrations/generated/99da26fc-bf7b-4e5b-a76c-408472fcfebb.md!}
 
 ## Configure
 

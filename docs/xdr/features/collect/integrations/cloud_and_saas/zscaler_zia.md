@@ -21,9 +21,9 @@ This integration can ingest the following logs:
 - `Tunnel`
 - `Web Log`
 
-{!\_shared_content/operations_center/detection/generated/suggested_rules_dc0f339f-5dbe-4e68-9fa0-c63661820941_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_dc0f339f-5dbe-4e68-9fa0-c63661820941_do_not_edit_manually.md!}
 
-{!\_shared_content/operations_center/integrations/generated/dc0f339f-5dbe-4e68-9fa0-c63661820941.md!}
+{!_shared_content/operations_center/integrations/generated/dc0f339f-5dbe-4e68-9fa0-c63661820941.md!}
 
 ## Configure
 
