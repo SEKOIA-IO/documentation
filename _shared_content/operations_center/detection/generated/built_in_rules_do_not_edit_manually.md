@@ -1,4 +1,4 @@
-Rules catalog includes **760 built-in detection rules** ([_last update on 2023-10-11_](rules_changelog.md)).
+Rules catalog includes **762 built-in detection rules** ([_last update on 2023-10-11_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -311,6 +311,12 @@ Rules catalog includes **760 built-in detection rules** ([_last update on 2023-1
     
 **Compromise Accounts**
 
+??? abstract "Cisco Identity Services Engine Configuration Changed"
+    
+    Cisco Identity Services Engine (ISE) has detected a device configuration changed (Added, Changed or Deleted). This should be reviewed in order to check if this an expected admin action.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -339,6 +345,12 @@ Rules catalog includes **760 built-in detection rules** ([_last update on 2023-1
     
         - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
             
+??? abstract "Varonis Data Security Email Alert"
+    
+    Varonis Data Security has raised an alert related to a supervised email account.
+    
+    - **Effort:** master
+    
 **Obtain Capabilities**
 
 ??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
