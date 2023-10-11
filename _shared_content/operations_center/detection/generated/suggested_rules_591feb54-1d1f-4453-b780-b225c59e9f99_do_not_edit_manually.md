@@ -1,6 +1,6 @@
 ## Related Built-in Rules
 
-Benefit from SEKOIA.IO built-in rules and upgrade **Cisco NX-OS [BETA]** with the following detection capabilities out-of-the-box.
+The following Sekoia.io built-in rules match the intake **Cisco NX-OS [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Cisco NX-OS [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_591feb54-1d1f-4453-b780-b225c59e9f99_do_not_edit_manually.json){ .md-button }
 ??? abstract "AccCheckConsole Executing Dll"
