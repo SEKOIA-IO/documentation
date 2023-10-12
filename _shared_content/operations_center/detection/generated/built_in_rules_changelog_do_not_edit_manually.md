@@ -1,7 +1,10 @@
-Changelog _last update on 2023-10-11_
+Changelog _last update on 2023-10-12_
 
 ## Changelog
 
+### AdFind Usage
+  - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
+    
 ### Microsoft 365 (Office 365) Mass Download By A Single User
   - 09/10/2023 - major - Fix field names to match the current parser.
     
