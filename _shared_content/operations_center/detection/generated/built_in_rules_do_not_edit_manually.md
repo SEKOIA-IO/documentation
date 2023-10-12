@@ -1,4 +1,4 @@
-Rules catalog includes **762 built-in detection rules** ([_last update on 2023-10-11_](rules_changelog.md)).
+Rules catalog includes **762 built-in detection rules** ([_last update on 2023-10-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8093,6 +8093,10 @@ Rules catalog includes **762 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
+            
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
