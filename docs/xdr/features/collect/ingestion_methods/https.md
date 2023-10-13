@@ -109,9 +109,9 @@ For numerous events, you can use the alternative endpoint `/batch`. The events s
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
-## Push our events to Sekoia.io as JSON array
+## Push our events to Sekoia.io as JSON List
 
-To send us events as JSON array, you should set `Content-Type` HTTP header to `application/json`.
+To send us events as JSON list, you should set `Content-Type` HTTP header to `application/json`.
 
 The following headers are handled by Sekoia.io’S HTTPS log collector:
 
@@ -163,6 +163,34 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
     ```
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
+
+
+## Push our events to Sekoia.io as JSON Array
+
+To send us events as JSON array, with the ability to send in the same batch several events from distinct intake keys, you should set `Content-Type` HTTP header to `application/json`. Intake key can only be sent in the JSON payload.
+
+Use the endpoint `/array`. This endpoint accepts a set of events:
+
+```python
+import requests
+
+events = [
+    {
+        "timestamp": "2021-04-05T21:33:31+02:00", # (1)
+        "intake_key": "YOUR_INTAKE_KEY",
+        "json": "[764008:0] info: 198.51.100.10 example.org. A IN",
+    },
+    {
+        "intake_key": "ANOTHER_INTAKE_KEY",
+        "json": "[764023:0] info: 2.34.100.56 text.org. A IN",
+    },
+]
+response = requests.post("https://intake.sekoia.io/array", json=events)
+print(response.text) # (2)
+```
+
+1. Optional.
+2. Will print `{"event_ids":["ba2098cc-5fcf-4ad1-8d1d-af55750220ec","921b214c-fb89-4e27-a1fd-266f1837ea31"]}`
 
 ## Push our events to Sekoia.io as structured content
 
