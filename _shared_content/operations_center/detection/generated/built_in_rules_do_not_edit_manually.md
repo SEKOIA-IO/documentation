@@ -1,4 +1,4 @@
-Rules catalog includes **762 built-in detection rules** ([_last update on 2023-10-12_](rules_changelog.md)).
+Rules catalog includes **763 built-in detection rules** ([_last update on 2023-10-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1833,6 +1833,12 @@ Rules catalog includes **762 built-in detection rules** ([_last update on 2023-1
     
         - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
             
+??? abstract "WithSecure Elements Critical Severity"
+    
+    WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
+    
+    - **Effort:** advanced
+    
 ??? abstract "XSL Script Processing And SquiblyTwo Attack"
     
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
@@ -2548,6 +2554,12 @@ Rules catalog includes **762 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** elementary
     
+??? abstract "WithSecure Elements Critical Severity"
+    
+    WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
+    
+    - **Effort:** advanced
+    
 **System Services**
 
 ??? abstract "Credential Dumping Tools Service Execution"
@@ -3072,6 +3084,12 @@ Rules catalog includes **762 built-in detection rules** ([_last update on 2023-1
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
+??? abstract "WithSecure Elements Critical Severity"
+    
+    WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.

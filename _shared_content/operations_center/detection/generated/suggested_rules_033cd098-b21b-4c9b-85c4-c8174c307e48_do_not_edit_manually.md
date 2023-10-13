@@ -987,6 +987,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** master
 
+??? abstract "WithSecure Elements Critical Severity"
+    
+    WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
+    
+    - **Effort:** advanced
+
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
