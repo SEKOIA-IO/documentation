@@ -43,7 +43,7 @@ This array shows the different types of comparison available with examples:
 |>=|Greater than or equal to|{{ node.1['urgency']['current_value'] }}|{{ 80 }}|For number comparison, it is needed to transform the value as an "Integer" because it is interpreted as a String by default. For that the value is surrounded by curly brackets.|
 |in|Includes in|{{ node.1['rule']['name'] }}|["my rule 1", "my second rule", "my third rule"]||
 |not in|Not includes in|{{ node.1['rule']['name'] }}|["my rule 1", "my second rule", "my third rule"]||
-|range|In the range of|{{ node.1['urgency']['current_value'] }}|[10, 100]|Edge values are included in the range|
+|range|In the range of|{{ node.1['urgency']['current_value'] }}|[{{10}}, {{100}}]|Edge values are included in the range|
 
 ### Foreach
 
