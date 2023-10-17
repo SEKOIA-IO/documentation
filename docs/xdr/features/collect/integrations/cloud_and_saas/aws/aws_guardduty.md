@@ -5,9 +5,6 @@ type: intake
 ## Overview
 AWS GuardDuty is a service that detects potential security issues within your network.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_3e060900-4004-4754-a597-d2944a601930_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/3e060900-4004-4754-a597-d2944a601930.md!}
