@@ -218,7 +218,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     sudo rm -rf /etc/endpoint-agent
     ```
 
-## Watch for logs in files
+## Collect logs in files
 
 !!! INFO
     This feature is currently in beta.
