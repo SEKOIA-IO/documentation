@@ -220,8 +220,12 @@ To uninstall the agent, follow the instructions specific to your OS.
 
 ## Collect logs in files
 
-!!! INFO
+!!! WARNING
     This feature is currently in beta.
+
+!!! INFO
+    This feature allows you to monitor and collect logs from applications such as NGINX. For all system-related events, the agent automatically collects these logs without you having to do a thing.
+    
 
 The agent offers to send to Sekoia.io logs contained in files.
 
