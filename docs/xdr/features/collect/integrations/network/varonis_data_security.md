@@ -6,10 +6,6 @@ type: intake
 
 Varonis offers solutions to track and protect data.
 
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_7b75d498-4a65-4d44-aa81-31090d723a60_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/7b75d498-4a65-4d44-aa81-31090d723a60.md!}

@@ -151,7 +151,7 @@ nav:
             - Auditbeat Linux: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
             - Winlogbeat: xdr/features/collect/integrations/endpoint/winlogbeat.md
           - CrowdStrike Falcon: xdr/features/collect/integrations/endpoint/crowdstrike_falcon.md
-          - CrowdStrike Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_telemetry.md
+          - CrowdStrike Falcon Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_falcon_telemetry.md
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
           - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
           - Darktrace Threat Visualizer: xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md
@@ -188,7 +188,7 @@ nav:
             - Cisco Identity Services Engine (ISE): xdr/features/collect/integrations/network/cisco/cisco_identity_services_engine_ise.md
             - Cisco NX-OS: xdr/features/collect/integrations/network/cisco/cisco_nx_os.md
             - Cisco Meraki MX: xdr/features/collect/integrations/network/cisco/cisco_meraki_mx.md
-          - Citrix ADC: xdr/features/collect/integrations/network/citrix_adc.md
+          - Citrix Netscaler / ADC: xdr/features/collect/integrations/network/citrix_netscaler_adc.md
           - Gatewatcher AionIQ: xdr/features/collect/integrations/network/gatewatcher_aioniq.md
           - F5 BIG-IP: xdr/features/collect/integrations/network/f5-big-ip.md
           - Forcepoint Secure Web Gateway: xdr/features/collect/integrations/network/forcepoint_web_gateway.md

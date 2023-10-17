@@ -1,13 +1,10 @@
 uuid: 02a74ceb-a9b0-467c-97d1-588319e39d71
-name: Citrix ADC
+name: Citrix NetScaler / ADC
 type: intake
 
 ## Overview
 
-Citrix ADC (formely Citrix NetScaler) is a delivery controller and load-balancing tool that offers enhanced security and application performance.
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+Citrix NetScaler / ADC (formely Citrix NetScaler) is a delivery controller and load-balancing tool that offers enhanced security and application performance.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_02a74ceb-a9b0-467c-97d1-588319e39d71_do_not_edit_manually.md!}
 

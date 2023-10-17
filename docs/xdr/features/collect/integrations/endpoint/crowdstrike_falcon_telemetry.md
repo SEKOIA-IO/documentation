@@ -1,5 +1,5 @@
 uuid: 10999b99-9a8d-4b92-9fbd-01e3fac01cd5
-name: CrowdStrike Telemetry
+name: CrowdStrike Falcon Telemetry
 type: intake
 
 ## Overview
@@ -34,7 +34,7 @@ To set up the integration:
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `CrowdStrike Telemetry`. Copy the intake key.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `CrowdStrike Falcon Telemetry`. Copy the intake key.
 
 
 ### Pull events

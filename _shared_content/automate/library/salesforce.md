@@ -14,7 +14,7 @@ Salesforce provides users comprehensive tools to manage customer data, automate 
 
 ## Triggers
 
-### [BETA] Collect Salesforce events
+### Collect Salesforce events
 
 Trigger playbook to get Salesforce information
 
