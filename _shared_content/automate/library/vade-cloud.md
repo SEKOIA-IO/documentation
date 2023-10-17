@@ -2,8 +2,6 @@
 
 ![Vade Cloud](/assets/playbooks/library/vade-cloud.png){ align=right width=150 }
 
-
-
 ## Configuration
 
 | Name      |  Type   |  Description  |
@@ -14,7 +12,7 @@
 
 ## Triggers
 
-### [BETA] Fetch new logs from Vade Cloud
+### Fetch new logs from Vade Cloud
 
 Get last logs from the Vade Cloud platform
 
