@@ -151,7 +151,7 @@ nav:
             - Auditbeat Linux: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
             - Winlogbeat: xdr/features/collect/integrations/endpoint/winlogbeat.md
           - CrowdStrike Falcon: xdr/features/collect/integrations/endpoint/crowdstrike_falcon.md
-          - CrowdStrike Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_telemetry.md
+          - CrowdStrike Falcon Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_falcon_telemetry.md
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
           - Cybereason MalOp activity: xdr/features/collect/integrations/endpoint/cybereason_malop_activity.md
           - Darktrace Threat Visualizer: xdr/features/collect/integrations/endpoint/darktrace_threat_visualizer.md
