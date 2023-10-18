@@ -143,6 +143,7 @@ nav:
           - Proofpoint:
             - Proofpoint PoD: xdr/features/collect/integrations/email/proofpoint_pod.md
             - Proofpoint TAP: xdr/features/collect/integrations/email/proofpoint_tap.md
+          - Trend Micro Email Security: xdr/features/collect/integrations/email/trend_micro_email_security.md
           - Retarus Email Security: xdr/features/collect/integrations/email/retarus_email_security.md
           - Vade Cloud: xdr/features/collect/integrations/email/vade_cloud.md
           - Vade for M365: xdr/features/collect/integrations/email/vade.md
