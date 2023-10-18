@@ -9,7 +9,7 @@ This setup guide explains how to forward and collect the detections and activity
 
 CrowdStrike Falcon integration gathers EDR logs. Below is a concise list of activities that can be monitored using CrowdStrike Falcon logs:
 
-- Alerts raised by the EDR, with limited informations like hash, command line, IP.
+- Alerts raised by the EDR, with limited informations like hash, command line, IP...
 - Crowdstrike Falcon Audit logs
 - Crowdstrike Falcon Incident logs
 - Identity protection events
