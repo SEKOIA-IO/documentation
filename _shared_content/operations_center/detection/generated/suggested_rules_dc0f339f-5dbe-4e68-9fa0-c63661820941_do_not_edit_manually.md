@@ -171,12 +171,6 @@ The following Sekoia.io built-in rules match the intake **Zscaler Internet Acces
     
     - **Effort:** intermediate
 
-??? abstract "Jumpcloud Policy Modified"
-    
-    Detects when a Jumpcloud policy is modified.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module

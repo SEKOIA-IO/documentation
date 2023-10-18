@@ -1,7 +1,13 @@
-Rules catalog includes **763 built-in detection rules** ([_last update on 2023-10-13_](rules_changelog.md)).
+Rules catalog includes **764 built-in detection rules** ([_last update on 2023-10-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
+??? abstract "ACLight Discovering Privileged Accounts"
+    
+    Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -7463,6 +7469,10 @@ Rules catalog includes **763 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 17/10/2023 - minor - Improve selection to reduce false positives
+            
 ??? abstract "Unsigned Image Loaded Into LSASS Process"
     
     Loading unsigned image (DLL, EXE) into LSASS process. To activate this rule you need to monitor loaded images into the LSASS process, this can be done with SYSMON Event ID 7.

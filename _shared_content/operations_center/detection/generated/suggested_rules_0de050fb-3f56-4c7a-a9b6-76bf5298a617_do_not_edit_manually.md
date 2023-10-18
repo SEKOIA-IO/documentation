@@ -357,12 +357,6 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
-??? abstract "Jumpcloud Policy Modified"
-    
-    Detects when a Jumpcloud policy is modified.
-    
-    - **Effort:** intermediate
-
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.

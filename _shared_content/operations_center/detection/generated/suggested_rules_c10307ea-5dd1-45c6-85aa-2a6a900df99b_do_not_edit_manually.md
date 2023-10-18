@@ -45,12 +45,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
-??? abstract "Jumpcloud Policy Modified"
-    
-    Detects when a Jumpcloud policy is modified.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.

@@ -15,12 +15,6 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Firebox**. 
     
     - **Effort:** intermediate
 
-??? abstract "Jumpcloud Policy Modified"
-    
-    Detects when a Jumpcloud policy is modified.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
     Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
