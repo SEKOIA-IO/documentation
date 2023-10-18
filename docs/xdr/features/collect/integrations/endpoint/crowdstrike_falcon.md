@@ -7,6 +7,13 @@ type: intake
 CrowdStrike Falcon is an Endpoint Detection and Response solution.
 This setup guide explains how to forward and collect the detections and activity logs of your CrowdStrike EDR to Sekoia.io.
 
+CrowdStrike Falcon integration gathers EDR logs. Below is a concise list of activities that can be monitored using CrowdStrike Falcon logs:
+
+- Alerts raised by the EDR, with limited informations like hash, command line, IP.
+- Crowdstrike Falcon Audit logs
+- Crowdstrike Falcon Incident logs
+- Identity protection events
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_22f2afd2-c858-443d-8e06-7b335e439c29_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/22f2afd2-c858-443d-8e06-7b335e439c29.md!}
@@ -16,7 +23,7 @@ This setup guide explains how to forward and collect the detections and activity
 This integration supports the following events from CrowdStrike Falcon:
 
 - Detection Summaries (`DetectionSummaryEvent`)
-- Incident Summaries ('IncidentSummaryEvent')
+- Incident Summaries (`IncidentSummaryEvent`)
 - Audit logs (`UserActivityAuditEvent` and `AuthActivityAuditEvent`)
 - Identity protection events (`IdpDetectionSummaryEvent` and `IdentityProtectionEvent`)
 

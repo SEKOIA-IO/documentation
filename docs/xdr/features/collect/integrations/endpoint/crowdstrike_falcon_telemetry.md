@@ -9,6 +9,14 @@ CrowdStrike provides cloud workload and endpoint security, threat intelligence, 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
+CrowdStrike Falcon Telemetry gathers raw system logs, legitimate and suspicious activities. Below is a non-exhaustive list of activities that can be monitored using CrowdStrike Telemetry logs:
+
+-Process creation and termination
+-File path creation and deletion
+-Events related to processes
+-DNS requests
+-HTTP connections
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_10999b99-9a8d-4b92-9fbd-01e3fac01cd5_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/10999b99-9a8d-4b92-9fbd-01e3fac01cd5.md!}
