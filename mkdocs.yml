@@ -150,6 +150,7 @@ nav:
           - Beats:
             - Auditbeat Linux: xdr/features/collect/integrations/endpoint/auditbeat_linux.md
             - Winlogbeat: xdr/features/collect/integrations/endpoint/winlogbeat.md
+          - Checkpoint Harmony: xdr/features/collect/integrations/endpoint/checkpoint_harmony.md
           - CrowdStrike Falcon: xdr/features/collect/integrations/endpoint/crowdstrike_falcon.md
           - CrowdStrike Falcon Telemetry: xdr/features/collect/integrations/endpoint/crowdstrike_falcon_telemetry.md
           - Cybereason MalOp: xdr/features/collect/integrations/endpoint/cybereason_malop.md
