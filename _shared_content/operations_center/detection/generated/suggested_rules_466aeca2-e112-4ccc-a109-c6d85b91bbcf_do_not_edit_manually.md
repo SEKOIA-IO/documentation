@@ -219,12 +219,6 @@ The following Sekoia.io built-in rules match the intake **Cisco Secure Firewall*
     
     - **Effort:** intermediate
 
-??? abstract "Jumpcloud Policy Modified"
-    
-    Detects when a Jumpcloud policy is modified.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Kernel Module Alteration"
     
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.

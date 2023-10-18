@@ -33,12 +33,6 @@ The following Sekoia.io built-in rules match the intake **Github Audit logs [BET
     
     - **Effort:** advanced
 
-??? abstract "Jumpcloud Policy Modified"
-    
-    Detects when a Jumpcloud policy is modified.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.

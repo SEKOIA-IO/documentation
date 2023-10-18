@@ -9,12 +9,6 @@ The following Sekoia.io built-in rules match the intake **Cloudflare Gateway Net
     
     - **Effort:** intermediate
 
-??? abstract "Jumpcloud Policy Modified"
-    
-    Detects when a Jumpcloud policy is modified.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Potential DNS Tunnel"
     
     Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.

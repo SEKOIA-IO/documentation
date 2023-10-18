@@ -1,7 +1,10 @@
-Changelog _last update on 2023-10-13_
+Changelog _last update on 2023-10-18_
 
 ## Changelog
 
+### Transfering Files With Credential Data Via Network Shares
+  - 17/10/2023 - minor - Improve selection to reduce false positives
+    
 ### AdFind Usage
   - 12/10/2023 - minor - Slight change to a condition in order to reduce false positives.
     
