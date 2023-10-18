@@ -210,6 +210,7 @@ nav:
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield SNS: xdr/features/collect/integrations/network/stormshield_network_security.md
           - Suricata: xdr/features/collect/integrations/network/suricata.md
+          - Trellix Network Security: xdr/features/collect/integrations/network/trellix_nx.md
           - Varonis Data Security: xdr/features/collect/integrations/network/varonis_data_security.md
           - Vectra Cognito Detect: xdr/features/collect/integrations/network/vectra.md
           - Wallix: xdr/features/collect/integrations/network/wallix.md
@@ -621,6 +622,7 @@ plugins:
       integrations/unbound.md: xdr/features/collect/integrations/application/unbound.md
       integrations/vade.md: xdr/features/collect/integrations/email/vade.md
       integrations/vectra-cognito-detect.md: xdr/features/collect/integrations/network/vectra.md
+      integrations/trellix_nx.md: xdr/features/collect/integrations/network/trellix_nx.md
       integrations/wallix-bastion.md: xdr/features/collect/integrations/network/wallix.md
       integrations/wazuh.md: xdr/index.md
       integrations/windows.md: xdr/features/collect/integrations/endpoint/windows.md
@@ -728,6 +730,7 @@ plugins:
       operation_center/integration_catalog/network/squid.md: xdr/features/collect/integrations/network/squid.md
       operation_center/integration_catalog/network/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
       operation_center/integration_catalog/network/suricata.md: xdr/features/collect/integrations/network/suricata.md
+      operation_center/integration_catalog/network/trellix_nx.md: xdr/features/collect/integrations/network/trellix_nx.md
       operation_center/integration_catalog/network/vectra.md: xdr/features/collect/integrations/network/vectra.md
       operation_center/integration_catalog/network/wallix.md: xdr/features/collect/integrations/network/wallix.md
       operation_center/integration_catalog/network/zeek.md: xdr/features/collect/integrations/network/zeek.md
