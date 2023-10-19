@@ -19,8 +19,6 @@ This setup guide will show you how to forward your SonicWall SMA logs to Sekoia.
 
 ### Prerequisites
 
-- Must have GMS server or On-Prem Analytics server installed and configured.
-- Have an Address Object Created on the Firewall for SonicWall Analytics system.
 - Have an internal log concentrator (Rsyslog)
 
 ### Enable Syslog forwarding for SonicWall SMA
@@ -29,6 +27,9 @@ This setup guide will show you how to forward your SonicWall SMA logs to Sekoia.
 2. Go to `Log > Settings`
 3. In the Log & Alert levels section, define the severity level of log messages.
 4. In the syslog settings, type the ip address and the port of our log concentrator
+
+    ![SonicWall SMA settings](/assets/instructions/sonicwall_sma/settings.png)
+
 5. Click Accept to save your configuration settings
 
 ### Create the intake
