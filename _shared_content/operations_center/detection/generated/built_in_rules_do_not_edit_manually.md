@@ -1,4 +1,4 @@
-Rules catalog includes **764 built-in detection rules** ([_last update on 2023-10-18_](rules_changelog.md)).
+Rules catalog includes **764 built-in detection rules** ([_last update on 2023-10-19_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -414,6 +414,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+            
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
@@ -3263,6 +3267,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+            
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
@@ -4565,6 +4573,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+            
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
@@ -5813,6 +5825,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+            
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
@@ -8137,6 +8153,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - improve filter to reduce false positives
+            
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -8200,6 +8220,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+            
 ??? abstract "Lateral Movement - Remote Named Pipe"
     
     Detects lateral movement and remote exec using named pipe over network. This requires Windows Security event logging with the File Share enable policy.
