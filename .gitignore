@@ -20,3 +20,4 @@ styles/sekoiaio.scss
 docs/getting_started/inactive_users
 .DS_Store
 *.pyc
+node_modules
