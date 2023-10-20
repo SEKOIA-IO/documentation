@@ -51,6 +51,12 @@ The following Sekoia.io built-in rules match the intake **Varonis Data Security 
     
     - **Effort:** advanced
 
+??? abstract "Varonis Data Security Email Alert"
+    
+    Varonis Data Security has raised an alert related to a supervised email account.
+    
+    - **Effort:** master
+
 ??? abstract "WCE wceaux.dll Creation"
     
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
