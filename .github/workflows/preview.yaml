@@ -23,7 +23,7 @@ jobs:
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.5.1
         with:
-          source: src/sekoiaio.scss
+          source: styles/sekoiaio.scss
           destination: docs/stylesheets/sekoiaio.css
 
       - name: Install Poetry
