@@ -1011,6 +1011,24 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** advanced
 
+??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
+    
+    Trend Micro Apex One has raised an alert for data loss prevention.
+    
+    - **Effort:** intermediate
+
+??? abstract "Trend Micro Apex One Intrusion Detection Alert"
+    
+    Trend Micro Apex One has raised an alert for an intrusion detection.
+    
+    - **Effort:** intermediate
+
+??? abstract "Trend Micro Apex One Malware Alert"
+    
+    Trend Micro Apex One has detected a malware.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
