@@ -207,6 +207,7 @@ nav:
           - Pulse / Ivanti Secure Connect: xdr/features/collect/integrations/network/pulse.md
           - Rubycat PROVE IT: xdr/features/collect/integrations/network/rubycat_prove_it.md
           - SonicWall Firewall: xdr/features/collect/integrations/network/sonicwall_fw.md
+          - SonicWall SMA: xdr/features/collect/integrations/network/sonicwall_sma.md
           - Squid: xdr/features/collect/integrations/network/squid.md
           - Stormshield SNS: xdr/features/collect/integrations/network/stormshield_network_security.md
           - Suricata: xdr/features/collect/integrations/network/suricata.md
