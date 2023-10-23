@@ -79,7 +79,7 @@ nav:
           - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
-          - ManageEngine AuditAD Plus: xdr/features/collect/integrations/application/manageengine_auditadplus.md
+          - ManageEngine ADAudit Plus: xdr/features/collect/integrations/application/manageengine_adauditplus.md
           - Nginx: xdr/features/collect/integrations/application/nginx.md
           - OpenLDAP: xdr/features/collect/integrations/application/openldap.md
           - OpenSSH: xdr/features/collect/integrations/application/openssh.md

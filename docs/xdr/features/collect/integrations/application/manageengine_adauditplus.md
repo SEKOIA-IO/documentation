@@ -1,18 +1,18 @@
 uuid: 890207d2-4878-440d-9079-3dd25d472e0a
-name: ManageEngine AuditAD Plus
+name: ManageEngine ADAudit Plus
 type: intake
 
 
 ## Overview
 
-ManageEngine AuditAd Plus is a robust Active Directory auditing and compliance solution, empowering organizations to track and monitor changes, detect security threats, and ensure regulatory compliance within their Active Directory environment.
+ManageEngine ADAudit Plus is a robust Active Directory auditing and compliance solution, empowering organizations to track and monitor changes, detect security threats, and ensure regulatory compliance within their Active Directory environment.
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
 ## Supported events
 
-This integration supports the following events from AuditAD Plus:
+This integration supports the following events from ADAudit Plus:
 
 - Alerts (`ADAPAlerts`)
 - Group managements reports (`GroupMgmtReports`)
@@ -42,7 +42,7 @@ In the ADAudit Plus console:
 
 ## Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `ManageEngine AuditADPlus`.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `ManageEngine ADAuditPlus`.
 
 ## Forward logs to Sekoia.io
 
