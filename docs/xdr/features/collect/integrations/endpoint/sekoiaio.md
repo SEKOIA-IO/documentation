@@ -246,12 +246,22 @@ If you want to enable this feature, follow these steps:
 	    ```
 
 2. Add the following configuration:
-	
-	```yaml
-	logfiles:
-	    - filepath: /var/log/nginx/access.log  # Path to the file to watch
-	      intakekey: {intake key}  # Intake key to use to send the events
-	```
+
+	=== "Windows"
+
+        ```yaml
+        logfiles:
+            - filepath: C:\Program Files\nginx\logs\access.log  # Path to the file to watch
+            intakekey: {intake key}  # Intake key to use to send the events
+        ```
+
+	=== "Linux"
+
+        ```yaml
+        logfiles:
+            - filepath: /var/log/nginx/access.log  # Path to the file to watch
+            intakekey: {intake key}  # Intake key to use to send the events
+        ```
 
 !!! WARNING
     It is important to use an intake key from a format that matches the content of the log file.
