@@ -26,7 +26,7 @@ This setup guide will show you how to forward your SonicWall SMA logs to Sekoia.
 1. Log in to the SonicWall SMA appliance’s management interface
 2. Go to `Log > Settings`
 3. In the Log & Alert levels section, define the severity level of log messages.
-4. In the syslog settings, type the ip address and the port of our log concentrator
+4. In the syslog settings, type the ip address and the port of your log concentrator as Primary syslog server.
 
     ![SonicWall SMA settings](/assets/instructions/sonicwall_sma/settings.png)
 
