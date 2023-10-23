@@ -52,7 +52,7 @@ After receiving the IDs to connect to the Linux server, the main activities are 
 3. Download the Sekoia.io certificate
 
 	```bash
-	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+	sudo wget -O /etc/rsyslog.d/Sekoia-io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 	```
 
 4. Modify the `/etc/rsyslog.conf` main configuration file 
@@ -169,7 +169,7 @@ In this section, let suppose that Windows event logs are sent to the Rsyslog on 
     To this ruleset, an action is defined to tell Rsyslog that all incoming messages associated to it must be forwarded to the Sekoia.io syslog endpoint on a specific Intake. Please change using the YOUR_INTAKE_KEY accordingly.
 
     ```bash
-    $DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia.io-intake.pem
+    $DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia-io-intake.pem
     input(type="imtcp" port="20516" ruleset="remote20516")
 
     template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
@@ -364,7 +364,7 @@ To receive and process Windows logs, you have to follow these steps:
 	
 	```bash
 	# Refer to the location of the certificate
-	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia.io-intake.pem
+	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia-io-intake.pem
 
 	# Customize the syslog header the an Intake Key to be collected on Sekoia.io while adding a new intake from the catalogue
 	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
@@ -438,7 +438,7 @@ Follow these steps to forward logs using RELP Protocol:
 		target="relp.intake.sekoia.io"
 		port="11514"
 		tls="on"
-		tls.caCert="/etc/rsyslog.d/Sekoia.io-intake.pem"
+		tls.caCert="/etc/rsyslog.d/Sekoia-io-intake.pem"
 		tls.authmode="name"
 		tls.permittedPeer=["relp.intake.sekoia.io"]
 		template="SEKOIAIOUnboundTemplate"
@@ -641,7 +641,7 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	WindowsFile="/etc/rsyslog.d/15-windows.conf"
 
 	sudo /bin/cat <<\EOM >$WindowsFile
-	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia.io-intake.pem
+	$DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia-io-intake.pem
 
 	template(name="SEKOIAIOWindowsTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
 
@@ -662,7 +662,7 @@ It will automatically configure you Rsyslog server to collect and forward Window
 	EOM
 
 	# Collect the SEKOIA Key for encryption between Rsyslog and Sekoia.io
-	sudo wget -O /etc/rsyslog.d/Sekoia.io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
+	sudo wget -O /etc/rsyslog.d/Sekoia-io-intake.pem https://app.sekoia.io/assets/files/SEKOIA-IO-intake.pem
 	```
 
 2. Once the file created on the Rsyslog, make it executable with the command `chmod +x <filename.sh>`.
