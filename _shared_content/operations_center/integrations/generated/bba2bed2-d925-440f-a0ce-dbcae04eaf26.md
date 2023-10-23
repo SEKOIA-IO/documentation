@@ -39,65 +39,43 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "malware"
             ],
+            "kind": "event",
+            "severity": 1,
             "type": [
                 "info"
-            ],
-            "severity": 1,
-            "kind": "event"
-        },
-        "source": {
-            "ip": "9.8.7.6",
-            "port": 80,
-            "address": "9.8.7.6"
-        },
-        "destination": {
-            "ip": "1.2.3.4",
-            "port": 49804,
-            "address": "1.2.3.4"
+            ]
         },
         "@timestamp": "2022-06-03T15:00:20.531000Z",
-        "observer": {
-            "name": "gcap-nti.gatewatcher.com",
-            "version": "0.2",
-            "hostname": "network.internal",
-            "type": "firewall"
+        "destination": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "port": 49804
         },
-        "network": {
-            "transport": "TCP",
-            "protocol": "http"
+        "file": {
+            "hash": {
+                "md5": "16e3fcee85f81ec9e9c75dd13fb08c01",
+                "sha256": "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
+            },
+            "name": "/exploit.html",
+            "size": 6105
         },
         "gatewatcher": {
-            "type": "malcore",
-            "state": "Infected",
+            "event_type": "malware",
+            "flow_id": "1686930575880829",
+            "gcap": "gcap-nti.gatewatcher.com",
             "gcenter": [
                 "gcenter-nti.gatewatcher.com",
                 "gcenter-nti.gatewatcher.com"
             ],
-            "gcap": "gcap-nti.gatewatcher.com",
-            "flow_id": "1686930575880829",
-            "timestamp_analyzed": "2022-06-03T15:00:20.531Z",
-            "timestamp_detected": "2022-06-03T14:59:08.780Z",
-            "event_type": "malware",
             "malcore": {
                 "code": "1",
                 "detail_threat_found": "Infected : Exploit/HTML.CVE-2022-30190.S1841, Win32/Exploit.CVE-2022-30190.A trojan, HEUR:Exploit.Script.Generic"
             },
-            "reporting_token": "No GBOX"
-        },
-        "file": {
-            "name": "/exploit.html",
-            "size": 6105,
-            "hash": {
-                "md5": "16e3fcee85f81ec9e9c75dd13fb08c01",
-                "sha256": "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
-            }
-        },
-        "url": {
-            "path": "/exploit.html",
-            "domain": "www.xmlformats.com",
-            "top_level_domain": "com",
-            "subdomain": "www",
-            "registered_domain": "xmlformats.com"
+            "reporting_token": "No GBOX",
+            "state": "Infected",
+            "timestamp_analyzed": "2022-06-03T15:00:20.531Z",
+            "timestamp_detected": "2022-06-03T14:59:08.780Z",
+            "type": "malcore"
         },
         "http": {
             "request": {
@@ -107,16 +85,15 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "status_code": 200
             }
         },
-        "user_agent": {
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
-            "device": {
-                "name": "Other"
-            },
-            "name": "Outlook",
-            "version": "2016",
-            "os": {
-                "name": "Other"
-            }
+        "network": {
+            "protocol": "http",
+            "transport": "TCP"
+        },
+        "observer": {
+            "hostname": "network.internal",
+            "name": "gcap-nti.gatewatcher.com",
+            "type": "firewall",
+            "version": "0.2"
         },
         "related": {
             "hash": [
@@ -131,6 +108,29 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "source": {
+            "address": "9.8.7.6",
+            "ip": "9.8.7.6",
+            "port": 80
+        },
+        "url": {
+            "domain": "www.xmlformats.com",
+            "path": "/exploit.html",
+            "registered_domain": "xmlformats.com",
+            "subdomain": "www",
+            "top_level_domain": "com"
+        },
+        "user_agent": {
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "os": {
+                "name": "Other"
+            },
+            "version": "2016"
         }
     }
     	
@@ -144,63 +144,35 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"@timestamp\":\"2022-06-03T14:59:41.373Z\",\"gcenter\":[\"gcenter-sekoia.gatewatcher.com\",\"gcenter-sekoia.gatewatcher.com\"],\"event_type\":\"alert\",\"payload\":\"SFRUUC8xLjEgMjAwIE9LCkRhdGU6IFRodSwgMDIgSnVuIDIwMjIgMjI6Mzc6MjIgR01UClNlcnZlcjogQXBhY2hlLzIuNC40MSAoVWJ1bnR1KQpMYXN0LU1vZGlmaWVkOiBUaHUsIDAyIEp1biAyMDIyIDIyOjMwOjM0IEdNVApFVGFnOiAiMTdkOS01ZTA3ZThkZGI0NTA4LWd6aXAiCkFjY2VwdC1SYW5nZXM6IGJ5dGVzClZhcnk6IEFjY2VwdC1FbmNvZGluZwpDb250ZW50LUVuY29kaW5nOiBnemlwCkNvbnRlbnQtTGVuZ3RoOiAyNDg1CktlZXAtQWxpdmU6IHRpbWVvdXQ9NSwgbWF4PTEwMApDb25uZWN0aW9uOiBLZWVwLUFsaXZlCkNvbnRlbnQtVHlwZTogdGV4dC9odG1sCgp0ZXN0Cg==\",\"packet\":\"CAAnjitsCAAnk+hwCABFAAAoBRhAAD8GMWkKAQHewKg4yABQwow7Z24SQI3k4FAQAfUWzAAA\",\"type\":\"suricata\",\"community_id\":\"1:dGVzdAo=\",\"app_proto\":\"http\",\"src_ip\":\"9.8.7.6\",\"dest_port\":49804,\"alert\":{\"action\":\"allowed\",\"rev\":2,\"signature\":\"ETPRO INFO Observed Suspicious Base64 Encoded Wide String Inbound (exe)\",\"category\":\"Potentially Bad Traffic\",\"gid\":1,\"metadata\":{\"updated_at\":[\"2020_11_17\"],\"created_at\":[\"2020_04_13\"],\"former_category\":[\"HUNTING\"],\"signature_severity\":[\"Informational\"],\"attack_target\":[\"Client_Endpoint\"],\"deployment\":[\"Perimeter\"],\"affected_product\":[\"Windows_XP_Vista_7_8_10_Server_32_64_Bit\"]},\"signature_id\":2841990,\"severity\":2},\"flow\":{\"pkts_toserver\":5,\"bytes_toserver\":798,\"start\":\"2022-06-03T14:59:08.750205+0000\",\"pkts_toclient\":4,\"bytes_toclient\":3052},\"files\":[{\"filename\":\"/exploit.html\",\"state\":\"CLOSED\",\"tx_id\":0,\"sid\":[1100029],\"magic\":\"HTML document, ASCII text, with very long lines\",\"gaps\":false,\"md5\":\"16e3fcee85f81ec9e9c75dd13fb08c01\",\"sha256\":\"2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c\",\"size\":6105,\"stored\":false}],\"proto\":\"TCP\",\"stream\":1,\"host\":\"network.internal\",\"http\":{\"protocol\":\"HTTP/1.1\",\"hostname\":\"www.xmlformats.com\",\"http_content_type\":\"text/html\",\"length\":2485,\"http_user_agent\":\"Mozilla/4.0 (compatible; ms-office; MSOffice 16)\",\"http_method\":\"GET\",\"url\":\"/exploit.html\",\"status\":200},\"timestamp_detected\":\"2022-06-03T14:59:08.780Z\",\"ether\":{\"src_mac\":\"08:00:27:8e:2b:6c\",\"dest_mac\":\"08:00:27:93:e8:70\"},\"src_port\":80,\"flow_id\":1686930575880829,\"payload_printable\":\"HTTP/1.1 200 OK\\r\\nDate: Thu, 02 Jun 2022 22:37:22 GMT\\r\\nServer: Apache/2.4.41 (Ubuntu)\\r\\nLast-Modified: Thu, 02 Jun 2022 22:30:34 GMT\\r\\nETag: \\\"17d9-5e07e8ddb4508-gzip\\\"\\r\\nAccept-Ranges: bytes\\r\\nVary: Accept-Encoding\\r\\nContent-Encoding: gzip\\r\\nContent-Length: 2485\\r\\nKeep-Alive: timeout=5, max=100\\r\\nConnection: Keep-Alive\\r\\nContent-Type: text/html\\r\\n\\r\\n...........Xko........\\n.F&.$VS..]pmYRa.Vd9q.(.........gW......#7....G....s.=.RO.....q..&n.....0.k...|{D.....!6.....V&nB.6.oVap......}7........l..>..{>{..~k.n..f.5]o.....X..k._G....U.....|...\\\\.a.m.f......._.!...c.8.Z..n.0........i..`.:..c[.a..;......_.........gv}.L.1V.G.......o.2,}..C~..w.(,...[..at+..8.~..'.mh1a..y......hVc0.n.iB.en.Z..O.]...l.b..2.b..{|i|._+...o].3}..Wd....3\\\"...!:.............C./.Z.....\\rP$S,.t<Y..m.E.]5Y-...Sx.A..1...[W.@.......kKlb...m.3..n./......c...\\n..@y0.....5.........$ .#..|\\r.......;.w}....`.)..u....U^.....lD...D.#...&...jaT.........@@..Lf..6l.z........p>.s.k..!..r..UI..g...ji^V...,.k..0i...}.!.=.......2.%.@..=u........{'Y@.k.8!.*`... ..c..z.j.u.D.....*......G.ng.U.....@.3U......\\n...$/..!.c.....T..S..tr.$...h......$(....&R...i.U#PL.J{...\\n!E.-9,w.....$%Xh9.U!...6...S`b...C>.i.cW......H...It\\n...B......q.IR....\\n..P&....i.d... .07.]U$tD.R...J4............^....tIT....UaD....g..k.b.......\\rm.VcK....p:....P.Dj...\\nD*0u*..b..(..P...\\\\S..Q*VT'......m.............7B..D./\\\"...gX..\\\".9W....I.=.9......T.%.U....J{b.l.\\r..Q.X.t9U.i)......R.i..V.g.5c..^.,.....&=r..p0SX..E...S5hsSJt..J...'}#8.........R.H.D.(i.TW...^.&..>@v..+sX\\ra..],>I.!%.`l`..,vDvL.....vDwM....,.I.-[3IP.I..GMi.I.MYa..'Z$U]r...... j3CE).NM!.@.!a......T.S.77....k&...P.........8...$..:.A.....+A........a......Mm..*..\\\\..zZ\\\"\\n...D.I.e.....r..9..JD..8.u`vd{..=.)Y.9...\\\\A'.}J...'.A?....)...........U....M5.`....J.&..e.D....N{1.s...d....cZE....\\nG)..8.nq)..G..`..@.T.rgB..B.9>7.@.\\\\&#'EUT...;Xt?...P.%W'.,@(\\r.+Y...4.y~.{d.&xn\\\"...../].....k.m.ZK`..M.lr.....VK.\\\"z&.R+.V.<-..U.\\\"...IU.h%/9....y....T)].f..._.I.X0K.k...|-t...\\\\.d#7.A..J..I.L.H7:.r..%].Ti......(....V-i....2...:...`J...\\\"S\\\"..?I.......w..E....Q.......B.l$.T.E....-......k.u........BQ.#.Tn@.C..x.7.K/...M...},..-L.......~..E.@..o.7.. .!.t....._q.....\\\\........H...Y...MA...`U.8..O..z.J.l#91..\\\".+...Vi..v..k......%.k...0i..u.T.O#A.[j.M...*G*W..s.......V..+.%.......t:..&<....Uz..2.....{....\\\\.{a.H.-.D.QC..]|>3..t5.........9.._n.U..1Ly.....(v.Fm...agn..zs.s=0..........;..U..\\n.........bs...[={.A....oG...7.../.}...yz.>......7......B;.....m\\r.../....F!../O./.n...~~..u$.~....hz..e..n.@(.=.Ui.../.\\\\_-F{..........W....~...g}......W........uWvm..ve1~n...vo_<.....=.......}e.v..gOl.^D{vJ..k_........>......y|.........k.=..W.?}.s.../^......=.4.#=.~..l?.}.}k._.....K>...k....._...:...N........`}C......w.................:.wW...Z.....~.....}.._..%?.W8.....$.R..y...............sCq.....y.....)^e....gS^<z..G...|.G....\\n)p,.|...v7.............LMY._.o.......y.......\",\"packet_info\":{\"linktype\":1},\"in_iface\":\"monvirt\",\"dest_ip\":\"1.2.3.4\",\"timestamp_analyzed\":\"2022-06-03T14:59:41.373Z\",\"gcap\":\"gcap-sekoia.gatewatcher.com\",\"tx_id\":0,\"uuid\":\"525084c9-9a40-4dc9-81fb-27d5efe6b965\",\"severity\":2}",
         "event": {
+            "action": "allowed",
             "category": [
                 "network"
             ],
+            "kind": "alert",
+            "severity": 2,
             "type": [
                 "info"
-            ],
-            "severity": 2,
-            "kind": "alert",
-            "action": "allowed"
-        },
-        "source": {
-            "ip": "9.8.7.6",
-            "port": 80,
-            "bytes": 798,
-            "packets": 5,
-            "address": "9.8.7.6"
-        },
-        "destination": {
-            "ip": "1.2.3.4",
-            "port": 49804,
-            "bytes": 3052,
-            "packets": 4,
-            "address": "1.2.3.4"
-        },
-        "@timestamp": "2022-06-03T14:59:41.373000Z",
-        "observer": {
-            "name": "gcap-sekoia.gatewatcher.com",
-            "version": "0.2",
-            "hostname": "network.internal",
-            "type": "firewall",
-            "mac": [
-                "08:00:27:8e:2b:6c",
-                "08:00:27:93:e8:70"
             ]
         },
-        "network": {
-            "transport": "TCP",
-            "protocol": "http"
+        "@timestamp": "2022-06-03T14:59:41.373000Z",
+        "destination": {
+            "address": "1.2.3.4",
+            "bytes": 3052,
+            "ip": "1.2.3.4",
+            "packets": 4,
+            "port": 49804
         },
         "gatewatcher": {
-            "type": "suricata",
+            "event_type": "alert",
+            "flow_id": "1686930575880829",
+            "gcap": "gcap-sekoia.gatewatcher.com",
             "gcenter": [
                 "gcenter-sekoia.gatewatcher.com",
                 "gcenter-sekoia.gatewatcher.com"
             ],
-            "gcap": "gcap-sekoia.gatewatcher.com",
-            "flow_id": "1686930575880829",
             "timestamp_analyzed": "2022-06-03T14:59:41.373Z",
             "timestamp_detected": "2022-06-03T14:59:08.780Z",
-            "event_type": "alert"
-        },
-        "url": {
-            "path": "/exploit.html",
-            "domain": "www.xmlformats.com",
-            "top_level_domain": "com",
-            "subdomain": "www",
-            "registered_domain": "xmlformats.com"
+            "type": "suricata"
         },
         "http": {
             "request": {
@@ -210,21 +182,19 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "status_code": 200
             }
         },
-        "user_agent": {
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
-            "device": {
-                "name": "Other"
-            },
-            "name": "Outlook",
-            "version": "2016",
-            "os": {
-                "name": "Other"
-            }
+        "network": {
+            "protocol": "http",
+            "transport": "TCP"
         },
-        "rule": {
-            "name": "ETPRO INFO Observed Suspicious Base64 Encoded Wide String Inbound (exe)",
-            "id": "2841990",
-            "category": "Potentially Bad Traffic"
+        "observer": {
+            "hostname": "network.internal",
+            "mac": [
+                "08:00:27:8e:2b:6c",
+                "08:00:27:93:e8:70"
+            ],
+            "name": "gcap-sekoia.gatewatcher.com",
+            "type": "firewall",
+            "version": "0.2"
         },
         "related": {
             "hosts": [
@@ -235,6 +205,36 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "rule": {
+            "category": "Potentially Bad Traffic",
+            "id": "2841990",
+            "name": "ETPRO INFO Observed Suspicious Base64 Encoded Wide String Inbound (exe)"
+        },
+        "source": {
+            "address": "9.8.7.6",
+            "bytes": 798,
+            "ip": "9.8.7.6",
+            "packets": 5,
+            "port": 80
+        },
+        "url": {
+            "domain": "www.xmlformats.com",
+            "path": "/exploit.html",
+            "registered_domain": "xmlformats.com",
+            "subdomain": "www",
+            "top_level_domain": "com"
+        },
+        "user_agent": {
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "os": {
+                "name": "Other"
+            },
+            "version": "2016"
         }
     }
     	
@@ -251,50 +251,36 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "network"
             ],
+            "kind": "event",
             "type": [
                 "info"
-            ],
-            "kind": "event"
-        },
-        "source": {
-            "ip": "9.8.7.6",
-            "port": 80,
-            "address": "9.8.7.6"
-        },
-        "destination": {
-            "ip": "1.2.3.4",
-            "port": 49804,
-            "address": "1.2.3.4"
+            ]
         },
         "@timestamp": "2022-06-03T14:59:41.374000Z",
-        "observer": {
-            "name": "gcap-sekoia.gatewatcher.com",
-            "version": "0.2",
-            "hostname": "gcap-sekoia.gatewatcher.com",
-            "type": "firewall"
+        "destination": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "port": 49804
         },
-        "network": {
-            "transport": "TCP",
-            "protocol": "http"
+        "file": {
+            "hash": {
+                "md5": "16e3fcee85f81ec9e9c75dd13fb08c01",
+                "sha256": "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
+            },
+            "name": "/exploit.html",
+            "size": 6105
         },
         "gatewatcher": {
-            "type": "suricata",
+            "event_type": "fileinfo",
+            "flow_id": "1686930575880829",
+            "gcap": "gcap-sekoia.gatewatcher.com",
             "gcenter": [
                 "gcenter-sekoia.gatewatcher.com",
                 "gcenter-sekoia.gatewatcher.com"
             ],
-            "gcap": "gcap-sekoia.gatewatcher.com",
-            "flow_id": "1686930575880829",
             "timestamp_analyzed": "2022-06-03T14:59:41.374Z",
             "timestamp_detected": "2022-06-03T14:59:08.780Z",
-            "event_type": "fileinfo"
-        },
-        "url": {
-            "path": "/exploit.html",
-            "domain": "www.xmlformats.com",
-            "top_level_domain": "com",
-            "subdomain": "www",
-            "registered_domain": "xmlformats.com"
+            "type": "suricata"
         },
         "http": {
             "request": {
@@ -304,24 +290,15 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "status_code": 200
             }
         },
-        "user_agent": {
-            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
-            "device": {
-                "name": "Other"
-            },
-            "name": "Outlook",
-            "version": "2016",
-            "os": {
-                "name": "Other"
-            }
+        "network": {
+            "protocol": "http",
+            "transport": "TCP"
         },
-        "file": {
-            "name": "/exploit.html",
-            "size": 6105,
-            "hash": {
-                "md5": "16e3fcee85f81ec9e9c75dd13fb08c01",
-                "sha256": "2c36fbcbac3e57df410f6613180fe572015adba62d0f1bd98c13a1535d64703c"
-            }
+        "observer": {
+            "hostname": "gcap-sekoia.gatewatcher.com",
+            "name": "gcap-sekoia.gatewatcher.com",
+            "type": "firewall",
+            "version": "0.2"
         },
         "related": {
             "hash": [
@@ -336,6 +313,29 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "source": {
+            "address": "9.8.7.6",
+            "ip": "9.8.7.6",
+            "port": 80
+        },
+        "url": {
+            "domain": "www.xmlformats.com",
+            "path": "/exploit.html",
+            "registered_domain": "xmlformats.com",
+            "subdomain": "www",
+            "top_level_domain": "com"
+        },
+        "user_agent": {
+            "device": {
+                "name": "Other"
+            },
+            "name": "Outlook",
+            "original": "Mozilla/4.0 (compatible; ms-office; MSOffice 16)",
+            "os": {
+                "name": "Other"
+            },
+            "version": "2016"
         }
     }
     	
@@ -352,53 +352,28 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "network"
             ],
+            "kind": "event",
             "type": [
                 "info"
-            ],
-            "kind": "event"
-        },
-        "source": {
-            "ip": "9.8.7.6",
-            "port": 49804,
-            "address": "9.8.7.6"
-        },
-        "destination": {
-            "ip": "1.2.3.4",
-            "port": 80,
-            "address": "1.2.3.4"
-        },
-        "@timestamp": "2022-06-03T14:59:41.378000Z",
-        "observer": {
-            "name": "gcap-sekoia.gatewatcher.com",
-            "version": "0.2",
-            "hostname": "gcap-sekoia.gatewatcher.com",
-            "type": "firewall",
-            "mac": [
-                "00:17:a4:77:09:20",
-                "a0:36:9f:0f:b1:70"
             ]
         },
-        "network": {
-            "transport": "TCP"
+        "@timestamp": "2022-06-03T14:59:41.378000Z",
+        "destination": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "port": 80
         },
         "gatewatcher": {
-            "type": "suricata",
+            "event_type": "http",
+            "flow_id": "1686930575880829",
+            "gcap": "gcap-sekoia.gatewatcher.com",
             "gcenter": [
                 "gcenter-sekoia.gatewatcher.com",
                 "gcenter-sekoia.gatewatcher.com"
             ],
-            "gcap": "gcap-sekoia.gatewatcher.com",
-            "flow_id": "1686930575880829",
             "timestamp_analyzed": "2022-06-03T14:59:41.378Z",
             "timestamp_detected": "2022-06-03T14:59:08.833Z",
-            "event_type": "http"
-        },
-        "url": {
-            "path": "/exploit.html",
-            "domain": "www.xmlformats.com",
-            "top_level_domain": "com",
-            "subdomain": "www",
-            "registered_domain": "xmlformats.com"
+            "type": "suricata"
         },
         "http": {
             "request": {
@@ -408,15 +383,18 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "status_code": 200
             }
         },
-        "user_agent": {
-            "original": "Microsoft Office Existence Discovery",
-            "device": {
-                "name": "Other"
-            },
-            "name": "Other",
-            "os": {
-                "name": "Other"
-            }
+        "network": {
+            "transport": "TCP"
+        },
+        "observer": {
+            "hostname": "gcap-sekoia.gatewatcher.com",
+            "mac": [
+                "00:17:a4:77:09:20",
+                "a0:36:9f:0f:b1:70"
+            ],
+            "name": "gcap-sekoia.gatewatcher.com",
+            "type": "firewall",
+            "version": "0.2"
         },
         "related": {
             "hosts": [
@@ -427,6 +405,28 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "1.2.3.4",
                 "9.8.7.6"
             ]
+        },
+        "source": {
+            "address": "9.8.7.6",
+            "ip": "9.8.7.6",
+            "port": 49804
+        },
+        "url": {
+            "domain": "www.xmlformats.com",
+            "path": "/exploit.html",
+            "registered_domain": "xmlformats.com",
+            "subdomain": "www",
+            "top_level_domain": "com"
+        },
+        "user_agent": {
+            "device": {
+                "name": "Other"
+            },
+            "name": "Other",
+            "original": "Microsoft Office Existence Discovery",
+            "os": {
+                "name": "Other"
+            }
         }
     }
     	

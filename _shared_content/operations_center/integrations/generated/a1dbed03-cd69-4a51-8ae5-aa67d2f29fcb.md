@@ -36,53 +36,53 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"id\":\"61e536ebdbbe784cb2e55fb5\",\"type\":\"admin\",\"email\":\"john.doe@sekoia.io\"},\"geoip\":{\"country_code\":\"FR\",\"timezone\":\"Europe/Paris\",\"latitude\":48.8323,\"continent_code\":\"EU\",\"region_name\":\"Paris\",\"longitude\":2.4075,\"region_code\":\"75\"},\"useragent\":{\"os\":\"Mac OS X\",\"minor\":\"0\",\"os_minor\":\"15\",\"os_version\":\"10.15.7\",\"os_major\":\"10\",\"version\":\"114.0.0.0\",\"os_patch\":\"7\",\"patch\":\"0\",\"os_full\":\"Mac OS X 10.15.7\",\"major\":\"114\",\"name\":\"Chrome\",\"os_name\":\"Mac OS X\",\"device\":\"Mac\"},\"mfa\":true,\"event_type\":\"admin_login_attempt\",\"provider\":null,\"service\":\"directory\",\"success\":true,\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"1.2.3.4\",\"id\":\"648c6c758c2ac07fa1fdee94\",\"timestamp\":\"2023-06-16T14:06:45.921Z\"}",
         "event": {
+            "action": "admin_login_attempt",
             "category": [
                 "authentication"
             ],
             "type": [
                 "info"
-            ],
-            "action": "admin_login_attempt"
-        },
-        "client": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
+            ]
         },
         "@timestamp": "2023-06-16T14:06:45.921000Z",
+        "action": {
+            "outcome": "success"
+        },
+        "client": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "jumpcloud": {
+            "event_type": "admin_login_attempt",
+            "id": "648c6c758c2ac07fa1fdee94"
+        },
         "observer": {
             "vendor": "Jumpcloud"
         },
+        "related": {
+            "ip": [
+                "1.2.3.4"
+            ]
+        },
         "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
             "user": {
                 "email": "john.doe@sekoia.io",
                 "id": "61e536ebdbbe784cb2e55fb5"
-            },
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
-        "jumpcloud": {
-            "id": "648c6c758c2ac07fa1fdee94",
-            "event_type": "admin_login_attempt"
-        },
-        "action": {
-            "outcome": "success"
+            }
         },
         "user_agent": {
             "device": {
                 "name": "Mac"
             },
             "name": "Chrome",
-            "version": "114.0.0.0",
             "os": {
+                "full": "Mac OS X 10.15.7",
                 "name": "Mac OS X",
-                "version": "10.15.7",
-                "full": "Mac OS X 10.15.7"
-            }
-        },
-        "related": {
-            "ip": [
-                "1.2.3.4"
-            ]
+                "version": "10.15.7"
+            },
+            "version": "114.0.0.0"
         }
     }
     	
@@ -98,61 +98,61 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "action": "association_change"
         },
-        "client": {
-            "ip": "176.161.221.161",
-            "address": "176.161.221.161"
-        },
         "@timestamp": "2023-06-21T14:34:21.089000Z",
-        "observer": {
-            "vendor": "Jumpcloud"
+        "action": {
+            "outcome": "success"
         },
-        "source": {
-            "user": {
-                "email": "maurice.moss@sekoia.io",
-                "id": "61e536ebdbbe784cb2e55fb5"
-            },
-            "ip": "176.161.221.161",
-            "address": "176.161.221.161"
+        "client": {
+            "address": "176.161.221.161",
+            "ip": "176.161.221.161"
         },
         "jumpcloud": {
-            "id": "64930a6d00466f31842811a1",
-            "event_type": "association_change",
             "association": {
-                "op": "add",
                 "action_source": "manual",
                 "connection": {
                     "from": {
                         "name": "JDOE-DESKTOP",
-                        "type": "system",
-                        "object_id": "6447f8a7caa17d71c56b2dca"
+                        "object_id": "6447f8a7caa17d71c56b2dca",
+                        "type": "system"
                     },
                     "to": {
                         "name": "john.doe",
-                        "type": "user",
-                        "object_id": "636b8c40f03d374a5c7f6ceb"
+                        "object_id": "636b8c40f03d374a5c7f6ceb",
+                        "type": "user"
                     }
-                }
-            }
+                },
+                "op": "add"
+            },
+            "event_type": "association_change",
+            "id": "64930a6d00466f31842811a1"
         },
-        "action": {
-            "outcome": "success"
+        "observer": {
+            "vendor": "Jumpcloud"
+        },
+        "related": {
+            "ip": [
+                "176.161.221.161"
+            ]
+        },
+        "source": {
+            "address": "176.161.221.161",
+            "ip": "176.161.221.161",
+            "user": {
+                "email": "maurice.moss@sekoia.io",
+                "id": "61e536ebdbbe784cb2e55fb5"
+            }
         },
         "user_agent": {
             "device": {
                 "name": "Mac"
             },
             "name": "Chrome",
-            "version": "114.0.0.0",
             "os": {
+                "full": "Mac OS X 10.15.7",
                 "name": "Mac OS X",
-                "version": "10.15.7",
-                "full": "Mac OS X 10.15.7"
-            }
-        },
-        "related": {
-            "ip": [
-                "176.161.221.161"
-            ]
+                "version": "10.15.7"
+            },
+            "version": "114.0.0.0"
         }
     }
     	
@@ -168,31 +168,21 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "action": "radius_auth_attempt"
         },
-        "client": {
-            "ip": "13.14.15.16",
-            "address": "13.14.15.16"
-        },
         "@timestamp": "2023-06-15T15:16:41Z",
-        "observer": {
-            "vendor": "Jumpcloud"
-        },
-        "user": {
-            "name": "john.doe"
-        },
-        "source": {
-            "user": {
-                "name": "john.doe"
-            },
-            "ip": "13.14.15.16",
-            "address": "13.14.15.16"
-        },
-        "jumpcloud": {
-            "id": "E5223E70-F3DB-3CB4-B452-96FC2259B9EE",
-            "event_type": "radius_auth_attempt"
-        },
         "action": {
             "outcome": "failure",
             "outcome_reason": "mschap: MS-CHAP2-Response is incorrect"
+        },
+        "client": {
+            "address": "13.14.15.16",
+            "ip": "13.14.15.16"
+        },
+        "jumpcloud": {
+            "event_type": "radius_auth_attempt",
+            "id": "E5223E70-F3DB-3CB4-B452-96FC2259B9EE"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
         },
         "related": {
             "ip": [
@@ -201,6 +191,16 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "user": [
                 "john.doe"
             ]
+        },
+        "source": {
+            "address": "13.14.15.16",
+            "ip": "13.14.15.16",
+            "user": {
+                "name": "john.doe"
+            }
+        },
+        "user": {
+            "name": "john.doe"
         }
     }
     	
@@ -216,30 +216,20 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "action": "radius_auth_attempt"
         },
-        "client": {
-            "ip": "20.21.22.23",
-            "address": "20.21.22.23"
-        },
         "@timestamp": "2023-06-15T15:17:41Z",
-        "observer": {
-            "vendor": "Jumpcloud"
-        },
-        "user": {
-            "name": "jane.doe"
-        },
-        "source": {
-            "user": {
-                "name": "jane.doe"
-            },
-            "ip": "20.21.22.23",
-            "address": "20.21.22.23"
-        },
-        "jumpcloud": {
-            "id": "842B7B84-FE16-32AF-B257-9D508FB22D22",
-            "event_type": "radius_auth_attempt"
-        },
         "action": {
             "outcome": "success"
+        },
+        "client": {
+            "address": "20.21.22.23",
+            "ip": "20.21.22.23"
+        },
+        "jumpcloud": {
+            "event_type": "radius_auth_attempt",
+            "id": "842B7B84-FE16-32AF-B257-9D508FB22D22"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
         },
         "related": {
             "ip": [
@@ -248,6 +238,16 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "user": [
                 "jane.doe"
             ]
+        },
+        "source": {
+            "address": "20.21.22.23",
+            "ip": "20.21.22.23",
+            "user": {
+                "name": "jane.doe"
+            }
+        },
+        "user": {
+            "name": "jane.doe"
         }
     }
     	
@@ -261,49 +261,29 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"id\":\"619294e65bb5c23fb2b1ce09\",\"type\":\"user\",\"username\":\"jane.doe\"},\"error_message\":\"application unreachable\",\"geoip\":{\"country_code\":\"US\",\"timezone\":\"America/New_York\",\"latitude\":42.059,\"continent_code\":\"NA\",\"region_name\":\"Massachusetts\",\"longitude\":-71.1123,\"region_code\":\"MA\"},\"sso_token_success\":false,\"useragent\":{\"minor\":\"0\",\"os\":\"Mac OS X\",\"os_minor\":\"15\",\"os_major\":\"10\",\"os_version\":\"10.15.7\",\"version\":\"114.0.0.0\",\"os_patch\":\"7\",\"patch\":\"0\",\"os_full\":\"Mac OS X 10.15.7\",\"major\":\"114\",\"name\":\"Chrome\",\"os_name\":\"Mac OS X\",\"device\":\"Mac\"},\"auth_context\":{\"system\":{\"hostname\":\"JDOE-LAPTOP\",\"os\":\"Mac OS X\",\"displayName\":\"JDOE-LAPTOP\",\"id\":\"61958333dd6a1b033f2b4b95\",\"version\":\"13.4\"},\"auth_methods\":{}},\"mfa\":false,\"event_type\":\"sso_auth\",\"application\":{\"display_label\":\"\",\"sso_type\":\"saml\",\"name\":\"\",\"id\":\"\",\"sso_url\":\"https://sso.jumpcloud.com/saml2/google\"},\"provider\":\"\",\"service\":\"sso\",\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"5.6.7.8\",\"id\":\"648b1e56c0b7fd51eb1d0938\",\"idp_initiated\":false,\"timestamp\":\"2023-06-15T14:21:10.34334445Z\"}",
         "event": {
+            "action": "sso_auth",
             "category": [
                 "authentication"
             ],
             "type": [
                 "info"
-            ],
-            "action": "sso_auth"
-        },
-        "client": {
-            "ip": "5.6.7.8",
-            "address": "5.6.7.8"
+            ]
         },
         "@timestamp": "2023-06-15T14:21:10.343344Z",
-        "observer": {
-            "vendor": "Jumpcloud"
-        },
-        "source": {
-            "user": {
-                "name": "jane.doe",
-                "id": "619294e65bb5c23fb2b1ce09"
-            },
-            "ip": "5.6.7.8",
-            "address": "5.6.7.8"
-        },
-        "jumpcloud": {
-            "id": "648b1e56c0b7fd51eb1d0938",
-            "event_type": "sso_auth"
-        },
         "action": {
             "outcome": "failure",
             "outcome_reason": "application unreachable"
         },
-        "user_agent": {
-            "device": {
-                "name": "Mac"
-            },
-            "name": "Chrome",
-            "version": "114.0.0.0",
-            "os": {
-                "name": "Mac OS X",
-                "version": "10.15.7",
-                "full": "Mac OS X 10.15.7"
-            }
+        "client": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8"
+        },
+        "jumpcloud": {
+            "event_type": "sso_auth",
+            "id": "648b1e56c0b7fd51eb1d0938"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
         },
         "related": {
             "ip": [
@@ -312,6 +292,26 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "user": [
                 "jane.doe"
             ]
+        },
+        "source": {
+            "address": "5.6.7.8",
+            "ip": "5.6.7.8",
+            "user": {
+                "id": "619294e65bb5c23fb2b1ce09",
+                "name": "jane.doe"
+            }
+        },
+        "user_agent": {
+            "device": {
+                "name": "Mac"
+            },
+            "name": "Chrome",
+            "os": {
+                "full": "Mac OS X 10.15.7",
+                "name": "Mac OS X",
+                "version": "10.15.7"
+            },
+            "version": "114.0.0.0"
         }
     }
     	
@@ -325,52 +325,29 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"id\":\"627e7e94c17c5a34e72b862a\",\"type\":\"user\",\"username\":\"john.doe\"},\"error_message\":\"not authorized\",\"geoip\":{\"country_code\":\"FR\",\"timezone\":\"Europe/Paris\",\"latitude\":48.8138,\"continent_code\":\"EU\",\"region_name\":\"Val-de-Marne\",\"longitude\":2.3873,\"region_code\":\"94\"},\"sso_token_success\":false,\"useragent\":{\"os\":\"Mac OS X\",\"minor\":\"0\",\"os_minor\":\"15\",\"os_major\":\"10\",\"os_version\":\"10.15.7\",\"version\":\"114.0.0.0\",\"os_patch\":\"7\",\"patch\":\"0\",\"os_full\":\"Mac OS X 10.15.7\",\"major\":\"114\",\"name\":\"Chrome\",\"os_name\":\"Mac OS X\",\"device\":\"Mac\"},\"auth_context\":{\"system\":{\"hostname\":\"JPABLO-MAC\",\"os\":\"Mac OS X\",\"displayName\":\"PCONTRERAS-MAC\",\"id\":\"627e7d26e05f2c61150b5905\",\"version\":\"13.4\"},\"auth_methods\":{}},\"mfa\":false,\"event_type\":\"sso_auth\",\"application\":{\"display_label\":\"Salesforce\",\"sso_type\":\"saml\",\"name\":\"salesforce\",\"id\":\"5fbfaa559753353c0b83ecc0\",\"sso_url\":\"https://sso.jumpcloud.com/saml2/google\"},\"provider\":\"\",\"service\":\"sso\",\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"9.10.11.12\",\"id\":\"648b24c48eae32f4adabc27e\",\"idp_initiated\":false,\"timestamp\":\"2023-06-15T14:48:36.495420839Z\"}",
         "event": {
+            "action": "sso_auth",
             "category": [
                 "authentication"
             ],
             "type": [
                 "info"
-            ],
-            "action": "sso_auth"
-        },
-        "client": {
-            "ip": "9.10.11.12",
-            "address": "9.10.11.12"
+            ]
         },
         "@timestamp": "2023-06-15T14:48:36.495420Z",
-        "observer": {
-            "vendor": "Jumpcloud"
-        },
-        "source": {
-            "user": {
-                "name": "john.doe",
-                "id": "627e7e94c17c5a34e72b862a"
-            },
-            "ip": "9.10.11.12",
-            "address": "9.10.11.12"
-        },
-        "jumpcloud": {
-            "id": "648b24c48eae32f4adabc27e",
-            "event_type": "sso_auth"
-        },
-        "service": {
-            "name": "salesforce"
-        },
         "action": {
             "outcome": "failure",
             "outcome_reason": "not authorized"
         },
-        "user_agent": {
-            "device": {
-                "name": "Mac"
-            },
-            "name": "Chrome",
-            "version": "114.0.0.0",
-            "os": {
-                "name": "Mac OS X",
-                "version": "10.15.7",
-                "full": "Mac OS X 10.15.7"
-            }
+        "client": {
+            "address": "9.10.11.12",
+            "ip": "9.10.11.12"
+        },
+        "jumpcloud": {
+            "event_type": "sso_auth",
+            "id": "648b24c48eae32f4adabc27e"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
         },
         "related": {
             "ip": [
@@ -379,6 +356,29 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "user": [
                 "john.doe"
             ]
+        },
+        "service": {
+            "name": "salesforce"
+        },
+        "source": {
+            "address": "9.10.11.12",
+            "ip": "9.10.11.12",
+            "user": {
+                "id": "627e7e94c17c5a34e72b862a",
+                "name": "john.doe"
+            }
+        },
+        "user_agent": {
+            "device": {
+                "name": "Mac"
+            },
+            "name": "Chrome",
+            "os": {
+                "full": "Mac OS X 10.15.7",
+                "name": "Mac OS X",
+                "version": "10.15.7"
+            },
+            "version": "114.0.0.0"
         }
     }
     	
@@ -392,51 +392,28 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"id\":\"611d175820c84b11c28262e2\",\"type\":\"user\",\"username\":\"john.doe\"},\"error_message\":\"\",\"geoip\":{\"country_code\":\"US\",\"timezone\":\"America/New_York\",\"latitude\":42.3364,\"continent_code\":\"NA\",\"region_name\":\"Massachusetts\",\"region_code\":\"MA\",\"longitude\":-71.0326},\"sso_token_success\":true,\"auth_context\":{\"system\":{\"hostname\":\"JDOE-DEKSTOP\",\"os\":\"Mac OS X\",\"displayName\":\"JDOE-DEKSTOP\",\"id\":\"611eadd78e9ce015fc53eb28\",\"version\":\"13.4\"},\"auth_methods\":{},\"policies_applied\":[{\"metadata\":{\"resource_type\":\"APPLICATION\",\"action\":\"ALLOW\"},\"name\":\"Global Policy\",\"id\":\"\"}]},\"useragent\":{\"os_full\":\"Mac OS X 10.15\",\"minor\":\"0\",\"os\":\"Mac OS X\",\"major\":\"114\",\"os_minor\":\"15\",\"os_major\":\"10\",\"os_version\":\"10.15\",\"name\":\"Firefox\",\"os_name\":\"Mac OS X\",\"device\":\"Mac\",\"version\":\"114.0\"},\"mfa\":false,\"event_type\":\"sso_auth\",\"application\":{\"display_label\":\"Google Workspace\",\"sso_type\":\"saml\",\"name\":\"google\",\"id\":\"60d05c1385450d17af70308f\",\"sso_url\":\"https://sso.jumpcloud.com/saml2/google\"},\"provider\":\"\",\"service\":\"sso\",\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"1.2.3.4\",\"id\":\"648b16171f40f190e2945fc1\",\"idp_initiated\":false,\"timestamp\":\"2023-06-15T13:45:59.812449824Z\"}",
         "event": {
+            "action": "sso_auth",
             "category": [
                 "authentication"
             ],
             "type": [
                 "info"
-            ],
-            "action": "sso_auth"
-        },
-        "client": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
+            ]
         },
         "@timestamp": "2023-06-15T13:45:59.812449Z",
-        "observer": {
-            "vendor": "Jumpcloud"
-        },
-        "source": {
-            "user": {
-                "name": "john.doe",
-                "id": "611d175820c84b11c28262e2"
-            },
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
-        "jumpcloud": {
-            "id": "648b16171f40f190e2945fc1",
-            "event_type": "sso_auth"
-        },
-        "service": {
-            "name": "google"
-        },
         "action": {
             "outcome": "success"
         },
-        "user_agent": {
-            "device": {
-                "name": "Mac"
-            },
-            "name": "Firefox",
-            "version": "114.0",
-            "os": {
-                "name": "Mac OS X",
-                "version": "10.15",
-                "full": "Mac OS X 10.15"
-            }
+        "client": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
+        },
+        "jumpcloud": {
+            "event_type": "sso_auth",
+            "id": "648b16171f40f190e2945fc1"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
         },
         "related": {
             "ip": [
@@ -445,6 +422,29 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "user": [
                 "john.doe"
             ]
+        },
+        "service": {
+            "name": "google"
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "user": {
+                "id": "611d175820c84b11c28262e2",
+                "name": "john.doe"
+            }
+        },
+        "user_agent": {
+            "device": {
+                "name": "Mac"
+            },
+            "name": "Firefox",
+            "os": {
+                "full": "Mac OS X 10.15",
+                "name": "Mac OS X",
+                "version": "10.15"
+            },
+            "version": "114.0"
         }
     }
     	
@@ -460,36 +460,41 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "action": "user_update"
         },
-        "client": {
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
         "@timestamp": "2023-06-20T00:21:09.162000Z",
-        "observer": {
-            "vendor": "Jumpcloud"
-        },
-        "source": {
-            "user": {
-                "email": "maurice.moss@sekoia.io",
-                "id": "603e0c284295c570a179ef4a"
-            },
-            "ip": "1.2.3.4",
-            "address": "1.2.3.4"
-        },
-        "user": {
-            "target": {
-                "name": "jane.doe",
-                "id": "6127579ec58b6d6144c06492"
-            }
+        "client": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4"
         },
         "jumpcloud": {
-            "id": "6490f0f5a2d539837a30aaad",
-            "event_type": "user_update",
             "changes": [
                 {
                     "field": "attributes"
                 }
+            ],
+            "event_type": "user_update",
+            "id": "6490f0f5a2d539837a30aaad"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
+        },
+        "related": {
+            "ip": [
+                "1.2.3.4"
             ]
+        },
+        "source": {
+            "address": "1.2.3.4",
+            "ip": "1.2.3.4",
+            "user": {
+                "email": "maurice.moss@sekoia.io",
+                "id": "603e0c284295c570a179ef4a"
+            }
+        },
+        "user": {
+            "target": {
+                "id": "6127579ec58b6d6144c06492",
+                "name": "jane.doe"
+            }
         },
         "user_agent": {
             "device": {
@@ -497,14 +502,9 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             },
             "name": "Other",
             "os": {
-                "name": "Other",
-                "full": "Other"
+                "full": "Other",
+                "name": "Other"
             }
-        },
-        "related": {
-            "ip": [
-                "1.2.3.4"
-            ]
         }
     }
     	
@@ -520,31 +520,15 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "action": "user_update"
         },
-        "client": {
-            "ip": "4.5.6.7",
-            "address": "4.5.6.7"
-        },
         "@timestamp": "2023-06-19T16:05:10.657000Z",
-        "observer": {
-            "vendor": "Jumpcloud"
+        "action": {
+            "outcome": "success"
         },
-        "source": {
-            "user": {
-                "email": "maurice.moss@sekoia.io",
-                "id": "5bf6defbdcd8233029e0c599"
-            },
-            "ip": "4.5.6.7",
-            "address": "4.5.6.7"
-        },
-        "user": {
-            "target": {
-                "name": "jane.doe",
-                "id": "627232d9c2bb20373d84eb63"
-            }
+        "client": {
+            "address": "4.5.6.7",
+            "ip": "4.5.6.7"
         },
         "jumpcloud": {
-            "id": "64907cb6e968be7fe5b14d80",
-            "event_type": "user_update",
             "changes": [
                 {
                     "field": "addresses"
@@ -555,26 +539,42 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 {
                     "field": "location"
                 }
+            ],
+            "event_type": "user_update",
+            "id": "64907cb6e968be7fe5b14d80"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
+        },
+        "related": {
+            "ip": [
+                "4.5.6.7"
             ]
         },
-        "action": {
-            "outcome": "success"
+        "source": {
+            "address": "4.5.6.7",
+            "ip": "4.5.6.7",
+            "user": {
+                "email": "maurice.moss@sekoia.io",
+                "id": "5bf6defbdcd8233029e0c599"
+            }
+        },
+        "user": {
+            "target": {
+                "id": "627232d9c2bb20373d84eb63",
+                "name": "jane.doe"
+            }
         },
         "user_agent": {
             "device": {
                 "name": "Other"
             },
             "name": "curl",
-            "version": "7.68.0",
             "os": {
-                "name": "Other",
-                "full": "Other"
-            }
-        },
-        "related": {
-            "ip": [
-                "4.5.6.7"
-            ]
+                "full": "Other",
+                "name": "Other"
+            },
+            "version": "7.68.0"
         }
     }
     	
@@ -590,31 +590,15 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "action": "user_update"
         },
-        "client": {
-            "ip": "10.11.12.13",
-            "address": "10.11.12.13"
-        },
         "@timestamp": "2023-06-19T17:11:10.381000Z",
-        "observer": {
-            "vendor": "Jumpcloud"
+        "action": {
+            "outcome": "success"
         },
-        "source": {
-            "user": {
-                "email": "maurice.moss@sekoia.io",
-                "id": "5bf6defbdcd8233029e0c599"
-            },
-            "ip": "10.11.12.13",
-            "address": "10.11.12.13"
-        },
-        "user": {
-            "target": {
-                "name": "john.wick",
-                "id": "628cf9c0d6f4831f8192fa8d"
-            }
+        "client": {
+            "address": "10.11.12.13",
+            "ip": "10.11.12.13"
         },
         "jumpcloud": {
-            "id": "64908c2ef675033f5a7a5e1e",
-            "event_type": "user_update",
             "changes": [
                 {
                     "field": "addresses"
@@ -635,26 +619,42 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                     "from": "false",
                     "to": "true"
                 }
+            ],
+            "event_type": "user_update",
+            "id": "64908c2ef675033f5a7a5e1e"
+        },
+        "observer": {
+            "vendor": "Jumpcloud"
+        },
+        "related": {
+            "ip": [
+                "10.11.12.13"
             ]
         },
-        "action": {
-            "outcome": "success"
+        "source": {
+            "address": "10.11.12.13",
+            "ip": "10.11.12.13",
+            "user": {
+                "email": "maurice.moss@sekoia.io",
+                "id": "5bf6defbdcd8233029e0c599"
+            }
+        },
+        "user": {
+            "target": {
+                "id": "628cf9c0d6f4831f8192fa8d",
+                "name": "john.wick"
+            }
         },
         "user_agent": {
             "device": {
                 "name": "Other"
             },
             "name": "curl",
-            "version": "7.68.0",
             "os": {
-                "name": "Other",
-                "full": "Other"
-            }
-        },
-        "related": {
-            "ip": [
-                "10.11.12.13"
-            ]
+                "full": "Other",
+                "name": "Other"
+            },
+            "version": "7.68.0"
         }
     }
     	
