@@ -30,7 +30,7 @@ To send **Microsoft Intune** logs to Sekoia.io, there are some prerequisites:
 
 ### Send logs from Microsoft Intune to Azure Event Hub
 
-When you have an **Event Hub** follow [this guide](https://learn.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor) to send your events from **Microsoft 365 Defender** to the **Event Hub**.
+When you have an **Event Hub** follow [this guide](https://learn.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor) to send your events from **Microsoft Intune** to the **Event Hub**.
 
 ### Create the intake
 
