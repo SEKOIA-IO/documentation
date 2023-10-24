@@ -87,6 +87,9 @@ Checking connectivity with Sekoia.io APIs ...
 Checking connectivity with the object storage ... OK
 ```
 
+!!! tip
+        Proxy information can be passed to the docker command with the `-e` option: `-e https_proxy={proxy_url}`
+
 ## Playbook runners 
 
 A playbook runner is a local relay that allows playbook actions to be launched on a local network. 
