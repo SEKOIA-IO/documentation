@@ -44,11 +44,12 @@ All rules have an associated effort level. The effort level is increasing from E
 - Effort needed to enable a rule.
 - Risk of false positives.
 
-For example:
+Description of each effort level:
 
-- `Elementary` rules require almost no effort and raise fewer alerts
-- `Master` rules are generic and raise a lot of alerts that will require qualification, but they can detect weaker signals. Those rules require an additional customisation effort, which has to be adapted to the customer context
-You can click on each counter associated with an effort level to see only the rules for this level
+- `Elementary`: rule requires no effort to enable rule and raises fewer alerts. Those rules are built to be effective and designed to raise as little false positives as possible
+- `Intermediate`: similar to `Elementary` effort but a rule could raise more alerts
+- `Advanced`: rule could require more effort to be enabled and could raise alerts frequently depending on the IT configuration
+- `Master`: rule could require a specific configuration to be enabled and/or could raise a high number of alerts, but is designed to detect weaker signals. `Master` rules usually require an additional customization effort, depending on the IT context and configuration. They are designed for more mature organizations. 
 
 #### Capabilities
 
