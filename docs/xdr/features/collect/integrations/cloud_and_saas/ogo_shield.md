@@ -8,10 +8,6 @@ OGO Shield Web Application Firewall provides protection and performance for your
 
 This setup guide describes how to forward security events from OGO to Sekoia.io.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_cf5c916e-fa26-11ed-a844-f7f4d7348199_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/cf5c916e-fa26-11ed-a844-f7f4d7348199.md!}
