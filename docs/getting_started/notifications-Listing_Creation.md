@@ -39,15 +39,15 @@ To write a new notification rule in the Operations Center, you first have to:
 
 1. Select an `event` and `conditions` that will trigger your notification rule. You can configure your notification rule to be triggered on `alerts` (that can be either new or already existing)
 2. Choose one or multiple `conditions` amongst multiple options (alert status, its urgency, asset concerned by the alert, etc.)
+3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
+4. Give your notification a `name`
+5. Save your changes
 
 For example, you can decide to trigger a notification when the following criteria are met:
 
 - Status of the new alert is `Ongoing`
 - Urgency of the new alert is `higher than 80`
 - Involved asset is `My Critical Asset`
-- Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
-- Give your notification a `name`
-- Save your changes
 
 
 ### Intelligence Center Notifications
@@ -58,14 +58,14 @@ To do so, you have to:
 
 1. Select an `event` and `conditions` that will trigger your notification rule. You can configure your notification rule to be triggered on `reports being added`
 2. Choose one or multiple `conditions` amongst multiple options (name, description, refers to, sector, country, TLP, FLINT, confidence level…)
+3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
+4. Give your notification a `name`
+5. Save your changes
 
 For example, you can decide to trigger a notification when the following criteria are met:
 
 - It refers to the malware `Cobalt Strike`
 - It concerns the country `France`
-3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
-4. Give your notification a `name`
-5. Save your changes
 
 
 ### Playbooks notifications
