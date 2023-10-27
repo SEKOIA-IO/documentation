@@ -7,6 +7,7 @@ Notifications Rules, accessible through the User Center or the contextual menu, 
 
 - Focus on specific Sekoia.io events (Operations Center alerts and Intelligence Center reports)
 - Add precise conditions
+- In a multi-tenant context, select the communities from which you'd like to receive these notifications (from all your communities or just one).
 - Configure actions to be triggered (send an e-mail, display a notification in Sekoia.io, …)
 
 This documentation will let you go deeper into [Sekoia.io](http://sekoia.io/)’s notifications mechanism.
@@ -26,7 +27,11 @@ You can filter by type of trigger or type of actions.
 
 ## Create a new notification
 
-Notifications only apply to the community and the application you are in. Once configured, these notifications will only be visible to the user who created them.
+**In single-tenant mode:** Notifications apply only to the community you're in.
+
+**In multi-tenant mode:** By default all notifications will come from all your sub-communities, but you can also choose to receive notifications from just one sub-community.
+
+Once configured, these notifications will only be visible to the user who created them.
 
 ### Operations Center Notifications
 
@@ -40,9 +45,9 @@ For example, you can decide to trigger a notification when the following criteri
 - Status of the new alert is `Ongoing`
 - Urgency of the new alert is `higher than 80`
 - Involved asset is `My Critical Asset`
-3. Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
-4. Give your notification a `name`
-5. Save your changes
+- Select `actions` that you want to see performed. You can choose multiple options: get an in-app notification, receive an email, send texts using webhooks or in a Mattermost channel
+- Give your notification a `name`
+- Save your changes
 
 
 ### Intelligence Center Notifications
