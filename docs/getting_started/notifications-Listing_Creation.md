@@ -65,9 +65,6 @@ For example, you can decide to trigger a notification when the following criteri
 
 ### Playbooks notifications
 
-!!! Warning
-    The notification is only available for single-tenant account at the moment.
-
 The "A playbook has encountered an error" trigger, if selected alone, will send a notification for each error encountered by a playbook in your community, whether or not this error causes the playbook to crash.
 
 If you wish to be notified only if the playbook encounters an error *and* crashed, you can select the "And crashed" condition.
