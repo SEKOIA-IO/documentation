@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import { getCollection } from "astro:content";
 
-const blogEntries = await getCollection("automate");
+const docEntries = await getCollection("docs");
 
 ---
 
@@ -12,9 +12,9 @@ const blogEntries = await getCollection("automate");
     class="p-10 max-w-4xl mx-auto container flex flex-1 flex-col items-center w-full"
 >
 <ul>
-  {blogEntries.map(blogPostEntry => (
+  {docEntries.map(docPostEntry => (
     <li>
-      <a href={`/my-blog-url/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+      <a href={`/documentation/${docPostEntry.slug}`}>{docPostEntry.data.title}</a>
     </li>
   ))}
 </ul>
