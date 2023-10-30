@@ -76,7 +76,7 @@ These following examples describe a set of successfully authentications.
 }
 ```
 
-1. The eventName allows to determine the event.category and event.type
+1. The eventName allows to determine the `event.category` and `event.type`
 2. The outcome of the event
 3. The identifier of the principal
 
