@@ -229,8 +229,8 @@ For the Salesforce event, this smart-description will result into:
 
 Sources:
 
-- [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
-- [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
+- [microsoft.com: 4624(S): An account was successfully logged on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
+- [microsoft.com: 4625(F): An account failed to log on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
 
 ### action.outcome
 
