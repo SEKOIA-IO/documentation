@@ -22,7 +22,7 @@ Other fields are necessary in order to be able to fully describe the authenticat
 | sekoiaio.server.name        | Host name  targeted by the authentication                            |
 | sekoiaio.server.domain      | Host domain targeted by the authentication                           |
 | sekoiaio.server.os.type     | OS type of the host targeted by the authentication                   |
-| server.ip                   | Host ip targeted by the authentication                               |
+| server.ip                   | Host IP targeted by the authentication                               |
 | server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
 | sekoiaio.authentication.process.name | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
 | user.name                   | user name has requested authentication                               |
@@ -41,7 +41,7 @@ You can also extract some additional information like urls, user agent, ...
 
 ### How to parse authentication events
 
-These following examples describe a set of successfully authentications provided by an application or a Cloud application
+These following examples describe a set of successfully authentications.
 
 #### AWS Cloudtrail
 
@@ -76,11 +76,11 @@ These following examples describe a set of successfully authentications provided
 }
 ```
 
-1. The eventName allows to determine the event.category and event.type
+1. The eventName allows to determine the `event.category` and `event.type`
 2. The outcome of the event
 3. The identifier of the principal
 
-will result into this ECS document
+Will result into this ECS document:
 
 ```json
 {
@@ -118,7 +118,7 @@ will result into this ECS document
 }
 ```
 
-1. The EVENT_TYPE allows to determine the event.category and event.type
+1. The field EVENT_TYPE is used to determine the `event.category` and `event.type`
 2. The outcome of the event
 3. The email of the principal
 
@@ -151,8 +151,8 @@ will result into this ECS document
 11:23:02,069, example.intranet, audit.runtime.com.rsa.ims.authn.impl.AuthenticationBrokerImpl, INFO, da0011b4f66e4b7e86f90f9dd6e937e7,0e34d92f7c6549b19ed28471c02a049b,5.6.7.8,1.2.3.4,AUTHN_LOGIN_EVENT,13002,SUCCESS,AUTHN_METHOD_SUCCESS,e7ec7ff59d604a2ba3fa09067bbd65a4-L0+/miv3k62B,39b1319237f946428aecf267190b537d,09f1f5fc30e947ce9e564d5a91745091,000000000000000000001000e0011000,HDTCO04,HDTCO04,,559eb5ec2d43408cbce2a43b65eafe8c,000000000000000000001000e0011000,1.2.3.4,source.hostname,000000000000000000002000f1022000,SecurID_Native,,,AUTHN_LOGIN_EVENT,6,4,,,,,da624c0ecf554764953fcc346b999682,000523656192,,
 ```
 
-1. The value AUTHN_LOGIN_EVENT allows to determine the event.category and event.type
-2. The value SUCCESS allows to define the outcome
+1. The value of the field `AUTHN_LOGIN_EVENT` is used to determine the `event.category` and `event.type`
+2. The value `SUCCESS` is used to define the outcome
 3. The 
 
 will result into this ECS document
@@ -190,7 +190,7 @@ From the previous samples, we can build the following smart-description:
 
 ```json
 {
-  "value": "{user.name} sign in from {sekoiaio.client.name} ({client.ip})",
+  "value": "{user.name} signed in from {sekoiaio.client.name} ({client.ip})",
   "conditions": [
      {"field": "event.category", "value": "authentication"},
      {"field": "event.type", "value": "start"},
@@ -203,13 +203,13 @@ From the previous samples, we can build the following smart-description:
 
 For the AWS cloudtrail event, this smart-description will result into:
 
-`1111111111 sign in from source.hostname (1.2.3.4)`
+`1111111111 signed in from source.hostname (1.2.3.4)`
 
 However, If you extract more information from the event, you can improve the smart-description:
 
 ```json
 {
-  "value": "{user.name} sign in from {sekoiaio.client.name} ({client.ip}) on {url.original}",
+  "value": "{user.name} signed in from {sekoiaio.client.name} ({client.ip}) on {url.original}",
   "conditions": [
      {"field": "event.category", "value": "authentication"},
      {"field": "event.type", "value": "start"},
@@ -223,18 +223,18 @@ However, If you extract more information from the event, you can improve the sma
 
 For the Salesforce event, this smart-description will result into:
 
-`john.doe@example.org sign in from source.hostname (192.168.0.1) on https://login.salesforce.com`
+`john.doe@example.org signed in from source.hostname (192.168.0.1) on https://login.salesforce.com`
 
 ## Windows OS authentications
 
 Sources:
 
-- [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
-- [https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
+- [microsoft.com: 4624(S): An account was successfully logged on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624)
+- [microsoft.com: 4625(F): An account failed to log on.](https://learn.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4625)
 
 ### action.outcome
 
-For windows events, we can map action.id with action.outcome as follow:
+For Windows events, we can map `action.id` with `action.outcome` as follow:
 
 | action.id | action.outcome |
 | --------- | -------------- |
@@ -243,7 +243,7 @@ For windows events, we can map action.id with action.outcome as follow:
 
 ### event.action
 
-For windows events, we can map `action.properties.LogonType` with `event.action` as follow:
+For Windows events, we can map `action.properties.LogonType` with `event.action` as follow:
 
 | action.properties.LogonType | event.action                             |
 | --------------------------- | ---------------------------------------- |
@@ -261,7 +261,7 @@ For windows events, we can map `action.properties.LogonType` with `event.action`
 
 ### event.reason
 
-For windows events, we can map `action.properties.SubStatus` with `event.reason` as follow:
+For Windows events, we can map `action.properties.SubStatus` with `event.reason` as follow:
 
 | action.properties.SubStatus | event.reason                             |
 | --------------------------- | ---------------------------------------- |
@@ -415,7 +415,7 @@ With the following smart-description:
 }
 ```
 
-will result into the description:
+Will result into the description:
 
 `KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (authentication_network)`
 
