@@ -22,7 +22,7 @@ Other fields are necessary in order to be able to fully describe the authenticat
 | sekoiaio.server.name        | Host name  targeted by the authentication                            |
 | sekoiaio.server.domain      | Host domain targeted by the authentication                           |
 | sekoiaio.server.os.type     | OS type of the host targeted by the authentication                   |
-| server.ip                   | Host ip targeted by the authentication                               |
+| server.ip                   | Host IP targeted by the authentication                               |
 | server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
 | sekoiaio.authentication.process.name | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
 | user.name                   | user name has requested authentication                               |
