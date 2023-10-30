@@ -118,7 +118,7 @@ Will result into this ECS document:
 }
 ```
 
-1. The EVENT_TYPE allows to determine the event.category and event.type
+1. The field EVENT_TYPE is used to determine the `event.category` and `event.type`
 2. The outcome of the event
 3. The email of the principal
 
