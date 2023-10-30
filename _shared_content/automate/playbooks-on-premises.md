@@ -7,7 +7,7 @@ To harness the full potential of this security-enhancing feature, clients are re
 Below, we provide detailed instructions on how to accomplish this installation process effectively.
 
 !!! INFO
-    This feature is currently in private beta. If you would like to try it, please contact us.
+    This feature is currently in public beta. If you would like to try it, please contact us.
 
 ## Prerequisites
 
