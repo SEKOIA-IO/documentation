@@ -243,7 +243,7 @@ For Windows events, we can map `action.id` with `action.outcome` as follow:
 
 ### event.action
 
-For windows events, we can map `action.properties.LogonType` with `event.action` as follow:
+For Windows events, we can map `action.properties.LogonType` with `event.action` as follow:
 
 | action.properties.LogonType | event.action                             |
 | --------------------------- | ---------------------------------------- |
