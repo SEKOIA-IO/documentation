@@ -80,7 +80,7 @@ These following examples describe a set of successfully authentications.
 2. The outcome of the event
 3. The identifier of the principal
 
-will result into this ECS document
+Will result into this ECS document:
 
 ```json
 {
