@@ -152,7 +152,7 @@ will result into this ECS document
 ```
 
 1. The value of the field `AUTHN_LOGIN_EVENT` is used to determine the `event.category` and `event.type`
-2. The value SUCCESS allows to define the outcome
+2. The value `SUCCESS` is used to define the outcome
 3. The 
 
 will result into this ECS document
