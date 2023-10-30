@@ -2,7 +2,7 @@
 
 In order to simplify the recognition and semantic interpretation of authentications, it is necessary to respect some standardization.
 
-An authentication is fully recognized as valid when all of these four fields are completed:
+An authentication is fully recognized as valid when all of these three fields are completed:
 
 - event.category : with the value `authentication`
 - event.type : with the value `start`
