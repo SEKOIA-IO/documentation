@@ -234,7 +234,7 @@ Sources:
 
 ### action.outcome
 
-For windows events, we can map action.id with action.outcome as follow:
+For Windows events, we can map `action.id` with `action.outcome` as follow:
 
 | action.id | action.outcome |
 | --------- | -------------- |
