@@ -190,7 +190,7 @@ From the previous samples, we can build the following smart-description:
 
 ```json
 {
-  "value": "{user.name} sign in from {sekoiaio.client.name} ({client.ip})",
+  "value": "{user.name} signed in from {sekoiaio.client.name} ({client.ip})",
   "conditions": [
      {"field": "event.category", "value": "authentication"},
      {"field": "event.type", "value": "start"},
@@ -203,13 +203,13 @@ From the previous samples, we can build the following smart-description:
 
 For the AWS cloudtrail event, this smart-description will result into:
 
-`1111111111 sign in from source.hostname (1.2.3.4)`
+`1111111111 signed in from source.hostname (1.2.3.4)`
 
 However, If you extract more information from the event, you can improve the smart-description:
 
 ```json
 {
-  "value": "{user.name} sign in from {sekoiaio.client.name} ({client.ip}) on {url.original}",
+  "value": "{user.name} signed in from {sekoiaio.client.name} ({client.ip}) on {url.original}",
   "conditions": [
      {"field": "event.category", "value": "authentication"},
      {"field": "event.type", "value": "start"},
@@ -223,7 +223,7 @@ However, If you extract more information from the event, you can improve the sma
 
 For the Salesforce event, this smart-description will result into:
 
-`john.doe@example.org sign in from source.hostname (192.168.0.1) on https://login.salesforce.com`
+`john.doe@example.org signed in from source.hostname (192.168.0.1) on https://login.salesforce.com`
 
 ## Windows OS authentications
 
@@ -261,7 +261,7 @@ For Windows events, we can map `action.properties.LogonType` with `event.action`
 
 ### event.reason
 
-For windows events, we can map `action.properties.SubStatus` with `event.reason` as follow:
+For Windows events, we can map `action.properties.SubStatus` with `event.reason` as follow:
 
 | action.properties.SubStatus | event.reason                             |
 | --------------------------- | ---------------------------------------- |
@@ -415,7 +415,7 @@ With the following smart-description:
 }
 ```
 
-will result into the description:
+Will result into the description:
 
 `KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (authentication_network)`
 
