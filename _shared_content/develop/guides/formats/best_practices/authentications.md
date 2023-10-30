@@ -41,7 +41,7 @@ You can also extract some additional information like urls, user agent, ...
 
 ### How to parse authentication events
 
-These following examples describe a set of successfully authentications provided by an application or a Cloud application
+These following examples describe a set of successfully authentications.
 
 #### AWS Cloudtrail
 
