@@ -8,7 +8,7 @@ An authentication is fully recognized as valid when all of these four fields are
 - event.type : with the value `start`
 - action.outcome : with the value `success` if the authentication successed or `failure` else
 
-Other fields are necessary in order to be able to fully describe the authentication. These fields are described in the table below
+Other fields are necessary in order to be able to fully describe the authentication. These fields are described in the table below. This list is not exhaustive, do not hesitate to fill in as many fields as possible.
 
 | Field                       | Description                                                          |
 | --------------------------- | -------------------------------------------------------------------- |
@@ -24,7 +24,7 @@ Other fields are necessary in order to be able to fully describe the authenticat
 | sekoiaio.server.os.type     | OS type of the host targeted by the authentication                   |
 | server.ip                   | Host ip targeted by the authentication                               |
 | server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
-| process.name                | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
+| sekoiaio.authentication.process.name | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
 | user.name                   | user name has requested authentication                               |
 | user.domain                 | user domain has requested authentication                             |
 | user.id                     | user id has requested authentication                                 |
@@ -357,6 +357,11 @@ The previous event will result into this ECS document:
       "os": {
         "type": "windows"
       }
+    },
+    "authentication": {
+      "process": {
+        "name": "NtLmSsp "
+      }
     }
   },
   "action": {
@@ -370,8 +375,7 @@ The previous event will result into this ECS document:
       "id": 2352
     },
     "pid": 744,
-    "id": 744,
-    "name": "NtLmSsp "
+    "id": 744
   },
   "user": {
     "id": "S-1-0-0",
@@ -467,6 +471,11 @@ The previous event will result into this ECS document:
       "os": {
         "type": "windows"
       }
+    },
+    "authentication": {
+      "process": {
+        "name": "Schannel"
+      }
     }
   },
   "action": {
@@ -482,9 +491,6 @@ The previous event will result into this ECS document:
     },
     "name": "VM-FOO$",
     "domain": "CORPDOMAIN"
-  },
-  "process": {
-    "name": "Schannel"
   }
 }
 ```
