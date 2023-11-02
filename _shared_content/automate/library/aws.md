@@ -59,6 +59,25 @@ Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 | `records_path` | `string` | The filename containing the records |
 
 
+### Fetch new Flowlogs on S3
+
+Get line-oriented Flowlog records from new S3 objects based on notifications
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `frequency` | `integer` | Batch frequency in seconds |
+| `queue_name` | `string` | The name of the SQS queue that received the notifications of the creation of S3 objects |
+| `chunk_size` | `integer` | The size of chunks for the batch processing |
+| `separator` | `string` | The separator used between each records (default: the linefeed character '\n') |
+| `skip_first` | `integer` | The number of records to skip at the begining of each S3 object (default: 0) |
+| `ignore_comments` | `boolean` | Flag to ignore commented lines (starting with the character `#`; default: false) |
+| `delete_consumed_messages` | `boolean` | Flag to delete consuming messages (default: false) |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `intake_key` | `string` | Intake key to use when sending events |
+
+
 ### Fetch new logs on S3
 
 Get line-oriented records from new S3 objects based on notifications
@@ -128,4 +147,4 @@ Get messages from SQS
 
 ## Extra
 
-Module **`AWS` v1.22.2**
+Module **`AWS` v1.25**

@@ -310,7 +310,6 @@ nav:
         - WithSecure: xdr/features/automate/library/withsecure.md
         - fileutils: xdr/features/automate/library/fileutils.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
-
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
