@@ -39,22 +39,30 @@ Trend Micro Email Security is a robust email protection solution that safeguards
 
 Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 
-- Click on **+ PLAYBOOK** button to create a new one
-- Select **Create a playbook from scratch**
-- Give it a name in the field **Name**
-- Open the left panel, click **Trend Micro Email Security** then select the trigger `Fetch new logs`
-- Click on **Create**
+1. Click on **+ PLAYBOOK** button to create a new one
+2. Select **Create a playbook from scratch**
+3. Give it a name in the field **Name**
+4. Open the left panel, click **Trend Micro Email Security** then select the trigger `Fetch new logs`
+5. Click on **Create**
 
-- Create a **Module configuration** using your service URL, username and API key. Name the module configuration as you wish
+6. Create a **Trigger configuration** using your `Service URL`, `Username`, `API key` and `Intake key`. All four are required.
 
+* `API key` is created on the first step 
+* `username` is your `Login ID` entered during account creating
+* The value of `service URL` varies according to your location:
 
--  Create a **Trigger configuration** using:
+| Location                                      | Service URL                 |
+|-----------------------------------------------|-----------------------------|
+| North America, Latin America and Asia Pacific | api.tmes.trendmicro.com     |
+| Europe, the Middle East and Africa            | api.tmes.trendmicro.eu      |
+| Australia and New Zealand                     | api.tmes-anz.trendmicro.com |
+| Japan                                         | api.tmems-jp.trendmicro.com |
+| Singapore                                     | api.tmes-sg.trendmicro.com  |
+| India                                         | api.tmes-in.trendmicro.com  |
 
-    * Type the `Intake key` created on the previous
-    * Select the `application name` what you to fetch events from
-    * Type the `Admin email`
+* Type the `Intake key` created on the previous step
 
-- Click on the **Save** button
-- **Activate the playbook** with the toggle button in the top right corner of the page
+7. Click on the **Save** button
+8. **Activate the playbook** with the toggle button in the top right corner of the page
 
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
