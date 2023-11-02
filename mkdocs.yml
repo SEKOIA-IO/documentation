@@ -250,7 +250,6 @@ nav:
       - Actions: xdr/features/automate/actions.md
       - Actions Library:
         - AWS: xdr/features/automate/library/aws.md
-        - AWS: xdr/features/automate/library/aws.md
         - Azure Active Directory: xdr/features/automate/library/azure-active-directory.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
@@ -429,7 +428,6 @@ nav:
       - Operators: tip/features/automate/operators.md
       - Actions: tip/features/automate/actions.md
       - Actions Library:
-        - AWS: tip/features/automate/library/aws.md
         - AWS: tip/features/automate/library/aws.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
