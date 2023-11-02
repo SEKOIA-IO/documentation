@@ -81,6 +81,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Active Directory Shadow Credentials"
+    
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    
+    - **Effort:** elementary
+
 ??? abstract "Active Directory User Backdoors"
     
     Detects scenarios where the attacker controls another user or computer account without having to use their credentials.
@@ -360,6 +366,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "Commonly Used Commands To Stop Services And Remove Backups"
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
+    
+    - **Effort:** intermediate
+
+??? abstract "Container Credential Access"
+    
+    Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
     
     - **Effort:** intermediate
 

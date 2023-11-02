@@ -117,6 +117,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** elementary
 
+??? abstract "AWS CloudTrail Root ConsoleLogin"
+    
+    Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS CloudTrail Route 53 Domain Transfer Attempt"
     
     Detects when a request in success or failure is made to transfer a domain name to an other AWS account

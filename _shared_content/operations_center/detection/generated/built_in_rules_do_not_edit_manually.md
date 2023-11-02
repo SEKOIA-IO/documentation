@@ -1,4 +1,4 @@
-Rules catalog includes **764 built-in detection rules** ([_last update on 2023-10-24_](rules_changelog.md)).
+Rules catalog includes **768 built-in detection rules** ([_last update on 2023-11-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1773,6 +1773,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - major - Review of the rule to reduce false positives.
+            
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
     
     Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
@@ -4160,6 +4164,12 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
 **Modify Authentication Process**
 
+??? abstract "Active Directory Shadow Credentials"
+    
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    
+    - **Effort:** elementary
+    
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -4666,6 +4676,152 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     An user tries to access an unauthorized application.
     
     - **Effort:** master
+    
+??? abstract "User Added to Local Administrators"
+    
+    Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
+    
+    - **Effort:** intermediate
+    
+**Account Manipulation**
+
+??? abstract "AWS CloudTrail IAM Failed User Creation"
+    
+    Detects an attemp to create a user account where the result is an explicit denied.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM Password Policy Updated"
+    
+    Detects an update to the password policy. This could be an attempt to lower accounts security level.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM Policy Changed"
+    
+    Detects change on AWS IAM Policy
+    
+    - **Effort:** master
+    
+??? abstract "AWS CloudTrail Root ConsoleLogin"
+    
+    Detects a login with a root account on AWS portal. It is a best practice to avoid root account usage for daily tasks and to create an IAM admin user.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Attempt"
+    
+    Detects when a request in success or failure is made to transfer a domain name to an other AWS account
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail Route 53 Domain Transfer Lock Disabled"
+    
+    Detects when the transfer lock feature is disabled on a domain name handled by AWS Route 53 service.
+    
+    - **Effort:** elementary
+    
+??? abstract "Active Directory Delegate To KRBTGT Service"
+    
+    Detects potential persistence installation from an already compromised administrator domain account. The attacker will create a TGT and abuse a service account with the constrained delegation and update it with the krbtgt service. The detection relies on the Event ID 4738.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Active Directory Replication User Backdoor"
+    
+    Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain. 
+    
+    - **Effort:** advanced
+    
+??? abstract "Active Directory User Backdoors"
+    
+    Detects scenarios where the attacker controls another user or computer account without having to use their credentials.
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
+            
+??? abstract "Add User to Privileged Group"
+    
+    Add user in a potential privileged group which can be used to elevate privileges on the system
+    
+    - **Effort:** advanced
+    
+??? abstract "Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure"
+    
+    Detects self-service password reset in failure for various reasons (except licence or policy ones)
+    
+    - **Effort:** master
+    
+??? abstract "Mimikatz Basic Commands"
+    
+    Detects Mimikatz most popular commands. 
+    
+    - **Effort:** elementary
+    
+    - **Changelog:**
+    
+        - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
+            
+??? abstract "Okta Admin Privilege Granted"
+    
+    Administrator privilege granted to an user or account. This can be privilege escalation, persistance over system or account takedown.
+    
+    - **Effort:** advanced
+    
+??? abstract "Okta Application deleted"
+    
+    An application has been delete on Okta SSO.
+    
+    - **Effort:** advanced
+    
+??? abstract "Okta Application modified"
+    
+    An application has been updated on Okta SSO.
+    
+    - **Effort:** advanced
+    
+??? abstract "Okta User Account Deactivated"
+    
+    An user account has been deactivated in Okta.
+    
+    - **Effort:** master
+    
+??? abstract "Okta User Impersonation Access"
+    
+    A user has initiated a session impersonation granting them access to the environment with the permissions of the user they are impersonating. This would likely indicate Okta administrative access and should only ever occur if requested and expected.
+    
+    - **Effort:** advanced
+    
+??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
+    
+    The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Privileged AD Builtin Group Modified"
+    
+    Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 10/07/2023 - minor - Added AD groups and change to effort master.
+            
+??? abstract "SSH Authorized Key Alteration"
+    
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    
+    - **Effort:** advanced
+    
+??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+    
+    Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
+    
+    - **Effort:** elementary
     
 ??? abstract "User Added to Local Administrators"
     
@@ -5490,6 +5646,12 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     Detects the execution of a legitimate, windows built-in process name from an unusual / suspicious folder. Legitimate folders are c:\windows\system32\, \SystemRoot\system32\, c:\windows\syswow64\ and c:\windows\winsxs\. Many malwares/attackers use legitimate names to masquerade but if they are not Administrator yet, they often can't write file into these legitimate folders.
     
     - **Effort:** advanced
+    
+??? abstract "Linux Binary Masquerading"
+    
+    Attackers could rename legitimate system bin to evade security mechanisme
+    
+    - **Effort:** elementary
     
 ??? abstract "New Or Renamed User Account With '$' In Attribute 'SamAccountName'"
     
@@ -6609,6 +6771,12 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
             
 **Modify Authentication Process**
 
+??? abstract "Active Directory Shadow Credentials"
+    
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    
+    - **Effort:** elementary
+    
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -7225,6 +7393,14 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** elementary
     
+**Reflective Code Loading**
+
+??? abstract "Linux Fileless Execution"
+    
+    Process image resolved to memfd syscall. Could be used by adversaries to hide malware
+    
+    - **Effort:** intermediate
+    
 ## Credential Access
 **OS Credential Dumping**
 
@@ -7525,6 +7701,10 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/10/2023 - minor - Added filter to reduce false positives.
+            
 **Network Sniffing**
 
 ??? abstract "Capture a network trace with netsh.exe"
@@ -7703,6 +7883,12 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
         - 27/03/2023 - minor - Modify pattern to avoid false positive and detect usage of either / or - character for snapshot parameter
             
+??? abstract "Container Credential Access"
+    
+    Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Google Cloud Audit Logs 2FA Disabled"
     
     Detects when Google Cloud Audit Logs notify the 2FA deactivation for a user account.
@@ -7754,6 +7940,12 @@ Rules catalog includes **764 built-in detection rules** ([_last update on 2023-1
     
 **Modify Authentication Process**
 
+??? abstract "Active Directory Shadow Credentials"
+    
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    
+    - **Effort:** elementary
+    
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
