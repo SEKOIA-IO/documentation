@@ -225,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** intermediate
 
+??? abstract "Container Credential Access"
+    
+    Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
+    
+    - **Effort:** intermediate
+
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item

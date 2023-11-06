@@ -39,6 +39,18 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     
     - **Effort:** advanced
 
+??? abstract "Jumpcloud Account Locked"
+    
+    A user has been locked on Jumpcloud portal.
+    
+    - **Effort:** intermediate
+
+??? abstract "Jumpcloud Api Key Updated"
+    
+    An API Token has been updated on Jumplcoud portal.
+    
+    - **Effort:** advanced
+
 ??? abstract "Jumpcloud Policy Modified"
     
     Detects when a Jumpcloud policy is modified.

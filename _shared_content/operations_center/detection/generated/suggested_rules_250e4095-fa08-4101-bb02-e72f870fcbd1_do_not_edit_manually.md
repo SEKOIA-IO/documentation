@@ -81,6 +81,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Active Directory Shadow Credentials"
+    
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    
+    - **Effort:** elementary
+
 ??? abstract "Active Directory User Backdoors"
     
     Detects scenarios where the attacker controls another user or computer account without having to use their credentials.
@@ -260,6 +266,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     When a file is opened, the default program used to open the file (also called the file association or handler) is checked. File association selections are stored in the Windows Registry and can be edited by users, administrators, or programs that have Registry access or by administrators using the built-in assoc utility. Applications can modify the file association for a given file extension to call an arbitrary program when a file with the given extension is opened.
     
     - **Effort:** advanced
+
+??? abstract "Cisco Umbrella Threat Detected"
+    
+    Cisco Umbrella has detected a malicious traffic categorized as malware, phishing or adware.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Clear EventLogs Through CommandLine"
     

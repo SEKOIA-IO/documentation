@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** master
 
+??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
+    
+    This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted. Depending on the network environment some failed logons Status can be added to the list.
+    
+    - **Effort:** advanced
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -45,11 +51,23 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Admin User RDP Remote Logon"
+    
+    Detects remote login through Remote Desktop Protocol (RDP) by Administrator user depending on internal pattern. Check before activation the identifiable administrators usernames (pattern or special unique character ("Admin*") to adapt and add some filtering.
+    
+    - **Effort:** master
+
 ??? abstract "Advanced IP Scanner"
     
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
+
+??? abstract "Antivirus Relevant File Paths Alerts"
+    
+    Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
+    
+    - **Effort:** elementary
 
 ??? abstract "Audio Capture via PowerShell"
     
@@ -111,6 +129,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** master
 
+??? abstract "CVE-2019-0708 Scan"
+    
+    Detects the use of a scanner that discovers targets vulnerable to CVE-2019-0708 RDP RCE aka BlueKeep.
+    
+    - **Effort:** elementary
+
 ??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
     
     Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
@@ -134,6 +158,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Chafer (APT 39) Activity"
+    
+    Detects previous Chafer (APT 39) activity attributed to OilRig as reported in Nyotron report in March 2018.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Change Default File Association"
     
@@ -171,11 +201,23 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "Container Credential Access"
+    
+    Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
+    
+    - **Effort:** intermediate
+
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item
     
     - **Effort:** advanced
+
+??? abstract "Copy Of Legitimate System32 Executable"
+    
+    A script has copied a System32 executable.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Copying Browser Files With Credentials"
     
@@ -429,6 +471,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "FromBase64String Command Line"
+    
+    Detects suspicious FromBase64String expressions in command line arguments
+    
+    - **Effort:** master
+
 ??? abstract "Grabbing Sensitive Hives Via Reg Utility"
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
@@ -494,6 +542,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
     
     - **Effort:** intermediate
+
+??? abstract "Invoke-TheHash Commandlets"
+    
+    Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
+    
+    - **Effort:** elementary
 
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -585,6 +639,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Malicious PowerShell Keywords"
+    
+    Detects keywords from well-known PowerShell exploitation frameworks
+    
+    - **Effort:** advanced
+
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -606,6 +666,18 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
     
     The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
+    
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Defender Antivirus Disable Services"
+    
+    The rule detects attempts to deactivate/disable Windows Defender through command line and registry.
     
     - **Effort:** intermediate
 
@@ -680,6 +752,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
     
     - **Effort:** intermediate
+
+??? abstract "Msdt (Follina) File Browse Process Execution"
+    
+    Detects various Follina vulnerability exploitation techniques. This is based on the Compatability Troubleshooter which is abused to do code execution.
+    
+    - **Effort:** elementary
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -758,6 +836,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Tools and command lines used for network discovery from current system
     
     - **Effort:** advanced
+
+??? abstract "Network Share Discovery"
+    
+    Adversaries may look for folders and drives shared on remote systems as a means of identifying sources of information to gather as a precursor for Collection and to identify potential systems of interest for Lateral Movement. Networks often contain shared network drives and folders that enable users to access file directories on various systems across a network. File sharing over a Windows network occurs over the SMB protocol. This technique is frequently leveraged by threat actors such as APT32, APT41, Wizard Spider. But also, through the use of some malware such as Cobalt Strike, Empire, PlugX and Ramsay.
+    
+    - **Effort:** master
 
 ??? abstract "Network Sniffing"
     
@@ -873,6 +957,18 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Phosphorus (APT35) Exchange Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about its the environment of compromised Microsoft Exchange servers. The command is the following: Get-Recipient | Select Name -ExpandProperty EmailAddresses -first 1 | Select SmtpAddress |  ft -hidetableheaders
+    
+    - **Effort:** elementary
+
+??? abstract "Phosphorus Domain Controller Discovery"
+    
+    According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about the Domain Controller. The command is the following: "powershell.exe" /c Get-WMIObject Win32_NTDomain | findstr DomainController
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible Replay Attack"
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
@@ -885,11 +981,29 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "PowerShell - NTFS Alternate Data Stream"
+    
+    Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell AMSI Deactivation Bypass Using .NET Reflection"
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
     - **Effort:** elementary
+
+??? abstract "PowerShell Credential Prompt"
+    
+    Detects PowerShell calling a credential prompt (using PromptForCredential) ex: $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName") The same result can be obtained by using the Get-Credential function but detecting it will trigger a lot of FP
+    
+    - **Effort:** elementary
+
+??? abstract "PowerShell Data Compressed"
+    
+    Detects data compression through a PowerShell command (could be used by an adversary for exfiltration)
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Downgrade Attack"
     
@@ -915,9 +1029,45 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "PowerShell Invoke Expression With Registry"
+    
+    Detects keywords from well-known PowerShell techniques to get registry key values
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Invoke-Obfuscation Obfuscated IEX Invocation"
+    
+    Detects all variations of obfuscated powershell IEX invocation code generated by Invoke-Obfuscation framework
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
     
     Detects Commandlet names and arguments from the Nishang exploitation framework
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Malicious PowerShell Commandlets"
+    
+    Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...)
+    
+    - **Effort:** master
+
+??? abstract "PowerView commandlets 1"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerView commandlets 2"
+    
+    Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
+    
+    - **Effort:** advanced
+
+??? abstract "Powershell AMSI Bypass"
+    
+    This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
     
     - **Effort:** advanced
 
@@ -932,6 +1082,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the use of various web request methods executed remotely via Windows PowerShell
     
     - **Effort:** advanced
+
+??? abstract "Powershell Winlogon Helper DLL"
+    
+    Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Comsvcs"
     
@@ -1041,6 +1197,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Rubeus Register New Logon Process"
+    
+    Detects potential use of Rubeus through registering a new logon process. This rule needs the EventID 4611, which can be configured through Group Policies (Audit Security System Extension)
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -1076,6 +1238,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects schtasks started from suspicious and/or unusual processes.
     
     - **Effort:** intermediate
+
+??? abstract "SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory"
+    
+    Detects the SeEnableDelegationPrivilege right in Active Directory granted to a user of a computer, it would allow control of other AD user objects
+    
+    - **Effort:** elementary
 
 ??? abstract "Searchindexer Wrong Parent"
     
@@ -1136,6 +1304,18 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Stop Backup Services"
+    
+    Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** master
+
+??? abstract "Successful Overpass The Hash Attempt"
+    
+    Detects successful logon with logon type 9 (NewCredentials) which matches the Overpass the Hash behavior of e.g Mimikatz's sekurlsa::pth module.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suncrypt Parameters"
     
@@ -1251,11 +1431,23 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious PowerShell Invocations - Generic"
+    
+    Detects suspicious PowerShell invocation command parameters through command line logging or ScriptBlock Logging.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
     Detects suspicious PowerShell invocation command parameters
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious PowerShell Keywords"
+    
+    Detects keywords that could indicate the use of some PowerShell exploitation framework
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
     
@@ -1304,6 +1496,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious XOR Encoded PowerShell Command Line"
+    
+    Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious certutil command"
     
@@ -1358,6 +1556,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
     - **Effort:** intermediate
+
+??? abstract "TrustedInstaller Impersonation"
+    
+    The rule detects attempts to impersonate TrustedInstaller. TrustedInstaller rights could allow a threat actor to delete or modify protected file or create/delete/modify files in protected folders. This technique is used by threat actors to disable Windows Defender.
+    
+    - **Effort:** elementary
 
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -1443,6 +1647,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "WMImplant Hack Tool"
+    
+    WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Webshell Creation"
     
     Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
@@ -1460,6 +1670,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Windows Defender Deactivation Using PowerShell Script"
+    
+    Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
+    
+    - **Effort:** master
 
 ??? abstract "Windows Firewall Changes"
     
