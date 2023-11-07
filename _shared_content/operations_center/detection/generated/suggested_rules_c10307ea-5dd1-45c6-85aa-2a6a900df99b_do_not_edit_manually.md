@@ -117,11 +117,29 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    
+    - **Effort:** intermediate
+
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
+
+??? abstract "CMSTP UAC Bypass via COM Object Access"
+    
+    Detects UAC Bypass Attempt Using Microsoft Connection Manager Profile Installer Autoelevate-capable COM Objects
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE 2022-1292"
+    
+    The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
 
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
@@ -435,6 +453,18 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
+    
+    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189
+    
+    - **Effort:** elementary
+
+??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
+    
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    
+    - **Effort:** intermediate
+
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
@@ -453,6 +483,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Failed Logon Source From Public IP Addresses"
+    
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    
+    - **Effort:** master
+
 ??? abstract "File Or Folder Permissions Modifications"
     
     Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.
@@ -468,6 +504,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Formbook Hijacked Process Command"
+    
+    Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
     
     - **Effort:** intermediate
 
@@ -819,6 +861,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** master
 
+??? abstract "Netsh Program Allowed With Suspicious Location"
+    
+    Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Netsh RDP Port Forwarding"
     
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
@@ -974,6 +1022,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
     - **Effort:** intermediate
+
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
 
 ??? abstract "PowerCat Function Loading"
     
@@ -1143,6 +1197,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "RDP Login From Localhost"
+    
+    Detects RDP login from localhost source address, which may be a tunnelled login to bypass network restrictions.
+    
+    - **Effort:** elementary
+
 ??? abstract "RDP Sensitive Settings Changed"
     
     Detects changes to RDP terminal service sensitive settings. Logging for registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -1166,6 +1226,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
     - **Effort:** advanced
+
+??? abstract "RYUK Ransomeware - martinstevens Username"
+    
+    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
+    
+    - **Effort:** elementary
 
 ??? abstract "Raccine Uninstall"
     
@@ -1208,6 +1274,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
     
     - **Effort:** advanced
+
+??? abstract "SEKOIA.IO Intelligence Feed"
+    
+    Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
+    
+    - **Effort:** elementary
 
 ??? abstract "SOCKS Tunneling Tool"
     
@@ -1269,6 +1341,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Sliver DNS Beaconing"
+    
+    Detects suspicious DNS queries known from Sliver beaconing 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
@@ -1284,6 +1362,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "SolarWinds Wrong Child Process"
     
     Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    
+    - **Effort:** intermediate
+
+??? abstract "Spoolsv Wrong Parent"
+    
+    Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
     - **Effort:** intermediate
 
@@ -1473,6 +1557,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Scheduled Task Creation"
+    
+    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -1484,6 +1574,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Windows DNS Queries"
+    
+    Detects a suspicious Windows command-line process making a DNS query via known abuse text paste web services. This is based on Microsoft Windows Sysmon events (Event ID 22).
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Windows Installer Execution"
     
@@ -1554,6 +1650,18 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Taskhostw Wrong Parent"
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
+    
+    - **Effort:** intermediate
+
+??? abstract "Telegram Bot API Request"
+    
+    Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
+    
+    - **Effort:** advanced
+
+??? abstract "Trickbot Malware Activity"
+    
+    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
     
     - **Effort:** intermediate
 
@@ -1658,6 +1766,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
     
     - **Effort:** master
+
+??? abstract "Webshell Execution W3WP Process"
+    
+    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    
+    - **Effort:** advanced
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     

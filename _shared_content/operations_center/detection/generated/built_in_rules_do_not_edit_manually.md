@@ -1,4 +1,4 @@
-Rules catalog includes **768 built-in detection rules** ([_last update on 2023-11-02_](rules_changelog.md)).
+Rules catalog includes **768 built-in detection rules** ([_last update on 2023-11-07_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1899,6 +1899,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Slight change in selection to reduce false positives. Adding similarity.
+            
 ??? abstract "MOFComp Execution"
     
     Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
@@ -6315,6 +6319,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Slight change in selection to reduce false positives. Adding similarity.
+            
 ??? abstract "MOFComp Execution"
     
     Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
@@ -6393,6 +6401,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 19/10/2023 - minor - Slight change in selection to reduce false positives. Adding similarity.
+            
 ??? abstract "CMSTP UAC Bypass via COM Object Access"
     
     Detects UAC Bypass Attempt Using Microsoft Connection Manager Profile Installer Autoelevate-capable COM Objects

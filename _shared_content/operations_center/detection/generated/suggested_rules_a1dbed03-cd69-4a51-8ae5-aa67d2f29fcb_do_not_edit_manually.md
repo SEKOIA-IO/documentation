@@ -21,12 +21,6 @@ The following Sekoia.io built-in rules match the intake **Jumpcloud Directory In
     
     - **Effort:** intermediate
 
-??? abstract "CMSTP Execution"
-    
-    Detects various indicators of Microsoft Connection Manager Profile Installer execution
-    
-    - **Effort:** intermediate
-
 ??? abstract "Certificate Authority Modification"
     
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.

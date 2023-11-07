@@ -1,9 +1,12 @@
-Changelog _last update on 2023-11-02_
+Changelog _last update on 2023-11-07_
 
 ## Changelog
 
 ### Write To File In Systemd
   - 26/10/2023 - minor - Added filter to reduce false positives.
+    
+### CMSTP Execution
+  - 19/10/2023 - minor - Slight change in selection to reduce false positives. Adding similarity.
     
 ### Domain Trust Discovery Through LDAP
   - 19/10/2023 - minor - improve filter to reduce false positives
