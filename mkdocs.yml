@@ -372,7 +372,10 @@ nav:
       - Overview: cti/features/integrations/index.md
       - API: cti/features/integrations/api.md
       - TAXII: cti/features/integrations/taxii.md
-      - Cortex Analyzer: cti/features/integrations/thehive.md
+      - Cortex Analyzer: 
+        - Overview: cti/features/integrations/thehive.md
+        - Sekoia Feed in Cortex: _shared_content/intelligence_center/integrations/thehive_in_sekoia.md
+        - Verify Sekoia feed artefact in Cortex: _shared_content/intelligence_center/integrations/thehive_import_sekoia_feed.md
       - MISP Feed: cti/features/integrations/misp.md
       - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
       - OpenCTI: cti/features/integrations/opencti.md
