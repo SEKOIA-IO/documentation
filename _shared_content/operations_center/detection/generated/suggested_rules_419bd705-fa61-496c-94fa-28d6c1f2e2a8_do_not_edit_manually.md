@@ -57,12 +57,6 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     
     - **Effort:** intermediate
 
-??? abstract "CMSTP Execution"
-    
-    Detects various indicators of Microsoft Connection Manager Profile Installer execution
-    
-    - **Effort:** intermediate
-
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
     Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
