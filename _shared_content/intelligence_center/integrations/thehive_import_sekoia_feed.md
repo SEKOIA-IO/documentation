@@ -1,6 +1,6 @@
-# Import Sekoia intelligence
+# Verify Sekoia feed artefact in Cortex
 
-Here are some examples on how to import one object of Sekoia intelligence in Cortex
+Here are some examples on how to verify Sekoia feed artefact in Cortex and import its content:
 
 ## 1. Indicator
   
