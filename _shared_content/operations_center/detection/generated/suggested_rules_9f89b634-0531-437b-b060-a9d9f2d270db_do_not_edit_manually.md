@@ -37,7 +37,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Cron Files Alteration"
     

@@ -127,7 +127,7 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA [BETA]**. Th
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Detect requests to Konni C2 servers"
     

@@ -163,7 +163,7 @@ The following Sekoia.io built-in rules match the intake **Cisco Secure Firewall*
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Cobalt Strike HTTP Default GET beaconing"
     

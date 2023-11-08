@@ -2,6 +2,18 @@ Changelog _last update on 2023-11-08_
 
 ## Changelog
 
+### Cobalt Strike Default Beacons Names
+  - 08/11/2023 - minor - Added filter to reduce false positives
+    
+### NTDS.dit File Interaction Through Command Line
+  - 08/11/2023 - minor - Added filter to reduce false positives
+    
+### ETW Tampering
+  - 08/11/2023 - minor - Added filter to reduce false positives
+    
+### AWS CloudTrail GuardDuty Detector Deleted
+  - 08/11/2023 - minor - Added filter to reduce false positives
+    
 ### Write To File In Systemd
   - 26/10/2023 - minor - Added filter to reduce false positives.
     

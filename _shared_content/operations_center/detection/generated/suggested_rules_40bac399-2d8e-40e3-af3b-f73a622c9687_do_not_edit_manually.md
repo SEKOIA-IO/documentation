@@ -169,7 +169,7 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Cobalt Strike HTTP Default GET beaconing"
     

@@ -145,7 +145,7 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Commonly Used Commands To Stop Services And Remove Backups"
     

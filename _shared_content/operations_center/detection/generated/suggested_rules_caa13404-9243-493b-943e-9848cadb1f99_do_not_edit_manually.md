@@ -79,7 +79,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Detect requests to Konni C2 servers"
     

@@ -349,7 +349,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Cobalt Strike Default Service Creation Usage"
     
