@@ -2023,8 +2023,12 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     Detects the default names of Cobalt Strike beacons / payloads.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 08/11/2023 - minor - Added filter to reduce false positives
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
@@ -5897,6 +5901,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 08/11/2023 - minor - Added filter to reduce false positives
+            
 ??? abstract "Erase Shell History"
     
     Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history
@@ -6827,6 +6835,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 08/11/2023 - minor - Added filter to reduce false positives
+            
 ??? abstract "AWS CloudTrail GuardDuty Detector Suspended"
     
     Detects the suspension of the GuardDuty service
@@ -6911,6 +6923,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 08/11/2023 - minor - Added filter to reduce false positives
+            
 ??? abstract "Fail2ban Unban IP"
     
     An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
@@ -7601,6 +7617,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 08/11/2023 - minor - Added filter to reduce false positives
+            
 ??? abstract "NetNTLM Downgrade Attack"
     
     Detects changes in Windows Registry key (LMCompatibilityLevel, NTLMMinClientSec or RestrictSendingNTLMTraffic) which can lead to NetNTLM downgrade attack. The rule requires to log registry keys creation or update, it can be done using Sysmon's Event ID 12,13 and 14.
