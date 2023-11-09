@@ -23,7 +23,7 @@ connector-sekoia:
       - CONNECTOR_ID=<Replace_by_email>
       - CONNECTOR_TYPE=EXTERNAL_IMPORT
       - CONNECTOR_NAME=SEKOIA.IO
-      - CONNECTOR_SCOPE=identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator
+      - CONNECTOR_SCOPE=identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator,campaign,infrastructure,relationship
       - CONNECTOR_CONFIDENCE_LEVEL=15 # From 0 (Unknown) to 100 (Fully trusted)
       - CONNECTOR_UPDATE_EXISTING_DATA=false
       - CONNECTOR_LOG_LEVEL=info
@@ -31,6 +31,7 @@ connector-sekoia:
       - SEKOIA_COLLECTION=d6092c37-d8d7-45c3-8aff-c4dc26030608
       - SEKOIA_START_DATE=2022-01-01    # Optional, the date to start consuming data from. Maybe in the formats YYYY-MM-DD or YYYY-MM-DDT00:00:00
       - SEKOIA_CREATE_OBSERVABLES=true  # Create observables from indicators
+    restart: always
     depends_on:
       - opencti
 
@@ -43,8 +44,8 @@ volumes:
 
 Replace following parameters:
 
-- `CONNECTOR_ID`=_Replace_by_email_
-- `CONNECTOR_SCOPE` =_identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator_ => Sekoia intelligence elements set to be exported in OpenCTI that can be chosen in this list
+- `CONNECTOR_ID`=_Replace_by_email_ or an UUID4
+- `CONNECTOR_SCOPE` =_identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator,campaign,infrastructure,relationship_ => Sekoia intelligence elements set to be exported in OpenCTI that can be chosen in this list
 - `SEKOIA_API_KEY`=_Sekoia API key with CTI_Permissions_
 - `SEKOIA_START_DATE`=_<start_date_to_retrieve_feed>_ e.g. _2023-05-01_
 
