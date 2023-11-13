@@ -179,6 +179,26 @@ Here is the updated list of all available filters.
 !!! tip
     To list only alerts raised by the same rule, just hover over the rule and click on the `+` next to the rule's name; it will automatically add the rule as a filter.
 
+### Add alerts to case in bulk
+
+Add multiple alerts to a case to regroup all the needed information for an extensive investigation.
+
+![alert-to-case](/assets/operation_center/alerts/alert-to-case.png){: style="max-width:100%"}
+
+To add alerts to a case in bulk, you have to:
+
+- Apply filters to alerts listing if needed
+- Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected
+- You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts.`
+![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
+- A message will confirm that all alerts are selected including their count
+![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
+- Choose an existing case or create a new case
+![alert-to-case](/assets/operation_center/alerts/alert-to-case.png)
+
+!!! note
+    Reminder for multi-tenant communities, alerts can only be added to cases that belongs to the same community.
+
 ### Change alert status in bulk
 
 On the main alert listing, it is possible to treat alerts faster. Users can, in one hand, change many alerts' statuses at the same time, and on the other hand, leave comments to explain their decision and provide more context.
