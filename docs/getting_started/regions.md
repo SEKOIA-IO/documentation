@@ -2,7 +2,7 @@
 
 Sekoia is currently available in several European regions. Each of them will enable you to meet advanced legal or safety constraints.
 
-## This document is important
+## Watch out for region-specific URLS
 
 !!!warning
     ✋ Please note: The region in which you are located has an impact on the product URLs.
