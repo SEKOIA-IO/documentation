@@ -7,6 +7,9 @@ Sekoia is currently available in several European regions. Each of them will ena
 !!!warning
     ✋ Please note: The region in which you are located has an impact on the product URLs.
 
+!!!warning
+    ⌛ Some URLS may change before January 2024
+
 
 When you find urls of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
 
