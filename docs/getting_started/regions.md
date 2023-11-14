@@ -2,6 +2,18 @@
 
 Sekoia is currently available in several European regions. Each of them will enable you to meet advanced legal or safety constraints.
 
+## This document is important
+
+!!!warning
+    ✋ Please note: The region in which you are located has an impact on the product URLs.
+
+
+When you find urls of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
+
+
+For example, if you're in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>
+
+
 ## France - FRA1
 
 For companies wishing to host their data in France
@@ -84,14 +96,8 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
 
 ## Amsterdam - EUR1 
 
-<div 
-    style="padding: 10px;
-    background-color: #f5005730;
-    border-radius: 4px;
-    border: solid red;"
-> 
+!!!warning
     ✋ Region not available yet - Coming soon
-</div>
 
 For companies requiring their data to be in Europe on Microsoft Azure
 
