@@ -181,23 +181,23 @@ Here is the updated list of all available filters.
 
 ### Add alerts to case in bulk
 
-Add multiple alerts to a case to regroup all the needed information for an extensive investigation.
+Users can add multiple alerts to a case to regroup all the needed information for an extensive investigation.
 
 ![alert-to-case](/assets/operation_center/alerts/alert-to-case.png){: style="max-width:100%"}
 
-To add alerts to a case in bulk, you have to:
+To add alerts to a case in bulk, follow these steps:
 
-- Apply filters to alerts listing if needed
-- Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected
-- You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts.`
-![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
-- A message will confirm that all alerts are selected including their count
-![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
-- Choose an existing case or create a new case
+1. Apply filters to alerts listing if needed
+2. Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected
+3. You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts`
+   ![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
+5. A message will confirm that all alerts are selected including their count
+   ![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
+6. Choose an existing case or create a new case
 ![alert-to-case](/assets/operation_center/alerts/alert-to-case.png)
 
 !!! note
-    Reminder for multi-tenant communities, alerts can only be added to cases that belongs to the same community.
+    For multi-tenant communities, alerts can only be added to cases that belong to the same community.
 
 ### Change alert status in bulk
 
@@ -207,14 +207,14 @@ On the main alert listing, it is possible to treat alerts faster. Users can, in 
 
 To change statuses in bulk, you have to:
 
-- Apply filters to alerts listing if needed
-- Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected
-- You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts.`
-![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
-- A message will confirm that all alerts are selected including their count
-![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
-- Choose the new status you want to apply
-- Leave a comment explaining your decision and click on the `Update status` button.
+1. Apply filters to alerts listing if needed
+2. Select some alerts in the list using the checkbox. A counter will let you know how many alerts are selected
+3. You can select all available alerts (including alerts in other pages) by clicking on `Select all XX alerts`
+    ![select-all-alerts](/assets/operation_center/alerts/select-all-alerts.png)
+4. A message will confirm that all alerts are selected including their count
+    ![unselect-all-alerts](/assets/operation_center/alerts/unselect-all-alerts.png)
+5. Choose the new status you want to apply
+6. Leave a comment explaining your decision and click on the `Update status` button
 
 !!! note
     It is recommended to leave a comment to provide more context to the status change but it's not mandatory.
