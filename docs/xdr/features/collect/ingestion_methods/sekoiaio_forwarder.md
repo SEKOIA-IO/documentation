@@ -68,7 +68,7 @@ intakes:
   port: 20516
   intake_key: INTAKE_KEY_FOR_TECHNO_1
 - name: Techno2
-  protocol: tcp
+  protocol: udp
   port: 20517
   intake_key: INTAKE_KEY_FOR_TECHNO_2
 - name: Techno3
@@ -80,6 +80,28 @@ intakes:
 !!! Tip
     You are not limited to 3 entries. Feel free to adapt it to your needs.
 
+#### Debug
+A debug variable is available in order to debug a specific intake, for example 
+```yaml
+---
+intakes:
+- name: Techno1
+  protocol: tcp
+  port: 20516
+  intake_key: INTAKE_KEY_FOR_TECHNO_1
+- name: Techno2
+  protocol: tcp
+  port: 20517
+  intake_key: INTAKE_KEY_FOR_TECHNO_2
+  debug: True
+- name: Techno3
+  protocol: tcp
+  port: 20518
+  intake_key: INTAKE_KEY_FOR_TECHNO_3
+```
+
+When debug is set to true, the raw event received and the output message will be printed in STDOUT. Each one will be respectively identified using tags: : [Input $INTAKE_KEY] & [Output $INTAKE_KEY]
+
 ### Configure docker-compose.yml file
 
 Please find below a template of the `docker-compose.yml` file.
@@ -88,16 +110,13 @@ Please find below a template of the `docker-compose.yml` file.
 version: "3.9"
 services:
   sekoia_concentrator:
-    logging:
-      options:
-        max-size: "1000m"
-        max-file: "2"
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:0.9
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.0
     environment:
-      - MEMORY_MESSAGES=100000
-      - DISK_SPACE=32g
+      - MEMORY_MESSAGES=2000000
+      - DISK_SPACE=180g
     ports:
-      - "20516-20518:20516-20518"
+      - "20516-20566:20516-20566"
+      - "20516-20566:20516-20566/udp"
     volumes:
       - ./intakes.yaml:/intakes.yaml
       - ./conf:/etc/rsyslog.d
@@ -111,34 +130,18 @@ services:
 
 The following sections will describe each element of this file above.
 
-#### Logging
-
-```yaml
-logging:
-    options:
-    max-size: "1000m"
-    max-file: "2"
-```
-
-Docker logging system offers the flexibility to view events received on the container in real time with the command `docker logs <container_name>`. These logs are stored by default in `/var/lib/docker/containers/<container_uuid>/<container_uuid>-json.log`. 
-
-To avoid the overload of disk space on your host, some options are specified. `max-size` specifies the maximum size of one file and `max-file` specifies the total number of files allowed. When the maximum number of files is reached, a log rotation is performed and the oldest file is deleted.
-
-!!! Note
-    Docker logging system is an independent solution from Sekoia.io or the buffer you want to set up on your concentrator. It is only used to view the last events on your concentrator.
-
 #### Environment variables
 
 ```yaml
 environment:
-    - MEMORY_MESSAGES=100000
-    - DISK_SPACE=32g
+    - MEMORY_MESSAGES=2000000
+    - DISK_SPACE=180g
 ```
 
 Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to Sekoia.io. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
 
-* `MEMORY_MESSAGES=100000` means the queue is allowed to store up to 100,000 messages in memory. For instance, if your message size is 20KB, then you will use 2GB of RAM memory (100,000 * 20KB = 2GB).
-* `DISK_SPACE=32g` means the queue is allowed to store on disk up to 32 giga of messages.
+* `MEMORY_MESSAGES=2000000` means the queue is allowed to store up to 2,000,000 messages in memory. If we consider a message size is 1.2KB, then you will use 2,4GB of RAM memory (2000000 * 1.2KB = 2.4GB).
+* `DISK_SPACE=180g` means the queue is allowed to store on disk up to 180giga of messages.
 
 [Here](#prerequisites) you will find recommendations to set these variables based on the number of assets. You can also define your own values, which should be chosen according to your virtual machine's template.
 
@@ -146,21 +149,16 @@ Two environment variables are used to customize the container. These variables a
 
 ```yaml
 ports:
-    - "20516-20518:20516-20518"
+    - "20516-20566:20516-20566"
+    - "20516-20566:20516-20566/udp"
 ```
 
 As specified in the Overview section, the concentrator will be run in an isolated environment. That means, by default, no flow is open between the host and the concentrator. 
-`20516-20518:20516-20518` means that every packets coming through the TCP port `20516`, `20517` or `20518` to the host will be forwarded to the concentrator container on the port 20516, 20517 or 20518.
+`20516-20518:20516-20566` means that every packets coming through the TCP port form `20516` to  `20566` to the host will be forwarded to the concentrator container from port `20516` to `20566`.
 
-If you want to open a UDP flow, please add a line with `/udp` at the end. For instance, to open the TCP flows `20516`, `20517`, `20518` and the UDP flow `20519`, the ports section will be:
+If you want to open a UDP flow, please add a line with `/udp` at the end.
 
-```yaml
-ports:
-    - "20516-20518:20516-20518"
-    - "20519:20519/udp"
-```
-
-!!! Warning
+!!! Important
     Please adapt these values according to the intakes.yaml file.
 
 #### Volumes
@@ -220,7 +218,7 @@ sudo docker compose ps
 sudo docker compose logs
 ```
 
-Everytime an event is sent to the concentrator, the event is shown in these logs.
+If you are using the Debug variable, everytime a log is received by the Forwarder, it's visible using `docker compose logs`.
 
 **To view last logs in real time:**
 
@@ -252,10 +250,10 @@ To check if the events are received by the concentrator, you can run the followi
 sudo docker compose logs
 ```
 
-If you are looking for specific logs, you can also run:
+To view container logs for a specific intake when using the Debug variable:
 
 ```bash
-sudo docker compose logs | grep "YOUR_PATTERN"
+sudo docker compose logs | grep "YOUR_INTAKE_KEY"
 ```
 
 Finally, if you want to check if events are coming in real time:
@@ -273,7 +271,7 @@ sudo docker compose logs -f
     sudo docker compose logs | more
     ```
 
-3. Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be `"25020-25023:25020-25023"`. 
+3. Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be at least `"25020-25023:25020-25023"` for TCP and `"25020-25023:25020-25023/udp"` if using UDP. 
 
 4. Verify that traffic is incoming from your log source, meaning no firewall is blocking the events.
     ```bash
@@ -317,10 +315,10 @@ The image used to run the concentrator is maintained on [this github repository]
 Docker uses the notion of tag to identify the version of an image. The tag is always referenced in line starting with `image` in `docker-compose.yml`:
 
 ```
-image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:0.9
+image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.0
 ```
 
-`0.9` means the version used by `docker compose` is 0.9. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
+`2.0` means the version used by `docker compose` is 2.0. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
 
 To update the concentrator, just change the tag in `docker-compose.yml`, then recreate the concentrator with the command:
 ```bash
@@ -346,10 +344,11 @@ To add a new Intake, it's very simple ! Follow these steps:
       port: 20519
       intake_key: INTAKE_KEY_FOR_NEW_INTAKE
     ```
-2. Edit the `docker-compose.yml` file and modify the `ports` section according to the `intakes.yaml` file
+2. Edit the `docker-compose.yml` file if needed and modify the `ports` section according to the `intakes.yaml` file. It shouldn't be necessary from port `20516` to `20566`
     ```yaml
     ports:
-    - "20516-20519:20516-20519"
+    - "20516-20566:20516-20566"
+    - "20516-20566:20516-20566/udp"
     ```
 3. Recreate the concentrator by running the command:
     ```bash
