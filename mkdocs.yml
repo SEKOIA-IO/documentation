@@ -296,6 +296,7 @@ nav:
         - Shodan: xdr/features/automate/library/shodan.md
         - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
         - Sophos: xdr/features/automate/library/sophos.md
+        - TEHTRIS: xdr/features/automate/library/tehtris.md
         - Tehtris: xdr/features/automate/library/tehtris.md
         - The Hive: xdr/features/automate/library/the-hive.md
         - Tranco: xdr/features/automate/library/tranco.md
@@ -464,6 +465,7 @@ nav:
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
         - Skyhigh Security: tip/features/automate/library/skyhigh-security.md
+        - TEHTRIS: tip/features/automate/library/tehtris.md
         - The Hive: tip/features/automate/library/the-hive.md
         - Tranco: tip/features/automate/library/tranco.md
         - Triage: tip/features/automate/library/triage.md
