@@ -82,7 +82,16 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
 
 
 
-## Amsterdam - EUR1
+## Amsterdam - EUR1 
+
+<div 
+    style="padding: 10px;
+    background-color: #f5005730;
+    border-radius: 4px;
+    border: solid red;"
+> 
+    ✋ Region not available yet - Coming soon
+</div>
 
 For companies requiring their data to be in Europe on Microsoft Azure
 
@@ -94,7 +103,7 @@ For companies requiring their data to be in Europe on Microsoft Azure
         </tr>
         <tr>
             <td>Location</td>
-            <td>🇪🇺 Europe / 🇳🇱 Amsterdam, 🇮🇪 Dublin</td>
+            <td>🇳🇱 Amsterdam, 🇮🇪 Dublin</td>
         </tr>
         <tr>
             <td>Infrastructure</td>
@@ -102,19 +111,19 @@ For companies requiring their data to be in Europe on Microsoft Azure
         </tr>
         <tr>
             <td>URL</td>
-            <td></td>
+            <td> <i>Coming soon</i></td>
         </tr>
         <tr>
             <td>API</td>
-            <td></td>
+            <td> <i>Coming soon</i></td>
         </tr>
         <tr>
             <td>HTTP Intake</td>
-            <td></td>
+            <td> <i>Coming soon</i></td>
         </tr>
         <tr>
             <td>Syslog Intake</td>
-            <td></td>
+            <td> <i>Coming soon</i></td>
         </tr>
     </tbody>
 </table>
