@@ -35,7 +35,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [ProofPoint PoD connector](../../../automate/library/proofpoint.md#get-proofpoint-pod-events).
 
-Set up the trigger configuration with the api key, the cluster id and the intake key. Customize others parameters if needed.
+Set up the trigger configuration with the api key, the cluster id and the intake key. In the field "type" choose "message" (security logs), "maillog" are not usefull for security purpose as they are mail delivery logs. Customize others parameters if needed.
 
 Start the playbook and enjoy your events.
 
