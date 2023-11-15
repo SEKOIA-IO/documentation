@@ -10,6 +10,7 @@
 | --------- | ------- | --------------------------- |
 | `apikey` | `string` | The APIkey to authenticate call to the API |
 | `tenant_id` | `string` | The identifier of your tenant (most of the time, your tenant id is a trigram in the url of your TETHRIS instance; eg: https://{tenant_id}.tehtris.net) |
+| `alternative_url` | `string` | The alternative url to contact the TEHTRIS instance |
 
 ## Triggers
 
@@ -30,4 +31,4 @@ Get last events from the TEHTRIS XDR platform
 
 ## Extra
 
-Module **`TEHTRIS` v1.10**
+Module **`TEHTRIS` v1.12.1**
