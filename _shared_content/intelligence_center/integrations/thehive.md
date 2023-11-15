@@ -66,12 +66,8 @@ In the following section, you will find information on how Sekoia intelligence i
 |Category|Analyzers|Cortex|Sekoia.io|
 |--|--|--|--|
 |Indicator|SEKOIAIntelligenceCenter_Indicators_1_0 |indicators|Indicators under objects tab (details)|
-|Context|SEKOIAIntelligenceCenter_Context_1_0|context of an indicator| Side details in an indicator (Related threats, Linked Observables, Latest reports, Indicator types, Kill chain)|
+|Context|SEKOIAIntelligenceCenter_Context_1_0|context of an indicator|Side details in an indicator (Related threats, Linked Observables, Latest reports, Indicator types, Kill chain)|
 |Observable|SEKOIAIntelligenceCenter_Observables_1_0|known observables|Observable under observable tab|
-
-### Sekoia Intelligence available on Cortex
-
-Please find in the [following page the information on this section](_shared_content/intelligence_center/integrations/thehive_in_sekoia.md)
 
 ## 4. Steps to retrieve and search Sekoia intelligence
 
