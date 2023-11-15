@@ -1,7 +1,10 @@
-Changelog _last update on 2023-11-13_
+Changelog _last update on 2023-11-15_
 
 ## Changelog
 
+### WAF Block Rule
+  - 15/11/2023 - minor - Adding support for Ubika
+    
 ### Cobalt Strike Default Beacons Names
   - 08/11/2023 - minor - Added filter to reduce false positives
     
