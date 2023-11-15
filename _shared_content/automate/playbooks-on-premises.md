@@ -11,6 +11,12 @@ Below, we provide detailed instructions on how to accomplish this installation p
 
 ## Prerequisites
 
+### Host requirements
+
+- 16G RAM
+- 150G HD
+- 2 CPU minimum (4 CPU recommended)
+
 ### Supported OS versions
 
 Playbooks On-prem are designed to support Linux distributions based on a kernel version of 3.10 or later.
