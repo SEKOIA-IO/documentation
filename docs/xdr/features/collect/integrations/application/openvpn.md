@@ -15,8 +15,7 @@ OpenVPN is an open-source virtual private network (VPN) software, offering robus
 
 ## Configure
 
-This setup guide will show you how to forward your OpenVPN logs
-to Sekoia.io by means of a syslog transport channel.
+This setup guide will show you how to forward your OpenVPN logs to Sekoia.io by means of a syslog transport channel.
 
 ### Prerequisites
 
@@ -34,28 +33,28 @@ to Sekoia.io by means of a syslog transport channel.
     log /dev/null  # Disable OpenVPN's built-in logging to file
     ```
 
-    Here, verb 3 sets the logging verbosity level, log-append specifies the log file path where OpenVPN logs will be written, and log /dev/null ensures that OpenVPN doesn't log to its internal log file.
+    Here, `verb 3` sets the logging verbosity level, `log-append` specifies the log file path where OpenVPN logs will be written, and `log /dev/null` ensures that OpenVPN doesn't log to its internal log file.
 
 2. Ensure that the syslog daemon (e.g., rsyslog or syslog-ng) is properly set up and configured on your system.
 
     These daemons are responsible for receiving and managing log messages from various services.
 
-    OpenVPN will log its messages to the specified log file (/var/log/openvpn.log in the above example).
+    OpenVPN will log its messages to the specified log file (`/var/log/openvpn.log` in the above example).
 
     Syslog will be responsible for picking up these messages and handling them according to its configuration.
 
 3. Syslog Configuration
+
+    Configure the syslog server to send the event to our log concentrator.
 
     If you are using rsyslog, you might need to create a specific configuration file for OpenVPN to tell the syslog daemon where to send the logs.
     
     Create a new file, for instance, `/etc/rsyslog.d/openvpn.conf`, and add the following line:
     
     ```bash
-    :programname, isequal, "openvpn" -/var/log/openvpn_syslog.log
+    :programname, isequal, "openvpn" @<ip of the log concentrator>
     
     ```
-    
-    This line tells rsyslog to send any log messages from the OpenVPN program to `/var/log/openvpn_syslog.log`.
 
 4. Restart Services
 
@@ -65,8 +64,6 @@ to Sekoia.io by means of a syslog transport channel.
     sudo systemctl restart openvpn
     sudo systemctl restart rsyslog    # Use appropriate command for your syslog daemon
     ```
-   
-5. Verify the syslog and the specified log file (e.g., /var/log/openvpn_syslog.log) to ensure that OpenVPN logs are being forwarded properly.
 
 ### Forward logs to Sekoia.io
 
