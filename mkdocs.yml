@@ -83,6 +83,7 @@ nav:
           - Nginx: xdr/features/collect/integrations/application/nginx.md
           - OpenLDAP: xdr/features/collect/integrations/application/openldap.md
           - OpenSSH: xdr/features/collect/integrations/application/openssh.md
+          - OpenVPN: xdr/features/collect/integrations/application/openvpn.md
           - RSA SecurID: xdr/features/collect/integrations/application/rsa_securid.md
           - SEKOIA.IO activity logs: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
           - Unbound: xdr/features/collect/integrations/application/unbound.md
@@ -204,7 +205,6 @@ nav:
           - Microsoft Always On VPN: xdr/features/collect/integrations/network/microsoft_always_on_vpn.md
           - NetFilter: xdr/features/collect/integrations/network/netfilter.md
           - OPNSense: xdr/features/collect/integrations/network/opnsense.md
-          - OpenVPN: xdr/features/collect/integrations/network/openvpn.md
           - Palo Alto Next-Generation Firewall: xdr/features/collect/integrations/network/paloalto.md
           - pfSense: xdr/features/collect/integrations/network/pfsense.md
           - Pulse / Ivanti Secure Connect: xdr/features/collect/integrations/network/pulse.md
