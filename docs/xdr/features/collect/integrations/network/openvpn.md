@@ -13,7 +13,7 @@ OpenVPN is an open-source virtual private network (VPN) software, offering robus
 
 ## Configure
 
-This setup guide will show you how to forward your SonicWall logs
+This setup guide will show you how to forward your OpenVPN logs
 to Sekoia.io by means of a syslog transport channel.
 
 ### Prerequisites
