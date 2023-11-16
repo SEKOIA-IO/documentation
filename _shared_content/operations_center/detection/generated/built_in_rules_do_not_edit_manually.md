@@ -1,4 +1,4 @@
-Rules catalog includes **768 built-in detection rules** ([_last update on 2023-11-13_](rules_changelog.md)).
+Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -74,6 +74,10 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/11/2023 - minor - Adding support for Ubika
+            
 ??? abstract "WAF Correlation Block Multiple Destinations"
     
     Detection of multiple block actions (more than 10) by the Web Application Firewall (WAF) triggered by the same source to mutliple destinations
@@ -4524,6 +4528,12 @@ Rules catalog includes **768 built-in detection rules** ([_last update on 2023-1
     Detection of Polkit's pkexec exploit
     
     - **Effort:** intermediate
+    
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
     
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
