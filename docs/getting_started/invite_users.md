@@ -20,6 +20,9 @@ To invite new users to a managed community:
 4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
 5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
 
+!!! note
+     An email is only sent when the user is added for the first time on Sekoia.io to set its password (and if the user is not present in any other community).
+
 ### In an MSSP community
 
 An MSSP community is one main community with multiple managed communities inside of it. The admin of an MSSP community can access all of the managed communities.
