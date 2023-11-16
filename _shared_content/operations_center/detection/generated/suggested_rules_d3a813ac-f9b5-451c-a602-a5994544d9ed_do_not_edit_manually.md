@@ -115,7 +115,7 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     Detects when an attacker is removing Flow Logs to cover their tracks
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "AWS CloudTrail Root ConsoleLogin"
     

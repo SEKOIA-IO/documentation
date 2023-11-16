@@ -1,4 +1,4 @@
-Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-15_](rules_changelog.md)).
+Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6871,8 +6871,12 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects when an attacker is removing Flow Logs to cover their tracks
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/11/2023 - minor - Changing effort level.
+            
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
