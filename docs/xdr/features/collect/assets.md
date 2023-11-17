@@ -9,7 +9,7 @@ Sekoia.io offers various features to manage your assets and use them to empower 
 ## Asset Management Empowers your SOC Team
 
 Assets play a pivotal role in empowering your SOC team to effectively safeguard your organization's IT infrastructure from cyber threats and respond proactively to security incidents.
-The comprehensive understanding of assets offered by Sekoia.io enables your SOC team to gain vital visibility into the defended perimeter, monitoring all components with ease and precision. 
+The comprehensive understanding of assets offered by Sekoia.io enables your SOC team to gain vital visibility into the defended perimeter, monitoring all components with ease and precision.
 
 ![assets-details](/assets/operation_center/assets_v2/assets-details.png){align="center", style="max-width:100%"}
 
@@ -23,11 +23,11 @@ In alert investigations, assets serve as valuable reference points, allowing SOC
 
 ### Categories and sub-categories
 
-![Assets-types](/assets/operation_center/assets_v2/assets-types.png){align="center", style="max-width:100%"} 
+![Assets-types](/assets/operation_center/assets_v2/assets-types.png){align="center", style="max-width:100%"}
 
-Sekoia.io supports three types of assets: **Accounts**, **hosts** and **networks**. 
+Sekoia.io supports three types of assets: **Accounts**, **hosts** and **networks**.
 
-For each category, there are additional sub-categories to add an optional additional level of categorization: 
+For each category, there are additional sub-categories to add an optional additional level of categorization:
 
 | Category | Sub-category |
 | --- | --- |
@@ -38,13 +38,13 @@ For each category, there are additional sub-categories to add an optional additi
 
 ### Criticality
 
-The asset criticality value is a numerical indicator that represents the level of criticality or importance of each asset within the organization's IT infrastructure. It ranges from 0 to 100, where 0 indicates that the asset has no criticality or minimal importance, and 100 signifies maximum criticality, denoting assets crucial for the organization's operations. 
+The asset criticality value is a numerical indicator that represents the level of criticality or importance of each asset within the organization's IT infrastructure. It ranges from 0 to 100, where 0 indicates that the asset has no criticality or minimal importance, and 100 signifies maximum criticality, denoting assets crucial for the organization's operations.
 
 This value contribues to the [urgency score of alerts](/xdr/features/investigate/alerts.md). Hence it plays a key role in computing and prioritizing alerts related to assets, ensuring that your SOC team focuses on addressing the most critical security incidents promptly.
 
 ### Detection Properties
 
-![detection properties](/assets/operation_center/assets_v2/detection-properties.png){align="right", style="max-width:40%"} 
+![detection properties](/assets/operation_center/assets_v2/detection-properties.png){align="right", style="max-width:40%"}
 
 Asset matching and detection properties are fundamental features that enhance our system's event correlation and enrichment capabilities. Each asset type comes with a predefined set of detection properties that determine the criteria for matching incoming events with specific assets. When an event matches an asset based on these properties, the event is enriched with the asset UUID and inherits all the contextual properties associated with the asset, including its criticality and other relevant information.
 
@@ -52,9 +52,9 @@ Your SOC team can effectively correlate these events with specific assets throug
 
 ### Contextual Properties
 
-The contextual properties enhance asset management within our system by allowing users to associate additional context and metadata with each asset. These properties provide valuable information beyond the standard asset details, enabling better asset classification and enriched insights into the organization's IT infrastructure. 
+The contextual properties enhance asset management within our system by allowing users to associate additional context and metadata with each asset. These properties provide valuable information beyond the standard asset details, enabling better asset classification and enriched insights into the organization's IT infrastructure.
 
-![Asset contextual properties](/assets/operation_center/assets_v2/context-properties.png){align="right", style="max-width:50%"} 
+![Asset contextual properties](/assets/operation_center/assets_v2/context-properties.png){align="right", style="max-width:50%"}
 
 A contextual property is an additional attribute that can be assigned to an asset to provide more context and details about the asset. It can include any relevant information, such as names, labels, descriptions, categories, or custom identifiers.
 
@@ -79,14 +79,14 @@ Your asset inventory refers to the comprehensive and up-to-date list of all the 
 
 ### Manual Asset Creation
 
-![Assets-list](/assets/operation_center/assets_v2/assets-list.png){align="center", style="max-width:100%"} 
+![Assets-list](/assets/operation_center/assets_v2/assets-list.png){align="center", style="max-width:100%"}
 
 
 To create an asset from our UI, you have to:
 
 1. Click on `Assets` in the principal menu on the left
 2. Click on the `+ New Asset` button and selects the category of the asset you want to create,
-3. Give it a name and mark it as reviewed if you believe your new asset is qualified  
+3. Give it a name and mark it as reviewed if you believe your new asset is qualified
 4. Determine its sub-category
 5. Define a set of optional tags you want to attach to your asset
 6. Give it a description along with all the `Contextual Properties` you want
@@ -96,9 +96,9 @@ To create an asset from our UI, you have to:
 
 ### Automatic Asset Discovery
 
-In Sekoia.io, **Asset Discovery is the live process of passively finding and consolidating assets from your events**. 
+In Sekoia.io, **Asset Discovery is the live process of passively finding and consolidating assets from your events**.
 
-It is based on the idea that events contain two kinds of fields : 
+It is based on the idea that events contain two kinds of fields :
 
 - fields that denote what happened (_e.g._, a failed SSH authentication)
 - fields that denote what resources were involved (_e.g._ user, the computer, the remote SSH server, the eventual proxy or gateway between them, *etc*). While these resources likely represent assets within or outside the scope of your organization, those fields are rarely trivial identifiers of them. Instead, they come as markers, traces, fingerprints, such as IP addresses, FQDNs, emails, UserAgents, *etc*.
@@ -156,14 +156,17 @@ This rule enriches an existing asset with new `ipv4` or `ipv6` contextual proper
 
 This rule enriches an existing asset with new `ipv4` or `ipv6` contextual properties. These properties are extracted from the `destination.ip` field of an event when the `hostname` detection property of the asset matches with the `destination.host` field of the event.
 
-### Attach Operating System (OS) to Host 
+### Attach Operating System (OS) to Host
 
 **Set the Contextual Property `os` to Host**
 
 This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, this rule categorizes the asset as a Server if the `host.type` contains `server`.
 
-### Discover new Accounts
 
-**Discover unique hostnames**
+### Discover unique Hosts
 
 This rule creates a new asset for every unseen `host.name`. It attaches the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
+
+### Discover unique Accounts
+
+This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
