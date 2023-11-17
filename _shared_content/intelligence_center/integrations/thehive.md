@@ -63,25 +63,25 @@ In the following section, you will find information on how Sekoia intelligence i
 
 ### Summary of the information
 
-|Category|Analyzers|Cortex|Sekoia.io|
+|Artefact|Analyzers|in Cortex|in Sekoia.io|
 |--|--|--|--|
-|Indicator|SEKOIAIntelligenceCenter_Indicators_1_0 |indicators|Indicators under objects tab (details)|
+|Indicator|SEKOIAIntelligenceCenter_Indicators_1_0 |indicators|Details of an Indicator that is found under objects tab of Intelligence page|
 |Context|SEKOIAIntelligenceCenter_Context_1_0|context of an indicator|Side details in an indicator (Related threats, Linked Observables, Latest reports, Indicator types, Kill chain)|
-|Observable|SEKOIAIntelligenceCenter_Observables_1_0|known observables|Observable under observable tab|
+|Observable|SEKOIAIntelligenceCenter_Observables_1_0|known observables|Observable under observables tab  of Intelligence page|
 
 ## 4. Steps to retrieve and search Sekoia intelligence
 
 ### Search existing Sekoia intelligence in Cortex
 
 1. Select `Data Types`, `Job Type` and `Analyzers`
-2. Type your indicator or observable in the Observable search bar
+2. Type your indicator or observable in the Observable search bar (here is below an example searching `Google`)
 ![TheHive_searchExisting_SekoiaCTI](/assets/intelligence_center/searchExisting_SekoiaCTI.png){: style="width: 80%; max-width: 80%"}
 
-### Verify Sekoia feed artefact in Cortex
+### Verify a Sekoia feed artefact in Cortex
 
-Here is an example on how to verify Sekoia Indicator in Cortex and import its content (same process for Context and Observable)
+Here is an example on how to verify a Sekoia Indicator in Cortex and import its content (same process for Context and Observable)
 
-1. Go to Sekoia.io connector    _Analyzers > SEKOIAIntelligenceCenter_Indicators and click on button Run
+1. Go to Sekoia.io connector    `Analyzers > SEKOIAIntelligenceCenter_Indicators` and click on button Run
 ![TheHive_Sekoia_connector1](/assets/intelligence_center/search_SekoiaCTI-1_indicators.png){: style="width: 80%; max-width: 80%"}
 
 2. Fill the information
@@ -99,9 +99,9 @@ Here is an example on how to verify Sekoia Indicator in Cortex and import its co
 
 ## 5. Troubleshoot
 
-1. Verify Sekoia feed artefact in Cortex (see previous section)
+1. Verify a `Sekoia feed artefact in Cortex` (see previous section)
 
-2. Check the jobs in _Jobs History_ tab to see if the observable or indicator have been retrieved AND compare in Sekoia.io
+2. Check the jobs in _Jobs History_ tab to see if the observable or indicator have been retrieved AND compare this artefact in Sekoia.io
 
 ## 6. Other resources
 
