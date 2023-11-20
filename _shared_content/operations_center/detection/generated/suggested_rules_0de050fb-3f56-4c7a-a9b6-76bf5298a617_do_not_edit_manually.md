@@ -295,7 +295,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Fail2ban Unban IP"
     
