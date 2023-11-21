@@ -78,7 +78,7 @@ These following examples describe a set of successfully authentications.
 
 1. The eventName allows to determine the `event.category` and `event.type`
 2. The outcome of the event
-3. The identifier of the principal
+3. The identifier of the mandatary user
 
 Will result into this ECS document:
 
@@ -120,9 +120,9 @@ Will result into this ECS document:
 
 1. The field EVENT_TYPE is used to determine the `event.category` and `event.type`
 2. The outcome of the event
-3. The email of the principal
+3. The email of the user
 
-will result into this ECS document
+Will result into this ECS document
 
 ```json
 {
@@ -151,11 +151,15 @@ will result into this ECS document
 11:23:02,069, example.intranet, audit.runtime.com.rsa.ims.authn.impl.AuthenticationBrokerImpl, INFO, da0011b4f66e4b7e86f90f9dd6e937e7,0e34d92f7c6549b19ed28471c02a049b,5.6.7.8,1.2.3.4,AUTHN_LOGIN_EVENT,13002,SUCCESS,AUTHN_METHOD_SUCCESS,e7ec7ff59d604a2ba3fa09067bbd65a4-L0+/miv3k62B,39b1319237f946428aecf267190b537d,09f1f5fc30e947ce9e564d5a91745091,000000000000000000001000e0011000,HDTCO04,HDTCO04,,559eb5ec2d43408cbce2a43b65eafe8c,000000000000000000001000e0011000,1.2.3.4,source.hostname,000000000000000000002000f1022000,SecurID_Native,,,AUTHN_LOGIN_EVENT,6,4,,,,,da624c0ecf554764953fcc346b999682,000523656192,,
 ```
 
-1. The value of the field `AUTHN_LOGIN_EVENT` is used to determine the `event.category` and `event.type`
+1. The value `AUTHN_LOGIN_EVENT` is used to determine the `event.category` and `event.type`
 2. The value `SUCCESS` is used to define the outcome
-3. The 
+3. The column 15 as the user identifier
+4. The column 18 as the user name
+5. The column 23 as the client ip
+6. The column 24 as the client name
+7. The column 3 as the server name
 
-will result into this ECS document
+Will result into this ECS document
 
 ```json
 {
@@ -520,7 +524,7 @@ With the following smart-description:
 }
 ```
 
-will result into the description:
+Will result into the description:
 
 `KEY\\SVC_DD_SP-SEARCH logged on to V-FOO (authentication_network)`
 
