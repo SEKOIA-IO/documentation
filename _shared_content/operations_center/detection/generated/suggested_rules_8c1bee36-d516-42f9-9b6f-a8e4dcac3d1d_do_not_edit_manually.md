@@ -1201,7 +1201,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Finger Usage"
     
@@ -1383,12 +1383,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** elementary
 
-??? abstract "UAC Bypass via Event Viewer"
-    
-    Detects UAC bypass method using Windows event viewer. 
-    
-    - **Effort:** elementary
-
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -1451,9 +1445,9 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
-    Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
+    Detects the harvesting of WiFi credentials using netsh.exe.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Windows Firewall Changes"
     

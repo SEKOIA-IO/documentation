@@ -455,9 +455,9 @@ The following Sekoia.io built-in rules match the intake **Azure Linux [DEPRECATE
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
-    Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
+    Detects the harvesting of WiFi credentials using netsh.exe.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Windows Firewall Changes"
     

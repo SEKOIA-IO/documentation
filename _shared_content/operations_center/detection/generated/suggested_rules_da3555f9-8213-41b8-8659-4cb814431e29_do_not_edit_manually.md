@@ -75,12 +75,6 @@ The following Sekoia.io built-in rules match the intake **Panda Security SIEM Fe
     
     - **Effort:** elementary
 
-??? abstract "UAC Bypass via Event Viewer"
-    
-    Detects UAC bypass method using Windows event viewer. 
-    
-    - **Effort:** elementary
-
 ??? abstract "Ursnif Registry Key"
     
     Detects a new registry key created by Ursnif malware. The rule requires to log for Registry Events, which can be done using SYsmon's Event IDs 12,13 and 14.

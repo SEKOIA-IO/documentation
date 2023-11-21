@@ -1,7 +1,19 @@
-Changelog _last update on 2023-11-20_
+Changelog _last update on 2023-11-21_
 
 ## Changelog
 
+### AD Object WriteDAC Access
+  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as legitimate administrator actions can trigger the rule.
+    
+### Suspicious Double Extension
+  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+    
+### WiFi Credentials Harvesting Using Netsh
+  - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
+    
+### PowerShell Credential Prompt
+  - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+    
 ### AWS CloudTrail Remove Flow logs
   - 15/11/2023 - minor - Changing effort level.
     
