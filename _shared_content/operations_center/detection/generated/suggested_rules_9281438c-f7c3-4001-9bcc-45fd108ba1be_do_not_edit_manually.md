@@ -7,7 +7,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects WRITE_DAC access to a domain object. This requires Windows Event ID 4662.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "AD Privileged Users Or Groups Reconnaissance"
     
@@ -1633,7 +1633,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects PowerShell calling a credential prompt (using PromptForCredential) ex: $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName") The same result can be obtained by using the Get-Credential function but detecting it will trigger a lot of FP
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Data Compressed"
     
@@ -2203,7 +2203,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Driver Loaded"
     
@@ -2539,7 +2539,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects UAC bypass method using Windows event viewer. 
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Unsigned Image Loaded Into LSASS Process"
     
@@ -2687,9 +2687,9 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
-    Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
+    Detects the harvesting of WiFi credentials using netsh.exe.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Windows Credential Editor Registry Key"
     

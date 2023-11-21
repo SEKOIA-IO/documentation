@@ -1,4 +1,4 @@
-Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-20_](rules_changelog.md)).
+Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1024,8 +1024,12 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+            
 ??? abstract "Suspicious Download Links From Legitimate Services"
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
@@ -1501,8 +1505,12 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects PowerShell calling a credential prompt (using PromptForCredential) ex: $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName") The same result can be obtained by using the Get-Credential function but detecting it will trigger a lot of FP
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
+            
 ??? abstract "PowerShell Downgrade Attack"
     
     Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
@@ -2031,6 +2039,7 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
+        - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
             
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
@@ -5541,10 +5550,11 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects UAC bypass method using Windows event viewer. 
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
     - **Changelog:**
     
+        - 21/11/2023 - minor - Improve filter to reduce false positives and clarified the rule pattern.
         - 21/09/2023 - minor - Improve filter to reduce false positives
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
@@ -6654,8 +6664,12 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects WRITE_DAC access to a domain object. This requires Windows Event ID 4662.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 21/11/2023 - minor - Rule's effort level has been changed to advanced as legitimate administrator actions can trigger the rule.
+            
 ??? abstract "File Or Folder Permissions Modifications"
     
     Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.
@@ -6800,10 +6814,11 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects UAC bypass method using Windows event viewer. 
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
     - **Changelog:**
     
+        - 21/11/2023 - minor - Improve filter to reduce false positives and clarified the rule pattern.
         - 21/09/2023 - minor - Improve filter to reduce false positives
             
 ??? abstract "Unusual Process Executed in Temporary Directory"
@@ -7836,10 +7851,14 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
-    Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
+    Detects the harvesting of WiFi credentials using netsh.exe.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
+            
 **Brute Force**
 
 ??? abstract "Authentication Impossible Travel"
@@ -8250,10 +8269,14 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
-    Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
+    Detects the harvesting of WiFi credentials using netsh.exe.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 21/11/2023 - minor - Rule's effort level has been changed to advanced as it was highly dependent on the environment.
+            
 **Network Service Discovery**
 
 ??? abstract "Advanced IP Scanner"

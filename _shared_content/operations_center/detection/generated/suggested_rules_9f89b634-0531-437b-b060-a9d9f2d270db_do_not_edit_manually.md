@@ -163,7 +163,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "System Info Discovery"
     

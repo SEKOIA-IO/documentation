@@ -1105,7 +1105,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Driver Loaded"
     
@@ -1307,9 +1307,9 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
-    Detects the harvesting of WiFi credentials using netsh.exe, used in particular by Agent Tesla (RAT) and Turla Mosquito (RAT)
+    Detects the harvesting of WiFi credentials using netsh.exe.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Windows Credential Editor Registry Key"
     
