@@ -535,7 +535,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Domain Group And Permission Enumeration"
     
@@ -673,7 +673,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "External Disk Drive Or USB Storage Device"
     
@@ -949,7 +949,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Lsass Access Through WinRM"
     
@@ -961,7 +961,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "MMC Spawning Windows Shell"
     
@@ -1861,7 +1861,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -1873,7 +1873,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Secure Deletion With SDelete"
     
@@ -1903,7 +1903,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -1921,7 +1921,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Spyware Persistence Using Schtasks"
     
@@ -2299,7 +2299,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -2311,7 +2311,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Transfering Files With Credential Data Via Network Shares"
     
@@ -2407,7 +2407,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
@@ -2545,7 +2545,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Windows Boot is a background application launcher for the Windows operating system. Wininit.exe is responsible for performing the Windows initialization process. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Winlogon wrong parent"
     
@@ -2557,7 +2557,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Winword Document Droppers"
     
@@ -2587,13 +2587,13 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Wsmprovhost Wrong Parent"
     
     Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "XCopy Suspicious Usage"
     

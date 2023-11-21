@@ -379,7 +379,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Fail2ban Unban IP"
     
@@ -1339,13 +1339,13 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Windows Boot is a background application launcher for the Windows operating system. Wininit.exe is responsible for performing the Windows initialization process. This rule analyse if the parent of this process is a legitimate one or not.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Winword Document Droppers"
     
