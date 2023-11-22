@@ -15,13 +15,13 @@ Other fields are necessary in order to be able to fully describe the authenticat
 | event.action                | Logon action type                                                    |
 | event.reason                | Reason type                                                          |
 | sekoiaio.client.name        | Hostname from which authentication is requested                      |
-| sekoiaio.client.domain      | Domain of the host from which authentication is requested            |
 | sekoiaio.client.os.type     | OS type of the host from which authentication is requested           |
+| client.domain               | Domain of the host from which authentication is requested            |
 | client.ip                   | IP of the host from which authentication is requested                |
 | client.geo.country_iso_code | ISO COUNTRY CODE of the host from which authentication is requested  |
 | sekoiaio.server.name        | Host name  targeted by the authentication                            |
-| sekoiaio.server.domain      | Host domain targeted by the authentication                           |
 | sekoiaio.server.os.type     | OS type of the host targeted by the authentication                   |
+| server.domain               | Host domain targeted by the authentication                           |
 | server.ip                   | Host IP targeted by the authentication                               |
 | server.geo.country_iso_code | Host geoloc targeted by the authentication                           |
 | sekoiaio.authentication.process.name | process name has perfomed authentication (i.e., sshd, kerberos, ...) |
