@@ -65,9 +65,9 @@ In the following section, you will find information on how Sekoia intelligence i
 
 |Artefact|Analyzers|in Cortex|in Sekoia.io|
 |--|--|--|--|
-|Indicator|SEKOIAIntelligenceCenter_Indicators_1_0 |indicators|Details of an Indicator. The indicator is found under objects tab of Intelligence page|
+|Indicator|SEKOIAIntelligenceCenter_Indicators_1_0 |indicators|Details of an [indicator](../consume/observables.md) or called IOC (Indicator of Compromission). The indicator is found under objects tab of Intelligence page (Dates, Condifidence level, Indicator types, Kill chain, Pattern)|
 |Context|SEKOIAIntelligenceCenter_Context_1_0|context of an indicator|Side details in an indicator (Related threats, Linked Observables, Latest reports, Indicator types, Kill chain)|
-|Observable|SEKOIAIntelligenceCenter_Observables_1_0|known observables|Observable under observables tab  of Intelligence page|
+|Observable|SEKOIAIntelligenceCenter_Observables_1_0|known observables|[Observable](../consume/observables.md) under observables tab  of Intelligence page|
 
 ## 4. Steps to retrieve and search Sekoia intelligence
 
@@ -80,7 +80,12 @@ In the following section, you will find information on how Sekoia intelligence i
 
 ### Verify a Sekoia feed artefact in Cortex
 
-Here is an example on how to verify a Sekoia Indicator in Cortex and import its content for verification (same process for Context and Observable)
+Here is an example on how to verify if a Sekoia Indicator exist in Cortex and import its content for verification (same process for Context and Observable)
+
+!!!note
+    IOC (associated threat) is found on Indicator
+    Details of an Indicator (IOC) is found on Indicator
+    Observables is found on Observable
 
 1. Go to Sekoia.io connector    `Analyzers > SEKOIAIntelligenceCenter_Indicators` and click on button Run (button play symbol in the right side)
 
