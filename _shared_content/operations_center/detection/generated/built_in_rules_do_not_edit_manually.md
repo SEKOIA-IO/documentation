@@ -1,4 +1,4 @@
-Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-22_](rules_changelog.md)).
+Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -9048,6 +9048,10 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 22/11/2023 - minor - Adding filter to improve rule.
+            
 **Web Service**
 
 ??? abstract "Discord Suspicious Download"
