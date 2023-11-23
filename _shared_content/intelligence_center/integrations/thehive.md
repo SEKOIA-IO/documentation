@@ -83,9 +83,9 @@ In the following section, you will find information on how Sekoia intelligence i
 Here is an example on how to verify if a Sekoia Indicator exist in Cortex and import its content for verification (same process for Context and Observable)
 
 !!!note
-    IOC (associated threat) is found on Indicator
-    Details of an Indicator (IOC) is found on Indicator
-    Observables is found on Observable
+    - IOC (associated threat) is found on Indicator
+    - Details of an Indicator (IOC) is found on Indicator
+    - Observables is found on Observable
 
 1. Go to Sekoia.io connector    `Analyzers > SEKOIAIntelligenceCenter_Indicators` and click on button Run (button play symbol in the right side)
 
