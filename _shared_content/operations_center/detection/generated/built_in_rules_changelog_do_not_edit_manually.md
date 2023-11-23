@@ -1,7 +1,10 @@
-Changelog _last update on 2023-11-22_
+Changelog _last update on 2023-11-23_
 
 ## Changelog
 
+### TOR Usage Generic Rule
+  - 22/11/2023 - minor - Adding filter to improve rule.
+    
 ### AD Object WriteDAC Access
   - 21/11/2023 - minor - Rule's effort level has been changed to advanced as legitimate administrator actions can trigger the rule.
     
