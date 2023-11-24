@@ -65,7 +65,7 @@ In the following section, you will find information on how Sekoia intelligence i
 
 |Artefact|Analyzers|in Cortex|in Sekoia.io|
 |--|--|--|--|
-|Indicator|SEKOIAIntelligenceCenter_Indicators_1_0 |indicators|Details of an [indicator](../consume/observables.md) or called IOC (Indicator of Compromission). The indicator is found under objects tab of Intelligence page (Dates, Condifidence level, Indicator types, Kill chain, Pattern)|
+|Indicator|SEKOIAIntelligenceCenter_Indicators_1_0 |indicators|Details of an [indicator](../consume/observables.md) or called IOC (Indicator of Compromission). The indicator is found under objects tab of Intelligence page (Dates, Confidence level, Indicator types, Kill chain, Pattern)|
 |Context|SEKOIAIntelligenceCenter_Context_1_0|context of an indicator|Side details in an indicator (Related threats, Linked Observables, Latest reports, Indicator types, Kill chain)|
 |Observable|SEKOIAIntelligenceCenter_Observables_1_0|known observables|[Observable](../consume/observables.md) under observables tab  of Intelligence page|
 
