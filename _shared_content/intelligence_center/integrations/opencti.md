@@ -66,7 +66,7 @@ Replace following parameters:
 
 1-  In a Web browser, type the following _http://server_ip:port/dashboard_
 
-![OpenCTI_login](/assets/intelligence_center/opencti_1.png){: style="width: 60%; max-width: 60%"}
+![OpenCTI_login](/assets/intelligence_center/opencti_1.png){: style="width: 40%; max-width: 40%"}
 
 2- Enter your login and password set in **.env** file
 
@@ -105,15 +105,15 @@ Here is an example with an indicator
 
 - In **Sekoia.io**, we look for the indicator `blog.google` in the intelligence page
 
-![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png){: style="width: 80%; max-width: 80%"}
+![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png){: style="width: 100%; max-width: 100%"}
 
 - In **OpenCTI**, we search this indicator in the Data page
 
-![OpenCTI_search2](/assets/intelligence_center/opencti_indicator_search2.png){: style="width: 80%; max-width: 80%"}
+![OpenCTI_search2](/assets/intelligence_center/opencti_indicator_search2.png){: style="width: 100%; max-width: 100%"}
 
 - The content of the indicator will look like the one below
 
-![OpenCTI_Sekoia_search2](/assets/intelligence_center/sekoia_indicator.png){: style="width: 80%; max-width: 80%"}
+![OpenCTI_Sekoia_search2](/assets/intelligence_center/sekoia_indicator.png){: style="width: 100%; max-width: 100%"}
 
 ## 4. Troubleshoot
 
