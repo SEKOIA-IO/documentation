@@ -66,7 +66,7 @@ Replace following parameters:
 
 1-  In a Web browser, type the following _http://server_ip:port/dashboard_
 
-![OpenCTI_login](/assets/intelligence_center/opencti_1.png)
+![OpenCTI_login](/assets/intelligence_center/opencti_1.png){: style="width: 60%; max-width: 60%"}
 
 2- Enter your login and password set in **.env** file
 
@@ -76,7 +76,7 @@ Replace following parameters:
 
 Go to Sekoia connector    _Data > Connectors > Sekoia.io_
 
-![OpenCTI_Sekoia_connector1](/assets/intelligence_center/opencti_2.png)
+![OpenCTI_Sekoia_connector1](/assets/intelligence_center/opencti_2.png){: style="width: 60%; max-width: 60%"}
 
 In this page, the interesting information can be found about:
 
@@ -85,7 +85,7 @@ In this page, the interesting information can be found about:
 - `Perimeter`:    Sekoia intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
 - `Last cursor`:  **SEKOIA_START_DATE** set in _docker-compose.yml_ file in base64 format
 
-![OpenCTI_Sekoia_connector2](/assets/intelligence_center/opencti_3.png)
+![OpenCTI_Sekoia_connector2](/assets/intelligence_center/opencti_3.png){: style="width: 80%; max-width: 80%"}
 
 2- Where to find Sekoia intelligence feed
 
@@ -105,15 +105,15 @@ Here is an example with an indicator
 
 - In **Sekoia.io**, we look for the indicator `blog.google` in the intelligence page
 
-![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png)
+![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png){: style="width: 80%; max-width: 80%"}
 
 - In **OpenCTI**, we search this indicator in the Data page
 
-![OpenCTI_search2](/assets/intelligence_center/opencti_indicator_search2.png)
+![OpenCTI_search2](/assets/intelligence_center/opencti_indicator_search2.png){: style="width: 80%; max-width: 80%"}
 
 - The content of the indicator will look like the one below
 
-![OpenCTI_Sekoia_search2](/assets/intelligence_center/sekoia_indicator.png)
+![OpenCTI_Sekoia_search2](/assets/intelligence_center/sekoia_indicator.png){: style="width: 80%; max-width: 80%"}
 
 ## 4. Troubleshoot
 
