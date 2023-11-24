@@ -42,7 +42,7 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 
 ### 2. Enable and Setup the Analyzer
 
-The configuration setup in the previous section  will provide 3 Analyzers to enable and setup:
+The configuration setup in the previous section will provide 3 Analyzers to enable and setup:
 
 - SEKOIAIntelligenceCenter_Indicators_1_0 
 - SEKOIAIntelligenceCenter_Context_1_0
