@@ -1,7 +1,13 @@
-Changelog _last update on 2023-11-23_
+Changelog _last update on 2023-11-24_
 
 ## Changelog
 
+### RDP Login From Localhost
+  - 24/11/2023 - minor - Effort level changed to advanced.
+    
+### Suspicious Regsvr32 Execution
+  - 23/11/2023 - major - Extended detection and added filter
+    
 ### TOR Usage Generic Rule
   - 22/11/2023 - minor - Adding filter to improve rule.
     

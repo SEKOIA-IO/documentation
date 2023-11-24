@@ -1201,7 +1201,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects RDP login from localhost source address, which may be a tunnelled login to bypass network restrictions.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "RDP Sensitive Settings Changed"
     
@@ -1549,7 +1549,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Rundll32.exe Execution"
     
