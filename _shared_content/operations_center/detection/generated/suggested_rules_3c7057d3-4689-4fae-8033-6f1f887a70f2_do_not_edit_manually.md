@@ -69,6 +69,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "AzureEdge in Command Line"
+    
+    Detects use of azureedge in the command line.
+    
+    - **Effort:** advanced
+
 ??? abstract "BITSAdmin Download"
     
     Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.

@@ -1,4 +1,4 @@
-Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-24_](rules_changelog.md)).
+Rules catalog includes **770 built-in detection rules** ([_last update on 2023-11-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8526,6 +8526,14 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
     
     - **Effort:** intermediate
+    
+**Cloud Service Discovery**
+
+??? abstract "AzureEdge in Command Line"
+    
+    Detects use of azureedge in the command line.
+    
+    - **Effort:** advanced
     
 ## Lateral Movement
 **Remote Services**

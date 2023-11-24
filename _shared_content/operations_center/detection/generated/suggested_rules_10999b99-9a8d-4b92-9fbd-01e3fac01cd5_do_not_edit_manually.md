@@ -27,6 +27,12 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     - **Effort:** master
 
+??? abstract "AzureEdge in Command Line"
+    
+    Detects use of azureedge in the command line.
+    
+    - **Effort:** advanced
+
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
