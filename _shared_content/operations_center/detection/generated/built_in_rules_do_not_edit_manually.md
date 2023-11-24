@@ -1,4 +1,4 @@
-Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-23_](rules_changelog.md)).
+Rules catalog includes **769 built-in detection rules** ([_last update on 2023-11-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6614,8 +6614,12 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/11/2023 - major - Extended detection and added filter
+            
 ??? abstract "Suspicious Rundll32.exe Execution"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
@@ -8582,8 +8586,12 @@ Rules catalog includes **769 built-in detection rules** ([_last update on 2023-1
     
     Detects RDP login from localhost source address, which may be a tunnelled login to bypass network restrictions.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 24/11/2023 - minor - Effort level changed to advanced.
+            
 ??? abstract "RDP Port Change Using Powershell"
     
     Detects RDP port configuration change using a PowerShell command such as 'Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value XXX Restart-Service termservice -force'. Threat actors can change RDP to another port to bypass protections, avoid detection based on the port, or to take full control of the system. 
