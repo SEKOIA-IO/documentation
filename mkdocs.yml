@@ -278,6 +278,7 @@ nav:
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
         - Mattermost: xdr/features/automate/library/mattermost.md
+        - Microsoft Active Directory: xdr/features/automate/library/microsoft-active-directory.md
         - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Netskope: xdr/features/automate/library/netskope.md
@@ -455,6 +456,7 @@ nav:
         - MWDB: tip/features/automate/library/mwdb.md
         - Mandrill: tip/features/automate/library/mandrill.md
         - Mattermost: tip/features/automate/library/mattermost.md
+        - Microsoft Active Directory: tip/features/automate/library/microsoft-active-directory.md
         - OSINT: tip/features/automate/library/osint.md
         - Onyphe: tip/features/automate/library/onyphe.md
         - PagerDuty: tip/features/automate/library/pagerduty.md
