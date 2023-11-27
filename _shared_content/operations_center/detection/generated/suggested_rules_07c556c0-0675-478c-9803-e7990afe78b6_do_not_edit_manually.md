@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "AzureEdge in Command Line"
+    
+    Detects use of azureedge in the command line.
+    
+    - **Effort:** advanced
+
 ??? abstract "BazarLoader Persistence Using Schtasks"
     
     Detects possible BazarLoader persistence using schtasks. BazarLoader will create a Scheduled Task using a specific command line to establish its persistence.
