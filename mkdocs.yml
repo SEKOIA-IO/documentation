@@ -254,7 +254,7 @@ nav:
       - Actions Library:
         - AWS: xdr/features/automate/library/aws.md
         - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
-        - Microsoft Entra ID (Azure AD) : xdr/features/automate/library/azure-active-directory.md
+        - Microsoft Entra ID (Azure AD) : xdr/features/automate/library/entra-id.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
@@ -432,7 +432,7 @@ nav:
       - Actions Library:
         - AWS: tip/features/automate/library/aws.md
         - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
-        - Microsoft Entra ID (Azure AD) : tip/features/automate/library/azure-active-directory.md
+        - Microsoft Entra ID (Azure AD) : tip/features/automate/library/entra-id.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md

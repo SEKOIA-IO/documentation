@@ -1,6 +1,6 @@
 # Microsoft Entra ID (Azure AD) 
 
-![Microsoft Entra ID (Azure AD) ](/assets/playbooks/library/azure-active-directory.svg){ align=right width=150 }
+![Microsoft Entra ID (Azure AD) ](/assets/playbooks/library/entra-id.svg){ align=right width=150 }
 
 [Microsoft Entra ID (Azure AD)](https://azure.microsoft.com/en-us/services/active-directory/#overview) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
 
