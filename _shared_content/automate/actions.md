@@ -95,7 +95,7 @@ These helpers need their associated trigger to function properly:
 
 ## Third-party applications
 
-- [Azure AD](library/azure-active-directory.md)
+- [Microsoft Entra ID (Azure AD) ](library/azure-active-directory.md)
 - [Fortigate Firewalls](library/fortigate-firewalls.md)
 - [HarfangLab](library/harfanglab.md)
 - [Panda Security](library/panda-security.md)

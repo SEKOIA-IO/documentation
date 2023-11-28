@@ -1,10 +1,10 @@
 uuid: 19cd2ed6-f90c-47f7-a46b-974354a107bb
-name: Azure Active Directory
+name: Microsoft Entra ID (Azure AD) 
 type: intake
 
 ## Overview
 
-**Azure Active Directory** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
+**Microsoft Entra ID (Azure AD) ** is a cloud-based Identity and Rights management service. The service is developed and managed by Microsoft Corp.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_19cd2ed6-f90c-47f7-a46b-974354a107bb_do_not_edit_manually.md!}
 
@@ -12,25 +12,25 @@ type: intake
 
 ## Configure
 
-To forward **Azure Active Directory** events from Azure to Sekoia.io you need to send your event to an Azure **Event Hub** where Sekoia.io will collect the events.
+To forward **Microsoft Entra ID (Azure AD) ** events from Azure to Sekoia.io you need to send your event to an Azure **Event Hub** where Sekoia.io will collect the events.
 <div style="text-align: center;">
     <img width="100%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/consume_azure_logs.png">
 </div>
 
 ### Prerequisite
 
-You must have Contributor write on Azure to perfom the following installation.
+You must have Contributor write on Azure to perform the following installation.
 
 {!_shared_content/operations_center/integrations/event_hub.md!}
 
-### Send logs from Azure Active Directory to Azure Event Hub
+### Send logs from Microsoft Entra ID (Azure AD)  to Azure Event Hub
 
-When you have an **Event Hub** follow this guide to send your **Azure Active Directory** events from Azure to the **Event Hub**:
+When you have an **Event Hub** follow this guide to send your **Microsoft Entra ID (Azure AD) ** events from Azure to the **Event Hub**:
 
-You need to activate and configure the **Azure Active Directory** diagnostic settings (e.g. `company-ad`), 
-to receive logs from the **Azure Active Directory** into your **Event Hub**.
+You need to activate and configure the **Microsoft Entra ID (Azure AD) ** diagnostic settings (e.g. `company-ad`), 
+to receive logs from the **Microsoft Entra ID (Azure AD) ** into your **Event Hub**.
 
-Navigate to [Home > Azure Active Directory (e.g. `company-ad`) > Monitoring > Diagnostic settings](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/DiagnosticSettings):
+Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitoring > Diagnostic settings](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/DiagnosticSettings):
 
 1. Add a new diagnostic setting, and select “Stream to an event hub” and click on configure.
 2. Select the previously created “Event hubs”, “Event Hub” and “SharedAccessKey” (**see step 3 of the event hub guide**).
@@ -46,6 +46,6 @@ Navigate to [Home > Azure Active Directory (e.g. `company-ad`) > Monitoring > Di
 
 ### Create the intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Active Directory`.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Microsoft Entra ID (Azure AD) `.
 
 {!_shared_content/operations_center/integrations/configure_consume_event_hub.md!}

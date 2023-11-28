@@ -1,14 +1,14 @@
-# Azure Active Directory
+# Microsoft Entra ID (Azure AD) 
 
-![Azure Active Directory](/assets/playbooks/library/azure-active-directory.svg){ align=right width=150 }
+![Microsoft Entra ID (Azure AD) ](/assets/playbooks/library/azure-active-directory.svg){ align=right width=150 }
 
-[Azure Active Directory (Azure AD)](https://azure.microsoft.com/en-us/services/active-directory/#overview) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
+[Microsoft Entra ID (Azure AD)](https://azure.microsoft.com/en-us/services/active-directory/#overview) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
 
 ## Configuration
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `tenant_id` | `string` | ID of the Azure AD tenant |
+| `tenant_id` | `string` | ID of the Microsoft Entra ID (Azure AD)  tenant |
 | `client_id` | `string` | Client ID. An application needs to be created in the Azure Portal and assigned relevent permissions. Its Client ID should then be used in this configuration. |
 | `client_secret` | `string` | Client Secret associated with the registered application. Admin Consent has to be granted to the application for it to work. |
 | `username` | `string` | The username of the delegated account used for some administrative tasks (eg: reset password) |
@@ -18,7 +18,7 @@
 
 ### Delete app
 
-Delete an app in azure AD. Requires the Application.ReadWrite.OwnedBy or Application.ReadWrite.All.
+Delete an app in Microsoft Entra ID (Azure AD) . Requires the Application.ReadWrite.OwnedBy or Application.ReadWrite.All.
 
 **Arguments**
 
@@ -28,7 +28,7 @@ Delete an app in azure AD. Requires the Application.ReadWrite.OwnedBy or Applica
 
 ### Disable User
 
-Disable an Azure Active Directory user. Requires the User.ReadWrite.All permission.
+Disable an Microsoft Entra ID (Azure AD)  user. Requires the User.ReadWrite.All permission.
 
 **Arguments**
 
@@ -39,7 +39,7 @@ Disable an Azure Active Directory user. Requires the User.ReadWrite.All permissi
 
 ### Enable User
 
-Enable an Azure Active Directory user. Requires the User.ReadWrite.All permission.
+Enable an Microsoft Entra ID (Azure AD)  user. Requires the User.ReadWrite.All permission.
 
 **Arguments**
 
@@ -50,7 +50,7 @@ Enable an Azure Active Directory user. Requires the User.ReadWrite.All permissio
 
 ### Get SignIns
 
-Get the last sign ins of an Azure AD user. Requires the AuditLog.Read.All and Directory.Read.All permissions.
+Get the last sign ins of an Microsoft Entra ID (Azure AD)  user. Requires the AuditLog.Read.All and Directory.Read.All permissions.
 
 **Arguments**
 
@@ -67,7 +67,7 @@ Get the last sign ins of an Azure AD user. Requires the AuditLog.Read.All and Di
 
 ### Get User
 
-Get information about an Azure Active Directory user. Requires the User.Read.All permission.
+Get information about an Microsoft Entra ID (Azure AD)  user. Requires the User.Read.All permission.
 
 **Arguments**
 
@@ -129,7 +129,7 @@ Get information about an user's authentication methods (such as their MFA status
 
 ### Reset User Password
 
-Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All deleguated permission. And to disable the MFA authentication in your azure AD
+Reset a user's password. You will need UserAuthenticationMethod.ReadWrite.All deleguated permission. And to disable the MFA authentication in your Microsoft Entra ID (Azure AD) 
 
 **Arguments**
 
@@ -153,4 +153,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Azure Active Directory` v2.5.4**
+Module **`Microsoft Entra ID (Azure AD) ` v2.5.4**
