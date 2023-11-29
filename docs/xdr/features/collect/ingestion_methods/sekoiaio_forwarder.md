@@ -287,7 +287,12 @@ sudo docker compose logs -f
 
 1. Check the Intake keys you wrote in `intakes.yaml` are correct.
 
-2. Check the network flow between the concentrator host and Sekoia.io is opened to the destination `intake.sekoia.io` on protocol `TCP` and port `10514`. You can easily check it with `telnet`:
+2. Check the network flow between the concentrator host and Sekoia.io :
+
+=== "TCP"
+
+    example: Opened to the destination `intake.sekoia.io` on protocol `TCP` and port `10514`. You can easily check it with `telnet`:
+
     ```bash
     sudo apt install telnet && telnet intake.sekoia.io 10514
     ```
@@ -305,7 +310,29 @@ sudo docker compose logs -f
     sudo apt remove telnet
     ```
 
-3. Finally check the status of the Sekoia.io plateform on [https://status.sekoia.io](https://status.sekoia.io).
+=== "UDP"
+
+    There are 2 possibilities to check :
+
+    * nmap
+    
+    ```bash
+    nmap -sU -p <port> -v <IP_adress or host_adress>
+    ```
+
+    * nc
+
+    ```bash
+    # setup package for Debian, Ubuntu ou Mint
+    sudo apt install netcat
+    ```
+
+    **command**
+    ```bash
+    nc -vvv -w 10 -z -u <IP_adress or host_adress>  <port>
+    ```
+
+4. Finally check the status of the Sekoia.io plateform on [https://status.sekoia.io](https://status.sekoia.io).
 
 ## Additional information
 
