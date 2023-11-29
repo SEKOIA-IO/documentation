@@ -22,9 +22,10 @@ As a prerequisite, you need to choose an existing **resource group**, or create 
 
 You also need your **Subscription ID** if you don't have a default one. 
 
-In Azure Web Portal, navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`. 
+In Azure Web Portal:
 
-From there, copy the relevant `**Subscription ID**` that will be used in the command line (e.g. `uuid`)
+1. Navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`. 
+2. From there, copy the relevant **Subscription ID** that will be used in the command line (e.g. `uuid`)
 
 #### Create the Event Hubs
 
@@ -42,22 +43,19 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
     Please replace :
 
     - `company-resource-group` with the name of your **resource group**.
-    - `uuid` with your subscription ID retrieved previously (see below).
+    - `uuid` with your **subscription ID** retrieved previously (see below).
 
 #### Create “Shared Access Policies”
 
 1. Navigate to `Home` > `Event Hubs`> `company-eventhub - Shared access policies`.
-
-   From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the **Primary Key** that will be used as the `SharedAccessKey`.
+    From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the **Primary Key** that will be used as the `SharedAccessKey`.
 
 3. Navigate to `Home` > `Event Hubs` > `company-eventhub` > `windows-event - Shared access policies`.
-
-   From there, you can create a policy (e.g. `sekoiaio`) with the claims `Listen`. 
-   Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io.
+    From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`. 
+    Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io.
 
 5. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `windows-event - Consumer groups`.
-
-   From there, you can create a **consumer group** (e.g. `sekoiaio`).
+    From there, you can create a **consumer group** (e.g. `sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
@@ -84,12 +82,10 @@ Finally, you have to retrieve the connection string from Azure Web Portal by goi
 You need to activate and configure the diagnostic extension `Microsoft.Insights.VMDiagnosticsSettings`.
 
 1. Navigate to `Home` > `Virtual machines` > `virtual machine name` (e.g. `company-windows`) > `Settings` > `Extensions`. 
-
-   Install it and note the new **StorageAccount** name created (e.g. `company-storage-account`).
+    Install it and note the new **StorageAccount** name created (e.g. `company-storage-account`).
 
 3. Navigate to `Home` > `Storage accounts` > `company-storage-account` > `Access keys`.
-
-   From there you can note the key value later used as the **storageAccountKey**.
+    From there you can note the key value later used as the **storageAccountKey**.
 
 5. You need to create two configuration files `public_settings.json` and `protected_settings.json`.
 
