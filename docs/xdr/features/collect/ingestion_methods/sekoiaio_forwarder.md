@@ -285,9 +285,11 @@ sudo docker compose logs -f
 
 ### Step 2: verify everything is correctly configured to forward events to Sekoia.io
 
-1. Check the Intake keys you wrote in `intakes.yaml` are correct.
+1. Check the status of the Sekoia.io plateform on [https://status.sekoia.io](https://status.sekoia.io).
 
-2. Check the network flow between the concentrator host and Sekoia.io :
+2. Check the Intake keys you wrote in `intakes.yaml` are correct.
+
+3. Check the network flow between the concentrator host and Sekoia.io :
 
 === "TCP"
 
@@ -331,9 +333,6 @@ sudo docker compose logs -f
     ```bash
     nc -vvv -w 10 -z -u <IP_adress or host_adress>  <port>
     ```
-
-
-3. Finally check the status of the Sekoia.io plateform on [https://status.sekoia.io](https://status.sekoia.io).
 
 ## Additional information
 
