@@ -332,7 +332,8 @@ sudo docker compose logs -f
     nc -vvv -w 10 -z -u <IP_adress or host_adress>  <port>
     ```
 
-4. Finally check the status of the Sekoia.io plateform on [https://status.sekoia.io](https://status.sekoia.io).
+
+3. Finally check the status of the Sekoia.io plateform on [https://status.sekoia.io](https://status.sekoia.io).
 
 ## Additional information
 
