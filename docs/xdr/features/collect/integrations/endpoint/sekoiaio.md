@@ -324,17 +324,17 @@ If you want to enable this feature, follow these steps:
 
 1. Edit the configuration file at:
 	
-=== "Windows"
-
-    ```
-    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-    ```
+	=== "Windows"
 	
-=== "Linux"
-
-    ```
-    /etc/endpoint-agent/config.yaml
-    ```
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
 
 2. Add the following line:
     ```
