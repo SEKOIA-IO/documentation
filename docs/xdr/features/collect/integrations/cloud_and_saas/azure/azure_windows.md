@@ -48,14 +48,14 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 #### Create “Shared Access Policies”
 
 1. Navigate to `Home` > `Event Hubs`> `company-eventhub - Shared access policies`.
-    From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen`, and note the **Primary Key** that will be used as the `SharedAccessKey`.
+    - From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen` and note the **Primary Key** that will be used as the **SharedAccessKey**.
 
-3. Navigate to `Home` > `Event Hubs` > `company-eventhub` > `windows-event - Shared access policies`.
-    From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`. 
-    Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io.
+2. Navigate to `Home` > `Event Hubs` > `company-eventhub` > `mysql-event - Shared access policies`.
+    - a. From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`.
+    - b. Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io.
 
-5. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `windows-event - Consumer groups`.
-    From there, you can create a **consumer group** (e.g. `sekoiaio`).
+5. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `mysql-event - Consumer groups`.
+    - From there, you can create a **consumer group** (e.g. `sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
