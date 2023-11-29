@@ -277,7 +277,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "NlTest Usage"
     

@@ -1,4 +1,4 @@
-Rules catalog includes **770 built-in detection rules** ([_last update on 2023-11-24_](rules_changelog.md)).
+Rules catalog includes **771 built-in detection rules** ([_last update on 2023-11-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1113,7 +1113,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 29/11/2023 - minor - Added a selection to filter some false positives.
             
 ??? abstract "Wmic Process Call Creation"
     
@@ -1521,11 +1521,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 26/05/2023 - minor - Added a filter to the rule as some false positives were observed.
+        - 29/11/2023 - minor - Added a filter to the rule as some false positives were observed.
             
 ??? abstract "PowerShell EncodedCommand"
     
@@ -1747,7 +1748,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 26/05/2023 - minor - Added a filter to the rule as some false positives were observed.
             
 ??? abstract "Suspicious PowerShell Keywords"
     
@@ -1857,7 +1858,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 29/11/2023 - minor - Added a selection to filter some false positives.
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -4174,8 +4175,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 29/11/2023 - minor - Update regex pattern to insensitive case
+            
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -5440,8 +5445,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 29/11/2023 - minor - Update regex pattern to insensitive case
+            
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -7203,8 +7212,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 29/11/2023 - minor - Update regex pattern to insensitive case
+            
 ??? abstract "Netsh RDP Port Forwarding"
     
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
@@ -7612,9 +7625,9 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
-??? abstract "HackTools Suspicious Process Names"
+??? abstract "HackTools Suspicious Names"
     
-    Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
+    Quick-win rule to detect the default process names or file names of several HackTools.
     
     - **Effort:** elementary
     
@@ -9201,6 +9214,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+    
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
     

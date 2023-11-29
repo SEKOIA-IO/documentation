@@ -1,7 +1,19 @@
-Changelog _last update on 2023-11-24_
+Changelog _last update on 2023-11-29_
 
 ## Changelog
 
+### Netsh Program Allowed With Suspicious Location
+  - 29/11/2023 - minor - Update regex pattern to insensitive case
+    
+### WMImplant Hack Tool
+  - 29/11/2023 - minor - Added a selection to filter some false positives.
+    
+### NjRat Registry Changes
+  - 29/11/2023 - minor - Update regex pattern to insensitive case
+    
+### PowerShell Download From URL
+  - 29/11/2023 - minor - Added a filter to the rule as some false positives were observed.
+    
 ### RDP Login From Localhost
   - 24/11/2023 - minor - Effort level changed to advanced.
     
@@ -212,14 +224,8 @@ Changelog _last update on 2023-11-24_
 ### Suspicious Cmd.exe Command Line
   - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
     
-### WMImplant Hack Tool
-  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
-    
 ### Suspicious PowerShell Invocations - Specific
-  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
-    
-### PowerShell Download From URL
-  - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+  - 26/05/2023 - minor - Added a filter to the rule as some false positives were observed.
     
 ### Internet Scanner
   - 28/04/2023 - minor - Support for standard ECS FW fields

@@ -477,9 +477,9 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
-??? abstract "HackTools Suspicious Process Names"
+??? abstract "HackTools Suspicious Names"
     
-    Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
+    Quick-win rule to detect the default process names or file names of several HackTools.
     
     - **Effort:** elementary
 
@@ -829,7 +829,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -889,7 +889,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "NlTest Usage"
     
@@ -1015,7 +1015,7 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -1160,6 +1160,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
 
 ??? abstract "Rubeus Tool Command-line"
     
