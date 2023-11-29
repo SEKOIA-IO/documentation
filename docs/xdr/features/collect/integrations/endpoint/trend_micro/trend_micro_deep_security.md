@@ -33,8 +33,8 @@ For Trend Micro Workload Security, please refer to [this documentation](https://
 
 If the concentrator and all your agents are on the same network or could communicate safely (VPN, ...):
 
-1- Select the transport protocol `UDP` and ask your agents to send events `Directly to the syslog server`. 
-2- Apply the changes.
+1. Select the transport protocol `UDP` and ask your agents to send events `Directly to the syslog server`. 
+2. Apply the changes.
 
 #### Indirect forwarding
 
