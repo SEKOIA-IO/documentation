@@ -715,7 +715,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -830,6 +830,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     Detects actions caused by the RedMimicry Winnti playbook. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
 
 ??? abstract "Rubeus Tool Command-line"
     
