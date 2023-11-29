@@ -26,7 +26,7 @@ You also need your **Subscription ID** if you don't have a default one.
 
 In Azure Web Portal:
 
-1. navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`. 
+1. Navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`. 
 2. From there, copy the relevant **Subscription ID** that will be used in the command line (e.g. `uuid`)
 
 #### Create the Event Hubs
@@ -50,17 +50,14 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 #### Create “Shared Access Policies”
 
 1. Navigate to `Home` > `Event Hubs`> `company-eventhub - Shared access policies`.
-   
-   From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen` and note the **Primary Key** that will be used as the **SharedAccessKey**.
+    From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen` and note the **Primary Key** that will be used as the **SharedAccessKey**.
 
 2. Navigate to `Home` > `Event Hubs` > `company-eventhub` > `mysql-event - Shared access policies`.
-   
-   a. From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`.
-   b. Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io.
+    a. From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`.
+    b. Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io.
 
 3. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `mysql-event - Consumer groups`.
-
-   From there, you can create a **consumer group** (e.g. `sekoiaio`).
+    From there, you can create a **consumer group** (e.g. `sekoiaio`).
 
 #### Create a Blob Storage for Checkpointing
 
