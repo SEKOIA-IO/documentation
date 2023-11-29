@@ -321,16 +321,17 @@ Here's a non-exhaustive list of kind of events the agent is able to detect
 
 If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests. 
 If you want to enable this feature, follow these steps: 
+
 1. Edit the configuration file at:
 	
 === "Windows"
-	
+
     ```
     C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
     ```
 	
 === "Linux"
-	
+
     ```
     /etc/endpoint-agent/config.yaml
     ```
