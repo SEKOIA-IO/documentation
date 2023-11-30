@@ -1,4 +1,4 @@
-Rules catalog includes **771 built-in detection rules** ([_last update on 2023-11-30_](rules_changelog.md)).
+Rules catalog includes **773 built-in detection rules** ([_last update on 2023-11-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -106,6 +106,12 @@ Rules catalog includes **771 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
+    
+    A user has attempted to login several times (brute-force) on through Rubycat PROVE IT protected devices and succeeded to login.
     
     - **Effort:** advanced
     
@@ -220,6 +226,12 @@ Rules catalog includes **771 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
+    
+    A user has attempted to login several times (brute-force) on through Rubycat PROVE IT protected devices and succeeded to login.
     
     - **Effort:** advanced
     
@@ -7301,6 +7313,12 @@ Rules catalog includes **771 built-in detection rules** ([_last update on 2023-1
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
     
     - **Effort:** elementary
+    
+??? abstract "Rubycat PROVEIT Admin Service Modified"
+    
+    Rubycat PROVEIT has detected a service modification that could require some review if not expected.
+    
+    - **Effort:** master
     
 ??? abstract "Ryuk Ransomware Command Line"
     

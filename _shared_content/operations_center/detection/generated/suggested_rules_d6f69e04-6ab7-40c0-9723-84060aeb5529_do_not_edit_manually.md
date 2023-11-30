@@ -9,6 +9,12 @@ The following Sekoia.io built-in rules match the intake **Rubycat PROVE IT**. Th
     
     - **Effort:** elementary
 
+??? abstract "Rubycat PROVEIT Admin Service Modified"
+    
+    Rubycat PROVEIT has detected a service modification that could require some review if not expected.
+    
+    - **Effort:** master
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
