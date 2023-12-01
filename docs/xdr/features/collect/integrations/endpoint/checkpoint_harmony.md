@@ -26,12 +26,12 @@ Check Point Harmony is the industry's first unified security solution for users 
     ![API Keys](/assets/instructions/checkpoint/checkpoint_new_key.png)
 
 3. Update required fields with next information and create `API Key`:
-   * Service: Harmony Mobile (1)
-   * Expiration: If you pass an empty field, it means that API Key will not expire until you delete it. (2)
-   * Description: You can specify any description that you want. (3)
-   * Roles: `Admin`
+    * Service: Harmony Mobile (1)
+    * Expiration: If you pass an empty field, it means that API Key will not expire until you delete it. (2)
+    * Description: You can specify any description that you want. (3)
+    * Roles: `Read-Only`
 
-   ![API Key Form](/assets/instructions/checkpoint/checkpoint_api_key_form.png)
+    ![API Key Form](/assets/instructions/checkpoint/checkpoint_api_key_form.png)
 
 4. Copy values of `Client ID`, `Secret Key` and `Authentication URL` and save them for the configuration of the connector.
 
