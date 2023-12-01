@@ -51,7 +51,7 @@ To update an alert status, you need to copy the `status_uuid` corresponding to t
 | Pending | This alert needs to be addressed | `2efc4930-1442-4abb-acf2-58ba219a4fd0` |
 | Acknowledge | Alert will be evaluated (true or false positive?) | `8f206505-af6d-433e-93f4-775d46dc7d0f` |
 | Ongoing | Alert might be a true positive and action must be taken | `1f2f88d5-ff5b-48bf-bbbc-00c2fff82d9f` |
-| Reject | It is a false positive or the alert will be nopt addressed | `4f68da89-38e0-4703-a6ab-652f02bdf24e` |
+| Reject | It is a false positive or the alert will be not addressed | `4f68da89-38e0-4703-a6ab-652f02bdf24e` |
 | Close | It was a true positive and the alert has been addressed | `1738b1c1-767d-489e-bada-19176621a007` |
 
 ## Notifications
