@@ -258,6 +258,7 @@ nav:
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
+        - Check Point: xdr/features/automate/library/check-point.md
         - CrowdStrike: xdr/features/automate/library/crowdstrike.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Cybereason: xdr/features/automate/library/cybereason.md
@@ -437,6 +438,7 @@ nav:
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
+        - Check Point: tip/features/automate/library/check-point.md
         - CrowdStrike: tip/features/automate/library/crowdstrike.md
         - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - Cybereason: tip/features/automate/library/cybereason.md
