@@ -1,7 +1,10 @@
-Changelog _last update on 2023-11-30_
+Changelog _last update on 2023-12-01_
 
 ## Changelog
 
+### HTA Infection Chains
+  - 30/11/2023 - minor - Update pattern with new lolbin
+    
 ### Netsh Program Allowed With Suspicious Location
   - 29/11/2023 - minor - Update regex pattern to insensitive case
     
