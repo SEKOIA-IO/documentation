@@ -14357,7 +14357,7 @@ threat.software.platforms:
   dashed_name: threat-software-platforms
   description: "The platforms of the software used by this threat to conduct behavior\
     \ commonly modeled using MITRE ATT&CK\xAE.\nRecommended Values:\n  * AWS\n  *\
-    \ Azure\n  * Azure AD\n  * GCP\n  * Linux\n  * macOS\n  * Network\n  * Office\
+    \ Azure\n  * Microsoft Entra ID (Azure AD) \n  * GCP\n  * Linux\n  * macOS\n  * Network\n  * Office\
     \ 365\n  * SaaS\n  * Windows\n\nWhile not required, you can use a MITRE ATT&CK\xAE\
     \ software platforms."
   example: '[ "Windows" ]'

@@ -42,7 +42,7 @@ nav:
     - Create a sub-community: getting_started/community-create_sub_com.md
     - Set up community security:
       - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
-      - SSO with Azure AD: getting_started/sso/azure.md
+      - SSO with Microsoft Entra ID (Azure AD) : getting_started/sso/azure.md
       - SSO with Okta: getting_started/sso/okta.md
   - 3. Navigate on the platform: getting_started/navigation.md
   - 4. Manage users:
@@ -120,7 +120,7 @@ nav:
           - Imperva WAF: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
           - Jumpcloud Directory Insights: xdr/features/collect/integrations/cloud_and_saas/jumpcloud_directory_insights.md
           - Microsoft Azure:
-            - Azure Active Directory: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+            - Microsoft Entra ID (Azure AD) : xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
             - Azure Front Door: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
             - Azure Database for MySQL: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
             - Azure Linux: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
@@ -254,7 +254,7 @@ nav:
       - Actions Library:
         - AWS: xdr/features/automate/library/aws.md
         - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
-        - Azure Active Directory: xdr/features/automate/library/azure-active-directory.md
+        - Microsoft Entra ID (Azure AD) : xdr/features/automate/library/entra-id.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
@@ -434,7 +434,7 @@ nav:
       - Actions Library:
         - AWS: tip/features/automate/library/aws.md
         - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
-        - Azure Active Directory: tip/features/automate/library/azure-active-directory.md
+        - Microsoft Entra ID (Azure AD) : tip/features/automate/library/entra-id.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
@@ -542,12 +542,12 @@ plugins:
       integrations/aws_cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
       integrations/aws_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
       integrations/aws_s3_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_s3_logs.md
-      integrations/azure-ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+      integrations/azure-ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
       integrations/azure-linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
       integrations/azure-mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
       integrations/azure-network-watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
       integrations/azure-windows.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
-      integrations/azure_ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+      integrations/intra_id.md: xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
       integrations/azure_front_door.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
       integrations/azure_linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
       integrations/azure_mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
@@ -682,7 +682,7 @@ plugins:
       operation_center/integration_catalog/application/unbound.md: xdr/features/collect/integrations/application/unbound.md
       operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
       operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
-      operation_center/integration_catalog/cloud_and_saas/azure/azure_ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_ad.md
+      operation_center/integration_catalog/cloud_and_saas/azure/intra_id.md: xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
       operation_center/integration_catalog/cloud_and_saas/azure/azure_linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
       operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
       operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
