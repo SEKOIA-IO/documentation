@@ -1,4 +1,4 @@
-Rules catalog includes **773 built-in detection rules** ([_last update on 2023-11-30_](rules_changelog.md)).
+Rules catalog includes **779 built-in detection rules** ([_last update on 2023-12-01_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -28,6 +28,12 @@ Rules catalog includes **773 built-in detection rules** ([_last update on 2023-1
     
         - 28/04/2023 - minor - Support for standard ECS FW fields
             
+??? abstract "Microsoft Windows Active Directory Module Commandlets"
+    
+    Detects use of commandlets linked to the AD Module.
+    
+    - **Effort:** advanced
+    
 **Active Scanning**
 
 ??? abstract "Burp Suite Tool Detected"
@@ -103,6 +109,18 @@ Rules catalog includes **773 built-in detection rules** ([_last update on 2023-1
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
             
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
@@ -223,6 +241,18 @@ Rules catalog includes **773 built-in detection rules** ([_last update on 2023-1
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
             
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
@@ -339,6 +369,12 @@ Rules catalog includes **773 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+??? abstract "Correlation Jumpcloud User Logged In From Multiple Countries"
+    
+    Detection of login events from multiple countries on Jumpcloud portal.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -350,6 +386,12 @@ Rules catalog includes **773 built-in detection rules** ([_last update on 2023-1
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
     
     - **Effort:** elementary
+    
+??? abstract "Okta Reuse Device Token"
+    
+    Detection of the reusing of Device Token.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta User Logged In From Multiple Countries"
     
@@ -1730,6 +1772,12 @@ Rules catalog includes **773 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
     Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
@@ -2145,6 +2193,10 @@ Rules catalog includes **773 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 30/11/2023 - minor - Update pattern with new lolbin
+            
 ??? abstract "HarfangLab EDR Critical Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
