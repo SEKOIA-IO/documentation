@@ -169,16 +169,16 @@ To get started, follow these steps:
 ```
 
 !!! Info
-To ensure proper configuration, it is important to replace the `RSYSLOG_HOST` variable with the IP address of your concentrator.
+    To ensure proper configuration, it is important to replace the `RSYSLOG_HOST` variable with the IP address of your concentrator.
 
 !!! Warning
-`OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. It does not depend on SSL transport at all.
-**Remove it ONLY** if you use `UDP` - `om_udp`.
-For more information, consult [NXLog documentation.](https://docs.nxlog.co/refman/current/xm/syslog.html)
+    `OutputType Syslog_TLS` is needed for `TCP` transport even if you do not encrypt data. It does not depend on SSL transport at all.
+    **Remove it ONLY** if you use `UDP` - `om_udp`.
+    For more information, consult [NXLog documentation.](https://docs.nxlog.co/refman/current/xm/syslog.html)
 
 !!! Note
-The iso8859-1 character encoding is limited to 256 characters, which is not enough to represent all French characters. This means that some French characters might not be correctly interpreted or displayed when using iso8859-1 encoding. For example, iso8859-1 does not include characters such as é, è, ê, and ë.
-In order to correctly represent these characters, it is recommended to install the [Sekoia.io agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/). This endpoint agent is specifically designed to handle such issues, ensuring the accurate and secure transmission of data.
+    The iso8859-1 character encoding is limited to 256 characters, which is not enough to represent all French characters. This means that some French characters might not be correctly interpreted or displayed when using iso8859-1 encoding. For example, iso8859-1 does not include characters such as é, è, ê, and ë.
+    In order to correctly represent these characters, it is recommended to install the [Sekoia.io agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/). This endpoint agent is specifically designed to handle such issues, ensuring the accurate and secure transmission of data.
 
 Restart the NXLog service through the Services tool as Administrator or use this Powershell command line as admin:
 
@@ -198,4 +198,4 @@ Please read the dedicated documentation for each concentrator:
 - [Sekoia.io docker concentrator](https://www.notion.so/ingestion_methods/sekoiaio_forwarder/)
 
 !!! Note
-While [Sekoia.io](http://sekoia.io/) docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.
+    While [Sekoia.io](http://sekoia.io/) docker concentrator is highly recommended, you are free to use the one that you are most comfortable with.
