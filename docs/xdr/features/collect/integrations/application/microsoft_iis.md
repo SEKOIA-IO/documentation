@@ -45,7 +45,7 @@ To get started with NXLog, follow these steps:
 
 !!! Note
     Don't forget to replace `YOUR_INTAKE_KEY` variable with your actual intake key.
-                     ``
+
 ```
  ## This is a sample configuration file. See the nxlog reference manual about the configuration options.
  ## It should be installed locally and is also available online at <http://nxlog.org/nxlog-docs/en/nxlog-reference-manual.html>
