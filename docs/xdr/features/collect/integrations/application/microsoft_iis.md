@@ -44,7 +44,7 @@ To get started with NXLog, follow these steps:
 4. Update the configuration file with your intake key by following these instructions:
 
 !!! Note
-Don't forget to replace `YOUR_INTAKE_KEY` variable with your actual intake key.
+    Don't forget to replace `YOUR_INTAKE_KEY` variable with your actual intake key.
                      ``
 ```
  ## This is a sample configuration file. See the nxlog reference manual about the configuration options.
