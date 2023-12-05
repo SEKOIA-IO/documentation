@@ -1,10 +1,10 @@
 uuid: ff53e0db-059b-4e16-ba90-8c4dbf5cee35
-name: Checkpoint Harmony
+name: Checkpoint Harmony Mobile
 type: intake
 
 ## Overview
 
-Check Point Harmony is the industry's first unified security solution for users devices and access.
+CheckPoint Harmony Mobile is the industry's first unified security solution for users devices and access.
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
@@ -37,13 +37,13 @@ Check Point Harmony is the industry's first unified security solution for users 
 
 ### Create the intake
 
-To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Checkpoint Harmony`.
+To create the intake, go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Checkpoint Harmony Mobile`.
 
 ### Pull events
 
 To start to pull events, you have to:
 
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Checkpoint Harmony](../../../automate/library/checkpoint.md) trigger
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Checkpoint Harmony Mobile](../../../automate/library/checkpoint.md) trigger
 2. Set up the module configuration with the Client ID, Client Secret and Authentication URL. 
 3. Set up the trigger configuration with the intake key
 4. Start the playbook and enjoy your events
