@@ -800,6 +800,7 @@ plugins:
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
+      xdr/features/collect/integrations/endpoint/checkpoint_harmony.md: xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
 - redoc
 - intakes_by_uuid
