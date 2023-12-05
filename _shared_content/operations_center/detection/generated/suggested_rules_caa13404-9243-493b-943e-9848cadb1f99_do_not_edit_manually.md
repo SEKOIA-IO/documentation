@@ -281,7 +281,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
 
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
-    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
     
     - **Effort:** elementary
 

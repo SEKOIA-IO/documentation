@@ -1,4 +1,4 @@
-Rules catalog includes **779 built-in detection rules** ([_last update on 2023-12-01_](rules_changelog.md)).
+Rules catalog includes **779 built-in detection rules** ([_last update on 2023-12-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8034,10 +8034,14 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
 
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
-    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+            
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -8171,10 +8175,14 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
 
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
-    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+            
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -8866,10 +8874,14 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
 
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
-    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+            
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.

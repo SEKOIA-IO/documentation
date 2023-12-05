@@ -1,7 +1,10 @@
-Changelog _last update on 2023-12-01_
+Changelog _last update on 2023-12-05_
 
 ## Changelog
 
+### Microsoft 365 Sign-in With No User Agent
+  - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+    
 ### HTA Infection Chains
   - 30/11/2023 - minor - Update pattern with new lolbin
     
