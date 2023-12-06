@@ -126,6 +126,17 @@ To disable audit logging the following should be done as root:
        
 A reboot may be necessary if the audit events are still appearing in the logs.
 
+#### Setting the region
+
+When installing the agent it is possible to specify the region the agent will communicate with. 
+To do it simply append `--region <region_name>` at the end of the command. 
+
+For example if the agent must communicate with `fra2` the following command can be executed:
+
+```shell
+agent.exe install --intake-key <INTAKE_KEY> --region fra2
+```
+
 ### Update
 
 #### Disable automatic update
