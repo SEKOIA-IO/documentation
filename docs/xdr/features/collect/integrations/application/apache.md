@@ -92,51 +92,50 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-    {
-    "input": {
-        "event": {
-            "created": "2020-06-12T09:43:30.348",
-            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
-        },
-        "log": {
-            "hostname": "B78f1GJTxDUKbh2l"
-        },
-        "message": "[Wed Oct 11 14:32:52 2000] [error] [client 127.0.0.1] client denied by server configuration: /export/home/live/test"
-    },
-    "expected": {
-        "event": {
-            "created": "2020-06-12T09:43:30.348",
-            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
-        },
-        "message": "[Wed Oct 11 14:32:52 2000] [error] [client 127.0.0.1] client denied by server configuration: /export/home/live/test",
-        "action": {
-            "name": "error",
-            "outcome_reason": "client denied by server configuration: /export/home/live/test",
-            "outcome": "failure"
-        },
-        "source": {
-            "address": "127.0.0.1",
-            "ip": "127.0.0.1"
-        },
-        "type": "kafka",
-        "log": {
-            "hostname": "B78f1GJTxDUKbh2l"
-        },
-        "related": {
-            "ip": [
-                "127.0.0.1"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        }
-    }
-  }
+	    {
+	    "input": {
+	        "event": {
+	            "created": "2020-06-12T09:43:30.348",
+	            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
+	        },
+	        "log": {
+	            "hostname": "B78f1GJTxDUKbh2l"
+	        },
+	        "message": "[Wed Oct 11 14:32:52 2000] [error] [client 127.0.0.1] client denied by server configuration: /export/home/live/test"
+	    },
+	    "expected": {
+	        "event": {
+	            "created": "2020-06-12T09:43:30.348",
+	            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
+	        },
+	        "message": "[Wed Oct 11 14:32:52 2000] [error] [client 127.0.0.1] client denied by server configuration: /export/home/live/test",
+	        "action": {
+	            "name": "error",
+	            "outcome_reason": "client denied by server configuration: /export/home/live/test",
+	            "outcome": "failure"
+	        },
+	        "source": {
+	            "address": "127.0.0.1",
+	            "ip": "127.0.0.1"
+	        },
+	        "type": "kafka",
+	        "log": {
+	            "hostname": "B78f1GJTxDUKbh2l"
+	        },
+	        "related": {
+	            "ip": [
+	                "127.0.0.1"
+	            ]
+	        },
+	        "sekoiaio": {
+	            "intake": {
+	                "parsing_status": "success"
+	            }
+	        }
+	    }
+	  }
     	
 	```
-
 
 === "modsecurity.json"
 
