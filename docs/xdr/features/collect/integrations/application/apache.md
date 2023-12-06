@@ -19,71 +19,71 @@ Find below few samples of events and how they are normalized by SEKOIA.IO.
 
     ```json
 	
-{
-    "input": {
-        "event": {
-            "created": "2020-06-12T09:43:30.348",
-            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
-        },
-        "log": {
-            "hostname": "B74f1GJTxDUKbh2l"
-        },
-        "message": "127.0.0.1 - Dora [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326 \"http://www.example.com/start.html\" \"Mozilla/4.08 [en] (Win98; I ;Nav)\""
-    },
-    "expected": {
-        "event": {
-            "created": "2020-06-12T09:43:30.348",
-            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
-        },
-        "message": "127.0.0.1 - Dora [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326 \"http://www.example.com/start.html\" \"Mozilla/4.08 [en] (Win98; I ;Nav)\"",
-        "action": {
-            "name": "GET",
-            "outcome": "success"
-        },
-        "http": {
-            "request": {
-                "method": "GET",
-                "referrer": "\"http://www.example.com/start.html\""
-            },
-            "response": {
-                "bytes": 2326,
-                "status_code": 200
-            },
-            "version": "1.0"
-        },
-        "source": {
-            "address": "127.0.0.1",
-            "ip": "127.0.0.1"
-        },
-        "url": {
-            "original": "/apache_pb.gif",
-            "path": "/apache_pb.gif"
-        },
-        "user": {
-            "name": "frank"
-        },
-        "user_agent": {
-            "original": "\"Mozilla/4.08 [en] (Win98; I ;Nav)\""
-        },
-        "type": "kafka",
-        "log": {
-            "hostname": "B74f1GJTxDUKbh2l"
-        },
-        "related": {
-            "user": [
-                "Dora"
-            ],
-            "ip": [
-                "127.0.0.1"
-            ]
-        },
-        "sekoiaio": {
-            "intake": {
-                "parsing_status": "success"
-            }
-        }
-    }
-}
+	{
+	    "input": {
+	        "event": {
+	            "created": "2020-06-12T09:43:30.348",
+	            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
+	        },
+	        "log": {
+	            "hostname": "B74f1GJTxDUKbh2l"
+	        },
+	        "message": "127.0.0.1 - Dora [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326 \"http://www.example.com/start.html\" \"Mozilla/4.08 [en] (Win98; I ;Nav)\""
+	    },
+	    "expected": {
+	        "event": {
+	            "created": "2020-06-12T09:43:30.348",
+	            "id": "10f0afe9-98a1-4226-a6bd-8f70d461d777"
+	        },
+	        "message": "127.0.0.1 - Dora [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326 \"http://www.example.com/start.html\" \"Mozilla/4.08 [en] (Win98; I ;Nav)\"",
+	        "action": {
+	            "name": "GET",
+	            "outcome": "success"
+	        },
+	        "http": {
+	            "request": {
+	                "method": "GET",
+	                "referrer": "\"http://www.example.com/start.html\""
+	            },
+	            "response": {
+	                "bytes": 2326,
+	                "status_code": 200
+	            },
+	            "version": "1.0"
+	        },
+	        "source": {
+	            "address": "127.0.0.1",
+	            "ip": "127.0.0.1"
+	        },
+	        "url": {
+	            "original": "/apache_pb.gif",
+	            "path": "/apache_pb.gif"
+	        },
+	        "user": {
+	            "name": "frank"
+	        },
+	        "user_agent": {
+	            "original": "\"Mozilla/4.08 [en] (Win98; I ;Nav)\""
+	        },
+	        "type": "kafka",
+	        "log": {
+	            "hostname": "B74f1GJTxDUKbh2l"
+	        },
+	        "related": {
+	            "user": [
+	                "Dora"
+	            ],
+	            "ip": [
+	                "127.0.0.1"
+	            ]
+	        },
+	        "sekoiaio": {
+	            "intake": {
+	                "parsing_status": "success"
+	            }
+	        }
+	    }
+	}
 
 	```
 
