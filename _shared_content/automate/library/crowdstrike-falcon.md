@@ -60,6 +60,7 @@ Block the provided IOCs: md5 / sha256 file hashes
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `stix_objects` | `object` | The IOCs to disseminate |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 | `sekoia_base_url` | `string` | [Optional] Sekoia base url, used to generate direct links to IOCs |
 
 ### Push IOCs for detection
@@ -71,9 +72,10 @@ Enable detections on the provided IOCs: md5 / sha256 file hashes, IPv4/v6 addres
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `stix_objects` | `object` | The IOCs to disseminate |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 | `sekoia_base_url` | `string` | [Optional] Sekoia base url, used to generate direct links to IOCs |
 
 
 ## Extra
 
-Module **`CrowdStrike Falcon` v1.11**
+Module **`CrowdStrike Falcon` v1.15.1**
