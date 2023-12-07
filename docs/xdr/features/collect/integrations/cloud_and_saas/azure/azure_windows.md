@@ -24,7 +24,7 @@ You also need your **Subscription ID** if you don't have a default one.
 
 In Azure Web Portal:
 
-1. Navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`. 
+1. Navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`
 2. From there, copy the relevant **Subscription ID** that will be used in the command line (e.g. `uuid`)
 
 #### Create the Event Hubs
