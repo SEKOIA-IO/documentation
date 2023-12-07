@@ -21,33 +21,33 @@ An internal syslog concentrator is required to collect and forward events to Sek
 
 ### Enable Syslog forwarding
 
-To enable syslog forwarding, for Trend Micro Deep Security, please follow [this guide](https://help.deepsecurity.trendmicro.com/20_0/on-premise/event-syslog.html).
+To enable syslog forwarding for Trend Micro Deep Security, please follow [this guide](https://help.deepsecurity.trendmicro.com/20_0/on-premise/event-syslog.html).
 For Trend Micro Workload Security, please refer to [this documentation](https://cloudone.trendmicro.com/docs/workload-security/event-syslog/)
 
-**Steps**
+To enable Syslog forwarding, follow these steps: 
 
-1. Log on your Security console.
-2. Provide the IP and the listening port (`514`) of the log concentrator and select `CEF` as the event format.
+1. Log on your Security console
+2. Provide the IP and the listening port (`514`) of the log concentrator and select `CEF` as the event format
 
 #### Direct forwarding
 
 If the concentrator and all your agents are on the same network or could communicate safely (VPN, ...):
 
-1. Select the transport protocol `UDP` and ask your agents to send events `Directly to the syslog server`. 
-2. Apply the changes.
+1. Select the transport protocol `UDP` and ask your agents to send events `Directly to the syslog server` 
+2. Apply the changes
 
 #### Indirect forwarding
 
 If your agents should forward events over untrusted network:
 
-1. Select the transport protocol `TLS` and ask your agents to send events `Via the Workload Security Manager`. 
-2. Generate and add a certificate to the log concentrator.
-3. Apply the changes and test the connection.
+1. Select the transport protocol `TLS` and ask your agents to send events `Via the Workload Security Manager`
+2. Generate and add a certificate to the log concentrator
+3. Apply the changes and test the connection
 
 For the first connection:
 
-1. the manager should display the error message "Accept Server Certificate?"
-2. Check the certificate and click OK to accept it. Test the connection again; it should succeed.
+1. The manager should display the error message "Accept Server Certificate?"
+2. Check the certificate and click OK to accept it. Test the connection again; it should succeed
 
    If not, please see the "Troubleshoot event forwarding" section on the Trend-Micro documentation.
 
