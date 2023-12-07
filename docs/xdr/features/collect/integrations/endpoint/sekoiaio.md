@@ -6,7 +6,7 @@ type: intake
 
 Sekoia.io provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to Sekoia.io.
 
-### Disclamer
+### Disclaimer
 
 !!! INFO
     The Sekoia.io Endpoint Detection Agent preserves the integrity of logs collected from the operating system event log, it does NOT modify or rewrite logs.
@@ -38,7 +38,7 @@ The Endpoint Detection Agent supports the following operating systems, **on 64 b
 
 ## Installation
 
-### Disclamer
+### Disclaimer
 
 !!! Warning
 	If you want to install this agent on a machine that already has an EDR in place, be aware that most EDR perform actions on the machines to detect malwares or other types of threats. Those actions generate events that are collected by our agent. This may result to the raising of false positive alerts from our detection rules of effort level 3 and 4. It's important for customers to fine-tune these rules to reduce the occurrence of false positives.
