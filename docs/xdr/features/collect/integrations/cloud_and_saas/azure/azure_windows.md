@@ -47,7 +47,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 
 #### Create “Shared Access Policies”
 
-1. Navigate to `Home` > `Event Hubs`> `company-eventhub - Shared access policies`.
+1. Navigate to `Home` > `Event Hubs`> `company-eventhub - Shared access policies`
     - From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen` and note the **Primary Key** that will be used as the **SharedAccessKey**.
 
 2. Navigate to `Home` > `Event Hubs` > `company-eventhub` > `mysql-event - Shared access policies`.
