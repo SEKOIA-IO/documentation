@@ -40,7 +40,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 ```
 
 !!! info
-    Please replace :
+    Please replace the following:
 
     - `company-resource-group` with the name of your **resource group**.
     - `uuid` with your **subscription ID** retrieved previously (see below).
