@@ -54,7 +54,7 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
     -  From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`
     - Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io
 
-5. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `mysql-event - Consumer groups`.
+5. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `mysql-event - Consumer groups`
     - From there, you can create a **consumer group** (e.g. `sekoiaio`)
 
 #### Create a Blob Storage for Checkpointing
