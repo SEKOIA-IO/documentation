@@ -20,7 +20,7 @@ Next, create a [dedicated service account](https://cloud.google.com/iam/docs/cre
 - Create a service account with the role `Pub/Sub Subscriber`
 
 !!! Note
-   Ensure that this user has the role **Pub/Sub Subscriber** in both **Topic** and **Subsciption** pages. Otherwise, you will have an error with status 403 when you will activate the playbook detailed on the bottom of this page. 
+      To successfully activate the playbook further down this page, ensure the user has been granted the **Pub/Sub Subscriber role** for both the **Topic** and **Subscription** pages. Failure to do so will result in an error with status code 403. 
 
 - Create and download JSON keys (*service account credentials*) 
 
@@ -35,10 +35,9 @@ To pull events, you have to:
 1. Go to [the playbooks' page](https://app.sekoia.io/operations/playbooks) 
 2. Click on `+New playbook` to create a new playbook 
 3. Select `Use a template` when creating a playbook
-4. Search for `Google Cloud` then select `Forward Google Pubsub records to SEKOIA.IO`
+4. Search for `Google Cloud` then select `Forward Google Pubsub records to Sekoia.io`
 
-This playbook consumes records from Google Pubsub and pushes them to SEKOIA.IO. 
-
+This playbook consumes records from Google Pubsub and pushes them to Sekoia.io. 
 
 You can also create your own on the same basis by using the "Google Pub/Sub" trigger (`Connect to the specified`)
 
