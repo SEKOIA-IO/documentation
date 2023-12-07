@@ -26,7 +26,7 @@ You also need your **Subscription ID** if you don't have a default one.
 
 In Azure Web Portal:
 
-1. Navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`. 
+1. Navigate to: `Home` > `Cost Management + Billing` > `Subscriptions`
 2. From there, copy the relevant **Subscription ID** that will be used in the command line (e.g. `uuid`)
 
 #### Create the Event Hubs
@@ -44,20 +44,20 @@ PS Azure:\> az eventhubs eventhub create --resource-group company-resource-group
 !!! info
     Please replace :
 
-    - `company-resource-group` with the name of your **resource group**.
-    - `uuid` with your subscription ID retrieved previously (see below).
+    - `company-resource-group` with the name of your **resource group**
+    - `uuid` with your subscription ID retrieved previously (see below)
 
 #### Create “Shared Access Policies”
 
-1. Navigate to `Home` > `Event Hubs`> `company-eventhub - Shared access policies`.
-    - From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen` and note the **Primary Key** that will be used as the **SharedAccessKey**.
+1. Navigate to `Home` > `Event Hubs`> `company-eventhub - Shared access policies`
+    - From there, you can create a **policy** (e.g. `RootManageSharedAccessKey`) with the claims `Manage`, `Send` and `Listen` and note the **Primary Key** that will be used as the **SharedAccessKey**
 
-2. Navigate to `Home` > `Event Hubs` > `company-eventhub` > `mysql-event - Shared access policies`.
-    - a. From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`.
-    - b. Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io.
+2. Navigate to `Home` > `Event Hubs` > `company-eventhub` > `mysql-event - Shared access policies`
+    - From there, you can create a **policy** (e.g. `sekoiaio`) with the claims `Listen`
+    - Once created, click on the policy and save the **Connection string-primary key**, to be sent to Sekoia.io
 
-5. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `mysql-event - Consumer groups`.
-    - From there, you can create a **consumer group** (e.g. `sekoiaio`).
+5. Navigate to `Home`> `Event Hubs`> `company-eventhub`> `mysql-event - Consumer groups`
+    - From there, you can create a **consumer group** (e.g. `sekoiaio`)
 
 #### Create a Blob Storage for Checkpointing
 
@@ -82,18 +82,18 @@ Finally, you have to retrieve the **connection string** from Azure Web Portal by
 ### Azure MySQL
 
 You need to activate and configure the Azure MySQL diagnostic settings (e.g. `company-mysql`).
+To configure these settings, follow these steps: 
 
-Navigate to `Home` > `SQL databases` (e.g. `company-mysql`) > `Monitoring` > `Diagnostic settings`:
-
-- Add a new diagnostic setting, and select **Stream to an event hub** and click on configure.
-- Select the previously created **Event hubs**, **Event Hub** and **SharedAccessKey**.
-- In the log section, select **MySqlAuditLogs** and **MySqlSlowLogs**.
-- Choose a name for this configuration and click on **Save**.
+1. Navigate to `Home` > `SQL databases` (e.g. `company-mysql`) > `Monitoring` > `Diagnostic settings`
+2. Add a new diagnostic setting, select **Stream to an event hub** and click on Configure
+3. Select the previously created **Event hubs**, **Event Hub** and **SharedAccessKey**
+4. In the log section, select **MySqlAuditLogs** and **MySqlSlowLogs**
+5. Choose a name for this configuration and click on **Save**
 
 ### Forward the Connection Keys to Sekoia.io
 
 Finally, please send to Sekoia.io the following information:
 
-- Azure Event Hub’s **Connection string-primary key** (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=mysql-event"`).
-- Azure Event Hub’s **consumer group name** (e.g. `sekoiaio`).
-- Azure Blob Storage’s **connection string** (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`).
+- Azure Event Hub’s **Connection string-primary key** (e.g. `"Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=mysql-event"`)
+- Azure Event Hub’s **consumer group name** (e.g. `sekoiaio`)
+- Azure Blob Storage’s **connection string** (e.g. `"DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX"`)
