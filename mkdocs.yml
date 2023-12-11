@@ -291,7 +291,6 @@ nav:
         - RSS: xdr/features/automate/library/rss.md
         - RiskIQ: xdr/features/automate/library/riskiq.md
         - STIX: xdr/features/automate/library/stix.md
-        - STIX: xdr/features/automate/library/stix.md
         - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
@@ -464,7 +463,6 @@ nav:
         - Public Suffix: tip/features/automate/library/public-suffix.md
         - RSS: tip/features/automate/library/rss.md
         - RiskIQ: tip/features/automate/library/riskiq.md
-        - STIX: tip/features/automate/library/stix.md
         - STIX: tip/features/automate/library/stix.md
         - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - SentinelOne: tip/features/automate/library/sentinelone.md
