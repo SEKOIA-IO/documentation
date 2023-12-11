@@ -260,9 +260,7 @@ nav:
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
         - Check Point: xdr/features/automate/library/check-point.md
-        - Check Point: xdr/features/automate/library/check-point.md
         - CrowdStrike: xdr/features/automate/library/crowdstrike.md
-        - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Cybereason: xdr/features/automate/library/cybereason.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
@@ -304,7 +302,6 @@ nav:
         - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
         - Sophos: xdr/features/automate/library/sophos.md
         - TEHTRIS: xdr/features/automate/library/tehtris.md
-        - Tehtris: xdr/features/automate/library/tehtris.md
         - The Hive: xdr/features/automate/library/the-hive.md
         - Tranco: xdr/features/automate/library/tranco.md
         - Triage: xdr/features/automate/library/triage.md
@@ -442,9 +439,7 @@ nav:
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
         - Check Point: tip/features/automate/library/check-point.md
-        - Check Point: tip/features/automate/library/check-point.md
         - CrowdStrike: tip/features/automate/library/crowdstrike.md
-        - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - Cybereason: tip/features/automate/library/cybereason.md
         - Detection Rules: tip/features/automate/library/detection-rules.md
