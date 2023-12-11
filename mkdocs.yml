@@ -260,7 +260,6 @@ nav:
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
         - Check Point: xdr/features/automate/library/check-point.md
-        - Check Point: xdr/features/automate/library/check-point.md
         - CrowdStrike: xdr/features/automate/library/crowdstrike.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Cybereason: xdr/features/automate/library/cybereason.md
@@ -303,7 +302,6 @@ nav:
         - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
         - Sophos: xdr/features/automate/library/sophos.md
         - TEHTRIS: xdr/features/automate/library/tehtris.md
-        - Tehtris: xdr/features/automate/library/tehtris.md
         - The Hive: xdr/features/automate/library/the-hive.md
         - Tranco: xdr/features/automate/library/tranco.md
         - Triage: xdr/features/automate/library/triage.md
@@ -440,7 +438,6 @@ nav:
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
-        - Check Point: tip/features/automate/library/check-point.md
         - Check Point: tip/features/automate/library/check-point.md
         - CrowdStrike: tip/features/automate/library/crowdstrike.md
         - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
@@ -802,8 +799,8 @@ plugins:
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
-      xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
       xdr/features/collect/integrations/endpoint/checkpoint_harmony.md: xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md
+      xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
 - redoc
 - intakes_by_uuid
