@@ -60,6 +60,6 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 To start to pull events, you have to:
 
-1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Azure Files](../../../automate/library/azure-files.md) trigger
-2. Set up the module configuration with the base URL of your Netskope instance. Set up the trigger configuration with the API token and the intake key
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Consume Eventhub messages](../../../automate/library/microsoft-azure.md#consume-eventhub-messages)
+2. Set up the trigger configuration with the EventHub's `Connection string-primary key`, the hub name, the consumer group, the storage's `Connection string-primary key` and the container name.
 3. Start the playbook and enjoy your events
