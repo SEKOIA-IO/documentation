@@ -43,5 +43,25 @@ This way, you will be able to exactly identify what data is sent to Sekoia.io.
 ## Retention
 Logs are available and displayed for 90 days in Sekoia.io.
 
-## Archiving & Rehydratation
-Please contact your support for more information on archives and events rehydratation, with a clear description of your needs.
+## Archive and restore data
+
+!!! Info
+    
+    Depending on your plan we can archive your data and restore it on demand
+    
+    Option not available for all plans
+
+
+### Restoration process : 
+
+- The request must be made to [support@sekoia.io](mailto:support@sekoia.io)
+
+- We try to restore in less than 48 working hours
+
+- The data requested must be less than 12 months old (the end date of the requested period must be less than 365 days)
+
+- Restored data will be deleted after 30 days
+
+### Restoration flow:
+
+<img style="max-width:100%" alt="Archiving diagram" src="/xdr/FAQ/archiving_process.png">
