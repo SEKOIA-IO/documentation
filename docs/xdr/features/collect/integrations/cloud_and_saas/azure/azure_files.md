@@ -29,25 +29,37 @@ This setup guide describe how to forward events produced by `Azure Files` to Sek
 
 ### Monitor Azure Files
 
-1. Log on Azure portal
-2. Go to `Monitor` 
-    
-   ![Azure Portal](/assets/playbooks/library/azurefiles/azure_portal.png){ align=right width=150 }
+* Log on Azure portal
+* Go to `Monitor`
 
-3. Go to `Diagnostic settings`
+   ![Azure Portal](/assets/playbooks/library/azurefiles/azure_portal.png){ align=center }
 
-   ![Diagnostic settings](/assets/playbooks/library/azurefiles/diagnostic_settings.png){ align=right width=150 }
+* Go to `Diagnostic settings`
 
-4. Look for the storage account you want to monitor in the list of resources and click on `file` in the sub-resources of the storage account.
+   ![Diagnostic settings](/assets/playbooks/library/azurefiles/diagnostic_settings.png){ align=center width=150 }
 
-   ![Storage Accounts](/assets/playbooks/library/azurefiles/storage_accounts.png){ align=right width=150 }
+* Look for the storage account you want to monitor in the list of resources and click on `file` in the sub-resources of the storage account.
 
-5. Create a new diagnostic setting by clicking `Add diagnostic setting`
+   ![Storage Accounts](/assets/playbooks/library/azurefiles/storage_accounts.png){ align=center }
+
+* Create a new diagnostic setting by clicking `Add diagnostic setting`
    
-   ![New Setting](/assets/playbooks/library/azurefiles/new_setting.png){ align=right width=150 }
+   ![New Setting](/assets/playbooks/library/azurefiles/new_setting.png){ align=center }
 
-6. Type a new for the diagnostic setting
-7. In the `Logs` section, select the `audit` checkbox. This action will automatically select the related log categories.
-8. In the destination details, select `Stream to an eventhub` section and select the eventhub you created before.
+* Type a new for the diagnostic setting
+* In the `Logs` section, select the `audit` checkbox. This action will automatically select the related log categories.
+* In the destination details, select `Stream to an eventhub` section and select the eventhub you created before.
 
-   ![Stream To Eventhub](/assets/playbooks/library/azurefiles/stream_to_eventhub.png){ align=right width=150 }
+   ![Stream To Eventhub](/assets/playbooks/library/azurefiles/stream_to_eventhub.png){ align=center }
+
+### Create the intake in Sekoia.io
+
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Azure Files`. Copy the intake key.
+
+### Pull events
+
+To start to pull events, you have to:
+
+1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [Azure Files](../../../automate/library/azure-files.md) trigger
+2. Set up the module configuration with the base URL of your Netskope instance. Set up the trigger configuration with the API token and the intake key
+3. Start the playbook and enjoy your events
