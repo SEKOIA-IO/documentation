@@ -361,7 +361,7 @@ The proxy URL should follow the format `http://user:pass@host:port`.
 
     #### Install Sysmon
 
-    If you want to improve detection and investigation capabilities, you may want to enable Sysmon. When installed, the Sekoia.io Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
+    You have the ability to collect additional events with using Sysmon. When installed, the Sekoia.io Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
 
     !!! warning
     	The installation of this tool will generate more logs which will consume more CPU resources. Install it on equipment that are correctly 		dimensioned, or try it on low risk assets at first.
