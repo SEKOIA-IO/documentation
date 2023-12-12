@@ -23,11 +23,28 @@ In your Splunk SOAR instance, you can directly go to the `app` part and search f
 
 In the case, you can't find it, Follow this steps bellow : 
 
-- Search for it in the [splunk marketplace](https://splunkbase.splunk.com/app/7142)
-- Download the app as tar file
-- Go to the `app` partin your instance, and click on `install app` button
-- Put the tar file there
+1/ Search for it in the [splunk marketplace](https://splunkbase.splunk.com/app/7142)
 
-And finally you can start using it.
+![!View of Sekoia.io integration in Splunbase](splunk_soar_images/image_1.png)
+
+2/ Download the app as tar file
+
+![!View of Sekoia.io integration in Splunbase](splunk_soar_images/image_6.png)
+
+3/ Go to the `app` part in your instance
+
+![!View of Sekoia.io integration in Splunbase](splunk_soar_images/image_2.png)
+
+4/ click on `install app` button
+
+![!View of Sekoia.io integration in Splunbase](splunk_soar_images/image_3.png)
+
+5/ Put the tar file there.
+
+![!View of Sekoia.io integration in Splunbase](splunk_soar_images/image_4.png)
+
+6/ finally you can start using it.
+
+![!View of Sekoia.io integration in Splunbase](splunk_soar_images/image_5.png)
 
 To learn how to use the integration, please read the [technical documentation ](https://github.com/splunk-soar-connectors/sekoiaio/blob/next/README.md)
