@@ -381,6 +381,7 @@ nav:
       - Microsoft Sentinel: cti/features/integrations/microsoft-sentinel.md
       - OpenCTI: cti/features/integrations/opencti.md
       - Splunk: cti/features/integrations/splunk.md
+      - Splunk SOAR: cti/features/integrations/splunk_soar.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
   - Develop:
