@@ -41,7 +41,7 @@ The parser is a set of instructions that schedules how information will be extra
 
 The parser is written in YAML format.
 
-Refer to the [How to write a parser documentation](parser.md#general) to develop your own parser.
+Refer to the [How to write a parser documentation](parser.md) to develop your own parser.
 
 ## Definition of smart descriptions
 
