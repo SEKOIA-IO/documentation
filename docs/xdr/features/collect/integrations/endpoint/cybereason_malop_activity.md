@@ -4,7 +4,7 @@ type: intake
 
 ## Overview
 
-Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. Through the Cybereason platform, all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
+Cybereason offers a set of Endpoint Detection and Response (EDR) solutions. , all suspicious operations will be gathered in MalOps, a multi-stage visualizations of device activities.
 
 Please find below information available in MalOp activities:
 
