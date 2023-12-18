@@ -375,6 +375,18 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
+
 ??? abstract "List Shadow Copies"
     
     Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
@@ -589,7 +601,7 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -882,6 +894,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
     
     Detects new commands that add new printer port which point to suspicious file
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
     
     - **Effort:** advanced
 

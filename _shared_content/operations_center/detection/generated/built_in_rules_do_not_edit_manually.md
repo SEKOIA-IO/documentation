@@ -1,10 +1,16 @@
-Rules catalog includes **779 built-in detection rules** ([_last update on 2023-12-05_](rules_changelog.md)).
+Rules catalog includes **786 built-in detection rules** ([_last update on 2023-12-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
 ??? abstract "ACLight Discovering Privileged Accounts"
     
     Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+    
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
     
     - **Effort:** advanced
     
@@ -1306,6 +1312,12 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Correlation Linux Decode And Exec"
+    
+    A Base64 string has been decoded and executed through a pipe
     
     - **Effort:** intermediate
     
@@ -3723,6 +3735,10 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 06/12/2023 - minor - Adding key words to increase detection.
+            
 **Traffic Signaling**
 
 ??? abstract "Linux Binary List TCP Connections"
@@ -4342,6 +4358,12 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
     
     - **Effort:** intermediate
     
@@ -5686,6 +5708,12 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious DLL side loading from ProgramData"
     
     Detects suspicious DLL side-loading from C:\ProgramData where the DLL is not signed.
@@ -5808,6 +5836,10 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 12/12/2023 - minor - extend regex to macth more cases
+            
 ??? abstract "New Or Renamed User Account With '$' In Attribute 'SamAccountName'"
     
     Detects possible bypass EDR and SIEM via abnormal user account name.
@@ -6429,6 +6461,12 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
 **Deobfuscate/Decode Files or Information**
 
+??? abstract "Correlation Linux Decode And Exec"
+    
+    A Base64 string has been decoded and executed through a pipe
+    
+    - **Effort:** intermediate
+    
 ??? abstract "FromBase64String Command Line"
     
     Detects suspicious FromBase64String expressions in command line arguments
@@ -6501,6 +6539,10 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 06/12/2023 - minor - Adding key words to increase detection.
+            
 **Indirect Command Execution**
 
 ??? abstract "CVE 2022-1292"
@@ -6683,6 +6725,16 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 27/09/2023 - major - Rule creation
+            
 ??? abstract "Suspicious Regsvr32 Execution"
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
@@ -6970,6 +7022,12 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
 **Impair Defenses**
 
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+    
 ??? abstract "AWS CloudTrail Config Disable Channel/Recorder"
     
     Detects AWS Config Service disabling channel or recorder
@@ -7505,6 +7563,12 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Hijack Legit RDP Session To Move Laterally"
     
     Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
     
     - **Effort:** intermediate
     
@@ -8108,9 +8172,21 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Credentials Extraction"
+    
+    This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Google Cloud Audit Logs 2FA Disabled"
     
     Detects when Google Cloud Audit Logs notify the 2FA deactivation for a user account.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
     
     - **Effort:** intermediate
     
@@ -8118,10 +8194,11 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
+        - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
         - 03/07/2023 - minor - Added french words for the command lines.
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
@@ -8145,6 +8222,12 @@ Rules catalog includes **779 built-in detection rules** ([_last update on 2023-1
     
 **Credentials from Password Stores**
 
+??? abstract "Credentials Extraction"
+    
+    This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
     Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc. 
