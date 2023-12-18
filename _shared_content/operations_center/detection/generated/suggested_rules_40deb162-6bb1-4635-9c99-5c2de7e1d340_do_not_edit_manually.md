@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funnel 2.0 [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x SentinelOne Cloud Funnel 2.0 [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_40deb162-6bb1-4635-9c99-5c2de7e1d340_do_not_edit_manually.json){ .md-button }
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -573,6 +579,18 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** elementary
 
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
+
 ??? abstract "List Shadow Copies"
     
     Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
@@ -841,7 +859,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -1268,6 +1286,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Regsvr32 Execution"
     

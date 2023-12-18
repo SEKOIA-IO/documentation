@@ -153,6 +153,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** elementary
 
+??? abstract "Cron Files Alteration"
+    
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    
+    - **Effort:** advanced
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -339,6 +345,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "Hijack Legit RDP Session To Move Laterally"
+    
+    Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+
 ??? abstract "ICacls Granting Access To All"
     
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
@@ -392,6 +404,18 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detects different loaders used by the Lazarus Group APT
     
     - **Effort:** elementary
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
 
 ??? abstract "List Shadow Copies"
     
@@ -625,13 +649,19 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
     - **Effort:** elementary
+
+??? abstract "Package Manager Alteration"
+    
+    Package manager (eg: apt, yum) can be altered to install malicious software
+    
+    - **Effort:** advanced
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     
@@ -795,6 +825,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "SSH Authorized Key Alteration"
+    
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    
+    - **Effort:** advanced
+
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -945,6 +981,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Regsvr32 Execution"
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
@@ -1010,6 +1052,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
     
     - **Effort:** elementary
+
+??? abstract "WMI Persistence Script Event Consumer File Write"
+    
+    Detects file writes through WMI script event consumer.
+    
+    - **Effort:** advanced
 
 ??? abstract "WMIC Command To Determine The Antivirus"
     

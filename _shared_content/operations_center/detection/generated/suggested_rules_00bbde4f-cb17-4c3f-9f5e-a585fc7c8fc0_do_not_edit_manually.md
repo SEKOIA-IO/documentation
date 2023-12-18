@@ -165,6 +165,12 @@ The following Sekoia.io built-in rules match the intake **Google Kubernetes Engi
     
     - **Effort:** elementary
 
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
 ??? abstract "Listing Systemd Environment"
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.

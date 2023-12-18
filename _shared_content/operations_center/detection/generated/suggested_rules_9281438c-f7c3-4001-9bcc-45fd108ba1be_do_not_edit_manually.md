@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
 ??? abstract "APT29 Fake Google Update Service Install"
     
     This method detects malicious services mentioned in APT29 report by FireEye. The legitimate path for the Google update service is C:\Program Files (x86)\Google\Update\GoogleUpdate.exe so the service names and executable locations used by APT29 are specific enough to be detected in log files.
@@ -114,6 +120,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "Adexplorer Usage"
     
     Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
+
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
     
     - **Effort:** advanced
 
@@ -1047,6 +1059,18 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
+
 ??? abstract "List Shadow Copies"
     
     Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
@@ -1513,7 +1537,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -2342,6 +2366,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects execution of PsExec, different from the Sysinternals one. This rule helps to filter out the noise if PsExec is used for legit purposes or if attacker uses a different PsExec client other than Sysinternals one. The prerequisite is to log the Event ID 5145 (by setting "Audit Policy > Object Access > Audit Detailed File Share" to Success/Failure).
     
     - **Effort:** master
+
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Regsvr32 Execution"
     
