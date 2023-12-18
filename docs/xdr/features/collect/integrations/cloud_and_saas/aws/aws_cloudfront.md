@@ -14,6 +14,7 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
 ### CloudFront Logs
 
 You can configure CloudFront to create log files that contain detailed information about every user request that CloudFront receives. These are called standard logs, also known as access logs. But you have first of all to pay attention to [regions and s3 buckets](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#access-logs-choosing-s3-bucket) and also your AWS account must have the following permissions for the bucket that you specify for log files (see [link](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#AccessLogsBucketAndFileOwnership))  :
+
 - The S3 access control list (ACL) for the bucket must grant you FULL_CONTROL. If you're the bucket owner, your account has this permission by default. If you're not, the bucket owner must update the ACL for the bucket.
 - s3:GetBucketAcl
 - s3:PutBucketAcl
