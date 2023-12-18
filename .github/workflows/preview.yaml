@@ -55,7 +55,7 @@ jobs:
       - run: |
           tar zcvf site.tar.gz -C site .
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: site.tar.gz
           path: site.tar.gz
