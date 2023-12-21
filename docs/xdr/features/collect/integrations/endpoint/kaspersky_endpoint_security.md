@@ -23,21 +23,15 @@ This setup guide describe how to forward events produced by **Kaspersky Endpoint
 
 2. In the console, on the left panel, click on the spanner at the right of **Adminitration server**
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/SIEM1.png" alt="Log in to Kaspersky">
-</div>
+![SIEM1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM1.png)
 
 3. In the **General** tab, click on **SIEM** on the menu
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/SIEM2.png" alt="SIEM menu">
-</div>
+![SIEM2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM2.png)
 
 4. Click on **settings** to configure the forwarding (point 1)
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/SIEM3.png" alt="Settings button">
-</div>
+![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
 
 5. Configure the forwarding
     a. Type the address of your log concentrator in the **SIEM system server address**
@@ -47,50 +41,37 @@ This setup guide describe how to forward events produced by **Kaspersky Endpoint
     e. Click on OK
 
     !!! warning
+        If you need to generate a custom certificate:
 
-    If you need to generate a custom certificate:
+        ```bash
+        $ openssl req -new -x509 -keyout server.key -out server.crt -nodes
+        $ cat server.key server.crt > server.pem
+        $ openssl x509 -in cert.crt -noout -fingerprint # copy the output
+        ```
 
-    ```bash
-    $ openssl req -new -x509 -keyout server.key -out server.crt -nodes
-    $ cat server.key server.crt > server.pem
-    $ openssl x509 -in cert.crt -noout -fingerprint # copy the output
-    ```
-
-    <div style="text-align: center;">
-        <img src="./kaspersky_es_images/SIEM4.png" alt="Log in to Kaspersky">
-    </div>
+    ![SIEM4.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM4.png)
         
 6. Check **Automatically export event to SIEM system database** (point 2)
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/SIEM3.png" alt="export events">
-</div>
+![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
 
 ### Forward logs to Sekoia.io
 
 1. In the console, on the left menu, click on **Devices** > **Policies & profiles**
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/Event1.png" alt="Menu">
-</div>
+![Event1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event1.png)
 
 2. For each policy **Kapersky Endpoint Security for X**, click on the policy
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/Event2.png" alt="Policy">
-</div>
+![Event2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event2.png)
 
 3. In the policy, select the **Event configuration** tab
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/Event3.png" alt="Event config">
-</div>
+![Event3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event3.png)
 
 4. On the left panel, select the section **Critical**. Select all event types and click on **Mark for export to SIEM system by using Syslog**
 
-<div style="text-align: center;">
-    <img src="./kaspersky_es_images/Event4.png" alt="Export">
-</div>
+![Event4.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event4.png)
 
 5. Select the section **Warning** and select all event types and click on **Mark for export to SIEM system by using Syslog**.
 
