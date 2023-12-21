@@ -10,6 +10,9 @@ type: intake
 
 {!_shared_content/operations_center/integrations/generated/255764ef-eaf6-4964-958e-81b9418e6584.md!}
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 ## Configure
 
 This setup guide describe how to forward events produced by **Kaspersky Endpoint Security** to Sekoia.io.
