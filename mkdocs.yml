@@ -134,7 +134,9 @@ nav:
             - Microsoft Defender for Office 365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
             - Microsoft 365 Defender: xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender.md
             - Message trace: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
-          - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope_events.md
+          - Netskope:
+            - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
+            - Netskope Transaction Events: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_transaction.md
           - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
           - Salesforce: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
