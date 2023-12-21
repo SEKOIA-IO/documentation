@@ -186,6 +186,7 @@ nav:
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
           - Windows Log Insight: xdr/features/collect/integrations/endpoint/log_insight_windows.md
           - WithSecure Elements: xdr/features/collect/integrations/endpoint/withsecure_elements.md
+          - Kaspersky Endpoint Security: xdr/features/collect/integrations/endpoint/kaspersky_endpoint_security.md
         - Network:
           - ArubaOS Switch: xdr/features/collect/integrations/network/arubaos.md
           - Check Point Firewall: xdr/features/collect/integrations/network/checkpoint.md
