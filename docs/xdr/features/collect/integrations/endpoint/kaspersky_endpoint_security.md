@@ -6,14 +6,13 @@ type: intake
 
 **Kaspersky Endpoint Security** is an advanced security solution designed to safeguard businesses, their networks, and data against a wide array of cyber threats. Employing a multi-layered approach, it integrates various protection technologies including signature-based detection, heuristic analysis, machine learning, and real-time monitoring to detect and thwart malware, ransomware, zero-day attacks, and other threats effectively.
 
-This setup guide describe how to forward events produced by **Kaspersky Endpoint Security** to Sekoia.io.
 {!_shared_content/operations_center/detection/generated/suggested_rules_255764ef-eaf6-4964-958e-81b9418e6584_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/255764ef-eaf6-4964-958e-81b9418e6584.md!}
 
 ## Configure
 
-This setup guide will show you how to forward your **Kaspersky Endpoint Security logs** to **Sekoia.io** by means of a syslog transport channel.
+This setup guide describe how to forward events produced by **Kaspersky Endpoint Security** to Sekoia.io.
 
 ### Prerequisites
 
