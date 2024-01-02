@@ -7454,6 +7454,10 @@ Rules catalog includes **787 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/01/2024 - minor - improve selection to avoid FP
+            
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
     Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.

@@ -2,6 +2,9 @@ Changelog _last update on 2024-01-02_
 
 ## Changelog
 
+### Suspicious Driver Loaded
+  - 02/01/2024 - minor - improve selection to avoid FP
+    
 ### Linux Binary Masquerading
   - 12/12/2023 - minor - extend regex to macth more cases
     
