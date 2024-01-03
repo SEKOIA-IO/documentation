@@ -2289,6 +2289,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Svchost Modification"
+    
+    Detects the modification of svchost in the registry.
+    
+    - **Effort:** advanced
+
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).

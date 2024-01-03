@@ -1,4 +1,4 @@
-Rules catalog includes **787 built-in detection rules** ([_last update on 2024-01-02_](rules_changelog.md)).
+Rules catalog includes **788 built-in detection rules** ([_last update on 2024-01-03_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -4297,6 +4297,12 @@ Rules catalog includes **787 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Svchost Modification"
+    
+    Detects the modification of svchost in the registry.
+    
+    - **Effort:** advanced
+    
 **Modify Authentication Process**
 
 ??? abstract "Active Directory Shadow Credentials"
@@ -5570,6 +5576,12 @@ Rules catalog includes **787 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
+    
+    - **Effort:** advanced
+    
+??? abstract "Svchost Modification"
+    
+    Detects the modification of svchost in the registry.
     
     - **Effort:** advanced
     
@@ -7763,6 +7775,10 @@ Rules catalog includes **787 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/01/2024 - minor - Rule was improved to have broader detection and filters were added.
+            
 ??? abstract "HackTools Suspicious Names"
     
     Quick-win rule to detect the default process names or file names of several HackTools.
