@@ -1,7 +1,10 @@
-Changelog _last update on 2024-01-02_
+Changelog _last update on 2024-01-03_
 
 ## Changelog
 
+### Grabbing Sensitive Hives Via Reg Utility
+  - 02/01/2024 - minor - Rule was improved to have broader detection and filters were added.
+    
 ### Suspicious Driver Loaded
   - 02/01/2024 - minor - improve selection to avoid FP
     
