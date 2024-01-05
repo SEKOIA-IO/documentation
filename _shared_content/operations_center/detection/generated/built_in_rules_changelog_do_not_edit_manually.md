@@ -1,4 +1,4 @@
-Changelog _last update on 2024-01-03_
+Changelog _last update on 2024-01-05_
 
 ## Changelog
 
@@ -7,6 +7,9 @@ Changelog _last update on 2024-01-03_
     
 ### Suspicious Driver Loaded
   - 02/01/2024 - minor - improve selection to avoid FP
+    
+### SolarWinds Wrong Child Process
+  - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
     
 ### Linux Binary Masquerading
   - 12/12/2023 - minor - extend regex to macth more cases
@@ -235,9 +238,6 @@ Changelog _last update on 2024-01-03_
     
 ### Socat Reverse Shell Detection
   - 14/06/2023 - minor - Added filter to the rule to reduce false positives.
-    
-### SolarWinds Wrong Child Process
-  - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
     
 ### Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL
   - 13/06/2023 - minor - Adding private IPs as sources
