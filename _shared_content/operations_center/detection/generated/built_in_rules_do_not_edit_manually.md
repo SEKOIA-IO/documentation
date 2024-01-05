@@ -1,4 +1,4 @@
-Rules catalog includes **788 built-in detection rules** ([_last update on 2024-01-03_](rules_changelog.md)).
+Rules catalog includes **788 built-in detection rules** ([_last update on 2024-01-05_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -3032,6 +3032,7 @@ Rules catalog includes **788 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+        - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -3985,6 +3986,7 @@ Rules catalog includes **788 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+        - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -5267,6 +5269,7 @@ Rules catalog includes **788 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+        - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
             
 ??? abstract "Spoolsv Wrong Parent"
     
