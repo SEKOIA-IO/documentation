@@ -548,14 +548,14 @@ plugins:
       integrations/aws_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
       integrations/aws_s3_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_s3_logs.md
       integrations/azure-ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
-      integrations/azure-linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
       integrations/azure-files.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_files.md
+      integrations/azure-linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
       integrations/azure-mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
       integrations/azure-network-watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
       integrations/azure-windows.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
+      integrations/azure_files.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_files.md
       integrations/azure_front_door.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
       integrations/azure_linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
-      integrations/azure_files.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_files.md
       integrations/azure_mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
       integrations/azure_network_watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
       integrations/azure_windows.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
