@@ -351,7 +351,6 @@ nav:
     - REST API:
       - Authentication and Community: xdr/develop/rest_api/community.md
       - Dashboard: xdr/develop/rest_api/dashboard.md
-      - Notification: xdr/develop/rest_api/notification.md
       - Configuration: xdr/develop/rest_api/configuration.md
       - Parser: xdr/develop/rest_api/parser.md
       - Alert: xdr/develop/rest_api/alert.md
@@ -396,7 +395,6 @@ nav:
       - Enrichment: cti/develop/rest_api/enrichments.md
       - Telemetry: cti/develop/rest_api/telemetry.md
       - Dashboard: cti/develop/rest_api/dashboard.md
-      - Notification: cti/develop/rest_api/notification.md
       - Playbooks: cti/develop/rest_api/playbooks.md
       - External Dynamic List: cti/develop/rest_api/edl-gateway.md
 - Sekoia.io TIP:
@@ -500,7 +498,6 @@ nav:
       - Intelligence: tip/develop/rest_api/intelligence.md
       - Enrichment: tip/develop/rest_api/enrichments.md
       - Dashboard: tip/develop/rest_api/dashboard.md
-      - Notification: tip/develop/rest_api/notification.md
       - Playbooks: tip/develop/rest_api/playbooks.md
 plugins:
 - search: null
@@ -512,7 +509,6 @@ plugins:
       'api/ingest: manage and test event parsers': xdr/develop/rest_api/parser.md
       'api/intelligence center: cyber threat intelligence database': cti/develop/rest_api/intelligence.md
       'api/intelligence center: enrichment': cti/develop/rest_api/enrichments.md
-      api/notifications: xdr/develop/rest_api/notification.md
       'api/operation center: alerts & case management': xdr/develop/rest_api/alert.md
       'api/operation center: asset management': xdr/develop/rest_api/assets.md
       'api/operation center: rules, entities, intakes, events.md': xdr/develop/rest_api/configuration.md
@@ -527,7 +523,6 @@ plugins:
       develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       develop/rest_api/intelligence_center/enrichments.md: cti/develop/rest_api/enrichments.md
       develop/rest_api/intelligence_center/intelligence.md: cti/develop/rest_api/intelligence.md
-      develop/rest_api/notification.md: xdr/develop/rest_api/notification.md
       develop/rest_api/operation_center/alert.md: xdr/develop/rest_api/alert.md
       develop/rest_api/operation_center/assets.md: xdr/develop/rest_api/assets.md
       develop/rest_api/operation_center/configuration.md: xdr/develop/rest_api/configuration.md
@@ -801,7 +796,6 @@ plugins:
       user_center.md: getting_started/index.md
       user_center/apikeys.md: getting_started/manage_api_keys.md
       user_center/multi_factor_authentication.md: getting_started/account_security.md
-      user_center/notifications.md: getting_started/notifications.md
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
