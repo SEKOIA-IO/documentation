@@ -1,4 +1,4 @@
-Rules catalog includes **788 built-in detection rules** ([_last update on 2024-01-05_](rules_changelog.md)).
+Rules catalog includes **788 built-in detection rules** ([_last update on 2024-01-08_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -5845,6 +5845,10 @@ Rules catalog includes **788 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
+            
 ??? abstract "Linux Binary Masquerading"
     
     Attackers could rename legitimate system bin to evade security mechanisme

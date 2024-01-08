@@ -1,7 +1,10 @@
-Changelog _last update on 2024-01-05_
+Changelog _last update on 2024-01-08_
 
 ## Changelog
 
+### Legitimate Process Execution From Unusual Folder
+  - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
+    
 ### Grabbing Sensitive Hives Via Reg Utility
   - 02/01/2024 - minor - Rule was improved to have broader detection and filters were added.
     
