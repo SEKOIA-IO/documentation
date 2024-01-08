@@ -35,6 +35,21 @@ The Endpoint Detection Agent supports the following operating systems, **on 64 b
     * CentOS 7 and newer
     * Redhat 7 and newer
 
+## Prerequisites
+The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has an automatic update mechanism. Therefore, it is necessary to open the following streams:
+
+=== "FRA1"
+
+    * https://intake.sekoia.io/
+    * https://api.sekoia.io/
+
+=== "FRA2"
+    * https://fra2.app.sekoia.io/
+
+=== "MCO1"
+    * https://mco1.app.sekoia.io/
+
+
 
 ## Installation
 
@@ -102,7 +117,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     sudo systemctl status SEKOIAEndpointAgent.service
     ```
 
-Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `51.159.9.95`. The protocol used to send events is HTTPS (443).
+Once installed, the agent collects event logs, normalizes them and sends them to Sekoia.io. The protocol used to send events is HTTPS (443).
 
 #### journald configuration
 
