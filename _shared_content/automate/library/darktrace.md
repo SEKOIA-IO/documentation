@@ -25,9 +25,10 @@ Get the newest logs from Darktrace Threat Visualizer
 | `frequency` | `integer` | Batch frequency in seconds |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
+| `verify_certificate` | `boolean` | Is the server certificate verified |
 | `ratelimit_per_minute` | `integer` | The number of requests allowed to the API in one minute |
 
 
 ## Extra
 
-Module **`Darktrace` v1.3.1**
+Module **`Darktrace` v1.5.1**

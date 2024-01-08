@@ -47,12 +47,14 @@ Create issue in JIRA
 | `project_key` | `string` | Project key (e.g. 'PRJ') |
 | `summary` | `string` | Summary of an issue (e.g. 'Fix a bug') |
 | `issue_type` | `string` | Issue type (e.g. 'Task') |
+| `description` | `object` | Description text in ADF (Atlassian Document Format) |
 | `due_date` | `string` | Due date (e.g. '2023-10-31')' |
 | `labels` | `string` | Comma-separated labels (e.g. 'devops,support') |
 | `assignee` | `string` | Exact display name of an assignee (e.g. John Doe) |
 | `reporter` | `string` | Exact display name of a reporter (e.g. Jane Doe) |
 | `priority` | `string` | Issue priority (e.g. Highest) |
 | `parent_key` | `string` | Key of a parent issue (e.g. PRJ-1) |
+| `custom_fields` | `object` | JSON with custom fields (e.g. {"Some Field": "2"}) |
 
 
 **Outputs**
@@ -64,4 +66,4 @@ Create issue in JIRA
 
 ## Extra
 
-Module **`Atlassian JIRA` v1.0.4**
+Module **`Atlassian JIRA` v1.1**

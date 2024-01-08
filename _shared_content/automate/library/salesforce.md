@@ -8,13 +8,14 @@ Salesforce provides users comprehensive tools to manage customer data, automate 
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
+| `org_type` | `string` | Organization type. Might be one of the following: 'production', 'sandbox', 'trial', 'developer'. Default is 'production' |
 | `client_id` | `string` | Client id to interact with salesforce API |
 | `client_secret` | `string` | Client secret to interact with salesforce API |
 | `base_url` | `string` | Url of salesforce instance. Consists of https://<instance>.salesforce.com |
 
 ## Triggers
 
-### Collect Salesforce events
+### [BETA] Collect Salesforce events
 
 Trigger playbook to get Salesforce information
 
@@ -22,11 +23,11 @@ Trigger playbook to get Salesforce information
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `ratelimit_per_minute` | `integer` | Maximum number of requests per minute |
 | `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
 | `intake_key` | `string` | Intake key to use when sending events |
+| `chunk_size` | `integer` | The max size of chunks for the batch processing |
 
 
 ## Extra
 
-Module **`Salesforce` v1.2.5**
+Module **`Salesforce` v1.4.11**
