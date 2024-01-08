@@ -18,27 +18,20 @@ type: intake
 ### Prerequisites
 
 - Access to Sekoia.io Intakes and Playbook pages with write permissions
-- Administrator access to the Google Cloud console
-- Configured PubSub Lite subscription
+- Access to the Netskope Admin console
+- The Event Streaming option activated (Please contact the Netskope Support if not).
 
-### Create and download JSON keys (service account credentials)
+### Create and download JSON keys
 
-To use a service account from outside of Google Cloud, such as on Sekoia.io, you must first establish the identity of the service account. Public/private key pairs provide a secure way of accomplishing this goal. When you create a service account key, the public portion is stored on Google Cloud, while the private portion is available only to you.
+The Netskope Event Streaming rely on [Google Pub/Sub lite](https://cloud.google.com/pubsub/lite/docs).
+To collect transaction events, you will need a subscription key:
 
-!!! Note
-	By default, service account keys never expire.
+1. Connect to the Netskope Admin console
+2. Go to `Settings > Tools`
+3. On the left panel, click on the `Event Streaming`. If the section is not available in our Admin UI, please contact the Netskope Support.
+4. Go to the `Subscription Key` section and click on `Generate and Download key`
 
-1. Go to the Service accounts page
-2. Select your cloud project
-3. Click the email address of the service account that you want to create a key for
-4. Click the **Keys** tab
-5. Click the **Add key** drop-down menu, then select **Create new key**
-6. Select **JSON** as the Key type and click **Create**
-
-!!! Important
-	Clicking **Create** downloads a service account key file. After you download the key file, you cannot download it again. You will need it on the following steps on Sekoia.io.
-
-Find more information on the [official google documentation](https://cloud.google.com/iam/docs/keys-create-delete).
+Find more information about the subscription key on the [official google documentation](https://cloud.google.com/iam/docs/keys-create-delete).
 
 **Example of JSON key file**
 
