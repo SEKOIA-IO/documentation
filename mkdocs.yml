@@ -727,7 +727,6 @@ plugins:
       operation_center/integration_catalog/cloud_and_saas/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
       operation_center/integration_catalog/cloud_and_saas/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
       operation_center/integration_catalog/cloud_and_saas/o365.md: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
-      operation_center/integration_catalog/cloud_and_saas/netskope_events.md: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
       operation_center/integration_catalog/email/fortimail.md: xdr/features/collect/integrations/email/fortimail.md
       operation_center/integration_catalog/email/postfix.md: xdr/features/collect/integrations/email/postfix.md
       operation_center/integration_catalog/email/retarus_email_security.md: xdr/features/collect/integrations/email/retarus_email_security.md
@@ -823,6 +822,7 @@ plugins:
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
+      xdr/features/collect/integrations/cloud_and_saas/netskope_events.md: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
       xdr/features/collect/integrations/endpoint/checkpoint_harmony.md: xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md
       xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
