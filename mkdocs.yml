@@ -727,6 +727,7 @@ plugins:
       operation_center/integration_catalog/cloud_and_saas/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
       operation_center/integration_catalog/cloud_and_saas/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
       operation_center/integration_catalog/cloud_and_saas/o365.md: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
+      operation_center/integration_catalog/cloud_and_saas/netskope_events.md: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
       operation_center/integration_catalog/email/fortimail.md: xdr/features/collect/integrations/email/fortimail.md
       operation_center/integration_catalog/email/postfix.md: xdr/features/collect/integrations/email/postfix.md
       operation_center/integration_catalog/email/retarus_email_security.md: xdr/features/collect/integrations/email/retarus_email_security.md
