@@ -260,7 +260,7 @@ nav:
       - Actions: xdr/features/automate/actions.md
       - Actions Library:
         - AWS: xdr/features/automate/library/aws.md
-        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
+        - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Cato Networks: xdr/features/automate/library/cato-networks.md
         - Censys: xdr/features/automate/library/censys.md
@@ -274,23 +274,24 @@ nav:
         - Digital Shadows: xdr/features/automate/library/digital-shadows.md
         - Duo: xdr/features/automate/library/duo.md
         - Fortigate Firewalls: xdr/features/automate/library/fortigate-firewalls.md
+        - GLIMPS: xdr/features/automate/library/glimps.md
         - Git: xdr/features/automate/library/git.md
         - Github: xdr/features/automate/library/github.md
-        - GLIMPS: xdr/features/automate/library/glimps.md
         - Google: xdr/features/automate/library/google.md
+        - HTTP: xdr/features/automate/library/http.md
         - HTTP: xdr/features/automate/library/http.md
         - HarfangLab: xdr/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
         - IPtoASN: xdr/features/automate/library/iptoasn.md
         - Imperva: xdr/features/automate/library/imperva.md
-        - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
         - Jumpcloud Directory Insights: xdr/features/automate/library/jumpcloud-directory-insights.md
         - MISP: xdr/features/automate/library/misp.md
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
         - Mattermost: xdr/features/automate/library/mattermost.md
-        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Microsoft Active Directory: xdr/features/automate/library/microsoft-active-directory.md
+        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
+        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Microsoft Entra ID: xdr/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Microsoft Windows Server: xdr/features/automate/library/microsoft-windows-server.md
@@ -446,6 +447,7 @@ nav:
       - Actions: tip/features/automate/actions.md
       - Actions Library:
         - AWS: tip/features/automate/library/aws.md
+        - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
         - Cato Networks: tip/features/automate/library/cato-networks.md
         - Censys: tip/features/automate/library/censys.md
@@ -459,16 +461,16 @@ nav:
         - Digital Shadows: tip/features/automate/library/digital-shadows.md
         - Duo: tip/features/automate/library/duo.md
         - Fortigate Firewalls: tip/features/automate/library/fortigate-firewalls.md
+        - GLIMPS: tip/features/automate/library/glimps.md
         - Git: tip/features/automate/library/git.md
         - Github: tip/features/automate/library/github.md
-        - GLIMPS: tip/features/automate/library/glimps.md
         - Google: tip/features/automate/library/google.md
+        - HTTP: tip/features/automate/library/http.md
         - HTTP: tip/features/automate/library/http.md
         - HarfangLab: tip/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: tip/features/automate/library/iknowwhatyoudownload.md
         - IPtoASN: tip/features/automate/library/iptoasn.md
         - Imperva: tip/features/automate/library/imperva.md
-        - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
         - Jumpcloud Directory Insights: tip/features/automate/library/jumpcloud-directory-insights.md
         - MISP: tip/features/automate/library/misp.md
         - MWDB: tip/features/automate/library/mwdb.md
