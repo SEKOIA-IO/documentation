@@ -288,6 +288,7 @@ nav:
         - Microsoft Entra ID (Azure AD): xdr/features/automate/library/entra-id.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Netskope: xdr/features/automate/library/netskope.md
+        - Netskope: xdr/features/automate/library/netskope.md
         - OKTA: xdr/features/automate/library/okta.md
         - OSINT: xdr/features/automate/library/osint.md
         - Onyphe: xdr/features/automate/library/onyphe.md
@@ -462,6 +463,7 @@ nav:
         - Mattermost: tip/features/automate/library/mattermost.md
         - Microsoft Active Directory: tip/features/automate/library/microsoft-active-directory.md
         - Microsoft Entra ID (Azure AD): tip/features/automate/library/entra-id.md
+        - Netskope: tip/features/automate/library/netskope.md
         - OSINT: tip/features/automate/library/osint.md
         - Onyphe: tip/features/automate/library/onyphe.md
         - PagerDuty: tip/features/automate/library/pagerduty.md
