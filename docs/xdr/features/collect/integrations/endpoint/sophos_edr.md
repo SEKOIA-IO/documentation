@@ -42,8 +42,8 @@ In the Sophos Central Admin console:
 6. Write a `name` and paste the `client_id` and `client_secret` from the Sophos console and click on `Save`.
 
     !!! info
-    - You can find your region via **protect devices field**, first click on **Protect Devices**, Then copy link of any download links and finally Check the region that appears as part of the URL.
-    
+        - If you want to change the region with your own region, you can find your region via **protect devices field**, first click on **Protect Devices**, Then copy link of any download links and finally Check the region that appears as part of the URL.
+
 7. In the `Trigger Configuration` section, click on `Create new configuration`.
 8. Write a `name`, choose a `frequency` - Default is `60` -, paste the `intake_key` associated to your `Sophos EDR` intake and click on `Save`.
 9. On the top right corner, start the Playbook. You should see monitoring messages in the `Logs` section.
