@@ -149,6 +149,7 @@ Get all non-revoked objects from Sekoia.io Intelligence feed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
+| `to_file` | `boolean` | Whether the event should be saved in a file or sent directly |
 
 
 **Outputs**
@@ -156,6 +157,7 @@ Get all non-revoked objects from Sekoia.io Intelligence feed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `stix_objects` | `object` | STIX objects returned by the feed |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 
 
 ### Feed IOC Consumption
@@ -167,6 +169,7 @@ Get all valid IOCs from Sekoia.io Intelligence feed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
+| `to_file` | `boolean` | Whether the event should be saved in a file or sent directly |
 
 
 **Outputs**
@@ -174,6 +177,7 @@ Get all valid IOCs from Sekoia.io Intelligence feed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `stix_objects` | `object` | IOCs returned by the feed (STIX objects) |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 
 
 ### Any Alert Update
@@ -244,6 +248,19 @@ Mark as active a countermeasure
 | `denied_by` | `string` | UUID of profile that denied the countermeasure |
 | `assignee` | `string` | UUID of the profile assigned to the progress of the countermeasure |
 | `created_at` | `string` | Date the countermeasure was created |
+
+### Add IOC to IOC Collection
+
+Add indicators to an IOC Collection
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `indicators` | `array` | List of indicators to add to an IOC collection |
+| `indicators_path` | `string` | Path of the indicators file to add to an IOC collection |
+| `ioc_collection_id` | `string` | Identifier of the IOC collection |
+| `indicator_type` | `string` | Type of IOC |
 
 ### Add attribute to Asset
 
@@ -483,6 +500,17 @@ Retrieve the definition of an alert
 | `title` | `string` |  |
 | `target` | `string` |  |
 
+### Get context
+
+Get reports from a specific term
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `sort` | `string` |  |
+| `term` | `string` |  |
+
 ### Get Event Field Common Values
 
 Get the most common values of fields observed under a specific query
@@ -495,6 +523,7 @@ Get the most common values of fields observed under a specific query
 | `earliest_time` | `string` | The earliest time of the time range of the search |
 | `latest_time` | `string` | The latest time of the time range of the search |
 | `fields` | `string` | Fields to compute the most common values (use a coma between fields) |
+| `limit` | `number` | Maximum number of events to retrieve |
 
 
 **Outputs**
@@ -514,6 +543,7 @@ Query events
 | `query` | `string` | Event search query |
 | `earliest_time` | `string` | The earliest time of the time range of the search |
 | `latest_time` | `string` | The latest time of the time range of the search |
+| `limit` | `number` | Maximum number of events to retrieve |
 
 
 **Outputs**
@@ -852,4 +882,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`Sekoia.io` v2.43**
+Module **`Sekoia.io` v2.57.1**

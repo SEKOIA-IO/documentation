@@ -2,17 +2,19 @@
 
 ![Vade Cloud](/assets/playbooks/library/vade-cloud.png){ align=right width=150 }
 
+
+
 ## Configuration
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `hostname` | `string` | Vade Cloud API hostname |
-| `login` | `string` | Vade Cloud login |
+| `login` | `string` | Vade Cloud Email |
 | `password` | `string` | Vade Cloud password |
 
 ## Triggers
 
-### Fetch new logs from Vade Cloud
+### [BETA] Fetch new logs from Vade Cloud
 
 Get last logs from the Vade Cloud platform
 
@@ -28,4 +30,4 @@ Get last logs from the Vade Cloud platform
 
 ## Extra
 
-Module **`Vade Cloud` v1.0.4**
+Module **`Vade Cloud` v1.3.0**

@@ -15,7 +15,7 @@
 
 ## Triggers
 
-### [ALPHA] Fetch new events from CrowdStrike Data replication
+### Fetch new events from CrowdStrike Data replication
 
 Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 
@@ -35,4 +35,4 @@ Forward Crowdstrike Falcon Data Replication events to Sekoia.io
 
 ## Extra
 
-Module **`CrowdStrike` v1.6.4**
+Module **`CrowdStrike` v1.8.2**
