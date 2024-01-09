@@ -8,17 +8,18 @@ Sekoia.io is able to collect logs through various mechanisms, configuration on y
 
 ![ingestion_methods](/assets/operation_center/data_collection/ingestion_methods/ingestion_methods2.png){: style="max-width:100%"}
 
-Sekoia.io supports the following log collectors:
+Sekoia.io supports the following log collecting methods:
 
-- Syslog over TLS (`intake.sekoia.io:10514`): forward your events with the Syslog protocol specified in RFC 5424.
-- RELP over TLS (`intake.sekoia.io:11514`): forward your events with Rsyslog’s reliable protocol called RELP.
-- HTTPS (`https://intake.sekoia.io`): `POST` your JSON events to Sekoia.io.
-- Cloud hosting and API polling: configure Sekoia.io to regularly retrieve your logs.
+- [HTTPS](./https/overview.md) (`https://intake.sekoia.io`): `POST` your JSON events to Sekoia.io.
+- [Syslog](./syslog/overview.md) over TLS (`intake.sekoia.io:10514`): forward your events with the Syslog protocol specified in RFC 5424.
+- [RELP](./relp/relp.md) over TLS (`relp.intake.sekoia.io:11514`): forward your events with Rsyslog’s reliable protocol called RELP.
+- [Cloud hosting and API polling](./cloud_saas/overview.md): configure Sekoia.io to regularly retrieve your logs.
 
 If these solutions do not meet your needs, contact our support.
 
-## Syslog integration
+## Syslog / Relp integration
 
+To send your data to Sekoia.io using the Syslog or Relp protocols, you need to add a header to each of your messages.
 We provide documentation and example configurations on how to configure your log system for Rsyslog, but it should be easy to configure other log collectors to forward their events to Sekoia.io.
 
 ## HTTPS integration

@@ -1,6 +1,26 @@
-# Forward Logs to Sekoia.io via HTTPS
+# Forward Logs to Sekoia.io using HTTPS
 
-To push your events to Sekoia.io, you can use our HTTPS log collector. It's the simpler way to send us your logs, especially for non-syslog system.
+## Overview 
+
+To push your events to Sekoia.io, you can use the HTTPS procotol. It's the simpler way to send us your logs, especially for non-syslog system.
+
+Before processing, you have to:
+
+- Connect to [Sekoia.io Operations Center](https://app.sekoia.io/operations/)
+- Add an Intake to the relevant Entity
+- Keep trace of the automatically generated Intake key
+
+## Forwarding methods
+
+To forward events using HTTPS to Sekoia.io, you have to send a `POST` request to `https://intake.sekoia.io` and to supply your intake key as header. Many formats are available, check the [Formation options section](#formating-options) to have more details
+
+You can choose many option to forward logs: 
+
+- Manually, either by utilizing the documented endpoints or through the use of custom scripts.
+- Many technologies support forwarding logs directly from your equipment through HTTPS. Be sure to respect the Sekoia collection endpoint expected format (e.g., using the intake key as a header). 
+- Utilize a third-party technology (e.g. [Graylog](./graylog.md) or [Logstash](./logstash.md) for example) responsible for collecting data from your equipment and forwarding events to Sekoia.io. You will find some samples in the next section.
+
+## Formating options
 
 For the forwarding, several options are available:
 
@@ -8,9 +28,9 @@ For the forwarding, several options are available:
 - Send your events in a JSON array
 - Send your events as a structured JSON payload
 
-For each option, we will have to supply an intake key. The collector will return the events' identifiers in the Sekoia.io detection workflow, as a JSON payload.
+For each option, we will have to supply an intake key. The collector endpoint of Sekoia.io will provide event identifiers within the Sekoia.io detection workflow in the form of a JSON payload.
 
-## Push our events to Sekoia.io as line-oriented records
+### Push our events to Sekoia.io as line-oriented records
 
 To forward events, you can use the `/plain` endpoint.
 
@@ -109,7 +129,7 @@ For numerous events, you can use the alternative endpoint `/batch`. The events s
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
-## Push our events to Sekoia.io as JSON List
+### Push our events to Sekoia.io as JSON List
 
 To send us events as JSON list, you should set `Content-Type` HTTP header to `application/json`.
 
@@ -165,7 +185,7 @@ Use the endpoint `/jsons`. This endpoint accepts a set of events:
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
 
-## Push our events to Sekoia.io as JSON Array
+### Push our events to Sekoia.io as JSON Array
 
 To send us events as JSON array, with the ability to send in the same batch several events from distinct intake keys, you should set `Content-Type` HTTP header to `application/json`. Intake key can only be sent in the JSON payload.
 
@@ -192,7 +212,7 @@ print(response.text) # (2)
 1. Optional.
 2. Will print `{"event_ids":["ba2098cc-5fcf-4ad1-8d1d-af55750220ec","921b214c-fb89-4e27-a1fd-266f1837ea31"]}`
 
-## Push our events to Sekoia.io as structured content
+### Push our events to Sekoia.io as structured content
 
 To send us events, you should set `Content-Type` HTTP header to `application/json`.
 

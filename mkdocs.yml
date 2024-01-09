@@ -62,14 +62,24 @@ nav:
   - Quick start guide: xdr/xdr_quick_start.md
   - Features:
     - Collect:
-      - Overview: xdr/features/collect/ingestion_methods/index.md
       - Ingestion methods:
-        - Sekoia.io Forwarder: xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md
-        - Rsyslog: xdr/features/collect/ingestion_methods/rsyslog.md
-        - Logstash: xdr/features/collect/ingestion_methods/logstash.md
-        - syslog-ng: xdr/features/collect/ingestion_methods/syslog-ng.md
-        - Graylog: xdr/features/collect/ingestion_methods/graylog.md
-        - HTTPS: xdr/features/collect/ingestion_methods/https.md
+        - Overview: xdr/features/collect/ingestion_methods/index.md
+        - Https: 
+          - Overview: xdr/features/collect/ingestion_methods/https/overview.md
+          - Graylog: xdr/features/collect/ingestion_methods/https/graylog.md
+          - Logstash: xdr/features/collect/ingestion_methods/https/logstash.md
+        - Syslog: 
+          - Overview: xdr/features/collect/ingestion_methods/syslog/overview.md
+          - Sekoia.io Forwarder: xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder.md
+          - Rsyslog: xdr/features/collect/ingestion_methods/syslog/rsyslog.md
+          - syslog-ng: xdr/features/collect/ingestion_methods/syslog/syslog-ng.md
+        - Relp: xdr/features/collect/ingestion_methods/relp/relp.md
+        - Cloud & SaaS:
+          - Overview: xdr/features/collect/ingestion_methods/cloud_saas/overview.md
+          - AWS S3: xdr/features/collect/ingestion_methods/cloud_saas/aws.md
+          - Azure Event Hub: xdr/features/collect/ingestion_methods/cloud_saas/azure.md
+          - Google Pub/Sub: xdr/features/collect/ingestion_methods/cloud_saas/gcp.md
+          
       - Integrations:
         - Overview: xdr/features/collect/integrations/index.md
         - Custom Format: xdr/features/collect/integrations/custom_format.md
