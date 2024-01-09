@@ -76,6 +76,7 @@ To enable hydrating the data lake for server:
 
     !!! info
         - If you want to change the region with your own region, you can find your region via **protect devices field**, first click on **Protect Devices**, Then copy link of any download links and finally Check the region that appears as part of the URL.
+        - No need to change the **Oauth2 Authorization Url** for the moment (this's the only endpoint to get a JWT token).
 
 7. In the `Trigger Configuration` section, click on `Create new configuration`.
 8. Write a `name`, choose a `frequency` - Default is `60` -, paste the `intake_key` associated to your `Sophos Threat Analysis Center` intake and click on `Save`.
