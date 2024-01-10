@@ -56,7 +56,6 @@ If you are using Azure VM you can do this in `Network settings` tab on your mach
 
 | Name       | Type     | Description                                    |
 |------------|----------|------------------------------------------------|
-| `server`   | `string` | Remote server dns name or IP address           |
 | `username` | `string` | Username to do authentication on remote server |
 | `password` | `string` | Password to do authentication on remote server |
 
@@ -72,6 +71,7 @@ Change existed user password on remote server
 |------------------|----------|------------------------------------------|
 | `user_to_update` | `string` | Username you want to change password for |
 | `new_password`   | `string` | New password value                       |
+| `server`         | `string` | Remote server dns name or IP address     |
 
 ### Disable users
 
@@ -79,10 +79,11 @@ Disable users on remote server
 
 **Arguments**
 
-| Name    | Type     | Description                            |
-|---------|----------|----------------------------------------|
-| `users` | `array`  | Array of usernames you want to disable |
-| `sids`  | `string` | SID`s of users you want to disable.    |
+| Name     | Type     | Description                            |
+|----------|----------|----------------------------------------|
+| `users`  | `array`  | Array of usernames you want to disable |
+| `sids`   | `string` | SID`s of users you want to disable.    |
+| `server` | `string` | Remote server dns name or IP address   |
 
 ### Enable users
 
@@ -90,7 +91,8 @@ Enable users on remote server
 
 **Arguments**
 
-| Name    | Type     | Description                            |
-|---------|----------|----------------------------------------|
-| `users` | `array`  | Array of usernames you want to disable |
-| `sids`  | `string` | SID`s of users you want to disable.    |
+| Name     | Type     | Description                            |
+|----------|----------|----------------------------------------|
+| `users`  | `array`  | Array of usernames you want to disable |
+| `sids`   | `string` | SID`s of users you want to disable.    |
+| `server` | `string` | Remote server dns name or IP address   |
