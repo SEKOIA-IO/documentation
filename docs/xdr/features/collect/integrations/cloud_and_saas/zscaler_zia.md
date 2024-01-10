@@ -29,11 +29,15 @@ This integration can ingest the following logs:
 
 This section will guide you to forward Zscaler ZIA events to Sekoia.io. 
 
+Please note that 2 methods can be used to forward your logs. 
+Method1: Forwarding of your logs to your log concentrator and then to Sekoia.io
+Method2: Forwarding of your logs directly to Sekoia.io
+
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Zscaler ZIA`.
 
-### Forward events with NSS Servers
+### Method 1: Forward events with NSS Servers
 
 #### Prerequisites
 
@@ -101,7 +105,7 @@ In the Zscaler ZIA console:
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
-### Forward events with Cloud NSS Feed
+### Method 2: Forward events with Cloud NSS Feed
 
 In the Zscaler ZIA console:
 
