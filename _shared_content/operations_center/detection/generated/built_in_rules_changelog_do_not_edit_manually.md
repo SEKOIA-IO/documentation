@@ -1,4 +1,4 @@
-Changelog _last update on 2024-01-08_
+Changelog _last update on 2024-01-10_
 
 ## Changelog
 
@@ -76,9 +76,6 @@ Changelog _last update on 2024-01-08_
     
 ### Cobalt Strike Default Beacons Names
   - 08/11/2023 - minor - Added filter to reduce false positives
-    
-### Write To File In Systemd
-  - 26/10/2023 - minor - Added filter to reduce false positives.
     
 ### Denied Access To Remote Desktop
   - 19/10/2023 - minor - Minor change in selection to reduce false positives.
@@ -295,4 +292,7 @@ Changelog _last update on 2024-01-08_
     
 ### OneNote Embedded File
   - 09/02/2023 - minor - Adding other suspicious file extensions (.cmd, .img, .iso, .msi, .vhd, .vhdx) for file opened from a OneNote.
+    
+### Write To File In Systemd
+  - 04/01/2023 - minor - Added filter to reduce false positives.
     
