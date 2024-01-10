@@ -1,4 +1,4 @@
-Rules catalog includes **788 built-in detection rules** ([_last update on 2024-01-08_](rules_changelog.md)).
+Rules catalog includes **789 built-in detection rules** ([_last update on 2024-01-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8006,6 +8006,7 @@ Rules catalog includes **788 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/10/2023 - minor - Added filter to reduce false positives.
+        - 04/01/2023 - minor - Added filter to reduce false positives.
             
 **Network Sniffing**
 
@@ -8527,6 +8528,12 @@ Rules catalog includes **788 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Domain Group And Permission Enumeration"
     
     Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
+    
+    - **Effort:** advanced
+    
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
     
     - **Effort:** advanced
     
