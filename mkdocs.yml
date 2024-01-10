@@ -279,7 +279,6 @@ nav:
         - Github: xdr/features/automate/library/github.md
         - Google: xdr/features/automate/library/google.md
         - HTTP: xdr/features/automate/library/http.md
-        - HTTP: xdr/features/automate/library/http.md
         - HarfangLab: xdr/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
         - IPtoASN: xdr/features/automate/library/iptoasn.md
@@ -290,7 +289,6 @@ nav:
         - Mandrill: xdr/features/automate/library/mandrill.md
         - Mattermost: xdr/features/automate/library/mattermost.md
         - Microsoft Active Directory: xdr/features/automate/library/microsoft-active-directory.md
-        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Microsoft Entra ID: xdr/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
@@ -465,7 +463,6 @@ nav:
         - Git: tip/features/automate/library/git.md
         - Github: tip/features/automate/library/github.md
         - Google: tip/features/automate/library/google.md
-        - HTTP: tip/features/automate/library/http.md
         - HTTP: tip/features/automate/library/http.md
         - HarfangLab: tip/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: tip/features/automate/library/iknowwhatyoudownload.md
