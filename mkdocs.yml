@@ -66,14 +66,12 @@ nav:
         - Overview: xdr/features/collect/ingestion_methods/index.md
         - Https: 
           - Overview: xdr/features/collect/ingestion_methods/https/overview.md
-          - Graylog: xdr/features/collect/ingestion_methods/https/graylog.md
-          - Logstash: xdr/features/collect/ingestion_methods/https/logstash.md
+          - Formatting options: xdr/features/collect/ingestion_methods/https/format.md
+          - Forwarding using a third-party application: xdr/features/collect/ingestion_methods/https/third_part.md
         - Syslog: 
           - Overview: xdr/features/collect/ingestion_methods/syslog/overview.md
           - Sekoia.io Forwarder: xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder.md
-          - Rsyslog: xdr/features/collect/ingestion_methods/syslog/rsyslog.md
-          - syslog-ng: xdr/features/collect/ingestion_methods/syslog/syslog-ng.md
-        - Relp: xdr/features/collect/ingestion_methods/relp/relp.md
+          - Third-party syslog services: xdr/features/collect/ingestion_methods/syslog/syslog_service.md
         - Cloud & SaaS:
           - Overview: xdr/features/collect/ingestion_methods/cloud_saas/overview.md
           - AWS S3: xdr/features/collect/ingestion_methods/cloud_saas/aws.md
