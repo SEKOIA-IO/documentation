@@ -142,6 +142,7 @@ nav:
           - Salesforce: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
           - Sophos Threat Analysis Center: xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
+          - Veeam Backup & Replication: xdr/features/collect/integrations/application/veeam_backup.md
           - Zscaler ZIA: xdr/features/collect/integrations/cloud_and_saas/zscaler_zia.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
