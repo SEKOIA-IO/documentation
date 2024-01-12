@@ -20,19 +20,19 @@ To enable syslog forwarding:
 
 1. Open the burger menu in the Veeam Backup & Replication Console and select `Options`.
 
-![step_1.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_1.png)
+    ![step_1.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_1.png)
 
 2. In the `Options` dialog, select the `Event Forwarding` tab.
 
-![step_2.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_2.png)
+    ![step_2.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_2.png)
 
 3. Add a new syslog server.
 
-![step_3.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_3.png)
+    ![step_3.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_3.png)
 
 4. Enter the log concentrator's address and port, then select the transport protocol you need.
 
-![step_4.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_4.png)
+    ![step_4.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_4.png)
 
 ### Create an intake
 
