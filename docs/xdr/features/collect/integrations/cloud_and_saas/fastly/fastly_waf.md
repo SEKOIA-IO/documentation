@@ -18,7 +18,7 @@ Fastly Next-Gen WAF is a web application firewall solution designed to protect o
 
 ### Creating API access tokens
 
-1. Go to the https://dashboard.signalsciences.net and log in.
+1. Go to the [Fastly WAF](https://dashboard.signalsciences.net) and log in.
 2. From the **My Profile** menu, select API access tokens.
 3. Click **Add API access token**.
 4. In the **Token name** field, enter a name to identify the access token.
