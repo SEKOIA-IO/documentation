@@ -30,13 +30,13 @@ To enable syslog forwarding:
 
 ![step_3.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_3.png)
 
-4. Type the log concentrator's address and port, then select the transport protocol you need.
+4. Enter the log concentrator's address and port, then select the transport protocol you need.
 
 ![step_4.png](/assets/operation_center/integration_catalog/application/veeam-backup/step_4.png)
 
 ### Create an intake
 
-Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Veeam Backup.
+Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the Veeam Backup format.
 
 ### Forward logs to Sekoia.io
 
