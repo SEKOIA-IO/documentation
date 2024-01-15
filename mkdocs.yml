@@ -67,7 +67,7 @@ nav:
         - Https: 
           - Overview: xdr/features/collect/ingestion_methods/https/overview.md
           - Formatting options: xdr/features/collect/ingestion_methods/https/format.md
-          - Forwarding using a third-party application: xdr/features/collect/ingestion_methods/https/third_part.md
+          - Forwarding logs using a third-party application: xdr/features/collect/ingestion_methods/https/third_part.md
         - Syslog: 
           - Overview: xdr/features/collect/ingestion_methods/syslog/overview.md
           - Sekoia.io Forwarder: xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder.md
