@@ -349,22 +349,22 @@ If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests.
 If you want to enable this feature, follow these steps: 
 1. Edit the configuration file at:
 	
-	=== "Windows"
+=== "Windows"
 	
-	    ```
-	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-	    ```
+     ```
+     C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+     ```
 	
-	=== "Linux"
+=== "Linux"
 	
-	    ```
-	    /etc/endpoint-agent/config.yaml
-	    ```
+     ```
+     /etc/endpoint-agent/config.yaml
+     ```
 
 2. Add the following line:
-	```
-	HTTPProxyURL: "<PROXY_URL>"
-	```
+     ```
+     HTTPProxyURL: "<PROXY_URL>"
+     ```
 
 If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
