@@ -46,7 +46,7 @@ In the Zscaler ZIA console:
 1. Go to `Administration` > `Cloud Configuration` > `Nanolog Streaming Service`
    ![menu](/assets/operation_center/integration_catalog/cloud_and_saas/zscaler/zia_menu.png){: style="max-width:100%"} 
 2. Select the `NSS Feeds` tab
-   ![nanolog](/assets/operation_center/integration_catalog/cloud_and_saas/zscaler/zia_nss_feeds.png){: style="max-width:100%"} 
+   ![nanolog](/assets/operation_center/integration_catalog/cloud_and_saas/zscaler/zia_nss_feeds.png){: style="max-width:50%"} 
 3. Select `Add NSS Feed` for each log type you want to forward
 4. In the modal, type a name for the feed, select the `NSS Server`, and then select the `Enabled`status
 5. In the `SIEM IP Address` field, enter the IP address of the log concentrator
