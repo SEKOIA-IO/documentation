@@ -260,6 +260,7 @@ nav:
       - Actions: xdr/features/automate/actions.md
       - Actions Library:
         - AWS: xdr/features/automate/library/aws.md
+        - AWS: xdr/features/automate/library/aws.md
         - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
         - Cato Networks: xdr/features/automate/library/cato-networks.md
@@ -444,6 +445,7 @@ nav:
       - Operators: tip/features/automate/operators.md
       - Actions: tip/features/automate/actions.md
       - Actions Library:
+        - AWS: tip/features/automate/library/aws.md
         - AWS: tip/features/automate/library/aws.md
         - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
