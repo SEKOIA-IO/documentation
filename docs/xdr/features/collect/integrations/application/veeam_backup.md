@@ -14,6 +14,10 @@ Veeam Backup & Replication is a comprehensive data protection solution known for
 
 This setup guide will show you how to forward your Veeam logs to Sekoia.io by means of a syslog transport channel.
 
+### Prerequisites
+
+An internal log concentrator is required to collect and forward events to Sekoia.io.
+
 ### Enable syslog forwarding
 
 To enable syslog forwarding:
