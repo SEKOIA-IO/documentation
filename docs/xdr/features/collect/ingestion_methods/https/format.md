@@ -107,6 +107,13 @@ For numerous events, you can use the alternative endpoint `/batch`. The events s
 
     1. Will print  `{"event_ids": ["uuid1", "uuid2"]}`
 
+You can also upload multiple events contained in a single file, with one event per line:
+
+```bash 
+curl -X POST -H "X-SEKOIAIO-INTAKE-KEY: REPLACE_BY_INTAKE_KEY" --data-binary @events.txt https://intake.sekoia.io/plain/batch
+```
+
+
 ### Push our events to Sekoia.io as JSON List
 
 To send us events as JSON list, you should set `Content-Type` HTTP header to `application/json`.
