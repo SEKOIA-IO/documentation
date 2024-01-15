@@ -1,7 +1,13 @@
-Changelog _last update on 2024-01-10_
+Changelog _last update on 2024-01-15_
 
 ## Changelog
 
+### Windows Registry Persistence COM Search Order Hijacking
+  - 11/01/2024 - minor - Adding filtering for some FPs
+    
+### HarfangLab EDR Process Execution Blocked (HL-AI engine)
+  - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
+    
 ### Legitimate Process Execution From Unusual Folder
   - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
     
@@ -13,6 +19,9 @@ Changelog _last update on 2024-01-10_
     
 ### SolarWinds Wrong Child Process
   - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
+    
+### Windows Registry Persistence COM Key Linking
+  - 14/12/2023 - minor - Exclude common legitimate processes
     
 ### Linux Binary Masquerading
   - 12/12/2023 - minor - extend regex to macth more cases
@@ -181,9 +190,6 @@ Changelog _last update on 2024-01-10_
     
 ### Searchindexer Wrong Parent
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Windows Registry Persistence COM Search Order Hijacking
-  - 16/08/2023 - minor - Adding filtering for some FPs
     
 ### Suspicious Network Args In Command Line
   - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.

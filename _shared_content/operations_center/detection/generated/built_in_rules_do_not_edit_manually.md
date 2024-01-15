@@ -1,4 +1,4 @@
-Rules catalog includes **789 built-in detection rules** ([_last update on 2024-01-10_](rules_changelog.md)).
+Rules catalog includes **789 built-in detection rules** ([_last update on 2024-01-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2239,12 +2239,16 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "HarfangLab EDR Process Execution Blocked"
+??? abstract "HarfangLab EDR Process Execution Blocked (HL-AI engine)"
     
-    HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
+    HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
+            
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
     HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
@@ -3646,6 +3650,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/12/2023 - minor - Exclude common legitimate processes
+            
 **Authentication Package**
 
 ??? abstract "Shell PID Injection"
@@ -4401,7 +4409,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
@@ -5755,7 +5763,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 ## Defense Evasion
 **Obfuscated Files or Information**
@@ -6432,6 +6440,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/12/2023 - minor - Exclude common legitimate processes
+            
 **Trusted Developer Utilities Proxy Execution**
 
 ??? abstract "MSBuild Abuse"
@@ -7621,7 +7633,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 **Modify Cloud Compute Infrastructure**
 
