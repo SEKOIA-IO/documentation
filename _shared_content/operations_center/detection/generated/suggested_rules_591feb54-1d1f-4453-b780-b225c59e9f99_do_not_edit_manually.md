@@ -387,12 +387,6 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     - **Effort:** advanced
 
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
@@ -888,6 +882,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     
     Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
     
     - **Effort:** intermediate
 

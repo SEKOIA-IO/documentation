@@ -1,0 +1,1 @@
+{"name": "SEKOIA.IO x Veeam Backup", "versions": {"attack": "13", "layer": "4.4", "navigator": "4.8.2"}, "domain": "enterprise-attack", "techniques": [{"techniqueID": "T1486", "score": 100, "comment": "Rules: RYUK Ransomeware - martinstevens Username"}]}
