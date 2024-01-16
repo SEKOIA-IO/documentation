@@ -1,4 +1,4 @@
-Rules catalog includes **789 built-in detection rules** ([_last update on 2024-01-15_](rules_changelog.md)).
+Rules catalog includes **789 built-in detection rules** ([_last update on 2024-01-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1435,12 +1435,6 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
@@ -1777,6 +1771,16 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
+            
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 16/01/2024 - minor - Rename rule to fit with behavior
             
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
