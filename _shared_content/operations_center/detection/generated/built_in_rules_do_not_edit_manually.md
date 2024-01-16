@@ -1,4 +1,4 @@
-Rules catalog includes **789 built-in detection rules** ([_last update on 2024-01-16_](rules_changelog.md)).
+Rules catalog includes **791 built-in detection rules** ([_last update on 2024-01-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8381,6 +8381,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
 ## Discovery
 **System Service Discovery**
 
+??? abstract "Anomaly Internal RDP"
+    
+    Detects uncompleted attempts to connect to a rdp session.
+    
+    - **Effort:** master
+    
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -8445,6 +8451,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
 **Remote System Discovery**
 
+??? abstract "Anomaly Internal Ping"
+    
+    Detects internal ping with uncomplete connection.
+    
+    - **Effort:** master
+    
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
