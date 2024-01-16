@@ -40,7 +40,9 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 To start to pull events, you have to: 
 
-1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the [AWS Fetch new logs on S3 connector](../../../../automate/library/aws.md#fetch-new-logs-on-s3).
+1. Go to the [playbook page](https://app.sekoia.io/operations/playbooks) and create a new playbook with:
+    - the [AWS Fetch new Flowlogs on S3 connector](../../../../automate/library/aws.md#fetch-new-flowlogs-on-s3) for plain text files (gzipped included)
+    - the [AWS Fetch new FlowLogs Parquet records on S3 connector](../../../../automate/library/aws.md#fetch-new-flowlogs-parquet-records-on-s3) for parquet files
 2. Set up the module configuration with the [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), the secret key and the region name. Set up the trigger configuration with the name of the SQS queue and the intake key, from the intake previously created.
 3. Start the playbook and enjoy your events.
 
