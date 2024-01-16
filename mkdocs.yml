@@ -64,11 +64,11 @@ nav:
     - Collect:
       - Ingestion methods:
         - Overview: xdr/features/collect/ingestion_methods/index.md
-        - Https: 
+        - Https:
           - Overview: xdr/features/collect/ingestion_methods/https/overview.md
           - Formatting options: xdr/features/collect/ingestion_methods/https/format.md
           - Forwarding logs using a third-party application: xdr/features/collect/ingestion_methods/https/third_part.md
-        - Syslog: 
+        - Syslog:
           - Overview: xdr/features/collect/ingestion_methods/syslog/overview.md
           - Sekoia.io Forwarder: xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder.md
           - Third-party syslog services: xdr/features/collect/ingestion_methods/syslog/syslog_service.md
@@ -77,7 +77,6 @@ nav:
           - AWS S3: xdr/features/collect/ingestion_methods/cloud_saas/aws.md
           - Azure Event Hub: xdr/features/collect/ingestion_methods/cloud_saas/azure.md
           - Google Pub/Sub: xdr/features/collect/ingestion_methods/cloud_saas/gcp.md
-          
       - Integrations:
         - Overview: xdr/features/collect/integrations/index.md
         - Custom Format: xdr/features/collect/integrations/custom_format.md
@@ -315,6 +314,7 @@ nav:
         - RiskIQ: xdr/features/automate/library/riskiq.md
         - Salesforce: xdr/features/automate/library/salesforce.md
         - Sekoia.io: xdr/features/automate/library/sekoia-io.md
+        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
@@ -499,6 +499,7 @@ nav:
         - RSS: tip/features/automate/library/rss.md
         - RiskIQ: tip/features/automate/library/riskiq.md
         - Salesforce: tip/features/automate/library/salesforce.md
+        - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - SentinelOne: tip/features/automate/library/sentinelone.md
         - ServiceNow: tip/features/automate/library/servicenow.md
