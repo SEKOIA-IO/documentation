@@ -9,6 +9,14 @@ Veeam Backup & Replication is a comprehensive data protection solution known for
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
+
+## Supported versions
+
+This integration supports the following versions:
+
+- 12
+- 12.1
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_dbebefdd-dd2e-48a9-89e6-ee5a00ee0956_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/dbebefdd-dd2e-48a9-89e6-ee5a00ee0956.md!}
