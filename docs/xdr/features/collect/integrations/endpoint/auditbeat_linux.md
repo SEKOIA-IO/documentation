@@ -271,7 +271,7 @@ sudo systemctl restart rsyslog.service
 
 ### Forward logs to Sekoia.io
 
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to transport logs to Sekoia.io.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation or [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to transport logs to Sekoia.io.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

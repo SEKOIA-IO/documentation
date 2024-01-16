@@ -11,7 +11,7 @@ Zeek is a free and open-source software network analysis framework; it was origi
 {!_shared_content/operations_center/integrations/generated/428035c0-a251-4664-8e58-fed15f4e442c.md!}
 
 ## Configure
-Refer to the configuration of Zeek's export to syslog to forward dns, http and conn logs to Sekoia.io by means of an rsyslog transport channel. Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
+Refer to the configuration of Zeek's export to syslog to forward dns, http and conn logs to Sekoia.io by means of an rsyslog transport channel. Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
 
 
 ## Further Reading

@@ -30,7 +30,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ## Forward logs to Sekoia.io
 
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation or [Syslog Forwarding](../../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
 
 ## Further Readings
 - [Watchguard Firebox Rsyslog Integration Overview](https://www.watchguard.com/help/docs/help-center/en-US/Content/Integration-Guides/General/ubuntu_rsyslog.html)

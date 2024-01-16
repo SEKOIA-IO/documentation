@@ -35,4 +35,4 @@ To forward your logs to our servers, in our MWG console:
 
 - Select `Configuration` section then the `File Editor` tab.
 - In the tree, select `rsyslog.conf`.
-- Consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to configure Rsyslog in order to forward these logs to Sekoia.io.
+- Consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to configure Rsyslog in order to forward these logs to Sekoia.io.
