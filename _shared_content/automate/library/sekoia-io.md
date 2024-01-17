@@ -21,7 +21,7 @@ A comment was added to an existing Alert
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
 
 
 **Outputs**
@@ -50,7 +50,7 @@ A new Alert was created in the Operation Center
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
 
 
 **Outputs**
@@ -79,7 +79,7 @@ The status of an existing alert was changed
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
 
 
 **Outputs**
@@ -108,7 +108,7 @@ An existing alert was updated
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
 
 
 **Outputs**
@@ -149,14 +149,13 @@ Get all non-revoked objects from Sekoia.io Intelligence feed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
-| `to_file` | `boolean` | Whether the event should be saved in a file or sent directly |
+| `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
 
 
 **Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `stix_objects` | `object` | STIX objects returned by the feed |
 | `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 
 
@@ -169,14 +168,13 @@ Get all valid IOCs from Sekoia.io Intelligence feed
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
-| `to_file` | `boolean` | Whether the event should be saved in a file or sent directly |
+| `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
 
 
 **Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `stix_objects` | `object` | IOCs returned by the feed (STIX objects) |
 | `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
 
 
@@ -188,7 +186,7 @@ Create an event for each alert creation or modification
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `rule_filter` | `string` | Create a run only for alerts matching a rule name or UUID |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
 
 
 **Outputs**
@@ -261,6 +259,7 @@ Add indicators to an IOC Collection
 | `indicators_path` | `string` | Path of the indicators file to add to an IOC collection |
 | `ioc_collection_id` | `string` | Identifier of the IOC collection |
 | `indicator_type` | `string` | Type of IOC |
+| `valid_for` | `integer` | Validity period for the created indicators (in days) |
 
 ### Add attribute to Asset
 
@@ -882,4 +881,4 @@ Triggers an action on an alert to update its status
 
 ## Extra
 
-Module **`Sekoia.io` v2.57.1**
+Module **`Sekoia.io` v2.58.2**
