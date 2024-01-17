@@ -28,6 +28,9 @@ For VPC and subnet:
 - Click on `Create flow log`
 - Set up the flow log: we recommend to capture all traffic (accepted and rejected).
 
+    !!note
+  The AWS account must have a direct access to the resources because the integration do not work with managing account that make a call on the admin role 
+
 {!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
 
 {!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
