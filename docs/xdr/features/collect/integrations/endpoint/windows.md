@@ -207,7 +207,7 @@ Restart-Service nxlog
 ### Configure the concentrator to forward events to Sekoia.io
 Please read the dedicated documentation for each concentrator:
 
-* [Rsyslog](../../../ingestion_methods/rsyslog/)
+* [Rsyslog](../../../ingestion_methods/syslog/overview/)
 * [Logstash](../../../ingestion_methods/logstash/)
 * [Syslog-ng](../../../ingestion_methods/syslog-ng/)
 * [Graylog](../../../ingestion_methods/graylog/)

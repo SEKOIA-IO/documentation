@@ -25,7 +25,7 @@ The Intakes correspond to the different technologies used (also called Data Sour
 To create intakes associated to the technology you would like to collect:
 
 1. Go to the Intakes page and create intakes one by one from the catalog.
-2. Make sure the logs are pushed to Sekoia.io using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/rsyslog/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/) protocols providing the `Intake key` accordingly, or pulled by API.
+2. Make sure the logs are pushed to Sekoia.io using [syslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/syslog/overview/) or [HTTPS](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/https/overview/) protocols providing the `Intake key` accordingly, or pulled by API.
 
 !!! note
     Find more details on each integration in our [integrations catalog](https://docs.sekoia.io/xdr/features/collect/integrations/).

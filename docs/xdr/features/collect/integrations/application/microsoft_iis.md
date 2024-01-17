@@ -195,7 +195,7 @@ Restart-Service nxlog
 
 Please read the dedicated documentation for each concentrator:
 
-- [Rsyslog](https://www.notion.so/ingestion_methods/rsyslog/)
+- [Rsyslog](https://www.notion.so/ingestion_methods/syslog/overview/)
 - [Logstash](https://www.notion.so/ingestion_methods/logstash/)
 - [Syslog-ng](https://www.notion.so/ingestion_methods/syslog-ng/)
 - [Graylog](https://www.notion.so/ingestion_methods/graylog/)
