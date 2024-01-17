@@ -55,6 +55,25 @@ Read the XML file and return its content evaluated against specified xpath
 | `output` | `object` | Content read from file |
 | `output_path` | `object` | Path to the file with the content |
 
+### Password Generator
+
+Generate a password securely based on specified parameters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `password_length` | `integer` | Password length |
+| `number_of_digits` | `integer` | Number of digits in the password |
+| `number_of_special_characters` | `integer` | Number of special characters in the password |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `password` | `string` |  |
+
 ### Get the current time
 
 Get the current time according to the timezone
@@ -86,4 +105,4 @@ Wait
 
 ## Extra
 
-Module **`Utils` v1.3**
+Module **`Utils` v1.3.1**

@@ -327,6 +327,7 @@ nav:
         - Trend Micro: xdr/features/automate/library/trend-micro.md
         - Triage: xdr/features/automate/library/triage.md
         - Utils: xdr/features/automate/library/utils.md
+        - Utils: xdr/features/automate/library/utils.md
         - Vade Cloud: xdr/features/automate/library/vade-cloud.md
         - Vade Secure: xdr/features/automate/library/vade-secure.md
         - VirusTotal: xdr/features/automate/library/virustotal.md
@@ -512,6 +513,7 @@ nav:
         - Trellix: tip/features/automate/library/trellix.md
         - Trend Micro: tip/features/automate/library/trend-micro.md
         - Triage: tip/features/automate/library/triage.md
+        - Utils: tip/features/automate/library/utils.md
         - Utils: tip/features/automate/library/utils.md
         - Vade Cloud: tip/features/automate/library/vade-cloud.md
         - Vade Secure: tip/features/automate/library/vade-secure.md
