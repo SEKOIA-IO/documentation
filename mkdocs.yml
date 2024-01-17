@@ -314,7 +314,6 @@ nav:
         - RiskIQ: xdr/features/automate/library/riskiq.md
         - Salesforce: xdr/features/automate/library/salesforce.md
         - Sekoia.io: xdr/features/automate/library/sekoia-io.md
-        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - SentinelOne: xdr/features/automate/library/sentinelone.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
@@ -499,7 +498,6 @@ nav:
         - RSS: tip/features/automate/library/rss.md
         - RiskIQ: tip/features/automate/library/riskiq.md
         - Salesforce: tip/features/automate/library/salesforce.md
-        - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - SentinelOne: tip/features/automate/library/sentinelone.md
         - ServiceNow: tip/features/automate/library/servicenow.md
