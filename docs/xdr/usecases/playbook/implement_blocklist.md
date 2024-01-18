@@ -7,9 +7,9 @@ This article will show how a blocklist can be implemented in Sekoia.io to automa
 
 ## How does it work?
 
-The implementation of the blocklist in Sekoia.io is based on the [IOC Collections](../../../cti/features/consume/ioccollections.md) and consists of two parts:
+The implementation of a blocklist in Sekoia.io is based on the [IOC Collections](../../../cti/features/consume/ioccollections.md) and consists of two parts:
 
-- The first is to set up one or more playbooks to add the artifacts found in an alert to an IOC Collection
+- The first is to set up one or more playbooks to add the artifacts found in an alert to an IOC Collection.
 - The second is to set up your networks security solutions to retrieve automatically and regularly the content of an IOC collection and block communications based on the retrieved content.
 
 ## Prerequisites
@@ -29,16 +29,18 @@ The implementation of the blocklist in Sekoia.io is based on the [IOC Collection
 
 ## Create your IOC Collection
 
-Our recommandation is to create a dedicated IOC Collection per artifact type (IP addres, domain, URL...) to serve as a blocklist as it will be easier to maintain in time. You can follow this [documentation](../../../cti/features/consume/ioccollections.md) to create a new IOC Collection - no need to import data into it at this point.
+Our recommandation is to create a dedicated IOC Collection per artifact type (IP address, domain, URL...) to serve as a blocklist as it will be easier to maintain in time. You can follow this [documentation](../../../cti/features/consume/ioccollections.md) to create a new IOC Collection - no need to import data into it at this point.
 
-Once the IOC Collection is created, go back to the `IOC Collections` page, use the three dots next to the newly created IOC Collection and select `Copy Feed ID`. Keep this value safe for later use.
+Once the IOC Collection is created:
+- Go back to the `IOC Collections` page
+- Click on the three dots next to the newly created IOC Collection
+- Select `Copy Feed ID` (Keep this value safe for later use)
 
 ## Create your playbook
 
 Playbook templates were created to ease the process of setting up the playbooks to send the notifications to Slack or Teams. 
 
-To create one, follow these steps: 
-
+To create the playbook for your blocklist, follow these steps: 
 
 - **Go to** the [Playbook page](https://app.sekoia.io/operations/playbooks)
 - **Click** on `+ New Playbook`
@@ -63,7 +65,7 @@ Once your playbook is created, the following configuration steps are required:
 !!! warning
     The network security solution that will retrieve the IOC Collection content must be able to authenticate itself against Sekoia.io. 
 
-The URL to use to retrieve the content of the IOC Collection is `https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=text&limit=10000&skip_expired=true&include_revoked=false`. As specified in this URL, the maximum number of indicators that can be retrieved is limited to 10,000. Basic authentication mechanism is supported with `username` as user name and the API Key as password.
+The URL to use to retrieve the content of the IOC Collection is `https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=text&limit=10000&skip_expired=true&include_revoked=false`. As specified in this URL, the maximum number of indicators that can be retrieved is limited to 10,000. Basic authentication mechanism is supported with `username` as user name and the **API Key as password**.
 
 Please refer to your vendor documentation for a more detailed step by step approach on configuring the network security solution.
 
