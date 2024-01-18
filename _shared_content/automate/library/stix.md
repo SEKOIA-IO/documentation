@@ -291,6 +291,25 @@ Remove objects without any relationship from a STIX bundle.
 | `bundle` | `object` | Resulting STIX Bundle |
 | `bundle_path` | `string` | Resulting STIX Bundle (in a file) |
 
+### Split bundle
+
+Split a STIX Bundle in smaller ones
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `bundle` | `object` | STIX Bundle |
+| `bundle_path` | `string` | STIX Bundle (from file) |
+| `number_of_items` | `number` | Approximate number of items to include in each bundle |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `bundle_paths` | `array` | Resulting STIX Bundles |
+
 ### STIX to MISP
 
 Convert STIX bundle to MISP event
@@ -336,4 +355,4 @@ Convert a list of strings into a list of observables
 
 ## Extra
 
-Module **`STIX` v1.70**
+Module **`STIX` v1.72**
