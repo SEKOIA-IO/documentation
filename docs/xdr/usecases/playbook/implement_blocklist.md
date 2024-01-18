@@ -59,7 +59,7 @@ Once your playbook is created, the following configuration steps are required:
 
 ## Configure your network security solution
 
-!!! warn
+!!! warning
     The network security solution that will retrieve the IOC Collection content must be able to authenticate itself against Sekoia.io. 
 
 The URL to use to retrieve the content of the IOC Collection is `https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=text&limit=10000&skip_expired=true&include_revoked=false`. As specified in this URL, the maximum number of indicators that can be retrieved is limited to 10,000. Basic authentication mechanism is supported with `username` as user name and the API Key as password.
