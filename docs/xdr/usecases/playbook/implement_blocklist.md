@@ -8,6 +8,7 @@ This article will show how a blocklist can be implemented in Sekoia.io to automa
 ## How does it work?
 
 The implementation of the blocklist in Sekoia.io is based on the [IOC Collections](../../../cti/features/consume/ioccollections.md) and consists of two parts:
+
 - The first is to set up one or more playbooks to add the artifacts found in an alert to an IOC Collection
 - The second is to set up your networks security solutions to retrieve automatically and regularly the content of an IOC collection and block communications based on the retrieved content.
 
