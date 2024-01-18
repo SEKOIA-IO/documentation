@@ -153,6 +153,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** elementary
 
+??? abstract "Cron Files Alteration"
+    
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    
+    - **Effort:** advanced
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -339,6 +345,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "Hijack Legit RDP Session To Move Laterally"
+    
+    Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+
 ??? abstract "ICacls Granting Access To All"
     
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
@@ -381,17 +393,23 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** advanced
 
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
     
     - **Effort:** elementary
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
 
 ??? abstract "List Shadow Copies"
     
@@ -625,7 +643,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -633,11 +651,23 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** elementary
 
+??? abstract "Package Manager Alteration"
+    
+    Package manager (eg: apt, yum) can be altered to install malicious software
+    
+    - **Effort:** advanced
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -667,7 +697,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -771,6 +801,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** elementary
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -788,6 +824,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
     
     - **Effort:** intermediate
+
+??? abstract "SSH Authorized Key Alteration"
+    
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    
+    - **Effort:** advanced
 
 ??? abstract "STRRAT Scheduled Task"
     
@@ -842,6 +884,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
     - **Effort:** advanced
+
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
@@ -939,6 +987,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Regsvr32 Execution"
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
@@ -1004,6 +1058,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
     
     - **Effort:** elementary
+
+??? abstract "WMI Persistence Script Event Consumer File Write"
+    
+    Detects file writes through WMI script event consumer.
+    
+    - **Effort:** advanced
 
 ??? abstract "WMIC Command To Determine The Antivirus"
     

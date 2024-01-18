@@ -9,6 +9,18 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Account Added To A Security Enabled Group"
+    
+    Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
+    
+    - **Effort:** master
+
+??? abstract "Account Removed From A Security Enabled Group"
+    
+    Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
+    
+    - **Effort:** master
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -63,6 +75,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Backup Catalog Deleted"
+    
+    The rule detects when the Backup Catalog has been deleted. It means the administrators will not be able to access any backups that were created earlier to perform recoveries. This is often being done using the wbadmin.exe tool.
+    
+    - **Effort:** intermediate
+
 ??? abstract "BazarLoader Persistence Using Schtasks"
     
     Detects possible BazarLoader persistence using schtasks. BazarLoader will create a Scheduled Task using a specific command line to establish its persistence.
@@ -86,6 +104,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
+
+??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
+    
+    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
+    
+    - **Effort:** master
 
 ??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
     
@@ -171,11 +195,29 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "DHCP Server Error Failed Loading the CallOut DLL"
+    
+    This rule detects a DHCP server error in which a specified Callout DLL (in registry) could not be loaded.
+    
+    - **Effort:** intermediate
+
+??? abstract "DHCP Server Loaded the CallOut DLL"
+    
+    This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded. This would indicate a succesful attack against DHCP service allowing to disrupt the service or alter the integrity of the responses.
+    
+    - **Effort:** intermediate
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+
+??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
+    
+    This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded. This requires the dedicated Windows event provider Microsoft-Windows-DNS-Server-Service.
+    
+    - **Effort:** master
 
 ??? abstract "Data Compressed With Rar"
     
@@ -216,6 +258,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "Domain Group And Permission Enumeration"
     
     Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
+    
+    - **Effort:** advanced
+
+??? abstract "Domain Trust Created Or Removed"
+    
+    A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
 
@@ -309,6 +357,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Failed Logon Source From Public IP Addresses"
+    
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    
+    - **Effort:** master
+
 ??? abstract "Formbook File Creation DB1"
     
     Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
@@ -375,17 +429,23 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
     
     - **Effort:** elementary
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
 
 ??? abstract "List Shadow Copies"
     
@@ -447,6 +507,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** elementary
 
+??? abstract "Microsoft Defender Antivirus History Deleted"
+    
+    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
     Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -470,6 +536,18 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
+    
+    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Office Creating Suspicious File"
     
@@ -601,7 +679,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -615,11 +693,23 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
+    
+    The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -632,6 +722,18 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
     
     - **Effort:** elementary
+
+??? abstract "Possible Replay Attack"
+    
+    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
+    
+    - **Effort:** intermediate
+
+??? abstract "Potential RDP Connection To Non-Domain Host"
+    
+    Detects logons using NTLM to hosts that are potentially not part of the domain using RDP (TermSrv). Event ID 8001 corresponds to outgoing NTLM authentication traffic and TermSrv stands for RDP Terminal Services Server. Check if the contacted host is legitimate. To use this detection rule, enable logging of outbound NTLM authentications on all domain controllers, using the following Group Policy (GPO) - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options > Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers -> Define this policy setting: Audit all.
+    
+    - **Effort:** master
 
 ??? abstract "PowerCat Function Loading"
     
@@ -655,7 +757,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -765,6 +867,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** elementary
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -822,6 +930,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     
     Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
     
     - **Effort:** intermediate
 
@@ -891,6 +1005,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Rundll32.exe Execution"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
@@ -933,6 +1053,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Sysmon Windows File Block Executable"
+    
+    Sysmon has blocked an executable file from being written to the disk. This could be a malicious binary to investigate.  
+    
+    - **Effort:** master
+
 ??? abstract "Sysprep On AppData Folder"
     
     Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
@@ -950,6 +1076,18 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master
 
 ??? abstract "WCE wceaux.dll Creation"
     

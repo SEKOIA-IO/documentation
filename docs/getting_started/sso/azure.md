@@ -1,16 +1,20 @@
-# Configure Single Sign-on with Azure Active Directory
+# Configure Single Sign-on with Microsoft Entra ID (Azure AD) 
 
 In order to configure Azure with Sekoia.io, the following steps must be done:
 
-1. Create a new application on Azure
-2. Connect to Sekoia.io, add a new domain that belongs to your community and wait for its validation
-3. Configure OpenID Connect in Sekoia.io (see associated documentation [Single Sign-On With OpenID Connect](../SSO_openid_connect.md))
+1. Verify that the user that will connect have a complete profile. To authenticate, the profile must have the following information: email address, first name, last name and full name
+2. Create a new application on Azure
+3. Connect to Sekoia.io, add a new domain that belongs to your community and wait for its validation
+4. Configure OpenID Connect in Sekoia.io (see associated documentation [Single Sign-On With OpenID Connect](../SSO_openid_connect.md))
 
-## Create an Azure Active Directory app registration
+## Create a Microsoft Entra ID (Azure AD)  app registration
 
-1. Visit "Azure Active Directory" > "Manage" > [App Registrations](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps)
-2. Use the "+ New registration" button to start the creation
-3. Choose a name and input the redirect URI: https://app.sekoia.io/user/callback
+1. Visit "Microsoft Entra ID (Azure AD) " > "Manage" > [App Registrations](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps)
+2. Use the `+ New registration"` button to start the creation
+3. Choose:
+   - Name of the integration, for example: `Sekoia.io`
+   - `Who can use this application or access this API?`: select the group that is allowed to use the application
+   - `Redirect URI (optional)` : `Web`: `https://app.sekoia.io/user/callback` (you might need to adapt the domain if you are not working on FRA1)
 4. Click on "Register"
 
 ## Configure the registration
@@ -21,9 +25,9 @@ In order to configure Azure with Sekoia.io, the following steps must be done:
 
 ## Restrict access for Sekoia.io to specific users
 
-Azure Active Directory can be configured to prevent some users from accessing Sekoia.io.
+Microsoft Entra ID (Azure AD)  can be configured to prevent some users from accessing Sekoia.io.
 
-1. In "Azure Active Directory" > "Enterprise applications": select your application
+1. In "Microsoft Entra ID (Azure AD) " > "Enterprise applications": select your application
 2. In the "Application | Overview" > "Getting Started" > "1. Assign users and groups"
 
 You are ready to input your configuration to Sekoia.io

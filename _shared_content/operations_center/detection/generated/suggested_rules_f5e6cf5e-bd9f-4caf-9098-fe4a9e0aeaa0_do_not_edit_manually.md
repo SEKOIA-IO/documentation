@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x StormShield SES [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.json){ .md-button }
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -507,12 +513,6 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     
     - **Effort:** advanced
 
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -530,6 +530,18 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
 
 ??? abstract "List Shadow Copies"
     
@@ -721,7 +733,7 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     
     Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -799,7 +811,7 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -824,6 +836,12 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -865,7 +883,7 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -999,6 +1017,12 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     
     - **Effort:** elementary
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -1119,6 +1143,12 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     
     - **Effort:** advanced
 
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
     Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
@@ -1226,6 +1256,12 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Regsvr32 Execution"
     

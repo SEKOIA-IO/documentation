@@ -40,6 +40,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "authentication"
             ],
+            "outcome": "success",
             "type": [
                 "info"
             ]
@@ -96,7 +97,8 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"id\":\"61e536ebdbbe784cb2e55fb5\",\"type\":\"admin\",\"email\":\"maurice.moss@sekoia.io\"},\"geoip\":{\"country_code\":\"FR\",\"timezone\":\"Europe/Paris\",\"latitude\":48.8323,\"continent_code\":\"EU\",\"region_name\":\"Paris\",\"longitude\":2.4075,\"region_code\":\"75\"},\"useragent\":{\"minor\":\"0\",\"os\":\"Mac OS X\",\"os_minor\":\"15\",\"os_version\":\"10.15.7\",\"os_major\":\"10\",\"version\":\"114.0.0.0\",\"os_patch\":\"7\",\"patch\":\"0\",\"os_full\":\"Mac OS X 10.15.7\",\"major\":\"114\",\"name\":\"Chrome\",\"os_name\":\"Mac OS X\",\"device\":\"Mac\"},\"association\":{\"op\":\"add\",\"action_source\":\"manual\",\"connection\":{\"from\":{\"name\":\"JDOE-DESKTOP\",\"type\":\"system\",\"object_id\":\"6447f8a7caa17d71c56b2dca\"},\"to\":{\"name\":\"john.doe\",\"type\":\"user\",\"object_id\":\"636b8c40f03d374a5c7f6ceb\"}},\"attributes\":null},\"auth_method\":\"session\",\"event_type\":\"association_change\",\"provider\":null,\"service\":\"directory\",\"success\":true,\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"176.161.221.161\",\"id\":\"64930a6d00466f31842811a1\",\"timestamp\":\"2023-06-21T14:34:21.089Z\"}",
         "event": {
-            "action": "association_change"
+            "action": "association_change",
+            "outcome": "success"
         },
         "@timestamp": "2023-06-21T14:34:21.089000Z",
         "action": {
@@ -166,7 +168,8 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"error_message\":\"mschap: MS-CHAP2-Response is incorrect\",\"initiated_by\":{\"type\":\"user\",\"username\":\"john.doe\"},\"auth_type\":\"eap\",\"nas_mfa_state\":\"DISABLED\",\"geoip\":{\"country_code\":\"FR\",\"timezone\":\"Europe/Paris\",\"latitude\":48.8323,\"continent_code\":\"EU\",\"region_name\":\"Paris\",\"region_code\":\"75\",\"longitude\":2.4075},\"eap_type\":\"MSCHAPv2\",\"outer\":{\"error_message\":\"eap_peap: The users session was previously rejected: returning reject (again.), eap: Failed continuing EAP PEAP (25) session.  EAP sub-module failed: mschap: MS-CHAP2-Response is incorrect\",\"eap_type\":\"PEAP\",\"username\":\"john.doe\"},\"mfa\":false,\"auth_meta\":{\"user_password_enabled\":true,\"device_cert_enabled\":false,\"user_cert_enabled\":false,\"auth_idp\":\"JUMPCLOUD\",\"userid_type\":\"USERNAME\"},\"event_type\":\"radius_auth_attempt\",\"success\":false,\"service\":\"radius\",\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"13.14.15.16\",\"id\":\"E5223E70-F3DB-3CB4-B452-96FC2259B9EE\",\"timestamp\":\"2023-06-15T15:16:41Z\",\"username\":\"john.doe\"}",
         "event": {
-            "action": "radius_auth_attempt"
+            "action": "radius_auth_attempt",
+            "outcome": "failure"
         },
         "@timestamp": "2023-06-15T15:16:41Z",
         "action": {
@@ -214,7 +217,8 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"type\":\"user\",\"username\":\"jane.doe\"},\"auth_type\":\"eap\",\"nas_mfa_state\":\"DISABLED\",\"geoip\":{\"country_code\":\"US\",\"timezone\":\"America/New_York\",\"latitude\":42.3797,\"continent_code\":\"NA\",\"region_name\":\"Massachusetts\",\"longitude\":-71.1034,\"region_code\":\"MA\"},\"eap_type\":\"MSCHAPv2\",\"outer\":{\"eap_type\":\"PEAP\",\"username\":\"jane.doe\"},\"mfa\":false,\"auth_meta\":{\"user_password_enabled\":true,\"device_cert_enabled\":false,\"user_cert_enabled\":false,\"auth_idp\":\"JUMPCLOUD\",\"userid_type\":\"USERNAME\"},\"event_type\":\"radius_auth_attempt\",\"service\":\"radius\",\"success\":true,\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"20.21.22.23\",\"id\":\"842B7B84-FE16-32AF-B257-9D508FB22D22\",\"username\":\"jane.doe\",\"timestamp\":\"2023-06-15T15:17:41Z\"}",
         "event": {
-            "action": "radius_auth_attempt"
+            "action": "radius_auth_attempt",
+            "outcome": "success"
         },
         "@timestamp": "2023-06-15T15:17:41Z",
         "action": {
@@ -265,6 +269,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "authentication"
             ],
+            "outcome": "failure",
             "type": [
                 "info"
             ]
@@ -329,6 +334,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "authentication"
             ],
+            "outcome": "failure",
             "type": [
                 "info"
             ]
@@ -396,6 +402,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "authentication"
             ],
+            "outcome": "success",
             "type": [
                 "info"
             ]
@@ -518,7 +525,8 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"source\":\"scim\",\"id\":\"5bf6defbdcd8233029e0c599\",\"type\":\"admin\",\"email\":\"maurice.moss@sekoia.io\"},\"geoip\":{\"country_code\":\"IE\",\"timezone\":\"Europe/Dublin\",\"latitude\":53.3379,\"continent_code\":\"EU\",\"region_name\":\"Leinster\",\"region_code\":\"L\",\"longitude\":-6.2591},\"resource\":{\"id\":\"627232d9c2bb20373d84eb63\",\"type\":\"user\",\"username\":\"jane.doe\"},\"useragent\":{\"patch\":\"0\",\"os_full\":\"Other\",\"minor\":\"68\",\"major\":\"7\",\"os\":\"Other\",\"name\":\"curl\",\"os_name\":\"Other\",\"device\":\"Other\",\"version\":\"7.68.0\"},\"changes\":[{\"field\":\"addresses\",\"from\":[{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"\",\"postalCode\":\"\",\"locality\":\"\",\"id\":\"63bfde6bce2d30b9e8a6cb4c\",\"_id\":\"63bfde6bce2d30b9e8a6cb4c\",\"region\":\"\",\"extendedAddress\":\"\",\"type\":\"home\"},{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"54 rue des Petites Ecuries\",\"postalCode\":\"75010\",\"locality\":\"Paris\",\"id\":\"63bfde6bce2d30b9e8a6cb4d\",\"_id\":\"63bfde6bce2d30b9e8a6cb4d\",\"region\":\"\",\"extendedAddress\":\"\",\"type\":\"work\"}],\"to\":[{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"\",\"postalCode\":\"\",\"locality\":\"\",\"id\":\"64907cb6e968be7fe5b14d74\",\"_id\":\"64907cb6e968be7fe5b14d74\",\"region\":\"\",\"extendedAddress\":\"\",\"type\":\"home\"},{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"54 rue des Petites Ecuries\",\"postalCode\":\"75010\",\"locality\":\"Paris\",\"id\":\"64907cb6e968be7fe5b14d75\",\"_id\":\"64907cb6e968be7fe5b14d75\",\"region\":\"\",\"extendedAddress\":\"\",\"type\":\"work\"}]},{\"field\":\"company\",\"from\":\"SEKOIA.IO\",\"to\":\"Sekoia.io\"},{\"field\":\"location\",\"from\":\"Paris\",\"to\":\"France\"}],\"auth_method\":\"api key\",\"event_type\":\"user_update\",\"correlation\":{},\"service\":\"directory\",\"success\":true,\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"4.5.6.7\",\"id\":\"64907cb6e968be7fe5b14d80\",\"message_chain\":{},\"timestamp\":\"2023-06-19T16:05:10.657Z\"}",
         "event": {
-            "action": "user_update"
+            "action": "user_update",
+            "outcome": "success"
         },
         "@timestamp": "2023-06-19T16:05:10.657000Z",
         "action": {
@@ -588,7 +596,8 @@ Find below few samples of events and how they are normalized by Sekoia.io.
     {
         "message": "{\"initiated_by\":{\"id\":\"5bf6defbdcd8233029e0c599\",\"source\":\"scim\",\"type\":\"admin\",\"email\":\"maurice.moss@sekoia.io\"},\"geoip\":{\"country_code\":\"IE\",\"timezone\":\"Europe/Dublin\",\"latitude\":53.3379,\"continent_code\":\"EU\",\"region_name\":\"Leinster\",\"longitude\":-6.2591,\"region_code\":\"L\"},\"resource\":{\"id\":\"628cf9c0d6f4831f8192fa8d\",\"type\":\"user\",\"username\":\"john.wick\"},\"changes\":[{\"field\":\"addresses\",\"from\":[{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"\",\"postalCode\":\"\",\"locality\":\"\",\"_id\":\"63ebb4f66e98244ef78531d8\",\"id\":\"63ebb4f66e98244ef78531d8\",\"extendedAddress\":\"\",\"type\":\"home\",\"region\":\"\"},{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"54 Rue des Petites Ecuries\",\"postalCode\":\"75010\",\"locality\":\"Paris\",\"_id\":\"63ebb4f66e98244ef78531d9\",\"id\":\"63ebb4f66e98244ef78531d9\",\"extendedAddress\":\"\",\"type\":\"work\",\"region\":\"\"}],\"to\":[{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"\",\"postalCode\":\"\",\"locality\":\"\",\"_id\":\"64908c2ef675033f5a7a5e0f\",\"id\":\"64908c2ef675033f5a7a5e0f\",\"extendedAddress\":\"\",\"type\":\"home\",\"region\":\"\"},{\"country\":\"FR\",\"poBox\":\"\",\"streetAddress\":\"54 Rue des Petites Ecuries\",\"postalCode\":\"75010\",\"locality\":\"Paris\",\"_id\":\"64908c2ef675033f5a7a5e10\",\"id\":\"64908c2ef675033f5a7a5e10\",\"extendedAddress\":\"\",\"type\":\"work\",\"region\":\"\"}]},{\"field\":\"company\",\"from\":\"SEKOIA.IO\",\"to\":\"Sekoia.io\"},{\"field\":\"location\",\"from\":\"Paris\",\"to\":\"France\"},{\"field\":\"state\",\"from\":\"ACTIVATED\",\"to\":\"SUSPENDED\"},{\"field\":\"suspended\",\"from\":false,\"to\":true}],\"useragent\":{\"patch\":\"0\",\"os_full\":\"Other\",\"os\":\"Other\",\"minor\":\"68\",\"major\":\"7\",\"name\":\"curl\",\"os_name\":\"Other\",\"device\":\"Other\",\"version\":\"7.68.0\"},\"auth_method\":\"api key\",\"event_type\":\"user_update\",\"correlation\":{},\"service\":\"directory\",\"success\":true,\"organization\":\"641b3db57090821c0b2f8183\",\"@version\":\"1\",\"client_ip\":\"10.11.12.13\",\"id\":\"64908c2ef675033f5a7a5e1e\",\"message_chain\":{},\"timestamp\":\"2023-06-19T17:11:10.381Z\"}",
         "event": {
-            "action": "user_update"
+            "action": "user_update",
+            "outcome": "success"
         },
         "@timestamp": "2023-06-19T17:11:10.381000Z",
         "action": {

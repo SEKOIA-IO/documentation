@@ -17,6 +17,9 @@ Additionally, this documentation will offer guidance on collecting and forwardin
 !!! Warning
     Please be advised that this documentation assumes the use of the 64-bit version of NXLog. If you are using the 32-bit version, it is crucial that you replace all references to `C:\Program Files\nxlog\` in the commands and configuration files with `C:\Program Files (x86)\nxlog\`. Failure to make this adjustment may result in errors.
 
+!!! Warning
+    Please be advised that collecting Windows events with NXLog on certain Windows languages that contain accents (such as French for "Système" keyword), are not correctly encoded by NXLog and results in an error of interpreation on our product. In such case, please consider the installation of our [agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/) on the supported OS).
+    
 ## Windows Event logs
 
 On Microsoft Windows workstations and servers, most of the important hardward and software activities that are relevant for security detection and analysis, are logged into three files: 
@@ -204,7 +207,7 @@ Restart-Service nxlog
 ### Configure the concentrator to forward events to Sekoia.io
 Please read the dedicated documentation for each concentrator:
 
-* [Rsyslog](../../../ingestion_methods/rsyslog/)
+* [Rsyslog](../../../ingestion_methods/syslog/overview/)
 * [Logstash](../../../ingestion_methods/logstash/)
 * [Syslog-ng](../../../ingestion_methods/syslog-ng/)
 * [Graylog](../../../ingestion_methods/graylog/)

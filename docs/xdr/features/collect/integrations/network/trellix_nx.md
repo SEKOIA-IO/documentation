@@ -40,4 +40,4 @@ You should have:
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Trellix Network Security.
 
 ### Configure the Rsyslog server
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.

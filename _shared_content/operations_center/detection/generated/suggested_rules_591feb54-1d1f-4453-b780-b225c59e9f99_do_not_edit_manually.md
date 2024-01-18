@@ -387,17 +387,23 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     - **Effort:** advanced
 
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
     
     - **Effort:** elementary
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
 
 ??? abstract "List Shadow Copies"
     
@@ -613,7 +619,7 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -632,6 +638,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -673,7 +685,7 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -789,6 +801,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     - **Effort:** elementary
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -867,6 +885,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Control Process"
     
     Detects suspicious execution of control.exe process when used to execute a DLL file.
@@ -930,6 +954,12 @@ The following Sekoia.io built-in rules match the intake **Cisco NX-OS**. This do
 ??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
     
     Detects new commands that add new printer port which point to suspicious file
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
     
     - **Effort:** advanced
 

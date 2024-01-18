@@ -471,12 +471,6 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** advanced
 
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
@@ -488,6 +482,18 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
 
 ??? abstract "List Shadow Copies"
     
@@ -673,7 +679,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -751,7 +757,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -770,6 +776,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -805,7 +817,7 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -933,6 +945,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** elementary
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -1022,6 +1040,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
     - **Effort:** advanced
+
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
@@ -1130,6 +1154,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Regsvr32 Execution"
     

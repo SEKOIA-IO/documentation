@@ -63,7 +63,7 @@ For more information on Rsyslog configuration, please consult the next section.
 
 ### Rsyslog
 
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
 
 ## Further Reading
 - [HAProxy Official Documentation](http://www.haproxy.org/#docs)

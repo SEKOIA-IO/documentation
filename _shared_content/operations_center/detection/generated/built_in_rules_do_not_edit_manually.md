@@ -1,10 +1,16 @@
-Rules catalog includes **770 built-in detection rules** ([_last update on 2023-11-24_](rules_changelog.md)).
+Rules catalog includes **791 built-in detection rules** ([_last update on 2024-01-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
 ??? abstract "ACLight Discovering Privileged Accounts"
     
     Detects use of ACLight tool. This tool aims to discover privileged accounts by scanning the network.
+    
+    - **Effort:** advanced
+    
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
     
     - **Effort:** advanced
     
@@ -28,6 +34,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
         - 28/04/2023 - minor - Support for standard ECS FW fields
             
+??? abstract "Microsoft Windows Active Directory Module Commandlets"
+    
+    Detects use of commandlets linked to the AD Module.
+    
+    - **Effort:** advanced
+    
 **Active Scanning**
 
 ??? abstract "Burp Suite Tool Detected"
@@ -103,9 +115,27 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
             
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
+    
+    A user has attempted to login several times (brute-force) on through Rubycat PROVE IT protected devices and succeeded to login.
     
     - **Effort:** advanced
     
@@ -217,9 +247,27 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
         - 23/03/2023 - minor - The error code 50076 has been excluded as it is not a specific error code related to a login failure that we want to detect and caused several false positives.
             
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Jumpcloud Workstation"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud monitored workstations (windows, linux, mac) and succeeded to login.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Login Brute-Force Successful On Okta"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login.
+    
+    - **Effort:** advanced
+    
+??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
+    
+    A user has attempted to login several times (brute-force) on through Rubycat PROVE IT protected devices and succeeded to login.
     
     - **Effort:** advanced
     
@@ -327,6 +375,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+??? abstract "Correlation Jumpcloud User Logged In From Multiple Countries"
+    
+    Detection of login events from multiple countries on Jumpcloud portal.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Microsoft Defender for Office 365 High Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
@@ -338,6 +392,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
     
     - **Effort:** elementary
+    
+??? abstract "Okta Reuse Device Token"
+    
+    Detection of the reusing of Device Token.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Okta User Logged In From Multiple Countries"
     
@@ -1113,7 +1173,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 29/11/2023 - minor - Added a selection to filter some false positives.
             
 ??? abstract "Wmic Process Call Creation"
     
@@ -1255,6 +1315,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Correlation Linux Decode And Exec"
+    
+    A Base64 string has been decoded and executed through a pipe
+    
+    - **Effort:** intermediate
+    
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
@@ -1368,12 +1434,6 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
     
     - **Effort:** elementary
-    
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
     
 ??? abstract "Lazarus Loaders"
     
@@ -1521,11 +1581,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 26/05/2023 - minor - Added a filter to the rule as some false positives were observed.
+        - 29/11/2023 - minor - Added a filter to the rule as some false positives were observed.
             
 ??? abstract "PowerShell EncodedCommand"
     
@@ -1711,11 +1772,27 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
             
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 16/01/2024 - minor - Rename rule to fit with behavior
+            
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
     Detects suspicious DLL being loaded by an Microsoft Office Product. Considered as suspects are some .NET DLLs, clr.dll, GAC DLL, DSParse (Active Directoryi services API) or Kerberos DLLs which may be loaded by MS Office processes when executing a potentially malicious macro. The prerequisite is to log the Sysmon Event ID 7 (DLL image loaded by process). 
     
     - **Effort:** master
+    
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
     
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
@@ -1747,7 +1824,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 26/05/2023 - minor - Added a filter to the rule as some false positives were observed.
             
 ??? abstract "Suspicious PowerShell Keywords"
     
@@ -1857,7 +1934,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 26/05/2023 - minor - Added a filter to the rule as many false positives were observed.
+        - 29/11/2023 - minor - Added a selection to filter some false positives.
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -2132,6 +2209,10 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 30/11/2023 - minor - Update pattern with new lolbin
+            
 ??? abstract "HarfangLab EDR Critical Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a critical level rule (not using hlai engine)
@@ -2162,12 +2243,16 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
-??? abstract "HarfangLab EDR Process Execution Blocked"
+??? abstract "HarfangLab EDR Process Execution Blocked (HL-AI engine)"
     
-    HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
+    HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
+            
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
     HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
@@ -2955,6 +3040,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     - **Changelog:**
     
         - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+        - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -3568,6 +3654,10 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/12/2023 - minor - Exclude common legitimate processes
+            
 **Authentication Package**
 
 ??? abstract "Shell PID Injection"
@@ -3658,6 +3748,10 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 06/12/2023 - minor - Adding key words to increase detection.
+            
 **Traffic Signaling**
 
 ??? abstract "Linux Binary List TCP Connections"
@@ -3904,6 +3998,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     - **Changelog:**
     
         - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+        - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -4174,8 +4269,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 29/11/2023 - minor - Update regex pattern to insensitive case
+            
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -4209,6 +4308,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
+    
+    - **Effort:** advanced
+    
+??? abstract "Svchost Modification"
+    
+    Detects the modification of svchost in the registry.
     
     - **Effort:** advanced
     
@@ -4276,6 +4381,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious DLL side loading from ProgramData"
     
     Detects suspicious DLL side-loading from C:\ProgramData where the DLL is not signed.
@@ -4302,7 +4413,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
@@ -5170,6 +5281,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     - **Changelog:**
     
         - 14/06/2023 - major - Reworking of the rule after many FPs and a more suitable Elastic rule
+        - 22/12/2023 - minor - Adding a child process name to the filter list to avoid some FPs
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -5440,8 +5552,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 29/11/2023 - minor - Update regex pattern to insensitive case
+            
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -5475,6 +5591,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
+    
+    - **Effort:** advanced
+    
+??? abstract "Svchost Modification"
+    
+    Detects the modification of svchost in the registry.
     
     - **Effort:** advanced
     
@@ -5613,6 +5735,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious DLL side loading from ProgramData"
     
     Detects suspicious DLL side-loading from C:\ProgramData where the DLL is not signed.
@@ -5639,7 +5767,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 ## Defense Evasion
 **Obfuscated Files or Information**
@@ -5729,12 +5857,20 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
+            
 ??? abstract "Linux Binary Masquerading"
     
     Attackers could rename legitimate system bin to evade security mechanisme
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 12/12/2023 - minor - extend regex to macth more cases
+            
 ??? abstract "New Or Renamed User Account With '$' In Attribute 'SamAccountName'"
     
     Detects possible bypass EDR and SIEM via abnormal user account name.
@@ -6308,6 +6444,10 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/12/2023 - minor - Exclude common legitimate processes
+            
 **Trusted Developer Utilities Proxy Execution**
 
 ??? abstract "MSBuild Abuse"
@@ -6356,6 +6496,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
 **Deobfuscate/Decode Files or Information**
 
+??? abstract "Correlation Linux Decode And Exec"
+    
+    A Base64 string has been decoded and executed through a pipe
+    
+    - **Effort:** intermediate
+    
 ??? abstract "FromBase64String Command Line"
     
     Detects suspicious FromBase64String expressions in command line arguments
@@ -6428,6 +6574,10 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 06/12/2023 - minor - Adding key words to increase detection.
+            
 **Indirect Command Execution**
 
 ??? abstract "CVE 2022-1292"
@@ -6610,6 +6760,16 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 27/09/2023 - major - Rule creation
+            
 ??? abstract "Suspicious Regsvr32 Execution"
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
@@ -6897,6 +7057,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
 **Impair Defenses**
 
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+    
 ??? abstract "AWS CloudTrail Config Disable Channel/Recorder"
     
     Detects AWS Config Service disabling channel or recorder
@@ -7203,8 +7369,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 29/11/2023 - minor - Update regex pattern to insensitive case
+            
 ??? abstract "Netsh RDP Port Forwarding"
     
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
@@ -7289,6 +7459,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** elementary
     
+??? abstract "Rubycat PROVEIT Admin Service Modified"
+    
+    Rubycat PROVEIT has detected a service modification that could require some review if not expected.
+    
+    - **Effort:** master
+    
 ??? abstract "Ryuk Ransomware Command Line"
     
     Detects Ryuk Ransomware - Command lines stop services.
@@ -7313,6 +7489,10 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/01/2024 - minor - improve selection to avoid FP
+            
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
     Detects PowerShell commands aiming to exclude path, process, IP address, or extension from scheduled and real-time scanning. These commands can be used by attackers or malware to avoid being detected by Windows Defender. Depending on the environment and the installed software, this detection rule could raise false positives. We recommend customizing this rule by filtering legitimate processes that use Windows Defender exclusion command in your environment.
@@ -7425,6 +7605,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious DLL side loading from ProgramData"
     
     Detects suspicious DLL side-loading from C:\ProgramData where the DLL is not signed.
@@ -7451,7 +7637,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 **Modify Cloud Compute Infrastructure**
 
@@ -7612,9 +7798,13 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
-??? abstract "HackTools Suspicious Process Names"
+    - **Changelog:**
     
-    Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
+        - 02/01/2024 - minor - Rule was improved to have broader detection and filters were added.
+            
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
     
     - **Effort:** elementary
     
@@ -7832,6 +8022,7 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     - **Changelog:**
     
         - 26/10/2023 - minor - Added filter to reduce false positives.
+        - 04/01/2023 - minor - Added filter to reduce false positives.
             
 **Network Sniffing**
 
@@ -7949,12 +8140,22 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
 **Multi-Factor Authentication Interception**
 
+??? abstract "EvilProxy Phishing Domain"
+    
+    Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
-    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+            
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -8021,9 +8222,21 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     - **Effort:** intermediate
     
+??? abstract "Credentials Extraction"
+    
+    This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Google Cloud Audit Logs 2FA Disabled"
     
     Detects when Google Cloud Audit Logs notify the 2FA deactivation for a user account.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
     
     - **Effort:** intermediate
     
@@ -8031,10 +8244,11 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
     - **Changelog:**
     
+        - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
         - 03/07/2023 - minor - Added french words for the command lines.
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
@@ -8058,6 +8272,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
 **Credentials from Password Stores**
 
+??? abstract "Credentials Extraction"
+    
+    This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
     Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc. 
@@ -8086,12 +8306,22 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
 **Adversary-in-the-Middle**
 
+??? abstract "EvilProxy Phishing Domain"
+    
+    Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
-    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+            
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -8151,6 +8381,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
 ## Discovery
 **System Service Discovery**
 
+??? abstract "Anomaly Internal RDP"
+    
+    Detects uncompleted attempts to connect to a rdp session.
+    
+    - **Effort:** master
+    
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -8215,6 +8451,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
 **Remote System Discovery**
 
+??? abstract "Anomaly Internal Ping"
+    
+    Detects internal ping with uncomplete connection.
+    
+    - **Effort:** master
+    
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
@@ -8314,6 +8556,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Domain Group And Permission Enumeration"
     
     Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
+    
+    - **Effort:** advanced
+    
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
     
     - **Effort:** advanced
     
@@ -8781,12 +9029,22 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
     
 **Adversary-in-the-Middle**
 
+??? abstract "EvilProxy Phishing Domain"
+    
+    Detects subdomains potentially generated by the EvilProxy adversary-in-the-middle phishing platform. Inspect the other subdomains of the domain to identify the landing page, and determine if the user submitted credentials. This rule has a small percentage of false positives on legitimate domains.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Microsoft 365 Sign-in With No User Agent"
     
-    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing tool. Sign-ins happenning through a regular web browser always have a User-Agent header.
+    Detects a sign-in without any User-Agent header. This may indicate that the sign-in originated from an adversary-in-the-middle phishing page or a password spraying tool. Sign-ins happening through a regular web browser always have a User-Agent header. Investigate the source IP address. If it is unknown, assume that the account's password is compromised.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/12/2023 - major - Added `Login:login` request type with a filter for codes indicating failure
+            
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -9201,6 +9459,12 @@ Rules catalog includes **770 built-in detection rules** ([_last update on 2023-1
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+    
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
     
     - **Effort:** master
     

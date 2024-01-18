@@ -36,7 +36,7 @@ outputs:
 ```
 
 ### Configure the Rsyslog server
-Given this Suricata configuration, your local rsyslog server will handle produced records. Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
+Given this Suricata configuration, your local rsyslog server will handle produced records. Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
 
 ## Further Readings
 - [Suricata User Guide](https://suricata.readthedocs.io/)

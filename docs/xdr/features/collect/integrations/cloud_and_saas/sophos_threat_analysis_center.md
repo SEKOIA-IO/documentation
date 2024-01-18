@@ -42,7 +42,23 @@ Copy the Client ID and Client Secret.
 
 ### Enable logs to Sophos data lake
 
-Log on your Sophos Interface and follow [this guide](https://community.sophos.com/intercept-x-endpoint/f/recommended-reads/130364/getting-started-with-sophos-xdr-data-lake-hydration).
+By default sophos central will not send logs to the Data Lake automatically, so you have to do it manually. you will need to enable hydration for both Endpoints and Servers as you want.
+
+To enable hydrating the data lake for endpoint:
+
+1. Click **Endpoint Protection**
+2. Click **Settings**
+3. Scroll down and click **Data Lake uploads**
+4. Toggle the switch to enable **Upload to the Data Lake**
+5. (OPTIONAL) - if you want to exclude any devices, select them from the available list and move them to the excluded list
+
+To enable hydrating the data lake for server:
+
+1. Click **Server Protection**
+2. Click **Settings**
+3. Scroll down and click **Data Lake uploads**
+4. Toggle the switch to enable **Upload to the Data Lake**
+5. **(OPTIONAL)** - if you want to exclude any devices, select them from the available list and move them to the excluded list
 
 ## Create the intake
 
@@ -57,6 +73,11 @@ Log on your Sophos Interface and follow [this guide](https://community.sophos.co
 4. In `Choose a trigger`, select the `Query IOC from data lake`.
 5. Click on the `Query IOC from data lake` module on the right sidebar and in the `Module Configuration` section, select `Create new configuration`.
 6. Write a `name` and paste the `client_id` and `client_secret` from the Sophos console and click on `Save`.
+
+    !!! info
+        - If you want to change the region with your own region, you can find your region via **protect devices field**, first click on **Protect Devices**, Then copy link of any download links and finally Check the region that appears as part of the URL.
+        - No need to change the **Oauth2 Authorization Url** for the moment (this's the only endpoint to get a JWT token).
+
 7. In the `Trigger Configuration` section, click on `Create new configuration`.
 8. Write a `name`, choose a `frequency` - Default is `60` -, paste the `intake_key` associated to your `Sophos Threat Analysis Center` intake and click on `Save`.
 9. On the top right corner, start the Playbook. You should see monitoring messages in the `Logs` section.
@@ -65,3 +86,5 @@ Log on your Sophos Interface and follow [this guide](https://community.sophos.co
 ## Further Readings
 
 - [Sophos Analysis Threat Center documentation](https://doc.sophos.com/central/customer/help/en-us/ManageYourProducts/ThreatAnalysisCenter/index.html)
+- [Sophos Analysis Threat Center guide](https://community.sophos.com/intercept-x-endpoint/f/recommended-reads/130364/getting-started-with-sophos-xdr-data-lake-hydration)
+- [Identify your region](https://support.sophos.com/support/s/article/KB-000044836?language=en_US)

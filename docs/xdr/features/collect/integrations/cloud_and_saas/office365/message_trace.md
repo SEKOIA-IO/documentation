@@ -22,7 +22,7 @@ In Sekoia.io XDR, [create a new intake key](xdr/features/collect/intakes/#create
 
 ## Configure OAuth
 
-Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade) (for more information read ([How to find your Azure Active Directory tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)).
+Collect your Tenant ID from your [Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade) (for more information read ([How to find your Microsoft Entra ID (Azure AD)  tenant ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)).
 
 Add application:
 
@@ -51,7 +51,7 @@ Add required permission:
 
 Add required role:
 
-1. From the `Azure Active Directory` page
+1. From the `Microsoft Entra ID (Azure AD) ` page
 2. Open `Roles and administrators`
 3. Search and open `Global Reader`
 4. Use the `+ Add assignments` to add this role to your application

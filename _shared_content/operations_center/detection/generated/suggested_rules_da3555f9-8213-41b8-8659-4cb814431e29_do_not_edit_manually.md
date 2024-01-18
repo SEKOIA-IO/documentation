@@ -92,9 +92,3 @@ The following Sekoia.io built-in rules match the intake **Panda Security SIEM Fe
     Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** elementary
-
-??? abstract "Windows Registry Persistence COM Key Linking"
-    
-    Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
-    
-    - **Effort:** master

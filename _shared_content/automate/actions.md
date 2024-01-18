@@ -44,14 +44,15 @@ The Actions Library lists all available actions in playbooks with their detailed
 
 #### How to update an alert status
 
-To update an alert status, you need to copy the `action_uuid` corresponding to the needed action.
+To update an alert status, you need to copy the `status_uuid` corresponding to the needed action.
 
-| Action | Description | action_uuid |
+| Action | Description | status_uuid |
 | --- | --- | --- |
-| Acknowledge | Acknowledge the alert | `937bdabf-6a08-434b-b6d3-d7447e4e452a` |
-| Validate | Validate alert | `c39a0a95-aa2c-4d0d-8d2e-d3decf426eea` |
-| Reject | Reject alert | `ade85d7b-7507-4026-bfc6-cc006d10ddac` |
-| Close | Close alert | `1390be4e-ced8-4dd6-9bed-573471b235ab` |
+| Pending | This alert needs to be addressed | `2efc4930-1442-4abb-acf2-58ba219a4fd0` |
+| Acknowledge | Alert will be evaluated (true or false positive?) | `8f206505-af6d-433e-93f4-775d46dc7d0f` |
+| Ongoing | Alert might be a true positive and action must be taken | `1f2f88d5-ff5b-48bf-bbbc-00c2fff82d9f` |
+| Reject | It is a false positive or the alert will be not addressed | `4f68da89-38e0-4703-a6ab-652f02bdf24e` |
+| Close | It was a true positive and the alert has been addressed | `1738b1c1-767d-489e-bada-19176621a007` |
 
 ## Notifications
 
@@ -95,7 +96,8 @@ These helpers need their associated trigger to function properly:
 
 ## Third-party applications
 
-- [Azure AD](library/azure-active-directory.md)
+- [Microsoft Entra ID (Azure AD) ](library/entra-id.md)
+- [Microsoft Remote Server](library/microsoft-remote-server.md)
 - [Fortigate Firewalls](library/fortigate-firewalls.md)
 - [HarfangLab](library/harfanglab.md)
 - [Panda Security](library/panda-security.md)

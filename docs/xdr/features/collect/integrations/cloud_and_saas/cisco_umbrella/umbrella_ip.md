@@ -24,7 +24,7 @@ logger -t iplogs -f <YYYY>-<MM>-<DD>-<hh>-<mm>-<xxxx>.csv
 ```
 
 ### Configure the Rsyslog server
-Please consult the [Rsyslog Transport](../../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](../../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
 
 
 ## Further Readings

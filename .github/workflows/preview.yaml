@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         id: setup-python
         with:
           python-version: '3.11'
@@ -33,7 +33,7 @@ jobs:
 
       - name: Load cached venv
         id: cached-poetry-dependencies
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v3.3.3
         with:
           path: .venv
           key: poetry-${{ runner.os }}-python${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('poetry.lock') }}

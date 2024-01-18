@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
 ??? abstract "APT29 Fake Google Update Service Install"
     
     This method detects malicious services mentioned in APT29 report by FireEye. The legitimate path for the Google update service is C:\Program Files (x86)\Google\Update\GoogleUpdate.exe so the service names and executable locations used by APT29 are specific enough to be detected in log files.
@@ -102,6 +108,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 ??? abstract "Adexplorer Usage"
     
     Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
+
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
     
     - **Effort:** advanced
 
@@ -753,9 +765,9 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
-??? abstract "HackTools Suspicious Process Names"
+??? abstract "HackTools Suspicious Names"
     
-    Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
+    Quick-win rule to detect the default process names or file names of several HackTools.
     
     - **Effort:** elementary
 
@@ -795,9 +807,9 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
-??? abstract "HarfangLab EDR Process Execution Blocked"
+??? abstract "HarfangLab EDR Process Execution Blocked (HL-AI engine)"
     
-    HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
+    HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
 
@@ -884,12 +896,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
     
     - **Effort:** advanced
-
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
 
 ??? abstract "LSASS Access From Non System Account"
     
@@ -1273,7 +1279,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -1345,7 +1351,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "NlTest Usage"
     
@@ -1387,7 +1393,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -1418,6 +1424,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -1501,7 +1513,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -1755,6 +1767,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "Remote Privileged Group Enumeration"
     
     Detects remote listing of local privileged group. Potential false positives, which should justify alert filters, are service accounts and administrators doing maintenance.
@@ -2001,6 +2019,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
     Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
@@ -2175,6 +2199,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** master
 
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Regsvr32 Execution"
     
     Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
@@ -2264,6 +2294,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects svchost process hijacking through DLL loading. IKEEXT and SessionEnv service, as they call LoadLibrary on files that do not exist within C:\Windows\System32\ by default. An attacker can place their malicious logic within the PROCESS_ATTACH block of their library and restart the aforementioned services "svchost.exe -k netsvcs" to gain code execution on a remote machine.
     
     - **Effort:** master
+
+??? abstract "Svchost Modification"
+    
+    Detects the modification of svchost in the registry.
+    
+    - **Effort:** advanced
 
 ??? abstract "Svchost Wrong Parent"
     

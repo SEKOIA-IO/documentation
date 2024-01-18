@@ -6,7 +6,7 @@ type: intake
 
 Sekoia.io provides its own agent allowing to collect interresting events with a minimal configuration overhead. This agent sends events directly to Sekoia.io.
 
-### Disclamer
+### Disclaimer
 
 !!! INFO
     The Sekoia.io Endpoint Detection Agent preserves the integrity of logs collected from the operating system event log, it does NOT modify or rewrite logs.
@@ -35,10 +35,25 @@ The Endpoint Detection Agent supports the following operating systems, **on 64 b
     * CentOS 7 and newer
     * Redhat 7 and newer
 
+## Prerequisites
+The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has an automatic update mechanism. Therefore, it is necessary to open the following streams:
+
+=== "FRA1"
+
+    * https://intake.sekoia.io/
+    * https://api.sekoia.io/
+
+=== "FRA2"
+    * https://fra2.app.sekoia.io/
+
+=== "MCO1"
+    * https://mco1.app.sekoia.io/
+
+
 
 ## Installation
 
-### Disclamer
+### Disclaimer
 
 !!! Warning
 	If you want to install this agent on a machine that already has an EDR in place, be aware that most EDR perform actions on the machines to detect malwares or other types of threats. Those actions generate events that are collected by our agent. This may result to the raising of false positive alerts from our detection rules of effort level 3 and 4. It's important for customers to fine-tune these rules to reduce the occurrence of false positives.
@@ -102,7 +117,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     sudo systemctl status SEKOIAEndpointAgent.service
     ```
 
-Once installed, the agent collects event logs, normalizes them and sends them to SEKOIA.IO. The contacted domain `intake.sekoia.io` uses the ip `51.159.9.95`. The protocol used to send events is HTTPS (443).
+Once installed, the agent collects event logs, normalizes them and sends them to Sekoia.io. The protocol used to send events is HTTPS (443).
 
 #### journald configuration
 
@@ -125,6 +140,17 @@ To disable audit logging the following should be done as root:
        
        
 A reboot may be necessary if the audit events are still appearing in the logs.
+
+#### Setting the region
+
+When installing the agent it is possible to specify the region the agent will communicate with. 
+To do it simply append `--region <region_name>` at the end of the command. 
+
+For example if the agent must communicate with `fra2` the following command can be executed:
+
+```shell
+agent.exe install --intake-key <INTAKE_KEY> --region fra2
+```
 
 ### Update
 
@@ -324,19 +350,20 @@ If you want to enable this feature, follow these steps:
 
 1. Edit the configuration file at:
 	
-	=== "Windows"
+=== "Windows"
 	
-	    ```
-	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-	    ```
+     ```
+     C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+     ```
 	
-	=== "Linux"
+=== "Linux"
 	
-	    ```
-	    /etc/endpoint-agent/config.yaml
-	    ```
+     ```
+     /etc/endpoint-agent/config.yaml
+     ```
 
 2. Add the following line:
+
     ```
     HTTPProxyURL: "<PROXY_URL>"
     ```
@@ -351,7 +378,7 @@ The proxy URL should follow the format `http://user:pass@host:port`.
 
     #### Install Sysmon
 
-    If you want to improve detection and investigation capabilities, you may want to enable Sysmon. When installed, the Sekoia.io Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
+    You have the ability to collect additional events with using Sysmon. When installed, the Sekoia.io Agent will automatically collect logs produced by Sysmon if they are not already collected by the agent.
 
     !!! warning
     	The installation of this tool will generate more logs which will consume more CPU resources. Install it on equipment that are correctly 		dimensioned, or try it on low risk assets at first.

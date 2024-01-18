@@ -13,4 +13,4 @@ Unbound is a validating, recursive, and caching DNS resolver product from NLnet 
 This setup guide will show you how to forward logs produced by your Unbound server to Sekoia.io by means of an rsyslog transport channel.
 
 ### Configure the Rsyslog server
-Please consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
+Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.

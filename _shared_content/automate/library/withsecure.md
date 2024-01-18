@@ -13,7 +13,7 @@ Interact with WithSecure Elements
 
 ## Triggers
 
-### Fetch security events [beta]
+### Fetch security events
 
 Get last security events
 
@@ -64,7 +64,17 @@ Release a device from network isolation.
 | --------- | ------- | --------------------------- |
 | `target` | `string` | Device identifier of the computer to release. |
 
+### Scan Device For Malware
+
+Scan Device For Malware.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `target` | `string` | Device identifier to scan for malware. |
+
 
 ## Extra
 
-Module **`WithSecure` v2.7**
+Module **`WithSecure` v2.11.1**

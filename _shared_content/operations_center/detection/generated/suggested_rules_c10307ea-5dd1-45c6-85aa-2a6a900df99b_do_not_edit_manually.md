@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Elastic Winlogbeat on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_c10307ea-5dd1-45c6-85aa-2a6a900df99b_do_not_edit_manually.json){ .md-button }
+??? abstract "AMSI Deactivation Using Registry Key"
+    
+    The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
+    
+    - **Effort:** master
+
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -48,6 +54,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Adexplorer Usage"
     
     Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
+
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
     
     - **Effort:** advanced
 
@@ -182,6 +194,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
     
     - **Effort:** master
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Chafer (APT 39) Activity"
     
@@ -348,6 +366,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
+    
+    - **Effort:** advanced
+
+??? abstract "Disabled Service"
+    
+    Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
     
     - **Effort:** advanced
 
@@ -531,9 +555,9 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
-??? abstract "HackTools Suspicious Process Names"
+??? abstract "HackTools Suspicious Names"
     
-    Detects the default process name of several HackTools. This rule is here for quickwins as it obviously has many blind spots.
+    Quick-win rule to detect the default process names or file names of several HackTools.
     
     - **Effort:** elementary
 
@@ -591,6 +615,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** intermediate
 
+??? abstract "Interactive Terminal Spawned via Python"
+    
+    Identifies when a terminal (tty) is spawned via Python. Attackers may upgrade a simple reverse shell to a fully interactive tty after obtaining initial access to a host.
+    
+    - **Effort:** advanced
+
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -609,12 +639,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
@@ -626,6 +650,18 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
+
+??? abstract "Linux Shared Lib Injection Via Ldso Preload"
+    
+    Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
 
 ??? abstract "List Shadow Copies"
     
@@ -871,7 +907,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -931,7 +967,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "NlTest Usage"
     
@@ -967,7 +1003,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Outlook Registry Access"
     
@@ -998,6 +1034,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
+    
+    - **Effort:** advanced
 
 ??? abstract "Phorpiex DriveMgr Command"
     
@@ -1075,7 +1117,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects a Powershell process that contains download commands in its command line string
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -1179,6 +1221,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Python Exfiltration Tools"
+    
+    Python has some built-in modules or library that could be installed and later be used as exflitration tool by an attacker
+    
+    - **Effort:** advanced
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
@@ -1269,6 +1317,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Register New Logon Process"
     
     Detects potential use of Rubeus through registering a new logon process. This rule needs the EventID 4611, which can be configured through Group Policies (Audit Security System Extension)
@@ -1286,6 +1340,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
+
+??? abstract "SELinux Disabling"
+    
+    An attacker can disable SELinux to make workstation or server compromise easier as it disables several protections.
+    
+    - **Effort:** intermediate
 
 ??? abstract "SOCKS Tunneling Tool"
     
@@ -1359,6 +1419,18 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Socat Relaying Socket"
+    
+    Socat is a linux tool used to relay local socket or internal network connection, this technics is often used by attacker to bypass security equipment such as firewall
+    
+    - **Effort:** advanced
+
+??? abstract "Socat Reverse Shell Detection"
+    
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
+    
+    - **Effort:** intermediate
+
 ??? abstract "SolarWinds Suspicious File Creation"
     
     Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
@@ -1430,6 +1502,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
     
     - **Effort:** advanced
+
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Commands From MS SQL Server Shell"
     
@@ -1550,6 +1628,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious Regsvr32 Execution"
     
@@ -1724,6 +1808,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
+
+??? abstract "Venom Multi-hop Proxy agent detection"
+    
+    Detects Venom Multi-hop Proxy agent.
+    
+    - **Effort:** intermediate
 
 ??? abstract "WCE wceaux.dll Creation"
     
