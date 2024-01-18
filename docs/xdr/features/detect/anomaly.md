@@ -40,7 +40,8 @@ For a complete configuration, you need to set:
 ![!](/assets/xdr/rules/anomaly/172567318-cb8d9304-b86b-4b2e-ab21-8e43b177324b.png)
 
 !!! Note
-    `Time to raise an Anomaly alert = 30 minutes + 2*Time interval`, after the behaviour matches the detection pattern based on Aggregation mechanism
+    **Time to raise an anomaly alert equals 30 minutes + 2*time interval**
+    The anomaly alert is raised after it matches the detection pattern based on the selected aggregation mechanism. 
 
 - type of anomalies you want to detect (high, low or both)
 
