@@ -30,6 +30,117 @@ In details, the following table denotes the type of events produced by this inte
 Find below few samples of events and how they are normalized by Sekoia.io.
 
 
+=== "ioc_view_no_pwd_set.json"
+
+    ```json
+	
+    {
+        "message": "{\"upload_size\":1359,\"profile_path\":\"-\",\"record_identifier\":\"azertyuiop\",\"ioc_severity\":4,\"user_parameters\":\"-\",\"ioc_detection_sigma\":\"{\\\"id\\\":\\\"EVENT-0000.star\\\",\\\"logsource\\\":{\\\"dedup_fields\\\":[\\\"machine_data.name\\\"]}}\",\"folded\":0,\"meta_mac_address\":\"00:00:00:00:00:00\",\"endpoint_id\":\"aaa-aaaa-aaa-aaa\",\"meta_public_ip_country_code\":\"FR\",\"schema_version\":\"23\",\"subject_logon_id\":\"0x111\",\"ioc_detection_mitre_attack\":\"[]\",\"user_workstations\":\"-\",\"meta_licence\":\"\",\"ioc_detection_experiment_level\":0,\"privilege_list\":\"-\",\"ioc_created_at\":\"2024-01-17T12:47:16.441Z\",\"ingestion_timestamp\":\"2024-01-17T12:46:35.825Z\",\"home_directory\":\"-\",\"ioc_detection_attack\":\"Suspicious Activity\",\"numerics\":false,\"eventid\":1234,\"meta_public_ip\":\"0.0.0.0\",\"counter\":0,\"detection_id_dedup\":\"aaaaaa\",\"password_last_set\":\"-\",\"meta_hostname\":\"xxxxxx\",\"ioc_detection_references\":\"[\\\"https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4738\\\"]\",\"ioc_worker_name\":\"Security Event Service\",\"ioc_detection_type\":\"Threat\",\"ioc_detection_category\":\"Threat\",\"ioc_unix_time\":\"2024-01-17T12:46:21.000Z\",\"epoch\":1705494131,\"meta_ip_mask\":\"255.255.252.0\",\"ioc_worker_id\":\"security-event-service\",\"unix_time\":\"2024-01-17T12:46:21.000Z\",\"ioc_log_type\":\"summary\",\"query_source\":\"xdr_only\",\"host_identifier\":\"AAA-AAAA-AAA-AAAA\",\"partition_bucket\":\"87\",\"home_path\":\"-\",\"meta_public_ip_country\":\"France\",\"meta_boot_time\":1705494314,\"subject_username\":\"XXXX\",\"meta_os_name\":\"Microsoft Windows 10 Professionnel\",\"osquery_action\":\"added\",\"script_path\":\"-\",\"account_expires\":\"-\",\"meta_query_pack_version\":\"1.18.1\",\"subject_domain\":\"TEST\",\"calendar_time\":\"2024-01-17T12:46:21.000Z\",\"meta_eid\":\"aaaa-aaa-aaa\",\"meta_public_ip_longitude\":1.111,\"ioc_detection_id\":\"WIN-EVENT-1111\",\"meta_os_platform\":\"windows\",\"meta_username\":\"\",\"detection_identifier\":\"aaaaaa\",\"query_name\":\"windows_event_user_account_changed\",\"provider_name\":\"Microsoft-Windows-Security-Auditing\",\"meta_os_type\":\"\",\"meta_os_version\":\"10.0.19045\",\"sam_account_name\":\"-\",\"meta_public_ip_latitude\":1.111,\"source\":\"Security\",\"ioc_detection_licenses\":\"[\\\"MTR\\\",\\\"MTRE\\\"]\",\"user_principal_name\":\"-\",\"description\":\"A User Account was changed\",\"meta_aggressive_activity\":\"False\",\"meta_ip_address\":\"1.1.1.1\",\"ingest_date\":\"2024-01-17\",\"target_domain\":\"Domain-name\",\"uac\":\"-\",\"meta_endpoint_type\":\"computer\",\"meta_domain_controller\":\"False\",\"customer_id\":\"aa-aaa-aaa-aaa\",\"ioc_detection_description\":\"Windows Event User Account Changed.\",\"message_identifier\":\"aaaaaa\",\"ioc_attack_type\":\"Security Event Service Detections\",\"target_username\":\"Administrateur\",\"display_name\":\"-\",\"allowed_to_delegate_to\":\"-\",\"ioc_detection_weight\":4}",
+        "event": {
+            "code": "WIN-EVENT-1111",
+            "ingested": "2024-01-17T12:46:35.825000Z",
+            "kind": "event",
+            "reason": "A User Account was changed",
+            "severity": 4
+        },
+        "@timestamp": "2024-01-17T12:46:21Z",
+        "destination": {
+            "address": "Domain-name",
+            "domain": "Domain-name"
+        },
+        "host": {
+            "domain": "TEST",
+            "id": "AAA-AAAA-AAA-AAAA",
+            "name": "xxxxxx",
+            "os": {
+                "full": "Microsoft Windows 10 Professionnel",
+                "name": "windows",
+                "version": "10.0.19045"
+            }
+        },
+        "process": {
+            "name": "Security Event Service"
+        },
+        "related": {
+            "hosts": [
+                "Domain-name"
+            ],
+            "ip": [
+                "0.0.0.0",
+                "1.1.1.1"
+            ]
+        },
+        "sophos": {
+            "threat_center": {
+                "aggressive_activity": "False",
+                "detection_id_dedup": "aaaaaa",
+                "endpoint": {
+                    "type": "computer"
+                },
+                "event": {
+                    "id": 1234
+                },
+                "id": "aaa-aaaa-aaa-aaa",
+                "ioc": {
+                    "attack_type": "Security Event Service Detections",
+                    "detection": {
+                        "attack": "Suspicious Activity",
+                        "category": "Threat",
+                        "licences": [
+                            "MTR",
+                            "MTRE"
+                        ],
+                        "sigma": {
+                            "id": "EVENT-0000.star"
+                        },
+                        "type": "Threat",
+                        "weight": "4"
+                    },
+                    "log_type": "summary",
+                    "unix_time": "2024-01-17T12:46:21.000000Z"
+                },
+                "message": {
+                    "id": "aaaaaa"
+                },
+                "query": {
+                    "action": "added",
+                    "name": "windows_event_user_account_changed",
+                    "pack_version": "1.18.1",
+                    "source": "xdr_only"
+                },
+                "record_identifier": "azertyuiop",
+                "worker": {
+                    "id": "security-event-service"
+                }
+            }
+        },
+        "source": {
+            "address": "1.1.1.1",
+            "bytes": 1359,
+            "geo": {
+                "country_iso_code": "FR",
+                "country_name": "France"
+            },
+            "ip": "1.1.1.1",
+            "mac": "00:00:00:00:00:00",
+            "nat": {
+                "ip": "0.0.0.0"
+            }
+        },
+        "user": {
+            "target": {
+                "name": "Administrateur"
+            }
+        },
+        "vulnerability": {
+            "description": "Windows Event User Account Changed.",
+            "reference": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4738"
+        }
+    }
+    	
+	```
+
+
 === "ioc_view_query.json"
 
     ```json
