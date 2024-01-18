@@ -347,6 +347,7 @@ Here's a non-exhaustive list of kind of events the agent is able to detect
 
 If needed, the Sekoia.io agent can use a proxy server for its HTTPS requests. 
 If you want to enable this feature, follow these steps: 
+
 1. Edit the configuration file at:
 	
 === "Windows"
@@ -362,9 +363,10 @@ If you want to enable this feature, follow these steps:
      ```
 
 2. Add the following line:
-     ```
-     HTTPProxyURL: "<PROXY_URL>"
-     ```
+
+    ```
+    HTTPProxyURL: "<PROXY_URL>"
+    ```
 
 If you want to automate the installation of the agent with this configuration option, make sure that a `config.yaml` file with this line is present in the working directory before launching the install command.
 
