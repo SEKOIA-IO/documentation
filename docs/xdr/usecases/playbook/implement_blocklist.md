@@ -26,6 +26,12 @@ The implementation of the blocklist in Sekoia.io is based on the [IOC Collection
 
 > To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
 
+## Create your IOC Collection
+
+Our recommandation is to create a dedicated IOC Collection per artifact type (IP addres, domain, URL...) to serve as a blocklist as it will be easier to maintain in time. You can follow this [documentation](../../../cti/features/consume/ioccollections.md) to create a new IOC Collection - no need to import data into it at this point.
+
+Once the IOC Collection is created, go back to the `IOC Collections` page, use the three dots next to the newly created IOC Collection and select `Copy Feed ID`. Keep this value safe for later use.
+
 ## Create your playbook
 
 Playbook templates were created to ease the process of setting up the playbooks to send the notifications to Slack or Teams. 
@@ -42,10 +48,6 @@ To create one, follow these steps:
 
 ![Examples of blocklist playbook templates](../../../assets/operation_center/playbooks/blocklist-templates.png)
 
-## Create your IOC Collection
-
-Our recommandation is to create a dedicated IOC Collection per artifact type (IP addres, domain, URL...) to serve as a blocklist as it will be easier to maintain in time. You can follow this [documentation](../../../cti/features/consume/ioccollections.md) to create a new IOC Collection - no need to import data into it at this point.
-Once the IOC Collection is created, go back to the `IOC Collections` page, use the three dots next to the newly created IOC Collection and select `Copy Feed ID`. Keep this value safe for later use.
 
 ## Configure your playbook
 
@@ -57,7 +59,8 @@ Once your playbook is created, the following configuration steps are required:
 
 ## Configure your network security solution
 
-The network security solution that will retrieve the IOC Collection content must be able to authenticate itself against Sekoia.io. 
+!!! warn
+    The network security solution that will retrieve the IOC Collection content must be able to authenticate itself against Sekoia.io. 
 
 The URL to use to retrieve the content of the IOC Collection is `https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=text&limit=10000&skip_expired=true&include_revoked=false`. As specified in this URL, the maximum number of indicators that can be retrieved is limited to 10,000. Basic authentication mechanism is supported with `username` as user name and the API Key as password.
 
