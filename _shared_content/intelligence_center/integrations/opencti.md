@@ -84,7 +84,7 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
 
 2. Navigate the Sekoia Intelligence Feed
    
-   Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
+Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
 
 |OpenCTI|Sekoia.io|
 |--|--|
@@ -96,14 +96,14 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
 
 3. Find a Sekoia.io Indicator
    
-   Here is an example with an indicator:
-    - In **Sekoia.io**, search for the indicator `blog.google` in the Intelligence Page
+Here is an example with an indicator:
+- In **Sekoia.io**, search for the indicator `blog.google` in the Intelligence Page
         ![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png){: style="width: 100%; max-width: 100%"}
     
-    - In **OpenCTI**, look for this indicator in the Data page
+- In **OpenCTI**, look for this indicator in the Data page
     ![OpenCTI_search2](/assets/intelligence_center/opencti_indicator_search2.png){: style="width: 100%; max-width: 100%"}
     
-    - The content of the indicator will look like the one below
+- The content of the indicator will look like the one below
     ![OpenCTI_Sekoia_search2](/assets/intelligence_center/sekoia_indicator.png){: style="width: 100%; max-width: 100%"}
 
 ## Troubleshoot
