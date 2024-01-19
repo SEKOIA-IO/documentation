@@ -43,18 +43,18 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
     ```
 
 2. Replace the following parameters:
-    - `CONNECTOR_ID`=_Replace_by_email_ or an UUID4
-    - `CONNECTOR_SCOPE` =_identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator,campaign,infrastructure,relationship_ => Sekoia Intelligence elements set to be exported in OpenCTI that can be chosen in this list
-    - `SEKOIA_API_KEY`=_Sekoia API key with CTI_Permissions_
-    - `SEKOIA_START_DATE`=_<start_date_to_retrieve_feed>_ e.g. _2023-05-01_
+    - `CONNECTOR_ID`= Replace_by_email or an UUID4
+    - `CONNECTOR_SCOPE` = identity,attack-pattern,course-of-action,intrusion-set,malware,tool,report,location,vulnerability,indicator,campaign,infrastructure,relationship => Sekoia Intelligence elements set to be exported in OpenCTI that can be chosen from this list
+    - `SEKOIA_API_KEY`= Sekoia API key with CTI_Permissions
+    - `SEKOIA_START_DATE`= <start_date_to_retrieve_feed> e.g. 2023-05-01
 
 3. Build and launch Sekoia connector
     - Build    `docker-compose pull connector-sekoia`
     - Run      `docker-compose up -d connector-sekoia`
-
-!!!note
-    Sekoia connector should be named **connector-sekoia** as described in the previous section. 
-    To check all connectors available and set in the server, type `docker-compose ps`. 
+    
+    !!!note
+        Sekoia connector should be named **connector-sekoia** as described in the previous section. 
+        To check all connectors available and set in the server, type `docker-compose ps`. 
 
 4. Check if Sekoia connector is running
     ```
@@ -63,28 +63,28 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
 
 ## Connect to OpenCTI
 
-1. In a Web browser, type the following: [http://server_ip:port/dashboard)](http://server_ip:port/dashboard)
+1. In a Web browser, type the following URL and replace `server_IP` and `port` by their values: http://server_ip:port/dashboard
     ![OpenCTI_login](/assets/intelligence_center/opencti_1.png){: style="width: 40%; max-width: 40%"}
 
 2. Enter your login and password set in the **.env** file
 
 ## Sekoia Intelligence in OpenCTI
 
-1. First of all, check if the connector is running and up to date
-   To do so, go to Sekoia connector **Data > Connectors > Sekoia.io**
+1. First of all, check if the connector is running and up to date. Go to Sekoia connector **Data > Connectors > Sekoia.io**
     ![OpenCTI_Sekoia_connector1](/assets/intelligence_center/opencti_2.png){: style="width: 60%; max-width: 60%"}
 
-    In this page, you can find the following information: 
+    On this page, you can find the following information: 
    
     - `Update date`:  Last update date of the connector in OpenCTI
     - `Status`:   Status of the connector in OpenCTI
-    - `Perimeter`:    Sekoia Intelligence feed set for import in _docker-compose.yml_ file under **CONNECTOR_SCOPE**
-    - `Last cursor`:  **SEKOIA_START_DATE** set in _docker-compose.yml_ file in base64 format
+    - `Perimeter`:    Sekoia Intelligence feed set for import in `docker-compose.yml` file under **CONNECTOR_SCOPE**
+    - `Last cursor`:  **SEKOIA_START_DATE** set in `docker-compose.yml` file in base64 format
 
     ![OpenCTI_Sekoia_connector2](/assets/intelligence_center/opencti_3.png){: style="width: 80%; max-width: 80%"}
 
 2. Navigate the Sekoia Intelligence Feed
-    Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
+   
+   Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
 
     |OpenCTI|Sekoia.io|
     |--|--|
@@ -94,8 +94,9 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
     |Techniques|Intrusion-sets|
     |Data|Indicators|
 
-3. Find a Sekoia.io Indicator? 
-    Here is an example with an indicator
+4. Find a Sekoia.io Indicator
+   
+   Here is an example with an indicator
     - In **Sekoia.io**, search for the indicator `blog.google` in the Intelligence Page
         ![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png){: style="width: 100%; max-width: 100%"}
     
