@@ -97,6 +97,7 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
 3. Find a Sekoia.io Indicator
    
     Here is an example with an indicator:
+   
     - In **Sekoia.io**, search for the indicator `blog.google` in the Intelligence Page
             ![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png){: style="width: 100%; max-width: 100%"}
         
