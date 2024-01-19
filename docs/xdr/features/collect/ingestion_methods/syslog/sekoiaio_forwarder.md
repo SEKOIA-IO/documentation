@@ -242,21 +242,38 @@ sudo docker compose rm
 
 You can't find the logs in your community? No worries this section will give you an advice to identify what is happening.
 
-### Step 1: check if the events are received by the concentrator
+### Step 1: check if the events are received by the forwarder
 
-To check if the events are received by the concentrator, you can run the following command that will display all the last logs received:
+To check if the events are received by the forwarder, you can activate the debug mode for a specific Intake. The debug mode will display all logs that are received and sent by the forwarder associated with a specific Intake, in the standard output of the container (`docker logs`).
+To activate the debug mode, simply add `debug: True` in the definition of the Intake you want, in the `intakes.yaml` file.
+
+Example:
+```yaml
+- name: Techno2
+  protocol: tcp
+  port: 20517
+  intake_key: INTAKE_KEY_FOR_TECHNO_2
+  debug: True
+```
+
+Then rebuild the container and start it:
+```yaml
+docker compose down && docker compose up -d
+```
+
+Now, you can run the following command and display all the last logs received for the Intakes with the mode debug activated:
 
 ```bash
 sudo docker compose logs
 ```
 
-To view container logs for a specific intake when using the Debug variable:
+To view container logs for a specific intake when using the debug variable:
 
 ```bash
 sudo docker compose logs | grep "YOUR_INTAKE_KEY"
 ```
 
-Finally, if you want to check if events are coming in real time:
+Finally, if you want to check events coming in real time for Intakes with the debug variable:
 
 ```bash
 sudo docker compose logs -f
