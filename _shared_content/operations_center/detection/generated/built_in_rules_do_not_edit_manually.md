@@ -1,4 +1,4 @@
-Rules catalog includes **791 built-in detection rules** ([_last update on 2024-01-16_](rules_changelog.md)).
+Rules catalog includes **792 built-in detection rules** ([_last update on 2024-01-19_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8528,6 +8528,12 @@ Rules catalog includes **791 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Advanced IP Scanner"
     
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+    
+??? abstract "Anomaly Internal Port Connection"
+    
+    Detects multiple scan of different ports.
     
     - **Effort:** master
     
