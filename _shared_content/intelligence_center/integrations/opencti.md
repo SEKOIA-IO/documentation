@@ -86,17 +86,17 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
    
    Here are the elements of the Sekoia feed that can be found on OpenCTI after export:
 
-    |OpenCTI|Sekoia.io|
-    |--|--|
-    |Analysis|Threat-reports|
-    |Observations|Sightings|
-    |Arsenal|Malwares|
-    |Techniques|Intrusion-sets|
-    |Data|Indicators|
+|OpenCTI|Sekoia.io|
+|--|--|
+|Analysis|Threat-reports|
+|Observations|Sightings|
+|Arsenal|Malwares|
+|Techniques|Intrusion-sets|
+|Data|Indicators|
 
-4. Find a Sekoia.io Indicator
+3. Find a Sekoia.io Indicator
    
-   Here is an example with an indicator
+   Here is an example with an indicator:
     - In **Sekoia.io**, search for the indicator `blog.google` in the Intelligence Page
         ![OpenCTI_search1](/assets/intelligence_center/opencti_indicator_search1.png){: style="width: 100%; max-width: 100%"}
     
