@@ -17,12 +17,12 @@ The implementation of a blocklist in Sekoia.io is based on the [IOC Collections]
 - A Sekoia.io XDR licence
 - The user that configures the playbooks should have a Role that contains:
 	* The SYMPHONY permissions
-- An API Key with the `Analyst` role or a custom role that contains at least the following permission for the playbook:
+- An API Key with the **Analyst** role or a custom role that contains at least the following permission for the playbook:
 	* SIC_READ_ALERTS
     * SIC_READ_INTAKES
     * INTHREAT_READ_IOC_COLLECTIONS
     * INTHREAT_WRITE_IOC_COLLECTIONS
-- An API Key with the `Read Only` role or a custom role that contains the following permission to authenticate the network security solutions:
+- An API Key with the **Guest** role or a custom role that contains the following permission to authenticate the network security solutions:
     * INTHREAT_READ_IOC_COLLECTIONS
 
 > To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
