@@ -1,4 +1,4 @@
-Rules catalog includes **792 built-in detection rules** ([_last update on 2024-01-19_](rules_changelog.md)).
+Rules catalog includes **792 built-in detection rules** ([_last update on 2024-01-22_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -3137,6 +3137,10 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/01/2024 - minor - Added filter to reduce false positives.
+            
 ??? abstract "Usage Of Sysinternals Tools"
     
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).

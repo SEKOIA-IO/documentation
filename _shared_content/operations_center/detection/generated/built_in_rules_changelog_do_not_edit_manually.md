@@ -1,9 +1,12 @@
-Changelog _last update on 2024-01-19_
+Changelog _last update on 2024-01-22_
 
 ## Changelog
 
 ### Suspicious CodePage Switch with CHCP
   - 16/01/2024 - minor - Rename rule to fit with behavior
+    
+### Usage Of Procdump With Common Arguments
+  - 15/01/2024 - minor - Added filter to reduce false positives.
     
 ### Windows Registry Persistence COM Search Order Hijacking
   - 11/01/2024 - minor - Adding filtering for some FPs
