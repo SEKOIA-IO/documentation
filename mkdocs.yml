@@ -276,6 +276,7 @@ nav:
         - Check Point: xdr/features/automate/library/check-point.md
         - CrowdStrike: xdr/features/automate/library/crowdstrike.md
         - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
+        - CrowdStrike Falcon: xdr/features/automate/library/crowdstrike-falcon.md
         - Cybereason: xdr/features/automate/library/cybereason.md
         - Darktrace: xdr/features/automate/library/darktrace.md
         - Detection Rules: xdr/features/automate/library/detection-rules.md
@@ -463,6 +464,7 @@ nav:
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
         - Check Point: tip/features/automate/library/check-point.md
         - CrowdStrike: tip/features/automate/library/crowdstrike.md
+        - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - CrowdStrike Falcon: tip/features/automate/library/crowdstrike-falcon.md
         - Cybereason: tip/features/automate/library/cybereason.md
         - Darktrace: tip/features/automate/library/darktrace.md
