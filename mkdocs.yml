@@ -332,6 +332,7 @@ nav:
         - VirusTotal: xdr/features/automate/library/virustotal.md
         - Whois: xdr/features/automate/library/whois.md
         - WithSecure: xdr/features/automate/library/withsecure.md
+        - Zscaler: xdr/features/automate/library/zscaler.md
       - Debug playbooks: xdr/features/automate/debug-playbooks.md
     - External integrations:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
@@ -519,6 +520,7 @@ nav:
         - VirusTotal: tip/features/automate/library/virustotal.md
         - Whois: tip/features/automate/library/whois.md
         - WithSecure: tip/features/automate/library/withsecure.md
+        - Zscaler: tip/features/automate/library/zscaler.md
   - Develop:
     - Overview: tip/develop/index.md
     - Guides:
