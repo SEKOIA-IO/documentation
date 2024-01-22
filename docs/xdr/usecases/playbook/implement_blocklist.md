@@ -17,12 +17,12 @@ The implementation of a blocklist in Sekoia.io is based on the [IOC Collections]
 - A Sekoia.io XDR licence
 - The user that configures the playbooks should have a Role that contains:
 	* The SYMPHONY permissions
-- An API Key with a Role that contains at least the following permission for the playbook:
+- An API Key with the `Analyst` role or a custom role that contains at least the following permission for the playbook:
 	* SIC_READ_ALERTS
     * SIC_READ_INTAKES
     * INTHREAT_READ_IOC_COLLECTIONS
     * INTHREAT_WRITE_IOC_COLLECTIONS
-- An API Key with a Role that contains the following permission to authenticate the network security solutions:
+- An API Key with the `Read Only` role or a custom role that contains the following permission to authenticate the network security solutions:
     * INTHREAT_READ_IOC_COLLECTIONS
 
 > To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
@@ -67,9 +67,9 @@ Once your playbook is created, the following configuration steps are required:
 
 The URL to use to retrieve the content of the IOC Collection is `https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=text&limit=10000&skip_expired=true&include_revoked=false`. As specified in this URL, the maximum number of indicators that can be retrieved is limited to 10,000. Basic authentication mechanism is supported with `username` as user name and the **API Key as password**.
 
-Please refer to your vendor documentation for a more detailed step by step approach on configuring the network security solution.
+Please refer to your vendor documentation (see below for some references) for a more detailed step by step approach on configuring the network security solution.
 
-## External references
+## External vendor documentation
 
 - [Palo Alto - External Dynamic List](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/policy/use-an-external-dynamic-list-in-policy/external-dynamic-list)
 - [Checkpoint - Custom Intelligence Feed](https://support.checkpoint.com/results/sk/sk132193)
