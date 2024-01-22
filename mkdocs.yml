@@ -337,6 +337,7 @@ nav:
       - FortiSOAR: xdr/features/integrations/fortisoar.md
       - Palo Alto Cortex XSOAR: xdr/features/integrations/interconnect_sekoia_with_xsoar.md
   - Usecases:
+    - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
     - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
     - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
   - FAQ:
