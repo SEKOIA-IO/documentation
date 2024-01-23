@@ -10,6 +10,9 @@ In this documentation, you will learn how to add users in these communities.
 
 ## Add new users to a community
 
+!!! note
+     You can add multiple emails separated by a comma
+ 
 ### In a managed community
 
 To invite new users to a managed community:
