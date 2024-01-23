@@ -1,4 +1,4 @@
-Rules catalog includes **798 built-in detection rules** ([_last update on 2024-01-23_](rules_changelog.md)).
+Rules catalog includes **799 built-in detection rules** ([_last update on 2024-01-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8602,6 +8602,12 @@ Rules catalog includes **798 built-in detection rules** ([_last update on 2024-0
     Detects multiple scan of different ports.
     
     - **Effort:** master
+    
+??? abstract "Anomaly Multiple Host Port Scan"
+    
+    Detects multiple port scan.
+    
+    - **Effort:** advanced
     
 **System Network Connections Discovery**
 
