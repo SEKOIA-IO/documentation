@@ -27,10 +27,15 @@ Please find our English tutorial video below to see how to configure the forward
 
   !!! info 
       These data are recommendations based on standards and observed averages on Sekoia.io, so they may change depending on use cases.
-
+      
 * Last version of Docker Engine. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
 * OUTBOUND TCP flow opened towards intake.sekoia.io on port 10514
+
+  !!! note 
+      The disk choice (SSD or HDD type) has no impact on the performance of Sekoia.io Forwarder.
+      However, SSD type would be useful when an issue arise for recovery or catchup.
+      Please choose accordingly to your usage and cost.
 
 ## Configure your concentrator
 
