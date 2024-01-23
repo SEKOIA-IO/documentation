@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **WatchGuard Endpoint Se
     
     - **Effort:** master
 
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.

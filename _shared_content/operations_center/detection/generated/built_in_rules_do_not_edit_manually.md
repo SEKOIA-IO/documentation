@@ -1,4 +1,4 @@
-Rules catalog includes **792 built-in detection rules** ([_last update on 2024-01-22_](rules_changelog.md)).
+Rules catalog includes **798 built-in detection rules** ([_last update on 2024-01-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -37,6 +37,12 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Microsoft Windows Active Directory Module Commandlets"
     
     Detects use of commandlets linked to the AD Module.
+    
+    - **Effort:** advanced
+    
+??? abstract "System Network Connections Discovery"
+    
+    Detects system network connections discovery via powershell and cmd.
     
     - **Effort:** advanced
     
@@ -1417,6 +1423,12 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Generic-reverse-shell-oneliner"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+    
 ??? abstract "In-memory PowerShell"
     
     Detects loading of essential DLL used by PowerShell, but not by the process powershell.exe. Detects meterpreter's "load powershell" extension and tool such PowerShDll.
@@ -1440,6 +1452,12 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     Detects different loaders used by the Lazarus Group APT
     
     - **Effort:** elementary
+    
+??? abstract "Linux Bash Reverse Shell"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
     
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -2496,6 +2514,10 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
+            
 ??? abstract "Microsoft Office Spawning Script"
     
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
@@ -3251,6 +3273,14 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
+**Deploy Container**
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
+    
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -4618,6 +4648,10 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/01/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -5773,6 +5807,14 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
         - 11/01/2024 - minor - Adding filtering for some FPs
             
+**Escape to Host**
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
+    
 ## Defense Evasion
 **Obfuscated Files or Information**
 
@@ -5863,6 +5905,7 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 22/01/2024 - minor - Extending filter to avoid FPs
         - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
             
 ??? abstract "Linux Binary Masquerading"
@@ -6037,6 +6080,10 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/01/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -6855,6 +6902,12 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+    
+??? abstract "Linux Remove Immutable Attribute"
+    
+    Adversaries may used chattr utility to alter file and folder attributes to control sudden operations like the deletion and modification of files.
+    
+    - **Effort:** intermediate
     
 **Domain Policy Modification**
 
@@ -7707,6 +7760,14 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+**Deploy Container**
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
+    
 **Reflective Code Loading**
 
 ??? abstract "Linux Fileless Execution"
@@ -8252,6 +8313,7 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 22/01/2024 - minor - Removing a file extension to allow broader detection.
         - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
         - 03/07/2023 - minor - Added french words for the command lines.
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
@@ -9820,6 +9882,12 @@ Rules catalog includes **792 built-in detection rules** ([_last update on 2024-0
     
 **Account Access Removal**
 
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+    
 ??? abstract "Jumpcloud Account Locked"
     
     A user has been locked on Jumpcloud portal.

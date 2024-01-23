@@ -1,7 +1,13 @@
-Changelog _last update on 2024-01-22_
+Changelog _last update on 2024-01-23_
 
 ## Changelog
 
+### Microsoft Office Product Spawning Windows Shell
+  - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
+    
+### Suspicious Process Requiring DLL Starts Without DLL
+  - 22/01/2024 - minor - Added filter to reduce false positives
+    
 ### Suspicious CodePage Switch with CHCP
   - 16/01/2024 - minor - Rename rule to fit with behavior
     
