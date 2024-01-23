@@ -207,6 +207,12 @@ The following Sekoia.io built-in rules match the intake **Azure Windows**. This 
     
     - **Effort:** intermediate
 
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+
 ??? abstract "Container Credential Access"
     
     Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
@@ -326,6 +332,12 @@ The following Sekoia.io built-in rules match the intake **Azure Windows**. This 
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
 
 ??? abstract "Domain Group And Permission Enumeration"
     
@@ -489,6 +501,12 @@ The following Sekoia.io built-in rules match the intake **Azure Windows**. This 
     
     - **Effort:** intermediate
 
+??? abstract "Generic-reverse-shell-oneliner"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
 ??? abstract "Grabbing Sensitive Hives Via Reg Utility"
     
     Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
@@ -572,6 +590,18 @@ The following Sekoia.io built-in rules match the intake **Azure Windows**. This 
     Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
+
+??? abstract "Linux Bash Reverse Shell"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Remove Immutable Attribute"
+    
+    Adversaries may used chattr utility to alter file and folder attributes to control sudden operations like the deletion and modification of files.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     

@@ -165,6 +165,12 @@ The following Sekoia.io built-in rules match the intake **Azure Linux [DEPRECATE
     
     - **Effort:** elementary
 
+??? abstract "Linux Bash Reverse Shell"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process

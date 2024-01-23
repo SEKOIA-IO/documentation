@@ -339,6 +339,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item
