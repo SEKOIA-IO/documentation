@@ -26,7 +26,7 @@ This integration supports the following events from CrowdStrike Falcon:
 - Incident Summaries (`IncidentSummaryEvent`)
 - Audit logs (`UserActivityAuditEvent` and `AuthActivityAuditEvent`)
 - Identity protection events (`IdpDetectionSummaryEvent` and `IdentityProtectionEvent`)
-- Mobile Detection Summaries (`MobileDectectionSummaryEvent`)
+- Mobile Detection Summaries (`MobileDetectionSummaryEvent`)
 
 This integration can also collect `Vertex` through the Threat Graph API (restricted feature, please contact Crowdstrike Support to activate it).
 
