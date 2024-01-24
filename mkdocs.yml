@@ -151,6 +151,7 @@ nav:
           - Sophos Threat Analysis Center: xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
           - Zscaler ZIA: xdr/features/collect/integrations/cloud_and_saas/zscaler_zia.md
+          - Splunk: xdr/features/collect/integrations/cloud_and_saas/splunk.md
         - Email:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
           - Cisco ESA: xdr/features/collect/integrations/email/cisco_esa.md
