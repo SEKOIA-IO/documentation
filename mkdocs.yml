@@ -137,6 +137,7 @@ nav:
             - Azure Files: xdr/features/collect/integrations/cloud_and_saas/azure/azure_files.md
             - Azure Network Watcher: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
             - Azure Windows: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
+            - Azure Sentinel: xdr/features/collect/integrations/cloud_and_saas/azure/microsoft_sentinel.md
           - Microsoft Office 365:
             - Office365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
             - Microsoft Defender for Office 365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
