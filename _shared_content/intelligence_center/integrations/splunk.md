@@ -20,7 +20,7 @@ Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any 
    http://server_ip:port
    
 2. Enter your login and password of your Splunk instance
-![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png)
+![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
 
 ## 2.  Install and configure your Splunk TA
 
@@ -74,12 +74,11 @@ An IOC is an observable that represents a malicious activity. For more informati
 !!! note
      Prerequisites: Logs have to be collected in Splunk
 
- 1. Setup a lookup table - A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
-
+1. Setup a lookup table - A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
 When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table.
 
- 2. Sightings will be displayed on this section of the Sekoia integration
-![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png){: style="width: 100%; max-width: 100%"}
+2. Sightings will be displayed on this section of the Sekoia integration
+![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information
 
@@ -87,11 +86,9 @@ Please refer to [our documentation to search IOCs in Intelligence page](https://
 [WORK IN PROGRESS]
 
 **1. False positive**
-
 Compare Sekoia IOCs valid date in Sekoia Intelligence
 
 **2. Splunk issues**
-
 Search in the Internal logs for errors
 
 Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself)  for more information
