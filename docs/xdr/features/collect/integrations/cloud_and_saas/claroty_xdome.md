@@ -9,6 +9,13 @@ type: intake
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
+## Supported events
+
+This integration supports the following events from Claroty xDome:
+
+- Alerts
+- Communication Events
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_9f47aa9f-52d7-4849-9462-cf7fc8bcd51a_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/9f47aa9f-52d7-4849-9462-cf7fc8bcd51a.md!}
