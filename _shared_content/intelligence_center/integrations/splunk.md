@@ -21,21 +21,24 @@ Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any 
    
 2. Enter your login and password of your Splunk instance
 
+![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png)
 
 ## 2.  Install and configure your Splunk TA
 
 1. Go to Application Setup Page
+![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png)
    
-2. Search for Sekoia.io application and download it
+2. Search for Sekoia.io application and and install it
+![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
    
-3. Click on the setup / installation button
-   
-4. fill Sekoia.io Application Setup with your Sekoia.io API Key.
+3. Configure your Sekoia.io Application (with your Sekoia.io API Key, Sekoia.io API url  and feed ID)
+![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
+
+Please consult [our documentation for feed ID](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
 
    !!! note
         After the launch of Sekoia.io app, IOCs will be downloaded and updated on Splunk
-
-
+        
 ## 3. Sekoia intelligence in Splunk
 
 In the following section, here are the Sekoia IOCs available in Splunk:
@@ -49,10 +52,11 @@ In the following section, here are the Sekoia IOCs available in Splunk:
 |sha1	| Hash function which takes an input and produces a 160-bit (20-byte) 	|
 |sha256| Secure Hash Algorithm 256-bit	|
 
-Please consult [this page for more information about observables in Sekoia](https://docs.sekoia.io/cti/features/consume/observables/)
+An IOC is an observable that represents a malicious activity. For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/)
 
    !!! note
-      Update is scheduled every night to ensure that only valid IOCs are used to detect threats.
+      	Only Sekoia Indicators will be updated.
+Update is scheduled every night to ensure that valid IOCs are used to detect threats.
 
 ## 4. Search Sekoia intelligence and match with IOCs in Splunk TA
 
@@ -63,6 +67,8 @@ Please consult [this page for more information about observables in Sekoia](http
 1. Click on Sekoia.io on Application page
 2. Go to the Seek tab and query on 
 `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
+
+![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
 
 ### Search and compare Sekoia IOCs with logs in Splunk
 
