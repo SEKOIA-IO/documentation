@@ -1025,6 +1025,144 @@ Find below few samples of events and how they are normalized by Sekoia.io.
 	```
 
 
+=== "test_sample.json"
+
+    ```json
+	
+    {
+        "message": "{\"parent\":19024,\"sha256\":\"94256542e235681ba64a20bc50910dd745d52347a89d36be2dd4c1465901c52b\",\"upload_size\":1649,\"record_identifier\":\"cebac453bf5aa57f2fbe297628a914814378da9171ac0d7a972f7783af5bfeef\",\"ioc_severity\":5,\"path\":\"C:\\\\Windows\\\\System32\\\\getmac.exe\",\"is_process_file_signed\":\"\",\"ml_score_data\":\"\",\"ioc_detection_sigma\":\"{\\\"id\\\":\\\"WIN-EXE-ENR-ML-SUSPICIOUS-1.star\\\",\\\"logsource\\\":{\\\"dedup_fields\\\":[\\\"machine_data.columns.sophosPID\\\",\\\"detection.id\\\"]}}\",\"company_name\":\"\",\"pua_score\":0,\"folded\":0,\"meta_mac_address\":\"0a:cc:df:3e:cc:2c\",\"endpoint_id\":\"1e062adb-b215-4abd-aaf9-b1bb9355231e\",\"meta_public_ip_country_code\":\"FR\",\"schema_version\":\"22\",\"uid\":18,\"ioc_detection_mitre_attack\":\"[{\\\"tactic\\\":{\\\"id\\\":\\\"TA0002\\\",\\\"name\\\":\\\"Execution\\\",\\\"techniques\\\":[{\\\"id\\\":\\\"T1059\\\",\\\"name\\\":\\\"Command and Scripting Interpreter\\\"}]}}]\",\"meta_licence\":\"\",\"ioc_detection_experiment_level\":0,\"ioc_created_at\":\"2023-09-17T20:17:27.690Z\",\"cmdline\":\"getmac /FO list \",\"ingestion_timestamp\":\"2023-09-17T20:17:04.336Z\",\"ioc_detection_attack\":\"Execution\",\"numerics\":false,\"meta_public_ip\":\"194.0.166.130\",\"counter\":946,\"detection_id_dedup\":\"89913194caf9a64bb388b1ac2037fd2d6895b875\",\"meta_hostname\":\"CER69-P21011144\",\"username\":\"Syst\u00e8me\",\"ioc_worker_name\":\"Security Event Service\",\"ioc_detection_type\":\"process\",\"sha1\":\"d4baeeb9180a4284b33fa3602d86cad7ec05e6a0\",\"ioc_detection_category\":\"Threat\",\"ioc_unix_time\":\"2023-09-17T20:11:56.000Z\",\"epoch\":1694617601,\"meta_ip_mask\":\"255.255.255.0\",\"file_size\":85504,\"ioc_worker_id\":\"security-event-service\",\"global_rep_data\":\"\",\"parent_name\":\"cmd.exe\",\"unix_time\":\"2023-09-17T20:11:56.000Z\",\"pid\":9864,\"ioc_log_type\":\"summary\",\"original_filename\":\"\",\"query_source\":\"xdr_only\",\"sophos_pid\":\"9864:133394546882672445\",\"host_identifier\":\"4C4C4544-0051-3510-8058-B3C04F503733\",\"partition_bucket\":\"87\",\"meta_public_ip_country\":\"France\",\"meta_boot_time\":1694981116,\"local_rep\":0,\"meta_os_name\":\"Microsoft Windows 10 Professionnel\",\"sha256_reputation_score\":70,\"osquery_action\":\"added\",\"lolbins_ml_results\":{\"score\":99.0,\"score_label\":\"Suspicious\",\"sha256\":\"59fef8d35f91932abd3a83ab47ba2a8ea2203a31fc79e99860ba238062ec7af2\"},\"parent_path\":\"C:\\\\Windows\\\\System32\\\\cmd.exe\",\"meta_query_pack_version\":\"1.18.1\",\"calendar_time\":\"2023-09-17T20:11:56.000Z\",\"meta_eid\":\"1e062adb-b215-4abd-aaf9-b1bb9355231e\",\"meta_public_ip_longitude\":2.3387,\"ioc_detection_id\":\"WIN-EXE-ENR-ML-SUSPICIOUS-1\",\"meta_os_platform\":\"windows\",\"meta_username\":\"AC75007611\",\"detection_identifier\":\"cebac453bf5aa57f2fbe297628a914814378da9171ac0d7a972f7783af5bfeef_89913194caf9a64bb388b1ac2037fd2d6895b875\",\"query_name\":\"running_processes_windows_sophos\",\"meta_os_type\":\"\",\"meta_os_version\":\"10.0.18363\",\"parent_cmdline\":\"cmd.exe /c \\\"getmac /FO list >cqfs_tmp_13084.txt.tmp & type cqfs_tmp_13084.txt.tmp >cqfs_tmp_13084.txt & del cqfs_tmp_13084.txt.tmp\\\"\",\"meta_public_ip_latitude\":48.8582,\"local_rep_data\":\"\",\"ioc_detection_licenses\":\"[\\\"MTR\\\"]\",\"parent_sophos_pid\":\"19024:133394546882288030\",\"name\":\"getmac.exe\",\"global_rep\":0,\"meta_aggressive_activity\":\"False\",\"meta_ip_address\":\"10.0.0.11\",\"time\":1694981088,\"file_version\":\"\",\"ingest_date\":\"2023-09-17\",\"file_description\":\"\",\"ml_score\":0,\"sha256_reputation_band\":\"KNOWN_GOOD\",\"meta_endpoint_type\":\"computer\",\"meta_domain_controller\":\"False\",\"customer_id\":\"f7193486-a186-4197-ab40-0ddc013a0a65\",\"ioc_detection_description\":\"Identifies Lolbin processes labeled as suspicious by a machine learning model.\",\"message_identifier\":\"3225914c27b54c2a9f0e39885e4d632c67a1e188288f8ce9a9e298a2f91b4ece\",\"ioc_attack_type\":\"Security Event Service Detections\",\"product_name\":\"\",\"gid\":18,\"ioc_detection_weight\":5}\n",
+        "event": {
+            "code": "WIN-EXE-ENR-ML-SUSPICIOUS-1",
+            "ingested": "2023-09-17T20:17:04.336000Z",
+            "kind": "event",
+            "severity": 5
+        },
+        "@timestamp": "2023-09-17T20:11:56Z",
+        "file": {
+            "hash": {
+                "sha1": "d4baeeb9180a4284b33fa3602d86cad7ec05e6a0",
+                "sha256": "94256542e235681ba64a20bc50910dd745d52347a89d36be2dd4c1465901c52b"
+            },
+            "name": "getmac.exe",
+            "path": "C:\\Windows\\System32\\getmac.exe",
+            "size": 85504
+        },
+        "host": {
+            "id": "4C4C4544-0051-3510-8058-B3C04F503733",
+            "name": "CER69-P21011144",
+            "os": {
+                "full": "Microsoft Windows 10 Professionnel",
+                "name": "windows",
+                "version": "10.0.18363"
+            }
+        },
+        "process": {
+            "command_line": "getmac /FO list ",
+            "hash": {
+                "sha1": "d4baeeb9180a4284b33fa3602d86cad7ec05e6a0",
+                "sha256": "94256542e235681ba64a20bc50910dd745d52347a89d36be2dd4c1465901c52b"
+            },
+            "name": "Security Event Service",
+            "parent": {
+                "command_line": "cmd.exe /c \"getmac /FO list >cqfs_tmp_13084.txt.tmp & type cqfs_tmp_13084.txt.tmp >cqfs_tmp_13084.txt & del cqfs_tmp_13084.txt.tmp\"",
+                "executable": "C:\\Windows\\System32\\cmd.exe",
+                "name": "cmd.exe"
+            },
+            "pid": 9864
+        },
+        "related": {
+            "hash": [
+                "94256542e235681ba64a20bc50910dd745d52347a89d36be2dd4c1465901c52b",
+                "d4baeeb9180a4284b33fa3602d86cad7ec05e6a0"
+            ],
+            "ip": [
+                "10.0.0.11",
+                "194.0.166.130"
+            ],
+            "user": [
+                "AC75007611"
+            ]
+        },
+        "sophos": {
+            "threat_center": {
+                "aggressive_activity": "False",
+                "detection_id_dedup": "89913194caf9a64bb388b1ac2037fd2d6895b875",
+                "endpoint": {
+                    "type": "computer"
+                },
+                "global_rep": 0,
+                "id": "1e062adb-b215-4abd-aaf9-b1bb9355231e",
+                "ioc": {
+                    "attack_type": "Security Event Service Detections",
+                    "detection": {
+                        "attack": "Execution",
+                        "category": "Threat",
+                        "licences": [
+                            "MTR"
+                        ],
+                        "sigma": {
+                            "id": "WIN-EXE-ENR-ML-SUSPICIOUS-1.star"
+                        },
+                        "type": "process",
+                        "weight": "5"
+                    },
+                    "log_type": "summary",
+                    "unix_time": "2023-09-17T20:11:56.000000Z"
+                },
+                "lolbins_ml_results": {
+                    "score": "99.0",
+                    "score_label": "Suspicious",
+                    "sha256": "59fef8d35f91932abd3a83ab47ba2a8ea2203a31fc79e99860ba238062ec7af2"
+                },
+                "message": {
+                    "id": "3225914c27b54c2a9f0e39885e4d632c67a1e188288f8ce9a9e298a2f91b4ece"
+                },
+                "ml": {
+                    "score": "99.0"
+                },
+                "pua": {
+                    "score": "0"
+                },
+                "query": {
+                    "action": "added",
+                    "name": "running_processes_windows_sophos",
+                    "pack_version": "1.18.1",
+                    "source": "xdr_only"
+                },
+                "record_identifier": "cebac453bf5aa57f2fbe297628a914814378da9171ac0d7a972f7783af5bfeef",
+                "sha256": {
+                    "reputation_band": "KNOWN_GOOD",
+                    "reputation_score": "70"
+                },
+                "worker": {
+                    "id": "security-event-service"
+                }
+            }
+        },
+        "source": {
+            "address": "10.0.0.11",
+            "bytes": 1649,
+            "geo": {
+                "country_iso_code": "FR",
+                "country_name": "France"
+            },
+            "ip": "10.0.0.11",
+            "mac": "0a:cc:df:3e:cc:2c",
+            "nat": {
+                "ip": "194.0.166.130"
+            }
+        },
+        "user": {
+            "name": "AC75007611"
+        },
+        "vulnerability": {
+            "description": "Identifies Lolbin processes labeled as suspicious by a machine learning model."
+        }
+    }
+    	
+	```
+
+
 
 
 
