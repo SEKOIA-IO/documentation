@@ -17,6 +17,10 @@ type: intake
 
 This guide shows you how to set up an integration between Claroty xDome and Sekoia.io.
 
+### Prerequisites
+
+- Have an internal log concentrator
+
 ### Create an intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Claroty xDome. Copy the intake key.
