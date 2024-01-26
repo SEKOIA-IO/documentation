@@ -121,6 +121,7 @@ nav:
           - Cato SASE: xdr/features/collect/integrations/cloud_and_saas/cato_sase.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Cisco Duo Security: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
+          - Claroty xDome: xdr/features/collect/integrations/cloud_and_saas/claroty_xdome.md
           - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
           - Google Cloud:
             - Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_cloud_audit.md
