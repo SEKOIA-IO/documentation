@@ -25,7 +25,7 @@ Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any 
 ## 2.  Install and configure your Splunk TA
 
 1. Go to Application Setup Page `Apps` > `Find more Apps`
-![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 60%; max-width: 60%"}
+![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
    
 2. Search for Sekoia.io application and and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
@@ -71,10 +71,8 @@ An IOC is an observable that represents a malicious activity. For more informati
 
 ### Search and compare Sekoia IOCs with logs in Splunk
 
-#### Prerequisites:
-
-- Logs have to be collected in Splunk
-
+!!! note
+     Prerequisites: Logs have to be collected in Splunk
 
 1. Setup a lookup table - A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
 
@@ -90,9 +88,11 @@ Please refer to [our documentation to search IOCs in Intelligence page](https://
 [WORK IN PROGRESS]
 
 **1. False positive**
+
 Compare Sekoia IOCs valid date in Sekoia Intelligence
 
 **2. Splunk issues**
+
 Please search in the Internal logs for errors
 
 Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself)  for more information
