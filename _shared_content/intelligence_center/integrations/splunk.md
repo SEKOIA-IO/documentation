@@ -20,13 +20,12 @@ Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any 
    http://server_ip:port
    
 2. Enter your login and password of your Splunk instance
-
 ![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png)
 
 ## 2.  Install and configure your Splunk TA
 
 1. Go to Application Setup Page
-![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png)
+![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png)
    
 2. Search for Sekoia.io application and and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
@@ -55,8 +54,8 @@ In the following section, here are the Sekoia IOCs available in Splunk:
 An IOC is an observable that represents a malicious activity. For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/)
 
    !!! note
-      	Only Sekoia Indicators will be updated.
-Update is scheduled every night to ensure that valid IOCs are used to detect threats.
+      	 Only Sekoia Indicators will be updated.
+        Update is scheduled every night to ensure that valid IOCs are used to detect threats.
 
 ## 4. Search Sekoia intelligence and match with IOCs in Splunk TA
 
@@ -68,7 +67,7 @@ Update is scheduled every night to ensure that valid IOCs are used to detect thr
 2. Go to the Seek tab and query on 
 `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
 
-![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
+![Splunk-Search_IOCs_validity](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
 
 ### Search and compare Sekoia IOCs with logs in Splunk
 
@@ -76,21 +75,27 @@ Update is scheduled every night to ensure that valid IOCs are used to detect thr
 
 - Logs have to be collected in Splunk
   
-1. Setup a lookup table - A typical query would be index=* sourcetype=<YOUR_SOURCETYPE>
+1. Setup a lookup table - A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
 
    !!! note
-      When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table.
+        When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table.
 
 
-2. Sightings will be displayed on this section of the Sekoia integration (image)
+2. Sightings will be displayed on this section of the Sekoia integration
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png){: style="width: 100%; max-width: 100%"}
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information
 
 ## 5. Troubleshoot
+[WORK IN PROGRESS]
 
+**1. False positive**
 Compare Sekoia IOCs valid date in Sekoia Intelligence
 
+**2. Splunk issues**
+Please search in the Internal logs for errors
+
+Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself)  for more information
 
 ## 6. Other resources
 
@@ -101,5 +106,5 @@ https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk
 - **Splunk TA official documentation**
 
 https://splunkbase.splunk.com/app/6327
-
+https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk
 https://community.splunk.com/t5/Installation/bd-p/installation
