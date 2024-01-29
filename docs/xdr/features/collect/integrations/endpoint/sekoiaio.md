@@ -392,6 +392,54 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     
     This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
 
+
+#### Ignore paths when computing file hashes
+
+It is possible to specify paths the agent won't compute hashes for files located in it.
+
+If you want to enable this feature, follow these steps: 
+
+1. Edit the configuration file at:
+	
+	=== "Windows"
+	
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
+
+2. Specify the paths to ignore under the `HashesExcludedPaths` attribute
+
+    i.e.
+
+    ```yaml
+    HashesExcludedPaths:
+      - C:\path\to\ignore
+      - /path/to/ignore
+    ```
+Once the configuration file has been modified, the agent must be restarted:
+
+=== "Windows"
+
+    The following command must be executed **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    The following command must be executed:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
 ## Additionnal information
 
 Please find options and arguments available for Sekoia Agent by typing
