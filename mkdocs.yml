@@ -118,6 +118,7 @@ nav:
             - Gateway HTTP: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-http.md
             - Gateway Network: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-gateway-network.md
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
+          - Broadcom Cloud Secure Web Gateway: xdr/features/collect/integrations/cloud_and_saas/broadcom_cloud_swg.md
           - Cato SASE: xdr/features/collect/integrations/cloud_and_saas/cato_sase.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Cisco Duo Security: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
