@@ -42,7 +42,7 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 To start to pull events, you have to:
 
 1. Go to the [playbooks page](https://app.sekoia.io/operations/playbooks) and create a new playbook with the `Get Broadcom Cloud SWG events` trigger
-2. Set up the module configuration with the Api Key and Account Id. Set up the trigger configuration with the intake key
+2. Set up the module configuration with the username and the password. Set up the trigger configuration with the intake key
 3. Start the playbook and enjoy your events
  
 ## Further readings
