@@ -179,6 +179,7 @@ nav:
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
           - Microsoft Intune: xdr/features/collect/integrations/endpoint/microsoft_intune.md
           - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
+          - Palo Alto Cortex EDR: xdr/features/collect/integrations/endpoint/paloalto_cortex_edr.md
           - Sekoia.io Endpoint Agent: xdr/features/collect/integrations/endpoint/sekoiaio.md
           - SentinelOne EDR: xdr/features/collect/integrations/endpoint/sentinelone.md
           - SentinelOne Cloud Funnel 1.0 [Deprecated]: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
