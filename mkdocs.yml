@@ -272,6 +272,7 @@ nav:
         - AWS: xdr/features/automate/library/aws.md
         - Atlassian JIRA: xdr/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: xdr/features/automate/library/binaryedge-s-api.md
+        - Broadcom Cloud Secure Web Gateway: xdr/features/automate/library/broadcom-cloud-secure-web-gateway.md
         - Cato Networks: xdr/features/automate/library/cato-networks.md
         - Censys: xdr/features/automate/library/censys.md
         - Certificate Transparency: xdr/features/automate/library/certificate-transparency.md
@@ -460,6 +461,7 @@ nav:
         - AWS: tip/features/automate/library/aws.md
         - Atlassian JIRA: tip/features/automate/library/atlassian-jira.md
         - BinaryEdge's API: tip/features/automate/library/binaryedge-s-api.md
+        - Broadcom Cloud Secure Web Gateway: tip/features/automate/library/broadcom-cloud-secure-web-gateway.md
         - Cato Networks: tip/features/automate/library/cato-networks.md
         - Censys: tip/features/automate/library/censys.md
         - Certificate Transparency: tip/features/automate/library/certificate-transparency.md
