@@ -6,6 +6,11 @@ type: intake
 
 Broadcom Cloud Secure Web Gateway is a cloud-native security solution providing advanced threat protection, content filtering, and data loss prevention, ensuring secure internet access and compliance for organizations with flexible deployment options and comprehensive web security features.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
+This integration collects access logs from the Broadcom Cloud platform.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_d626fec3-473a-44b3-9e3d-587fdd99a421_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/d626fec3-473a-44b3-9e3d-587fdd99a421.md!}
