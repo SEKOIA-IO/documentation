@@ -351,6 +351,7 @@ nav:
       - Events QA: xdr/FAQ/Events_qa.md
       - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
     - Rules: xdr/FAQ/Rules_qa.md
+    - Assets: xdr/FAQ/Assets_qa.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
   - Develop:
