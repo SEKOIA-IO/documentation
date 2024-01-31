@@ -59,13 +59,10 @@ An IOC is an observable that represents a malicious activity. For more informati
 
 ## 4. Search Sekoia intelligence and match with IOCs in Splunk TA
 
-[WORK IN PROGRESS]
-
 ### Search existing Sekoia IOCs in Splunk TA with expiry date
 
-1. Click on Sekoia.io on Application page
-2. Go to the Seek tab and query on 
-`| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
+1. On Apps, select Sekoia.io application
+2. In the search tab, query on `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
 
 ![Splunk-Search_IOCs_validity](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
 
@@ -74,24 +71,23 @@ An IOC is an observable that represents a malicious activity. For more informati
 !!! note
      Prerequisites: Logs have to be collected in Splunk
 
-1. Setup a lookup table - A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
-When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table.
+1. Setup a lookup table
+ A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
+ When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table
 
-2. Sightings will be displayed on this section of the Sekoia integration
+5. Sightings will be displayed on this section of the Sekoia integration
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information
 
 ## 5. Troubleshoot
-[WORK IN PROGRESS]
 
 **1. False positive**
-Compare Sekoia IOCs valid date in Sekoia Intelligence
+ Compare Sekoia IOCs valid date in Sekoia Intelligence
 
 **2. Splunk issues**
-Search in the Internal logs for errors
-
-Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself)  for more information
+ Search in the Internal logs for errors
+ Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself)  for more information
 
 ## 6. Other resources
 
