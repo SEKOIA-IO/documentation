@@ -3102,8 +3102,9 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "TEHTRIS EDR Alert"
     
@@ -4066,8 +4067,9 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -4660,8 +4662,9 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -5353,8 +5356,9 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -6092,8 +6096,9 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
