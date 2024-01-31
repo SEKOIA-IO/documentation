@@ -1,13 +1,13 @@
 uuid: b5968b0a-1206-4d3b-b960-e6b61e7f6ee6
-name: Palo Alto Cortex XDR
+name: Palo Alto Cortex EDR
 type: intake
 
 
 ## Overview
 
-Palo Alto Networks Cortex XDR is a comprehensive cybersecurity platform designed to provide advanced threat detection, prevention, and response capabilities. Cortex XDR goes beyond traditional endpoint protection by integrating data from various security sources, including endpoints, networks, and cloud environments, to deliver a holistic view of the organization's security landscape. 
+Palo Alto Cortex EDR is an advanced Endpoint Detection and Response solution offering real-time threat detection, investigation, and response capabilities, empowering organizations to proactively defend against sophisticated cyber threats across their endpoints.
 
-This setup guide shows how to forward events collected on the Cortex platform to Sekoia.io.
+This setup guide shows how to forward EDR events collected on the Palo Alto Cortex XDR platform to Sekoia.io.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.md!}
 
