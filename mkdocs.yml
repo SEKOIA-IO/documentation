@@ -41,7 +41,8 @@ nav:
     - Edit a community: getting_started/community-edit.md
     - Create a sub-community: getting_started/community-create_sub_com.md
     - Set up community security:
-      - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
+      - Session duration: getting_started/session_duration.md
+      - SSO with OpenID Connect: getting_started/sso/openid_connect.md
       - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
       - SSO with Okta: getting_started/sso/okta.md
   - 3. Navigate on the platform: getting_started/navigation.md
