@@ -45,7 +45,7 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 
 ### Create the intake
 
-1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Palo Alto Cortex EDR` intake.
+1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Palo Alto Cortex XDR` intake.
 2. Copy the associated Intake key ( You will use it in the playbook part )
 
 ### Pull events
