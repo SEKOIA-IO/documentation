@@ -2,7 +2,7 @@
 
 In the asset timeline, events that triggered an asset detection will be displayed.
 Go to assets page and click on an asset then click on `See trigger event`.
-<screenshot>
+![Assets_timeline](assets/operation_center/FAQ/Assets_timeline.png){: style="max-width:80%"}
 
 The detail of the event will be displayed in the events page.
 
