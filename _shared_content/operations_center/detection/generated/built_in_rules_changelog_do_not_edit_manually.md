@@ -2,6 +2,9 @@ Changelog _last update on 2024-01-31_
 
 ## Changelog
 
+### Inhibit System Recovery Deleting Backups
+  - 31/01/2024 - minor - Improve selection filter
+    
 ### Microsoft Office Product Spawning Windows Shell
   - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
     

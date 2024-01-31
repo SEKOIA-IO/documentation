@@ -9866,6 +9866,10 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 31/01/2024 - minor - Improve selection filter
+            
 ??? abstract "Stop Backup Services"
     
     Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
