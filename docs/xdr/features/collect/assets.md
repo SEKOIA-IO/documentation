@@ -171,4 +171,4 @@ This rule creates a new asset for every unseen `host.name`. It attaches the `ipv
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
 
-Questions ? Please consult our [FAQ](/xdr/FAQ/Assets_qa.md)
+Questions ? Please consult our [FAQ](../../FAQ/Assets_qa.md)
