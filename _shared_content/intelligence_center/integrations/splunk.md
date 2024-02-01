@@ -93,9 +93,7 @@ Compare Sekoia IOCs valid date in Sekoia Intelligence.
 
 ### 2. Splunk issues
 
-Search in the Internal logs for errors.
-
-Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself) for more information
+Search in the Internal logs for errors. Please consult [Splunk documentation](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself) for more information
 
 ## 6. Other resources
 
