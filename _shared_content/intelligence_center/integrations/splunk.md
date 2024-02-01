@@ -75,9 +75,8 @@ For more information, please consult [this page](https://docs.sekoia.io/cti/feat
 
 1. Setup a lookup table
  
-  A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
- 
-  When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table
+    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
+    When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table
 
 2. Sightings will be displayed on this section of the Sekoia integration
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
