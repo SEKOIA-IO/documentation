@@ -15,6 +15,9 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 The creation of an empty Custom format is the first step to develop your own Intake.
 After that, you will be able to create an instance of this Intake and start sending your logs. No event will be parsed but you will be able to see the evolution of your parser while you are developping it.
 
+!!!note
+    Modifications of custom format will be applied in the existing intake created from the custom format.
+
 To create an empty custom format:
 
 1. Go to `Intakes`, `+ INTAKE` and select `Custom format`
@@ -333,6 +336,16 @@ The taxonomy manager allows you to view all the ECS fields available with their 
 If a field in an event is custom to the technology and cannot be placed in any field of the ECS standard, you can create your own field.
 !!! note
     By convention, the name of the field must start with the name of your intake followed by the field name.
+
+**Fields type available:**
+- `Keyword`: corresponds to a string
+- `Long`: corresponds to a numeric value
+- `Date`: corresponds to a date in ISO8601 format
+- `Geo_point`: corresponds to gelocalisation in Longitude and Latitude format (e.g. `POINT (48.8705 2.3052)`)
+
+!!! note
+    Keyword is the broadest type and can be used for most case.
+    Therefore, we recommend to use the type according to the field format.
 
 **Example**
 
