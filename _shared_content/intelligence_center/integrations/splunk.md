@@ -30,7 +30,7 @@ Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any 
 2. Search for Sekoia.io application and and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
    
-3. Configure your Sekoia.io Application (with your Sekoia.io API Key, Sekoia.io API url  and feed ID)
+3. Configure your Sekoia.io Application (with your `Sekoia API Key`, `Sekoia API url`  and `feed ID`)
 ![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
 
 Please consult [our documentation for feed ID](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
@@ -44,14 +44,16 @@ In the following section, here are the Sekoia IOCs available in Splunk:
 
 |IOC type|Meaning|
 |--|--|
-|domain| domaine name	|
-|url	|  Website url		|
+|domain| Domain name	|
+|url	|  Url website 		|
 |ipv4	| Internet Protocol version 4 (32-bit number e.g. 111.111.1.11 )		|
 |md5	| Cryptographic hash function that results in a 128-bit hash value	|
 |sha1	| Hash function which takes an input and produces a 160-bit (20-byte) 	|
 |sha256| Secure Hash Algorithm 256-bit	|
 
-An IOC is an observable that represents a malicious activity. For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/)
+An IOC is an observable that represents a malicious activity.
+
+For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/)
 
 !!! note
      Only Sekoia Indicators will be updated.
@@ -61,7 +63,7 @@ An IOC is an observable that represents a malicious activity. For more informati
 
 ### Search existing Sekoia IOCs in Splunk TA with expiry date
 
-1. On Apps, select Sekoia.io application
+1. On Apps (top), select Sekoia.io application
 2. In the search tab, query on `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
 
 ![Splunk-Search_IOCs_validity](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
@@ -72,22 +74,27 @@ An IOC is an observable that represents a malicious activity. For more informati
      Prerequisites: Logs have to be collected in Splunk
 
 1. Setup a lookup table
+ 
  A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
+ 
  When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table
 
-5. Sightings will be displayed on this section of the Sekoia integration
+2. Sightings will be displayed on this section of the Sekoia integration
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
 
-Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information
+Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information.
 
 ## 5. Troubleshoot
 
-**1. False positive**
- Compare Sekoia IOCs valid date in Sekoia Intelligence
+### 1. False positive
 
-**2. Splunk issues**
- Search in the Internal logs for errors
- Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself)  for more information
+Compare Sekoia IOCs valid date in Sekoia Intelligence.
+
+### 2. Splunk issues
+
+Search in the Internal logs for errors.
+
+Please consult [Splunk documentation on this subject](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself) for more information
 
 ## 6. Other resources
 
