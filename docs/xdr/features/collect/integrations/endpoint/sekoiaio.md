@@ -35,6 +35,13 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
     * CentOS 7 and newer
     * Redhat 7 and newer
 
+=== "MacOs"
+
+    !!! note
+        The Sekoia.io agent is currently in beta for Mac OS.
+
+    * macOS 13 Ventura and newer
+
 ## New features
 
 To find out about the changes between each version please check the [agent's changelog](sekoiaio_changelog.md)
@@ -44,17 +51,17 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
 
 === "FRA1"
 
-    * https://intake.sekoia.io/
-    * https://api.sekoia.io/
+    * <https://intake.sekoia.io/>
+    * <https://api.sekoia.io/>
 
 === "FRA2"
-    * https://fra2.app.sekoia.io/
+    * <https://fra2.app.sekoia.io/>
 
 === "MCO1"
-    * https://mco1.app.sekoia.io/
+    * <https://mco1.app.sekoia.io/>
 
 === "UAE1"
-    * https://app.uae1.sekoia.io
+    * <https://app.uae1.sekoia.io/>
 
 
 ## Installation
@@ -62,7 +69,7 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
 ### Disclaimer
 
 !!! Warning
-	If you want to install this agent on a machine with an EDR in place, please keep in mind that most EDRs perform actions to detect malware or other types of threats. Those actions generate events that our agent collects. This may result in raising false positive alerts from our detection rules of effort levels 3 and 4. Customers need to fine-tune these rules to reduce the occurrence of false positives.
+        If you want to install this agent on a machine with an EDR in place, please keep in mind that most EDRs perform actions to detect malware or other types of threats. Those actions generate events that our agent collects. This may result in raising false positive alerts from our detection rules of effort levels 3 and 4. Customers need to fine-tune these rules to reduce the occurrence of false positives.
 
 ### Step 1: Create an intake
 
@@ -104,7 +111,7 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     ```
 
     !!! note
-    	Stop the auditd service to enable the agent to work properly. The disable command is used to allow persistence of the configuration.  
+        Stop the auditd service to enable the agent to work properly. The disable command is used to allow persistence of the configuration.  
 
     Now that `auditd` is disabled, you can install the agent:
 
@@ -124,35 +131,87 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     To get events, the agent pushes rules to the audit framework. By default, **journald**  might listen to the audit socket for events.
 
     To disable audit logging, do the following as root:
-        
-        
+
+
         # Stop listening to audit events
         systemctl stop systemd-journald-audit.socket 
-        
+
         # Disable it to avoid future start
         systemctl disable systemd-journald-audit.socket
-        
+
         # Masking will prevent starting by other services
         systemctl mask systemd-journald-audit.socket
-        
+
         # Restart journald
         systemctl restart systemd-journald
-        
-        
+
+
     A reboot may be necessary if the audit events are still appearing in the logs.
+
+=== "MacOs"
+
+    **Unzipping SekoiaEndpointAgent.zip Archive**
+
+    1.  Open the Archive: Double-click the file. macOS will automatically open it using the Archive Utility.
+
+    2.  Extracting Files: Once the Archive Utility opens, the files will be extracted to the same location as the original archive. You can also specify a different location if needed.
+
+    **Move the application from its download folder to the `/Applications` directory.**
+
+    **Grant full disk access to SekoiaEndpointAgent by following these steps:**
+
+    1.  Click on the Apple icon on the top left corner of your screen.
+
+    2.  Select System Preferences.
+
+    3.  Go to Security & Privacy Preferences > Privacy and click Full Disk Access from the left panel.
+
+    4.  Tick the checkbox for SekoiaEndpointAgent. If the lock at the bottom left is locked, click it to unlock the Privacy pane.
+
+        If you can't find SekoiaEndpointAgent in step 4, do the following:
+
+        1.  Click the plus (+) icon (at the bottom left corner of the window) and navigate to Applications.
+
+        2.  In the left panel, find SekoiaEndpointAgent and click Open. Make sure SekoiaEndpointAgent is ticked and then close the window.
+
+    **Now that `Full Disk Access` is enable, you can install the agent:**
+
+    ```shell
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY>
+    ```
+
+    To make sure the agent is successfully installed as a service, run the following command:
+
+    ```shell
+    sudo launchctl print system/SEKOIAEndpointAgent
+    ```
 
 Once installed, the agent collects, normalizes, and sends event logs to Sekoia.io. The protocol used to send events is HTTPS (443).
 
 #### Setting the region
 
-It's possible to specify the region the agent will communicate with during the installation. 
-To do it, append `--region <region_name>` at the end of the command. 
+It's possible to specify the region the agent will communicate with during the installation.
+To do it, append `--region <region_name>` at the end of the command.
 
 For example, if the agent must communicate with `fra2`, run the following command:
 
-```shell
-agent.exe install --intake-key <INTAKE_KEY> --region fra2
-```
+=== "Windows"
+
+    ```shell
+    agent.exe install --intake-key <INTAKE_KEY> --region fra2
+    ```
+
+=== "Linux"
+
+    ```shell
+    ./agent-latest install --intake-key <INTAKE_KEY> --region fra2
+    ```
+
+=== "MacOs"
+
+    ```shell
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --region fra2
+    ```
 
 ### Update
 
@@ -182,6 +241,14 @@ To update the agent manually, follow the instructions specific to your OS.
     sudo /opt/endpoint-agent update
     ```
 
+=== "MacOs"
+
+    The following command must be executed:
+
+    ```shell
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent update
+    ```
+
 
 ### Uninstall
 
@@ -196,20 +263,30 @@ To uninstall the agent, follow the instructions specific to your OS.
 
     * Download the latest version of the agent and use this binary to perform the uninstall
     * Copy the running agent located at `$ProgramFiles\EndpointAgent\agent.exe` 
-      * `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`)
+      * `$ProgramFiles` refers to the path to the `Program Files` folder, usually `c:\Program Files`
 
     Execute the following command **as an administrator**:
 
     ```shell
     agent.exe uninstall
     ```
-
 === "Linux"
 
     Execute the following command:
 
     ```shell
     sudo /opt/endpoint-agent/agent uninstall
+    ```
+
+=== "MacOs"
+
+    !!! WARNING
+        It is not possible to uninstall the agent by dragging the application into the trash.
+
+    Execute the following command:
+
+    ```shell
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent uninstall
     ```
 
 #### For versions prior to 0.3.0
@@ -256,21 +333,27 @@ To uninstall the agent, follow the instructions specific to your OS.
 
 The agent offers to send logs contained in files to Sekoia.io.
 
-If you want to enable this feature, follow these steps: 
+If you want to enable this feature, follow these steps:
 
 1. Edit the configuration file at:
-	
-	=== "Windows"
-	
-	    ```
-	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-	    ```
-	
-	=== "Linux"
-	
-	    ```
-	    /etc/endpoint-agent/config.yaml
-	    ```
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+    
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
 
 2. Add the following configuration:
 	
@@ -301,6 +384,14 @@ Once the configuration file is modified, restart the agent:
 
     ```
     sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
+=== "MacOs"
+
+    Execute the following command:
+
+    ```
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent service restart
     ```
 
 ### Using file patterns
@@ -353,27 +444,42 @@ Here's a non-exhaustive list of events the agent can detect:
     * Suspicious activity (curl, wireshark, …)
     * ...
 
-    
+=== "MacOs"
 
+    * Root commands executions
+    * Files creation/deletion/rename/change
+    * DNS Resolution
+    * TCP connection
+    * PIP/APT installs
+    * Sudoers file changes
+    * Passwd operations
+    * Suspicious activity (curl, wireshark, …)
+    * ...
 
 ## Proxy Support
 
-The Sekoia.io agent can use a proxy server for its HTTPS requests if needed. 
-If you want to enable this feature, follow these steps: 
+The Sekoia.io agent can use a proxy server for its HTTPS requests if needed.
+If you want to enable this feature, follow these steps:
 
 1. Edit the configuration file at:
-	
-=== "Windows"
-	
-     ```
-     C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
-     ```
-	
-=== "Linux"
-	
-     ```
-     /etc/endpoint-agent/config.yaml
-     ```
+
+    === "Windows"
+
+        ```
+        C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+        ```
+
+    === "Linux"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
+
+    === "MacOs"
+
+        ```
+        /etc/endpoint-agent/config.yaml
+        ```
 
 2. Add the following line:
 
@@ -394,7 +500,7 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     You can collect additional events using Sysmon. When installed, the Sekoia.io Agent will automatically collect Sysmon logs if it hasn't already done so.
 
     !!! warning
-    	Installing this tool will generate more logs, consuming more CPU resources. Install it on correctly dimensioned equipment or try it on low-risk assets at first.
+        Installing this tool will generate more logs, consuming more CPU resources. Install it on correctly dimensioned equipment or try it on low-risk assets at first.
 
     Sysmon is a Microsoft tool downloadable from [microsoft.com](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
     A common installation instruction and configuration file is available on [Florian Roth's GitHub](https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml). This configuration is an updated (and maintained) version of the [SwiftOnSecurity's configuration](https://github.com/SwiftOnSecurity/sysmon-config), which can also be used.
@@ -449,6 +555,12 @@ If you want to enable this feature, follow these steps:
 	    /etc/endpoint-agent/config.yaml
 	    ```
 
+	=== "MacOs"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
+
 2. Add the following configuration:
 
 ```yaml
@@ -476,16 +588,47 @@ Once the configuration file is modified, restart the agent:
 
 
 ## Additionnal information
-
 Please find options and arguments available for Sekoia Agent by typing
-````
-agent.exe -h
-````
 
-**Usage**: 
-````
-agent-latest.exe <command> [<args>]
-````
+=== "Windows"
+
+    ````
+    agent.exe -h
+    ````
+
+=== "Linux"
+
+    ````
+    agent -h
+    ````
+
+=== "MacOs"
+
+    ````
+    /Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent -h
+    ````
+
+**Usage**:
+
+=== "Windows"
+
+    ````
+    agent-latest.exe <command> [<args>]
+    ````
+
+=== "Linux"
+
+    ````
+    agent-latest <command> [<args>]
+    ````
+
+=== "MacOs"
+
+    ````
+    /Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent  <command> [<args>]
+    ````
+
+
 
 **Options**:
 
@@ -502,10 +645,9 @@ agent-latest.exe <command> [<args>]
 | update | update the agent |
 | uninstall |uninstall the agent |
 
-
 ## Resources footprint
 
-We monitor the agent metrics and try to keep its footprint as small as possible. 
+We monitor the agent metrics and try to keep its footprint as small as possible.
 Our agent uses, on average, less than 1% of CPU and around 36MB of RAM.
 
 ## Troubleshoot
@@ -525,6 +667,11 @@ Here are the paths where to find the logs:
     /var/log/endpoint-agent/agent.log
     ```
 
+=== "MacOs"
+
+    ```
+    /var/log/endpoint-agent/agent.log
+    ```
 
 !!! note
 	Please always use the latest Sekoia.io agent version. We recommend activating the update option.
