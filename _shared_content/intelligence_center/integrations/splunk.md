@@ -24,7 +24,7 @@ Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any 
 
 ## 2.  Install and configure your Splunk TA
 
-1. Go to Application Setup Page `Apps` > `Find more Apps`
+1. Go to Application Setup Page following `Apps` > `Find more Apps`
 ![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
    
 2. Search for Sekoia.io application and and install it
@@ -57,13 +57,14 @@ For more information, please consult [this page](https://docs.sekoia.io/cti/feat
 
 !!! note
      Only Sekoia Indicators will be updated.
+     
      Update is scheduled every night to ensure that valid IOCs are used to detect threats.
 
 ## 4. Search Sekoia intelligence and match with IOCs in Splunk TA
 
 ### Search existing Sekoia IOCs in Splunk TA with expiry date
 
-1. On Apps (top), select Sekoia.io application
+1. Go to Application Setup Page following `Apps` > `Sekoia.io`
 2. In the search tab, query on `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
 
 ![Splunk-Search_IOCs_validity](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
