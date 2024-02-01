@@ -7,7 +7,17 @@ type: intake
 
 Palo Alto Cortex EDR is an advanced Endpoint Detection and Response solution offering real-time threat detection, investigation, and response capabilities, empowering organizations to proactively defend against sophisticated cyber threats across their endpoints.
 
-This setup guide shows how to forward EDR events collected on the Palo Alto Cortex XDR platform to Sekoia.io.
+This setup guide shows how to forward EDR alerts collected on the Palo Alto Cortex XDR platform to Sekoia.io.
+
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+    
+## Collected events
+
+This integration collects the following events:
+
+- alerts
+- telemetry events related to the alerts.
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.md!}
 
