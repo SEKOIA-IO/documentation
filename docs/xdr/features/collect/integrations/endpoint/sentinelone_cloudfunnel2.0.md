@@ -15,7 +15,7 @@ SentinelOne Deep Visibility logs provides in-depth logs that are useful for dete
     No additional installation or configuration on the agents is needed.
 
 !!! warning
-    Alerts and Events logs from the SentinelOne console are not available with CloudFunnel. To collect events to be able to have information on access to the console, one must configure the SentinelOne log collection from API as documented [here](docs/xdr/features/collect/integrations/endpoint/sentinelone.md).
+    Alerts and Events logs from the SentinelOne console are not available with CloudFunnel. To collect events to be able to have information on access to the console, one must configure the SentinelOne log collection from API as documented [here](./sentinelone.md).
 
 Please find bellow a short list of activities that are available for security supervision thanks to SentinelOne Deep Visibility logs:
 
