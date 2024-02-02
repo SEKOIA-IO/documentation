@@ -19,6 +19,12 @@ This integration collects the following events:
 - alerts
 - telemetry events related to the alerts.
 
+## Supported versions
+
+This integration was tested against the following versions:
+
+- Palo Alto Cortex XDR 3.8
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/9b95c9cf-8b78-4830-a1ed-b9e88f05e67a.md!}
