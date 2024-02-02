@@ -9,6 +9,9 @@ The "Custom format" feature allows you to easily develop your own Intake. It giv
 !!!note
     In order to use this feature, you need to have the `SIC_WRITE_INTAKE` permission associated to your Sekoia.io account. This permission also allows you to create an existing Intake.
 
+!!!warning
+    A custom format created on a MSSP community will be available for its sub-communities.
+
 ## Overview
 ### Create an empty Custom format
 
