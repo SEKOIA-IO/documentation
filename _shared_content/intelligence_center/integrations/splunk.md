@@ -1,15 +1,12 @@
 # External Integrations: Splunk
 
-Sekoia is providing an app for Splunk to detect threats in your logs based on our feed.
-
-## Objective
-Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any operational purpose such as CTI aggregation, dissemination, hunting...
+Sekoia is providing an application for Splunk to detect threats in your logs based on Sekoia.io CTI feed.
  
 ## Prerequisites:
 
 - An operational Splunk Enterprise instance with administrator privileges
 - An active Sekoia.io license with access to the CTI
-- An access to Sekoia.io User Center with the permissions to create an API key with [CTI permissions](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
+- An access to Sekoia.io User Center with the permissions to [create an API key](https://docs.sekoia.io/getting_started/manage_api_keys/) with [CTI permissions](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions) <a name="api_key"></a>
 
 ## 1. Connect to Splunk
 
@@ -24,23 +21,26 @@ Collect Sekoia.io CTI feed in an existing Splunk instance self-managed, for any 
 
 ## 2.  Install and configure your Splunk TA
 
-1. Go to Application Setup Page following `Apps` > `Find more Apps`
+1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps`
 ![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
    
 2. Search for Sekoia.io application and and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
    
-3. Configure your Sekoia.io Application (with your `Sekoia API Key`, `Sekoia API url`  and `feed ID`)
+3. Configure your Sekoia.io Application (with your `SEKOIA.IO API Key`, `SEKOIA.IO API URL`  and `Feed ID`)
 ![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
 
-Please consult [our documentation for feed ID](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
+**Information**
+- `SEKOIA.IO API Key`: Please read the information [above](#api_key)
+- `Sekoia API url`: the default SEKOIA.IO API URL is https:///api.sekoia.io
+- `Feed ID`: [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
 
 !!! note
-     After the launch of Sekoia.io app, IOCs will be downloaded and updated on Splunk
+     After the launch of Sekoia.io application, IOCs will be downloaded and updated on Splunk
         
 ## 3. Sekoia intelligence in Splunk
 
-In the following section, here are the Sekoia IOCs available in Splunk:
+In the following section, here are the Sekoia IOCs available in Splunk: <a name="sourcetype"></a>
 
 |IOC type|Meaning|
 |--|--|
@@ -64,7 +64,7 @@ For more information, please consult [this page](https://docs.sekoia.io/cti/feat
 
 ### Search existing Sekoia IOCs in Splunk TA with expiry date
 
-1. Go to Application Setup Page following `Apps` > `Sekoia.io`
+1. Go to Application Setup Page by clicking on `Apps` > `Sekoia.io`
 2. In the search tab, query on `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
 
 ![Splunk-Search_IOCs_validity](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
@@ -72,15 +72,15 @@ For more information, please consult [this page](https://docs.sekoia.io/cti/feat
 ### Search and compare Sekoia IOCs with logs in Splunk
 
 !!! note
-     Prerequisites: Logs have to be collected in Splunk
+     Logs have to be collected in Splunk. Please consult [Splunk documentation](https://www.splunk.com/en_us/blog/learn/centralized-logging.html).
 
 1. Setup a lookup table
  
-    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>`
+    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (e.g. **SOURCETYPE** listed [above](#sourcetype) )
    
     When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table
 
-3. Sightings will be displayed on this section of the Sekoia integration
+2. Sightings will be displayed on this section of the Sekoia integration
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information.
@@ -89,11 +89,11 @@ Please refer to [our documentation to search IOCs in Intelligence page](https://
 
 ### 1. False positive
 
-Compare Sekoia IOCs valid date in Sekoia Intelligence.
+Compare Sekoia IOCs valid date in [Sekoia Intelligence](https://docs.sekoia.io/cti/features/consume/intelligence/#search-bars).
 
 ### 2. Splunk issues
 
-Search in the Internal logs for errors. Please consult [Splunk documentation](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself) for more information
+Search in the Internal logs for errors. Please consult [Splunk documentation](https://docs.splunk.com/Documentation/Splunk/9.1.2/Troubleshooting/WhatSplunklogsaboutitself) for more information.
 
 ## 6. Other resources
 
