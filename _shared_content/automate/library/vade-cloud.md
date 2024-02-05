@@ -30,4 +30,4 @@ Get last logs from the Vade Cloud platform
 
 ## Extra
 
-Module **`Vade Cloud` v1.3.0**
+Module **`Vade Cloud` v1.4.0**
