@@ -293,6 +293,7 @@ nav:
         - HTTP: xdr/features/automate/library/http.md
         - HarfangLab: xdr/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: xdr/features/automate/library/iknowwhatyoudownload.md
+        - IPInfo: xdr/features/automate/library/ipinfo.md
         - IPtoASN: xdr/features/automate/library/iptoasn.md
         - Imperva: xdr/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: xdr/features/automate/library/jumpcloud-directory-insights.md
@@ -482,6 +483,7 @@ nav:
         - HTTP: tip/features/automate/library/http.md
         - HarfangLab: tip/features/automate/library/harfanglab.md
         - IKnowWhatYouDownload: tip/features/automate/library/iknowwhatyoudownload.md
+        - IPInfo: tip/features/automate/library/ipinfo.md
         - IPtoASN: tip/features/automate/library/iptoasn.md
         - Imperva: tip/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: tip/features/automate/library/jumpcloud-directory-insights.md
