@@ -60,22 +60,22 @@ You must have the following rights to perform the installation:
 
 When you have an **Event Hub** follow this guide to send your events from **Microsoft 365 Defender** to the **Event Hub**:
 
-1. Log on to **Microsoft 365 Defender** portal as a Global Administrator or Security Administrator.
-2. Go to the Streaming API settings page.
-3. Click on Add.
-4. Choose a name for your new settings.
+1. Open the **Microsoft 365 Security** App portal as a *Global Administrator* or *Security Administrator*.
+2. On the left panel, select **Settings**.
+3. Select **Microsoft Defender XDR**.
+4. In **General**, click on **Streaming API** and click on **+ Add**.
 5. Choose Forward events to **Azure Event Hub**.
-6. To export the event data to a single **Event Hub**, enter your **Event Hub** name and your **Event Hub** resource ID.
-7. To get your **Event Hub** resource ID, go to your **Azure Event Hub Namespace** page on Azure > Properties tab > copy the text under Resource ID:
+6. To export the event data to a single **Event Hub**, enter your **Event Hub** name and your **Event Hub Namespace** resource ID. **Be sure to take the event hub namespace ID and not the event hub ID.**
+7. To get your **Event Hub Namespace** resource ID, go to your **Azure Event Hub Namespace** page on Azure > Properties tab > copy the text under Resource ID:
 (e.g. `/subscriptions/XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/resourceGroups/resourcegroupname/providers/Microsoft.EventHub/namespaces/namespacename`).
 8. Go to the supported **Microsoft 365 Defender** event types in event streaming API to review the support status of event types in the Microsoft 365 Streaming API.
 9. Choose the events you want to stream and click Save.
 
 !!! Disclamer
-    We advise to send one event type by **Event Hub**, to avoid performance issue with **Microsoft 365 Defender** events
+    Be sure to size your eventhub ressources accordingly to the number of EPS you have (number of eventhubs, throughput, partitions...) See the Further readings section in order to estimate the number of event per second **Microsoft 365 Defender** can be on your instance.
 
 #### Further Readings
-
+- [Estimating initial Event Hub capacity](https://learn.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub?view=o365-worldwide#estimating-initial-event-hub-capacity) 
 - [Configure Microsoft 365 Defender to stream Advanced Hunting events to your Azure Event Hub](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub)
 
 ### Create the intake
