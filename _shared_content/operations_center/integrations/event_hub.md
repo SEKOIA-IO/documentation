@@ -8,7 +8,9 @@ These two ways will create an Azure Event Hub and a Storage Account.
 
 === "Automatic"
 
-    To get started, click on the link below and fill the form on Azure to set up the required environment for Sekoia [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw%2Egithubusercontent%2Ecom%2FSEKOIA%2DIO%2Fdocumentation%2Ffeat%2Fazure%2Deh%2Dtemplate%2Fdocs%2Fassets%2Foperation%5Fcenter%2Fintegration%5Fcatalog%2Fcloud%5Fand%5Fsaas%2Fazure%2Feventhub%5Ftemplate%2Ejson)
+    ** Use the template to create the ressources**
+
+    To get started, click on the button below and fill the form on Azure to set up the required environment for Sekoia [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw%2Egithubusercontent%2Ecom%2FSEKOIA%2DIO%2Fdocumentation%2Ffeat%2Fazure%2Deh%2Dtemplate%2Fdocs%2Fassets%2Foperation%5Fcenter%2Fintegration%5Fcatalog%2Fcloud%5Fand%5Fsaas%2Fazure%2Feventhub%5Ftemplate%2Ejson)
 
     Some fields must be filled in.
     
@@ -30,6 +32,10 @@ These two ways will create an Azure Event Hub and a Storage Account.
     | Consumer Group | <project_name\>cp |
     | Storage Account | <project_name\>sa |
 
+    ** Use output variables to create a Sekoia playbook**
+    When the message **Your deployment is complete** is displayed, click on **Outputs**.
+    
+    Keep these 5 pieces of information displayed carefully, it will used to configure the **Trigger Configuration** of the Sekoia playbook.
 
 
     - **Event Hub Sku**: Select the messaging tier for Event Hub Namespace between `Basic` , `Standard` or `Premium`. We do not recommend `Basic` model due to its limitation. Please follow [this Microsoft web page](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-quotas#basic-vs-standard-vs-premium-vs-dedicated-tiers) to get more information avec the different messaging tier.
