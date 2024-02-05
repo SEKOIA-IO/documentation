@@ -14,12 +14,12 @@ These two ways will create an Azure Event Hub and a Storage Account.
 
     Some fields must be filled in.
     
-    **Project details**
+    ***Project details***
 
     - **Subscription**: select the Azure subscription you want to use
     - **Resource Group**: select or create a new Resource Group. A Resource Group is a container that holds related resources
     
-    **Instance details**
+    ***Instance details***
 
     - **Region**: select the appropriated region
     - **Project Name**: give a name for this project. Here is how the names of the resources will be affected by this project name
@@ -32,18 +32,19 @@ These two ways will create an Azure Event Hub and a Storage Account.
     | Consumer Group | <project_name\>cp |
     | Storage Account | <project_name\>sa |
 
-    ** Use output variables to create a Sekoia playbook**
-    When the message **Your deployment is complete** is displayed, click on **Outputs**.
-    
-    Keep these 5 pieces of information displayed carefully, it will used to configure the **Trigger Configuration** of the Sekoia playbook.
-
-
     - **Event Hub Sku**: Select the messaging tier for Event Hub Namespace between `Basic` , `Standard` or `Premium`. We do not recommend `Basic` model due to its limitation. Please follow [this Microsoft web page](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-quotas#basic-vs-standard-vs-premium-vs-dedicated-tiers) to get more information avec the different messaging tier.
     - **Troughput Unit**: A **unit** gives you up to **1 MB/s or 1,000 events per second** (whichever comes first) per Event Hub Namespace. Please adapt it to your need.
     - **Enable Auto Inflate**: When checked, the Auto-inflate feature of Event Hubs *automatically scales up by increasing the number of troughput units, to meet usage needs*.
     - **Auto Inflate Maximum Throughput Unit**: When Enable Auto Inflate is checked, you can specify the maximum throughput units you allow.
     - **Partition Count**: The number of event hub partitions. Microsoft recommends a maximum throughput of 1 MB/s per partition. ***Unless you plan to add more Event hubs to the Event Hub Namespace, the Partition Count and Throughput Unit variables should have the same values.***
     - **Retention Time**: How long you will keep events in the Event hub in days.
+
+    ** Use the output variables to create a Sekoia playbook**
+    
+    When the message **Your deployment is complete** is displayed, click on **Outputs**.
+    
+    Keep these 5 pieces of information displayed carefully, it will used to configure the **Trigger Configuration** of the Sekoia playbook.
+
 
 === "Manual"
 
