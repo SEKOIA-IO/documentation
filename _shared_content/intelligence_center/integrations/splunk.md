@@ -11,7 +11,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 ## 1. Connect to Splunk
 
 !!!note
-    Splunk instance must be activated on your server
+    Splunk instance must be activated on your server.
 
 1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
@@ -24,7 +24,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps`
 ![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
    
-2. Search for Sekoia.io application and and install it
+2. Search for Sekoia.io application and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
    
 3. Configure your Sekoia.io Application (with your `SEKOIA.IO API Key`, `SEKOIA.IO API URL`  and `Feed ID`)
@@ -33,11 +33,11 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 **Information**
 
 - `SEKOIA.IO API Key`: Please read the information [above](#api_key)
-- `Sekoia API url`: the default SEKOIA.IO API URL is https:///api.sekoia.io
+- `Sekoia API url`: the default url is https:///api.sekoia.io
 - `Feed ID`: [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
 
 !!! note
-     After the launch of Sekoia.io application, IOCs will be downloaded and updated on Splunk
+     After the launch of Sekoia.io application, IOCs will be downloaded and updated on Splunk.
         
 ## 3. Sekoia intelligence in Splunk
 
@@ -47,14 +47,12 @@ In the following section, here are the Sekoia IOCs available in Splunk: <a name=
 |--|--|
 |domain| Domain name	|
 |url	|  Url website 		|
-|ipv4	| Internet Protocol version 4 (32-bit number e.g. 111.111.1.11 )		|
+|ipv4	| Internet Protocol version 4 (32-bit number e.g. `111.111.1.11` )		|
 |md5	| Cryptographic hash function that results in a 128-bit hash value	|
 |sha1	| Hash function which takes an input and produces a 160-bit (20-byte) 	|
 |sha256| Secure Hash Algorithm 256-bit	|
 
-An IOC is an observable that represents a malicious activity.
-
-For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/)
+An IOC is an observable that represents a malicious activity. For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/).
 
 !!! note
      Only Sekoia Indicators will be updated.
@@ -77,9 +75,9 @@ For more information, please consult [this page](https://docs.sekoia.io/cti/feat
 
 1. Setup a lookup table
  
-    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (e.g. **SOURCETYPE** listed [above](#sourcetype) )
+    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (e.g. **SOURCETYPE** listed [above](#sourcetype)).
    
-    When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table
+    When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table.
 
 2. Sightings will be displayed on this section of the Sekoia integration
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
