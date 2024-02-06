@@ -235,6 +235,7 @@ nav:
     - Detect:
       - Rules Catalog: xdr/features/detect/rules_catalog.md
       - Built-in Rules: xdr/features/detect/built_in_detection_rules.md
+      - Built-in Geolocalisation: xdr/features/detect/built_in_geolocalisation.md
       - Sigma: xdr/features/detect/sigma.md
       - Anomaly Detection: xdr/features/detect/anomaly.md
       - IOCs Collections: xdr/features/detect/ioccollections.md
