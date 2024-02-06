@@ -117,29 +117,29 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
     sudo systemctl status SEKOIAEndpointAgent.service
     ```
 
+    #### journald configuration
+
+    To get events, the agent pushes rules to the audit framework. By default, **journald**  might listen to the audit socket for events.
+
+    To disable audit logging, do the following as root:
+        
+        
+        # Stop listening to audit events
+        systemctl stop systemd-journald-audit.socket 
+        
+        # Disable it to avoid future start
+        systemctl disable systemd-journald-audit.socket
+        
+        # Masking will prevent starting by other services
+        systemctl mask systemd-journald-audit.socket
+        
+        # Restart journald
+        systemctl restart systemd-journald
+        
+        
+    A reboot may be necessary if the audit events are still appearing in the logs.
+
 Once installed, the agent collects, normalizes, and sends event logs to Sekoia.io. The protocol used to send events is HTTPS (443).
-
-#### journald configuration
-
-To get events, the agent pushes rules to the audit framework. By default, **journald**  might listen to the audit socket for events.
-
-To disable audit logging, do the following as root:
-	
-       
-	# Stop listening to audit events
-	systemctl stop systemd-journald-audit.socket 
-	
-	# Disable it to avoid future start
-	systemctl disable systemd-journald-audit.socket
-	
-	# Masking will prevent starting by other services
-	systemctl mask systemd-journald-audit.socket
-	
-	# Restart journald
-	systemctl restart systemd-journald
-       
-       
-A reboot may be necessary if the audit events are still appearing in the logs.
 
 #### Setting the region
 
@@ -164,7 +164,7 @@ To update the agent manually, follow the instructions specific to your OS.
 
 === "Windows"
 
-   Execute the following command **as an administrator**:
+    Execute the following command **as an administrator**:
 
     ```shell
     $ProgramFiles\EndpointAgent\agent.exe update
@@ -204,7 +204,7 @@ To uninstall the agent, follow the instructions specific to your OS.
 
 === "Linux"
 
-   Execute the following command:
+    Execute the following command:
 
     ```shell
     sudo /opt/endpoint-agent/agent uninstall
@@ -237,7 +237,7 @@ To uninstall the agent, follow the instructions specific to your OS.
     sudo /opt/endpoint-agent/agent -service uninstall
     ```
 
-   Then, remove the folders created by the agent:
+    Then, remove the folders created by the agent:
 
     ```shell
     sudo rm -rf /opt/endpoint-agent
