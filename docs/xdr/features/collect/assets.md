@@ -170,3 +170,5 @@ This rule creates a new asset for every unseen `host.name`. It attaches the `ipv
 ### Discover unique Accounts
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
+
+Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
