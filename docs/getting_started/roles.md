@@ -22,6 +22,12 @@ Based on user feedback, we plan to introduce more built-in roles to accommodate 
 
 In addition to built-in roles, each admin may create Custom roles. These will work in conjunction with built-in roles, providing even more flexibility for user access control.
 
+## Permissions
+
+You can discover all permissions associated either to built-in or custom roles directly from the UI in `Managed communities > Roles`
+
+![Permissions](/assets/roles_permissions.gif){: style="max-width:100%"}
+
 ## Legacy roles
 
 To create your own roles, please refer to this [section](https://docs.sekoia.io/getting_started/manage_users/#create-custom-roles).
