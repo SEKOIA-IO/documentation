@@ -20,8 +20,7 @@ On Palo Alto appliances, most of the important hardward and software activities 
 - Security
 
 !!! warning
-    Up to Palo Alto NGFW 10.0, the appliances must define UTC as their time zone, as the timestamp in the events is local time.
-    This requirement doesn't apply to appliances above 10.0.
+	Because the timestamp in the events is based on local time, the appliances must change their timezone to UTC (up to version Palo Alto NGFW 10.0). However, this requirement doesn't apply to appliances that are version 10.0 or higher. 
 
 ### Create the intake on Sekoia.io
 
