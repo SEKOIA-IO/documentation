@@ -291,6 +291,12 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.

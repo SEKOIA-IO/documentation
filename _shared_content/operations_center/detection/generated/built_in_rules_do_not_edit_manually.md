@@ -1,4 +1,4 @@
-Rules catalog includes **799 built-in detection rules** ([_last update on 2024-01-31_](rules_changelog.md)).
+Rules catalog includes **807 built-in detection rules** ([_last update on 2024-02-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1309,6 +1309,12 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+    
 ??? abstract "AutoIt3 Execution From Suspicious Folder"
     
     Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.
@@ -2530,6 +2536,24 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (High Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of high severity that was not blocked.
+    
+    - **Effort:** master
+    
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Low Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of low severity that was not blocked.
+    
+    - **Effort:** master
+    
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Medium Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of medium severity that was not blocked.
+    
+    - **Effort:** master
+    
 ??? abstract "SentinelOne EDR Agent Disabled"
     
     A SentinelOne EDR agent has been disabled according to SentinelOne logs.
@@ -2787,6 +2811,12 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -6198,6 +6228,10 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/02/2024 - major - changing current pattern and adding another one
+            
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -9367,6 +9401,18 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
         - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
             
+??? abstract "Trellix Network Security Threat Blocked"
+    
+    Trellix Network Security has detected a malicious traffic and blocked it.
+    
+    - **Effort:** master
+    
+??? abstract "Trellix Network Security Threat Notified"
+    
+    Trellix Network Security has detected a malicious traffic and raised an alert.
+    
+    - **Effort:** master
+    
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
@@ -9407,6 +9453,7 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 26/01/2024 - minor - Modifying filter to improve rule.
         - 22/11/2023 - minor - Adding filter to improve rule.
             
 **Web Service**
@@ -9886,6 +9933,14 @@ Rules catalog includes **799 built-in detection rules** ([_last update on 2024-0
     Detects SunCrypt ransomware's parameters, most of which are unique.
     
     - **Effort:** elementary
+    
+**Network Denial of Service**
+
+??? abstract "Anomaly CloudFlare DDoS"
+    
+    Detects anomaly on DNS events from CloudFlare.
+    
+    - **Effort:** master
     
 **Endpoint Denial of Service**
 

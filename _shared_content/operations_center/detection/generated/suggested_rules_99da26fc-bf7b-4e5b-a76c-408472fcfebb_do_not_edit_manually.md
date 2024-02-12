@@ -345,6 +345,12 @@ The following Sekoia.io built-in rules match the intake **Sophos Analysis Threat
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641

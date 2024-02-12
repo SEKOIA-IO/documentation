@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x CrowdStrike Falcon on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_22f2afd2-c858-443d-8e06-7b335e439c29_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Palo Alto Cortex XDR [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.json){ .md-button }
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -57,6 +57,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
+??? abstract "Autorun Keys Modification"
+    
+    Detects modification of autostart extensibility point (ASEP) in registry. Prerequisites are Logging for Registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
 ??? abstract "AzureEdge in Command Line"
     
     Detects use of azureedge in the command line.
@@ -68,6 +74,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.
     
     - **Effort:** advanced
+
+??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
+    
+    Detects Bazar Loader domains based on the Bazar Loader DGA
+    
+    - **Effort:** elementary
 
 ??? abstract "BazarLoader Persistence Using Schtasks"
     
@@ -87,29 +99,17 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
-??? abstract "Burp Suite Tool Detected"
-    
-    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
-    
-    - **Effort:** intermediate
-
 ??? abstract "CMSTP Execution"
     
     Detects various indicators of Microsoft Connection Manager Profile Installer execution
     
     - **Effort:** intermediate
 
-??? abstract "CMSTP UAC Bypass via COM Object Access"
+??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
     
-    Detects UAC Bypass Attempt Using Microsoft Connection Manager Profile Installer Autoelevate-capable COM Objects
+    Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
     
-    - **Effort:** intermediate
-
-??? abstract "CVE 2022-1292"
-    
-    The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
-    
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Capture a network trace with netsh.exe"
     
@@ -140,12 +140,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
     
     - **Effort:** intermediate
-
-??? abstract "Cmd.exe Used To Run Reconnaissance Commands"
-    
-    Detects command lines with suspicious args
-    
-    - **Effort:** advanced
 
 ??? abstract "Cmdkey Cached Credentials Recon"
     
@@ -189,81 +183,9 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
-??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
+??? abstract "Cron Files Alteration"
     
-    CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
-    
-    - **Effort:** intermediate
-
-??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
-    
-    CrowdStrike Falcon raised an alert for an Identity-based detection with high severity
-    
-    - **Effort:** intermediate
-
-??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
-    
-    CrowdStrike Falcon raised an alert for an Identity-based detection with informational severity
-    
-    - **Effort:** advanced
-
-??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
-    
-    CrowdStrike Falcon raised an alert for an Identity-based detection with low severity
-    
-    - **Effort:** advanced
-
-??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
-    
-    CrowdStrike Falcon raised an alert for an Identity-based detection with medium severity
-    
-    - **Effort:** advanced
-
-??? abstract "CrowdStrike Falcon Intrusion Detection"
-    
-    CrowdStrike Falcon agent raised an alert for an intrusion detection
-    
-    - **Effort:** advanced
-
-??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
-    
-    CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
-    
-    - **Effort:** intermediate
-
-??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
-    
-    CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
-    
-    - **Effort:** intermediate
-
-??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
-    
-    CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
-    
-    - **Effort:** advanced
-
-??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
-    
-    CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
-    
-    - **Effort:** advanced
-
-??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
-    
-    CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
-    
-    - **Effort:** advanced
-
-??? abstract "Csrss Child Found"
-    
-    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
-
-??? abstract "Csrss Wrong Parent"
-    
-    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
     
     - **Effort:** advanced
 
@@ -272,12 +194,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
-
-??? abstract "DNS Tunnel Technique From MuddyWater"
-    
-    Detecting DNS Tunnel Activity For Muddywater intrusion set. This is the loading of a specific DLL from an Excel macro which is detected.
-    
-    - **Effort:** elementary
 
 ??? abstract "Data Compressed With Rar"
     
@@ -309,15 +225,15 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
+??? abstract "Disable Workstation Lock"
+    
+    Registry change in order to disable the ability to lock the computer by using CTRL+ALT+DELETE or CTRL+L. This registry key does not exist by default. Its creation is suspicious and the value set to "1" means an activation. It has been used by FatalRAT, but other attacker/malware could probably use it. This rule needs Windows Registry changes (add,modification,deletion) logging which can be done through Sysmon Event IDs 12,13,14.
+    
+    - **Effort:** elementary
+
 ??? abstract "Disabled IE Security Features"
     
     Detects from the command lines or the registry, changes that indicate unwanted modifications to registry keys that disable important Internet Explorer security features. This has been used by attackers during Operation Ke3chang.
-    
-    - **Effort:** advanced
-
-??? abstract "Dllhost Wrong Parent"
-    
-    Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
 
@@ -393,12 +309,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
-??? abstract "Exchange Server Spawning Suspicious Processes"
-    
-    Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
@@ -417,41 +327,11 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
-??? abstract "Exploit For CVE-2015-1641"
-    
-    Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
-    
-    - **Effort:** elementary
-
-??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
-    
-    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262. This is a very basic detection method relying on the rare usage of EPS files from Winword.
-    
-    - **Effort:** advanced
-
-??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
-    
-    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189
-    
-    - **Effort:** elementary
-
-??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
-    
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
-    
-    - **Effort:** intermediate
-
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
     
     - **Effort:** intermediate
-
-??? abstract "Explorer Wrong Parent"
-    
-    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
-    
-    - **Effort:** advanced
 
 ??? abstract "Fail2ban Unban IP"
     
@@ -459,15 +339,15 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
-??? abstract "File Or Folder Permissions Modifications"
+??? abstract "FlowCloud Malware"
     
-    Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.
+    Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
     
-    - **Effort:** master
+    - **Effort:** elementary
 
-??? abstract "Formbook Hijacked Process Command"
+??? abstract "Formbook File Creation DB1"
     
-    Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
+    Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
     
     - **Effort:** intermediate
 
@@ -501,6 +381,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
+??? abstract "Hijack Legit RDP Session To Move Laterally"
+    
+    Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
+    
+    - **Effort:** intermediate
+
 ??? abstract "ICacls Granting Access To All"
     
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
@@ -512,18 +398,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
     
     - **Effort:** intermediate
-
-??? abstract "IcedID Execution Using Excel"
-    
-    Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
-    
-    - **Effort:** elementary
-
-??? abstract "Impacket Wmiexec Module"
-    
-    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
-    
-    - **Effort:** elementary
 
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
@@ -546,6 +420,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
+    
+    - **Effort:** elementary
+
+??? abstract "Leviathan Registry Key Activity"
+    
+    Detects registry key used by Leviathan APT in Malaysian focused campaign.
     
     - **Effort:** elementary
 
@@ -584,42 +464,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
     - **Effort:** elementary
-
-??? abstract "Logonui Wrong Parent"
-    
-    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** advanced
-
-??? abstract "Lsass Wrong Parent"
-    
-    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** advanced
-
-??? abstract "MMC Spawning Windows Shell"
-    
-    Detects a Windows command line executable started from MMC process
-    
-    - **Effort:** intermediate
-
-??? abstract "MMC20 Lateral Movement"
-    
-    Detects MMC20.Application Lateral Movement; specifically looks for the spawning of the parent MMC.exe with a command line of "-Embedding" as a child of svchost.exe.
-    
-    - **Effort:** intermediate
-
-??? abstract "MOFComp Execution"
-    
-    Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
-    
-    - **Effort:** intermediate
-
-??? abstract "MS Office Product Spawning Exe in User Dir"
-    
-    Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
-    
-    - **Effort:** intermediate
 
 ??? abstract "MSBuild Abuse"
     
@@ -693,17 +537,11 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
-??? abstract "Microsoft Office Product Spawning Windows Shell"
+??? abstract "Microsoft Office Creating Suspicious File"
     
-    Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
+    Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
     
-    - **Effort:** advanced
-
-??? abstract "Microsoft Office Spawning Script"
-    
-    Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
-    
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -711,11 +549,11 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
-??? abstract "Mshta Suspicious Child Process"
+??? abstract "NTDS.dit File In Suspicious Directory"
     
-    Detects the use of various web request methods executed remotely via Windows PowerShell
+    The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
@@ -758,12 +596,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
     
     - **Effort:** master
-
-??? abstract "Netsh Program Allowed With Suspicious Location"
-    
-    Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
-    
-    - **Effort:** advanced
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -813,6 +645,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
+??? abstract "NjRat Registry Changes"
+    
+    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
+    
+    - **Effort:** master
+
 ??? abstract "NlTest Usage"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
@@ -822,6 +660,18 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
+    
+    - **Effort:** intermediate
+
+??? abstract "OceanLotus Registry Activity"
+    
+    Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
     
     - **Effort:** intermediate
 
@@ -836,6 +686,36 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
     - **Effort:** elementary
+
+??? abstract "Package Manager Alteration"
+    
+    Package manager (eg: apt, yum) can be altered to install malicious software
+    
+    - **Effort:** advanced
+
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (High Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of high severity that was not blocked.
+    
+    - **Effort:** master
+
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Low Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of low severity that was not blocked.
+    
+    - **Effort:** master
+
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Medium Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of medium severity that was not blocked.
+    
+    - **Effort:** master
+
+??? abstract "Pandemic Windows Implant"
+    
+    Detects Pandemic Windows Implant through registry keys or specific command lines. Prerequisites: Logging for Registry events is needed, which can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     
@@ -860,12 +740,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
     
     - **Effort:** elementary
-
-??? abstract "Potential DNS Tunnel"
-    
-    Detects domain name which is longer than 95 characters. Long domain names are distinctive of DNS tunnels.
-    
-    - **Effort:** advanced
 
 ??? abstract "PowerCat Function Loading"
     
@@ -957,17 +831,17 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
-??? abstract "QakBot Process Creation"
-    
-    Detects QakBot like process executions
-    
-    - **Effort:** intermediate
-
 ??? abstract "Qakbot Persistence Using Schtasks"
     
     Detects possible Qakbot persistence using schtasks.
     
     - **Effort:** intermediate
+
+??? abstract "RDP Sensitive Settings Changed"
+    
+    Detects changes to RDP terminal service sensitive settings. Logging for registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** advanced
 
 ??? abstract "RDP Session Discovery"
     
@@ -981,6 +855,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
+??? abstract "RUN Registry Key Created From Suspicious Folder"
+    
+    Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
+    
+    - **Effort:** advanced
+
 ??? abstract "RYUK Ransomeware - martinstevens Username"
     
     Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
@@ -992,18 +872,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
     
     - **Effort:** elementary
-
-??? abstract "Rare Logonui Child Found"
-    
-    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
-    
-    - **Effort:** advanced
-
-??? abstract "Rare Lsass Child Found"
-    
-    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
 
 ??? abstract "Rclone Process"
     
@@ -1041,11 +909,11 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
-??? abstract "STRRAT Scheduled Task"
+??? abstract "SSH Authorized Key Alteration"
     
-    Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Schtasks Persistence With High Privileges"
     
@@ -1053,35 +921,17 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
-??? abstract "Schtasks Suspicious Parent"
+??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
-    Detects schtasks started from suspicious and/or unusual processes.
+    Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
+    
+    - **Effort:** elementary
+
+??? abstract "Sliver DNS Beaconing"
+    
+    Detects suspicious DNS queries known from Sliver beaconing 
     
     - **Effort:** intermediate
-
-??? abstract "Searchindexer Wrong Parent"
-    
-    Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
-    
-    - **Effort:** advanced
-
-??? abstract "Searchprotocolhost Child Found"
-    
-    SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
-    
-    - **Effort:** intermediate
-
-??? abstract "Searchprotocolhost Wrong Parent"
-    
-    Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
-    
-    - **Effort:** advanced
-
-??? abstract "Smss Wrong Parent"
-    
-    Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
-    
-    - **Effort:** advanced
 
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -1089,29 +939,17 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
-??? abstract "SolarWinds Wrong Child Process"
-    
-    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
-    
-    - **Effort:** intermediate
-
-??? abstract "Spoolsv Wrong Parent"
-    
-    Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
-    
-    - **Effort:** advanced
-
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
     
     - **Effort:** intermediate
 
-??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
+??? abstract "Sticky Key Like Backdoor Usage"
     
-    Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
+    Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
-    - **Effort:** intermediate
+    - **Effort:** elementary
 
 ??? abstract "Suncrypt Parameters"
     
@@ -1119,27 +957,21 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
+??? abstract "Suspicious ADSI-Cache Usage By Unknown Tool"
+    
+    Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. It needs file monitoring capabilities (Sysmon Event ID 11 with .sch file creation logging).
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     
     Copy suspicious files through Windows cmd prompt to network share
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Cmd.exe Command Line"
-    
-    Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
-    
-    - **Effort:** advanced
-
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
     
     - **Effort:** intermediate
 
@@ -1155,29 +987,23 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious DNS Child Process"
-    
-    Detects suspicious processes spawned by the dns.exe process. It could be a great indication of the exploitation of the DNS RCE bug reported in CVE-2020-1350 (SIGRED).
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Double Extension"
     
     Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Driver Loaded"
+    
+    Checks the registry key for suspicious driver names that are vulnerable most of the time and loaded in a specific location by the KDU tool from hfiref0x. Some drivers are used by several SysInternals tools, which should have been whitelisted in the filter condition. The driver named "DBUtilDrv2" has been removed as it caused too many false positives unfortunately. It can be added under "drv_name" if more coverage is wanted. This rule needs registry key monitoring (can be done with Sysmon Event IDs 12,13 and 14).
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Finger Usage"
     
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
     
     - **Effort:** intermediate
-
-??? abstract "Suspicious HWP Child Process"
-    
-    Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
-    
-    - **Effort:** elementary
 
 ??? abstract "Suspicious Headless Web Browser Execution To Download File"
     
@@ -1197,12 +1023,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious Mshta Execution From Wmi"
-    
-    Detects mshta executed by wmiprvse as parent. It has been used by TA505 with some malicious documents.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
@@ -1212,12 +1032,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
 ??? abstract "Suspicious Network Args In Command Line"
     
     Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Outlook Child Process"
-    
-    Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
     
     - **Effort:** intermediate
 
@@ -1233,33 +1047,15 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
-    
-    Detects potential process injection and hollowing on processes that usually require a DLL to be launched, but are launched without any argument. 
-    
-    - **Effort:** intermediate
-
 ??? abstract "Suspicious Regasm Regsvcs Usage"
     
     catch abuse of regsvcs and regasm lolbin by attacker
     
     - **Effort:** advanced
 
-??? abstract "Suspicious Regsvr32 Execution"
-    
-    Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
-    
-    - **Effort:** advanced
-
 ??? abstract "Suspicious Rundll32.exe Execution"
     
     The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Scheduled Task Creation"
-    
-    Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
     
     - **Effort:** intermediate
 
@@ -1299,12 +1095,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
-??? abstract "Svchost Wrong Parent"
-    
-    Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
-    
-    - **Effort:** advanced
-
 ??? abstract "Sysprep On AppData Folder"
     
     Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
@@ -1317,35 +1107,23 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
-??? abstract "Taskhost Wrong Parent"
+??? abstract "UAC Bypass Using Fodhelper"
     
-    Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
-    
-    - **Effort:** advanced
-
-??? abstract "Taskhost or Taskhostw Suspicious Child Found"
-    
-    Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
-    
-    - **Effort:** advanced
-
-??? abstract "Taskhostw Wrong Parent"
-    
-    Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
-    
-    - **Effort:** advanced
-
-??? abstract "Telegram Bot API Request"
-    
-    Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
-    
-    - **Effort:** advanced
-
-??? abstract "Trickbot Malware Activity"
-    
-    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
+    Detects UAC bypass method using Fodhelper after setting the proper registry key, used in particular by Agent Tesla (RAT) or more recently by Earth Luscas. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** intermediate
+
+??? abstract "UAC Bypass Via Sdclt"
+    
+    Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
+    
+    - **Effort:** elementary
+
+??? abstract "Ursnif Registry Key"
+    
+    Detects a new registry key created by Ursnif malware. The rule requires to log for Registry Events, which can be done using SYsmon's Event IDs 12,13 and 14.
+    
+    - **Effort:** elementary
 
 ??? abstract "Usage Of Procdump With Common Arguments"
     
@@ -1353,11 +1131,11 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
-??? abstract "Userinit Wrong Parent"
+??? abstract "Usage Of Sysinternals Tools"
     
-    Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
+    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "WCE wceaux.dll Creation"
     
@@ -1371,11 +1149,11 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** elementary
 
-??? abstract "WMIC Command To Determine The Antivirus"
+??? abstract "WMI Persistence Script Event Consumer File Write"
     
-    Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
+    Detects file writes through WMI script event consumer.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMIC Uninstall Product"
     
@@ -1383,11 +1161,11 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** intermediate
 
-??? abstract "Webshell Execution W3WP Process"
+??? abstract "Webshell Creation"
     
-    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
@@ -1395,47 +1173,23 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** advanced
 
+??? abstract "Windows Credential Editor Registry Key"
+    
+    Detects the use of Windows Credential Editor (WCE). Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** elementary
+
 ??? abstract "Windows Firewall Changes"
     
     Detects changes on Windows Firewall configuration
     
     - **Effort:** master
 
-??? abstract "Windows Update LolBins"
+??? abstract "Windows Registry Persistence COM Key Linking"
     
-    This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.
+    Detects COM object hijacking via TreatAs subkey. Logging for Registry events is needed in the Sysmon configuration with this kind of rule `<TargetObject name="testr12" condition="end with">\TreatAs\(Default)</TargetObject>`.
     
-    - **Effort:** elementary
-
-??? abstract "Wininit Wrong Parent"
-    
-    Windows Boot is a background application launcher for the Windows operating system. Wininit.exe is responsible for performing the Windows initialization process. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** advanced
-
-??? abstract "Winlogon wrong parent"
-    
-    Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
-    
-    - **Effort:** advanced
-
-??? abstract "Winrshost Wrong Parent"
-    
-    Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
-    
-    - **Effort:** advanced
-
-??? abstract "Winword Document Droppers"
-    
-    Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
-    
-    - **Effort:** elementary
-
-??? abstract "Winword wrong parent"
-    
-    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
-    
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Wmic Process Call Creation"
     
@@ -1448,18 +1202,6 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects either remote or local code execution using wmic tool.
     
     - **Effort:** intermediate
-
-??? abstract "Wmiprvse Wrong Parent"
-    
-    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
-    
-    - **Effort:** advanced
-
-??? abstract "Wsmprovhost Wrong Parent"
-    
-    Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
-    
-    - **Effort:** advanced
 
 ??? abstract "XCopy Suspicious Usage"
     

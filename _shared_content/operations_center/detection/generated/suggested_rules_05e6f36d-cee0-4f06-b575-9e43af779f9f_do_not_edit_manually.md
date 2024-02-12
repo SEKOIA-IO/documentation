@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -368,6 +374,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects commands containing a domain linked to http exfiltration.
     
     - **Effort:** intermediate
+
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Exploit For CVE-2015-1641"
     
