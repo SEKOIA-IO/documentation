@@ -64,11 +64,7 @@ The first step to use the agent is to create a [new intake associated with the S
 
 ### Step 2: Download executable
 
-| OS | Link |
-| -- | -- |
-| Windows | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe) |
-|Linux | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest) |
-
+Use the download link provided in the description of the intake in the application.
 
 ### Installation
 
