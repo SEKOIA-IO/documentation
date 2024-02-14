@@ -56,7 +56,7 @@ jobs:
           OS_REGION_NAME: "GRA"
 
       - name: Find Comment
-        uses: peter-evans/find-comment@v2
+        uses: peter-evans/find-comment@v3
         id: fc
         with:
           issue-number: ${{ steps.pr_number.outputs.pr_number }}
@@ -64,7 +64,7 @@ jobs:
           body-includes: Newest code from ${{ github.actor}} has been published to
 
       - name: Add comment to PR
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ steps.pr_number.outputs.pr_number }}

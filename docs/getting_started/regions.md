@@ -5,17 +5,14 @@ Sekoia is currently available in several European regions. Each of them will ena
 ## Watch out for region-specific URLS
 
 !!!warning
-    ✋ Please note: The region in which you are located has an impact on the product URLs.
+✋ Please note: The region in which you are located has an impact on the product URLs.
 
 !!!warning
-    ⌛ Some URLS may change before January 2024
-
+⌛ Some URLS may change before January 2024
 
 When you find urls of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
 
-
 For example, if you're in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>
-
 
 ## France - FRA1
 
@@ -95,12 +92,10 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
     </tbody>
 </table>
 
-
-
-## Amsterdam - EUR1 
+## Amsterdam - EUR1
 
 !!!warning
-    ✋ Region not available yet - Coming soon
+✋ Region not available yet - Coming soon
 
 For companies requiring their data to be in Europe
 
@@ -170,6 +165,43 @@ For companies requiring their data to be hosted in Monaco
         <tr>
             <td>Syslog Intake</td>
             <td><a href="mco1.app.sekoia.io:10514">mco1.app.sekoia.io:10514</a></td>
+        </tr>
+    </tbody>
+</table>
+
+## United Arab Emirates - EUA1
+
+UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai)
+
+<table style="width:100%">
+    <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>UAE1</strong></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>🇦🇪 United Arab Emirates / Dubai</td>
+        </tr>
+        <tr>
+            <td>Infrastructure</td>
+            <td>Azure</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td><a href="https://app.uae1.sekoia.io">https://app.uae1.sekoia.io</a></td>
+        </tr>
+        <tr>
+            <td>API</td>
+            <td><a href="https://app.uae1.sekoia.io/api">https://app.uae1.sekoia.io/api</a></td>
+        </tr>
+        <tr>
+            <td>HTTP Intake</td>
+            <td><a href="https://app.uae1.sekoia.io/api/v1/intake-http">https://app.uae1.sekoia.io/api/v1/intake-http</a></td>
+        </tr>
+        <tr>
+            <td>Syslog Intake</td>
+            <td><a href="app.uae1.sekoia.io:10514">app.uae1.sekoia.io:10514</a></td>
         </tr>
     </tbody>
 </table>

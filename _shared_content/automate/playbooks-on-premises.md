@@ -1,13 +1,13 @@
 # Playbooks On-premises
 
-To ensure enhanced security measures, our clients may find it necessary to execute Playbook actions within a local network that remains isolated from external internet access or rejects inbound connections. To answer this particular need, we offer a solution that allows users to select actions they want to perform on their local network directly from the Playbooks' user interface. 
+Our clients may find it necessary to execute Playbook actions within a local network that remains isolated from external internet access or rejects inbound connections. To meet this particular need, we enable users to select actions they want to perform on their local network directly from the Playbooks' user interface. 
 
-To harness the full potential of this security-enhancing feature, clients are required to undertake a short installation process. This process involves the installation of our [dedicated agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/) and Docker onto a Linux machine positioned within their local network. This meticulous setup ensures that Playbook actions can be executed with the utmost reliability and security, maintaining the integrity of your local network environment. 
+Clients must undertake a short installation process to harness the full potential of this security-enhancing feature. This involves installing our [dedicated agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/) and Docker onto a Linux machine within their local network. The meticulous setup ensures that Playbook actions can be executed with the utmost reliability and security, maintaining the integrity of the local network environment. 
 
-Below, we provide detailed instructions on how to accomplish this installation process effectively.
+Below, we provide detailed instructions on how to accomplish the installation process.
 
 !!! INFO
-    This feature is currently in public beta. If you would like to try it, please contact us.
+    This feature is currently in public beta. If you would like to try it, please get in touch with us.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ Below, we provide detailed instructions on how to accomplish this installation p
 
 ### Supported OS versions
 
-Playbooks On-prem are designed to support Linux distributions based on a kernel version of 3.10 or later.
+Playbooks On-prem are designed to support Linux distributions based on kernel version 3.10 or later.
 Here's a non-exhaustive list of supported distributions:
 
 * Ubuntu 14.04 and newer
@@ -29,7 +29,7 @@ Here's a non-exhaustive list of supported distributions:
 
 ### Docker
 
-Playbooks On-prem rely on `docker` to execute actions. To ensure a seamless installation, please refer to the [official installation instructions](https://docs.docker.com/engine/install/).
+Playbooks On-prem rely on `docker` to execute actions. For instructions on how to install Docker, see [official installation instructions](https://docs.docker.com/engine/install/).
 
 #### podman
 
@@ -37,9 +37,9 @@ In certain Linux distributions, such as RHEL and CentOS, podman may come pre-ins
 
 Plus, podman can also inadvertently intercept and execute docker commands if the `podman-docker` package is installed.
 
-Because of this, it's important to note that the playbook runner agent **requires not only the presence of the Docker client but also the Docker engine**. 
+Because of this, the playbook runner agent **requires the presence of both the Docker client and the Docker engine**. 
 
-To uninstall `podman` and resolve any compatibility issues, you can follow the instructions below:
+To uninstall `podman` and resolve any compatibility issues, follow the instructions below:
 
 1. Remove packages 
     ```
@@ -73,7 +73,7 @@ To ensure a bug-free installation, the Sekoia Endpoint Agent must be able to com
 
 ### Testing the prerequisites 
 
-We have prepared a Docker image to facilitate the validation process, ensuring that the environment is properly configured for agent installation.
+We've prepared a Docker image to facilitate the validation process and ensure the environment is properly configured for agent installation.
 
 To initiate this validation, open a terminal and execute the following command:
 
@@ -81,7 +81,7 @@ To initiate this validation, open a terminal and execute the following command:
 docker run ghcr.io/sekoia-io/hello-sekoia:latest
 ```
 
-This command will initiate the download of the image, effectively verifying whether the host system can successfully access the Docker registry and establish connectivity with Sekoia.io.
+This command will initiate the image download, effectively verifying whether the host system can successfully access the Docker registry and establish connectivity with Sekoia.io.
 
 Here's an example of the expected output for your reference:
 
@@ -98,39 +98,39 @@ Checking connectivity with the object storage ... OK
 
 ## Playbook runners 
 
-A playbook runner is a local relay that allows playbook actions to be launched on a local network. 
+A playbook runner is a local relay that launches playbook actions on a local network. 
 It can be used with any action in Sekoia.io playbooks. 
 
 ### Create a playbook runner
 
 To create a playbook runner, follow these steps: 
 
-1. On the playbooks listing page, click on the `Playbook runners` button in the top right of the screen
+1. On the playbooks listing page, select the `Playbook runners` button in the upper-right corner
     ![create playbook runner](/assets/playbooks/create_runner.png){: style="max-width:100%"}
-2. In the playbook runners page, click on `+ Set up a playbook runner` or `+ Playbook runner`
-3. Give a name to your playbook runner
-4. Follow the instructions displayed to install the playbook runner on your machine.
+2. On the playbook runners page, select `+ Set up a playbook runner` or `+ Playbook runner`
+3. Name your playbook runner
+4. Follow the instructions to install the playbook runner on your machine
     ![playbook runner instructions](/assets/playbooks/playbook_runner_instructions.png){: style="max-width:100%"}
-5. Once the playbook runner has been installed, you can leave the instructions by clicking on "Back to playbook runners".
+5. Once the playbook runner is installed, you can leave the instructions by selecting "Back to playbook runners"
 
-Your newly created playbook runner should now appear in the list. It will also show when configuring any playbook action. 
+Your newly created playbook runner should now appear in the list. It will also be shown when configuring any playbook action. 
 
 ### Use a runner in a playbook action
 
  ![playbook runner instructions](/assets/playbooks/playbook_runner_action_on_premise.png){: align="right", width="280"}
 
-Playbook runners can be used in any action in the playbook catalog. They can be added in the configuration panel that shows when clicking on an action in the playbook. 
+Playbook runners can be used in any action in the playbook catalog. You can add them in the configuration panel that is shown when selecting an action in the playbook. 
 
-To use a playbook runner for a specific action, you can follow these steps: 
+To use a playbook runner for a specific action, follow these steps: 
 
-1. Go to a playbook and click on the action that should be executed on-premises
+1. Go to a playbook and select the action that should be executed on-premises
 2. Open the configuration sidebar for this action and change "How to execute this action" to "On-premises"
 3. In the "Which playbook runner" section, select the runner you want to use to execute this action
-4. Once you've chosen the playbook runner and are satisfied with the configuration, save the playbook 
+4. After selecting the playbook runner and completing the configuration, save the playbook 
 
 ## Proxy support
 
-If needed, the playbook runner can use a proxy server when executing actions. 
+The playbook runner can use a proxy server when executing actions if needed. 
 
 If you want to enable this feature, edit the configuration file at `/etc/endpoint-agent/config.yaml` and add the following line:
 
@@ -140,7 +140,7 @@ HTTPProxyURL: "<PROXY_URL>"
 
 The proxy URL should follow the format `http://user:pass@host:port`.
 
-It is also possible to specify a list of domains that should not use the proxy:
+It's also possible to specify a list of domains that shouldn't use the proxy:
 
 ```yaml
 NoProxyDomains:
@@ -148,19 +148,19 @@ NoProxyDomains:
   - localhost
 ```
 
-Once the configuration has been changed, restart the agent by running the following command:
+Once the configuration is changed, restart the agent by running the following command:
 
 ```bash
 sudo systemctl restart SEKOIAEndpointAgent.service
 ```
 
-Alternatively, if those variables are not set, the agent will check for the env variables `http_proxy`, `https_proxy`, `all_proxy` and `no_proxy` on the host and forward them to the running actions.
+Alternatively, if those variables are not set, the agent will check for the env variables `http_proxy`, `https_proxy`, `all_proxy`, and `no_proxy` on the host and forward them to the running actions.
 
 ## Custom CA bundle
 
-In some cases,  the service we contact will have a TLS certificate signed by a custom Certification Authority.
+Sometimes, the service we contact has a TLS certificate signed by a custom Certification Authority.
 
-To avoid having errors during the TLS certificate validation step, it is possible to specify the path to a CA bundle containing a list of trusted certificates.
+To avoid errors during the TLS certificate validation step, specify the path to a CA bundle containing a list of trusted certificates.
 
 To enable this feature, follow these steps:
 
@@ -170,13 +170,13 @@ To enable this feature, follow these steps:
     ```
 
     !!! tip
-        The bundle must contains the CA certificates allowing to communicate with Sekoia.io
+        The bundle must contain trusted CA certificates authorized to communicate with Sekoia.io.
 
 
     ??? example "Bundle format example"
 
-        The bundle usually contains a list of PEM encoded certificate to trust with optional comment lines starting with `#`.
-        Here's an example of the content of such bundle:
+        The bundle usually contains a list of PEM-encoded certificates to trust, with optional comment lines starting with `#`.
+        Here's an example of the content of such a bundle:
 
         ```
         # Issuer: CN=GlobalSign Root CA O=GlobalSign nv-sa OU=Root CA
@@ -242,7 +242,7 @@ To enable this feature, follow these steps:
         -----END CERTIFICATE-----
         ```
 
-2. Once the configuration has been changed, restart the agent by running the following command:
+2. Once the configuration is changed, restart the agent by running the following command:
     ```bash
     sudo systemctl restart SEKOIAEndpointAgent.service
     ```

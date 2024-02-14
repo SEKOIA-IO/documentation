@@ -1,4 +1,4 @@
-Rules catalog includes **789 built-in detection rules** ([_last update on 2024-01-10_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -37,6 +37,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Microsoft Windows Active Directory Module Commandlets"
     
     Detects use of commandlets linked to the AD Module.
+    
+    - **Effort:** advanced
+    
+??? abstract "System Network Connections Discovery"
+    
+    Detects system network connections discovery via powershell and cmd.
     
     - **Effort:** advanced
     
@@ -1303,6 +1309,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+    
 ??? abstract "AutoIt3 Execution From Suspicious Folder"
     
     Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.
@@ -1417,6 +1429,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Generic-reverse-shell-oneliner"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+    
 ??? abstract "In-memory PowerShell"
     
     Detects loading of essential DLL used by PowerShell, but not by the process powershell.exe. Detects meterpreter's "load powershell" extension and tool such PowerShDll.
@@ -1435,17 +1453,17 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Koadic Execution"
-    
-    Detects command line parameters used by Koadic hack tool
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Lazarus Loaders"
     
     Detects different loaders used by the Lazarus Group APT
     
     - **Effort:** elementary
+    
+??? abstract "Linux Bash Reverse Shell"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
     
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -1777,6 +1795,16 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 30/05/2023 - minor - Adding the Intellij IDEA to filter list
+            
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 16/01/2024 - minor - Rename rule to fit with behavior
             
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
@@ -2239,12 +2267,16 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "HarfangLab EDR Process Execution Blocked"
+??? abstract "HarfangLab EDR Process Execution Blocked (HL-AI engine)"
     
-    HarfangLab EDR has detected a malicious process execution attempt and has blocked it. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
+    HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
+            
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
     HarfangLab EDR has detected a suspicious process behavior based on its detection rule. Check the rule name and description for more information.
@@ -2488,6 +2520,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
+            
 ??? abstract "Microsoft Office Spawning Script"
     
     Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
@@ -2499,6 +2535,24 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     Detects when a security threat is detected in Okta.
     
     - **Effort:** intermediate
+    
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (High Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of high severity that was not blocked.
+    
+    - **Effort:** master
+    
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Low Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of low severity that was not blocked.
+    
+    - **Effort:** master
+    
+??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Medium Severity)"
+    
+    A Palo Alto Cortex EDR agent has raised an alert of medium severity that was not blocked.
+    
+    - **Effort:** master
     
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -2617,6 +2671,24 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
     
     - **Effort:** intermediate
+    
+??? abstract "Stormshield Ses Critical Block"
+    
+    Stormshield Endpoint Security block execution with critical severity
+    
+    - **Effort:** master
+    
+??? abstract "Stormshield Ses Critical Not Block"
+    
+    Stormshield Endpoint Security detect threat with critical severity that was not blocked
+    
+    - **Effort:** master
+    
+??? abstract "Stormshield Ses Emergency Block"
+    
+    Stormshield Endpoint Security block execution with emergency severity
+    
+    - **Effort:** master
     
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
@@ -2757,6 +2829,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Gpscript Suspicious Parent"
     
     Gpscript defines GPO scripts for users and applies them to login / logout sessions. This rule checks if the parent of this process is the supposed one (svchost) or not.
@@ -3072,8 +3150,9 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "TEHTRIS EDR Alert"
     
@@ -3129,6 +3208,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/01/2024 - minor - Added filter to reduce false positives.
+            
 ??? abstract "Usage Of Sysinternals Tools"
     
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
@@ -3239,6 +3322,14 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
+**Deploy Container**
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
+    
 ## Persistence
 **Boot or Logon Initialization Scripts**
 
@@ -3646,6 +3737,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/12/2023 - minor - Exclude common legitimate processes
+            
 **Authentication Package**
 
 ??? abstract "Shell PID Injection"
@@ -4020,8 +4115,9 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -4401,7 +4497,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 ## Privilege Execution
 **Boot or Logon Initialization Scripts**
@@ -4602,6 +4698,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/01/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -4610,8 +4710,9 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -5303,8 +5404,9 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -5755,8 +5857,16 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
+**Escape to Host**
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
+    
 ## Defense Evasion
 **Obfuscated Files or Information**
 
@@ -5847,6 +5957,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 22/01/2024 - minor - Extending filter to avoid FPs
         - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
             
 ??? abstract "Linux Binary Masquerading"
@@ -6021,6 +6132,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/01/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -6029,8 +6144,9 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 04/07/2023 - major - Added filter to reduce false positives
+        - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 31/01/2024 - minor - Adding filters to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -6130,6 +6246,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 02/02/2024 - major - changing current pattern and adding another one
+            
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -6432,6 +6552,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 14/12/2023 - minor - Exclude common legitimate processes
+            
 **Trusted Developer Utilities Proxy Execution**
 
 ??? abstract "MSBuild Abuse"
@@ -6835,6 +6959,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     Detects suspicious icacls command granting access to all, used by the ransomware Ryuk to delete every access-based restrictions on files and directories. ICacls is a built-in Windows command to interact with the Discretionary Access Control Lists (DACLs) which can grand adversaries higher permissions on specific files and folders.
     
     - **Effort:** elementary
+    
+??? abstract "Linux Remove Immutable Attribute"
+    
+    Adversaries may used chattr utility to alter file and folder attributes to control sudden operations like the deletion and modification of files.
+    
+    - **Effort:** intermediate
     
 **Domain Policy Modification**
 
@@ -7621,7 +7751,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
-        - 16/08/2023 - minor - Adding filtering for some FPs
+        - 11/01/2024 - minor - Adding filtering for some FPs
             
 **Modify Cloud Compute Infrastructure**
 
@@ -7686,6 +7816,14 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     Detects succesful SSRF from an authenticated SharePoint user.
     
     - **Effort:** elementary
+    
+**Deploy Container**
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
     
 **Reflective Code Loading**
 
@@ -8052,6 +8190,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Entra ID Password Compromised By Know Credential Testing Tool"
+    
+    Detects a sign-in that has a correlation ID known to be used by malicious credential testing scripts. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -8232,6 +8376,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 22/01/2024 - minor - Removing a file extension to allow broader detection.
         - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
         - 03/07/2023 - minor - Added french words for the command lines.
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
@@ -8365,6 +8510,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
 ## Discovery
 **System Service Discovery**
 
+??? abstract "Anomaly Internal RDP"
+    
+    Detects uncompleted attempts to connect to a rdp session.
+    
+    - **Effort:** master
+    
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -8429,6 +8580,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
 **Remote System Discovery**
 
+??? abstract "Anomaly Internal Ping"
+    
+    Detects internal ping with uncomplete connection.
+    
+    - **Effort:** master
+    
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
@@ -8502,6 +8659,18 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
+    
+??? abstract "Anomaly Internal Port Connection"
+    
+    Detects multiple scan of different ports.
+    
+    - **Effort:** master
+    
+??? abstract "Anomaly Multiple Host Port Scan"
+    
+    Detects multiple port scan.
+    
+    - **Effort:** advanced
     
 **System Network Connections Discovery**
 
@@ -9256,6 +9425,18 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
         - 02/08/2023 - minor - Added a new field and filters to reduce false positives.
             
+??? abstract "Trellix Network Security Threat Blocked"
+    
+    Trellix Network Security has detected a malicious traffic and blocked it.
+    
+    - **Effort:** master
+    
+??? abstract "Trellix Network Security Threat Notified"
+    
+    Trellix Network Security has detected a malicious traffic and raised an alert.
+    
+    - **Effort:** master
+    
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
@@ -9296,6 +9477,7 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 26/01/2024 - minor - Modifying filter to improve rule.
         - 22/11/2023 - minor - Adding filter to improve rule.
             
 **Web Service**
@@ -9760,6 +9942,10 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 31/01/2024 - minor - Improve selection filter
+            
 ??? abstract "Stop Backup Services"
     
     Detects adversaries attempts to stop backups services or disable Windows previous files versions feature. This could be related to ransomware operators or legit administrators. This rule relies Windows command line logging and registry logging, and PowerShell (ID 4103, 4104).
@@ -9772,6 +9958,14 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+**Network Denial of Service**
+
+??? abstract "Anomaly CloudFlare DDoS"
+    
+    Detects anomaly on DNS events from CloudFlare.
+    
+    - **Effort:** master
+    
 **Endpoint Denial of Service**
 
 ??? abstract "Audit CVE Event"
@@ -9782,6 +9976,12 @@ Rules catalog includes **789 built-in detection rules** ([_last update on 2024-0
     
 **Account Access Removal**
 
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+    
 ??? abstract "Jumpcloud Account Locked"
     
     A user has been locked on Jumpcloud portal.

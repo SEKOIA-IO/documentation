@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **SonicWall Firewall**. 
     
     - **Effort:** advanced
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.

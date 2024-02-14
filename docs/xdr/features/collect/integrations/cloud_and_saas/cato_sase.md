@@ -26,9 +26,10 @@ To collect the events from the Cato Networks platform, an API key is required:
     ![Administration](/assets/operation_center/integration_catalog/cloud_and_saas/cato/panel.png){: style="max-width:100%"} 
 5. Click on apply and copy the API key
 
-In addition to the API key, our account ID is also required:
+In addition to the API key, Cato `account ID` is also required for the Account configuration in Sekoia
 
-1. In our Cato Management Application, please note the four digits in the browser address.
+!!! Note
+     In the Cato Management Application, please note the four digits in the browser address.
 
 ### Create an intake
 

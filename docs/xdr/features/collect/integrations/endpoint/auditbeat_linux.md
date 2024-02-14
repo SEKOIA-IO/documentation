@@ -27,15 +27,15 @@ The following prerequisites are needed in order to setup efficient log concentra
 To download and install Auditbeat on a Debian based distributions (including Ubuntu, Linux Mint, etc.). Use the commands that work with your system:
 
 ```bash
-curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.13.1-amd64.deb
-sudo dpkg -i auditbeat-7.13.1-amd64.deb
+curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-8.11.4-amd64.deb
+sudo dpkg -i auditbeat-8.11.4-amd64.deb
 ```
 
 To download and install Auditbeat on Fedora, CentOS or Red Hat Enterprise Linux, use the commands that work with your system:
 
 ```bash
-curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.13.1-x86_64.rpm
-sudo rpm -vi auditbeat-7.13.1-x86_64.rpm
+curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-8.11.4-x86_64.rpm
+sudo rpm -vi auditbeat-8.11.4-x86_64.rpm
 ```
 
 > Modify the version number with the newest one.
@@ -243,16 +243,21 @@ input(type="imfile"
       File="/tmp/auditbeat/auditbeat"
       Tag="linux_auditbeat"
       Severity="info"
-      Facility="local7")
+      Facility="local7"
+      ruleset="auditbeatSekoia"
+      addMetadata="on"
+      )
 
-if ($syslogtag contains 'linux_auditbeat') then {
-     action(
-         type="omfwd"
-         protocol="tcp"
-         target="YOUR_RSYSLOG_DESTINATION_SERVER"
-         port="514"
-         TCP_Framing="octet-counted"
-     )
+ruleset(name="auditbeatSekoia") {
+    if (re_match($!metadata!filename, "auditbeat-[0-9]{8}.ndjson")) then {  
+      action(
+        type="omfwd"
+        protocol="tcp"
+        target="YOUR_RSYSLOG_DESTINATION_SERVER"
+        port="514"
+        TCP_Framing="octet-counted"
+      )
+    }
 }
 ```
 
@@ -266,7 +271,7 @@ sudo systemctl restart rsyslog.service
 
 ### Forward logs to Sekoia.io
 
-The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation or [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to transport logs to Sekoia.io.
+The reader is invited to consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation or [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to transport logs to Sekoia.io.
 
 ### Enjoy your events
 Go to the [events page](https://app.sekoia.io/operations/events) to watch your incoming events.

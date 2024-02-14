@@ -221,7 +221,7 @@ As of now, the main solution to collect Apache logs leverages the Rsyslog recipe
 
 ### Forward logs to Sekoia.io
 
-This setup guide will show you how to forward both your access and error logs to Sekoia.io by means of an rsyslog transport channel. The reader is also invited to consult the [Rsyslog Transport](../../../ingestion_methods/rsyslog/) documentation to forward these logs to Sekoia.io.
+This setup guide will show you how to forward both your access and error logs to Sekoia.io by means of an rsyslog transport channel. The reader is also invited to consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
 
 At the beginning of your rsyslog configuration file for the Apache logs,  paste the following instruction to order the rsyslog server to load the module `imfile`:
 ```bash

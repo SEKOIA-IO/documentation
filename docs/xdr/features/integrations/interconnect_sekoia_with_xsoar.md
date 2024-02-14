@@ -13,7 +13,7 @@ Here is a schema that illustrates this interconnection:
 
 - A Sekoia.io XDR licence
 - Access to Sekoia.io Playbooks 
-- The user w configures the Playbook should have access to the Sekoia.io Playbooks
+- The user who configures the Playbook should have access to the Sekoia.io Playbooks
 - An API Key with a role that contains at least the following permissions:
 	* `SIC_READ_ALERTS`
 	* `SIC_READ_INTAKES`
@@ -27,7 +27,7 @@ Here is a schema that illustrates this interconnection:
 ## Configure
 
 ### Create an new Incident type on Palo Alto Cortex XSOAR
-A dedicated incident type for Sekoia.io will allow to enable specific Incident Fields and decide what XSOAR playbook to use.
+A dedicated incident type for Sekoia.io will enable specific Incident Fields and decide what XSOAR playbook to use.
 
 Follow these steps to create a new Incident type: 
 
