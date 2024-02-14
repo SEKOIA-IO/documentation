@@ -1161,6 +1161,24 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     - **Effort:** elementary
 
+??? abstract "Stormshield Ses Critical Block"
+    
+    Stormshield Endpoint Security block execution with critical severity
+    
+    - **Effort:** master
+
+??? abstract "Stormshield Ses Critical Not Block"
+    
+    Stormshield Endpoint Security detect threat with critical severity that was not blocked
+    
+    - **Effort:** master
+
+??? abstract "Stormshield Ses Emergency Block"
+    
+    Stormshield Endpoint Security block execution with emergency severity
+    
+    - **Effort:** master
+
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.
