@@ -1,4 +1,4 @@
-Rules catalog includes **807 built-in detection rules** ([_last update on 2024-02-13_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-14_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -2671,6 +2671,24 @@ Rules catalog includes **807 built-in detection rules** ([_last update on 2024-0
     Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
     
     - **Effort:** intermediate
+    
+??? abstract "Stormshield Ses Critical Block"
+    
+    Stormshield Endpoint Security block execution with critical severity
+    
+    - **Effort:** master
+    
+??? abstract "Stormshield Ses Critical Not Block"
+    
+    Stormshield Endpoint Security detect threat with critical severity that was not blocked
+    
+    - **Effort:** master
+    
+??? abstract "Stormshield Ses Emergency Block"
+    
+    Stormshield Endpoint Security block execution with emergency severity
+    
+    - **Effort:** master
     
 ??? abstract "Suspicious DLL Loaded Via Office Applications"
     
@@ -8171,6 +8189,12 @@ Rules catalog includes **807 built-in detection rules** ([_last update on 2024-0
     Spots many failed attempts to log on an administration interface. 
     
     - **Effort:** master
+    
+??? abstract "Entra ID Password Compromised By Know Credential Testing Tool"
+    
+    Detects a sign-in that has a correlation ID known to be used by malicious credential testing scripts. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** elementary
     
 ??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
