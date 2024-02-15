@@ -307,8 +307,8 @@ It is possible to specify patterns in the `filepath` attribute to match multiple
 For example `/var/log/nginx/*.log` will match all the log files located under `/var/log/nginx/`.
 
 It is also possible to restrict the allowed matching characters by specifying a range between brackets.
-For example the pattern `/var/log/nginx/*[a-z].log` will match `/var/log/nginx/access.log` but not `/var/log/nginx/access.2023-02-14.log`.
-This is kind of pattern is particularly useful when log rotation is enabled. 
+For example, the pattern `/var/log/nginx/*[a-z].log` will match `/var/log/nginx/access.log` but not `/var/log/nginx/access.2023-02-14.log`.
+This kind of pattern is particularly useful when log rotation is enabled. 
 
 !!! note
 	The recursive globstart pattern `**` is currently not supported
