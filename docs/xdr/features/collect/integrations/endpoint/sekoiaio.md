@@ -301,6 +301,18 @@ Once the configuration file is modified, restart the agent:
     sudo systemctl restart SEKOIAEndpointAgent.service
     ```
 
+### Using file patterns
+
+It is possible to specify patterns in the `filepath` attribute to match multiple files. 
+For example `/var/log/nginx/*.log` will match all the log files located under `/var/log/nginx/`.
+
+It is also possible to restrict the allowed matching characters by specifying a range between brackets.
+For example the pattern `/var/log/nginx/*[a-z].log` will match `/var/log/nginx/access.log` but not `/var/log/nginx/access.2023-02-14.log`.
+This is kind of pattern is particularly useful when log rotation is enabled. 
+
+!!! note
+	The recursive globstart pattern `**` is currently not supported
+
 ## Retention
 
 The agent sends the host logs through the Internet. The agent saves logs locally on disk in a non-customizable 100 MB memory space if the Internet connection is lost. Once the logs exceed the buffer size, the older logs are replaced by newer ones. When the Internet connection is restored, the older logs are sent to Sekoia.io first.
@@ -390,6 +402,76 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     A proper security log auditing configuration will allow the agent to collect different security-related events.
     
     This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
+
+=== "Linux"
+
+    #### Collect DNS resolution events
+
+    You can collect DNS resolutions events by enabling it in the agent configuration file:
+
+    1. Edit the configuration file at:
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
+
+    2. Add the following configuration:
+        
+        ```yaml
+        EnableDNSResolutions: true
+        ```
+
+    Once the configuration file is modified, restart the agent:
+
+       ```
+       sudo systemctl restart SEKOIAEndpointAgent.service
+       ```
+
+#### Don't compute hashes for files under a specific directory
+
+To avoid having the agent computing hashes for files located under a specific directory the `HashesExcludedPaths` option can be added to the agent configuration.
+
+If you want to enable this feature, follow these steps: 
+
+1. Edit the configuration file at:
+	
+	=== "Windows"
+	
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
+
+2. Add the following configuration:
+
+```yaml
+HashesExcludedPaths:
+  - C:\path\to\ignore`
+```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
 
 ## Additionnal information
 
