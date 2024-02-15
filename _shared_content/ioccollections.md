@@ -2,7 +2,7 @@
 
 Indicators Of Compromise (IOCs) are commonly shared between CERT and SOC teams and by Cyber Threat Intelligence providers. They are an important part of detection.
 
-While IOCs produced by SEKOIA.IO’s own Threat & Detection Research team are directly available inside the application, IOC Collections allow you to import indicators from other sources.
+While IOCs produced by Sekoia’s own Threat & Detection Research team are directly available inside the application, IOC Collections allow you to import indicators from other sources.
 
 You can then easily see telemetry on these collections and use them inside detection rules.
 
@@ -20,7 +20,6 @@ You can open the IOC Collection creation modal by clicking on `+ Collection`. Yo
 
 ![ioc_creation](/assets/operation_center/IOCscollections/ioc-create.png){: style="max-width:100%"}
 
-
 !!! Note
     Inside a MSSP community, you also have to choose the community in which the IOC Collection should be created. If you choose “All communities”, the collection will be readable by all subcommunities.
 
@@ -35,7 +34,11 @@ Each indicator inside the collection can have the following properties:
 - Valid From: the date from which this indicator should be considered valid
 - Valid Until: the date from which this indicator should no longer be considered valid
 - Kill Chain Phases: steps of the attack this indicator belongs to
-- Description: any text that would add additional context
+- Description: any text that would add additional context. It is limited to **500 characters**
+
+### Limitations 
+
+We allow a maximum **limit of 500,000 IOCs** entries that can be imported. This limit applies to the total IOC imports across all collections in a community. 
 
 ### Text Import
 
