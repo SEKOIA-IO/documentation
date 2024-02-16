@@ -1093,19 +1093,19 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Trend Micro Apex One has raised an alert for data loss prevention.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Trend Micro Apex One Malware Alert"
     
     Trend Micro Apex One has detected a malware.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Usage Of Procdump With Common Arguments"
     

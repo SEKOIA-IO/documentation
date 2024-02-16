@@ -55,7 +55,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     Cybereason EDR telemetry has raised an alert
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Exchange Server Creating Unusual Files"
     

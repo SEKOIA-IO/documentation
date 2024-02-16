@@ -1177,7 +1177,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Wmic Process Call Creation"
     

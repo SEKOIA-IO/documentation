@@ -193,67 +193,67 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with high severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with informational severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with low severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with medium severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Csrss Child Found"
     

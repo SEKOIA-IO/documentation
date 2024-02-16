@@ -811,7 +811,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     HarfangLab EDR has raised an alert based on its hlai engine
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "HarfangLab EDR Low Level Rule Detection"
     
@@ -829,7 +829,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
