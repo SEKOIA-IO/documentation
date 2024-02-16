@@ -589,7 +589,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
