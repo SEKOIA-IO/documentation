@@ -98,6 +98,9 @@ Changelog _last update on 2024-02-16_
 ### SentinelOne EDR Malicious Threat Not Mitigated
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
+### Netsh Port Forwarding
+  - 15/02/2024 - minor - Added filter to reduce false positives
+    
 ### WMIC Uninstall Product
   - 13/02/2024 - minor - Exclude non-Windows operating systems (false positives)
     

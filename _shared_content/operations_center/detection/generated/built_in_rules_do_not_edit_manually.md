@@ -7934,8 +7934,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Netsh Port Opening"
     
     Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
@@ -9916,8 +9920,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Hostname"
     
     Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
@@ -10119,8 +10127,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Ngrok Process Execution"
     
     Detects possible Ngrok execution, which can be used by attacker for RDP tunneling. 
@@ -10221,8 +10233,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Netskope Alert"
     
     Forward alerts reported by Netskope.  
