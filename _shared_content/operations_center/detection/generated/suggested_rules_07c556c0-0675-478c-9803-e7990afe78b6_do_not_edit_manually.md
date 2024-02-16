@@ -547,67 +547,67 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
     A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
     A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
     A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
     A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
     A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
     A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
     A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     

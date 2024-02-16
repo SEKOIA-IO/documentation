@@ -1,7 +1,106 @@
-Changelog _last update on 2024-02-14_
+Changelog _last update on 2024-02-16_
 
 ## Changelog
 
+### Cybereason EDR Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### WithSecure Elements Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Low Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### HarfangLab EDR Hlai Engine Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Medium Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### HarfangLab EDR Process Execution Blocked (HL-AI engine)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection High Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Detected (Suspicious)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Trend Micro Apex One Malware Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Quarantine Success
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Kill Success
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Login Failed Brute-Force On SentinelOne EDR Management Console
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Trend Micro Apex One Intrusion Detection Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Medium Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Login Brute-Force Successful On SentinelOne EDR Management Console
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Informational Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Remediate Success
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Cybereason EDR Malware Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Trend Micro Apex One Data Loss Prevention Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Low Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Informational Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection High Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Custom Rule Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Detected (Malicious)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR SSO User Added
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Quarantine Failed
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Malicious Threat Not Mitigated
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### WMIC Uninstall Product
+  - 13/02/2024 - minor - Exclude non-Windows operating systems (false positives)
+    
 ### High Privileges Network Share Removal
   - 02/02/2024 - major - changing current pattern and adding another one
     
@@ -14,6 +113,9 @@ Changelog _last update on 2024-02-14_
 ### Microsoft Office Product Spawning Windows Shell
   - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
     
+### PowerShell Malicious PowerShell Commandlets
+  - 23/01/2024 - minor - Adding exclusion pattern and selection commandlet
+    
 ### Suspicious Process Requiring DLL Starts Without DLL
   - 22/01/2024 - minor - Added filter to reduce false positives
     
@@ -25,9 +127,6 @@ Changelog _last update on 2024-02-14_
     
 ### Windows Registry Persistence COM Search Order Hijacking
   - 11/01/2024 - minor - Adding filtering for some FPs
-    
-### HarfangLab EDR Process Execution Blocked (HL-AI engine)
-  - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
     
 ### Legitimate Process Execution From Unusual Folder
   - 04/01/2024 - major - Rework filter selection with contains instead of re modifier

@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (EDR) [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Palo Alto Cortex XDR [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Palo Alto Cortex XDR (EDR) [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.json){ .md-button }
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -693,21 +693,21 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [
     
     - **Effort:** advanced
 
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (High Severity)"
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)"
     
-    A Palo Alto Cortex EDR agent has raised an alert of high severity that was not blocked.
-    
-    - **Effort:** master
-
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Low Severity)"
-    
-    A Palo Alto Cortex EDR agent has raised an alert of low severity that was not blocked.
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of high severity that was not blocked.
     
     - **Effort:** master
 
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Medium Severity)"
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
-    A Palo Alto Cortex EDR agent has raised an alert of medium severity that was not blocked.
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of low severity that was not blocked.
+    
+    - **Effort:** master
+
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
+    
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of medium severity that was not blocked.
     
     - **Effort:** master
 

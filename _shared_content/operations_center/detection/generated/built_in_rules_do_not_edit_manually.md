@@ -1,4 +1,4 @@
-Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-14_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -604,8 +604,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Exploit Public-Facing Application**
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
@@ -1171,6 +1175,10 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 13/02/2024 - minor - Exclude non-Windows operating systems (false positives)
+            
 ??? abstract "WMImplant Hack Tool"
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
@@ -1333,54 +1341,136 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with high severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with informational severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with low severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with medium severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Cybereason EDR Alert"
     
     Cybereason EDR telemetry has raised an alert
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Cybereason EDR Malware Detection"
     
     Cybereason EDR telemetry has detected a malware
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -1469,14 +1559,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Malicious PowerShell Keywords"
     
     Detects keywords from well-known PowerShell exploitation frameworks
@@ -1642,6 +1740,10 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/01/2024 - minor - Adding exclusion pattern and selection commandlet
+            
 ??? abstract "Powershell Web Request"
     
     Detects the use of various web request methods executed remotely via Windows PowerShell
@@ -1682,68 +1784,112 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
     A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
     A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
     A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
     A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
     A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
     A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
     A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
@@ -1912,14 +2058,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Trend Micro Apex One has raised an alert for data loss prevention.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Trend Micro Apex One Malware Alert"
     
     Trend Micro Apex One has detected a malware.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Trickbot Malware Activity"
     
     Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
@@ -1950,6 +2104,10 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 13/02/2024 - minor - Exclude non-Windows operating systems (false positives)
+            
 ??? abstract "WMImplant Hack Tool"
     
     WMImplant is a powershell framework used by attacker for reconnaissance and exfiltration, this rule attempts to detect WMimplant arguments and invokes commands. 
@@ -1964,8 +2122,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "XSL Script Processing And SquiblyTwo Attack"
     
     Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
@@ -2143,54 +2305,136 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
             
+??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with high severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with informational severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with low severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with medium severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Cybereason EDR Alert"
     
     Cybereason EDR telemetry has raised an alert
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Cybereason EDR Malware Detection"
     
     Cybereason EDR telemetry has detected a malware
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Darktrace Threat Visualizer Model Breach Critical Alert"
     
     Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
@@ -2253,8 +2497,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     HarfangLab EDR has raised an alert based on its hlai engine
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "HarfangLab EDR Low Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a low level rule (not using hlai engine)
@@ -2271,11 +2519,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
     - **Changelog:**
     
         - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
@@ -2304,14 +2553,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     
     Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
@@ -2536,21 +2793,21 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (High Severity)"
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)"
     
-    A Palo Alto Cortex EDR agent has raised an alert of high severity that was not blocked.
-    
-    - **Effort:** master
-    
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Low Severity)"
-    
-    A Palo Alto Cortex EDR agent has raised an alert of low severity that was not blocked.
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of high severity that was not blocked.
     
     - **Effort:** master
     
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Medium Severity)"
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
-    A Palo Alto Cortex EDR agent has raised an alert of medium severity that was not blocked.
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of low severity that was not blocked.
+    
+    - **Effort:** master
+    
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
+    
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of medium severity that was not blocked.
     
     - **Effort:** master
     
@@ -2564,68 +2821,112 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
     A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
     A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
     A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
     A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
     A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
     A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
     A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
@@ -2718,14 +3019,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Trend Micro Apex One has raised an alert for data loss prevention.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Trend Micro Apex One Malware Alert"
     
     Trend Micro Apex One has detected a malware.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Vectra General Threat Detection"
     
     Vectra Cognito detected a potential threat. This is a very generic rule to raise as much alerts as possible from Vectra detections however RECONNAISSANCE and INFO categories have been removed to avoid spamming.
@@ -2742,8 +3051,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **System Services**
 
 ??? abstract "Credential Dumping Tools Service Execution"
@@ -2752,42 +3065,116 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "CrowdStrike Falcon Identity Protection Detection Critical Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with high severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with informational severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with low severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
+??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
+    
+    CrowdStrike Falcon raised an alert for an Identity-based detection with medium severity
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
@@ -2809,14 +3196,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Cybereason EDR telemetry has raised an alert
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Cybereason EDR Malware Detection"
     
     Cybereason EDR telemetry has detected a malware
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
@@ -2849,14 +3244,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and succeeded to login.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Login Failed Brute-Force On SentinelOne EDR Management Console"
     
     A user has attempted to login several times (brute-force) on the SentinelOne EDR Management Console and failed every time.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Logonui Wrong Parent"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
@@ -2999,68 +3402,112 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
     A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
     A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
     A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
     A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
     A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
     A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
     A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     
     A user has failed to log in to the management console.
@@ -3194,14 +3641,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Trend Micro Apex One has raised an alert for data loss prevention.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Trend Micro Apex One Malware Alert"
     
     Trend Micro Apex One has detected a malware.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
@@ -3296,8 +3751,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     WithSecure Elements has several modules. One constant is the severity of a raised event, which can be critical and therefore interesting to look at.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Wmiprvse Wrong Parent"
     
     Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
@@ -3761,8 +4220,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Create Account**
 
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
@@ -7631,6 +8094,10 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 13/02/2024 - minor - Exclude non-Windows operating systems (false positives)
+            
 ??? abstract "Windows Defender Deactivation Using PowerShell Script"
     
     Detects attempts to deactivate Windows Defender with PowerShell using ScriptBlockLogging.
