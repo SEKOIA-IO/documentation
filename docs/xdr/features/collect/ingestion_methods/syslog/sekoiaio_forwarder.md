@@ -30,7 +30,11 @@ Please find our English tutorial video below to see how to configure the forward
       
 * Last version of Docker Engine. Please follow [this section](#docker-engine-installation) to install it if needed
 * INBOUND TCP or UDP flows opened between the systems/applications and the concentrator on the ports of your choice
-* OUTBOUND TCP flow opened towards intake.sekoia.io on port 10514
+* OUTBOUND TCP flow opened towards:
+  * **FRA1** intake.sekoia.io on port 10514 
+  * **FRA2** fra2.app.sekoia.io on port 10514 
+  * **MCO1** mco1.app.sekoia.io on port 10514 
+  * **EUA1** app.uae1.sekoia.io on port 10514 
 
   !!! note 
       The disk choice (SSD or HDD type) has no impact on the performance of Sekoia.io Forwarder.
@@ -114,17 +118,17 @@ Please find below a template of the `docker-compose.yml` file.
 ```yaml
 version: "3.9"
 services:
-  sekoia_concentrator:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.0
+  rsyslog:
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.5
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
+      - REGION=FRA1
     ports:
       - "20516-20566:20516-20566"
       - "20516-20566:20516-20566/udp"
     volumes:
       - ./intakes.yaml:/intakes.yaml
-      - ./conf:/etc/rsyslog.d
       - ./disk_queue:/var/spool/rsyslog
     restart: always
     pull_policy: always
@@ -141,12 +145,14 @@ The following sections will describe each element of this file above.
 environment:
     - MEMORY_MESSAGES=2000000
     - DISK_SPACE=180g
+    - REGION=FRA1
 ```
 
 Two environment variables are used to customize the container. These variables are used to define a queue for incoming logs in case there is a temporarily issue in transmitting events to Sekoia.io. The queue stores messages in memory up to a certain number of events and then store them on disk. When the issue is fixed, events stored are retrieved from the queue and forward to the plateform.
 
 * `MEMORY_MESSAGES=2000000` means the queue is allowed to store up to 2,000,000 messages in memory. If we consider a message size is 1.2KB, then you will use 2,4GB of RAM memory (2000000 * 1.2KB = 2.4GB).
 * `DISK_SPACE=180g` means the queue is allowed to store on disk up to 180giga of messages.
+* `REGION=FRA1` is the region where to send the logs. Currently 4 options are available: `FRA1`, `FRA2`, `MCO1` and `UAE1`
 
 [Here](#prerequisites) you will find recommendations to set these variables based on the number of assets. You can also define your own values, which should be chosen according to your virtual machine's template.
 
@@ -171,7 +177,6 @@ If you want to open a UDP flow, please add a line with `/udp` at the end.
 ```yaml
 volumes:
     - ./intakes.yaml:/intakes.yaml
-    - ./conf:/etc/rsyslog.d
     - ./rsyslog:/var/spool/rsyslog
 ```
 
@@ -180,6 +185,41 @@ Volumes are used to share files and folders between the host and the container:
 * `./intakes.yaml:/intakes.yaml` is used to tell the concentrator what protocol, ports and intake keys to use.
 * `./conf:/etc/rsyslog.d` is mapped if you want to customize some rsyslog configuration (ADVANCED)
 * `./disk_queue:/var/spool/rsyslog` is used when the concentrator queue stores data on disk. The mapping avoids data loss if logs are stored on disk and the container is deleted.
+
+#### Import a custom rsyslog configuration 
+
+You can add your own additional rsyslog configuration. It can be useful to deal with specific use cases which are not supported natively by the Sekoia.io concentrator. To enable it, you simply have to create a new folder called `extended_conf` and put an additional your rsyslog file into (your file must have the extension *.conf). You do not have to deal with the `intake.yaml` file. Your custom configuration will be added in addition to the intake definition and will not erase exisiting ones. 
+
+You can define your own method for obtaining logs using rsyslog modules, but you still need to forward events to Sekoia.io by providing a syslog-valid message with your intake key as a header, as follows:
+
+```bash
+input(type="imtcp" port="20521" ruleset="remote20521")
+template(name="SEKOIAIO_Template" type="string" string="<%pri%>1 %timegenerated:::date-rfc3339% %hostname% MY-APP-NAME - LOG [SEKOIA@53288 intake_key=\"MY-INTAKE-KEY\"] %msg%\n")
+ruleset(name="remote20521"){
+action(
+    name="action"
+    type="omfwd"
+    protocol="tcp"
+    target="intake.sekoia.io"
+    port="10514"
+    TCP_Framing="octet-counted"
+    StreamDriver="gtls"
+    StreamDriverMode="1"
+    StreamDriverAuthMode="x509/name"
+    StreamDriverPermittedPeers="intake.sekoia.io"
+    Template="SEKOIAIO_Template"
+    )
+}
+```
+
+Once additional configuration has been added, you simply have to mount them in the docker as following: 
+
+```yaml
+volumes:
+    - ./intakes.yaml:/intakes.yaml
+    - ./extended_conf:/extended_conf
+    - ./disk_queue:/var/spool/rsyslog
+```
 
 #### Additional options
 

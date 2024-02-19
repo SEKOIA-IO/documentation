@@ -8,6 +8,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 - An active Sekoia.io license with access to the CTI
 - An access to Sekoia.io User Center with the permissions to [create an API key](https://docs.sekoia.io/getting_started/manage_api_keys/) with [CTI permissions](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions) <a name="api_key"></a>
 
+
 ## 1. Connect to Splunk
 
 !!!note

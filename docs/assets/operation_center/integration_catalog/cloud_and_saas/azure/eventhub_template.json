@@ -1,0 +1,190 @@
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    "projectName": {
+      "type": "string",
+      "metadata": {
+        "description": "Specifies a project name that is used to generate all the resources."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Specifies the Azure location for all resources based on the location of your events."
+      }
+    },
+    "eventHubSku": {
+      "type": "string",
+      "defaultValue": "Standard",
+      "allowedValues": [
+        "Basic",
+        "Standard",
+        "Premium"
+      ],
+      "metadata": {
+        "description": "Specifies the messaging tier for Event Hub Namespace. We do not reccomend Basic model due to its limitation"
+      }
+    },
+    "troughputUnit": {
+        "type": "int",
+        "minValue": 1,
+        "maxValue": 20,
+        "defaultValue": 1,
+        "metadata": {
+            "description": "A unit gives you up to 1 MB per second or 1,000 events per second (whichever comes first) per Event Hub Namespace."
+        }
+    },
+    "enableAutoInflate": {
+        "type": "bool",
+        "defaultValue": false,
+        "metadata": {
+            "description": "When checked, the Auto-inflate feature of Event Hubs automatically scales up by increasing the number of troughput units to meet usage needs."
+        }
+    },
+    "autoInflateMaximumThroughputUnit": {
+        "type": "int",
+        "minValue": 0,
+        "maxValue": 40,
+        "defaultValue": 0,
+        "metadata": {
+            "description": "When Enable Auto Inflate is checked, you can specify the maximum throughput units you allow. If disabled, leave this value to 0."
+        }
+    },
+    "partitionCount": {
+        "type": "int",
+        "defaultValue": 1,
+        "minValue": 1,
+        "maxValue": 32,
+        "metadata": {
+            "description": "The number of event hub partitions. A partition can handle at maximum X MB per second. Unless you plan to add more Event hubs to the Event Hub Namespace, the Partition Count and Throughput Unit variables should have the same values."
+        }
+    },
+    "retentionTime": {
+        "type": "int",
+        "minValue": 1,
+        "maxValue": 7,
+        "defaultValue": 7,
+        "metadata": {
+            "description": "How long you will keep events in the Event hub in days."
+        }
+    }
+  },
+    "functions": [],
+    "variables": {
+    "eventHubNamespaceName": "[format('{0}ehns', parameters('projectName'))]",
+    "eventHubName": "[format('{0}eh', parameters('projectName'))]",
+    "sharedAccessPolicyName": "[format('{0}ap', parameters('projectName'))]",
+    "consumerGroupName": "[format('{0}cp', parameters('projectName'))]",
+    "storageAccountName": "[format('{0}sa', parameters('projectName'))]"
+  },
+    "resources": [
+        {
+            "type": "Microsoft.EventHub/namespaces",
+            "apiVersion": "2021-11-01",
+            "name": "[variables('eventHubNamespaceName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "[parameters('eventHubSku')]",
+                "tier": "[parameters('eventHubSku')]",
+                "capacity": "[parameters('troughputUnit')]"
+            },
+            "properties": {
+                "isAutoInflateEnabled": "[parameters('enableAutoInflate')]",
+                "maximumThroughputUnits": "[parameters('autoInflateMaximumThroughputUnit')]"
+            }
+            },
+            {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2021-11-01",
+            "name": "[format('{0}/{1}', variables('eventHubNamespaceName'), variables('eventHubName'))]",
+            "properties": {
+                "messageRetentionInDays": "[parameters('retentionTime')]",
+                "partitionCount": "[parameters('partitionCount')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('eventHubNamespaceName'))]"
+            ]
+        },
+        // shared access policy for the eventhub
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/authorizationRules",
+            "apiVersion": "2021-11-01",
+            "name": "[format('{0}/{1}/{2}', variables('eventHubNamespaceName'), variables('eventHubName'), variables('sharedAccessPolicyName'))]",
+            "properties": {
+                "rights": [
+                    "Listen"
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('eventHubNamespaceName'), variables('eventHubName'))]"
+            ]
+        },
+        // Create a consumer group for the EventHub
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2021-11-01",
+            "name": "[format('{0}/{1}/{2}', variables('eventHubNamespaceName'), variables('eventHubName'), variables('consumerGroupName'))]",
+            "properties": {
+                "userMetadata": "SekoiaIO"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('eventHubNamespaceName'), variables('eventHubName'))]"
+            ]
+        },
+        // Create a Storage Account with GRS redundancy and container and standard performance
+        // Name must be the project name in lowerCase with sa suffix
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2021-04-01",
+            "name": "[format('{0}', variables('storageAccountName'))]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "Standard_GRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "properties": {
+                "accessTier": "Hot"
+            }
+        },
+        // Create a container in the Storage Account
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2021-04-01",
+            "name": "[format('{0}/default/{1}', variables('storageAccountName'), 'sekoiaio')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+            ]
+        }
+    ],
+    "outputs": {
+        // return the connection string-primary key of the shared access policy
+        "HubConnectionString": {
+            "type": "string",
+            "value": "[listKeys(resourceId('Microsoft.EventHub/namespaces/eventhubs/authorizationRules', variables('eventHubNamespaceName'), variables('eventHubName'), variables('sharedAccessPolicyName')), '2017-04-01').primaryConnectionString]"
+        },
+        // return the name consumer group
+        "HubConsumerGroup": {
+            "type": "string",
+            "value": "[variables('consumerGroupName')]"
+        },
+        // return the name of the eventhub
+        "eventHubName": {
+            "type": "string",
+            "value": "[variables('eventHubName')]"
+        },
+        // return the connection string-primary key storage account
+        "StorageConnectionString": {
+            "type": "string",
+            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', format('{0}sa', parameters('projectName')), ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value)]"
+        },
+        // return the name of the storage container name
+        "storageContainerName": {
+            "type": "string",
+            "value": "sekoiaio"
+        }
+    }
+}

@@ -165,6 +165,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -663,6 +669,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+
 ??? abstract "Exploit For CVE-2015-1641"
     
     Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
@@ -799,7 +811,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     HarfangLab EDR has raised an alert based on its hlai engine
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "HarfangLab EDR Low Level Rule Detection"
     
@@ -817,7 +829,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     HarfangLab EDR's machine learning malware detection module (HL-AI) has detected a suspicious binary and blocked its execution. To know more on what caused this alert, you should check the value of the process name and the concerned computer and user.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "HarfangLab EDR Suspicious Process Behavior Has Been Detected"
     
@@ -1273,7 +1285,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     

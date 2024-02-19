@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -345,6 +351,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
@@ -601,7 +613,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -1081,19 +1093,19 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     Trend Micro Apex One has raised an alert for data loss prevention.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Trend Micro Apex One Malware Alert"
     
     Trend Micro Apex One has detected a malware.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Usage Of Procdump With Common Arguments"
     

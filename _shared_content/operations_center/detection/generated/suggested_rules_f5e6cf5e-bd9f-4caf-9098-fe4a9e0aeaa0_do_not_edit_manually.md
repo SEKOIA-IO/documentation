@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x StormShield SES [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Stormshield SES [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.json){ .md-button }
 ??? abstract "AMSI Deactivation Using Registry Key"
     
     The rule detects attempts to deactivate/disable the AMSI provider by deleting the associated registry key.
@@ -44,6 +44,12 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
     
     - **Effort:** master
+
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
 
 ??? abstract "Audio Capture via PowerShell"
     
@@ -386,6 +392,12 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     Detects commands containing a domain linked to http exfiltration.
     
     - **Effort:** intermediate
+
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Exploit For CVE-2015-1641"
     
@@ -745,7 +757,7 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -1148,6 +1160,24 @@ The following Sekoia.io built-in rules match the intake **StormShield SES [BETA]
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Stormshield Ses Critical Block"
+    
+    Stormshield Endpoint Security block execution with critical severity
+    
+    - **Effort:** master
+
+??? abstract "Stormshield Ses Critical Not Block"
+    
+    Stormshield Endpoint Security detect threat with critical severity that was not blocked
+    
+    - **Effort:** master
+
+??? abstract "Stormshield Ses Emergency Block"
+    
+    Stormshield Endpoint Security block execution with emergency severity
+    
+    - **Effort:** master
 
 ??? abstract "Suncrypt Parameters"
     

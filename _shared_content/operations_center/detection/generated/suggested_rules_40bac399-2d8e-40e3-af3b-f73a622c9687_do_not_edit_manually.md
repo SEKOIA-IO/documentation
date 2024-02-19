@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     
     - **Effort:** advanced
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA

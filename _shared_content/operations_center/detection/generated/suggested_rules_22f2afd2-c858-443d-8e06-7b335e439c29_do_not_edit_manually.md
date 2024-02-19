@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -187,67 +193,67 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with critical severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection High Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with high severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Informational Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with informational severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Low Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with low severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Identity Protection Detection Medium Severity"
     
     CrowdStrike Falcon raised an alert for an Identity-based detection with medium severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Critical Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with critical severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection High Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with high severity
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Informational Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with informational severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Low Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with low severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "CrowdStrike Falcon Intrusion Detection Medium Severity"
     
     CrowdStrike Falcon agent raised an alert for an intrusion detection with medium severity
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Csrss Child Found"
     
@@ -404,6 +410,12 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     Detects commands containing a domain linked to http exfiltration.
     
     - **Effort:** intermediate
+
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Exploit For CVE-2015-1641"
     
@@ -739,7 +751,7 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
