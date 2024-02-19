@@ -1,7 +1,13 @@
-Changelog _last update on 2024-02-16_
+Changelog _last update on 2024-02-19_
 
 ## Changelog
 
+### Non-Legitimate Executable Using AcceptEula Parameter
+  - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
+    
+### Outlook Registry Access
+  - 19/02/2024 - minor - Effort level was adapted according to the observed hits for the rule
+    
 ### Cybereason EDR Alert
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
