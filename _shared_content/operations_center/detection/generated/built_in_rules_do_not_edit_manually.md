@@ -1,4 +1,4 @@
-Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-16_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-19_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -6443,8 +6443,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
+            
 ??? abstract "Phorpiex Process Masquerading"
     
     Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
@@ -8856,8 +8860,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 19/02/2024 - minor - Effort level was adapted according to the observed hits for the rule
+            
 ??? abstract "Remote Registry Management Using Reg Utility"
     
     Remote registry management using REG utility from non-admin workstation. This requires Windows Security events logging.
@@ -9617,8 +9625,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 19/02/2024 - minor - Effort level was adapted according to the observed hits for the rule
+            
 **Audio Capture**
 
 ??? abstract "Audio Capture via PowerShell"

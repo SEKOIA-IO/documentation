@@ -805,7 +805,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OceanLotus Registry Activity"
     
@@ -823,7 +823,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Pandemic Windows Implant"
     
