@@ -34,7 +34,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 **Information**
 
 - `SEKOIA.IO API Key`: Please read the information [above](#api_key)
-- `Sekoia API url`: the default url is https:///api.sekoia.io
+- `Sekoia API url`: the default url is https://api.sekoia.io
 - `Feed ID`: [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
 
 !!! note
