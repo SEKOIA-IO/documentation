@@ -19,6 +19,9 @@ On Palo Alto appliances, most of the important hardward and software activities 
 - System
 - Security
 
+!!! warning
+	Because the timestamp in the events is based on local time, the appliances must change their timezone to UTC (up to version Palo Alto NGFW 10.0). However, this requirement doesn't apply to appliances that are version 10.0 or higher. 
+
 ### Create the intake on Sekoia.io
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Palo Alto Next-Generation Firewall`
