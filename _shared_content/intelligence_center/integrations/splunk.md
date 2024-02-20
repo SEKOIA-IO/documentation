@@ -2,7 +2,7 @@
 
 Sekoia is providing an application for Splunk to detect threats in your logs based on Sekoia.io CTI feed.
  
-## Prerequisites:
+## Prerequisites
 
 - An operational Splunk Enterprise instance with administrator privileges
 - An active Sekoia.io license with access to the CTI
@@ -31,18 +31,26 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 3. Configure your Sekoia.io Application (with your `SEKOIA.IO API Key`, `SEKOIA.IO API URL`  and `Feed ID`)
 ![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
 
-**Information**
+_Please find below the explanation of the fields to be configured_
 
+**Required**
 - `SEKOIA.IO API Key`: Please read the information [above](#api_key)
+
+**Optional**
+
 - `Sekoia API url`: the default url is https://api.sekoia.io
 - `Feed ID`: [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
+- `Proxy URL`:
+  - Here are 2 ways to configure a proxy:
+    1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (e.g. http://[username:password@]host:port)
+    2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance. The Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
 !!! note
-     After the launch of Sekoia.io application, IOCs will be downloaded and updated on Splunk.
-        
+     After the launch of Sekoia.io application, Only valid IOCs of [these source types](#sourcetype) will be downloaded and updated on Splunk from current date.
+
 ## 3. Sekoia intelligence in Splunk
 
-In the following section, here are the Sekoia IOCs available in Splunk: <a name="sourcetype"></a>
+In the following section, here are the Sekoia IOCs type available in Splunk: <a name="sourcetype"></a>
 
 |IOC type|Meaning|
 |--|--|
@@ -56,7 +64,7 @@ In the following section, here are the Sekoia IOCs available in Splunk: <a name=
 An IOC is an observable that represents a malicious activity. For more information, please consult [this page](https://docs.sekoia.io/cti/features/consume/observables/).
 
 !!! note
-     Only Sekoia Indicators will be updated.
+     Only the Sekoia Indicator types will be updated.
      
      Update is scheduled every night to ensure that valid IOCs are used to detect threats.
 
@@ -76,7 +84,7 @@ An IOC is an observable that represents a malicious activity. For more informati
 
 1. Setup a lookup table
  
-    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (e.g. **SOURCETYPE** listed [above](#sourcetype)).
+    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (`YOUR_SOURCETYPE` is to be replaced by. Please find the **Source types** available listed [above](#sourcetype)).
    
     When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table.
 
