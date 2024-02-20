@@ -22,7 +22,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 ![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
 
 !!!note
-    The next sections are valid for Splunk Enterprise (OnPrem) or Splunk Cloud (Cloud).
+    The next sections are valid for Splunk **Enterprise** (OnPrem) or Splunk **Cloud** (Cloud).
 
 ## 2.  Install and configure your Sekoia application for Splunk in Splunk
 
@@ -45,8 +45,7 @@ _Please find below the explanation of the fields to be configured_
 
 - `Sekoia API url`: the default url is https://api.sekoia.io
 - `Feed ID`: [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
-- `Proxy URL`:
-  - Here are 2 ways to configure a proxy:
+- `Proxy URL`: Here are 2 ways to configure a proxy:
     1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://[username:password@]host:port)
     2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance. The Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
@@ -91,9 +90,9 @@ An IOC is an observable that represents a malicious activity. For more informati
  
     A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (`YOUR_SOURCETYPE` is to be replaced by the **Sekoia IOCs type** listed [above](#sourcetype)).
 
-    When installing Sekoia CTI integration, a message will be displayed requesting to configure the lookup table.
+    When installing Sekoia application for Splunk, a message will be displayed requesting to configure the lookup table.
 
-2. Sightings will be displayed on this section of the Sekoia integration
+2. Sightings will be displayed on this section of the Sekoia application for Splunk
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information.
