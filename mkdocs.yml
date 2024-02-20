@@ -121,6 +121,7 @@ nav:
                                   - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
                                   - Cisco Duo Security: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
                                   - Claroty xDome: xdr/features/collect/integrations/cloud_and_saas/claroty_xdome.md
+                                  - ExtraHop Reveal(x) 360: xdr/features/collect/integrations/cloud_and_saas/extrahop_revealx_360.md
                                   - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
                                   - Google Cloud:
                                         - Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_cloud_audit.md
