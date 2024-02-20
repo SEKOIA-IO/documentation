@@ -137,11 +137,11 @@ nav:
                                         - Azure Files: xdr/features/collect/integrations/cloud_and_saas/azure/azure_files.md
                                         - Azure Network Watcher: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
                                         - Azure Windows: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
-                                  - Microsoft Office 365:
-                                        - Office365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
-                                        - Microsoft Defender for Office 365: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
-                                        - Microsoft 365 Defender: xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender.md
-                                        - Message trace: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
+                                  - Microsoft 365:
+                                        - Office365: xdr/features/collect/integrations/cloud_and_saas/microsoft365/o365.md
+                                        - Microsoft Defender for Office 365: xdr/features/collect/integrations/cloud_and_saas/microsoft365/o365.md
+                                        - Microsoft 365 Defender: xdr/features/collect/integrations/cloud_and_saas/microsoft365/microsoft_365_defender.md
+                                        - Message trace: xdr/features/collect/integrations/cloud_and_saas/microsoft365/message_trace.md
                                   - Netskope:
                                         - Netskope Events: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
                                         - Netskope Transaction Events: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_transaction.md
@@ -627,8 +627,8 @@ plugins:
               integrations/log_insight_windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
               integrations/netfilter.md: xdr/features/collect/integrations/network/netfilter.md
               integrations/nginx.md: xdr/features/collect/integrations/application/nginx.md
-              integrations/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
-              integrations/o365.md: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
+              integrations/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/microsoft365/message_trace.md
+              integrations/o365.md: xdr/features/collect/integrations/cloud_and_saas/microsoft365/o365.md
               integrations/openldap.md: xdr/features/collect/integrations/application/openldap.md
               integrations/openssh.md: xdr/features/collect/integrations/application/openssh.md
               integrations/paloalto.md: xdr/features/collect/integrations/network/paloalto.md
@@ -743,8 +743,8 @@ plugins:
               operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
               operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
               operation_center/integration_catalog/cloud_and_saas/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
-              operation_center/integration_catalog/cloud_and_saas/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/office365/message_trace.md
-              operation_center/integration_catalog/cloud_and_saas/o365.md: xdr/features/collect/integrations/cloud_and_saas/office365/o365.md
+              operation_center/integration_catalog/cloud_and_saas/o365-message-trace.md: xdr/features/collect/integrations/cloud_and_saas/microsoft365/message_trace.md
+              operation_center/integration_catalog/cloud_and_saas/o365.md: xdr/features/collect/integrations/cloud_and_saas/microsoft365/o365.md
               operation_center/integration_catalog/email/fortimail.md: xdr/features/collect/integrations/email/fortimail.md
               operation_center/integration_catalog/email/postfix.md: xdr/features/collect/integrations/email/postfix.md
               operation_center/integration_catalog/email/retarus_email_security.md: xdr/features/collect/integrations/email/retarus_email_security.md
