@@ -13,7 +13,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 !!!note
     For Cloud version, please connect using your login and password on the [Web version](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk).
 
-Splunk Enterprise instance must be activated on your server.
+**Splunk Enterprise instance must be activated on your server.**
 
 1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
@@ -29,7 +29,7 @@ Splunk Enterprise instance must be activated on your server.
 1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps`
 ![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
    
-2. Search for Sekoia.io application and install it
+2. Search for `Sekoia.io` application and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
    
 3. Configure your Sekoia application for Splunk by completing fields
@@ -45,7 +45,7 @@ _Please find below the explanation of the fields to be configured_
 
 - `Sekoia API url`: the default url is https://api.sekoia.io
 - `Feed ID`: [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
-- `Proxy URL`: Here are 2 ways to configure a proxy:
+- `Proxy URL` - Here are 2 ways to configure a proxy:
     1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://[username:password@]host:port)
     2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance. The Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
@@ -88,7 +88,7 @@ An IOC is an observable that represents a malicious activity. For more informati
 
 1. Setup a lookup table
  
-    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (`YOUR_SOURCETYPE` is to be replaced by the **Sekoia IOCs type** listed [above](#sourcetype)).
+    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (`<YOUR_SOURCETYPE>` is to be replaced by the **Sekoia IOCs type** listed [above](#sourcetype)).
 
     When installing Sekoia application for Splunk, a message will be displayed requesting to configure the lookup table.
 
