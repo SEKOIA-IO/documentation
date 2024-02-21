@@ -14,9 +14,3 @@ The following Sekoia.io built-in rules match the intake **Darktrace Threat Visua
     Darktrace Threat Visualizer has detected a network critical activity related to one supervised device
     
     - **Effort:** master
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary

@@ -75,12 +75,6 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     
     - **Effort:** advanced
 
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.

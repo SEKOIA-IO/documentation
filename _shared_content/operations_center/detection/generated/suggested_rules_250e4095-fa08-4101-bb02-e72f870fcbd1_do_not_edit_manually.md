@@ -157,7 +157,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Antivirus Web Shell Detection"
     
@@ -1021,7 +1021,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "MSBuild Abuse"
     
@@ -1123,7 +1123,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus Exclusion Configuration"
     
@@ -1171,7 +1171,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detection of a windows defender alert indicating the presence of potential malware
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Microsoft Malware Protection Engine Crash"
     
@@ -1381,7 +1381,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
@@ -1730,12 +1730,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
     - **Effort:** advanced
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
 
 ??? abstract "Raccine Uninstall"
     
@@ -2455,7 +2449,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "User Couldn't Call A Privileged Service LsaRegisterLogonProcess"
     

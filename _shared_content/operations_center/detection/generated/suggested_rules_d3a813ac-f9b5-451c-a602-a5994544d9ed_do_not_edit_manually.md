@@ -49,13 +49,13 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "AWS CloudTrail GuardDuty Detector Suspended"
     
     Detects the suspension of the GuardDuty service
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "AWS CloudTrail GuardDuty Disruption"
     
@@ -150,12 +150,6 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
 ??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
-    
-    - **Effort:** elementary
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
 

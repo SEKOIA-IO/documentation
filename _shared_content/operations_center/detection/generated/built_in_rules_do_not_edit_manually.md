@@ -1,4 +1,4 @@
-Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-21_](rules_changelog.md)).
+Rules catalog includes **810 built-in detection rules** ([_last update on 2024-02-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -391,14 +391,22 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Okta Reuse Device Token"
     
     Detection of the reusing of Device Token.
@@ -582,8 +590,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Replication Through Removable Media**
 
 ??? abstract "External Disk Drive Or USB Storage Device"
@@ -694,8 +706,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     The vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
     
     Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
@@ -944,26 +960,42 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Multiple Authentication On Microsoft 365 (Office 365) Portal From Two IP Addresses"
     
     Detection of login events from two IP addresses within 3mn, as it could happen if someone got phished with a tool like Evilginx2.
@@ -974,8 +1006,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Okta's FastPass prevents known phishing sites.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Phishing Detected By Vade For M365"
     
     Vade Secure product Vade for M365 has detected a phishing attempt.
@@ -1297,8 +1333,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
     GuardDuty has detected a threat with a low severity level. A low severity level indicates attempted suspicious activity that did not compromise your network, for example, a port scan or a failed intrusion attempt.
@@ -1309,8 +1349,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Alternate PowerShell Hosts Pipe"
     
     Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe. Prerequisites are logging for PipeEvents in Sysmon config
@@ -1603,8 +1647,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
     Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
@@ -1615,8 +1663,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detection of a windows defender alert indicating the presence of potential malware
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -1772,8 +1824,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
-    - **Effort:** elementary
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "SentinelOne EDR Agent Disabled"
     
     A SentinelOne EDR agent has been disabled according to SentinelOne logs.
@@ -2202,8 +2258,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Audit CVE Event"
     
     Detects events generated by Windows to indicate the exploitation of a known vulnerability
@@ -2256,8 +2316,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
     GuardDuty has detected a threat with a low severity level. A low severity level indicates attempted suspicious activity that did not compromise your network, for example, a port scan or a failed intrusion attempt.
@@ -2268,8 +2332,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
     
     Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.
@@ -2573,11 +2641,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
     - **Changelog:**
     
         - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "Malspam Execution Registering Malicious DLL"
     
@@ -2739,8 +2808,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detection of a windows defender alert indicating the presence of potential malware
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -3306,8 +3379,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detection of a windows defender alert indicating the presence of potential malware
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender XDR Alert"
     
     Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
@@ -4026,8 +4103,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Account Manipulation**
 
 ??? abstract "AWS CloudTrail IAM Failed User Creation"
@@ -4172,8 +4253,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Web Shell**
 
 ??? abstract "Antivirus Web Shell Detection"
@@ -5403,8 +5488,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Account Manipulation**
 
 ??? abstract "AWS CloudTrail IAM Failed User Creation"
@@ -5549,8 +5638,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Web Shell**
 
 ??? abstract "Antivirus Web Shell Detection"
@@ -6879,8 +6972,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 **Rundll32**
 
 ??? abstract "PowerShell Execution Via Rundll32"
@@ -7075,8 +7172,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
     Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
@@ -7660,18 +7761,23 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects when an attacker is trying to evade defenses by deleting a GuardDuty detector
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
     - **Changelog:**
     
         - 08/11/2023 - minor - Added filter to reduce false positives
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
 ??? abstract "AWS CloudTrail GuardDuty Detector Suspended"
     
     Detects the suspension of the GuardDuty service
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "AWS CloudTrail GuardDuty Disruption"
     
     Detects updates of the GuardDuty list of trusted IPs, perhaps to disable security alerts against malicious IPs
@@ -7846,8 +7952,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Microsoft Defender Antivirus Exclusion Configuration"
     
     Detects when an exclusion configuration change is made to Microsoft Windows Defender (adding either a path or process bypass)
@@ -7970,8 +8080,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     A MFA has beed disabled in Okta SSO. This is a common behavior to gain permanent access over a system.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Okta Network Zone Deactivated"
     
     Detects attempts to deactivate an Okta network zone. Okta network zones can be configured to limit or restrict access to a network based on IP addresses or geolocations. An adversary may attempt to modify, delete, or deactivate an Okta network zone in order to remove or weaken an organization's security controls.
@@ -9345,8 +9459,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Phosphorus Domain Controller Discovery"
     
     According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about the Domain Controller. The command is the following: "powershell.exe" /c Get-WMIObject Win32_NTDomain | findstr DomainController
@@ -10083,8 +10201,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+            
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -10385,12 +10507,6 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
 **Data Encrypted for Impact**
 
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-    
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.

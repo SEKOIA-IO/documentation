@@ -51,12 +51,6 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** elementary
 
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
 ??? abstract "SSH Authorized Key Alteration"
     
     The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision

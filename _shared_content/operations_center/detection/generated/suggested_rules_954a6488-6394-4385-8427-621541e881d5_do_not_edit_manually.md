@@ -439,7 +439,7 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
@@ -565,7 +565,7 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
@@ -698,12 +698,6 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
     
     - **Effort:** advanced
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
 
 ??? abstract "Raccine Uninstall"
     
