@@ -11,9 +11,9 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 ## 1. Connect to Splunk Enterprise
 
 !!!note
-    Splunk Enterprise instance must be activated on your server.
-
     For Cloud version, please connect using your login and password on the [Web version](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk).
+
+Splunk Enterprise instance must be activated on your server.
 
 1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
@@ -24,7 +24,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 !!!note
     The next sections are valid for Splunk **Enterprise** (OnPrem) or Splunk **Cloud** (Cloud).
 
-## 2.  Install and configure your Sekoia application for Splunk in Splunk
+## 2.  Install and configure your Sekoia application for Splunk
 
 1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps`
 ![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
@@ -32,7 +32,7 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 2. Search for Sekoia.io application and install it
 ![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
    
-3. Configure your Sekoia.io Application
+3. Configure your Sekoia application for Splunk by completing fields
 ![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
 
 _Please find below the explanation of the fields to be configured_
