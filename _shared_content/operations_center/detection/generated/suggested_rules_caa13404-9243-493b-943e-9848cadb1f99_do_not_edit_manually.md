@@ -313,25 +313,25 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a High severity alert triggers an automated investigation, such as when a potentially malicious URL click was detected, or when a user is restricted from sending email.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation was conducted automatically. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Low or Informational severity alert triggered an automated investigation, and remediation actions need to be approved or conducted. Low and Informational alerts include when an email is reported by a user, or when a malicious email is removed after delivery.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Microsoft Defender for Office 365 Medium Severity AIR Alert"
     
     Microsoft Defender for Office 365 includes the capability to run Automated investigation and response (AIR) actions. This rule detects when a Medium severity alert triggers an automated investigation, such as when suspicious email sending patterns are detected from an account.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Network Scanning and Discovery"
     
@@ -414,12 +414,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.
-    
-    - **Effort:** elementary
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
 

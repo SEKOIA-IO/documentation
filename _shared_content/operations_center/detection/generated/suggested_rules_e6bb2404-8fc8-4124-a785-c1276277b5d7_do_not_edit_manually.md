@@ -55,7 +55,7 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     
     A MFA has beed disabled in Okta SSO. This is a common behavior to gain permanent access over a system.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Okta Network Zone Deactivated"
     
@@ -79,7 +79,7 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
     
     Okta's FastPass prevents known phishing sites.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Okta Policy Modified or Deleted"
     
@@ -150,12 +150,6 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
 ??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
-    
-    - **Effort:** elementary
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
 

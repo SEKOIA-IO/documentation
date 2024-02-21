@@ -7,7 +7,7 @@ The following Sekoia.io built-in rules match the intake **AWS GuardDuty**. This 
     
     GuardDuty has detected a threat with a high severity level. A High severity level indicates that the resource in question (an EC2 instance or a set of IAM user sign-in credentials) is compromised and is actively being used for unauthorized purposes.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "AWS GuardDuty Low Severity Alert"
     
@@ -19,7 +19,7 @@ The following Sekoia.io built-in rules match the intake **AWS GuardDuty**. This 
     
     GuardDuty has detected a threat with a medium severity level. A Medium severity level indicates suspicious activity that deviates from normally observed behavior and, depending on your use case, may be indicative of a resource compromise.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Burp Suite Tool Detected"
     
@@ -48,12 +48,6 @@ The following Sekoia.io built-in rules match the intake **AWS GuardDuty**. This 
 ??? abstract "Potential Lemon Duck User-Agent"
     
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
-    
-    - **Effort:** elementary
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
 

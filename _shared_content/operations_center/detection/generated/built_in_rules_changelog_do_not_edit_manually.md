@@ -104,8 +104,62 @@ Changelog _last update on 2024-02-21_
 ### SentinelOne EDR Malicious Threat Not Mitigated
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
+### Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Okta MFA Disabled
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS GuardDuty Medium Severity Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS GuardDuty High Severity Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 High Severity AIR Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Sekoia.io EICAR Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS CloudTrail GuardDuty Detector Suspended
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 Medium Severity AIR Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Okta Phishing Detection with FastPass Origin Check
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS CloudTrail GuardDuty Detector Deleted
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CVE-2021-21985 VMware vCenter
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Antivirus Relevant File Paths Alerts
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender Antivirus Threat Detected
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### User Added to Local Administrators
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### MS Office Product Spawning Exe in User Dir
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
 ### Netsh Port Forwarding
   - 15/02/2024 - minor - Added filter to reduce false positives
+    
+### Microsoft Defender Antivirus Disabled Base64 Encoded
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### NlTest Usage
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### WMIC Uninstall Product
   - 13/02/2024 - minor - Exclude non-Windows operating systems (false positives)
@@ -202,9 +256,6 @@ Changelog _last update on 2024-02-21_
     
 ### AWS CloudTrail Remove Flow logs
   - 15/11/2023 - minor - Changing effort level.
-    
-### AWS CloudTrail GuardDuty Detector Deleted
-  - 08/11/2023 - minor - Added filter to reduce false positives
     
 ### Cobalt Strike Default Beacons Names
   - 08/11/2023 - minor - Added filter to reduce false positives
@@ -319,9 +370,6 @@ Changelog _last update on 2024-02-21_
     
 ### Suspicious Network Args In Command Line
   - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.
-    
-### MS Office Product Spawning Exe in User Dir
-  - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
     
 ### Okta User Logged In Multiple Applications
   - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
