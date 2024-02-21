@@ -153,6 +153,12 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     - **Effort:** elementary
 
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
+    - **Effort:** intermediate
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.

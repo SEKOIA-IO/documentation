@@ -873,6 +873,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** elementary
 
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
+    - **Effort:** intermediate
+
 ??? abstract "Impacket Secretsdump.py Tool"
     
     Detects credential dumping via secretdump of impacket suite.
@@ -2040,12 +2046,6 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
     
     - **Effort:** intermediate
 
