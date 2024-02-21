@@ -6,23 +6,21 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 
 - An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the Saas version)
 - An active Sekoia.io license with access to the CTI
-- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](https://docs.sekoia.io/getting_started/manage_api_keys/) (e.g. [Analyst Role](https://docs.sekoia.io/getting_started/roles/#functionality-of-built-in-roles)) <a name="api_key"></a>
+- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](https://docs.sekoia.io/getting_started/manage_api_keys/) (e.g. Built-in [Analyst Role](https://docs.sekoia.io/getting_started/roles/#functionality-of-built-in-roles) or create a custom role with [ic_viewer permissions](https://docs.sekoia.io/getting_started/roles/#legacy-roles) <a name="api_key"></a>
+
+!!!note
+    This following guide is for Splunk solutions (**Enterprise** (OnPrem) or Splunk **Cloud** (Cloud)).
 
 ## 1. Connect to Splunk Enterprise
 
-!!!note
-    For Cloud version, please connect using your login and password on the [Web version](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk).
-
-**Splunk Enterprise instance must be activated on your server.**
-
 1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
+
+!!!note
+    For Cloud version, only the next step is required
    
 2. Enter your login and password of your Splunk Enterprise instance
 ![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
-
-!!!note
-    The next sections are valid for Splunk **Enterprise** (OnPrem) or Splunk **Cloud** (Cloud).
 
 ## 2.  Install and configure your Sekoia application for Splunk
 
@@ -39,12 +37,12 @@ _Please find below the explanation of the fields to be configured_
 
 **Required**
 
-- `SEKOIA.IO API Key`: Please read the information [above](#api_key)
+- `SEKOIA.IO API Key`: Sekoia API Key to be created as stated in the [Prerequisites](#api_key)
 
 **Optional**
 
 - `Sekoia API url`: the default url is https://api.sekoia.io
-- `Feed ID`: [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
+- `Feed ID`: default feed is used by default. For custom feed, add the feed ID. Please find [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
 - `Proxy URL` - Here are 2 ways to configure a proxy:
     1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://[username:password@]host:port)
     2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance. The Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
