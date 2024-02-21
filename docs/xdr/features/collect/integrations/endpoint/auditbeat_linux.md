@@ -240,7 +240,7 @@ And add a dedicated configuration file for the Auditbeat logs in `/etc/rsyslog.d
 ```bash
 module(load="imfile" PollingInterval="10")              #needs to be done just once
 input(type="imfile"
-      File="/tmp/auditbeat/auditbeat"
+      File="/tmp/auditbeat/auditbeat*.ndjson"
       Tag="linux_auditbeat"
       Severity="info"
       Facility="local7"

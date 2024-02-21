@@ -45,6 +45,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -386,6 +392,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     Detects commands containing a domain linked to http exfiltration.
     
     - **Effort:** intermediate
+
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Exploit For CVE-2015-1641"
     
@@ -745,7 +757,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -817,7 +829,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OceanLotus Registry Activity"
     
@@ -841,7 +853,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Package Manager Alteration"
     
@@ -1148,6 +1160,24 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Stormshield Ses Critical Block"
+    
+    Stormshield Endpoint Security block execution with critical severity
+    
+    - **Effort:** master
+
+??? abstract "Stormshield Ses Critical Not Block"
+    
+    Stormshield Endpoint Security detect threat with critical severity that was not blocked
+    
+    - **Effort:** master
+
+??? abstract "Stormshield Ses Emergency Block"
+    
+    Stormshield Endpoint Security block execution with emergency severity
+    
+    - **Effort:** master
 
 ??? abstract "Suncrypt Parameters"
     

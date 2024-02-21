@@ -996,6 +996,100 @@ Find below few samples of events and how they are normalized by Sekoia.io.
 	```
 
 
+=== "test_type_11_1.json"
+
+    ```json
+	
+    {
+        "message": "{\n  \"Version\": 1,\n  \"Type\": 11,\n  \"TypeComputedMap\": \"ProcessExecution\",\n  \"Severity\": 0,\n  \"ServerReserved\": 0,\n  \"Attributes\": 2,\n  \"AttributesComputedBitMap\": [\n    \"Protection\"\n  ],\n  \"EventGuid\": \"{5024762E-73B4-40DC-823A-7B080C82C542}\",\n  \"GenerateIncident\": true,\n  \"Timestamp\": \"2024-02-01T08:10:33.7922326-08:00\",\n  \"TimestampRaw\": 133512774337922326,\n  \"SpecificData\": {\n    \"SourceProcess\": {\n      \"PID\": 7248,\n      \"ProcessGuid\": \"{90FC03BE-4FBF-4184-A304-6D4B00AA152B}\",\n      \"ProcessImageName\": \"C:\\\\ragnarlocker.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"\\\"C:\\\\ragnarlocker.exe\\\" \",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 2,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateNoSignature\",\n      \"Certificates\": [],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.5801449-08:00\",\n      \"ProcessStartTimeRaw\": 133512774335801449\n    },\n    \"Action\": {\n      \"PolicyGuid\": \"{64AA4553-15FC-4188-B4AD-A0BDCFB11ED9}\",\n      \"PolicyVersion\": 14,\n      \"RuleGuid\": \"{B88B8874-E8E3-4F42-92B8-61D364DB65B9}\",\n      \"BaseRuleGuid\": \"{0C4D019E-B7D5-4456-909A-C5F4152461AE}\",\n      \"IdentifierGuid\": \"{BC74B5FB-8880-4A74-8316-FE865F9EA75C}\",\n      \"Blocked\": true,\n      \"UserDecision\": false,\n      \"SourceProcessKilled\": true\n    },\n    \"CreatedProcess\": {\n      \"PID\": 11308,\n      \"ProcessGuid\": \"{24F0AA75-BC26-4245-829E-97087BB07A47}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\System32\\\\cmd.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"cmd.exe /c vssadmin delete shadows /all /quiet\",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows\",\n          \"SigningTime\": \"2013-08-22T05:07:49.2400000-08:00\",\n          \"ValidityStart\": \"2013-06-17T13:43:38.0000000-08:00\",\n          \"ValidityEnd\": \"2014-09-17T13:43:38.0000000-08:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.7833468-08:00\",\n      \"ProcessStartTimeRaw\": 133512774337833468\n    },\n    \"ParentProcess\": {\n      \"PID\": 7248,\n      \"ProcessGuid\": \"{D057290C-D86A-441B-B3CB-C6E54D42EBA5}\",\n      \"ProcessImageName\": \"C:\\\\ragnarlocker.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"\\\"C:\\\\ragnarlocker.exe\\\" \",\n      \"User\": \"S-1-5-21-1111111111-22222222-3333333333-000\",\n      \"UserNameLookup\": \"Administrator\",\n      \"UserDomainLookup\": \"EXAMPLE\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"High Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 1,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 2,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateNoSignature\",\n      \"Certificates\": [],\n      \"ProcessStartTime\": \"2024-02-01T08:10:33.5801449-08:00\",\n      \"ProcessStartTimeRaw\": 133512774335801449\n    }\n  },\n  \"AdditionalData\": {\n    \"AgentAddresses\": [\n      \"172.24.0.14\"\n    ],\n    \"AgentGroupGuid\": \"{00000000-0000-0000-0000-000000000000}\",\n    \"AgentGroupName\": \"Default group\",\n    \"AgentGuid\": \"{074C7CCE-ACF4-4674-9650-4B63B569892F}\",\n    \"AgentName\": \"WINSERVER2012\",\n    \"CategoryName\": \"Process\",\n    \"IncidentGuid\": \"{12CA4135-575E-49DE-89AD-4CD35EE2EB3B}\",\n    \"Message\": \"The 'ragnarlocker.exe' process attempted to run the 'cmd.exe' process\",\n    \"PolicyName\": \"Stormshield - Incredible policy (1)\",\n    \"SeverityName\": \"Emergency\"\n  }\n}",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "code": "ProcessExecution",
+            "kind": "event",
+            "reason": "The 'ragnarlocker.exe' process attempted to run the 'cmd.exe' process",
+            "severity": 0,
+            "type": [
+                "start"
+            ]
+        },
+        "@timestamp": "2024-02-01T16:10:33.792232Z",
+        "process": {
+            "command_line": "cmd.exe /c vssadmin delete shadows /all /quiet",
+            "executable": "C:\\Windows\\System32\\cmd.exe",
+            "hash": {
+                "md5": "68B329DA9893E34099C7D8AD5CB9C940",
+                "sha1": "ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC",
+                "sha256": "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+            },
+            "name": "cmd.exe",
+            "parent": {
+                "command_line": "\"C:\\ragnarlocker.exe\" ",
+                "executable": "C:\\ragnarlocker.exe",
+                "hash": {
+                    "md5": "68B329DA9893E34099C7D8AD5CB9C940",
+                    "sha1": "ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC",
+                    "sha256": "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+                },
+                "name": "ragnarlocker.exe",
+                "pid": 7248,
+                "start": "2024-02-01T16:10:33.580144Z",
+                "user": {
+                    "id": "S-1-5-21-1111111111-22222222-3333333333-000",
+                    "name": "Administrator"
+                }
+            },
+            "pid": 11308,
+            "start": "2024-02-01T16:10:33.783346Z",
+            "user": {
+                "id": "S-1-5-21-1111111111-22222222-3333333333-000",
+                "name": "Administrator"
+            }
+        },
+        "related": {
+            "hash": [
+                "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B",
+                "68B329DA9893E34099C7D8AD5CB9C940",
+                "ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC"
+            ]
+        },
+        "rule": {
+            "ruleset": "Stormshield - Incredible policy (1)",
+            "uuid": "B88B8874-E8E3-4F42-92B8-61D364DB65B9"
+        },
+        "stormshield": {
+            "ses": {
+                "action": {
+                    "blocked": true,
+                    "user_decision": false
+                },
+                "categoryname": "Process",
+                "incident": {
+                    "id": "{12CA4135-575E-49DE-89AD-4CD35EE2EB3B}"
+                },
+                "level": "Emergency",
+                "process": {
+                    "parent": {
+                        "user": {
+                            "domain": "EXAMPLE"
+                        }
+                    },
+                    "user": {
+                        "domain": "EXAMPLE"
+                    }
+                },
+                "source_process": {
+                    "killed": true
+                },
+                "type": "11"
+            }
+        }
+    }
+    	
+	```
+
+
 === "test_type_173.json"
 
     ```json
@@ -5736,6 +5830,91 @@ Find below few samples of events and how they are normalized by Sekoia.io.
 	```
 
 
+=== "test_type_55_1.json"
+
+    ```json
+	
+    {
+        "message": "{\n  \"Version\": 1,\n  \"Type\": 55,\n  \"TypeComputedMap\": \"CreateRemoteThread\",\n  \"Severity\": 1,\n  \"ServerReserved\": 0,\n  \"Attributes\": 2,\n  \"AttributesComputedBitMap\": [\n    \"Protection\"\n  ],\n  \"EventGuid\": \"{3FC7A46F-A166-4316-B0B0-859DF8E93B98}\",\n  \"GenerateIncident\": true,\n  \"Timestamp\": \"2024-02-01T08:09:21.8983738-08:00\",\n  \"TimestampRaw\": 133512773618983738,\n  \"SpecificData\": {\n    \"SourceProcess\": {\n      \"PID\": 4452,\n      \"ProcessGuid\": \"{18561EAB-115D-4B1E-ACF9-E185819BB548}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WmiPrvSE.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"C:\\\\Windows\\\\system32\\\\wbem\\\\wmiprvse.exe -Embedding\",\n      \"User\": \"S-1-5-18\",\n      \"UserNameLookup\": \"SYSTEM\",\n      \"UserDomainLookup\": \"NT AUTHORITY\",\n      \"IntegrityLevel\": \"S-1-16-11111\",\n      \"IntegrityLevelNameLookup\": \"System Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 0,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows\",\n          \"SigningTime\": \"2016-12-10T03:42:04.9630000-08:00\",\n          \"ValidityStart\": \"2016-10-11T12:39:31.0000000-08:00\",\n          \"ValidityEnd\": \"2018-01-11T12:39:31.0000000-08:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2024-02-01T08:04:31.5500341-08:00\",\n      \"ProcessStartTimeRaw\": 133512770715500341\n    },\n    \"Action\": {\n      \"PolicyGuid\": \"{05AB2138-A3DD-46D5-926E-901041D49FD8}\",\n      \"PolicyVersion\": 14,\n      \"RuleGuid\": \"{6082AB41-5836-4BDD-B479-19DC0ABA4302}\",\n      \"BaseRuleGuid\": \"{2F13CCB0-21D2-43B0-8D10-D241A6989FBD}\",\n      \"IdentifierGuid\": \"{94699F8C-0E7A-490E-A3CA-1C851232B577}\",\n      \"Blocked\": false,\n      \"UserDecision\": false,\n      \"SourceProcessKilled\": false\n    },\n    \"TargetProcess\": {\n      \"PID\": 608,\n      \"ProcessGuid\": \"{1876D654-057F-4B5D-9D1B-69BA1C74DA4B}\",\n      \"ProcessImageName\": \"C:\\\\Windows\\\\System32\\\\lsass.exe\",\n      \"VolumeZone\": 1,\n      \"VolumeZoneComputedBitMap\": [\n        \"Operating system\"\n      ],\n      \"ProcessCommandLine\": \"C:\\\\Windows\\\\system32\\\\lsass.exe\",\n      \"User\": \"S-1-5-18\",\n      \"UserNameLookup\": \"SYSTEM\",\n      \"UserDomainLookup\": \"NT AUTHORITY\",\n      \"IntegrityLevel\": \"S-1-16-16384\",\n      \"IntegrityLevelNameLookup\": \"System Mandatory Level\",\n      \"IntegrityLevelDomainLookup\": \"Mandatory Label\",\n      \"SessionID\": 0,\n      \"HashMd5\": \"68B329DA9893E34099C7D8AD5CB9C940\",\n      \"HashSha1\": \"ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC\",\n      \"HashSha256\": \"01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B\",\n      \"IsProtectedOrCritical\": false,\n      \"CertificateSignatureState\": 1,\n      \"CertificateSignatureStateComputedMap\": \"SignatureStateTrusted\",\n      \"Certificates\": [\n        {\n          \"Algorithm\": \"SHA256\",\n          \"IssuerCN\": \"Microsoft Windows Production PCA 2011\",\n          \"SubjectCN\": \"Microsoft Windows Publisher\",\n          \"SigningTime\": \"2013-08-22T04:32:54.6290000-08:00\",\n          \"ValidityStart\": \"2013-03-13T13:34:10.0000000-08:00\",\n          \"ValidityEnd\": \"2014-06-13T13:34:10.0000000-08:00\"\n        }\n      ],\n      \"ProcessStartTime\": \"2024-02-01T08:03:34.5476641-08:00\",\n      \"ProcessStartTimeRaw\": 133512770145476641\n    }\n  },\n  \"AdditionalData\": {\n    \"AgentAddresses\": [\n      \"172.24.0.14\"\n    ],\n    \"AgentGroupGuid\": \"{00000000-0000-0000-0000-000000000000}\",\n    \"AgentGroupName\": \"Default group\",\n    \"AgentGuid\": \"{FD088C3A-30F3-4119-8FC0-7527538EF361}\",\n    \"AgentName\": \"WINSERVER2012\",\n    \"CategoryName\": \"Process\",\n    \"IncidentGuid\": \"{49C0571C-0F35-46E6-A81C-35F8F011D8A5}\",\n    \"Message\": \"The 'WmiPrvSE.exe' process injected code into the 'lsass.exe' process\",\n    \"PolicyName\": \"Stormshield - Incredible policy (1)\",\n    \"SeverityName\": \"Alert\"\n  }\n}",
+        "event": {
+            "category": [
+                "process"
+            ],
+            "code": "CreateRemoteThread",
+            "kind": "event",
+            "reason": "The 'WmiPrvSE.exe' process injected code into the 'lsass.exe' process",
+            "severity": 1,
+            "type": [
+                "info"
+            ]
+        },
+        "@timestamp": "2024-02-01T16:09:21.898373Z",
+        "action": {
+            "properties": {
+                "TargetCommandLine": "C:\\Windows\\system32\\lsass.exe",
+                "TargetImage": "C:\\Windows\\System32\\lsass.exe"
+            }
+        },
+        "process": {
+            "command_line": "C:\\Windows\\system32\\wbem\\wmiprvse.exe -Embedding",
+            "executable": "C:\\Windows\\System32\\wbem\\WmiPrvSE.exe",
+            "hash": {
+                "md5": "68B329DA9893E34099C7D8AD5CB9C940",
+                "sha1": "ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC",
+                "sha256": "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+            },
+            "name": "WmiPrvSE.exe",
+            "pid": 4452,
+            "start": "2024-02-01T16:04:31.550034Z",
+            "user": {
+                "id": "S-1-5-18",
+                "name": "SYSTEM"
+            }
+        },
+        "related": {
+            "hash": [
+                "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B",
+                "68B329DA9893E34099C7D8AD5CB9C940",
+                "ADC83B19E793491B1C6EA0FD8B46CD9F32E592FC"
+            ]
+        },
+        "rule": {
+            "ruleset": "Stormshield - Incredible policy (1)",
+            "uuid": "6082AB41-5836-4BDD-B479-19DC0ABA4302"
+        },
+        "stormshield": {
+            "ses": {
+                "action": {
+                    "blocked": false,
+                    "user_decision": false
+                },
+                "categoryname": "Process",
+                "incident": {
+                    "id": "{49C0571C-0F35-46E6-A81C-35F8F011D8A5}"
+                },
+                "level": "Alert",
+                "process": {
+                    "target": {
+                        "command_line": "C:\\Windows\\system32\\lsass.exe",
+                        "executable": "C:\\Windows\\System32\\lsass.exe",
+                        "name": "lsass.exe",
+                        "pid": "608"
+                    },
+                    "user": {
+                        "domain": "NT AUTHORITY"
+                    }
+                },
+                "source_process": {
+                    "killed": false
+                },
+                "type": "55"
+            }
+        }
+    }
+    	
+	```
+
+
 === "test_type_56.json"
 
     ```json
@@ -6122,6 +6301,7 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.provider` | `keyword` | Source of the event. |
+|`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.hash.md5` | `keyword` | MD5 hash. |
@@ -6157,7 +6337,9 @@ The following table lists the fields that are extracted, normalized under the EC
 |`source.port` | `long` | Port of the source. |
 |`stormshield.ses.action.blocked` | `boolean` | Was the operation blocked |
 |`stormshield.ses.action.user_decision` | `boolean` | Was the user decision |
+|`stormshield.ses.categoryname` | `keyword` | Category name |
 |`stormshield.ses.incident.id` | `keyword` | stormshield incident guid |
+|`stormshield.ses.level` | `keyword` | Level of severity |
 |`stormshield.ses.process.parent.user.domain` | `keyword` | User's domain associated with the parent process of the event |
 |`stormshield.ses.process.target.command_line` | `keyword` | stormshield targeted process command line |
 |`stormshield.ses.process.target.executable` | `keyword` | stormshield targeted process executable |

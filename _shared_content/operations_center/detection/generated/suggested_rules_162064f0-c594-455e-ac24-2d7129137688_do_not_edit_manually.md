@@ -259,7 +259,7 @@ The following Sekoia.io built-in rules match the intake **Azure Linux [DEPRECATE
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -283,13 +283,13 @@ The following Sekoia.io built-in rules match the intake **Azure Linux [DEPRECATE
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Phorpiex DriveMgr Command"
     

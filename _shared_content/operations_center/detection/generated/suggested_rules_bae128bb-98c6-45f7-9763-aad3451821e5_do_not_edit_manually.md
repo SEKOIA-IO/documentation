@@ -189,6 +189,18 @@ The following Sekoia.io built-in rules match the intake **Trellix Network Securi
     
     - **Effort:** intermediate
 
+??? abstract "Trellix Network Security Threat Blocked"
+    
+    Trellix Network Security has detected a malicious traffic and blocked it.
+    
+    - **Effort:** master
+
+??? abstract "Trellix Network Security Threat Notified"
+    
+    Trellix Network Security has detected a malicious traffic and raised an alert.
+    
+    - **Effort:** master
+
 ??? abstract "WCE wceaux.dll Creation"
     
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.

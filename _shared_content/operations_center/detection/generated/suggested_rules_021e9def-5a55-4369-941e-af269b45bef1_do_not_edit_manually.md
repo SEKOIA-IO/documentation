@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -266,6 +272,12 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     Detects commands containing a domain linked to http exfiltration.
     
     - **Effort:** intermediate
+
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
 
 ??? abstract "Explorer Process Executing HTA File"
     
@@ -505,7 +517,7 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -571,7 +583,7 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Opening Of a Password File"
     
@@ -583,7 +595,7 @@ The following Sekoia.io built-in rules match the intake **Elastic AuditBeat Linu
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     

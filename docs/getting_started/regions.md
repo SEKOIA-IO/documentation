@@ -169,7 +169,7 @@ For companies requiring their data to be hosted in Monaco
     </tbody>
 </table>
 
-## United Arab Emirates - EUA1
+## United Arab Emirates - UAE1
 
 UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai)
 

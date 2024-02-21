@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
@@ -333,6 +339,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+
 ??? abstract "Explorer Process Executing HTA File"
     
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
@@ -583,7 +595,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -649,7 +661,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OneNote Embedded File"
     
@@ -667,7 +679,7 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Package Manager Alteration"
     

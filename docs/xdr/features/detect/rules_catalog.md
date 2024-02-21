@@ -175,6 +175,10 @@ You can select these event fields in your rule configuration. To do so, click on
 
 In addition to that, these event fields can be added to the `Swappable fields`. A typical example of that is  `source.ip` and `destination.ip`.
 
+!!! warning
+    Custom similarity strategy are not supported with Sigma Correlation rules.
+    Fields used in the `group-by` clause of the pattern will be used as similarity strategy.
+
 !!! note
     You can learn more about similarity strategies in this [section](../../investigate/alerts/#similarity-strategies).
     
