@@ -603,24 +603,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
-??? abstract "Microsoft 365 Defender Alert"
-    
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-
-??? abstract "Microsoft 365 Defender Cloud App Security Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-
-??? abstract "Microsoft 365 Defender For Endpoint Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-
 ??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
     
     The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
@@ -663,9 +645,27 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
-??? abstract "Microsoft Defender for Office 365 Alert"
+??? abstract "Microsoft Defender XDR Alert"
     
-    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR Cloud App Security Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR Office 365 Alert"
+    
+    Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
 
@@ -1140,12 +1140,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
     
     - **Effort:** intermediate
 

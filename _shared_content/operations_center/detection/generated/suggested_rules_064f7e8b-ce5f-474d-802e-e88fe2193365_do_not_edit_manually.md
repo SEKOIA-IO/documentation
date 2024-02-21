@@ -423,6 +423,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Apex One**
     
     - **Effort:** intermediate
 
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
+    - **Effort:** intermediate
+
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).

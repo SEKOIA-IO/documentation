@@ -1,4 +1,4 @@
-Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-20_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -1599,24 +1599,6 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-??? abstract "Microsoft 365 Defender Alert"
-    
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
-??? abstract "Microsoft 365 Defender Cloud App Security Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
-??? abstract "Microsoft 365 Defender For Endpoint Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
@@ -1635,9 +1617,27 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-??? abstract "Microsoft Defender for Office 365 Alert"
+??? abstract "Microsoft Defender XDR Alert"
     
-    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Cloud App Security Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Office 365 Alert"
+    
+    Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -2735,33 +2735,33 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
         - 09/10/2023 - major - Fix field names to match the current parser.
             
-??? abstract "Microsoft 365 Defender Alert"
-    
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
-??? abstract "Microsoft 365 Defender Cloud App Security Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
-??? abstract "Microsoft 365 Defender For Endpoint Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
 ??? abstract "Microsoft Defender Antivirus Threat Detected"
     
     Detection of a windows defender alert indicating the presence of potential malware
     
     - **Effort:** intermediate
     
-??? abstract "Microsoft Defender for Office 365 Alert"
+??? abstract "Microsoft Defender XDR Alert"
     
-    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Cloud App Security Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Office 365 Alert"
+    
+    Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -3302,33 +3302,33 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
-??? abstract "Microsoft 365 Defender Alert"
-    
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
-??? abstract "Microsoft 365 Defender Cloud App Security Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
-??? abstract "Microsoft 365 Defender For Endpoint Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-    
 ??? abstract "Microsoft Defender Antivirus Threat Detected"
     
     Detection of a windows defender alert indicating the presence of potential malware
     
     - **Effort:** intermediate
     
-??? abstract "Microsoft Defender for Office 365 Alert"
+??? abstract "Microsoft Defender XDR Alert"
     
-    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Cloud App Security Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+    
+??? abstract "Microsoft Defender XDR Office 365 Alert"
+    
+    Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
     
@@ -3571,12 +3571,6 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
             
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Suspicious DNS Child Process"
     
     Detects suspicious processes spawned by the dns.exe process. It could be a great indication of the exploitation of the DNS RCE bug reported in CVE-2020-1350 (SIGRED).
@@ -4234,6 +4228,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Net.exe User Account Creation"
     
     Identifies creation of local users via the net.exe command
@@ -4561,12 +4561,6 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
-    
-    - **Effort:** intermediate
-    
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
     
     - **Effort:** intermediate
     
@@ -5850,12 +5844,6 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
 ??? abstract "StoneDrill Service Install"
     
     This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky 
-    
-    - **Effort:** intermediate
-    
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
     
     - **Effort:** intermediate
     
