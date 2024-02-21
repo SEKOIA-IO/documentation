@@ -50,7 +50,7 @@ _Please find below the explanation of the fields to be configured_
     2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance. The Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
 !!! note
-     After the launch of Sekoia.io application, Only valid [IOCs types](#sourcetype) will be downloaded and updated on Splunk Enterprise from current date.
+     After the launch of Sekoia application for Splunk, Only valid [IOCs types](#sourcetype) will be downloaded and updated on Splunk from current date.
 
 ## 3. Sekoia intelligence in Splunk
 
@@ -92,7 +92,7 @@ An IOC is an observable that represents a malicious activity. For more informati
 
     When installing Sekoia application for Splunk, a message will be displayed requesting to configure the lookup table.
 
-2. Sightings will be displayed on this section of the Sekoia application for Splunk
+2. Sightings will be displayed on a section
 ![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.io/cti/features/consume/intelligence/#search-for-objects) for more information.
