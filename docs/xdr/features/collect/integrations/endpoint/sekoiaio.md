@@ -592,41 +592,41 @@ Please find options and arguments available for Sekoia Agent by typing
 
 === "Windows"
 
-````
-agent.exe -h
-````
+    ````
+    agent.exe -h
+    ````
 
 === "Linux"
 
-````
-agent -h
-````
+    ````
+    agent -h
+    ````
 
 === "MacOs"
 
-````
-/Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent -h
-````
+    ````
+    /Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent -h
+    ````
 
 **Usage**:
 
 === "Windows"
 
-````
-agent-latest.exe <command> [<args>]
-````
+    ````
+    agent-latest.exe <command> [<args>]
+    ````
 
 === "Linux"
 
-````
-agent-latest <command> [<args>]
-````
+    ````
+    agent-latest <command> [<args>]
+    ````
 
 === "MacOs"
 
-````
-/Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent  <command> [<args>]
-````
+    ````
+    /Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent  <command> [<args>]
+    ````
 
 
 
