@@ -13,11 +13,11 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 
 ## 1. Connect to Splunk Enterprise
 
-   1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
+1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
 
-!!!note
-    For Cloud version, only the next step is required
+   !!!note
+       For Cloud version, only the next step is required
    
    2. Enter your login and password of your Splunk Enterprise instance
 ![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
@@ -45,14 +45,14 @@ _Please find below the explanation of the fields to be configured_
 - `Feed ID`: default feed is used by default. For custom feed, add the feed ID. Please find [more information on this documentation](https://docs.sekoia.io/cti/features/consume/feeds/#feeds-listing)
 - `Proxy URL` - Here are 2 ways to configure a proxy:
     1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://[username:password@]host:port)
-    2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance. The Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
+    2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance, the Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
 !!! note
-     After the launch of Sekoia application for Splunk, Only valid IOCs of [these types](#sourcetype) will be downloaded and updated on Splunk from current date.
+     After the launch of Sekoia application for Splunk, only valid IOCs of [these types](#sourcetype) will be downloaded and updated on Splunk from current date.
 
-## 3. Sekoia intelligence in Splunk
+## 3. Sekoia Intelligence in Splunk
 
-In the following section, here are the Sekoia IOCs type available in Splunk: <a name="sourcetype"></a>
+In the following section, here are the Sekoia IOC types available in Splunk: <a name="sourcetype"></a>
 
 |IOC type|Meaning|
 |--|--|
@@ -68,9 +68,9 @@ An IOC is an observable that represents a malicious activity. For more informati
 !!! note
      Only these Sekoia Indicator types will be updated.
      
-     Update is scheduled every night to ensure that valid IOCs are used to detect threats.
+     Update is **scheduled every night** to ensure that valid IOCs are used to detect threats.
 
-## 4. Search Sekoia intelligence and match with IOCs in Splunk
+## 4. Search Sekoia Intelligence and match with IOCs in Splunk
 
 ### Search existing Sekoia IOCs in Splunk with expiry date
 
@@ -109,14 +109,14 @@ Search in the Internal logs for errors. Please consult [Splunk documentation](ht
 
 - **Sekoia.io App for Splunk**
 
-https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk
+[https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk](https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk)
 
 - **Splunk official documentation**
 
-https://splunkbase.splunk.com/app/6327
+[https://splunkbase.splunk.com/app/6327](https://splunkbase.splunk.com/app/6327)
 
-https://community.splunk.com/t5/Installation/bd-p/installation
+[https://community.splunk.com/t5/Installation/bd-p/installation](https://community.splunk.com/t5/Installation/bd-p/installation)
 
-https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/InstallSplunk
+[https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/InstallSplunk](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/InstallSplunk)
 
-https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk
+[https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk](https://docs.splunk.com/Documentation/SplunkCloud/9.1.2308/SearchTutorial/NavigatingSplunk) 
