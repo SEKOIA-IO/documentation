@@ -94,7 +94,11 @@ Checking connectivity with the object storage ... OK
 ```
 
 !!! tip
-        Proxy information can be passed to the docker command with the `-e` option: `-e https_proxy={proxy_url}`
+    The `-e` option can be passed to the docker command to specify:
+
+    * The region: `-e region=mco1`
+    * Proxy information: `-e https_proxy={proxy_url}`
+
 
 ## Playbook runners 
 
@@ -113,7 +117,10 @@ To create a playbook runner, follow these steps:
     ![playbook runner instructions](/assets/playbooks/playbook_runner_instructions.png){: style="max-width:100%"}
 5. Once the playbook runner is installed, you can leave the instructions by selecting "Back to playbook runners"
 
-Your newly created playbook runner should now appear in the list. It will also be shown when configuring any playbook action. 
+Your newly created playbook runner should now appear in the list. It will also be shown when configuring any playbook action.
+
+!!! tip
+    To specify a region when installing the runner, the `--region` argument can be added to the command.
 
 ### Use a runner in a playbook action
 
