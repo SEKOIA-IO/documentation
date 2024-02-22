@@ -58,10 +58,10 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
     * <https://fra2.app.sekoia.io/>
 
 === "MCO1"
-    * https://mco1.app.sekoia.io/
+    * <https://mco1.app.sekoia.io/>
 
 === "UAE1"
-    * https://app.uae1.sekoia.io
+    * <https://app.uae1.sekoia.io/>
 
 
 ## Installation
@@ -590,14 +590,45 @@ Once the configuration file is modified, restart the agent:
 ## Additionnal information
 Please find options and arguments available for Sekoia Agent by typing
 
+=== "Windows"
+
 ````
 agent.exe -h
 ````
 
+=== "Linux"
+
+````
+agent -h
+````
+
+=== "MacOs"
+
+````
+/Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent -h
+````
+
 **Usage**:
+
+=== "Windows"
+
 ````
 agent-latest.exe <command> [<args>]
 ````
+
+=== "Linux"
+
+````
+agent-latest <command> [<args>]
+````
+
+=== "MacOs"
+
+````
+/Applications/SekoiaEndpointAgent.app/Contents/MacOS/SekoiaEndpointAgent  <command> [<args>]
+````
+
+
 
 **Options**:
 
