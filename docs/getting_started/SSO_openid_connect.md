@@ -4,34 +4,33 @@ To make it easier for employees to access Sekoia.io, you can enable SSO in your 
 
 ## Prerequisites for OpenID Connect
 
-- Your Identity Provider (IdP) must support the OpenID Connect standard
-- Only admin user with the `COMMUNITY_WRITE_ROLE` permission can configure the SSO.
+- Your **Identity Provider** (IdP) must support the OpenID Connect standard
+- Only admin user with the `Manage roles` permission can configure the SSO.
 
-## Verify your domains
+## 1. Verify your domains
 
 Sekoia.io requires your domains to be verified in order to be used for authentication.
 
 To do so:
 
-1. Go to "Managed communities" > "Security" > "Verify your domains" > "+ Domain"
-2. Input your domain and validate using the "Send for verification" button
-3. Your domain will have the status "Waiting for verification"
-4. Once it has been validated by our team, this status will become "Verified"
+1. Go to `Managed communities` (top right on **your profile** > **Community settings**) > `Security` > `Verify your domains` > `+ Domain`
+2. Input your domain and validate using the **Send for verification** button
+3. Your domain will have the status **Waiting for verification**
+4. Once it has been validated by our team, this status will become **Verified**
 
 
-## Configure SSO on Sekoia.io
+## 2. Configure SSO on Sekoia.io
 
 To set up SSO, follow these instructions:
 
-1. Go to "Managed communities" > "Security" > "Configure single Sign-on (SSO)" > "Configure"
+1. Go to `Managed communities` > `Security` > `Configure single Sign-on (SSO)` > `Configure`
 2. Fill in identity provider details
 3. Save the configuration
 
 Once SSO is set up and your IdP is configured to accept requests, users can log in via the Single Sign-on URL available on this page.
 Share it with your users.
 
-
-## "Just-in-time" (JIT) Account Provisioning
+## 3. "Just-in-time" (JIT) Account Provisioning
 
 You can choose to enable the automatic creation of users' accounts in your community.
 
