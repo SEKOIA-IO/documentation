@@ -156,12 +156,6 @@ The Endpoint Detection Agent is easy to install on Windows or Linux systems once
 
     2.  Extracting Files: Once the Archive Utility opens, the files will be extracted to the same location as the original archive. You can also specify a different location if needed.
 
-    **Unzipping SekoiaEndpointAgent.zip Archive**
-
-    1.  Open the Archive: Double-click the file. macOS will automatically open it using the Archive Utility.
-
-    2.  Extracting Files: Once the Archive Utility opens, the files will be extracted to the same location as the original archive. You can also specify a different location if needed.
-
     **Move the application from its download folder to the `/Applications` directory.**
 
     **Grant full disk access to SekoiaEndpointAgent by following these steps:**
