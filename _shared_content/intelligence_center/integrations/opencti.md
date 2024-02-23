@@ -8,7 +8,7 @@ Collect Sekoia.io CTI feed in an existing self-managed OpenCTI instance for any 
 
 - An operational OpenCTI instance with administrator privileges
 - An active Sekoia.io licence with access to the CTI
-- An access to Sekoia.io User Center with the permissions to create an API key with  [**all CTI permissions**](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
+- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](https://docs.sekoia.io/getting_started/manage_api_keys/) (e.g. Built-in [Analyst Role](https://docs.sekoia.io/getting_started/roles/#functionality-of-built-in-roles) or create a custom role with [ic_viewer permissions](https://docs.sekoia.io/getting_started/roles/#legacy-roles)
 
 ## Configuration
 
