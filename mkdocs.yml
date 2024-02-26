@@ -202,6 +202,7 @@ nav:
         - Network:
           - ArubaOS Switch: xdr/features/collect/integrations/network/arubaos.md
           - Check Point Firewall: xdr/features/collect/integrations/network/checkpoint.md
+          - Broadcom Edge SWG: xdr/features/collect/integrations/network/broadcom_edge_swg.md
           - Cisco:
             - Cisco Secure Firewall: xdr/features/collect/integrations/network/cisco/cisco_asa.md
             - Cisco Secure Web Appliance: xdr/features/collect/integrations/network/cisco/cisco_wsa.md
