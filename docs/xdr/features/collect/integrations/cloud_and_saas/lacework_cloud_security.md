@@ -12,9 +12,6 @@ The Lacework Cloud Security provides continuous cloud security monitoring and au
 
 ## Configure
 
-This setup guide will show you how to forward your Lacework logs
-to Sekoia.io by means of a syslog transport channel.
-
 ### Prerequisites
 
 To create API keys, you must have the account admin role or otherwise have write permissions for API keys in the Lacework Console.
