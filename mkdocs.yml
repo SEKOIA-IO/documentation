@@ -130,6 +130,7 @@ nav:
             - Google Workspace: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
           - Imperva WAF: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
           - Jumpcloud Directory Insights: xdr/features/collect/integrations/cloud_and_saas/jumpcloud_directory_insights.md
+          - Lacework Cloud Security: xdr/features/collect/integrations/cloud_and_saas/lacework_cloud_security.md
           - Microsoft Azure:
             - Microsoft Entra ID (Azure AD): xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md
             - Azure Front Door: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
