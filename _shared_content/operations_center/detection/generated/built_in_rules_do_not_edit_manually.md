@@ -1,4 +1,4 @@
-Rules catalog includes **810 built-in detection rules** ([_last update on 2024-02-27_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-28_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -7851,6 +7851,12 @@ Rules catalog includes **810 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Disabled Service"
     
     Service disabling can be abused by attacker to deny security mecanisms (eg: firewall, EDR, ect) and it is also often used by cryptominer to exploit as much RAM & CPU as possible on infected host.
+    
+    - **Effort:** advanced
+    
+??? abstract "Dism Disabling Windows Defender"
+    
+    Detects windows defender disabled by dism.
     
     - **Effort:** advanced
     
