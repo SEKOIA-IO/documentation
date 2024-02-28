@@ -6,6 +6,9 @@ type: intake
 
   Ekinops OneOS is a comprehensive and flexible network operating system designed to meet the evolving needs of modern telecommunications networks. It provides a unified platform for managing and orchestrating a wide range of network functions, including routing, switching, security, and more. With its modular architecture and open APIs, OneOS enables network operators to easily deploy and scale their networks, while also providing the flexibility to integrate with third-party applications and services. This allows for greater innovation and agility in network operations, ultimately leading to improved service delivery and customer satisfaction.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_4760d0bc-2194-44e5-a876-85102b18d832_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/4760d0bc-2194-44e5-a876-85102b18d832.md!}
