@@ -469,7 +469,7 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
@@ -547,7 +547,7 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -607,13 +607,13 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OneNote Embedded File"
     
@@ -631,7 +631,7 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "PasswordDump SecurityXploded Tool"
     
@@ -762,12 +762,6 @@ The following Sekoia.io built-in rules match the intake **IBM AIX**. This docume
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.
-    
-    - **Effort:** elementary
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
 

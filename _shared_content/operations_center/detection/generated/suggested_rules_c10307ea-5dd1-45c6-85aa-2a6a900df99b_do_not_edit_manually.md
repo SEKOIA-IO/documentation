@@ -79,7 +79,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects an Antivirus alert in a highly relevant file path or with a relevant file name. This is only based on Windows Defender events.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Aspnet Compiler"
     
@@ -633,6 +633,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
+    - **Effort:** intermediate
+
 ??? abstract "Impacket Wmiexec Module"
     
     Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
@@ -751,7 +757,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "MSBuild Abuse"
     
@@ -817,7 +823,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
@@ -859,7 +865,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detection of a windows defender alert indicating the presence of potential malware
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Microsoft Office Creating Suspicious File"
     
@@ -937,7 +943,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -1015,13 +1021,13 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OceanLotus Registry Activity"
     
@@ -1051,7 +1057,7 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Package Manager Alteration"
     
@@ -1323,12 +1329,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
@@ -1548,12 +1548,6 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
     
     - **Effort:** intermediate
 

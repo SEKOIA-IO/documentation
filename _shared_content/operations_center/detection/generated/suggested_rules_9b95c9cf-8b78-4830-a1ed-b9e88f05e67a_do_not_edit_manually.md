@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (EDR) [BETA]**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Palo Alto Cortex XDR [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Palo Alto Cortex XDR (EDR) [BETA] on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.json){ .md-button }
 ??? abstract "AccCheckConsole Executing Dll"
     
     Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
@@ -511,7 +511,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
@@ -589,7 +589,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -655,13 +655,13 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OceanLotus Registry Activity"
     
@@ -685,7 +685,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Package Manager Alteration"
     
@@ -693,21 +693,21 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [
     
     - **Effort:** advanced
 
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (High Severity)"
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (High Severity)"
     
-    A Palo Alto Cortex EDR agent has raised an alert of high severity that was not blocked.
-    
-    - **Effort:** master
-
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Low Severity)"
-    
-    A Palo Alto Cortex EDR agent has raised an alert of low severity that was not blocked.
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of high severity that was not blocked.
     
     - **Effort:** master
 
-??? abstract "Palo Alto Cortex EDR Alert Not Blocked (Medium Severity)"
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Low Severity)"
     
-    A Palo Alto Cortex EDR agent has raised an alert of medium severity that was not blocked.
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of low severity that was not blocked.
+    
+    - **Effort:** master
+
+??? abstract "Palo Alto Cortex XDR (EDR) Alert Not Blocked (Medium Severity)"
+    
+    A Palo Alto Cortex XDR (EDR) agent has raised an alert of medium severity that was not blocked.
     
     - **Effort:** master
 
@@ -860,12 +860,6 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR [
     Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
     
     - **Effort:** advanced
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
 
 ??? abstract "Raccine Uninstall"
     

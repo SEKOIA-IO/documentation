@@ -35,6 +35,10 @@ The Endpoint Detection Agent supports the following operating systems, **on 64-b
     * CentOS 7 and newer
     * Redhat 7 and newer
 
+## New features
+
+To find out about the changes between each version please check the [agent's changelog](sekoiaio_changelog.md)
+
 ## Prerequisites
 The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has an automatic update mechanism. As a prerequisite, it's necessary to open the following streams:
 
@@ -49,6 +53,8 @@ The Sekoia.io Endpoint Agent uses the HTTPS protocol to send its events and has 
 === "MCO1"
     * https://mco1.app.sekoia.io/
 
+=== "UAE1"
+    * https://app.uae1.sekoia.io
 
 
 ## Installation
@@ -64,11 +70,7 @@ The first step to use the agent is to create a [new intake associated with the S
 
 ### Step 2: Download executable
 
-| OS | Link |
-| -- | -- |
-| Windows | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest.exe) |
-|Linux | [https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest](https://app.sekoia.io/api/v1/xdr-agent/download/agent-latest) |
-
+Use the download link provided in the description of the intake in the application.
 
 ### Installation
 
@@ -301,6 +303,18 @@ Once the configuration file is modified, restart the agent:
     sudo systemctl restart SEKOIAEndpointAgent.service
     ```
 
+### Using file patterns
+
+It is possible to specify patterns in the `filepath` attribute to match multiple files. 
+For example `/var/log/nginx/*.log` will match all the log files located under `/var/log/nginx/`.
+
+It is also possible to restrict the allowed matching characters by specifying a range between brackets.
+For example, the pattern `/var/log/nginx/*[a-z].log` will match `/var/log/nginx/access.log` but not `/var/log/nginx/access.2023-02-14.log`.
+This kind of pattern is particularly useful when log rotation is enabled. 
+
+!!! note
+	The recursive globstart pattern `**` is currently not supported
+
 ## Retention
 
 The agent sends the host logs through the Internet. The agent saves logs locally on disk in a non-customizable 100 MB memory space if the Internet connection is lost. Once the logs exceed the buffer size, the older logs are replaced by newer ones. When the Internet connection is restored, the older logs are sent to Sekoia.io first.
@@ -391,6 +405,76 @@ The proxy URL should follow the format `http://user:pass@host:port`.
     
     This document can be followed for an optimal configuration: [Configuring Security Log Audit Settings](https://github.com/Yamato-Security/EnableWindowsLogSettings/blob/main/ConfiguringSecurityLogAuditPolicies.md).
 
+=== "Linux"
+
+    #### Collect DNS resolution events
+
+    You can collect DNS resolutions events by enabling it in the agent configuration file:
+
+    1. Edit the configuration file at:
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
+
+    2. Add the following configuration:
+        
+        ```yaml
+        EnableDNSResolutions: true
+        ```
+
+    Once the configuration file is modified, restart the agent:
+
+       ```
+       sudo systemctl restart SEKOIAEndpointAgent.service
+       ```
+
+#### Don't compute hashes for files under a specific directory
+
+To avoid having the agent computing hashes for files located under a specific directory the `HashesExcludedPaths` option can be added to the agent configuration.
+
+If you want to enable this feature, follow these steps: 
+
+1. Edit the configuration file at:
+	
+	=== "Windows"
+	
+	    ```
+	    C:\Windows\System32\config\systemprofile\AppData\Local\Sekoia.io\EndpointAgent\config.yaml
+	    ```
+	
+	=== "Linux"
+	
+	    ```
+	    /etc/endpoint-agent/config.yaml
+	    ```
+
+2. Add the following configuration:
+
+```yaml
+HashesExcludedPaths:
+  - C:\path\to\ignore`
+```
+
+Once the configuration file is modified, restart the agent:
+
+=== "Windows"
+
+    Execute the following command **as an administrator**:
+
+    ```
+    Restart-Service SEKOIAEndpointAgent
+    ```
+
+=== "Linux"
+
+    Execute the following command:
+
+    ```
+    sudo systemctl restart SEKOIAEndpointAgent.service
+    ```
+
+
 ## Additionnal information
 
 Please find options and arguments available for Sekoia Agent by typing
@@ -452,4 +536,3 @@ If you need further assistance, provide our team with the following information:
 2- Logs of the agent
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_250e4095-fa08-4101-bb02-e72f870fcbd1_do_not_edit_manually.md!} 
-

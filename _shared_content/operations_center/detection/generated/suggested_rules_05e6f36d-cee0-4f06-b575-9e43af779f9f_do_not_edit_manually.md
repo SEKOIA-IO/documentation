@@ -603,24 +603,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
-??? abstract "Microsoft 365 Defender Alert"
-    
-    Microsoft 365 Defender has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-
-??? abstract "Microsoft 365 Defender Cloud App Security Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-
-??? abstract "Microsoft 365 Defender For Endpoint Alert"
-    
-    Microsoft 365 Defender has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
-    
-    - **Effort:** master
-
 ??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
     
     The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
@@ -637,7 +619,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
@@ -663,9 +645,27 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
-??? abstract "Microsoft Defender for Office 365 Alert"
+??? abstract "Microsoft Defender XDR Alert"
     
-    Microsoft Defender for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert. 
+    Microsoft Defender XDR has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR Cloud App Security Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Cloud App Security. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR Endpoint Alert"
+    
+    Microsoft Defender XDR has raised an alert for Microsoft Defender for Endpoint. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender XDR Office 365 Alert"
+    
+    Microsoft Defender XDR for Office 365 has raised an alert. The alert info and evidence events are grouped with the similarity into the same Sekoia.io alert.
     
     - **Effort:** master
 
@@ -727,7 +727,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh Port Opening"
     
@@ -799,13 +799,13 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OceanLotus Registry Activity"
     
@@ -823,7 +823,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Pandemic Windows Implant"
     
@@ -999,12 +999,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
@@ -1140,12 +1134,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line
-    
-    - **Effort:** intermediate
-
-??? abstract "Suspicious Commands From MS SQL Server Shell"
-    
-    Detection of some shell commmands run from a cmd executed by Microsoft MS SQL Server. It could be a sign of xp_cmdshell allowed on the MS-SQL server.
     
     - **Effort:** intermediate
 

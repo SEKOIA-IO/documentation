@@ -1,7 +1,169 @@
-Changelog _last update on 2024-02-14_
+Changelog _last update on 2024-02-21_
 
 ## Changelog
 
+### Non-Legitimate Executable Using AcceptEula Parameter
+  - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
+    
+### Outlook Registry Access
+  - 19/02/2024 - minor - Effort level was adapted according to the observed hits for the rule
+    
+### Cybereason EDR Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### WithSecure Elements Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Low Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### HarfangLab EDR Hlai Engine Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Medium Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### HarfangLab EDR Process Execution Blocked (HL-AI engine)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection High Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Detected (Suspicious)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Trend Micro Apex One Malware Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Quarantine Success
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Kill Success
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Login Failed Brute-Force On SentinelOne EDR Management Console
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Trend Micro Apex One Intrusion Detection Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Medium Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Login Brute-Force Successful On SentinelOne EDR Management Console
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Informational Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Remediate Success
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Cybereason EDR Malware Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Trend Micro Apex One Data Loss Prevention Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Low Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Identity Protection Detection Critical Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection Informational Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CrowdStrike Falcon Intrusion Detection High Severity
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Custom Rule Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Detected (Malicious)
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR SSO User Added
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Threat Mitigation Report Quarantine Failed
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### SentinelOne EDR Malicious Threat Not Mitigated
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 Low Severity AIR Alert Handled Automatically
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Okta MFA Disabled
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS GuardDuty Medium Severity Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS GuardDuty High Severity Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 High Severity AIR Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Sekoia.io EICAR Detection
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS CloudTrail GuardDuty Detector Suspended
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 Medium Severity AIR Alert
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender for Office 365 Low Severity AIR Alert Requires Action
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Okta Phishing Detection with FastPass Origin Check
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### AWS CloudTrail GuardDuty Detector Deleted
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### CVE-2021-21985 VMware vCenter
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Antivirus Relevant File Paths Alerts
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Microsoft Defender Antivirus Threat Detected
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### User Added to Local Administrators
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### MS Office Product Spawning Exe in User Dir
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### Netsh Port Forwarding
+  - 15/02/2024 - minor - Added filter to reduce false positives
+    
+### Microsoft Defender Antivirus Disabled Base64 Encoded
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### NlTest Usage
+  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+    
+### WMIC Uninstall Product
+  - 13/02/2024 - minor - Exclude non-Windows operating systems (false positives)
+    
 ### High Privileges Network Share Removal
   - 02/02/2024 - major - changing current pattern and adding another one
     
@@ -14,6 +176,9 @@ Changelog _last update on 2024-02-14_
 ### Microsoft Office Product Spawning Windows Shell
   - 23/01/2024 - minor - Adding elements to increase detection and filters to reduce false positives.
     
+### PowerShell Malicious PowerShell Commandlets
+  - 23/01/2024 - minor - Adding exclusion pattern and selection commandlet
+    
 ### Suspicious Process Requiring DLL Starts Without DLL
   - 22/01/2024 - minor - Added filter to reduce false positives
     
@@ -25,9 +190,6 @@ Changelog _last update on 2024-02-14_
     
 ### Windows Registry Persistence COM Search Order Hijacking
   - 11/01/2024 - minor - Adding filtering for some FPs
-    
-### HarfangLab EDR Process Execution Blocked (HL-AI engine)
-  - 10/01/2024 - major - Account for all blocks instead of only "Startup blocked". Rule name explicitly mentions HL-AI engine.
     
 ### Legitimate Process Execution From Unusual Folder
   - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
@@ -94,9 +256,6 @@ Changelog _last update on 2024-02-14_
     
 ### AWS CloudTrail Remove Flow logs
   - 15/11/2023 - minor - Changing effort level.
-    
-### AWS CloudTrail GuardDuty Detector Deleted
-  - 08/11/2023 - minor - Added filter to reduce false positives
     
 ### Cobalt Strike Default Beacons Names
   - 08/11/2023 - minor - Added filter to reduce false positives
@@ -211,9 +370,6 @@ Changelog _last update on 2024-02-14_
     
 ### Suspicious Network Args In Command Line
   - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.
-    
-### MS Office Product Spawning Exe in User Dir
-  - 10/08/2023 - minor - Rule modified and filter added to reduce false positives.
     
 ### Okta User Logged In Multiple Applications
   - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps

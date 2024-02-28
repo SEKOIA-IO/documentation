@@ -277,7 +277,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Malicious Browser Extensions"
     
@@ -307,7 +307,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
@@ -361,7 +361,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detects netsh commands that enable a port forwarding between to hosts. This can be used by attackers to tunnel RDP or SMB shares for example.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Netsh RDP Port Forwarding"
     
@@ -379,13 +379,13 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. These command lines were observed in numerous attacks, but also sometimes from legitimate administrators for debugging purposes. The rule does not cover very basics commands but rather the ones that are interesting for attackers to gather information on a domain.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Non-Legitimate Executable Using AcceptEula Parameter"
     
     Detects accepteula in command line with non-legitimate executable name. Some attackers are masquerading SysInternals tools with decoy names to prevent detection.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "OneNote Embedded File"
     
@@ -397,7 +397,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "Package Manager Alteration"
     
@@ -489,12 +489,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** elementary
 
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
-    
-    - **Effort:** elementary
-
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
@@ -547,67 +541,67 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     A SentinelOne EDR agent has detected a threat related to a Custom Rule and raised an alert for it.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Malicious Threat Detected And Mitigated Preemptively"
     
     A SentinelOne EDR agent has detected a malicious threat which has been mitigated preemptively, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Malicious Threat Not Mitigated"
     
     A SentinelOne EDR agent has detected a threat but did not mitigate it, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR SSO User Added"
     
     A SSO User was added.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Suspicious Threat Not Mitigated (Medium Confidence)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious) but did not mitigate it. This is all defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Detected (Malicious)"
     
     A SentinelOne EDR agent has detected a threat with a high confidence level (malicious).
     
-    - **Effort:** elementary
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Detected (Suspicious)"
     
     A SentinelOne EDR agent has detected a threat with a medium confidence level (suspicious).
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Kill Success"
     
     A SentinelOne EDR agent has detected and killed a threat (usually kills the malicious process), defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Failed"
     
     A SentinelOne EDR agent has failed to quarantine a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Quarantine Success"
     
     A SentinelOne EDR agent has detected and quarantined a threat with success, defined by the action.type field's value.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR Threat Mitigation Report Remediate Success"
     
     A SentinelOne EDR agent has remediated a threat, defined by the action.type field's value.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "SentinelOne EDR User Failed To Log In To The Management Console"
     

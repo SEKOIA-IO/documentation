@@ -1,13 +1,13 @@
 uuid: b5968b0a-1206-4d3b-b960-e6b61e7f6ee6
-name: Palo Alto Cortex EDR
+name: Palo Alto Cortex XDR (EDR)
 type: intake
 
 
 ## Overview
 
-Palo Alto Cortex EDR is an advanced Endpoint Detection and Response solution offering real-time threat detection, investigation, and response capabilities, empowering organizations to proactively defend against sophisticated cyber threats across their endpoints.
+Palo Alto Cortex XDR (EDR) is an advanced Endpoint Detection and Response solution offering real-time threat detection, investigation, and response capabilities, empowering organizations to proactively defend against sophisticated cyber threats across their endpoints.
 
-This setup guide shows how to forward EDR alerts collected on the Palo Alto Cortex XDR platform to Sekoia.io.
+This setup guide shows how to forward EDR alerts collected on the Palo Alto Cortex XDR (EDR) platform to Sekoia.io.
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
@@ -23,7 +23,7 @@ This integration collects the following events:
 
 This integration was tested against the following versions:
 
-- Palo Alto Cortex XDR 3.8
+- Palo Alto Cortex XDR (EDR) 3.8
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9b95c9cf-8b78-4830-a1ed-b9e88f05e67a_do_not_edit_manually.md!}
 
@@ -61,7 +61,7 @@ Before using the **Cortex XDR** connector, you must generate an API key in Corte
 
 ### Create the intake
 
-1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Palo Alto Cortex XDR` intake.
+1. Go to the [Intake page](https://app.sekoia.io/operations/intakes) and create a new `Palo Alto Cortex XDR (EDR)` intake.
 2. Copy the associated Intake key ( You will use it in the playbook part )
 
 ### Pull events

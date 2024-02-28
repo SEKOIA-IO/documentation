@@ -55,7 +55,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     Cybereason EDR telemetry has raised an alert
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Exchange Server Creating Unusual Files"
     
@@ -144,12 +144,6 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
 ??? abstract "RTLO Character"
     
     Detects RTLO (Right-To-Left character) in file and process names.
-    
-    - **Effort:** elementary
-
-??? abstract "RYUK Ransomeware - martinstevens Username"
-    
-    Detects user name "martinstevens". Wizard Spider is used to add the user name "martinstevens" to the AD of its victims. It was observed in several campaigns; in 2019 and 2020.
     
     - **Effort:** elementary
 
