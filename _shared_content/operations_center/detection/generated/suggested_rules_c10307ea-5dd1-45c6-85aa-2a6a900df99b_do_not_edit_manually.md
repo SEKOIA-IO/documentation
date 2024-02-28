@@ -387,6 +387,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "Dism Disabling Windows Defender"
+    
+    Detects windows defender disabled by dism.
+    
+    - **Effort:** advanced
+
 ??? abstract "Dllhost Wrong Parent"
     
     Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.

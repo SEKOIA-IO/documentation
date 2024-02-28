@@ -201,6 +201,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     
     - **Effort:** advanced
 
+??? abstract "Dism Disabling Windows Defender"
+    
+    Detects windows defender disabled by dism.
+    
+    - **Effort:** advanced
+
 ??? abstract "Docker Escape Bind Mount"
     
     Catch Docker escape via mount escape followed by chroot 
