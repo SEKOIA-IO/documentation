@@ -35,7 +35,6 @@ An internal log concentrator is required to collect and forward events to Sekoia
 6. Test the format
 7. Apply the change
 
-[Configure an Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/getting-started/page-help-administration/page-help-logging/log-formats/page-help-access-logging-format.html)
 
 ### Enable Syslog forwarding
 
@@ -47,7 +46,6 @@ An internal log concentrator is required to collect and forward events to Sekoia
 5. In `Upload Schedule`, select `continuously` for the `Upload the access log` setting
 6. Apply the change
 
-[Configure an Access Log](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/getting-started/page-help-administration/page-help-logging/page-help-access-logging-log.html)
 
 ### Create an intake
 
@@ -56,3 +54,8 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ### Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
+
+
+## Further readings
+- [Configure an Access Log](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/getting-started/page-help-administration/page-help-logging/page-help-access-logging-log.html)
+- [Configure an Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/getting-started/page-help-administration/page-help-logging/log-formats/page-help-access-logging-format.html)
