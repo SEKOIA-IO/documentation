@@ -1,4 +1,4 @@
-Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-28_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -10399,6 +10399,10 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 29/02/2024 - minor - enforce detection by adding tag
+            
 ??? abstract "Exfiltration Domain In Command Line"
     
     Detects commands containing a domain linked to http exfiltration.
@@ -10450,6 +10454,10 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 29/02/2024 - minor - enforce detection by adding tag
+            
 ??? abstract "Exfiltration Domain In Command Line"
     
     Detects commands containing a domain linked to http exfiltration.

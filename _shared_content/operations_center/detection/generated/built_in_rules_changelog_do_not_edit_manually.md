@@ -1,7 +1,10 @@
-Changelog _last update on 2024-02-28_
+Changelog _last update on 2024-02-29_
 
 ## Changelog
 
+### Exfiltration Domain
+  - 29/02/2024 - minor - enforce detection by adding tag
+    
 ### Non-Legitimate Executable Using AcceptEula Parameter
   - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
     
