@@ -249,7 +249,7 @@ input(type="imfile"
       )
 
 ruleset(name="auditbeatSekoia") {
-    if (re_match($!metadata!filename, "auditbeat-[0-9]{8}.ndjson")) then {  
+    if (re_match($!metadata!filename, "auditbeat-[0-9]{8}(-[0-9]*)?.ndjson")) then {
       action(
         type="omfwd"
         protocol="tcp"
