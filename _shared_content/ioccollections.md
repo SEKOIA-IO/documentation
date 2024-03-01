@@ -37,6 +37,10 @@ Each indicator inside the collection can have the following properties:
 - Kill Chain Phases: steps of the attack this indicator belongs to
 - Description: any text that would add additional context
 
+!!! warning
+	If you select the kill chain ‘Command a Control’ when importing indicators in an IOC Collections, our retrohunt engine will look only into destination.ip.
+    This reduces false positives, as C2 servers tend to scan networks a lot. By doing this, we look for slave servers that respond to a C2 server.
+
 ### Text Import
 
 Text Import can be used when you want to import a list of IOCs (typically one IOC per line) that all have the same properties.

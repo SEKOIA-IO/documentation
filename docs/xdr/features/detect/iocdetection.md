@@ -9,170 +9,36 @@ With IOC detection, all future and past events are verified automatically to ens
 Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise. 
 All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page.
 
+![verified iocs](/assets/operation_center/rules_catalog/verified_iocs.gif){: style="max-width:100%"}
+
 Each new event ingested by Sekoia XDR is scanned against our CTI database. If an Indicator is detected, our Sekoia Intelligence Feed rule will immediately alert you.
 
 ### Sekoia Retrohunt engine
 
-Each time a new indicator is added to our CTI database, Sekoia XDR performs retrohunting on all available events that were ingested in the past. It means that Sekoia XDR doesn't miss any past or ongoing attacks within your system.
+Each time a new indicator is added to our CTI database, Sekoia XDR will also perform retrohunting on all available events that were ingested in the past. It means that Sekoia XDR doesn't miss any past or ongoing attacks within your system.
 
 #### How do you recognize a retrohunt alert?
 
 On the Alerts page, look for the Detection type of the alert. `CTI Retrohunt` alerts are triggered retroactively when a new indicator appears in our CTI database.
 
+![detection type](/assets/operation_center/alerts/detection_type.png){: style="max-width:100%"}
+
 #### Would your SOC team like to scan a specific list of IOCs to perform retrohunt?
-That’s possible via the IOC collections. You can import a specific list of IOCs to perform retrohunting. IOC collection feature is available in our Prime plan.
-Please see the dedicated documentation on IOC collection.
+That’s possible via the IOC collections. You can import a specific list of IOCs to perform retrohunting.
+Please see the dedicated documentation on [IOC Collections](../ioccollections).
 
 ## Technical dive into IOC detection
 
-We will detail some technical concepts around IOC detection and explain how to enable and correctly use IOC detection.
+We will explain how to enable and detail some technical concepts around IOC detection.
 
 ### Enable IOC detection
 
 Our recommendation is to enable the Sekoia Intelligence Feed rule. You will automatically benefit from the protection of our CTI database and its IOCs.
-Another option is to create your own custom CTI rule and choose a feed source. The feed source can be an IOC collection provided by your SOC team.
+Another option is to create your own custom CTI rule and choose a feed source. The feed source can be an IOC Collections provided by your SOC team.
 
 If no CTI rule is enabled, a warning message will be displayed on the Rules catalog page.
 
-### Indicator types supported in IOC collections
-
-The supported indicator types are:
-
-- IP address
-- Domain name
-- URL
-- File hash
-- Email address.
-
-### Which event fields are verified when performing IOC detection?
-
-The following ECS event fields will be verified during IOC detection. 
-Since IOC collection supports a limited list of indicator types, some event fields are only verified with the CTI rule, which supports more indicator types.
-
-The tables below indicate in which case the event field will be verified.
-
-#### Username
-
-| Event field | Verified with IOC collection | Verified with CTI rule |
-| --- | --- | --- |
-| user.name | yes | yes |
-| user.domain | yes | yes |
-| related.user | yes | yes |
-
-#### IP
-
-| Event field | Verified with IOC collection | Verified with CTI rule |
-| --- | --- | --- |
-| client.ip | yes | yes |
-| destination.ip | yes | yes |
-| host.ip | yes | yes |
-| server.ip | yes | yes |
-| source.ip | yes | yes |
-| related.ip | yes | yes |
-
-#### Domain
-
-| Event field | Verified with IOC collection | Verified with CTI rule |
-| --- | --- | --- |
-| dns.question.name | yes | yes |
-| dns.question.type | no | yes |
-| dns.question.registered_domain | yes | yes |
-| dns.size_in_char | no | yes |
-| client.domain | yes | yes |
-| client.registered_domain | yes | yes |
-| destination.domain | yes | yes |
-| destination.registered_domain | yes | yes |
-| source.domain | yes | yes |
-| source.registered_domain | yes | yes |
-| server.domain | yes | yes |
-| server.registered_domain | yes | yes |
-| url.domain | yes | yes |
-| url.registered_domain | yes | yes |
-| related.hosts | yes | yes |
-
-#### Email
-
-| Event field | Verified with IOC collection | Verified with CTI rule |
-| --- | --- | --- |
-| client.user.email | yes | yes |
-| destiantion.user.email | yes | yes |
-| file.x509.alternative_names | yes | yes |
-| host.user.email | yes | yes |
-| server.user.email | yes | yes |
-| source.user.email | yes | yes |
-| user.email | yes | yes |
-| user.changes.email | yes | yes |
-| user.effective.email | yes | yes |
-| user.target.email | yes | yes |
-| email.from | yes | yes |
-| email.to | yes | yes |
-| email.from.address | yes | yes |
-| email.to.address | yes | yes |
-| email.cc.address | yes | yes |
-| email.bcc.address | yes | yes |
-| retarus.sender | yes | yes |
-| retarus.recipient | yes | yes |
-
-#### File
-
-| Event field | Verified with IOC collection | Verified with CTI rule |
-| --- | --- | --- |
-| file.size | no | yes |
-| file.name | no | yes |
-| file.mime_type | no | yes |
-| file.created | no | yes |
-| file.mtime | no | yes |
-| file.ctime | no | yes |
-| file.path | no | yes |
-| process.hash.md5 | yes | yes |
-| process.hash.sha1 | yes | yes |
-| process.hash.sha256 | yes | yes |
-| process.hash.sha512 | yes | yes |
-| process.hash.ssdeep | yes | yes |
-| process.parent.hash.md5 | yes | yes |
-| process.parent.hash.sha1 | yes | yes |
-| process.parent.hash.sha256 | yes | yes |
-| process.parent.hash.sha512 | yes | yes |
-| process.parent.hash.ssdeep | yes | yes |
-| process.pid | no | yes |
-| process.start | no | yes |
-| process.working_directory | no | yes |
-| process.command_line | no | yes |
-| process.executable | no | yes |
-| process.name | no | yes |
-| process.parent.pid | no | yes |
-| process.parent.start | no | yes |
-| process.parent.command_line | no | yes |
-| process.parent.working_directory | no | yes |
-| process.parent.executable | no | yes |
-| process.parent.name | no | yes |
-
-#### Network
-
-| Event field | Verified with IOC collection | Verified with CTI rule |
-| --- | --- | --- |
-| source.port | no | yes |
-| destination.port | no | yes |
-| source.bytes | no | yes |
-| destination.bytes | no | yes |
-| source.packets | no | yes |
-| destination.packets | no | yes |
-| network.transport | no | yes |
-| http.request.method | no | yes |
-| url.path | no | yes |
-| http.version | no | yes |
-| http.request.body.bytes | no | yes |
-| user_agent.original | no | yes |
-| http.request.referrer | no | yes |
-| http.response.status_code | no | yes |
-| http.response.bytes | no | yes |
-| network.protocol | no | yes |
-| as.number | no | yes |
-| as.organization.name | no | yes |
-
-!!! warning
-	If you select the kill chain ‘Command a Control’ when importing indicators in an IOC collection, our retrohunt engine will look only into destination.ip.
-    This reduces false positives, as C2 servers tend to scan networks a lot. By doing this, we look for slave servers that respond to a C2 server.
+![retrohunt disabled](/assets/operation_center/rules_catalog/retrohunt_disabled.gif){: style="max-width:100%"}
 
 ### How far in the past is retrohunting performed?
 
@@ -183,3 +49,198 @@ By default, 5 additional days are always added to handle cases where the indicat
 
 Sekoia XDR will perform retrohunting as soon as possible, depending on resource availability. We select the appropriate moment to perform this operation without altering user experience.
 Rest assured, our retrohunt engine is quite performant, but we can't provide the exact delay.
+
+### Which event fields are verified when performing IOC detection?
+
+The tables below indicate the ECS event fields that are verified by IOC detection and which detection method is possible: Sekoia Intelligence Feed and/or IOC Collections.
+
+#### User
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| user.id | yes | no |
+| user.name | yes | yes |
+| user.domain | yes | yes |
+| user.email | yes | yes |
+| user.changes.email | yes | yes |
+| user.effective.email | yes | yes |
+| user.target.email | yes | yes |
+| related.user | yes | yes |
+
+#### Domain
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| dns.question.name | yes | yes |
+| dns.question.type | yes | no |
+| dns.question.registered_domain | yes | yes |
+| dns.size_in_char | yes | no |
+| client.domain | yes | yes |
+| client.registered_domain | yes | yes |
+| destination.domain | yes | yes |
+| destination.registered_domain | yes | yes |
+| source.domain | yes | yes |
+| source.registered_domain | yes | yes |
+| server.domain | yes | yes |
+| server.registered_domain | yes | yes |
+| related.hosts | yes | yes |
+
+#### Email
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| client.user.email | yes | yes |
+| destination.user.email | yes | yes |
+| file.x509.alternative_names | yes | yes |
+| host.user.email | yes | yes |
+| server.user.email | yes | yes |
+| source.user.email | yes | yes |
+| email.from.address | yes | yes |
+| email.sender.address | yes | yes |
+| email.to.address | yes | yes |
+| email.cc.address | yes | yes |
+| email.bcc.address | yes | yes |
+
+#### File
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| file.size | yes | no |
+| file.name | yes | no |
+| file.mime_type | yes | no |
+| file.created | yes | no |
+| file.ctime | yes | no |
+| file.mtime | yes | no |
+| file.path | yes | no |
+
+#### Hash
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| dll.hash.md5 | yes | yes |
+| dll.hash.sha1 | yes | yes |
+| dll.hash.sha256 | yes | yes |
+| dll.hash.sha512 | yes | yes |
+| file.hash.md5 | yes | yes |
+| file.hash.sha1 | yes | yes |
+| file.hash.sha256 | yes | yes |
+| file.hash.sha512 | yes | yes |
+| file.hash.ssdeep | yes | yes |
+| email.attachments.file.hash.md5 | yes | yes |
+| email.attachments.file.hash.sha1 | yes | yes |
+| email.attachments.file.hash.sha256 | yes | yes |
+| email.attachments.file.hash.sha512 | yes | yes |
+| process.hash.md5 | yes | yes |
+| process.hash.sha1 | yes | yes |
+| process.hash.sha256 | yes | yes |
+| process.hash.sha512 | yes | yes |
+| process.hash.ssdeep | yes | yes |
+| process.parent.hash.md5 | yes | yes |
+| process.parent.hash.sha1 | yes | yes |
+| process.parent.hash.sha256 | yes | yes |
+| process.parent.hash.sha512 | yes | yes |
+| process.parent.hash.ssdeep | yes | yes |
+| related.hash.md5 | yes | yes |
+| related.hash.sha1 | yes | yes |
+| related.hash.sha256 | yes | yes |
+| related.hash.sha512 | yes | yes |
+
+#### IP
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| client.ip | yes | yes |
+| destination.ip | yes | yes |
+| host.ip | yes | yes |
+| server.ip | yes | yes |
+| source.ip | yes | yes |
+
+#### Network
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| source.port | yes | no |
+| destination.port | yes | no |
+| source.bytes | yes | no |
+| destination.bytes | yes | no |
+| source.packets | yes | no |
+| destination.packets | yes | no |
+| network.transport | yes | no |
+| http.request.method | yes | no |
+| http.version | yes | no |
+| http.request.body.bytes | yes | no |
+| user_agent.original | yes | no |
+| http.request.referrer | yes | no |
+| http.response.status_code | yes | no |
+| http.response.bytes | yes | no |
+| network.protocol | yes | no |
+| as.number | yes | no |
+| as.organization.name | yes | no |
+
+#### Process
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| process.pid | yes | no |
+| process.start | yes | no |
+| process.command_line | yes | no |
+| process.working_directory | yes | no |
+| process.executable | yes | no |
+| process.name | yes | no |
+| process.parent.pid | yes | no |
+| process.parent.start | yes | no |
+| process.parent.command_line | yes | no |
+| process.parent.working_directory | yes | no |
+| process.parent.executable | yes | no |
+| process.parent.name | yes | no |
+
+#### Registry
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| registry.key | yes | no |
+| registry.value | yes | no |
+
+#### URL
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| url.domain | yes | yes |
+| url.full | yes | yes |
+| url.original | yes | yes |
+| url.path | yes | yes |
+| url.registered_domain | yes | yes |
+
+#### x509 Certificate
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| x509.serial_number | yes | no |
+| x509.signature_algorithm | yes | no |
+| x509.issuer.common_name | yes | no |
+| x509.issuer.distinguished_name | yes | no |
+| x509.not_before | yes | no |
+| x509.not_after | yes | no |
+| x509.subject.distinguished_name | yes | no |
+| x509.subject.common_name | yes | no |
+| x509.public_key_algorithm | yes | no |
+| x509.public_key_exponent | yes | no |
+| tls.client.x509 | yes | no |
+| tls.server.x509 | yes | no |
+
+#### Custom Properties
+
+| Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
+| --- | --- | --- |
+| action.name | yes | no |
+| action.type | yes | no |
+| action.outcome | yes | no |
+| action.outcome_reason | yes | no |
+| action.properties.targetedUser | yes | no |
+| log.hostname | yes | no |
+| application.category | yes | no |
+| x509.subject.common_name | yes | no |
+| x509.public_key_algorithm | yes | no |
+| x509.public_key_exponent | yes | no |
+| tls.client.x509 | yes | no |
+| tls.server.x509 | yes | no |
