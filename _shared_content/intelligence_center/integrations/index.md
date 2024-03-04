@@ -9,5 +9,6 @@ Intelligence Center data can be consumed using several third party integrations.
 - [Splunk](./splunk.md)
 - [Anomali ThreatStream](./anomali.md)
 - [PaloAlto Cortex XSOAR](./paloalto_xsoar.md)
+- [ThreatQuotient](./threatquotient.md)
 
 You can also directly [use the API](api.md) to retrieve data and feeds from Sekoia.io CTI.
