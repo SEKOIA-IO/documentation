@@ -6,8 +6,9 @@ With IOC detection, all future and past events are verified automatically to ens
 
 ## How does IOC detection at Sekoia work?
 
-Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise. 
-All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page.
+Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise. All this incredible work directly benefits Sekoia XDR clients.
+
+You can consult the number of IOCs that are automatically verified in the Rules catalog page. The number of IOCs is calculated according to the CTI detection rules enabled.
 
 ![verified iocs](/assets/operation_center/rules_catalog/verified_iocs.gif){: style="max-width:100%"}
 
@@ -15,7 +16,7 @@ Each new event ingested by Sekoia XDR is scanned against our CTI database. If an
 
 ### Sekoia Retrohunt engine
 
-Each time a new indicator is added to our CTI database, Sekoia XDR will also perform retrohunting on all available events that were ingested in the past. It means that Sekoia XDR doesn't miss any past or ongoing attacks within your system.
+Moreover, each time a new indicator is added to our CTI database, Sekoia XDR will perform retrohunting on all available events that were ingested in the past. It means that Sekoia XDR doesn't miss any past or ongoing attacks within your system.
 
 #### How do you recognize a retrohunt alert?
 
@@ -24,6 +25,7 @@ On the Alerts page, look for the Detection type of the alert. `CTI Retrohunt` al
 ![detection type](/assets/operation_center/alerts/detection_type.png){: style="max-width:100%"}
 
 #### Would your SOC team like to scan a specific list of IOCs to perform retrohunt?
+
 That’s possible via the IOC collections. You can import a specific list of IOCs to perform retrohunting.
 Please see the dedicated documentation on [IOC Collections](../ioccollections).
 
@@ -42,8 +44,9 @@ If no CTI rule is enabled, a warning message will be displayed on the Rules cata
 
 ### How far in the past is retrohunting performed?
 
-Our IOC detection will perform a retrohunt based on the valid period of the indicator (valid from and valid until).
-By default, 5 additional days are always added to handle cases where the indicator has a specified valid period.
+Our IOC detection will perform a retrohunt based on the valid period of the indicator (`valid from` and `valid until`).
+
+By default, we always add 5 additional days of retrohunt to the `valid from` value. If the `valid from` of an indicator is empty, it means that retrohunt will start 5 days before the current date.
 
 ### Is retrohunt performed immediately after I import an indicator?
 
@@ -52,9 +55,9 @@ Rest assured, our retrohunt engine is quite performant, but we can't provide the
 
 ### Which event fields are verified when performing IOC detection?
 
-The tables below indicate the ECS event fields that are verified by IOC detection and which detection method is possible: Sekoia Intelligence Feed and/or IOC Collections.
+The tables below list the ECS event fields that are verified by IOC detection and if they are supported by Sekoia Intelligence Feed rule and/or by IOC Collections.
 
-#### User
+#### User fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -67,7 +70,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | user.target.email | yes | yes |
 | related.user | yes | yes |
 
-#### Domain
+#### Domain fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -85,7 +88,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | server.registered_domain | yes | yes |
 | related.hosts | yes | yes |
 
-#### Email
+#### Email fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -101,7 +104,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | email.cc.address | yes | yes |
 | email.bcc.address | yes | yes |
 
-#### File
+#### File fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -113,7 +116,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | file.mtime | yes | no |
 | file.path | yes | no |
 
-#### Hash
+#### Hash fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -145,7 +148,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | related.hash.sha256 | yes | yes |
 | related.hash.sha512 | yes | yes |
 
-#### IP
+#### IP fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -155,7 +158,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | server.ip | yes | yes |
 | source.ip | yes | yes |
 
-#### Network
+#### Network fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -177,7 +180,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | as.number | yes | no |
 | as.organization.name | yes | no |
 
-#### Process
+#### Process fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -194,14 +197,14 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | process.parent.executable | yes | no |
 | process.parent.name | yes | no |
 
-#### Registry
+#### Registry fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
 | registry.key | yes | no |
 | registry.value | yes | no |
 
-#### URL
+#### URL fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -211,7 +214,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | url.path | yes | yes |
 | url.registered_domain | yes | yes |
 
-#### x509 Certificate
+#### x509 Certificate fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
@@ -228,7 +231,7 @@ The tables below indicate the ECS event fields that are verified by IOC detectio
 | tls.client.x509 | yes | no |
 | tls.server.x509 | yes | no |
 
-#### Custom Properties
+#### Custom fields
 
 | Event field | Verified by Sekoia Intelligence | Verified by IOC Collections |
 | --- | --- | --- |
