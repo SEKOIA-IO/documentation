@@ -413,6 +413,7 @@ nav:
       - Splunk SOAR: cti/features/integrations/splunk_soar.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
+      - ThreatQuotient: cti/features/integrations/threatquotient.md
   - Develop:
     - Overview: cti/develop/index.md
     - Guides:
