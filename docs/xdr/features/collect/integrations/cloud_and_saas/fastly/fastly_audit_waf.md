@@ -1,11 +1,11 @@
 uuid: c2faea65-1eb3-4f3f-b895-c8769a749d45
-name: Fastly Audit logs
+name: Fastly WAF Audit logs
 type: intake
 
 
 ## Overview
 
-Fastly audit logs tracks activities related to your corp and your sites like user creation, rule creation, site configuration changes.
+Fastly WAF audit logs tracks activities related to your corp and your sites like user creation, rule creation, site configuration changes.
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
@@ -42,7 +42,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 1. Click **+ PLAYBOOK** button to create a new one
 2. Select **Create a playbook from scratch**
 3. Give it a name in the field **Name**
-4. Open the left panel, click **Fastly** then select the trigger `Fetch new audit logs from Fastly`
+4. Open the left panel, click **Fastly** then select the trigger `Fetch new audit logs from Fastly WAF`
 5. Click **Create**
 
 6. Create a **Module configuration**. Name the module configuration as you wish.
