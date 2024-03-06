@@ -1,4 +1,4 @@
-Rules catalog includes **811 built-in detection rules** ([_last update on 2024-03-06_](rules_changelog.md)).
+Rules catalog includes **813 built-in detection rules** ([_last update on 2024-03-06_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -5744,6 +5744,18 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
         - 10/07/2023 - minor - Added AD groups and change to effort master.
             
+??? abstract "Tenable Identity Exposure / Alsid Critical Severity Alert"
+    
+    Tenable Identity Exposure / Alsid raised a critical severity alert.
+    
+    - **Effort:** master
+    
+??? abstract "Tenable Identity Exposure / Alsid High Severity Alert"
+    
+    Tenable Identity Exposure / Alsid raised an alert.
+    
+    - **Effort:** master
+    
 **Create or Modify System Process**
 
 ??? abstract "APT29 Fake Google Update Service Install"
@@ -7576,6 +7588,18 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
         - 10/07/2023 - minor - Added AD groups and change to effort master.
             
+??? abstract "Tenable Identity Exposure / Alsid Critical Severity Alert"
+    
+    Tenable Identity Exposure / Alsid raised a critical severity alert.
+    
+    - **Effort:** master
+    
+??? abstract "Tenable Identity Exposure / Alsid High Severity Alert"
+    
+    Tenable Identity Exposure / Alsid raised an alert.
+    
+    - **Effort:** master
+    
 **Abuse Elevation Control Mechanism**
 
 ??? abstract "CMSTP UAC Bypass via COM Object Access"

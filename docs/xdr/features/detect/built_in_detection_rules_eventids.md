@@ -78,6 +78,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Microsoft Defender Antivirus Exclusion Configuration | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span>, <span style="color:#6a18a0"><a href='https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/troubleshoot-microsoft-defender-antivirus?view=o365-worldwide' style='color: inherit;'>5007</a></span> | Microsoft-Windows-Sysmon, Microsoft-Windows-Windows Defender |
 | Failed Logon Source From Public IP Addresses | master | <a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625' style='color: inherit;'>4625</a> | Microsoft-Windows-Security-Auditing |
 | In-memory PowerShell | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>7</a></span> | Microsoft-Windows-Sysmon |
+| Tenable Identity Exposure / Alsid Critical Severity Alert | master | 83820799 |  |
 | Network Share Discovery | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | Microsoft Defender Antivirus History Deleted | master | <span style="color:#6a18a0"><a href='https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/troubleshoot-microsoft-defender-antivirus?view=o365-worldwide' style='color: inherit;'>1013</a></span> | Microsoft-Windows-Windows Defender |
 | Process Herpaderping | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>25</a></span> | Microsoft-Windows-Sysmon |
@@ -90,6 +91,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | FromBase64String Command Line | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | Microsoft 365 Device Code Authentication | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>15</a></span> |  |
 | TOR Usage Generic Rule | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>3</a></span> | Microsoft-Windows-Sysmon |
+| Tenable Identity Exposure / Alsid High Severity Alert | master | 79016668 |  |
 | Admin Share Access | master | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5140' style='color: inherit;'>5140</a></span>, <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5145' style='color: inherit;'>5145</a></span> | Microsoft-Windows-Security-Auditing |
 | Cobalt Strike Named Pipes | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>17</a></span> | Microsoft-Windows-Sysmon |
 | Microsoft Defender for Office 365 Medium Severity AIR Alert | master | 64 |  |
@@ -464,20 +466,20 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Cobalt Strike Default Service Creation Usage | elementary | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4697' style='color: inherit;'>4697</a></span>, <span style="color:#B60016">7045</span> | Microsoft-Windows-Security-Auditing, Service Control Manager |
 
 ## EventIDs occurences in rules
-| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 450) |
+| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 452) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| 1 | 220 | 48.89 % |
-| 13 | 45 | 10.0 % |
-| 4104 | 43 | 9.56 % |
-| 11 | 20 | 4.44 % |
-| 5 | 15 | 3.33 % |
-| 7 | 15 | 3.33 % |
-| 5145 | 11 | 2.44 % |
-| 7045 | 11 | 2.44 % |
-| 15 | 8 | 1.78 % |
-| 4656 | 8 | 1.78 % |
-| 3 | 7 | 1.56 % |
-| 4688 | 7 | 1.56 % |
+| 1 | 220 | 48.67 % |
+| 13 | 45 | 9.96 % |
+| 4104 | 43 | 9.51 % |
+| 11 | 20 | 4.42 % |
+| 5 | 15 | 3.32 % |
+| 7 | 15 | 3.32 % |
+| 5145 | 11 | 2.43 % |
+| 7045 | 11 | 2.43 % |
+| 15 | 8 | 1.77 % |
+| 4656 | 8 | 1.77 % |
+| 3 | 7 | 1.55 % |
+| 4688 | 7 | 1.55 % |
 | 5136 | 6 | 1.33 % |
 | 10 | 6 | 1.33 % |
 | 4697 | 6 | 1.33 % |
@@ -487,13 +489,13 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 4662 | 6 | 1.33 % |
 | 4624 | 5 | 1.11 % |
 | 1116 | 5 | 1.11 % |
-| 22 | 4 | 0.89 % |
-| 64 | 4 | 0.89 % |
-| 12 | 3 | 0.67 % |
-| 4720 | 3 | 0.67 % |
-| 6 | 3 | 0.67 % |
-| 4625 | 3 | 0.67 % |
-| 4103 | 3 | 0.67 % |
+| 22 | 4 | 0.88 % |
+| 64 | 4 | 0.88 % |
+| 12 | 3 | 0.66 % |
+| 4720 | 3 | 0.66 % |
+| 6 | 3 | 0.66 % |
+| 4625 | 3 | 0.66 % |
+| 4103 | 3 | 0.66 % |
 | 4729 | 2 | 0.44 % |
 | 30 | 2 | 0.44 % |
 | 20 | 2 | 0.44 % |
@@ -552,10 +554,12 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 1119 | 1 | 0.22 % |
 | 47 | 1 | 0.22 % |
 | 4776 | 1 | 0.22 % |
+| 83820799 | 1 | 0.22 % |
 | 1013 | 1 | 0.22 % |
 | 4657 | 1 | 0.22 % |
 | 4706 | 1 | 0.22 % |
 | 4707 | 1 | 0.22 % |
+| 79016668 | 1 | 0.22 % |
 | 5140 | 1 | 0.22 % |
 | 16 | 1 | 0.22 % |
 | 4741 | 1 | 0.22 % |
@@ -569,15 +573,15 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 150 | 1 | 0.22 % |
 
 ## EventProviders occurences in rules
-| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 450) |
+| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 452) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| Microsoft-Windows-Sysmon | 290 | 64.44 % |
-| Microsoft-Windows-Security-Auditing | 70 | 15.56 % |
-| Microsoft-Windows-PowerShell | 46 | 10.22 % |
-| Kernel-Process | 22 | 4.89 % |
-| Service Control Manager | 11 | 2.44 % |
-| Microsoft-Windows-Windows Defender | 9 | 2.0 % |
-| Microsoft-Windows-Kernel-File | 4 | 0.89 % |
+| Microsoft-Windows-Sysmon | 290 | 64.16 % |
+| Microsoft-Windows-Security-Auditing | 70 | 15.49 % |
+| Microsoft-Windows-PowerShell | 46 | 10.18 % |
+| Kernel-Process | 22 | 4.87 % |
+| Service Control Manager | 11 | 2.43 % |
+| Microsoft-Windows-Windows Defender | 9 | 1.99 % |
+| Microsoft-Windows-Kernel-File | 4 | 0.88 % |
 | ESENT | 1 | 0.22 % |
 | Microsoft-Windows-Backup | 1 | 0.22 % |
 | Microsoft-Windows-NTLM | 1 | 0.22 % |
@@ -593,9 +597,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Microsoft-Windows-DNS-Server-Service | 1 | 0.22 % |
 
 ## EffortLevel x EventIDs
-| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 450 |
+| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 452 |
 | ------------ | -------- | ----------------------- | ------------------------------------------------------- |
-| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4727, 4728, 4729, 4730, 4732, 4743, 4754, 4756, 4757, 4758, 4764, 5007, 5140, 5145, 64, 7, 770, 771, 8001, 98 | 86 | 19.11 % |
-| advanced | 1, 10, 1006, 1007, 1008, 1015, 11, 1116, 1117, 1118, 1119, 1125, 1126, 1127, 13, 15, 17, 19, 20, 2013, 21, 22, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4776, 4799, 5, 5001, 5010, 5012, 5101, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 111 | 24.67 % |
-| intermediate | 1, 10, 1000, 1031, 1032, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 47, 4720, 4738, 4741, 4742, 4794, 4799, 4825, 5, 5136, 5145, 517, 524, 6, 7, 7045 | 166 | 36.89 % |
-| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4656, 4663, 4688, 4697, 4704, 4720, 5, 5136, 6, 7, 7045, 8 | 87 | 19.33 % |
+| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4727, 4728, 4729, 4730, 4732, 4743, 4754, 4756, 4757, 4758, 4764, 5007, 5140, 5145, 64, 7, 770, 771, 79016668, 8001, 83820799, 98 | 88 | 19.47 % |
+| advanced | 1, 10, 1006, 1007, 1008, 1015, 11, 1116, 1117, 1118, 1119, 1125, 1126, 1127, 13, 15, 17, 19, 20, 2013, 21, 22, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4776, 4799, 5, 5001, 5010, 5012, 5101, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 111 | 24.56 % |
+| intermediate | 1, 10, 1000, 1031, 1032, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 47, 4720, 4738, 4741, 4742, 4794, 4799, 4825, 5, 5136, 5145, 517, 524, 6, 7, 7045 | 166 | 36.73 % |
+| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4656, 4663, 4688, 4697, 4704, 4720, 5, 5136, 6, 7, 7045, 8 | 87 | 19.25 % |
