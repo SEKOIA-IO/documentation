@@ -1,4 +1,4 @@
-Rules catalog includes **811 built-in detection rules** ([_last update on 2024-02-29_](rules_changelog.md)).
+Rules catalog includes **811 built-in detection rules** ([_last update on 2024-03-06_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -8773,12 +8773,16 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "Entra ID Password Compromised By Know Credential Testing Tool"
+??? abstract "Entra ID Password Compromised By Known Credential Testing Tool"
     
     Detects a sign-in that has a correlation ID known to be used by malicious credential testing scripts. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 05/03/2024 - minor - Rule name error was fixed
+            
 ??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
     Detects failed login attemps on firewall administration rule. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -9311,8 +9315,12 @@ Rules catalog includes **811 built-in detection rules** ([_last update on 2024-0
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 06/03/2024 - minor - Effort level was adapted according to the observed hits for the rule
+            
 ??? abstract "Suspicious Headless Web Browser Execution To Download File"
     
     Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
