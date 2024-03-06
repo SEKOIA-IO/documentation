@@ -595,7 +595,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Logonui Wrong Parent"
     

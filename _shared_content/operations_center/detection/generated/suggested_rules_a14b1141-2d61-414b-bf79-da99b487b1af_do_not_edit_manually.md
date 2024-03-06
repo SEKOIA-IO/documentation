@@ -379,7 +379,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "LokiBot Default C2 URL"
     
