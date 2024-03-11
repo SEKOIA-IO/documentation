@@ -36,6 +36,10 @@ Each indicator inside the collection can have the following properties:
 - Kill Chain Phases: steps of the attack this indicator belongs to
 - Description: any text that would add additional context. It is limited to **500 characters**
 
+!!! warning
+	If you select the kill chain ‘Command a Control’ when importing indicators in an IOC collection, our retrohunt engine will look only into `destination.ip`.
+    This reduces false positives, as C2 servers tend to scan networks a lot. By doing this, we look for slave servers that respond to a C2 server.
+
 ### Limitations 
 
 We allow a maximum **limit of 500,000 IOCs** entries that can be imported. This limit applies to the total IOC imports across all collections in a community. 
