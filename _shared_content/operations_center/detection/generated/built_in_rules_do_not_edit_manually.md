@@ -1,4 +1,4 @@
-Rules catalog includes **814 built-in detection rules** ([_last update on 2024-03-07_](rules_changelog.md)).
+Rules catalog includes **825 built-in detection rules** ([_last update on 2024-03-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -4313,6 +4313,12 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Google Workspace User Creation"
+    
+    Detects when a new user is created.
+    
+    - **Effort:** master
+    
 ??? abstract "Impacket Addcomputer"
     
     Detects suspicious computer account creation based on impacket default pattern
@@ -4330,6 +4336,12 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
     An user account has been created in Okta.
     
     - **Effort:** master
+    
+??? abstract "Suspicious URL Requested By Curl Or Wget Commands"
+    
+    Correlation rule aiming to be multi-source to detect URL with suspicious files extensions (seen on a network level by proxies or firewalls) being requested by curl or wget processes (seen on a host level).
+    
+    - **Effort:** advanced
     
 ??? abstract "Suspicious Windows ANONYMOUS LOGON Local Account Created"
     
@@ -4950,6 +4962,12 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
     
     - **Effort:** elementary
+    
+??? abstract "Google Workspace Password Change"
+    
+    Detects when a password is changed. An attacker can perform this action to impact the availability of the account.
+    
+    - **Effort:** master
     
 ??? abstract "KeePass Config XML In Command-Line"
     
@@ -7743,6 +7761,12 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+??? abstract "Google Workspace Password Change"
+    
+    Detects when a password is changed. An attacker can perform this action to impact the availability of the account.
+    
+    - **Effort:** master
+    
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -8362,6 +8386,12 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
             
 **Modify Cloud Compute Infrastructure**
 
+??? abstract "AWS CloudTrail EC2 CreateVPC"
+    
+    Detects when a VPC is created.
+    
+    - **Effort:** advanced
+    
 ??? abstract "AWS CloudTrail EC2 Subnet Deleted"
     
     Detects when an attacker is destroying an EC2 subnet.
@@ -9042,6 +9072,12 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+??? abstract "Google Workspace Password Change"
+    
+    Detects when a password is changed. An attacker can perform this action to impact the availability of the account.
+    
+    - **Effort:** master
+    
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -9550,6 +9586,30 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
 ## Lateral Movement
 **Remote Services**
 
+??? abstract "AWS CloudTrail EC2 CreateKeyPair"
+    
+    Detects when a key pair is created. Usually, SendSSHPublicKey is used afterwards to push the created key to an EC2 instance in order to be able to establish a connection to that instance.
+    
+    - **Effort:** advanced
+    
+??? abstract "AWS CloudTrail EC2 DeleteKeyPair"
+    
+    Detects when a specific key pair is deleted. This means the public key was removed from EC2.
+    
+    - **Effort:** advanced
+    
+??? abstract "AWS CloudTrail EC2 Instance Connect SendSSHPublicKey"
+    
+    Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a connection to the console using SSH.
+    
+    - **Effort:** advanced
+    
+??? abstract "AWS CloudTrail EC2 Instance Connect SendSerialConsoleSSHPublicKey"
+    
+    Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a serial connection to the console using SSH.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Admin Share Access"
     
     Detects access to $ADMIN share. The advanced audit policy setting "Object Access > Audit File Share" must be configured for Success/Failure. Also be very cautious to previously check if this is not commonly used by your administrators as to remotely manage your computers.
@@ -10632,6 +10692,24 @@ Rules catalog includes **814 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Computer Account Deleted"
     
     Detects computer account deletion.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace Admin Deletion"
+    
+    Detects when an admin is deleted or when his role is unassigned.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace User Deletion"
+    
+    Detects when an user is deleted.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace User Suspended"
+    
+    Detects when an user is suspended. An attacker can use this to remove an account used during the intrusion.
     
     - **Effort:** master
     

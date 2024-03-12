@@ -15,6 +15,36 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** intermediate
 
+??? abstract "AWS CloudTrail EC2 CreateKeyPair"
+    
+    Detects when a key pair is created. Usually, SendSSHPublicKey is used afterwards to push the created key to an EC2 instance in order to be able to establish a connection to that instance.
+    
+    - **Effort:** advanced
+
+??? abstract "AWS CloudTrail EC2 CreateVPC"
+    
+    Detects when a VPC is created.
+    
+    - **Effort:** advanced
+
+??? abstract "AWS CloudTrail EC2 DeleteKeyPair"
+    
+    Detects when a specific key pair is deleted. This means the public key was removed from EC2.
+    
+    - **Effort:** advanced
+
+??? abstract "AWS CloudTrail EC2 Instance Connect SendSSHPublicKey"
+    
+    Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a connection to the console using SSH.
+    
+    - **Effort:** advanced
+
+??? abstract "AWS CloudTrail EC2 Instance Connect SendSerialConsoleSSHPublicKey"
+    
+    Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a serial connection to the console using SSH.
+    
+    - **Effort:** advanced
+
 ??? abstract "AWS CloudTrail EC2 Security Group Modified"
     
     Detects when an AWS EC2 security group has been modified
