@@ -79,7 +79,7 @@ nav:
         - Overview: xdr/features/collect/integrations/index.md
         - Custom Format: xdr/features/collect/integrations/custom_format.md
         - Application:
-          - Alsid / Tenable.ad: xdr/features/collect/integrations/application/alsid.md
+          - Tenable Identity Exposure / Alsid: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
           - BIND: xdr/features/collect/integrations/application/bind.md
           - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
