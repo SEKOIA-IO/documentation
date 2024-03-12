@@ -194,6 +194,7 @@ nav:
             - Trend Micro Apex One: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_apex_one.md
             - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
           - Trellix ePO: xdr/features/collect/integrations/endpoint/trellix_epo.md
+          - Trellix EDR: xdr/features/collect/integrations/endpoint/trellix_edr.md
           - VMware ESXi: xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md
           - VMware VCenter: xdr/features/collect/integrations/endpoint/vmware/vmware_vcenter.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
