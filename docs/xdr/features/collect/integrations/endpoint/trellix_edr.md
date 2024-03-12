@@ -5,6 +5,9 @@ type: intake
 ## Overview
 
 Trellix has been involved in the detection and prevention of major cybersecurity attacks. It provides hardware, software, and services to investigate cybersecurity attacks, protect against malicious software, and analyze IT security risks.
+
+!!! warning
+    Important note - This format is currently in alpha. We highly value your feedback to improve its performance.
     
 {!_shared_content/operations_center/detection/generated/suggested_rules_954a6488-6394-4385-8427-621541e881d5_do_not_edit_manually.md!}
 
