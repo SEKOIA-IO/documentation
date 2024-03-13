@@ -63,7 +63,7 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 | STIX path | ECS event field |
 | --- | --- |
-| email-addr:value| client.user.email<br>destination.user.email<brdestination.user.full_name<br>email.from.address<br>email.sender.address<br>email.to.address<br>email.cc.address<br>email.bcc.address<br>file.x509.alternative_names<brhost.user.email><br>server.user.email<br>source.user.email<br>source.user.full_name<br>tls.client.x509.alternative_names<br>user.email<br>user.effective.email<br>user.target.email |
+| email-addr:value| client.user.email<br>destination.user.email<br>destination.user.full_name<br>email.from.address<br>email.sender.address<br>email.to.address<br>email.cc.address<br>email.bcc.address<br>file.x509.alternative_names<brhost.user.email><br>server.user.email<br>source.user.email<br>source.user.full_name<br>tls.client.x509.alternative_names<br>user.email<br>user.effective.email<br>user.target.email |
 | email-addr:display_name | destination.user.full_name<br>source.user.full_name |
 
 #### Observable type: File
