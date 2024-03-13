@@ -21,7 +21,7 @@ Each time a new indicator is added to our CTI database, Sekoia XDR will also per
 
 On the Alerts page, look for the Detection type of the alert. `CTI Retrohunt` alerts are triggered retroactively when a new indicator appears in our CTI database.
 
-![detection type](/assets/operation_center/alerts/detection_type.png){: style="max-width:100%"}
+![detection type](/assets/operation_center/alerts/detection_type.gif){: style="max-width:100%"}
 
 #### Would your SOC team like to scan a specific list of IOCs to perform retrohunt?
 That’s possible via the IOC collections. You can import a specific list of IOCs to perform retrohunting.
@@ -51,187 +51,90 @@ Sekoia XDR will perform retrohunting as soon as possible, depending on resource 
 
 ### Which event fields are verified when performing IOC detection?
 
-The tables below list the ECS event fields that are verified by IOC detection. ECS event fields are grouped by STIX observable types.
+The tables below list the ECS event fields that are verified by IOC detection.
 
 #### Observable type: Domain Name
 
-| ECS event field | 
-| --- |
-| client.domain |
-| client.registered_domain |
-| destination.domain |
-| destination.registered_domain |
-| dns.question.name |
-| dns.size_in_char |
-| source.domain |
-| source.registered_domain |
-| server.domain |
-| server.registered_domain |
-| tls.client.x509.alternative_names |
-| url.domain |
-| url.registered_domain |
-| x509.alternative_names |
-| x509.subject.common_name |
+| STIX path | ECS event field | 
+| --- | --- |
+| domain-name:value | client.domain<br>client.registered_domain<br>destination.domain<br>destination.registered_domain<br>dns.question.name<br>source.domain<br>source.registered_domain<br>server.domain<br>server.registered_domain<br>tls.client.x509.alternative_names<br>url.domain<br>x509.alternative_names<br>x509.subject.common_name |
 
 #### Observable type: Email Address
 
-| ECS event field |
-| --- |
-| client.user.email |
-| destination.user.email |
-| destination.user.full_name |
-| email.from.address |
-| email.sender.address |
-| email.to.address |
-| email.cc.address |
-| email.bcc.address |
-| file.x509.alternative_names |
-| host.user.email |
-| server.user.email |
-| source.user.email |
-| source.user.full_name |
-| tls.client.x509.alternative_names |
-| user.email |
-| user.effective.email |
-| user.target.email |
+| STIX path | ECS event field |
+| --- | --- |
+| email-addr:value| client.user.email<br>destination.user.email<brdestination.user.full_name<br>email.from.address<br>email.sender.address<br>email.to.address<br>email.cc.address<br>email.bcc.address<br>file.x509.alternative_names<brhost.user.email><br>server.user.email<br>source.user.email<br>source.user.full_name<br>tls.client.x509.alternative_names<br>user.email<br>user.effective.email<br>user.target.email |
+| email-addr:display_name | destination.user.full_name<br>source.user.full_name |
 
 #### Observable type: File
 
-| ECS event field |
-| --- |
-| dll.hash.md5 |
-| dll.hash.sha1 |
-| dll.hash.sha256 |
-| dll.hash.sha512 |
-| email.attachments.file.hash.md5 |
-| email.attachments.file.hash.sha1 |
-| email.attachments.file.hash.sha256 |
-| email.attachments.file.hash.sha512 |
-| file.size | 
-| file.name | 
-| file.mime_type | 
-| file.created | 
-| file.ctime | 
-| file.hash.md5 |
-| file.hash.sha1 |
-| file.hash.sha256 |
-| file.hash.sha512 |
-| file.hash.ssdeep |
-| file.mtime | 
-| file.path | 
-| process.hash.md5 |
-| process.hash.sha1 |
-| process.hash.sha256 |
-| process.hash.sha512 |
-| process.hash.ssdeep |
-| process.working_directory |
+| STIX path | ECS event field |
+| --- | --- |
+| file:ctime | file.created |
+| file:hashes.MD5 | dll.hash.md5<br>email.attachments.file.hash.md5<br>file.hash.md5<br>process.hash.md5 |
+| file.hash.SHA-1 | file.hash.sha1<br>dll.hash.sha1<br>email.attachments.file.hash.sha1<br>process.hash.sha1 |
+| file.hash.SHA-256 | file.hash.sha256<br>dll.hash.sha256<br>email.attachments.file.hash.sha256<br>process.hash.sha256 |
+| file.hash.SHA-512 | file.hash.sha512<br>dll.hash.sha512<br>email.attachments.file.hash.sha512<br>process.hash.sha512 |
+| file:hashes.SSDEEP | file.hash.ssdeep | 
+| file:mime_type | file.mime_type | 
+| file:mtime | file.ctime |
+| file:name | file.name |
+| file:size | file.size |
 
 #### Observable type: IPv4 Address & IPv6 Address
 
-| ECS event field |
-| --- |
-| client.ip |
-| destination.ip |
-| host.ip |
-| server.ip |
-| source.ip |
+| STIX path | ECS event field |
+| --- | --- |
+| ipv4-addr:value | client.ip<br>destination.ip<br>host.ip<br>server.ip<br>source.ip |
 
 #### Observable type: Network Traffic
 
-| ECS event field |
-| --- |
-| action.name |
-| action.type |
-| action.outcome |
-| destination.bytes |
-| destination.ip |
-| destination.packets |
-| destination.port |
-| dns.size_in_char |
-| http.request.body.bytes |
-| http.request.method |
-| http.request.referrer |
-| http.response.bytes |
-| http.response.status_code |
-| http.version |
-| network.protocol |
-| network.transport |
-| source.bytes |
-| source.ip |
-| source.packets |
-| source.port |
-| url.path |
-| user_agent.original |
-
-#### Observable type: Process
-
-| ECS event field |
-| --- |
-| process.command_line |
-| process.executable |
-| process.pid |
-| process.ppid |
-| process.start |  
-| process.hash.md5 |
-| process.hash.sha1 |
-| process.hash.sha256 |
-| process.hash.sha512 |
-| process.hash.ssdeep |
-| process.working_directory |  
-| process.name | 
-| process.parent.command_line |
-| process.parent.executable | 
-| process.parent.hash.md5 |
-| process.parent.hash.sha1 |
-| process.parent.hash.sha256 |
-| process.parent.hash.sha512 |
-| process.parent.hash.ssdeep |
-| process.parent.name |
-| process.parent.pid |
-| process.parent.start |
-| process.parent.working_directory | 
+| STIX path | ECS event field |
+| --- | --- |
+| network-traffic:action_ref.name | action.name |
+| network-traffic:action_ref.verb | action.type |
+| network-traffic:action_ref.outcome | action.outcome |
+| network-traffic:dst_byte_count | destination.bytes |
+| network-traffic:dst_ref.value | destination.ip |
+| network-traffic:dst_packets | destination.packets |
+| network-traffic:dst_port | destination.port |
+| network-traffic:extensions.http-request-ext.message_body_length | http.request.body.bytes |
+| network-traffic:extensions.http-request-ext.request_method | http.request.method |
+| network-traffic:extensions.http-request-ext.x_request_referrer | http.request.referrer |
+| network-traffic:extensions.x-http-response.x_response_bytes | http.response.bytes |
+| network-traffic:extensions.x-http-response.x_response_status_code | http.response.status_code |
+| network-traffic:extensions.http-request-ext.request_version | http.version |
+| network-traffic:x_dpi_protocols[*] | network.protocol |
+| network-traffic:protocols[*] | network.transport |
+| network-traffic:src_byte_count | source.bytes |
+| network-traffic:src_ref.value | source.ip |
+| network-traffic:src_packets | source.packets |
+| network-traffic:src_port | source.port |
+| network-traffic:extensions.http-request-ext.request_value | url.path |
+| network-traffic:extensions.http-request-ext.request_header.User-Agent | user_agent.original | 
 
 #### Observable type: URL
 
-| ECS event field |
-| --- |
-| url.full |
-| url.original |
-
-#### Observable type: User Account
-
-| ECS event field |
-| --- |
-| action.name |
-| action.outcome |
-| action.outcome_reason |
-| action.properties.targetedUser
-| action.type |
-| log.hostname |
-| user.domain |
-| user.email |
-| user.full_name |
-| user.id |
-| user.name |
+| STIX path | ECS event field |
+| --- | --- |
+| url:value | url.full<br>url.original |
 
 #### Observable type: Windows Registry Key
 
-| ECS event field |
-| --- |
-| registry.key | 
-| registry.value |
+| STIX path | ECS event field |
+| --- | --- |
+| windows-registry-key:key | registry.key | 
+| windows-registry-key:values | registry.value |
 
 #### Observable type: X.509 Certificate
 
-| ECS event field |
-| --- |
-| x509.issuer.common_name | 
-| x509.issuer.distinguished_name | 
-| x509.not_before | 
-| x509.not_after | 
-| x509.public_key_algorithm | 
-| x509.public_key_exponent |
-| x509.serial_number | 
-| x509.signature_algorithm |
-| x509.subject.distinguished_name | 
-| x509.subject.common_name |
+| STIX path | ECS event field |
+| --- | --- |
+| x509-certificate:issuer | x509.issuer.common_name<br>x509.issuer.distinguished_name | 
+| x509-certificate:serial_number | x509.serial_number | 
+| x509-certificate:signature_algorithm | x509.signature_algorithm |
+| x509-certificate:subject | x509.subject.common_name<br>x509.subject.distinguished_name |
+| x509-certificate:subject_public_key_algorithm | x509.public_key_algorithm | 
+| x509-certificate:subject_public_key_exponent | x509.public_key_exponent |
+| x509-certificate:validity_not_before | x509.not_before | 
+| x509-certificate:validity_not_after | x509.not_after | 
