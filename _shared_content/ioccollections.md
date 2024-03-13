@@ -37,8 +37,7 @@ Each indicator inside the collection can have the following properties:
 - Description: any text that would add additional context. It is limited to **500 characters**
 
 !!! warning
-	If you select the kill chain ‘Command a Control’ when importing indicators in an IOC collection, our retrohunt engine will look only into `destination.ip`.
-    This reduces false positives, as C2 servers tend to scan networks a lot. By doing this, we look for slave servers that respond to a C2 server.
+	If you select the kill chain phase 'Command and Control' when importing IP addresses in an IOC collection, our detection engines will only look into `destination.ip`. This is meant to reduce false positives, such as network scans.
 
 ### Limitations 
 
