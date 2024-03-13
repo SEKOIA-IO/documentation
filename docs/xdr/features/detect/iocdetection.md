@@ -72,10 +72,10 @@ The tables below list the ECS event fields that are verified by IOC detection.
 | --- | --- |
 | file:ctime | file.created |
 | file:hashes.MD5 | dll.hash.md5<br>email.attachments.file.hash.md5<br>file.hash.md5<br>process.hash.md5 |
+| file:hashes.SSDEEP | file.hash.ssdeep |
 | file.hash.SHA-1 | file.hash.sha1<br>dll.hash.sha1<br>email.attachments.file.hash.sha1<br>process.hash.sha1 |
 | file.hash.SHA-256 | file.hash.sha256<br>dll.hash.sha256<br>email.attachments.file.hash.sha256<br>process.hash.sha256 |
-| file.hash.SHA-512 | file.hash.sha512<br>dll.hash.sha512<br>email.attachments.file.hash.sha512<br>process.hash.sha512 |
-| file:hashes.SSDEEP | file.hash.ssdeep | 
+| file.hash.SHA-512 | file.hash.sha512<br>dll.hash.sha512<br>email.attachments.file.hash.sha512<br>process.hash.sha512 | 
 | file:mime_type | file.mime_type | 
 | file:mtime | file.ctime |
 | file:name | file.name |
@@ -91,27 +91,11 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 | STIX path | ECS event field |
 | --- | --- |
-| network-traffic:action_ref.name | action.name |
-| network-traffic:action_ref.verb | action.type |
-| network-traffic:action_ref.outcome | action.outcome |
-| network-traffic:dst_byte_count | destination.bytes |
-| network-traffic:dst_ref.value | destination.ip |
-| network-traffic:dst_packets | destination.packets |
 | network-traffic:dst_port | destination.port |
-| network-traffic:extensions.http-request-ext.message_body_length | http.request.body.bytes |
-| network-traffic:extensions.http-request-ext.request_method | http.request.method |
-| network-traffic:extensions.http-request-ext.x_request_referrer | http.request.referrer |
-| network-traffic:extensions.x-http-response.x_response_bytes | http.response.bytes |
-| network-traffic:extensions.x-http-response.x_response_status_code | http.response.status_code |
-| network-traffic:extensions.http-request-ext.request_version | http.version |
-| network-traffic:x_dpi_protocols[*] | network.protocol |
-| network-traffic:protocols[*] | network.transport |
-| network-traffic:src_byte_count | source.bytes |
+| network-traffic:dst_ref.value | destination.ip |
+| network-traffic:extensions.http-request-ext.request_header.User-Agent | user_agent.original |
+| network-traffic:src_port | source.port | 
 | network-traffic:src_ref.value | source.ip |
-| network-traffic:src_packets | source.packets |
-| network-traffic:src_port | source.port |
-| network-traffic:extensions.http-request-ext.request_value | url.path |
-| network-traffic:extensions.http-request-ext.request_header.User-Agent | user_agent.original | 
 
 #### Observable type: URL
 
