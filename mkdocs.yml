@@ -118,6 +118,7 @@ nav:
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Broadcom Cloud Secure Web Gateway: xdr/features/collect/integrations/cloud_and_saas/broadcom_cloud_swg.md
           - Cato SASE: xdr/features/collect/integrations/cloud_and_saas/cato_sase.md
+          - Datadome Protection: xdr/features/collect/integrations/cloud_and_saas/datadome_protection.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Cisco Duo Security: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
           - Claroty xDome: xdr/features/collect/integrations/cloud_and_saas/claroty_xdome.md
