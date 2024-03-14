@@ -5,6 +5,9 @@ type: intake
 ## Overview
 Cyberwatch is a vulnerability detection and monitoring solution.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_687993b4-2b9b-4a53-bb40-8729fa17638c_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/687993b4-2b9b-4a53-bb40-8729fa17638c.md!}
@@ -34,3 +37,8 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 ### Forward logs to Sekoia.io
 
 Please consult the [Syslog Forwarding](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/) documentation to set up the syslog concentrator.
+
+
+## Further readings
+
+- [Configure a remote Syslog server](https://docs.cyberwatch.fr/help/en/administration/remote_syslog_configuration/)
