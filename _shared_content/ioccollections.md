@@ -36,6 +36,9 @@ Each indicator inside the collection can have the following properties:
 - Kill Chain Phases: steps of the attack this indicator belongs to
 - Description: any text that would add additional context. It is limited to **500 characters**
 
+!!! warning
+	If you select the kill chain phase 'Command and Control' when importing IP addresses in an IOC collection, our detection engines will only look into `destination.ip`. This is meant to reduce false positives, such as network scans.
+
 ### Limitations 
 
 We allow a maximum **limit of 500,000 IOCs** entries that can be imported. This limit applies to the total IOC imports across all collections in a community. 

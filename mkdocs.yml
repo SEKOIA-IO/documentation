@@ -249,6 +249,7 @@ nav:
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
     - Detect:
+      - IOCs Detection: xdr/features/detect/iocdetection.md
       - Rules Catalog: xdr/features/detect/rules_catalog.md
       - Built-in Rules: xdr/features/detect/built_in_detection_rules.md
       - Sigma: xdr/features/detect/sigma.md
