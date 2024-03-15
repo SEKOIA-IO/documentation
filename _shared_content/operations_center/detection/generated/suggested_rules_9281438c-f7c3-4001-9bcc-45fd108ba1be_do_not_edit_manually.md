@@ -399,6 +399,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** intermediate
 
+??? abstract "Compress Data for Exfiltration via Archiver"
+    
+    Detects data compressed by specific tools.
+    
+    - **Effort:** advanced
+
 ??? abstract "Computer Account Deleted"
     
     Detects computer account deletion.
@@ -834,6 +840,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "External Disk Drive Or USB Storage Device"
     
     Detects external diskdrives or plugged in USB device.
+    
+    - **Effort:** advanced
+
+??? abstract "FLTMC command usage"
+    
+    Detects the use of fltmc to list and load/unload a filter driver.
     
     - **Effort:** advanced
 
@@ -2743,7 +2755,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMIC Loading Scripting Libraries"
     

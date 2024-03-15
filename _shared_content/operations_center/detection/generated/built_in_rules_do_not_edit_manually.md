@@ -1,4 +1,4 @@
-Rules catalog includes **825 built-in detection rules** ([_last update on 2024-03-12_](rules_changelog.md)).
+Rules catalog includes **841 built-in detection rules** ([_last update on 2024-03-15_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -531,6 +531,18 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Admin Creation"
+    
+    Detects when an admin is created or when his role is changed.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace Suspicious Login"
+    
+    Detects a suspicious login reported by google.
+    
+    - **Effort:** master
     
 ??? abstract "Login Brute-Force On Firewall"
     
@@ -3468,6 +3480,7 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 12/03/2024 - minor - Added filter to reduce false positives
             
 ??? abstract "SentinelOne EDR Agent Disabled"
     
@@ -4045,6 +4058,18 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Google Workspace Admin Creation"
+    
+    Detects when an admin is created or when his role is changed.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace Suspicious Login"
+    
+    Detects a suspicious login reported by google.
+    
+    - **Effort:** master
+    
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
@@ -4619,6 +4644,7 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 12/03/2024 - minor - Added filter to reduce false positives
             
 ??? abstract "Smss Wrong Parent"
     
@@ -5227,6 +5253,7 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 12/03/2024 - minor - Added filter to reduce false positives
             
 ??? abstract "Smss Wrong Parent"
     
@@ -5447,6 +5474,18 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Admin Creation"
+    
+    Detects when an admin is created or when his role is changed.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace Suspicious Login"
+    
+    Detects a suspicious login reported by google.
+    
+    - **Effort:** master
     
 ??? abstract "Login Brute-Force On Firewall"
     
@@ -5928,6 +5967,7 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 12/03/2024 - minor - Added filter to reduce false positives
             
 ??? abstract "Smss Wrong Parent"
     
@@ -6283,6 +6323,12 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     This rule aims to detect a large amount of actions blocked performed from the same source.
     
     - **Effort:** advanced
+    
+??? abstract "Google Workspace Bypass 2FA"
+    
+    Detects when user tries to bypass the 2FA.
+    
+    - **Effort:** master
     
 ??? abstract "HTML Smuggling Suspicious Usage"
     
@@ -6679,6 +6725,7 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 12/03/2024 - minor - Added filter to reduce false positives
             
 ??? abstract "Smss Wrong Parent"
     
@@ -6943,6 +6990,18 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Admin Creation"
+    
+    Detects when an admin is created or when his role is changed.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace Suspicious Login"
+    
+    Detects a suspicious login reported by google.
+    
+    - **Effort:** master
     
 ??? abstract "Login Brute-Force On Firewall"
     
@@ -7638,6 +7697,12 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Google Workspace Bypass 2FA"
+    
+    Detects when user tries to bypass the 2FA.
+    
+    - **Effort:** master
+    
 ??? abstract "HTML Smuggling Suspicious Usage"
     
     Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
@@ -7781,6 +7846,12 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "AWS CloudTrail Config DeleteConfigurationRecorder"
+    
+    Detects when the Configuration Recorder was deleted. The configuration recorder is used to detect changes in your resource configurations and capture these changes as configuration items.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "AWS CloudTrail Config Disable Channel/Recorder"
     
     Detects AWS Config Service disabling channel or recorder
@@ -7829,6 +7900,66 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
 ??? abstract "AWS CloudTrail GuardDuty Disruption"
     
     Detects updates of the GuardDuty list of trusted IPs, perhaps to disable security alerts against malicious IPs
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM AWSCompromisedKeyQuarantineV2"
+    
+    Detects when AWS CloudTrail detected an AWS Access Key that was compromised, and then quarantined by AWS. This could indicate for instance that the private key was found on a GitHub public repository.
+    
+    - **Effort:** elementary
+    
+??? abstract "AWS CloudTrail IAM AddClientIDToOpenIDConnectProvider"
+    
+    Detects the addition of a Client ID to an existing identity provider that supports OpenID Connect.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM ChangePassword"
+    
+    Detects when an IAM user wants to change its password.
+    
+    - **Effort:** advanced
+    
+??? abstract "AWS CloudTrail IAM CreateOpenIDConnectProvider"
+    
+    Detects the creation of an IAM entity to describe an identity provider that supports OpenID Connect.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM CreateSAMLProvider"
+    
+    Detects when an IAM user creates a SAML provider, which could allow third-party connection and therefore could be used by attackers.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM DeleteOpenIDConnectProvider"
+    
+    Detects the deletion of an IAM entity to describe an identity provider that supports OpenID Connect.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM DeleteSAMLProvider"
+    
+    Detects when an IAM user deletes a SAML provider, which could be performed by attackers to cover their tracks.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM RemoveClientIDFromOpenIDConnectProvider"
+    
+    Detects when a Client ID is removed from an identity provider that supports OpenID Connect. Could be used by attackers for sabotage or to cover their tracks.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM UpdateOpenIDConnectProviderThumbprint"
+    
+    Detects the update of a ThumbPrint from an identity provider that supports OpenID Connect. This could be a sign of an attacker adding a trusted certificate.
+    
+    - **Effort:** intermediate
+    
+??? abstract "AWS CloudTrail IAM UpdateSAMLProvider"
+    
+    Detects when an IAM user updates a SAML provider. Attackers could perform that to be stealthy by adding a third-party connection into an existing SAML provider.
     
     - **Effort:** intermediate
     
@@ -7918,6 +8049,12 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     
         - 08/11/2023 - minor - Added filter to reduce false positives
             
+??? abstract "FLTMC command usage"
+    
+    Detects the use of fltmc to list and load/unload a filter driver.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Fail2ban Unban IP"
     
     An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
@@ -8288,6 +8425,10 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 13/03/2024 - minor - Add another suspicious folder.
+            
 ??? abstract "PowerShell - NTFS Alternate Data Stream"
     
     Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
@@ -9573,8 +9714,12 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     
     Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/02/2024 - minor - Adding a new usage of wmic.
+            
 **Cloud Service Discovery**
 
 ??? abstract "AzureEdge in Command Line"
@@ -9893,6 +10038,12 @@ Rules catalog includes **825 built-in detection rules** ([_last update on 2024-0
     
 **Archive Collected Data**
 
+??? abstract "Compress Data for Exfiltration via Archiver"
+    
+    Detects data compressed by specific tools.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Data Compressed With Rar"
     
     An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program.

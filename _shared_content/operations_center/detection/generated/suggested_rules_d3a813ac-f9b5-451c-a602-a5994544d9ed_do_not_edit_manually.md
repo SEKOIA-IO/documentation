@@ -3,6 +3,12 @@
 The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x AWS CloudTrail on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_d3a813ac-f9b5-451c-a602-a5994544d9ed_do_not_edit_manually.json){ .md-button }
+??? abstract "AWS CloudTrail Config DeleteConfigurationRecorder"
+    
+    Detects when the Configuration Recorder was deleted. The configuration recorder is used to detect changes in your resource configurations and capture these changes as configuration items.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS CloudTrail Config Disable Channel/Recorder"
     
     Detects AWS Config Service disabling channel or recorder
@@ -93,6 +99,48 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** intermediate
 
+??? abstract "AWS CloudTrail IAM AWSCompromisedKeyQuarantineV2"
+    
+    Detects when AWS CloudTrail detected an AWS Access Key that was compromised, and then quarantined by AWS. This could indicate for instance that the private key was found on a GitHub public repository.
+    
+    - **Effort:** elementary
+
+??? abstract "AWS CloudTrail IAM AddClientIDToOpenIDConnectProvider"
+    
+    Detects the addition of a Client ID to an existing identity provider that supports OpenID Connect.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS CloudTrail IAM ChangePassword"
+    
+    Detects when an IAM user wants to change its password.
+    
+    - **Effort:** advanced
+
+??? abstract "AWS CloudTrail IAM CreateOpenIDConnectProvider"
+    
+    Detects the creation of an IAM entity to describe an identity provider that supports OpenID Connect.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS CloudTrail IAM CreateSAMLProvider"
+    
+    Detects when an IAM user creates a SAML provider, which could allow third-party connection and therefore could be used by attackers.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS CloudTrail IAM DeleteOpenIDConnectProvider"
+    
+    Detects the deletion of an IAM entity to describe an identity provider that supports OpenID Connect.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS CloudTrail IAM DeleteSAMLProvider"
+    
+    Detects when an IAM user deletes a SAML provider, which could be performed by attackers to cover their tracks.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS CloudTrail IAM Failed User Creation"
     
     Detects an attemp to create a user account where the result is an explicit denied.
@@ -110,6 +158,24 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     Detects change on AWS IAM Policy
     
     - **Effort:** master
+
+??? abstract "AWS CloudTrail IAM RemoveClientIDFromOpenIDConnectProvider"
+    
+    Detects when a Client ID is removed from an identity provider that supports OpenID Connect. Could be used by attackers for sabotage or to cover their tracks.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS CloudTrail IAM UpdateOpenIDConnectProviderThumbprint"
+    
+    Detects the update of a ThumbPrint from an identity provider that supports OpenID Connect. This could be a sign of an attacker adding a trusted certificate.
+    
+    - **Effort:** intermediate
+
+??? abstract "AWS CloudTrail IAM UpdateSAMLProvider"
+    
+    Detects when an IAM user updates a SAML provider. Attackers could perform that to be stealthy by adding a third-party connection into an existing SAML provider.
+    
+    - **Effort:** intermediate
 
 ??? abstract "AWS CloudTrail Important Change"
     
