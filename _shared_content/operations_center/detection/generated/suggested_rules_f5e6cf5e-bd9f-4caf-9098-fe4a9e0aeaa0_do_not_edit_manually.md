@@ -195,6 +195,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     - **Effort:** intermediate
 
+??? abstract "Compress Data for Exfiltration via Archiver"
+    
+    Detects data compressed by specific tools.
+    
+    - **Effort:** advanced
+
 ??? abstract "Container Credential Access"
     
     Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
@@ -438,6 +444,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
+    
+    - **Effort:** advanced
+
+??? abstract "FLTMC command usage"
+    
+    Detects the use of fltmc to list and load/unload a filter driver.
     
     - **Effort:** advanced
 
@@ -1459,7 +1471,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMIC Uninstall Product"
     

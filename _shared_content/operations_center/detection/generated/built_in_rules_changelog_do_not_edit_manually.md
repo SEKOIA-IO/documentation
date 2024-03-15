@@ -1,7 +1,13 @@
-Changelog _last update on 2024-03-12_
+Changelog _last update on 2024-03-15_
 
 ## Changelog
 
+### Microsoft 365 Suspicious Inbox Rule
+  - 13/03/2024 - minor - Add another suspicious folder.
+    
+### Searchprotocolhost Wrong Parent
+  - 12/03/2024 - minor - Added filter to reduce false positives
+    
 ### Listing Systemd Environment
   - 06/03/2024 - minor - Effort level was adapted according to the observed hits for the rule
     
@@ -10,6 +16,9 @@ Changelog _last update on 2024-03-12_
     
 ### Exfiltration Domain
   - 29/02/2024 - minor - enforce detection by adding tag
+    
+### WMIC Command To Determine The Antivirus
+  - 28/02/2024 - minor - Adding a new usage of wmic.
     
 ### Non-Legitimate Executable Using AcceptEula Parameter
   - 19/02/2024 - minor - Update filter and effort level according to the observed hits for the rule.
@@ -369,9 +378,6 @@ Changelog _last update on 2024-03-12_
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
     
 ### Dllhost Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Searchprotocolhost Wrong Parent
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
     
 ### Explorer Wrong Parent
