@@ -609,6 +609,7 @@ plugins:
       integrations/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
       integrations/cisco-asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
       integrations/cisco_asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
+      integrations/cyberwatch.md: xdr/features/collect/integrations/application/cyberwatch/cyberwatch_detection.md
       integrations/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
       integrations/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
