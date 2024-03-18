@@ -57,7 +57,7 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 | STIX path | ECS event field | 
 | --- | --- |
-| domain-name:value | client.domain<br>client.registered_domain<br>destination.domain<br>destination.registered_domain<br>dns.question.name<br>dns.question.registered_domain<br>source.domain<br>source.registered_domain<br>server.domain<br>server.registered_domain<br>url.domain<br>url.registered_domain<br>tls.[*client/server*].x509.alternative_names<br>tls.[*client/server*].x509.subject.common_name |
+| domain-name:value | client.domain<br>client.registered_domain<br>destination.domain<br>destination.registered_domain<br>dns.question.name<br>dns.question.registered_domain<br>server.domain<br>server.registered_domain<br>source.domain<br>source.registered_domain<br>url.domain<br>url.registered_domain<br>tls.[*client/server*].x509.alternative_names<br>tls.[*client/server*].x509.subject.common_name |
 
 #### Observable type: Email Address
 
