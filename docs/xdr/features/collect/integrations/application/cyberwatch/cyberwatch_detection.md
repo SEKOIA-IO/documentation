@@ -16,6 +16,10 @@ Cyberwatch is a vulnerability detection and monitoring solution.
 
 This setup guide will show you how to forward your Cyberwatch logs to Sekoia.io by means of a syslog transport channel.
 
+### Forward logs to Sekoia.io
+
+Please consult the [Syslog Forwarding](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/) documentation to set up a syslog concentrator.
+
 ### Enable Syslog forwarding for Cyberwatch
 
 Once configured, Cyberwatch will send hourly the latest CVEs detected to the remote Syslog server
@@ -33,10 +37,6 @@ In the Remote Syslog server configuration, provide the address, the port and the
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cyberwatch Detection.
-
-### Forward logs to Sekoia.io
-
-Please consult the [Syslog Forwarding](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/) documentation to set up the syslog concentrator.
 
 
 ## Further readings
