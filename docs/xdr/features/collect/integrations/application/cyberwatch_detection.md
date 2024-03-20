@@ -6,7 +6,7 @@ type: intake
 
 Cyberwatch is a vulnerability detection and monitoring solution.
 
-This integration covers the Detection logs of Cyberwatch Vulnerability Manager.
+This integration encompasses the detection logs from Cyberwatch Vulnerability Manager.
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
