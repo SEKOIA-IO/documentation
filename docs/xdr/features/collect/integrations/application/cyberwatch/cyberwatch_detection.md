@@ -1,4 +1,4 @@
-uuid: 687993b4-2b9b-4a53-bb40-8729fa17638c
+uuid: c6a43439-7b9d-4678-804b-ebda6756db60
 name: Cyberwatch Detection
 type: intake
 
@@ -8,9 +8,9 @@ Cyberwatch is a vulnerability detection and monitoring solution.
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_687993b4-2b9b-4a53-bb40-8729fa17638c_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_c6a43439-7b9d-4678-804b-ebda6756db60_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/687993b4-2b9b-4a53-bb40-8729fa17638c.md!}
+{!_shared_content/operations_center/integrations/generated/c6a43439-7b9d-4678-804b-ebda6756db60.md!}
 
 ## Configure
 
