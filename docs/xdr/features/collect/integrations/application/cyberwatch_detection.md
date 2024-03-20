@@ -3,7 +3,10 @@ name: Cyberwatch Detection
 type: intake
 
 ## Overview
+
 Cyberwatch is a vulnerability detection and monitoring solution.
+
+This integration encompasses the detection logs from Cyberwatch Vulnerability Manager.
 
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
@@ -28,16 +31,15 @@ Once configured, Cyberwatch will send hourly the latest CVEs detected to the rem
 2. Click External tools
 3. Click Remote Syslog server
 
-In the Remote Syslog server configuration, provide the address, the port and the transport to the syslog concentrator 
+In the Remote Syslog server configuration, provide the address, the port and the transport to the syslog concentrator
 
 <video controls width="100%">
-  <source src="/assets/operation_center/integration_catalog/application/cyberwatch/Cyberwatch.webm" type="video/webm">
+  <source src="/assets/operation_center/integration_catalog/application/Cyberwatch.webm" type="video/webm">
 </video>
 
 ### Create the intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format Cyberwatch Detection.
-
 
 ## Further readings
 
