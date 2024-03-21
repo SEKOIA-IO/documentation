@@ -4,19 +4,19 @@ Sekoia is currently available in several European regions. Each of them will ena
 
 ## Watch out for region-specific URLS
 
-!!!warning
-✋ Please note: The region in which you are located has an impact on the product URLs.
+!!! warning
+    ✋ Please note: The region in which you are located has an impact on the product URLs.
 
-!!!warning
-⌛ Some URLS may change before January 2024
+!!! warning
+    ⌛ Some URLS may change before January 2024.
 
-When you find urls of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
+When you find URLs of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
 
 For example, if you're in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>
 
 ## France - FRA1
 
-For companies wishing to host their data in France
+For companies wishing to host their data in France: 
 
 <table style="width:100%">
     <tbody>
@@ -53,7 +53,7 @@ For companies wishing to host their data in France
 
 ## France SecNumCloud - FRA2
 
-SecNumCloud compliant infrastructure - For companies requiring PCI/DSS compliance and to host their data in France
+SecNumCloud compliant infrastructure - For companies requiring PCI/DSS compliance and to host their data in France: 
 
 <table style="width:100%">
     <tbody>
@@ -94,10 +94,10 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
 
 ## Amsterdam - EUR1
 
-!!!warning
-✋ Region not available yet - Coming soon
+!!! warning
+    ✋ Region not available yet - Coming soon
 
-For companies requiring their data to be in Europe
+For companies requiring their data to be in Europe: 
 
 <table style="width:100%">
     <tbody>
@@ -134,7 +134,7 @@ For companies requiring their data to be in Europe
 
 ## Monaco - MCO1
 
-For companies requiring their data to be hosted in Monaco
+For companies requiring their data to be hosted in Monaco: 
 
 <table style="width:100%">
     <tbody>
@@ -171,7 +171,7 @@ For companies requiring their data to be hosted in Monaco
 
 ## United Arab Emirates - UAE1
 
-UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai)
+UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai). 
 
 <table style="width:100%">
     <tbody>
