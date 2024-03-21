@@ -30,21 +30,6 @@ In the Lacework console:
 
 Download the generated API key file and open it in an editor to view and use the key ID and generated secret in your API requests. You can create up to 20 API keys.
 
-#### Temporary API token
-
-Once you have an API key, you can generate temporary API access (bearer) tokens to use to access the Lacework API. Use the Lacework API's POST api/v2/access/tokens operation to create temporary API access (bearer) tokens.
-
-| Method       | Post                                                         |
-| ------------ | ------------------------------------------------------------ |
-| URL          | https://**YourLacework**.lacework.net/api/v2/access/tokens   |
-| Headers      | X-LW-UAKS:**API key's secret** Content-Type:application/json |
-| Request Body | { "keyId": **API key's ID**, "expiryTime": 3600 }            |
-
-Replace API key's **secret** and **ID** according to the value obtained in the API key file generated previously. Replace **YourLacework** with your Lacework's domain.
-
-The `expiryTime` parameter is optional and defaults to 3600 seconds. The maximum `expiryTime` allowed is one day, equivalent to 86400 seconds.
-
-For more information on how to generate an API token, please refer to [this link](https://docs.lacework.net/api/api-access-keys-and-tokens).
 
 ### Create an intake
 
