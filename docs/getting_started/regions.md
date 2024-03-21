@@ -221,8 +221,4 @@ UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai).
         </tr>
     </tbody>
 </table>
-            <td>Syslog Intake</td>
-            <td><a href="app.uae1.sekoia.io:10514">app.uae1.sekoia.io:10514</a></td>
-        </tr>
-    </tbody>
-</table>
+
