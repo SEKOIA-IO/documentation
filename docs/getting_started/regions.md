@@ -8,11 +8,11 @@ Sekoia is currently available in several European regions. Each of them will ena
     ✋ Please note: The region in which you are located has an impact on the product URLs.
 
 !!! warning
-    ⌛ Some URLS may change before January 2024.
+    ⌛ Some URLS may change in the future.
 
 When you find URLs of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
 
-For example, if you're in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>
+For example, if you're in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>. 
 
 ## France - FRA1
 
@@ -26,7 +26,7 @@ For companies wishing to host their data in France:
         </tr>
         <tr>
             <td>Location</td>
-            <td>🇪🇺 Europe / 🇫🇷 France</td>
+            <td>🇪🇺Europe / 🇫🇷France</td>
         </tr>
         <tr>
             <td>Infrastructure</td>
@@ -48,6 +48,10 @@ For companies wishing to host their data in France:
             <td>Syslog Intake</td>
             <td><a href="intake.sekoia.io:10514">intake.sekoia.io:10514</a></td>
         </tr>
+        <tr>
+            <td>Syslog REPL Intake</td>
+            <td><a href="app.sekoia.io:11514">app.sekoia.io:11514</a></td>
+        </tr>
     </tbody>
 </table>
 
@@ -63,7 +67,7 @@ SecNumCloud compliant infrastructure - For companies requiring PCI/DSS complianc
         </tr>
         <tr>
             <td>Location</td>
-            <td>🇪🇺 Europe / 🇫🇷 France</td>
+            <td>🇪🇺Europe / 🇫🇷France</td>
         </tr>
         <tr>
             <td>Infrastructure</td>
@@ -107,7 +111,7 @@ For companies requiring their data to be in Europe:
         </tr>
         <tr>
             <td>Location</td>
-            <td>🇪🇺 Europe / 🇳🇱 Amsterdam, 🇮🇪 Dublin</td>
+            <td>🇪🇺Europe / 🇳🇱Amsterdam, 🇮🇪Dublin</td>
         </tr>
         <tr>
             <td>Infrastructure</td>
@@ -129,6 +133,10 @@ For companies requiring their data to be in Europe:
             <td>Syslog Intake</td>
             <td> <i>Coming soon</i></td>
         </tr>
+        <tr>
+            <td>Syslog REPL Intake</td>
+            <td> <i>Coming soon</i></td>
+        </tr>
     </tbody>
 </table>
 
@@ -144,7 +152,7 @@ For companies requiring their data to be hosted in Monaco:
         </tr>
         <tr>
             <td>Location</td>
-            <td>🇪🇺 Europe / Monaco</td>
+            <td>🇪🇺Europe / 🇲🇨Monaco</td>
         </tr>
         <tr>
             <td>Infrastructure</td>
@@ -166,6 +174,10 @@ For companies requiring their data to be hosted in Monaco:
             <td>Syslog Intake</td>
             <td><a href="mco1.app.sekoia.io:10514">mco1.app.sekoia.io:10514</a></td>
         </tr>
+        <tr>
+            <td>Syslog REPL Intake</td>
+            <td><a href="mco1.app.sekoia.io:11514">mco1.app.sekoia.io:11514</a></td>
+        </tr>
     </tbody>
 </table>
 
@@ -181,7 +193,7 @@ UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai).
         </tr>
         <tr>
             <td>Location</td>
-            <td>🇦🇪 United Arab Emirates / Dubai</td>
+            <td>🇦🇪United Arab Emirates / Dubai</td>
         </tr>
         <tr>
             <td>Infrastructure</td>
@@ -200,6 +212,15 @@ UAE1 is our middle eastern region hosted in Azure (UAE North, Dubai).
             <td><a href="https://app.uae1.sekoia.io/api/v1/intake-http">https://app.uae1.sekoia.io/api/v1/intake-http</a></td>
         </tr>
         <tr>
+            <td>Syslog Intake</td>
+            <td><a href="app.uae1.sekoia.io:10514">app.uae1.sekoia.io:10514</a></td>
+        </tr>
+        <tr>
+            <td>Syslog REPL Intake</td>
+            <td><a href="app.uae1.sekoia.io:11514">app.uae1.sekoia.io:11514</a></td>
+        </tr>
+    </tbody>
+</table>
             <td>Syslog Intake</td>
             <td><a href="app.uae1.sekoia.io:10514">app.uae1.sekoia.io:10514</a></td>
         </tr>
