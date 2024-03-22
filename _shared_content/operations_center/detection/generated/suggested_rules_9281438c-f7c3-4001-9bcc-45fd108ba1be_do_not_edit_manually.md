@@ -2035,7 +2035,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     Detects remote service activity via remote access to the svcctl named pipe
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Remote Task Creation Via ATSVC Named Pipe"
     

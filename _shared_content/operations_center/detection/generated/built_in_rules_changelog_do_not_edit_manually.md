@@ -1,7 +1,13 @@
-Changelog _last update on 2024-03-18_
+Changelog _last update on 2024-03-22_
 
 ## Changelog
 
+### Remote Task Creation Via ATSVC Named Pipe
+  - 21/03/2024 - minor - change filter to ACL hex value
+    
+### Remote Service Activity Via SVCCTL Named Pipe
+  - 21/03/2024 - minor - change filter to ACL hex value and adapt effort
+    
 ### Microsoft 365 Suspicious Inbox Rule
   - 13/03/2024 - minor - Add another suspicious folder.
     

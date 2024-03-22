@@ -1,4 +1,4 @@
-Rules catalog includes **841 built-in detection rules** ([_last update on 2024-03-18_](rules_changelog.md)).
+Rules catalog includes **849 built-in detection rules** ([_last update on 2024-03-22_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -43,6 +43,14 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
 ??? abstract "System Network Connections Discovery"
     
     Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
+    
+**Gather Victim Host Information**
+
+??? abstract "Wmic Suspicious Commands"
+    
+    Detects suspicious commands used by the process wmic to get informations on the system.
     
     - **Effort:** advanced
     
@@ -1303,6 +1311,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value
+            
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -2550,6 +2562,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Anomaly Downloads"
+    
+    Detects a large number of downloads.
+    
+    - **Effort:** advanced
     
 ??? abstract "HTA Infection Chains"
     
@@ -3926,6 +3944,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value
+            
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -5138,6 +5160,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value
+            
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -9158,6 +9184,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 21/03/2024 - minor - Adding similarity strategy to reduce alerts creation.
         - 22/01/2024 - minor - Removing a file extension to allow broader detection.
         - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
         - 03/07/2023 - minor - Added french words for the command lines.
@@ -9827,8 +9854,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     Detects remote service activity via remote access to the svcctl named pipe
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value and adapt effort
+            
 ??? abstract "Smbexec.py Service Installation"
     
     Detects the use of smbexec.py tool by detecting a specific service installation
@@ -10131,6 +10162,36 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "CrowdStrike Falcon Mobile Detection Critical Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with critical severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection High Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with high severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection Informational Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with informational severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection Low Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with low severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection Medium Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with medium severity
+    
+    - **Effort:** master
+    
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -10172,6 +10233,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
     
     - **Effort:** advanced
+    
+??? abstract "Google Workspace External Sharing"
+    
+    Detects a large number of external sharing.
+    
+    - **Effort:** master
     
 ??? abstract "Koadic MSHTML Command"
     
