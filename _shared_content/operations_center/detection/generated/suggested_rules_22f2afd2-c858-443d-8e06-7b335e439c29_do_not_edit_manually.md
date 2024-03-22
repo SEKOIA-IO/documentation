@@ -261,6 +261,36 @@ The following Sekoia.io built-in rules match the intake **CrowdStrike Falcon**. 
     
     - **Effort:** master
 
+??? abstract "CrowdStrike Falcon Mobile Detection Critical Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with critical severity
+    
+    - **Effort:** master
+
+??? abstract "CrowdStrike Falcon Mobile Detection High Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with high severity
+    
+    - **Effort:** master
+
+??? abstract "CrowdStrike Falcon Mobile Detection Informational Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with informational severity
+    
+    - **Effort:** master
+
+??? abstract "CrowdStrike Falcon Mobile Detection Low Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with low severity
+    
+    - **Effort:** master
+
+??? abstract "CrowdStrike Falcon Mobile Detection Medium Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with medium severity
+    
+    - **Effort:** master
+
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
