@@ -21,7 +21,7 @@ jobs:
         run: mkdir -vp docs/stylesheets/
 
       - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.5.1
+        uses: gha-utilities/sass-build@v0.6.0
         with:
           source: src/sekoiaio.scss
           destination: docs/stylesheets/sekoiaio.css
