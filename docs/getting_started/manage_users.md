@@ -33,9 +33,6 @@ From this page, you can:
 - Delete assigned roles
 - Delete user from the community
 
-<img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
-
-
 ## In MSSP communities
 
 In an MSSP community, role management can be a bit tricky. 
