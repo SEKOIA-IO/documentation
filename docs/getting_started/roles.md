@@ -1,4 +1,4 @@
-# Overview
+# Manage roles 
 
 Role-based access systems are designed to enhance security and improve the user experience by defining user permissions based on their specific roles. These systems typically include built-in roles that are pre-defined and cannot be modified and Custom roles, providing additional options for user access control.
 
@@ -25,8 +25,6 @@ In addition to built-in roles, each admin may create Custom roles. These will wo
 ## Permissions
 
 You can discover all permissions associated either to built-in or custom roles directly from the UI in `Managed communities > Roles`
-
-![Permissions](/assets/roles_permissions.gif){: style="max-width:100%"}
 
 ## Legacy roles
 

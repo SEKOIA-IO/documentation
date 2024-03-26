@@ -2,7 +2,7 @@
 
 ## Authentication
 
-The app is accessible through the URL [app.sekoia.io](https://app.sekoia.io/). You’ll have to enter your email and password then hit Login.
+The app is accessible through the URL [app.sekoia.io](https://app.sekoia.io/) or another URL depending on your region and your legal or safety concerns (read [this article to learn more about how Sekoia handles regions](regions.md)). You will then have to enter your email and password then hit Login.
 
 We highly recommend using [2-factor authentication](account_security.md) to add a layer of security to your account. You can either use an Authentication app or a security token.
 
@@ -13,7 +13,7 @@ In case your forgot your password, you can hit the “Forgot password link” on
 
 ## User Interface
 
-Once you are logged in to [app.sekoia.io](https://app.sekoia.io/) and no matter which product you are subscribed to, you will have access to UI elements that were carefully designed to make your user experience more fluid on the platform.
+Once you are logged in to [app.sekoia.io](https://app.sekoia.io/) and no matter what plan you are subscribed to, you will have access to UI elements that were carefully designed to make your user experience more fluid on the platform.
 
 In this section, you’ll learn how to navigate the platform with ease.
 
@@ -49,7 +49,7 @@ By clicking on the dropdown, you can:
 
 **Community switch for MSSP**
 
-If you are an MSSP (Managed Security Service Provider), you probably have multiple communities to manage. In addition to searching for a specific community, you can also:
+If you have multi-tenant workspace, you probably have multiple communities to manage. In addition to searching for a specific community, you can also:
 
 - List all of your communities
 - Select more than one community
