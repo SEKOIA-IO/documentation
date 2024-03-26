@@ -1,12 +1,87 @@
-Changelog _last update on 2024-03-22_
+Changelog _last update on 2024-03-26_
 
 ## Changelog
 
+### Process Memory Dump Using Comsvcs
+  - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
+    
+### Bloodhound and Sharphound Tools Usage
+  - 26/03/2024 - minor - Adapted the rule to remove false positives.
+    
+### Lateral Movement - Remote Named Pipe
+  - 26/03/2024 - minor - Filter was improved to reduce false positives
+    
+### Impacket Wmiexec Module
+  - 22/03/2024 - minor - improve filter to extand detection
+    
+### Microsoft Entra ID (Azure AD) Successful Password Spraying From Single IP Address
+  - 22/03/2024 - major - More precise list of error codes for success and failure to reduce false positives.
+    
+### Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address
+  - 22/03/2024 - major - More precise list of error codes to reduce false positives.
+    
 ### Remote Task Creation Via ATSVC Named Pipe
   - 21/03/2024 - minor - change filter to ACL hex value
     
 ### Remote Service Activity Via SVCCTL Named Pipe
   - 21/03/2024 - minor - change filter to ACL hex value and adapt effort
+    
+### Smss Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Winlogon wrong parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Spoolsv Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Winrshost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Taskhost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Csrss Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Svchost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Winword wrong parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Taskhostw Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Lsass Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Searchindexer Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Wininit Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Gpscript Suspicious Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Wmiprvse Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Wsmprovhost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Logonui Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Userinit Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Dllhost Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
+    
+### Explorer Wrong Parent
+  - 19/03/2024 - major - Added filter to reduce false positives
     
 ### Microsoft 365 Suspicious Inbox Rule
   - 13/03/2024 - minor - Add another suspicious folder.
@@ -191,9 +266,6 @@ Changelog _last update on 2024-03-22_
 ### High Privileges Network Share Removal
   - 02/02/2024 - major - changing current pattern and adding another one
     
-### Svchost Wrong Parent
-  - 31/01/2024 - minor - Adding filters to reduce false positives
-    
 ### Inhibit System Recovery Deleting Backups
   - 31/01/2024 - minor - Improve selection filter
     
@@ -332,61 +404,7 @@ Changelog _last update on 2024-03-22_
 ### UAC Bypass via Event Viewer
   - 21/09/2023 - minor - Improve filter to reduce false positives
     
-### Smss Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Winlogon wrong parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Spoolsv Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Winrshost Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Taskhost Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Csrss Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Winword wrong parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Taskhostw Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Lsass Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Searchindexer Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Wininit Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Gpscript Suspicious Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Wmiprvse Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Wsmprovhost Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Logonui Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
 ### Opening Of a Password File
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Userinit Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Dllhost Wrong Parent
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-    
-### Explorer Wrong Parent
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
     
 ### Suspicious Network Args In Command Line

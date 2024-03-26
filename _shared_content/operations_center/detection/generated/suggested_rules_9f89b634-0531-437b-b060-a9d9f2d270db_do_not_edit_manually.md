@@ -21,12 +21,6 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** advanced
 
-??? abstract "Bloodhound and Sharphound Tools Usage"
-    
-    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
-    
-    - **Effort:** intermediate
-
 ??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
     
     Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
