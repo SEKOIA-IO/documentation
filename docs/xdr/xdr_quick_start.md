@@ -16,8 +16,6 @@ An Entity is an organizational unit mostly used for configuration and reporting 
 1. Go to the Entities page and create an Entity.
 2. Select the `Alert generation` mode of your choice.  We suggest you to select “Automatic” which will simplify the workflow of alert management for you. More details [here](https://docs.sekoia.io/xdr/features/collect/entities/).
 
-![entities](/assets/operation_center/quick_start/entities.png){: style="max-width:100%"}
-
 ### Create intakes
 
 The Intakes correspond to the different technologies used (also called Data Sources) that forward their logs to Sekoia.io XDR to be centralized for security monitoring. You can configure as much intakes as you need to increase your infrastructure security with Sekoia.io knowledge.
@@ -30,16 +28,12 @@ To create intakes associated to the technology you would like to collect:
 !!! note
     Find more details on each integration in our [integrations catalog](https://docs.sekoia.io/xdr/features/collect/integrations/).
 
-![intakes](/assets/operation_center/quick_start/intakes.png){: style="max-width:100%"}
-
 ### Activate detection rules
 
 Once your event logs are collected and normalized by Sekoia.io, you probably want to leverage them to detect suspicious activity within your perimeter. Rules contain the detection logic that determines when Alerts should be created.
 
 1. Enable all detection rules of effort levels 1 or 2 by filtering on each effort level then clicking on the `Enable all` button.
 2. Automate the activation of future detection rules with the same effort levels following [this procedure](https://docs.sekoia.io/xdr/features/detect/rules_catalog/#enable-new-rules).
-
-![rules](/assets/operation_center/quick_start/rules.png){: style="max-width:100%"}
 
 **That’s it!**
 
