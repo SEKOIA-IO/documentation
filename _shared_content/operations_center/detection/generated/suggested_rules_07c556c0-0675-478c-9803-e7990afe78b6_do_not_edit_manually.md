@@ -105,6 +105,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** intermediate
 
+??? abstract "Compression Followed By Suppression"
+    
+    Detects when a file is compressed and deleted
+    
+    - **Effort:** advanced
+
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item

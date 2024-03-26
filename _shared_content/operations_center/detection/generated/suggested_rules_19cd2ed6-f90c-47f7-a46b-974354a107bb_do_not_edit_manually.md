@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft Entra ID / A
     
     - **Effort:** master
 
+??? abstract "Microsoft Entra ID (Azure AD) MFA Method Change"
+    
+    This rule detects when an user makes a change to the multifactor authentication methods for their account. In environments where this rule is too noisy, alert filters should be applied, e.g. to focus on privileged accounts, or unusual source network locations.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Entra ID (Azure AD) Malicious IP"
     
     Detects when Microsoft Entra ID (Azure AD) identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).

@@ -33,12 +33,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** advanced
 
-??? abstract "Bloodhound and Sharphound Tools Usage"
-    
-    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
-    
-    - **Effort:** intermediate
-
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
