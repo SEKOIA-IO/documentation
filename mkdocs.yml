@@ -83,7 +83,7 @@ nav:
           - Tenable Identity Exposure / Alsid: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
           - BIND: xdr/features/collect/integrations/application/bind.md
-          - Суberwatch Detection: xdr/features/collect/integrations/application/cyberwatch_detection.md
+          - "\u0421\u0443berwatch Detection": xdr/features/collect/integrations/application/cyberwatch_detection.md
           - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
@@ -305,6 +305,7 @@ nav:
         - IPtoASN: xdr/features/automate/library/iptoasn.md
         - Imperva: xdr/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: xdr/features/automate/library/jumpcloud-directory-insights.md
+        - Lacework: xdr/features/automate/library/lacework.md
         - MISP: xdr/features/automate/library/misp.md
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
@@ -498,6 +499,7 @@ nav:
         - IPtoASN: tip/features/automate/library/iptoasn.md
         - Imperva: tip/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: tip/features/automate/library/jumpcloud-directory-insights.md
+        - Lacework: tip/features/automate/library/lacework.md
         - MISP: tip/features/automate/library/misp.md
         - MWDB: tip/features/automate/library/mwdb.md
         - Mandrill: tip/features/automate/library/mandrill.md
@@ -852,12 +854,12 @@ plugins:
       user_center/multi_factor_authentication.md: getting_started/account_security.md
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
+      xdr/features/collect/integrations/cloud_and_saas/duo_security.md: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       xdr/features/collect/integrations/cloud_and_saas/netskope_events.md: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
       xdr/features/collect/integrations/endpoint/checkpoint_harmony.md: xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md
       xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
-      xdr/features/collect/integrations/cloud_and_saas/duo_security.md: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
