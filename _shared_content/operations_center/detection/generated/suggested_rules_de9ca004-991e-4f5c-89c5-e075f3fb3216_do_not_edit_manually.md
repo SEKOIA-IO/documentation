@@ -67,19 +67,19 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     Audit events for admin activites, from Logins to policies' changes.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Netskope Alert"
     
     Forward alerts reported by Netskope.  
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Netskope DLP Alert"
     
     Detects DLP alerts which are not allowed.  
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Nimbo-C2 User Agent"
     
