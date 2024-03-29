@@ -2,12 +2,12 @@
 
 IOC detection is a critical mechanism in detecting attacks that are trying to harm your system or have already breached it. The Sekoia SOC platform is powered by our Threat Detection & Research (TDR) team, which constantly enriches our IOC database with its state-of-the-art investigations and extensive expertise in Intelligence.
 
-With IOC detection, all future and past events are verified automatically to ensure you anticipate, detect, and neutralize threats.
+With IOC detection, you can automatically identify potential threats in your past and future events by monitoring active IOCs. 
 
 ## How does IOC detection at Sekoia work?
 
 Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise. 
-All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page.
+All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page in the section `Active IOCs`.
 
 ![verified iocs](/assets/operation_center/rules_catalog/verified_iocs.gif){: style="max-width:100%"}
 
@@ -57,13 +57,13 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 | STIX path | ECS event field | 
 | --- | --- |
-| domain-name:value | client.domain<br>client.registered_domain<br>destination.domain<br>destination.registered_domain<br>dns.question.name<br>source.domain<br>source.registered_domain<br>server.domain<br>server.registered_domain<br>tls.client.x509.alternative_names<br>url.domain<br>x509.alternative_names<br>x509.subject.common_name |
+| domain-name:value | client.domain<br>client.registered_domain<br>destination.domain<br>destination.registered_domain<br>dns.question.name<br>dns.question.registered_domain<br>server.domain<br>server.registered_domain<br>source.domain<br>source.registered_domain<br>tls.[*client/server*].x509.alternative_names<br>tls.[*client/server*].x509.subject.common_name<br>url.domain<br>url.registered_domain |
 
 #### Observable type: Email Address
 
 | STIX path | ECS event field |
 | --- | --- |
-| email-addr:value| client.user.email<br>destination.user.email<br>destination.user.full_name<br>email.from.address<br>email.sender.address<br>email.to.address<br>email.cc.address<br>email.bcc.address<br>file.x509.alternative_names<brhost.user.email><br>server.user.email<br>source.user.email<br>source.user.full_name<br>tls.client.x509.alternative_names<br>user.email<br>user.effective.email<br>user.target.email |
+| email-addr:value| client.user.email<br>destination.user.email<br>destination.user.full_name<br>email.from.address<br>email.sender.address<br>email.to.address<br>email.cc.address<br>email.bcc.address<br>file.x509.alternative_names<brhost.user.email><br>server.user.email<br>source.user.email<br>source.user.full_name<br>user.email<br>user.effective.email<br>user.target.email<br>tls.[*client/server*].x509.alternative_names |
 | email-addr:display_name | destination.user.full_name<br>source.user.full_name |
 
 #### Observable type: File
@@ -85,7 +85,7 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 | STIX path | ECS event field |
 | --- | --- |
-| ipv4-addr:value | client.ip<br>destination.ip<br>host.ip<br>server.ip<br>source.ip |
+| ipv4-addr:value<br>ipv6-addr:value | client.ip<br>destination.ip<br>host.ip<br>server.ip<br>source.ip |
 
 #### Observable type: Network Traffic
 
