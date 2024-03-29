@@ -1,7 +1,25 @@
-Changelog _last update on 2024-03-27_
+Changelog _last update on 2024-03-29_
 
 ## Changelog
 
+### Netskope DLP Alert
+  - 28/03/2024 - minor - Rule effort was updated to master
+    
+### Netskope Alert
+  - 28/03/2024 - minor - Rule effort was updated to master
+    
+### Netskope Admin Audit
+  - 28/03/2024 - minor - Rule effort was updated to master
+    
+### WAF Correlation Block Multiple Destinations
+  - 28/03/2024 - minor - Rule effort was updated to master
+    
+### WAF Correlation Block actions
+  - 28/03/2024 - minor - Rule effort was updated to master
+    
+### Cloudflare WAF Correlation Alerts
+  - 28/03/2024 - minor - Rule effort was updated to master
+    
 ### Process Memory Dump Using Comsvcs
   - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
     
