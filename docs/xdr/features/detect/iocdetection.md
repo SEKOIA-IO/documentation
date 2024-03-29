@@ -2,12 +2,12 @@
 
 IOC detection is a critical mechanism in detecting attacks that are trying to harm your system or have already breached it. The Sekoia SOC platform is powered by our Threat Detection & Research (TDR) team, which constantly enriches our IOC database with its state-of-the-art investigations and extensive expertise in Intelligence.
 
-With IOC detection, all future and past events are verified automatically to ensure you anticipate, detect, and neutralize threats.
+With IOC detection, you can automatically identify potential threats in your past and future events by monitoring active IOCs. 
 
 ## How does IOC detection at Sekoia work?
 
 Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise. 
-All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page.
+All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page in the section `Active IOCs`.
 
 ![verified iocs](/assets/operation_center/rules_catalog/verified_iocs.gif){: style="max-width:100%"}
 
