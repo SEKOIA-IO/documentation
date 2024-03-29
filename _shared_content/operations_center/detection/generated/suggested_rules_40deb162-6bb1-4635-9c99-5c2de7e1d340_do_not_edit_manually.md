@@ -249,6 +249,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
     
     - **Effort:** advanced
 
+??? abstract "Compression Followed By Suppression"
+    
+    Detects when a file is compressed and deleted
+    
+    - **Effort:** advanced
+
 ??? abstract "Container Credential Access"
     
     Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
@@ -630,6 +636,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne Cloud Funn
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Nohup Exec"
+    
+    Detects suspicious usage of nohup which could be leveraged by an attacker to keep a process running or break out from restricted environments
     
     - **Effort:** intermediate
 

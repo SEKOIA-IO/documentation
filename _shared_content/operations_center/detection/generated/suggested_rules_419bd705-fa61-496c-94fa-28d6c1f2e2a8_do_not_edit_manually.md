@@ -21,12 +21,6 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     
     - **Effort:** advanced
 
-??? abstract "Bloodhound and Sharphound Tools Usage"
-    
-    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Broadcom/Symantec Endpoint Security Event Blocked"
     
     Broadcom/Symantec Endpoint Security blocked an action. Careful when activating this rule, it generates lots of events that are not always relevant for detection.

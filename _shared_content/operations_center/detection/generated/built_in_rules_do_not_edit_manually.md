@@ -1,4 +1,4 @@
-Rules catalog includes **841 built-in detection rules** ([_last update on 2024-03-15_](rules_changelog.md)).
+Rules catalog includes **852 built-in detection rules** ([_last update on 2024-03-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -43,6 +43,14 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
 ??? abstract "System Network Connections Discovery"
     
     Detects system network connections discovery via powershell and cmd.
+    
+    - **Effort:** advanced
+    
+**Gather Victim Host Information**
+
+??? abstract "Wmic Suspicious Commands"
+    
+    Detects suspicious commands used by the process wmic to get informations on the system.
     
     - **Effort:** advanced
     
@@ -145,12 +153,6 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
-??? abstract "Login Failed Brute-Force On AzureAD From Single IP Address"
-    
-    A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
-    
-    - **Effort:** advanced
-    
 ??? abstract "Microsoft Entra ID (Azure AD) Abnormal Token"
     
     Detects when Microsoft Entra ID (Azure AD) indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -175,6 +177,16 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address"
+    
+    A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 22/03/2024 - major - More precise list of error codes to reduce false positives.
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Malicious IP"
     
     Detects when Microsoft Entra ID (Azure AD) identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -193,6 +205,16 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Microsoft Entra ID (Azure AD) Successful Password Spraying From Single IP Address"
+    
+    An IP address performed several failed logins on multiple users to then have a successful login on one of them. Note that even if the sign-in was blocked by MFA (error 50074/50076/50158) or conditional access (error 50097/53003), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 22/03/2024 - major - More precise list of error codes for success and failure to reduce false positives.
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Suspicious Browser"
     
     Detects when Microsoft Entra ID (Azure AD) identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -232,12 +254,6 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Okta MFA Brute-Force Successful"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
-    
-    - **Effort:** advanced
-    
-??? abstract "Successful Password Spraying On AzureAD From Single IP Address"
-    
-    An IP address performed several failed logins on multiple users to then have a successful login on one of them.
     
     - **Effort:** advanced
     
@@ -277,12 +293,6 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
-??? abstract "Login Failed Brute-Force On AzureAD From Single IP Address"
-    
-    A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
-    
-    - **Effort:** advanced
-    
 ??? abstract "Microsoft Entra ID (Azure AD) Abnormal Token"
     
     Detects when Microsoft Entra ID (Azure AD) indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -307,6 +317,16 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Microsoft Entra ID (Azure AD) Login Failed Brute-Force From Single IP Address"
+    
+    A user has attempted to login several times (brute-force) on AzureAD and failed every time, all from the same source IP address and in a timerange of 5 minutes.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 22/03/2024 - major - More precise list of error codes to reduce false positives.
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Malicious IP"
     
     Detects when Microsoft Entra ID (Azure AD) identifies a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -325,6 +345,16 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+??? abstract "Microsoft Entra ID (Azure AD) Successful Password Spraying From Single IP Address"
+    
+    An IP address performed several failed logins on multiple users to then have a successful login on one of them. Note that even if the sign-in was blocked by MFA (error 50074/50076/50158) or conditional access (error 50097/53003), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
+    
+    - **Effort:** advanced
+    
+    - **Changelog:**
+    
+        - 22/03/2024 - major - More precise list of error codes for success and failure to reduce false positives.
+            
 ??? abstract "Microsoft Entra ID (Azure AD) Suspicious Browser"
     
     Detects when Microsoft Entra ID (Azure AD) identifies suspicious sign-in activity across multiple tenants from different countries in the same browser. To use this feature, you must have an Microsoft Entra ID (Azure AD) Premium P2 license (https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection).
@@ -364,12 +394,6 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Okta MFA Brute-Force Successful"
     
     A user has attempted to login several times (brute-force) on Okta and succeeded to login by spamming MFA.
-    
-    - **Effort:** advanced
-    
-??? abstract "Successful Password Spraying On AzureAD From Single IP Address"
-    
-    An IP address performed several failed logins on multiple users to then have a successful login on one of them.
     
     - **Effort:** advanced
     
@@ -1187,6 +1211,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 22/03/2024 - minor - improve filter to extand detection
+            
 ??? abstract "Invoke-TheHash Commandlets"
     
     Detects suspicious Invoke-TheHash PowerShell commandlet used for performing pass the hash WMI and SMB tasks.
@@ -1303,6 +1331,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value
+            
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -1391,6 +1423,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - minor - Adapted the rule to remove false positives.
+            
 ??? abstract "Correlation Linux Decode And Exec"
     
     A Base64 string has been decoded and executed through a pipe
@@ -2551,6 +2587,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Google Workspace Anomaly Downloads"
+    
+    Detects a large number of downloads.
+    
+    - **Effort:** advanced
+    
 ??? abstract "HTA Infection Chains"
     
     Detect the creation of a ZIP and HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
@@ -3276,6 +3318,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Cybereason EDR Alert"
     
@@ -3308,6 +3351,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Exfiltration Via Pscp"
     
@@ -3324,6 +3368,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Login Brute-Force Successful On SentinelOne EDR Management Console"
     
@@ -3356,6 +3401,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -3368,6 +3414,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Malicious Service Installations"
     
@@ -3462,6 +3509,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -3631,6 +3679,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -3660,6 +3709,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Suspicious DNS Child Process"
     
@@ -3684,6 +3734,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "TEHTRIS EDR Alert"
     
@@ -3702,6 +3753,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -3720,6 +3772,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Trend Micro Apex One Data Loss Prevention Alert"
     
@@ -3768,6 +3821,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -3796,6 +3850,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winlogon wrong parent"
     
@@ -3807,6 +3862,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -3819,6 +3875,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winword wrong parent"
     
@@ -3830,6 +3887,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -3852,6 +3910,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -3864,6 +3923,8 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 25/10/2023 - minor - Adding filter to reduce false positives.
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 **Deploy Container**
 
@@ -3926,6 +3987,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value
+            
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -4526,6 +4591,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -4538,6 +4604,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Explorer Wrong Parent"
     
@@ -4550,6 +4617,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -4560,6 +4628,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Logonui Wrong Parent"
     
@@ -4572,6 +4641,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -4584,6 +4654,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Malicious Service Installations"
     
@@ -4626,6 +4697,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -4657,6 +4729,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -4680,6 +4753,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "StoneDrill Service Install"
     
@@ -4698,6 +4772,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -4710,6 +4785,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -4728,6 +4804,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Userinit Wrong Parent"
     
@@ -4740,6 +4817,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -4758,6 +4836,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winlogon wrong parent"
     
@@ -4769,6 +4848,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -4781,6 +4861,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winword wrong parent"
     
@@ -4792,6 +4873,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -4804,6 +4886,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -4816,6 +4899,8 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 25/10/2023 - minor - Adding filter to reduce false positives.
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 **Event Triggered Execution**
 
@@ -5001,6 +5086,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft Entra ID (Azure AD) MFA Method Change"
+    
+    This rule detects when an user makes a change to the multifactor authentication methods for their account. In environments where this rule is too noisy, alert filters should be applied, e.g. to focus on privileged accounts, or unusual source network locations.
+    
+    - **Effort:** master
+    
 **Hijack Execution Flow**
 
 ??? abstract "DHCP Callout DLL Installation"
@@ -5138,6 +5229,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value
+            
 ??? abstract "STRRAT Scheduled Task"
     
     Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
@@ -5205,6 +5300,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Malicious Named Pipe"
     
@@ -5241,6 +5337,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -5266,6 +5363,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -5278,6 +5376,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -5300,6 +5399,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -5312,6 +5412,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -5324,6 +5425,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -5336,6 +5438,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -5348,6 +5451,8 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 25/10/2023 - minor - Adding filter to reduce false positives.
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 **Exploitation for Privilege Escalation**
 
@@ -5849,6 +5954,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Dllhost Wrong Parent"
     
@@ -5861,6 +5967,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Explorer Wrong Parent"
     
@@ -5873,6 +5980,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Gpscript Suspicious Parent"
     
@@ -5883,6 +5991,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Logonui Wrong Parent"
     
@@ -5895,6 +6004,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -5907,6 +6017,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Malicious Service Installations"
     
@@ -5949,6 +6060,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Searchprotocolhost Child Found"
     
@@ -5980,6 +6092,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -6003,6 +6116,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "StoneDrill Service Install"
     
@@ -6021,6 +6135,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -6033,6 +6148,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhost or Taskhostw Suspicious Child Found"
     
@@ -6051,6 +6167,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Userinit Wrong Parent"
     
@@ -6063,6 +6180,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "WMI Persistence Command Line Event Consumer"
     
@@ -6081,6 +6199,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winlogon wrong parent"
     
@@ -6092,6 +6211,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -6104,6 +6224,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Winword wrong parent"
     
@@ -6115,6 +6236,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -6127,6 +6249,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -6139,6 +6262,8 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 25/10/2023 - minor - Adding filter to reduce false positives.
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 **Event Triggered Execution**
 
@@ -6562,6 +6687,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Formbook Hijacked Process Command"
     
@@ -6677,6 +6803,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Malicious Named Pipe"
     
@@ -6713,6 +6840,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Searchprotocolhost Wrong Parent"
     
@@ -6738,6 +6866,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -6750,6 +6879,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Suspicious Process Requiring DLL Starts Without DLL"
     
@@ -6772,6 +6902,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - minor - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 31/01/2024 - minor - Adding filters to reduce false positives
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhost Wrong Parent"
     
@@ -6784,6 +6915,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Taskhostw Wrong Parent"
     
@@ -6796,6 +6928,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wmiprvse Wrong Parent"
     
@@ -6808,6 +6941,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Wsmprovhost Wrong Parent"
     
@@ -6820,6 +6954,8 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
         - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+        - 25/10/2023 - minor - Adding filter to reduce false positives.
+        - 19/03/2024 - major - Added filter to reduce false positives
             
 **Scripting**
 
@@ -6842,6 +6978,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     Detects a command that clears event logs which could indicate an attempt from an attacker to erase its previous traces.
     
     - **Effort:** intermediate
+    
+??? abstract "Compression Followed By Suppression"
+    
+    Detects when a file is compressed and deleted
+    
+    - **Effort:** advanced
     
 ??? abstract "ETW Tampering"
     
@@ -7838,6 +7980,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft Entra ID (Azure AD) MFA Method Change"
+    
+    This rule detects when an user makes a change to the multifactor authentication methods for their account. In environments where this rule is too noisy, alert filters should be applied, e.g. to focus on privileged accounts, or unusual source network locations.
+    
+    - **Effort:** master
+    
 **Impair Defenses**
 
 ??? abstract "AMSI Deactivation Using Registry Key"
@@ -8419,6 +8567,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Linux Suspicious Nohup Exec"
+    
+    Detects suspicious usage of nohup which could be leveraged by an attacker to keep a process running or break out from restricted environments
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Microsoft 365 Suspicious Inbox Rule"
     
     Business Email Compromise threat actors often create inbox rules to forward, hide, or delete emails containing sensitive information. This rule detects common caracteristics of malicious inbox rules.
@@ -8825,6 +8979,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
+            
 ??? abstract "Process Memory Dump Using Createdump"
     
     Detects the use of createdump.exe in command line to dump the memory of a process. This technique is used by attackers for privilege escalation and pivot.
@@ -9158,6 +9316,7 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 21/03/2024 - minor - Adding similarity strategy to reduce alerts creation.
         - 22/01/2024 - minor - Removing a file extension to allow broader detection.
         - 16/11/2023 - minor - Changing effort level and adding filter to reduce false positives.
         - 03/07/2023 - minor - Added french words for the command lines.
@@ -9224,6 +9383,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
     
     - **Effort:** intermediate
+    
+??? abstract "Microsoft Entra ID (Azure AD) MFA Method Change"
+    
+    This rule detects when an user makes a change to the multifactor authentication methods for their account. In environments where this rule is too noisy, alert filters should be applied, e.g. to focus on privileged accounts, or unusual source network locations.
+    
+    - **Effort:** master
     
 **Adversary-in-the-Middle**
 
@@ -9486,6 +9651,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - minor - Adapted the rule to remove false positives.
+            
 ??? abstract "Domain Group And Permission Enumeration"
     
     Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
@@ -9568,6 +9737,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - minor - Adapted the rule to remove false positives.
+            
 ??? abstract "Discovery Commands Correlation"
     
     Detects some frequent discovery commands used by some ransomware operators.
@@ -9660,6 +9833,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - minor - Adapted the rule to remove false positives.
+            
 ??? abstract "Domain Trust Discovery Through LDAP"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
@@ -9783,6 +9960,10 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - minor - Filter was improved to reduce false positives
+            
 ??? abstract "Lsass Access Through WinRM"
     
     Detects the access of LSASS.exe process through Windows Remote Management (WinRM) protocol. This is often done using Invoke-Mimikatz -ComputerName command, which uses PSRemoting and therefore WinRM. However, this is not limited to the Mimikatz threat and can be done by other tools as well. This rule needs Process Access monitoring, which can be done using Sysmon's event ID 10.
@@ -9827,8 +10008,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     Detects remote service activity via remote access to the svcctl named pipe
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/03/2024 - minor - change filter to ACL hex value and adapt effort
+            
 ??? abstract "Smbexec.py Service Installation"
     
     Detects the use of smbexec.py tool by detecting a specific service installation
@@ -10131,6 +10316,36 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "CrowdStrike Falcon Mobile Detection Critical Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with critical severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection High Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with high severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection Informational Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with informational severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection Low Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with low severity
+    
+    - **Effort:** master
+    
+??? abstract "CrowdStrike Falcon Mobile Detection Medium Severity"
+    
+    CrowdStrike Falcon for Mobile raised an alert with medium severity
+    
+    - **Effort:** master
+    
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -10172,6 +10387,12 @@ Rules catalog includes **841 built-in detection rules** ([_last update on 2024-0
     Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
     
     - **Effort:** advanced
+    
+??? abstract "Google Workspace External Sharing"
+    
+    Detects a large number of external sharing.
+    
+    - **Effort:** master
     
 ??? abstract "Koadic MSHTML Command"
     

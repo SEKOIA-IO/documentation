@@ -351,6 +351,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Compression Followed By Suppression"
+    
+    Detects when a file is compressed and deleted
+    
+    - **Effort:** advanced
+
 ??? abstract "Computer Account Deleted"
     
     Detects computer account deletion.
@@ -1825,7 +1831,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects remote service activity via remote access to the svcctl named pipe
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Remote Task Creation Via ATSVC Named Pipe"
     

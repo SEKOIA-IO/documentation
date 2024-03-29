@@ -41,7 +41,8 @@ nav:
     - Edit a community: getting_started/community-edit.md
     - Create a sub-community: getting_started/community-create_sub_com.md
     - Set up community security:
-      - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
+      - Session duration: getting_started/session_duration.md
+      - SSO with OpenID Connect: getting_started/sso/openid_connect.md
       - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
       - SSO with Okta: getting_started/sso/okta.md
   - 3. Navigate on the platform: getting_started/navigation.md
@@ -82,6 +83,7 @@ nav:
           - Tenable Identity Exposure / Alsid: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
           - BIND: xdr/features/collect/integrations/application/bind.md
+          - "\u0421\u0443berwatch Detection": xdr/features/collect/integrations/application/cyberwatch_detection.md
           - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
@@ -131,6 +133,7 @@ nav:
             - Google Workspace: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
           - Imperva WAF: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
           - Jumpcloud Directory Insights: xdr/features/collect/integrations/cloud_and_saas/jumpcloud_directory_insights.md
+          - Lacework Cloud Security: xdr/features/collect/integrations/cloud_and_saas/lacework_cloud_security.md
           - Microsoft Azure:
             - Microsoft Entra ID (Azure AD): xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md
             - Azure Front Door: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
@@ -303,6 +306,7 @@ nav:
         - IPtoASN: xdr/features/automate/library/iptoasn.md
         - Imperva: xdr/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: xdr/features/automate/library/jumpcloud-directory-insights.md
+        - Lacework: xdr/features/automate/library/lacework.md
         - MISP: xdr/features/automate/library/misp.md
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
@@ -496,6 +500,7 @@ nav:
         - IPtoASN: tip/features/automate/library/iptoasn.md
         - Imperva: tip/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: tip/features/automate/library/jumpcloud-directory-insights.md
+        - Lacework: tip/features/automate/library/lacework.md
         - MISP: tip/features/automate/library/misp.md
         - MWDB: tip/features/automate/library/mwdb.md
         - Mandrill: tip/features/automate/library/mandrill.md
@@ -610,6 +615,7 @@ plugins:
       integrations/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
       integrations/cisco-asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
       integrations/cisco_asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
+      integrations/cyberwatch.md: xdr/features/collect/integrations/application/cyberwatch_detection.md
       integrations/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
       integrations/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
@@ -849,12 +855,12 @@ plugins:
       user_center/multi_factor_authentication.md: getting_started/account_security.md
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
+      xdr/features/collect/integrations/cloud_and_saas/duo_security.md: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       xdr/features/collect/integrations/cloud_and_saas/netskope_events.md: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
       xdr/features/collect/integrations/endpoint/checkpoint_harmony.md: xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md
       xdr/features/collect/integrations/endpoint/trend_micro_deep_security.md: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
-      xdr/features/collect/integrations/cloud_and_saas/duo_security.md: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
 - redoc
 - intakes_by_uuid
 repo_url: https://github.com/SEKOIA-IO/documentation
