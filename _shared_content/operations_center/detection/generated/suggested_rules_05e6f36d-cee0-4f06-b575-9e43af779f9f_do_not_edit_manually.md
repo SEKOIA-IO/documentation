@@ -51,6 +51,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "AutoIt3 Execution From Suspicious Folder"
+    
+    Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.
+    
+    - **Effort:** advanced
+
 ??? abstract "Autorun Keys Modification"
     
     Detects modification of autostart extensibility point (ASEP) in registry. Prerequisites are Logging for Registry events in the Sysmon configuration (events 12 and 13).
@@ -219,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
+??? abstract "Csrss Wrong Parent"
+    
+    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -294,6 +306,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
 ??? abstract "Dism Disabling Windows Defender"
     
     Detects windows defender disabled by dism.
+    
+    - **Effort:** advanced
+
+??? abstract "Dllhost Wrong Parent"
+    
+    Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
     
     - **Effort:** advanced
 
@@ -585,6 +603,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Logonui Wrong Parent"
+    
+    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
+??? abstract "Lsass Wrong Parent"
+    
+    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
 ??? abstract "MMC Spawning Windows Shell"
     
     Detects a Windows command line executable started from MMC process
@@ -602,6 +632,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
     
     - **Effort:** intermediate
+
+??? abstract "MS Office Product Spawning Exe in User Dir"
+    
+    Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
+    
+    - **Effort:** master
 
 ??? abstract "MSBuild Abuse"
     
@@ -879,6 +915,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
+??? abstract "Phorpiex Process Masquerading"
+    
+    Detects specific process executable path used by the Phorpiex botnet to masquerade its system process network activity. It looks for a pattern of a system process executable name that is not legitimate and running from a folder that is created via a random algorithm 13-15 numbers long.
+    
+    - **Effort:** elementary
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
@@ -1029,6 +1071,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** elementary
 
+??? abstract "RUN Registry Key Created From Suspicious Folder"
+    
+    Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
+    
+    - **Effort:** advanced
+
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
@@ -1100,6 +1148,30 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects schtasks started from suspicious and/or unusual processes.
     
     - **Effort:** intermediate
+
+??? abstract "Searchindexer Wrong Parent"
+    
+    Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
+    
+    - **Effort:** advanced
+
+??? abstract "Searchprotocolhost Wrong Parent"
+    
+    Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
+    
+    - **Effort:** advanced
+
+??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
+    
+    Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
+    
+    - **Effort:** elementary
+
+??? abstract "Smss Wrong Parent"
+    
+    Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
+    
+    - **Effort:** advanced
 
 ??? abstract "Socat Relaying Socket"
     
@@ -1323,6 +1395,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious desktop.ini Action"
+    
+    Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
+    
+    - **Effort:** advanced
+
+??? abstract "Svchost Wrong Parent"
+    
+    Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
+    
+    - **Effort:** advanced
+
 ??? abstract "Sysprep On AppData Folder"
     
     Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
@@ -1334,6 +1418,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     System info discovery, attempt to detects basic command use to fingerprint a host
     
     - **Effort:** master
+
+??? abstract "Taskhost Wrong Parent"
+    
+    Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
+    
+    - **Effort:** advanced
+
+??? abstract "Taskhostw Wrong Parent"
+    
+    Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
+    
+    - **Effort:** advanced
 
 ??? abstract "UAC Bypass Using Fodhelper"
     
@@ -1358,6 +1454,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
     
     - **Effort:** master
+
+??? abstract "Userinit Wrong Parent"
+    
+    Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
 
 ??? abstract "Venom Multi-hop Proxy agent detection"
     
@@ -1431,6 +1533,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** advanced
 
+??? abstract "Winlogon wrong parent"
+    
+    Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
 ??? abstract "Winrshost Wrong Parent"
     
     Detects if the Winrshosts process was executed by a non-legitimate parent process The winrshost.exe is a Host Process for WinRM's Remote Shell plugin.
@@ -1460,6 +1568,18 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     Detects either remote or local code execution using wmic tool.
     
     - **Effort:** intermediate
+
+??? abstract "Wmiprvse Wrong Parent"
+    
+    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
+    
+    - **Effort:** advanced
+
+??? abstract "Wsmprovhost Wrong Parent"
+    
+    Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
+    
+    - **Effort:** advanced
 
 ??? abstract "XCopy Suspicious Usage"
     

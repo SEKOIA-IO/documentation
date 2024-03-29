@@ -1,4 +1,4 @@
-Rules catalog includes **852 built-in detection rules** ([_last update on 2024-03-27_](rules_changelog.md)).
+Rules catalog includes **852 built-in detection rules** ([_last update on 2024-03-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Network Information**
 
@@ -72,8 +72,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Detection of multiple alerts (more than 5) triggered by the same source by Cloudflare detection rules
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -108,14 +112,22 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Detection of multiple block actions (more than 10) by the Web Application Firewall (WAF) triggered by the same source to mutliple destinations
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ??? abstract "WAF Correlation Block actions"
     
     Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ## Resource Development
 **Acquire Infrastructure**
 
@@ -602,8 +614,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Audit events for admin activites, from Logins to policies' changes.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -4169,8 +4185,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Audit events for admin activites, from Logins to policies' changes.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -5626,8 +5646,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Audit events for admin activites, from Logins to policies' changes.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -7179,8 +7203,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Audit events for admin activites, from Logins to policies' changes.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ??? abstract "Okta Many Passwords Reset Attempt"
     
     This rule identifies a high number of Okta user password reset or account unlock attempts. An adversary may attempt to obtain unauthorized access to Okta user accounts using these methods and attempt to blend in with normal activity in their target's environment and evade detection.
@@ -9715,8 +9743,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Detects DLP alerts which are not allowed.  
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 **Account Discovery**
 
 ??? abstract "AD Privileged Users Or Groups Reconnaissance"
@@ -10183,8 +10215,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Detects DLP alerts which are not allowed.  
     
-    - **Effort:** intermediate
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 **Adversary-in-the-Middle**
 
 ??? abstract "EvilProxy Phishing Domain"
@@ -10835,8 +10871,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     Forward alerts reported by Netskope.  
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 28/03/2024 - minor - Rule effort was updated to master
+            
 ??? abstract "Remote File Copy"
     
     Detects the use of remote tools that copy files from or to remote systems
