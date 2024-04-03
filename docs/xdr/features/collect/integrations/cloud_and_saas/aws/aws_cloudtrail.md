@@ -11,9 +11,13 @@ AWS CloudTrail is a service that enables governance, compliance, operational aud
 
 ## Configure
 
+{!_shared_content/operations_center/integrations/aws_create_s3_sqs_notification.md!}
+
 ### CloudTrail trail
 
-As a prerequisite you need an existing [CloudTrail trail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-in-the-console.html) and configure it to record activities from services that you want to monitor.
+In order to allow Cloudtrail to store logs in S3, you have to create an **AWS S3 Policy**. Follow [this guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html) to edit your S3 Bucket.
+
+You need an existing [CloudTrail trail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-in-the-console.html) and configure it to record activities from services that you want to monitor.
 
 In the AWS console, navigate to: `Services > CloudTrail > Trails`. From there, enable the events that you want to record:
 
@@ -22,10 +26,6 @@ In the AWS console, navigate to: `Services > CloudTrail > Trails`. From there, e
 - Data events: provide visibility into the resource operations performed on or within a resource
 
 Activate the logging on the trail through the switch button (On/Off) located on the top right hand corner of the trail page.
-
-{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
-
-{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
 
 ### Create the intake
 
