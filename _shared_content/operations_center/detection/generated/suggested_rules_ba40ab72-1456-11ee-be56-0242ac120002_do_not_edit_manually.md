@@ -75,6 +75,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
     
     - **Effort:** master
 
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
+    
+    - **Effort:** master
+
 ??? abstract "SEKOIA.IO Intelligence Feed"
     
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
@@ -89,6 +95,6 @@ The following Sekoia.io built-in rules match the intake **Trellix EPO [ALPHA]**.
 
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master

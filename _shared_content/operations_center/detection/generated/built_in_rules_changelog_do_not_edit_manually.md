@@ -1,4 +1,4 @@
-Changelog _last update on 2024-03-29_
+Changelog _last update on 2024-04-04_
 
 ## Changelog
 
@@ -20,14 +20,152 @@ Changelog _last update on 2024-03-29_
 ### Cloudflare WAF Correlation Alerts
   - 28/03/2024 - minor - Rule effort was updated to master
     
+### Active Directory Delegate To KRBTGT Service
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Dynwrapx Module Loading
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Microsoft Defender Antivirus Threat Detected
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Mimikatz LSASS Memory Access
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### NetNTLM Downgrade Attack
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Active Directory Database Dump Via Ntdsutil
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Admin User RDP Remote Logon
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### DC Shadow via Service Principal Name (SPN) creation
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Denied Access To Remote Desktop
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### AD User Enumeration
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Putty Sessions Listing
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Cobalt Strike Default Service Creation Usage
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### Process Memory Dump Using Comsvcs
   - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
     
 ### Bloodhound and Sharphound Tools Usage
   - 26/03/2024 - minor - Adapted the rule to remove false positives.
     
+### Active Directory Replication User Backdoor
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Password Change On Directory Service Restore Mode (DSRM) Account
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Possible RottenPotato Attack
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Successful Overpass The Hash Attempt
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### CVE-2017-11882 Microsoft Office Equation Editor Vulnerability
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### LSASS Access From Non System Account
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Creation or Modification of a GPO Scheduled Task
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Password Dumper Activity On LSASS
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Active Directory Replication from Non Machine Account
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Impacket Secretsdump.py Tool
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Backup Catalog Deleted
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Admin Share Access
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Microsoft Defender Antivirus Configuration Changed
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### APT29 Fake Google Update Service Install
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Account Added To A Security Enabled Group
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Legitimate Process Execution From Unusual Folder
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Account Removed From A Security Enabled Group
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Computer Account Deleted
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Domain Trust Created Or Removed
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Smbexec.py Service Installation
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Microsoft Defender Antivirus History Deleted
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### DCSync Attack
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Eventlog Cleared
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Malware Outbreak
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Antivirus Relevant File Paths Alerts
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Microsoft Defender Antivirus Tampering Detected
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Malicious Service Installations
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Active Directory User Backdoors
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### LSASS Memory Dump
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Possible Replay Attack
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### Lateral Movement - Remote Named Pipe
-  - 26/03/2024 - minor - Filter was improved to reduce false positives
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### AD Privileged Users Or Groups Reconnaissance
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Chafer (APT 39) Activity
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### StoneDrill Service Install
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Microsoft Defender Antivirus Exclusion Configuration
+  - 26/03/2024 - major - Rule's pattern field changed
     
 ### Impacket Wmiexec Module
   - 22/03/2024 - minor - improve filter to extand detection
@@ -224,9 +362,6 @@ Changelog _last update on 2024-03-29_
 ### CrowdStrike Falcon Intrusion Detection Medium Severity
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
-### Microsoft Defender Antivirus Threat Detected
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
 ### Microsoft Defender Antivirus Disabled Base64 Encoded
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
@@ -234,12 +369,6 @@ Changelog _last update on 2024-03-29_
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### MS Office Product Spawning Exe in User Dir
-  - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
-    
-### Netsh Port Forwarding
-  - 15/02/2024 - minor - Added filter to reduce false positives
-    
-### Antivirus Relevant File Paths Alerts
   - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
     
 ### NlTest Usage
@@ -304,9 +433,6 @@ Changelog _last update on 2024-03-29_
     
 ### Windows Registry Persistence COM Search Order Hijacking
   - 11/01/2024 - minor - Adding filtering for some FPs
-    
-### Legitimate Process Execution From Unusual Folder
-  - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
     
 ### Suspicious Driver Loaded
   - 02/01/2024 - minor - improve selection to avoid FP
@@ -380,9 +506,6 @@ Changelog _last update on 2024-03-29_
 ### ETW Tampering
   - 08/11/2023 - minor - Added filter to reduce false positives
     
-### Denied Access To Remote Desktop
-  - 19/10/2023 - minor - Minor change in selection to reduce false positives.
-    
 ### Domain Trust Discovery Through LDAP
   - 19/10/2023 - minor - improve filter to reduce false positives
     
@@ -428,12 +551,6 @@ Changelog _last update on 2024-03-29_
 ### Suspicious Network Args In Command Line
   - 10/08/2023 - major - Added a list of suspicious processes to drastically reduce false positives.
     
-### Microsoft Defender Antivirus Tampering Detected
-  - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
-    
-### Microsoft Defender Antivirus Exclusion Configuration
-  - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
-    
 ### Okta User Logged In Multiple Applications
   - 07/08/2023 - major - Switching type from event_count to value_count | Adding Target in order to match only on different Apps
     
@@ -460,9 +577,6 @@ Changelog _last update on 2024-03-29_
     
 ### Rclone Process
   - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
-    
-### Mimikatz LSASS Memory Access
-  - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
     
 ### HackTools Suspicious Process Names In Command Line
   - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
@@ -499,12 +613,6 @@ Changelog _last update on 2024-03-29_
     
 ### Mimikatz Basic Commands
   - 06/04/2023 - minor - Added a filter to the rule as many false positives were observed.
-    
-### Active Directory User Backdoors
-  - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
-    
-### LSASS Memory Dump
-  - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
     
 ### Suspicious PowerShell Invocations - Generic
   - 28/03/2023 - minor - Excluded some commonly observed false positives.

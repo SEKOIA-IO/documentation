@@ -143,7 +143,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "Compression Followed By Suppression"
     
-    Detects when a file is compressed and deleted
+    Detects when a file is compressed and deleted.
     
     - **Effort:** advanced
 
@@ -269,19 +269,13 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "Erase Shell History"
     
-    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history
+    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history.
     
     - **Effort:** advanced
 
 ??? abstract "Exchange Mailbox Export"
     
-    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file.
-    
-    - **Effort:** intermediate
-
-??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
+    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
     
     - **Effort:** intermediate
 
@@ -455,25 +449,25 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
     
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line or PowerShell scripts.
     
     - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus Disable Using Registry"
     
-    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line or PowerShell scripts.
     
     - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    Windows Defender history directory has been deleted. This could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
 
@@ -485,7 +479,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
 
@@ -494,6 +488,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
     Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Mshta JavaScript Execution"
     
@@ -551,7 +551,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "Netsh RDP Port Opening"
     
-    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware
+    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware.
     
     - **Effort:** intermediate
 
@@ -587,7 +587,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "Ngrok Process Execution"
     
-    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling. 
+    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling.
     
     - **Effort:** intermediate
 
@@ -659,7 +659,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "PowerShell Download From URL"
     
-    Detects a Powershell process that contains download commands in its command line string
+    Detects a Powershell process that contains download commands in its command line string.
     
     - **Effort:** advanced
 
@@ -677,19 +677,19 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
     
-    Detects Commandlet names and arguments from the Nishang exploitation framework
+    Detects Commandlet names and arguments from the Nishang exploitation framework.
     
     - **Effort:** advanced
 
 ??? abstract "Powershell UploadString Function"
     
-    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
 
 ??? abstract "Powershell Web Request"
     
-    Detects the use of various web request methods executed remotely via Windows PowerShell
+    Detects the use of various web request methods executed remotely via Windows PowerShell.
     
     - **Effort:** advanced
 
@@ -762,6 +762,12 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
 
@@ -869,7 +875,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
-    Detects suspicious PowerShell invocation command parameters
+    Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
 
@@ -929,7 +935,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SNS**. Thi
 
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
 

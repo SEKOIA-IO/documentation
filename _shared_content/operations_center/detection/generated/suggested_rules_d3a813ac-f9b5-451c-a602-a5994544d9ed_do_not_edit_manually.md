@@ -231,9 +231,69 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** elementary
 
+??? abstract "Account Added To A Security Enabled Group"
+    
+    Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
+    
+    - **Effort:** master
+
+??? abstract "Account Removed From A Security Enabled Group"
+    
+    Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
+    
+    - **Effort:** master
+
+??? abstract "Backup Catalog Deleted"
+    
+    The rule detects when the Backup Catalog has been deleted. It means the administrators will not be able to access any backups that were created earlier to perform recoveries. This is often being done using the wbadmin.exe tool.
+    
+    - **Effort:** intermediate
+
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+
+??? abstract "Domain Trust Created Or Removed"
+    
+    A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Defender Antivirus History Deleted"
+    
+    Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Defender Antivirus Tampering Detected"
+    
+    Detection of Windows Defender Tampering, from definitions' deletion to deactivation of parts or all of Defender.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Defender Antivirus Threat Detected"
+    
+    Detection of a windows defender alert indicating the presence of potential malware
+    
+    - **Effort:** advanced
+
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
+    
+    - **Effort:** intermediate
+
+??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
+    
+    The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
+    
+    - **Effort:** intermediate
+
+??? abstract "Possible Replay Attack"
+    
+    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
     - **Effort:** intermediate
 

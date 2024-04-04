@@ -3,15 +3,27 @@
 The following Sekoia.io built-in rules match the intake **Sophos EDR**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Sophos EDR on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_3f330d19-fdea-48ac-96bd-91a447bb26bd_do_not_edit_manually.json){ .md-button }
+??? abstract "Account Added To A Security Enabled Group"
+    
+    Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
+    
+    - **Effort:** master
+
+??? abstract "Account Removed From A Security Enabled Group"
+    
+    Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
+    
+    - **Effort:** master
+
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
-    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
     
     - **Effort:** elementary
 
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
 
@@ -33,6 +45,12 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     - **Effort:** intermediate
 
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -44,6 +62,12 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
     
     - **Effort:** elementary
+
+??? abstract "Domain Trust Created Or Removed"
+    
+    A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
+    
+    - **Effort:** advanced
 
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -63,15 +87,27 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
     
     - **Effort:** advanced
 
+??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
+    
+    The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
     
     - **Effort:** elementary
 
-??? abstract "ProxyShell Exchange Suspicious Paths"
+??? abstract "Possible Replay Attack"
     
-    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
+    
+    - **Effort:** intermediate
+
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -83,7 +119,7 @@ The following Sekoia.io built-in rules match the intake **Sophos EDR**. This doc
 
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
 

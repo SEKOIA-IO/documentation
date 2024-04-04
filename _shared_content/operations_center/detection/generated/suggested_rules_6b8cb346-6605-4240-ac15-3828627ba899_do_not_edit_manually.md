@@ -65,7 +65,7 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 
 ??? abstract "Compression Followed By Suppression"
     
-    Detects when a file is compressed and deleted
+    Detects when a file is compressed and deleted.
     
     - **Effort:** advanced
 
@@ -126,12 +126,6 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 ??? abstract "ETW Tampering"
     
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
-    
-    - **Effort:** intermediate
-
-??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
 
@@ -209,19 +203,19 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 
 ??? abstract "Microsoft Defender Antivirus Disable Using Registry"
     
-    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line or PowerShell scripts.
     
     - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    Windows Defender history directory has been deleted. This could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
 
@@ -233,7 +227,7 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
 
@@ -242,6 +236,12 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
     Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
 
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
@@ -323,7 +323,7 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 
 ??? abstract "Powershell UploadString Function"
     
-    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
 
@@ -425,7 +425,7 @@ The following Sekoia.io built-in rules match the intake **WALLIX Bastion**. This
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
-    Detects suspicious PowerShell invocation command parameters
+    Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
 

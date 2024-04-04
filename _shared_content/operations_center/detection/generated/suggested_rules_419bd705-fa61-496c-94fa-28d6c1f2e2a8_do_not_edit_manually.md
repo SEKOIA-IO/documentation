@@ -47,19 +47,19 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
 
 ??? abstract "Burp Suite Tool Detected"
     
-    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
     
     - **Effort:** intermediate
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
-    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
     
     - **Effort:** elementary
 
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
 
@@ -177,9 +177,9 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
     
     - **Effort:** advanced
 
-??? abstract "ProxyShell Exchange Suspicious Paths"
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
-    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -204,6 +204,12 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
 
@@ -233,7 +239,7 @@ The following Sekoia.io built-in rules match the intake **Broadcom/Symantec Endp
 
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
 
