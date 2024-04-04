@@ -20,13 +20,17 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 ### Configure log export
 
+#### Prerequisite
+
+- Being an Administrator of the organization or Owner of the organization.
+
 #### Set up the export type
 
-In the OGO interface, go to `My Profile > Log Export`. Select `Sekoia` as the export type and paste the intake key in the form.
+In the OGO interface, go to `My Account > My Organization > Log Export`. Select `Sekoia` as the export type and paste the intake key in the form.
 
 #### Activate export for sites
 
-In the general configuration tab of desired sites, in the `Owner` section, activate the `Log export`.
+In the general configuration tab of desired sites, in the `Organization Owner/Administrator` section, activate the `Log export`.
 
 #### Activate export for clusters
 
