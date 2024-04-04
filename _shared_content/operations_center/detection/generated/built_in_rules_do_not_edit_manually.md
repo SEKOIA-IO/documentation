@@ -1,5 +1,13 @@
-Rules catalog includes **852 built-in detection rules** ([_last update on 2024-03-29_](rules_changelog.md)).
+Rules catalog includes **855 built-in detection rules** ([_last update on 2024-04-04_](rules_changelog.md)).
 ## Reconnaissance
+**Gather Victim Identity Information**
+
+??? abstract "Anomaly Possible Sysvol Dump"
+    
+    The rule detects abnormally high access to sysvol files.
+    
+    - **Effort:** master
+    
 **Gather Victim Network Information**
 
 ??? abstract "ACLight Discovering Privileged Accounts"
@@ -58,7 +66,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Burp Suite Tool Detected"
     
-    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
     
     - **Effort:** intermediate
     
@@ -161,7 +169,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
     
-    A user has attempted to login several times (brute-force) on through Rubycat PROVE IT protected devices and succeeded to login.
+    A user has attempted to login several times (brute-force) through Rubycat PROVE IT protected devices and succeeded to login.
     
     - **Effort:** advanced
     
@@ -301,7 +309,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Login Brute-Force Successful On Rubycat PROVE IT"
     
-    A user has attempted to login several times (brute-force) on through Rubycat PROVE IT protected devices and succeeded to login.
+    A user has attempted to login several times (brute-force) through Rubycat PROVE IT protected devices and succeeded to login.
     
     - **Effort:** advanced
     
@@ -488,12 +496,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Removed From A Security Enabled Group"
     
     Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
     This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted. Depending on the network environment some failed logons Status can be added to the list.
@@ -510,15 +526,19 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
-    Spots many failed attempts to log on an administration interface. 
+    Spots many failed attempts to log on an administration interface.
     
     - **Effort:** master
     
@@ -531,6 +551,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
@@ -678,7 +699,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
-    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace. 
+    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.
     
     - **Effort:** intermediate
     
@@ -690,19 +711,19 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "CVE-2019-0604 SharePoint"
     
-    Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604)
+    Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604).
     
     - **Effort:** advanced
     
 ??? abstract "CVE-2019-11510 Pulse Secure Exploit"
     
-    Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement. Among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). 	 An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
+    Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
     
     - **Effort:** elementary
     
 ??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
     
-    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack.
     
     - **Effort:** elementary
     
@@ -714,31 +735,31 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
-    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
     
     - **Effort:** elementary
     
 ??? abstract "CVE-2020-1147 SharePoint"
     
-    Detection of SharePoint vulnerability CVE-2020-1147
+    Detection of SharePoint vulnerability CVE-2020-1147.
     
     - **Effort:** advanced
     
 ??? abstract "CVE-2020-14882 Oracle WebLogic Server"
     
-    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952)
+    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952).
     
     - **Effort:** advanced
     
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
     
 ??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
     
-    Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902
+    Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902.
     
     - **Effort:** elementary
     
@@ -756,7 +777,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "CVE-2021-21985 VMware vCenter"
     
-    The vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
+    The VMware vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
     
     - **Effort:** advanced
     
@@ -766,7 +787,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
     
-    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt.
     
     - **Effort:** advanced
     
@@ -788,7 +809,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
-??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
+??? abstract "CVE-2021-34527 PrintNightmare Suspicious Actions From Spoolsv"
     
     Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
     
@@ -808,7 +829,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
     
-    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189
+    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189.
     
     - **Effort:** elementary
     
@@ -1200,7 +1221,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Suspicious HWP Child Process"
+??? abstract "Suspicious Hangul Word Processor Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
     
@@ -1323,12 +1344,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -1611,19 +1640,19 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
     
-    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189
+    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189.
     
     - **Effort:** elementary
     
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
     
     - **Effort:** intermediate
     
 ??? abstract "FromBase64String Command Line"
     
-    Detects suspicious FromBase64String expressions in command line arguments
+    Detects suspicious FromBase64String expressions in command line arguments.
     
     - **Effort:** master
     
@@ -1697,10 +1726,14 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Malware Outbreak"
     
-    Spots a peak of malware detection by windows defender on this perimeter. 
+    Spots a peak of malware detection by windows defender on this perimeter.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "MalwareBytes Uninstallation"
     
     Detects command line being used by attackers to uninstall Malwarebytes.
@@ -1709,7 +1742,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
     
@@ -1719,7 +1752,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
     
@@ -1732,6 +1765,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Microsoft Defender XDR Alert"
     
@@ -1793,15 +1827,9 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "PowerShell - NTFS Alternate Data Stream"
-    
-    Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
-    
-    - **Effort:** advanced
-    
 ??? abstract "PowerShell Credential Prompt"
     
-    Detects PowerShell calling a credential prompt (using PromptForCredential) ex: $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName") The same result can be obtained by using the Get-Credential function but detecting it will trigger a lot of FP
+    Detects PowerShell calling a credential prompt (using PromptForCredential), like $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName"). The same result can be obtained by using the Get-Credential function but detecting it will trigger a lot of FP.
     
     - **Effort:** advanced
     
@@ -1817,7 +1845,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "PowerShell Download From URL"
     
-    Detects a Powershell process that contains download commands in its command line string
+    Detects a Powershell process that contains download commands in its command line string.
     
     - **Effort:** advanced
     
@@ -1846,13 +1874,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
     
-    Detects Commandlet names and arguments from the Nishang exploitation framework
+    Detects Commandlet names and arguments from the Nishang exploitation framework.
     
     - **Effort:** advanced
     
 ??? abstract "PowerShell Malicious PowerShell Commandlets"
     
-    Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...)
+    Detects Commandlet names from well-known PowerShell exploitation frameworks (PowerSploit...).
     
     - **Effort:** master
     
@@ -1860,9 +1888,15 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
         - 23/01/2024 - minor - Adding exclusion pattern and selection commandlet
             
+??? abstract "PowerShell NTFS Alternate Data Stream"
+    
+    Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
+    
+    - **Effort:** advanced
+    
 ??? abstract "Powershell Web Request"
     
-    Detects the use of various web request methods executed remotely via Windows PowerShell
+    Detects the use of various web request methods executed remotely via Windows PowerShell.
     
     - **Effort:** advanced
     
@@ -2038,7 +2072,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Socat Reverse Shell Detection"
     
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
     - **Effort:** intermediate
     
@@ -2108,7 +2142,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
-    Detects suspicious PowerShell invocation command parameters
+    Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
     
@@ -2118,7 +2152,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Suspicious PowerShell Keywords"
     
-    Detects keywords that could indicate the use of some PowerShell exploitation framework
+    Detects keywords that could indicate the use of some PowerShell exploitation framework.
     
     - **Effort:** advanced
     
@@ -2196,7 +2230,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Trickbot Malware Activity"
     
-    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
+    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
     
     - **Effort:** intermediate
     
@@ -2327,10 +2361,11 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Audit CVE Event"
     
-    Detects events generated by Windows to indicate the exploitation of a known vulnerability
+    Detects events generated by Windows to indicate the exploitation of a known vulnerability.
     
     - **Effort:** elementary
     
@@ -2362,7 +2397,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
         - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
             
-??? abstract "Suspicious HWP Child Process"
+??? abstract "Suspicious Hangul Word Processor Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
     
@@ -2370,7 +2405,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Suspicious New Printer Ports In Registry"
     
-    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14). 
+    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
     
     - **Effort:** master
     
@@ -2603,15 +2638,15 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-??? abstract "Google Workspace Anomaly Downloads"
+??? abstract "Google Workspace Anomaly File Downloads"
     
-    Detects a large number of downloads.
+    Detects a large number of file downloads.
     
     - **Effort:** advanced
     
 ??? abstract "HTA Infection Chains"
     
-    Detect the creation of a ZIP and HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
     
     - **Effort:** intermediate
     
@@ -2738,10 +2773,14 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Malware Outbreak"
     
-    Spots a peak of malware detection by windows defender on this perimeter. 
+    Spots a peak of malware detection by windows defender on this perimeter.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
     
     Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.
@@ -2883,6 +2922,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Microsoft Defender XDR Alert"
     
@@ -3438,12 +3478,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Malware Outbreak"
     
-    Spots a peak of malware detection by windows defender on this perimeter. 
+    Spots a peak of malware detection by windows defender on this perimeter.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Metasploit PSExec Service Creation"
     
     Detects Metasploit service creation when using the PSExec module. The ImagePath here is usually a malicious command line using powershell.exe and/or cmd.exe.
@@ -3459,6 +3507,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Microsoft Defender XDR Alert"
     
@@ -3684,6 +3733,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Smss Wrong Parent"
     
     Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
@@ -3979,12 +4032,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -4059,12 +4120,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Removed From A Security Enabled Group"
     
     Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
     This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted. Depending on the network environment some failed logons Status can be added to the list.
@@ -4081,15 +4150,19 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
-    Spots many failed attempts to log on an administration interface. 
+    Spots many failed attempts to log on an administration interface.
     
     - **Effort:** master
     
@@ -4102,6 +4175,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
@@ -4263,12 +4337,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Active Directory Replication User Backdoor"
     
-    Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain. 
+    Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Active Directory User Backdoors"
     
     Detects scenarios where the attacker controls another user or computer account without having to use their credentials.
@@ -4278,6 +4360,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Add User to Privileged Group"
     
@@ -4337,6 +4420,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Privileged AD Builtin Group Modified"
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
@@ -4349,7 +4436,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
     
@@ -4533,12 +4620,6 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "Exchange Server Creating Unusual Files"
-    
-    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
-    
-    - **Effort:** intermediate
-    
 ??? abstract "Exchange Server Spawning Suspicious Processes"
     
     Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.
@@ -4551,15 +4632,21 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Microsoft Exchange Server Creating Unusual Files"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
+    
+    - **Effort:** intermediate
+    
 ??? abstract "PowerCat Function Loading"
     
     Detect a basic execution of PowerCat. PowerCat is a PowerShell function allowing to do basic connections, file transfer, shells, relays, generate payloads.
     
     - **Effort:** intermediate
     
-??? abstract "ProxyShell Exchange Suspicious Paths"
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
-    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
     
@@ -4583,18 +4670,30 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Chafer (APT 39) Activity"
     
     Detects previous Chafer (APT 39) activity attributed to OilRig as reported in Nyotron report in March 2018.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cobalt Strike Default Service Creation Usage"
     
     Detects Cobalt Strike usage from an existing beacon when attacker tries to elevate or move laterally through a service creation.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
@@ -4682,6 +4781,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "New Service Creation"
     
     Detects creation of a new service from command line
@@ -4781,6 +4884,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -4926,7 +5033,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "COM Hijack Via Sdclt"
     
-    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
     
     - **Effort:** intermediate
     
@@ -4944,7 +5051,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "HTML Smuggling Suspicious Usage"
     
-    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
     - **Effort:** intermediate
     
@@ -5152,7 +5259,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
     
     - **Effort:** intermediate
     
@@ -5225,12 +5332,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
     Detects lateral movement using GPO scheduled task, often used to deploy ransomware at scale. This rule is based on the EventID 5145 which is specific to Windows Servers. The advanced audit policy setting Object Access > Audit Detailed File Share must be configured for Success/Failure.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -5309,6 +5424,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
@@ -5478,7 +5597,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Audit CVE Event"
     
-    Detects events generated by Windows to indicate the exploitation of a known vulnerability
+    Detects events generated by Windows to indicate the exploitation of a known vulnerability.
     
     - **Effort:** elementary
     
@@ -5496,7 +5615,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
     
     - **Effort:** intermediate
     
@@ -5508,7 +5627,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Suspicious New Printer Ports In Registry"
     
-    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14). 
+    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
     
     - **Effort:** master
     
@@ -5520,12 +5639,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Removed From A Security Enabled Group"
     
     Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
     This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted. Depending on the network environment some failed logons Status can be added to the list.
@@ -5542,15 +5669,19 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
-    Spots many failed attempts to log on an administration interface. 
+    Spots many failed attempts to log on an administration interface.
     
     - **Effort:** master
     
@@ -5563,6 +5694,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
@@ -5724,12 +5856,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Active Directory Replication User Backdoor"
     
-    Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain. 
+    Backdooring domain object to grant the rights associated with DCSync to regular user or machine account, this technics is often used to give ResetPassword or WriteMembers or DCSync permission(s) for persistency on a domain.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Active Directory User Backdoors"
     
     Detects scenarios where the attacker controls another user or computer account without having to use their credentials.
@@ -5739,6 +5879,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 06/04/2023 - minor - Removed a selection as it triggered too many false positives, and the detection was not part of the main goal of this rule.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Add User to Privileged Group"
     
@@ -5798,6 +5939,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Privileged AD Builtin Group Modified"
     
     Detects changes to privileged AD builtin groups in Active Directory that could indicate malicious or unexpected administrative activity. This detection rule detects changes on specific groups that are Administrators (S-1-5-*-500), Domain Admins (S-1-5-*-512), Enterprise Admins (S-1-5-*-519), Schema Admins (S-1-5-*-518), Account Operators (S-1-5-32-548) and Backup Operators (S-1-5-32-551).
@@ -5810,7 +5955,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
     
@@ -5870,6 +6015,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
@@ -5884,12 +6033,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
@@ -5950,18 +6107,30 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Chafer (APT 39) Activity"
     
     Detects previous Chafer (APT 39) activity attributed to OilRig as reported in Nyotron report in March 2018.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cobalt Strike Default Service Creation Usage"
     
     Detects Cobalt Strike usage from an existing beacon when attacker tries to elevate or move laterally through a service creation.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
@@ -6049,6 +6218,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "New Service Creation"
     
     Detects creation of a new service from command line
@@ -6148,6 +6321,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -6293,7 +6470,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "COM Hijack Via Sdclt"
     
-    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
     
     - **Effort:** intermediate
     
@@ -6311,7 +6488,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "HTML Smuggling Suspicious Usage"
     
-    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
     - **Effort:** intermediate
     
@@ -6463,7 +6640,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "COM Hijack Via Sdclt"
     
-    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
     
     - **Effort:** intermediate
     
@@ -6481,7 +6658,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "HTML Smuggling Suspicious Usage"
     
-    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
     - **Effort:** intermediate
     
@@ -6584,7 +6761,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
     
     - **Effort:** intermediate
     
@@ -6696,7 +6873,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
     
-    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262. This is a very basic detection method relying on the rare usage of EPS files from Winword.
+    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262 through command line or PowerShell script. This is a very basic detection method relying on the rare usage of EPS files from Winword.
     
     - **Effort:** advanced
     
@@ -6729,6 +6906,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
         - 22/01/2024 - minor - Extending filter to avoid FPs
         - 04/01/2024 - major - Rework filter selection with contains instead of re modifier
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Linux Binary Masquerading"
     
@@ -6816,6 +6994,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
@@ -7005,7 +7187,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Compression Followed By Suppression"
     
-    Detects when a file is compressed and deleted
+    Detects when a file is compressed and deleted.
     
     - **Effort:** advanced
     
@@ -7021,7 +7203,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Erase Shell History"
     
-    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history
+    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history.
     
     - **Effort:** advanced
     
@@ -7031,6 +7213,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "High Privileges Network Share Removal"
     
     Detects high privileges shares being deleted with the net share command.
@@ -7047,9 +7233,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    Windows Defender history directory has been deleted. This could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
     
@@ -7062,6 +7252,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Secure Deletion With SDelete"
     
@@ -7077,12 +7268,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Removed From A Security Enabled Group"
     
     Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Account Tampering - Suspicious Failed Logon Reasons"
     
     This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted. Depending on the network environment some failed logons Status can be added to the list.
@@ -7099,15 +7298,19 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
-    Spots many failed attempts to log on an administration interface. 
+    Spots many failed attempts to log on an administration interface.
     
     - **Effort:** master
     
@@ -7120,6 +7323,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
@@ -7259,6 +7463,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DHCP Callout DLL Installation"
     
     Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server (restart required).
@@ -7301,6 +7509,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "OceanLotus Registry Activity"
     
     Detects registry keys created in OceanLotus (also known as APT32) attack. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
@@ -7339,7 +7551,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Suspicious New Printer Ports In Registry"
     
-    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14). 
+    Detects a suspicious printer port creation in Registry that could be an attempt to exploit CVE-2020-1048. The CVE-2020-1048 consists in gaining persistence, privilege by abusing a flaw in the Print Spooler service to execute a payload whose path is stored in the registry key. To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
     
     - **Effort:** master
     
@@ -7407,6 +7619,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Shell PID Injection"
     
     Detects when shells PID are listed and injected in another process. It can be performed to reuse sudo token related to shell in order to elevate privilege and maintain persistence.
@@ -7423,13 +7639,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "FromBase64String Command Line"
     
-    Detects suspicious FromBase64String expressions in command line arguments
+    Detects suspicious FromBase64String expressions in command line arguments.
     
     - **Effort:** master
     
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
     
@@ -7439,7 +7655,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
     
@@ -7531,11 +7747,15 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 **Exploitation for Defense Evasion**
 
 ??? abstract "Audit CVE Event"
     
-    Detects events generated by Windows to indicate the exploitation of a known vulnerability
+    Detects events generated by Windows to indicate the exploitation of a known vulnerability.
     
     - **Effort:** elementary
     
@@ -7581,6 +7801,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "CertOC Loading Dll"
     
     Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
@@ -7599,6 +7823,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Empire Monkey Activity"
     
     Detects EmpireMonkey APT reported Activity
@@ -7789,12 +8017,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "GPO Executable Delivery"
     
     Detects MSI binaries run through GPOs.
@@ -7857,7 +8093,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "COM Hijack Via Sdclt"
     
-    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using sdclt.exe .
+    Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
     
     - **Effort:** intermediate
     
@@ -7875,7 +8111,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "HTML Smuggling Suspicious Usage"
     
-    Based on several samples from different Botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
     
     - **Effort:** intermediate
     
@@ -7964,6 +8200,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 **Subvert Trust Controls**
 
 ??? abstract "Certificate Authority Modification"
@@ -8275,7 +8515,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow. The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -8291,15 +8531,19 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
     
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line or PowerShell scripts.
     
     - **Effort:** intermediate
     
 ??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
     
-    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line and registry. To fully use this rule Windows Registry logging is recommended.
+    The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line, PowerShell scripts, and registry. To fully use this rule Windows Registry logging is recommended.
     
     - **Effort:** intermediate
     
@@ -8311,13 +8555,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Microsoft Defender Antivirus Disable Using Registry"
     
-    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line or PowerShell scripts.
     
     - **Effort:** master
     
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
     
@@ -8334,6 +8578,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 07/08/2023 - major - Considering the amount of false positives the rule effort has been changed to master. Furthermore a filter has been added.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Microsoft Defender Antivirus Restoration Abuse"
     
@@ -8343,7 +8588,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
     
@@ -8362,6 +8607,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 07/08/2023 - minor - Rule effort changed from intermediate to advanced considering the number of false positives observed.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Microsoft Intune Policy Change"
     
@@ -8381,6 +8627,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "NetSh Used To Disable Windows Firewall"
     
     Detects NetSh commands used to disable the Windows Firewall
@@ -8405,10 +8655,6 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-    - **Changelog:**
-    
-        - 15/02/2024 - minor - Added filter to reduce false positives
-            
 ??? abstract "Netsh Port Opening"
     
     Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
@@ -8433,7 +8679,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Netsh RDP Port Opening"
     
-    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware
+    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware.
     
     - **Effort:** intermediate
     
@@ -8521,7 +8767,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Ryuk Ransomware Command Line"
     
-    Detects Ryuk Ransomware - Command lines stop services.
+    Detects Ryuk Ransomware command lines used to stop services.
     
     - **Effort:** elementary
     
@@ -8611,7 +8857,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
         - 13/03/2024 - minor - Add another suspicious folder.
             
-??? abstract "PowerShell - NTFS Alternate Data Stream"
+??? abstract "PowerShell NTFS Alternate Data Stream"
     
     Detects writing data into NTFS alternate data streams from PowerShell. Needs Script Block Logging (Event ID 4104)
     
@@ -8663,7 +8909,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
     
     - **Effort:** intermediate
     
@@ -8767,7 +9013,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Loss Of Parsing"
     
-    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow.  The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
+    Spots the loss of events parsing by Sekoia.io, could indicate a loss of valid events flow. The strategy is to focus on less frequent event to limit the impact of the skewness in the count distribution law.
     
     - **Effort:** master
     
@@ -8808,12 +9054,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Active Directory Replication from Non Machine Account"
     
     Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. It requires a configuration step where the legit service account should be added to the exclusion list.
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cmdkey Cached Credentials Recon"
     
     Detects usage of cmdkey to look for cached credentials.
@@ -8862,6 +9116,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DPAPI Domain Backup Key Extraction"
     
     Detects tools extracting LSA secret DPAPI domain backup key from Domain Controllers
@@ -8906,12 +9164,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "LSASS Access From Non System Account"
     
     Detects LSASS Access from Non System Account (e.g. Mimikatz)
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "LSASS Memory Dump"
     
     Detects process accessing LSASS memory which is typical for credentials dumping tools. The rule requires Sysmon EventID 10 to work as it is based on the GrantedAccess mask.
@@ -8921,6 +9187,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 06/04/2023 - minor - Rule effort has been upgraded to master considering the number of different false positives the rule can trigger.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "LSASS Memory Dump File Creation"
     
@@ -8952,6 +9219,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Mimikatz Basic Commands"
     
     Detects Mimikatz most popular commands. 
@@ -8972,6 +9243,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
         - 06/04/2023 - minor - Whitelisted another SourceImage as it triggered too many false positives.
         - 21/06/2023 - minor - Whitelisted lsm.exe that triggered too many false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -8995,12 +9267,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Password Dumper Activity On LSASS"
     
     Detects process handle on LSASS process with certain access mask and object type SAM_DOMAIN
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Process Memory Dump Using Comsvcs"
     
     Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
@@ -9101,7 +9381,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Write To File In Systemd"
     
-    A user tried to write something to a file in /etc/systemd.system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges.
+    A user tried to write something to a file in /etc/systemd/system. This repository contains services that are run at start. It can be used to run a malicious programm at start with high privileges.
     
     - **Effort:** intermediate
     
@@ -9144,13 +9424,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Authentication Impossible Travel"
     
-    Detects impossible travel when performing authentication from a source IP address, groupped by username.
+    Detects impossible travel when performing authentication from a source IP address, grouped by username.
     
     - **Effort:** advanced
     
 ??? abstract "Brute-Force On Fortinet Firewall Login"
     
-    Spots many failed attempts to log on an administration interface. 
+    Spots many failed attempts to log on an administration interface.
     
     - **Effort:** master
     
@@ -9280,7 +9560,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Audit CVE Event"
     
-    Detects events generated by Windows to indicate the exploitation of a known vulnerability
+    Detects events generated by Windows to indicate the exploitation of a known vulnerability.
     
     - **Effort:** elementary
     
@@ -9358,6 +9638,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 02/04/2024 - major - Updating the pattern and adding filter selection
         - 19/02/2024 - minor - Effort level was adapted according to the observed hits for the rule
             
 ??? abstract "Remote Registry Management Using Reg Utility"
@@ -9374,6 +9655,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 **Credentials from Password Stores**
 
+??? abstract "Anomaly Secret Store Access"
+    
+    The rule detects abnormally high access to secrets store folder
+    
+    - **Effort:** master
+    
 ??? abstract "Credentials Extraction"
     
     This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
@@ -9382,7 +9669,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
-    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc. 
+    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc.
     
     - **Effort:** intermediate
     
@@ -9448,6 +9735,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
     Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
@@ -9462,6 +9753,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Rubeus Register New Logon Process"
     
     Detects potential use of Rubeus through registering a new logon process. This rule needs the EventID 4611, which can be configured through Group Policies (Audit Security System Extension)
@@ -9497,7 +9792,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Anomaly Internal RDP"
     
-    Detects uncompleted attempts to connect to a rdp session.
+    Detects uncompleted attempts to connect to a Remote Desktop Protocol (RDP) session.
     
     - **Effort:** master
     
@@ -9537,6 +9832,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Remote Registry Management Using Reg Utility"
     
     Remote registry management using REG utility from non-admin workstation. This requires Windows Security events logging.
@@ -9557,6 +9856,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 **System Network Configuration Discovery**
 
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious Headless Web Browser Execution To Download File"
     
     Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
@@ -9567,7 +9872,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Anomaly Internal Ping"
     
-    Detects internal ping with uncomplete connection.
+    Detects internal ping with uncomplete connection on internal network.
     
     - **Effort:** master
     
@@ -9647,13 +9952,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Anomaly Internal Port Connection"
     
-    Detects multiple scan of different ports.
+    Detects multiple scan of different ports on internal network.
     
     - **Effort:** master
     
 ??? abstract "Anomaly Multiple Host Port Scan"
     
-    Detects multiple port scan.
+    Detects multiple port scan from/to a private address, excluding DNS.
     
     - **Effort:** advanced
     
@@ -9668,6 +9973,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Discovery Commands Correlation"
     
     Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
     
     - **Effort:** intermediate
     
@@ -9727,7 +10038,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
     
@@ -9757,12 +10068,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "AD User Enumeration"
     
     Detects access to a domain user from a non-machine account. This requires Windows Security Event ID 4662 and could be triggered by some administrators configuring new users.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
@@ -9801,7 +10120,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
             
-??? abstract "Remote Enumeration of Lateral Movement Groups"
+??? abstract "Reconnaissance Commands Activities"
+    
+    Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Remote Enumeration Of Lateral Movement Groups"
     
     Detects remote session lists the member of four local groups relevant to lateral movement. This behavior is common in Active Directory mapping tools such as SharpHound.
     
@@ -9913,7 +10238,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Trickbot Malware Activity"
     
-    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe
+    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
     
     - **Effort:** intermediate
     
@@ -9970,12 +10295,20 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cobalt Strike Default Service Creation Usage"
     
     Detects Cobalt Strike usage from an existing beacon when attacker tries to elevate or move laterally through a service creation.
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Denied Access To Remote Desktop"
     
     Detects when an authenticated user who is not allowed to log on remotely attempts to connect to this computer through Remote Desktop. This event can be generated by attackers when searching for available windows servers in the network. This rule detects only users from external network.
@@ -9985,6 +10318,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Lateral Movement - Remote Named Pipe"
     
@@ -9995,6 +10329,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 26/03/2024 - minor - Filter was improved to reduce false positives
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Lsass Access Through WinRM"
     
@@ -10052,6 +10387,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 **Replication Through Removable Media**
 
 ??? abstract "External Disk Drive Or USB Storage Device"
@@ -10064,7 +10403,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Audit CVE Event"
     
-    Detects events generated by Windows to indicate the exploitation of a known vulnerability
+    Detects events generated by Windows to indicate the exploitation of a known vulnerability.
     
     - **Effort:** elementary
     
@@ -10076,7 +10415,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Registry Checked For Lanmanserver DisableCompression Parameter"
     
-    Detects registry access for Lanmanserver\Parameters. The check of the value DisableCompression could be a sign of an attack trying to exploit SMBGhost vulnerability (CVE-2020-0796). 
+    Detects registry access for Lanmanserver\Parameters. The check of the value DisableCompression could be a sign of an attack trying to exploit SMBGhost vulnerability (CVE-2020-0796).
     
     - **Effort:** master
     
@@ -10106,18 +10445,16 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ## Collection
 **Data from Local System**
 
 ??? abstract "AWS CloudTrail EC2 VM Export Failure"
     
     Detects attempt to export an AWS EC2 instance. A VM Export might indicate an attempt to extract information from an instance.
-    
-    - **Effort:** intermediate
-    
-??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
     
@@ -10129,7 +10466,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
-    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc. 
+    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc.
+    
+    - **Effort:** intermediate
+    
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
     
     - **Effort:** intermediate
     
@@ -10153,7 +10496,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Exchange Mailbox Export"
     
-    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file.
+    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
     
     - **Effort:** intermediate
     
@@ -10195,6 +10538,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 02/04/2024 - major - Updating the pattern and adding filter selection
         - 19/02/2024 - minor - Effort level was adapted according to the observed hits for the rule
             
 **Audio Capture**
@@ -10251,6 +10595,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
     Detects an HTTP request to an URL typical of the Azure AD authentication flow, but towards a domain that is not one the legitimate Microsoft domains used for Azure AD authentication.
@@ -10279,7 +10627,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "PowerShell Data Compressed"
     
-    Detects data compression through a PowerShell command (could be used by an adversary for exfiltration)
+    Detects data compression through a PowerShell command (could be used by an adversary for exfiltration).
     
     - **Effort:** advanced
     
@@ -10312,6 +10660,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Cloudflare Gateway HTTP File Blocked By Anti-Virus Scan"
     
     Cloudflare Gateway allows admins to enable Anti-Virus (AV) scanning of files that are uploaded or downloaded by users as the file passes through Gateway. AV scanning of files requires organizations to enable Proxy mode under Settings > Network > Layer 7 Firewall. TLS decryption is also recommended to enable inspection of HTTPS traffic.
@@ -10320,7 +10672,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Cobalt Strike DNS Beaconing"
     
-    Detects suspicious DNS queries known from Cobalt Strike beacons. We only keep the a high number of DNS requests to avoid false positives. 
+    Detects suspicious DNS queries known from Cobalt Strike beacons. The threshold is more than 50 suspicious DNS requests to avoid false positives.
     
     - **Effort:** advanced
     
@@ -10546,10 +10898,6 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-    - **Changelog:**
-    
-        - 15/02/2024 - minor - Added filter to reduce false positives
-            
 ??? abstract "Suspicious Hostname"
     
     Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
@@ -10603,7 +10951,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Information Stealer Downloading Legitimate Third-Party DLLs"
     
-    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc. 
+    Detects operations that involved legitimate third-party DLLs used by information-stealing malware for data collection on the infected host. This detection rule correlates at least 7 events including the following DLLs - freebl3.dll, vcruntime140.dll, msvcp140.dll, nss3.dll, sqlite3.dll, softokn3.dll, mozglue.dll and libcurl.dll. This behaviour matches activities of several widespread stealer like Vidar, Raccoon Stealer v2, Mars Stealer, etc.
     
     - **Effort:** intermediate
     
@@ -10712,6 +11060,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Remote Access Tool Domain"
     
@@ -10722,6 +11071,12 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+    
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
     
@@ -10757,13 +11112,9 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-    - **Changelog:**
-    
-        - 15/02/2024 - minor - Added filter to reduce false positives
-            
 ??? abstract "Ngrok Process Execution"
     
-    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling. 
+    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling.
     
     - **Effort:** intermediate
     
@@ -10814,7 +11165,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Socat Reverse Shell Detection"
     
-    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment 
+    Socat is a linux tool used to relay or open reverse shell that is often used by attacker to bypass security equipment.
     
     - **Effort:** intermediate
     
@@ -10863,10 +11214,6 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-    - **Changelog:**
-    
-        - 15/02/2024 - minor - Added filter to reduce false positives
-            
 ??? abstract "Netskope Alert"
     
     Forward alerts reported by Netskope.  
@@ -10926,7 +11273,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Powershell UploadString Function"
     
-    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
     
@@ -10970,13 +11317,13 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Outgoing Bytes Peak"
     
-    Spots outgoing bytes traffic peak to detect a data exfiltration. 
+    Spots outgoing bytes traffic peak to detect a data exfiltration.
     
     - **Effort:** advanced
     
 ??? abstract "Powershell UploadString Function"
     
-    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
     
@@ -11011,6 +11358,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Commonly Used Commands To Stop Services And Remove Backups"
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
@@ -11079,7 +11430,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Anomaly CloudFlare DDoS"
     
-    Detects anomaly on DNS events from CloudFlare.
+    Detects anomaly on volume of DNS events from CloudFlare logs.
     
     - **Effort:** master
     
@@ -11087,7 +11438,7 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Audit CVE Event"
     
-    Detects events generated by Windows to indicate the exploitation of a known vulnerability
+    Detects events generated by Windows to indicate the exploitation of a known vulnerability.
     
     - **Effort:** elementary
     
@@ -11107,6 +11458,10 @@ Rules catalog includes **852 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Google Workspace Admin Deletion"
     
     Detects when an admin is deleted or when his role is unassigned.
