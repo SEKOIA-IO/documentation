@@ -5,7 +5,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
 [SEKOIA.IO x Palo Alto NGFW on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_903ec1b8-f206-4ba5-8563-db21da09cafd_do_not_edit_manually.json){ .md-button }
 ??? abstract "Burp Suite Tool Detected"
     
-    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
     
     - **Effort:** intermediate
 
@@ -53,7 +53,7 @@ The following Sekoia.io built-in rules match the intake **Palo Alto NGFW**. This
 
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
 

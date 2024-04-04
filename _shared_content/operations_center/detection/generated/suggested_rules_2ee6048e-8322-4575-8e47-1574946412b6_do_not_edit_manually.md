@@ -21,51 +21,45 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
     
     - **Effort:** elementary
 
-??? abstract "Bloodhound and Sharphound Tools Usage"
-    
-    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Burp Suite Tool Detected"
     
-    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner)
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
     
     - **Effort:** intermediate
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
     
-    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace. 
+    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.
     
     - **Effort:** intermediate
 
 ??? abstract "CVE-2019-0604 SharePoint"
     
-    Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604)
+    Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604).
     
     - **Effort:** advanced
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
-    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
     
     - **Effort:** elementary
 
 ??? abstract "CVE-2020-1147 SharePoint"
     
-    Detection of SharePoint vulnerability CVE-2020-1147
+    Detection of SharePoint vulnerability CVE-2020-1147.
     
     - **Effort:** advanced
 
 ??? abstract "CVE-2020-14882 Oracle WebLogic Server"
     
-    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952)
+    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952).
     
     - **Effort:** advanced
 
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
 
@@ -89,13 +83,13 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
 
 ??? abstract "CVE-2021-21985 VMware vCenter"
     
-    The vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
+    The VMware vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
     
     - **Effort:** advanced
 
 ??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
     
-    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt. 
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt.
     
     - **Effort:** advanced
 
@@ -111,7 +105,7 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
     
     - **Effort:** advanced
 
-??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
+??? abstract "CVE-2021-34527 PrintNightmare Suspicious Actions From Spoolsv"
     
     Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
     
@@ -141,12 +135,6 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
     
     - **Effort:** master
 
-??? abstract "Exchange Server Creating Unusual Files"
-    
-    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
     Execution of well known tools for data exfiltration and tunneling
@@ -174,6 +162,12 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Exchange Server Creating Unusual Files"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
     
     - **Effort:** intermediate
 
@@ -255,9 +249,9 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
     
     - **Effort:** elementary
 
-??? abstract "ProxyShell Exchange Suspicious Paths"
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
-    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -282,6 +276,12 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
 
@@ -317,7 +317,7 @@ The following Sekoia.io built-in rules match the intake **Cisco ESA**. This docu
 
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
 

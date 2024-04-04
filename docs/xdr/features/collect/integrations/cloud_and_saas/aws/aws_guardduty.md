@@ -11,17 +11,7 @@ AWS GuardDuty is a service that detects potential security issues within your ne
 
 ## Configure
 
-### Prerequisites
-
-#### Create a S3 bucket
-
-Your GuardDuty findings will be collected in an Amazon S3 bucket.
-
-To set up the bucket, please refer to [this guide](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
-
-{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
-
-{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
+{!_shared_content/operations_center/integrations/aws_create_s3_sqs_notification.md!}
 
 #### Forward findings to S3
 

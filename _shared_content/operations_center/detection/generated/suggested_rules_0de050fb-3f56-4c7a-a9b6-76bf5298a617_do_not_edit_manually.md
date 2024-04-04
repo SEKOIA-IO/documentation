@@ -9,6 +9,18 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** advanced
 
+??? abstract "Account Added To A Security Enabled Group"
+    
+    Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
+    
+    - **Effort:** master
+
+??? abstract "Account Removed From A Security Enabled Group"
+    
+    Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
+    
+    - **Effort:** master
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -135,6 +147,24 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "Compress Data for Exfiltration via Archiver"
+    
+    Detects data compressed by specific tools.
+    
+    - **Effort:** advanced
+
+??? abstract "Compression Followed By Suppression"
+    
+    Detects when a file is compressed and deleted.
+    
+    - **Effort:** advanced
+
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+
 ??? abstract "Container Credential Access"
     
     Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
@@ -231,6 +261,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** advanced
 
+??? abstract "Domain Trust Created Or Removed"
+    
+    A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
+    
+    - **Effort:** advanced
+
 ??? abstract "Domain Trust Discovery Through LDAP"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
@@ -269,19 +305,13 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Erase Shell History"
     
-    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history
+    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history.
     
     - **Effort:** advanced
 
 ??? abstract "Exchange Mailbox Export"
     
-    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file.
-    
-    - **Effort:** intermediate
-
-??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
+    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
     
     - **Effort:** intermediate
 
@@ -317,7 +347,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
     
-    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262. This is a very basic detection method relying on the rare usage of EPS files from Winword.
+    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262 through command line or PowerShell script. This is a very basic detection method relying on the rare usage of EPS files from Winword.
     
     - **Effort:** advanced
 
@@ -330,6 +360,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 ??? abstract "Explorer Wrong Parent"
     
     Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
+    
+    - **Effort:** advanced
+
+??? abstract "FLTMC command usage"
+    
+    Detects the use of fltmc to list and load/unload a filter driver.
     
     - **Effort:** advanced
 
@@ -447,6 +483,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "Linux Suspicious Nohup Exec"
+    
+    Detects suspicious usage of nohup which could be leveraged by an attacker to keep a process running or break out from restricted environments
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Suspicious Search"
     
     Adversaries may search for private key on compromised systems
@@ -463,7 +505,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "MMC Spawning Windows Shell"
     
@@ -515,25 +557,25 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
     
-    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line or PowerShell scripts.
     
     - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus Disable Using Registry"
     
-    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line or PowerShell scripts.
     
     - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    Windows Defender history directory has been deleted. This could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
 
@@ -545,7 +587,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
 
@@ -554,6 +596,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Office Product Spawning Windows Shell"
     
@@ -629,7 +677,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Netsh RDP Port Opening"
     
-    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware
+    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware.
     
     - **Effort:** intermediate
 
@@ -665,7 +713,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Ngrok Process Execution"
     
-    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling. 
+    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling.
     
     - **Effort:** intermediate
 
@@ -699,6 +747,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** advanced
 
+??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
+    
+    The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
@@ -716,6 +770,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
     
     - **Effort:** elementary
+
+??? abstract "Possible Replay Attack"
+    
+    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
+    
+    - **Effort:** intermediate
 
 ??? abstract "PowerCat Function Loading"
     
@@ -737,7 +797,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "PowerShell Download From URL"
     
-    Detects a Powershell process that contains download commands in its command line string
+    Detects a Powershell process that contains download commands in its command line string.
     
     - **Effort:** advanced
 
@@ -755,19 +815,19 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
     
-    Detects Commandlet names and arguments from the Nishang exploitation framework
+    Detects Commandlet names and arguments from the Nishang exploitation framework.
     
     - **Effort:** advanced
 
 ??? abstract "Powershell UploadString Function"
     
-    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
 
 ??? abstract "Powershell Web Request"
     
-    Detects the use of various web request methods executed remotely via Windows PowerShell
+    Detects the use of various web request methods executed remotely via Windows PowerShell.
     
     - **Effort:** advanced
 
@@ -843,6 +903,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** master
 
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
+    
+    - **Effort:** master
+
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -863,7 +929,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
 
@@ -957,7 +1023,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
-??? abstract "Suspicious HWP Child Process"
+??? abstract "Suspicious Hangul Word Processor Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
     
@@ -1007,7 +1073,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
-    Detects suspicious PowerShell invocation command parameters
+    Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
 
@@ -1073,7 +1139,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
 
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
 
@@ -1099,7 +1165,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMIC Uninstall Product"
     

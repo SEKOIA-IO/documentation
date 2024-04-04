@@ -47,13 +47,13 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
-    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
     
     - **Effort:** elementary
 
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
 
@@ -104,6 +104,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
     - **Effort:** intermediate
+
+??? abstract "Compression Followed By Suppression"
+    
+    Detects when a file is compressed and deleted.
+    
+    - **Effort:** advanced
 
 ??? abstract "Control Panel Items"
     
@@ -183,12 +189,6 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** intermediate
 
-??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exfiltration Domain In Command Line"
     
     Detects commands containing a domain linked to http exfiltration.
@@ -197,9 +197,15 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
 
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
     
     - **Effort:** intermediate
+
+??? abstract "FLTMC command usage"
+    
+    Detects the use of fltmc to list and load/unload a filter driver.
+    
+    - **Effort:** advanced
 
 ??? abstract "Formbook File Creation DB1"
     
@@ -271,7 +277,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "MS Office Product Spawning Exe in User Dir"
     
@@ -299,19 +305,19 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
 
 ??? abstract "Microsoft Defender Antivirus Disable Using Registry"
     
-    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line or PowerShell scripts.
     
     - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    Windows Defender history directory has been deleted. This could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
 
@@ -323,7 +329,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
 
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
 
@@ -332,6 +338,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
 
 ??? abstract "NTDS.dit File In Suspicious Directory"
     
@@ -443,7 +455,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
 
 ??? abstract "Powershell UploadString Function"
     
-    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
 
@@ -465,9 +477,9 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** advanced
 
-??? abstract "ProxyShell Exchange Suspicious Paths"
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
-    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -521,7 +533,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
 
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
 
@@ -677,7 +689,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
-    Detects suspicious PowerShell invocation command parameters
+    Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
 
@@ -745,7 +757,7 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "WMIC Uninstall Product"
     

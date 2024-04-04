@@ -3,6 +3,18 @@
 The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Cybereason EDR on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_9f89b634-0531-437b-b060-a9d9f2d270db_do_not_edit_manually.json){ .md-button }
+??? abstract "Account Added To A Security Enabled Group"
+    
+    Detection in order to investigate who has added a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4728)
+    
+    - **Effort:** master
+
+??? abstract "Account Removed From A Security Enabled Group"
+    
+    Detection in order to investigate who has removed a specific Domain User in Domain Admins or Group Policy Creator Owners (Security event 4729)
+    
+    - **Effort:** master
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -21,13 +33,13 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** advanced
 
-??? abstract "Bloodhound and Sharphound Tools Usage"
+??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
-    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
-??? abstract "CVE-2021-34527 - PrintNightmare - Suspicious Actions From Spoolsv"
+??? abstract "CVE-2021-34527 PrintNightmare Suspicious Actions From Spoolsv"
     
     Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
     
@@ -45,6 +57,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Computer Account Deleted"
+    
+    Detects computer account deletion.
+    
+    - **Effort:** master
+
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
@@ -57,11 +75,11 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** master
 
-??? abstract "Exchange Server Creating Unusual Files"
+??? abstract "Domain Trust Created Or Removed"
     
-    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
+    A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
-    - **Effort:** intermediate
+    - **Effort:** advanced
 
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
@@ -80,6 +98,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
     
     - **Effort:** advanced
+
+??? abstract "Microsoft Exchange Server Creating Unusual Files"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
+    
+    - **Effort:** intermediate
 
 ??? abstract "Microsoft Office Creating Suspicious File"
     
@@ -123,11 +147,23 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** advanced
 
+??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
+    
+    The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.
+    
+    - **Effort:** intermediate
+
 ??? abstract "PasswordDump SecurityXploded Tool"
     
     Detects the execution of the PasswordDump SecurityXploded Tool
     
     - **Effort:** elementary
+
+??? abstract "Possible Replay Attack"
+    
+    This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
+    
+    - **Effort:** intermediate
 
 ??? abstract "PsExec Process"
     
@@ -153,9 +189,15 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
     
     - **Effort:** master
 
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
+    
+    - **Effort:** master
+
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
 
@@ -173,7 +215,7 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR**. This
 
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
 

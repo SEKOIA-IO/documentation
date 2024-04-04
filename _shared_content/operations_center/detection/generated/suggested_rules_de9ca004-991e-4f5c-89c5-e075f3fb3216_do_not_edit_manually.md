@@ -5,13 +5,13 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
 [SEKOIA.IO x Netskope on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_de9ca004-991e-4f5c-89c5-e075f3fb3216_do_not_edit_manually.json){ .md-button }
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
-    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
     
     - **Effort:** elementary
 
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
 
@@ -67,19 +67,19 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     Audit events for admin activites, from Logins to policies' changes.
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Netskope Alert"
     
     Forward alerts reported by Netskope.  
     
-    - **Effort:** advanced
+    - **Effort:** master
 
 ??? abstract "Netskope DLP Alert"
     
     Detects DLP alerts which are not allowed.  
     
-    - **Effort:** intermediate
+    - **Effort:** master
 
 ??? abstract "Nimbo-C2 User Agent"
     
@@ -117,9 +117,9 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
     
     - **Effort:** elementary
 
-??? abstract "ProxyShell Exchange Suspicious Paths"
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
-    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -137,7 +137,7 @@ The following Sekoia.io built-in rules match the intake **Netskope**. This docum
 
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
 

@@ -6,6 +6,15 @@ type: intake
 
 F5's BIG-IP is a family of products covering software and hardware designed around application availability, access control, and security solutions.
 
+## Supported events
+
+This integration supports the events from the following F5 Big-IP modules:
+
+- ASM
+- APM
+- LTM
+- AFM
+- PSM
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_a14b1141-2d61-414b-bf79-da99b487b1af_do_not_edit_manually.md!}
 

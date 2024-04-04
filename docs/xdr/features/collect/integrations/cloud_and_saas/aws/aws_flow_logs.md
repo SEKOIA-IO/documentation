@@ -15,6 +15,8 @@ Amazon VPC Flow Logs is a feature that provides the ability to capture informati
 
 ## Configure
 
+{!_shared_content/operations_center/integrations/aws_create_s3_sqs_notification.md!}
+
 ### VPC Flow Logs
 
 As a prerequisite, you need an existing VPC, subnet or network interface (Elastic Load Balancing, Amazon RDS, Amazon ElastiCache, Amazon Redshift, Amazon WorkSpaces, NAT gateways, Transit gateways) to create a flow log. If you create a flow log for a subnet or VPC, each network interface in that subnet or VPC is monitored.
@@ -28,12 +30,7 @@ For VPC and subnet:
 - Click on `Create flow log`
 - Set up the flow log: we recommend to capture all traffic (accepted and rejected).
 
-    !!note
-  The AWS account must have a direct access to the resources because the integration do not work with managing account that make a call on the admin role 
-
-{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
-
-{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
+Please follow [this guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html) to configure and set up all the permissions needed.
 
 ### Create the intake
 

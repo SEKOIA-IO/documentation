@@ -18,7 +18,7 @@ This setup guide shows how to forward events produced by TEHTRIS EDR to Sekoia.i
 
 To forward events produced by TEHTRIS EDR to Sekoia.io, you have to: 
 
-1. Contact your TEHTRIS referent to activate the XDR Platform APIs for your tenant and ask to add the [Sekoia.io IP address](../../../../FAQ.md#ip-behind-triggers-available-in-playbooks-section) to the allowlist
+1. Contact your TEHTRIS referent to activate the XDR Platform APIs for your tenant and ask to add the [Sekoia.io IP address](https://api.sekoia.io/outgoing-ips) to the allowlist
 
 2. Log on the TEHTRIS XDR platform and navigate to `SOAR > Key Management`
 

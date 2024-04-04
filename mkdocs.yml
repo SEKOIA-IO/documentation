@@ -41,7 +41,8 @@ nav:
     - Edit a community: getting_started/community-edit.md
     - Create a sub-community: getting_started/community-create_sub_com.md
     - Set up community security:
-      - SSO with OpenID Connect: getting_started/SSO_openid_connect.md
+      - Session duration: getting_started/session_duration.md
+      - SSO with OpenID Connect: getting_started/sso/openid_connect.md
       - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
       - SSO with Okta: getting_started/sso/okta.md
   - 3. Navigate on the platform: getting_started/navigation.md
@@ -79,9 +80,10 @@ nav:
         - Overview: xdr/features/collect/integrations/index.md
         - Custom Format: xdr/features/collect/integrations/custom_format.md
         - Application:
-          - Alsid / Tenable.ad: xdr/features/collect/integrations/application/alsid.md
+          - Tenable Identity Exposure / Alsid: xdr/features/collect/integrations/application/alsid.md
           - Apache HTTP Server: xdr/features/collect/integrations/application/apache.md
           - BIND: xdr/features/collect/integrations/application/bind.md
+          - "\u0421\u0443berwatch Detection": xdr/features/collect/integrations/application/cyberwatch_detection.md
           - FreeRADIUS: xdr/features/collect/integrations/application/freeradius.md
           - HAProxy: xdr/features/collect/integrations/application/haproxy.md
           - ISC DHCP: xdr/features/collect/integrations/application/dhcpd.md
@@ -118,11 +120,13 @@ nav:
             - HTTP requests: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
           - Broadcom Cloud Secure Web Gateway: xdr/features/collect/integrations/cloud_and_saas/broadcom_cloud_swg.md
           - Cato SASE: xdr/features/collect/integrations/cloud_and_saas/cato_sase.md
+          - Datadome Protection: xdr/features/collect/integrations/cloud_and_saas/datadome_protection.md
           - Digital Shadows SearchLight: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
           - Cisco Duo Security: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
           - Claroty xDome: xdr/features/collect/integrations/cloud_and_saas/claroty_xdome.md
           - ExtraHop Reveal(x) 360: xdr/features/collect/integrations/cloud_and_saas/extrahop_revealx_360.md
-          - Fastly WAF Audit Logs: xdr/features/collect/integrations/cloud_and_saas/fastly/fastly_audit_waf.md
+          - Fastly Next-Gen WAF Alerts: xdr/features/collect/integrations/cloud_and_saas/fastly/fastly_waf.md
+          - Fastly Next-Gen WAF Audit Logs: xdr/features/collect/integrations/cloud_and_saas/fastly/fastly_audit_waf.md
           - Github Audit Logs: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
           - Google Cloud:
             - Google Cloud Audit Logs: xdr/features/collect/integrations/cloud_and_saas/google/google_cloud_audit.md
@@ -131,6 +135,7 @@ nav:
             - Google Workspace: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
           - Imperva WAF: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
           - Jumpcloud Directory Insights: xdr/features/collect/integrations/cloud_and_saas/jumpcloud_directory_insights.md
+          - Lacework Cloud Security: xdr/features/collect/integrations/cloud_and_saas/lacework_cloud_security.md
           - Microsoft Azure:
             - Microsoft Entra ID (Azure AD): xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md
             - Azure Front Door: xdr/features/collect/integrations/cloud_and_saas/azure/azure_front_door.md
@@ -150,6 +155,7 @@ nav:
           - OGO Shield WAF: xdr/features/collect/integrations/cloud_and_saas/ogo_shield.md
           - Okta system log: xdr/features/collect/integrations/cloud_and_saas/okta_system_log.md
           - Salesforce: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
+          - SecurityScorecard's Vulnerability Assessment Scanner: xdr/features/collect/integrations/cloud_and_saas/securityscorecard_vas.md
           - Sophos Threat Analysis Center: xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
           - Zscaler ZIA: xdr/features/collect/integrations/cloud_and_saas/zscaler_zia.md
@@ -194,6 +200,7 @@ nav:
             - Trend Micro Apex One: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_apex_one.md
             - Trend Micro Cloud One / Deep Security: xdr/features/collect/integrations/endpoint/trend_micro/trend_micro_deep_security.md
           - Trellix ePO: xdr/features/collect/integrations/endpoint/trellix_epo.md
+          - Trellix EDR: xdr/features/collect/integrations/endpoint/trellix_edr.md
           - VMware ESXi: xdr/features/collect/integrations/endpoint/vmware/vmware_esxi.md
           - VMware VCenter: xdr/features/collect/integrations/endpoint/vmware/vmware_vcenter.md
           - Windows: xdr/features/collect/integrations/endpoint/windows.md
@@ -248,6 +255,7 @@ nav:
       - Entities: xdr/features/collect/entities.md
       - Assets: xdr/features/collect/assets.md
     - Detect:
+      - IOCs Detection: xdr/features/detect/iocdetection.md
       - Rules Catalog: xdr/features/detect/rules_catalog.md
       - Built-in Rules: xdr/features/detect/built_in_detection_rules.md
       - Sigma: xdr/features/detect/sigma.md
@@ -300,6 +308,7 @@ nav:
         - IPtoASN: xdr/features/automate/library/iptoasn.md
         - Imperva: xdr/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: xdr/features/automate/library/jumpcloud-directory-insights.md
+        - Lacework: xdr/features/automate/library/lacework.md
         - MISP: xdr/features/automate/library/misp.md
         - MWDB: xdr/features/automate/library/mwdb.md
         - Mandrill: xdr/features/automate/library/mandrill.md
@@ -355,7 +364,7 @@ nav:
     - Events:
       - Events QA: xdr/FAQ/Events_qa.md
       - Facing issues with logs collection: xdr/FAQ/Log_collection_Troubleshoot.md
-    - Rules: xdr/FAQ/Rules_qa.md
+    - Detection: xdr/FAQ/Detection_qa.md
     - Assets: xdr/FAQ/Assets_qa.md
     - Sekoia.io Endpoint agent: xdr/FAQ/SEKOIA_Endpoint_Agent.md
     - Datetime representation: xdr/FAQ/datetime.md
@@ -414,6 +423,7 @@ nav:
       - Splunk SOAR: cti/features/integrations/splunk_soar.md
       - Anomali ThreatStream: cti/features/integrations/anomali.md
       - PaloAlto Cortex XSOAR: cti/features/integrations/paloalto_xsoar.md
+      - ThreatQuotient: cti/features/integrations/threatquotient.md
   - Develop:
     - Overview: cti/develop/index.md
     - Guides:
@@ -492,6 +502,7 @@ nav:
         - IPtoASN: tip/features/automate/library/iptoasn.md
         - Imperva: tip/features/automate/library/imperva.md
         - Jumpcloud Directory Insights: tip/features/automate/library/jumpcloud-directory-insights.md
+        - Lacework: tip/features/automate/library/lacework.md
         - MISP: tip/features/automate/library/misp.md
         - MWDB: tip/features/automate/library/mwdb.md
         - Mandrill: tip/features/automate/library/mandrill.md
@@ -606,6 +617,7 @@ plugins:
       integrations/checkpoint.md: xdr/features/collect/integrations/network/checkpoint.md
       integrations/cisco-asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
       integrations/cisco_asa.md: xdr/features/collect/integrations/network/cisco/cisco_asa.md
+      integrations/cyberwatch.md: xdr/features/collect/integrations/application/cyberwatch_detection.md
       integrations/dhcpd.md: xdr/features/collect/integrations/application/dhcpd.md
       integrations/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
       integrations/f5-big-ip.md: xdr/features/collect/integrations/network/f5-big-ip.md
@@ -845,6 +857,7 @@ plugins:
       user_center/multi_factor_authentication.md: getting_started/account_security.md
       xdr/develop/rest_api/identity_and_authentication.md: xdr/develop/rest_api/community.md
       xdr/features/collect/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
+      xdr/features/collect/integrations/cloud_and_saas/duo_security.md: xdr/features/collect/integrations/cloud_and_saas/cisco_duo_security.md
       xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       xdr/features/collect/integrations/cloud_and_saas/netskope_events.md: xdr/features/collect/integrations/cloud_and_saas/netskope/netskope_events.md
       xdr/features/collect/integrations/endpoint/checkpoint_harmony.md: xdr/features/collect/integrations/endpoint/checkpoint_harmony_mobile.md

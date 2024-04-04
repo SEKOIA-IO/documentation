@@ -3,11 +3,10 @@
 MSSP community with multiple managed communities: for MSSP partners with SOC/CERT activities
 Sub-community creation is only available on MSSP mode only
 
-# Create a new sub-community
+!!! info
+    To access MSSP mode, contact your Sekoia account executive. Once subscribed, you will be switched to MSSP mode in the following days
 
-For the managed community with multiple entities, our support team will handle the creation of the community and assist you to add the necessary [entities](https://docs.sekoia.io/xdr/features/collect/entities/). 
-
-However, for the MSSP community, the support team can create the main MSSP community and users with the right permissions can add multiple communities from the user interface. 
+# Create a new sub-community 
 
 To create a managed community in an MSSP environment:
 

@@ -63,6 +63,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Compression Followed By Suppression"
+    
+    Detects when a file is compressed and deleted.
+    
+    - **Effort:** advanced
+
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item
@@ -129,12 +135,6 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
-??? abstract "Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
-    
-    Detects PowerShell SnapIn command line, often used with Get-Mailbox to export Exchange mailbox data.
-    
-    - **Effort:** intermediate
-
 ??? abstract "Exfiltration Domain In Command Line"
     
     Detects commands containing a domain linked to http exfiltration.
@@ -143,7 +143,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
-    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378
+    Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
     
     - **Effort:** intermediate
 
@@ -193,7 +193,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Malicious Browser Extensions"
     
@@ -215,19 +215,19 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 
 ??? abstract "Microsoft Defender Antivirus Disable Using Registry"
     
-    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line.
+    The rule detects attempts to deactivate/disable Microsoft Defender Antivirus using registry modification via command line or PowerShell scripts.
     
     - **Effort:** master
 
 ??? abstract "Microsoft Defender Antivirus Disabled Base64 Encoded"
     
-    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line.
+    Detects attempts to deactivate/disable Windows Defender through base64 encoded PowerShell command line or scripts.
     
     - **Effort:** intermediate
 
 ??? abstract "Microsoft Defender Antivirus History Directory Deleted"
     
-    Windows Defender history directory has been deleted. Could be an attempt by an attacker to remove its traces.
+    Windows Defender history directory has been deleted. This could be an attempt by an attacker to remove its traces.
     
     - **Effort:** elementary
 
@@ -239,7 +239,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 
 ??? abstract "Microsoft Defender Antivirus Set-MpPreference Base64 Encoded"
     
-    Detects changes of preferences for Windows Defender scan and updates. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
+    Detects changes of preferences for Windows Defender through command line or PowerShell scripts. Configure Windows Defender using base64-encoded commands is suspicious and could be related to malicious activities.
     
     - **Effort:** intermediate
 
@@ -248,6 +248,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     Detects attempts to remove Windows Defender Signatures using MpCmdRun legitimate Windows Defender executable. No signatures mean Windows Defender will be less effective (or completely useless depending on the option used).
     
     - **Effort:** elementary
+
+??? abstract "Microsoft Exchange PowerShell Snap-Ins To Export Exchange Mailbox Data"
+    
+    Detects PowerShell SnapIn command line or PowerShell script, often used with Get-Mailbox to export Exchange mailbox data.
+    
+    - **Effort:** intermediate
 
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
@@ -347,7 +353,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 
 ??? abstract "Powershell UploadString Function"
     
-    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host. 
+    Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
 
@@ -413,7 +419,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 
 ??? abstract "SSH Authorized Key Alteration"
     
-    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
 
@@ -461,7 +467,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
-    Detects suspicious PowerShell invocation command parameters
+    Detects suspicious PowerShell invocation command parameters.
     
     - **Effort:** intermediate
 

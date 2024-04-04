@@ -33,12 +33,6 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** advanced
 
-??? abstract "Bloodhound and Sharphound Tools Usage"
-    
-    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
-    
-    - **Effort:** intermediate
-
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
@@ -47,13 +41,13 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
 
 ??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
     
-    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA. 
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
     
     - **Effort:** elementary
 
 ??? abstract "CVE-2020-17530 Apache Struts RCE"
     
-    Detects the exploitation of the Apache Struts vulnerability (CVE-2020-17530).
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
     
     - **Effort:** intermediate
 
@@ -117,17 +111,11 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** master
 
-??? abstract "Entra ID Password Compromised By Know Credential Testing Tool"
+??? abstract "Entra ID Password Compromised By Known Credential Testing Tool"
     
     Detects a sign-in that has a correlation ID known to be used by malicious credential testing scripts. Note that even if the sign-in was blocked by MFA (error 50074) or device authentication (error 50097), these verifications only occur after the correct password was submitted. The account's password must still be considered compromised, and be changed.
     
     - **Effort:** elementary
-
-??? abstract "Exchange Server Creating Unusual Files"
-    
-    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
-    
-    - **Effort:** intermediate
 
 ??? abstract "Exfiltration And Tunneling Tools Execution"
     
@@ -333,6 +321,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** master
 
+??? abstract "Microsoft Exchange Server Creating Unusual Files"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
+    
+    - **Effort:** intermediate
+
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system
@@ -393,9 +387,9 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** elementary
 
-??? abstract "ProxyShell Exchange Suspicious Paths"
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
     
-    Detects suspicious calls to Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
     
     - **Effort:** elementary
 
@@ -420,6 +414,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
 
@@ -449,7 +449,7 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
 
 ??? abstract "System Info Discovery"
     
-    System info discovery, attempt to detects basic command use to fingerprint a host
+    System info discovery, attempt to detects basic command use to fingerprint a host.
     
     - **Effort:** master
 

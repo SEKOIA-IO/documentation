@@ -4,6 +4,8 @@ Once your event logs are collected and normalized by Sekoia.io, you probably wan
 
 All rules are applied to your event stream in real-time, so that you can detect - and respond to - threats as fast as possible.
 
+Please check the [dedicated FAQ page](../../../FAQ/Detection_qa/) related to detection rule strategy.
+
 ## Rule Types
 
 Sekoia.io supports the following rule types:
