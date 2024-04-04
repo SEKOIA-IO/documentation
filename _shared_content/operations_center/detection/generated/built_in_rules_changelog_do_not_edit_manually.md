@@ -2,6 +2,39 @@ Changelog _last update on 2024-04-04_
 
 ## Changelog
 
+### DHCP Server Error Failed Loading the CallOut DLL
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### DNS Server Error Failed Loading The ServerLevelPluginDLL
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Successful Brute Force Login From Internet
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Remote Privileged Group Enumeration
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### RDP Login From Localhost
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### SAM Registry Hive Handle Request
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Suspicious Access To Sensitive File Extensions
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### CVE-2019-0708 Scan
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### Remote Registry Management Using Reg Utility
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### SeEnableDelagationPrivilege Granted To User Or Machine In Active Directory
+  - 04/04/2024 - major - Rule's pattern field changed
+    
+### DHCP Server Loaded the CallOut DLL
+  - 04/04/2024 - major - Rule's pattern field changed
+    
 ### Netskope DLP Alert
   - 28/03/2024 - minor - Rule effort was updated to master
     
@@ -47,6 +80,9 @@ Changelog _last update on 2024-04-04_
 ### Denied Access To Remote Desktop
   - 26/03/2024 - major - Rule's pattern field changed
     
+### PsExec Process
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### AD User Enumeration
   - 26/03/2024 - major - Rule's pattern field changed
     
@@ -83,6 +119,9 @@ Changelog _last update on 2024-04-04_
 ### Creation or Modification of a GPO Scheduled Task
   - 26/03/2024 - major - Rule's pattern field changed
     
+### Process Hollowing Detection
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### Password Dumper Activity On LSASS
   - 26/03/2024 - major - Rule's pattern field changed
     
@@ -92,10 +131,19 @@ Changelog _last update on 2024-04-04_
 ### Impacket Secretsdump.py Tool
   - 26/03/2024 - major - Rule's pattern field changed
     
+### Detection of default Mimikatz banner
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### Backup Catalog Deleted
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Admin Share Access
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Process Herpaderping
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Protected Storage Service Access
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Microsoft Defender Antivirus Configuration Changed
@@ -120,6 +168,9 @@ Changelog _last update on 2024-04-04_
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Smbexec.py Service Installation
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### WMImplant Hack Tool
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Microsoft Defender Antivirus History Deleted
@@ -149,10 +200,19 @@ Changelog _last update on 2024-04-04_
 ### LSASS Memory Dump
   - 26/03/2024 - major - Rule's pattern field changed
     
+### Python Opening Ports
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### PowerView commandlets 2
+  - 26/03/2024 - major - Rule's pattern field changed
+    
 ### Possible Replay Attack
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Lateral Movement - Remote Named Pipe
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Potential RDP Connection To Non-Domain Host
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### AD Privileged Users Or Groups Reconnaissance
@@ -162,6 +222,9 @@ Changelog _last update on 2024-04-04_
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### StoneDrill Service Install
+  - 26/03/2024 - major - Rule's pattern field changed
+    
+### Privileged AD Builtin Group Modified
   - 26/03/2024 - major - Rule's pattern field changed
     
 ### Microsoft Defender Antivirus Exclusion Configuration
@@ -464,14 +527,8 @@ Changelog _last update on 2024-04-04_
 ### NjRat Registry Changes
   - 29/11/2023 - minor - Update regex pattern to insensitive case
     
-### WMImplant Hack Tool
-  - 29/11/2023 - minor - Added a selection to filter some false positives.
-    
 ### Netsh Program Allowed With Suspicious Location
   - 29/11/2023 - minor - Update regex pattern to insensitive case
-    
-### RDP Login From Localhost
-  - 24/11/2023 - minor - Effort level changed to advanced.
     
 ### Suspicious Regsvr32 Execution
   - 23/11/2023 - major - Extended detection and added filter
@@ -533,9 +590,6 @@ Changelog _last update on 2024-04-04_
 ### Login Brute-Force Successful
   - 06/10/2023 - minor - renaming and tunn filters to limit False Positive
     
-### PowerView commandlets 2
-  - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
-    
 ### Suspicious Regasm Regsvcs Usage
   - 27/09/2023 - major - Rule creation
     
@@ -572,9 +626,6 @@ Changelog _last update on 2024-04-04_
 ### Correlation Potential DNS Tunnel
   - 19/07/2023 - major - New regex pattern and new filters.
     
-### Privileged AD Builtin Group Modified
-  - 10/07/2023 - minor - Added AD groups and change to effort master.
-    
 ### Rclone Process
   - 28/06/2023 - minor - Added filter to the rule to reduce false positives.
     
@@ -604,9 +655,6 @@ Changelog _last update on 2024-04-04_
     
 ### Internet Scanner
   - 28/04/2023 - minor - Support for standard ECS FW fields
-    
-### Remote Privileged Group Enumeration
-  - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
     
 ### Audio Capture via PowerShell
   - 18/04/2023 - minor - Use more specific patterns to fix false positives.
