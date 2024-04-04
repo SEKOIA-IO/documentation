@@ -1301,6 +1301,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 29/11/2023 - minor - Added a selection to filter some false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Wmic Process Call Creation"
     
@@ -1632,6 +1633,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Elise Backdoor"
     
     Detects Elise backdoor activity as used by Lotus Blossom
@@ -2271,6 +2276,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 29/11/2023 - minor - Added a selection to filter some false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "WithSecure Elements Critical Severity"
     
@@ -3551,6 +3557,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Rare Logonui Child Found"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
@@ -4433,6 +4443,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 10/07/2023 - minor - Added AD groups and change to effort master.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "SSH Authorized Key Alteration"
     
@@ -4446,6 +4457,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "User Added to Local Administrators"
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
@@ -5233,18 +5248,30 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DHCP Server Loaded the CallOut DLL"
     
     This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded. This would indicate a succesful attack against DHCP service allowing to disrupt the service or alter the integrity of the responses.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
     
     This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded. This requires the dedicated Windows event provider Microsoft-Windows-DNS-Server-Service.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DNS ServerLevelPluginDll Installation"
     
     Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
@@ -5459,12 +5486,20 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Process Hollowing Detection"
     
     Detection of process hollowing using Sysmon Event ID 25. It detects that an image has been replaced in a process memory.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Searchindexer Wrong Parent"
     
     Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
@@ -5952,6 +5987,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 10/07/2023 - minor - Added AD groups and change to effort master.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "SSH Authorized Key Alteration"
     
@@ -5965,6 +6001,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "User Added to Local Administrators"
     
     Detects when user accounts are added which could be legitimate activity or a sign of privilege escalation activity, Potential False-Positives Legitimate administrative activity WinRM clients
@@ -6086,6 +6126,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 10/07/2023 - minor - Added AD groups and change to effort master.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Tenable Identity Exposure / Alsid Critical Severity Alert"
     
@@ -6735,18 +6776,30 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DHCP Server Loaded the CallOut DLL"
     
     This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded. This would indicate a succesful attack against DHCP service allowing to disrupt the service or alter the integrity of the responses.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
     
     This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded. This requires the dedicated Windows event provider Microsoft-Windows-DNS-Server-Service.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DNS ServerLevelPluginDll Installation"
     
     Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
@@ -7029,12 +7082,20 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Process Hollowing Detection"
     
     Detection of process hollowing using Sysmon Event ID 25. It detects that an image has been replaced in a process memory.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Searchindexer Wrong Parent"
     
     Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
@@ -7543,6 +7604,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious Desktopimgdownldr Execution"
     
     Detects a suspicious Desktopimgdownldr execution. Desktopimgdownldr.exe is a Windows binary used to configure lockscreen/desktop image and can be abused to download malicious file.
@@ -7731,6 +7796,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Traffic Signaling**
 
 ??? abstract "Linux Binary List TCP Connections"
@@ -8070,6 +8139,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 10/07/2023 - minor - Added AD groups and change to effort master.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Tenable Identity Exposure / Alsid Critical Severity Alert"
     
@@ -8188,6 +8258,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -8753,6 +8827,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
@@ -8883,18 +8961,30 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DHCP Server Loaded the CallOut DLL"
     
     This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded. This would indicate a succesful attack against DHCP service allowing to disrupt the service or alter the integrity of the responses.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
     
     This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded. This requires the dedicated Windows event provider Microsoft-Windows-DNS-Server-Service.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "DNS ServerLevelPluginDll Installation"
     
     Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Windows Registry or in command line, which can be used to execute code in context of the DNS server (restart required). To fully use this rule, prerequesites are logging for Registry events in the Sysmon configuration (events 12, 13 and 14).
@@ -9333,6 +9423,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious SAM Dump"
     
     Detects suspicious SAM dump to AppData repository, as cause by QuarksPwDump and other password dumpers. Logging for Microsoft-Windows-Kernel-General Event ID 16 or Sysmon Event ID 11 is needed.
@@ -9514,6 +9608,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Multi-Factor Authentication Interception**
 
 ??? abstract "EvilProxy Phishing Domain"
@@ -9647,6 +9745,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "XCopy Suspicious Usage"
     
     Detects the usage of xcopy with suspicious command line options (used by Judgment Panda APT in the past). The rule is based on command line only in case xcopy is renamed.
@@ -9811,6 +9913,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "SCM Database Handle Failure"
     
@@ -9842,6 +9945,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious Taskkill Command"
     
     Detects rare taskkill command being used. It could be related to Baby Shark malware.
@@ -9897,6 +10004,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Shell PID Injection"
     
@@ -10119,6 +10227,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Reconnaissance Commands Activities"
     
@@ -10141,6 +10250,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 18/04/2023 - minor - Exclude events from the Local System session that cause false positives.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Shell PID Injection"
     
@@ -10171,6 +10281,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 **Domain Trust Discovery**
 
@@ -10235,6 +10346,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/10/2023 - major - Removed an option from the ScriptBlockText selection to reduce false positives.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Trickbot Malware Activity"
     
@@ -10355,6 +10467,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "RDP Login From Localhost"
     
     Detects RDP login from localhost source address, which may be a tunnelled login to bypass network restrictions.
@@ -10364,6 +10480,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 24/11/2023 - minor - Effort level changed to advanced.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "RDP Port Change Using Powershell"
     
@@ -10413,6 +10530,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Registry Checked For Lanmanserver DisableCompression Parameter"
     
     Detects registry access for Lanmanserver\Parameters. The check of the value DisableCompression could be a sign of an attack trying to exploit SMBGhost vulnerability (CVE-2020-0796).
@@ -10433,6 +10554,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 26/03/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Rubeus Tool Command-line"
     
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
@@ -10484,6 +10609,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Data Staged**
 
 ??? abstract "CVE-2021-20023 SonicWall Arbitrary File Read"
@@ -11501,6 +11630,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 10/07/2023 - minor - Added AD groups and change to effort master.
+        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "User Account Deleted"
     

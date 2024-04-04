@@ -255,6 +255,24 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** master
 
+??? abstract "DHCP Server Error Failed Loading the CallOut DLL"
+    
+    This rule detects a DHCP server error in which a specified Callout DLL (in registry) could not be loaded.
+    
+    - **Effort:** intermediate
+
+??? abstract "DHCP Server Loaded the CallOut DLL"
+    
+    This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded. This would indicate a succesful attack against DHCP service allowing to disrupt the service or alter the integrity of the responses.
+    
+    - **Effort:** intermediate
+
+??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
+    
+    This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded. This requires the dedicated Windows event provider Microsoft-Windows-DNS-Server-Service.
+    
+    - **Effort:** master
+
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
@@ -308,6 +326,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     Detects LemonDuck user agent. The format used two sets of alphabetical characters separated by dashes, for example "User-Agent: Lemon-Duck-[A-Z]-[A-Z]".
     
     - **Effort:** elementary
+
+??? abstract "Potential RDP Connection To Non-Domain Host"
+    
+    Detects logons using NTLM to hosts that are potentially not part of the domain using RDP (TermSrv). Event ID 8001 corresponds to outgoing NTLM authentication traffic and TermSrv stands for RDP Terminal Services Server. Check if the contacted host is legitimate. To use this detection rule, enable logging of outbound NTLM authentications on all domain controllers, using the following Group Policy (GPO) - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options > Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers -> Define this policy setting: Audit all.
+    
+    - **Effort:** master
 
 ??? abstract "SEKOIA.IO Intelligence Feed"
     

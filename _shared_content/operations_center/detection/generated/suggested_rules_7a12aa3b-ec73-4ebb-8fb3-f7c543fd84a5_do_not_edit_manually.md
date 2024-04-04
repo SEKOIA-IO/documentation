@@ -33,6 +33,24 @@ The following Sekoia.io built-in rules match the intake **Ivanti / Pulse Connect
     
     - **Effort:** master
 
+??? abstract "DHCP Server Error Failed Loading the CallOut DLL"
+    
+    This rule detects a DHCP server error in which a specified Callout DLL (in registry) could not be loaded.
+    
+    - **Effort:** intermediate
+
+??? abstract "DHCP Server Loaded the CallOut DLL"
+    
+    This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded. This would indicate a succesful attack against DHCP service allowing to disrupt the service or alter the integrity of the responses.
+    
+    - **Effort:** intermediate
+
+??? abstract "DNS Server Error Failed Loading The ServerLevelPluginDLL"
+    
+    This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded. This requires the dedicated Windows event provider Microsoft-Windows-DNS-Server-Service.
+    
+    - **Effort:** master
+
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.

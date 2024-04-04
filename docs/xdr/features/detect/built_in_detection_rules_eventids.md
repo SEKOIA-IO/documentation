@@ -44,7 +44,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Autorun Keys Modification | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>12</a></span> | Microsoft-Windows-Sysmon |
 | LSASS Access From Non System Account | master | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4656' style='color: inherit;'>4656</a></span> | Microsoft-Windows-Security-Auditing |
 | Webshell Creation | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span>, <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4656' style='color: inherit;'>4656</a></span>, <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4663' style='color: inherit;'>4663</a></span> | Microsoft-Windows-Sysmon |
-| DNS Server Error Failed Loading The ServerLevelPluginDLL | master | 150, 770, 771 | Microsoft-Windows-DNS-Server-Service |
+| DNS Server Error Failed Loading The ServerLevelPluginDLL | master | 150 | Microsoft-Windows-DNS-Server-Service |
 | Admin User RDP Remote Logon | master | <a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624' style='color: inherit;'>4624</a> | Microsoft-Windows-Security-Auditing |
 | Microsoft 365 (Office 365) MCAS New Country | master | 98 |  |
 | xWizard Execution | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Kernel-Process |
@@ -54,7 +54,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
 | Microsoft 365 (Office 365) MCAS Repeated Failed Login | master | 98 |  |
 | In-memory PowerShell | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>7</a></span> | Microsoft-Windows-Sysmon |
-| Privileged AD Builtin Group Modified | master | <span style="color:#D89462">4727</span>, <span style="color:#D89462">4728</span>, <span style="color:#D89462">4729</span>, <span style="color:#D89462">4730</span>, <span style="color:#D89462">4754</span>, <span style="color:#D89462">4756</span>, <span style="color:#D89462">4757</span>, <span style="color:#D89462">4758</span>, <span style="color:#D89462"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4764' style='color: inherit;'>4764</a></span> | Microsoft-Windows-Security-Auditing |
+| Privileged AD Builtin Group Modified | master | <span style="color:#D89462">4728</span> | Microsoft-Windows-Security-Auditing |
 | User Couldn't Call A Privileged Service LsaRegisterLogonProcess | master | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4673' style='color: inherit;'>4673</a></span> | Microsoft-Windows-Security-Auditing |
 | Malware Persistence Registry Key | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
 | Microsoft Defender Antivirus Disable Using Registry | master | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
@@ -221,7 +221,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | XCopy Suspicious Usage | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | StoneDrill Service Install | intermediate | <span style="color:#B60016">7045</span> | Service Control Manager |
 | Secure Deletion With SDelete | intermediate | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4656' style='color: inherit;'>4656</a></span>, <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4658' style='color: inherit;'>4658</a></span>, <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4663' style='color: inherit;'>4663</a></span> | Microsoft-Windows-Security-Auditing |
-| DHCP Server Error Failed Loading the CallOut DLL | intermediate | 1031, 1032, 1033, 1034 | Microsoft-Windows-DHCP-Server |
+| DHCP Server Error Failed Loading the CallOut DLL | intermediate | 1033, 1034 | Microsoft-Windows-DHCP-Server |
 | MOFComp Execution | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Wmic Process Call Creation | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Netsh Port Forwarding | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
@@ -384,7 +384,6 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Formbook File Creation DB1 | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span> | Microsoft-Windows-Sysmon |
 | Audio Capture via PowerShell | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#D89462">4104</span> | Microsoft-Windows-PowerShell, Microsoft-Windows-Sysmon |
 | DHCP Callout DLL Installation | intermediate | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
-| DHCP Server Loaded the CallOut DLL | intermediate | 1033 |  |
 | FlowCloud Malware | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
 | Leviathan Registry Key Activity | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
 | Mimikatz Basic Commands | elementary | <span style="color:#B60016">4103</span> | Microsoft-Windows-PowerShell |
@@ -473,17 +472,17 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Suspicious Netsh DLL Persistence | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 
 ## EventIDs occurences in rules
-| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 459) |
+| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 458) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| 1 | 224 | 48.8 % |
-| 13 | 46 | 10.02 % |
-| 4104 | 43 | 9.37 % |
-| 11 | 20 | 4.36 % |
-| 5 | 19 | 4.14 % |
-| 7 | 15 | 3.27 % |
+| 1 | 224 | 48.91 % |
+| 13 | 46 | 10.04 % |
+| 4104 | 43 | 9.39 % |
+| 11 | 20 | 4.37 % |
+| 5 | 19 | 4.15 % |
+| 7 | 15 | 3.28 % |
 | 7045 | 11 | 2.4 % |
 | 5145 | 10 | 2.18 % |
-| 15 | 8 | 1.74 % |
+| 15 | 8 | 1.75 % |
 | 4688 | 7 | 1.53 % |
 | 4656 | 7 | 1.53 % |
 | 98 | 6 | 1.31 % |
@@ -498,24 +497,21 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 4697 | 4 | 0.87 % |
 | 64 | 4 | 0.87 % |
 | 22 | 4 | 0.87 % |
-| 4625 | 3 | 0.65 % |
-| 4103 | 3 | 0.65 % |
-| 4720 | 3 | 0.65 % |
-| 12 | 3 | 0.65 % |
+| 4625 | 3 | 0.66 % |
+| 4103 | 3 | 0.66 % |
+| 4720 | 3 | 0.66 % |
+| 12 | 3 | 0.66 % |
 | 25 | 2 | 0.44 % |
-| 1033 | 2 | 0.44 % |
 | 5007 | 2 | 0.44 % |
 | 20 | 2 | 0.44 % |
 | 30 | 2 | 0.44 % |
 | 6 | 2 | 0.44 % |
 | 8 | 2 | 0.44 % |
 | 4728 | 2 | 0.44 % |
-| 4729 | 2 | 0.44 % |
 | 4776 | 1 | 0.22 % |
 | 4658 | 1 | 0.22 % |
-| 1032 | 1 | 0.22 % |
+| 1033 | 1 | 0.22 % |
 | 1034 | 1 | 0.22 % |
-| 1031 | 1 | 0.22 % |
 | 4825 | 1 | 0.22 % |
 | 19 | 1 | 0.22 % |
 | 21 | 1 | 0.22 % |
@@ -528,8 +524,6 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 4706 | 1 | 0.22 % |
 | 4707 | 1 | 0.22 % |
 | 5154 | 1 | 0.22 % |
-| 770 | 1 | 0.22 % |
-| 771 | 1 | 0.22 % |
 | 150 | 1 | 0.22 % |
 | 1127 | 1 | 0.22 % |
 | 4657 | 1 | 0.22 % |
@@ -537,13 +531,6 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 4726 | 1 | 0.22 % |
 | 4649 | 1 | 0.22 % |
 | 524 | 1 | 0.22 % |
-| 4754 | 1 | 0.22 % |
-| 4756 | 1 | 0.22 % |
-| 4757 | 1 | 0.22 % |
-| 4758 | 1 | 0.22 % |
-| 4727 | 1 | 0.22 % |
-| 4730 | 1 | 0.22 % |
-| 4764 | 1 | 0.22 % |
 | 4673 | 1 | 0.22 % |
 | 6416 | 1 | 0.22 % |
 | 1013 | 1 | 0.22 % |
@@ -555,6 +542,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 47 | 1 | 0.22 % |
 | 4794 | 1 | 0.22 % |
 | 4743 | 1 | 0.22 % |
+| 4729 | 1 | 0.22 % |
 | 1102 | 1 | 0.22 % |
 | 83820799 | 1 | 0.22 % |
 | 1000 | 1 | 0.22 % |
@@ -564,14 +552,14 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 4732 | 1 | 0.22 % |
 
 ## EventProviders occurences in rules
-| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 459) |
+| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 458) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| Microsoft-Windows-Sysmon | 293 | 63.83 % |
-| Microsoft-Windows-Security-Auditing | 72 | 15.69 % |
-| Microsoft-Windows-PowerShell | 46 | 10.02 % |
-| Kernel-Process | 29 | 6.32 % |
+| Microsoft-Windows-Sysmon | 293 | 63.97 % |
+| Microsoft-Windows-Security-Auditing | 72 | 15.72 % |
+| Microsoft-Windows-PowerShell | 46 | 10.04 % |
+| Kernel-Process | 29 | 6.33 % |
 | Service Control Manager | 11 | 2.4 % |
-| Microsoft-Windows-Windows Defender | 9 | 1.96 % |
+| Microsoft-Windows-Windows Defender | 9 | 1.97 % |
 | Microsoft-Windows-Kernel-File | 4 | 0.87 % |
 | Microsoft-Windows-DHCP-Server | 1 | 0.22 % |
 | ESENT | 1 | 0.22 % |
@@ -588,9 +576,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Microsoft-Windows-Kernel-General | 1 | 0.22 % |
 
 ## EffortLevel x EventIDs
-| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 459 |
+| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 458 |
 | ------------ | -------- | ----------------------- | ------------------------------------------------------- |
-| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4727, 4728, 4729, 4730, 4732, 4743, 4754, 4756, 4757, 4758, 4764, 5007, 5140, 5145, 64, 7, 770, 771, 79016668, 8001, 83820799, 98 | 92 | 20.04 % |
-| advanced | 1, 10, 11, 1116, 1127, 13, 15, 17, 19, 20, 21, 22, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4776, 4799, 5, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 115 | 25.05 % |
-| intermediate | 1, 10, 1000, 1031, 1032, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 47, 4720, 4738, 4741, 4794, 4825, 5, 5136, 5145, 524, 6, 7, 7045 | 166 | 36.17 % |
-| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4656, 4663, 4688, 4697, 4704, 4720, 5, 5136, 7, 7045, 8 | 86 | 18.74 % |
+| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4728, 4729, 4732, 4743, 5007, 5140, 5145, 64, 7, 79016668, 8001, 83820799, 98 | 92 | 20.09 % |
+| advanced | 1, 10, 11, 1116, 1127, 13, 15, 17, 19, 20, 21, 22, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4776, 4799, 5, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 115 | 25.11 % |
+| intermediate | 1, 10, 1000, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4658, 4662, 4663, 4688, 4697, 47, 4720, 4738, 4741, 4794, 4825, 5, 5136, 5145, 524, 6, 7, 7045 | 165 | 36.03 % |
+| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4656, 4663, 4688, 4697, 4704, 4720, 5, 5136, 7, 7045, 8 | 86 | 18.78 % |
