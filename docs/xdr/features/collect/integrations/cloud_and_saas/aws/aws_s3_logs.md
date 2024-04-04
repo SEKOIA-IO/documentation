@@ -11,9 +11,7 @@ Several AWS services offers to store their logs on a S3 bucket. This integration
 
 ## Configure
 
-{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
-
-{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
+{!_shared_content/operations_center/integrations/aws_create_s3_sqs_notification.md!}
 
 ### Create the intake
 

@@ -11,28 +11,22 @@ AWS WAF is a web application firewall that lets you monitor the HTTP(S) requests
 
 ## Configure
 
-### Prerequisites
+!!! important
+    In this guide, your S3 bucket for AWS WAF logging must start with `aws-waf-logs-` and can end with any suffix you want. For example, `aws-waf-logs-DOC-EXAMPLE-BUCKET-SUFFIX`. More information in [this guide](https://docs.aws.amazon.com/waf/latest/developerguide/logging-s3.html)
 
-#### Create a S3 bucket
-
-Your web ACL traffic logs will be collected in an Amazon S3 bucket.
-
-To set up the bucket, please refer to [this guide](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
-
-{!_shared_content/operations_center/integrations/aws_create_sqs_queue.md!}
-
-{!_shared_content/operations_center/integrations/aws_create_s3_notification.md!}
+{!_shared_content/operations_center/integrations/aws_create_s3_sqs_notification.md!}
 
 #### Forward traffic logs to S3
 
 To forward events produced by AWS WAF to S3, you have to: 
 
-1. In your AWS console, navigate to: `Services > WAF & Shield > Web ACLs`
-2. Select the acl you want forwarding logs to your bucket
-3. Select the tab `Logging and metrics`
-4. In the first section, in front of the title `Logging`, click the button `Enable`
-5. Check `S3 bucket` as `Logging destination` and select your bucket in the dropdown
-6. Click the button `Save`
+1. Configure the [Permissions required to publish logs to Amazon S3](https://docs.aws.amazon.com/waf/latest/developerguide/logging-s3.html#logging-s3-permissions) in order to authorize your bucket to receive AWS WAF logs
+2. In your AWS console, navigate to: `Services > WAF & Shield > Web ACLs`
+3. Select the acl you want forwarding logs to your bucket
+4. Select the tab `Logging and metrics`
+5. In the first section, in front of the title `Logging`, click the button `Enable`
+6. Check `S3 bucket` as `Logging destination` and select your bucket in the dropdown
+7. Click the button `Save`
 
 ### Create the intake
 
