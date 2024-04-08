@@ -16,7 +16,7 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event` |
+| Kind | `` |
 | Category | `process` |
 | Type | `change` |
 
@@ -38,7 +38,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "StopContainer for \\\"4c2b21624d4488ea8305bec91bb58135e840ab50b779da3db19ddf87864a760e\\\" with timeout 30 (s)",
             "type": [
                 "change"
@@ -117,7 +116,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Pulling image \"gke.gcr.io/prometheus-to-sd:v0.11.3-gke.0\"",
             "type": [
                 "change"
@@ -213,7 +211,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Failed to update endpoint kube-system/kube-dns: Operation cannot be fulfilled on endpoints \"kube-dns\": the object has been modified; please apply your changes to the latest version and try again",
             "type": [
                 "change"
@@ -306,7 +303,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Created container prometheus-to-sd",
             "type": [
                 "change"
@@ -402,7 +398,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "{\"unmanaged\": {\"net.netfilter.nf_conntrack_buckets\": \"32768\"}}",
             "type": [
                 "change"
@@ -493,7 +488,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Event exporter started watching. Some events may have been lost up to this point.",
             "type": [
                 "change"
@@ -540,7 +534,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`cloud.project.id` | `keyword` | The cloud project id. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
-|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`google_kubernetes_engine.insertId` | `keyword` |  |

@@ -18,7 +18,7 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event` |
+| Kind | `` |
 | Category | `` |
 | Type | `denied` |
 
@@ -38,7 +38,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":1000,\"TypeComputedMap\":\"LostBuffers\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0E997D-0D6B-40A9-81F1-7C21E9B8AAD3}\",\"Timestamp\":\"2023-06-15T06:30:00.0000000+01:00\",\"TimestampRaw\":133232454000000000,\"GenerateIncident\":false,\"SpecificData\":{\"LostBuffersCount\":35}}",
         "event": {
             "code": "LostBuffers",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T05:30:00Z",
@@ -60,7 +59,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":1001,\"TypeComputedMap\":\"RulesEngCriticalError\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD054D09-4231-4A21-8BA1-440AEBAC0CC9}\",\"Timestamp\":\"2023-06-15T06:40:00.0000000+01:00\",\"TimestampRaw\":133232460000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "RulesEngCriticalError",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T05:40:00Z",
@@ -82,7 +80,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":1002,\"TypeComputedMap\":\"RulesEngIdentifierCollectionError\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD060B75-CD2D-4F29-9E23-8F45C47772BA}\",\"Timestamp\":\"2023-06-15T06:50:00.0000000+01:00\",\"TimestampRaw\":133232466000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "RulesEngIdentifierCollectionError",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T05:50:00Z",
@@ -104,7 +101,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":1003,\"TypeComputedMap\":\"RulesEngRulesPackageError\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0969EB-BA6D-481A-B96D-730EC18FE560}\",\"Timestamp\":\"2023-06-15T07:00:00.0000000+01:00\",\"TimestampRaw\":133232472000000000,\"GenerateIncident\":false,\"SpecificData\":{\"RulesPackageKeyPath\":\"HKLM\\\\TestPath\\\\Here\"}}",
         "event": {
             "code": "RulesEngRulesPackageError",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T06:00:00Z",
@@ -126,7 +122,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":1004,\"TypeComputedMap\":\"RulesEngInvalidParameter\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD075EE1-778C-4E3E-81E5-A565E4A4FF68}\",\"Timestamp\":\"2023-06-15T07:10:00.0000000+01:00\",\"TimestampRaw\":133232478000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "RulesEngInvalidParameter",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T06:10:00Z",
@@ -151,7 +146,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "TemporaryWebAccessStart",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "start"
@@ -189,7 +183,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "TemporaryWebAccessStartFailed",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "end"
@@ -227,7 +220,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "TemporaryWebAccessStop",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "end"
@@ -258,7 +250,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "TemporaryWebAccessStopFailed",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "end"
@@ -286,7 +277,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":1010,\"TypeComputedMap\":\"AgentInternalLogExceedMaxSize\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0F16E5-852C-4686-9979-AA5A859D50F2}\",\"Timestamp\":\"2023-06-15T08:00:00.0000000+01:00\",\"TimestampRaw\":133232508000000000,\"GenerateIncident\":false,\"SpecificData\":{\"FaultyLogType\":1010,\"FaultyLogTypeComputedMap\":null}}",
         "event": {
             "code": "AgentInternalLogExceedMaxSize",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:00:00Z",
@@ -311,7 +301,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "TemporaryWebAccessMaxCountReached",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "denied"
@@ -349,7 +338,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryKeyCreate",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "creation"
@@ -420,7 +408,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryKeyRead",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "access"
@@ -491,7 +478,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryKeyWrite",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "change"
@@ -562,7 +548,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "ProcessExecution",
-            "kind": "event",
             "severity": 2,
             "type": [
                 "start"
@@ -652,7 +637,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryKeyDelete",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "deletion"
@@ -723,7 +707,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryValueCreate",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "creation"
@@ -794,7 +777,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryValueRead",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "access"
@@ -865,7 +847,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryValueWrite",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "change"
@@ -936,7 +917,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "RegistryValueDelete",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "deletion"
@@ -1007,7 +987,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "ProcessExecution",
-            "kind": "event",
             "reason": "The 'ragnarlocker.exe' process attempted to run the 'cmd.exe' process",
             "severity": 0,
             "type": [
@@ -1101,7 +1080,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "FileCreate",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "creation"
@@ -1172,7 +1150,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "FileExecute",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -1247,7 +1224,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "FileRead",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "access"
@@ -1318,7 +1294,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "FileWrite",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "change"
@@ -1389,7 +1364,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "FileDelete",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "deletion"
@@ -1461,7 +1435,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20002,\"TypeComputedMap\":\"LostBuffers\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD084103-F26D-49EA-8890-70C7DB7A63A6}\",\"Timestamp\":\"2023-06-15T08:20:00.0000000+01:00\",\"TimestampRaw\":133232520000000000,\"GenerateIncident\":false,\"SpecificData\":{\"LostBuffersCount\":30}}",
         "event": {
             "code": "LostBuffers",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:20:00Z",
@@ -1486,7 +1459,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "configuration"
             ],
             "code": "NewPolicyNotification",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "change"
@@ -1514,7 +1486,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20004,\"TypeComputedMap\":\"ServiceDidNotEndCorrectly\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD021EAE-7C29-4B3F-852E-553B95D26471}\",\"Timestamp\":\"2023-06-15T08:40:00.0000000+01:00\",\"TimestampRaw\":133232532000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ServiceName\":\"EsaAppIdSvc\"}}",
         "event": {
             "code": "ServiceDidNotEndCorrectly",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:40:00Z",
@@ -1536,7 +1507,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20006,\"TypeComputedMap\":\"EndUpgradeAgentSucceeded\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0CD620-F5A8-430B-8FA3-BEC8E204DC74}\",\"Timestamp\":\"2023-06-15T08:50:00.0000000+01:00\",\"TimestampRaw\":133232538000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "EndUpgradeAgentSucceeded",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:50:00Z",
@@ -1558,7 +1528,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20007,\"TypeComputedMap\":\"EndUpgradeAgentFailed\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD091E59-399B-4A0B-BB1F-7326C55502ED}\",\"Timestamp\":\"2023-06-15T09:00:00.0000000+01:00\",\"TimestampRaw\":133232544000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ErrorCode\":5}}",
         "event": {
             "code": "EndUpgradeAgentFailed",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:00:00Z",
@@ -1580,7 +1549,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20008,\"TypeComputedMap\":\"NewPolicyErrorNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD025B90-CBE6-4DF3-8F4B-BFD11E38270C}\",\"Timestamp\":\"2023-06-15T09:10:00.0000000+01:00\",\"TimestampRaw\":133232550000000000,\"GenerateIncident\":false,\"SpecificData\":{\"PolicyName\":null}}",
         "event": {
             "code": "NewPolicyErrorNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:10:00Z",
@@ -1602,7 +1570,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20009,\"TypeComputedMap\":\"InvalidHivePackage\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0951E4-DF4A-4D4A-A636-ABEB310BB6E0}\",\"Timestamp\":\"2023-06-15T09:20:00.0000000+01:00\",\"TimestampRaw\":133232556000000000,\"GenerateIncident\":false,\"SpecificData\":{\"HivePackageFullPath\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\maliviousHive.hive\",\"LoadingOperationStatus\":5}}",
         "event": {
             "code": "InvalidHivePackage",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:20:00Z",
@@ -1627,7 +1594,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "StartUninstallAgent",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "start"
@@ -1652,7 +1618,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20011,\"TypeComputedMap\":\"EndUninstallAgentSucceeded\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0DB33A-2194-4800-AB4E-C2BBCCFDE65D}\",\"Timestamp\":\"2023-06-15T09:40:00.0000000+01:00\",\"TimestampRaw\":133232568000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "EndUninstallAgentSucceeded",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:40:00Z",
@@ -1674,7 +1639,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20012,\"TypeComputedMap\":\"EndUninstallAgentFailed\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD075976-1881-4C1C-AB5F-ABE0E0430C9A}\",\"Timestamp\":\"2023-06-15T09:50:00.0000000+01:00\",\"TimestampRaw\":133232574000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "EndUninstallAgentFailed",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:50:00Z",
@@ -1696,7 +1660,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20013,\"TypeComputedMap\":\"InvalidPolicyPackageCab\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0B6BB8-6422-478E-93D7-1D9DD7A61EC3}\",\"Timestamp\":\"2023-06-15T00:00:00.0000000+01:00\",\"TimestampRaw\":133232580000000000,\"GenerateIncident\":false,\"SpecificData\":{\"PolicyPackageCabFullPath\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\EsPolicy.hive\",\"LoadingOperationStatus\":5}}",
         "event": {
             "code": "InvalidPolicyPackageCab",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:00:00Z",
@@ -1718,7 +1681,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20014,\"TypeComputedMap\":\"EsScriptHostCreateFailure\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0C4A06-F13C-47F1-BF3C-FD7136C519A4}\",\"Timestamp\":\"2023-06-15T00:10:00.0000000+01:00\",\"TimestampRaw\":133232586000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ImplementationType\":0,\"StatusCode\":5}}",
         "event": {
             "code": "EsScriptHostCreateFailure",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:10:00Z",
@@ -1740,7 +1702,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20015,\"TypeComputedMap\":\"KernelCorruptionBugcheck\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0AA66F-5A03-4CE9-ABCD-86988444224C}\",\"Timestamp\":\"2023-06-15T00:20:00.0000000+01:00\",\"TimestampRaw\":133232592000000000,\"GenerateIncident\":false,\"SpecificData\":{\"Bugcheck\":\"0x00000109 (0x00000000, 0x00000000, 0x00000000, 0x00000000)\"}}",
         "event": {
             "code": "KernelCorruptionBugcheck",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:20:00Z",
@@ -1762,7 +1723,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20016,\"TypeComputedMap\":\"InvalidPolicyPackageSignature\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0CDBE2-1FD9-43B4-80A3-219638B5C585}\",\"Timestamp\":\"2023-06-15T00:30:00.0000000+01:00\",\"TimestampRaw\":133232598000000000,\"GenerateIncident\":false,\"SpecificData\":{\"StatusCode\":5,\"PolicyPackageFile\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\EsPolicy.hive\"}}",
         "event": {
             "code": "InvalidPolicyPackageSignature",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:30:00Z",
@@ -1784,7 +1744,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20017,\"TypeComputedMap\":\"StartAgentUpgrade\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD09E443-8DC7-4315-98A7-1C48312B835E}\",\"Timestamp\":\"2023-06-15T00:40:00.0000000+01:00\",\"TimestampRaw\":133232604000000000,\"GenerateIncident\":false,\"SpecificData\":{\"VersionFrom\":\"1.0.0.0\",\"VersionTo\":\"2.0.0.0\"}}",
         "event": {
             "code": "StartAgentUpgrade",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:40:00Z",
@@ -1806,7 +1765,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20018,\"TypeComputedMap\":\"PolicyPackageSignerExpired\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0FE5D0-593B-41FA-B642-98F1CC214FB8}\",\"Timestamp\":\"2023-06-15T00:50:00.0000000+01:00\",\"TimestampRaw\":133232610000000000,\"GenerateIncident\":false,\"SpecificData\":{\"PolicyPackageFile\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\EsPolicy.hive\"}}",
         "event": {
             "code": "PolicyPackageSignerExpired",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:50:00Z",
@@ -1828,7 +1786,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20019,\"TypeComputedMap\":\"SelfProtectionLrpcFailure\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0A7F5A-905E-4E0B-AE2C-F1DA2D610788}\",\"Timestamp\":\"2023-06-15T01:00:00.0000000+01:00\",\"TimestampRaw\":133232616000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ServerServiceName\":\"EsaAppIdSvc\",\"SelfProtectionModuleName\":\"EsaGuardSvc\",\"StatusCode\":5}}",
         "event": {
             "code": "SelfProtectionLrpcFailure",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T00:00:00Z",
@@ -1850,7 +1807,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20020,\"TypeComputedMap\":\"NewPolicyFromUpdateErrorNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0167A2-3042-453F-8E0C-F0B8BC76C13B}\",\"Timestamp\":\"2023-06-15T01:10:00.0000000+01:00\",\"TimestampRaw\":133232622000000000,\"GenerateIncident\":false,\"SpecificData\":{\"PolicyName\":null}}",
         "event": {
             "code": "NewPolicyFromUpdateErrorNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T00:10:00Z",
@@ -1872,7 +1828,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20021,\"TypeComputedMap\":\"NewPolicyFromUpdateNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0AEC3D-BAB1-4680-827B-FAB47FF00C8E}\",\"Timestamp\":\"2023-06-15T01:20:00.0000000+01:00\",\"TimestampRaw\":133232628000000000,\"GenerateIncident\":false,\"SpecificData\":{\"PolicyGuid\":\"00000000-0000-0000-0000-000000000000\",\"PolicyVersion\":0,\"PolicyName\":null}}",
         "event": {
             "code": "NewPolicyFromUpdateNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T00:20:00Z",
@@ -1894,7 +1849,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20022,\"TypeComputedMap\":\"NewConfigurationNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0533A5-A3D3-4F7E-A7B9-000FF784F592}\",\"Timestamp\":\"2023-06-15T01:30:00.0000000+01:00\",\"TimestampRaw\":133232634000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "NewConfigurationNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T00:30:00Z",
@@ -1916,7 +1870,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20023,\"TypeComputedMap\":\"NewConfigurationErrorNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0369FB-ED19-4402-A1E7-900E95350EB8}\",\"Timestamp\":\"2023-06-15T01:40:00.0000000+01:00\",\"TimestampRaw\":133232640000000000,\"GenerateIncident\":false,\"SpecificData\":{\"StatusCode\":5}}",
         "event": {
             "code": "NewConfigurationErrorNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T00:40:00Z",
@@ -1938,7 +1891,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20024,\"TypeComputedMap\":\"NewConfigurationFromUpdateErrorNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0C916A-4D69-416B-8014-BB8C8E461CFB}\",\"Timestamp\":\"2023-06-15T01:50:00.0000000+01:00\",\"TimestampRaw\":133232646000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "NewConfigurationFromUpdateErrorNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T00:50:00Z",
@@ -1960,7 +1912,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20025,\"TypeComputedMap\":\"NewConfigurationFromUpdateNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0A125B-DF69-440B-B388-B1A9477E7D92}\",\"Timestamp\":\"2023-06-15T02:00:00.0000000+01:00\",\"TimestampRaw\":133232652000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "NewConfigurationFromUpdateNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T01:00:00Z",
@@ -1982,7 +1933,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20026,\"TypeComputedMap\":\"InvalidConfigurationPackageCab\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0F5A8B-5487-4B22-981A-885363295252}\",\"Timestamp\":\"2023-06-15T02:10:00.0000000+01:00\",\"TimestampRaw\":133232658000000000,\"GenerateIncident\":false,\"SpecificData\":{\"PackageCabFullPath\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\EsConfig.hive\",\"LoadingOperationStatus\":5}}",
         "event": {
             "code": "InvalidConfigurationPackageCab",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T01:10:00Z",
@@ -2004,7 +1954,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20027,\"TypeComputedMap\":\"DowngradeIsNotAuthorized\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD010390-5326-4D21-9673-CD1B80EF7562}\",\"Timestamp\":\"2023-06-15T02:20:00.0000000+01:00\",\"TimestampRaw\":133232664000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "DowngradeIsNotAuthorized",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T01:20:00Z",
@@ -2026,7 +1975,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20028,\"TypeComputedMap\":\"SafeModeSessionNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0EF160-1AE3-47C3-8F2C-BA626C3D04C7}\",\"Timestamp\":\"2023-06-15T02:30:00.0000000+01:00\",\"TimestampRaw\":133232670000000000,\"GenerateIncident\":false,\"SpecificData\":{\"LoginName\":\"User1\",\"Timestamp\":\"2023-03-13T10:54:24.6100962+01:00\"}}",
         "event": {
             "code": "SafeModeSessionNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T01:30:00Z",
@@ -2048,7 +1996,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20030,\"TypeComputedMap\":\"MaintenanceModeStart\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0B53D9-A9FF-4257-8A47-BA73FD9798EE}\",\"Timestamp\":\"2023-06-15T02:40:00.0000000+01:00\",\"TimestampRaw\":133232676000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "MaintenanceModeStart",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T01:40:00Z",
@@ -2080,7 +2027,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20031,\"TypeComputedMap\":\"MaintenanceModeStop\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD067EED-CA85-4D98-8C35-8DC58D0943C3}\",\"Timestamp\":\"2023-06-15T02:50:00.0000000+01:00\",\"TimestampRaw\":133232682000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "MaintenanceModeStop",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T01:50:00Z",
@@ -2102,7 +2048,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20032,\"TypeComputedMap\":\"MaintenanceModeAgentUpgradePostponed\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0871CA-224C-4600-A48A-B562DB058C09}\",\"Timestamp\":\"2023-06-15T03:00:00.0000000+01:00\",\"TimestampRaw\":133232688000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "MaintenanceModeAgentUpgradePostponed",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T02:00:00Z",
@@ -2124,7 +2069,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20033,\"TypeComputedMap\":\"BfeIsStoppedNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0E7607-D279-4188-BE30-E2A887B80D32}\",\"Timestamp\":\"2023-06-15T03:10:00.0000000+01:00\",\"TimestampRaw\":133232694000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "BfeIsStoppedNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T02:10:00Z",
@@ -2146,7 +2090,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20034,\"TypeComputedMap\":\"RepairFailureNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0D4655-336D-4DD9-9532-78433F39364A}\",\"Timestamp\":\"2023-06-15T03:20:00.0000000+01:00\",\"TimestampRaw\":133232700000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"Result\":5}}",
         "event": {
             "code": "RepairFailureNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T02:20:00Z",
@@ -2178,7 +2121,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20035,\"TypeComputedMap\":\"RepairSuccessNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0BBCE5-0299-4F04-9858-756036BCBFBC}\",\"Timestamp\":\"2023-06-15T03:30:00.0000000+01:00\",\"TimestampRaw\":133232706000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "RepairSuccessNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T02:30:00Z",
@@ -2210,7 +2152,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20036,\"TypeComputedMap\":\"EndAgentModularityFailed\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD071DC0-58B6-4166-93AC-5E53F025C724}\",\"Timestamp\":\"2023-06-15T03:40:00.0000000+01:00\",\"TimestampRaw\":133232712000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ErrorCode\":5}}",
         "event": {
             "code": "EndAgentModularityFailed",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T02:40:00Z",
@@ -2232,7 +2173,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20037,\"TypeComputedMap\":\"EndAgentModularitySucceeded\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD016C2D-6BA8-4348-BA6D-92FB1CE190A8}\",\"Timestamp\":\"2023-06-15T03:50:00.0000000+01:00\",\"TimestampRaw\":133232718000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "EndAgentModularitySucceeded",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T02:50:00Z",
@@ -2254,7 +2194,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20038,\"TypeComputedMap\":\"CommFinishFailedState\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD05A0F2-7163-4A09-9F2D-AB6EA6171047}\",\"Timestamp\":\"2023-06-15T04:00:00.0000000+01:00\",\"TimestampRaw\":133232724000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ErrorCode\":5,\"State\":8,\"StateName\":\"PreviousStateName\"}}",
         "event": {
             "code": "CommFinishFailedState",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T03:00:00Z",
@@ -2276,7 +2215,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20039,\"TypeComputedMap\":\"ForcedPatchApplication\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD09E4CF-09F4-4E78-A3E9-C4CB48471D46}\",\"Timestamp\":\"2023-06-15T04:10:00.0000000+01:00\",\"TimestampRaw\":133232730000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "ForcedPatchApplication",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T03:10:00Z",
@@ -2298,7 +2236,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20040,\"TypeComputedMap\":\"ChallengeStart\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD04C00F-2052-440A-9E43-E685F60E2ACF}\",\"Timestamp\":\"2023-06-15T04:20:00.0000000+01:00\",\"TimestampRaw\":133232736000000000,\"GenerateIncident\":false,\"SpecificData\":{\"Duration\":0,\"ChallengeAction\":3}}",
         "event": {
             "code": "ChallengeStart",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T03:20:00Z",
@@ -2320,7 +2257,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20041,\"TypeComputedMap\":\"ChallengeStop\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0F233B-3CCE-470B-9312-A760E05C5065}\",\"Timestamp\":\"2023-06-15T04:30:00.0000000+01:00\",\"TimestampRaw\":133232742000000000,\"GenerateIncident\":false,\"SpecificData\":{\"Manual\":true,\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"ChallengeAction\":0}}",
         "event": {
             "code": "ChallengeStop",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T03:30:00Z",
@@ -2352,7 +2288,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20042,\"TypeComputedMap\":\"ChallengeStopFailure\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD01D6E5-6517-4E2C-B029-8A4668B9A2BE}\",\"Timestamp\":\"2023-06-15T04:40:00.0000000+01:00\",\"TimestampRaw\":133232748000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ErrorCode\":5}}",
         "event": {
             "code": "ChallengeStopFailure",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T03:40:00Z",
@@ -2374,7 +2309,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20043,\"TypeComputedMap\":\"WrongCabinetVersion\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD052689-74F5-4E19-A0CE-13246249763C}\",\"Timestamp\":\"2023-06-15T04:50:00.0000000+01:00\",\"TimestampRaw\":133232754000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "WrongCabinetVersion",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T03:50:00Z",
@@ -2396,7 +2330,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20044,\"TypeComputedMap\":\"MultipleNetworkInterfacesMatchingTest\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD07AF61-2014-44FF-83D1-FAFDEBA00A20}\",\"Timestamp\":\"2023-06-15T05:00:00.0000000+01:00\",\"TimestampRaw\":133232760000000000,\"GenerateIncident\":false,\"SpecificData\":{\"InterfaceName\":\"DEV\",\"InterfaceDescription\":\"Lorem Iterfacum\"}}",
         "event": {
             "code": "MultipleNetworkInterfacesMatchingTest",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T04:00:00Z",
@@ -2418,7 +2351,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20045,\"TypeComputedMap\":\"ChallengeStartFailure\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD04CFB2-80E8-4237-9345-B73E76623445}\",\"Timestamp\":\"2023-06-15T05:10:00.0000000+01:00\",\"TimestampRaw\":133232766000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ErrorCode\":5}}",
         "event": {
             "code": "ChallengeStartFailure",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T04:10:00Z",
@@ -2440,7 +2372,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20048,\"TypeComputedMap\":\"External\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0A2E72-1187-4BF6-8773-235285060E82}\",\"Timestamp\":\"2023-06-15T05:20:00.0000000+01:00\",\"TimestampRaw\":133232772000000000,\"GenerateIncident\":false,\"SpecificData\":{\"Description\":\"localized:EventForwarding_WinDefender_MalwareProtectionRealTimeProtectionFeatureConfigured\",\"OriginType\":2,\"ExtraData\":{\"Message\":\"This is a message\",\"_OriginalText\":\"2021 Mar 24 17:54:54 WinEvtLog: Microsoft-Windows-Windows Defender/Operational: INFORMATION(5007): Microsoft-Windows-Windows Defender: SYSTEM: NT AUTHORITY: W102004X64: Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.\\r\\n \\tOld value: HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\ServiceStartStates = 0x1\\r\\n \\tNew value: Default\\\\ServiceStartStates = 0x0\"},\"Fields\":{\"BaseRuleGuid\":\"64a298f2-c9e8-451f-9637-84254d2d8332\"},\"Action\":{\"PolicyGuid\":\"00000000-0000-0000-0000-000000000000\",\"PolicyVersion\":0,\"RuleGuid\":\"00000000-0000-0000-0000-000000000000\",\"BaseRuleGuid\":\"00000000-0000-0000-0000-000000000000\",\"IdentifierGuid\":\"00000000-0000-0000-0000-000000000000\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false}}}",
         "event": {
             "code": "External",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T04:20:00Z",
@@ -2472,7 +2403,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20049,\"TypeComputedMap\":\"ChallengeTooManyFailedAttempts\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0C6027-57C5-40B8-9A45-34C3259FD352}\",\"Timestamp\":\"2023-06-15T05:30:00.0000000+01:00\",\"TimestampRaw\":133232778000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "ChallengeTooManyFailedAttempts",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T04:30:00Z",
@@ -2504,7 +2434,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20050,\"TypeComputedMap\":\"MaintenanceModeAgentModularityPostponed\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0BF97F-A000-4C5E-B2FD-A9673DB49C79}\",\"Timestamp\":\"2023-06-15T05:40:00.0000000+01:00\",\"TimestampRaw\":133232784000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "MaintenanceModeAgentModularityPostponed",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T04:40:00Z",
@@ -2526,7 +2455,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20051,\"TypeComputedMap\":\"EndUpgradeAgentNothingToDo\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD077BE1-8717-4796-AA97-4E4684223298}\",\"Timestamp\":\"2023-06-15T05:50:00.0000000+01:00\",\"TimestampRaw\":133232790000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "EndUpgradeAgentNothingToDo",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T04:50:00Z",
@@ -2548,7 +2476,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20052,\"TypeComputedMap\":\"EndUpgradeAgentGuidUpdated\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD02DCFD-B400-42C2-BE32-B96BB54D4C10}\",\"Timestamp\":\"2023-06-15T06:00:00.0000000+01:00\",\"TimestampRaw\":133232796000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "EndUpgradeAgentGuidUpdated",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T05:00:00Z",
@@ -2570,7 +2497,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20053,\"TypeComputedMap\":\"MaintenanceModeStopFailed\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD07C559-BEF6-40F8-9624-C716A0F37F67}\",\"Timestamp\":\"2023-06-15T06:10:00.0000000+01:00\",\"TimestampRaw\":133232802000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ErrorCode\":0}}",
         "event": {
             "code": "MaintenanceModeStopFailed",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T05:10:00Z",
@@ -2595,7 +2521,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "KerberosPassTheTicket",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -2661,7 +2586,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "ArpSpoofing",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -2699,7 +2623,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationCertutilDecodeMaliciousUsage",
-            "kind": "event",
             "severity": 2,
             "type": [
                 "info"
@@ -2789,7 +2712,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationCertutilDownloadMaliciousUsage",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -2885,7 +2807,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20059,\"TypeComputedMap\":\"AgentInternalScriptRuntimeError\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD09A421-A13C-49BF-AB67-B48A5884C559}\",\"Timestamp\":\"2023-06-15T07:00:00.0000000+01:00\",\"TimestampRaw\":133232832000000000,\"GenerateIncident\":false,\"SpecificData\":{\"ExecutionStatus\":0,\"ScriptGuid\":\"00000000-0000-0000-0000-000000000000\"}}",
         "event": {
             "code": "AgentInternalScriptRuntimeError",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T06:00:00Z",
@@ -2910,7 +2831,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "WmiPersistence",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "info"
@@ -2948,7 +2868,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "Discovery",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "info"
@@ -3011,7 +2930,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20062,\"TypeComputedMap\":\"AgentInternalUninstallForbidden\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD04A57F-EE9F-4D86-AAD5-E7FC20313376}\",\"Timestamp\":\"2023-06-15T07:30:00.0000000+01:00\",\"TimestampRaw\":133232850000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UninstallAttemptDateTime\":\"2020-07-07T09:29:06.066110400Z\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "AgentInternalUninstallForbidden",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T06:30:00Z",
@@ -3043,7 +2961,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20063,\"TypeComputedMap\":\"AgentInternalLogExceedMaxSize\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD062E12-865A-4B16-B57B-37205E59277B}\",\"Timestamp\":\"2023-06-15T07:40:00.0000000+01:00\",\"TimestampRaw\":133232856000000000,\"GenerateIncident\":false,\"SpecificData\":{\"FaultyLogType\":1010,\"FaultyLogTypeComputedMap\":null}}",
         "event": {
             "code": "AgentInternalLogExceedMaxSize",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T06:40:00Z",
@@ -3065,7 +2982,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20064,\"TypeComputedMap\":\"StartModularityAgent\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0F3A16-4E4E-4790-B3EB-5558D437C77E}\",\"Timestamp\":\"2023-06-15T07:50:00.0000000+01:00\",\"TimestampRaw\":133232862000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "StartModularityAgent",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T06:50:00Z",
@@ -3087,7 +3003,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20065,\"TypeComputedMap\":\"StartRepairAgent\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD000F33-953C-49B2-9E91-A9D0D16FABFB}\",\"Timestamp\":\"2023-06-15T08:00:00.0000000+01:00\",\"TimestampRaw\":133232868000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "StartRepairAgent",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:00:00Z",
@@ -3109,7 +3024,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20066,\"TypeComputedMap\":\"AgentInternalVolumeWithoutShadowStorage\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD07B4CE-114A-42D1-8080-3E10EAAF1F3A}\",\"Timestamp\":\"2023-06-15T08:10:00.0000000+01:00\",\"TimestampRaw\":133232874000000000,\"GenerateIncident\":false,\"SpecificData\":{\"VolumePath\":\"\\\\\\\\?\\\\Volume{3799cd4d-464b-4908-9537-3984827f7c29}\\\\\",\"DriveLetter\":\"C:\\\\\",\"VolumeLabel\":\"some label\"}}",
         "event": {
             "code": "AgentInternalVolumeWithoutShadowStorage",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:10:00Z",
@@ -3131,7 +3045,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20067,\"TypeComputedMap\":\"AgentInternalShadowCopyCreationFailure\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD04DBA1-AC27-47D4-ABBF-588CD950C127}\",\"Timestamp\":\"2023-06-15T08:20:00.0000000+01:00\",\"TimestampRaw\":133232880000000000,\"GenerateIncident\":false,\"SpecificData\":{\"VolumePath\":\"\\\\\\\\?\\\\Volume{a14d9f90-5db7-4b3c-8cf1-d9bd2f9f1a64}\\\\\",\"DriveLetter\":\"C:\\\\\",\"VolumeLabel\":\"some label\",\"ErrorCode\":5}}",
         "event": {
             "code": "AgentInternalShadowCopyCreationFailure",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:20:00Z",
@@ -3156,7 +3069,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "Ransomware",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "info"
@@ -3219,7 +3131,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20069,\"TypeComputedMap\":\"AgentInternalResourcePackageDownloadFailed\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD09591B-3AF8-4605-96DE-64B269B9173E}\",\"Timestamp\":\"2023-06-15T08:40:00.0000000+01:00\",\"TimestampRaw\":133232892000000000,\"GenerateIncident\":false,\"SpecificData\":{\"StatusCode\":5,\"ResourceGuid\":\"28110024-5807-45eb-9b7b-3aed55cb3f04\"}}",
         "event": {
             "code": "AgentInternalResourcePackageDownloadFailed",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:40:00Z",
@@ -3241,7 +3152,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20070,\"TypeComputedMap\":\"AgentInternalInvalidResourcePackageSignature\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD018FE1-B276-4EB6-9E00-9A1CE516E02E}\",\"Timestamp\":\"2023-06-15T08:50:00.0000000+01:00\",\"TimestampRaw\":133232898000000000,\"GenerateIncident\":false,\"SpecificData\":{\"StatusCode\":5,\"ResourceGuid\":\"ce78187e-1062-4075-9bce-d8c92ee2b99e\",\"ResourcePackageFile\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\EsResource.cab\"}}",
         "event": {
             "code": "AgentInternalInvalidResourcePackageSignature",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T07:50:00Z",
@@ -3263,7 +3173,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20071,\"TypeComputedMap\":\"AgentInternalSecOpsInvalidPackageSignature\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0B84DD-18EA-4C30-8D5B-91D288F9368A}\",\"Timestamp\":\"2023-06-15T09:00:00.0000000+01:00\",\"TimestampRaw\":133232904000000000,\"GenerateIncident\":false,\"SpecificData\":{\"StatusCode\":5,\"SecOpsGuid\":\"b9092244-2249-44bb-ae2d-f9e50a2b0b10\",\"SecOpsPackageFile\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\SecOpsTask.cab\"}}",
         "event": {
             "code": "AgentInternalSecOpsInvalidPackageSignature",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:00:00Z",
@@ -3285,7 +3194,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20072,\"TypeComputedMap\":\"AgentInternalSecOpsInvalidJsonSize\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0E2013-BED1-4DC5-95FB-A881DB5F386A}\",\"Timestamp\":\"2023-06-15T09:10:00.0000000+01:00\",\"TimestampRaw\":133232910000000000,\"GenerateIncident\":false,\"SpecificData\":{\"StatusCode\":-1609564141,\"SecOpsGuid\":\"fbba1fb1-efda-4bba-9929-2d5eae03344e\",\"SecOpsPackageFile\":\"C:\\\\Users\\\\User1\\\\Desktop\\\\SecOpsTask.cab\",\"JsonSize\":10241}}",
         "event": {
             "code": "AgentInternalSecOpsInvalidJsonSize",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:10:00Z",
@@ -3307,7 +3215,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20073,\"TypeComputedMap\":\"AgentInternalDowngradeWithPivotVersion223IsRequired\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD02148D-0FE6-4428-805C-3B1A58BB1E1D}\",\"Timestamp\":\"2023-06-15T09:20:00.0000000+01:00\",\"TimestampRaw\":133232916000000000,\"GenerateIncident\":false,\"SpecificData\":{}}",
         "event": {
             "code": "AgentInternalDowngradeWithPivotVersion223IsRequired",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:20:00Z",
@@ -3329,7 +3236,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":2,\"Type\":20079,\"TypeComputedMap\":\"AgentOperationYaraProcessAnalysisMatch\",\"Severity\":1,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0FD776-0C61-4946-BA0C-185518A0361C}\",\"GenerateIncident\":false,\"Timestamp\":\"2023-06-15T01:58:14.4201973+02:00\",\"TimestampRaw\":133300870944201973,\"SpecificData\":{\"SourceProcess\":{\"PID\":5848,\"ProcessGuid\":\"{36C8E9F1-41B8-44FF-B482-FD11D323D5C7}\",\"ProcessImageName\":\"C:\\\\Windows\\\\explorer.exe\",\"VolumeZone\":1,\"VolumeZoneComputedBitMap\":[\"Operating system\"],\"ProcessCommandLine\":\"C:\\\\Windows\\\\Explorer.EXE\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"IntegrityLevel\":\"S-1-16-8192\",\"IntegrityLevelNameLookup\":\"MediumMandatoryLevel\",\"IntegrityLevelDomainLookup\":\"MandatoryLabel\",\"SessionID\":2,\"HashMd5\":\"C6CD12BF63E9B9B4478E6F975E7C293D\",\"HashSha1\":\"FE02128E2A9AF073DB5D6B3843469CA87391C22A\",\"HashSha256\":\"E1EA06C6884A2CEB9DD0EFEB788011AB2B17041F1C7438A9555415501E9E374C\",\"IsProtectedOrCritical\":false,\"CertificateSignatureState\":1,\"CertificateSignatureStateComputedMap\":\"SignatureStateTrusted\",\"Certificates\":[{\"Algorithm\":\"SHA256\",\"IssuerCN\":\"MicrosoftWindowsProductionPCA2011\",\"SubjectCN\":\"MicrosoftWindows\",\"SigningTime\":\"2023-01-06T12:27:04.6400000+02:00\",\"ValidityStart\":\"2022-05-05T21:23:15.0000000+02:00\",\"ValidityEnd\":\"2023-05-04T21:23:15.0000000+02:00\"}],\"ProcessStartTime\":\"2023-05-31T13:05:25.0959518+02:00\",\"ProcessStartTimeRaw\":133300047250959518},\"Action\":{\"PolicyGuid\":\"{AD3E9A72-739A-4AEF-B62C-DB6A82EB6053}\",\"PolicyVersion\":4,\"RuleGuid\":\"{6D01E214-075E-472C-A56D-3C6042DEA832}\",\"BaseRuleGuid\":\"{CF2EB1A3-0A18-4406-B284-F72A4E21D34F}\",\"IdentifierGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"AnalysisProperties\":{\"AnalysisUnitGuid\":\"{919C4A6A-F381-4D01-A159-34C85152B5DF}\",\"Triggers\":8,\"TriggersComputedBitMap\":[\"TRIGGER_RULE_EVENT\"],\"AssociatedEventGuid\":\"{41FD7022-DCDA-4ECE-983D-C780EC4315CA}\",\"AssociatedScheduledTaskGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsRequestGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedBaseRuleGuid\":\"{BD00BBE6-3264-46D6-A010-AF9419FD7243}\",\"AssociatedRuleGuid\":\"{BD00BBE6-3264-46D6-A010-AF9419FD7245}\"},\"SourceProcessImageFileDetails\":{\"FileFullPath\":\"C:\\\\Windows\\\\explorer.exe\",\"FileCreateTime\":\"2023-01-12T10:52:38.2994281+02:00\",\"LastModified\":\"2023-01-12T10:52:38.4088025+02:00\",\"Owner\":\"S-1-5-21-2222222-33333333-44444444-555-2271478464\",\"OwnerNameLookup\":\"TrustedInstaller\",\"OwnerDomainLookup\":\"NTSERVICE\",\"HashMd5\":\"C6CD12BF63E9B9B4478E6F975E7C293D\",\"HashSha1\":\"FE02128E2A9AF073DB5D6B3843469CA87391C22A\",\"HashSha256\":\"E1EA06C6884A2CEB9DD0EFEB788011AB2B17041F1C7438A9555415501E9E374C\",\"HashSSDeep\":\"49152:JFV7+LB3mKxTLHWBwPvfb0xer5TaNFLGO3LL6Y6IEF98C21rf2JGno/n7w8A7/eE:obULwVw8a0cDl\"},\"MatchedYaraRules\":[{\"MatchedRule\":\"test_yaralib_pe_module_is_pe_rule\",\"Tags\":[],\"Metadatas\":[{\"MetadataKey\":\"description\",\"MetadataValue\":\"module_is_pe_rule\"},{\"MetadataKey\":\"author\",\"MetadataValue\":\"SESQAManuel\"}],\"MatchedStrings\":[]},{\"MatchedRule\":\"test_yaralib_pe_module_is_x64_rule\",\"Tags\":[],\"Metadatas\":[{\"MetadataKey\":\"description\",\"MetadataValue\":\"module_is_x64_rule\"},{\"MetadataKey\":\"author\",\"MetadataValue\":\"SESQAManuel\"}],\"MatchedStrings\":[]}]}}",
         "event": {
             "code": "AgentOperationYaraProcessAnalysisMatch",
-            "kind": "event",
             "severity": 1
         },
         "@timestamp": "2023-06-14T23:58:14.420197Z",
@@ -3389,7 +3295,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":2,\"Type\":20080,\"TypeComputedMap\":\"AgentOperationYaraFileAnalysisMatch\",\"Severity\":1,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD08DEF4-1B0B-4DA3-8DDE-AAB23C392453}\",\"GenerateIncident\":false,\"Timestamp\":\"2023-06-15T01:43:47.9837872+02:00\",\"TimestampRaw\":133300862279837872,\"SpecificData\":{\"SourceProcess\":{\"PID\":2520,\"ProcessGuid\":\"{A9344FD4-981C-4460-84B3-6649405DAF60}\",\"ProcessImageName\":\"C:\\\\ProgramFiles\\\\Notepad++\\\\notepad++.exe\",\"VolumeZone\":1,\"VolumeZoneComputedBitMap\":[\"Operating system\"],\"ProcessCommandLine\":\"\\\"C:\\\\ProgramFiles\\\\Notepad++\\\\notepad++.exe\\\"\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"IntegrityLevel\":\"S-1-16-8192\",\"IntegrityLevelNameLookup\":\"MediumMandatoryLevel\",\"IntegrityLevelDomainLookup\":\"MandatoryLabel\",\"SessionID\":2,\"HashMd5\":\"B7E5E966EBB9C302155D6B6E0DA21721\",\"HashSha1\":\"ECA5EA2F815C856C22F8A9BA4C2C4C0713DADED0\",\"HashSha256\":\"31AC7D30E550EEE5F28E1A04F1E7E9346BA91849B27F24C700F098654C054A8B\",\"IsProtectedOrCritical\":false,\"CertificateSignatureState\":1,\"CertificateSignatureStateComputedMap\":\"SignatureStateTrusted\",\"Certificates\":[{\"Algorithm\":\"SHA256\",\"IssuerCN\":\"DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1\",\"SubjectCN\":\"Notepad++\",\"SigningTime\":\"2023-05-15T06:12:16.0000000+02:00\",\"ValidityStart\":\"2022-05-13T02:00:00.0000000+02:00\",\"ValidityEnd\":\"2025-05-15T01:59:59.0000000+02:00\"}],\"ProcessStartTime\":\"2023-05-31T13:17:23.8002785+02:00\",\"ProcessStartTimeRaw\":133300054438002785},\"Action\":{\"PolicyGuid\":\"{AD3E9A72-739A-4AEF-B62C-DB6A82EB6053}\",\"PolicyVersion\":2,\"RuleGuid\":\"{41314BB5-45D2-4878-812A-6ED813D00D0B}\",\"BaseRuleGuid\":\"{5D368004-E074-42FA-8674-B35BA3C1FA89}\",\"IdentifierGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"AnalysisProperties\":{\"AnalysisUnitGuid\":\"{68A0C3B1-05C5-4508-B22C-E87526EB8CB9}\",\"Triggers\":8,\"TriggersComputedBitMap\":[\"TRIGGER_RULE_EVENT\"],\"AssociatedEventGuid\":\"{31BEA723-FB51-4461-A812-F7B379F09E8A}\",\"AssociatedScheduledTaskGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsRequestGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedBaseRuleGuid\":\"{BD00BBE6-3264-46D6-A010-AF9419FD7243}\",\"AssociatedRuleGuid\":\"{BD00BBE6-3264-46D6-A010-AF9419FD7245}\"},\"FileDetails\":{\"FileFullPath\":\"C:\\\\ProgramFiles\\\\Notepad++\\\\notepad++.exe\",\"FileCreateTime\":\"2023-05-15T06:12:14.0000000+02:00\",\"LastModified\":\"2023-05-15T06:12:14.0000000+02:00\",\"Owner\":\"S-1-5-32-544\",\"OwnerNameLookup\":\"Administrators\",\"OwnerDomainLookup\":\"BUILTIN\",\"HashMd5\":\"B7E5E966EBB9C302155D6B6E0DA21721\",\"HashSha1\":\"ECA5EA2F815C856C22F8A9BA4C2C4C0713DADED0\",\"HashSha256\":\"31AC7D30E550EEE5F28E1A04F1E7E9346BA91849B27F24C700F098654C054A8B\",\"HashSSDeep\":\"49152:5d9VFXdEK1BPN2efc5bjaMOoDsKEj45gvV+/QFw935Gt4/fDT5dOotDVhJJao0gB:p26UcvVUDDxD2MdpU/KGHiLUiRt/moD\"},\"SourceProcessImageFileDetails\":{\"FileFullPath\":\"C:\\\\ProgramFiles\\\\Notepad++\\\\notepad++.exe\",\"FileCreateTime\":\"2023-05-15T06:12:14.0000000+02:00\",\"LastModified\":\"2023-05-15T06:12:14.0000000+02:00\",\"Owner\":\"S-1-5-32-544\",\"OwnerNameLookup\":\"Administrators\",\"OwnerDomainLookup\":\"BUILTIN\",\"HashMd5\":\"B7E5E966EBB9C302155D6B6E0DA21721\",\"HashSha1\":\"ECA5EA2F815C856C22F8A9BA4C2C4C0713DADED0\",\"HashSha256\":\"31AC7D30E550EEE5F28E1A04F1E7E9346BA91849B27F24C700F098654C054A8B\",\"HashSSDeep\":\"49152:5d9VFXdEK1BPN2efc5bjaMOoDsKEj45gvV+/QFw935Gt4/fDT5dOotDVhJJao0gB:p26UcvVUDDxD2MdpU/KGHiLUiRt/moD\"},\"MatchedYaraRules\":[{\"MatchedRule\":\"test_yaralib_pe_module_is_pe_rule\",\"Tags\":[],\"Metadatas\":[{\"MetadataKey\":\"description\",\"MetadataValue\":\"module_is_pe_rule\"},{\"MetadataKey\":\"author\",\"MetadataValue\":\"SESQAManuel\"}],\"MatchedStrings\":[]},{\"MatchedRule\":\"test_yaralib_pe_module_is_x64_rule\",\"Tags\":[],\"Metadatas\":[{\"MetadataKey\":\"description\",\"MetadataValue\":\"module_is_x64_rule\"},{\"MetadataKey\":\"author\",\"MetadataValue\":\"SESQAManuel\"}],\"MatchedStrings\":[]}]}}",
         "event": {
             "code": "AgentOperationYaraFileAnalysisMatch",
-            "kind": "event",
             "severity": 1
         },
         "@timestamp": "2023-06-14T23:43:47.983787Z",
@@ -3449,7 +3354,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20081,\"TypeComputedMap\":\"AgentOperationYaraFileAnalysisMatchNoSourceProcess\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD06C8B7-7883-4C8B-862F-D9F67EA08BE7}\",\"Timestamp\":\"2023-06-15T09:50:00.0000000+01:00\",\"TimestampRaw\":133232934000000000,\"GenerateIncident\":false,\"SpecificData\":{\"MatchedYaraRules\":[{\"MatchedRule\":\"First Yara rule\",\"Tags\":null,\"Metadatas\":[{\"MetadataKey\":\"First metadata key\",\"MetadataValue\":\"First metadata value\"},{\"MetadataKey\":\"Second metadata key\",\"MetadataValue\":\"Second metadata value\"}]},{\"MatchedRule\":\"Second Yara rule\",\"Tags\":[\"First tag\",\"Second tag\",\"Third tag\"],\"Metadatas\":null},{\"MatchedRule\":\"Third Yara rule\",\"Tags\":[\"First tag\",\"Second tag\",\"Third tag\"],\"Metadatas\":[{\"MetadataKey\":\"First metadata key\",\"MetadataValue\":\"First metadata value\"},{\"MetadataKey\":\"Second metadata key\",\"MetadataValue\":\"Second metadata value\"}]}],\"FileDetails\":{\"FileFullPath\":\"C:\\\\Program Files\\\\WindowsApps\\\\Microsoft.WindowsNotepad_10.2102.13.0_x64__8wekyb3d8bbwe\\\\Notepad\\\\Notepad.exe\",\"FileCreateTime\":\"2021-06-05T15:33:12.3858496+01:00\",\"LastModified\":\"2021-06-05T15:33:12.3858496+01:00\",\"Owner\":\"S-1-5-32-544\",\"OwnerNameLookup\":\"Administrators\",\"OwnerDomainLookup\":\"BUILTIN\",\"HashMd5\":\"0EB8934F47F01E59CAC3FE0E946EE516\",\"HashSha1\":\"B4CF1A5A6577BA51971B7B7094F0EED281B29223\",\"HashSha256\":\"D36B2DC6907940B9FDBDFEFCDCD49C9F1224922E77F1374C807C961E346239C8\",\"HashSSDeep\":\"384:m7Oi2cWe/2Hnd+GQW6bbA2WinQW6j32UkXLsK6QW6cI2i+eQW6fC26rjNfQW67AV:m7+nSRPXHQS+h9pxvxQfiRW8m1pPBWa\"},\"AnalysisProperties\":{\"AnalysisUnitGuid\":\"00000000-0000-0000-0000-000000000000\",\"Triggers\":8,\"AssociatedRuleGuid\":\"00000000-0000-0000-0000-000000000000\",\"AssociatedBaseRuleGuid\":\"00000000-0000-0000-0000-000000000000\",\"AssociatedEventGuid\":\"00000000-0000-0000-0000-000000000000\",\"AssociatedScheduledTaskGuid\":\"00000000-0000-0000-0000-000000000000\",\"AssociatedSecOpsGuid\":\"00000000-0000-0000-0000-000000000000\",\"AssociatedSecOpsRequestGuid\":\"00000000-0000-0000-0000-000000000000\"}}}",
         "event": {
             "code": "AgentOperationYaraFileAnalysisMatchNoSourceProcess",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-15T08:50:00Z",
@@ -3474,7 +3378,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "PpidSpoofing",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -3572,7 +3475,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20083,\"TypeComputedMap\":\"IntegrityStart\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0DDBD7-BAC9-4F75-932D-8B68A34A6A7F}\",\"Timestamp\":\"2023-06-15T00:10:00.0000000+01:00\",\"TimestampRaw\":133232946000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":null,\"UserDomainLookup\":null,\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "IntegrityStart",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:10:00Z",
@@ -3597,7 +3499,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20084,\"TypeComputedMap\":\"IntegritySuccessNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0ED49D-9AA5-4470-A585-65B8A8DDAF49}\",\"Timestamp\":\"2023-06-15T00:20:00.0000000+01:00\",\"TimestampRaw\":133232952000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "IntegritySuccessNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:20:00Z",
@@ -3629,7 +3530,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20085,\"TypeComputedMap\":\"RepairSuccessWithRebootNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0A53CA-5607-4B5C-A69D-BBE54085E159}\",\"Timestamp\":\"2023-06-15T00:30:00.0000000+01:00\",\"TimestampRaw\":133232958000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":null,\"UserDomainLookup\":null,\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "RepairSuccessWithRebootNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:30:00Z",
@@ -3654,7 +3554,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20086,\"TypeComputedMap\":\"RepairSuccessWithoutRebootNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD07A96B-A47A-49A7-9430-D87EE24D362B}\",\"Timestamp\":\"2023-06-15T00:40:00.0000000+01:00\",\"TimestampRaw\":133232964000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\"}}",
         "event": {
             "code": "RepairSuccessWithoutRebootNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:40:00Z",
@@ -3686,7 +3585,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20087,\"TypeComputedMap\":\"IntegrityErrorNotification\",\"Severity\":0,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0FEB10-4AEA-4290-B09D-C89FE4025222}\",\"Timestamp\":\"2023-06-15T00:50:00.0000000+01:00\",\"TimestampRaw\":133232970000000000,\"GenerateIncident\":false,\"SpecificData\":{\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"Result\":5}}",
         "event": {
             "code": "IntegrityErrorNotification",
-            "kind": "event",
             "severity": 0
         },
         "@timestamp": "2023-06-14T23:50:00Z",
@@ -3721,7 +3619,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "AgentRemediationRemoveFile",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "deletion"
@@ -3749,7 +3646,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "AgentRemediationKillProcess",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "end"
@@ -3777,7 +3673,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "AgentRemediationRemoveRegistryKey",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "deletion"
@@ -3810,7 +3705,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "AgentRemediationRemoveRegistryValue",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "deletion"
@@ -3843,7 +3737,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "registry"
             ],
             "code": "AgentRemediationSetRegistryValue",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "change"
@@ -3876,7 +3769,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentRemediationExecutePowershellScript",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "info"
@@ -3913,7 +3805,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "AgentRemediationExtractFilesFromShadowCopy",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "info"
@@ -3941,7 +3832,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationIocAnalysisNamedObjectMatch",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "info"
@@ -3984,7 +3874,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationIocAnalysisEventLogMatch",
-            "kind": "event",
             "provider": "Microsoft-Windows-Security-Auditing",
             "severity": 4,
             "type": [
@@ -4023,7 +3912,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationIocAnalysisFilenameMatch",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "info"
@@ -4089,7 +3977,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationIocAnalysisFilenameMatchNoSourceProcess",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "info"
@@ -4132,7 +4019,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationIocAnalysisDnsRequestMatch",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "info"
@@ -4170,7 +4056,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationIocFileSearchByHashFile",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "info"
@@ -4231,7 +4116,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "AgentOperationIocFileSearchByHashProcess",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "info"
@@ -4303,7 +4187,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20107,\"TypeComputedMap\":\"AgentOperationIocAnalysisTextualSearchProcessMatch\",\"Severity\":4,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD01D628-71C0-4432-A358-142306F65E42}\",\"GenerateIncident\":false,\"Timestamp\":\"2023-06-15T04:49:04.5989765+02:00\",\"TimestampRaw\":133311341445989765,\"SpecificData\":{\"Action\":{\"PolicyGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"PolicyVersion\":0,\"RuleGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"BaseRuleGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"IdentifierGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"Blocked\":false,\"RequestMoveToQuarantine\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"AnalysisProperties\":{\"AnalysisUnitGuid\":\"{C6F96B4B-22E1-4F77-B74B-BBB94E7DCEC5}\",\"Triggers\":128,\"TriggersComputedBitMap\":[\"TRIGGER_SECOPS\"],\"AssociatedEventGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedScheduledTaskGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsGuid\":\"{D4782D23-E46A-462E-8934-BFDC32920706}\",\"AssociatedSecOpsRequestGuid\":\"{F5B8FBB4-9B35-45E7-80B6-2D6B81BDB126}\",\"AssociatedBaseRuleGuid\":\"{BB1C16CA-8916-4891-9A65-078284B20EA1}\",\"AssociatedRuleGuid\":\"{8CFC6AE9-E111-403E-90AF-1912774CBEC4}\"},\"SourceProcess\":{\"PID\":4032,\"ProcessGuid\":\"{358F6CB9-1326-469E-807D-9742D7799F1F}\",\"ProcessImageName\":\"C:\\\\Windows\\\\explorer.exe\",\"VolumeZone\":1,\"VolumeZoneComputedBitMap\":[\"Operating system\"],\"ProcessCommandLine\":\"C:\\\\Windows\\\\Explorer.EXE\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"IntegrityLevel\":\"S-1-16-8192\",\"IntegrityLevelNameLookup\":\"Niveauobligatoiremoyen\",\"IntegrityLevelDomainLookup\":\"\u00c9tiquetteobligatoire\",\"SessionID\":2,\"HashMd5\":\"AC4C51EB24AA95B77F705AB159189E24\",\"HashSha1\":\"4583DAF9442880204730FB2C8A060430640494B1\",\"HashSha256\":\"6A671B92A69755DE6FD063FCBE4BA926D83B49F78C42DBAEED8CDB6BBC57576A\",\"IsProtectedOrCritical\":false,\"CertificateSignatureState\":1,\"CertificateSignatureStateComputedMap\":\"SignatureStateTrusted\",\"Certificates\":[{\"Algorithm\":\"SHA1\",\"IssuerCN\":\"MicrosoftWindowsVerificationPCA\",\"SubjectCN\":\"MicrosoftWindows\",\"SigningTime\":\"2010-11-20T21:37:13.0000000+02:00\",\"ValidityStart\":\"2009-12-07T23:57:40.0000000+02:00\",\"ValidityEnd\":\"2011-03-07T23:57:40.0000000+02:00\"}],\"ProcessStartTime\":\"2023-06-13T14:21:19.3323750+02:00\",\"ProcessStartTimeRaw\":133311324793323750},\"SourceProcessImageFileDetails\":{\"FileFullPath\":\"C:\\\\Windows\\\\explorer.exe\",\"FileCreateTime\":\"2010-11-21T05:24:35.3136502+02:00\",\"LastModified\":\"2010-11-21T05:24:35.3448503+02:00\",\"Owner\":\"S-1-5-21-2222222-33333333-44444444-555-2271478464\",\"OwnerNameLookup\":\"TrustedInstaller\",\"OwnerDomainLookup\":\"NTSERVICE\",\"HashMd5\":\"AC4C51EB24AA95B77F705AB159189E24\",\"HashSha1\":\"4583DAF9442880204730FB2C8A060430640494B1\",\"HashSha256\":\"6A671B92A69755DE6FD063FCBE4BA926D83B49F78C42DBAEED8CDB6BBC57576A\",\"HashSSDeep\":\"49152:jxrceI/lIRYraisQhFCUCAvYYYYYYYYYYYRYYYYYYYYYYE3iA7/eFUJN9ojoso2W:FrcPlIWFvYYYYYYYYYYYRYYYYYYYYYY4\"},\"MatchedStrings\":[\"fichiertexte.txt\",\"hello\",\"qa_custom_dll_caller.exe\",\"toto\"]}}",
         "event": {
             "code": "AgentOperationIocAnalysisTextualSearchProcessMatch",
-            "kind": "event",
             "severity": 4
         },
         "@timestamp": "2023-06-15T02:49:04.598976Z",
@@ -4363,7 +4246,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20108,\"TypeComputedMap\":\"AgentOperationIocAnalysisTextualSearchFileMatch\",\"Category\":4,\"CategoryComputedMap\":\"Other\",\"Severity\":4,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0882E8-4A4E-4427-BDF6-F93C68BC2CDB}\",\"GenerateIncident\":false,\"Timestamp\":\"2023-06-15T00:31:29.6673890+01:00\",\"TimestampRaw\":133229142896673890,\"SpecificData\":{\"Action\":{\"PolicyGuid\":\"{ACF0AC80-F5CC-4358-8CF9-3F8656637608}\",\"PolicyVersion\":2,\"RuleGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"BaseRuleGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"IdentifierGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"AnalysisProperties\":{\"AnalysisUnitGuid\":\"{4C7AAAF5-7BD4-4390-B43A-482695D9F2C8}\",\"Triggers\":8,\"TriggersComputedBitMap\":[\"TRIGGER_RULE_EVENT\"],\"AssociatedEventGuid\":\"{DCBFD32B-23DA-44DC-A50F-CCC0CFFE36BD}\",\"AssociatedScheduledTaskGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsRequestGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedBaseRuleGuid\":\"{488C741A-6311-484B-8B99-2AE642629CA2}\",\"AssociatedRuleGuid\":\"{3A361A3F-BA50-4C5F-94EC-EF57E5ECF5DD}\"},\"SourceProcess\":{\"PID\":1580,\"ProcessGuid\":\"{66722ED3-5C92-49CB-919F-F8F710D2A7F6}\",\"ProcessImageName\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\",\"VolumeZone\":1,\"VolumeZoneComputedBitMap\":[\"Operating system\"],\"ProcessCommandLine\":\"\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\"\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"IntegrityLevel\":\"S-1-16-12288\",\"IntegrityLevelNameLookup\":\"Niveauobligatoire\u00e9lev\u00e9\",\"IntegrityLevelDomainLookup\":\"\u00c9tiquetteobligatoire\",\"SessionID\":2,\"HashMd5\":\"7353F60B1739074EB17C5F4DDDEFE239\",\"HashSha1\":\"6CBCE4A295C163791B60FC23D285E6D84F28EE4C\",\"HashSha256\":\"DE96A6E69944335375DC1AC238336066889D9FFC7D73628EF4FE1B1B160AB32C\",\"IsProtectedOrCritical\":false,\"CertificateSignatureState\":1,\"CertificateSignatureStateComputedMap\":\"SignatureStateTrusted\",\"Certificates\":[{\"Algorithm\":\"SHA256\",\"IssuerCN\":\"MicrosoftWindowsProductionPCA2011\",\"SubjectCN\":\"MicrosoftWindows\",\"SigningTime\":\"2018-09-15T08:03:08.1030000+01:00\",\"ValidityStart\":\"2018-07-03T21:45:50.0000000+01:00\",\"ValidityEnd\":\"2019-07-26T21:45:50.0000000+01:00\"}],\"ProcessStartTime\":\"2023-03-10T10:30:15.9993999+01:00\",\"ProcessStartTimeRaw\":133229142159993999},\"SourceProcessImageFileDetails\":{\"FileFullPath\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\",\"FileCreateTime\":\"2018-09-15T08:14:14.4547673+01:00\",\"LastModified\":\"2018-09-15T08:14:14.4547673+01:00\",\"Owner\":\"S-1-5-21-2222222-33333333-44444444-555-2271478464\",\"OwnerNameLookup\":\"TrustedInstaller\",\"OwnerDomainLookup\":\"NTSERVICE\",\"HashMd5\":\"7353F60B1739074EB17C5F4DDDEFE239\",\"HashSha1\":\"6CBCE4A295C163791B60FC23D285E6D84F28EE4C\",\"HashSha256\":\"DE96A6E69944335375DC1AC238336066889D9FFC7D73628EF4FE1B1B160AB32C\",\"HashSSDeep\":\"6144:+srKopvMWwO9sV1yZywi/PzNKXzJ7BapCK5d3klRzULOnWyjLsPhAQzqO:BrKopEW2KXzJ4pdd3klnnWosPhnzq\"},\"FileDetails\":{\"FileFullPath\":\"C:\\\\tmp\\\\testfile1.txt\",\"FileCreateTime\":\"2023-03-10T10:31:28.6944664+01:00\",\"LastModified\":\"2023-03-10T10:31:28.6974654+01:00\",\"Owner\":\"S-1-5-32-544\",\"OwnerNameLookup\":\"Administrateurs\",\"OwnerDomainLookup\":\"BUILTIN\",\"HashMd5\":\"F5A4425F79015B506FD72DEC488FECAA\",\"HashSha1\":\"7AC7F7D77BA681397E6F81E343562F43D315143D\",\"HashSha256\":\"F7ED90A977D853D055AAED809EAF0733C160E60F27461F04A59CE21B0D996A35\",\"HashSSDeep\":\"3:QswlSxuQaal:QswlS5j\"},\"MatchedStrings\":[\"IOC_event_app\"]}}",
         "event": {
             "code": "AgentOperationIocAnalysisTextualSearchFileMatch",
-            "kind": "event",
             "severity": 4
         },
         "@timestamp": "2023-06-14T23:31:29.667389Z",
@@ -4423,7 +4305,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"Version\":1,\"Type\":20109,\"TypeComputedMap\":\"AgentOperationIocAnalysisTextualSearchFileMatchNoSourceProcess\",\"Category\":4,\"CategoryComputedMap\":\"Other\",\"Severity\":4,\"ServerReserved\":0,\"Attributes\":2,\"AttributesComputedBitMap\":[\"Protection\"],\"EventGuid\":\"{AD0C7323-D0B6-492F-B6DC-B503DFE65054}\",\"GenerateIncident\":false,\"Timestamp\":\"2023-06-15T00:22:46.7229516+01:00\",\"TimestampRaw\":133229137667229516,\"SpecificData\":{\"Action\":{\"PolicyGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"PolicyVersion\":0,\"RuleGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"BaseRuleGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"IdentifierGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"AnalysisProperties\":{\"AnalysisUnitGuid\":\"{8D1643D7-0358-4D5D-B5DE-2FF3A68AE55D}\",\"Triggers\":128,\"TriggersComputedBitMap\":[\"TRIGGER_SECOPS\"],\"AssociatedEventGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedScheduledTaskGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"AssociatedSecOpsGuid\":\"{C309C9F5-8BAB-42A0-BBE2-A912143FB308}\",\"AssociatedSecOpsRequestGuid\":\"{36C30206-83CB-4B22-A80E-F32F55B1B793}\",\"AssociatedBaseRuleGuid\":\"{73F4E7F0-49CA-42E7-94E7-9CF7B5F07C93}\",\"AssociatedRuleGuid\":\"{8CFC6AE9-E111-403E-90AF-1912774CBEC4}\"},\"FileDetails\":{\"FileFullPath\":\"C:\\\\tmp\\\\Dataset\\\\IOC_filename_type_match.txt\",\"FileCreateTime\":\"2023-03-09T14:32:39.0955996+01:00\",\"LastModified\":\"2023-03-09T14:44:10.9444734+01:00\",\"Owner\":\"S-1-5-32-544\",\"OwnerNameLookup\":\"Administrateurs\",\"OwnerDomainLookup\":\"BUILTIN\",\"HashMd5\":\"0369387A3D15EA774708761AC1B15146\",\"HashSha1\":\"CE2C4F63864E3173A9D4C94A88A5061BE890F3D9\",\"HashSha256\":\"0E2D8F90D85A86BA544BDC868CD06F90C49CB3227496ABD3ABC52B0AB83680A9\",\"HashSSDeep\":\"3:S6LnhR:JLnH\"},\"MatchedStrings\":[\"IOC_event_app\"]}}",
         "event": {
             "code": "AgentOperationIocAnalysisTextualSearchFileMatchNoSourceProcess",
-            "kind": "event",
             "severity": 4
         },
         "@timestamp": "2023-06-14T23:22:46.722951Z",
@@ -4458,7 +4339,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "driver"
             ],
             "code": "Floppy",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4499,7 +4379,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "driver"
             ],
             "code": "CDRom",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4540,7 +4419,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "driver"
             ],
             "code": "ComPort",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4581,7 +4459,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "driver"
             ],
             "code": "UsbDevice",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "info"
@@ -4622,7 +4499,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "driver"
             ],
             "code": "UsbVolumeScanSuccess",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4653,7 +4529,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "driver"
             ],
             "code": "UsbVolumeScanError",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4684,7 +4559,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "driver"
             ],
             "code": "UsbVolumeFootprintComputationError",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4715,7 +4589,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "BluetoothAccess",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "connection"
@@ -4753,7 +4626,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "file"
             ],
             "code": "RawVolumeAccess",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "access"
@@ -4824,7 +4696,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "NetworkAccessBind",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4898,7 +4769,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "WifiAccessConnectedNetwork",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "connection"
@@ -4939,7 +4809,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "WifiAccessFunctionnality",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -4978,7 +4847,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "NetworkAccessAccept",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "access"
@@ -5062,7 +4930,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "code": "NetworkAccessConnect",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "denied"
@@ -5142,7 +5009,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "ProcessHollowing",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5208,7 +5074,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "StackPivot",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5274,7 +5139,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "DriverLoading",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5349,7 +5213,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "DriverGuard",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5421,7 +5284,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "HoneyPot",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5487,7 +5349,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "TokenGuard",
-            "kind": "event",
             "severity": 1,
             "type": [
                 "info"
@@ -5553,7 +5414,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "Keylogging",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "info"
@@ -5631,7 +5491,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "HeapSpray",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5697,7 +5556,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "LrpcAccess",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5763,7 +5621,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "CreateRemoteThread",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -5841,7 +5698,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "CreateRemoteThread",
-            "kind": "event",
             "reason": "The 'WmiPrvSE.exe' process injected code into the 'lsass.exe' process",
             "severity": 1,
             "type": [
@@ -5926,7 +5782,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "ProcessExit",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "end"
@@ -5992,7 +5847,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "SetWindowsHookExAll",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "info"
@@ -6058,7 +5912,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "SetWindowsHookEx",
-            "kind": "event",
             "severity": 3,
             "type": [
                 "info"
@@ -6136,7 +5989,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "malware"
             ],
             "code": "ProcessAccessWithPrivilegeEscalation",
-            "kind": "event",
             "severity": 0,
             "type": [
                 "info"
@@ -6215,7 +6067,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "process"
             ],
             "code": "ProcessAccess",
-            "kind": "event",
             "severity": 4,
             "type": [
                 "access"
@@ -6299,7 +6150,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.port` | `long` | Port of the destination. |
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.code` | `keyword` | Identification code for this event. |
-|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.provider` | `keyword` | Source of the event. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.severity` | `long` | Numeric severity of the event. |

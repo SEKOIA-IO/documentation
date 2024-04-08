@@ -16,7 +16,7 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event` |
+| Kind | `` |
 | Category | `email`, `network` |
 | Type | `info` |
 
@@ -39,7 +39,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "email"
             ],
             "dataset": "maillog",
-            "kind": "event",
             "type": [
                 "info"
             ]
@@ -89,7 +88,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "dataset": "message",
-            "kind": "event",
             "type": [
                 "allowed"
             ]
@@ -196,7 +194,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "dataset": "message",
-            "kind": "event",
             "type": [
                 "denied"
             ]
@@ -311,7 +308,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network"
             ],
             "dataset": "message",
-            "kind": "event",
             "type": [
                 "allowed"
             ]
@@ -398,7 +394,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "email"
             ],
             "dataset": "msgPartsUrl",
-            "kind": "event",
             "type": [
                 "info"
             ]
@@ -445,7 +440,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "email"
             ],
             "dataset": "msgParts",
-            "kind": "event",
             "type": [
                 "info"
             ]
@@ -538,7 +532,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.action` | `keyword` | The action captured by the event. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.dataset` | `keyword` | Name of the dataset. |
-|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`file.hash.md5` | `keyword` | MD5 hash. |
 |`file.hash.sha256` | `keyword` | SHA256 hash. |
