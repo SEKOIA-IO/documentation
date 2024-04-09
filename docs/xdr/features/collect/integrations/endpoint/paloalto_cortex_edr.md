@@ -1,4 +1,4 @@
-uuid: b5968b0a-1206-4d3b-b960-e6b61e7f6ee6
+uuid: 9b95c9cf-8b78-4830-a1ed-b9e88f05e67a
 name: Palo Alto Cortex XDR (EDR)
 type: intake
 
