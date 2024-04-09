@@ -5,6 +5,9 @@ type: intake
 ## Overview
 The Apache HTTP Server, colloquially called Apache, is free and open-source cross-platform web server software, released under the terms of Apache License 2.0. Apache is developed and maintained by an open community of developers under the auspices of the Apache Software Foundation.
 
+!!! info
+    Access logs from Tomcat are compatible with existing format Apache HTTP server. Catalina logs are not supported.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_6c2a44e3-a86a-4d98-97a6-d575ffcb29f7_do_not_edit_manually.md!}
 
 
