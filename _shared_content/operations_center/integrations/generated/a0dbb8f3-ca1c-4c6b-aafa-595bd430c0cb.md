@@ -16,7 +16,7 @@ In details, the following table denotes the type of events produced by this inte
 
 | Name | Values |
 | ---- | ------ |
-| Kind | `event` |
+| Kind | `` |
 | Category | `network`, `web` |
 | Type | `connection`, `denied`, `error` |
 
@@ -39,8 +39,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network",
                 "web"
             ],
-            "duration": 3387,
-            "kind": "event"
+            "duration": 3387
         },
         "@timestamp": "2019-08-01T10:34:44.277000Z",
         "destination": {
@@ -99,8 +98,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network",
                 "web"
             ],
-            "duration": 5756,
-            "kind": "event"
+            "duration": 5756
         },
         "@timestamp": "2019-07-31T12:39:01.982000Z",
         "destination": {
@@ -160,8 +158,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network",
                 "web"
             ],
-            "duration": 1717,
-            "kind": "event"
+            "duration": 1717
         },
         "@timestamp": "2020-04-16T13:09:56.494000Z",
         "destination": {
@@ -222,7 +219,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web"
             ],
             "duration": 0,
-            "kind": "event",
             "type": [
                 "connection",
                 "denied",
@@ -284,8 +280,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network",
                 "web"
             ],
-            "duration": 24,
-            "kind": "event"
+            "duration": 24
         },
         "@timestamp": "2019-08-12T08:33:21.353000Z",
         "destination": {
@@ -359,7 +354,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web"
             ],
             "duration": 5007,
-            "kind": "event",
             "type": [
                 "connection",
                 "error"
@@ -435,7 +429,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web"
             ],
             "duration": 0,
-            "kind": "event",
             "type": [
                 "connection",
                 "denied",
@@ -502,8 +495,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network",
                 "web"
             ],
-            "duration": 82,
-            "kind": "event"
+            "duration": 82
         },
         "@timestamp": "2021-08-04T13:36:43.491000Z",
         "destination": {
@@ -570,8 +562,7 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "network",
                 "web"
             ],
-            "duration": 549,
-            "kind": "event"
+            "duration": 549
         },
         "@timestamp": "2021-08-05T08:01:50.448000Z",
         "http": {
@@ -634,7 +625,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                 "web"
             ],
             "duration": 5007,
-            "kind": "event",
             "type": [
                 "connection",
                 "error"
@@ -724,7 +714,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.port` | `long` | Port of the destination. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
 |`event.duration` | `long` | Duration of the event in nanoseconds. |
-|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`http.request.method` | `keyword` | HTTP request method. |
 |`http.request.referrer` | `keyword` | Referrer for this HTTP request. |

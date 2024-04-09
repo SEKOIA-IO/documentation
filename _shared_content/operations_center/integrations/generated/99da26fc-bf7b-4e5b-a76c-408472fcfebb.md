@@ -14,14 +14,6 @@ The following table lists the data source offered by this integration.
 
 
 
-In details, the following table denotes the type of events produced by this integration.
-
-| Name | Values |
-| ---- | ------ |
-| Kind | `event` |
-| Category | `` |
-| Type | `` |
-
 
 
 
@@ -39,7 +31,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "code": "WIN-EVENT-1111",
             "ingested": "2024-01-17T12:46:35.825000Z",
-            "kind": "event",
             "reason": "A User Account was changed",
             "severity": 4
         },
@@ -150,7 +141,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "code": "COMPLIANCE-DEP-PERMISSIVE",
             "ingested": "2022-11-30T09:22:29.980000Z",
-            "kind": "event",
             "severity": 4
         },
         "@timestamp": "2022-11-30T09:22:11Z",
@@ -271,7 +261,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "code": "COMPLIANCE-APP",
             "ingested": "2022-11-30T09:22:45.391000Z",
-            "kind": "event",
             "severity": 4
         },
         "@timestamp": "2022-11-30T09:22:25Z",
@@ -386,7 +375,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "code": "EVENT-4625-Brute-Force-Attempt",
             "ingested": "2023-07-17T11:34:57.356000Z",
-            "kind": "event",
             "reason": "Source IP is shuffling through 20 or more different usernames, appears to be a brute force attack",
             "severity": 5
         },
@@ -490,7 +478,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "code": "WIN-EVENT-4740",
             "ingested": "2025-12-12T13:59:11.487000Z",
-            "kind": "event",
             "reason": "A user account was locked out.",
             "severity": 5
         },
@@ -612,7 +599,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "message": "{\"upload_size\":2088,\"record_identifier\":\"0242ac1200020cd6e1e0428211eebe560242ac120002\",\"ioc_severity\":5,\"ioc_detection_sigma\":\"{\\\"id\\\":\\\"EVENT-0000\\\",\\\"logsource\\\":{\\\"dedup_fields\\\":[\\\"machine_test\\\"],\\\"product\\\":\\\"windows\\\",\\\"platform\\\":\\\"windows\\\",\\\"category\\\":\\\"windows_event_user_account_locked_out\\\",\\\"references\\\":[\\\"https://test.com/event-0000\\\"]}}\",\"folded\":0,\"meta_mac_address\":\"00:11:22:33:44:55\",\"endpoint_id\":\"70599d12-fec7-4129-8844-7c6cfded4642\",\"meta_public_ip_country_code\":\"FR\",\"schema_version\":\"22\",\"ioc_detection_mitre_attack\":\"[]\",\"ioc_detection_experiment_level\":0,\"ioc_created_at\":\"2025-12-12T13:59:12.269Z\",\"ingestion_timestamp\":\"2025-12-12T13:59:11.487Z\",\"ioc_detection_attack\":\"Suspicious Activity\",\"numerics\":false,\"eventid\":4740,\"meta_public_ip\":\"1.2.3.4\",\"detection_identifier\":\"0cd6e1e0428211eebe560242ac1200020cd6e1e0428211eebe560242ac120002_0cd6e1e0428211eebe560242ac1200020cd6e1e0428211eebe560242ac120002\",\"query_name\":\"windows_query_event\",\"provider_name\":\"Microsoft-Windows-Security-Auditing\",\"meta_os_version\":\"1.0.2s\",\"meta_public_ip_latitude\":55.8582,\"source\":\"Security\",\"ioc_detection_licenses\":\"[\\\"License1\\\",\\\"License2\\\"]\",\"description\":\"A user account was locked out.\",\"meta_aggressive_activity\":\"False\",\"meta_ip_address\":\"1.2.3.4\",\"ingest_date\":\"2023-08-17\",\"target_domain\":\"AC000-TEST0011\",\"meta_endpoint_type\":\"server\",\"meta_domain_controller\":\"False\",\"customer_id\":\"36c536f0-4282-11ee-be56-0242ac120002\",\"ioc_detection_description\":\"Windows Event User Account Locked Out.\",\"message_identifier\":\"0cd6e1e0428211eebe560242ac1200020cd6e1e0428211eebe560242ac120002\",\"ioc_attack_type\":\"Suspicious Activity\",\"target_username\":\"Administrateur\",\"user_upn\":\"user.mail@company.fr\",\"ml_score_band\":\"HIGH_SUSPICION\",\"target_server\":\"TEST/1.2.3.4\",\"package\":\"TEST\",\"ioc_detection_weight\":5,\"logon_process\":\"logon_process\",\"is_process_file_signed\":\"1\",\"sha1\":\"d4baeeb9180a4284b33fa3602d86c\",\"process_cmd_line\":\"\\\"C:\\\\Program Files (x86)\\\\test.exe\\\" --te /test:5\",\"process_ml_score_band\":\"ml_score\",\"process_parent_name\":\"process_parent.exe\",\"threat_type\":\"threat_type\",\"threat_source\":\"threat_source\",\"ioc_event_path\":\"C:\\\\Program Files (x86)\\\\TEST.EXE\",\"sha256\":\"94256542e235681ba64a20bc50910dd745d52347\",\"cmdline\":\"get_test \",\"password_last_set\":\"18/08/2021 03:37:25\",\"lolbins_ml_results\":{\"score\":19,\"score_label\":\"score_label\",\"sha256\":\"dd6748642b108262f933260c3ae8\"}}",
         "event": {
             "ingested": "2025-12-12T13:59:11.487000Z",
-            "kind": "event",
             "reason": "A user account was locked out.",
             "severity": 5
         },
@@ -756,7 +742,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "code": "WIN-EXE-ENR-ML-SUSPICIOUS-1",
             "ingested": "2023-08-30T15:04:17.022000Z",
-            "kind": "event",
             "severity": 5
         },
         "@timestamp": "2023-08-30T15:03:56Z",
@@ -913,7 +898,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
         "event": {
             "code": "WIN-DET-T1547.009",
             "ingested": "2023-09-20T09:31:41.090000Z",
-            "kind": "event",
             "severity": 5
         },
         "@timestamp": "2023-09-20T09:28:15Z",
@@ -1040,7 +1024,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`destination.port` | `long` | Port of the destination. |
 |`event.code` | `keyword` | Identification code for this event. |
 |`event.ingested` | `date` | Timestamp when an event arrived in the central data store. |
-|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.severity` | `long` | Numeric severity of the event. |
 |`file.hash.sha1` | `keyword` | SHA1 hash. |

@@ -15,14 +15,6 @@ The following table lists the data source offered by this integration.
 
 
 
-In details, the following table denotes the type of events produced by this integration.
-
-| Name | Values |
-| ---- | ------ |
-| Kind | `event` |
-| Category | `` |
-| Type | `` |
-
 
 
 
@@ -41,7 +33,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "Backup server general options have been changed",
             "type": [
                 "change"
@@ -80,7 +71,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "Backup server general options have been changed",
             "type": [
                 "change"
@@ -119,7 +109,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "Credentials MyMachine\\jdoe have been added",
             "type": [
                 "creation"
@@ -161,7 +150,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1' has been created.",
             "type": [
                 "creation"
@@ -196,7 +184,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "'1' objects has been created for 'Agent Backup Job 1'.",
             "type": [
                 "creation"
@@ -240,7 +227,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1' has been started by user .\\SYSTEM.",
             "type": [
                 "start"
@@ -274,7 +260,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Rescan job 'Rescan of Agent Backup Job 1' has been started.",
             "type": [
                 "start"
@@ -308,7 +293,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "Component [Veeam Agent for Windows] on the host [127.0.0.1] has been updated",
             "type": [
                 "change"
@@ -351,7 +335,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1 - 127.0.0.1' has been created.",
             "type": [
                 "creation"
@@ -386,7 +369,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1 - 127.0.0.1' has been started by user NT AUTHORITY\\SYSTEM.",
             "type": [
                 "start"
@@ -420,7 +402,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "The Rescan job 'Rescan of Agent Backup Job 1' has finished with Success state.",
             "type": [
                 "end"
@@ -454,7 +435,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "malware"
             ],
-            "kind": "event",
             "reason": "Malware detection settings have been changed.",
             "type": [
                 "info"
@@ -493,7 +473,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "file"
             ],
-            "kind": "event",
             "reason": "VM '127.0.0.1' restore point has been created.",
             "type": [
                 "creation"
@@ -538,7 +517,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "VM 127.0.0.1 task has finished with 'InProgress' state.",
             "type": [
                 "end"
@@ -585,7 +563,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1' finished with Success. All objects have been backed up successfully.",
             "type": [
                 "end"
@@ -619,7 +596,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Rescan job 'Rescan of 127.0.0.1' has been started.",
             "type": [
                 "start"
@@ -653,7 +629,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "The Rescan job 'Rescan of 127.0.0.1' has finished with Success state.",
             "type": [
                 "end"
@@ -687,7 +662,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "configuration"
             ],
-            "kind": "event",
             "reason": "Protection Group Protection Group 1 has been added.",
             "type": [
                 "creation"
@@ -732,7 +706,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Rescan job 'Rescan of Protection Group 1' has been started by user MyMachine\\jdoe.",
             "type": [
                 "start"
@@ -766,7 +739,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "The Rescan job 'Rescan of Protection Group 1' has finished with Success state.",
             "type": [
                 "end"
@@ -800,7 +772,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1' has been started.",
             "type": [
                 "start"
@@ -834,7 +805,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1 - 127.0.0.1' has been started.",
             "type": [
                 "start"
@@ -868,7 +838,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "process"
             ],
-            "kind": "event",
             "reason": "Agent Backup job 'Agent Backup Job 1' finished with Success. All objects have been backed up successfully.",
             "type": [
                 "end"
@@ -902,7 +871,6 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             "category": [
                 "file"
             ],
-            "kind": "event",
             "reason": "Restore point for VM '127.0.0.1' has been removed by user MyMachine\\jdoe.",
             "type": [
                 "deletion"
@@ -949,7 +917,6 @@ The following table lists the fields that are extracted, normalized under the EC
 |`@timestamp` | `date` | Date/time when the event originated. |
 |`agent.name` | `keyword` | Custom name of the agent. |
 |`event.category` | `keyword` | Event category. The second categorization field in the hierarchy. |
-|`event.kind` | `keyword` | The kind of the event. The highest categorization field in the hierarchy. |
 |`event.reason` | `keyword` | Reason why this event happened, according to the source |
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`host.ip` | `ip` | Host ip addresses. |
