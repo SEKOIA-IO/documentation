@@ -38,3 +38,15 @@ The following Sekoia.io built-in rules match the intake **ExtraHop Reveal(x) 360
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
     
     - **Effort:** intermediate
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master

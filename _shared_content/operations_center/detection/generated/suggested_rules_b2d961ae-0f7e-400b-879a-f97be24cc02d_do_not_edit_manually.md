@@ -9,6 +9,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** advanced
 
+??? abstract "Active Directory Data Export Using Csvde"
+    
+    Detects the use of Csvde, a command-line tool from Windows Server that can be used to export Active Directory data to CSV files. This export doesn't include password hashes, but can be used as a discovery tool to enumerate users, machines and group memberships.
+    
+    - **Effort:** elementary
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -936,6 +942,12 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious CommandLine Lsassy Pattern"
+    
+    Detects the characteristic lsassy loop used to identify lsass PIDs
     
     - **Effort:** intermediate
 
