@@ -50,7 +50,6 @@ Our API documentation is divided according to the different functionalities the 
 
 * [Authentication and Community](/xdr/develop/rest_api/community/)
 * [Dashboard](/xdr/develop/rest_api/dashboard/)
-* [Notification](/xdr/develop/rest_api/notification/)
 * [Configuration](/xdr/develop/rest_api/configuration/)
 * [Parser](/xdr/develop/rest_api/parser/)
 * [Alert](/xdr/develop/rest_api/alert/)

@@ -10,7 +10,7 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 
 - An operational Cortex instance with administrator privileges
 - An active Sekoia.io licence with access to the CTI
-- An access to Sekoia.io User Center with the permissions to create an API key with [CTI permissions](https://docs.sekoia.io/getting_started/Permissions/#cti-permissions)
+- An API key with the permission "View intelligence"
 
 ## 1. Connect to Cortex
 

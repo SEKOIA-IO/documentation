@@ -510,7 +510,7 @@ Connect to the remote server where you would like to install the Sekoia.io Forwa
 
 3. Start the docker
 
-    Follow the process you can find on the section [Start the concentrator](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder.md/#start-the-concentrator) of this page.
+    Follow the process you can find on the section [Start the concentrator](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder/sekoiaio_forwarder.md/#start-the-concentrator) of this page.
     ```bash
     sudo docker compose up -d
     sudo docker compose ps

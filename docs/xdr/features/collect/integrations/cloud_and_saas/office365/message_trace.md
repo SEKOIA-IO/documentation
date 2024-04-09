@@ -18,7 +18,7 @@ According to [docs.microsoft.com](https://docs.microsoft.com/en-us/microsoft-365
 - Microsoft Defender for Office 365 plan 1 and plan 2
 - Microsoft 365 Defender
 
-In Sekoia.io XDR, [create a new intake key](xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
+In Sekoia.io XDR, [create a new intake key](/xdr/features/collect/intakes/#create-an-intake-from-our-integrations-catalog) using the "Message Trace" format.
 
 ## Configure OAuth
 

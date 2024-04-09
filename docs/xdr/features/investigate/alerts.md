@@ -386,7 +386,7 @@ The Graph Tab is presenting the analyst with a graphical visualization of the Al
 The following items appear on the graph:
 
 - `Observables`: these are automatically extracted from events (IP addresses, Domain Names, URLs, User Account, etc.)
-- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](https://github.com/Sekoia.io/Community/tree/main/events) definitions
+- `Observable Relationships`: relationships between observables are represented by arrows linking them on the graph. Relationships are extracted from events using the [Smart Description](https://github.com/Sekoia-io/Community/tree/main/events) definitions
 - `CTI Objects`: STIX objects from the Intelligence Center that provide additional context
 - `STIX relationships` between Threat Objects
 

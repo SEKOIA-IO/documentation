@@ -8,7 +8,7 @@ In this documentation, we will dive into the different parts that constitute the
 - The [Search bar](#search-bar) and its filtering and sharing options
 - The [list of events](#log-listing) and the detailed view of your parsed events
 - The mechanism behind [events enrichment](#events-enrichment) or how events are contextualized in Sekoia.io
-- The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](Create-Anomaly-Detection-rule-from-the-aggregation-view) from your query
+- The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](#Create-Anomaly-Detection-rule-from-the-aggregation-view) from your query
 
 !!! note
     To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/).

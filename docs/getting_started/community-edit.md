@@ -4,7 +4,7 @@ Community information and image can be edited
 
 ## Edit a community
 
-To edit a community's name and description, you need to have the [right permissions](https://docs.sekoia.io/getting_started/roles_permissions). 
+To edit a community's name and description, as an Administrator of the community:
 
 1. Go to the managed community’s main page 
 2. Click on the `Edit` button next to the community’s name 
