@@ -36,5 +36,5 @@ access_log syslog:local5.info sekoiaio
 
 
 ## Further Readings
-- [Integration Source Code](https://github.com/Sekoia.io/intake-formats/tree/master/Squid)
+- [Integration Source Code](https://github.com/Sekoia-io/intake-formats/tree/master/Squid)
 - [Squid Wiki - Log configuration](https://wiki.squid-cache.org/SquidFaq/SquidLogs)

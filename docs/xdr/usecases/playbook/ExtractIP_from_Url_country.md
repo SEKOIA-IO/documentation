@@ -6,10 +6,9 @@ This use case describes how to extract an IP address from a URL and a country.
 ## Prerequisites
 
 - A Sekoia.io XDR licence
-- The user that configures the Playbook should have a role that contains:
-	* The [SYMPHONY permissions](https://docs.sekoia.io/getting_started/roles_permissions/#playbooks)
-- An API Key with a role that contains at least the following permission:
-	* `SIC_READ_ALERTS`
+- The user that configures the Playbook should have:
+	* Be an Administrator or an Analyst of the community.
+    * Have an API Key with a role that contains at least the permission "View alerts"
 
 > To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
 

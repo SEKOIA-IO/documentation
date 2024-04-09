@@ -37,7 +37,7 @@ The easiest way to create feed configurations is to use the Intelligence Center 
 
 ![Sekoia.io Intelligence Center Feeds](/assets/intelligence_center/feeds.png){: style="width: 100%; max-width: 100%"}
 
-If you would prefer creating the feed with the API, you can use the [feeds](../../../develop/rest_api/intelligence/#operation/post_feeds_resource) endpoint.
+If you would prefer creating the feed with the API, you can use the [feeds](/cti/develop/rest_api/intelligence/#operation/post_feeds_resource) endpoint.
 
 The result should contain the feed `id` that may be used to consume the feed.
 
