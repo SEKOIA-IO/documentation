@@ -279,6 +279,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** advanced
 
+??? abstract "Failed Logon Source From Public IP Addresses"
+    
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -338,3 +344,15 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master

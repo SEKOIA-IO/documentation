@@ -669,6 +669,12 @@ The following Sekoia.io built-in rules match the intake **SentinelOne EDR**. Thi
     
     - **Effort:** advanced
 
+??? abstract "Suspicious CommandLine Lsassy Pattern"
+    
+    Detects the characteristic lsassy loop used to identify lsass PIDs
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious DLL Loading By Ordinal"
     
     Detects suspicious DLL Loading by ordinal number in a non legitimate or rare folders. For example, Sofacy (APT28) used this technique to load their Trojan in a campaign of 2018.

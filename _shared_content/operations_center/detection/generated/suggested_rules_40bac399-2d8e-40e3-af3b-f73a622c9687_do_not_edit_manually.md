@@ -15,6 +15,12 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     
     - **Effort:** master
 
+??? abstract "Active Directory Data Export Using Csvde"
+    
+    Detects the use of Csvde, a command-line tool from Windows Server that can be used to export Active Directory data to CSV files. This export doesn't include password hashes, but can be used as a discovery tool to enumerate users, machines and group memberships.
+    
+    - **Effort:** elementary
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -207,17 +213,35 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     
     - **Effort:** master
 
+??? abstract "Covenant Default HTTP Beaconing"
+    
+    Detects potential Covenant communications through the user-agent and specific urls
+    
+    - **Effort:** intermediate
+
 ??? abstract "Detect requests to Konni C2 servers"
     
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
     
     - **Effort:** elementary
 
+??? abstract "Discord Suspicious Download"
+    
+    Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Domain Trust Created Or Removed"
     
     A trust was created or removed to a domain. An attacker could perform that in order to do lateral movement easily between domains or shutdown the ability of two domains to communicate.
     
     - **Effort:** advanced
+
+??? abstract "Download Files From Non-Legitimate TLDs"
+    
+    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
+    
+    - **Effort:** master
 
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -230,6 +254,12 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+
+??? abstract "Failed Logon Source From Public IP Addresses"
+    
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    
+    - **Effort:** master
 
 ??? abstract "FoggyWeb HTTP Default GET/POST Requests"
     
@@ -428,6 +458,24 @@ The following Sekoia.io built-in rules match the intake **Skyhigh Secure Web Gat
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "TrevorC2 HTTP Communication"
+    
+    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
+    
+    - **Effort:** elementary
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master
 
 ??? abstract "WCE wceaux.dll Creation"
     

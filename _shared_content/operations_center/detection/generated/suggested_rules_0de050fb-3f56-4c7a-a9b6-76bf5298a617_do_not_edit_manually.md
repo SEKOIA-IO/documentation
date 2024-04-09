@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** master
 
+??? abstract "Active Directory Data Export Using Csvde"
+    
+    Detects the use of Csvde, a command-line tool from Windows Server that can be used to export Active Directory data to CSV files. This export doesn't include password hashes, but can be used as a discovery tool to enumerate users, machines and group memberships.
+    
+    - **Effort:** elementary
+
 ??? abstract "AdFind Usage"
     
     Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
@@ -993,6 +999,12 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious CommandLine Lsassy Pattern"
+    
+    Detects the characteristic lsassy loop used to identify lsass PIDs
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Control Process"
     
     Detects suspicious execution of control.exe process when used to execute a DLL file.
@@ -1148,6 +1160,18 @@ The following Sekoia.io built-in rules match the intake **Cybereason EDR activit
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master
 
 ??? abstract "WMI Install Of Binary"
     

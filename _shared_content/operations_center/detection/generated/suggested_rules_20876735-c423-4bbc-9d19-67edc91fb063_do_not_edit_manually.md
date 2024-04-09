@@ -159,6 +159,12 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     - **Effort:** intermediate
 
+??? abstract "Failed Logon Source From Public IP Addresses"
+    
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    
+    - **Effort:** master
+
 ??? abstract "HackTools Suspicious Process Names In Command Line"
     
     Detects the default process name of several HackTools and also check in command line. This rule is here for quickwins as it obviously has many blind spots.
@@ -447,6 +453,12 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious CommandLine Lsassy Pattern"
+    
+    Detects the characteristic lsassy loop used to identify lsass PIDs
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious DLL Loading By Ordinal"
     
     Detects suspicious DLL Loading by ordinal number in a non legitimate or rare folders. For example, Sofacy (APT28) used this technique to load their Trojan in a campaign of 2018.
@@ -500,6 +512,18 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
+
+??? abstract "User Account Created"
+    
+    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
+    
+    - **Effort:** master
+
+??? abstract "User Account Deleted"
+    
+    Detects local user deletion
+    
+    - **Effort:** master
 
 ??? abstract "WMI Install Of Binary"
     

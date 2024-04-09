@@ -1,13 +1,23 @@
-Rules catalog includes **855 built-in detection rules** ([_last update on 2024-04-04_](rules_changelog.md)).
+Rules catalog includes **860 built-in detection rules** ([_last update on 2024-04-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
+??? abstract "Anomaly Kerberos User Enumeration"
+    
+    The rule detects abnormally high number of TGT failed associate to error code 0x6 (username don't exist) who could indicate user enumeration
+    
+    - **Effort:** master
+    
 ??? abstract "Anomaly Possible Sysvol Dump"
     
     The rule detects abnormally high access to sysvol files.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 08/04/2024 - minor - change field name on query
+            
 **Gather Victim Network Information**
 
 ??? abstract "ACLight Discovering Privileged Accounts"
@@ -519,6 +529,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Admin User RDP Remote Logon"
     
@@ -559,6 +570,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -668,6 +683,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 **Replication Through Removable Media**
 
@@ -677,14 +693,28 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **External Remote Services**
 
+??? abstract "Anomaly New PowerShell Remote Session"
+    
+    Detects when PowerShell remote sessions are created in a short amount of time.
+    
+    - **Effort:** master
+    
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
@@ -839,6 +869,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "GitLab CVE-2021-22205"
     
     Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
@@ -859,6 +893,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Phishing**
 
 ??? abstract "Cisco ESA Suspicious Email With Attachment"
@@ -1451,6 +1489,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Aspnet Compiler"
     
     Detects the starts of aspnet compiler.
@@ -3248,6 +3290,12 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
             
 **System Services**
 
+??? abstract "Check Point Harmony Mobile Application Forbidden"
+    
+    Detects when someone attempts to access/use a forbidden application.
+    
+    - **Effort:** master
+    
 ??? abstract "Credential Dumping Tools Service Execution"
     
     Detects well-known credential dumping tools execution via service execution
@@ -3759,6 +3807,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 05/04/2024 - major - Added filter to reduce false positives
             
 ??? abstract "SolarWinds Suspicious File Creation"
     
@@ -3802,6 +3851,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Svchost Wrong Parent"
     
     Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
@@ -4153,6 +4206,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Admin User RDP Remote Logon"
     
@@ -4193,6 +4247,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -4302,6 +4360,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 **Account Manipulation**
 
@@ -4470,6 +4529,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 **Web Shell**
 
@@ -4501,12 +4561,22 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
 **External Remote Services**
 
+??? abstract "Anomaly New PowerShell Remote Session"
+    
+    Detects when PowerShell remote sessions are created in a short amount of time.
+    
+    - **Effort:** master
+    
 ??? abstract "Failed Logon Source From Public IP Addresses"
     
     A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
     
     Trend Micro Apex One has raised an alert for an intrusion detection.
@@ -4561,12 +4631,20 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "User Account Created"
     
     Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Office Application Startup**
 
 ??? abstract "IcedID Execution Using Excel"
@@ -4671,6 +4749,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Webshell Execution W3WP Process"
     
     Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
@@ -4868,6 +4950,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 05/04/2024 - major - Added filter to reduce false positives
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -5112,6 +5195,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "WMI Persistence Script Event Consumer File Write"
     
     Detects file writes through WMI script event consumer.
@@ -5172,6 +5259,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "RUN Registry Key Created From Suspicious Folder"
     
     Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
@@ -5212,7 +5303,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Active Directory Shadow Credentials"
     
-    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
     
     - **Effort:** elementary
     
@@ -5538,6 +5629,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 05/04/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -5697,6 +5789,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Admin User RDP Remote Logon"
     
@@ -5737,6 +5830,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -5846,6 +5943,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 **Account Manipulation**
 
@@ -6014,6 +6112,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 **Web Shell**
 
@@ -6331,6 +6430,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 05/04/2024 - major - Added filter to reduce false positives
             
 ??? abstract "SolarWinds Wrong Child Process"
     
@@ -6575,6 +6675,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "WMI Persistence Script Event Consumer File Write"
     
     Detects file writes through WMI script event consumer.
@@ -6635,6 +6739,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "RUN Registry Key Created From Suspicious Folder"
     
     Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories. Prerequisites are logging for Registry events, which can be done with Sysmon (events 12 and 13).
@@ -6898,6 +7006,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious XOR Encoded PowerShell Command Line"
     
     Detects suspicious powershell process which includes bxor command, alternative obfuscation  method to b64 encoded commands.
@@ -7134,6 +7246,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 05/04/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Spoolsv Wrong Parent"
     
@@ -7321,6 +7434,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Valid Accounts**
 
 ??? abstract "Account Added To A Security Enabled Group"
@@ -7352,6 +7469,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 01/08/2023 - minor - Similarity strategy for the rule has changed and is now based on the user.target.name field.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Admin User RDP Remote Logon"
     
@@ -7392,6 +7510,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
     
     Detects succesfull access to administration console of firewall from another IP address than 127.0.0.1. Prerequisites, check that the firewall logs format corresponds to the rule
@@ -7501,6 +7623,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
+        - 04/04/2024 - major - Rule's pattern field changed
             
 **Rundll32**
 
@@ -7652,6 +7775,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Access Token Manipulation**
 
 ??? abstract "Jumpcloud Api Key Updated"
@@ -7834,6 +7961,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "SharePoint Authenticated SSRF"
     
     Detects succesful SSRF from an authenticated SharePoint user.
@@ -8306,7 +8437,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Active Directory Shadow Credentials"
     
-    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
     
     - **Effort:** elementary
     
@@ -8695,6 +8826,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "NetNTLM Downgrade Attack"
     
     Detects changes in Windows Registry key (LMCompatibilityLevel, NTLMMinClientSec or RestrictSendingNTLMTraffic) which can lead to NetNTLM downgrade attack. The rule requires to log registry keys creation or update, it can be done using Sysmon's Event ID 12,13 and 14.
@@ -8729,6 +8864,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Netsh Port Opening"
     
     Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
@@ -8861,6 +9000,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious Driver Loaded"
     
     Checks the registry key for suspicious driver names that are vulnerable most of the time and loaded in a specific location by the KDU tool from hfiref0x. Some drivers are used by several SysInternals tools, which should have been whitelisted in the filter condition. The driver named "DBUtilDrv2" has been removed as it caused too many false positives unfortunately. It can be added under "drv_name" if more coverage is wanted. This rule needs registry key monitoring (can be done with Sysmon Event IDs 12,13 and 14).
@@ -9188,6 +9331,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Credential Dumping Tools Service Execution"
     
     Detects well-known credential dumping tools execution via service execution
@@ -9216,6 +9363,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Dumpert LSASS Process Dumper"
     
     Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory
@@ -9427,12 +9578,22 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
         - 04/04/2024 - major - Rule's pattern field changed
             
+??? abstract "Suspicious CommandLine Lsassy Pattern"
+    
+    Detects the characteristic lsassy loop used to identify lsass PIDs
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Suspicious SAM Dump"
     
     Detects suspicious SAM dump to AppData repository, as cause by QuarksPwDump and other password dumpers. Logging for Microsoft-Windows-Kernel-General Event ID 16 or Sysmon Event ID 11 is needed.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Transfering Files With Credential Data Via Network Shares"
     
     Detects file transfer of sensitive files which contain credential data using network shares.
@@ -9537,6 +9698,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 05/03/2024 - minor - Rule name error was fixed
+        - 09/04/2024 - minor - Error code 500532 added
             
 ??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
@@ -9763,6 +9925,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 08/04/2024 - minor - change field name on query
+            
 ??? abstract "Credentials Extraction"
     
     This rule aims to detect the use of a specific command to access some credentials without using mimikatz or another tool.
@@ -9785,7 +9951,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
 
 ??? abstract "Active Directory Shadow Credentials"
     
-    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
     
     - **Effort:** elementary
     
@@ -9877,6 +10043,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious TGS requests (Kerberoasting)"
     
     The rule aims at detecting the Kerberoasting technique, when an attacker requests TGS in order to crack them offline. Toease its task, the attacker requests tickets with weak encryption (such as RC4_HMAC_MD5). The rule therefore detects when an user is requesting 5 TGS for different users in 5 minutes.
@@ -9889,6 +10059,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ## Discovery
 **System Service Discovery**
 
@@ -9921,6 +10095,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "SCM Database Privileged Operation"
     
     Detects non-system users performing privileged operation on the SCM database
@@ -9961,6 +10139,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **System Network Configuration Discovery**
 
 ??? abstract "Reconnaissance Commands Activities"
@@ -10190,6 +10372,12 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Active Directory Data Export Using Csvde"
+    
+    Detects the use of Csvde, a command-line tool from Windows Server that can be used to export Active Directory data to CSV files. This export doesn't include password hashes, but can be used as a discovery tool to enumerate users, machines and group memberships.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Bloodhound and Sharphound Tools Usage"
     
     Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
@@ -10497,6 +10685,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 21/03/2024 - minor - change filter to ACL hex value and adapt effort
+        - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Smbexec.py Service Installation"
     
@@ -10516,6 +10705,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Exploitation of Remote Services**
 
 ??? abstract "Audit CVE Event"
@@ -10775,6 +10968,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Application Layer Protocol**
 
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
@@ -10991,6 +11188,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious Windows DNS Queries"
     
     Detects a suspicious Windows command-line process making a DNS query via known abuse text paste web services. This is based on Microsoft Windows Sysmon events (Event ID 22).
@@ -11027,12 +11228,20 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Suspicious Hostname"
     
     Detects suspicious hostnames such as ones with kali in it, to detect kali linux default hosts, but also other hostnames commonly used in attacks. List can be improved according to the environment.
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 ??? abstract "Suspicious TOR Gateway"
     
     Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
@@ -11241,6 +11450,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Ngrok Process Execution"
     
     Detects possible Ngrok execution, which can be used by attacker for RDP tunneling.
@@ -11343,6 +11556,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 15/02/2024 - minor - Added filter to reduce false positives
+            
 ??? abstract "Netskope Alert"
     
     Forward alerts reported by Netskope.  
@@ -11412,6 +11629,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Transfer Data to Cloud Account**
 
 ??? abstract "AWS CloudTrail EC2 VM Export Failure"
@@ -11503,6 +11724,10 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            
 **Data Encrypted for Impact**
 
 ??? abstract "Suncrypt Parameters"
@@ -11638,3 +11863,7 @@ Rules catalog includes **855 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 04/04/2024 - major - Rule's pattern field changed
+            

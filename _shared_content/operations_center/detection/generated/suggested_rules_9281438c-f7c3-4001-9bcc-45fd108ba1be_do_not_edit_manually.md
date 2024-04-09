@@ -63,6 +63,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** advanced
 
+??? abstract "Active Directory Data Export Using Csvde"
+    
+    Detects the use of Csvde, a command-line tool from Windows Server that can be used to export Active Directory data to CSV files. This export doesn't include password hashes, but can be used as a discovery tool to enumerate users, machines and group memberships.
+    
+    - **Effort:** elementary
+
 ??? abstract "Active Directory Database Dump Via Ntdsutil"
     
     Detects the dump of ntdis.dit database by using the utility ntdsutil.exe. NTDS.dit database stores Active Directory data, including passwords hashes for all users in the domain.
@@ -89,7 +95,7 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 
 ??? abstract "Active Directory Shadow Credentials"
     
-    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer. 
+    Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
     
     - **Effort:** elementary
 
@@ -356,6 +362,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     When a file is opened, the default program used to open the file (also called the file association or handler) is checked. File association selections are stored in the Windows Registry and can be edited by users, administrators, or programs that have Registry access or by administrators using the built-in assoc utility. Applications can modify the file association for a given file extension to call an arbitrary program when a file with the given extension is opened.
     
     - **Effort:** advanced
+
+??? abstract "Check Point Harmony Mobile Application Forbidden"
+    
+    Detects when someone attempts to access/use a forbidden application.
+    
+    - **Effort:** master
 
 ??? abstract "Clear EventLogs Through CommandLine"
     
@@ -2280,6 +2292,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "Suspicious CodePage Switch with CHCP"
     
     Detects a code page switch in command line
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious CommandLine Lsassy Pattern"
+    
+    Detects the characteristic lsassy loop used to identify lsass PIDs
     
     - **Effort:** intermediate
 
