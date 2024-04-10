@@ -8,6 +8,10 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 09/04/2024 - major - change field on aggregation
+            
 ??? abstract "Anomaly Possible Sysvol Dump"
     
     The rule detects abnormally high access to sysvol files.

@@ -5,6 +5,9 @@ Changelog _last update on 2024-04-09_
 ### Entra ID Password Compromised By Known Credential Testing Tool
   - 09/04/2024 - minor - Error code 500532 added
     
+### Anomaly Kerberos User Enumeration
+  - 09/04/2024 - major - change field on aggregation
+    
 ### Anomaly Secret Store Access
   - 08/04/2024 - minor - change field name on query
     
