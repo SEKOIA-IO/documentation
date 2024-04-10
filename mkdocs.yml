@@ -315,6 +315,7 @@ nav:
         - Mattermost: xdr/features/automate/library/mattermost.md
         - Microsoft Active Directory: xdr/features/automate/library/microsoft-active-directory.md
         - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
+        - Microsoft Azure: xdr/features/automate/library/microsoft-azure.md
         - Microsoft Entra ID: xdr/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Microsoft Windows Server: xdr/features/automate/library/microsoft-windows-server.md
@@ -508,6 +509,7 @@ nav:
         - Mandrill: tip/features/automate/library/mandrill.md
         - Mattermost: tip/features/automate/library/mattermost.md
         - Microsoft Active Directory: tip/features/automate/library/microsoft-active-directory.md
+        - Microsoft Azure: tip/features/automate/library/microsoft-azure.md
         - Microsoft Azure: tip/features/automate/library/microsoft-azure.md
         - Microsoft Entra ID (Azure AD): tip/features/automate/library/entra-id.md
         - Microsoft Office365: tip/features/automate/library/microsoft-office365.md
