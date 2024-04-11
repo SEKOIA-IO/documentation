@@ -689,7 +689,7 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
 
 ??? abstract "Process Memory Dump Using Comsvcs"
     
-    Detects the use of comsvcs in command line to dump a specific proces memory. This techinique is widlely used by attackers for privilege escalation and pivot.
+    Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
     - **Effort:** elementary
 
