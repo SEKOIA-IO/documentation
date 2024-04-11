@@ -1,7 +1,10 @@
-Changelog _last update on 2024-04-10_
+Changelog _last update on 2024-04-11_
 
 ## Changelog
 
+### Process Memory Dump Using Comsvcs
+  - 10/04/2024 - minor - Rule description was changed due to some mistakes
+    
 ### Entra ID Password Compromised By Known Credential Testing Tool
   - 09/04/2024 - minor - Error code 500532 added
     
@@ -232,9 +235,6 @@ Changelog _last update on 2024-04-10_
     
 ### Antivirus Relevant File Paths Alerts
   - 26/03/2024 - major - Rule's pattern field changed
-    
-### Process Memory Dump Using Comsvcs
-  - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
     
 ### Impacket Secretsdump.py Tool
   - 26/03/2024 - major - Rule's pattern field changed
