@@ -27,7 +27,7 @@ To start to pull events, you have to:
 2. Set up the module configuration with the:
      
      - Vade Cloud API hostname: the URL of your admin interface of Vade Cloud. Most of the time this is `https://cloud.vadesecure.com`; TO BE ADAPTED depending on your context.
-     - The email of the user: the login you use to connect to the admin interface of Vade Cloud. The account type **MUST** be "User" and not "Admin".
+     - The email of the user: the login you use to connect to the admin interface of Vade Cloud. The account type **MUST** be "Admin".
      - The user password: the password you use to connect to the admin interface of Vade Cloud.
 
 3. Set up the trigger configuration with the **intake key** from the previous step.
