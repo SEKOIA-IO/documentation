@@ -270,6 +270,7 @@ nav:
       - Query Builder (beta): xdr/features/investigate/query_builder.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
+      - Threat Landscape: xdr/features/report/threat_landscape.md 
     - Automate:
       - Playbooks: xdr/features/automate/index.md
       - Playbooks On-premises: xdr/features/automate/playbooks-on-premises.md
@@ -411,6 +412,7 @@ nav:
       - IOCs Collections: cti/features/consume/ioccollections.md
     - Monitor:
       - Dashboards: cti/features/monitor/dashboard.md
+      - Threat Landscape: cti/features/monitor/threat_landscape.md 
     - External Integrations:
       - Overview: cti/features/integrations/index.md
       - API: cti/features/integrations/api.md
@@ -455,6 +457,7 @@ nav:
       - Expiration Rules: tip/features/produce/expiration_rules.md
     - Monitor:
       - Dashboards: tip/features/monitor/dashboard.md
+      - Threat Landscape: cti/features/monitor/threat_landscape.md 
     - External Integrations:
       - Overview: tip/features/integrations/index.md
       - API: tip/features/integrations/api.md
