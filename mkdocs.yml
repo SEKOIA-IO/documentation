@@ -142,6 +142,7 @@ nav:
             - Azure Database for MySQL: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
             - Azure Linux: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
             - Azure Files: xdr/features/collect/integrations/cloud_and_saas/azure/azure_files.md
+            - Azure Key Vault: xdr/features/collect/integrations/cloud_and_saas/azure/azure_key_vault.md
             - Azure Network Watcher: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
             - Azure Windows: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
           - Microsoft Office 365:
