@@ -2,6 +2,12 @@
 
 This is the changelog for the Sekoia.io Endpoint Agent.
 
+## [1.5.1] - 2024-02-19 (linux only)
+
+### Fixed
+
+- Fixes agent crashing for linux distributions without libpcap.so.0.8 installed
+
 ## [1.5.0] - 2024-02-16
 
 ### Added
