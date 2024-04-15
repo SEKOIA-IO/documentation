@@ -1,16 +1,15 @@
-uuid: 924470a7-ab0f-49e9-a9c2-d8d15c4fe78f
+uuid: a2915a14-d1e9-4397-86fc-8f8b2c617466
 name: Olfeo Secure Web Gateway
 type: intake
 
 ## Overview
 
-Olfeo Secure Web Gateway is a web gateway offering malware detection, threat prevention and reputation filtering.
-This product is supported by Olfeo.
+Olfeo Secure Web Gateway is a suite of cybersecurity features for analyzing, filtering and securing your web flows. Combining proxy filtering, flow antivirus and DNS filtering.
 
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_924470a7-ab0f-49e9-a9c2-d8d15c4fe78f_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_a2915a14-d1e9-4397-86fc-8f8b2c617466_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/924470a7-ab0f-49e9-a9c2-d8d15c4fe78f.md!}
+{!_shared_content/operations_center/integrations/generated/a2915a14-d1e9-4397-86fc-8f8b2c617466.md!}
 
 ## Configure
 
@@ -20,6 +19,10 @@ to Sekoia.io by means of a syslog transport channel.
 ### Prerequisites
 
 - Have an internal log concentrator
+
+### Version supported
+
+Olfeo Secure Web Gateway On premise v6.8.6 and above
 
 ### Enable Syslog forwarding
 
