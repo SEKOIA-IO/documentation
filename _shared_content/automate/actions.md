@@ -96,12 +96,12 @@ These helpers need their associated trigger to function properly:
 
 ## Third-party applications
 
-- [Microsoft Entra ID (Azure AD) ](library/entra-id.md)
+- [Microsoft Entra ID (Azure AD) ](library/microsoft-entra-id.md)
 - [Microsoft Remote Server](library/microsoft-remote-server.md)
 - [Fortigate Firewalls](library/fortigate-firewalls.md)
 - [HarfangLab](library/harfanglab.md)
 - [Panda Security](library/panda-security.md)
-- [Sentinel One](library/sentinel-one.md)
+- [Sentinel One](library/sentinelone.md)
 - [ServiceNow](library/servicenow.md)
 
 More actions are available in the Actions Library. To learn how to set up an action, please refer to its documentation.
