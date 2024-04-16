@@ -20,7 +20,7 @@ to Sekoia.io by means of a syslog transport channel.
 
 - Have an internal log concentrator
 
-### Version supported
+### Versions supported
 
 Olfeo Secure Web Gateway On premise v6.8.6 and above
 
