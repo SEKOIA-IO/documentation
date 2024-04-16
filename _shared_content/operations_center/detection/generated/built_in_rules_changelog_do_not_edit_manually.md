@@ -1,7 +1,10 @@
-Changelog _last update on 2024-04-11_
+Changelog _last update on 2024-04-16_
 
 ## Changelog
 
+### Suspicious Email Attachment Received
+  - 15/04/2024 - minor - Update email from field to latest parser format
+    
 ### Process Memory Dump Using Comsvcs
   - 10/04/2024 - minor - Rule description was changed due to some mistakes
     

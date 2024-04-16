@@ -27,6 +27,12 @@ The following Sekoia.io built-in rules match the intake **Postfix**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    
+    - **Effort:** elementary
+
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind

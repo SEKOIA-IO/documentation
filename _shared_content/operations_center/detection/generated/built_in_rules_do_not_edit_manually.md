@@ -1,4 +1,4 @@
-Rules catalog includes **860 built-in detection rules** ([_last update on 2024-04-11_](rules_changelog.md)).
+Rules catalog includes **860 built-in detection rules** ([_last update on 2024-04-16_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1263,6 +1263,10 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 15/04/2024 - minor - Update email from field to latest parser format
+            
 ??? abstract "Suspicious Hangul Word Processor Child Process"
     
     Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
