@@ -45,6 +45,12 @@ The following Sekoia.io built-in rules match the intake **Varonis Data Security*
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    
+    - **Effort:** elementary
+
 ??? abstract "Varonis Data Security Email Alert"
     
     Varonis Data Security has raised an alert related to a supervised email account.

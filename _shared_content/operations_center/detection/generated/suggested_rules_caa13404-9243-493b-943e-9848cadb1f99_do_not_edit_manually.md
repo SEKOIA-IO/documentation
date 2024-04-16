@@ -447,6 +447,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** advanced
 
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     
     Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.

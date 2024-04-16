@@ -1,8 +1,8 @@
 ## Related Built-in Rules
 
-The following Sekoia.io built-in rules match the intake **Imperva WAF**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
+The following Sekoia.io built-in rules match the intake **Apache HTTP Server**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
-[SEKOIA.IO x Imperva WAF on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_d9f337a4-1303-47d4-b15f-1f83807ff3cc_do_not_edit_manually.json){ .md-button }
+[SEKOIA.IO x Apache HTTP Server on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_6c2a44e3-a86a-4d98-97a6-d575ffcb29f7_do_not_edit_manually.json){ .md-button }
 ??? abstract "Burp Suite Tool Detected"
     
     Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
@@ -135,17 +135,23 @@ The following Sekoia.io built-in rules match the intake **Imperva WAF**. This do
     
     - **Effort:** intermediate
 
+??? abstract "Cobalt Strike HTTP Default GET beaconing"
+    
+    Detects GET HTTP queries from known Cobalt Strike beacons (source code 4.3)
+    
+    - **Effort:** advanced
+
+??? abstract "Cobalt Strike HTTP Default POST Beaconing"
+    
+    Detects POST HTTP queries from known Cobalt Strike beacons (source code 4.3)
+    
+    - **Effort:** advanced
+
 ??? abstract "Detect requests to Konni C2 servers"
     
     This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
     
     - **Effort:** elementary
-
-??? abstract "Download Files From Non-Legitimate TLDs"
-    
-    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
-    
-    - **Effort:** master
 
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -248,9 +254,3 @@ The following Sekoia.io built-in rules match the intake **Imperva WAF**. This do
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
-
-??? abstract "TrevorC2 HTTP Communication"
-    
-    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
-    
-    - **Effort:** elementary

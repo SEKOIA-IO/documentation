@@ -1287,6 +1287,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Finger Usage"
     
     Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
