@@ -1,15 +1,21 @@
-Changelog _last update on 2024-04-16_
+Changelog _last update on 2024-04-17_
 
 ## Changelog
 
+### Entra ID Password Compromised By Known Credential Testing Tool
+  - 16/04/2024 - minor - Add more correlation IDs and error code 50052
+    
+### Discovery Commands Correlation
+  - 16/04/2024 - minor - Adding new elements to increase detection.
+    
+### OneNote Suspicious Children Process
+  - 15/04/2024 - minor - Changing effort level and adding new filters to reduce false positives.
+    
 ### Suspicious Email Attachment Received
   - 15/04/2024 - minor - Update email from field to latest parser format
     
 ### Process Memory Dump Using Comsvcs
   - 10/04/2024 - minor - Rule description was changed due to some mistakes
-    
-### Entra ID Password Compromised By Known Credential Testing Tool
-  - 09/04/2024 - minor - Error code 500532 added
     
 ### Anomaly Kerberos User Enumeration
   - 09/04/2024 - major - change field on aggregation

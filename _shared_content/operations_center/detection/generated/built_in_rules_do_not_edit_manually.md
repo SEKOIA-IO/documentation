@@ -1,4 +1,4 @@
-Rules catalog includes **860 built-in detection rules** ([_last update on 2024-04-16_](rules_changelog.md)).
+Rules catalog includes **862 built-in detection rules** ([_last update on 2024-04-17_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3605,8 +3605,12 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/04/2024 - minor - Changing effort level and adding new filters to reduce false positives.
+            
 ??? abstract "PsExec Process"
     
     Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
@@ -3968,6 +3972,12 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     Detects WMI command line event consumers.
     
     - **Effort:** elementary
+    
+??? abstract "Windows Suspicious Service Creation"
+    
+    Detects the creation of a new suspicious service - attacker could use MSRPC to create a remote service
+    
+    - **Effort:** intermediate
     
 ??? abstract "Windows Update LolBins"
     
@@ -4900,8 +4910,12 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/04/2024 - minor - Changing effort level and adding new filters to reduce false positives.
+            
 ??? abstract "Rare Logonui Child Found"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
@@ -6380,8 +6394,12 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 15/04/2024 - minor - Changing effort level and adding new filters to reduce false positives.
+            
 ??? abstract "Rare Logonui Child Found"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
@@ -9708,6 +9726,7 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
         - 05/03/2024 - minor - Rule name error was fixed
         - 09/04/2024 - minor - Error code 500532 added
+        - 16/04/2024 - minor - Add more correlation IDs and error code 50052
             
 ??? abstract "Fortinet FortiGate Firewall Login In Failure"
     
@@ -10024,6 +10043,12 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
 **Steal or Forge Kerberos Tickets**
 
+??? abstract "Kerberos Pre-Auth Disabled in UAC"
+    
+    The rule identify a change performed on a domain user object that disables Kerberos Pre-Authentication
+    
+    - **Effort:** elementary
+    
 ??? abstract "Possible Replay Attack"
     
     This event can be a sign of Kerberos replay attack or, among other things, network device configuration or routing problems.
@@ -10154,6 +10179,16 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
             
 **System Network Configuration Discovery**
 
+??? abstract "Discovery Commands Correlation"
+    
+    Detects some frequent discovery commands used by some ransomware operators.
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 16/04/2024 - minor - Adding new elements to increase detection.
+            
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
@@ -10275,6 +10310,10 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/04/2024 - minor - Adding new elements to increase detection.
+            
 ??? abstract "Reconnaissance Commands Activities"
     
     Based on Cynet, Microsoft and Kaspersky analysis of Qakbot, this rule tries to detect some discovery TTPs.
@@ -10313,6 +10352,10 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/04/2024 - minor - Adding new elements to increase detection.
+            
 ??? abstract "List Shadow Copies"
     
     Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
@@ -10403,6 +10446,10 @@ Rules catalog includes **860 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 16/04/2024 - minor - Adding new elements to increase detection.
+            
 ??? abstract "Phosphorus (APT35) Exchange Discovery"
     
     According to the Miscosoft's report, the group Phosphorus (part of APT35) uses a specific PowerShell command to collect information about its the environment of compromised Microsoft Exchange servers. The command is the following: Get-Recipient | Select Name -ExpandProperty EmailAddresses -first 1 | Select SmtpAddress |  ft -hidetableheaders

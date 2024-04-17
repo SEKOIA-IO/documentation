@@ -939,6 +939,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Kerberos Pre-Auth Disabled in UAC"
+    
+    The rule identify a change performed on a domain user object that disables Kerberos Pre-Authentication
+    
+    - **Effort:** elementary
+
 ??? abstract "Kernel Module Alteration"
     
     Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
@@ -1447,7 +1453,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Opening Of a Password File"
     
@@ -2636,6 +2642,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
     
     - **Effort:** advanced
+
+??? abstract "Windows Suspicious Service Creation"
+    
+    Detects the creation of a new suspicious service - attacker could use MSRPC to create a remote service
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Update LolBins"
     
