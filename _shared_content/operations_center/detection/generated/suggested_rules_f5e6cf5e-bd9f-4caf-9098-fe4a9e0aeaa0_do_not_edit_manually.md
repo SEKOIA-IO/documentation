@@ -949,7 +949,7 @@ The following Sekoia.io built-in rules match the intake **Stormshield SES [BETA]
     
     In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "Opening Of a Password File"
     
