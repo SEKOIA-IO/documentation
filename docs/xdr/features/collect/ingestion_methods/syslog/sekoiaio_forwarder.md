@@ -116,7 +116,8 @@ When debug is set to true, the raw event received and the output message will be
 Please find below a template of the `docker-compose.yml` file.
 
 ```yaml
-version: "3.9"
+# Version is deprecated with latest versions of Docker Engine
+# version: "3.9"
 services:
   rsyslog:
     image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.5
