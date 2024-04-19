@@ -61,7 +61,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     | hub_name | **To be completed at step 3** | Name of the Event Hub | sekoia_event_hub |
     | hub_connection_string | **To be completed at step 5** | Connection string–primary key | Endpoint=sb://company-eventhub.servicebus.windows.net/;SharedAccessKeyName=sekoiaio;SharedAccessKey=XXXXXX;EntityPath=sekoia_event_hub |
     | hub_consumer_group | **To be completed at step 6** | Name of the comsumer group | consumergroup_sekoiaio |
-    | storage_container_name | **To be completed at step 7** | Name of your container (same as the Event Hub name) | sekoia_event_hub |
+    | storage_container_name | **To be completed at step 7** | Name of your container | sekoiaio |
     | storage_connection_string | **To be completed at step 8** | Storage connection string | DefaultEndpointsProtocol=https;AccountName=sekoiaiocheckpoint;AccountKey=XXXXX |
 
     As a prerequisite, you need to choose an existing Resource group, or create a new one (e.g. `company-resource-group`).
