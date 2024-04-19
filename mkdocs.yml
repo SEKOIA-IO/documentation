@@ -157,6 +157,7 @@ nav:
           - Salesforce: xdr/features/collect/integrations/cloud_and_saas/salesforce.md
           - SecurityScorecard's Vulnerability Assessment Scanner: xdr/features/collect/integrations/cloud_and_saas/securityscorecard_vas.md
           - Sophos Threat Analysis Center: xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md
+          - Ubika Cloud Protector: xdr/features/collect/integrations/cloud_and_saas/ubika_cloud_protector.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
           - Zscaler ZIA: xdr/features/collect/integrations/cloud_and_saas/zscaler_zia.md
         - Email:
