@@ -15,32 +15,25 @@ Ubika Cloud Protector is a cloud-native security solution, providing advanced th
 
 ## Configure
 
-### How to create an API token
+### How to get API keys info
 
 !!! warning
     The following instructions are based on the old interface of Ubika Cloud Protector. Please, switch to the old interface if you use the new one.
     ![choose old interfaces](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/switch.png){: style="max-width:100%"}
 
-To create an API token:
+To get API keys info:
 
 
 1. Log in the Ubika Cloud protector
 2. Go to `Account` > `API Access`
 
-   ![api access](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_access.png){: style="max-width:100%"}
+    ![api access](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_access.png){: style="max-width:100%"}
 
 3. In the `API KEYS INFO` section, please note the `provider name` and the `tenant name`
 
-   ![api info](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_keys_info.png){: style="max-width:100%"}
+    ![api info](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_keys_info.png){: style="max-width:100%"}
 
-4. In the `CREATE API KEYS` section
-   1. Type a description to identify the API token
-   2. Select the `AUTHZ_ROLE_TENANT` role
-   3. Select the `AUTHZ_ACT_LIST_LOGS` action
-   4. Click `CREATE`
-
-   ![create_token](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/create_api_token.png){: style="max-width:100%"}
-
+4. The documentation to retrieve the `token` is still [under construction]
 
 ### Create your intake
 
@@ -59,7 +52,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - Create a **Trigger configuration** using:
 
     * Type the `Intake key` created on the previous step
-    * Type the `provider`, `tenant` and `token` from the `How to create an API token` step 
+    * Type the `provider`, `tenant` and `token` from the `How to get API keys info` step 
 
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page
