@@ -272,7 +272,7 @@ nav:
       - Query Builder (beta): xdr/features/investigate/query_builder.md
     - Report:
       - Dashboards: xdr/features/report/dashboards.md
-      - Threat Landscape: xdr/features/report/threat_landscape.md 
+      - Threat Landscape: xdr/features/report/threat_landscape.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
       - Playbooks On-premises: xdr/features/automate/playbooks-on-premises.md
@@ -346,6 +346,7 @@ nav:
         - Trellix: xdr/features/automate/library/trellix.md
         - Trend Micro: xdr/features/automate/library/trend-micro.md
         - Triage: xdr/features/automate/library/triage.md
+        - Ubika: xdr/features/automate/library/ubika.md
         - Utils: xdr/features/automate/library/utils.md
         - Vade Cloud: xdr/features/automate/library/vade-cloud.md
         - Vade Secure: xdr/features/automate/library/vade-secure.md
@@ -414,7 +415,7 @@ nav:
       - IOCs Collections: cti/features/consume/ioccollections.md
     - Monitor:
       - Dashboards: cti/features/monitor/dashboard.md
-      - Threat Landscape: cti/features/monitor/threat_landscape.md 
+      - Threat Landscape: cti/features/monitor/threat_landscape.md
     - External Integrations:
       - Overview: cti/features/integrations/index.md
       - API: cti/features/integrations/api.md
@@ -459,7 +460,7 @@ nav:
       - Expiration Rules: tip/features/produce/expiration_rules.md
     - Monitor:
       - Dashboards: tip/features/monitor/dashboard.md
-      - Threat Landscape: cti/features/monitor/threat_landscape.md 
+      - Threat Landscape: cti/features/monitor/threat_landscape.md
     - External Integrations:
       - Overview: tip/features/integrations/index.md
       - API: tip/features/integrations/api.md
@@ -542,6 +543,7 @@ nav:
         - Trellix: tip/features/automate/library/trellix.md
         - Trend Micro: tip/features/automate/library/trend-micro.md
         - Triage: tip/features/automate/library/triage.md
+        - Ubika: tip/features/automate/library/ubika.md
         - Utils: tip/features/automate/library/utils.md
         - Vade Cloud: tip/features/automate/library/vade-cloud.md
         - Vade Secure: tip/features/automate/library/vade-secure.md
