@@ -513,7 +513,7 @@ nav:
         - Mattermost: tip/features/automate/library/mattermost.md
         - Microsoft Active Directory: tip/features/automate/library/microsoft-active-directory.md
         - Microsoft Azure: tip/features/automate/library/microsoft-azure.md
-        - Microsoft Entra ID (Azure AD): tip/features/automate/library/entra-id.md
+        - Microsoft Entra ID (Azure AD): tip/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: tip/features/automate/library/microsoft-office365.md
         - Microsoft Windows Server: tip/features/automate/library/microsoft-windows-server.md
         - Netskope: tip/features/automate/library/netskope.md
@@ -575,9 +575,7 @@ plugins:
       'api/operation center: asset management': xdr/develop/rest_api/assets.md
       'api/operation center: rules, entities, intakes, events.md': xdr/develop/rest_api/configuration.md
       api/profile & permissions: xdr/develop/rest_api/community.md
-      apis.md: xdr/develop/index.md
       cti/develop/rest_api/identity_and_authentication.md: cti/develop/rest_api/community.md
-      develop.md: xdr/develop/index.md
       develop/guides/filtering.md: xdr/develop/guides/filtering.md
       develop/guides/get_started.md: xdr/develop/guides/get_started.md
       develop/rest_api/community.md: xdr/develop/rest_api/community.md
@@ -604,7 +602,7 @@ plugins:
       integrations/aws_cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
       integrations/aws_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
       integrations/aws_s3_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_s3_logs.md
-      integrations/azure-ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
+      integrations/azure-ad.md: xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md
       integrations/azure-files.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_files.md
       integrations/azure-linux.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_linux.md
       integrations/azure-mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
@@ -633,17 +631,17 @@ plugins:
       integrations/freeradius.md: xdr/index.md
       integrations/fsecure.md: xdr/index.md
       integrations/github_audit_logs.md: xdr/features/collect/integrations/cloud_and_saas/github_audit_logs.md
-      integrations/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_drive_reports.md
+      integrations/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       integrations/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       integrations/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
-      integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_workspace.md
+      integrations/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       integrations/haproxy.md: xdr/features/collect/integrations/application/haproxy.md
       integrations/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       integrations/imperva_waf.md: xdr/features/collect/integrations/cloud_and_saas/imperva_waf.md
       integrations/index.md: xdr/features/collect/integrations/index.md
       integrations/infoblox-ddi.md: xdr/features/collect/integrations/network/infoblox_ddi.md
       integrations/infoblox_ddi.md: xdr/features/collect/integrations/network/infoblox_ddi.md
-      integrations/intra_id.md: xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
+      integrations/intra_id.md: xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md
       integrations/linux.md: xdr/features/collect/integrations/endpoint/linux.md
       integrations/log-insight-windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
       integrations/log_insight_windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
@@ -673,16 +671,16 @@ plugins:
       integrations/sophos_fw.md: xdr/features/collect/integrations/network/sophos_fw.md
       integrations/spamassassin.md: xdr/features/collect/integrations/email/spamassassin.md
       integrations/squid.md: xdr/features/collect/integrations/network/squid.md
-      integrations/stormshield_endpoint.md: xdr/features/collect/integrations/network/stormshield_endpoint.md
+      integrations/stormshield_endpoint.md: xdr/features/collect/integrations/endpoint/stormshield_endpoint.md
       integrations/stormshield_network_security.md: xdr/features/collect/integrations/network/stormshield_network_security.md
       integrations/suricata.md: xdr/features/collect/integrations/network/suricata.md
       integrations/symantec-endpoint-protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
       integrations/symantec_endpoint_protection.md: xdr/features/collect/integrations/endpoint/symantec_epp.md
       integrations/tanium.md: xdr/features/collect/integrations/endpoint/tanium.md
-      integrations/thehive.md: xdr/features/collect/integrations/application/thehive.md
+      integrations/thehive.md: tip/features/integrations/thehive.md
       integrations/transport.md: xdr/features/collect/ingestion_methods/index.md
       integrations/transport/graylog.md: xdr/features/collect/ingestion_methods/graylog.md
-      integrations/transport/https.md: xdr/features/collect/ingestion_methods/https.md
+      integrations/transport/https.md: xdr/features/collect/ingestion_methods/https/format.md
       integrations/transport/logstash.md: xdr/features/collect/ingestion_methods/logstash.md
       integrations/transport/rsyslog.md: xdr/features/collect/ingestion_methods/rsyslog.md
       integrations/transport/syslog-ng.md: xdr/features/collect/ingestion_methods/syslog-ng.md
@@ -723,7 +721,7 @@ plugins:
       operation_center/data_collection/index.md: xdr/features/collect/ingestion_methods/index.md
       operation_center/data_collection/ingestion_methods.md: xdr/features/collect/ingestion_methods/index.md
       operation_center/data_collection/ingestion_methods/graylog.md: xdr/features/collect/ingestion_methods/graylog.md
-      operation_center/data_collection/ingestion_methods/https.md: xdr/features/collect/ingestion_methods/https.md
+      operation_center/data_collection/ingestion_methods/https.md: xdr/features/collect/ingestion_methods/https/format.md
       operation_center/data_collection/ingestion_methods/logstash.md: xdr/features/collect/ingestion_methods/logstash.md
       operation_center/data_collection/ingestion_methods/rsyslog.md: xdr/features/collect/ingestion_methods/rsyslog.md
       operation_center/data_collection/ingestion_methods/sekoiaio.md: xdr/features/collect/integrations/endpoint/sekoiaio.md
@@ -741,9 +739,9 @@ plugins:
       operation_center/integration_catalog/application/nginx.md: xdr/features/collect/integrations/application/nginx.md
       operation_center/integration_catalog/application/openldap.md: xdr/features/collect/integrations/application/openldap.md
       operation_center/integration_catalog/application/openssh.md: xdr/features/collect/integrations/application/openssh.md
-      operation_center/integration_catalog/application/prove-it.md: xdr/features/collect/integrations/application/prove-it.md
+      operation_center/integration_catalog/application/prove-it.md: xdr/features/collect/integrations/network/rubycat_prove_it.md
       operation_center/integration_catalog/application/sekoiaio_activity_logs.md: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
-      operation_center/integration_catalog/application/thehive.md: xdr/features/collect/integrations/application/thehive.md
+      operation_center/integration_catalog/application/thehive.md: cti/features/integrations/thehive.md
       operation_center/integration_catalog/application/unbound.md: xdr/features/collect/integrations/application/unbound.md
       operation_center/integration_catalog/cloud_and_saas/aws/aws_cloudtrail.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_cloudtrail.md
       operation_center/integration_catalog/cloud_and_saas/aws/aws_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/aws/aws_flow_logs.md
@@ -751,7 +749,7 @@ plugins:
       operation_center/integration_catalog/cloud_and_saas/azure/azure_mysql.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_mysql.md
       operation_center/integration_catalog/cloud_and_saas/azure/azure_network_watcher.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_network_watcher.md
       operation_center/integration_catalog/cloud_and_saas/azure/azure_windows.md: xdr/features/collect/integrations/cloud_and_saas/azure/azure_windows.md
-      operation_center/integration_catalog/cloud_and_saas/azure/intra_id.md: xdr/features/collect/integrations/cloud_and_saas/azure/intra_id.md
+      operation_center/integration_catalog/cloud_and_saas/azure/intra_id.md: xdr/features/collect/integrations/cloud_and_saas/azure/entra_id.md
       operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_dns.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_dns.md
       operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_ip.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_ip.md
       operation_center/integration_catalog/cloud_and_saas/cisco_umbrella/umbrella_proxy.md: xdr/features/collect/integrations/cloud_and_saas/cisco_umbrella/umbrella_proxy.md
@@ -760,7 +758,7 @@ plugins:
       operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare-http-requests.md: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
       operation_center/integration_catalog/cloud_and_saas/cloudflare/cloudflare.md: xdr/features/collect/integrations/cloud_and_saas/cloudflare/cloudflare-http-requests.md
       operation_center/integration_catalog/cloud_and_saas/digital_shadows.md: xdr/features/collect/integrations/cloud_and_saas/digital_shadows.md
-      operation_center/integration_catalog/cloud_and_saas/google/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_drive_reports.md
+      operation_center/integration_catalog/cloud_and_saas/google/google_drive_reports.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
       operation_center/integration_catalog/cloud_and_saas/google/google_kubernetes_engine.md: xdr/features/collect/integrations/cloud_and_saas/google/google_kubernetes_engine.md
       operation_center/integration_catalog/cloud_and_saas/google/google_vpc_flow_logs.md: xdr/features/collect/integrations/cloud_and_saas/google/google_vpc_flow_logs.md
       operation_center/integration_catalog/cloud_and_saas/google/google_workspace.md: xdr/features/collect/integrations/cloud_and_saas/google/google_reports.md
@@ -777,7 +775,7 @@ plugins:
       operation_center/integration_catalog/endpoint/harfanglab.md: xdr/features/collect/integrations/endpoint/harfanglab.md
       operation_center/integration_catalog/endpoint/linux.md: xdr/features/collect/integrations/endpoint/linux.md
       operation_center/integration_catalog/endpoint/log_insight_windows.md: xdr/features/collect/integrations/endpoint/log_insight_windows.md
-      operation_center/integration_catalog/endpoint/microsoft_defender_for_endpoints.md: xdr/features/collect/integrations/endpoint/microsoft_defender_for_endpoints.md
+      operation_center/integration_catalog/endpoint/microsoft_defender_for_endpoints.md: xdr/features/collect/integrations/cloud_and_saas/office365/microsoft_365_defender.md
       operation_center/integration_catalog/endpoint/panda_security_aether.md: xdr/features/collect/integrations/endpoint/panda_security_aether.md
       operation_center/integration_catalog/endpoint/sentinelone.md: xdr/features/collect/integrations/endpoint/sentinelone.md
       operation_center/integration_catalog/endpoint/sentinelone_deepvisibility.md: xdr/features/collect/integrations/endpoint/sentinelone_deepvisibility.md
@@ -853,7 +851,6 @@ plugins:
       playbooks/operators.md: xdr/features/automate/operators.md
       playbooks/overview.md: xdr/features/automate/index.md
       playbooks/triggers.md: xdr/features/automate/triggers.md
-      searching/dork.md: xdr/features/investigate/dork_language.md
       searching/search_events.md: xdr/features/investigate/events.md
       tip/develop/rest_api/identity_and_authentication.md: tip/develop/rest_api/community.md
       user_center.md: getting_started/index.md

@@ -10,13 +10,13 @@ This use case describes how to extract an IP address from a URL and a country.
 	* Be an Administrator or an Analyst of the community.
     * Have an API Key with a role that contains at least the permission "View alerts"
 
-> To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
+> To create your API Key, follow this [documentation](/getting_started/manage_api_keys/).
 
 ## Playbook configuration
 
 Here is the playbook configuration to set:
 
-![Playbook ExtractIP](docs/assets/playbooks/library/UseCases/ExtractIP.png)
+![Playbook ExtractIP](/assets/playbooks/library/UseCases/ExtractIP.png)
 
 Alert created => set module & trigger configuration
 Get Alert => **uuid** = `short_id` variables in **Alert created**

@@ -11,7 +11,7 @@ On this website, you’ll find the documentation for the three award-winning pro
 
 In addition to a web interface, Sekoia.io provides **REST/API** for external apps for almost all of its features, and it’s free!
 
-This documentation platform is made to guide you through the different features and use cases of the app, but also to answer all of your questions. It’s open-source and it’s a work in progress, so don’t hesitate to contribute and enhance its content using this [public repo](https://github.com/Sekoia.io/documentation).
+This documentation platform is made to guide you through the different features and use cases of the app, but also to answer all of your questions. It’s open-source and it’s a work in progress, so don’t hesitate to contribute and enhance its content using this [public repo](https://github.com/SEKOIA-IO/documentation).
 
 If you are interested in our products, contact us to plan a demo by filling out [this form](https://www.sekoia.io/en/contact/).
 

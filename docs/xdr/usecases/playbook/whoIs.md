@@ -14,13 +14,13 @@ This use case describes how to use Whois module in order to enrich an IP address
 	* `SIC_READ_EVENT_STATS`
 
 !!!note
-    To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
+    To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
 
 ## Playbook configuration
 
 You can find the configuration below: 
 
-![Playbook WhoIS](docs/assets/playbooks/library/UseCases/WhoIS.png)
+![Playbook WhoIS](/docs/assets/playbooks/library/UseCases/WhoIS.png)
 
 | Module | Configuration |
 | --- | --- |

@@ -14,13 +14,13 @@ This use case describes how to get the MAC address of events associated with an 
 	* `SIC_READ_EVENT_STATS`
 
 !!! note 
-    To create your API Key, follow this [documentation](../../../getting_started/generate_api_keys.md).
+    To create your API Key, follow this [documentation](/getting_started/manage_api_keys).
     
 ## Playbook configuration
 
 Here is the configuration below: 
 
-![Playbook Enrich_information_in_alert](docs/assets/playbooks/library/UseCases/Enrich_information_in_alert.png)
+![Playbook Enrich_information_in_alert](/assets/playbooks/library/UseCases/Enrich_information_in_alert.png)
 
 | Module | Configuration |
 | --- | --- |

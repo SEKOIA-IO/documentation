@@ -19,5 +19,5 @@ Linux is a family of free and open-source software operating systems built aroun
     - [Sentinel One](sentinelone.md)
     - [Sophos EDR](sophos_edr.md)
     - [Tehtris](tehtris_edr.md)
-    - [Trend Micro Deep Security](trend_micro_deep_security.md)
+    - [Trend Micro Deep Security](trend_micro/trend_micro_deep_security.md)
 

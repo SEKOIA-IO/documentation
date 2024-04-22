@@ -2,21 +2,13 @@
 
 ## Overview
 
-Admins and users with the right permissions are able to add users with a role.
-
 A role has attached permissions allowing a user to access, view pages and use its features.
 
 In the following sections, you will learn how to manage your users.
 
 ## Needed role and permissions
 
-To manage users in a community, you need to have the role `manage_member`. This role contains the following permissions: 
-
-| Permission | Description |
-| --- | --- |
-| COMMUNITY_ADD_MEMBER | Adds new members to the community |
-| COMMUNITY_LIST_MEMBER | Lists all members in a community |
-| COMMUNITY_REMOVE_MEMBER | Removes members from a community |
+To manage users in a community, you need to be an Administrator of the community.
 
 ## Detailed page of a user
 
@@ -77,5 +69,3 @@ To create custom roles for your guests, you’ll have to:
 
 Permissions can be different depending on your job position at your company.
 There are three main categories to all of these permissions: `Admin`, `Manage` or `View`.
-
-In the [next page](roles_permissions.md), you’ll have a look at all our permissions depending on which product you are subscribed to.
