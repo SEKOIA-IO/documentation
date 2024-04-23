@@ -1,7 +1,10 @@
-Changelog _last update on 2024-04-19_
+Changelog _last update on 2024-04-23_
 
 ## Changelog
 
+### Microsoft 365 Email Forwarding To Consumer Email Address
+  - 22/04/2024 - minor - Add zohomail.com
+    
 ### Entra ID Password Compromised By Known Credential Testing Tool
   - 16/04/2024 - minor - Add more correlation IDs and error code 50052
     
