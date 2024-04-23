@@ -1,4 +1,4 @@
-Rules catalog includes **862 built-in detection rules** ([_last update on 2024-04-19_](rules_changelog.md)).
+Rules catalog includes **864 built-in detection rules** ([_last update on 2024-04-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4607,6 +4607,12 @@ Rules catalog includes **862 built-in detection rules** ([_last update on 2024-0
             
 **Create Account**
 
+??? abstract "AWS Persistence By Creating KeyPair And SecurityGroup"
+    
+    Attackers can use AWS credentials to create a KeyPair and a SecurityGroup to have continuous access to the AWS account.
+    
+    - **Effort:** master
+    
 ??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
     
     Detects the exploitation of SonicWall Unauthenticated Admin Access.
@@ -6186,7 +6192,7 @@ Rules catalog includes **862 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-**Domain Policy Modification**
+**Domain or Tenant Policy Modification**
 
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
@@ -8235,7 +8241,7 @@ Rules catalog includes **862 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
-**Domain Policy Modification**
+**Domain or Tenant Policy Modification**
 
 ??? abstract "Creation or Modification of a GPO Scheduled Task"
     
@@ -10612,11 +10618,33 @@ Rules catalog includes **862 built-in detection rules** ([_last update on 2024-0
             
 **Cloud Service Discovery**
 
+??? abstract "AWS Suspicious Discovery Commands"
+    
+    Attackers often use discovery commands such as DescribeInstances or DescribeSecurityGroups, and many others, to find how an AWS tenant is configured.
+    
+    - **Effort:** master
+    
 ??? abstract "AzureEdge in Command Line"
     
     Detects use of azureedge in the command line.
     
     - **Effort:** advanced
+    
+**Cloud Infrastructure Discovery**
+
+??? abstract "AWS Suspicious Discovery Commands"
+    
+    Attackers often use discovery commands such as DescribeInstances or DescribeSecurityGroups, and many others, to find how an AWS tenant is configured.
+    
+    - **Effort:** master
+    
+**Cloud Storage Object Discovery**
+
+??? abstract "AWS Suspicious Discovery Commands"
+    
+    Attackers often use discovery commands such as DescribeInstances or DescribeSecurityGroups, and many others, to find how an AWS tenant is configured.
+    
+    - **Effort:** master
     
 ## Lateral Movement
 **Remote Services**
@@ -10896,6 +10924,10 @@ Rules catalog includes **862 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/04/2024 - minor - Add zohomail.com
+            
 ??? abstract "Microsoft 365 Email Forwarding To Email Address With Rare TLD"
     
     An email forwarding rule was created, that automatically forwards incoming emails to an address outside of the organization (less common top-level domain).
