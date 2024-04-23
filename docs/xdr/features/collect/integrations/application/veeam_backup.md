@@ -6,10 +6,6 @@ type: intake
 
 Veeam Backup & Replication is a comprehensive data protection solution known for its robust backup, recovery, and replication capabilities, ensuring the secure and efficient management of data across various environments for businesses and organizations.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
-
 ## Supported versions
 
 This integration supports the following versions:

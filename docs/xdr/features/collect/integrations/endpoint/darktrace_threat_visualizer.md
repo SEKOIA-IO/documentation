@@ -7,9 +7,6 @@ type: intake
 Darktrace monitors all people and digital assets across your entire ecosystem.
 
 This setup guide describes how to forward logs from Darktrace Threat visualizer to Sekoia.io.
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 {!_shared_content/operations_center/integrations/generated/98fa7079-41ae-4033-a93f-bbd70d114188.md!}
 

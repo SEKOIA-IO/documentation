@@ -8,9 +8,6 @@ type: intake
 Palo Alto Cortex XDR (EDR) is an advanced Endpoint Detection and Response solution offering real-time threat detection, investigation, and response capabilities, empowering organizations to proactively defend against sophisticated cyber threats across their endpoints.
 
 This setup guide shows how to forward EDR alerts collected on the Palo Alto Cortex XDR (EDR) platform to Sekoia.io.
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 ## Collected events
 

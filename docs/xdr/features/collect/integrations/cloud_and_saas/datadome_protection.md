@@ -6,9 +6,6 @@ type: intake
 
 Datadome offers is a bot protection solution, providing real-time detection and mitigation of malicious bots, safeguarding websites and APIs from fraud, scraping, and other automated threats with advanced security measures.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_acd3374a-9738-4650-9d20-bd0a22daac40_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/acd3374a-9738-4650-9d20-bd0a22daac40.md!}

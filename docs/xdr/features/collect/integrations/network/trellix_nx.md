@@ -6,9 +6,6 @@ type: intake
 
 Trellix Network Security is an effective cyberthreat protection solution that helps your organization minimize the risk of costly breaches by accurately detecting and immediately stopping advanced, targeted, and other evasive attacks hiding in internet traffic.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_bae128bb-98c6-45f7-9763-aad3451821e5_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/bae128bb-98c6-45f7-9763-aad3451821e5.md!}

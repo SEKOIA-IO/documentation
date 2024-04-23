@@ -6,9 +6,6 @@ type: intake
 
 Zscaler Internet Access is a cloud-native security platform that delivers secure and direct internet access for users and devices, providing real-time protection against cyber threats while enabling secure and efficient web access from anywhere.
 
-!!! warning
-    This format is currently in beta, but we welcome your feedback to improve its performance.
-
 ### Supported logs
 
 This integration can ingest the following logs:

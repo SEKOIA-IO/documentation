@@ -6,9 +6,6 @@ type: intake
 
 Aruba OS is the operating system developed by Aruba Networks, designed for their networking devices and infrastructure. It offers advanced features for wireless and wired networking, security, and management, enhancing network performance and reliability.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_d6d15297-e977-4584-9bb3-f0290b99f014_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}

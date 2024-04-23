@@ -6,9 +6,6 @@ type: intake
 
 OpenVPN is an open-source virtual private network (VPN) software, offering robust encryption, secure connectivity, flexible and reliable remote access to networks for individuals and businesses globally.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_e8ca856f-8a58-490b-bea4-247b12b3d74b_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/e8ca856f-8a58-490b-bea4-247b12b3d74b.md!}

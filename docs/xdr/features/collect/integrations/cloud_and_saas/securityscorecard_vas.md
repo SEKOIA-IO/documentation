@@ -8,9 +8,6 @@ SecurityScorecard's Vulnerability Assessment Scanner is a tool designed to ident
 organization's digital infrastructure, offering real-time insights and prioritized recommendations to strengthen 
 security measures and reduce cyber risk.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_8f472113-ba5b-45b9-9a2c-944834396333_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333.md!}

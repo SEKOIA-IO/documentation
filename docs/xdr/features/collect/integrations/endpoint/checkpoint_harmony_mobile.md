@@ -6,9 +6,6 @@ type: intake
 
 Check Point Harmony Mobile is the industry's first unified security solution for users devices and access.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_ff53e0db-059b-4e16-ba90-8c4dbf5cee35_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/ff53e0db-059b-4e16-ba90-8c4dbf5cee35.md!}

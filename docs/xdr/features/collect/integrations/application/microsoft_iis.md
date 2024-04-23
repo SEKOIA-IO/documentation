@@ -5,10 +5,6 @@ type: intake
 ## Overview
 Microsoft Internet Information Services (IIS) is a web server software for Windows, providing a secure and scalable platform for hosting and managing websites, applications, and services, widely used in enterprise environments.
 
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_63974ce1-2f0a-44f7-a4cf-3e64787c1c39_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/63974ce1-2f0a-44f7-a4cf-3e64787c1c39.md!}
