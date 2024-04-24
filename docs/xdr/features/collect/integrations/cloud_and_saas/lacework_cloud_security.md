@@ -6,9 +6,6 @@ type: intake
 
 The Lacework Cloud Security provides continuous cloud security monitoring and automated threat detection, safeguarding cloud environments with real-time insights and compliance enforcement.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_5803f97d-b324-4452-b861-0253b15de650_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/5803f97d-b324-4452-b861-0253b15de650.md!}

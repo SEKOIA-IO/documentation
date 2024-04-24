@@ -6,9 +6,6 @@ type: intake
 
 Broadcom Edge Security Web Gateway provides comprehensive protection for web traffic, offering advanced threat detection and prevention capabilities, along with granular policy controls, to safeguard organizations against evolving cyber threats at the network edge.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_2886cd2d-f686-4e7d-9976-250cba2eaf5b_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/2886cd2d-f686-4e7d-9976-250cba2eaf5b.md!}

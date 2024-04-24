@@ -8,9 +8,6 @@ Cloudflare is a global network designed to make everything you connect to the In
 
 In this documentation, you will learn how to collect and send Cloudflare Gateway HTTP logs to Sekoia.io.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_f570dd30-854b-4a22-9c2d-e2cfa46bf0e5_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/f570dd30-854b-4a22-9c2d-e2cfa46bf0e5.md!}

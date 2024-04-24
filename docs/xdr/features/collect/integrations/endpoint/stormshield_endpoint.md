@@ -6,9 +6,6 @@ type: intake
 
 Stormshield SES is a comprehensive cybersecurity solution designed to protect individual devices, such as computers and servers, from various cyber threats and attacks. It encompasses advanced features like antivirus, firewall, intrusion detection and prevention, application control, and data encryption. This solution aims to safeguard endpoints from malware, ransomware, phishing, and other malicious activities, while providing centralized management and real-time threat visibility for enhanced security posture.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0.md!}

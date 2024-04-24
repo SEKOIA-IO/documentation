@@ -6,9 +6,6 @@ type: intake
 
 Google Reports is a data reporting and analysis platform offered by Google for Google Workspace services, designed to provide insights and metrics about user activities and interactions within various Google services. It allows organizations to track and visualize user engagement, application usage, and other relevant data points, enabling informed decision-making and optimization of digital experiences. 
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 ### Supported applications
 
 This integration can collect activities from the following GSuite applications:

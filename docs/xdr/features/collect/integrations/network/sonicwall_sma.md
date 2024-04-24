@@ -6,9 +6,6 @@ type: intake
 
 SonicWall Secure Mobile Access offers secure and seamless remote access to corporate resources, applications, and data, enhancing workforce mobility while maintaining robust security and compliance measures.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 {!_shared_content/operations_center/detection/generated/suggested_rules_622999fe-d383-4d41-9f2d-eed5013fe463_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/622999fe-d383-4d41-9f2d-eed5013fe463.md!}

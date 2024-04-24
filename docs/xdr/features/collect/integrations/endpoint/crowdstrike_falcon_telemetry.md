@@ -6,9 +6,6 @@ type: intake
 
 CrowdStrike provides cloud workload and endpoint security, threat intelligence, and cyberattack response services and products.
 
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
-
 CrowdStrike Falcon Telemetry gathers raw system logs, legitimate and suspicious activities. Below is a non-exhaustive list of activities that can be monitored using CrowdStrike Telemetry logs:
 
 - Process creation and termination

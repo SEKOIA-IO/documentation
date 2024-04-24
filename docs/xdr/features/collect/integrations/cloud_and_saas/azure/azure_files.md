@@ -8,9 +8,6 @@ Azure Files creates monitoring data by using Azure Monitor, which is a full stac
 Azure Monitor provides a complete set of features to monitor your Azure resources and resources in other clouds and on-premises.
 
 This setup guide describe how to forward events produced by `Azure Files` to Sekoia.io.
-
-!!! warning
-    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
 {!_shared_content/operations_center/detection/generated/suggested_rules_70c5c3db-fae8-4825-8d8b-08d6315e1ef6_do_not_edit_manually.md!}
 
