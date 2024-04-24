@@ -1,4 +1,4 @@
-Rules catalog includes **864 built-in detection rules** ([_last update on 2024-04-23_](rules_changelog.md)).
+Rules catalog includes **865 built-in detection rules** ([_last update on 2024-04-24_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3296,6 +3296,12 @@ Rules catalog includes **864 built-in detection rules** ([_last update on 2024-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
+    
+    - **Effort:** advanced
+    
 **System Services**
 
 ??? abstract "Check Point Harmony Mobile Application Forbidden"
