@@ -95,6 +95,7 @@ nav:
           - OpenVPN: xdr/features/collect/integrations/application/openvpn.md
           - RSA SecurID: xdr/features/collect/integrations/application/rsa_securid.md
           - SEKOIA.IO activity logs: xdr/features/collect/integrations/application/sekoiaio_activity_logs.md
+          - Systancia Cleanroom: xdr/features/collect/integrations/application/systancia_cleanroom.md
           - Unbound: xdr/features/collect/integrations/application/unbound.md
           - Veeam Backup & Replication: xdr/features/collect/integrations/application/veeam_backup.md
         - Cloud and SaaS:
