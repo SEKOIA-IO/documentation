@@ -158,6 +158,7 @@ nav:
           - SecurityScorecard's Vulnerability Assessment Scanner: xdr/features/collect/integrations/cloud_and_saas/securityscorecard_vas.md
           - Sophos Threat Analysis Center: xdr/features/collect/integrations/cloud_and_saas/sophos_threat_analysis_center.md
           - Ubika Cloud Protector Alerts: xdr/features/collect/integrations/cloud_and_saas/ubika_cloud_protector_alerts.md
+          - Ubika Cloud Protector Traffic: xdr/features/collect/integrations/cloud_and_saas/ubika_cloud_protector_traffic.md
           - Ubika WAAP Gateway: xdr/features/collect/integrations/cloud_and_saas/ubika_waap.md
           - Zscaler ZIA: xdr/features/collect/integrations/cloud_and_saas/zscaler_zia.md
         - Email:
