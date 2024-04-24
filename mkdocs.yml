@@ -56,6 +56,7 @@ nav:
     - Notification examples: getting_started/notifications-Examples.md
   - 6. Manage API Keys: getting_started/manage_api_keys.md
   - 7. Sekoia regions: getting_started/regions.md
+  - 8. Troubleshooting Tips: getting_started/get_troubleshooting_tips.md
 - Sekoia.io XDR:
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
