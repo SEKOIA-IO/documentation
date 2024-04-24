@@ -21,15 +21,15 @@ This setup guide describe how to forward events produced by **Kaspersky Endpoint
 
 2. In the console, on the left panel, click on the spanner at the right of **Adminitration server**
 
-![SIEM1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM1.png)
+	![SIEM1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM1.png)
 
 3. In the **General** tab, click on **SIEM** on the menu
 
-![SIEM2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM2.png)
+	![SIEM2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM2.png)
 
 4. Click on **settings** to configure the forwarding (point 1)
 
-![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
+	![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
 
 5. Configure the forwarding
     a. Type the address of your log concentrator in the **SIEM system server address**
@@ -51,25 +51,25 @@ This setup guide describe how to forward events produced by **Kaspersky Endpoint
         
 6. Check **Automatically export event to SIEM system database** (point 2)
 
-![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
+	![SIEM3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/SIEM3.png)
 
-### Forward logs to Sekoia.io
+### Apply log export configuration on devices
 
 1. In the console, on the left menu, click on **Devices** > **Policies & profiles**
 
-![Event1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event1.png)
+	![Event1.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event1.png)
 
 2. For each policy **Kapersky Endpoint Security for X**, click on the policy
 
-![Event2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event2.png)
+	![Event2.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event2.png)
 
 3. In the policy, select the **Event configuration** tab
 
-![Event3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event3.png)
+	![Event3.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event3.png)
 
 4. On the left panel, select the section **Critical**. Select all event types and click on **Mark for export to SIEM system by using Syslog**
 
-![Event4.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event4.png)
+	![Event4.png](/assets/operation_center/integration_catalog/endpoint/kaspersky-edr/Event4.png)
 
 5. Select the section **Warning** and select all event types and click on **Mark for export to SIEM system by using Syslog**.
 
