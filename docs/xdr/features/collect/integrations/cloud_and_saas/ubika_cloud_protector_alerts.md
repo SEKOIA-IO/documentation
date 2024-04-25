@@ -16,6 +16,11 @@ Ubika Cloud Protector is a cloud-native security solution, providing advanced th
 ## Configure
 
 ### How to get API keys info
+3 informations are required to collect data from Ubika:
+
+- The `provider name` (available in Ubika interface)
+- The `tenant name` (available in Ubika interface)
+- A `token` (provided by Ubika support team)
 
 !!! warning
     The following instructions are based on the old interface of Ubika Cloud Protector. Please, switch to the old interface if you use the new one.
@@ -33,7 +38,7 @@ To get API keys info:
 
     ![api info](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_keys_info.png){: style="max-width:100%"}
 
-4. The documentation to retrieve the `token` is still [under construction]
+4. Finally, contact `Ubika support` to request a `token` for the legacy API. This specific `token` cannot be retrieved through the Ubika interface at the moment.
 
 ### Create your intake
 
