@@ -171,6 +171,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     
     - **Effort:** elementary
 
+??? abstract "Cryptomining"
+    
+    Detection of domain names potentially related to cryptomining activities.
+    
+    - **Effort:** master
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
@@ -237,6 +243,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     
     - **Effort:** elementary
 
+??? abstract "Dynamic DNS Contacted"
+    
+    Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
+    
+    - **Effort:** master
+
 ??? abstract "Dynamic Linker Hijacking From Environment Variable"
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
@@ -284,6 +296,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
 
 ??? abstract "Exfiltration Domain In Command Line"
     
@@ -747,6 +765,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     
     - **Effort:** elementary
 
+??? abstract "Remote Access Tool Domain"
+    
+    Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
@@ -776,6 +800,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
+
+??? abstract "Sekoia.io EICAR Detection"
+    
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
 
 ??? abstract "Spyware Persistence Using Schtasks"
     
@@ -924,6 +954,12 @@ The following Sekoia.io built-in rules match the intake **Trellix EDR [ALPHA]**.
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host.
+    
+    - **Effort:** master
+
+??? abstract "TOR Usage Generic Rule"
+    
+    Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
 

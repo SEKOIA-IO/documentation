@@ -501,6 +501,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "Cryptomining"
+    
+    Detection of domain names potentially related to cryptomining activities.
+    
+    - **Effort:** master
+
 ??? abstract "Csrss Child Found"
     
     The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
@@ -717,6 +723,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Dynamic DNS Contacted"
+    
+    Detect communication with dynamic dns domain. This kind of domain is often used by attackers. This rule can trigger false positive in non-controlled environment because dynamic dns is not always malicious.
+    
+    - **Effort:** master
+
 ??? abstract "Dynamic Linker Hijacking From Environment Variable"
     
     LD_PRELOAD and LD_LIBRARY_PATH are environment variables used by the Operating System at the runtime to load shared objects (library.ies) when executing a new process, attacker can overwrite this variable to attempts a privileges escalation.
@@ -794,6 +806,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+
+??? abstract "Exfiltration Domain"
+    
+    Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
 
 ??? abstract "Exfiltration Domain In Command Line"
     
@@ -1995,6 +2013,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
+    
+    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
+    
+    - **Effort:** elementary
+
 ??? abstract "Rare Logonui Child Found"
     
     Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
@@ -2040,6 +2064,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys"
     
     Detects persistence registry keys. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
+
+??? abstract "Remote Access Tool Domain"
+    
+    Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
     
     - **Effort:** master
 
@@ -2186,6 +2216,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     Detects the addition of a SSP to the registry. This is commonly used for persistence. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. Logging for Registry events is needed for this rule to work (this can be done through Sysmon EventIDs 12 and 13).
     
     - **Effort:** elementary
+
+??? abstract "Sekoia.io EICAR Detection"
+    
+    Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
 
 ??? abstract "Sliver DNS Beaconing"
     
@@ -2616,6 +2652,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
 ??? abstract "System Info Discovery"
     
     System info discovery, attempt to detects basic command use to fingerprint a host.
+    
+    - **Effort:** master
+
+??? abstract "TOR Usage Generic Rule"
+    
+    Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
 
