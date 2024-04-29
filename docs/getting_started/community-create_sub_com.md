@@ -10,8 +10,8 @@ Sub-community creation is only available on MSSP mode only
 
 To create a managed community in an MSSP environment:
 
-1. Go to `Managed communities` from your avatar in the upper right of the screen 
-2. On the right, you’ll find a list of all managed communities within the main MSSP community. Click on the button `+ Community`
+1. Go to `Settings` on the bottom left of the screen 
+2. You’ll find a list of all managed communities within the main MSSP community if you have the good permisions on your personal account. Click on the button `+ New Community`
 3. Provide a name, a description and a link to a website (optional) 
 4. Save
 
