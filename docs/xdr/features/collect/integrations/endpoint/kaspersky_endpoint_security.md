@@ -17,7 +17,7 @@ This setup guide describe how to forward events produced by **Kaspersky Endpoint
 
 ### Forward logs to Sekoia.io
 
-1. Log in the Kaspersky Security Center Cloud Center
+1. Log in the Kaspersky Security Center Cloud Center available at `https://ksc.kaspersky.com`
 
 2. In the console, on the left panel, click on the spanner at the right of **Adminitration server**
 
