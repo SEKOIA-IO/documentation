@@ -1,4 +1,4 @@
-Rules catalog includes **865 built-in detection rules** ([_last update on 2024-04-26_](rules_changelog.md)).
+Rules catalog includes **865 built-in detection rules** ([_last update on 2024-04-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -5327,6 +5327,10 @@ Rules catalog includes **865 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 30/04/2024 - major - Adding some filters
+            
 ??? abstract "Svchost Modification"
     
     Detects the modification of svchost in the registry.
@@ -6811,6 +6815,10 @@ Rules catalog includes **865 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 30/04/2024 - major - Adding some filters
+            
 ??? abstract "Svchost Modification"
     
     Detects the modification of svchost in the registry.
