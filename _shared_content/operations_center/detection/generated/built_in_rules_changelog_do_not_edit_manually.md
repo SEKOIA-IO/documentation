@@ -1,7 +1,10 @@
-Changelog _last update on 2024-04-26_
+Changelog _last update on 2024-04-30_
 
 ## Changelog
 
+### Suspicious desktop.ini Action
+  - 30/04/2024 - major - Adding some filters
+    
 ### Microsoft 365 Email Forwarding To Consumer Email Address
   - 22/04/2024 - minor - Add zohomail.com
     
