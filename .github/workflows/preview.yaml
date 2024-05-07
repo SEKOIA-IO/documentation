@@ -46,7 +46,13 @@ jobs:
 
       - name: Build site
         run: |
-          poetry run python -m mkdocs build
+          poetry run python -m mkdocs build > ERRORS.txt 2>&1
+          cat ERRORS.txt
+
+      - name: Extract errors
+        run: |
+          cd scripts/parse_build_errors/
+          poetry run python parse_build_errors.py ../../OUTPUT.txt
 
       - name: Save PR number
         run: |
