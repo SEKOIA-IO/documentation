@@ -374,8 +374,8 @@ If you want to collect multiple source files, just add a new entry in the config
     logfiles:
         - filepath: /var/log/nginx/access.log  # Path to the file to watch
         intakekey: {intake_key_nginx}  # Intake key to use to send the events
-        - filepath: /var/log/apache2/access.log
-        intakekey: {intake_key_apache}
+        - filepath: /var/log/mysql/mysql.log
+        intakekey: {intake_key_mysql}
 	```
 
 Once the configuration file is modified, restart the agent:
