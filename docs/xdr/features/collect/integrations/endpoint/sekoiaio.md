@@ -368,7 +368,7 @@ If you want to enable this feature, follow these steps:
 
     For example, an intake key from the NGINX format is required for watching NGINX access logs.
 
-If you want to collect multiple source files, just add a new entry in the configuration. For instance:
+If you want to collect multiple source files on the host, just add a new entry in the configuration. For instance:
 
     ```yaml
     logfiles:
