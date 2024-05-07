@@ -3,9 +3,7 @@ name = "sekoiaio-documentation"
 description = "An MkDocs server for SEKOIA.IO public Markdown documentation"
 version = "1.0"
 authors = []
-packages = [
-    { include = "plugins" }
-]
+packages = [{ include = "plugins" }]
 
 [tool.poetry.plugins."mkdocs.plugins"]
 redoc = "plugins.redoc:RedocPlugin"
@@ -13,13 +11,13 @@ intakes_by_uuid = "plugins.intakes_by_uuid:IntakesByUUIDPlugin"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-mkdocs = "^1.5.3"
-mkdocs-material = "^9.1.21"
+mkdocs = "^1.6.0"
+mkdocs-material = "^9.5.21"
 mkdocs-redirects = "^1.2.1"
 markdown-include = "^0.8.1"
 lightgallery = "^0.5"
-markdown = "3.3.7" # Newer versions are not compatible with lightgallery
+markdown = "3.3.7"          # Newer versions are not compatible with lightgallery
 
 [build-system]
-requires = [ "poetry-core>=1.0.0",]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

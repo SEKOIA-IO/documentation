@@ -35,9 +35,7 @@ Redirecting...
     _integrations: list[dict[str, str]] = []
 
     def on_files(self, files: Files, config: Config):
-        new_files = []
-
-        for source_file in files:
+        for source_file in list(files):
             if not source_file.src_path.endswith(".md"):
                 continue
 
@@ -65,15 +63,14 @@ Redirecting...
                     dest_dir=config["site_dir"],
                     use_directory_urls=True,
                 )
-                new_files.append(newfile)
+                files.append(newfile)
 
-        new_files.append(File(
+        files.append(File(
             path="xdr/features/collect/integrations/index.md",
             src_dir="operation_center/integration_catalog/",
             dest_dir=config["site_dir"],
             use_directory_urls=True,
         ))
-        files._files += new_files
 
     def on_page_read_source(self, page, config):
         if page.file.src_path.startswith("operation_center/integration_catalog/uuid/"):
