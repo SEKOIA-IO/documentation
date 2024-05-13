@@ -1,5 +1,5 @@
-uuid: d0383e87-e054-4a21-8a2c-6a89635d8615
-name: Ubika Cloud Protector Alerts
+uuid: 8d024a2b-3627-4909-818d-26e1e3b2409c
+name: Ubika Cloud Protector Traffic
 type: intake
 
 ## Overview
@@ -9,18 +9,13 @@ Ubika Cloud Protector is a cloud-native security solution, providing advanced th
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
-{!_shared_content/operations_center/detection/generated/suggested_rules_d0383e87-e054-4a21-8a2c-6a89635d8615_do_not_edit_manually.md!}
+{!_shared_content/operations_center/detection/generated/suggested_rules_8d024a2b-3627-4909-818d-26e1e3b2409c_do_not_edit_manually.md!}
 
-{!_shared_content/operations_center/integrations/generated/d0383e87-e054-4a21-8a2c-6a89635d8615.md!}
+{!_shared_content/operations_center/integrations/generated/8d024a2b-3627-4909-818d-26e1e3b2409c.md!}
 
 ## Configure
 
 ### How to get API keys info
-3 informations are required to collect data from Ubika:
-
-- The `provider name` (available in Ubika interface)
-- The `tenant name` (available in Ubika interface)
-- A `token` (provided by Ubika support team)
 
 !!! warning
     The following instructions are based on the old interface of Ubika Cloud Protector. Please, switch to the old interface if you use the new one.
@@ -38,7 +33,7 @@ To get API keys info:
 
     ![api info](/assets/operation_center/integration_catalog/cloud_and_saas/ubika_cloud_protector/api_keys_info.png){: style="max-width:100%"}
 
-4. Finally, contact `Ubika support` to request a `token` for the legacy API. This specific `token` cannot be retrieved through the Ubika interface at the moment.
+4. The documentation to retrieve the `token` is still [under construction]
 
 ### Create your intake
 
@@ -52,7 +47,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 - Click on **+ PLAYBOOK** button to create a new one
 - Select **Create a playbook from scratch**
 - Give it a name in the field **Name**
-- Open the left panel, click **Ubika** then select the trigger `Fetch new alerts from Ubika Cloud Protector`
+- Open the left panel, click **Ubika** then select the trigger `Fetch new traffic events from Ubika Cloud Protector`
 - Click on **Create**
 - Create a **Trigger configuration** using:
 
