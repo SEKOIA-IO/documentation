@@ -1785,6 +1785,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** master
 
+??? abstract "Windows Suspicious Scheduled Task Creation"
+    
+    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    
+    - **Effort:** intermediate
+
 ??? abstract "Windows Update LolBins"
     
     This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.

@@ -2199,6 +2199,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Kerberos Ticket"
+    
+    Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious LDAP-Attributes Used"
     
     Detects the usage of particular AttributeLDAPDisplayNames, which are known for data exchange via LDAP by the tool LDAPFragger and are additionally not commonly used in companies. Careful as the 5136 is only on domain controllers and needs to be activated through the Group Policy.
@@ -2678,6 +2684,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     Detects potential COM object hijacking leveraging the COM Search Order. Logging for Registry events is needed, it can be done with Sysmon's Event IDs 12 and 13.
     
     - **Effort:** advanced
+
+??? abstract "Windows Suspicious Scheduled Task Creation"
+    
+    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    
+    - **Effort:** intermediate
 
 ??? abstract "Windows Suspicious Service Creation"
     
