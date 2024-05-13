@@ -28,7 +28,7 @@ These instructions are illustrated and more detailled [here](https://docs.micros
 
 This part should be discussed with Sekoia.io people to find an appropriate solution to forward your flow logs to Sekoia.io.
 
-A possible solution consists to share us:
+A possible solution consists of sharing:
 - An access key for the Azure Blob Storage
 - A storage token associated with the resources to share
 - The name of the container where the NSG flow logs are stored
