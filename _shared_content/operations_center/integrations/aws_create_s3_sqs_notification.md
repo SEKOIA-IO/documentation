@@ -6,6 +6,9 @@ This section will guide you through creating all the AWS resources needed to col
 
 In order to set up the AWS architecture, you need an administator access to the [Amazon console]( https://console.aws.amazon.com) with the permissions to create and manage S3 buckets, SQS queues, S3 notifications and users.
 
+!!! Important
+    Your SQS queue must be dedicated to Sekoia's usage. Once the notification is read, it is then deleted from the queue to prevent reading the same message twice. If your queue is shared with another application, some messages will be deleted before your application can read them.
+
 === "Automatic"
 
     To get started, click on the button below and fill the form on AWS to set up the required environment for Sekoia [![Deploy to AWS](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=sekoia_stack&templateURL=https://sekoia-doc-bucket.s3.eu-west-3.amazonaws.com/resources.yml)
