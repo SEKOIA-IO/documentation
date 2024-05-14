@@ -11,10 +11,10 @@ Suricata is a free and open source, mature, fast and robust network threat detec
 {!_shared_content/operations_center/integrations/generated/331fa58d-8cf9-454a-a87f-48a3dc07d4d3.md!}
 
 ## Configure
-Suricata leverages its EVE output module to report alerts, metadata, file info and protocol records in JSON. As described in the official documentation, this module can report its findings through the syslog facility.
+Suricata leverages its EVE output module to report alerts, metadata, file info and protocol records in JSON. As described in the [official documentation](https://docs.suricata.io/en/latest/configuration/suricata-yaml.html), this module can report its findings through the [syslog](https://docs.suricata.io/en/latest/output/eve/eve-json-output.html#output-types) facility.
 
-### Configure Suricata to forward events to rsyslog
-Open the Suricata configuration file (please note that the path to the configuration file may change depending on the OS and your configuration):
+### Configure log settings
+Open the Suricata configuration file: `suricata.yaml` (please note that the path to the configuration file may change depending on the OS and your configuration):
 ```bash
 sudo vim /etc/suricata/suricata.yaml
 ```
@@ -35,8 +35,12 @@ outputs:
         - tls
 ```
 
-### Configure the Rsyslog server
-Given this Suricata configuration, your local rsyslog server will handle produced records. Please consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to forward these logs to Sekoia.io.
-
+### Forward logs to sekoia 
+Given this Suricata configuration, your local rsyslog server will handle produced records.
+Once your Suricata is configure to log threw syslog you have many options to forward those logs to Sekoia.io app. All of those solutions have their advantages. You will find more details about the type of events that are handled by each of them and how to set up those solutions on the dedicated documentations that follows:
+- [Sekoia.io agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/)
+- [Sekoia.io Forwarder](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/sekoiaio_forwarder/)
+- [Rsyslog](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/syslog/rsyslog/)
+Given this Suricata configuration, your local rsyslog server will handle produced records.
 ## Further Readings
 - [Suricata User Guide](https://suricata.readthedocs.io/)
