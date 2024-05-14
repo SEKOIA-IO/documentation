@@ -35,7 +35,7 @@ outputs:
         - tls
 ```
 
-### Forward logs to sekoia 
+### Forward logs to Sekoia 
 Given this Suricata configuration, your local rsyslog server will handle produced records.
 Once your Suricata is configure to log threw syslog you have many options to forward those logs to Sekoia.io app. All of those solutions have their advantages. You will find more details about the type of events that are handled by each of them and how to set up those solutions on the dedicated documentations that follows:
 - [Sekoia.io agent](https://docs.sekoia.io/xdr/features/collect/integrations/endpoint/sekoiaio/)
