@@ -1,4 +1,4 @@
-Rules catalog includes **865 built-in detection rules** ([_last update on 2024-04-30_](rules_changelog.md)).
+Rules catalog includes **867 built-in detection rules** ([_last update on 2024-05-13_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -1454,6 +1454,12 @@ Rules catalog includes **865 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Suspicious Scheduled Task Creation"
     
     Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** intermediate
+    
+??? abstract "Windows Suspicious Scheduled Task Creation"
+    
+    The rule identify creation of new scheduled task who run suspicious or dangerous command
     
     - **Effort:** intermediate
     
@@ -4185,6 +4191,12 @@ Rules catalog includes **865 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Windows Suspicious Scheduled Task Creation"
+    
+    The rule identify creation of new scheduled task who run suspicious or dangerous command
+    
+    - **Effort:** intermediate
+    
 **Registry Run Keys / Startup Folder**
 
 ??? abstract "Malware Persistence Registry Key"
@@ -5551,6 +5563,12 @@ Rules catalog includes **865 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Suspicious Scheduled Task Creation"
     
     Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
+    
+    - **Effort:** intermediate
+    
+??? abstract "Windows Suspicious Scheduled Task Creation"
+    
+    The rule identify creation of new scheduled task who run suspicious or dangerous command
     
     - **Effort:** intermediate
     
@@ -10090,6 +10108,12 @@ Rules catalog includes **865 built-in detection rules** ([_last update on 2024-0
     Detects command line parameters used by Rubeus, a toolset to interact with Kerberos and abuse it.
     
     - **Effort:** advanced
+    
+??? abstract "Suspicious Kerberos Ticket"
+    
+    Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.
+    
+    - **Effort:** intermediate
     
 ??? abstract "Suspicious Outbound Kerberos Connection"
     
