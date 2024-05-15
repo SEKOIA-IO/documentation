@@ -26,6 +26,17 @@ Get last security events
 
 ## Actions
 
+### Add comment on Incident
+
+Add comment on Incident.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `target` | `string` | Incident identifier to comment. |
+| `comment` | `string` | Comment. |
+
 ### Isolate Device From Network
 
 Isolate a device from network connections.
@@ -36,6 +47,16 @@ Isolate a device from network connections.
 | --------- | ------- | --------------------------- |
 | `target` | `string` | Device identifier of the computer to isolate. |
 | `message` | `string` | Optional message that is displayed on isolated device. |
+
+### List Detections For Incident
+
+List Detections For Incident.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `target` | `string` | Incident identifier to list detections. |
 
 ### List devices
 
@@ -74,7 +95,19 @@ Scan Device For Malware.
 | --------- | ------- | --------------------------- |
 | `target` | `string` | Device identifier to scan for malware. |
 
+### Update status on Incident
+
+Update status on Incident.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `target` | `string` | Incident identifier to comment. |
+| `status` | `string` | Status. |
+| `resolution` | `string` | Resolution. |
+
 
 ## Extra
 
-Module **`WithSecure` v2.11.1**
+Module **`WithSecure` v2.14.0**
