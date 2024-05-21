@@ -172,3 +172,78 @@ This rule creates a new asset for every unseen `host.name`. It attaches the `ipv
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
+
+# Asset based detections
+
+The Sekoia.io SOC platform now supports the creation of detection patterns for rules or alert-filters that can be customized to apply to specific groups of assets. This feature allows you to enhance the scope of detection by targeting groups of assets that share certain attributes, such as critical servers, or by tuning the detection rules to exclude certain assets, like administrator accounts. This is accomplished by leveraging various asset attributes, as detailed below.
+
+## Asset fields
+
+The following table lists the available fields for defining asset-based detection patterns, along with their types and example values:
+
+| Field                                    | Type                | Example Value                          |
+|------------------------------------------|---------------------|----------------------------------------|
+| `sekoiaio.assets.source.ip.tags`         | Set of Strings      | `{"critical", "internal"}`             |
+| `sekoiaio.assets.source.ip.uuid`         | Set of Strings      | `{NETWORK_UUID, ENTITYSPECIFIC_HOST}`  |
+| `sekoiaio.assets.source.ip.name`         | Set of Strings      | `""`                                   |
+| `sekoiaio.assets.source.ip.criticality_display` | Set of Strings      | `{"high", "low"}`                      |
+| `sekoiaio.assets.source.ip.criticality_value` | Set of Integers    | `{80, 0}`                              |
+| `sekoiaio.any_asset.tags`                | Set of Strings      | `{"VIP", "critical", "internal"}`      |
+| `sekoiaio.any_asset.uuid`                | Set of Strings      | `{NETWORK_UUID, ENTITYLESS_HOST, USER_UUID, ENTITYSPECIFIC_HOST}` |
+| `sekoiaio.any_asset.name`                | Set of Strings      | `""`                                   |
+| `sekoiaio.any_asset.criticality_display` | Set of Strings      | `{"high", "low"}`                      |
+| `sekoiaio.any_asset.criticality_value`   | Set of Integers    | `{80, 0}`                              |
+| `sekoiaio.assets.host.name.tags`         | Set of Strings      | `{"critical"}`                         |
+| `sekoiaio.assets.host.name.uuid`         | Set of Strings      | `{ENTITYLESS_HOST}`                    |
+| `sekoiaio.assets.host.name.criticality_display` | Set of Strings      | `{"low"}`                              |
+| `sekoiaio.assets.host.name.criticality_value` | Set of Integers    | `{0}`                                  |
+| `sekoiaio.assets.host.name.name`         | Set of Strings      | `""`                                   |
+| `sekoiaio.assets.user.name.tags`         | Set of Strings      | `{"VIP"}`                              |
+| `sekoiaio.assets.user.name.uuid`         | Set of Strings      | `{USER_UUID}`                          |
+| `sekoiaio.assets.user.name.name`         | Set of Strings      | `""`                                   |
+| `sekoiaio.assets.user.name.criticality_display` | Set of Strings      | `{"low"}`                              |
+| `sekoiaio.assets.user.name.criticality_value` | Set of Integers    | `{0}`                                  |
+| `sekoiaio.assets.user.email.tags`        | Set of Strings      | `{"VIP"}`                              |
+| `sekoiaio.assets.user.email.uuid`        | Set of Strings      | `{USER_UUID}`                          |
+| `sekoiaio.assets.user.email.name`        | Set of Strings      | `""`                                   |
+| `sekoiaio.assets.user.email.criticality_display` | Set of Strings      | `{"low"}`                              |
+| `sekoiaio.assets.user.email.criticality_value` | Set of Integers    | `{0}`                                  |
+
+    !!! Warning
+    Only a subset of fields are removed from the ECS event before indexing them, but they can be used in the detection pattern. This is the standard behavior to only see "sekoiaio.any_asset.uuid", "sekoiaio.any_asset.name" and "sekoiaio.any_asset.criticality_value" on the Events page.
+
+## Use Case Example
+
+To demonstrate the capabilities of asset-based detections, consider the following use case. You can create custom tags and apply them to a list of assets manually or by using a script and available APIs. Once tagged, these assets can be used in detection rules or alert filters to fine-tune the detection scope.
+
+### Example 1: Detection Rule
+
+The following Sigma pattern demonstrates how to create a detection rule that targets assets tagged with "my_custom_tag_for_critical_servers":
+
+```yaml
+detection:
+  selection:
+    event.code: 4720
+    sekoiaio.any_asset.tags: "my_custom_tag_for_critical_servers"
+
+  condition: selection
+```
+
+### Example 2: Alert Filter
+
+The following Sigma pattern demonstrates how to create an alert filter that excludes assets tagged with "my_custom_tag_for_admin_assets":
+
+```yaml
+detection:
+  selection:
+    sekoiaio.any_asset.tags: "my_custom_tag_for_admin_assets"
+
+  condition: selection
+```
+
+By using custom tags, you can precisely control which assets are included in or excluded from your detection rules, ensuring a more targeted and effective threat detection strategy. For more information on how to tag assets using the Sekoia.io API, refer to the API documentation.
+
+    !!! Note
+    There is no need to add the "value modifier" contains when referring to a tag, as this is already the default behavior of our code.
+
+
