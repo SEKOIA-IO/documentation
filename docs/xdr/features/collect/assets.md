@@ -210,7 +210,7 @@ The following table lists the available fields for defining asset-based detectio
 | `sekoiaio.assets.user.email.criticality_value` | Set of Integers    | `{0}`                                  |
 
     !!! Warning
-    Only a subset of fields are removed from the ECS event before indexing them, but they can be used in the detection pattern. This is the standard behavior to only see "sekoiaio.any_asset.uuid", "sekoiaio.any_asset.name" and "sekoiaio.any_asset.criticality_value" on the Events page.
+    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoia.assets.*.uuid`, `sekoia.assets.*.name`, `sekoia.assets.*.criticality_value`, `sekoia.any_asset.uuid`, `sekoia.any_asset.name` and `sekoia.any_asset.criticality_value`.
 
 ## Use Case Example
 
@@ -244,6 +244,6 @@ detection:
 By using custom tags, you can precisely control which assets are included in or excluded from your detection rules, ensuring a more targeted and effective threat detection strategy. For more information on how to tag assets using the Sekoia.io API, refer to the API documentation.
 
     !!! Note
-    There is no need to add the "value modifier" contains when referring to a tag, as this is already the default behavior of our code.
+    There is no need to add the `contains` modifier when referring to a tag. Because the `sekoiaio.any_asset.tags` field is a list , `sekoiaio.any_asset.tags: mytag` already means "match if any of the tags is mytag".
 
 
