@@ -730,9 +730,13 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             }
         },
         "registry": {
+            "data": {
+                "type": "REG_SZ"
+            },
             "hive": "HKEY_CURRENT_USER",
             "key": "SOFTWARE\\TEST_ADE",
-            "path": "HKEY_CURRENT_USER\\SOFTWARE\\TEST_ADE"
+            "path": "HKEY_CURRENT_USER\\SOFTWARE\\TEST_ADE",
+            "value": "Valeur_String"
         },
         "related": {
             "hash": [
@@ -750,6 +754,99 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                     "blocked": false,
                     "user_decision": false
                 },
+                "process": {
+                    "user": {
+                        "domain": "TEST"
+                    }
+                },
+                "source_process": {
+                    "killed": false
+                },
+                "type": "113"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_type_113_1.json"
+
+    ```json
+	
+    {
+        "message": "{\"Version\":1,\"Type\":113,\"TypeComputedMap\":\"RegistryValueCreate\",\"Severity\":5,\"ServerReserved\":9,\"Attributes\":8,\"AttributesComputedBitMap\":[\"Audit\"],\"EventGuid\":\"{E8B35E85-838F-44E5-B7AB-7635E9C81ECB}\",\"GenerateIncident\":false,\"Timestamp\":\"2024-03-22T12:39:27.6422102+01:00\",\"TimestampRaw\":133555811676422102,\"SpecificData\":{\"SourceProcess\":{\"PID\":1196,\"ProcessGuid\":\"{B0E2F52D-8C18-4DF8-8E73-470BB4E5D373}\",\"ProcessImageName\":\"C:\\\\Windows\\\\regedit.exe\",\"VolumeZone\":1,\"VolumeZoneComputedBitMap\":[\"Operatingsystem\"],\"ProcessCommandLine\":\"\\\"C:\\\\WINDOWS\\\\regedit.exe\\\"\",\"User\":\"S-1-5-21-2222222-33333333-44444444-555\",\"UserNameLookup\":\"JOHNDOE\",\"UserDomainLookup\":\"TEST\",\"IntegrityLevel\":\"S-1-16-8192\",\"IntegrityLevelNameLookup\":\"MediumMandatoryLevel\",\"IntegrityLevelDomainLookup\":\"MandatoryLabel\",\"SessionID\":2,\"HashMd5\":\"999A30979F6195BF562068639FFC4426\",\"HashSha1\":\"D4F2663AABC03478975382B3C69F24B3C6BD2AA9\",\"HashSha256\":\"92F24FED2BA2927173AAD58981F6E0643C6B89815B117E8A7C4A0988AC918170\",\"IsProtectedOrCritical\":false,\"CertificateSignatureState\":1,\"CertificateSignatureStateComputedMap\":\"SignatureStateTrusted\",\"Certificates\":[{\"Algorithm\":\"SHA256\",\"IssuerCN\":\"MicrosoftWindowsProductionPCA2011\",\"SubjectCN\":\"MicrosoftWindows\",\"SigningTime\":\"2023-01-18T02:58:33.2360000+01:00\",\"ValidityStart\":\"2022-05-05T20:23:14.0000000+01:00\",\"ValidityEnd\":\"2023-05-04T20:23:14.0000000+01:00\"}],\"ProcessStartTime\":\"2023-03-06T16:04:21.8793902+01:00\",\"ProcessStartTimeRaw\":133225886618793902},\"Action\":{\"PolicyGuid\":\"{BF0D5FEE-FF2A-4E6B-97DA-A1FC246FE845}\",\"PolicyVersion\":4,\"RuleGuid\":\"{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0C0}\",\"BaseRuleGuid\":\"{4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0BF}\",\"IdentifierGuid\":\"{5C079068-7641-4C9A-8600-BBDC93FBBCDD}\",\"Blocked\":false,\"UserDecision\":false,\"SourceProcessKilled\":false},\"Path\":\"HKEY_LOCAL_MACHINE\\\\BCD00000000\\\\Objects\\\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\\\Elements\\\\25000004\",\"ValueName\":\"Element\",\"ValueDataType\":3,\"ValueDataTypeComputedMap\":\"REG_BINARY\",\"ValueData\":[0,0,0,0,0,0,0,0]},\"AdditionalData\":{\"AgentAddresses\":[],\"AgentGroupGuid\":\"{61B578F4-289D-4B97-A331-DDDCB80C6427}\",\"AgentGroupName\":\"Desktop\",\"AgentGuid\":\"{6EF8564D-941A-4377-80FD-78CD3DFEB269}\",\"AgentName\":\"DST-001\",\"CategoryName\":\"Registry\",\"IncidentGuid\":null,\"Message\":\"The'svchost.exe'processcreatedtheregistryvalue'Element'\",\"PolicyName\":\"Stormshield-Mediumpolicy-External\",\"SeverityName\":\"Notice\"}}",
+        "event": {
+            "category": [
+                "registry"
+            ],
+            "code": "RegistryValueCreate",
+            "reason": "The'svchost.exe'processcreatedtheregistryvalue'Element'",
+            "severity": 5,
+            "type": [
+                "creation"
+            ]
+        },
+        "@timestamp": "2024-03-22T11:39:27.642210Z",
+        "host": {
+            "ip": [],
+            "name": "DST-001"
+        },
+        "process": {
+            "command_line": "\"C:\\WINDOWS\\regedit.exe\"",
+            "executable": "C:\\Windows\\regedit.exe",
+            "hash": {
+                "md5": "999A30979F6195BF562068639FFC4426",
+                "sha1": "D4F2663AABC03478975382B3C69F24B3C6BD2AA9",
+                "sha256": "92F24FED2BA2927173AAD58981F6E0643C6B89815B117E8A7C4A0988AC918170"
+            },
+            "name": "regedit.exe",
+            "pid": 1196,
+            "start": "2023-03-06T15:04:21.879390Z",
+            "user": {
+                "id": "S-1-5-21-2222222-33333333-44444444-555",
+                "name": "JOHNDOE"
+            }
+        },
+        "registry": {
+            "data": {
+                "bytes": [
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "type": "REG_BINARY"
+            },
+            "hive": "HKEY_LOCAL_MACHINE",
+            "key": "BCD00000000\\Objects\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\Elements\\25000004",
+            "path": "HKEY_LOCAL_MACHINE\\BCD00000000\\Objects\\{a5a30fa2-3d06-4e9f-b5f4-a01df9d1fcba}\\Elements\\25000004",
+            "value": "Element"
+        },
+        "related": {
+            "hash": [
+                "92F24FED2BA2927173AAD58981F6E0643C6B89815B117E8A7C4A0988AC918170",
+                "999A30979F6195BF562068639FFC4426",
+                "D4F2663AABC03478975382B3C69F24B3C6BD2AA9"
+            ],
+            "ip": []
+        },
+        "rule": {
+            "ruleset": "Stormshield-Mediumpolicy-External",
+            "uuid": "4CEEDD7A-875D-4C7E-9ABD-A710BD3DD0C0"
+        },
+        "stormshield": {
+            "ses": {
+                "action": {
+                    "blocked": false,
+                    "user_decision": false
+                },
+                "categoryname": "Registry",
+                "level": "Notice",
                 "process": {
                     "user": {
                         "domain": "TEST"
@@ -870,9 +967,16 @@ Find below few samples of events and how they are normalized by Sekoia.io.
             }
         },
         "registry": {
+            "data": {
+                "strings": [
+                    "lala"
+                ],
+                "type": "REG_SZ"
+            },
             "hive": "HKEY_CURRENT_USER",
             "key": "SOFTWARE\\TEST_ADE",
-            "path": "HKEY_CURRENT_USER\\SOFTWARE\\TEST_ADE"
+            "path": "HKEY_CURRENT_USER\\SOFTWARE\\TEST_ADE",
+            "value": "Valeur_String"
         },
         "related": {
             "hash": [
@@ -2384,6 +2488,90 @@ Find below few samples of events and how they are normalized by Sekoia.io.
                     "blocked": false,
                     "user_decision": false
                 },
+                "source_process": {
+                    "killed": false
+                },
+                "type": "20048"
+            }
+        }
+    }
+    	
+	```
+
+
+=== "test_type_20048_1.json"
+
+    ```json
+	
+    {
+        "message": "{\n  \"Version\": 1,\n  \"Type\": 20048,\n  \"TypeComputedMap\": \"External\",\n  \"Severity\": 4,\n  \"ServerReserved\": 0,\n  \"Attributes\": 32,\n  \"AttributesComputedBitMap\": [\n    \"External\"\n  ],\n  \"EventGuid\": \"{5838A063-4210-4268-ADB0-39FC5B55A212}\",\n  \"GenerateIncident\": false,\n  \"Timestamp\": \"2024-03-22T14:01:26.6589969+00:00\",\n  \"TimestampRaw\": 133555896866589969,\n  \"SpecificData\": {\n    \"Action\": {\n      \"PolicyGuid\": \"{DFDA0F76-10AF-4615-B093-7AA46CC2E7A3}\",\n      \"PolicyVersion\": 5,\n      \"RuleGuid\": \"{63B63F11-7C06-4555-9542-3F7E795B98EE}\",\n      \"BaseRuleGuid\": \"{9B076C45-6373-4A4E-9310-F139A66794B4}\",\n      \"IdentifierGuid\": \"{00000000-0000-0000-0000-000000000000}\",\n      \"Blocked\": false,\n      \"RequestMoveToQuarantine\": false,\n      \"UserDecision\": false,\n      \"SourceProcessKilled\": false\n    },\n    \"Description\": \"localized:EventForwarding_WinDefender_MalwareProtectionStateMalwareActionTaken\",\n    \"OriginType\": 2,\n    \"ExtraData\": {\n      \"_SourceCategory\": 0,\n      \"_HideFromUsers\": 1,\n      \"_OriginalText\": \"2024 Mar 22 14:01:25 WinEvtLog: Microsoft-Windows-Windows Defender/Operational: INFORMATION(1117): Microsoft-Windows-Windows Defender: SYSTEM: NT AUTHORITY: DESKTOP-001: Microsoft Defender Antivirus has taken action to protect this machine from malware or other potentially unwanted software.   For more information please see the following:  https://go.microsoft.com/fwlink/?linkid=37020&name=Trojan:Win32/BatTamper.A&threatid=2147818424&enterprise=0   \\tName: Trojan:Win32/BatTamper.A   \\tID: 2147818424   \\tSeverity: Severe   \\tCategory: Trojan   \\tPath: file:_C:\\\\Users\\\\Lab\\\\Downloads\\\\TurnOffAV.ps1; webfile:_C:\\\\Users\\\\Lab\\\\Downloads\\\\TurnOffAV.ps1|https://github.com/|pid:13760,ProcessStart:133555896788321048   \\tDetection Origin: Internet   \\tDetection Type: Concrete   \\tDetection Source: Downloads and attachments   \\tUser: NT AUTHORITY\\\\SYSTEM   \\tProcess Name: Unknown   \\tAction: Quarantine   \\tAction Status:  No additional actions required   \\tError Code: 0x00000000   \\tError description: The operation completed successfully.    \\tSecurity intelligence Version: AV: 1.407.619.0, AS: 1.407.619.0, NIS: 1.407.619.0   \\tEngine Version: AM: 1.1.24020.9, NIS: 1.1.24020.9\",\n      \"program_name\": \"WinEvtLog\",\n      \"_NormalizerNames\": \"syslog-1-date-fmt-4, syslog-1-solaris-progname-1\",\n      \"_NormalizerIds\": \"4, 6\",\n      \"_FileType\": \"windows\",\n      \"_ExtractorIds\": \"1\",\n      \"_ExtractorNames\": \"windows\",\n      \"_RuleDescription\": \"localized:EventForwarding_WinDefender_MalwareProtectionStateMalwareActionTaken\",\n      \"_RuleId\": 13,\n      \"_RuleImportedId\": 24,\n      \"_RuleKeywords\": \"windows-defender\",\n      \"_RuleLevel\": 6,\n      \"__EvtXml\": {\n        \"Event\": {\n          \"System\": {\n            \"Provider\": {\n              \"Name\": \"Microsoft-Windows-Windows Defender\",\n              \"Guid\": \"{11cd958a-c507-4ef3-b3f2-5fd9dfbd2c78}\"\n            },\n            \"EventID\": \"1117\",\n            \"Version\": \"0\",\n            \"Level\": \"4\",\n            \"Task\": \"0\",\n            \"Opcode\": \"0\",\n            \"Keywords\": \"0x8000000000000000\",\n            \"TimeCreated\": {\n              \"SystemTime\": \"2024-03-22T14:01:25.6359716Z\"\n            },\n            \"EventRecordID\": \"613\",\n            \"Correlation\": {},\n            \"Execution\": {\n              \"ProcessID\": \"5384\",\n              \"ThreadID\": \"4576\"\n            },\n            \"Channel\": \"Microsoft-Windows-Windows Defender/Operational\",\n            \"Computer\": \"DESKTOP-001\",\n            \"Security\": {\n              \"UserID\": \"S-1-5-18\"\n            }\n          },\n          \"EventData\": {\n            \"Product Name\": \"Microsoft Defender Antivirus\",\n            \"Product Version\": \"4.18.23110.3\",\n            \"Detection ID\": \"{9C26ADFE-43AA-4884-9765-A2EC223DC7E0}\",\n            \"Detection Time\": \"2024-03-22T14:01:20.550Z\",\n            \"Threat ID\": \"2147818424\",\n            \"Threat Name\": \"Trojan:Win32/BatTamper.A\",\n            \"Severity ID\": \"5\",\n            \"Severity Name\": \"Severe\",\n            \"Category ID\": \"8\",\n            \"Category Name\": \"Trojan\",\n            \"FWLink\": \"https://go.microsoft.com/fwlink/?linkid=37020&name=Trojan:Win32/BatTamper.A&threatid=2147818424&enterprise=0\",\n            \"Status Code\": \"4\",\n            \"State\": \"2\",\n            \"Source ID\": \"4\",\n            \"Source Name\": \"Downloads and attachments\",\n            \"Process Name\": \"Unknown\",\n            \"Detection User\": \"DESKTOP-001\\\\Lab\",\n            \"Path\": \"file:_C:\\\\Users\\\\Lab\\\\Downloads\\\\TurnOffAV.ps1; webfile:_C:\\\\Users\\\\Lab\\\\Downloads\\\\TurnOffAV.ps1|https://github.com/|pid:13760,ProcessStart:133555896788321048\",\n            \"Origin ID\": \"4\",\n            \"Origin Name\": \"Internet\",\n            \"Execution ID\": \"0\",\n            \"Execution Name\": \"Unknown\",\n            \"Type ID\": \"0\",\n            \"Type Name\": \"Concrete\",\n            \"Pre Execution Status\": \"0\",\n            \"Action ID\": \"2\",\n            \"Action Name\": \"Quarantine\",\n            \"Error Code\": \"0x00000000\",\n            \"Error Description\": \"The operation completed successfully. \",\n            \"Post Clean Status\": \"0\",\n            \"Additional Actions ID\": \"0\",\n            \"Additional Actions String\": \"No additional actions required\",\n            \"Remediation User\": \"NT AUTHORITY\\\\SYSTEM\",\n            \"Security intelligence Version\": \"AV: 1.407.619.0, AS: 1.407.619.0, NIS: 1.407.619.0\",\n            \"Engine Version\": \"AM: 1.1.24020.9, NIS: 1.1.24020.9\"\n          }\n        }\n      }\n    },\n    \"Fields\": {\n      \"_RuleGuid\": \"{63B63F11-7C06-4555-9542-3F7E795B98EE}\",\n      \"_BaseRuleGuid\": \"{9B076C45-6373-4A4E-9310-F139A66794B4}\"\n    }\n  },\n  \"AdditionalData\": {\n    \"AgentAddresses\": [\n      \"192.168.0.1\"\n    ],\n    \"AgentGroupGuid\": \"{8C2850C0-1A73-4CBC-9831-5AA5D1438AF2}\",\n    \"AgentGroupName\": \"Desktop\",\n    \"AgentGuid\": \"{0E6DAED4-3505-4F96-9F8D-55FBC85CA4C7}\",\n    \"AgentName\": \"DESKTOP-001\",\n    \"CategoryName\": \"External\",\n    \"IncidentGuid\": null,\n    \"Message\": \"Windows Defender: The antimalware platform performed an action to protect your system from malware or other potentially unwanted software.\",\n    \"PolicyName\": \"Lab Policy\",\n    \"SeverityName\": \"Warning\"\n  }\n}",
+        "event": {
+            "code": "1117",
+            "provider": "Microsoft-Windows-Windows Defender",
+            "reason": "Windows Defender: The antimalware platform performed an action to protect your system from malware or other potentially unwanted software.",
+            "severity": 4
+        },
+        "@timestamp": "2024-03-22T14:01:26.658996Z",
+        "action": {
+            "id": "1117",
+            "properties": {
+                "action_id": "2",
+                "action_name": "Quarantine",
+                "additional_actions_id": "0",
+                "additional_actions_string": "No additional actions required",
+                "category_id": "8",
+                "category_name": "Trojan",
+                "detection_id": "{9C26ADFE-43AA-4884-9765-A2EC223DC7E0}",
+                "detection_time": "2024-03-22T14:01:20.550Z",
+                "detection_user": "DESKTOP-001\\Lab",
+                "engine_version": "AM: 1.1.24020.9, NIS: 1.1.24020.9",
+                "error_code": "0x00000000",
+                "error_description": "The operation completed successfully. ",
+                "execution_id": "0",
+                "execution_name": "Unknown",
+                "fwlink": "https://go.microsoft.com/fwlink/?linkid=37020&name=Trojan:Win32/BatTamper.A&threatid=2147818424&enterprise=0",
+                "origin_id": "4",
+                "origin_name": "Internet",
+                "path": "file:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1; webfile:_C:\\Users\\Lab\\Downloads\\TurnOffAV.ps1|https://github.com/|pid:13760,ProcessStart:133555896788321048",
+                "post_clean_status": "0",
+                "pre_execution_status": "0",
+                "process_name": "Unknown",
+                "product_name": "Microsoft Defender Antivirus",
+                "product_version": "4.18.23110.3",
+                "remediation_user": "NT AUTHORITY\\SYSTEM",
+                "security_intelligence_version": "AV: 1.407.619.0, AS: 1.407.619.0, NIS: 1.407.619.0",
+                "severity_id": "5",
+                "severity_name": "Severe",
+                "source_id": "4",
+                "source_name": "Downloads and attachments",
+                "state": "2",
+                "status_code": "4",
+                "task": "0",
+                "threat_id": "2147818424",
+                "threat_name": "Trojan:Win32/BatTamper.A",
+                "type_id": "0",
+                "type_name": "Concrete"
+            },
+            "record_id": "613"
+        },
+        "process": {
+            "pid": 5384,
+            "thread": {
+                "id": 4576
+            }
+        },
+        "rule": {
+            "ruleset": "Lab Policy",
+            "uuid": "63B63F11-7C06-4555-9542-3F7E795B98EE"
+        },
+        "stormshield": {
+            "ses": {
+                "action": {
+                    "blocked": false,
+                    "user_decision": false
+                },
+                "categoryname": "External",
+                "level": "Warning",
                 "source_process": {
                     "killed": false
                 },
@@ -6143,8 +6331,48 @@ The following table lists the fields that are extracted, normalized under the EC
 | Name | Type | Description                |
 | ---- | ---- | ---------------------------|
 |`@timestamp` | `date` | Date/time when the event originated. |
+|`action.id` | `keyword` | stormshield action id |
 |`action.properties.TargetCommandLine` | `keyword` | stormshield targeted process command line |
 |`action.properties.TargetImage` | `keyword` | stormshield targeted process executable |
+|`action.properties.action_id` | `keyword` | stormshield property Action ID |
+|`action.properties.action_name` | `keyword` | stormshield property Action Name |
+|`action.properties.additional_actions_id` | `keyword` | stormshield property Additional Actions ID |
+|`action.properties.additional_actions_string` | `keyword` | stormshield property Additional Actions String |
+|`action.properties.category_id` | `keyword` | stormshield property Category ID |
+|`action.properties.category_name` | `keyword` | stormshield property Category Name |
+|`action.properties.detection_id` | `keyword` | stormshield property Detection ID |
+|`action.properties.detection_time` | `keyword` | stormshield property Detection Time |
+|`action.properties.detection_user` | `keyword` | stormshield property Detection User |
+|`action.properties.engine_version` | `keyword` | stormshield property Engine Version |
+|`action.properties.error_code` | `keyword` | stormshield property Error Code |
+|`action.properties.error_description` | `keyword` | stormshield property Error Description |
+|`action.properties.execution_id` | `keyword` | stormshield property Execution ID |
+|`action.properties.execution_name` | `keyword` | stormshield property Execution Name |
+|`action.properties.fwlink` | `keyword` | stormshield property FWLink |
+|`action.properties.opcode` | `keyword` | stormshield action opcode |
+|`action.properties.origin_id` | `keyword` | stormshield property Origin ID |
+|`action.properties.origin_name` | `keyword` | stormshield property Origin Name |
+|`action.properties.path` | `keyword` | stormshield property Path |
+|`action.properties.post_clean_status` | `keyword` | stormshield property Post Clean Status |
+|`action.properties.pre_execution_status` | `keyword` | stormshield property Pre Execution Status |
+|`action.properties.process_name` | `keyword` | stormshield property Process Name |
+|`action.properties.product_name` | `keyword` | stormshield property Product Name |
+|`action.properties.product_version` | `keyword` | stormshield property Product Version |
+|`action.properties.remediation_user` | `keyword` | stormshield property Remediation User |
+|`action.properties.security_intelligence_version` | `keyword` | stormshield property Security intelligence Version |
+|`action.properties.severity_id` | `keyword` | stormshield property Severity ID |
+|`action.properties.severity_name` | `keyword` | stormshield property Severity Name |
+|`action.properties.source_id` | `keyword` | stormshield property Source ID |
+|`action.properties.source_name` | `keyword` | stormshield property Source Name |
+|`action.properties.state` | `keyword` | stormshield property State |
+|`action.properties.status_code` | `keyword` | stormshield property Status Code |
+|`action.properties.task` | `keyword` | stormshield action task |
+|`action.properties.threat_id` | `keyword` | stormshield property Threat ID |
+|`action.properties.threat_name` | `keyword` | stormshield property Threat Name |
+|`action.properties.type_id` | `keyword` | stormshield property Type ID |
+|`action.properties.type_name` | `keyword` | stormshield property Type Name |
+|`action.record_id` | `keyword` | stormshield action record id |
+|`agent.id` | `keyword` | Unique identifier of this agent. |
 |`destination.ip` | `ip` | IP address of the destination. |
 |`destination.mac` | `keyword` | MAC address of the destination. |
 |`destination.port` | `long` | Port of the destination. |
@@ -6160,6 +6388,8 @@ The following table lists the fields that are extracted, normalized under the EC
 |`file.hash.ssdeep` | `keyword` | SSDEEP hash. |
 |`file.owner` | `keyword` | File owner's username. |
 |`file.path` | `keyword` | Full path to the file, including the file name. |
+|`host.ip` | `ip` | Host ip addresses. |
+|`host.name` | `keyword` | Name of the host. |
 |`network.transport` | `keyword` | Protocol Name corresponding to the field `iana_number`. |
 |`network.type` | `keyword` | In the OSI Model this would be the Network Layer. ipv4, ipv6, ipsec, pim, etc |
 |`process.command_line` | `wildcard` | Full command line that started the process. |
@@ -6178,9 +6408,14 @@ The following table lists the fields that are extracted, normalized under the EC
 |`process.parent.start` | `date` | The time the process started. |
 |`process.pid` | `long` | Process id. |
 |`process.start` | `date` | The time the process started. |
+|`process.thread.id` | `long` | Thread ID. |
+|`registry.data.bytes` | `keyword` | Original bytes written with base64 encoding. |
+|`registry.data.strings` | `wildcard` | List of strings representing what was written to the registry. |
+|`registry.data.type` | `keyword` | Standard registry type for encoding contents |
 |`registry.hive` | `keyword` | Abbreviated name for the hive. |
 |`registry.key` | `keyword` | Hive-relative path of keys. |
 |`registry.path` | `keyword` | Full path, including hive, key and value |
+|`registry.value` | `keyword` | Name of the value written. |
 |`rule.ruleset` | `keyword` | Rule ruleset |
 |`rule.uuid` | `keyword` | Rule UUID |
 |`source.ip` | `ip` | IP address of the source. |
