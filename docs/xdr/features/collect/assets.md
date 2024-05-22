@@ -183,31 +183,11 @@ The following table lists the available fields for defining asset-based detectio
 
 | Field                                    | Type                | Example Value                          |
 |------------------------------------------|---------------------|----------------------------------------|
-| `sekoiaio.assets.source.ip.tags`         | Set of Strings      | `{"critical", "internal"}`             |
-| `sekoiaio.assets.source.ip.uuid`         | Set of Strings      | `{NETWORK_UUID, ENTITYSPECIFIC_HOST}`  |
-| `sekoiaio.assets.source.ip.name`         | Set of Strings      | `""`                                   |
-| `sekoiaio.assets.source.ip.criticality_display` | Set of Strings      | `{"high", "low"}`                      |
-| `sekoiaio.assets.source.ip.criticality_value` | Set of Integers    | `{80, 0}`                              |
 | `sekoiaio.any_asset.tags`                | Set of Strings      | `{"VIP", "critical", "internal"}`      |
 | `sekoiaio.any_asset.uuid`                | Set of Strings      | `{NETWORK_UUID, ENTITYLESS_HOST, USER_UUID, ENTITYSPECIFIC_HOST}` |
-| `sekoiaio.any_asset.name`                | Set of Strings      | `""`                                   |
+| `sekoiaio.any_asset.name`                | Set of Strings      | `"My asset"`                                   |
 | `sekoiaio.any_asset.criticality_display` | Set of Strings      | `{"high", "low"}`                      |
 | `sekoiaio.any_asset.criticality_value`   | Set of Integers    | `{80, 0}`                              |
-| `sekoiaio.assets.host.name.tags`         | Set of Strings      | `{"critical"}`                         |
-| `sekoiaio.assets.host.name.uuid`         | Set of Strings      | `{ENTITYLESS_HOST}`                    |
-| `sekoiaio.assets.host.name.criticality_display` | Set of Strings      | `{"low"}`                              |
-| `sekoiaio.assets.host.name.criticality_value` | Set of Integers    | `{0}`                                  |
-| `sekoiaio.assets.host.name.name`         | Set of Strings      | `""`                                   |
-| `sekoiaio.assets.user.name.tags`         | Set of Strings      | `{"VIP"}`                              |
-| `sekoiaio.assets.user.name.uuid`         | Set of Strings      | `{USER_UUID}`                          |
-| `sekoiaio.assets.user.name.name`         | Set of Strings      | `""`                                   |
-| `sekoiaio.assets.user.name.criticality_display` | Set of Strings      | `{"low"}`                              |
-| `sekoiaio.assets.user.name.criticality_value` | Set of Integers    | `{0}`                                  |
-| `sekoiaio.assets.user.email.tags`        | Set of Strings      | `{"VIP"}`                              |
-| `sekoiaio.assets.user.email.uuid`        | Set of Strings      | `{USER_UUID}`                          |
-| `sekoiaio.assets.user.email.name`        | Set of Strings      | `""`                                   |
-| `sekoiaio.assets.user.email.criticality_display` | Set of Strings      | `{"low"}`                              |
-| `sekoiaio.assets.user.email.criticality_value` | Set of Integers    | `{0}`                                  |
 
     !!! Warning
     Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoia.assets.*.uuid`, `sekoia.assets.*.name`, `sekoia.assets.*.criticality_value`, `sekoia.any_asset.uuid`, `sekoia.any_asset.name` and `sekoia.any_asset.criticality_value`.
