@@ -33,9 +33,21 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     
     - **Effort:** master
 
+??? abstract "Google Workspace Admin Modification"
+    
+    Detects when an admin is modified.
+    
+    - **Effort:** master
+
 ??? abstract "Google Workspace Bypass 2FA"
     
     Detects when user tries to bypass the 2FA.
+    
+    - **Effort:** master
+
+??? abstract "Google Workspace MFA changed"
+    
+    Detects when the settings for the MFA are modified.
     
     - **Effort:** master
 

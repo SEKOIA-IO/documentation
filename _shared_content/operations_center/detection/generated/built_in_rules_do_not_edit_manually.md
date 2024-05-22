@@ -1,4 +1,4 @@
-Rules catalog includes **867 built-in detection rules** ([_last update on 2024-05-13_](rules_changelog.md)).
+Rules catalog includes **872 built-in detection rules** ([_last update on 2024-05-22_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -100,6 +100,18 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     
         - 28/03/2024 - minor - Rule effort was updated to master
             
+??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection Critical Severity"
+    
+    ExtraHop Reveal(x) 360 raised an intrusion detection alert with critical severity.
+    
+    - **Effort:** master
+    
+??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection High Severity"
+    
+    ExtraHop Reveal(x) 360 raised an intrusion detection alert with high severity.
+    
+    - **Effort:** master
+    
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -4473,6 +4485,12 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Google Workspace Admin Modification"
+    
+    Detects when an admin is modified.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure"
     
     Detects self-service password reset in failure for various reasons (except licence or policy ones)
@@ -5187,6 +5205,12 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Component Object Model Hijacking"
+    
+    Detects component object model hijacking. An attacker can establish persistence with COM objects.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item
@@ -5356,6 +5380,12 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
     
     - **Effort:** elementary
+    
+??? abstract "Google Workspace MFA changed"
+    
+    Detects when the settings for the MFA are modified.
+    
+    - **Effort:** master
     
 ??? abstract "Google Workspace Password Change"
     
@@ -6076,6 +6106,12 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Google Workspace Admin Modification"
+    
+    Detects when an admin is modified.
+    
+    - **Effort:** master
+    
 ??? abstract "Microsoft Entra ID (Azure AD) Self Service Password Reset In Failure"
     
     Detects self-service password reset in failure for various reasons (except licence or policy ones)
@@ -6678,6 +6714,12 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Change Default File Association"
     
     When a file is opened, the default program used to open the file (also called the file association or handler) is checked. File association selections are stored in the Windows Registry and can be edited by users, administrators, or programs that have Registry access or by administrators using the built-in assoc utility. Applications can modify the file association for a given file extension to call an arbitrary program when a file with the given extension is opened.
+    
+    - **Effort:** advanced
+    
+??? abstract "Component Object Model Hijacking"
+    
+    Detects component object model hijacking. An attacker can establish persistence with COM objects.
     
     - **Effort:** advanced
     
@@ -8505,6 +8547,12 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+??? abstract "Google Workspace MFA changed"
+    
+    Detects when the settings for the MFA are modified.
+    
+    - **Effort:** master
+    
 ??? abstract "Google Workspace Password Change"
     
     Detects when a password is changed. An attacker can perform this action to impact the availability of the account.
@@ -9077,6 +9125,7 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 02/01/2024 - minor - improve selection to avoid FP
+        - 21/05/2024 - major - editing pattern to avoid FP
             
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
@@ -10020,6 +10069,12 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     Detects alternative credentials material adding. Attackers can abuse msDS-KeyCredentialLink and create a key pair to obtain a persistent and stealthy access to the target user or computer.
     
     - **Effort:** elementary
+    
+??? abstract "Google Workspace MFA changed"
+    
+    Detects when the settings for the MFA are modified.
+    
+    - **Effort:** master
     
 ??? abstract "Google Workspace Password Change"
     
@@ -11900,6 +11955,10 @@ Rules catalog includes **867 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 16/05/2024 - minor - add pattern to extend and improve detection
+            
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.

@@ -195,6 +195,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 Defender
     
     - **Effort:** intermediate
 
+??? abstract "Component Object Model Hijacking"
+    
+    Detects component object model hijacking. An attacker can establish persistence with COM objects.
+    
+    - **Effort:** advanced
+
 ??? abstract "Compress Data for Exfiltration via Archiver"
     
     Detects data compressed by specific tools.
