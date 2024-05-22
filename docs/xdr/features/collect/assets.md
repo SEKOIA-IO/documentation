@@ -175,7 +175,7 @@ Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
 # Asset based detections
 
-The Sekoia.io SOC platform now supports the creation of detection patterns for rules or alert-filters that can be customized to apply to specific groups of assets. This feature allows you to enhance the scope of detection by targeting groups of assets that share certain attributes, such as critical servers, or by tuning the detection rules to exclude certain assets, like administrator accounts. This is accomplished by leveraging various asset attributes, as detailed below.
+The Sekoia.io SOC platform supports the creation of detection patterns for rules or alert-filters that can be customized to apply to specific groups of assets. This feature allows you to enhance the scope of detection by targeting groups of assets that share certain attributes, such as critical servers, or by tuning the detection rules to exclude certain assets, like administrator accounts. This is accomplished by leveraging various asset attributes, as detailed below.
 
 ## Asset fields
 
