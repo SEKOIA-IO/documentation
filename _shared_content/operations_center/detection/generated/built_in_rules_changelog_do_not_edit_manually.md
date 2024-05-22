@@ -2,6 +2,12 @@ Changelog _last update on 2024-05-22_
 
 ## Changelog
 
+### Password Reset Error Brute-Force On AzureAD
+  - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+    
+### Login Brute-Force On Sekoia.io
+  - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+    
 ### Suspicious Driver Loaded
   - 21/05/2024 - major - editing pattern to avoid FP
     

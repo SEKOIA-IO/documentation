@@ -650,6 +650,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+            
 ??? abstract "Microsoft 365 Device Code Authentication"
     
     Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
@@ -4359,6 +4363,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+            
 ??? abstract "Microsoft 365 Device Code Authentication"
     
     Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
@@ -5980,6 +5988,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+            
 ??? abstract "Microsoft 365 Device Code Authentication"
     
     Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
@@ -7680,6 +7692,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+            
 ??? abstract "Microsoft 365 Device Code Authentication"
     
     Authentication via a device code is designed for use with input constrained devices. This method can however be abused, particularly in social engineering attacks. Whitelisting based on the organisation's practices is likely required to make this rule useful (e.g. excluding the public IP ranges of the organisation, excluding authentications attempt from managed devices, etc.). Note: if you collect Entra ID SignInLogs, the rule "Microsoft Entra ID (Azure AD) Device Code Authentication" is a better equivalent to this rule.
@@ -9851,6 +9867,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+            
 ??? abstract "Login Brute-Force Successful"
     
     A user has attempted to login several times (brute-force) and succeeded to login.
@@ -9873,6 +9893,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+            
 ??? abstract "RSA SecurID Failed Authentification"
     
     Detects many failed attempts to authenticate followed by a successfull login for a super admin account.
