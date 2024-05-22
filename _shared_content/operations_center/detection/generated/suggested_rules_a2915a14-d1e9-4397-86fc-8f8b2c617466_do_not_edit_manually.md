@@ -129,18 +129,6 @@ The following Sekoia.io built-in rules match the intake **Olfeo secure web gatew
     
     - **Effort:** intermediate
 
-??? abstract "Cobalt Strike HTTP Default GET beaconing"
-    
-    Detects GET HTTP queries from known Cobalt Strike beacons (source code 4.3)
-    
-    - **Effort:** advanced
-
-??? abstract "Cobalt Strike HTTP Default POST Beaconing"
-    
-    Detects POST HTTP queries from known Cobalt Strike beacons (source code 4.3)
-    
-    - **Effort:** advanced
-
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.

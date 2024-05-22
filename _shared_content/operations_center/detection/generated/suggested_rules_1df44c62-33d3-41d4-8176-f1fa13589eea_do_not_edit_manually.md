@@ -45,6 +45,18 @@ The following Sekoia.io built-in rules match the intake **ExtraHop Reveal(x) 360
     
     - **Effort:** master
 
+??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection Critical Severity"
+    
+    ExtraHop Reveal(x) 360 raised an intrusion detection alert with critical severity.
+    
+    - **Effort:** master
+
+??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection High Severity"
+    
+    ExtraHop Reveal(x) 360 raised an intrusion detection alert with high severity.
+    
+    - **Effort:** master
+
 ??? abstract "Password Change On Directory Service Restore Mode (DSRM) Account"
     
     The Directory Service Restore Mode (DSRM) account is a local administrator account on Domain Controllers. Attackers may change the password to gain persistence.

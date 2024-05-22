@@ -3,11 +3,41 @@
 The following Sekoia.io built-in rules match the intake **Tanium**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Tanium on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_59991ced-c2a0-4fb0-91f3-49e3993c16f5_do_not_edit_manually.json){ .md-button }
+??? abstract "AccCheckConsole Executing Dll"
+    
+    Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL.
+    
+    - **Effort:** advanced
+
+??? abstract "Active Directory Data Export Using Csvde"
+    
+    Detects the use of Csvde, a command-line tool from Windows Server that can be used to export Active Directory data to CSV files. This export doesn't include password hashes, but can be used as a discovery tool to enumerate users, machines and group memberships.
+    
+    - **Effort:** elementary
+
+??? abstract "AdFind Usage"
+    
+    Detects the usage of the AdFind tool. AdFind.exe is a free tool that extracts information from Active Directory.  Wizard Spider (Bazar, TrickBot, Ryuk), FIN6 and MAZE operators have used AdFind.exe to collect information about Active Directory organizational units and trust objects 
+    
+    - **Effort:** elementary
+
+??? abstract "Add User to Privileged Group"
+    
+    Add user in a potential privileged group which can be used to elevate privileges on the system
+    
+    - **Effort:** advanced
+
 ??? abstract "Address Space Layout Randomization (ASLR) Alteration"
     
     ASLR is a security feature used by the Operating System to mitigate memory exploit, attacker might want to disable it
     
     - **Effort:** intermediate
+
+??? abstract "Adexplorer Usage"
+    
+    Detects the usage of Adexplorer, a legitimate tool from the Sysinternals suite that could be abused by attackers as it can saves snapshots of the Active Directory Database.
+    
+    - **Effort:** advanced
 
 ??? abstract "Advanced IP Scanner"
     
@@ -15,15 +45,33 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** master
 
+??? abstract "Aspnet Compiler"
+    
+    Detects the starts of aspnet compiler.
+    
+    - **Effort:** advanced
+
 ??? abstract "Audio Capture via PowerShell"
     
     Detects audio capture via PowerShell Cmdlet
     
     - **Effort:** intermediate
 
+??? abstract "AutoIt3 Execution From Suspicious Folder"
+    
+    Detects AutoIt3 execution from an unusual/suspicious folder. Legitimate folders are "Program Files" and "AppData\\Local". AutoIt3.exe is a legitimate process used to execute AutoIt program files, which are used by legitimate software, custom scripts, but also malware. Finding AutoIt3 execution from unusual/suspicious folder can help detect malware activities, such as DarkGate execution. The detection rule can be tailored to your environment and your use of AutoIt3 by filtering out folder's execution of legitimate applications or scripts.
+    
+    - **Effort:** advanced
+
 ??? abstract "AzureEdge in Command Line"
     
     Detects use of azureedge in the command line.
+    
+    - **Effort:** advanced
+
+??? abstract "BITSAdmin Download"
+    
+    Detects command to download file using BITSAdmin, a built-in tool in Windows. This technique is used by several threat actors to download scripts or payloads on infected system.
     
     - **Effort:** advanced
 
@@ -33,17 +81,59 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Bloodhound and Sharphound Tools Usage"
+    
+    Detects default process names and default command line parameters used by Bloodhound and Sharphound tools.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Blue Mockingbird Malware"
     
     Attempts to detect system changes made by Blue Mockingbird
     
     - **Effort:** elementary
 
+??? abstract "CMSTP Execution"
+    
+    Detects various indicators of Microsoft Connection Manager Profile Installer execution
+    
+    - **Effort:** intermediate
+
+??? abstract "CMSTP UAC Bypass via COM Object Access"
+    
+    Detects UAC Bypass Attempt Using Microsoft Connection Manager Profile Installer Autoelevate-capable COM Objects
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE 2022-1292"
+    
+    The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-34527 PrintNightmare Suspicious Actions From Spoolsv"
+    
+    Detects suspicious image loads and file creations from the spoolsv process which could be a sign of an attacker trying to exploit the PrintNightmare vulnerability, CVE-2021-34527. A remote code execution vulnerability exists when the Windows Print Spooler service improperly performs privileged file operations. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. This works as well as a Local Privilege escalation vulnerability. To fully work the rule requires to log for Loaded DLLs and File Creations, which can be done respectively using the Sysmon's event IDs 7 and 11.
+    
+    - **Effort:** master
+
+??? abstract "Capture a network trace with netsh.exe"
+    
+    Detects capture a network trace via netsh.exe trace functionality
+    
+    - **Effort:** intermediate
+
 ??? abstract "CertOC Loading Dll"
     
     Detects when a user installs certificates by using CertOC.exe to loads the target DLL file.
     
     - **Effort:** intermediate
+
+??? abstract "Certificate Authority Modification"
+    
+    Installation of new certificate(s) in the Certificate Authority can be used to trick user when spoofing website or to add trusted destinations.
+    
+    - **Effort:** master
 
 ??? abstract "Change Default File Association"
     
@@ -57,11 +147,41 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Cmd.exe Used To Run Reconnaissance Commands"
+    
+    Detects command lines with suspicious args
+    
+    - **Effort:** advanced
+
+??? abstract "Cmdkey Cached Credentials Recon"
+    
+    Detects usage of cmdkey to look for cached credentials.
+    
+    - **Effort:** intermediate
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Commonly Used Commands To Stop Services And Remove Backups"
     
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
     - **Effort:** intermediate
+
+??? abstract "Component Object Model Hijacking"
+    
+    Detects component object model hijacking. An attacker can establish persistence with COM objects.
+    
+    - **Effort:** advanced
+
+??? abstract "Compress Data for Exfiltration via Archiver"
+    
+    Detects data compressed by specific tools.
+    
+    - **Effort:** advanced
 
 ??? abstract "Compression Followed By Suppression"
     
@@ -69,11 +189,29 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "Container Credential Access"
+    
+    Adversaries could abuse containers tools to obtain credential like Kubernetes secret or Kubernetes service account access token
+    
+    - **Effort:** intermediate
+
 ??? abstract "Control Panel Items"
     
     Detects the malicious use of a control panel item
     
     - **Effort:** advanced
+
+??? abstract "Copying Browser Files With Credentials"
+    
+    Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
+    
+    - **Effort:** elementary
+
+??? abstract "Copying Sensitive Files With Credential Data"
+    
+    Detects copy of files with well-known filenames (sensitive files with credential data) using esentutl. This requires Windows Security event log with the Detailed File Share logging policy enabled.
+    
+    - **Effort:** elementary
 
 ??? abstract "Cron Files Alteration"
     
@@ -87,11 +225,35 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** master
 
+??? abstract "Csrss Child Found"
+    
+    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This process  should not create a child process or it is very rare.
+    
+    - **Effort:** intermediate
+
+??? abstract "Csrss Wrong Parent"
+    
+    The csrss.exe process (csrss stands for Client / Server Runtime Subsystem) is a generic Windows process used to manage windows and Windows graphics. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
 ??? abstract "DNS Exfiltration and Tunneling Tools Execution"
     
     Well-known DNS exfiltration tools execution
     
     - **Effort:** intermediate
+
+??? abstract "DNS Tunnel Technique From MuddyWater"
+    
+    Detecting DNS Tunnel Activity For Muddywater intrusion set. This is the loading of a specific DLL from an Excel macro which is detected.
+    
+    - **Effort:** elementary
+
+??? abstract "Data Compressed With Rar"
+    
+    An adversary may compress data in order to make it portable and minimize the amount of data sent over the network, this could be done the popular rar command line program.
+    
+    - **Effort:** master
 
 ??? abstract "Data Compressed With Rar With Password"
     
@@ -123,6 +285,30 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "Dism Disabling Windows Defender"
+    
+    Detects windows defender disabled by dism.
+    
+    - **Effort:** advanced
+
+??? abstract "Dllhost Wrong Parent"
+    
+    Dllhost.exe is a process belonging to Microsoft Windows Operating System. The dllhost.exe file manages DLL based applications. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
+??? abstract "Docker Escape Bind Mount"
+    
+    Catch Docker escape via mount escape followed by chroot 
+    
+    - **Effort:** intermediate
+
+??? abstract "Domain Group And Permission Enumeration"
+    
+    Detects adversaries attempts to find domain-level groups and permission settings. Commands such as net group /domain of the Net utility can list domain-level groups The knowledge of domain-level permission groups can help adversaries determine which groups exist and which users belong to a particular group. Adversaries may use this information to determine which users have elevated permissions, such as domain administrators. Wizard Spider, FIN6, and other groups used net in their campaigns.
+    
+    - **Effort:** advanced
+
 ??? abstract "Domain Trust Discovery Through LDAP"
     
     Detects attempts to gather information on domain trust relationships that may be used to identify lateral movement opportunities. "trustedDomain" which is detected here is a Microsoft Active Directory ObjectClass Type that represents a domain that is trusted by, or trusting, the local AD DOMAIN. Several tools are using LDAP queries in the end to get the information (DSQuery, sometimes ADFind as well, etc.)
@@ -147,6 +333,48 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Elise Backdoor"
+    
+    Detects Elise backdoor activity as used by Lotus Blossom
+    
+    - **Effort:** elementary
+
+??? abstract "Empire Monkey Activity"
+    
+    Detects EmpireMonkey APT reported Activity
+    
+    - **Effort:** elementary
+
+??? abstract "Equation Group DLL_U Load"
+    
+    Detects a specific tool and export used by EquationGroup
+    
+    - **Effort:** elementary
+
+??? abstract "Erase Shell History"
+    
+    Malware and attacker try to reduce their fingerprints on compromised host by deleting shell history.
+    
+    - **Effort:** advanced
+
+??? abstract "Exchange Mailbox Export"
+    
+    Detection of a standard Exchange Mailbox export, which stores all mails from a user in a pst file, from command line or PowerShell script.
+    
+    - **Effort:** intermediate
+
+??? abstract "Exchange Server Spawning Suspicious Processes"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service spawning suspicious sub-processes, suggesting exploitation of CVE-2021-26857 vulnerability.
+    
+    - **Effort:** intermediate
+
+??? abstract "Exfiltration And Tunneling Tools Execution"
+    
+    Execution of well known tools for data exfiltration and tunneling
+    
+    - **Effort:** advanced
+
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
@@ -159,9 +387,87 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Exfiltration Via Pscp"
+    
+    Detects the use of pscp which is a file sharing services.
+    
+    - **Effort:** advanced
+
+??? abstract "Exploit For CVE-2015-1641"
+    
+    Detects Winword process starting uncommon sub process MicroScMgmt.exe as used in exploits for CVE-2015-1641
+    
+    - **Effort:** elementary
+
+??? abstract "Exploit For CVE-2017-0261 Or CVE-2017-0262"
+    
+    Detects Winword starting uncommon sub process FLTLDR.exe as used in exploits for CVE-2017-0261 and CVE-2017-0262 through command line or PowerShell script. This is a very basic detection method relying on the rare usage of EPS files from Winword.
+    
+    - **Effort:** advanced
+
+??? abstract "Exploited CVE-2020-10189 Zoho ManageEngine"
+    
+    Detects the exploitation of Zoho ManageEngine Desktop Central Java Deserialization vulnerability reported as CVE-2020-10189.
+    
+    - **Effort:** elementary
+
 ??? abstract "Exploiting SetupComplete.cmd CVE-2019-1378"
     
     Detects exploitation attempts of privilege escalation vulnerability via SetupComplete.cmd and PartnerSetupComplete.cmd described in CVE-2019-1378.
+    
+    - **Effort:** intermediate
+
+??? abstract "Explorer Process Executing HTA File"
+    
+    Detects a suspicious execution of an HTA file by the explorer.exe process. This unusual activity was observed when running IcedID malspam.
+    
+    - **Effort:** intermediate
+
+??? abstract "Explorer Wrong Parent"
+    
+    Detects suspicious spawning of explorer.exe process created by the rundll32.exe or regsvr32.exe. This behaviour is abnormal. Malware injecting itself into the explorer.exe process is quite common, in order to evade process-based defenses.
+    
+    - **Effort:** advanced
+
+??? abstract "FLTMC command usage"
+    
+    Detects the use of fltmc to list and load/unload a filter driver.
+    
+    - **Effort:** advanced
+
+??? abstract "Fail2ban Unban IP"
+    
+    An IP was ubaned by Fail2ban. It could be use to allow malicous traffic.
+    
+    - **Effort:** advanced
+
+??? abstract "File Or Folder Permissions Modifications"
+    
+    Adversaries may modify file or directory permissions/attributes to evade access control lists (ACLs) and access protected files.
+    
+    - **Effort:** master
+
+??? abstract "Formbook File Creation DB1"
+    
+    Detects specific file creation (Users\*\AppData\Local\Temp\DB1) to store data to exfiltrate (Formbook behavior). Logging for Sysmon event 11 is usually used for this detection. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Formbook Hijacked Process Command"
+    
+    Detects process hijacked by Formbook malware which executes specific commands to delete the dropper or copy browser credentials to the database before sending them to the C2.
+    
+    - **Effort:** intermediate
+
+??? abstract "Generic-reverse-shell-oneliner"
+    
+    To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
+    
+    - **Effort:** intermediate
+
+??? abstract "Grabbing Sensitive Hives Via Reg Utility"
+    
+    Detects dump of SAM, System or Security hives using reg.exe utility. Adversaries may attempt to dump these Windows Registry to retrieve password hashes and access credentials.
     
     - **Effort:** intermediate
 
@@ -171,9 +477,21 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Hiding Files With Attrib.exe"
+    
+    Detects usage of attrib.exe to hide files from users.
+    
+    - **Effort:** advanced
+
 ??? abstract "High Privileges Network Share Removal"
     
     Detects high privileges shares being deleted with the net share command.
+    
+    - **Effort:** intermediate
+
+??? abstract "Hijack Legit RDP Session To Move Laterally"
+    
+    Identifies suspicious file creations in the startup folder of a remote system. An adversary could abuse this to move laterally by dropping a malicious script or executable that will be executed after a reboot or user logon.
     
     - **Effort:** intermediate
 
@@ -183,11 +501,41 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** elementary
 
+??? abstract "IIS Module Installation Using AppCmd"
+    
+    Detects the installation of a new IIS module from the command line. It can used used to backdoor an IIS/OWA/Sharepoint server.
+    
+    - **Effort:** intermediate
+
+??? abstract "IcedID Execution Using Excel"
+    
+    Detects Excel spawning a process (rundll32 or wmic) running suspicious command-line. This behaviour could correspond to IcedID activity. 
+    
+    - **Effort:** elementary
+
+??? abstract "Impacket Wmiexec Module"
+    
+    Detection of impacket's wmiexec example, used by attackers to execute commands remotely.
+    
+    - **Effort:** elementary
+
+??? abstract "Inhibit System Recovery Deleting Backups"
+    
+    Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
+    
+    - **Effort:** intermediate
+
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
     
     - **Effort:** intermediate
+
+??? abstract "Kernel Module Alteration"
+    
+    Kernel module installation can be used to configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems.
+    
+    - **Effort:** advanced
 
 ??? abstract "Lazarus Loaders"
     
@@ -201,17 +549,83 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Linux Remove Immutable Attribute"
+    
+    Adversaries may used chattr utility to alter file and folder attributes to control sudden operations like the deletion and modification of files.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Linux Shared Lib Injection Via Ldso Preload"
     
     Detect ld.so.preload modification for shared lib injection, technique used by attackers to load arbitrary code into process
     
     - **Effort:** intermediate
 
+??? abstract "Linux Suspicious Nohup Exec"
+    
+    Detects suspicious usage of nohup which could be leveraged by an attacker to keep a process running or break out from restricted environments
+    
+    - **Effort:** intermediate
+
+??? abstract "Linux Suspicious Search"
+    
+    Adversaries may search for private key on compromised systems
+    
+    - **Effort:** intermediate
+
+??? abstract "List Shadow Copies"
+    
+    Detects command line used to list shadow copies. An adversary may attempt to get information on shadow volumes to perform deletion or extract password hashes from the ntds.dit file. This rule requires command line logging or Windows PowerShell events (4104).
+    
+    - **Effort:** master
+
 ??? abstract "Listing Systemd Environment"
     
     Detects a listing of systemd environment variables. This command could be used to do reconnaissance on a compromised host.
     
     - **Effort:** advanced
+
+??? abstract "Logonui Wrong Parent"
+    
+    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It doesn't only make it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This rule checks if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
+??? abstract "Lsass Wrong Parent"
+    
+    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This rule checks if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
+??? abstract "MMC Spawning Windows Shell"
+    
+    Detects a Windows command line executable started from MMC process
+    
+    - **Effort:** intermediate
+
+??? abstract "MMC20 Lateral Movement"
+    
+    Detects MMC20.Application Lateral Movement; specifically looks for the spawning of the parent MMC.exe with a command line of "-Embedding" as a child of svchost.exe.
+    
+    - **Effort:** intermediate
+
+??? abstract "MOFComp Execution"
+    
+    Detects rare usage of the Managed Object Format (MOF) compiler on Microsoft Windows. This could be abused by some attackers to load WMI classes.
+    
+    - **Effort:** intermediate
+
+??? abstract "MS Office Product Spawning Exe in User Dir"
+    
+    Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio. This is a common technique used by attackers with documents embedding macros. It requires Windows command line logging events.
+    
+    - **Effort:** master
+
+??? abstract "MSBuild Abuse"
+    
+    Detection of MSBuild uses by attackers to infect an host. Focuses on XML compilation which is a Metasploit payload, and on connections made by this process which is unusual.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Malicious Browser Extensions"
     
@@ -228,6 +642,18 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
+    
+    - **Effort:** intermediate
+
+??? abstract "Meterpreter or Cobalt Strike Getsystem Service Installation"
+    
+    Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting some of the techniques being used (technique 1,2 and 5).
+    
+    - **Effort:** elementary
+
+??? abstract "Microsoft Defender Antivirus Disable Scheduled Tasks"
+    
+    The rule detects attempts to deactivate/disable Windows Defender scheduled tasks via command line or PowerShell scripts.
     
     - **Effort:** intermediate
 
@@ -273,17 +699,71 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Microsoft Exchange Server Creating Unusual Files"
+    
+    Look for Microsoft Exchange Server’s Unified Messaging service creating non-standard content on disk, which could indicate web shells or other malicious content, suggesting exploitation of CVE-2021-26858 vulnerability
+    
+    - **Effort:** intermediate
+
+??? abstract "Microsoft Office Creating Suspicious File"
+    
+    Detects Microsoft Office process (word, excel, powerpoint) creating a suspicious file which corresponds to a script or an executable. This behavior highly corresponds to an executed macro which loads an installation script or a malware payload. The rule requires to log for File Creations to work properly, which can be done through Sysmon Event ID 11.
+    
+    - **Effort:** master
+
+??? abstract "Microsoft Office Product Spawning Windows Shell"
+    
+    Detects a Windows command or scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware.
+    
+    - **Effort:** advanced
+
+??? abstract "Microsoft Office Spawning Script"
+    
+    Detects Microsoft Office process (word, excel, powerpoint) spawning wscript.exe or cscript.exe. This typically indicates the parent process launched a malicious macro, or run an exploit. This infection vector is very common and could lead to the deployment of harmful malware. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Mshta JavaScript Execution"
+    
+    Identifies suspicious mshta.exe commands that execute JavaScript supplied as a command line argument.
+    
+    - **Effort:** elementary
+
+??? abstract "Mshta Suspicious Child Process"
+    
+    Detects the use of various web request methods executed remotely via Windows PowerShell
+    
+    - **Effort:** intermediate
+
+??? abstract "NTDS.dit File In Suspicious Directory"
+    
+    The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
+    
+    - **Effort:** advanced
+
 ??? abstract "NTDS.dit File Interaction Through Command Line"
     
     Detects interaction with the file NTDS.dit through command line. This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
     
     - **Effort:** intermediate
 
+??? abstract "Net.exe User Account Creation"
+    
+    Identifies creation of local users via the net.exe command
+    
+    - **Effort:** master
+
 ??? abstract "NetSh Used To Disable Windows Firewall"
     
     Detects NetSh commands used to disable the Windows Firewall
     
     - **Effort:** intermediate
+
+??? abstract "Netsh Allow Command"
+    
+    Netsh command line to allow a program to pass through firewall.
+    
+    - **Effort:** advanced
 
 ??? abstract "Netsh Allowed Python Program"
     
@@ -297,15 +777,63 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Netsh Port Opening"
+    
+    Detects netsh commands that opens a specific port. Can be used by malware or attackers for lateralisation/exfiltration (e.g. SMB/RDP opening).
+    
+    - **Effort:** master
+
+??? abstract "Netsh Program Allowed With Suspicious Location"
+    
+    Detects Netsh commands that allow a suspcious application location on Windows Firewall, seen on kasidet worm. Last part of the existing rule (commandline startwith) was not added to this rule because it is not relevant.
+    
+    - **Effort:** advanced
+
 ??? abstract "Netsh RDP Port Forwarding"
     
     Detects netsh commands that configure a port forwarding of port 3389 used for RDP. This is commonly used by attackers during lateralization on windows environments.
     
     - **Effort:** elementary
 
+??? abstract "Netsh RDP Port Opening"
+    
+    Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware.
+    
+    - **Effort:** intermediate
+
+??? abstract "Network Scanning and Discovery"
+    
+    Tools and command lines used for network discovery from current system
+    
+    - **Effort:** advanced
+
+??? abstract "Network Sniffing"
+    
+    List of common tools used for network packages sniffing
+    
+    - **Effort:** advanced
+
+??? abstract "Network Sniffing Windows"
+    
+    Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
+    
+    - **Effort:** intermediate
+
 ??? abstract "New DLL Added To AppCertDlls Registry Key"
     
     Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. Logging for Registry events is needed in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** intermediate
+
+??? abstract "New Service Creation"
+    
+    Detects creation of a new service from command line
+    
+    - **Effort:** advanced
+
+??? abstract "Ngrok Process Execution"
+    
+    Detects possible Ngrok execution, which can be used by attacker for RDP tunneling.
     
     - **Effort:** intermediate
 
@@ -327,6 +855,24 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
+??? abstract "OneNote Suspicious Children Process"
+    
+    In January 2023, a peak of attacks using .one files was observed in the wild. This rule tries to detect the effect of such attempts using this technique.
+    
+    - **Effort:** advanced
+
+??? abstract "Opening Of a Password File"
+    
+    Command line detection of common office software opening some password related file. It could be a security breach if an unauthorized user access it.
+    
+    - **Effort:** master
+
 ??? abstract "Outlook Registry Access"
     
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
@@ -336,6 +882,18 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 ??? abstract "Package Manager Alteration"
     
     Package manager (eg: apt, yum) can be altered to install malicious software
+    
+    - **Effort:** advanced
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
+??? abstract "Permission Discovery Via Wmic"
+    
+    Detects discovery of permission on local groups via the tool wmic.
     
     - **Effort:** advanced
 
@@ -363,9 +921,33 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** elementary
 
+??? abstract "PowerShell Downgrade Attack"
+    
+    Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
+    
+    - **Effort:** elementary
+
+??? abstract "PowerShell Download From URL"
+    
+    Detects a Powershell process that contains download commands in its command line string.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell EncodedCommand"
     
     Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Execution Via Rundll32"
+    
+    Detects PowerShell Strings applied to rundll as seen in PowerShdll.dll Rule modified
+    
+    - **Effort:** intermediate
+
+??? abstract "PowerShell Malicious Nishang PowerShell Commandlets"
+    
+    Detects Commandlet names and arguments from the Nishang exploitation framework.
     
     - **Effort:** advanced
 
@@ -374,6 +956,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
     
     - **Effort:** intermediate
+
+??? abstract "Powershell Web Request"
+    
+    Detects the use of various web request methods executed remotely via Windows PowerShell.
+    
+    - **Effort:** advanced
 
 ??? abstract "Process Memory Dump Using Comsvcs"
     
@@ -393,9 +981,27 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "PsExec Process"
+    
+    Detects PsExec execution, command line which contains pstools or installation of the PsExec service. PsExec is a SysInternals which can be used to execute a program on another computer. The tool is as much used by attackers as by administrators. 
+    
+    - **Effort:** advanced
+
 ??? abstract "Python HTTP Server"
     
     Detects command used to start a Simple HTTP server in Python. Threat actors could use it for data extraction, hosting a webshell or else.
+    
+    - **Effort:** intermediate
+
+??? abstract "Python Offensive Tools and Packages"
+    
+    Track installation and usage of offensive python packages and project that are used for lateral movement
+    
+    - **Effort:** master
+
+??? abstract "QakBot Process Creation"
+    
+    Detects QakBot like process executions
     
     - **Effort:** intermediate
 
@@ -405,11 +1011,41 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "RDP Session Discovery"
+    
+    Detects use of RDP session discovery via qwinsta or quser. Used by some threat actors to know if someone is working via RDP on a server.
+    
+    - **Effort:** advanced
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
 ??? abstract "Raccine Uninstall"
     
     Detects commands that indicate a Raccine removal from an end system. Raccine is a free ransomware protection tool.
     
     - **Effort:** elementary
+
+??? abstract "Rare Logonui Child Found"
+    
+    Logonui.exe is a file associated with the Logon user interface. The login user interface is an essential part of the Windows operating system. It not only makes it easy for the user to log in to the PC but also determines whether the user has logged in and logged out correctly and makes it easy to switch between users. This process could create a child process but it is very rare and could be a signal of some process injection.
+    
+    - **Effort:** advanced
+
+??? abstract "Rare Lsass Child Found"
+    
+    Lsass ensures the identification of users (domain users or local users). Domain users are identified based on information in the Active Directory. Local users are identified based on information from the Security Account Manager (SAM) local database. This process should not create a child process or it is very rare.
+    
+    - **Effort:** intermediate
+
+??? abstract "Rclone Process"
+    
+    Detects Rclone executable or Rclone execution by using the process name, the execution through a command obfuscated or not.
+    
+    - **Effort:** advanced
 
 ??? abstract "RedMimicry Winnti Playbook Registry Manipulation"
     
@@ -420,6 +1056,18 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - AnyDesk"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
 
@@ -447,6 +1095,42 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** advanced
 
+??? abstract "STRRAT Scheduled Task"
+    
+    Detect STRRAT when it achieves persistence by creating a scheduled task. STRRAT is a Java-based stealer and remote backdoor, it establishes persistence using this specific command line: 'cmd /c schtasks /create /sc minute /mo 30 /tn Skype /tr "C:\Users\Admin\AppData\Roaming\SAMPLENAME.jar"'
+    
+    - **Effort:** intermediate
+
+??? abstract "Schtasks Persistence With High Privileges"
+    
+    Detection of scheduled task with high privileges used by attacker for persistence.
+    
+    - **Effort:** elementary
+
+??? abstract "Schtasks Suspicious Parent"
+    
+    Detects schtasks started from suspicious and/or unusual processes.
+    
+    - **Effort:** intermediate
+
+??? abstract "Searchindexer Wrong Parent"
+    
+    Detects if the Search Indexer was executed by a non-legitimate parent process. Search Indexer is the Windows service that handles indexing of your files for Windows Search.
+    
+    - **Effort:** advanced
+
+??? abstract "Searchprotocolhost Child Found"
+    
+    SearchProtocolHost.exe is part of the Windows Indexing Service, an application that indexes files from the local drive making them easier to search. This is a crucial part of the Windows operating system. This process should not create a child process or it is very rare.
+    
+    - **Effort:** intermediate
+
+??? abstract "Searchprotocolhost Wrong Parent"
+    
+    Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
+    
+    - **Effort:** advanced
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -459,9 +1143,39 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Smss Wrong Parent"
+    
+    Detects if the Smss process was executed by a non-legitimate parent process. Session Manager Subsystem (smss) process is a component of the Microsoft Windows NT family of operating systems.
+    
+    - **Effort:** advanced
+
+??? abstract "SolarWinds Suspicious File Creation"
+    
+    Detects SolarWinds process creating a file with a suspicious extension. The process solarwinds.businesslayerhost.exe created an unexpected file whose extension is ".exe", ".ps1", ".jpg", ".png" or ".dll".
+    
+    - **Effort:** intermediate
+
+??? abstract "SolarWinds Wrong Child Process"
+    
+    Detects SolarWinds process starting an unusual child process. Process solarwinds.businesslayerhost.exe and solarwinds.businesslayerhostx64.exe created an unexepected child process which doesn't correspond to the legitimate ones.
+    
+    - **Effort:** intermediate
+
+??? abstract "Spoolsv Wrong Parent"
+    
+    Detects if the Spoolsv process was executed by a non-legitimate parent process. Printer Spooler Service (Spoolsv) process is responsible for managing spooled print/fax jobs.
+    
+    - **Effort:** advanced
+
 ??? abstract "Spyware Persistence Using Schtasks"
     
     Detects possible Agent Tesla or Formbook persistence using schtasks. The name of the scheduled task used by these malware is very specific (Updates/randomstring).
+    
+    - **Effort:** intermediate
+
+??? abstract "SquirrelWaffle Malspam Execution Loading DLL"
+    
+    Detects cscript running suspicious command to load a DLL. This behavior has been detected in SquirrelWaffle campaign.
     
     - **Effort:** intermediate
 
@@ -471,9 +1185,27 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** elementary
 
+??? abstract "Suspicious ADSI-Cache Usage By Unknown Tool"
+    
+    Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. It needs file monitoring capabilities (Sysmon Event ID 11 with .sch file creation logging).
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious Cmd File Copy Command To Network Share"
     
     Copy suspicious files through Windows cmd prompt to network share
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Cmd.exe Command Line"
+    
+    Detection on suspicious cmd.exe command line seen being used by some attackers (e.g. Lazarus with Word macros). This requires Windows process command line logging.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious CodePage Switch with CHCP"
+    
+    Detects a code page switch in command line
     
     - **Effort:** intermediate
 
@@ -483,11 +1215,47 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Control Process"
+    
+    Detects suspicious execution of control.exe process when used to execute a DLL file.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious DLL Loading By Ordinal"
     
     Detects suspicious DLL Loading by ordinal number in a non legitimate or rare folders. For example, Sofacy (APT28) used this technique to load their Trojan in a campaign of 2018.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious DNS Child Process"
+    
+    Detects suspicious processes spawned by the dns.exe process. It could be a great indication of the exploitation of the DNS RCE bug reported in CVE-2020-1350 (SIGRED).
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Double Extension"
+    
+    Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spearphishing campaigns
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Finger Usage"
+    
+    Detects suspicious aged finger.exe tool execution often used in malware attacks nowadays. An attacker can use finger to silently retrieve a command, a script or a payload from a remote server. For example, the tool Darkfinger-C2 uses this technique to download files from the C2 channel.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Hangul Word Processor Child Process"
+    
+    Detects suspicious Hangul Word Processor (HWP) child process that could indicate an exploitation as used by the Lazarus APT during the Operation Ghost Puppet (2018). This activity could correspond to a maldoc execution related to a .hwp file. Hangul is a proprietary word processing application that supports the Korean written language.
+    
+    - **Effort:** elementary
+
+??? abstract "Suspicious Headless Web Browser Execution To Download File"
+    
+    Detects a suspicious command used to execute a Chromium-based web browser (Chrome or Edge) using the headless mode, meaning that the browser window wouldn't be visible, and the dump mode to download a file. This technique can be used to fingerprint the compromised host, in particular by the Ducktail infostealer.
+    
+    - **Effort:** elementary
 
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     
@@ -495,11 +1263,35 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** master
 
+??? abstract "Suspicious Mshta Execution"
+    
+    Detects suspicious mshta.exe execution patterns, either involving file polyglotism, remote file (http, ftp or ldap) or suspicious location. This technique is often used by threat actors.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Mshta Execution From Wmi"
+    
+    Detects mshta executed by wmiprvse as parent. It has been used by TA505 with some malicious documents.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
     
     - **Effort:** elementary
+
+??? abstract "Suspicious Network Args In Command Line"
+    
+    Detection on some commonly observed suspicious processes command lines using HTTP schema with port 443.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Outlook Child Process"
+    
+    Detects suspicious child processes of Microsoft Outlook. These child processes are often associated with spearphishing activity.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious PowerShell Invocations - Specific"
     
@@ -519,6 +1311,24 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Regasm Regsvcs Usage"
+    
+    catch abuse of regsvcs and regasm lolbin by attacker
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Regsvr32 Execution"
+    
+    Detects suspicious regsvr32.exe executions, either regsvr32 registering a DLL in an unusual repository (temp/, appdata/ or public/), or regsvr32 executed by an unusual parent process, or regsvr32 executing an unusual process, or regsvr32 registering a media file and not a DLL (as seen in IcedID campaigns), or regsvr32 registering a ocx file in appdata/.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious Rundll32.exe Execution"
+    
+    The process rundll32.exe executes a newly dropped DLL with update /i in the command line. This specific technic was observed at least being used by the IcedID loading mechanism dubbed Gziploader.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Suspicious Scheduled Task Creation"
     
     Detects suspicious scheduled task creation, either executed by a non-system user or a user who is not administrator (the user ID is not S-1-5-18 or S-1-5-18-*). This detection rule doesn't match Sysmon EventID 1 because the user SID is always set to S-1-5-18. 
@@ -531,17 +1341,83 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious VBS Execution Parameter"
+    
+    Detects suspicious VBS file execution with a specific parameter by cscript. It was observed in the Operation CloudHopper.
+    
+    - **Effort:** elementary
+
 ??? abstract "Suspicious Windows Installer Execution"
     
     Detects suspicious execution of the Windows Installer service (msiexec.exe) which could be used to install a malicious MSI package hosted on a remote server.
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Windows Script Execution"
+    
+    Detects wscript.exe or cscript.exe executing a script in user directories (C:\ProgramData or C:\Users) with a .txt extension, which is very suspicious. It could strongly correspond to a malware dropper, as seen during SquirrelWaffle maldoc campaign.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious certutil command"
+    
+    Detects suspicious certutil command which can be used by threat actors to download and/or decode payload. 
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious desktop.ini Action"
+    
+    Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
+    
+    - **Effort:** advanced
+
+??? abstract "Svchost Wrong Parent"
+    
+    Detects if the svchost.exe process was executed by a non-legitimate parent process. Svchost (Service Host Process) is a generic host process name for services that run from dynamic-link libraries (DLLs).
+    
+    - **Effort:** advanced
+
+??? abstract "Sysprep On AppData Folder"
+    
+    Detects suspicious Sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec). Sysprep is a Windows tool used to change Windows images from a generalized state to a specialized state, and then back to a generalized state. It can be used to remove all system-specific information and reset the computer.
+    
+    - **Effort:** intermediate
+
+??? abstract "System Info Discovery"
+    
+    System info discovery, attempt to detects basic command use to fingerprint a host.
+    
+    - **Effort:** master
+
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
+
+??? abstract "Taskhost Wrong Parent"
+    
+    Detects if the Taskhost process was executed by a non-legitimate parent process. Taskhost is the process of the Windows Task Manager which lists the processes that are currently running on the computer system.
+    
+    - **Effort:** advanced
+
+??? abstract "Taskhost or Taskhostw Suspicious Child Found"
+    
+    Task Host manages pop-up windows when users try to close them in a Windows environment. Taskhost.exe triggers the host process for the task. Task Host is a Windows process designed to alert users when dialog boxes close. It is usually launched when restarting and shutting down a PC, and checks if all programs have been properly closed. This process should not create a child process or it is very rare.
+    
+    - **Effort:** advanced
+
+??? abstract "Taskhostw Wrong Parent"
+    
+    Detects if the Taskhostw process was executed by a non-legitimate parent process. Taskhostw is a software component of Windows service start manager, it starts DLL-based Windows services when the computer boots up.
+    
+    - **Effort:** advanced
+
+??? abstract "Trickbot Malware Activity"
+    
+    Detects Trickbot malware process tree pattern in which rundll32.exe is parent of wermgr.exe.
+    
+    - **Effort:** intermediate
 
 ??? abstract "UAC Bypass Via Sdclt"
     
@@ -555,17 +1431,53 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Userinit Wrong Parent"
+    
+    Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
+??? abstract "WCE wceaux.dll Creation"
+    
+    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
+
 ??? abstract "WMI Install Of Binary"
     
     Detection of WMI used to install a binary on the host. It is often used by attackers as a signed binary to infect an host.
     
     - **Effort:** elementary
 
+??? abstract "WMI Persistence Script Event Consumer File Write"
+    
+    Detects file writes through WMI script event consumer.
+    
+    - **Effort:** advanced
+
+??? abstract "WMIC Command To Determine The Antivirus"
+    
+    Detects WMIC command to determine the antivirus on a system, characteristic of the ZLoader malware (and possibly others)
+    
+    - **Effort:** advanced
+
 ??? abstract "WMIC Uninstall Product"
     
     Detects products being uninstalled using WMIC command.
     
     - **Effort:** intermediate
+
+??? abstract "Webshell Creation"
+    
+    Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
+    
+    - **Effort:** master
+
+??? abstract "Webshell Execution W3WP Process"
+    
+    Detects possible webshell execution on Windows Servers which is usually a w3wp parent process with the user name DefaultAppPool.
+    
+    - **Effort:** advanced
 
 ??? abstract "WiFi Credentials Harvesting Using Netsh"
     
@@ -579,6 +1491,30 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** master
 
+??? abstract "Windows Update LolBins"
+    
+    This rule try to detect a suspicious behavior of wuauclt.exe (windows update client) that could be a lolbins. Wuauctl.exe could be used to execute a malicious program.
+    
+    - **Effort:** elementary
+
+??? abstract "Winlogon wrong parent"
+    
+    Winlogon.exe is a process that performs the Windows login management function, handling user login and logout in Windows. You see this process in action whenever the operating system asks you for your username and password. It is also responsible for loading user profiles after login, this supports automated login (when relevant) and keyboard and mouse inactivity monitoring to decide when to invoke the screen saver. This rule analyse if the parent of this process is a legitimate one or not.
+    
+    - **Effort:** advanced
+
+??? abstract "Winword Document Droppers"
+    
+    Detects specific process characteristics of word document droppers. This techniques has been used by Maze ransomware operators.
+    
+    - **Effort:** elementary
+
+??? abstract "Winword wrong parent"
+    
+    Word is a well known Windows process used to read documents. Some malicious process could use it to run malicious code. The rule tries to detect winword.exe launched with a suspect parent process name.
+    
+    - **Effort:** advanced
+
 ??? abstract "Wmic Process Call Creation"
     
     The WMI command-line (WMIC) utility provides a command-line interface for Windows Management Instrumentation (WMI). WMIC is compatible with existing shells and utility commands. Although WMI is supposed to be an administration tool, it is wildy abused by threat actors. One of the reasons is WMI is quite stealthy. This rule detects the wmic command line launching a process on a remote or local host.
@@ -591,8 +1527,32 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     - **Effort:** intermediate
 
+??? abstract "Wmiprvse Wrong Parent"
+    
+    Detects if the Wmiprvse process was executed by a non-legitimate parent process. The wmiprvse.exe process (wmiprvse stands for Microsoft Windows Management Instrumentation) is a generic process for managing clients on Windows. It is initialized the first time a client application connects and allows you to monitor system resources. This requires Windows command line logging.
+    
+    - **Effort:** advanced
+
+??? abstract "Wsmprovhost Wrong Parent"
+    
+    Detects if the Wsmprovhost process was executed by a non-legitimate parent process. The PowerShell host wsmprovhost.exe is a proxy process executed remotely through PowerShell when using Windows Remote Management (WinRM).
+    
+    - **Effort:** advanced
+
 ??? abstract "XCopy Suspicious Usage"
     
     Detects the usage of xcopy with suspicious command line options (used by Judgment Panda APT in the past). The rule is based on command line only in case xcopy is renamed.
     
     - **Effort:** advanced
+
+??? abstract "XSL Script Processing And SquiblyTwo Attack"
+    
+    Detection of an attack where adversaries may bypass application control and obscure execution of code by embedding scripts inside XSL files. Another variation of this technique, dubbed "Squiblytwo", involves to invoke JScript or VBScript within an XSL file.
+    
+    - **Effort:** intermediate
+
+??? abstract "xWizard Execution"
+    
+    Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties.
+    
+    - **Effort:** master

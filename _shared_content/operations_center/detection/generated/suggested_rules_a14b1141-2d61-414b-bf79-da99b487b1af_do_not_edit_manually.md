@@ -225,6 +225,12 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     - **Effort:** intermediate
 
+??? abstract "Component Object Model Hijacking"
+    
+    Detects component object model hijacking. An attacker can establish persistence with COM objects.
+    
+    - **Effort:** advanced
+
 ??? abstract "Compression Followed By Suppression"
     
     Detects when a file is compressed and deleted.
