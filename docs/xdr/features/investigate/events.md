@@ -67,6 +67,9 @@ To access your saved queries:
 2. Select a period of time
 3. Click on `Search` to see your saved query events
 
+    !!! Disclamer
+    The saved queries are stored locally on the user's browser. Ensure that you do not have a task or setting that cleans your browser cookies, as this will result in the loss of your favorite queries.
+
 ### Date
 
 It is possible to select the period of time to be taken into consideration when using a filter. You can use:
