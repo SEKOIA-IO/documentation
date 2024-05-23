@@ -1,6 +1,6 @@
 # Built-in detection rules, EventIDs and EventProviders relations
 SEKOIA.IO provides built-in detection rules to illuminate intrusions, adversarial behaviours and suspicious activity escalation chains so you can immediately take steps to remediate. Built-in rules can be customized to your context and according to your security posture.
-This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2024-05-22_
+This page aims at helping partners & customers in having their detection coverage by knowing which Event IDs and [Event Providers](https://learn.microsoft.com/en-us/windows/win32/etw/providing-events) are used by rule. **Please note this was retrieved automatically from our tests samples when generating attacks that triggered the rules. It might not be exhaustive and concerns mostly Windows-related rules.** _Last update on 2024-05-23_
 
 The colors of the EventIDs in this page should be interpreted as follow:
 
@@ -111,6 +111,7 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Winlogon wrong parent | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 | Non-Legitimate Executable Using AcceptEula Parameter | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>3</a></span>, <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span> | Kernel-Process, Microsoft-Windows-Kernel-Process |
 | FLTMC command usage | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span> | Kernel-Process |
+| Remote System Discovery Via Telnet | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>5</a></span> | Kernel-Process |
 | Suspicious Outbound Kerberos Connection | advanced | <span style="color:#B60016"><a href='https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5156' style='color: inherit;'>5156</a></span> | Microsoft-Windows-Security-Auditing |
 | Suspicious ADSI-Cache Usage By Unknown Tool | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>11</a></span> | Microsoft-Windows-Sysmon |
 | RDP Sensitive Settings Changed | advanced | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>13</a></span> | Microsoft-Windows-Sysmon |
@@ -477,23 +478,23 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Winword Document Droppers | elementary | <span style="color:#5865d3"><a href='https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#events' style='color: inherit;'>1</a></span> | Microsoft-Windows-Sysmon |
 
 ## EventIDs occurences in rules
-| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 463) |
+| EventID | Number of rules concerned | Percentage of rules concerned (Total rules: 464) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| 1 | 223 | 48.16 % |
-| 13 | 46 | 9.94 % |
-| 4104 | 43 | 9.29 % |
-| 5 | 20 | 4.32 % |
-| 11 | 20 | 4.32 % |
-| 7 | 15 | 3.24 % |
-| 7045 | 11 | 2.38 % |
+| 1 | 223 | 48.06 % |
+| 13 | 46 | 9.91 % |
+| 4104 | 43 | 9.27 % |
+| 5 | 21 | 4.53 % |
+| 11 | 20 | 4.31 % |
+| 7 | 15 | 3.23 % |
+| 7045 | 11 | 2.37 % |
 | 5145 | 10 | 2.16 % |
-| 15 | 8 | 1.73 % |
+| 15 | 8 | 1.72 % |
 | 4688 | 7 | 1.51 % |
-| 17 | 6 | 1.3 % |
-| 5136 | 6 | 1.3 % |
-| 3 | 6 | 1.3 % |
-| 10 | 6 | 1.3 % |
-| 98 | 6 | 1.3 % |
+| 17 | 6 | 1.29 % |
+| 5136 | 6 | 1.29 % |
+| 3 | 6 | 1.29 % |
+| 10 | 6 | 1.29 % |
+| 98 | 6 | 1.29 % |
 | 1116 | 5 | 1.08 % |
 | 4624 | 5 | 1.08 % |
 | 4662 | 5 | 1.08 % |
@@ -557,13 +558,13 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | 27 | 1 | 0.22 % |
 
 ## EventProviders occurences in rules
-| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 463) |
+| EventProvider | Number of rules concerned | Percentage of rules concerned (Total rules: 464) |
 | ------- | ------------------------- | ------------------------------------------------------ |
-| Microsoft-Windows-Sysmon | 291 | 62.85 % |
-| Microsoft-Windows-Security-Auditing | 76 | 16.41 % |
-| Microsoft-Windows-PowerShell | 46 | 9.94 % |
-| Kernel-Process | 32 | 6.91 % |
-| Service Control Manager | 11 | 2.38 % |
+| Microsoft-Windows-Sysmon | 291 | 62.72 % |
+| Microsoft-Windows-Security-Auditing | 76 | 16.38 % |
+| Microsoft-Windows-PowerShell | 46 | 9.91 % |
+| Kernel-Process | 33 | 7.11 % |
+| Service Control Manager | 11 | 2.37 % |
 | Microsoft-Windows-Windows Defender | 9 | 1.94 % |
 | Microsoft-Windows-Kernel-File | 5 | 1.08 % |
 | Microsoft-Windows-Kernel-Process | 1 | 0.22 % |
@@ -581,9 +582,9 @@ The colors of the EventIDs in this page should be interpreted as follow:
 | Microsoft-Windows-DNS-Client | 1 | 0.22 % |
 
 ## EffortLevel x EventIDs
-| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 463 |
+| Effort Level | EventIDs | Number of related rules | Percentage of related rules (Total rules: 464 |
 | ------------ | -------- | ----------------------- | ------------------------------------------------------- |
-| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4728, 4729, 4732, 4743, 5007, 5140, 5145, 64, 7, 79016668, 8001, 83820799, 98 | 91 | 19.65 % |
-| advanced | 1, 10, 11, 1116, 1127, 13, 15, 17, 21, 22, 23, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4799, 5, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 117 | 25.27 % |
-| intermediate | 1, 10, 1000, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4662, 4663, 4688, 4697, 4698, 47, 4720, 4738, 4741, 4768, 4794, 4825, 5, 5136, 5145, 524, 6, 7, 7045 | 168 | 36.29 % |
-| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4663, 4688, 4697, 4704, 4720, 4738, 5, 5136, 7, 7045, 8 | 87 | 18.79 % |
+| master | 1, 10, 1013, 11, 12, 13, 15, 150, 17, 22, 25, 27, 3, 40, 4104, 4611, 4624, 4625, 4656, 4661, 4662, 4663, 4673, 4674, 4720, 4726, 4728, 4729, 4732, 4743, 5007, 5140, 5145, 64, 7, 79016668, 8001, 83820799, 98 | 91 | 19.61 % |
+| advanced | 1, 10, 11, 1116, 1127, 13, 15, 17, 21, 22, 23, 3, 4103, 4104, 4624, 4625, 4656, 4662, 4688, 4706, 4707, 4799, 5, 5136, 5145, 5154, 5156, 6416, 7, 7045, 8 | 118 | 25.43 % |
+| intermediate | 1, 10, 1000, 1033, 1034, 11, 1102, 1116, 12, 13, 15, 16, 17, 20, 22, 3, 30, 4103, 4104, 4624, 4649, 4656, 4657, 4662, 4663, 4688, 4697, 4698, 47, 4720, 4738, 4741, 4768, 4794, 4825, 5, 5136, 5145, 524, 6, 7, 7045 | 168 | 36.21 % |
+| elementary | 1, 10, 11, 1116, 13, 15, 17, 325, 4103, 4104, 4625, 4663, 4688, 4697, 4704, 4720, 4738, 5, 5136, 7, 7045, 8 | 87 | 18.75 % |

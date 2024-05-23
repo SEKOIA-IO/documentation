@@ -975,9 +975,21 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "HarfangLab EDR Critical Threat"
+    
+    HarfangLab EDR detected a threat with a critical level. This detection by the EDR is based on several detection rules.
+    
+    - **Effort:** master
+
 ??? abstract "HarfangLab EDR High Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR High Threat"
+    
+    HarfangLab EDR detected a threat with a high level. This detection by the EDR is based on several detection rules.
     
     - **Effort:** master
 
@@ -993,9 +1005,21 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** master
 
+??? abstract "HarfangLab EDR Low Threat"
+    
+    HarfangLab EDR detected a threat with a low level. This detection by the EDR is based on several detection rules.
+    
+    - **Effort:** master
+
 ??? abstract "HarfangLab EDR Medium Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
+    
+    - **Effort:** master
+
+??? abstract "HarfangLab EDR Medium Threat"
+    
+    HarfangLab EDR detected a threat with a medium level. This detection by the EDR is based on several detection rules.
     
     - **Effort:** master
 
