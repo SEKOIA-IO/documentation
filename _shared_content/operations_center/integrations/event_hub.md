@@ -47,7 +47,7 @@ These two ways will create an Azure Event Hub and a Storage Account.
     When the message **Your deployment is complete** is displayed, click on **Outputs**.
 
     <div style="text-align: center;">
-        <img width="90%" alt="image" src="/_shared_content/operations_center/integrations/eventhub_template.png">
+        <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/eventhub_template.png">
     </div>
 
     Keep these 5 pieces of information displayed carefully, it will used to configure the **Trigger Configuration** of the Sekoia playbook.
