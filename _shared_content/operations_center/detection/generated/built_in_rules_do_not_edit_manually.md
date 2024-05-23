@@ -1,4 +1,4 @@
-Rules catalog includes **872 built-in detection rules** ([_last update on 2024-05-22_](rules_changelog.md)).
+Rules catalog includes **881 built-in detection rules** ([_last update on 2024-05-23_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -59,6 +59,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Microsoft Windows Active Directory Module Commandlets"
     
     Detects use of commandlets linked to the AD Module.
+    
+    - **Effort:** advanced
+    
+??? abstract "Remote System Discovery Via Telnet"
+    
+    Detects use of the protocol telnet to access information.
     
     - **Effort:** advanced
     
@@ -626,6 +632,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "Google Workspace Suspicious Login"
     
     Detects a suspicious login reported by google.
@@ -1424,6 +1434,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Cron Files Alteration"
     
     Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation.
+    
+    - **Effort:** advanced
+    
+??? abstract "Google Workspace App Script Scheduled Task"
+    
+    Detects when a scheduled task is launched by Google App Script. This product is used to create scripts and integrate applications within Google Workspace.
     
     - **Effort:** advanced
     
@@ -2233,6 +2249,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 23/05/2024 - minor - Added filter to reduce false positives and new suspicious keywords.
+            
 ??? abstract "Suspicious PrinterPorts Creation (CVE-2020-1048)"
     
     Detects new commands that add new printer port which point to suspicious file
@@ -2738,9 +2758,29 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/05/2024 - minor - Added filter to exclude threat dataset
+            
+??? abstract "HarfangLab EDR Critical Threat"
+    
+    HarfangLab EDR detected a threat with a critical level. This detection by the EDR is based on several detection rules.
+    
+    - **Effort:** master
+    
 ??? abstract "HarfangLab EDR High Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a high level rule (not using hlai engine)
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 23/05/2024 - minor - Added filter to exclude threat dataset
+            
+??? abstract "HarfangLab EDR High Threat"
+    
+    HarfangLab EDR detected a threat with a high level. This detection by the EDR is based on several detection rules.
     
     - **Effort:** master
     
@@ -2760,9 +2800,29 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/05/2024 - minor - Added filter to exclude threat dataset
+            
+??? abstract "HarfangLab EDR Low Threat"
+    
+    HarfangLab EDR detected a threat with a low level. This detection by the EDR is based on several detection rules.
+    
+    - **Effort:** master
+    
 ??? abstract "HarfangLab EDR Medium Level Rule Detection"
     
     HarfangLab EDR has raised an alert based on a medium level rule (not using hlai engine)
+    
+    - **Effort:** master
+    
+    - **Changelog:**
+    
+        - 23/05/2024 - minor - Added filter to exclude threat dataset
+            
+??? abstract "HarfangLab EDR Medium Threat"
+    
+    HarfangLab EDR detected a threat with a medium level. This detection by the EDR is based on several detection rules.
     
     - **Effort:** master
     
@@ -4161,6 +4221,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Google Workspace App Script Scheduled Task"
+    
+    Detects when a scheduled task is launched by Google App Script. This product is used to create scripts and integrate applications within Google Workspace.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Qakbot Persistence Using Schtasks"
     
     Detects possible Qakbot persistence using schtasks.
@@ -4339,6 +4405,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "Google Workspace Suspicious Login"
     
     Detects a suspicious login reported by google.
@@ -4496,6 +4566,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Google Workspace Admin Modification"
     
     Detects when an admin is modified.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace Domain Delegation"
+    
+    Detects when a domain delegation is granted.
     
     - **Effort:** master
     
@@ -5558,6 +5634,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Google Workspace App Script Scheduled Task"
+    
+    Detects when a scheduled task is launched by Google App Script. This product is used to create scripts and integrate applications within Google Workspace.
+    
+    - **Effort:** advanced
+    
 ??? abstract "Qakbot Persistence Using Schtasks"
     
     Detects possible Qakbot persistence using schtasks.
@@ -5964,6 +6046,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "Google Workspace Suspicious Login"
     
     Detects a suspicious login reported by google.
@@ -6121,6 +6207,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Google Workspace Admin Modification"
     
     Detects when an admin is modified.
+    
+    - **Effort:** master
+    
+??? abstract "Google Workspace Domain Delegation"
+    
+    Detects when a domain delegation is granted.
     
     - **Effort:** master
     
@@ -7668,6 +7760,10 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 22/05/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "Google Workspace Suspicious Login"
     
     Detects a suspicious login reported by google.
@@ -9849,6 +9945,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Google Workspace Login Brute-Force"
+    
+    Detects when a user failed to login multiple times before a successful login.
+    
+    - **Effort:** master
+    
 ??? abstract "Login Brute-Force On Firewall"
     
     Detects successful access to administration console of a firewall after several failure.
@@ -11032,6 +11134,12 @@ Rules catalog includes **872 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Google Cloud Audit Logs Email Forwarding"
     
     Detects when an out of domain email forwarding is enabled on Google Cloud.
+    
+    - **Effort:** advanced
+    
+??? abstract "Google Workspace Email Forwarding"
+    
+    Detects when a user enables email forwarding out of the domain
     
     - **Effort:** advanced
     

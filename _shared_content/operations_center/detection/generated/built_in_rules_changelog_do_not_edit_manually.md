@@ -1,9 +1,27 @@
-Changelog _last update on 2024-05-22_
+Changelog _last update on 2024-05-23_
 
 ## Changelog
 
+### Suspicious PowerShell Keywords
+  - 23/05/2024 - minor - Added filter to reduce false positives and new suspicious keywords.
+    
+### HarfangLab EDR Medium Level Rule Detection
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
+### HarfangLab EDR High Level Rule Detection
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
+### HarfangLab EDR Low Level Rule Detection
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
+### HarfangLab EDR Critical Level Rule Detection
+  - 23/05/2024 - minor - Added filter to exclude threat dataset
+    
 ### Password Reset Error Brute-Force On AzureAD
   - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
+    
+### Google Workspace Admin Creation
+  - 22/05/2024 - minor - Adding new element to increase detection.
     
 ### Login Brute-Force On Sekoia.io
   - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.

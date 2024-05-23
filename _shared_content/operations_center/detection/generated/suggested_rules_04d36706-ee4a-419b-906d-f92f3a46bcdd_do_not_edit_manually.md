@@ -39,11 +39,29 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     
     - **Effort:** master
 
+??? abstract "Google Workspace App Script Scheduled Task"
+    
+    Detects when a scheduled task is launched by Google App Script. This product is used to create scripts and integrate applications within Google Workspace.
+    
+    - **Effort:** advanced
+
 ??? abstract "Google Workspace Bypass 2FA"
     
     Detects when user tries to bypass the 2FA.
     
     - **Effort:** master
+
+??? abstract "Google Workspace Domain Delegation"
+    
+    Detects when a domain delegation is granted.
+    
+    - **Effort:** master
+
+??? abstract "Google Workspace Email Forwarding"
+    
+    Detects when a user enables email forwarding out of the domain
+    
+    - **Effort:** advanced
 
 ??? abstract "Google Workspace MFA changed"
     
