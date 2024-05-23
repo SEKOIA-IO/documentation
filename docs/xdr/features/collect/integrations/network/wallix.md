@@ -36,7 +36,7 @@ To set up routing via the syslog server you previously setup, such as the [Sekoi
     * VNC session.
 
 !!! Note
-When upgrading from a version prior to WALLIX Bastion 8.2, all logged information categories are selected by default for all servers previously configured on this page.
+    When upgrading from a version prior to WALLIX Bastion 8.2, all logged information categories are selected by default for all servers previously configured on this page.
 
 Logs will then be sent to the selected IP address, port and transmission protocol, and also stored on the local file system, so that they are always available for reading on the "Logs audit" page in the "Configuration" menu.
 
