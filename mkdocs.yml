@@ -340,6 +340,7 @@ nav:
         - Salesforce: xdr/features/automate/library/salesforce.md
         - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - SentinelOne: xdr/features/automate/library/sentinelone.md
+        - SentinelOneDeepVisibility: xdr/features/automate/library/sentinelonedeepvisibility.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
         - Shodan: xdr/features/automate/library/shodan.md
         - Skyhigh Security: xdr/features/automate/library/skyhigh-security.md
@@ -537,6 +538,7 @@ nav:
         - Salesforce: tip/features/automate/library/salesforce.md
         - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - SentinelOne: tip/features/automate/library/sentinelone.md
+        - SentinelOneDeepVisibility: tip/features/automate/library/sentinelonedeepvisibility.md
         - ServiceNow: tip/features/automate/library/servicenow.md
         - Shodan: tip/features/automate/library/shodan.md
         - Skyhigh Security: tip/features/automate/library/skyhigh-security.md
