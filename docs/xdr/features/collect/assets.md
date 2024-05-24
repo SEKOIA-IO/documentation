@@ -173,11 +173,11 @@ This rule creates a new asset for every unseen `user.name`. It attaches the `use
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
-# Asset based detections
+## Asset based detections
 
 The Sekoia.io SOC platform supports the creation of detection patterns for rules or alert-filters that can be customized to apply to specific groups of assets. This feature allows you to enhance the scope of detection by targeting groups of assets that share certain attributes, such as critical servers, or by tuning the detection rules to exclude certain assets, like administrator accounts. This is accomplished by leveraging various asset attributes, as detailed below.
 
-## Asset fields
+### Asset fields
 
 The following table lists the available fields for defining asset-based detection patterns, along with their types and example values:
 
@@ -189,14 +189,14 @@ The following table lists the available fields for defining asset-based detectio
 | `sekoiaio.any_asset.criticality_display` | Set of Strings      | `{"high", "low"}`                      |
 | `sekoiaio.any_asset.criticality_value`   | Set of Integers    | `{80, 0}`                              |
 
-    !!! Warning
+!!! Warning
     Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoia.assets.*.uuid`, `sekoia.assets.*.name`, `sekoia.assets.*.criticality_value`, `sekoia.any_asset.uuid`, `sekoia.any_asset.name` and `sekoia.any_asset.criticality_value`.
 
-## Use Case Example
+### Use Case Example
 
 To demonstrate the capabilities of asset-based detections, consider the following use case. You can create custom tags and apply them to a list of assets manually or by using a script and available APIs. Once tagged, these assets can be used in detection rules or alert filters to fine-tune the detection scope.
 
-### Example 1: Detection Rule
+**Example 1: Detection Rule**
 
 The following Sigma pattern demonstrates how to create a detection rule that targets assets tagged with "my_custom_tag_for_critical_servers":
 
@@ -209,7 +209,7 @@ detection:
   condition: selection
 ```
 
-### Example 2: Alert Filter
+**Example 2: Alert Filter**
 
 The following Sigma pattern demonstrates how to create an alert filter that excludes assets tagged with "my_custom_tag_for_admin_assets":
 
@@ -223,7 +223,7 @@ detection:
 
 By using custom tags, you can precisely control which assets are included in or excluded from your detection rules, ensuring a more targeted and effective threat detection strategy. For more information on how to tag assets using the Sekoia.io API, refer to the API documentation.
 
-    !!! Note
+!!! Note
     There is no need to add the `contains` modifier when referring to a tag. Because the `sekoiaio.any_asset.tags` field is a list, `sekoiaio.any_asset.tags: mytag` already means "match if any of the tags is mytag".
 
 
