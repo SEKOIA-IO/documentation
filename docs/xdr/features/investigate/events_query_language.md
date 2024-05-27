@@ -30,6 +30,9 @@ A term without a field name and an operator will search the literal value in all
 | Wildcards | Wildcard characters can be used to match more events. Use `?` to match a single character or `*` to replace any number of characters. | `evil*` |
 | Regular Expressions | Regular Expressions can be used to filter for specific values. The regular expression is surrounded by forward slashes (`/`) | `/(evil|bad).*/`
 
+!!! Note
+    For regular expressions, do not use `^` and `$` which delimits the beginning and the ending of a line.
+
 ## Operators
 
 ### Term Operators
