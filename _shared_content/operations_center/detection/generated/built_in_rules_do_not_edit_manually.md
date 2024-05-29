@@ -1,4 +1,4 @@
-Rules catalog includes **881 built-in detection rules** ([_last update on 2024-05-23_](rules_changelog.md)).
+Rules catalog includes **881 built-in detection rules** ([_last update on 2024-05-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2567,6 +2567,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 27/05/2024 - minor - Added new filters to reduce false positives.
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
             
@@ -4559,7 +4560,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
     
@@ -6200,7 +6201,7 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
             
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
     
