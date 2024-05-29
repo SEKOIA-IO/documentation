@@ -35,7 +35,7 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 
 ??? abstract "Add User to Privileged Group"
     
-    Add user in a potential privileged group which can be used to elevate privileges on the system
+    Add user in a potential privileged group which can be used to elevate privileges on the system.
     
     - **Effort:** advanced
 
