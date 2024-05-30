@@ -765,6 +765,12 @@ The following Sekoia.io built-in rules match the intake **Windows**. This docume
     
     - **Effort:** elementary
 
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
+    
+    - **Effort:** elementary
+
 ??? abstract "Equation Group DLL_U Load"
     
     Detects a specific tool and export used by EquationGroup
