@@ -80,7 +80,7 @@ Changelog _last update on 2024-05-30_
 ### Credential Dumping By LaZagne
   - 04/04/2024 - major - Rule's pattern field changed
     
-### Failed Logon Source From Public IP Addresses
+### Failed Logon Followed By A Success From Public IP Addresses
   - 04/04/2024 - major - Rule's pattern field changed
     
 ### WMI Event Subscription
