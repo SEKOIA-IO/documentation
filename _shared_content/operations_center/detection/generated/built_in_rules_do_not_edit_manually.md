@@ -586,14 +586,15 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
@@ -735,14 +736,15 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
@@ -893,14 +895,15 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "GitLab CVE-2021-22205"
@@ -4360,14 +4363,15 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
@@ -4712,14 +4716,15 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Trend Micro Apex One Intrusion Detection Alert"
@@ -6007,14 +6012,15 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
@@ -7731,14 +7737,15 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Failed Logon Source From Public IP Addresses"
+??? abstract "Failed Logon Followed By A Success From Public IP Addresses"
     
-    A login from a public IP can indicate a misconfigured firewall or network boundary. The sekoia.tags are used to filter internal Ipv4 addresses (10.0.0.0/8 172.16.0.0/12 127.0.0.0/8 169.254.0.0/16 192.168.0.0/16).
+    A login from a public IP can indicate a misconfigured firewall or network boundary. The detection look for 5 or more failed attemps followed by a successfull one. The sekoia.tags are used to filter internal Ipv4 addresses.
     
     - **Effort:** master
     
     - **Changelog:**
     
+        - 29/05/2024 - major - Adding new field and switching to correlation rule.
         - 04/04/2024 - major - Rule's pattern field changed
             
 ??? abstract "Fortinet FortiGate Firewall Successful External Login"
