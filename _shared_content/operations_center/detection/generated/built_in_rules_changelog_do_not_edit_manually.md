@@ -1,7 +1,10 @@
-Changelog _last update on 2024-05-29_
+Changelog _last update on 2024-05-30_
 
 ## Changelog
 
+### CMSTP UAC Bypass via COM Object Access
+  - 28/05/2024 - minor - Add pattern to filter to improve coverage
+    
 ### Suspicious PowerShell Keywords
   - 23/05/2024 - minor - Added filter to reduce false positives and new suspicious keywords.
     

@@ -1,4 +1,4 @@
-Rules catalog includes **881 built-in detection rules** ([_last update on 2024-05-29_](rules_changelog.md)).
+Rules catalog includes **882 built-in detection rules** ([_last update on 2024-05-30_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4564,6 +4564,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Google Workspace Admin Modification"
     
     Detects when an admin is modified.
@@ -6205,6 +6211,12 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Enabling Restricted Admin Mode"
+    
+    Detects when the restricted admin mode is enabled.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Google Workspace Admin Modification"
     
     Detects when an admin is modified.
@@ -6998,6 +7010,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+            
 ??? abstract "COM Hijack Via Sdclt"
     
     Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
@@ -8214,6 +8230,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+            
 ??? abstract "CVE-2017-11882 Microsoft Office Equation Editor Vulnerability"
     
     Detects the exploitation of CVE-2017-11882 vulnerability. The Microsoft Office Equation Editor has no reason to do a network request or drop an executable file. This requires a sysmon configuration with file and network events.
@@ -8511,6 +8531,10 @@ Rules catalog includes **881 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 28/05/2024 - minor - Add pattern to filter to improve coverage
+            
 ??? abstract "COM Hijack Via Sdclt"
     
     Detects changes to 'HKCU\Software\Classes\Folder\shell\open\command\DelegateExecute', to bypass UAC using 'sdclt.exe'.
