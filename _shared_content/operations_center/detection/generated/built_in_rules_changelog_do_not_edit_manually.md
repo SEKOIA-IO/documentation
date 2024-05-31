@@ -1,9 +1,12 @@
-Changelog _last update on 2024-05-30_
+Changelog _last update on 2024-05-31_
 
 ## Changelog
 
 ### CMSTP UAC Bypass via COM Object Access
   - 28/05/2024 - minor - Add pattern to filter to improve coverage
+    
+### Outgoing Bytes Peak
+  - 28/05/2024 - major - On Fortinet Fortigate intakes, events other than 0000000013 are now ignored.
     
 ### Suspicious PowerShell Keywords
   - 23/05/2024 - minor - Added filter to reduce false positives and new suspicious keywords.
