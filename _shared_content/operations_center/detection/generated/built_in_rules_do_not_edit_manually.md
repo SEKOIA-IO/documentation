@@ -1,4 +1,4 @@
-Rules catalog includes **882 built-in detection rules** ([_last update on 2024-05-30_](rules_changelog.md)).
+Rules catalog includes **882 built-in detection rules** ([_last update on 2024-05-31_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -12016,6 +12016,10 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 28/05/2024 - major - On Fortinet Fortigate intakes, events other than 0000000013 are now ignored.
+            
 ??? abstract "Powershell UploadString Function"
     
     Powershell's `uploadXXX` functions are a category of methods which can be used to exfiltrate data through native means on a Windows host.
