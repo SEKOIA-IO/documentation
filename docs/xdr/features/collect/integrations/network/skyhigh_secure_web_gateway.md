@@ -16,6 +16,10 @@ This product is supported by Skyhigh Security.
 
 In this guide, you will configure a rule set to forward events to syslog and add a new forwarding in the rsyslog server provided with MWG.
 
+### Prerequisites
+
+An internal syslog concentrator is required to collect and forward events to Sekoia.io.
+
 ### Configure a Rule Set
 
 Prior to the configuration, download the “Rule Set” configuration [`SEKOIAIO_SKYHIGH_swg.xml`](/assets/operation_center/integration_catalog/network/skyhigh_secure_web_gateway/SEKOIAIO_SKYHIGH_swg.xml).
@@ -31,8 +35,17 @@ In your SWG console:
 
 ### Configure Rsyslog
 
-To forward your logs to our servers, in our MWG console:
+To forward your logs to your log concentrator, in our MWG console:
 
 - Select `Configuration` section then the `File Editor` tab.
 - In the tree, select `rsyslog.conf`.
-- Consult the [Rsyslog Transport](../../../ingestion_methods/syslog/overview/) documentation to configure Rsyslog in order to forward these logs to Sekoia.io.
+- Add the following line:
+  ```
+  if $programname == 'mwg' and $syslogfacility-text == 'daemon' and $syslogseverity-text == 'info' then  @@<log concentrator ip>
+  ```
+  Replace the `<log concentrator ip>` placeholder with the ip address of our log concentrator
+
+
+## Forward logs to Sekoia.io
+
+Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) documentation to forward these logs to Sekoia.io.
