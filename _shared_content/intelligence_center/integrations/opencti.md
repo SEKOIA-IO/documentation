@@ -4,4 +4,4 @@ The existing Sekoia connector for OpenCTI has been released in 2021 and is freel
 
 ## Sekoia Connector Details
 
-https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia
+The OpenCTI Github repository: [https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia](https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia) 
