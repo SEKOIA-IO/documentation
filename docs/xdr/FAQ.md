@@ -44,7 +44,8 @@ This way, you will be able to exactly identify what data is sent to Sekoia.io.
 ## Logs
 
 ### Retention
-Logs are available and displayed for 90 days in Sekoia.io.
+
+Logs are available and displayed for 30 days in Sekoia.io, for standard contracts.
 
 ### Archive and restore data
 
