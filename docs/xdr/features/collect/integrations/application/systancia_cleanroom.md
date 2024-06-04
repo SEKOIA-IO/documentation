@@ -23,7 +23,7 @@ Please consult the [Syslog Forwarding](/xdr/features/collect/ingestion_methods/s
 
 ### Systancia Cleanroom
 
-1. In the [Systancia Clearoom system console](https://mycleanroom.systancia.com/system), go to `Logger settings`
+1. In the Systancia Clearoom system console, go to `Logger settings`
     
     ![logger_settings.png](/assets/operation_center/integration_catalog/application/systancia-cleanroom/logger_settings.png)
 
