@@ -41,9 +41,12 @@ To forward your logs to your log concentrator, in our MWG console:
 - In the tree, select `rsyslog.conf`.
 - Add the following line:
   ```
-  if $programname == 'mwg' and $syslogfacility-text == 'daemon' and $syslogseverity-text == 'info' then  @@<log concentrator ip>
+  if $programname == 'mwg' and $syslogfacility-text == 'daemon' and $syslogseverity-text == 'info' then  @@<log concentrator ip>:<port>
   ```
-  Replace the `<log concentrator ip>` placeholder with the ip address of our log concentrator
+  Replace the `<log concentrator ip>` placeholder with the ip address of our log concentrator and `<port>` by the listening port on the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwarder/) for the Skyhigh raw events.
+
+!!!Note
+  The double at characters without spaces (@@) indicates that syslog messages are transferred to a host using the TCP protocol. To use the UDP protocol, use single at character (@).
 
 
 ## Forward logs to Sekoia.io
