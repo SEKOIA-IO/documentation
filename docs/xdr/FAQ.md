@@ -1,12 +1,14 @@
-# IP
+# FAQ
 
-## Is the IP behind `intake.sekoia.io` static?
+## IP
+
+### Is the IP behind `intake.sekoia.io` static?
 
 **IP for `intake.sekoia.io` is `51.159.9.95`.**
 
 `intake.sekoia.io` is the domain name used to send your logs to Sekoia.io, either via Syslog or HTTP protocols. The IP address behind that service is static and stable. You can use that IP to configure your firewalls to allow connections from your forwarding systems to Sekoia.io.
 
-## Outgoing IP addresses for playbooks runs and connectors
+### Outgoing IP addresses for playbooks runs and connectors
 
 
 For all the actions available in the Playbooks section of Sekoia.io (include connectors used to retrieve logs from external sources), we use a number of outbound IP addresses. The full list is publicly accessible and can be retrieved at the following URL: [https://api.sekoia.io/outgoing-ips](https://api.sekoia.io/outgoing-ips). This will be useful to setup filtering options if needed, and even automate any future update.
@@ -14,7 +16,7 @@ For all the actions available in the Playbooks section of Sekoia.io (include con
 We try to make this list as stable as possible, but events out of our control may result in modifications. If any changes occur, we are committed to providing our customers with advance notice of at least two weeks, either via a dedicated communication, or via our [status page](https://status.sekoia.io/).
 
 
-## How to debug Rsyslog’s forward configuration to Sekoia.io?
+### How to debug Rsyslog’s forward configuration to Sekoia.io?
 
 If you use Rsyslog to forward your logs to Sekoia.io, you will probably have a section like this in your configuration files:
 
@@ -39,11 +41,12 @@ This way, you will be able to exactly identify what data is sent to Sekoia.io.
 ```
 
 
-# Logs
-## Retention
+## Logs
+
+### Retention
 Logs are available and displayed for 90 days in Sekoia.io.
 
-## Archive and restore data
+### Archive and restore data
 
 !!! Info
     
@@ -52,7 +55,7 @@ Logs are available and displayed for 90 days in Sekoia.io.
     Option not available for all plans
 
 
-### Restoration process : 
+**Restoration process** 
 
 - The request must be made to [support@sekoia.io](mailto:support@sekoia.io)
 
@@ -62,6 +65,6 @@ Logs are available and displayed for 90 days in Sekoia.io.
 
 - Restored data will be deleted after 30 days
 
-### Restoration flow:
+**Restoration flow**
 
 <img style="max-width:100%" alt="Archiving diagram" src="/xdr/FAQ/archiving_process.png">
