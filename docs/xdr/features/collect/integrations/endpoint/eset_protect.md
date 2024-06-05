@@ -34,7 +34,7 @@ To enable Syslog server in ESET Protect, follow the steps below:
 
     ![Syslog configuration](/assets/instructions/eset_protect/enable_syslog_2.png)
 
-## Create an intake
+### Create an intake
 
 Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `ESET Protect`.
 
