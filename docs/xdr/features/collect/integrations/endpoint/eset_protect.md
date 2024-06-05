@@ -14,7 +14,7 @@ ESET Protect is a cybersecurity platform offering advanced threat detection, end
 
 This setup guide will show you how to enable log export in ESET Protect using syslog.
 
-Only events from the following log categories are being exported to Syslog server: Detection, Firewall, HIPS, Audit and ESET Inspec.
+Only events from the following log categories are being exported to Syslog server: Detection, Firewall, HIPS, Audit and ESET Inspect.
 
 To enable Syslog server in ESET Protect, follow the steps below:
 
