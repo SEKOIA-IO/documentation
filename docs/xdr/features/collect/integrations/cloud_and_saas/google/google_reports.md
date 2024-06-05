@@ -40,20 +40,43 @@ To collect activities from several Google Application, create as many playbooks 
 
 - Google licence Enterprise standard or higher
 - Access to Sekoia.io Intakes and Playbook pages with write permissions
-- Administrator access to the Google Cloud console
+- Administrator access to the Google Cloud console and to Google Workspace
 
 ### Create a dedicated service account
 
 To create a service account you have to :
 
- - Create a project
- - Turn on the APIs for the service account
- - Set up the OAuth consent screen with the following scopes (see [Choose Reports API scopes](https://developers.google.com/admin-sdk/reports/auth)):
-	- https://www.googleapis.com/auth/admin.reports.audit.readonly
-	- https://www.googleapis.com/auth/admin.reports.usage.readonly
- - Create the service account
+  1. Create a project
+  2. Turn on the APIs for the service account
+    a. In your project, select *APIs & Services* and then *Library*
+    b. Select the *Admin SDK API* and click on *Enable* (you can write the name in the search box to find it more easily)
+  3. Under *APIs & Services*, set up the *OAuth consent screen*
+    - Click on *OAuth consent screen*
+    - For *User type*, select *Internal*
+    - Write an *App Name*, a *User support email* and an email address for the *Developer contact information*
+    - Select the following scopes (see [Choose Reports API scopes](https://developers.google.com/admin-sdk/reports/auth)):
+        -  `https://www.googleapis.com/auth/admin.reports.audit.readonly`
+        -  `https://www.googleapis.com/auth/admin.reports.usage.readonly`
+  4. Create the service account
+    - Under *IAM & Admins*, click on *Service Accounts* and click on *Create Service Account*
+    - Specify the Service Account details
+    - Click on *Done* (no need to *Grant this service account access to project* and *Grant users access to this service account*)
+  5. Create a delegation
+    - Find your new *Service Account* and select *Managed details*
+    - Click on *Advanced settings*
+    - Under "Domain-wide delegation" find your service account's *Client ID*. Copy the client ID value to your clipboard.
+    - Click on *View Google Workspace Admin Console*, then sign in using a **super administrator user account** and continue following these steps.
+    - In the Google Admin console, go to *Menu* > *Security* > *Access* and *data control* > *API controls*.
+    - Click Manage Domain Wide Delegation.
+    - Click *Add new*.
+    - In the "Client ID" field, paste the client ID that you previously copied.
+    - In the "OAuth Scopes" field, enter a comma-delimited list of the scopes required by your application. This is the same set of scopes you defined when configuring the OAuth consent screen.
+        -  `https://www.googleapis.com/auth/admin.reports.audit.readonly`
+        -  `https://www.googleapis.com/auth/admin.reports.usage.readonly`
+    - Click *Authorize*
 
-For more details in each steps please read this [Documentation](https://support.google.com/a/answer/7378726?hl=en)
+
+For more details in each steps please read this [Documentation](https://support.google.com/a/answer/7378726?hl=en) and [this one about delegation](https://developers.google.com/workspace/guides/create-credentials#optional_set_up_domain-wide_delegation_for_a_service_account)
 
 ### Create and download JSON keys (service account credentials)
 
@@ -70,7 +93,7 @@ To use a service account from outside of Google Cloud, such as on Sekoia.io, you
 6. Select **JSON** as the Key type and click **Create**
 
 !!! Important
-	Clicking **Create** downloads a service account key file. After you download the key file, you cannot download it again. You will need it on the following steps on Sekoia.io.
+    Clicking **Create** downloads a service account key file. After you download the key file, you cannot download it again. You will need it on the following steps on Sekoia.io.
 
 Find more information on the [official google documentation](https://cloud.google.com/iam/docs/keys-create-delete).
 
@@ -115,7 +138,10 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 
     * Type the `Intake key` created on the previous
     * Select the `application name` what you to fetch events from
-    * Type the `Admin email`
+    * Type the `an Google workspace admin email`.
+  
+!!! Important
+    This Google workspace admin email is any user part of the domain **that has** the right to view de Data of Google Workspace 
 
 - Click on the **Save** button
 - **Activate the playbook** with the toggle button on the top right corner of the page
