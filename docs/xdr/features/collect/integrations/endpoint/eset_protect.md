@@ -16,6 +16,11 @@ This setup guide will show you how to enable log export in ESET Protect using sy
 
 Only events from the following log categories are being exported to Syslog server: Detection, Firewall, HIPS, Audit and ESET Inspect.
 
+### Prerequisites
+
+An internal syslog concentrator is required to collect and forward events to Sekoia.io.
+
+### Enable syslog forwarding
 To enable Syslog server in ESET Protect, follow the steps below:
 
 1. In admin console go to `More` > `Settings`.
