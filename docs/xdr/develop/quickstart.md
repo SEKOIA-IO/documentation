@@ -492,7 +492,8 @@ Anomalies are evaluated in real-time and can impact the user's credibility. Here
     - **Response Time**: Limit requests to less than 100 ms per second over a 10-second period.
     - **Error Requests**: Do not exceed 20% errors (4XX or 5XX codes) on 20 requests per 10-second period.
 
-    - **Error Code 429**: Indicates rate limiting when too many requests are received in a short time.
+!!! Note
+    **Error Code 429**: Indicates rate limiting when too many requests are received in a short time.
 
 ### 4. Recommendations and Best Practices
 
