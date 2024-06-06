@@ -478,16 +478,20 @@ Our AI-based WAF goes beyond traditional security rules by using machine learnin
 Anomalies are evaluated in real-time and can impact the user's credibility. Here are the main types of anomalies:
 
 - **Security Anomalies**:
+
   - Security scans, SSRF, injections, exploitation of vulnerabilities, protocol manipulations.
 
 - **Anomalies Relative to Fixed Thresholds**:
+
   - **Response Time**: Requests taking more than 10 seconds of CPU/memory processing.
   - **Request Frequency**: More than 200 requests per second.
   - **Authentication**: Strengthened mechanisms on authentication management pages.
 
 - **Anomalies Relative to Smart Thresholds**:
+
   - **Response Time**: Limit requests to less than 100 ms per second over a 10-second period.
   - **Error Requests**: Do not exceed 20% errors (4XX or 5XX codes) on 20 requests per 10-second period.
+
     * **Error Code 429**: Indicates rate limiting when too many requests are received in a short time.
 
 ### 4. Recommendations and Best Practices
