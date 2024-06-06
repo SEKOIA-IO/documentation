@@ -28,7 +28,7 @@ In the `Connections` panel, select the server then the desired site and go to th
 
 Select the format `IIS` and the encoding `UTF-8` for the logs.
 
-![screenshot12.png](/assets/operation_center/integration_catalog/application/microsoft-iis/screenshot11.png)
+![screenshot12.png](/assets/operation_center/integration_catalog/application/microsoft-iis/screenshot12.png)
 
 ### NXLog directly to [Sekoia.io](http://sekoia.io/)
 
