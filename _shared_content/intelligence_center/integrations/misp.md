@@ -22,14 +22,14 @@ You then need to make sure you have a scheduled task in place to regularly fetch
 
     MISP adds automatically the suffix `/manifest.json` to the feed URL. If you want to try the connection to the feed outside MISP or make a custom script, you need to use the following URL: `https://api.sekoia.io/api/v2/inthreat/misp/manifest.json`
 
-## Beta Version of Sekoia.io’s MISP Feed
+## DEPRECATED version of Sekoia.io’s MISP Feed
 
 !!! warning
 
-    This feed is still considered as beta and should be used carefuly. If you find any regression or issue with this new feed, please contact your support.
+    This feed is deprecated. Please migrate to the V2 above
 
-The new MISP feed contains all non-expired Sekoia.io intelligence material and is constantly kept in sync with SEKOIA.IO’s intelligence feed. This way, when an indicator is updated in SEKOIA.IO, that latter will be also updated in the MISP feed. This will ensure that the indicator is not duplicated each time an indicator is updated.
+The MISP feed contains all non-expired Sekoia.io intelligence material and is constantly kept in sync with SEKOIA.IO’s intelligence feed. This way, when an indicator is updated in SEKOIA.IO, that latter will be also updated in the MISP feed. This will ensure that the indicator is not duplicated each time an indicator is updated.
 
 The MISP feed is organized by data “source” per creation date of the indicator. Hence, if an indicator has several sources, it will be included in several MISP events.
 
-You can configure your MISP instance to read Sekoia.io’s MISP feed by using this URL: `https://api.sekoia.io/v1/misp-gateway/misp`.
+You can configure your MISP instance to read Sekoia.io’s MISP feed by using this URL: `https://api.sekoia.io/v1/misp-gateway/misp`
