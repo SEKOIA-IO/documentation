@@ -22,7 +22,7 @@ This procedure should be repeated for each Forcepoint Policy Server.
 
 ### Prerequisites
 
-An internal syslog concentrator is required to collect and forward events to Sekoia.io. We higly recommand you to use the [Sekoia.io Forwarder](https://docs.sekoia.io/xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder/)
+An internal syslog concentrator is required to collect and forward events to Sekoia.io. We highly recommand you to use the [Sekoia.io Forwarder](/xdr/features/collect/ingestion_methods/syslog/sekoiaio_forwarder/)
 
 
 ### Enable SIEM Integration
