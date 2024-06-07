@@ -26,9 +26,7 @@ An internal syslog concentrator is required to collect and forward events to Sek
 3. In the `monitoring` section, click `Configuration of network logs`
 4. In the menu, click `+ Add`
 5. In the `Services` drop-dwon, select the following services:
-   - `named`
-   - `ipmserver`
-   - `dhcp`
+	- `named`
 6. In the `Target server`, fill the ip address and the port of the log concentrator.
 7. Click `OK`
 
