@@ -1,4 +1,4 @@
-Rules catalog includes **882 built-in detection rules** ([_last update on 2024-06-06_](rules_changelog.md)).
+Rules catalog includes **882 built-in detection rules** ([_last update on 2024-06-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3612,6 +3612,7 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 07/06/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -5014,6 +5015,7 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 07/06/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -6553,6 +6555,7 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
         - 04/07/2023 - major - Added filter to reduce false positives
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
+        - 07/06/2024 - major - Added filter to reduce false positives
             
 ??? abstract "Lsass Wrong Parent"
     
@@ -9654,6 +9657,7 @@ Rules catalog includes **882 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 10/06/2024 - minor - Added filter to the rule to reduce false positives.
         - 19/06/2023 - minor - Added filter to the rule to reduce false positives.
             
 ??? abstract "Impacket Secretsdump.py Tool"

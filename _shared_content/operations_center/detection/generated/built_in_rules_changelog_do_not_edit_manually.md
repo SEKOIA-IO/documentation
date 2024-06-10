@@ -1,7 +1,10 @@
-Changelog _last update on 2024-06-06_
+Changelog _last update on 2024-06-10_
 
 ## Changelog
 
+### Logonui Wrong Parent
+  - 07/06/2024 - major - Added filter to reduce false positives
+    
 ### CMSTP UAC Bypass via COM Object Access
   - 28/05/2024 - minor - Add pattern to filter to improve coverage
     
@@ -435,9 +438,6 @@ Changelog _last update on 2024-06-06_
   - 19/03/2024 - major - Added filter to reduce false positives
     
 ### Wininit Wrong Parent
-  - 19/03/2024 - major - Added filter to reduce false positives
-    
-### Logonui Wrong Parent
   - 19/03/2024 - major - Added filter to reduce false positives
     
 ### Spoolsv Wrong Parent
