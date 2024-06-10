@@ -6,6 +6,27 @@ type: intake
 
 ESET Protect is a cybersecurity platform offering advanced threat detection, endpoint protection, and management tools for businesses, ensuring robust defense against malware and cyber threats.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
+## Supported versions
+
+This integration supports the following versions:
+
+- 9.x
+- 10.x
+- 11.x
+
+## Supported events
+
+This integration supports the following events:
+
+- Audit Events
+- Firewall aggregated events
+- HIPS aggregated events
+- Threat events
+- ESET Inspect alerts
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_2ffff1fd-fed7-4a24-927a-d619f2bb584a_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/2ffff1fd-fed7-4a24-927a-d619f2bb584a.md!}
