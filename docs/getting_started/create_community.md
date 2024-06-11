@@ -9,7 +9,7 @@ For single-tenant users, a workspace is automatically created upon subscribing t
 For multi-tenant users, such as Managed Security Service Providers (MSSPs), a primary workspace is created. These users can add multiple communities to manage their various clients or departments.
 
 !!! info
-    To access multi-tenant mode, contact your Sekoia account executive. Once subscribed, you will be switched to muulti-tenant mode in the following days. 
+    To access multi-tenant mode, contact your Sekoia account executive. Once subscribed, you will be switched to multi-tenant mode in the following days. 
 
 ## How to create a community
 
