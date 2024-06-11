@@ -142,20 +142,6 @@ The following table lists the atom types and their related event fields that are
 
 ## Asset Discovery Rules
 
-### Attach IP to Host
-
-**Attach `host.ip` to Host**
-
-This rule enriches an existing asset with new `ipv4` or `ipv6` contextual properties. These properties are extracted from the value of an event `host.ip` field when the `hostname` detection property of the asset matches with the `host.name` field of the event.
-
-**Attach `source.ip` to Host**
-
-This rule enriches an existing asset with new `ipv4` or `ipv6` contextual properties. These properties are extracted from the `source.ip` field of an event when the `hostname` detection property of the asset matches with the `source.host` field of the event.
-
-**Attach `destination.ip` to Host and categorize it as Server**
-
-This rule enriches an existing asset with new `ipv4` or `ipv6` contextual properties. These properties are extracted from the `destination.ip` field of an event when the `hostname` detection property of the asset matches with the `destination.host` field of the event.
-
 ### Attach Operating System (OS) to Host
 
 **Set the Contextual Property `os` to Host**
