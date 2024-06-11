@@ -2,15 +2,29 @@
 
 ## Overview
 
-API keys are an important part of the platform. They let our users automate actions and provide technical access without going through the UI.
+API keys are a crucial component of the Sekoia.io platform, enabling users to automate actions and provide technical access without needing to navigate through the UI.
 
-An API key is not only a unique identifier and a secret token for authentication, but it can also work as a mean to give an access that is more specific to the identity that is associated with it.
+An API key serves as both a unique identifier and a secret token for authentication. It allows for specific access tailored to the identity associated with it, ensuring secure and controlled interactions with the platform.
 
-Some bricks within the app also require the creation of an API key such as our CTI interconnection with third-party tools and playbooks.
+### Uses of API Keys
+
+- **Automation**: Automate various tasks and workflows within the platform, enhancing efficiency and productivity
+- **Technical access**: Provide technical access for integrations and interactions without relying on the UI
+- **Specific access control**: Grant precise permissions and access levels specific to the API key’s associated identity, ensuring that only authorized actions are performed
+
+### Required for certain features
+
+Some features within the app require the creation of an API key, including:
+
+- CTI interconnection: Connect with third-party tools for Cyber Threat Intelligence (CTI) sharing and integration
+- Playbooks: Utilize API keys within playbooks to execute automated responses and processes.
+
+By using API keys, users can seamlessly integrate with Sekoia.io and leverage its capabilities to their full extent, ensuring secure and efficient operations.
+
 
 ## API keys listing
 
-To access the list of generated API keys in your community, you have to click on your avatar, go to Managed communities and click on the `API keys` tab.
+To access the list of generated API keys in your community, you have to go to Settings > Workspace > API Keys.
 
 On this view, you can:
 
@@ -18,15 +32,8 @@ On this view, you can:
 - Filter your API keys by status: `Active`, `Revoked`, `All`
 - Add a new API Key by clicking on the button `+ API key`
 
-The table that lists API keys has various columns where you can find the following:
-
-- Name of the API key
-- Description of the API key
-- ID of the API key that can be copied with the button icon `copy`
-- Creation date
-- Roles linked to the API key
-- Status:  `Active`, `Revoked`, `All`
-- A button to edit the API key
+!!! note 
+    Only users with admin roles and permissions have the right to create API keys. 
 
 ## Create an API key
 
@@ -46,6 +53,6 @@ Revoking an API key will make it unusable. It’s rather easy to do but keep in 
 
 To revoke an API key, please proceed with the following steps:
 
-1. Go to `Managed communities` page by clicking on your avatar in the upper right of the screen
-2. On the API key tab, click on the `Edit` button
-3. Then revoke the API key by clicking on the red button `Revoke`
+1. Go to Settings > Workspace > API Keys 
+2. Click on the `Edit` button next to your API Key 
+3. Revoke the API key by clicking on the button `Revoke`

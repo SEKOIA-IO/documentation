@@ -2,20 +2,25 @@
 
 ## Overview
 
+You can manage users from the section Workspace in the Settings. 
+To manage users in a workspace, you need to have the Admin role. 
+
+Each user has a name, date of registration, and a role assigned. 
+From the listing of users in a workspace, their role, emails, date of registration and authentication method are displayed. 
+
+A search bar helps quickly look for a member, and quick actions like Deactivate or delete a user can be done directly from the table. 
+
+
 A role has attached permissions allowing a user to access, view pages and use its features.
 
 In the following sections, you will learn how to manage your users.
-
-## Needed role and permissions
-
-To manage users in a community, you need to be an Administrator of the community.
 
 ## Detailed page of a user
 
 To access the detailed page of a user:
 
-1. Go to the page `Managed communities` that’s accessible by clicking on your avatar in the upper right of the screen 
-2. In the tab `Users`, click on the name of a user
+1. Go to `Users` page in Settings 
+2. Click on the name of the user 
 
 From this page, you can: 
 
@@ -23,17 +28,17 @@ From this page, you can:
 - See attached permissions to each role attributed
 - Access the list of assigned roles
 - Delete assigned roles
+- Deactivate account 
 - Delete user from the community
 
-<img width="787" alt="image" src="https://user-images.githubusercontent.com/101662967/186946653-164d6b71-b075-402c-8013-61046da65931.png">
 
 
-## In MSSP communities
+## In multi-tenant workspaces 
 
-In an MSSP community, role management can be a bit tricky. 
+In a multi-tenant workspace, role management can be tricky. Here is how to handle it: 
 
-When a user is invited to the main MSSP community, the roles assign to this person are applied to all managed communities.
-Same behavior when a user is added on Main MSSP community.
+When a user is invited to the workspace, the role assigned to this user is the same in all communities. 
+The same behavior happens when a user is added to
 
 In addition to that, external roles can be added in any managed community to the user role set previously in the main MSSP community.
 Roles assigned to a user in a managed community are independent from their roles in other subcommunities.

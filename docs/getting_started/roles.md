@@ -22,11 +22,11 @@ Based on user feedback, we plan to introduce more built-in roles to accommodate 
 
 In addition to built-in roles, each admin may create Custom roles. These will work in conjunction with built-in roles, providing even more flexibility for user access control.
 
+Please refer to this section to learn [how to create custom roles](custom_roles.md).  
+
 ## Permissions
 
-You can discover all permissions associated either to built-in or custom roles directly from the UI in `Managed communities > Roles`
-
-![Permissions](/assets/roles_permissions.gif){: style="max-width:100%"}
+You can discover all permissions associated either to built-in or custom roles directly from the UI in `Settings > Worskpace Roles`. 
 
 ## Legacy roles
 
