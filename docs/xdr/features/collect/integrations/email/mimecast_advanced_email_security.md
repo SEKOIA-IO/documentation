@@ -1,5 +1,5 @@
 uuid: 041e915e-2fb6-4604-9b24-902c9daa2d3c
-name: Mimecast Advanced Email Security
+name: Mimecast Email Security
 type: intake
 
 ## Overview
@@ -11,7 +11,7 @@ A secure email gateway to block spam, viruses, and malware.
 
 ## Configure
 
-### How create API credentials
+### Create API credentials
 
 1. Login to **Mimecast Administration Console**
 2. Navigate to **Services | API and Platform Integrations**
@@ -24,7 +24,7 @@ A secure email gateway to block spam, viruses, and malware.
 
 ### Create your intake
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Advanced Email Security`.
+1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Email Security`.
 2. Copy the associated Intake key
 
 ### Pull the logs to collect them on Sekoia.io
