@@ -34,7 +34,7 @@ nav:
   - Where to start: getting_started/concepts.md
   - Workspace setup: 
     - Join workspace: getting_started/join_community.md
-    - Create and delete communities: getting_started/create_community.md
+    - Create and manage communities: getting_started/create_community.md
   - Account setup: 
     - Create account: getting_started/create_account.md
     - Setup account: getting_started/account_settings.md
