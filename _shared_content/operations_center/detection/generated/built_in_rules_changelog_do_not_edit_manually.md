@@ -1,7 +1,16 @@
-Changelog _last update on 2024-06-10_
+Changelog _last update on 2024-06-12_
 
 ## Changelog
 
+### Anomaly Internal Port Connection
+  - 12/06/2024 - minor - Adding field to be displayed in the alerts and changing the query.
+    
+### Anomaly New PowerShell Remote Session
+  - 11/06/2024 - minor - Adding fields to be displayed in the alert.
+    
+### Anomaly Multiple Host Port Scan
+  - 11/06/2024 - minor - Adding fields to be displayed in the alert and changing effort level.
+    
 ### Logonui Wrong Parent
   - 07/06/2024 - major - Added filter to reduce false positives
     
