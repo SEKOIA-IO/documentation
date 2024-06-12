@@ -30,7 +30,7 @@ A secure email gateway to block spam, viruses, and malware.
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Mimecast Email Security`.
 2. Copy the associated Intake key
 
-### Pull the logs to collect them on Sekoia.io
+### Pull your logs on Sekoia.io
 
 Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks), and follow these steps:
 
