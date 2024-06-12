@@ -169,7 +169,7 @@ nav:
           - Apache Spamassassin: xdr/features/collect/integrations/email/spamassassin.md
           - Cisco ESA: xdr/features/collect/integrations/email/cisco_esa.md
           - Fortinet Fortimail: xdr/features/collect/integrations/email/fortimail.md
-          - Mimecast Email Security: xdr/features/collect/integrations/email/mimecast_advanced_email_security.md
+          - Mimecast Email Security: xdr/features/collect/integrations/email/mimecast_email_security.md
           - Postfix: xdr/features/collect/integrations/email/postfix.md
           - Proofpoint:
             - Proofpoint PoD: xdr/features/collect/integrations/email/proofpoint_pod.md

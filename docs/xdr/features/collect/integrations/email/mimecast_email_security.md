@@ -5,6 +5,9 @@ type: intake
 ## Overview
 A secure email gateway to block spam, viruses, and malware.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_041e915e-2fb6-4604-9b24-902c9daa2d3c_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/041e915e-2fb6-4604-9b24-902c9daa2d3c.md!}
