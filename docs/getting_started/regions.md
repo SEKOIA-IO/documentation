@@ -1,18 +1,18 @@
 # Sekoia regions
 
-Sekoia is currently available in several European regions. Each of them will enable you to meet advanced legal or safety constraints.
+Sekoia is currently available in several European and Middle-Eastern regions. Each of them will enable you to meet advanced legal or safety constraints.
 
 ## Watch out for region-specific URLS
 
 !!! warning
-    ✋ Please note: The region in which you are located has an impact on the product URLs.
+    ✋ Please note that the region in which you are located has an impact on the product URLs.
 
 !!! warning
     ⌛ Some URLS may change in the future.
 
 When you find URLs of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
 
-For example, if you're in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>. 
+For example, if you are in the FRA2 region, replace <code>app.sekoia.io</code> with <code>fra2.app.sekoia.io</code>. 
 
 ## France - FRA1
 

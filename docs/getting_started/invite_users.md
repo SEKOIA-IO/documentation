@@ -1,59 +1,34 @@
-# Invite users to join your community
+# Invite users to join your workspace
 
-To invite users to your community, you need to send them invitations through the User Center. You can invite as many users as needed as soon as you are an Administrator of the community. 
+To invite users to a workspace or a community, you need to send them an invitation to join you on Sekoia.io. You can invite as many users as needed as soon as you are an Administrator of the workspace/community. 
 
-However, depending on the [type of community](/getting_started/create_community.md) you are in, the invitation process can differ. 
+However, depending on the [type of community](concepts.md) you are in, the invitation process can differ. 
 
-In this documentation, you will learn how to add users in these communities.
+In this documentation, you will learn how to add news users to a workspace or a community. 
 
----
+## Add new users to a workspace
 
-## Add new users to a community
+To invite new users to a workspace, follow these steps: 
+
+1. Navigate to the `Settings` page from the menu 
+2. On the `Users` page, click the `Add new users` button
+3. Enter the email addresses of the users you want to invite, separating each with a comma 
+4. Select the communities you want to add them to
+5. Assign roles to your guests. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to [create custom roles](docs/getting_started/roles.md). 
+
+These steps are the same whether you want to invite new users to a workspace or to a community. 
+In case it's a multi-tenant workspace, the invited user will only have access to the selected community, not the whole workspace. 
 
 !!! note
-     Separate multiple email addresses with commas to add multiple users at the same time.  
+     A welcome email with a password set link is sent only to new users on Sekoia.io (excluding existing members in other communities).
+
+## Automatic creation of users with SSO Okta
+
+As mentioned on [this page](sso/openid_connect.md): Workspace admins who have enabled SSO with Okta can configure an option to automatically create new users accounts in their workspace. When a user logs-in for the first time, their account will be automatically created. You can set the default role for newly created users, and you can choose the default role among all the roles available in your community.
+
  
-### In a managed community
 
-To invite new users to a managed community:
 
-1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
-2. On the tab `Users`, click on the `+ User` button
-3. Type in the `user’s email` and select the `community` you want to invite them in
-4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
-5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
 
-!!! note
-     An email is only sent when the user is added for the first time on Sekoia.io to set its password (and if the user is not present in any other community).
 
-### In an MSSP community
 
-An MSSP community is one main community with multiple managed communities inside of it. The admin of an MSSP community can access all of the managed communities.
-
-You can either invite users to join the main MSSP community or invite them to one or more managed communities inside the MSSP community. 
-
-#### In the main MSSP community
-
-To add users to the main MSSP community: 
-
-1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
-2. On the tab `Users`, click on the `+ User` button
-3. Type in the `user’s email` and select the MSSP community (the first one in the list) 
-4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
-5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
-
-The invited user will have access to the main MSSP community as well as all other managed communities inside of it. 
-
-#### In an MSSP managed community
-
-If you need the invited user to access only some managed communities within the MSSP community, invite them to only some specific communities. 
-
-To add users to some managed communities within a main MSSP community: 
-
-1. Click on your avatar on the upper right side of the screen and select `Managed Communities`
-2. On the tab `Users`, click on the `+ User` button
-3. Type in the `user’s email` and select communities you want to invite your user in
-4. Select `roles` you want to attribute to your guest. You can either select the default ones or create custom roles based on chosen permissions. Check this documentation to learn how to create custom roles. 
-5. Once you’re done, press `Validate` and wait for your guest to accept the invitation
-
-The invited user will only have access to the selected MSSP managed communities, but not the main MSSP community.

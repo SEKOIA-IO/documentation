@@ -29,34 +29,40 @@ markdown_extensions:
 - markdown_include.include
 - lightgallery
 nav:
-- Getting Started:
+- Getting started:
   - Overview: getting_started/index.md
-  - 1. Set up account:
-    - Join a community: getting_started/join_community.md
-    - Create your account: getting_started/create_account.md
-    - Set up account security:
+  - Where to start: getting_started/concepts.md
+  - Workspace setup: 
+    - Join workspace: getting_started/join_community.md
+    - Create and manage communities: getting_started/create_community.md
+  - Account setup: 
+    - Create account: getting_started/create_account.md
+    - Setup account: getting_started/account_settings.md
+  - Security and access: 
+    - Account security:
       - Two-Factor Authentication: getting_started/account_security.md
       - Security tokens: getting_started/securitytokens.md
-  - 2. Manage communities:
-    - Edit a community: getting_started/community-edit.md
-    - Create a sub-community: getting_started/community-create_sub_com.md
-    - Set up community security:
+    - Workspace security: 
       - Session duration: getting_started/session_duration.md
+      - Two-Factor Authentication: getting_started/twofactor_workspace.md
       - SSO with OpenID Connect: getting_started/sso/openid_connect.md
       - SSO with Microsoft Entra ID (Azure AD): getting_started/sso/azure.md
       - SSO with Okta: getting_started/sso/okta.md
-  - 3. Navigate on the platform: getting_started/navigation.md
-  - 4. Manage users:
+  - Users and roles:
     - Invite users: getting_started/invite_users.md
     - Manage users: getting_started/manage_users.md
     - Deactivate inactive users: getting_started/inactive_users.md
-    - Roles: getting_started/roles.md
-  - 5. Manage notifications:
-    - Listing and creation: getting_started/notifications-Listing_Creation.md
+    - Roles and permissions:
+      - Build-in roles: getting_started/roles.md
+      - Custom roles: getting_started/custom_roles.md
+  - Notifications:
+    - Create and manage notifications: getting_started/notifications-Listing_Creation.md
     - Notification examples: getting_started/notifications-Examples.md
-  - 6. Manage API Keys: getting_started/manage_api_keys.md
-  - 7. Sekoia regions: getting_started/regions.md
-  - 8. Troubleshooting Tips: getting_started/get_troubleshooting_tips.md
+  - API Keys: getting_started/manage_api_keys.md
+  - Sekoia regions: getting_started/regions.md
+  - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
+
+ 
 - Sekoia.io XDR:
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
