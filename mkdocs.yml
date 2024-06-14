@@ -32,17 +32,17 @@ nav:
 - Getting started:
   - Overview: getting_started/index.md
   - Where to start: getting_started/concepts.md
-  - Workspace setup: 
+  - Workspace setup:
     - Join workspace: getting_started/join_community.md
     - Create and manage communities: getting_started/create_community.md
-  - Account setup: 
+  - Account setup:
     - Create account: getting_started/create_account.md
     - Setup account: getting_started/account_settings.md
-  - Security and access: 
+  - Security and access:
     - Account security:
       - Two-Factor Authentication: getting_started/account_security.md
       - Security tokens: getting_started/securitytokens.md
-    - Workspace security: 
+    - Workspace security:
       - Session duration: getting_started/session_duration.md
       - Two-Factor Authentication: getting_started/twofactor_workspace.md
       - SSO with OpenID Connect: getting_started/sso/openid_connect.md
@@ -61,8 +61,6 @@ nav:
   - API Keys: getting_started/manage_api_keys.md
   - Sekoia regions: getting_started/regions.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
-
- 
 - Sekoia.io XDR:
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
@@ -334,6 +332,7 @@ nav:
         - Microsoft Entra ID: xdr/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: xdr/features/automate/library/microsoft-office365.md
         - Microsoft Windows Server: xdr/features/automate/library/microsoft-windows-server.md
+        - Mimecast: xdr/features/automate/library/mimecast.md
         - Netskope: xdr/features/automate/library/netskope.md
         - OSINT: xdr/features/automate/library/osint.md
         - Okta: xdr/features/automate/library/okta.md
@@ -532,6 +531,7 @@ nav:
         - Microsoft Entra ID (Azure AD): tip/features/automate/library/microsoft-entra-id.md
         - Microsoft Office365: tip/features/automate/library/microsoft-office365.md
         - Microsoft Windows Server: tip/features/automate/library/microsoft-windows-server.md
+        - Mimecast: tip/features/automate/library/mimecast.md
         - Netskope: tip/features/automate/library/netskope.md
         - OSINT: tip/features/automate/library/osint.md
         - Okta: tip/features/automate/library/okta.md
