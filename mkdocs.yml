@@ -195,6 +195,7 @@ nav:
           - ESET Protect: xdr/features/collect/integrations/endpoint/eset_protect.md
           - HarfangLab: xdr/features/collect/integrations/endpoint/harfanglab.md
           - IBM AIX: xdr/features/collect/integrations/endpoint/ibm_aix.md
+          - IBM iSeries: xdr/features/collect/integrations/endpoint/ibm_i.md
           - Linux: xdr/features/collect/integrations/endpoint/linux.md
           - Microsoft Intune: xdr/features/collect/integrations/endpoint/microsoft_intune.md
           - Panda Security Aether: xdr/features/collect/integrations/endpoint/panda_security_aether.md
