@@ -18,7 +18,7 @@ mkdocs-material = "^9.1.21"
 mkdocs-redirects = "^1.2.1"
 markdown-include = "^0.8.1"
 lightgallery = "^0.5"
-markdown = "3.3.7" # Newer versions are not compatible with lightgallery
+markdown = "3.6" # Newer versions are not compatible with lightgallery
 
 [build-system]
 requires = [ "poetry-core>=1.0.0",]
