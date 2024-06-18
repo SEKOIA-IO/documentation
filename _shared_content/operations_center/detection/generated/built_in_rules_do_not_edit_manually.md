@@ -1,4 +1,4 @@
-Rules catalog includes **883 built-in detection rules** ([_last update on 2024-06-12_](rules_changelog.md)).
+Rules catalog includes **885 built-in detection rules** ([_last update on 2024-06-18_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -11,6 +11,7 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 09/04/2024 - major - change field on aggregation
+        - 13/06/2024 - minor - Adding fields to be displayed in alerts.
             
 ??? abstract "Anomaly Possible Sysvol Dump"
     
@@ -21,6 +22,7 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 08/04/2024 - minor - change field name on query
+        - 13/06/2024 - minor - Adding fields to be displayed in alerts.
             
 **Gather Victim Network Information**
 
@@ -1288,8 +1290,12 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
+            
 ??? abstract "Suspicious Email Attachment Received"
     
     Detects email containing an .exe|.dll|.ps1|.bat|.hta attachment. Most of the time files send by mail like this are malware.
@@ -2748,8 +2754,12 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     
     Detects a large number of file downloads.
     
-    - **Effort:** advanced
+    - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/06/2024 - minor - Changing effort level and adding field to alert.
+            
 ??? abstract "HTA Infection Chains"
     
     Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
@@ -9213,8 +9223,12 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 13/06/2024 - minor - Changing effort level and adding similarity strategy to regroup alerts.
+            
 ??? abstract "Powershell AMSI Bypass"
     
     This rule aims to detect attempts to bypass AMSI in powershell using specific techniques.
@@ -9795,12 +9809,13 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
     
     - **Changelog:**
     
         - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
         - 10/04/2024 - minor - Rule description was changed due to some mistakes
+        - 13/06/2024 - minor - 
             
 ??? abstract "Process Memory Dump Using Createdump"
     
@@ -10219,6 +10234,7 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 08/04/2024 - minor - change field name on query
+        - 12/06/2024 - minor - Adding new fields to be displayed in alerts.
             
 ??? abstract "Credentials Extraction"
     
@@ -10944,6 +10960,12 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "AWS CloudTrail EC2 Enable Serial Console Access"
+    
+    Detects when the EC2 serial console access feature is enabled. This could abused by some attackers to avoid network detection when accessing to EC2 instances.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "AWS CloudTrail EC2 Instance Connect SendSSHPublicKey"
     
     Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a connection to the console using SSH.
@@ -10987,7 +11009,7 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
         - 19/10/2023 - minor - Minor change in selection to reduce false positives.
         - 26/03/2024 - major - Rule's pattern field changed
             
-??? abstract "Lateral Movement - Remote Named Pipe"
+??? abstract "Lateral Movement Remote Named Pipe"
     
     Detects lateral movement and remote exec using named pipe over network. This requires Windows Security event logging with the File Share enable policy.
     
@@ -10995,8 +11017,9 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 12/06/2024 - minor - Fix filter selection
+        - 03/04/2024 - major - Rule's pattern field changed
         - 26/03/2024 - minor - Filter was improved to reduce false positives
-        - 26/03/2024 - major - Rule's pattern field changed
             
 ??? abstract "Lsass Access Through WinRM"
     
@@ -12130,6 +12153,12 @@ Rules catalog includes **883 built-in detection rules** ([_last update on 2024-0
     Detects specific commands used regularly by ransomwares to stop services or remove backups
     
     - **Effort:** intermediate
+    
+??? abstract "Correlation Multi Service Disable"
+    
+    The rule detects a high number of services stopped or de-activated in a short period of time.
+    
+    - **Effort:** master
     
 ??? abstract "Disabled Service"
     
