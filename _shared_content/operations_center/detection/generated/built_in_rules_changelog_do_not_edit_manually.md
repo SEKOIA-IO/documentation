@@ -1,9 +1,30 @@
-Changelog _last update on 2024-06-12_
+Changelog _last update on 2024-06-18_
 
 ## Changelog
 
+### PowerShell AMSI Deactivation Bypass Using .NET Reflection
+  - 13/06/2024 - minor - Changing effort level and adding similarity strategy to regroup alerts.
+    
+### Anomaly Possible Sysvol Dump
+  - 13/06/2024 - minor - Adding fields to be displayed in alerts.
+    
+### Anomaly Kerberos User Enumeration
+  - 13/06/2024 - minor - Adding fields to be displayed in alerts.
+    
+### Process Memory Dump Using Comsvcs
+  - 13/06/2024 - minor - 
+    
+### Suspicious Download Links From Legitimate Services
+  - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
+    
+### Anomaly Secret Store Access
+  - 12/06/2024 - minor - Adding new fields to be displayed in alerts.
+    
 ### Anomaly Internal Port Connection
   - 12/06/2024 - minor - Adding field to be displayed in the alerts and changing the query.
+    
+### Google Workspace Anomaly File Downloads
+  - 12/06/2024 - minor - Changing effort level and adding field to alert.
     
 ### Anomaly New PowerShell Remote Session
   - 11/06/2024 - minor - Adding fields to be displayed in the alert.
@@ -67,18 +88,6 @@ Changelog _last update on 2024-06-12_
     
 ### Suspicious Email Attachment Received
   - 15/04/2024 - minor - Update email from field to latest parser format
-    
-### Process Memory Dump Using Comsvcs
-  - 10/04/2024 - minor - Rule description was changed due to some mistakes
-    
-### Anomaly Kerberos User Enumeration
-  - 09/04/2024 - major - change field on aggregation
-    
-### Anomaly Possible Sysvol Dump
-  - 08/04/2024 - minor - change field name on query
-    
-### Anomaly Secret Store Access
-  - 08/04/2024 - minor - change field name on query
     
 ### Smss Wrong Parent
   - 05/04/2024 - major - Added filter to reduce false positives
@@ -287,8 +296,8 @@ Changelog _last update on 2024-06-12_
 ### Microsoft Defender Antivirus History Deleted
   - 26/03/2024 - major - Rule's pattern field changed
     
-### Lateral Movement - Remote Named Pipe
-  - 26/03/2024 - major - Rule's pattern field changed
+### Lateral Movement Remote Named Pipe
+  - 26/03/2024 - minor - Filter was improved to reduce false positives
     
 ### AD User Enumeration
   - 26/03/2024 - major - Rule's pattern field changed
