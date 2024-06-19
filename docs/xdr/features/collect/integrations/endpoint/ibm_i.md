@@ -27,7 +27,7 @@ In this guide, you will configure the gateway to forward events to syslog.
 4. Type the address and the port of the log concentrator
 5. Select `RFC5424` as `Syslog format`
 6. Select `CEF` as `SIEM message format`
-7. Select the protocol for the log concentrator
+7. Select the protocol for the log concentrator (`TCP` is recommended)
 8. At the bottom of the screen, press `Enter` to save the changes
 
 ## Create the intake
