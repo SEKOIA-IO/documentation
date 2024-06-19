@@ -21,7 +21,7 @@ This integration supports the following versions:
 
 This integration supports the following events:
 
-- Audit journal 
+- Audit journal (Command entry, Authority failure)
 - Integrated file system monitoring
 - Message queues monitoring
 - Database monitoring
@@ -50,6 +50,15 @@ In this guide, you will configure the gateway to forward events to syslog.
 6. Select `CEF` as `SIEM message format`
 7. Select the protocol for the log concentrator (`TCP` is recommended)
 8. At the bottom of the screen, press `Enter` to save the changes
+
+### Enable Audit logs (optional)
+
+1. On the SLMON menu, type `CFGSRM`
+2. On the Configure global settings, select Option `10`
+3. Enable the following type:
+	- AF: Authority failures
+	- CD: Command string audit
+4. Press `F3` to save the changes
 
 ## Create the intake
 
