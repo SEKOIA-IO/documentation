@@ -6,6 +6,9 @@ type: intake
 
 IBM iSeries (AS/400) is a robust, scalable family of midrange business computers running the IBM i operating system, known for its integrated DB2 database and strong security features.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_fc03f783-5039-415e-915a-a4b010d9a872_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/fc03f783-5039-415e-915a-a4b010d9a872.md!}
