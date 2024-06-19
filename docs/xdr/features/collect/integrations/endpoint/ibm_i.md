@@ -9,6 +9,24 @@ IBM iSeries (AS/400) is a robust, scalable family of midrange business computers
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
 
+## Supported versions
+
+This integration supports the following versions:
+
+- 7.3
+- 7.4
+- 7.5
+
+## Supported events
+
+This integration supports the following events:
+
+- Audit journal 
+- Integrated file system monitoring
+- Message queues monitoring
+- Database monitoring
+- History logs
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_fc03f783-5039-415e-915a-a4b010d9a872_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/fc03f783-5039-415e-915a-a4b010d9a872.md!}
