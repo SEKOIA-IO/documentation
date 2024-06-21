@@ -1,4 +1,4 @@
-Rules catalog includes **886 built-in detection rules** ([_last update on 2024-06-20_](rules_changelog.md)).
+Rules catalog includes **886 built-in detection rules** ([_last update on 2024-06-21_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -5513,6 +5513,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -8728,6 +8732,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -10284,6 +10292,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new element to increase detection.
+            
 ??? abstract "KeePass Config XML In Command-Line"
     
     Detects a command-line interaction with the KeePass Config XML file. It could be used to retrieve informations or to be abused for persistence.
@@ -11536,6 +11548,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 20/06/2024 - minor - Adding new elements to increase detection.
+            
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module

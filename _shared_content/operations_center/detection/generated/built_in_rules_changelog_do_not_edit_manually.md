@@ -1,9 +1,15 @@
-Changelog _last update on 2024-06-20_
+Changelog _last update on 2024-06-21_
 
 ## Changelog
 
 ### SOCKS Tunneling Tool
   - 20/06/2024 - minor - Added filter to reduce false positives
+    
+### Google Workspace External Sharing
+  - 20/06/2024 - minor - Adding new elements to increase detection.
+    
+### Google Workspace Password Change
+  - 20/06/2024 - minor - Adding new element to increase detection.
     
 ### Scam Detected By Vade For M365 And Not Blocked
   - 18/06/2024 - minor - Adding filter when whitelisted.
