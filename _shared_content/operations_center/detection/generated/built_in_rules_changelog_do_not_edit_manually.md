@@ -1,7 +1,34 @@
-Changelog _last update on 2024-06-21_
+Changelog _last update on 2024-06-25_
 
 ## Changelog
 
+### Sticky Key Like Backdoor Usage
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### Disable Workstation Lock
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### Malware Persistence Registry Key
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
+    
+### Disable Task Manager Through Registry Key
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### Leviathan Registry Key Activity
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### Security Support Provider (SSP) Added to LSA Configuration
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### UAC Bypass Using Fodhelper
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### Usage Of Sysinternals Tools
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
+### OceanLotus Registry Activity
+  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+    
 ### SOCKS Tunneling Tool
   - 20/06/2024 - minor - Added filter to reduce false positives
     
@@ -18,7 +45,7 @@ Changelog _last update on 2024-06-21_
   - 13/06/2024 - minor - Adding fields to be displayed in alerts.
     
 ### Process Memory Dump Using Comsvcs
-  - 13/06/2024 - minor - 
+  - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
     
 ### Anomaly Kerberos User Enumeration
   - 13/06/2024 - minor - Adding fields to be displayed in alerts.

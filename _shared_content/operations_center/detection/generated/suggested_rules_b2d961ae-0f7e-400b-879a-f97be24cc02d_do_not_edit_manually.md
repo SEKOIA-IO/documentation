@@ -1131,6 +1131,24 @@ The following Sekoia.io built-in rules match the intake **Trend Micro Cloud One 
     
     - **Effort:** master
 
+??? abstract "Trend Micro Cloud One High Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a high severity level.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Cloud One Low Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
+    
+    - **Effort:** master
+
+??? abstract "Trend Micro Cloud One Medium Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
+    
+    - **Effort:** master
+
 ??? abstract "Usage Of Procdump With Common Arguments"
     
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
