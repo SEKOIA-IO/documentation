@@ -63,7 +63,7 @@ nav:
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 
  
-- Sekoia.io XDR:
+- Sekoia Defend (XDR):
   - Introduction: xdr/index.md
   - Quick start guide: xdr/xdr_quick_start.md
   - Features:
@@ -412,7 +412,7 @@ nav:
       - Assets v2 [beta]: xdr/develop/rest_api/assets_v2.md
       - Playbooks: xdr/develop/rest_api/playbooks.md
       - Telemetry: xdr/develop/rest_api/telemetry.md
-- Sekoia.io CTI:
+- Sekoia Intelligence (CTI):
   - Introduction: cti/index.md
   - Features:
     - Data Models: cti/features/data_model.md
