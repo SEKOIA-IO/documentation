@@ -1,4 +1,4 @@
-# Sekoia.io CTI
+# Sekoia Intelligence (CTI)
 
 Cyber Threat Intelligence is at the core of cybersecurity operations. Everyone can trigger indicators when damage has already happened.
 Conversely, showcasing high volumes of indicators is easy when these are long expired. Contrary to other threat intel tools, every single bit of information presented on our feed is framed within explicit validity timestamps and constantly updated, so that you are presented with relevant intelligence, just in time.
