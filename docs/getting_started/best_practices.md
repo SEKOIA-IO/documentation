@@ -54,7 +54,7 @@ Our product is designed to focus on high-priority threats, enabling expert resou
 - **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst) and prioritise the [tuning of a rule](https://docs.sekoia.io/xdr/features/investigate/alerts/#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
 - **Track the Weekly and Monthly volume of New Alerts** to evaluate the evolution of threats and the performance of detection rules.
 - **Assess the number of Daily New Cases** to understand workload and the effectiveness of response processes.
-- **Ensure no sleeping alert is older than 1 week** with status "Closed" or "Rejected".
+- **Ensure no sleeping alert is older than 1 week** without status "Closed" or "Rejected".
 
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
 
