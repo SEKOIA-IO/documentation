@@ -1,4 +1,4 @@
-Rules catalog includes **886 built-in detection rules** ([_last update on 2024-06-21_](rules_changelog.md)).
+Rules catalog includes **889 built-in detection rules** ([_last update on 2024-06-25_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -763,6 +763,24 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Cloud One High Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a high severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Low Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Medium Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
+    
+    - **Effort:** master
+    
 **Exploit Public-Facing Application**
 
 ??? abstract "CVE-2018-11776 Apache Struts2"
@@ -4065,6 +4083,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Userinit Wrong Parent"
     
     Userinit.exe is a key process in the Windows operating system. On boot-up it manages the different start up sequences needed, such as establishing network connection and starting up the Windows shell. This rule analyse if the parent of this process is a legitimate one or not.
@@ -4310,6 +4332,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
+            
 ??? abstract "Ryuk Ransomware Persistence Registry Key"
     
     Detects registry key used by the Ryuk ransomware in two ways, either the Sysmon registry events, or the command line (reg add).
@@ -4760,6 +4786,24 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
         - 15/02/2024 - minor - Effort level was adapted according to the observed hits for the rule.
             
+??? abstract "Trend Micro Cloud One High Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a high severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Low Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a low severity level.
+    
+    - **Effort:** master
+    
+??? abstract "Trend Micro Cloud One Medium Intrusion"
+    
+    Detects when Trend Micro EDR raised an alert for an intrusion with a medium severity level.
+    
+    - **Effort:** master
+    
 **Create Account**
 
 ??? abstract "AWS Persistence By Creating KeyPair And SecurityGroup"
@@ -5367,6 +5411,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
@@ -5421,12 +5469,20 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
+            
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -5477,6 +5533,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -6911,6 +6971,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious Netsh DLL Persistence"
     
     Detects persitence via netsh helper. Netsh interacts with other operating system components using dynamic-link library (DLL) files. Adversaries may establish persistence by executing malicious content triggered by Netsh Helper DLLs.
@@ -6965,12 +7029,20 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Malware Persistence Registry Key"
     
     Detects registry key used by several malware, especially Formbook spyware in two ways, either the Sysmon registry events, or the commands line.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
+            
 ??? abstract "Narrator Feedback-Hub Persistence"
     
     The Windows 10 Narrator's Feedback-Hub registry key has been modified which could be done by an attacker for persistence purposes. Prerequisites are logging for Registry events in the Sysmon configuration (events 12 and 13). Careful since the SwiftOnSecurity Sysmon's configuration needs to be changed to log for this specifically.
@@ -7021,6 +7093,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Suspicious desktop.ini Action"
     
     Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.
@@ -7109,6 +7185,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "UAC Bypass Via Sdclt"
     
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
@@ -7952,6 +8032,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "FlowCloud Malware"
     
     Detects FlowCloud malware from threat group TA410. This requires Windows Event registry logging.
@@ -7974,6 +8058,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "RDP Port Change Using Powershell"
     
     Detects RDP port configuration change using a PowerShell command such as 'Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value XXX Restart-Service termservice -force'. Threat actors can change RDP to another port to bypass protections, avoid detection based on the port, or to take full control of the system. 
@@ -8631,6 +8719,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "UAC Bypass Via Sdclt"
     
     Detects changes to HKCU\Software\Classes\exefile\shell\runas\command\isolatedCommand by an attacker in order to bypass User Account Control (UAC)
@@ -8925,6 +9017,10 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** elementary
     
+    - **Changelog:**
+    
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+            
 ??? abstract "Disable Windows Defender Credential Guard"
     
     Detects registry keys being changed to disable Windows Defender Credential Guard. The rule requires to log Registry Keys modifications or creations, which can be done using Sysmon Event IDs 12,13 and 14.
@@ -9827,7 +9923,7 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
         - 26/03/2024 - major - Filter improved to reduce false positives. On the other hand, some selections were added to improve detection.
         - 10/04/2024 - minor - Rule description was changed due to some mistakes
-        - 13/06/2024 - minor - 
+        - 13/06/2024 - minor - Adding similarity strategy and changing effort level.
             
 ??? abstract "Process Memory Dump Using Createdump"
     
@@ -12234,6 +12330,7 @@ Rules catalog includes **886 built-in detection rules** ([_last update on 2024-0
     
     - **Changelog:**
     
+        - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
         - 16/05/2024 - minor - add pattern to extend and improve detection
             
 ??? abstract "Suncrypt Parameters"
