@@ -1,6 +1,6 @@
-# Sekoia.io XDR
+# Sekoia Defend (XDR)
 
-Sekoia.io XDR is **an eXtended Detection and Response platform** that automates your SOC.
+Sekoia Defend (XDR) is **an eXtended Detection and Response platform** that automates your SOC.
 
 It allows you to easily integrate and analyze the events produced by your applications, endpoints, cloud and SaaS perimeters in real time, and we designed it with the sole purpose of protecting your assets from potential cyber threats.
 
@@ -26,7 +26,7 @@ Sekoia.io combines Cyber Threat Intelligence, anomaly detection and advanced Thr
 
 ### Investigate
 
-Sekoia.io XDR allows you to conduct investigations on malicious activities directly from an alert or by means of the event history.
+Sekoia Defend (XDR) allows you to conduct investigations on malicious activities directly from an alert or by means of the event history.
 Case management makes it possible to reconcile alerts with each other and to document the associated analyzes and results.
 
 1. Review [Security Alerts](features/investigate/alerts.md) raised by Sekoia.io and investigate on their malicious activities.
