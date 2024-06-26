@@ -1,7 +1,13 @@
-Changelog _last update on 2024-06-25_
+Changelog _last update on 2024-06-26_
 
 ## Changelog
 
+### Suspicious Driver Loaded
+  - 25/06/2024 - minor - fix pattern following ECS parsing update
+    
+### Disable Task Manager Through Registry Key
+  - 25/06/2024 - major - Fix pattern selection
+    
 ### Sticky Key Like Backdoor Usage
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
@@ -10,9 +16,6 @@ Changelog _last update on 2024-06-25_
     
 ### Malware Persistence Registry Key
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance, and filter some FPs
-    
-### Disable Task Manager Through Registry Key
-  - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
     
 ### Leviathan Registry Key Activity
   - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
@@ -103,9 +106,6 @@ Changelog _last update on 2024-06-25_
     
 ### Password Reset Error Brute-Force On AzureAD
   - 22/05/2024 - minor - Switch the group-by clause to a sekoiaio uuid field.
-    
-### Suspicious Driver Loaded
-  - 21/05/2024 - major - editing pattern to avoid FP
     
 ### Stop Backup Services
   - 16/05/2024 - minor - add pattern to extend and improve detection
