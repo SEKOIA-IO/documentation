@@ -1,4 +1,4 @@
-Rules catalog includes **889 built-in detection rules** ([_last update on 2024-06-25_](rules_changelog.md)).
+Rules catalog includes **889 built-in detection rules** ([_last update on 2024-06-26_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4667,7 +4667,7 @@ Rules catalog includes **889 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Okta User Account Deactivated"
     
-    An user account has been deactivated in Okta.
+    A user account has been deactivated in Okta.
     
     - **Effort:** master
     
@@ -4838,7 +4838,7 @@ Rules catalog includes **889 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Okta User Account Created"
     
-    An user account has been created in Okta.
+    A user account has been created in Okta.
     
     - **Effort:** master
     
@@ -6359,7 +6359,7 @@ Rules catalog includes **889 built-in detection rules** ([_last update on 2024-0
     
 ??? abstract "Okta User Account Deactivated"
     
-    An user account has been deactivated in Okta.
+    A user account has been deactivated in Okta.
     
     - **Effort:** master
     
@@ -9020,6 +9020,7 @@ Rules catalog includes **889 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 21/06/2024 - major - Update detection pattern for ECS fields/value compliance
+        - 25/06/2024 - major - Fix pattern selection
             
 ??? abstract "Disable Windows Defender Credential Guard"
     
@@ -9403,6 +9404,7 @@ Rules catalog includes **889 built-in detection rules** ([_last update on 2024-0
     
         - 02/01/2024 - minor - improve selection to avoid FP
         - 21/05/2024 - major - editing pattern to avoid FP
+        - 25/06/2024 - minor - fix pattern following ECS parsing update
             
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     

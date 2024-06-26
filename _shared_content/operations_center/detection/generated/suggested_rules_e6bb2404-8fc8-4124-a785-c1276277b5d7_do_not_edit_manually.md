@@ -137,13 +137,13 @@ The following Sekoia.io built-in rules match the intake **Okta**. This documenta
 
 ??? abstract "Okta User Account Created"
     
-    An user account has been created in Okta.
+    A user account has been created in Okta.
     
     - **Effort:** master
 
 ??? abstract "Okta User Account Deactivated"
     
-    An user account has been deactivated in Okta.
+    A user account has been deactivated in Okta.
     
     - **Effort:** master
 
