@@ -38,7 +38,11 @@ On this view, you can:
 ## Create an API key
 
 !!! Note
-    Prior to create an API key, one MUST create a **custom role** as API key creation does not support the association to a built-in role. 
+    API keys can't be assigned built-in roles.
+
+!!! Note
+    One MUST first create a custom role before creating API keys.
+
 
 To create a new API key, you’ll have to:
 
