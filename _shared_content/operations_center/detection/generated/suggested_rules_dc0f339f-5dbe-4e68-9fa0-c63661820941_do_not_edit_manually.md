@@ -344,3 +344,15 @@ The following Sekoia.io built-in rules match the intake **Zscaler Internet Acces
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate
+
+??? abstract "Zscaler ZIA Malicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master
+
+??? abstract "Zscaler ZIA Suspicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master

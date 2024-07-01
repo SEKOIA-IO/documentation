@@ -1,4 +1,4 @@
-Rules catalog includes **889 built-in detection rules** ([_last update on 2024-06-26_](rules_changelog.md)).
+Rules catalog includes **891 built-in detection rules** ([_last update on 2024-07-01_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3423,6 +3423,18 @@ Rules catalog includes **889 built-in detection rules** ([_last update on 2024-0
     Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
     
     - **Effort:** advanced
+    
+??? abstract "Zscaler ZIA Malicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master
+    
+??? abstract "Zscaler ZIA Suspicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master
     
 **System Services**
 
