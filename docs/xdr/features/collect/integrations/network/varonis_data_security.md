@@ -24,10 +24,21 @@ to Sekoia.io by means of a syslog transport channel.
 You can configure the Syslog server address in DatAlert so that alerts are sent to SEKOIA. To configure the
 Syslog server address in DatAlert:
 
-1. In DatAdvantage, select Tools > DatAlert. DatAlert is displayed.
-2. From the left menu, select Configuration.
-3. In Syslog Message Forwarding fill the Syslog server IP address and the Port with the ip address and the port of the log concentrator.
+1. In DatAdvantage, select `Tools` > `DatAlert`. DatAlert is displayed.
+2. From the left menu, select `Configuration`.
+3. In the `Syslog Message Forwarding` section, fill the Syslog server IP address and the Port with the ip address and the port of the log concentrator.
 4. Click OK
+
+![Varonis DatAlert configure syslog](/assets/operation_center/integration_catalog/network/varonis_data_security/configure_syslog.jpg){: style="max-width:100%"}
+
+### Create a message forwarding template
+
+1. In DatAlert, select `Alert Templates`
+2. Select `External system default template (CEF)` and click `Edit Alert Template`
+3. In `Apply to alert methods`, select `Syslog message`
+4. Click OK
+
+![Varonis DatAlert configure template](/assets/operation_center/integration_catalog/network/varonis_data_security/configure_template.png){: style="max-width:100%"}
 
 ### Create the intake
 
