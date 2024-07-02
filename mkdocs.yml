@@ -350,6 +350,7 @@ nav:
         - STIX: xdr/features/automate/library/stix.md
         - Salesforce: xdr/features/automate/library/salesforce.md
         - Sekoia.io: xdr/features/automate/library/sekoia-io.md
+        - Sekoia.io: xdr/features/automate/library/sekoia-io.md
         - SentinelOne: xdr/features/automate/library/sentinelone.md
         - SentinelOneDeepVisibility: xdr/features/automate/library/sentinelonedeepvisibility.md
         - ServiceNow: xdr/features/automate/library/servicenow.md
@@ -548,6 +549,7 @@ nav:
         - RiskIQ: tip/features/automate/library/riskiq.md
         - STIX: tip/features/automate/library/stix.md
         - Salesforce: tip/features/automate/library/salesforce.md
+        - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - Sekoia.io: tip/features/automate/library/sekoia-io.md
         - SentinelOne: tip/features/automate/library/sentinelone.md
         - SentinelOneDeepVisibility: tip/features/automate/library/sentinelonedeepvisibility.md
