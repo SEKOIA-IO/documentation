@@ -142,20 +142,6 @@ The following table lists the atom types and their related event fields that are
 
 ## Asset Discovery Rules
 
-### Attach IP to Host
-
-**Attach `host.ip` to Host**
-
-This rule enriches an existing asset with new `ipv4` or `ipv6` contextual properties. These properties are extracted from the value of an event `host.ip` field when the `hostname` detection property of the asset matches with the `host.name` field of the event.
-
-**Attach `source.ip` to Host**
-
-This rule enriches an existing asset with new `ipv4` or `ipv6` contextual properties. These properties are extracted from the `source.ip` field of an event when the `hostname` detection property of the asset matches with the `source.host` field of the event.
-
-**Attach `destination.ip` to Host and categorize it as Server**
-
-This rule enriches an existing asset with new `ipv4` or `ipv6` contextual properties. These properties are extracted from the `destination.ip` field of an event when the `hostname` detection property of the asset matches with the `destination.host` field of the event.
-
 ### Attach Operating System (OS) to Host
 
 **Set the Contextual Property `os` to Host**
@@ -173,11 +159,11 @@ This rule creates a new asset for every unseen `user.name`. It attaches the `use
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
-# Asset based detections
+## Asset based detections
 
 The Sekoia.io SOC platform supports the creation of detection patterns for rules or alert-filters that can be customized to apply to specific groups of assets. This feature allows you to enhance the scope of detection by targeting groups of assets that share certain attributes, such as critical servers, or by tuning the detection rules to exclude certain assets, like administrator accounts. This is accomplished by leveraging various asset attributes, as detailed below.
 
-## Asset fields
+### Asset fields
 
 The following table lists the available fields for defining asset-based detection patterns, along with their types and example values:
 
@@ -192,11 +178,11 @@ The following table lists the available fields for defining asset-based detectio
 !!! Warning
     Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoia.assets.*.uuid`, `sekoia.assets.*.name`, `sekoia.assets.*.criticality_value`, `sekoia.any_asset.uuid`, `sekoia.any_asset.name` and `sekoia.any_asset.criticality_value`.
 
-## Use Case Example
+### Use Case Example
 
 To demonstrate the capabilities of asset-based detections, consider the following use case. You can create custom tags and apply them to a list of assets manually or by using a script and available APIs. Once tagged, these assets can be used in detection rules or alert filters to fine-tune the detection scope.
 
-### Example 1: Detection Rule
+#### Example 1: Detection Rule
 
 The following Sigma pattern demonstrates how to create a detection rule that targets assets tagged with "my_custom_tag_for_critical_servers":
 
@@ -209,7 +195,7 @@ detection:
   condition: selection
 ```
 
-### Example 2: Alert Filter
+#### Example 2: Alert Filter
 
 The following Sigma pattern demonstrates how to create an alert filter that excludes assets tagged with "my_custom_tag_for_admin_assets":
 
@@ -227,3 +213,57 @@ By using custom tags, you can precisely control which assets are included in or 
     There is no need to add the `contains` modifier when referring to a tag. Because the `sekoiaio.any_asset.tags` field is a list, `sekoiaio.any_asset.tags: mytag` already means "match if any of the tags is mytag".
 
 
+
+## Asset Based Investigation
+
+In addition to their role in managing security risks, assets in Sekoia.io support investigation based on analytics on their past behaviors. By analyzing asset activity and behavior patterns, you can identify potential patterns of malicious activity or security breaches. This information can be used to investigate and identify potential security risks.
+
+The asset investigation feature provides a detailed view of an asset's history, including past events for a specific set of activities. This allows you to quickly identify any unusual activity and take appropriate action.
+
+### Authentications
+
+Authentications are an essential part of securing a perimeter. Analyzing all the authentications of an asset provides a comprehensive view of its security posture. In this view, the user can easily spot all the authentications of an asset.
+
+![asset_authentications](/assets/operation_center/assets_v2/asset_authentications.png){: style="max-width:100%"}
+
+An authentication is denoted by the following properties:
+
+- **Time of first occurrence**: The exact time when the authentication was first recorded.
+- **Number of occurrences**: The total number of times the authentication occurred.
+- **Source host**: The host from which the authentication attempt originated.
+- **Target host**: The host that was the target of the authentication attempt.
+- **Source account**: The account that initiated the authentication attempt.
+- **Target account**: The account that was the target of the authentication attempt.
+- **Service/Process**: The service or process involved in the authentication.
+- **Authentication status**: The result of the authentication attempt (e.g., success or failure).
+
+This page also shows the trend of the top 10 target accounts of the authentication on the current asset along with the top 5 source hosts. This visual representation helps in quickly identifying patterns and potential security issues.
+
+By leveraging this detailed authentication data, users can enhance their understanding of the asset's security posture and take proactive measures to mitigate potential security threats.
+
+#### Pivoting for Detailed Investigation
+
+Each entry in the authentication logs supports pivoting to the detailed view of the source and target hosts and accounts. 
+
+![asset_pivot](/assets/operation_center/assets_v2/asset_auth_pivot.png){: style="max-width:100%"}
+
+This feature allows users to dive deeper into the specifics of each authentication attempt, facilitating thorough investigation and analysis. Here's how it can be used:
+
+- Source Host Pivot: Clicking on a source host in the authentication log will take you to a detailed page about that specific source host. This page include information such as:
+  - Historical activity of the source host.
+  - Other assets or accounts the source host has interacted with.
+
+- Target Host Pivot: Similarly, clicking on a target host will navigate to a detailed page about that target host. This page may include:
+  - Comprehensive logs of all activities involving the target host.
+  - Security posture and any past incidents involving the target host.
+  - Relationships with other assets or accounts.
+
+- Source Account Pivot: Clicking on a source account will provide detailed information about that account, including:
+  - The account's activity history across various assets.
+  - Authentication attempts made by the account.
+  - Any security incidents or breaches involving the account.
+
+- Target Account Pivot: Clicking on a target account will reveal detailed information, such as:
+  - The account's interaction history.
+  - Any security incidents or breaches involving the account.
+  - The account's access permissions and any recent changes.

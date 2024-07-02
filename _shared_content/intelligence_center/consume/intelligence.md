@@ -4,16 +4,14 @@
 
 Looking for a Threat actor? A specific Malware? A report on a topic of interest? Or a URL that looks suspicious? The Intelligence page possesses a search engine with complex filtering capabilities to navigate through millions of data. This threat knowledge base is updated on a daily basis by Sekoia.io analysts to make sure all kinds of threats are covered. 
 
-
-
 ## How to search
 
 ### Search bars
 
 The two ways to find what you need in the knowledge base is to: 
 
-1. Use the search bar embedded in the header. It’s accessible from any page of the Intelligence Center and enables a quick search in the database. 
-2. Click `Intelligence` from the Intelligence Center menu and use the main search bar to browse the knowledge you need.
+1. Use the search bar embedded in the menu. It’s accessible from any page of the app and enables a quick search in the database. 
+2. Click `Intelligence` from the app menu and use the main search bar to browse the knowledge you need.
 
 ![Intelligence-search](/assets/intelligence_center/intelligence%20search.png){: style="max-width:100%"}
 
@@ -170,16 +168,17 @@ By default, these columns are:
 | Sources | Where this object came from |
 | Last edited | Date of last edition |
 | Created | Date of creation |
+| Labels | Custom labels added from Sekoia |
 
-To show or hide these columns, click on `Filters`, then `Select columns to show` and choose the ones needed.
+To show or hide these columns, click on the icon on the top right of the table and select the ones needed.
 
 ### Pagination
 
-Depending on your screen size, you can change the pagination of this data table. It is set to 10 results per page by default, but you can increase this number to 15, 25, 50 or 100. 
+Depending on your screen size, you can change the pagination of this data table. It is set to 25 results per page by default, but you can increase or decrease this number to 10, 15, 50 or 100. 
 
 ### Revoked objects
 
-When a name is red in the table, it means that the object has been revoked.
+When an object name is red in the table, it means that the object has been revoked.
 
 ### Filters for objects
 
@@ -235,6 +234,6 @@ To differentiate between the two, a tab with `Known` and `Unknown` helps underst
 
 ### Bulk actions
 
-When you have a list of observables in your search results, you can select two or more of them by ticking the checkbox on the left of the value. Once selected, you can copy their values using the `copy` button that appears next to the filters. 
+When you have a list of observables in your search results, you can select two or more of them by ticking the checkbox on the left of the value. Once selected, you can copy their values using the `copy` button that appears on top of the table. 
 
 

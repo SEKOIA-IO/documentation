@@ -1,13 +1,17 @@
 # Create your account
 
-To create your new account, you will have to click on the link in the invitation email and you'll be redirected to the account creation form.
+As mentionned in the [Join a workspace or a community](join_community.md) article, you need to be invited to join a workspace by a current user to be able to create an account. 
 
-From there, you'll have to:
+## Step-by-step account creation
 
-1. Provide your full name
-2. Set a strong password
-3. Agree to the Terms of Service
+### Open the invitation email
+1. Locate the invitation email sent to you by Sekoia.io
+2. Click on the link provided in the email to be redirected to the account creation form
 
-Once your account is created, you land in the User Center which is the place where you can setup your account, add layers of security and privacy, set notifications and manage your communities.
+### Complete the Account creation form
+1. Provide your full name: Enter your full name in the designated field
+2. Set a strong password: Create a strong password that meets the platform’s security requirements
+3. Agree to the Terms of Service: Read and agree to the Terms of Service by checking the appropriate box
+4. Click the `Create Account button` to finalize the creation of your account
 
-The User Center is accessible by clicking on your avatar on the upper right part of the screen. Learn more about navigation on the platform in this article.
+

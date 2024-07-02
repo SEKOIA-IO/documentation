@@ -313,7 +313,7 @@ The following Sekoia.io built-in rules match the intake **Zscaler Internet Acces
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious TOR Gateway"
     
@@ -344,3 +344,15 @@ The following Sekoia.io built-in rules match the intake **Zscaler Internet Acces
     Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
     
     - **Effort:** intermediate
+
+??? abstract "Zscaler ZIA Malicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master
+
+??? abstract "Zscaler ZIA Suspicious Threat"
+    
+    Zscaler Internet Access has detected a network traffic as malicious
+    
+    - **Effort:** master

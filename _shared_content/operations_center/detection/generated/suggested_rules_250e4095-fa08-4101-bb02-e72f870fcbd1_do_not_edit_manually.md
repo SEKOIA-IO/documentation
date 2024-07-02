@@ -1017,7 +1017,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
-??? abstract "Lateral Movement - Remote Named Pipe"
+??? abstract "Lateral Movement Remote Named Pipe"
     
     Detects lateral movement and remote exec using named pipe over network. This requires Windows Security event logging with the File Share enable policy.
     
@@ -1597,7 +1597,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Credential Prompt"
     
@@ -1729,7 +1729,7 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Createdump"
     

@@ -2,6 +2,24 @@
 
 This is the changelog for the Sekoia.io Endpoint Agent.
 
+## [1.6.0] - 2024-06-18
+
+### Added
+
+- Track all processes in linux agents
+
+### Changed
+
+- Update audit rules
+- Improve aggregation for some linux events
+
+### Fixed
+
+- Fix wrong command line in some "process-ended" events
+- Fix watch of additional log files stopping on error
+- On Windows remove empty properties from events
+- Fixes HTML characters being encoded in events
+
 ## [1.5.1] - 2024-02-19 (linux only)
 
 ### Fixed

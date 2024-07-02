@@ -13,8 +13,8 @@ Sekoia.io requires your domains to be verified in order to be used for authentic
 
 To do so:
 
-1. Go to "Managed communities" > "Security" > "Verify your domains" > "+ Domain"
-2. Input your domain and validate using the "Send for verification" button
+1. Go to Settings > Workspace Security > Verify your domains > `+ Domain`
+2. Input your domain and validate using the `Send for verification` button
 3. Your domain will have the status "Waiting for verification"
 4. Once it has been validated by our team, this status will become "Verified"
 
@@ -23,12 +23,13 @@ To do so:
 
 To set up SSO, follow these instructions:
 
-1. Go to "Managed communities" > "Security" > "Configure single Sign-on (SSO)" > "Configure"
+1. Go to Settings > Workspace Security > Configure single Sign-on (SSO) > `Configure`
 2. Fill in identity provider details
 3. Save the configuration
 
 Once SSO is set up and your IdP is configured to accept requests, users can log in via the Single Sign-on URL available on this page.
-Share it with your users.
+
+From there, you can share it with your users.
 
 
 ## "Just-in-time" (JIT) Account Provisioning
@@ -37,7 +38,7 @@ You can choose to enable the automatic creation of users' accounts in your commu
 
 By using this feature, when a user logs-in for the first time, their account will be automatically created. You can set the default role for newly created users, and you can choose the default role among all the roles available in your community.
 
-If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article "[Invite users to join your community](https://docs.sekoia.io/getting_started/invite_users/)".
+If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article [Invite users](invite_users.md)".
 
 
 ## Login method
@@ -53,4 +54,4 @@ When the "two-factor authentication" (MFA) is enabled or enforced for your accou
 
 ## Disable Account
 
-To prevent a user from retrieving your organization's data, you can easily deactivate the user from your community and your identity provider.
+To prevent a user from retrieving your organization's data, you can easily deactivate the user from your workspace and your identity provider.

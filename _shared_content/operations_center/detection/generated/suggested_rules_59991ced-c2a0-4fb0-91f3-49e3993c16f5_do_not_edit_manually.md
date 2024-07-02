@@ -925,7 +925,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "PowerShell Downgrade Attack"
     
@@ -973,7 +973,7 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -1436,6 +1436,12 @@ The following Sekoia.io built-in rules match the intake **Tanium**. This documen
     Detects the usage of Procdump sysinternals tool with some common arguments and followed by common patterns.
     
     - **Effort:** intermediate
+
+??? abstract "Usage Of Sysinternals Tools"
+    
+    Detects the usage of Sysinternals Tools due to accepteula key being added to Registry. The rule detects it either from the command line usage or from the regsitry events. For the later prerequisite is logging for registry events in the Sysmon configuration (events 12 and 13).
+    
+    - **Effort:** master
 
 ??? abstract "Userinit Wrong Parent"
     

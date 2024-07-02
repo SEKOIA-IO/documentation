@@ -199,7 +199,7 @@ The following Sekoia.io built-in rules match the intake **Cisco Umbrella Proxy**
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious URI Used In A Lazarus Campaign"
     

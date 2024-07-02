@@ -625,7 +625,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
     
-    - **Effort:** elementary
+    - **Effort:** advanced
 
 ??? abstract "PowerShell EncodedCommand"
     
@@ -649,7 +649,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     Detects the use of comsvcs in command line to dump a specific process memory. This technique is used by attackers for privilege escalation and pivot.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Process Memory Dump Using Rdrleakdiag"
     
@@ -775,7 +775,7 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
     
-    - **Effort:** elementary
+    - **Effort:** intermediate
 
 ??? abstract "Suspicious Microsoft Defender Antivirus Exclusion Command"
     

@@ -72,7 +72,7 @@ Now that you have your logs in your stream, you need to configure an Output to s
 
 1. Go to `Streams`
 2. Identify your stream and click on `More Actions` > `Manage Outputs`
-3. Declare the output mode associated to the Sekoia.io stream with the type `com.plugin.HttpOutput` with the unique parameter `https://intake.sekoia.io` and your API key.
+3. Declare the output mode associated to the Sekoia.io stream with the type `com.plugin.HttpOutput` with the unique parameter `https://intake.sekoia.io/batch` and your intake key.
 
 ![image](/assets/operation_center/data_collection/ingestion_methods/graylog/graylog_output_declaration.png)
 

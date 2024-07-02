@@ -36,7 +36,7 @@ Find the playbook configuration below:
   - **earliest_time**   `{{ ((node.2.first_seen_at | iso8601_to_timestamp) - 3600000) | timestamp_to_iso8601 }}`
   - **fields**  `user_agent.original`
   - **latest_time**    `now`    
-  - **query**   `source.ip:"{{ node.2['source'] }}" AND destination.ip:"{{ node.2['target'] }}" AND entity.name:"{{ node.2['entity']['name'] }}"`
+  - **query**   `source.ip:"{{ node.2['source'] }}" AND destination.ip:"{{ node.2['target'] }}" AND entity.uuid:"{{ node.2['entity']['uuid'] }}"`
     
 `Comment Alert`
   - **content**  `{{ node.3| jsonpath("$.fields[*].common_values[*]['value']", True) }}% of time this user-agent "{{ node.3| jsonpath("$.fields[*].common_values[*]['name']", True) }}}" was seen on these events during the last 60 minutes.`

@@ -1,33 +1,104 @@
-## Examples
+# Notification examples
 
-When your conditions are configured, you'll have to choose which actions should be triggered by the notification mechanism. You can enable one or more actions for each notification rule.
+## Triggers
 
-For instance, you can decide to send an e-mail AND send a message on a Mattermost channel.
+### Intakes 
 
-### Sekoia.io Notification
+Set up notifications to alert you when an intake stops sending events. This ensures you are promptly informed of any disruptions.
 
-The “Notification” action allows you to send an in-app notification that will be made available across Sekoia.io. All notifications can be accessed from the `bell icon` on the top right. By clicking there, the notification panel with all notifications will be displayed.
+1. Select the trigger `No events are received` 
+2. Choose the intake you want to monitor 
+3. Specify the duration of inactivity that will trigger the notification, ranging from 15 minutes to 24 hours
+
+### Rules Catalog 
+
+Stay updated on changes in the Rules Catalog by triggering notifications when new rules are added by Sekoia.io. Customize these notifications for more granular updates.
+
+1. Choose the New rule added trigger
+2. Specify conditions such as: Name, Description, Pattern and Severity levels 
+3. Combine multiple conditions within a single notification rule for precise alerts
+
+### New reports 
+
+Stay informed when new reports are added to the platform by Sekoia. Whether you're interested in all new FLINT reports or just specific TLP Amber reports, you can customize your notifications to keep you updated.
+
+1. Select "A report is available" as the trigger 
+2. Specify conditions such as: Name, description, threat, sector, country, TLP, confidence levels, and if it's a FLINT or not
+3. Combine multiple conditions within a single notification rule for more precise reports 
+
+### Alerts
+
+Stay informed when alerts are raised or updated on the platform. Customize your notifications to ensure you are promptly alerted to significant changes and updates.
+
+#### Alerts raised
+
+When a new alert is raised, you can set up notifications based on the following conditions:
+
+- Assets: Monitor alerts related to specific assets
+- Entities: Track alerts associated with particular entities
+- Triggering rule: Receive notifications for alerts triggered by specific rules
+- Urgency level: Set conditions based on the urgency level of the alert
+- Alert status: Be informed about alerts with specific statuses (e.g., new, ongoing)
+- Asset criticality: Focus on alerts concerning assets with defined criticality levels
+
+#### Alerts updated
+
+For alerts that are updated, customize your notifications with these conditions:
+
+- Recurrence: Get notified on recurring alerts
+- Assets: Monitor updates related to specific assets
+- Entities: Track updates associated with particular entities
+- Triggering rule: Receive notifications for updates triggered by specific rules
+- Urgency level: Set conditions based on the updated urgency level of the alert
+- Alert status: Be informed about changes in alert status
+- Asset criticality: Focus on updates concerning assets with defined criticality levels
+
+By setting up these conditions, you can ensure that you receive timely and relevant notifications about alerts that are most important to your operations.
+
+### Playbooks 
+
+The "A playbook has encountered an error" trigger allows you to stay informed about issues within your playbooks.
+
+- If this trigger is selected alone, you will receive a notification for every error encountered by a playbook in your community, regardless of whether the error causes the playbook to crash.
+
+- If you want to be notified only when a playbook encounters an error that also causes it to crash, select the "And it crashed" condition in addition to the error trigger.
+
+By configuring these triggers, you can ensure that you are promptly alerted to both minor issues and critical failures within your playbooks, allowing for timely troubleshooting and resolution.
+
+
+## Conditions 
+
+After setting up your conditions, you need to choose the actions that will be triggered by the notification mechanism. You can enable one or more actions for each notification rule. For example, you can decide to send an email and post a message on a Mattermost channel.
+
+### Sekoia.io in-app notification
+
+The Notification action allows you to send in-app notifications that will be available across Sekoia.io. These notifications can be accessed from the `Notifications` entry in the menu. You just click on it and it will open the notification panel to view all notifications.
+
 
 ### Email Notification
 
-The “Email notification” will let you send an e-mail to an arbitrary address with the two different options:
+The Email notification will let you send an e-mail to a specified address with two different options:
 
 - By default, simple notification content will be sent with a link to Sekoia.io page corresponding of the Condition(s) set up
-- If you enable the `Enrich email with contextual infos` toggle, more contextual information related to your alert will be communicated.
+- If you enable the `Enrich email with contextual infos` toggle, the email will include more detailed contextual information related to your alert.
 
 ### Mattermost Notification
 
-Mattermost is a popular professional chat service. The “Mattermost notification” will send messages to any Mattermost instance.  To do so, you’ll have to configure a new `Incoming Webhook` on your Mattermost instance and choose to which Mattermost channel the message should be sent to.
+Mattermost is a popular professional chat service. The Mattermost Notification action allows you to send messages to any Mattermost instance. To set this up, you'll need to configure a new Incoming Webhook on your Mattermost instance and specify the Mattermost channel where the message should be sent.
 
 You can refer to the Mattermost documentation on how to [create a new Mattermost “incoming webhook”](https://developers.mattermost.com/integrate/webhooks/incoming/).
 
 ### WebHook Notification
 
-The “WebHook notification” will let you send message to interact with third party softwares. Technical informations related to the event will be pushed to an HTTP server. That latter will be able to understand the received payload and act (for example, retrieve more information about the event itself via Sekoia.io APIs and then push notification to an internal messaging service).
+The WebHook Notification allows you to send messages to interact with third-party software. Technical information related to the event will be pushed to an HTTP server, which can then interpret the received payload and take further actions. For example, the server could retrieve more information about the event using Sekoia.io APIs and then push a notification to an internal messaging service.
+
 
 !!! info 
-    You can’t use the WebHook notification mechanism to push information directly to third parties (such as Slack or Telegram), you have to use an intermediate server. To do so, you can use solutions like IFTTT or a simple HTTP server (see below).
+    You cannot use the WebHook notification mechanism to push information directly to third-party services like Slack or Telegram. Instead, use an intermediate server to handle the data. Solutions like IFTTT or a custom HTTP server can facilitate this process (Examples can be found below). 
+
     There are also playbook templates that can be used to send notifications to Slack or Microsoft Teams directly using Webhooks. See how to [send notifications to a Webhook using a playbook](../xdr/usecases/playbook/notifications_using_playbooks.md) for more information.
+
+#### Example of a WebHook notification 
 
 Here’s an example of a posted content to a configured destination via the WebHook mechanism:
 
@@ -157,7 +228,7 @@ async def handle_new_alert(
 4. Environment variables that needs to be defined to let the server work.
 5. Base model that will be used to parse incoming events (this version only handles alerts).
 
-Now, you have to create a new API Key in Sekoia.io’s User Center. That one should have at least the right to read alerts (`SIC_READ_ALERT` permissions).
+Now, you have to [create a new API Key in Sekoia.io](manage_api_keys.md). That one should have at least the right to read alerts (`SIC_READ_ALERT` permissions).
 
 Then you have to install requirements and start the HTTP server with the appropriate environment variables:
 

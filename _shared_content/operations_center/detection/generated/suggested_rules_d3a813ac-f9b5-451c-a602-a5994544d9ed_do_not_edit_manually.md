@@ -39,6 +39,12 @@ The following Sekoia.io built-in rules match the intake **AWS CloudTrail**. This
     
     - **Effort:** advanced
 
+??? abstract "AWS CloudTrail EC2 Enable Serial Console Access"
+    
+    Detects when the EC2 serial console access feature is enabled. This could abused by some attackers to avoid network detection when accessing to EC2 instances.
+    
+    - **Effort:** intermediate
+
 ??? abstract "AWS CloudTrail EC2 Instance Connect SendSSHPublicKey"
     
     Detects when an attacker is pushing an SSH Public Key to an EC2 instance. Then he can establish a connection to the console using SSH.
