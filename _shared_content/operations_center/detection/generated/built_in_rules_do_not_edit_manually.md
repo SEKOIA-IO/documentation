@@ -1,4 +1,4 @@
-Rules catalog includes **891 built-in detection rules** ([_last update on 2024-07-01_](rules_changelog.md)).
+Rules catalog includes **894 built-in detection rules** ([_last update on 2024-07-02_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -628,6 +628,12 @@ Rules catalog includes **891 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Creation"
     
@@ -1954,6 +1960,12 @@ Rules catalog includes **891 built-in detection rules** ([_last update on 2024-0
     Detects specific command used by the Phorpiex botnet to execute a copy of the loader during its self-spreading stage. As described by Microsoft, this behavior is unique and easily identifiable due to the use of folders named with underscores "__" and the PE name "DriveMgr.exe".
     
     - **Effort:** elementary
+    
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
     
 ??? abstract "PowerShell Credential Prompt"
     
@@ -4461,6 +4473,12 @@ Rules catalog includes **891 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Google Workspace Admin Creation"
     
     Detects when an admin is created or when his role is changed.
@@ -6153,6 +6171,12 @@ Rules catalog includes **891 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
+    
 ??? abstract "Google Workspace Admin Creation"
     
     Detects when an admin is created or when his role is changed.
@@ -7719,6 +7743,12 @@ Rules catalog includes **891 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** advanced
     
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+    
 ??? abstract "ETW Tampering"
     
     Detects a command that clears or disables any ETW Trace log which could indicate a logging evasion
@@ -7898,6 +7928,12 @@ Rules catalog includes **891 built-in detection rules** ([_last update on 2024-0
     Detects when Google Cloud Audit Logs notify an attack warning such as the famous "Government-backed attack".
     
     - **Effort:** intermediate
+    
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
     
 ??? abstract "Google Workspace Admin Creation"
     

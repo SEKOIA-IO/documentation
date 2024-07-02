@@ -219,6 +219,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** advanced
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Copying Browser Files With Credentials"
     
     Detects copy of sensitive data (passwords, cookies, credit cards) included in web browsers files.
@@ -864,6 +870,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
 ??? abstract "PowerShell AMSI Deactivation Bypass Using .NET Reflection"
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
     
     - **Effort:** advanced
 

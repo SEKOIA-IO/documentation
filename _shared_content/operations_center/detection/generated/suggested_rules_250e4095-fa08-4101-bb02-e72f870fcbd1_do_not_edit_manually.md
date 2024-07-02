@@ -387,6 +387,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** advanced
 
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
+
 ??? abstract "Copy Of Legitimate System32 Executable"
     
     A script has copied a System32 executable.
@@ -1596,6 +1602,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
 ??? abstract "PowerShell AMSI Deactivation Bypass Using .NET Reflection"
     
     Detects Request to amsiInitFailed that can be used to disable AMSI (Antimalware Scan Interface) Scanning. More information about Antimalware Scan Interface https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal.
+    
+    - **Effort:** advanced
+
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
     
     - **Effort:** advanced
 

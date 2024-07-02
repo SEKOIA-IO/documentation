@@ -627,6 +627,12 @@ The following Sekoia.io built-in rules match the intake **F5 BIG-IP**. This docu
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell EncodedCommand"
     
     Detects popular file extensions in commands obfuscated in base64 run through the EncodedCommand option.
