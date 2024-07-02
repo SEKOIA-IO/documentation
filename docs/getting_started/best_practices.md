@@ -21,8 +21,8 @@ Our extensive catalog of over 900 rules, each [associated with a TTP from the MI
 
 - **Aim for continuous improvement**, reaching an average of:
 
-    -  X% tuning for level 3 rules with at least 1 alert-filter,
-    -  Y% tuning for level 4 rules with at least Z alert filters.
+    -  10% tuning for level 3 rules with at least 1 alert-filter,
+    -  20% tuning for level 4 rules with at least Z alert filters.
 
 ### Intakes Configuration
 
@@ -51,9 +51,9 @@ The quality of events is crucial for accurate and effective detection. Here are 
 Our product is designed to focus on high-priority threats, enabling expert resources to conduct a manageable number of quality investigations each day. By creating alert filters, you can ensure that alerts are raised for the right reasons, enhancing the efficiency and effectiveness of your security operations.
 
 - **Monitor the average number of Alerts per Intake** to identify intakes generating too many or too few alerts.
-- **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst) and prioritise the [tuning of a rule](https://docs.sekoia.io/xdr/features/investigate/alerts/#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
+- **Limit the number of Daily New Alerts** at a manageable level for your team (by experience, around 6 to 8 per day per analyst, or 60 per day) and prioritise the [tuning of a rule](https://docs.sekoia.io/xdr/features/investigate/alerts/#create-an-alert-filter) over automating its status change if no defensive action is to be taken.
 - **Track the Weekly and Monthly volume of New Alerts** to evaluate the evolution of threats and the performance of detection rules.
-- **Assess the number of Daily New Cases** to understand workload and the effectiveness of response processes.
+- **Assess the number of Daily New Cases** to understand workload and the effectiveness of response processes. In general, the number of case(s) per day does not exceed 1, as it is cconsidered as a very important incident.
 - **Ensure no sleeping alert is older than 1 week** without status "Closed" or "Rejected".
 
 ![alert_workflow](/assets/operation_center/alerts/alert_workflow.png){: style="max-width:100%"}
@@ -64,8 +64,8 @@ Playbooks complement operational optimization by automating various types of man
 
 **Recommendations:**
 
-- **Keep the number of playbook executions per day low**: Aim for less than X executions per playbook per day, aligning with the number of raised alerts. Each playbook should have a specific objective to meet a particular need.
-- **Design playbooks with simplicity in mind**: On average, each playbook should be composed of less than X modules, including:
+- **Keep the number of playbook executions per day low**: Aim for less than 60 executions per playbook per day, aligning with the number of raised alerts. Each playbook should have a specific objective to meet a particular need.
+- **Design playbooks with simplicity in mind**: On average, each playbook should be composed of less than 15 modules, including:
     - **1 [Trigger](https://docs.sekoia.io/xdr/features/automate/triggers/)** such as the “Manual trigger” or “Alert created” trigger **with a filter condition** to start the playbook only for relevant cases.
     - **Some [Operator](https://docs.sekoia.io/xdr/features/automate/operators/) modules** like "[Condition](https://docs.sekoia.io/xdr/features/automate/operators/#condition)" and "[Foreach](https://docs.sekoia.io/xdr/features/automate/operators/#foreach)" to halt the playbook execution if new information gathered during the process indicates that the playbook is unnecessary in the current context.
     - **A majority of [Action](https://docs.sekoia.io/xdr/features/automate/actions/) modules** making it easily understandable for new team members and maintainable over time. To give you more details on the top 10 most used playbook Actions, here is a list:
@@ -85,7 +85,7 @@ For instance, the following [playbook template](https://docs.sekoia.io/xdr/featu
 
 ![playbook_example](/assets/getting_started/playbook_example.png){: style="max-width:100%"}
 
-- **Ensure the duration of each Action** within playbooks is less than X seconds to reduce the chance of a timeout with most third-party tools you interact with.
+- **Ensure the duration of each Action** within playbooks is less than 10 seconds to reduce the chance of a timeout with most third-party tools you interact with.
 - **Track the overall [duration of playbook executions](https://docs.sekoia.io/xdr/features/automate/navigate-playbooks/#playbook-runs)** for each playbook to complete its execution in less than 1 minute.
 - **Ensure no playbook is having an issue** that is visible with the status "Trigger crashed" and "Configuration issues".
 - **Keep a low number of "Ready to start" playbooks**, for instance less than 2, to avoid activation issue after a long period of configuration due to confict with recent evolutions of your community.
