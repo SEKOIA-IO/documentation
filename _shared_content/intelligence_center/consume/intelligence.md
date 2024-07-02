@@ -236,4 +236,11 @@ To differentiate between the two, a tab with `Known` and `Unknown` helps underst
 
 When you have a list of observables in your search results, you can select two or more of them by ticking the checkbox on the left of the value. Once selected, you can copy their values using the `copy` button that appears on top of the table. 
 
+### Tags on observables 
+
+The validity of observables is determined by our analysts and indicated by a specific date (valid from, valid until). You can locate this date in the .json file associated with the observable, as well as on the observable's detailed page.
+
+When an observable is accompanied by a **blue tag**, it means that the observable is currently valid.
+
+On the other hand, if an observable is marked with an **orange tag**, it means that the validity date has passed, rendering the observable invalid.
 
