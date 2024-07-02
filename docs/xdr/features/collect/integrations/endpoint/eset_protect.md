@@ -41,7 +41,7 @@ Only events from the following log categories are being exported to Syslog serve
 
 An internal syslog concentrator is required to collect and forward events to Sekoia.io.
 
-### Enable syslog forwarding
+### Enable syslog forwarding on ESET Protect On-Prem
 To enable Syslog server in ESET Protect, follow the steps below:
 
 1. In admin console go to `More` > `Settings`.
@@ -54,6 +54,28 @@ To enable Syslog server in ESET Protect, follow the steps below:
 5. Save configuration.
 
     ![Syslog configuration](/assets/instructions/eset_protect/enable_syslog_2.png)
+
+### Enable syslog forwarding on ESET Protect Cloud
+
+!!! warning
+    Important note - For ESET Protect Cloud, you will required a secured syslog forwarder. Please read our article [how to secure data collection to the syslog forwarder](../../ingestion_methods/syslog/secured_forwarded.md)
+
+
+To enable Syslog server in ESET Protect, follow the steps below:
+
+1. In admin console go to `More` > `Admin` > `Settings`.
+2. Click `General` > `Syslog`
+3. Check `Enable syslog sending`
+4. Select `JSON` as the format of the payload
+5. Select `Syslog` as the format of the envelope
+6. Select `Information` as the minimal log level
+7. Check all event types
+8. Type the address of the log concentrator
+9. Check `Validate CA Root certificates of TLS connections`
+10. Copy the public certificate of the Certificate Authority in the textarea
+11. Click `Apply settings`
+
+![Advanced Settings](/assets/instructions/eset_protect/cloud_syslog.png)
 
 ### Create an intake
 
