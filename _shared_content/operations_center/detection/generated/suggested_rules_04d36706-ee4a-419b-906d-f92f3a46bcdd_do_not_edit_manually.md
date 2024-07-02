@@ -21,6 +21,12 @@ The following Sekoia.io built-in rules match the intake **Google Report**. This 
     
     - **Effort:** master
 
+??? abstract "Google Workspace Account Warning"
+    
+    Detects a suspicious login, leaked password, or account disabled following suspicious activity.
+    
+    - **Effort:** elementary
+
 ??? abstract "Google Workspace Admin Creation"
     
     Detects when an admin is created or when his role is changed.
