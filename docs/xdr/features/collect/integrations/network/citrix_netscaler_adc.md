@@ -44,4 +44,3 @@ Please consult the [Syslog Forwarding](../../../ingestion_methods/sekoiaio_forwa
 
 - [Audit log forwarding](https://docs.netscaler.com/en-us/citrix-adc/current-release/system/audit-logging/configuring-audit-logging.html)
 - [Application firewall forwarding](https://support.citrix.com/article/CTX138973/how-to-send-application-firewall-messages-to-a-separate-syslog-server)
-- [CEF format](https://support.citrix.com/article/CTX136146/common-event-format-cef-logging-support-in-the-application-firewall)
