@@ -22,7 +22,7 @@ Our extensive catalog of over 900 rules, each [associated with a TTP from the MI
 - **Aim for continuous improvement**, reaching an average of:
 
     -  10% tuning for level 3 rules with at least 1 alert-filter,
-    -  20% tuning for level 4 rules with at least Z alert filters.
+    -  20% tuning for level 4 rules with at least 1 alert-filter.
 
 ### Intakes Configuration
 
