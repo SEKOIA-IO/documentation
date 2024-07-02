@@ -60,6 +60,7 @@ nav:
     - Notification examples: getting_started/notifications-Examples.md
   - API Keys: getting_started/manage_api_keys.md
   - Sekoia regions: getting_started/regions.md
+  - Best practices: getting_started/best_practices.md
   - Troubleshooting tips: getting_started/get_troubleshooting_tips.md
 - Sekoia.io XDR:
   - Introduction: xdr/index.md
