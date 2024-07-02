@@ -71,7 +71,9 @@ To enable Syslog server in ESET Protect, follow the steps below:
 6. Select `Information` as the minimal log level
 7. Check all event types
 8. Type the address of the log concentrator
-9. Click `Apply settings`
+9. Check `Validate CA Root certificates of TLS connections`
+10. Copy the public certificate of the Certificate Authority in the textarea
+11. Click `Apply settings`
 
 ![Advanced Settings](/assets/instructions/eset_protect/cloud_syslog.png)
 
