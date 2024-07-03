@@ -903,6 +903,12 @@ The following Sekoia.io built-in rules match the intake **Crowdstrike Falcon Tel
     
     - **Effort:** advanced
 
+??? abstract "PowerShell Commands Invocation"
+    
+    Detects the execution to invoke a powershell command. This was used in an intrusion using Gootloader to access Mimikatz.
+    
+    - **Effort:** advanced
+
 ??? abstract "PowerShell Downgrade Attack"
     
     Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0
