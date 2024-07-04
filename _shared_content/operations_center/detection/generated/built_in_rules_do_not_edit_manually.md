@@ -1,4 +1,4 @@
-Rules catalog includes **894 built-in detection rules** ([_last update on 2024-07-02_](rules_changelog.md)).
+Rules catalog includes **896 built-in detection rules** ([_last update on 2024-07-04_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -10542,6 +10542,10 @@ Rules catalog includes **894 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 03/07/2024 - major - Add filter to cover a second case to improve rule coverage
+            
 ??? abstract "Suspicious Outbound Kerberos Connection"
     
     Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.
@@ -10567,6 +10571,18 @@ Rules catalog includes **894 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+            
+**Steal or Forge Authentication Certificates**
+
+??? abstract "Suspicious Kerberos Ticket"
+    
+    Detect suspicious Kerberos ticket based on on their parameters which suggest that it could be forged.
+    
+    - **Effort:** intermediate
+    
+    - **Changelog:**
+    
+        - 03/07/2024 - major - Add filter to cover a second case to improve rule coverage
             
 ## Discovery
 **System Service Discovery**
@@ -10764,6 +10780,7 @@ Rules catalog includes **894 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 12/06/2024 - minor - Adding field to be displayed in the alerts and changing the query.
+        - 04/07/2024 - minor - Reviewing query.
             
 ??? abstract "Anomaly Multiple Host Port Scan"
     
@@ -12143,6 +12160,18 @@ Rules catalog includes **894 built-in detection rules** ([_last update on 2024-0
     Execution of well known tools for data exfiltration and tunneling
     
     - **Effort:** advanced
+    
+??? abstract "Gatewatcher AionIQ Malware Alert"
+    
+    Forward malware information reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
+    
+??? abstract "Gatewatcher AionIQ Network Alert"
+    
+    Forward network alerts reported by Gatewatcher AionIQ  
+    
+    - **Effort:** master
     
 ??? abstract "Netsh Port Forwarding"
     
