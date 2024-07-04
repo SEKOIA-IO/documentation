@@ -338,6 +338,7 @@ nav:
         - Microsoft Windows Server: xdr/features/automate/library/microsoft-windows-server.md
         - Mimecast: xdr/features/automate/library/mimecast.md
         - Netskope: xdr/features/automate/library/netskope.md
+        - Nybble: xdr/features/automate/library/nybble.md
         - OSINT: xdr/features/automate/library/osint.md
         - Okta: xdr/features/automate/library/okta.md
         - Onyphe: xdr/features/automate/library/onyphe.md
@@ -538,6 +539,7 @@ nav:
         - Microsoft Windows Server: tip/features/automate/library/microsoft-windows-server.md
         - Mimecast: tip/features/automate/library/mimecast.md
         - Netskope: tip/features/automate/library/netskope.md
+        - Nybble: tip/features/automate/library/nybble.md
         - OSINT: tip/features/automate/library/osint.md
         - Okta: tip/features/automate/library/okta.md
         - Onyphe: tip/features/automate/library/onyphe.md
