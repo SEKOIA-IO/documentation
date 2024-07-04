@@ -325,32 +325,48 @@ Finally, if you want to check events coming in real time for Intakes with the de
 sudo docker compose logs -f
 ```
 
-**You don't see your events with these commands?** 
+**You don't see your events with these commands?**
 
-1. Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted. 
+1. Check that the forwarder is correctly configured
 
-2. Verify if this information is taken into account by the concentrator. At start-up, the concentrator always shows the list of Intakes with the protocols and ports.
+    * Check the `intakes.yaml` file to see if you have declared the protocols and ports you wanted. 
+
+    * Verify if this information is taken into account by the concentrator. At start-up, the concentrator always shows the list of Intakes with the protocols and ports.
+        ```bash
+        sudo docker compose logs | more
+        ```
+
+    * Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be at least `"25020-25023:25020-25023"` for TCP and `"25020-25023:25020-25023/udp"` if using UDP. 
+
+2. Verify that traffic is incoming from your log source, **meaning no firewall is blocking the events**.
     ```bash
-    sudo docker compose logs | more
+    sudo tcpdump -c10 -nn src <remote_ip> -vv
     ```
 
-3. Check that you correctly declared the `ports` section in the `docker-compose.yml` file. They MUST be the same as the ports declared in the `intakes.yaml` file. For instance, if you declared 4 technologies on ports `25020`, `25021`, `25022` and `25023`, the ports line the `docker-compose.yml` has to be at least `"25020-25023:25020-25023"` for TCP and `"25020-25023:25020-25023/udp"` if using UDP. 
+    `remote_ip`is the IP from which the logs should be incoming.
 
-4. Verify that traffic is incoming from your log source, meaning no firewall is blocking the events.
-    ```bash
-    sudo tcpdump -i <change_with_interface_name> -c10 -nn src <remote_ip> -vv
-    ```
+3. If you are sure that no firewall blocks the events but you still don't see any logs, verify on the source that you are forwarding the logs to the right IP and port using the correct protocol.
+   
+    **Example**
 
-    To find those values:
+    You want to forward your firewall logs to Sekoia. You decided to use the `TCP/20524` port.
 
-    - `change_with_interface_name`use the command `ip addr`
-    - `remote_ip`is the IP from which the logs should be incoming 
+    * Check in the settings of the firewall that you have activated the log forwarding to the IP of the forwarder and the `TCP/20524` port.
+    * Verify in the `docker-compose.ym`l` file of the forwarder that there is a range including the TCP/20524 port like `"25020-25030:25020-25030"`.
+    * Check in the file `intakes.yaml` that there is an entry for this port:
+        ```
+        - name: Firewall_techno
+        protocol: tcp
+        port: 20524
+        intake_key: INTAKE_KEY_FOR_THE_FIREWALL
+        debug: True
+        ```
 
 ### Step 2: verify everything is correctly configured to forward events to Sekoia.io
 
-1. Check the Intake keys you wrote in `intakes.yaml` are correct.
+1. Check the Intake key you wrote in `intakes.yaml` is correct.
 
-2. Check the network flow between the concentrator host and Sekoia.io is opened to the destination `intake.sekoia.io` on protocol `TCP` and port `10514`. You can easily check it with `telnet`:
+2. Check the network flow between the Forwarder host and Sekoia is opened to the destination `intake.sekoia.io` through the protocol `TCP` and port `10514`. You can easily check it with `telnet`:
     ```bash
     sudo apt install telnet && telnet intake.sekoia.io 10514
     ```
@@ -378,10 +394,10 @@ The image used to run the concentrator is maintained on [this github repository]
 Docker uses the notion of tag to identify the version of an image. The tag is always referenced in line starting with `image` in `docker-compose.yml`:
 
 ```
-image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.0
+image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.5
 ```
 
-`2.0` means the version used by `docker compose` is 2.0. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
+`2.5` means the version used by `docker compose` is 2.5. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
 
 To update the concentrator, just change the tag in `docker-compose.yml`, then recreate the concentrator with the command:
 ```bash
