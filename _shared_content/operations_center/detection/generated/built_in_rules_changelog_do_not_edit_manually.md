@@ -1,7 +1,13 @@
-Changelog _last update on 2024-07-02_
+Changelog _last update on 2024-07-04_
 
 ## Changelog
 
+### Anomaly Internal Port Connection
+  - 04/07/2024 - minor - Reviewing query.
+    
+### Suspicious Kerberos Ticket
+  - 03/07/2024 - major - Add filter to cover a second case to improve rule coverage
+    
 ### Suspicious Driver Loaded
   - 25/06/2024 - minor - fix pattern following ECS parsing update
     
@@ -64,9 +70,6 @@ Changelog _last update on 2024-07-02_
     
 ### Google Workspace Anomaly File Downloads
   - 12/06/2024 - minor - Changing effort level and adding field to alert.
-    
-### Anomaly Internal Port Connection
-  - 12/06/2024 - minor - Adding field to be displayed in the alerts and changing the query.
     
 ### Anomaly New PowerShell Remote Session
   - 11/06/2024 - minor - Adding fields to be displayed in the alert.
