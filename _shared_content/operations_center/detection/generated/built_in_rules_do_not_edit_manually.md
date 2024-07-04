@@ -9180,6 +9180,10 @@ Rules catalog includes **896 built-in detection rules** ([_last update on 2024-0
     
     - **Effort:** intermediate
     
+    - **Changelog:**
+    
+        - 04/07/2024 - minor - Adding new commands to increase detection.
+            
 ??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
     
     The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line, PowerShell scripts, and registry. To fully use this rule Windows Registry logging is recommended.
