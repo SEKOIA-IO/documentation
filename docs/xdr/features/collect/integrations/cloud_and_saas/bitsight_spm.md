@@ -6,6 +6,15 @@ type: intake
 
 Bitsight Security Performance Management enables organizations to continuously monitor, measure, and improve their cybersecurity performance by providing actionable insights and metrics on security posture and risk.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+    
+ ## Supported events
+
+This integration supports the following events:
+
+- Findings (with vulnerability detail and asset detail)
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_57eda191-2f93-4fd9-99a2-fd8ffbcdff50_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/57eda191-2f93-4fd9-99a2-fd8ffbcdff50.md!}
