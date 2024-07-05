@@ -2,6 +2,9 @@ Changelog _last update on 2024-07-04_
 
 ## Changelog
 
+### Microsoft Defender Antivirus Disable Scheduled Tasks
+  - 04/07/2024 - minor - Adding new commands to increase detection.
+    
 ### Anomaly Internal Port Connection
   - 04/07/2024 - minor - Reviewing query.
     
