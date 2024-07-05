@@ -22,12 +22,25 @@ An internal syslog concentrator is required to collect and forward events to Sek
 ### Enable Syslog forwarding
 
 1. Log in SOLIDServer console
-2. On the left panel, click `Admin Home`
-3. In the `monitoring` section, click `Configuration of network logs`
+2. On the left panel, click `Administration`
+
+    ![Adminstation](/assets/operation_center/integration_catalog/network/efficientip_solidserver/01 - administration.png)
+
+3. In the `monitoring` section, click `Configuration`
+
+    ![Configuration](/assets/operation_center/integration_catalog/network/efficientip_solidserver/02 - configuration.png)
+
 4. In the menu, click `+ Add`
+
+    ![syslog](/assets/operation_center/integration_catalog/network/efficientip_solidserver/03 - syslog.png)
+
 5. In the `Services` drop-dwon, select the following services:
 	- `named`
+
 6. In the `Target server`, fill the ip address and the port of the log concentrator.
+
+    ![target](/assets/operation_center/integration_catalog/network/efficientip_solidserver/04 - target.png)
+
 7. Click `OK`
 
 
