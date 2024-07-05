@@ -55,6 +55,7 @@ Our API documentation is divided according to the different functionalities the 
 * [Alert](/xdr/develop/rest_api/alert/)
 * [Assets](/xdr/develop/rest_api/assets/)
 * [Playbooks](/xdr/develop/rest_api/playbooks/)
+* [Query Builder](/xdr/develop/rest_api/query_builder/)
 * [Telemetry](/xdr/develop/rest_api/telemetry/)
 
 In each of these categories, you will find the different actions available.

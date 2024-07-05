@@ -418,6 +418,7 @@ nav:
       - Assets: xdr/develop/rest_api/assets.md
       - Assets v2 [beta]: xdr/develop/rest_api/assets_v2.md
       - Playbooks: xdr/develop/rest_api/playbooks.md
+      - Query Builder: xdr/develop/rest_api/query_builder.md
       - Telemetry: xdr/develop/rest_api/telemetry.md
 - Sekoia.io CTI:
   - Introduction: cti/index.md
