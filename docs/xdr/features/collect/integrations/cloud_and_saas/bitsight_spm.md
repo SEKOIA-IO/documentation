@@ -9,7 +9,7 @@ Bitsight Security Performance Management enables organizations to continuously m
 !!! warning
     Important note - This format is currently in beta. We highly value your feedback to improve its performance.
     
- ## Supported events
+## Supported events
 
 This integration supports the following events:
 
