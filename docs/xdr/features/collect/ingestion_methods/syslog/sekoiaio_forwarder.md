@@ -288,7 +288,10 @@ sudo docker compose rm
 
 You can't find the logs in your community? No worries this section will give you an advice to identify what is happening.
 
-### Step 1: check if the events are received by the forwarder
+### Step 1: Verify you are running the latest version of the forwarder
+Sekoia regularly pushes new versions of the forwarder. Be sure you are running the latest version to ensure you have the latest updates.
+
+### Step 2: Check if the events are received by the forwarder
 
 To check if the events are received by the forwarder, you can activate the debug mode for a specific Intake. The debug mode will display all logs that are received and sent by the forwarder associated with a specific Intake, in the standard output of the container (`docker logs`).
 To activate the debug mode, simply add `debug: True` in the definition of the Intake you want, in the `intakes.yaml` file.
@@ -362,7 +365,7 @@ sudo docker compose logs -f
         debug: True
         ```
 
-### Step 2: verify everything is correctly configured to forward events to Sekoia.io
+### Step 3: Verify everything is correctly configured to forward events to Sekoia.io
 
 1. Check the Intake key you wrote in `intakes.yaml` is correct.
 
