@@ -29,7 +29,7 @@ To collect the events from the Cato Networks platform, an API key is required:
 In addition to the API key, Cato `account ID` is also required for the Account configuration in Sekoia
 
 !!! Note
-     In the Cato Management Application, please note the four digits in the browser address.
+     In the Cato Management Application, please note the four or five digits in the browser address.
 
 ### Create an intake
 
