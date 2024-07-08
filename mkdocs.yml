@@ -382,8 +382,7 @@ nav:
       - Configuration: xdr/develop/rest_api/configuration.md
       - Parser: xdr/develop/rest_api/parser.md
       - Alert: xdr/develop/rest_api/alert.md
-      - Assets: xdr/develop/rest_api/assets.md
-      - Assets v2 [beta]: xdr/develop/rest_api/assets_v2.md
+      - Assets: xdr/develop/rest_api/assets_v2.md
       - Playbooks: xdr/develop/rest_api/playbooks.md
       - Telemetry: xdr/develop/rest_api/telemetry.md
 - Sekoia.io CTI:
