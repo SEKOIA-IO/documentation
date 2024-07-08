@@ -492,7 +492,7 @@ Docker uses the notion of tag to identify the version of an image. The tag is al
 image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.6.0
 ```
 
-`2.5` means the version used by `docker compose` is 2.6.0. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
+`2.6.0` means the version used by `docker compose` is 2.6.0. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
 
 To update the concentrator, just change the tag in `docker-compose.yml`, then recreate the concentrator with the command:
 ```bash
