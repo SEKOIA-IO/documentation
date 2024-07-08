@@ -1,4 +1,4 @@
-Rules catalog includes **896 built-in detection rules** ([_last update on 2024-07-04_](rules_changelog.md)).
+Rules catalog includes **898 built-in detection rules** ([_last update on 2024-07-08_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -510,6 +510,12 @@ Rules catalog includes **896 built-in detection rules** ([_last update on 2024-0
 ??? abstract "Varonis Data Security Email Alert"
     
     Varonis Data Security has raised an alert related to a supervised email account.
+    
+    - **Effort:** master
+    
+??? abstract "Varonis Data Security Network Alert"
+    
+    Varonis Data Security has raised an alert related to a network rule
     
     - **Effort:** master
     
@@ -5528,7 +5534,14 @@ Rules catalog includes **896 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 29/11/2023 - minor - Update regex pattern to insensitive case
+        - 07/06/2024 - major - Update pattern to reduce false positives
             
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
@@ -7094,7 +7107,14 @@ Rules catalog includes **896 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 29/11/2023 - minor - Update regex pattern to insensitive case
+        - 07/06/2024 - major - Update pattern to reduce false positives
             
+??? abstract "Njrat Registry Values"
+    
+    Detects specifis registry values that are related to njRat usage.
+    
+    - **Effort:** intermediate
+    
 ??? abstract "Powershell Winlogon Helper DLL"
     
     Detects modifications to the Winlogon Registry keys, which may cause Winlogon to load and execute malicious DLLs and/or executables.
