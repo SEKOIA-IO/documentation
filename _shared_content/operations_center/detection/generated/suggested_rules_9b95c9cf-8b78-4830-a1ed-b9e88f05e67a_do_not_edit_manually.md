@@ -711,11 +711,11 @@ The following Sekoia.io built-in rules match the intake **Palo Alto Cortex XDR (
     
     - **Effort:** intermediate
 
-??? abstract "NjRat Registry Changes"
+??? abstract "Njrat Registry Values"
     
-    Detects changes for the RUN registry key which happen when a victim is infected by NjRAT. Please note that even if NjRat is well-known for the behavior the rule catches, the rule is a bit larger and could catch other malwares.
+    Detects specifis registry values that are related to njRat usage.
     
-    - **Effort:** master
+    - **Effort:** intermediate
 
 ??? abstract "NlTest Usage"
     

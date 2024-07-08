@@ -1,4 +1,4 @@
-Changelog _last update on 2024-07-04_
+Changelog _last update on 2024-07-08_
 
 ## Changelog
 
@@ -82,6 +82,9 @@ Changelog _last update on 2024-07-04_
     
 ### Logonui Wrong Parent
   - 07/06/2024 - major - Added filter to reduce false positives
+    
+### NjRat Registry Changes
+  - 07/06/2024 - major - Update pattern to reduce false positives
     
 ### CMSTP UAC Bypass via COM Object Access
   - 28/05/2024 - minor - Add pattern to filter to improve coverage
@@ -718,9 +721,6 @@ Changelog _last update on 2024-07-04_
     
 ### HTA Infection Chains
   - 30/11/2023 - minor - Update pattern with new lolbin
-    
-### NjRat Registry Changes
-  - 29/11/2023 - minor - Update regex pattern to insensitive case
     
 ### Netsh Program Allowed With Suspicious Location
   - 29/11/2023 - minor - Update regex pattern to insensitive case
