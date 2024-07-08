@@ -319,9 +319,9 @@ If you wish to specify other filenames, you can do so in the intake configuratio
 ```
 [...]
 protocol: tls
-tls_key_name: mykey.pem
-tls_cert_name: mycert.crt
-tls_ca_name: myca.crt
+tls_key_name: server.key
+tls_cert_name: server.crt
+tls_ca_name: server.crt
 ```
 
 ## Start the concentrator
