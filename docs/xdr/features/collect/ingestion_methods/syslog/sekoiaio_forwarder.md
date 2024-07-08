@@ -63,7 +63,7 @@ The `intakes.yaml` file is used to tell the concentrator how to bind a port wher
 For each technology, specify:
 
 * a name: it has nothing to do with Sekoia.io, feel free to use the explicite value of your choice
-* the protocol: `tcp` or `udp`
+* the protocol: `tcp`, `udp` or `tls`
 * a port: to process incoming events
 * the Intake key: can be retreived from the Intakes page of your community
 
@@ -120,7 +120,7 @@ Please find below a template of the `docker-compose.yml` file.
 # version: "3.9"
 services:
   rsyslog:
-    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.5
+    image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.6.0
     environment:
       - MEMORY_MESSAGES=2000000
       - DISK_SPACE=180g
@@ -231,6 +231,98 @@ pull_policy: always
 
 * `restart: always`: this line indicates to restart the concentrator everytime it stops. That means if it crashes, if you restart Docker or if you restart the host, the concentrator will start automatically.
 * `pull_policy: always`: docker compose will always try to pull the image from the registry and check if a new version is available for the tag specified.
+
+## Configure TLS for an Intake
+
+Sending logs between the forwarder and Sekoia is always encrypted with TLS. However, by default, if you use the `tcp` or `udp` protocol option in your intake configuration, the logs between your devices and the forwarder will not be encrypted. This section shows you how to configure TLS between a source and the forwarder.
+
+### Configuration of the docker-compose.yml
+
+Activating TLS requires setting up an encryption key, a certificate, and a CA certificate. These should be placed in the `./certs` directory within the forwarder's directory.
+Therefore it is necessary to mount this volume. Add the following line to the configuration:
+
+```yaml
+volumes:
+    - ./certs:/certs
+    [...]
+```
+
+### Creating the Key and Certificate
+
+We will now create the key and certificate that will be used for encryption. In this case, we will create a self-signed certificate, meaning that the server certificate and the CA (Certificate Authority) certificate will be the same. If you have expertise in managing certificates, you can create a certificate signed by a real CA.
+
+**Step one**: Create the directory and navigate to it:
+
+```
+mkdir certs && cd certs
+```
+
+**Step two**: Install OpenSSL
+
+=== "Debian, Ubuntu"
+
+    ```bash
+    sudo apt update
+    sudo apt install -y openssl
+    ```
+
+=== "Fedora, Red Hat, CentOS (yum)"
+
+    ```bash
+    sudo yum update
+    sudo yum install -y openssl
+    ```
+
+=== "Fedora, Red Hat, CentOS (dnf)"
+    
+    ```bash
+    sudo dnf update
+    sudo dnf install -y openssl
+    ```
+
+Step three: Create the key and certificate
+
+```
+openssl req -x509 \
+            -sha256 -days 1825 \
+            -nodes \
+            -newkey rsa:4096 \
+            -keyout server.key -out server.crt
+```
+
+- `openssl req`: Launches the process to create a Certificate Signing Request (CSR) or a self-signed certificate.
+- `-x509`: This option tells OpenSSL to generate a self-signed certificate rather than a CSR.
+- `-sha256`: Specifies that the SHA-256 hashing algorithm should be used for the certificate's signature.
+- `-days 1825`: Sets the certificate's validity period to 1825 days, which corresponds 5 years.
+- `-nodes`: This stands for "no DES" and indicates that the private key should not be encrypted, meaning no password will be required to use the private key.
+- `-newkey rsa:4096`: Generates a new RSA key pair of 4096 bits in length, and simultaneously creates a certificate request using this key pair.
+- `-keyout server.key`: Specifies the file where the generated private key should be saved. In this case, it will be saved to `server.key`.
+- `-out server.crt`: Specifies the file where the generated self-signed certificate should be saved. In this case, it will be saved to `server.crt`.
+
+**Step four**: Change permissions on the files
+
+```
+chmod 600 server.key server.crt
+```
+
+### Configuration of the intakes.yaml File
+
+To use TLS, you need to specify `tls` in the protocol definition:
+
+```
+protocol: tls
+```
+
+By default, as soon as you specify the tls protocol, the forwarder will attempt to read the private key and certificate at /certs/server.key and /certs/server.crt.
+If you wish to specify other filenames, you can do so in the intake configuration:
+
+```
+[...]
+protocol: tls
+tls_key_name: mykey.pem
+tls_cert_name: mycert.crt
+tls_ca_name: myca.crt
+```
 
 ## Start the concentrator
 
@@ -397,10 +489,10 @@ The image used to run the concentrator is maintained on [this github repository]
 Docker uses the notion of tag to identify the version of an image. The tag is always referenced in line starting with `image` in `docker-compose.yml`:
 
 ```
-image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.5
+image: ghcr.io/sekoia-io/sekoiaio-docker-concentrator:2.6.0
 ```
 
-`2.5` means the version used by `docker compose` is 2.5. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
+`2.5` means the version used by `docker compose` is 2.6.0. You can find all the versions available on the GitHub repository [here](https://github.com/SEKOIA-IO/sekoiaio-docker-concentrator/pkgs/container/sekoiaio-docker-concentrator/versions?filters%5Bversion_type%5D=tagged)
 
 To update the concentrator, just change the tag in `docker-compose.yml`, then recreate the concentrator with the command:
 ```bash
