@@ -38,10 +38,11 @@ with the following template:
 
 ```
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/Sekoia-io-intake.pem
-input(type="imtcp" port="20513" ruleset="remote20513")
+
+input(type="imtcp" port="PORT" ruleset="remoteVmwarevCenter")
 
 template(name="SEKOIAIOTemplate" type="string" string="<%pri%>1 %timestamp:::date-rfc3339% %hostname% %app-name% %procid% LOG [SEKOIA@53288 intake_key=\"YOUR_INTAKE_KEY\"] %msg%\n")
-ruleset(name="remote20513"){
+ruleset(name="remoteVmwarevCenter"){
   if($programname == "vpxd") {
     action(
 	type="omfwd"
@@ -59,7 +60,7 @@ ruleset(name="remote20513"){
 }
 ```
 
-Please change using the YOUR_INTAKE_KEY accordingly, as well as, the input port if needed.
+Please change using the YOUR_INTAKE_KEY accordingly, as well as, the PORT.
 
 Update the `docker-compose.yml` file of the Sekoia.io forwarder to mount the extended conf:
 
