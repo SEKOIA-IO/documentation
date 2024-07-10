@@ -555,12 +555,6 @@ The following Sekoia.io built-in rules match the intake **RSA SecurID**. This do
     
     - **Effort:** intermediate
 
-??? abstract "User Account Created"
-    
-    Detects user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this on your windows server logs and not on your DC logs. One default account `defaultuser0` is excluded as only used during Windows set-up. This detection use Security Event ID 4720. 
-    
-    - **Effort:** master
-
 ??? abstract "User Account Deleted"
     
     Detects local user deletion

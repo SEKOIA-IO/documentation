@@ -63,6 +63,12 @@ The following Sekoia.io built-in rules match the intake **Fastly Next-Gen WAF Au
     
     - **Effort:** master
 
+??? abstract "Fastly Next-Gen WAF Audit Threat Alert"
+    
+    Forward a threat detection made by Fastly Next-Gen WAF Audit Logs
+    
+    - **Effort:** master
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module

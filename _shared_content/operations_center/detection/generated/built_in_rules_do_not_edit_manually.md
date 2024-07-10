@@ -1,4 +1,4 @@
-Rules catalog includes **898 built-in detection rules** ([_last update on 2024-07-08_](rules_changelog.md)).
+Rules catalog includes **899 built-in detection rules** ([_last update on 2024-07-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -117,6 +117,12 @@ Rules catalog includes **898 built-in detection rules** ([_last update on 2024-0
 ??? abstract "ExtraHop Reveal(x) 360 Intrusion Detection High Severity"
     
     ExtraHop Reveal(x) 360 raised an intrusion detection alert with high severity.
+    
+    - **Effort:** master
+    
+??? abstract "Fastly Next-Gen WAF Audit Threat Alert"
+    
+    Forward a threat detection made by Fastly Next-Gen WAF Audit Logs
     
     - **Effort:** master
     
@@ -4903,6 +4909,7 @@ Rules catalog includes **898 built-in detection rules** ([_last update on 2024-0
     - **Changelog:**
     
         - 04/04/2024 - major - Rule's pattern field changed
+        - 10/07/2024 - minor - Adding filter and new elements to reduce false positives.
             
 **Office Application Startup**
 
