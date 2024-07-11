@@ -55,7 +55,7 @@
     },
     "partitionCount": {
         "type": "int",
-        "defaultValue": 1,
+        "defaultValue": 4,
         "minValue": 1,
         "maxValue": 32,
         "metadata": {

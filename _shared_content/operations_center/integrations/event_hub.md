@@ -99,13 +99,14 @@ These two ways will create an Azure Event Hub and a Storage Account.
     **Step 3: Create Event Hub Instance**
 
     When your **Event Hub Namespace** is created you can create an **Event Hub** inside:
+
     1. Navigate to [Home > Event Hubs](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.EventHub%2Fnamespaces) > company-eventhubnamespace.
     2. Create an **Event Hub**.
+    3. Select 4 as default partition count
+    4. Select `Delete` as cleanup policy
+    5. Type 168h (7 days) as retention time
+    6. Click `Create`
 
-    !!! info
-        We advise at least the following values:
-        - cleanup policy: Delete
-        - retention time: 168h (7 days)
     <div style="text-align: center;">
         <img width="90%" alt="image" src="/assets/operation_center/integration_catalog/cloud_and_saas/event_hub/eh.png">
     </div>
