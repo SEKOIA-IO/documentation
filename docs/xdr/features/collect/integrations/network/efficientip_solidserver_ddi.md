@@ -6,6 +6,21 @@ type: intake
 
 EfficientIP SOLIDserver suite of appliances is designed to deliver highly scalable, secure and robust virtual and hardware appliances for critical IPAM-DNS-DHCP-NTP-TFTP services.
 
+!!! warning
+    Important note - This format is currently in beta. We highly value your feedback to improve its performance.
+
+## Supported versions
+
+This integration supports the following versions:
+
+- 8.3.x
+
+## Supported events
+
+This integration supports the following events:
+
+- DNS logs from named
+
 {!_shared_content/operations_center/detection/generated/suggested_rules_f95fea50-533c-4897-9272-2f8361e63644_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/f95fea50-533c-4897-9272-2f8361e63644.md!}
